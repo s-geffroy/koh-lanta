@@ -309,15 +309,6 @@ metiers:
   taux_finale: 10.5
   survie_moyenne: 53.5
   age_moyen: 22.0
-- code: enseignement
-  libelle: Enseignement et éducation
-  effectif: 29
-  part_du_casting: 5.7
-  victoires: 0
-  finales: 2
-  taux_finale: 6.9
-  survie_moyenne: 60.8
-  age_moyen: 35.8
 - code: transport
   libelle: Transport et logistique
   effectif: 29
@@ -336,6 +327,15 @@ metiers:
   taux_finale: 6.9
   survie_moyenne: 60.1
   age_moyen: 35.6
+- code: enseignement
+  libelle: Enseignement et éducation
+  effectif: 29
+  part_du_casting: 5.7
+  victoires: 0
+  finales: 2
+  taux_finale: 6.9
+  survie_moyenne: 60.8
+  age_moyen: 35.8
 - code: agriculture
   libelle: Agriculture et nature
   effectif: 24
@@ -1777,3 +1777,1457 @@ epreuves:
     victoires: 28
     aventuriers: 74
     victoires_par_aventurier: 0.38
+colliers:
+  colliers: 74
+  trouves: 62
+  jamais_trouves: 12
+  saisons_couvertes: 9
+  voix_annulees: 105
+  voix_par_collier_joue: 2.3
+  issues:
+  - issue: annulation_efficace
+    libelle: Joué, et il annule des voix
+    effectif: 26
+    part_totale: 35.1
+    part_des_trouves: 41.9
+  - issue: joue_pour_rien
+    libelle: Joué pour rien
+    effectif: 20
+    part_totale: 27.0
+    part_des_trouves: 32.3
+  - issue: non_decouvert
+    libelle: Jamais trouvé
+    effectif: 12
+    part_totale: 16.2
+    part_des_trouves: null
+  - issue: elimine_avec_collier
+    libelle: Éliminé avec le collier dans le sac
+    effectif: 9
+    part_totale: 12.2
+    part_des_trouves: 14.5
+  - issue: garde_sans_usage
+    libelle: Gardé sans en avoir besoin
+    effectif: 6
+    part_totale: 8.1
+    part_des_trouves: 9.7
+  par_saison:
+  - saison: s20
+    titre: La Guerre des chefs
+    annee: 2019
+    colliers: 5
+    joues: 4
+    voix_annulees: 6
+  - saison: s21
+    titre: Les 4 Terres
+    annee: 2020
+    colliers: 6
+    joues: 5
+    voix_annulees: 16
+  - saison: s24
+    titre: Le Feu sacré
+    annee: 2023
+    colliers: 4
+    joues: 3
+    voix_annulees: 5
+  - saison: s25
+    titre: Les Chasseurs d'immunité
+    annee: 2024
+    colliers: 16
+    joues: 12
+    voix_annulees: 20
+  - saison: s26
+    titre: La Tribu maudite
+    annee: 2024
+    colliers: 9
+    joues: 5
+    voix_annulees: 13
+  - saison: s27
+    titre: La Revanche des 4 Terres
+    annee: 2025
+    colliers: 12
+    joues: 5
+    voix_annulees: 19
+  - saison: s28
+    titre: Les Reliques du destin
+    annee: 2026
+    colliers: 10
+    joues: 7
+    voix_annulees: 18
+  - saison: sp5
+    titre: Le Combat des héros
+    annee: 2018
+    colliers: 5
+    joues: 3
+    voix_annulees: 8
+  - saison: sp6
+    titre: L'Île des héros
+    annee: 2020
+    colliers: 7
+    joues: 2
+    voix_annulees: 0
+indicateurs:
+  seuil_conseils: 4
+  seuil_epreuves: 8
+  mesurables: 211
+  meilleure_justesse:
+  - nom: Patricia Tanguy
+    saison: s01
+    titre: Les Aventuriers de Koh-Lanta
+    annee: 2001
+    speciale: false
+    valeur: 87.5
+    base: 8
+    sort: elimine_conseil
+  - nom: Guénaëlle Biras
+    saison: s01
+    titre: Les Aventuriers de Koh-Lanta
+    annee: 2001
+    speciale: false
+    valeur: 87.5
+    base: 8
+    sort: finaliste
+  - nom: Michèle Valembois
+    saison: s01
+    titre: Les Aventuriers de Koh-Lanta
+    annee: 2001
+    speciale: false
+    valeur: 83.3
+    base: 6
+    sort: elimine_conseil
+  - nom: Guillaume Le Deun
+    saison: s28
+    titre: Les Reliques du destin
+    annee: 2026
+    speciale: false
+    valeur: 83.3
+    base: 6
+    sort: elimine_poteaux
+  - nom: Romain Bissol
+    saison: s01
+    titre: Les Aventuriers de Koh-Lanta
+    annee: 2001
+    speciale: false
+    valeur: 75.0
+    base: 8
+    sort: elimine_conseil
+  - nom: Daniel Duquesnoy
+    saison: s28
+    titre: Les Reliques du destin
+    annee: 2026
+    speciale: false
+    valeur: 75.0
+    base: 8
+    sort: elimine_conseil
+  - nom: Lola Krast
+    saison: s28
+    titre: Les Reliques du destin
+    annee: 2026
+    speciale: false
+    valeur: 66.7
+    base: 6
+    sort: elimine_conseil
+  - nom: Cindy Sulpice-Gonzalez
+    saison: s28
+    titre: Les Reliques du destin
+    annee: 2026
+    speciale: false
+    valeur: 66.7
+    base: 6
+    sort: elimine_conseil
+  - nom: Gilles Nicolet
+    saison: s01
+    titre: Les Aventuriers de Koh-Lanta
+    annee: 2001
+    speciale: false
+    valeur: 62.5
+    base: 8
+    sort: vainqueur
+  - nom: Hugo Van Aertryck
+    saison: s28
+    titre: Les Reliques du destin
+    annee: 2026
+    speciale: false
+    valeur: 62.5
+    base: 8
+    sort: elimine_orientation
+  - nom: Caroline Ledos
+    saison: s28
+    titre: Les Reliques du destin
+    annee: 2026
+    speciale: false
+    valeur: 62.5
+    base: 8
+    sort: elimine_orientation
+  - nom: Clarisse Cresseveur
+    saison: s28
+    titre: Les Reliques du destin
+    annee: 2026
+    speciale: false
+    valeur: 62.5
+    base: 8
+    sort: finaliste
+  plus_menaces:
+  - nom: Stéphanie Tribot
+    saison: s23
+    titre: Le Totem maudit
+    annee: 2022
+    speciale: false
+    valeur: 4.5
+    base: 6
+    sort: elimine_conseil
+  - nom: Sarah Aboudeine
+    saison: s26
+    titre: La Tribu maudite
+    annee: 2024
+    speciale: false
+    valeur: 2.33
+    base: 9
+    sort: elimine_conseil
+  - nom: Mélissa Pierru
+    saison: s26
+    titre: La Tribu maudite
+    annee: 2024
+    speciale: false
+    valeur: 2.17
+    base: 6
+    sort: elimine_conseil
+  - nom: Fabrice Giordano
+    saison: s26
+    titre: La Tribu maudite
+    annee: 2024
+    speciale: false
+    valeur: 1.88
+    base: 8
+    sort: elimine_conseil
+  - nom: Andréa Zogron
+    saison: s27
+    titre: La Revanche des 4 Terres
+    annee: 2025
+    speciale: false
+    valeur: 1.88
+    base: 8
+    sort: elimine_conseil
+  - nom: Michèle Valembois
+    saison: s01
+    titre: Les Aventuriers de Koh-Lanta
+    annee: 2001
+    speciale: false
+    valeur: 1.8
+    base: 10
+    sort: elimine_conseil
+  - nom: Ulrich Bandeira
+    saison: s28
+    titre: Les Reliques du destin
+    annee: 2026
+    speciale: false
+    valeur: 1.75
+    base: 8
+    sort: elimine_conseil
+  - nom: Jonathan Guez
+    saison: s28
+    titre: Les Reliques du destin
+    annee: 2026
+    speciale: false
+    valeur: 1.71
+    base: 7
+    sort: elimine_ambassadeurs
+  - nom: Setha El Hajjami
+    saison: s23
+    titre: Le Totem maudit
+    annee: 2022
+    speciale: false
+    valeur: 1.57
+    base: 7
+    sort: elimine_ambassadeurs
+  - nom: Naïs Napoletano
+    saison: s27
+    titre: La Revanche des 4 Terres
+    annee: 2025
+    speciale: false
+    valeur: 1.54
+    base: 13
+    sort: elimine_conseil
+  - nom: Noémie Bessec
+    saison: s27
+    titre: La Revanche des 4 Terres
+    annee: 2025
+    speciale: false
+    valeur: 1.43
+    base: 14
+    sort: elimine_conseil
+  - nom: Adrien Bernaert
+    saison: s27
+    titre: La Revanche des 4 Terres
+    annee: 2025
+    speciale: false
+    valeur: 1.4
+    base: 10
+    sort: elimine_conseil
+  meilleure_evasion:
+  - nom: Romain Bissol
+    saison: s01
+    titre: Les Aventuriers de Koh-Lanta
+    annee: 2001
+    speciale: false
+    valeur: 100.0
+    base: 3
+    sort: elimine_conseil
+  - nom: Michèle Valembois
+    saison: s01
+    titre: Les Aventuriers de Koh-Lanta
+    annee: 2001
+    speciale: false
+    valeur: 75.0
+    base: 4
+    sort: elimine_conseil
+  - nom: Sandra Acabado
+    saison: s01
+    titre: Les Aventuriers de Koh-Lanta
+    annee: 2001
+    speciale: false
+    valeur: 66.7
+    base: 3
+    sort: elimine_conseil
+  - nom: Françoise Avignon
+    saison: s01
+    titre: Les Aventuriers de Koh-Lanta
+    annee: 2001
+    speciale: false
+    valeur: 66.7
+    base: 3
+    sort: elimine_conseil
+  - nom: Jonathan Guez
+    saison: s28
+    titre: Les Reliques du destin
+    annee: 2026
+    speciale: false
+    valeur: 66.7
+    base: 3
+    sort: elimine_ambassadeurs
+  - nom: Lionel Dubouchet
+    saison: s28
+    titre: Les Reliques du destin
+    annee: 2026
+    speciale: false
+    valeur: 33.3
+    base: 3
+    sort: elimine_conseil
+  - nom: Isabelle Vial
+    saison: s02
+    titre: Nicoya
+    annee: 2002
+    speciale: false
+    valeur: 0.0
+    base: 4
+    sort: elimine_conseil
+  - nom: Bernard Lenoir
+    saison: s02
+    titre: Nicoya
+    annee: 2002
+    speciale: false
+    valeur: 0.0
+    base: 3
+    sort: elimine_poteaux
+  - nom: Moundir Zoughari
+    saison: s03
+    titre: Bocas del Toro
+    annee: 2003
+    speciale: false
+    valeur: 0.0
+    base: 4
+    sort: elimine_conseil
+  - nom: Antoine Sanchez
+    saison: s03
+    titre: Bocas del Toro
+    annee: 2003
+    speciale: false
+    valeur: 0.0
+    base: 3
+    sort: elimine_orientation
+  - nom: Catherine Ehret-Mader
+    saison: s04
+    titre: Panama
+    annee: 2004
+    speciale: false
+    valeur: 0.0
+    base: 4
+    sort: elimine_conseil
+  - nom: Sophie Eeckhout
+    saison: s04
+    titre: Panama
+    annee: 2004
+    speciale: false
+    valeur: 0.0
+    base: 3
+    sort: elimine_conseil
+  fantomes:
+  - nom: Claude Dartois
+    saison: sp7
+    titre: La Légende
+    annee: 2021
+    conseils: 21
+    sort: vainqueur
+    survie: 100.0
+  - nom: Cindy Poumeyrol
+    saison: s20
+    titre: La Guerre des chefs
+    annee: 2019
+    conseils: 19
+    sort: finaliste
+    survie: 100.0
+  - nom: Loïc Riowal
+    saison: s21
+    titre: Les 4 Terres
+    annee: 2020
+    conseils: 18
+    sort: elimine_poteaux
+    survie: 100.0
+  - nom: Thibault Bélanger
+    saison: s26
+    titre: La Tribu maudite
+    annee: 2024
+    conseils: 18
+    sort: vainqueur
+    survie: 100.0
+  - nom: Clémence Castel
+    saison: s05
+    titre: Pacifique
+    annee: 2005
+    conseils: 16
+    sort: vainqueur
+    survie: 100.0
+  - nom: Jade Handi
+    saison: s07
+    titre: Palawan
+    annee: 2007
+    conseils: 15
+    sort: vainqueur
+    survie: 100.0
+  - nom: Christelle Gauzet
+    saison: s08
+    titre: Caramoan
+    annee: 2008
+    conseils: 15
+    sort: vainqueur
+    survie: 100.0
+  - nom: Gérard Urdampilleta
+    saison: s11
+    titre: Raja Ampat
+    annee: 2011
+    conseils: 15
+    sort: vainqueur
+    survie: 100.0
+  - nom: François Descamp
+    saison: s23
+    titre: Le Totem maudit
+    annee: 2022
+    conseils: 15
+    sort: vainqueur
+    survie: 100.0
+  - nom: Bastien San Pedro
+    saison: s23
+    titre: Le Totem maudit
+    annee: 2022
+    conseils: 15
+    sort: vainqueur
+    survie: 100.0
+  - nom: Claire Passas
+    saison: s27
+    titre: La Revanche des 4 Terres
+    annee: 2025
+    conseils: 15
+    sort: elimine_orientation
+    survie: 97.5
+  - nom: Loïc Riowal
+    saison: sp7
+    titre: La Légende
+    annee: 2021
+    conseils: 15
+    sort: elimine_conseil
+    survie: 80.0
+  nb_fantomes: 38
+  fantomes_issue:
+  - sort: vainqueur
+    libelle: Vainqueur
+    effectif: 12
+    part_fantomes: 31.6
+    part_ensemble: 5.7
+  - sort: elimine_conseil
+    libelle: Éliminé au conseil
+    effectif: 10
+    part_fantomes: 26.3
+    part_ensemble: 64.0
+  - sort: finaliste
+    libelle: Finaliste
+    effectif: 5
+    part_fantomes: 13.2
+    part_ensemble: 4.9
+  - sort: abandon_medical
+    libelle: Abandon médical
+    effectif: 5
+    part_fantomes: 13.2
+    part_ensemble: 7.7
+  - sort: elimine_ambassadeurs
+    libelle: Éliminé aux ambassadeurs
+    effectif: 2
+    part_fantomes: 5.3
+    part_ensemble: 3.2
+  - sort: abandon_volontaire
+    libelle: Abandon volontaire
+    effectif: 2
+    part_fantomes: 5.3
+    part_ensemble: 2.7
+  - sort: elimine_poteaux
+    libelle: Éliminé aux poteaux
+    effectif: 1
+    part_fantomes: 2.6
+    part_ensemble: 4.8
+  - sort: elimine_orientation
+    libelle: Éliminé à l'orientation
+    effectif: 1
+    part_fantomes: 2.6
+    part_ensemble: 6.7
+  comparables: 627
+  justesse_par_sort:
+    elimine_conseil: 69.2
+  menace_par_sort:
+    elimine_conseil: 0.9
+    finaliste: 0.3
+    vainqueur: 0.1
+    elimine_orientation: 0.5
+  saisons:
+  - id: s01
+    numero: 1
+    titre: Les Aventuriers de Koh-Lanta
+    annee: 2001
+    speciale: false
+    en_cours: false
+    effectif: 16
+    duree_jours: 43
+    age_moyen: 31.3
+    survie_moyenne: 61.5
+    abandons: 0
+    taux_abandon: 0.0
+    conseils: 16
+    conseils_complets: 11
+    tension_conseils: 53.8
+    dispersion_votes: 0.852
+    epreuves: 22
+    epreuves_individuelles: 11
+    domination_epreuves: 0.207
+    meilleur_gagnant: william-lecomte
+    victoires_du_meilleur: 3
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+  - id: s02
+    numero: 2
+    titre: Nicoya
+    annee: 2002
+    speciale: false
+    en_cours: false
+    effectif: 16
+    duree_jours: 40
+    age_moyen: 31.0
+    survie_moyenne: 61.4
+    abandons: 1
+    taux_abandon: 6.2
+    conseils: 17
+    conseils_complets: 12
+    tension_conseils: 42.9
+    dispersion_votes: 0.834
+    epreuves: 25
+    epreuves_individuelles: 13
+    domination_epreuves: 0.141
+    meilleur_gagnant: nicolas-leoni
+    victoires_du_meilleur: 3
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+  - id: s03
+    numero: 3
+    titre: Bocas del Toro
+    annee: 2003
+    speciale: false
+    en_cours: false
+    effectif: 18
+    duree_jours: 40
+    age_moyen: 31.6
+    survie_moyenne: 56.2
+    abandons: 6
+    taux_abandon: 33.3
+    conseils: 21
+    conseils_complets: 9
+    tension_conseils: 46.2
+    dispersion_votes: 0.797
+    epreuves: 0
+    epreuves_individuelles: 0
+    domination_epreuves: null
+    meilleur_gagnant: null
+    victoires_du_meilleur: null
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+  - id: s04
+    numero: 4
+    titre: Panama
+    annee: 2004
+    speciale: false
+    en_cours: false
+    effectif: 16
+    duree_jours: 40
+    age_moyen: 33.7
+    survie_moyenne: 63.8
+    abandons: 2
+    taux_abandon: 12.5
+    conseils: 18
+    conseils_complets: 12
+    tension_conseils: 26.7
+    dispersion_votes: 0.743
+    epreuves: 27
+    epreuves_individuelles: 15
+    domination_epreuves: 0.179
+    meilleur_gagnant: romuald-lafite
+    victoires_du_meilleur: 5
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+  - id: s05
+    numero: 5
+    titre: Pacifique
+    annee: 2005
+    speciale: false
+    en_cours: false
+    effectif: 17
+    duree_jours: 40
+    age_moyen: 32.6
+    survie_moyenne: 59.3
+    abandons: 2
+    taux_abandon: 11.8
+    conseils: 18
+    conseils_complets: 14
+    tension_conseils: 26.7
+    dispersion_votes: 0.729
+    epreuves: 24
+    epreuves_individuelles: 11
+    domination_epreuves: 0.208
+    meilleur_gagnant: mohamed-derradji
+    victoires_du_meilleur: 4
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+  - id: s06
+    numero: 6
+    titre: Vanuatu
+    annee: 2006
+    speciale: false
+    en_cours: false
+    effectif: 16
+    duree_jours: 40
+    age_moyen: 33.2
+    survie_moyenne: 63.9
+    abandons: 3
+    taux_abandon: 18.8
+    conseils: 19
+    conseils_complets: 11
+    tension_conseils: 28.6
+    dispersion_votes: 0.809
+    epreuves: 32
+    epreuves_individuelles: 17
+    domination_epreuves: 0.142
+    meilleur_gagnant: sebastien-roulle
+    victoires_du_meilleur: 5
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+  - id: s07
+    numero: 7
+    titre: Palawan
+    annee: 2007
+    speciale: false
+    en_cours: false
+    effectif: 16
+    duree_jours: 40
+    age_moyen: 32.7
+    survie_moyenne: 63.3
+    abandons: 1
+    taux_abandon: 6.2
+    conseils: 18
+    conseils_complets: 10
+    tension_conseils: 46.2
+    dispersion_votes: 0.776
+    epreuves: 32
+    epreuves_individuelles: 18
+    domination_epreuves: 0.157
+    meilleur_gagnant: jade-handi
+    victoires_du_meilleur: 6
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+  - id: s08
+    numero: 8
+    titre: Caramoan
+    annee: 2008
+    speciale: false
+    en_cours: false
+    effectif: 17
+    duree_jours: 40
+    age_moyen: 32.6
+    survie_moyenne: 58.5
+    abandons: 3
+    taux_abandon: 17.6
+    conseils: 19
+    conseils_complets: 12
+    tension_conseils: 28.6
+    dispersion_votes: 0.751
+    epreuves: 31
+    epreuves_individuelles: 19
+    domination_epreuves: 0.18
+    meilleur_gagnant: bertrand-bolle
+    victoires_du_meilleur: 8
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+  - id: s09
+    numero: 9
+    titre: Palau
+    annee: 2009
+    speciale: false
+    en_cours: false
+    effectif: 18
+    duree_jours: 39
+    age_moyen: 34.7
+    survie_moyenne: 56.1
+    abandons: 4
+    taux_abandon: 22.2
+    conseils: 23
+    conseils_complets: 11
+    tension_conseils: 69.2
+    dispersion_votes: 0.919
+    epreuves: 0
+    epreuves_individuelles: 0
+    domination_epreuves: null
+    meilleur_gagnant: null
+    victoires_du_meilleur: null
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+  - id: s10
+    numero: 10
+    titre: Viêtnam
+    annee: 2010
+    speciale: false
+    en_cours: false
+    effectif: 18
+    duree_jours: 40
+    age_moyen: 33.3
+    survie_moyenne: 62.2
+    abandons: 3
+    taux_abandon: 16.7
+    conseils: 21
+    conseils_complets: 10
+    tension_conseils: 46.2
+    dispersion_votes: 0.764
+    epreuves: 28
+    epreuves_individuelles: 13
+    domination_epreuves: 0.396
+    meilleur_gagnant: claude-dartois
+    victoires_du_meilleur: 7
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+  - id: s11
+    numero: 11
+    titre: Raja Ampat
+    annee: 2011
+    speciale: false
+    en_cours: false
+    effectif: 20
+    duree_jours: 41
+    age_moyen: 32.9
+    survie_moyenne: 58.2
+    abandons: 3
+    taux_abandon: 15.0
+    conseils: 21
+    conseils_complets: 12
+    tension_conseils: 66.7
+    dispersion_votes: 0.862
+    epreuves: 28
+    epreuves_individuelles: 15
+    domination_epreuves: 0.252
+    meilleur_gagnant: teheiura-teahui
+    victoires_du_meilleur: 7
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+    - collier_immunite
+  - id: s12
+    numero: 12
+    titre: Malaisie
+    annee: 2012
+    speciale: false
+    en_cours: false
+    effectif: 20
+    duree_jours: 42
+    age_moyen: 35.6
+    survie_moyenne: 64.2
+    abandons: 2
+    taux_abandon: 10.0
+    conseils: 22
+    conseils_complets: 12
+    tension_conseils: 53.3
+    dispersion_votes: 0.847
+    epreuves: 0
+    epreuves_individuelles: 0
+    domination_epreuves: null
+    meilleur_gagnant: null
+    victoires_du_meilleur: null
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+    - collier_immunite
+    - destins_lies
+    - ile_speciale
+  - id: s14
+    numero: 14
+    titre: Johor
+    annee: 2015
+    speciale: false
+    en_cours: false
+    effectif: 20
+    duree_jours: 40
+    age_moyen: 34.0
+    survie_moyenne: 60.1
+    abandons: 4
+    taux_abandon: 20.0
+    conseils: 23
+    conseils_complets: 8
+    tension_conseils: 42.9
+    dispersion_votes: 0.781
+    epreuves: 0
+    epreuves_individuelles: 0
+    domination_epreuves: null
+    meilleur_gagnant: null
+    victoires_du_meilleur: null
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+    - collier_immunite
+    - destins_lies
+  - id: s15
+    numero: 15
+    titre: Thaïlande
+    annee: 2016
+    speciale: false
+    en_cours: false
+    effectif: 21
+    duree_jours: 40
+    age_moyen: 35.1
+    survie_moyenne: 56.5
+    abandons: 2
+    taux_abandon: 9.5
+    conseils: 21
+    conseils_complets: 12
+    tension_conseils: 33.3
+    dispersion_votes: 0.759
+    epreuves: 28
+    epreuves_individuelles: 14
+    domination_epreuves: 0.17
+    meilleur_gagnant: nicolas-rouye
+    victoires_du_meilleur: 5
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+    - collier_immunite
+  - id: s16
+    numero: 16
+    titre: L'Île au trésor
+    annee: 2016
+    speciale: false
+    en_cours: false
+    effectif: 20
+    duree_jours: 42
+    age_moyen: 35.5
+    survie_moyenne: 63.2
+    abandons: 0
+    taux_abandon: 0.0
+    conseils: 21
+    conseils_complets: 14
+    tension_conseils: 53.3
+    dispersion_votes: 0.726
+    epreuves: 26
+    epreuves_individuelles: 13
+    domination_epreuves: 0.142
+    meilleur_gagnant: candice-boisson
+    victoires_du_meilleur: 4
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+    - collier_immunite
+    - destins_lies
+  - id: s17
+    numero: 17
+    titre: Cambodge
+    annee: 2017
+    speciale: false
+    en_cours: false
+    effectif: 21
+    duree_jours: 40
+    age_moyen: 33.6
+    survie_moyenne: 61.3
+    abandons: 3
+    taux_abandon: 14.3
+    conseils: 23
+    conseils_complets: 8
+    tension_conseils: 50.0
+    dispersion_votes: 0.803
+    epreuves: 42
+    epreuves_individuelles: 14
+    domination_epreuves: 0.198
+    meilleur_gagnant: sebastien-gottiniaux
+    victoires_du_meilleur: 5
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+    - collier_immunite
+  - id: s18
+    numero: 18
+    titre: Fidji
+    annee: 2017
+    speciale: false
+    en_cours: false
+    effectif: 21
+    duree_jours: 41
+    age_moyen: 31.6
+    survie_moyenne: 59.1
+    abandons: 3
+    taux_abandon: 14.3
+    conseils: 23
+    conseils_complets: 6
+    tension_conseils: 53.3
+    dispersion_votes: 0.879
+    epreuves: 26
+    epreuves_individuelles: 10
+    domination_epreuves: 0.112
+    meilleur_gagnant: andre-deleplace
+    victoires_du_meilleur: 2
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+    - collier_immunite
+  - id: s20
+    numero: 20
+    titre: La Guerre des chefs
+    annee: 2019
+    speciale: false
+    en_cours: false
+    effectif: 21
+    duree_jours: 39
+    age_moyen: 33.8
+    survie_moyenne: 64.7
+    abandons: 2
+    taux_abandon: 9.5
+    conseils: 23
+    conseils_complets: 7
+    tension_conseils: 57.1
+    dispersion_votes: 0.874
+    epreuves: 38
+    epreuves_individuelles: 16
+    domination_epreuves: 0.14
+    meilleur_gagnant: maxime-berthon
+    victoires_du_meilleur: 6
+    colliers: 5
+    colliers_joues: 4
+    voix_annulees: 6
+    mecaniques:
+    - ambassadeurs
+    - collier_immunite
+    - capitaines
+  - id: s21
+    numero: 21
+    titre: Les 4 Terres
+    annee: 2020
+    speciale: false
+    en_cours: false
+    effectif: 24
+    duree_jours: 40
+    age_moyen: 33.4
+    survie_moyenne: 62.0
+    abandons: 2
+    taux_abandon: 8.3
+    conseils: 26
+    conseils_complets: 0
+    tension_conseils: 55.6
+    dispersion_votes: null
+    epreuves: 37
+    epreuves_individuelles: 13
+    domination_epreuves: 0.145
+    meilleur_gagnant: lola-besse
+    victoires_du_meilleur: 5
+    colliers: 6
+    colliers_joues: 5
+    voix_annulees: 16
+    mecaniques:
+    - ambassadeurs
+    - collier_immunite
+    - destins_lies
+    - quatre_terres
+  - id: s22
+    numero: 22
+    titre: Les Armes secrètes
+    annee: 2021
+    speciale: false
+    en_cours: false
+    effectif: 21
+    duree_jours: 36
+    age_moyen: 33.6
+    survie_moyenne: 63.5
+    abandons: 1
+    taux_abandon: 4.8
+    conseils: 22
+    conseils_complets: 5
+    tension_conseils: 57.1
+    dispersion_votes: 0.893
+    epreuves: 23
+    epreuves_individuelles: 10
+    domination_epreuves: 0.148
+    meilleur_gagnant: maxine-eouzan
+    victoires_du_meilleur: 3
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+    - collier_immunite
+    - armes_secretes
+  - id: s23
+    numero: 23
+    titre: Le Totem maudit
+    annee: 2022
+    speciale: false
+    en_cours: false
+    effectif: 24
+    duree_jours: 39
+    age_moyen: 34.0
+    survie_moyenne: 61.0
+    abandons: 2
+    taux_abandon: 8.3
+    conseils: 25
+    conseils_complets: 0
+    tension_conseils: 80.0
+    dispersion_votes: null
+    epreuves: 32
+    epreuves_individuelles: 17
+    domination_epreuves: 0.127
+    meilleur_gagnant: francois-descamp
+    victoires_du_meilleur: 6
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+    - collier_immunite
+    - destins_lies
+    - totem_maudit
+  - id: s24
+    numero: 24
+    titre: Le Feu sacré
+    annee: 2023
+    speciale: false
+    en_cours: false
+    effectif: 20
+    duree_jours: 40
+    age_moyen: 35.2
+    survie_moyenne: 60.2
+    abandons: 3
+    taux_abandon: 15.0
+    conseils: 24
+    conseils_complets: 4
+    tension_conseils: 43.8
+    dispersion_votes: 0.843
+    epreuves: 30
+    epreuves_individuelles: 16
+    domination_epreuves: 0.16
+    meilleur_gagnant: nicolas-pretot
+    victoires_du_meilleur: 4
+    colliers: 4
+    colliers_joues: 3
+    voix_annulees: 5
+    mecaniques:
+    - ambassadeurs
+    - collier_immunite
+    - destins_lies
+  - id: s25
+    numero: 25
+    titre: Les Chasseurs d'immunité
+    annee: 2024
+    speciale: false
+    en_cours: false
+    effectif: 22
+    duree_jours: 38
+    age_moyen: 35.1
+    survie_moyenne: 64.1
+    abandons: 1
+    taux_abandon: 4.5
+    conseils: 23
+    conseils_complets: 7
+    tension_conseils: 50.0
+    dispersion_votes: 0.608
+    epreuves: 28
+    epreuves_individuelles: 13
+    domination_epreuves: 0.224
+    meilleur_gagnant: jean-belmonte
+    victoires_du_meilleur: 5
+    colliers: 16
+    colliers_joues: 12
+    voix_annulees: 20
+    mecaniques:
+    - ambassadeurs
+    - collier_immunite
+    - destins_lies
+    - chasseurs_immunite
+  - id: s26
+    numero: 26
+    titre: La Tribu maudite
+    annee: 2024
+    speciale: false
+    en_cours: false
+    effectif: 24
+    duree_jours: 40
+    age_moyen: 34.1
+    survie_moyenne: 61.1
+    abandons: 1
+    taux_abandon: 4.2
+    conseils: 23
+    conseils_complets: 2
+    tension_conseils: 36.4
+    dispersion_votes: 0.891
+    epreuves: 27
+    epreuves_individuelles: 13
+    domination_epreuves: 0.172
+    meilleur_gagnant: ilyesse-benyoub
+    victoires_du_meilleur: 4
+    colliers: 9
+    colliers_joues: 5
+    voix_annulees: 13
+    mecaniques:
+    - ambassadeurs
+    - collier_immunite
+    - capitaines
+    - tribu_maudite
+  - id: s27
+    numero: 27
+    titre: La Revanche des 4 Terres
+    annee: 2025
+    speciale: false
+    en_cours: false
+    effectif: 24
+    duree_jours: 40
+    age_moyen: 34.4
+    survie_moyenne: 62.0
+    abandons: 3
+    taux_abandon: 12.5
+    conseils: 26
+    conseils_complets: 6
+    tension_conseils: 28.6
+    dispersion_votes: 0.695
+    epreuves: 32
+    epreuves_individuelles: 0
+    domination_epreuves: null
+    meilleur_gagnant: null
+    victoires_du_meilleur: null
+    colliers: 12
+    colliers_joues: 5
+    voix_annulees: 19
+    mecaniques:
+    - ambassadeurs
+    - collier_immunite
+    - quatre_terres
+  - id: s28
+    numero: 28
+    titre: Les Reliques du destin
+    annee: 2026
+    speciale: false
+    en_cours: false
+    effectif: 20
+    duree_jours: 39
+    age_moyen: 35.0
+    survie_moyenne: 65.5
+    abandons: 0
+    taux_abandon: 0.0
+    conseils: 22
+    conseils_complets: 11
+    tension_conseils: 46.2
+    dispersion_votes: 0.803
+    epreuves: 34
+    epreuves_individuelles: 18
+    domination_epreuves: 0.138
+    meilleur_gagnant: cynthia-combes
+    victoires_du_meilleur: 5
+    colliers: 10
+    colliers_joues: 7
+    voix_annulees: 18
+    mecaniques:
+    - ambassadeurs
+    - collier_immunite
+    - antre_du_destin
+  - id: sp1
+    numero: null
+    titre: Le Retour des héros
+    annee: 2009
+    speciale: true
+    en_cours: false
+    effectif: 14
+    duree_jours: 21
+    age_moyen: 36.5
+    survie_moyenne: 59.9
+    abandons: 0
+    taux_abandon: 0.0
+    conseils: 15
+    conseils_complets: 8
+    tension_conseils: 50.0
+    dispersion_votes: 0.831
+    epreuves: 15
+    epreuves_individuelles: 9
+    domination_epreuves: 0.174
+    meilleur_gagnant: francois-david-cardonnel
+    victoires_du_meilleur: 3
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+    - heros
+  - id: sp2
+    numero: null
+    titre: Le Choc des héros
+    annee: 2010
+    speciale: true
+    en_cours: false
+    effectif: 14
+    duree_jours: 21
+    age_moyen: 33.3
+    survie_moyenne: 66.0
+    abandons: 0
+    taux_abandon: 0.0
+    conseils: 14
+    conseils_complets: 8
+    tension_conseils: 40.0
+    dispersion_votes: 0.616
+    epreuves: 0
+    epreuves_individuelles: 0
+    domination_epreuves: null
+    meilleur_gagnant: null
+    victoires_du_meilleur: null
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+    - heros
+  - id: sp3
+    numero: null
+    titre: La Revanche des héros
+    annee: 2012
+    speciale: true
+    en_cours: false
+    effectif: 16
+    duree_jours: 23
+    age_moyen: 37.1
+    survie_moyenne: 66.3
+    abandons: 0
+    taux_abandon: 0.0
+    conseils: 16
+    conseils_complets: 5
+    tension_conseils: 50.0
+    dispersion_votes: 0.919
+    epreuves: 15
+    epreuves_individuelles: 9
+    domination_epreuves: 0.24
+    meilleur_gagnant: bertrand-bolle
+    victoires_du_meilleur: 3
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+    - heros
+  - id: sp4
+    numero: null
+    titre: La Nouvelle Édition
+    annee: 2014
+    speciale: true
+    en_cours: false
+    effectif: 13
+    duree_jours: 23
+    age_moyen: 36.8
+    survie_moyenne: 69.6
+    abandons: 2
+    taux_abandon: 15.4
+    conseils: 16
+    conseils_complets: 8
+    tension_conseils: 20.0
+    dispersion_votes: 0.676
+    epreuves: 15
+    epreuves_individuelles: 7
+    domination_epreuves: 0.429
+    meilleur_gagnant: laurent-maistret
+    victoires_du_meilleur: 4
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+    - collier_immunite
+  - id: sp5
+    numero: null
+    titre: Le Combat des héros
+    annee: 2018
+    speciale: true
+    en_cours: false
+    effectif: 18
+    duree_jours: 32
+    age_moyen: 35.1
+    survie_moyenne: 57.8
+    abandons: 1
+    taux_abandon: 5.6
+    conseils: 20
+    conseils_complets: 7
+    tension_conseils: 53.8
+    dispersion_votes: 0.724
+    epreuves: 20
+    epreuves_individuelles: 9
+    domination_epreuves: 0.14
+    meilleur_gagnant: nathalie-ensargueix
+    victoires_du_meilleur: 2
+    colliers: 5
+    colliers_joues: 3
+    voix_annulees: 8
+    mecaniques:
+    - ambassadeurs
+    - collier_immunite
+    - destins_lies
+    - heros
+    - ile_speciale
+  - id: sp6
+    numero: null
+    titre: L'Île des héros
+    annee: 2020
+    speciale: true
+    en_cours: false
+    effectif: 20
+    duree_jours: 32
+    age_moyen: 36.9
+    survie_moyenne: 60.8
+    abandons: 4
+    taux_abandon: 20.0
+    conseils: 22
+    conseils_complets: 4
+    tension_conseils: 30.0
+    dispersion_votes: 0.716
+    epreuves: 24
+    epreuves_individuelles: 15
+    domination_epreuves: 0.246
+    meilleur_gagnant: claude-dartois
+    victoires_du_meilleur: 5
+    colliers: 7
+    colliers_joues: 2
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+    - collier_immunite
+    - destins_lies
+    - heros
+    - ile_speciale
+  - id: sp7
+    numero: null
+    titre: La Légende
+    annee: 2021
+    speciale: true
+    en_cours: false
+    effectif: 21
+    duree_jours: 35
+    age_moyen: 34.5
+    survie_moyenne: 56.7
+    abandons: 1
+    taux_abandon: 4.8
+    conseils: 26
+    conseils_complets: 1
+    tension_conseils: 50.0
+    dispersion_votes: 0.65
+    epreuves: 23
+    epreuves_individuelles: 15
+    domination_epreuves: 0.136
+    meilleur_gagnant: claude-dartois
+    victoires_du_meilleur: 4
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - ambassadeurs
+    - collier_immunite
+    - heros
+    - ile_speciale
+    - separation_par_sexe
+  - id: sp8
+    numero: null
+    titre: All Stars
+    annee: 2026
+    speciale: true
+    en_cours: true
+    effectif: 18
+    duree_jours: null
+    age_moyen: 37.0
+    survie_moyenne: null
+    abandons: 0
+    taux_abandon: 0.0
+    conseils: 2
+    conseils_complets: 0
+    tension_conseils: null
+    dispersion_votes: null
+    epreuves: 2
+    epreuves_individuelles: 2
+    domination_epreuves: 0.25
+    meilleur_gagnant: clementine-jullien
+    victoires_du_meilleur: 1
+    colliers: 0
+    colliers_joues: 0
+    voix_annulees: 0
+    mecaniques:
+    - collier_immunite
+    - heros
+    - binomes

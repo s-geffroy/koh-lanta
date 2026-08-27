@@ -86,6 +86,80 @@ moyennes d'âge vers le haut sans rien dire du casting ordinaire.
 </table>
 </div>
 
+## Les saisons comparées
+
+Au-delà du casting, quatre indicateurs disent ce qu'a été chaque saison.
+
+### Un aventurier a-t-il écrasé les épreuves ?
+
+{% include graphiques/saisons-domination.svg %}
+
+<p class="legende-figure">Indice de concentration des victoires individuelles.
+Proche de zéro, les victoires ont circulé ; proche de un, une seule personne a
+tout raflé.</p>
+
+Le **Viêtnam (2010)** détient le record des saisons classiques : Claude Dartois
+y remporte sept épreuves individuelles à lui seul. À l'opposé, **Fidji (2017)**
+est la saison la plus partagée du programme.
+
+### Le camp vote-t-il d'un bloc ?
+
+{% include graphiques/saisons-dispersion.svg %}
+
+<p class="legende-figure">Dispersion moyenne des bulletins au conseil. Zéro :
+tout le monde écrit le même nom. Un : chacun vote dans son coin, plus personne
+ne contrôle rien.</p>
+
+### Des conseils serrés ou écrasants ?
+
+{% include graphiques/saisons-tension.svg %}
+
+<p class="legende-figure">Part des conseils où l'élimination s'est jouée à une
+voix près.</p>
+
+### L'abandon recule
+
+{% include graphiques/saisons-abandon.svg %}
+
+<p class="legende-figure">Part des aventuriers ayant quitté le jeu d'eux-mêmes
+ou sur décision médicale.</p>
+
+Deux saisons n'ont connu **aucun abandon** : *L'Île au trésor* (2016) et *Les
+Reliques du destin* (2026). À l'autre bout, *Palau* (2009) en a perdu plus d'un
+sur cinq.
+
+### Le tableau complet
+
+<div class="tableau-large">
+<table>
+<thead><tr>
+  <th class="nombre">N°</th><th>Saison</th><th class="nombre">Survie moyenne</th>
+  <th class="nombre">Abandons</th><th class="nombre">Conseils</th>
+  <th class="nombre">Conseils serrés</th><th class="nombre">Dispersion</th>
+  <th class="nombre">Domination</th><th class="nombre">Colliers</th>
+</tr></thead>
+<tbody>
+{% for x in site.data.stats.indicateurs.saisons %}{% unless x.speciale or x.en_cours %}
+<tr>
+  <td class="nombre">{{ x.numero }}</td>
+  <td>{{ x.titre }} <small>({{ x.annee }})</small></td>
+  <td class="nombre">{{ x.survie_moyenne }} %</td>
+  <td class="nombre">{{ x.taux_abandon }} %</td>
+  <td class="nombre">{{ x.conseils }}</td>
+  <td class="nombre">{% if x.tension_conseils %}{{ x.tension_conseils }} %{% else %}—{% endif %}</td>
+  <td class="nombre">{% if x.dispersion_votes %}{{ x.dispersion_votes }}{% else %}—{% endif %}</td>
+  <td class="nombre">{% if x.domination_epreuves %}{{ x.domination_epreuves }}{% else %}—{% endif %}</td>
+  <td class="nombre">{{ x.colliers }}</td>
+</tr>
+{% endunless %}{% endfor %}
+</tbody>
+</table>
+</div>
+
+<p class="note">Un tiret signale une saison dont les sources ne permettent pas
+de calculer l'indicateur : pas de bilan d'épreuves, ou trop peu de conseils au
+dépouillement complet.</p>
+
 ## Composition du casting
 
 {% include graphiques/saisons-femmes.svg %}

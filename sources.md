@@ -90,6 +90,15 @@ Le jeu de données n'est pas complet, et le dire fait partie du travail.
   colonnes et listent les qualifiés plutôt que le vainqueur. Enfin, la nature
   des épreuves — endurance, équilibre, précision — n'est nulle part donnée de
   façon exploitable.
+- **Les colliers d'immunité ne sont détaillés que sur
+  {{ site.data.stats.colliers.saisons_couvertes }} saisons.** Les autres les
+  mentionnent sans donner leur destin. Et seuls les *colliers* sont suivis :
+  armes secrètes, totem maudit et talisman du feu sacré sont des mécaniques
+  distinctes, absentes de ces comptes.
+- **La justesse de vote repose sur une base étroite.** Elle exige un conseil au
+  dépouillement complet <em>et</em> un éliminé rattaché : quelques dizaines de
+  conseils, pas les {{ site.data.stats.conseils.conseils }}. L'indicateur est
+  publié avec sa base, et penche vers les saisons les mieux documentées.
 - **La saison en cours** au moment de la constitution des données n'a pas de
   vainqueur ni de jours de sortie complets : elle est exclue de tous les calculs.
 

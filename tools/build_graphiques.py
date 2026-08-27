@@ -10,8 +10,8 @@ import yaml
 
 RACINE = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 sys.path.insert(0, os.path.join(RACINE, "tools"))
-from graphiques import (barres_horizontales, colonnes, courbes, ecrire,  # noqa: E402
-                        SERIES, TRIBUS)
+from graphiques import (barres_horizontales, barres_groupees, colonnes,  # noqa: E402
+                        courbes, ecrire, SERIES, TRIBUS)
 
 NOM_COULEUR = {"jaune": "Jaune", "rouge": "Rouge", "bleu": "Bleu", "vert": "Vert",
                "orange": "Orange", "violet": "Violet", "noir": "Noire", "blanc": "Blanche"}
@@ -252,6 +252,102 @@ def main():
             titre="Victoires d'épreuves selon le sexe",
             description="Nombre moyen d'épreuves individuelles remportées par aventurier.",
             marge_gauche=110))
+    # --- colliers ---------------------------------------------------------
+    co = stats.get("colliers") or {}
+    if co:
+        ecrire("colliers-issues.svg", barres_horizontales(
+            [{"libelle": i["libelle"], "valeur": i["part_totale"],
+              "detail": f'{i["libelle"]} : {i["effectif"]} colliers sur '
+                        f'{co["colliers"]}, soit {i["part_totale"]} %'}
+             for i in co["issues"]],
+            titre="Le destin des colliers d'immunité",
+            description="Ce que devient chaque collier caché dans le jeu.",
+            unite=" %", couleur=SERIES[3], marge_gauche=250))
+
+        ecrire("colliers-saison.svg", colonnes(
+            [{"libelle": str(x["annee"]), "valeur": x["colliers"],
+              "detail": f'{x["titre"]} ({x["annee"]}) : {x["colliers"]} colliers, '
+                        f'{x["joues"]} joués, {x["voix_annulees"]} voix annulées'}
+             for x in co["par_saison"]],
+            titre="Nombre de colliers par saison",
+            description="Colliers cachés dans le jeu, saison par saison.",
+            couleur=SERIES[3], hauteur=280))
+
+    # --- jeu social -------------------------------------------------------
+    ind = stats.get("indicateurs") or {}
+    if ind:
+        if ind.get("fantomes_issue"):
+            ecrire("fantomes-issue.svg", barres_groupees(
+                [{"libelle": x["libelle"],
+                  "valeurs": [x["part_fantomes"], x["part_ensemble"]],
+                  "details": [f'{x["effectif"]} des {ind["nb_fantomes"]} fantômes, '
+                              f'soit {x["part_fantomes"]} %',
+                              f'{x["part_ensemble"]} % de l\'ensemble des participations']}
+                 for x in ind["fantomes_issue"]],
+                [{"nom": "Les « fantômes »", "couleur": SERIES[0]},
+                 {"nom": "Tous les aventuriers", "couleur": SERIES[1]}],
+                titre="Ce que devient un aventurier que personne ne vise",
+                description="Sort final des aventuriers n'ayant reçu aucune voix, "
+                            "comparé à l'ensemble.",
+                unite=" %", marge_gauche=210))
+
+        if ind.get("menace_par_sort"):
+            ordre = ["elimine_conseil", "elimine_orientation", "elimine_poteaux",
+                     "finaliste", "vainqueur"]
+            lib = {"elimine_conseil": "Éliminé au conseil",
+                   "elimine_orientation": "Éliminé à l'orientation",
+                   "elimine_poteaux": "Éliminé aux poteaux",
+                   "finaliste": "Finaliste", "vainqueur": "Vainqueur"}
+            ecrire("menace-sort.svg", barres_horizontales(
+                [{"libelle": lib[k], "valeur": ind["menace_par_sort"][k],
+                  "detail": f'{lib[k]} : {ind["menace_par_sort"][k]} voix reçues '
+                            f'par conseil en moyenne'}
+                 for k in ordre if k in ind["menace_par_sort"]],
+                titre="Être visé, et finir la saison",
+                description="Nombre moyen de voix reçues par conseil, selon le sort final.",
+                couleur=SERIES[7], marge_gauche=210))
+
+        # --- indicateurs par saison
+        sa = [x for x in ind.get("saisons", [])
+              if not x["speciale"] and not x["en_cours"]]
+        ecrire("saisons-domination.svg", colonnes(
+            [{"libelle": str(x["numero"]), "valeur": x["domination_epreuves"],
+              "detail": f'{x["titre"]} ({x["annee"]}) : indice {x["domination_epreuves"]}, '
+                        f'meilleur total {x["victoires_du_meilleur"]} victoires'}
+             for x in sa if x["domination_epreuves"]],
+            titre="Un aventurier a-t-il écrasé les épreuves ?",
+            description="Indice de concentration des victoires individuelles. "
+                        "Plus il est haut, plus un seul aventurier a tout raflé.",
+            couleur=SERIES[2], largeur=760, hauteur=300, etiquettes_valeurs=False))
+
+        ecrire("saisons-dispersion.svg", colonnes(
+            [{"libelle": str(x["numero"]), "valeur": x["dispersion_votes"],
+              "detail": f'{x["titre"]} ({x["annee"]}) : dispersion {x["dispersion_votes"]} '
+                        f'(0 = le camp vote d\'un bloc, 1 = chacun vote seul)'}
+             for x in sa if x["dispersion_votes"]],
+            titre="Le camp vote-t-il d'un bloc ?",
+            description="Dispersion moyenne des bulletins au conseil, par saison.",
+            couleur=SERIES[6], largeur=760, hauteur=300, etiquettes_valeurs=False))
+
+        ecrire("saisons-abandon.svg", colonnes(
+            [{"libelle": str(x["numero"]), "valeur": x["taux_abandon"],
+              "detail": f'{x["titre"]} ({x["annee"]}) : {x["abandons"]} abandons '
+                        f'sur {x["effectif"]} aventuriers'}
+             for x in sa],
+            titre="Le taux d'abandon, saison après saison",
+            description="Part des aventuriers ayant abandonné, par saison.",
+            unite=" %", couleur=SERIES[1], largeur=760, hauteur=300,
+            etiquettes_valeurs=False))
+
+        ecrire("saisons-tension.svg", colonnes(
+            [{"libelle": str(x["numero"]), "valeur": x["tension_conseils"],
+              "detail": f'{x["titre"]} ({x["annee"]}) : {x["tension_conseils"]} % '
+                        f'des conseils se jouent à une voix près'}
+             for x in sa if x["tension_conseils"]],
+            titre="Des conseils serrés ou écrasants ?",
+            description="Part des conseils où l'élimination s'est jouée à une voix près.",
+            unite=" %", couleur=SERIES[0], largeur=760, hauteur=300,
+            etiquettes_valeurs=False))
     return 0
 
 

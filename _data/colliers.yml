@@ -1,0 +1,1069 @@
+# ATTENTION : fichier genere. Ne pas editer a la main.
+#
+# Le destin de chaque collier d'immunite : trouve par qui, joue ou non, sur qui,
+# et combien de voix annulees. Produit par
+# tools/extraction/construire_colliers.py.
+#
+# `issue` est DEDUITE : annulation_efficace, joue_pour_rien,
+# elimine_avec_collier, garde_sans_usage, non_decouvert.
+#
+# Cette couche ne couvre QUE les colliers d'immunite. Les autres objets --
+# armes secretes (2021), totem maudit (2022), talisman du feu sacre (2023) --
+# sont des mecaniques distinctes, absentes d'ici.
+#
+#     tools/atelier python3 tools/extraction/construire_colliers.py --ecrire
+#
+- saison: s20
+  localisation: Épreuve d'immunité
+  detenteurs:
+  - libelle: Mohamed
+    id: mohamed-siaaliti
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: joue_pour_rien
+  jour_trouve: 19
+  episode_utilisation: 7
+  votes_annules: 0
+  votes_exprimes: 14
+- saison: s20
+  localisation: Camp des Tabuo
+  detenteurs:
+  - libelle: Victor
+    id: victor
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: null
+  issue: elimine_avec_collier
+  jour_trouve: 11
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: s20
+  localisation: Camp des Tabuo
+  detenteurs:
+  - libelle: Victor
+    id: victor
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: joue_pour_rien
+  jour_trouve: 11
+  episode_utilisation: 13
+  votes_annules: 0
+  votes_exprimes: 7
+- saison: s20
+  localisation: Camp des Kama
+  detenteurs:
+  - libelle: Cyril
+    id: cyril-rouanne
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 18
+  episode_utilisation: 11
+  votes_annules: 6
+  votes_exprimes: 10
+- saison: s20
+  localisation: Camp des Ikalu
+  detenteurs:
+  - libelle: Cindy
+    id: cindy-poumeyrol
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: joue_pour_rien
+  jour_trouve: 8
+  episode_utilisation: 13
+  votes_annules: 0
+  votes_exprimes: 7
+- saison: s21
+  localisation: Camp des Tokalo
+  detenteurs: []
+  detenteurs_suivants: []
+  proteges: []
+  statut: non_decouvert
+  issue: non_decouvert
+  jour_trouve: null
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: s21
+  localisation: Camp des Ceva
+  detenteurs:
+  - libelle: Aubin
+    id: aubin-bligny
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 7
+  episode_utilisation: 4
+  votes_annules: 4
+  votes_exprimes: 5
+- saison: s21
+  localisation: Camp des Vakara
+  detenteurs:
+  - libelle: Estelle
+    id: estelle-fabrice
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 8
+  episode_utilisation: 3
+  votes_annules: 5
+  votes_exprimes: 6
+- saison: s21
+  localisation: Épreuve de confort du
+  detenteurs:
+  - libelle: Alix
+    id: alix-noblat
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 12
+  episode_utilisation: 8
+  votes_annules: 1
+  votes_exprimes: 14
+- saison: s21
+  localisation: Camp des Vualiku
+  detenteurs:
+  - libelle: Lola
+    id: lola-besse
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: joue_pour_rien
+  jour_trouve: 11
+  episode_utilisation: 13
+  votes_annules: 0
+  votes_exprimes: 7
+- saison: s21
+  localisation: Camp de la tribu réunifée
+  detenteurs:
+  - libelle: Lola
+    id: lola-besse
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 26
+  episode_utilisation: 10
+  votes_annules: 6
+  votes_exprimes: 13
+- saison: s24
+  localisation: Camp des Tinago
+  detenteurs:
+  - libelle: Quentin
+    id: quentin
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: joue_pour_rien
+  jour_trouve: 17
+  episode_utilisation: 9
+  votes_annules: 0
+  votes_exprimes: 12
+- saison: s24
+  localisation: Camp des Paniman
+  detenteurs: []
+  detenteurs_suivants: []
+  proteges: []
+  statut: non_decouvert
+  issue: non_decouvert
+  jour_trouve: null
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: s24
+  localisation: Épreuve d'immunité du
+  detenteurs:
+  - libelle: Gilles
+    id: gilles-de-baere
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: joue_pour_rien
+  jour_trouve: 26
+  episode_utilisation: 10
+  votes_annules: 0
+  votes_exprimes: 11
+- saison: s24
+  localisation: Camp réunifié
+  detenteurs:
+  - libelle: Tania
+    id: tania-cakarevic
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 34
+  episode_utilisation: 15
+  votes_annules: 5
+  votes_exprimes: 7
+- saison: s25
+  localisation: Camp des Kadasi
+  detenteurs:
+  - libelle: Steve
+    id: steve-grenier
+    resolu: true
+  detenteurs_suivants: []
+  proteges:
+  - libelle: Pauline
+    id: pauline-bonneil
+    resolu: true
+  - libelle: Sébastien
+    id: sebastien-cazaux
+    resolu: true
+  statut: utilise
+  issue: joue_pour_rien
+  jour_trouve: 3
+  episode_utilisation: 1
+  votes_annules: 0
+  votes_exprimes: 10
+- saison: s25
+  localisation: Camp des Kadasi
+  detenteurs:
+  - libelle: William
+    id: william-plancq
+    resolu: true
+  detenteurs_suivants: []
+  proteges:
+  - libelle: William
+    id: william-plancq
+    resolu: true
+  statut: null
+  issue: elimine_avec_collier
+  jour_trouve: 4
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: s25
+  localisation: Camp des Kadasi
+  detenteurs:
+  - libelle: Pauline
+    id: pauline-bonneil
+    resolu: true
+  detenteurs_suivants: []
+  proteges:
+  - libelle: Pauline
+    id: pauline-bonneil
+    resolu: true
+  - libelle: Léa
+    id: null
+    resolu: false
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 9
+  episode_utilisation: 4
+  votes_annules: 1
+  votes_exprimes: 8
+- saison: s25
+  localisation: Camp des Kadasi
+  detenteurs:
+  - libelle: Aurélien
+    id: aurelien-dulau
+    resolu: true
+  detenteurs_suivants: []
+  proteges:
+  - libelle: Sarah
+    id: sarah-diawara
+    resolu: true
+  statut: utilise
+  issue: joue_pour_rien
+  jour_trouve: 9
+  episode_utilisation: 3
+  votes_annules: 0
+  votes_exprimes: 9
+- saison: s25
+  localisation: Camp des Kadasi
+  detenteurs:
+  - libelle: Amri
+    id: amri-madani
+    resolu: true
+  detenteurs_suivants: []
+  proteges:
+  - libelle: Amri
+    id: amri-madani
+    resolu: true
+  - libelle: Océane
+    id: oceane-montenegro
+    resolu: true
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 18
+  episode_utilisation: 9
+  votes_annules: 7
+  votes_exprimes: 13
+- saison: s25
+  localisation: Camp des Kadasi
+  detenteurs:
+  - libelle: Pauline
+    id: pauline-bonneil
+    resolu: true
+  detenteurs_suivants: []
+  proteges:
+  - libelle: Pauline
+    id: pauline-bonneil
+    resolu: true
+  statut: utilise
+  issue: joue_pour_rien
+  jour_trouve: 20
+  episode_utilisation: 9
+  votes_annules: 0
+  votes_exprimes: 13
+- saison: s25
+  localisation: Camp des Matukad
+  detenteurs:
+  - libelle: Léa
+    id: null
+    resolu: false
+  detenteurs_suivants: []
+  proteges:
+  - libelle: Léa
+    id: null
+    resolu: false
+  statut: utilise
+  issue: joue_pour_rien
+  jour_trouve: 4
+  episode_utilisation: 2
+  votes_annules: 0
+  votes_exprimes: 11
+- saison: s25
+  localisation: Camp des Matukad
+  detenteurs:
+  - libelle: Ricky
+    id: ricky-poyet
+    resolu: true
+  detenteurs_suivants: []
+  proteges:
+  - libelle: Cécile
+    id: cecile-poprawa
+    resolu: true
+  statut: utilise
+  issue: joue_pour_rien
+  jour_trouve: 8
+  episode_utilisation: 9
+  votes_annules: 0
+  votes_exprimes: 13
+- saison: s25
+  localisation: Camp des Matukad
+  detenteurs:
+  - libelle: Julie
+    id: julie-rignault
+    resolu: true
+  detenteurs_suivants: []
+  proteges:
+  - libelle: Léa
+    id: null
+    resolu: false
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 11
+  episode_utilisation: 5
+  votes_annules: 2
+  votes_exprimes: 10
+- saison: s25
+  localisation: Camp des Matukad
+  detenteurs:
+  - libelle: Cécile
+    id: cecile-poprawa
+    resolu: true
+  detenteurs_suivants: []
+  proteges:
+  - libelle: David
+    id: david-murail
+    resolu: true
+  - libelle: Meïssa
+    id: meissa-seck
+    resolu: true
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 16
+  episode_utilisation: 7
+  votes_annules: 1
+  votes_exprimes: 9
+- saison: s25
+  localisation: Camp réunifié
+  detenteurs:
+  - libelle: Amri
+    id: amri-madani
+    resolu: true
+  detenteurs_suivants: []
+  proteges:
+  - libelle: Amri
+    id: amri-madani
+    resolu: true
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 25
+  episode_utilisation: 10
+  votes_annules: 7
+  votes_exprimes: 12
+- saison: s25
+  localisation: Camp réunifié
+  detenteurs:
+  - libelle: Amri
+    id: amri-madani
+    resolu: true
+  detenteurs_suivants: []
+  proteges:
+  - libelle: Amri
+    id: amri-madani
+    resolu: true
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 31
+  episode_utilisation: 12
+  votes_annules: 2
+  votes_exprimes: 9
+- saison: s25
+  localisation: Camp réunifié
+  detenteurs:
+  - libelle: Sébastien
+    id: sebastien-cazaux
+    resolu: true
+  detenteurs_suivants: []
+  proteges:
+  - libelle: Sébastien
+    id: sebastien-cazaux
+    resolu: true
+  statut: utilise
+  issue: joue_pour_rien
+  jour_trouve: 34
+  episode_utilisation: 13
+  votes_annules: 0
+  votes_exprimes: 8
+- saison: s25
+  localisation: Camp réunifié
+  detenteurs:
+  - libelle: Meïssa
+    id: meissa-seck
+    resolu: true
+  detenteurs_suivants: []
+  proteges:
+  - libelle: Sébastien
+    id: sebastien-cazaux
+    resolu: true
+  statut: null
+  issue: garde_sans_usage
+  jour_trouve: 36
+  episode_utilisation: 14
+  votes_annules: null
+  votes_exprimes: null
+- saison: s25
+  localisation: Camp réunifié
+  detenteurs:
+  - libelle: Léa
+    id: null
+    resolu: false
+  detenteurs_suivants: []
+  proteges: []
+  statut: null
+  issue: null
+  jour_trouve: 38
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: s25
+  localisation: Camp réunifié
+  detenteurs:
+  - libelle: Meïssa
+    id: meissa-seck
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: null
+  issue: garde_sans_usage
+  jour_trouve: 38
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: s26
+  localisation: Camp des Sabitang
+  detenteurs: []
+  detenteurs_suivants: []
+  proteges: []
+  statut: non_decouvert
+  issue: non_decouvert
+  jour_trouve: null
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: s26
+  localisation: Camp des Pitogo
+  detenteurs: []
+  detenteurs_suivants: []
+  proteges: []
+  statut: non_decouvert
+  issue: non_decouvert
+  jour_trouve: null
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: s26
+  localisation: Camp réunifié
+  detenteurs:
+  - libelle: Ugo
+    id: ugo-lartiche
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 25
+  episode_utilisation: 12
+  votes_annules: 4
+  votes_exprimes: 11
+- saison: s26
+  localisation: Camp réunifié
+  detenteurs:
+  - libelle: Maxim
+    id: maxim-iarkov
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 27
+  episode_utilisation: 13
+  votes_annules: 3
+  votes_exprimes: 9
+- saison: s26
+  localisation: Épreuves spéciales
+  detenteurs:
+  - libelle: Ilyesse
+    id: ilyesse-benyoub
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: non_utilise
+  issue: garde_sans_usage
+  jour_trouve: 4
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: s26
+  localisation: Épreuves spéciales
+  detenteurs:
+  - libelle: Ilyesse
+    id: ilyesse-benyoub
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: joue_pour_rien
+  jour_trouve: 8
+  episode_utilisation: 8
+  votes_annules: 0
+  votes_exprimes: 14
+- saison: s26
+  localisation: Épreuves spéciales
+  detenteurs:
+  - libelle: Cécile
+    id: null
+    resolu: false
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: joue_pour_rien
+  jour_trouve: 10
+  episode_utilisation: 8
+  votes_annules: 0
+  votes_exprimes: 14
+- saison: s26
+  localisation: Épreuves spéciales
+  detenteurs:
+  - libelle: Mélissa
+    id: melissa-pierru
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 13
+  episode_utilisation: 5
+  votes_annules: 6
+  votes_exprimes: 9
+- saison: s26
+  localisation: Épreuves spéciales
+  detenteurs:
+  - libelle: Emmanuelle
+    id: emmanuelle-boisseau
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: non_utilise
+  issue: garde_sans_usage
+  jour_trouve: 13
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: s27
+  localisation: Camp des Hilaga
+  detenteurs:
+  - libelle: Andréa
+    id: andrea-zogron
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 5
+  episode_utilisation: 6
+  votes_annules: 8
+  votes_exprimes: 11
+- saison: s27
+  localisation: Camp des Silangan
+  detenteurs: []
+  detenteurs_suivants: []
+  proteges: []
+  statut: non_decouvert
+  issue: non_decouvert
+  jour_trouve: null
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: s27
+  localisation: Camp des Timog
+  detenteurs: []
+  detenteurs_suivants: []
+  proteges: []
+  statut: non_decouvert
+  issue: non_decouvert
+  jour_trouve: null
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: s27
+  localisation: Camp des Kanluran
+  detenteurs: []
+  detenteurs_suivants: []
+  proteges: []
+  statut: non_decouvert
+  issue: non_decouvert
+  jour_trouve: null
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: s27
+  localisation: Camp des Tugawe
+  detenteurs: []
+  detenteurs_suivants: []
+  proteges: []
+  statut: non_decouvert
+  issue: non_decouvert
+  jour_trouve: null
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: s27
+  localisation: Camp des Virak
+  detenteurs: []
+  detenteurs_suivants: []
+  proteges: []
+  statut: non_decouvert
+  issue: non_decouvert
+  jour_trouve: null
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: s27
+  localisation: Camp réunifié
+  detenteurs:
+  - libelle: Gaëlle
+    id: gaelle-fleury
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 28
+  episode_utilisation: 12
+  votes_annules: 5
+  votes_exprimes: 11
+- saison: s27
+  localisation: Camp réunifié
+  detenteurs:
+  - libelle: Céline
+    id: celine-faccio
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: non_utilise
+  issue: elimine_avec_collier
+  jour_trouve: 32
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: s27
+  localisation: Épreuves spéciales
+  detenteurs:
+  - libelle: Maxime
+    id: maxime-lubian
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: non_utilise
+  issue: elimine_avec_collier
+  jour_trouve: 12
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: s27
+  localisation: Épreuves spéciales
+  detenteurs:
+  - libelle: Naïs
+    id: nais-napoletano
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 12
+  episode_utilisation: 5
+  votes_annules: 6
+  votes_exprimes: 11
+- saison: s27
+  localisation: Épreuves spéciales
+  detenteurs:
+  - libelle: Claire
+    id: claire-passas
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: joue_pour_rien
+  jour_trouve: 12
+  episode_utilisation: 6
+  votes_annules: 0
+  votes_exprimes: 11
+- saison: s27
+  localisation: Épreuves spéciales
+  detenteurs:
+  - libelle: Jérôme
+    id: null
+    resolu: false
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: joue_pour_rien
+  jour_trouve: 12
+  episode_utilisation: 6
+  votes_annules: 0
+  votes_exprimes: 11
+- saison: s28
+  localisation: Camp des Kalao
+  detenteurs: []
+  detenteurs_suivants: []
+  proteges: []
+  statut: non_decouvert
+  issue: non_decouvert
+  jour_trouve: null
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: s28
+  localisation: Camp des Lahoy
+  detenteurs: []
+  detenteurs_suivants: []
+  proteges: []
+  statut: non_decouvert
+  issue: non_decouvert
+  jour_trouve: null
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: s28
+  localisation: Camp réunifié
+  detenteurs:
+  - libelle: Cynthia
+    id: cynthia-combes
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 30
+  episode_utilisation: 12
+  votes_annules: 3
+  votes_exprimes: 9
+- saison: s28
+  localisation: Camp réunifié
+  detenteurs:
+  - libelle: Cynthia
+    id: cynthia-combes
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 33
+  episode_utilisation: 13
+  votes_annules: 1
+  votes_exprimes: 9
+- saison: s28
+  localisation: Épreuves spéciales
+  detenteurs:
+  - libelle: Lionel
+    id: lionel-dubouchet
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 3
+  episode_utilisation: 3
+  votes_annules: 3
+  votes_exprimes: 9
+- saison: s28
+  localisation: Épreuves spéciales
+  detenteurs:
+  - libelle: Cindy
+    id: cindy-sulpice-gonzalez
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 8
+  episode_utilisation: 4
+  votes_annules: 1
+  votes_exprimes: 8
+- saison: s28
+  localisation: Épreuves spéciales
+  detenteurs:
+  - libelle: Jonathan
+    id: jonathan-guez
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: non_utilise
+  issue: garde_sans_usage
+  jour_trouve: 16
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: s28
+  localisation: Épreuves spéciales
+  detenteurs:
+  - libelle: Jade
+    id: jade-correa
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 19
+  episode_utilisation: 9
+  votes_annules: 7
+  votes_exprimes: 13
+- saison: s28
+  localisation: Épreuves spéciales
+  detenteurs:
+  - libelle: Guillaume
+    id: guillaume-le-deun
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: joue_pour_rien
+  jour_trouve: 29
+  episode_utilisation: 12
+  votes_annules: 0
+  votes_exprimes: 9
+- saison: s28
+  localisation: Épreuves spéciales
+  detenteurs:
+  - libelle: Hugo
+    id: hugo-van-aertryck
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 31
+  episode_utilisation: 13
+  votes_annules: 3
+  votes_exprimes: 9
+- saison: sp5
+  localisation: Camp des Wakaï
+  detenteurs:
+  - libelle: Clémentine
+    id: clementine-julien
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 11
+  episode_utilisation: 4
+  votes_annules: 5
+  votes_exprimes: 6
+- saison: sp5
+  localisation: Camp des Toa
+  detenteurs:
+  - libelle: Cassandre
+    id: cassandre-girard
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: joue_pour_rien
+  jour_trouve: 13
+  episode_utilisation: 10
+  votes_annules: 0
+  votes_exprimes: 6
+- saison: sp5
+  localisation: null
+  detenteurs:
+  - libelle: Julie
+    id: julie-navarro-camilleri
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: non_utilise
+  issue: elimine_avec_collier
+  jour_trouve: 6
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: sp5
+  localisation: null
+  detenteurs:
+  - libelle: Julie
+    id: julie-navarro-camilleri
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: non_utilise
+  issue: elimine_avec_collier
+  jour_trouve: 6
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: sp5
+  localisation: null
+  detenteurs:
+  - libelle: Julie
+    id: julie-navarro-camilleri
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: annulation_efficace
+  jour_trouve: 6
+  episode_utilisation: 10
+  votes_annules: 3
+  votes_exprimes: 6
+- saison: sp6
+  localisation: Épreuve initiale
+  detenteurs:
+  - libelle: Benoît
+    id: benoit-fourmont
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: joue_pour_rien
+  jour_trouve: 1
+  episode_utilisation: 2
+  votes_annules: 0
+  votes_exprimes: 8
+- saison: sp6
+  localisation: Épreuve initiale
+  detenteurs:
+  - libelle: Delphine
+    id: delphine-hergault
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: non_utilise
+  issue: garde_sans_usage
+  jour_trouve: 1
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: sp6
+  localisation: Camp des Nacomo
+  detenteurs:
+  - libelle: Jessica
+    id: jessica
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: non_utilise
+  issue: elimine_avec_collier
+  jour_trouve: 11
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: sp6
+  localisation: Camp des Lawaki
+  detenteurs: []
+  detenteurs_suivants: []
+  proteges: []
+  statut: non_decouvert
+  issue: non_decouvert
+  jour_trouve: null
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: sp6
+  localisation: Épreuve d'immunité
+  detenteurs:
+  - libelle: Jessica
+    id: jessica
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: utilise
+  issue: joue_pour_rien
+  jour_trouve: 21
+  episode_utilisation: 9
+  votes_annules: 0
+  votes_exprimes: 13
+- saison: sp6
+  localisation: Camp de la tribu réunifiée
+  detenteurs:
+  - libelle: Teheiura
+    id: teheiura-teahui
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: non_utilise
+  issue: elimine_avec_collier
+  jour_trouve: 21
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null
+- saison: sp6
+  localisation: Camp de la tribu réunifiée
+  detenteurs:
+  - libelle: Charlotte
+    id: charlotte-caron
+    resolu: true
+  detenteurs_suivants: []
+  proteges: []
+  statut: non_utilise
+  issue: elimine_avec_collier
+  jour_trouve: 23
+  episode_utilisation: null
+  votes_annules: null
+  votes_exprimes: null

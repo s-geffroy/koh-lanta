@@ -236,6 +236,57 @@ def verifier_epreuves(epreuves, saisons, parts, c):
                   f"{diffusees} : {', '.join(absentes)}")
 
 
+ISSUES_VALIDES = {"annulation_efficace", "joue_pour_rien", "elimine_avec_collier",
+                  "garde_sans_usage", "non_decouvert"}
+STATUTS_VALIDES = {"utilise", "non_utilise", "non_decouvert", "perdu"}
+
+
+def verifier_colliers(colliers, saisons, parts, c):
+    par_id = {s["id"]: s for s in saisons}
+    ids = {(p["saison"], p["id"]) for p in parts}
+
+    for col in colliers:
+        sid = col.get("saison")
+        if sid not in par_id:
+            c.erreur(f"collier : saison inconnue « {sid} »")
+            continue
+        if par_id[sid].get("annulee"):
+            c.erreur(f"{sid} : saison annulee mais des colliers existent")
+
+        if col.get("statut") is not None and col["statut"] not in STATUTS_VALIDES:
+            c.erreur(f"{sid} : statut de collier inconnu « {col['statut']} »")
+        if col.get("issue") is not None and col["issue"] not in ISSUES_VALIDES:
+            c.erreur(f"{sid} : issue de collier inconnue « {col['issue']} »")
+
+        for role in ("detenteurs", "detenteurs_suivants", "proteges"):
+            for x in col.get(role) or []:
+                if x.get("id") and (sid, x["id"]) not in ids:
+                    c.erreur(f"{sid} : {role[:-1]} « {x['id']} » absent des "
+                             f"participations de la saison")
+
+        annules, exprimes = col.get("votes_annules"), col.get("votes_exprimes")
+        if annules is not None and exprimes is not None and annules > exprimes:
+            c.erreur(f"{sid} : collier annulant {annules} voix sur {exprimes} "
+                     f"exprimees")
+        if col.get("statut") == "non_decouvert" and (col.get("detenteurs") or []):
+            c.erreur(f"{sid} : collier « non decouvert » mais avec un detenteur")
+        if col.get("statut") == "utilise" and annules is None:
+            c.avertir(f"{sid} : collier joue sans decompte de voix annulees")
+        jour = col.get("jour_trouve")
+        duree = par_id[sid].get("duree_jours")
+        if jour and duree and jour > duree:
+            c.erreur(f"{sid} : collier trouve au jour {jour}, "
+                     f"or la saison dure {duree} jours")
+
+    non_resolus = [x for col in colliers
+                   for role in ("detenteurs", "proteges")
+                   for x in col.get(role) or [] if not x.get("resolu")]
+    if non_resolus:
+        libelles = sorted({x["libelle"] for x in non_resolus})
+        c.avertir(f"noms de colliers non rattaches : {len(non_resolus)} citation(s) "
+                  f"— {', '.join(libelles[:6])}")
+
+
 def verifier_personnes(personnes, parts, c):
     ids_parts = Counter(p["id"] for p in parts)
     ids_pers = {g["id"] for g in personnes}
@@ -277,6 +328,7 @@ def main():
     parts = charger("participations.yml")
     personnes = charger("personnes.yml")
     epreuves = charger("epreuves.yml")
+    colliers = charger("colliers.yml")
 
     if saisons is None:
         c.erreur("_data/saisons.yml est absent")
@@ -292,6 +344,8 @@ def main():
         trous(parts, saisons, c)
     if saisons and parts and epreuves:
         verifier_epreuves(epreuves, saisons, parts, c)
+    if saisons and parts and colliers:
+        verifier_colliers(colliers, saisons, parts, c)
     if parts and personnes:
         verifier_personnes(personnes, parts, c)
 
@@ -299,6 +353,7 @@ def main():
     print(f"participations : {len(parts or [])}")
     print(f"personnes      : {len(personnes or [])}")
     print(f"epreuves       : {len(epreuves or [])}")
+    print(f"colliers       : {len(colliers or [])}")
 
     if c.avertissements:
         print(f"\n{len(c.avertissements)} avertissement(s) :")

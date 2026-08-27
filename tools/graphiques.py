@@ -246,3 +246,65 @@ def ecrire(nom, contenu):
     with open(chemin, "w", encoding="utf-8") as f:
         f.write(contenu)
     print(f"  {nom}  ({len(contenu)} o)")
+
+
+def barres_groupees(donnees, series, *, titre, description, unite="",
+                    largeur=680, hauteur_groupe=42, marge_gauche=200):
+    """Deux ou trois series comparees sur les memes categories.
+
+    C'est la forme juste quand un chiffre ne veut rien dire seul : « 31 % de
+    vainqueurs » ne se lit que face au taux d'ensemble. Les barres d'un meme
+    groupe se touchent, les groupes sont espaces -- la comparaison se fait a
+    l'interieur du groupe, pas entre groupes.
+
+    `donnees` : [{"libelle":…, "valeurs":[…], "details":[…]}]
+    `series`  : [{"nom":…, "couleur":…}]
+    """
+    donnees = [d for d in donnees if any(v is not None for v in d["valeurs"])]
+    if not donnees or not series:
+        return ""
+    haut, bas, ecart = 44, 26, 12
+    epaisseur = (hauteur_groupe - 2 * (len(series) - 1)) / len(series)
+    hauteur = haut + bas + len(donnees) * (hauteur_groupe + ecart) - ecart
+    marge_droite = 66
+    piste = largeur - marge_gauche - marge_droite
+    vmax = max(v for d in donnees for v in d["valeurs"] if v is not None) or 1
+
+    fig = Figure(largeur, hauteur, titre, description)
+    for f in (0.25, 0.5, 0.75, 1.0):
+        x = marge_gauche + piste * f
+        fig.ajouter(f'<line x1="{x:.1f}" y1="{haut - 8}" x2="{x:.1f}" '
+                    f'y2="{hauteur - bas + 2}" stroke="{GRILLE}" stroke-width="1"/>')
+
+    # legende : avec plusieurs series, l'identite ne peut pas tenir a la couleur
+    x = marge_gauche
+    for k, s in enumerate(series):
+        teinte = s.get("couleur") or SERIES[k % len(SERIES)]
+        fig.ajouter(f'<rect x="{x}" y="12" width="11" height="11" rx="3" fill="{teinte}"/>')
+        fig.ajouter(_texte(x + 17, 18, s["nom"], couleur=ENCRE, taille=12))
+        x += 26 + 7.2 * len(s["nom"])
+
+    for i, d in enumerate(donnees):
+        y0 = haut + i * (hauteur_groupe + ecart)
+        fig.ajouter(_texte(marge_gauche - 10, y0 + hauteur_groupe / 2, d["libelle"],
+                           ancre="end", couleur=ENCRE))
+        for k, s in enumerate(series):
+            v = d["valeurs"][k] if k < len(d["valeurs"]) else None
+            if v is None:
+                continue
+            y = y0 + k * (epaisseur + 2)
+            longueur = max(2.0, piste * v / vmax)
+            teinte = s.get("couleur") or SERIES[k % len(SERIES)]
+            info = (d.get("details") or [None] * len(series))[k] \
+                or f'{d["libelle"]} — {s["nom"]} : {v}{unite}'
+            fig.ajouter(
+                f'<g class="marque"><title>{e(info)}</title>'
+                f'<rect x="{marge_gauche}" y="{y:.1f}" width="{longueur:.1f}" '
+                f'height="{epaisseur:.1f}" rx="3" fill="{teinte}" '
+                f'stroke="{SURFACE}" stroke-width="1"/></g>')
+            fig.ajouter(_texte(marge_gauche + longueur + 7, y + epaisseur / 2,
+                               f'{v}{unite}', couleur=ENCRE, taille=11, gras=True))
+
+    fig.ajouter(f'<line x1="{marge_gauche}" y1="{haut - 8}" x2="{marge_gauche}" '
+                f'y2="{hauteur - bas + 2}" stroke="var(--axe)" stroke-width="1"/>')
+    return fig.rendu()

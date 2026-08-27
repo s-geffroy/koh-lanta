@@ -24,6 +24,9 @@ import yaml
 RACINE = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 sys.path.insert(0, os.path.join(RACINE, "tools", "extraction"))
 from csp import classer, libelles           # noqa: E402
+sys.path.insert(0, os.path.join(RACINE, "tools"))
+from indicateurs import (indicateurs_individuels, indicateurs_saison,  # noqa: E402
+                         fantomes, SEUIL_CONSEILS, SEUIL_EPREUVES)
 
 ENTETE = """# ATTENTION : fichier genere. Ne pas editer a la main.
 #
@@ -80,6 +83,7 @@ def charger():
     personnes = lire("personnes.yml")
     conseils = lire("conseils.yml")
     epreuves = lire("epreuves.yml")
+    colliers = lire("colliers.yml")
 
     par_saison = {s["id"]: s for s in saisons}
     for p in parts:
@@ -91,7 +95,7 @@ def charger():
         p["_csp"] = classer(p.get("profession"))
         d = p.get("jour_sortie")
         p["_survie"] = round(100.0 * d / s["duree_jours"], 1) if d and s.get("duree_jours") else None
-    return saisons, parts, personnes, conseils, epreuves, par_saison
+    return saisons, parts, personnes, conseils, epreuves, colliers, par_saison
 
 
 def perimetre(parts, avec_speciales):
@@ -482,10 +486,113 @@ def bloc_epreuves(epreuves, conseils, parts, saisons, par_saison):
     }
 
 
+LIBELLE_ISSUE = {
+    "annulation_efficace": "Joué, et il annule des voix",
+    "joue_pour_rien": "Joué pour rien",
+    "elimine_avec_collier": "Éliminé avec le collier dans le sac",
+    "garde_sans_usage": "Gardé sans en avoir besoin",
+    "non_decouvert": "Jamais trouvé",
+}
+
+
+def bloc_colliers(colliers, par_saison):
+    """Le destin des colliers, et deux denominateurs qui changent tout.
+
+    Rapporter les issues a TOUS les colliers ou seulement a ceux qui ont ete
+    TROUVES ne raconte pas la meme chose : un collier que personne n'a
+    decouvert n'est pas un echec de son detenteur, il n'en a pas eu. Les deux
+    lectures sont donnees.
+    """
+    if not colliers:
+        return {}
+    total = len(colliers)
+    trouves = [c for c in colliers if c.get("issue") != "non_decouvert"]
+    compte = Counter(c.get("issue") for c in colliers)
+    joues = [c for c in colliers if c.get("statut") == "utilise"
+             and c.get("votes_annules") is not None]
+    annulees = sum(c["votes_annules"] for c in joues)
+
+    return {
+        "colliers": total,
+        "trouves": len(trouves),
+        "jamais_trouves": compte.get("non_decouvert", 0),
+        "saisons_couvertes": len({c["saison"] for c in colliers}),
+        "voix_annulees": annulees,
+        "voix_par_collier_joue": arrondi(annulees / len(joues), 1) if joues else None,
+        "issues": [
+            {"issue": k, "libelle": LIBELLE_ISSUE.get(k, str(k)), "effectif": n,
+             "part_totale": part(n, total),
+             "part_des_trouves": part(n, len(trouves)) if k != "non_decouvert" else None}
+            for k, n in compte.most_common() if k],
+        "par_saison": [
+            {"saison": sid, "titre": par_saison.get(sid, {}).get("titre"),
+             "annee": par_saison.get(sid, {}).get("annee"),
+             "colliers": sum(1 for c in colliers if c["saison"] == sid),
+             "joues": sum(1 for c in colliers
+                          if c["saison"] == sid and c.get("statut") == "utilise"),
+             "voix_annulees": sum(c.get("votes_annules") or 0
+                                  for c in colliers if c["saison"] == sid)}
+            for sid in sorted({c["saison"] for c in colliers})],
+    }
+
+
+def bloc_indicateurs(saisons, parts, conseils, epreuves, colliers):
+    """Les indicateurs avances, individuels et par saison."""
+    lignes = indicateurs_individuels(saisons, parts, conseils, epreuves)
+    classiques = [x for x in lignes if not x["speciale"]]
+
+    def classement(champ, sens=-1, seuil_champ=None, mini=None, n=12):
+        lot = [x for x in lignes if x.get(champ) is not None]
+        if seuil_champ and mini:
+            lot = [x for x in lot if (x.get(seuil_champ) or 0) >= mini]
+        lot.sort(key=lambda x: sens * x[champ])
+        return [{"nom": x["nom"], "saison": x["saison"], "titre": x["titre"],
+                 "annee": x["annee"], "speciale": x["speciale"], "valeur": x[champ],
+                 "base": x.get(seuil_champ), "sort": x["sort"]} for x in lot[:n]]
+
+    saisons_avancees = indicateurs_saison(saisons, parts, conseils, epreuves, colliers)
+    invisibles = fantomes(lignes)
+
+    def moyenne_par(champ, cle):
+        groupes = defaultdict(list)
+        for x in classiques:
+            if x.get(champ) is not None and x.get(cle):
+                groupes[x[cle]].append(x[champ])
+        return {k: arrondi(mean(v)) for k, v in groupes.items() if len(v) >= 10}
+
+    return {
+        "seuil_conseils": SEUIL_CONSEILS,
+        "seuil_epreuves": SEUIL_EPREUVES,
+        "mesurables": len([x for x in lignes if x["conseils_assistes"] >= SEUIL_CONSEILS]),
+        "meilleure_justesse": classement("justesse_vote", -1, "bulletins_emis", 6),
+        "plus_menaces": classement("menace", -1, "conseils_assistes", 6),
+        "meilleure_evasion": classement("evasion", -1, "conseils_vise", 3),
+        "fantomes": [{"nom": x["nom"], "saison": x["saison"], "titre": x["titre"],
+                      "annee": x["annee"], "conseils": x["conseils_assistes"],
+                      "sort": x["sort"], "survie": x["survie"]}
+                     for x in invisibles[:12]],
+        "nb_fantomes": len(invisibles),
+        # Ce que devient un aventurier que personne n'a jamais ecrit sur un
+        # bulletin, compare a ce que devient un aventurier ordinaire. C'est la
+        # comparaison des deux colonnes qui fait le resultat, pas la premiere
+        # seule : sans reference, « 8 vainqueurs » ne veut rien dire.
+        "fantomes_issue": [
+            {"sort": k, "libelle": LIBELLE_SORT.get(k, k), "effectif": n,
+             "part_fantomes": part(n, len(invisibles)),
+             "part_ensemble": part(
+                 sum(1 for x in lignes if x["sort"] == k), len(lignes))}
+            for k, n in Counter(x["sort"] for x in invisibles).most_common()],
+        "comparables": len(lignes),
+        "justesse_par_sort": moyenne_par("justesse_vote", "sort"),
+        "menace_par_sort": moyenne_par("menace", "sort"),
+        "saisons": saisons_avancees,
+    }
+
+
 # --- assemblage ------------------------------------------------------------
 
 def main():
-    saisons, parts, personnes, conseils, epreuves, par_saison = charger()
+    saisons, parts, personnes, conseils, epreuves, colliers, par_saison = charger()
     classiques = perimetre(parts, avec_speciales=False)
     toutes = perimetre(parts, avec_speciales=True)
 
@@ -517,6 +624,8 @@ def main():
         "records": bloc_records(toutes, personnes),
         "conseils": bloc_conseils(conseils, parts, par_saison),
         "epreuves": bloc_epreuves(epreuves, conseils, parts, saisons, par_saison),
+        "colliers": bloc_colliers(colliers, par_saison),
+        "indicateurs": bloc_indicateurs(saisons, parts, conseils, epreuves, colliers),
     }
 
     # les records renvoient des participations entieres : on n'en garde que l'utile
@@ -545,6 +654,14 @@ def main():
     c = stats["conseils"]
     print(f"  conseils : {c['conseils']} dont {c['conseils_complets']} complets, "
           f"{c['bulletins']} bulletins, {c['voix_annulees_par_collier']} voix annulees")
+    co = stats.get("colliers") or {}
+    if co:
+        print(f"  colliers : {co['colliers']} sur {co['saisons_couvertes']} saisons, "
+              f"{co['voix_annulees']} voix annulees")
+    ind = stats.get("indicateurs") or {}
+    if ind:
+        print(f"  indicateurs : {ind['mesurables']} participations mesurables, "
+              f"{ind['nb_fantomes']} fantomes")
     e = stats.get("epreuves") or {}
     if e:
         print(f"  epreuves : {e['epreuves']} sur {e['saisons_couvertes']} saisons, "

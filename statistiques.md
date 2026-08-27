@@ -20,10 +20,11 @@ mêmes personnes et fausseraient les moyennes d'âge comme de longévité.
   <li class="chiffre"><b>{{ s.conseils.conseils }}</b><span>conseils dépouillés</span></li>
   <li class="chiffre"><b>{{ s.conseils.bulletins }}</b><span>bulletins relevés</span></li>
   <li class="chiffre"><b>{{ s.epreuves.epreuves }}</b><span>épreuves relevées</span></li>
+  <li class="chiffre"><b>{{ s.colliers.colliers }}</b><span>colliers suivis</span></li>
   <li class="chiffre"><b>{{ s.records.nb_multi_participants }}</b><span>aventuriers revenus jouer</span></li>
 </ul>
 
-## Les six entrées
+## Les huit entrées
 
 <ul class="sommaire">
   <li><a href="{{ '/statistiques/vainqueurs/' | relative_url }}">Le profil du vainqueur</a>
@@ -42,6 +43,11 @@ mêmes personnes et fausseraient les moyennes d'âge comme de longévité.
   <li><a href="{{ '/statistiques/epreuves/' | relative_url }}">Les épreuves</a>
       <p>{{ s.epreuves.epreuves }} épreuves relevées : les meilleurs ratios, les
          totaux de carrière, et quel profil domine vraiment.</p></li>
+  <li><a href="{{ '/statistiques/colliers/' | relative_url }}">Les colliers</a>
+      <p>{{ s.colliers.colliers }} colliers suivis : joués, gardés, ou jamais trouvés.</p></li>
+  <li><a href="{{ '/statistiques/jeu-social/' | relative_url }}">Le jeu social</a>
+      <p>Être visé, voter juste, ou n'être jamais écrit sur un bulletin —
+         et pourquoi c'est le meilleur prédicteur de victoire.</p></li>
   <li><a href="{{ '/statistiques/conseils/' | relative_url }}">Les conseils</a>
       <p>{{ s.conseils.bulletins }} bulletins dépouillés : les votes serrés, les
          colliers, qui vote contre qui.</p></li>
