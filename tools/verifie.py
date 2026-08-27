@@ -174,6 +174,68 @@ def verifier_participations(parts, saisons, c):
                           f"{p['jour_sortie']} pour une saison de {s['duree_jours']} jours")
 
 
+def verifier_epreuves(epreuves, saisons, parts, c):
+    par_id = {s["id"]: s for s in saisons}
+    ids = {(p["saison"], p["id"]) for p in parts}
+    tribus = {s["id"]: {t["nom"].lower() for t in (s.get("tribus") or [])}
+              for s in saisons}
+    par_saison = defaultdict(list)
+
+    for e in epreuves:
+        sid = e.get("saison")
+        if sid not in par_id:
+            c.erreur(f"epreuve : saison inconnue « {sid} »")
+            continue
+        par_saison[sid].append(e)
+
+        if e.get("type") not in ("confort", "immunite", "epreuve"):
+            c.erreur(f"{sid} ep.{e.get('episode')} : type d'epreuve inconnu "
+                     f"« {e.get('type')} »")
+        if e.get("forme") not in ("collective", "individuelle", "mixte", None):
+            c.erreur(f"{sid} ep.{e.get('episode')} : forme inconnue « {e.get('forme')} »")
+        if not e.get("episode") or e["episode"] < 1:
+            c.erreur(f"{sid} : epreuve sans numero d'episode valide")
+        if not e.get("vainqueurs"):
+            c.erreur(f"{sid} ep.{e.get('episode')} : epreuve sans vainqueur")
+
+        for v in e.get("vainqueurs") or []:
+            if v.get("type") == "personne" and v.get("id"):
+                if (sid, v["id"]) not in ids:
+                    c.erreur(f"{sid} ep.{e['episode']} : vainqueur « {v['id']} » "
+                             f"absent des participations de la saison")
+            elif v.get("type") == "tribu":
+                if v["libelle"].lower() not in tribus.get(sid, set()):
+                    c.erreur(f"{sid} ep.{e['episode']} : tribu « {v['libelle']} » "
+                             f"absente des tribus declarees")
+
+    for sid, lot in par_saison.items():
+        s = par_id[sid]
+        if s.get("annulee"):
+            c.erreur(f"{sid} : saison annulee mais des epreuves existent")
+        # deux vainqueurs pour une meme epreuve, c'est possible ; trois, c'est
+        # presque toujours une cellule mal lue
+        for e in lot:
+            noms = [v["libelle"] for v in e["vainqueurs"]]
+            if len(noms) > 2 and e.get("forme") != "collective":
+                c.avertir(f"{sid} ep.{e['episode']} ({e['type']}) : "
+                          f"{len(noms)} vainqueurs cites — {', '.join(noms)}")
+
+    non_resolus = [v for e in epreuves for v in e["vainqueurs"] if not v.get("resolu")]
+    if non_resolus:
+        libelles = sorted({v["libelle"] for v in non_resolus})
+        c.avertir(f"vainqueurs d'epreuve non rattaches : {len(non_resolus)} "
+                  f"citation(s) — {', '.join(libelles[:6])}"
+                  + (" …" if len(libelles) > 6 else ""))
+
+    couvertes = len(par_saison)
+    diffusees = sum(1 for s in saisons if not s.get("annulee"))
+    if couvertes < diffusees:
+        absentes = [s["id"] for s in saisons
+                    if not s.get("annulee") and s["id"] not in par_saison]
+        c.avertir(f"epreuves absentes pour {len(absentes)} saison(s) sur "
+                  f"{diffusees} : {', '.join(absentes)}")
+
+
 def verifier_personnes(personnes, parts, c):
     ids_parts = Counter(p["id"] for p in parts)
     ids_pers = {g["id"] for g in personnes}
@@ -214,6 +276,7 @@ def main():
     saisons = charger("saisons.yml")
     parts = charger("participations.yml")
     personnes = charger("personnes.yml")
+    epreuves = charger("epreuves.yml")
 
     if saisons is None:
         c.erreur("_data/saisons.yml est absent")
@@ -227,12 +290,15 @@ def main():
     if saisons and parts:
         verifier_participations(parts, saisons, c)
         trous(parts, saisons, c)
+    if saisons and parts and epreuves:
+        verifier_epreuves(epreuves, saisons, parts, c)
     if parts and personnes:
         verifier_personnes(personnes, parts, c)
 
     print(f"saisons        : {len(saisons or [])}")
     print(f"participations : {len(parts or [])}")
     print(f"personnes      : {len(personnes or [])}")
+    print(f"epreuves       : {len(epreuves or [])}")
 
     if c.avertissements:
         print(f"\n{len(c.avertissements)} avertissement(s) :")

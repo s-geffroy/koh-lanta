@@ -37,7 +37,8 @@ jeu plus tôt que les hommes en moyenne — et remportent pourtant
 
 <ul class="sommaire">
   <li><a href="{{ '/statistiques/' | relative_url }}">Les statistiques</a>
-      <p>Le profil des vainqueurs, les tribus, les métiers, la longévité, les conseils.</p></li>
+      <p>Le profil des vainqueurs, les tribus, les métiers, la longévité,
+         les épreuves, les conseils.</p></li>
   <li><a href="{{ '/saisons/' | relative_url }}">Les saisons</a>
       <p>Les {{ g.saisons_diffusees }} éditions, leur lieu, leur casting, leur vainqueur.</p></li>
   <li><a href="{{ '/aventuriers/' | relative_url }}">Les aventuriers</a>

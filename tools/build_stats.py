@@ -79,6 +79,7 @@ def charger():
     parts = lire("participations.yml")
     personnes = lire("personnes.yml")
     conseils = lire("conseils.yml")
+    epreuves = lire("epreuves.yml")
 
     par_saison = {s["id"]: s for s in saisons}
     for p in parts:
@@ -90,7 +91,7 @@ def charger():
         p["_csp"] = classer(p.get("profession"))
         d = p.get("jour_sortie")
         p["_survie"] = round(100.0 * d / s["duree_jours"], 1) if d and s.get("duree_jours") else None
-    return saisons, parts, personnes, conseils, par_saison
+    return saisons, parts, personnes, conseils, epreuves, par_saison
 
 
 def perimetre(parts, avec_speciales):
@@ -337,10 +338,154 @@ def bloc_conseils(conseils, parts, par_saison):
     }
 
 
+def bloc_epreuves(epreuves, conseils, parts, saisons, par_saison):
+    """Victoires d'epreuves, et ratios individuels.
+
+    Le denominateur d'un ratio n'est pas le nombre d'epreuves de la saison mais
+    le nombre d'epreuves individuelles disputees TANT QUE la personne etait en
+    jeu. Il se calcule a partir de l'episode ou elle sort, lu dans les conseils.
+    Une personne dont l'episode de sortie reste inconnu garde ses victoires mais
+    n'entre dans aucun ratio : mieux vaut un classement plus court qu'un ratio
+    fabrique.
+    """
+    if not epreuves:
+        return {}
+
+    # episode de sortie, par (saison, personne)
+    sortie = {}
+    for c in conseils or []:
+        if c.get("elimine_rattache") and c.get("episode"):
+            try:
+                sortie[(c["saison"], c["elimine"])] = int(c["episode"])
+            except (TypeError, ValueError):
+                pass
+    dernier_episode = {}
+    for e in epreuves:
+        d = dernier_episode.get(e["saison"], 0)
+        dernier_episode[e["saison"]] = max(d, e.get("episode") or 0)
+    for p in parts:
+        if p.get("sort") in ("vainqueur", "finaliste"):
+            sortie.setdefault((p["saison"], p["id"]), dernier_episode.get(p["saison"], 0))
+
+    # epreuves individuelles par saison, ordonnees
+    individuelles = defaultdict(list)
+    for e in epreuves:
+        if e.get("forme") == "individuelle" and e.get("episode"):
+            individuelles[e["saison"]].append(e)
+
+    victoires = Counter()
+    victoires_type = defaultdict(Counter)
+    for e in epreuves:
+        for v in e.get("vainqueurs") or []:
+            if v.get("type") == "personne" and v.get("id"):
+                cle = (e["saison"], v["id"])
+                victoires[cle] += 1
+                victoires_type[cle][e["type"]] += 1
+
+    index = {(p["saison"], p["id"]): p for p in parts}
+    lignes = []
+    for (sid, pid), gagnees in victoires.items():
+        p = index.get((sid, pid))
+        if not p:
+            continue
+        ep_sortie = sortie.get((sid, pid))
+        disputees = None
+        if ep_sortie:
+            disputees = sum(1 for e in individuelles.get(sid, [])
+                            if e["episode"] <= ep_sortie)
+        lignes.append({
+            "personne": p.get("nom_complet") or p.get("nom"),
+            "id": pid,
+            "saison": sid,
+            "titre": par_saison.get(sid, {}).get("titre"),
+            "annee": par_saison.get(sid, {}).get("annee"),
+            "speciale": bool(par_saison.get(sid, {}).get("speciale")),
+            "gagnees": gagnees,
+            "immunites": victoires_type[(sid, pid)].get("immunite", 0),
+            "conforts": victoires_type[(sid, pid)].get("confort", 0),
+            "disputees": disputees,
+            "ratio": part(gagnees, disputees) if disputees else None,
+            "sort": p.get("sort"),
+            "genre": p.get("genre"),
+            "age": p.get("age"),
+            "csp": p["_csp"],
+        })
+
+    SEUIL = 8
+    classement = sorted([x for x in lignes if x["disputees"] and x["disputees"] >= SEUIL],
+                        key=lambda x: (-(x["ratio"] or 0), -x["gagnees"]))
+
+    cumul = Counter()
+    for x in lignes:
+        cumul[(x["id"], x["personne"])] += x["gagnees"]
+
+    # profil des vainqueurs d'epreuves individuelles
+    par_csp, par_genre, par_age = Counter(), Counter(), Counter()
+    effectif_csp, effectif_genre, effectif_age = Counter(), Counter(), Counter()
+    for x in lignes:
+        if x["speciale"]:
+            continue
+        if x["csp"]:
+            par_csp[x["csp"]] += x["gagnees"]
+        if x["genre"]:
+            par_genre[x["genre"]] += x["gagnees"]
+        if x["age"]:
+            t = tranche(x["age"])
+            if t:
+                par_age[t] += x["gagnees"]
+    for p in parts:
+        if par_saison.get(p["saison"], {}).get("speciale"):
+            continue
+        if p["_csp"]:
+            effectif_csp[p["_csp"]] += 1
+        if p.get("genre"):
+            effectif_genre[p["genre"]] += 1
+        if p.get("age") and tranche(p["age"]):
+            effectif_age[tranche(p["age"])] += 1
+
+    lib = libelles()
+    return {
+        "epreuves": len(epreuves),
+        "saisons_couvertes": len({e["saison"] for e in epreuves}),
+        "saisons_sans_donnee": sorted({s["id"] for s in saisons
+                                       if not s.get("annulee")}
+                                      - {e["saison"] for e in epreuves}),
+        "collectives": sum(1 for e in epreuves if e.get("forme") == "collective"),
+        "individuelles": sum(1 for e in epreuves if e.get("forme") == "individuelle"),
+        "immunites": sum(1 for e in epreuves if e.get("type") == "immunite"),
+        "conforts": sum(1 for e in epreuves if e.get("type") == "confort"),
+        "seuil_classement": SEUIL,
+        "classement_effectif": len(classement),
+        "ratio_moyen": arrondi(mean([x["ratio"] for x in classement])) if classement else None,
+        "classement_ratio": classement[:15],
+        "meilleurs_cumuls": [{"personne": nom, "id": pid, "victoires": n}
+                             for (pid, nom), n in cumul.most_common(15)],
+        "par_metier": [
+            {"code": c, "libelle": lib.get(c, c), "victoires": n,
+             "aventuriers": effectif_csp[c],
+             "victoires_par_aventurier": arrondi(n / effectif_csp[c], 2)
+             if effectif_csp[c] else None}
+            for c, n in par_csp.most_common()],
+        "par_genre": [
+            {"genre": g, "libelle": "Femmes" if g == "f" else "Hommes",
+             "victoires": par_genre[g], "aventuriers": effectif_genre[g],
+             "victoires_par_aventurier": arrondi(par_genre[g] / effectif_genre[g], 2)
+             if effectif_genre[g] else None}
+            for g in ("f", "h")],
+        "par_age": [
+            {"tranche": LIBELLE_TRANCHE[b], "victoires": par_age[LIBELLE_TRANCHE[b]],
+             "aventuriers": effectif_age[LIBELLE_TRANCHE[b]],
+             "victoires_par_aventurier": arrondi(
+                 par_age[LIBELLE_TRANCHE[b]] / effectif_age[LIBELLE_TRANCHE[b]], 2)
+             if effectif_age[LIBELLE_TRANCHE[b]] else None}
+            for b in TRANCHES],
+    }
+
+
 # --- assemblage ------------------------------------------------------------
 
 def main():
-    saisons, parts, personnes, conseils, par_saison = charger()
+    saisons, parts, personnes, conseils, epreuves, par_saison = charger()
     classiques = perimetre(parts, avec_speciales=False)
     toutes = perimetre(parts, avec_speciales=True)
 
@@ -371,6 +516,7 @@ def main():
         "saisons": bloc_saisons(saisons, parts),
         "records": bloc_records(toutes, personnes),
         "conseils": bloc_conseils(conseils, parts, par_saison),
+        "epreuves": bloc_epreuves(epreuves, conseils, parts, saisons, par_saison),
     }
 
     # les records renvoient des participations entieres : on n'en garde que l'utile
@@ -399,6 +545,11 @@ def main():
     c = stats["conseils"]
     print(f"  conseils : {c['conseils']} dont {c['conseils_complets']} complets, "
           f"{c['bulletins']} bulletins, {c['voix_annulees_par_collier']} voix annulees")
+    e = stats.get("epreuves") or {}
+    if e:
+        print(f"  epreuves : {e['epreuves']} sur {e['saisons_couvertes']} saisons, "
+              f"{e['individuelles']} individuelles, "
+              f"{len(e['classement_ratio'])} ratios calculables")
     return 0
 
 

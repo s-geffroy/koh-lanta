@@ -1387,3 +1387,393 @@ conseils:
     cible: f
     effectif: 438
     part: 22.0
+epreuves:
+  epreuves: 766
+  saisons_couvertes: 29
+  saisons_sans_donnee:
+  - s03
+  - s09
+  - s12
+  - s14
+  - sp2
+  collectives: 391
+  individuelles: 365
+  immunites: 392
+  conforts: 374
+  seuil_classement: 8
+  classement_effectif: 89
+  ratio_moyen: 20.0
+  classement_ratio:
+  - personne: Jean Belmonte
+    id: jean-belmonte
+    saison: s25
+    titre: Les Chasseurs d'immunité
+    annee: 2024
+    speciale: false
+    gagnees: 5
+    immunites: 4
+    conforts: 1
+    disputees: 9
+    ratio: 55.6
+    sort: abandon_medical
+    genre: h
+    age: 26
+    csp: artisanat_btp
+  - personne: Claude Dartois
+    id: claude-dartois
+    saison: s10
+    titre: Viêtnam
+    annee: 2010
+    speciale: false
+    gagnees: 7
+    immunites: 4
+    conforts: 3
+    disputees: 13
+    ratio: 53.8
+    sort: finaliste
+    genre: h
+    age: 30
+    csp: transport
+  - personne: Teheiura Teahui
+    id: teheiura-teahui
+    saison: s11
+    titre: Raja Ampat
+    annee: 2011
+    speciale: false
+    gagnees: 7
+    immunites: 4
+    conforts: 3
+    disputees: 15
+    ratio: 46.7
+    sort: finaliste
+    genre: h
+    age: 33
+    csp: restauration_hotellerie
+  - personne: Lola Besse
+    id: lola-besse
+    saison: s21
+    titre: Les 4 Terres
+    annee: 2020
+    speciale: false
+    gagnees: 5
+    immunites: 1
+    conforts: 4
+    disputees: 13
+    ratio: 38.5
+    sort: elimine_orientation
+    genre: f
+    age: 23
+    csp: etudiant
+  - personne: François Descamp
+    id: francois-descamp
+    saison: s23
+    titre: Le Totem maudit
+    annee: 2022
+    speciale: false
+    gagnees: 6
+    immunites: 3
+    conforts: 3
+    disputees: 17
+    ratio: 35.3
+    sort: vainqueur
+    genre: h
+    age: 38
+    csp: action_securite
+  - personne: Jade Handi
+    id: jade-handi
+    saison: s07
+    titre: Palawan
+    annee: 2007
+    speciale: false
+    gagnees: 6
+    immunites: 2
+    conforts: 4
+    disputees: 18
+    ratio: 33.3
+    sort: vainqueur
+    genre: f
+    age: 24
+    csp: encadrement
+  - personne: Naoil Tita
+    id: naoil-tita
+    saison: sp6
+    titre: L'Île des héros
+    annee: 2020
+    speciale: true
+    gagnees: 5
+    immunites: 3
+    conforts: 2
+    disputees: 15
+    ratio: 33.3
+    sort: vainqueur
+    genre: f
+    age: 37
+    csp: sport
+  - personne: William Lecomte
+    id: william-lecomte
+    saison: s01
+    titre: Les Aventuriers de Koh-Lanta
+    annee: 2001
+    speciale: false
+    gagnees: 3
+    immunites: 2
+    conforts: 1
+    disputees: 9
+    ratio: 33.3
+    sort: elimine_conseil
+    genre: h
+    age: 32
+    csp: enseignement
+  - personne: Bertrand Bolle
+    id: bertrand-bolle
+    saison: sp3
+    titre: La Revanche des héros
+    annee: 2012
+    speciale: true
+    gagnees: 3
+    immunites: 2
+    conforts: 1
+    disputees: 9
+    ratio: 33.3
+    sort: vainqueur
+    genre: h
+    age: 36
+    csp: transport
+  - personne: Claude Dartois
+    id: claude-dartois
+    saison: sp3
+    titre: La Revanche des héros
+    annee: 2012
+    speciale: true
+    gagnees: 3
+    immunites: 1
+    conforts: 2
+    disputees: 9
+    ratio: 33.3
+    sort: finaliste
+    genre: h
+    age: 32
+    csp: transport
+  - personne: Frédéric Favier
+    id: frederic-favier
+    saison: s08
+    titre: Caramoan
+    annee: 2008
+    speciale: false
+    gagnees: 6
+    immunites: 3
+    conforts: 3
+    disputees: 19
+    ratio: 31.6
+    sort: finaliste
+    genre: h
+    age: 31
+    csp: artisanat_btp
+  - personne: Philippe Duron
+    id: philippe-duron
+    saison: s10
+    titre: Viêtnam
+    annee: 2010
+    speciale: false
+    gagnees: 4
+    immunites: 3
+    conforts: 1
+    disputees: 13
+    ratio: 30.8
+    sort: vainqueur
+    genre: h
+    age: 41
+    csp: artisanat_btp
+  - personne: Ilyesse Benyoub
+    id: ilyesse-benyoub
+    saison: s26
+    titre: La Tribu maudite
+    annee: 2024
+    speciale: false
+    gagnees: 4
+    immunites: 2
+    conforts: 2
+    disputees: 13
+    ratio: 30.8
+    sort: elimine_poteaux
+    genre: h
+    age: 23
+    csp: etudiant
+  - personne: Maxine Eouzan
+    id: maxine-eouzan
+    saison: s22
+    titre: Les Armes secrètes
+    annee: 2021
+    speciale: false
+    gagnees: 3
+    immunites: 2
+    conforts: 1
+    disputees: 10
+    ratio: 30.0
+    sort: vainqueur
+    genre: f
+    age: 25
+    csp: sport
+  - personne: Clémence Noquet
+    id: clemence-noquet
+    saison: s24
+    titre: Le Feu sacré
+    annee: 2023
+    speciale: false
+    gagnees: 3
+    immunites: 3
+    conforts: 0
+    disputees: 10
+    ratio: 30.0
+    sort: elimine_conseil
+    genre: f
+    age: 27
+    csp: artisanat_btp
+  meilleurs_cumuls:
+  - personne: Claude Dartois
+    id: claude-dartois
+    victoires: 19
+  - personne: Teheiura Teahui
+    id: teheiura-teahui
+    victoires: 17
+  - personne: Bertrand Bolle
+    id: bertrand-bolle
+    victoires: 11
+  - personne: Jade Handi
+    id: jade-handi
+    victoires: 9
+  - personne: François-David Cardonnel
+    id: francois-david-cardonnel
+    victoires: 7
+  - personne: Laurent Maistret
+    id: laurent-maistret
+    victoires: 7
+  - personne: Romuald Lafite
+    id: romuald-lafite
+    victoires: 6
+  - personne: Frédéric Favier
+    id: frederic-favier
+    victoires: 6
+  - personne: Maxime Berthon
+    id: maxime-berthon
+    victoires: 6
+  - personne: François Descamp
+    id: francois-descamp
+    victoires: 6
+  - personne: Ugo Lartiche
+    id: ugo-lartiche
+    victoires: 6
+  - personne: Sébastien Roullé
+    id: sebastien-roulle
+    victoires: 5
+  - personne: Martin Bazin
+    id: martin-bazin
+    victoires: 5
+  - personne: Nicolas Rouyé
+    id: nicolas-rouye
+    victoires: 5
+  - personne: Candice Boisson
+    id: candice-boisson
+    victoires: 5
+  par_metier:
+  - code: sport
+    libelle: Sport et coaching
+    victoires: 59
+    aventuriers: 49
+    victoires_par_aventurier: 1.2
+  - code: encadrement
+    libelle: Encadrement et professions intellectuelles
+    victoires: 53
+    aventuriers: 100
+    victoires_par_aventurier: 0.53
+  - code: artisanat_btp
+    libelle: Artisanat et bâtiment
+    victoires: 39
+    aventuriers: 43
+    victoires_par_aventurier: 0.91
+  - code: arts_medias
+    libelle: Arts, médias et image
+    victoires: 38
+    aventuriers: 47
+    victoires_par_aventurier: 0.81
+  - code: commerce
+    libelle: Commerce et vente
+    victoires: 35
+    aventuriers: 64
+    victoires_par_aventurier: 0.55
+  - code: agriculture
+    libelle: Agriculture et nature
+    victoires: 27
+    aventuriers: 24
+    victoires_par_aventurier: 1.12
+  - code: transport
+    libelle: Transport et logistique
+    victoires: 26
+    aventuriers: 29
+    victoires_par_aventurier: 0.9
+  - code: action_securite
+    libelle: Action et sécurité
+    victoires: 21
+    aventuriers: 29
+    victoires_par_aventurier: 0.72
+  - code: restauration_hotellerie
+    libelle: Restauration et hôtellerie
+    victoires: 21
+    aventuriers: 23
+    victoires_par_aventurier: 0.91
+  - code: etudiant
+    libelle: Étudiants
+    victoires: 21
+    aventuriers: 38
+    victoires_par_aventurier: 0.55
+  - code: enseignement
+    libelle: Enseignement et éducation
+    victoires: 19
+    aventuriers: 29
+    victoires_par_aventurier: 0.66
+  - code: sans_emploi
+    libelle: Sans activité déclarée
+    victoires: 13
+    aventuriers: 17
+    victoires_par_aventurier: 0.76
+  - code: sante
+    libelle: Santé
+    victoires: 8
+    aventuriers: 18
+    victoires_par_aventurier: 0.44
+  par_genre:
+  - genre: f
+    libelle: Femmes
+    victoires: 145
+    aventuriers: 256
+    victoires_par_aventurier: 0.57
+  - genre: h
+    libelle: Hommes
+    victoires: 236
+    aventuriers: 255
+    victoires_par_aventurier: 0.93
+  par_age:
+  - tranche: 18-24 ans
+    victoires: 73
+    aventuriers: 101
+    victoires_par_aventurier: 0.72
+  - tranche: 25-29 ans
+    victoires: 109
+    aventuriers: 107
+    victoires_par_aventurier: 1.02
+  - tranche: 30-34 ans
+    victoires: 92
+    aventuriers: 86
+    victoires_par_aventurier: 1.07
+  - tranche: 35-39 ans
+    victoires: 45
+    aventuriers: 86
+    victoires_par_aventurier: 0.52
+  - tranche: 40-44 ans
+    victoires: 34
+    aventuriers: 54
+    victoires_par_aventurier: 0.63
+  - tranche: 45 ans et plus
+    victoires: 28
+    aventuriers: 74
+    victoires_par_aventurier: 0.38

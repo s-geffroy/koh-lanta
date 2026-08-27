@@ -266,7 +266,10 @@ def parse_row(row, saison_id=None):
 
 def extract_table(text, titre=r"Candidats?"):
     """Isole le premier tableau de la section demandee."""
-    m = re.search(r"^==+\s*" + titre + r"\s*==+\s*$", text, re.M | re.I)
+    # Certaines pages portent du texte d'interface colle au titre
+    # (« Bilan par épisode[modifier | modifier le code] ») : on l'ignore.
+    m = re.search(r"^==+\s*" + titre + r"\s*(?:\[[^\]]*\])?\s*==+\s*$",
+                  text, re.M | re.I)
     if not m:
         return None
     reste = text[m.end():]

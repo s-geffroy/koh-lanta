@@ -19,10 +19,11 @@ mêmes personnes et fausseraient les moyennes d'âge comme de longévité.
   <li class="chiffre"><b>{{ v.part_40_et_plus }} %</b><span>de vainqueurs de 40 ans ou plus</span></li>
   <li class="chiffre"><b>{{ s.conseils.conseils }}</b><span>conseils dépouillés</span></li>
   <li class="chiffre"><b>{{ s.conseils.bulletins }}</b><span>bulletins relevés</span></li>
+  <li class="chiffre"><b>{{ s.epreuves.epreuves }}</b><span>épreuves relevées</span></li>
   <li class="chiffre"><b>{{ s.records.nb_multi_participants }}</b><span>aventuriers revenus jouer</span></li>
 </ul>
 
-## Les cinq entrées
+## Les six entrées
 
 <ul class="sommaire">
   <li><a href="{{ '/statistiques/vainqueurs/' | relative_url }}">Le profil du vainqueur</a>
@@ -38,6 +39,9 @@ mêmes personnes et fausseraient les moyennes d'âge comme de longévité.
   <li><a href="{{ '/statistiques/sorties/' | relative_url }}">Comment on sort</a>
       <p>Conseil, poteaux, orientation, abandon : la mécanique des départs, et
          son évolution.</p></li>
+  <li><a href="{{ '/statistiques/epreuves/' | relative_url }}">Les épreuves</a>
+      <p>{{ s.epreuves.epreuves }} épreuves relevées : les meilleurs ratios, les
+         totaux de carrière, et quel profil domine vraiment.</p></li>
   <li><a href="{{ '/statistiques/conseils/' | relative_url }}">Les conseils</a>
       <p>{{ s.conseils.bulletins }} bulletins dépouillés : les votes serrés, les
          colliers, qui vote contre qui.</p></li>

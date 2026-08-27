@@ -82,10 +82,14 @@ Le jeu de données n'est pas complet, et le dire fait partie du travail.
   peut garantir qu'il est complet. Les analyses bulletin par bulletin ne portent
   que sur ceux-là ; les agrégats — qui part, avec combien de voix — utilisent
   tous les conseils.
-- **Les épreuves ne sont pas dans ce jeu de données.** Ni les victoires
-  individuelles, ni les temps, ni les familles d'épreuves. Tant qu'elles n'y
-  seront pas, aucun classement de type « meilleur ratio d'épreuves » ne figurera
-  sur ce site.
+- **Les épreuves ne couvrent pas toutes les saisons.**
+  {{ site.data.stats.epreuves.saisons_couvertes }} saisons sur 34 ont un bilan
+  épisode par épisode exploitable ; les cinq autres
+  ({{ site.data.stats.epreuves.saisons_sans_donnee | join: ", " }}) n'en ont
+  pas. Les épreuves de finale sont exclues : les tableaux sources y changent de
+  colonnes et listent les qualifiés plutôt que le vainqueur. Enfin, la nature
+  des épreuves — endurance, équilibre, précision — n'est nulle part donnée de
+  façon exploitable.
 - **La saison en cours** au moment de la constitution des données n'a pas de
   vainqueur ni de jours de sortie complets : elle est exclue de tous les calculs.
 

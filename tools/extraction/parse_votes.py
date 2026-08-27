@@ -64,7 +64,15 @@ def separer_attributs(cell):
 def developper(table):
     """Developpe la table en grille rectangulaire, fusions recopiees."""
     lignes = re.split(r"\n\|-+[^\n]*", table)
-    lignes = [l for l in lignes if l.strip() and not l.lstrip().startswith("{|")]
+    # Le premier morceau contient la ligne d'ouverture `{| ...` ET, souvent, la
+    # premiere ligne d'en-tete. Jeter le morceau entier ferait disparaitre cette
+    # en-tete -- et avec elle le report de ses `rowspan`, ce qui decale toutes
+    # les colonnes. On ne retire donc que la ligne d'ouverture elle-meme.
+    if lignes:
+        premier = [x for x in lignes[0].split("\n")
+                   if not x.lstrip().startswith(("{|", "|+"))]
+        lignes[0] = "\n".join(premier)
+    lignes = [l for l in lignes if l.strip()]
 
     grille = []
     # cellules encore actives verticalement : colonne -> (contenu, lignes restantes)

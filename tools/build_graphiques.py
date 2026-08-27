@@ -197,6 +197,61 @@ def main():
             titre="Qui vote contre qui",
             description="Répartition des bulletins selon le sexe du votant et de sa cible.",
             unite=" %", couleur=SERIES[6], marge_gauche=210))
+    # --- epreuves ---------------------------------------------------------
+    e = stats.get("epreuves") or {}
+    if e:
+        ecrire("epreuves-ratios.svg", barres_horizontales(
+            [{"libelle": x["personne"], "valeur": x["ratio"],
+              "detail": f'{x["personne"]} ({x["titre"]}, {x["annee"]}) : '
+                        f'{x["gagnees"]} victoires sur {x["disputees"]} épreuves '
+                        f'individuelles disputées, soit {x["ratio"]} %'}
+             for x in e["classement_ratio"][:12]],
+            titre="Les meilleurs ratios d'épreuves individuelles",
+            description="Part des épreuves individuelles remportées, "
+                        "parmi celles disputées avant sa sortie.",
+            unite=" %", couleur=SERIES[0], marge_gauche=200))
+
+        ecrire("epreuves-cumuls.svg", barres_horizontales(
+            [{"libelle": x["personne"], "valeur": x["victoires"],
+              "detail": f'{x["personne"]} : {x["victoires"]} victoires '
+                        f'individuelles, toutes saisons confondues'}
+             for x in e["meilleurs_cumuls"][:10]],
+            titre="Les plus grands nombres de victoires individuelles",
+            description="Total des épreuves individuelles remportées, "
+                        "toutes participations confondues.",
+            couleur=SERIES[2], marge_gauche=200))
+
+        ecrire("epreuves-metier.svg", barres_horizontales(
+            [{"libelle": x["libelle"], "valeur": x["victoires_par_aventurier"],
+              "detail": f'{x["libelle"]} : {x["victoires"]} victoires pour '
+                        f'{x["aventuriers"]} aventuriers, soit '
+                        f'{x["victoires_par_aventurier"]} par personne'}
+             for x in e["par_metier"][:10] if x["victoires_par_aventurier"]],
+            titre="Victoires d'épreuves par métier",
+            description="Nombre moyen d'épreuves individuelles remportées "
+                        "par aventurier de chaque famille de métiers.",
+            couleur=SERIES[1]))
+
+        ecrire("epreuves-age.svg", colonnes(
+            [{"libelle": x["tranche"].replace(" ans", "").replace(" et plus", "+"),
+              "valeur": x["victoires_par_aventurier"],
+              "detail": f'{x["tranche"]} : {x["victoires"]} victoires pour '
+                        f'{x["aventuriers"]} aventuriers'}
+             for x in e["par_age"] if x["victoires_par_aventurier"]],
+            titre="Victoires d'épreuves selon l'âge",
+            description="Nombre moyen d'épreuves individuelles remportées "
+                        "par aventurier, par tranche d'âge.",
+            couleur=SERIES[0], hauteur=280))
+
+        ecrire("epreuves-genre.svg", barres_horizontales(
+            [{"libelle": x["libelle"], "valeur": x["victoires_par_aventurier"],
+              "couleur": SERIES[4] if x["genre"] == "f" else SERIES[0],
+              "detail": f'{x["libelle"]} : {x["victoires"]} victoires pour '
+                        f'{x["aventuriers"]} aventuriers'}
+             for x in e["par_genre"]],
+            titre="Victoires d'épreuves selon le sexe",
+            description="Nombre moyen d'épreuves individuelles remportées par aventurier.",
+            marge_gauche=110))
     return 0
 
 
