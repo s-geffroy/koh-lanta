@@ -13,6 +13,7 @@ ailleurs : un depot Pages est public et son historique definitif.
     tools/atelier python3 tools/publier.py            etat du site
     tools/atelier python3 tools/publier.py --activer  activer Pages si besoin
     tools/atelier python3 tools/publier.py --attendre  suivre la construction
+    tools/atelier python3 tools/publier.py --diagnostic  droits du jeton
 """
 import json
 import os
@@ -178,10 +179,47 @@ def attendre(jeton, patience=300):
     return False
 
 
+SONDES = [
+    ("GET", "/user", None, "s'authentifier", None),
+    ("GET", f"/repos/{DEPOT}", None, "lire le depot", "Metadata (lecture)"),
+    ("GET", f"/repos/{DEPOT}/actions/permissions", None,
+     "lire l'administration", "Administration (lecture)"),
+    ("GET", f"/repos/{DEPOT}/pages", None, "lire Pages", "Pages (lecture)"),
+]
+
+
+def diagnostiquer(jeton):
+    """Dit, droit par droit, ce que le jeton peut -- et ce qui lui manque.
+
+    Un 403 sur l'activation ne dit pas QUELLE permission fait defaut quand il y
+    en a plusieurs en jeu. Interroger un point d'entree par permission le dit.
+    """
+    print("ce que ce jeton peut :")
+    manquants = []
+    for methode, chemin, corps, libelle, permission in SONDES:
+        code, d = appel(methode, chemin, jeton, corps)
+        marque = "  ok " if code < 300 else "  -- "
+        note = ""
+        if code == 403 and permission:
+            manquants.append(permission)
+            note = f"  <- il manque « {permission} »"
+        elif code == 404 and chemin.endswith("/pages"):
+            note = "  (normal tant que Pages n'est pas active)"
+        print(f"{marque}{libelle:24s} {code}{note}")
+    if manquants:
+        print("\npermissions a ajouter au jeton : " + ", ".join(manquants))
+        print("Sur GitHub : Settings > Developer settings > Personal access tokens")
+        print("  > Fine-grained tokens > le jeton > Permissions, puis le bouton")
+        print("  « Update token » en bas de page -- sans lui, rien n'est enregistre.")
+    return not manquants
+
+
 def main():
     jeton = None
     try:
         jeton = lire_jeton()
+        if "--diagnostic" in sys.argv:
+            return 0 if diagnostiquer(jeton) else 1
         if "--activer" in sys.argv:
             activer(jeton)
         code, d = etat(jeton)
