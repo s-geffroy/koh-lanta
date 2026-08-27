@@ -77,15 +77,24 @@ def appel(methode, chemin, jeton, corps=None):
             "User-Agent": "koh-lanta-publication/1.0",
             "Content-Type": "application/json",
         })
+    def lire(reponse):
+        brut = reponse.read().decode() or "{}"
+        try:
+            corps = json.loads(brut)
+        except json.JSONDecodeError:
+            corps = {"message": brut[:200]}
+        # GitHub dit exactement quelle permission manque, dans un en-tete.
+        # Le lire evite de faire deviner, et de tatonner sur les droits.
+        exigees = reponse.headers.get("x-accepted-github-permissions")
+        if exigees:
+            corps["_permissions_exigees"] = exigees
+        return corps
+
     try:
         with urllib.request.urlopen(req, timeout=45) as r:
-            brut = r.read().decode() or "{}"
-            return r.status, json.loads(brut)
+            return r.status, lire(r)
     except urllib.error.HTTPError as e:
-        try:
-            return e.code, json.loads(e.read().decode() or "{}")
-        except Exception:
-            return e.code, {}
+        return e.code, lire(e)
 
 
 def etat(jeton):
@@ -99,9 +108,20 @@ def diagnostic_permission(code, d):
         return ("le jeton est refuse (401). Il est peut-etre expire, mal copie, "
                 "ou revoque.")
     if code == 403:
-        return ("le jeton n'a pas le droit demande (403). Pour ce depot, il lui "
-                "faut la permission « Pages » en ecriture, et « Administration » "
-                "en ecriture pour la creation du site.")
+        exigees = (d or {}).get("_permissions_exigees")
+        detail = ""
+        if exigees:
+            noms = {"pages": "Pages", "administration": "Administration",
+                    "contents": "Contents", "metadata": "Metadata"}
+            lisible = ", ".join(
+                f"« {noms.get(x.split('=')[0], x.split('=')[0])} » en "
+                + ("ecriture" if x.endswith("write") else "lecture")
+                for x in exigees.split(","))
+            detail = (f"\n  GitHub exige exactement : {lisible}"
+                      f"\n  (en-tete brut : {exigees})")
+        return ("le jeton n'a pas le droit demande (403)." + detail
+                + "\n  Ces permissions se modifient sur un jeton existant, "
+                  "sans le regenerer.")
     if code == 404 and "Not Found" in message:
         return ("depot introuvable AVEC ce jeton (404). Verifie que le jeton "
                 "porte bien sur s-geffroy/koh-lanta.")
