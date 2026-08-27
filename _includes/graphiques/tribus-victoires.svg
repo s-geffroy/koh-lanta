@@ -1,0 +1,29 @@
+<figure class="figure">
+<svg class="graphique" viewBox="0 0 680 242" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Victoires finales par couleur de tribu initiale">
+  <title>Victoires finales par couleur de tribu initiale</title>
+  <desc>Nombre de vainqueurs selon la couleur de leur tribu de départ.</desc>
+  <line x1="237.0" y1="10" x2="237.0" y2="216" stroke="var(--grille)" stroke-width="1"/>
+  <line x1="364.0" y1="10" x2="364.0" y2="216" stroke="var(--grille)" stroke-width="1"/>
+  <line x1="491.0" y1="10" x2="491.0" y2="216" stroke="var(--grille)" stroke-width="1"/>
+  <line x1="618.0" y1="10" x2="618.0" y2="216" stroke="var(--grille)" stroke-width="1"/>
+  <g class="marque"><title>Tribu jaune : 12 victoires pour 213 aventuriers</title><rect x="110" y="16" width="508.0" height="26" rx="4" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="100.0" y="29.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Jaune</text>
+  <text x="626.0" y="29.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">12</text>
+  <g class="marque"><title>Tribu rouge : 12 victoires pour 208 aventuriers</title><rect x="110" y="50" width="508.0" height="26" rx="4" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="100.0" y="63.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Rouge</text>
+  <text x="626.0" y="63.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">12</text>
+  <g class="marque"><title>Tribu vert : 3 victoires pour 20 aventuriers</title><rect x="110" y="84" width="127.0" height="26" rx="4" fill="var(--tribu-vert)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="100.0" y="97.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Vert</text>
+  <text x="245.0" y="97.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">3</text>
+  <g class="marque"><title>Tribu bleu : 1 victoires pour 34 aventuriers</title><rect x="110" y="118" width="42.3" height="26" rx="4" fill="var(--tribu-bleu)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="100.0" y="131.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Bleu</text>
+  <text x="160.3" y="131.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">1</text>
+  <g class="marque"><title>Tribu violet : 1 victoires pour 20 aventuriers</title><rect x="110" y="152" width="42.3" height="26" rx="4" fill="var(--tribu-violet)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="100.0" y="165.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Violet</text>
+  <text x="160.3" y="165.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">1</text>
+  <g class="marque"><title>Tribu orange : 0 victoires pour 12 aventuriers</title><rect x="110" y="186" width="3.0" height="26" rx="4" fill="var(--tribu-orange)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="100.0" y="199.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Orange</text>
+  <text x="121.0" y="199.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">0</text>
+  <line x1="110" y1="10" x2="110" y2="216" stroke="var(--axe)" stroke-width="1"/>
+</svg>
+</figure>

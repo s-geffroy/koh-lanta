@@ -1,0 +1,140 @@
+# Taxonomie des professions.
+#
+# Elle sert a repondre a une question precise : quels metiers menent le plus
+# loin dans le jeu ? Sans regroupement, 500 intitules distincts ne disent rien.
+#
+# La classification est faite par mots-cles, dans l'ORDRE de ce fichier : le
+# premier poste dont un mot-cle apparait dans l'intitule l'emporte. L'ordre est
+# donc porteur de sens -- « educateur sportif » doit rencontrer `sport` avant
+# `enseignement`, « maitre-nageur » doit rencontrer `action_securite` avant
+# `sport`.
+#
+# Les mots-cles sont compares SANS ACCENTS et en minuscules. Un mot-cle vaut
+# pour toutes ses variantes de genre et de nombre des lors qu'il est ecrit sous
+# sa forme la plus courte (« infirmi » couvre infirmier, infirmiere, infirmiers).
+#
+# Ce fichier est fait pour etre relu et discute : si un classement parait
+# faux, c'est ici qu'il se corrige, pas dans le code.
+
+postes:
+  - code: action_securite
+    libelle: "Action et sécurité"
+    description: "Métiers d'intervention et de secours."
+    mots: [militaire, pompier, gendarme, policier, police, "agent de securite",
+           securite, secouriste, sauveteur, "maitre-nageur", "maitre nageur",
+           ambulancier, parachut, marin, "garde du corps", legion, commando,
+           "surveillant penitentiaire", douanier, "expert en survie",
+           "agent de prevention", "gardien de la paix", "inspecteur de police",
+           "instructeur de survie", "instructrice de survie", "garde-champetre", "ecogarde", "pompes funebres"]
+
+  - code: sport
+    libelle: "Sport et coaching"
+    description: "Enseignement et pratique du sport."
+    mots: [coach, sportif, sportive, staps, fitness, "prof d'eps", "professeur d'eps",
+           "moniteur de sport", "educateur sportif", "educatrice sportive",
+           footballeu, rugbym, basketteu, escrimeu, athlete, "champion",
+           "arts martiaux", mma, boxe, "moniteur d'escalade", "moniteur de ski",
+           "professeur de danse", "professeur de zumba", "professeur de pilates",
+           "professeur de fitness", "guide de haute montagne", cordiste,
+           entraineur, entraineuse, handballeu, kitesurf, wakeboard, "joueuse de football", "joueur de football", "coureur professionnel", "moniteur de tennis", "maitre-nageuse", "triple saut"]
+
+  - code: sante
+    libelle: "Santé"
+    description: "Soin et paramédical."
+    mots: [infirmi, medecin, kinesitherap, osteopath, pharmac, dentaire, dentiste,
+           "sage-femme", psycholog, veterinaire, "aide-soignant", dietetic,
+           orthophon, podolog, "auxiliaire de puericulture", radiolog, chirurg,
+           "prothesiste", "technicienne en apnee"]
+
+  - code: agriculture
+    libelle: "Agriculture et nature"
+    description: "Travail de la terre, de la mer et du vivant."
+    mots: [agricult, eleveu, maraich, viticult, pecheu, poissonn, jardinier,
+           horticult, forestier, berger, "guide naturaliste", fromag, apicult,
+           "toiletteuse", "toiletteur", ostreicult,
+           fauconnier, meunier, bucheron, elagueur, "grossiste en coquillages", confiturier, docker]
+
+  - code: artisanat_btp
+    libelle: "Artisanat et bâtiment"
+    description: "Métiers manuels de production et de construction."
+    mots: [charpentier, macon, menuisier, plombier, electricien, couvreur,
+           "peintre en batiment", ouvrier, artisan, boulang, patissi, bouch,
+           soudeur, mecanic, carross, chaudronnier, serrurier, carreleur,
+           platrier, ebeniste, "decorateur", tapissier, bijoutier, joaillier,
+           horloger, "fendeur de bois", "vitrier", "technicien", cariste,
+           "agent de maitrise", "conducteur de travaux",
+           fustier, rempailleur, garagiste, contremaitre, "tailleur pour hommes", "preparateur de motos", "raccordeu", "creatrice de bijoux", eboueur, "patron de casse"]
+
+  - code: transport
+    libelle: "Transport et logistique"
+    description: "Conduite, acheminement, entreposage."
+    mots: [chauffeur, conducteur, conductrice, pilote, taxi, livreur, routier,
+           logistique, magasinier, "agent de bord", "hotesse de l'air",
+           steward, "approvisionneur", "skipper", "cheminot",
+           "controleur de train", "loueur de voitures", navigateur, saisonnier, saisonniere, chaffeur]
+
+  - code: restauration_hotellerie
+    libelle: "Restauration et hôtellerie"
+    description: "Salle, cuisine, accueil."
+    mots: [serveu, cuisin, restaurat, barman, barmaid, hotel, "hotesse d'accueil",
+           "chef de rang", sommelier, traiteur, "gerant de camping",
+           "gerante de gite", "gerant de gite", cantini, "creche",
+           "patron d'un restaurant", "patron de pizzeria", "proprietaire d'un fast-food", croupi]
+
+  - code: commerce
+    libelle: "Commerce et vente"
+    description: "Vente, négoce, intermédiation."
+    mots: [commercial, vendeu, vente, caissi, "agent immobilier", immobilier,
+           courtier, negociant, assurance, "chargee de clientele",
+           "chargé de clientele", "attache commercial", "marchand", "boutique",
+           "chef de secteur", "responsable de magasin", "directrice de magasin",
+           "recouvrement",
+           commercant, commercante, libraire, buraliste, brocanteu, "gestionnaire de stock", grossiste]
+
+  - code: enseignement
+    libelle: "Enseignement et éducation"
+    description: "Transmission et encadrement éducatif."
+    mots: [professeur, professeure, enseignant, institut, formateur, formatrice,
+           educateur, educatrice, "animateur", "animatrice", "assistant d'education",
+           "assistante d'education", "conseillere d'orientation", "mediatrice",
+           "mediateur", "assistante maternelle", "directrice d'ecole",
+           "directeur d'ecole", "assistante familiale",
+           "conseillere d'education", "travailleur social", "conseillere en insertion", universitaire]
+
+  - code: arts_medias
+    libelle: "Arts, médias et image"
+    description: "Création, spectacle, apparence, communication."
+    mots: [artiste, musicien, danseu, comedien, photographe, graphiste, designer,
+           journalist, mannequin, ecrivain, coiffeu, esthetic, styliste, tatoueu,
+           maquilleu, "directeur artistique", realisateur, acteur, actrice,
+           chanteu, "community manager", "digital manager", blogueu, influenceu,
+           "responsable marketing", "charge de communication", "sculpteur",
+           "acrobate", "artiste de cirque", "magnetiseur",
+           "disc-jockey", "creatrice de mode", "top-model", scenographe, "chef de publicite", "organisatrice d'evenements", voyant, "charge de communication", "chargee de communication", cascadeur]
+
+  - code: encadrement
+    libelle: "Encadrement et professions intellectuelles"
+    description: "Direction, expertise, gestion."
+    mots: [directeur, directrice, cadre, manager, responsable, "chef d'entreprise",
+           "cheffe d'entreprise", dirigeant, gerant, gerante, entrepreneur,
+           entrepreneuse, consultant, ingenieur, comptable, banc, financ, juriste,
+           avocat, notaire, "ressources humaines", "chef de projet", "chef de produit",
+           "analyste", "expert", "auditeur", "fonctionnaire", "secretaire",
+           "assistant", "assistante", "employe", "employee", "agent",
+           "controleuse de gestion", informatic, geologue, recruteur, coordinatrice, "conseillere municipale", "conseillere en credit", "attachee consulaire"]
+
+  - code: etudiant
+    libelle: "Étudiants"
+    description: "En cours d'études."
+    mots: [etudiant, etudiante, "en etudes", "diplome", "diplomee", lyceen, apprenti]
+
+  - code: sans_emploi
+    libelle: "Sans activité déclarée"
+    description: "Retraite, foyer, recherche d'emploi, intérim."
+    mots: ["sans emploi", "recherche d'emploi", retrait, "au foyer", interimaire,
+           "sans profession", "mere au foyer", "pere au foyer", chomage]
+
+  - code: autre
+    libelle: "Autres métiers"
+    description: "Ce que les postes précédents ne couvrent pas."
+    mots: []

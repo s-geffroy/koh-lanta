@@ -1,0 +1,8 @@
+#!/bin/sh
+# Lance une commande dans l'atelier conteneurise du projet.
+#
+#   tools/atelier python3 tools/extraction/fusionner.py
+#
+# Tout le travail de donnees et de graphiques passe par ici : rien ne
+# s'installe ni ne s'execute sur l'hote. Le depot est monte sur /depot.
+exec sudo -n /usr/local/bin/appctl run atelier "$@"

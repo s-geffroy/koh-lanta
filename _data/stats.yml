@@ -1,0 +1,1389 @@
+# ATTENTION : fichier genere. Ne pas editer a la main.
+#
+# Produit par tools/build_stats.py a partir de _data/saisons.yml,
+# participations.yml, personnes.yml et conseils.yml.
+#
+#     tools/atelier python3 tools/build_stats.py
+#
+# Sauf mention contraire, les chiffres portent sur les SAISONS CLASSIQUES
+# achevees. Les blocs `toutes` ajoutent les editions speciales.
+#
+general:
+  saisons_declarees: 36
+  saisons_diffusees: 34
+  saisons_classiques: 26
+  saisons_speciales: 8
+  saisons_annulees: 2
+  participations: 645
+  personnes: 535
+  premiere_annee: 2001
+  derniere_annee: 2026
+  pays: 14
+vainqueurs:
+  effectif: 29
+  age_moyen: 31.9
+  age_median: 32.0
+  age_min: 19
+  age_max: 50
+  part_40_et_plus: 24.1
+  par_tranche:
+  - tranche: 18-24 ans
+    effectif: 7
+    part: 24.1
+  - tranche: 25-29 ans
+    effectif: 4
+    part: 13.8
+  - tranche: 30-34 ans
+    effectif: 7
+    part: 24.1
+  - tranche: 35-39 ans
+    effectif: 4
+    part: 13.8
+  - tranche: 40-44 ans
+    effectif: 6
+    part: 20.7
+  - tranche: 45 ans et plus
+    effectif: 1
+    part: 3.4
+  par_genre:
+  - genre: f
+    libelle: Femmes
+    effectif: 14
+    part: 48.3
+  - genre: h
+    libelle: Hommes
+    effectif: 15
+    part: 51.7
+  par_couleur:
+  - couleur: jaune
+    effectif: 12
+    part: 41.4
+  - couleur: rouge
+    effectif: 12
+    part: 41.4
+  - couleur: vert
+    effectif: 3
+    part: 10.3
+  - couleur: bleu
+    effectif: 1
+    part: 3.4
+  - couleur: violet
+    effectif: 1
+    part: 3.4
+  par_metier:
+  - code: encadrement
+    libelle: Encadrement et professions intellectuelles
+    effectif: 5
+    part: 17.2
+  - code: commerce
+    libelle: Commerce et vente
+    effectif: 5
+    part: 17.2
+  - code: sport
+    libelle: Sport et coaching
+    effectif: 5
+    part: 17.2
+  - code: agriculture
+    libelle: Agriculture et nature
+    effectif: 3
+    part: 10.3
+  - code: restauration_hotellerie
+    libelle: Restauration et hôtellerie
+    effectif: 2
+    part: 6.9
+  - code: artisanat_btp
+    libelle: Artisanat et bâtiment
+    effectif: 2
+    part: 6.9
+  - code: etudiant
+    libelle: Étudiants
+    effectif: 2
+    part: 6.9
+  - code: action_securite
+    libelle: Action et sécurité
+    effectif: 2
+    part: 6.9
+  - code: arts_medias
+    libelle: Arts, médias et image
+    effectif: 1
+    part: 3.4
+  - code: transport
+    libelle: Transport et logistique
+    effectif: 1
+    part: 3.4
+  - code: sans_emploi
+    libelle: Sans activité déclarée
+    effectif: 1
+    part: 3.4
+vainqueurs_toutes:
+  effectif: 36
+  age_moyen: 32.3
+  age_median: 32.5
+  age_min: 19
+  age_max: 50
+  part_40_et_plus: 22.2
+  par_tranche:
+  - tranche: 18-24 ans
+    effectif: 7
+    part: 19.4
+  - tranche: 25-29 ans
+    effectif: 5
+    part: 13.9
+  - tranche: 30-34 ans
+    effectif: 10
+    part: 27.8
+  - tranche: 35-39 ans
+    effectif: 6
+    part: 16.7
+  - tranche: 40-44 ans
+    effectif: 7
+    part: 19.4
+  - tranche: 45 ans et plus
+    effectif: 1
+    part: 2.8
+  par_genre:
+  - genre: f
+    libelle: Femmes
+    effectif: 16
+    part: 44.4
+  - genre: h
+    libelle: Hommes
+    effectif: 20
+    part: 55.6
+  par_couleur:
+  - couleur: jaune
+    effectif: 18
+    part: 50.0
+  - couleur: rouge
+    effectif: 13
+    part: 36.1
+  - couleur: vert
+    effectif: 3
+    part: 8.3
+  - couleur: bleu
+    effectif: 1
+    part: 2.8
+  - couleur: violet
+    effectif: 1
+    part: 2.8
+  par_metier:
+  - code: sport
+    libelle: Sport et coaching
+    effectif: 7
+    part: 19.4
+  - code: encadrement
+    libelle: Encadrement et professions intellectuelles
+    effectif: 6
+    part: 16.7
+  - code: commerce
+    libelle: Commerce et vente
+    effectif: 5
+    part: 13.9
+  - code: agriculture
+    libelle: Agriculture et nature
+    effectif: 4
+    part: 11.1
+  - code: transport
+    libelle: Transport et logistique
+    effectif: 3
+    part: 8.3
+  - code: arts_medias
+    libelle: Arts, médias et image
+    effectif: 2
+    part: 5.6
+  - code: restauration_hotellerie
+    libelle: Restauration et hôtellerie
+    effectif: 2
+    part: 5.6
+  - code: artisanat_btp
+    libelle: Artisanat et bâtiment
+    effectif: 2
+    part: 5.6
+  - code: etudiant
+    libelle: Étudiants
+    effectif: 2
+    part: 5.6
+  - code: action_securite
+    libelle: Action et sécurité
+    effectif: 2
+    part: 5.6
+  - code: sans_emploi
+    libelle: Sans activité déclarée
+    effectif: 1
+    part: 2.8
+couleurs:
+- couleur: jaune
+  effectif: 213
+  survie_moyenne: 59.9
+  victoires: 12
+  finales: 23
+  taux_finale: 10.8
+- couleur: rouge
+  effectif: 208
+  survie_moyenne: 63.0
+  victoires: 12
+  finales: 21
+  taux_finale: 10.1
+- couleur: bleu
+  effectif: 34
+  survie_moyenne: 63.7
+  victoires: 1
+  finales: 3
+  taux_finale: 8.8
+- couleur: vert
+  effectif: 20
+  survie_moyenne: 67.0
+  victoires: 3
+  finales: 3
+  taux_finale: 15.0
+- couleur: violet
+  effectif: 20
+  survie_moyenne: 59.2
+  victoires: 1
+  finales: 1
+  taux_finale: 5.0
+- couleur: orange
+  effectif: 12
+  survie_moyenne: 56.7
+  victoires: 0
+  finales: 2
+  taux_finale: 16.7
+- couleur: noir
+  effectif: 2
+  survie_moyenne: 32.5
+  victoires: 0
+  finales: 0
+  taux_finale: 0.0
+metiers:
+- code: encadrement
+  libelle: Encadrement et professions intellectuelles
+  effectif: 100
+  part_du_casting: 19.6
+  victoires: 5
+  finales: 6
+  taux_finale: 6.0
+  survie_moyenne: 57.7
+  age_moyen: 36.4
+- code: commerce
+  libelle: Commerce et vente
+  effectif: 64
+  part_du_casting: 12.5
+  victoires: 5
+  finales: 10
+  taux_finale: 15.6
+  survie_moyenne: 57.0
+  age_moyen: 35.2
+- code: sport
+  libelle: Sport et coaching
+  effectif: 49
+  part_du_casting: 9.6
+  victoires: 5
+  finales: 7
+  taux_finale: 14.3
+  survie_moyenne: 66.3
+  age_moyen: 32.7
+- code: arts_medias
+  libelle: Arts, médias et image
+  effectif: 47
+  part_du_casting: 9.2
+  victoires: 1
+  finales: 4
+  taux_finale: 8.5
+  survie_moyenne: 67.9
+  age_moyen: 32.6
+- code: artisanat_btp
+  libelle: Artisanat et bâtiment
+  effectif: 43
+  part_du_casting: 8.4
+  victoires: 2
+  finales: 5
+  taux_finale: 11.6
+  survie_moyenne: 68.8
+  age_moyen: 35.9
+- code: etudiant
+  libelle: Étudiants
+  effectif: 38
+  part_du_casting: 7.4
+  victoires: 2
+  finales: 4
+  taux_finale: 10.5
+  survie_moyenne: 53.5
+  age_moyen: 22.0
+- code: enseignement
+  libelle: Enseignement et éducation
+  effectif: 29
+  part_du_casting: 5.7
+  victoires: 0
+  finales: 2
+  taux_finale: 6.9
+  survie_moyenne: 60.8
+  age_moyen: 35.8
+- code: transport
+  libelle: Transport et logistique
+  effectif: 29
+  part_du_casting: 5.7
+  victoires: 1
+  finales: 2
+  taux_finale: 6.9
+  survie_moyenne: 58.3
+  age_moyen: 32.9
+- code: action_securite
+  libelle: Action et sécurité
+  effectif: 29
+  part_du_casting: 5.7
+  victoires: 2
+  finales: 2
+  taux_finale: 6.9
+  survie_moyenne: 60.1
+  age_moyen: 35.6
+- code: agriculture
+  libelle: Agriculture et nature
+  effectif: 24
+  part_du_casting: 4.7
+  victoires: 3
+  finales: 3
+  taux_finale: 12.5
+  survie_moyenne: 70.3
+  age_moyen: 34.5
+- code: restauration_hotellerie
+  libelle: Restauration et hôtellerie
+  effectif: 23
+  part_du_casting: 4.5
+  victoires: 2
+  finales: 3
+  taux_finale: 13.0
+  survie_moyenne: 62.8
+  age_moyen: 31.3
+- code: sante
+  libelle: Santé
+  effectif: 18
+  part_du_casting: 3.5
+  victoires: 0
+  finales: 2
+  taux_finale: 11.1
+  survie_moyenne: 50.1
+  age_moyen: 29.8
+- code: sans_emploi
+  libelle: Sans activité déclarée
+  effectif: 17
+  part_du_casting: 3.3
+  victoires: 1
+  finales: 3
+  taux_finale: 17.6
+  survie_moyenne: 69.5
+  age_moyen: 39.8
+metiers_toutes:
+- code: encadrement
+  libelle: Encadrement et professions intellectuelles
+  effectif: 123
+  part_du_casting: 19.6
+  victoires: 6
+  finales: 8
+  taux_finale: 6.5
+  survie_moyenne: 58.2
+  age_moyen: 36.2
+- code: commerce
+  libelle: Commerce et vente
+  effectif: 78
+  part_du_casting: 12.4
+  victoires: 5
+  finales: 11
+  taux_finale: 14.1
+  survie_moyenne: 57.9
+  age_moyen: 35.3
+- code: sport
+  libelle: Sport et coaching
+  effectif: 70
+  part_du_casting: 11.2
+  victoires: 7
+  finales: 9
+  taux_finale: 12.9
+  survie_moyenne: 64.1
+  age_moyen: 33.8
+- code: artisanat_btp
+  libelle: Artisanat et bâtiment
+  effectif: 54
+  part_du_casting: 8.6
+  victoires: 2
+  finales: 5
+  taux_finale: 9.3
+  survie_moyenne: 68.7
+  age_moyen: 36.6
+- code: arts_medias
+  libelle: Arts, médias et image
+  effectif: 53
+  part_du_casting: 8.5
+  victoires: 2
+  finales: 6
+  taux_finale: 11.3
+  survie_moyenne: 69.0
+  age_moyen: 32.6
+- code: etudiant
+  libelle: Étudiants
+  effectif: 42
+  part_du_casting: 6.7
+  victoires: 2
+  finales: 5
+  taux_finale: 11.9
+  survie_moyenne: 52.9
+  age_moyen: 22.1
+- code: transport
+  libelle: Transport et logistique
+  effectif: 40
+  part_du_casting: 6.4
+  victoires: 3
+  finales: 5
+  taux_finale: 12.5
+  survie_moyenne: 61.7
+  age_moyen: 33.4
+- code: action_securite
+  libelle: Action et sécurité
+  effectif: 34
+  part_du_casting: 5.4
+  victoires: 2
+  finales: 2
+  taux_finale: 5.9
+  survie_moyenne: 57.3
+  age_moyen: 36.9
+- code: enseignement
+  libelle: Enseignement et éducation
+  effectif: 32
+  part_du_casting: 5.1
+  victoires: 0
+  finales: 2
+  taux_finale: 6.2
+  survie_moyenne: 59.3
+  age_moyen: 36.1
+- code: restauration_hotellerie
+  libelle: Restauration et hôtellerie
+  effectif: 29
+  part_du_casting: 4.6
+  victoires: 2
+  finales: 4
+  taux_finale: 13.8
+  survie_moyenne: 65.0
+  age_moyen: 32.0
+- code: agriculture
+  libelle: Agriculture et nature
+  effectif: 27
+  part_du_casting: 4.3
+  victoires: 4
+  finales: 4
+  taux_finale: 14.8
+  survie_moyenne: 70.8
+  age_moyen: 34.5
+- code: sante
+  libelle: Santé
+  effectif: 22
+  part_du_casting: 3.5
+  victoires: 0
+  finales: 3
+  taux_finale: 13.6
+  survie_moyenne: 50.1
+  age_moyen: 30.0
+- code: sans_emploi
+  libelle: Sans activité déclarée
+  effectif: 19
+  part_du_casting: 3.0
+  victoires: 1
+  finales: 3
+  taux_finale: 15.8
+  survie_moyenne: 68.9
+  age_moyen: 40.2
+genre:
+  resume:
+  - genre: f
+    libelle: Femmes
+    effectif: 256
+    part_du_casting: 50.1
+    survie_moyenne: 58.2
+    jour_moyen: 23.2
+    age_moyen: 32.8
+    victoires: 14
+    finales: 27
+    taux_finale: 10.5
+  - genre: h
+    libelle: Hommes
+    effectif: 255
+    part_du_casting: 49.9
+    survie_moyenne: 64.4
+    jour_moyen: 25.7
+    age_moyen: 34.6
+    victoires: 15
+    finales: 26
+    taux_finale: 10.2
+  par_decennie:
+  - decennie: 2000s
+    effectif: 150
+    survie_femmes: 56.8
+    effectif_femmes: 75
+    survie_hommes: 63.8
+    effectif_hommes: 75
+  - decennie: 2010s
+    effectif: 182
+    survie_femmes: 56.4
+    effectif_femmes: 91
+    survie_hommes: 65.7
+    effectif_hommes: 91
+  - decennie: 2020s
+    effectif: 179
+    survie_femmes: 61.2
+    effectif_femmes: 90
+    survie_hommes: 63.6
+    effectif_hommes: 89
+sorties:
+  repartition:
+  - sort: elimine_conseil
+    libelle: Éliminé au conseil
+    effectif: 329
+    part: 64.4
+  - sort: abandon_medical
+    libelle: Abandon médical
+    effectif: 40
+    part: 7.8
+  - sort: elimine_orientation
+    libelle: Éliminé à l'orientation
+    effectif: 32
+    part: 6.3
+  - sort: vainqueur
+    libelle: Vainqueur
+    effectif: 29
+    part: 5.7
+  - sort: elimine_poteaux
+    libelle: Éliminé aux poteaux
+    effectif: 25
+    part: 4.9
+  - sort: finaliste
+    libelle: Finaliste
+    effectif: 24
+    part: 4.7
+  - sort: abandon_volontaire
+    libelle: Abandon volontaire
+    effectif: 17
+    part: 3.3
+  - sort: elimine_ambassadeurs
+    libelle: Éliminé aux ambassadeurs
+    effectif: 13
+    part: 2.5
+  - sort: elimine_duel
+    libelle: Éliminé en duel
+    effectif: 1
+    part: 0.2
+  par_decennie:
+  - decennie: 2000s
+    effectif: 150
+    abandons: 14.7
+    conseil: 63.3
+    ambassadeurs: 0.0
+  - decennie: 2010s
+    effectif: 182
+    abandons: 12.1
+    conseil: 62.1
+    ambassadeurs: 4.4
+  - decennie: 2020s
+    effectif: 179
+    abandons: 7.3
+    conseil: 67.6
+    ambassadeurs: 2.8
+sorties_toutes:
+  repartition:
+  - sort: elimine_conseil
+    libelle: Éliminé au conseil
+    effectif: 401
+    part: 64.0
+  - sort: abandon_medical
+    libelle: Abandon médical
+    effectif: 48
+    part: 7.7
+  - sort: elimine_orientation
+    libelle: Éliminé à l'orientation
+    effectif: 42
+    part: 6.7
+  - sort: vainqueur
+    libelle: Vainqueur
+    effectif: 36
+    part: 5.7
+  - sort: finaliste
+    libelle: Finaliste
+    effectif: 31
+    part: 4.9
+  - sort: elimine_poteaux
+    libelle: Éliminé aux poteaux
+    effectif: 30
+    part: 4.8
+  - sort: elimine_ambassadeurs
+    libelle: Éliminé aux ambassadeurs
+    effectif: 20
+    part: 3.2
+  - sort: abandon_volontaire
+    libelle: Abandon volontaire
+    effectif: 17
+    part: 2.7
+  - sort: elimine_duel
+    libelle: Éliminé en duel
+    effectif: 1
+    part: 0.2
+  par_decennie:
+  - decennie: 2000s
+    effectif: 164
+    abandons: 13.4
+    conseil: 63.4
+    ambassadeurs: 0.6
+  - decennie: 2010s
+    effectif: 243
+    abandons: 10.3
+    conseil: 61.7
+    ambassadeurs: 4.9
+  - decennie: 2020s
+    effectif: 220
+    abandons: 8.2
+    conseil: 66.8
+    ambassadeurs: 3.2
+age:
+- tranche: 18-24 ans
+  effectif: 101
+  part_du_casting: 19.8
+  survie_moyenne: 54.6
+  victoires: 7
+  finales: 13
+  taux_finale: 12.9
+- tranche: 25-29 ans
+  effectif: 107
+  part_du_casting: 20.9
+  survie_moyenne: 66.5
+  victoires: 4
+  finales: 10
+  taux_finale: 9.3
+- tranche: 30-34 ans
+  effectif: 86
+  part_du_casting: 16.8
+  survie_moyenne: 67.8
+  victoires: 7
+  finales: 13
+  taux_finale: 15.1
+- tranche: 35-39 ans
+  effectif: 86
+  part_du_casting: 16.8
+  survie_moyenne: 63.1
+  victoires: 4
+  finales: 6
+  taux_finale: 7.0
+- tranche: 40-44 ans
+  effectif: 54
+  part_du_casting: 10.6
+  survie_moyenne: 63.1
+  victoires: 6
+  finales: 6
+  taux_finale: 11.1
+- tranche: 45 ans et plus
+  effectif: 74
+  part_du_casting: 14.5
+  survie_moyenne: 52.6
+  victoires: 1
+  finales: 5
+  taux_finale: 6.8
+saisons:
+- id: s01
+  numero: 1
+  titre: Les Aventuriers de Koh-Lanta
+  annee: 2001
+  speciale: false
+  en_cours: false
+  pays: Thaïlande
+  lieu: Parc national de Koh Lanta
+  duree_jours: 43
+  effectif: 16
+  age_moyen: 31.3
+  age_min: 18
+  age_max: 58
+  part_femmes: 43.8
+  abandons: 0
+  vainqueurs:
+  - Gilles
+- id: s02
+  numero: 2
+  titre: Nicoya
+  annee: 2002
+  speciale: false
+  en_cours: false
+  pays: Costa Rica
+  lieu: Péninsule de Nicoya
+  duree_jours: 40
+  effectif: 16
+  age_moyen: 31.0
+  age_min: 22
+  age_max: 51
+  part_femmes: 43.8
+  abandons: 1
+  vainqueurs:
+  - Amel
+- id: s03
+  numero: 3
+  titre: Bocas del Toro
+  annee: 2003
+  speciale: false
+  en_cours: false
+  pays: Panama
+  lieu: Archipel de Bocas del Toro
+  duree_jours: 40
+  effectif: 18
+  age_moyen: 31.6
+  age_min: 22
+  age_max: 58
+  part_femmes: 55.6
+  abandons: 6
+  vainqueurs:
+  - Delphine
+  - Isabelle
+- id: s04
+  numero: 4
+  titre: Panama
+  annee: 2004
+  speciale: false
+  en_cours: false
+  pays: Panama
+  lieu: Archipel des Perles (Las Perlas)
+  duree_jours: 40
+  effectif: 16
+  age_moyen: 33.7
+  age_min: 20
+  age_max: 57
+  part_femmes: 50.0
+  abandons: 2
+  vainqueurs:
+  - Philippe
+- id: s05
+  numero: 5
+  titre: Pacifique
+  annee: 2005
+  speciale: false
+  en_cours: false
+  pays: Nouvelle-Calédonie
+  lieu: Îlots de l'île des Pins
+  duree_jours: 40
+  effectif: 17
+  age_moyen: 32.6
+  age_min: 20
+  age_max: 59
+  part_femmes: 58.8
+  abandons: 2
+  vainqueurs:
+  - Clémence
+- id: s06
+  numero: 6
+  titre: Vanuatu
+  annee: 2006
+  speciale: false
+  en_cours: false
+  pays: Vanuatu
+  lieu: Archipel d'Éfaté
+  duree_jours: 40
+  effectif: 16
+  age_moyen: 33.2
+  age_min: 21
+  age_max: 60
+  part_femmes: 50.0
+  abandons: 3
+  vainqueurs:
+  - François-David
+- id: s07
+  numero: 7
+  titre: Palawan
+  annee: 2007
+  speciale: false
+  en_cours: false
+  pays: Philippines
+  lieu: Archipel de Palawan
+  duree_jours: 40
+  effectif: 16
+  age_moyen: 32.7
+  age_min: 21
+  age_max: 55
+  part_femmes: 50.0
+  abandons: 1
+  vainqueurs:
+  - Jade
+  - Kévin
+- id: s08
+  numero: 8
+  titre: Caramoan
+  annee: 2008
+  speciale: false
+  en_cours: false
+  pays: Philippines
+  lieu: Péninsule de Caramoan
+  duree_jours: 40
+  effectif: 17
+  age_moyen: 32.6
+  age_min: 20
+  age_max: 56
+  part_femmes: 47.1
+  abandons: 3
+  vainqueurs:
+  - Christelle
+- id: s09
+  numero: 9
+  titre: Palau
+  annee: 2009
+  speciale: false
+  en_cours: false
+  pays: Palaos
+  lieu: Micronésie
+  duree_jours: 39
+  effectif: 18
+  age_moyen: 34.7
+  age_min: 19
+  age_max: 62
+  part_femmes: 50.0
+  abandons: 4
+  vainqueurs:
+  - Christina
+- id: s10
+  numero: 10
+  titre: Viêtnam
+  annee: 2010
+  speciale: false
+  en_cours: false
+  pays: Viêt Nam
+  lieu: Archipel de Côn Đảo
+  duree_jours: 40
+  effectif: 18
+  age_moyen: 33.3
+  age_min: 20
+  age_max: 55
+  part_femmes: 50.0
+  abandons: 3
+  vainqueurs:
+  - Philippe
+- id: s11
+  numero: 11
+  titre: Raja Ampat
+  annee: 2011
+  speciale: false
+  en_cours: false
+  pays: Indonésie
+  lieu: Archipel de Raja Ampat
+  duree_jours: 41
+  effectif: 20
+  age_moyen: 32.9
+  age_min: 20
+  age_max: 65
+  part_femmes: 50.0
+  abandons: 3
+  vainqueurs:
+  - Gérard
+- id: s12
+  numero: 12
+  titre: Malaisie
+  annee: 2012
+  speciale: false
+  en_cours: false
+  pays: Malaisie
+  lieu: Archipel de Seribuat
+  duree_jours: 42
+  effectif: 20
+  age_moyen: 35.6
+  age_min: 18
+  age_max: 60
+  part_femmes: 50.0
+  abandons: 2
+  vainqueurs:
+  - Ugo
+- id: s14
+  numero: 14
+  titre: Johor
+  annee: 2015
+  speciale: false
+  en_cours: false
+  pays: Malaisie
+  lieu: Archipel de Sibu
+  duree_jours: 40
+  effectif: 20
+  age_moyen: 34.0
+  age_min: 20
+  age_max: 54
+  part_femmes: 50.0
+  abandons: 4
+  vainqueurs:
+  - Marc
+- id: s15
+  numero: 15
+  titre: Thaïlande
+  annee: 2016
+  speciale: false
+  en_cours: false
+  pays: Thaïlande
+  lieu: Archipel de Ko Yao
+  duree_jours: 40
+  effectif: 21
+  age_moyen: 35.1
+  age_min: 21
+  age_max: 56
+  part_femmes: 52.4
+  abandons: 2
+  vainqueurs:
+  - Wendy
+- id: s16
+  numero: 16
+  titre: L'Île au trésor
+  annee: 2016
+  speciale: false
+  en_cours: false
+  pays: Cambodge
+  lieu: Île de Koh Rong
+  duree_jours: 42
+  effectif: 20
+  age_moyen: 35.5
+  age_min: 19
+  age_max: 56
+  part_femmes: 50.0
+  abandons: 0
+  vainqueurs:
+  - Benoît
+- id: s17
+  numero: 17
+  titre: Cambodge
+  annee: 2017
+  speciale: false
+  en_cours: false
+  pays: Cambodge
+  lieu: Île de Koh Rong
+  duree_jours: 40
+  effectif: 21
+  age_moyen: 33.6
+  age_min: 21
+  age_max: 53
+  part_femmes: 47.6
+  abandons: 3
+  vainqueurs:
+  - Frédéric
+- id: s18
+  numero: 18
+  titre: Fidji
+  annee: 2017
+  speciale: false
+  en_cours: false
+  pays: Fidji
+  lieu: Archipel de Yasawa
+  duree_jours: 41
+  effectif: 21
+  age_moyen: 31.6
+  age_min: 19
+  age_max: 57
+  part_femmes: 52.4
+  abandons: 3
+  vainqueurs:
+  - André
+- id: s20
+  numero: 20
+  titre: La Guerre des chefs
+  annee: 2019
+  speciale: false
+  en_cours: false
+  pays: Fidji
+  lieu: Archipel de Kadavu
+  duree_jours: 39
+  effectif: 21
+  age_moyen: 33.8
+  age_min: 20
+  age_max: 53
+  part_femmes: 47.6
+  abandons: 2
+  vainqueurs:
+  - Maud
+- id: s21
+  numero: 21
+  titre: Les 4 Terres
+  annee: 2020
+  speciale: false
+  en_cours: false
+  pays: Fidji
+  lieu: Archipel de Kadavu
+  duree_jours: 40
+  effectif: 24
+  age_moyen: 33.4
+  age_min: 20
+  age_max: 54
+  part_femmes: 50.0
+  abandons: 2
+  vainqueurs:
+  - Alexandra
+- id: s22
+  numero: 22
+  titre: Les Armes secrètes
+  annee: 2021
+  speciale: false
+  en_cours: false
+  pays: Polynésie française
+  lieu: Île de Taha'a
+  duree_jours: 36
+  effectif: 21
+  age_moyen: 33.6
+  age_min: 25
+  age_max: 48
+  part_femmes: 52.4
+  abandons: 1
+  vainqueurs:
+  - Maxine
+- id: s23
+  numero: 23
+  titre: Le Totem maudit
+  annee: 2022
+  speciale: false
+  en_cours: false
+  pays: Philippines
+  lieu: Archipel de Palawan
+  duree_jours: 39
+  effectif: 24
+  age_moyen: 34.0
+  age_min: 20
+  age_max: 52
+  part_femmes: 50.0
+  abandons: 2
+  vainqueurs:
+  - Bastien
+  - François
+- id: s24
+  numero: 24
+  titre: Le Feu sacré
+  annee: 2023
+  speciale: false
+  en_cours: false
+  pays: Philippines
+  lieu: Péninsule de Caramoan
+  duree_jours: 40
+  effectif: 20
+  age_moyen: 35.2
+  age_min: 22
+  age_max: 56
+  part_femmes: 50.0
+  abandons: 3
+  vainqueurs:
+  - Frédéric
+- id: s25
+  numero: 25
+  titre: Les Chasseurs d'immunité
+  annee: 2024
+  speciale: false
+  en_cours: false
+  pays: Philippines
+  lieu: Péninsule de Caramoan
+  duree_jours: 38
+  effectif: 22
+  age_moyen: 35.1
+  age_min: 21
+  age_max: 62
+  part_femmes: 50.0
+  abandons: 1
+  vainqueurs:
+  - Léa Sahin
+- id: s26
+  numero: 26
+  titre: La Tribu maudite
+  annee: 2024
+  speciale: false
+  en_cours: false
+  pays: Philippines
+  lieu: Péninsule de Caramoan
+  duree_jours: 40
+  effectif: 24
+  age_moyen: 34.1
+  age_min: 23
+  age_max: 51
+  part_femmes: 50.0
+  abandons: 1
+  vainqueurs:
+  - Thibault
+- id: s27
+  numero: 27
+  titre: La Revanche des 4 Terres
+  annee: 2025
+  speciale: false
+  en_cours: false
+  pays: Philippines
+  lieu: Péninsule de Caramoan
+  duree_jours: 40
+  effectif: 24
+  age_moyen: 34.4
+  age_min: 20
+  age_max: 63
+  part_femmes: 50.0
+  abandons: 3
+  vainqueurs:
+  - Gaëlle
+- id: s28
+  numero: 28
+  titre: Les Reliques du destin
+  annee: 2026
+  speciale: false
+  en_cours: false
+  pays: Philippines
+  lieu: Péninsule de Caramoan
+  duree_jours: 39
+  effectif: 20
+  age_moyen: 35.0
+  age_min: 21
+  age_max: 51
+  part_femmes: 50.0
+  abandons: 0
+  vainqueurs:
+  - Cynthia
+- id: sp1
+  numero: null
+  titre: Le Retour des héros
+  annee: 2009
+  speciale: true
+  en_cours: false
+  pays: Brésil
+  lieu: Amazonie, bord du Rio Negro
+  duree_jours: 21
+  effectif: 14
+  age_moyen: 36.5
+  age_min: 24
+  age_max: 64
+  part_femmes: 50.0
+  abandons: 0
+  vainqueurs:
+  - Romuald
+- id: sp2
+  numero: null
+  titre: Le Choc des héros
+  annee: 2010
+  speciale: true
+  en_cours: false
+  pays: Nouvelle-Calédonie
+  lieu: Poum
+  duree_jours: 21
+  effectif: 14
+  age_moyen: 33.3
+  age_min: 23
+  age_max: 42
+  part_femmes: 42.9
+  abandons: 0
+  vainqueurs:
+  - Grégoire
+- id: sp3
+  numero: null
+  titre: La Revanche des héros
+  annee: 2012
+  speciale: true
+  en_cours: false
+  pays: Cambodge
+  lieu: Île de Koh Rong
+  duree_jours: 23
+  effectif: 16
+  age_moyen: 37.1
+  age_min: 27
+  age_max: 66
+  part_femmes: 50.0
+  abandons: 0
+  vainqueurs:
+  - Bertrand
+- id: sp4
+  numero: null
+  titre: La Nouvelle Édition
+  annee: 2014
+  speciale: true
+  en_cours: false
+  pays: Malaisie
+  lieu: Archipel de Sibu
+  duree_jours: 23
+  effectif: 13
+  age_moyen: 36.8
+  age_min: 26
+  age_max: 45
+  part_femmes: 38.5
+  abandons: 2
+  vainqueurs:
+  - Laurent
+- id: sp5
+  numero: null
+  titre: Le Combat des héros
+  annee: 2018
+  speciale: true
+  en_cours: false
+  pays: Fidji
+  lieu: Archipel de Yasawa
+  duree_jours: 32
+  effectif: 18
+  age_moyen: 35.1
+  age_min: 20
+  age_max: 50
+  part_femmes: 50.0
+  abandons: 1
+  vainqueurs:
+  - Clémence
+- id: sp6
+  numero: null
+  titre: L'Île des héros
+  annee: 2020
+  speciale: true
+  en_cours: false
+  pays: Fidji
+  lieu: Archipel de Kadavu
+  duree_jours: 32
+  effectif: 20
+  age_moyen: 36.9
+  age_min: 20
+  age_max: 58
+  part_femmes: 50.0
+  abandons: 4
+  vainqueurs:
+  - Naoil
+- id: sp7
+  numero: null
+  titre: La Légende
+  annee: 2021
+  speciale: true
+  en_cours: false
+  pays: Polynésie française
+  lieu: Île de Taha'a
+  duree_jours: 35
+  effectif: 21
+  age_moyen: 34.5
+  age_min: 21
+  age_max: 51
+  part_femmes: 47.6
+  abandons: 1
+  vainqueurs:
+  - Claude
+- id: sp8
+  numero: null
+  titre: All Stars
+  annee: 2026
+  speciale: true
+  en_cours: true
+  pays: Panama
+  lieu: Archipel des Perles (Las Perlas)
+  duree_jours: null
+  effectif: 18
+  age_moyen: 37.0
+  age_min: 26
+  age_max: 48
+  part_femmes: 50.0
+  abandons: 0
+  vainqueurs: []
+records:
+  plus_jeune_vainqueur:
+    nom: André Deleplace
+    age: 19
+    saison: s18
+    annee: 2017
+    titre: Fidji
+  plus_age_vainqueur:
+    nom: Maud Bamps
+    age: 50
+    saison: s20
+    annee: 2019
+    titre: La Guerre des chefs
+  multi_participants:
+  - nom: Freddy Boucher
+    participations: 6
+    saisons:
+    - s09
+    - sp2
+    - sp3
+    - sp4
+    - sp7
+    - sp8
+  - nom: Teheiura Teahui
+    participations: 5
+    saisons:
+    - s11
+    - sp3
+    - sp4
+    - sp6
+    - sp7
+  - nom: Moussa Niangane
+    participations: 4
+    saisons:
+    - s03
+    - sp3
+    - sp6
+    - sp8
+  - nom: Coumba Baradji
+    participations: 4
+    saisons:
+    - s05
+    - sp2
+    - sp3
+    - sp7
+  - nom: Christina Chevry
+    participations: 4
+    saisons:
+    - s09
+    - sp2
+    - sp4
+    - sp8
+  - nom: Claude Dartois
+    participations: 4
+    saisons:
+    - s10
+    - sp3
+    - sp6
+    - sp7
+  - nom: Ugo Lartiche
+    participations: 4
+    saisons:
+    - s12
+    - s26
+    - sp7
+    - sp8
+  - nom: Moundir Zoughari
+    participations: 3
+    saisons:
+    - s03
+    - sp1
+    - sp4
+  - nom: Clémence Castel
+    participations: 3
+    saisons:
+    - s05
+    - sp1
+    - sp5
+  - nom: Jade Handi
+    participations: 3
+    saisons:
+    - s07
+    - sp1
+    - sp7
+  - nom: Christelle Gauzet
+    participations: 3
+    saisons:
+    - s08
+    - sp1
+    - sp7
+  - nom: Isabelle Da Silva
+    participations: 3
+    saisons:
+    - s09
+    - sp3
+    - sp4
+  nb_multi_participants: 83
+conseils:
+  conseils: 687
+  conseils_avec_decompte: 446
+  conseils_complets: 267
+  bulletins: 3370
+  bulletins_conseils_complets: 2087
+  part_unanimes: 0.9
+  part_serres: 46.4
+  voix_annulees_par_collier: 300
+  conseils_avec_collier_joue: 73
+  vote_par_genre:
+  - votant: h
+    cible: f
+    effectif: 603
+    part: 30.2
+  - votant: f
+    cible: h
+    effectif: 485
+    part: 24.3
+  - votant: h
+    cible: h
+    effectif: 468
+    part: 23.5
+  - votant: f
+    cible: f
+    effectif: 438
+    part: 22.0

@@ -5,15 +5,17 @@
 # Le titre, la description et le nom d'auteur s'ecrivent en francais normal,
 # avec leurs accents : ils seront lus par des visiteurs. La regle « sans
 # accents » de ce depot vise les fichiers d'infrastructure, pas le contenu.
-title: koh-lanta
-description: Une ligne pour dire de quoi parle ce site.
-author: Auteur
+title: Koh-Lanta en chiffres
+description: >-
+  Vingt-cinq ans de Koh-Lanta mis en données : 645 participations, 34 saisons,
+  et ce que les chiffres disent vraiment du jeu.
+author: Sylvain Geffroy
 
 # L'adresse publique du site, sans barre oblique finale.
 #   site de projet    : https://<utilisateur>.github.io
 #   site d'utilisateur: https://<utilisateur>.github.io
 #   domaine personnel : https://www.exemple.fr
-url: "https://CHANGEME.github.io"
+url: "https://s-geffroy.github.io"
 
 # LE PIEGE A CONNAITRE. baseurl est le chemin sous lequel le site est servi :
 #
@@ -51,6 +53,11 @@ exclude:
   - vendor/
   - Gemfile
   - Gemfile.lock
+  # Ajouts : l'atelier de fabrication n'a rien a faire sur le site publie.
+  # Les scripts produisent ce qui est dans _data/ et _includes/graphiques/ ;
+  # ce sont ces sorties, deja commitees, que Jekyll lit.
+  - tools/
+  - atelier/
 
 # Domaine personnalise : ce n'est PAS un reglage de ce fichier. C'est un fichier
 # CNAME a la racine du depot, plus des enregistrements chez le registrar :

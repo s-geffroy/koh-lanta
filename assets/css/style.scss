@@ -1,0 +1,180 @@
+---
+# Ce front matter vide est obligatoire : sans lui, Jekyll ne traite pas le
+# fichier et sert le SCSS tel quel.
+---
+
+@import "minima";
+
+/* ------------------------------------------------------------------------
+   Palette
+   ------------------------------------------------------------------------
+   Les figures sont des SVG inlines dans les pages : elles heritent donc de ces
+   variables, et suivent le theme du lecteur. Un SVG charge en <img> n'aurait
+   pas pu.
+
+   Les huit teintes categorielles viennent du guide de visualisation, DANS LEUR
+   ORDRE : cet ordre est ce qui garantit que deux series voisines restent
+   distinguables par un lecteur daltonien. Il ne se reamenage pas par gout.
+
+   Les couleurs de tribus, elles, ne suivent pas cet ordre : quand une tribu est
+   jaune, la teinte EST la donnee.
+   ------------------------------------------------------------------------ */
+
+:root {
+  --surface: #fcfcfb;
+  --encre: #0b0b0b;
+  --encre-douce: #52514e;
+  --encre-muette: #898781;
+  --grille: #e1e0d9;
+  --axe: #c3c2b7;
+
+  --serie-1: #2a78d6;
+  --serie-2: #eb6834;
+  --serie-3: #1baf7a;
+  --serie-4: #eda100;
+  --serie-5: #e87ba4;
+  --serie-6: #008300;
+  --serie-7: #4a3aa7;
+  --serie-8: #e34948;
+
+  --tribu-jaune: #eda100;
+  --tribu-rouge: #e34948;
+  --tribu-bleu: #2a78d6;
+  --tribu-vert: #008300;
+  --tribu-orange: #eb6834;
+  --tribu-violet: #4a3aa7;
+  --tribu-noir: #52514e;
+  --tribu-blanc: #898781;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface: #1a1a19;
+    --encre: #ffffff;
+    --encre-douce: #c3c2b7;
+    --encre-muette: #898781;
+    --grille: #2c2c2a;
+    --axe: #383835;
+
+    --serie-1: #3987e5;
+    --serie-2: #d95926;
+    --serie-3: #199e70;
+    --serie-4: #c98500;
+    --serie-5: #d55181;
+    --serie-6: #008300;
+    --serie-7: #9085e9;
+    --serie-8: #e66767;
+
+    --tribu-jaune: #c98500;
+    --tribu-rouge: #e66767;
+    --tribu-bleu: #3987e5;
+    --tribu-vert: #008300;
+    --tribu-orange: #d95926;
+    --tribu-violet: #9085e9;
+    --tribu-noir: #c3c2b7;
+    --tribu-blanc: #898781;
+  }
+}
+
+/* ---------------------------------------------------------------- figures */
+
+.figure {
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.graphique {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* Une figure large doit pouvoir defiler seule ; la page, jamais. */
+  max-width: 100%;
+}
+
+.marque { cursor: help; }
+.marque:hover rect,
+.marque:hover circle { filter: brightness(1.12); }
+
+.legende-figure {
+  font-size: 0.85rem;
+  color: var(--encre-douce);
+  margin-top: -1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* --------------------------------------------------------------- chiffres */
+
+.chiffres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0 2.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.chiffre {
+  flex: 1 1 8.5rem;
+  border: 1px solid var(--grille);
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+}
+
+.chiffre b {
+  display: block;
+  font-size: 1.9rem;
+  line-height: 1.1;
+  color: var(--encre);
+  font-variant-numeric: tabular-nums;
+}
+
+.chiffre span {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--encre-douce);
+  margin-top: 0.25rem;
+}
+
+/* --------------------------------------------------------------- tableaux */
+
+.tableau-large {
+  overflow-x: auto;      /* le tableau defile, pas la page */
+  margin: 1.5rem 0;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+table th, table td {
+  border: 1px solid var(--grille);
+  padding: 0.4rem 0.65rem;
+  text-align: left;
+}
+
+table th { background: transparent; font-weight: 600; }
+table td.nombre, table th.nombre { text-align: right; font-variant-numeric: tabular-nums; }
+
+.pastille {
+  display: inline-block;
+  width: 0.7rem; height: 0.7rem;
+  border-radius: 3px;
+  margin-right: 0.4rem;
+  vertical-align: -1px;
+}
+
+/* ----------------------------------------------------------------- divers */
+
+.sommaire { list-style: none; padding: 0; }
+.sommaire li { margin: 0.9rem 0; }
+.sommaire a { font-weight: 600; }
+.sommaire p { margin: 0.15rem 0 0; color: var(--encre-douce); font-size: 0.92rem; }
+
+.note {
+  border-left: 3px solid var(--grille);
+  padding: 0.2rem 0 0.2rem 1rem;
+  color: var(--encre-douce);
+  font-size: 0.92rem;
+}

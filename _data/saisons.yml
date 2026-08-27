@@ -1,0 +1,709 @@
+# Les saisons de Koh-Lanta.
+#
+# Source : fr.wikipedia.org/wiki/Koh-Lanta (tableau « Deroulement »), verifie
+# contre les pages de chaque saison. Les identifiants `id` servent de cle
+# etrangere depuis participations.yml, epreuves.yml, conseils.yml et
+# colliers.yml.
+#
+# `numero` suit la numerotation officielle des editions regulieres. Les
+# editions speciales n'y entrent pas : elles ont leur propre suite (`rang`).
+# Les saisons 13 (2013) et 19 (2018) ont ete annulees en cours de tournage :
+# elles figurent ici avec `annulee: true` et aucun candidat, pour que la
+# numerotation reste lisible.
+
+- id: s01
+  numero: 1
+  titre: "Les Aventuriers de Koh-Lanta"
+  vainqueurs: ["Gilles"]
+  annee: 2001
+  speciale: false
+  annulee: false
+  pays: "Thaïlande"
+  lieu: "Parc national de Koh Lanta"
+  duree_jours: 43
+  nb_candidats: 16
+  presentateur: "Hubert Auriol"
+  diffusion: { debut: 2001-08-04, fin: 2001-09-22 }
+  tribus:
+    - { nom: "Lanta-naï", couleur: jaune }
+    - { nom: "Korok", couleur: rouge }
+  mecaniques: [ambassadeurs]
+
+- id: s02
+  numero: 2
+  titre: "Nicoya"
+  vainqueurs: ["Amel"]
+  annee: 2002
+  speciale: false
+  annulee: false
+  pays: "Costa Rica"
+  lieu: "Péninsule de Nicoya"
+  duree_jours: 40
+  nb_candidats: 16
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2002-06-28, fin: 2002-09-13 }
+  tribus:
+    - { nom: "Ventanas", couleur: jaune }
+    - { nom: "Tambor", couleur: rouge }
+  mecaniques: [ambassadeurs]
+
+- id: s03
+  numero: 3
+  titre: "Bocas del Toro"
+  vainqueurs: ["Delphine", "Isabelle"]
+  note: "Double victoire : egalite des voix du jury final."
+  annee: 2003
+  speciale: false
+  annulee: false
+  pays: "Panama"
+  lieu: "Archipel de Bocas del Toro"
+  duree_jours: 40
+  nb_candidats: 18
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2003-06-06, fin: 2003-08-29 }
+  tribus:
+    - { nom: "Machiga", couleur: jaune }
+    - { nom: "Boro", couleur: rouge }
+  mecaniques: [ambassadeurs]
+
+- id: s04
+  numero: 4
+  titre: "Panama"
+  vainqueurs: ["Philippe"]
+  annee: 2004
+  speciale: false
+  annulee: false
+  pays: "Panama"
+  lieu: "Archipel des Perles (Las Perlas)"
+  duree_jours: 40
+  nb_candidats: 16
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2004-07-02, fin: 2004-08-31 }
+  tribus:
+    - { nom: "Chapera", couleur: jaune }
+    - { nom: "Mogo", couleur: rouge }
+  mecaniques: [ambassadeurs]
+
+- id: s05
+  numero: 5
+  titre: "Pacifique"
+  vainqueurs: ["Clémence"]
+  annee: 2005
+  speciale: false
+  annulee: false
+  pays: "Nouvelle-Calédonie"
+  lieu: "Îlots de l'île des Pins"
+  duree_jours: 40
+  nb_candidats: 17
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2005-07-01, fin: 2005-09-06 }
+  tribus:
+    - { nom: "Kumo", couleur: jaune }
+    - { nom: "Kanawa", couleur: rouge }
+  mecaniques: [ambassadeurs]
+
+- id: s06
+  numero: 6
+  titre: "Vanuatu"
+  vainqueurs: ["François-David"]
+  annee: 2006
+  speciale: false
+  annulee: false
+  pays: "Vanuatu"
+  lieu: "Archipel d'Éfaté"
+  duree_jours: 40
+  nb_candidats: 16
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2006-07-21, fin: 2006-09-05 }
+  tribus:
+    - { nom: "Tana", couleur: jaune }
+    - { nom: "Mosso", couleur: rouge }
+  mecaniques: [ambassadeurs]
+
+- id: s07
+  numero: 7
+  titre: "Palawan"
+  vainqueurs: ["Jade", "Kévin"]
+  note: "Double victoire : egalite des voix du jury final."
+  annee: 2007
+  speciale: false
+  annulee: false
+  pays: "Philippines"
+  lieu: "Archipel de Palawan"
+  duree_jours: 40
+  nb_candidats: 16
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2007-06-29, fin: 2007-09-11 }
+  tribus:
+    - { nom: "Guntao", couleur: jaune }
+    - { nom: "Batang", couleur: rouge }
+  mecaniques: [ambassadeurs]
+
+- id: s08
+  numero: 8
+  titre: "Caramoan"
+  vainqueurs: ["Christelle"]
+  annee: 2008
+  speciale: false
+  annulee: false
+  pays: "Philippines"
+  lieu: "Péninsule de Caramoan"
+  # Le tableau recapitulatif annonce 39 jours, mais les tables de
+  # candidats font sortir les finalistes au jour 40. C'est le jour
+  # atteste qui est retenu : les statistiques de survie s'y rapportent.
+  duree_jours: 40
+  duree_annoncee: 39
+  nb_candidats: 17
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2008-07-04, fin: 2008-09-20 }
+  tribus:
+    - { nom: "Mingao", couleur: jaune }
+    - { nom: "Tayak", couleur: rouge }
+  mecaniques: [ambassadeurs]
+
+- id: s09
+  numero: 9
+  titre: "Palau"
+  vainqueurs: ["Christina"]
+  annee: 2009
+  speciale: false
+  annulee: false
+  pays: "Palaos"
+  lieu: "Micronésie"
+  duree_jours: 39
+  nb_candidats: 18
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2009-08-28, fin: 2009-10-30 }
+  tribus:
+    - { nom: "Mawaï", couleur: jaune }
+    - { nom: "Koror", couleur: rouge }
+  mecaniques: [ambassadeurs]
+
+- id: s10
+  numero: 10
+  titre: "Viêtnam"
+  vainqueurs: ["Philippe"]
+  annee: 2010
+  speciale: false
+  annulee: false
+  pays: "Viêt Nam"
+  lieu: "Archipel de Côn Đảo"
+  duree_jours: 40
+  nb_candidats: 18
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2010-09-17, fin: 2010-12-17 }
+  tribus:
+    - { nom: "Vang", couleur: jaune }
+    - { nom: "Do", couleur: rouge }
+  mecaniques: [ambassadeurs]
+
+- id: s11
+  numero: 11
+  titre: "Raja Ampat"
+  vainqueurs: ["Gérard"]
+  annee: 2011
+  speciale: false
+  annulee: false
+  pays: "Indonésie"
+  lieu: "Archipel de Raja Ampat"
+  duree_jours: 41
+  nb_candidats: 20
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2011-09-09, fin: 2011-12-16 }
+  tribus:
+    - { nom: "Wasaï", couleur: jaune }
+    - { nom: "Mambok", couleur: rouge }
+  mecaniques: [ambassadeurs, collier_immunite]
+
+- id: s12
+  numero: 12
+  titre: "Malaisie"
+  vainqueurs: ["Ugo"]
+  annee: 2012
+  speciale: false
+  annulee: false
+  pays: "Malaisie"
+  lieu: "Archipel de Seribuat"
+  duree_jours: 42
+  nb_candidats: 20
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2012-11-02, fin: 2013-02-01 }
+  tribus:
+    - { nom: "Sungaï", couleur: jaune }
+    - { nom: "Mawar", couleur: rouge }
+  mecaniques: [ambassadeurs, collier_immunite, destins_lies, ile_speciale]
+
+- id: s13
+  numero: 13
+  titre: null
+  annee: 2013
+  speciale: false
+  annulee: true
+  motif_annulation: "Tournage arrêté après la mort d'un candidat au premier jour."
+  pays: "Cambodge"
+  lieu: "Île de Koh Rong"
+  duree_jours: null
+  nb_candidats: null
+  presentateur: "Denis Brogniart"
+  diffusion: null
+  tribus: []
+  mecaniques: []
+
+- id: s14
+  numero: 14
+  titre: "Johor"
+  vainqueurs: ["Marc"]
+  annee: 2015
+  speciale: false
+  annulee: false
+  pays: "Malaisie"
+  lieu: "Archipel de Sibu"
+  duree_jours: 40
+  nb_candidats: 20
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2015-04-24, fin: 2015-07-24 }
+  tribus:
+    - { nom: "Lankawaï", couleur: jaune }
+    - { nom: "Tinggi", couleur: rouge }
+  mecaniques: [ambassadeurs, collier_immunite, destins_lies]
+
+- id: s15
+  numero: 15
+  titre: "Thaïlande"
+  vainqueurs: ["Wendy"]
+  annee: 2016
+  speciale: false
+  annulee: false
+  pays: "Thaïlande"
+  lieu: "Archipel de Ko Yao"
+  duree_jours: 40
+  nb_candidats: 21
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2016-02-12, fin: 2016-05-27 }
+  tribus:
+    - { nom: "Karwaï", couleur: jaune }
+    - { nom: "Aopoh", couleur: rouge }
+  mecaniques: [ambassadeurs, collier_immunite]
+
+- id: s16
+  numero: 16
+  titre: "L'Île au trésor"
+  vainqueurs: ["Benoît"]
+  annee: 2016
+  speciale: false
+  annulee: false
+  pays: "Cambodge"
+  lieu: "Île de Koh Rong"
+  duree_jours: 42
+  nb_candidats: 20
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2016-08-26, fin: 2016-12-09 }
+  tribus:
+    - { nom: "Naga", couleur: jaune }
+    - { nom: "Sambor", couleur: rouge }
+  mecaniques: [ambassadeurs, collier_immunite, destins_lies]
+
+- id: s17
+  numero: 17
+  titre: "Cambodge"
+  vainqueurs: ["Frédéric"]
+  annee: 2017
+  speciale: false
+  annulee: false
+  pays: "Cambodge"
+  lieu: "Île de Koh Rong"
+  duree_jours: 40
+  nb_candidats: 21
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2017-03-10, fin: 2017-06-16 }
+  tribus:
+    - { nom: "Sokka", couleur: jaune }
+    - { nom: "Bokor", couleur: rouge }
+    - { nom: "Takeo", couleur: bleu }
+  mecaniques: [ambassadeurs, collier_immunite]
+
+- id: s18
+  numero: 18
+  titre: "Fidji"
+  vainqueurs: ["André"]
+  annee: 2017
+  speciale: false
+  annulee: false
+  pays: "Fidji"
+  lieu: "Archipel de Yasawa"
+  duree_jours: 41
+  nb_candidats: 21
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2017-09-01, fin: 2017-12-15 }
+  tribus:
+    - { nom: "Coravu", couleur: jaune }
+    - { nom: "Makawa", couleur: rouge }
+  mecaniques: [ambassadeurs, collier_immunite]
+
+- id: s19
+  numero: 19
+  titre: null
+  annee: 2018
+  speciale: false
+  annulee: true
+  motif_annulation: "Tournage arrêté après un événement survenu entre deux participants."
+  pays: "Fidji"
+  lieu: "Archipel de Kadavu"
+  duree_jours: null
+  nb_candidats: null
+  presentateur: "Denis Brogniart"
+  diffusion: null
+  tribus: []
+  mecaniques: []
+
+- id: s20
+  numero: 20
+  titre: "La Guerre des chefs"
+  vainqueurs: ["Maud"]
+  annee: 2019
+  speciale: false
+  annulee: false
+  pays: "Fidji"
+  lieu: "Archipel de Kadavu"
+  duree_jours: 39
+  nb_candidats: 21
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2019-03-15, fin: 2019-06-21 }
+  tribus:
+    - { nom: "Tabuo", couleur: jaune }
+    - { nom: "Kama", couleur: rouge }
+    - { nom: "Ikalu", couleur: bleu }
+  mecaniques: [ambassadeurs, collier_immunite, capitaines]
+
+- id: s21
+  numero: 21
+  titre: "Les 4 Terres"
+  vainqueurs: ["Alexandra"]
+  annee: 2020
+  speciale: false
+  annulee: false
+  pays: "Fidji"
+  lieu: "Archipel de Kadavu"
+  duree_jours: 40
+  nb_candidats: 24
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2020-08-28, fin: 2020-12-04 }
+  tribus:
+    - { nom: "Vakara", couleur: orange }
+    - { nom: "Vualiku", couleur: violet }
+    - { nom: "Ceva", couleur: bleu }
+    - { nom: "Tokalo", couleur: vert }
+    - { nom: "Vuro", couleur: jaune, apres_fusion: true }
+    - { nom: "Sayake", couleur: rouge, apres_fusion: true }
+  mecaniques: [ambassadeurs, collier_immunite, destins_lies, quatre_terres]
+
+- id: s22
+  numero: 22
+  titre: "Les Armes secrètes"
+  vainqueurs: ["Maxine"]
+  annee: 2021
+  speciale: false
+  annulee: false
+  pays: "Polynésie française"
+  lieu: "Île de Taha'a"
+  # Le tableau recapitulatif annonce 35 jours, mais les tables de
+  # candidats font sortir les finalistes au jour 36. C'est le jour
+  # atteste qui est retenu : les statistiques de survie s'y rapportent.
+  duree_jours: 36
+  duree_annoncee: 35
+  nb_candidats: 21
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2021-03-12, fin: 2021-06-04 }
+  tribus:
+    - { nom: "Toa", couleur: jaune }
+    - { nom: "Oro", couleur: rouge }
+  mecaniques: [ambassadeurs, collier_immunite, armes_secretes]
+
+- id: s23
+  numero: 23
+  titre: "Le Totem maudit"
+  vainqueurs: ["Bastien", "François"]
+  note: "Double victoire : egalite des voix du jury final."
+  annee: 2022
+  speciale: false
+  annulee: false
+  pays: "Philippines"
+  lieu: "Archipel de Palawan"
+  duree_jours: 39
+  nb_candidats: 24
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2022-02-22, fin: 2022-06-21 }
+  tribus:
+    - { nom: "Turung", couleur: violet }
+    - { nom: "Nacpan", couleur: bleu }
+    - { nom: "Ilog", couleur: vert }
+    - { nom: "Matingi", couleur: jaune, apres_fusion: true }
+    - { nom: "Cadlao", couleur: rouge, apres_fusion: true }
+  mecaniques: [ambassadeurs, collier_immunite, destins_lies, totem_maudit]
+
+- id: s24
+  numero: 24
+  titre: "Le Feu sacré"
+  vainqueurs: ["Frédéric"]
+  annee: 2023
+  speciale: false
+  annulee: false
+  pays: "Philippines"
+  lieu: "Péninsule de Caramoan"
+  duree_jours: 40
+  nb_candidats: 20
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2023-02-21, fin: 2023-06-13 }
+  tribus:
+    - { nom: "Paniman", couleur: jaune }
+    - { nom: "Tinago", couleur: rouge }
+  mecaniques: [ambassadeurs, collier_immunite, destins_lies]
+
+- id: s25
+  numero: 25
+  titre: "Les Chasseurs d'immunité"
+  vainqueurs: ["Léa Sahin"]   # deux Léa dans cette saison
+  annee: 2024
+  speciale: false
+  annulee: false
+  pays: "Philippines"
+  lieu: "Péninsule de Caramoan"
+  duree_jours: 38
+  nb_candidats: 22
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2024-02-13, fin: 2024-06-04 }
+  tribus:
+    - { nom: "Kadasi", couleur: jaune }
+    - { nom: "Matukad", couleur: rouge }
+  mecaniques: [ambassadeurs, collier_immunite, destins_lies, chasseurs_immunite]
+
+- id: s26
+  numero: 26
+  titre: "La Tribu maudite"
+  vainqueurs: ["Thibault"]
+  annee: 2024
+  speciale: false
+  annulee: false
+  pays: "Philippines"
+  lieu: "Péninsule de Caramoan"
+  # Le tableau recapitulatif annonce 41 jours, mais les tables de
+  # candidats font sortir les finalistes au jour 40. C'est le jour
+  # atteste qui est retenu : les statistiques de survie s'y rapportent.
+  duree_jours: 40
+  duree_annoncee: 41
+  nb_candidats: 24
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2024-08-20, fin: 2024-12-03 }
+  tribus:
+    - { nom: "Sabitang", couleur: jaune }
+    - { nom: "Pitogo", couleur: rouge }
+    - { nom: "Noire", couleur: noir }   # « tribu maudite » dans le recapitulatif
+  mecaniques: [ambassadeurs, collier_immunite, capitaines, tribu_maudite]
+
+- id: s27
+  numero: 27
+  titre: "La Revanche des 4 Terres"
+  vainqueurs: ["Gaëlle"]
+  annee: 2025
+  speciale: false
+  annulee: false
+  pays: "Philippines"
+  lieu: "Péninsule de Caramoan"
+  duree_jours: 40
+  nb_candidats: 24
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2025-02-25, fin: 2025-06-24 }
+  tribus:
+    - { nom: "Kanluran", couleur: orange }
+    - { nom: "Hilaga", couleur: violet }
+    - { nom: "Timog", couleur: bleu }
+    - { nom: "Silangan", couleur: vert }
+    - { nom: "Virak", couleur: jaune, apres_fusion: true }
+    - { nom: "Tugawe", couleur: rouge, apres_fusion: true }
+  mecaniques: [ambassadeurs, collier_immunite, quatre_terres]
+
+- id: s28
+  numero: 28
+  titre: "Les Reliques du destin"
+  vainqueurs: ["Cynthia"]
+  annee: 2026
+  speciale: false
+  annulee: false
+  pays: "Philippines"
+  lieu: "Péninsule de Caramoan"
+  duree_jours: 39
+  nb_candidats: 20
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2026-03-03, fin: 2026-06-23 }
+  tribus:
+    - { nom: "Kalao", couleur: jaune }
+    - { nom: "Lahoy", couleur: rouge }
+  mecaniques: [ambassadeurs, collier_immunite, antre_du_destin]
+
+# --- Editions speciales ---------------------------------------------------
+
+- id: sp1
+  numero: null
+  rang: 1
+  titre: "Le Retour des héros"
+  vainqueurs: ["Romuald"]
+  annee: 2009
+  speciale: true
+  annulee: false
+  pays: "Brésil"
+  lieu: "Amazonie, bord du Rio Negro"
+  duree_jours: 21
+  nb_candidats: 14
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2009-01-13, fin: 2009-02-13 }
+  tribus:
+    - { nom: "Tupan", couleur: jaune }
+    - { nom: "Jacaré", couleur: rouge }
+  mecaniques: [ambassadeurs, heros]
+
+- id: sp2
+  numero: null
+  rang: 2
+  titre: "Le Choc des héros"
+  vainqueurs: ["Grégoire"]
+  annee: 2010
+  speciale: true
+  annulee: false
+  pays: "Nouvelle-Calédonie"
+  lieu: "Poum"
+  # Le tableau recapitulatif annonce 20 jours, mais les tables de
+  # candidats font sortir les finalistes au jour 21. C'est le jour
+  # atteste qui est retenu : les statistiques de survie s'y rapportent.
+  duree_jours: 21
+  duree_annoncee: 20
+  nb_candidats: 14
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2010-03-26, fin: 2010-05-21 }
+  tribus:
+    - { nom: "Tiac", couleur: jaune }
+    - { nom: "Malabou", couleur: rouge }
+  mecaniques: [ambassadeurs, heros]
+
+- id: sp3
+  numero: null
+  rang: 3
+  titre: "La Revanche des héros"
+  vainqueurs: ["Bertrand"]
+  annee: 2012
+  speciale: true
+  annulee: false
+  pays: "Cambodge"
+  lieu: "Île de Koh Rong"
+  duree_jours: 23
+  nb_candidats: 16
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2012-04-06, fin: 2012-06-01 }
+  tribus:
+    - { nom: "Klahan", couleur: jaune }
+    - { nom: "Nekmao", couleur: rouge }
+  mecaniques: [ambassadeurs, heros]
+
+- id: sp4
+  numero: null
+  rang: 4
+  titre: "La Nouvelle Édition"
+  vainqueurs: ["Laurent"]
+  annee: 2014
+  speciale: true
+  annulee: false
+  pays: "Malaisie"
+  lieu: "Archipel de Sibu"
+  duree_jours: 23
+  nb_candidats: 13
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2014-09-12, fin: 2014-11-21 }
+  tribus:
+    - { nom: "Tengah", couleur: jaune }
+    - { nom: "Simban", couleur: rouge }
+  mecaniques: [ambassadeurs, collier_immunite]
+
+- id: sp5
+  numero: null
+  rang: 5
+  titre: "Le Combat des héros"
+  vainqueurs: ["Clémence"]
+  annee: 2018
+  speciale: true
+  annulee: false
+  pays: "Fidji"
+  lieu: "Archipel de Yasawa"
+  duree_jours: 32
+  nb_candidats: 18
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2018-03-16, fin: 2018-05-25 }
+  tribus:
+    - { nom: "Wakaï", couleur: jaune }
+    - { nom: "Toa", couleur: rouge }
+  mecaniques: [ambassadeurs, collier_immunite, destins_lies, heros, ile_speciale]
+
+- id: sp6
+  numero: null
+  rang: 6
+  titre: "L'Île des héros"
+  vainqueurs: ["Naoil"]
+  annee: 2020
+  speciale: true
+  annulee: false
+  pays: "Fidji"
+  lieu: "Archipel de Kadavu"
+  duree_jours: 32
+  nb_candidats: 20
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2020-02-21, fin: 2020-06-05 }
+  tribus:
+    - { nom: "Lawaki", couleur: jaune }
+    - { nom: "Nacomo", couleur: rouge }
+    - { nom: "Héros", couleur: noir }
+  mecaniques: [ambassadeurs, collier_immunite, destins_lies, heros, ile_speciale]
+
+- id: sp7
+  numero: null
+  rang: 7
+  titre: "La Légende"
+  vainqueurs: ["Claude"]
+  note: "Claude recueille le plus de voix du jury final mais, pour tricherie, ne touche pas les 100 000 euros."
+  annee: 2021
+  speciale: true
+  annulee: false
+  pays: "Polynésie française"
+  lieu: "Île de Taha'a"
+  # Le tableau recapitulatif annonce 36 jours, mais les tables de
+  # candidats font sortir les finalistes au jour 35. C'est le jour
+  # atteste qui est retenu : les statistiques de survie s'y rapportent.
+  duree_jours: 35
+  duree_annoncee: 36
+  nb_candidats: 21
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2021-08-24, fin: 2021-12-14 }
+  # La saison s'ouvre sur une separation par sexe avant de reformer les deux
+  # tribus historiques de 2001.
+  tribus:
+    - { nom: "Tribu des hommes", couleur: bleu }
+    - { nom: "Tribu des femmes", couleur: violet }
+    - { nom: "Lanta-naï", couleur: jaune, apres_fusion: true }
+    - { nom: "Korok", couleur: rouge, apres_fusion: true }
+  mecaniques: [ambassadeurs, collier_immunite, heros, ile_speciale, separation_par_sexe]
+
+- id: sp8
+  numero: null
+  rang: 8
+  titre: "All Stars"
+  vainqueurs: []
+  note: "Saison en cours au moment de la constitution du jeu de donnees."
+  annee: 2026
+  speciale: true
+  annulee: false
+  en_cours: true
+  pays: "Panama"
+  lieu: "Archipel des Perles (Las Perlas)"
+  duree_jours: null
+  nb_candidats: 18
+  presentateur: "Denis Brogniart"
+  diffusion: { debut: 2026-08-25, fin: null }
+  tribus: []
+  mecaniques: [collier_immunite, heros, binomes]

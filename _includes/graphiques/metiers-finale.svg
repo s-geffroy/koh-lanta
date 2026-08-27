@@ -1,0 +1,50 @@
+<figure class="figure">
+<svg class="graphique" viewBox="0 0 680 480" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Accès à la finale selon le métier">
+  <title>Accès à la finale selon le métier</title>
+  <desc>Part des aventuriers de chaque famille de métiers ayant atteint la finale.</desc>
+  <line x1="297.0" y1="10" x2="297.0" y2="454" stroke="var(--grille)" stroke-width="1"/>
+  <line x1="404.0" y1="10" x2="404.0" y2="454" stroke="var(--grille)" stroke-width="1"/>
+  <line x1="511.0" y1="10" x2="511.0" y2="454" stroke="var(--grille)" stroke-width="1"/>
+  <line x1="618.0" y1="10" x2="618.0" y2="454" stroke="var(--grille)" stroke-width="1"/>
+  <g class="marque"><title>Sans activité déclarée : 3 finales sur 17 aventuriers, soit 17.6 %</title><rect x="190" y="16" width="428.0" height="26" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="180.0" y="29.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Sans activité déclarée</text>
+  <text x="626.0" y="29.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">17.6 %</text>
+  <g class="marque"><title>Commerce et vente : 10 finales sur 64 aventuriers, soit 15.6 %</title><rect x="190" y="50" width="379.4" height="26" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="180.0" y="63.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Commerce et vente</text>
+  <text x="577.4" y="63.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">15.6 %</text>
+  <g class="marque"><title>Sport et coaching : 7 finales sur 49 aventuriers, soit 14.3 %</title><rect x="190" y="84" width="347.8" height="26" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="180.0" y="97.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Sport et coaching</text>
+  <text x="545.8" y="97.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">14.3 %</text>
+  <g class="marque"><title>Restauration et hôtellerie : 3 finales sur 23 aventuriers, soit 13.0 %</title><rect x="190" y="118" width="316.1" height="26" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="180.0" y="131.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Restauration et hôtellerie</text>
+  <text x="514.1" y="131.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">13.0 %</text>
+  <g class="marque"><title>Agriculture et nature : 3 finales sur 24 aventuriers, soit 12.5 %</title><rect x="190" y="152" width="304.0" height="26" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="180.0" y="165.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Agriculture et nature</text>
+  <text x="502.0" y="165.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">12.5 %</text>
+  <g class="marque"><title>Artisanat et bâtiment : 5 finales sur 43 aventuriers, soit 11.6 %</title><rect x="190" y="186" width="282.1" height="26" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="180.0" y="199.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Artisanat et bâtiment</text>
+  <text x="480.1" y="199.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">11.6 %</text>
+  <g class="marque"><title>Santé : 2 finales sur 18 aventuriers, soit 11.1 %</title><rect x="190" y="220" width="269.9" height="26" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="180.0" y="233.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Santé</text>
+  <text x="467.9" y="233.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">11.1 %</text>
+  <g class="marque"><title>Étudiants : 4 finales sur 38 aventuriers, soit 10.5 %</title><rect x="190" y="254" width="255.3" height="26" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="180.0" y="267.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Étudiants</text>
+  <text x="453.3" y="267.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">10.5 %</text>
+  <g class="marque"><title>Arts, médias et image : 4 finales sur 47 aventuriers, soit 8.5 %</title><rect x="190" y="288" width="206.7" height="26" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="180.0" y="301.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Arts, médias et image</text>
+  <text x="404.7" y="301.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">8.5 %</text>
+  <g class="marque"><title>Enseignement et éducation : 2 finales sur 29 aventuriers, soit 6.9 %</title><rect x="190" y="322" width="167.8" height="26" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="180.0" y="335.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Enseignement et éducation</text>
+  <text x="365.8" y="335.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">6.9 %</text>
+  <g class="marque"><title>Transport et logistique : 2 finales sur 29 aventuriers, soit 6.9 %</title><rect x="190" y="356" width="167.8" height="26" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="180.0" y="369.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Transport et logistique</text>
+  <text x="365.8" y="369.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">6.9 %</text>
+  <g class="marque"><title>Action et sécurité : 2 finales sur 29 aventuriers, soit 6.9 %</title><rect x="190" y="390" width="167.8" height="26" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="180.0" y="403.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Action et sécurité</text>
+  <text x="365.8" y="403.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">6.9 %</text>
+  <g class="marque"><title>Encadrement et professions intellectuelles : 6 finales sur 100 aventuriers, soit 6.0 %</title><rect x="190" y="424" width="145.9" height="26" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="180.0" y="437.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Encadrement et professions intellectuelles</text>
+  <text x="343.9" y="437.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">6.0 %</text>
+  <line x1="190" y1="10" x2="190" y2="454" stroke="var(--axe)" stroke-width="1"/>
+</svg>
+</figure>

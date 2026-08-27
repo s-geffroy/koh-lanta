@@ -17,3 +17,9 @@ Gemfile.lock
 # Marqueur local du VPS, lu par scripts/infra-reconcile.sh : il dit que cette
 # application redemarre au boot de CETTE machine. Rien a faire dans un depot.
 .autostart
+
+# Documents de travail deposes dans specs/ : les PDF d'origine sont lourds
+# (16 Mo) et ne se rejouent pas. Le wikitexte brut de specs/sources/, lui, est
+# versionne : c'est la preuve de provenance des donnees, et il permet de
+# refaire tout le chemin sans redemander les pages aux serveurs.
+specs/koh-lanta/*.pdf

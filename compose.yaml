@@ -1,17 +1,40 @@
-# Aucun conteneur : le site est construit et heberge par GitHub Pages.
-#
-# Ce fichier existe quand meme parce qu'appctl exige un compose.yaml pour toute
-# application. Docker Compose, lui, repond « no service selected » ET sort en 1
-# sur un fichier sans service : c'est appctl qui reconnait le cas, le dit, et
-# sort en 0 -- sans quoi `workon new` echouerait au premier demarrage.
+# Aucun conteneur ne SERT le site : il est construit et heberge par GitHub
+# Pages. Ce fichier ne declare qu'un atelier de travail, jetable.
 #
 # Ne mets rien ici pour « construire le site en local ». Le constructeur de
 # GitHub Pages est un Jekyll 3.10 en safe mode, avec une liste blanche de
-# greffons : un build local avec une autre version, ou avec des greffons libres,
-# donnerait un resultat different de ce qui sera publie. On aurait deux verites
-# au lieu d'une.
+# greffons : un build local avec une autre version, ou avec des greffons
+# libres, donnerait un resultat different de ce qui sera publie. On aurait deux
+# verites au lieu d'une.
 #
-# Si un jour ce projet a besoin d'un outil qui tourne (un optimiseur d'images,
-# un convertisseur), c'est ici qu'il se declare, avec son exposition dans
-# app.yaml.
-services: {}
+# L'atelier, lui, ne construit pas le site. Il fabrique ce qui entre DANS le
+# depot -- les fichiers de _data/ et les graphiques -- puis s'arrete. Le
+# resultat est commite, et c'est toujours GitHub qui construit.
+#
+#   sudo appctl build atelier          construire l'image
+#   sudo appctl run atelier <commande> lancer une commande dedans
+#
+# Le profil `cli` est celui qu'`appctl run` active par defaut : le service
+# n'est jamais demarre par `appctl up`, il n'a pas a tourner en permanence.
+services:
+  atelier:
+    build:
+      context: ./atelier
+    profiles: [cli]
+    # Le depot est monte en ecriture : c'est la le produit du travail.
+    volumes:
+      - .:/depot
+    working_dir: /depot
+    # Les fichiers ecrits dans le depot doivent appartenir a l'utilisateur de
+    # l'application, pas a root.
+    user: "1007:1007"
+    entrypoint: []
+    command: ["python3", "--version"]
+    # Aucun port publie : cet atelier ne sert rien.
+    network_mode: bridge
+    # Un atelier de calcul, pas un service : de quoi tenir un tableau croise
+    # sur quelques milliers de lignes, et rien de plus.
+    deploy:
+      resources:
+        limits:
+          memory: 2g

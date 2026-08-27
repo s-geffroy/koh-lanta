@@ -1,0 +1,3866 @@
+# ATTENTION : fichier genere. Ne pas editer a la main.
+#
+# Produit par tools/extraction/fusionner.py, qui croise deux sources :
+#   - le wiki Fandom francophone   https://kohlanta.fandom.com/fr/
+#   - Wikipedia en francais        https://fr.wikipedia.org/
+#
+# Chaque enregistrement porte un bloc `sources` qui dit, champ par champ, d'ou
+# vient la valeur retenue. Regenerer avec :
+#
+#     tools/atelier python3 tools/extraction/fusionner.py --ecrire
+#
+- id: marie-boyer
+  nom: Marie Boyer
+  prenom: Marie
+  genre: f
+  participations:
+  - s01
+  nb_participations: 1
+- id: guillaume-noel
+  nom: Guillaume Noël
+  prenom: Guillaume
+  genre: h
+  participations:
+  - s01
+  nb_participations: 1
+- id: jean-luc-fiorina
+  nom: Jean-Luc Fiorina
+  prenom: Jean-Luc
+  genre: h
+  participations:
+  - s01
+  - sp1
+  nb_participations: 2
+- id: gael-gollen
+  nom: Gaël Gollen
+  prenom: Gaël
+  genre: f
+  participations:
+  - s01
+  nb_participations: 1
+- id: harry-levy
+  nom: Harry Levy
+  prenom: Harry
+  genre: h
+  participations:
+  - s01
+  nb_participations: 1
+- id: sandra-acabado
+  nom: Sandra Acabado
+  prenom: Sandra
+  genre: f
+  participations:
+  - s01
+  - sp4
+  nb_participations: 2
+- id: david-noel
+  nom: David Noël
+  prenom: David
+  genre: h
+  participations:
+  - s01
+  nb_participations: 1
+- id: stephane-bertheau
+  nom: Stéphane Bertheau
+  prenom: Stéphane
+  genre: h
+  participations:
+  - s01
+  nb_participations: 1
+- id: geraldine-doyen
+  nom: Géraldine Doyen
+  prenom: Géraldine
+  genre: f
+  participations:
+  - s01
+  nb_participations: 1
+- id: michele-valembois
+  nom: Michèle Valembois
+  prenom: Michèle
+  genre: f
+  participations:
+  - s01
+  nb_participations: 1
+- id: william-lecomte
+  nom: William Lecomte
+  prenom: William
+  genre: h
+  participations:
+  - s01
+  nb_participations: 1
+- id: francoise-avignon
+  nom: Françoise Avignon
+  prenom: Françoise
+  genre: f
+  participations:
+  - s01
+  nb_participations: 1
+- id: romain-bissol
+  nom: Romain Bissol
+  prenom: Romain
+  genre: h
+  participations:
+  - s01
+  nb_participations: 1
+- id: patricia-tanguy
+  nom: Patricia Tanguy
+  prenom: Patricia
+  genre: h
+  participations:
+  - s01
+  nb_participations: 1
+- id: guenaelle-biras
+  nom: Guénaëlle Biras
+  prenom: Guénaëlle
+  genre: f
+  participations:
+  - s01
+  - sp3
+  nb_participations: 2
+- id: gilles-nicolet
+  nom: Gilles Nicolet
+  prenom: Gilles
+  genre: h
+  participations:
+  - s01
+  nb_participations: 1
+- id: xavier-lemasson
+  nom: Xavier Lemasson
+  prenom: Xavier
+  genre: h
+  participations:
+  - s02
+  nb_participations: 1
+- id: caroline-lamotte
+  nom: Caroline Lamotte
+  prenom: Caroline
+  genre: f
+  participations:
+  - s02
+  nb_participations: 1
+- id: celine-fortier
+  nom: Céline Fortier
+  prenom: Céline
+  genre: f
+  participations:
+  - s02
+  nb_participations: 1
+- id: nelly-baradeau
+  nom: Nelly Baradeau
+  prenom: Nelly
+  genre: h
+  participations:
+  - s02
+  nb_participations: 1
+- id: pierre-cambon
+  nom: Pierre Cambon
+  prenom: Pierre
+  genre: h
+  participations:
+  - s02
+  nb_participations: 1
+- id: jacky-forteron
+  nom: Jacky Forteron
+  prenom: Jacky
+  genre: h
+  participations:
+  - s02
+  nb_participations: 1
+- id: adonis-koupaki
+  nom: Adonis Koupaki
+  prenom: Adonis
+  genre: h
+  participations:
+  - s02
+  nb_participations: 1
+- id: jimmy-denis
+  nom: Jimmy Denis
+  prenom: Jimmy
+  genre: h
+  participations:
+  - s02
+  nb_participations: 1
+- id: beatrice-cloix-penisson
+  nom: Béatrice Cloix Penisson
+  prenom: Béatrice
+  genre: f
+  participations:
+  - s02
+  nb_participations: 1
+- id: francois-xavier-arguillere
+  nom: François-Xavier Arguillère
+  prenom: François-Xavier
+  genre: h
+  participations:
+  - s02
+  nb_participations: 1
+- id: isabelle-vial
+  nom: Isabelle Vial
+  prenom: Isabelle
+  genre: f
+  participations:
+  - s02
+  nb_participations: 1
+- id: maud-garnier
+  nom: Maud Garnier
+  prenom: Maud
+  genre: f
+  participations:
+  - s02
+  - sp3
+  nb_participations: 2
+- id: marianne-mondon
+  nom: Marianne Mondon
+  prenom: Marianne
+  genre: f
+  participations:
+  - s02
+  nb_participations: 1
+- id: bernard-lenoir
+  nom: Bernard Lenoir
+  prenom: Bernard
+  genre: h
+  participations:
+  - s02
+  nb_participations: 1
+- id: nicolas-leoni
+  nom: Nicolas Leoni
+  prenom: Nicolas
+  genre: h
+  participations:
+  - s02
+  - sp3
+  nb_participations: 2
+- id: amel-fatnassi
+  nom: Amel Fatnassi
+  prenom: Amel
+  genre: f
+  participations:
+  - s02
+  - sp1
+  nb_participations: 2
+- id: alexandra-denikine
+  nom: Alexandra Denikine
+  prenom: Alexandra
+  genre: f
+  participations:
+  - s03
+  nb_participations: 1
+- id: candice-cohen
+  nom: Candice Cohen
+  prenom: Candice
+  genre: f
+  participations:
+  - s03
+  nb_participations: 1
+- id: michel-jeandel
+  nom: Michel Jeandel
+  prenom: Michel
+  genre: h
+  participations:
+  - s03
+  nb_participations: 1
+- id: sophie-guilloix
+  nom: Sophie Guilloix
+  prenom: Sophie
+  genre: f
+  participations:
+  - s03
+  nb_participations: 1
+- id: julie-bourdon
+  nom: Julie Bourdon
+  prenom: Julie
+  genre: f
+  participations:
+  - s03
+  nb_participations: 1
+- id: linda-delamarre
+  nom: Linda Delamarre
+  prenom: Linda
+  genre: f
+  participations:
+  - s03
+  nb_participations: 1
+- id: philippe-huquet
+  nom: Philippe Huquet
+  prenom: Philippe
+  genre: h
+  participations:
+  - s03
+  nb_participations: 1
+- id: alexandre-berard
+  nom: Alexandre Bérard
+  prenom: Alexandre
+  genre: h
+  participations:
+  - s03
+  nb_participations: 1
+- id: richard-lecourt
+  nom: Richard Lecourt
+  prenom: Richard
+  genre: h
+  participations:
+  - s03
+  nb_participations: 1
+- id: sylvie-pommier
+  nom: Sylvie Pommier
+  prenom: Sylvie
+  genre: f
+  participations:
+  - s03
+  nb_participations: 1
+- id: sebastien-loew
+  nom: Sébastien Loew
+  prenom: Sébastien
+  genre: h
+  participations:
+  - s03
+  nb_participations: 1
+- id: valerie-dot
+  nom: Valérie Dot
+  prenom: Valérie
+  genre: f
+  participations:
+  - s03
+  nb_participations: 1
+- id: helene-patry
+  nom: Hélène Patry
+  prenom: Hélène
+  genre: f
+  participations:
+  - s03
+  nb_participations: 1
+- id: moundir-zoughari
+  nom: Moundir Zoughari
+  prenom: Moundir
+  genre: h
+  participations:
+  - s03
+  - sp1
+  - sp4
+  nb_participations: 3
+- id: antoine-sanchez
+  nom: Antoine Sanchez
+  prenom: Antoine
+  genre: h
+  participations:
+  - s03
+  - sp1
+  nb_participations: 2
+- id: moussa-niangane
+  nom: Moussa Niangane
+  prenom: Moussa
+  genre: h
+  participations:
+  - s03
+  - sp3
+  - sp6
+  - sp8
+  nb_participations: 4
+- id: delphine-bano
+  nom: Delphine Bano
+  prenom: Delphine
+  genre: f
+  participations:
+  - s03
+  nb_participations: 1
+- id: isabelle-seguin
+  nom: Isabelle Seguin
+  prenom: Isabelle
+  genre: f
+  participations:
+  - s03
+  nb_participations: 1
+- id: nelson-parente
+  nom: Nelson Parente
+  prenom: Nelson
+  genre: h
+  participations:
+  - s04
+  nb_participations: 1
+- id: videli-dittmar
+  nom: Vidéli Dittmar
+  prenom: Vidéli
+  genre: h
+  participations:
+  - s04
+  nb_participations: 1
+- id: sabira
+  nom: Sabira
+  prenom: Sabira
+  genre: f
+  participations:
+  - s04
+  nb_participations: 1
+- id: vicky-szikman
+  nom: Vicky Szikman
+  prenom: Vicky
+  genre: f
+  participations:
+  - s04
+  nb_participations: 1
+- id: jean-bernard-de-cools
+  nom: Jean-Bernard De Cools
+  prenom: Jean-Bernard
+  genre: h
+  participations:
+  - s04
+  nb_participations: 1
+- id: nathalie-lapicque
+  nom: Nathalie Lapicque
+  prenom: Nathalie
+  genre: f
+  participations:
+  - s04
+  nb_participations: 1
+- id: guillaume-brauer
+  nom: Guillaume Brauer
+  prenom: Guillaume
+  genre: h
+  participations:
+  - s04
+  nb_participations: 1
+- id: odile-heritier
+  nom: Odile Héritier
+  prenom: Odile
+  genre: f
+  participations:
+  - s04
+  nb_participations: 1
+- id: catherine-ehret-mader
+  nom: Catherine Ehret-Mader
+  prenom: Catherine
+  genre: f
+  participations:
+  - s04
+  - sp1
+  nb_participations: 2
+- id: sophie-eeckhout
+  nom: Sophie Eeckhout
+  prenom: Sophie
+  genre: f
+  participations:
+  - s04
+  nb_participations: 1
+- id: alban-oswald
+  nom: Alban Oswald
+  prenom: Alban
+  genre: h
+  participations:
+  - s04
+  nb_participations: 1
+- id: amelie-gregoire
+  nom: Amélie Grégoire
+  prenom: Amélie
+  genre: f
+  participations:
+  - s04
+  nb_participations: 1
+- id: romuald-lafite
+  nom: Romuald Lafite
+  prenom: Romuald
+  genre: h
+  participations:
+  - s04
+  - sp1
+  nb_participations: 2
+- id: raphael-andres
+  nom: Raphaël Andrès
+  prenom: Raphaël
+  genre: h
+  participations:
+  - s04
+  nb_participations: 1
+- id: linda-alario
+  nom: Linda Alario
+  prenom: Linda
+  genre: f
+  participations:
+  - s04
+  - sp2
+  nb_participations: 2
+- id: philippe-bordier
+  nom: Philippe Bordier
+  prenom: Philippe
+  genre: h
+  participations:
+  - s04
+  - sp1
+  nb_participations: 2
+- id: aude-reant
+  nom: Aude Réant
+  prenom: Aude
+  genre: f
+  participations:
+  - s05
+  nb_participations: 1
+- id: mathieu-huguin
+  nom: Mathieu Huguin
+  prenom: Mathieu
+  genre: h
+  participations:
+  - s05
+  nb_participations: 1
+- id: sylvie-sebert
+  nom: Sylvie Sébert
+  prenom: Sylvie
+  genre: f
+  participations:
+  - s05
+  nb_participations: 1
+- id: caroline-colusso
+  nom: Caroline Colusso
+  prenom: Caroline
+  genre: f
+  participations:
+  - s05
+  nb_participations: 1
+- id: marie-cecile-marechal
+  nom: Marie-Cécile Maréchal
+  prenom: Marie-Cécile
+  genre: f
+  participations:
+  - s05
+  nb_participations: 1
+- id: eliane-vigneron
+  nom: Eliane Vigneron
+  prenom: Eliane
+  genre: f
+  participations:
+  - s05
+  nb_participations: 1
+- id: thierry-ramos
+  nom: Thierry Ramos
+  prenom: Thierry
+  genre: f
+  participations:
+  - s05
+  nb_participations: 1
+- id: sakhone-holaphong
+  nom: Sakhone Holaphong
+  prenom: Sakhone
+  genre: h
+  participations:
+  - s05
+  nb_participations: 1
+- id: jerome-villaseque
+  nom: Jérôme Villaseque
+  prenom: Jérôme
+  genre: h
+  participations:
+  - s05
+  nb_participations: 1
+- id: christine-isoart
+  nom: Christine Isoart
+  prenom: Christine
+  genre: f
+  participations:
+  - s05
+  nb_participations: 1
+- id: coumba-baradji
+  nom: Coumba Baradji
+  prenom: Coumba
+  genre: f
+  participations:
+  - s05
+  - sp2
+  - sp3
+  - sp7
+  nb_participations: 4
+- id: pierre-vaney
+  nom: Pierre Vaney
+  prenom: Pierre
+  genre: h
+  participations:
+  - s05
+  nb_participations: 1
+- id: veronique-lobjoie
+  nom: Véronique Lobjoie
+  prenom: Véronique
+  genre: f
+  participations:
+  - s05
+  nb_participations: 1
+- id: alexis-tournier
+  nom: Alexis Tournier
+  prenom: Alexis
+  genre: h
+  participations:
+  - s05
+  nb_participations: 1
+- id: mohamed-derradji
+  nom: Mohamed Derradji
+  prenom: Mohamed
+  genre: h
+  participations:
+  - s05
+  - sp2
+  nb_participations: 2
+- id: francis-bordas
+  nom: Francis Bordas
+  prenom: Francis
+  genre: h
+  participations:
+  - s05
+  - sp3
+  nb_participations: 2
+- id: clemence-castel
+  nom: Clémence Castel
+  prenom: Clémence
+  genre: f
+  participations:
+  - s05
+  - sp1
+  - sp5
+  nb_participations: 3
+- id: karine-amorsi
+  nom: Karine Amorsi
+  prenom: Karine
+  genre: f
+  participations:
+  - s06
+  nb_participations: 1
+- id: mama-el-fayed
+  nom: Mama El Fayed
+  prenom: Mama
+  genre: f
+  participations:
+  - s06
+  nb_participations: 1
+- id: nicolas-maire
+  nom: Nicolas Maire
+  prenom: Nicolas
+  genre: h
+  participations:
+  - s06
+  nb_participations: 1
+- id: nico-felger
+  nom: Nico Felger
+  prenom: Nico
+  genre: h
+  participations:
+  - s06
+  nb_participations: 1
+- id: jean-claude-errin
+  nom: Jean-Claude Errin
+  prenom: Jean-Claude
+  genre: h
+  participations:
+  - s06
+  nb_participations: 1
+- id: mika-tailleur
+  nom: Mika Tailleur
+  prenom: Mika
+  genre: h
+  participations:
+  - s06
+  nb_participations: 1
+- id: estelle-granger
+  nom: Estelle Granger
+  prenom: Estelle
+  genre: f
+  participations:
+  - s06
+  nb_participations: 1
+- id: nathalie-bella
+  nom: Nathalie Bella
+  prenom: Nathalie
+  genre: f
+  participations:
+  - s06
+  nb_participations: 1
+- id: alain-ponton
+  nom: Alain Ponton
+  prenom: Alain
+  genre: h
+  participations:
+  - s06
+  nb_participations: 1
+- id: catherine-brun
+  nom: Catherine Brun
+  prenom: Catherine
+  genre: f
+  participations:
+  - s06
+  nb_participations: 1
+- id: gaelle-zanetton
+  nom: Gaëlle Zanetton
+  prenom: Gaëlle
+  genre: f
+  participations:
+  - s06
+  nb_participations: 1
+- id: marie-bayard
+  nom: Marie Bayard
+  prenom: Marie
+  genre: f
+  participations:
+  - s06
+  nb_participations: 1
+- id: ludovic-laresche
+  nom: Ludovic Laresche
+  prenom: Ludovic
+  genre: h
+  participations:
+  - s06
+  - sp5
+  nb_participations: 2
+- id: sebastien-roulle
+  nom: Sébastien Roullé
+  prenom: Sébastien
+  genre: h
+  participations:
+  - s06
+  nb_participations: 1
+- id: emilie-frahi
+  nom: Émilie Frahi
+  prenom: Émilie
+  genre: f
+  participations:
+  - s06
+  - sp1
+  nb_participations: 2
+- id: francois-david-cardonnel
+  nom: François-David Cardonnel
+  prenom: François-David
+  genre: h
+  participations:
+  - s06
+  - sp1
+  nb_participations: 2
+- id: ali-jaffar
+  nom: Ali Jaffar
+  prenom: Ali
+  genre: h
+  participations:
+  - s07
+  nb_participations: 1
+- id: pascale-bodin
+  nom: Pascale Bodin
+  prenom: Pascale
+  genre: f
+  participations:
+  - s07
+  nb_participations: 1
+- id: marie-laure-dagniaux
+  nom: Marie-Laure Dagniaux
+  prenom: Marie-Laure
+  genre: f
+  participations:
+  - s07
+  nb_participations: 1
+- id: melanie-guyon
+  nom: Mélanie Guyon
+  prenom: Mélanie
+  genre: f
+  participations:
+  - s07
+  nb_participations: 1
+- id: veronique-lambert
+  nom: Véronique Lambert
+  prenom: Véronique
+  genre: f
+  participations:
+  - s07
+  nb_participations: 1
+- id: chloe-vavasseur
+  nom: Chloé Vavasseur
+  prenom: Chloé
+  genre: f
+  participations:
+  - s07
+  nb_participations: 1
+- id: erick-africaa
+  nom: Érick Africaa
+  prenom: Érick
+  genre: h
+  participations:
+  - s07
+  nb_participations: 1
+- id: filomene-mendonca
+  nom: Filomène Mendonca
+  prenom: Filomène
+  genre: f
+  participations:
+  - s07
+  - sp1
+  nb_participations: 2
+- id: adrien-torrin
+  nom: Adrien Torrin
+  prenom: Adrien
+  genre: h
+  participations:
+  - s07
+  nb_participations: 1
+- id: gregoire-delachaux
+  nom: Grégoire Delachaux
+  prenom: Grégoire
+  genre: h
+  participations:
+  - s07
+  - sp2
+  nb_participations: 2
+- id: laurent-boudes
+  nom: Laurent Boudes
+  prenom: Laurent
+  genre: h
+  participations:
+  - s07
+  nb_participations: 1
+- id: patrick-brasier-de-thuy
+  nom: Patrick Brasier De Thuy
+  prenom: Patrick
+  genre: h
+  participations:
+  - s07
+  nb_participations: 1
+- id: simon-quintilla
+  nom: Simon Quintilla
+  prenom: Simon
+  genre: h
+  participations:
+  - s07
+  nb_participations: 1
+- id: maryline-hemelsdael
+  nom: Maryline Hemelsdael
+  prenom: Maryline
+  genre: f
+  participations:
+  - s07
+  nb_participations: 1
+- id: kevin-cuoco
+  nom: Kevin Cuoco
+  prenom: Kevin
+  genre: h
+  participations:
+  - s07
+  nb_participations: 1
+- id: jade-handi
+  nom: Jade Handi
+  prenom: Jade
+  genre: f
+  participations:
+  - s07
+  - sp1
+  - sp7
+  nb_participations: 3
+- id: valerie-tartacede-bollaert
+  nom: Valérie Tartacède-Bollaert
+  prenom: Valérie
+  genre: f
+  participations:
+  - s08
+  nb_participations: 1
+- id: cega-coulibaly
+  nom: Céga Coulibaly
+  prenom: Céga
+  genre: h
+  participations:
+  - s08
+  nb_participations: 1
+- id: irya-cisse
+  nom: Irya Cissé
+  prenom: Irya
+  genre: f
+  participations:
+  - s08
+  nb_participations: 1
+- id: morgane-rodrigues
+  nom: Morgane Rodriguès
+  prenom: Morgane
+  genre: f
+  participations:
+  - s08
+  nb_participations: 1
+- id: jessica-joullie
+  nom: Jessica Joullié
+  prenom: Jessica
+  genre: f
+  participations:
+  - s08
+  nb_participations: 1
+- id: alain-garcia
+  nom: Alain Garcia
+  prenom: Alain
+  genre: h
+  participations:
+  - s08
+  nb_participations: 1
+- id: jean-bernard-hauton-arnaud
+  nom: Jean-Bernard Hauton-Arnaud
+  prenom: Jean-Bernard
+  genre: h
+  participations:
+  - s08
+  - sp1
+  nb_participations: 2
+- id: christopher-lavaud
+  nom: Christopher Lavaud
+  prenom: Christopher
+  genre: h
+  participations:
+  - s08
+  nb_participations: 1
+- id: christophe-guttatoro-martin
+  nom: Christophe Guttatoro-Martin
+  prenom: Christophe
+  genre: h
+  participations:
+  - s08
+  - sp2
+  nb_participations: 2
+- id: charlene-hoffness
+  nom: Charlène Hoffness
+  prenom: Charlène
+  genre: f
+  participations:
+  - s08
+  nb_participations: 1
+- id: hakim-djellali
+  nom: Hakim Djellali
+  prenom: Hakim
+  genre: h
+  participations:
+  - s08
+  nb_participations: 1
+- id: regis-colombier
+  nom: Régis Colombier
+  prenom: Régis
+  genre: h
+  participations:
+  - s08
+  nb_participations: 1
+- id: carole-rapin
+  nom: Carole Rapin
+  prenom: Carole
+  genre: f
+  participations:
+  - s08
+  nb_participations: 1
+- id: nathalie-ensargueix
+  nom: Nathalie Ensargueix
+  prenom: Nathalie
+  genre: f
+  participations:
+  - s08
+  - sp5
+  nb_participations: 2
+- id: bertrand-bolle
+  nom: Bertrand Bolle
+  prenom: Bertrand
+  genre: h
+  participations:
+  - s08
+  - sp3
+  nb_participations: 2
+- id: frederic-favier
+  nom: Frédéric Favier
+  prenom: Frédéric
+  genre: h
+  participations:
+  - s08
+  nb_participations: 1
+- id: christelle-gauzet
+  nom: Christelle Gauzet
+  prenom: Christelle
+  genre: f
+  participations:
+  - s08
+  - sp1
+  - sp7
+  nb_participations: 3
+- id: joelle-bourlier
+  nom: Joëlle Bourlier
+  prenom: Joëlle
+  genre: f
+  participations:
+  - s09
+  nb_participations: 1
+- id: myriam-desvergne
+  nom: Myriam Desvergne
+  prenom: Myriam
+  genre: f
+  participations:
+  - s09
+  nb_participations: 1
+- id: julien-mairesse
+  nom: Julien Mairesse
+  prenom: Julien
+  genre: h
+  participations:
+  - s09
+  nb_participations: 1
+- id: anthony-parra
+  nom: Anthony Parra
+  prenom: Anthony
+  genre: h
+  participations:
+  - s09
+  nb_participations: 1
+- id: claire-rolet
+  nom: Claire Rolet
+  prenom: Claire
+  genre: f
+  participations:
+  - s09
+  nb_participations: 1
+- id: marine-mocellin
+  nom: Marine Mocellin
+  prenom: Marine
+  genre: f
+  participations:
+  - s09
+  nb_participations: 1
+- id: kaouther-ferdjani
+  nom: Kaouther Ferdjani
+  prenom: Kaouther
+  genre: f
+  participations:
+  - s09
+  nb_participations: 1
+- id: alexandre-amico
+  nom: Alexandre Amico
+  prenom: Alexandre
+  genre: h
+  participations:
+  - s09
+  nb_participations: 1
+- id: freddy-boucher
+  nom: Freddy Boucher
+  prenom: Freddy
+  genre: h
+  participations:
+  - s09
+  - sp2
+  - sp3
+  - sp4
+  - sp7
+  - sp8
+  nb_participations: 6
+- id: pascal-nickert
+  nom: Pascal Nickert
+  prenom: Pascal
+  genre: h
+  participations:
+  - s09
+  nb_participations: 1
+- id: louis-laurent-leger
+  nom: Louis-Laurent Léger
+  prenom: Louis-Laurent
+  genre: h
+  participations:
+  - s09
+  nb_participations: 1
+- id: raphaele-navarro
+  nom: Raphaële Navarro
+  prenom: Raphaële
+  genre: f
+  participations:
+  - s09
+  - sp5
+  nb_participations: 2
+- id: rodolphe-assi
+  nom: Rodolphe Assi
+  prenom: Rodolphe
+  genre: h
+  participations:
+  - s09
+  nb_participations: 1
+- id: kader-rebai
+  nom: Kader Rebaï
+  prenom: Kader
+  genre: h
+  participations:
+  - s09
+  nb_participations: 1
+- id: fabienne-lefebvre-trehoux
+  nom: Fabienne Lefebvre-Trehoux
+  prenom: Fabienne
+  genre: f
+  participations:
+  - s09
+  - sp3
+  nb_participations: 2
+- id: isabelle-da-silva
+  nom: Isabelle Da Silva
+  prenom: Isabelle
+  genre: f
+  participations:
+  - s09
+  - sp3
+  - sp4
+  nb_participations: 3
+- id: patrick-merle
+  nom: Patrick Merle
+  prenom: Patrick
+  genre: h
+  participations:
+  - s09
+  - sp3
+  - sp7
+  nb_participations: 3
+- id: christina-chevry
+  nom: Christina Chevry
+  prenom: Christina
+  genre: f
+  participations:
+  - s09
+  - sp2
+  - sp4
+  - sp8
+  nb_participations: 4
+- id: frederique-brugiroux
+  nom: Frédérique Brugiroux
+  prenom: Frédérique
+  genre: f
+  participations:
+  - s10
+  nb_participations: 1
+- id: vivien-escouflaire
+  nom: Vivien Escouflaire
+  prenom: Vivien
+  genre: h
+  participations:
+  - s10
+  nb_participations: 1
+- id: alain-merdel
+  nom: Alain Merdel
+  prenom: Alain
+  genre: h
+  participations:
+  - s10
+  nb_participations: 1
+- id: virginie-mercadal-pioli
+  nom: Virginie Mercadal Pioli
+  prenom: Virginie
+  genre: f
+  participations:
+  - s10
+  nb_participations: 1
+- id: jennifer-lieutaud
+  nom: Jennifer Lieutaud
+  prenom: Jennifer
+  genre: f
+  participations:
+  - s10
+  nb_participations: 1
+- id: jean-pierre-pigato
+  nom: Jean-Pierre Pigato
+  prenom: Jean-Pierre
+  genre: h
+  participations:
+  - s10
+  nb_participations: 1
+- id: audrey-perez
+  nom: Audrey Perez
+  prenom: Audrey
+  genre: f
+  participations:
+  - s10
+  nb_participations: 1
+- id: boris-deltell
+  nom: Boris Deltell
+  prenom: Boris
+  genre: h
+  participations:
+  - s10
+  nb_participations: 1
+- id: valentin-d-hoore
+  nom: Valentin D'Hoore
+  prenom: Valentin
+  genre: h
+  participations:
+  - s10
+  nb_participations: 1
+- id: abdellah-akriche
+  nom: Abdellah Akriche
+  prenom: Abdellah
+  genre: h
+  participations:
+  - s10
+  nb_participations: 1
+- id: marine-plissonneau
+  nom: Marine Plissonneau
+  prenom: Marine
+  genre: f
+  participations:
+  - s10
+  - sp3
+  nb_participations: 2
+- id: aurelie-gasser
+  nom: Aurélie Gasser
+  prenom: Aurélie
+  genre: f
+  participations:
+  - s10
+  nb_participations: 1
+- id: laurence-pizzocchia
+  nom: Laurence Pizzocchia
+  prenom: Laurence
+  genre: f
+  participations:
+  - s10
+  - sp4
+  nb_participations: 2
+- id: kunle-m-babacere-pakorona
+  nom: Kunlé M'Babacéré Pakorona
+  prenom: Kunlé
+  genre: h
+  participations:
+  - s10
+  nb_participations: 1
+- id: veronique-begue
+  nom: Véronique Bègue
+  prenom: Véronique
+  genre: f
+  participations:
+  - s10
+  nb_participations: 1
+- id: wafa-el-mejjad
+  nom: Wafa El Mejjad
+  prenom: Wafa
+  genre: f
+  participations:
+  - s10
+  - sp3
+  nb_participations: 2
+- id: claude-dartois
+  nom: Claude Dartois
+  prenom: Claude
+  genre: h
+  participations:
+  - s10
+  - sp3
+  - sp6
+  - sp7
+  nb_participations: 4
+- id: philippe-duron
+  nom: Philippe Duron
+  prenom: Philippe
+  genre: h
+  participations:
+  - s10
+  - sp4
+  nb_participations: 2
+- id: lisa-legouverneur
+  nom: Lisa Legouverneur
+  prenom: Lisa
+  genre: f
+  participations:
+  - s11
+  nb_participations: 1
+- id: catherine-barnier
+  nom: Catherine Barnier
+  prenom: Catherine
+  genre: f
+  participations:
+  - s11
+  nb_participations: 1
+- id: steve-lemercier
+  nom: Steve Lemercier
+  prenom: Steve
+  genre: h
+  participations:
+  - s11
+  nb_participations: 1
+- id: gege-icardi
+  nom: Gégé Icardi
+  prenom: Gégé
+  genre: h
+  participations:
+  - s11
+  nb_participations: 1
+- id: naouel-hadjaf
+  nom: Naouel Hadjaf
+  prenom: Naouel
+  genre: f
+  participations:
+  - s11
+  nb_participations: 1
+- id: benoit-mahieux
+  nom: Benoît Mahieux
+  prenom: Benoît
+  genre: h
+  participations:
+  - s11
+  nb_participations: 1
+- id: delisia-fettasi
+  nom: Délisia Fettasi
+  prenom: Délisia
+  genre: f
+  participations:
+  - s11
+  nb_participations: 1
+- id: caroline-matteucci
+  nom: Caroline Matteucci
+  prenom: Caroline
+  genre: f
+  participations:
+  - s11
+  nb_participations: 1
+- id: maxime-boulet
+  nom: Maxime Boulet
+  prenom: Maxime
+  genre: h
+  participations:
+  - s11
+  nb_participations: 1
+- id: anthony-amar
+  nom: Anthony Amar
+  prenom: Anthony
+  genre: h
+  participations:
+  - s11
+  nb_participations: 1
+- id: olivier-moenaert
+  nom: Olivier Moenaert
+  prenom: Olivier
+  genre: h
+  participations:
+  - s11
+  - sp5
+  nb_participations: 2
+- id: florence-delbarre
+  nom: Florence Delbarre
+  prenom: Florence
+  genre: f
+  participations:
+  - s11
+  - sp4
+  nb_participations: 2
+- id: virginie-jarry
+  nom: Virginie Jarry
+  prenom: Virginie
+  genre: f
+  participations:
+  - s11
+  nb_participations: 1
+- id: patricia-morel
+  nom: Patricia Morel
+  prenom: Patricia
+  genre: f
+  participations:
+  - s11
+  - sp3
+  nb_participations: 2
+- id: alexandra-pouillon
+  nom: Alexandra Pouillon
+  prenom: Alexandra
+  genre: f
+  participations:
+  - s11
+  nb_participations: 1
+- id: martin-bazin
+  nom: Martin Bazin
+  prenom: Martin
+  genre: h
+  participations:
+  - s11
+  - sp4
+  nb_participations: 2
+- id: ella-gbezan
+  nom: Ella Gbezan
+  prenom: Ella
+  genre: f
+  participations:
+  - s11
+  nb_participations: 1
+- id: laurent-maistret
+  nom: Laurent Maistret
+  prenom: Laurent
+  genre: h
+  participations:
+  - s11
+  - sp4
+  - sp7
+  nb_participations: 3
+- id: teheiura-teahui
+  nom: Teheiura Teahui
+  prenom: Teheiura
+  genre: h
+  participations:
+  - s11
+  - sp3
+  - sp4
+  - sp6
+  - sp7
+  nb_participations: 5
+- id: gerard-urdampilleta
+  nom: Gérard Urdampilleta
+  prenom: Gérard
+  genre: h
+  participations:
+  - s11
+  nb_participations: 1
+- id: melanie-boimare
+  nom: Mélanie Boimare
+  prenom: Mélanie
+  genre: f
+  participations:
+  - s12
+  nb_participations: 1
+- id: mickael-kalfallah
+  nom: Mickaël Kalfallah
+  prenom: Mickaël
+  genre: h
+  participations:
+  - s12
+  nb_participations: 1
+- id: sara-tallon
+  nom: Sara Tallon
+  prenom: Sara
+  genre: f
+  participations:
+  - s12
+  - sp4
+  - sp6
+  nb_participations: 3
+- id: nadine-de-carpentry
+  nom: Nadine De Carpentry
+  prenom: Nadine
+  genre: f
+  participations:
+  - s12
+  nb_participations: 1
+- id: elodie-saleder
+  nom: Élodie Saleder
+  prenom: Élodie
+  genre: f
+  participations:
+  - s12
+  nb_participations: 1
+- id: marie-parmentier
+  nom: Marie Parmentier
+  prenom: Marie
+  genre: f
+  participations:
+  - s12
+  nb_participations: 1
+- id: anthony-dito
+  nom: Anthony Dito
+  prenom: Anthony
+  genre: h
+  participations:
+  - s12
+  nb_participations: 1
+- id: javier-rodriguez
+  nom: Javier Rodriguez
+  prenom: Javier
+  genre: h
+  participations:
+  - s12
+  - sp5
+  nb_participations: 2
+- id: namadia-thai-thai
+  nom: Namadia Thaï Thaï
+  prenom: Namadia
+  genre: h
+  participations:
+  - s12
+  - sp7
+  nb_participations: 2
+- id: marylou-sidibe
+  nom: Marylou Sidibé
+  prenom: Marylou
+  genre: f
+  participations:
+  - s12
+  nb_participations: 1
+- id: catherine-perez
+  nom: Catherine Perez
+  prenom: Catherine
+  genre: f
+  participations:
+  - s12
+  nb_participations: 1
+- id: camille-sold
+  nom: Camille Sold
+  prenom: Camille
+  genre: f
+  participations:
+  - s12
+  - sp8
+  nb_participations: 2
+- id: charles-clement
+  nom: Charles Clément
+  prenom: Charles
+  genre: h
+  participations:
+  - s12
+  nb_participations: 1
+- id: thierry-villette
+  nom: Thierry Villette
+  prenom: Thierry
+  genre: h
+  participations:
+  - s12
+  nb_participations: 1
+- id: myriam-modde
+  nom: Myriam Modde
+  prenom: Myriam
+  genre: f
+  participations:
+  - s12
+  nb_participations: 1
+- id: bernard-deniaud
+  nom: Bernard Deniaud
+  prenom: Bernard
+  genre: h
+  participations:
+  - s12
+  nb_participations: 1
+- id: philippe-bizet
+  nom: Philippe Bizet
+  prenom: Philippe
+  genre: h
+  participations:
+  - s12
+  - sp4
+  nb_participations: 2
+- id: vanessa-alvarez
+  nom: Vanessa Alvarez
+  prenom: Vanessa
+  genre: f
+  participations:
+  - s12
+  nb_participations: 1
+- id: brice-martinet
+  nom: Brice Martinet
+  prenom: Brice
+  genre: h
+  participations:
+  - s12
+  nb_participations: 1
+- id: ugo-lartiche
+  nom: Ugo Lartiche
+  prenom: Ugo
+  genre: h
+  participations:
+  - s12
+  - s26
+  - sp7
+  - sp8
+  nb_participations: 4
+- id: babeth-delettre
+  nom: Babeth Delettre
+  prenom: Babeth
+  genre: f
+  participations:
+  - s14
+  nb_participations: 1
+- id: marie-anne-queniart
+  nom: Marie-Anne Queniart
+  prenom: Marie-Anne
+  genre: f
+  participations:
+  - s14
+  nb_participations: 1
+- id: benoit-jorion-fahy
+  nom: Benoît Jorion-Fahy
+  prenom: Benoît
+  genre: h
+  participations:
+  - s14
+  nb_participations: 1
+- id: manon-allender
+  nom: Manon Allender
+  prenom: Manon
+  genre: f
+  participations:
+  - s14
+  nb_participations: 1
+- id: loic-crespin
+  nom: Loïc Crespin
+  prenom: Loïc
+  genre: h
+  participations:
+  - s14
+  nb_participations: 1
+- id: isabelle-fidanza
+  nom: Isabelle Fidanza
+  prenom: Isabelle
+  genre: f
+  participations:
+  - s14
+  nb_participations: 1
+- id: margot-perrot-houwaer
+  nom: Margot Perrot Houwaer
+  prenom: Margot
+  genre: f
+  participations:
+  - s14
+  nb_participations: 1
+- id: alban-pellegrin
+  nom: Alban Pellegrin
+  prenom: Alban
+  genre: h
+  participations:
+  - s14
+  - sp5
+  nb_participations: 2
+- id: corinne-bargoin-samuelian
+  nom: Corinne Bargoin Samuelian
+  prenom: Corinne
+  genre: f
+  participations:
+  - s14
+  nb_participations: 1
+- id: cedric-giosserand-lucas
+  nom: Cédric Giosserand-Lucas
+  prenom: Cédric
+  genre: h
+  participations:
+  - s14
+  - sp5
+  nb_participations: 2
+- id: charlaine-cuny
+  nom: Charlaine Cuny
+  prenom: Charlaine
+  genre: f
+  participations:
+  - s14
+  nb_participations: 1
+- id: nessim-kouachi
+  nom: Nessim Kouachi
+  prenom: Nessim
+  genre: h
+  participations:
+  - s14
+  nb_participations: 1
+- id: jeff-santiago
+  nom: Jeff Santiago
+  prenom: Jeff
+  genre: h
+  participations:
+  - s14
+  nb_participations: 1
+- id: christophe-pendon
+  nom: Christophe Pendon
+  prenom: Christophe
+  genre: h
+  participations:
+  - s14
+  nb_participations: 1
+- id: jessica-potel
+  nom: Jessica Potel
+  prenom: Jessica
+  genre: f
+  participations:
+  - s14
+  nb_participations: 1
+- id: sebastien-ballesteros
+  nom: Sébastien Ballesteros
+  prenom: Sébastien
+  genre: h
+  participations:
+  - s14
+  nb_participations: 1
+- id: bruno-peisey
+  nom: Bruno Peisey
+  prenom: Bruno
+  genre: h
+  participations:
+  - s14
+  nb_participations: 1
+- id: melissa-bastin
+  nom: Mélissa Bastin
+  prenom: Mélissa
+  genre: f
+  participations:
+  - s14
+  nb_participations: 1
+- id: chantal-menard
+  nom: Chantal Ménard
+  prenom: Chantal
+  genre: f
+  participations:
+  - s14
+  - sp5
+  nb_participations: 2
+- id: marc-rambaud
+  nom: Marc Rambaud
+  prenom: Marc
+  genre: h
+  participations:
+  - s14
+  nb_participations: 1
+- id: charlie-vincent-mussard
+  nom: Charlie Vincent-Mussard
+  prenom: Charlie
+  genre: f
+  participations:
+  - s15
+  nb_participations: 1
+- id: laurence-corbellotti
+  nom: Laurence Corbellotti
+  prenom: Laurence
+  genre: f
+  participations:
+  - s15
+  nb_participations: 1
+- id: marius-torterat
+  nom: Marius Torterat
+  prenom: Marius
+  genre: h
+  participations:
+  - s15
+  nb_participations: 1
+- id: celine-parat-yeghiayan
+  nom: Céline Parat-Yeghiayan
+  prenom: Céline
+  genre: f
+  participations:
+  - s15
+  nb_participations: 1
+- id: huw-francis
+  nom: Huw Francis
+  prenom: Huw
+  genre: h
+  participations:
+  - s15
+  nb_participations: 1
+- id: carole-poncelet
+  nom: Carole Poncelet
+  prenom: Carole
+  genre: f
+  participations:
+  - s15
+  nb_participations: 1
+- id: lolo-facione
+  nom: Lolo Facione
+  prenom: Lolo
+  genre: f
+  participations:
+  - s15
+  nb_participations: 1
+- id: amir-doukhan
+  nom: Amir Doukhan
+  prenom: Amir
+  genre: h
+  participations:
+  - s15
+  nb_participations: 1
+- id: cassandre-girard
+  nom: Cassandre Girard
+  prenom: Cassandre
+  genre: f
+  participations:
+  - s15
+  - sp5
+  nb_participations: 2
+- id: romain-palazzetti
+  nom: Romain Palazzetti
+  prenom: Romain
+  genre: h
+  participations:
+  - s15
+  nb_participations: 1
+- id: julien-castro
+  nom: Julien Castro
+  prenom: Julien
+  genre: h
+  participations:
+  - s15
+  nb_participations: 1
+- id: laureen-hugel
+  nom: Laureen Hugel
+  prenom: Laureen
+  genre: f
+  participations:
+  - s15
+  nb_participations: 1
+- id: steve-best
+  nom: Steve Best
+  prenom: Steve
+  genre: h
+  participations:
+  - s15
+  nb_participations: 1
+- id: carine-cazals
+  nom: Carine Cazals
+  prenom: Carine
+  genre: f
+  participations:
+  - s15
+  nb_participations: 1
+- id: karima-neggaz
+  nom: Karima Neggaz
+  prenom: Karima
+  genre: f
+  participations:
+  - s15
+  - sp7
+  nb_participations: 2
+- id: nicolas-rouye
+  nom: Nicolas Rouyé
+  prenom: Nicolas
+  genre: h
+  participations:
+  - s15
+  nb_participations: 1
+- id: alain-chrisostome
+  nom: Alain Chrisostome
+  prenom: Alain
+  genre: h
+  participations:
+  - s15
+  nb_participations: 1
+- id: cecilia-siharaj
+  nom: Cécilia Siharaj
+  prenom: Cécilia
+  genre: f
+  participations:
+  - s15
+  nb_participations: 1
+- id: gabriel-gubbels
+  nom: Gabriel Gubbels
+  prenom: Gabriel
+  genre: h
+  participations:
+  - s15
+  nb_participations: 1
+- id: pascal-salviani
+  nom: Pascal Salviani
+  prenom: Pascal
+  genre: h
+  participations:
+  - s15
+  - sp5
+  nb_participations: 2
+- id: wendy-gervois
+  nom: Wendy Gervois
+  prenom: Wendy
+  genre: f
+  participations:
+  - s15
+  nb_participations: 1
+- id: myriam-zenasni
+  nom: Myriam Zenasni
+  prenom: Myriam
+  genre: f
+  participations:
+  - s16
+  nb_participations: 1
+- id: amandine-schmitt
+  nom: Amandine Schmitt
+  prenom: Amandine
+  genre: f
+  participations:
+  - s16
+  nb_participations: 1
+- id: sophie-le-nestic-sabattier
+  nom: Sophie Le Nestic Sabattier
+  prenom: Sophie
+  genre: f
+  participations:
+  - s16
+  nb_participations: 1
+- id: sandrine-bouzekri
+  nom: Sandrine Bouzekri
+  prenom: Sandrine
+  genre: f
+  participations:
+  - s16
+  nb_participations: 1
+- id: laurent-mischkind
+  nom: Laurent Mischkind
+  prenom: Laurent
+  genre: h
+  participations:
+  - s16
+  nb_participations: 1
+- id: jean-luc-duboscq
+  nom: Jean-Luc Duboscq
+  prenom: Jean-Luc
+  genre: h
+  participations:
+  - s16
+  nb_participations: 1
+- id: jerome-merlier
+  nom: Jérôme Merlier
+  prenom: Jérôme
+  genre: h
+  participations:
+  - s16
+  nb_participations: 1
+- id: lau-emilien
+  nom: Lau Émilien
+  prenom: Lau
+  genre: h
+  participations:
+  - s16
+  nb_participations: 1
+- id: beryl-libault-de-la-chevasnerie
+  nom: Béryl Libault de la Chevasnerie
+  prenom: Béryl
+  genre: f
+  participations:
+  - s16
+  nb_participations: 1
+- id: alexandra-pharisien
+  nom: Alexandra Pharisien
+  prenom: Alexandra
+  genre: f
+  participations:
+  - s16
+  nb_participations: 1
+- id: yannick-delalleau
+  nom: Yannick Delalleau
+  prenom: Yannick
+  genre: h
+  participations:
+  - s16
+  nb_participations: 1
+- id: julie-navarro-camilleri
+  nom: Julie Navarro-Camilleri
+  prenom: Julie
+  genre: f
+  participations:
+  - s16
+  - sp5
+  nb_participations: 2
+- id: jeremy-raffin
+  nom: Jérémy Raffin
+  prenom: Jérémy
+  genre: h
+  participations:
+  - s16
+  - sp5
+  nb_participations: 2
+- id: stephane-cipolla
+  nom: Stéphane Cipolla
+  prenom: Stéphane
+  genre: h
+  participations:
+  - s16
+  nb_participations: 1
+- id: ludivine-wiart
+  nom: Ludivine Wiart
+  prenom: Ludivine
+  genre: f
+  participations:
+  - s16
+  nb_participations: 1
+- id: candice-boisson
+  nom: Candice Boisson
+  prenom: Candice
+  genre: f
+  participations:
+  - s16
+  - sp5
+  - sp7
+  nb_participations: 3
+- id: bruno-troester
+  nom: Bruno Troester
+  prenom: Bruno
+  genre: h
+  participations:
+  - s16
+  nb_participations: 1
+- id: freddy-bolzer
+  nom: Freddy Bolzer
+  prenom: Freddy
+  genre: h
+  participations:
+  - s16
+  nb_participations: 1
+- id: jesta-hillmann
+  nom: Jesta Hillmann
+  prenom: Jesta
+  genre: f
+  participations:
+  - s16
+  nb_participations: 1
+- id: benoit-assadi
+  nom: Benoît Assadi
+  prenom: Benoît
+  genre: h
+  participations:
+  - s16
+  nb_participations: 1
+- id: dylan-thiry
+  nom: Dylan Thiry
+  prenom: Dylan
+  genre: h
+  participations:
+  - s17
+  - sp5
+  nb_participations: 2
+- id: sabine-ollivier
+  nom: Sabine Ollivier
+  prenom: Sabine
+  genre: f
+  participations:
+  - s17
+  nb_participations: 1
+- id: hada-ghoulam
+  nom: Hada Ghoulam
+  prenom: Hada
+  genre: f
+  participations:
+  - s17
+  nb_participations: 1
+- id: franck-michel
+  nom: Franck Michel
+  prenom: Franck
+  genre: h
+  participations:
+  - s17
+  nb_participations: 1
+- id: felicie-greugny
+  nom: Félicie Greugny
+  prenom: Félicie
+  genre: f
+  participations:
+  - s17
+  nb_participations: 1
+- id: brahma-sadeyen
+  nom: Brahma Sadeyen
+  prenom: Brahma
+  genre: h
+  participations:
+  - s17
+  nb_participations: 1
+- id: bastien-munez
+  nom: Bastien Muñez
+  prenom: Bastien
+  genre: h
+  participations:
+  - s17
+  nb_participations: 1
+- id: maria-beccaris
+  nom: Maria Beccaris
+  prenom: Maria
+  genre: f
+  participations:
+  - s17
+  nb_participations: 1
+- id: yves-rey
+  nom: Yves Rey
+  prenom: Yves
+  genre: h
+  participations:
+  - s17
+  nb_participations: 1
+- id: yassin-metiri
+  nom: Yassin Metiri
+  prenom: Yassin
+  genre: h
+  participations:
+  - s17
+  - sp5
+  - sp8
+  nb_participations: 3
+- id: manuella-baudet
+  nom: Manuella Baudet
+  prenom: Manuella
+  genre: f
+  participations:
+  - s17
+  nb_participations: 1
+- id: sandro-gonzalez-schena
+  nom: Sandro Gonzalez Schena
+  prenom: Sandro
+  genre: h
+  participations:
+  - s17
+  nb_participations: 1
+- id: marjorie-rousseeuw
+  nom: Marjorie Rousseeuw
+  prenom: Marjorie
+  genre: f
+  participations:
+  - s17
+  nb_participations: 1
+- id: corentin-albertini
+  nom: Corentin Albertini
+  prenom: Corentin
+  genre: h
+  participations:
+  - s17
+  nb_participations: 1
+- id: kelly-beaugrand
+  nom: Kelly Beaugrand
+  prenom: Kelly
+  genre: f
+  participations:
+  - s17
+  nb_participations: 1
+- id: claire-pradayrol
+  nom: Claire Pradayrol
+  prenom: Claire
+  genre: f
+  participations:
+  - s17
+  nb_participations: 1
+- id: sebastien-gottiniaux
+  nom: Sébastien Gottiniaux
+  prenom: Sébastien
+  genre: h
+  participations:
+  - s17
+  nb_participations: 1
+- id: mathilde-chevalier
+  nom: Mathilde Chevalier
+  prenom: Mathilde
+  genre: f
+  participations:
+  - s17
+  nb_participations: 1
+- id: vincent-roux
+  nom: Vincent Roux
+  prenom: Vincent
+  genre: h
+  participations:
+  - s17
+  nb_participations: 1
+- id: clementine-julien
+  nom: Clémentine Julien
+  prenom: Clémentine
+  genre: f
+  participations:
+  - s17
+  - sp5
+  nb_participations: 2
+- id: frederic-blancher
+  nom: Frédéric Blancher
+  prenom: Frédéric
+  genre: h
+  participations:
+  - s17
+  nb_participations: 1
+- id: marine-alves
+  nom: Marine Alves
+  prenom: Marine
+  genre: f
+  participations:
+  - s18
+  nb_participations: 1
+- id: delphine-bruyere
+  nom: Delphine Bruyère
+  prenom: Delphine
+  genre: f
+  participations:
+  - s18
+  nb_participations: 1
+- id: thomas-hebert
+  nom: Thomas Hébert
+  prenom: Thomas
+  genre: h
+  participations:
+  - s18
+  nb_participations: 1
+- id: mel-moresve
+  nom: Mel Moresve
+  prenom: Mel
+  genre: f
+  participations:
+  - s18
+  nb_participations: 1
+- id: theotime-bernardin
+  nom: Théotime Bernardin
+  prenom: Théotime
+  genre: h
+  participations:
+  - s18
+  nb_participations: 1
+- id: marta-morino
+  nom: Marta Morino
+  prenom: Marta
+  genre: f
+  participations:
+  - s18
+  nb_participations: 1
+- id: may-peitavi
+  nom: May Peitavi
+  prenom: May
+  genre: f
+  participations:
+  - s18
+  nb_participations: 1
+- id: caroline-demartis
+  nom: Caroline Demartis
+  prenom: Caroline
+  genre: f
+  participations:
+  - s18
+  nb_participations: 1
+- id: manu-delanghe
+  nom: Manu Delanghe
+  prenom: Manu
+  genre: h
+  participations:
+  - s18
+  nb_participations: 1
+- id: tugdual-paul
+  nom: Tugdual Paul
+  prenom: Tugdual
+  genre: h
+  participations:
+  - s18
+  nb_participations: 1
+- id: marvyn-leone
+  nom: Marvyn Leone
+  prenom: Marvyn
+  genre: h
+  participations:
+  - s18
+  nb_participations: 1
+- id: sebastien-meriaux
+  nom: Sébastien Mériaux
+  prenom: Sébastien
+  genre: h
+  participations:
+  - s18
+  nb_participations: 1
+- id: fabian-rocha-rocha
+  nom: Fabian Rocha Rocha
+  prenom: Fabian
+  genre: h
+  participations:
+  - s18
+  nb_participations: 1
+- id: maxime-stafrach
+  nom: Maxime Stafrach
+  prenom: Maxime
+  genre: h
+  participations:
+  - s18
+  nb_participations: 1
+- id: melanie-moret
+  nom: Mélanie Moret
+  prenom: Mélanie
+  genre: f
+  participations:
+  - s18
+  nb_participations: 1
+- id: romain-delaroche
+  nom: Romain Delaroche
+  prenom: Romain
+  genre: h
+  participations:
+  - s18
+  nb_participations: 1
+- id: marguerite-leblanc
+  nom: Marguerite Leblanc
+  prenom: Marguerite
+  genre: f
+  participations:
+  - s18
+  nb_participations: 1
+- id: sandrine-dubourdy
+  nom: Sandrine Dubourdy
+  prenom: Sandrine
+  genre: f
+  participations:
+  - s18
+  nb_participations: 1
+- id: magalie-gustave
+  nom: Magalie Gustave
+  prenom: Magalie
+  genre: f
+  participations:
+  - s18
+  nb_participations: 1
+- id: tiffany-gounin
+  nom: Tiffany Gounin
+  prenom: Tiffany
+  genre: f
+  participations:
+  - s18
+  - sp5
+  nb_participations: 2
+- id: andre-deleplace
+  nom: André Deleplace
+  prenom: André
+  genre: h
+  participations:
+  - s18
+  nb_participations: 1
+- id: alisea-lecomte
+  nom: Aliséa Lecomte
+  prenom: Aliséa
+  genre: f
+  participations:
+  - s20
+  nb_participations: 1
+- id: carinne-fossey-elka
+  nom: Carinne Fossey Elka
+  prenom: Carinne
+  genre: f
+  participations:
+  - s20
+  nb_participations: 1
+- id: emilie-tybot
+  nom: Émilie Tybot
+  prenom: Émilie
+  genre: f
+  participations:
+  - s20
+  nb_participations: 1
+- id: victor
+  nom: Victor
+  prenom: Victor
+  genre: h
+  participations:
+  - s20
+  nb_participations: 1
+- id: chloe-chaize
+  nom: Chloé Chaize
+  prenom: Chloé
+  genre: f
+  participations:
+  - s20
+  nb_participations: 1
+- id: xavier-vancon
+  nom: Xavier Vançon
+  prenom: Xavier
+  genre: h
+  participations:
+  - s20
+  nb_participations: 1
+- id: frederic
+  nom: Frédéric
+  prenom: Frédéric
+  genre: h
+  participations:
+  - s20
+  nb_participations: 1
+- id: alexandre-andre
+  nom: Alexandre André
+  prenom: Alexandre
+  genre: h
+  participations:
+  - s20
+  nb_participations: 1
+- id: beatrice-kabore
+  nom: Béatrice Kabore
+  prenom: Béatrice
+  genre: f
+  participations:
+  - s20
+  nb_participations: 1
+- id: brice-chauvinc
+  nom: Brice Chauvinc
+  prenom: Brice
+  genre: h
+  participations:
+  - s20
+  nb_participations: 1
+- id: sophie-chevalier
+  nom: Sophie Chevalier
+  prenom: Sophie
+  genre: f
+  participations:
+  - s20
+  nb_participations: 1
+- id: angelique-mastio
+  nom: Angélique Mastio
+  prenom: Angélique
+  genre: f
+  participations:
+  - s20
+  nb_participations: 1
+- id: mohamed-siaaliti
+  nom: Mohamed Siaaliti
+  prenom: Mohamed
+  genre: h
+  participations:
+  - s20
+  nb_participations: 1
+- id: nicolas-van-brabandt
+  nom: Nicolas Van Brabandt
+  prenom: Nicolas
+  genre: h
+  participations:
+  - s20
+  nb_participations: 1
+- id: maxime-berthon
+  nom: Maxime Berthon
+  prenom: Maxime
+  genre: h
+  participations:
+  - s20
+  - sp7
+  nb_participations: 2
+- id: cyril-rouanne
+  nom: Cyril Rouanne
+  prenom: Cyril
+  genre: h
+  participations:
+  - s20
+  nb_participations: 1
+- id: clo-dessard-arribas
+  nom: Clo Dessard Arribas
+  prenom: Clo
+  genre: f
+  participations:
+  - s20
+  nb_participations: 1
+- id: aurelien-soulimant
+  nom: Aurélien Soulimant
+  prenom: Aurélien
+  genre: h
+  participations:
+  - s20
+  nb_participations: 1
+- id: steeve-demana
+  nom: Steeve Demana
+  prenom: Steeve
+  genre: h
+  participations:
+  - s20
+  nb_participations: 1
+- id: cindy-poumeyrol
+  nom: Cindy Poumeyrol
+  prenom: Cindy
+  genre: f
+  participations:
+  - s20
+  - sp7
+  nb_participations: 2
+- id: maud-bamps
+  nom: Maud Bamps
+  prenom: Maud
+  genre: f
+  participations:
+  - s20
+  nb_participations: 1
+- id: francois-zabalo
+  nom: François Zabalo
+  prenom: François
+  genre: h
+  participations:
+  - s21
+  nb_participations: 1
+- id: carole-collado
+  nom: Carole Collado
+  prenom: Carole
+  genre: f
+  participations:
+  - s21
+  nb_participations: 1
+- id: samuel-degoute
+  nom: Samuel Degoute
+  prenom: Samuel
+  genre: h
+  participations:
+  - s21
+  nb_participations: 1
+- id: diane-goulesque-perez
+  nom: Diane Goulesque-Perez
+  prenom: Diane
+  genre: f
+  participations:
+  - s21
+  nb_participations: 1
+- id: estelle-fabrice
+  nom: Estelle Fabrice
+  prenom: Estelle
+  genre: f
+  participations:
+  - s21
+  nb_participations: 1
+- id: mathieu-blanchard
+  nom: Mathieu Blanchard
+  prenom: Mathieu
+  genre: h
+  participations:
+  - s21
+  nb_participations: 1
+- id: adrien-ferreira
+  nom: Adrien Ferreira
+  prenom: Adrien
+  genre: h
+  participations:
+  - s21
+  nb_participations: 1
+- id: aubin-bligny
+  nom: Aubin Bligny
+  prenom: Aubin
+  genre: h
+  participations:
+  - s21
+  nb_participations: 1
+- id: sebastien-aberlenc
+  nom: Sébastien Aberlenc
+  prenom: Sébastien
+  genre: h
+  participations:
+  - s21
+  nb_participations: 1
+- id: marie-france
+  nom: Marie-France
+  prenom: Marie-France
+  genre: f
+  participations:
+  - s21
+  nb_participations: 1
+- id: hadja-cisse
+  nom: Hadja Cissé
+  prenom: Hadja
+  genre: f
+  participations:
+  - s21
+  nb_participations: 1
+- id: bertrand-kamal-loudrhiri
+  nom: Bertrand-Kamal Loudrhiri
+  prenom: Bertrand-Kamal
+  genre: h
+  participations:
+  - s21
+  nb_participations: 1
+- id: joaquina-glaud
+  nom: Joaquina Glaud
+  prenom: Joaquina
+  genre: f
+  participations:
+  - s21
+  nb_participations: 1
+- id: jody-favier
+  nom: Jody Favier
+  prenom: Jody
+  genre: f
+  participations:
+  - s21
+  nb_participations: 1
+- id: laurent-affri
+  nom: Laurent Affri
+  prenom: Laurent
+  genre: h
+  participations:
+  - s21
+  nb_participations: 1
+- id: alix-noblat
+  nom: Alix Noblat
+  prenom: Alix
+  genre: f
+  participations:
+  - s21
+  - sp7
+  nb_participations: 2
+- id: fabrice-pietrzak
+  nom: Fabrice Pietrzak
+  prenom: Fabrice
+  genre: h
+  participations:
+  - s21
+  nb_participations: 1
+- id: ava-maisini
+  nom: Ava Maisini
+  prenom: Ava
+  genre: f
+  participations:
+  - s21
+  nb_participations: 1
+- id: angelique-ti
+  nom: Angélique Ti
+  prenom: Angélique
+  genre: f
+  participations:
+  - s21
+  nb_participations: 1
+- id: dorian-louvet
+  nom: Dorian Louvet
+  prenom: Dorian
+  genre: h
+  participations:
+  - s21
+  - sp8
+  nb_participations: 2
+- id: lola-besse
+  nom: Lola Besse
+  prenom: Lola
+  genre: f
+  participations:
+  - s21
+  - sp8
+  nb_participations: 2
+- id: loic-riowal
+  nom: Loïc Riowal
+  prenom: Loïc
+  genre: h
+  participations:
+  - s21
+  - sp7
+  nb_participations: 2
+- id: brice-petit
+  nom: Brice Petit
+  prenom: Brice
+  genre: h
+  participations:
+  - s21
+  nb_participations: 1
+- id: alexandra-pornet
+  nom: Alexandra Pornet
+  prenom: Alexandra
+  genre: f
+  participations:
+  - s21
+  - sp7
+  nb_participations: 2
+- id: sylviane-simonnet
+  nom: Sylviane Simonnet
+  prenom: Sylviane
+  genre: f
+  participations:
+  - s22
+  nb_participations: 1
+- id: marie-oheix
+  nom: Marie Oheix
+  prenom: Marie
+  genre: f
+  participations:
+  - s22
+  nb_participations: 1
+- id: elodie-faelens
+  nom: Élodie Faelens
+  prenom: Élodie
+  genre: f
+  participations:
+  - s22
+  nb_participations: 1
+- id: candice-rousset
+  nom: Candice Rousset
+  prenom: Candice
+  genre: f
+  participations:
+  - s22
+  nb_participations: 1
+- id: gabin-peillon
+  nom: Gabin Peillon
+  prenom: Gabin
+  genre: h
+  participations:
+  - s22
+  nb_participations: 1
+- id: aurelien-tesson
+  nom: Aurélien Tesson
+  prenom: Aurélien
+  genre: h
+  participations:
+  - s22
+  nb_participations: 1
+- id: frederic-baudet
+  nom: Frédéric Baudet
+  prenom: Frédéric
+  genre: h
+  participations:
+  - s22
+  nb_participations: 1
+- id: herve-comte
+  nom: Hervé Comte
+  prenom: Hervé
+  genre: h
+  participations:
+  - s22
+  nb_participations: 1
+- id: mathieu-orsolani
+  nom: Mathieu Orsolani
+  prenom: Mathieu
+  genre: h
+  participations:
+  - s22
+  nb_participations: 1
+- id: shanice-mendy
+  nom: Shanice Mendy
+  prenom: Shanice
+  genre: f
+  participations:
+  - s22
+  nb_participations: 1
+- id: myriam-chafik
+  nom: Myriam Chafik
+  prenom: Myriam
+  genre: f
+  participations:
+  - s22
+  nb_participations: 1
+- id: vincent-blier
+  nom: Vincent Blier
+  prenom: Vincent
+  genre: h
+  participations:
+  - s22
+  - sp8
+  nb_participations: 2
+- id: laetitia-saphores
+  nom: Laëtitia Saphores
+  prenom: Laëtitia
+  genre: f
+  participations:
+  - s22
+  nb_participations: 1
+- id: thomas-plisson
+  nom: Thomas Plisson
+  prenom: Thomas
+  genre: h
+  participations:
+  - s22
+  nb_participations: 1
+- id: flavio-soares-tavares
+  nom: Flavio Soares Tavares
+  prenom: Flavio
+  genre: h
+  participations:
+  - s22
+  nb_participations: 1
+- id: magali-sevenier
+  nom: Magali Sevenier
+  prenom: Magali
+  genre: f
+  participations:
+  - s22
+  nb_participations: 1
+- id: arnaud-deshayes
+  nom: Arnaud Deshayes
+  prenom: Arnaud
+  genre: h
+  participations:
+  - s22
+  nb_participations: 1
+- id: laure-canevarolo
+  nom: Laure Canevarolo
+  prenom: Laure
+  genre: f
+  participations:
+  - s22
+  - sp8
+  nb_participations: 2
+- id: jonathan-julien
+  nom: Jonathan Julien
+  prenom: Jonathan
+  genre: h
+  participations:
+  - s22
+  nb_participations: 1
+- id: lucie-bertaud
+  nom: Lucie Bertaud
+  prenom: Lucie
+  genre: f
+  participations:
+  - s22
+  nb_participations: 1
+- id: maxine-eouzan
+  nom: Maxine Eouzan
+  prenom: Maxine
+  genre: f
+  participations:
+  - s22
+  nb_participations: 1
+- id: lili-gasnier
+  nom: Lili Gasnier
+  prenom: Lili
+  genre: f
+  participations:
+  - s23
+  nb_participations: 1
+- id: celine-dufrenoy
+  nom: Céline Dufrenoy
+  prenom: Céline
+  genre: f
+  participations:
+  - s23
+  nb_participations: 1
+- id: franck-le-totem-maudit
+  nom: Franck (Le Totem Maudit)
+  prenom: Franck
+  genre: h
+  participations:
+  - s23
+  nb_participations: 1
+- id: matteo-real
+  nom: Matteo Real
+  prenom: Mattéo
+  genre: h
+  participations:
+  - s23
+  nb_participations: 1
+- id: samira-ait-brahim
+  nom: Samira Aït-Brahim
+  prenom: Samira
+  genre: f
+  participations:
+  - s23
+  nb_participations: 1
+- id: benjamin-breerette
+  nom: Benjamin Breerette
+  prenom: Benjamin
+  genre: h
+  participations:
+  - s23
+  nb_participations: 1
+- id: jean-philippe-masy
+  nom: Jean-Philippe Masy
+  prenom: Jean-Philippe
+  genre: h
+  participations:
+  - s23
+  nb_participations: 1
+- id: stephanie-tribot
+  nom: Stéphanie Tribot
+  prenom: Stéphanie
+  genre: f
+  participations:
+  - s23
+  nb_participations: 1
+- id: alexandra-elize
+  nom: Alexandra Élizé
+  prenom: Alexandra
+  genre: f
+  participations:
+  - s23
+  nb_participations: 1
+- id: setha-el-hajjami
+  nom: Setha El Hajjami
+  prenom: Setha
+  genre: f
+  participations:
+  - s23
+  nb_participations: 1
+- id: colin-mottas
+  nom: Colin Mottas
+  prenom: Colin
+  genre: h
+  participations:
+  - s23
+  nb_participations: 1
+- id: pauline-pourchaire
+  nom: Pauline Pourchaire
+  prenom: Pauline
+  genre: f
+  participations:
+  - s23
+  nb_participations: 1
+- id: yannick-zachee
+  nom: Yannick Zachée
+  prenom: Yannick
+  genre: h
+  participations:
+  - s23
+  nb_participations: 1
+- id: anne-sophie-mounier
+  nom: Anne-Sophie Mounier
+  prenom: Anne-Sophie
+  genre: f
+  participations:
+  - s23
+  nb_participations: 1
+- id: maxime-tournoux
+  nom: Maxime Tournoux
+  prenom: Maxime
+  genre: h
+  participations:
+  - s23
+  nb_participations: 1
+- id: louana-roy
+  nom: Louana Roy
+  prenom: Louana
+  genre: f
+  participations:
+  - s23
+  nb_participations: 1
+- id: fouzi-de-la-fuente
+  nom: Fouzi de la Fuente
+  prenom: Fouzi
+  genre: h
+  participations:
+  - s23
+  nb_participations: 1
+- id: nicolas-bellon
+  nom: Nicolas Bellon
+  prenom: Nicolas
+  genre: h
+  participations:
+  - s23
+  nb_participations: 1
+- id: olga-khokhlova
+  nom: Olga Khokhlova
+  prenom: Olga
+  genre: f
+  participations:
+  - s23
+  nb_participations: 1
+- id: ambre-daudet
+  nom: Ambre Daudet
+  prenom: Ambre
+  genre: f
+  participations:
+  - s23
+  nb_participations: 1
+- id: jean-charles-chatelus
+  nom: Jean-Charles Chatelus
+  prenom: Jean-Charles
+  genre: h
+  participations:
+  - s23
+  nb_participations: 1
+- id: geraldine-nicolle
+  nom: Géraldine Nicolle
+  prenom: Géraldine
+  genre: f
+  participations:
+  - s23
+  nb_participations: 1
+- id: francois-descamp
+  nom: François Descamp
+  prenom: François
+  genre: h
+  participations:
+  - s23
+  nb_participations: 1
+- id: bastien-san-pedro
+  nom: Bastien San Pedro
+  prenom: Bastien
+  genre: h
+  participations:
+  - s23
+  nb_participations: 1
+- id: celia-litzellmann
+  nom: Célia Litzellmann
+  prenom: Célia
+  genre: f
+  participations:
+  - s24
+  nb_participations: 1
+- id: emin-luka
+  nom: Emin Luka
+  prenom: Emin
+  genre: h
+  participations:
+  - s24
+  nb_participations: 1
+- id: alexandre-delaunay
+  nom: Alexandre Delaunay
+  prenom: Alexandre
+  genre: h
+  participations:
+  - s24
+  nb_participations: 1
+- id: elodie-migeal
+  nom: Elodie Migeal
+  prenom: Élodie
+  genre: f
+  participations:
+  - s24
+  nb_participations: 1
+- id: benjamin-di-benedetto
+  nom: Benjamin Di Benedetto
+  prenom: Benjamin
+  genre: h
+  participations:
+  - s24
+  nb_participations: 1
+- id: martin-burrus
+  nom: Martin Burrus
+  prenom: Martin
+  genre: h
+  participations:
+  - s24
+  nb_participations: 1
+- id: christine-mayonnade
+  nom: Christine Mayonnade
+  prenom: Christine
+  genre: f
+  participations:
+  - s24
+  nb_participations: 1
+- id: rudy
+  nom: Rudy
+  prenom: Rudy
+  genre: h
+  participations:
+  - s24
+  nb_participations: 1
+- id: grace-jeantel
+  nom: Grâce Jeantel
+  prenom: Grâce
+  genre: f
+  participations:
+  - s24
+  nb_participations: 1
+- id: anne-sophie-antoine
+  nom: Anne-Sophie Antoine
+  prenom: Anne-Sophie
+  genre: f
+  participations:
+  - s24
+  nb_participations: 1
+- id: helena-roosen
+  nom: Helena Roosen
+  prenom: Helena
+  genre: f
+  participations:
+  - s24
+  nb_participations: 1
+- id: gilles-de-baere
+  nom: Gilles De Baere
+  prenom: Gilles
+  genre: h
+  participations:
+  - s24
+  nb_participations: 1
+- id: clemence-noquet
+  nom: Clémence Noquet
+  prenom: Clémence
+  genre: f
+  participations:
+  - s24
+  nb_participations: 1
+- id: esteban-garcia-mora
+  nom: Esteban Garcia-Mora
+  prenom: Esteban
+  genre: h
+  participations:
+  - s24
+  nb_participations: 1
+- id: laura-yelpa
+  nom: Laura Yelpa
+  prenom: Laura
+  genre: f
+  participations:
+  - s24
+  nb_participations: 1
+- id: quentin
+  nom: Quentin
+  prenom: Quentin
+  genre: h
+  participations:
+  - s24
+  nb_participations: 1
+- id: julie-debever
+  nom: Julie Debever
+  prenom: Julie
+  genre: f
+  participations:
+  - s24
+  nb_participations: 1
+- id: nicolas-pretot
+  nom: Nicolas Pretot
+  prenom: Nicolas
+  genre: h
+  participations:
+  - s24
+  - sp8
+  nb_participations: 2
+- id: tania-cakarevic
+  nom: Tania Cakarevic
+  prenom: Tania
+  genre: f
+  participations:
+  - s24
+  - sp8
+  nb_participations: 2
+- id: frederic-khouvilay
+  nom: Frédéric Khouvilay
+  prenom: Frédéric
+  genre: h
+  participations:
+  - s24
+  - s26
+  nb_participations: 2
+- id: steve-grenier
+  nom: Steve Grenier
+  prenom: Steve
+  genre: h
+  participations:
+  - s25
+  nb_participations: 1
+- id: alicia-bouly
+  nom: Alicia Bouly
+  prenom: Alicia
+  genre: f
+  participations:
+  - s25
+  nb_participations: 1
+- id: nathalie-suhard
+  nom: Nathalie Suhard
+  prenom: Nathalie
+  genre: f
+  participations:
+  - s25
+  nb_participations: 1
+- id: william-plancq
+  nom: William Plancq
+  prenom: William
+  genre: h
+  participations:
+  - s25
+  nb_participations: 1
+- id: alexis-tchernychev
+  nom: Alexis Tchernychev
+  prenom: Alexis
+  genre: h
+  participations:
+  - s25
+  nb_participations: 1
+- id: emilie-clavis
+  nom: Émilie Clavis
+  prenom: Émilie
+  genre: f
+  participations:
+  - s25
+  nb_participations: 1
+- id: sarah-diawara
+  nom: Sarah Diawara
+  prenom: Sarah
+  genre: f
+  participations:
+  - s25
+  nb_participations: 1
+- id: maxime-barbet
+  nom: Maxime Barbet
+  prenom: Maxime
+  genre: h
+  participations:
+  - s25
+  nb_participations: 1
+- id: ricky-poyet
+  nom: Ricky Poyet
+  prenom: Ricky
+  genre: h
+  participations:
+  - s25
+  nb_participations: 1
+- id: lea-notardonato
+  nom: Léa Notardonato
+  prenom: Léa
+  genre: f
+  participations:
+  - s25
+  nb_participations: 1
+- id: oceane-montenegro
+  nom: Océane Montenegro
+  prenom: Océane
+  genre: f
+  participations:
+  - s25
+  nb_participations: 1
+- id: cecile-poprawa
+  nom: Cécile Poprawa
+  prenom: Cécile
+  genre: f
+  participations:
+  - s25
+  nb_participations: 1
+- id: aurelien-dulau
+  nom: Aurélien Dulau
+  prenom: Aurélien
+  genre: h
+  participations:
+  - s25
+  nb_participations: 1
+- id: jean-belmonte
+  nom: Jean Belmonte
+  prenom: Jean
+  genre: h
+  participations:
+  - s25
+  nb_participations: 1
+- id: megane-rouland
+  nom: Mégane Rouland
+  prenom: Mégane
+  genre: f
+  participations:
+  - s25
+  nb_participations: 1
+- id: david-murail
+  nom: David Murail
+  prenom: David
+  genre: h
+  participations:
+  - s25
+  nb_participations: 1
+- id: sebastien-cazaux
+  nom: Sébastien Cazaux
+  prenom: Sébastien
+  genre: h
+  participations:
+  - s25
+  nb_participations: 1
+- id: amri-madani
+  nom: Amri Madani
+  prenom: Amri
+  genre: h
+  participations:
+  - s25
+  nb_participations: 1
+- id: pauline-bonneil
+  nom: Pauline Bonneil
+  prenom: Pauline
+  genre: f
+  participations:
+  - s25
+  nb_participations: 1
+- id: julie-rignault
+  nom: Julie Rignault
+  prenom: Julie
+  genre: f
+  participations:
+  - s25
+  nb_participations: 1
+- id: meissa-seck
+  nom: Meïssa Seck
+  prenom: Meïssa
+  genre: h
+  participations:
+  - s25
+  nb_participations: 1
+- id: lea-sahin
+  nom: Léa Sahin
+  prenom: Léa
+  genre: f
+  participations:
+  - s25
+  nb_participations: 1
+- id: cecile-guy
+  nom: Cécile Guy
+  prenom: Cécile
+  genre: f
+  participations:
+  - s26
+  nb_participations: 1
+- id: ari-bentolila
+  nom: Ari Bentolila
+  prenom: Ari
+  genre: h
+  participations:
+  - s26
+  nb_participations: 1
+- id: marie-vilaseca
+  nom: Marie Vilaseca
+  prenom: Marie
+  genre: f
+  participations:
+  - s26
+  nb_participations: 1
+- id: lola-potabes
+  nom: Lola Potabes
+  prenom: Lola
+  genre: f
+  participations:
+  - s26
+  nb_participations: 1
+- id: vanessa-feuillatte
+  nom: Vanessa Feuillatte
+  prenom: Vanessa
+  genre: f
+  participations:
+  - s26
+  nb_participations: 1
+- id: nathanael-branchereau
+  nom: Nathanaël Branchereau
+  prenom: Nathanaël
+  genre: h
+  participations:
+  - s26
+  nb_participations: 1
+- id: alexandre-cheron
+  nom: Alexandre Cheron
+  prenom: Alexandre
+  genre: h
+  participations:
+  - s26
+  nb_participations: 1
+- id: michel-huy
+  nom: Michel Huy
+  prenom: Michel
+  genre: h
+  participations:
+  - s26
+  nb_participations: 1
+- id: melissa-pierru
+  nom: Mélissa Pierru
+  prenom: Mélissa
+  genre: f
+  participations:
+  - s26
+  nb_participations: 1
+- id: emmanuelle-boisseau
+  nom: Emmanuelle Boisseau
+  prenom: Emmanuelle
+  genre: f
+  participations:
+  - s26
+  nb_participations: 1
+- id: fabrice-giordano
+  nom: Fabrice Giordano
+  prenom: Fabrice
+  genre: h
+  participations:
+  - s26
+  nb_participations: 1
+- id: maud-collas
+  nom: Maud Collas
+  prenom: Maud
+  genre: f
+  participations:
+  - s26
+  nb_participations: 1
+- id: sarah-aboudeine
+  nom: Sarah Aboudeine
+  prenom: Sarah
+  genre: f
+  participations:
+  - s26
+  nb_participations: 1
+- id: maxim-iarkov
+  nom: Maxim Iarkov
+  prenom: Maxim
+  genre: h
+  participations:
+  - s26
+  nb_participations: 1
+- id: gustin-comanescu
+  nom: Gustin Comanescu
+  prenom: Gustin
+  genre: h
+  participations:
+  - s26
+  nb_participations: 1
+- id: cassandre-lambert
+  nom: Cassandre Lambert
+  prenom: Cassandre
+  genre: f
+  participations:
+  - s26
+  nb_participations: 1
+- id: sophia-mansouri
+  nom: Sophia Mansouri
+  prenom: Sophia
+  genre: f
+  participations:
+  - s26
+  nb_participations: 1
+- id: jacques-roque
+  nom: Jacques Roque
+  prenom: Jacques
+  genre: h
+  participations:
+  - s26
+  - sp8
+  nb_participations: 2
+- id: cecile-belec
+  nom: Cécile Belec
+  prenom: Cécile
+  genre: f
+  participations:
+  - s26
+  nb_participations: 1
+- id: ilyesse-benyoub
+  nom: Ilyesse Benyoub
+  prenom: Ilyesse
+  genre: h
+  participations:
+  - s26
+  nb_participations: 1
+- id: charlotte-rasquin
+  nom: Charlotte Rasquin
+  prenom: Charlotte
+  genre: f
+  participations:
+  - s26
+  - sp8
+  nb_participations: 2
+- id: thibault-belanger
+  nom: Thibault Bélanger
+  prenom: Thibault
+  genre: h
+  participations:
+  - s26
+  nb_participations: 1
+- id: cynthian-steinbach
+  nom: Cynthian Steinbach
+  prenom: Cynthiana
+  genre: f
+  participations:
+  - s27
+  nb_participations: 1
+- id: allan-rousseeuw
+  nom: Allan Rousseeuw
+  prenom: Allan
+  genre: h
+  participations:
+  - s27
+  nb_participations: 1
+- id: christian-chambon
+  nom: Christian Chambon
+  prenom: Christian
+  genre: h
+  participations:
+  - s27
+  nb_participations: 1
+- id: romane-ouvrard
+  nom: Romane Ouvrard
+  prenom: Romane
+  genre: f
+  participations:
+  - s27
+  nb_participations: 1
+- id: mehdi-bounab-lamiral
+  nom: Mehdi Bounab-Lamiral
+  prenom: Mehdi
+  genre: h
+  participations:
+  - s27
+  nb_participations: 1
+- id: benoit-piedfer
+  nom: Benoît Piedfer
+  prenom: Benoît
+  genre: h
+  participations:
+  - s27
+  nb_participations: 1
+- id: mohamed-ayari
+  nom: Mohamed Ayari
+  prenom: Mohamed
+  genre: h
+  participations:
+  - s27
+  nb_participations: 1
+- id: pauline-leperchois
+  nom: Pauline Leperchois
+  prenom: Pauline
+  genre: f
+  participations:
+  - s27
+  nb_participations: 1
+- id: andrea-zogron
+  nom: Andréa Zogron
+  prenom: Andréa
+  genre: f
+  participations:
+  - s27
+  nb_participations: 1
+- id: adrien-bernaert
+  nom: Adrien Bernaert
+  prenom: Adrien
+  genre: h
+  participations:
+  - s27
+  nb_participations: 1
+- id: frederic-pignard
+  nom: Frédéric Pignard
+  prenom: Frédéric
+  genre: h
+  participations:
+  - s27
+  nb_participations: 1
+- id: jessica-murcia
+  nom: Jessica Murcia
+  prenom: Jessica
+  genre: f
+  participations:
+  - s27
+  nb_participations: 1
+- id: louise-picavet
+  nom: Louise Picavet
+  prenom: Louise
+  genre: f
+  participations:
+  - s27
+  nb_participations: 1
+- id: joana-callico
+  nom: Joana Callico
+  prenom: Joana
+  genre: f
+  participations:
+  - s27
+  - sp8
+  nb_participations: 2
+- id: nais-napoletano
+  nom: Naïs Napoletano
+  prenom: Naïs
+  genre: f
+  participations:
+  - s27
+  nb_participations: 1
+- id: pierre-marie-ponsot
+  nom: Pierre-Marie Ponsot
+  prenom: Pierre-Marie
+  genre: h
+  participations:
+  - s27
+  nb_participations: 1
+- id: maxime-lubian
+  nom: Maxime Lubian
+  prenom: Maxime
+  genre: h
+  participations:
+  - s27
+  - sp8
+  nb_participations: 2
+- id: noemie-bessec
+  nom: Noémie Bessec
+  prenom: Noémie
+  genre: f
+  participations:
+  - s27
+  nb_participations: 1
+- id: celine-faccio
+  nom: Céline Faccio
+  prenom: Céline
+  genre: f
+  participations:
+  - s27
+  nb_participations: 1
+- id: jerome-salvatore
+  nom: Jérôme Salvatore
+  prenom: Jérôme
+  genre: h
+  participations:
+  - s27
+  nb_participations: 1
+- id: claire-passas
+  nom: Claire Passas
+  prenom: Claire
+  genre: f
+  participations:
+  - s27
+  nb_participations: 1
+- id: jerome-molas
+  nom: Jérôme Molas
+  prenom: Jérôme
+  genre: h
+  participations:
+  - s27
+  nb_participations: 1
+- id: mael-lozach
+  nom: Maël Lozach
+  prenom: Maël
+  genre: h
+  participations:
+  - s27
+  nb_participations: 1
+- id: gaelle-fleury
+  nom: Gaëlle Fleury
+  prenom: Gaëlle
+  genre: f
+  participations:
+  - s27
+  nb_participations: 1
+- id: francoise-fournier-grigis
+  nom: Françoise Fournier-Grigis
+  prenom: Françoise
+  genre: f
+  participations:
+  - s28
+  nb_participations: 1
+- id: clemence-dubent
+  nom: Clémence Dubent
+  prenom: Clémence
+  genre: f
+  participations:
+  - s28
+  nb_participations: 1
+- id: karine-iraundegui
+  nom: Karine Iraundegui
+  prenom: Karine
+  genre: f
+  participations:
+  - s28
+  nb_participations: 1
+- id: lionel-dubouchet
+  nom: Lionel Dubouchet
+  prenom: Lionel
+  genre: h
+  participations:
+  - s28
+  nb_participations: 1
+- id: nora-toubal
+  nom: Nora Toubal
+  prenom: Nora
+  genre: f
+  participations:
+  - s28
+  nb_participations: 1
+- id: jonathan-guez
+  nom: Jonathan Guez
+  prenom: Jonathan
+  genre: h
+  participations:
+  - s28
+  nb_participations: 1
+- id: ulrich-bandeira
+  nom: Ulrich Bandeira
+  prenom: Ulrich
+  genre: h
+  participations:
+  - s28
+  nb_participations: 1
+- id: johan-pinaud
+  nom: Johan Pinaud
+  prenom: Johan
+  genre: h
+  participations:
+  - s28
+  nb_participations: 1
+- id: paul-estival
+  nom: Paul Estival
+  prenom: Paul
+  genre: h
+  participations:
+  - s28
+  nb_participations: 1
+- id: lola-krast
+  nom: Lola Krast
+  prenom: Lola
+  genre: f
+  participations:
+  - s28
+  nb_participations: 1
+- id: jade-correa
+  nom: Jade Correa
+  prenom: Jade
+  genre: f
+  participations:
+  - s28
+  nb_participations: 1
+- id: cindy-sulpice-gonzalez
+  nom: Cindy Sulpice-Gonzalez
+  prenom: Cindy
+  genre: f
+  participations:
+  - s28
+  nb_participations: 1
+- id: antonin-fortunato
+  nom: Antonin Fortunato
+  prenom: Antonin
+  genre: h
+  participations:
+  - s28
+  nb_participations: 1
+- id: zakariya-bougoudouima
+  nom: Zakariya Bougoudouima
+  prenom: Zakariya
+  genre: h
+  participations:
+  - s28
+  nb_participations: 1
+- id: daniel-duquesnoy
+  nom: Daniel Duquesnoy
+  prenom: Daniel
+  genre: h
+  participations:
+  - s28
+  nb_participations: 1
+- id: hugo-van-aertryck
+  nom: Hugo Van Aertryck
+  prenom: Hugo
+  genre: h
+  participations:
+  - s28
+  nb_participations: 1
+- id: caroline-ledos
+  nom: Caroline Ledos
+  prenom: Caroline
+  genre: f
+  participations:
+  - s28
+  nb_participations: 1
+- id: guillaume-le-deun
+  nom: Guillaume Le Deun
+  prenom: Guillaume
+  genre: h
+  participations:
+  - s28
+  nb_participations: 1
+- id: clarisse-cresseveur
+  nom: Clarisse Cresseveur
+  prenom: Clarisse
+  genre: f
+  participations:
+  - s28
+  nb_participations: 1
+- id: cynthia-combes
+  nom: Cynthia Combes
+  prenom: Cynthia
+  genre: f
+  participations:
+  - s28
+  nb_participations: 1
+- id: betty-lise
+  nom: Betty Lise
+  prenom: Betty Lise
+  genre: f
+  participations:
+  - sp2
+  nb_participations: 1
+- id: frank-leb-uf
+  nom: Frank Lebœuf
+  prenom: Frank Lebœuf
+  genre: h
+  participations:
+  - sp2
+  nb_participations: 1
+- id: gwendal-peizerat
+  nom: Gwendal Peizerat
+  prenom: Gwendal Peizerat
+  genre: h
+  participations:
+  - sp2
+  nb_participations: 1
+- id: djamel-bouras
+  nom: Djamel Bouras
+  prenom: Djamel Bouras
+  genre: h
+  participations:
+  - sp2
+  nb_participations: 1
+- id: frederique-jossinet
+  nom: Frédérique Jossinet
+  prenom: Frédérique Jossinet
+  genre: f
+  participations:
+  - sp2
+  nb_participations: 1
+- id: taig-khris
+  nom: Taïg Khris
+  prenom: Taïg Khris
+  genre: h
+  participations:
+  - sp2
+  nb_participations: 1
+- id: myriam-lamare
+  nom: Myriam Lamare
+  prenom: Myriam Lamare
+  genre: f
+  participations:
+  - sp2
+  nb_participations: 1
+- id: claudia-chatel
+  nom: Claudia Chatel
+  prenom: Claudia
+  genre: f
+  participations:
+  - sp6
+  nb_participations: 1
+- id: joseph-farret
+  nom: Joseph Farret
+  prenom: Joseph
+  genre: h
+  participations:
+  - sp6
+  nb_participations: 1
+- id: valerie-gernigon
+  nom: Valérie Gernigon
+  prenom: Valérie
+  genre: f
+  participations:
+  - sp6
+  nb_participations: 1
+- id: marie-ovaere
+  nom: Marie Ovaere
+  prenom: Marie
+  genre: f
+  participations:
+  - sp6
+  nb_participations: 1
+- id: benoit-fourmont
+  nom: Benoît Fourmont
+  prenom: Benoît
+  genre: h
+  participations:
+  - sp6
+  nb_participations: 1
+- id: delphine-hergault
+  nom: Delphine Hergault
+  prenom: Delphine
+  genre: f
+  participations:
+  - sp6
+  nb_participations: 1
+- id: pholien-systermans
+  nom: Pholien Systermans
+  prenom: Pholien
+  genre: h
+  participations:
+  - sp6
+  nb_participations: 1
+- id: ahmad-abadie
+  nom: Ahmad Abadie
+  prenom: Ahmad
+  genre: h
+  participations:
+  - sp6
+  nb_participations: 1
+- id: sam-haliti
+  nom: Sam Haliti
+  prenom: Sam
+  genre: h
+  participations:
+  - sp6
+  - sp7
+  nb_participations: 2
+- id: charlotte-caron
+  nom: Charlotte Caron
+  prenom: Charlotte
+  genre: f
+  participations:
+  - sp6
+  nb_participations: 1
+- id: jessica
+  nom: Jessica
+  prenom: Jessica
+  genre: f
+  participations:
+  - sp6
+  nb_participations: 1
+- id: eric-peyrache
+  nom: Eric Peyrache
+  prenom: Éric
+  genre: h
+  participations:
+  - sp6
+  nb_participations: 1
+- id: regis-rappailles
+  nom: Régis Rappailles
+  prenom: Régis
+  genre: h
+  participations:
+  - sp6
+  nb_participations: 1
+- id: alexandra-leveau
+  nom: Alexandra Leveau
+  prenom: Alexandra
+  genre: f
+  participations:
+  - sp6
+  nb_participations: 1
+- id: ines-loucif
+  nom: Inès Loucif
+  prenom: Inès
+  genre: f
+  participations:
+  - sp6
+  nb_participations: 1
+- id: naoil-tita
+  nom: Naoil Tita
+  prenom: Naoil
+  genre: f
+  participations:
+  - sp6
+  - sp8
+  nb_participations: 2
+- id: clementine-jullien
+  nom: Clémentine Jullien
+  prenom: Clémentine
+  genre: f
+  participations:
+  - sp7
+  - sp8
+  nb_participations: 2
+- id: clemence
+  nom: Clémence
+  prenom: Clémence
+  genre: f
+  participations:
+  - sp7
+  nb_participations: 1
+- id: phil-bizet
+  nom: Phil Bizet
+  prenom: Phil
+  genre: h
+  participations:
+  - sp7
+  nb_participations: 1
