@@ -10,10 +10,13 @@
 FROM python:3.12-slim
 
 # poppler-utils : lire les PDF deposes dans specs/ (pdftotext, pdftoppm).
-# Sans lui, un PDF sans couche texte est illisible.
+# git          : verifier qu'aucun secret n'est suivi par l'index. Le conteneur
+#                ne pousse rien -- la cle SSH est sur l'hote et n'est pas
+#                montee -- il ne fait que lire l'etat du depot.
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
       poppler-utils \
+      git \
       fonts-dejavu-core \
       ca-certificates \
  && rm -rf /var/lib/apt/lists/*

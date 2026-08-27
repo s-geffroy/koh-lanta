@@ -15,6 +15,7 @@ chiffre qui sort vide -- et qu'on ne verrait qu'en ligne, une fois publie :
 """
 import os
 import re
+import subprocess
 import sys
 
 import yaml
@@ -145,6 +146,34 @@ def main():
                      f"ce fichier serait publie en ligne")
     if config.get("url", "").find("CHANGEME") != -1:
         c.avertir("_config.yml : `url` vaut encore CHANGEME — a renseigner avant publication")
+
+    # --- secrets : trois verrous, verifies a chaque passage
+    dossier_secrets = os.path.join(RACINE, ".secrets")
+    if os.path.isdir(dossier_secrets):
+        if ".secrets/" not in exclus:
+            c.erreur("_config.yml : .secrets/ absent de `exclude:` — "
+                     "le jeton serait publie sur le site")
+        gitignore = os.path.join(RACINE, ".gitignore")
+        contenu = open(gitignore, encoding="utf-8").read() if os.path.exists(gitignore) else ""
+        if ".secrets/" not in contenu:
+            c.erreur(".gitignore : .secrets/ absent — le jeton entrerait dans "
+                     "l'historique Git, qui est definitif")
+        try:
+            suivis = subprocess.run(["git", "ls-files", ".secrets"], cwd=RACINE,
+                                    capture_output=True, text=True).stdout.strip()
+        except FileNotFoundError:
+            suivis = ""
+            c.avertir("git absent : impossible de verifier qu'aucun secret "
+                      "n'est suivi par l'index")
+        if suivis:
+            c.erreur("des fichiers de .secrets/ sont SUIVIS PAR GIT : "
+                     + suivis.replace("\n", ", ")
+                     + " — a retirer de l'index et a considerer comme compromis")
+        for nom in os.listdir(dossier_secrets):
+            chemin = os.path.join(dossier_secrets, nom)
+            if os.path.isfile(chemin) and os.stat(chemin).st_mode & 0o077:
+                c.erreur(f".secrets/{nom} est lisible par d'autres — "
+                         f"chmod 600 .secrets/{nom}")
 
     if os.path.isdir(os.path.join(RACINE, "_site")):
         c.avertir("_site/ existe : verifier qu'il est bien ignore par Git")

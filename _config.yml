@@ -58,6 +58,10 @@ exclude:
   # ce sont ces sorties, deja commitees, que Jekyll lit.
   - tools/
   - atelier/
+  # Ceinture ET bretelles : .secrets/ est deja ignore par Git, et Jekyll
+  # ignore de toute facon les noms commencant par un point. On le dit quand
+  # meme, pour que rien ne repose sur un comportement implicite.
+  - .secrets/
 
 # Domaine personnalise : ce n'est PAS un reglage de ce fichier. C'est un fichier
 # CNAME a la racine du depot, plus des enregistrements chez le registrar :

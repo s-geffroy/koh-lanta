@@ -20,8 +20,20 @@ services:
   atelier:
     build:
       context: ./atelier
+    # `appctl build` et `appctl rebuild` ne voient pas les services du profil
+    # `cli` : sans etiquette explicite, l'image resterait figee a sa premiere
+    # construction, meme apres modification du Dockerfile. Compose reconstruit
+    # quand l'image nommee ici n'existe pas encore : INCREMENTER CETTE VERSION
+    # apres toute modification de atelier/Dockerfile.
+    image: koh-lanta-atelier:2
     profiles: [cli]
     # Le depot est monte en ecriture : c'est la le produit du travail.
+    #
+    # Les secrets vivent dans .secrets/, sous le projet mais HORS de Git : un
+    # bind mount exterieur serait refuse par appctl, et a raison. Ce repertoire
+    # est ignore par Git ET exclu de la construction Jekyll, et tools/
+    # verifie_site.py refuse de laisser passer un depot ou l'un des deux
+    # verrous manquerait.
     volumes:
       - .:/depot
     working_dir: /depot
