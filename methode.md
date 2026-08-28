@@ -172,6 +172,55 @@ Le défaut a déjà été payé une fois sur ce site, sur le classement des fami
 métiers : trois familles à effectif égal changeaient d’ordre d’une publication à
 l’autre.
 
+## Où s’arrête ce site
+
+Une question mérite d’être posée franchement : reste-t-il quelque chose à
+chercher ? La réponse tient à la **puissance** — la taille du plus petit effet
+qu’un jeu de données de cette taille peut encore distinguer du hasard.
+
+<div class="tableau-large">
+<table>
+<thead><tr><th>Niveau d’analyse</th><th class="nombre">Observations</th><th class="nombre">Plus petit effet décelable</th></tr></thead>
+<tbody>
+<tr><td>Une grandeur de saison</td><td class="nombre">26</td><td class="nombre">0,55 écart-type</td></tr>
+<tr><td>Une grandeur de participation</td><td class="nombre">505</td><td class="nombre">0,12 écart-type</td></tr>
+<tr><td>Une part au niveau du bulletin</td><td class="nombre">1 753</td><td class="nombre">3,3 points</td></tr>
+<tr><td>Une part sur les conseils mixtes</td><td class="nombre">1 033</td><td class="nombre">4,4 points</td></tr>
+<tr><td>Une part sur le vote du jury</td><td class="nombre">177</td><td class="nombre">10,5 points</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="note">Lecture : à 80 % de puissance et au seuil habituel de 5 %. Un
+effet plus petit que la valeur indiquée existe peut-être — ces données ne
+sauraient pas le voir.</p>
+
+Trois conséquences, et elles ne vont pas dans le même sens.
+
+**Le niveau de la saison est épuisé.** Vingt-six saisons classiques ne
+permettent de détecter qu’un effet d’un demi-écart-type. Tout ce qui pouvait s’y
+voir — la rupture de 2012, la fusion calée sur la grille, l’absence d’effet des
+mécaniques — a été cherché. Ce qui resterait serait si gros qu’il sauterait déjà
+aux yeux.
+
+**Le niveau du bulletin reste le bon endroit**, et c’est là que les résultats les
+plus solides de ce site ont été trouvés : la persistance des alliances,
+l’appartenance à la majorité, la protection du bandeau de départ, la trahison
+qui n’en est pas une. Mais les questions qui restent à ce niveau — qui propose un
+nom, qui suit, dans quel ordre les bulletins sont écrits — demandent une
+information que **les sources ne contiennent pas**.
+
+**Le nombre de tests, lui, n’est pas la limite.** On pourrait le croire : dix-sept
+tests déclarés, cela commence à compter. Vérification faite, en ajoutant vingt
+tests sans résultat au registre, **aucun des neuf résultats retenus ne tombe** —
+ils sont trop nets pour cela. Ce n’est donc pas une raison de s’arrêter, et ce
+serait malhonnête de le prétendre.
+
+Ce qui manque n’est pas de la méthode, c’est de la donnée : aucune audience,
+aucun temps d’antenne, aucune nature d’épreuve, aucun ordre de vote. Ce sont
+précisément les choses qui permettraient de dire quelque chose du **montage** —
+et elles ne figurent dans aucune source publique.
+
 ## Ce que ces données ne peuvent pas établir
 
 **Vingt-six saisons, c’est peu.** Les tests portant sur des grandeurs de saison
