@@ -924,3 +924,98 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); 
   .vitrine,
   .peigne { padding: 1.1rem 1rem 0.9rem; }
 }
+
+/* ------------------------------------------- la grille de completude */
+
+/* Une ligne par edition, une colonne par type de donnee. La couleur ne porte
+   jamais l'information seule : chaque case affiche aussi sa part en clair.
+   Cinq niveaux discrets plutot qu'un degrade continu -- on lit une carte de
+   trous, pas une mesure fine. */
+.grille-completude { font-size: 0.82rem; }
+.grille-completude th { white-space: nowrap; }
+.grille-completude thead th.case-tete {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  height: 8.5rem;
+  padding: 0.5rem 0.2rem;
+  font-weight: 600;
+  text-align: left;
+  vertical-align: bottom;
+}
+.grille-completude td.saison,
+.grille-completude th.saison {
+  position: sticky;
+  left: 0;
+  background: var(--surface);
+  z-index: 1;
+  border-right: 1px solid var(--grille);
+  white-space: nowrap;
+  text-align: left;
+}
+.grille-completude .saison b { font-weight: 600; }
+.grille-completude .saison small {
+  display: block;
+  color: var(--encre-muette);
+  font-size: 0.78em;
+}
+.grille-completude td.case {
+  position: relative;
+  text-align: center;
+  padding: 0.34rem 0.3rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  min-width: 2.6rem;
+}
+.grille-completude td.case::before {
+  content: "";
+  position: absolute;
+  top: 2px; right: 2px; bottom: 2px; left: 2px;
+  border-radius: 2px;
+  background: var(--tribu-rouge);
+  opacity: 0;
+}
+.grille-completude td.case > span { position: relative; }
+.grille-completude td.case[data-etat="complet"]::before { opacity: 0.62; }
+.grille-completude td.case[data-etat="eleve"]::before   { opacity: 0.4; }
+.grille-completude td.case[data-etat="partiel"]::before { opacity: 0.24; }
+.grille-completude td.case[data-etat="mince"]::before   { opacity: 0.11; }
+.grille-completude td.case[data-etat="manquant"] { color: var(--encre-muette); }
+.grille-completude td.case[data-etat="sans_objet"] {
+  color: var(--encre-muette);
+  background-image: repeating-linear-gradient(
+    45deg, transparent, transparent 3px,
+    var(--grille) 3px, var(--grille) 4px);
+}
+
+/* La legende des cinq niveaux, posee au-dessus de la grille. */
+.legende-completude {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  font-size: 0.86rem;
+  color: var(--encre-douce);
+}
+.legende-completude li { display: flex; align-items: center; gap: 0.45rem; }
+.legende-completude i {
+  width: 1.1rem; height: 1.1rem;
+  border-radius: 2px;
+  background: var(--tribu-rouge);
+  display: inline-block;
+}
+.legende-completude li[data-etat="complet"] i { opacity: 0.62; }
+.legende-completude li[data-etat="eleve"] i   { opacity: 0.4; }
+.legende-completude li[data-etat="partiel"] i { opacity: 0.24; }
+.legende-completude li[data-etat="mince"] i   { opacity: 0.11; }
+.legende-completude li[data-etat="manquant"] i {
+  background: transparent;
+  border: 1px solid var(--grille);
+}
+.legende-completude li[data-etat="sans_objet"] i {
+  background-image: repeating-linear-gradient(
+    45deg, transparent, transparent 3px,
+    var(--grille) 3px, var(--grille) 4px);
+  border: 1px solid var(--grille);
+}

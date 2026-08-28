@@ -15359,3 +15359,3610 @@ modeles:
     nulle: *id042
   nb_tests: 27
   nb_retenus: 15
+completude_saisons:
+  colonnes:
+  - cle: casting
+    libelle: Casting relevé
+    court: Casting
+    nature: part
+  - cle: age
+    libelle: Âge
+    court: Âge
+    nature: part
+  - cle: profession
+    libelle: Métier
+    court: Métier
+    nature: part
+  - cle: localisation
+    libelle: Département d'origine
+    court: Origine
+    nature: part
+  - cle: couleur
+    libelle: Bandeau de départ
+    court: Bandeau
+    nature: part
+  - cle: parcours
+    libelle: Tribus datées en jours
+    court: Tribus
+    nature: part
+  - cle: jour_sortie
+    libelle: Jour de sortie
+    court: Sortie
+    nature: part
+  - cle: votes_recus
+    libelle: Voix reçues
+    court: Voix
+    nature: part
+  - cle: classement
+    libelle: Rang final
+    court: Rang
+    nature: part
+  - cle: victoires
+    libelle: Palmarès d'épreuves
+    court: Palmarès
+    nature: part
+  - cle: conseils
+    libelle: Conseils rattachés à un éliminé
+    court: Conseils
+    nature: part
+  - cle: bulletins
+    libelle: Conseils au dépouillement complet
+    court: Bulletins
+    nature: part
+  - cle: epreuves
+    libelle: Bilan des épreuves par épisode
+    court: Épreuves
+    nature: fait
+  - cle: colliers
+    libelle: Destin des colliers
+    court: Colliers
+    nature: fait
+  - cle: fusion
+    libelle: Réunification repérée
+    court: Fusion
+    nature: fait
+  - cle: ambassadeurs
+    libelle: Ambassadeurs nommés
+    court: Ambassade
+    nature: fait
+  - cle: audience_saison
+    libelle: Audience de la saison
+    court: Audience
+    nature: fait
+  - cle: audience_episode
+    libelle: Audience par épisode
+    court: Audience/ép.
+    nature: fait
+  lignes:
+  - saison: s01
+    numero: 1
+    titre: Les Aventuriers de Koh-Lanta
+    pays: Thaïlande
+    lieu: Parc national de Koh Lanta
+    annee: 2001
+    speciale: false
+    effectif: 16
+    score: 92.1
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: victoires
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: conseils
+      valeur: 100.0
+      texte: 15/15
+      etat: complet
+      nature: part
+    - cle: bulletins
+      valeur: 73.3
+      texte: 11/15
+      etat: partiel
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 22 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: null
+      texte: pas de collier
+      etat: sans_objet
+      nature: fait
+    - cle: fusion
+      valeur: 100.0
+      texte: repérée
+      etat: complet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: null
+      texte: pas d'ambassade
+      etat: sans_objet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 0.0
+      texte: inconnue
+      etat: manquant
+      nature: fait
+  - saison: s02
+    numero: 2
+    titre: Nicoya
+    pays: Costa Rica
+    lieu: Péninsule de Nicoya
+    annee: 2002
+    speciale: false
+    effectif: 16
+    score: 92.2
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: victoires
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: conseils
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: bulletins
+      valeur: 75.0
+      texte: 12/16
+      etat: partiel
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 25 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: null
+      texte: pas de collier
+      etat: sans_objet
+      nature: fait
+    - cle: fusion
+      valeur: 100.0
+      texte: repérée
+      etat: complet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: null
+      texte: pas d'ambassade
+      etat: sans_objet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 0.0
+      texte: inconnue
+      etat: manquant
+      nature: fait
+  - saison: s03
+    numero: 3
+    titre: Bocas del Toro
+    pays: Panama
+    lieu: Archipel de Bocas del Toro
+    annee: 2003
+    speciale: false
+    effectif: 18
+    score: 76.9
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 94.4
+      texte: 17/18
+      etat: eleve
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 94.4
+      texte: 17/18
+      etat: eleve
+      nature: part
+    - cle: victoires
+      valeur: 94.4
+      texte: 17/18
+      etat: eleve
+      nature: part
+    - cle: conseils
+      valeur: 100.0
+      texte: 19/19
+      etat: complet
+      nature: part
+    - cle: bulletins
+      valeur: 47.4
+      texte: 9/19
+      etat: mince
+      nature: part
+    - cle: epreuves
+      valeur: 0.0
+      texte: aucune
+      etat: manquant
+      nature: fait
+    - cle: colliers
+      valeur: null
+      texte: pas de collier
+      etat: sans_objet
+      nature: fait
+    - cle: fusion
+      valeur: 0.0
+      texte: non repérée
+      etat: manquant
+      nature: fait
+    - cle: ambassadeurs
+      valeur: null
+      texte: pas d'ambassade
+      etat: sans_objet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 0.0
+      texte: inconnue
+      etat: manquant
+      nature: fait
+  - saison: s04
+    numero: 4
+    titre: Panama
+    pays: Panama
+    lieu: Archipel des Perles (Las Perlas)
+    annee: 2004
+    speciale: false
+    effectif: 16
+    score: 74.0
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 25.0
+      texte: 4/16
+      etat: mince
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 37.5
+      texte: 6/16
+      etat: mince
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 37.5
+      texte: 6/16
+      etat: mince
+      nature: part
+    - cle: victoires
+      valeur: 18.8
+      texte: 3/16
+      etat: mince
+      nature: part
+    - cle: conseils
+      valeur: 100.0
+      texte: 17/17
+      etat: complet
+      nature: part
+    - cle: bulletins
+      valeur: 64.7
+      texte: 11/17
+      etat: partiel
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 27 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: null
+      texte: pas de collier
+      etat: sans_objet
+      nature: fait
+    - cle: fusion
+      valeur: 100.0
+      texte: repérée
+      etat: complet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: null
+      texte: pas d'ambassade
+      etat: sans_objet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 0.0
+      texte: inconnue
+      etat: manquant
+      nature: fait
+  - saison: s05
+    numero: 5
+    titre: Pacifique
+    pays: Nouvelle-Calédonie
+    lieu: Îlots de l'île des Pins
+    annee: 2005
+    speciale: false
+    effectif: 17
+    score: 86.0
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 17/17
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 17/17
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 17/17
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 58.8
+      texte: 10/17
+      etat: partiel
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 17/17
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 47.1
+      texte: 8/17
+      etat: mince
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 17/17
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 17/17
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 47.1
+      texte: 8/17
+      etat: mince
+      nature: part
+    - cle: victoires
+      valeur: 47.1
+      texte: 8/17
+      etat: mince
+      nature: part
+    - cle: conseils
+      valeur: 100.0
+      texte: 17/17
+      etat: complet
+      nature: part
+    - cle: bulletins
+      valeur: 76.5
+      texte: 13/17
+      etat: partiel
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 24 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: null
+      texte: pas de collier
+      etat: sans_objet
+      nature: fait
+    - cle: fusion
+      valeur: 100.0
+      texte: repérée
+      etat: complet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: null
+      texte: pas d'ambassade
+      etat: sans_objet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+  - saison: s06
+    numero: 6
+    titre: Vanuatu
+    pays: Vanuatu
+    lieu: Archipel d'Éfaté
+    annee: 2006
+    speciale: false
+    effectif: 16
+    score: 86.6
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 75.0
+      texte: 12/16
+      etat: partiel
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 75.0
+      texte: 12/16
+      etat: partiel
+      nature: part
+    - cle: victoires
+      valeur: 75.0
+      texte: 12/16
+      etat: partiel
+      nature: part
+    - cle: conseils
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: bulletins
+      valeur: 61.1
+      texte: 11/18
+      etat: partiel
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 32 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: null
+      texte: pas de collier
+      etat: sans_objet
+      nature: fait
+    - cle: fusion
+      valeur: 100.0
+      texte: repérée
+      etat: complet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: null
+      texte: pas d'ambassade
+      etat: sans_objet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 0.0
+      texte: inconnue
+      etat: manquant
+      nature: fait
+  - saison: s07
+    numero: 7
+    titre: Palawan
+    pays: Philippines
+    lieu: Archipel de Palawan
+    annee: 2007
+    speciale: false
+    effectif: 16
+    score: 74.2
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 31.2
+      texte: 5/16
+      etat: mince
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 31.2
+      texte: 5/16
+      etat: mince
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 31.2
+      texte: 5/16
+      etat: mince
+      nature: part
+    - cle: victoires
+      valeur: 31.2
+      texte: 5/16
+      etat: mince
+      nature: part
+    - cle: conseils
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: bulletins
+      valeur: 62.5
+      texte: 10/16
+      etat: partiel
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 32 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: null
+      texte: pas de collier
+      etat: sans_objet
+      nature: fait
+    - cle: fusion
+      valeur: 100.0
+      texte: repérée
+      etat: complet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: null
+      texte: pas d'ambassade
+      etat: sans_objet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 0.0
+      texte: inconnue
+      etat: manquant
+      nature: fait
+  - saison: s08
+    numero: 8
+    titre: Caramoan
+    pays: Philippines
+    lieu: Péninsule de Caramoan
+    annee: 2008
+    speciale: false
+    effectif: 17
+    score: 91.3
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 17/17
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 17/17
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 17/17
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 17/17
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 17/17
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 100.0
+      texte: 17/17
+      etat: complet
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 17/17
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 17/17
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 100.0
+      texte: 17/17
+      etat: complet
+      nature: part
+    - cle: victoires
+      valeur: 100.0
+      texte: 17/17
+      etat: complet
+      nature: part
+    - cle: conseils
+      valeur: 94.4
+      texte: 17/18
+      etat: eleve
+      nature: part
+    - cle: bulletins
+      valeur: 66.7
+      texte: 12/18
+      etat: partiel
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 31 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: null
+      texte: pas de collier
+      etat: sans_objet
+      nature: fait
+    - cle: fusion
+      valeur: 100.0
+      texte: repérée
+      etat: complet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: null
+      texte: pas d'ambassade
+      etat: sans_objet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 0.0
+      texte: inconnue
+      etat: manquant
+      nature: fait
+  - saison: s09
+    numero: 9
+    titre: Palau
+    pays: Palaos
+    lieu: Micronésie
+    annee: 2009
+    speciale: false
+    effectif: 18
+    score: 62.7
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 44.4
+      texte: 8/18
+      etat: mince
+      nature: part
+    - cle: couleur
+      valeur: 88.9
+      texte: 16/18
+      etat: eleve
+      nature: part
+    - cle: parcours
+      valeur: 44.4
+      texte: 8/18
+      etat: mince
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 44.4
+      texte: 8/18
+      etat: mince
+      nature: part
+    - cle: victoires
+      valeur: 44.4
+      texte: 8/18
+      etat: mince
+      nature: part
+    - cle: conseils
+      valeur: 86.4
+      texte: 19/22
+      etat: eleve
+      nature: part
+    - cle: bulletins
+      valeur: 50.0
+      texte: 11/22
+      etat: partiel
+      nature: part
+    - cle: epreuves
+      valeur: 0.0
+      texte: aucune
+      etat: manquant
+      nature: fait
+    - cle: colliers
+      valeur: null
+      texte: pas de collier
+      etat: sans_objet
+      nature: fait
+    - cle: fusion
+      valeur: 0.0
+      texte: non repérée
+      etat: manquant
+      nature: fait
+    - cle: ambassadeurs
+      valeur: null
+      texte: pas d'ambassade
+      etat: sans_objet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 0.0
+      texte: inconnue
+      etat: manquant
+      nature: fait
+  - saison: sp1
+    numero: null
+    titre: Le Retour des héros
+    pays: Brésil
+    lieu: Amazonie, bord du Rio Negro
+    annee: 2009
+    speciale: true
+    effectif: 14
+    score: 83.0
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 14/14
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 14/14
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 14/14
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 14/14
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 92.9
+      texte: 13/14
+      etat: eleve
+      nature: part
+    - cle: parcours
+      valeur: 92.9
+      texte: 13/14
+      etat: eleve
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 14/14
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 14/14
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 92.9
+      texte: 13/14
+      etat: eleve
+      nature: part
+    - cle: victoires
+      valeur: 92.9
+      texte: 13/14
+      etat: eleve
+      nature: part
+    - cle: conseils
+      valeur: 100.0
+      texte: 14/14
+      etat: complet
+      nature: part
+    - cle: bulletins
+      valeur: 57.1
+      texte: 8/14
+      etat: partiel
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 15 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: null
+      texte: pas de collier
+      etat: sans_objet
+      nature: fait
+    - cle: fusion
+      valeur: null
+      texte: édition spéciale
+      etat: sans_objet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: 0.0
+      texte: non nommés
+      etat: manquant
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 0.0
+      texte: inconnue
+      etat: manquant
+      nature: fait
+  - saison: s10
+    numero: 10
+    titre: Viêtnam
+    pays: Viêt Nam
+    lieu: Archipel de Côn Đảo
+    annee: 2010
+    speciale: false
+    effectif: 18
+    score: 82.0
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 50.0
+      texte: 9/18
+      etat: partiel
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 50.0
+      texte: 9/18
+      etat: partiel
+      nature: part
+    - cle: victoires
+      valeur: 44.4
+      texte: 8/18
+      etat: mince
+      nature: part
+    - cle: conseils
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: bulletins
+      valeur: 50.0
+      texte: 10/20
+      etat: partiel
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 28 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: null
+      texte: pas de collier
+      etat: sans_objet
+      nature: fait
+    - cle: fusion
+      valeur: 100.0
+      texte: repérée
+      etat: complet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: 100.0
+      texte: nommés
+      etat: complet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 0.0
+      texte: inconnue
+      etat: manquant
+      nature: fait
+  - saison: sp2
+    numero: null
+    titre: Le Choc des héros
+    pays: Nouvelle-Calédonie
+    lieu: Poum
+    annee: 2010
+    speciale: true
+    effectif: 14
+    score: 56.7
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 14/14
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 14/14
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 14/14
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 35.7
+      texte: 5/14
+      etat: mince
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 14/14
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 21.4
+      texte: 3/14
+      etat: mince
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 14/14
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 14/14
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 21.4
+      texte: 3/14
+      etat: mince
+      nature: part
+    - cle: victoires
+      valeur: 21.4
+      texte: 3/14
+      etat: mince
+      nature: part
+    - cle: conseils
+      valeur: 46.2
+      texte: 6/13
+      etat: mince
+      nature: part
+    - cle: bulletins
+      valeur: 61.5
+      texte: 8/13
+      etat: partiel
+      nature: part
+    - cle: epreuves
+      valeur: 0.0
+      texte: aucune
+      etat: manquant
+      nature: fait
+    - cle: colliers
+      valeur: null
+      texte: pas de collier
+      etat: sans_objet
+      nature: fait
+    - cle: fusion
+      valeur: null
+      texte: édition spéciale
+      etat: sans_objet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: 0.0
+      texte: non nommés
+      etat: manquant
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 0.0
+      texte: inconnue
+      etat: manquant
+      nature: fait
+  - saison: s11
+    numero: 11
+    titre: Raja Ampat
+    pays: Indonésie
+    lieu: Archipel de Raja Ampat
+    annee: 2011
+    speciale: false
+    effectif: 20
+    score: 77.5
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 45.0
+      texte: 9/20
+      etat: mince
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 45.0
+      texte: 9/20
+      etat: mince
+      nature: part
+    - cle: victoires
+      valeur: 45.0
+      texte: 9/20
+      etat: mince
+      nature: part
+    - cle: conseils
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: bulletins
+      valeur: 60.0
+      texte: 12/20
+      etat: partiel
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 28 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: 0.0
+      texte: non détaillés
+      etat: manquant
+      nature: fait
+    - cle: fusion
+      valeur: 100.0
+      texte: repérée
+      etat: complet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: 100.0
+      texte: nommés
+      etat: complet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 0.0
+      texte: inconnue
+      etat: manquant
+      nature: fait
+  - saison: s12
+    numero: 12
+    titre: Malaisie
+    pays: Malaisie
+    lieu: Archipel de Seribuat
+    annee: 2012
+    speciale: false
+    effectif: 20
+    score: 72.2
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 80.0
+      texte: 16/20
+      etat: eleve
+      nature: part
+    - cle: victoires
+      valeur: 65.0
+      texte: 13/20
+      etat: partiel
+      nature: part
+    - cle: conseils
+      valeur: 0.0
+      texte: 0/22
+      etat: manquant
+      nature: part
+    - cle: bulletins
+      valeur: 54.5
+      texte: 12/22
+      etat: partiel
+      nature: part
+    - cle: epreuves
+      valeur: 0.0
+      texte: aucune
+      etat: manquant
+      nature: fait
+    - cle: colliers
+      valeur: 0.0
+      texte: non détaillés
+      etat: manquant
+      nature: fait
+    - cle: fusion
+      valeur: 0.0
+      texte: non repérée
+      etat: manquant
+      nature: fait
+    - cle: ambassadeurs
+      valeur: 100.0
+      texte: nommés
+      etat: complet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+  - saison: sp3
+    numero: null
+    titre: La Revanche des héros
+    pays: Cambodge
+    lieu: Île de Koh Rong
+    annee: 2012
+    speciale: true
+    effectif: 16
+    score: 84.9
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 62.5
+      texte: 10/16
+      etat: partiel
+      nature: part
+    - cle: victoires
+      valeur: 62.5
+      texte: 10/16
+      etat: partiel
+      nature: part
+    - cle: conseils
+      valeur: 100.0
+      texte: 15/15
+      etat: complet
+      nature: part
+    - cle: bulletins
+      valeur: 33.3
+      texte: 5/15
+      etat: mince
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 15 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: null
+      texte: pas de collier
+      etat: sans_objet
+      nature: fait
+    - cle: fusion
+      valeur: null
+      texte: édition spéciale
+      etat: sans_objet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: 0.0
+      texte: non nommés
+      etat: manquant
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+  - saison: sp4
+    numero: null
+    titre: La Nouvelle Édition
+    pays: Malaisie
+    lieu: Archipel de Sibu
+    annee: 2014
+    speciale: true
+    effectif: 13
+    score: 72.6
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 13/13
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 13/13
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 13/13
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 13/13
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 13/13
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 61.5
+      texte: 8/13
+      etat: partiel
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 13/13
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 13/13
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 61.5
+      texte: 8/13
+      etat: partiel
+      nature: part
+    - cle: victoires
+      valeur: 61.5
+      texte: 8/13
+      etat: partiel
+      nature: part
+    - cle: conseils
+      valeur: 0.0
+      texte: 0/16
+      etat: manquant
+      nature: part
+    - cle: bulletins
+      valeur: 50.0
+      texte: 8/16
+      etat: partiel
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 15 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: 0.0
+      texte: non détaillés
+      etat: manquant
+      nature: fait
+    - cle: fusion
+      valeur: null
+      texte: édition spéciale
+      etat: sans_objet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: 100.0
+      texte: nommés
+      etat: complet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 0.0
+      texte: inconnue
+      etat: manquant
+      nature: fait
+  - saison: s14
+    numero: 14
+    titre: Johor
+    pays: Malaisie
+    lieu: Archipel de Sibu
+    annee: 2015
+    speciale: false
+    effectif: 20
+    score: 72.9
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 95.0
+      texte: 19/20
+      etat: eleve
+      nature: part
+    - cle: victoires
+      valeur: 80.0
+      texte: 16/20
+      etat: eleve
+      nature: part
+    - cle: conseils
+      valeur: 100.0
+      texte: 22/22
+      etat: complet
+      nature: part
+    - cle: bulletins
+      valeur: 36.4
+      texte: 8/22
+      etat: mince
+      nature: part
+    - cle: epreuves
+      valeur: 0.0
+      texte: aucune
+      etat: manquant
+      nature: fait
+    - cle: colliers
+      valeur: 0.0
+      texte: non détaillés
+      etat: manquant
+      nature: fait
+    - cle: fusion
+      valeur: 0.0
+      texte: non repérée
+      etat: manquant
+      nature: fait
+    - cle: ambassadeurs
+      valeur: 100.0
+      texte: nommés
+      etat: complet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 0.0
+      texte: inconnue
+      etat: manquant
+      nature: fait
+  - saison: s15
+    numero: 15
+    titre: Thaïlande
+    pays: Thaïlande
+    lieu: Archipel de Ko Yao
+    annee: 2016
+    speciale: false
+    effectif: 21
+    score: 85.9
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: victoires
+      valeur: 85.7
+      texte: 18/21
+      etat: eleve
+      nature: part
+    - cle: conseils
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: bulletins
+      valeur: 60.0
+      texte: 12/20
+      etat: partiel
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 28 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: 0.0
+      texte: non détaillés
+      etat: manquant
+      nature: fait
+    - cle: fusion
+      valeur: 100.0
+      texte: repérée
+      etat: complet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: 100.0
+      texte: nommés
+      etat: complet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 0.0
+      texte: inconnue
+      etat: manquant
+      nature: fait
+  - saison: s16
+    numero: 16
+    titre: L'Île au trésor
+    pays: Cambodge
+    lieu: Île de Koh Rong
+    annee: 2016
+    speciale: false
+    effectif: 20
+    score: 80.0
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 95.0
+      texte: 19/20
+      etat: eleve
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 95.0
+      texte: 19/20
+      etat: eleve
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 95.0
+      texte: 19/20
+      etat: eleve
+      nature: part
+    - cle: victoires
+      valeur: 95.0
+      texte: 19/20
+      etat: eleve
+      nature: part
+    - cle: conseils
+      valeur: 95.0
+      texte: 19/20
+      etat: eleve
+      nature: part
+    - cle: bulletins
+      valeur: 65.0
+      texte: 13/20
+      etat: partiel
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 26 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: 0.0
+      texte: non détaillés
+      etat: manquant
+      nature: fait
+    - cle: fusion
+      valeur: 100.0
+      texte: repérée
+      etat: complet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: 0.0
+      texte: non nommés
+      etat: manquant
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 0.0
+      texte: inconnue
+      etat: manquant
+      nature: fait
+  - saison: s17
+    numero: 17
+    titre: Cambodge
+    pays: Cambodge
+    lieu: Île de Koh Rong
+    annee: 2017
+    speciale: false
+    effectif: 21
+    score: 74.2
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: victoires
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: conseils
+      valeur: 100.0
+      texte: 22/22
+      etat: complet
+      nature: part
+    - cle: bulletins
+      valeur: 36.4
+      texte: 8/22
+      etat: mince
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 42 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: 0.0
+      texte: non détaillés
+      etat: manquant
+      nature: fait
+    - cle: fusion
+      valeur: 0.0
+      texte: non repérée
+      etat: manquant
+      nature: fait
+    - cle: ambassadeurs
+      valeur: 0.0
+      texte: non nommés
+      etat: manquant
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 0.0
+      texte: inconnue
+      etat: manquant
+      nature: fait
+  - saison: s18
+    numero: 18
+    titre: Fidji
+    pays: Fidji
+    lieu: Archipel de Yasawa
+    annee: 2017
+    speciale: false
+    effectif: 21
+    score: 90.2
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: victoires
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: conseils
+      valeur: 95.5
+      texte: 21/22
+      etat: eleve
+      nature: part
+    - cle: bulletins
+      valeur: 27.3
+      texte: 6/22
+      etat: mince
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 26 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: 0.0
+      texte: non détaillés
+      etat: manquant
+      nature: fait
+    - cle: fusion
+      valeur: 100.0
+      texte: repérée
+      etat: complet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: 100.0
+      texte: nommés
+      etat: complet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+  - saison: sp5
+    numero: null
+    titre: Le Combat des héros
+    pays: Fidji
+    lieu: Archipel de Yasawa
+    annee: 2018
+    speciale: true
+    effectif: 18
+    score: 90.3
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: victoires
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: conseils
+      valeur: 0.0
+      texte: 0/20
+      etat: manquant
+      nature: part
+    - cle: bulletins
+      valeur: 35.0
+      texte: 7/20
+      etat: mince
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 20 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: 100.0
+      texte: 5 suivis
+      etat: complet
+      nature: fait
+    - cle: fusion
+      valeur: null
+      texte: édition spéciale
+      etat: sans_objet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: 100.0
+      texte: nommés
+      etat: complet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+  - saison: s20
+    numero: 20
+    titre: La Guerre des chefs
+    pays: Fidji
+    lieu: Archipel de Kadavu
+    annee: 2019
+    speciale: false
+    effectif: 21
+    score: 90.1
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: victoires
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: conseils
+      valeur: 100.0
+      texte: 22/22
+      etat: complet
+      nature: part
+    - cle: bulletins
+      valeur: 31.8
+      texte: 7/22
+      etat: mince
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 38 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: 100.0
+      texte: 5 suivis
+      etat: complet
+      nature: fait
+    - cle: fusion
+      valeur: 100.0
+      texte: repérée
+      etat: complet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: null
+      texte: pas d'ambassade
+      etat: sans_objet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 0.0
+      texte: inconnue
+      etat: manquant
+      nature: fait
+  - saison: s21
+    numero: 21
+    titre: Les 4 Terres
+    pays: Fidji
+    lieu: Archipel de Kadavu
+    annee: 2020
+    speciale: false
+    effectif: 24
+    score: 94.8
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: victoires
+      valeur: 75.0
+      texte: 18/24
+      etat: partiel
+      nature: part
+    - cle: conseils
+      valeur: 100.0
+      texte: 25/25
+      etat: complet
+      nature: part
+    - cle: bulletins
+      valeur: 36.0
+      texte: 9/25
+      etat: mince
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 37 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: 100.0
+      texte: 6 suivis
+      etat: complet
+      nature: fait
+    - cle: fusion
+      valeur: 100.0
+      texte: repérée
+      etat: complet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: null
+      texte: pas d'ambassade
+      etat: sans_objet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+  - saison: sp6
+    numero: null
+    titre: L'Île des héros
+    pays: Fidji
+    lieu: Archipel de Kadavu
+    annee: 2020
+    speciale: true
+    effectif: 20
+    score: 94.6
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 95.0
+      texte: 19/20
+      etat: eleve
+      nature: part
+    - cle: parcours
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 95.0
+      texte: 19/20
+      etat: eleve
+      nature: part
+    - cle: classement
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: victoires
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: conseils
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: bulletins
+      valeur: 19.0
+      texte: 4/21
+      etat: mince
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 24 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: 100.0
+      texte: 7 suivis
+      etat: complet
+      nature: fait
+    - cle: fusion
+      valeur: null
+      texte: édition spéciale
+      etat: sans_objet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: 100.0
+      texte: nommés
+      etat: complet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+  - saison: s22
+    numero: 22
+    titre: Les Armes secrètes
+    pays: Polynésie française
+    lieu: Île de Taha'a
+    annee: 2021
+    speciale: false
+    effectif: 21
+    score: 83.9
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 95.2
+      texte: 20/21
+      etat: eleve
+      nature: part
+    - cle: victoires
+      valeur: 90.5
+      texte: 19/21
+      etat: eleve
+      nature: part
+    - cle: conseils
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: bulletins
+      valeur: 23.8
+      texte: 5/21
+      etat: mince
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 23 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: 0.0
+      texte: non détaillés
+      etat: manquant
+      nature: fait
+    - cle: fusion
+      valeur: 100.0
+      texte: repérée
+      etat: complet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: 0.0
+      texte: non nommés
+      etat: manquant
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+  - saison: sp7
+    numero: null
+    titre: La Légende
+    pays: Polynésie française
+    lieu: Île de Taha'a
+    annee: 2021
+    speciale: true
+    effectif: 21
+    score: 87.7
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 95.2
+      texte: 20/21
+      etat: eleve
+      nature: part
+    - cle: parcours
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: victoires
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
+      nature: part
+    - cle: conseils
+      valeur: 92.0
+      texte: 23/25
+      etat: eleve
+      nature: part
+    - cle: bulletins
+      valeur: 4.0
+      texte: 1/25
+      etat: mince
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 23 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: 0.0
+      texte: non détaillés
+      etat: manquant
+      nature: fait
+    - cle: fusion
+      valeur: null
+      texte: édition spéciale
+      etat: sans_objet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: 100.0
+      texte: nommés
+      etat: complet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+  - saison: s23
+    numero: 23
+    titre: Le Totem maudit
+    pays: Philippines
+    lieu: Archipel de Palawan
+    annee: 2022
+    speciale: false
+    effectif: 24
+    score: 83.3
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: victoires
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: conseils
+      valeur: 100.0
+      texte: 23/23
+      etat: complet
+      nature: part
+    - cle: bulletins
+      valeur: 0.0
+      texte: 0/23
+      etat: manquant
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 32 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: 0.0
+      texte: non détaillés
+      etat: manquant
+      nature: fait
+    - cle: fusion
+      valeur: 100.0
+      texte: repérée
+      etat: complet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: 100.0
+      texte: nommés
+      etat: complet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 0.0
+      texte: inconnue
+      etat: manquant
+      nature: fait
+  - saison: s24
+    numero: 24
+    titre: Le Feu sacré
+    pays: Philippines
+    lieu: Péninsule de Caramoan
+    annee: 2023
+    speciale: false
+    effectif: 20
+    score: 94.3
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 95.0
+      texte: 19/20
+      etat: eleve
+      nature: part
+    - cle: classement
+      valeur: 95.0
+      texte: 19/20
+      etat: eleve
+      nature: part
+    - cle: victoires
+      valeur: 95.0
+      texte: 19/20
+      etat: eleve
+      nature: part
+    - cle: conseils
+      valeur: 100.0
+      texte: 23/23
+      etat: complet
+      nature: part
+    - cle: bulletins
+      valeur: 17.4
+      texte: 4/23
+      etat: mince
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 30 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: 100.0
+      texte: 4 suivis
+      etat: complet
+      nature: fait
+    - cle: fusion
+      valeur: 100.0
+      texte: repérée
+      etat: complet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: null
+      texte: pas d'ambassade
+      etat: sans_objet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+  - saison: s25
+    numero: 25
+    titre: Les Chasseurs d'immunité
+    pays: Philippines
+    lieu: Péninsule de Caramoan
+    annee: 2024
+    speciale: false
+    effectif: 22
+    score: 86.6
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 22/22
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 22/22
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 22/22
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 22/22
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 22/22
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 100.0
+      texte: 22/22
+      etat: complet
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 22/22
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 22/22
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 68.2
+      texte: 15/22
+      etat: partiel
+      nature: part
+    - cle: victoires
+      valeur: 68.2
+      texte: 15/22
+      etat: partiel
+      nature: part
+    - cle: conseils
+      valeur: 91.3
+      texte: 21/23
+      etat: eleve
+      nature: part
+    - cle: bulletins
+      valeur: 30.4
+      texte: 7/23
+      etat: mince
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 28 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: 100.0
+      texte: 16 suivis
+      etat: complet
+      nature: fait
+    - cle: fusion
+      valeur: 100.0
+      texte: repérée
+      etat: complet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: 0.0
+      texte: non nommés
+      etat: manquant
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+  - saison: s26
+    numero: 26
+    titre: La Tribu maudite
+    pays: Philippines
+    lieu: Péninsule de Caramoan
+    annee: 2024
+    speciale: false
+    effectif: 24
+    score: 94.0
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 91.7
+      texte: 22/24
+      etat: eleve
+      nature: part
+    - cle: victoires
+      valeur: 91.7
+      texte: 22/24
+      etat: eleve
+      nature: part
+    - cle: conseils
+      valeur: 91.7
+      texte: 22/24
+      etat: eleve
+      nature: part
+    - cle: bulletins
+      valeur: 16.7
+      texte: 4/24
+      etat: mince
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 27 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: 100.0
+      texte: 9 suivis
+      etat: complet
+      nature: fait
+    - cle: fusion
+      valeur: 100.0
+      texte: repérée
+      etat: complet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: 100.0
+      texte: nommés
+      etat: complet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+  - saison: s27
+    numero: 27
+    titre: La Revanche des 4 Terres
+    pays: Philippines
+    lieu: Péninsule de Caramoan
+    annee: 2025
+    speciale: false
+    effectif: 24
+    score: 94.6
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 91.7
+      texte: 22/24
+      etat: eleve
+      nature: part
+    - cle: victoires
+      valeur: 100.0
+      texte: 24/24
+      etat: complet
+      nature: part
+    - cle: conseils
+      valeur: 92.0
+      texte: 23/25
+      etat: eleve
+      nature: part
+    - cle: bulletins
+      valeur: 24.0
+      texte: 6/25
+      etat: mince
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 32 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: 100.0
+      texte: 12 suivis
+      etat: complet
+      nature: fait
+    - cle: fusion
+      valeur: 100.0
+      texte: repérée
+      etat: complet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: null
+      texte: pas d'ambassade
+      etat: sans_objet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+  - saison: s28
+    numero: 28
+    titre: Les Reliques du destin
+    pays: Philippines
+    lieu: Péninsule de Caramoan
+    annee: 2026
+    speciale: false
+    effectif: 20
+    score: 91.2
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: victoires
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
+      nature: part
+    - cle: conseils
+      valeur: 92.3
+      texte: 24/26
+      etat: eleve
+      nature: part
+    - cle: bulletins
+      valeur: 50.0
+      texte: 13/26
+      etat: partiel
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 34 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: 100.0
+      texte: 10 suivis
+      etat: complet
+      nature: fait
+    - cle: fusion
+      valeur: 100.0
+      texte: repérée
+      etat: complet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: 0.0
+      texte: non nommés
+      etat: manquant
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+  - saison: sp8
+    numero: null
+    titre: All Stars
+    pays: Panama
+    lieu: Archipel des Perles (Las Perlas)
+    annee: 2026
+    speciale: true
+    effectif: 18
+    score: 50.5
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 0.0
+      texte: 0/18
+      etat: manquant
+      nature: part
+    - cle: parcours
+      valeur: 0.0
+      texte: 0/18
+      etat: manquant
+      nature: part
+    - cle: jour_sortie
+      valeur: 11.1
+      texte: 2/18
+      etat: mince
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 18/18
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 11.1
+      texte: 2/18
+      etat: mince
+      nature: part
+    - cle: victoires
+      valeur: 11.1
+      texte: 2/18
+      etat: mince
+      nature: part
+    - cle: conseils
+      valeur: 50.0
+      texte: 2/4
+      etat: partiel
+      nature: part
+    - cle: bulletins
+      valeur: 25.0
+      texte: 1/4
+      etat: mince
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 2 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: 0.0
+      texte: non détaillés
+      etat: manquant
+      nature: fait
+    - cle: fusion
+      valeur: null
+      texte: édition spéciale
+      etat: sans_objet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: null
+      texte: pas d'ambassade
+      etat: sans_objet
+      nature: fait
+    - cle: audience_saison
+      valeur: 0.0
+      texte: inconnue
+      etat: manquant
+      nature: fait
+    - cle: audience_episode
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+  par_colonne:
+  - cle: casting
+    libelle: Casting relevé
+    court: Casting
+    nature: part
+    moyenne: 100.0
+    completes: 34
+    concernees: 34
+  - cle: age
+    libelle: Âge
+    court: Âge
+    nature: part
+    moyenne: 100.0
+    completes: 34
+    concernees: 34
+  - cle: profession
+    libelle: Métier
+    court: Métier
+    nature: part
+    moyenne: 100.0
+    completes: 34
+    concernees: 34
+  - cle: localisation
+    libelle: Département d'origine
+    court: Origine
+    nature: part
+    moyenne: 90.9
+    completes: 28
+    concernees: 34
+  - cle: couleur
+    libelle: Bandeau de départ
+    court: Bandeau
+    nature: part
+    moyenne: 96.2
+    completes: 29
+    concernees: 34
+  - cle: parcours
+    libelle: Tribus datées en jours
+    court: Tribus
+    nature: part
+    moyenne: 82.2
+    completes: 21
+    concernees: 34
+  - cle: jour_sortie
+    libelle: Jour de sortie
+    court: Sortie
+    nature: part
+    moyenne: 97.4
+    completes: 33
+    concernees: 34
+  - cle: votes_recus
+    libelle: Voix reçues
+    court: Voix
+    nature: part
+    moyenne: 99.7
+    completes: 32
+    concernees: 34
+  - cle: classement
+    libelle: Rang final
+    court: Rang
+    nature: part
+    moyenne: 79.0
+    completes: 13
+    concernees: 34
+  - cle: victoires
+    libelle: Palmarès d'épreuves
+    court: Palmarès
+    nature: part
+    moyenne: 76.3
+    completes: 12
+    concernees: 34
+  - cle: conseils
+    libelle: Conseils rattachés à un éliminé
+    court: Conseils
+    nature: part
+    moyenne: 86.1
+    completes: 20
+    concernees: 34
+  - cle: bulletins
+    libelle: Conseils au dépouillement complet
+    court: Bulletins
+    nature: part
+    moyenne: 43.6
+    completes: 0
+    concernees: 34
+  - cle: epreuves
+    libelle: Bilan des épreuves par épisode
+    court: Épreuves
+    nature: fait
+    moyenne: 85.3
+    completes: 29
+    concernees: 34
+  - cle: colliers
+    libelle: Destin des colliers
+    court: Colliers
+    nature: fait
+    moyenne: 42.9
+    completes: 9
+    concernees: 21
+  - cle: fusion
+    libelle: Réunification repérée
+    court: Fusion
+    nature: fait
+    moyenne: 80.8
+    completes: 21
+    concernees: 26
+  - cle: ambassadeurs
+    libelle: Ambassadeurs nommés
+    court: Ambassade
+    nature: fait
+    moyenne: 60.0
+    completes: 12
+    concernees: 20
+  - cle: audience_saison
+    libelle: Audience de la saison
+    court: Audience
+    nature: fait
+    moyenne: 97.1
+    completes: 33
+    concernees: 34
+  - cle: audience_episode
+    libelle: Audience par épisode
+    court: Audience/ép.
+    nature: fait
+    moyenne: 44.1
+    completes: 15
+    concernees: 34
+  saisons: 34
+  cases: 577
+  moyenne: 82.6
+  meilleure: s21
+  pire: sp8

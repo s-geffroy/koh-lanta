@@ -237,6 +237,10 @@ existe, et nulle part ailleurs. Le rang final se contrôle contre le jour de
 sortie : sur 27 saisons sur 34, les deux classent les aventuriers dans
 exactement le même ordre.</p>
 
+<p class="note">La même mesure, <strong>édition par édition</strong> et type de
+donnée par type de donnée, tient sur une seule grille :
+<a href="{{ '/completude/' | relative_url }}">La carte des trous</a>.</p>
+
 Ce qui reste, et pourquoi :
 
 - **Le dépouillement des conseils est partiel.** Sur

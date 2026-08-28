@@ -683,6 +683,192 @@ CHAMPS_SUIVIS = [
 PAGE_INDIVIDUELLE = "fandom (page individuelle)"
 
 
+# Les colonnes de la grille de completude : une par type de donnee, dans
+# l'ordre ou on les rencontre en construisant une saison -- d'abord qui joue,
+# puis ce qu'on sait de chacun, puis ce qui se passe, puis ce que la chaine en
+# fait. `nature` dit comment lire la case : une part de 0 a 100, ou un fait
+# present ou absent.
+COLONNES_COMPLETUDE = [
+    ("casting", "Casting relevé", "Casting", "part"),
+    ("age", "Âge", "Âge", "part"),
+    ("profession", "Métier", "Métier", "part"),
+    ("localisation", "Département d'origine", "Origine", "part"),
+    ("couleur", "Bandeau de départ", "Bandeau", "part"),
+    ("parcours", "Tribus datées en jours", "Tribus", "part"),
+    ("jour_sortie", "Jour de sortie", "Sortie", "part"),
+    ("votes_recus", "Voix reçues", "Voix", "part"),
+    ("classement", "Rang final", "Rang", "part"),
+    ("victoires", "Palmarès d'épreuves", "Palmarès", "part"),
+    ("conseils", "Conseils rattachés à un éliminé", "Conseils", "part"),
+    ("bulletins", "Conseils au dépouillement complet", "Bulletins", "part"),
+    ("epreuves", "Bilan des épreuves par épisode", "Épreuves", "fait"),
+    ("colliers", "Destin des colliers", "Colliers", "fait"),
+    ("fusion", "Réunification repérée", "Fusion", "fait"),
+    ("ambassadeurs", "Ambassadeurs nommés", "Ambassade", "fait"),
+    ("audience_saison", "Audience de la saison", "Audience", "fait"),
+    ("audience_episode", "Audience par épisode", "Audience/ép.", "fait"),
+]
+
+# Champs de participation dont la part se calcule directement.
+PART_DIRECTE = {"age": "age", "profession": "profession",
+                "localisation": "localisation", "couleur": "couleur",
+                "parcours": "parcours", "jour_sortie": "jour_sortie",
+                "votes_recus": "votes_recus", "classement": "classement",
+                "victoires": "victoires_individuelles"}
+
+
+def bloc_completude_saisons(saisons, parts, conseils, epreuves, colliers, modeles):
+    """Une ligne par edition, une colonne par type de donnee, une part au croisement.
+
+    C'est la carte des trous. Elle sert a deux choses : voir d'un coup d'oeil
+    ou le jeu de donnees est mince, et empecher une page d'affirmer sur une
+    saison ce que la saison ne dit pas.
+
+    Une case vide n'a pas toujours le meme sens. « Sans objet » -- la mecanique
+    n'existait pas cette annee-la -- n'est pas « manquant », et les deux ne se
+    peignent pas pareil.
+    """
+    par_saison = defaultdict(list)
+    for p in parts:
+        par_saison[p["saison"]].append(p)
+    conseils_par = defaultdict(list)
+    for c in conseils:
+        if c.get("type") != "jury":
+            conseils_par[c["saison"]].append(c)
+    epreuves_par = Counter(e["saison"] for e in epreuves)
+    colliers_par = Counter(c["saison"] for c in colliers)
+
+    fusion = {l["saison"] for l in ((modeles.get("fusion") or {}).get("lignes") or [])}
+    audiences = _fichier_data("audiences.yml")
+    aud_saison = {x["saison"] for x in (audiences.get("saisons") or [])}
+    aud_episode = set(audiences.get("saisons_par_episode") or [])
+    ambassades = _fichier_data("ambassadeurs.yml")
+    amb_nommees = {l["saison"] for l in (ambassades.get("lignes") or [])
+                   if l.get("ambassadeurs")}
+    amb_toutes = {l["saison"] for l in (ambassades.get("lignes") or [])}
+
+    def part(n, total):
+        return round(100.0 * n / total, 1) if total else None
+
+    lignes = []
+    for s in sorted(saisons, key=lambda x: (x.get("annee") or 0, x["id"])):
+        if s.get("annulee"):
+            continue
+        sid = s["id"]
+        membres = par_saison.get(sid) or []
+        attendu = s.get("nb_candidats") or len(membres)
+        lot = conseils_par.get(sid) or []
+        cellules = []
+        for cle, _libelle, _court, nature in COLONNES_COMPLETUDE:
+            etat, valeur, texte = "manquant", None, "—"
+            if cle == "casting":
+                valeur = part(len(membres), attendu)
+                texte = f"{len(membres)}/{attendu}"
+            elif cle in PART_DIRECTE:
+                champ = PART_DIRECTE[cle]
+                n = sum(1 for p in membres if p.get(champ) not in (None, "", []))
+                valeur = part(n, len(membres))
+                texte = f"{n}/{len(membres)}" if membres else "—"
+            elif cle == "conseils":
+                n = sum(1 for c in lot if c.get("elimine_rattache"))
+                valeur = part(n, len(lot))
+                texte = f"{n}/{len(lot)}" if lot else "—"
+            elif cle == "bulletins":
+                n = sum(1 for c in lot if c.get("complet"))
+                valeur = part(n, len(lot))
+                texte = f"{n}/{len(lot)}" if lot else "—"
+            elif cle == "epreuves":
+                valeur = 100.0 if epreuves_par.get(sid) else 0.0
+                texte = f"{epreuves_par.get(sid, 0)} relevées" if epreuves_par.get(sid) else "aucune"
+            elif cle == "colliers":
+                if "collier_immunite" not in (s.get("mecaniques") or []):
+                    etat, valeur, texte = "sans_objet", None, "pas de collier"
+                else:
+                    valeur = 100.0 if colliers_par.get(sid) else 0.0
+                    texte = f"{colliers_par.get(sid, 0)} suivis" if colliers_par.get(sid) else "non détaillés"
+            elif cle == "fusion":
+                if s.get("speciale"):
+                    etat, valeur, texte = "sans_objet", None, "édition spéciale"
+                else:
+                    valeur = 100.0 if sid in fusion else 0.0
+                    texte = "repérée" if sid in fusion else "non repérée"
+            elif cle == "ambassadeurs":
+                if sid not in amb_toutes:
+                    etat, valeur, texte = "sans_objet", None, "pas d'ambassade"
+                else:
+                    valeur = 100.0 if sid in amb_nommees else 0.0
+                    texte = "nommés" if sid in amb_nommees else "non nommés"
+            elif cle == "audience_saison":
+                valeur = 100.0 if sid in aud_saison else 0.0
+                texte = "connue" if sid in aud_saison else "inconnue"
+            elif cle == "audience_episode":
+                valeur = 100.0 if sid in aud_episode else 0.0
+                texte = "connue" if sid in aud_episode else "inconnue"
+
+            if etat != "sans_objet":
+                if valeur is None:
+                    etat = "manquant"
+                elif valeur >= 99.9:
+                    etat = "complet"
+                elif valeur >= 80:
+                    etat = "eleve"
+                elif valeur >= 50:
+                    etat = "partiel"
+                elif valeur > 0:
+                    etat = "mince"
+                else:
+                    etat = "manquant"
+            cellules.append({"cle": cle, "valeur": valeur, "texte": texte,
+                             "etat": etat, "nature": nature})
+
+        connues = [c for c in cellules if c["etat"] != "sans_objet"]
+        lignes.append({
+            "saison": sid,
+            "numero": s.get("numero"),
+            "titre": s.get("titre"),
+            "pays": s.get("pays"),
+            "lieu": s.get("lieu"),
+            "annee": s.get("annee"),
+            "speciale": bool(s.get("speciale")),
+            "effectif": len(membres),
+            "score": round(sum(c["valeur"] or 0 for c in connues) / len(connues), 1)
+                     if connues else None,
+            "cellules": cellules,
+        })
+
+    total = [c for l in lignes for c in l["cellules"] if c["etat"] != "sans_objet"]
+    par_colonne = []
+    for cle, libelle, court, nature in COLONNES_COMPLETUDE:
+        lot = [l for ligne in lignes for l in ligne["cellules"]
+               if l["cle"] == cle and l["etat"] != "sans_objet"]
+        par_colonne.append({
+            "cle": cle, "libelle": libelle, "court": court, "nature": nature,
+            "moyenne": round(sum(c["valeur"] or 0 for c in lot) / len(lot), 1) if lot else None,
+            "completes": sum(1 for c in lot if c["etat"] == "complet"),
+            "concernees": len(lot),
+        })
+    return {
+        "colonnes": [{"cle": c, "libelle": l, "court": k, "nature": n}
+                     for c, l, k, n in COLONNES_COMPLETUDE],
+        "lignes": lignes,
+        "par_colonne": par_colonne,
+        "saisons": len(lignes),
+        "cases": len(total),
+        "moyenne": round(sum(c["valeur"] or 0 for c in total) / len(total), 1) if total else None,
+        "meilleure": max(lignes, key=lambda l: l["score"] or 0)["saison"] if lignes else None,
+        "pire": min(lignes, key=lambda l: l["score"] or 101)["saison"] if lignes else None,
+    }
+
+
+def _fichier_data(nom):
+    """Lit un fichier de _data/ produit par un autre script, ou rend {}."""
+    chemin = os.path.join(RACINE, "_data", nom)
+    if not os.path.exists(chemin):
+        return {}
+    with open(chemin, encoding="utf-8") as f:
+        return yaml.safe_load(f) or {}
+
+
 def bloc_completude(parts, personnes):
     """Ce qui est renseigne, ce qui manque, et d'ou vient ce qui a ete comble.
 
@@ -860,6 +1046,9 @@ def main():
     stats["modeles"] = modeles.tout(
         par_saison, parts, conseils, epreuves,
         (stats["indicateurs"] or {}).get("saisons") or [])
+
+    stats["completude_saisons"] = bloc_completude_saisons(
+        saisons, parts, conseils, epreuves, colliers, stats["modeles"])
 
     # les records renvoient des participations entieres : on n'en garde que l'utile
     for cle in ("plus_jeune_vainqueur", "plus_age_vainqueur"):
