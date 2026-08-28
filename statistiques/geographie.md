@@ -37,11 +37,12 @@ ceux qu’un tirage dans la population produirait. La silhouette est celle de
 
 <div class="constat">
   <p>À l’échelle des régions, la dispersion observée vaut
-  <b>{{ tr.observe }}</b> contre <b>{{ tr.attendu }}</b> attendus —
+  <b>{{ g.regions_dispersion_observee }}</b> contre
+  <b>{{ g.regions_dispersion_attendue }}</b> attendus —
   {{ tr.ecart_types }} écarts-types, p ajustée {{ tr.p_ajustee }}.</p>
   <p>Le recrutement <b>n’épouse pas la démographie française</b>. Au niveau des
-  départements, même verdict : {{ td.observe }} contre {{ td.attendu }},
-  p ajustée {{ td.p_ajustee }}.</p>
+  départements, même verdict : {{ g.dispersion_observee }} contre
+  {{ g.dispersion_attendue }}, p ajustée {{ td.p_ajustee }}.</p>
 </div>
 
 C’est l’inverse de ce que la page des
