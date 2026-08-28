@@ -6,6 +6,11 @@
   L'entree courante est reconnue en comparant `page.url` a l'`url` declaree
   dans _data/navigation.yml. C'est pour cela que les deux doivent s'ecrire
   a l'identique, barre oblique finale comprise.
+
+  Une entree peut porter `badge:`, un chemin pointe dans site.data.stats
+  (« completude_saisons.moyenne »). Le rail affiche alors la valeur a cote du
+  titre. Elle est donc toujours a jour : c'est le fichier de statistiques qui
+  la donne, jamais un chiffre recopie a la main dans la navigation.
 {%- endcomment -%}
 <details class="rail" id="rail">
   <summary class="rail-poignee">
@@ -20,10 +25,17 @@
       {%- for e in groupe.entrees -%}
       {%- assign ici = false -%}
       {%- if page.url == e.url -%}{%- assign ici = true -%}{%- endif -%}
+      {%- assign valeur = nil -%}
+      {%- if e.badge -%}
+        {%- assign noeud = site.data.stats -%}
+        {%- assign chemin = e.badge | split: "." -%}
+        {%- for cle in chemin -%}{%- assign noeud = noeud[cle] -%}{%- endfor -%}
+        {%- assign valeur = noeud -%}
+      {%- endif -%}
       <li>
         <a href="{{ e.url | relative_url }}"
            class="rail-lien{% if ici %} ici{% endif %}"
-           {% if ici %}aria-current="page"{% endif %}>{{ e.titre }}</a>
+           {% if ici %}aria-current="page"{% endif %}>{{ e.titre }}{% if valeur %}<span class="rail-badge">{{ valeur }}&nbsp;%</span>{% endif %}</a>
       </li>
       {%- endfor -%}
     </ul>

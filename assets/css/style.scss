@@ -1031,3 +1031,21 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); 
     var(--grille) 3px, var(--grille) 4px);
   border: 1px solid var(--grille);
 }
+
+/* Le chiffre pose a cote d'une entree du rail : il vient de _data/stats.yml,
+   jamais d'un nombre recopie dans la navigation. */
+.rail-badge {
+  font-family: var(--mono);
+  font-size: 0.72em;
+  color: var(--encre-muette);
+  margin-left: 0.45rem;
+  white-space: nowrap;
+}
+.rail-lien.ici .rail-badge { color: inherit; opacity: 0.75; }
+
+/* La derniere colonne de la grille : la moyenne de la ligne. Meme trame que
+   les cases, un peu plus large -- elle affiche « 92.1 % ». */
+.grille-completude td.case.ensemble {
+  min-width: 3.9rem;
+  border-left: 1px solid var(--grille);
+}

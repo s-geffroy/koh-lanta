@@ -101,6 +101,9 @@
     # coup d'oeil ce que chaque edition contient avant d'aller lire le detail.
     - titre: La complétude
       url: /completude/
+      # `badge` pointe dans _data/stats.yml : le rail affiche la valeur a cote
+      # du titre, et elle se met a jour toute seule.
+      badge: completude_saisons.moyenne
       resume: "Le tableau : 34 éditions en ligne, 18 types de données en colonne."
     - titre: Les saisons
       url: /saisons/

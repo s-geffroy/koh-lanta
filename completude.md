@@ -10,13 +10,16 @@ chapeau: >-
 {% assign c = site.data.stats.completude_saisons %}
 
 Chaque page de ce site dit ce qui lui manque. Aucune ne le montrait d’un coup
-d’œil. Voici la grille complète : **{{ c.saisons }} éditions** en ligne,
-**{{ c.colonnes | size }} types de données** en colonne,
-{{ c.cases }} croisements renseignés.
+d’œil. Voici la grille complète.
+
+<ul class="chiffres">
+  <li class="chiffre"><b>{{ c.moyenne }} %</b><span>de complétude, toutes cases confondues</span></li>
+  <li class="chiffre"><b>{{ c.saisons }}</b><span>éditions en ligne</span></li>
+  <li class="chiffre"><b>{{ c.colonnes | size }}</b><span>types de données en colonne</span></li>
+  <li class="chiffre"><b>{{ c.cases }}</b><span>croisements renseignés</span></li>
+</ul>
 
 <div class="constat">
-  <p>Toutes cases confondues, le jeu de données est rempli à
-  <b>{{ c.moyenne }} %</b>.</p>
   {%- assign top = c.lignes | where: "saison", c.meilleure | first -%}
   {%- assign bas = c.lignes | where: "saison", c.pire | first -%}
   <p>L’édition la mieux documentée est <i>{{ top.titre }}</i> ({{ top.annee }}),
@@ -39,7 +42,7 @@ d’œil. Voici la grille complète : **{{ c.saisons }} éditions** en ligne,
 <thead><tr>
   <th class="saison">Édition</th>
   {% for col in c.colonnes %}<th class="case-tete" title="{{ col.libelle }}">{{ col.court }}</th>{% endfor %}
-  <th class="nombre">Ensemble</th>
+  <th class="case-tete" title="Moyenne de la ligne, cases « sans objet » exclues">Ensemble</th>
 </tr></thead>
 <tbody>
 {% for l in c.lignes %}
@@ -51,7 +54,7 @@ d’œil. Voici la grille complète : **{{ c.saisons }} éditions** en ligne,
   {% for x in l.cellules %}
   <td class="case" data-etat="{{ x.etat }}" title="{{ l.titre }} — {{ x.texte }}"><span>{% if x.etat == "sans_objet" %}·{% elsif x.nature == "fait" %}{% if x.etat == "complet" %}✓{% else %}—{% endif %}{% else %}{{ x.valeur | round }}{% endif %}</span></td>
   {% endfor %}
-  <td class="nombre">{{ l.score }}</td>
+  <td class="case ensemble" data-etat="{% if l.score >= 99.9 %}complet{% elsif l.score >= 80 %}eleve{% elsif l.score >= 50 %}partiel{% else %}mince{% endif %}" title="{{ l.titre }} — {{ l.score }} % des cases renseignées"><span>{{ l.score }} %</span></td>
 </tr>
 {% endfor %}
 </tbody>
@@ -69,6 +72,17 @@ vide. De même pour les éditions spéciales, dont la réunification n’est pas
 mesurée, et pour les saisons sans ambassade. Confondre les deux ferait passer
 une règle du jeu pour une lacune.</p>
 
+
+<p class="note"><strong>Deux pourcentages coexistent sur ce site, et ils ne
+mesurent pas la même chose.</strong> Celui-ci, <b>{{ c.moyenne }} %</b>, est la
+moyenne des cases de cette grille : il pèse chaque édition et chaque type de
+donnée d’un poids égal, y compris les types qui ne concernent qu’une saison sur
+deux. Celui des <a href="{{ '/sources/' | relative_url }}">sources</a>,
+{{ site.data.stats.completude.part_remplie }} %, compte les valeurs une par une
+sur les {{ site.data.stats.completude.participations }} participations : une
+édition de vingt-quatre aventuriers y pèse plus qu’une de seize. Le second est
+plus haut parce qu’il ne compte que ce qui se mesure par personne — ni les
+conseils, ni les épreuves, ni les audiences.</p>
 
 ## Ce que la grille montre en colonnes
 
