@@ -8,7 +8,7 @@ chapeau: >-
 
 {% assign s = site.data.stats %}
 
-C'est une question qui revient à chaque saison : vaut-il mieux commencer chez
+C’est une question qui revient à chaque saison : vaut-il mieux commencer chez
 les Jaunes ou chez les Rouges ? Sur {{ s.general.saisons_classiques }} saisons
 classiques, la réponse tient en une ligne.
 
@@ -18,8 +18,8 @@ classiques, la réponse tient en une ligne.
 
 **{{ s.couleurs[0].victoires }} victoires pour le jaune, {{ s.couleurs[1].victoires }}
 pour le rouge.** Égalité stricte. Les couleurs minoritaires — bleu, vert,
-violet, orange — n'apparaissent que sur les saisons à trois ou quatre tribus, et
-leurs effectifs sont trop faibles pour qu'on en tire quoi que ce soit.
+violet, orange — n’apparaissent que sur les saisons à trois ou quatre tribus, et
+leurs effectifs sont trop faibles pour qu’on en tire quoi que ce soit.
 
 ## La survie
 
@@ -28,8 +28,8 @@ leurs effectifs sont trop faibles pour qu'on en tire quoi que ce soit.
 <p class="legende-figure">Part de la durée totale de la saison passée dans le
 jeu, en moyenne, selon la couleur de la tribu de départ.</p>
 
-L'écart entre jaune et rouge se compte en points, sur des effectifs de plus de
-deux cents aventuriers chacun : il n'y a pas de signal.
+L’écart entre jaune et rouge se compte en points, sur des effectifs de plus de
+deux cents aventuriers chacun : il n’y a pas de signal.
 
 ## Le détail
 
@@ -56,5 +56,5 @@ deux cents aventuriers chacun : il n'y a pas de signal.
 </div>
 
 <p class="note">La couleur noire correspond à la tribu maudite de 2024 et à
-l'île des héros de 2020 : deux aventuriers seulement, aucune conclusion
+l’île des héros de 2020 : deux aventuriers seulement, aucune conclusion
 possible.</p>

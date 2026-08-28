@@ -20,14 +20,14 @@ des voix du jury et ont sacré deux personnes.
   <li class="chiffre"><b>{{ v.part_40_et_plus }} %</b><span>ont 40 ans ou plus</span></li>
 </ul>
 
-## L'âge
+## L’âge
 
 {% include graphiques/vainqueurs-age.svg %}
 
 La moyenne dit **{{ v.age_moyen }} ans**, la médiane **{{ v.age_median }}** : la
 distribution est donc à peu près symétrique, sans poignée de vétérans tirant le
 chiffre vers le haut. Mais elle est aussi **large**. Les extrêmes le montrent
-mieux qu'une moyenne :
+mieux qu’une moyenne :
 
 - le plus jeune vainqueur, **{{ s.records.plus_jeune_vainqueur.nom }}**, avait
   **{{ s.records.plus_jeune_vainqueur.age }} ans** ({{ s.records.plus_jeune_vainqueur.titre }},
@@ -36,8 +36,8 @@ mieux qu'une moyenne :
   **{{ s.records.plus_age_vainqueur.age }}** ({{ s.records.plus_age_vainqueur.titre }},
   {{ s.records.plus_age_vainqueur.annee }}).
 
-Trente et un ans d'écart entre les deux. **{{ v.part_40_et_plus }} %** des
-vainqueurs ont quarante ans ou plus : l'idée d'un jeu réservé aux jeunes corps
+Trente et un ans d’écart entre les deux. **{{ v.part_40_et_plus }} %** des
+vainqueurs ont quarante ans ou plus : l’idée d’un jeu réservé aux jeunes corps
 ne tient pas devant les chiffres.
 
 ## Le sexe
@@ -53,7 +53,7 @@ ne tient pas devant les chiffres.
 </table>
 </div>
 
-La parité est presque parfaite — et elle est plus remarquable qu'il n'y paraît :
+La parité est presque parfaite — et elle est plus remarquable qu’il n’y paraît :
 comme on le verra sur la page consacrée à la [longévité]({{ '/statistiques/longevite/' | relative_url }}),
 les femmes quittent le jeu **plus tôt** que les hommes en moyenne. Elles gagnent
 donc autant en tenant moins longtemps.
@@ -62,7 +62,7 @@ donc autant en tenant moins longtemps.
 
 {% include graphiques/vainqueurs-metier.svg %}
 
-Aucune famille de métiers n'écrase les autres. Les trois premières —
+Aucune famille de métiers n’écrase les autres. Les trois premières —
 encadrement, commerce, sport — pèsent {{ v.par_metier[0].part }} % chacune, et
 ce sont aussi les mieux représentées dans le casting : leur avantage tient
 largement à leur nombre au départ, pas à une supériorité.

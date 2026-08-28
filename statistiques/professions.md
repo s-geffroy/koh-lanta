@@ -17,7 +17,7 @@ loin ?**
 
 {% include graphiques/metiers-casting.svg %}
 
-L'encadrement domine largement le casting : cadres, dirigeants, gérants,
+L’encadrement domine largement le casting : cadres, dirigeants, gérants,
 ingénieurs et consultants forment à eux seuls le cinquième des départs. Viennent
 ensuite le commerce, puis le sport et le coaching.
 
@@ -30,8 +30,8 @@ la finale. Seules les familles comptant au moins quinze aventuriers figurent
 ici : en dessous, un seul finaliste suffirait à faire bouger le taux de dix
 points.</p>
 
-Le renversement est net. **L'encadrement, première famille du casting, est la
-dernière en taux d'accès à la finale** : {{ s.metiers[0].taux_finale }} % contre
+Le renversement est net. **L’encadrement, première famille du casting, est la
+dernière en taux d’accès à la finale** : {{ s.metiers[0].taux_finale }} % contre
 {{ s.metiers[1].taux_finale }} % pour le commerce et
 {{ s.metiers[2].taux_finale }} % pour le sport. Être nombreux au départ ne
 protège de rien.
@@ -63,6 +63,6 @@ protège de rien.
 
 <p class="note">Le regroupement des métiers en familles est fait par mots-clés,
 selon une table publique et relisible. Un intitulé comme « éducateur sportif »
-rejoint le sport et non l'enseignement, « maître-nageur » rejoint l'action et le
-secours et non le sport : l'ordre des règles tranche ces cas, et il est
+rejoint le sport et non l’enseignement, « maître-nageur » rejoint l’action et le
+secours et non le sport : l’ordre des règles tranche ces cas, et il est
 documenté. Voir les <a href="{{ '/sources/' | relative_url }}">sources</a>.</p>

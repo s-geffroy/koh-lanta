@@ -9,14 +9,14 @@ chapeau: >-
 {% assign s = site.data.stats %}
 
 Combien de temps tient-on ? La mesure retenue ici est la **part de la saison
-passée dans le jeu** : sortir au jour 20 d'une saison de 40 jours vaut 50 %.
+passée dans le jeu** : sortir au jour 20 d’une saison de 40 jours vaut 50 %.
 Elle permet de comparer des éditions de durées différentes.
 
-## L'âge
+## L’âge
 
 {% include graphiques/age-survie.svg %}
 
-La courbe n'est pas celle qu'on attendrait. Ce ne sont ni les plus jeunes ni les
+La courbe n’est pas celle qu’on attendrait. Ce ne sont ni les plus jeunes ni les
 plus âgés qui durent : **la tranche 30-34 ans tient le plus longtemps**
 ({{ s.age[2].survie_moyenne }} % de la saison), tandis que les 18-24 ans
 ({{ s.age[0].survie_moyenne }} %) et les 45 ans et plus
@@ -24,7 +24,7 @@ plus âgés qui durent : **la tranche 30-34 ans tient le plus longtemps**
 
 {% include graphiques/age-finale.svg %}
 
-L'accès à la finale confirme le creux du milieu de trentaine et l'avantage des
+L’accès à la finale confirme le creux du milieu de trentaine et l’avantage des
 30-34 ans. Une seule victoire est venue de la tranche des 45 ans et plus, sur
 {{ s.age[5].effectif }} aventuriers.
 
@@ -58,28 +58,28 @@ Le casting est **rigoureusement paritaire** :
 {{ s.genre.resume[1].effectif }} hommes, soit
 {{ s.genre.resume[0].part_du_casting }} % contre
 {{ s.genre.resume[1].part_du_casting }} %. La production compose ses saisons à
-l'équilibre, et le fait depuis le début.
+l’équilibre, et le fait depuis le début.
 
 {% include graphiques/genre-survie.svg %}
 
 <p class="legende-figure">Part moyenne de la saison passée dans le jeu, par
 décennie.</p>
 
-L'écart de longévité, lui, est constant : les hommes durent en moyenne
+L’écart de longévité, lui, est constant : les hommes durent en moyenne
 **{{ s.genre.resume[1].survie_moyenne }} %** de la saison contre
 **{{ s.genre.resume[0].survie_moyenne }} %** pour les femmes. Il se resserre
 dans les années 2020 sans disparaître.
 
 {% include graphiques/genre-finale.svg %}
 
-Et pourtant, au bout du compte, **les taux d'accès à la finale sont
+Et pourtant, au bout du compte, **les taux d’accès à la finale sont
 identiques** — {{ s.genre.resume[0].taux_finale }} % contre
 {{ s.genre.resume[1].taux_finale }} % — et les victoires se partagent
 {{ s.vainqueurs.par_genre[0].effectif }} à {{ s.vainqueurs.par_genre[1].effectif }}.
 
-C'est le résultat le plus intéressant de cette page : les femmes sortent plus
+C’est le résultat le plus intéressant de cette page : les femmes sortent plus
 tôt **en moyenne**, mais celles qui passent la réunification vont au bout aussi
-souvent que les hommes. L'écart se joue dans la première moitié du jeu, pas dans
+souvent que les hommes. L’écart se joue dans la première moitié du jeu, pas dans
 la seconde.
 
 <div class="tableau-large">
@@ -107,7 +107,7 @@ la seconde.
 
 ## Les revenants
 
-{{ s.records.nb_multi_participants }} aventuriers ont joué plus d'une fois.
+{{ s.records.nb_multi_participants }} aventuriers ont joué plus d’une fois.
 
 <div class="tableau-large">
 <table data-triable>

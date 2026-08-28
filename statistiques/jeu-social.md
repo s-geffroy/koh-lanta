@@ -8,16 +8,16 @@ chapeau: >-
 
 {% assign i = site.data.stats.indicateurs %}
 
-Les épreuves se voient. Le jeu social, non — et c'est pourtant lui qui décide.
+Les épreuves se voient. Le jeu social, non — et c’est pourtant lui qui décide.
 Les {{ site.data.stats.conseils.bulletins }} bulletins relevés permettent de le
 mesurer, avec des indicateurs empruntés à la statistique de *Survivor* et
 adaptés à ce que ces données permettent réellement.
 
 ## Le résultat le plus net du site
 
-Un aventurier sur lequel **personne n'a jamais écrit un nom** de toute la
-saison, on peut l'appeler un fantôme. Il y en a **{{ i.nb_fantomes }}**, sur
-{{ i.comparables }} participations mesurables. Voici ce qu'ils deviennent,
+Un aventurier sur lequel **personne n’a jamais écrit un nom** de toute la
+saison, on peut l’appeler un fantôme. Il y en a **{{ i.nb_fantomes }}**, sur
+{{ i.comparables }} participations mesurables. Voici ce qu’ils deviennent,
 comparés à tout le monde :
 
 {% include graphiques/fantomes-issue.svg %}
@@ -42,12 +42,12 @@ comparés à tout le monde :
 </div>
 
 **{{ i.fantomes_issue[0].part_fantomes }} % des fantômes gagnent la saison**,
-contre {{ i.fantomes_issue[0].part_ensemble }} % de l'ensemble — **cinq fois et
-demie plus**. Et seulement {{ i.fantomes_issue[1].part_fantomes }} % d'entre eux
+contre {{ i.fantomes_issue[0].part_ensemble }} % de l’ensemble — **cinq fois et
+demie plus**. Et seulement {{ i.fantomes_issue[1].part_fantomes }} % d’entre eux
 sont éliminés au conseil, contre {{ i.fantomes_issue[1].part_ensemble }} %.
 
 Ne jamais être écrit sur un bulletin est le meilleur prédicteur de victoire que
-ces données contiennent — devant l'âge, devant le métier, devant les épreuves.
+ces données contiennent — devant l’âge, devant le métier, devant les épreuves.
 
 <div class="tableau-large">
 <table data-triable>
@@ -70,20 +70,20 @@ ces données contiennent — devant l'âge, devant le métier, devant les épreu
 {% include graphiques/menace-sort.svg %}
 
 <p class="legende-figure">Nombre moyen de voix reçues par conseil assisté,
-selon la manière dont l'aventure s'est terminée.</p>
+selon la manière dont l’aventure s’est terminée.</p>
 
 La gradation est sans exception. Un aventurier éliminé au conseil reçoit en
 moyenne **{{ i.menace_par_sort.elimine_conseil }} voix par conseil** ; un
 vainqueur, **{{ i.menace_par_sort.vainqueur }}**. Neuf fois moins. Entre les
-deux, finalistes puis éliminés de la finale s'échelonnent proprement.
+deux, finalistes puis éliminés de la finale s’échelonnent proprement.
 
 Autrement dit : on ne gagne pas Koh-Lanta en survivant aux votes, on le gagne en
-n'en recevant pas.
+n’en recevant pas.
 
 ## Être du bon côté du vote
 
 La *justesse de vote* mesure la part des bulletins portés sur la personne qui a
-effectivement été éliminée. C'est l'indicateur de qui lit correctement la salle.
+effectivement été éliminée. C’est l’indicateur de qui lit correctement la salle.
 
 <div class="tableau-large">
 <table data-triable>
@@ -101,7 +101,7 @@ effectivement été éliminée. C'est l'indicateur de qui lit correctement la sa
 
 <p class="note">Cet indicateur est le plus fragile du site, et il faut le dire :
 il ne se calcule que sur les conseils dont le dépouillement est complet
-<em>et</em> dont l'éliminé a pu être rattaché — quelques dizaines de conseils,
+<em>et</em> dont l’éliminé a pu être rattaché — quelques dizaines de conseils,
 pas les {{ site.data.stats.conseils.conseils }}. Le classement ci-dessus est
 donc indicatif, et penche mécaniquement vers les saisons les mieux documentées.
 Un seuil de six bulletins écarte les cas où une seule bonne intuition
@@ -124,7 +124,7 @@ suffirait à afficher 100 %.</p>
 </table>
 </div>
 
-Ceux-là ont vu leur nom sortir de l'urne plusieurs fois sans jamais partir. La
+Ceux-là ont vu leur nom sortir de l’urne plusieurs fois sans jamais partir. La
 plupart finissent tout de même par tomber : échapper au vote se paie plus tard.
 
 ## Les plus visés

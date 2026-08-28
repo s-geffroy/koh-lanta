@@ -8,18 +8,18 @@ chapeau: >-
 
 {% assign s = site.data.stats %}
 
-On ne quitte pas Koh-Lanta d'une seule manière. Sur les saisons classiques, les
+On ne quitte pas Koh-Lanta d’une seule manière. Sur les saisons classiques, les
 {{ s.general.participations }} participations se répartissent entre neuf façons
 de partir — et leurs proportions ont changé.
 
 {% include graphiques/sorties-repartition.svg %}
 
 **Le conseil reste la voie principale** : {{ s.sorties.repartition[0].part }} %
-des sorties. Vient ensuite, et c'est plus surprenant, l'**abandon médical**
-({{ s.sorties.repartition[1].part }} %) — devant l'orientation, les poteaux et
+des sorties. Vient ensuite, et c’est plus surprenant, l’**abandon médical**
+({{ s.sorties.repartition[1].part }} %) — devant l’orientation, les poteaux et
 les ambassadeurs.
 
-## L'évolution
+## L’évolution
 
 {% include graphiques/sorties-decennie.svg %}
 
@@ -31,7 +31,7 @@ Deux mouvements se lisent nettement :
 sorties dans les années 2000, ils tombent à
 {{ s.sorties.par_decennie[2].abandons }} % dans les années 2020 — soit **moitié
 moins**. Encadrement médical, sélection, préparation des candidats : le jeu
-s'est professionnalisé.
+s’est professionnalisé.
 
 **Les ambassadeurs apparaissent puis refluent.** Absents des années 2000
 ({{ s.sorties.par_decennie[0].ambassadeurs }} %), ils culminent dans les années

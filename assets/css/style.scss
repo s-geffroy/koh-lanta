@@ -27,7 +27,14 @@
    transparent.
    ========================================================================= */
 
-/* ------------------------------------------------------------------ jetons */
+/* ATTENTION AU VIEUX SASS. Le constructeur de GitHub Pages compile ce fichier
+   avec Sass 3.7, qui ne connait pas `clamp()` : il evalue ses arguments comme
+   de l'arithmetique Sass et s'arrete net sur « Incompatible units: 'vw' and
+   'rem' ». Toute expression melant deux unites doit donc etre enfermee dans un
+   `calc()`, que Sass recopie sans y toucher. La construction echoue sinon --
+   silencieusement pour le visiteur, qui continue de voir la version d'avant.
+
+   ------------------------------------------------------------------ jetons */
 
 :root {
   /* Fonds. --sable est la page, --surface est ce qui est pose dessus. */
@@ -349,8 +356,15 @@ a { color: inherit; }
     padding-top: 2.4rem;
   }
   .rail-poignee { display: none; }
-  /* Deplie en permanence sur grand ecran, que <details> soit ouvert ou non. */
+  /* Deplie en permanence sur grand ecran, que <details> soit ouvert ou non.
+     Deux regles, parce que les navigateurs ne s'y prennent pas pareil : les
+     anciens masquent l'enfant, les recents masquent ::details-content. Une
+     regle inconnue est ignoree entiere, aucune ne gene l'autre. */
   .rail-corps { display: block; }
+}
+
+@media (min-width: 62em) {
+  .rail::details-content { content-visibility: visible; block-size: auto; }
 }
 
 /* ------------------------------------------------------- entete de la page */
@@ -375,7 +389,7 @@ a { color: inherit; }
   font-family: var(--titre);
   font-variation-settings: "WONK" 1, "SOFT" 0, "opsz" 120;
   font-weight: 700;
-  font-size: clamp(2.1rem, 1.3rem + 2.6vw, 3.3rem);
+  font-size: clamp(2.1rem, calc(1.3rem + 2.6vw), 3.3rem);
   line-height: 1.03;
   letter-spacing: -0.02em;
   margin: 0;
@@ -413,7 +427,7 @@ a { color: inherit; }
   font-family: var(--titre);
   font-variation-settings: "WONK" 1, "SOFT" 0, "opsz" 60;
   font-weight: 700;
-  font-size: clamp(1.45rem, 1.15rem + 1vw, 1.95rem);
+  font-size: clamp(1.45rem, calc(1.15rem + 1vw), 1.95rem);
   line-height: 1.12;
   letter-spacing: -0.015em;
   margin: 3.2rem 0 1rem;
@@ -834,7 +848,7 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); 
   font-family: var(--titre);
   font-variation-settings: "WONK" 1, "SOFT" 0, "opsz" 144;
   font-weight: 700;
-  font-size: clamp(2.4rem, 1.1rem + 4.6vw, 4.6rem);
+  font-size: clamp(2.4rem, calc(1.1rem + 4.6vw), 4.6rem);
   line-height: 0.98;
   letter-spacing: -0.03em;
   margin: 0.4rem 0 1.1rem;

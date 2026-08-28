@@ -8,11 +8,11 @@ chapeau: >-
 
 {% assign e = site.data.stats.epreuves %}
 
-C'est la question qui revient le plus souvent, et celle sur laquelle circulent
+C’est la question qui revient le plus souvent, et celle sur laquelle circulent
 le plus de chiffres invérifiables : **qui domine les épreuves ?**
 
 **{{ e.epreuves }} épreuves** ont été relevées sur **{{ e.saisons_couvertes }}
-saisons** — {{ e.immunites }} d'immunité, {{ e.conforts }} de confort ;
+saisons** — {{ e.immunites }} d’immunité, {{ e.conforts }} de confort ;
 {{ e.collectives }} remportées par une tribu, {{ e.individuelles }} par une
 personne.
 
@@ -25,9 +25,9 @@ personne.
 
 ## Le classement des ratios
 
-<p class="note">Le dénominateur n'est pas le nombre d'épreuves de la saison,
+<p class="note">Le dénominateur n’est pas le nombre d’épreuves de la saison,
 mais celui des épreuves individuelles <strong>disputées avant sa sortie</strong> :
-un aventurier éliminé au jour 9 n'a pas rendez-vous avec les épreuves du jour
+un aventurier éliminé au jour 9 n’a pas rendez-vous avec les épreuves du jour
 30. Un seuil de {{ e.seuil_classement }} épreuves disputées écarte les
 parcours trop courts, où une seule victoire suffirait à afficher un ratio
 spectaculaire. {{ e.classement_effectif }} aventuriers passent ce seuil.</p>
@@ -55,11 +55,11 @@ spectaculaire. {{ e.classement_effectif }} aventuriers passent ce seuil.</p>
 </table>
 </div>
 
-## Les totaux d'une carrière
+## Les totaux d’une carrière
 
-Le ratio récompense l'efficacité sur une saison. Le cumul, lui, récompense la
+Le ratio récompense l’efficacité sur une saison. Le cumul, lui, récompense la
 longévité : revenir jouer quatre ou cinq fois donne quatre ou cinq fois plus
-d'occasions.
+d’occasions.
 
 {% include graphiques/epreuves-cumuls.svg %}
 
@@ -71,14 +71,14 @@ total dit autant leur nombre de participations que leur niveau.
 
 ## Quel profil gagne les épreuves
 
-C'est ici que les données deviennent intéressantes, parce qu'elles contredisent
+C’est ici que les données deviennent intéressantes, parce qu’elles contredisent
 ce que la page sur les [métiers]({{ '/statistiques/professions/' | relative_url }})
 laissait entendre.
 
 {% include graphiques/epreuves-metier.svg %}
 
-<p class="legende-figure">Nombre moyen d'épreuves individuelles remportées par
-aventurier de chaque famille — rapporté à l'effectif, donc comparable.</p>
+<p class="legende-figure">Nombre moyen d’épreuves individuelles remportées par
+aventurier de chaque famille — rapporté à l’effectif, donc comparable.</p>
 
 **{{ e.par_metier[0].libelle }}** arrive en tête avec
 {{ e.par_metier[0].victoires_par_aventurier }} victoire par personne. Rien de
@@ -88,19 +88,19 @@ perd le jury.
 
 {% include graphiques/epreuves-age.svg %}
 
-L'âge trace une courbe nette : les **25-34 ans** remportent environ une épreuve
-par personne, les **45 ans et plus** trois fois moins. C'est le seul domaine où
-l'âge pèse aussi franchement — et il éclaire la page
+L’âge trace une courbe nette : les **25-34 ans** remportent environ une épreuve
+par personne, les **45 ans et plus** trois fois moins. C’est le seul domaine où
+l’âge pèse aussi franchement — et il éclaire la page
 [longévité]({{ '/statistiques/longevite/' | relative_url }}) : si les plus âgés
-sortent plus tôt, c'est d'abord qu'ils gagnent moins d'immunités.
+sortent plus tôt, c’est d’abord qu’ils gagnent moins d’immunités.
 
 {% include graphiques/epreuves-genre.svg %}
 
-L'écart entre femmes et hommes est le plus marqué de tout ce site :
+L’écart entre femmes et hommes est le plus marqué de tout ce site :
 **{{ e.par_genre[1].victoires_par_aventurier }}** épreuve par aventurier contre
 **{{ e.par_genre[0].victoires_par_aventurier }}** par aventurière, sur des
 effectifs pourtant identiques. Rapproché du fait que les deux gagnent la finale
-aussi souvent, cela dit une chose simple : **la domination sportive n'est pas
+aussi souvent, cela dit une chose simple : **la domination sportive n’est pas
 ce qui fait gagner Koh-Lanta.**
 
 ## Ce que cette page ne dit pas
@@ -114,6 +114,6 @@ tableaux sources changent de colonnes et y listent les qualifiés plutôt que le
 vainqueur : les lire comme des victoires en fabriquerait de fausses. Orientation
 et poteaux ne sont donc pas comptés.
 
-**La nature des épreuves n'est pas connue** — endurance, équilibre, précision,
-aquatique. Les sources ne la donnent pas de façon exploitable. Tant qu'elle
-manquera, aucune analyse par type d'épreuve ne figurera ici.
+**La nature des épreuves n’est pas connue** — endurance, équilibre, précision,
+aquatique. Les sources ne la donnent pas de façon exploitable. Tant qu’elle
+manquera, aucune analyse par type d’épreuve ne figurera ici.

@@ -42,6 +42,34 @@ class Controle:
         self.avertissements.append(m)
 
 
+def controler_sass(c):
+    """Le piege du vieux Sass, qui a deja fait echouer une construction.
+
+    GitHub Pages compile le SCSS avec Sass 3.7. Cette version ne connait pas
+    `clamp()`, `min()` ni `max()` : elle prend leurs arguments pour de
+    l'arithmetique Sass et s'arrete sur « Incompatible units: 'vw' and 'rem' ».
+    Seul `calc()` est recopie sans etre evalue.
+
+    L'echec est invisible cote visiteur -- le site continue de servir la
+    version d'avant -- et ce depot n'a pas le droit de construire en local.
+    D'ou ce controle : la regle est simple, autant la faire tenir par un
+    script plutot que par la memoire.
+    """
+    chemin = os.path.join(RACINE, "assets", "css", "style.scss")
+    if not os.path.exists(chemin):
+        return
+    texte = open(chemin, encoding="utf-8").read()
+    for m in re.finditer(r"\b(clamp|min|max)\(([^;{}]*)\)\s*;", texte):
+        ligne = texte[:m.start()].count("\n") + 1
+        # On ote les calc() : leur contenu est justement ce qui echappe a Sass.
+        reste = re.sub(r"calc\([^()]*\)", "", m.group(2))
+        if re.search(r"[a-z%\d]\s*[-+*/]\s*[.\d]", reste):
+            c.erreur(f"style.scss:{ligne} : arithmetique nue dans "
+                     f"{m.group(1)}() — Sass 3.7 va l'evaluer et refuser de "
+                     f"melanger les unites ; enfermer l'expression dans calc()")
+
+
+
 def pages():
     for base, dossiers, fichiers in os.walk(RACINE):
         # _layouts/ et _includes/ ne sont pas des pages : ce sont les gabarits
@@ -179,6 +207,8 @@ def main():
             if os.path.isfile(chemin) and os.stat(chemin).st_mode & 0o077:
                 c.erreur(f".secrets/{nom} est lisible par d'autres — "
                          f"chmod 600 .secrets/{nom}")
+
+    controler_sass(c)
 
     if os.path.isdir(os.path.join(RACINE, "_site")):
         c.avertir("_site/ existe : verifier qu'il est bien ignore par Git")
