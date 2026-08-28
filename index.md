@@ -205,7 +205,7 @@ plus tôt que les hommes en moyenne — et remportent pourtant
   <li class="carte">
     <a href="{{ '/completude/' | relative_url }}">
       <span class="carte-rang">{{ site.data.stats.completude_saisons.cases }} CROISEMENTS</span>
-      <span class="carte-titre">Ce qu’on sait de chaque édition</span>
+      <span class="carte-titre">La complétude</span>
       <span class="carte-resume">Le tableau complet : chaque édition en ligne,
         chaque type de donnée en colonne, et à l’intersection ce qui est
         vraiment renseigné.</span>

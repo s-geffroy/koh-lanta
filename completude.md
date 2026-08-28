@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Ce qu’on sait de chaque édition
+title: La complétude, édition par édition
 permalink: /completude/
 chapeau: >-
   Le tableau complet : les 34 éditions en ligne, les 18 types de données en

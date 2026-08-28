@@ -239,7 +239,7 @@ exactement le même ordre.</p>
 
 <p class="note">La même mesure, <strong>édition par édition</strong> et type de
 donnée par type de donnée, tient sur une seule grille :
-<a href="{{ '/completude/' | relative_url }}">Ce qu’on sait de chaque
+<a href="{{ '/completude/' | relative_url }}">La complétude, édition par
 édition</a>.</p>
 
 Ce qui reste, et pourquoi :

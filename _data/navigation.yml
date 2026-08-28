@@ -97,15 +97,17 @@
 
 - section: Les données
   entrees:
+    # En tete de section : c'est la porte d'entree des donnees. On y voit d'un
+    # coup d'oeil ce que chaque edition contient avant d'aller lire le detail.
+    - titre: La complétude
+      url: /completude/
+      resume: "Le tableau : 34 éditions en ligne, 18 types de données en colonne."
     - titre: Les saisons
       url: /saisons/
       resume: Chaque édition, son lieu, son casting, son vainqueur.
     - titre: Les aventuriers
       url: /aventuriers/
       resume: Toutes les participations, filtrables et triables.
-    - titre: Ce qu'on sait de chaque edition
-      url: /completude/
-      resume: "Le tableau : 34 editions en ligne, 18 types de donnees en colonne."
     - titre: Les sources
       url: /sources/
       resume: D'où viennent ces données, et ce qui leur manque.

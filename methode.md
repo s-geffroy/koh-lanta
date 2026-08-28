@@ -295,7 +295,7 @@ décompte. **C’est la troisième fois qu’une limite énoncée sans vérifica
 révèle fausse au moins à moitié.**
 
 <p class="note">Toutes ces limites se lisent aussi d’un coup d’œil, édition par
-édition, sur <a href="{{ '/completude/' | relative_url }}">Ce qu’on sait de chaque
+édition, sur <a href="{{ '/completude/' | relative_url }}">La complétude, édition par
 édition</a>.</p>
 
 ## Ce que ces données ne peuvent pas établir
