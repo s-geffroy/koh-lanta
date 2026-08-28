@@ -1,7 +1,7 @@
 <figure class="figure">
-<svg class="graphique" viewBox="0 0 880 300" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Chaque coupure possible de la serie d’audience">
-  <title>Chaque coupure possible de la serie d’audience</title>
-  <desc>Gain de separation pour chaque date de coupure envisageable. Un pic isole designe une date ; un plateau dirait que plusieurs se valent.</desc>
+<svg class="graphique" viewBox="0 0 880 300" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Chaque coupure possible de la série d’audience">
+  <title>Chaque coupure possible de la série d’audience</title>
+  <desc>Gain de séparation pour chaque date de coupure envisageable. Un pic isolé désigne une date ; un plateau dirait que plusieurs se valent.</desc>
   <line x1="46" y1="248.0" x2="868" y2="248.0" stroke="var(--grille)" stroke-width="1"/>
   <text x="38.0" y="248.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">0</text>
   <line x1="46" y1="192.5" x2="868" y2="192.5" stroke="var(--grille)" stroke-width="1"/>

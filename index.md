@@ -15,21 +15,26 @@ description: >-
   <span class="oeil-rang">{{ g.premiere_annee }}<i>–{{ g.derniere_annee }}</i></span>
 </p>
 
+{% assign sb = site.data.stats.survie_bandeau %}
 <h1 class="accueil-titre">Tout le monde sort, sauf un</h1>
 
 <p class="accueil-chapeau">Chaque aventurier de Koh-Lanta tient un certain
-nombre de jours, puis s’en va. Voici les {{ g.participations }} d’entre eux,
-rangés du séjour le plus court au plus long.</p>
+nombre de jours, puis s’en va. Voici à quelle vitesse le camp se vide — et la
+première chose qu’on y voit est une chose qui n’arrive pas.</p>
 
-{% include graphiques/peigne-torches.svg %}
+{% include graphiques/accueil-survie.svg %}
 
-<p class="peigne-legende">Un trait, un aventurier ; sa longueur, ses jours de
-jeu ; sa couleur, son bandeau de départ. La bordure droite de cette figure est
-la courbe de survie du programme — dessinée avec ses individus plutôt qu’avec
-une moyenne. Les traits les plus courts sont ceux des premiers conseils, le bloc
-plein du bas celui des finalistes. Dix-huit participations manquent : leur jour
-de sortie n’est établi par aucune source. Les éditions spéciales, plus courtes,
-y figurent avec leur durée réelle.</p>
+<p class="peigne-legende">Part des aventuriers encore en jeu, jour par jour, sur
+les {{ sb.effectif }} participations des saisons classiques achevées. La courbe
+jaune et la courbe rouge ne se croisent pas : <b>elles se confondent</b>. Les
+deux bandeaux ont la même médiane, le jour {{ sb.mediane }}, à la journée près,
+et leurs deux courbes ne s’écartent que de <b>{{ sb.ecart_moyen }} points</b> en
+moyenne — {{ sb.ecart_maximal }} au plus fort de leur écart. C’est le résultat
+le plus répété de ce site.
+[Jaune contre rouge]({{ '/statistiques/tribus/' | relative_url }}) le démontre ;
+[Âge et longévité]({{ '/statistiques/longevite/' | relative_url }}) montre la
+même courbe dessinée avec ses {{ g.participations }} individus, un trait par
+aventurier.</p>
 
 <ul class="chiffres">
   <li class="chiffre"><b>{{ g.saisons_diffusees }}</b><span>saisons diffusées</span></li>

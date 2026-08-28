@@ -837,6 +837,7 @@ def main():
         "revenants": analyses.revenants(par_saison, parts, personnes),
         "risque": analyses.risque(par_saison, parts),
         "survie_saisons": analyses.survie_par_saison(par_saison, parts),
+        "survie_bandeau": analyses.survie_par_bandeau(par_saison, parts),
         "casting": analyses.casting(par_saison, parts),
         "programme": analyses.programme(par_saison),
         "reciprocite": analyses.reciprocite(eliminations(conseils), parts, par_saison),

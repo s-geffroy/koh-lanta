@@ -186,6 +186,64 @@ def risque(saisons, parts, pas=10):
     }
 
 
+def survie_par_bandeau(saisons, parts):
+    """Deux courbes de survie, une par bandeau, sur les saisons classiques.
+
+    C'est la figure d'ouverture du site, et elle dit la chose que ce site
+    repete le plus : le jaune et le rouge tiennent EXACTEMENT la meme distance.
+    Deux courbes qui se confondent valent mieux qu'une phrase.
+
+    Le jour est pris en absolu et non en part de saison : les editions
+    classiques durent toutes entre 38 et 42 jours, et « le jour 22 » se lit,
+    la ou « 55 % de la saison » ne se lit pas.
+    """
+    lot = [p for p in parts
+           if not saisons[p["saison"]].get("speciale")
+           and not saisons[p["saison"]].get("annulee")
+           and not saisons[p["saison"]].get("en_cours")
+           and p.get("jour_sortie")]
+    if not lot:
+        return {}
+    jour_max = max(p["jour_sortie"] for p in lot)
+
+    def courbe(sous_ensemble):
+        n = len(sous_ensemble)
+        if not n:
+            return None
+        return [_arr(100.0 * sum(1 for p in sous_ensemble if p["jour_sortie"] >= j) / n)
+                for j in range(1, jour_max + 1)]
+
+    def mediane(sous_ensemble):
+        jours = sorted(p["jour_sortie"] for p in sous_ensemble)
+        return jours[len(jours) // 2] if jours else None
+
+    series = []
+    for couleur in ("jaune", "rouge"):
+        lot_c = [p for p in lot if p.get("couleur") == couleur]
+        if len(lot_c) < 30:
+            continue
+        series.append({"couleur": couleur, "effectif": len(lot_c),
+                       "mediane": mediane(lot_c), "valeurs": courbe(lot_c)})
+    return {
+        "jour_max": jour_max,
+        "effectif": len(lot),
+        "mediane": mediane(lot),
+        "toutes": courbe(lot),
+        "series": series,
+        "ecart_median": (abs(series[0]["mediane"] - series[1]["mediane"])
+                         if len(series) == 2 else None),
+        # De combien de points les deux courbes s'ecartent en moyenne : c'est
+        # la mesure de leur coincidence, et elle vaut mieux qu'un adjectif.
+        "ecart_moyen": (_arr(sum(abs(a - b) for a, b in
+                                 zip(series[0]["valeurs"], series[1]["valeurs"]))
+                             / len(series[0]["valeurs"]), 1)
+                        if len(series) == 2 else None),
+        "ecart_maximal": (_arr(max(abs(a - b) for a, b in
+                                   zip(series[0]["valeurs"], series[1]["valeurs"])), 1)
+                          if len(series) == 2 else None),
+    }
+
+
 def survie_par_saison(saisons, parts):
     """Une courbe de survie par saison, pour les petits multiples.
 

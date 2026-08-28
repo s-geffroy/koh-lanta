@@ -13,7 +13,7 @@ sys.path.insert(0, os.path.join(RACINE, "tools"))
 from graphiques import (arcs, barres_horizontales, barres_groupees,  # noqa: E402
                         colonnes, courbes, distribution_nulle, ecrire, foret,
                         frise, halteres, nuage, peigne, pentes,
-                        petits_multiples, plan, ENCRE_MUETTE, SERIES, TRIBUS)
+                        petits_multiples, plan, ENCRE_MUETTE, SERIES, TRIBUS, survie)
 
 NOM_COULEUR = {"jaune": "Jaune", "rouge": "Rouge", "bleu": "Bleu", "vert": "Vert",
                "orange": "Orange", "violet": "Violet", "noir": "Noire", "blanc": "Blanche"}
@@ -22,6 +22,21 @@ NOM_COULEUR = {"jaune": "Jaune", "rouge": "Rouge", "bleu": "Bleu", "vert": "Vert
 def _lire(nom):
     with open(os.path.join(RACINE, "_data", nom), encoding="utf-8") as f:
         return yaml.safe_load(f)
+
+
+def figure_survie(stats):
+    """La figure d'ouverture : les deux bandeaux, l'un sur l'autre."""
+    b = stats.get("survie_bandeau") or {}
+    if not b.get("series"):
+        return
+    ecrire("accueil-survie.svg", survie(
+        b["series"], b["toutes"], jour_max=b["jour_max"], mediane=b["mediane"],
+        titre="Jaune et rouge tiennent exactement la même distance",
+        description=(
+            f'Part des aventuriers encore en jeu, jour par jour, sur les saisons '
+            f'classiques. La courbe jaune et la courbe rouge se confondent : les '
+            f'deux bandeaux ont la même médiane, le jour {b["mediane"]}.'),
+        note=f'{b["effectif"]} participations, saisons classiques achevées.'))
 
 
 def figure_peigne():
@@ -61,9 +76,10 @@ def main():
     stats = yaml.safe_load(open(os.path.join(RACINE, "_data", "stats.yml"), encoding="utf-8"))
     print("figures ecrites :")
 
-    # --- la figure d'ouverture -------------------------------------------
+    # --- la figure d'ouverture, et le peigne qui l'etait avant elle -------
+    figure_survie(stats)
     n, mediane, jmax = figure_peigne()
-    print(f"    ({n} traits, mediane jour {mediane}, maximum jour {jmax})")
+    print(f"    (peigne : {n} traits, mediane jour {mediane}, maximum jour {jmax})")
 
     figures_ajoutees(stats)
     figure_prenoms()
@@ -944,8 +960,8 @@ def figures_des_modeles(stats):
               "detail": f'coupure avant {x["titre"]} ({x["annee"]}) : gain {x["gain"]}'}
              for x in ru["profil"]],
             titre="Chaque coupure possible, et ce qu'elle sépare",
-            description="Gain de separation pour chaque date de coupure envisageable. "
-                        "Un pic isole designerait une date ; un plateau dit que "
+            description="Gain de séparation pour chaque date de coupure envisageable. "
+                        "Un pic isolé désignerait une date ; un plateau dit que "
                         "plusieurs dates se valent.",
             unite="", largeur=880, hauteur=300))
 
@@ -961,8 +977,8 @@ def figures_des_modeles(stats):
             annees,
             titre=f'L\u2019audience moyenne, saison par saison '
                   f'({serie[0]["annee"]}\u2013{serie[-1]["annee"]})',
-            description="Nombre moyen de telespectateurs par saison, en millions. "
-                        "La serie couvre toutes les editions achevees.",
+            description="Nombre moyen de téléspectateurs par saison, en millions. "
+                        "La série couvre toutes les éditions achevées.",
             unite=" M", largeur=880, hauteur=320))
         ecrire("audience-lancement-finale.svg", courbes(
             [{"nom": "lancement",
@@ -973,8 +989,8 @@ def figures_des_modeles(stats):
               "couleur": SERIES[3]}],
             annees,
             titre="Le lancement et la finale, saison par saison",
-            description="Audience du premier et du dernier episode de chaque saison, "
-                        "en millions de telespectateurs.",
+            description="Audience du premier et du dernier épisode de chaque saison, "
+                        "en millions de téléspectateurs.",
             unite=" M", largeur=880, hauteur=320))
     if au.get("test") or au.get("tests"):
         for t in au.get("tests") or []:
@@ -985,9 +1001,9 @@ def figures_des_modeles(stats):
             [{"libelle": str(x["annee"]), "valeur": x["gain"],
               "detail": f'coupure avant {x["titre"]} ({x["annee"]}) : gain {x["gain"]}'}
              for x in au["profil"]],
-            titre="Chaque coupure possible de la serie d\u2019audience",
-            description="Gain de separation pour chaque date de coupure envisageable. "
-                        "Un pic isole designe une date ; un plateau dirait que "
+            titre="Chaque coupure possible de la série d\u2019audience",
+            description="Gain de séparation pour chaque date de coupure envisageable. "
+                        "Un pic isolé désigne une date ; un plateau dirait que "
                         "plusieurs se valent.",
             unite="", largeur=880, hauteur=300))
 

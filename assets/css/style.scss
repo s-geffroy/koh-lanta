@@ -414,6 +414,7 @@ a { color: inherit; }
 .prose > .tableau-large,
 .prose > .chiffres,
 .prose > .cartes,
+.prose > .vitrine,
 .prose > .peigne,
 .prose > .peigne-legende,
 .prose > .accueil-titre,
@@ -538,10 +539,12 @@ a { color: inherit; }
    de .prose viendrait s'intercaler entre les deux. */
 .figure + .legende-figure { margin-top: 0.55rem; }
 
-/* ---------------------------------------------------- le peigne des torches */
+/* -------------------------------------------- les figures en pleine largeur */
 
-/* La figure d'ouverture. Chaque trait est un aventurier, sa longueur le
-   nombre de jours tenus, sa couleur son bandeau de depart. */
+/* Deux figures sortent du lot et partagent le meme cadre : la vitrine
+   d'ouverture (les deux courbes de survie) et le peigne des torches, ou
+   chaque trait est un aventurier. */
+.vitrine,
 .peigne {
   background: var(--surface);
   border: 1px solid var(--grille);
@@ -550,6 +553,7 @@ a { color: inherit; }
   margin: 0 0 0.7rem;
   overflow-x: auto;
 }
+.vitrine svg,
 .peigne svg { width: 100%; height: auto; display: block; min-width: 34rem; }
 
 .peigne-traits { animation: allumage 1.5s ease-out both; }
@@ -917,5 +921,6 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); 
   .chiffre b { font-size: 1.55rem; }
 
   .figure { padding: 1rem 0.9rem 0.8rem; }
+  .vitrine,
   .peigne { padding: 1.1rem 1rem 0.9rem; }
 }

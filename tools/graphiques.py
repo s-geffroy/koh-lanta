@@ -401,6 +401,106 @@ def peigne(traits, *, titre, description, jour_max, mediane=None, legende=None,
             + '</div>\n')
 
 
+def survie(series, toutes, *, titre, description, jour_max, mediane,
+           largeur=1000, hauteur=400, note=None):
+    """Les courbes de survie des deux bandeaux, l'une sur l'autre.
+
+    C'est la figure d'ouverture du site. Elle ne montre pas un ecart : elle
+    montre une COINCIDENCE. Deux courbes qui se superposent disent en une image
+    ce que la page « Jaune contre rouge » met une section a demontrer -- et la
+    surface pleine dessous rappelle qu'il s'agit de gens qui s'en vont.
+
+    `series` : [{"couleur": "jaune", "valeurs": [% restants au jour 1..N]}]
+    `toutes` : la meme courbe, tous bandeaux confondus, pour la surface.
+    """
+    if not series or not toutes:
+        return ""
+    haut, bas, gauche, droite = 30, 46, 52, 22
+    piste_l = largeur - gauche - droite
+    piste_h = hauteur - haut - bas
+
+    def px(jour):
+        return gauche + piste_l * (jour - 1) / max(1, jour_max - 1)
+
+    def py(part):
+        return haut + piste_h * (1 - part / 100.0)
+
+    fig = Figure(largeur, hauteur, titre, description)
+
+    # Les repères horizontaux, et eux seuls : pas de cadre, pas d'axe vertical.
+    for part in (0, 25, 50, 75, 100):
+        y = py(part)
+        fig.ajouter(f'<line x1="{gauche}" y1="{y:.1f}" x2="{largeur - droite}" '
+                    f'y2="{y:.1f}" stroke="{GRILLE}" stroke-width="1"/>')
+        fig.ajouter(_texte(gauche - 10, y, f"{part} %", ancre="end",
+                           couleur=ENCRE_MUETTE, taille=12))
+
+    # La masse : tous les aventuriers confondus, en aplat tres pale. Elle donne
+    # la forme generale sans jamais concurrencer les deux traits.
+    aire = " ".join(f"{px(j + 1):.1f},{py(v):.1f}" for j, v in enumerate(toutes))
+    fig.ajouter(f'<polygon points="{px(1):.1f},{py(0):.1f} {aire} '
+                f'{px(len(toutes)):.1f},{py(0):.1f}" fill="{ENCRE}" '
+                f'fill-opacity="0.07"/>')
+
+    # Le jour median, marque avant les courbes pour passer dessous.
+    if mediane:
+        x = px(mediane)
+        fig.ajouter(f'<line x1="{x:.1f}" y1="{py(100):.1f}" x2="{x:.1f}" '
+                    f'y2="{py(0):.1f}" stroke="{ENCRE_MUETTE}" stroke-width="1" '
+                    f'stroke-dasharray="3 4"/>')
+        fig.ajouter(_texte(x + 8, py(88), f"jour {mediane}", couleur=ENCRE,
+                           taille=13, gras=True))
+        fig.ajouter(_texte(x + 8, py(80), "la moitié est partie",
+                           couleur=ENCRE_DOUCE, taille=12))
+
+    # Les deux courbes. Un liseré de la couleur du fond les separe la ou elles
+    # se croisent : sans lui, la seconde effacerait la premiere.
+    for serie in series:
+        teinte = TRIBUS.get(serie["couleur"], ENCRE)
+        pts = " ".join(f"{px(j + 1):.1f},{py(v):.1f}"
+                       for j, v in enumerate(serie["valeurs"]))
+        fig.ajouter(f'<polyline points="{pts}" fill="none" stroke="{SURFACE}" '
+                    f'stroke-width="5" stroke-linejoin="round" stroke-opacity="0.8"/>')
+        fig.ajouter(f'<polyline points="{pts}" fill="none" stroke="{teinte}" '
+                    f'stroke-width="2.6" stroke-linejoin="round" '
+                    f'stroke-linecap="round"><title>'
+                    f'{e(serie["couleur"])} : {e(serie.get("effectif", ""))} aventuriers, '
+                    f'mediane au jour {e(serie.get("mediane", ""))}</title></polyline>')
+
+    # Les etiquettes directes -- pas de cartouche, qui demanderait un
+    # aller-retour de l'oeil. On les pose au jour ou les deux courbes sont le
+    # PLUS eloignees : partout ailleurs elles se touchent, et deux pastilles
+    # superposees feraient une tache au lieu de deux reperes.
+    if len(series) == 2:
+        ecarts = [abs(a - b) for a, b in zip(series[0]["valeurs"], series[1]["valeurs"])]
+        repere = max(range(len(ecarts)), key=lambda i: ecarts[i]) + 1
+    else:
+        repere = max(2, int(jour_max * 0.62))
+    ordre = sorted(series, key=lambda s: -s["valeurs"][repere - 1])
+    for rang, serie in enumerate(ordre):
+        teinte = TRIBUS.get(serie["couleur"], ENCRE)
+        v = serie["valeurs"][repere - 1]
+        decalage = -13 if rang == 0 else 15   # le plus haut au-dessus, l'autre dessous
+        fig.ajouter(f'<circle cx="{px(repere):.1f}" cy="{py(v):.1f}" r="4.5" '
+                    f'fill="{teinte}" stroke="{SURFACE}" stroke-width="2"/>')
+        fig.ajouter(_texte(px(repere) + 11, py(v) + decalage,
+                           f'tribu {serie["couleur"]}', couleur=ENCRE,
+                           taille=13, gras=True))
+
+    # L'axe des jours.
+    for jour in range(10, jour_max + 1, 10):
+        fig.ajouter(_texte(px(jour), hauteur - bas + 20, f"jour {jour}",
+                           ancre="middle", couleur=ENCRE_MUETTE, taille=12))
+    if note:
+        fig.ajouter(_texte(gauche, hauteur - bas + 38, note,
+                           couleur=ENCRE_MUETTE, taille=12))
+
+    return (f'<div class="vitrine">\n'
+            + fig.rendu().replace('<figure class="figure">\n', '')
+                         .replace('</figure>\n', '')
+            + '</div>\n')
+
+
 def arcs(noeuds, liens, *, titre, description, largeur=980, hauteur_arc=150,
          etiquettes=None, legende=None, hauteur_etiquettes=96):
     """Diagramme en arcs : des gens sur une ligne, un arc par relation.
