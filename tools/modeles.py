@@ -235,6 +235,32 @@ def _acm(modalites):
     return coord_l, inerties, noms, coord_c
 
 
+# Les codes de la taxonomie des metiers (« artisanat_btp ») et du sexe (« f »)
+# sont des identifiants : ils n'ont rien a faire dans une infobulle ni dans une
+# colonne de tableau. Cette table les rend lisibles au moment de l'affichage,
+# jamais dans les donnees, qui gardent leurs codes.
+_LIBELLES_CSP = None
+_SEXE = {"f": "femme", "h": "homme"}
+
+
+def lisible(code):
+    """Le libelle publiable d'un code de metier, de sexe ou de bandeau."""
+    global _LIBELLES_CSP
+    if _LIBELLES_CSP is None:
+        import os
+        import sys
+        sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(
+            os.path.abspath(__file__))), "tools", "extraction"))
+        try:
+            from csp import libelles
+            _LIBELLES_CSP = libelles()
+        except Exception:
+            _LIBELLES_CSP = {}
+    if code in _SEXE:
+        return _SEXE[code]
+    return _LIBELLES_CSP.get(code, str(code).replace("_", " "))
+
+
 def _repartition(valeurs, univers):
     total = len(valeurs) or 1
     compte = {u: 0 for u in univers}
@@ -319,7 +345,7 @@ def recette_casting(par_saison, parts):
             part_t = _repartition([l[champ] for l in lignes], univers)
             j = int(np.argmax(part_g - part_t))
             if part_g[j] - part_t[j] > 0.05:
-                traits.append((univers[j], float(part_g[j] * 100)))
+                traits.append((lisible(univers[j]), float(part_g[j] * 100)))
         archetypes.append({
             "code": int(g),
             "libelle": " · ".join(m for m, _ in traits) if traits else "le tout-venant",
@@ -507,11 +533,11 @@ def recette_casting(par_saison, parts):
         "carte": [{"x": _arr(float(coord[i, 0]), 3), "y": _arr(float(coord[i, 1]), 3),
                    "groupe": int(groupes[i]), "nom": lignes[i]["nom"],
                    "detail": f'{lignes[i]["nom"]} — {lignes[i]["tranche"]}, '
-                             f'{lignes[i]["csp"]}'}
+                             f'{lisible(lignes[i]["csp"])}'}
                   for i in range(len(lignes))],
         "modalites": [{"x": _arr(float(coord_mod[j, 0]), 3),
                        "y": _arr(float(coord_mod[j, 1]), 3),
-                       "libelle": str(noms_mod[j][1])}
+                       "libelle": lisible(noms_mod[j][1])}
                       for j in range(len(noms_mod))],
         "tests": tests,
         "sensibilite": sensibilite,
@@ -1059,7 +1085,7 @@ def equilibre(par_saison, parts, conseils, epreuves):
     # Ces libelles sont PUBLIES : ils titrent chaque ligne du graphique en
     # foret et chaque ligne du tableau de /statistiques/equilibre/.
     noms_cox = ["Femme", "Âge (par décennie)", "Bandeau jaune",
-                "Déjà venu"] + [f"Métier : {f}" for f in principales]
+                "Déjà venu"] + [f"Métier — {lisible(f)}" for f in principales]
     cox = {}
     if len(duree) >= 200:
         modele = sm.PHReg(np.array(duree), np.array(covariables),

@@ -4,515 +4,515 @@
   <desc>Chaque point est un aventurier, place selon les deux dimensions qui separent le plus les profils. Les etiquettes marquent les modalites.</desc>
   <line x1="272.6" y1="52" x2="272.6" y2="394" stroke="var(--grille)" stroke-width="1"/>
   <line x1="54" y1="224.1" x2="916" y2="224.1" stroke="var(--grille)" stroke-width="1"/>
-  <g class="marque"><title>Marie Boyer — 18-24 ans, etudiant</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Guillaume Noël — 18-24 ans, transport</title><circle cx="376.0" cy="94.1" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Jean-Luc Fiorina — 45 ans et plus, action_securite</title><circle cx="178.7" cy="133.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Gaël Gollen — 18-24 ans, etudiant</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Harry Levy — 40-44 ans, sante</title><circle cx="238.8" cy="187.3" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Sandra Acabado — 18-24 ans, etudiant</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>David Noël — 18-24 ans, arts_medias</title><circle cx="412.3" cy="200.1" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Stéphane Bertheau — 18-24 ans, etudiant</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Géraldine Doyen — 25-29 ans, commerce</title><circle cx="278.5" cy="310.8" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Michèle Valembois — 45 ans et plus, sans_emploi</title><circle cx="232.9" cy="282.7" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>William Lecomte — 30-34 ans, enseignement</title><circle cx="187.3" cy="244.2" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Françoise Avignon — 40-44 ans, encadrement</title><circle cx="182.7" cy="201.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Romain Bissol — 25-29 ans, artisanat_btp</title><circle cx="166.9" cy="177.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Patricia Tanguy — 30-34 ans, encadrement</title><circle cx="151.0" cy="163.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Guénaëlle Biras — 25-29 ans, arts_medias</title><circle cx="291.8" cy="332.6" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Gilles Nicolet — 35-39 ans, arts_medias</title><circle cx="212.9" cy="269.2" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Xavier Lemasson — 25-29 ans, sante</title><circle cx="301.5" cy="263.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Caroline Lamotte — 25-29 ans, commerce</title><circle cx="278.5" cy="310.8" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Céline Fortier — 18-24 ans, restauration_hotellerie</title><circle cx="489.7" cy="294.6" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Nelly Baradeau — 18-24 ans, restauration_hotellerie</title><circle cx="441.0" cy="220.1" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Pierre Cambon — 45 ans et plus, sport</title><circle cx="180.4" cy="198.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Jacky Forteron — 25-29 ans, restauration_hotellerie</title><circle cx="271.5" cy="278.1" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Adonis Koupaki — 30-34 ans, encadrement</title><circle cx="151.0" cy="163.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Jimmy Denis — 18-24 ans, commerce</title><circle cx="399.0" cy="178.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Béatrice Cloix Penisson — 35-39 ans, commerce</title><circle cx="248.5" cy="321.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>François-Xavier Arguillère — 18-24 ans, artisanat_btp</title><circle cx="336.3" cy="119.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Isabelle Vial — 35-39 ans, sante</title><circle cx="320.5" cy="349.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Maud Garnier — 25-29 ans, arts_medias</title><circle cx="291.8" cy="332.6" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Marianne Mondon — 30-34 ans, action_securite</title><circle cx="234.0" cy="205.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Bernard Lenoir — 45 ans et plus, arts_medias</title><circle cx="190.9" cy="219.8" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Nicolas Leoni — 25-29 ans, sans_emploi</title><circle cx="235.9" cy="246.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Amel Fatnassi — 25-29 ans, encadrement</title><circle cx="245.4" cy="278.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Alexandra Denikine — 25-29 ans, commerce</title><circle cx="278.5" cy="310.8" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Candice Cohen — 18-24 ans, etudiant</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Michel Jeandel — 40-44 ans, artisanat_btp</title><circle cx="104.2" cy="100.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Sophie Guilloix — 40-44 ans, arts_medias</title><circle cx="229.1" cy="256.1" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Julie Bourdon — 18-24 ans, restauration_hotellerie</title><circle cx="489.7" cy="294.6" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Linda Delamarre — 25-29 ans, arts_medias</title><circle cx="291.8" cy="332.6" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Philippe Huquet — 40-44 ans, encadrement</title><circle cx="133.9" cy="127.3" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Alexandre Bérard — 18-24 ans, etudiant</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Richard Lecourt — 30-34 ans, agriculture</title><circle cx="117.5" cy="145.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Sylvie Pommier — 25-29 ans, encadrement</title><circle cx="245.4" cy="278.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Sébastien Loew — 25-29 ans, commerce</title><circle cx="229.5" cy="236.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Valérie Dot — 30-34 ans, transport</title><circle cx="210.1" cy="186.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Hélène Patry — 25-29 ans, enseignement</title><circle cx="281.7" cy="359.5" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Moundir Zoughari — 25-29 ans, sport</title><circle cx="232.3" cy="236.4" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Antoine Sanchez — 45 ans et plus, action_securite</title><circle cx="178.7" cy="133.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Moussa Niangane — 18-24 ans, encadrement</title><circle cx="365.9" cy="145.8" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Delphine Bano — 30-34 ans, restauration_hotellerie</title><circle cx="275.1" cy="312.0" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Isabelle Seguin — 40-44 ans, commerce</title><circle cx="215.8" cy="234.4" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Nelson Parente — 35-39 ans, encadrement</title><circle cx="166.7" cy="214.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Vidéli Dittmar — 40-44 ans, artisanat_btp</title><circle cx="104.2" cy="100.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Sabira — 18-24 ans, encadrement</title><circle cx="414.8" cy="220.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Vicky Szikman — 25-29 ans, encadrement</title><circle cx="245.4" cy="278.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Jean-Bernard De Cools — 45 ans et plus, encadrement</title><circle cx="144.7" cy="165.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Nathalie Lapicque — 25-29 ans, enseignement</title><circle cx="281.7" cy="359.5" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Guillaume Brauer — 18-24 ans, etudiant</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Odile Héritier — 45 ans et plus, arts_medias</title><circle cx="239.9" cy="294.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Catherine Ehret-Mader — 35-39 ans, commerce</title><circle cx="248.5" cy="321.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Sophie Eeckhout — 25-29 ans, sante</title><circle cx="350.5" cy="338.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Alban Oswald — 25-29 ans, restauration_hotellerie</title><circle cx="271.5" cy="278.1" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Amélie Grégoire — 25-29 ans, enseignement</title><circle cx="281.7" cy="359.5" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Romuald Lafite — 25-29 ans, sport</title><circle cx="232.3" cy="236.4" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Raphaël Andrès — 40-44 ans, artisanat_btp</title><circle cx="104.2" cy="100.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Linda Alario — 30-34 ans, commerce</title><circle cx="233.1" cy="270.2" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Philippe Bordier — 35-39 ans, artisanat_btp</title><circle cx="137.1" cy="188.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Aude Réant — 30-34 ans, arts_medias</title><circle cx="246.4" cy="291.9" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Mathieu Huguin — 18-24 ans, sante</title><circle cx="470.8" cy="205.8" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Sylvie Sébert — 40-44 ans, action_securite</title><circle cx="216.7" cy="169.4" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Caroline Colusso — 25-29 ans, arts_medias</title><circle cx="291.8" cy="332.6" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Marie-Cécile Maréchal — 18-24 ans, sans_emploi</title><circle cx="454.1" cy="263.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Eliane Vigneron — 40-44 ans, action_securite</title><circle cx="216.7" cy="169.4" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Thierry Ramos — 35-39 ans, artisanat_btp</title><circle cx="185.9" cy="262.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Sakhone Holaphong — 18-24 ans, commerce</title><circle cx="399.0" cy="178.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Jérôme Villaseque — 30-34 ans, action_securite</title><circle cx="185.0" cy="130.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Christine Isoart — 35-39 ans, encadrement</title><circle cx="215.4" cy="289.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Coumba Baradji — 18-24 ans, restauration_hotellerie</title><circle cx="489.7" cy="294.6" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Pierre Vaney — 45 ans et plus, arts_medias</title><circle cx="190.9" cy="219.8" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Véronique Lobjoie — 35-39 ans, arts_medias</title><circle cx="261.8" cy="343.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Alexis Tournier — 25-29 ans, arts_medias</title><circle cx="242.8" cy="258.1" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Mohamed Derradji — 18-24 ans, transport</title><circle cx="376.0" cy="94.1" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Francis Bordas — 45 ans et plus, sans_emploi</title><circle cx="184.0" cy="208.2" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Clémence Castel — 18-24 ans, etudiant</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Karine Amorsi — 18-24 ans, sante</title><circle cx="519.7" cy="280.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Mama El Fayed — 30-34 ans, encadrement</title><circle cx="200.0" cy="237.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Nicolas Maire — 40-44 ans, sport</title><circle cx="169.6" cy="159.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Nico Felger — 25-29 ans, commerce</title><circle cx="229.5" cy="236.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Jean-Claude Errin — 45 ans et plus, transport</title><circle cx="154.8" cy="113.8" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Mika Tailleur — 30-34 ans, artisanat_btp</title><circle cx="121.5" cy="136.4" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Estelle Granger — 30-34 ans, artisanat_btp</title><circle cx="170.5" cy="210.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Nathalie Bella — 35-39 ans, encadrement</title><circle cx="215.4" cy="289.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Alain Ponton — 45 ans et plus, agriculture</title><circle cx="110.9" cy="148.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Catherine Brun — 40-44 ans, sans_emploi</title><circle cx="222.2" cy="244.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Gaëlle Zanetton — 25-29 ans, artisanat_btp</title><circle cx="215.8" cy="251.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Marie Bayard — 18-24 ans, arts_medias</title><circle cx="461.0" cy="274.6" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Ludovic Laresche — 25-29 ans, agriculture</title><circle cx="162.9" cy="186.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Sébastien Roullé — 30-34 ans, encadrement</title><circle cx="151.0" cy="163.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Émilie Frahi — 18-24 ans, commerce</title><circle cx="447.8" cy="252.8" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>François-David Cardonnel — 18-24 ans, sport</title><circle cx="401.5" cy="178.4" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Ali Jaffar — 35-39 ans, transport</title><circle cx="176.8" cy="163.2" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Pascale Bodin — 35-39 ans, encadrement</title><circle cx="215.4" cy="289.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Marie-Laure Dagniaux — 18-24 ans, commerce</title><circle cx="447.8" cy="252.8" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Mélanie Guyon — 18-24 ans, arts_medias</title><circle cx="461.0" cy="274.6" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Véronique Lambert — 45 ans et plus, encadrement</title><circle cx="193.5" cy="240.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Chloé Vavasseur — 25-29 ans, encadrement</title><circle cx="245.4" cy="278.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Érick Africaa — 30-34 ans, sport</title><circle cx="186.7" cy="195.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Filomène Mendonca — 35-39 ans, commerce</title><circle cx="248.5" cy="321.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Adrien Torrin — 45 ans et plus, encadrement</title><circle cx="144.7" cy="165.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Grégoire Delachaux — 18-24 ans, agriculture</title><circle cx="332.3" cy="128.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Laurent Boudes — 30-34 ans, agriculture</title><circle cx="117.5" cy="145.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Patrick Brasier De Thuy — 40-44 ans, encadrement</title><circle cx="133.9" cy="127.3" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Simon Quintilla — 25-29 ans, agriculture</title><circle cx="162.9" cy="186.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Maryline Hemelsdael — 35-39 ans, agriculture</title><circle cx="181.8" cy="271.9" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Kevin Cuoco — 18-24 ans, transport</title><circle cx="376.0" cy="94.1" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Jade Handi — 18-24 ans, encadrement</title><circle cx="414.8" cy="220.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Valérie Tartacède-Bollaert — 40-44 ans, encadrement</title><circle cx="182.7" cy="201.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Céga Coulibaly — 18-24 ans, transport</title><circle cx="376.0" cy="94.1" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Irya Cissé — 18-24 ans, arts_medias</title><circle cx="461.0" cy="274.6" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Morgane Rodriguès — 30-34 ans, arts_medias</title><circle cx="246.4" cy="291.9" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Jessica Joullié — 18-24 ans, etudiant</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Alain Garcia — 35-39 ans, artisanat_btp</title><circle cx="137.1" cy="188.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Jean-Bernard Hauton-Arnaud — 40-44 ans, commerce</title><circle cx="166.9" cy="159.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Christopher Lavaud — 25-29 ans, encadrement</title><circle cx="196.4" cy="203.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Christophe Guttatoro-Martin — 35-39 ans, sport</title><circle cx="202.3" cy="247.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Charlène Hoffness — 18-24 ans, etudiant</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Hakim Djellali — 35-39 ans, artisanat_btp</title><circle cx="137.1" cy="188.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Régis Colombier — 45 ans et plus, commerce</title><circle cx="177.6" cy="198.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Carole Rapin — 40-44 ans, artisanat_btp</title><circle cx="153.1" cy="175.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Nathalie Ensargueix — 25-29 ans, enseignement</title><circle cx="281.7" cy="359.5" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Bertrand Bolle — 30-34 ans, transport</title><circle cx="161.2" cy="111.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Frédéric Favier — 30-34 ans, artisanat_btp</title><circle cx="121.5" cy="136.4" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Christelle Gauzet — 25-29 ans, action_securite</title><circle cx="279.3" cy="245.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Julien Mairesse — 25-29 ans, etudiant</title><circle cx="521.6" cy="171.1" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Anthony Parra — 18-24 ans, action_securite</title><circle cx="399.8" cy="113.4" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Claire Rolet — 25-29 ans, encadrement</title><circle cx="245.4" cy="278.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Marine Mocellin — 18-24 ans, artisanat_btp</title><circle cx="385.3" cy="193.6" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Kaouther Ferdjani — 25-29 ans, encadrement</title><circle cx="245.4" cy="278.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Alexandre Amico — 30-34 ans, action_securite</title><circle cx="185.0" cy="130.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Freddy Boucher — 18-24 ans, etudiant</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Pascal Nickert — 35-39 ans, encadrement</title><circle cx="166.7" cy="214.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Louis-Laurent Léger — 25-29 ans, encadrement</title><circle cx="196.4" cy="203.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Raphaële Navarro — 25-29 ans, encadrement</title><circle cx="245.4" cy="278.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Rodolphe Assi — 45 ans et plus, artisanat_btp</title><circle cx="115.0" cy="138.7" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Kader Rebaï — 45 ans et plus, action_securite</title><circle cx="178.7" cy="133.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Fabienne Lefebvre-Trehoux — 40-44 ans, enseignement</title><circle cx="219.0" cy="282.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Isabelle Da Silva — 35-39 ans, commerce</title><circle cx="248.5" cy="321.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Patrick Merle — 35-39 ans, artisanat_btp</title><circle cx="137.1" cy="188.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Christina Chevry — 18-24 ans, commerce</title><circle cx="447.8" cy="252.8" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Frédérique Brugiroux — 45 ans et plus, agriculture</title><circle cx="159.9" cy="222.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Vivien Escouflaire — 18-24 ans, etudiant</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Alain Merdel — 45 ans et plus, agriculture</title><circle cx="110.9" cy="148.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Virginie Mercadal Pioli — 35-39 ans, arts_medias</title><circle cx="261.8" cy="343.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Jennifer Lieutaud — 18-24 ans, commerce</title><circle cx="447.8" cy="252.8" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Jean-Pierre Pigato — 45 ans et plus, encadrement</title><circle cx="144.7" cy="165.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Audrey Perez — 18-24 ans, sans_emploi</title><circle cx="454.1" cy="263.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Boris Deltell — 30-34 ans, arts_medias</title><circle cx="197.5" cy="217.4" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Valentin D&#x27;Hoore — 18-24 ans, arts_medias</title><circle cx="412.3" cy="200.1" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Abdellah Akriche — 30-34 ans, sport</title><circle cx="186.7" cy="195.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Marine Plissonneau — 35-39 ans, transport</title><circle cx="225.5" cy="237.7" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Aurélie Gasser — 25-29 ans, enseignement</title><circle cx="281.7" cy="359.5" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Laurence Pizzocchia — 30-34 ans, arts_medias</title><circle cx="246.4" cy="291.9" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Kunlé M&#x27;Babacéré Pakorona — 25-29 ans, enseignement</title><circle cx="232.7" cy="284.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Véronique Bègue — 45 ans et plus, sans_emploi</title><circle cx="232.9" cy="282.7" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Wafa El Mejjad — 25-29 ans, commerce</title><circle cx="278.5" cy="310.8" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Claude Dartois — 30-34 ans, transport</title><circle cx="161.2" cy="111.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Philippe Duron — 40-44 ans, artisanat_btp</title><circle cx="104.2" cy="100.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Lisa Legouverneur — 25-29 ans, commerce</title><circle cx="278.5" cy="310.8" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Catherine Barnier — 45 ans et plus, encadrement</title><circle cx="193.5" cy="240.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Steve Lemercier — 18-24 ans, action_securite</title><circle cx="399.8" cy="113.4" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Gégé Icardi — 45 ans et plus, encadrement</title><circle cx="144.7" cy="165.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Naouel Hadjaf — 25-29 ans, sport</title><circle cx="281.2" cy="310.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Benoît Mahieux — 30-34 ans, encadrement</title><circle cx="151.0" cy="163.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Délisia Fettasi — 18-24 ans, enseignement</title><circle cx="451.1" cy="301.4" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Caroline Matteucci — 40-44 ans, sport</title><circle cx="218.6" cy="234.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Maxime Boulet — 18-24 ans, etudiant</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Anthony Amar — 18-24 ans, sport</title><circle cx="401.5" cy="178.4" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Olivier Moenaert — 40-44 ans, commerce</title><circle cx="166.9" cy="159.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Florence Delbarre — 35-39 ans, enseignement</title><circle cx="251.9" cy="370.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Virginie Jarry — 30-34 ans, sans_emploi</title><circle cx="239.5" cy="280.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Patricia Morel — 35-39 ans, transport</title><circle cx="225.5" cy="237.7" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Alexandra Pouillon — 25-29 ans, restauration_hotellerie</title><circle cx="320.5" cy="352.6" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Martin Bazin — 18-24 ans, encadrement</title><circle cx="365.9" cy="145.8" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Ella Gbezan — 25-29 ans, sante</title><circle cx="350.5" cy="338.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Laurent Maistret — 25-29 ans, arts_medias</title><circle cx="242.8" cy="258.1" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Teheiura Teahui — 30-34 ans, restauration_hotellerie</title><circle cx="226.2" cy="237.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Gérard Urdampilleta — 40-44 ans, agriculture</title><circle cx="100.2" cy="109.8" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Mélanie Boimare — 30-34 ans, artisanat_btp</title><circle cx="170.5" cy="210.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Mickaël Kalfallah — 45 ans et plus, transport</title><circle cx="154.8" cy="113.8" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Sara Tallon — 40-44 ans, encadrement</title><circle cx="182.7" cy="201.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Nadine De Carpentry — 45 ans et plus, encadrement</title><circle cx="193.5" cy="240.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Élodie Saleder — 35-39 ans, sans_emploi</title><circle cx="254.9" cy="332.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Marie Parmentier — 18-24 ans, encadrement</title><circle cx="414.8" cy="220.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Anthony Dito — 18-24 ans, artisanat_btp</title><circle cx="336.3" cy="119.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Javier Rodriguez — 35-39 ans, artisanat_btp</title><circle cx="137.1" cy="188.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Namadia Thaï Thaï — 25-29 ans, transport</title><circle cx="206.5" cy="152.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Marylou Sidibé — 18-24 ans, transport</title><circle cx="425.0" cy="168.6" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Catherine Perez — 40-44 ans, commerce</title><circle cx="215.8" cy="234.4" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Camille Sold — 18-24 ans, sport</title><circle cx="450.5" cy="252.9" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Charles Clément — 18-24 ans, etudiant</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Thierry Villette — 40-44 ans, arts_medias</title><circle cx="180.2" cy="181.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Myriam Modde — 30-34 ans, sante</title><circle cx="304.9" cy="297.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Bernard Deniaud — 45 ans et plus, sans_emploi</title><circle cx="184.0" cy="208.2" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Philippe Bizet — 40-44 ans, artisanat_btp</title><circle cx="104.2" cy="100.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Vanessa Alvarez — 35-39 ans, agriculture</title><circle cx="181.8" cy="271.9" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Brice Martinet — 30-34 ans, arts_medias</title><circle cx="197.5" cy="217.4" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Ugo Lartiche — 30-34 ans, agriculture</title><circle cx="117.5" cy="145.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Babeth Delettre — 45 ans et plus, agriculture</title><circle cx="159.9" cy="222.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Marie-Anne Queniart — 35-39 ans, sans_emploi</title><circle cx="254.9" cy="332.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Benoît Jorion-Fahy — 25-29 ans, encadrement</title><circle cx="196.4" cy="203.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Manon Allender — 18-24 ans, etudiant</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Loïc Crespin — 18-24 ans, etudiant</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Isabelle Fidanza — 45 ans et plus, sport</title><circle cx="229.3" cy="272.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Margot Perrot Houwaer — 18-24 ans, etudiant</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Alban Pellegrin — 25-29 ans, commerce</title><circle cx="229.5" cy="236.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Corinne Bargoin Samuelian — 45 ans et plus, commerce</title><circle cx="226.6" cy="272.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Cédric Giosserand-Lucas — 35-39 ans, encadrement</title><circle cx="166.7" cy="214.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Charlaine Cuny — 18-24 ans, etudiant</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Nessim Kouachi — 25-29 ans, transport</title><circle cx="206.5" cy="152.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Jeff Santiago — 30-34 ans, restauration_hotellerie</title><circle cx="226.2" cy="237.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Christophe Pendon — 30-34 ans, encadrement</title><circle cx="151.0" cy="163.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Jessica Potel — 30-34 ans, enseignement</title><circle cx="236.3" cy="318.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Sébastien Ballesteros — 18-24 ans, etudiant</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Bruno Peisey — 45 ans et plus, encadrement</title><circle cx="144.7" cy="165.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Mélissa Bastin — 25-29 ans, encadrement</title><circle cx="245.4" cy="278.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Chantal Ménard — 45 ans et plus, arts_medias</title><circle cx="239.9" cy="294.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Marc Rambaud — 40-44 ans, encadrement</title><circle cx="133.9" cy="127.3" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Charlie Vincent-Mussard — 25-29 ans, restauration_hotellerie</title><circle cx="320.5" cy="352.6" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Laurence Corbellotti — 35-39 ans, enseignement</title><circle cx="251.9" cy="370.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Marius Torterat — 18-24 ans, etudiant</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Céline Parat-Yeghiayan — 40-44 ans, enseignement</title><circle cx="219.0" cy="282.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Huw Francis — 35-39 ans, sport</title><circle cx="202.3" cy="247.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Carole Poncelet — 45 ans et plus, sport</title><circle cx="229.3" cy="272.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Lolo Facione — 45 ans et plus, action_securite</title><circle cx="227.4" cy="207.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Amir Doukhan — 45 ans et plus, commerce</title><circle cx="177.6" cy="198.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Cassandre Girard — 18-24 ans, etudiant</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Romain Palazzetti — 25-29 ans, encadrement</title><circle cx="196.4" cy="203.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Julien Castro — 25-29 ans, artisanat_btp</title><circle cx="166.9" cy="177.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Laureen Hugel — 25-29 ans, etudiant</title><circle cx="570.6" cy="245.6" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Steve Best — 30-34 ans, encadrement</title><circle cx="151.0" cy="163.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Carine Cazals — 30-34 ans, commerce</title><circle cx="233.1" cy="270.2" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Karima Neggaz — 25-29 ans, action_securite</title><circle cx="279.3" cy="245.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Nicolas Rouyé — 30-34 ans, arts_medias</title><circle cx="197.5" cy="217.4" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Alain Chrisostome — 45 ans et plus, encadrement</title><circle cx="144.7" cy="165.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Cécilia Siharaj — 25-29 ans, arts_medias</title><circle cx="291.8" cy="332.6" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Gabriel Gubbels — 40-44 ans, action_securite</title><circle cx="167.9" cy="94.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Pascal Salviani — 45 ans et plus, commerce</title><circle cx="177.6" cy="198.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Wendy Gervois — 25-29 ans, sport</title><circle cx="281.2" cy="310.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Myriam Zenasni — 35-39 ans, restauration_hotellerie</title><circle cx="290.5" cy="363.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Amandine Schmitt — 30-34 ans, commerce</title><circle cx="233.1" cy="270.2" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Sophie Le Nestic Sabattier — 45 ans et plus, commerce</title><circle cx="226.6" cy="272.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Sandrine Bouzekri — 30-34 ans, sante</title><circle cx="304.9" cy="297.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Laurent Mischkind — 35-39 ans, encadrement</title><circle cx="166.7" cy="214.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Jean-Luc Duboscq — 45 ans et plus, artisanat_btp</title><circle cx="115.0" cy="138.7" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Jérôme Merlier — 40-44 ans, encadrement</title><circle cx="133.9" cy="127.3" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Lau Émilien — 30-34 ans, commerce</title><circle cx="184.2" cy="195.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Béryl Libault de la Chevasnerie — 30-34 ans, arts_medias</title><circle cx="246.4" cy="291.9" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Alexandra Pharisien — 40-44 ans, encadrement</title><circle cx="182.7" cy="201.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Yannick Delalleau — 40-44 ans, action_securite</title><circle cx="167.9" cy="94.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Julie Navarro-Camilleri — 35-39 ans, sante</title><circle cx="320.5" cy="349.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Jérémy Raffin — 25-29 ans, etudiant</title><circle cx="521.6" cy="171.1" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Stéphane Cipolla — 45 ans et plus, arts_medias</title><circle cx="190.9" cy="219.8" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Ludivine Wiart — 30-34 ans, sans_emploi</title><circle cx="239.5" cy="280.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Candice Boisson — 18-24 ans, sport</title><circle cx="450.5" cy="252.9" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Bruno Troester — 45 ans et plus, artisanat_btp</title><circle cx="115.0" cy="138.7" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Freddy Bolzer — 25-29 ans, transport</title><circle cx="206.5" cy="152.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Jesta Hillmann — 18-24 ans, etudiant</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Benoît Assadi — 18-24 ans, sport</title><circle cx="401.5" cy="178.4" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Dylan Thiry — 18-24 ans, commerce</title><circle cx="399.0" cy="178.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Sabine Ollivier — 45 ans et plus, commerce</title><circle cx="226.6" cy="272.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Hada Ghoulam — 30-34 ans, commerce</title><circle cx="233.1" cy="270.2" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Franck Michel — 45 ans et plus, sans_emploi</title><circle cx="184.0" cy="208.2" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Félicie Greugny — 25-29 ans, enseignement</title><circle cx="281.7" cy="359.5" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Brahma Sadeyen — 25-29 ans, enseignement</title><circle cx="232.7" cy="284.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Bastien Muñez — 18-24 ans, restauration_hotellerie</title><circle cx="441.0" cy="220.1" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Maria Beccaris — 25-29 ans, artisanat_btp</title><circle cx="215.8" cy="251.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Yves Rey — 45 ans et plus, commerce</title><circle cx="177.6" cy="198.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Yassin Metiri — 35-39 ans, artisanat_btp</title><circle cx="137.1" cy="188.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Manuella Baudet — 35-39 ans, arts_medias</title><circle cx="261.8" cy="343.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Sandro Gonzalez Schena — 30-34 ans, commerce</title><circle cx="184.2" cy="195.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Marjorie Rousseeuw — 40-44 ans, restauration_hotellerie</title><circle cx="257.8" cy="276.1" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Corentin Albertini — 18-24 ans, commerce</title><circle cx="399.0" cy="178.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Kelly Beaugrand — 35-39 ans, restauration_hotellerie</title><circle cx="290.5" cy="363.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Claire Pradayrol — 35-39 ans, sport</title><circle cx="251.3" cy="322.0" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Sébastien Gottiniaux — 35-39 ans, sport</title><circle cx="202.3" cy="247.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Mathilde Chevalier — 18-24 ans, etudiant</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Vincent Roux — 30-34 ans, sport</title><circle cx="186.7" cy="195.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Clémentine Jullien — 25-29 ans, sport</title><circle cx="281.2" cy="310.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Frédéric Blancher — 40-44 ans, commerce</title><circle cx="166.9" cy="159.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Marine Alves — 18-24 ans, sante</title><circle cx="519.7" cy="280.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Delphine Bruyère — 35-39 ans, encadrement</title><circle cx="215.4" cy="289.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Thomas Hébert — 18-24 ans, etudiant</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Mel Moresve — 25-29 ans, etudiant</title><circle cx="570.6" cy="245.6" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Théotime Bernardin — 18-24 ans, encadrement</title><circle cx="365.9" cy="145.8" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Marta Morino — 18-24 ans, etudiant</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>May Peitavi — 18-24 ans, etudiant</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Caroline Demartis — 30-34 ans, encadrement</title><circle cx="200.0" cy="237.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Manu Delanghe — 45 ans et plus, encadrement</title><circle cx="144.7" cy="165.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Tugdual Paul — 25-29 ans, arts_medias</title><circle cx="242.8" cy="258.1" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Marvyn Leone — 18-24 ans, commerce</title><circle cx="399.0" cy="178.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Sébastien Mériaux — 40-44 ans, transport</title><circle cx="144.1" cy="75.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Fabian Rocha Rocha — 45 ans et plus, enseignement</title><circle cx="181.0" cy="246.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Maxime Stafrach — 35-39 ans, restauration_hotellerie</title><circle cx="241.6" cy="289.2" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Mélanie Moret — 30-34 ans, sans_emploi</title><circle cx="239.5" cy="280.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Romain Delaroche — 30-34 ans, sport</title><circle cx="186.7" cy="195.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Marguerite Leblanc — 45 ans et plus, encadrement</title><circle cx="193.5" cy="240.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Sandrine Dubourdy — 40-44 ans, encadrement</title><circle cx="182.7" cy="201.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Magalie Gustave — 25-29 ans, arts_medias</title><circle cx="291.8" cy="332.6" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Tiffany Gounin — 18-24 ans, etudiant</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>André Deleplace — 18-24 ans, etudiant</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Aliséa Lecomte — 18-24 ans, sport</title><circle cx="450.5" cy="252.9" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Carinne Fossey Elka — 45 ans et plus, arts_medias</title><circle cx="239.9" cy="294.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Émilie Tybot — 35-39 ans, commerce</title><circle cx="248.5" cy="321.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Victor Rollinger — 25-29 ans, action_securite</title><circle cx="230.4" cy="171.4" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Chloé Chaize — 30-34 ans, agriculture</title><circle cx="166.4" cy="220.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Xavier Vançon — 45 ans et plus, commerce</title><circle cx="177.6" cy="198.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Frédéric Blanchard — 45 ans et plus, arts_medias</title><circle cx="190.9" cy="219.8" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Alexandre André — 25-29 ans, commerce</title><circle cx="229.5" cy="236.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Béatrice Kabore — 25-29 ans, sport</title><circle cx="281.2" cy="310.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Brice Chauvinc — 18-24 ans, etudiant</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Sophie Chevalier — 30-34 ans, sport</title><circle cx="235.7" cy="270.2" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Angélique Mastio — 18-24 ans, encadrement</title><circle cx="414.8" cy="220.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Mohamed Siaaliti — 35-39 ans, encadrement</title><circle cx="166.7" cy="214.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Nicolas Van Brabandt — 35-39 ans, commerce</title><circle cx="199.6" cy="247.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Maxime Berthon — 30-34 ans, encadrement</title><circle cx="151.0" cy="163.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Cyril Rouanne — 35-39 ans, arts_medias</title><circle cx="212.9" cy="269.2" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Clo Dessard Arribas — 25-29 ans, transport</title><circle cx="255.5" cy="226.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Aurélien Soulimant — 18-24 ans, arts_medias</title><circle cx="412.3" cy="200.1" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Steeve Demana — 45 ans et plus, enseignement</title><circle cx="181.0" cy="246.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Cindy Poumeyrol — 30-34 ans, encadrement</title><circle cx="200.0" cy="237.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Maud Bamps — 45 ans et plus, commerce</title><circle cx="226.6" cy="272.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>François Zabalo — 45 ans et plus, commerce</title><circle cx="177.6" cy="198.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Carole Collado — 45 ans et plus, sans_emploi</title><circle cx="232.9" cy="282.7" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Samuel Degoute — 35-39 ans, sport</title><circle cx="202.3" cy="247.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Diane Goulesque-Perez — 25-29 ans, commerce</title><circle cx="278.5" cy="310.8" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Estelle Fabrice — 45 ans et plus, enseignement</title><circle cx="229.8" cy="321.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Mathieu Blanchard — 30-34 ans, sport</title><circle cx="186.7" cy="195.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Adrien Ferreira — 30-34 ans, encadrement</title><circle cx="151.0" cy="163.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Aubin Bligny — 18-24 ans, commerce</title><circle cx="399.0" cy="178.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Sébastien Aberlenc — 35-39 ans, encadrement</title><circle cx="166.7" cy="214.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Marie-France Schieber — 45 ans et plus, artisanat_btp</title><circle cx="163.9" cy="213.2" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Hadja Cissé — 25-29 ans, sport</title><circle cx="281.2" cy="310.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Bertrand-Kamal Loudrhiri — 30-34 ans, enseignement</title><circle cx="187.3" cy="244.2" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Joaquina Glaud — 35-39 ans, artisanat_btp</title><circle cx="185.9" cy="262.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Jody Favier — 30-34 ans, agriculture</title><circle cx="166.4" cy="220.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Laurent Affri — 45 ans et plus, enseignement</title><circle cx="181.0" cy="246.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Alix Noblat — 25-29 ans, sport</title><circle cx="281.2" cy="310.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Fabrice Pietrzak — 45 ans et plus, artisanat_btp</title><circle cx="115.0" cy="138.7" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Ava Maisini — 25-29 ans, restauration_hotellerie</title><circle cx="320.5" cy="352.6" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Angélique Ti — 25-29 ans, restauration_hotellerie</title><circle cx="320.5" cy="352.6" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Dorian Louvet — 30-34 ans, transport</title><circle cx="161.2" cy="111.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Lola Besse — 18-24 ans, etudiant</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Loïc Riowal — 18-24 ans, sans_emploi</title><circle cx="405.3" cy="188.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Brice Petit — 18-24 ans, enseignement</title><circle cx="402.2" cy="226.9" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Alexandra Pornet — 30-34 ans, encadrement</title><circle cx="200.0" cy="237.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Sylviane Simonnet — 40-44 ans, action_securite</title><circle cx="216.7" cy="169.4" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Marie Oheix — 25-29 ans, etudiant</title><circle cx="570.6" cy="245.6" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Élodie Faelens — 35-39 ans, sport</title><circle cx="251.3" cy="322.0" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Candice Rousset — 25-29 ans, action_securite</title><circle cx="279.3" cy="245.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Gabin Peillon — 25-29 ans, transport</title><circle cx="206.5" cy="152.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Aurélien Tesson — 30-34 ans, sante</title><circle cx="256.1" cy="223.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Frédéric Baudet — 45 ans et plus, restauration_hotellerie</title><circle cx="219.6" cy="239.8" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Hervé Comte — 40-44 ans, artisanat_btp</title><circle cx="104.2" cy="100.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Mathieu Orsolani — 25-29 ans, agriculture</title><circle cx="162.9" cy="186.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Shanice Mendy — 25-29 ans, encadrement</title><circle cx="245.4" cy="278.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Myriam Chafik — 35-39 ans, enseignement</title><circle cx="251.9" cy="370.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Vincent Blier — 25-29 ans, encadrement</title><circle cx="196.4" cy="203.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Laëtitia Saphores — 35-39 ans, encadrement</title><circle cx="215.4" cy="289.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Thomas Plisson — 35-39 ans, transport</title><circle cx="176.8" cy="163.2" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Flavio Soares Tavares — 30-34 ans, encadrement</title><circle cx="151.0" cy="163.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Magali Sevenier — 45 ans et plus, sport</title><circle cx="229.3" cy="272.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Arnaud Deshayes — 35-39 ans, agriculture</title><circle cx="132.9" cy="197.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Laure Canevarolo — 25-29 ans, agriculture</title><circle cx="211.8" cy="260.8" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Jonathan Julien — 30-34 ans, sport</title><circle cx="186.7" cy="195.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Lucie Bertaud — 35-39 ans, sport</title><circle cx="251.3" cy="322.0" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Maxine Eouzan — 25-29 ans, sport</title><circle cx="281.2" cy="310.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Lili Gasnier — 40-44 ans, encadrement</title><circle cx="182.7" cy="201.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Céline Dufrenoy — 40-44 ans, sante</title><circle cx="287.8" cy="261.8" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Franck (Le Totem Maudit) — 45 ans et plus, encadrement</title><circle cx="144.7" cy="165.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Matteo Real — 18-24 ans, arts_medias</title><circle cx="412.3" cy="200.1" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Samira Aït-Brahim — 30-34 ans, sport</title><circle cx="235.7" cy="270.2" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Benjamin Breerette — 18-24 ans, encadrement</title><circle cx="365.9" cy="145.8" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Jean-Philippe Masy — 35-39 ans, artisanat_btp</title><circle cx="137.1" cy="188.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Stéphanie Tribot — 35-39 ans, restauration_hotellerie</title><circle cx="290.5" cy="363.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Alexandra Élizé — 35-39 ans, encadrement</title><circle cx="215.4" cy="289.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Setha El Hajjami — 35-39 ans, arts_medias</title><circle cx="261.8" cy="343.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Colin Mottas — 25-29 ans, arts_medias</title><circle cx="242.8" cy="258.1" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Pauline Pourchaire — 18-24 ans, encadrement</title><circle cx="414.8" cy="220.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Yannick Zachée — 30-34 ans, sport</title><circle cx="186.7" cy="195.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Anne-Sophie Mounier — 30-34 ans, sport</title><circle cx="235.7" cy="270.2" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Maxime Tournoux — 30-34 ans, encadrement</title><circle cx="151.0" cy="163.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Louana Roy — 25-29 ans, commerce</title><circle cx="278.5" cy="310.8" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Fouzi de la Fuente — 25-29 ans, encadrement</title><circle cx="196.4" cy="203.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Nicolas Bellon — 35-39 ans, encadrement</title><circle cx="166.7" cy="214.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Olga Khokhlova — 35-39 ans, arts_medias</title><circle cx="261.8" cy="343.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Ambre Daudet — 25-29 ans, sport</title><circle cx="281.2" cy="310.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Jean-Charles Chatelus — 40-44 ans, artisanat_btp</title><circle cx="104.2" cy="100.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Géraldine Nicolle — 45 ans et plus, commerce</title><circle cx="226.6" cy="272.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>François Descamp — 35-39 ans, action_securite</title><circle cx="200.6" cy="182.3" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Bastien San Pedro — 30-34 ans, sport</title><circle cx="186.7" cy="195.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Célia Litzellmann — 45 ans et plus, enseignement</title><circle cx="229.8" cy="321.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Emin Luka — 45 ans et plus, encadrement</title><circle cx="144.7" cy="165.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Alexandre Delaunay — 30-34 ans, transport</title><circle cx="161.2" cy="111.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Elodie Migeal — 35-39 ans, arts_medias</title><circle cx="261.8" cy="343.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Benjamin Di Benedetto — 18-24 ans, action_securite</title><circle cx="399.8" cy="113.4" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Martin Burrus — 30-34 ans, agriculture</title><circle cx="117.5" cy="145.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Christine Mayonnade — 45 ans et plus, enseignement</title><circle cx="229.8" cy="321.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Rudy Noël — 40-44 ans, transport</title><circle cx="144.1" cy="75.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Grâce Jeantel — 35-39 ans, artisanat_btp</title><circle cx="185.9" cy="262.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Anne-Sophie Antoine — 35-39 ans, enseignement</title><circle cx="251.9" cy="370.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Helena Roosen — 25-29 ans, sante</title><circle cx="350.5" cy="338.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Gilles De Baere — 30-34 ans, agriculture</title><circle cx="117.5" cy="145.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Clémence Noquet — 25-29 ans, artisanat_btp</title><circle cx="215.8" cy="251.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Esteban Garcia-Mora — 40-44 ans, commerce</title><circle cx="166.9" cy="159.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Laura Yelpa — 30-34 ans, arts_medias</title><circle cx="246.4" cy="291.9" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Quentin Paygnard — 25-29 ans, artisanat_btp</title><circle cx="166.9" cy="177.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Julie Debever — 30-34 ans, sport</title><circle cx="235.7" cy="270.2" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Nicolas Pretot — 40-44 ans, encadrement</title><circle cx="133.9" cy="127.3" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Tania Cakarevic — 18-24 ans, sante</title><circle cx="519.7" cy="280.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Frédéric Khouvilay — 30-34 ans, commerce</title><circle cx="184.2" cy="195.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Steve Grenier — 30-34 ans, transport</title><circle cx="161.2" cy="111.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Alicia Bouly — 18-24 ans, encadrement</title><circle cx="414.8" cy="220.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Nathalie Suhard — 45 ans et plus, encadrement</title><circle cx="193.5" cy="240.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>William Plancq — 45 ans et plus, action_securite</title><circle cx="178.7" cy="133.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Alexis Tchernychev — 18-24 ans, action_securite</title><circle cx="399.8" cy="113.4" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Émilie Clavis — 45 ans et plus, commerce</title><circle cx="226.6" cy="272.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Sarah Diawara — 30-34 ans, encadrement</title><circle cx="200.0" cy="237.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Maxime Barbet — 40-44 ans, encadrement</title><circle cx="133.9" cy="127.3" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Ricky Poyet — 18-24 ans, enseignement</title><circle cx="402.2" cy="226.9" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Léa Notardonato — 18-24 ans, action_securite</title><circle cx="448.8" cy="187.9" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Océane Montenegro — 35-39 ans, commerce</title><circle cx="248.5" cy="321.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Cécile Poprawa — 40-44 ans, encadrement</title><circle cx="182.7" cy="201.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Aurélien Dulau — 35-39 ans, commerce</title><circle cx="199.6" cy="247.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Jean Belmonte — 25-29 ans, artisanat_btp</title><circle cx="166.9" cy="177.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Mégane Rouland — 25-29 ans, commerce</title><circle cx="278.5" cy="310.8" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>David Murail — 35-39 ans, artisanat_btp</title><circle cx="137.1" cy="188.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Sébastien Cazaux — 30-34 ans, artisanat_btp</title><circle cx="121.5" cy="136.4" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Amri Madani — 40-44 ans, encadrement</title><circle cx="133.9" cy="127.3" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Pauline Bonneil — 25-29 ans, agriculture</title><circle cx="211.8" cy="260.8" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Julie Rignault — 35-39 ans, artisanat_btp</title><circle cx="185.9" cy="262.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Meïssa Seck — 25-29 ans, commerce</title><circle cx="229.5" cy="236.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Léa Sahin — 40-44 ans, encadrement</title><circle cx="182.7" cy="201.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Cécile Guy — 30-34 ans, transport</title><circle cx="210.1" cy="186.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Ari Bentolila — 45 ans et plus, encadrement</title><circle cx="144.7" cy="165.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Marie Vilaseca — 25-29 ans, commerce</title><circle cx="278.5" cy="310.8" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Lola Potabes — 25-29 ans, sante</title><circle cx="350.5" cy="338.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Vanessa Feuillatte — 35-39 ans, arts_medias</title><circle cx="261.8" cy="343.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Nathanaël Branchereau — 25-29 ans, artisanat_btp</title><circle cx="166.9" cy="177.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Alexandre Cheron — 30-34 ans, sante</title><circle cx="256.1" cy="223.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Michel Huy — 35-39 ans, encadrement</title><circle cx="166.7" cy="214.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Mélissa Pierru — 35-39 ans, encadrement</title><circle cx="215.4" cy="289.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Emmanuelle Boisseau — 45 ans et plus, encadrement</title><circle cx="193.5" cy="240.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Fabrice Giordano — 40-44 ans, encadrement</title><circle cx="133.9" cy="127.3" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Maud Collas — 35-39 ans, commerce</title><circle cx="248.5" cy="321.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Sarah Aboudeine — 30-34 ans, encadrement</title><circle cx="200.0" cy="237.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Frédéric Khouvilay — 35-39 ans, restauration_hotellerie</title><circle cx="241.6" cy="289.2" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Maxim Iarkov — 25-29 ans, transport</title><circle cx="206.5" cy="152.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Gustin Comanescu — 25-29 ans, action_securite</title><circle cx="230.4" cy="171.4" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Cassandre Lambert — 18-24 ans, arts_medias</title><circle cx="461.0" cy="274.6" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Sophia Mansouri — 35-39 ans, sport</title><circle cx="251.3" cy="322.0" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Ugo Lartiche — 40-44 ans, agriculture</title><circle cx="100.2" cy="109.8" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Jacques Roque — 35-39 ans, arts_medias</title><circle cx="212.9" cy="269.2" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Cécile Belec — 40-44 ans, sport</title><circle cx="218.6" cy="234.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Ilyesse Benyoub — 18-24 ans, etudiant</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Charlotte Rasquin — 25-29 ans, enseignement</title><circle cx="281.7" cy="359.5" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Thibault Bélanger — 30-34 ans, agriculture</title><circle cx="117.5" cy="145.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Cynthian Steinbach — 35-39 ans, commerce</title><circle cx="248.5" cy="321.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Allan Rousseeuw — 25-29 ans, agriculture</title><circle cx="162.9" cy="186.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Christian Chambon — 45 ans et plus, commerce</title><circle cx="177.6" cy="198.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Romane Ouvrard — 18-24 ans, sport</title><circle cx="450.5" cy="252.9" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Mehdi Bounab-Lamiral — 25-29 ans, transport</title><circle cx="206.5" cy="152.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Benoît Piedfer — 18-24 ans, sport</title><circle cx="401.5" cy="178.4" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Mohamed Ayari — 30-34 ans, sport</title><circle cx="186.7" cy="195.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Pauline Leperchois — 35-39 ans, sport</title><circle cx="251.3" cy="322.0" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Andréa Zogron — 18-24 ans, etudiant</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Adrien Bernaert — 18-24 ans, encadrement</title><circle cx="365.9" cy="145.8" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Frédéric Pignard — 45 ans et plus, encadrement</title><circle cx="144.7" cy="165.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Jessica Murcia — 35-39 ans, restauration_hotellerie</title><circle cx="290.5" cy="363.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Louise Picavet — 18-24 ans, action_securite</title><circle cx="448.8" cy="187.9" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Joana Callico — 30-34 ans, encadrement</title><circle cx="200.0" cy="237.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Naïs Napoletano — 25-29 ans, enseignement</title><circle cx="281.7" cy="359.5" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Pierre-Marie Ponsot — 35-39 ans, encadrement</title><circle cx="166.7" cy="214.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Maxime Lubian — 30-34 ans, encadrement</title><circle cx="151.0" cy="163.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Noémie Bessec — 30-34 ans, encadrement</title><circle cx="200.0" cy="237.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Céline Faccio — 35-39 ans, commerce</title><circle cx="248.5" cy="321.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Jérôme Salvatore — 45 ans et plus, action_securite</title><circle cx="178.7" cy="133.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Claire Passas — 35-39 ans, arts_medias</title><circle cx="261.8" cy="343.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Jérôme Molas — 40-44 ans, artisanat_btp</title><circle cx="104.2" cy="100.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Maël Lozach — 25-29 ans, artisanat_btp</title><circle cx="166.9" cy="177.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Gaëlle Fleury — 30-34 ans, sans_emploi</title><circle cx="239.5" cy="280.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Françoise Fournier-Grigis — 40-44 ans, encadrement</title><circle cx="182.7" cy="201.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Clémence Dubent — 25-29 ans, encadrement</title><circle cx="245.4" cy="278.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Karine Iraundegui — 45 ans et plus, commerce</title><circle cx="226.6" cy="272.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Lionel Dubouchet — 40-44 ans, commerce</title><circle cx="166.9" cy="159.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Nora Toubal — 45 ans et plus, encadrement</title><circle cx="193.5" cy="240.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Jonathan Guez — 35-39 ans, encadrement</title><circle cx="166.7" cy="214.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Ulrich Bandeira — 40-44 ans, transport</title><circle cx="144.1" cy="75.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Johan Pinaud — 35-39 ans, transport</title><circle cx="176.8" cy="163.2" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Paul Estival — 35-39 ans, sport</title><circle cx="202.3" cy="247.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Lola Krast — 18-24 ans, etudiant</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
-  <g class="marque"><title>Jade Correa — 30-34 ans, commerce</title><circle cx="233.1" cy="270.2" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Cindy Sulpice-Gonzalez — 30-34 ans, action_securite</title><circle cx="234.0" cy="205.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Antonin Fortunato — 25-29 ans, arts_medias</title><circle cx="242.8" cy="258.1" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Zakariya Bougoudouima — 25-29 ans, action_securite</title><circle cx="230.4" cy="171.4" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Daniel Duquesnoy — 45 ans et plus, sport</title><circle cx="180.4" cy="198.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
-  <g class="marque"><title>Hugo Van Aertryck — 25-29 ans, encadrement</title><circle cx="196.4" cy="203.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Caroline Ledos — 35-39 ans, action_securite</title><circle cx="249.6" cy="256.8" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
-  <g class="marque"><title>Guillaume Le Deun — 25-29 ans, encadrement</title><circle cx="196.4" cy="203.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
-  <g class="marque"><title>Clarisse Cresseveur — 18-24 ans, sante</title><circle cx="519.7" cy="280.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
-  <g class="marque"><title>Cynthia Combes — 35-39 ans, restauration_hotellerie</title><circle cx="290.5" cy="363.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Marie Boyer — 18-24 ans, Étudiants</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Guillaume Noël — 18-24 ans, Transport et logistique</title><circle cx="376.0" cy="94.1" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Jean-Luc Fiorina — 45 ans et plus, Action et sécurité</title><circle cx="178.7" cy="133.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Gaël Gollen — 18-24 ans, Étudiants</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Harry Levy — 40-44 ans, Santé</title><circle cx="238.8" cy="187.3" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Sandra Acabado — 18-24 ans, Étudiants</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>David Noël — 18-24 ans, Arts, médias et image</title><circle cx="412.3" cy="200.1" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Stéphane Bertheau — 18-24 ans, Étudiants</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Géraldine Doyen — 25-29 ans, Commerce et vente</title><circle cx="278.5" cy="310.8" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Michèle Valembois — 45 ans et plus, Sans activité déclarée</title><circle cx="232.9" cy="282.7" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>William Lecomte — 30-34 ans, Enseignement et éducation</title><circle cx="187.3" cy="244.2" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Françoise Avignon — 40-44 ans, Encadrement et professions intellectuelles</title><circle cx="182.7" cy="201.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Romain Bissol — 25-29 ans, Artisanat et bâtiment</title><circle cx="166.9" cy="177.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Patricia Tanguy — 30-34 ans, Encadrement et professions intellectuelles</title><circle cx="151.0" cy="163.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Guénaëlle Biras — 25-29 ans, Arts, médias et image</title><circle cx="291.8" cy="332.6" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Gilles Nicolet — 35-39 ans, Arts, médias et image</title><circle cx="212.9" cy="269.2" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Xavier Lemasson — 25-29 ans, Santé</title><circle cx="301.5" cy="263.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Caroline Lamotte — 25-29 ans, Commerce et vente</title><circle cx="278.5" cy="310.8" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Céline Fortier — 18-24 ans, Restauration et hôtellerie</title><circle cx="489.7" cy="294.6" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Nelly Baradeau — 18-24 ans, Restauration et hôtellerie</title><circle cx="441.0" cy="220.1" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Pierre Cambon — 45 ans et plus, Sport et coaching</title><circle cx="180.4" cy="198.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Jacky Forteron — 25-29 ans, Restauration et hôtellerie</title><circle cx="271.5" cy="278.1" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Adonis Koupaki — 30-34 ans, Encadrement et professions intellectuelles</title><circle cx="151.0" cy="163.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Jimmy Denis — 18-24 ans, Commerce et vente</title><circle cx="399.0" cy="178.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Béatrice Cloix Penisson — 35-39 ans, Commerce et vente</title><circle cx="248.5" cy="321.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>François-Xavier Arguillère — 18-24 ans, Artisanat et bâtiment</title><circle cx="336.3" cy="119.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Isabelle Vial — 35-39 ans, Santé</title><circle cx="320.5" cy="349.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Maud Garnier — 25-29 ans, Arts, médias et image</title><circle cx="291.8" cy="332.6" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Marianne Mondon — 30-34 ans, Action et sécurité</title><circle cx="234.0" cy="205.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Bernard Lenoir — 45 ans et plus, Arts, médias et image</title><circle cx="190.9" cy="219.8" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Nicolas Leoni — 25-29 ans, Sans activité déclarée</title><circle cx="235.9" cy="246.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Amel Fatnassi — 25-29 ans, Encadrement et professions intellectuelles</title><circle cx="245.4" cy="278.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Alexandra Denikine — 25-29 ans, Commerce et vente</title><circle cx="278.5" cy="310.8" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Candice Cohen — 18-24 ans, Étudiants</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Michel Jeandel — 40-44 ans, Artisanat et bâtiment</title><circle cx="104.2" cy="100.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Sophie Guilloix — 40-44 ans, Arts, médias et image</title><circle cx="229.1" cy="256.1" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Julie Bourdon — 18-24 ans, Restauration et hôtellerie</title><circle cx="489.7" cy="294.6" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Linda Delamarre — 25-29 ans, Arts, médias et image</title><circle cx="291.8" cy="332.6" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Philippe Huquet — 40-44 ans, Encadrement et professions intellectuelles</title><circle cx="133.9" cy="127.3" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Alexandre Bérard — 18-24 ans, Étudiants</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Richard Lecourt — 30-34 ans, Agriculture et nature</title><circle cx="117.5" cy="145.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Sylvie Pommier — 25-29 ans, Encadrement et professions intellectuelles</title><circle cx="245.4" cy="278.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Sébastien Loew — 25-29 ans, Commerce et vente</title><circle cx="229.5" cy="236.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Valérie Dot — 30-34 ans, Transport et logistique</title><circle cx="210.1" cy="186.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Hélène Patry — 25-29 ans, Enseignement et éducation</title><circle cx="281.7" cy="359.5" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Moundir Zoughari — 25-29 ans, Sport et coaching</title><circle cx="232.3" cy="236.4" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Antoine Sanchez — 45 ans et plus, Action et sécurité</title><circle cx="178.7" cy="133.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Moussa Niangane — 18-24 ans, Encadrement et professions intellectuelles</title><circle cx="365.9" cy="145.8" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Delphine Bano — 30-34 ans, Restauration et hôtellerie</title><circle cx="275.1" cy="312.0" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Isabelle Seguin — 40-44 ans, Commerce et vente</title><circle cx="215.8" cy="234.4" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Nelson Parente — 35-39 ans, Encadrement et professions intellectuelles</title><circle cx="166.7" cy="214.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Vidéli Dittmar — 40-44 ans, Artisanat et bâtiment</title><circle cx="104.2" cy="100.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Sabira — 18-24 ans, Encadrement et professions intellectuelles</title><circle cx="414.8" cy="220.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Vicky Szikman — 25-29 ans, Encadrement et professions intellectuelles</title><circle cx="245.4" cy="278.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Jean-Bernard De Cools — 45 ans et plus, Encadrement et professions intellectuelles</title><circle cx="144.7" cy="165.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Nathalie Lapicque — 25-29 ans, Enseignement et éducation</title><circle cx="281.7" cy="359.5" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Guillaume Brauer — 18-24 ans, Étudiants</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Odile Héritier — 45 ans et plus, Arts, médias et image</title><circle cx="239.9" cy="294.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Catherine Ehret-Mader — 35-39 ans, Commerce et vente</title><circle cx="248.5" cy="321.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Sophie Eeckhout — 25-29 ans, Santé</title><circle cx="350.5" cy="338.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Alban Oswald — 25-29 ans, Restauration et hôtellerie</title><circle cx="271.5" cy="278.1" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Amélie Grégoire — 25-29 ans, Enseignement et éducation</title><circle cx="281.7" cy="359.5" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Romuald Lafite — 25-29 ans, Sport et coaching</title><circle cx="232.3" cy="236.4" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Raphaël Andrès — 40-44 ans, Artisanat et bâtiment</title><circle cx="104.2" cy="100.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Linda Alario — 30-34 ans, Commerce et vente</title><circle cx="233.1" cy="270.2" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Philippe Bordier — 35-39 ans, Artisanat et bâtiment</title><circle cx="137.1" cy="188.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Aude Réant — 30-34 ans, Arts, médias et image</title><circle cx="246.4" cy="291.9" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Mathieu Huguin — 18-24 ans, Santé</title><circle cx="470.8" cy="205.8" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Sylvie Sébert — 40-44 ans, Action et sécurité</title><circle cx="216.7" cy="169.4" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Caroline Colusso — 25-29 ans, Arts, médias et image</title><circle cx="291.8" cy="332.6" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Marie-Cécile Maréchal — 18-24 ans, Sans activité déclarée</title><circle cx="454.1" cy="263.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Eliane Vigneron — 40-44 ans, Action et sécurité</title><circle cx="216.7" cy="169.4" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Thierry Ramos — 35-39 ans, Artisanat et bâtiment</title><circle cx="185.9" cy="262.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Sakhone Holaphong — 18-24 ans, Commerce et vente</title><circle cx="399.0" cy="178.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Jérôme Villaseque — 30-34 ans, Action et sécurité</title><circle cx="185.0" cy="130.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Christine Isoart — 35-39 ans, Encadrement et professions intellectuelles</title><circle cx="215.4" cy="289.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Coumba Baradji — 18-24 ans, Restauration et hôtellerie</title><circle cx="489.7" cy="294.6" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Pierre Vaney — 45 ans et plus, Arts, médias et image</title><circle cx="190.9" cy="219.8" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Véronique Lobjoie — 35-39 ans, Arts, médias et image</title><circle cx="261.8" cy="343.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Alexis Tournier — 25-29 ans, Arts, médias et image</title><circle cx="242.8" cy="258.1" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Mohamed Derradji — 18-24 ans, Transport et logistique</title><circle cx="376.0" cy="94.1" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Francis Bordas — 45 ans et plus, Sans activité déclarée</title><circle cx="184.0" cy="208.2" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Clémence Castel — 18-24 ans, Étudiants</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Karine Amorsi — 18-24 ans, Santé</title><circle cx="519.7" cy="280.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Mama El Fayed — 30-34 ans, Encadrement et professions intellectuelles</title><circle cx="200.0" cy="237.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Nicolas Maire — 40-44 ans, Sport et coaching</title><circle cx="169.6" cy="159.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Nico Felger — 25-29 ans, Commerce et vente</title><circle cx="229.5" cy="236.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Jean-Claude Errin — 45 ans et plus, Transport et logistique</title><circle cx="154.8" cy="113.8" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Mika Tailleur — 30-34 ans, Artisanat et bâtiment</title><circle cx="121.5" cy="136.4" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Estelle Granger — 30-34 ans, Artisanat et bâtiment</title><circle cx="170.5" cy="210.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Nathalie Bella — 35-39 ans, Encadrement et professions intellectuelles</title><circle cx="215.4" cy="289.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Alain Ponton — 45 ans et plus, Agriculture et nature</title><circle cx="110.9" cy="148.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Catherine Brun — 40-44 ans, Sans activité déclarée</title><circle cx="222.2" cy="244.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Gaëlle Zanetton — 25-29 ans, Artisanat et bâtiment</title><circle cx="215.8" cy="251.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Marie Bayard — 18-24 ans, Arts, médias et image</title><circle cx="461.0" cy="274.6" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Ludovic Laresche — 25-29 ans, Agriculture et nature</title><circle cx="162.9" cy="186.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Sébastien Roullé — 30-34 ans, Encadrement et professions intellectuelles</title><circle cx="151.0" cy="163.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Émilie Frahi — 18-24 ans, Commerce et vente</title><circle cx="447.8" cy="252.8" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>François-David Cardonnel — 18-24 ans, Sport et coaching</title><circle cx="401.5" cy="178.4" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Ali Jaffar — 35-39 ans, Transport et logistique</title><circle cx="176.8" cy="163.2" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Pascale Bodin — 35-39 ans, Encadrement et professions intellectuelles</title><circle cx="215.4" cy="289.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Marie-Laure Dagniaux — 18-24 ans, Commerce et vente</title><circle cx="447.8" cy="252.8" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Mélanie Guyon — 18-24 ans, Arts, médias et image</title><circle cx="461.0" cy="274.6" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Véronique Lambert — 45 ans et plus, Encadrement et professions intellectuelles</title><circle cx="193.5" cy="240.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Chloé Vavasseur — 25-29 ans, Encadrement et professions intellectuelles</title><circle cx="245.4" cy="278.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Érick Africaa — 30-34 ans, Sport et coaching</title><circle cx="186.7" cy="195.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Filomène Mendonca — 35-39 ans, Commerce et vente</title><circle cx="248.5" cy="321.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Adrien Torrin — 45 ans et plus, Encadrement et professions intellectuelles</title><circle cx="144.7" cy="165.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Grégoire Delachaux — 18-24 ans, Agriculture et nature</title><circle cx="332.3" cy="128.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Laurent Boudes — 30-34 ans, Agriculture et nature</title><circle cx="117.5" cy="145.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Patrick Brasier De Thuy — 40-44 ans, Encadrement et professions intellectuelles</title><circle cx="133.9" cy="127.3" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Simon Quintilla — 25-29 ans, Agriculture et nature</title><circle cx="162.9" cy="186.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Maryline Hemelsdael — 35-39 ans, Agriculture et nature</title><circle cx="181.8" cy="271.9" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Kevin Cuoco — 18-24 ans, Transport et logistique</title><circle cx="376.0" cy="94.1" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Jade Handi — 18-24 ans, Encadrement et professions intellectuelles</title><circle cx="414.8" cy="220.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Valérie Tartacède-Bollaert — 40-44 ans, Encadrement et professions intellectuelles</title><circle cx="182.7" cy="201.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Céga Coulibaly — 18-24 ans, Transport et logistique</title><circle cx="376.0" cy="94.1" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Irya Cissé — 18-24 ans, Arts, médias et image</title><circle cx="461.0" cy="274.6" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Morgane Rodriguès — 30-34 ans, Arts, médias et image</title><circle cx="246.4" cy="291.9" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Jessica Joullié — 18-24 ans, Étudiants</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Alain Garcia — 35-39 ans, Artisanat et bâtiment</title><circle cx="137.1" cy="188.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Jean-Bernard Hauton-Arnaud — 40-44 ans, Commerce et vente</title><circle cx="166.9" cy="159.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Christopher Lavaud — 25-29 ans, Encadrement et professions intellectuelles</title><circle cx="196.4" cy="203.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Christophe Guttatoro-Martin — 35-39 ans, Sport et coaching</title><circle cx="202.3" cy="247.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Charlène Hoffness — 18-24 ans, Étudiants</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Hakim Djellali — 35-39 ans, Artisanat et bâtiment</title><circle cx="137.1" cy="188.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Régis Colombier — 45 ans et plus, Commerce et vente</title><circle cx="177.6" cy="198.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Carole Rapin — 40-44 ans, Artisanat et bâtiment</title><circle cx="153.1" cy="175.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Nathalie Ensargueix — 25-29 ans, Enseignement et éducation</title><circle cx="281.7" cy="359.5" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Bertrand Bolle — 30-34 ans, Transport et logistique</title><circle cx="161.2" cy="111.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Frédéric Favier — 30-34 ans, Artisanat et bâtiment</title><circle cx="121.5" cy="136.4" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Christelle Gauzet — 25-29 ans, Action et sécurité</title><circle cx="279.3" cy="245.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Julien Mairesse — 25-29 ans, Étudiants</title><circle cx="521.6" cy="171.1" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Anthony Parra — 18-24 ans, Action et sécurité</title><circle cx="399.8" cy="113.4" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Claire Rolet — 25-29 ans, Encadrement et professions intellectuelles</title><circle cx="245.4" cy="278.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Marine Mocellin — 18-24 ans, Artisanat et bâtiment</title><circle cx="385.3" cy="193.6" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Kaouther Ferdjani — 25-29 ans, Encadrement et professions intellectuelles</title><circle cx="245.4" cy="278.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Alexandre Amico — 30-34 ans, Action et sécurité</title><circle cx="185.0" cy="130.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Freddy Boucher — 18-24 ans, Étudiants</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Pascal Nickert — 35-39 ans, Encadrement et professions intellectuelles</title><circle cx="166.7" cy="214.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Louis-Laurent Léger — 25-29 ans, Encadrement et professions intellectuelles</title><circle cx="196.4" cy="203.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Raphaële Navarro — 25-29 ans, Encadrement et professions intellectuelles</title><circle cx="245.4" cy="278.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Rodolphe Assi — 45 ans et plus, Artisanat et bâtiment</title><circle cx="115.0" cy="138.7" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Kader Rebaï — 45 ans et plus, Action et sécurité</title><circle cx="178.7" cy="133.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Fabienne Lefebvre-Trehoux — 40-44 ans, Enseignement et éducation</title><circle cx="219.0" cy="282.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Isabelle Da Silva — 35-39 ans, Commerce et vente</title><circle cx="248.5" cy="321.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Patrick Merle — 35-39 ans, Artisanat et bâtiment</title><circle cx="137.1" cy="188.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Christina Chevry — 18-24 ans, Commerce et vente</title><circle cx="447.8" cy="252.8" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Frédérique Brugiroux — 45 ans et plus, Agriculture et nature</title><circle cx="159.9" cy="222.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Vivien Escouflaire — 18-24 ans, Étudiants</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Alain Merdel — 45 ans et plus, Agriculture et nature</title><circle cx="110.9" cy="148.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Virginie Mercadal Pioli — 35-39 ans, Arts, médias et image</title><circle cx="261.8" cy="343.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Jennifer Lieutaud — 18-24 ans, Commerce et vente</title><circle cx="447.8" cy="252.8" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Jean-Pierre Pigato — 45 ans et plus, Encadrement et professions intellectuelles</title><circle cx="144.7" cy="165.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Audrey Perez — 18-24 ans, Sans activité déclarée</title><circle cx="454.1" cy="263.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Boris Deltell — 30-34 ans, Arts, médias et image</title><circle cx="197.5" cy="217.4" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Valentin D&#x27;Hoore — 18-24 ans, Arts, médias et image</title><circle cx="412.3" cy="200.1" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Abdellah Akriche — 30-34 ans, Sport et coaching</title><circle cx="186.7" cy="195.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Marine Plissonneau — 35-39 ans, Transport et logistique</title><circle cx="225.5" cy="237.7" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Aurélie Gasser — 25-29 ans, Enseignement et éducation</title><circle cx="281.7" cy="359.5" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Laurence Pizzocchia — 30-34 ans, Arts, médias et image</title><circle cx="246.4" cy="291.9" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Kunlé M&#x27;Babacéré Pakorona — 25-29 ans, Enseignement et éducation</title><circle cx="232.7" cy="284.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Véronique Bègue — 45 ans et plus, Sans activité déclarée</title><circle cx="232.9" cy="282.7" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Wafa El Mejjad — 25-29 ans, Commerce et vente</title><circle cx="278.5" cy="310.8" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Claude Dartois — 30-34 ans, Transport et logistique</title><circle cx="161.2" cy="111.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Philippe Duron — 40-44 ans, Artisanat et bâtiment</title><circle cx="104.2" cy="100.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Lisa Legouverneur — 25-29 ans, Commerce et vente</title><circle cx="278.5" cy="310.8" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Catherine Barnier — 45 ans et plus, Encadrement et professions intellectuelles</title><circle cx="193.5" cy="240.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Steve Lemercier — 18-24 ans, Action et sécurité</title><circle cx="399.8" cy="113.4" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Gégé Icardi — 45 ans et plus, Encadrement et professions intellectuelles</title><circle cx="144.7" cy="165.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Naouel Hadjaf — 25-29 ans, Sport et coaching</title><circle cx="281.2" cy="310.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Benoît Mahieux — 30-34 ans, Encadrement et professions intellectuelles</title><circle cx="151.0" cy="163.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Délisia Fettasi — 18-24 ans, Enseignement et éducation</title><circle cx="451.1" cy="301.4" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Caroline Matteucci — 40-44 ans, Sport et coaching</title><circle cx="218.6" cy="234.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Maxime Boulet — 18-24 ans, Étudiants</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Anthony Amar — 18-24 ans, Sport et coaching</title><circle cx="401.5" cy="178.4" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Olivier Moenaert — 40-44 ans, Commerce et vente</title><circle cx="166.9" cy="159.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Florence Delbarre — 35-39 ans, Enseignement et éducation</title><circle cx="251.9" cy="370.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Virginie Jarry — 30-34 ans, Sans activité déclarée</title><circle cx="239.5" cy="280.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Patricia Morel — 35-39 ans, Transport et logistique</title><circle cx="225.5" cy="237.7" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Alexandra Pouillon — 25-29 ans, Restauration et hôtellerie</title><circle cx="320.5" cy="352.6" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Martin Bazin — 18-24 ans, Encadrement et professions intellectuelles</title><circle cx="365.9" cy="145.8" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Ella Gbezan — 25-29 ans, Santé</title><circle cx="350.5" cy="338.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Laurent Maistret — 25-29 ans, Arts, médias et image</title><circle cx="242.8" cy="258.1" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Teheiura Teahui — 30-34 ans, Restauration et hôtellerie</title><circle cx="226.2" cy="237.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Gérard Urdampilleta — 40-44 ans, Agriculture et nature</title><circle cx="100.2" cy="109.8" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Mélanie Boimare — 30-34 ans, Artisanat et bâtiment</title><circle cx="170.5" cy="210.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Mickaël Kalfallah — 45 ans et plus, Transport et logistique</title><circle cx="154.8" cy="113.8" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Sara Tallon — 40-44 ans, Encadrement et professions intellectuelles</title><circle cx="182.7" cy="201.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Nadine De Carpentry — 45 ans et plus, Encadrement et professions intellectuelles</title><circle cx="193.5" cy="240.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Élodie Saleder — 35-39 ans, Sans activité déclarée</title><circle cx="254.9" cy="332.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Marie Parmentier — 18-24 ans, Encadrement et professions intellectuelles</title><circle cx="414.8" cy="220.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Anthony Dito — 18-24 ans, Artisanat et bâtiment</title><circle cx="336.3" cy="119.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Javier Rodriguez — 35-39 ans, Artisanat et bâtiment</title><circle cx="137.1" cy="188.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Namadia Thaï Thaï — 25-29 ans, Transport et logistique</title><circle cx="206.5" cy="152.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Marylou Sidibé — 18-24 ans, Transport et logistique</title><circle cx="425.0" cy="168.6" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Catherine Perez — 40-44 ans, Commerce et vente</title><circle cx="215.8" cy="234.4" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Camille Sold — 18-24 ans, Sport et coaching</title><circle cx="450.5" cy="252.9" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Charles Clément — 18-24 ans, Étudiants</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Thierry Villette — 40-44 ans, Arts, médias et image</title><circle cx="180.2" cy="181.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Myriam Modde — 30-34 ans, Santé</title><circle cx="304.9" cy="297.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Bernard Deniaud — 45 ans et plus, Sans activité déclarée</title><circle cx="184.0" cy="208.2" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Philippe Bizet — 40-44 ans, Artisanat et bâtiment</title><circle cx="104.2" cy="100.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Vanessa Alvarez — 35-39 ans, Agriculture et nature</title><circle cx="181.8" cy="271.9" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Brice Martinet — 30-34 ans, Arts, médias et image</title><circle cx="197.5" cy="217.4" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Ugo Lartiche — 30-34 ans, Agriculture et nature</title><circle cx="117.5" cy="145.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Babeth Delettre — 45 ans et plus, Agriculture et nature</title><circle cx="159.9" cy="222.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Marie-Anne Queniart — 35-39 ans, Sans activité déclarée</title><circle cx="254.9" cy="332.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Benoît Jorion-Fahy — 25-29 ans, Encadrement et professions intellectuelles</title><circle cx="196.4" cy="203.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Manon Allender — 18-24 ans, Étudiants</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Loïc Crespin — 18-24 ans, Étudiants</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Isabelle Fidanza — 45 ans et plus, Sport et coaching</title><circle cx="229.3" cy="272.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Margot Perrot Houwaer — 18-24 ans, Étudiants</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Alban Pellegrin — 25-29 ans, Commerce et vente</title><circle cx="229.5" cy="236.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Corinne Bargoin Samuelian — 45 ans et plus, Commerce et vente</title><circle cx="226.6" cy="272.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Cédric Giosserand-Lucas — 35-39 ans, Encadrement et professions intellectuelles</title><circle cx="166.7" cy="214.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Charlaine Cuny — 18-24 ans, Étudiants</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Nessim Kouachi — 25-29 ans, Transport et logistique</title><circle cx="206.5" cy="152.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Jeff Santiago — 30-34 ans, Restauration et hôtellerie</title><circle cx="226.2" cy="237.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Christophe Pendon — 30-34 ans, Encadrement et professions intellectuelles</title><circle cx="151.0" cy="163.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Jessica Potel — 30-34 ans, Enseignement et éducation</title><circle cx="236.3" cy="318.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Sébastien Ballesteros — 18-24 ans, Étudiants</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Bruno Peisey — 45 ans et plus, Encadrement et professions intellectuelles</title><circle cx="144.7" cy="165.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Mélissa Bastin — 25-29 ans, Encadrement et professions intellectuelles</title><circle cx="245.4" cy="278.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Chantal Ménard — 45 ans et plus, Arts, médias et image</title><circle cx="239.9" cy="294.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Marc Rambaud — 40-44 ans, Encadrement et professions intellectuelles</title><circle cx="133.9" cy="127.3" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Charlie Vincent-Mussard — 25-29 ans, Restauration et hôtellerie</title><circle cx="320.5" cy="352.6" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Laurence Corbellotti — 35-39 ans, Enseignement et éducation</title><circle cx="251.9" cy="370.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Marius Torterat — 18-24 ans, Étudiants</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Céline Parat-Yeghiayan — 40-44 ans, Enseignement et éducation</title><circle cx="219.0" cy="282.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Huw Francis — 35-39 ans, Sport et coaching</title><circle cx="202.3" cy="247.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Carole Poncelet — 45 ans et plus, Sport et coaching</title><circle cx="229.3" cy="272.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Lolo Facione — 45 ans et plus, Action et sécurité</title><circle cx="227.4" cy="207.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Amir Doukhan — 45 ans et plus, Commerce et vente</title><circle cx="177.6" cy="198.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Cassandre Girard — 18-24 ans, Étudiants</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Romain Palazzetti — 25-29 ans, Encadrement et professions intellectuelles</title><circle cx="196.4" cy="203.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Julien Castro — 25-29 ans, Artisanat et bâtiment</title><circle cx="166.9" cy="177.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Laureen Hugel — 25-29 ans, Étudiants</title><circle cx="570.6" cy="245.6" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Steve Best — 30-34 ans, Encadrement et professions intellectuelles</title><circle cx="151.0" cy="163.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Carine Cazals — 30-34 ans, Commerce et vente</title><circle cx="233.1" cy="270.2" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Karima Neggaz — 25-29 ans, Action et sécurité</title><circle cx="279.3" cy="245.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Nicolas Rouyé — 30-34 ans, Arts, médias et image</title><circle cx="197.5" cy="217.4" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Alain Chrisostome — 45 ans et plus, Encadrement et professions intellectuelles</title><circle cx="144.7" cy="165.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Cécilia Siharaj — 25-29 ans, Arts, médias et image</title><circle cx="291.8" cy="332.6" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Gabriel Gubbels — 40-44 ans, Action et sécurité</title><circle cx="167.9" cy="94.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Pascal Salviani — 45 ans et plus, Commerce et vente</title><circle cx="177.6" cy="198.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Wendy Gervois — 25-29 ans, Sport et coaching</title><circle cx="281.2" cy="310.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Myriam Zenasni — 35-39 ans, Restauration et hôtellerie</title><circle cx="290.5" cy="363.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Amandine Schmitt — 30-34 ans, Commerce et vente</title><circle cx="233.1" cy="270.2" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Sophie Le Nestic Sabattier — 45 ans et plus, Commerce et vente</title><circle cx="226.6" cy="272.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Sandrine Bouzekri — 30-34 ans, Santé</title><circle cx="304.9" cy="297.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Laurent Mischkind — 35-39 ans, Encadrement et professions intellectuelles</title><circle cx="166.7" cy="214.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Jean-Luc Duboscq — 45 ans et plus, Artisanat et bâtiment</title><circle cx="115.0" cy="138.7" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Jérôme Merlier — 40-44 ans, Encadrement et professions intellectuelles</title><circle cx="133.9" cy="127.3" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Lau Émilien — 30-34 ans, Commerce et vente</title><circle cx="184.2" cy="195.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Béryl Libault de la Chevasnerie — 30-34 ans, Arts, médias et image</title><circle cx="246.4" cy="291.9" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Alexandra Pharisien — 40-44 ans, Encadrement et professions intellectuelles</title><circle cx="182.7" cy="201.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Yannick Delalleau — 40-44 ans, Action et sécurité</title><circle cx="167.9" cy="94.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Julie Navarro-Camilleri — 35-39 ans, Santé</title><circle cx="320.5" cy="349.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Jérémy Raffin — 25-29 ans, Étudiants</title><circle cx="521.6" cy="171.1" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Stéphane Cipolla — 45 ans et plus, Arts, médias et image</title><circle cx="190.9" cy="219.8" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Ludivine Wiart — 30-34 ans, Sans activité déclarée</title><circle cx="239.5" cy="280.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Candice Boisson — 18-24 ans, Sport et coaching</title><circle cx="450.5" cy="252.9" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Bruno Troester — 45 ans et plus, Artisanat et bâtiment</title><circle cx="115.0" cy="138.7" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Freddy Bolzer — 25-29 ans, Transport et logistique</title><circle cx="206.5" cy="152.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Jesta Hillmann — 18-24 ans, Étudiants</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Benoît Assadi — 18-24 ans, Sport et coaching</title><circle cx="401.5" cy="178.4" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Dylan Thiry — 18-24 ans, Commerce et vente</title><circle cx="399.0" cy="178.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Sabine Ollivier — 45 ans et plus, Commerce et vente</title><circle cx="226.6" cy="272.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Hada Ghoulam — 30-34 ans, Commerce et vente</title><circle cx="233.1" cy="270.2" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Franck Michel — 45 ans et plus, Sans activité déclarée</title><circle cx="184.0" cy="208.2" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Félicie Greugny — 25-29 ans, Enseignement et éducation</title><circle cx="281.7" cy="359.5" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Brahma Sadeyen — 25-29 ans, Enseignement et éducation</title><circle cx="232.7" cy="284.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Bastien Muñez — 18-24 ans, Restauration et hôtellerie</title><circle cx="441.0" cy="220.1" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Maria Beccaris — 25-29 ans, Artisanat et bâtiment</title><circle cx="215.8" cy="251.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Yves Rey — 45 ans et plus, Commerce et vente</title><circle cx="177.6" cy="198.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Yassin Metiri — 35-39 ans, Artisanat et bâtiment</title><circle cx="137.1" cy="188.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Manuella Baudet — 35-39 ans, Arts, médias et image</title><circle cx="261.8" cy="343.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Sandro Gonzalez Schena — 30-34 ans, Commerce et vente</title><circle cx="184.2" cy="195.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Marjorie Rousseeuw — 40-44 ans, Restauration et hôtellerie</title><circle cx="257.8" cy="276.1" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Corentin Albertini — 18-24 ans, Commerce et vente</title><circle cx="399.0" cy="178.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Kelly Beaugrand — 35-39 ans, Restauration et hôtellerie</title><circle cx="290.5" cy="363.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Claire Pradayrol — 35-39 ans, Sport et coaching</title><circle cx="251.3" cy="322.0" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Sébastien Gottiniaux — 35-39 ans, Sport et coaching</title><circle cx="202.3" cy="247.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Mathilde Chevalier — 18-24 ans, Étudiants</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Vincent Roux — 30-34 ans, Sport et coaching</title><circle cx="186.7" cy="195.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Clémentine Jullien — 25-29 ans, Sport et coaching</title><circle cx="281.2" cy="310.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Frédéric Blancher — 40-44 ans, Commerce et vente</title><circle cx="166.9" cy="159.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Marine Alves — 18-24 ans, Santé</title><circle cx="519.7" cy="280.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Delphine Bruyère — 35-39 ans, Encadrement et professions intellectuelles</title><circle cx="215.4" cy="289.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Thomas Hébert — 18-24 ans, Étudiants</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Mel Moresve — 25-29 ans, Étudiants</title><circle cx="570.6" cy="245.6" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Théotime Bernardin — 18-24 ans, Encadrement et professions intellectuelles</title><circle cx="365.9" cy="145.8" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Marta Morino — 18-24 ans, Étudiants</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>May Peitavi — 18-24 ans, Étudiants</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Caroline Demartis — 30-34 ans, Encadrement et professions intellectuelles</title><circle cx="200.0" cy="237.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Manu Delanghe — 45 ans et plus, Encadrement et professions intellectuelles</title><circle cx="144.7" cy="165.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Tugdual Paul — 25-29 ans, Arts, médias et image</title><circle cx="242.8" cy="258.1" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Marvyn Leone — 18-24 ans, Commerce et vente</title><circle cx="399.0" cy="178.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Sébastien Mériaux — 40-44 ans, Transport et logistique</title><circle cx="144.1" cy="75.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Fabian Rocha Rocha — 45 ans et plus, Enseignement et éducation</title><circle cx="181.0" cy="246.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Maxime Stafrach — 35-39 ans, Restauration et hôtellerie</title><circle cx="241.6" cy="289.2" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Mélanie Moret — 30-34 ans, Sans activité déclarée</title><circle cx="239.5" cy="280.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Romain Delaroche — 30-34 ans, Sport et coaching</title><circle cx="186.7" cy="195.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Marguerite Leblanc — 45 ans et plus, Encadrement et professions intellectuelles</title><circle cx="193.5" cy="240.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Sandrine Dubourdy — 40-44 ans, Encadrement et professions intellectuelles</title><circle cx="182.7" cy="201.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Magalie Gustave — 25-29 ans, Arts, médias et image</title><circle cx="291.8" cy="332.6" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Tiffany Gounin — 18-24 ans, Étudiants</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>André Deleplace — 18-24 ans, Étudiants</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Aliséa Lecomte — 18-24 ans, Sport et coaching</title><circle cx="450.5" cy="252.9" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Carinne Fossey Elka — 45 ans et plus, Arts, médias et image</title><circle cx="239.9" cy="294.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Émilie Tybot — 35-39 ans, Commerce et vente</title><circle cx="248.5" cy="321.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Victor Rollinger — 25-29 ans, Action et sécurité</title><circle cx="230.4" cy="171.4" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Chloé Chaize — 30-34 ans, Agriculture et nature</title><circle cx="166.4" cy="220.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Xavier Vançon — 45 ans et plus, Commerce et vente</title><circle cx="177.6" cy="198.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Frédéric Blanchard — 45 ans et plus, Arts, médias et image</title><circle cx="190.9" cy="219.8" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Alexandre André — 25-29 ans, Commerce et vente</title><circle cx="229.5" cy="236.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Béatrice Kabore — 25-29 ans, Sport et coaching</title><circle cx="281.2" cy="310.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Brice Chauvinc — 18-24 ans, Étudiants</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Sophie Chevalier — 30-34 ans, Sport et coaching</title><circle cx="235.7" cy="270.2" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Angélique Mastio — 18-24 ans, Encadrement et professions intellectuelles</title><circle cx="414.8" cy="220.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Mohamed Siaaliti — 35-39 ans, Encadrement et professions intellectuelles</title><circle cx="166.7" cy="214.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Nicolas Van Brabandt — 35-39 ans, Commerce et vente</title><circle cx="199.6" cy="247.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Maxime Berthon — 30-34 ans, Encadrement et professions intellectuelles</title><circle cx="151.0" cy="163.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Cyril Rouanne — 35-39 ans, Arts, médias et image</title><circle cx="212.9" cy="269.2" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Clo Dessard Arribas — 25-29 ans, Transport et logistique</title><circle cx="255.5" cy="226.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Aurélien Soulimant — 18-24 ans, Arts, médias et image</title><circle cx="412.3" cy="200.1" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Steeve Demana — 45 ans et plus, Enseignement et éducation</title><circle cx="181.0" cy="246.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Cindy Poumeyrol — 30-34 ans, Encadrement et professions intellectuelles</title><circle cx="200.0" cy="237.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Maud Bamps — 45 ans et plus, Commerce et vente</title><circle cx="226.6" cy="272.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>François Zabalo — 45 ans et plus, Commerce et vente</title><circle cx="177.6" cy="198.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Carole Collado — 45 ans et plus, Sans activité déclarée</title><circle cx="232.9" cy="282.7" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Samuel Degoute — 35-39 ans, Sport et coaching</title><circle cx="202.3" cy="247.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Diane Goulesque-Perez — 25-29 ans, Commerce et vente</title><circle cx="278.5" cy="310.8" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Estelle Fabrice — 45 ans et plus, Enseignement et éducation</title><circle cx="229.8" cy="321.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Mathieu Blanchard — 30-34 ans, Sport et coaching</title><circle cx="186.7" cy="195.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Adrien Ferreira — 30-34 ans, Encadrement et professions intellectuelles</title><circle cx="151.0" cy="163.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Aubin Bligny — 18-24 ans, Commerce et vente</title><circle cx="399.0" cy="178.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Sébastien Aberlenc — 35-39 ans, Encadrement et professions intellectuelles</title><circle cx="166.7" cy="214.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Marie-France Schieber — 45 ans et plus, Artisanat et bâtiment</title><circle cx="163.9" cy="213.2" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Hadja Cissé — 25-29 ans, Sport et coaching</title><circle cx="281.2" cy="310.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Bertrand-Kamal Loudrhiri — 30-34 ans, Enseignement et éducation</title><circle cx="187.3" cy="244.2" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Joaquina Glaud — 35-39 ans, Artisanat et bâtiment</title><circle cx="185.9" cy="262.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Jody Favier — 30-34 ans, Agriculture et nature</title><circle cx="166.4" cy="220.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Laurent Affri — 45 ans et plus, Enseignement et éducation</title><circle cx="181.0" cy="246.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Alix Noblat — 25-29 ans, Sport et coaching</title><circle cx="281.2" cy="310.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Fabrice Pietrzak — 45 ans et plus, Artisanat et bâtiment</title><circle cx="115.0" cy="138.7" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Ava Maisini — 25-29 ans, Restauration et hôtellerie</title><circle cx="320.5" cy="352.6" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Angélique Ti — 25-29 ans, Restauration et hôtellerie</title><circle cx="320.5" cy="352.6" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Dorian Louvet — 30-34 ans, Transport et logistique</title><circle cx="161.2" cy="111.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Lola Besse — 18-24 ans, Étudiants</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Loïc Riowal — 18-24 ans, Sans activité déclarée</title><circle cx="405.3" cy="188.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Brice Petit — 18-24 ans, Enseignement et éducation</title><circle cx="402.2" cy="226.9" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Alexandra Pornet — 30-34 ans, Encadrement et professions intellectuelles</title><circle cx="200.0" cy="237.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Sylviane Simonnet — 40-44 ans, Action et sécurité</title><circle cx="216.7" cy="169.4" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Marie Oheix — 25-29 ans, Étudiants</title><circle cx="570.6" cy="245.6" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Élodie Faelens — 35-39 ans, Sport et coaching</title><circle cx="251.3" cy="322.0" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Candice Rousset — 25-29 ans, Action et sécurité</title><circle cx="279.3" cy="245.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Gabin Peillon — 25-29 ans, Transport et logistique</title><circle cx="206.5" cy="152.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Aurélien Tesson — 30-34 ans, Santé</title><circle cx="256.1" cy="223.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Frédéric Baudet — 45 ans et plus, Restauration et hôtellerie</title><circle cx="219.6" cy="239.8" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Hervé Comte — 40-44 ans, Artisanat et bâtiment</title><circle cx="104.2" cy="100.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Mathieu Orsolani — 25-29 ans, Agriculture et nature</title><circle cx="162.9" cy="186.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Shanice Mendy — 25-29 ans, Encadrement et professions intellectuelles</title><circle cx="245.4" cy="278.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Myriam Chafik — 35-39 ans, Enseignement et éducation</title><circle cx="251.9" cy="370.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Vincent Blier — 25-29 ans, Encadrement et professions intellectuelles</title><circle cx="196.4" cy="203.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Laëtitia Saphores — 35-39 ans, Encadrement et professions intellectuelles</title><circle cx="215.4" cy="289.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Thomas Plisson — 35-39 ans, Transport et logistique</title><circle cx="176.8" cy="163.2" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Flavio Soares Tavares — 30-34 ans, Encadrement et professions intellectuelles</title><circle cx="151.0" cy="163.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Magali Sevenier — 45 ans et plus, Sport et coaching</title><circle cx="229.3" cy="272.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Arnaud Deshayes — 35-39 ans, Agriculture et nature</title><circle cx="132.9" cy="197.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Laure Canevarolo — 25-29 ans, Agriculture et nature</title><circle cx="211.8" cy="260.8" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Jonathan Julien — 30-34 ans, Sport et coaching</title><circle cx="186.7" cy="195.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Lucie Bertaud — 35-39 ans, Sport et coaching</title><circle cx="251.3" cy="322.0" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Maxine Eouzan — 25-29 ans, Sport et coaching</title><circle cx="281.2" cy="310.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Lili Gasnier — 40-44 ans, Encadrement et professions intellectuelles</title><circle cx="182.7" cy="201.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Céline Dufrenoy — 40-44 ans, Santé</title><circle cx="287.8" cy="261.8" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Franck (Le Totem Maudit) — 45 ans et plus, Encadrement et professions intellectuelles</title><circle cx="144.7" cy="165.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Matteo Real — 18-24 ans, Arts, médias et image</title><circle cx="412.3" cy="200.1" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Samira Aït-Brahim — 30-34 ans, Sport et coaching</title><circle cx="235.7" cy="270.2" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Benjamin Breerette — 18-24 ans, Encadrement et professions intellectuelles</title><circle cx="365.9" cy="145.8" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Jean-Philippe Masy — 35-39 ans, Artisanat et bâtiment</title><circle cx="137.1" cy="188.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Stéphanie Tribot — 35-39 ans, Restauration et hôtellerie</title><circle cx="290.5" cy="363.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Alexandra Élizé — 35-39 ans, Encadrement et professions intellectuelles</title><circle cx="215.4" cy="289.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Setha El Hajjami — 35-39 ans, Arts, médias et image</title><circle cx="261.8" cy="343.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Colin Mottas — 25-29 ans, Arts, médias et image</title><circle cx="242.8" cy="258.1" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Pauline Pourchaire — 18-24 ans, Encadrement et professions intellectuelles</title><circle cx="414.8" cy="220.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Yannick Zachée — 30-34 ans, Sport et coaching</title><circle cx="186.7" cy="195.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Anne-Sophie Mounier — 30-34 ans, Sport et coaching</title><circle cx="235.7" cy="270.2" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Maxime Tournoux — 30-34 ans, Encadrement et professions intellectuelles</title><circle cx="151.0" cy="163.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Louana Roy — 25-29 ans, Commerce et vente</title><circle cx="278.5" cy="310.8" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Fouzi de la Fuente — 25-29 ans, Encadrement et professions intellectuelles</title><circle cx="196.4" cy="203.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Nicolas Bellon — 35-39 ans, Encadrement et professions intellectuelles</title><circle cx="166.7" cy="214.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Olga Khokhlova — 35-39 ans, Arts, médias et image</title><circle cx="261.8" cy="343.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Ambre Daudet — 25-29 ans, Sport et coaching</title><circle cx="281.2" cy="310.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Jean-Charles Chatelus — 40-44 ans, Artisanat et bâtiment</title><circle cx="104.2" cy="100.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Géraldine Nicolle — 45 ans et plus, Commerce et vente</title><circle cx="226.6" cy="272.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>François Descamp — 35-39 ans, Action et sécurité</title><circle cx="200.6" cy="182.3" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Bastien San Pedro — 30-34 ans, Sport et coaching</title><circle cx="186.7" cy="195.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Célia Litzellmann — 45 ans et plus, Enseignement et éducation</title><circle cx="229.8" cy="321.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Emin Luka — 45 ans et plus, Encadrement et professions intellectuelles</title><circle cx="144.7" cy="165.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Alexandre Delaunay — 30-34 ans, Transport et logistique</title><circle cx="161.2" cy="111.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Elodie Migeal — 35-39 ans, Arts, médias et image</title><circle cx="261.8" cy="343.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Benjamin Di Benedetto — 18-24 ans, Action et sécurité</title><circle cx="399.8" cy="113.4" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Martin Burrus — 30-34 ans, Agriculture et nature</title><circle cx="117.5" cy="145.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Christine Mayonnade — 45 ans et plus, Enseignement et éducation</title><circle cx="229.8" cy="321.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Rudy Noël — 40-44 ans, Transport et logistique</title><circle cx="144.1" cy="75.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Grâce Jeantel — 35-39 ans, Artisanat et bâtiment</title><circle cx="185.9" cy="262.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Anne-Sophie Antoine — 35-39 ans, Enseignement et éducation</title><circle cx="251.9" cy="370.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Helena Roosen — 25-29 ans, Santé</title><circle cx="350.5" cy="338.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Gilles De Baere — 30-34 ans, Agriculture et nature</title><circle cx="117.5" cy="145.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Clémence Noquet — 25-29 ans, Artisanat et bâtiment</title><circle cx="215.8" cy="251.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Esteban Garcia-Mora — 40-44 ans, Commerce et vente</title><circle cx="166.9" cy="159.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Laura Yelpa — 30-34 ans, Arts, médias et image</title><circle cx="246.4" cy="291.9" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Quentin Paygnard — 25-29 ans, Artisanat et bâtiment</title><circle cx="166.9" cy="177.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Julie Debever — 30-34 ans, Sport et coaching</title><circle cx="235.7" cy="270.2" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Nicolas Pretot — 40-44 ans, Encadrement et professions intellectuelles</title><circle cx="133.9" cy="127.3" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Tania Cakarevic — 18-24 ans, Santé</title><circle cx="519.7" cy="280.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Frédéric Khouvilay — 30-34 ans, Commerce et vente</title><circle cx="184.2" cy="195.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Steve Grenier — 30-34 ans, Transport et logistique</title><circle cx="161.2" cy="111.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Alicia Bouly — 18-24 ans, Encadrement et professions intellectuelles</title><circle cx="414.8" cy="220.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Nathalie Suhard — 45 ans et plus, Encadrement et professions intellectuelles</title><circle cx="193.5" cy="240.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>William Plancq — 45 ans et plus, Action et sécurité</title><circle cx="178.7" cy="133.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Alexis Tchernychev — 18-24 ans, Action et sécurité</title><circle cx="399.8" cy="113.4" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Émilie Clavis — 45 ans et plus, Commerce et vente</title><circle cx="226.6" cy="272.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Sarah Diawara — 30-34 ans, Encadrement et professions intellectuelles</title><circle cx="200.0" cy="237.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Maxime Barbet — 40-44 ans, Encadrement et professions intellectuelles</title><circle cx="133.9" cy="127.3" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Ricky Poyet — 18-24 ans, Enseignement et éducation</title><circle cx="402.2" cy="226.9" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Léa Notardonato — 18-24 ans, Action et sécurité</title><circle cx="448.8" cy="187.9" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Océane Montenegro — 35-39 ans, Commerce et vente</title><circle cx="248.5" cy="321.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Cécile Poprawa — 40-44 ans, Encadrement et professions intellectuelles</title><circle cx="182.7" cy="201.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Aurélien Dulau — 35-39 ans, Commerce et vente</title><circle cx="199.6" cy="247.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Jean Belmonte — 25-29 ans, Artisanat et bâtiment</title><circle cx="166.9" cy="177.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Mégane Rouland — 25-29 ans, Commerce et vente</title><circle cx="278.5" cy="310.8" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>David Murail — 35-39 ans, Artisanat et bâtiment</title><circle cx="137.1" cy="188.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Sébastien Cazaux — 30-34 ans, Artisanat et bâtiment</title><circle cx="121.5" cy="136.4" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Amri Madani — 40-44 ans, Encadrement et professions intellectuelles</title><circle cx="133.9" cy="127.3" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Pauline Bonneil — 25-29 ans, Agriculture et nature</title><circle cx="211.8" cy="260.8" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Julie Rignault — 35-39 ans, Artisanat et bâtiment</title><circle cx="185.9" cy="262.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Meïssa Seck — 25-29 ans, Commerce et vente</title><circle cx="229.5" cy="236.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Léa Sahin — 40-44 ans, Encadrement et professions intellectuelles</title><circle cx="182.7" cy="201.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Cécile Guy — 30-34 ans, Transport et logistique</title><circle cx="210.1" cy="186.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Ari Bentolila — 45 ans et plus, Encadrement et professions intellectuelles</title><circle cx="144.7" cy="165.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Marie Vilaseca — 25-29 ans, Commerce et vente</title><circle cx="278.5" cy="310.8" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Lola Potabes — 25-29 ans, Santé</title><circle cx="350.5" cy="338.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Vanessa Feuillatte — 35-39 ans, Arts, médias et image</title><circle cx="261.8" cy="343.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Nathanaël Branchereau — 25-29 ans, Artisanat et bâtiment</title><circle cx="166.9" cy="177.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Alexandre Cheron — 30-34 ans, Santé</title><circle cx="256.1" cy="223.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Michel Huy — 35-39 ans, Encadrement et professions intellectuelles</title><circle cx="166.7" cy="214.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Mélissa Pierru — 35-39 ans, Encadrement et professions intellectuelles</title><circle cx="215.4" cy="289.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Emmanuelle Boisseau — 45 ans et plus, Encadrement et professions intellectuelles</title><circle cx="193.5" cy="240.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Fabrice Giordano — 40-44 ans, Encadrement et professions intellectuelles</title><circle cx="133.9" cy="127.3" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Maud Collas — 35-39 ans, Commerce et vente</title><circle cx="248.5" cy="321.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Sarah Aboudeine — 30-34 ans, Encadrement et professions intellectuelles</title><circle cx="200.0" cy="237.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Frédéric Khouvilay — 35-39 ans, Restauration et hôtellerie</title><circle cx="241.6" cy="289.2" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Maxim Iarkov — 25-29 ans, Transport et logistique</title><circle cx="206.5" cy="152.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Gustin Comanescu — 25-29 ans, Action et sécurité</title><circle cx="230.4" cy="171.4" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Cassandre Lambert — 18-24 ans, Arts, médias et image</title><circle cx="461.0" cy="274.6" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Sophia Mansouri — 35-39 ans, Sport et coaching</title><circle cx="251.3" cy="322.0" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Ugo Lartiche — 40-44 ans, Agriculture et nature</title><circle cx="100.2" cy="109.8" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Jacques Roque — 35-39 ans, Arts, médias et image</title><circle cx="212.9" cy="269.2" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Cécile Belec — 40-44 ans, Sport et coaching</title><circle cx="218.6" cy="234.4" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Ilyesse Benyoub — 18-24 ans, Étudiants</title><circle cx="690.9" cy="113.1" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Charlotte Rasquin — 25-29 ans, Enseignement et éducation</title><circle cx="281.7" cy="359.5" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Thibault Bélanger — 30-34 ans, Agriculture et nature</title><circle cx="117.5" cy="145.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Cynthian Steinbach — 35-39 ans, Commerce et vente</title><circle cx="248.5" cy="321.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Allan Rousseeuw — 25-29 ans, Agriculture et nature</title><circle cx="162.9" cy="186.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Christian Chambon — 45 ans et plus, Commerce et vente</title><circle cx="177.6" cy="198.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Romane Ouvrard — 18-24 ans, Sport et coaching</title><circle cx="450.5" cy="252.9" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Mehdi Bounab-Lamiral — 25-29 ans, Transport et logistique</title><circle cx="206.5" cy="152.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Benoît Piedfer — 18-24 ans, Sport et coaching</title><circle cx="401.5" cy="178.4" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Mohamed Ayari — 30-34 ans, Sport et coaching</title><circle cx="186.7" cy="195.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Pauline Leperchois — 35-39 ans, Sport et coaching</title><circle cx="251.3" cy="322.0" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Andréa Zogron — 18-24 ans, Étudiants</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Adrien Bernaert — 18-24 ans, Encadrement et professions intellectuelles</title><circle cx="365.9" cy="145.8" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Frédéric Pignard — 45 ans et plus, Encadrement et professions intellectuelles</title><circle cx="144.7" cy="165.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Jessica Murcia — 35-39 ans, Restauration et hôtellerie</title><circle cx="290.5" cy="363.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Louise Picavet — 18-24 ans, Action et sécurité</title><circle cx="448.8" cy="187.9" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Joana Callico — 30-34 ans, Encadrement et professions intellectuelles</title><circle cx="200.0" cy="237.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Naïs Napoletano — 25-29 ans, Enseignement et éducation</title><circle cx="281.7" cy="359.5" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Pierre-Marie Ponsot — 35-39 ans, Encadrement et professions intellectuelles</title><circle cx="166.7" cy="214.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Maxime Lubian — 30-34 ans, Encadrement et professions intellectuelles</title><circle cx="151.0" cy="163.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Noémie Bessec — 30-34 ans, Encadrement et professions intellectuelles</title><circle cx="200.0" cy="237.6" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Céline Faccio — 35-39 ans, Commerce et vente</title><circle cx="248.5" cy="321.9" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Jérôme Salvatore — 45 ans et plus, Action et sécurité</title><circle cx="178.7" cy="133.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Claire Passas — 35-39 ans, Arts, médias et image</title><circle cx="261.8" cy="343.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Jérôme Molas — 40-44 ans, Artisanat et bâtiment</title><circle cx="104.2" cy="100.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Maël Lozach — 25-29 ans, Artisanat et bâtiment</title><circle cx="166.9" cy="177.1" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Gaëlle Fleury — 30-34 ans, Sans activité déclarée</title><circle cx="239.5" cy="280.3" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Françoise Fournier-Grigis — 40-44 ans, Encadrement et professions intellectuelles</title><circle cx="182.7" cy="201.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Clémence Dubent — 25-29 ans, Encadrement et professions intellectuelles</title><circle cx="245.4" cy="278.3" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Karine Iraundegui — 45 ans et plus, Commerce et vente</title><circle cx="226.6" cy="272.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Lionel Dubouchet — 40-44 ans, Commerce et vente</title><circle cx="166.9" cy="159.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Nora Toubal — 45 ans et plus, Encadrement et professions intellectuelles</title><circle cx="193.5" cy="240.0" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Jonathan Guez — 35-39 ans, Encadrement et professions intellectuelles</title><circle cx="166.7" cy="214.9" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Ulrich Bandeira — 40-44 ans, Transport et logistique</title><circle cx="144.1" cy="75.6" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Johan Pinaud — 35-39 ans, Transport et logistique</title><circle cx="176.8" cy="163.2" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Paul Estival — 35-39 ans, Sport et coaching</title><circle cx="202.3" cy="247.5" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Lola Krast — 18-24 ans, Étudiants</title><circle cx="739.8" cy="187.6" r="3.2" fill="var(--serie-3)" opacity="0.42"/></g>
+  <g class="marque"><title>Jade Correa — 30-34 ans, Commerce et vente</title><circle cx="233.1" cy="270.2" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Cindy Sulpice-Gonzalez — 30-34 ans, Action et sécurité</title><circle cx="234.0" cy="205.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Antonin Fortunato — 25-29 ans, Arts, médias et image</title><circle cx="242.8" cy="258.1" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Zakariya Bougoudouima — 25-29 ans, Action et sécurité</title><circle cx="230.4" cy="171.4" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Daniel Duquesnoy — 45 ans et plus, Sport et coaching</title><circle cx="180.4" cy="198.1" r="3.2" fill="var(--serie-1)" opacity="0.42"/></g>
+  <g class="marque"><title>Hugo Van Aertryck — 25-29 ans, Encadrement et professions intellectuelles</title><circle cx="196.4" cy="203.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Caroline Ledos — 35-39 ans, Action et sécurité</title><circle cx="249.6" cy="256.8" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
+  <g class="marque"><title>Guillaume Le Deun — 25-29 ans, Encadrement et professions intellectuelles</title><circle cx="196.4" cy="203.8" r="3.2" fill="var(--serie-4)" opacity="0.42"/></g>
+  <g class="marque"><title>Clarisse Cresseveur — 18-24 ans, Santé</title><circle cx="519.7" cy="280.3" r="3.2" fill="var(--serie-8)" opacity="0.42"/></g>
+  <g class="marque"><title>Cynthia Combes — 35-39 ans, Restauration et hôtellerie</title><circle cx="290.5" cy="363.7" r="3.2" fill="var(--serie-7)" opacity="0.42"/></g>
   <circle cx="619.3" cy="169.0" r="3" fill="var(--surface)" stroke="var(--encre)" stroke-width="1.6"/>
   <text x="626.3" y="168.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11">18-24 ans</text>
   <circle cx="194.5" cy="305.8" r="3" fill="var(--surface)" stroke="var(--encre)" stroke-width="1.6"/>
@@ -520,38 +520,38 @@
   <circle cx="124.9" cy="132.3" r="3" fill="var(--surface)" stroke="var(--encre)" stroke-width="1.6"/>
   <text x="131.9" y="131.3" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11">40-44 ans</text>
   <circle cx="324.9" cy="298.0" r="3" fill="var(--surface)" stroke="var(--encre)" stroke-width="1.6"/>
-  <text x="331.9" y="297.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11">f</text>
+  <text x="331.9" y="297.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11">femme</text>
   <circle cx="220.5" cy="150.4" r="3" fill="var(--surface)" stroke="var(--encre)" stroke-width="1.6"/>
-  <text x="227.5" y="149.4" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11">h</text>
+  <text x="227.5" y="149.4" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11">homme</text>
   <circle cx="249.2" cy="133.4" r="3" fill="var(--surface)" stroke="var(--encre)" stroke-width="1.6"/>
-  <text x="256.2" y="132.4" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11">action_securite</text>
+  <text x="256.2" y="132.4" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11">Action et sécurité</text>
   <circle cx="105.0" cy="163.0" r="3" fill="var(--surface)" stroke="var(--encre)" stroke-width="1.6"/>
-  <text x="112.0" y="162.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11">agriculture</text>
+  <text x="112.0" y="162.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11">Agriculture et nature</text>
   <circle cx="113.7" cy="144.8" r="3" fill="var(--surface)" stroke="var(--encre)" stroke-width="1.6"/>
-  <text x="120.7" y="143.8" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11">artisanat_btp</text>
+  <text x="120.7" y="143.8" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11">Artisanat et bâtiment</text>
   <circle cx="254.0" cy="358.4" r="3" fill="var(--surface)" stroke="var(--encre)" stroke-width="1.6"/>
-  <text x="261.0" y="357.4" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11">enseignement</text>
+  <text x="261.0" y="357.4" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11">Enseignement et éducation</text>
   <circle cx="869.8" cy="132.8" r="3" fill="var(--surface)" stroke="var(--encre)" stroke-width="1.6"/>
-  <text x="876.8" y="131.8" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11">etudiant</text>
+  <text x="876.8" y="131.8" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11">Étudiants</text>
   <circle cx="336.7" cy="345.1" r="3" fill="var(--surface)" stroke="var(--encre)" stroke-width="1.6"/>
-  <text x="343.7" y="344.1" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11">restauration_hotellerie</text>
+  <text x="343.7" y="344.1" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11">Restauration et hôtellerie</text>
   <circle cx="400.5" cy="316.7" r="3" fill="var(--surface)" stroke="var(--encre)" stroke-width="1.6"/>
-  <text x="407.5" y="315.7" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11">sante</text>
+  <text x="407.5" y="315.7" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11">Santé</text>
   <circle cx="198.3" cy="95.4" r="3" fill="var(--surface)" stroke="var(--encre)" stroke-width="1.6"/>
-  <text x="205.3" y="94.4" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11">transport</text>
+  <text x="205.3" y="94.4" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11">Transport et logistique</text>
   <text x="916.0" y="424.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">axe 1 — 8.4 % de l’information</text>
   <text x="54.0" y="42.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">axe 2 — 7.3 %</text>
   <circle cx="59" cy="13" r="4.5" fill="var(--serie-1)"/>
-  <text x="69.0" y="14.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">30-34 ans · h · agriculture</text>
-  <circle cx="283.4" cy="13" r="4.5" fill="var(--serie-3)"/>
-  <text x="293.4" y="14.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">18-24 ans · f · etudiant</text>
-  <circle cx="486.2" cy="13" r="4.5" fill="var(--serie-4)"/>
-  <text x="496.2" y="14.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">40-44 ans · h · artisanat_btp</text>
-  <circle cx="725.0" cy="13" r="4.5" fill="var(--serie-7)"/>
-  <text x="735.0" y="14.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">25-29 ans · f · commerce</text>
-  <circle cx="927.8" cy="13" r="4.5" fill="var(--serie-8)"/>
-  <text x="937.8" y="14.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">18-24 ans</text>
-  <circle cx="1022.5999999999999" cy="13" r="4.5" fill="var(--serie-1)"/>
-  <text x="1032.6" y="14.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">45 ans et plus · sans_emploi</text>
+  <text x="69.0" y="14.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">30-34 ans · homme · Agriculture et nature</text>
+  <circle cx="384.2" cy="13" r="4.5" fill="var(--serie-3)"/>
+  <text x="394.2" y="14.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">18-24 ans · femme · Étudiants</text>
+  <circle cx="623.0" cy="13" r="4.5" fill="var(--serie-4)"/>
+  <text x="633.0" y="14.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">40-44 ans · homme · Artisanat et bâtiment</text>
+  <circle cx="948.2" cy="13" r="4.5" fill="var(--serie-7)"/>
+  <text x="958.2" y="14.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">25-29 ans · femme · Commerce et vente</text>
+  <circle cx="1244.6000000000001" cy="13" r="4.5" fill="var(--serie-8)"/>
+  <text x="1254.6" y="14.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">18-24 ans</text>
+  <circle cx="1339.4" cy="13" r="4.5" fill="var(--serie-1)"/>
+  <text x="1349.4" y="14.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">45 ans et plus · Sans activité déclarée</text>
 </svg>
 </figure>

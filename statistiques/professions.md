@@ -71,5 +71,5 @@ documenté. Voir les <a href="{{ '/sources/' | relative_url }}">sources</a>.</p>
 tenus constants ? Oui : <a href="{{ '/statistiques/equilibre/' | relative_url }}">
 un modèle de durée</a> donne aux métiers d’encadrement un rapport de risque
 d’élimination de
-{% assign cc = site.data.stats.modeles.equilibre.cox.coefficients | where: "variable", "Métier : encadrement" | first %}
+{% assign cc = site.data.stats.modeles.equilibre.cox.coefficients | where: "variable", "Métier — Encadrement et professions intellectuelles" | first %}
 {{ cc.rapport }}, intervalle {{ cc.bas }} à {{ cc.haut }}.</p>

@@ -108,7 +108,7 @@ Trois lignes méritent d’être lues de près.
 
 {% assign cx = m.equilibre.cox.coefficients %}
 {% assign c_revenu = cx | where: "variable", "Déjà venu" | first %}
-{% assign c_cadre = cx | where: "variable", "Métier : encadrement" | first %}
+{% assign c_cadre = cx | where: "variable", "Métier — Encadrement et professions intellectuelles" | first %}
 {% assign c_femme = cx | where: "variable", "Femme" | first %}
 **« Déjà venu » : risque ×{{ c_revenu.rapport }}.** Un aventurier qui a joué une autre saison est
 éliminé **trois fois moins vite**, à âge, sexe, métier et saison identiques.

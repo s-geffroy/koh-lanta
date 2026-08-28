@@ -326,6 +326,47 @@ def controler_accents(c):
     return len(fautes)
 
 
+# Un identifiant du code -- « artisanat_btp », « age_centre_carre » -- affiche
+# tel quel dans une infobulle ou une colonne de tableau. C'est la meme faute
+# que l'absence d'accents : du code qui a fui dans le texte.
+RE_IDENTIFIANT = re.compile(r"\b[a-zA-Z]+_[a-zA-Z_]+\b")
+
+
+def controler_identifiants(c):
+    """Refuse un identifiant snake_case dans un texte publie."""
+    fautes = []
+
+    def examiner(origine, texte):
+        trouves = sorted({m.group(0) for m in RE_IDENTIFIANT.finditer(texte or "")})
+        if trouves:
+            fautes.append((origine, trouves[:4]))
+
+    dossier = os.path.join(RACINE, "_includes", "graphiques")
+    for nom in sorted(os.listdir(dossier)) if os.path.isdir(dossier) else []:
+        if not nom.endswith(".svg"):
+            continue
+        texte = open(os.path.join(dossier, nom), encoding="utf-8").read()
+        for balise, contenu in RE_BALISE_TEXTE.findall(texte):
+            examiner(f"{nom} <{balise}>", html.unescape(contenu))
+
+    chemin = os.path.join(RACINE, "_data", "stats.yml")
+    if os.path.exists(chemin):
+        stats = yaml.safe_load(open(chemin, encoding="utf-8")) or {}
+        m = stats.get("modeles") or {}
+        for t in (m.get("registre") or []):
+            for champ in ("libelle", "question", "lecture"):
+                examiner(f"registre « {t.get('cle')} » / {champ}", t.get(champ))
+        for x in ((m.get("equilibre") or {}).get("cox") or {}).get("coefficients") or []:
+            examiner("coefficients de Cox", x.get("variable"))
+        for a in (m.get("casting") or {}).get("archetypes") or []:
+            examiner("archetypes du casting", a.get("libelle"))
+
+    for origine, mots in fautes:
+        c.avertir(f"{origine} : identifiant du code dans un texte publie — "
+                  f"{', '.join(mots)}")
+    return len(fautes)
+
+
 def main():
     c = Controle()
     donnees = charger_donnees()
@@ -429,6 +470,7 @@ def main():
     controler_reproductibilite(c)
     controler_aleatoire(c)
     controler_accents(c)
+    controler_identifiants(c)
 
     if os.path.isdir(os.path.join(RACINE, "_site")):
         c.avertir("_site/ existe : verifier qu'il est bien ignore par Git")

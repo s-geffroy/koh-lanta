@@ -8791,50 +8791,50 @@ modeles:
       annee: 2006
     archetypes:
     - code: 3
-      libelle: 25-29 ans · f · commerce
+      libelle: 25-29 ans · femme · Commerce et vente
       traits:
       - modalite: 25-29 ans
         part: 51.5
-      - modalite: f
+      - modalite: femme
         part: 82.3
-      - modalite: commerce
+      - modalite: Commerce et vente
         part: 23.1
       effectif: 130
       part: 25.5
       age_median: 29.0
       part_femmes: 82.3
     - code: 0
-      libelle: 30-34 ans · h · agriculture
+      libelle: 30-34 ans · homme · Agriculture et nature
       traits:
       - modalite: 30-34 ans
         part: 68.0
-      - modalite: h
+      - modalite: homme
         part: 68.9
-      - modalite: agriculture
+      - modalite: Agriculture et nature
         part: 19.4
       effectif: 103
       part: 20.2
       age_median: 32.0
       part_femmes: 31.1
     - code: 2
-      libelle: 40-44 ans · h · artisanat_btp
+      libelle: 40-44 ans · homme · Artisanat et bâtiment
       traits:
       - modalite: 40-44 ans
         part: 44.4
-      - modalite: h
+      - modalite: homme
         part: 74.7
-      - modalite: artisanat_btp
+      - modalite: Artisanat et bâtiment
         part: 42.4
       effectif: 99
       part: 19.4
       age_median: 39.0
       part_femmes: 25.3
     - code: 5
-      libelle: 45 ans et plus · sans_emploi
+      libelle: 45 ans et plus · Sans activité déclarée
       traits:
       - modalite: 45 ans et plus
         part: 85.7
-      - modalite: sans_emploi
+      - modalite: Sans activité déclarée
         part: 22.1
       effectif: 77
       part: 15.1
@@ -8850,13 +8850,13 @@ modeles:
       age_median: 23.0
       part_femmes: 49.3
     - code: 1
-      libelle: 18-24 ans · f · etudiant
+      libelle: 18-24 ans · femme · Étudiants
       traits:
       - modalite: 18-24 ans
         part: 100.0
-      - modalite: f
+      - modalite: femme
         part: 57.6
-      - modalite: etudiant
+      - modalite: Étudiants
         part: 100.0
       effectif: 33
       part: 6.5
@@ -8900,2547 +8900,2547 @@ modeles:
       y: 0.343
       groupe: 1
       nom: Marie Boyer
-      detail: Marie Boyer — 18-24 ans, etudiant
+      detail: Marie Boyer — 18-24 ans, Étudiants
     - x: 0.49
       y: 1.221
       groupe: 4
       nom: Guillaume Noël
-      detail: Guillaume Noël — 18-24 ans, transport
+      detail: Guillaume Noël — 18-24 ans, Transport et logistique
     - x: -0.445
       y: 0.856
       groupe: 5
       nom: Jean-Luc Fiorina
-      detail: Jean-Luc Fiorina — 45 ans et plus, action_securite
+      detail: Jean-Luc Fiorina — 45 ans et plus, Action et sécurité
     - x: 2.214
       y: 0.343
       groupe: 1
       nom: Gaël Gollen
-      detail: Gaël Gollen — 18-24 ans, etudiant
+      detail: Gaël Gollen — 18-24 ans, Étudiants
     - x: -0.16
       y: 0.345
       groupe: 2
       nom: Harry Levy
-      detail: Harry Levy — 40-44 ans, sante
+      detail: Harry Levy — 40-44 ans, Santé
     - x: 2.214
       y: 0.343
       groupe: 1
       nom: Sandra Acabado
-      detail: Sandra Acabado — 18-24 ans, etudiant
+      detail: Sandra Acabado — 18-24 ans, Étudiants
     - x: 0.662
       y: 0.225
       groupe: 4
       nom: David Noël
-      detail: David Noël — 18-24 ans, arts_medias
+      detail: David Noël — 18-24 ans, Arts, médias et image
     - x: 1.982
       y: 1.043
       groupe: 1
       nom: Stéphane Bertheau
-      detail: Stéphane Bertheau — 18-24 ans, etudiant
+      detail: Stéphane Bertheau — 18-24 ans, Étudiants
     - x: 0.028
       y: -0.815
       groupe: 3
       nom: Géraldine Doyen
-      detail: Géraldine Doyen — 25-29 ans, commerce
+      detail: Géraldine Doyen — 25-29 ans, Commerce et vente
     - x: -0.188
       y: -0.551
       groupe: 5
       nom: Michèle Valembois
-      detail: Michèle Valembois — 45 ans et plus, sans_emploi
+      detail: Michèle Valembois — 45 ans et plus, Sans activité déclarée
     - x: -0.404
       y: -0.189
       groupe: 0
       nom: William Lecomte
-      detail: William Lecomte — 30-34 ans, enseignement
+      detail: William Lecomte — 30-34 ans, Enseignement et éducation
     - x: -0.426
       y: 0.209
       groupe: 2
       nom: Françoise Avignon
-      detail: Françoise Avignon — 40-44 ans, encadrement
+      detail: Françoise Avignon — 40-44 ans, Encadrement et professions intellectuelles
     - x: -0.501
       y: 0.441
       groupe: 2
       nom: Romain Bissol
-      detail: Romain Bissol — 25-29 ans, artisanat_btp
+      detail: Romain Bissol — 25-29 ans, Artisanat et bâtiment
     - x: -0.576
       y: 0.573
       groupe: 0
       nom: Patricia Tanguy
-      detail: Patricia Tanguy — 30-34 ans, encadrement
+      detail: Patricia Tanguy — 30-34 ans, Encadrement et professions intellectuelles
     - x: 0.091
       y: -1.02
       groupe: 3
       nom: Guénaëlle Biras
-      detail: Guénaëlle Biras — 25-29 ans, arts_medias
+      detail: Guénaëlle Biras — 25-29 ans, Arts, médias et image
     - x: -0.283
       y: -0.424
       groupe: 3
       nom: Gilles Nicolet
-      detail: Gilles Nicolet — 35-39 ans, arts_medias
+      detail: Gilles Nicolet — 35-39 ans, Arts, médias et image
     - x: 0.137
       y: -0.374
       groupe: 3
       nom: Xavier Lemasson
-      detail: Xavier Lemasson — 25-29 ans, sante
+      detail: Xavier Lemasson — 25-29 ans, Santé
     - x: 0.028
       y: -0.815
       groupe: 3
       nom: Caroline Lamotte
-      detail: Caroline Lamotte — 25-29 ans, commerce
+      detail: Caroline Lamotte — 25-29 ans, Commerce et vente
     - x: 1.029
       y: -0.663
       groupe: 4
       nom: Céline Fortier
-      detail: Céline Fortier — 18-24 ans, restauration_hotellerie
+      detail: Céline Fortier — 18-24 ans, Restauration et hôtellerie
     - x: 0.798
       y: 0.037
       groupe: 4
       nom: Nelly Baradeau
-      detail: Nelly Baradeau — 18-24 ans, restauration_hotellerie
+      detail: Nelly Baradeau — 18-24 ans, Restauration et hôtellerie
     - x: -0.437
       y: 0.244
       groupe: 5
       nom: Pierre Cambon
-      detail: Pierre Cambon — 45 ans et plus, sport
+      detail: Pierre Cambon — 45 ans et plus, Sport et coaching
     - x: -0.005
       y: -0.508
       groupe: 3
       nom: Jacky Forteron
-      detail: Jacky Forteron — 25-29 ans, restauration_hotellerie
+      detail: Jacky Forteron — 25-29 ans, Restauration et hôtellerie
     - x: -0.576
       y: 0.573
       groupe: 0
       nom: Adonis Koupaki
-      detail: Adonis Koupaki — 30-34 ans, encadrement
+      detail: Adonis Koupaki — 30-34 ans, Encadrement et professions intellectuelles
     - x: 0.599
       y: 0.43
       groupe: 4
       nom: Jimmy Denis
-      detail: Jimmy Denis — 18-24 ans, commerce
+      detail: Jimmy Denis — 18-24 ans, Commerce et vente
     - x: -0.114
       y: -0.919
       groupe: 3
       nom: Béatrice Cloix Penisson
-      detail: Béatrice Cloix Penisson — 35-39 ans, commerce
+      detail: Béatrice Cloix Penisson — 35-39 ans, Commerce et vente
     - x: 0.302
       y: 0.986
       groupe: 2
       nom: François-Xavier Arguillère
-      detail: François-Xavier Arguillère — 18-24 ans, artisanat_btp
+      detail: François-Xavier Arguillère — 18-24 ans, Artisanat et bâtiment
     - x: 0.227
       y: -1.177
       groupe: 3
       nom: Isabelle Vial
-      detail: Isabelle Vial — 35-39 ans, sante
+      detail: Isabelle Vial — 35-39 ans, Santé
     - x: 0.091
       y: -1.02
       groupe: 3
       nom: Maud Garnier
-      detail: Maud Garnier — 25-29 ans, arts_medias
+      detail: Maud Garnier — 25-29 ans, Arts, médias et image
     - x: -0.183
       y: 0.178
       groupe: 0
       nom: Marianne Mondon
-      detail: Marianne Mondon — 30-34 ans, action_securite
+      detail: Marianne Mondon — 30-34 ans, Action et sécurité
     - x: -0.387
       y: 0.04
       groupe: 5
       nom: Bernard Lenoir
-      detail: Bernard Lenoir — 45 ans et plus, arts_medias
+      detail: Bernard Lenoir — 45 ans et plus, Arts, médias et image
     - x: -0.174
       y: -0.211
       groupe: 5
       nom: Nicolas Leoni
-      detail: Nicolas Leoni — 25-29 ans, sans_emploi
+      detail: Nicolas Leoni — 25-29 ans, Sans activité déclarée
     - x: -0.129
       y: -0.51
       groupe: 3
       nom: Amel Fatnassi
-      detail: Amel Fatnassi — 25-29 ans, encadrement
+      detail: Amel Fatnassi — 25-29 ans, Encadrement et professions intellectuelles
     - x: 0.028
       y: -0.815
       groupe: 3
       nom: Alexandra Denikine
-      detail: Alexandra Denikine — 25-29 ans, commerce
+      detail: Alexandra Denikine — 25-29 ans, Commerce et vente
     - x: 2.214
       y: 0.343
       groupe: 1
       nom: Candice Cohen
-      detail: Candice Cohen — 18-24 ans, etudiant
+      detail: Candice Cohen — 18-24 ans, Étudiants
     - x: -0.798
       y: 1.16
       groupe: 2
       nom: Michel Jeandel
-      detail: Michel Jeandel — 40-44 ans, artisanat_btp
+      detail: Michel Jeandel — 40-44 ans, Artisanat et bâtiment
     - x: -0.206
       y: -0.301
       groupe: 3
       nom: Sophie Guilloix
-      detail: Sophie Guilloix — 40-44 ans, arts_medias
+      detail: Sophie Guilloix — 40-44 ans, Arts, médias et image
     - x: 1.029
       y: -0.663
       groupe: 4
       nom: Julie Bourdon
-      detail: Julie Bourdon — 18-24 ans, restauration_hotellerie
+      detail: Julie Bourdon — 18-24 ans, Restauration et hôtellerie
     - x: 0.091
       y: -1.02
       groupe: 3
       nom: Linda Delamarre
-      detail: Linda Delamarre — 25-29 ans, arts_medias
+      detail: Linda Delamarre — 25-29 ans, Arts, médias et image
     - x: -0.657
       y: 0.909
       groupe: 2
       nom: Philippe Huquet
-      detail: Philippe Huquet — 40-44 ans, encadrement
+      detail: Philippe Huquet — 40-44 ans, Encadrement et professions intellectuelles
     - x: 1.982
       y: 1.043
       groupe: 1
       nom: Alexandre Bérard
-      detail: Alexandre Bérard — 18-24 ans, etudiant
+      detail: Alexandre Bérard — 18-24 ans, Étudiants
     - x: -0.735
       y: 0.738
       groupe: 0
       nom: Richard Lecourt
-      detail: Richard Lecourt — 30-34 ans, agriculture
+      detail: Richard Lecourt — 30-34 ans, Agriculture et nature
     - x: -0.129
       y: -0.51
       groupe: 3
       nom: Sylvie Pommier
-      detail: Sylvie Pommier — 25-29 ans, encadrement
+      detail: Sylvie Pommier — 25-29 ans, Encadrement et professions intellectuelles
     - x: -0.204
       y: -0.115
       groupe: 3
       nom: Sébastien Loew
-      detail: Sébastien Loew — 25-29 ans, commerce
+      detail: Sébastien Loew — 25-29 ans, Commerce et vente
     - x: -0.296
       y: 0.358
       groupe: 0
       nom: Valérie Dot
-      detail: Valérie Dot — 30-34 ans, transport
+      detail: Valérie Dot — 30-34 ans, Transport et logistique
     - x: 0.043
       y: -1.272
       groupe: 3
       nom: Hélène Patry
-      detail: Hélène Patry — 25-29 ans, enseignement
+      detail: Hélène Patry — 25-29 ans, Enseignement et éducation
     - x: -0.191
       y: -0.116
       groupe: 0
       nom: Moundir Zoughari
-      detail: Moundir Zoughari — 25-29 ans, sport
+      detail: Moundir Zoughari — 25-29 ans, Sport et coaching
     - x: -0.445
       y: 0.856
       groupe: 5
       nom: Antoine Sanchez
-      detail: Antoine Sanchez — 45 ans et plus, action_securite
+      detail: Antoine Sanchez — 45 ans et plus, Action et sécurité
     - x: 0.442
       y: 0.735
       groupe: 4
       nom: Moussa Niangane
-      detail: Moussa Niangane — 18-24 ans, encadrement
+      detail: Moussa Niangane — 18-24 ans, Encadrement et professions intellectuelles
     - x: 0.012
       y: -0.826
       groupe: 3
       nom: Delphine Bano
-      detail: Delphine Bano — 30-34 ans, restauration_hotellerie
+      detail: Delphine Bano — 30-34 ans, Restauration et hôtellerie
     - x: -0.269
       y: -0.097
       groupe: 2
       nom: Isabelle Seguin
-      detail: Isabelle Seguin — 40-44 ans, commerce
+      detail: Isabelle Seguin — 40-44 ans, Commerce et vente
     - x: -0.502
       y: 0.086
       groupe: 2
       nom: Nelson Parente
-      detail: Nelson Parente — 35-39 ans, encadrement
+      detail: Nelson Parente — 35-39 ans, Encadrement et professions intellectuelles
     - x: -0.798
       y: 1.16
       groupe: 2
       nom: Vidéli Dittmar
-      detail: Vidéli Dittmar — 40-44 ans, artisanat_btp
+      detail: Vidéli Dittmar — 40-44 ans, Artisanat et bâtiment
     - x: 0.674
       y: 0.035
       groupe: 4
       nom: Sabira
-      detail: Sabira — 18-24 ans, encadrement
+      detail: Sabira — 18-24 ans, Encadrement et professions intellectuelles
     - x: -0.129
       y: -0.51
       groupe: 3
       nom: Vicky Szikman
-      detail: Vicky Szikman — 25-29 ans, encadrement
+      detail: Vicky Szikman — 25-29 ans, Encadrement et professions intellectuelles
     - x: -0.606
       y: 0.55
       groupe: 5
       nom: Jean-Bernard De Cools
-      detail: Jean-Bernard De Cools — 45 ans et plus, encadrement
+      detail: Jean-Bernard De Cools — 45 ans et plus, Encadrement et professions intellectuelles
     - x: 0.043
       y: -1.272
       groupe: 3
       nom: Nathalie Lapicque
-      detail: Nathalie Lapicque — 25-29 ans, enseignement
+      detail: Nathalie Lapicque — 25-29 ans, Enseignement et éducation
     - x: 1.982
       y: 1.043
       groupe: 1
       nom: Guillaume Brauer
-      detail: Guillaume Brauer — 18-24 ans, etudiant
+      detail: Guillaume Brauer — 18-24 ans, Étudiants
     - x: -0.155
       y: -0.66
       groupe: 5
       nom: Odile Héritier
-      detail: Odile Héritier — 45 ans et plus, arts_medias
+      detail: Odile Héritier — 45 ans et plus, Arts, médias et image
     - x: -0.114
       y: -0.919
       groupe: 3
       nom: Catherine Ehret-Mader
-      detail: Catherine Ehret-Mader — 35-39 ans, commerce
+      detail: Catherine Ehret-Mader — 35-39 ans, Commerce et vente
     - x: 0.369
       y: -1.074
       groupe: 3
       nom: Sophie Eeckhout
-      detail: Sophie Eeckhout — 25-29 ans, sante
+      detail: Sophie Eeckhout — 25-29 ans, Santé
     - x: -0.005
       y: -0.508
       groupe: 3
       nom: Alban Oswald
-      detail: Alban Oswald — 25-29 ans, restauration_hotellerie
+      detail: Alban Oswald — 25-29 ans, Restauration et hôtellerie
     - x: 0.043
       y: -1.272
       groupe: 3
       nom: Amélie Grégoire
-      detail: Amélie Grégoire — 25-29 ans, enseignement
+      detail: Amélie Grégoire — 25-29 ans, Enseignement et éducation
     - x: -0.191
       y: -0.116
       groupe: 0
       nom: Romuald Lafite
-      detail: Romuald Lafite — 25-29 ans, sport
+      detail: Romuald Lafite — 25-29 ans, Sport et coaching
     - x: -0.798
       y: 1.16
       groupe: 2
       nom: Raphaël Andrès
-      detail: Raphaël Andrès — 40-44 ans, artisanat_btp
+      detail: Raphaël Andrès — 40-44 ans, Artisanat et bâtiment
     - x: -0.187
       y: -0.433
       groupe: 3
       nom: Linda Alario
-      detail: Linda Alario — 30-34 ans, commerce
+      detail: Linda Alario — 30-34 ans, Commerce et vente
     - x: -0.642
       y: 0.338
       groupe: 2
       nom: Philippe Bordier
-      detail: Philippe Bordier — 35-39 ans, artisanat_btp
+      detail: Philippe Bordier — 35-39 ans, Artisanat et bâtiment
     - x: -0.124
       y: -0.637
       groupe: 0
       nom: Aude Réant
-      detail: Aude Réant — 30-34 ans, arts_medias
+      detail: Aude Réant — 30-34 ans, Arts, médias et image
     - x: 0.939
       y: 0.172
       groupe: 4
       nom: Mathieu Huguin
-      detail: Mathieu Huguin — 18-24 ans, sante
+      detail: Mathieu Huguin — 18-24 ans, Santé
     - x: -0.265
       y: 0.514
       groupe: 2
       nom: Sylvie Sébert
-      detail: Sylvie Sébert — 40-44 ans, action_securite
+      detail: Sylvie Sébert — 40-44 ans, Action et sécurité
     - x: 0.091
       y: -1.02
       groupe: 3
       nom: Caroline Colusso
-      detail: Caroline Colusso — 25-29 ans, arts_medias
+      detail: Caroline Colusso — 25-29 ans, Arts, médias et image
     - x: 0.86
       y: -0.366
       groupe: 5
       nom: Marie-Cécile Maréchal
-      detail: Marie-Cécile Maréchal — 18-24 ans, sans_emploi
+      detail: Marie-Cécile Maréchal — 18-24 ans, Sans activité déclarée
     - x: -0.265
       y: 0.514
       groupe: 2
       nom: Eliane Vigneron
-      detail: Eliane Vigneron — 40-44 ans, action_securite
+      detail: Eliane Vigneron — 40-44 ans, Action et sécurité
     - x: -0.411
       y: -0.362
       groupe: 2
       nom: Thierry Ramos
-      detail: Thierry Ramos — 35-39 ans, artisanat_btp
+      detail: Thierry Ramos — 35-39 ans, Artisanat et bâtiment
     - x: 0.599
       y: 0.43
       groupe: 4
       nom: Sakhone Holaphong
-      detail: Sakhone Holaphong — 18-24 ans, commerce
+      detail: Sakhone Holaphong — 18-24 ans, Commerce et vente
     - x: -0.415
       y: 0.878
       groupe: 0
       nom: Jérôme Villaseque
-      detail: Jérôme Villaseque — 30-34 ans, action_securite
+      detail: Jérôme Villaseque — 30-34 ans, Action et sécurité
     - x: -0.271
       y: -0.614
       groupe: 3
       nom: Christine Isoart
-      detail: Christine Isoart — 35-39 ans, encadrement
+      detail: Christine Isoart — 35-39 ans, Encadrement et professions intellectuelles
     - x: 1.029
       y: -0.663
       groupe: 4
       nom: Coumba Baradji
-      detail: Coumba Baradji — 18-24 ans, restauration_hotellerie
+      detail: Coumba Baradji — 18-24 ans, Restauration et hôtellerie
     - x: -0.387
       y: 0.04
       groupe: 5
       nom: Pierre Vaney
-      detail: Pierre Vaney — 45 ans et plus, arts_medias
+      detail: Pierre Vaney — 45 ans et plus, Arts, médias et image
     - x: -0.051
       y: -1.124
       groupe: 3
       nom: Véronique Lobjoie
-      detail: Véronique Lobjoie — 35-39 ans, arts_medias
+      detail: Véronique Lobjoie — 35-39 ans, Arts, médias et image
     - x: -0.141
       y: -0.32
       groupe: 3
       nom: Alexis Tournier
-      detail: Alexis Tournier — 25-29 ans, arts_medias
+      detail: Alexis Tournier — 25-29 ans, Arts, médias et image
     - x: 0.49
       y: 1.221
       groupe: 4
       nom: Mohamed Derradji
-      detail: Mohamed Derradji — 18-24 ans, transport
+      detail: Mohamed Derradji — 18-24 ans, Transport et logistique
     - x: -0.42
       y: 0.149
       groupe: 5
       nom: Francis Bordas
-      detail: Francis Bordas — 45 ans et plus, sans_emploi
+      detail: Francis Bordas — 45 ans et plus, Sans activité déclarée
     - x: 2.214
       y: 0.343
       groupe: 1
       nom: Clémence Castel
-      detail: Clémence Castel — 18-24 ans, etudiant
+      detail: Clémence Castel — 18-24 ans, Étudiants
     - x: 1.171
       y: -0.528
       groupe: 4
       nom: Karine Amorsi
-      detail: Karine Amorsi — 18-24 ans, sante
+      detail: Karine Amorsi — 18-24 ans, Santé
     - x: -0.344
       y: -0.127
       groupe: 0
       nom: Mama El Fayed
-      detail: Mama El Fayed — 30-34 ans, encadrement
+      detail: Mama El Fayed — 30-34 ans, Encadrement et professions intellectuelles
     - x: -0.488
       y: 0.603
       groupe: 2
       nom: Nicolas Maire
-      detail: Nicolas Maire — 40-44 ans, sport
+      detail: Nicolas Maire — 40-44 ans, Sport et coaching
     - x: -0.204
       y: -0.115
       groupe: 3
       nom: Nico Felger
-      detail: Nico Felger — 25-29 ans, commerce
+      detail: Nico Felger — 25-29 ans, Commerce et vente
     - x: -0.558
       y: 1.036
       groupe: 0
       nom: Jean-Claude Errin
-      detail: Jean-Claude Errin — 45 ans et plus, transport
+      detail: Jean-Claude Errin — 45 ans et plus, Transport et logistique
     - x: -0.716
       y: 0.824
       groupe: 2
       nom: Mika Tailleur
-      detail: Mika Tailleur — 30-34 ans, artisanat_btp
+      detail: Mika Tailleur — 30-34 ans, Artisanat et bâtiment
     - x: -0.484
       y: 0.124
       groupe: 2
       nom: Estelle Granger
-      detail: Estelle Granger — 30-34 ans, artisanat_btp
+      detail: Estelle Granger — 30-34 ans, Artisanat et bâtiment
     - x: -0.271
       y: -0.614
       groupe: 3
       nom: Nathalie Bella
-      detail: Nathalie Bella — 35-39 ans, encadrement
+      detail: Nathalie Bella — 35-39 ans, Encadrement et professions intellectuelles
     - x: -0.766
       y: 0.715
       groupe: 5
       nom: Alain Ponton
-      detail: Alain Ponton — 45 ans et plus, agriculture
+      detail: Alain Ponton — 45 ans et plus, Agriculture et nature
     - x: -0.239
       y: -0.192
       groupe: 5
       nom: Catherine Brun
-      detail: Catherine Brun — 40-44 ans, sans_emploi
+      detail: Catherine Brun — 40-44 ans, Sans activité déclarée
     - x: -0.269
       y: -0.259
       groupe: 2
       nom: Gaëlle Zanetton
-      detail: Gaëlle Zanetton — 25-29 ans, artisanat_btp
+      detail: Gaëlle Zanetton — 25-29 ans, Artisanat et bâtiment
     - x: 0.893
       y: -0.475
       groupe: 4
       nom: Marie Bayard
-      detail: Marie Bayard — 18-24 ans, arts_medias
+      detail: Marie Bayard — 18-24 ans, Arts, médias et image
     - x: -0.52
       y: 0.355
       groupe: 0
       nom: Ludovic Laresche
-      detail: Ludovic Laresche — 25-29 ans, agriculture
+      detail: Ludovic Laresche — 25-29 ans, Agriculture et nature
     - x: -0.576
       y: 0.573
       groupe: 0
       nom: Sébastien Roullé
-      detail: Sébastien Roullé — 30-34 ans, encadrement
+      detail: Sébastien Roullé — 30-34 ans, Encadrement et professions intellectuelles
     - x: 0.83
       y: -0.27
       groupe: 4
       nom: Émilie Frahi
-      detail: Émilie Frahi — 18-24 ans, commerce
+      detail: Émilie Frahi — 18-24 ans, Commerce et vente
     - x: 0.611
       y: 0.429
       groupe: 4
       nom: François-David Cardonnel
-      detail: François-David Cardonnel — 18-24 ans, sport
+      detail: François-David Cardonnel — 18-24 ans, Sport et coaching
     - x: -0.454
       y: 0.572
       groupe: 0
       nom: Ali Jaffar
-      detail: Ali Jaffar — 35-39 ans, transport
+      detail: Ali Jaffar — 35-39 ans, Transport et logistique
     - x: -0.271
       y: -0.614
       groupe: 3
       nom: Pascale Bodin
-      detail: Pascale Bodin — 35-39 ans, encadrement
+      detail: Pascale Bodin — 35-39 ans, Encadrement et professions intellectuelles
     - x: 0.83
       y: -0.27
       groupe: 4
       nom: Marie-Laure Dagniaux
-      detail: Marie-Laure Dagniaux — 18-24 ans, commerce
+      detail: Marie-Laure Dagniaux — 18-24 ans, Commerce et vente
     - x: 0.893
       y: -0.475
       groupe: 4
       nom: Mélanie Guyon
-      detail: Mélanie Guyon — 18-24 ans, arts_medias
+      detail: Mélanie Guyon — 18-24 ans, Arts, médias et image
     - x: -0.375
       y: -0.15
       groupe: 5
       nom: Véronique Lambert
-      detail: Véronique Lambert — 45 ans et plus, encadrement
+      detail: Véronique Lambert — 45 ans et plus, Encadrement et professions intellectuelles
     - x: -0.129
       y: -0.51
       groupe: 3
       nom: Chloé Vavasseur
-      detail: Chloé Vavasseur — 25-29 ans, encadrement
+      detail: Chloé Vavasseur — 25-29 ans, Encadrement et professions intellectuelles
     - x: -0.407
       y: 0.267
       groupe: 0
       nom: Érick Africaa
-      detail: Érick Africaa — 30-34 ans, sport
+      detail: Érick Africaa — 30-34 ans, Sport et coaching
     - x: -0.114
       y: -0.919
       groupe: 3
       nom: Filomène Mendonca
-      detail: Filomène Mendonca — 35-39 ans, commerce
+      detail: Filomène Mendonca — 35-39 ans, Commerce et vente
     - x: -0.606
       y: 0.55
       groupe: 5
       nom: Adrien Torrin
-      detail: Adrien Torrin — 45 ans et plus, encadrement
+      detail: Adrien Torrin — 45 ans et plus, Encadrement et professions intellectuelles
     - x: 0.283
       y: 0.9
       groupe: 0
       nom: Grégoire Delachaux
-      detail: Grégoire Delachaux — 18-24 ans, agriculture
+      detail: Grégoire Delachaux — 18-24 ans, Agriculture et nature
     - x: -0.735
       y: 0.738
       groupe: 0
       nom: Laurent Boudes
-      detail: Laurent Boudes — 30-34 ans, agriculture
+      detail: Laurent Boudes — 30-34 ans, Agriculture et nature
     - x: -0.657
       y: 0.909
       groupe: 2
       nom: Patrick Brasier De Thuy
-      detail: Patrick Brasier De Thuy — 40-44 ans, encadrement
+      detail: Patrick Brasier De Thuy — 40-44 ans, Encadrement et professions intellectuelles
     - x: -0.52
       y: 0.355
       groupe: 0
       nom: Simon Quintilla
-      detail: Simon Quintilla — 25-29 ans, agriculture
+      detail: Simon Quintilla — 25-29 ans, Agriculture et nature
     - x: -0.43
       y: -0.449
       groupe: 0
       nom: Maryline Hemelsdael
-      detail: Maryline Hemelsdael — 35-39 ans, agriculture
+      detail: Maryline Hemelsdael — 35-39 ans, Agriculture et nature
     - x: 0.49
       y: 1.221
       groupe: 4
       nom: Kevin Cuoco
-      detail: Kevin Cuoco — 18-24 ans, transport
+      detail: Kevin Cuoco — 18-24 ans, Transport et logistique
     - x: 0.674
       y: 0.035
       groupe: 4
       nom: Jade Handi
-      detail: Jade Handi — 18-24 ans, encadrement
+      detail: Jade Handi — 18-24 ans, Encadrement et professions intellectuelles
     - x: -0.426
       y: 0.209
       groupe: 2
       nom: Valérie Tartacède-Bollaert
-      detail: Valérie Tartacède-Bollaert — 40-44 ans, encadrement
+      detail: Valérie Tartacède-Bollaert — 40-44 ans, Encadrement et professions intellectuelles
     - x: 0.49
       y: 1.221
       groupe: 4
       nom: Céga Coulibaly
-      detail: Céga Coulibaly — 18-24 ans, transport
+      detail: Céga Coulibaly — 18-24 ans, Transport et logistique
     - x: 0.893
       y: -0.475
       groupe: 4
       nom: Irya Cissé
-      detail: Irya Cissé — 18-24 ans, arts_medias
+      detail: Irya Cissé — 18-24 ans, Arts, médias et image
     - x: -0.124
       y: -0.637
       groupe: 0
       nom: Morgane Rodriguès
-      detail: Morgane Rodriguès — 30-34 ans, arts_medias
+      detail: Morgane Rodriguès — 30-34 ans, Arts, médias et image
     - x: 2.214
       y: 0.343
       groupe: 1
       nom: Jessica Joullié
-      detail: Jessica Joullié — 18-24 ans, etudiant
+      detail: Jessica Joullié — 18-24 ans, Étudiants
     - x: -0.642
       y: 0.338
       groupe: 2
       nom: Alain Garcia
-      detail: Alain Garcia — 35-39 ans, artisanat_btp
+      detail: Alain Garcia — 35-39 ans, Artisanat et bâtiment
     - x: -0.501
       y: 0.603
       groupe: 2
       nom: Jean-Bernard Hauton-Arnaud
-      detail: Jean-Bernard Hauton-Arnaud — 40-44 ans, commerce
+      detail: Jean-Bernard Hauton-Arnaud — 40-44 ans, Commerce et vente
     - x: -0.361
       y: 0.19
       groupe: 2
       nom: Christopher Lavaud
-      detail: Christopher Lavaud — 25-29 ans, encadrement
+      detail: Christopher Lavaud — 25-29 ans, Encadrement et professions intellectuelles
     - x: -0.333
       y: -0.22
       groupe: 0
       nom: Christophe Guttatoro-Martin
-      detail: Christophe Guttatoro-Martin — 35-39 ans, sport
+      detail: Christophe Guttatoro-Martin — 35-39 ans, Sport et coaching
     - x: 2.214
       y: 0.343
       groupe: 1
       nom: Charlène Hoffness
-      detail: Charlène Hoffness — 18-24 ans, etudiant
+      detail: Charlène Hoffness — 18-24 ans, Étudiants
     - x: -0.642
       y: 0.338
       groupe: 2
       nom: Hakim Djellali
-      detail: Hakim Djellali — 35-39 ans, artisanat_btp
+      detail: Hakim Djellali — 35-39 ans, Artisanat et bâtiment
     - x: -0.45
       y: 0.245
       groupe: 5
       nom: Régis Colombier
-      detail: Régis Colombier — 45 ans et plus, commerce
+      detail: Régis Colombier — 45 ans et plus, Commerce et vente
     - x: -0.566
       y: 0.46
       groupe: 2
       nom: Carole Rapin
-      detail: Carole Rapin — 40-44 ans, artisanat_btp
+      detail: Carole Rapin — 40-44 ans, Artisanat et bâtiment
     - x: 0.043
       y: -1.272
       groupe: 3
       nom: Nathalie Ensargueix
-      detail: Nathalie Ensargueix — 25-29 ans, enseignement
+      detail: Nathalie Ensargueix — 25-29 ans, Enseignement et éducation
     - x: -0.528
       y: 1.058
       groupe: 0
       nom: Bertrand Bolle
-      detail: Bertrand Bolle — 30-34 ans, transport
+      detail: Bertrand Bolle — 30-34 ans, Transport et logistique
     - x: -0.716
       y: 0.824
       groupe: 2
       nom: Frédéric Favier
-      detail: Frédéric Favier — 30-34 ans, artisanat_btp
+      detail: Frédéric Favier — 30-34 ans, Artisanat et bâtiment
     - x: 0.032
       y: -0.205
       groupe: 3
       nom: Christelle Gauzet
-      detail: Christelle Gauzet — 25-29 ans, action_securite
+      detail: Christelle Gauzet — 25-29 ans, Action et sécurité
     - x: 1.18
       y: 0.498
       groupe: 4
       nom: Julien Mairesse
-      detail: Julien Mairesse — 25-29 ans, etudiant
+      detail: Julien Mairesse — 25-29 ans, Étudiants
     - x: 0.603
       y: 1.04
       groupe: 4
       nom: Anthony Parra
-      detail: Anthony Parra — 18-24 ans, action_securite
+      detail: Anthony Parra — 18-24 ans, Action et sécurité
     - x: -0.129
       y: -0.51
       groupe: 3
       nom: Claire Rolet
-      detail: Claire Rolet — 25-29 ans, encadrement
+      detail: Claire Rolet — 25-29 ans, Encadrement et professions intellectuelles
     - x: 0.534
       y: 0.286
       groupe: 4
       nom: Marine Mocellin
-      detail: Marine Mocellin — 18-24 ans, artisanat_btp
+      detail: Marine Mocellin — 18-24 ans, Artisanat et bâtiment
     - x: -0.129
       y: -0.51
       groupe: 3
       nom: Kaouther Ferdjani
-      detail: Kaouther Ferdjani — 25-29 ans, encadrement
+      detail: Kaouther Ferdjani — 25-29 ans, Encadrement et professions intellectuelles
     - x: -0.415
       y: 0.878
       groupe: 0
       nom: Alexandre Amico
-      detail: Alexandre Amico — 30-34 ans, action_securite
+      detail: Alexandre Amico — 30-34 ans, Action et sécurité
     - x: 1.982
       y: 1.043
       groupe: 1
       nom: Freddy Boucher
-      detail: Freddy Boucher — 18-24 ans, etudiant
+      detail: Freddy Boucher — 18-24 ans, Étudiants
     - x: -0.502
       y: 0.086
       groupe: 2
       nom: Pascal Nickert
-      detail: Pascal Nickert — 35-39 ans, encadrement
+      detail: Pascal Nickert — 35-39 ans, Encadrement et professions intellectuelles
     - x: -0.361
       y: 0.19
       groupe: 2
       nom: Louis-Laurent Léger
-      detail: Louis-Laurent Léger — 25-29 ans, encadrement
+      detail: Louis-Laurent Léger — 25-29 ans, Encadrement et professions intellectuelles
     - x: -0.129
       y: -0.51
       groupe: 3
       nom: Raphaële Navarro
-      detail: Raphaële Navarro — 25-29 ans, encadrement
+      detail: Raphaële Navarro — 25-29 ans, Encadrement et professions intellectuelles
     - x: -0.747
       y: 0.802
       groupe: 2
       nom: Rodolphe Assi
-      detail: Rodolphe Assi — 45 ans et plus, artisanat_btp
+      detail: Rodolphe Assi — 45 ans et plus, Artisanat et bâtiment
     - x: -0.445
       y: 0.856
       groupe: 5
       nom: Kader Rebaï
-      detail: Kader Rebaï — 45 ans et plus, action_securite
+      detail: Kader Rebaï — 45 ans et plus, Action et sécurité
     - x: -0.254
       y: -0.553
       groupe: 3
       nom: Fabienne Lefebvre-Trehoux
-      detail: Fabienne Lefebvre-Trehoux — 40-44 ans, enseignement
+      detail: Fabienne Lefebvre-Trehoux — 40-44 ans, Enseignement et éducation
     - x: -0.114
       y: -0.919
       groupe: 3
       nom: Isabelle Da Silva
-      detail: Isabelle Da Silva — 35-39 ans, commerce
+      detail: Isabelle Da Silva — 35-39 ans, Commerce et vente
     - x: -0.642
       y: 0.338
       groupe: 2
       nom: Patrick Merle
-      detail: Patrick Merle — 35-39 ans, artisanat_btp
+      detail: Patrick Merle — 35-39 ans, Artisanat et bâtiment
     - x: 0.83
       y: -0.27
       groupe: 4
       nom: Christina Chevry
-      detail: Christina Chevry — 18-24 ans, commerce
+      detail: Christina Chevry — 18-24 ans, Commerce et vente
     - x: -0.534
       y: 0.015
       groupe: 5
       nom: Frédérique Brugiroux
-      detail: Frédérique Brugiroux — 45 ans et plus, agriculture
+      detail: Frédérique Brugiroux — 45 ans et plus, Agriculture et nature
     - x: 1.982
       y: 1.043
       groupe: 1
       nom: Vivien Escouflaire
-      detail: Vivien Escouflaire — 18-24 ans, etudiant
+      detail: Vivien Escouflaire — 18-24 ans, Étudiants
     - x: -0.766
       y: 0.715
       groupe: 5
       nom: Alain Merdel
-      detail: Alain Merdel — 45 ans et plus, agriculture
+      detail: Alain Merdel — 45 ans et plus, Agriculture et nature
     - x: -0.051
       y: -1.124
       groupe: 3
       nom: Virginie Mercadal Pioli
-      detail: Virginie Mercadal Pioli — 35-39 ans, arts_medias
+      detail: Virginie Mercadal Pioli — 35-39 ans, Arts, médias et image
     - x: 0.83
       y: -0.27
       groupe: 4
       nom: Jennifer Lieutaud
-      detail: Jennifer Lieutaud — 18-24 ans, commerce
+      detail: Jennifer Lieutaud — 18-24 ans, Commerce et vente
     - x: -0.606
       y: 0.55
       groupe: 5
       nom: Jean-Pierre Pigato
-      detail: Jean-Pierre Pigato — 45 ans et plus, encadrement
+      detail: Jean-Pierre Pigato — 45 ans et plus, Encadrement et professions intellectuelles
     - x: 0.86
       y: -0.366
       groupe: 5
       nom: Audrey Perez
-      detail: Audrey Perez — 18-24 ans, sans_emploi
+      detail: Audrey Perez — 18-24 ans, Sans activité déclarée
     - x: -0.356
       y: 0.063
       groupe: 0
       nom: Boris Deltell
-      detail: Boris Deltell — 30-34 ans, arts_medias
+      detail: Boris Deltell — 30-34 ans, Arts, médias et image
     - x: 0.662
       y: 0.225
       groupe: 4
       nom: Valentin D'Hoore
-      detail: Valentin D'Hoore — 18-24 ans, arts_medias
+      detail: Valentin D'Hoore — 18-24 ans, Arts, médias et image
     - x: -0.407
       y: 0.267
       groupe: 0
       nom: Abdellah Akriche
-      detail: Abdellah Akriche — 30-34 ans, sport
+      detail: Abdellah Akriche — 30-34 ans, Sport et coaching
     - x: -0.223
       y: -0.128
       groupe: 0
       nom: Marine Plissonneau
-      detail: Marine Plissonneau — 35-39 ans, transport
+      detail: Marine Plissonneau — 35-39 ans, Transport et logistique
     - x: 0.043
       y: -1.272
       groupe: 3
       nom: Aurélie Gasser
-      detail: Aurélie Gasser — 25-29 ans, enseignement
+      detail: Aurélie Gasser — 25-29 ans, Enseignement et éducation
     - x: -0.124
       y: -0.637
       groupe: 0
       nom: Laurence Pizzocchia
-      detail: Laurence Pizzocchia — 30-34 ans, arts_medias
+      detail: Laurence Pizzocchia — 30-34 ans, Arts, médias et image
     - x: -0.189
       y: -0.572
       groupe: 3
       nom: Kunlé M'Babacéré Pakorona
-      detail: Kunlé M'Babacéré Pakorona — 25-29 ans, enseignement
+      detail: Kunlé M'Babacéré Pakorona — 25-29 ans, Enseignement et éducation
     - x: -0.188
       y: -0.551
       groupe: 5
       nom: Véronique Bègue
-      detail: Véronique Bègue — 45 ans et plus, sans_emploi
+      detail: Véronique Bègue — 45 ans et plus, Sans activité déclarée
     - x: 0.028
       y: -0.815
       groupe: 3
       nom: Wafa El Mejjad
-      detail: Wafa El Mejjad — 25-29 ans, commerce
+      detail: Wafa El Mejjad — 25-29 ans, Commerce et vente
     - x: -0.528
       y: 1.058
       groupe: 0
       nom: Claude Dartois
-      detail: Claude Dartois — 30-34 ans, transport
+      detail: Claude Dartois — 30-34 ans, Transport et logistique
     - x: -0.798
       y: 1.16
       groupe: 2
       nom: Philippe Duron
-      detail: Philippe Duron — 40-44 ans, artisanat_btp
+      detail: Philippe Duron — 40-44 ans, Artisanat et bâtiment
     - x: 0.028
       y: -0.815
       groupe: 3
       nom: Lisa Legouverneur
-      detail: Lisa Legouverneur — 25-29 ans, commerce
+      detail: Lisa Legouverneur — 25-29 ans, Commerce et vente
     - x: -0.375
       y: -0.15
       groupe: 5
       nom: Catherine Barnier
-      detail: Catherine Barnier — 45 ans et plus, encadrement
+      detail: Catherine Barnier — 45 ans et plus, Encadrement et professions intellectuelles
     - x: 0.603
       y: 1.04
       groupe: 4
       nom: Steve Lemercier
-      detail: Steve Lemercier — 18-24 ans, action_securite
+      detail: Steve Lemercier — 18-24 ans, Action et sécurité
     - x: -0.606
       y: 0.55
       groupe: 5
       nom: Gégé Icardi
-      detail: Gégé Icardi — 45 ans et plus, encadrement
+      detail: Gégé Icardi — 45 ans et plus, Encadrement et professions intellectuelles
     - x: 0.041
       y: -0.816
       groupe: 3
       nom: Naouel Hadjaf
-      detail: Naouel Hadjaf — 25-29 ans, sport
+      detail: Naouel Hadjaf — 25-29 ans, Sport et coaching
     - x: -0.576
       y: 0.573
       groupe: 0
       nom: Benoît Mahieux
-      detail: Benoît Mahieux — 30-34 ans, encadrement
+      detail: Benoît Mahieux — 30-34 ans, Encadrement et professions intellectuelles
     - x: 0.846
       y: -0.727
       groupe: 4
       nom: Délisia Fettasi
-      detail: Délisia Fettasi — 18-24 ans, enseignement
+      detail: Délisia Fettasi — 18-24 ans, Enseignement et éducation
     - x: -0.256
       y: -0.097
       groupe: 3
       nom: Caroline Matteucci
-      detail: Caroline Matteucci — 40-44 ans, sport
+      detail: Caroline Matteucci — 40-44 ans, Sport et coaching
     - x: 1.982
       y: 1.043
       groupe: 1
       nom: Maxime Boulet
-      detail: Maxime Boulet — 18-24 ans, etudiant
+      detail: Maxime Boulet — 18-24 ans, Étudiants
     - x: 0.611
       y: 0.429
       groupe: 4
       nom: Anthony Amar
-      detail: Anthony Amar — 18-24 ans, sport
+      detail: Anthony Amar — 18-24 ans, Sport et coaching
     - x: -0.501
       y: 0.603
       groupe: 2
       nom: Olivier Moenaert
-      detail: Olivier Moenaert — 40-44 ans, commerce
+      detail: Olivier Moenaert — 40-44 ans, Commerce et vente
     - x: -0.098
       y: -1.375
       groupe: 3
       nom: Florence Delbarre
-      detail: Florence Delbarre — 35-39 ans, enseignement
+      detail: Florence Delbarre — 35-39 ans, Enseignement et éducation
     - x: -0.157
       y: -0.528
       groupe: 5
       nom: Virginie Jarry
-      detail: Virginie Jarry — 30-34 ans, sans_emploi
+      detail: Virginie Jarry — 30-34 ans, Sans activité déclarée
     - x: -0.223
       y: -0.128
       groupe: 0
       nom: Patricia Morel
-      detail: Patricia Morel — 35-39 ans, transport
+      detail: Patricia Morel — 35-39 ans, Transport et logistique
     - x: 0.227
       y: -1.208
       groupe: 3
       nom: Alexandra Pouillon
-      detail: Alexandra Pouillon — 25-29 ans, restauration_hotellerie
+      detail: Alexandra Pouillon — 25-29 ans, Restauration et hôtellerie
     - x: 0.442
       y: 0.735
       groupe: 4
       nom: Martin Bazin
-      detail: Martin Bazin — 18-24 ans, encadrement
+      detail: Martin Bazin — 18-24 ans, Encadrement et professions intellectuelles
     - x: 0.369
       y: -1.074
       groupe: 3
       nom: Ella Gbezan
-      detail: Ella Gbezan — 25-29 ans, sante
+      detail: Ella Gbezan — 25-29 ans, Santé
     - x: -0.141
       y: -0.32
       groupe: 3
       nom: Laurent Maistret
-      detail: Laurent Maistret — 25-29 ans, arts_medias
+      detail: Laurent Maistret — 25-29 ans, Arts, médias et image
     - x: -0.22
       y: -0.126
       groupe: 0
       nom: Teheiura Teahui
-      detail: Teheiura Teahui — 30-34 ans, restauration_hotellerie
+      detail: Teheiura Teahui — 30-34 ans, Restauration et hôtellerie
     - x: -0.817
       y: 1.074
       groupe: 0
       nom: Gérard Urdampilleta
-      detail: Gérard Urdampilleta — 40-44 ans, agriculture
+      detail: Gérard Urdampilleta — 40-44 ans, Agriculture et nature
     - x: -0.484
       y: 0.124
       groupe: 2
       nom: Mélanie Boimare
-      detail: Mélanie Boimare — 30-34 ans, artisanat_btp
+      detail: Mélanie Boimare — 30-34 ans, Artisanat et bâtiment
     - x: -0.558
       y: 1.036
       groupe: 0
       nom: Mickaël Kalfallah
-      detail: Mickaël Kalfallah — 45 ans et plus, transport
+      detail: Mickaël Kalfallah — 45 ans et plus, Transport et logistique
     - x: -0.426
       y: 0.209
       groupe: 2
       nom: Sara Tallon
-      detail: Sara Tallon — 40-44 ans, encadrement
+      detail: Sara Tallon — 40-44 ans, Encadrement et professions intellectuelles
     - x: -0.375
       y: -0.15
       groupe: 5
       nom: Nadine De Carpentry
-      detail: Nadine De Carpentry — 45 ans et plus, encadrement
+      detail: Nadine De Carpentry — 45 ans et plus, Encadrement et professions intellectuelles
     - x: -0.084
       y: -1.015
       groupe: 5
       nom: Élodie Saleder
-      detail: Élodie Saleder — 35-39 ans, sans_emploi
+      detail: Élodie Saleder — 35-39 ans, Sans activité déclarée
     - x: 0.674
       y: 0.035
       groupe: 4
       nom: Marie Parmentier
-      detail: Marie Parmentier — 18-24 ans, encadrement
+      detail: Marie Parmentier — 18-24 ans, Encadrement et professions intellectuelles
     - x: 0.302
       y: 0.986
       groupe: 2
       nom: Anthony Dito
-      detail: Anthony Dito — 18-24 ans, artisanat_btp
+      detail: Anthony Dito — 18-24 ans, Artisanat et bâtiment
     - x: -0.642
       y: 0.338
       groupe: 2
       nom: Javier Rodriguez
-      detail: Javier Rodriguez — 35-39 ans, artisanat_btp
+      detail: Javier Rodriguez — 35-39 ans, Artisanat et bâtiment
     - x: -0.313
       y: 0.676
       groupe: 0
       nom: Namadia Thaï Thaï
-      detail: Namadia Thaï Thaï — 25-29 ans, transport
+      detail: Namadia Thaï Thaï — 25-29 ans, Transport et logistique
     - x: 0.722
       y: 0.521
       groupe: 4
       nom: Marylou Sidibé
-      detail: Marylou Sidibé — 18-24 ans, transport
+      detail: Marylou Sidibé — 18-24 ans, Transport et logistique
     - x: -0.269
       y: -0.097
       groupe: 2
       nom: Catherine Perez
-      detail: Catherine Perez — 40-44 ans, commerce
+      detail: Catherine Perez — 40-44 ans, Commerce et vente
     - x: 0.843
       y: -0.271
       groupe: 4
       nom: Camille Sold
-      detail: Camille Sold — 18-24 ans, sport
+      detail: Camille Sold — 18-24 ans, Sport et coaching
     - x: 1.982
       y: 1.043
       groupe: 1
       nom: Charles Clément
-      detail: Charles Clément — 18-24 ans, etudiant
+      detail: Charles Clément — 18-24 ans, Étudiants
     - x: -0.438
       y: 0.399
       groupe: 2
       nom: Thierry Villette
-      detail: Thierry Villette — 40-44 ans, arts_medias
+      detail: Thierry Villette — 40-44 ans, Arts, médias et image
     - x: 0.153
       y: -0.691
       groupe: 0
       nom: Myriam Modde
-      detail: Myriam Modde — 30-34 ans, sante
+      detail: Myriam Modde — 30-34 ans, Santé
     - x: -0.42
       y: 0.149
       groupe: 5
       nom: Bernard Deniaud
-      detail: Bernard Deniaud — 45 ans et plus, sans_emploi
+      detail: Bernard Deniaud — 45 ans et plus, Sans activité déclarée
     - x: -0.798
       y: 1.16
       groupe: 2
       nom: Philippe Bizet
-      detail: Philippe Bizet — 40-44 ans, artisanat_btp
+      detail: Philippe Bizet — 40-44 ans, Artisanat et bâtiment
     - x: -0.43
       y: -0.449
       groupe: 0
       nom: Vanessa Alvarez
-      detail: Vanessa Alvarez — 35-39 ans, agriculture
+      detail: Vanessa Alvarez — 35-39 ans, Agriculture et nature
     - x: -0.356
       y: 0.063
       groupe: 0
       nom: Brice Martinet
-      detail: Brice Martinet — 30-34 ans, arts_medias
+      detail: Brice Martinet — 30-34 ans, Arts, médias et image
     - x: -0.735
       y: 0.738
       groupe: 0
       nom: Ugo Lartiche
-      detail: Ugo Lartiche — 30-34 ans, agriculture
+      detail: Ugo Lartiche — 30-34 ans, Agriculture et nature
     - x: -0.534
       y: 0.015
       groupe: 5
       nom: Babeth Delettre
-      detail: Babeth Delettre — 45 ans et plus, agriculture
+      detail: Babeth Delettre — 45 ans et plus, Agriculture et nature
     - x: -0.084
       y: -1.015
       groupe: 5
       nom: Marie-Anne Queniart
-      detail: Marie-Anne Queniart — 35-39 ans, sans_emploi
+      detail: Marie-Anne Queniart — 35-39 ans, Sans activité déclarée
     - x: -0.361
       y: 0.19
       groupe: 2
       nom: Benoît Jorion-Fahy
-      detail: Benoît Jorion-Fahy — 25-29 ans, encadrement
+      detail: Benoît Jorion-Fahy — 25-29 ans, Encadrement et professions intellectuelles
     - x: 2.214
       y: 0.343
       groupe: 1
       nom: Manon Allender
-      detail: Manon Allender — 18-24 ans, etudiant
+      detail: Manon Allender — 18-24 ans, Étudiants
     - x: 1.982
       y: 1.043
       groupe: 1
       nom: Loïc Crespin
-      detail: Loïc Crespin — 18-24 ans, etudiant
+      detail: Loïc Crespin — 18-24 ans, Étudiants
     - x: -0.205
       y: -0.456
       groupe: 5
       nom: Isabelle Fidanza
-      detail: Isabelle Fidanza — 45 ans et plus, sport
+      detail: Isabelle Fidanza — 45 ans et plus, Sport et coaching
     - x: 2.214
       y: 0.343
       groupe: 1
       nom: Margot Perrot Houwaer
-      detail: Margot Perrot Houwaer — 18-24 ans, etudiant
+      detail: Margot Perrot Houwaer — 18-24 ans, Étudiants
     - x: -0.204
       y: -0.115
       groupe: 3
       nom: Alban Pellegrin
-      detail: Alban Pellegrin — 25-29 ans, commerce
+      detail: Alban Pellegrin — 25-29 ans, Commerce et vente
     - x: -0.218
       y: -0.455
       groupe: 5
       nom: Corinne Bargoin Samuelian
-      detail: Corinne Bargoin Samuelian — 45 ans et plus, commerce
+      detail: Corinne Bargoin Samuelian — 45 ans et plus, Commerce et vente
     - x: -0.502
       y: 0.086
       groupe: 2
       nom: Cédric Giosserand-Lucas
-      detail: Cédric Giosserand-Lucas — 35-39 ans, encadrement
+      detail: Cédric Giosserand-Lucas — 35-39 ans, Encadrement et professions intellectuelles
     - x: 2.214
       y: 0.343
       groupe: 1
       nom: Charlaine Cuny
-      detail: Charlaine Cuny — 18-24 ans, etudiant
+      detail: Charlaine Cuny — 18-24 ans, Étudiants
     - x: -0.313
       y: 0.676
       groupe: 0
       nom: Nessim Kouachi
-      detail: Nessim Kouachi — 25-29 ans, transport
+      detail: Nessim Kouachi — 25-29 ans, Transport et logistique
     - x: -0.22
       y: -0.126
       groupe: 0
       nom: Jeff Santiago
-      detail: Jeff Santiago — 30-34 ans, restauration_hotellerie
+      detail: Jeff Santiago — 30-34 ans, Restauration et hôtellerie
     - x: -0.576
       y: 0.573
       groupe: 0
       nom: Christophe Pendon
-      detail: Christophe Pendon — 30-34 ans, encadrement
+      detail: Christophe Pendon — 30-34 ans, Encadrement et professions intellectuelles
     - x: -0.172
       y: -0.889
       groupe: 3
       nom: Jessica Potel
-      detail: Jessica Potel — 30-34 ans, enseignement
+      detail: Jessica Potel — 30-34 ans, Enseignement et éducation
     - x: 1.982
       y: 1.043
       groupe: 1
       nom: Sébastien Ballesteros
-      detail: Sébastien Ballesteros — 18-24 ans, etudiant
+      detail: Sébastien Ballesteros — 18-24 ans, Étudiants
     - x: -0.606
       y: 0.55
       groupe: 5
       nom: Bruno Peisey
-      detail: Bruno Peisey — 45 ans et plus, encadrement
+      detail: Bruno Peisey — 45 ans et plus, Encadrement et professions intellectuelles
     - x: -0.129
       y: -0.51
       groupe: 3
       nom: Mélissa Bastin
-      detail: Mélissa Bastin — 25-29 ans, encadrement
+      detail: Mélissa Bastin — 25-29 ans, Encadrement et professions intellectuelles
     - x: -0.155
       y: -0.66
       groupe: 5
       nom: Chantal Ménard
-      detail: Chantal Ménard — 45 ans et plus, arts_medias
+      detail: Chantal Ménard — 45 ans et plus, Arts, médias et image
     - x: -0.657
       y: 0.909
       groupe: 2
       nom: Marc Rambaud
-      detail: Marc Rambaud — 40-44 ans, encadrement
+      detail: Marc Rambaud — 40-44 ans, Encadrement et professions intellectuelles
     - x: 0.227
       y: -1.208
       groupe: 3
       nom: Charlie Vincent-Mussard
-      detail: Charlie Vincent-Mussard — 25-29 ans, restauration_hotellerie
+      detail: Charlie Vincent-Mussard — 25-29 ans, Restauration et hôtellerie
     - x: -0.098
       y: -1.375
       groupe: 3
       nom: Laurence Corbellotti
-      detail: Laurence Corbellotti — 35-39 ans, enseignement
+      detail: Laurence Corbellotti — 35-39 ans, Enseignement et éducation
     - x: 1.982
       y: 1.043
       groupe: 1
       nom: Marius Torterat
-      detail: Marius Torterat — 18-24 ans, etudiant
+      detail: Marius Torterat — 18-24 ans, Étudiants
     - x: -0.254
       y: -0.553
       groupe: 3
       nom: Céline Parat-Yeghiayan
-      detail: Céline Parat-Yeghiayan — 40-44 ans, enseignement
+      detail: Céline Parat-Yeghiayan — 40-44 ans, Enseignement et éducation
     - x: -0.333
       y: -0.22
       groupe: 0
       nom: Huw Francis
-      detail: Huw Francis — 35-39 ans, sport
+      detail: Huw Francis — 35-39 ans, Sport et coaching
     - x: -0.205
       y: -0.456
       groupe: 5
       nom: Carole Poncelet
-      detail: Carole Poncelet — 45 ans et plus, sport
+      detail: Carole Poncelet — 45 ans et plus, Sport et coaching
     - x: -0.214
       y: 0.156
       groupe: 5
       nom: Lolo Facione
-      detail: Lolo Facione — 45 ans et plus, action_securite
+      detail: Lolo Facione — 45 ans et plus, Action et sécurité
     - x: -0.45
       y: 0.245
       groupe: 5
       nom: Amir Doukhan
-      detail: Amir Doukhan — 45 ans et plus, commerce
+      detail: Amir Doukhan — 45 ans et plus, Commerce et vente
     - x: 2.214
       y: 0.343
       groupe: 1
       nom: Cassandre Girard
-      detail: Cassandre Girard — 18-24 ans, etudiant
+      detail: Cassandre Girard — 18-24 ans, Étudiants
     - x: -0.361
       y: 0.19
       groupe: 2
       nom: Romain Palazzetti
-      detail: Romain Palazzetti — 25-29 ans, encadrement
+      detail: Romain Palazzetti — 25-29 ans, Encadrement et professions intellectuelles
     - x: -0.501
       y: 0.441
       groupe: 2
       nom: Julien Castro
-      detail: Julien Castro — 25-29 ans, artisanat_btp
+      detail: Julien Castro — 25-29 ans, Artisanat et bâtiment
     - x: 1.412
       y: -0.202
       groupe: 4
       nom: Laureen Hugel
-      detail: Laureen Hugel — 25-29 ans, etudiant
+      detail: Laureen Hugel — 25-29 ans, Étudiants
     - x: -0.576
       y: 0.573
       groupe: 0
       nom: Steve Best
-      detail: Steve Best — 30-34 ans, encadrement
+      detail: Steve Best — 30-34 ans, Encadrement et professions intellectuelles
     - x: -0.187
       y: -0.433
       groupe: 3
       nom: Carine Cazals
-      detail: Carine Cazals — 30-34 ans, commerce
+      detail: Carine Cazals — 30-34 ans, Commerce et vente
     - x: 0.032
       y: -0.205
       groupe: 3
       nom: Karima Neggaz
-      detail: Karima Neggaz — 25-29 ans, action_securite
+      detail: Karima Neggaz — 25-29 ans, Action et sécurité
     - x: -0.356
       y: 0.063
       groupe: 0
       nom: Nicolas Rouyé
-      detail: Nicolas Rouyé — 30-34 ans, arts_medias
+      detail: Nicolas Rouyé — 30-34 ans, Arts, médias et image
     - x: -0.606
       y: 0.55
       groupe: 5
       nom: Alain Chrisostome
-      detail: Alain Chrisostome — 45 ans et plus, encadrement
+      detail: Alain Chrisostome — 45 ans et plus, Encadrement et professions intellectuelles
     - x: 0.091
       y: -1.02
       groupe: 3
       nom: Cécilia Siharaj
-      detail: Cécilia Siharaj — 25-29 ans, arts_medias
+      detail: Cécilia Siharaj — 25-29 ans, Arts, médias et image
     - x: -0.496
       y: 1.214
       groupe: 2
       nom: Gabriel Gubbels
-      detail: Gabriel Gubbels — 40-44 ans, action_securite
+      detail: Gabriel Gubbels — 40-44 ans, Action et sécurité
     - x: -0.45
       y: 0.245
       groupe: 5
       nom: Pascal Salviani
-      detail: Pascal Salviani — 45 ans et plus, commerce
+      detail: Pascal Salviani — 45 ans et plus, Commerce et vente
     - x: 0.041
       y: -0.816
       groupe: 3
       nom: Wendy Gervois
-      detail: Wendy Gervois — 25-29 ans, sport
+      detail: Wendy Gervois — 25-29 ans, Sport et coaching
     - x: 0.085
       y: -1.312
       groupe: 3
       nom: Myriam Zenasni
-      detail: Myriam Zenasni — 35-39 ans, restauration_hotellerie
+      detail: Myriam Zenasni — 35-39 ans, Restauration et hôtellerie
     - x: -0.187
       y: -0.433
       groupe: 3
       nom: Amandine Schmitt
-      detail: Amandine Schmitt — 30-34 ans, commerce
+      detail: Amandine Schmitt — 30-34 ans, Commerce et vente
     - x: -0.218
       y: -0.455
       groupe: 5
       nom: Sophie Le Nestic Sabattier
-      detail: Sophie Le Nestic Sabattier — 45 ans et plus, commerce
+      detail: Sophie Le Nestic Sabattier — 45 ans et plus, Commerce et vente
     - x: 0.153
       y: -0.691
       groupe: 0
       nom: Sandrine Bouzekri
-      detail: Sandrine Bouzekri — 30-34 ans, sante
+      detail: Sandrine Bouzekri — 30-34 ans, Santé
     - x: -0.502
       y: 0.086
       groupe: 2
       nom: Laurent Mischkind
-      detail: Laurent Mischkind — 35-39 ans, encadrement
+      detail: Laurent Mischkind — 35-39 ans, Encadrement et professions intellectuelles
     - x: -0.747
       y: 0.802
       groupe: 2
       nom: Jean-Luc Duboscq
-      detail: Jean-Luc Duboscq — 45 ans et plus, artisanat_btp
+      detail: Jean-Luc Duboscq — 45 ans et plus, Artisanat et bâtiment
     - x: -0.657
       y: 0.909
       groupe: 2
       nom: Jérôme Merlier
-      detail: Jérôme Merlier — 40-44 ans, encadrement
+      detail: Jérôme Merlier — 40-44 ans, Encadrement et professions intellectuelles
     - x: -0.419
       y: 0.267
       groupe: 0
       nom: Lau Émilien
-      detail: Lau Émilien — 30-34 ans, commerce
+      detail: Lau Émilien — 30-34 ans, Commerce et vente
     - x: -0.124
       y: -0.637
       groupe: 0
       nom: Béryl Libault de la Chevasnerie
-      detail: Béryl Libault de la Chevasnerie — 30-34 ans, arts_medias
+      detail: Béryl Libault de la Chevasnerie — 30-34 ans, Arts, médias et image
     - x: -0.426
       y: 0.209
       groupe: 2
       nom: Alexandra Pharisien
-      detail: Alexandra Pharisien — 40-44 ans, encadrement
+      detail: Alexandra Pharisien — 40-44 ans, Encadrement et professions intellectuelles
     - x: -0.496
       y: 1.214
       groupe: 2
       nom: Yannick Delalleau
-      detail: Yannick Delalleau — 40-44 ans, action_securite
+      detail: Yannick Delalleau — 40-44 ans, Action et sécurité
     - x: 0.227
       y: -1.177
       groupe: 3
       nom: Julie Navarro-Camilleri
-      detail: Julie Navarro-Camilleri — 35-39 ans, sante
+      detail: Julie Navarro-Camilleri — 35-39 ans, Santé
     - x: 1.18
       y: 0.498
       groupe: 4
       nom: Jérémy Raffin
-      detail: Jérémy Raffin — 25-29 ans, etudiant
+      detail: Jérémy Raffin — 25-29 ans, Étudiants
     - x: -0.387
       y: 0.04
       groupe: 5
       nom: Stéphane Cipolla
-      detail: Stéphane Cipolla — 45 ans et plus, arts_medias
+      detail: Stéphane Cipolla — 45 ans et plus, Arts, médias et image
     - x: -0.157
       y: -0.528
       groupe: 5
       nom: Ludivine Wiart
-      detail: Ludivine Wiart — 30-34 ans, sans_emploi
+      detail: Ludivine Wiart — 30-34 ans, Sans activité déclarée
     - x: 0.843
       y: -0.271
       groupe: 4
       nom: Candice Boisson
-      detail: Candice Boisson — 18-24 ans, sport
+      detail: Candice Boisson — 18-24 ans, Sport et coaching
     - x: -0.747
       y: 0.802
       groupe: 2
       nom: Bruno Troester
-      detail: Bruno Troester — 45 ans et plus, artisanat_btp
+      detail: Bruno Troester — 45 ans et plus, Artisanat et bâtiment
     - x: -0.313
       y: 0.676
       groupe: 0
       nom: Freddy Bolzer
-      detail: Freddy Bolzer — 25-29 ans, transport
+      detail: Freddy Bolzer — 25-29 ans, Transport et logistique
     - x: 2.214
       y: 0.343
       groupe: 1
       nom: Jesta Hillmann
-      detail: Jesta Hillmann — 18-24 ans, etudiant
+      detail: Jesta Hillmann — 18-24 ans, Étudiants
     - x: 0.611
       y: 0.429
       groupe: 4
       nom: Benoît Assadi
-      detail: Benoît Assadi — 18-24 ans, sport
+      detail: Benoît Assadi — 18-24 ans, Sport et coaching
     - x: 0.599
       y: 0.43
       groupe: 4
       nom: Dylan Thiry
-      detail: Dylan Thiry — 18-24 ans, commerce
+      detail: Dylan Thiry — 18-24 ans, Commerce et vente
     - x: -0.218
       y: -0.455
       groupe: 5
       nom: Sabine Ollivier
-      detail: Sabine Ollivier — 45 ans et plus, commerce
+      detail: Sabine Ollivier — 45 ans et plus, Commerce et vente
     - x: -0.187
       y: -0.433
       groupe: 3
       nom: Hada Ghoulam
-      detail: Hada Ghoulam — 30-34 ans, commerce
+      detail: Hada Ghoulam — 30-34 ans, Commerce et vente
     - x: -0.42
       y: 0.149
       groupe: 5
       nom: Franck Michel
-      detail: Franck Michel — 45 ans et plus, sans_emploi
+      detail: Franck Michel — 45 ans et plus, Sans activité déclarée
     - x: 0.043
       y: -1.272
       groupe: 3
       nom: Félicie Greugny
-      detail: Félicie Greugny — 25-29 ans, enseignement
+      detail: Félicie Greugny — 25-29 ans, Enseignement et éducation
     - x: -0.189
       y: -0.572
       groupe: 3
       nom: Brahma Sadeyen
-      detail: Brahma Sadeyen — 25-29 ans, enseignement
+      detail: Brahma Sadeyen — 25-29 ans, Enseignement et éducation
     - x: 0.798
       y: 0.037
       groupe: 4
       nom: Bastien Muñez
-      detail: Bastien Muñez — 18-24 ans, restauration_hotellerie
+      detail: Bastien Muñez — 18-24 ans, Restauration et hôtellerie
     - x: -0.269
       y: -0.259
       groupe: 2
       nom: Maria Beccaris
-      detail: Maria Beccaris — 25-29 ans, artisanat_btp
+      detail: Maria Beccaris — 25-29 ans, Artisanat et bâtiment
     - x: -0.45
       y: 0.245
       groupe: 5
       nom: Yves Rey
-      detail: Yves Rey — 45 ans et plus, commerce
+      detail: Yves Rey — 45 ans et plus, Commerce et vente
     - x: -0.642
       y: 0.338
       groupe: 2
       nom: Yassin Metiri
-      detail: Yassin Metiri — 35-39 ans, artisanat_btp
+      detail: Yassin Metiri — 35-39 ans, Artisanat et bâtiment
     - x: -0.051
       y: -1.124
       groupe: 3
       nom: Manuella Baudet
-      detail: Manuella Baudet — 35-39 ans, arts_medias
+      detail: Manuella Baudet — 35-39 ans, Arts, médias et image
     - x: -0.419
       y: 0.267
       groupe: 0
       nom: Sandro Gonzalez Schena
-      detail: Sandro Gonzalez Schena — 30-34 ans, commerce
+      detail: Sandro Gonzalez Schena — 30-34 ans, Commerce et vente
     - x: -0.07
       y: -0.489
       groupe: 3
       nom: Marjorie Rousseeuw
-      detail: Marjorie Rousseeuw — 40-44 ans, restauration_hotellerie
+      detail: Marjorie Rousseeuw — 40-44 ans, Restauration et hôtellerie
     - x: 0.599
       y: 0.43
       groupe: 4
       nom: Corentin Albertini
-      detail: Corentin Albertini — 18-24 ans, commerce
+      detail: Corentin Albertini — 18-24 ans, Commerce et vente
     - x: 0.085
       y: -1.312
       groupe: 3
       nom: Kelly Beaugrand
-      detail: Kelly Beaugrand — 35-39 ans, restauration_hotellerie
+      detail: Kelly Beaugrand — 35-39 ans, Restauration et hôtellerie
     - x: -0.101
       y: -0.92
       groupe: 3
       nom: Claire Pradayrol
-      detail: Claire Pradayrol — 35-39 ans, sport
+      detail: Claire Pradayrol — 35-39 ans, Sport et coaching
     - x: -0.333
       y: -0.22
       groupe: 0
       nom: Sébastien Gottiniaux
-      detail: Sébastien Gottiniaux — 35-39 ans, sport
+      detail: Sébastien Gottiniaux — 35-39 ans, Sport et coaching
     - x: 2.214
       y: 0.343
       groupe: 1
       nom: Mathilde Chevalier
-      detail: Mathilde Chevalier — 18-24 ans, etudiant
+      detail: Mathilde Chevalier — 18-24 ans, Étudiants
     - x: -0.407
       y: 0.267
       groupe: 0
       nom: Vincent Roux
-      detail: Vincent Roux — 30-34 ans, sport
+      detail: Vincent Roux — 30-34 ans, Sport et coaching
     - x: 0.041
       y: -0.816
       groupe: 3
       nom: Clémentine Jullien
-      detail: Clémentine Jullien — 25-29 ans, sport
+      detail: Clémentine Jullien — 25-29 ans, Sport et coaching
     - x: -0.501
       y: 0.603
       groupe: 2
       nom: Frédéric Blancher
-      detail: Frédéric Blancher — 40-44 ans, commerce
+      detail: Frédéric Blancher — 40-44 ans, Commerce et vente
     - x: 1.171
       y: -0.528
       groupe: 4
       nom: Marine Alves
-      detail: Marine Alves — 18-24 ans, sante
+      detail: Marine Alves — 18-24 ans, Santé
     - x: -0.271
       y: -0.614
       groupe: 3
       nom: Delphine Bruyère
-      detail: Delphine Bruyère — 35-39 ans, encadrement
+      detail: Delphine Bruyère — 35-39 ans, Encadrement et professions intellectuelles
     - x: 1.982
       y: 1.043
       groupe: 1
       nom: Thomas Hébert
-      detail: Thomas Hébert — 18-24 ans, etudiant
+      detail: Thomas Hébert — 18-24 ans, Étudiants
     - x: 1.412
       y: -0.202
       groupe: 4
       nom: Mel Moresve
-      detail: Mel Moresve — 25-29 ans, etudiant
+      detail: Mel Moresve — 25-29 ans, Étudiants
     - x: 0.442
       y: 0.735
       groupe: 4
       nom: Théotime Bernardin
-      detail: Théotime Bernardin — 18-24 ans, encadrement
+      detail: Théotime Bernardin — 18-24 ans, Encadrement et professions intellectuelles
     - x: 2.214
       y: 0.343
       groupe: 1
       nom: Marta Morino
-      detail: Marta Morino — 18-24 ans, etudiant
+      detail: Marta Morino — 18-24 ans, Étudiants
     - x: 2.214
       y: 0.343
       groupe: 1
       nom: May Peitavi
-      detail: May Peitavi — 18-24 ans, etudiant
+      detail: May Peitavi — 18-24 ans, Étudiants
     - x: -0.344
       y: -0.127
       groupe: 0
       nom: Caroline Demartis
-      detail: Caroline Demartis — 30-34 ans, encadrement
+      detail: Caroline Demartis — 30-34 ans, Encadrement et professions intellectuelles
     - x: -0.606
       y: 0.55
       groupe: 5
       nom: Manu Delanghe
-      detail: Manu Delanghe — 45 ans et plus, encadrement
+      detail: Manu Delanghe — 45 ans et plus, Encadrement et professions intellectuelles
     - x: -0.141
       y: -0.32
       groupe: 3
       nom: Tugdual Paul
-      detail: Tugdual Paul — 25-29 ans, arts_medias
+      detail: Tugdual Paul — 25-29 ans, Arts, médias et image
     - x: 0.599
       y: 0.43
       groupe: 4
       nom: Marvyn Leone
-      detail: Marvyn Leone — 18-24 ans, commerce
+      detail: Marvyn Leone — 18-24 ans, Commerce et vente
     - x: -0.609
       y: 1.395
       groupe: 2
       nom: Sébastien Mériaux
-      detail: Sébastien Mériaux — 40-44 ans, transport
+      detail: Sébastien Mériaux — 40-44 ans, Transport et logistique
     - x: -0.434
       y: -0.211
       groupe: 5
       nom: Fabian Rocha Rocha
-      detail: Fabian Rocha Rocha — 45 ans et plus, enseignement
+      detail: Fabian Rocha Rocha — 45 ans et plus, Enseignement et éducation
     - x: -0.147
       y: -0.612
       groupe: 3
       nom: Maxime Stafrach
-      detail: Maxime Stafrach — 35-39 ans, restauration_hotellerie
+      detail: Maxime Stafrach — 35-39 ans, Restauration et hôtellerie
     - x: -0.157
       y: -0.528
       groupe: 5
       nom: Mélanie Moret
-      detail: Mélanie Moret — 30-34 ans, sans_emploi
+      detail: Mélanie Moret — 30-34 ans, Sans activité déclarée
     - x: -0.407
       y: 0.267
       groupe: 0
       nom: Romain Delaroche
-      detail: Romain Delaroche — 30-34 ans, sport
+      detail: Romain Delaroche — 30-34 ans, Sport et coaching
     - x: -0.375
       y: -0.15
       groupe: 5
       nom: Marguerite Leblanc
-      detail: Marguerite Leblanc — 45 ans et plus, encadrement
+      detail: Marguerite Leblanc — 45 ans et plus, Encadrement et professions intellectuelles
     - x: -0.426
       y: 0.209
       groupe: 2
       nom: Sandrine Dubourdy
-      detail: Sandrine Dubourdy — 40-44 ans, encadrement
+      detail: Sandrine Dubourdy — 40-44 ans, Encadrement et professions intellectuelles
     - x: 0.091
       y: -1.02
       groupe: 3
       nom: Magalie Gustave
-      detail: Magalie Gustave — 25-29 ans, arts_medias
+      detail: Magalie Gustave — 25-29 ans, Arts, médias et image
     - x: 2.214
       y: 0.343
       groupe: 1
       nom: Tiffany Gounin
-      detail: Tiffany Gounin — 18-24 ans, etudiant
+      detail: Tiffany Gounin — 18-24 ans, Étudiants
     - x: 1.982
       y: 1.043
       groupe: 1
       nom: André Deleplace
-      detail: André Deleplace — 18-24 ans, etudiant
+      detail: André Deleplace — 18-24 ans, Étudiants
     - x: 0.843
       y: -0.271
       groupe: 4
       nom: Aliséa Lecomte
-      detail: Aliséa Lecomte — 18-24 ans, sport
+      detail: Aliséa Lecomte — 18-24 ans, Sport et coaching
     - x: -0.155
       y: -0.66
       groupe: 5
       nom: Carinne Fossey Elka
-      detail: Carinne Fossey Elka — 45 ans et plus, arts_medias
+      detail: Carinne Fossey Elka — 45 ans et plus, Arts, médias et image
     - x: -0.114
       y: -0.919
       groupe: 3
       nom: Émilie Tybot
-      detail: Émilie Tybot — 35-39 ans, commerce
+      detail: Émilie Tybot — 35-39 ans, Commerce et vente
     - x: -0.2
       y: 0.495
       groupe: 2
       nom: Victor Rollinger
-      detail: Victor Rollinger — 25-29 ans, action_securite
+      detail: Victor Rollinger — 25-29 ans, Action et sécurité
     - x: -0.503
       y: 0.037
       groupe: 0
       nom: Chloé Chaize
-      detail: Chloé Chaize — 30-34 ans, agriculture
+      detail: Chloé Chaize — 30-34 ans, Agriculture et nature
     - x: -0.45
       y: 0.245
       groupe: 5
       nom: Xavier Vançon
-      detail: Xavier Vançon — 45 ans et plus, commerce
+      detail: Xavier Vançon — 45 ans et plus, Commerce et vente
     - x: -0.387
       y: 0.04
       groupe: 5
       nom: Frédéric Blanchard
-      detail: Frédéric Blanchard — 45 ans et plus, arts_medias
+      detail: Frédéric Blanchard — 45 ans et plus, Arts, médias et image
     - x: -0.204
       y: -0.115
       groupe: 3
       nom: Alexandre André
-      detail: Alexandre André — 25-29 ans, commerce
+      detail: Alexandre André — 25-29 ans, Commerce et vente
     - x: 0.041
       y: -0.816
       groupe: 3
       nom: Béatrice Kabore
-      detail: Béatrice Kabore — 25-29 ans, sport
+      detail: Béatrice Kabore — 25-29 ans, Sport et coaching
     - x: 1.982
       y: 1.043
       groupe: 1
       nom: Brice Chauvinc
-      detail: Brice Chauvinc — 18-24 ans, etudiant
+      detail: Brice Chauvinc — 18-24 ans, Étudiants
     - x: -0.175
       y: -0.433
       groupe: 0
       nom: Sophie Chevalier
-      detail: Sophie Chevalier — 30-34 ans, sport
+      detail: Sophie Chevalier — 30-34 ans, Sport et coaching
     - x: 0.674
       y: 0.035
       groupe: 4
       nom: Angélique Mastio
-      detail: Angélique Mastio — 18-24 ans, encadrement
+      detail: Angélique Mastio — 18-24 ans, Encadrement et professions intellectuelles
     - x: -0.502
       y: 0.086
       groupe: 2
       nom: Mohamed Siaaliti
-      detail: Mohamed Siaaliti — 35-39 ans, encadrement
+      detail: Mohamed Siaaliti — 35-39 ans, Encadrement et professions intellectuelles
     - x: -0.346
       y: -0.219
       groupe: 3
       nom: Nicolas Van Brabandt
-      detail: Nicolas Van Brabandt — 35-39 ans, commerce
+      detail: Nicolas Van Brabandt — 35-39 ans, Commerce et vente
     - x: -0.576
       y: 0.573
       groupe: 0
       nom: Maxime Berthon
-      detail: Maxime Berthon — 30-34 ans, encadrement
+      detail: Maxime Berthon — 30-34 ans, Encadrement et professions intellectuelles
     - x: -0.283
       y: -0.424
       groupe: 3
       nom: Cyril Rouanne
-      detail: Cyril Rouanne — 35-39 ans, arts_medias
+      detail: Cyril Rouanne — 35-39 ans, Arts, médias et image
     - x: -0.081
       y: -0.024
       groupe: 0
       nom: Clo Dessard Arribas
-      detail: Clo Dessard Arribas — 25-29 ans, transport
+      detail: Clo Dessard Arribas — 25-29 ans, Transport et logistique
     - x: 0.662
       y: 0.225
       groupe: 4
       nom: Aurélien Soulimant
-      detail: Aurélien Soulimant — 18-24 ans, arts_medias
+      detail: Aurélien Soulimant — 18-24 ans, Arts, médias et image
     - x: -0.434
       y: -0.211
       groupe: 5
       nom: Steeve Demana
-      detail: Steeve Demana — 45 ans et plus, enseignement
+      detail: Steeve Demana — 45 ans et plus, Enseignement et éducation
     - x: -0.344
       y: -0.127
       groupe: 0
       nom: Cindy Poumeyrol
-      detail: Cindy Poumeyrol — 30-34 ans, encadrement
+      detail: Cindy Poumeyrol — 30-34 ans, Encadrement et professions intellectuelles
     - x: -0.218
       y: -0.455
       groupe: 5
       nom: Maud Bamps
-      detail: Maud Bamps — 45 ans et plus, commerce
+      detail: Maud Bamps — 45 ans et plus, Commerce et vente
     - x: -0.45
       y: 0.245
       groupe: 5
       nom: François Zabalo
-      detail: François Zabalo — 45 ans et plus, commerce
+      detail: François Zabalo — 45 ans et plus, Commerce et vente
     - x: -0.188
       y: -0.551
       groupe: 5
       nom: Carole Collado
-      detail: Carole Collado — 45 ans et plus, sans_emploi
+      detail: Carole Collado — 45 ans et plus, Sans activité déclarée
     - x: -0.333
       y: -0.22
       groupe: 0
       nom: Samuel Degoute
-      detail: Samuel Degoute — 35-39 ans, sport
+      detail: Samuel Degoute — 35-39 ans, Sport et coaching
     - x: 0.028
       y: -0.815
       groupe: 3
       nom: Diane Goulesque-Perez
-      detail: Diane Goulesque-Perez — 25-29 ans, commerce
+      detail: Diane Goulesque-Perez — 25-29 ans, Commerce et vente
     - x: -0.203
       y: -0.911
       groupe: 5
       nom: Estelle Fabrice
-      detail: Estelle Fabrice — 45 ans et plus, enseignement
+      detail: Estelle Fabrice — 45 ans et plus, Enseignement et éducation
     - x: -0.407
       y: 0.267
       groupe: 0
       nom: Mathieu Blanchard
-      detail: Mathieu Blanchard — 30-34 ans, sport
+      detail: Mathieu Blanchard — 30-34 ans, Sport et coaching
     - x: -0.576
       y: 0.573
       groupe: 0
       nom: Adrien Ferreira
-      detail: Adrien Ferreira — 30-34 ans, encadrement
+      detail: Adrien Ferreira — 30-34 ans, Encadrement et professions intellectuelles
     - x: 0.599
       y: 0.43
       groupe: 4
       nom: Aubin Bligny
-      detail: Aubin Bligny — 18-24 ans, commerce
+      detail: Aubin Bligny — 18-24 ans, Commerce et vente
     - x: -0.502
       y: 0.086
       groupe: 2
       nom: Sébastien Aberlenc
-      detail: Sébastien Aberlenc — 35-39 ans, encadrement
+      detail: Sébastien Aberlenc — 35-39 ans, Encadrement et professions intellectuelles
     - x: -0.515
       y: 0.102
       groupe: 2
       nom: Marie-France Schieber
-      detail: Marie-France Schieber — 45 ans et plus, artisanat_btp
+      detail: Marie-France Schieber — 45 ans et plus, Artisanat et bâtiment
     - x: 0.041
       y: -0.816
       groupe: 3
       nom: Hadja Cissé
-      detail: Hadja Cissé — 25-29 ans, sport
+      detail: Hadja Cissé — 25-29 ans, Sport et coaching
     - x: -0.404
       y: -0.189
       groupe: 0
       nom: Bertrand-Kamal Loudrhiri
-      detail: Bertrand-Kamal Loudrhiri — 30-34 ans, enseignement
+      detail: Bertrand-Kamal Loudrhiri — 30-34 ans, Enseignement et éducation
     - x: -0.411
       y: -0.362
       groupe: 2
       nom: Joaquina Glaud
-      detail: Joaquina Glaud — 35-39 ans, artisanat_btp
+      detail: Joaquina Glaud — 35-39 ans, Artisanat et bâtiment
     - x: -0.503
       y: 0.037
       groupe: 0
       nom: Jody Favier
-      detail: Jody Favier — 30-34 ans, agriculture
+      detail: Jody Favier — 30-34 ans, Agriculture et nature
     - x: -0.434
       y: -0.211
       groupe: 5
       nom: Laurent Affri
-      detail: Laurent Affri — 45 ans et plus, enseignement
+      detail: Laurent Affri — 45 ans et plus, Enseignement et éducation
     - x: 0.041
       y: -0.816
       groupe: 3
       nom: Alix Noblat
-      detail: Alix Noblat — 25-29 ans, sport
+      detail: Alix Noblat — 25-29 ans, Sport et coaching
     - x: -0.747
       y: 0.802
       groupe: 2
       nom: Fabrice Pietrzak
-      detail: Fabrice Pietrzak — 45 ans et plus, artisanat_btp
+      detail: Fabrice Pietrzak — 45 ans et plus, Artisanat et bâtiment
     - x: 0.227
       y: -1.208
       groupe: 3
       nom: Ava Maisini
-      detail: Ava Maisini — 25-29 ans, restauration_hotellerie
+      detail: Ava Maisini — 25-29 ans, Restauration et hôtellerie
     - x: 0.227
       y: -1.208
       groupe: 3
       nom: Angélique Ti
-      detail: Angélique Ti — 25-29 ans, restauration_hotellerie
+      detail: Angélique Ti — 25-29 ans, Restauration et hôtellerie
     - x: -0.528
       y: 1.058
       groupe: 0
       nom: Dorian Louvet
-      detail: Dorian Louvet — 30-34 ans, transport
+      detail: Dorian Louvet — 30-34 ans, Transport et logistique
     - x: 2.214
       y: 0.343
       groupe: 1
       nom: Lola Besse
-      detail: Lola Besse — 18-24 ans, etudiant
+      detail: Lola Besse — 18-24 ans, Étudiants
     - x: 0.629
       y: 0.334
       groupe: 5
       nom: Loïc Riowal
-      detail: Loïc Riowal — 18-24 ans, sans_emploi
+      detail: Loïc Riowal — 18-24 ans, Sans activité déclarée
     - x: 0.614
       y: -0.027
       groupe: 4
       nom: Brice Petit
-      detail: Brice Petit — 18-24 ans, enseignement
+      detail: Brice Petit — 18-24 ans, Enseignement et éducation
     - x: -0.344
       y: -0.127
       groupe: 0
       nom: Alexandra Pornet
-      detail: Alexandra Pornet — 30-34 ans, encadrement
+      detail: Alexandra Pornet — 30-34 ans, Encadrement et professions intellectuelles
     - x: -0.265
       y: 0.514
       groupe: 2
       nom: Sylviane Simonnet
-      detail: Sylviane Simonnet — 40-44 ans, action_securite
+      detail: Sylviane Simonnet — 40-44 ans, Action et sécurité
     - x: 1.412
       y: -0.202
       groupe: 4
       nom: Marie Oheix
-      detail: Marie Oheix — 25-29 ans, etudiant
+      detail: Marie Oheix — 25-29 ans, Étudiants
     - x: -0.101
       y: -0.92
       groupe: 3
       nom: Élodie Faelens
-      detail: Élodie Faelens — 35-39 ans, sport
+      detail: Élodie Faelens — 35-39 ans, Sport et coaching
     - x: 0.032
       y: -0.205
       groupe: 3
       nom: Candice Rousset
-      detail: Candice Rousset — 25-29 ans, action_securite
+      detail: Candice Rousset — 25-29 ans, Action et sécurité
     - x: -0.313
       y: 0.676
       groupe: 0
       nom: Gabin Peillon
-      detail: Gabin Peillon — 25-29 ans, transport
+      detail: Gabin Peillon — 25-29 ans, Transport et logistique
     - x: -0.078
       y: 0.009
       groupe: 0
       nom: Aurélien Tesson
-      detail: Aurélien Tesson — 30-34 ans, sante
+      detail: Aurélien Tesson — 30-34 ans, Santé
     - x: -0.251
       y: -0.148
       groupe: 3
       nom: Frédéric Baudet
-      detail: Frédéric Baudet — 45 ans et plus, restauration_hotellerie
+      detail: Frédéric Baudet — 45 ans et plus, Restauration et hôtellerie
     - x: -0.798
       y: 1.16
       groupe: 2
       nom: Hervé Comte
-      detail: Hervé Comte — 40-44 ans, artisanat_btp
+      detail: Hervé Comte — 40-44 ans, Artisanat et bâtiment
     - x: -0.52
       y: 0.355
       groupe: 0
       nom: Mathieu Orsolani
-      detail: Mathieu Orsolani — 25-29 ans, agriculture
+      detail: Mathieu Orsolani — 25-29 ans, Agriculture et nature
     - x: -0.129
       y: -0.51
       groupe: 3
       nom: Shanice Mendy
-      detail: Shanice Mendy — 25-29 ans, encadrement
+      detail: Shanice Mendy — 25-29 ans, Encadrement et professions intellectuelles
     - x: -0.098
       y: -1.375
       groupe: 3
       nom: Myriam Chafik
-      detail: Myriam Chafik — 35-39 ans, enseignement
+      detail: Myriam Chafik — 35-39 ans, Enseignement et éducation
     - x: -0.361
       y: 0.19
       groupe: 2
       nom: Vincent Blier
-      detail: Vincent Blier — 25-29 ans, encadrement
+      detail: Vincent Blier — 25-29 ans, Encadrement et professions intellectuelles
     - x: -0.271
       y: -0.614
       groupe: 3
       nom: Laëtitia Saphores
-      detail: Laëtitia Saphores — 35-39 ans, encadrement
+      detail: Laëtitia Saphores — 35-39 ans, Encadrement et professions intellectuelles
     - x: -0.454
       y: 0.572
       groupe: 0
       nom: Thomas Plisson
-      detail: Thomas Plisson — 35-39 ans, transport
+      detail: Thomas Plisson — 35-39 ans, Transport et logistique
     - x: -0.576
       y: 0.573
       groupe: 0
       nom: Flavio Soares Tavares
-      detail: Flavio Soares Tavares — 30-34 ans, encadrement
+      detail: Flavio Soares Tavares — 30-34 ans, Encadrement et professions intellectuelles
     - x: -0.205
       y: -0.456
       groupe: 5
       nom: Magali Sevenier
-      detail: Magali Sevenier — 45 ans et plus, sport
+      detail: Magali Sevenier — 45 ans et plus, Sport et coaching
     - x: -0.662
       y: 0.251
       groupe: 0
       nom: Arnaud Deshayes
-      detail: Arnaud Deshayes — 35-39 ans, agriculture
+      detail: Arnaud Deshayes — 35-39 ans, Agriculture et nature
     - x: -0.288
       y: -0.345
       groupe: 0
       nom: Laure Canevarolo
-      detail: Laure Canevarolo — 25-29 ans, agriculture
+      detail: Laure Canevarolo — 25-29 ans, Agriculture et nature
     - x: -0.407
       y: 0.267
       groupe: 0
       nom: Jonathan Julien
-      detail: Jonathan Julien — 30-34 ans, sport
+      detail: Jonathan Julien — 30-34 ans, Sport et coaching
     - x: -0.101
       y: -0.92
       groupe: 3
       nom: Lucie Bertaud
-      detail: Lucie Bertaud — 35-39 ans, sport
+      detail: Lucie Bertaud — 35-39 ans, Sport et coaching
     - x: 0.041
       y: -0.816
       groupe: 3
       nom: Maxine Eouzan
-      detail: Maxine Eouzan — 25-29 ans, sport
+      detail: Maxine Eouzan — 25-29 ans, Sport et coaching
     - x: -0.426
       y: 0.209
       groupe: 2
       nom: Lili Gasnier
-      detail: Lili Gasnier — 40-44 ans, encadrement
+      detail: Lili Gasnier — 40-44 ans, Encadrement et professions intellectuelles
     - x: 0.072
       y: -0.355
       groupe: 3
       nom: Céline Dufrenoy
-      detail: Céline Dufrenoy — 40-44 ans, sante
+      detail: Céline Dufrenoy — 40-44 ans, Santé
     - x: -0.606
       y: 0.55
       groupe: 5
       nom: Franck (Le Totem Maudit)
-      detail: Franck (Le Totem Maudit) — 45 ans et plus, encadrement
+      detail: Franck (Le Totem Maudit) — 45 ans et plus, Encadrement et professions intellectuelles
     - x: 0.662
       y: 0.225
       groupe: 4
       nom: Matteo Real
-      detail: Matteo Real — 18-24 ans, arts_medias
+      detail: Matteo Real — 18-24 ans, Arts, médias et image
     - x: -0.175
       y: -0.433
       groupe: 0
       nom: Samira Aït-Brahim
-      detail: Samira Aït-Brahim — 30-34 ans, sport
+      detail: Samira Aït-Brahim — 30-34 ans, Sport et coaching
     - x: 0.442
       y: 0.735
       groupe: 4
       nom: Benjamin Breerette
-      detail: Benjamin Breerette — 18-24 ans, encadrement
+      detail: Benjamin Breerette — 18-24 ans, Encadrement et professions intellectuelles
     - x: -0.642
       y: 0.338
       groupe: 2
       nom: Jean-Philippe Masy
-      detail: Jean-Philippe Masy — 35-39 ans, artisanat_btp
+      detail: Jean-Philippe Masy — 35-39 ans, Artisanat et bâtiment
     - x: 0.085
       y: -1.312
       groupe: 3
       nom: Stéphanie Tribot
-      detail: Stéphanie Tribot — 35-39 ans, restauration_hotellerie
+      detail: Stéphanie Tribot — 35-39 ans, Restauration et hôtellerie
     - x: -0.271
       y: -0.614
       groupe: 3
       nom: Alexandra Élizé
-      detail: Alexandra Élizé — 35-39 ans, encadrement
+      detail: Alexandra Élizé — 35-39 ans, Encadrement et professions intellectuelles
     - x: -0.051
       y: -1.124
       groupe: 3
       nom: Setha El Hajjami
-      detail: Setha El Hajjami — 35-39 ans, arts_medias
+      detail: Setha El Hajjami — 35-39 ans, Arts, médias et image
     - x: -0.141
       y: -0.32
       groupe: 3
       nom: Colin Mottas
-      detail: Colin Mottas — 25-29 ans, arts_medias
+      detail: Colin Mottas — 25-29 ans, Arts, médias et image
     - x: 0.674
       y: 0.035
       groupe: 4
       nom: Pauline Pourchaire
-      detail: Pauline Pourchaire — 18-24 ans, encadrement
+      detail: Pauline Pourchaire — 18-24 ans, Encadrement et professions intellectuelles
     - x: -0.407
       y: 0.267
       groupe: 0
       nom: Yannick Zachée
-      detail: Yannick Zachée — 30-34 ans, sport
+      detail: Yannick Zachée — 30-34 ans, Sport et coaching
     - x: -0.175
       y: -0.433
       groupe: 0
       nom: Anne-Sophie Mounier
-      detail: Anne-Sophie Mounier — 30-34 ans, sport
+      detail: Anne-Sophie Mounier — 30-34 ans, Sport et coaching
     - x: -0.576
       y: 0.573
       groupe: 0
       nom: Maxime Tournoux
-      detail: Maxime Tournoux — 30-34 ans, encadrement
+      detail: Maxime Tournoux — 30-34 ans, Encadrement et professions intellectuelles
     - x: 0.028
       y: -0.815
       groupe: 3
       nom: Louana Roy
-      detail: Louana Roy — 25-29 ans, commerce
+      detail: Louana Roy — 25-29 ans, Commerce et vente
     - x: -0.361
       y: 0.19
       groupe: 2
       nom: Fouzi de la Fuente
-      detail: Fouzi de la Fuente — 25-29 ans, encadrement
+      detail: Fouzi de la Fuente — 25-29 ans, Encadrement et professions intellectuelles
     - x: -0.502
       y: 0.086
       groupe: 2
       nom: Nicolas Bellon
-      detail: Nicolas Bellon — 35-39 ans, encadrement
+      detail: Nicolas Bellon — 35-39 ans, Encadrement et professions intellectuelles
     - x: -0.051
       y: -1.124
       groupe: 3
       nom: Olga Khokhlova
-      detail: Olga Khokhlova — 35-39 ans, arts_medias
+      detail: Olga Khokhlova — 35-39 ans, Arts, médias et image
     - x: 0.041
       y: -0.816
       groupe: 3
       nom: Ambre Daudet
-      detail: Ambre Daudet — 25-29 ans, sport
+      detail: Ambre Daudet — 25-29 ans, Sport et coaching
     - x: -0.798
       y: 1.16
       groupe: 2
       nom: Jean-Charles Chatelus
-      detail: Jean-Charles Chatelus — 40-44 ans, artisanat_btp
+      detail: Jean-Charles Chatelus — 40-44 ans, Artisanat et bâtiment
     - x: -0.218
       y: -0.455
       groupe: 5
       nom: Géraldine Nicolle
-      detail: Géraldine Nicolle — 45 ans et plus, commerce
+      detail: Géraldine Nicolle — 45 ans et plus, Commerce et vente
     - x: -0.341
       y: 0.392
       groupe: 2
       nom: François Descamp
-      detail: François Descamp — 35-39 ans, action_securite
+      detail: François Descamp — 35-39 ans, Action et sécurité
     - x: -0.407
       y: 0.267
       groupe: 0
       nom: Bastien San Pedro
-      detail: Bastien San Pedro — 30-34 ans, sport
+      detail: Bastien San Pedro — 30-34 ans, Sport et coaching
     - x: -0.203
       y: -0.911
       groupe: 5
       nom: Célia Litzellmann
-      detail: Célia Litzellmann — 45 ans et plus, enseignement
+      detail: Célia Litzellmann — 45 ans et plus, Enseignement et éducation
     - x: -0.606
       y: 0.55
       groupe: 5
       nom: Emin Luka
-      detail: Emin Luka — 45 ans et plus, encadrement
+      detail: Emin Luka — 45 ans et plus, Encadrement et professions intellectuelles
     - x: -0.528
       y: 1.058
       groupe: 0
       nom: Alexandre Delaunay
-      detail: Alexandre Delaunay — 30-34 ans, transport
+      detail: Alexandre Delaunay — 30-34 ans, Transport et logistique
     - x: -0.051
       y: -1.124
       groupe: 3
       nom: Elodie Migeal
-      detail: Elodie Migeal — 35-39 ans, arts_medias
+      detail: Elodie Migeal — 35-39 ans, Arts, médias et image
     - x: 0.603
       y: 1.04
       groupe: 4
       nom: Benjamin Di Benedetto
-      detail: Benjamin Di Benedetto — 18-24 ans, action_securite
+      detail: Benjamin Di Benedetto — 18-24 ans, Action et sécurité
     - x: -0.735
       y: 0.738
       groupe: 0
       nom: Martin Burrus
-      detail: Martin Burrus — 30-34 ans, agriculture
+      detail: Martin Burrus — 30-34 ans, Agriculture et nature
     - x: -0.203
       y: -0.911
       groupe: 5
       nom: Christine Mayonnade
-      detail: Christine Mayonnade — 45 ans et plus, enseignement
+      detail: Christine Mayonnade — 45 ans et plus, Enseignement et éducation
     - x: -0.609
       y: 1.395
       groupe: 2
       nom: Rudy Noël
-      detail: Rudy Noël — 40-44 ans, transport
+      detail: Rudy Noël — 40-44 ans, Transport et logistique
     - x: -0.411
       y: -0.362
       groupe: 2
       nom: Grâce Jeantel
-      detail: Grâce Jeantel — 35-39 ans, artisanat_btp
+      detail: Grâce Jeantel — 35-39 ans, Artisanat et bâtiment
     - x: -0.098
       y: -1.375
       groupe: 3
       nom: Anne-Sophie Antoine
-      detail: Anne-Sophie Antoine — 35-39 ans, enseignement
+      detail: Anne-Sophie Antoine — 35-39 ans, Enseignement et éducation
     - x: 0.369
       y: -1.074
       groupe: 3
       nom: Helena Roosen
-      detail: Helena Roosen — 25-29 ans, sante
+      detail: Helena Roosen — 25-29 ans, Santé
     - x: -0.735
       y: 0.738
       groupe: 0
       nom: Gilles De Baere
-      detail: Gilles De Baere — 30-34 ans, agriculture
+      detail: Gilles De Baere — 30-34 ans, Agriculture et nature
     - x: -0.269
       y: -0.259
       groupe: 2
       nom: Clémence Noquet
-      detail: Clémence Noquet — 25-29 ans, artisanat_btp
+      detail: Clémence Noquet — 25-29 ans, Artisanat et bâtiment
     - x: -0.501
       y: 0.603
       groupe: 2
       nom: Esteban Garcia-Mora
-      detail: Esteban Garcia-Mora — 40-44 ans, commerce
+      detail: Esteban Garcia-Mora — 40-44 ans, Commerce et vente
     - x: -0.124
       y: -0.637
       groupe: 0
       nom: Laura Yelpa
-      detail: Laura Yelpa — 30-34 ans, arts_medias
+      detail: Laura Yelpa — 30-34 ans, Arts, médias et image
     - x: -0.501
       y: 0.441
       groupe: 2
       nom: Quentin Paygnard
-      detail: Quentin Paygnard — 25-29 ans, artisanat_btp
+      detail: Quentin Paygnard — 25-29 ans, Artisanat et bâtiment
     - x: -0.175
       y: -0.433
       groupe: 0
       nom: Julie Debever
-      detail: Julie Debever — 30-34 ans, sport
+      detail: Julie Debever — 30-34 ans, Sport et coaching
     - x: -0.657
       y: 0.909
       groupe: 2
       nom: Nicolas Pretot
-      detail: Nicolas Pretot — 40-44 ans, encadrement
+      detail: Nicolas Pretot — 40-44 ans, Encadrement et professions intellectuelles
     - x: 1.171
       y: -0.528
       groupe: 4
       nom: Tania Cakarevic
-      detail: Tania Cakarevic — 18-24 ans, sante
+      detail: Tania Cakarevic — 18-24 ans, Santé
     - x: -0.419
       y: 0.267
       groupe: 0
       nom: Frédéric Khouvilay
-      detail: Frédéric Khouvilay — 30-34 ans, commerce
+      detail: Frédéric Khouvilay — 30-34 ans, Commerce et vente
     - x: -0.528
       y: 1.058
       groupe: 0
       nom: Steve Grenier
-      detail: Steve Grenier — 30-34 ans, transport
+      detail: Steve Grenier — 30-34 ans, Transport et logistique
     - x: 0.674
       y: 0.035
       groupe: 4
       nom: Alicia Bouly
-      detail: Alicia Bouly — 18-24 ans, encadrement
+      detail: Alicia Bouly — 18-24 ans, Encadrement et professions intellectuelles
     - x: -0.375
       y: -0.15
       groupe: 5
       nom: Nathalie Suhard
-      detail: Nathalie Suhard — 45 ans et plus, encadrement
+      detail: Nathalie Suhard — 45 ans et plus, Encadrement et professions intellectuelles
     - x: -0.445
       y: 0.856
       groupe: 5
       nom: William Plancq
-      detail: William Plancq — 45 ans et plus, action_securite
+      detail: William Plancq — 45 ans et plus, Action et sécurité
     - x: 0.603
       y: 1.04
       groupe: 4
       nom: Alexis Tchernychev
-      detail: Alexis Tchernychev — 18-24 ans, action_securite
+      detail: Alexis Tchernychev — 18-24 ans, Action et sécurité
     - x: -0.218
       y: -0.455
       groupe: 5
       nom: Émilie Clavis
-      detail: Émilie Clavis — 45 ans et plus, commerce
+      detail: Émilie Clavis — 45 ans et plus, Commerce et vente
     - x: -0.344
       y: -0.127
       groupe: 0
       nom: Sarah Diawara
-      detail: Sarah Diawara — 30-34 ans, encadrement
+      detail: Sarah Diawara — 30-34 ans, Encadrement et professions intellectuelles
     - x: -0.657
       y: 0.909
       groupe: 2
       nom: Maxime Barbet
-      detail: Maxime Barbet — 40-44 ans, encadrement
+      detail: Maxime Barbet — 40-44 ans, Encadrement et professions intellectuelles
     - x: 0.614
       y: -0.027
       groupe: 4
       nom: Ricky Poyet
-      detail: Ricky Poyet — 18-24 ans, enseignement
+      detail: Ricky Poyet — 18-24 ans, Enseignement et éducation
     - x: 0.835
       y: 0.34
       groupe: 4
       nom: Léa Notardonato
-      detail: Léa Notardonato — 18-24 ans, action_securite
+      detail: Léa Notardonato — 18-24 ans, Action et sécurité
     - x: -0.114
       y: -0.919
       groupe: 3
       nom: Océane Montenegro
-      detail: Océane Montenegro — 35-39 ans, commerce
+      detail: Océane Montenegro — 35-39 ans, Commerce et vente
     - x: -0.426
       y: 0.209
       groupe: 2
       nom: Cécile Poprawa
-      detail: Cécile Poprawa — 40-44 ans, encadrement
+      detail: Cécile Poprawa — 40-44 ans, Encadrement et professions intellectuelles
     - x: -0.346
       y: -0.219
       groupe: 3
       nom: Aurélien Dulau
-      detail: Aurélien Dulau — 35-39 ans, commerce
+      detail: Aurélien Dulau — 35-39 ans, Commerce et vente
     - x: -0.501
       y: 0.441
       groupe: 2
       nom: Jean Belmonte
-      detail: Jean Belmonte — 25-29 ans, artisanat_btp
+      detail: Jean Belmonte — 25-29 ans, Artisanat et bâtiment
     - x: 0.028
       y: -0.815
       groupe: 3
       nom: Mégane Rouland
-      detail: Mégane Rouland — 25-29 ans, commerce
+      detail: Mégane Rouland — 25-29 ans, Commerce et vente
     - x: -0.642
       y: 0.338
       groupe: 2
       nom: David Murail
-      detail: David Murail — 35-39 ans, artisanat_btp
+      detail: David Murail — 35-39 ans, Artisanat et bâtiment
     - x: -0.716
       y: 0.824
       groupe: 2
       nom: Sébastien Cazaux
-      detail: Sébastien Cazaux — 30-34 ans, artisanat_btp
+      detail: Sébastien Cazaux — 30-34 ans, Artisanat et bâtiment
     - x: -0.657
       y: 0.909
       groupe: 2
       nom: Amri Madani
-      detail: Amri Madani — 40-44 ans, encadrement
+      detail: Amri Madani — 40-44 ans, Encadrement et professions intellectuelles
     - x: -0.288
       y: -0.345
       groupe: 0
       nom: Pauline Bonneil
-      detail: Pauline Bonneil — 25-29 ans, agriculture
+      detail: Pauline Bonneil — 25-29 ans, Agriculture et nature
     - x: -0.411
       y: -0.362
       groupe: 2
       nom: Julie Rignault
-      detail: Julie Rignault — 35-39 ans, artisanat_btp
+      detail: Julie Rignault — 35-39 ans, Artisanat et bâtiment
     - x: -0.204
       y: -0.115
       groupe: 3
       nom: Meïssa Seck
-      detail: Meïssa Seck — 25-29 ans, commerce
+      detail: Meïssa Seck — 25-29 ans, Commerce et vente
     - x: -0.426
       y: 0.209
       groupe: 2
       nom: Léa Sahin
-      detail: Léa Sahin — 40-44 ans, encadrement
+      detail: Léa Sahin — 40-44 ans, Encadrement et professions intellectuelles
     - x: -0.296
       y: 0.358
       groupe: 0
       nom: Cécile Guy
-      detail: Cécile Guy — 30-34 ans, transport
+      detail: Cécile Guy — 30-34 ans, Transport et logistique
     - x: -0.606
       y: 0.55
       groupe: 5
       nom: Ari Bentolila
-      detail: Ari Bentolila — 45 ans et plus, encadrement
+      detail: Ari Bentolila — 45 ans et plus, Encadrement et professions intellectuelles
     - x: 0.028
       y: -0.815
       groupe: 3
       nom: Marie Vilaseca
-      detail: Marie Vilaseca — 25-29 ans, commerce
+      detail: Marie Vilaseca — 25-29 ans, Commerce et vente
     - x: 0.369
       y: -1.074
       groupe: 3
       nom: Lola Potabes
-      detail: Lola Potabes — 25-29 ans, sante
+      detail: Lola Potabes — 25-29 ans, Santé
     - x: -0.051
       y: -1.124
       groupe: 3
       nom: Vanessa Feuillatte
-      detail: Vanessa Feuillatte — 35-39 ans, arts_medias
+      detail: Vanessa Feuillatte — 35-39 ans, Arts, médias et image
     - x: -0.501
       y: 0.441
       groupe: 2
       nom: Nathanaël Branchereau
-      detail: Nathanaël Branchereau — 25-29 ans, artisanat_btp
+      detail: Nathanaël Branchereau — 25-29 ans, Artisanat et bâtiment
     - x: -0.078
       y: 0.009
       groupe: 0
       nom: Alexandre Cheron
-      detail: Alexandre Cheron — 30-34 ans, sante
+      detail: Alexandre Cheron — 30-34 ans, Santé
     - x: -0.502
       y: 0.086
       groupe: 2
       nom: Michel Huy
-      detail: Michel Huy — 35-39 ans, encadrement
+      detail: Michel Huy — 35-39 ans, Encadrement et professions intellectuelles
     - x: -0.271
       y: -0.614
       groupe: 3
       nom: Mélissa Pierru
-      detail: Mélissa Pierru — 35-39 ans, encadrement
+      detail: Mélissa Pierru — 35-39 ans, Encadrement et professions intellectuelles
     - x: -0.375
       y: -0.15
       groupe: 5
       nom: Emmanuelle Boisseau
-      detail: Emmanuelle Boisseau — 45 ans et plus, encadrement
+      detail: Emmanuelle Boisseau — 45 ans et plus, Encadrement et professions intellectuelles
     - x: -0.657
       y: 0.909
       groupe: 2
       nom: Fabrice Giordano
-      detail: Fabrice Giordano — 40-44 ans, encadrement
+      detail: Fabrice Giordano — 40-44 ans, Encadrement et professions intellectuelles
     - x: -0.114
       y: -0.919
       groupe: 3
       nom: Maud Collas
-      detail: Maud Collas — 35-39 ans, commerce
+      detail: Maud Collas — 35-39 ans, Commerce et vente
     - x: -0.344
       y: -0.127
       groupe: 0
       nom: Sarah Aboudeine
-      detail: Sarah Aboudeine — 30-34 ans, encadrement
+      detail: Sarah Aboudeine — 30-34 ans, Encadrement et professions intellectuelles
     - x: -0.147
       y: -0.612
       groupe: 3
       nom: Frédéric Khouvilay
-      detail: Frédéric Khouvilay — 35-39 ans, restauration_hotellerie
+      detail: Frédéric Khouvilay — 35-39 ans, Restauration et hôtellerie
     - x: -0.313
       y: 0.676
       groupe: 0
       nom: Maxim Iarkov
-      detail: Maxim Iarkov — 25-29 ans, transport
+      detail: Maxim Iarkov — 25-29 ans, Transport et logistique
     - x: -0.2
       y: 0.495
       groupe: 2
       nom: Gustin Comanescu
-      detail: Gustin Comanescu — 25-29 ans, action_securite
+      detail: Gustin Comanescu — 25-29 ans, Action et sécurité
     - x: 0.893
       y: -0.475
       groupe: 4
       nom: Cassandre Lambert
-      detail: Cassandre Lambert — 18-24 ans, arts_medias
+      detail: Cassandre Lambert — 18-24 ans, Arts, médias et image
     - x: -0.101
       y: -0.92
       groupe: 3
       nom: Sophia Mansouri
-      detail: Sophia Mansouri — 35-39 ans, sport
+      detail: Sophia Mansouri — 35-39 ans, Sport et coaching
     - x: -0.817
       y: 1.074
       groupe: 0
       nom: Ugo Lartiche
-      detail: Ugo Lartiche — 40-44 ans, agriculture
+      detail: Ugo Lartiche — 40-44 ans, Agriculture et nature
     - x: -0.283
       y: -0.424
       groupe: 3
       nom: Jacques Roque
-      detail: Jacques Roque — 35-39 ans, arts_medias
+      detail: Jacques Roque — 35-39 ans, Arts, médias et image
     - x: -0.256
       y: -0.097
       groupe: 3
       nom: Cécile Belec
-      detail: Cécile Belec — 40-44 ans, sport
+      detail: Cécile Belec — 40-44 ans, Sport et coaching
     - x: 1.982
       y: 1.043
       groupe: 1
       nom: Ilyesse Benyoub
-      detail: Ilyesse Benyoub — 18-24 ans, etudiant
+      detail: Ilyesse Benyoub — 18-24 ans, Étudiants
     - x: 0.043
       y: -1.272
       groupe: 3
       nom: Charlotte Rasquin
-      detail: Charlotte Rasquin — 25-29 ans, enseignement
+      detail: Charlotte Rasquin — 25-29 ans, Enseignement et éducation
     - x: -0.735
       y: 0.738
       groupe: 0
       nom: Thibault Bélanger
-      detail: Thibault Bélanger — 30-34 ans, agriculture
+      detail: Thibault Bélanger — 30-34 ans, Agriculture et nature
     - x: -0.114
       y: -0.919
       groupe: 3
       nom: Cynthian Steinbach
-      detail: Cynthian Steinbach — 35-39 ans, commerce
+      detail: Cynthian Steinbach — 35-39 ans, Commerce et vente
     - x: -0.52
       y: 0.355
       groupe: 0
       nom: Allan Rousseeuw
-      detail: Allan Rousseeuw — 25-29 ans, agriculture
+      detail: Allan Rousseeuw — 25-29 ans, Agriculture et nature
     - x: -0.45
       y: 0.245
       groupe: 5
       nom: Christian Chambon
-      detail: Christian Chambon — 45 ans et plus, commerce
+      detail: Christian Chambon — 45 ans et plus, Commerce et vente
     - x: 0.843
       y: -0.271
       groupe: 4
       nom: Romane Ouvrard
-      detail: Romane Ouvrard — 18-24 ans, sport
+      detail: Romane Ouvrard — 18-24 ans, Sport et coaching
     - x: -0.313
       y: 0.676
       groupe: 0
       nom: Mehdi Bounab-Lamiral
-      detail: Mehdi Bounab-Lamiral — 25-29 ans, transport
+      detail: Mehdi Bounab-Lamiral — 25-29 ans, Transport et logistique
     - x: 0.611
       y: 0.429
       groupe: 4
       nom: Benoît Piedfer
-      detail: Benoît Piedfer — 18-24 ans, sport
+      detail: Benoît Piedfer — 18-24 ans, Sport et coaching
     - x: -0.407
       y: 0.267
       groupe: 0
       nom: Mohamed Ayari
-      detail: Mohamed Ayari — 30-34 ans, sport
+      detail: Mohamed Ayari — 30-34 ans, Sport et coaching
     - x: -0.101
       y: -0.92
       groupe: 3
       nom: Pauline Leperchois
-      detail: Pauline Leperchois — 35-39 ans, sport
+      detail: Pauline Leperchois — 35-39 ans, Sport et coaching
     - x: 2.214
       y: 0.343
       groupe: 1
       nom: Andréa Zogron
-      detail: Andréa Zogron — 18-24 ans, etudiant
+      detail: Andréa Zogron — 18-24 ans, Étudiants
     - x: 0.442
       y: 0.735
       groupe: 4
       nom: Adrien Bernaert
-      detail: Adrien Bernaert — 18-24 ans, encadrement
+      detail: Adrien Bernaert — 18-24 ans, Encadrement et professions intellectuelles
     - x: -0.606
       y: 0.55
       groupe: 5
       nom: Frédéric Pignard
-      detail: Frédéric Pignard — 45 ans et plus, encadrement
+      detail: Frédéric Pignard — 45 ans et plus, Encadrement et professions intellectuelles
     - x: 0.085
       y: -1.312
       groupe: 3
       nom: Jessica Murcia
-      detail: Jessica Murcia — 35-39 ans, restauration_hotellerie
+      detail: Jessica Murcia — 35-39 ans, Restauration et hôtellerie
     - x: 0.835
       y: 0.34
       groupe: 4
       nom: Louise Picavet
-      detail: Louise Picavet — 18-24 ans, action_securite
+      detail: Louise Picavet — 18-24 ans, Action et sécurité
     - x: -0.344
       y: -0.127
       groupe: 0
       nom: Joana Callico
-      detail: Joana Callico — 30-34 ans, encadrement
+      detail: Joana Callico — 30-34 ans, Encadrement et professions intellectuelles
     - x: 0.043
       y: -1.272
       groupe: 3
       nom: Naïs Napoletano
-      detail: Naïs Napoletano — 25-29 ans, enseignement
+      detail: Naïs Napoletano — 25-29 ans, Enseignement et éducation
     - x: -0.502
       y: 0.086
       groupe: 2
       nom: Pierre-Marie Ponsot
-      detail: Pierre-Marie Ponsot — 35-39 ans, encadrement
+      detail: Pierre-Marie Ponsot — 35-39 ans, Encadrement et professions intellectuelles
     - x: -0.576
       y: 0.573
       groupe: 0
       nom: Maxime Lubian
-      detail: Maxime Lubian — 30-34 ans, encadrement
+      detail: Maxime Lubian — 30-34 ans, Encadrement et professions intellectuelles
     - x: -0.344
       y: -0.127
       groupe: 0
       nom: Noémie Bessec
-      detail: Noémie Bessec — 30-34 ans, encadrement
+      detail: Noémie Bessec — 30-34 ans, Encadrement et professions intellectuelles
     - x: -0.114
       y: -0.919
       groupe: 3
       nom: Céline Faccio
-      detail: Céline Faccio — 35-39 ans, commerce
+      detail: Céline Faccio — 35-39 ans, Commerce et vente
     - x: -0.445
       y: 0.856
       groupe: 5
       nom: Jérôme Salvatore
-      detail: Jérôme Salvatore — 45 ans et plus, action_securite
+      detail: Jérôme Salvatore — 45 ans et plus, Action et sécurité
     - x: -0.051
       y: -1.124
       groupe: 3
       nom: Claire Passas
-      detail: Claire Passas — 35-39 ans, arts_medias
+      detail: Claire Passas — 35-39 ans, Arts, médias et image
     - x: -0.798
       y: 1.16
       groupe: 2
       nom: Jérôme Molas
-      detail: Jérôme Molas — 40-44 ans, artisanat_btp
+      detail: Jérôme Molas — 40-44 ans, Artisanat et bâtiment
     - x: -0.501
       y: 0.441
       groupe: 2
       nom: Maël Lozach
-      detail: Maël Lozach — 25-29 ans, artisanat_btp
+      detail: Maël Lozach — 25-29 ans, Artisanat et bâtiment
     - x: -0.157
       y: -0.528
       groupe: 5
       nom: Gaëlle Fleury
-      detail: Gaëlle Fleury — 30-34 ans, sans_emploi
+      detail: Gaëlle Fleury — 30-34 ans, Sans activité déclarée
     - x: -0.426
       y: 0.209
       groupe: 2
       nom: Françoise Fournier-Grigis
-      detail: Françoise Fournier-Grigis — 40-44 ans, encadrement
+      detail: Françoise Fournier-Grigis — 40-44 ans, Encadrement et professions intellectuelles
     - x: -0.129
       y: -0.51
       groupe: 3
       nom: Clémence Dubent
-      detail: Clémence Dubent — 25-29 ans, encadrement
+      detail: Clémence Dubent — 25-29 ans, Encadrement et professions intellectuelles
     - x: -0.218
       y: -0.455
       groupe: 5
       nom: Karine Iraundegui
-      detail: Karine Iraundegui — 45 ans et plus, commerce
+      detail: Karine Iraundegui — 45 ans et plus, Commerce et vente
     - x: -0.501
       y: 0.603
       groupe: 2
       nom: Lionel Dubouchet
-      detail: Lionel Dubouchet — 40-44 ans, commerce
+      detail: Lionel Dubouchet — 40-44 ans, Commerce et vente
     - x: -0.375
       y: -0.15
       groupe: 5
       nom: Nora Toubal
-      detail: Nora Toubal — 45 ans et plus, encadrement
+      detail: Nora Toubal — 45 ans et plus, Encadrement et professions intellectuelles
     - x: -0.502
       y: 0.086
       groupe: 2
       nom: Jonathan Guez
-      detail: Jonathan Guez — 35-39 ans, encadrement
+      detail: Jonathan Guez — 35-39 ans, Encadrement et professions intellectuelles
     - x: -0.609
       y: 1.395
       groupe: 2
       nom: Ulrich Bandeira
-      detail: Ulrich Bandeira — 40-44 ans, transport
+      detail: Ulrich Bandeira — 40-44 ans, Transport et logistique
     - x: -0.454
       y: 0.572
       groupe: 0
       nom: Johan Pinaud
-      detail: Johan Pinaud — 35-39 ans, transport
+      detail: Johan Pinaud — 35-39 ans, Transport et logistique
     - x: -0.333
       y: -0.22
       groupe: 0
       nom: Paul Estival
-      detail: Paul Estival — 35-39 ans, sport
+      detail: Paul Estival — 35-39 ans, Sport et coaching
     - x: 2.214
       y: 0.343
       groupe: 1
       nom: Lola Krast
-      detail: Lola Krast — 18-24 ans, etudiant
+      detail: Lola Krast — 18-24 ans, Étudiants
     - x: -0.187
       y: -0.433
       groupe: 3
       nom: Jade Correa
-      detail: Jade Correa — 30-34 ans, commerce
+      detail: Jade Correa — 30-34 ans, Commerce et vente
     - x: -0.183
       y: 0.178
       groupe: 0
       nom: Cindy Sulpice-Gonzalez
-      detail: Cindy Sulpice-Gonzalez — 30-34 ans, action_securite
+      detail: Cindy Sulpice-Gonzalez — 30-34 ans, Action et sécurité
     - x: -0.141
       y: -0.32
       groupe: 3
       nom: Antonin Fortunato
-      detail: Antonin Fortunato — 25-29 ans, arts_medias
+      detail: Antonin Fortunato — 25-29 ans, Arts, médias et image
     - x: -0.2
       y: 0.495
       groupe: 2
       nom: Zakariya Bougoudouima
-      detail: Zakariya Bougoudouima — 25-29 ans, action_securite
+      detail: Zakariya Bougoudouima — 25-29 ans, Action et sécurité
     - x: -0.437
       y: 0.244
       groupe: 5
       nom: Daniel Duquesnoy
-      detail: Daniel Duquesnoy — 45 ans et plus, sport
+      detail: Daniel Duquesnoy — 45 ans et plus, Sport et coaching
     - x: -0.361
       y: 0.19
       groupe: 2
       nom: Hugo Van Aertryck
-      detail: Hugo Van Aertryck — 25-29 ans, encadrement
+      detail: Hugo Van Aertryck — 25-29 ans, Encadrement et professions intellectuelles
     - x: -0.109
       y: -0.308
       groupe: 3
       nom: Caroline Ledos
-      detail: Caroline Ledos — 35-39 ans, action_securite
+      detail: Caroline Ledos — 35-39 ans, Action et sécurité
     - x: -0.361
       y: 0.19
       groupe: 2
       nom: Guillaume Le Deun
-      detail: Guillaume Le Deun — 25-29 ans, encadrement
+      detail: Guillaume Le Deun — 25-29 ans, Encadrement et professions intellectuelles
     - x: 1.171
       y: -0.528
       groupe: 4
       nom: Clarisse Cresseveur
-      detail: Clarisse Cresseveur — 18-24 ans, sante
+      detail: Clarisse Cresseveur — 18-24 ans, Santé
     - x: 0.085
       y: -1.312
       groupe: 3
       nom: Cynthia Combes
-      detail: Cynthia Combes — 35-39 ans, restauration_hotellerie
+      detail: Cynthia Combes — 35-39 ans, Restauration et hôtellerie
     modalites:
     - x: 1.643
       y: 0.517
@@ -11462,49 +11462,49 @@ modeles:
       libelle: 45 ans et plus
     - x: 0.248
       y: -0.695
-      libelle: f
+      libelle: femme
     - x: -0.247
       y: 0.692
-      libelle: h
+      libelle: homme
     - x: -0.111
       y: 0.852
-      libelle: action_securite
+      libelle: Action et sécurité
     - x: -0.794
       y: 0.574
-      libelle: agriculture
+      libelle: Agriculture et nature
     - x: -0.753
       y: 0.745
-      libelle: artisanat_btp
+      libelle: Artisanat et bâtiment
     - x: 0.014
       y: -0.763
-      libelle: arts_medias
+      libelle: Arts, médias et image
     - x: -0.12
       y: -0.358
-      libelle: commerce
+      libelle: Commerce et vente
     - x: -0.455
       y: 0.247
-      libelle: encadrement
+      libelle: Encadrement et professions intellectuelles
     - x: -0.088
       y: -1.262
-      libelle: enseignement
+      libelle: Enseignement et éducation
     - x: 2.83
       y: 0.857
-      libelle: etudiant
+      libelle: Étudiants
     - x: 0.304
       y: -1.137
-      libelle: restauration_hotellerie
+      libelle: Restauration et hôtellerie
     - x: -0.057
       y: -0.548
-      libelle: sans_emploi
+      libelle: Sans activité déclarée
     - x: 0.606
       y: -0.87
-      libelle: sante
+      libelle: Santé
     - x: -0.094
       y: -0.359
-      libelle: sport
+      libelle: Sport et coaching
     - x: -0.352
       y: 1.209
-      libelle: transport
+      libelle: Transport et logistique
     tests:
     - cle: parite
       libelle: L'équilibre hommes-femmes
@@ -12342,37 +12342,37 @@ modeles:
         bas: 0.258
         haut: 0.492
         p: 0.0
-      - variable: 'Métier : artisanat_btp'
+      - variable: Métier — Artisanat et bâtiment
         rapport: 0.859
         bas: 0.554
         haut: 1.331
         p: 0.496
-      - variable: 'Métier : arts_medias'
+      - variable: Métier — Arts, médias et image
         rapport: 0.95
         bas: 0.638
         haut: 1.415
         p: 0.8009
-      - variable: 'Métier : commerce'
+      - variable: Métier — Commerce et vente
         rapport: 1.298
         bas: 0.897
         haut: 1.88
         p: 0.167
-      - variable: 'Métier : encadrement'
+      - variable: Métier — Encadrement et professions intellectuelles
         rapport: 1.478
         bas: 1.073
         haut: 2.036
         p: 0.0167
-      - variable: 'Métier : enseignement'
+      - variable: Métier — Enseignement et éducation
         rapport: 1.173
         bas: 0.731
         haut: 1.883
         p: 0.5071
-      - variable: 'Métier : etudiant'
+      - variable: Métier — Étudiants
         rapport: 1.303
         bas: 0.798
         haut: 2.128
         p: 0.2897
-      - variable: 'Métier : sport'
+      - variable: Métier — Sport et coaching
         rapport: 0.934
         bas: 0.618
         haut: 1.412
