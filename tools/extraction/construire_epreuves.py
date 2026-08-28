@@ -81,9 +81,26 @@ def construire(saisons, parts, rapport):
             continue
 
         tribus, personnes = index_saison(s, parts)
+
+        def eclater(libelle):
+            """« Claude Laurent » : deux vainqueurs, pas un aventurier inconnu.
+
+            Quelques cellules citent plusieurs gagnants sans separateur. On ne
+            les coupe que si CHAQUE mot designe un aventurier de la saison et
+            que l'ensemble n'en designe pas un -- sinon « Jean Charles » ou
+            « Marie France » seraient coupes en deux.
+            """
+            mots = libelle.split()
+            if len(mots) < 2 or slug(libelle) in personnes or slug(libelle) in tribus:
+                return [libelle]
+            if all(slug(m) in personnes for m in mots):
+                return mots
+            return [libelle]
+
         for e in meilleur:
             vainqueurs, formes = [], set()
-            for libelle in e["libelles"]:
+            libelles = [x for l in e["libelles"] for x in eclater(l)]
+            for libelle in libelles:
                 cle = slug(libelle)
                 if cle in tribus:
                     vainqueurs.append({"libelle": tribus[cle], "type": "tribu",

@@ -2892,12 +2892,20 @@
 - saison: s15
   episode: 14
   type: confort
-  forme: null
+  forme: individuelle
   vainqueurs:
-  - libelle: Gabriel Pascal Wendy
-    type: null
-    id: null
-    resolu: false
+  - libelle: Gabriel
+    type: personne
+    id: gabriel-gubbels
+    resolu: true
+  - libelle: Pascal
+    type: personne
+    id: pascal-salviani
+    resolu: true
+  - libelle: Wendy
+    type: personne
+    id: wendy-gervois
+    resolu: true
   source: challenges
 - saison: s15
   episode: 14
@@ -7976,12 +7984,16 @@
 - saison: sp7
   episode: 10
   type: confort
-  forme: null
+  forme: individuelle
   vainqueurs:
-  - libelle: Claude Laurent
-    type: null
-    id: null
-    resolu: false
+  - libelle: Claude
+    type: personne
+    id: claude-dartois
+    resolu: true
+  - libelle: Laurent
+    type: personne
+    id: laurent-maistret
+    resolu: true
   source: bilan par episode
 - saison: sp7
   episode: 10

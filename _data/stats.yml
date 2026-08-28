@@ -6593,11 +6593,11 @@ epreuves:
   - s14
   - sp2
   collectives: 391
-  individuelles: 365
+  individuelles: 367
   immunites: 392
   conforts: 374
   seuil_classement: 8
-  classement_effectif: 149
+  classement_effectif: 150
   ratio_moyen: 19.8
   classement_ratio:
   - personne: Claude Dartois
@@ -6828,7 +6828,7 @@ epreuves:
   meilleurs_cumuls:
   - personne: Claude Dartois
     id: claude-dartois
-    victoires: 19
+    victoires: 20
   - personne: Teheiura Teahui
     id: teheiura-teahui
     victoires: 17
@@ -6838,11 +6838,11 @@ epreuves:
   - personne: Jade Handi
     id: jade-handi
     victoires: 9
-  - personne: François-David Cardonnel
-    id: francois-david-cardonnel
-    victoires: 7
   - personne: Laurent Maistret
     id: laurent-maistret
+    victoires: 8
+  - personne: François-David Cardonnel
+    id: francois-david-cardonnel
     victoires: 7
   - personne: Romuald Lafite
     id: romuald-lafite
@@ -6868,15 +6868,15 @@ epreuves:
   - personne: Martin Bazin
     id: martin-bazin
     victoires: 5
-  - personne: Nicolas Rouyé
-    id: nicolas-rouye
+  - personne: Pascal Salviani
+    id: pascal-salviani
     victoires: 5
   par_metier:
   - code: sport
     libelle: Sport et coaching
-    victoires: 59
+    victoires: 60
     aventuriers: 49
-    victoires_par_aventurier: 1.2
+    victoires_par_aventurier: 1.22
   - code: encadrement
     libelle: Encadrement et professions intellectuelles
     victoires: 53
@@ -6894,9 +6894,9 @@ epreuves:
     victoires_par_aventurier: 0.81
   - code: commerce
     libelle: Commerce et vente
-    victoires: 35
+    victoires: 36
     aventuriers: 64
-    victoires_par_aventurier: 0.55
+    victoires_par_aventurier: 0.56
   - code: agriculture
     libelle: Agriculture et nature
     victoires: 27
@@ -6909,9 +6909,9 @@ epreuves:
     victoires_par_aventurier: 0.9
   - code: action_securite
     libelle: Action et sécurité
-    victoires: 21
+    victoires: 22
     aventuriers: 29
-    victoires_par_aventurier: 0.72
+    victoires_par_aventurier: 0.76
   - code: restauration_hotellerie
     libelle: Restauration et hôtellerie
     victoires: 21
@@ -6940,12 +6940,12 @@ epreuves:
   par_genre:
   - genre: f
     libelle: Femmes
-    victoires: 145
+    victoires: 146
     aventuriers: 256
     victoires_par_aventurier: 0.57
   - genre: h
     libelle: Hommes
-    victoires: 236
+    victoires: 238
     aventuriers: 255
     victoires_par_aventurier: 0.93
   par_age:
@@ -6954,9 +6954,9 @@ epreuves:
     aventuriers: 101
     victoires_par_aventurier: 0.72
   - tranche: 25-29 ans
-    victoires: 109
+    victoires: 110
     aventuriers: 108
-    victoires_par_aventurier: 1.01
+    victoires_par_aventurier: 1.02
   - tranche: 30-34 ans
     victoires: 92
     aventuriers: 86
@@ -6966,13 +6966,13 @@ epreuves:
     aventuriers: 86
     victoires_par_aventurier: 0.52
   - tranche: 40-44 ans
-    victoires: 34
+    victoires: 35
     aventuriers: 54
-    victoires_par_aventurier: 0.63
+    victoires_par_aventurier: 0.65
   - tranche: 45 ans et plus
-    victoires: 28
+    victoires: 29
     aventuriers: 76
-    victoires_par_aventurier: 0.37
+    victoires_par_aventurier: 0.38
 colliers:
   colliers: 74
   trouves: 62
@@ -7870,8 +7870,8 @@ indicateurs:
     tension_conseils: 28.6
     dispersion_votes: 0.759
     epreuves: 28
-    epreuves_individuelles: 14
-    domination_epreuves: 0.17
+    epreuves_individuelles: 15
+    domination_epreuves: 0.16
     meilleur_gagnant: nicolas-rouye
     victoires_du_meilleur: 5
     colliers: 0
@@ -8403,10 +8403,10 @@ indicateurs:
     tension_conseils: 50.0
     dispersion_votes: 0.65
     epreuves: 23
-    epreuves_individuelles: 15
-    domination_epreuves: 0.136
+    epreuves_individuelles: 16
+    domination_epreuves: 0.135
     meilleur_gagnant: claude-dartois
-    victoires_du_meilleur: 4
+    victoires_du_meilleur: 5
     colliers: 0
     colliers_joues: 0
     voix_annulees: 0
