@@ -1370,8 +1370,15 @@ conseils:
   bulletins_conseils_complets: 2167
   part_unanimes: 0.2
   part_serres: 47.5
-  voix_annulees_par_collier: 355
-  conseils_avec_collier_joue: 79
+  voix_annulees_par_objet: 209
+  conseils_avec_objet_joue: 60
+  saisons_avec_objet_joue: 20
+  voix_annulees_tour_nul: 146
+  conseils_tour_nul: 19
+  saisons_tour_nul: 10
+  objet_un_seul_protege: 53
+  objet_a_sauve: 53
+  objet_n_a_pas_sauve: 0
   vote_par_genre:
   - votant: h
     cible: f

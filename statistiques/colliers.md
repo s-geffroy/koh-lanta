@@ -97,3 +97,36 @@ sacré (2023) — sont des mécaniques distinctes, avec leurs propres règles, e
 n’entrent pas dans ces comptes. Les {{ c.saisons_couvertes }} saisons couvertes
 sont celles dont les sources donnent le destin de chaque collier ; les autres
 mentionnent des colliers sans les détailler.</p>
+
+## Ce que les bulletins savent que ce tableau ignore
+
+{% assign co = site.data.stats.conseils %}
+
+Le tableau ci-dessus suit la **vie d’un objet** : où il était caché, qui l’a
+trouvé, ce qu’il en a fait. Cette information n’existe que sur
+{{ c.saisons_couvertes }} saisons. Mais il reste une trace ailleurs : dans la
+matrice des votes, une voix annulée par un objet est **barrée**. Et cette
+trace-là existe sur {{ co.saisons_avec_objet_joue }} saisons.
+
+<div class="constat">
+  <p><b>{{ co.conseils_avec_objet_joue }} conseils</b> portent la marque d’un
+  objet d’immunité joué, sur {{ co.saisons_avec_objet_joue }} saisons —
+  {{ co.voix_annulees_par_objet }} voix effacées.</p>
+  <p>Quand un seul aventurier est protégé — les
+  {{ co.objet_un_seul_protege }} cas où l’on sache qui l’objet couvrait — il
+  reste en jeu <b>{{ co.objet_a_sauve }} fois sur
+  {{ co.objet_un_seul_protege }}</b>. Un objet joué au bon conseil ne rate
+  jamais.</p>
+  <p>Le vrai problème n’est donc pas l’efficacité de l’objet, c’est la
+  décision : {{ c.jamais_trouves }} colliers n’ont jamais été trouvés, et
+  beaucoup de ceux qui l’ont été sont partis avec leur détenteur, dans la
+  poche.</p>
+</div>
+
+<p class="note">Attention à ne pas confondre deux marques identiques.
+Lorsque <em>tous</em> les bulletins d’un conseil sont barrés, ce n’est pas un
+objet : c’est le tour entier qui est nul, une égalité suivie d’un second vote.
+Ce cas-là pèse {{ co.voix_annulees_tour_nul }} voix sur
+{{ co.conseils_tour_nul }} conseils, et il était compté avec les colliers
+jusqu’à cette version du site. <a href="{{ '/statistiques/conseils/' | relative_url }}">Les
+conseils</a> détaillent la distinction.</p>

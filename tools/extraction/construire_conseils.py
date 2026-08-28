@@ -158,6 +158,21 @@ def construire(saisons, parts, rapport):
                     "votes_contre": c["votes_contre"],
                 })
             commun["votes_exprimes"] = c["votes_exprimes"]
+            # Une voix barree dans la matrice n'a pas toujours la meme cause.
+            # Si SEULE une partie des bulletins est barree, c'est qu'un objet
+            # d'immunite a protege quelqu'un : les autres voix comptent, et
+            # quelqu'un sort. Si TOUS le sont, c'est le tour entier qui est
+            # nul -- egalite suivie d'un second vote, le plus souvent. Les
+            # confondre, c'est attribuer aux colliers des annulations qui ne
+            # leur doivent rien.
+            barres = [b for b in bulletins if b["annule"]]
+            if barres:
+                commun["annulation"] = ("totale" if len(barres) == len(bulletins)
+                                        else "partielle")
+                commun["voix_annulees"] = len(barres)
+                if commun["annulation"] == "partielle":
+                    proteges = sorted({b["cible"] for b in barres})
+                    commun["proteges"] = proteges
             commun["votes"] = bulletins
             conseils.append(commun)
     return conseils

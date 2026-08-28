@@ -16,7 +16,7 @@ dépouillés, pour **{{ c.bulletins }} bulletins**.
   <li class="chiffre"><b>{{ c.conseils }}</b><span>conseils relevés</span></li>
   <li class="chiffre"><b>{{ c.bulletins }}</b><span>bulletins</span></li>
   <li class="chiffre"><b>{{ c.part_serres }} %</b><span>de conseils serrés</span></li>
-  <li class="chiffre"><b>{{ c.voix_annulees_par_collier }}</b><span>voix annulées par un collier</span></li>
+  <li class="chiffre"><b>{{ c.voix_annulees_par_objet }}</b><span>voix annulées par un objet</span></li>
 </ul>
 
 ## Le vote est presque toujours serré
@@ -31,12 +31,34 @@ conseils seulement. L’image du camp entier se retournant d’un bloc contre un
 aventurier est une image de fiction — dans les faits, le vote se divise presque
 toujours.
 
-## Les colliers
+## Les objets d’immunité, vus depuis les bulletins
 
-**{{ c.voix_annulees_par_collier }} voix** ont été annulées par un collier
-d’immunité, réparties sur **{{ c.conseils_avec_collier_joue }} conseils**. Cela
-fait un peu plus de quatre voix annulées par collier joué : quand un collier
-sort du sac, il ne renverse pas une voix, il en efface un paquet.
+Un bulletin barré dans la matrice des votes n’a pas toujours la même cause, et
+les confondre revient à mettre au crédit des colliers des annulations qui ne
+leur doivent rien. Cette page les sépare.
+
+**Une partie des bulletins barrée** : un objet d’immunité a protégé quelqu’un,
+les autres voix comptent, et quelqu’un sort.
+**{{ c.voix_annulees_par_objet }} voix** dans ce cas, sur
+**{{ c.conseils_avec_objet_joue }} conseils** et
+{{ c.saisons_avec_objet_joue }} saisons — soit plus du double des saisons dont
+[la page des colliers]({{ '/statistiques/colliers/' | relative_url }}) connaît
+le détail des objets.
+
+**Tous les bulletins barrés** : c’est le tour entier qui est nul — une égalité,
+suivie d’un second vote. {{ c.voix_annulees_tour_nul }} voix,
+{{ c.conseils_tour_nul }} conseils, {{ c.saisons_tour_nul }} saisons. Rien à
+voir avec un collier.
+
+<div class="constat">
+  <p>Sur les {{ c.objet_un_seul_protege }} conseils où un <b>seul</b> aventurier
+  a vu ses voix annulées — les seuls où l’on sache qui l’objet protégeait —
+  <b>il est resté en jeu {{ c.objet_a_sauve }} fois sur
+  {{ c.objet_un_seul_protege }}</b>.</p>
+  <p>Un objet joué au bon conseil ne rate jamais. Toute la difficulté est
+  ailleurs : le jouer le bon soir. La page des colliers montre que la plupart
+  ne sont jamais joués du tout.</p>
+</div>
 
 ## Combien de voix faut-il pour partir ?
 

@@ -228,7 +228,11 @@ Ce qui reste, et pourquoi :
   {{ site.data.stats.colliers.saisons_couvertes }} saisons.** Les autres les
   mentionnent sans donner leur destin. Et seuls les *colliers* sont suivis :
   armes secrètes, totem maudit et talisman du feu sacré sont des mécaniques
-  distinctes, absentes de ces comptes.
+  distinctes, absentes de ces comptes. En revanche le **fait qu’un objet ait
+  été joué** se lit dans les bulletins barrés, sur
+  {{ site.data.stats.conseils.saisons_avec_objet_joue }} saisons : c’est une
+  information plus pauvre — on ne sait pas de quel objet il s’agit — mais
+  beaucoup plus large.
 - **La justesse de vote repose sur une base étroite.** Elle exige un conseil au
   dépouillement complet <em>et</em> un éliminé rattaché : quelques dizaines de
   conseils, pas les {{ site.data.stats.conseils.conseils }}. L’indicateur est

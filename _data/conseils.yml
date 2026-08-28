@@ -4429,6 +4429,8 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
+  annulation: totale
+  voix_annulees: 5
   votes:
   - votant: jade-handi
     votant_rattache: true
@@ -7049,6 +7051,10 @@
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 11
+  annulation: partielle
+  voix_annulees: 7
+  proteges:
+  - patricia-morel
   votes:
   - votant: gerard-urdampilleta
     votant_rattache: true
@@ -7639,6 +7645,10 @@
   elimine_rattache: false
   votes_contre: 5
   votes_exprimes: 9
+  annulation: partielle
+  voix_annulees: 1
+  proteges:
+  - sara-tallon
   votes:
   - votant: bernard-deniaud
     votant_rattache: true
@@ -7814,6 +7824,11 @@
   elimine_rattache: false
   votes_contre: 5
   votes_exprimes: 15
+  annulation: partielle
+  voix_annulees: 7
+  proteges:
+  - namadia-thai-thai
+  - philippe-bizet
   votes:
   - votant: ugo-lartiche
     votant_rattache: true
@@ -8039,6 +8054,11 @@
   elimine_rattache: false
   votes_contre: 3
   votes_exprimes: 11
+  annulation: partielle
+  voix_annulees: 7
+  proteges:
+  - myriam-modde
+  - philippe-bizet
   votes:
   - votant: ugo-lartiche
     votant_rattache: true
@@ -8629,6 +8649,10 @@
   elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 8
+  annulation: partielle
+  voix_annulees: 1
+  proteges:
+  - loic-crespin
   votes:
   - votant: chantal-menard
     votant_rattache: true
@@ -8764,6 +8788,10 @@
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 13
+  annulation: partielle
+  voix_annulees: 1
+  proteges:
+  - alban-pellegrin
   votes:
   - votant: marc-rambaud
     votant_rattache: true
@@ -8844,6 +8872,10 @@
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 12
+  annulation: partielle
+  voix_annulees: 6
+  proteges:
+  - melissa-bastin
   votes:
   - votant: marc-rambaud
     votant_rattache: true
@@ -9039,6 +9071,10 @@
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 8
+  annulation: partielle
+  voix_annulees: 1
+  proteges:
+  - marc-rambaud
   votes:
   - votant: marc-rambaud
     votant_rattache: true
@@ -9134,6 +9170,11 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
+  annulation: partielle
+  voix_annulees: 5
+  proteges:
+  - chantal-menard
+  - sebastien-ballesteros
   votes:
   - votant: marc-rambaud
     votant_rattache: true
@@ -9504,6 +9545,8 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
+  annulation: totale
+  voix_annulees: 8
   votes:
   - votant: pascal-salviani
     votant_rattache: true
@@ -9609,6 +9652,10 @@
   elimine_rattache: true
   votes_contre: 8
   votes_exprimes: 13
+  annulation: partielle
+  voix_annulees: 1
+  proteges:
+  - karima-neggaz
   votes:
   - votant: wendy-gervois
     votant_rattache: true
@@ -9684,6 +9731,10 @@
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 12
+  annulation: partielle
+  voix_annulees: 1
+  proteges:
+  - karima-neggaz
   votes:
   - votant: wendy-gervois
     votant_rattache: true
@@ -9754,6 +9805,10 @@
   elimine_rattache: true
   votes_contre: 7
   votes_exprimes: 11
+  annulation: partielle
+  voix_annulees: 1
+  proteges:
+  - pascal-salviani
   votes:
   - votant: wendy-gervois
     votant_rattache: true
@@ -9979,6 +10034,10 @@
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 6
+  annulation: partielle
+  voix_annulees: 1
+  proteges:
+  - wendy-gervois
   votes:
   - votant: wendy-gervois
     votant_rattache: true
@@ -10474,6 +10533,11 @@
   elimine_rattache: true
   votes_contre: 7
   votes_exprimes: 15
+  annulation: partielle
+  voix_annulees: 2
+  proteges:
+  - bruno-troester
+  - jean-luc-duboscq
   votes:
   - votant: benoit-assadi
     votant_rattache: true
@@ -10559,6 +10623,10 @@
   elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 13
+  annulation: partielle
+  voix_annulees: 7
+  proteges:
+  - benoit-assadi
   votes:
   - votant: benoit-assadi
     votant_rattache: true
@@ -10634,6 +10702,10 @@
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 11
+  annulation: partielle
+  voix_annulees: 1
+  proteges:
+  - jesta-hillmann
   votes:
   - votant: benoit-assadi
     votant_rattache: true
@@ -10774,6 +10846,10 @@
   elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 9
+  annulation: partielle
+  voix_annulees: 1
+  proteges:
+  - julie-navarro-camilleri
   votes:
   - votant: benoit-assadi
     votant_rattache: true
@@ -10924,6 +11000,10 @@
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 7
+  annulation: partielle
+  voix_annulees: 1
+  proteges:
+  - freddy-bolzer
   votes:
   - votant: benoit-assadi
     votant_rattache: true
@@ -11694,6 +11774,10 @@
   elimine_rattache: true
   votes_contre: 2
   votes_exprimes: 7
+  annulation: partielle
+  voix_annulees: 4
+  proteges:
+  - mathilde-chevalier
   votes:
   - votant: frederic-blancher
     votant_rattache: true
@@ -11734,6 +11818,10 @@
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 6
+  annulation: partielle
+  voix_annulees: 1
+  proteges:
+  - clementine-jullien
   votes:
   - votant: frederic-blancher
     votant_rattache: true
@@ -12264,6 +12352,8 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
+  annulation: totale
+  voix_annulees: 11
   votes:
   - votant: andre-deleplace
     votant_rattache: true
@@ -12389,6 +12479,10 @@
   elimine_rattache: true
   votes_contre: 3
   votes_exprimes: 10
+  annulation: partielle
+  voix_annulees: 5
+  proteges:
+  - magalie-gustave
   votes:
   - votant: andre-deleplace
     votant_rattache: true
@@ -12444,6 +12538,10 @@
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 9
+  annulation: partielle
+  voix_annulees: 4
+  proteges:
+  - marguerite-leblanc
   votes:
   - votant: andre-deleplace
     votant_rattache: true
@@ -12514,6 +12612,10 @@
   elimine_rattache: true
   votes_contre: 2
   votes_exprimes: 6
+  annulation: partielle
+  voix_annulees: 3
+  proteges:
+  - magalie-gustave
   votes:
   - votant: tiffany-gounin
     votant_rattache: true
@@ -12549,6 +12651,8 @@
   elimine_rattache: true
   votes_contre: 3
   votes_exprimes: 5
+  annulation: totale
+  voix_annulees: 5
   votes:
   - votant: andre-deleplace
     votant_rattache: true
@@ -12794,6 +12898,10 @@
   elimine_rattache: true
   votes_contre: 3
   votes_exprimes: 6
+  annulation: partielle
+  voix_annulees: 2
+  proteges:
+  - chloe-chaize
   votes:
   - votant: maud-bamps
     votant_rattache: true
@@ -13264,6 +13372,10 @@
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 10
+  annulation: partielle
+  voix_annulees: 6
+  proteges:
+  - cyril-rouanne
   votes:
   - votant: maud-bamps
     votant_rattache: true
@@ -13374,6 +13486,8 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
+  annulation: totale
+  voix_annulees: 6
   votes:
   - votant: maud-bamps
     votant_rattache: true
@@ -13624,6 +13738,10 @@
   elimine_rattache: true
   votes_contre: 1
   votes_exprimes: 6
+  annulation: partielle
+  voix_annulees: 5
+  proteges:
+  - estelle-fabrice
   votes:
   - votant: brice-petit
     votant_rattache: true
@@ -13744,6 +13862,10 @@
   elimine_rattache: true
   votes_contre: 1
   votes_exprimes: 5
+  annulation: partielle
+  voix_annulees: 4
+  proteges:
+  - aubin-bligny
   votes:
   - votant: ava-maisini
     votant_rattache: true
@@ -13959,6 +14081,10 @@
   elimine_rattache: true
   votes_contre: 7
   votes_exprimes: 14
+  annulation: partielle
+  voix_annulees: 1
+  proteges:
+  - dorian-louvet
   votes:
   - votant: alexandra-pornet
     votant_rattache: true
@@ -14119,6 +14245,10 @@
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 13
+  annulation: partielle
+  voix_annulees: 5
+  proteges:
+  - angelique-ti
   votes:
   - votant: alexandra-pornet
     votant_rattache: true
@@ -14849,6 +14979,10 @@
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 14
+  annulation: partielle
+  voix_annulees: 5
+  proteges:
+  - arnaud-deshayes
   votes:
   - votant: maxine-eouzan
     votant_rattache: true
@@ -15089,6 +15223,10 @@
   elimine_rattache: true
   votes_contre: 8
   votes_exprimes: 11
+  annulation: partielle
+  voix_annulees: 1
+  proteges:
+  - thomas-plisson
   votes:
   - votant: maxine-eouzan
     votant_rattache: true
@@ -16504,6 +16642,10 @@
   elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 8
+  annulation: partielle
+  voix_annulees: 1
+  proteges:
+  - quentin-paygnard
   votes:
   - votant: frederic-khouvilay
     votant_rattache: true
@@ -16659,6 +16801,10 @@
   elimine_rattache: true
   votes_contre: 3
   votes_exprimes: 7
+  annulation: partielle
+  voix_annulees: 3
+  proteges:
+  - tania-cakarevic
   votes:
   - votant: tania-cakarevic
     votant_rattache: true
@@ -16959,6 +17105,10 @@
   elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 7
+  annulation: partielle
+  voix_annulees: 1
+  proteges:
+  - quentin-paygnard
   votes:
   - votant: frederic-khouvilay
     votant_rattache: true
@@ -17039,6 +17189,10 @@
   elimine_rattache: true
   votes_contre: 2
   votes_exprimes: 7
+  annulation: partielle
+  voix_annulees: 3
+  proteges:
+  - tania-cakarevic
   votes:
   - votant: frederic-khouvilay
     votant_rattache: true
@@ -17354,6 +17508,10 @@
   elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 8
+  annulation: partielle
+  voix_annulees: 1
+  proteges:
+  - Léa
   votes:
   - votant: Léa
     votant_rattache: false
@@ -17404,6 +17562,10 @@
   elimine_rattache: true
   votes_contre: 8
   votes_exprimes: 10
+  annulation: partielle
+  voix_annulees: 2
+  proteges:
+  - Léa
   votes:
   - votant: meissa-seck
     votant_rattache: true
@@ -17509,6 +17671,10 @@
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 9
+  annulation: partielle
+  voix_annulees: 1
+  proteges:
+  - david-murail
   votes:
   - votant: meissa-seck
     votant_rattache: true
@@ -17584,6 +17750,10 @@
   elimine_rattache: false
   votes_contre: 6
   votes_exprimes: 13
+  annulation: partielle
+  voix_annulees: 7
+  proteges:
+  - oceane-montenegro
   votes:
   - votant: meissa-seck
     votant_rattache: true
@@ -17664,6 +17834,10 @@
   elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 12
+  annulation: partielle
+  voix_annulees: 6
+  proteges:
+  - amri-madani
   votes:
   - votant: Léa
     votant_rattache: false
@@ -17809,6 +17983,10 @@
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 9
+  annulation: partielle
+  voix_annulees: 2
+  proteges:
+  - amri-madani
   votes:
   - votant: Léa
     votant_rattache: false
@@ -18164,6 +18342,8 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
+  annulation: totale
+  voix_annulees: 9
   votes:
   - votant: Cécile B
     votant_rattache: false
@@ -18219,6 +18399,8 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
+  annulation: totale
+  voix_annulees: 9
   votes:
   - votant: thibault-belanger
     votant_rattache: true
@@ -18304,6 +18486,10 @@
   elimine_rattache: true
   votes_contre: 3
   votes_exprimes: 9
+  annulation: partielle
+  voix_annulees: 6
+  proteges:
+  - melissa-pierru
   votes:
   - votant: thibault-belanger
     votant_rattache: true
@@ -18429,6 +18615,8 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
+  annulation: totale
+  voix_annulees: 14
   votes:
   - votant: thibault-belanger
     votant_rattache: true
@@ -18719,6 +18907,10 @@
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 11
+  annulation: partielle
+  voix_annulees: 4
+  proteges:
+  - cassandre-lambert
   votes:
   - votant: thibault-belanger
     votant_rattache: true
@@ -18774,6 +18966,8 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
+  annulation: totale
+  voix_annulees: 8
   votes:
   - votant: thibault-belanger
     votant_rattache: true
@@ -19194,6 +19388,10 @@
   elimine_rattache: true
   votes_contre: 3
   votes_exprimes: 11
+  annulation: partielle
+  voix_annulees: 6
+  proteges:
+  - nais-napoletano
   votes:
   - votant: gaelle-fleury
     votant_rattache: true
@@ -19249,6 +19447,10 @@
   elimine_rattache: true
   votes_contre: 9
   votes_exprimes: 11
+  annulation: partielle
+  voix_annulees: 8
+  proteges:
+  - andrea-zogron
   votes:
   - votant: Jérôme
     votant_rattache: false
@@ -19384,6 +19586,8 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
+  annulation: totale
+  voix_annulees: 14
   votes:
   - votant: gaelle-fleury
     votant_rattache: true
@@ -19619,6 +19823,10 @@
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 11
+  annulation: partielle
+  voix_annulees: 4
+  proteges:
+  - Jérôme (O)
   votes:
   - votant: gaelle-fleury
     votant_rattache: true
@@ -20024,6 +20232,10 @@
   elimine_rattache: true
   votes_contre: 3
   votes_exprimes: 9
+  annulation: partielle
+  voix_annulees: 3
+  proteges:
+  - lionel-dubouchet
   votes:
   - votant: clarisse-cresseveur
     votant_rattache: true
@@ -20079,6 +20291,10 @@
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 8
+  annulation: partielle
+  voix_annulees: 1
+  proteges:
+  - cindy-sulpice-gonzalez
   votes:
   - votant: clarisse-cresseveur
     votant_rattache: true
@@ -20264,6 +20480,8 @@
   elimine_rattache: false
   votes_contre: null
   votes_exprimes: null
+  annulation: totale
+  voix_annulees: 14
   votes:
   - votant: cynthia-combes
     votant_rattache: true
@@ -20424,6 +20642,10 @@
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 13
+  annulation: partielle
+  voix_annulees: 7
+  proteges:
+  - hugo-van-aertryck
   votes:
   - votant: cynthia-combes
     votant_rattache: true
@@ -20644,6 +20866,8 @@
   elimine_rattache: false
   votes_contre: null
   votes_exprimes: null
+  annulation: totale
+  voix_annulees: 9
   votes:
   - votant: cynthia-combes
     votant_rattache: true
@@ -20764,6 +20988,11 @@
   elimine_rattache: true
   votes_contre: 3
   votes_exprimes: 8
+  annulation: partielle
+  voix_annulees: 4
+  proteges:
+  - cynthia-combes
+  - hugo-van-aertryck
   votes:
   - votant: cynthia-combes
     votant_rattache: true
@@ -22084,6 +22313,10 @@
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 12
+  annulation: partielle
+  voix_annulees: 1
+  proteges:
+  - freddy-boucher
   votes:
   - votant: bertrand-bolle
     votant_rattache: true
@@ -22349,6 +22582,10 @@
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 6
+  annulation: partielle
+  voix_annulees: 1
+  proteges:
+  - moussa-niangane
   votes:
   - votant: bertrand-bolle
     votant_rattache: true
@@ -22769,6 +23006,10 @@
   elimine_rattache: false
   votes_contre: 3
   votes_exprimes: 8
+  annulation: partielle
+  voix_annulees: 4
+  proteges:
+  - teheiura-teahui
   votes:
   - votant: laurent-maistret
     votant_rattache: true
@@ -23189,6 +23430,10 @@
   elimine_rattache: false
   votes_contre: 1
   votes_exprimes: 6
+  annulation: partielle
+  voix_annulees: 5
+  proteges:
+  - clementine-jullien
   votes:
   - votant: clemence-castel
     votant_rattache: true
@@ -23284,6 +23529,8 @@
   elimine_rattache: false
   votes_contre: null
   votes_exprimes: null
+  annulation: totale
+  voix_annulees: 10
   votes:
   - votant: clemence-castel
     votant_rattache: true
@@ -23564,6 +23811,10 @@
   elimine_rattache: false
   votes_contre: 3
   votes_exprimes: 6
+  annulation: partielle
+  voix_annulees: 2
+  proteges:
+  - jeremy-raffin
   votes:
   - votant: clemence-castel
     votant_rattache: true
@@ -23944,6 +24195,12 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
+  annulation: partielle
+  voix_annulees: 11
+  proteges:
+  - ahmad-abadie
+  - eric-peyrache
+  - pholien-systermans
   votes:
   - votant: naoil-tita
     votant_rattache: true
@@ -24154,6 +24411,8 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
+  annulation: totale
+  voix_annulees: 10
   votes:
   - votant: naoil-tita
     votant_rattache: true
@@ -24554,6 +24813,11 @@
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 11
+  annulation: partielle
+  voix_annulees: 5
+  proteges:
+  - alix-noblat
+  - maxime-berthon
   votes:
   - votant: claude-dartois
     votant_rattache: true
@@ -24614,6 +24878,10 @@
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 11
+  annulation: partielle
+  voix_annulees: 4
+  proteges:
+  - alexandra-pornet
   votes:
   - votant: jade-handi
     votant_rattache: true
@@ -24779,6 +25047,8 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
+  annulation: totale
+  voix_annulees: 7
   votes:
   - votant: claude-dartois
     votant_rattache: true
@@ -24899,6 +25169,10 @@
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 14
+  annulation: partielle
+  voix_annulees: 6
+  proteges:
+  - alix-noblat
   votes:
   - votant: claude-dartois
     votant_rattache: true
@@ -25109,6 +25383,8 @@
   elimine_rattache: false
   votes_contre: null
   votes_exprimes: null
+  annulation: totale
+  voix_annulees: 1
   votes:
   - votant: ugo-lartiche
     votant_rattache: true
@@ -25214,6 +25490,8 @@
   elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
+  annulation: totale
+  voix_annulees: 1
   votes:
   - votant: christelle-gauzet
     votant_rattache: true
@@ -25229,6 +25507,8 @@
   elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
+  annulation: totale
+  voix_annulees: 3
   votes:
   - votant: alexandra-pornet
     votant_rattache: true
@@ -25254,6 +25534,10 @@
   elimine_rattache: true
   votes_contre: 1
   votes_exprimes: null
+  annulation: partielle
+  voix_annulees: 2
+  proteges:
+  - laurent-maistret
   votes:
   - votant: laurent-maistret
     votant_rattache: true
@@ -25279,6 +25563,8 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
+  annulation: totale
+  voix_annulees: 2
   votes:
   - votant: jade-handi
     votant_rattache: true
@@ -25299,6 +25585,8 @@
   laureat_rattache: true
   votes_pour: null
   votes_exprimes: null
+  annulation: totale
+  voix_annulees: 4
   votes:
   - votant: philippe-bizet
     votant_rattache: true
@@ -25329,6 +25617,8 @@
   elimine_rattache: false
   votes_contre: null
   votes_exprimes: null
+  annulation: totale
+  voix_annulees: 18
   votes:
   - votant: camille-sold
     votant_rattache: true

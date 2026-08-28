@@ -324,8 +324,29 @@ def bloc_conseils(conseils, parts, par_saison):
               if c["votes_contre"] and c["votes_exprimes"]
               and c["votes_contre"] <= c["votes_exprimes"] / 2 + 0.5]
 
-    voix_annulees = sum(1 for c in utiles for b in c["votes"] if b.get("annule"))
-    conseils_collier = [c for c in utiles if any(b.get("annule") for b in c["votes"])]
+    # Une voix barree a deux causes possibles, et les confondre attribue aux
+    # colliers des annulations qui ne leur doivent rien. Voir la note de
+    # `construire_conseils.py` : annulation partielle = un objet a protege
+    # quelqu'un ; annulation totale = le tour entier est nul, egalite suivie
+    # d'un second vote le plus souvent.
+    objets = [c for c in utiles if c.get("annulation") == "partielle"]
+    tours_nuls = [c for c in utiles if c.get("annulation") == "totale"]
+    voix_objet = sum(c.get("voix_annulees") or 0 for c in objets)
+    voix_tour_nul = sum(c.get("voix_annulees") or 0 for c in tours_nuls)
+
+    # Un objet joue sauve-t-il ? On ne peut le dire que lorsqu'un seul
+    # aventurier a vu ses voix annulees ; a plusieurs, on ne sait pas laquelle
+    # des protections a compte.
+    seul, sauves, rates = [], 0, 0
+    for c in objets:
+        p_ = c.get("proteges") or []
+        if len(p_) != 1:
+            continue
+        seul.append(c)
+        if c.get("elimine") == p_[0]:
+            rates += 1
+        else:
+            sauves += 1
 
     genre = {}
     idx = {(p["saison"], p["id"]): p for p in parts}
@@ -345,8 +366,15 @@ def bloc_conseils(conseils, parts, par_saison):
         "bulletins_conseils_complets": sum(len(c["votes"]) for c in complets),
         "part_unanimes": part(len(unanimes), len(avec_decompte)),
         "part_serres": part(len(serres), len(avec_decompte)),
-        "voix_annulees_par_collier": voix_annulees,
-        "conseils_avec_collier_joue": len(conseils_collier),
+        "voix_annulees_par_objet": voix_objet,
+        "conseils_avec_objet_joue": len(objets),
+        "saisons_avec_objet_joue": len({c["saison"] for c in objets}),
+        "voix_annulees_tour_nul": voix_tour_nul,
+        "conseils_tour_nul": len(tours_nuls),
+        "saisons_tour_nul": len({c["saison"] for c in tours_nuls}),
+        "objet_un_seul_protege": len(seul),
+        "objet_a_sauve": sauves,
+        "objet_n_a_pas_sauve": rates,
         "vote_par_genre": [
             {"votant": g1, "cible": g2, "effectif": n, "part": part(n, total_g)}
             for (g1, g2), n in sorted(genre.items(), key=lambda x: -x[1])],
@@ -862,7 +890,8 @@ def main():
           f"{v['part_40_et_plus']} % de 40 ans et plus")
     c = stats["conseils"]
     print(f"  conseils : {c['conseils']} dont {c['conseils_complets']} complets, "
-          f"{c['bulletins']} bulletins, {c['voix_annulees_par_collier']} voix annulees")
+          f"{c['bulletins']} bulletins, {c['voix_annulees_par_objet']} voix annulees "
+          f"par un objet et {c['voix_annulees_tour_nul']} par un tour nul")
     co = stats.get("colliers") or {}
     if co:
         print(f"  colliers : {co['colliers']} sur {co['saisons_couvertes']} saisons, "
