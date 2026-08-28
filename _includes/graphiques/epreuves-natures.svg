@@ -1,0 +1,35 @@
+<figure class="figure">
+<svg class="graphique" viewBox="0 0 680 310" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Ce que le wiki dit de la nature des épreuves">
+  <title>Ce que le wiki dit de la nature des épreuves</title>
+  <desc>Nombre d&#x27;épreuves récurrentes portant chaque qualificatif. Une épreuve peut en porter deux — « rapidité, force ».</desc>
+  <line x1="252.0" y1="10" x2="252.0" y2="284" stroke="var(--grille)" stroke-width="1"/>
+  <line x1="374.0" y1="10" x2="374.0" y2="284" stroke="var(--grille)" stroke-width="1"/>
+  <line x1="496.0" y1="10" x2="496.0" y2="284" stroke="var(--grille)" stroke-width="1"/>
+  <line x1="618.0" y1="10" x2="618.0" y2="284" stroke="var(--grille)" stroke-width="1"/>
+  <g class="marque"><title>16 épreuves récurrentes que le wiki qualifie de « force »</title><rect x="130" y="16" width="488.0" height="26" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="120.0" y="29.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Force</text>
+  <text x="626.0" y="29.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">16 épreuves</text>
+  <g class="marque"><title>15 épreuves récurrentes que le wiki qualifie de « précision »</title><rect x="130" y="50" width="457.5" height="26" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="120.0" y="63.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Précision</text>
+  <text x="595.5" y="63.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">15 épreuves</text>
+  <g class="marque"><title>11 épreuves récurrentes que le wiki qualifie de « rapidité »</title><rect x="130" y="84" width="335.5" height="26" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="120.0" y="97.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Rapidité</text>
+  <text x="473.5" y="97.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">11 épreuves</text>
+  <g class="marque"><title>9 épreuves récurrentes que le wiki qualifie de « statique »</title><rect x="130" y="118" width="274.5" height="26" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="120.0" y="131.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Statique</text>
+  <text x="412.5" y="131.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">9 épreuves</text>
+  <g class="marque"><title>4 épreuves récurrentes que le wiki qualifie de « équilibre »</title><rect x="130" y="152" width="122.0" height="26" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="120.0" y="165.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Équilibre</text>
+  <text x="260.0" y="165.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">4 épreuves</text>
+  <g class="marque"><title>4 épreuves récurrentes que le wiki qualifie de « logique »</title><rect x="130" y="186" width="122.0" height="26" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="120.0" y="199.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Logique</text>
+  <text x="260.0" y="199.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">4 épreuves</text>
+  <g class="marque"><title>3 épreuves récurrentes que le wiki qualifie de « aquatique »</title><rect x="130" y="220" width="91.5" height="26" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="120.0" y="233.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Aquatique</text>
+  <text x="229.5" y="233.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">3 épreuves</text>
+  <g class="marque"><title>3 épreuves récurrentes que le wiki qualifie de « réflexion »</title><rect x="130" y="254" width="91.5" height="26" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="120.0" y="267.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Réflexion</text>
+  <text x="229.5" y="267.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">3 épreuves</text>
+  <line x1="130" y1="10" x2="130" y2="284" stroke="var(--axe)" stroke-width="1"/>
+</svg>
+</figure>

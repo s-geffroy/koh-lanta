@@ -120,6 +120,83 @@ substituer au précédent — et surtout pas pour nourrir un modèle : la
 <a href="{{ '/statistiques/force/' | relative_url }}">force réelle</a> continue
 de se calculer sur les seuls plateaux reconstruits.</p>
 
+## Les épreuves ont des noms, et une nature
+
+{% assign en = site.data.epreuves_nommees %}
+
+Cette page a longtemps affirmé que **la nature d’une épreuve — endurance,
+équilibre, précision — n’était donnée nulle part de façon exploitable**. La
+première moitié de la phrase était fausse : le wiki Fandom tient
+**{{ en.nb_epreuves }} pages d’épreuves récurrentes**, chacune avec son type et
+la liste des saisons où elle a été disputée. {{ en.nb_apparitions }} apparitions
+au total.
+
+{% include graphiques/epreuves-natures.svg %}
+
+<p class="legende-figure">Nombre d’épreuves récurrentes portant chaque
+qualificatif. Une épreuve peut en porter deux — le parcours du combattant est
+« rapidité, force ».</p>
+
+<div class="tableau-large">
+<table data-triable>
+<thead><tr>
+  <th>Épreuve</th><th>Type</th>
+  <th class="nombre">Apparitions</th><th class="nombre">Saisons</th>
+</tr></thead>
+<tbody>
+{% for x in en.epreuves %}{% if x.apparitions > 0 %}
+<tr>
+  <td>{{ x.nom }}</td>
+  <td>{{ x.type }}</td>
+  <td class="nombre">{{ x.apparitions }}</td>
+  <td class="nombre">{{ x.saisons | size }}</td>
+</tr>
+{% endif %}{% endfor %}
+</tbody>
+</table>
+</div>
+
+Le parcours du combattant a été couru **{{ en.epreuves[0].apparitions }} fois**,
+les flambeaux {{ en.epreuves[1].apparitions }} ; le tir à l’arc et l’épreuve de
+la boue une vingtaine chacun. Voilà pour le catalogue.
+
+## Pourquoi ce catalogue ne sert à rien ici
+
+C’est la seconde moitié de la phrase qui tenait, et il valait mieux la mesurer
+que l’affirmer.
+
+<div class="constat">
+  <p>Ce catalogue donne la <b>saison</b>, le vainqueur et le gain. Il ne donne
+  pas l’<b>épisode</b>. Or {{ e.epreuves }} épreuves relevées le sont épisode par
+  épisode — et un aventurier gagne souvent plusieurs épreuves du même genre dans
+  la même saison.</p>
+  <p>Résultat : sur les {{ en.raccord.epreuves_relevees }} épreuves relevées,
+  <b>{{ en.raccord.epreuves_raccordees }} seulement</b> peuvent recevoir une
+  nature — <b>{{ en.raccord.part_raccordee }} %</b>.</p>
+</div>
+
+<div class="tableau-large">
+<table>
+<thead><tr><th>Ce qui arrive à chaque citation du catalogue</th><th class="nombre">Effectif</th></tr></thead>
+<tbody>
+{% for m in en.raccord.motifs %}
+<tr><td>{{ m.motif }}</td><td class="nombre">{{ m.effectif }}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+**Et ces 10 % ne sont pas un échantillon.** Ce sont exactement les épreuves
+gagnées par quelqu’un qui n’en a gagné qu’une de ce genre cette saison-là —
+c’est-à-dire les vainqueurs les moins dominants. Chercher là si la nature d’une
+épreuve change qui la gagne reviendrait à ne regarder que les joueurs qui gagnent
+peu. C’est pourquoi cette nature **n’est pas attachée aux données** et ne nourrit
+aucun modèle : la publier serait une invitation à une erreur.
+
+<p class="note">Ce qu’il faudrait pour que cela marche : le nom de l’épreuve
+dans le bilan par épisode, ou le numéro d’épisode dans la fiche de l’épreuve.
+Ni l’un ni l’autre n’existe. C’est une limite de source, cette fois vérifiée.</p>
+
 ## Quel profil gagne les épreuves
 
 C’est ici que les données deviennent intéressantes, parce qu’elles contredisent

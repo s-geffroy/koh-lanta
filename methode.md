@@ -278,9 +278,20 @@ La leçon n’est pas « il faut chercher davantage ». Elle est plus précise :
 elle-même.** Celle-là est restée en place parce qu’elle avait l’air prudente.
 
 Ce qui manque réellement, après vérification cette fois : le **temps d’antenne**
-par aventurier, la **nature de chaque épreuve**, l’**ordre des bulletins** à un
-conseil. Ce sont les choses qui permettraient de dire quelque chose du
-**montage** — et aucune n’apparaît dans une source publique consultable.
+par aventurier et l’**ordre des bulletins** à un conseil. Aucun des deux
+n’apparaît dans une source publique consultable.
+
+La **nature de chaque épreuve**, elle, a été retirée de cette liste — parce
+qu’elle existe. Le wiki catalogue
+{{ site.data.epreuves_nommees.nb_epreuves }} épreuves récurrentes avec leur
+type. Elle reste inexploitable, mais pour une raison précise et mesurée : le
+catalogue ne donne pas l’épisode, si bien que
+{{ site.data.epreuves_nommees.raccord.part_raccordee }} % seulement des épreuves
+relevées peuvent recevoir une nature — et ces 10 % sont exactement les épreuves
+gagnées par les joueurs les moins dominants.
+[Les épreuves]({{ '/statistiques/epreuves/' | relative_url }}) montre le
+décompte. **C’est la troisième fois qu’une limite énoncée sans vérification se
+révèle fausse au moins à moitié.**
 
 ## Ce que ces données ne peuvent pas établir
 
@@ -290,7 +301,9 @@ concluant est publié comme non concluant, jamais retiré.
 
 **Aucune donnée de montage.** Le temps d’antenne, la construction des
 personnages, l’ordre dans lequel les bulletins sont dépouillés : rien de tout
-cela n’existe dans ce jeu de données, et rien n’en sera dit. Les **chiffres de
+cela n’existe dans ce jeu de données, et rien n’en sera dit. La nature des
+épreuves existe, mais ne se raccorde pas ; les **chiffres de diffusion**
+existent et se raccordent, mais s’arrêtent à l’audience « veille ». Les **chiffres de
 diffusion**, eux, existent — cette page a longtemps prétendu le contraire — mais
 ils s’arrêtent à l’audience « veille » et ignorent le rattrapage.
 

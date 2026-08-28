@@ -226,9 +226,12 @@ Ce qui reste, et pourquoi :
   épisode par épisode exploitable ; les cinq autres
   ({{ site.data.stats.epreuves.saisons_sans_donnee | join: ", " }}) n’en ont
   pas. Les épreuves de finale sont exclues : les tableaux sources y changent de
-  colonnes et listent les qualifiés plutôt que le vainqueur. Enfin, la nature
-  des épreuves — endurance, équilibre, précision — n’est nulle part donnée de
-  façon exploitable.
+  colonnes et listent les qualifiés plutôt que le vainqueur. Quant à la
+  **nature** des épreuves, le wiki la donne — {{ site.data.epreuves_nommees.nb_epreuves }}
+  pages d’épreuves récurrentes, typées — mais sans le numéro d’épisode, si bien
+  que seules {{ site.data.epreuves_nommees.raccord.part_raccordee }} % des
+  épreuves relevées peuvent la recevoir, et pas au hasard.
+  [Les épreuves]({{ '/statistiques/epreuves/' | relative_url }}) le mesure.
 - **Les colliers d’immunité ne sont détaillés que sur
   {{ site.data.stats.colliers.saisons_couvertes }} saisons.** Les autres les
   mentionnent sans donner leur destin. Et seuls les *colliers* sont suivis :

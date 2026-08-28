@@ -96,6 +96,7 @@ def main():
     print(f"    (peigne : {n} traits, mediane jour {mediane}, maximum jour {jmax})")
 
     figures_ajoutees(stats)
+    figure_epreuves_nommees()
     figure_prenoms()
     figure_nuage()
     figures_des_modeles(stats)
@@ -627,6 +628,26 @@ def figures_ajoutees(stats):
             description="Nombre de bulletins portant le nom de l'éliminé.",
             couleur=SERIES[0], largeur=760, hauteur=300))
     return
+
+def figure_epreuves_nommees():
+    """Le catalogue des epreuves recurrentes, par nature."""
+    chemin = os.path.join(RACINE, "_data", "epreuves_nommees.yml")
+    if not os.path.exists(chemin):
+        return
+    d = yaml.safe_load(open(chemin, encoding="utf-8")) or {}
+    lignes = [x for x in (d.get("par_nature") or []) if x["nature"] != "non qualifiee"]
+    if not lignes:
+        return
+    ecrire("epreuves-natures.svg", barres_horizontales(
+        [{"libelle": x["libelle"], "valeur": x["effectif"],
+          "detail": f'{x["effectif"]} épreuves récurrentes que le wiki qualifie '
+                    f'de « {x["libelle"].lower()} »'}
+         for x in lignes],
+        titre="Ce que le wiki dit de la nature des épreuves",
+        description="Nombre d'épreuves récurrentes portant chaque qualificatif. "
+                    "Une épreuve peut en porter deux — « rapidité, force ».",
+        unite=" épreuves", couleur=SERIES[2], marge_gauche=130))
+
 
 def figure_prenoms():
     """Les prenoms du casting compares a ceux de la France, nee les memes annees.

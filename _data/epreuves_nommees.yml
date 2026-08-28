@@ -1,0 +1,808 @@
+# Fichier genere par tools/extraction/epreuves_nommees.py.
+# Ne pas editer a la main : toute modification sera ecrasee.
+source: https://kohlanta.fandom.com/fr/wiki/Catégorie:Épreuves
+epreuves:
+- nom: Parcours du combattant
+  type: Rapidité, force
+  natures:
+  - force
+  - rapidite
+  apparitions: 31
+  saisons:
+  - s01
+  - s02
+  - s03
+  - s04
+  - s05
+  - s06
+  - s07
+  - s08
+  - s09
+  - s10
+  - s11
+  - s12
+  - s14
+  - s15
+  - s16
+  - s17
+  - s18
+  - s20
+  - s21
+  - s22
+  - s23
+  - s24
+  - s25
+  - s27
+  - sp1
+  - sp2
+  - sp3
+  - sp4
+  - sp5
+  - sp6
+  - sp7
+- nom: Flambeaux
+  type: Force
+  natures:
+  - force
+  apparitions: 25
+  saisons:
+  - s01
+  - s03
+  - s04
+  - s05
+  - s06
+  - s07
+  - s09
+  - s10
+  - s11
+  - s12
+  - s14
+  - s15
+  - s16
+  - s17
+  - s18
+  - s20
+  - s21
+  - s22
+  - s23
+  - sp1
+  - sp2
+  - sp3
+  - sp4
+  - sp5
+  - sp7
+- nom: Aveugle
+  type: Rapidité
+  natures:
+  - rapidite
+  apparitions: 21
+  saisons:
+  - s03
+  - s04
+  - s05
+  - s06
+  - s07
+  - s09
+  - s10
+  - s11
+  - s12
+  - s14
+  - s15
+  - s16
+  - s17
+  - s18
+  - s21
+  - sp1
+  - sp2
+  - sp3
+  - sp5
+  - sp7
+- nom: Boue
+  type: Rapidité
+  natures:
+  - rapidite
+  apparitions: 21
+  saisons:
+  - s02
+  - s03
+  - s04
+  - s05
+  - s06
+  - s07
+  - s08
+  - s09
+  - s10
+  - s12
+  - s14
+  - s15
+  - s16
+  - s17
+  - s20
+  - s21
+  - sp1
+  - sp2
+  - sp3
+  - sp5
+  - sp7
+- nom: Sacs
+  type: Force, équilibre
+  natures:
+  - force
+  - equilibre
+  apparitions: 21
+  saisons:
+  - s03
+  - s04
+  - s05
+  - s06
+  - s07
+  - s08
+  - s10
+  - s11
+  - s12
+  - s14
+  - s15
+  - s16
+  - s17
+  - s20
+  - s21
+  - s22
+  - s23
+  - sp1
+  - sp2
+  - sp5
+  - sp6
+- nom: Tir à l'arc
+  type: Précision
+  natures:
+  - precision
+  apparitions: 21
+  saisons:
+  - s01
+  - s02
+  - s03
+  - s04
+  - s05
+  - s07
+  - s10
+  - s11
+  - s12
+  - s15
+  - s16
+  - s18
+  - s20
+  - s21
+  - s22
+  - sp1
+  - sp2
+  - sp4
+  - sp5
+  - sp6
+  - sp7
+- nom: Radeaux
+  type: Force, rapidité
+  natures:
+  - force
+  - rapidite
+  apparitions: 19
+  saisons:
+  - s04
+  - s06
+  - s07
+  - s08
+  - s09
+  - s10
+  - s11
+  - s12
+  - s18
+  - s20
+  - s21
+  - s22
+  - s23
+  - sp1
+  - sp2
+  - sp4
+  - sp5
+  - sp6
+  - sp7
+- nom: Paresseux
+  type: Statique
+  natures:
+  - statique
+  apparitions: 18
+  saisons:
+  - s04
+  - s05
+  - s06
+  - s07
+  - s08
+  - s09
+  - s10
+  - s14
+  - s15
+  - s16
+  - s17
+  - s22
+  - sp1
+  - sp2
+  - sp3
+  - sp5
+  - sp6
+  - sp7
+- nom: Grappins
+  type: Rapidité, précision
+  natures:
+  - precision
+  - rapidite
+  apparitions: 16
+  saisons:
+  - s06
+  - s07
+  - s08
+  - s10
+  - s11
+  - s14
+  - s15
+  - s16
+  - s18
+  - s21
+  - s23
+  - sp1
+  - sp2
+  - sp3
+  - sp5
+  - sp7
+- nom: Poids sous l'eau
+  type: Aquatique
+  natures:
+  - aquatique
+  apparitions: 15
+  saisons:
+  - s03
+  - s04
+  - s05
+  - s06
+  - s07
+  - s11
+  - s14
+  - s17
+  - s18
+  - s20
+  - s21
+  - sp2
+  - sp3
+  - sp5
+  - sp7
+- nom: Relais aquatiques
+  type: Aquatique
+  natures:
+  - aquatique
+  apparitions: 13
+  saisons:
+  - s06
+  - s07
+  - s08
+  - s09
+  - s12
+  - s14
+  - s16
+  - s17
+  - s18
+  - s22
+  - sp2
+  - sp5
+  - sp7
+- nom: Bambous
+  type: Statique
+  natures:
+  - statique
+  apparitions: 12
+  saisons:
+  - s04
+  - s05
+  - s06
+  - s08
+  - s10
+  - s11
+  - s17
+  - s21
+  - sp2
+  - sp4
+  - sp5
+  - sp7
+- nom: Poteries suspendues
+  type: Précision
+  natures:
+  - precision
+  apparitions: 11
+  saisons:
+  - s11
+  - s12
+  - s15
+  - s16
+  - s17
+  - s18
+  - s20
+  - s21
+  - s23
+  - sp4
+  - sp5
+- nom: A bout de souffle
+  type: Statique
+  natures:
+  - statique
+  apparitions: 10
+  saisons:
+  - s08
+  - s09
+  - s11
+  - s12
+  - s15
+  - s18
+  - s23
+  - s25
+  - sp2
+  - sp7
+- nom: Koalas
+  type: Statique
+  natures:
+  - statique
+  apparitions: 10
+  saisons:
+  - s03
+  - s04
+  - s05
+  - s08
+  - s12
+  - s15
+  - s20
+  - s22
+  - s23
+  - sp5
+- nom: Plongeoir
+  type: Force
+  natures:
+  - force
+  apparitions: 9
+  saisons:
+  - s05
+  - s06
+  - s07
+  - s10
+  - s12
+  - s14
+  - s16
+  - s18
+  - sp6
+- nom: Tables à bascule
+  type: Précision
+  natures:
+  - precision
+  apparitions: 9
+  saisons:
+  - s14
+  - s15
+  - s16
+  - s17
+  - s22
+  - s23
+  - sp5
+  - sp6
+  - sp7
+- nom: Boules
+  type: Précision, équilibre
+  natures:
+  - precision
+  - equilibre
+  apparitions: 8
+  saisons:
+  - s17
+  - s18
+  - s20
+  - s21
+  - s22
+  - s23
+  - sp5
+  - sp7
+- nom: Labyrinthe
+  type: Réflexion, rapidité
+  natures:
+  - rapidite
+  - reflexion
+  apparitions: 8
+  saisons:
+  - s14
+  - s15
+  - s17
+  - s21
+  - s23
+  - sp5
+  - sp6
+  - sp7
+- nom: Massues
+  type: Précision
+  natures:
+  - precision
+  apparitions: 8
+  saisons:
+  - s08
+  - s09
+  - s16
+  - s18
+  - s20
+  - s22
+  - sp3
+  - sp4
+- nom: Trapèzes
+  type: Statique
+  natures:
+  - statique
+  apparitions: 8
+  saisons:
+  - s14
+  - s15
+  - s16
+  - s20
+  - s21
+  - s22
+  - sp4
+  - sp7
+- nom: Étoile
+  type: Statique
+  natures:
+  - statique
+  apparitions: 8
+  saisons:
+  - s11
+  - s12
+  - s14
+  - s16
+  - s18
+  - s22
+  - sp6
+  - sp7
+- nom: Cage sous-marine
+  type: Aquatique
+  natures:
+  - aquatique
+  apparitions: 7
+  saisons:
+  - s07
+  - s08
+  - s11
+  - s18
+  - sp4
+  - sp6
+  - sp7
+- nom: Catapulte
+  type: Précision, force
+  natures:
+  - force
+  - precision
+  apparitions: 7
+  saisons:
+  - s14
+  - s15
+  - s16
+  - s23
+  - sp5
+  - sp6
+  - sp7
+- nom: Course poursuite
+  type: Force, rapidité
+  natures:
+  - force
+  - rapidite
+  apparitions: 7
+  saisons:
+  - s08
+  - s09
+  - s17
+  - s18
+  - s21
+  - sp2
+  - sp3
+- nom: Poutre individuelle
+  type: Force
+  natures:
+  - force
+  apparitions: 7
+  saisons:
+  - s03
+  - s04
+  - s05
+  - s11
+  - s22
+  - sp1
+  - sp5
+- nom: Prisonnier
+  type: Force, rapidité
+  natures:
+  - force
+  - rapidite
+  apparitions: 7
+  saisons:
+  - s01
+  - s03
+  - s11
+  - s16
+  - s21
+  - sp2
+  - sp4
+- nom: la bascule
+  type: null
+  natures: []
+  apparitions: 7
+  saisons:
+  - s06
+  - s11
+  - s20
+  - s21
+  - s25
+  - s26
+  - sp7
+- nom: Noix de coco
+  type: Précision
+  natures:
+  - precision
+  apparitions: 5
+  saisons:
+  - s11
+  - s14
+  - s18
+  - s20
+  - sp7
+- nom: Perche
+  type: Précision
+  natures:
+  - precision
+  apparitions: 5
+  saisons:
+  - s09
+  - s12
+  - sp3
+  - sp6
+  - sp7
+- nom: Poutre
+  type: Force
+  natures:
+  - force
+  apparitions: 5
+  saisons:
+  - s03
+  - s10
+  - s14
+  - s16
+  - sp6
+- nom: Épreuve des Toits
+  type: Force et Statique
+  natures:
+  - statique
+  - force
+  apparitions: 5
+  saisons:
+  - s11
+  - s12
+  - s17
+  - s23
+  - sp5
+- nom: Dominos
+  type: Précision
+  natures:
+  - precision
+  apparitions: 4
+  saisons:
+  - s17
+  - s18
+  - sp6
+  - sp7
+- nom: Plots
+  type: Logique, équilibre
+  natures:
+  - equilibre
+  - logique
+  apparitions: 4
+  saisons:
+  - s08
+  - s14
+  - s22
+  - sp1
+- nom: Remonte-balle
+  type: Précision
+  natures:
+  - precision
+  apparitions: 4
+  saisons:
+  - s17
+  - s22
+  - sp6
+  - sp7
+- nom: Bélier
+  type: Force
+  natures:
+  - force
+  apparitions: 3
+  saisons:
+  - s16
+  - sp5
+  - sp6
+- nom: Colonnes
+  type: Logique
+  natures:
+  - logique
+  apparitions: 3
+  saisons:
+  - s17
+  - sp5
+  - sp7
+- nom: Koalas inversés
+  type: Statique
+  natures:
+  - statique
+  apparitions: 3
+  saisons:
+  - s07
+  - s21
+  - sp3
+- nom: Malle
+  type: Force
+  natures:
+  - force
+  apparitions: 3
+  saisons:
+  - s08
+  - s16
+  - s21
+- nom: Pendule
+  type: Précision
+  natures:
+  - precision
+  apparitions: 3
+  saisons:
+  - s14
+  - s17
+  - s20
+- nom: Poteries en équikibre
+  type: Equilibre
+  natures:
+  - equilibre
+  apparitions: 3
+  saisons:
+  - s16
+  - s17
+  - s21
+- nom: Barils
+  type: Force
+  natures:
+  - force
+  apparitions: 2
+  saisons:
+  - s16
+  - s20
+- nom: Bouées
+  type: Rapidité, précision
+  natures:
+  - precision
+  - rapidite
+  apparitions: 2
+  saisons:
+  - s16
+  - s22
+- nom: Cubes
+  type: Logique
+  natures:
+  - logique
+  apparitions: 2
+  saisons:
+  - sp5
+  - sp7
+- nom: Douche
+  type: Force
+  natures:
+  - force
+  apparitions: 2
+  saisons:
+  - s18
+  - s21
+- nom: Labyrinthe aquatique
+  type: Réflexion, rapidité
+  natures:
+  - rapidite
+  - reflexion
+  apparitions: 2
+  saisons:
+  - s17
+  - sp6
+- nom: Palets
+  type: Rapidité, précision
+  natures:
+  - precision
+  - rapidite
+  apparitions: 2
+  saisons:
+  - s21
+  - sp7
+- nom: Vague
+  type: Logique
+  natures:
+  - logique
+  apparitions: 2
+  saisons:
+  - s20
+  - sp7
+- nom: Planches à bascules
+  type: Précision
+  natures:
+  - precision
+  apparitions: 1
+  saisons:
+  - s22
+- nom: Poteaux
+  type: Statique
+  natures:
+  - statique
+  apparitions: 0
+  saisons: []
+- nom: Puzzle dans l'eau
+  type: Réflexion
+  natures:
+  - reflexion
+  apparitions: 0
+  saisons: []
+- nom: l'équilibre sur l'eau
+  type: null
+  natures: []
+  apparitions: 0
+  saisons: []
+- nom: Élastiques
+  type: Force
+  natures:
+  - force
+  apparitions: 0
+  saisons: []
+nb_epreuves: 53
+nb_apparitions: 429
+par_nature:
+- nature: force
+  libelle: Force
+  effectif: 16
+- nature: precision
+  libelle: Précision
+  effectif: 15
+- nature: rapidite
+  libelle: Rapidité
+  effectif: 11
+- nature: statique
+  libelle: Statique
+  effectif: 9
+- nature: equilibre
+  libelle: Équilibre
+  effectif: 4
+- nature: logique
+  libelle: Logique
+  effectif: 4
+- nature: aquatique
+  libelle: Aquatique
+  effectif: 3
+- nature: reflexion
+  libelle: Réflexion
+  effectif: 3
+- nature: non qualifiee
+  libelle: Non qualifiée
+  effectif: 2
+raccord:
+  citations: 498
+  motifs:
+  - motif: plusieurs epreuves possibles, sans episode pour trancher
+    effectif: 245
+  - motif: aucune epreuve relevee qui corresponde
+    effectif: 119
+  - motif: raccordee
+    effectif: 111
+  - motif: nom introuvable dans la saison
+    effectif: 23
+  epreuves_relevees: 766
+  epreuves_raccordees: 82
+  part_raccordee: 10.7
+  individuelles_relevees: 367
+  individuelles_raccordees: 72
