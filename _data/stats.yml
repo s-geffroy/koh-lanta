@@ -10980,7 +10980,7 @@ modeles:
         observe: 0.3269
         moyenne_nulle: 1.7432
       origine: casting
-      p_ajustee: 0.0005
+      p_ajustee: 0.0008
       retenu: true
     - cle: etendue_ages
       libelle: L'ecart d'age dans un meme casting
@@ -11030,7 +11030,7 @@ modeles:
         observe: 9.915
         moyenne_nulle: 9.6637
       origine: casting
-      p_ajustee: 0.0236
+      p_ajustee: 0.0253
       retenu: true
     - cle: familles_metiers
       libelle: La variete des metiers
@@ -11181,7 +11181,7 @@ modeles:
         observe: 13.0253
         moyenne_nulle: 18.8726
       origine: casting
-      p_ajustee: 0.11
+      p_ajustee: 0.1155
       retenu: false
     - cle: tribus_ages
       libelle: L'age moyen des deux tribus
@@ -11282,7 +11282,7 @@ modeles:
         observe: 4.1597
         moyenne_nulle: 3.331
       origine: casting
-      p_ajustee: 0.3952
+      p_ajustee: 0.3648
       retenu: false
     sensibilite:
     - cle: etendue_ages
@@ -11401,7 +11401,7 @@ modeles:
         observe: 10.75
         moyenne_nulle: 10.2215
       origine: pronostic
-      p_ajustee: 0.7008
+      p_ajustee: 0.6757
       retenu: false
     classement:
     - nom: Ambre Daudet
@@ -11920,28 +11920,28 @@ modeles:
       question: Deux aventuriers qui ont vote ensemble votent-ils encore ensemble au conseil suivant,
         plus souvent que le hasard ne le voudrait ?
       observe: 31.521
-      attendu: 0.861
+      attendu: 1.206
       unite: points de %
-      ecart_types: 17.02
+      ecart_types: 17.92
       p: 0.0005
       tirages: 2000
       lecture: 'Ecart entre deux probabilites : voter ensemble apres avoir vote ensemble, et voter ensemble
         apres avoir vote separement. A zero, chaque conseil repart de zero et il n''y a pas d''alliance.'
-      nulle: &id016
+      nulle: &id021
         bornes:
-        - -6.5678
-        - 33.3347
+        - -5.9743
+        - 33.3065
         cases:
         - 0
-        - 7
-        - 65
-        - 257
-        - 555
-        - 601
-        - 355
-        - 129
-        - 27
-        - 3
+        - 8
+        - 66
+        - 267
+        - 595
+        - 635
+        - 303
+        - 97
+        - 24
+        - 4
         - 1
         - 0
         - 0
@@ -11960,11 +11960,11 @@ modeles:
         - 0
         - 0
         - 0
-        largeur_case: 1.425091
+        largeur_case: 1.402886
         observe: 31.521
-        moyenne_nulle: 0.8612
+        moyenne_nulle: 1.2062
       origine: alliances
-      p_ajustee: 0.0017
+      p_ajustee: 0.0015
       retenu: true
     majorite:
       effectif: 171
@@ -12055,6 +12055,291 @@ modeles:
       conseils: 8
       survie: 100.0
       voix: 5
+  homophilie:
+    bulletins: 1753
+    conseils: 227
+    conseils_mixtes: 129
+    bulletins_mixtes: 1033
+    tests:
+    - cle: vote_meme_sexe
+      libelle: Viser quelqu'un du même sexe
+      question: Parmi les présents, écrit-on plutôt le nom de quelqu'un de son sexe ?
+      observe: 45.522
+      attendu: 46.664
+      unite: '%'
+      ecart_types: -1.6
+      p: 0.1115
+      tirages: 4000
+      lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
+        : la popularite d''une cible est donc neutralisee. Un observe au-dessus de l''attendu veut dire
+        qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
+      nulle: &id016
+        bornes:
+        - 43.8848
+        - 49.7832
+        cases:
+        - 0
+        - 2
+        - 4
+        - 11
+        - 9
+        - 41
+        - 64
+        - 132
+        - 175
+        - 327
+        - 186
+        - 454
+        - 465
+        - 497
+        - 462
+        - 417
+        - 280
+        - 110
+        - 182
+        - 100
+        - 36
+        - 32
+        - 10
+        - 2
+        - 1
+        - 0
+        - 1
+        - 0
+        largeur_case: 0.210659
+        observe: 45.522
+        moyenne_nulle: 46.6635
+      bulletins: 1753
+      origine: homophilie
+      p_ajustee: 0.152
+      retenu: false
+    - cle: vote_ecart_age
+      libelle: L'écart d'âge avec sa cible
+      question: Écrit-on plutôt le nom de quelqu'un de sa génération, ou d'une autre ?
+      observe: 11.759
+      attendu: 11.585
+      unite: années
+      ecart_types: 2.0
+      p: 0.046
+      tirages: 4000
+      lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
+        : la popularite d''une cible est donc neutralisee. Un observe au-dessus de l''attendu veut dire
+        qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
+      nulle: &id017
+        bornes:
+        - 11.2583
+        - 11.9201
+        cases:
+        - 0
+        - 5
+        - 7
+        - 15
+        - 14
+        - 32
+        - 56
+        - 100
+        - 140
+        - 229
+        - 288
+        - 357
+        - 377
+        - 451
+        - 399
+        - 403
+        - 336
+        - 284
+        - 201
+        - 131
+        - 80
+        - 53
+        - 19
+        - 15
+        - 4
+        - 3
+        - 1
+        - 0
+        largeur_case: 0.023635
+        observe: 11.7588
+        moyenne_nulle: 11.5851
+      bulletins: 1737
+      origine: homophilie
+      p_ajustee: 0.0812
+      retenu: false
+    - cle: vote_meme_metier
+      libelle: Viser la même famille de métier
+      question: Le métier rapproche-t-il ou éloigne-t-il du bulletin ?
+      observe: 9.641
+      attendu: 10.034
+      unite: '%'
+      ecart_types: -1.06
+      p: 0.3109
+      tirages: 4000
+      lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
+        : la popularite d''une cible est donc neutralisee. Un observe au-dessus de l''attendu veut dire
+        qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
+      nulle: &id018
+        bornes:
+        - 8.6024
+        - 11.3634
+        cases:
+        - 0
+        - 2
+        - 1
+        - 9
+        - 11
+        - 17
+        - 21
+        - 77
+        - 138
+        - 223
+        - 139
+        - 348
+        - 451
+        - 253
+        - 520
+        - 463
+        - 402
+        - 160
+        - 285
+        - 176
+        - 154
+        - 24
+        - 65
+        - 29
+        - 22
+        - 5
+        - 5
+        - 0
+        largeur_case: 0.098606
+        observe: 9.6406
+        moyenne_nulle: 10.0336
+      bulletins: 1753
+      origine: homophilie
+      p_ajustee: 0.3648
+      retenu: false
+    - cle: vote_meme_bandeau
+      libelle: Viser son propre bandeau de départ
+      question: Le camp d'origine protège-t-il, une fois les tribus mélangées ?
+      observe: 59.612
+      attendu: 65.832
+      unite: '%'
+      ecart_types: -10.48
+      p: 0.0002
+      tirages: 4000
+      lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
+        : la popularite d''une cible est donc neutralisee. Un observe au-dessus de l''attendu veut dire
+        qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
+      nulle: &id019
+        bornes:
+        - 59.1957
+        - 68.3571
+        cases:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 9
+        - 26
+        - 107
+        - 249
+        - 541
+        - 856
+        - 892
+        - 596
+        - 453
+        - 185
+        - 64
+        - 17
+        - 5
+        - 0
+        largeur_case: 0.327194
+        observe: 59.6121
+        moyenne_nulle: 65.832
+      bulletins: 1753
+      origine: homophilie
+      p_ajustee: 0.0008
+      retenu: true
+    - cle: vote_bandeau_apres_fusion
+      libelle: Épargner son bandeau de départ
+      question: Une fois les tribus mélangées, écrit-on moins souvent le nom de quelqu'un de son camp
+        d'origine ?
+      observe: 31.559
+      attendu: 42.106
+      unite: '%'
+      ecart_types: -10.61
+      p: 0.0002
+      tirages: 4000
+      lecture: Mesuré sur les seuls conseils réunissant plusieurs bandeaux. Un observé SOUS l'attendu
+        veut dire que le camp de départ protège encore, longtemps après avoir cessé d'exister.
+      nulle: &id020
+        bornes:
+        - 30.8519
+        - 46.3988
+        cases:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 1
+        - 31
+        - 109
+        - 238
+        - 556
+        - 857
+        - 914
+        - 573
+        - 446
+        - 196
+        - 65
+        - 13
+        - 1
+        - 0
+        largeur_case: 0.555248
+        observe: 31.5586
+        moyenne_nulle: 42.1065
+      bulletins: 1033
+      origine: homophilie
+      p_ajustee: 0.0008
+      retenu: true
+  jury_final:
+    bulletins: 177
+    saisons: 27
+    coefficients:
+    - libelle: A écrit le nom du juré au conseil
+      rapport: 0.854
+      bas: 0.484
+      haut: 1.505
+      p: 0.5845
+    - libelle: A voté avec le juré, par conseil partagé
+      rapport: 1.162
+      bas: 1.028
+      haut: 1.314
+      p: 0.0167
+    part_vers_bourreau: 57.1
+    bulletins_avec_bourreau_disponible: 138
+    part_quand_disponible: 73.2
+    lecture: 'Rapport de cotes : au-dessus de 1, le jure vote plus souvent pour ce finaliste ; en dessous,
+      moins souvent. Un intervalle qui contient 1 veut dire qu''on ne peut pas conclure.'
   fusion:
     saisons: 21
     ecartees:
@@ -12363,7 +12648,7 @@ modeles:
       lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
         dans un ordre au hasard. Une coupure existe toujours ; la question est de savoir si celle-ci vaut
         mieux que n'importe quelle autre.
-      nulle: &id017
+      nulle: &id022
         bornes:
         - 0.4511
         - 55.9864
@@ -12400,7 +12685,7 @@ modeles:
         observe: 53.4621
         moyenne_nulle: 13.0867
       origine: ruptures
-      p_ajustee: 0.0005
+      p_ajustee: 0.0008
       retenu: true
   registre:
   - cle: parite
@@ -12412,7 +12697,7 @@ modeles:
     unite: personnes
     ecart_types: -5.36
     p: 0.0001
-    p_ajustee: 0.0005
+    p_ajustee: 0.0008
     retenu: true
     tirages: 10000
     lecture: 'Un ecart observe plus PETIT que l''attendu est la signature d''un quota : le hasard, lui,
@@ -12427,7 +12712,7 @@ modeles:
     unite: annees
     ecart_types: 2.6
     p: 0.0118
-    p_ajustee: 0.0236
+    p_ajustee: 0.0253
     retenu: true
     tirages: 10000
     lecture: Rebattre les aventuriers entre saisons donne l'ecart-type general. Un ecart observe PLUS
@@ -12473,7 +12758,7 @@ modeles:
     unite: points de %
     ecart_types: -1.76
     p: 0.077
-    p_ajustee: 0.11
+    p_ajustee: 0.1155
     retenu: false
     tirages: 10000
     lecture: On rebat les bandeaux a l'interieur de chaque saison. Un ecart observe PLUS PETIT que l'attendu
@@ -12504,7 +12789,7 @@ modeles:
     unite: annees
     ecart_types: 1.02
     p: 0.3162
-    p_ajustee: 0.3952
+    p_ajustee: 0.3648
     retenu: false
     tirages: 10000
     lecture: La mediane ignore les valeurs extremes. Si elle ne s'ecarte pas, c'est que l'ecart moyen
@@ -12520,28 +12805,108 @@ modeles:
     unite: rang moyen
     ecart_types: 0.49
     p: 0.6307
-    p_ajustee: 0.7008
+    p_ajustee: 0.6757
     retenu: false
     tirages: 10000
     lecture: Le modele classe les candidats d'une saison ; on releve la place qu'il donne a celui qui
       a gagne. Plus BAS que l'attendu veut dire qu'une part du resultat se joue au recrutement.
     nulle: *id015
+  - cle: vote_meme_sexe
+    libelle: Viser quelqu'un du même sexe
+    question: Parmi les présents, écrit-on plutôt le nom de quelqu'un de son sexe ?
+    origine: homophilie
+    observe: 45.522
+    attendu: 46.664
+    unite: '%'
+    ecart_types: -1.6
+    p: 0.1115
+    p_ajustee: 0.152
+    retenu: false
+    tirages: 4000
+    lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
+      : la popularite d''une cible est donc neutralisee. Un observe au-dessus de l''attendu veut dire
+      qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
+    nulle: *id016
+  - cle: vote_ecart_age
+    libelle: L'écart d'âge avec sa cible
+    question: Écrit-on plutôt le nom de quelqu'un de sa génération, ou d'une autre ?
+    origine: homophilie
+    observe: 11.759
+    attendu: 11.585
+    unite: années
+    ecart_types: 2.0
+    p: 0.046
+    p_ajustee: 0.0812
+    retenu: false
+    tirages: 4000
+    lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
+      : la popularite d''une cible est donc neutralisee. Un observe au-dessus de l''attendu veut dire
+      qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
+    nulle: *id017
+  - cle: vote_meme_metier
+    libelle: Viser la même famille de métier
+    question: Le métier rapproche-t-il ou éloigne-t-il du bulletin ?
+    origine: homophilie
+    observe: 9.641
+    attendu: 10.034
+    unite: '%'
+    ecart_types: -1.06
+    p: 0.3109
+    p_ajustee: 0.3648
+    retenu: false
+    tirages: 4000
+    lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
+      : la popularite d''une cible est donc neutralisee. Un observe au-dessus de l''attendu veut dire
+      qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
+    nulle: *id018
+  - cle: vote_meme_bandeau
+    libelle: Viser son propre bandeau de départ
+    question: Le camp d'origine protège-t-il, une fois les tribus mélangées ?
+    origine: homophilie
+    observe: 59.612
+    attendu: 65.832
+    unite: '%'
+    ecart_types: -10.48
+    p: 0.0002
+    p_ajustee: 0.0008
+    retenu: true
+    tirages: 4000
+    lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
+      : la popularite d''une cible est donc neutralisee. Un observe au-dessus de l''attendu veut dire
+      qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
+    nulle: *id019
+  - cle: vote_bandeau_apres_fusion
+    libelle: Épargner son bandeau de départ
+    question: Une fois les tribus mélangées, écrit-on moins souvent le nom de quelqu'un de son camp d'origine
+      ?
+    origine: homophilie
+    observe: 31.559
+    attendu: 42.106
+    unite: '%'
+    ecart_types: -10.61
+    p: 0.0002
+    p_ajustee: 0.0008
+    retenu: true
+    tirages: 4000
+    lecture: Mesuré sur les seuls conseils réunissant plusieurs bandeaux. Un observé SOUS l'attendu veut
+      dire que le camp de départ protège encore, longtemps après avoir cessé d'exister.
+    nulle: *id020
   - cle: persistance_alliances
     libelle: La persistance des alliances
     question: Deux aventuriers qui ont vote ensemble votent-ils encore ensemble au conseil suivant, plus
       souvent que le hasard ne le voudrait ?
     origine: alliances
     observe: 31.521
-    attendu: 0.861
+    attendu: 1.206
     unite: points de %
-    ecart_types: 17.02
+    ecart_types: 17.92
     p: 0.0005
-    p_ajustee: 0.0017
+    p_ajustee: 0.0015
     retenu: true
     tirages: 2000
     lecture: 'Ecart entre deux probabilites : voter ensemble apres avoir vote ensemble, et voter ensemble
       apres avoir vote separement. A zero, chaque conseil repart de zero et il n''y a pas d''alliance.'
-    nulle: *id016
+    nulle: *id021
   - cle: rupture
     libelle: La rupture de régime
     question: Existe-t-il une date qui sépare les saisons en deux régimes mieux qu'une date tirée au sort
@@ -12552,12 +12917,12 @@ modeles:
     unite: ''
     ecart_types: 7.18
     p: 0.0001
-    p_ajustee: 0.0005
+    p_ajustee: 0.0008
     retenu: true
     tirages: 10000
     lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
       dans un ordre au hasard. Une coupure existe toujours ; la question est de savoir si celle-ci vaut
       mieux que n'importe quelle autre.
-    nulle: *id017
-  nb_tests: 10
-  nb_retenus: 5
+    nulle: *id022
+  nb_tests: 15
+  nb_retenus: 7

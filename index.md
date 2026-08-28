@@ -114,11 +114,11 @@ plus tôt que les hommes en moyenne — et remportent pourtant
 <ul class="cartes">
   <li class="carte">
     <a href="{{ '/statistiques/' | relative_url }}">
-      <span class="carte-rang">DIX-SEPT ENTRÉES</span>
+      <span class="carte-rang">DIX-NEUF ENTRÉES</span>
       <span class="carte-titre">Les statistiques</span>
       <span class="carte-resume">Les vainqueurs, les tribus, les métiers, les
         prénoms, la longévité, les sorties, les épreuves, les colliers, le jeu
-        social, les conseils, les revenants — puis six pages où les modèles
+        social, les conseils, les revenants — puis huit pages où les modèles
         prennent le relais des comptages.</span>
     </a>
   </li>

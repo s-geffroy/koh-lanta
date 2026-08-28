@@ -823,6 +823,31 @@ def figures_des_modeles(stats):
             note=f'{maj["effectif"]} participations · variance expliquée '
                  f'{maj["r2"]}'))
 
+    # --- H. l'homophilie du vote -------------------------------------------
+    for cle, nom in (("vote_meme_sexe", "vise-sexe"),
+                     ("vote_ecart_age", "vise-age"),
+                     ("vote_meme_metier", "vise-metier"),
+                     ("vote_bandeau_apres_fusion", "vise-bandeau")):
+        t = par_cle.get(cle)
+        if t and t.get("nulle"):
+            teinte = SERIES[2] if t.get("retenu") else SERIES[5]
+            ecrire(f"{nom}.svg", distribution_nulle(t, couleur=teinte))
+
+    # --- I. le jury final ---------------------------------------------------
+    ju = m.get("jury_final") or {}
+    if ju.get("coefficients"):
+        ecrire("jury-coefficients.svg", foret(
+            [{"libelle": c["libelle"], "estimation": c["rapport"],
+              "bas": c["bas"], "haut": c["haut"],
+              "detail": f'{c["libelle"]} : cote ×{c["rapport"]} '
+                        f'(intervalle {c["bas"]} à {c["haut"]})'}
+             for c in ju["coefficients"]],
+            titre="Ce qui décide le vote d'un juré",
+            description="Rapports de cotes d'un logit conditionnel : chaque juré "
+                        "choisit parmi les finalistes de sa saison.",
+            reference=1.0, largeur=780, marge_gauche=300,
+            note=f'{ju["bulletins"]} bulletins de jury · {ju["saisons"]} saisons'))
+
     # --- F. la grille ------------------------------------------------------
     fu = m.get("fusion") or {}
     if fu.get("lignes"):

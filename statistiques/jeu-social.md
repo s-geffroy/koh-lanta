@@ -3,7 +3,8 @@ layout: page
 title: Le jeu social
 permalink: /statistiques/jeu-social/
 chapeau: >-
-  Être visé, voter juste, ou n’être jamais écrit sur un bulletin. Le meilleur prédicteur de victoire de tout le jeu de données est ici.
+  Être visé, voter juste, ou n’être jamais écrit sur un bulletin —
+  et pourquoi l’invisibilité n’est que le deuxième prédicteur.
 ---
 
 {% assign i = site.data.stats.indicateurs %}
@@ -71,9 +72,19 @@ Le vrai écart est ailleurs, et il est inattendu.
   cessé d’être un adversaire.</p>
 </div>
 
-Ne jamais être écrit sur un bulletin reste le meilleur prédicteur de victoire
-que ces données contiennent — mais il ne se connaît qu’en cours de jeu.
-Au casting, [rien ne prédit rien]({{ '/statistiques/pronostic/' | relative_url }}).
+{% assign v0 = site.data.stats.modeles.alliances.majorite.variables[0] %}
+{% assign v1 = site.data.stats.modeles.alliances.majorite.variables[1] %}
+
+Longtemps, cette page a présenté l’invisibilité comme le meilleur prédicteur de
+victoire du jeu de données. **Elle ne l’est pas.** Mise en concurrence avec
+l’appartenance au camp majoritaire, dans un même modèle, elle passe seconde :
+être toujours du bon côté vaut {{ v0.estimation }} points de saison, contre
+{{ v1.estimation }} points par voix reçue et par conseil — **cinq fois moins**.
+Les deux comptent, mais dans cet ordre.
+[Les alliances]({{ '/statistiques/alliances/' | relative_url }}).
+
+Et l’un comme l’autre ne se connaissent qu’en cours de jeu. Au casting,
+[rien ne prédit rien]({{ '/statistiques/pronostic/' | relative_url }}).
 
 <div class="tableau-large">
 <table data-triable>

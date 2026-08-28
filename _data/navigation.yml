@@ -24,7 +24,7 @@
     - titre: Vue d'ensemble
       url: /statistiques/
       hub: true
-      resume: Les dix-sept entrées, et les chiffres qui les tiennent.
+      resume: Les dix-neuf entrées, et les chiffres qui les tiennent.
     - titre: Le profil du vainqueur
       url: /statistiques/vainqueurs/
       resume: "Âge, sexe, métier, couleur : ce que les vainqueurs ont en commun."
@@ -79,6 +79,12 @@
     - titre: La grille
       url: /statistiques/grille/
       resume: "Le jour de la fusion, et l'année où le jeu a changé."
+    - titre: Qui vise qui
+      url: /statistiques/qui-vise-qui/
+      resume: Ni le sexe ni le métier ne guident le bulletin. Le bandeau, si.
+    - titre: Le vote du jury
+      url: /statistiques/jury/
+      resume: Le juré ne punit pas son bourreau ; il prolonge son alliance.
 
 - section: Les données
   entrees:

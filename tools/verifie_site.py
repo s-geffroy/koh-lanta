@@ -155,6 +155,42 @@ def controler_aleatoire(c):
                                  f"reproductible")
 
 
+def controler_navigation(c, permaliens):
+    """Toute page publiee doit etre atteignable, et toute entree doit exister.
+
+    `_data/navigation.yml` est la seule source du rail, du fil de lecture et
+    des cartes du sommaire. Une page dont le permalink n'y figure pas est en
+    ligne mais introuvable : aucun lien du site n'y mene, et rien ne le
+    signale. L'inverse -- une entree qui pointe vers une page absente -- donne
+    un lien mort.
+
+    Le seul cas tolere est une page volontairement hors navigation ; elle doit
+    alors etre listee ici, explicitement, pour que l'omission soit un choix et
+    non un oubli.
+    """
+    HORS_NAVIGATION = {"/404.html"}
+
+    chemin = os.path.join(RACINE, "_data", "navigation.yml")
+    if not os.path.exists(chemin):
+        c.erreur("_data/navigation.yml : absent")
+        return
+    sections = yaml.safe_load(open(chemin, encoding="utf-8")) or []
+    listees = {}
+    for groupe in sections:
+        for entree in groupe.get("entrees") or []:
+            url = entree.get("url")
+            if url in listees:
+                c.erreur(f"navigation.yml : « {url} » listee deux fois")
+            listees[url] = entree.get("titre")
+
+    for url in sorted(set(permaliens) - set(listees) - HORS_NAVIGATION):
+        c.erreur(f"{url} : page publiee mais absente de navigation.yml — "
+                 f"aucun lien du site n'y mene")
+    for url in sorted(set(listees) - set(permaliens)):
+        c.erreur(f"navigation.yml : « {url} » ({listees[url]}) ne correspond "
+                 f"a aucune page — lien mort dans le rail")
+
+
 def controler_sass(c):
     """Le piege du vieux Sass, qui a deja fait echouer une construction.
 
@@ -257,7 +293,11 @@ def main():
             if lien in permaliens:
                 c.erreur(f"{rel} : permalink « {lien} » deja pris par {permaliens[lien]}")
             permaliens[lien] = rel
-        elif rel not in ("index.md", "404.html"):
+        elif rel == "index.md":
+            # L'accueil n'a pas de permalink : son URL est la racine. Il figure
+            # bien dans navigation.yml, sous « / ».
+            permaliens["/"] = rel
+        elif rel != "404.html":
             c.avertir(f"{rel} : pas de permalink explicite, l'URL suivra le chemin du fichier")
 
         corps = texte[m.end():]
@@ -321,6 +361,7 @@ def main():
                 c.erreur(f".secrets/{nom} est lisible par d'autres — "
                          f"chmod 600 .secrets/{nom}")
 
+    controler_navigation(c, permaliens)
     controler_sass(c)
     controler_reproductibilite(c)
     controler_aleatoire(c)

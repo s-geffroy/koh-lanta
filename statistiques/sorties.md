@@ -33,6 +33,13 @@ sorties dans les années 2000, ils tombent à
 moins**. Encadrement médical, sélection, préparation des candidats : le jeu
 s’est professionnalisé.
 
+<p class="note">Découpé par décennies, ce recul paraît graduel. Il ne l’est pas.
+Une recherche de rupture menée sans a priori sur six indicateurs de saison le
+date de <b>{{ site.data.stats.modeles.ruptures.annee_rupture }}</b>, en même
+temps que l’agrandissement des castings et l’arrivée des objets d’immunité :
+c’est une bascule, pas une pente.
+<a href="{{ '/statistiques/grille/' | relative_url }}">La grille</a>.</p>
+
 **Les ambassadeurs apparaissent puis refluent.** Absents des années 2000
 ({{ s.sorties.par_decennie[0].ambassadeurs }} %), ils culminent dans les années
 2010 à {{ s.sorties.par_decennie[1].ambassadeurs }} % avant de redescendre. La

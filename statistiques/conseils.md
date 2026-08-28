@@ -74,6 +74,13 @@ au dépouillement complet, **{{ rec.reciproques }} sont réciproques** :
 chance sur deux qu’il ait écrit le vôtre le même soir ou un autre. Le conseil
 n’est pas une meute contre un isolé, c’est un affrontement à deux camps.
 
+Et ces camps **durent**. Deux aventuriers qui ont voté ensemble votent encore
+ensemble au conseil suivant dans
+{{ site.data.stats.modeles.alliances.apres_ensemble }} % des cas, contre
+{{ site.data.stats.modeles.alliances.apres_separes }} % pour ceux qui avaient
+voté séparément — un écart que le hasard ne produit jamais.
+[Les alliances]({{ '/statistiques/alliances/' | relative_url }}).
+
 ## Qui vote contre qui
 
 {% include graphiques/conseils-genre.svg %}

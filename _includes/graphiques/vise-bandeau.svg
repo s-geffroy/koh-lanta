@@ -1,0 +1,27 @@
+<figure class="figure">
+<svg class="graphique" viewBox="0 0 680 250" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Épargner son bandeau de départ">
+  <title>Épargner son bandeau de départ</title>
+  <desc>Une fois les tribus mélangées, écrit-on moins souvent le nom de quelqu&#x27;un de son camp d&#x27;origine ?</desc>
+  <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
+  <g class="marque"><title>1 tirages sur 4000 entre 38.6 et 39.2</title><rect x="352.8" y="203.8" width="20.3" height="0.2" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>31 tirages sur 4000 entre 39.2 et 39.7</title><rect x="374.7" y="198.6" width="20.3" height="5.4" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>109 tirages sur 4000 entre 39.7 et 40.3</title><rect x="396.5" y="185.2" width="20.3" height="18.8" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>238 tirages sur 4000 entre 40.3 et 40.8</title><rect x="418.4" y="162.9" width="20.3" height="41.1" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>556 tirages sur 4000 entre 40.8 et 41.4</title><rect x="440.2" y="107.9" width="20.3" height="96.1" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>857 tirages sur 4000 entre 41.4 et 42</title><rect x="462.1" y="55.9" width="20.3" height="148.1" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>914 tirages sur 4000 entre 42 et 42.5</title><rect x="483.9" y="46.0" width="20.3" height="158.0" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>573 tirages sur 4000 entre 42.5 et 43.1</title><rect x="505.8" y="104.9" width="20.3" height="99.1" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>446 tirages sur 4000 entre 43.1 et 43.6</title><rect x="527.7" y="126.9" width="20.3" height="77.1" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>196 tirages sur 4000 entre 43.6 et 44.2</title><rect x="549.5" y="170.1" width="20.3" height="33.9" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>65 tirages sur 4000 entre 44.2 et 44.7</title><rect x="571.4" y="192.8" width="20.3" height="11.2" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>13 tirages sur 4000 entre 44.7 et 45.3</title><rect x="593.2" y="201.8" width="20.3" height="2.2" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>1 tirages sur 4000 entre 45.3 et 45.8</title><rect x="615.1" y="203.8" width="20.3" height="0.2" fill="var(--serie-3)" opacity="0.45"/></g>
+  <line x1="489.0" y1="40" x2="489.0" y2="204" stroke="var(--encre-muette)" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="489.0" y="34.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">attendu</text>
+  <line x1="73.8" y1="26" x2="73.8" y2="210" stroke="var(--encre)" stroke-width="2.4"/>
+  <text x="80.8" y="22.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12" font-weight="600">observé : 31.559 %</text>
+  <text x="46.0" y="222.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">30.9</text>
+  <text x="658.0" y="222.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">46.4</text>
+  <text x="658.0" y="238.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">4 000 tirages · p &lt; 0,001</text>
+</svg>
+</figure>

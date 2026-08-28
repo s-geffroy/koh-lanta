@@ -1261,6 +1261,35 @@ def _persistance(scrutins_saison):
             apres_ensemble_n, apres_contre_n)
 
 
+def _permuter_sans_soi(votants, cibles, g, essais=40):
+    """Redistribue les bulletins d'un conseil SANS qu'un votant recoive son nom.
+
+    Sans cette contrainte, le modele nul fabrique des couples qui n'existent
+    pas : 12,5 % des bulletins tires voyaient un aventurier voter contre
+    lui-meme, alors qu'on n'en compte aucun dans les donnees reelles. Comme un
+    tel couple partage forcement le sexe, le metier et le bandeau, l'attendu
+    s'en trouvait gonfle et tout ecart observe paraissait plus grand qu'il
+    n'est.
+
+    On tire, puis on repare : chaque position fautive est echangee avec une
+    position ou l'echange ne recree pas la faute.
+    """
+    m = g.permutation(np.array(cibles, dtype=object)).tolist()
+    for _ in range(essais):
+        fautes = [i for i in range(len(m)) if m[i] == votants[i]]
+        if not fautes:
+            return m
+        for i in fautes:
+            candidats = [j for j in range(len(m))
+                         if j != i and m[j] != votants[i] and m[i] != votants[j]]
+            if not candidats:
+                continue
+            j = int(g.integers(0, len(candidats)))
+            j = candidats[j]
+            m[i], m[j] = m[j], m[i]
+    return None   # conseil impossible a rebattre : l'appelant l'ecarte
+
+
 def _melanger(scrutins_saison, g):
     """Le modele nul : a chaque conseil, on redistribue les bulletins.
 
@@ -1274,8 +1303,8 @@ def _melanger(scrutins_saison, g):
         for numero, bulletins in scrutins:
             votants = [v for v, _ in bulletins]
             cibles = [c for _, c in bulletins]
-            neufs.append((numero, list(zip(votants, g.permutation(np.array(
-                cibles, dtype=object)).tolist()))))
+            m = _permuter_sans_soi(votants, cibles, g)
+            neufs.append((numero, list(zip(votants, m if m else cibles))))
         melange[s] = neufs
     return melange
 
@@ -1575,6 +1604,245 @@ def ruptures(par_saison, indicateurs_saison):
     }
 
 
+# --- H. L'homophilie du vote : ecrit-on le nom de qui ne nous ressemble pas ? --
+
+def homophilie(par_saison, parts, conseils):
+    """Parmi les presents, vise-t-on de preference celui qui nous ressemble le moins ?
+
+    Le modele nul est le meme que pour les alliances, et c'est lui qui fait la
+    solidite du resultat : on redistribue les bulletins d'un conseil entre ses
+    votants, en gardant EXACTEMENT le meme jeu de cibles. La popularite d'une
+    cible -- le fait que tout le camp l'ait dans le viseur ce soir-la -- est
+    donc parfaitement neutralisee. Ne subsiste que la question posee : qui, de
+    ceux qui ont ecrit ce nom, l'a ecrit plutot qu'un autre.
+    """
+    scrutins = _scrutins(par_saison, conseils)
+    if not scrutins:
+        return {}
+
+    fiche = {}
+    for p in parts:
+        fiche[(p["saison"], p["id"])] = p
+
+    couples = []
+    for s, liste in sorted(scrutins.items()):
+        for numero, bulletins in liste:
+            couples.append((s, numero, bulletins))
+
+    # Avant la reunification, un conseil ne reunit qu'une tribu : tous les
+    # bulletins y sont forcement « meme bandeau ». Ces conseils ne peuvent rien
+    # dire de la question posee -- et comme le modele nul rebat A L'INTERIEUR
+    # d'un conseil, ils ne la faussent pas non plus : ils la diluent seulement.
+    # On mesure donc le bandeau sur les seuls conseils ou plusieurs bandeaux
+    # sont presents, pour que le pourcentage affiche soit lisible.
+    mixtes = []
+    for s, numero, bulletins in couples:
+        couleurs = sorted({(fiche.get((s, v)) or {}).get("couleur")
+                           for v, _ in bulletins} - {None})
+        if len(couleurs) > 1:
+            mixtes.append((s, numero, bulletins))
+
+    def traits(s, votant, cible):
+        a, b = fiche.get((s, votant)), fiche.get((s, cible))
+        if not a or not b:
+            return None
+        meme_sexe = (1.0 if a.get("genre") and a.get("genre") == b.get("genre")
+                     else 0.0 if a.get("genre") and b.get("genre") else None)
+        ecart_age = (abs(a["age"] - b["age"]) if a.get("age") and b.get("age")
+                     else None)
+        meme_metier = (1.0 if a.get("_csp") and a.get("_csp") == b.get("_csp")
+                       else 0.0 if a.get("_csp") and b.get("_csp") else None)
+        meme_bandeau = (1.0 if a.get("couleur") and a.get("couleur") == b.get("couleur")
+                        else 0.0 if a.get("couleur") and b.get("couleur") else None)
+        return meme_sexe, ecart_age, meme_metier, meme_bandeau
+
+    def mesures(jeu):
+        cumuls = [[0.0, 0] for _ in range(4)]
+        for s, _, bulletins in jeu:
+            for votant, cible in bulletins:
+                t = traits(s, votant, cible)
+                if t is None:
+                    continue
+                for i, v in enumerate(t):
+                    if v is not None:
+                        cumuls[i][0] += v
+                        cumuls[i][1] += 1
+        return [(c / n if n else None) for c, n in cumuls], [n for _, n in cumuls]
+
+    observe, effectifs = mesures(couples)
+    observe_mixte, effectifs_mixte = mesures(mixtes)
+    g = rng("homophilie")
+    nulles = [[] for _ in range(4)]
+    nulle_mixte = []
+    for _ in range(4000):
+        melange, melange_mixte = [], []
+        for s, numero, bulletins in mixtes:
+            votants = [v for v, _ in bulletins]
+            cibles = [c for _, c in bulletins]
+            m = _permuter_sans_soi(votants, cibles, g)
+            if m is not None:
+                melange_mixte.append((s, numero, list(zip(votants, m))))
+        nulle_mixte.append(mesures(melange_mixte)[0][3])
+        for s, numero, bulletins in couples:
+            votants = [v for v, _ in bulletins]
+            cibles = [c for _, c in bulletins]
+            m = _permuter_sans_soi(votants, cibles, g)
+            if m is None:
+                continue   # conseil qu'on ne peut pas rebattre sans faute
+            melange.append((s, numero, list(zip(votants, m))))
+        vals, _ = mesures(melange)
+        for i, v in enumerate(vals):
+            nulles[i].append(v)
+
+    definitions = [
+        ("vote_meme_sexe", "Viser quelqu'un du même sexe",
+         "Parmi les présents, écrit-on plutôt le nom de quelqu'un de son sexe ?",
+         "part sur 1", 1),
+        ("vote_ecart_age", "L'écart d'âge avec sa cible",
+         "Écrit-on plutôt le nom de quelqu'un de sa génération, ou d'une autre ?",
+         "années", 0),
+        ("vote_meme_metier", "Viser la même famille de métier",
+         "Le métier rapproche-t-il ou éloigne-t-il du bulletin ?",
+         "part sur 1", 1),
+        ("vote_meme_bandeau", "Viser son propre bandeau de départ",
+         "Le camp d'origine protège-t-il, une fois les tribus mélangées ?",
+         "part sur 1", 1),
+    ]
+    tests = []
+    for i, (cle, libelle, question, unite, pourcent) in enumerate(definitions):
+        if observe[i] is None or not nulles[i]:
+            continue
+        facteur = 100.0 if pourcent else 1.0
+        tests.append(_test(
+            cle, libelle, question,
+            observe[i] * facteur, np.array(nulles[i]) * facteur,
+            unite="%" if pourcent else unite,
+            lecture="On rebat les bulletins d'un conseil entre ses votants, en "
+                    "gardant le meme jeu de cibles : la popularite d'une cible est "
+                    "donc neutralisee. Un observe au-dessus de l'attendu veut dire "
+                    "qu'on vise ses semblables plus souvent que le simple partage "
+                    "des cibles ne l'expliquerait."))
+        tests[-1]["bulletins"] = effectifs[i]
+
+    # Le bandeau, mesure la ou la question se pose : apres la reunification.
+    if observe_mixte[3] is not None and nulle_mixte:
+        t = _test(
+            "vote_bandeau_apres_fusion", "Épargner son bandeau de départ",
+            "Une fois les tribus mélangées, écrit-on moins souvent le nom de "
+            "quelqu'un de son camp d'origine ?",
+            observe_mixte[3] * 100.0, np.array(nulle_mixte) * 100.0, unite="%",
+            lecture="Mesuré sur les seuls conseils réunissant plusieurs bandeaux. "
+                    "Un observé SOUS l'attendu veut dire que le camp de départ "
+                    "protège encore, longtemps après avoir cessé d'exister.")
+        t["bulletins"] = effectifs_mixte[3]
+        tests.append(t)
+
+    return {"bulletins": max(effectifs) if effectifs else 0,
+            "conseils": len(couples), "conseils_mixtes": len(mixtes),
+            "bulletins_mixtes": effectifs_mixte[3] if effectifs_mixte else 0,
+            "tests": tests}
+
+
+# --- I. Le jury final : le vote de ceux qu'on a sortis ---------------------
+
+def jury_final(par_saison, parts, conseils):
+    """Le jure vote-t-il pour celui qui l'a elimine, ou contre lui ?
+
+    Le vote du jury est le seul scrutin du jeu ou ecrire un nom veut dire « qu'il
+    gagne ». Il est aussi le seul rendu par des gens qu'on a fait sortir. Deux
+    reponses circulent -- on respecte celui qui a ose, on ne pardonne jamais --
+    et aucune n'a jamais ete mesuree.
+
+    Le jure choisit parmi les finalistes : c'est un choix contraint, qui se
+    modelise par un logit conditionnel. Chaque jure forme son propre groupe de
+    comparaison, ce qui absorbe d'un coup la saison, l'annee et tout ce qui est
+    propre au jure lui-meme.
+    """
+    from indicateurs import eliminations, votes_du_jury
+    import statsmodels.api as sm
+
+    # Qui a ecrit le nom de qui, au fil des conseils d'elimination.
+    ecrit = set()
+    covote = {}
+    for c in eliminations(conseils):
+        bulletins = [(b["votant"], b["cible"]) for b in (c.get("votes") or [])
+                     if b.get("votant_rattache") and b.get("cible_rattachee")]
+        for votant, cible in bulletins:
+            ecrit.add((c["saison"], votant, cible))
+        for i in range(len(bulletins)):
+            for j in range(len(bulletins)):
+                if i == j:
+                    continue
+                a, b = bulletins[i], bulletins[j]
+                if a[1] == b[1]:
+                    cle = (c["saison"], a[0], b[0])
+                    covote[cle] = covote.get(cle, 0) + 1
+
+    finalistes = {}
+    for p in parts:
+        if p.get("sort") in ("vainqueur", "finaliste"):
+            finalistes.setdefault(p["saison"], []).append(p["id"])
+
+    groupes, y, X, detail = [], [], [], []
+    numero = 0
+    for c in votes_du_jury(conseils):
+        s = par_saison.get(c["saison"]) or {}
+        if s.get("annulee"):
+            continue
+        candidats = sorted(finalistes.get(c["saison"], []))
+        if len(candidats) < 2:
+            continue
+        for b in c.get("votes") or []:
+            if not (b.get("votant_rattache") and b.get("cible_rattachee")):
+                continue
+            jure, choisi = b["votant"], b["cible"]
+            if choisi not in candidats or jure in candidats:
+                continue
+            numero += 1
+            for cand in candidats:
+                groupes.append(numero)
+                y.append(1.0 if cand == choisi else 0.0)
+                X.append([
+                    1.0 if (c["saison"], cand, jure) in ecrit else 0.0,
+                    float(covote.get((c["saison"], jure, cand), 0)),
+                ])
+            detail.append((c["saison"], jure, choisi, len(candidats)))
+
+    if len(detail) < 60:
+        return {}
+
+    modele = sm.ConditionalLogit(np.array(y), np.array(X),
+                                 groups=np.array(groupes)).fit(disp=0)
+    ic = modele.conf_int()
+    noms = ("A écrit le nom du juré au conseil", "A voté avec le juré, par conseil partagé")
+    coefficients = [
+        {"libelle": noms[i],
+         "rapport": _arr(float(np.exp(modele.params[i])), 3),
+         "bas": _arr(float(np.exp(ic[i][0])), 3),
+         "haut": _arr(float(np.exp(ic[i][1])), 3),
+         "p": _arr(float(modele.pvalues[i]), 4)}
+        for i in range(len(noms))]
+
+    # La lecture brute, sans modele : la part de bulletins de jury qui vont a
+    # quelqu'un qui avait ecrit le nom du jure.
+    vers_bourreau = sum(1 for s, jure, choisi, _ in detail
+                        if (s, choisi, jure) in ecrit)
+    dispo = sum(1 for s, jure, choisi, _ in detail
+                if any((s, cand, jure) in ecrit
+                       for cand in finalistes.get(s, [])))
+    return {
+        "bulletins": len(detail),
+        "saisons": len(sorted({d[0] for d in detail})),
+        "coefficients": coefficients,
+        "part_vers_bourreau": _arr(100.0 * vers_bourreau / len(detail)),
+        "bulletins_avec_bourreau_disponible": dispo,
+        "part_quand_disponible": _arr(100.0 * vers_bourreau / dispo) if dispo else None,
+        "lecture": "Rapport de cotes : au-dessus de 1, le jure vote plus souvent "
+                   "pour ce finaliste ; en dessous, moins souvent. Un intervalle "
+                   "qui contient 1 veut dire qu'on ne peut pas conclure.",
+    }
+
+
 # --- assemblage ------------------------------------------------------------
 
 def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
@@ -1593,6 +1861,8 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
     hm = hasard_mecanique(par_saison, parts, conseils, epreuves)
     mec = effet_des_mecaniques(par_saison, parts, conseils, indicateurs_saison)
     al = alliances(par_saison, parts, conseils)
+    ho = homophilie(par_saison, parts, conseils)
+    ju = jury_final(par_saison, parts, conseils)
     fu = fusion(par_saison, parts, conseils, epreuves)
     ru = ruptures(par_saison, indicateurs_saison)
 
@@ -1602,7 +1872,8 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
         f.pop(cle, None)
 
     registre = []
-    for bloc, origine in ((casting, "casting"), (pron, "pronostic")):
+    for bloc, origine in ((casting, "casting"), (pron, "pronostic"),
+                          (ho, "homophilie")):
         for t in bloc.get("tests", []):
             t["origine"] = origine
             registre.append(t)
@@ -1628,6 +1899,8 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
         "hasard_mecanique": hm,
         "mecaniques": mec,
         "alliances": al,
+        "homophilie": ho,
+        "jury_final": ju,
         "fusion": fu,
         "ruptures": ru,
         "registre": [{k: t[k] for k in

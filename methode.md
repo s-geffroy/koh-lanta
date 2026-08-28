@@ -9,13 +9,15 @@ chapeau: >-
 
 {% assign m = site.data.stats.modeles %}
 
-Six pages de ce site reposent sur des modèles plutôt que sur des comptages :
+Huit pages de ce site reposent sur des modèles plutôt que sur des comptages :
 [La recette du casting]({{ '/statistiques/casting/' | relative_url }}),
 [Le pronostic]({{ '/statistiques/pronostic/' | relative_url }}),
 [La force réelle]({{ '/statistiques/force/' | relative_url }}),
 [Le jeu tenu serré]({{ '/statistiques/equilibre/' | relative_url }}),
 [Les alliances]({{ '/statistiques/alliances/' | relative_url }}) et
-[La grille]({{ '/statistiques/grille/' | relative_url }}). Cette page dit
+[La grille]({{ '/statistiques/grille/' | relative_url }}),
+[Qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }}) et
+[Le vote du jury]({{ '/statistiques/jury/' | relative_url }}). Cette page dit
 comment ils sont construits et ce qu’ils ne peuvent pas établir.
 
 ## Trois règles, tenues partout
@@ -119,6 +121,14 @@ fois. **La date sort des données**, elle n’est pas choisie — et comme une
 coupure existe toujours, sa qualité est comparée à celle de la meilleure coupure
 obtenue sur des saisons remises dans un ordre au hasard.
 
+### Le logit conditionnel
+
+Quand le choix est contraint — un juré choisit parmi les finalistes de sa
+saison, pas parmi tout le casting — c’est le modèle juste. Chaque choix forme
+son propre groupe de comparaison, ce qui absorbe d’un coup tout ce qui est
+constant à l’intérieur du groupe : la saison, l’année, le caractère du juré. Il
+ne reste que ce qui distingue les options **entre elles**.
+
 ### Le modèle nul du réseau des votes
 
 Pour la persistance des alliances, le modèle nul ne consiste pas à supposer que
@@ -126,6 +136,16 @@ personne ne vote pareil. On **rebat les bulletins à l’intérieur de chaque
 conseil**, en gardant intacte la répartition des voix — quatre contre l’un, deux
 contre l’autre. Ce qui disparaît est le seul lien d’un conseil au suivant. Tout
 ce qui survit à ce brassage est donc de la coordination qui traverse le temps.
+
+Ce brassage porte une contrainte qui n’a rien d’un détail : **un votant ne peut
+pas recevoir son propre nom**. Sans elle, 12,5 % des bulletins tirés étaient des
+couples impossibles — et comme un tel couple partage forcément le sexe, le
+métier et le bandeau de son auteur, l’attendu s’en trouvait gonflé et trois
+résultats spectaculaires sortaient de nulle part. Ils se sont évanouis une fois
+la contrainte posée. L’épisode est raconté sur
+[Qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }}), parce qu’il
+dit mieux que tout ce qu’un test de permutation vaut : **exactement ce que vaut
+son modèle nul**.
 
 ### La validation « une saison exclue à chaque tour »
 

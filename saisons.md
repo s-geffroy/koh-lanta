@@ -93,6 +93,12 @@ Les éditions spéciales, en rose, se reconnaissent à leur pente : plus courtes
 elles éliminent plus vite. Chez les classiques, la forme est remarquablement
 stable d’une saison à l’autre — le format tient depuis vingt-cinq ans.
 
+Cette stabilité a une cause précise, et elle n’est pas ludique : la
+réunification tombe à un **épisode fixe**, l’épisode
+{{ site.data.stats.modeles.fusion.episode_median }}, quelle que soit la taille
+du casting. Le calendrier de diffusion, lui, n’a pas bougé.
+[La grille]({{ '/statistiques/grille/' | relative_url }}).
+
 ## Les saisons comparées
 
 Au-delà du casting, quatre indicateurs disent ce qu’a été chaque saison.
