@@ -465,7 +465,7 @@ def survie(series, toutes, *, titre, description, jour_max, mediane,
                     f'stroke-width="2.6" stroke-linejoin="round" '
                     f'stroke-linecap="round"><title>'
                     f'{e(serie["couleur"])} : {e(serie.get("effectif", ""))} aventuriers, '
-                    f'mediane au jour {e(serie.get("mediane", ""))}</title></polyline>')
+                    f'médiane au jour {e(serie.get("mediane", ""))}</title></polyline>')
 
     # Les etiquettes directes -- pas de cartouche, qui demanderait un
     # aller-retour de l'oeil. On les pose au jour ou les deux courbes sont le

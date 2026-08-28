@@ -1,7 +1,7 @@
 <figure class="figure">
-<svg class="graphique" viewBox="0 0 680 250" role="img" preserveAspectRatio="xMidYMid meet" aria-label="L&#x27;age des deux tribus, a la mediane">
-  <title>L&#x27;age des deux tribus, a la mediane</title>
-  <desc>Le meme ecart, mesure a la mediane : est-il general, ou porte par quelques saisons ?</desc>
+<svg class="graphique" viewBox="0 0 680 250" role="img" preserveAspectRatio="xMidYMid meet" aria-label="L&#x27;âge des deux tribus, à la médiane">
+  <title>L&#x27;âge des deux tribus, à la médiane</title>
+  <desc>Le même écart, mesuré à la médiane : est-il général, ou porté par quelques saisons ?</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
   <g class="marque"><title>5 tirages sur 10000 entre 0.813 et 1.04</title><rect x="68.7" y="203.3" width="20.3" height="0.7" fill="var(--serie-6)" opacity="0.45"/></g>
   <g class="marque"><title>8 tirages sur 10000 entre 1.04 et 1.27</title><rect x="90.5" y="202.9" width="20.3" height="1.1" fill="var(--serie-6)" opacity="0.45"/></g>

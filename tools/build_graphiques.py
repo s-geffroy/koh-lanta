@@ -24,6 +24,20 @@ def _lire(nom):
         return yaml.safe_load(f)
 
 
+# Les noms de variables des modeles sont des identifiants (« metier:sport ») ;
+# ce qui s'affiche doit etre du francais.
+LISIBLE = {"metier:": "métier : ", "couleur:": "bandeau : ",
+           "age_centre_carre": "âge (écart au centre, au carré)",
+           "age": "âge", "annee": "année", "taille_casting": "taille du casting"}
+
+
+def _lisible(nom):
+    for brut, propre in LISIBLE.items():
+        if nom.startswith(brut) and brut.endswith(":"):
+            return propre + nom[len(brut):].replace("_", " ")
+    return LISIBLE.get(nom, nom.replace("_", " "))
+
+
 def figure_survie(stats):
     """La figure d'ouverture : les deux bandeaux, l'un sur l'autre."""
     b = stats.get("survie_bandeau") or {}
@@ -65,9 +79,9 @@ def figure_peigne():
         traits, jour_max=max(jours), mediane=mediane, legende=legende,
         titre=f"Les {len(traits)} aventuriers, du premier jour au dernier",
         description=(
-            f"Un trait par participation, trie du plus court sejour au plus long. "
+            f"Un trait par participation, trié du plus court séjour au plus long. "
             f"La longueur du trait est le nombre de jours tenus, sa couleur celle "
-            f"de la tribu de depart. La moitie des aventuriers quitte le jeu avant "
+            f"de la tribu de départ. La moitié des aventuriers quitte le jeu avant "
             f"le jour {mediane}.")))
     return len(traits), mediane, max(jours)
 
@@ -353,7 +367,7 @@ def main():
                 [{"nom": "Les « fantômes »", "couleur": SERIES[0]},
                  {"nom": "Ceux qui ont tenu autant", "couleur": SERIES[1]}],
                 titre="Ce que devient un aventurier que personne ne vise",
-                description="Sort final des aventuriers n'ayant recu aucune voix, "
+                description="Sort final des aventuriers n'ayant reçu aucune voix, "
                             "compare a ceux qui ont traverse autant de conseils "
                             "qu'eux -- et non a l'ensemble, qui melangerait le "
                             "fait de n'etre pas vise et celui d'aller loin.",
@@ -745,16 +759,14 @@ def figures_des_modeles(stats):
     pron = m.get("pronostic") or {}
     if pron.get("importances"):
         ecrire("pronostic-importances.svg", barres_horizontales(
-            [{"libelle": i["variable"].replace("metier:", "métier : ")
-                                      .replace("couleur:", "bandeau : ")
-                                      .replace("_", " "),
+            [{"libelle": _lisible(i["variable"]),
               "valeur": i["perte"],
-              "detail": f'Brouiller « {i["variable"]} » deplace le rang du '
-                        f'vainqueur de {i["perte"]} place(s).'}
+              "detail": f'Brouiller « {_lisible(i["variable"])} » déplace le rang '
+                        f'du vainqueur de {i["perte"]} place(s).'}
              for i in pron["importances"]],
             titre="Ce qui porte le peu de signal qu'il y a",
-            description="Degradation du rang du vainqueur quand une seule "
-                        "variable est brouillee. Toutes restent minuscules.",
+            description="Dégradation du rang du vainqueur quand une seule "
+                        "variable est brouillée. Toutes restent minuscules.",
             unite=" places", couleur=SERIES[5], marge_gauche=210))
 
     # --- C. la force -------------------------------------------------------
@@ -813,8 +825,7 @@ def figures_des_modeles(stats):
                         f'(intervalle {c["bas"]} à {c["haut"]})'}
              for c in cox["coefficients"]],
             titre="Qui sort plus vite, à saison identique",
-            description="Rapports de risque d'elimination d'un modele de duree "
-                        "stratifie par saison. Au-dessus de 1, on sort plus vite.",
+            description="Rapports de risque d'élimination d'un modèle de durée stratifié par saison. Au-dessus de 1, on sort plus vite.",
             reference=1.0, largeur=780, marge_gauche=224,
             note=f'{cox["effectif"]} participations · {cox["eliminations"]} '
                  f'eliminations · {cox["censures"]} sorties censurees'))
@@ -833,7 +844,7 @@ def figures_des_modeles(stats):
                         f'(intervalle {v["bas"]} à {v["haut"]})'}
              for v in maj["variables"]],
             titre="Ce qui fait vraiment durer, une fois en jeu",
-            description="Points de saison gagnes ou perdus. Le trait vertical "
+            description="Points de saison gagnés ou perdus. Le trait vertical "
                         "marque « aucun effet ».",
             reference=0.0, unite=" pts", largeur=760, marge_gauche=268,
             note=f'{maj["effectif"]} participations · variance expliquée '
@@ -888,9 +899,7 @@ def figures_des_modeles(stats):
                         f'(intervalle {cf["bas"]} à {cf["haut"]}), pour '
                         f'{cf["attendu"]} % attendus'}],
             titre="Gagner le confort rend-il cible ?",
-            description="Part des bulletins visant un gagnant du confort du meme "
-                        "episode. Le trait vertical marque la part que ces "
-                        "gagnants representent parmi les presents.",
+            description='Part des bulletins visant un gagnant du confort du même épisode. Le trait vertical marque la part que ces gagnants représentent parmi les présents.',
             reference=cf["attendu"], unite=" %", largeur=740, marge_gauche=290,
             hauteur_ligne=34,
             note=f'{cf["conseils"]} conseils · {cf["bulletins"]} bulletins · '
@@ -1019,7 +1028,7 @@ def figures_des_modeles(stats):
             [{"nom": "risque observé", "couleur": SERIES[0]},
              {"nom": "1 / nombre de présents", "couleur": SERIES[5]}],
             titre="Le risque monte-t-il, ou le camp se vide-t-il ?",
-            description="Risque de sortir a un conseil, par dixieme de saison, "
+            description="Risque de sortir à un conseil, par dixième de saison, "
                         "compare au simple 1/nombre-de-presents.",
             unite=" %", largeur=760, marge_gauche=110))
 

@@ -1,7 +1,7 @@
 <figure class="figure">
-<svg class="graphique" viewBox="0 0 680 250" role="img" preserveAspectRatio="xMidYMid meet" aria-label="L&#x27;equilibre hommes-femmes">
-  <title>L&#x27;equilibre hommes-femmes</title>
-  <desc>L&#x27;ecart a la parite est-il plus petit que ce qu&#x27;un tirage a pile ou face donnerait ?</desc>
+<svg class="graphique" viewBox="0 0 680 250" role="img" preserveAspectRatio="xMidYMid meet" aria-label="L&#x27;équilibre hommes-femmes">
+  <title>L&#x27;équilibre hommes-femmes</title>
+  <desc>L&#x27;écart à la parité est-il plus petit que ce qu&#x27;un tirage à pile ou face donnerait ?</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
   <g class="marque"><title>1 tirages sur 10000 entre 0.791 et 0.889</title><rect x="177.9" y="203.9" width="20.3" height="0.1" fill="var(--serie-5)" opacity="0.45"/></g>
   <g class="marque"><title>5 tirages sur 10000 entre 0.889 et 0.988</title><rect x="199.8" y="203.5" width="20.3" height="0.5" fill="var(--serie-5)" opacity="0.45"/></g>

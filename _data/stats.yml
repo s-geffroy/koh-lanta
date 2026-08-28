@@ -11507,16 +11507,16 @@ modeles:
       libelle: transport
     tests:
     - cle: parite
-      libelle: L'equilibre hommes-femmes
-      question: L'ecart a la parite est-il plus petit que ce qu'un tirage a pile ou face donnerait ?
+      libelle: L'équilibre hommes-femmes
+      question: L'écart à la parité est-il plus petit que ce qu'un tirage à pile ou face donnerait ?
       observe: 0.327
       attendu: 1.75
       unite: personnes
       ecart_types: -5.36
       p: 0.0001
       tirages: 10000
-      lecture: 'Un ecart observe plus PETIT que l''attendu est la signature d''un quota : le hasard, lui,
-        produit des castings desequilibres de temps en temps.'
+      lecture: 'Un écart observé plus PETIT que l''attendu est la signature d''un quota : le hasard, lui,
+        produit des castings déséquilibrés de temps en temps.'
       nulle: &id018
         bornes:
         - 0.2019
@@ -11557,16 +11557,16 @@ modeles:
       p_ajustee: 0.0005
       retenu: true
     - cle: etendue_ages
-      libelle: L'ecart d'age dans un meme casting
-      question: Un casting melange-t-il les ages plus qu'un tirage au hasard ne le ferait ?
+      libelle: L'écart d'âge dans un même casting
+      question: Un casting mélange-t-il les âges plus qu'un tirage au hasard ne le ferait ?
       observe: 9.941
       attendu: 9.695
       unite: annees
       ecart_types: 2.53
       p: 0.0118
       tirages: 10000
-      lecture: Rebattre les aventuriers entre saisons donne l'ecart-type general. Un ecart observe PLUS
-        GRAND veut dire qu'on place expres un jeune et un ancien dans chaque casting.
+      lecture: Rebattre les aventuriers entre saisons donne l'écart-type général. Un écart observé PLUS
+        GRAND veut dire qu'on place exprès un jeune et un ancien dans chaque casting.
       nulle: &id019
         bornes:
         - 9.21
@@ -11607,16 +11607,16 @@ modeles:
       p_ajustee: 0.02
       retenu: true
     - cle: familles_metiers
-      libelle: La variete des metiers
-      question: Un casting couvre-t-il plus de familles de metiers qu'un tirage au hasard ?
+      libelle: La variété des métiers
+      question: Un casting couvre-t-il plus de familles de métiers qu'un tirage au hasard ?
       observe: 246.0
       attendu: 246.624
       unite: cases remplies
       ecart_types: -0.12
       p: 0.9262
       tirages: 10000
-      lecture: On compte, pour chaque saison, le nombre de familles de metiers representees. Un total
-        observe PLUS GRAND veut dire qu'on veille a n'oublier aucune famille.
+      lecture: On compte, pour chaque saison, le nombre de familles de métiers représentées. Un total
+        observé PLUS GRAND veut dire qu'on veille à n'oublier aucune famille.
       nulle: &id020
         bornes:
         - 224.95
@@ -11657,15 +11657,15 @@ modeles:
       p_ajustee: 0.9262
       retenu: false
     - cle: melange_archetypes
-      libelle: Le melange d'archetypes
-      question: Chaque saison contient-elle toujours le meme melange de profils ?
+      libelle: Le mélange d'archétypes
+      question: Chaque saison contient-elle toujours le même mélange de profils ?
       observe: 0.284
       attendu: 0.251
       unite: ''
       ecart_types: 1.06
       p: 0.2939
       tirages: 10000
-      lecture: Distance entre le melange de profils d'une saison et le melange general. Un observe PLUS
+      lecture: Distance entre le mélange de profils d'une saison et le mélange général. Un observé PLUS
         PETIT que l'attendu veut dire que les saisons se ressemblent plus que le hasard ne l'expliquerait.
       nulle: &id021
         bornes:
@@ -11708,7 +11708,7 @@ modeles:
       retenu: false
     - cle: tribus_femmes
       libelle: La composition des deux tribus
-      question: Les deux tribus de depart sont-elles plus semblables en part de femmes qu'un tirage au
+      question: Les deux tribus de départ sont-elles plus semblables en part de femmes qu'un tirage au
         hasard ne les ferait ?
       observe: 13.025
       attendu: 18.873
@@ -11716,8 +11716,8 @@ modeles:
       ecart_types: -1.76
       p: 0.077
       tirages: 10000
-      lecture: On rebat les bandeaux a l'interieur de chaque saison. Un ecart observe PLUS PETIT que l'attendu
-        veut dire que les tribus sont composees a l'equilibre, pas tirees au sort.
+      lecture: On rebat les bandeaux à l'intérieur de chaque saison. Un écart observé PLUS PETIT que l'attendu
+        veut dire que les tribus sont composées à l'équilibre, pas tirées au sort.
       nulle: &id022
         bornes:
         - 6.8021
@@ -11758,8 +11758,8 @@ modeles:
       p_ajustee: 0.121
       retenu: false
     - cle: tribus_ages
-      libelle: L'age moyen des deux tribus
-      question: Les deux tribus de depart ont-elles des ages moyens plus proches qu'un tirage au hasard
+      libelle: L'âge moyen des deux tribus
+      question: Les deux tribus de départ ont-elles des âges moyens plus proches qu'un tirage au hasard
         ne les ferait ?
       observe: 5.75
       attendu: 3.85
@@ -11767,8 +11767,8 @@ modeles:
       ecart_types: 3.03
       p: 0.0022
       tirages: 10000
-      lecture: 'Meme methode, sur l''age moyen de chaque bandeau. Un ecart observe PLUS GRAND que l''attendu
-        veut dire l''inverse d''un equilibre : deux tribus construites pour differer.'
+      lecture: 'Même méthode, sur l''âge moyen de chaque bandeau. Un écart observé PLUS GRAND que l''attendu
+        veut dire l''inverse d''un équilibre : deux tribus construites pour différer.'
       nulle: &id023
         bornes:
         - 1.5354
@@ -11809,16 +11809,16 @@ modeles:
       p_ajustee: 0.004
       retenu: true
     - cle: tribus_ages_mediane
-      libelle: L'age des deux tribus, a la mediane
-      question: 'Le meme ecart, mesure a la mediane : est-il general, ou porte par quelques saisons ?'
+      libelle: L'âge des deux tribus, à la médiane
+      question: 'Le même écart, mesuré à la médiane : est-il général, ou porté par quelques saisons ?'
       observe: 4.16
       attendu: 3.331
       unite: annees
       ecart_types: 1.02
       p: 0.3162
       tirages: 10000
-      lecture: La mediane ignore les valeurs extremes. Si elle ne s'ecarte pas, c'est que l'ecart moyen
-        tient a quelques editions et non a une regle de composition.
+      lecture: La médiane ignore les valeurs extrêmes. Si elle ne s'écarte pas, c'est que l'écart moyen
+        tient à quelques éditions et non à une règle de composition.
       nulle: &id024
         bornes:
         - 0.5875
@@ -11928,7 +11928,7 @@ modeles:
     tests:
     - cle: pronostic_vainqueur
       libelle: Pronostiquer le vainqueur au casting
-      question: En ne connaissant que l'age, le sexe, le metier et la couleur, place-t-on le futur vainqueur
+      question: En ne connaissant que l'âge, le sexe, le métier et la couleur, place-t-on le futur vainqueur
         plus haut que le hasard ne le ferait ?
       observe: 10.731
       attendu: 10.283
@@ -11936,8 +11936,8 @@ modeles:
       ecart_types: 0.41
       p: 0.6927
       tirages: 10000
-      lecture: Le modele classe les candidats d'une saison ; on releve la place qu'il donne a celui qui
-        a gagne. Plus BAS que l'attendu veut dire qu'une part du resultat se joue au recrutement.
+      lecture: Le modèle classe les candidats d'une saison ; on relève la place qu'il donne à celui qui
+        a gagné. Plus BAS que l'attendu veut dire qu'une part du résultat se joue au recrutement.
       nulle: &id025
         bornes:
         - 5.5798
@@ -12315,7 +12315,7 @@ modeles:
       haut: 1.166
       p: 0.3283
       lecture: Cote de victoire de la tribu jaune quand elle compte un aventurier de plus. Au-dessus de
-        1, l'avantage du nombre joue ; en dessous, la tribu en difficulte se rattrape ; a 1, l'effectif
+        1, l'avantage du nombre joue ; en dessous, la tribu en difficulté se rattrape ; à 1, l'effectif
         ne change rien.
     cox:
       effectif: 509
@@ -12327,7 +12327,7 @@ modeles:
         bas: 0.99
         haut: 1.496
         p: 0.0623
-      - variable: Age (par decennie)
+      - variable: Âge (par décennie)
         rapport: 1.055
         bas: 0.934
         haut: 1.191
@@ -12337,48 +12337,48 @@ modeles:
         bas: 0.804
         haut: 1.283
         p: 0.8932
-      - variable: Deja venu
+      - variable: Déjà venu
         rapport: 0.356
         bas: 0.258
         haut: 0.492
         p: 0.0
-      - variable: 'Metier : artisanat_btp'
+      - variable: 'Métier : artisanat_btp'
         rapport: 0.859
         bas: 0.554
         haut: 1.331
         p: 0.496
-      - variable: 'Metier : arts_medias'
+      - variable: 'Métier : arts_medias'
         rapport: 0.95
         bas: 0.638
         haut: 1.415
         p: 0.8009
-      - variable: 'Metier : commerce'
+      - variable: 'Métier : commerce'
         rapport: 1.298
         bas: 0.897
         haut: 1.88
         p: 0.167
-      - variable: 'Metier : encadrement'
+      - variable: 'Métier : encadrement'
         rapport: 1.478
         bas: 1.073
         haut: 2.036
         p: 0.0167
-      - variable: 'Metier : enseignement'
+      - variable: 'Métier : enseignement'
         rapport: 1.173
         bas: 0.731
         haut: 1.883
         p: 0.5071
-      - variable: 'Metier : etudiant'
+      - variable: 'Métier : etudiant'
         rapport: 1.303
         bas: 0.798
         haut: 2.128
         p: 0.2897
-      - variable: 'Metier : sport'
+      - variable: 'Métier : sport'
         rapport: 0.934
         bas: 0.618
         haut: 1.412
         p: 0.7472
-      lecture: Rapport de risque d'elimination, a saison identique. Au-dessus de 1, on sort plus vite
-        que la reference ; en dessous, plus lentement. L'intervalle qui contient 1 veut dire que ces donnees
+      lecture: Rapport de risque d'élimination, à saison identique. Au-dessus de 1, on sort plus vite
+        que la référence ; en dessous, plus lentement. L'intervalle qui contient 1 veut dire que ces données
         ne permettent pas de conclure.
   hasard_mecanique:
     conseils: 508
@@ -12447,8 +12447,8 @@ modeles:
     ecart_moyen: 5.22
     rapport_moyen: 1.43
     correlation: 0.515
-    lecture: 'Risque observe de sortir a un conseil, et risque qu''un simple 1/nombre-de-presents predit.
-      Les deux derniers paliers sont ceux de la finale : tout le monde y sort le meme jour, et la comparaison
+    lecture: 'Risque observé de sortir à un conseil, et risque qu''un simple 1/nombre-de-présents prédit.
+      Les deux derniers paliers sont ceux de la finale : tout le monde y sort le même jour, et la comparaison
       n''y a plus de sens.'
   mecaniques:
     saisons: 25
@@ -12484,8 +12484,8 @@ modeles:
       bas: -6.88
       haut: 5.98
       p: 0.891
-    lecture: Effet de la presence d'une mecanique, l'annee tenue constante. Un intervalle qui contient
-      zero veut dire que ces vingt-six saisons ne permettent pas de conclure.
+    lecture: Effet de la présence d'une mécanique, l'année tenue constante. Un intervalle qui contient
+      zéro veut dire que ces vingt-six saisons ne permettent pas de conclure.
   alliances:
     saisons: 24
     conseils: 238
@@ -12504,8 +12504,8 @@ modeles:
       ecart_types: 19.15
       p: 0.0005
       tirages: 2000
-      lecture: 'Ecart entre deux probabilites : voter ensemble apres avoir vote ensemble, et voter ensemble
-        apres avoir vote separement. A zero, chaque conseil repart de zero et il n''y a pas d''alliance.'
+      lecture: 'Écart entre deux probabilités : voter ensemble après avoir voté ensemble, et voter ensemble
+        après avoir voté séparément. À zéro, chaque conseil repart de zéro et il n''y a pas d''alliance.'
       nulle: &id034
         bornes:
         - -4.9516
@@ -12559,7 +12559,7 @@ modeles:
         haut: -0.33
         p: 0.0323
       r2: 0.378
-      lecture: Points de saison gagnes ou perdus, le nombre de conseils traverses tenu constant. Ce controle
+      lecture: Points de saison gagnés ou perdus, le nombre de conseils traverses tenu constant. Ce controle
         etant trop severe, les deux effets sont des bornes basses.
     les_plus_souvent_du_bon_cote:
     - nom: Wendy Gervois
@@ -12649,8 +12649,8 @@ modeles:
       ecart_types: -1.32
       p: 0.2044
       tirages: 4000
-      lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
-        : la popularite d''une cible est donc neutralisee. Un observe au-dessus de l''attendu veut dire
+      lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
+        : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
       nulle: &id026
         bornes:
@@ -12701,8 +12701,8 @@ modeles:
       ecart_types: 1.54
       p: 0.1205
       tirages: 4000
-      lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
-        : la popularite d''une cible est donc neutralisee. Un observe au-dessus de l''attendu veut dire
+      lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
+        : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
       nulle: &id027
         bornes:
@@ -12753,8 +12753,8 @@ modeles:
       ecart_types: -0.3
       p: 0.7573
       tirages: 4000
-      lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
-        : la popularite d''une cible est donc neutralisee. Un observe au-dessus de l''attendu veut dire
+      lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
+        : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
       nulle: &id028
         bornes:
@@ -12805,8 +12805,8 @@ modeles:
       ecart_types: -10.98
       p: 0.0002
       tirages: 4000
-      lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
-        : la popularite d''une cible est donc neutralisee. Un observe au-dessus de l''attendu veut dire
+      lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
+        : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
       nulle: &id029
         bornes:
@@ -12961,7 +12961,7 @@ modeles:
       bas: -3.07
       haut: 13.43
       p: 0.2182
-      lecture: Points de saison gagnes ou perdus quand on passe de « jamais » a « toujours » viser un
+      lecture: Points de saison gagnés ou perdus quand on passe de « jamais » a « toujours » viser un
         ancien allie, le nombre de bulletins emis tenu constant.
     les_plus_infideles:
     - nom: Alexis Tournier
@@ -13022,8 +13022,8 @@ modeles:
     bas: 14.2
     haut: 20.5
     p: 0.5547
-    lecture: Part des bulletins visant un gagnant du confort du meme episode, comparee a la part que ces
-      gagnants representent parmi les presents.
+    lecture: Part des bulletins visant un gagnant du confort du même épisode, comparée à la part que ces
+      gagnants représentent parmi les présents.
   decimation:
     saisons: 17
     sorties: 198
@@ -14402,16 +14402,16 @@ modeles:
     tests:
     - cle: audience_rupture
       libelle: La rupture d'audience
-      question: La chute d'audience tombe-t-elle a une date, ou se fait-elle par glissement ?
+      question: La chute d'audience tombe-t-elle à une date, ou se fait-elle par glissement ?
       observe: 20.681
       attendu: 3.503
       unite: ''
       ecart_types: 8.09
       p: 0.0001
       tirages: 10000
-      lecture: Gain de la meilleure coupure de la serie d'audience, compare a celui obtenu sur des saisons
+      lecture: Gain de la meilleure coupure de la série d'audience, comparé à celui obtenu sur des saisons
         remises dans un ordre au hasard. Le profil complet des coupures dit ensuite si cette date est
-        identifiee ou si plusieurs se valent.
+        identifiée ou si plusieurs se valent.
       nulle: &id031
         bornes:
         - -0.7371
@@ -14460,8 +14460,8 @@ modeles:
       ecart_types: -3.64
       p: 0.0002
       tirages: 10000
-      lecture: Correlation de rang entre l'annee et le rapport finale / lancement. Negative, elle dit
-        que l'avantage de la finale se reduit d'annee en annee.
+      lecture: Corrélation de rang entre l'année et le rapport finale / lancement. Négative, elle dit
+        que l'avantage de la finale se réduit d'année en année.
       nulle: &id032
         bornes:
         - -0.7197
@@ -14503,7 +14503,7 @@ modeles:
       retenu: true
     - cle: audience_format
       libelle: Le format suit-il l'audience ?
-      question: Une saison moins regardee que son epoque ne le laissait attendre est-elle suivie d'un
+      question: Une saison moins regardée que son époque ne le laissait attendre est-elle suivie d'un
         casting plus large ?
       observe: -0.296
       attendu: -0.0
@@ -14511,8 +14511,8 @@ modeles:
       ecart_types: -1.62
       p: 0.1074
       tirages: 10000
-      lecture: Correlation de rang entre l'audience d'une saison et l'effectif de la suivante, une fois
-        la tendance temporelle retiree des deux series. Sans cette precaution, le lien brut ne mesure
+      lecture: Corrélation de rang entre l'audience d'une saison et l'effectif de la suivante, une fois
+        la tendance temporelle retirée des deux séries. Sans cette précaution, le lien brut ne mesure
         que le passage du temps.
       nulle: &id033
         bornes:
@@ -14555,8 +14555,8 @@ modeles:
       retenu: false
   registre:
   - cle: parite
-    libelle: L'equilibre hommes-femmes
-    question: L'ecart a la parite est-il plus petit que ce qu'un tirage a pile ou face donnerait ?
+    libelle: L'équilibre hommes-femmes
+    question: L'écart à la parité est-il plus petit que ce qu'un tirage à pile ou face donnerait ?
     origine: casting
     observe: 0.327
     attendu: 1.75
@@ -14566,12 +14566,12 @@ modeles:
     p_ajustee: 0.0005
     retenu: true
     tirages: 10000
-    lecture: 'Un ecart observe plus PETIT que l''attendu est la signature d''un quota : le hasard, lui,
-      produit des castings desequilibres de temps en temps.'
+    lecture: 'Un écart observé plus PETIT que l''attendu est la signature d''un quota : le hasard, lui,
+      produit des castings déséquilibrés de temps en temps.'
     nulle: *id018
   - cle: etendue_ages
-    libelle: L'ecart d'age dans un meme casting
-    question: Un casting melange-t-il les ages plus qu'un tirage au hasard ne le ferait ?
+    libelle: L'écart d'âge dans un même casting
+    question: Un casting mélange-t-il les âges plus qu'un tirage au hasard ne le ferait ?
     origine: casting
     observe: 9.941
     attendu: 9.695
@@ -14581,12 +14581,12 @@ modeles:
     p_ajustee: 0.02
     retenu: true
     tirages: 10000
-    lecture: Rebattre les aventuriers entre saisons donne l'ecart-type general. Un ecart observe PLUS
-      GRAND veut dire qu'on place expres un jeune et un ancien dans chaque casting.
+    lecture: Rebattre les aventuriers entre saisons donne l'écart-type général. Un écart observé PLUS
+      GRAND veut dire qu'on place exprès un jeune et un ancien dans chaque casting.
     nulle: *id019
   - cle: familles_metiers
-    libelle: La variete des metiers
-    question: Un casting couvre-t-il plus de familles de metiers qu'un tirage au hasard ?
+    libelle: La variété des métiers
+    question: Un casting couvre-t-il plus de familles de métiers qu'un tirage au hasard ?
     origine: casting
     observe: 246.0
     attendu: 246.624
@@ -14596,12 +14596,12 @@ modeles:
     p_ajustee: 0.9262
     retenu: false
     tirages: 10000
-    lecture: On compte, pour chaque saison, le nombre de familles de metiers representees. Un total observe
-      PLUS GRAND veut dire qu'on veille a n'oublier aucune famille.
+    lecture: On compte, pour chaque saison, le nombre de familles de métiers représentées. Un total observé
+      PLUS GRAND veut dire qu'on veille à n'oublier aucune famille.
     nulle: *id020
   - cle: melange_archetypes
-    libelle: Le melange d'archetypes
-    question: Chaque saison contient-elle toujours le meme melange de profils ?
+    libelle: Le mélange d'archétypes
+    question: Chaque saison contient-elle toujours le même mélange de profils ?
     origine: casting
     observe: 0.284
     attendu: 0.251
@@ -14611,12 +14611,12 @@ modeles:
     p_ajustee: 0.3592
     retenu: false
     tirages: 10000
-    lecture: Distance entre le melange de profils d'une saison et le melange general. Un observe PLUS
+    lecture: Distance entre le mélange de profils d'une saison et le mélange général. Un observé PLUS
       PETIT que l'attendu veut dire que les saisons se ressemblent plus que le hasard ne l'expliquerait.
     nulle: *id021
   - cle: tribus_femmes
     libelle: La composition des deux tribus
-    question: Les deux tribus de depart sont-elles plus semblables en part de femmes qu'un tirage au hasard
+    question: Les deux tribus de départ sont-elles plus semblables en part de femmes qu'un tirage au hasard
       ne les ferait ?
     origine: casting
     observe: 13.025
@@ -14627,12 +14627,12 @@ modeles:
     p_ajustee: 0.121
     retenu: false
     tirages: 10000
-    lecture: On rebat les bandeaux a l'interieur de chaque saison. Un ecart observe PLUS PETIT que l'attendu
-      veut dire que les tribus sont composees a l'equilibre, pas tirees au sort.
+    lecture: On rebat les bandeaux à l'intérieur de chaque saison. Un écart observé PLUS PETIT que l'attendu
+      veut dire que les tribus sont composées à l'équilibre, pas tirées au sort.
     nulle: *id022
   - cle: tribus_ages
-    libelle: L'age moyen des deux tribus
-    question: Les deux tribus de depart ont-elles des ages moyens plus proches qu'un tirage au hasard
+    libelle: L'âge moyen des deux tribus
+    question: Les deux tribus de départ ont-elles des âges moyens plus proches qu'un tirage au hasard
       ne les ferait ?
     origine: casting
     observe: 5.75
@@ -14643,12 +14643,12 @@ modeles:
     p_ajustee: 0.004
     retenu: true
     tirages: 10000
-    lecture: 'Meme methode, sur l''age moyen de chaque bandeau. Un ecart observe PLUS GRAND que l''attendu
-      veut dire l''inverse d''un equilibre : deux tribus construites pour differer.'
+    lecture: 'Même méthode, sur l''âge moyen de chaque bandeau. Un écart observé PLUS GRAND que l''attendu
+      veut dire l''inverse d''un équilibre : deux tribus construites pour différer.'
     nulle: *id023
   - cle: tribus_ages_mediane
-    libelle: L'age des deux tribus, a la mediane
-    question: 'Le meme ecart, mesure a la mediane : est-il general, ou porte par quelques saisons ?'
+    libelle: L'âge des deux tribus, à la médiane
+    question: 'Le même écart, mesuré à la médiane : est-il général, ou porté par quelques saisons ?'
     origine: casting
     observe: 4.16
     attendu: 3.331
@@ -14658,12 +14658,12 @@ modeles:
     p_ajustee: 0.3661
     retenu: false
     tirages: 10000
-    lecture: La mediane ignore les valeurs extremes. Si elle ne s'ecarte pas, c'est que l'ecart moyen
-      tient a quelques editions et non a une regle de composition.
+    lecture: La médiane ignore les valeurs extrêmes. Si elle ne s'écarte pas, c'est que l'écart moyen
+      tient à quelques éditions et non à une règle de composition.
     nulle: *id024
   - cle: pronostic_vainqueur
     libelle: Pronostiquer le vainqueur au casting
-    question: En ne connaissant que l'age, le sexe, le metier et la couleur, place-t-on le futur vainqueur
+    question: En ne connaissant que l'âge, le sexe, le métier et la couleur, place-t-on le futur vainqueur
       plus haut que le hasard ne le ferait ?
     origine: pronostic
     observe: 10.731
@@ -14674,8 +14674,8 @@ modeles:
     p_ajustee: 0.762
     retenu: false
     tirages: 10000
-    lecture: Le modele classe les candidats d'une saison ; on releve la place qu'il donne a celui qui
-      a gagne. Plus BAS que l'attendu veut dire qu'une part du resultat se joue au recrutement.
+    lecture: Le modèle classe les candidats d'une saison ; on relève la place qu'il donne à celui qui
+      a gagné. Plus BAS que l'attendu veut dire qu'une part du résultat se joue au recrutement.
     nulle: *id025
   - cle: vote_meme_sexe
     libelle: Viser quelqu'un du même sexe
@@ -14689,8 +14689,8 @@ modeles:
     p_ajustee: 0.2645
     retenu: false
     tirages: 4000
-    lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
-      : la popularite d''une cible est donc neutralisee. Un observe au-dessus de l''attendu veut dire
+    lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
+      : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
       qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
     nulle: *id026
   - cle: vote_ecart_age
@@ -14705,8 +14705,8 @@ modeles:
     p_ajustee: 0.1657
     retenu: false
     tirages: 4000
-    lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
-      : la popularite d''une cible est donc neutralisee. Un observe au-dessus de l''attendu veut dire
+    lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
+      : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
       qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
     nulle: *id027
   - cle: vote_meme_metier
@@ -14721,8 +14721,8 @@ modeles:
     p_ajustee: 0.7934
     retenu: false
     tirages: 4000
-    lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
-      : la popularite d''une cible est donc neutralisee. Un observe au-dessus de l''attendu veut dire
+    lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
+      : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
       qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
     nulle: *id028
   - cle: vote_meme_bandeau
@@ -14737,8 +14737,8 @@ modeles:
     p_ajustee: 0.0005
     retenu: true
     tirages: 4000
-    lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
-      : la popularite d''une cible est donc neutralisee. Un observe au-dessus de l''attendu veut dire
+    lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
+      : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
       qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
     nulle: *id029
   - cle: vote_bandeau_apres_fusion
@@ -14862,7 +14862,7 @@ modeles:
       moyenne_nulle: 16.0706
   - cle: audience_rupture
     libelle: La rupture d'audience
-    question: La chute d'audience tombe-t-elle a une date, ou se fait-elle par glissement ?
+    question: La chute d'audience tombe-t-elle à une date, ou se fait-elle par glissement ?
     origine: audience
     observe: 20.681
     attendu: 3.503
@@ -14872,8 +14872,8 @@ modeles:
     p_ajustee: 0.0005
     retenu: true
     tirages: 10000
-    lecture: Gain de la meilleure coupure de la serie d'audience, compare a celui obtenu sur des saisons
-      remises dans un ordre au hasard. Le profil complet des coupures dit ensuite si cette date est identifiee
+    lecture: Gain de la meilleure coupure de la série d'audience, comparé à celui obtenu sur des saisons
+      remises dans un ordre au hasard. Le profil complet des coupures dit ensuite si cette date est identifiée
       ou si plusieurs se valent.
     nulle: *id031
   - cle: audience_retournement
@@ -14888,12 +14888,12 @@ modeles:
     p_ajustee: 0.0005
     retenu: true
     tirages: 10000
-    lecture: Correlation de rang entre l'annee et le rapport finale / lancement. Negative, elle dit que
-      l'avantage de la finale se reduit d'annee en annee.
+    lecture: Corrélation de rang entre l'année et le rapport finale / lancement. Négative, elle dit que
+      l'avantage de la finale se réduit d'année en année.
     nulle: *id032
   - cle: audience_format
     libelle: Le format suit-il l'audience ?
-    question: Une saison moins regardee que son epoque ne le laissait attendre est-elle suivie d'un casting
+    question: Une saison moins regardée que son époque ne le laissait attendre est-elle suivie d'un casting
       plus large ?
     origine: audience
     observe: -0.296
@@ -14904,8 +14904,8 @@ modeles:
     p_ajustee: 0.1575
     retenu: false
     tirages: 10000
-    lecture: Correlation de rang entre l'audience d'une saison et l'effectif de la suivante, une fois
-      la tendance temporelle retiree des deux series. Sans cette precaution, le lien brut ne mesure que
+    lecture: Corrélation de rang entre l'audience d'une saison et l'effectif de la suivante, une fois
+      la tendance temporelle retirée des deux séries. Sans cette précaution, le lien brut ne mesure que
       le passage du temps.
     nulle: *id033
   - cle: persistance_alliances
@@ -14921,8 +14921,8 @@ modeles:
     p_ajustee: 0.001
     retenu: true
     tirages: 2000
-    lecture: 'Ecart entre deux probabilites : voter ensemble apres avoir vote ensemble, et voter ensemble
-      apres avoir vote separement. A zero, chaque conseil repart de zero et il n''y a pas d''alliance.'
+    lecture: 'Écart entre deux probabilités : voter ensemble après avoir voté ensemble, et voter ensemble
+      après avoir voté séparément. À zéro, chaque conseil repart de zéro et il n''y a pas d''alliance.'
     nulle: *id034
   - cle: rupture
     libelle: La rupture de régime

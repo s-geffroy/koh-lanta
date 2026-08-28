@@ -1,7 +1,7 @@
 <figure class="figure">
-<svg class="graphique" viewBox="0 0 680 250" role="img" preserveAspectRatio="xMidYMid meet" aria-label="L&#x27;ecart d&#x27;age dans un meme casting">
-  <title>L&#x27;ecart d&#x27;age dans un meme casting</title>
-  <desc>Un casting melange-t-il les ages plus qu&#x27;un tirage au hasard ne le ferait ?</desc>
+<svg class="graphique" viewBox="0 0 680 250" role="img" preserveAspectRatio="xMidYMid meet" aria-label="L&#x27;écart d&#x27;âge dans un même casting">
+  <title>L&#x27;écart d&#x27;âge dans un même casting</title>
+  <desc>Un casting mélange-t-il les âges plus qu&#x27;un tirage au hasard ne le ferait ?</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
   <g class="marque"><title>1 tirages sur 10000 entre 9.24 et 9.27</title><rect x="68.7" y="203.9" width="20.3" height="0.1" fill="var(--serie-5)" opacity="0.45"/></g>
   <g class="marque"><title>1 tirages sur 10000 entre 9.27 et 9.3</title><rect x="90.5" y="203.9" width="20.3" height="0.1" fill="var(--serie-5)" opacity="0.45"/></g>

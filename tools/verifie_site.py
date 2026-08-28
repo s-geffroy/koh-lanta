@@ -14,6 +14,7 @@ chiffre qui sort vide -- et qu'on ne verrait qu'en ligne, une fois publie :
     tools/atelier python3 tools/verifie_site.py
 """
 import ast
+import html
 import os
 import re
 import subprocess
@@ -263,6 +264,68 @@ def resoudre(racine, chemin):
     return True, courant
 
 
+# Des mots dont la graphie sans accent n'existe pas en francais. Ils servent a
+# reperer un texte PUBLIE ecrit en ASCII : les titres et descriptions des
+# figures sont lus a voix haute par les lecteurs d'ecran, et le registre des
+# tests s'affiche sur /methode/. La regle « sans accents » de ce depot vise les
+# fichiers d'infrastructure, pas ce que lisent les visiteurs.
+#
+# La liste est volontairement courte et sans ambiguite : « observe », « compare »
+# ou « elimine » sont de vrais mots francais et n'y figurent pas, meme quand ils
+# tiennent la place d'un participe accentue.
+MOTS_SANS_ACCENT = """
+ecart ecarts ecarte ecartent age ages mediane medianes metier metiers
+general generale generaux depart departs meme memes melange melanges
+archetype archetypes variete varietes representee representees expres
+desequilibre desequilibres modele modeles correlation correlations
+annee annees negative reduit regardee epoque epoques retiree retirees
+serie series precaution precautions probabilite probabilites apres
+separement zero identifiee identifiees extremes edition editions regle regles
+interieur composees tirees equilibre differer methode methodes neutralisee
+popularite telespectateurs episode episodes etendue reunification deroulement
+resultat resultats categorie categories reference references annulee annulees
+elimination eliminations moitie moitiee sejour sejours defaite victoire
+"""
+MOTS_SUSPECTS = set(MOTS_SANS_ACCENT.split())
+RE_MOT = re.compile(r"[A-Za-z][A-Za-z'-]*")
+RE_BALISE_TEXTE = re.compile(r"<(title|desc)>(.*?)</\1>", re.S)
+
+
+def controler_accents(c):
+    """Refuse un texte publie ecrit sans ses accents.
+
+    Deux gisements : les <title>/<desc> des figures, et le registre des tests
+    publie sur /methode/. Quarante chaines du registre etaient dans ce cas --
+    lues telles quelles par un lecteur d'ecran.
+    """
+    fautes = []
+
+    def examiner(origine, texte):
+        mots = {m.group(0).lower() for m in RE_MOT.finditer(texte or "")}
+        trouves = sorted(mots & MOTS_SUSPECTS)
+        if trouves:
+            fautes.append((origine, trouves[:5]))
+
+    dossier = os.path.join(RACINE, "_includes", "graphiques")
+    for nom in sorted(os.listdir(dossier)) if os.path.isdir(dossier) else []:
+        if not nom.endswith(".svg"):
+            continue
+        texte = open(os.path.join(dossier, nom), encoding="utf-8").read()
+        for balise, contenu in RE_BALISE_TEXTE.findall(texte):
+            examiner(f"{nom} <{balise}>", html.unescape(contenu))
+
+    chemin = os.path.join(RACINE, "_data", "stats.yml")
+    if os.path.exists(chemin):
+        stats = yaml.safe_load(open(chemin, encoding="utf-8")) or {}
+        for t in ((stats.get("modeles") or {}).get("registre") or []):
+            for champ in ("libelle", "question", "lecture"):
+                examiner(f"registre « {t.get('cle')} » / {champ}", t.get(champ))
+
+    for origine, mots in fautes:
+        c.avertir(f"{origine} : texte publie sans accents — {', '.join(mots)}")
+    return len(fautes)
+
+
 def main():
     c = Controle()
     donnees = charger_donnees()
@@ -365,6 +428,7 @@ def main():
     controler_sass(c)
     controler_reproductibilite(c)
     controler_aleatoire(c)
+    controler_accents(c)
 
     if os.path.isdir(os.path.join(RACINE, "_site")):
         c.avertir("_site/ existe : verifier qu'il est bien ignore par Git")

@@ -341,11 +341,10 @@ def recette_casting(par_saison, parts):
     nulle = np.array([float(np.mean(np.abs(g.binomial(tailles, 0.5) - tailles / 2)))
                       for _ in range(N_PERMUTATIONS)])
     tests.append(_test(
-        "parite", "L'equilibre hommes-femmes",
-        "L'ecart a la parite est-il plus petit que ce qu'un tirage a pile ou face donnerait ?",
+        "parite", "L'équilibre hommes-femmes",
+        "L'écart à la parité est-il plus petit que ce qu'un tirage à pile ou face donnerait ?",
         ecart_observe, nulle, unite="personnes",
-        lecture="Un ecart observe plus PETIT que l'attendu est la signature d'un quota : "
-                "le hasard, lui, produit des castings desequilibres de temps en temps."))
+        lecture="Un écart observé plus PETIT que l'attendu est la signature d'un quota : le hasard, lui, produit des castings déséquilibrés de temps en temps."))
 
     # --- 2. l'etendue des ages est-elle voulue ? ----------------------------
     ages = np.array([l["age"] for l in lignes], dtype=float)
@@ -356,12 +355,10 @@ def recette_casting(par_saison, parts):
     observe = ecart_intra(ages)
     nulle = np.array([ecart_intra(g.permutation(ages)) for _ in range(N_PERMUTATIONS)])
     tests.append(_test(
-        "etendue_ages", "L'ecart d'age dans un meme casting",
-        "Un casting melange-t-il les ages plus qu'un tirage au hasard ne le ferait ?",
+        "etendue_ages", "L'écart d'âge dans un même casting",
+        "Un casting mélange-t-il les âges plus qu'un tirage au hasard ne le ferait ?",
         observe, nulle, unite="annees",
-        lecture="Rebattre les aventuriers entre saisons donne l'ecart-type general. "
-                "Un ecart observe PLUS GRAND veut dire qu'on place expres un jeune "
-                "et un ancien dans chaque casting."))
+        lecture="Rebattre les aventuriers entre saisons donne l'écart-type général. Un écart observé PLUS GRAND veut dire qu'on place exprès un jeune et un ancien dans chaque casting."))
 
     # --- 3. faut-il un representant de chaque famille de metier ? -----------
     familles = sorted({l["csp"] for l in lignes})
@@ -372,12 +369,10 @@ def recette_casting(par_saison, parts):
     observe = couverture(csp_vec)
     nulle = np.array([couverture(g.permutation(csp_vec)) for _ in range(N_PERMUTATIONS)])
     tests.append(_test(
-        "familles_metiers", "La variete des metiers",
-        "Un casting couvre-t-il plus de familles de metiers qu'un tirage au hasard ?",
+        "familles_metiers", "La variété des métiers",
+        "Un casting couvre-t-il plus de familles de métiers qu'un tirage au hasard ?",
         observe, nulle, unite="cases remplies",
-        lecture="On compte, pour chaque saison, le nombre de familles de metiers "
-                "representees. Un total observe PLUS GRAND veut dire qu'on veille "
-                "a n'oublier aucune famille."))
+        lecture="On compte, pour chaque saison, le nombre de familles de métiers représentées. Un total observé PLUS GRAND veut dire qu'on veille à n'oublier aucune famille."))
 
     # --- 4. les saisons se ressemblent-elles trop ? -------------------------
     codes = np.array(groupes)
@@ -393,12 +388,10 @@ def recette_casting(par_saison, parts):
     observe = distance(codes)
     nulle = np.array([distance(g.permutation(codes)) for _ in range(N_PERMUTATIONS)])
     tests.append(_test(
-        "melange_archetypes", "Le melange d'archetypes",
-        "Chaque saison contient-elle toujours le meme melange de profils ?",
+        "melange_archetypes", "Le mélange d'archétypes",
+        "Chaque saison contient-elle toujours le même mélange de profils ?",
         observe, nulle, unite="",
-        lecture="Distance entre le melange de profils d'une saison et le melange "
-                "general. Un observe PLUS PETIT que l'attendu veut dire que les "
-                "saisons se ressemblent plus que le hasard ne l'expliquerait."))
+        lecture="Distance entre le mélange de profils d'une saison et le mélange général. Un observé PLUS PETIT que l'attendu veut dire que les saisons se ressemblent plus que le hasard ne l'expliquerait."))
 
     # --- 5 et 6. les deux tribus sont-elles construites a l'equilibre ? -----
     # Une saison classique part sur deux tribus. Si elles etaient tirees au
@@ -453,31 +446,22 @@ def recette_casting(par_saison, parts):
                    for _ in range(N_PERMUTATIONS)]
         tests.append(_test(
             "tribus_femmes", "La composition des deux tribus",
-            "Les deux tribus de depart sont-elles plus semblables en part de "
-            "femmes qu'un tirage au hasard ne les ferait ?",
+            "Les deux tribus de départ sont-elles plus semblables en part de femmes qu'un tirage au hasard ne les ferait ?",
             ecart_femmes(reel), np.array([ecart_femmes(t) for t in tirages]),
             unite="points de %",
-            lecture="On rebat les bandeaux a l'interieur de chaque saison. Un ecart "
-                    "observe PLUS PETIT que l'attendu veut dire que les tribus sont "
-                    "composees a l'equilibre, pas tirees au sort."))
+            lecture="On rebat les bandeaux à l'intérieur de chaque saison. Un écart observé PLUS PETIT que l'attendu veut dire que les tribus sont composées à l'équilibre, pas tirées au sort."))
         tests.append(_test(
-            "tribus_ages", "L'age moyen des deux tribus",
-            "Les deux tribus de depart ont-elles des ages moyens plus proches "
-            "qu'un tirage au hasard ne les ferait ?",
+            "tribus_ages", "L'âge moyen des deux tribus",
+            "Les deux tribus de départ ont-elles des âges moyens plus proches qu'un tirage au hasard ne les ferait ?",
             ecart_age(reel), np.array([ecart_age(t) for t in tirages]),
             unite="annees",
-            lecture="Meme methode, sur l'age moyen de chaque bandeau. Un ecart "
-                    "observe PLUS GRAND que l'attendu veut dire l'inverse d'un "
-                    "equilibre : deux tribus construites pour differer."))
+            lecture="Même méthode, sur l'âge moyen de chaque bandeau. Un écart observé PLUS GRAND que l'attendu veut dire l'inverse d'un équilibre : deux tribus construites pour différer."))
         tests.append(_test(
-            "tribus_ages_mediane", "L'age des deux tribus, a la mediane",
-            "Le meme ecart, mesure a la mediane : est-il general, ou porte par "
-            "quelques saisons ?",
+            "tribus_ages_mediane", "L'âge des deux tribus, à la médiane",
+            'Le même écart, mesuré à la médiane : est-il général, ou porté par quelques saisons ?',
             ecart_age_median(reel), np.array([ecart_age_median(t) for t in tirages]),
             unite="annees",
-            lecture="La mediane ignore les valeurs extremes. Si elle ne s'ecarte "
-                    "pas, c'est que l'ecart moyen tient a quelques editions et non "
-                    "a une regle de composition."))
+            lecture="La médiane ignore les valeurs extrêmes. Si elle ne s'écarte pas, c'est que l'écart moyen tient à quelques éditions et non à une règle de composition."))
         ecarts_reels = sorted(zip(_ecarts_age(reel), [d[0][0]["saison"] for d in duos]),
                               reverse=True)
         tribus_extremes = [{"saison": s_id, "ecart": _arr(e),
@@ -687,12 +671,9 @@ def pronostic(par_saison, parts):
 
     test_rang = _test(
         "pronostic_vainqueur", "Pronostiquer le vainqueur au casting",
-        "En ne connaissant que l'age, le sexe, le metier et la couleur, place-t-on "
-        "le futur vainqueur plus haut que le hasard ne le ferait ?",
+        "En ne connaissant que l'âge, le sexe, le métier et la couleur, place-t-on le futur vainqueur plus haut que le hasard ne le ferait ?",
         rang, nulle, unite="rang moyen",
-        lecture="Le modele classe les candidats d'une saison ; on releve la place "
-                "qu'il donne a celui qui a gagne. Plus BAS que l'attendu veut dire "
-                "qu'une part du resultat se joue au recrutement.")
+        lecture="Le modèle classe les candidats d'une saison ; on relève la place qu'il donne à celui qui a gagné. Plus BAS que l'attendu veut dire qu'une part du résultat se joue au recrutement.")
 
     return {
         "effectif": len(lignes),
@@ -1043,10 +1024,7 @@ def equilibre(par_saison, parts, conseils, epreuves):
             "bas": _arr(float(np.exp(ic[1][0])), 3),
             "haut": _arr(float(np.exp(ic[1][1])), 3),
             "p": _arr(float(modele.pvalues[1]), 4),
-            "lecture": "Cote de victoire de la tribu jaune quand elle compte un "
-                       "aventurier de plus. Au-dessus de 1, l'avantage du nombre "
-                       "joue ; en dessous, la tribu en difficulte se rattrape ; "
-                       "a 1, l'effectif ne change rien.",
+            "lecture": "Cote de victoire de la tribu jaune quand elle compte un aventurier de plus. Au-dessus de 1, l'avantage du nombre joue ; en dessous, la tribu en difficulté se rattrape ; à 1, l'effectif ne change rien.",
         }
 
     # --- 2. qui sort, a age, metier et epoque egaux ? -----------------------
@@ -1078,8 +1056,10 @@ def equilibre(par_saison, parts, conseils, epreuves):
         ligne += [1.0 if p["_csp"] == f else 0.0 for f in principales]
         covariables.append(ligne)
 
-    noms_cox = ["Femme", "Age (par decennie)", "Bandeau jaune",
-                "Deja venu"] + [f"Metier : {f}" for f in principales]
+    # Ces libelles sont PUBLIES : ils titrent chaque ligne du graphique en
+    # foret et chaque ligne du tableau de /statistiques/equilibre/.
+    noms_cox = ["Femme", "Âge (par décennie)", "Bandeau jaune",
+                "Déjà venu"] + [f"Métier : {f}" for f in principales]
     cox = {}
     if len(duree) >= 200:
         modele = sm.PHReg(np.array(duree), np.array(covariables),
@@ -1097,10 +1077,7 @@ def equilibre(par_saison, parts, conseils, epreuves):
                  "haut": _arr(float(np.exp(ic[i][1])), 3),
                  "p": _arr(float(modele.pvalues[i]), 4)}
                 for i in range(len(noms_cox))],
-            "lecture": "Rapport de risque d'elimination, a saison identique. "
-                       "Au-dessus de 1, on sort plus vite que la reference ; en "
-                       "dessous, plus lentement. L'intervalle qui contient 1 veut "
-                       "dire que ces donnees ne permettent pas de conclure.",
+            "lecture": "Rapport de risque d'élimination, à saison identique. Au-dessus de 1, on sort plus vite que la référence ; en dessous, plus lentement. L'intervalle qui contient 1 veut dire que ces données ne permettent pas de conclure.",
         }
     return {"rattrapage": rattrapage, "cox": cox}
 
@@ -1182,10 +1159,7 @@ def hasard_mecanique(par_saison, parts, conseils, epreuves):
         "ecart_moyen": _arr(float(np.mean(np.abs(o - m))) * 100, 2),
         "rapport_moyen": _arr(float(np.mean(o) / np.mean(m)), 2),
         "correlation": _arr(float(np.corrcoef(o, m)[0, 1]), 3),
-        "lecture": "Risque observe de sortir a un conseil, et risque qu'un simple "
-                   "1/nombre-de-presents predit. Les deux derniers paliers sont "
-                   "ceux de la finale : tout le monde y sort le meme jour, et la "
-                   "comparaison n'y a plus de sens.",
+        "lecture": "Risque observé de sortir à un conseil, et risque qu'un simple 1/nombre-de-présents prédit. Les deux derniers paliers sont ceux de la finale : tout le monde y sort le même jour, et la comparaison n'y a plus de sens.",
     }
 
 
@@ -1237,9 +1211,7 @@ def effet_des_mecaniques(par_saison, parts, conseils, indicateurs_saison):
     effets.sort(key=lambda d: (d["p"], d["mecanique"], d["sur"]))
     return {"saisons": len(lignes), "mecaniques_testees": retenues,
             "effets": effets,
-            "lecture": "Effet de la presence d'une mecanique, l'annee tenue "
-                       "constante. Un intervalle qui contient zero veut dire que "
-                       "ces vingt-six saisons ne permettent pas de conclure."}
+            "lecture": "Effet de la présence d'une mécanique, l'année tenue constante. Un intervalle qui contient zéro veut dire que ces vingt-six saisons ne permettent pas de conclure."}
 
 
 # --- E. Les alliances : ce que le reseau des bulletins contient -------------
@@ -1383,9 +1355,7 @@ def alliances(par_saison, parts, conseils):
         "Deux aventuriers qui ont vote ensemble votent-ils encore ensemble au "
         "conseil suivant, plus souvent que le hasard ne le voudrait ?",
         100.0 * (p_ensemble - p_contre), 100.0 * nulle, unite="points de %",
-        lecture="Ecart entre deux probabilites : voter ensemble apres avoir vote "
-                "ensemble, et voter ensemble apres avoir vote separement. A zero, "
-                "chaque conseil repart de zero et il n'y a pas d'alliance.")
+        lecture="Écart entre deux probabilités : voter ensemble après avoir voté ensemble, et voter ensemble après avoir voté séparément. À zéro, chaque conseil repart de zéro et il n'y a pas d'alliance.")
 
     # L'appartenance au bloc majoritaire, conseil par conseil : la variable
     # latente que le programme montre sans jamais la nommer.
@@ -1444,7 +1414,7 @@ def alliances(par_saison, parts, conseils):
                  "p": _arr(float(r.pvalues[2]), 4)},
             ],
             "r2": _arr(float(r.rsquared), 3),
-            "lecture": "Points de saison gagnes ou perdus, le nombre de conseils "
+            "lecture": "Points de saison gagnés ou perdus, le nombre de conseils "
                        "traverses tenu constant. Ce controle etant trop severe, "
                        "les deux effets sont des bornes basses.",
         }
@@ -1796,11 +1766,7 @@ def homophilie(par_saison, parts, conseils):
             cle, libelle, question,
             observe[i] * facteur, np.array(nulles[i]) * facteur,
             unite="%" if pourcent else unite,
-            lecture="On rebat les bulletins d'un conseil entre ses votants, en "
-                    "gardant le meme jeu de cibles : la popularite d'une cible est "
-                    "donc neutralisee. Un observe au-dessus de l'attendu veut dire "
-                    "qu'on vise ses semblables plus souvent que le simple partage "
-                    "des cibles ne l'expliquerait."))
+            lecture="On rebat les bulletins d'un conseil entre ses votants, en gardant le même jeu de cibles : la popularité d'une cible est donc neutralisée. Un observé au-dessus de l'attendu veut dire qu'on vise ses semblables plus souvent que le simple partage des cibles ne l'expliquerait."))
         tests[-1]["bulletins"] = effectifs[i]
 
     # Le bandeau, mesure la ou la question se pose : apres la reunification.
@@ -2032,7 +1998,7 @@ def trahison(par_saison, parts, conseils):
                  "estimation": _arr(float(r.params[1]), 2),
                  "bas": _arr(float(ic[1][0]), 2), "haut": _arr(float(ic[1][1]), 2),
                  "p": _arr(float(r.pvalues[1]), 4),
-                 "lecture": "Points de saison gagnes ou perdus quand on passe de "
+                 "lecture": "Points de saison gagnés ou perdus quand on passe de "
                             "« jamais » a « toujours » viser un ancien allie, le "
                             "nombre de bulletins emis tenu constant."}
     classement = sorted(lignes, key=lambda x: (-x[0], -x[4], x[2]))
@@ -2128,9 +2094,7 @@ def confort_maudit(par_saison, parts, conseils, epreuves):
         "attendu": _arr(attendu),
         "bas": _arr(100.0 * ic.low), "haut": _arr(100.0 * ic.high),
         "p": _arr(float(binom.pvalue), 4),
-        "lecture": "Part des bulletins visant un gagnant du confort du meme "
-                   "episode, comparee a la part que ces gagnants representent "
-                   "parmi les presents.",
+        "lecture": 'Part des bulletins visant un gagnant du confort du même épisode, comparée à la part que ces gagnants représentent parmi les présents.',
     }
 
 
@@ -2296,12 +2260,9 @@ def audience(par_saison, indicateurs_saison, mesures):
 
     t_rupture = _test(
         "audience_rupture", "La rupture d'audience",
-        "La chute d'audience tombe-t-elle a une date, ou se fait-elle par glissement ?",
+        "La chute d'audience tombe-t-elle à une date, ou se fait-elle par glissement ?",
         gain, nulle, unite="",
-        lecture="Gain de la meilleure coupure de la serie d'audience, compare a "
-                "celui obtenu sur des saisons remises dans un ordre au hasard. "
-                "Le profil complet des coupures dit ensuite si cette date est "
-                "identifiee ou si plusieurs se valent.")
+        lecture="Gain de la meilleure coupure de la série d'audience, comparé à celui obtenu sur des saisons remises dans un ordre au hasard. Le profil complet des coupures dit ensuite si cette date est identifiée ou si plusieurs se valent.")
 
     # --- 2. le retournement finale / lancement ---------------------------
     duo = [l for l in lignes if l["lancement"] and l["finale"]]
@@ -2315,9 +2276,7 @@ def audience(par_saison, indicateurs_saison, mesures):
         "audience_retournement", "Le retournement finale / lancement",
         "La finale attire-t-elle toujours plus de monde que le lancement ?",
         obs, nulle2, unite="",
-        lecture="Correlation de rang entre l'annee et le rapport finale / "
-                "lancement. Negative, elle dit que l'avantage de la finale se "
-                "reduit d'annee en annee.")
+        lecture="Corrélation de rang entre l'année et le rapport finale / lancement. Négative, elle dit que l'avantage de la finale se réduit d'année en année.")
 
     bascule = None
     for l in sorted(duo, key=lambda x: x["annee"]):
@@ -2352,13 +2311,9 @@ def audience(par_saison, indicateurs_saison, mesures):
                            for _ in range(N_PERMUTATIONS)])
         t_suite = _test(
             "audience_format", "Le format suit-il l'audience ?",
-            "Une saison moins regardee que son epoque ne le laissait attendre "
-            "est-elle suivie d'un casting plus large ?",
+            "Une saison moins regardée que son époque ne le laissait attendre est-elle suivie d'un casting plus large ?",
             obs3, nulle3, unite="",
-            lecture="Correlation de rang entre l'audience d'une saison et "
-                    "l'effectif de la suivante, une fois la tendance temporelle "
-                    "retiree des deux series. Sans cette precaution, le lien "
-                    "brut ne mesure que le passage du temps.")
+            lecture="Corrélation de rang entre l'audience d'une saison et l'effectif de la suivante, une fois la tendance temporelle retirée des deux séries. Sans cette précaution, le lien brut ne mesure que le passage du temps.")
 
     # --- le soir de diffusion --------------------------------------------
     #

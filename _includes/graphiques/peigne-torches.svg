@@ -1,7 +1,7 @@
 <div class="peigne">
 <svg class="graphique" viewBox="0 0 1000 438" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Les 629 aventuriers, du premier jour au dernier">
   <title>Les 629 aventuriers, du premier jour au dernier</title>
-  <desc>Un trait par participation, trie du plus court sejour au plus long. La longueur du trait est le nombre de jours tenus, sa couleur celle de la tribu de depart. La moitie des aventuriers quitte le jeu avant le jour 22.</desc>
+  <desc>Un trait par participation, trié du plus court séjour au plus long. La longueur du trait est le nombre de jours tenus, sa couleur celle de la tribu de départ. La moitié des aventuriers quitte le jeu avant le jour 22.</desc>
   <line x1="208.7" y1="56" x2="208.7" y2="404" stroke="var(--grille)" stroke-width="1"/>
   <text x="208.7" y="46.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="12">jour 10</text>
   <line x1="413.3" y1="56" x2="413.3" y2="404" stroke="var(--grille)" stroke-width="1"/>
