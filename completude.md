@@ -1,10 +1,10 @@
 ---
 layout: page
-title: La carte des trous
+title: Ce qu’on sait de chaque édition
 permalink: /completude/
 chapeau: >-
-  Une ligne par édition, une colonne par type de donnée, et à l’intersection ce
-  qu’on sait vraiment. C’est la carte de ce qui manque.
+  Le tableau complet : les 34 éditions en ligne, les 18 types de données en
+  colonne, et à l’intersection ce qui est réellement renseigné.
 ---
 
 {% assign c = site.data.stats.completude_saisons %}
@@ -34,12 +34,6 @@ d’œil. Voici la grille complète : **{{ c.saisons }} éditions** en ligne,
   <li data-etat="sans_objet"><i></i> sans objet</li>
 </ul>
 
-<p class="note"><strong>« Sans objet » n’est pas « manquant ».</strong> Une
-saison d’avant 2011 n’a pas de collier d’immunité : la case est hachurée, pas
-vide. De même pour les éditions spéciales, dont la réunification n’est pas
-mesurée, et pour les saisons sans ambassade. Confondre les deux ferait passer
-une règle du jeu pour une lacune.</p>
-
 <div class="tableau-large tableau-haut">
 <table class="grille-completude">
 <thead><tr>
@@ -66,7 +60,15 @@ une règle du jeu pour une lacune.</p>
 
 <p class="note">Survolez une case pour lire le détail : « 16/16 », « 8 relevées »,
 « non nommés ». Les colonnes marquées d’une coche sont des faits — la donnée
-existe ou n’existe pas ; les autres portent une part.</p>
+existe ou n’existe pas ; les autres portent une part. Sur écran étroit, le
+tableau défile horizontalement ; la colonne des éditions reste en place.</p>
+
+<p class="note"><strong>« Sans objet » n’est pas « manquant ».</strong> Une
+saison d’avant 2011 n’a pas de collier d’immunité : la case est hachurée, pas
+vide. De même pour les éditions spéciales, dont la réunification n’est pas
+mesurée, et pour les saisons sans ambassade. Confondre les deux ferait passer
+une règle du jeu pour une lacune.</p>
+
 
 ## Ce que la grille montre en colonnes
 

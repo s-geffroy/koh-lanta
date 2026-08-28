@@ -933,14 +933,18 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); 
    trous, pas une mesure fine. */
 .grille-completude { font-size: 0.82rem; }
 .grille-completude th { white-space: nowrap; }
+/* Les intitules de colonnes tiennent debout : dix-huit libelles a
+   l'horizontale feraient une table quatre fois trop large. */
 .grille-completude thead th.case-tete {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  height: 8.5rem;
-  padding: 0.5rem 0.2rem;
+  height: 7.5rem;
+  padding: 0.5rem 0.15rem;
   font-weight: 600;
+  font-size: 0.8rem;
   text-align: left;
   vertical-align: bottom;
+  white-space: nowrap;
 }
 .grille-completude td.saison,
 .grille-completude th.saison {
@@ -949,14 +953,22 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); 
   background: var(--surface);
   z-index: 1;
   border-right: 1px solid var(--grille);
-  white-space: nowrap;
   text-align: left;
+  /* La colonne des editions ne doit pas manger la largeur : les dix-huit
+     colonnes de donnees passent avant elle. */
+  max-width: 15rem;
+  min-width: 11rem;
 }
-.grille-completude .saison b { font-weight: 600; }
+.grille-completude .saison b {
+  font-weight: 600;
+  display: block;
+  line-height: 1.25;
+}
 .grille-completude .saison small {
   display: block;
   color: var(--encre-muette);
   font-size: 0.78em;
+  white-space: nowrap;
 }
 .grille-completude td.case {
   position: relative;

@@ -15,6 +15,11 @@ chapeau: >-
 {{ s.general.saisons_speciales }} éditions spéciales. Deux saisons de plus ont
 été tournées mais **jamais diffusées**, interrompues en cours de tournage.
 
+<p class="note">Ce que l’on sait — et ce que l’on ignore — de chaque édition,
+type de donnée par type de donnée, tient dans un seul tableau :
+<a href="{{ '/completude/' | relative_url }}">Ce qu’on sait de chaque
+édition</a>.</p>
+
 ## Les éditions classiques
 
 <ul class="saison-grille">
