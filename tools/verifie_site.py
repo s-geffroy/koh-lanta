@@ -77,6 +77,84 @@ def controler_reproductibilite(c):
                                  f"l'autre ; enfermer dans sorted()")
 
 
+def controler_aleatoire(c):
+    """Un tirage au hasard non graine est la meme faute que l'ensemble non trie.
+
+    Les modeles de tools/modeles.py reposent sur des tests de permutation et
+    sur des bootstraps : des dizaines de milliers de tirages. Sans graine
+    fixee, _data/stats.yml change a chaque construction et le site publie des
+    chiffres differents sans qu'aucune donnee ait bouge -- exactement le defaut
+    deja paye sur le classement des familles de metiers.
+
+    Le controle refuse donc trois choses : l'appel direct aux fonctions du
+    module `random`, l'ancienne interface `np.random.<fonction>()`, et tout
+    estimateur scikit-learn construit sans `random_state`. La graine du projet
+    est GRAINE, dans tools/modeles.py ; tout generateur en derive.
+
+    Comme le controle voisin, il passe par l'arbre syntaxique : cherchee dans
+    le texte, la faute se trouverait jusque dans cette docstring.
+    """
+    # Ce qui est deterministe dans `random` et dans `numpy.random` : construire
+    # un generateur graine, ou lire l'etat. Le reste tire.
+    SANS_TIRAGE = {"Random", "SystemRandom", "default_rng", "Generator",
+                   "RandomState", "seed", "PCG64", "Philox", "SFC64", "MT19937",
+                   # SeedSequence ne tire rien : elle FABRIQUE une graine a
+                   # partir de nombres donnes. C'est le geste meme qu'on exige.
+                   "SeedSequence"}
+    # Estimateurs et utilitaires scikit-learn dont le resultat depend d'un
+    # tirage : ils doivent tous recevoir random_state.
+    A_GRAINER = {"KMeans", "MiniBatchKMeans", "PCA", "TruncatedSVD", "NMF",
+                 "RandomForestClassifier", "RandomForestRegressor",
+                 "GradientBoostingClassifier", "GradientBoostingRegressor",
+                 "HistGradientBoostingClassifier", "HistGradientBoostingRegressor",
+                 "ExtraTreesClassifier", "ExtraTreesRegressor",
+                 "LogisticRegression", "SGDClassifier", "SGDRegressor",
+                 "KFold", "StratifiedKFold", "GroupKFold", "ShuffleSplit",
+                 "GroupShuffleSplit", "train_test_split", "permutation_importance",
+                 "TSNE", "MDS"}
+
+    for base, _, fichiers in os.walk(os.path.join(RACINE, "tools")):
+        for f in sorted(fichiers):
+            if not f.endswith(".py"):
+                continue
+            chemin = os.path.join(base, f)
+            rel = os.path.relpath(chemin, RACINE)
+            try:
+                arbre = ast.parse(open(chemin, encoding="utf-8").read(), filename=chemin)
+            except SyntaxError:
+                continue  # deja signale par controler_reproductibilite
+            for n in ast.walk(arbre):
+                if not isinstance(n, ast.Call):
+                    continue
+                fn = n.func
+                nom = fn.attr if isinstance(fn, ast.Attribute) else (
+                    fn.id if isinstance(fn, ast.Name) else None)
+                if nom is None:
+                    continue
+                # random.shuffle(...) / np.random.normal(...)
+                if isinstance(fn, ast.Attribute):
+                    racine_appel = fn.value
+                    chemin_appel = []
+                    while isinstance(racine_appel, ast.Attribute):
+                        chemin_appel.append(racine_appel.attr)
+                        racine_appel = racine_appel.value
+                    if isinstance(racine_appel, ast.Name):
+                        chemin_appel.append(racine_appel.id)
+                    if "random" in chemin_appel and nom not in SANS_TIRAGE:
+                        c.erreur(f"{rel}:{n.lineno} : tirage au hasard non graine "
+                                 f"(`{'.'.join(reversed(chemin_appel))}.{nom}`) — "
+                                 f"passer par un generateur derive de GRAINE")
+                        continue
+                if nom in A_GRAINER:
+                    mots = {k.arg for k in n.keywords if k.arg}
+                    if "random_state" not in mots and not any(
+                            k.arg is None for k in n.keywords):
+                        c.erreur(f"{rel}:{n.lineno} : `{nom}(...)` sans "
+                                 f"`random_state` — le resultat depend d'un "
+                                 f"tirage, la construction cesse d'etre "
+                                 f"reproductible")
+
+
 def controler_sass(c):
     """Le piege du vieux Sass, qui a deja fait echouer une construction.
 
@@ -245,6 +323,7 @@ def main():
 
     controler_sass(c)
     controler_reproductibilite(c)
+    controler_aleatoire(c)
 
     if os.path.isdir(os.path.join(RACINE, "_site")):
         c.avertir("_site/ existe : verifier qu'il est bien ignore par Git")

@@ -60,15 +60,16 @@ plus tôt que les hommes en moyenne — et remportent pourtant
 
 ## Ce que les chiffres révèlent
 
+{% assign fv = i.fantomes_issue | where: "sort", "vainqueur" | first %}
 <div class="constat">
   <p>Sur {{ site.data.stats.conseils.bulletins }} bulletins dépouillés,
-  <b>{{ i.nb_fantomes }} aventuriers ont traversé leur saison sans que personne
-  n’écrive jamais leur nom</b>.</p>
-  <p>Ils gagnent dans <b>{{ i.fantomes_issue[0].part_fantomes }} %</b> des cas,
-  contre {{ i.fantomes_issue[0].part_ensemble }} % pour l’ensemble : cinq fois et
-  demie plus. C’est le meilleur prédicteur de victoire de tout le jeu de données.
-  On ne gagne pas Koh-Lanta en survivant aux votes, on gagne en n’en recevant
-  aucun.</p>
+  <b>{{ i.nb_fantomes }} aventuriers ont traversé au moins
+  {{ i.seuil_fantome }} conseils sans que personne n’écrive jamais leur
+  nom</b>.</p>
+  <p>Ils gagnent dans <b>{{ fv.part_fantomes }} %</b> des cas, contre
+  {{ fv.part_endurants }} % pour ceux qui ont tenu aussi longtemps qu’eux :
+  <b>deux fois et demie plus</b>. On ne gagne pas Koh-Lanta en survivant aux
+  votes, on gagne en n’en recevant aucun.</p>
   <p><a href="{{ '/statistiques/jeu-social/' | relative_url }}">Le jeu social</a></p>
 </div>
 
@@ -87,16 +88,35 @@ plus tôt que les hommes en moyenne — et remportent pourtant
   <p><a href="{{ '/statistiques/revenants/' | relative_url }}">Les revenants</a></p>
 </div>
 
+## Et une chose que la production ne dit pas
+
+{% assign tp = site.data.stats.modeles.registre | where: "cle", "parite" | first %}
+<div class="constat">
+  <p>On lit partout que la production « vise l’équilibre » entre femmes et
+  hommes. La mesure est plus dure que la formule.</p>
+  <p>Un casting s’écarte de la parité de <b>{{ tp.observe }} personne</b> en
+  moyenne. En redistribuant les mêmes {{ site.data.stats.modeles.casting.effectif }}
+  aventuriers au hasard entre les mêmes saisons, {{ tp.tirages }} fois, l’écart
+  serait de <b>{{ tp.attendu }}</b>. Soit {{ tp.ecart_types }} écarts-types en
+  dessous du hasard.</p>
+  <p>Ce n’est pas une tendance : la plupart des saisons partent
+  <b>exactement</b> à égalité. Et ce casting tenu au cordeau
+  <b>ne prédit rien</b> du vainqueur.</p>
+  <p><a href="{{ '/statistiques/casting/' | relative_url }}">La recette du casting</a>
+  · <a href="{{ '/statistiques/pronostic/' | relative_url }}">Le pronostic</a></p>
+</div>
+
 ## Par où commencer
 
 <ul class="cartes">
   <li class="carte">
     <a href="{{ '/statistiques/' | relative_url }}">
-      <span class="carte-rang">ONZE ENTRÉES</span>
+      <span class="carte-rang">QUINZE ENTRÉES</span>
       <span class="carte-titre">Les statistiques</span>
       <span class="carte-resume">Les vainqueurs, les tribus, les métiers, les
         prénoms, la longévité, les sorties, les épreuves, les colliers, le jeu
-        social, les conseils et les revenants.</span>
+        social, les conseils, les revenants — puis quatre pages où les modèles
+        prennent le relais des comptages.</span>
     </a>
   </li>
   <li class="carte">

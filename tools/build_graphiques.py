@@ -11,8 +11,9 @@ import yaml
 RACINE = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 sys.path.insert(0, os.path.join(RACINE, "tools"))
 from graphiques import (arcs, barres_horizontales, barres_groupees,  # noqa: E402
-                        colonnes, courbes, ecrire, frise, halteres, nuage,
-                        peigne, petits_multiples, ENCRE_MUETTE, SERIES, TRIBUS)
+                        colonnes, courbes, distribution_nulle, ecrire, foret,
+                        frise, halteres, nuage, peigne, pentes,
+                        petits_multiples, plan, ENCRE_MUETTE, SERIES, TRIBUS)
 
 NOM_COULEUR = {"jaune": "Jaune", "rouge": "Rouge", "bleu": "Bleu", "vert": "Vert",
                "orange": "Orange", "violet": "Violet", "noir": "Noire", "blanc": "Blanche"}
@@ -67,6 +68,7 @@ def main():
     figures_ajoutees(stats)
     figure_prenoms()
     figure_nuage()
+    figures_des_modeles(stats)
 
     # --- vainqueurs -------------------------------------------------------
     v = stats["vainqueurs"]
@@ -326,16 +328,19 @@ def main():
         if ind.get("fantomes_issue"):
             ecrire("fantomes-issue.svg", barres_groupees(
                 [{"libelle": x["libelle"],
-                  "valeurs": [x["part_fantomes"], x["part_ensemble"]],
+                  "valeurs": [x["part_fantomes"], x["part_endurants"]],
                   "details": [f'{x["effectif"]} des {ind["nb_fantomes"]} fantômes, '
                               f'soit {x["part_fantomes"]} %',
-                              f'{x["part_ensemble"]} % de l\'ensemble des participations']}
+                              f'{x["part_endurants"]} % des {ind["endurants"]} '
+                              f'aventuriers ayant traverse autant de conseils']}
                  for x in ind["fantomes_issue"]],
                 [{"nom": "Les « fantômes »", "couleur": SERIES[0]},
-                 {"nom": "Tous les aventuriers", "couleur": SERIES[1]}],
+                 {"nom": "Ceux qui ont tenu autant", "couleur": SERIES[1]}],
                 titre="Ce que devient un aventurier que personne ne vise",
-                description="Sort final des aventuriers n'ayant reçu aucune voix, "
-                            "comparé à l'ensemble.",
+                description="Sort final des aventuriers n'ayant recu aucune voix, "
+                            "compare a ceux qui ont traverse autant de conseils "
+                            "qu'eux -- et non a l'ensemble, qui melangerait le "
+                            "fait de n'etre pas vise et celui d'aller loin.",
                 unite=" %", marge_gauche=210))
 
         if ind.get("menace_par_sort"):
@@ -672,6 +677,147 @@ def figure_nuage():
         legende=[("Vainqueurs", SERIES[2]), ("Finalistes", SERIES[3]),
                  ("Éliminés et abandons", ENCRE_MUETTE)],
         largeur=920, hauteur=400))
+
+
+def figures_des_modeles(stats):
+    """Les figures des quatre axes de tools/modeles.py.
+
+    Une regle traverse ce bloc : un resultat de modele ne se dessine jamais sans
+    son incertitude. D'ou les distributions nulles pour les tests de
+    permutation, et les graphiques en foret pour les coefficients.
+    """
+    m = stats.get("modeles") or {}
+    if not m:
+        return
+
+    # --- A. la recette du casting -----------------------------------------
+    par_cle = {t["cle"]: t for t in (m.get("registre") or [])}
+    for cle, nom in (("parite", "casting-parite"),
+                     ("etendue_ages", "casting-etendue-ages"),
+                     ("familles_metiers", "casting-metiers"),
+                     ("tribus_femmes", "casting-tribus-femmes"),
+                     ("tribus_ages", "casting-tribus-ages"),
+                     ("tribus_ages_mediane", "casting-tribus-ages-mediane"),
+                     ("pronostic_vainqueur", "pronostic-rang")):
+        t = par_cle.get(cle)
+        if t and t.get("nulle"):
+            # Un test dont l'observe tombe dans la masse merite la teinte
+            # muette : la figure doit dire « rien a voir » avant le texte.
+            teinte = SERIES[4] if t.get("retenu") else SERIES[5]
+            ecrire(f"{nom}.svg", distribution_nulle(t, couleur=teinte))
+
+    casting = m.get("casting") or {}
+    if casting.get("carte"):
+        couleurs = [SERIES[0], SERIES[2], SERIES[3], SERIES[6], SERIES[7]]
+        groupes = {a["code"]: a for a in casting.get("archetypes") or []}
+        ecrire("casting-plan.svg", plan(
+            [{"x": p["x"], "y": p["y"], "detail": p["detail"],
+              "couleur": couleurs[p["groupe"] % len(couleurs)]}
+             for p in casting["carte"]],
+            titre="Le plan des castings",
+            description="Chaque point est un aventurier, place selon les deux "
+                        "dimensions qui separent le plus les profils. Les "
+                        "etiquettes marquent les modalites.",
+            reperes=[r for r in (casting.get("modalites") or [])
+                     if abs(r["x"]) + abs(r["y"]) > 0.9][:14],
+            x_titre=f'axe 1 — {casting["inertie_axes"][0]} % de l\u2019information',
+            y_titre=f'axe 2 — {casting["inertie_axes"][1]} %',
+            legende=[(groupes[c]["libelle"], couleurs[c % len(couleurs)])
+                     for c in sorted(groupes)]))
+
+    # --- B. le pronostic ---------------------------------------------------
+    pron = m.get("pronostic") or {}
+    if pron.get("importances"):
+        ecrire("pronostic-importances.svg", barres_horizontales(
+            [{"libelle": i["variable"].replace("metier:", "métier : ")
+                                      .replace("couleur:", "bandeau : ")
+                                      .replace("_", " "),
+              "valeur": i["perte"],
+              "detail": f'Brouiller « {i["variable"]} » deplace le rang du '
+                        f'vainqueur de {i["perte"]} place(s).'}
+             for i in pron["importances"]],
+            titre="Ce qui porte le peu de signal qu'il y a",
+            description="Degradation du rang du vainqueur quand une seule "
+                        "variable est brouillee. Toutes restent minuscules.",
+            unite=" places", couleur=SERIES[5], marge_gauche=210))
+
+    # --- C. la force -------------------------------------------------------
+    f = m.get("force") or {}
+    if f.get("classement"):
+        ecrire("force-classement.svg", halteres(
+            [{"libelle": d["nom"], "min": d["bas"], "median": d["force"],
+              "max": d["haut"], "couleur": SERIES[0],
+              "detail": f'{d["nom"]} : force {d["force"]} '
+                        f'(intervalle {d["bas"]} à {d["haut"]}), '
+                        f'{d["victoires"]} victoires en {d["disputees"]} épreuves'}
+             for d in f["classement"][:16]],
+            titre="La force estimée, avec son incertitude",
+            description="Force latente de chaque athlete, corrigee du nombre "
+                        "d'epreuves disputees et du niveau des adversaires. Le "
+                        "segment est l'intervalle a 95 %.",
+            largeur=880, marge_gauche=190))
+    if f.get("pentes"):
+        ecrire("force-pentes.svg", pentes(
+            [{"libelle": d["nom"], "rang_gauche": d["rang_victoires"],
+              "rang_droite": d["rang_force"]}
+             for d in f["pentes"]],
+            titre="Le classement brut, et le classement corrigé",
+            description="A gauche le nombre de victoires, a droite la force "
+                        "estimee. Une pente montante signale un athlete que le "
+                        "total brut sous-estime.",
+            gauche="au nombre de victoires", droite="à la force estimée",
+            largeur=760, marge=196))
+
+    fj = m.get("force_et_jeu") or {}
+    if fj:
+        ecrire("force-effets.svg", foret(
+            [{"libelle": "Force doublée → bulletins reçus",
+              "estimation": fj["voix"]["force"]["estimation"],
+              "bas": fj["voix"]["force"]["bas"], "haut": fj["voix"]["force"]["haut"]},
+             {"libelle": "Femme → bulletins reçus",
+              "estimation": fj["voix"]["femme"]["estimation"],
+              "bas": fj["voix"]["femme"]["bas"], "haut": fj["voix"]["femme"]["haut"]},
+             {"libelle": "Dix ans de plus → bulletins reçus",
+              "estimation": fj["voix"]["age"]["estimation"],
+              "bas": fj["voix"]["age"]["bas"], "haut": fj["voix"]["age"]["haut"]}],
+            titre="Ce que la force change aux bulletins reçus",
+            description="Rapports de taux, a exposition egale. Un intervalle qui "
+                        "traverse 1 veut dire qu'on ne peut pas conclure.",
+            reference=1.0, largeur=740, marge_gauche=268,
+            note="La ligne verticale marque « aucun effet »."))
+
+    # --- D. l'equilibre ----------------------------------------------------
+    eq = m.get("equilibre") or {}
+    cox = eq.get("cox") or {}
+    if cox.get("coefficients"):
+        ecrire("equilibre-cox.svg", foret(
+            [{"libelle": c["variable"], "estimation": c["rapport"],
+              "bas": c["bas"], "haut": c["haut"],
+              "detail": f'{c["variable"]} : risque ×{c["rapport"]} '
+                        f'(intervalle {c["bas"]} à {c["haut"]})'}
+             for c in cox["coefficients"]],
+            titre="Qui sort plus vite, à saison identique",
+            description="Rapports de risque d'elimination d'un modele de duree "
+                        "stratifie par saison. Au-dessus de 1, on sort plus vite.",
+            reference=1.0, largeur=780, marge_gauche=224,
+            note=f'{cox["effectif"]} participations · {cox["eliminations"]} '
+                 f'eliminations · {cox["censures"]} sorties censurees'))
+
+    hm = m.get("hasard_mecanique") or {}
+    if hm.get("paliers"):
+        ecrire("risque-mecanique.svg", barres_groupees(
+            [{"libelle": p["palier"],
+              "valeurs": [p["observe"], p["mecanique"]],
+              "details": [f'{p["observe"]} % observé sur {p["conseils"]} conseils',
+                          f'{p["mecanique"]} % attendu avec '
+                          f'{p["presents_moyen"]} présents en moyenne']}
+             for p in hm["paliers"]],
+            [{"nom": "risque observé", "couleur": SERIES[0]},
+             {"nom": "1 / nombre de présents", "couleur": SERIES[5]}],
+            titre="Le risque monte-t-il, ou le camp se vide-t-il ?",
+            description="Risque de sortir a un conseil, par dixieme de saison, "
+                        "compare au simple 1/nombre-de-presents.",
+            unite=" %", largeur=760, marge_gauche=110))
 
 
 if __name__ == "__main__":

@@ -1361,34 +1361,34 @@ records:
     - sp4
   nb_multi_participants: 83
 conseils:
-  conseils: 679
-  conseils_avec_decompte: 439
-  conseils_complets: 267
-  bulletins: 3321
-  bulletins_conseils_complets: 2087
-  part_unanimes: 0.9
-  part_serres: 46.9
+  conseils: 655
+  conseils_avec_decompte: 416
+  conseils_complets: 264
+  bulletins: 3188
+  bulletins_conseils_complets: 2063
+  part_unanimes: 0.2
+  part_serres: 47.6
   voix_annulees_par_collier: 296
   conseils_avec_collier_joue: 72
   vote_par_genre:
   - votant: h
     cible: f
-    effectif: 603
-    part: 30.2
+    effectif: 599
+    part: 30.4
   - votant: f
     cible: h
-    effectif: 485
-    part: 24.3
+    effectif: 476
+    part: 24.2
   - votant: h
     cible: h
-    effectif: 468
-    part: 23.5
+    effectif: 460
+    part: 23.4
   - votant: f
     cible: f
-    effectif: 438
-    part: 22.0
+    effectif: 435
+    part: 22.1
 jury:
-  effectif: 8
+  effectif: 32
   scrutins:
   - saison: s01
     titre: Les Aventuriers de Koh-Lanta
@@ -1397,6 +1397,132 @@ jury:
     voix_pour: 4
     voix_exprimees: 7
     bulletins_releves: 4
+  - saison: s02
+    titre: Nicoya
+    annee: 2002
+    laureat: Amel Fatnassi
+    voix_pour: 5
+    voix_exprimees: 7
+    bulletins_releves: 5
+  - saison: s03
+    titre: Bocas del Toro
+    annee: 2003
+    laureat: Isabelle Seguin
+    voix_pour: 3
+    voix_exprimees: 6
+    bulletins_releves: 3
+  - saison: s03
+    titre: Bocas del Toro
+    annee: 2003
+    laureat: Delphine Bano
+    voix_pour: 3
+    voix_exprimees: 6
+    bulletins_releves: 3
+  - saison: s04
+    titre: Panama
+    annee: 2004
+    laureat: Philippe Bordier
+    voix_pour: 7
+    voix_exprimees: 7
+    bulletins_releves: 7
+  - saison: s05
+    titre: Pacifique
+    annee: 2005
+    laureat: Clémence Castel
+    voix_pour: 7
+    voix_exprimees: 7
+    bulletins_releves: 7
+  - saison: s06
+    titre: Vanuatu
+    annee: 2006
+    laureat: François-David Cardonnel
+    voix_pour: 5
+    voix_exprimees: 8
+    bulletins_releves: 5
+  - saison: s07
+    titre: Palawan
+    annee: 2007
+    laureat: Kevin Cuoco
+    voix_pour: 3
+    voix_exprimees: 6
+    bulletins_releves: 3
+  - saison: s07
+    titre: Palawan
+    annee: 2007
+    laureat: Jade Handi
+    voix_pour: 3
+    voix_exprimees: 6
+    bulletins_releves: 3
+  - saison: s08
+    titre: Caramoan
+    annee: 2008
+    laureat: Christelle Gauzet
+    voix_pour: 6
+    voix_exprimees: 7
+    bulletins_releves: 6
+  - saison: s09
+    titre: Palau
+    annee: 2009
+    laureat: Christina Chevry
+    voix_pour: 5
+    voix_exprimees: 7
+    bulletins_releves: 5
+  - saison: s10
+    titre: Viêtnam
+    annee: 2010
+    laureat: Philippe Duron
+    voix_pour: null
+    voix_exprimees: null
+    bulletins_releves: 6
+  - saison: s11
+    titre: Raja Ampat
+    annee: 2011
+    laureat: Gérard Urdampilleta
+    voix_pour: 7
+    voix_exprimees: 9
+    bulletins_releves: 7
+  - saison: s14
+    titre: Johor
+    annee: 2015
+    laureat: Marc Rambaud
+    voix_pour: 9
+    voix_exprimees: 11
+    bulletins_releves: 9
+  - saison: s15
+    titre: Thaïlande
+    annee: 2016
+    laureat: Wendy Gervois
+    voix_pour: 6
+    voix_exprimees: 11
+    bulletins_releves: 6
+  - saison: s16
+    titre: L'Île au trésor
+    annee: 2016
+    laureat: Benoît Assadi
+    voix_pour: 10
+    voix_exprimees: 10
+    bulletins_releves: 10
+  - saison: s17
+    titre: Cambodge
+    annee: 2017
+    laureat: Frédéric Blancher
+    voix_pour: 6
+    voix_exprimees: 8
+    bulletins_releves: 6
+  - saison: s18
+    titre: Fidji
+    annee: 2017
+    laureat: André Deleplace
+    voix_pour: 8
+    voix_exprimees: 9
+    bulletins_releves: 8
+  - saison: s20
+    titre: La Guerre des chefs
+    annee: 2019
+    laureat: Maud Bamps
+    voix_pour: 7
+    voix_exprimees: 13
+    bulletins_releves: 7
   - saison: s21
     titre: Les 4 Terres
     annee: 2020
@@ -1411,6 +1537,20 @@ jury:
     voix_pour: 9
     voix_exprimees: 13
     bulletins_releves: 9
+  - saison: s23
+    titre: Le Totem maudit
+    annee: 2022
+    laureat: François Descamp
+    voix_pour: 4
+    voix_exprimees: 11
+    bulletins_releves: 0
+  - saison: s23
+    titre: Le Totem maudit
+    annee: 2022
+    laureat: Bastien San Pedro
+    voix_pour: 4
+    voix_exprimees: 11
+    bulletins_releves: 0
   - saison: s24
     titre: Le Feu sacré
     annee: 2023
@@ -1439,6 +1579,34 @@ jury:
     voix_pour: 10
     voix_exprimees: 13
     bulletins_releves: 10
+  - saison: sp1
+    titre: Le Retour des héros
+    annee: 2009
+    laureat: Romuald Lafite
+    voix_pour: 5
+    voix_exprimees: 7
+    bulletins_releves: 5
+  - saison: sp2
+    titre: Le Choc des héros
+    annee: 2010
+    laureat: Grégoire Delachaux
+    voix_pour: 6
+    voix_exprimees: 8
+    bulletins_releves: 6
+  - saison: sp3
+    titre: La Revanche des héros
+    annee: 2012
+    laureat: Bertrand Bolle
+    voix_pour: 9
+    voix_exprimees: 10
+    bulletins_releves: 9
+  - saison: sp6
+    titre: L'Île des héros
+    annee: 2020
+    laureat: Naoil Tita
+    voix_pour: 7
+    voix_exprimees: 9
+    bulletins_releves: 7
   - saison: sp7
     titre: La Légende
     annee: 2021
@@ -5750,9 +5918,9 @@ programme:
     premiere: 2024
     derniere: 2024
 reciprocite:
-  couples: 1768
-  reciproques: 692
-  part: 39.1
+  couples: 1750
+  reciproques: 672
+  part: 38.4
 arc_des_votes:
   saison: s16
   titre: L'Île au trésor
@@ -5905,9 +6073,6 @@ arc_des_votes:
   - de: 7
     vers: 12
     poids: 2
-  - de: 7
-    vers: 18
-    poids: 1
   - de: 8
     vers: 1
     poids: 1
@@ -5919,7 +6084,7 @@ arc_des_votes:
     poids: 1
   - de: 8
     vers: 18
-    poids: 2
+    poids: 1
   - de: 8
     vers: 19
     poids: 1
@@ -5940,7 +6105,7 @@ arc_des_votes:
     poids: 1
   - de: 9
     vers: 18
-    poids: 2
+    poids: 1
   - de: 10
     vers: 1
     poids: 1
@@ -5983,9 +6148,6 @@ arc_des_votes:
   - de: 11
     vers: 12
     poids: 1
-  - de: 11
-    vers: 18
-    poids: 1
   - de: 12
     vers: 1
     poids: 1
@@ -6003,7 +6165,7 @@ arc_des_votes:
     poids: 2
   - de: 12
     vers: 18
-    poids: 2
+    poids: 1
   - de: 13
     vers: 0
     poids: 1
@@ -6031,9 +6193,6 @@ arc_des_votes:
   - de: 13
     vers: 17
     poids: 2
-  - de: 13
-    vers: 18
-    poids: 1
   - de: 14
     vers: 0
     poids: 1
@@ -6057,7 +6216,7 @@ arc_des_votes:
     poids: 1
   - de: 14
     vers: 18
-    poids: 2
+    poids: 1
   - de: 14
     vers: 19
     poids: 1
@@ -6087,9 +6246,6 @@ arc_des_votes:
     poids: 2
   - de: 15
     vers: 17
-    poids: 1
-  - de: 15
-    vers: 18
     poids: 1
   - de: 15
     vers: 19
@@ -6123,9 +6279,6 @@ arc_des_votes:
     poids: 1
   - de: 16
     vers: 14
-    poids: 1
-  - de: 16
-    vers: 18
     poids: 1
   - de: 17
     vers: 3
@@ -6153,7 +6306,7 @@ arc_des_votes:
     poids: 1
   - de: 17
     vers: 18
-    poids: 2
+    poids: 1
   - de: 18
     vers: 0
     poids: 1
@@ -6205,41 +6358,41 @@ arc_des_votes:
   - de: 19
     vers: 18
     poids: 1
-  bulletins: 140
+  bulletins: 130
 voix_pour_eliminer:
-  effectif: 435
+  effectif: 412
   mode: 4
   repartition:
   - voix: 1
     effectif: 7
-    part: 1.6
+    part: 1.7
   - voix: 2
     effectif: 13
-    part: 3.0
+    part: 3.2
   - voix: 3
-    effectif: 47
-    part: 10.8
+    effectif: 43
+    part: 10.4
   - voix: 4
-    effectif: 104
-    part: 23.9
+    effectif: 102
+    part: 24.8
   - voix: 5
-    effectif: 93
-    part: 21.4
+    effectif: 89
+    part: 21.6
   - voix: 6
-    effectif: 91
-    part: 20.9
+    effectif: 87
+    part: 21.1
   - voix: 7
-    effectif: 45
-    part: 10.3
+    effectif: 40
+    part: 9.7
   - voix: 8
-    effectif: 23
+    effectif: 22
     part: 5.3
   - voix: 9
-    effectif: 9
-    part: 2.1
+    effectif: 7
+    part: 1.7
   - voix: 10
-    effectif: 2
-    part: 0.5
+    effectif: 1
+    part: 0.2
   - voix: 11
     effectif: 1
     part: 0.2
@@ -6262,9 +6415,24 @@ epreuves:
   immunites: 392
   conforts: 374
   seuil_classement: 8
-  classement_effectif: 89
-  ratio_moyen: 20.0
+  classement_effectif: 148
+  ratio_moyen: 19.7
   classement_ratio:
+  - personne: Claude Dartois
+    id: claude-dartois
+    saison: s10
+    titre: Viêtnam
+    annee: 2010
+    speciale: false
+    gagnees: 7
+    immunites: 4
+    conforts: 3
+    disputees: 11
+    ratio: 63.6
+    sort: finaliste
+    genre: h
+    age: 30
+    csp: transport
   - personne: Jean Belmonte
     id: jean-belmonte
     saison: s25
@@ -6280,21 +6448,21 @@ epreuves:
     genre: h
     age: 26
     csp: artisanat_btp
-  - personne: Claude Dartois
-    id: claude-dartois
-    saison: s10
-    titre: Viêtnam
-    annee: 2010
+  - personne: Louana Roy
+    id: louana-roy
+    saison: s23
+    titre: Le Totem maudit
+    annee: 2022
     speciale: false
-    gagnees: 7
-    immunites: 4
-    conforts: 3
-    disputees: 13
-    ratio: 53.8
-    sort: finaliste
-    genre: h
-    age: 30
-    csp: transport
+    gagnees: 4
+    immunites: 2
+    conforts: 2
+    disputees: 8
+    ratio: 50.0
+    sort: elimine_conseil
+    genre: f
+    age: 28
+    csp: commerce
   - personne: Teheiura Teahui
     id: teheiura-teahui
     saison: s11
@@ -6310,6 +6478,66 @@ epreuves:
     genre: h
     age: 33
     csp: restauration_hotellerie
+  - personne: Nicolas Rouyé
+    id: nicolas-rouye
+    saison: s15
+    titre: Thaïlande
+    annee: 2016
+    speciale: false
+    gagnees: 5
+    immunites: 2
+    conforts: 3
+    disputees: 11
+    ratio: 45.5
+    sort: elimine_conseil
+    genre: h
+    age: 32
+    csp: arts_medias
+  - personne: Claude Dartois
+    id: claude-dartois
+    saison: sp6
+    titre: L'Île des héros
+    annee: 2020
+    speciale: true
+    gagnees: 5
+    immunites: 5
+    conforts: 0
+    disputees: 11
+    ratio: 45.5
+    sort: elimine_poteaux
+    genre: h
+    age: 39
+    csp: transport
+  - personne: Maxime Berthon
+    id: maxime-berthon
+    saison: s20
+    titre: La Guerre des chefs
+    annee: 2019
+    speciale: false
+    gagnees: 6
+    immunites: 3
+    conforts: 3
+    disputees: 14
+    ratio: 42.9
+    sort: elimine_conseil
+    genre: h
+    age: 32
+    csp: encadrement
+  - personne: Bertrand Bolle
+    id: bertrand-bolle
+    saison: s08
+    titre: Caramoan
+    annee: 2008
+    speciale: false
+    gagnees: 8
+    immunites: 5
+    conforts: 3
+    disputees: 19
+    ratio: 42.1
+    sort: elimine_poteaux
+    genre: h
+    age: 32
+    csp: transport
   - personne: Lola Besse
     id: lola-besse
     saison: s21
@@ -6325,6 +6553,21 @@ epreuves:
     genre: f
     age: 23
     csp: etudiant
+  - personne: Mohamed Derradji
+    id: mohamed-derradji
+    saison: s05
+    titre: Pacifique
+    annee: 2005
+    speciale: false
+    gagnees: 4
+    immunites: 4
+    conforts: 0
+    disputees: 11
+    ratio: 36.4
+    sort: elimine_poteaux
+    genre: h
+    age: 24
+    csp: transport
   - personne: François Descamp
     id: francois-descamp
     saison: s23
@@ -6355,6 +6598,21 @@ epreuves:
     genre: f
     age: 24
     csp: encadrement
+  - personne: Romuald Lafite
+    id: romuald-lafite
+    saison: s04
+    titre: Panama
+    annee: 2004
+    speciale: false
+    gagnees: 5
+    immunites: 3
+    conforts: 2
+    disputees: 15
+    ratio: 33.3
+    sort: elimine_conseil
+    genre: h
+    age: 26
+    csp: sport
   - personne: Naoil Tita
     id: naoil-tita
     saison: sp6
@@ -6370,126 +6628,21 @@ epreuves:
     genre: f
     age: 37
     csp: sport
-  - personne: William Lecomte
-    id: william-lecomte
-    saison: s01
-    titre: Les Aventuriers de Koh-Lanta
-    annee: 2001
-    speciale: false
-    gagnees: 3
-    immunites: 2
-    conforts: 1
-    disputees: 9
-    ratio: 33.3
-    sort: elimine_conseil
-    genre: h
-    age: 32
-    csp: enseignement
-  - personne: Bertrand Bolle
-    id: bertrand-bolle
-    saison: sp3
-    titre: La Revanche des héros
-    annee: 2012
-    speciale: true
-    gagnees: 3
-    immunites: 2
-    conforts: 1
-    disputees: 9
-    ratio: 33.3
-    sort: vainqueur
-    genre: h
-    age: 36
-    csp: transport
-  - personne: Claude Dartois
-    id: claude-dartois
-    saison: sp3
-    titre: La Revanche des héros
-    annee: 2012
-    speciale: true
-    gagnees: 3
-    immunites: 1
-    conforts: 2
-    disputees: 9
-    ratio: 33.3
-    sort: finaliste
-    genre: h
-    age: 32
-    csp: transport
-  - personne: Frédéric Favier
-    id: frederic-favier
-    saison: s08
-    titre: Caramoan
-    annee: 2008
-    speciale: false
-    gagnees: 6
-    immunites: 3
-    conforts: 3
-    disputees: 19
-    ratio: 31.6
-    sort: finaliste
-    genre: h
-    age: 31
-    csp: artisanat_btp
-  - personne: Philippe Duron
-    id: philippe-duron
-    saison: s10
-    titre: Viêtnam
-    annee: 2010
+  - personne: Ambre Daudet
+    id: ambre-daudet
+    saison: s23
+    titre: Le Totem maudit
+    annee: 2022
     speciale: false
     gagnees: 4
-    immunites: 3
-    conforts: 1
-    disputees: 13
-    ratio: 30.8
-    sort: vainqueur
-    genre: h
-    age: 41
-    csp: artisanat_btp
-  - personne: Ilyesse Benyoub
-    id: ilyesse-benyoub
-    saison: s26
-    titre: La Tribu maudite
-    annee: 2024
-    speciale: false
-    gagnees: 4
-    immunites: 2
-    conforts: 2
-    disputees: 13
-    ratio: 30.8
-    sort: elimine_poteaux
-    genre: h
-    age: 23
-    csp: etudiant
-  - personne: Maxine Eouzan
-    id: maxine-eouzan
-    saison: s22
-    titre: Les Armes secrètes
-    annee: 2021
-    speciale: false
-    gagnees: 3
-    immunites: 2
-    conforts: 1
-    disputees: 10
-    ratio: 30.0
-    sort: vainqueur
-    genre: f
-    age: 25
-    csp: sport
-  - personne: Clémence Noquet
-    id: clemence-noquet
-    saison: s24
-    titre: Le Feu sacré
-    annee: 2023
-    speciale: false
-    gagnees: 3
-    immunites: 3
-    conforts: 0
-    disputees: 10
-    ratio: 30.0
-    sort: elimine_conseil
+    immunites: 0
+    conforts: 4
+    disputees: 12
+    ratio: 33.3
+    sort: elimine_orientation
     genre: f
     age: 27
-    csp: artisanat_btp
+    csp: sport
   meilleurs_cumuls:
   - personne: Claude Dartois
     id: claude-dartois
@@ -6729,104 +6882,104 @@ colliers:
 indicateurs:
   seuil_conseils: 4
   seuil_epreuves: 8
-  mesurables: 211
+  mesurables: 473
   meilleure_justesse:
-  - nom: Patricia Tanguy
-    saison: s01
-    titre: Les Aventuriers de Koh-Lanta
-    annee: 2001
+  - nom: Marianne Mondon
+    saison: s02
+    titre: Nicoya
+    annee: 2002
     speciale: false
-    valeur: 87.5
-    base: 8
+    valeur: 100.0
+    base: 9
     sort: elimine_conseil
-  - nom: Guénaëlle Biras
-    saison: s01
-    titre: Les Aventuriers de Koh-Lanta
-    annee: 2001
+  - nom: Bernard Lenoir
+    saison: s02
+    titre: Nicoya
+    annee: 2002
     speciale: false
-    valeur: 87.5
+    valeur: 100.0
+    base: 8
+    sort: elimine_poteaux
+  - nom: Nicolas Leoni
+    saison: s02
+    titre: Nicoya
+    annee: 2002
+    speciale: false
+    valeur: 100.0
+    base: 9
+    sort: finaliste
+  - nom: Émilie Frahi
+    saison: s06
+    titre: Vanuatu
+    annee: 2006
+    speciale: false
+    valeur: 100.0
     base: 8
     sort: finaliste
-  - nom: Michèle Valembois
-    saison: s01
-    titre: Les Aventuriers de Koh-Lanta
-    annee: 2001
+  - nom: François-David Cardonnel
+    saison: s06
+    titre: Vanuatu
+    annee: 2006
     speciale: false
-    valeur: 83.3
-    base: 6
-    sort: elimine_conseil
-  - nom: Guillaume Le Deun
-    saison: s28
-    titre: Les Reliques du destin
-    annee: 2026
-    speciale: false
-    valeur: 83.3
-    base: 6
-    sort: elimine_poteaux
-  - nom: Romain Bissol
-    saison: s01
-    titre: Les Aventuriers de Koh-Lanta
-    annee: 2001
-    speciale: false
-    valeur: 75.0
-    base: 8
-    sort: elimine_conseil
-  - nom: Daniel Duquesnoy
-    saison: s28
-    titre: Les Reliques du destin
-    annee: 2026
-    speciale: false
-    valeur: 75.0
-    base: 8
-    sort: elimine_conseil
-  - nom: Lola Krast
-    saison: s28
-    titre: Les Reliques du destin
-    annee: 2026
-    speciale: false
-    valeur: 66.7
-    base: 6
-    sort: elimine_conseil
-  - nom: Cindy Sulpice-Gonzalez
-    saison: s28
-    titre: Les Reliques du destin
-    annee: 2026
-    speciale: false
-    valeur: 66.7
-    base: 6
-    sort: elimine_conseil
-  - nom: Gilles Nicolet
-    saison: s01
-    titre: Les Aventuriers de Koh-Lanta
-    annee: 2001
-    speciale: false
-    valeur: 62.5
+    valeur: 100.0
     base: 8
     sort: vainqueur
-  - nom: Hugo Van Aertryck
-    saison: s28
-    titre: Les Reliques du destin
-    annee: 2026
+  - nom: Simon Quintilla
+    saison: s07
+    titre: Palawan
+    annee: 2007
     speciale: false
-    valeur: 62.5
-    base: 8
+    valeur: 100.0
+    base: 7
     sort: elimine_orientation
-  - nom: Caroline Ledos
-    saison: s28
-    titre: Les Reliques du destin
-    annee: 2026
+  - nom: Kevin Cuoco
+    saison: s07
+    titre: Palawan
+    annee: 2007
     speciale: false
-    valeur: 62.5
+    valeur: 100.0
+    base: 7
+    sort: vainqueur
+  - nom: Bertrand Bolle
+    saison: s08
+    titre: Caramoan
+    annee: 2008
+    speciale: false
+    valeur: 100.0
     base: 8
-    sort: elimine_orientation
-  - nom: Clarisse Cresseveur
-    saison: s28
-    titre: Les Reliques du destin
-    annee: 2026
+    sort: elimine_poteaux
+  - nom: Frédéric Favier
+    saison: s08
+    titre: Caramoan
+    annee: 2008
     speciale: false
-    valeur: 62.5
+    valeur: 100.0
     base: 8
     sort: finaliste
+  - nom: Christelle Gauzet
+    saison: s08
+    titre: Caramoan
+    annee: 2008
+    speciale: false
+    valeur: 100.0
+    base: 8
+    sort: vainqueur
+  - nom: Isabelle Da Silva
+    saison: s09
+    titre: Palau
+    annee: 2009
+    speciale: false
+    valeur: 100.0
+    base: 6
+    sort: elimine_poteaux
+  - nom: Christina Chevry
+    saison: s09
+    titre: Palau
+    annee: 2009
+    speciale: false
+    valeur: 100.0
+    base: 6
+    sort: vainqueur
   plus_menaces:
   - nom: Stéphanie Tribot
     saison: s23
@@ -6835,6 +6988,30 @@ indicateurs:
     speciale: false
     valeur: 4.5
     base: 6
+    sort: elimine_conseil
+  - nom: Marvyn Leone
+    saison: s18
+    titre: Fidji
+    annee: 2017
+    speciale: false
+    valeur: 2.56
+    base: 9
+    sort: elimine_conseil
+  - nom: Eric Peyrache
+    saison: sp6
+    titre: L'Île des héros
+    annee: 2020
+    speciale: true
+    valeur: 2.55
+    base: 11
+    sort: elimine_conseil
+  - nom: Yannick Zachée
+    saison: s23
+    titre: Le Totem maudit
+    annee: 2022
+    speciale: false
+    valeur: 2.5
+    base: 8
     sort: elimine_conseil
   - nom: Sarah Aboudeine
     saison: s26
@@ -6850,6 +7027,22 @@ indicateurs:
     annee: 2024
     speciale: false
     valeur: 2.17
+    base: 6
+    sort: elimine_conseil
+  - nom: Isabelle Fidanza
+    saison: s14
+    titre: Johor
+    annee: 2015
+    speciale: false
+    valeur: 2.0
+    base: 6
+    sort: elimine_conseil
+  - nom: Pholien Systermans
+    saison: sp6
+    titre: L'Île des héros
+    annee: 2020
+    speciale: true
+    valeur: 2.0
     base: 6
     sort: elimine_conseil
   - nom: Fabrice Giordano
@@ -6876,53 +7069,13 @@ indicateurs:
     valeur: 1.8
     base: 10
     sort: elimine_conseil
-  - nom: Ulrich Bandeira
-    saison: s28
-    titre: Les Reliques du destin
-    annee: 2026
-    speciale: false
-    valeur: 1.75
-    base: 8
-    sort: elimine_conseil
-  - nom: Jonathan Guez
-    saison: s28
-    titre: Les Reliques du destin
-    annee: 2026
-    speciale: false
-    valeur: 1.71
-    base: 7
-    sort: elimine_ambassadeurs
-  - nom: Setha El Hajjami
-    saison: s23
-    titre: Le Totem maudit
-    annee: 2022
-    speciale: false
-    valeur: 1.57
-    base: 7
-    sort: elimine_ambassadeurs
-  - nom: Naïs Napoletano
-    saison: s27
-    titre: La Revanche des 4 Terres
-    annee: 2025
-    speciale: false
-    valeur: 1.54
-    base: 13
-    sort: elimine_conseil
-  - nom: Noémie Bessec
-    saison: s27
-    titre: La Revanche des 4 Terres
-    annee: 2025
-    speciale: false
-    valeur: 1.43
-    base: 14
-    sort: elimine_conseil
-  - nom: Adrien Bernaert
-    saison: s27
-    titre: La Revanche des 4 Terres
-    annee: 2025
-    speciale: false
-    valeur: 1.4
-    base: 10
+  - nom: Charlotte Caron
+    saison: sp6
+    titre: L'Île des héros
+    annee: 2020
+    speciale: true
+    valeur: 1.78
+    base: 9
     sort: elimine_conseil
   meilleure_evasion:
   - nom: Romain Bissol
@@ -6933,94 +7086,94 @@ indicateurs:
     valeur: 100.0
     base: 3
     sort: elimine_conseil
-  - nom: Michèle Valembois
-    saison: s01
-    titre: Les Aventuriers de Koh-Lanta
-    annee: 2001
-    speciale: false
-    valeur: 75.0
-    base: 4
-    sort: elimine_conseil
-  - nom: Sandra Acabado
-    saison: s01
-    titre: Les Aventuriers de Koh-Lanta
-    annee: 2001
-    speciale: false
-    valeur: 66.7
-    base: 3
-    sort: elimine_conseil
-  - nom: Françoise Avignon
-    saison: s01
-    titre: Les Aventuriers de Koh-Lanta
-    annee: 2001
-    speciale: false
-    valeur: 66.7
-    base: 3
-    sort: elimine_conseil
-  - nom: Jonathan Guez
-    saison: s28
-    titre: Les Reliques du destin
-    annee: 2026
-    speciale: false
-    valeur: 66.7
-    base: 3
-    sort: elimine_ambassadeurs
-  - nom: Lionel Dubouchet
-    saison: s28
-    titre: Les Reliques du destin
-    annee: 2026
-    speciale: false
-    valeur: 33.3
-    base: 3
-    sort: elimine_conseil
-  - nom: Isabelle Vial
-    saison: s02
-    titre: Nicoya
-    annee: 2002
-    speciale: false
-    valeur: 0.0
-    base: 4
-    sort: elimine_conseil
   - nom: Bernard Lenoir
     saison: s02
     titre: Nicoya
     annee: 2002
     speciale: false
-    valeur: 0.0
+    valeur: 100.0
     base: 3
     sort: elimine_poteaux
-  - nom: Moundir Zoughari
-    saison: s03
-    titre: Bocas del Toro
-    annee: 2003
+  - nom: Émilie Frahi
+    saison: s06
+    titre: Vanuatu
+    annee: 2006
     speciale: false
-    valeur: 0.0
+    valeur: 100.0
+    base: 3
+    sort: finaliste
+  - nom: François-David Cardonnel
+    saison: s06
+    titre: Vanuatu
+    annee: 2006
+    speciale: false
+    valeur: 100.0
+    base: 3
+    sort: vainqueur
+  - nom: Patrick Brasier De Thuy
+    saison: s07
+    titre: Palawan
+    annee: 2007
+    speciale: false
+    valeur: 100.0
     base: 4
     sort: elimine_conseil
-  - nom: Antoine Sanchez
-    saison: s03
-    titre: Bocas del Toro
-    annee: 2003
+  - nom: Nathalie Ensargueix
+    saison: s08
+    titre: Caramoan
+    annee: 2008
     speciale: false
-    valeur: 0.0
+    valeur: 100.0
+    base: 4
+    sort: elimine_orientation
+  - nom: Fabienne Lefebvre-Trehoux
+    saison: s09
+    titre: Palau
+    annee: 2009
+    speciale: false
+    valeur: 100.0
     base: 3
     sort: elimine_orientation
-  - nom: Catherine Ehret-Mader
-    saison: s04
-    titre: Panama
-    annee: 2004
+  - nom: Véronique Bègue
+    saison: s10
+    titre: Viêtnam
+    annee: 2010
     speciale: false
-    valeur: 0.0
+    valeur: 100.0
     base: 4
-    sort: elimine_conseil
-  - nom: Sophie Eeckhout
-    saison: s04
-    titre: Panama
-    annee: 2004
+    sort: elimine_orientation
+  - nom: Wafa El Mejjad
+    saison: s10
+    titre: Viêtnam
+    annee: 2010
     speciale: false
-    valeur: 0.0
-    base: 3
+    valeur: 100.0
+    base: 4
+    sort: elimine_poteaux
+  - nom: Patricia Morel
+    saison: s11
+    titre: Raja Ampat
+    annee: 2011
+    speciale: false
+    valeur: 100.0
+    base: 5
     sort: elimine_conseil
+  - nom: Ella Gbezan
+    saison: s11
+    titre: Raja Ampat
+    annee: 2011
+    speciale: false
+    valeur: 100.0
+    base: 4
+    sort: elimine_orientation
+  - nom: Mélissa Bastin
+    saison: s14
+    titre: Johor
+    annee: 2015
+    speciale: false
+    valeur: 100.0
+    base: 4
+    sort: elimine_poteaux
   fantomes:
   - nom: Claude Dartois
     saison: sp7
@@ -7029,11 +7182,18 @@ indicateurs:
     conseils: 20
     sort: vainqueur
     survie: 100.0
+  - nom: Steeve Demana
+    saison: s20
+    titre: La Guerre des chefs
+    annee: 2019
+    conseils: 18
+    sort: elimine_poteaux
+    survie: 100.0
   - nom: Cindy Poumeyrol
     saison: s20
     titre: La Guerre des chefs
     annee: 2019
-    conseils: 19
+    conseils: 18
     sort: finaliste
     survie: 100.0
   - nom: Loïc Riowal
@@ -7050,26 +7210,33 @@ indicateurs:
     conseils: 17
     sort: vainqueur
     survie: 100.0
+  - nom: Bruno Peisey
+    saison: s14
+    titre: Johor
+    annee: 2015
+    conseils: 17
+    sort: elimine_orientation
+    survie: 95.0
+  - nom: Sandrine Dubourdy
+    saison: s18
+    titre: Fidji
+    annee: 2017
+    conseils: 16
+    sort: elimine_orientation
+    survie: 97.6
   - nom: Clémence Castel
     saison: s05
     titre: Pacifique
     annee: 2005
-    conseils: 16
-    sort: vainqueur
-    survie: 100.0
-  - nom: Jade Handi
-    saison: s07
-    titre: Palawan
-    annee: 2007
     conseils: 15
     sort: vainqueur
     survie: 100.0
-  - nom: Christelle Gauzet
-    saison: s08
-    titre: Caramoan
-    annee: 2008
+  - nom: Laurent Maistret
+    saison: s11
+    titre: Raja Ampat
+    annee: 2011
     conseils: 15
-    sort: vainqueur
+    sort: elimine_poteaux
     survie: 100.0
   - nom: Gérard Urdampilleta
     saison: s11
@@ -7078,20 +7245,13 @@ indicateurs:
     conseils: 15
     sort: vainqueur
     survie: 100.0
-  - nom: François Descamp
-    saison: s23
-    titre: Le Totem maudit
-    annee: 2022
+  - nom: Mohamed Derradji
+    saison: s05
+    titre: Pacifique
+    annee: 2005
     conseils: 15
-    sort: vainqueur
-    survie: 100.0
-  - nom: Bastien San Pedro
-    saison: s23
-    titre: Le Totem maudit
-    annee: 2022
-    conseils: 15
-    sort: vainqueur
-    survie: 100.0
+    sort: elimine_poteaux
+    survie: 97.5
   - nom: Claire Passas
     saison: s27
     titre: La Revanche des 4 Terres
@@ -7099,63 +7259,73 @@ indicateurs:
     conseils: 15
     sort: elimine_orientation
     survie: 97.5
-  - nom: Loïc Riowal
-    saison: sp7
-    titre: La Légende
-    annee: 2021
-    conseils: 15
-    sort: elimine_conseil
-    survie: 80.0
-  nb_fantomes: 38
+  nb_fantomes: 65
   fantomes_issue:
+  - sort: abandon_medical
+    libelle: Abandon médical
+    effectif: 15
+    part_fantomes: 23.1
+    part_ensemble: 7.7
+    part_endurants: 5.5
   - sort: vainqueur
     libelle: Vainqueur
     effectif: 12
-    part_fantomes: 31.6
+    part_fantomes: 18.5
     part_ensemble: 5.7
+    part_endurants: 8.2
   - sort: elimine_conseil
     libelle: Éliminé au conseil
-    effectif: 10
-    part_fantomes: 26.3
+    effectif: 11
+    part_fantomes: 16.9
     part_ensemble: 64.0
+    part_endurants: 59.8
+  - sort: elimine_ambassadeurs
+    libelle: Éliminé aux ambassadeurs
+    effectif: 7
+    part_fantomes: 10.8
+    part_ensemble: 3.2
+    part_endurants: 3.2
+  - sort: elimine_orientation
+    libelle: Éliminé à l'orientation
+    effectif: 6
+    part_fantomes: 9.2
+    part_ensemble: 6.7
+    part_endurants: 8.2
+  - sort: elimine_poteaux
+    libelle: Éliminé aux poteaux
+    effectif: 5
+    part_fantomes: 7.7
+    part_ensemble: 4.8
+    part_endurants: 6.2
   - sort: finaliste
     libelle: Finaliste
     effectif: 5
-    part_fantomes: 13.2
+    part_fantomes: 7.7
     part_ensemble: 4.9
-  - sort: abandon_medical
-    libelle: Abandon médical
-    effectif: 5
-    part_fantomes: 13.2
-    part_ensemble: 7.7
-  - sort: elimine_ambassadeurs
-    libelle: Éliminé aux ambassadeurs
-    effectif: 2
-    part_fantomes: 5.3
-    part_ensemble: 3.2
+    part_endurants: 7.1
   - sort: abandon_volontaire
     libelle: Abandon volontaire
-    effectif: 2
-    part_fantomes: 5.3
+    effectif: 4
+    part_fantomes: 6.2
     part_ensemble: 2.7
-  - sort: elimine_poteaux
-    libelle: Éliminé aux poteaux
-    effectif: 1
-    part_fantomes: 2.6
-    part_ensemble: 4.8
-  - sort: elimine_orientation
-    libelle: Éliminé à l'orientation
-    effectif: 1
-    part_fantomes: 2.6
-    part_ensemble: 6.7
+    part_endurants: 1.6
   comparables: 627
+  endurants: 438
+  seuil_fantome: 5
   justesse_par_sort:
-    elimine_conseil: 69.2
+    elimine_conseil: 61.1
+    finaliste: 77.6
+    vainqueur: 77.4
+    elimine_poteaux: 78.7
+    elimine_orientation: 73.9
   menace_par_sort:
     elimine_conseil: 0.9
-    finaliste: 0.3
+    finaliste: 0.4
     vainqueur: 0.1
-    elimine_orientation: 0.5
+    elimine_poteaux: 0.4
+    abandon_medical: 0.2
+    elimine_orientation: 0.4
+    elimine_ambassadeurs: 0.4
   saisons:
   - id: s01
     numero: 1
@@ -7195,9 +7365,9 @@ indicateurs:
     survie_moyenne: 61.4
     abandons: 1
     taux_abandon: 6.2
-    conseils: 17
+    conseils: 16
     conseils_complets: 12
-    tension_conseils: 42.9
+    tension_conseils: 46.2
     dispersion_votes: 0.834
     epreuves: 25
     epreuves_individuelles: 13
@@ -7221,9 +7391,9 @@ indicateurs:
     survie_moyenne: 56.2
     abandons: 6
     taux_abandon: 33.3
-    conseils: 21
+    conseils: 19
     conseils_complets: 9
-    tension_conseils: 46.2
+    tension_conseils: 36.4
     dispersion_votes: 0.797
     epreuves: 0
     epreuves_individuelles: 0
@@ -7247,10 +7417,10 @@ indicateurs:
     survie_moyenne: 63.8
     abandons: 2
     taux_abandon: 12.5
-    conseils: 18
-    conseils_complets: 12
-    tension_conseils: 26.7
-    dispersion_votes: 0.743
+    conseils: 17
+    conseils_complets: 11
+    tension_conseils: 28.6
+    dispersion_votes: 0.81
     epreuves: 27
     epreuves_individuelles: 15
     domination_epreuves: 0.179
@@ -7273,10 +7443,10 @@ indicateurs:
     survie_moyenne: 59.3
     abandons: 2
     taux_abandon: 11.8
-    conseils: 18
-    conseils_complets: 14
-    tension_conseils: 26.7
-    dispersion_votes: 0.729
+    conseils: 17
+    conseils_complets: 13
+    tension_conseils: 28.6
+    dispersion_votes: 0.785
     epreuves: 24
     epreuves_individuelles: 11
     domination_epreuves: 0.208
@@ -7299,9 +7469,9 @@ indicateurs:
     survie_moyenne: 63.9
     abandons: 3
     taux_abandon: 18.8
-    conseils: 19
+    conseils: 18
     conseils_complets: 11
-    tension_conseils: 28.6
+    tension_conseils: 30.8
     dispersion_votes: 0.809
     epreuves: 32
     epreuves_individuelles: 17
@@ -7325,9 +7495,9 @@ indicateurs:
     survie_moyenne: 63.3
     abandons: 1
     taux_abandon: 6.2
-    conseils: 18
+    conseils: 16
     conseils_complets: 10
-    tension_conseils: 46.2
+    tension_conseils: 36.4
     dispersion_votes: 0.776
     epreuves: 32
     epreuves_individuelles: 18
@@ -7351,9 +7521,9 @@ indicateurs:
     survie_moyenne: 58.5
     abandons: 3
     taux_abandon: 17.6
-    conseils: 19
+    conseils: 18
     conseils_complets: 12
-    tension_conseils: 28.6
+    tension_conseils: 30.8
     dispersion_votes: 0.751
     epreuves: 31
     epreuves_individuelles: 19
@@ -7377,9 +7547,9 @@ indicateurs:
     survie_moyenne: 56.1
     abandons: 4
     taux_abandon: 22.2
-    conseils: 23
+    conseils: 22
     conseils_complets: 11
-    tension_conseils: 69.2
+    tension_conseils: 75.0
     dispersion_votes: 0.919
     epreuves: 0
     epreuves_individuelles: 0
@@ -7403,7 +7573,7 @@ indicateurs:
     survie_moyenne: 62.2
     abandons: 3
     taux_abandon: 16.7
-    conseils: 21
+    conseils: 20
     conseils_complets: 10
     tension_conseils: 46.2
     dispersion_votes: 0.764
@@ -7429,9 +7599,9 @@ indicateurs:
     survie_moyenne: 58.2
     abandons: 3
     taux_abandon: 15.0
-    conseils: 21
+    conseils: 20
     conseils_complets: 12
-    tension_conseils: 66.7
+    tension_conseils: 71.4
     dispersion_votes: 0.862
     epreuves: 28
     epreuves_individuelles: 15
@@ -7485,9 +7655,9 @@ indicateurs:
     survie_moyenne: 60.1
     abandons: 4
     taux_abandon: 20.0
-    conseils: 23
+    conseils: 22
     conseils_complets: 8
-    tension_conseils: 42.9
+    tension_conseils: 46.2
     dispersion_votes: 0.781
     epreuves: 0
     epreuves_individuelles: 0
@@ -7513,9 +7683,9 @@ indicateurs:
     survie_moyenne: 56.5
     abandons: 2
     taux_abandon: 9.5
-    conseils: 21
+    conseils: 20
     conseils_complets: 12
-    tension_conseils: 33.3
+    tension_conseils: 28.6
     dispersion_votes: 0.759
     epreuves: 28
     epreuves_individuelles: 14
@@ -7540,10 +7710,10 @@ indicateurs:
     survie_moyenne: 63.2
     abandons: 0
     taux_abandon: 0.0
-    conseils: 21
-    conseils_complets: 14
-    tension_conseils: 53.3
-    dispersion_votes: 0.726
+    conseils: 20
+    conseils_complets: 13
+    tension_conseils: 57.1
+    dispersion_votes: 0.782
     epreuves: 26
     epreuves_individuelles: 13
     domination_epreuves: 0.142
@@ -7568,9 +7738,9 @@ indicateurs:
     survie_moyenne: 61.3
     abandons: 3
     taux_abandon: 14.3
-    conseils: 23
+    conseils: 22
     conseils_complets: 8
-    tension_conseils: 50.0
+    tension_conseils: 53.3
     dispersion_votes: 0.803
     epreuves: 42
     epreuves_individuelles: 14
@@ -7595,9 +7765,9 @@ indicateurs:
     survie_moyenne: 59.1
     abandons: 3
     taux_abandon: 14.3
-    conseils: 23
+    conseils: 22
     conseils_complets: 6
-    tension_conseils: 53.3
+    tension_conseils: 57.1
     dispersion_votes: 0.879
     epreuves: 26
     epreuves_individuelles: 10
@@ -7622,9 +7792,9 @@ indicateurs:
     survie_moyenne: 64.7
     abandons: 2
     taux_abandon: 9.5
-    conseils: 23
+    conseils: 22
     conseils_complets: 7
-    tension_conseils: 57.1
+    tension_conseils: 53.8
     dispersion_votes: 0.874
     epreuves: 38
     epreuves_individuelles: 16
@@ -7707,9 +7877,9 @@ indicateurs:
     survie_moyenne: 61.0
     abandons: 2
     taux_abandon: 8.3
-    conseils: 25
+    conseils: 23
     conseils_complets: 0
-    tension_conseils: 80.0
+    tension_conseils: 76.9
     dispersion_votes: null
     epreuves: 32
     epreuves_individuelles: 17
@@ -7878,9 +8048,9 @@ indicateurs:
     survie_moyenne: 59.9
     abandons: 0
     taux_abandon: 0.0
-    conseils: 15
+    conseils: 14
     conseils_complets: 8
-    tension_conseils: 50.0
+    tension_conseils: 55.6
     dispersion_votes: 0.831
     epreuves: 15
     epreuves_individuelles: 9
@@ -7905,9 +8075,9 @@ indicateurs:
     survie_moyenne: 66.0
     abandons: 0
     taux_abandon: 0.0
-    conseils: 14
+    conseils: 13
     conseils_complets: 8
-    tension_conseils: 40.0
+    tension_conseils: 44.4
     dispersion_votes: 0.616
     epreuves: 0
     epreuves_individuelles: 0
@@ -7932,9 +8102,9 @@ indicateurs:
     survie_moyenne: 66.3
     abandons: 0
     taux_abandon: 0.0
-    conseils: 16
+    conseils: 15
     conseils_complets: 5
-    tension_conseils: 50.0
+    tension_conseils: 55.6
     dispersion_votes: 0.919
     epreuves: 15
     epreuves_individuelles: 9
@@ -8016,9 +8186,9 @@ indicateurs:
     survie_moyenne: 60.8
     abandons: 4
     taux_abandon: 20.0
-    conseils: 22
+    conseils: 21
     conseils_complets: 4
-    tension_conseils: 30.0
+    tension_conseils: 33.3
     dispersion_votes: 0.716
     epreuves: 24
     epreuves_individuelles: 15
@@ -8092,3 +8262,3774 @@ indicateurs:
     - collier_immunite
     - heros
     - binomes
+modeles:
+  graine: 20260828
+  permutations: 10000
+  bootstrap: 2000
+  casting:
+    effectif: 505
+    saisons: 26
+    duos_de_tribus: 20
+    tribus_les_plus_contrastees:
+    - saison: s18
+      ecart: 19.0
+      titre: Fidji
+      annee: 2017
+    - saison: s05
+      ecart: 17.8
+      titre: Pacifique
+      annee: 2005
+    - saison: s06
+      ecart: 16.1
+      titre: Vanuatu
+      annee: 2006
+    archetypes:
+    - code: 0
+      libelle: le tout-venant
+      traits: []
+      effectif: 430
+      part: 85.1
+      age_median: 34.0
+      part_femmes: 49.5
+    - code: 1
+      libelle: 18-24 ans · etudiant · jaune
+      traits:
+      - modalite: 18-24 ans
+        part: 93.3
+      - modalite: etudiant
+        part: 50.7
+      - modalite: jaune
+        part: 77.3
+      effectif: 75
+      part: 14.9
+      age_median: 22.0
+      part_femmes: 53.3
+    nb_archetypes: 2
+    silhouette: 0.299
+    silhouettes:
+    - k: 2
+      score: 0.299
+    - k: 3
+      score: 0.244
+    - k: 4
+      score: 0.262
+    - k: 5
+      score: 0.28
+    - k: 6
+      score: 0.29
+    inertie_axes:
+    - 6.6
+    - 5.6
+    carte:
+    - x: 1.976
+      y: 0.386
+      groupe: 1
+      nom: Marie Boyer
+      detail: Marie Boyer — 18-24 ans, etudiant
+    - x: 0.151
+      y: 1.034
+      groupe: 0
+      nom: Guillaume Noël
+      detail: Guillaume Noël — 18-24 ans, transport
+    - x: -0.296
+      y: 1.036
+      groupe: 0
+      nom: Jean-Luc Fiorina
+      detail: Jean-Luc Fiorina — 45 ans et plus, action_securite
+    - x: 1.635
+      y: 0.458
+      groupe: 1
+      nom: Gaël Gollen
+      detail: Gaël Gollen — 18-24 ans, etudiant
+    - x: -0.271
+      y: 0.465
+      groupe: 0
+      nom: Harry Levy
+      detail: Harry Levy — 40-44 ans, sante
+    - x: 1.976
+      y: 0.386
+      groupe: 1
+      nom: Sandra Acabado
+      detail: Sandra Acabado — 18-24 ans, etudiant
+    - x: 0.73
+      y: 0.109
+      groupe: 1
+      nom: David Noël
+      detail: David Noël — 18-24 ans, arts_medias
+    - x: 1.761
+      y: 0.834
+      groupe: 1
+      nom: Stéphane Bertheau
+      detail: Stéphane Bertheau — 18-24 ans, etudiant
+    - x: 0.224
+      y: -0.338
+      groupe: 0
+      nom: Géraldine Doyen
+      detail: Géraldine Doyen — 25-29 ans, commerce
+    - x: -0.477
+      y: 0.115
+      groupe: 0
+      nom: Michèle Valembois
+      detail: Michèle Valembois — 45 ans et plus, sans_emploi
+    - x: -0.458
+      y: 0.142
+      groupe: 0
+      nom: William Lecomte
+      detail: William Lecomte — 30-34 ans, enseignement
+    - x: -0.103
+      y: 0.137
+      groupe: 0
+      nom: Françoise Avignon
+      detail: Françoise Avignon — 40-44 ans, encadrement
+    - x: -0.595
+      y: 0.329
+      groupe: 0
+      nom: Romain Bissol
+      detail: Romain Bissol — 25-29 ans, artisanat_btp
+    - x: -0.586
+      y: 0.314
+      groupe: 0
+      nom: Patricia Tanguy
+      detail: Patricia Tanguy — 30-34 ans, encadrement
+    - x: -0.025
+      y: -0.611
+      groupe: 0
+      nom: Guénaëlle Biras
+      detail: Guénaëlle Biras — 25-29 ans, arts_medias
+    - x: -0.013
+      y: -0.577
+      groupe: 0
+      nom: Gilles Nicolet
+      detail: Gilles Nicolet — 35-39 ans, arts_medias
+    - x: -0.023
+      y: 0.018
+      groupe: 0
+      nom: Xavier Lemasson
+      detail: Xavier Lemasson — 25-29 ans, sante
+    - x: 0.224
+      y: -0.338
+      groupe: 0
+      nom: Caroline Lamotte
+      detail: Caroline Lamotte — 25-29 ans, commerce
+    - x: 0.992
+      y: -0.571
+      groupe: 1
+      nom: Céline Fortier
+      detail: Céline Fortier — 18-24 ans, restauration_hotellerie
+    - x: 0.437
+      y: -0.05
+      groupe: 0
+      nom: Nelly Baradeau
+      detail: Nelly Baradeau — 18-24 ans, restauration_hotellerie
+    - x: -0.582
+      y: 0.193
+      groupe: 0
+      nom: Pierre Cambon
+      detail: Pierre Cambon — 45 ans et plus, sport
+    - x: -0.192
+      y: -0.394
+      groupe: 0
+      nom: Jacky Forteron
+      detail: Jacky Forteron — 25-29 ans, restauration_hotellerie
+    - x: -0.245
+      y: 0.242
+      groupe: 0
+      nom: Adonis Koupaki
+      detail: Adonis Koupaki — 30-34 ans, encadrement
+    - x: 0.298
+      y: 0.527
+      groupe: 0
+      nom: Jimmy Denis
+      detail: Jimmy Denis — 18-24 ans, commerce
+    - x: -0.231
+      y: -0.607
+      groupe: 0
+      nom: Béatrice Cloix Penisson
+      detail: Béatrice Cloix Penisson — 35-39 ans, commerce
+    - x: 0.375
+      y: 0.6
+      groupe: 1
+      nom: François-Xavier Arguillère
+      detail: François-Xavier Arguillère — 18-24 ans, artisanat_btp
+    - x: 0.418
+      y: -0.845
+      groupe: 0
+      nom: Isabelle Vial
+      detail: Isabelle Vial — 35-39 ans, sante
+    - x: -0.025
+      y: -0.611
+      groupe: 0
+      nom: Maud Garnier
+      detail: Maud Garnier — 25-29 ans, arts_medias
+    - x: 0.001
+      y: 0.323
+      groupe: 0
+      nom: Marianne Mondon
+      detail: Marianne Mondon — 30-34 ans, action_securite
+    - x: -0.157
+      y: 0.132
+      groupe: 0
+      nom: Bernard Lenoir
+      detail: Bernard Lenoir — 45 ans et plus, arts_medias
+    - x: -0.092
+      y: 0.124
+      groupe: 0
+      nom: Nicolas Leoni
+      detail: Nicolas Leoni — 25-29 ans, sans_emploi
+    - x: -0.196
+      y: -0.237
+      groupe: 0
+      nom: Amel Fatnassi
+      detail: Amel Fatnassi — 25-29 ans, encadrement
+    - x: -0.117
+      y: -0.265
+      groupe: 0
+      nom: Alexandra Denikine
+      detail: Alexandra Denikine — 25-29 ans, commerce
+    - x: 1.976
+      y: 0.386
+      groupe: 1
+      nom: Candice Cohen
+      detail: Candice Cohen — 18-24 ans, etudiant
+    - x: -0.503
+      y: 0.704
+      groupe: 0
+      nom: Michel Jeandel
+      detail: Michel Jeandel — 40-44 ans, artisanat_btp
+    - x: 0.067
+      y: -0.236
+      groupe: 0
+      nom: Sophie Guilloix
+      detail: Sophie Guilloix — 40-44 ans, arts_medias
+    - x: 0.651
+      y: -0.499
+      groupe: 0
+      nom: Julie Bourdon
+      detail: Julie Bourdon — 18-24 ans, restauration_hotellerie
+    - x: -0.025
+      y: -0.611
+      groupe: 0
+      nom: Linda Delamarre
+      detail: Linda Delamarre — 25-29 ans, arts_medias
+    - x: -0.659
+      y: 0.658
+      groupe: 0
+      nom: Philippe Huquet
+      detail: Philippe Huquet — 40-44 ans, encadrement
+    - x: 1.761
+      y: 0.834
+      groupe: 1
+      nom: Alexandre Bérard
+      detail: Alexandre Bérard — 18-24 ans, etudiant
+    - x: -0.729
+      y: 0.603
+      groupe: 0
+      nom: Richard Lecourt
+      detail: Richard Lecourt — 30-34 ans, agriculture
+    - x: -0.196
+      y: -0.237
+      groupe: 0
+      nom: Sylvie Pommier
+      detail: Sylvie Pommier — 25-29 ans, encadrement
+    - x: 0.009
+      y: 0.111
+      groupe: 0
+      nom: Sébastien Loew
+      detail: Sébastien Loew — 25-29 ans, commerce
+    - x: -0.098
+      y: 0.273
+      groupe: 0
+      nom: Valérie Dot
+      detail: Valérie Dot — 30-34 ans, transport
+    - x: -0.068
+      y: -0.409
+      groupe: 0
+      nom: Hélène Patry
+      detail: Hélène Patry — 25-29 ans, enseignement
+    - x: -0.324
+      y: -0.174
+      groupe: 0
+      nom: Moundir Zoughari
+      detail: Moundir Zoughari — 25-29 ans, sport
+    - x: -0.637
+      y: 1.108
+      groupe: 0
+      nom: Antoine Sanchez
+      detail: Antoine Sanchez — 45 ans et plus, action_securite
+    - x: 0.56
+      y: 0.482
+      groupe: 1
+      nom: Moussa Niangane
+      detail: Moussa Niangane — 18-24 ans, encadrement
+    - x: -0.153
+      y: -0.74
+      groupe: 0
+      nom: Delphine Bano
+      detail: Delphine Bano — 30-34 ans, restauration_hotellerie
+    - x: -0.024
+      y: 0.109
+      groupe: 0
+      nom: Isabelle Seguin
+      detail: Isabelle Seguin — 40-44 ans, commerce
+    - x: -0.525
+      y: -0.131
+      groupe: 0
+      nom: Nelson Parente
+      detail: Nelson Parente — 35-39 ans, encadrement
+    - x: -0.844
+      y: 0.776
+      groupe: 0
+      nom: Vidéli Dittmar
+      detail: Vidéli Dittmar — 40-44 ans, artisanat_btp
+    - x: 0.774
+      y: 0.034
+      groupe: 1
+      nom: Sabira
+      detail: Sabira — 18-24 ans, encadrement
+    - x: 0.145
+      y: -0.31
+      groupe: 0
+      nom: Vicky Szikman
+      detail: Vicky Szikman — 25-29 ans, encadrement
+    - x: -0.669
+      y: 0.578
+      groupe: 0
+      nom: Jean-Bernard De Cools
+      detail: Jean-Bernard De Cools — 45 ans et plus, encadrement
+    - x: 0.273
+      y: -0.481
+      groupe: 0
+      nom: Nathalie Lapicque
+      detail: Nathalie Lapicque — 25-29 ans, enseignement
+    - x: 1.42
+      y: 0.906
+      groupe: 1
+      nom: Guillaume Brauer
+      detail: Guillaume Brauer — 18-24 ans, etudiant
+    - x: 0.057
+      y: -0.316
+      groupe: 0
+      nom: Odile Héritier
+      detail: Odile Héritier — 45 ans et plus, arts_medias
+    - x: 0.109
+      y: -0.679
+      groupe: 0
+      nom: Catherine Ehret-Mader
+      detail: Catherine Ehret-Mader — 35-39 ans, commerce
+    - x: 0.532
+      y: -0.503
+      groupe: 0
+      nom: Sophie Eeckhout
+      detail: Sophie Eeckhout — 25-29 ans, sante
+    - x: -0.192
+      y: -0.394
+      groupe: 0
+      nom: Alban Oswald
+      detail: Alban Oswald — 25-29 ans, restauration_hotellerie
+    - x: 0.273
+      y: -0.481
+      groupe: 0
+      nom: Amélie Grégoire
+      detail: Amélie Grégoire — 25-29 ans, enseignement
+    - x: -0.324
+      y: -0.174
+      groupe: 0
+      nom: Romuald Lafite
+      detail: Romuald Lafite — 25-29 ans, sport
+    - x: -0.844
+      y: 0.776
+      groupe: 0
+      nom: Raphaël Andrès
+      detail: Raphaël Andrès — 40-44 ans, artisanat_btp
+    - x: 0.049
+      y: -0.235
+      groupe: 0
+      nom: Linda Alario
+      detail: Linda Alario — 30-34 ans, commerce
+    - x: -0.71
+      y: -0.013
+      groupe: 0
+      nom: Philippe Bordier
+      detail: Philippe Bordier — 35-39 ans, artisanat_btp
+    - x: 0.14
+      y: -0.581
+      groupe: 0
+      nom: Aude Réant
+      detail: Aude Réant — 30-34 ans, arts_medias
+    - x: 0.947
+      y: 0.289
+      groupe: 1
+      nom: Mathieu Huguin
+      detail: Mathieu Huguin — 18-24 ans, sante
+    - x: -0.412
+      y: 0.74
+      groupe: 0
+      nom: Sylvie Sébert
+      detail: Sylvie Sébert — 40-44 ans, action_securite
+    - x: 0.315
+      y: -0.683
+      groupe: 0
+      nom: Caroline Colusso
+      detail: Caroline Colusso — 25-29 ans, arts_medias
+    - x: 0.751
+      y: 0.019
+      groupe: 1
+      nom: Marie-Cécile Maréchal
+      detail: Marie-Cécile Maréchal — 18-24 ans, sans_emploi
+    - x: -0.412
+      y: 0.74
+      groupe: 0
+      nom: Eliane Vigneron
+      detail: Eliane Vigneron — 40-44 ans, action_securite
+    - x: -0.495
+      y: -0.462
+      groupe: 0
+      nom: Thierry Ramos
+      detail: Thierry Ramos — 35-39 ans, artisanat_btp
+    - x: 0.639
+      y: 0.454
+      groupe: 1
+      nom: Sakhone Holaphong
+      detail: Sakhone Holaphong — 18-24 ans, commerce
+    - x: -0.554
+      y: 0.844
+      groupe: 0
+      nom: Jérôme Villaseque
+      detail: Jérôme Villaseque — 30-34 ans, action_securite
+    - x: -0.31
+      y: -0.579
+      groupe: 0
+      nom: Christine Isoart
+      detail: Christine Isoart — 35-39 ans, encadrement
+    - x: 0.992
+      y: -0.571
+      groupe: 1
+      nom: Coumba Baradji
+      detail: Coumba Baradji — 18-24 ans, restauration_hotellerie
+    - x: -0.498
+      y: 0.205
+      groupe: 0
+      nom: Pierre Vaney
+      detail: Pierre Vaney — 45 ans et plus, arts_medias
+    - x: -0.14
+      y: -0.953
+      groupe: 0
+      nom: Véronique Lobjoie
+      detail: Véronique Lobjoie — 35-39 ans, arts_medias
+    - x: 0.101
+      y: -0.235
+      groupe: 0
+      nom: Alexis Tournier
+      detail: Alexis Tournier — 25-29 ans, arts_medias
+    - x: 0.492
+      y: 0.962
+      groupe: 1
+      nom: Mohamed Derradji
+      detail: Mohamed Derradji — 18-24 ans, transport
+    - x: -0.691
+      y: 0.563
+      groupe: 0
+      nom: Francis Bordas
+      detail: Francis Bordas — 45 ans et plus, sans_emploi
+    - x: 1.976
+      y: 0.386
+      groupe: 1
+      nom: Clémence Castel
+      detail: Clémence Castel — 18-24 ans, etudiant
+    - x: 1.161
+      y: -0.16
+      groupe: 1
+      nom: Karine Amorsi
+      detail: Karine Amorsi — 18-24 ans, sante
+    - x: -0.371
+      y: -0.135
+      groupe: 0
+      nom: Mama El Fayed
+      detail: Mama El Fayed — 30-34 ans, encadrement
+    - x: -0.572
+      y: 0.273
+      groupe: 0
+      nom: Nicolas Maire
+      detail: Nicolas Maire — 40-44 ans, sport
+    - x: 0.009
+      y: 0.111
+      groupe: 0
+      nom: Nico Felger
+      detail: Nico Felger — 25-29 ans, commerce
+    - x: -0.736
+      y: 1.058
+      groupe: 0
+      nom: Jean-Claude Errin
+      detail: Jean-Claude Errin — 45 ans et plus, transport
+    - x: -0.771
+      y: 0.432
+      groupe: 0
+      nom: Mika Tailleur
+      detail: Mika Tailleur — 30-34 ans, artisanat_btp
+    - x: -0.556
+      y: -0.017
+      groupe: 0
+      nom: Estelle Granger
+      detail: Estelle Granger — 30-34 ans, artisanat_btp
+    - x: -0.31
+      y: -0.579
+      groupe: 0
+      nom: Nathalie Bella
+      detail: Nathalie Bella — 35-39 ans, encadrement
+    - x: -0.812
+      y: 0.867
+      groupe: 0
+      nom: Alain Ponton
+      detail: Alain Ponton — 45 ans et plus, agriculture
+    - x: -0.467
+      y: 0.195
+      groupe: 0
+      nom: Catherine Brun
+      detail: Catherine Brun — 40-44 ans, sans_emploi
+    - x: -0.04
+      y: -0.192
+      groupe: 0
+      nom: Gaëlle Zanetton
+      detail: Gaëlle Zanetton — 25-29 ans, artisanat_btp
+    - x: 0.945
+      y: -0.34
+      groupe: 1
+      nom: Marie Bayard
+      detail: Marie Bayard — 18-24 ans, arts_medias
+    - x: -0.213
+      y: 0.428
+      groupe: 0
+      nom: Ludovic Laresche
+      detail: Ludovic Laresche — 25-29 ans, agriculture
+    - x: -0.245
+      y: 0.242
+      groupe: 0
+      nom: Sébastien Roullé
+      detail: Sébastien Roullé — 30-34 ans, encadrement
+    - x: 0.853
+      y: 0.006
+      groupe: 1
+      nom: Émilie Frahi
+      detail: Émilie Frahi — 18-24 ans, commerce
+    - x: 0.646
+      y: 0.098
+      groupe: 1
+      nom: François-David Cardonnel
+      detail: François-David Cardonnel — 18-24 ans, sport
+    - x: -0.592
+      y: 0.349
+      groupe: 0
+      nom: Ali Jaffar
+      detail: Ali Jaffar — 35-39 ans, transport
+    - x: 0.031
+      y: -0.652
+      groupe: 0
+      nom: Pascale Bodin
+      detail: Pascale Bodin — 35-39 ans, encadrement
+    - x: 0.512
+      y: 0.078
+      groupe: 0
+      nom: Marie-Laure Dagniaux
+      detail: Marie-Laure Dagniaux — 18-24 ans, commerce
+    - x: 0.604
+      y: -0.268
+      groupe: 0
+      nom: Mélanie Guyon
+      detail: Mélanie Guyon — 18-24 ans, arts_medias
+    - x: -0.113
+      y: 0.057
+      groupe: 0
+      nom: Véronique Lambert
+      detail: Véronique Lambert — 45 ans et plus, encadrement
+    - x: 0.145
+      y: -0.31
+      groupe: 0
+      nom: Chloé Vavasseur
+      detail: Chloé Vavasseur — 25-29 ans, encadrement
+    - x: -0.158
+      y: -0.143
+      groupe: 0
+      nom: Érick Africaa
+      detail: Érick Africaa — 30-34 ans, sport
+    - x: 0.109
+      y: -0.679
+      groupe: 0
+      nom: Filomène Mendonca
+      detail: Filomène Mendonca — 35-39 ans, commerce
+    - x: -0.328
+      y: 0.506
+      groupe: 0
+      nom: Adrien Torrin
+      detail: Adrien Torrin — 45 ans et plus, encadrement
+    - x: 0.416
+      y: 0.771
+      groupe: 1
+      nom: Grégoire Delachaux
+      detail: Grégoire Delachaux — 18-24 ans, agriculture
+    - x: -0.388
+      y: 0.531
+      groupe: 0
+      nom: Laurent Boudes
+      detail: Laurent Boudes — 30-34 ans, agriculture
+    - x: -0.659
+      y: 0.658
+      groupe: 0
+      nom: Patrick Brasier De Thuy
+      detail: Patrick Brasier De Thuy — 40-44 ans, encadrement
+    - x: -0.554
+      y: 0.5
+      groupe: 0
+      nom: Simon Quintilla
+      detail: Simon Quintilla — 25-29 ans, agriculture
+    - x: -0.454
+      y: -0.29
+      groupe: 0
+      nom: Maryline Hemelsdael
+      detail: Maryline Hemelsdael — 35-39 ans, agriculture
+    - x: 0.151
+      y: 1.034
+      groupe: 0
+      nom: Kevin Cuoco
+      detail: Kevin Cuoco — 18-24 ans, transport
+    - x: 0.433
+      y: 0.106
+      groupe: 0
+      nom: Jade Handi
+      detail: Jade Handi — 18-24 ans, encadrement
+    - x: -0.103
+      y: 0.137
+      groupe: 0
+      nom: Valérie Tartacède-Bollaert
+      detail: Valérie Tartacède-Bollaert — 40-44 ans, encadrement
+    - x: 0.492
+      y: 0.962
+      groupe: 1
+      nom: Céga Coulibaly
+      detail: Céga Coulibaly — 18-24 ans, transport
+    - x: 0.945
+      y: -0.34
+      groupe: 1
+      nom: Irya Cissé
+      detail: Irya Cissé — 18-24 ans, arts_medias
+    - x: -0.201
+      y: -0.508
+      groupe: 0
+      nom: Morgane Rodriguès
+      detail: Morgane Rodriguès — 30-34 ans, arts_medias
+    - x: 1.976
+      y: 0.386
+      groupe: 1
+      nom: Jessica Joullié
+      detail: Jessica Joullié — 18-24 ans, etudiant
+    - x: -0.369
+      y: -0.085
+      groupe: 0
+      nom: Alain Garcia
+      detail: Alain Garcia — 35-39 ans, artisanat_btp
+    - x: -0.239
+      y: 0.558
+      groupe: 0
+      nom: Jean-Bernard Hauton-Arnaud
+      detail: Jean-Bernard Hauton-Arnaud — 40-44 ans, commerce
+    - x: -0.41
+      y: 0.211
+      groupe: 0
+      nom: Christopher Lavaud
+      detail: Christopher Lavaud — 25-29 ans, encadrement
+    - x: -0.438
+      y: -0.515
+      groupe: 0
+      nom: Christophe Guttatoro-Martin
+      detail: Christophe Guttatoro-Martin — 35-39 ans, sport
+    - x: 1.976
+      y: 0.386
+      groupe: 1
+      nom: Charlène Hoffness
+      detail: Charlène Hoffness — 18-24 ans, etudiant
+    - x: -0.369
+      y: -0.085
+      groupe: 0
+      nom: Hakim Djellali
+      detail: Hakim Djellali — 35-39 ans, artisanat_btp
+    - x: -0.249
+      y: 0.478
+      groupe: 0
+      nom: Régis Colombier
+      detail: Régis Colombier — 45 ans et plus, commerce
+    - x: -0.629
+      y: 0.327
+      groupe: 0
+      nom: Carole Rapin
+      detail: Carole Rapin — 40-44 ans, artisanat_btp
+    - x: -0.068
+      y: -0.409
+      groupe: 0
+      nom: Nathalie Ensargueix
+      detail: Nathalie Ensargueix — 25-29 ans, enseignement
+    - x: -0.653
+      y: 0.794
+      groupe: 0
+      nom: Bertrand Bolle
+      detail: Bertrand Bolle — 30-34 ans, transport
+    - x: -0.771
+      y: 0.432
+      groupe: 0
+      nom: Frédéric Favier
+      detail: Frédéric Favier — 30-34 ans, artisanat_btp
+    - x: -0.164
+      y: 0.293
+      groupe: 0
+      nom: Christelle Gauzet
+      detail: Christelle Gauzet — 25-29 ans, action_securite
+    - x: 0.791
+      y: 0.563
+      groupe: 1
+      nom: Julien Mairesse
+      detail: Julien Mairesse — 25-29 ans, etudiant
+    - x: 0.592
+      y: 1.012
+      groupe: 1
+      nom: Anthony Parra
+      detail: Anthony Parra — 18-24 ans, action_securite
+    - x: 0.145
+      y: -0.31
+      groupe: 0
+      nom: Claire Rolet
+      detail: Claire Rolet — 25-29 ans, encadrement
+    - x: 0.248
+      y: 0.224
+      groupe: 0
+      nom: Marine Mocellin
+      detail: Marine Mocellin — 18-24 ans, artisanat_btp
+    - x: 0.145
+      y: -0.31
+      groupe: 0
+      nom: Kaouther Ferdjani
+      detail: Kaouther Ferdjani — 25-29 ans, encadrement
+    - x: -0.554
+      y: 0.844
+      groupe: 0
+      nom: Alexandre Amico
+      detail: Alexandre Amico — 30-34 ans, action_securite
+    - x: 1.42
+      y: 0.906
+      groupe: 1
+      nom: Freddy Boucher
+      detail: Freddy Boucher — 18-24 ans, etudiant
+    - x: -0.184
+      y: -0.203
+      groupe: 0
+      nom: Pascal Nickert
+      detail: Pascal Nickert — 35-39 ans, encadrement
+    - x: -0.07
+      y: 0.139
+      groupe: 0
+      nom: Louis-Laurent Léger
+      detail: Louis-Laurent Léger — 25-29 ans, encadrement
+    - x: -0.196
+      y: -0.237
+      groupe: 0
+      nom: Raphaële Navarro
+      detail: Raphaële Navarro — 25-29 ans, encadrement
+    - x: -0.513
+      y: 0.624
+      groupe: 0
+      nom: Rodolphe Assi
+      detail: Rodolphe Assi — 45 ans et plus, artisanat_btp
+    - x: -0.296
+      y: 1.036
+      groupe: 0
+      nom: Kader Rebaï
+      detail: Kader Rebaï — 45 ans et plus, action_securite
+    - x: 0.025
+      y: -0.034
+      groupe: 0
+      nom: Fabienne Lefebvre-Trehoux
+      detail: Fabienne Lefebvre-Trehoux — 40-44 ans, enseignement
+    - x: -0.231
+      y: -0.607
+      groupe: 0
+      nom: Isabelle Da Silva
+      detail: Isabelle Da Silva — 35-39 ans, commerce
+    - x: -0.71
+      y: -0.013
+      groupe: 0
+      nom: Patrick Merle
+      detail: Patrick Merle — 35-39 ans, artisanat_btp
+    - x: 0.512
+      y: 0.078
+      groupe: 0
+      nom: Christina Chevry
+      detail: Christina Chevry — 18-24 ans, commerce
+    - x: -0.257
+      y: 0.346
+      groupe: 0
+      nom: Frédérique Brugiroux
+      detail: Frédérique Brugiroux — 45 ans et plus, agriculture
+    - x: 1.42
+      y: 0.906
+      groupe: 1
+      nom: Vivien Escouflaire
+      detail: Vivien Escouflaire — 18-24 ans, etudiant
+    - x: -0.812
+      y: 0.867
+      groupe: 0
+      nom: Alain Merdel
+      detail: Alain Merdel — 45 ans et plus, agriculture
+    - x: 0.201
+      y: -1.025
+      groupe: 0
+      nom: Virginie Mercadal Pioli
+      detail: Virginie Mercadal Pioli — 35-39 ans, arts_medias
+    - x: 0.853
+      y: 0.006
+      groupe: 1
+      nom: Jennifer Lieutaud
+      detail: Jennifer Lieutaud — 18-24 ans, commerce
+    - x: -0.669
+      y: 0.578
+      groupe: 0
+      nom: Jean-Pierre Pigato
+      detail: Jean-Pierre Pigato — 45 ans et plus, encadrement
+    - x: 0.751
+      y: 0.019
+      groupe: 1
+      nom: Audrey Perez
+      detail: Audrey Perez — 18-24 ans, sans_emploi
+    - x: -0.074
+      y: -0.132
+      groupe: 0
+      nom: Boris Deltell
+      detail: Boris Deltell — 30-34 ans, arts_medias
+    - x: 0.389
+      y: 0.181
+      groupe: 0
+      nom: Valentin D'Hoore
+      detail: Valentin D'Hoore — 18-24 ans, arts_medias
+    - x: -0.499
+      y: -0.071
+      groupe: 0
+      nom: Abdellah Akriche
+      detail: Abdellah Akriche — 30-34 ans, sport
+    - x: -0.037
+      y: -0.172
+      groupe: 0
+      nom: Marine Plissonneau
+      detail: Marine Plissonneau — 35-39 ans, transport
+    - x: 0.273
+      y: -0.481
+      groupe: 0
+      nom: Aurélie Gasser
+      detail: Aurélie Gasser — 25-29 ans, enseignement
+    - x: 0.14
+      y: -0.581
+      groupe: 0
+      nom: Laurence Pizzocchia
+      detail: Laurence Pizzocchia — 30-34 ans, arts_medias
+    - x: -0.283
+      y: 0.04
+      groupe: 0
+      nom: Kunlé M'Babacéré Pakorona
+      detail: Kunlé M'Babacéré Pakorona — 25-29 ans, enseignement
+    - x: -0.477
+      y: 0.115
+      groupe: 0
+      nom: Véronique Bègue
+      detail: Véronique Bègue — 45 ans et plus, sans_emploi
+    - x: 0.224
+      y: -0.338
+      groupe: 0
+      nom: Wafa El Mejjad
+      detail: Wafa El Mejjad — 25-29 ans, commerce
+    - x: -0.653
+      y: 0.794
+      groupe: 0
+      nom: Claude Dartois
+      detail: Claude Dartois — 30-34 ans, transport
+    - x: -0.844
+      y: 0.776
+      groupe: 0
+      nom: Philippe Duron
+      detail: Philippe Duron — 40-44 ans, artisanat_btp
+    - x: -0.117
+      y: -0.265
+      groupe: 0
+      nom: Lisa Legouverneur
+      detail: Lisa Legouverneur — 25-29 ans, commerce
+    - x: -0.454
+      y: 0.129
+      groupe: 0
+      nom: Catherine Barnier
+      detail: Catherine Barnier — 45 ans et plus, encadrement
+    - x: 0.592
+      y: 1.012
+      groupe: 1
+      nom: Steve Lemercier
+      detail: Steve Lemercier — 18-24 ans, action_securite
+    - x: -0.328
+      y: 0.506
+      groupe: 0
+      nom: Gégé Icardi
+      detail: Gégé Icardi — 45 ans et plus, encadrement
+    - x: 0.232
+      y: -0.694
+      groupe: 0
+      nom: Naouel Hadjaf
+      detail: Naouel Hadjaf — 25-29 ans, sport
+    - x: -0.245
+      y: 0.242
+      groupe: 0
+      nom: Benoît Mahieux
+      detail: Benoît Mahieux — 30-34 ans, encadrement
+    - x: 0.902
+      y: -0.138
+      groupe: 1
+      nom: Délisia Fettasi
+      detail: Délisia Fettasi — 18-24 ans, enseignement
+    - x: -0.016
+      y: -0.247
+      groupe: 0
+      nom: Caroline Matteucci
+      detail: Caroline Matteucci — 40-44 ans, sport
+    - x: 1.42
+      y: 0.906
+      groupe: 1
+      nom: Maxime Boulet
+      detail: Maxime Boulet — 18-24 ans, etudiant
+    - x: 0.646
+      y: 0.098
+      groupe: 1
+      nom: Anthony Amar
+      detail: Anthony Amar — 18-24 ans, sport
+    - x: -0.58
+      y: 0.63
+      groupe: 0
+      nom: Olivier Moenaert
+      detail: Olivier Moenaert — 40-44 ans, commerce
+    - x: -0.183
+      y: -0.751
+      groupe: 0
+      nom: Florence Delbarre
+      detail: Florence Delbarre — 35-39 ans, enseignement
+    - x: -0.394
+      y: -0.149
+      groupe: 0
+      nom: Virginie Jarry
+      detail: Virginie Jarry — 30-34 ans, sans_emploi
+    - x: -0.037
+      y: -0.172
+      groupe: 0
+      nom: Patricia Morel
+      detail: Patricia Morel — 35-39 ans, transport
+    - x: 0.363
+      y: -0.914
+      groupe: 0
+      nom: Alexandra Pouillon
+      detail: Alexandra Pouillon — 25-29 ans, restauration_hotellerie
+    - x: 0.219
+      y: 0.554
+      groupe: 0
+      nom: Martin Bazin
+      detail: Martin Bazin — 18-24 ans, encadrement
+    - x: 0.191
+      y: -0.431
+      groupe: 0
+      nom: Ella Gbezan
+      detail: Ella Gbezan — 25-29 ans, sante
+    - x: -0.24
+      y: -0.162
+      groupe: 0
+      nom: Laurent Maistret
+      detail: Laurent Maistret — 25-29 ans, arts_medias
+    - x: -0.027
+      y: -0.363
+      groupe: 0
+      nom: Teheiura Teahui
+      detail: Teheiura Teahui — 30-34 ans, restauration_hotellerie
+    - x: -0.802
+      y: 0.947
+      groupe: 0
+      nom: Gérard Urdampilleta
+      detail: Gérard Urdampilleta — 40-44 ans, agriculture
+    - x: -0.556
+      y: -0.017
+      groupe: 0
+      nom: Mélanie Boimare
+      detail: Mélanie Boimare — 30-34 ans, artisanat_btp
+    - x: -0.736
+      y: 1.058
+      groupe: 0
+      nom: Mickaël Kalfallah
+      detail: Mickaël Kalfallah — 45 ans et plus, transport
+    - x: -0.444
+      y: 0.21
+      groupe: 0
+      nom: Sara Tallon
+      detail: Sara Tallon — 40-44 ans, encadrement
+    - x: -0.454
+      y: 0.129
+      groupe: 0
+      nom: Nadine De Carpentry
+      detail: Nadine De Carpentry — 45 ans et plus, encadrement
+    - x: 0.008
+      y: -0.666
+      groupe: 0
+      nom: Élodie Saleder
+      detail: Élodie Saleder — 35-39 ans, sans_emploi
+    - x: 0.774
+      y: 0.034
+      groupe: 1
+      nom: Marie Parmentier
+      detail: Marie Parmentier — 18-24 ans, encadrement
+    - x: 0.034
+      y: 0.672
+      groupe: 0
+      nom: Anthony Dito
+      detail: Anthony Dito — 18-24 ans, artisanat_btp
+    - x: -0.369
+      y: -0.085
+      groupe: 0
+      nom: Javier Rodriguez
+      detail: Javier Rodriguez — 35-39 ans, artisanat_btp
+    - x: -0.478
+      y: 0.691
+      groupe: 0
+      nom: Namadia Thaï Thaï
+      detail: Namadia Thaï Thaï — 25-29 ans, transport
+    - x: 0.366
+      y: 0.586
+      groupe: 0
+      nom: Marylou Sidibé
+      detail: Marylou Sidibé — 18-24 ans, transport
+    - x: -0.024
+      y: 0.109
+      groupe: 0
+      nom: Catherine Perez
+      detail: Catherine Perez — 40-44 ans, commerce
+    - x: 0.861
+      y: -0.351
+      groupe: 1
+      nom: Camille Sold
+      detail: Camille Sold — 18-24 ans, sport
+    - x: 1.761
+      y: 0.834
+      groupe: 1
+      nom: Charles Clément
+      detail: Charles Clément — 18-24 ans, etudiant
+    - x: -0.488
+      y: 0.285
+      groupe: 0
+      nom: Thierry Villette
+      detail: Thierry Villette — 40-44 ans, arts_medias
+    - x: 0.016
+      y: -0.328
+      groupe: 0
+      nom: Myriam Modde
+      detail: Myriam Modde — 30-34 ans, sante
+    - x: -0.691
+      y: 0.563
+      groupe: 0
+      nom: Bernard Deniaud
+      detail: Bernard Deniaud — 45 ans et plus, sans_emploi
+    - x: -0.503
+      y: 0.704
+      groupe: 0
+      nom: Philippe Bizet
+      detail: Philippe Bizet — 40-44 ans, artisanat_btp
+    - x: -0.113
+      y: -0.362
+      groupe: 0
+      nom: Vanessa Alvarez
+      detail: Vanessa Alvarez — 35-39 ans, agriculture
+    - x: -0.074
+      y: -0.132
+      groupe: 0
+      nom: Brice Martinet
+      detail: Brice Martinet — 30-34 ans, arts_medias
+    - x: -0.388
+      y: 0.531
+      groupe: 0
+      nom: Ugo Lartiche
+      detail: Ugo Lartiche — 30-34 ans, agriculture
+    - x: -0.257
+      y: 0.346
+      groupe: 0
+      nom: Babeth Delettre
+      detail: Babeth Delettre — 45 ans et plus, agriculture
+    - x: -0.333
+      y: -0.594
+      groupe: 0
+      nom: Marie-Anne Queniart
+      detail: Marie-Anne Queniart — 35-39 ans, sans_emploi
+    - x: -0.41
+      y: 0.211
+      groupe: 0
+      nom: Benoît Jorion-Fahy
+      detail: Benoît Jorion-Fahy — 25-29 ans, encadrement
+    - x: 1.976
+      y: 0.386
+      groupe: 1
+      nom: Manon Allender
+      detail: Manon Allender — 18-24 ans, etudiant
+    - x: 1.761
+      y: 0.834
+      groupe: 1
+      nom: Loïc Crespin
+      detail: Loïc Crespin — 18-24 ans, etudiant
+    - x: -0.027
+      y: -0.327
+      groupe: 0
+      nom: Isabelle Fidanza
+      detail: Isabelle Fidanza — 45 ans et plus, sport
+    - x: 1.635
+      y: 0.458
+      groupe: 1
+      nom: Margot Perrot Houwaer
+      detail: Margot Perrot Houwaer — 18-24 ans, etudiant
+    - x: 0.009
+      y: 0.111
+      groupe: 0
+      nom: Alban Pellegrin
+      detail: Alban Pellegrin — 25-29 ans, commerce
+    - x: -0.375
+      y: 0.102
+      groupe: 0
+      nom: Corinne Bargoin Samuelian
+      detail: Corinne Bargoin Samuelian — 45 ans et plus, commerce
+    - x: -0.525
+      y: -0.131
+      groupe: 0
+      nom: Cédric Giosserand-Lucas
+      detail: Cédric Giosserand-Lucas — 35-39 ans, encadrement
+    - x: 1.976
+      y: 0.386
+      groupe: 1
+      nom: Charlaine Cuny
+      detail: Charlaine Cuny — 18-24 ans, etudiant
+    - x: -0.478
+      y: 0.691
+      groupe: 0
+      nom: Nessim Kouachi
+      detail: Nessim Kouachi — 25-29 ans, transport
+    - x: -0.368
+      y: -0.291
+      groupe: 0
+      nom: Jeff Santiago
+      detail: Jeff Santiago — 30-34 ans, restauration_hotellerie
+    - x: -0.245
+      y: 0.242
+      groupe: 0
+      nom: Christophe Pendon
+      detail: Christophe Pendon — 30-34 ans, encadrement
+    - x: -0.244
+      y: -0.306
+      groupe: 0
+      nom: Jessica Potel
+      detail: Jessica Potel — 30-34 ans, enseignement
+    - x: 1.761
+      y: 0.834
+      groupe: 1
+      nom: Sébastien Ballesteros
+      detail: Sébastien Ballesteros — 18-24 ans, etudiant
+    - x: -0.669
+      y: 0.578
+      groupe: 0
+      nom: Bruno Peisey
+      detail: Bruno Peisey — 45 ans et plus, encadrement
+    - x: 0.145
+      y: -0.31
+      groupe: 0
+      nom: Mélissa Bastin
+      detail: Mélissa Bastin — 25-29 ans, encadrement
+    - x: -0.284
+      y: -0.244
+      groupe: 0
+      nom: Chantal Ménard
+      detail: Chantal Ménard — 45 ans et plus, arts_medias
+    - x: -0.318
+      y: 0.586
+      groupe: 0
+      nom: Marc Rambaud
+      detail: Marc Rambaud — 40-44 ans, encadrement
+    - x: 0.363
+      y: -0.914
+      groupe: 0
+      nom: Charlie Vincent-Mussard
+      detail: Charlie Vincent-Mussard — 25-29 ans, restauration_hotellerie
+    - x: 0.158
+      y: -0.823
+      groupe: 0
+      nom: Laurence Corbellotti
+      detail: Laurence Corbellotti — 35-39 ans, enseignement
+    - x: 1.42
+      y: 0.906
+      groupe: 1
+      nom: Marius Torterat
+      detail: Marius Torterat — 18-24 ans, etudiant
+    - x: 0.025
+      y: -0.034
+      groupe: 0
+      nom: Céline Parat-Yeghiayan
+      detail: Céline Parat-Yeghiayan — 40-44 ans, enseignement
+    - x: -0.097
+      y: -0.588
+      groupe: 0
+      nom: Huw Francis
+      detail: Huw Francis — 35-39 ans, sport
+    - x: -0.367
+      y: -0.255
+      groupe: 0
+      nom: Carole Poncelet
+      detail: Carole Poncelet — 45 ans et plus, sport
+    - x: -0.081
+      y: 0.587
+      groupe: 0
+      nom: Lolo Facione
+      detail: Lolo Facione — 45 ans et plus, action_securite
+    - x: -0.59
+      y: 0.55
+      groupe: 0
+      nom: Amir Doukhan
+      detail: Amir Doukhan — 45 ans et plus, commerce
+    - x: 1.635
+      y: 0.458
+      groupe: 1
+      nom: Cassandre Girard
+      detail: Cassandre Girard — 18-24 ans, etudiant
+    - x: -0.41
+      y: 0.211
+      groupe: 0
+      nom: Romain Palazzetti
+      detail: Romain Palazzetti — 25-29 ans, encadrement
+    - x: -0.255
+      y: 0.257
+      groupe: 0
+      nom: Julien Castro
+      detail: Julien Castro — 25-29 ans, artisanat_btp
+    - x: 1.347
+      y: 0.042
+      groupe: 1
+      nom: Laureen Hugel
+      detail: Laureen Hugel — 25-29 ans, etudiant
+    - x: -0.245
+      y: 0.242
+      groupe: 0
+      nom: Steve Best
+      detail: Steve Best — 30-34 ans, encadrement
+    - x: -0.292
+      y: -0.163
+      groupe: 0
+      nom: Carine Cazals
+      detail: Carine Cazals — 30-34 ans, commerce
+    - x: -0.164
+      y: 0.293
+      groupe: 0
+      nom: Karima Neggaz
+      detail: Karima Neggaz — 25-29 ans, action_securite
+    - x: -0.415
+      y: -0.06
+      groupe: 0
+      nom: Nicolas Rouyé
+      detail: Nicolas Rouyé — 30-34 ans, arts_medias
+    - x: -0.328
+      y: 0.506
+      groupe: 0
+      nom: Alain Chrisostome
+      detail: Alain Chrisostome — 45 ans et plus, encadrement
+    - x: -0.025
+      y: -0.611
+      groupe: 0
+      nom: Cécilia Siharaj
+      detail: Cécilia Siharaj — 25-29 ans, arts_medias
+    - x: -0.627
+      y: 1.188
+      groupe: 0
+      nom: Gabriel Gubbels
+      detail: Gabriel Gubbels — 40-44 ans, action_securite
+    - x: -0.249
+      y: 0.478
+      groupe: 0
+      nom: Pascal Salviani
+      detail: Pascal Salviani — 45 ans et plus, commerce
+    - x: 0.232
+      y: -0.694
+      groupe: 0
+      nom: Wendy Gervois
+      detail: Wendy Gervois — 25-29 ans, sport
+    - x: -0.092
+      y: -1.184
+      groupe: 0
+      nom: Myriam Zenasni
+      detail: Myriam Zenasni — 35-39 ans, restauration_hotellerie
+    - x: 0.049
+      y: -0.235
+      groupe: 0
+      nom: Amandine Schmitt
+      detail: Amandine Schmitt — 30-34 ans, commerce
+    - x: -0.375
+      y: 0.102
+      groupe: 0
+      nom: Sophie Le Nestic Sabattier
+      detail: Sophie Le Nestic Sabattier — 45 ans et plus, commerce
+    - x: 0.357
+      y: -0.401
+      groupe: 0
+      nom: Sandrine Bouzekri
+      detail: Sandrine Bouzekri — 30-34 ans, sante
+    - x: -0.525
+      y: -0.131
+      groupe: 0
+      nom: Laurent Mischkind
+      detail: Laurent Mischkind — 35-39 ans, encadrement
+    - x: -0.513
+      y: 0.624
+      groupe: 0
+      nom: Jean-Luc Duboscq
+      detail: Jean-Luc Duboscq — 45 ans et plus, artisanat_btp
+    - x: -0.318
+      y: 0.586
+      groupe: 0
+      nom: Jérôme Merlier
+      detail: Jérôme Merlier — 40-44 ans, encadrement
+    - x: -0.507
+      y: 0.286
+      groupe: 0
+      nom: Lau Émilien
+      detail: Lau Émilien — 30-34 ans, commerce
+    - x: 0.14
+      y: -0.581
+      groupe: 0
+      nom: Béryl Libault de la Chevasnerie
+      detail: Béryl Libault de la Chevasnerie — 30-34 ans, arts_medias
+    - x: -0.103
+      y: 0.137
+      groupe: 0
+      nom: Alexandra Pharisien
+      detail: Alexandra Pharisien — 40-44 ans, encadrement
+    - x: -0.286
+      y: 1.116
+      groupe: 0
+      nom: Yannick Delalleau
+      detail: Yannick Delalleau — 40-44 ans, action_securite
+    - x: 0.077
+      y: -0.773
+      groupe: 0
+      nom: Julie Navarro-Camilleri
+      detail: Julie Navarro-Camilleri — 35-39 ans, sante
+    - x: 1.132
+      y: 0.491
+      groupe: 1
+      nom: Jérémy Raffin
+      detail: Jérémy Raffin — 25-29 ans, etudiant
+    - x: -0.498
+      y: 0.205
+      groupe: 0
+      nom: Stéphane Cipolla
+      detail: Stéphane Cipolla — 45 ans et plus, arts_medias
+    - x: -0.394
+      y: -0.149
+      groupe: 0
+      nom: Ludivine Wiart
+      detail: Ludivine Wiart — 30-34 ans, sans_emploi
+    - x: 0.52
+      y: -0.279
+      groupe: 0
+      nom: Candice Boisson
+      detail: Candice Boisson — 18-24 ans, sport
+    - x: -0.854
+      y: 0.696
+      groupe: 0
+      nom: Bruno Troester
+      detail: Bruno Troester — 45 ans et plus, artisanat_btp
+    - x: -0.137
+      y: 0.619
+      groupe: 0
+      nom: Freddy Bolzer
+      detail: Freddy Bolzer — 25-29 ans, transport
+    - x: 1.976
+      y: 0.386
+      groupe: 1
+      nom: Jesta Hillmann
+      detail: Jesta Hillmann — 18-24 ans, etudiant
+    - x: 0.305
+      y: 0.17
+      groupe: 0
+      nom: Benoît Assadi
+      detail: Benoît Assadi — 18-24 ans, sport
+    - x: 0.492
+      y: -0.093
+      groupe: 0
+      nom: Dylan Thiry
+      detail: Dylan Thiry — 18-24 ans, commerce
+    - x: -0.034
+      y: 0.029
+      groupe: 0
+      nom: Sabine Ollivier
+      detail: Sabine Ollivier — 45 ans et plus, commerce
+    - x: -0.098
+      y: -0.782
+      groupe: 0
+      nom: Hada Ghoulam
+      detail: Hada Ghoulam — 30-34 ans, commerce
+    - x: -0.691
+      y: 0.563
+      groupe: 0
+      nom: Franck Michel
+      detail: Franck Michel — 45 ans et plus, sans_emploi
+    - x: 0.273
+      y: -0.481
+      groupe: 0
+      nom: Félicie Greugny
+      detail: Félicie Greugny — 25-29 ans, enseignement
+    - x: 0.058
+      y: -0.032
+      groupe: 0
+      nom: Brahma Sadeyen
+      detail: Brahma Sadeyen — 25-29 ans, enseignement
+    - x: 0.437
+      y: -0.05
+      groupe: 0
+      nom: Bastien Muñez
+      detail: Bastien Muñez — 18-24 ans, restauration_hotellerie
+    - x: -0.04
+      y: -0.192
+      groupe: 0
+      nom: Maria Beccaris
+      detail: Maria Beccaris — 25-29 ans, artisanat_btp
+    - x: -0.395
+      y: -0.07
+      groupe: 0
+      nom: Yves Rey
+      detail: Yves Rey — 45 ans et plus, commerce
+    - x: -0.71
+      y: -0.013
+      groupe: 0
+      nom: Yassin Metiri
+      detail: Yassin Metiri — 35-39 ans, artisanat_btp
+    - x: -0.14
+      y: -0.953
+      groupe: 0
+      nom: Manuella Baudet
+      detail: Manuella Baudet — 35-39 ans, arts_medias
+    - x: -0.166
+      y: 0.214
+      groupe: 0
+      nom: Sandro Gonzalez Schena
+      detail: Sandro Gonzalez Schena — 30-34 ans, commerce
+    - x: -0.226
+      y: -0.395
+      groupe: 0
+      nom: Marjorie Rousseeuw
+      detail: Marjorie Rousseeuw — 40-44 ans, restauration_hotellerie
+    - x: 0.639
+      y: 0.454
+      groupe: 1
+      nom: Corentin Albertini
+      detail: Corentin Albertini — 18-24 ans, commerce
+    - x: 0.102
+      y: -1.804
+      groupe: 0
+      nom: Kelly Beaugrand
+      detail: Kelly Beaugrand — 35-39 ans, restauration_hotellerie
+    - x: -0.029
+      y: -1.584
+      groupe: 0
+      nom: Claire Pradayrol
+      detail: Claire Pradayrol — 35-39 ans, sport
+    - x: -0.438
+      y: -0.515
+      groupe: 0
+      nom: Sébastien Gottiniaux
+      detail: Sébastien Gottiniaux — 35-39 ans, sport
+    - x: 1.829
+      y: -0.162
+      groupe: 1
+      nom: Mathilde Chevalier
+      detail: Mathilde Chevalier — 18-24 ans, etudiant
+    - x: -0.158
+      y: -0.143
+      groupe: 0
+      nom: Vincent Roux
+      detail: Vincent Roux — 30-34 ans, sport
+    - x: -0.109
+      y: -0.622
+      groupe: 0
+      nom: Clémentine Julien
+      detail: Clémentine Julien — 25-29 ans, sport
+    - x: -0.385
+      y: 0.011
+      groupe: 0
+      nom: Frédéric Blancher
+      detail: Frédéric Blancher — 40-44 ans, commerce
+    - x: 1.161
+      y: -0.16
+      groupe: 1
+      nom: Marine Alves
+      detail: Marine Alves — 18-24 ans, sante
+    - x: -0.31
+      y: -0.579
+      groupe: 0
+      nom: Delphine Bruyère
+      detail: Delphine Bruyère — 35-39 ans, encadrement
+    - x: 1.761
+      y: 0.834
+      groupe: 1
+      nom: Thomas Hébert
+      detail: Thomas Hébert — 18-24 ans, etudiant
+    - x: 1.347
+      y: 0.042
+      groupe: 1
+      nom: Mel Moresve
+      detail: Mel Moresve — 25-29 ans, etudiant
+    - x: 0.56
+      y: 0.482
+      groupe: 1
+      nom: Théotime Bernardin
+      detail: Théotime Bernardin — 18-24 ans, encadrement
+    - x: 1.976
+      y: 0.386
+      groupe: 1
+      nom: Marta Morino
+      detail: Marta Morino — 18-24 ans, etudiant
+    - x: 1.976
+      y: 0.386
+      groupe: 1
+      nom: May Peitavi
+      detail: May Peitavi — 18-24 ans, etudiant
+    - x: -0.371
+      y: -0.135
+      groupe: 0
+      nom: Caroline Demartis
+      detail: Caroline Demartis — 30-34 ans, encadrement
+    - x: -0.669
+      y: 0.578
+      groupe: 0
+      nom: Manu Delanghe
+      detail: Manu Delanghe — 45 ans et plus, encadrement
+    - x: 0.101
+      y: -0.235
+      groupe: 0
+      nom: Tugdual Paul
+      detail: Tugdual Paul — 25-29 ans, arts_medias
+    - x: 0.639
+      y: 0.454
+      groupe: 1
+      nom: Marvyn Leone
+      detail: Marvyn Leone — 18-24 ans, commerce
+    - x: -0.726
+      y: 1.138
+      groupe: 0
+      nom: Sébastien Mériaux
+      detail: Sébastien Mériaux — 40-44 ans, transport
+    - x: -0.541
+      y: 0.407
+      groupe: 0
+      nom: Fabian Rocha Rocha
+      detail: Fabian Rocha Rocha — 45 ans et plus, enseignement
+    - x: -0.307
+      y: -0.736
+      groupe: 0
+      nom: Maxime Stafrach
+      detail: Maxime Stafrach — 35-39 ans, restauration_hotellerie
+    - x: -0.394
+      y: -0.149
+      groupe: 0
+      nom: Mélanie Moret
+      detail: Mélanie Moret — 30-34 ans, sans_emploi
+    - x: -0.499
+      y: -0.071
+      groupe: 0
+      nom: Romain Delaroche
+      detail: Romain Delaroche — 30-34 ans, sport
+    - x: -0.454
+      y: 0.129
+      groupe: 0
+      nom: Marguerite Leblanc
+      detail: Marguerite Leblanc — 45 ans et plus, encadrement
+    - x: -0.444
+      y: 0.21
+      groupe: 0
+      nom: Sandrine Dubourdy
+      detail: Sandrine Dubourdy — 40-44 ans, encadrement
+    - x: 0.315
+      y: -0.683
+      groupe: 0
+      nom: Magalie Gustave
+      detail: Magalie Gustave — 25-29 ans, arts_medias
+    - x: 1.976
+      y: 0.386
+      groupe: 1
+      nom: Tiffany Gounin
+      detail: Tiffany Gounin — 18-24 ans, etudiant
+    - x: 1.761
+      y: 0.834
+      groupe: 1
+      nom: André Deleplace
+      detail: André Deleplace — 18-24 ans, etudiant
+    - x: 0.714
+      y: -0.898
+      groupe: 0
+      nom: Aliséa Lecomte
+      detail: Aliséa Lecomte — 18-24 ans, sport
+    - x: 0.057
+      y: -0.316
+      groupe: 0
+      nom: Carinne Fossey Elka
+      detail: Carinne Fossey Elka — 45 ans et plus, arts_medias
+    - x: -0.231
+      y: -0.607
+      groupe: 0
+      nom: Émilie Tybot
+      detail: Émilie Tybot — 35-39 ans, commerce
+    - x: -0.515
+      y: 0.154
+      groupe: 0
+      nom: Chloé Chaize
+      detail: Chloé Chaize — 30-34 ans, agriculture
+    - x: -0.59
+      y: 0.55
+      groupe: 0
+      nom: Xavier Vançon
+      detail: Xavier Vançon — 45 ans et plus, commerce
+    - x: -0.332
+      y: 0.183
+      groupe: 0
+      nom: Alexandre André
+      detail: Alexandre André — 25-29 ans, commerce
+    - x: 0.232
+      y: -0.694
+      groupe: 0
+      nom: Béatrice Kabore
+      detail: Béatrice Kabore — 25-29 ans, sport
+    - x: 1.615
+      y: 0.287
+      groupe: 1
+      nom: Brice Chauvinc
+      detail: Brice Chauvinc — 18-24 ans, etudiant
+    - x: 0.056
+      y: -0.592
+      groupe: 0
+      nom: Sophie Chevalier
+      detail: Sophie Chevalier — 30-34 ans, sport
+    - x: 0.774
+      y: 0.034
+      groupe: 1
+      nom: Angélique Mastio
+      detail: Angélique Mastio — 18-24 ans, encadrement
+    - x: -0.33
+      y: -0.75
+      groupe: 0
+      nom: Mohamed Siaaliti
+      detail: Mohamed Siaaliti — 35-39 ans, encadrement
+    - x: -0.105
+      y: -0.231
+      groupe: 0
+      nom: Nicolas Van Brabandt
+      detail: Nicolas Van Brabandt — 35-39 ans, commerce
+    - x: -0.391
+      y: -0.306
+      groupe: 0
+      nom: Maxime Berthon
+      detail: Maxime Berthon — 30-34 ans, encadrement
+    - x: -0.354
+      y: -0.504
+      groupe: 0
+      nom: Cyril Rouanne
+      detail: Cyril Rouanne — 35-39 ans, arts_medias
+    - x: -0.069
+      y: -0.377
+      groupe: 0
+      nom: Clo Dessard Arribas
+      detail: Clo Dessard Arribas — 25-29 ans, transport
+    - x: 0.73
+      y: 0.109
+      groupe: 1
+      nom: Aurélien Soulimant
+      detail: Aurélien Soulimant — 18-24 ans, arts_medias
+    - x: -0.2
+      y: 0.335
+      groupe: 0
+      nom: Steeve Demana
+      detail: Steeve Demana — 45 ans et plus, enseignement
+    - x: -0.177
+      y: -0.754
+      groupe: 0
+      nom: Cindy Poumeyrol
+      detail: Cindy Poumeyrol — 30-34 ans, encadrement
+    - x: -0.375
+      y: 0.102
+      groupe: 0
+      nom: Maud Bamps
+      detail: Maud Bamps — 45 ans et plus, commerce
+    - x: -0.678
+      y: 0.792
+      groupe: 0
+      nom: François Zabalo
+      detail: François Zabalo — 45 ans et plus, commerce
+    - x: -0.283
+      y: -0.505
+      groupe: 0
+      nom: Carole Collado
+      detail: Carole Collado — 45 ans et plus, sans_emploi
+    - x: -0.261
+      y: -1.108
+      groupe: 0
+      nom: Samuel Degoute
+      detail: Samuel Degoute — 35-39 ans, sport
+    - x: -0.205
+      y: -0.024
+      groupe: 0
+      nom: Diane Goulesque-Perez
+      detail: Diane Goulesque-Perez — 25-29 ans, commerce
+    - x: -0.415
+      y: 0.2
+      groupe: 0
+      nom: Estelle Fabrice
+      detail: Estelle Fabrice — 45 ans et plus, enseignement
+    - x: -0.305
+      y: -0.691
+      groupe: 0
+      nom: Mathieu Blanchard
+      detail: Mathieu Blanchard — 30-34 ans, sport
+    - x: -0.409
+      y: -0.278
+      groupe: 0
+      nom: Adrien Ferreira
+      detail: Adrien Ferreira — 30-34 ans, encadrement
+    - x: 0.492
+      y: -0.093
+      groupe: 0
+      nom: Aubin Bligny
+      detail: Aubin Bligny — 18-24 ans, commerce
+    - x: -0.33
+      y: -0.75
+      groupe: 0
+      nom: Sébastien Aberlenc
+      detail: Sébastien Aberlenc — 35-39 ans, encadrement
+    - x: -0.126
+      y: -0.88
+      groupe: 0
+      nom: Hadja Cissé
+      detail: Hadja Cissé — 25-29 ans, sport
+    - x: -0.512
+      y: -0.719
+      groupe: 0
+      nom: Joaquina Glaud
+      detail: Joaquina Glaud — 35-39 ans, artisanat_btp
+    - x: -0.603
+      y: 0.396
+      groupe: 0
+      nom: Jody Favier
+      detail: Jody Favier — 30-34 ans, agriculture
+    - x: -0.558
+      y: 0.149
+      groupe: 0
+      nom: Laurent Affri
+      detail: Laurent Affri — 45 ans et plus, enseignement
+    - x: 0.085
+      y: -1.242
+      groupe: 0
+      nom: Alix Noblat
+      detail: Alix Noblat — 25-29 ans, sport
+    - x: -0.677
+      y: 0.104
+      groupe: 0
+      nom: Fabrice Pietrzak
+      detail: Fabrice Pietrzak — 45 ans et plus, artisanat_btp
+    - x: 0.217
+      y: -1.462
+      groupe: 0
+      nom: Ava Maisini
+      detail: Ava Maisini — 25-29 ans, restauration_hotellerie
+    - x: 0.199
+      y: -1.434
+      groupe: 0
+      nom: Angélique Ti
+      detail: Angélique Ti — 25-29 ans, restauration_hotellerie
+    - x: -0.741
+      y: 1.035
+      groupe: 0
+      nom: Dorian Louvet
+      detail: Dorian Louvet — 30-34 ans, transport
+    - x: 1.812
+      y: -0.134
+      groupe: 1
+      nom: Lola Besse
+      detail: Lola Besse — 18-24 ans, etudiant
+    - x: 0.179
+      y: 0.282
+      groupe: 0
+      nom: Loïc Riowal
+      detail: Loïc Riowal — 18-24 ans, sans_emploi
+    - x: 0.258
+      y: 0.625
+      groupe: 0
+      nom: Brice Petit
+      detail: Brice Petit — 18-24 ans, enseignement
+    - x: -0.388
+      y: -0.392
+      groupe: 0
+      nom: Alexandra Pornet
+      detail: Alexandra Pornet — 30-34 ans, encadrement
+    - x: -0.071
+      y: 0.668
+      groupe: 0
+      nom: Sylviane Simonnet
+      detail: Sylviane Simonnet — 40-44 ans, action_securite
+    - x: 1.006
+      y: 0.115
+      groupe: 1
+      nom: Marie Oheix
+      detail: Marie Oheix — 25-29 ans, etudiant
+    - x: 0.117
+      y: -1.036
+      groupe: 0
+      nom: Élodie Faelens
+      detail: Élodie Faelens — 35-39 ans, sport
+    - x: -0.164
+      y: 0.293
+      groupe: 0
+      nom: Candice Rousset
+      detail: Candice Rousset — 25-29 ans, action_securite
+    - x: -0.478
+      y: 0.691
+      groupe: 0
+      nom: Gabin Peillon
+      detail: Gabin Peillon — 25-29 ans, transport
+    - x: 0.143
+      y: 0.048
+      groupe: 0
+      nom: Aurélien Tesson
+      detail: Aurélien Tesson — 30-34 ans, sante
+    - x: -0.45
+      y: -0.027
+      groupe: 0
+      nom: Frédéric Baudet
+      detail: Frédéric Baudet — 45 ans et plus, restauration_hotellerie
+    - x: -0.844
+      y: 0.776
+      groupe: 0
+      nom: Hervé Comte
+      detail: Hervé Comte — 40-44 ans, artisanat_btp
+    - x: -0.213
+      y: 0.428
+      groupe: 0
+      nom: Mathieu Orsolani
+      detail: Mathieu Orsolani — 25-29 ans, agriculture
+    - x: 0.145
+      y: -0.31
+      groupe: 0
+      nom: Shanice Mendy
+      detail: Shanice Mendy — 25-29 ans, encadrement
+    - x: 0.158
+      y: -0.823
+      groupe: 0
+      nom: Myriam Chafik
+      detail: Myriam Chafik — 35-39 ans, enseignement
+    - x: -0.07
+      y: 0.139
+      groupe: 0
+      nom: Vincent Blier
+      detail: Vincent Blier — 25-29 ans, encadrement
+    - x: 0.031
+      y: -0.652
+      groupe: 0
+      nom: Laëtitia Saphores
+      detail: Laëtitia Saphores — 35-39 ans, encadrement
+    - x: -0.251
+      y: 0.277
+      groupe: 0
+      nom: Thomas Plisson
+      detail: Thomas Plisson — 35-39 ans, transport
+    - x: -0.245
+      y: 0.242
+      groupe: 0
+      nom: Flavio Soares Tavares
+      detail: Flavio Soares Tavares — 30-34 ans, encadrement
+    - x: -0.367
+      y: -0.255
+      groupe: 0
+      nom: Magali Sevenier
+      detail: Magali Sevenier — 45 ans et plus, sport
+    - x: -0.668
+      y: 0.158
+      groupe: 0
+      nom: Arnaud Deshayes
+      detail: Arnaud Deshayes — 35-39 ans, agriculture
+    - x: -0.34
+      y: 0.052
+      groupe: 0
+      nom: Laure Canevarolo
+      detail: Laure Canevarolo — 25-29 ans, agriculture
+    - x: -0.499
+      y: -0.071
+      groupe: 0
+      nom: Jonathan Julien
+      detail: Jonathan Julien — 30-34 ans, sport
+    - x: 0.117
+      y: -1.036
+      groupe: 0
+      nom: Lucie Bertaud
+      detail: Lucie Bertaud — 35-39 ans, sport
+    - x: -0.109
+      y: -0.622
+      groupe: 0
+      nom: Maxine Eouzan
+      detail: Maxine Eouzan — 25-29 ans, sport
+    - x: -0.461
+      y: -0.048
+      groupe: 0
+      nom: Lili Gasnier
+      detail: Lili Gasnier — 40-44 ans, encadrement
+    - x: 0.12
+      y: -0.576
+      groupe: 0
+      nom: Céline Dufrenoy
+      detail: Céline Dufrenoy — 40-44 ans, sante
+    - x: -0.685
+      y: 0.321
+      groupe: 0
+      nom: Franck (Le Totem Maudit)
+      detail: Franck (Le Totem Maudit) — 45 ans et plus, encadrement
+    - x: 0.566
+      y: -0.411
+      groupe: 1
+      nom: Matteo Real
+      detail: Matteo Real — 18-24 ans, arts_medias
+    - x: -0.09
+      y: -1.139
+      groupe: 0
+      nom: Samira Aït-Brahim
+      detail: Samira Aït-Brahim — 30-34 ans, sport
+    - x: 0.413
+      y: -0.065
+      groupe: 0
+      nom: Benjamin Breerette
+      detail: Benjamin Breerette — 18-24 ans, encadrement
+    - x: -0.726
+      y: -0.27
+      groupe: 0
+      nom: Jean-Philippe Masy
+      detail: Jean-Philippe Masy — 35-39 ans, artisanat_btp
+    - x: 0.085
+      y: -1.776
+      groupe: 0
+      nom: Stéphanie Tribot
+      detail: Stéphanie Tribot — 35-39 ans, restauration_hotellerie
+    - x: -0.116
+      y: -1.199
+      groupe: 0
+      nom: Alexandra Élizé
+      detail: Alexandra Élizé — 35-39 ans, encadrement
+    - x: 0.037
+      y: -1.545
+      groupe: 0
+      nom: Setha El Hajjami
+      detail: Setha El Hajjami — 35-39 ans, arts_medias
+    - x: -0.046
+      y: -0.782
+      groupe: 0
+      nom: Colin Mottas
+      detail: Colin Mottas — 25-29 ans, arts_medias
+    - x: 0.417
+      y: -0.152
+      groupe: 0
+      nom: Pauline Pourchaire
+      detail: Pauline Pourchaire — 18-24 ans, encadrement
+    - x: -0.322
+      y: -0.663
+      groupe: 0
+      nom: Yannick Zachée
+      detail: Yannick Zachée — 30-34 ans, sport
+    - x: -0.108
+      y: -1.112
+      groupe: 0
+      nom: Anne-Sophie Mounier
+      detail: Anne-Sophie Mounier — 30-34 ans, sport
+    - x: -0.391
+      y: -0.306
+      groupe: 0
+      nom: Maxime Tournoux
+      detail: Maxime Tournoux — 30-34 ans, encadrement
+    - x: -0.134
+      y: -0.523
+      groupe: 0
+      nom: Louana Roy
+      detail: Louana Roy — 25-29 ans, commerce
+    - x: -0.216
+      y: -0.409
+      groupe: 0
+      nom: Fouzi de la Fuente
+      detail: Fouzi de la Fuente — 25-29 ans, encadrement
+    - x: -0.541
+      y: -0.388
+      groupe: 0
+      nom: Nicolas Bellon
+      detail: Nicolas Bellon — 35-39 ans, encadrement
+    - x: 0.055
+      y: -1.572
+      groupe: 0
+      nom: Olga Khokhlova
+      detail: Olga Khokhlova — 35-39 ans, arts_medias
+    - x: -0.126
+      y: -0.88
+      groupe: 0
+      nom: Ambre Daudet
+      detail: Ambre Daudet — 25-29 ans, sport
+    - x: -0.667
+      y: 0.184
+      groupe: 0
+      nom: Jean-Charles Chatelus
+      detail: Jean-Charles Chatelus — 40-44 ans, artisanat_btp
+    - x: -0.181
+      y: -0.518
+      groupe: 0
+      nom: Géraldine Nicolle
+      detail: Géraldine Nicolle — 45 ans et plus, commerce
+    - x: -0.509
+      y: 0.142
+      groupe: 0
+      nom: François Descamp
+      detail: François Descamp — 35-39 ans, action_securite
+    - x: -0.322
+      y: -0.663
+      groupe: 0
+      nom: Bastien San Pedro
+      detail: Bastien San Pedro — 30-34 ans, sport
+    - x: 0.014
+      y: -0.114
+      groupe: 0
+      nom: Célia Litzellmann
+      detail: Célia Litzellmann — 45 ans et plus, enseignement
+    - x: -0.669
+      y: 0.578
+      groupe: 0
+      nom: Emin Luka
+      detail: Emin Luka — 45 ans et plus, encadrement
+    - x: -0.653
+      y: 0.794
+      groupe: 0
+      nom: Alexandre Delaunay
+      detail: Alexandre Delaunay — 30-34 ans, transport
+    - x: -0.14
+      y: -0.953
+      groupe: 0
+      nom: Elodie Migeal
+      detail: Elodie Migeal — 35-39 ans, arts_medias
+    - x: 0.592
+      y: 1.012
+      groupe: 1
+      nom: Benjamin Di Benedetto
+      detail: Benjamin Di Benedetto — 18-24 ans, action_securite
+    - x: -0.729
+      y: 0.603
+      groupe: 0
+      nom: Martin Burrus
+      detail: Martin Burrus — 30-34 ans, agriculture
+    - x: -0.327
+      y: -0.042
+      groupe: 0
+      nom: Christine Mayonnade
+      detail: Christine Mayonnade — 45 ans et plus, enseignement
+    - x: -0.726
+      y: 1.138
+      groupe: 0
+      nom: Rudy
+      detail: Rudy — 40-44 ans, transport
+    - x: -0.154
+      y: -0.534
+      groupe: 0
+      nom: Grâce Jeantel
+      detail: Grâce Jeantel — 35-39 ans, artisanat_btp
+    - x: -0.183
+      y: -0.751
+      groupe: 0
+      nom: Anne-Sophie Antoine
+      detail: Anne-Sophie Antoine — 35-39 ans, enseignement
+    - x: 0.191
+      y: -0.431
+      groupe: 0
+      nom: Helena Roosen
+      detail: Helena Roosen — 25-29 ans, sante
+    - x: -0.388
+      y: 0.531
+      groupe: 0
+      nom: Gilles De Baere
+      detail: Gilles De Baere — 30-34 ans, agriculture
+    - x: -0.04
+      y: -0.192
+      groupe: 0
+      nom: Clémence Noquet
+      detail: Clémence Noquet — 25-29 ans, artisanat_btp
+    - x: -0.58
+      y: 0.63
+      groupe: 0
+      nom: Esteban Garcia-Mora
+      detail: Esteban Garcia-Mora — 40-44 ans, commerce
+    - x: 0.14
+      y: -0.581
+      groupe: 0
+      nom: Laura Yelpa
+      detail: Laura Yelpa — 30-34 ans, arts_medias
+    - x: -0.255
+      y: 0.257
+      groupe: 0
+      nom: Quentin
+      detail: Quentin — 25-29 ans, artisanat_btp
+    - x: -0.285
+      y: -0.519
+      groupe: 0
+      nom: Julie Debever
+      detail: Julie Debever — 30-34 ans, sport
+    - x: -0.318
+      y: 0.586
+      groupe: 0
+      nom: Nicolas Pretot
+      detail: Nicolas Pretot — 40-44 ans, encadrement
+    - x: 1.161
+      y: -0.16
+      groupe: 1
+      nom: Tania Cakarevic
+      detail: Tania Cakarevic — 18-24 ans, sante
+    - x: -0.166
+      y: 0.214
+      groupe: 0
+      nom: Frédéric Khouvilay
+      detail: Frédéric Khouvilay — 30-34 ans, commerce
+    - x: -0.312
+      y: 0.721
+      groupe: 0
+      nom: Steve Grenier
+      detail: Steve Grenier — 30-34 ans, transport
+    - x: 0.433
+      y: 0.106
+      groupe: 0
+      nom: Alicia Bouly
+      detail: Alicia Bouly — 18-24 ans, encadrement
+    - x: -0.113
+      y: 0.057
+      groupe: 0
+      nom: Nathalie Suhard
+      detail: Nathalie Suhard — 45 ans et plus, encadrement
+    - x: -0.296
+      y: 1.036
+      groupe: 0
+      nom: William Plancq
+      detail: William Plancq — 45 ans et plus, action_securite
+    - x: 0.592
+      y: 1.012
+      groupe: 1
+      nom: Alexis Tchernychev
+      detail: Alexis Tchernychev — 18-24 ans, action_securite
+    - x: -0.375
+      y: 0.102
+      groupe: 0
+      nom: Émilie Clavis
+      detail: Émilie Clavis — 45 ans et plus, commerce
+    - x: -0.03
+      y: -0.207
+      groupe: 0
+      nom: Sarah Diawara
+      detail: Sarah Diawara — 30-34 ans, encadrement
+    - x: -0.659
+      y: 0.658
+      groupe: 0
+      nom: Maxime Barbet
+      detail: Maxime Barbet — 40-44 ans, encadrement
+    - x: 0.346
+      y: 0.383
+      groupe: 0
+      nom: Ricky Poyet
+      detail: Ricky Poyet — 18-24 ans, enseignement
+    - x: 0.465
+      y: 0.636
+      groupe: 1
+      nom: Léa Notardonato
+      detail: Léa Notardonato — 18-24 ans, action_securite
+    - x: 0.109
+      y: -0.679
+      groupe: 0
+      nom: Océane Montenegro
+      detail: Océane Montenegro — 35-39 ans, commerce
+    - x: -0.444
+      y: 0.21
+      groupe: 0
+      nom: Cécile Poprawa
+      detail: Cécile Poprawa — 40-44 ans, encadrement
+    - x: -0.105
+      y: -0.231
+      groupe: 0
+      nom: Aurélien Dulau
+      detail: Aurélien Dulau — 35-39 ans, commerce
+    - x: -0.595
+      y: 0.329
+      groupe: 0
+      nom: Jean Belmonte
+      detail: Jean Belmonte — 25-29 ans, artisanat_btp
+    - x: -0.117
+      y: -0.265
+      groupe: 0
+      nom: Mégane Rouland
+      detail: Mégane Rouland — 25-29 ans, commerce
+    - x: -0.71
+      y: -0.013
+      groupe: 0
+      nom: David Murail
+      detail: David Murail — 35-39 ans, artisanat_btp
+    - x: -0.43
+      y: 0.359
+      groupe: 0
+      nom: Sébastien Cazaux
+      detail: Sébastien Cazaux — 30-34 ans, artisanat_btp
+    - x: -0.318
+      y: 0.586
+      groupe: 0
+      nom: Amri Madani
+      detail: Amri Madani — 40-44 ans, encadrement
+    - x: 0.001
+      y: -0.021
+      groupe: 0
+      nom: Pauline Bonneil
+      detail: Pauline Bonneil — 25-29 ans, agriculture
+    - x: -0.495
+      y: -0.462
+      groupe: 0
+      nom: Julie Rignault
+      detail: Julie Rignault — 35-39 ans, artisanat_btp
+    - x: -0.332
+      y: 0.183
+      groupe: 0
+      nom: Meïssa Seck
+      detail: Meïssa Seck — 25-29 ans, commerce
+    - x: -0.103
+      y: 0.137
+      groupe: 0
+      nom: Léa Sahin
+      detail: Léa Sahin — 40-44 ans, encadrement
+    - x: -0.098
+      y: 0.273
+      groupe: 0
+      nom: Cécile Guy
+      detail: Cécile Guy — 30-34 ans, transport
+    - x: -0.669
+      y: 0.578
+      groupe: 0
+      nom: Ari Bentolila
+      detail: Ari Bentolila — 45 ans et plus, encadrement
+    - x: -0.117
+      y: -0.265
+      groupe: 0
+      nom: Marie Vilaseca
+      detail: Marie Vilaseca — 25-29 ans, commerce
+    - x: 0.532
+      y: -0.503
+      groupe: 0
+      nom: Lola Potabes
+      detail: Lola Potabes — 25-29 ans, sante
+    - x: -0.337
+      y: -2.231
+      groupe: 0
+      nom: Vanessa Feuillatte
+      detail: Vanessa Feuillatte — 35-39 ans, arts_medias
+    - x: -0.793
+      y: -0.949
+      groupe: 0
+      nom: Nathanaël Branchereau
+      detail: Nathanaël Branchereau — 25-29 ans, artisanat_btp
+    - x: -0.198
+      y: 0.12
+      groupe: 0
+      nom: Alexandre Cheron
+      detail: Alexandre Cheron — 30-34 ans, sante
+    - x: -0.184
+      y: -0.203
+      groupe: 0
+      nom: Michel Huy
+      detail: Michel Huy — 35-39 ans, encadrement
+    - x: 0.031
+      y: -0.652
+      groupe: 0
+      nom: Mélissa Pierru
+      detail: Mélissa Pierru — 35-39 ans, encadrement
+    - x: -0.113
+      y: 0.057
+      groupe: 0
+      nom: Emmanuelle Boisseau
+      detail: Emmanuelle Boisseau — 45 ans et plus, encadrement
+    - x: -0.318
+      y: 0.586
+      groupe: 0
+      nom: Fabrice Giordano
+      detail: Fabrice Giordano — 40-44 ans, encadrement
+    - x: -0.231
+      y: -0.607
+      groupe: 0
+      nom: Maud Collas
+      detail: Maud Collas — 35-39 ans, commerce
+    - x: -0.371
+      y: -0.135
+      groupe: 0
+      nom: Sarah Aboudeine
+      detail: Sarah Aboudeine — 30-34 ans, encadrement
+    - x: 0.034
+      y: -0.808
+      groupe: 0
+      nom: Frédéric Khouvilay
+      detail: Frédéric Khouvilay — 35-39 ans, restauration_hotellerie
+    - x: -0.478
+      y: 0.691
+      groupe: 0
+      nom: Maxim Iarkov
+      detail: Maxim Iarkov — 25-29 ans, transport
+    - x: -0.379
+      y: 0.741
+      groupe: 0
+      nom: Gustin Comanescu
+      detail: Gustin Comanescu — 25-29 ans, action_securite
+    - x: 0.604
+      y: -0.268
+      groupe: 0
+      nom: Cassandre Lambert
+      detail: Cassandre Lambert — 18-24 ans, arts_medias
+    - x: 0.117
+      y: -1.036
+      groupe: 0
+      nom: Sophia Mansouri
+      detail: Sophia Mansouri — 35-39 ans, sport
+    - x: -0.802
+      y: 0.947
+      groupe: 0
+      nom: Ugo Lartiche
+      detail: Ugo Lartiche — 40-44 ans, agriculture
+    - x: -0.013
+      y: -0.577
+      groupe: 0
+      nom: Jacques Roque
+      detail: Jacques Roque — 35-39 ans, arts_medias
+    - x: -0.357
+      y: -0.175
+      groupe: 0
+      nom: Cécile Belec
+      detail: Cécile Belec — 40-44 ans, sport
+    - x: 1.761
+      y: 0.834
+      groupe: 1
+      nom: Ilyesse Benyoub
+      detail: Ilyesse Benyoub — 18-24 ans, etudiant
+    - x: 0.273
+      y: -0.481
+      groupe: 0
+      nom: Charlotte Rasquin
+      detail: Charlotte Rasquin — 25-29 ans, enseignement
+    - x: -0.388
+      y: 0.531
+      groupe: 0
+      nom: Thibault Bélanger
+      detail: Thibault Bélanger — 30-34 ans, agriculture
+    - x: -0.319
+      y: -0.365
+      groupe: 0
+      nom: Cynthian Steinbach
+      detail: Cynthian Steinbach — 35-39 ans, commerce
+    - x: -0.377
+      y: -0.092
+      groupe: 0
+      nom: Allan Rousseeuw
+      detail: Allan Rousseeuw — 25-29 ans, agriculture
+    - x: -0.606
+      y: 0.293
+      groupe: 0
+      nom: Christian Chambon
+      detail: Christian Chambon — 45 ans et plus, commerce
+    - x: 0.432
+      y: -0.037
+      groupe: 0
+      nom: Romane Ouvrard
+      detail: Romane Ouvrard — 18-24 ans, sport
+    - x: -0.566
+      y: 0.933
+      groupe: 0
+      nom: Mehdi Bounab-Lamiral
+      detail: Mehdi Bounab-Lamiral — 25-29 ans, transport
+    - x: 0.289
+      y: -0.088
+      groupe: 0
+      nom: Benoît Piedfer
+      detail: Benoît Piedfer — 18-24 ans, sport
+    - x: -0.322
+      y: -0.663
+      groupe: 0
+      nom: Mohamed Ayari
+      detail: Mohamed Ayari — 30-34 ans, sport
+    - x: -0.029
+      y: -1.584
+      groupe: 0
+      nom: Pauline Leperchois
+      detail: Pauline Leperchois — 35-39 ans, sport
+    - x: 1.812
+      y: -0.134
+      groupe: 1
+      nom: Andréa Zogron
+      detail: Andréa Zogron — 18-24 ans, etudiant
+    - x: 0.413
+      y: -0.065
+      groupe: 0
+      nom: Adrien Bernaert
+      detail: Adrien Bernaert — 18-24 ans, encadrement
+    - x: -0.492
+      y: -0.014
+      groupe: 0
+      nom: Frédéric Pignard
+      detail: Frédéric Pignard — 45 ans et plus, encadrement
+    - x: 0.102
+      y: -1.804
+      groupe: 0
+      nom: Jessica Murcia
+      detail: Jessica Murcia — 35-39 ans, restauration_hotellerie
+    - x: 0.448
+      y: 0.379
+      groupe: 0
+      nom: Louise Picavet
+      detail: Louise Picavet — 18-24 ans, action_securite
+    - x: -0.195
+      y: -0.727
+      groupe: 0
+      nom: Joana Callico
+      detail: Joana Callico — 30-34 ans, encadrement
+    - x: 0.126
+      y: -1.028
+      groupe: 0
+      nom: Naïs Napoletano
+      detail: Naïs Napoletano — 25-29 ans, enseignement
+    - x: -0.33
+      y: -0.75
+      groupe: 0
+      nom: Pierre-Marie Ponsot
+      detail: Pierre-Marie Ponsot — 35-39 ans, encadrement
+    - x: -0.602
+      y: 0.056
+      groupe: 0
+      nom: Maxime Lubian
+      detail: Maxime Lubian — 30-34 ans, encadrement
+    - x: -0.459
+      y: 0.107
+      groupe: 0
+      nom: Noémie Bessec
+      detail: Noémie Bessec — 30-34 ans, encadrement
+    - x: -0.248
+      y: -0.865
+      groupe: 0
+      nom: Céline Faccio
+      detail: Céline Faccio — 35-39 ans, commerce
+    - x: -0.725
+      y: 1.35
+      groupe: 0
+      nom: Jérôme Salvatore
+      detail: Jérôme Salvatore — 45 ans et plus, action_securite
+    - x: 0.037
+      y: -1.545
+      groupe: 0
+      nom: Claire Passas
+      detail: Claire Passas — 35-39 ans, arts_medias
+    - x: -0.649
+      y: 0.156
+      groupe: 0
+      nom: Jérôme Molas
+      detail: Jérôme Molas — 40-44 ans, artisanat_btp
+    - x: -0.683
+      y: 0.571
+      groupe: 0
+      nom: Maël Lozach
+      detail: Maël Lozach — 25-29 ans, artisanat_btp
+    - x: -0.411
+      y: -0.407
+      groupe: 0
+      nom: Gaëlle Fleury
+      detail: Gaëlle Fleury — 30-34 ans, sans_emploi
+    - x: -0.444
+      y: 0.21
+      groupe: 0
+      nom: Françoise Fournier-Grigis
+      detail: Françoise Fournier-Grigis — 40-44 ans, encadrement
+    - x: 0.145
+      y: -0.31
+      groupe: 0
+      nom: Clémence Dubent
+      detail: Clémence Dubent — 25-29 ans, encadrement
+    - x: -0.375
+      y: 0.102
+      groupe: 0
+      nom: Karine Iraundegui
+      detail: Karine Iraundegui — 45 ans et plus, commerce
+    - x: -0.58
+      y: 0.63
+      groupe: 0
+      nom: Lionel Dubouchet
+      detail: Lionel Dubouchet — 40-44 ans, commerce
+    - x: -0.113
+      y: 0.057
+      groupe: 0
+      nom: Nora Toubal
+      detail: Nora Toubal — 45 ans et plus, encadrement
+    - x: -0.184
+      y: -0.203
+      groupe: 0
+      nom: Jonathan Guez
+      detail: Jonathan Guez — 35-39 ans, encadrement
+    - x: -0.385
+      y: 1.066
+      groupe: 0
+      nom: Ulrich Bandeira
+      detail: Ulrich Bandeira — 40-44 ans, transport
+    - x: -0.592
+      y: 0.349
+      groupe: 0
+      nom: Johan Pinaud
+      detail: Johan Pinaud — 35-39 ans, transport
+    - x: -0.097
+      y: -0.588
+      groupe: 0
+      nom: Paul Estival
+      detail: Paul Estival — 35-39 ans, sport
+    - x: 1.976
+      y: 0.386
+      groupe: 1
+      nom: Lola Krast
+      detail: Lola Krast — 18-24 ans, etudiant
+    - x: 0.049
+      y: -0.235
+      groupe: 0
+      nom: Jade Correa
+      detail: Jade Correa — 30-34 ans, commerce
+    - x: -0.339
+      y: 0.395
+      groupe: 0
+      nom: Cindy Sulpice-Gonzalez
+      detail: Cindy Sulpice-Gonzalez — 30-34 ans, action_securite
+    - x: -0.24
+      y: -0.162
+      groupe: 0
+      nom: Antonin Fortunato
+      detail: Antonin Fortunato — 25-29 ans, arts_medias
+    - x: -0.379
+      y: 0.741
+      groupe: 0
+      nom: Zakariya Bougoudouima
+      detail: Zakariya Bougoudouima — 25-29 ans, action_securite
+    - x: -0.582
+      y: 0.193
+      groupe: 0
+      nom: Daniel Duquesnoy
+      detail: Daniel Duquesnoy — 45 ans et plus, sport
+    - x: -0.07
+      y: 0.139
+      groupe: 0
+      nom: Hugo Van Aertryck
+      detail: Hugo Van Aertryck — 25-29 ans, encadrement
+    - x: -0.278
+      y: -0.049
+      groupe: 0
+      nom: Caroline Ledos
+      detail: Caroline Ledos — 35-39 ans, action_securite
+    - x: -0.07
+      y: 0.139
+      groupe: 0
+      nom: Guillaume Le Deun
+      detail: Guillaume Le Deun — 25-29 ans, encadrement
+    - x: 0.82
+      y: -0.088
+      groupe: 1
+      nom: Clarisse Cresseveur
+      detail: Clarisse Cresseveur — 18-24 ans, sante
+    - x: 0.249
+      y: -1.256
+      groupe: 0
+      nom: Cynthia Combes
+      detail: Cynthia Combes — 35-39 ans, restauration_hotellerie
+    modalites:
+    - x: 1.549
+      y: 0.501
+      libelle: 18-24 ans
+    - x: -0.034
+      y: -0.297
+      libelle: 25-29 ans
+    - x: -0.475
+      y: -0.059
+      libelle: 30-34 ans
+    - x: -0.322
+      y: -1.093
+      libelle: 35-39 ans
+    - x: -0.658
+      y: 0.742
+      libelle: 40-44 ans
+    - x: -0.684
+      y: 0.556
+      libelle: 45 ans et plus
+    - x: 0.269
+      y: -0.521
+      libelle: f
+    - x: -0.27
+      y: 0.523
+      libelle: h
+    - x: -0.247
+      y: 1.261
+      libelle: action_securite
+    - x: -0.688
+      y: 0.7
+      libelle: agriculture
+    - x: -0.792
+      y: 0.302
+      libelle: artisanat_btp
+    - x: 0.102
+      y: -0.841
+      libelle: arts_medias
+    - x: -0.128
+      y: -0.037
+      libelle: commerce
+    - x: -0.327
+      y: 0.028
+      libelle: encadrement
+    - x: -0.005
+      y: -0.37
+      libelle: enseignement
+    - x: 2.697
+      y: 0.847
+      libelle: etudiant
+    - x: 0.222
+      y: -1.379
+      libelle: restauration_hotellerie
+    - x: -0.384
+      y: -0.006
+      libelle: sans_emploi
+    - x: 0.648
+      y: -0.422
+      libelle: sante
+    - x: -0.108
+      y: -0.867
+      libelle: sport
+    - x: -0.497
+      y: 1.144
+      libelle: transport
+    - x: 0.087
+      y: -1.203
+      libelle: bleu
+    - x: 0.456
+      y: 0.07
+      libelle: jaune
+    - x: -0.898
+      y: -2.734
+      libelle: noir
+    - x: -0.623
+      y: 0.8
+      libelle: orange
+    - x: -0.402
+      y: 0.238
+      libelle: rouge
+    - x: -0.443
+      y: -0.361
+      libelle: vert
+    - x: 0.043
+      y: -1.14
+      libelle: violet
+    tests:
+    - cle: parite
+      libelle: L'equilibre hommes-femmes
+      question: L'ecart a la parite est-il plus petit que ce qu'un tirage a pile ou face donnerait ?
+      observe: 0.327
+      attendu: 1.743
+      unite: personnes
+      ecart_types: -5.36
+      p: 0.0001
+      tirages: 10000
+      lecture: 'Un ecart observe plus PETIT que l''attendu est la signature d''un quota : le hasard, lui,
+        produit des castings desequilibres de temps en temps.'
+      nulle: &id008
+        bornes:
+        - 0.2019
+        - 2.9519
+        cases:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 1
+        - 5
+        - 24
+        - 105
+        - 153
+        - 533
+        - 593
+        - 1285
+        - 1668
+        - 1156
+        - 1603
+        - 866
+        - 954
+        - 391
+        - 378
+        - 123
+        - 105
+        - 40
+        - 10
+        - 4
+        - 3
+        - 0
+        largeur_case: 0.098214
+        observe: 0.3269
+        moyenne_nulle: 1.7432
+      origine: casting
+      p_ajustee: 0.0008
+      retenu: true
+    - cle: etendue_ages
+      libelle: L'ecart d'age dans un meme casting
+      question: Un casting melange-t-il les ages plus qu'un tirage au hasard ne le ferait ?
+      observe: 9.915
+      attendu: 9.664
+      unite: annees
+      ecart_types: 2.6
+      p: 0.0118
+      tirages: 10000
+      lecture: Rebattre les aventuriers entre saisons donne l'ecart-type general. Un ecart observe PLUS
+        GRAND veut dire qu'on place expres un jeune et un ancien dans chaque casting.
+      nulle: &id009
+        bornes:
+        - 9.1913
+        - 9.984
+        cases:
+        - 0
+        - 1
+        - 4
+        - 2
+        - 5
+        - 22
+        - 35
+        - 52
+        - 91
+        - 135
+        - 193
+        - 370
+        - 499
+        - 651
+        - 877
+        - 1049
+        - 1094
+        - 1204
+        - 1146
+        - 905
+        - 726
+        - 475
+        - 266
+        - 132
+        - 53
+        - 9
+        - 4
+        - 0
+        largeur_case: 0.028308
+        observe: 9.915
+        moyenne_nulle: 9.6637
+      origine: casting
+      p_ajustee: 0.0315
+      retenu: true
+    - cle: familles_metiers
+      libelle: La variete des metiers
+      question: Un casting couvre-t-il plus de familles de metiers qu'un tirage au hasard ?
+      observe: 245.0
+      attendu: 245.785
+      unite: cases remplies
+      ecart_types: -0.15
+      p: 0.9254
+      tirages: 10000
+      lecture: On compte, pour chaque saison, le nombre de familles de metiers representees. Un total
+        observe PLUS GRAND veut dire qu'on veille a n'oublier aucune famille.
+      nulle: &id010
+        bornes:
+        - 223.95
+        - 269.05
+        cases:
+        - 0
+        - 2
+        - 2
+        - 13
+        - 35
+        - 37
+        - 157
+        - 133
+        - 477
+        - 735
+        - 477
+        - 1216
+        - 696
+        - 1516
+        - 1425
+        - 664
+        - 1038
+        - 430
+        - 492
+        - 267
+        - 68
+        - 83
+        - 16
+        - 12
+        - 5
+        - 3
+        - 1
+        - 0
+        largeur_case: 1.610714
+        observe: 245.0
+        moyenne_nulle: 245.7854
+      origine: casting
+      p_ajustee: 0.9254
+      retenu: false
+    - cle: melange_archetypes
+      libelle: Le melange d'archetypes
+      question: Chaque saison contient-elle toujours le meme melange de profils ?
+      observe: 0.078
+      attendu: 0.051
+      unite: ''
+      ecart_types: 1.93
+      p: 0.0487
+      tirages: 10000
+      lecture: Distance entre le melange de profils d'une saison et le melange general. Un observe PLUS
+        PETIT que l'attendu veut dire que les saisons se ressemblent plus que le hasard ne l'expliquerait.
+      nulle: &id011
+        bornes:
+        - 0.0106
+        - 0.1291
+        cases:
+        - 0
+        - 15
+        - 56
+        - 197
+        - 427
+        - 707
+        - 930
+        - 1175
+        - 1278
+        - 1229
+        - 995
+        - 848
+        - 645
+        - 537
+        - 335
+        - 217
+        - 150
+        - 115
+        - 62
+        - 31
+        - 22
+        - 14
+        - 6
+        - 3
+        - 5
+        - 0
+        - 1
+        - 0
+        largeur_case: 0.00423
+        observe: 0.0782
+        moyenne_nulle: 0.0509
+      origine: casting
+      p_ajustee: 0.0974
+      retenu: false
+    - cle: tribus_femmes
+      libelle: La composition des deux tribus
+      question: Les deux tribus de depart sont-elles plus semblables en part de femmes qu'un tirage au
+        hasard ne les ferait ?
+      observe: 13.025
+      attendu: 18.873
+      unite: points de %
+      ecart_types: -1.76
+      p: 0.077
+      tirages: 10000
+      lecture: On rebat les bandeaux a l'interieur de chaque saison. Un ecart observe PLUS PETIT que l'attendu
+        veut dire que les tribus sont composees a l'equilibre, pas tirees au sort.
+      nulle: &id012
+        bornes:
+        - 6.8021
+        - 34.3229
+        cases:
+        - 0
+        - 2
+        - 7
+        - 21
+        - 72
+        - 152
+        - 307
+        - 429
+        - 701
+        - 896
+        - 1084
+        - 1125
+        - 1107
+        - 1075
+        - 934
+        - 715
+        - 523
+        - 360
+        - 220
+        - 131
+        - 64
+        - 35
+        - 25
+        - 9
+        - 4
+        - 0
+        - 2
+        - 0
+        largeur_case: 0.982887
+        observe: 13.0253
+        moyenne_nulle: 18.8726
+      origine: casting
+      p_ajustee: 0.1232
+      retenu: false
+    - cle: tribus_ages
+      libelle: L'age moyen des deux tribus
+      question: Les deux tribus de depart ont-elles des ages moyens plus proches qu'un tirage au hasard
+        ne les ferait ?
+      observe: 5.75
+      attendu: 3.85
+      unite: annees
+      ecart_types: 3.03
+      p: 0.0022
+      tirages: 10000
+      lecture: 'Meme methode, sur l''age moyen de chaque bandeau. Un ecart observe PLUS GRAND que l''attendu
+        veut dire l''inverse d''un equilibre : deux tribus construites pour differer.'
+      nulle: &id013
+        bornes:
+        - 1.5354
+        - 6.486
+        cases:
+        - 0
+        - 1
+        - 7
+        - 15
+        - 58
+        - 104
+        - 209
+        - 325
+        - 529
+        - 699
+        - 896
+        - 996
+        - 1162
+        - 1068
+        - 1007
+        - 849
+        - 713
+        - 488
+        - 359
+        - 228
+        - 146
+        - 70
+        - 28
+        - 25
+        - 12
+        - 4
+        - 2
+        - 0
+        largeur_case: 0.176807
+        observe: 5.7496
+        moyenne_nulle: 3.8505
+      origine: casting
+      p_ajustee: 0.0088
+      retenu: true
+    - cle: tribus_ages_mediane
+      libelle: L'age des deux tribus, a la mediane
+      question: 'Le meme ecart, mesure a la mediane : est-il general, ou porte par quelques saisons ?'
+      observe: 4.16
+      attendu: 3.331
+      unite: annees
+      ecart_types: 1.02
+      p: 0.3162
+      tirages: 10000
+      lecture: La mediane ignore les valeurs extremes. Si elle ne s'ecarte pas, c'est que l'ecart moyen
+        tient a quelques editions et non a une regle de composition.
+      nulle: &id014
+        bornes:
+        - 0.5875
+        - 6.9125
+        cases:
+        - 0
+        - 5
+        - 8
+        - 34
+        - 71
+        - 202
+        - 363
+        - 541
+        - 731
+        - 924
+        - 1084
+        - 1037
+        - 1140
+        - 898
+        - 828
+        - 697
+        - 493
+        - 349
+        - 237
+        - 157
+        - 102
+        - 51
+        - 24
+        - 13
+        - 6
+        - 4
+        - 1
+        - 0
+        largeur_case: 0.225893
+        observe: 4.1597
+        moyenne_nulle: 3.331
+      origine: casting
+      p_ajustee: 0.4216
+      retenu: false
+    sensibilite:
+    - cle: etendue_ages
+      p: 0.01
+      attendu: 9.662
+      observe: 9.915
+    - cle: familles_metiers
+      p: 0.9221
+      attendu: 244.281
+      observe: 245.0
+    - cle: melange_archetypes
+      p: 0.955
+      attendu: 0.079
+      observe: 0.078
+  pronostic:
+    effectif: 505
+    saisons: 26
+    vainqueurs: 29
+    variables:
+    - age
+    - age_centre_carre
+    - femme
+    - taille_casting
+    - annee
+    - metier:action_securite
+    - metier:agriculture
+    - metier:artisanat_btp
+    - metier:arts_medias
+    - metier:commerce
+    - metier:encadrement
+    - metier:enseignement
+    - metier:etudiant
+    - metier:restauration_hotellerie
+    - metier:sans_emploi
+    - metier:sante
+    - metier:sport
+    - metier:transport
+    - couleur:bleu
+    - couleur:jaune
+    - couleur:noir
+    - couleur:orange
+    - couleur:rouge
+    - couleur:vert
+    - couleur:violet
+    rang_moyen: 10.75
+    rang_hasard: 10.21
+    rang_intervalle:
+    - 8.77
+    - 12.65
+    r2_survie_lineaire: -0.004
+    r2_survie_arbre: -0.001
+    importances:
+    - variable: couleur:vert
+      perte: 0.62
+    - variable: metier:sport
+      perte: 0.54
+    - variable: metier:enseignement
+      perte: 0.5
+    - variable: metier:agriculture
+      perte: 0.27
+    - variable: metier:sante
+      perte: 0.24
+    - variable: couleur:orange
+      perte: 0.14
+    - variable: metier:arts_medias
+      perte: 0.12
+    - variable: metier:transport
+      perte: 0.02
+    tests:
+    - cle: pronostic_vainqueur
+      libelle: Pronostiquer le vainqueur au casting
+      question: En ne connaissant que l'age, le sexe, le metier et la couleur, place-t-on le futur vainqueur
+        plus haut que le hasard ne le ferait ?
+      observe: 10.75
+      attendu: 10.222
+      unite: rang moyen
+      ecart_types: 0.49
+      p: 0.6307
+      tirages: 10000
+      lecture: Le modele classe les candidats d'une saison ; on releve la place qu'il donne a celui qui
+        a gagne. Plus BAS que l'attendu veut dire qu'une part du resultat se joue au recrutement.
+      nulle: &id015
+        bornes:
+        - 6.1885
+        - 14.7346
+        cases:
+        - 0
+        - 6
+        - 5
+        - 32
+        - 58
+        - 133
+        - 180
+        - 308
+        - 476
+        - 623
+        - 832
+        - 973
+        - 1117
+        - 1103
+        - 1040
+        - 902
+        - 776
+        - 576
+        - 383
+        - 223
+        - 130
+        - 60
+        - 39
+        - 11
+        - 6
+        - 5
+        - 3
+        - 0
+        largeur_case: 0.30522
+        observe: 10.75
+        moyenne_nulle: 10.2215
+      origine: pronostic
+      p_ajustee: 0.7208
+      retenu: false
+    classement:
+    - nom: Ambre Daudet
+      saison: s23
+      score: -1.18
+      vainqueur: false
+    - nom: Benoît Piedfer
+      saison: s27
+      score: -1.249
+      vainqueur: false
+    - nom: Hadja Cissé
+      saison: s21
+      score: -1.266
+      vainqueur: false
+    - nom: Louana Roy
+      saison: s23
+      score: -1.291
+      vainqueur: false
+    - nom: Laurent Boudes
+      saison: s07
+      score: -1.387
+      vainqueur: false
+    - nom: Grégoire Delachaux
+      saison: s07
+      score: -1.552
+      vainqueur: false
+    - nom: Maryline Hemelsdael
+      saison: s07
+      score: -1.631
+      vainqueur: false
+    - nom: Pauline Pourchaire
+      saison: s23
+      score: -1.633
+      vainqueur: false
+    - nom: Simon Quintilla
+      saison: s07
+      score: -1.642
+      vainqueur: false
+    - nom: Ludovic Laresche
+      saison: s06
+      score: -1.671
+      vainqueur: false
+    - nom: Richard Lecourt
+      saison: s03
+      score: -1.675
+      vainqueur: false
+    - nom: Céline Faccio
+      saison: s27
+      score: -1.706
+      vainqueur: false
+  force:
+    epreuves_retenues: 247
+    saisons_retenues: 24
+    epreuves_ecartees_saison: 18
+    vainqueur_hors_plateau: 9
+    taux_echec_reconstruction: 3.52
+    joueurs: 321
+    seuil: 8
+    classes: 128
+    classement:
+    - id: claude-dartois
+      nom: Claude Dartois
+      force: 4.67
+      bas: 2.55
+      haut: 7.65
+      victoires: 15
+      disputees: 39
+      ratio: 38.5
+    - id: teheiura-teahui
+      nom: Teheiura Teahui
+      force: 3.92
+      bas: 1.84
+      haut: 6.47
+      victoires: 11
+      disputees: 36
+      ratio: 30.6
+    - id: maxime-berthon
+      nom: Maxime Berthon
+      force: 3.91
+      bas: 1.78
+      haut: 5.61
+      victoires: 6
+      disputees: 15
+      ratio: 40.0
+    - id: clemence-noquet
+      nom: Clémence Noquet
+      force: 3.47
+      bas: 0.71
+      haut: 6.12
+      victoires: 3
+      disputees: 8
+      ratio: 37.5
+    - id: clemence
+      nom: Clémence
+      force: 3.01
+      bas: 0.56
+      haut: 6.09
+      victoires: 2
+      disputees: 9
+      ratio: 22.2
+    - id: martin-bazin
+      nom: Martin Bazin
+      force: 2.64
+      bas: 0.76
+      haut: 5.2
+      victoires: 4
+      disputees: 13
+      ratio: 30.8
+    - id: gilles-de-baere
+      nom: Gilles De Baere
+      force: 2.48
+      bas: 0.48
+      haut: 5.16
+      victoires: 2
+      disputees: 8
+      ratio: 25.0
+    - id: bertrand-bolle
+      nom: Bertrand Bolle
+      force: 2.41
+      bas: 0.95
+      haut: 4.3
+      victoires: 7
+      disputees: 22
+      ratio: 31.8
+    - id: mohamed-derradji
+      nom: Mohamed Derradji
+      force: 2.4
+      bas: 0.81
+      haut: 4.52
+      victoires: 4
+      disputees: 10
+      ratio: 40.0
+    - id: nicolas-pretot
+      nom: Nicolas Pretot
+      force: 2.35
+      bas: 0.55
+      haut: 4.75
+      victoires: 4
+      disputees: 14
+      ratio: 28.6
+    - id: nicolas-rouye
+      nom: Nicolas Rouyé
+      force: 2.3
+      bas: 0.57
+      haut: 3.99
+      victoires: 3
+      disputees: 8
+      ratio: 37.5
+    - id: naoil-tita
+      nom: Naoil Tita
+      force: 2.26
+      bas: 0.44
+      haut: 4.68
+      victoires: 2
+      disputees: 8
+      ratio: 25.0
+    - id: philippe-duron
+      nom: Philippe Duron
+      force: 2.22
+      bas: 0.44
+      haut: 4.2
+      victoires: 3
+      disputees: 11
+      ratio: 27.3
+    - id: karima-neggaz
+      nom: Karima Neggaz
+      force: 2.08
+      bas: 0.4
+      haut: 4.18
+      victoires: 2
+      disputees: 8
+      ratio: 25.0
+    - id: sam-haliti
+      nom: Sam Haliti
+      force: 2.01
+      bas: 0.35
+      haut: 4.22
+      victoires: 2
+      disputees: 16
+      ratio: 12.5
+    - id: william-lecomte
+      nom: William Lecomte
+      force: 2.01
+      bas: 0.36
+      haut: 3.97
+      victoires: 3
+      disputees: 9
+      ratio: 33.3
+    - id: meissa-seck
+      nom: Meïssa Seck
+      force: 2.0
+      bas: 0.44
+      haut: 3.58
+      victoires: 3
+      disputees: 10
+      ratio: 30.0
+    - id: gregoire-delachaux
+      nom: Grégoire Delachaux
+      force: 1.87
+      bas: 0.39
+      haut: 3.92
+      victoires: 2
+      disputees: 8
+      ratio: 25.0
+    - id: angelique-ti
+      nom: Angélique Ti
+      force: 1.79
+      bas: 0.33
+      haut: 3.38
+      victoires: 2
+      disputees: 9
+      ratio: 22.2
+    - id: lola-besse
+      nom: Lola Besse
+      force: 1.79
+      bas: 0.34
+      haut: 4.12
+      victoires: 2
+      disputees: 9
+      ratio: 22.2
+    pentes:
+    - nom: Claude Dartois
+      rang_force: 1
+      rang_victoires: 1
+      force: 4.67
+      victoires: 15
+    - nom: Teheiura Teahui
+      rang_force: 2
+      rang_victoires: 2
+      force: 3.92
+      victoires: 11
+    - nom: Maxime Berthon
+      rang_force: 3
+      rang_victoires: 5
+      force: 3.91
+      victoires: 6
+    - nom: Clémence Noquet
+      rang_force: 4
+      rang_victoires: 11
+      force: 3.47
+      victoires: 3
+    - nom: Clémence
+      rang_force: 5
+      rang_victoires: 34
+      force: 3.01
+      victoires: 2
+    - nom: Martin Bazin
+      rang_force: 6
+      rang_victoires: 7
+      force: 2.64
+      victoires: 4
+    - &id006
+      nom: Gilles De Baere
+      rang_force: 7
+      rang_victoires: 38
+      force: 2.48
+      victoires: 2
+    - nom: Bertrand Bolle
+      rang_force: 8
+      rang_victoires: 3
+      force: 2.41
+      victoires: 7
+    - nom: Mohamed Derradji
+      rang_force: 9
+      rang_victoires: 8
+      force: 2.4
+      victoires: 4
+    - nom: Nicolas Pretot
+      rang_force: 10
+      rang_victoires: 9
+      force: 2.35
+      victoires: 4
+    - nom: Candice Boisson
+      rang_force: 21
+      rang_victoires: 10
+      force: 1.78
+      victoires: 3
+    - nom: François-David Cardonnel
+      rang_force: 27
+      rang_victoires: 6
+      force: 1.7
+      victoires: 4
+    - &id007
+      nom: Jade Handi
+      rang_force: 38
+      rang_victoires: 4
+      force: 1.34
+      victoires: 6
+    plus_forte_montee: *id006
+    plus_forte_chute: *id007
+  force_et_jeu:
+    effectif: 265
+    voix:
+      libelle: Bulletins recus, par epreuve disputee
+      force:
+        estimation: 0.908
+        bas: 0.785
+        haut: 1.049
+        p: 0.1882
+      femme:
+        estimation: 1.193
+        bas: 0.945
+        haut: 1.506
+        p: 0.1384
+      age:
+        estimation: 1.144
+        bas: 1.011
+        haut: 1.295
+        p: 0.0334
+      lecture: Rapport de taux par doublement de la force. Au-dessus de 1, un athlete attire davantage
+        de bulletins.
+    survie:
+      libelle: Part de la saison tenue
+      force:
+        estimation: -0.629
+        bas: -3.961
+        haut: 2.704
+        p: 0.7115
+      femme:
+        estimation: -4.404
+        bas: -9.191
+        haut: 0.383
+        p: 0.0714
+      age:
+        estimation: -1.933
+        bas: -4.691
+        haut: 0.824
+        p: 0.1693
+      lecture: Points de pourcentage gagnes quand la force double.
+  equilibre:
+    rattrapage:
+      effectif: 106
+      saisons: 18
+      ecart_max: 4
+      rapport_de_cotes: 0.927
+      bas: 0.712
+      haut: 1.209
+      p: 0.5771
+      lecture: Cote de victoire de la tribu jaune quand elle compte un aventurier de plus. Au-dessus de
+        1, l'avantage du nombre joue ; en dessous, la tribu en difficulte se rattrape ; a 1, l'effectif
+        ne change rien.
+    cox:
+      effectif: 505
+      eliminations: 395
+      censures: 110
+      coefficients:
+      - variable: Femme
+        rapport: 1.221
+        bas: 0.992
+        haut: 1.503
+        p: 0.0599
+      - variable: Age (par decennie)
+        rapport: 1.05
+        bas: 0.929
+        haut: 1.186
+        p: 0.436
+      - variable: Bandeau jaune
+        rapport: 1.034
+        bas: 0.819
+        haut: 1.307
+        p: 0.7766
+      - variable: Deja venu
+        rapport: 0.351
+        bas: 0.253
+        haut: 0.487
+        p: 0.0
+      - variable: 'Metier : artisanat_btp'
+        rapport: 0.832
+        bas: 0.539
+        haut: 1.285
+        p: 0.4068
+      - variable: 'Metier : arts_medias'
+        rapport: 0.916
+        bas: 0.618
+        haut: 1.357
+        p: 0.6612
+      - variable: 'Metier : commerce'
+        rapport: 1.282
+        bas: 0.896
+        haut: 1.835
+        p: 0.1748
+      - variable: 'Metier : encadrement'
+        rapport: 1.464
+        bas: 1.076
+        haut: 1.992
+        p: 0.0153
+      - variable: 'Metier : etudiant'
+        rapport: 1.279
+        bas: 0.791
+        haut: 2.069
+        p: 0.315
+      - variable: 'Metier : sport'
+        rapport: 0.925
+        bas: 0.618
+        haut: 1.387
+        p: 0.7073
+      lecture: Rapport de risque d'elimination, a saison identique. Au-dessus de 1, on sort plus vite
+        que la reference ; en dessous, plus lentement. L'intervalle qui contient 1 veut dire que ces donnees
+        ne permettent pas de conclure.
+  hasard_mecanique:
+    conseils: 501
+    conseils_hors_finale: 427
+    paliers:
+    - palier: 0-10 %
+      observe: 8.6
+      mecanique: 5.4
+      conseils: 77
+      presents_moyen: 18.8
+      rapport: 1.59
+    - palier: 10-20 %
+      observe: 7.5
+      mecanique: 6.0
+      conseils: 47
+      presents_moyen: 16.9
+      rapport: 1.25
+    - palier: 20-30 %
+      observe: 9.0
+      mecanique: 6.6
+      conseils: 44
+      presents_moyen: 15.4
+      rapport: 1.36
+    - palier: 30-40 %
+      observe: 10.4
+      mecanique: 7.3
+      conseils: 52
+      presents_moyen: 13.8
+      rapport: 1.42
+    - palier: 40-50 %
+      observe: 11.7
+      mecanique: 8.9
+      conseils: 59
+      presents_moyen: 11.4
+      rapport: 1.31
+    - palier: 50-60 %
+      observe: 15.4
+      mecanique: 10.6
+      conseils: 47
+      presents_moyen: 9.6
+      rapport: 1.45
+    - palier: 60-70 %
+      observe: 16.9
+      mecanique: 13.0
+      conseils: 54
+      presents_moyen: 7.8
+      rapport: 1.3
+    - palier: 70-80 %
+      observe: 26.2
+      mecanique: 17.7
+      conseils: 47
+      presents_moyen: 5.7
+      rapport: 1.48
+    - palier: 80-90 %
+      observe: 74.5
+      mecanique: 24.3
+      conseils: 61
+      presents_moyen: 4.2
+      rapport: 3.07
+    - palier: 90-100 %
+      observe: 89.7
+      mecanique: 35.9
+      conseils: 13
+      presents_moyen: 2.8
+      rapport: 2.5
+    ecart_moyen: 5.0
+    rapport_moyen: 1.4
+    correlation: 0.517
+    lecture: 'Risque observe de sortir a un conseil, et risque qu''un simple 1/nombre-de-presents predit.
+      Les deux derniers paliers sont ceux de la finale : tout le monde y sort le meme jour, et la comparaison
+      n''y a plus de sens.'
+  mecaniques:
+    saisons: 24
+    mecaniques_testees:
+    - collier_immunite
+    - destins_lies
+    effets:
+    - mecanique: collier_immunite
+      sur: dispersion_votes
+      saisons: 14
+      effet: 0.06
+      bas: -0.03
+      haut: 0.15
+      p: 0.2071
+    - mecanique: destins_lies
+      sur: dispersion_votes
+      saisons: 5
+      effet: -0.04
+      bas: -0.13
+      haut: 0.04
+      p: 0.312
+    - mecanique: collier_immunite
+      sur: taux_abandon
+      saisons: 14
+      effet: -2.18
+      bas: -11.46
+      haut: 7.1
+      p: 0.6454
+    - mecanique: destins_lies
+      sur: taux_abandon
+      saisons: 5
+      effet: -0.3
+      bas: -7.69
+      haut: 7.09
+      p: 0.9371
+    lecture: Effet de la presence d'une mecanique, l'annee tenue constante. Un intervalle qui contient
+      zero veut dire que ces vingt-six saisons ne permettent pas de conclure.
+  registre:
+  - cle: parite
+    libelle: L'equilibre hommes-femmes
+    question: L'ecart a la parite est-il plus petit que ce qu'un tirage a pile ou face donnerait ?
+    origine: casting
+    observe: 0.327
+    attendu: 1.743
+    unite: personnes
+    ecart_types: -5.36
+    p: 0.0001
+    p_ajustee: 0.0008
+    retenu: true
+    tirages: 10000
+    lecture: 'Un ecart observe plus PETIT que l''attendu est la signature d''un quota : le hasard, lui,
+      produit des castings desequilibres de temps en temps.'
+    nulle: *id008
+  - cle: etendue_ages
+    libelle: L'ecart d'age dans un meme casting
+    question: Un casting melange-t-il les ages plus qu'un tirage au hasard ne le ferait ?
+    origine: casting
+    observe: 9.915
+    attendu: 9.664
+    unite: annees
+    ecart_types: 2.6
+    p: 0.0118
+    p_ajustee: 0.0315
+    retenu: true
+    tirages: 10000
+    lecture: Rebattre les aventuriers entre saisons donne l'ecart-type general. Un ecart observe PLUS
+      GRAND veut dire qu'on place expres un jeune et un ancien dans chaque casting.
+    nulle: *id009
+  - cle: familles_metiers
+    libelle: La variete des metiers
+    question: Un casting couvre-t-il plus de familles de metiers qu'un tirage au hasard ?
+    origine: casting
+    observe: 245.0
+    attendu: 245.785
+    unite: cases remplies
+    ecart_types: -0.15
+    p: 0.9254
+    p_ajustee: 0.9254
+    retenu: false
+    tirages: 10000
+    lecture: On compte, pour chaque saison, le nombre de familles de metiers representees. Un total observe
+      PLUS GRAND veut dire qu'on veille a n'oublier aucune famille.
+    nulle: *id010
+  - cle: melange_archetypes
+    libelle: Le melange d'archetypes
+    question: Chaque saison contient-elle toujours le meme melange de profils ?
+    origine: casting
+    observe: 0.078
+    attendu: 0.051
+    unite: ''
+    ecart_types: 1.93
+    p: 0.0487
+    p_ajustee: 0.0974
+    retenu: false
+    tirages: 10000
+    lecture: Distance entre le melange de profils d'une saison et le melange general. Un observe PLUS
+      PETIT que l'attendu veut dire que les saisons se ressemblent plus que le hasard ne l'expliquerait.
+    nulle: *id011
+  - cle: tribus_femmes
+    libelle: La composition des deux tribus
+    question: Les deux tribus de depart sont-elles plus semblables en part de femmes qu'un tirage au hasard
+      ne les ferait ?
+    origine: casting
+    observe: 13.025
+    attendu: 18.873
+    unite: points de %
+    ecart_types: -1.76
+    p: 0.077
+    p_ajustee: 0.1232
+    retenu: false
+    tirages: 10000
+    lecture: On rebat les bandeaux a l'interieur de chaque saison. Un ecart observe PLUS PETIT que l'attendu
+      veut dire que les tribus sont composees a l'equilibre, pas tirees au sort.
+    nulle: *id012
+  - cle: tribus_ages
+    libelle: L'age moyen des deux tribus
+    question: Les deux tribus de depart ont-elles des ages moyens plus proches qu'un tirage au hasard
+      ne les ferait ?
+    origine: casting
+    observe: 5.75
+    attendu: 3.85
+    unite: annees
+    ecart_types: 3.03
+    p: 0.0022
+    p_ajustee: 0.0088
+    retenu: true
+    tirages: 10000
+    lecture: 'Meme methode, sur l''age moyen de chaque bandeau. Un ecart observe PLUS GRAND que l''attendu
+      veut dire l''inverse d''un equilibre : deux tribus construites pour differer.'
+    nulle: *id013
+  - cle: tribus_ages_mediane
+    libelle: L'age des deux tribus, a la mediane
+    question: 'Le meme ecart, mesure a la mediane : est-il general, ou porte par quelques saisons ?'
+    origine: casting
+    observe: 4.16
+    attendu: 3.331
+    unite: annees
+    ecart_types: 1.02
+    p: 0.3162
+    p_ajustee: 0.4216
+    retenu: false
+    tirages: 10000
+    lecture: La mediane ignore les valeurs extremes. Si elle ne s'ecarte pas, c'est que l'ecart moyen
+      tient a quelques editions et non a une regle de composition.
+    nulle: *id014
+  - cle: pronostic_vainqueur
+    libelle: Pronostiquer le vainqueur au casting
+    question: En ne connaissant que l'age, le sexe, le metier et la couleur, place-t-on le futur vainqueur
+      plus haut que le hasard ne le ferait ?
+    origine: pronostic
+    observe: 10.75
+    attendu: 10.222
+    unite: rang moyen
+    ecart_types: 0.49
+    p: 0.6307
+    p_ajustee: 0.7208
+    retenu: false
+    tirages: 10000
+    lecture: Le modele classe les candidats d'une saison ; on releve la place qu'il donne a celui qui
+      a gagne. Plus BAS que l'attendu veut dire qu'une part du resultat se joue au recrutement.
+    nulle: *id015
+  nb_tests: 8
+  nb_retenus: 3

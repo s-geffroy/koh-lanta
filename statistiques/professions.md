@@ -66,3 +66,8 @@ selon une table publique et relisible. Un intitulé comme « éducateur sportif 
 rejoint le sport et non l’enseignement, « maître-nageur » rejoint l’action et le
 secours et non le sport : l’ordre des règles tranche ces cas, et il est
 documenté. Voir les <a href="{{ '/sources/' | relative_url }}">sources</a>.</p>
+
+<p class="note">Ce renversement tient-il une fois l’âge, le sexe et la saison
+tenus constants ? Oui : <a href="{{ '/statistiques/equilibre/' | relative_url }}">
+un modèle de durée</a> donne aux métiers d’encadrement un risque
+d’élimination supérieur de 46 %, intervalle 1,08 à 1,99.</p>

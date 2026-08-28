@@ -14,6 +14,7 @@ grossit, moins on peut le relire a l'oeil, et plus il faut que les invariants
 soient verifies par une machine.
 """
 import os
+import re
 import sys
 from collections import Counter, defaultdict
 
@@ -287,6 +288,14 @@ def verifier_colliers(colliers, saisons, parts, c):
                   f"— {', '.join(libelles[:6])}")
 
 
+# Ce qui trahit un fragment de wikitexte reste dans un nom d'aventurier :
+# une taille de vignette (« 75px »), une barre verticale, un parametre de lien,
+# ou un espace de noms de fichier.
+RE_RESIDU_WIKI = re.compile(
+    r"\b\d{2,4}px\b|\||\blink\s*=|\b(?:File|Fichier|Image|Media)\s*:|"
+    r"\bvignette\b|\bthumb\b|\[\[|\]\]", re.I)
+
+
 def verifier_conseils(conseils, saisons, parts, c):
     """Le scrutin final n'est pas un conseil, et rien ne doit les confondre.
 
@@ -326,7 +335,23 @@ def verifier_conseils(conseils, saisons, parts, c):
                 c.erreur(f"{ref} : le vainqueur de la saison y est donne pour "
                          f"elimine — c'est le vote du jury, pas un conseil")
 
+        # Un libelle non rattache reste tel quel dans le fichier : il doit au
+        # moins ressembler a un nom. La syntaxe de vignette MediaWiki --
+        # [[Fichier:Sara.png|75px|link=Sara Tallon]] -- a longtemps traverse
+        # l'extraction et laissait « 75px » en guise d'aventurier, rendant 478
+        # eliminations sur 681 non rattachables. La faute est corrigee dans
+        # `plain()` ; ce controle est la pour qu'elle ne revienne pas.
+        for champ in ("elimine", "laureat"):
+            v = x.get(champ)
+            if isinstance(v, str) and RE_RESIDU_WIKI.search(v):
+                c.erreur(f"{ref} : `{champ}` porte de la syntaxe MediaWiki "
+                         f"(« {v} ») — l'extraction a laisse passer une vignette")
         for b in x.get("votes") or []:
+            for champ in ("votant", "cible"):
+                v = b.get(champ)
+                if isinstance(v, str) and RE_RESIDU_WIKI.search(v):
+                    c.erreur(f"{ref} : bulletin dont `{champ}` porte de la "
+                             f"syntaxe MediaWiki (« {v} »)")
             if b.get("votant_rattache") and (x["saison"], b["votant"]) not in ids:
                 c.erreur(f"{ref} : votant « {b['votant']} » absent des participations")
             if b.get("cible_rattachee") and (x["saison"], b["cible"]) not in ids:

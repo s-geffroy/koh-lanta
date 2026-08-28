@@ -17,8 +17,14 @@ adaptés à ce que ces données permettent réellement.
 
 Un aventurier sur lequel **personne n’a jamais écrit un nom** de toute la
 saison, on peut l’appeler un fantôme. Il y en a **{{ i.nb_fantomes }}**, sur
-{{ i.comparables }} participations mesurables. Voici ce qu’ils deviennent,
-comparés à tout le monde :
+{{ i.comparables }} participations mesurables. Voici ce qu’ils deviennent.
+
+<p class="note"><strong>La colonne qui compte est la deuxième.</strong> Un
+fantôme a par définition traversé au moins {{ i.seuil_fantome }} conseils sans
+être écrit : le comparer à <em>tous</em> les aventuriers, celui qui est sorti au
+premier conseil compris, mélangerait deux choses — ne pas être visé, et être
+allé loin. La comparaison juste se fait aux {{ i.endurants }} aventuriers qui
+ont tenu aussi longtemps. La troisième colonne, elle, est donnée pour mémoire.</p>
 
 {% include graphiques/fantomes-issue.svg %}
 
@@ -26,28 +32,48 @@ comparés à tout le monde :
 <table data-triable>
 <thead><tr>
   <th>Sort final</th><th class="nombre">Chez les fantômes</th>
-  <th class="nombre">Chez tous</th><th class="nombre">Écart</th>
+  <th class="nombre">Chez ceux qui ont tenu autant</th>
+  <th class="nombre">Écart</th><th class="nombre">Chez tous</th>
 </tr></thead>
 <tbody>
 {% for x in i.fantomes_issue %}
 <tr>
   <td>{{ x.libelle }}</td>
   <td class="nombre">{{ x.part_fantomes }} %</td>
+  <td class="nombre">{{ x.part_endurants }} %</td>
+  <td class="nombre">{{ x.part_fantomes | minus: x.part_endurants | round: 1 }}</td>
   <td class="nombre">{{ x.part_ensemble }} %</td>
-  <td class="nombre">{{ x.part_fantomes | minus: x.part_ensemble | round: 1 }}</td>
 </tr>
 {% endfor %}
 </tbody>
 </table>
 </div>
 
-**{{ i.fantomes_issue[0].part_fantomes }} % des fantômes gagnent la saison**,
-contre {{ i.fantomes_issue[0].part_ensemble }} % de l’ensemble — **cinq fois et
-demie plus**. Et seulement {{ i.fantomes_issue[1].part_fantomes }} % d’entre eux
-sont éliminés au conseil, contre {{ i.fantomes_issue[1].part_ensemble }} %.
+{% assign fv = i.fantomes_issue | where: "sort", "vainqueur" | first %}
+{% assign fc = i.fantomes_issue | where: "sort", "elimine_conseil" | first %}
+{% assign fa = i.fantomes_issue | where: "sort", "abandon_medical" | first %}
 
-Ne jamais être écrit sur un bulletin est le meilleur prédicteur de victoire que
-ces données contiennent — devant l’âge, devant le métier, devant les épreuves.
+**{{ fv.part_fantomes }} % des fantômes gagnent la saison**, contre
+{{ fv.part_endurants }} % de ceux qui ont tenu aussi longtemps : **deux fois et
+demie plus**. Et {{ fc.part_fantomes }} % seulement sont éliminés au conseil,
+contre {{ fc.part_endurants }} % — mais c’est presque une tautologie : on
+n’élimine pas au conseil quelqu’un dont personne n’écrit le nom.
+
+Le vrai écart est ailleurs, et il est inattendu.
+
+<div class="constat">
+  <p><b>{{ fa.part_fantomes }} % des fantômes quittent le jeu sur décision
+  médicale</b>, contre {{ fa.part_endurants }} % de leurs pairs — quatre fois
+  plus.</p>
+  <p>Un corps qui lâche n’est plus une menace, et l’on n’écrit pas le nom de
+  quelqu’un qu’on voit décliner. L’invisibilité au conseil n’est donc pas
+  seulement une performance sociale : c’est aussi, parfois, le signe qu’on a
+  cessé d’être un adversaire.</p>
+</div>
+
+Ne jamais être écrit sur un bulletin reste le meilleur prédicteur de victoire
+que ces données contiennent — mais il ne se connaît qu’en cours de jeu.
+Au casting, [rien ne prédit rien]({{ '/statistiques/pronostic/' | relative_url }}).
 
 <div class="tableau-large">
 <table data-triable>

@@ -24,7 +24,7 @@
     - titre: Vue d'ensemble
       url: /statistiques/
       hub: true
-      resume: Les neuf entrées, et les chiffres qui les tiennent.
+      resume: Les quinze entrées, et les chiffres qui les tiennent.
     - titre: Le profil du vainqueur
       url: /statistiques/vainqueurs/
       resume: "Âge, sexe, métier, couleur : ce que les vainqueurs ont en commun."
@@ -58,6 +58,21 @@
     - titre: Les revenants
       url: /statistiques/revenants/
       resume: "Le retour paie-t-il ? Le chiffre évident est un piège."
+    # Les quatre pages qui reposent sur des modeles et non sur des comptages.
+    # Elles viennent apres les pages descriptives : on ne teste bien qu'un
+    # ecart qu'on a d'abord regarde.
+    - titre: La recette du casting
+      url: /statistiques/casting/
+      resume: "La parité est un quota. Le reste ne l'est pas."
+    - titre: Le pronostic
+      url: /statistiques/pronostic/
+      resume: La fiche d'inscription contient-elle déjà le vainqueur ?
+    - titre: La force réelle
+      url: /statistiques/force/
+      resume: Le classement des athlètes, corrigé du temps passé en jeu.
+    - titre: Le jeu tenu serré
+      url: /statistiques/equilibre/
+      resume: "Le risque qui monte, la tribu qui se rattrape : deux illusions."
 
 - section: Les données
   entrees:
@@ -70,3 +85,6 @@
     - titre: Les sources
       url: /sources/
       resume: D'où viennent ces données, et ce qui leur manque.
+    - titre: La méthode
+      url: /methode/
+      resume: Les modèles, la liste complète des tests, et leurs limites.

@@ -130,3 +130,9 @@ et poteaux ne sont donc pas comptés.
 **La nature des épreuves n’est pas connue** — endurance, équilibre, précision,
 aquatique. Les sources ne la donnent pas de façon exploitable. Tant qu’elle
 manquera, aucune analyse par type d’épreuve ne figurera ici.
+
+<p class="note">Un total de victoires mélange le niveau et le temps passé en
+jeu, et une victoire au premier épisode ne vaut pas une victoire à
+l’avant-dernier. <a href="{{ '/statistiques/force/' | relative_url }}">La force
+réelle</a> sépare les deux par un modèle, et publie le classement avec ses
+intervalles.</p>

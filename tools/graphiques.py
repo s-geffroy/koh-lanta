@@ -656,6 +656,257 @@ def halteres(donnees, *, titre, description, unite="", largeur=880,
     return fig.rendu()
 
 
+def distribution_nulle(test, *, titre=None, description=None, largeur=680,
+                       hauteur=250, couleur=None):
+    """Ce que le hasard produirait, et ou tombe ce qu'on observe.
+
+    La figure signature d'un test de permutation, et la seule facon honnete de
+    montrer une p-value : la silhouette est la distribution des dizaines de
+    milliers de tirages ; le trait vertical est la valeur reelle. Si le trait
+    tombe dans la masse, il n'y a rien a annoncer -- et cela se VOIT, au lieu
+    de se deduire d'un nombre.
+
+    `test` : un element du registre de tools/modeles.py.
+    """
+    nulle = test.get("nulle") or {}
+    cases = nulle.get("cases") or []
+    if not cases:
+        return ""
+    bas, haut = nulle["bornes"]
+    etendue = (haut - bas) or 1.0
+    marge_g, marge_d = 46, 22
+    plafond, sol = 46, 46
+    piste = largeur - marge_g - marge_d
+    sommet = max(cases) or 1
+
+    def px(v):
+        return marge_g + piste * (v - bas) / etendue
+
+    fig = Figure(largeur, hauteur,
+                 titre or test.get("libelle") or "Distribution nulle",
+                 description or test.get("question") or "")
+    zero = hauteur - sol
+    fig.ajouter(f'<line x1="{marge_g}" y1="{zero}" x2="{largeur - marge_d}" '
+                f'y2="{zero}" stroke="{GRILLE}" stroke-width="1"/>')
+
+    teinte = couleur or SERIES[4]
+    largeur_case = piste / len(cases)
+    for i, n in enumerate(cases):
+        if not n:
+            continue
+        h = (hauteur - plafond - sol) * n / sommet
+        x = marge_g + i * largeur_case
+        borne_b = bas + etendue * i / len(cases)
+        borne_h = bas + etendue * (i + 1) / len(cases)
+        info = (f"{n} tirages sur {test.get('tirages')} entre "
+                f"{borne_b:.3g} et {borne_h:.3g}")
+        fig.ajouter(f'<g class="marque"><title>{e(info)}</title>'
+                    f'<rect x="{x + 0.8:.1f}" y="{zero - h:.1f}" '
+                    f'width="{max(0.6, largeur_case - 1.6):.1f}" height="{h:.1f}" '
+                    f'fill="{teinte}" opacity="0.45"/></g>')
+
+    # La moyenne des tirages : ce que le hasard donne « en general ».
+    xm = px(nulle["moyenne_nulle"])
+    fig.ajouter(f'<line x1="{xm:.1f}" y1="{plafond - 6}" x2="{xm:.1f}" y2="{zero}" '
+                f'stroke="{ENCRE_MUETTE}" stroke-width="1" stroke-dasharray="3 3"/>')
+    fig.ajouter(_texte(xm, plafond - 12, "attendu", ancre="middle",
+                       couleur=ENCRE_MUETTE, taille=11))
+
+    # La valeur observee.
+    xo = px(nulle["observe"])
+    ancre = "end" if xo > marge_g + piste * 0.6 else "start"
+    decalage = -7 if ancre == "end" else 7
+    fig.ajouter(f'<line x1="{xo:.1f}" y1="{plafond - 20}" x2="{xo:.1f}" y2="{zero + 6}" '
+                f'stroke="{ENCRE}" stroke-width="2.4"/>')
+    unite = (" " + test["unite"]) if test.get("unite") else ""
+    fig.ajouter(_texte(xo + decalage, plafond - 24,
+                       f'observé : {test["observe"]}{unite}', ancre=ancre,
+                       couleur=ENCRE, taille=12, gras=True))
+
+    for v, ancre_t in ((bas, "start"), (haut, "end")):
+        fig.ajouter(_texte(px(v), zero + 18, f"{v:.3g}", ancre=ancre_t,
+                           couleur=ENCRE_DOUCE, taille=11))
+    p = test.get("p_ajustee", test.get("p"))
+    mention = "p < 0,001" if p is not None and p < 0.001 else f"p = {p}".replace(".", ",")
+    fig.ajouter(_texte(largeur - marge_d, zero + 34,
+                       f'{test.get("tirages", 0):,}'.replace(",", " ")
+                       + f" tirages · {mention}", ancre="end",
+                       couleur=ENCRE_MUETTE, taille=11))
+    return fig.rendu()
+
+
+def foret(donnees, *, titre, description, reference=1.0, unite="",
+          largeur=760, hauteur_ligne=26, marge_gauche=232, note=None):
+    """Un coefficient par ligne, avec son intervalle et la valeur neutre.
+
+    Un point sans son intervalle laisse croire a une precision qui n'existe
+    pas. Ici la longueur du trait EST l'incertitude, et le trait vertical
+    marque la valeur qui veut dire « aucun effet » : un intervalle qui la
+    traverse se lit d'un coup d'oeil, sans arbitrer sur une p-value.
+
+    `donnees` : [{"libelle":…, "estimation":…, "bas":…, "haut":…, "couleur":…}]
+    """
+    donnees = [d for d in donnees if d.get("estimation") is not None]
+    if not donnees:
+        return ""
+    haut_marge, bas_marge, droite = 40, 40 + (18 if note else 0), 92
+    hauteur = haut_marge + bas_marge + len(donnees) * hauteur_ligne
+    piste = largeur - marge_gauche - droite
+    vmin = min(min(d["bas"], reference) for d in donnees)
+    vmax = max(max(d["haut"], reference) for d in donnees)
+    marge = (vmax - vmin) * 0.08 or 0.1
+    vmin, vmax = vmin - marge, vmax + marge
+    etendue = (vmax - vmin) or 1
+
+    def px(v):
+        return marge_gauche + piste * (v - vmin) / etendue
+
+    fig = Figure(largeur, hauteur, titre, description)
+    xr = px(reference)
+    fig.ajouter(f'<line x1="{xr:.1f}" y1="{haut_marge - 14}" x2="{xr:.1f}" '
+                f'y2="{hauteur - bas_marge + 6}" stroke="{ENCRE_DOUCE}" '
+                f'stroke-width="1.4" stroke-dasharray="4 3"/>')
+    fig.ajouter(_texte(xr, haut_marge - 20, f"{reference:g}", ancre="middle",
+                       couleur=ENCRE_DOUCE, taille=11))
+
+    for i, d in enumerate(donnees):
+        y = haut_marge + i * hauteur_ligne + hauteur_ligne / 2
+        traverse = d["bas"] <= reference <= d["haut"]
+        teinte = d.get("couleur") or (ENCRE_MUETTE if traverse else SERIES[0])
+        info = d.get("detail") or (
+            f'{d["libelle"]} : {d["estimation"]}{unite} '
+            f'(intervalle {d["bas"]} à {d["haut"]})')
+        fig.ajouter(f'<g class="marque"><title>{e(info)}</title>'
+                    f'<line x1="{px(d["bas"]):.1f}" y1="{y:.1f}" '
+                    f'x2="{px(d["haut"]):.1f}" y2="{y:.1f}" stroke="{teinte}" '
+                    f'stroke-width="2.6" stroke-linecap="round" opacity="0.55"/>'
+                    f'<circle cx="{px(d["estimation"]):.1f}" cy="{y:.1f}" r="4.4" '
+                    f'fill="{teinte}" stroke="{SURFACE}" stroke-width="1.6"/>'
+                    f'</g>')
+        fig.ajouter(_texte(marge_gauche - 10, y, d["libelle"], ancre="end",
+                           couleur=ENCRE, taille=11.5))
+        fig.ajouter(_texte(largeur - droite + 12, y,
+                           f'{d["estimation"]}{unite}', couleur=ENCRE_DOUCE,
+                           taille=11.5))
+    if note:
+        fig.ajouter(_texte(marge_gauche, hauteur - 14, note, couleur=ENCRE_MUETTE,
+                           taille=11))
+    return fig.rendu()
+
+
+def plan(points, *, titre, description, x_titre="", y_titre="", reperes=None,
+         legende=None, largeur=940, hauteur=440):
+    """Un nuage a deux axes libres, pour un plan factoriel.
+
+    `nuage()` impose une ordonnee en pourcentage : ici les deux axes sont des
+    coordonnees quelconques, et l'origine -- le profil moyen -- est marquee.
+
+    `points` : [{"x":…, "y":…, "couleur":…, "detail":…}]
+    `reperes` : [{"x":…, "y":…, "libelle":…}] — les modalites a nommer.
+    """
+    points = [p for p in points if p.get("x") is not None and p.get("y") is not None]
+    if not points:
+        return ""
+    marge_g, marge_d = 54, 24
+    haut, bas = 30 + (22 if legende else 0), 46
+    piste_x = largeur - marge_g - marge_d
+    piste_y = hauteur - haut - bas
+    tous = points + list(reperes or [])
+    xmin, xmax = min(p["x"] for p in tous), max(p["x"] for p in tous)
+    ymin, ymax = min(p["y"] for p in tous), max(p["y"] for p in tous)
+    mx, my = (xmax - xmin) * 0.06 or 0.1, (ymax - ymin) * 0.08 or 0.1
+    xmin, xmax, ymin, ymax = xmin - mx, xmax + mx, ymin - my, ymax + my
+
+    def px(v):
+        return marge_g + piste_x * (v - xmin) / ((xmax - xmin) or 1)
+
+    def py(v):
+        return haut + piste_y * (1 - (v - ymin) / ((ymax - ymin) or 1))
+
+    fig = Figure(largeur, hauteur, titre, description)
+    fig.ajouter(f'<line x1="{px(0):.1f}" y1="{haut}" x2="{px(0):.1f}" '
+                f'y2="{hauteur - bas}" stroke="{GRILLE}" stroke-width="1"/>')
+    fig.ajouter(f'<line x1="{marge_g}" y1="{py(0):.1f}" x2="{largeur - marge_d}" '
+                f'y2="{py(0):.1f}" stroke="{GRILLE}" stroke-width="1"/>')
+
+    for p in points:
+        teinte = p.get("couleur") or SERIES[0]
+        fig.ajouter(f'<g class="marque"><title>{e(p.get("detail") or "")}</title>'
+                    f'<circle cx="{px(p["x"]):.1f}" cy="{py(p["y"]):.1f}" r="3.2" '
+                    f'fill="{teinte}" opacity="0.42"/></g>')
+
+    for r in (reperes or []):
+        fig.ajouter(f'<circle cx="{px(r["x"]):.1f}" cy="{py(r["y"]):.1f}" r="3" '
+                    f'fill="{SURFACE}" stroke="{ENCRE}" stroke-width="1.6"/>')
+        fig.ajouter(_texte(px(r["x"]) + 7, py(r["y"]) - 1, r["libelle"],
+                           couleur=ENCRE, taille=11))
+
+    if x_titre:
+        fig.ajouter(_texte(largeur - marge_d, hauteur - 16, x_titre, ancre="end",
+                           couleur=ENCRE_DOUCE, taille=11.5))
+    if y_titre:
+        fig.ajouter(_texte(marge_g, haut - 10, y_titre, couleur=ENCRE_DOUCE,
+                           taille=11.5))
+    if legende:
+        x = marge_g
+        for nom, teinte in legende:
+            fig.ajouter(f'<circle cx="{x + 5}" cy="13" r="4.5" fill="{teinte}"/>')
+            fig.ajouter(_texte(x + 15, 14, nom, couleur=ENCRE, taille=12))
+            x += 30 + 7.2 * len(nom)
+    return fig.rendu()
+
+
+def pentes(lignes, *, titre, description, gauche, droite, largeur=700,
+           hauteur_ligne=25, marge=176):
+    """Deux classements, et le trait qui relie la meme personne de l'un a l'autre.
+
+    Un tableau a deux colonnes de rangs se lit mal : l'oeil doit apparier les
+    lignes lui-meme. Ici la pente FAIT le travail -- une montee se voit sans
+    lire un seul chiffre.
+
+    `lignes` : [{"libelle":…, "rang_gauche": int, "rang_droite": int, "couleur":…}]
+    """
+    lignes = [l for l in lignes if l.get("rang_gauche") and l.get("rang_droite")]
+    if not lignes:
+        return ""
+    haut, bas = 46, 30
+    n = len(lignes)
+    hauteur = haut + bas + n * hauteur_ligne
+    xg, xd = marge, largeur - marge
+    rmax = max(max(l["rang_gauche"], l["rang_droite"]) for l in lignes)
+    rmin = min(min(l["rang_gauche"], l["rang_droite"]) for l in lignes)
+
+    def y(rang):
+        return haut + (hauteur - haut - bas) * (rang - rmin) / ((rmax - rmin) or 1)
+
+    fig = Figure(largeur, hauteur, titre, description)
+    fig.ajouter(_texte(xg, haut - 20, gauche, ancre="end", couleur=ENCRE_DOUCE,
+                       taille=11.5, gras=True))
+    fig.ajouter(_texte(xd, haut - 20, droite, couleur=ENCRE_DOUCE,
+                       taille=11.5, gras=True))
+
+    for l in lignes:
+        monte = l["rang_droite"] < l["rang_gauche"]
+        teinte = l.get("couleur") or (SERIES[2] if monte else SERIES[1])
+        plat = l["rang_droite"] == l["rang_gauche"]
+        if plat:
+            teinte = ENCRE_MUETTE
+        yg, yd = y(l["rang_gauche"]), y(l["rang_droite"])
+        info = (f'{l["libelle"]} : {l["rang_gauche"]}\u1d49 au classement brut, '
+                f'{l["rang_droite"]}\u1d49 une fois corrige')
+        fig.ajouter(f'<g class="marque"><title>{e(info)}</title>'
+                    f'<line x1="{xg + 6}" y1="{yg:.1f}" x2="{xd - 6}" y2="{yd:.1f}" '
+                    f'stroke="{teinte}" stroke-width="1.8" opacity="0.75"/>'
+                    f'<circle cx="{xg + 6}" cy="{yg:.1f}" r="3" fill="{teinte}"/>'
+                    f'<circle cx="{xd - 6}" cy="{yd:.1f}" r="3" fill="{teinte}"/>'
+                    f'</g>')
+        fig.ajouter(_texte(xg - 6, yg, f'{l["rang_gauche"]}. {l["libelle"]}',
+                           ancre="end", couleur=ENCRE, taille=11))
+        fig.ajouter(_texte(xd + 6, yd, f'{l["rang_droite"]}. {l["libelle"]}',
+                           couleur=ENCRE, taille=11))
+    return fig.rendu()
+
+
 def frise(lignes, *, titre, description, debut, fin, largeur=980,
           hauteur_ligne=16, marge_gauche=214, legende=None):
     """Une barre par saison, posee sur un axe de temps commun.

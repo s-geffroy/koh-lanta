@@ -88,3 +88,10 @@ départs. Le tout premier conseil est le plus meurtrier de la saison.
 </tbody>
 </table>
 </div>
+
+<p class="note">Cette courbe se lit moins vite qu’il n’y paraît. Un conseil
+fait sortir une personne quel que soit le nombre de présents : le risque
+individuel vaut donc mécaniquement 1 ÷ nombre de présents, et cette fraction
+monte toute seule à mesure que le camp se vide.
+<a href="{{ '/statistiques/equilibre/' | relative_url }}">Le jeu tenu serré</a>
+compare les deux courbes : la montée est arithmétique, pas ludique.</p>

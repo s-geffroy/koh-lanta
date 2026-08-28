@@ -95,6 +95,10 @@ def construire(saisons, parts, rapport):
             continue
 
         idx = index.get(sid, {})
+        # Bornes du vote de jury, calculees avant la boucle : le dernier numero
+        # de conseil de la saison, et le nombre de vainqueurs declares.
+        dernier_conseil = max((c["numero"] for c in meilleure), default=0)
+        nb_laureats = max(1, len(s.get("vainqueurs") or []))
         for c in meilleure:
             elimine_id, echec = resoudre(c["elimine"], idx)
             if echec:
@@ -115,7 +119,22 @@ def construire(saisons, parts, rapport):
                     "cible_rattachee": bool(cid),
                     "annule": b["annule"],
                 })
-            jury = bool(elimine_id) and (sid, elimine_id) in vainqueurs
+            # Nommer le vainqueur ne suffit pas a faire un vote de jury : il
+            # faut aussi que le conseil soit a sa place. Une saison a k
+            # vainqueurs declares tient k scrutins de jury -- un par laureat
+            # quand le jury s'est partage -- et ce sont les k derniers. Un
+            # conseil de milieu de saison qui donne le vainqueur « sortant »
+            # n'est pas un vote de jury : c'est une extraction fautive, et on
+            # prefere ne rien affirmer plutot que d'affirmer faux.
+            gagnant = bool(elimine_id) and (sid, elimine_id) in vainqueurs
+            final = c["numero"] > dernier_conseil - nb_laureats
+            jury = gagnant and final
+            if gagnant and not final:
+                rapport.append(f"{sid} conseil {c['numero']} : ABERRANT — "
+                               f"« {c['elimine']} » gagne la saison mais serait "
+                               f"sortant au conseil {c['numero']}/{dernier_conseil} ; "
+                               f"elimine laisse non rattache")
+                elimine_id = None
             if jury:
                 rapport.append(f"{sid} conseil {c['numero']} : vote du JURY FINAL "
                                f"(« {c['elimine']} » n'est pas sortant, il gagne)")

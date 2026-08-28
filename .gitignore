@@ -32,3 +32,10 @@ specs/koh-lanta/*.pdf
 # Cache de compilation Python, produit par l'atelier a chaque execution.
 __pycache__/
 *.pyc
+
+# Espace de comparaison des constructions : on y depose la version precedente
+# d'un fichier genere pour mesurer ce qu'un changement deplace, et on verifie
+# la reproductibilite en construisant deux fois. Rien de tout cela n'est du
+# contenu ; le conteneur ne voit que /depot, d'ou un repertoire ici plutot que
+# dans /tmp.
+.compare/

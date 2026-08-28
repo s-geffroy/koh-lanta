@@ -115,14 +115,47 @@ Le jeu de données n’est pas complet, et le dire fait partie du travail.
   dépouillement complet <em>et</em> un éliminé rattaché : quelques dizaines de
   conseils, pas les {{ site.data.stats.conseils.conseils }}. L’indicateur est
   publié avec sa base, et penche vers les saisons les mieux documentées.
-- **Le vote du jury final n’est pas un conseil.** Huit saisons en publient le
-  détail, et les tableaux sources le présentent comme un scrutin ordinaire —
+- **Le vote du jury final n’est pas un conseil.** Vingt-neuf saisons en
+  publient le détail, et les tableaux sources le présentent comme un scrutin
+  ordinaire —
   avec le vainqueur en « sortant ». Or on n’y élimine personne : écrire un nom
   y signifie « qu’il gagne ». Ces {{ site.data.stats.jury.effectif }} scrutins
   sont marqués `type: jury` dans les données et tenus à l’écart de tout calcul
   d’élimination.
 - **La saison en cours** au moment de la constitution des données n’a pas de
   vainqueur ni de jours de sortie complets : elle est exclue de tous les calculs.
+
+## Une correction d’extraction, et ce qu’elle a déplacé
+
+Les tableaux de Fandom affichent une vignette à côté du nom de l’éliminé :
+`[[Fichier:Sara.png|75px|link=Sara Tallon]]`. Le nettoyage du wikitexte traitait
+ce lien de fichier comme un lien ordinaire et en gardait la **taille
+d’affichage**. Résultat : 478 conseils sur 681 portaient « 75px » en guise
+d’aventurier, et n’étaient rattachables à personne.
+
+La correction se fait à la racine, dans le nettoyage du wikitexte : un lien de
+fichier ne rend plus que sa cible `link=`, ou rien. Les éliminés rattachés
+passent de 203 à **578**, et l’index « épisode de sortie » — celui qui donne
+l’exposition aux épreuves — de 248 à environ 600 participations sur 645. Un
+contrôle refuse désormais tout nom contenant de la syntaxe MediaWiki.
+
+Trois chiffres publiés ont bougé, tous dans le sens d’une base plus large :
+
+- les **votes du jury final** détectés passent de 8 à
+  {{ site.data.stats.jury.effectif }}. Vingt-quatre scrutins étaient comptés
+  comme des éliminations ordinaires, ce qui inversait le sens de leurs
+  bulletins ;
+- le nombre d’aventuriers classables aux **ratios d’épreuves** passe de 89 à
+  {{ site.data.stats.epreuves.classement_effectif }} ;
+- les **fantômes** passent de 38 à
+  {{ site.data.stats.indicateurs.nb_fantomes }}, l’ancien décompte reposant sur
+  211 participations mesurables au lieu de
+  {{ site.data.stats.indicateurs.mesurables }}. Leur taux de victoire, mesuré
+  cette fois contre un groupe de comparaison correct, en est nettement réduit.
+
+Deux conseils restent volontairement non rattachés : leur source donne le
+vainqueur de la saison pour sortant en milieu de parcours, ce qui est
+impossible. Plutôt que de trancher, on laisse la valeur vide.
 
 ## Comment c’est fabriqué
 
@@ -134,3 +167,10 @@ la saison, une couleur de tribu qui existe bien dans la saison, toute clé
 
 Les statistiques et les graphiques sont calculés en amont, une fois, et non à
 l’affichage : le site ne fait que présenter un résultat déjà vérifié.
+
+Quatre pages reposent en outre sur des **modèles** plutôt que sur des comptages :
+régression, analyse factorielle, modèle de durée, tests de permutation. Leurs
+tirages aléatoires partent tous d’une graine fixe, et la construction est jouée
+deux fois pour vérifier qu’elle rend le même fichier au bit près.
+[La méthode]({{ '/methode/' | relative_url }}) en donne le détail et la liste
+complète des tests.

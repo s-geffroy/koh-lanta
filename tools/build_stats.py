@@ -24,11 +24,12 @@ import yaml
 RACINE = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 sys.path.insert(0, os.path.join(RACINE, "tools", "extraction"))
 from csp import classer, libelles           # noqa: E402
-import analyses                              # noqa: E402
+import analyses
+import modeles                              # noqa: E402
 sys.path.insert(0, os.path.join(RACINE, "tools"))
 from indicateurs import (eliminations, votes_du_jury,  # noqa: E402
                          indicateurs_individuels, indicateurs_saison,  # noqa: E402
-                         fantomes, SEUIL_CONSEILS, SEUIL_EPREUVES)
+                         fantomes, SEUIL_CONSEILS, SEUIL_EPREUVES, SEUIL_FANTOME)
 
 ENTETE = """# ATTENTION : fichier genere. Ne pas editer a la main.
 #
@@ -586,6 +587,9 @@ def bloc_indicateurs(saisons, parts, conseils, epreuves, colliers):
 
     saisons_avancees = indicateurs_saison(saisons, parts, conseils, epreuves, colliers)
     invisibles = fantomes(lignes)
+    # Le groupe de comparaison juste : ceux qui ont traverse autant de conseils
+    # qu'un fantome, qu'ils aient ete vises ou non.
+    endurants = [x for x in lignes if x["conseils_assistes"] >= SEUIL_FANTOME]
 
     def moyenne_par(champ, cle):
         groupes = defaultdict(list)
@@ -614,9 +618,18 @@ def bloc_indicateurs(saisons, parts, conseils, epreuves, colliers):
             {"sort": k, "libelle": LIBELLE_SORT.get(k, k), "effectif": n,
              "part_fantomes": part(n, len(invisibles)),
              "part_ensemble": part(
-                 sum(1 for x in lignes if x["sort"] == k), len(lignes))}
+                 sum(1 for x in lignes if x["sort"] == k), len(lignes)),
+             # La bonne reference. Un fantome a par definition traverse au
+             # moins SEUIL_FANTOME conseils sans etre ecrit : le comparer a
+             # TOUS les aventuriers, celui sorti au premier conseil compris,
+             # melange deux choses -- ne pas etre vise, et etre alle loin. La
+             # comparaison juste se fait a ceux qui ont tenu aussi longtemps.
+             "part_endurants": part(
+                 sum(1 for x in endurants if x["sort"] == k), len(endurants))}
             for k, n in Counter(x["sort"] for x in invisibles).most_common()],
         "comparables": len(lignes),
+        "endurants": len(endurants),
+        "seuil_fantome": SEUIL_FANTOME,
         "justesse_par_sort": moyenne_par("justesse_vote", "sort"),
         "menace_par_sort": moyenne_par("menace", "sort"),
         "saisons": saisons_avancees,
@@ -677,6 +690,14 @@ def main():
         "indicateurs": bloc_indicateurs(saisons, parts, conseils, epreuves, colliers),
     }
 
+    # Les modeles viennent en dernier : ils s'appuient sur les indicateurs de
+    # saison calcules juste au-dessus, et ce sont les seuls calculs du fichier
+    # a reposer sur un tirage. Leur graine est fixe (modeles.GRAINE) et
+    # `tools/verifie_site.py` refuse tout tirage qui n'en derive pas.
+    stats["modeles"] = modeles.tout(
+        par_saison, parts, conseils, epreuves,
+        (stats["indicateurs"] or {}).get("saisons") or [])
+
     # les records renvoient des participations entieres : on n'en garde que l'utile
     for cle in ("plus_jeune_vainqueur", "plus_age_vainqueur"):
         p = stats["records"].get(cle)
@@ -694,6 +715,11 @@ def main():
 
     g = stats["general"]
     print(f"ecrit : {chemin}")
+    m = stats.get("modeles") or {}
+    if m:
+        print(f"  modeles : {m['nb_tests']} tests declares, {m['nb_retenus']} retenus "
+              f"apres Benjamini-Hochberg ; force estimee sur "
+              f"{(m.get('force') or {}).get('epreuves_retenues', 0)} epreuves")
     print(f"  {g['saisons_diffusees']} saisons diffusees "
           f"({g['saisons_classiques']} classiques, {g['saisons_speciales']} speciales), "
           f"{g['participations']} participations, {g['personnes']} personnes")

@@ -135,3 +135,9 @@ précoces à tous les âges, et des vainqueurs répartis de vingt à cinquante a
 </tbody>
 </table>
 </div>
+
+<p class="note">Ces écarts sont des moyennes brutes : ils mélangent l’âge, le
+métier et l’époque, qui n’ont pas la même composition d’une saison à l’autre.
+<a href="{{ '/statistiques/equilibre/' | relative_url }}">Le jeu tenu serré</a>
+les sépare par un modèle de durée — et l’écart hommes-femmes y rétrécit
+jusqu’au bord du détectable.</p>

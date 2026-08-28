@@ -137,3 +137,10 @@ personnes.</p>
 **{{ r.nb_duos_recurrents }} duos** se sont retrouvés sur au moins deux saisons.
 En tête, **{{ r.duos[0].a }} et {{ r.duos[0].b }}**, qui ont joué
 {{ r.duos[0].saisons }} fois ensemble.
+
+<p class="note">Le biais se retrouve tel quel dans un modèle multivarié : à
+âge, sexe, métier et saison identiques, un aventurier déjà venu est éliminé
+trois fois moins vite, et c’est le plus gros coefficient du modèle
+(<a href="{{ '/statistiques/equilibre/' | relative_url }}">Le jeu tenu serré</a>).
+Aucun contrôle statistique ne répare une sélection faite sur la variable même
+qu’on étudie.</p>

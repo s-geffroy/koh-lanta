@@ -58,3 +58,10 @@ deux cents aventuriers chacun : il n’y a pas de signal.
 <p class="note">La couleur noire correspond à la tribu maudite de 2024 et à
 l’île des héros de 2020 : deux aventuriers seulement, aucune conclusion
 possible.</p>
+
+<p class="note">Deux autres pages recoupent ce résultat. Un modèle de durée
+ne trouve aucun effet du bandeau sur le risque d’élimination
+(<a href="{{ '/statistiques/equilibre/' | relative_url }}">Le jeu tenu serré</a>).
+Et les deux tribus de départ ne sont pas composées à l’équilibre par une règle
+générale : trois saisons seulement opposent nettement deux générations
+(<a href="{{ '/statistiques/casting/' | relative_url }}">La recette du casting</a>).</p>

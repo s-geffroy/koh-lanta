@@ -20,6 +20,7 @@ from collections import Counter, defaultdict
 
 SEUIL_CONSEILS = 4        # sous ce nombre, un taux de vote n'a pas de sens
 SEUIL_EPREUVES = 8        # idem pour un ratio d'epreuves
+SEUIL_FANTOME = 5         # nombre de conseils traverses sans etre ecrit
 
 
 def eliminations(conseils):
@@ -320,6 +321,6 @@ def fantomes(lignes_individuelles):
     for x in lignes_individuelles:
         # `voix_recues` doit valoir zero, pas etre inconnu : une source muette
         # ferait passer pour intouchable quelqu'un dont on ignore tout.
-        if x["voix_recues"] == 0 and x["conseils_assistes"] >= 5:
+        if x["voix_recues"] == 0 and x["conseils_assistes"] >= SEUIL_FANTOME:
             out.append(x)
     return sorted(out, key=lambda x: (-x["conseils_assistes"], -(x["survie"] or 0)))

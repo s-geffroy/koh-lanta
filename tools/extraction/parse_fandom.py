@@ -28,6 +28,23 @@ def strip_refs(t):
 # nettoyage. {{nobr|49 ans}} vaut « 49 ans », pas rien du tout.
 RE_ENVELOPPE = re.compile(r"\{\{\s*(?:nobr|nowrap|no br)\s*\|(.*?)\}\}", re.I | re.S)
 
+# Un lien de fichier n'est PAS du texte : il affiche une image. Ses options de
+# rendu -- « 75px », « vignette », « gauche » -- n'ont donc rien a faire dans
+# le nom d'un aventurier. La regle generique des liens les y laissait entrer :
+# [[Fichier:Sara.png|75px|link=Sara Tallon]] rendait « 75px|link=Sara Tallon »,
+# et 478 eliminations sur 681 restaient non rattachees a cause de cela.
+#
+# Seule la cible `link=` porte un nom lisible. Le nom du FICHIER en porte un
+# aussi (« Marie.png »), mais le lire serait deviner : on ne le fait pas.
+RE_FICHIER = re.compile(r"\[\[\s*(?:File|Fichier|Image)\s*:([^\]]*)\]\]", re.I | re.S)
+RE_LIEN_CIBLE = re.compile(r"\blink\s*=\s*([^|\]]+)", re.I)
+
+
+def _sans_fichier(m):
+    cible = RE_LIEN_CIBLE.search(m.group(1))
+    return " " + cible.group(1).strip() + " " if cible else " "
+
+
 def plain(t):
     """Reduit un fragment de wikitexte a du texte lisible."""
     t = strip_refs(t)
@@ -35,6 +52,7 @@ def plain(t):
         t, n = RE_ENVELOPPE.subn(r"\1", t)
         if not n:
             break
+    t = RE_FICHIER.sub(_sans_fichier, t)
     t = re.sub(r"\[\[[^\]|]+\|([^\]]+)\]\]", r"\1", t)
     t = re.sub(r"\[\[([^\]|]+)\]\]", r"\1", t)
     for _ in range(3):
