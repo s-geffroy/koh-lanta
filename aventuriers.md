@@ -16,8 +16,8 @@ une ou plusieurs fois.
 
 <div class="filtres" data-filtre="tableau-aventuriers">
   <div class="champ">
-    <label for="q">Chercher un nom, un métier, une tribu</label>
-    <input type="search" id="q" data-role="texte" placeholder="Teheiura, plombier, Ratanak…" autocomplete="off">
+    <label for="q">Chercher un nom, un métier, une tribu, un département</label>
+    <input type="search" id="q" data-role="texte" placeholder="Ugo Lartiche, plombier, Ratanak, Gironde…" autocomplete="off">
   </div>
 
   <div class="champ">
@@ -57,12 +57,22 @@ Sans JavaScript, la recherche et les filtres disparaissent, mais le tableau
 reste entier et lisible, dans l’ordre chronologique des saisons puis de
 sortie.</p>
 
+<p class="note"><strong>Rang et épreuves gagnées</strong> viennent des fiches
+individuelles du wiki Fandom, qui sont les seules à les porter : ils manquent
+donc là où la fiche manque. Le palmarès y compte tout ce que le wiki appelle une
+victoire — duels de l’île des bannis et épreuves de finale compris — là où
+<a href="{{ '/statistiques/epreuves/' | relative_url }}">la page des épreuves</a>
+ne compte que ce qui figure au bilan épisode par épisode. Les deux comptes sont
+identiques dans sept cas sur dix ; <a href="{{ '/sources/' | relative_url }}">Les
+sources</a> disent pourquoi pas dans les trois autres.</p>
+
 <div class="tableau-large tableau-haut">
 <table id="tableau-aventuriers" data-triable>
 <thead><tr>
   <th>Aventurier</th><th>Saison</th><th class="nombre">Année</th>
   <th class="nombre">Âge</th><th>Sexe</th><th>Métier</th>
-  <th>Tribu</th><th class="nombre">Jour de sortie</th><th>Sortie</th>
+  <th>Origine</th><th>Tribu</th><th class="nombre">Jour de sortie</th>
+  <th class="nombre">Rang</th><th class="nombre">Épreuves gagnées</th><th>Sortie</th>
 </tr></thead>
 <tbody>
 {% assign saisons = site.data.saisons %}
@@ -76,8 +86,11 @@ sortie.</p>
   <td class="nombre">{{ p.age }}</td>
   <td>{% if p.genre == "f" %}F{% elsif p.genre == "h" %}H{% endif %}</td>
   <td>{{ p.profession }}</td>
+  <td>{{ p.localisation }}</td>
   <td>{% if p.couleur %}<span class="pastille" style="background: var(--tribu-{{ p.couleur }})"></span>{% endif %}{{ p.tribu }}</td>
   <td class="nombre">{{ p.jour_sortie }}</td>
+  <td class="nombre">{{ p.classement }}</td>
+  <td class="nombre"{% if p.victoires_individuelles %} data-val="{{ p.victoires_individuelles }}"{% endif %}>{% if p.victoires_individuelles %}{{ p.victoires_individuelles }} ind.{% if p.victoires_collectives %} · {{ p.victoires_collectives }} coll.{% endif %}{% endif %}</td>
   <td>{{ p.motif }}</td>
 </tr>
 {% endfor %}

@@ -106,7 +106,11 @@ signifie que ces données ne permettent pas de conclure.</p>
 
 Trois lignes méritent d’être lues de près.
 
-**« Déjà venu » : risque ×0.351.** Un aventurier qui a joué une autre saison est
+{% assign cx = m.equilibre.cox.coefficients %}
+{% assign c_revenu = cx | where: "variable", "Deja venu" | first %}
+{% assign c_cadre = cx | where: "variable", "Metier : encadrement" | first %}
+{% assign c_femme = cx | where: "variable", "Femme" | first %}
+**« Déjà venu » : risque ×{{ c_revenu.rapport }}.** Un aventurier qui a joué une autre saison est
 éliminé **trois fois moins vite**, à âge, sexe, métier et saison identiques.
 C’est le plus gros effet de tout le modèle — et c’est un piège. La production
 rappelle ceux qui sont allés loin : l’avantage était acquis **avant** le retour,
@@ -115,13 +119,15 @@ il n’est pas causé par lui. C’est exactement le biais que documente
 ressortir ici, en tête d’un modèle multivarié, montre qu’aucun contrôle
 statistique ne répare une sélection sur la variable qu’on étudie.
 
-**L’encadrement : risque ×1.464**, intervalle 1.076 à 1.992. Les cadres et
-dirigeants sortent 46 % plus vite que la référence, à âge et sexe égaux. C’est la
+**L’encadrement : risque ×{{ c_cadre.rapport }}**, intervalle
+{{ c_cadre.bas }} à {{ c_cadre.haut }}. Les cadres et dirigeants sortent
+nettement plus vite que la référence, à âge et sexe égaux. C’est la
 version contrôlée de ce que
 [Le métier]({{ '/statistiques/professions/' | relative_url }}) montrait en parts
 brutes, et le résultat tient.
 
-**Femme : risque ×1.221**, intervalle 0.992 à 1.503. L’écart hommes-femmes que le
+**Femme : risque ×{{ c_femme.rapport }}**, intervalle
+{{ c_femme.bas }} à {{ c_femme.haut }}. L’écart hommes-femmes que le
 site décrit depuis toujours **rétrécit jusqu’au bord du détectable** une fois
 l’âge, le métier et la saison tenus constants. On ne peut ni l’affirmer ni
 l’écarter : l’intervalle effleure 1. C’est la réponse honnête, et elle est moins

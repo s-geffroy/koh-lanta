@@ -69,5 +69,7 @@ documenté. Voir les <a href="{{ '/sources/' | relative_url }}">sources</a>.</p>
 
 <p class="note">Ce renversement tient-il une fois l’âge, le sexe et la saison
 tenus constants ? Oui : <a href="{{ '/statistiques/equilibre/' | relative_url }}">
-un modèle de durée</a> donne aux métiers d’encadrement un risque
-d’élimination supérieur de 46 %, intervalle 1,08 à 1,99.</p>
+un modèle de durée</a> donne aux métiers d’encadrement un rapport de risque
+d’élimination de
+{% assign cc = site.data.stats.modeles.equilibre.cox.coefficients | where: "variable", "Metier : encadrement" | first %}
+{{ cc.rapport }}, intervalle {{ cc.bas }} à {{ cc.haut }}.</p>

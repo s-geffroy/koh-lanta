@@ -248,17 +248,30 @@ def recette_casting(par_saison, parts):
     from sklearn.cluster import KMeans
     from sklearn.metrics import silhouette_score
 
+    # Trois variables, et pas quatre : le bandeau est exclu. Ce n'est pas un
+    # trait de la personne recrutee, c'est une place donnee a l'arrivee -- et
+    # comme les couleurs en jeu changent d'une saison a l'autre, l'y laisser
+    # rendrait le « melange de profils » different par construction d'une
+    # saison a l'autre. Le test qui suit n'aurait plus rien mesure du casting.
     coord, inerties, noms_mod, coord_mod = _acm(
-        [(l["tranche"], l["genre"], l["csp"], l["couleur"]) for l in lignes])
+        [(l["tranche"], l["genre"], l["csp"]) for l in lignes])
     plan = coord[:, :4]
 
     meilleur_k, meilleur_score = 2, -2.0
     silhouettes = []
-    for k in range(2, 7):
+    # On balaie jusqu'a dix groupes, pas jusqu'a six : s'arreter a l'endroit
+    # ou la silhouette est encore en train de monter donnerait un maximum de
+    # bord, qu'on lirait a tort comme un nombre naturel de familles.
+    # Un decoupage qui isole deux personnes n'est pas un archetype : il gonfle
+    # la silhouette en mettant a part des points extremes. On exige donc que le
+    # plus petit groupe pese au moins 2 % du casting.
+    plancher = max(3, int(0.02 * len(plan)))
+    for k in range(2, 11):
         etiquettes = KMeans(n_clusters=k, n_init=25, random_state=GRAINE).fit_predict(plan)
         score = float(silhouette_score(plan, etiquettes))
-        silhouettes.append({"k": k, "score": _arr(score, 3)})
-        if score > meilleur_score + 1e-9:
+        petit = int(np.bincount(etiquettes).min())
+        silhouettes.append({"k": k, "score": _arr(score, 3), "plus_petit": petit})
+        if petit >= plancher and score > meilleur_score + 1e-9:
             meilleur_k, meilleur_score = k, score
     groupes = KMeans(n_clusters=meilleur_k, n_init=25,
                      random_state=GRAINE).fit_predict(plan)
@@ -269,7 +282,10 @@ def recette_casting(par_saison, parts):
     for g in range(meilleur_k):
         dedans = [l for l, e in zip(lignes, groupes) if e == g]
         traits = []
-        for champ, etiquette in (("tranche", ""), ("genre", ""), ("csp", ""), ("couleur", "")):
+        # Les memes trois variables que la classification, et pas le bandeau :
+        # nommer un groupe par une couleur qu'il n'a pas servi a former ferait
+        # croire a un lien qui n'existe pas.
+        for champ in ("tranche", "genre", "csp"):
             univers = sorted({l[champ] for l in lignes})
             part_g = _repartition([l[champ] for l in dedans], univers)
             part_t = _repartition([l[champ] for l in lignes], univers)
@@ -1566,6 +1582,21 @@ def ruptures(par_saison, indicateurs_saison):
     if k is None:
         return {}
 
+    # Le gain de CHAQUE coupure possible, et pas seulement de la meilleure.
+    # Le test dit qu'une coupure existe ; il ne dit pas ou elle tombe. Si le
+    # profil est plat, la date n'est pas identifiee, et le taire serait mentir.
+    total = cout(Y)
+    profil = []
+    for i in range(4, len(Y) - 3):
+        profil.append({"annee": int(lignes[i][0]), "titre": lignes[i][1],
+                       "gain": _arr(total - cout(Y[:i]) - cout(Y[i:]), 2)})
+    ordonne = sorted(profil, key=lambda x: -x["gain"])
+    # Sont « indiscernables » les coupures dont le gain tient dans 2 % de la
+    # meilleure : l'ecart y est plus petit que ce qu'une saison de plus ou de
+    # moins deplacerait.
+    seuil = ordonne[0]["gain"] * 0.98
+    exaequo = [x for x in ordonne if x["gain"] >= seuil]
+
     g = rng("ruptures")
     nulle = np.array([meilleure_coupure(g.permutation(Y))[1]
                       for _ in range(N_PERMUTATIONS)])
@@ -1592,6 +1623,10 @@ def ruptures(par_saison, indicateurs_saison):
         "premiere_apres": {"annee": int(lignes[k][0]), "titre": lignes[k][1]},
         "avant": k, "apres": len(lignes) - k,
         "detail": detail,
+        "profil": profil,
+        "exaequo": exaequo,
+        "nb_exaequo": len(exaequo),
+        "second": ordonne[1] if len(ordonne) > 1 else None,
         "test": _test(
             "rupture", "La rupture de régime",
             "Existe-t-il une date qui sépare les saisons en deux régimes mieux "

@@ -39,6 +39,10 @@ DERNIERE_ANNEE = 2025  # au-dela, le fichier ne va pas : on reconduit la dernier
 # sources. On les fond, systematiquement, des deux cotes.
 CORSE = {"Corse-du-Sud", "Haute-Corse", "Corse"}
 
+# Les regions d'outre-mer, qui sont aussi des departements : on les compte a
+# part parce que la question qu'elles posent n'est pas celle d'une region.
+OUTREMER = {"Guadeloupe", "Martinique", "Guyane", "La Réunion", "Mayotte"}
+
 TIRAGES = 10_000
 GRAINE = 20260828
 
@@ -305,6 +309,30 @@ def main():
         print(f"   {x['region']:28s} {x['observe']:>3} pour {x['attendu']:>5} "
               f"attendus  x{x['indice']:<5} [{x['indice_bas']} ; {x['indice_haut']}]")
 
+    # Les regions dont l'intervalle ne contient pas 1 : les seules lignes que
+    # l'on puisse lire seule a seule. Le reste du tableau ne vaut qu'ensemble.
+    hautes = [x for x in regions_lignes if x["indice_bas"] > 1]
+    basses = [x for x in regions_lignes if x["indice_haut"] < 1]
+
+    outremer = [x for x in regions_lignes if x["region"] in OUTREMER]
+    om = {"regions": [x["region"] for x in outremer],
+          "observe": sum(x["observe"] for x in outremer),
+          "attendu": round(sum(x["attendu"] for x in outremer), 1)}
+
+    # La couverture, saison par saison : le resultat ne vaut que pour ce qui
+    # est renseigne, et ce qui manque ne manque pas au hasard.
+    classiques = [s for s in saisons.values()
+                  if not s.get("annulee") and not s.get("speciale")]
+    couverture = []
+    for s in sorted(classiques, key=lambda x: x.get("annee") or 0):
+        lignes_s = [p for p in parts if p["saison"] == s["id"]]
+        localisees = [p for p in lignes_s if p.get("localisation")]
+        couverture.append({"saison": s["id"], "annee": s.get("annee"),
+                           "titre": s.get("titre"), "effectif": len(lignes_s),
+                           "localisees": len(localisees)})
+    completes = sum(1 for x in couverture if x["localisees"] == x["effectif"])
+    vides = [x for x in couverture if x["localisees"] == 0]
+
     sortie = {
         "source": SOURCE,
         "champ": "population de 20 a 59 ans, au 1er janvier de l'annee de chaque saison",
@@ -323,6 +351,13 @@ def main():
         "regions_dispersion_observee": round(float(stat_reg), 1),
         "regions_dispersion_attendue": round(float(nulle_reg.mean()), 1),
         "regions_p": round(float(p_reg), 4),
+        "regions_hautes": hautes,
+        "regions_basses": basses,
+        "outremer": om,
+        "couverture": couverture,
+        "saisons_classiques": len(couverture),
+        "saisons_completes": completes,
+        "saisons_sans_lieu": [x["titre"] for x in vides],
         "tests": [test_dep, test_reg],
     }
 

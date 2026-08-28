@@ -1,39 +1,42 @@
 <figure class="figure">
-<svg class="graphique" viewBox="0 0 780 358" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Qui sort plus vite, à saison identique">
+<svg class="graphique" viewBox="0 0 780 384" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Qui sort plus vite, à saison identique">
   <title>Qui sort plus vite, à saison identique</title>
   <desc>Rapports de risque d&#x27;elimination d&#x27;un modele de duree stratifie par saison. Au-dessus de 1, on sort plus vite.</desc>
-  <line x1="420.5" y1="26" x2="420.5" y2="306" stroke="var(--encre-douce)" stroke-width="1.4" stroke-dasharray="4 3"/>
-  <text x="420.5" y="20.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">1</text>
-  <g class="marque"><title>Femme : risque ×1.221 (intervalle 0.992 à 1.503)</title><line x1="418.8" y1="53.0" x2="531.3" y2="53.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="469.2" cy="53.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <line x1="414.7" y1="26" x2="414.7" y2="332" stroke="var(--encre-douce)" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <text x="414.7" y="20.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">1</text>
+  <g class="marque"><title>Femme : risque ×1.217 (intervalle 0.99 à 1.496)</title><line x1="412.6" y1="53.0" x2="520.8" y2="53.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="461.1" cy="53.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
   <text x="214.0" y="53.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Femme</text>
-  <text x="700.0" y="53.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.221</text>
-  <g class="marque"><title>Age (par decennie) : risque ×1.05 (intervalle 0.929 à 1.186)</title><line x1="404.9" y1="79.0" x2="461.5" y2="79.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="431.6" cy="79.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="700.0" y="53.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.217</text>
+  <g class="marque"><title>Age (par decennie) : risque ×1.055 (intervalle 0.934 à 1.191)</title><line x1="400.6" y1="79.0" x2="455.6" y2="79.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="426.5" cy="79.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
   <text x="214.0" y="79.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Age (par decennie)</text>
-  <text x="700.0" y="79.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.05</text>
-  <g class="marque"><title>Bandeau jaune : risque ×1.034 (intervalle 0.819 à 1.307)</title><line x1="380.7" y1="105.0" x2="488.2" y2="105.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="428.0" cy="105.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="700.0" y="79.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.055</text>
+  <g class="marque"><title>Bandeau jaune : risque ×1.016 (intervalle 0.804 à 1.283)</title><line x1="372.8" y1="105.0" x2="475.3" y2="105.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="418.1" cy="105.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
   <text x="214.0" y="105.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Bandeau jaune</text>
-  <text x="700.0" y="105.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.034</text>
-  <g class="marque"><title>Deja venu : risque ×0.351 (intervalle 0.253 à 0.487)</title><line x1="256.0" y1="131.0" x2="307.5" y2="131.0" stroke="var(--serie-1)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="277.6" cy="131.0" r="4.4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="700.0" y="105.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.016</text>
+  <g class="marque"><title>Deja venu : risque ×0.356 (intervalle 0.258 à 0.492)</title><line x1="256.0" y1="131.0" x2="306.1" y2="131.0" stroke="var(--serie-1)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="277.0" cy="131.0" r="4.4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1.6"/></g>
   <text x="214.0" y="131.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Deja venu</text>
-  <text x="700.0" y="131.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.351</text>
-  <g class="marque"><title>Metier : artisanat_btp : risque ×0.832 (intervalle 0.539 à 1.285)</title><line x1="319.0" y1="157.0" x2="483.3" y2="157.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="383.5" cy="157.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="700.0" y="131.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.356</text>
+  <g class="marque"><title>Metier : artisanat_btp : risque ×0.859 (intervalle 0.554 à 1.331)</title><line x1="319.3" y1="157.0" x2="485.5" y2="157.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="384.6" cy="157.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
   <text x="214.0" y="157.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Metier : artisanat_btp</text>
-  <text x="700.0" y="157.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.832</text>
-  <g class="marque"><title>Metier : arts_medias : risque ×0.916 (intervalle 0.618 à 1.357)</title><line x1="336.4" y1="183.0" x2="499.2" y2="183.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="402.0" cy="183.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="700.0" y="157.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.859</text>
+  <g class="marque"><title>Metier : arts_medias : risque ×0.95 (intervalle 0.638 à 1.415)</title><line x1="337.3" y1="183.0" x2="503.5" y2="183.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="404.0" cy="183.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
   <text x="214.0" y="183.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Metier : arts_medias</text>
-  <text x="700.0" y="183.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.916</text>
-  <g class="marque"><title>Metier : commerce : risque ×1.282 (intervalle 0.896 à 1.835)</title><line x1="397.6" y1="209.0" x2="604.5" y2="209.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="482.7" cy="209.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="700.0" y="183.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.95</text>
+  <g class="marque"><title>Metier : commerce : risque ×1.298 (intervalle 0.897 à 1.88)</title><line x1="392.7" y1="209.0" x2="603.0" y2="209.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="478.5" cy="209.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
   <text x="214.0" y="209.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Metier : commerce</text>
-  <text x="700.0" y="209.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.282</text>
-  <g class="marque"><title>Metier : encadrement : risque ×1.464 (intervalle 1.076 à 1.992)</title><line x1="437.3" y1="235.0" x2="639.0" y2="235.0" stroke="var(--serie-1)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="522.7" cy="235.0" r="4.4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="700.0" y="209.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.298</text>
+  <g class="marque"><title>Metier : encadrement : risque ×1.478 (intervalle 1.073 à 2.036)</title><line x1="430.3" y1="235.0" x2="636.3" y2="235.0" stroke="var(--serie-1)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="517.0" cy="235.0" r="4.4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1.6"/></g>
   <text x="214.0" y="235.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Metier : encadrement</text>
-  <text x="700.0" y="235.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.464</text>
-  <g class="marque"><title>Metier : etudiant : risque ×1.279 (intervalle 0.791 à 2.069)</title><line x1="374.5" y1="261.0" x2="656.0" y2="261.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="482.0" cy="261.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
-  <text x="214.0" y="261.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Metier : etudiant</text>
-  <text x="700.0" y="261.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.279</text>
-  <g class="marque"><title>Metier : sport : risque ×0.925 (intervalle 0.618 à 1.387)</title><line x1="336.4" y1="287.0" x2="505.8" y2="287.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="404.0" cy="287.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
-  <text x="214.0" y="287.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Metier : sport</text>
-  <text x="700.0" y="287.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.925</text>
-  <text x="224.0" y="344.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">505 participations · 395 eliminations · 110 sorties censurees</text>
+  <text x="700.0" y="235.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.478</text>
+  <g class="marque"><title>Metier : enseignement : risque ×1.173 (intervalle 0.731 à 1.883)</title><line x1="357.2" y1="261.0" x2="603.6" y2="261.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="451.7" cy="261.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="214.0" y="261.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Metier : enseignement</text>
+  <text x="700.0" y="261.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.173</text>
+  <g class="marque"><title>Metier : etudiant : risque ×1.303 (intervalle 0.798 à 2.128)</title><line x1="371.5" y1="287.0" x2="656.0" y2="287.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="479.5" cy="287.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="214.0" y="287.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Metier : etudiant</text>
+  <text x="700.0" y="287.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.303</text>
+  <g class="marque"><title>Metier : sport : risque ×0.934 (intervalle 0.618 à 1.412)</title><line x1="333.0" y1="313.0" x2="502.8" y2="313.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="400.6" cy="313.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="214.0" y="313.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Metier : sport</text>
+  <text x="700.0" y="313.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.934</text>
+  <text x="224.0" y="370.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">509 participations · 399 eliminations · 110 sorties censurees</text>
 </svg>
 </figure>

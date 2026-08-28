@@ -14,6 +14,7 @@ Pour chaque saison, la source de reference est celle dont l'effectif tombe
 juste ; l'autre vient completer, champ par champ. Chaque valeur retenue garde
 la trace de sa provenance dans `sources`.
 """
+import collections
 import os
 import re
 import sys
@@ -27,6 +28,7 @@ RACINE = os.path.abspath(os.path.join(ICI, "..", ".."))
 
 import parse_fandom as F
 import parse_wikipedia_fr as W
+import parse_personnes as I
 import lieux
 
 # Wikitexte brut des pages sources, tel que recupere par specs/sources/fetch*.py.
@@ -394,6 +396,226 @@ def completer_depuis_autres_participations(participations, saisons, rapport):
                     f"reprise de sa participation de {annees.get(ref['saison'])}")
 
 
+# --------------------------------------------------------------------------
+# Troisieme source : les pages individuelles du wiki Fandom.
+#
+# Les tables de saison ne portent ni la residence, ni le detail des tribus avec
+# leurs jours, ni le compte des victoires par edition. L'`Infobox Aventuriers`
+# des pages individuelles porte tout cela. Elle est saisie a la main, donc
+# moins sure qu'une table : elle ne sert qu'a COMBLER un champ vide, jamais a
+# remplacer une valeur deja etablie. Les desaccords remontent au rapport.
+# --------------------------------------------------------------------------
+
+def rattacher_par_categorie(participations, rapport):
+    """Rend son nom de famille a un prenom nu, via les categories Fandom.
+
+    `rattacher_prenoms_nus` ne sait faire ce travail que si la personne a joue
+    une autre saison sous son nom complet. Pour les autres, le wiki classe ses
+    pages par saison : « Categorie:Koh-Lanta : La Guerre des Chefs » contient
+    « Victor Rollinger ». On ne retient le nom que si UN SEUL membre de la
+    categorie porte ce prenom -- sinon on s'abstient, comme partout ailleurs.
+    """
+    cats = I.categories()
+    if not cats:
+        return
+    rattaches = 0
+    for p in participations:
+        if p["nom_complet"] != p["nom"]:
+            continue
+        candidats = {t for t in cats.get(p["saison"], [])
+                     if " " in t and F.slug(t.split()[0]) == F.slug(p["nom"])}
+        if len(candidats) == 1:
+            p["nom_complet"] = candidats.pop()
+            p["id"] = F.slug(p["nom_complet"])
+            p.setdefault("sources", {})["nom_complet"] = "categorie Fandom de la saison"
+            rattaches += 1
+        elif len(candidats) > 1:
+            rapport.append(f"{p['saison']} / {p['nom']} : {len(candidats)} pages "
+                           f"Fandom portent ce prenom, aucun rattachement")
+    if rattaches:
+        rapport.append(f"{rattaches} prenom(s) nu(s) rattache(s) par les "
+                       f"categories Fandom de leur saison")
+
+
+def fusionner_identites(participations, rapport):
+    """Reunit deux enregistrements qui designent la meme personne.
+
+    Deux orthographes du meme nom -- « Phil Bizet » et « Philippe Bizet »,
+    « Clementine Julien » et « Clementine Jullien » -- font deux personnes la
+    ou il n'y en a qu'une : le palmares des multi-participants s'en trouve
+    fausse. Le wiki tranche tout seul : les deux titres sont une redirection
+    l'un de l'autre, donc la MEME page. Deux identifiants dont la page a la
+    meme empreinte sont la meme personne, et c'est la page qui dit lequel des
+    deux noms est le bon.
+    """
+    textes, empreintes = {}, {}
+    for p in participations:
+        pid = p["id"]
+        if pid in textes:
+            continue
+        chemin = I.chemin_page(pid)
+        if os.path.exists(chemin):
+            t = open(chemin, encoding="utf-8").read()
+            textes[pid] = t
+            empreintes.setdefault(I.empreinte(t), []).append(pid)
+
+    renommage = {}
+    for _, ids in empreintes.items():
+        if len(ids) < 2:
+            continue
+        canon = I.nom_canonique(textes[ids[0]])
+        cible = F.slug(canon) if canon else None
+        if cible not in ids:
+            rapport.append(f"identites confondues {ids} : la page dit "
+                           f"« {canon} », qui n'est aucun des deux — laisse en l'etat")
+            continue
+        for pid in ids:
+            if pid != cible:
+                renommage[pid] = (cible, canon)
+
+    for p in participations:
+        if p["id"] in renommage:
+            cible, canon = renommage[p["id"]]
+            rapport.append(f"{p['saison']} / {p['nom_complet']} : meme page Fandom "
+                           f"que « {canon} » — fusionne")
+            p["id"], p["nom_complet"] = cible, canon
+            p.setdefault("sources", {})["nom_complet"] = "page Fandom commune (redirection)"
+
+
+def verifier_classements(participations, saisons, rapport):
+    """Ecarte les rangs finaux impossibles, signale les rangs en double.
+
+    Le rang vient d'une infobox saisie a la main. Deux fautes s'y rencontrent :
+    un rang superieur a l'effectif de la saison -- la page compte alors une
+    autre saison -- et deux aventuriers au meme rang. La premiere rend la
+    valeur inutilisable, on la retire ; la seconde est parfois legitime (une
+    saison a deux vainqueurs), on se contente de la dire.
+    """
+    par_saison = collections.defaultdict(list)
+    for p in participations:
+        par_saison[p["saison"]].append(p)
+
+    retires, doubles = 0, []
+    for sid, lignes in sorted(par_saison.items()):
+        effectif = len(lignes)
+        for p in lignes:
+            if p.get("classement") and p["classement"] > effectif:
+                p["classement"] = None
+                p.get("sources", {}).pop("classement", None)
+                retires += 1
+        compte = collections.Counter(p["classement"] for p in lignes if p.get("classement"))
+        for rang, n in sorted(compte.items()):
+            if n > 1:
+                doubles.append(f"{sid} rang {rang} x{n}")
+    if retires:
+        rapport.append(f"classement : {retires} rang(s) superieur(s) a l'effectif "
+                       f"de la saison, retire(s)")
+    if doubles:
+        rapport.append(f"classement : {len(doubles)} rang(s) partage(s) par deux "
+                       f"aventuriers — " + ", ".join(doubles))
+
+
+def normaliser_lieux(participations, rapport):
+    """Ramene chaque localisation a un lieu de la liste fermee de lieux.py.
+
+    Les sources melangent le departement, la ville et l'orthographe libre.
+    Sans cette passe, « Toulouse » et « Haute-Garonne » sont deux endroits
+    differents, et la comparaison avec la population INSEE perd les deux.
+    Ce qui n'est reconnu nulle part est laisse tel quel et signale : on ne
+    remplace jamais une valeur par une devinette.
+    """
+    changes, inconnus = [], collections.Counter()
+    for p in participations:
+        brut = p.get("localisation")
+        if not brut:
+            continue
+        propre = lieux.normaliser(brut)
+        if propre is None:
+            inconnus[brut] += 1
+        elif propre != brut:
+            changes.append(f"{p['saison']}/{p['nom']} {brut!r} -> {propre!r}")
+            p["localisation"] = propre
+    if changes:
+        rapport.append(f"localisation : {len(changes)} valeur(s) ramenee(s) a un "
+                       f"lieu de la liste — " + ", ".join(changes[:6])
+                       + (" …" if len(changes) > 6 else ""))
+    if inconnus:
+        rapport.append(f"localisation : {sum(inconnus.values())} valeur(s) hors "
+                       f"liste, laissees telles quelles — "
+                       + ", ".join(f"{k} ({n})" for k, n in inconnus.most_common()))
+
+
+def _couleur_de(saison, tribu):
+    for t in saison.get("tribus", []):
+        if F.slug(t["nom"]) == F.slug(tribu):
+            return t.get("couleur")
+    return None
+
+
+# Champs que la page individuelle peut apporter, et ce qu'ils deviennent.
+# `jours` alimente le jour de sortie ; les autres portent leur propre nom.
+DEPUIS_PAGE = ["localisation", "profession", "age", "votes_recus", "parcours",
+               "classement", "victoires_collectives", "victoires_individuelles"]
+
+
+def completer_depuis_pages(participations, saisons, rapport):
+    """Comble les champs vides avec l'infobox de la page individuelle.
+
+    Regle unique : on ne comble que du vide. Un desaccord entre la table de
+    saison et la page individuelle est signale, jamais tranche en silence --
+    la table est relue par plus de monde, elle garde la main.
+    """
+    par_saison = {s["id"]: s for s in saisons}
+    personnes = {}
+    for p in participations:
+        personnes.setdefault(p["id"], []).append(p["saison"])
+    lu, alertes = I.tout([{"id": k, "participations": v} for k, v in personnes.items()])
+    # Les infobox ne nomment pas toujours la saison de chaque rang ; quand le
+    # compte tombe juste, parse_personnes l'attribue par ordre chronologique.
+    # C'est routinier : on le compte plutot que de l'enumerer.
+    deduits = [x for x in alertes if "deduite du rang" in x]
+    rapport += [x for x in alertes if x not in deduits]
+    if deduits:
+        rapport.append(f"{len(deduits)} rang(s) d'infobox attribue(s) par ordre "
+                       f"chronologique, faute de champ « Saison »")
+
+    combles, desaccords = {}, {}
+    for p in participations:
+        champs = lu.get((p["id"], p["saison"]))
+        if not champs:
+            continue
+        for champ in DEPUIS_PAGE:
+            if champ not in champs:
+                continue
+            valeur = champs[champ]
+            if champ == "parcours":
+                valeur = [{"tribu": e["tribu"],
+                           "couleur": _couleur_de(par_saison.get(p["saison"], {}), e["tribu"]),
+                           "jour_debut": e["jour_debut"], "jour_fin": e["jour_fin"]}
+                          for e in valeur]
+            if p.get(champ) in (None, "", []):
+                p[champ] = valeur
+                p.setdefault("sources", {})[champ] = "fandom (page individuelle)"
+                combles[champ] = combles.get(champ, 0) + 1
+            elif champ in ("age", "localisation", "votes_recus") and p[champ] != valeur:
+                desaccords.setdefault(champ, []).append(
+                    f"{p['saison']}/{p['nom']} {p[champ]!r} vs {valeur!r}")
+        # Le jour de sortie : la page donne le nombre de jours passes en jeu.
+        if p.get("jour_sortie") is None and champs.get("jours"):
+            duree = par_saison.get(p["saison"], {}).get("duree_jours")
+            if not duree or champs["jours"] <= duree:
+                p["jour_sortie"] = champs["jours"]
+                p.setdefault("sources", {})["jour_sortie"] = "fandom (page individuelle)"
+                combles["jour_sortie"] = combles.get("jour_sortie", 0) + 1
+
+    for champ, n in sorted(combles.items()):
+        rapport.append(f"{champ} : {n} valeur(s) comblee(s) par les pages individuelles")
+    for champ, liste in sorted(desaccords.items()):
+        rapport.append(f"{champ} : {len(liste)} desaccord(s) table / page individuelle "
+                       f"(table retenue) — " + ", ".join(liste[:6])
+                       + (" …" if len(liste) > 6 else ""))
+
+
 def charger(sid):
     f_path = os.path.join(WIKI, f"{sid}.fandom.wiki")
     w_path = os.path.join(WIKI, f"{sid}.wiki")
@@ -414,8 +636,13 @@ def main():
         participations.extend(fusionner_saison(s, rows_f, rows_w, rapport, saisons))
 
     rattacher_prenoms_nus(participations, rapport)
+    rattacher_par_categorie(participations, rapport)
+    fusionner_identites(participations, rapport)
     appliquer_vainqueurs(participations, saisons, rapport)
     completer_genre(participations, rapport)
+    completer_depuis_pages(participations, saisons, rapport)
+    normaliser_lieux(participations, rapport)
+    verifier_classements(participations, saisons, rapport)
     completer_depuis_autres_participations(participations, saisons, rapport)
 
     # champs encore vides
@@ -432,6 +659,8 @@ ENTETE = """# ATTENTION : fichier genere. Ne pas editer a la main.
 # Produit par tools/extraction/fusionner.py, qui croise deux sources :
 #   - le wiki Fandom francophone   https://kohlanta.fandom.com/fr/
 #   - Wikipedia en francais        https://fr.wikipedia.org/
+#   - les pages individuelles du wiki Fandom (residence, tribus datees,
+#     palmares d'epreuves), qui ne servent qu'a combler un champ vide
 #
 # Chaque enregistrement porte un bloc `sources` qui dit, champ par champ, d'ou
 # vient la valeur retenue. Regenerer avec :
@@ -442,7 +671,13 @@ ENTETE = """# ATTENTION : fichier genere. Ne pas editer a la main.
 
 ORDRE = ["id", "nom", "nom_complet", "saison", "genre", "age", "profession",
          "localisation", "edition_origine", "tribu", "couleur", "parcours",
-         "jour_sortie", "sort", "motif", "votes_recus", "sources"]
+         "jour_sortie", "sort", "motif", "votes_recus",
+         # Apportes par les pages individuelles du wiki Fandom : le rang final
+         # et le palmares d'epreuves de l'edition. Ce sont des totaux saisis a
+         # la main, pas le detail episode par episode ; ils ne remplacent pas
+         # _data/epreuves.yml, ils couvrent les saisons qu'il ignore.
+         "classement", "victoires_collectives", "victoires_individuelles",
+         "sources"]
 
 def ordonner(p):
     return {k: p[k] for k in ORDRE if k in p}

@@ -118,6 +118,25 @@ sur l'hote.
     tools/atelier python3 tools/build_stats.py       # _data/stats.yml
     tools/atelier python3 tools/build_graphiques.py  # _includes/graphiques/
 
+La chaine d'extraction, quand une source bouge, dans cet ordre -- chaque etape
+lit ce que la precedente a ecrit :
+
+    tools/atelier python3 specs/sources/fetch.py                    # wikipedia
+    tools/atelier python3 specs/sources/fetch_fandom.py             # pages de saison
+    tools/atelier python3 tools/extraction/fetch_personnes.py       # pages par aventurier
+    tools/atelier python3 tools/extraction/fusionner.py --ecrire    # participations, personnes
+    tools/atelier python3 tools/extraction/fetch_personnes.py       # 2e passe : les noms rendus
+    tools/atelier python3 tools/extraction/fusionner.py --ecrire
+    tools/atelier python3 tools/extraction/construire_conseils.py --ecrire
+    tools/atelier python3 tools/extraction/construire_epreuves.py --ecrire
+    tools/atelier python3 tools/extraction/construire_colliers.py --ecrire
+    tools/atelier python3 tools/extraction/prenoms_insee.py --ecrire
+    tools/atelier python3 tools/extraction/geographie_insee.py --ecrire
+
+La deuxieme passe n'est pas une precaution : `fusionner` rend son nom de famille
+a un prenom nu, et la page individuelle de cette personne n'est demandee qu'une
+fois ce nom connu.
+
 Il ne construit PAS le site : GitHub Pages s'en charge. Consequence assumee, le
 rendu ne peut pas etre essaye ici ; il se decouvre en ligne.
 

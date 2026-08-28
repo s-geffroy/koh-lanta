@@ -109,6 +109,25 @@ plus tôt que les hommes en moyenne — et remportent pourtant
   · <a href="{{ '/statistiques/pronostic/' | relative_url }}">Le pronostic</a></p>
 </div>
 
+## Et une chose qu’on ne voit pas à l’écran
+
+{% assign geo = site.data.geographie %}
+<div class="constat">
+  <p>Comparé à la France qui vivait là ces années-là, le recrutement
+  <b>n’épouse pas la géographie</b> : la dispersion des origines par région vaut
+  {{ geo.regions_dispersion_observee }} contre
+  {{ geo.regions_dispersion_attendue }} attendus d’un tirage dans la population
+  des 20-59 ans.</p>
+  <p>Provence-Alpes-Côte d’Azur fournit <b>une fois et trois quarts sa part</b>,
+  la Corse près de trois fois. À l’autre bout, <b>l’outre-mer pèse
+  {{ geo.outremer.observe }} aventuriers pour {{ geo.outremer.attendu }}
+  attendus</b> — La Réunion n’en a jamais fourni un seul.</p>
+  <p>Sur les prénoms, le même casting collait pourtant de très près à sa
+  génération. Ce n’est donc pas la France entière qu’on regarde le mardi soir.</p>
+  <p><a href="{{ '/statistiques/geographie/' | relative_url }}">D’où ils viennent</a>
+  · <a href="{{ '/statistiques/prenoms/' | relative_url }}">Les prénoms</a></p>
+</div>
+
 ## Par où commencer
 
 <ul class="cartes">

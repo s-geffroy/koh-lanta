@@ -13,9 +13,10 @@ chapeau: >-
 {% assign tr = reg | where: "cle", "geographie_regions" | first %}
 
 Le département d’origine est le dernier champ important de ce jeu de données à
-n’avoir jamais servi. Il est renseigné pour **{{ g.participations }}
-participations** de saisons classiques — et c’est déjà une limite, sur laquelle
-on revient à la fin.
+n’avoir jamais servi. Il est aujourd’hui renseigné pour
+**{{ g.saisons_completes }} des {{ g.saisons_classiques }} saisons classiques
+en entier**, et pour {{ g.participations }} participations comparables à la
+population française — la limite qui reste est décrite à la fin.
 
 <p class="note"><strong>La méthode, la même que pour les prénoms.</strong>
 L’INSEE publie la population par département, par sexe et par groupe d’âges,
@@ -78,26 +79,41 @@ fait le résultat, pas une ligne isolée.</p>
 </div>
 
 Le gradient est net, et il est **géographique avant d’être démographique** :
-au-dessus de 1, on trouve la Corse, la Nouvelle-Aquitaine, Provence-Alpes-Côte
-d’Azur, Auvergne-Rhône-Alpes, l’Occitanie — la montagne et les deux littoraux du
-Sud. En dessous, les Hauts-de-France, les Pays de la Loire, le Centre-Val de
-Loire, la Bretagne.
+au-dessus de 1, on trouve la Corse, Provence-Alpes-Côte d’Azur, la
+Nouvelle-Aquitaine, l’Île-de-France, l’Occitanie, Auvergne-Rhône-Alpes — le
+pourtour méditerranéen, la montagne, la façade atlantique et Paris. En dessous,
+le Centre-Val de Loire, les Pays de la Loire, la Bourgogne-Franche-Comté, la
+Bretagne, le Grand Est, les Hauts-de-France : une diagonale du Nord-Ouest et de
+l’Est.
 
-Deux lignes sortent vraiment de l’intervalle.
+Six lignes sortent vraiment de leur intervalle — trois par le haut, trois par le
+bas. Ce sont les seules qui se lisent isolément ; le reste du tableau ne vaut
+qu’ensemble.
 
 <div class="constat">
-  <p><b>La Corse fournit quatre fois sa part</b> : six aventuriers pour un
-  et demi attendus, intervalle 1,46 à 8,54. C’est la seule région dont
-  l’intervalle ne contient pas 1 par le haut.</p>
-  <p><b>La Réunion n’en fournit aucun</b>, pour quatre attendus — intervalle
-  0 à 0,92, entièrement sous 1. En ajoutant la Guadeloupe et la Guyane, les
-  départements d’outre-mer pèsent <b>deux aventuriers pour près de neuf
-  attendus</b>, et les deux viennent de Martinique.</p>
+  <p><b>Au-dessus :</b>
+  {%- for r in g.regions_hautes %} {{ r.region }} ×{{ r.indice }}
+  [{{ r.indice_bas }} ; {{ r.indice_haut }}]{% unless forloop.last %} ·{% endunless %}
+  {%- endfor %}.</p>
+  <p><b>En dessous :</b>
+  {%- for r in g.regions_basses %} {{ r.region }} ×{{ r.indice }}
+  [{{ r.indice_bas }} ; {{ r.indice_haut }}]{% unless forloop.last %} ·{% endunless %}
+  {%- endfor %}.</p>
+  <p>Et le trou le plus net n’est pas une région de métropole :
+  <b>l’outre-mer pèse {{ g.outremer.observe }} aventuriers pour
+  {{ g.outremer.attendu }} attendus</b>. La Réunion, la plus peuplée des
+  quatre, n’en a jamais fourni un seul ; les {{ g.outremer.observe }} viennent
+  tous deux de Martinique.</p>
 </div>
+
+La Corse garde le plus fort indice, mais son intervalle est large — six
+personnes, cela ne se mesure pas finement. Le résultat solide est ailleurs :
+**Provence-Alpes-Côte d’Azur fournit une fois et trois quarts sa part**, sur
+cinquante-cinq aventuriers, et son intervalle ne s’approche pas de 1.
 
 ## Les départements, pour mémoire
 
-Quatre-vingts départements pour trois cents personnes, cela fait trois
+Cent départements pour {{ g.participations }} personnes, cela fait quatre
 personnes par département : à ce grain, un indice est un bruit et non un
 résultat. Le tableau est donné parce qu’il se lit, pas parce qu’il conclut.
 {{ g.departements_classes }} départements atteignent un attendu de 1 et sont
@@ -131,12 +147,27 @@ candidatures viennent d’elles-mêmes davantage de certaines régions ; ou les 
 se renforcent. Un casting déséquilibré est le <em>résultat</em> d’une sélection,
 pas la sélection elle-même.</p>
 
-<p class="note"><strong>La couverture est partielle et elle n’est pas
-aléatoire.</strong> Le département n’est renseigné que pour
-{{ g.participations }} participations, et il manque à des saisons
-<em>entières</em> — les plus anciennes surtout. Ce résultat décrit donc le
-recrutement des années {{ g.annees[0] }}-{{ g.annees[1] }} tel que les quinze
-saisons documentées le montrent, pas les vingt-cinq ans du programme.</p>
+<p class="note"><strong>La couverture est bonne, mais elle n’est pas
+uniforme.</strong> {{ g.saisons_completes }} des {{ g.saisons_classiques }}
+saisons classiques ont leur casting <em>entièrement</em> localisé, et aucune
+n’est muette. Cinq restent lacunaires — <em>Panama</em> (4 sur 16),
+<em>Palawan</em> (5 sur 16), <em>Palau</em> (8 sur 18), <em>Pacifique</em>
+(10 sur 17), et <em>L’Île au trésor</em> à une personne près. Quatre des cinq
+sont antérieures à 2010 : le résultat pèse donc un peu plus lourd sur les
+quinze dernières années que sur les cinq premières.</p>
+
+<div class="tableau-large">
+<table data-triable>
+<thead><tr><th>Saison</th><th class="nombre">Année</th>
+<th class="nombre">Localisés</th><th class="nombre">Casting</th></tr></thead>
+<tbody>
+{% for c in g.couverture %}
+<tr><td>{{ c.titre }}</td><td class="nombre">{{ c.annee }}</td>
+<td class="nombre">{{ c.localisees }}</td><td class="nombre">{{ c.effectif }}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
 
 <p class="note"><strong>Trois réserves de mesure.</strong> Le lieu relevé est
 celui annoncé à l’antenne : c’est une résidence au moment du tournage, pas un

@@ -3,6 +3,8 @@
 # Produit par tools/extraction/fusionner.py, qui croise deux sources :
 #   - le wiki Fandom francophone   https://kohlanta.fandom.com/fr/
 #   - Wikipedia en francais        https://fr.wikipedia.org/
+#   - les pages individuelles du wiki Fandom (residence, tribus datees,
+#     palmares d'epreuves), qui ne servent qu'a combler un champ vide
 #
 # Chaque enregistrement porte un bloc `sources` qui dit, champ par champ, d'ou
 # vient la valeur retenue. Regenerer avec :
@@ -612,7 +614,8 @@
   - s05
   - sp1
   - sp5
-  nb_participations: 3
+  - sp7
+  nb_participations: 4
 - id: karine-amorsi
   nom: Karine Amorsi
   prenom: Karine
@@ -1516,7 +1519,8 @@
   participations:
   - s12
   - sp4
-  nb_participations: 2
+  - sp7
+  nb_participations: 3
 - id: vanessa-alvarez
   nom: Vanessa Alvarez
   prenom: Vanessa
@@ -1647,7 +1651,8 @@
   genre: f
   participations:
   - s14
-  nb_participations: 1
+  - sp6
+  nb_participations: 2
 - id: sebastien-ballesteros
   nom: Sébastien Ballesteros
   prenom: Sébastien
@@ -2114,14 +2119,16 @@
   participations:
   - s17
   nb_participations: 1
-- id: clementine-julien
-  nom: Clémentine Julien
+- id: clementine-jullien
+  nom: Clémentine Jullien
   prenom: Clémentine
   genre: f
   participations:
   - s17
   - sp5
-  nb_participations: 2
+  - sp7
+  - sp8
+  nb_participations: 4
 - id: frederic-blancher
   nom: Frédéric Blancher
   prenom: Frédéric
@@ -2298,8 +2305,8 @@
   participations:
   - s20
   nb_participations: 1
-- id: victor
-  nom: Victor
+- id: victor-rollinger
+  nom: Victor Rollinger
   prenom: Victor
   genre: h
   participations:
@@ -2319,8 +2326,8 @@
   participations:
   - s20
   nb_participations: 1
-- id: frederic
-  nom: Frédéric
+- id: frederic-blanchard
+  nom: Frédéric Blanchard
   prenom: Frédéric
   genre: h
   participations:
@@ -2489,8 +2496,8 @@
   participations:
   - s21
   nb_participations: 1
-- id: marie-france
-  nom: Marie-France
+- id: marie-france-schieber
+  nom: Marie-France Schieber
   prenom: Marie-France
   genre: f
   participations:
@@ -2965,8 +2972,8 @@
   participations:
   - s24
   nb_participations: 1
-- id: rudy
-  nom: Rudy
+- id: rudy-noel
+  nom: Rudy Noël
   prenom: Rudy
   genre: h
   participations:
@@ -3021,8 +3028,8 @@
   participations:
   - s24
   nb_participations: 1
-- id: quentin
-  nom: Quentin
+- id: quentin-paygnard
+  nom: Quentin Paygnard
   prenom: Quentin
   genre: h
   participations:
@@ -3799,13 +3806,6 @@
   participations:
   - sp6
   nb_participations: 1
-- id: jessica
-  nom: Jessica
-  prenom: Jessica
-  genre: f
-  participations:
-  - sp6
-  nb_participations: 1
 - id: eric-peyrache
   nom: Eric Peyrache
   prenom: Éric
@@ -3842,25 +3842,3 @@
   - sp6
   - sp8
   nb_participations: 2
-- id: clementine-jullien
-  nom: Clémentine Jullien
-  prenom: Clémentine
-  genre: f
-  participations:
-  - sp7
-  - sp8
-  nb_participations: 2
-- id: clemence
-  nom: Clémence
-  prenom: Clémence
-  genre: f
-  participations:
-  - sp7
-  nb_participations: 1
-- id: phil-bizet
-  nom: Phil Bizet
-  prenom: Phil
-  genre: h
-  participations:
-  - sp7
-  nb_participations: 1

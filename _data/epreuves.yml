@@ -3598,7 +3598,7 @@
   vainqueurs:
   - libelle: Clémentine
     type: personne
-    id: clementine-julien
+    id: clementine-jullien
     resolu: true
   source: challenges
 - saison: s17
@@ -5492,7 +5492,7 @@
   vainqueurs:
   - libelle: Quentin
     type: personne
-    id: quentin
+    id: quentin-paygnard
     resolu: true
   source: bilan par episode
 - saison: s24
@@ -5536,7 +5536,7 @@
     resolu: true
   - libelle: Quentin
     type: personne
-    id: quentin
+    id: quentin-paygnard
     resolu: true
   source: bilan par episode
 - saison: s24
@@ -5600,7 +5600,7 @@
   vainqueurs:
   - libelle: Quentin
     type: personne
-    id: quentin
+    id: quentin-paygnard
     resolu: true
   source: bilan par episode
 - saison: s24
@@ -7822,7 +7822,7 @@
   vainqueurs:
   - libelle: Clémence
     type: personne
-    id: clemence
+    id: clemence-castel
     resolu: true
   source: bilan par episode
 - saison: sp7
@@ -7922,7 +7922,7 @@
   vainqueurs:
   - libelle: Clémence
     type: personne
-    id: clemence
+    id: clemence-castel
     resolu: true
   source: bilan par episode
 - saison: sp7
@@ -7956,7 +7956,7 @@
     resolu: true
   - libelle: Phil
     type: personne
-    id: phil-bizet
+    id: philippe-bizet
     resolu: true
   source: bilan par episode
 - saison: sp7
@@ -8010,7 +8010,7 @@
   vainqueurs:
   - libelle: Phil
     type: personne
-    id: phil-bizet
+    id: philippe-bizet
     resolu: true
   - libelle: Jade
     type: personne

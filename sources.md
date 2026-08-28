@@ -33,6 +33,44 @@ Aucune des deux ne suffit seule. Pour chaque saison, la source de référence es
 **celle dont l’effectif correspond au nombre de candidats annoncé** ; l’autre
 vient compléter, champ par champ.
 
+## La troisième source : une page par aventurier
+
+Les tables de saison, quelle que soit leur origine, ne portent ni la résidence
+sur les éditions anciennes, ni le détail des tribus avec leurs jours, ni le
+palmarès d’épreuves. Le wiki Fandom a autre chose : **une page par aventurier**,
+avec une fiche — l’*Infobox Aventuriers* — qui donne tout cela, saison par
+saison, pour quelqu’un qui en a joué quatre comme pour quelqu’un qui en a joué
+une.
+
+{{ site.data.stats.completude.comblees }} valeurs manquantes ont été comblées
+par ces fiches. Elles n’ont **jamais** remplacé une valeur déjà établie par une
+table : une fiche est saisie à la main par un lecteur, une table est relue par
+beaucoup. Les désaccords sont comptés et laissés au rapport d’extraction, pas
+tranchés en silence.
+
+Ces pages ont aussi réglé un problème que les tables ne pouvaient pas voir.
+
+- **Sept aventuriers n’avaient qu’un prénom.** Les éditions de retour présentent
+  parfois les revenants par leur seul prénom, et quand plusieurs personnes du
+  jeu de données portent ce prénom, le rattachement automatique s’abstient. Le
+  wiki classe ses pages par saison : une seule « Victor » est classée dans
+  *La Guerre des chefs*, et c’est Victor Rollinger. Sept noms de famille ont été
+  rendus de cette façon ; un seul résiste, la Sabira de *Panama*, qui n’a pas de
+  page.
+- **Trois participations comptaient pour deux personnes.** « Phil Bizet » et
+  « Philippe Bizet », « Clémentine Julien » et « Clémentine Jullien » sont deux
+  orthographes d’une même personne — et sur le wiki, deux titres qui **renvoient
+  à la même page**. Deux identifiants dont la page a la même empreinte sont donc
+  la même personne, et c’est la page qui dit lequel des deux noms est le bon.
+  Le nombre de personnes distinctes passe de 535 à
+  {{ site.data.stats.general.personnes }}.
+
+Limite, et elle est réelle :
+{{ site.data.stats.completude.sans_fiche }} participations sur
+{{ site.data.stats.completude.participations }} n’ont aucune fiche individuelle
+exploitable — les castings les plus anciens, et l’édition de célébrités de 2012,
+dont les invités n’ont pas de page. Ce qui manque encore manque surtout là.
+
 ## Deux sources de référence, pour comparer
 
 **[Le fichier des prénoms de l’INSEE](https://www.insee.fr/fr/statistiques/8595130)**
@@ -64,7 +102,12 @@ Chaque enregistrement du jeu de données porte un bloc `sources` qui indique,
 - `dernier jour de la saison (finale)` — un finaliste sort le dernier jour, par
   définition ;
 - `recoupement sur le prénom` — un sexe établi grâce à la même personne vue
-  ailleurs.
+  ailleurs ;
+- `fandom (page individuelle)` — un champ vide comblé par la fiche de
+  l’aventurier ;
+- `categorie Fandom de la saison` — un nom de famille rendu à un prénom nu ;
+- `page Fandom commune (redirection)` — deux orthographes réunies en une
+  personne.
 
 Le wikitexte brut des pages consultées est conservé dans le dépôt, avec les
 scripts qui l’ont récupéré : n’importe qui peut refaire le chemin.
@@ -90,13 +133,58 @@ rencontre le sport avant l’enseignement, « maître-nageur » rencontre l’ac
 le secours avant le sport. Cette table est un fichier du dépôt, faite pour être
 relue et discutée.
 
+**Les lieux.** Les fiches individuelles donnent tantôt le département, tantôt la
+ville, tantôt une province d’Ancien Régime, avec une orthographe libre. Une
+table fermée les ramène à la graphie du fichier INSEE — sans quoi « Toulouse »
+et « Haute-Garonne » sont deux endroits, et la comparaison avec la population
+perd les deux. Les cas ambigus n’y figurent pas : « Brassac » est dans le Tarn
+*et* dans le Puy-de-Dôme, « Mauléon » dans les Deux-Sèvres *et* les
+Pyrénées-Atlantiques. Ces deux-là restent tels quels, et hors du calcul.
+
 ## Ce qui manque
 
-Le jeu de données n’est pas complet, et le dire fait partie du travail.
+Le jeu de données n’est pas complet, et le dire fait partie du travail. Voici la
+mesure exacte, champ par champ. Elle se recalcule à chaque construction : aucune
+phrase de cette page n’a besoin d’être reprise quand une valeur est trouvée.
 
-- **Treize valeurs sont inconnues** sur près de dix mille : six âges, trois
-  métiers, deux jours de sortie, un motif de sortie, une tribu. Elles sont
-  laissées vides plutôt que devinées.
+{% assign co = site.data.stats.completude %}
+
+<div class="constat">
+  <p><b>{{ co.part_remplie }} %</b> des
+  {{ co.valeurs_suivies }} valeurs suivies sont renseignées —
+  {{ co.champs_suivis }} champs sur {{ co.participations }} participations.
+  {{ co.champs_complets }} champs n’ont plus aucun trou.</p>
+</div>
+
+<div class="tableau-large">
+<table data-triable>
+<thead><tr>
+  <th>Champ</th><th class="nombre">Renseigné</th><th class="nombre">Manquant</th>
+  <th class="nombre">Part</th><th class="nombre">Dont fiche individuelle</th>
+</tr></thead>
+<tbody>
+{% for c in co.champs %}
+<tr>
+  <td>{{ c.libelle }}</td>
+  <td class="nombre">{{ c.remplis }}</td>
+  <td class="nombre">{{ c.manquants }}</td>
+  <td class="nombre" data-val="{{ c.part }}">{{ c.part }} %</td>
+  <td class="nombre">{{ c.depuis_page_individuelle }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+<p class="note">Les trois derniers champs — rang final, victoires collectives et
+individuelles — <strong>n’existent que par les fiches individuelles</strong> :
+aucune table de saison ne les porte. Ils sont donc renseignés là où une fiche
+existe, et nulle part ailleurs. Le rang final se contrôle contre le jour de
+sortie : sur 27 saisons sur 34, les deux classent les aventuriers dans
+exactement le même ordre.</p>
+
+Ce qui reste, et pourquoi :
+
 - **Le dépouillement des conseils est partiel.** Sur
   {{ site.data.stats.conseils.conseils }} conseils relevés,
   {{ site.data.stats.conseils.conseils_complets }} ont un dépouillement dont on

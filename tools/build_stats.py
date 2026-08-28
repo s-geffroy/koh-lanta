@@ -638,6 +638,138 @@ def bloc_indicateurs(saisons, parts, conseils, epreuves, colliers):
 
 # --- assemblage ------------------------------------------------------------
 
+# Les champs dont on suit le remplissage. Ce n'est pas la liste de tous les
+# champs : c'est celle de ceux qui peuvent manquer, et dont l'absence se voit
+# quelque part sur le site.
+CHAMPS_SUIVIS = [
+    ("genre", "Sexe"), ("age", "Âge"), ("profession", "Métier"),
+    ("localisation", "Département d'origine"), ("tribu", "Tribu de départ"),
+    ("couleur", "Couleur de départ"), ("parcours", "Trajectoire de tribus"),
+    ("jour_sortie", "Jour de sortie"), ("sort", "Manière de sortir"),
+    ("votes_recus", "Voix reçues"), ("classement", "Rang final"),
+    ("victoires_collectives", "Victoires collectives"),
+    ("victoires_individuelles", "Victoires individuelles"),
+]
+
+# La provenance qui designe la troisieme source, arrivee en aout 2026.
+PAGE_INDIVIDUELLE = "fandom (page individuelle)"
+
+
+def bloc_completude(parts, personnes):
+    """Ce qui est renseigne, ce qui manque, et d'ou vient ce qui a ete comble.
+
+    Le site affirme partout ce qu'il ne sait pas ; encore faut-il le compter.
+    Ce bloc est la mesure, champ par champ, et il se recalcule tout seul : nul
+    besoin de reprendre une phrase quand une valeur est trouvee.
+    """
+    lignes, comblees = [], 0
+    for champ, libelle in CHAMPS_SUIVIS:
+        remplis = sum(1 for p in parts if p.get(champ) not in (None, "", []))
+        depuis_page = sum(1 for p in parts
+                          if (p.get("sources") or {}).get(champ) == PAGE_INDIVIDUELLE)
+        comblees += depuis_page
+        lignes.append({
+            "champ": champ, "libelle": libelle,
+            "remplis": remplis, "manquants": len(parts) - remplis,
+            "part": round(100.0 * remplis / len(parts), 1),
+            "depuis_page_individuelle": depuis_page,
+        })
+    lignes.sort(key=lambda x: (x["manquants"], x["champ"]))
+    # Une participation est « sans fiche » si aucun de ses champs ne vient
+    # d'une page individuelle : soit la personne n'en a pas, soit la sienne ne
+    # dit rien de cette saison-la.
+    avec_fiche = sum(1 for p in parts
+                     if any(v == PAGE_INDIVIDUELLE
+                            for v in (p.get("sources") or {}).values()))
+    return {
+        "participations": len(parts),
+        "avec_fiche": avec_fiche,
+        "sans_fiche": len(parts) - avec_fiche,
+        "personnes": len(personnes),
+        "champs": lignes,
+        "champs_complets": sum(1 for x in lignes if x["manquants"] == 0),
+        "champs_suivis": len(lignes),
+        "trous": sum(x["manquants"] for x in lignes),
+        "valeurs_suivies": len(parts) * len(lignes),
+        "comblees": comblees,
+        "part_remplie": round(100.0 * (1 - sum(x["manquants"] for x in lignes)
+                                       / (len(parts) * len(lignes))), 2),
+    }
+
+
+def bloc_palmares(parts, epreuves, par_saison):
+    """Le palmares d'epreuves declare par les fiches individuelles.
+
+    _data/epreuves.yml compte ce que le bilan par episode montre, et il ignore
+    cinq saisons entieres. Les fiches individuelles, elles, portent un total par
+    edition sur presque toutes -- mais ce total est plus large : il compte les
+    duels de l'ile des bannis et les epreuves de finale, que le bilan par
+    episode n'a pas.
+
+    Les deux comptes ne sont donc pas le meme objet, et ce bloc mesure a quel
+    point ils s'accordent la ou les deux existent. C'est ce qui autorise, ou
+    non, a lire le premier quand le second manque.
+    """
+    couvertes = {e["saison"] for e in epreuves}
+
+    # Le compte du bilan par episode, par (personne, saison).
+    table = defaultdict(int)
+    for e in epreuves:
+        if e.get("forme") != "individuelle":
+            continue
+        for v in e.get("vainqueurs") or []:
+            if v.get("type") == "personne" and v.get("id"):
+                table[(v["id"], e["saison"])] += 1
+
+    ecarts, identiques, compares = [], 0, 0
+    for p in parts:
+        n = p.get("victoires_individuelles")
+        if n is None or p["saison"] not in couvertes:
+            continue
+        compares += 1
+        d = n - table.get((p["id"], p["saison"]), 0)
+        if d == 0:
+            identiques += 1
+        else:
+            ecarts.append(abs(d))
+
+    # Les carrieres, toutes saisons confondues.
+    cumul = {}
+    for p in parts:
+        if p.get("victoires_individuelles") is None:
+            continue
+        e = cumul.setdefault(p["id"], {
+            "personne": p.get("nom_complet") or p["nom"],
+            "individuelles": 0, "collectives": 0, "saisons": 0})
+        e["individuelles"] += p["victoires_individuelles"]
+        e["collectives"] += p.get("victoires_collectives") or 0
+        e["saisons"] += 1
+    classement = sorted(cumul.values(),
+                        key=lambda x: (-x["individuelles"], -x["collectives"],
+                                       x["personne"]))
+
+    # Ce que les fiches ajoutent : les saisons que le bilan par episode ignore.
+    ajoutees = []
+    for sid, s in sorted(par_saison.items(), key=lambda kv: kv[1].get("annee") or 0):
+        if sid in couvertes or s.get("annulee"):
+            continue
+        lignes = [p for p in parts if p["saison"] == sid
+                  and p.get("victoires_individuelles") is not None]
+        if lignes:
+            ajoutees.append({"saison": sid, "titre": s.get("titre"),
+                             "annee": s.get("annee"), "aventuriers": len(lignes)})
+
+    return {
+        "renseignees": sum(1 for p in parts if p.get("victoires_individuelles") is not None),
+        "compares": compares,
+        "identiques": identiques,
+        "part_identiques": round(100.0 * identiques / compares, 1) if compares else None,
+        "ecart_median": round(median(ecarts), 1) if ecarts else 0,
+        "saisons_ajoutees": ajoutees,
+        "classement": classement[:15],
+    }
+
+
 def main():
     saisons, parts, personnes, conseils, epreuves, colliers, par_saison = charger()
     classiques = perimetre(parts, avec_speciales=False)
@@ -688,6 +820,8 @@ def main():
         "epreuves": bloc_epreuves(epreuves, conseils, parts, saisons, par_saison),
         "colliers": bloc_colliers(colliers, par_saison),
         "indicateurs": bloc_indicateurs(saisons, parts, conseils, epreuves, colliers),
+        "completude": bloc_completude(parts, personnes),
+        "palmares": bloc_palmares(parts, epreuves, par_saison),
     }
 
     # Les modeles viennent en dernier : ils s'appuient sur les indicateurs de

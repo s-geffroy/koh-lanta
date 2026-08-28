@@ -15,7 +15,7 @@
 periode:
   debut: 1943
   fin: 2005
-aventuriers_datables: 639
+aventuriers_datables: 645
 prenoms:
 - prenom: Ugo
   observe: 4
@@ -25,17 +25,17 @@ prenoms:
 - prenom: Moussa
   observe: 4
   attendu: 0.093
-  indice: 43.1
+  indice: 42.9
   absent_du_fichier: false
 - prenom: Jean-Bernard
   observe: 3
-  attendu: 0.076
-  indice: 39.4
+  attendu: 0.077
+  indice: 38.8
   absent_du_fichier: false
 - prenom: Christina
   observe: 4
-  attendu: 0.133
-  indice: 30.1
+  attendu: 0.134
+  indice: 29.8
   absent_du_fichier: false
 - prenom: Cassandre
   observe: 3
@@ -44,13 +44,13 @@ prenoms:
   absent_du_fichier: false
 - prenom: Candice
   observe: 5
-  attendu: 0.178
+  attendu: 0.179
   indice: 28.0
   absent_du_fichier: false
 - prenom: Freddy
   observe: 7
-  attendu: 0.277
-  indice: 25.3
+  attendu: 0.279
+  indice: 25.1
   absent_du_fichier: false
 - prenom: Colin
   observe: 1
@@ -62,50 +62,50 @@ prenoms:
   attendu: 0.051
   indice: 19.6
   absent_du_fichier: false
+- prenom: Lola
+  observe: 4
+  attendu: 0.214
+  indice: 18.7
+  absent_du_fichier: false
 - prenom: Érick
   observe: 1
   attendu: 0.053
-  indice: 19.0
+  indice: 18.7
   absent_du_fichier: false
 - prenom: Pierre-Marie
   observe: 1
   attendu: 0.054
-  indice: 18.7
-  absent_du_fichier: false
-- prenom: Lola
-  observe: 4
-  attendu: 0.215
   indice: 18.6
   absent_du_fichier: false
 - prenom: Fabian
   observe: 1
   attendu: 0.062
-  indice: 16.2
+  indice: 16.0
   absent_du_fichier: false
 - prenom: Jade
   observe: 4
-  attendu: 0.254
+  attendu: 0.253
   indice: 15.8
   absent_du_fichier: false
 - prenom: Tania
   observe: 2
-  attendu: 0.137
-  indice: 14.6
-  absent_du_fichier: false
-- prenom: Marie-Cécile
-  observe: 1
-  attendu: 0.072
-  indice: 13.8
+  attendu: 0.139
+  indice: 14.4
   absent_du_fichier: false
 - prenom: Amel
   observe: 2
   attendu: 0.146
   indice: 13.7
   absent_du_fichier: false
+- prenom: Marie-Cécile
+  observe: 1
+  attendu: 0.073
+  indice: 13.6
+  absent_du_fichier: false
 - prenom: Sara
   observe: 3
-  attendu: 0.223
-  indice: 13.5
+  attendu: 0.224
+  indice: 13.4
   absent_du_fichier: false
 - prenom: Esteban
   observe: 1
@@ -125,66 +125,71 @@ prenoms:
 - prenom: Nathanaël
   observe: 1
   attendu: 0.086
-  indice: 11.7
+  indice: 11.6
+  absent_du_fichier: false
+- prenom: Mattéo
+  observe: 1
+  attendu: 0.09
+  indice: 11.2
   absent_du_fichier: false
 - prenom: Nelson
   observe: 1
   attendu: 0.09
   indice: 11.1
   absent_du_fichier: false
-- prenom: Mattéo
-  observe: 1
-  attendu: 0.091
-  indice: 11.0
-  absent_du_fichier: false
 - prenom: Alban
   observe: 3
-  attendu: 0.281
-  indice: 10.7
+  attendu: 0.282
+  indice: 10.6
   absent_du_fichier: false
 - prenom: Clémentine
   observe: 4
-  attendu: 0.386
-  indice: 10.4
+  attendu: 0.388
+  indice: 10.3
   absent_du_fichier: false
 - prenom: Marie-Anne
   observe: 1
-  attendu: 0.102
-  indice: 9.8
+  attendu: 0.103
+  indice: 9.7
   absent_du_fichier: false
 - prenom: Marguerite
   observe: 1
-  attendu: 0.104
-  indice: 9.6
+  attendu: 0.105
+  indice: 9.5
   absent_du_fichier: false
 - prenom: Charlie
   observe: 1
-  attendu: 0.109
-  indice: 9.2
+  attendu: 0.11
+  indice: 9.1
   absent_du_fichier: false
 - prenom: Alix
   observe: 2
-  attendu: 0.241
-  indice: 8.3
+  attendu: 0.243
+  indice: 8.2
   absent_du_fichier: false
 - prenom: Karima
   observe: 2
-  attendu: 0.244
-  indice: 8.2
+  attendu: 0.247
+  indice: 8.1
   absent_du_fichier: false
 - prenom: François-Xavier
   observe: 1
-  attendu: 0.134
-  indice: 7.5
+  attendu: 0.135
+  indice: 7.4
+  absent_du_fichier: false
+- prenom: Clémence
+  observe: 6
+  attendu: 0.817
+  indice: 7.3
   absent_du_fichier: false
 - prenom: Helena
   observe: 1
-  attendu: 0.138
+  attendu: 0.139
   indice: 7.2
   absent_du_fichier: false
 - prenom: Martin
   observe: 3
-  attendu: 0.416
+  attendu: 0.419
   indice: 7.2
   absent_du_fichier: false
 - prenom: Eliane
@@ -192,54 +197,49 @@ prenoms:
   attendu: 0.145
   indice: 6.9
   absent_du_fichier: false
-- prenom: Manuella
-  observe: 1
-  attendu: 0.149
-  indice: 6.7
-  absent_du_fichier: false
 - prenom: Dorian
   observe: 2
-  attendu: 0.304
+  attendu: 0.305
+  indice: 6.6
+  absent_du_fichier: false
+- prenom: Manuella
+  observe: 1
+  attendu: 0.15
   indice: 6.6
   absent_du_fichier: false
 - prenom: Tiffany
   observe: 2
-  attendu: 0.307
+  attendu: 0.306
   indice: 6.5
   absent_du_fichier: false
 - prenom: Steve
   observe: 3
-  attendu: 0.479
-  indice: 6.3
-  absent_du_fichier: false
-- prenom: Clémence
-  observe: 5
-  attendu: 0.814
-  indice: 6.1
+  attendu: 0.48
+  indice: 6.2
   absent_du_fichier: false
 - prenom: Grégoire
   observe: 2
-  attendu: 0.331
+  attendu: 0.334
   indice: 6.0
   absent_du_fichier: false
 - prenom: Hakim
   observe: 1
-  attendu: 0.167
+  attendu: 0.168
   indice: 6.0
   absent_du_fichier: false
 - prenom: Ambre
   observe: 1
   attendu: 0.171
-  indice: 5.9
-  absent_du_fichier: false
-- prenom: Maud
-  observe: 4
-  attendu: 0.678
-  indice: 5.9
+  indice: 5.8
   absent_du_fichier: false
 - prenom: Brice
   observe: 3
-  attendu: 0.516
+  attendu: 0.518
+  indice: 5.8
+  absent_du_fichier: false
+- prenom: Maud
+  observe: 4
+  attendu: 0.686
   indice: 5.8
   absent_du_fichier: false
 - prenom: Maël
@@ -254,13 +254,13 @@ prenoms:
   absent_du_fichier: false
 - prenom: Sylviane
   observe: 1
-  attendu: 0.182
+  attendu: 0.183
   indice: 5.5
   absent_du_fichier: false
 - prenom: Vivien
   observe: 1
-  attendu: 0.183
-  indice: 5.5
+  attendu: 0.184
+  indice: 5.4
   absent_du_fichier: false
 - prenom: Wendy
   observe: 1
@@ -269,27 +269,27 @@ prenoms:
   absent_du_fichier: false
 - prenom: Romuald
   observe: 2
-  attendu: 0.376
+  attendu: 0.379
   indice: 5.3
   absent_du_fichier: false
 - prenom: Sophia
   observe: 1
-  attendu: 0.195
+  attendu: 0.196
   indice: 5.1
   absent_du_fichier: false
 - prenom: Claudia
   observe: 1
-  attendu: 0.203
+  attendu: 0.205
   indice: 4.9
   absent_du_fichier: false
 - prenom: Linda
   observe: 3
-  attendu: 0.608
+  attendu: 0.614
   indice: 4.9
   absent_du_fichier: false
 - prenom: Allan
   observe: 1
-  attendu: 0.212
+  attendu: 0.214
   indice: 4.7
   absent_du_fichier: false
 - prenom: Steeve
@@ -299,222 +299,222 @@ prenoms:
   absent_du_fichier: false
 - prenom: Mohamed
   observe: 4
-  attendu: 0.939
-  indice: 4.3
+  attendu: 0.944
+  indice: 4.2
   absent_du_fichier: false
 - prenom: Romane
   observe: 1
-  attendu: 0.246
+  attendu: 0.245
   indice: 4.1
   absent_du_fichier: false
 - prenom: Nora
   observe: 1
-  attendu: 0.247
+  attendu: 0.25
   indice: 4.0
   absent_du_fichier: false
 - prenom: Ali
   observe: 1
-  attendu: 0.27
+  attendu: 0.272
   indice: 3.7
   absent_du_fichier: false
 - prenom: Jean-Luc
   observe: 3
-  attendu: 0.801
+  attendu: 0.815
   indice: 3.7
   absent_du_fichier: false
 - prenom: Diane
   observe: 1
-  attendu: 0.278
+  attendu: 0.28
   indice: 3.6
-  absent_du_fichier: false
-- prenom: Samira
-  observe: 1
-  attendu: 0.282
-  indice: 3.6
-  absent_du_fichier: false
-- prenom: Alexandra
-  observe: 7
-  attendu: 2.025
-  indice: 3.5
   absent_du_fichier: false
 - prenom: Claude
   observe: 4
-  attendu: 1.129
+  attendu: 1.14
   indice: 3.5
   absent_du_fichier: false
 - prenom: Jean-Charles
   observe: 1
-  attendu: 0.284
+  attendu: 0.287
   indice: 3.5
-  absent_du_fichier: false
-- prenom: Boris
-  observe: 1
-  attendu: 0.295
-  indice: 3.4
   absent_du_fichier: false
 - prenom: Mégane
   observe: 1
-  attendu: 0.291
+  attendu: 0.289
+  indice: 3.5
+  absent_du_fichier: false
+- prenom: Samira
+  observe: 1
+  attendu: 0.285
+  indice: 3.5
+  absent_du_fichier: false
+- prenom: Alexandra
+  observe: 7
+  attendu: 2.047
+  indice: 3.4
+  absent_du_fichier: false
+- prenom: Boris
+  observe: 1
+  attendu: 0.297
   indice: 3.4
   absent_du_fichier: false
 - prenom: Odile
   observe: 1
-  attendu: 0.295
+  attendu: 0.298
   indice: 3.4
-  absent_du_fichier: false
-- prenom: Andréa
-  observe: 1
-  attendu: 0.317
-  indice: 3.2
   absent_du_fichier: false
 - prenom: Clarisse
   observe: 1
-  attendu: 0.313
+  attendu: 0.315
   indice: 3.2
   absent_du_fichier: false
 - prenom: Francis
   observe: 2
-  attendu: 0.625
+  attendu: 0.632
   indice: 3.2
   absent_du_fichier: false
 - prenom: Myriam
   observe: 4
-  attendu: 1.252
+  attendu: 1.266
   indice: 3.2
+  absent_du_fichier: false
+- prenom: Andréa
+  observe: 1
+  attendu: 0.318
+  indice: 3.1
   absent_du_fichier: false
 - prenom: Bastien
   observe: 2
-  attendu: 0.661
+  attendu: 0.667
   indice: 3.0
   absent_du_fichier: false
 - prenom: Chantal
   observe: 2
-  attendu: 0.67
-  indice: 3.0
-  absent_du_fichier: false
-- prenom: Dylan
-  observe: 2
-  attendu: 0.664
+  attendu: 0.674
   indice: 3.0
   absent_du_fichier: false
 - prenom: Rodolphe
   observe: 1
-  attendu: 0.334
+  attendu: 0.339
   indice: 3.0
   absent_du_fichier: false
 - prenom: Régis
   observe: 2
-  attendu: 0.662
+  attendu: 0.672
   indice: 3.0
+  absent_du_fichier: false
+- prenom: Dylan
+  observe: 2
+  attendu: 0.681
+  indice: 2.9
   absent_du_fichier: false
 - prenom: Maxime
   observe: 8
-  attendu: 2.746
+  attendu: 2.766
   indice: 2.9
   absent_du_fichier: false
 - prenom: Jacky
   observe: 1
-  attendu: 0.358
+  attendu: 0.362
   indice: 2.8
   absent_du_fichier: false
 - prenom: Joëlle
   observe: 1
-  attendu: 0.359
+  attendu: 0.362
   indice: 2.8
   absent_du_fichier: false
 - prenom: Cécilia
   observe: 1
-  attendu: 0.373
+  attendu: 0.377
   indice: 2.7
   absent_du_fichier: false
 - prenom: Margot
   observe: 1
-  attendu: 0.365
+  attendu: 0.364
   indice: 2.7
   absent_du_fichier: false
 - prenom: Rudy
   observe: 1
-  attendu: 0.369
+  attendu: 0.373
   indice: 2.7
   absent_du_fichier: false
 - prenom: Anne-Sophie
   observe: 2
-  attendu: 0.772
+  attendu: 0.782
   indice: 2.6
   absent_du_fichier: false
 - prenom: Michèle
   observe: 1
-  attendu: 0.401
+  attendu: 0.403
   indice: 2.5
   absent_du_fichier: false
-- prenom: Géraldine
+- prenom: Bertrand
   observe: 2
-  attendu: 0.845
-  indice: 2.4
-  absent_du_fichier: false
-- prenom: William
-  observe: 2
-  attendu: 0.847
-  indice: 2.4
-  absent_du_fichier: false
-- prenom: Benoît
-  observe: 5
-  attendu: 2.214
+  attendu: 0.866
   indice: 2.3
   absent_du_fichier: false
-- prenom: Bertrand
+- prenom: Géraldine
   observe: 2
   attendu: 0.856
   indice: 2.3
   absent_du_fichier: false
 - prenom: Kelly
   observe: 1
-  attendu: 0.442
+  attendu: 0.444
   indice: 2.3
   absent_du_fichier: false
-- prenom: Marianne
-  observe: 1
-  attendu: 0.444
+- prenom: William
+  observe: 2
+  attendu: 0.857
   indice: 2.3
   absent_du_fichier: false
 - prenom: Alicia
   observe: 1
-  attendu: 0.461
+  attendu: 0.464
+  indice: 2.2
+  absent_du_fichier: false
+- prenom: Benoît
+  observe: 5
+  attendu: 2.23
+  indice: 2.2
+  absent_du_fichier: false
+- prenom: Jessica
+  observe: 4
+  attendu: 1.825
+  indice: 2.2
+  absent_du_fichier: false
+- prenom: Marianne
+  observe: 1
+  attendu: 0.449
   indice: 2.2
   absent_du_fichier: false
 - prenom: Maryline
   observe: 1
-  attendu: 0.459
+  attendu: 0.465
   indice: 2.2
   absent_du_fichier: false
 - prenom: Françoise
   observe: 2
-  attendu: 0.956
+  attendu: 0.962
   indice: 2.1
-  absent_du_fichier: false
-- prenom: Adrien
-  observe: 3
-  attendu: 1.531
-  indice: 2.0
   absent_du_fichier: false
 - prenom: Aurélien
   observe: 3
-  attendu: 1.529
+  attendu: 1.534
   indice: 2.0
   absent_du_fichier: false
 - prenom: Catherine
   observe: 5
-  attendu: 2.494
+  attendu: 2.52
   indice: 2.0
   absent_du_fichier: false
 - prenom: Cynthia
   observe: 1
-  attendu: 0.488
+  attendu: 0.493
   indice: 2.0
   absent_du_fichier: false
 - prenom: Inès
   observe: 1
-  attendu: 0.507
+  attendu: 0.505
   indice: 2.0
   absent_du_fichier: false
 - prenom: Louise
@@ -524,297 +524,287 @@ prenoms:
   absent_du_fichier: false
 - prenom: Mélissa
   observe: 2
-  attendu: 1.013
+  attendu: 1.018
   indice: 2.0
   absent_du_fichier: false
 - prenom: Patricia
   observe: 3
-  attendu: 1.519
+  attendu: 1.535
   indice: 2.0
+  absent_du_fichier: false
+- prenom: Adrien
+  observe: 3
+  attendu: 1.539
+  indice: 1.9
   absent_du_fichier: false
 - prenom: Corentin
   observe: 1
-  attendu: 0.524
+  attendu: 0.532
   indice: 1.9
   absent_du_fichier: false
 - prenom: Gabriel
   observe: 1
-  attendu: 0.531
+  attendu: 0.534
   indice: 1.9
   absent_du_fichier: false
 - prenom: Jacques
   observe: 2
-  attendu: 1.033
+  attendu: 1.042
   indice: 1.9
   absent_du_fichier: false
 - prenom: Joseph
   observe: 1
-  attendu: 0.518
+  attendu: 0.523
   indice: 1.9
   absent_du_fichier: false
 - prenom: Maria
   observe: 1
-  attendu: 0.518
+  attendu: 0.525
   indice: 1.9
   absent_du_fichier: false
 - prenom: Marie-Laure
   observe: 1
-  attendu: 0.522
+  attendu: 0.529
   indice: 1.9
   absent_du_fichier: false
 - prenom: Béatrice
   observe: 2
-  attendu: 1.098
-  indice: 1.8
-  absent_du_fichier: false
-- prenom: Carole
-  observe: 3
-  attendu: 1.7
+  attendu: 1.111
   indice: 1.8
   absent_du_fichier: false
 - prenom: Cindy
   observe: 3
-  attendu: 1.623
+  attendu: 1.642
   indice: 1.8
   absent_du_fichier: false
 - prenom: Fabienne
   observe: 2
-  attendu: 1.095
+  attendu: 1.108
   indice: 1.8
   absent_du_fichier: false
 - prenom: Gaël
   observe: 1
-  attendu: 0.562
+  attendu: 0.565
   indice: 1.8
   absent_du_fichier: false
 - prenom: Johan
   observe: 1
-  attendu: 0.56
+  attendu: 0.561
   indice: 1.8
   absent_du_fichier: false
-- prenom: Charlotte
+- prenom: Carole
   observe: 3
-  attendu: 1.805
+  attendu: 1.724
   indice: 1.7
   absent_du_fichier: false
 - prenom: Célia
   observe: 1
-  attendu: 0.601
-  indice: 1.7
-  absent_du_fichier: false
-- prenom: Jessica
-  observe: 3
-  attendu: 1.801
+  attendu: 0.602
   indice: 1.7
   absent_du_fichier: false
 - prenom: Loïc
   observe: 3
-  attendu: 1.726
+  attendu: 1.738
   indice: 1.7
   absent_du_fichier: false
 - prenom: Magalie
   observe: 1
-  attendu: 0.582
+  attendu: 0.589
   indice: 1.7
   absent_du_fichier: false
 - prenom: Marine
   observe: 4
-  attendu: 2.302
+  attendu: 2.309
   indice: 1.7
   absent_du_fichier: false
 - prenom: Nelly
   observe: 1
-  attendu: 0.578
+  attendu: 0.586
   indice: 1.7
   absent_du_fichier: false
 - prenom: Alain
   observe: 4
-  attendu: 2.454
+  attendu: 2.485
   indice: 1.6
   absent_du_fichier: false
 - prenom: Bernard
   observe: 2
-  attendu: 1.229
+  attendu: 1.238
   indice: 1.6
   absent_du_fichier: false
 - prenom: Caroline
   observe: 5
-  attendu: 3.059
+  attendu: 3.095
   indice: 1.6
   absent_du_fichier: false
-- prenom: Jimmy
-  observe: 1
-  attendu: 0.643
+- prenom: Charlotte
+  observe: 3
+  attendu: 1.822
   indice: 1.6
   absent_du_fichier: false
 - prenom: Lisa
   observe: 1
-  attendu: 0.61
+  attendu: 0.609
   indice: 1.6
   absent_du_fichier: false
 - prenom: Mehdi
   observe: 1
-  attendu: 0.641
+  attendu: 0.645
   indice: 1.6
-  absent_du_fichier: false
-- prenom: Patrick
-  observe: 4
-  attendu: 2.557
-  indice: 1.6
-  absent_du_fichier: false
-- prenom: Aude
-  observe: 1
-  attendu: 0.686
-  indice: 1.5
   absent_du_fichier: false
 - prenom: Estelle
   observe: 2
-  attendu: 1.353
+  attendu: 1.363
   indice: 1.5
   absent_du_fichier: false
 - prenom: Frédérique
   observe: 1
-  attendu: 0.659
+  attendu: 0.667
   indice: 1.5
   absent_du_fichier: false
 - prenom: Gaëlle
   observe: 2
-  attendu: 1.358
+  attendu: 1.376
   indice: 1.5
   absent_du_fichier: false
-- prenom: Jean-Claude
+- prenom: Jimmy
   observe: 1
-  attendu: 0.689
-  indice: 1.5
-  absent_du_fichier: false
-- prenom: Jean-Philippe
-  observe: 1
-  attendu: 0.682
+  attendu: 0.647
   indice: 1.5
   absent_du_fichier: false
 - prenom: Laure
   observe: 2
-  attendu: 1.335
+  attendu: 1.353
   indice: 1.5
   absent_du_fichier: false
 - prenom: Laurence
   observe: 3
-  attendu: 2.004
+  attendu: 2.034
   indice: 1.5
   absent_du_fichier: false
-- prenom: Nadine
-  observe: 1
-  attendu: 0.684
+- prenom: Patrick
+  observe: 4
+  attendu: 2.593
   indice: 1.5
+  absent_du_fichier: false
+- prenom: Aude
+  observe: 1
+  attendu: 0.694
+  indice: 1.4
   absent_du_fichier: false
 - prenom: Chloé
   observe: 2
-  attendu: 1.431
+  attendu: 1.435
   indice: 1.4
   absent_du_fichier: false
 - prenom: Christopher
   observe: 1
-  attendu: 0.705
+  attendu: 0.707
   indice: 1.4
   absent_du_fichier: false
 - prenom: Gilles
   observe: 2
-  attendu: 1.387
+  attendu: 1.409
   indice: 1.4
   absent_du_fichier: false
 - prenom: Isabelle
   observe: 6
-  attendu: 4.249
+  attendu: 4.304
+  indice: 1.4
+  absent_du_fichier: false
+- prenom: Jean-Claude
+  observe: 1
+  attendu: 0.696
+  indice: 1.4
+  absent_du_fichier: false
+- prenom: Jean-Philippe
+  observe: 1
+  attendu: 0.692
   indice: 1.4
   absent_du_fichier: false
 - prenom: Léa
   observe: 2
-  attendu: 1.475
+  attendu: 1.473
   indice: 1.4
   absent_du_fichier: false
 - prenom: Marjorie
   observe: 1
-  attendu: 0.706
+  attendu: 0.715
+  indice: 1.4
+  absent_du_fichier: false
+- prenom: Nadine
+  observe: 1
+  attendu: 0.69
   indice: 1.4
   absent_du_fichier: false
 - prenom: Pascale
   observe: 1
-  attendu: 0.714
+  attendu: 0.72
   indice: 1.4
   absent_du_fichier: false
 - prenom: Thibault
   observe: 1
-  attendu: 0.711
+  attendu: 0.716
   indice: 1.4
   absent_du_fichier: false
 - prenom: Yannick
   observe: 2
-  attendu: 1.448
+  attendu: 1.462
   indice: 1.4
   absent_du_fichier: false
 - prenom: André
   observe: 1
-  attendu: 0.788
+  attendu: 0.794
   indice: 1.3
   absent_du_fichier: false
 - prenom: Charlène
   observe: 1
-  attendu: 0.742
+  attendu: 0.746
   indice: 1.3
   absent_du_fichier: false
 - prenom: Claire
   observe: 3
-  attendu: 2.27
+  attendu: 2.294
   indice: 1.3
   absent_du_fichier: false
-- prenom: Cécile
-  observe: 3
-  attendu: 2.398
-  indice: 1.3
-  absent_du_fichier: false
-- prenom: Laurent
-  observe: 6
-  attendu: 4.791
+- prenom: Frédéric
+  observe: 7
+  attendu: 5.215
   indice: 1.3
   absent_du_fichier: false
 - prenom: Océane
   observe: 1
-  attendu: 0.778
+  attendu: 0.773
   indice: 1.3
   absent_du_fichier: false
 - prenom: Pauline
   observe: 3
-  attendu: 2.374
-  indice: 1.3
-  absent_du_fichier: false
-- prenom: Richard
-  observe: 1
-  attendu: 0.799
+  attendu: 2.389
   indice: 1.3
   absent_du_fichier: false
 - prenom: Véronique
   observe: 3
-  attendu: 2.281
+  attendu: 2.306
   indice: 1.3
   absent_du_fichier: false
 - prenom: Yves
   observe: 1
-  attendu: 0.772
+  attendu: 0.781
   indice: 1.3
   absent_du_fichier: false
 - prenom: Alexis
   observe: 2
-  attendu: 1.616
+  attendu: 1.631
   indice: 1.2
   absent_du_fichier: false
 - prenom: Charles
   observe: 1
-  attendu: 0.834
+  attendu: 0.841
   indice: 1.2
   absent_du_fichier: false
-- prenom: Frédéric
-  observe: 6
-  attendu: 5.143
+- prenom: Cécile
+  observe: 3
+  attendu: 2.429
   indice: 1.2
   absent_du_fichier: false
 - prenom: Hugo
@@ -824,397 +814,402 @@ prenoms:
   absent_du_fichier: false
 - prenom: Julie
   observe: 5
-  attendu: 4.145
+  attendu: 4.192
   indice: 1.2
   absent_du_fichier: false
-- prenom: Noémie
+- prenom: Laurent
+  observe: 6
+  attendu: 4.881
+  indice: 1.2
+  absent_du_fichier: false
+- prenom: Richard
   observe: 1
-  attendu: 0.866
-  indice: 1.2
-  absent_du_fichier: false
-- prenom: Philippe
-  observe: 5
-  attendu: 4.336
-  indice: 1.2
-  absent_du_fichier: false
-- prenom: Sabine
-  observe: 1
-  attendu: 0.859
+  attendu: 0.81
   indice: 1.2
   absent_du_fichier: false
 - prenom: Xavier
   observe: 2
-  attendu: 1.695
+  attendu: 1.714
   indice: 1.2
   absent_du_fichier: false
 - prenom: Alexandre
   observe: 5
-  attendu: 4.388
+  attendu: 4.424
   indice: 1.1
   absent_du_fichier: false
 - prenom: Delphine
   observe: 3
-  attendu: 2.746
+  attendu: 2.783
   indice: 1.1
   absent_du_fichier: false
 - prenom: Ludivine
   observe: 1
-  attendu: 0.929
+  attendu: 0.939
   indice: 1.1
   absent_du_fichier: false
 - prenom: Mathieu
   observe: 3
-  attendu: 2.724
+  attendu: 2.733
+  indice: 1.1
+  absent_du_fichier: false
+- prenom: Noémie
+  observe: 1
+  attendu: 0.871
+  indice: 1.1
+  absent_du_fichier: false
+- prenom: Philippe
+  observe: 5
+  attendu: 4.418
+  indice: 1.1
+  absent_du_fichier: false
+- prenom: Sabine
+  observe: 1
+  attendu: 0.871
   indice: 1.1
   absent_du_fichier: false
 - prenom: Simon
   observe: 1
-  attendu: 0.883
+  attendu: 0.888
   indice: 1.1
   absent_du_fichier: false
 - prenom: Sébastien
   observe: 7
-  attendu: 6.488
+  attendu: 6.53
   indice: 1.1
   absent_du_fichier: false
 - prenom: Carine
   observe: 1
-  attendu: 1.003
-  indice: 1.0
-  absent_du_fichier: false
-- prenom: Christelle
-  observe: 3
-  attendu: 3.132
+  attendu: 1.011
   indice: 1.0
   absent_du_fichier: false
 - prenom: Christine
   observe: 2
-  attendu: 2.028
+  attendu: 2.048
   indice: 1.0
   absent_du_fichier: false
 - prenom: Florence
   observe: 2
-  attendu: 1.944
+  attendu: 1.969
   indice: 1.0
   absent_du_fichier: false
 - prenom: Jean-Pierre
   observe: 1
-  attendu: 1.01
+  attendu: 1.022
   indice: 1.0
   absent_du_fichier: false
 - prenom: Jérôme
   observe: 4
-  attendu: 4.085
+  attendu: 4.116
   indice: 1.0
   absent_du_fichier: false
 - prenom: Marie
   observe: 6
-  attendu: 6.125
+  attendu: 6.176
   indice: 1.0
   absent_du_fichier: false
 - prenom: Mélanie
   observe: 3
-  attendu: 2.859
+  attendu: 2.892
   indice: 1.0
   absent_du_fichier: false
 - prenom: Nicolas
   observe: 8
-  attendu: 7.811
+  attendu: 7.85
   indice: 1.0
   absent_du_fichier: false
 - prenom: Pascal
   observe: 3
-  attendu: 2.865
+  attendu: 2.919
   indice: 1.0
   absent_du_fichier: false
 - prenom: Valentin
   observe: 1
-  attendu: 1.015
+  attendu: 1.03
   indice: 1.0
   absent_du_fichier: false
 - prenom: Émilie
   observe: 4
-  attendu: 3.934
+  attendu: 4.0
   indice: 1.0
   absent_du_fichier: false
 - prenom: Angélique
   observe: 2
-  attendu: 2.18
+  attendu: 2.206
   indice: 0.9
   absent_du_fichier: false
 - prenom: Anthony
   observe: 3
-  attendu: 3.339
+  attendu: 3.356
   indice: 0.9
   absent_du_fichier: false
 - prenom: Bruno
   observe: 2
-  attendu: 2.242
+  attendu: 2.281
+  indice: 0.9
+  absent_du_fichier: false
+- prenom: Christelle
+  observe: 3
+  attendu: 3.181
   indice: 0.9
   absent_du_fichier: false
 - prenom: Fabrice
   observe: 2
-  attendu: 2.169
+  attendu: 2.203
   indice: 0.9
   absent_du_fichier: false
 - prenom: Gérard
   observe: 1
-  attendu: 1.055
+  attendu: 1.062
   indice: 0.9
   absent_du_fichier: false
 - prenom: Jonathan
   observe: 2
-  attendu: 2.276
+  attendu: 2.278
   indice: 0.9
   absent_du_fichier: false
 - prenom: Nathalie
   observe: 5
-  attendu: 5.292
-  indice: 0.9
-  absent_du_fichier: false
-- prenom: Paul
-  observe: 1
-  attendu: 1.173
-  indice: 0.9
-  absent_du_fichier: false
-- prenom: Raphaël
-  observe: 1
-  attendu: 1.176
+  attendu: 5.366
   indice: 0.9
   absent_du_fichier: false
 - prenom: Romain
   observe: 3
-  attendu: 3.27
+  attendu: 3.282
   indice: 0.9
   absent_du_fichier: false
 - prenom: Samuel
   observe: 1
-  attendu: 1.143
+  attendu: 1.152
   indice: 0.9
   absent_du_fichier: false
 - prenom: Sandra
   observe: 2
-  attendu: 2.278
+  attendu: 2.301
   indice: 0.9
   absent_du_fichier: false
 - prenom: Sarah
   observe: 2
-  attendu: 2.324
+  attendu: 2.337
   indice: 0.9
   absent_du_fichier: false
 - prenom: Sophie
   observe: 4
-  attendu: 4.322
+  attendu: 4.38
   indice: 0.9
   absent_du_fichier: false
 - prenom: Valérie
   observe: 3
-  attendu: 3.395
+  attendu: 3.442
   indice: 0.9
   absent_du_fichier: false
 - prenom: Vanessa
   observe: 2
-  attendu: 2.106
+  attendu: 2.134
   indice: 0.9
   absent_du_fichier: false
 - prenom: Antoine
   observe: 2
-  attendu: 2.372
+  attendu: 2.393
   indice: 0.8
   absent_du_fichier: false
 - prenom: Benjamin
   observe: 2
-  attendu: 2.485
+  attendu: 2.498
   indice: 0.8
   absent_du_fichier: false
 - prenom: Camille
   observe: 2
-  attendu: 2.599
+  attendu: 2.606
   indice: 0.8
   absent_du_fichier: false
 - prenom: Céline
   observe: 4
-  attendu: 5.213
+  attendu: 5.281
   indice: 0.8
   absent_du_fichier: false
 - prenom: François
   observe: 2
-  attendu: 2.453
+  attendu: 2.479
   indice: 0.8
   absent_du_fichier: false
 - prenom: Karine
   observe: 2
-  attendu: 2.378
+  attendu: 2.411
   indice: 0.8
   absent_du_fichier: false
 - prenom: Lionel
   observe: 1
-  attendu: 1.239
+  attendu: 1.254
   indice: 0.8
   absent_du_fichier: false
 - prenom: Ludovic
   observe: 2
-  attendu: 2.564
-  indice: 0.8
-  absent_du_fichier: false
-- prenom: Michel
-  observe: 2
-  attendu: 2.643
+  attendu: 2.583
   indice: 0.8
   absent_du_fichier: false
 - prenom: Morgane
   observe: 1
-  attendu: 1.278
+  attendu: 1.282
+  indice: 0.8
+  absent_du_fichier: false
+- prenom: Paul
+  observe: 1
+  attendu: 1.181
+  indice: 0.8
+  absent_du_fichier: false
+- prenom: Raphaël
+  observe: 1
+  attendu: 1.187
   indice: 0.8
   absent_du_fichier: false
 - prenom: Vincent
   observe: 3
-  attendu: 3.919
+  attendu: 3.954
   indice: 0.8
   absent_du_fichier: false
 - prenom: Franck
   observe: 2
-  attendu: 2.712
+  attendu: 2.763
   indice: 0.7
   absent_du_fichier: false
 - prenom: Guillaume
   observe: 3
-  attendu: 4.255
+  attendu: 4.281
   indice: 0.7
   absent_du_fichier: false
 - prenom: Hervé
   observe: 1
-  attendu: 1.408
+  attendu: 1.436
   indice: 0.7
   absent_du_fichier: false
 - prenom: Jérémy
   observe: 2
-  attendu: 2.737
+  attendu: 2.748
   indice: 0.7
   absent_du_fichier: false
 - prenom: Magali
   observe: 1
-  attendu: 1.485
+  attendu: 1.505
   indice: 0.7
   absent_du_fichier: false
-- prenom: Sylvie
+- prenom: Michel
   observe: 2
-  attendu: 3.069
+  attendu: 2.669
   indice: 0.7
   absent_du_fichier: false
 - prenom: Thierry
   observe: 2
-  attendu: 2.87
+  attendu: 2.928
   indice: 0.7
   absent_du_fichier: false
 - prenom: Élodie
   observe: 3
-  attendu: 4.037
+  attendu: 4.079
   indice: 0.7
   absent_du_fichier: false
 - prenom: Amélie
   observe: 1
-  attendu: 1.634
+  attendu: 1.654
   indice: 0.6
   absent_du_fichier: false
 - prenom: Corinne
   observe: 1
-  attendu: 1.611
-  indice: 0.6
-  absent_du_fichier: false
-- prenom: Cyril
-  observe: 1
-  attendu: 1.808
+  attendu: 1.631
   indice: 0.6
   absent_du_fichier: false
 - prenom: Cédric
   observe: 2
-  attendu: 3.431
+  attendu: 3.448
   indice: 0.6
   absent_du_fichier: false
 - prenom: Daniel
   observe: 1
-  attendu: 1.797
+  attendu: 1.814
   indice: 0.6
   absent_du_fichier: false
 - prenom: Emmanuelle
   observe: 1
-  attendu: 1.574
+  attendu: 1.597
   indice: 0.6
   absent_du_fichier: false
 - prenom: Jennifer
   observe: 1
-  attendu: 1.738
+  attendu: 1.772
   indice: 0.6
   absent_du_fichier: false
 - prenom: Lucie
   observe: 1
-  attendu: 1.775
+  attendu: 1.788
   indice: 0.6
   absent_du_fichier: false
 - prenom: Manon
   observe: 1
-  attendu: 1.676
+  attendu: 1.668
   indice: 0.6
   absent_du_fichier: false
 - prenom: Mathilde
   observe: 1
-  attendu: 1.662
+  attendu: 1.67
   indice: 0.6
   absent_du_fichier: false
 - prenom: Quentin
   observe: 1
-  attendu: 1.544
+  attendu: 1.566
+  indice: 0.6
+  absent_du_fichier: false
+- prenom: Sylvie
+  observe: 2
+  attendu: 3.099
   indice: 0.6
   absent_du_fichier: false
 - prenom: Amandine
   observe: 1
-  attendu: 2.061
+  attendu: 2.083
   indice: 0.5
   absent_du_fichier: false
 - prenom: Christian
   observe: 1
-  attendu: 1.908
+  attendu: 1.929
   indice: 0.5
   absent_du_fichier: false
 - prenom: Christophe
   observe: 3
-  attendu: 6.329
+  attendu: 6.435
+  indice: 0.5
+  absent_du_fichier: false
+- prenom: Cyril
+  observe: 1
+  attendu: 1.823
   indice: 0.5
   absent_du_fichier: false
 - prenom: Hélène
   observe: 1
-  attendu: 2.056
+  attendu: 2.079
   indice: 0.5
   absent_du_fichier: false
 - prenom: Marc
   observe: 1
-  attendu: 1.884
-  indice: 0.5
-  absent_du_fichier: false
-- prenom: Olivier
-  observe: 2
-  attendu: 4.429
+  attendu: 1.91
   indice: 0.5
   absent_du_fichier: false
 - prenom: Pierre
   observe: 2
-  attendu: 3.663
+  attendu: 3.695
   indice: 0.5
   absent_du_fichier: false
 - prenom: Thomas
   observe: 2
-  attendu: 4.17
+  attendu: 4.188
   indice: 0.5
   absent_du_fichier: false
 - prenom: Virginie
   observe: 2
-  attendu: 3.761
+  attendu: 3.812
   indice: 0.5
   absent_du_fichier: false
 - prenom: Arnaud
   observe: 1
-  attendu: 2.537
+  attendu: 2.559
   indice: 0.4
   absent_du_fichier: false
 - prenom: Laura
@@ -1224,62 +1219,67 @@ prenoms:
   absent_du_fichier: false
 - prenom: Mickaël
   observe: 1
-  attendu: 2.648
+  attendu: 2.656
+  indice: 0.4
+  absent_du_fichier: false
+- prenom: Olivier
+  observe: 2
+  attendu: 4.498
   indice: 0.4
   absent_du_fichier: false
 - prenom: Sandrine
   observe: 2
-  attendu: 4.492
+  attendu: 4.563
   indice: 0.4
   absent_du_fichier: false
 - prenom: Stéphane
   observe: 2
-  attendu: 5.23
+  attendu: 5.316
   indice: 0.4
   absent_du_fichier: false
 - prenom: Audrey
   observe: 1
-  attendu: 3.512
+  attendu: 3.558
   indice: 0.3
   absent_du_fichier: false
 - prenom: David
   observe: 2
-  attendu: 5.993
+  attendu: 6.051
   indice: 0.3
   absent_du_fichier: false
 - prenom: Julien
   observe: 2
-  attendu: 6.176
+  attendu: 6.197
   indice: 0.3
   absent_du_fichier: false
 - prenom: Kevin
   observe: 1
-  attendu: 2.963
+  attendu: 2.989
   indice: 0.3
   absent_du_fichier: false
 - prenom: Laëtitia
   observe: 1
-  attendu: 3.517
+  attendu: 3.564
   indice: 0.3
   absent_du_fichier: false
 - prenom: Éric
   observe: 1
-  attendu: 3.641
+  attendu: 3.708
   indice: 0.3
   absent_du_fichier: false
 - prenom: Aurélie
   observe: 1
-  attendu: 4.718
+  attendu: 4.794
   indice: 0.2
   absent_du_fichier: false
 - prenom: Jean
   observe: 1
-  attendu: 4.433
+  attendu: 4.468
   indice: 0.2
   absent_du_fichier: false
 - prenom: Stéphanie
   observe: 1
-  attendu: 5.61
+  attendu: 5.678
   indice: 0.2
   absent_du_fichier: false
 - prenom: Abdellah
@@ -1319,7 +1319,7 @@ prenoms:
   absent_du_fichier: true
 - prenom: Aubin
   observe: 1
-  attendu: 0.027
+  attendu: 0.028
   indice: null
   absent_du_fichier: true
 - prenom: Ava
@@ -1449,7 +1449,7 @@ prenoms:
   absent_du_fichier: true
 - prenom: Guénaëlle
   observe: 2
-  attendu: 0.03
+  attendu: 0.031
   indice: null
   absent_du_fichier: true
 - prenom: Gwendal Peizerat
@@ -1474,7 +1474,7 @@ prenoms:
   absent_du_fichier: true
 - prenom: Harry
   observe: 1
-  attendu: 0.049
+  attendu: 0.05
   indice: null
   absent_du_fichier: true
 - prenom: Huw
@@ -1494,7 +1494,7 @@ prenoms:
   absent_du_fichier: true
 - prenom: Javier
   observe: 2
-  attendu: 0.013
+  attendu: 0.014
   indice: null
   absent_du_fichier: true
 - prenom: Jeff
@@ -1524,7 +1524,7 @@ prenoms:
   absent_du_fichier: true
 - prenom: Kader
   observe: 1
-  attendu: 0.025
+  attendu: 0.026
   indice: null
   absent_du_fichier: true
 - prenom: Kaouther
@@ -1564,12 +1564,17 @@ prenoms:
   absent_du_fichier: true
 - prenom: Mama
   observe: 1
-  attendu: 0.011
+  attendu: 0.012
   indice: null
   absent_du_fichier: true
 - prenom: Manu
   observe: 1
-  attendu: 0.004
+  attendu: 0.005
+  indice: null
+  absent_du_fichier: true
+- prenom: Marie-France
+  observe: 1
+  attendu: 0.0
   indice: null
   absent_du_fichier: true
 - prenom: Marta
@@ -1639,7 +1644,7 @@ prenoms:
   absent_du_fichier: true
 - prenom: Naouel
   observe: 1
-  attendu: 0.015
+  attendu: 0.016
   indice: null
   absent_du_fichier: true
 - prenom: Naïs
@@ -1668,7 +1673,7 @@ prenoms:
   indice: null
   absent_du_fichier: true
 - prenom: Phil
-  observe: 1
+  observe: 2
   attendu: 0.0
   indice: null
   absent_du_fichier: true
@@ -1704,7 +1709,7 @@ prenoms:
   absent_du_fichier: true
 - prenom: Sandro
   observe: 1
-  attendu: 0.034
+  attendu: 0.035
   indice: null
   absent_du_fichier: true
 - prenom: Setha
@@ -1744,7 +1749,12 @@ prenoms:
   absent_du_fichier: true
 - prenom: Vicky
   observe: 1
-  attendu: 0.036
+  attendu: 0.037
+  indice: null
+  absent_du_fichier: true
+- prenom: Victor
+  observe: 1
+  attendu: 0.0
   indice: null
   absent_du_fichier: true
 - prenom: Vidéli

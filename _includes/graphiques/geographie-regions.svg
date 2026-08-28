@@ -2,59 +2,59 @@
 <svg class="graphique" viewBox="0 0 800 540" role="img" preserveAspectRatio="xMidYMid meet" aria-label="D&#x27;où viennent les aventuriers, région par région">
   <title>D&#x27;où viennent les aventuriers, région par région</title>
   <desc>Indice observe divise par attendu. A 1, la region fournit exactement sa part de population. L&#x27;intervalle est celui de l&#x27;effectif observe.</desc>
-  <line x1="311.2" y1="26" x2="311.2" y2="488" stroke="var(--encre-douce)" stroke-width="1.4" stroke-dasharray="4 3"/>
-  <text x="311.2" y="20.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">1</text>
-  <g class="marque"><title>Corse : 6 aventuriers pour 1.5 attendus, soit ×3.97</title><line x1="333.4" y1="53.0" x2="675.0" y2="53.0" stroke="var(--serie-1)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="454.5" cy="53.0" r="4.4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <line x1="331.3" y1="26" x2="331.3" y2="488" stroke="var(--encre-douce)" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <text x="331.3" y="20.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">1</text>
+  <g class="marque"><title>Corse : 6 aventuriers pour 2.1 attendus, soit ×2.79</title><line x1="333.4" y1="53.0" x2="675.0" y2="53.0" stroke="var(--serie-1)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="453.6" cy="53.0" r="4.4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1.6"/></g>
   <text x="220.0" y="53.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Corse</text>
-  <text x="720.0" y="53.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">3.97</text>
-  <g class="marque"><title>Nouvelle-Aquitaine : 36 aventuriers pour 26.1 attendus, soit ×1.38</title><line x1="310.3" y1="79.0" x2="352.7" y2="79.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="329.6" cy="79.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
-  <text x="220.0" y="79.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Nouvelle-Aquitaine</text>
-  <text x="720.0" y="79.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.38</text>
-  <g class="marque"><title>Provence-Alpes-Côte d&#x27;Azur : 30 aventuriers pour 22.3 attendus, soit ×1.34</title><line x1="307.4" y1="105.0" x2="353.7" y2="105.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="327.6" cy="105.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
-  <text x="220.0" y="105.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Provence-Alpes-Côte d&#x27;Azur</text>
-  <text x="720.0" y="105.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.34</text>
-  <g class="marque"><title>Martinique : 2 aventuriers pour 1.6 attendus, soit ×1.22</title><line x1="270.2" y1="131.0" x2="473.3" y2="131.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="321.8" cy="131.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
-  <text x="220.0" y="131.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Martinique</text>
-  <text x="720.0" y="131.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.22</text>
-  <g class="marque"><title>Île-de-France : 71 aventuriers pour 60.0 attendus, soit ×1.18</title><line x1="308.8" y1="157.0" x2="332.4" y2="157.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="319.9" cy="157.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
-  <text x="220.0" y="157.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Île-de-France</text>
-  <text x="720.0" y="157.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.18</text>
-  <g class="marque"><title>Auvergne-Rhône-Alpes : 42 aventuriers pour 36.2 attendus, soit ×1.16</title><line x1="304.0" y1="183.0" x2="336.8" y2="183.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="318.9" cy="183.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="720.0" y="53.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">2.79</text>
+  <g class="marque"><title>Provence-Alpes-Côte d&#x27;Azur : 55 aventuriers pour 32.1 attendus, soit ×1.71</title><line x1="352.5" y1="79.0" x2="412.6" y2="79.0" stroke="var(--serie-1)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="379.8" cy="79.0" r="4.4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="220.0" y="79.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Provence-Alpes-Côte d&#x27;Azur</text>
+  <text x="720.0" y="79.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.71</text>
+  <g class="marque"><title>Nouvelle-Aquitaine : 47 aventuriers pour 37.5 attendus, soit ×1.25</title><line x1="326.5" y1="105.0" x2="375.0" y2="105.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="348.4" cy="105.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="220.0" y="105.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Nouvelle-Aquitaine</text>
+  <text x="720.0" y="105.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.25</text>
+  <g class="marque"><title>Île-de-France : 104 aventuriers pour 86.1 attendus, soit ×1.21</title><line x1="332.0" y1="131.0" x2="360.0" y2="131.0" stroke="var(--serie-1)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="345.7" cy="131.0" r="4.4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="220.0" y="131.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Île-de-France</text>
+  <text x="720.0" y="131.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.21</text>
+  <g class="marque"><title>Occitanie : 43 aventuriers pour 37.1 attendus, soit ×1.16</title><line x1="321.1" y1="157.0" x2="368.2" y2="157.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="342.2" cy="157.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="220.0" y="157.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Occitanie</text>
+  <text x="720.0" y="157.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.16</text>
+  <g class="marque"><title>Auvergne-Rhône-Alpes : 57 aventuriers pour 51.9 attendus, soit ×1.1</title><line x1="320.4" y1="183.0" x2="358.0" y2="183.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="338.1" cy="183.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
   <text x="220.0" y="183.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Auvergne-Rhône-Alpes</text>
-  <text x="720.0" y="183.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.16</text>
-  <g class="marque"><title>Occitanie : 30 aventuriers pour 26.0 attendus, soit ×1.15</title><line x1="301.1" y1="209.0" x2="340.7" y2="209.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="318.5" cy="209.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
-  <text x="220.0" y="209.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Occitanie</text>
-  <text x="720.0" y="209.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.15</text>
-  <g class="marque"><title>Grand Est : 21 aventuriers pour 25.5 attendus, soit ×0.82</title><line x1="288.1" y1="235.0" x2="322.3" y2="235.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="302.5" cy="235.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
-  <text x="220.0" y="235.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Grand Est</text>
-  <text x="720.0" y="235.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.82</text>
-  <g class="marque"><title>Normandie : 12 aventuriers pour 14.7 attendus, soit ×0.82</title><line x1="283.7" y1="261.0" x2="331.0" y2="261.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="302.5" cy="261.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
-  <text x="220.0" y="261.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Normandie</text>
-  <text x="720.0" y="261.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.82</text>
-  <g class="marque"><title>Bretagne : 11 aventuriers pour 14.6 attendus, soit ×0.75</title><line x1="281.3" y1="287.0" x2="327.1" y2="287.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="299.2" cy="287.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
-  <text x="220.0" y="287.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Bretagne</text>
-  <text x="720.0" y="287.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.75</text>
-  <g class="marque"><title>Bourgogne-Franche-Comté : 9 aventuriers pour 12.3 attendus, soit ×0.73</title><line x1="279.4" y1="313.0" x2="329.1" y2="313.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="298.2" cy="313.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
-  <text x="220.0" y="313.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Bourgogne-Franche-Comté</text>
-  <text x="720.0" y="313.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.73</text>
-  <g class="marque"><title>Hauts-de-France : 18 aventuriers pour 27.4 attendus, soit ×0.66</title><line x1="281.8" y1="339.0" x2="312.2" y2="339.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="294.8" cy="339.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
-  <text x="220.0" y="339.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Hauts-de-France</text>
-  <text x="720.0" y="339.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.66</text>
-  <g class="marque"><title>Centre-Val de Loire : 7 aventuriers pour 11.2 attendus, soit ×0.62</title><line x1="275.0" y1="365.0" x2="324.2" y2="365.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="292.9" cy="365.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
-  <text x="220.0" y="365.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Centre-Val de Loire</text>
-  <text x="720.0" y="365.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.62</text>
-  <g class="marque"><title>Pays de la Loire : 9 aventuriers pour 16.7 attendus, soit ×0.54</title><line x1="275.0" y1="391.0" x2="311.7" y2="391.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="289.0" cy="391.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
-  <text x="220.0" y="391.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Pays de la Loire</text>
-  <text x="720.0" y="391.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.54</text>
-  <g class="marque"><title>Guadeloupe : 0 aventuriers pour 1.7 attendus, soit ×0.0</title><line x1="263.0" y1="417.0" x2="366.2" y2="417.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="263.0" cy="417.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="720.0" y="183.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.1</text>
+  <g class="marque"><title>Martinique : 2 aventuriers pour 2.4 attendus, soit ×0.82</title><line x1="269.8" y1="209.0" x2="465.2" y2="209.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="319.0" cy="209.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="220.0" y="209.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Martinique</text>
+  <text x="720.0" y="209.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.82</text>
+  <g class="marque"><title>Normandie : 17 aventuriers pour 21.3 attendus, soit ×0.8</title><line x1="295.1" y1="235.0" x2="349.1" y2="235.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="317.6" cy="235.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="220.0" y="235.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Normandie</text>
+  <text x="720.0" y="235.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.8</text>
+  <g class="marque"><title>Hauts-de-France : 30 aventuriers pour 39.7 attendus, soit ×0.76</title><line x1="298.5" y1="261.0" x2="335.4" y2="261.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="314.9" cy="261.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="220.0" y="261.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Hauts-de-France</text>
+  <text x="720.0" y="261.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.76</text>
+  <g class="marque"><title>Grand Est : 27 aventuriers pour 37.0 attendus, soit ×0.73</title><line x1="296.5" y1="287.0" x2="334.7" y2="287.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="312.9" cy="287.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="220.0" y="287.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Grand Est</text>
+  <text x="720.0" y="287.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.73</text>
+  <g class="marque"><title>Bretagne : 15 aventuriers pour 20.9 attendus, soit ×0.72</title><line x1="290.3" y1="313.0" x2="342.9" y2="313.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="312.2" cy="313.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="220.0" y="313.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Bretagne</text>
+  <text x="720.0" y="313.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.72</text>
+  <g class="marque"><title>Bourgogne-Franche-Comté : 12 aventuriers pour 17.8 attendus, soit ×0.67</title><line x1="286.9" y1="339.0" x2="342.9" y2="339.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="308.8" cy="339.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="220.0" y="339.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Bourgogne-Franche-Comté</text>
+  <text x="720.0" y="339.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.67</text>
+  <g class="marque"><title>Pays de la Loire : 14 aventuriers pour 23.9 attendus, soit ×0.59</title><line x1="284.8" y1="365.0" x2="329.3" y2="365.0" stroke="var(--serie-1)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="303.3" cy="365.0" r="4.4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="220.0" y="365.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Pays de la Loire</text>
+  <text x="720.0" y="365.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.59</text>
+  <g class="marque"><title>Centre-Val de Loire : 8 aventuriers pour 16.2 attendus, soit ×0.49</title><line x1="277.3" y1="391.0" x2="328.6" y2="391.0" stroke="var(--serie-1)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="296.5" cy="391.0" r="4.4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="220.0" y="391.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Centre-Val de Loire</text>
+  <text x="720.0" y="391.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.49</text>
+  <g class="marque"><title>Guadeloupe : 0 aventuriers pour 2.5 attendus, soit ×0.0</title><line x1="263.0" y1="417.0" x2="362.7" y2="417.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="263.0" cy="417.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
   <text x="220.0" y="417.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Guadeloupe</text>
   <text x="720.0" y="417.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.0</text>
-  <g class="marque"><title>Guyane : 0 aventuriers pour 1.2 attendus, soit ×0.0</title><line x1="263.0" y1="443.0" x2="414.0" y2="443.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="263.0" cy="443.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <g class="marque"><title>Guyane : 0 aventuriers pour 1.6 attendus, soit ×0.0</title><line x1="263.0" y1="443.0" x2="416.7" y2="443.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="263.0" cy="443.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
   <text x="220.0" y="443.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Guyane</text>
   <text x="720.0" y="443.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.0</text>
-  <g class="marque"><title>La Réunion : 0 aventuriers pour 4.0 attendus, soit ×0.0</title><line x1="263.0" y1="469.0" x2="307.4" y2="469.0" stroke="var(--serie-1)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="263.0" cy="469.0" r="4.4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <g class="marque"><title>La Réunion : 0 aventuriers pour 5.7 attendus, soit ×0.0</title><line x1="263.0" y1="469.0" x2="306.7" y2="469.0" stroke="var(--serie-1)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="263.0" cy="469.0" r="4.4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1.6"/></g>
   <text x="220.0" y="469.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">La Réunion</text>
   <text x="720.0" y="469.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.0</text>
-  <text x="230.0" y="526.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">304 aventuriers localisés · population de 20 à 59 ans, année de chaque saison</text>
+  <text x="230.0" y="526.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">437 aventuriers localisés · population de 20 à 59 ans, année de chaque saison</text>
 </svg>
 </figure>

@@ -83,16 +83,23 @@ qui subsiste est un écart que le hasard ne produit pas.
 
 Variante de contrôle : rebattre uniquement à l’intérieur d’une même décennie.
 Le casting a dérivé en vingt-cinq ans, et sans cette précaution on confondrait
-une règle de composition avec un simple effet d’époque. Cette variante a suffi à
-faire tomber un résultat apparemment solide — le mélange d’archétypes.
+une règle de composition avec un simple effet d’époque.
 
 ### L’analyse des correspondances multiples
 
-Quatre variables qualitatives ne se projettent pas dans un plan par une moyenne.
-L’ACM passe par le tableau disjonctif et le décompose, ce qui donne des **axes
-latents** : les directions selon lesquelles les profils se séparent réellement,
-qu’aucune colonne ne porte. Une classification automatique tourne ensuite sur
-ces axes.
+Trois variables qualitatives — âge en tranches, sexe, famille de métier — ne se
+projettent pas dans un plan par une moyenne. L’ACM passe par le tableau
+disjonctif et le décompose, ce qui donne des **axes latents** : les directions
+selon lesquelles les profils se séparent réellement, qu’aucune colonne ne porte.
+Une classification automatique tourne ensuite sur ces axes ; le nombre de
+groupes est celui qui maximise l’indice de silhouette, à condition qu’aucun
+groupe ne pèse moins de 2 % du casting.
+
+**Le bandeau en est exclu**, et cette exclusion est un correctif : tant qu’il y
+figurait, le test du « mélange d’archétypes » sortait à 7,95 écarts-types. Les
+couleurs en jeu changeant d’une saison à l’autre, une saison ne pouvait
+mécaniquement pas contenir tous les profils — le test mesurait la grille des
+tribus, pas le casting. Sans le bandeau, il tombe à 1,06 et n’est pas retenu.
 
 ### Le modèle de Plackett-Luce
 
@@ -184,7 +191,7 @@ qu’un jeu de données de cette taille peut encore distinguer du hasard.
 <thead><tr><th>Niveau d’analyse</th><th class="nombre">Observations</th><th class="nombre">Plus petit effet décelable</th></tr></thead>
 <tbody>
 <tr><td>Une grandeur de saison</td><td class="nombre">26</td><td class="nombre">0,55 écart-type</td></tr>
-<tr><td>Une grandeur de participation</td><td class="nombre">505</td><td class="nombre">0,12 écart-type</td></tr>
+<tr><td>Une grandeur de participation</td><td class="nombre">509</td><td class="nombre">0,12 écart-type</td></tr>
 <tr><td>Une part au niveau du bulletin</td><td class="nombre">1 753</td><td class="nombre">3,3 points</td></tr>
 <tr><td>Une part sur les conseils mixtes</td><td class="nombre">1 033</td><td class="nombre">4,4 points</td></tr>
 <tr><td>Une part sur le vote du jury</td><td class="nombre">177</td><td class="nombre">10,5 points</td></tr>
@@ -200,9 +207,12 @@ Trois conséquences, et elles ne vont pas dans le même sens.
 
 **Le niveau de la saison est épuisé.** Vingt-six saisons classiques ne
 permettent de détecter qu’un effet d’un demi-écart-type. Tout ce qui pouvait s’y
-voir — la rupture de 2012, la fusion calée sur la grille, l’absence d’effet des
-mécaniques — a été cherché. Ce qui resterait serait si gros qu’il sauterait déjà
-aux yeux.
+voir — la rupture de régime, la fusion calée sur la grille, l’absence d’effet
+des mécaniques — a été cherché. Ce qui resterait serait si gros qu’il sauterait
+déjà aux yeux. C’est aussi le niveau le plus fragile : vingt-trois valeurs
+d’âge ajoutées au jeu de données ont suffi à déplacer de sept ans la date de
+rupture, sans rien changer à son existence.
+[La grille]({{ '/statistiques/grille/' | relative_url }}) le raconte.
 
 **Le niveau du bulletin reste le bon endroit**, et c’est là que les résultats les
 plus solides de ce site ont été trouvés : la persistance des alliances,
@@ -211,11 +221,20 @@ qui n’en est pas une. Mais les questions qui restent à ce niveau — qui prop
 nom, qui suit, dans quel ordre les bulletins sont écrits — demandent une
 information que **les sources ne contiennent pas**.
 
-**Le nombre de tests, lui, n’est pas la limite.** On pourrait le croire : dix-sept
-tests déclarés, cela commence à compter. Vérification faite, en ajoutant vingt
-tests sans résultat au registre, **aucun des neuf résultats retenus ne tombe** —
-ils sont trop nets pour cela. Ce n’est donc pas une raison de s’arrêter, et ce
-serait malhonnête de le prétendre.
+**Le nombre de tests, lui, n’est pas la limite.** On pourrait le croire :
+{{ site.data.stats.modeles.registre | size }} tests déclarés, cela commence à
+compter. Vérification faite, en ajoutant vingt tests sans résultat au registre,
+**aucun des {{ site.data.stats.modeles.nb_retenus }} résultats retenus ne
+tombe** — ils sont trop nets pour cela. Ce n’est donc pas une raison de
+s’arrêter, et ce serait malhonnête de le prétendre.
+
+**Le vrai risque n’est pas le nombre de tests, c’est le modèle nul.** Deux fois
+sur ce site, un résultat spectaculaire s’est révélé fabriqué par la manière de
+tirer au sort : le vote homophile, où le modèle nul laissait un aventurier
+recevoir son propre nom ; le mélange d’archétypes, où le bandeau — assigné par
+la production, et différent d’une saison à l’autre — rendait le résultat vrai
+par construction. Les deux sont racontés là où ils sont tombés, et non effacés.
+Aucune correction pour tests multiples n’aurait attrapé ni l’un ni l’autre.
 
 **Le dernier champ inexploité l’a été.** L’origine géographique était la seule
 piste de taille qui restait ; elle a donné
@@ -224,11 +243,19 @@ donné le contraire de ce qu’on attendait — le casting épouse l’état civ
 génération, il n’épouse pas sa géographie. Il ne reste, après elle, aucun champ
 du jeu de données dont on n’ait rien tiré.
 
-Ce qui manque n’est donc pas de la méthode, c’est de la donnée : aucune audience,
-aucun temps d’antenne, aucune nature d’épreuve, aucun ordre de vote. Ce sont
-précisément les choses qui permettraient de dire quelque chose du **montage** —
-et elles ne figurent dans aucune source publique. **C’est ici que ce site
-s’arrête.**
+**Mais un jeu de données ne s’épuise pas comme une piste.** Cette page a d’abord
+conclu que le travail s’arrêtait là. Une troisième source est arrivée depuis —
+les pages individuelles du wiki Fandom — et elle a comblé
+{{ site.data.stats.completude.comblees }} valeurs vides, réuni des personnes
+comptées deux fois, et rendu son nom de famille à sept aventuriers qui n’en
+avaient pas. Elle n’a pas ouvert de question neuve ; elle a rendu deux réponses
+plus fermes et une plus fragile. C’est le rappel utile : **avant de manquer de
+méthode, on manque de données**, et il en reste toujours à aller chercher.
+
+Ce qui manque vraiment, c’est ce qu’aucune source publique ne porte : aucune
+audience, aucun temps d’antenne, aucune nature d’épreuve, aucun ordre de vote.
+Ce sont précisément les choses qui permettraient de dire quelque chose du
+**montage**.
 
 ## Ce que ces données ne peuvent pas établir
 

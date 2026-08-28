@@ -133,12 +133,43 @@ plus de vingt saisons pour trancher.
 {% include graphiques/casting-plan.svg %}
 
 <p class="legende-figure">Les {{ c.effectif }} aventuriers projetés sur les deux
-dimensions qui séparent le plus les profils (âge, sexe, métier, bandeau). Les
-points nommés sont les modalités.</p>
+dimensions qui séparent le plus les profils (âge, sexe, métier). Les points
+nommés sont les modalités.</p>
 
-La classification automatique ne trouve que **{{ c.nb_archetypes }} groupes**, et
-elle les sépare mal : l’indice de silhouette plafonne à {{ c.silhouette }}, très
-loin de ce qui signalerait des familles nettes.
+<p class="note"><strong>Le bandeau est exclu de ce calcul, et c’est important.</strong>
+La couleur n’est pas un trait de la personne recrutée : c’est une place donnée à
+l’arrivée. L’y laisser produisait un résultat spectaculaire et faux — voir plus
+bas.</p>
+
+Sur l’âge, le sexe et le métier, la classification s’arrête à
+**{{ c.nb_archetypes }} groupes**, et cette fois le nombre n’est pas arbitraire :
+l’indice de silhouette monte jusqu’à six groupes ({{ c.silhouette }}) puis
+redescend. Il y a bien un découpage préféré.
+
+Reste qu’il sépare **moyennement** : {{ c.silhouette }} est loin des 0,5
+au-dessus desquels on parlerait de familles franchement distinctes.
+
+<div class="tableau-large">
+<table>
+<thead><tr><th class="nombre">Groupes demandés</th><th class="nombre">Silhouette</th><th class="nombre">Plus petit groupe</th></tr></thead>
+<tbody>
+{% for x in c.silhouettes %}
+<tr><td class="nombre">{{ x.k }}</td><td class="nombre">{{ x.score }}</td><td class="nombre">{{ x.plus_petit }}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+<p class="note">Une découpe qui isole deux personnes n’est pas un archétype :
+elle met à part des points extrêmes et gonfle l’indice au passage. On exige donc
+que le plus petit groupe pèse au moins 2 % du casting, ce qui écarte les
+découpes à sept groupes et plus.</p>
+
+Les six étiquettes se lisent comme un générique : la trentenaire du commerce,
+l’homme de trente ans du monde agricole, l’artisan de quarante ans, le
+quarante-cinq-ans-et-plus sans emploi déclaré, les moins de vingt-cinq ans, et
+l’étudiante. Ce sont des **régions d’un continuum**, pas des populations
+séparées.
 
 <div class="tableau-large">
 <table>
@@ -157,10 +188,22 @@ loin de ce qui signalerait des familles nettes.
 </table>
 </div>
 
-Un petit groupe d’étudiants de moins de 25 ans se détache ; tout le reste forme
-un seul bloc. **Il n’y a pas de galerie de personnages** dans les données du
-casting — pas au niveau de l’âge, du sexe, du métier et du bandeau, les seules
-choses que ce jeu de données connaisse.
+Le seul groupe qui tienne vraiment tout seul est celui des étudiantes de moins
+de 25 ans : le plus petit, et le seul dont une modalité soit à 100 %. Pour le
+reste, le casting est **un continuum d’âges et de métiers** que l’algorithme
+découpe en six — pas une galerie de personnages. Du moins au niveau de l’âge, du
+sexe et du métier, les seules choses que ce jeu de données connaisse.
+
+<p class="note"><strong>Un résultat spectaculaire, et faux.</strong> Tant que le
+bandeau restait dans le calcul, un test disait que le mélange de profils change
+d’une saison à l’autre bien plus que le hasard ne le ferait — 7,95 écarts-types,
+un des plus forts du site. C’était mécanique : les couleurs en jeu ne sont pas
+les mêmes d’une saison à l’autre, donc une saison jaune-rouge ne peut pas
+contenir de profil « vert ». Le bandeau retiré, le même test tombe à 1,06 : il
+ne reste rien. Le mélange de profils d’une saison est indiscernable d’un tirage.
+C’est la deuxième fois qu’un modèle nul mal posé fabrique un résultat sur ce
+site — la première est racontée sur
+<a href="{{ '/statistiques/qui-vise-qui/' | relative_url }}">Qui vise qui</a>.</p>
 
 <p class="note">Ce que cette page ne peut pas dire. Elle ne voit que quatre
 variables : la production, elle, recrute aussi sur un entretien, une histoire

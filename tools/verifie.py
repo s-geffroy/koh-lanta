@@ -20,6 +20,9 @@ from collections import Counter, defaultdict
 
 import yaml
 
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "extraction"))
+import lieux  # noqa: E402
+
 RACINE = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 DATA = os.path.join(RACINE, "_data")
 
@@ -31,6 +34,9 @@ SORTS_VALIDES = {
 COULEURS_VALIDES = {"jaune", "rouge", "bleu", "vert", "orange", "violet", "noir", "blanc"}
 GENRES_VALIDES = {"h", "f"}
 AGE_MIN, AGE_MAX = 15, 75
+# Le palmares le plus lourd du jeu de donnees tient sous les vingt-cinq
+# victoires sur une edition. Au-dela, c'est une faute de saisie.
+VICTOIRES_MAX = 40
 
 
 class Controle:
@@ -96,6 +102,7 @@ def verifier_saisons(saisons, c):
 def verifier_participations(parts, saisons, c):
     par_id = {s["id"]: s for s in saisons}
     par_saison = defaultdict(list)
+    effectifs = Counter(p.get("saison") for p in parts)
 
     for p in parts:
         sid = p.get("saison")
@@ -127,6 +134,26 @@ def verifier_participations(parts, saisons, c):
         couleur = p.get("couleur")
         if couleur is not None and couleur not in COULEURS_VALIDES:
             c.erreur(f"{sid} / {p.get('nom')} : couleur inconnue « {couleur} »")
+
+        # Les champs apportes par les fiches individuelles Fandom. Ils sont
+        # saisis a la main par des lecteurs : un rang au-dela de l'effectif ou
+        # un palmares invraisemblable est une faute de saisie, pas un record.
+        rang = p.get("classement")
+        if rang is not None:
+            if rang < 1:
+                c.erreur(f"{sid} / {p.get('nom')} : rang final invalide ({rang})")
+            elif rang > effectifs.get(sid, 0):
+                c.erreur(f"{sid} / {p.get('nom')} : rang final {rang} au-dela "
+                         f"de l'effectif de la saison ({effectifs.get(sid, 0)})")
+        for champ in ("victoires_collectives", "victoires_individuelles"):
+            v = p.get(champ)
+            if v is not None and not (0 <= v <= VICTOIRES_MAX):
+                c.erreur(f"{sid} / {p.get('nom')} : {champ} hors plage ({v})")
+
+        lieu = p.get("localisation")
+        if lieu and lieux.normaliser(lieu) is None:
+            c.avertir(f"{sid} / {p.get('nom')} : localisation « {lieu} » hors de "
+                      f"la liste des lieux connus")
 
         tribu = p.get("tribu")
         if tribu and s.get("tribus"):

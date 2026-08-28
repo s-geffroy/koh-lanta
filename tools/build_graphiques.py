@@ -936,6 +936,19 @@ def figures_des_modeles(stats):
                         "saison. La rupture detectee separe les deux regimes.",
             largeur=880, hauteur=320))
 
+    if ru.get("profil"):
+        # Le profil de gain, coupure par coupure. C'est lui qui dit si la date
+        # est identifiee : un pic isole, oui ; un plateau, non.
+        ecrire("ruptures-profil.svg", colonnes(
+            [{"libelle": str(x["annee"]), "valeur": x["gain"],
+              "detail": f'coupure avant {x["titre"]} ({x["annee"]}) : gain {x["gain"]}'}
+             for x in ru["profil"]],
+            titre="Chaque coupure possible, et ce qu'elle sépare",
+            description="Gain de separation pour chaque date de coupure envisageable. "
+                        "Un pic isole designerait une date ; un plateau dit que "
+                        "plusieurs dates se valent.",
+            unite="", largeur=880, hauteur=300))
+
     hm = m.get("hasard_mecanique") or {}
     if hm.get("paliers"):
         ecrire("risque-mecanique.svg", barres_groupees(

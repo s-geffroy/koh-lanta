@@ -69,6 +69,57 @@ d’occasions.
 Les deux comptent parmi les aventuriers les plus rappelés du programme : leur
 total dit autant leur nombre de participations que leur niveau.
 
+## Le classement que ce tableau ne pouvait pas voir
+
+{% assign pa = site.data.stats.palmares %}
+
+Tout ce qui précède repose sur le **bilan épisode par épisode**, et ce bilan
+ignore {{ e.saisons_sans_donnee | size }} saisons entières
+({{ e.saisons_sans_donnee | join: ", " }}). Conséquence directe : un vainqueur
+de l’une d’elles n’apparaît nulle part sur cette page, quel qu’ait été son
+parcours.
+
+Les fiches individuelles du wiki Fandom, elles, portent un total d’épreuves
+**par édition**, sur {{ pa.renseignees }} participations — dont les cinq saisons
+manquantes. Voici le classement qu’elles donnent.
+
+<div class="tableau-large">
+<table data-triable>
+<thead><tr>
+  <th class="nombre">#</th><th>Aventurier</th>
+  <th class="nombre">Saisons</th>
+  <th class="nombre">Individuelles</th><th class="nombre">Collectives</th>
+</tr></thead>
+<tbody>
+{% for x in pa.classement %}
+<tr>
+  <td class="nombre">{{ forloop.index }}</td>
+  <td>{{ x.personne }}</td>
+  <td class="nombre">{{ x.saisons }}</td>
+  <td class="nombre">{{ x.individuelles }}</td>
+  <td class="nombre">{{ x.collectives }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+Le podium change. {{ pa.classement[2].personne }} monte à la troisième place
+avec {{ pa.classement[2].individuelles }} victoires individuelles en
+{{ pa.classement[2].saisons }} éditions — il était invisible plus haut, parce
+que la saison qu’il a gagnée n’a pas de bilan par épisode.
+
+<p class="note"><strong>Les deux comptes ne mesurent pas la même chose, et il
+faut le savoir avant de les comparer.</strong> Le total d’une fiche englobe les
+duels de l’île des bannis et les épreuves de finale, que le bilan par épisode
+n’enregistre pas. Là où les deux existent, ils sont <strong>identiques dans
+{{ pa.part_identiques }} % des cas</strong> ({{ pa.identiques }} sur
+{{ pa.compares }}) et l’écart médian, quand il y en a un, vaut
+{{ pa.ecart_median }}. C’est assez pour lire ce classement, pas pour le
+substituer au précédent — et surtout pas pour nourrir un modèle : la
+<a href="{{ '/statistiques/force/' | relative_url }}">force réelle</a> continue
+de se calculer sur les seuls plateaux reconstruits.</p>
+
 ## Quel profil gagne les épreuves
 
 C’est ici que les données deviennent intéressantes, parce qu’elles contredisent

@@ -134,3 +134,14 @@ qu’un aventurier revenu six ans plus tard n’a plus le même corps. Enfin cin
 saisons n’ont aucun bilan d’épreuves (s03, s09, s12, s14, sp2) et
 {{ f.epreuves_ecartees_saison }} épreuves sont écartées parce que leur saison
 est trop mal documentée pour reconstruire un plateau.</p>
+
+<p class="note"><strong>Qui manque, et pourquoi.</strong> La dernière réserve
+n’est pas une nuance de méthode : elle décide qui figure ici. Un vainqueur de
+<em>Malaisie</em>, de <em>Palau</em> ou de <em>Johor</em> peut avoir dominé sa
+saison sans apparaître dans ce classement, faute de bilan par épisode à
+reconstruire. C’est le cas d’Ugo Lartiche, troisième palmarès de l’histoire au
+compte déclaré par le wiki. Ce compte-là existe et il est publié — voir
+<a href="{{ '/statistiques/epreuves/' | relative_url }}#le-classement-que-ce-tableau-ne-pouvait-pas-voir">Les
+épreuves</a> — mais il n’entre pas dans ce modèle : sans savoir <em>qui était en
+lice</em> à chaque épreuve, on ne peut pas corriger de l’exposition, et c’est
+précisément ce que cette page fait.</p>

@@ -11200,7 +11200,7 @@
   votes_contre: 5
   votes_exprimes: 9
   votes:
-  - votant: clementine-julien
+  - votant: clementine-jullien
     votant_rattache: true
     cible: franck-michel
     cible_rattachee: true
@@ -11450,7 +11450,7 @@
     cible: kelly-beaugrand
     cible_rattachee: true
     annule: false
-  - votant: clementine-julien
+  - votant: clementine-jullien
     votant_rattache: true
     cible: vincent-roux
     cible_rattachee: true
@@ -11525,7 +11525,7 @@
     cible: sandro-gonzalez-schena
     cible_rattachee: true
     annule: false
-  - votant: clementine-julien
+  - votant: clementine-jullien
     votant_rattache: true
     cible: sandro-gonzalez-schena
     cible_rattachee: true
@@ -11585,7 +11585,7 @@
     cible: marjorie-rousseeuw
     cible_rattachee: true
     annule: false
-  - votant: clementine-julien
+  - votant: clementine-jullien
     votant_rattache: true
     cible: marjorie-rousseeuw
     cible_rattachee: true
@@ -11640,7 +11640,7 @@
     cible: kelly-beaugrand
     cible_rattachee: true
     annule: false
-  - votant: clementine-julien
+  - votant: clementine-jullien
     votant_rattache: true
     cible: corentin-albertini
     cible_rattachee: true
@@ -11700,7 +11700,7 @@
     cible: mathilde-chevalier
     cible_rattachee: true
     annule: true
-  - votant: clementine-julien
+  - votant: clementine-jullien
     votant_rattache: true
     cible: claire-pradayrol
     cible_rattachee: true
@@ -11740,14 +11740,14 @@
     cible: sebastien-gottiniaux
     cible_rattachee: true
     annule: false
-  - votant: clementine-julien
+  - votant: clementine-jullien
     votant_rattache: true
     cible: sebastien-gottiniaux
     cible_rattachee: true
     annule: false
   - votant: vincent-roux
     votant_rattache: true
-    cible: clementine-julien
+    cible: clementine-jullien
     cible_rattachee: true
     annule: true
   - votant: mathilde-chevalier
@@ -11780,7 +11780,7 @@
   votes_contre: 1
   votes_exprimes: null
   votes:
-  - votant: clementine-julien
+  - votant: clementine-jullien
     votant_rattache: true
     cible: vincent-roux
     cible_rattachee: true
@@ -11790,19 +11790,19 @@
   type: elimination
   complet: false
   episode: Finaliste
-  elimine: clementine-julien
+  elimine: clementine-jullien
   elimine_rattache: true
   votes_contre: 2
   votes_exprimes: 8
   votes:
   - votant: mathilde-chevalier
     votant_rattache: true
-    cible: clementine-julien
+    cible: clementine-jullien
     cible_rattachee: true
     annule: false
   - votant: kelly-beaugrand
     votant_rattache: true
-    cible: clementine-julien
+    cible: clementine-jullien
     cible_rattachee: true
     annule: false
 - saison: s17
@@ -12670,19 +12670,19 @@
   type: elimination
   complet: true
   episode: '1'
-  elimine: frederic
+  elimine: frederic-blanchard
   elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 7
   votes:
   - votant: cindy-poumeyrol
     votant_rattache: true
-    cible: frederic
+    cible: frederic-blanchard
     cible_rattachee: true
     annule: false
   - votant: clo-dessard-arribas
     votant_rattache: true
-    cible: frederic
+    cible: frederic-blanchard
     cible_rattachee: true
     annule: false
   - votant: maxime-berthon
@@ -12692,22 +12692,22 @@
     annule: false
   - votant: mohamed-siaaliti
     votant_rattache: true
-    cible: frederic
+    cible: frederic-blanchard
     cible_rattachee: true
     annule: false
   - votant: brice-chauvinc
     votant_rattache: true
-    cible: frederic
+    cible: frederic-blanchard
     cible_rattachee: true
     annule: false
-  - votant: frederic
+  - votant: frederic-blanchard
     votant_rattache: true
     cible: maxime-berthon
     cible_rattachee: true
     annule: false
   - votant: alisea-lecomte
     votant_rattache: true
-    cible: frederic
+    cible: frederic-blanchard
     cible_rattachee: true
     annule: false
 - saison: s20
@@ -12730,24 +12730,24 @@
   type: elimination
   complet: true
   episode: '2'
-  elimine: victor
+  elimine: victor-rollinger
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 7
   votes:
   - votant: maud-bamps
     votant_rattache: true
-    cible: victor
+    cible: victor-rollinger
     cible_rattachee: true
     annule: false
   - votant: cyril-rouanne
     votant_rattache: true
-    cible: victor
+    cible: victor-rollinger
     cible_rattachee: true
     annule: false
   - votant: alexandre-andre
     votant_rattache: true
-    cible: victor
+    cible: victor-rollinger
     cible_rattachee: true
     annule: false
   - votant: xavier-vancon
@@ -12757,10 +12757,10 @@
     annule: false
   - votant: chloe-chaize
     votant_rattache: true
-    cible: victor
+    cible: victor-rollinger
     cible_rattachee: true
     annule: false
-  - votant: victor
+  - votant: victor-rollinger
     votant_rattache: true
     cible: chloe-chaize
     cible_rattachee: true
@@ -12830,7 +12830,7 @@
   type: elimination
   complet: true
   episode: '4'
-  elimine: victor
+  elimine: victor-rollinger
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 7
@@ -12842,17 +12842,17 @@
     annule: false
   - votant: aurelien-soulimant
     votant_rattache: true
-    cible: victor
+    cible: victor-rollinger
     cible_rattachee: true
     annule: false
   - votant: nicolas-van-brabandt
     votant_rattache: true
-    cible: victor
+    cible: victor-rollinger
     cible_rattachee: true
     annule: false
   - votant: angelique-mastio
     votant_rattache: true
-    cible: victor
+    cible: victor-rollinger
     cible_rattachee: true
     annule: false
   - votant: sophie-chevalier
@@ -12862,10 +12862,10 @@
     annule: false
   - votant: beatrice-kabore
     votant_rattache: true
-    cible: victor
+    cible: victor-rollinger
     cible_rattachee: true
     annule: false
-  - votant: victor
+  - votant: victor-rollinger
     votant_rattache: true
     cible: nicolas-van-brabandt
     cible_rattachee: true
@@ -12940,24 +12940,24 @@
   type: elimination
   complet: false
   episode: '7'
-  elimine: frederic
+  elimine: frederic-blanchard
   elimine_rattache: true
   votes_contre: 3
   votes_exprimes: null
   votes:
   - votant: maxime-berthon
     votant_rattache: true
-    cible: frederic
+    cible: frederic-blanchard
     cible_rattachee: true
     annule: false
   - votant: beatrice-kabore
     votant_rattache: true
-    cible: frederic
+    cible: frederic-blanchard
     cible_rattachee: true
     annule: false
   - votant: alexandre-andre
     votant_rattache: true
-    cible: frederic
+    cible: frederic-blanchard
     cible_rattachee: true
     annule: false
 - saison: s20
@@ -13475,7 +13475,7 @@
     cible: cindy-poumeyrol
     cible_rattachee: true
     annule: false
-  - votant: frederic
+  - votant: frederic-blanchard
     votant_rattache: true
     cible: cindy-poumeyrol
     cible_rattachee: true
@@ -13530,7 +13530,7 @@
   type: elimination
   complet: false
   episode: '1'
-  elimine: marie-france
+  elimine: marie-france-schieber
   elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 6
@@ -13640,7 +13640,7 @@
   type: elimination
   complet: false
   episode: '8'
-  elimine: marie-france
+  elimine: marie-france-schieber
   elimine_rattache: true
   votes_contre: 2
   votes_exprimes: null
@@ -14945,7 +14945,7 @@
     cible: celia-litzellmann
     cible_rattachee: true
     annule: false
-  - votant: quentin
+  - votant: quentin-paygnard
     votant_rattache: true
     cible: celia-litzellmann
     cible_rattachee: true
@@ -15010,7 +15010,7 @@
     cible: emin-luka
     cible_rattachee: true
     annule: false
-  - votant: rudy
+  - votant: rudy-noel
     votant_rattache: true
     cible: emin-luka
     cible_rattachee: true
@@ -15070,7 +15070,7 @@
     cible: alexandre-delaunay
     cible_rattachee: true
     annule: false
-  - votant: rudy
+  - votant: rudy-noel
     votant_rattache: true
     cible: alexandre-delaunay
     cible_rattachee: true
@@ -15087,12 +15087,12 @@
     annule: false
   - votant: elodie-migeal
     votant_rattache: true
-    cible: rudy
+    cible: rudy-noel
     cible_rattachee: true
     annule: false
   - votant: alexandre-delaunay
     votant_rattache: true
-    cible: rudy
+    cible: rudy-noel
     cible_rattachee: true
     annule: false
 - saison: s24
@@ -15122,10 +15122,10 @@
     annule: false
   - votant: tania-cakarevic
     votant_rattache: true
-    cible: quentin
+    cible: quentin-paygnard
     cible_rattachee: true
     annule: true
-  - votant: quentin
+  - votant: quentin-paygnard
     votant_rattache: true
     cible: tania-cakarevic
     cible_rattachee: true
@@ -15145,7 +15145,7 @@
     cible: tania-cakarevic
     cible_rattachee: true
     annule: false
-  - votant: rudy
+  - votant: rudy-noel
     votant_rattache: true
     cible: clemence-noquet
     cible_rattachee: true
@@ -15165,19 +15165,19 @@
   type: elimination
   complet: true
   episode: '5'
-  elimine: rudy
+  elimine: rudy-noel
   elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 7
   votes:
   - votant: frederic-khouvilay
     votant_rattache: true
-    cible: rudy
+    cible: rudy-noel
     cible_rattachee: true
     annule: false
-  - votant: quentin
+  - votant: quentin-paygnard
     votant_rattache: true
-    cible: rudy
+    cible: rudy-noel
     cible_rattachee: true
     annule: false
   - votant: esteban-garcia-mora
@@ -15187,20 +15187,20 @@
     annule: false
   - votant: clemence-noquet
     votant_rattache: true
-    cible: rudy
+    cible: rudy-noel
     cible_rattachee: true
     annule: false
   - votant: helena-roosen
     votant_rattache: true
-    cible: rudy
+    cible: rudy-noel
     cible_rattachee: true
     annule: false
   - votant: anne-sophie-antoine
     votant_rattache: true
-    cible: rudy
+    cible: rudy-noel
     cible_rattachee: true
     annule: false
-  - votant: rudy
+  - votant: rudy-noel
     votant_rattache: true
     cible: anne-sophie-antoine
     cible_rattachee: true
@@ -15265,19 +15265,19 @@
   type: elimination
   complet: false
   episode: '7'
-  elimine: rudy
+  elimine: rudy-noel
   elimine_rattache: true
   votes_contre: 3
   votes_exprimes: 7
   votes:
   - votant: tania-cakarevic
     votant_rattache: true
-    cible: rudy
+    cible: rudy-noel
     cible_rattachee: true
     annule: false
   - votant: nicolas-pretot
     votant_rattache: true
-    cible: rudy
+    cible: rudy-noel
     cible_rattachee: true
     annule: false
   - votant: julie-debever
@@ -15292,10 +15292,10 @@
     annule: true
   - votant: gilles-de-baere
     votant_rattache: true
-    cible: rudy
+    cible: rudy-noel
     cible_rattachee: true
     annule: false
-  - votant: rudy
+  - votant: rudy-noel
     votant_rattache: true
     cible: tania-cakarevic
     cible_rattachee: true
@@ -15305,7 +15305,7 @@
   type: elimination
   complet: false
   episode: '8'
-  elimine: quentin
+  elimine: quentin-paygnard
   elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
@@ -15350,7 +15350,7 @@
     cible: anne-sophie-antoine
     cible_rattachee: true
     annule: false
-  - votant: quentin
+  - votant: quentin-paygnard
     votant_rattache: true
     cible: tania-cakarevic
     cible_rattachee: true
@@ -15415,7 +15415,7 @@
     cible: helena-roosen
     cible_rattachee: true
     annule: false
-  - votant: quentin
+  - votant: quentin-paygnard
     votant_rattache: true
     cible: tania-cakarevic
     cible_rattachee: true
@@ -15475,7 +15475,7 @@
     cible: gilles-de-baere
     cible_rattachee: true
     annule: false
-  - votant: quentin
+  - votant: quentin-paygnard
     votant_rattache: true
     cible: tania-cakarevic
     cible_rattachee: true
@@ -15530,7 +15530,7 @@
     cible: esteban-garcia-mora
     cible_rattachee: true
     annule: false
-  - votant: quentin
+  - votant: quentin-paygnard
     votant_rattache: true
     cible: nicolas-pretot
     cible_rattachee: true
@@ -15577,7 +15577,7 @@
     annule: false
   - votant: tania-cakarevic
     votant_rattache: true
-    cible: quentin
+    cible: quentin-paygnard
     cible_rattachee: true
     annule: true
   - votant: nicolas-pretot
@@ -15590,7 +15590,7 @@
     cible: tania-cakarevic
     cible_rattachee: true
     annule: false
-  - votant: quentin
+  - votant: quentin-paygnard
     votant_rattache: true
     cible: julie-debever
     cible_rattachee: true
@@ -15630,7 +15630,7 @@
     cible: laura-yelpa
     cible_rattachee: true
     annule: false
-  - votant: quentin
+  - votant: quentin-paygnard
     votant_rattache: true
     cible: tania-cakarevic
     cible_rattachee: true
@@ -15645,7 +15645,7 @@
   type: elimination
   complet: false
   episode: '15'
-  elimine: quentin
+  elimine: quentin-paygnard
   elimine_rattache: true
   votes_contre: 2
   votes_exprimes: 7
@@ -15657,7 +15657,7 @@
     annule: true
   - votant: tania-cakarevic
     votant_rattache: true
-    cible: quentin
+    cible: quentin-paygnard
     cible_rattachee: true
     annule: false
   - votant: nicolas-pretot
@@ -15667,10 +15667,10 @@
     annule: true
   - votant: julie-debever
     votant_rattache: true
-    cible: quentin
+    cible: quentin-paygnard
     cible_rattachee: true
     annule: false
-  - votant: quentin
+  - votant: quentin-paygnard
     votant_rattache: true
     cible: tania-cakarevic
     cible_rattachee: true
@@ -15735,7 +15735,7 @@
     cible: frederic-khouvilay
     cible_rattachee: true
     annule: false
-  - votant: quentin
+  - votant: quentin-paygnard
     votant_rattache: true
     cible: frederic-khouvilay
     cible_rattachee: true
@@ -21410,7 +21410,7 @@
     cible: julie-navarro-camilleri
     cible_rattachee: true
     annule: false
-  - votant: clementine-julien
+  - votant: clementine-jullien
     votant_rattache: true
     cible: julie-navarro-camilleri
     cible_rattachee: true
@@ -21442,7 +21442,7 @@
     annule: false
   - votant: julie-navarro-camilleri
     votant_rattache: true
-    cible: clementine-julien
+    cible: clementine-jullien
     cible_rattachee: true
     annule: false
   - votant: chantal-menard
@@ -21465,7 +21465,7 @@
     cible: raphaele-navarro
     cible_rattachee: true
     annule: false
-  - votant: clementine-julien
+  - votant: clementine-jullien
     votant_rattache: true
     cible: chantal-menard
     cible_rattachee: true
@@ -21515,7 +21515,7 @@
     cible: raphaele-navarro
     cible_rattachee: true
     annule: false
-  - votant: clementine-julien
+  - votant: clementine-jullien
     votant_rattache: true
     cible: raphaele-navarro
     cible_rattachee: true
@@ -21560,7 +21560,7 @@
     cible: cedric-giosserand-lucas
     cible_rattachee: true
     annule: false
-  - votant: clementine-julien
+  - votant: clementine-jullien
     votant_rattache: true
     cible: cedric-giosserand-lucas
     cible_rattachee: true
@@ -21582,7 +21582,7 @@
     annule: false
   - votant: cedric-giosserand-lucas
     votant_rattache: true
-    cible: clementine-julien
+    cible: clementine-jullien
     cible_rattachee: true
     annule: false
 - saison: sp5
@@ -21607,32 +21607,32 @@
   votes:
   - votant: clemence-castel
     votant_rattache: true
-    cible: clementine-julien
+    cible: clementine-jullien
     cible_rattachee: true
     annule: true
   - votant: pascal-salviani
     votant_rattache: true
-    cible: clementine-julien
+    cible: clementine-jullien
     cible_rattachee: true
     annule: true
   - votant: alban-pellegrin
     votant_rattache: true
-    cible: clementine-julien
+    cible: clementine-jullien
     cible_rattachee: true
     annule: true
-  - votant: clementine-julien
+  - votant: clementine-jullien
     votant_rattache: true
     cible: tiffany-gounin
     cible_rattachee: true
     annule: false
   - votant: dylan-thiry
     votant_rattache: true
-    cible: clementine-julien
+    cible: clementine-jullien
     cible_rattachee: true
     annule: true
   - votant: tiffany-gounin
     votant_rattache: true
-    cible: clementine-julien
+    cible: clementine-jullien
     cible_rattachee: true
     annule: true
 - saison: sp5
@@ -21647,12 +21647,12 @@
   votes:
   - votant: clemence-castel
     votant_rattache: true
-    cible: clementine-julien
+    cible: clementine-jullien
     cible_rattachee: true
     annule: false
   - votant: pascal-salviani
     votant_rattache: true
-    cible: clementine-julien
+    cible: clementine-jullien
     cible_rattachee: true
     annule: false
   - votant: alban-pellegrin
@@ -21660,14 +21660,14 @@
     cible: dylan-thiry
     cible_rattachee: true
     annule: false
-  - votant: clementine-julien
+  - votant: clementine-jullien
     votant_rattache: true
     cible: dylan-thiry
     cible_rattachee: true
     annule: false
   - votant: dylan-thiry
     votant_rattache: true
-    cible: clementine-julien
+    cible: clementine-jullien
     cible_rattachee: true
     annule: false
 - saison: sp5
@@ -22085,7 +22085,7 @@
     cible: clemence-castel
     cible_rattachee: true
     annule: false
-  - votant: clementine-julien
+  - votant: clementine-jullien
     votant_rattache: true
     cible: clemence-castel
     cible_rattachee: true
@@ -22200,7 +22200,7 @@
   type: elimination
   complet: false
   episode: '3'
-  elimine: jessica
+  elimine: jessica-potel
   elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
@@ -22235,7 +22235,7 @@
     cible: teheiura-teahui
     cible_rattachee: true
     annule: false
-  - votant: jessica
+  - votant: jessica-potel
     votant_rattache: true
     cible: teheiura-teahui
     cible_rattachee: true
@@ -22395,7 +22395,7 @@
     cible: ahmad-abadie
     cible_rattachee: true
     annule: true
-  - votant: jessica
+  - votant: jessica-potel
     votant_rattache: true
     cible: eric-peyrache
     cible_rattachee: true
@@ -22470,7 +22470,7 @@
     cible: ahmad-abadie
     cible_rattachee: true
     annule: false
-  - votant: jessica
+  - votant: jessica-potel
     votant_rattache: true
     cible: ahmad-abadie
     cible_rattachee: true
@@ -22540,7 +22540,7 @@
     cible: sam-haliti
     cible_rattachee: true
     annule: false
-  - votant: jessica
+  - votant: jessica-potel
     votant_rattache: true
     cible: eric-peyrache
     cible_rattachee: true
@@ -22605,7 +22605,7 @@
     cible: charlotte-caron
     cible_rattachee: true
     annule: true
-  - votant: jessica
+  - votant: jessica-potel
     votant_rattache: true
     cible: eric-peyrache
     cible_rattachee: true
@@ -22635,19 +22635,19 @@
   type: elimination
   complet: false
   episode: '9'
-  elimine: jessica
+  elimine: jessica-potel
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 9
   votes:
   - votant: naoil-tita
     votant_rattache: true
-    cible: jessica
+    cible: jessica-potel
     cible_rattachee: true
     annule: false
   - votant: ines-loucif
     votant_rattache: true
-    cible: jessica
+    cible: jessica-potel
     cible_rattachee: true
     annule: false
   - votant: claude-dartois
@@ -22657,25 +22657,25 @@
     annule: false
   - votant: moussa-niangane
     votant_rattache: true
-    cible: jessica
+    cible: jessica-potel
     cible_rattachee: true
     annule: false
   - votant: alexandra-leveau
     votant_rattache: true
-    cible: jessica
+    cible: jessica-potel
     cible_rattachee: true
     annule: false
   - votant: regis-rappailles
     votant_rattache: true
-    cible: jessica
+    cible: jessica-potel
     cible_rattachee: true
     annule: false
   - votant: eric-peyrache
     votant_rattache: true
-    cible: jessica
+    cible: jessica-potel
     cible_rattachee: true
     annule: false
-  - votant: jessica
+  - votant: jessica-potel
     votant_rattache: true
     cible: alexandra-leveau
     cible_rattachee: true
@@ -22805,7 +22805,7 @@
     cible: naoil-tita
     cible_rattachee: true
     annule: false
-  - votant: jessica
+  - votant: jessica-potel
     votant_rattache: true
     cible: naoil-tita
     cible_rattachee: true
@@ -22865,7 +22865,7 @@
     cible: patrick-merle
     cible_rattachee: true
     annule: false
-  - votant: phil-bizet
+  - votant: philippe-bizet
     votant_rattache: true
     cible: ugo-lartiche
     cible_rattachee: true
@@ -22912,7 +22912,7 @@
     annule: false
   - votant: jade-handi
     votant_rattache: true
-    cible: clemence
+    cible: clemence-castel
     cible_rattachee: true
     annule: false
   - votant: alix-noblat
@@ -22922,7 +22922,7 @@
     annule: false
   - votant: christelle-gauzet
     votant_rattache: true
-    cible: clemence
+    cible: clemence-castel
     cible_rattachee: true
     annule: false
   - votant: alexandra-pornet
@@ -22930,14 +22930,14 @@
     cible: karima-neggaz
     cible_rattachee: true
     annule: false
-  - votant: clemence
+  - votant: clemence-castel
     votant_rattache: true
     cible: karima-neggaz
     cible_rattachee: true
     annule: false
   - votant: coumba-baradji
     votant_rattache: true
-    cible: clemence
+    cible: clemence-castel
     cible_rattachee: true
     annule: false
   - votant: clementine-jullien
@@ -22952,7 +22952,7 @@
     annule: false
   - votant: karima-neggaz
     votant_rattache: true
-    cible: clemence
+    cible: clemence-castel
     cible_rattachee: true
     annule: false
   - votant: cindy-poumeyrol
@@ -22985,7 +22985,7 @@
     cible: alix-noblat
     cible_rattachee: true
     annule: true
-  - votant: phil-bizet
+  - votant: philippe-bizet
     votant_rattache: true
     cible: patrick-merle
     cible_rattachee: true
@@ -23050,7 +23050,7 @@
     cible: cindy-poumeyrol
     cible_rattachee: true
     annule: false
-  - votant: clemence
+  - votant: clemence-castel
     votant_rattache: true
     cible: cindy-poumeyrol
     cible_rattachee: true
@@ -23095,7 +23095,7 @@
     cible: alix-noblat
     cible_rattachee: true
     annule: false
-  - votant: phil-bizet
+  - votant: philippe-bizet
     votant_rattache: true
     cible: maxime-berthon
     cible_rattachee: true
@@ -23110,9 +23110,9 @@
     cible: maxime-berthon
     cible_rattachee: true
     annule: false
-  - votant: clemence
+  - votant: clemence-castel
     votant_rattache: true
-    cible: phil-bizet
+    cible: philippe-bizet
     cible_rattachee: true
     annule: false
   - votant: coumba-baradji
@@ -23197,25 +23197,25 @@
   votes:
   - votant: claude-dartois
     votant_rattache: true
-    cible: clemence
+    cible: clemence-castel
     cible_rattachee: true
     annule: true
-  - votant: phil-bizet
+  - votant: philippe-bizet
     votant_rattache: true
-    cible: clemence
+    cible: clemence-castel
     cible_rattachee: true
     annule: true
   - votant: sam-haliti
     votant_rattache: true
-    cible: clemence
+    cible: clemence-castel
     cible_rattachee: true
     annule: true
   - votant: christelle-gauzet
     votant_rattache: true
-    cible: clemence
+    cible: clemence-castel
     cible_rattachee: true
     annule: true
-  - votant: clemence
+  - votant: clemence-castel
     votant_rattache: true
     cible: sam-haliti
     cible_rattachee: true
@@ -23227,7 +23227,7 @@
     annule: true
   - votant: candice-boisson
     votant_rattache: true
-    cible: clemence
+    cible: clemence-castel
     cible_rattachee: true
     annule: true
 - saison: sp7
@@ -23235,39 +23235,39 @@
   type: elimination
   complet: true
   episode: '6'
-  elimine: clemence
+  elimine: clemence-castel
   elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 6
   votes:
   - votant: claude-dartois
     votant_rattache: true
-    cible: clemence
+    cible: clemence-castel
     cible_rattachee: true
     annule: false
-  - votant: phil-bizet
+  - votant: philippe-bizet
     votant_rattache: true
-    cible: clemence
+    cible: clemence-castel
     cible_rattachee: true
     annule: false
   - votant: sam-haliti
     votant_rattache: true
-    cible: clemence
+    cible: clemence-castel
     cible_rattachee: true
     annule: false
   - votant: christelle-gauzet
     votant_rattache: true
-    cible: clemence
+    cible: clemence-castel
     cible_rattachee: true
     annule: false
-  - votant: clemence
+  - votant: clemence-castel
     votant_rattache: true
     cible: sam-haliti
     cible_rattachee: true
     annule: false
   - votant: coumba-baradji
     votant_rattache: true
-    cible: clemence
+    cible: clemence-castel
     cible_rattachee: true
     annule: false
 - saison: sp7
@@ -23300,7 +23300,7 @@
     cible: coumba-baradji
     cible_rattachee: true
     annule: false
-  - votant: clemence
+  - votant: clemence-castel
     votant_rattache: true
     cible: coumba-baradji
     cible_rattachee: true
@@ -23335,7 +23335,7 @@
     cible: alix-noblat
     cible_rattachee: true
     annule: true
-  - votant: phil-bizet
+  - votant: philippe-bizet
     votant_rattache: true
     cible: alix-noblat
     cible_rattachee: true
@@ -23370,7 +23370,7 @@
     cible: alix-noblat
     cible_rattachee: true
     annule: true
-  - votant: clemence
+  - votant: clemence-castel
     votant_rattache: true
     cible: namadia-thai-thai
     cible_rattachee: true
@@ -23395,7 +23395,7 @@
   type: elimination
   complet: false
   episode: '9'
-  elimine: clemence
+  elimine: clemence-castel
   elimine_rattache: true
   votes_contre: 7
   votes_exprimes: 12
@@ -23407,7 +23407,7 @@
     annule: false
   - votant: laurent-maistret
     votant_rattache: true
-    cible: clemence
+    cible: clemence-castel
     cible_rattachee: true
     annule: false
   - votant: jade-handi
@@ -23415,19 +23415,19 @@
     cible: alix-noblat
     cible_rattachee: true
     annule: false
-  - votant: phil-bizet
+  - votant: philippe-bizet
     votant_rattache: true
-    cible: clemence
+    cible: clemence-castel
     cible_rattachee: true
     annule: false
   - votant: sam-haliti
     votant_rattache: true
-    cible: clemence
+    cible: clemence-castel
     cible_rattachee: true
     annule: false
   - votant: alix-noblat
     votant_rattache: true
-    cible: clemence
+    cible: clemence-castel
     cible_rattachee: true
     annule: false
   - votant: christelle-gauzet
@@ -23437,15 +23437,15 @@
     annule: false
   - votant: loic-riowal
     votant_rattache: true
-    cible: clemence
+    cible: clemence-castel
     cible_rattachee: true
     annule: false
   - votant: teheiura-teahui
     votant_rattache: true
-    cible: clemence
+    cible: clemence-castel
     cible_rattachee: true
     annule: false
-  - votant: clemence
+  - votant: clemence-castel
     votant_rattache: true
     cible: alix-noblat
     cible_rattachee: true
@@ -23462,7 +23462,7 @@
   votes:
   - votant: claude-dartois
     votant_rattache: true
-    cible: phil-bizet
+    cible: philippe-bizet
     cible_rattachee: true
     annule: false
   - votant: laurent-maistret
@@ -23475,7 +23475,7 @@
     cible: laurent-maistret
     cible_rattachee: true
     annule: false
-  - votant: phil-bizet
+  - votant: philippe-bizet
     votant_rattache: true
     cible: christelle-gauzet
     cible_rattachee: true
@@ -23492,7 +23492,7 @@
     annule: false
   - votant: christelle-gauzet
     votant_rattache: true
-    cible: phil-bizet
+    cible: philippe-bizet
     cible_rattachee: true
     annule: false
   - votant: loic-riowal
@@ -23565,7 +23565,7 @@
     cible: alix-noblat
     cible_rattachee: true
     annule: false
-  - votant: phil-bizet
+  - votant: philippe-bizet
     votant_rattache: true
     cible: jade-handi
     cible_rattachee: true
@@ -23615,7 +23615,7 @@
     cible: ugo-lartiche
     cible_rattachee: true
     annule: false
-  - votant: phil-bizet
+  - votant: philippe-bizet
     votant_rattache: true
     cible: ugo-lartiche
     cible_rattachee: true
@@ -23625,7 +23625,7 @@
   type: elimination
   complet: false
   episode: '14'
-  elimine: phil-bizet
+  elimine: philippe-bizet
   elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
@@ -23715,7 +23715,7 @@
   votes_pour: null
   votes_exprimes: null
   votes:
-  - votant: phil-bizet
+  - votant: philippe-bizet
     votant_rattache: true
     cible: claude-dartois
     cible_rattachee: true
@@ -23730,7 +23730,7 @@
     cible: claude-dartois
     cible_rattachee: true
     annule: true
-  - votant: clemence
+  - votant: clemence-castel
     votant_rattache: true
     cible: claude-dartois
     cible_rattachee: true
