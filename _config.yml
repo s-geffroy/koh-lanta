@@ -58,6 +58,10 @@ exclude:
   # ce sont ces sorties, deja commitees, que Jekyll lit.
   - tools/
   - atelier/
+  # Les skills du projet : des consignes de travail, pas du contenu. Jekyll
+  # ignore deja les repertoires commencant par un point ; on le dit quand meme,
+  # pour que rien ne repose sur un comportement implicite.
+  - .claude/
   # Ceinture ET bretelles : .secrets/ est deja ignore par Git, et Jekyll
   # ignore de toute facon les noms commencant par un point. On le dit quand
   # meme, pour que rien ne repose sur un comportement implicite.

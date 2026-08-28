@@ -2,6 +2,8 @@
 layout: page
 title: Les épreuves
 permalink: /statistiques/epreuves/
+chapeau: >-
+  Les meilleurs ratios, les totaux de carrière, et le profil qui domine vraiment — âge, métier, sexe.
 ---
 
 {% assign e = site.data.stats.epreuves %}
@@ -33,7 +35,7 @@ spectaculaire. {{ e.classement_effectif }} aventuriers passent ce seuil.</p>
 {% include graphiques/epreuves-ratios.svg %}
 
 <div class="tableau-large">
-<table>
+<table data-triable>
 <thead><tr>
   <th class="nombre">#</th><th>Aventurier</th><th>Saison</th>
   <th class="nombre">Gagnées</th><th class="nombre">Disputées</th><th class="nombre">Ratio</th>

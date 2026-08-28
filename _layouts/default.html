@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr" class="sans-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  {%- comment -%}
+    Le theme choisi est applique AVANT le premier rendu : pose apres, il
+    ferait clignoter la page en clair avant de basculer en sombre. Ce script
+    est donc volontairement en ligne et synchrone -- c'est le seul du site.
+    La classe `sans-js` disparait au meme moment : elle sert a masquer les
+    commandes qui n'auraient aucun effet sans JavaScript.
+  {%- endcomment -%}
+  <script>
+    (function () {
+      var r = document.documentElement;
+      r.classList.remove('sans-js');
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'clair' || t === 'sombre') {
+          r.setAttribute('data-theme', t === 'clair' ? 'light' : 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  {%- seo -%}
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,500..800,0..100,0..1&family=IBM+Plex+Mono:wght@400;500;600&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+  {%- feed_meta -%}
+</head>
+
+<body>
+  <a class="saut" href="#contenu">Aller au contenu</a>
+
+  <header class="entete">
+    <a class="enseigne" href="{{ '/' | relative_url }}">
+      <span class="enseigne-totem" aria-hidden="true"></span>
+      <span class="enseigne-texte">
+        <b>Koh-Lanta</b>
+        <em>en chiffres</em>
+      </span>
+    </a>
+
+    <button type="button" class="bascule" id="bascule-theme"
+            aria-live="polite">Thème&nbsp;: auto</button>
+  </header>
+
+  <div class="cadre">
+    {%- include rail.html -%}
+
+    <main id="contenu" class="contenu">
+      {{ content }}
+      {%- include fil.html -%}
+    </main>
+  </div>
+
+  {%- include pied.html -%}
+
+  <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+</body>
+</html>

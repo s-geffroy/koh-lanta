@@ -11,15 +11,57 @@ import yaml
 RACINE = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 sys.path.insert(0, os.path.join(RACINE, "tools"))
 from graphiques import (barres_horizontales, barres_groupees, colonnes,  # noqa: E402
-                        courbes, ecrire, SERIES, TRIBUS)
+                        courbes, ecrire, peigne, SERIES, TRIBUS)
 
 NOM_COULEUR = {"jaune": "Jaune", "rouge": "Rouge", "bleu": "Bleu", "vert": "Vert",
                "orange": "Orange", "violet": "Violet", "noir": "Noire", "blanc": "Blanche"}
 
 
+def _lire(nom):
+    with open(os.path.join(RACINE, "_data", nom), encoding="utf-8") as f:
+        return yaml.safe_load(f)
+
+
+def figure_peigne():
+    """La figure d'ouverture : un trait par aventurier, trie par duree tenue.
+
+    Elle ne passe pas par stats.yml : elle a besoin des participations une par
+    une, pas d'un agregat. C'est le principe meme de la figure.
+    """
+    participations = _lire("participations.yml")
+    traits = sorted(
+        ({"jour": p["jour_sortie"],
+          "couleur": TRIBUS.get(p.get("couleur"), "var(--encre-muette)")}
+         for p in participations if p.get("jour_sortie")),
+        key=lambda t: t["jour"])
+
+    jours = [t["jour"] for t in traits]
+    mediane = jours[len(jours) // 2]
+
+    # La legende ne nomme que les deux couleurs qui traversent le programme.
+    # Les autres n'existent que sur les saisons a trois ou quatre tribus : les
+    # citer une par une remplirait la ligne sans rien apprendre.
+    legende = [("Tribu jaune", TRIBUS["jaune"]), ("Tribu rouge", TRIBUS["rouge"]),
+               ("Autres tribus", "var(--encre-muette)")]
+
+    ecrire("peigne-torches.svg", peigne(
+        traits, jour_max=max(jours), mediane=mediane, legende=legende,
+        titre=f"Les {len(traits)} aventuriers, du premier jour au dernier",
+        description=(
+            f"Un trait par participation, trie du plus court sejour au plus long. "
+            f"La longueur du trait est le nombre de jours tenus, sa couleur celle "
+            f"de la tribu de depart. La moitie des aventuriers quitte le jeu avant "
+            f"le jour {mediane}.")))
+    return len(traits), mediane, max(jours)
+
+
 def main():
     stats = yaml.safe_load(open(os.path.join(RACINE, "_data", "stats.yml"), encoding="utf-8"))
     print("figures ecrites :")
+
+    # --- la figure d'ouverture -------------------------------------------
+    n, mediane, jmax = figure_peigne()
+    print(f"    ({n} traits, mediane jour {mediane}, maximum jour {jmax})")
 
     # --- vainqueurs -------------------------------------------------------
     v = stats["vainqueurs"]

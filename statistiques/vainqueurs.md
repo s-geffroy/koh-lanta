@@ -2,6 +2,8 @@
 layout: page
 title: Le profil du vainqueur
 permalink: /statistiques/vainqueurs/
+chapeau: >-
+  Ce que les vainqueurs ont en commun : un âge bien plus large qu’on ne le croit, une parité presque parfaite, et aucune couleur de tribu gagnante.
 ---
 
 {% assign s = site.data.stats %}
@@ -41,7 +43,7 @@ ne tient pas devant les chiffres.
 ## Le sexe
 
 <div class="tableau-large">
-<table>
+<table data-triable>
 <thead><tr><th>&nbsp;</th><th class="nombre">Vainqueurs</th><th class="nombre">Part</th></tr></thead>
 <tbody>
 {% for x in v.par_genre %}
@@ -68,7 +70,7 @@ largement à leur nombre au départ, pas à une supériorité.
 ## La couleur de tribu
 
 <div class="tableau-large">
-<table>
+<table data-triable>
 <thead><tr><th>Tribu de départ</th><th class="nombre">Victoires</th><th class="nombre">Part</th></tr></thead>
 <tbody>
 {% for c in v.par_couleur %}

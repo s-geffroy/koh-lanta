@@ -308,3 +308,93 @@ def barres_groupees(donnees, series, *, titre, description, unite="",
     fig.ajouter(f'<line x1="{marge_gauche}" y1="{haut - 8}" x2="{marge_gauche}" '
                 f'y2="{hauteur - bas + 2}" stroke="var(--axe)" stroke-width="1"/>')
     return fig.rendu()
+
+
+def peigne(traits, *, titre, description, jour_max, mediane=None, legende=None,
+           largeur=1000, hauteur_traits=336):
+    """Un trait par aventurier : sa longueur est le nombre de jours tenus.
+
+    C'est la figure d'ouverture du site, et la seule qui ne resume rien -- elle
+    montre TOUT le jeu de donnees, une personne par ligne. Triee par duree, la
+    frontiere droite du peigne est exactement la courbe de survie du programme,
+    mais dessinee avec ses individus au lieu d'un trace moyen.
+
+    Chaque trait porte la couleur du bandeau de depart : la teinte EST la
+    donnee, elle ne suit pas l'ordre categoriel.
+
+    `traits` : [{"jour": int, "couleur": "var(--tribu-…)"}], deja triees du
+    plus court sejour au plus long.
+    """
+    if not traits:
+        return ""
+    haut, bas, gauche, droite = 46, 34, 4, 116
+    if legende:
+        haut += 22
+    piste_l = largeur - gauche - droite
+    hauteur = haut + hauteur_traits + bas
+    pas = hauteur_traits / len(traits)
+    # Un trait un peu plus epais que le pas : les lignes se joignent, la masse
+    # se lit comme une surface au lieu d'une rayure.
+    epaisseur = max(0.55, pas * 1.05)
+
+    def px(jour):
+        return gauche + piste_l * (jour / jour_max)
+
+    fig = Figure(largeur, hauteur, titre, description)
+
+    # Axe des jours, pose en haut : c'est la ou le regard entre.
+    graduations = [j for j in range(10, jour_max, 10)] + [jour_max]
+    for j in graduations:
+        x = px(j)
+        fig.ajouter(f'<line x1="{x:.1f}" y1="{haut - 12}" x2="{x:.1f}" '
+                    f'y2="{haut + hauteur_traits}" stroke="{GRILLE}" stroke-width="1"/>')
+        fig.ajouter(_texte(x, haut - 22, f"jour {j}", ancre="middle",
+                           couleur=ENCRE_DOUCE, taille=12))
+
+    # Les traits, regroupes par couleur : un seul <path> par teinte plutot que
+    # six cents elements. La page reste legere et le rendu immediat.
+    groupes = {}
+    for i, t in enumerate(traits):
+        y = haut + i * pas + pas / 2
+        longueur = max(1.2, px(t["jour"]) - gauche)
+        groupes.setdefault(t["couleur"], []).append(
+            f'M{gauche:.1f},{y:.2f}h{longueur:.1f}')
+
+    fig.ajouter('<g class="peigne-traits">')
+    for teinte, morceaux in groupes.items():
+        fig.ajouter(f'<path d="{"".join(morceaux)}" stroke="{teinte}" '
+                    f'stroke-width="{epaisseur:.2f}" fill="none" '
+                    f'stroke-linecap="butt"/>')
+    fig.ajouter('</g>')
+
+    # L'annotation unique : la moitie du plateau est sortie avant ce jour-la.
+    if mediane:
+        y = haut + hauteur_traits / 2
+        fig.ajouter(f'<line x1="{gauche}" y1="{y:.1f}" x2="{largeur - droite + 8}" '
+                    f'y2="{y:.1f}" stroke="{ENCRE}" stroke-width="1" '
+                    f'stroke-dasharray="2 3" opacity="0.55"/>')
+        fig.ajouter(_texte(largeur - droite + 14, y,
+                           f"moitié sortie avant le jour {mediane}",
+                           couleur=ENCRE, taille=12, gras=True))
+
+    fig.ajouter(_texte(largeur - droite + 14, haut + 8, "un trait,",
+                       couleur=ENCRE_DOUCE, taille=12))
+    fig.ajouter(_texte(largeur - droite + 14, haut + 24, "un aventurier",
+                       couleur=ENCRE_DOUCE, taille=12))
+    fig.ajouter(_texte(largeur - droite + 14, haut + hauteur_traits - 8,
+                       f"{jour_max} jours", couleur=ENCRE, taille=12, gras=True))
+
+    if legende:
+        x = gauche
+        for nom, teinte in legende:
+            fig.ajouter(f'<rect x="{x}" y="12" width="11" height="11" rx="2" fill="{teinte}"/>')
+            fig.ajouter(_texte(x + 17, 18, nom, couleur=ENCRE, taille=12))
+            x += 26 + 7.2 * len(nom)
+
+    fig.ajouter(f'<line x1="{gauche}" y1="{haut - 12}" x2="{gauche}" '
+                f'y2="{haut + hauteur_traits}" stroke="var(--axe)" stroke-width="1"/>')
+
+    return (f'<div class="peigne">\n'
+            + fig.rendu().replace('<figure class="figure">\n', '')
+                         .replace('</figure>\n', '')
+            + '</div>\n')

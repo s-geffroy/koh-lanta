@@ -1,0 +1,55 @@
+---
+layout: default
+---
+{%- comment -%}
+  L'oeil-de-boeuf (« LES RESULTATS · 04 ») n'est pas un ornement : il dit la
+  section et le rang de la page dans son fil de lecture. Il n'apparait donc
+  que sur les pages qui ont reellement un rang.
+{%- endcomment -%}
+{%- assign section = "" -%}
+{%- assign rang = 0 -%}
+{%- assign total = 0 -%}
+{%- for g in site.data.navigation -%}
+  {%- for e in g.entrees -%}
+    {%- if e.url == page.url -%}
+      {%- assign section = g.section -%}
+      {%- if g.fil and e.hub != true -%}
+        {%- comment -%}
+          Comptage a la main plutot qu'un `where_exp` : ce gabarit ne peut pas
+          etre essaye avant publication -- Jekyll n'a pas le droit de tourner
+          sur cet hote. On n'emploie donc que du Liquid dont le comportement
+          ne se discute pas.
+        {%- endcomment -%}
+        {%- assign compteur = 0 -%}
+        {%- for x in g.entrees -%}
+          {%- unless x.hub -%}
+            {%- assign compteur = compteur | plus: 1 -%}
+            {%- assign total = compteur -%}
+            {%- if x.url == page.url -%}{%- assign rang = compteur -%}{%- endif -%}
+          {%- endunless -%}
+        {%- endfor -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+
+<header class="page-entete">
+  {%- if section != "" -%}
+  <p class="oeil">
+    <span>{{ section }}</span>
+    {%- if rang > 0 -%}
+    <span class="oeil-rang">{{ rang }}<i>/{{ total }}</i></span>
+    {%- endif -%}
+  </p>
+  {%- endif -%}
+
+  <h1 class="page-titre">{{ page.title }}</h1>
+
+  {%- if page.chapeau -%}
+  <p class="chapeau">{{ page.chapeau | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+  {%- endif -%}
+</header>
+
+<div class="prose">
+  {{ content }}
+</div>

@@ -2,6 +2,8 @@
 layout: page
 title: Jaune contre rouge
 permalink: /statistiques/tribus/
+chapeau: >-
+  Vaut-il mieux commencer chez les Jaunes ou chez les Rouges ? La question revient à chaque saison. La réponse tient en une ligne.
 ---
 
 {% assign s = site.data.stats %}
@@ -32,7 +34,7 @@ deux cents aventuriers chacun : il n'y a pas de signal.
 ## Le détail
 
 <div class="tableau-large">
-<table>
+<table data-triable>
 <thead><tr>
   <th>Couleur</th><th class="nombre">Aventuriers</th>
   <th class="nombre">Survie moyenne</th><th class="nombre">Finales</th>

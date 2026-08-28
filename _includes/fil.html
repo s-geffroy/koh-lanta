@@ -1,0 +1,35 @@
+{%- comment -%}
+  Le fil de lecture : precedent / suivant, sur les seules pages de resultats.
+  L'ordre vient de _data/navigation.yml, il n'est ecrit nulle part ailleurs.
+  Une page hors du fil -- accueil, saisons, aventuriers, sources -- ne recoit
+  rien : on y arrive par le rail, pas par enchainement.
+{%- endcomment -%}
+{%- assign fil = "" | split: "" -%}
+{%- for g in site.data.navigation -%}
+  {%- if g.fil -%}{%- assign fil = fil | concat: g.entrees -%}{%- endif -%}
+{%- endfor -%}
+{%- assign pos = -1 -%}
+{%- for e in fil -%}
+  {%- if e.url == page.url -%}{%- assign pos = forloop.index0 -%}{%- endif -%}
+{%- endfor -%}
+{%- if pos >= 0 -%}
+{%- assign avant = pos | minus: 1 -%}
+{%- assign apres = pos | plus: 1 -%}
+<nav class="fil" aria-label="Page précédente et suivante">
+  {%- if avant >= 0 -%}
+  {%- assign p = fil[avant] -%}
+  <a class="fil-lien fil-avant" href="{{ p.url | relative_url }}">
+    <span class="fil-sens">Précédent</span>
+    <span class="fil-titre">{{ p.titre }}</span>
+  </a>
+  {%- else -%}<span></span>{%- endif -%}
+
+  {%- if apres < fil.size -%}
+  {%- assign n = fil[apres] -%}
+  <a class="fil-lien fil-apres" href="{{ n.url | relative_url }}">
+    <span class="fil-sens">Suivant</span>
+    <span class="fil-titre">{{ n.titre }}</span>
+  </a>
+  {%- else -%}<span></span>{%- endif -%}
+</nav>
+{%- endif -%}

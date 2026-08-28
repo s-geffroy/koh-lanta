@@ -2,6 +2,8 @@
 layout: page
 title: Les colliers d'immunité
 permalink: /statistiques/colliers/
+chapeau: >-
+  Chaque collier d’immunité suivi un par un : où il était caché, qui l’a trouvé, et ce qu’il a réellement changé au conseil.
 ---
 
 {% assign c = site.data.stats.colliers %}
@@ -24,7 +26,7 @@ s'ils ont servi, et combien de voix ils ont annulées.
 {% include graphiques/colliers-issues.svg %}
 
 <div class="tableau-large">
-<table>
+<table data-triable>
 <thead><tr>
   <th>Issue</th><th class="nombre">Colliers</th>
   <th class="nombre">Part du total</th><th class="nombre">Part de ceux trouvés</th>
@@ -72,7 +74,7 @@ efface un paquet de bulletins d'un coup.
 en jeu sur les saisons récentes.</p>
 
 <div class="tableau-large">
-<table>
+<table data-triable>
 <thead><tr>
   <th>Saison</th><th class="nombre">Année</th><th class="nombre">Colliers</th>
   <th class="nombre">Joués</th><th class="nombre">Voix annulées</th>

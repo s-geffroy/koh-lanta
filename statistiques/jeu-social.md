@@ -2,6 +2,8 @@
 layout: page
 title: Le jeu social
 permalink: /statistiques/jeu-social/
+chapeau: >-
+  Être visé, voter juste, ou n’être jamais écrit sur un bulletin. Le meilleur prédicteur de victoire de tout le jeu de données est ici.
 ---
 
 {% assign i = site.data.stats.indicateurs %}
@@ -21,7 +23,7 @@ comparés à tout le monde :
 {% include graphiques/fantomes-issue.svg %}
 
 <div class="tableau-large">
-<table>
+<table data-triable>
 <thead><tr>
   <th>Sort final</th><th class="nombre">Chez les fantômes</th>
   <th class="nombre">Chez tous</th><th class="nombre">Écart</th>
@@ -48,7 +50,7 @@ Ne jamais être écrit sur un bulletin est le meilleur prédicteur de victoire q
 ces données contiennent — devant l'âge, devant le métier, devant les épreuves.
 
 <div class="tableau-large">
-<table>
+<table data-triable>
 <thead><tr><th>Aventurier</th><th>Saison</th><th class="nombre">Conseils traversés</th><th>Sort</th></tr></thead>
 <tbody>
 {% for x in i.fantomes %}
@@ -84,7 +86,7 @@ La *justesse de vote* mesure la part des bulletins portés sur la personne qui a
 effectivement été éliminée. C'est l'indicateur de qui lit correctement la salle.
 
 <div class="tableau-large">
-<table>
+<table data-triable>
 <thead><tr><th>Aventurier</th><th>Saison</th><th class="nombre">Justesse</th><th class="nombre">Bulletins</th></tr></thead>
 <tbody>
 {% for x in i.meilleure_justesse %}
@@ -108,7 +110,7 @@ suffirait à afficher 100 %.</p>
 ## Survivre quand on est visé
 
 <div class="tableau-large">
-<table>
+<table data-triable>
 <thead><tr><th>Aventurier</th><th>Saison</th><th class="nombre">Conseils où visé</th><th class="nombre">Survie</th><th>Sort</th></tr></thead>
 <tbody>
 {% for x in i.meilleure_evasion %}
@@ -128,7 +130,7 @@ plupart finissent tout de même par tomber : échapper au vote se paie plus tard
 ## Les plus visés
 
 <div class="tableau-large">
-<table>
+<table data-triable>
 <thead><tr><th>Aventurier</th><th>Saison</th><th class="nombre">Voix par conseil</th><th class="nombre">Conseils</th><th>Sort</th></tr></thead>
 <tbody>
 {% for x in i.plus_menaces %}

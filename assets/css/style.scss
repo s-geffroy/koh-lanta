@@ -3,31 +3,48 @@
 # fichier et sert le SCSS tel quel.
 ---
 
-@import "minima";
+/* =========================================================================
+   Koh-Lanta en chiffres — feuille de style unique.
 
-/* ------------------------------------------------------------------------
-   Palette
-   ------------------------------------------------------------------------
-   Les figures sont des SVG inlines dans les pages : elles heritent donc de ces
-   variables, et suivent le theme du lecteur. Un SVG charge en <img> n'aurait
-   pas pu.
+   Le theme `minima` n'est plus importe : les gabarits de _layouts/ sont ceux
+   du projet, et tout ce qui s'affiche est ecrit ici. `theme: minima` reste
+   dans _config.yml parce que GitHub Pages veut un theme de sa liste blanche ;
+   il ne sert plus a rien d'autre.
 
-   Les huit teintes categorielles viennent du guide de visualisation, DANS LEUR
-   ORDRE : cet ordre est ce qui garantit que deux series voisines restent
-   distinguables par un lecteur daltonien. Il ne se reamenage pas par gout.
+   DIRECTION. Le site parle d'un jeu ou l'on tient un nombre de jours, sous
+   un bandeau jaune ou rouge. Ces deux couleurs sont la seule identite
+   coloree : elles portent DEJA une donnee (jaune 12 victoires, rouge 12), et
+   les employer a parts strictement egales dit ce que le site a trouve. Le
+   fond n'est pas un creme de papier : c'est un gris-vert delave, celui du sel
+   sur le bois. L'encre n'est pas noire mais vert-bleu profond.
 
-   Les couleurs de tribus, elles, ne suivent pas cet ordre : quand une tribu est
-   jaune, la teinte EST la donnee.
-   ------------------------------------------------------------------------ */
+   ATTENTION AUX VARIABLES DE FIGURE. Les SVG de _includes/graphiques/ sont
+   inlines dans les pages : ils lisent --surface, --encre, --grille, --axe,
+   --serie-N et --tribu-N. Renommer l'une de ces variables casse toutes les
+   figures en silence. --surface en particulier sert d'ecart de 2 px entre
+   deux marques voisines : les figures DOIVENT donc reposer sur un fond de
+   couleur --surface, et c'est pourquoi .figure est un panneau et non un bloc
+   transparent.
+   ========================================================================= */
+
+/* ------------------------------------------------------------------ jetons */
 
 :root {
-  --surface: #fcfcfb;
-  --encre: #0b0b0b;
-  --encre-douce: #52514e;
-  --encre-muette: #898781;
-  --grille: #e1e0d9;
-  --axe: #c3c2b7;
+  /* Fonds. --sable est la page, --surface est ce qui est pose dessus. */
+  --sable:        #edefe9;
+  --surface:      #fbfcfa;
+  --surface-creuse: #f5f7f1;
 
+  --encre:        #101a18;
+  --encre-douce:  #4c5a56;
+  --encre-muette: #626e69;
+  --grille:       #dde0d6;
+  --axe:          #c2c7b8;
+
+  /* Les huit teintes categorielles du guide de visualisation, DANS LEUR
+     ORDRE : cet ordre est le mecanisme qui garantit que deux series voisines
+     restent distinguables par un lecteur daltonien. Il ne se reamenage pas
+     par gout. */
   --serie-1: #2a78d6;
   --serie-2: #eb6834;
   --serie-3: #1baf7a;
@@ -37,24 +54,44 @@
   --serie-7: #4a3aa7;
   --serie-8: #e34948;
 
-  --tribu-jaune: #eda100;
-  --tribu-rouge: #e34948;
-  --tribu-bleu: #2a78d6;
-  --tribu-vert: #008300;
+  /* Couleurs de tribu : ici la teinte EST la donnee. Une tribu jaune est
+     jaune a l'ecran, elle ne suit pas l'ordre categoriel. */
+  --tribu-jaune:  #eda100;
+  --tribu-rouge:  #e34948;
+  --tribu-bleu:   #2a78d6;
+  --tribu-vert:   #008300;
   --tribu-orange: #eb6834;
   --tribu-violet: #4a3aa7;
-  --tribu-noir: #52514e;
-  --tribu-blanc: #898781;
+  --tribu-noir:   #52514e;
+  --tribu-blanc:  #898781;
+
+  --focus: #2a78d6;
+
+  /* Caracteres. Fraunces porte les titres : ses axes SOFT et WONK lui
+     donnent des terminaisons de travers, taillees plutot que dessinees.
+     Public Sans porte le texte. IBM Plex Mono porte tout ce qui compte :
+     oeils-de-boeuf, etiquettes, chiffres de tableau. */
+  --titre: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --texte: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+           Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono:  "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo,
+           Consolas, monospace;
+
+  --rayon: 10px;
+  --colonne: 36rem;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --surface: #1a1a19;
-    --encre: #ffffff;
-    --encre-douce: #c3c2b7;
-    --encre-muette: #898781;
-    --grille: #2c2c2a;
-    --axe: #383835;
+    --sable:        #101210;
+    --surface:      #1a1d1a;
+    --surface-creuse: #212520;
+
+    --encre:        #f0f3ec;
+    --encre-douce:  #b0b8b1;
+    --encre-muette: #8a948c;
+    --grille:       #2a2e29;
+    --axe:          #383d37;
 
     --serie-1: #3987e5;
     --serie-2: #d95926;
@@ -65,116 +102,806 @@
     --serie-7: #9085e9;
     --serie-8: #e66767;
 
-    --tribu-jaune: #c98500;
-    --tribu-rouge: #e66767;
-    --tribu-bleu: #3987e5;
-    --tribu-vert: #008300;
+    --tribu-jaune:  #c98500;
+    --tribu-rouge:  #e66767;
+    --tribu-bleu:   #3987e5;
+    --tribu-vert:   #008300;
     --tribu-orange: #d95926;
     --tribu-violet: #9085e9;
-    --tribu-noir: #c3c2b7;
-    --tribu-blanc: #898781;
+    --tribu-noir:   #b0b8b1;
+    --tribu-blanc:  #898781;
+
+    --focus: #7fb2f2;
   }
 }
 
-/* ---------------------------------------------------------------- figures */
+/* La bascule manuelle doit l'emporter dans les deux sens : sans ce bloc, un
+   lecteur dont le systeme est en clair ne pourrait pas passer en sombre. */
+:root[data-theme="dark"] {
+  --sable:        #101210;
+  --surface:      #1a1d1a;
+  --surface-creuse: #212520;
 
-.figure {
-  margin: 2rem 0;
-  padding: 0;
+  --encre:        #f0f3ec;
+  --encre-douce:  #b0b8b1;
+  --encre-muette: #8a948c;
+  --grille:       #2a2e29;
+  --axe:          #383d37;
+
+  --serie-1: #3987e5;
+  --serie-2: #d95926;
+  --serie-3: #199e70;
+  --serie-4: #c98500;
+  --serie-5: #d55181;
+  --serie-6: #008300;
+  --serie-7: #9085e9;
+  --serie-8: #e66767;
+
+  --tribu-jaune:  #c98500;
+  --tribu-rouge:  #e66767;
+  --tribu-bleu:   #3987e5;
+  --tribu-vert:   #008300;
+  --tribu-orange: #d95926;
+  --tribu-violet: #9085e9;
+  --tribu-noir:   #b0b8b1;
+  --tribu-blanc:  #898781;
+
+  --focus: #7fb2f2;
 }
 
-.graphique {
-  width: 100%;
-  height: auto;
+/* ------------------------------------------------------------------- socle */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--sable);
+  color: var(--encre);
+  font-family: var(--texte);
+  font-size: 17px;
+  line-height: 1.6;
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+.saut {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--encre);
+  color: var(--sable);
+  padding: 0.7rem 1.1rem;
+  z-index: 20;
+  border-radius: 0 0 var(--rayon) 0;
+}
+.saut:focus { left: 0; }
+
+/* ------------------------------------------------------------------ entete */
+
+.entete {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  max-width: 84rem;
+  margin: 0 auto;
+  padding: 1.4rem 1.5rem 1.2rem;
+  border-bottom: 1px solid var(--grille);
+}
+
+.enseigne {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+  margin-right: auto;
+}
+
+/* Le totem : moitie jaune, moitie rouge, a parts exactement egales. C'est la
+   marque du site et c'est aussi son resultat le plus repete -- les deux
+   couleurs comptent le meme nombre de victoires. */
+.enseigne-totem {
+  width: 0.72rem;
+  height: 1.75rem;
+  flex: none;
+  background: linear-gradient(var(--tribu-jaune) 0 50%, var(--tribu-rouge) 50% 100%);
+  clip-path: polygon(50% 0, 100% 16%, 100% 100%, 0 100%, 0 16%);
+}
+
+.enseigne-texte { display: block; line-height: 1.12; }
+.enseigne-texte b {
   display: block;
-  /* Une figure large doit pouvoir defiler seule ; la page, jamais. */
-  max-width: 100%;
+  font-family: var(--titre);
+  font-variation-settings: "WONK" 0, "SOFT" 0, "opsz" 40;
+  font-weight: 700;
+  font-size: 1.22rem;
+  letter-spacing: -0.015em;
+}
+.enseigne-texte em {
+  display: block;
+  font-style: normal;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--encre-muette);
+  margin-top: 0.12rem;
 }
 
-.marque { cursor: help; }
-.marque:hover rect,
-.marque:hover circle { filter: brightness(1.12); }
-
-.legende-figure {
-  font-size: 0.85rem;
+.bascule {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
   color: var(--encre-douce);
-  margin-top: -1.2rem;
-  margin-bottom: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--grille);
+  border-radius: 999px;
+  padding: 0.38rem 0.85rem;
+  cursor: pointer;
+}
+.bascule:hover { color: var(--encre); border-color: var(--axe); }
+/* Sans JavaScript, la bascule ne ferait rien : on ne la montre pas. */
+.sans-js .bascule { display: none; }
+
+/* ------------------------------------------------------------------- cadre */
+
+.cadre {
+  max-width: 84rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
 }
 
-/* --------------------------------------------------------------- chiffres */
+.contenu { min-width: 0; padding-top: 2.2rem; }
+
+@media (min-width: 62em) {
+  .cadre {
+    display: grid;
+    grid-template-columns: 15rem minmax(0, 1fr);
+    gap: 3.5rem;
+  }
+}
+
+/* -------------------------------------------------------------------- rail */
+
+.rail {
+  border-bottom: 1px solid var(--grille);
+  padding-bottom: 0.4rem;
+}
+
+.rail-poignee {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0.9rem 0;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--encre-douce);
+}
+.rail-poignee::-webkit-details-marker { display: none; }
+
+.rail-chevron {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.15s ease;
+}
+.rail[open] .rail-chevron { transform: rotate(-135deg); }
+
+.rail-corps { padding-bottom: 1rem; }
+
+.rail-titre {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--encre-muette);
+  margin: 1.5rem 0 0.5rem;
+}
+.rail-titre:first-child { margin-top: 0.4rem; }
+
+.rail-liste { list-style: none; margin: 0; padding: 0; }
+
+.rail-lien {
+  display: block;
+  text-decoration: none;
+  color: var(--encre-douce);
+  font-size: 0.93rem;
+  padding: 0.32rem 0 0.32rem 0.85rem;
+  border-left: 2px solid var(--grille);
+}
+.rail-lien:hover { color: var(--encre); border-left-color: var(--axe); }
+
+/* La page courante est marquee par le totem couche : jaune puis rouge. */
+.rail-lien.ici {
+  color: var(--encre);
+  font-weight: 600;
+  border-left-color: transparent;
+  background:
+    linear-gradient(var(--tribu-jaune) 0 50%, var(--tribu-rouge) 50% 100%)
+    left / 2px 100% no-repeat;
+}
+
+@media (min-width: 62em) {
+  .rail {
+    border-bottom: 0;
+    padding-bottom: 0;
+    position: sticky;
+    top: 1.5rem;
+    align-self: start;
+    max-height: calc(100vh - 3rem);
+    overflow-y: auto;
+    padding-top: 2.4rem;
+  }
+  .rail-poignee { display: none; }
+  /* Deplie en permanence sur grand ecran, que <details> soit ouvert ou non. */
+  .rail-corps { display: block; }
+}
+
+/* ------------------------------------------------------- entete de la page */
+
+.page-entete { margin-bottom: 2.6rem; }
+
+.oeil {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  margin: 0 0 1rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--encre-muette);
+}
+.oeil-rang { color: var(--encre-douce); }
+.oeil-rang i { font-style: normal; color: var(--encre-muette); }
+
+.page-titre {
+  font-family: var(--titre);
+  font-variation-settings: "WONK" 1, "SOFT" 0, "opsz" 120;
+  font-weight: 700;
+  font-size: clamp(2.1rem, 1.3rem + 2.6vw, 3.3rem);
+  line-height: 1.03;
+  letter-spacing: -0.02em;
+  margin: 0;
+  max-width: 18ch;
+}
+
+.chapeau {
+  font-size: 1.16rem;
+  line-height: 1.5;
+  color: var(--encre-douce);
+  max-width: 34rem;
+  margin: 1.1rem 0 0;
+}
+
+/* ------------------------------------------------------------------- prose */
+
+.prose > * { max-width: var(--colonne); }
+
+/* Les blocs larges echappent a la colonne de lecture. Une seule liste, pour
+   qu'aucune regle ne vienne en annuler une autre plus loin. */
+.prose > .figure,
+.prose > .tableau-large,
+.prose > .chiffres,
+.prose > .cartes,
+.prose > .peigne,
+.prose > .peigne-legende,
+.prose > .accueil-titre,
+.prose > .saison-grille,
+.prose > .filtres { max-width: none; }
+
+.prose p, .prose ul, .prose ol { margin: 0 0 1.15rem; }
+.prose li { margin: 0.3rem 0; }
+
+.prose h2 {
+  font-family: var(--titre);
+  font-variation-settings: "WONK" 1, "SOFT" 0, "opsz" 60;
+  font-weight: 700;
+  font-size: clamp(1.45rem, 1.15rem + 1vw, 1.95rem);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  margin: 3.2rem 0 1rem;
+}
+
+/* Le filet a deux temps sous chaque titre de section : la meme moitie jaune,
+   la meme moitie rouge que le totem de l'entete. */
+.prose h2::before {
+  content: "";
+  display: block;
+  width: 2.6rem;
+  height: 3px;
+  margin-bottom: 0.95rem;
+  background: linear-gradient(90deg, var(--tribu-jaune) 0 50%, var(--tribu-rouge) 50%);
+}
+
+.prose h3 {
+  font-family: var(--texte);
+  font-weight: 700;
+  font-size: 1.06rem;
+  letter-spacing: 0.005em;
+  margin: 2.1rem 0 0.7rem;
+}
+
+.prose a {
+  color: var(--encre);
+  text-decoration-color: var(--tribu-rouge);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+.prose a:hover { color: var(--tribu-rouge); }
+
+.prose strong { font-weight: 700; }
+
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--grille);
+  margin: 3rem 0;
+}
+
+/* ---------------------------------------------------------------- chiffres */
 
 .chiffres {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 1.5rem 0 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: 1px;
+  background: var(--grille);
+  border: 1px solid var(--grille);
+  border-radius: var(--rayon);
+  overflow: hidden;
+  margin: 1.8rem 0 2.4rem;
   padding: 0;
   list-style: none;
 }
 
 .chiffre {
-  flex: 1 1 8.5rem;
-  border: 1px solid var(--grille);
-  border-radius: 8px;
-  padding: 0.9rem 1rem;
+  background: var(--surface);
+  padding: 1.05rem 1.1rem 1.15rem;
 }
 
 .chiffre b {
   display: block;
-  font-size: 1.9rem;
-  line-height: 1.1;
-  color: var(--encre);
+  font-family: var(--titre);
+  font-variation-settings: "WONK" 1, "SOFT" 0, "opsz" 48;
+  font-weight: 700;
+  font-size: 1.85rem;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
   font-variant-numeric: tabular-nums;
 }
 
 .chiffre span {
   display: block;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
+  line-height: 1.35;
   color: var(--encre-douce);
-  margin-top: 0.25rem;
+  margin-top: 0.4rem;
 }
 
-/* --------------------------------------------------------------- tableaux */
+/* ----------------------------------------------------------------- figures */
+
+/* Un panneau, et non un bloc transparent : les ecarts de 2 px entre marques
+   sont dessines en --surface, ils doivent tomber sur du --surface. */
+.figure {
+  margin: 1.8rem 0 0.6rem;
+  padding: 1.4rem 1.3rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--grille);
+  border-radius: var(--rayon);
+  overflow-x: auto;
+}
+
+.graphique { width: 100%; height: auto; display: block; min-width: 32rem; }
+
+/* Chaque marque de donnee porte un <title> : le curseur l'annonce. */
+.marque { cursor: help; }
+.marque:hover rect,
+.marque:hover circle { filter: brightness(1.12); }
+
+.legende-figure {
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--encre-douce);
+  margin: 0 0 2.4rem;
+  max-width: 38rem;
+}
+/* Une legende collee a sa figure : sans cette regle, la marge de paragraphe
+   de .prose viendrait s'intercaler entre les deux. */
+.figure + .legende-figure { margin-top: 0.55rem; }
+
+/* ---------------------------------------------------- le peigne des torches */
+
+/* La figure d'ouverture. Chaque trait est un aventurier, sa longueur le
+   nombre de jours tenus, sa couleur son bandeau de depart. */
+.peigne {
+  background: var(--surface);
+  border: 1px solid var(--grille);
+  border-radius: var(--rayon);
+  padding: 1.6rem 1.5rem 1.2rem;
+  margin: 0 0 0.7rem;
+  overflow-x: auto;
+}
+.peigne svg { width: 100%; height: auto; display: block; min-width: 34rem; }
+
+.peigne-traits { animation: allumage 1.5s ease-out both; }
+
+@keyframes allumage {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .peigne-traits { animation: none; }
+  .rail-chevron { transition: none; }
+}
+
+/* ---------------------------------------------------------------- tableaux */
 
 .tableau-large {
-  overflow-x: auto;      /* le tableau defile, pas la page */
-  margin: 1.5rem 0;
+  overflow-x: auto;          /* le tableau defile, la page jamais */
+  margin: 1.6rem 0 2rem;
+  border: 1px solid var(--grille);
+  border-radius: var(--rayon);
+  background: var(--surface);
 }
 
 table {
   border-collapse: collapse;
-  font-size: 0.9rem;
   width: 100%;
+  font-size: 0.88rem;
 }
 
-table th, table td {
-  border: 1px solid var(--grille);
-  padding: 0.4rem 0.65rem;
+thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--surface-creuse);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--encre-douce);
   text-align: left;
+  padding: 0.75rem 0.8rem;
+  border-bottom: 1px solid var(--grille);
+  white-space: nowrap;
 }
 
-table th { background: transparent; font-weight: 600; }
-table td.nombre, table th.nombre { text-align: right; font-variant-numeric: tabular-nums; }
+tbody td {
+  padding: 0.52rem 0.8rem;
+  border-bottom: 1px solid var(--grille);
+  vertical-align: baseline;
+}
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr[hidden] { display: none; }
+tbody tr:hover td { background: var(--surface-creuse); }
+
+td.nombre, th.nombre { text-align: right; font-variant-numeric: tabular-nums; }
+td.nombre { font-family: var(--mono); font-size: 0.83rem; }
+
+/* En-tete de tableau cliquable : le curseur et la fleche sont poses par le
+   script, jamais par le balisage. */
+th[aria-sort] { cursor: pointer; }
+th[aria-sort]:hover { color: var(--encre); }
+th[aria-sort="ascending"]::after  { content: " ↑"; color: var(--tribu-rouge); }
+th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); }
 
 .pastille {
   display: inline-block;
-  width: 0.7rem; height: 0.7rem;
-  border-radius: 3px;
-  margin-right: 0.4rem;
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 2px;
+  margin-right: 0.45rem;
   vertical-align: -1px;
 }
 
-/* ----------------------------------------------------------------- divers */
+/* Une barre dans la cellule : la valeur reste lisible en clair, la barre
+   n'ajoute qu'un ordre de grandeur au coup d'oeil. */
+.cellule-barre {
+  display: block;
+  height: 3px;
+  margin-top: 3px;
+  border-radius: 2px;
+  background: var(--tribu-rouge);
+  opacity: 0.55;
+}
 
-.sommaire { list-style: none; padding: 0; }
-.sommaire li { margin: 0.9rem 0; }
-.sommaire a { font-weight: 600; }
-.sommaire p { margin: 0.15rem 0 0; color: var(--encre-douce); font-size: 0.92rem; }
+/* ------------------------------------------------------------------ cartes */
+
+.cartes {
+  list-style: none;
+  margin: 1.8rem 0 2.4rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1px;
+  background: var(--grille);
+  border: 1px solid var(--grille);
+  border-radius: var(--rayon);
+  overflow: hidden;
+}
+
+.carte { background: var(--surface); }
+
+.carte a {
+  display: block;
+  height: 100%;
+  padding: 1.15rem 1.2rem 1.3rem;
+  text-decoration: none;
+  color: inherit;
+}
+.carte a:hover { background: var(--surface-creuse); }
+
+/* « 4/9 » : le rang porte le poids, le total reste en clair. Les deux sont du
+   texte, donc tous deux dans une encre lisible -- jamais un gris de filet. */
+.carte-rang {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--encre-muette);
+}
+.carte-rang i { font-style: normal; font-weight: 400; }
+
+.carte-titre {
+  display: block;
+  font-weight: 700;
+  font-size: 1.02rem;
+  margin: 0.45rem 0 0.3rem;
+  line-height: 1.25;
+}
+.carte a:hover .carte-titre { color: var(--tribu-rouge); }
+
+.carte-resume {
+  display: block;
+  font-size: 0.87rem;
+  line-height: 1.45;
+  color: var(--encre-douce);
+}
+
+/* --------------------------------------------------------------- saisons */
+
+.saison-grille {
+  list-style: none;
+  margin: 1.8rem 0 2.4rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 0.8rem;
+}
+
+.saison {
+  background: var(--surface);
+  border: 1px solid var(--grille);
+  border-radius: var(--rayon);
+  padding: 0.9rem 1rem 1rem;
+  border-top: 3px solid var(--axe);
+}
+
+.saison-numero {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--encre-muette);
+}
+.saison-titre { font-weight: 700; line-height: 1.25; margin: 0.25rem 0 0.35rem; }
+.saison-lieu { font-size: 0.84rem; color: var(--encre-douce); margin: 0; }
+.saison-vainqueur {
+  font-size: 0.84rem;
+  margin: 0.55rem 0 0;
+  padding-top: 0.55rem;
+  border-top: 1px solid var(--grille);
+}
+.saison-vainqueur b { font-weight: 600; }
+
+/* ------------------------------------------------------------------ notes */
 
 .note {
-  border-left: 3px solid var(--grille);
-  padding: 0.2rem 0 0.2rem 1rem;
+  background: var(--surface-creuse);
+  border-left: 3px solid var(--axe);
+  border-radius: 0 6px 6px 0;
+  padding: 0.85rem 1rem;
+  margin: 1.5rem 0 2rem;
   color: var(--encre-douce);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+.note a { color: var(--encre); }
+
+/* ----------------------------------------------------------------- filtres */
+
+.filtres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  align-items: flex-end;
+  margin: 1.6rem 0 1rem;
+  padding: 1rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--grille);
+  border-radius: var(--rayon);
+}
+.sans-js .filtres { display: none; }
+
+.champ { display: flex; flex-direction: column; gap: 0.3rem; }
+.champ label {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--encre-muette);
+}
+.champ input, .champ select {
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--encre);
+  background: var(--surface-creuse);
+  border: 1px solid var(--grille);
+  border-radius: 6px;
+  padding: 0.42rem 0.6rem;
+  min-width: 11rem;
+}
+.champ input { min-width: 15rem; }
+
+.compte {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  color: var(--encre-douce);
+  padding-bottom: 0.5rem;
+}
+
+/* --------------------------------------------------------------------- fil */
+
+.fil {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--grille);
+}
+
+.fil-lien {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--surface);
+  border: 1px solid var(--grille);
+  border-radius: var(--rayon);
+  padding: 0.9rem 1.05rem;
+}
+.fil-lien:hover { border-color: var(--axe); }
+.fil-apres { text-align: right; }
+
+.fil-sens {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--encre-muette);
+  margin-bottom: 0.25rem;
+}
+.fil-titre { display: block; font-weight: 600; line-height: 1.3; }
+
+/* -------------------------------------------------------------------- pied */
+
+.pied {
+  border-top: 1px solid var(--grille);
+  background: var(--surface);
+}
+
+.pied-corps {
+  max-width: 84rem;
+  margin: 0 auto;
+  padding: 2.2rem 1.5rem 3rem;
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+}
+
+.pied-signature { margin: 0; font-size: 0.88rem; line-height: 1.55; }
+.pied-signature b { font-family: var(--titre); font-weight: 700; font-size: 1.02rem; }
+
+.pied-mention {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--encre-douce);
+}
+.pied-mention a { color: var(--encre); }
+
+/* ------------------------------------------------------------- l'accueil */
+
+.accueil-titre {
+  font-family: var(--titre);
+  font-variation-settings: "WONK" 1, "SOFT" 0, "opsz" 144;
+  font-weight: 700;
+  font-size: clamp(2.4rem, 1.1rem + 4.6vw, 4.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  margin: 0.4rem 0 1.1rem;
+  max-width: 15ch;
+}
+
+.accueil-chapeau {
+  font-size: 1.18rem;
+  line-height: 1.5;
+  color: var(--encre-douce);
+  max-width: 34rem;
+  margin: 0 0 2.4rem;
+}
+
+.peigne-legende {
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--encre-douce);
+  margin: 0 0 2.6rem;
+  max-width: 38rem;
+}
+
+/* Le constat mis en avant : un bloc, pas une carte de plus. */
+.constat {
+  background: var(--surface);
+  border: 1px solid var(--grille);
+  border-left: 3px solid var(--tribu-rouge);
+  border-radius: 0 var(--rayon) var(--rayon) 0;
+  padding: 1.2rem 1.3rem 1.3rem;
+  margin: 1.4rem 0 2rem;
+}
+.constat p { margin: 0 0 0.6rem; }
+.constat p:last-child { margin-bottom: 0; }
+.constat b { font-weight: 700; }
+
+/* ------------------------------------------------- retouches de composants */
+
+.saison-tribus { margin: 0.5rem 0 0; font-size: 0.8rem; color: var(--encre-muette); }
+.saison-tribus-noms { vertical-align: 1px; }
+
+/* Un tableau de plusieurs centaines de lignes defile dans sa propre boite :
+   sans hauteur bornee, la page ferait quinze ecrans et l'en-tete collant
+   n'aurait rien a quoi se coller. */
+.tableau-haut { max-height: 78vh; }
+
+/* Le bouton « tout effacer » emprunte l'allure de la bascule de theme, mais
+   il se pose dans une rangee de champs : il s'aligne sur eux. */
+.filtres .bascule { margin-bottom: 0.05rem; }
+
+/* ------------------------------------------------------------ petits ecrans */
+
+@media (max-width: 44em) {
+  body { font-size: 16px; }
+
+  .entete { gap: 0.9rem 1.2rem; }
+
+  /* Deux fleches cote a cote deviennent illisibles sous 400 px. */
+  .fil { grid-template-columns: 1fr; }
+  .fil-apres { text-align: left; }
+
+  .filtres { flex-direction: column; align-items: stretch; }
+  .champ input, .champ select { min-width: 0; width: 100%; }
+  .compte { margin-left: 0; padding-bottom: 0; }
+
+  .chiffres { grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr)); }
+  .chiffre b { font-size: 1.55rem; }
+
+  .figure { padding: 1rem 0.9rem 0.8rem; }
+  .peigne { padding: 1.1rem 1rem 0.9rem; }
 }

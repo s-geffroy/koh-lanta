@@ -1,0 +1,66 @@
+# La navigation du site, ecrite une seule fois et lue partout : le rail de
+# gauche, le fil de lecture (precedent / suivant) et les cartes du sommaire
+# sortent tous d'ici. Ajouter une page, c'est ajouter une ligne.
+#
+# `url` doit correspondre EXACTEMENT au `permalink` de la page, barre oblique
+# finale comprise : c'est sur cette egalite que le rail decide quelle entree
+# est la page courante.
+#
+# `fil: true` place la page dans l'ordre de lecture propose en bas de page.
+# L'accueil et les pages de donnees en sont exclus : on n'y entre pas par
+# enchainement, on y va directement.
+- section: Découvrir
+  entrees:
+    - titre: Accueil
+      url: /
+      resume: Le jeu, vu de la donnée.
+
+- section: Les résultats
+  fil: true
+  entrees:
+    # `hub: true` : la page d'entree de la section. Elle appartient au fil de
+    # lecture -- on peut y revenir par « precedent » -- mais elle ne porte pas
+    # de rang, et elle ne figure pas dans son propre sommaire.
+    - titre: Vue d'ensemble
+      url: /statistiques/
+      hub: true
+      resume: Les neuf entrées, et les chiffres qui les tiennent.
+    - titre: Le profil du vainqueur
+      url: /statistiques/vainqueurs/
+      resume: "Âge, sexe, métier, couleur : ce que les vainqueurs ont en commun."
+    - titre: Jaune contre rouge
+      url: /statistiques/tribus/
+      resume: La couleur de départ change-t-elle quelque chose ?
+    - titre: Le métier
+      url: /statistiques/professions/
+      resume: Qui compose le casting, et quels métiers mènent le plus loin.
+    - titre: Âge et longévité
+      url: /statistiques/longevite/
+      resume: À quel âge on tient, et l'écart entre femmes et hommes.
+    - titre: Comment on sort
+      url: /statistiques/sorties/
+      resume: Conseil, poteaux, orientation, abandon — et leur évolution.
+    - titre: Les épreuves
+      url: /statistiques/epreuves/
+      resume: Ratios, totaux de carrière, et quel profil domine vraiment.
+    - titre: Les colliers
+      url: /statistiques/colliers/
+      resume: Joués, gardés, ou jamais trouvés.
+    - titre: Le jeu social
+      url: /statistiques/jeu-social/
+      resume: Être visé, voter juste, ou n'être jamais écrit nulle part.
+    - titre: Les conseils
+      url: /statistiques/conseils/
+      resume: Les votes serrés, les colliers, qui vote contre qui.
+
+- section: Les données
+  entrees:
+    - titre: Les saisons
+      url: /saisons/
+      resume: Chaque édition, son lieu, son casting, son vainqueur.
+    - titre: Les aventuriers
+      url: /aventuriers/
+      resume: Toutes les participations, filtrables et triables.
+    - titre: Les sources
+      url: /sources/
+      resume: D'où viennent ces données, et ce qui leur manque.

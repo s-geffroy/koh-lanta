@@ -2,6 +2,8 @@
 layout: page
 title: Les sources
 permalink: /sources/
+chapeau: >-
+  D’où vient chaque champ, comment les contradictions entre sources ont été tranchées, et ce qui manque encore.
 ---
 
 {% assign g = site.data.stats.general %}

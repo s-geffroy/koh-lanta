@@ -2,6 +2,9 @@
 layout: page
 title: Les saisons
 permalink: /saisons/
+chapeau: >-
+  Trente-quatre éditions diffusées, deux interrompues, et quatre indicateurs
+  qui disent ce qu’a été chacune d’elles.
 ---
 
 {% assign s = site.data.stats %}
@@ -14,59 +17,50 @@ permalink: /saisons/
 
 ## Les éditions classiques
 
-<div class="tableau-large">
-<table>
-<thead><tr>
-  <th class="nombre">N°</th><th>Titre</th><th class="nombre">Année</th>
-  <th>Lieu</th><th class="nombre">Jours</th><th class="nombre">Casting</th>
-  <th class="nombre">Âge moyen</th><th class="nombre">Femmes</th><th>Vainqueur</th>
-</tr></thead>
-<tbody>
-{% for x in s.saisons %}{% unless x.speciale %}
-<tr>
-  <td class="nombre">{{ x.numero }}</td>
-  <td><strong>{{ x.titre }}</strong></td>
-  <td class="nombre">{{ x.annee }}</td>
-  <td>{{ x.lieu }}, {{ x.pays }}</td>
-  <td class="nombre">{{ x.duree_jours }}</td>
-  <td class="nombre">{{ x.effectif }}</td>
-  <td class="nombre">{{ x.age_moyen }}</td>
-  <td class="nombre">{{ x.part_femmes }} %</td>
-  <td>{{ x.vainqueurs | join: " et " }}</td>
-</tr>
-{% endunless %}{% endfor %}
-</tbody>
-</table>
-</div>
+<ul class="saison-grille">
+{%- for x in site.data.saisons -%}
+{%- unless x.speciale or x.annulee -%}
+  <li class="saison">
+    <p class="saison-numero">SAISON {{ x.numero }} · {{ x.annee }} · {{ x.duree_jours }} JOURS</p>
+    <p class="saison-titre">{{ x.titre }}</p>
+    <p class="saison-lieu">{{ x.lieu }}, {{ x.pays }}</p>
+    <p class="saison-tribus">
+      {%- for t in x.tribus -%}
+      <span class="pastille" style="background: var(--tribu-{{ t.couleur }})"
+            title="{{ t.nom }}"></span>
+      {%- endfor -%}
+      <span class="saison-tribus-noms">{{ x.tribus | map: "nom" | join: " · " }}</span>
+    </p>
+    <p class="saison-vainqueur">
+      {%- if x.vainqueurs -%}Vainqueur : <b>{{ x.vainqueurs | join: " et " }}</b>
+      {%- else -%}<i>saison en cours</i>{%- endif -%}
+    </p>
+  </li>
+{%- endunless -%}
+{%- endfor -%}
+</ul>
 
 ## Les éditions spéciales
 
-Elles font revenir d'anciens aventuriers. Leurs chiffres sont tenus à part
+Elles font revenir d’anciens aventuriers. Leurs chiffres sont tenus à part
 partout sur ce site : des revenants de quarante ans qui rejouent tirent les
-moyennes d'âge vers le haut sans rien dire du casting ordinaire.
+moyennes d’âge vers le haut sans rien dire du casting ordinaire.
 
-<div class="tableau-large">
-<table>
-<thead><tr>
-  <th>Titre</th><th class="nombre">Année</th><th>Lieu</th>
-  <th class="nombre">Jours</th><th class="nombre">Casting</th>
-  <th class="nombre">Âge moyen</th><th>Vainqueur</th>
-</tr></thead>
-<tbody>
-{% for x in s.saisons %}{% if x.speciale %}
-<tr>
-  <td><strong>{{ x.titre }}</strong></td>
-  <td class="nombre">{{ x.annee }}</td>
-  <td>{{ x.lieu }}, {{ x.pays }}</td>
-  <td class="nombre">{{ x.duree_jours }}</td>
-  <td class="nombre">{{ x.effectif }}</td>
-  <td class="nombre">{{ x.age_moyen }}</td>
-  <td>{% if x.en_cours %}<em>saison en cours</em>{% else %}{{ x.vainqueurs | join: " et " }}{% endif %}</td>
-</tr>
-{% endif %}{% endfor %}
-</tbody>
-</table>
-</div>
+<ul class="saison-grille">
+{%- for x in site.data.saisons -%}
+{%- if x.speciale and x.annulee != true -%}
+  <li class="saison">
+    <p class="saison-numero">SPÉCIALE · {{ x.annee }} · {{ x.duree_jours }} JOURS</p>
+    <p class="saison-titre">{{ x.titre }}</p>
+    <p class="saison-lieu">{{ x.lieu }}, {{ x.pays }}</p>
+    <p class="saison-vainqueur">
+      {%- if x.vainqueurs -%}Vainqueur : <b>{{ x.vainqueurs | join: " et " }}</b>
+      {%- else -%}<i>saison en cours</i>{%- endif -%}
+    </p>
+  </li>
+{%- endif -%}
+{%- endfor -%}
+</ul>
 
 ## Les saisons interrompues
 
@@ -88,7 +82,7 @@ moyennes d'âge vers le haut sans rien dire du casting ordinaire.
 
 ## Les saisons comparées
 
-Au-delà du casting, quatre indicateurs disent ce qu'a été chaque saison.
+Au-delà du casting, quatre indicateurs disent ce qu’a été chaque saison.
 
 ### Un aventurier a-t-il écrasé les épreuves ?
 
@@ -99,10 +93,10 @@ Proche de zéro, les victoires ont circulé ; proche de un, une seule personne a
 tout raflé.</p>
 
 Le **Viêtnam (2010)** détient le record des saisons classiques : Claude Dartois
-y remporte sept épreuves individuelles à lui seul. À l'opposé, **Fidji (2017)**
+y remporte sept épreuves individuelles à lui seul. À l’opposé, **Fidji (2017)**
 est la saison la plus partagée du programme.
 
-### Le camp vote-t-il d'un bloc ?
+### Le camp vote-t-il d’un bloc ?
 
 {% include graphiques/saisons-dispersion.svg %}
 
@@ -114,36 +108,47 @@ ne contrôle rien.</p>
 
 {% include graphiques/saisons-tension.svg %}
 
-<p class="legende-figure">Part des conseils où l'élimination s'est jouée à une
+<p class="legende-figure">Part des conseils où l’élimination s’est jouée à une
 voix près.</p>
 
-### L'abandon recule
+### L’abandon recule
 
 {% include graphiques/saisons-abandon.svg %}
 
-<p class="legende-figure">Part des aventuriers ayant quitté le jeu d'eux-mêmes
+<p class="legende-figure">Part des aventuriers ayant quitté le jeu d’eux-mêmes
 ou sur décision médicale.</p>
 
-Deux saisons n'ont connu **aucun abandon** : *L'Île au trésor* (2016) et *Les
-Reliques du destin* (2026). À l'autre bout, *Palau* (2009) en a perdu plus d'un
+Deux saisons n’ont connu **aucun abandon** : *L’Île au trésor* (2016) et *Les
+Reliques du destin* (2026). À l’autre bout, *Palau* (2009) en a perdu plus d’un
 sur cinq.
 
 ### Le tableau complet
 
+<p class="note">Cliquez sur un en-tête pour trier le tableau sur cette colonne.
+Sans JavaScript, il reste entièrement lisible, dans l’ordre chronologique.</p>
+
 <div class="tableau-large">
-<table>
+<table data-triable>
 <thead><tr>
-  <th class="nombre">N°</th><th>Saison</th><th class="nombre">Survie moyenne</th>
+  <th class="nombre">N°</th><th>Saison</th><th class="nombre">Casting</th>
+  <th class="nombre">Âge moyen</th><th class="nombre">Femmes</th>
+  <th class="nombre">Survie moyenne</th>
   <th class="nombre">Abandons</th><th class="nombre">Conseils</th>
   <th class="nombre">Conseils serrés</th><th class="nombre">Dispersion</th>
   <th class="nombre">Domination</th><th class="nombre">Colliers</th>
 </tr></thead>
 <tbody>
-{% for x in site.data.stats.indicateurs.saisons %}{% unless x.speciale or x.en_cours %}
+{% for x in s.indicateurs.saisons %}{% unless x.speciale or x.en_cours %}
+  {%- assign meta = "" -%}
+  {%- for y in s.saisons -%}{%- if y.numero == x.numero and y.speciale != true -%}{%- assign meta = y -%}{%- endif -%}{%- endfor -%}
 <tr>
   <td class="nombre">{{ x.numero }}</td>
   <td>{{ x.titre }} <small>({{ x.annee }})</small></td>
-  <td class="nombre">{{ x.survie_moyenne }} %</td>
+  <td class="nombre">{{ meta.effectif }}</td>
+  <td class="nombre">{{ meta.age_moyen }}</td>
+  <td class="nombre">{{ meta.part_femmes }} %</td>
+  <td class="nombre" data-val="{{ x.survie_moyenne }}">{{ x.survie_moyenne }} %
+    <span class="cellule-barre" style="width: {{ x.survie_moyenne }}%"></span></td>
   <td class="nombre">{{ x.taux_abandon }} %</td>
   <td class="nombre">{{ x.conseils }}</td>
   <td class="nombre">{% if x.tension_conseils %}{{ x.tension_conseils }} %{% else %}—{% endif %}</td>
@@ -157,7 +162,7 @@ sur cinq.
 </div>
 
 <p class="note">Un tiret signale une saison dont les sources ne permettent pas
-de calculer l'indicateur : pas de bilan d'épreuves, ou trop peu de conseils au
+de calculer l’indicateur : pas de bilan d’épreuves, ou trop peu de conseils au
 dépouillement complet.</p>
 
 ## Composition du casting
@@ -165,5 +170,5 @@ dépouillement complet.</p>
 {% include graphiques/saisons-femmes.svg %}
 
 <p class="legende-figure">Part de femmes au départ de chaque saison classique.
-La production vise l'équilibre : l'écart à 50 % tient au plus à un ou deux
+La production vise l’équilibre : l’écart à 50 % tient au plus à un ou deux
 aventuriers.</p>

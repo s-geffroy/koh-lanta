@@ -28,3 +28,7 @@ specs/koh-lanta/*.pdf
 # conteneur les voie (appctl refuse tout montage exterieur), mais JAMAIS dans
 # Git : un depot Pages est public, et son historique est definitif.
 .secrets/
+
+# Cache de compilation Python, produit par l'atelier a chaque execution.
+__pycache__/
+*.pyc

@@ -2,6 +2,8 @@
 layout: page
 title: Les conseils
 permalink: /statistiques/conseils/
+chapeau: >-
+  Le vote est presque toujours serré, l’unanimité rarissime, et le sexe du votant joue — à la marge.
 ---
 
 {% assign c = site.data.stats.conseils %}

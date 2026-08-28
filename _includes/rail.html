@@ -1,0 +1,32 @@
+{%- comment -%}
+  Le rail de navigation. Sur grand ecran il est deplie en permanence ; sur
+  petit ecran, c'est un vrai <details> qui se replie -- aucun JavaScript
+  n'intervient, la commande est celle du navigateur.
+
+  L'entree courante est reconnue en comparant `page.url` a l'`url` declaree
+  dans _data/navigation.yml. C'est pour cela que les deux doivent s'ecrire
+  a l'identique, barre oblique finale comprise.
+{%- endcomment -%}
+<details class="rail" id="rail">
+  <summary class="rail-poignee">
+    <span>Sommaire</span>
+    <span class="rail-chevron" aria-hidden="true"></span>
+  </summary>
+
+  <nav class="rail-corps" aria-label="Sommaire du site">
+    {%- for groupe in site.data.navigation -%}
+    <p class="rail-titre">{{ groupe.section }}</p>
+    <ul class="rail-liste">
+      {%- for e in groupe.entrees -%}
+      {%- assign ici = false -%}
+      {%- if page.url == e.url -%}{%- assign ici = true -%}{%- endif -%}
+      <li>
+        <a href="{{ e.url | relative_url }}"
+           class="rail-lien{% if ici %} ici{% endif %}"
+           {% if ici %}aria-current="page"{% endif %}>{{ e.titre }}</a>
+      </li>
+      {%- endfor -%}
+    </ul>
+    {%- endfor -%}
+  </nav>
+</details>

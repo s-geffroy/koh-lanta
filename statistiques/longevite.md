@@ -2,6 +2,8 @@
 layout: page
 title: Âge et longévité
 permalink: /statistiques/longevite/
+chapeau: >-
+  À quel âge tient-on le plus longtemps ? Et pourquoi les femmes sortent-elles plus tôt tout en gagnant autant de finales ?
 ---
 
 {% assign s = site.data.stats %}
@@ -27,7 +29,7 @@ L'accès à la finale confirme le creux du milieu de trentaine et l'avantage des
 {{ s.age[5].effectif }} aventuriers.
 
 <div class="tableau-large">
-<table>
+<table data-triable>
 <thead><tr>
   <th>Tranche</th><th class="nombre">Aventuriers</th><th class="nombre">Part du casting</th>
   <th class="nombre">Survie moyenne</th><th class="nombre">Finales</th>
@@ -81,7 +83,7 @@ souvent que les hommes. L'écart se joue dans la première moitié du jeu, pas d
 la seconde.
 
 <div class="tableau-large">
-<table>
+<table data-triable>
 <thead><tr>
   <th>&nbsp;</th><th class="nombre">Aventuriers</th><th class="nombre">Part du casting</th>
   <th class="nombre">Âge moyen</th><th class="nombre">Survie moyenne</th>
@@ -108,7 +110,7 @@ la seconde.
 {{ s.records.nb_multi_participants }} aventuriers ont joué plus d'une fois.
 
 <div class="tableau-large">
-<table>
+<table data-triable>
 <thead><tr><th>Aventurier</th><th class="nombre">Participations</th></tr></thead>
 <tbody>
 {% for m in s.records.multi_participants %}

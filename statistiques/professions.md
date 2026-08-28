@@ -2,6 +2,8 @@
 layout: page
 title: Le métier
 permalink: /statistiques/professions/
+chapeau: >-
+  Près de cinq cents métiers déclarés, regroupés en familles — pour répondre à une question simple : lequel mène le plus loin ?
 ---
 
 {% assign s = site.data.stats %}
@@ -37,7 +39,7 @@ protège de rien.
 ## Le tableau complet
 
 <div class="tableau-large">
-<table>
+<table data-triable>
 <thead><tr>
   <th>Famille</th><th class="nombre">Aventuriers</th><th class="nombre">Part du casting</th>
   <th class="nombre">Survie moyenne</th><th class="nombre">Finales</th>

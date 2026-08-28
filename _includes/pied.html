@@ -1,0 +1,23 @@
+<footer class="pied">
+  <div class="pied-corps">
+    <p class="pied-signature">
+      <b>{{ site.title }}</b><br>
+      {{ site.data.stats.general.participations }} participations ·
+      {{ site.data.stats.general.personnes }} aventuriers ·
+      {{ site.data.stats.epreuves.epreuves }} épreuves ·
+      {{ site.data.stats.conseils.bulletins }} bulletins ·
+      {{ site.data.stats.colliers.colliers }} colliers
+    </p>
+
+    <p class="pied-mention">
+      Les chiffres sont relevés sur Wikipédia et le wiki Fandom, champ par
+      champ, et recalculés à chaque publication.
+      <a href="{{ '/sources/' | relative_url }}">D'où viennent ces données</a>.
+    </p>
+
+    <p class="pied-mention">
+      Site indépendant, sans lien avec TF1 ni avec la production de
+      <i>Koh-Lanta</i>. Réalisé par {{ site.author }}.
+    </p>
+  </div>
+</footer>

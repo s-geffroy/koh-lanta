@@ -2,6 +2,8 @@
 layout: page
 title: Comment on sort
 permalink: /statistiques/sorties/
+chapeau: >-
+  Conseil, poteaux, orientation, abandon : neuf façons de quitter le jeu, et des proportions qui ont nettement bougé en vingt-cinq ans.
 ---
 
 {% assign s = site.data.stats %}
@@ -45,7 +47,7 @@ abandonne, plus on est éliminé par les autres.
 ## Le détail
 
 <div class="tableau-large">
-<table>
+<table data-triable>
 <thead><tr><th>Motif</th><th class="nombre">Aventuriers</th><th class="nombre">Part</th></tr></thead>
 <tbody>
 {% for x in s.sorties.repartition %}

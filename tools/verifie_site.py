@@ -44,9 +44,14 @@ class Controle:
 
 def pages():
     for base, dossiers, fichiers in os.walk(RACINE):
+        # _layouts/ et _includes/ ne sont pas des pages : ce sont les gabarits
+        # QUI RENDENT les pages. Leur demander un `layout` ou un `permalink`
+        # n'aurait aucun sens. Tout ce qui commence par un point non plus :
+        # Jekyll ignore ces repertoires, et .claude/ est un outil de travail.
         dossiers[:] = [d for d in dossiers
-                       if d not in {".git", "_site", "_data", "_includes", "specs",
-                                    "tools", "atelier", "node_modules", ".jekyll-cache"}]
+                       if not d.startswith(".")
+                       and d not in {"_site", "_data", "_includes", "_layouts",
+                                     "specs", "tools", "atelier", "node_modules"}]
         for f in fichiers:
             if f.endswith((".md", ".html")) and f not in ("CLAUDE.md", "README.md"):
                 yield os.path.join(base, f)
