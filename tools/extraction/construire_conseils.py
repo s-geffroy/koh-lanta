@@ -61,6 +61,58 @@ def resoudre(nom, index_saison):
     return cands[0]["id"], None
 
 
+def completer_par_seconde_source(base, autre, sid, rapport):
+    """Ajoute a `base` les bulletins que seule `autre` connait.
+
+    L'appariement se fait par EPISODE, et seulement quand chaque source n'y
+    tient qu'un conseil. Sinon on s'abstient : un episode a deux conseils --
+    une egalite suivie d'un second vote -- se decoupe differemment d'une source
+    a l'autre, et apparier au nom de l'elimine y confondrait le premier tour
+    avec le second. C'est ce qui produisait sept faux desaccords.
+
+    Rend (bulletins vus des deux cotes, accords, ajouts, desaccords). On ne
+    remplace jamais : un desaccord laisse la valeur de la source de reference
+    et remonte au rapport.
+    """
+    par_episode_autre = {}
+    for c in autre:
+        par_episode_autre.setdefault(str(c.get("episode")), []).append(c)
+    par_episode_base = {}
+    for c in base:
+        par_episode_base.setdefault(str(c.get("episode")), []).append(c)
+
+    communs = accords = ajouts = desaccords = 0
+    for episode, lot in par_episode_base.items():
+        jumeaux = par_episode_autre.get(episode) or []
+        if len(lot) != 1 or len(jumeaux) != 1:
+            continue
+        c, jumeau = lot[0], jumeaux[0]
+        # Meme episode, mais est-ce le meme conseil ? Le nom de l'elimine doit
+        # au moins commencer pareil : une source ecrit « Thierry Villette », la
+        # seconde « Thierry ».
+        a, b_ = slug(c.get("elimine") or ""), slug(jumeau.get("elimine") or "")
+        if not a or not b_ or a.split("-")[0] != b_.split("-")[0]:
+            continue
+        connus = {x["votant"]: x for x in c["votes"]}
+        for x in jumeau["votes"]:
+            if x["votant"] in connus:
+                communs += 1
+                # On compare les noms normalises : « Eric » et « Éric » sont la
+                # meme personne, et leur difference n'est pas un desaccord.
+                if slug(connus[x["votant"]]["cible"]) == slug(x["cible"]):
+                    accords += 1
+                else:
+                    desaccords += 1
+                    rapport.append(
+                        f"{sid} ep.{c['episode']} : « {x['votant']} » vise "
+                        f"« {connus[x['votant']]['cible']} » chez l'une des sources "
+                        f"et « {x['cible']} » chez l'autre — la reference est gardee")
+            else:
+                c["votes"].append(dict(x, complement=True))
+                ajouts += 1
+    return communs, accords, ajouts, desaccords
+
+
 def construire(saisons, parts, rapport):
     index = index_participations(parts)
     # Le vainqueur d'une saison ne peut pas avoir ete elimine au conseil : si
@@ -70,13 +122,15 @@ def construire(saisons, parts, rapport):
     # autant. Sans la saison, on classerait « jury » des conseils ordinaires.
     vainqueurs = {(p["saison"], p["id"]) for p in parts if p.get("sort") == "vainqueur"}
     conseils = []
+    accord = {"communs": 0, "accord": 0, "ajoutes": 0, "desaccords": 0}
 
     for s in saisons:
         if s.get("annulee"):
             continue
         sid = s["id"]
-        # on garde la lecture la plus riche des deux sources
-        meilleure, meilleur_score = [], -1
+        # La source de reference est la lecture la plus riche des deux ; l'autre
+        # est gardee pour completer et pour verifier.
+        lectures = []
         for suffixe in (".fandom.wiki", ".wiki"):
             chemin = os.path.join(WIKI, sid + suffixe)
             if not os.path.exists(chemin):
@@ -86,13 +140,27 @@ def construire(saisons, parts, rapport):
             except Exception as e:
                 rapport.append(f"{sid} : lecture des votes impossible ({suffixe}) — {e}")
                 continue
-            score = sum(len(c["votes"]) for c in lus)
-            if score > meilleur_score:
-                meilleure, meilleur_score = lus, score
+            lectures.append((sum(len(c["votes"]) for c in lus), suffixe, lus))
+        lectures.sort(key=lambda x: -x[0])
+        meilleure = lectures[0][2] if lectures else []
+        seconde = lectures[1][2] if len(lectures) > 1 else None
 
         if not meilleure:
             rapport.append(f"{sid} : aucune matrice de votes exploitable")
             continue
+
+        # La seconde source complete la premiere, conseil par conseil : chacune
+        # a des trous, et ce ne sont pas les memes. On n'ajoute qu'un bulletin
+        # dont le VOTANT est absent de la source de reference -- jamais on ne
+        # remplace une valeur. Les bulletins presents des deux cotes servent
+        # d'epreuve croisee : leur taux d'accord mesure la fiabilite du releve,
+        # et il est publie.
+        if seconde:
+            croisement = completer_par_seconde_source(meilleure, seconde, sid, rapport)
+            accord["communs"] += croisement[0]
+            accord["accord"] += croisement[1]
+            accord["ajoutes"] += croisement[2]
+            accord["desaccords"] += croisement[3]
 
         idx = index.get(sid, {})
         # Bornes du vote de jury, calculees avant la boucle : le dernier numero
@@ -175,14 +243,22 @@ def construire(saisons, parts, rapport):
                     commun["proteges"] = proteges
             commun["votes"] = bulletins
             conseils.append(commun)
-    return conseils
+
+    if accord["communs"]:
+        rapport.append(
+            f"epreuve croisee des deux sources : {accord['communs']} bulletins "
+            f"presents des deux cotes, {accord['accord']} identiques "
+            f"({100.0 * accord['accord'] / accord['communs']:.1f} %), "
+            f"{accord['desaccords']} divergents ; "
+            f"{accord['ajoutes']} bulletins ajoutes par la seconde source")
+    return conseils, accord
 
 
 def main():
     saisons = yaml.safe_load(open(os.path.join(RACINE, "_data", "saisons.yml")))
     parts = yaml.safe_load(open(os.path.join(RACINE, "_data", "participations.yml")))
     rapport = []
-    conseils = construire(saisons, parts, rapport)
+    conseils, accord = construire(saisons, parts, rapport)
 
     bulletins = sum(len(c["votes"]) for c in conseils)
     rattaches = sum(1 for c in conseils for b in c["votes"]
@@ -191,6 +267,11 @@ def main():
     print(f"conseils   : {len(conseils)} dont {len(jurys)} votes de jury final")
     print(f"bulletins  : {bulletins}")
     print(f"rattaches  : {rattaches}  ({100*rattaches/bulletins:.1f} %)")
+    if accord["communs"]:
+        print(f"epreuve croisee : {accord['accord']}/{accord['communs']} bulletins "
+              f"identiques dans les deux sources "
+              f"({100.0 * accord['accord'] / accord['communs']:.1f} %), "
+              f"{accord['ajoutes']} ajoutes, {accord['desaccords']} divergents")
 
     from collections import Counter
     motifs = Counter(r.split("(")[-1].rstrip(")") for r in rapport if "non rattache" in r)
@@ -208,6 +289,20 @@ def main():
             f.write(ENTETE)
             yaml.safe_dump(conseils, f, allow_unicode=True, sort_keys=False, width=100)
         print(f"\necrit : {chemin}")
+        # L'epreuve croisee est un resultat, pas un message : elle est publiee.
+        croise = os.path.join(RACINE, "_data", "croisement_votes.yml")
+        with open(croise, "w", encoding="utf-8") as f:
+            f.write("# Fichier genere par tools/extraction/construire_conseils.py.\n"
+                    "# Ne pas editer a la main : toute modification sera ecrasee.\n")
+            yaml.safe_dump({
+                "bulletins_communs": accord["communs"],
+                "identiques": accord["accord"],
+                "divergents": accord["desaccords"],
+                "part_identiques": (round(100.0 * accord["accord"] / accord["communs"], 1)
+                                    if accord["communs"] else None),
+                "ajoutes_par_seconde_source": accord["ajoutes"],
+            }, f, allow_unicode=True, sort_keys=False)
+        print(f"ecrit : {croise}")
     return 0
 
 

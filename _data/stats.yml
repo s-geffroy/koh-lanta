@@ -1366,16 +1366,16 @@ conseils:
   conseils: 662
   conseils_avec_decompte: 421
   conseils_complets: 277
-  bulletins: 3477
-  bulletins_conseils_complets: 2167
+  bulletins: 3486
+  bulletins_conseils_complets: 2169
   part_unanimes: 0.2
   part_serres: 47.5
-  voix_annulees_par_objet: 209
-  conseils_avec_objet_joue: 60
+  voix_annulees_par_objet: 249
+  conseils_avec_objet_joue: 64
   saisons_avec_objet_joue: 20
-  voix_annulees_tour_nul: 146
-  conseils_tour_nul: 19
-  saisons_tour_nul: 10
+  voix_annulees_tour_nul: 106
+  conseils_tour_nul: 15
+  saisons_tour_nul: 9
   objet_un_seul_protege: 53
   objet_a_sauve: 53
   objet_n_a_pas_sauve: 0
@@ -8294,7 +8294,7 @@ indicateurs:
     conseils: 24
     conseils_complets: 4
     tension_conseils: 45.5
-    dispersion_votes: 0.843
+    dispersion_votes: 0.876
     epreuves: 27
     epreuves_individuelles: 13
     domination_epreuves: 0.172
@@ -12462,14 +12462,14 @@ modeles:
       effet: 0.06
       bas: -0.03
       haut: 0.15
-      p: 0.187
+      p: 0.221
     - mecanique: destins_lies
       sur: dispersion_votes
       saisons: 6
       effet: -0.03
       bas: -0.1
-      haut: 0.04
-      p: 0.3655
+      haut: 0.03
+      p: 0.3275
     - mecanique: collier_immunite
       sur: taux_abandon
       saisons: 15
@@ -13145,15 +13145,15 @@ modeles:
     saisons: 29
     coefficients:
     - libelle: A écrit le nom du juré au conseil
-      rapport: 0.729
-      bas: 0.428
-      haut: 1.241
-      p: 0.2443
+      rapport: 0.73
+      bas: 0.429
+      haut: 1.242
+      p: 0.2454
     - libelle: A voté avec le juré, par conseil partagé
-      rapport: 1.122
-      bas: 1.005
+      rapport: 1.123
+      bas: 1.006
       haut: 1.254
-      p: 0.0412
+      p: 0.0396
     part_vers_bourreau: 55.0
     bulletins_avec_bourreau_disponible: 149
     part_quand_disponible: 70.5

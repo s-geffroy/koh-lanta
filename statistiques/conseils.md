@@ -31,6 +31,27 @@ conseils seulement. L’image du camp entier se retournant d’un bloc contre un
 aventurier est une image de fiction — dans les faits, le vote se divise presque
 toujours.
 
+## Peut-on croire ces bulletins ?
+
+{% assign cv = site.data.croisement_votes %}
+
+La question mérite d’être posée avant tout le reste, parce que quatre des
+résultats les plus forts de ce site reposent entièrement sur ces
+{{ c.bulletins }} lignes. Sur une partie des saisons, les deux wikis publient
+**chacun** leur matrice des votes : on peut donc les confronter.
+
+<div class="constat">
+  <p>{{ cv.bulletins_communs }} bulletins sont relevés par les deux sources.
+  <b>{{ cv.identiques }} sont identiques — {{ cv.part_identiques }} %.</b></p>
+  <p>Les {{ cv.divergents }} divergences sont le même incident : deux Jérôme
+  dans <i>La Revanche des 4 Terres</i>, que les deux wikis distinguent
+  différemment. Aucune n’est un désaccord sur qui a voté contre qui.</p>
+</div>
+
+Ce n’est pas une garantie — deux wikis peuvent recopier la même erreur, et le
+recouvrement ne couvre qu’une saison sur trois. C’est le meilleur contrôle
+disponible, et il est bon.
+
 ## Les objets d’immunité, vus depuis les bulletins
 
 Un bulletin barré dans la matrice des votes n’a pas toujours la même cause, et

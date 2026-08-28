@@ -18273,6 +18273,11 @@
     cible: fabrice-giordano
     cible_rattachee: true
     annule: false
+  - votant: Cécile
+    votant_rattache: false
+    cible: fabrice-giordano
+    cible_rattachee: true
+    annule: false
 - saison: s26
   numero: 2
   type: elimination
@@ -18333,6 +18338,11 @@
     cible: marie-vilaseca
     cible_rattachee: true
     annule: false
+  - votant: Cécile
+    votant_rattache: false
+    cible: ari-bentolila
+    cible_rattachee: true
+    annule: false
 - saison: s26
   numero: 3
   type: elimination
@@ -18342,8 +18352,12 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
-  annulation: totale
+  annulation: partielle
   voix_annulees: 9
+  proteges:
+  - alexandre-cheron
+  - marie-vilaseca
+  - ugo-lartiche
   votes:
   - votant: Cécile B
     votant_rattache: false
@@ -18390,6 +18404,11 @@
     cible: alexandre-cheron
     cible_rattachee: true
     annule: true
+  - votant: Cécile
+    votant_rattache: false
+    cible: alexandre-cheron
+    cible_rattachee: true
+    annule: false
 - saison: s26
   numero: 4
   type: elimination
@@ -18399,8 +18418,12 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
-  annulation: totale
+  annulation: partielle
   voix_annulees: 9
+  proteges:
+  - charlotte-rasquin
+  - lola-potabes
+  - michel-huy
   votes:
   - votant: thibault-belanger
     votant_rattache: true
@@ -18447,6 +18470,11 @@
     cible: michel-huy
     cible_rattachee: true
     annule: true
+  - votant: melissa-pierru
+    votant_rattache: true
+    cible: michel-huy
+    cible_rattachee: true
+    annule: false
 - saison: s26
   numero: 5
   type: elimination
@@ -18615,8 +18643,11 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
-  annulation: totale
+  annulation: partielle
   voix_annulees: 14
+  proteges:
+  - fabrice-giordano
+  - sarah-aboudeine
   votes:
   - votant: thibault-belanger
     votant_rattache: true
@@ -18688,6 +18719,11 @@
     cible: sarah-aboudeine
     cible_rattachee: true
     annule: true
+  - votant: Cécile
+    votant_rattache: false
+    cible: fabrice-giordano
+    cible_rattachee: true
+    annule: false
 - saison: s26
   numero: 12
   type: elimination
@@ -18828,6 +18864,11 @@
     cible: ugo-lartiche
     cible_rattachee: true
     annule: false
+  - votant: Cécile
+    votant_rattache: false
+    cible: frederic-khouvilay
+    cible_rattachee: true
+    annule: false
 - saison: s26
   numero: 15
   type: elimination
@@ -18957,6 +18998,11 @@
     cible: Cécile
     cible_rattachee: false
     annule: false
+  - votant: Cécile
+    votant_rattache: false
+    cible: gustin-comanescu
+    cible_rattachee: true
+    annule: false
 - saison: s26
   numero: 18
   type: elimination
@@ -18966,8 +19012,12 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
-  annulation: totale
+  annulation: partielle
   voix_annulees: 8
+  proteges:
+  - cassandre-lambert
+  - ilyesse-benyoub
+  - ugo-lartiche
   votes:
   - votant: thibault-belanger
     votant_rattache: true
@@ -19009,6 +19059,11 @@
     cible: ilyesse-benyoub
     cible_rattachee: true
     annule: true
+  - votant: Cécile
+    votant_rattache: false
+    cible: ilyesse-benyoub
+    cible_rattachee: true
+    annule: false
 - saison: s26
   numero: 19
   type: elimination
@@ -20467,6 +20522,11 @@
     cible_rattachee: true
     annule: false
   - votant: ulrich-bandeira
+    votant_rattache: true
+    cible: jonathan-guez
+    cible_rattachee: true
+    annule: false
+  - votant: jade-correa
     votant_rattache: true
     cible: jonathan-guez
     cible_rattachee: true

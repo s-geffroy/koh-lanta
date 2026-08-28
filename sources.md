@@ -215,7 +215,12 @@ Ce qui reste, et pourquoi :
   {{ site.data.stats.conseils.conseils_complets }} ont un dépouillement dont on
   peut garantir qu’il est complet. Les analyses bulletin par bulletin ne portent
   que sur ceux-là ; les agrégats — qui part, avec combien de voix — utilisent
-  tous les conseils.
+  tous les conseils. Deux causes, mesurées : **245 conseils n’annoncent aucun
+  décompte** — la source ne dit pas combien de voix ont été exprimées, donc la
+  complétude n’y est pas vérifiable ; et **163 annoncent un décompte que le
+  tableau ne remplit pas entièrement**, dont 69 à un seul bulletin près. Ceux-là
+  ont été inspectés cellule par cellule : les cases sont **vides dans la source**.
+  Ce n’est pas une lecture qui échoue, c’est un wiki qui n’a pas tout noté.
 - **Les épreuves ne couvrent pas toutes les saisons.**
   {{ site.data.stats.epreuves.saisons_couvertes }} saisons sur 34 ont un bilan
   épisode par épisode exploitable ; les cinq autres
@@ -314,6 +319,39 @@ de la saison 3. Il n’apportait rien, mais il mentait sur sa provenance. Le
 récupérateur vérifie maintenant que la page atteinte est bien celle demandée, et
 refuse la redirection vers un autre article ; la saison 3 est désormais
 déclarée sans source Wikipédia, ce qu’elle a toujours été.
+
+## Une épreuve croisée sur les bulletins
+
+{% assign cv = site.data.croisement_votes %}
+
+Sur une partie des saisons, les deux sources publient **chacune** leur matrice
+des votes. Jusqu’ici on gardait la plus riche et on jetait l’autre. C’est du
+gâchis : la seconde permet de vérifier la première.
+
+<div class="constat">
+  <p>{{ cv.bulletins_communs }} bulletins figurent dans les deux sources.
+  <b>{{ cv.identiques }} sont identiques — {{ cv.part_identiques }} %.</b>
+  {{ cv.divergents }} divergent.</p>
+  <p>C’est la première mesure directe de la fiabilité du relevé des votes, et
+  elle est rassurante. Les {{ cv.divergents }} divergences sont toutes deux le
+  même problème : deux Jérôme dans <i>La Revanche des 4 Terres</i>, que les
+  deux wikis distinguent différemment.</p>
+</div>
+
+La seconde source apporte en outre
+{{ cv.ajoutes_par_seconde_source }} bulletins que la première ignore. C’est
+peu, et c’est délibérément peu : **l’appariement n’est fait que lorsqu’un
+épisode ne contient qu’un seul conseil de chaque côté.** Un épisode à deux
+conseils — une égalité suivie d’un second vote — ne se découpe pas de la même
+façon d’une source à l’autre, et les apparier au nom de l’éliminé confondrait
+le premier tour avec le second.
+
+<p class="note">Cette prudence n’est pas théorique : une première version
+appariait sur l’épisode <em>et</em> le nom de l’éliminé, sans vérifier
+l’unicité. Elle annonçait 39 bulletins gagnés et 16 divergences — dont sept
+fabriquées de toutes pièces par la confusion des deux tours d’un même épisode.
+La règle stricte donne moins de bulletins et un taux d’accord plus élevé : les
+deux chiffres sont vrais, les précédents ne l’étaient pas.</p>
 
 ## Comment c’est fabriqué
 
