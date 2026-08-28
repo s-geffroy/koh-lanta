@@ -824,10 +824,29 @@ def plan(points, *, titre, description, x_titre="", y_titre="", reperes=None,
         return haut + piste_y * (1 - (v - ymin) / ((ymax - ymin) or 1))
 
     fig = Figure(largeur, hauteur, titre, description)
-    fig.ajouter(f'<line x1="{px(0):.1f}" y1="{haut}" x2="{px(0):.1f}" '
-                f'y2="{hauteur - bas}" stroke="{GRILLE}" stroke-width="1"/>')
-    fig.ajouter(f'<line x1="{marge_g}" y1="{py(0):.1f}" x2="{largeur - marge_d}" '
-                f'y2="{py(0):.1f}" stroke="{GRILLE}" stroke-width="1"/>')
+    # Les axes ne se tracent que si zero est VISIBLE. Sur un plan factoriel il
+    # l'est toujours -- c'est le profil moyen. Sur un nuage a coordonnees
+    # quelconques, il peut etre tres loin du cadre, et la ligne partait alors a
+    # mille pixels hors du viewBox.
+    if xmin <= 0 <= xmax:
+        fig.ajouter(f'<line x1="{px(0):.1f}" y1="{haut}" x2="{px(0):.1f}" '
+                    f'y2="{hauteur - bas}" stroke="{GRILLE}" stroke-width="1"/>')
+    if ymin <= 0 <= ymax:
+        fig.ajouter(f'<line x1="{marge_g}" y1="{py(0):.1f}" x2="{largeur - marge_d}" '
+                    f'y2="{py(0):.1f}" stroke="{GRILLE}" stroke-width="1"/>')
+    else:
+        # Sans axe a l'origine, il faut une graduation : sinon le nuage flotte
+        # sans echelle lisible.
+        for v in (ymin + (ymax - ymin) * k / 4 for k in range(5)):
+            fig.ajouter(f'<line x1="{marge_g}" y1="{py(v):.1f}" '
+                        f'x2="{largeur - marge_d}" y2="{py(v):.1f}" '
+                        f'stroke="{GRILLE}" stroke-width="1" opacity="0.6"/>')
+            fig.ajouter(_texte(marge_g - 8, py(v), f"{v:.0f}", ancre="end",
+                               couleur=ENCRE_DOUCE, taille=11))
+    if not (xmin <= 0 <= xmax):
+        for v in (xmin + (xmax - xmin) * k / 4 for k in range(5)):
+            fig.ajouter(_texte(px(v), hauteur - bas + 18, f"{v:.0f}",
+                               ancre="middle", couleur=ENCRE_DOUCE, taille=11))
 
     for p in points:
         teinte = p.get("couleur") or SERIES[0]
