@@ -27,6 +27,7 @@ RUN apt-get update \
 # matplotlib : produire les graphiques en SVG, sans serveur d'affichage
 # scipy       : lois et tests exacts derriere les modeles
 # scikit-learn: validation croisee, classification, reduction de dimension
+# openpyxl    : lire les tableurs de l'INSEE, publies en xlsx et pas en CSV
 # statsmodels : le seul des trois a rendre des erreurs-types, des intervalles
 #               et un modele de duree (Cox). Sans lui, pas d'inference : on ne
 #               publierait que des points sans incertitude.
@@ -37,7 +38,8 @@ RUN pip install --no-cache-dir \
       "matplotlib==3.9.2" \
       "scipy==1.14.1" \
       "scikit-learn==1.5.2" \
-      "statsmodels==0.14.4"
+      "statsmodels==0.14.4" \
+      "openpyxl==3.1.5"
 
 # matplotlib sans affichage, et un cache ecrivable par l'utilisateur du depot
 # Un seul fil de calcul. Ce n'est pas un reglage de performance : le nombre de

@@ -10980,7 +10980,7 @@ modeles:
         observe: 0.3269
         moyenne_nulle: 1.7432
       origine: casting
-      p_ajustee: 0.0007
+      p_ajustee: 0.0008
       retenu: true
     - cle: etendue_ages
       libelle: L'ecart d'age dans un meme casting
@@ -11030,7 +11030,7 @@ modeles:
         observe: 9.915
         moyenne_nulle: 9.6637
       origine: casting
-      p_ajustee: 0.0223
+      p_ajustee: 0.0204
       retenu: true
     - cle: familles_metiers
       libelle: La variete des metiers
@@ -11130,7 +11130,7 @@ modeles:
         observe: 0.0782
         moyenne_nulle: 0.0509
       origine: casting
-      p_ajustee: 0.0753
+      p_ajustee: 0.0712
       retenu: false
     - cle: tribus_femmes
       libelle: La composition des deux tribus
@@ -11181,7 +11181,7 @@ modeles:
         observe: 13.0253
         moyenne_nulle: 18.8726
       origine: casting
-      p_ajustee: 0.1091
+      p_ajustee: 0.1045
       retenu: false
     - cle: tribus_ages
       libelle: L'age moyen des deux tribus
@@ -11232,7 +11232,7 @@ modeles:
         observe: 5.7496
         moyenne_nulle: 3.8505
       origine: casting
-      p_ajustee: 0.0047
+      p_ajustee: 0.0046
       retenu: true
     - cle: tribus_ages_mediane
       libelle: L'age des deux tribus, a la mediane
@@ -11282,7 +11282,7 @@ modeles:
         observe: 4.1597
         moyenne_nulle: 3.331
       origine: casting
-      p_ajustee: 0.3584
+      p_ajustee: 0.3534
       retenu: false
     sensibilite:
     - cle: etendue_ages
@@ -11401,7 +11401,7 @@ modeles:
         observe: 10.75
         moyenne_nulle: 10.2215
       origine: pronostic
-      p_ajustee: 0.6701
+      p_ajustee: 0.6657
       retenu: false
     classement:
     - nom: Ambre Daudet
@@ -11964,7 +11964,7 @@ modeles:
         observe: 31.521
         moyenne_nulle: 1.2062
       origine: alliances
-      p_ajustee: 0.0012
+      p_ajustee: 0.0014
       retenu: true
     majorite:
       effectif: 171
@@ -12111,7 +12111,7 @@ modeles:
         moyenne_nulle: 46.6635
       bulletins: 1753
       origine: homophilie
-      p_ajustee: 0.1458
+      p_ajustee: 0.1412
       retenu: false
     - cle: vote_ecart_age
       libelle: L'écart d'âge avec sa cible
@@ -12163,7 +12163,7 @@ modeles:
         moyenne_nulle: 11.5851
       bulletins: 1737
       origine: homophilie
-      p_ajustee: 0.0753
+      p_ajustee: 0.0712
       retenu: false
     - cle: vote_meme_metier
       libelle: Viser la même famille de métier
@@ -12215,7 +12215,7 @@ modeles:
         moyenne_nulle: 10.0336
       bulletins: 1753
       origine: homophilie
-      p_ajustee: 0.3584
+      p_ajustee: 0.3534
       retenu: false
     - cle: vote_meme_bandeau
       libelle: Viser son propre bandeau de départ
@@ -12267,7 +12267,7 @@ modeles:
         moyenne_nulle: 65.832
       bulletins: 1753
       origine: homophilie
-      p_ajustee: 0.0007
+      p_ajustee: 0.0008
       retenu: true
     - cle: vote_bandeau_apres_fusion
       libelle: Épargner son bandeau de départ
@@ -12319,7 +12319,7 @@ modeles:
         moyenne_nulle: 42.1065
       bulletins: 1033
       origine: homophilie
-      p_ajustee: 0.0007
+      p_ajustee: 0.0008
       retenu: true
   trahison:
     bulletins: 1327
@@ -12374,7 +12374,7 @@ modeles:
         observe: 51.5448
         moyenne_nulle: 60.1031
       origine: trahison
-      p_ajustee: 0.0007
+      p_ajustee: 0.0008
       retenu: true
     effet:
       effectif: 169
@@ -12559,7 +12559,7 @@ modeles:
         observe: 106.0
         moyenne_nulle: 83.9668
       origine: decimation
-      p_ajustee: 0.0012
+      p_ajustee: 0.0014
       retenu: true
   jury_final:
     bulletins: 177
@@ -12925,7 +12925,7 @@ modeles:
         observe: 53.4621
         moyenne_nulle: 13.0867
       origine: ruptures
-      p_ajustee: 0.0007
+      p_ajustee: 0.0008
       retenu: true
   registre:
   - cle: parite
@@ -12937,7 +12937,7 @@ modeles:
     unite: personnes
     ecart_types: -5.36
     p: 0.0001
-    p_ajustee: 0.0007
+    p_ajustee: 0.0008
     retenu: true
     tirages: 10000
     lecture: 'Un ecart observe plus PETIT que l''attendu est la signature d''un quota : le hasard, lui,
@@ -12952,7 +12952,7 @@ modeles:
     unite: annees
     ecart_types: 2.6
     p: 0.0118
-    p_ajustee: 0.0223
+    p_ajustee: 0.0204
     retenu: true
     tirages: 10000
     lecture: Rebattre les aventuriers entre saisons donne l'ecart-type general. Un ecart observe PLUS
@@ -12982,7 +12982,7 @@ modeles:
     unite: ''
     ecart_types: 1.93
     p: 0.0487
-    p_ajustee: 0.0753
+    p_ajustee: 0.0712
     retenu: false
     tirages: 10000
     lecture: Distance entre le melange de profils d'une saison et le melange general. Un observe PLUS
@@ -12998,7 +12998,7 @@ modeles:
     unite: points de %
     ecart_types: -1.76
     p: 0.077
-    p_ajustee: 0.1091
+    p_ajustee: 0.1045
     retenu: false
     tirages: 10000
     lecture: On rebat les bandeaux a l'interieur de chaque saison. Un ecart observe PLUS PETIT que l'attendu
@@ -13014,7 +13014,7 @@ modeles:
     unite: annees
     ecart_types: 3.03
     p: 0.0022
-    p_ajustee: 0.0047
+    p_ajustee: 0.0046
     retenu: true
     tirages: 10000
     lecture: 'Meme methode, sur l''age moyen de chaque bandeau. Un ecart observe PLUS GRAND que l''attendu
@@ -13029,7 +13029,7 @@ modeles:
     unite: annees
     ecart_types: 1.02
     p: 0.3162
-    p_ajustee: 0.3584
+    p_ajustee: 0.3534
     retenu: false
     tirages: 10000
     lecture: La mediane ignore les valeurs extremes. Si elle ne s'ecarte pas, c'est que l'ecart moyen
@@ -13045,7 +13045,7 @@ modeles:
     unite: rang moyen
     ecart_types: 0.49
     p: 0.6307
-    p_ajustee: 0.6701
+    p_ajustee: 0.6657
     retenu: false
     tirages: 10000
     lecture: Le modele classe les candidats d'une saison ; on releve la place qu'il donne a celui qui
@@ -13060,7 +13060,7 @@ modeles:
     unite: '%'
     ecart_types: -1.6
     p: 0.1115
-    p_ajustee: 0.1458
+    p_ajustee: 0.1412
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
@@ -13076,7 +13076,7 @@ modeles:
     unite: années
     ecart_types: 2.0
     p: 0.046
-    p_ajustee: 0.0753
+    p_ajustee: 0.0712
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
@@ -13092,7 +13092,7 @@ modeles:
     unite: '%'
     ecart_types: -1.06
     p: 0.3109
-    p_ajustee: 0.3584
+    p_ajustee: 0.3534
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
@@ -13108,7 +13108,7 @@ modeles:
     unite: '%'
     ecart_types: -10.48
     p: 0.0002
-    p_ajustee: 0.0007
+    p_ajustee: 0.0008
     retenu: true
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
@@ -13125,12 +13125,115 @@ modeles:
     unite: '%'
     ecart_types: -10.61
     p: 0.0002
-    p_ajustee: 0.0007
+    p_ajustee: 0.0008
     retenu: true
     tirages: 4000
     lecture: Mesuré sur les seuls conseils réunissant plusieurs bandeaux. Un observé SOUS l'attendu veut
       dire que le camp de départ protège encore, longtemps après avoir cessé d'exister.
     nulle: *id020
+  - cle: geographie_departements
+    libelle: L'origine géographique, par département
+    question: Les aventuriers viennent-ils de départements plus variés, ou plus concentrés, qu'un tirage
+      dans la population française ne le donnerait ?
+    origine: geographie
+    observe: 142.652
+    attendu: 99.183
+    unite: ''
+    ecart_types: 2.91
+    p: 0.0069
+    p_ajustee: 0.0131
+    retenu: true
+    tirages: 10000
+    lecture: 'Dispersion entre les effectifs observés et ceux qu''on attendrait d''un tirage au hasard
+      dans la population de 20 à 59 ans, année par année. Au-dessus de l''attendu : le recrutement n''épouse
+      pas la démographie.'
+    nulle:
+      bornes:
+      - 47.5168
+      - 189.2825
+      cases:
+      - 0
+      - 1
+      - 18
+      - 56
+      - 173
+      - 347
+      - 711
+      - 1053
+      - 1313
+      - 1336
+      - 1302
+      - 1141
+      - 880
+      - 654
+      - 396
+      - 276
+      - 138
+      - 92
+      - 58
+      - 28
+      - 14
+      - 7
+      - 1
+      - 0
+      - 3
+      - 1
+      - 1
+      - 0
+      largeur_case: 5.063061
+      observe: 142.6523
+      moyenne_nulle: 99.1832
+  - cle: geographie_regions
+    libelle: L'origine géographique, par région
+    question: À l'échelle des régions — assez peuplées pour trancher — le recrutement suit-il la démographie
+      française ?
+    origine: geographie
+    observe: 41.888
+    attendu: 16.142
+    unite: ''
+    ecart_types: 4.4
+    p: 0.0013
+    p_ajustee: 0.0031
+    retenu: true
+    tirages: 10000
+    lecture: 'Même mesure, agrégée par région. C''est le niveau où la question se décide : un département
+      compte trois aventuriers, une région une vingtaine.'
+    nulle:
+      bornes:
+      - 0.0839
+      - 52.5704
+      cases:
+      - 0
+      - 4
+      - 72
+      - 302
+      - 651
+      - 1059
+      - 1308
+      - 1356
+      - 1310
+      - 1125
+      - 867
+      - 604
+      - 458
+      - 320
+      - 213
+      - 136
+      - 72
+      - 49
+      - 36
+      - 20
+      - 11
+      - 14
+      - 3
+      - 5
+      - 2
+      - 1
+      - 2
+      - 0
+      largeur_case: 1.87452
+      observe: 41.8884
+      moyenne_nulle: 16.1423
   - cle: persistance_alliances
     libelle: La persistance des alliances
     question: Deux aventuriers qui ont vote ensemble votent-ils encore ensemble au conseil suivant, plus
@@ -13141,7 +13244,7 @@ modeles:
     unite: points de %
     ecart_types: 17.92
     p: 0.0005
-    p_ajustee: 0.0012
+    p_ajustee: 0.0014
     retenu: true
     tirages: 2000
     lecture: 'Ecart entre deux probabilites : voter ensemble apres avoir vote ensemble, et voter ensemble
@@ -13157,7 +13260,7 @@ modeles:
     unite: ''
     ecart_types: 7.18
     p: 0.0001
-    p_ajustee: 0.0007
+    p_ajustee: 0.0008
     retenu: true
     tirages: 10000
     lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
@@ -13174,7 +13277,7 @@ modeles:
     unite: '%'
     ecart_types: -12.55
     p: 0.0002
-    p_ajustee: 0.0007
+    p_ajustee: 0.0008
     retenu: true
     tirages: 4000
     lecture: Part des bulletins visant quelqu'un avec qui l'auteur avait déjà voté. Un observé SOUS l'attendu
@@ -13190,11 +13293,11 @@ modeles:
     unite: enchaînements
     ecart_types: 3.46
     p: 0.0005
-    p_ajustee: 0.0012
+    p_ajustee: 0.0014
     retenu: true
     tirages: 10000
     lecture: Nombre de fois où deux sorties consécutives viennent du même bandeau de départ. Un observé
       AU-DESSUS de l'attendu est la signature d'un camp démonté un par un.
     nulle: *id024
-  nb_tests: 17
-  nb_retenus: 9
+  nb_tests: 19
+  nb_retenus: 11

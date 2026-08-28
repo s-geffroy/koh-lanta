@@ -33,19 +33,24 @@ Aucune des deux ne suffit seule. Pour chaque saison, la source de référence es
 **celle dont l’effectif correspond au nombre de candidats annoncé** ; l’autre
 vient compléter, champ par champ.
 
-## Une troisième source, pour un seul usage
+## Deux sources de référence, pour comparer
 
 **[Le fichier des prénoms de l’INSEE](https://www.insee.fr/fr/statistiques/8595130)**
 — nombre de naissances par prénom, par sexe et par année depuis 1900, sous
 [licence ouverte v2](https://www.etalab.gouv.fr/licence-ouverte-open-licence/).
 Il ne sert qu’à une chose : donner un point de comparaison aux
-[prénoms des aventuriers]({{ '/statistiques/prenoms/' | relative_url }}). Aucune
-donnée de Koh-Lanta n’en provient.
+[prénoms des aventuriers]({{ '/statistiques/prenoms/' | relative_url }}).
 
-Le sous-ensemble effectivement lu — nos prénoms, nos années de naissance — est
-versionné dans le dépôt, comme le wikitexte brut : c’est la preuve de
-provenance, et elle permet de refaire le calcul sans redemander le fichier
-complet à l’INSEE.
+**[Les estimations de population de l’INSEE](https://www.insee.fr/fr/statistiques/8560704)**
+— population au 1<sup>er</sup> janvier par département, sexe et groupe d’âges,
+séries depuis 1990, même licence. Elles servent au seul calcul de
+[l’origine géographique]({{ '/statistiques/geographie/' | relative_url }}) : sans
+elles, « vingt-quatre Parisiens » ne veut rien dire.
+
+Dans les deux cas, le sous-ensemble effectivement lu — nos prénoms et nos années
+de naissance ; les départements et les années de nos saisons — est versionné
+dans le dépôt, comme le wikitexte brut : c’est la preuve de provenance, et elle
+permet de refaire le calcul sans redemander les fichiers complets à l’INSEE.
 
 ## La traçabilité
 

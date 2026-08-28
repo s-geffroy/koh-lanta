@@ -833,6 +833,29 @@ def figures_des_modeles(stats):
             teinte = SERIES[2] if t.get("retenu") else SERIES[5]
             ecrire(f"{nom}.svg", distribution_nulle(t, couleur=teinte))
 
+    # --- K. la geographie ---------------------------------------------------
+    for cle, nom in (("geographie_regions", "geographie-nulle"),):
+        t = par_cle.get(cle)
+        if t and t.get("nulle"):
+            teinte = SERIES[2] if t.get("retenu") else SERIES[5]
+            ecrire(f"{nom}.svg", distribution_nulle(t, couleur=teinte))
+
+    geo = _lire("geographie.yml") or {}
+    if geo.get("regions"):
+        ecrire("geographie-regions.svg", foret(
+            [{"libelle": r["region"], "estimation": r["indice"],
+              "bas": r["indice_bas"], "haut": r["indice_haut"],
+              "detail": f'{r["region"]} : {r["observe"]} aventuriers pour '
+                        f'{r["attendu"]} attendus, soit ×{r["indice"]}'}
+             for r in geo["regions"]],
+            titre="D'où viennent les aventuriers, région par région",
+            description="Indice observe divise par attendu. A 1, la region fournit "
+                        "exactement sa part de population. L'intervalle est celui "
+                        "de l'effectif observe.",
+            reference=1.0, largeur=800, marge_gauche=230,
+            note=f'{geo["participations"]} aventuriers localisés · population de '
+                 f'20 à 59 ans, année de chaque saison'))
+
     # --- J. trahison, confort, decimation -----------------------------------
     for cle, nom in (("trahison", "trahison"), ("decimation", "decimation")):
         t = par_cle.get(cle)

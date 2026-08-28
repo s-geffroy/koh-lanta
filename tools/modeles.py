@@ -2173,6 +2173,20 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
         for t in bloc.get("tests", []):
             t["origine"] = origine
             registre.append(t)
+    # La geographie est calculee a part -- elle depend d'un fichier INSEE
+    # telecharge -- mais ses tests entrent dans le MEME registre : la
+    # correction pour tests multiples ne vaut que si elle les couvre tous.
+    import os
+    chemin = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                          "_data", "geographie.yml")
+    geo = {}
+    if os.path.exists(chemin):
+        import yaml
+        geo = yaml.safe_load(open(chemin, encoding="utf-8")) or {}
+    for t in geo.get("tests") or []:
+        t["origine"] = "geographie"
+        registre.append(t)
+
     for bloc, origine in ((al, "alliances"), (ru, "ruptures"),
                           (tr, "trahison"), (de, "decimation")):
         t = bloc.get("test")

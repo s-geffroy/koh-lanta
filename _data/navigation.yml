@@ -24,7 +24,7 @@
     - titre: Vue d'ensemble
       url: /statistiques/
       hub: true
-      resume: Les dix-neuf entrées, et les chiffres qui les tiennent.
+      resume: Les vingt entrées, et les chiffres qui les tiennent.
     - titre: Le profil du vainqueur
       url: /statistiques/vainqueurs/
       resume: "Âge, sexe, métier, couleur : ce que les vainqueurs ont en commun."
@@ -85,6 +85,9 @@
     - titre: Le vote du jury
       url: /statistiques/jury/
       resume: Le juré ne punit pas son bourreau ; il prolonge son alliance.
+    - titre: D'où ils viennent
+      url: /statistiques/geographie/
+      resume: "La Corse fournit quatre fois sa part ; l'outre-mer, presque rien."
 
 - section: Les données
   entrees:

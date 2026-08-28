@@ -9,7 +9,7 @@ chapeau: >-
 
 {% assign m = site.data.stats.modeles %}
 
-Huit pages de ce site reposent sur des modèles plutôt que sur des comptages :
+Neuf pages de ce site reposent sur des modèles plutôt que sur des comptages :
 [La recette du casting]({{ '/statistiques/casting/' | relative_url }}),
 [Le pronostic]({{ '/statistiques/pronostic/' | relative_url }}),
 [La force réelle]({{ '/statistiques/force/' | relative_url }}),
@@ -17,7 +17,8 @@ Huit pages de ce site reposent sur des modèles plutôt que sur des comptages :
 [Les alliances]({{ '/statistiques/alliances/' | relative_url }}) et
 [La grille]({{ '/statistiques/grille/' | relative_url }}),
 [Qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }}) et
-[Le vote du jury]({{ '/statistiques/jury/' | relative_url }}). Cette page dit
+[Le vote du jury]({{ '/statistiques/jury/' | relative_url }}) et
+[D’où ils viennent]({{ '/statistiques/geographie/' | relative_url }}). Cette page dit
 comment ils sont construits et ce qu’ils ne peuvent pas établir.
 
 ## Trois règles, tenues partout
@@ -216,10 +217,18 @@ tests sans résultat au registre, **aucun des neuf résultats retenus ne tombe**
 ils sont trop nets pour cela. Ce n’est donc pas une raison de s’arrêter, et ce
 serait malhonnête de le prétendre.
 
-Ce qui manque n’est pas de la méthode, c’est de la donnée : aucune audience,
+**Le dernier champ inexploité l’a été.** L’origine géographique était la seule
+piste de taille qui restait ; elle a donné
+[D’où ils viennent]({{ '/statistiques/geographie/' | relative_url }}), et elle a
+donné le contraire de ce qu’on attendait — le casting épouse l’état civil de sa
+génération, il n’épouse pas sa géographie. Il ne reste, après elle, aucun champ
+du jeu de données dont on n’ait rien tiré.
+
+Ce qui manque n’est donc pas de la méthode, c’est de la donnée : aucune audience,
 aucun temps d’antenne, aucune nature d’épreuve, aucun ordre de vote. Ce sont
 précisément les choses qui permettraient de dire quelque chose du **montage** —
-et elles ne figurent dans aucune source publique.
+et elles ne figurent dans aucune source publique. **C’est ici que ce site
+s’arrête.**
 
 ## Ce que ces données ne peuvent pas établir
 

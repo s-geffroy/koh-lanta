@@ -25,7 +25,7 @@ services:
     # construction, meme apres modification du Dockerfile. Compose reconstruit
     # quand l'image nommee ici n'existe pas encore : INCREMENTER CETTE VERSION
     # apres toute modification de atelier/Dockerfile.
-    image: koh-lanta-atelier:3
+    image: koh-lanta-atelier:4
     profiles: [cli]
     # Le depot est monte en ecriture : c'est la le produit du travail.
     #
