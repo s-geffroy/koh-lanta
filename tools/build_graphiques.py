@@ -833,6 +833,30 @@ def figures_des_modeles(stats):
             teinte = SERIES[2] if t.get("retenu") else SERIES[5]
             ecrire(f"{nom}.svg", distribution_nulle(t, couleur=teinte))
 
+    # --- J. trahison, confort, decimation -----------------------------------
+    for cle, nom in (("trahison", "trahison"), ("decimation", "decimation")):
+        t = par_cle.get(cle)
+        if t and t.get("nulle"):
+            teinte = SERIES[2] if t.get("retenu") else SERIES[5]
+            ecrire(f"{nom}.svg", distribution_nulle(t, couleur=teinte))
+
+    cf = m.get("confort_maudit") or {}
+    if cf:
+        ecrire("confort-maudit.svg", foret(
+            [{"libelle": "Bulletins visant un gagnant du confort",
+              "estimation": cf["observe"], "bas": cf["bas"], "haut": cf["haut"],
+              "detail": f'{cf["observe"]} % des bulletins '
+                        f'(intervalle {cf["bas"]} à {cf["haut"]}), pour '
+                        f'{cf["attendu"]} % attendus'}],
+            titre="Gagner le confort rend-il cible ?",
+            description="Part des bulletins visant un gagnant du confort du meme "
+                        "episode. Le trait vertical marque la part que ces "
+                        "gagnants representent parmi les presents.",
+            reference=cf["attendu"], unite=" %", largeur=740, marge_gauche=290,
+            hauteur_ligne=34,
+            note=f'{cf["conseils"]} conseils · {cf["bulletins"]} bulletins · '
+                 f'p = {cf["p"]}'))
+
     # --- I. le jury final ---------------------------------------------------
     ju = m.get("jury_final") or {}
     if ju.get("coefficients"):

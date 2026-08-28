@@ -1843,6 +1843,299 @@ def jury_final(par_saison, parts, conseils):
     }
 
 
+# --- J. La trahison, le confort, la decimation -----------------------------
+
+def _allies_avant(bulletins):
+    """Qui a deja vote avec qui, conseil apres conseil.
+
+    Rend, pour chaque conseil, l'etat des alliances tel qu'il etait AVANT ce
+    conseil. Une alliance se noue en ecrivant le meme nom ; elle ne se defait
+    jamais dans ce calcul -- ce qu'on mesure est donc « a-t-il deja ete mon
+    allie », pas « l'est-il encore ».
+    """
+    etats = []
+    allies = {}
+    for numero, bull in bulletins:
+        etats.append({v: set(allies.get(v, ())) for v, _ in bull})
+        par_cible = {}
+        for v, c in bull:
+            par_cible.setdefault(c, []).append(v)
+        for _, groupe in sorted(par_cible.items()):
+            for x in groupe:
+                for y in groupe:
+                    if x != y:
+                        allies.setdefault(x, set()).add(y)
+    return etats
+
+
+def trahison(par_saison, parts, conseils):
+    """Ecrire le nom de quelqu'un avec qui on a deja vote.
+
+    C'est le geste que le programme met en scene a chaque saison. Reste a
+    savoir s'il est frequent, et s'il paie. Le modele nul est le meme que
+    partout ailleurs : on rebat les bulletins d'un conseil entre ses votants,
+    sans qu'un votant recoive son nom. La question devient donc : parmi ceux
+    qui ont ecrit ces noms-la, est-ce plutot un ancien allie de la cible ?
+    """
+    scrutins = _scrutins(par_saison, conseils)
+    if not scrutins:
+        return {}
+
+    contextes = []
+    for s, liste in sorted(scrutins.items()):
+        etats = _allies_avant(liste)
+        for (numero, bull), etat in zip(liste, etats):
+            contextes.append((s, numero, bull, etat))
+
+    def taux(jeu):
+        n = t = 0
+        for _, _, bull, etat in jeu:
+            for v, c in bull:
+                if etat.get(v):
+                    n += 1
+                    t += 1 if c in etat[v] else 0
+        return (100.0 * t / n if n else None), n
+
+    observe, base = taux(contextes)
+    if observe is None or base < 200:
+        return {}
+
+    g = rng("trahison")
+    nulle = []
+    for _ in range(4000):
+        melange = []
+        for s, numero, bull, etat in contextes:
+            votants = [v for v, _ in bull]
+            cibles = [c for _, c in bull]
+            m = _permuter_sans_soi(votants, cibles, g)
+            if m is None:
+                continue
+            melange.append((s, numero, list(zip(votants, m)), etat))
+        v, _ = taux(melange)
+        if v is not None:
+            nulle.append(v)
+
+    test = _test(
+        "trahison", "Écrire le nom d'un ancien allié",
+        "Quand on a déjà voté avec quelqu'un, écrit-on son nom plus ou moins "
+        "souvent qu'un autre ?",
+        observe, np.array(nulle), unite="%",
+        lecture="Part des bulletins visant quelqu'un avec qui l'auteur avait déjà "
+                "voté. Un observé SOUS l'attendu veut dire que l'alliance protège ; "
+                "au-dessus, qu'elle expose.")
+
+    # La trahison paie-t-elle ? On compte, par participation, la part de ses
+    # bulletins qui visent un ancien allie, et on regarde ce qu'elle devient.
+    survie = {(p["saison"], p["id"]): p.get("_survie") for p in parts}
+    noms = {p["id"]: (p.get("nom_complet") or p.get("nom")) for p in parts}
+    compte = {}
+    for s, _, bull, etat in contextes:
+        for v, c in bull:
+            if not etat.get(v):
+                continue
+            d = compte.setdefault((s, v), [0, 0])
+            d[1] += 1
+            if c in etat[v]:
+                d[0] += 1
+
+    lignes = [(t / n, survie.get(k), noms.get(k[1], k[1]), k[0], n)
+              for k, (t, n) in sorted(compte.items()) if n >= 4]
+    lignes = [x for x in lignes if x[1] is not None]
+    effet = {}
+    if len(lignes) >= 60:
+        import statsmodels.api as sm
+        X = sm.add_constant(np.column_stack([
+            np.array([x[0] for x in lignes]),
+            np.array([x[4] for x in lignes], dtype=float)]))
+        r = sm.OLS(np.array([x[1] for x in lignes], dtype=float), X).fit(cov_type="HC1")
+        ic = r.conf_int()
+        effet = {"effectif": len(lignes),
+                 "estimation": _arr(float(r.params[1]), 2),
+                 "bas": _arr(float(ic[1][0]), 2), "haut": _arr(float(ic[1][1]), 2),
+                 "p": _arr(float(r.pvalues[1]), 4),
+                 "lecture": "Points de saison gagnes ou perdus quand on passe de "
+                            "« jamais » a « toujours » viser un ancien allie, le "
+                            "nombre de bulletins emis tenu constant."}
+    classement = sorted(lignes, key=lambda x: (-x[0], -x[4], x[2]))
+    return {"bulletins": base, "conseils": len(contextes), "test": test,
+            "effet": effet,
+            "les_plus_infideles": [
+                {"nom": x[2], "saison": x[3], "part": _arr(100.0 * x[0]),
+                 "bulletins": x[4], "survie": _arr(x[1])}
+                for x in classement[:10]]}
+
+
+def confort_maudit(par_saison, parts, conseils, epreuves):
+    """Gagner le confort attire-t-il les bulletins du soir meme ?
+
+    L'idee court depuis vingt-cinq ans : celui qui gagne le confort devient une
+    cible. Elle se teste sur le conseil du MEME episode -- celui ou l'on vote
+    apres avoir vu qui a gagne quoi.
+    """
+    from indicateurs import eliminations
+
+    gagnants = {}
+    for e in epreuves:
+        if e.get("type") != "confort":
+            continue
+        try:
+            episode = int(e["episode"])
+        except (TypeError, ValueError):
+            continue
+        for v in (e.get("vainqueurs") or []):
+            if v.get("type") == "personne" and v.get("id"):
+                gagnants.setdefault((e["saison"], episode), set()).add(v["id"])
+
+    contextes = []
+    for c in eliminations(conseils):
+        s = par_saison.get(c["saison"]) or {}
+        if s.get("annulee") or s.get("en_cours"):
+            continue
+        if not c.get("complet") or not c.get("votes"):
+            continue
+        try:
+            episode = int(c["episode"])
+        except (TypeError, ValueError):
+            continue
+        bull = [(b["votant"], b["cible"]) for b in c["votes"]
+                if b.get("votant_rattache") and b.get("cible_rattachee")]
+        if len(bull) < 4:
+            continue
+        gagne = gagnants.get((c["saison"], episode), set())
+        presents = sorted({v for v, _ in bull} | {x for _, x in bull})
+        dedans = sorted(gagne & set(presents))
+        if not dedans:
+            continue
+        contextes.append((bull, presents, set(dedans)))
+
+    if len(contextes) < 40:
+        return {}
+
+    def part(jeu):
+        vises = total = 0
+        for bull, presents, dedans in jeu:
+            for _, c in bull:
+                total += 1
+                vises += 1 if c in dedans else 0
+        return 100.0 * vises / total if total else None
+
+    observe = part(contextes)
+    g = rng("confort")
+    nulle = []
+    for _ in range(4000):
+        melange = []
+        for bull, presents, dedans in contextes:
+            votants = [v for v, _ in bull]
+            cibles = [c for _, c in bull]
+            m = _permuter_sans_soi(votants, cibles, g)
+            melange.append((list(zip(votants, m if m else cibles)), presents, dedans))
+        nulle.append(part(melange))
+
+    # Le modele nul par permutation garde le meme jeu de cibles : il ne peut
+    # donc RIEN dire ici, la part de bulletins allant aux gagnants du confort y
+    # est identique par construction. La bonne reference est la part que
+    # representent ces gagnants parmi les presents.
+    attendu = float(np.mean([100.0 * len(d) / len(p) for _, p, d in contextes]))
+    n_bulletins = sum(len(b) for b, _, _ in contextes)
+    vises = sum(1 for b, _, d in contextes for _, c in b if c in d)
+
+    from scipy import stats as st
+    binom = st.binomtest(vises, n_bulletins, attendu / 100.0)
+    ic = binom.proportion_ci(confidence_level=0.95)
+    return {
+        "conseils": len(contextes),
+        "bulletins": n_bulletins,
+        "observe": _arr(100.0 * vises / n_bulletins),
+        "attendu": _arr(attendu),
+        "bas": _arr(100.0 * ic.low), "haut": _arr(100.0 * ic.high),
+        "p": _arr(float(binom.pvalue), 4),
+        "lecture": "Part des bulletins visant un gagnant du confort du meme "
+                   "episode, comparee a la part que ces gagnants representent "
+                   "parmi les presents.",
+    }
+
+
+def decimation(par_saison, parts, conseils, epreuves):
+    """Apres la fusion, un camp est-il elimine en serie ?
+
+    C'est le scenario que la serie americaine a baptise « pagonging » : le camp
+    majoritaire sort le camp minoritaire un par un, sans jamais se diviser. Il
+    laisse une trace mesurable -- les sorties se suivent par couleur au lieu
+    d'alterner.
+    """
+    from indicateurs import _episode_de_sortie
+
+    sortie, _ = _episode_de_sortie(conseils, parts, epreuves)
+    par_s = {}
+    for p in parts:
+        par_s.setdefault(p["saison"], []).append(p)
+    collectives = {}
+    for e in epreuves:
+        if e.get("type") == "immunite" and e.get("forme") == "collective":
+            try:
+                collectives[e["saison"]] = max(collectives.get(e["saison"], 0),
+                                               int(e["episode"]))
+            except (TypeError, ValueError):
+                pass
+
+    suites = []
+    for s_id in sorted(collectives):
+        s = par_saison.get(s_id) or {}
+        if s.get("annulee") or s.get("en_cours") or s.get("speciale"):
+            continue
+        membres = par_s.get(s_id) or []
+        if not membres:
+            continue
+        if sum(1 for p in membres if (s_id, p["id"]) in sortie) / len(membres) < COUVERTURE_MINIMALE:
+            continue
+        apres = [p for p in membres
+                 if sortie.get((s_id, p["id"]), -1) > collectives[s_id] and p.get("couleur")]
+        if len(apres) < 6 or len(sorted({p["couleur"] for p in apres})) != 2:
+            continue
+        apres.sort(key=lambda p: (sortie[(s_id, p["id"])], p["id"]))
+        suites.append((s_id, s.get("titre"), s.get("annee"),
+                       [p["couleur"] for p in apres]))
+
+    if len(suites) < 10:
+        return {}
+
+    def enchainements(listes):
+        return float(sum(1 for l in listes for i in range(len(l) - 1)
+                         if l[i] == l[i + 1]))
+
+    observe = enchainements([l for _, _, _, l in suites])
+    g = rng("decimation")
+    nulle = np.array([
+        enchainements([g.permutation(np.array(l, dtype=object)).tolist()
+                       for _, _, _, l in suites])
+        for _ in range(N_PERMUTATIONS)])
+
+    detail = []
+    for s_id, titre, annee, l in suites:
+        streak = maxi = 1
+        for i in range(1, len(l)):
+            streak = streak + 1 if l[i] == l[i - 1] else 1
+            maxi = max(maxi, streak)
+        detail.append({"saison": s_id, "titre": titre, "annee": annee,
+                       "joueurs": len(l), "plus_longue_serie": maxi,
+                       "suite": "".join(x[0].upper() for x in l)})
+    detail.sort(key=lambda d: (-d["plus_longue_serie"], d["saison"]))
+
+    return {
+        "saisons": len(suites),
+        "sorties": sum(len(l) for _, _, _, l in suites),
+        "detail": detail[:10],
+        "test": _test(
+            "decimation", "L'élimination en série d'un camp",
+            "Après la réunification, les sorties se suivent-elles par bandeau "
+            "plus souvent que le hasard ne le voudrait ?",
+            observe, nulle, unite="enchaînements",
+            lecture="Nombre de fois où deux sorties consécutives viennent du même "
+                    "bandeau de départ. Un observé AU-DESSUS de l'attendu est la "
+                    "signature d'un camp démonté un par un."),
+    }
+
+
 # --- assemblage ------------------------------------------------------------
 
 def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
@@ -1862,6 +2155,9 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
     mec = effet_des_mecaniques(par_saison, parts, conseils, indicateurs_saison)
     al = alliances(par_saison, parts, conseils)
     ho = homophilie(par_saison, parts, conseils)
+    tr = trahison(par_saison, parts, conseils)
+    cf = confort_maudit(par_saison, parts, conseils, epreuves)
+    de = decimation(par_saison, parts, conseils, epreuves)
     ju = jury_final(par_saison, parts, conseils)
     fu = fusion(par_saison, parts, conseils, epreuves)
     ru = ruptures(par_saison, indicateurs_saison)
@@ -1877,7 +2173,8 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
         for t in bloc.get("tests", []):
             t["origine"] = origine
             registre.append(t)
-    for bloc, origine in ((al, "alliances"), (ru, "ruptures")):
+    for bloc, origine in ((al, "alliances"), (ru, "ruptures"),
+                          (tr, "trahison"), (de, "decimation")):
         t = bloc.get("test")
         if t:
             t["origine"] = origine
@@ -1900,6 +2197,9 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
         "mecaniques": mec,
         "alliances": al,
         "homophilie": ho,
+        "trahison": tr,
+        "confort_maudit": cf,
+        "decimation": de,
         "jury_final": ju,
         "fusion": fu,
         "ruptures": ru,

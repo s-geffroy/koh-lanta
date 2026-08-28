@@ -10980,7 +10980,7 @@ modeles:
         observe: 0.3269
         moyenne_nulle: 1.7432
       origine: casting
-      p_ajustee: 0.0008
+      p_ajustee: 0.0007
       retenu: true
     - cle: etendue_ages
       libelle: L'ecart d'age dans un meme casting
@@ -11030,7 +11030,7 @@ modeles:
         observe: 9.915
         moyenne_nulle: 9.6637
       origine: casting
-      p_ajustee: 0.0253
+      p_ajustee: 0.0223
       retenu: true
     - cle: familles_metiers
       libelle: La variete des metiers
@@ -11130,7 +11130,7 @@ modeles:
         observe: 0.0782
         moyenne_nulle: 0.0509
       origine: casting
-      p_ajustee: 0.0812
+      p_ajustee: 0.0753
       retenu: false
     - cle: tribus_femmes
       libelle: La composition des deux tribus
@@ -11181,7 +11181,7 @@ modeles:
         observe: 13.0253
         moyenne_nulle: 18.8726
       origine: casting
-      p_ajustee: 0.1155
+      p_ajustee: 0.1091
       retenu: false
     - cle: tribus_ages
       libelle: L'age moyen des deux tribus
@@ -11232,7 +11232,7 @@ modeles:
         observe: 5.7496
         moyenne_nulle: 3.8505
       origine: casting
-      p_ajustee: 0.0055
+      p_ajustee: 0.0047
       retenu: true
     - cle: tribus_ages_mediane
       libelle: L'age des deux tribus, a la mediane
@@ -11282,7 +11282,7 @@ modeles:
         observe: 4.1597
         moyenne_nulle: 3.331
       origine: casting
-      p_ajustee: 0.3648
+      p_ajustee: 0.3584
       retenu: false
     sensibilite:
     - cle: etendue_ages
@@ -11401,7 +11401,7 @@ modeles:
         observe: 10.75
         moyenne_nulle: 10.2215
       origine: pronostic
-      p_ajustee: 0.6757
+      p_ajustee: 0.6701
       retenu: false
     classement:
     - nom: Ambre Daudet
@@ -11964,7 +11964,7 @@ modeles:
         observe: 31.521
         moyenne_nulle: 1.2062
       origine: alliances
-      p_ajustee: 0.0015
+      p_ajustee: 0.0012
       retenu: true
     majorite:
       effectif: 171
@@ -12111,7 +12111,7 @@ modeles:
         moyenne_nulle: 46.6635
       bulletins: 1753
       origine: homophilie
-      p_ajustee: 0.152
+      p_ajustee: 0.1458
       retenu: false
     - cle: vote_ecart_age
       libelle: L'écart d'âge avec sa cible
@@ -12163,7 +12163,7 @@ modeles:
         moyenne_nulle: 11.5851
       bulletins: 1737
       origine: homophilie
-      p_ajustee: 0.0812
+      p_ajustee: 0.0753
       retenu: false
     - cle: vote_meme_metier
       libelle: Viser la même famille de métier
@@ -12215,7 +12215,7 @@ modeles:
         moyenne_nulle: 10.0336
       bulletins: 1753
       origine: homophilie
-      p_ajustee: 0.3648
+      p_ajustee: 0.3584
       retenu: false
     - cle: vote_meme_bandeau
       libelle: Viser son propre bandeau de départ
@@ -12267,7 +12267,7 @@ modeles:
         moyenne_nulle: 65.832
       bulletins: 1753
       origine: homophilie
-      p_ajustee: 0.0008
+      p_ajustee: 0.0007
       retenu: true
     - cle: vote_bandeau_apres_fusion
       libelle: Épargner son bandeau de départ
@@ -12319,7 +12319,247 @@ modeles:
         moyenne_nulle: 42.1065
       bulletins: 1033
       origine: homophilie
-      p_ajustee: 0.0008
+      p_ajustee: 0.0007
+      retenu: true
+  trahison:
+    bulletins: 1327
+    conseils: 227
+    test:
+      cle: trahison
+      libelle: Écrire le nom d'un ancien allié
+      question: Quand on a déjà voté avec quelqu'un, écrit-on son nom plus ou moins souvent qu'un autre
+        ?
+      observe: 51.545
+      attendu: 60.103
+      unite: '%'
+      ecart_types: -12.55
+      p: 0.0002
+      tirages: 4000
+      lecture: Part des bulletins visant quelqu'un avec qui l'auteur avait déjà voté. Un observé SOUS
+        l'attendu veut dire que l'alliance protège ; au-dessus, qu'elle expose.
+      nulle: &id023
+        bornes:
+        - 51.0023
+        - 62.939
+        cases:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 1
+        - 1
+        - 15
+        - 45
+        - 237
+        - 436
+        - 904
+        - 1037
+        - 694
+        - 431
+        - 154
+        - 33
+        - 12
+        - 0
+        largeur_case: 0.426311
+        observe: 51.5448
+        moyenne_nulle: 60.1031
+      origine: trahison
+      p_ajustee: 0.0007
+      retenu: true
+    effet:
+      effectif: 169
+      estimation: 4.44
+      bas: -3.64
+      haut: 12.53
+      p: 0.2816
+      lecture: Points de saison gagnes ou perdus quand on passe de « jamais » a « toujours » viser un
+        ancien allie, le nombre de bulletins emis tenu constant.
+    les_plus_infideles:
+    - nom: Alexis Tournier
+      saison: s05
+      part: 100.0
+      bulletins: 9
+      survie: 95.0
+    - nom: Ludivine Wiart
+      saison: s16
+      part: 100.0
+      bulletins: 8
+      survie: 92.9
+    - nom: Wafa El Mejjad
+      saison: s10
+      part: 100.0
+      bulletins: 6
+      survie: 100.0
+    - nom: Frédéric Blancher
+      saison: s17
+      part: 100.0
+      bulletins: 5
+      survie: 100.0
+    - nom: Laurence Pizzocchia
+      saison: s10
+      part: 100.0
+      bulletins: 5
+      survie: 87.5
+    - nom: Caroline Matteucci
+      saison: s11
+      part: 100.0
+      bulletins: 4
+      survie: 43.9
+    - nom: Christophe Pendon
+      saison: s14
+      part: 100.0
+      bulletins: 4
+      survie: 80.0
+    - nom: Sébastien Ballesteros
+      saison: s14
+      part: 100.0
+      bulletins: 4
+      survie: 92.5
+    - nom: Clémence Castel
+      saison: s05
+      part: 88.9
+      bulletins: 9
+      survie: 100.0
+    - nom: Philippe Duron
+      saison: s10
+      part: 87.5
+      bulletins: 8
+      survie: 100.0
+  confort_maudit:
+    conseils: 74
+    bulletins: 563
+    observe: 17.6
+    attendu: 18.2
+    bas: 14.5
+    haut: 21.0
+    p: 0.7433
+    lecture: Part des bulletins visant un gagnant du confort du meme episode, comparee a la part que ces
+      gagnants representent parmi les presents.
+  decimation:
+    saisons: 17
+    sorties: 196
+    detail:
+    - saison: s22
+      titre: Les Armes secrètes
+      annee: 2021
+      joueurs: 13
+      plus_longue_serie: 7
+      suite: JJJJJJJRRRRJR
+    - saison: s06
+      titre: Vanuatu
+      annee: 2006
+      joueurs: 10
+      plus_longue_serie: 6
+      suite: RRRRJJJJJJ
+    - saison: s16
+      titre: L'Île au trésor
+      annee: 2016
+      joueurs: 14
+      plus_longue_serie: 6
+      suite: JRJJJJRRRRRRJJ
+    - saison: s18
+      titre: Fidji
+      annee: 2017
+      joueurs: 12
+      plus_longue_serie: 6
+      suite: JJRRRRRRJJRJ
+    - saison: s07
+      titre: Palawan
+      annee: 2007
+      joueurs: 10
+      plus_longue_serie: 5
+      suite: JJJJJRRRRR
+    - saison: s08
+      titre: Caramoan
+      annee: 2008
+      joueurs: 11
+      plus_longue_serie: 5
+      suite: JRRJJJRRRRR
+    - saison: s04
+      titre: Panama
+      annee: 2004
+      joueurs: 10
+      plus_longue_serie: 4
+      suite: RJJJJRJRRR
+    - saison: s11
+      titre: Raja Ampat
+      annee: 2011
+      joueurs: 12
+      plus_longue_serie: 4
+      suite: JRRRJRJRRRRJ
+    - saison: s26
+      titre: La Tribu maudite
+      annee: 2024
+      joueurs: 14
+      plus_longue_serie: 4
+      suite: JJRRJRRRJRJJJJ
+    - saison: s01
+      titre: Les Aventuriers de Koh-Lanta
+      annee: 2001
+      joueurs: 10
+      plus_longue_serie: 3
+      suite: JJJRRJJRRR
+    test:
+      cle: decimation
+      libelle: L'élimination en série d'un camp
+      question: Après la réunification, les sorties se suivent-elles par bandeau plus souvent que le hasard
+        ne le voudrait ?
+      observe: 106.0
+      attendu: 83.967
+      unite: enchaînements
+      ecart_types: 3.46
+      p: 0.0005
+      tirages: 10000
+      lecture: Nombre de fois où deux sorties consécutives viennent du même bandeau de départ. Un observé
+        AU-DESSUS de l'attendu est la signature d'un camp démonté un par un.
+      nulle: &id024
+        bornes:
+        - 60.7
+        - 111.3
+        cases:
+        - 0
+        - 9
+        - 17
+        - 15
+        - 58
+        - 140
+        - 280
+        - 414
+        - 293
+        - 747
+        - 990
+        - 1130
+        - 1203
+        - 623
+        - 1188
+        - 974
+        - 716
+        - 519
+        - 355
+        - 91
+        - 133
+        - 57
+        - 33
+        - 7
+        - 4
+        - 2
+        - 2
+        - 0
+        largeur_case: 1.807143
+        observe: 106.0
+        moyenne_nulle: 83.9668
+      origine: decimation
+      p_ajustee: 0.0012
       retenu: true
   jury_final:
     bulletins: 177
@@ -12685,7 +12925,7 @@ modeles:
         observe: 53.4621
         moyenne_nulle: 13.0867
       origine: ruptures
-      p_ajustee: 0.0008
+      p_ajustee: 0.0007
       retenu: true
   registre:
   - cle: parite
@@ -12697,7 +12937,7 @@ modeles:
     unite: personnes
     ecart_types: -5.36
     p: 0.0001
-    p_ajustee: 0.0008
+    p_ajustee: 0.0007
     retenu: true
     tirages: 10000
     lecture: 'Un ecart observe plus PETIT que l''attendu est la signature d''un quota : le hasard, lui,
@@ -12712,7 +12952,7 @@ modeles:
     unite: annees
     ecart_types: 2.6
     p: 0.0118
-    p_ajustee: 0.0253
+    p_ajustee: 0.0223
     retenu: true
     tirages: 10000
     lecture: Rebattre les aventuriers entre saisons donne l'ecart-type general. Un ecart observe PLUS
@@ -12742,7 +12982,7 @@ modeles:
     unite: ''
     ecart_types: 1.93
     p: 0.0487
-    p_ajustee: 0.0812
+    p_ajustee: 0.0753
     retenu: false
     tirages: 10000
     lecture: Distance entre le melange de profils d'une saison et le melange general. Un observe PLUS
@@ -12758,7 +12998,7 @@ modeles:
     unite: points de %
     ecart_types: -1.76
     p: 0.077
-    p_ajustee: 0.1155
+    p_ajustee: 0.1091
     retenu: false
     tirages: 10000
     lecture: On rebat les bandeaux a l'interieur de chaque saison. Un ecart observe PLUS PETIT que l'attendu
@@ -12774,7 +13014,7 @@ modeles:
     unite: annees
     ecart_types: 3.03
     p: 0.0022
-    p_ajustee: 0.0055
+    p_ajustee: 0.0047
     retenu: true
     tirages: 10000
     lecture: 'Meme methode, sur l''age moyen de chaque bandeau. Un ecart observe PLUS GRAND que l''attendu
@@ -12789,7 +13029,7 @@ modeles:
     unite: annees
     ecart_types: 1.02
     p: 0.3162
-    p_ajustee: 0.3648
+    p_ajustee: 0.3584
     retenu: false
     tirages: 10000
     lecture: La mediane ignore les valeurs extremes. Si elle ne s'ecarte pas, c'est que l'ecart moyen
@@ -12805,7 +13045,7 @@ modeles:
     unite: rang moyen
     ecart_types: 0.49
     p: 0.6307
-    p_ajustee: 0.6757
+    p_ajustee: 0.6701
     retenu: false
     tirages: 10000
     lecture: Le modele classe les candidats d'une saison ; on releve la place qu'il donne a celui qui
@@ -12820,7 +13060,7 @@ modeles:
     unite: '%'
     ecart_types: -1.6
     p: 0.1115
-    p_ajustee: 0.152
+    p_ajustee: 0.1458
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
@@ -12836,7 +13076,7 @@ modeles:
     unite: années
     ecart_types: 2.0
     p: 0.046
-    p_ajustee: 0.0812
+    p_ajustee: 0.0753
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
@@ -12852,7 +13092,7 @@ modeles:
     unite: '%'
     ecart_types: -1.06
     p: 0.3109
-    p_ajustee: 0.3648
+    p_ajustee: 0.3584
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
@@ -12868,7 +13108,7 @@ modeles:
     unite: '%'
     ecart_types: -10.48
     p: 0.0002
-    p_ajustee: 0.0008
+    p_ajustee: 0.0007
     retenu: true
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
@@ -12885,7 +13125,7 @@ modeles:
     unite: '%'
     ecart_types: -10.61
     p: 0.0002
-    p_ajustee: 0.0008
+    p_ajustee: 0.0007
     retenu: true
     tirages: 4000
     lecture: Mesuré sur les seuls conseils réunissant plusieurs bandeaux. Un observé SOUS l'attendu veut
@@ -12901,7 +13141,7 @@ modeles:
     unite: points de %
     ecart_types: 17.92
     p: 0.0005
-    p_ajustee: 0.0015
+    p_ajustee: 0.0012
     retenu: true
     tirages: 2000
     lecture: 'Ecart entre deux probabilites : voter ensemble apres avoir vote ensemble, et voter ensemble
@@ -12917,12 +13157,44 @@ modeles:
     unite: ''
     ecart_types: 7.18
     p: 0.0001
-    p_ajustee: 0.0008
+    p_ajustee: 0.0007
     retenu: true
     tirages: 10000
     lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
       dans un ordre au hasard. Une coupure existe toujours ; la question est de savoir si celle-ci vaut
       mieux que n'importe quelle autre.
     nulle: *id022
-  nb_tests: 15
-  nb_retenus: 7
+  - cle: trahison
+    libelle: Écrire le nom d'un ancien allié
+    question: Quand on a déjà voté avec quelqu'un, écrit-on son nom plus ou moins souvent qu'un autre
+      ?
+    origine: trahison
+    observe: 51.545
+    attendu: 60.103
+    unite: '%'
+    ecart_types: -12.55
+    p: 0.0002
+    p_ajustee: 0.0007
+    retenu: true
+    tirages: 4000
+    lecture: Part des bulletins visant quelqu'un avec qui l'auteur avait déjà voté. Un observé SOUS l'attendu
+      veut dire que l'alliance protège ; au-dessus, qu'elle expose.
+    nulle: *id023
+  - cle: decimation
+    libelle: L'élimination en série d'un camp
+    question: Après la réunification, les sorties se suivent-elles par bandeau plus souvent que le hasard
+      ne le voudrait ?
+    origine: decimation
+    observe: 106.0
+    attendu: 83.967
+    unite: enchaînements
+    ecart_types: 3.46
+    p: 0.0005
+    p_ajustee: 0.0012
+    retenu: true
+    tirages: 10000
+    lecture: Nombre de fois où deux sorties consécutives viennent du même bandeau de départ. Un observé
+      AU-DESSUS de l'attendu est la signature d'un camp démonté un par un.
+    nulle: *id024
+  nb_tests: 17
+  nb_retenus: 9

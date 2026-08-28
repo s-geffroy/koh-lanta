@@ -109,6 +109,84 @@ lui, on sous-estime. La vérité est au-dessus du chiffre affiché.</p>
 </table>
 </div>
 
+## La trahison protège moins qu’on ne croit — parce qu’elle est rare
+
+{% assign tr = m.trahison %}{% assign tt = tr.test %}
+
+Le programme met en scène le retournement à chaque saison. Il se compte : sur
+les {{ tr.bulletins }} bulletins dont l’auteur avait déjà un allié à ce
+moment-là, combien visent cet allié ?
+
+{% include graphiques/trahison.svg %}
+
+<p class="legende-figure">Part des bulletins visant quelqu’un avec qui l’auteur
+avait déjà voté. La silhouette est le même brassage que plus haut, à jeu de
+cibles constant.</p>
+
+<div class="constat">
+  <p><b>{{ tt.observe }} %</b> des bulletins visent un ancien allié — contre
+  <b>{{ tt.attendu }} %</b> attendus. {{ tt.ecart_types }} écarts-types.</p>
+  <p>L’alliance ne se contente donc pas de faire voter ensemble : elle
+  <b>protège</b>. À jeu de cibles identique, on écrit le nom d’un ancien allié
+  nettement moins souvent qu’on ne le devrait.</p>
+</div>
+
+{% assign ef = tr.effet %}
+Et quand on trahit quand même ? **Rien.** Passer de « jamais » à « toujours »
+viser un ancien allié fait gagner {{ ef.estimation }} points de saison —
+intervalle {{ ef.bas }} à {{ ef.haut }}, p = {{ ef.p }}. La trahison ne paie
+pas ; elle ne coûte pas non plus. Sur {{ ef.effectif }} participations, elle est
+simplement **sans effet mesurable**.
+
+## Après la fusion, un camp tombe en série
+
+{% assign de = m.decimation %}{% assign dt = de.test %}
+
+Si les blocs survivent à la réunification, cela doit se voir dans **l’ordre** des
+sorties : le camp majoritaire démonte l’autre un par un, au lieu que les
+départs alternent.
+
+{% include graphiques/decimation.svg %}
+
+<p class="legende-figure">Nombre de fois où deux sorties consécutives viennent
+du même bandeau de départ, sur {{ de.saisons }} saisons et {{ de.sorties }}
+sorties d’après-fusion. La silhouette est ce que donne un ordre de sortie tiré
+au sort, à composition de camps identique.</p>
+
+<div class="constat">
+  <p>{{ dt.observe }} enchaînements observés contre {{ dt.attendu }} attendus,
+  <b>{{ dt.ecart_types }} écarts-types</b>, p ajustée {{ dt.p_ajustee }}.</p>
+  <p>Les sorties d’après-fusion ne se répartissent pas au hasard entre les deux
+  anciens camps : <b>elles se suivent</b>. Le bandeau qu’on a porté les six
+  premiers épisodes décide encore de l’ordre dans lequel on part.</p>
+</div>
+
+<div class="tableau-large">
+<table data-triable>
+<thead><tr>
+  <th>Saison</th><th class="nombre">Année</th>
+  <th class="nombre">Sorties après fusion</th>
+  <th class="nombre">Plus longue série</th><th>Ordre des sorties</th>
+</tr></thead>
+<tbody>
+{% for d in de.detail %}
+<tr>
+  <td>{{ d.titre }}</td>
+  <td class="nombre">{{ d.annee }}</td>
+  <td class="nombre">{{ d.joueurs }}</td>
+  <td class="nombre">{{ d.plus_longue_serie }}</td>
+  <td><code>{{ d.suite }}</code></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+<p class="note">Chaque lettre est le bandeau de départ d’un sortant, dans
+l’ordre : <code>J</code> pour jaune, <code>R</code> pour rouge. Sept sorties
+jaunes d’affilée en 2021 ne prouvent rien à elles seules — c’est l’accumulation
+sur {{ de.saisons }} saisons qui fait le résultat.</p>
+
 <p class="note">Ce que cette page ne dit pas. Elle ne distingue pas <em>former</em>
 une majorité de <em>la rejoindre</em> : les bulletins ne portent pas d’heure, et
 rien dans ces données ne dit qui a proposé le nom. Un suiveur discipliné et un

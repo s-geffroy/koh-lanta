@@ -131,6 +131,29 @@ et poteaux ne sont donc pas comptés.
 aquatique. Les sources ne la donnent pas de façon exploitable. Tant qu’elle
 manquera, aucune analyse par type d’épreuve ne figurera ici.
 
+## Gagner le confort rend-il cible ? Non
+
+{% assign cf = site.data.stats.modeles.confort_maudit %}
+
+L’idée court depuis vingt-cinq ans : celui qui gagne le confort, qui part manger
+et dormir au sec pendant que les autres ont faim, se fait écrire au conseil du
+soir. Elle se teste sur le conseil du **même épisode**.
+
+{% include graphiques/confort-maudit.svg %}
+
+<p class="legende-figure">Part des bulletins visant un gagnant du confort du
+même épisode. Le trait vertical marque la part que ces gagnants représentent
+parmi les présents — c’est-à-dire ce qu’on attendrait s’ils n’étaient ni plus ni
+moins visés que les autres.</p>
+
+Sur **{{ cf.conseils }} conseils** et {{ cf.bulletins }} bulletins,
+{{ cf.observe }} % visent un gagnant du confort — intervalle
+{{ cf.bas }} à {{ cf.haut }} — pour {{ cf.attendu }} % attendus. p =
+{{ cf.p }}. **La malédiction du confort n’existe pas.**
+
+L’intervalle laisse encore place à un écart de trois points dans un sens ou dans
+l’autre : ce qu’on peut affirmer, c’est qu’il n’y a pas d’effet marqué.
+
 <p class="note">Un total de victoires mélange le niveau et le temps passé en
 jeu, et une victoire au premier épisode ne vaut pas une victoire à
 l’avant-dernier. <a href="{{ '/statistiques/force/' | relative_url }}">La force
