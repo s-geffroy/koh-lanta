@@ -9,12 +9,14 @@ chapeau: >-
 
 {% assign m = site.data.stats.modeles %}
 
-Quatre pages de ce site reposent sur des modèles plutôt que sur des comptages :
+Six pages de ce site reposent sur des modèles plutôt que sur des comptages :
 [La recette du casting]({{ '/statistiques/casting/' | relative_url }}),
 [Le pronostic]({{ '/statistiques/pronostic/' | relative_url }}),
-[La force réelle]({{ '/statistiques/force/' | relative_url }}) et
-[Le jeu tenu serré]({{ '/statistiques/equilibre/' | relative_url }}). Cette
-page dit comment ils sont construits et ce qu’ils ne peuvent pas établir.
+[La force réelle]({{ '/statistiques/force/' | relative_url }}),
+[Le jeu tenu serré]({{ '/statistiques/equilibre/' | relative_url }}),
+[Les alliances]({{ '/statistiques/alliances/' | relative_url }}) et
+[La grille]({{ '/statistiques/grille/' | relative_url }}). Cette page dit
+comment ils sont construits et ce qu’ils ne peuvent pas établir.
 
 ## Trois règles, tenues partout
 
@@ -109,6 +111,22 @@ saison, la taille du casting et l’époque. Les abandons sont **censurés**, pa
 comptés comme des éliminations : quitter le jeu de soi-même n’est pas en être
 sorti.
 
+### La segmentation binaire
+
+Pour dater une rupture de format. On cherche la coupure de la série des saisons
+qui sépare le mieux deux régimes, sur plusieurs indicateurs standardisés à la
+fois. **La date sort des données**, elle n’est pas choisie — et comme une
+coupure existe toujours, sa qualité est comparée à celle de la meilleure coupure
+obtenue sur des saisons remises dans un ordre au hasard.
+
+### Le modèle nul du réseau des votes
+
+Pour la persistance des alliances, le modèle nul ne consiste pas à supposer que
+personne ne vote pareil. On **rebat les bulletins à l’intérieur de chaque
+conseil**, en gardant intacte la répartition des voix — quatre contre l’un, deux
+contre l’autre. Ce qui disparaît est le seul lien d’un conseil au suivant. Tout
+ce qui survit à ce brassage est donc de la coordination qui traverse le temps.
+
 ### La validation « une saison exclue à chaque tour »
 
 Pour le pronostic. Le modèle apprend sur toutes les saisons sauf une et
@@ -150,6 +168,17 @@ comme d’un vivier de candidatures déjà équilibré. Ces données mesurent le
 **résultat** d’un processus de sélection ; elles n’observent pas le processus.
 Partout où deux explications tiennent également debout, les deux sont nommées et
 aucune n’est choisie.
+
+**Un contrôle peut être trop sévère.** L’effet des alliances est mesuré à
+nombre de conseils traversés constant — or traverser beaucoup de conseils, c’est
+déjà avoir survécu. Le contrôle absorbe donc une part de ce qu’on cherche à
+expliquer, et le coefficient publié est une borne basse. C’est dit sur la page,
+et c’est le sens du chiffre : l’effet réel est au-dessus.
+
+**Un repère reconstruit peut échouer.** La réunification est repérée par la
+dernière immunité collective, et le plateau d’une épreuve par les survivants de
+l’épisode. Ces deux reconstructions ont un taux d’échec, il est mesuré, et les
+cas qui échouent sont écartés en le disant — jamais corrigés à la main.
 
 **Les sources restent incomplètes.** Cinq saisons n’ont aucun bilan d’épreuves,
 neuf seulement détaillent leurs colliers, et une part des conseils n’est pas

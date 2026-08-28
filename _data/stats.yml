@@ -10980,7 +10980,7 @@ modeles:
         observe: 0.3269
         moyenne_nulle: 1.7432
       origine: casting
-      p_ajustee: 0.0008
+      p_ajustee: 0.0005
       retenu: true
     - cle: etendue_ages
       libelle: L'ecart d'age dans un meme casting
@@ -11030,7 +11030,7 @@ modeles:
         observe: 9.915
         moyenne_nulle: 9.6637
       origine: casting
-      p_ajustee: 0.0315
+      p_ajustee: 0.0236
       retenu: true
     - cle: familles_metiers
       libelle: La variete des metiers
@@ -11130,7 +11130,7 @@ modeles:
         observe: 0.0782
         moyenne_nulle: 0.0509
       origine: casting
-      p_ajustee: 0.0974
+      p_ajustee: 0.0812
       retenu: false
     - cle: tribus_femmes
       libelle: La composition des deux tribus
@@ -11181,7 +11181,7 @@ modeles:
         observe: 13.0253
         moyenne_nulle: 18.8726
       origine: casting
-      p_ajustee: 0.1232
+      p_ajustee: 0.11
       retenu: false
     - cle: tribus_ages
       libelle: L'age moyen des deux tribus
@@ -11232,7 +11232,7 @@ modeles:
         observe: 5.7496
         moyenne_nulle: 3.8505
       origine: casting
-      p_ajustee: 0.0088
+      p_ajustee: 0.0055
       retenu: true
     - cle: tribus_ages_mediane
       libelle: L'age des deux tribus, a la mediane
@@ -11282,7 +11282,7 @@ modeles:
         observe: 4.1597
         moyenne_nulle: 3.331
       origine: casting
-      p_ajustee: 0.4216
+      p_ajustee: 0.3952
       retenu: false
     sensibilite:
     - cle: etendue_ages
@@ -11401,7 +11401,7 @@ modeles:
         observe: 10.75
         moyenne_nulle: 10.2215
       origine: pronostic
-      p_ajustee: 0.7208
+      p_ajustee: 0.7008
       retenu: false
     classement:
     - nom: Ambre Daudet
@@ -11907,6 +11907,501 @@ modeles:
       p: 0.9371
     lecture: Effet de la presence d'une mecanique, l'annee tenue constante. Un intervalle qui contient
       zero veut dire que ces vingt-six saisons ne permettent pas de conclure.
+  alliances:
+    saisons: 23
+    conseils: 227
+    bulletins: 1753
+    paires_suivies: 3037
+    apres_ensemble: 60.0
+    apres_separes: 28.4
+    test:
+      cle: persistance_alliances
+      libelle: La persistance des alliances
+      question: Deux aventuriers qui ont vote ensemble votent-ils encore ensemble au conseil suivant,
+        plus souvent que le hasard ne le voudrait ?
+      observe: 31.521
+      attendu: 0.861
+      unite: points de %
+      ecart_types: 17.02
+      p: 0.0005
+      tirages: 2000
+      lecture: 'Ecart entre deux probabilites : voter ensemble apres avoir vote ensemble, et voter ensemble
+        apres avoir vote separement. A zero, chaque conseil repart de zero et il n''y a pas d''alliance.'
+      nulle: &id016
+        bornes:
+        - -6.5678
+        - 33.3347
+        cases:
+        - 0
+        - 7
+        - 65
+        - 257
+        - 555
+        - 601
+        - 355
+        - 129
+        - 27
+        - 3
+        - 1
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        largeur_case: 1.425091
+        observe: 31.521
+        moyenne_nulle: 0.8612
+      origine: alliances
+      p_ajustee: 0.0017
+      retenu: true
+    majorite:
+      effectif: 171
+      variables:
+      - libelle: Toujours du côté de la majorité
+        estimation: 19.03
+        bas: 9.63
+        haut: 28.43
+        p: 0.0001
+      - libelle: Une voix reçue de plus par conseil
+        estimation: -3.71
+        bas: -7.13
+        haut: -0.29
+        p: 0.0337
+      r2: 0.384
+      lecture: Points de saison gagnes ou perdus, le nombre de conseils traverses tenu constant. Ce controle
+        etant trop severe, les deux effets sont des bornes basses.
+    les_plus_souvent_du_bon_cote:
+    - nom: Wendy Gervois
+      saison: s15
+      part: 100.0
+      conseils: 10
+      survie: 100.0
+      voix: 1
+    - nom: Marianne Mondon
+      saison: s02
+      part: 100.0
+      conseils: 9
+      survie: 97.5
+      voix: 4
+    - nom: Nicolas Leoni
+      saison: s02
+      part: 100.0
+      conseils: 9
+      survie: 100.0
+      voix: 3
+    - nom: Philippe Duron
+      saison: s10
+      part: 100.0
+      conseils: 9
+      survie: 100.0
+      voix: 1
+    - nom: Bernard Lenoir
+      saison: s02
+      part: 100.0
+      conseils: 8
+      survie: 97.5
+      voix: 8
+    - nom: Bertrand Bolle
+      saison: s08
+      part: 100.0
+      conseils: 8
+      survie: 97.5
+      voix: 3
+    - nom: Caroline Ledos
+      saison: s28
+      part: 100.0
+      conseils: 8
+      survie: 97.4
+      voix: 11
+    - nom: Christelle Gauzet
+      saison: s08
+      part: 100.0
+      conseils: 8
+      survie: 100.0
+      voix: 0
+    - nom: Daniel Duquesnoy
+      saison: s28
+      part: 100.0
+      conseils: 8
+      survie: 94.9
+      voix: 3
+    - nom: François-David Cardonnel
+      saison: s06
+      part: 100.0
+      conseils: 8
+      survie: 100.0
+      voix: 5
+    - nom: Frédéric Favier
+      saison: s08
+      part: 100.0
+      conseils: 8
+      survie: 100.0
+      voix: 1
+    - nom: Émilie Frahi
+      saison: s06
+      part: 100.0
+      conseils: 8
+      survie: 100.0
+      voix: 5
+  fusion:
+    saisons: 21
+    ecartees:
+    - saison: s17
+      titre: Cambodge
+      episode: 13
+      restants: 4
+    lignes:
+    - saison: s01
+      titre: Les Aventuriers de Koh-Lanta
+      annee: 2001
+      casting: 16
+      episode: 6
+      restants: 10
+    - saison: s02
+      titre: Nicoya
+      annee: 2002
+      casting: 16
+      episode: 7
+      restants: 9
+    - saison: s04
+      titre: Panama
+      annee: 2004
+      casting: 16
+      episode: 6
+      restants: 10
+    - saison: s05
+      titre: Pacifique
+      annee: 2005
+      casting: 17
+      episode: 6
+      restants: 10
+    - saison: s06
+      titre: Vanuatu
+      annee: 2006
+      casting: 16
+      episode: 6
+      restants: 10
+    - saison: s07
+      titre: Palawan
+      annee: 2007
+      casting: 16
+      episode: 6
+      restants: 10
+    - saison: s08
+      titre: Caramoan
+      annee: 2008
+      casting: 17
+      episode: 5
+      restants: 11
+    - saison: s10
+      titre: Viêtnam
+      annee: 2010
+      casting: 18
+      episode: 7
+      restants: 11
+    - saison: s11
+      titre: Raja Ampat
+      annee: 2011
+      casting: 20
+      episode: 6
+      restants: 12
+    - saison: s15
+      titre: Thaïlande
+      annee: 2016
+      casting: 21
+      episode: 6
+      restants: 13
+    - saison: s16
+      titre: L'Île au trésor
+      annee: 2016
+      casting: 20
+      episode: 6
+      restants: 14
+    - saison: s18
+      titre: Fidji
+      annee: 2017
+      casting: 21
+      episode: 7
+      restants: 12
+    - saison: s20
+      titre: La Guerre des chefs
+      annee: 2019
+      casting: 21
+      episode: 6
+      restants: 15
+    - saison: s21
+      titre: Les 4 Terres
+      annee: 2020
+      casting: 24
+      episode: 7
+      restants: 15
+    - saison: s22
+      titre: Les Armes secrètes
+      annee: 2021
+      casting: 21
+      episode: 6
+      restants: 13
+    - saison: s23
+      titre: Le Totem maudit
+      annee: 2022
+      casting: 24
+      episode: 7
+      restants: 15
+    - saison: s24
+      titre: Le Feu sacré
+      annee: 2023
+      casting: 20
+      episode: 7
+      restants: 12
+    - saison: s25
+      titre: Les Chasseurs d'immunité
+      annee: 2024
+      casting: 22
+      episode: 7
+      restants: 13
+    - saison: s26
+      titre: La Tribu maudite
+      annee: 2024
+      casting: 24
+      episode: 6
+      restants: 14
+    - saison: s27
+      titre: La Revanche des 4 Terres
+      annee: 2025
+      casting: 24
+      episode: 4
+      restants: 16
+    - saison: s28
+      titre: Les Reliques du destin
+      annee: 2026
+      casting: 20
+      episode: 7
+      restants: 12
+    episode_median: 6.0
+    episode_variation: 12.3
+    restants_median: 12.0
+    restants_variation: 16.7
+    casting_min: 16
+    casting_max: 24
+    pente_episode:
+      pente: 0.008
+      bas: -0.135
+      haut: 0.152
+      p: 0.9098
+    pente_restants:
+      pente: 0.647
+      bas: 0.552
+      haut: 0.741
+      p: 0.0
+    lecture: 'Pente : de combien l''episode de fusion, puis le nombre de joueurs restants, bougent quand
+      le casting gagne un membre. Une pente nulle sur l''episode et une pente de 1 sur les restants signent
+      une fusion calee sur la GRILLE.'
+  ruptures:
+    saisons: 26
+    serie:
+    - annee: 2001
+      titre: Les Aventuriers de Koh-Lanta
+      effectif: 16
+      conseils: 15
+    - annee: 2002
+      titre: Nicoya
+      effectif: 16
+      conseils: 16
+    - annee: 2003
+      titre: Bocas del Toro
+      effectif: 18
+      conseils: 19
+    - annee: 2004
+      titre: Panama
+      effectif: 16
+      conseils: 17
+    - annee: 2005
+      titre: Pacifique
+      effectif: 17
+      conseils: 17
+    - annee: 2006
+      titre: Vanuatu
+      effectif: 16
+      conseils: 18
+    - annee: 2007
+      titre: Palawan
+      effectif: 16
+      conseils: 16
+    - annee: 2008
+      titre: Caramoan
+      effectif: 17
+      conseils: 18
+    - annee: 2009
+      titre: Palau
+      effectif: 18
+      conseils: 22
+    - annee: 2010
+      titre: Viêtnam
+      effectif: 18
+      conseils: 20
+    - annee: 2011
+      titre: Raja Ampat
+      effectif: 20
+      conseils: 20
+    - annee: 2012
+      titre: Malaisie
+      effectif: 20
+      conseils: 22
+    - annee: 2015
+      titre: Johor
+      effectif: 20
+      conseils: 22
+    - annee: 2016
+      titre: Thaïlande
+      effectif: 21
+      conseils: 20
+    - annee: 2016
+      titre: L'Île au trésor
+      effectif: 20
+      conseils: 20
+    - annee: 2017
+      titre: Cambodge
+      effectif: 21
+      conseils: 22
+    - annee: 2017
+      titre: Fidji
+      effectif: 21
+      conseils: 22
+    - annee: 2019
+      titre: La Guerre des chefs
+      effectif: 21
+      conseils: 22
+    - annee: 2020
+      titre: Les 4 Terres
+      effectif: 24
+      conseils: 25
+    - annee: 2021
+      titre: Les Armes secrètes
+      effectif: 21
+      conseils: 21
+    - annee: 2022
+      titre: Le Totem maudit
+      effectif: 24
+      conseils: 23
+    - annee: 2023
+      titre: Le Feu sacré
+      effectif: 20
+      conseils: 23
+    - annee: 2024
+      titre: Les Chasseurs d'immunité
+      effectif: 22
+      conseils: 23
+    - annee: 2024
+      titre: La Tribu maudite
+      effectif: 24
+      conseils: 22
+    - annee: 2025
+      titre: La Revanche des 4 Terres
+      effectif: 24
+      conseils: 25
+    - annee: 2026
+      titre: Les Reliques du destin
+      effectif: 20
+      conseils: 21
+    annee_rupture: 2012
+    derniere_avant:
+      annee: 2011
+      titre: Raja Ampat
+    premiere_apres:
+      annee: 2012
+      titre: Malaisie
+    avant: 11
+    apres: 15
+    detail:
+    - libelle: Taille du casting
+      avant: 17.09
+      apres: 21.53
+      ecart_types: 1.69
+    - libelle: Nombre de conseils
+      avant: 18.0
+      apres: 22.2
+      ecart_types: 1.57
+    - libelle: Âge moyen du casting
+      avant: 32.69
+      apres: 34.27
+      ecart_types: 1.23
+    - libelle: Objets d'immunité en jeu
+      avant: 0.0
+      apres: 4.13
+      ecart_types: 0.93
+    - libelle: Taux d'abandon
+      avant: 14.57
+      apres: 9.01
+      ecart_types: -0.74
+    - libelle: Durée de la saison
+      avant: 40.27
+      apres: 39.73
+      ecart_types: -0.42
+    test:
+      cle: rupture
+      libelle: La rupture de régime
+      question: Existe-t-il une date qui sépare les saisons en deux régimes mieux qu'une date tirée au
+        sort ?
+      observe: 53.462
+      attendu: 13.087
+      unite: ''
+      ecart_types: 7.18
+      p: 0.0001
+      tirages: 10000
+      lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
+        dans un ordre au hasard. Une coupure existe toujours ; la question est de savoir si celle-ci vaut
+        mieux que n'importe quelle autre.
+      nulle: &id017
+        bornes:
+        - 0.4511
+        - 55.9864
+        cases:
+        - 0
+        - 42
+        - 554
+        - 1331
+        - 1781
+        - 1702
+        - 1257
+        - 1011
+        - 745
+        - 491
+        - 344
+        - 254
+        - 165
+        - 109
+        - 90
+        - 62
+        - 22
+        - 13
+        - 14
+        - 7
+        - 4
+        - 1
+        - 0
+        - 1
+        - 0
+        - 0
+        - 0
+        - 0
+        largeur_case: 1.983406
+        observe: 53.4621
+        moyenne_nulle: 13.0867
+      origine: ruptures
+      p_ajustee: 0.0005
+      retenu: true
   registre:
   - cle: parite
     libelle: L'equilibre hommes-femmes
@@ -11917,7 +12412,7 @@ modeles:
     unite: personnes
     ecart_types: -5.36
     p: 0.0001
-    p_ajustee: 0.0008
+    p_ajustee: 0.0005
     retenu: true
     tirages: 10000
     lecture: 'Un ecart observe plus PETIT que l''attendu est la signature d''un quota : le hasard, lui,
@@ -11932,7 +12427,7 @@ modeles:
     unite: annees
     ecart_types: 2.6
     p: 0.0118
-    p_ajustee: 0.0315
+    p_ajustee: 0.0236
     retenu: true
     tirages: 10000
     lecture: Rebattre les aventuriers entre saisons donne l'ecart-type general. Un ecart observe PLUS
@@ -11962,7 +12457,7 @@ modeles:
     unite: ''
     ecart_types: 1.93
     p: 0.0487
-    p_ajustee: 0.0974
+    p_ajustee: 0.0812
     retenu: false
     tirages: 10000
     lecture: Distance entre le melange de profils d'une saison et le melange general. Un observe PLUS
@@ -11978,7 +12473,7 @@ modeles:
     unite: points de %
     ecart_types: -1.76
     p: 0.077
-    p_ajustee: 0.1232
+    p_ajustee: 0.11
     retenu: false
     tirages: 10000
     lecture: On rebat les bandeaux a l'interieur de chaque saison. Un ecart observe PLUS PETIT que l'attendu
@@ -11994,7 +12489,7 @@ modeles:
     unite: annees
     ecart_types: 3.03
     p: 0.0022
-    p_ajustee: 0.0088
+    p_ajustee: 0.0055
     retenu: true
     tirages: 10000
     lecture: 'Meme methode, sur l''age moyen de chaque bandeau. Un ecart observe PLUS GRAND que l''attendu
@@ -12009,7 +12504,7 @@ modeles:
     unite: annees
     ecart_types: 1.02
     p: 0.3162
-    p_ajustee: 0.4216
+    p_ajustee: 0.3952
     retenu: false
     tirages: 10000
     lecture: La mediane ignore les valeurs extremes. Si elle ne s'ecarte pas, c'est que l'ecart moyen
@@ -12025,11 +12520,44 @@ modeles:
     unite: rang moyen
     ecart_types: 0.49
     p: 0.6307
-    p_ajustee: 0.7208
+    p_ajustee: 0.7008
     retenu: false
     tirages: 10000
     lecture: Le modele classe les candidats d'une saison ; on releve la place qu'il donne a celui qui
       a gagne. Plus BAS que l'attendu veut dire qu'une part du resultat se joue au recrutement.
     nulle: *id015
-  nb_tests: 8
-  nb_retenus: 3
+  - cle: persistance_alliances
+    libelle: La persistance des alliances
+    question: Deux aventuriers qui ont vote ensemble votent-ils encore ensemble au conseil suivant, plus
+      souvent que le hasard ne le voudrait ?
+    origine: alliances
+    observe: 31.521
+    attendu: 0.861
+    unite: points de %
+    ecart_types: 17.02
+    p: 0.0005
+    p_ajustee: 0.0017
+    retenu: true
+    tirages: 2000
+    lecture: 'Ecart entre deux probabilites : voter ensemble apres avoir vote ensemble, et voter ensemble
+      apres avoir vote separement. A zero, chaque conseil repart de zero et il n''y a pas d''alliance.'
+    nulle: *id016
+  - cle: rupture
+    libelle: La rupture de régime
+    question: Existe-t-il une date qui sépare les saisons en deux régimes mieux qu'une date tirée au sort
+      ?
+    origine: ruptures
+    observe: 53.462
+    attendu: 13.087
+    unite: ''
+    ecart_types: 7.18
+    p: 0.0001
+    p_ajustee: 0.0005
+    retenu: true
+    tirages: 10000
+    lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
+      dans un ordre au hasard. Une coupure existe toujours ; la question est de savoir si celle-ci vaut
+      mieux que n'importe quelle autre.
+    nulle: *id017
+  nb_tests: 10
+  nb_retenus: 5

@@ -68,9 +68,12 @@ plus tôt que les hommes en moyenne — et remportent pourtant
   nom</b>.</p>
   <p>Ils gagnent dans <b>{{ fv.part_fantomes }} %</b> des cas, contre
   {{ fv.part_endurants }} % pour ceux qui ont tenu aussi longtemps qu’eux :
-  <b>deux fois et demie plus</b>. On ne gagne pas Koh-Lanta en survivant aux
-  votes, on gagne en n’en recevant aucun.</p>
-  <p><a href="{{ '/statistiques/jeu-social/' | relative_url }}">Le jeu social</a></p>
+  <b>deux fois et demie plus</b>.</p>
+  <p>Mais ce n’est pas le premier prédicteur. Mis en concurrence avec lui,
+  <b>être du côté de la majorité au conseil pèse cinq fois plus</b>. On ne dure
+  pas en se faisant oublier : on dure en étant du côté qui compte les voix.</p>
+  <p><a href="{{ '/statistiques/alliances/' | relative_url }}">Les alliances</a>
+  · <a href="{{ '/statistiques/jeu-social/' | relative_url }}">Le jeu social</a></p>
 </div>
 
 ## Et un piège que les chiffres tendent
@@ -111,11 +114,11 @@ plus tôt que les hommes en moyenne — et remportent pourtant
 <ul class="cartes">
   <li class="carte">
     <a href="{{ '/statistiques/' | relative_url }}">
-      <span class="carte-rang">QUINZE ENTRÉES</span>
+      <span class="carte-rang">DIX-SEPT ENTRÉES</span>
       <span class="carte-titre">Les statistiques</span>
       <span class="carte-resume">Les vainqueurs, les tribus, les métiers, les
         prénoms, la longévité, les sorties, les épreuves, les colliers, le jeu
-        social, les conseils, les revenants — puis quatre pages où les modèles
+        social, les conseils, les revenants — puis six pages où les modèles
         prennent le relais des comptages.</span>
     </a>
   </li>

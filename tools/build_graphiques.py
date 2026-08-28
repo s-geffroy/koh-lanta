@@ -803,6 +803,67 @@ def figures_des_modeles(stats):
             note=f'{cox["effectif"]} participations · {cox["eliminations"]} '
                  f'eliminations · {cox["censures"]} sorties censurees'))
 
+    # --- E. les alliances --------------------------------------------------
+    al = m.get("alliances") or {}
+    if al.get("test"):
+        ecrire("alliances-persistance.svg",
+               distribution_nulle(al["test"], couleur=SERIES[2]))
+    maj = al.get("majorite") or {}
+    if maj.get("variables"):
+        ecrire("alliances-majorite.svg", foret(
+            [{"libelle": v["libelle"], "estimation": v["estimation"],
+              "bas": v["bas"], "haut": v["haut"],
+              "detail": f'{v["libelle"]} : {v["estimation"]} points de saison '
+                        f'(intervalle {v["bas"]} à {v["haut"]})'}
+             for v in maj["variables"]],
+            titre="Ce qui fait vraiment durer, une fois en jeu",
+            description="Points de saison gagnes ou perdus. Le trait vertical "
+                        "marque « aucun effet ».",
+            reference=0.0, unite=" pts", largeur=760, marge_gauche=268,
+            note=f'{maj["effectif"]} participations · variance expliquée '
+                 f'{maj["r2"]}'))
+
+    # --- F. la grille ------------------------------------------------------
+    fu = m.get("fusion") or {}
+    if fu.get("lignes"):
+        ecrire("fusion-grille.svg", plan(
+            [{"x": l["casting"], "y": l["episode"], "couleur": SERIES[0],
+              "detail": f'{l["titre"]} ({l["annee"]}) : casting de {l["casting"]}, '
+                        f'fusion à l\u2019épisode {l["episode"]}'}
+             for l in fu["lignes"]]
+            + [{"x": l["casting"], "y": l["restants"], "couleur": SERIES[3],
+                "detail": f'{l["titre"]} ({l["annee"]}) : {l["restants"]} joueurs '
+                          f'encore en jeu à la fusion'}
+               for l in fu["lignes"]],
+            titre="La fusion suit la grille, pas le nombre de joueurs",
+            description="Chaque saison figure deux fois : par l'episode ou la "
+                        "fusion tombe, et par le nombre de joueurs qu'elle laisse. "
+                        "Le premier ne bouge pas quand le casting grossit ; le "
+                        "second suit.",
+            x_titre="taille du casting", y_titre="épisodes / joueurs",
+            legende=[("épisode de la fusion", SERIES[0]),
+                     ("joueurs restants", SERIES[3])],
+            largeur=760, hauteur=380))
+
+    # --- G. les ruptures ---------------------------------------------------
+    ru = m.get("ruptures") or {}
+    if ru.get("test"):
+        ecrire("ruptures-nulle.svg", distribution_nulle(ru["test"], couleur=SERIES[6]))
+    if ru.get("serie"):
+        annees = [str(x["annee"]) for x in ru["serie"]]
+        ecrire("ruptures-serie.svg", courbes(
+            [{"nom": "taille du casting",
+              "valeurs": [x["effectif"] for x in ru["serie"]],
+              "couleur": SERIES[0]},
+             {"nom": "nombre de conseils",
+              "valeurs": [x["conseils"] for x in ru["serie"]],
+              "couleur": SERIES[3]}],
+            annees,
+            titre=f'Les deux séries qui basculent en {ru["annee_rupture"]}',
+            description="Taille du casting et nombre de conseils, saison par "
+                        "saison. La rupture detectee separe les deux regimes.",
+            largeur=880, hauteur=320))
+
     hm = m.get("hasard_mecanique") or {}
     if hm.get("paliers"):
         ecrire("risque-mecanique.svg", barres_groupees(

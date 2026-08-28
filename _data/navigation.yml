@@ -24,7 +24,7 @@
     - titre: Vue d'ensemble
       url: /statistiques/
       hub: true
-      resume: Les quinze entrées, et les chiffres qui les tiennent.
+      resume: Les dix-sept entrées, et les chiffres qui les tiennent.
     - titre: Le profil du vainqueur
       url: /statistiques/vainqueurs/
       resume: "Âge, sexe, métier, couleur : ce que les vainqueurs ont en commun."
@@ -73,6 +73,12 @@
     - titre: Le jeu tenu serré
       url: /statistiques/equilibre/
       resume: "Le risque qui monte, la tribu qui se rattrape : deux illusions."
+    - titre: Les alliances
+      url: /statistiques/alliances/
+      resume: Elles existent, elles durent, et elles pèsent plus que tout.
+    - titre: La grille
+      url: /statistiques/grille/
+      resume: "Le jour de la fusion, et l'année où le jeu a changé."
 
 - section: Les données
   entrees:

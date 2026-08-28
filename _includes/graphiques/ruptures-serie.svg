@@ -1,0 +1,103 @@
+<figure class="figure">
+<svg class="graphique" viewBox="0 0 880 320" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Les deux séries qui basculent en 2012">
+  <title>Les deux séries qui basculent en 2012</title>
+  <desc>Taille du casting et nombre de conseils, saison par saison. La rupture detectee separe les deux regimes.</desc>
+  <line x1="46" y1="264.0" x2="864" y2="264.0" stroke="var(--grille)" stroke-width="1"/>
+  <text x="38.0" y="264.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">0</text>
+  <line x1="46" y1="211.0" x2="864" y2="211.0" stroke="var(--grille)" stroke-width="1"/>
+  <text x="38.0" y="211.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">6</text>
+  <line x1="46" y1="158.0" x2="864" y2="158.0" stroke="var(--grille)" stroke-width="1"/>
+  <text x="38.0" y="158.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">12</text>
+  <line x1="46" y1="105.0" x2="864" y2="105.0" stroke="var(--grille)" stroke-width="1"/>
+  <text x="38.0" y="105.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">19</text>
+  <line x1="46" y1="52.0" x2="864" y2="52.0" stroke="var(--grille)" stroke-width="1"/>
+  <text x="38.0" y="52.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">25</text>
+  <polyline points="46.0,128.3 78.7,128.3 111.4,111.4 144.2,128.3 176.9,119.8 209.6,128.3 242.3,128.3 275.0,119.8 307.8,111.4 340.5,111.4 373.2,94.4 405.9,94.4 438.6,94.4 471.4,85.9 504.1,94.4 536.8,85.9 569.5,85.9 602.2,85.9 635.0,60.5 667.7,85.9 700.4,60.5 733.1,94.4 765.8,77.4 798.6,60.5 831.3,60.5 864.0,94.4" fill="none" stroke="var(--serie-1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <g class="marque"><title>taille du casting — 2001 : 16</title><circle cx="46.0" cy="128.3" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2002 : 16</title><circle cx="78.7" cy="128.3" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2003 : 18</title><circle cx="111.4" cy="111.4" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2004 : 16</title><circle cx="144.2" cy="128.3" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2005 : 17</title><circle cx="176.9" cy="119.8" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2006 : 16</title><circle cx="209.6" cy="128.3" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2007 : 16</title><circle cx="242.3" cy="128.3" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2008 : 17</title><circle cx="275.0" cy="119.8" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2009 : 18</title><circle cx="307.8" cy="111.4" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2010 : 18</title><circle cx="340.5" cy="111.4" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2011 : 20</title><circle cx="373.2" cy="94.4" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2012 : 20</title><circle cx="405.9" cy="94.4" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2015 : 20</title><circle cx="438.6" cy="94.4" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2016 : 21</title><circle cx="471.4" cy="85.9" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2016 : 20</title><circle cx="504.1" cy="94.4" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2017 : 21</title><circle cx="536.8" cy="85.9" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2017 : 21</title><circle cx="569.5" cy="85.9" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2019 : 21</title><circle cx="602.2" cy="85.9" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2020 : 24</title><circle cx="635.0" cy="60.5" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2021 : 21</title><circle cx="667.7" cy="85.9" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2022 : 24</title><circle cx="700.4" cy="60.5" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2023 : 20</title><circle cx="733.1" cy="94.4" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2024 : 22</title><circle cx="765.8" cy="77.4" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2024 : 24</title><circle cx="798.6" cy="60.5" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2025 : 24</title><circle cx="831.3" cy="60.5" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>taille du casting — 2026 : 20</title><circle cx="864.0" cy="94.4" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="872.0" y="94.4" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">taille du casting</text>
+  <polyline points="46.0,136.8 78.7,128.3 111.4,102.9 144.2,119.8 176.9,119.8 209.6,111.4 242.3,128.3 275.0,111.4 307.8,77.4 340.5,94.4 373.2,94.4 405.9,77.4 438.6,77.4 471.4,94.4 504.1,94.4 536.8,77.4 569.5,77.4 602.2,77.4 635.0,52.0 667.7,85.9 700.4,69.0 733.1,69.0 765.8,69.0 798.6,77.4 831.3,52.0 864.0,85.9" fill="none" stroke="var(--serie-4)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <g class="marque"><title>nombre de conseils — 2001 : 15</title><circle cx="46.0" cy="136.8" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2002 : 16</title><circle cx="78.7" cy="128.3" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2003 : 19</title><circle cx="111.4" cy="102.9" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2004 : 17</title><circle cx="144.2" cy="119.8" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2005 : 17</title><circle cx="176.9" cy="119.8" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2006 : 18</title><circle cx="209.6" cy="111.4" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2007 : 16</title><circle cx="242.3" cy="128.3" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2008 : 18</title><circle cx="275.0" cy="111.4" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2009 : 22</title><circle cx="307.8" cy="77.4" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2010 : 20</title><circle cx="340.5" cy="94.4" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2011 : 20</title><circle cx="373.2" cy="94.4" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2012 : 22</title><circle cx="405.9" cy="77.4" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2015 : 22</title><circle cx="438.6" cy="77.4" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2016 : 20</title><circle cx="471.4" cy="94.4" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2016 : 20</title><circle cx="504.1" cy="94.4" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2017 : 22</title><circle cx="536.8" cy="77.4" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2017 : 22</title><circle cx="569.5" cy="77.4" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2019 : 22</title><circle cx="602.2" cy="77.4" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2020 : 25</title><circle cx="635.0" cy="52.0" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2021 : 21</title><circle cx="667.7" cy="85.9" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2022 : 23</title><circle cx="700.4" cy="69.0" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2023 : 23</title><circle cx="733.1" cy="69.0" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2024 : 23</title><circle cx="765.8" cy="69.0" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2024 : 22</title><circle cx="798.6" cy="77.4" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2025 : 25</title><circle cx="831.3" cy="52.0" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>nombre de conseils — 2026 : 21</title><circle cx="864.0" cy="85.9" r="4.5" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="872.0" y="85.9" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">nombre de conseils</text>
+  <text x="46.0" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2001</text>
+  <text x="78.7" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2002</text>
+  <text x="111.4" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2003</text>
+  <text x="144.2" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2004</text>
+  <text x="176.9" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2005</text>
+  <text x="209.6" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2006</text>
+  <text x="242.3" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2007</text>
+  <text x="275.0" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2008</text>
+  <text x="307.8" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2009</text>
+  <text x="340.5" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2010</text>
+  <text x="373.2" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2011</text>
+  <text x="405.9" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2012</text>
+  <text x="438.6" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2015</text>
+  <text x="471.4" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2016</text>
+  <text x="504.1" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2016</text>
+  <text x="536.8" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2017</text>
+  <text x="569.5" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2017</text>
+  <text x="602.2" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2019</text>
+  <text x="635.0" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2020</text>
+  <text x="667.7" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2021</text>
+  <text x="700.4" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2022</text>
+  <text x="733.1" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2023</text>
+  <text x="765.8" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2024</text>
+  <text x="798.6" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2024</text>
+  <text x="831.3" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2025</text>
+  <text x="864.0" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2026</text>
+  <rect x="46" y="14" width="11" height="11" rx="3" fill="var(--serie-1)"/>
+  <text x="63.0" y="20.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">taille du casting</text>
+  <rect x="192.4" y="14" width="11" height="11" rx="3" fill="var(--serie-4)"/>
+  <text x="209.4" y="20.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">nombre de conseils</text>
+  <line x1="46" y1="264" x2="864" y2="264" stroke="var(--axe)" stroke-width="1"/>
+</svg>
+</figure>

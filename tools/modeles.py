@@ -1198,6 +1198,383 @@ def effet_des_mecaniques(par_saison, parts, conseils, indicateurs_saison):
                        "ces vingt-six saisons ne permettent pas de conclure."}
 
 
+# --- E. Les alliances : ce que le reseau des bulletins contient -------------
+
+SEUIL_CONSEILS_SAISON = 6   # nombre de conseils complets pour etudier une saison
+
+
+def _scrutins(par_saison, conseils):
+    """Les conseils au depouillement complet, ranges par saison et ordonnes.
+
+    Un bulletin annule par un collier reste un bulletin : il dit avec qui son
+    auteur votait. On le garde -- c'est l'intention qui fait l'alliance, pas
+    son effet.
+    """
+    from indicateurs import eliminations
+
+    par_s = {}
+    for c in eliminations(conseils):
+        s = par_saison.get(c["saison"]) or {}
+        if s.get("annulee") or s.get("en_cours"):
+            continue
+        if not c.get("complet") or not c.get("votes"):
+            continue
+        bulletins = [(b["votant"], b["cible"]) for b in c["votes"]
+                     if b.get("votant_rattache") and b.get("cible_rattachee")]
+        if len(bulletins) < 4:
+            continue
+        par_s.setdefault(c["saison"], []).append((c["numero"], bulletins))
+    for s in sorted(par_s):
+        par_s[s].sort(key=lambda x: x[0])
+    return {s: l for s, l in sorted(par_s.items()) if len(l) >= SEUIL_CONSEILS_SAISON}
+
+
+def _persistance(scrutins_saison):
+    """« Ceux qui ont vote ensemble votent-ils encore ensemble ? »
+
+    On regarde chaque paire presente a deux conseils consecutifs, et on compare
+    deux probabilites : voter ensemble sachant qu'on votait ensemble la fois
+    d'avant, et voter ensemble sachant qu'on ne votait pas ensemble. L'ecart
+    entre les deux EST la persistance des alliances.
+    """
+    apres_ensemble = apres_ensemble_n = 0
+    apres_contre = apres_contre_n = 0
+    for _, scrutins in sorted(scrutins_saison.items()):
+        for i in range(len(scrutins) - 1):
+            a = dict(scrutins[i][1])
+            b = dict(scrutins[i + 1][1])
+            communs = sorted(set(a) & set(b))
+            for x in range(len(communs)):
+                for y in range(x + 1, len(communs)):
+                    u, v = communs[x], communs[y]
+                    avant = a[u] == a[v]
+                    apres = b[u] == b[v]
+                    if avant:
+                        apres_ensemble_n += 1
+                        apres_ensemble += 1 if apres else 0
+                    else:
+                        apres_contre_n += 1
+                        apres_contre += 1 if apres else 0
+    if not apres_ensemble_n or not apres_contre_n:
+        return None
+    return (apres_ensemble / apres_ensemble_n, apres_contre / apres_contre_n,
+            apres_ensemble_n, apres_contre_n)
+
+
+def _melanger(scrutins_saison, g):
+    """Le modele nul : a chaque conseil, on redistribue les bulletins.
+
+    Chaque conseil garde EXACTEMENT sa repartition de voix -- quatre contre
+    l'un, deux contre l'autre -- mais on tire au sort qui a ecrit quoi. Ce qui
+    disparait est le seul lien entre conseils : l'alliance.
+    """
+    melange = {}
+    for s, scrutins in sorted(scrutins_saison.items()):
+        neufs = []
+        for numero, bulletins in scrutins:
+            votants = [v for v, _ in bulletins]
+            cibles = [c for _, c in bulletins]
+            neufs.append((numero, list(zip(votants, g.permutation(np.array(
+                cibles, dtype=object)).tolist()))))
+        melange[s] = neufs
+    return melange
+
+
+def alliances(par_saison, parts, conseils):
+    """Le reseau des bulletins : y a-t-il vraiment des camps ?
+
+    Le programme raconte des alliances a chaque episode. Rien n'oblige a ce
+    qu'elles existent au-dela du recit : un conseil ou six personnes ecrivent
+    le meme nom peut n'etre qu'un ralliement du moment. La difference se
+    mesure -- une alliance, c'est ce qui SURVIT d'un conseil au suivant.
+    """
+    scrutins = _scrutins(par_saison, conseils)
+    if len(scrutins) < 8:
+        return {}
+
+    observe = _persistance(scrutins)
+    if observe is None:
+        return {}
+    p_ensemble, p_contre, n_ensemble, n_contre = observe
+
+    g = rng("alliances")
+    nulle = []
+    for _ in range(2000):
+        r = _persistance(_melanger(scrutins, g))
+        if r:
+            nulle.append(r[0] - r[1])
+    nulle = np.array(nulle)
+
+    test = _test(
+        "persistance_alliances", "La persistance des alliances",
+        "Deux aventuriers qui ont vote ensemble votent-ils encore ensemble au "
+        "conseil suivant, plus souvent que le hasard ne le voudrait ?",
+        100.0 * (p_ensemble - p_contre), 100.0 * nulle, unite="points de %",
+        lecture="Ecart entre deux probabilites : voter ensemble apres avoir vote "
+                "ensemble, et voter ensemble apres avoir vote separement. A zero, "
+                "chaque conseil repart de zero et il n'y a pas d'alliance.")
+
+    # L'appartenance au bloc majoritaire, conseil par conseil : la variable
+    # latente que le programme montre sans jamais la nommer.
+    noms = {}
+    for p in parts:
+        noms[p["id"]] = p.get("nom_complet") or p.get("nom")
+    cote = {}
+    for s, liste in sorted(scrutins.items()):
+        for numero, bulletins in liste:
+            compte = {}
+            for _, c in bulletins:
+                compte[c] = compte.get(c, 0) + 1
+            majorite = max(compte.values())
+            gagnantes = sorted(c for c, n in compte.items() if n == majorite)
+            for v, c in bulletins:
+                d = cote.setdefault((s, v), [0, 0])
+                d[1] += 1
+                if c in gagnantes:
+                    d[0] += 1
+
+    survie = {(p["saison"], p["id"]): p.get("_survie") for p in parts}
+    voix = {(p["saison"], p["id"]): p.get("votes_recus") for p in parts}
+    lignes = [(v / n, survie.get(k), noms.get(k[1], k[1]), k[0], n,
+               voix.get(k))
+              for k, (v, n) in sorted(cote.items()) if n >= 5]
+    lignes = [x for x in lignes if x[1] is not None and x[5] is not None]
+
+    coefficient = {}
+    if len(lignes) >= 60:
+        import statsmodels.api as sm
+        part = np.array([x[0] for x in lignes])
+        y = np.array([x[1] for x in lignes], dtype=float)
+        n = np.array([x[4] for x in lignes], dtype=float)
+        menace = np.array([x[5] for x in lignes], dtype=float) / n
+        # Trois variables en concurrence : etre du bon cote, ne pas etre vise,
+        # et le nombre de conseils traverses.
+        #
+        # Ce dernier controle est TROP severe et on le sait : traverser
+        # beaucoup de conseils, c'est deja avoir survecu. Il absorbe donc une
+        # part de ce qu'on cherche a expliquer, et les deux coefficients qui
+        # suivent sont des BORNES BASSES. On le garde quand meme : sans lui,
+        # on publierait une tautologie deguisee.
+        X = sm.add_constant(np.column_stack([part, menace, n]))
+        r = sm.OLS(y, X).fit(cov_type="HC1")
+        ic = r.conf_int()
+        coefficient = {
+            "effectif": len(lignes),
+            "variables": [
+                {"libelle": "Toujours du côté de la majorité",
+                 "estimation": _arr(float(r.params[1]), 2),
+                 "bas": _arr(float(ic[1][0]), 2), "haut": _arr(float(ic[1][1]), 2),
+                 "p": _arr(float(r.pvalues[1]), 4)},
+                {"libelle": "Une voix reçue de plus par conseil",
+                 "estimation": _arr(float(r.params[2]), 2),
+                 "bas": _arr(float(ic[2][0]), 2), "haut": _arr(float(ic[2][1]), 2),
+                 "p": _arr(float(r.pvalues[2]), 4)},
+            ],
+            "r2": _arr(float(r.rsquared), 3),
+            "lecture": "Points de saison gagnes ou perdus, le nombre de conseils "
+                       "traverses tenu constant. Ce controle etant trop severe, "
+                       "les deux effets sont des bornes basses.",
+        }
+
+    classement = sorted(lignes, key=lambda x: (-x[0], -x[4], x[2]))
+    return {
+        "saisons": len(scrutins),
+        "conseils": sum(len(l) for l in scrutins.values()),
+        "bulletins": sum(len(b) for l in scrutins.values() for _, b in l),
+        "paires_suivies": n_ensemble + n_contre,
+        "apres_ensemble": _arr(100.0 * p_ensemble),
+        "apres_separes": _arr(100.0 * p_contre),
+        "test": test,
+        "majorite": coefficient,
+        "les_plus_souvent_du_bon_cote": [
+            {"nom": x[2], "saison": x[3], "part": _arr(100.0 * x[0]),
+             "conseils": x[4], "survie": _arr(x[1]), "voix": x[5]}
+            for x in classement[:12]],
+    }
+
+
+# --- F. La grille : ce que le calendrier decide ----------------------------
+
+def fusion(par_saison, parts, conseils, epreuves):
+    """La reunification tombe-t-elle a un nombre de joueurs, ou a une date ?
+
+    C'est le choix de production le plus lourd d'une saison, et il n'est jamais
+    annonce. Deux logiques s'opposent : reunir quand il reste assez peu de
+    monde pour que le jeu individuel commence (une regle de JEU), ou reunir a
+    un episode fixe pour que la seconde moitie de saison tienne dans la grille
+    (une regle de PROGRAMME). Les deux se distinguent, parce que la taille des
+    castings a change : de seize aux premieres saisons a vingt-quatre aux
+    recentes.
+
+    La reunification se repere sans avoir a la deviner : apres elle, les
+    immunites sont individuelles. Le dernier episode portant une immunite
+    COLLECTIVE est donc le dernier episode d'avant la fusion.
+    """
+    from indicateurs import _episode_de_sortie
+
+    sortie, _ = _episode_de_sortie(conseils, parts, epreuves)
+    par_s = {}
+    for p in parts:
+        par_s.setdefault(p["saison"], []).append(p)
+    collectives = {}
+    for e in epreuves:
+        if e.get("type") == "immunite" and e.get("forme") == "collective":
+            try:
+                episode = int(e["episode"])
+            except (TypeError, ValueError):
+                continue
+            collectives[e["saison"]] = max(collectives.get(e["saison"], 0), episode)
+
+    lignes, ecartees = [], []
+    for s_id in sorted(collectives):
+        s = par_saison.get(s_id) or {}
+        if s.get("annulee") or s.get("en_cours") or s.get("speciale"):
+            continue
+        membres = par_s.get(s_id) or []
+        connus = sum(1 for p in membres if (s_id, p["id"]) in sortie)
+        if not membres or connus / len(membres) < COUVERTURE_MINIMALE:
+            continue
+        episode = collectives[s_id]
+        restants = sum(1 for p in membres
+                       if sortie.get((s_id, p["id"]), -1) > episode)
+        ligne = {"saison": s_id, "titre": s.get("titre"), "annee": s.get("annee"),
+                 "casting": len(membres), "episode": episode, "restants": restants}
+        # Un repere qui laisse moins de six joueurs ou plus des trois quarts du
+        # casting n'est pas une reunification : c'est une epreuve collective
+        # d'apres-fusion, ou un bilan d'episode incomplet. On l'ecarte, et on
+        # le dit.
+        if restants < 6 or restants > 0.75 * len(membres):
+            ecartees.append(ligne)
+            continue
+        lignes.append(ligne)
+
+    if len(lignes) < 12:
+        return {}
+
+    episodes = np.array([l["episode"] for l in lignes], dtype=float)
+    restants = np.array([l["restants"] for l in lignes], dtype=float)
+    castings = np.array([l["casting"] for l in lignes], dtype=float)
+
+    def variation(x):
+        return float(np.std(x, ddof=1) / np.mean(x))
+
+    import statsmodels.api as sm
+    pentes = {}
+    for nom, y in (("episode", episodes), ("restants", restants)):
+        r = sm.OLS(y, sm.add_constant(castings)).fit(cov_type="HC1")
+        ic = r.conf_int()
+        pentes[nom] = {"pente": _arr(float(r.params[1]), 3),
+                       "bas": _arr(float(ic[1][0]), 3),
+                       "haut": _arr(float(ic[1][1]), 3),
+                       "p": _arr(float(r.pvalues[1]), 4)}
+
+    return {
+        "saisons": len(lignes),
+        "ecartees": [{"saison": l["saison"], "titre": l["titre"],
+                      "episode": l["episode"], "restants": l["restants"]}
+                     for l in ecartees],
+        "lignes": lignes,
+        "episode_median": _arr(float(np.median(episodes))),
+        "episode_variation": _arr(100.0 * variation(episodes)),
+        "restants_median": _arr(float(np.median(restants))),
+        "restants_variation": _arr(100.0 * variation(restants)),
+        "casting_min": int(castings.min()), "casting_max": int(castings.max()),
+        "pente_episode": pentes["episode"],
+        "pente_restants": pentes["restants"],
+        "lecture": "Pente : de combien l'episode de fusion, puis le nombre de "
+                   "joueurs restants, bougent quand le casting gagne un membre. "
+                   "Une pente nulle sur l'episode et une pente de 1 sur les "
+                   "restants signent une fusion calee sur la GRILLE.",
+    }
+
+
+def ruptures(par_saison, indicateurs_saison):
+    """Le jeu a-t-il change, et quand ? Personne ne l'a annonce.
+
+    On cherche une date de rupture par segmentation binaire : la coupure qui
+    separe le mieux la serie des saisons en deux regimes, sur plusieurs
+    indicateurs a la fois. La date sort des donnees, elle n'est pas choisie.
+
+    La question de fond est de savoir si cette coupure vaut mieux qu'une
+    coupure au hasard -- d'ou le test de permutation sur l'ORDRE des saisons.
+    """
+    champs = [("effectif", "Taille du casting"),
+              ("duree_jours", "Durée de la saison"),
+              ("age_moyen", "Âge moyen du casting"),
+              ("taux_abandon", "Taux d'abandon"),
+              ("conseils", "Nombre de conseils"),
+              ("colliers", "Objets d'immunité en jeu")]
+
+    lignes = []
+    for s in indicateurs_saison:
+        meta = par_saison.get(s.get("id")) or {}
+        if meta.get("annulee") or meta.get("en_cours") or s.get("speciale"):
+            continue
+        if any(s.get(c) is None for c, _ in champs):
+            continue
+        lignes.append((s["annee"], s.get("titre"), [float(s[c]) for c, _ in champs]))
+    if len(lignes) < 16:
+        return {}
+    lignes.sort(key=lambda x: x[0])
+
+    Y = np.array([l[2] for l in lignes])
+    Y = (Y - Y.mean(axis=0)) / np.where(Y.std(axis=0) > 0, Y.std(axis=0), 1)
+
+    def cout(matrice):
+        """Somme des ecarts au centre de chaque segment."""
+        return float(np.sum((matrice - matrice.mean(axis=0)) ** 2))
+
+    def meilleure_coupure(matrice, marge=4):
+        total = cout(matrice)
+        meilleur, gain = None, 0.0
+        for k in range(marge, len(matrice) - marge + 1):
+            g = total - cout(matrice[:k]) - cout(matrice[k:])
+            if g > gain:
+                meilleur, gain = k, g
+        return meilleur, gain
+
+    k, gain = meilleure_coupure(Y)
+    if k is None:
+        return {}
+
+    g = rng("ruptures")
+    nulle = np.array([meilleure_coupure(g.permutation(Y))[1]
+                      for _ in range(N_PERMUTATIONS)])
+
+    avant, apres = Y[:k], Y[k:]
+    brut = np.array([l[2] for l in lignes])
+    detail = []
+    for i, (_, libelle) in enumerate(champs):
+        detail.append({
+            "libelle": libelle,
+            "avant": _arr(float(brut[:k, i].mean()), 2),
+            "apres": _arr(float(brut[k:, i].mean()), 2),
+            "ecart_types": _arr(float(apres[:, i].mean() - avant[:, i].mean()), 2),
+        })
+    detail.sort(key=lambda d: -abs(d["ecart_types"]))
+
+    return {
+        "saisons": len(lignes),
+        "serie": [{"annee": int(l[0]), "titre": l[1],
+                   "effectif": int(l[2][0]), "conseils": int(l[2][4])}
+                  for l in lignes],
+        "annee_rupture": int(lignes[k][0]),
+        "derniere_avant": {"annee": int(lignes[k - 1][0]), "titre": lignes[k - 1][1]},
+        "premiere_apres": {"annee": int(lignes[k][0]), "titre": lignes[k][1]},
+        "avant": k, "apres": len(lignes) - k,
+        "detail": detail,
+        "test": _test(
+            "rupture", "La rupture de régime",
+            "Existe-t-il une date qui sépare les saisons en deux régimes mieux "
+            "qu'une date tirée au sort ?",
+            gain, nulle, unite="",
+            lecture="Gain de la meilleure coupure, comparé au gain de la meilleure "
+                    "coupure sur des saisons remises dans un ordre au hasard. Une "
+                    "coupure existe toujours ; la question est de savoir si "
+                    "celle-ci vaut mieux que n'importe quelle autre."),
+    }
+
+
 # --- assemblage ------------------------------------------------------------
 
 def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
@@ -1215,6 +1592,9 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
     eq = equilibre(par_saison, parts, conseils, epreuves)
     hm = hasard_mecanique(par_saison, parts, conseils, epreuves)
     mec = effet_des_mecaniques(par_saison, parts, conseils, indicateurs_saison)
+    al = alliances(par_saison, parts, conseils)
+    fu = fusion(par_saison, parts, conseils, epreuves)
+    ru = ruptures(par_saison, indicateurs_saison)
 
     # Les cles techniques du modele de force n'ont rien a faire dans le fichier
     # publie : elles servent aux regressions de suivi, pas au site.
@@ -1224,6 +1604,11 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
     registre = []
     for bloc, origine in ((casting, "casting"), (pron, "pronostic")):
         for t in bloc.get("tests", []):
+            t["origine"] = origine
+            registre.append(t)
+    for bloc, origine in ((al, "alliances"), (ru, "ruptures")):
+        t = bloc.get("test")
+        if t:
             t["origine"] = origine
             registre.append(t)
     ajustees = benjamini_hochberg([t["p"] for t in registre])
@@ -1242,6 +1627,9 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
         "equilibre": eq,
         "hasard_mecanique": hm,
         "mecaniques": mec,
+        "alliances": al,
+        "fusion": fu,
+        "ruptures": ru,
         "registre": [{k: t[k] for k in
                       ("cle", "libelle", "question", "origine", "observe",
                        "attendu", "unite", "ecart_types", "p", "p_ajustee",
