@@ -1037,6 +1037,43 @@ def figures_des_modeles(stats):
                         "plusieurs se valent.",
             unite="", largeur=880, hauteur=300))
 
+    # --- G ter. avant et apres la reunification ------------------------------
+    aa = m.get("avant_apres") or {}
+    if aa.get("avant") and aa.get("apres"):
+        av, ap = aa["avant"], aa["apres"]
+        rangs = [aa.get("rang_force_avant"), aa.get("rang_force_apres")]
+        ecrire("fusion-avant-apres.svg", barres_groupees(
+            [{"libelle": "Présents au conseil",
+              "valeurs": [av["presents_moyen"], ap["presents_moyen"]],
+              "details": [f'{av["presents_moyen"]} en moyenne avant la fusion',
+                          f'{ap["presents_moyen"]} après']},
+             {"libelle": "Conseils serrés (%)",
+              "valeurs": [av["part_serres"], ap["part_serres"]],
+              "details": [f'{av["part_serres"]} % avant', f'{ap["part_serres"]} % après']},
+             {"libelle": "Femmes parmi les éliminés (%)",
+              "valeurs": [av["part_femmes"], ap["part_femmes"]],
+              "details": [f'{av["part_femmes"]} % avant', f'{ap["part_femmes"]} % après']},
+             {"libelle": "Âge moyen des éliminés",
+              "valeurs": [av["age_moyen"], ap["age_moyen"]],
+              "details": [f'{av["age_moyen"]} ans avant', f'{ap["age_moyen"]} ans après']},
+             {"libelle": "Rang de force de l’éliminé",
+              "valeurs": rangs,
+              "details": [f'{rangs[0]} sur 100 avant', f'{rangs[1]} après']}],
+            [{"nom": "avant la fusion", "couleur": TRIBUS["jaune"]},
+             {"nom": "après la fusion", "couleur": TRIBUS["rouge"]}],
+            titre="Ce que la réunification change",
+            description="Cinq mesures du conseil, avant et après la réunification. "
+                        "Le rang de force va de 0, le plus faible du camp, à 100, "
+                        "le plus fort.",
+            marge_gauche=230, hauteur_groupe=46))
+    for t in aa.get("tests") or []:
+        if t["cle"] == "fusion_force":
+            ecrire("fusion-force-nulle.svg", distribution_nulle(t, couleur=SERIES[3]))
+        elif t["cle"] == "fusion_serre":
+            ecrire("fusion-serre-nulle.svg", distribution_nulle(t, couleur=SERIES[0]))
+        elif t["cle"] == "ambassadeurs_force":
+            ecrire("ambassadeurs-nulle.svg", distribution_nulle(t, couleur=SERIES[6]))
+
     hm = m.get("hasard_mecanique") or {}
     if hm.get("paliers"):
         ecrire("risque-mecanique.svg", barres_groupees(

@@ -9,7 +9,7 @@ chapeau: >-
 
 {% assign m = site.data.stats.modeles %}
 
-Dix pages de ce site reposent sur des modèles plutôt que sur des comptages :
+Onze pages de ce site reposent sur des modèles plutôt que sur des comptages :
 [La recette du casting]({{ '/statistiques/casting/' | relative_url }}),
 [Le pronostic]({{ '/statistiques/pronostic/' | relative_url }}),
 [La force réelle]({{ '/statistiques/force/' | relative_url }}),
@@ -18,9 +18,10 @@ Dix pages de ce site reposent sur des modèles plutôt que sur des comptages :
 [La grille]({{ '/statistiques/grille/' | relative_url }}),
 [Qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }}) et
 [Le vote du jury]({{ '/statistiques/jury/' | relative_url }}) et
-[D’où ils viennent]({{ '/statistiques/geographie/' | relative_url }}) et
-[L’audience]({{ '/statistiques/audience/' | relative_url }}). Cette page dit
-comment ils sont construits et ce qu’ils ne peuvent pas établir.
+[D’où ils viennent]({{ '/statistiques/geographie/' | relative_url }}),
+[L’audience]({{ '/statistiques/audience/' | relative_url }}) et
+[Avant et après la fusion]({{ '/statistiques/fusion/' | relative_url }}). Cette
+page dit comment ils sont construits et ce qu’ils ne peuvent pas établir.
 
 ## Trois règles, tenues partout
 

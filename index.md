@@ -133,6 +133,24 @@ plus tôt que les hommes en moyenne — et remportent pourtant
   · <a href="{{ '/statistiques/prenoms/' | relative_url }}">Les prénoms</a></p>
 </div>
 
+## Et une chose que tout le monde raconte à l’envers
+
+{% assign aa = site.data.stats.modeles.avant_apres %}
+{% assign tfu = site.data.stats.modeles.registre | where: "cle", "fusion_force" | first %}
+<div class="constat">
+  <p>On répète partout qu’<b>avant la réunification on élimine le faible</b> —
+  la tribu doit gagner ses épreuves — et qu’<b>après on élimine le fort</b>,
+  devenu une menace.</p>
+  <p>C’est l’inverse. Avant la fusion, l’éliminé se situe au rang
+  <b>{{ aa.rang_force_avant }} sur 100</b> de son camp : au-dessus de la
+  médiane. Après, il tombe à <b>{{ aa.rang_force_apres }}</b> —
+  {{ tfu.ecart_types }} écarts-types sous ce qu’un tirage donnerait, p ajustée
+  {{ tfu.p_ajustee }}.</p>
+  <p>La tribu qui perd sacrifie le joueur qu’elle a vu gagner. Le camp réuni,
+  lui, choisit au milieu du classement.</p>
+  <p><a href="{{ '/statistiques/fusion/' | relative_url }}">Avant et après la fusion</a></p>
+</div>
+
 ## Et une chose que le programme subit
 
 {% assign au = site.data.stats.modeles.audience %}
@@ -159,11 +177,11 @@ plus tôt que les hommes en moyenne — et remportent pourtant
 <ul class="cartes">
   <li class="carte">
     <a href="{{ '/statistiques/' | relative_url }}">
-      <span class="carte-rang">VINGT ET UNE ENTRÉES</span>
+      <span class="carte-rang">VINGT-DEUX ENTRÉES</span>
       <span class="carte-titre">Les statistiques</span>
       <span class="carte-resume">Les vainqueurs, les tribus, les métiers, les
         prénoms, la longévité, les sorties, les épreuves, les colliers, le jeu
-        social, les conseils, les revenants — puis dix pages où les modèles
+        social, les conseils, les revenants — puis onze pages où les modèles
         prennent le relais des comptages.</span>
     </a>
   </li>

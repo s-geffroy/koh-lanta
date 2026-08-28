@@ -904,6 +904,10 @@ def force(par_saison, parts, conseils, epreuves):
         "plus_forte_montee": montees[-1] if montees else None,
         "plus_forte_chute": montees[0] if montees else None,
         "_theta": {j: float(theta[i]) for i, j in enumerate(joueurs)},
+        # Les joueurs dont la force repose sur assez d'epreuves pour etre
+        # publiee : c'est le meme seuil que le classement, et il sert aux
+        # controles de robustesse.
+        "_solides": [j for i, j in enumerate(joueurs) if disputees[i] >= SEUIL_PLATEAUX],
         "_disputees": {j: int(disputees[i]) for i, j in enumerate(joueurs)},
         "_exposition": {f"{s_}|{j}": int(n) for (s_, j), n in
                         sorted(par_participation.items())},
@@ -2411,6 +2415,272 @@ def audience(par_saison, indicateurs_saison, mesures):
     }
 
 
+# --- M. Avant et apres la reunification ------------------------------------
+
+def avant_apres(par_saison, parts, conseils, epreuves, bloc_force, bloc_fusion):
+    """Ce que la reunification change, et ce qu'elle ne change pas.
+
+    La reunification coupe une saison en deux jeux. Avant, on vote par tribu et
+    l'on garde ceux qui font gagner les epreuves collectives ; apres, chacun
+    joue pour soi et un bon joueur devient une menace. La sagesse commune veut
+    donc qu'on elimine le FAIBLE avant, et le FORT apres. Elle n'avait jamais
+    ete mesuree ici.
+
+    Le modele nul est le meme partout et c'est lui qui fait la solidite du
+    resultat : a chaque conseil, on tire l'elimine AU HASARD parmi les presents.
+    Tout ce qui tient a la composition du camp ce soir-la -- son age, son sexe,
+    sa force -- est donc neutralise ; ne subsiste que la question posee : parmi
+    ceux qui etaient la, pourquoi celui-la.
+
+    Le meme cadre sert aux ambassadeurs : ils eliminent sans conseil, a deux,
+    et l'on peut demander si leur choix ressemble a un tirage.
+    """
+    from indicateurs import _episode_de_sortie
+
+    fusion_ep = {l["saison"]: l["episode"] for l in (bloc_fusion.get("lignes") or [])}
+    if len(fusion_ep) < 12:
+        return {}
+    theta = (bloc_force or {}).get("_theta") or {}
+    sortie, _ = _episode_de_sortie(conseils, parts, epreuves)
+
+    par_s = collections.defaultdict(list)
+    for p in parts:
+        par_s[p["saison"]].append(p)
+    fiche = {(p["saison"], p["id"]): p for p in parts}
+
+    # --- les conseils exploitables, ranges par phase ----------------------
+    scrutins = []
+    for c in conseils:
+        if c.get("type") == "jury" or not c.get("elimine_rattache"):
+            continue
+        sid = c["saison"]
+        if sid not in fusion_ep:
+            continue
+        try:
+            episode = int(c["episode"])
+        except (TypeError, ValueError):
+            continue
+        presents = [p for p in par_s[sid] if sortie.get((sid, p["id"]), -1) >= episode]
+        ids = {p["id"] for p in presents}
+        if len(presents) < 4 or c["elimine"] not in ids:
+            continue
+        scrutins.append({
+            "saison": sid, "episode": episode,
+            "apres": episode > fusion_ep[sid],
+            "presents": presents, "elimine": c["elimine"],
+            "serre": (c.get("votes_contre") is not None and c.get("votes_exprimes")
+                      and c["votes_contre"] <= c["votes_exprimes"] / 2 + 0.5),
+            "decompte": bool(c.get("votes_exprimes")),
+        })
+    if len(scrutins) < 100:
+        return {}
+
+    # --- les eliminations hors conseil : ambassadeurs ---------------------
+    # Elles n'ont pas de bulletin ; on les repere au sort de la participation,
+    # et on reconstruit le camp present a leur episode de sortie.
+    # On n'exige pas ici que la saison ait une reunification reperee : les
+    # ambassades tombent AU MOMENT de la fusion, et les ecarter reviendrait a
+    # ne garder que la moitie des vingt cas.
+    ambassades = []
+    for p in parts:
+        if p.get("sort") != "elimine_ambassadeurs":
+            continue
+        sid = p["saison"]
+        episode = sortie.get((sid, p["id"]))
+        if episode is None:
+            continue
+        presents = [q for q in par_s[sid] if sortie.get((sid, q["id"]), -1) >= episode]
+        if len(presents) < 4:
+            continue
+        ambassades.append({"saison": sid, "episode": episode,
+                           "apres": (sid in fusion_ep and episode > fusion_ep[sid]),
+                           "presents": presents, "elimine": p["id"]})
+
+    def _rang(elimine, presents):
+        """Le rang centile de l'elimine parmi les presents, sur la force.
+
+        0 = le plus faible du camp, 100 = le plus fort. Rend None si trop peu
+        de presents ont une force estimee.
+        """
+        cotes = [(p["id"], theta.get(p["id"])) for p in presents]
+        cotes = [(i, t) for i, t in cotes if t is not None]
+        if len(cotes) < 4 or elimine not in dict(cotes):
+            return None
+        valeurs = sorted(t for _, t in cotes)
+        mien = dict(cotes)[elimine]
+        dessous = sum(1 for t in valeurs if t < mien)
+        egaux = sum(1 for t in valeurs if t == mien)
+        return 100.0 * (dessous + (egaux - 1) / 2.0) / (len(valeurs) - 1)
+
+    def _mesures(lot, choix):
+        """Part de femmes et rang de force moyen, pour un choix d'elimine donne."""
+        femmes = [1.0 if fiche[(s["saison"], choix[i])]["genre"] == "f" else 0.0
+                  for i, s in enumerate(lot)]
+        rangs = [r for r in (_rang(choix[i], s["presents"]) for i, s in enumerate(lot))
+                 if r is not None]
+        return (float(np.mean(femmes)) if femmes else None,
+                float(np.mean(rangs)) if rangs else None, len(rangs))
+
+    avant = [s for s in scrutins if not s["apres"]]
+    apres = [s for s in scrutins if s["apres"]]
+
+    obs_f_av, obs_r_av, n_av = _mesures(avant, [s["elimine"] for s in avant])
+    obs_f_ap, obs_r_ap, n_ap = _mesures(apres, [s["elimine"] for s in apres])
+
+    def _tirage(g, lot):
+        return [lot[i]["presents"][int(g.integers(0, len(lot[i]["presents"])))]["id"]
+                for i in range(len(lot))]
+
+    g = rng("avant_apres")
+    nulle_sexe, nulle_force = [], []
+    for _ in range(N_PERMUTATIONS):
+        fa, ra, _ = _mesures(avant, _tirage(g, avant))
+        fp, rp, _ = _mesures(apres, _tirage(g, apres))
+        nulle_sexe.append((fp - fa) * 100.0)
+        nulle_force.append(rp - ra)
+
+    t_sexe = _test(
+        "fusion_sexe", "Le sexe des éliminés, avant et après la fusion",
+        "La part de femmes parmi les éliminés change-t-elle à la réunification ?",
+        (obs_f_ap - obs_f_av) * 100.0, nulle_sexe, unite=" points",
+        lecture="Différence entre l'après et l'avant, en points de pourcentage. "
+                "Le hasard, ici, c'est tirer l'éliminé parmi les présents de "
+                "chaque conseil : la composition du camp est donc déjà "
+                "neutralisée, et un écart qui subsiste est un choix.")
+    # Robustesse. La force d'un joueur sorti tot repose sur peu d'epreuves,
+    # et l'objection est serieuse : celui qui reste, lui, sera juge sur toute
+    # une saison. On pourrait donc comparer une estimation vague a des
+    # estimations informees, et prendre le flou pour un resultat.
+    #
+    # Deux verifications repondent.
+    # 1. L'exposition n'explique pas la force : la correlation de rang entre le
+    #    nombre d'epreuves disputees et la force estimee tient a peine au-dessus
+    #    de zero.
+    # 2. Surtout : on refait le classement en ne comparant l'elimine qu'aux
+    #    presents d'exposition COMPARABLE -- a trois epreuves pres. Tout le
+    #    monde y est alors estime avec la meme finesse, et l'objection tombe.
+    disputees = (bloc_force or {}).get("_disputees") or {}
+    if disputees:
+        cles = sorted(set(theta) & set(disputees))
+        correlation = _arr(float(_spearman([disputees[j] for j in cles],
+                                           [theta[j] for j in cles])), 3)
+    else:
+        correlation = None
+
+    def _rang_compare(elimine, presents, marge=3):
+        """Le rang, mais parmi les seuls presents d'exposition comparable."""
+        reference = disputees.get(elimine)
+        if reference is None:
+            return None
+        proches = [p for p in presents
+                   if disputees.get(p["id"]) is not None
+                   and abs(disputees[p["id"]] - reference) <= marge]
+        return _rang(elimine, proches)
+
+    apparie = {}
+    for nom, lot in (("avant", avant), ("apres", apres)):
+        valeurs = [x for x in (_rang_compare(s2["elimine"], s2["presents"]) for s2 in lot)
+                   if x is not None]
+        apparie[nom] = _arr(float(np.mean(valeurs)), 1) if valeurs else None
+        apparie[nom + "_effectif"] = len(valeurs)
+    if apparie["avant"] is not None and apparie["apres"] is not None:
+        apparie["ecart"] = _arr(apparie["apres"] - apparie["avant"], 1)
+    robustesse = {"correlation_exposition_force": correlation, "apparie": apparie}
+
+    t_force = _test(
+        "fusion_force", "La force des éliminés, avant et après la fusion",
+        "Élimine-t-on le faible avant la réunification et le fort après ?",
+        obs_r_ap - obs_r_av, nulle_force, unite=" points de rang",
+        lecture="Rang de l'éliminé parmi les présents, sur la force estimée aux "
+                "épreuves : 0 le plus faible du camp, 100 le plus fort. On "
+                "compare l'après à l'avant. Positif, cela veut dire qu'on "
+                "élimine plus haut dans le classement après la fusion.")
+
+    # --- le conseil est-il plus serre apres ? -----------------------------
+    avec = [s for s in scrutins if s["decompte"]]
+    etiquettes = np.array([1 if s["apres"] else 0 for s in avec])
+    serres = np.array([1.0 if s["serre"] else 0.0 for s in avec])
+    obs_serre = (float(serres[etiquettes == 1].mean() - serres[etiquettes == 0].mean())
+                 * 100.0 if etiquettes.sum() and (1 - etiquettes).sum() else 0.0)
+    g2 = rng("fusion_serre")
+    nulle_serre = []
+    for _ in range(N_PERMUTATIONS):
+        m = g2.permutation(etiquettes)
+        nulle_serre.append(float(serres[m == 1].mean() - serres[m == 0].mean()) * 100.0)
+    t_serre = _test(
+        "fusion_serre", "Des conseils plus serrés après la fusion ?",
+        "Le vote se divise-t-il davantage une fois les tribus réunies ?",
+        obs_serre, nulle_serre, unite=" points",
+        lecture="Part de conseils où l'éliminé ne rassemble pas plus de la moitié "
+                "des voix, après moins avant. Le hasard est ici une redistribution "
+                "des étiquettes « avant » et « après » entre les mêmes conseils.")
+
+    # --- les ambassadeurs -------------------------------------------------
+    t_amb, detail_amb = {}, {}
+    rangs_amb = [(_rang(a["elimine"], a["presents"]), a) for a in ambassades]
+    rangs_amb = [(r, a) for r, a in rangs_amb if r is not None]
+    # Le portrait descriptif porte sur TOUTES les ambassades reconstituees ;
+    # le test, lui, ne porte que sur celles dont l'elimine a une force estimee.
+    elimines_amb = [fiche[(a["saison"], a["elimine"])] for a in ambassades]
+    ages_amb = [p["age"] for p in elimines_amb if p.get("age")]
+    portrait_amb = {
+        "effectif": len(ambassades),
+        "saisons": len({a["saison"] for a in ambassades}),
+        "episode_median": _arr(float(np.median([a["episode"] for a in ambassades])), 1),
+        "presents_moyen": _arr(float(np.mean([len(a["presents"]) for a in ambassades])), 1),
+        "part_femmes": _arr(100.0 * sum(1 for p in elimines_amb if p["genre"] == "f")
+                            / len(elimines_amb), 1) if elimines_amb else None,
+        "age_moyen": _arr(float(np.mean(ages_amb)), 1) if ages_amb else None,
+        "avec_force": len(rangs_amb),
+    }
+    if len(rangs_amb) >= 10:
+        obs_amb = float(np.mean([r for r, _ in rangs_amb]))
+        g3 = rng("ambassadeurs")
+        nulle_amb = []
+        for _ in range(N_PERMUTATIONS):
+            tire = [_rang(a["presents"][int(g3.integers(0, len(a["presents"])))]["id"],
+                          a["presents"]) for _, a in rangs_amb]
+            tire = [x for x in tire if x is not None]
+            nulle_amb.append(float(np.mean(tire)) if tire else 50.0)
+        t_amb = _test(
+            "ambassadeurs_force", "Qui les ambassadeurs éliminent-ils ?",
+            "Deux ambassadeurs qui décident seuls choisissent-ils autrement qu'un tirage ?",
+            obs_amb, nulle_amb, unite=" points de rang",
+            lecture="Rang de l'éliminé parmi les présents, sur la force estimée aux "
+                    "épreuves. Au-dessus de 50, les ambassadeurs sacrifient un "
+                    "joueur plus fort que la moyenne du camp ; en dessous, un "
+                    "plus faible.")
+        detail_amb = {"rang_moyen": _arr(obs_amb, 1), "effectif_force": len(rangs_amb)}
+
+    def _portrait(lot):
+        elimines = [fiche[(s["saison"], s["elimine"])] for s in lot]
+        ages = [p["age"] for p in elimines if p.get("age")]
+        return {
+            "conseils": len(lot),
+            "saisons": len({s["saison"] for s in lot}),
+            "presents_moyen": _arr(float(np.mean([len(s["presents"]) for s in lot])), 1),
+            "part_femmes": _arr(100.0 * sum(1 for p in elimines if p["genre"] == "f")
+                                / len(elimines), 1),
+            "age_moyen": _arr(float(np.mean(ages)), 1) if ages else None,
+            "part_serres": _arr(100.0 * sum(1 for s in lot if s["serre"])
+                                / max(1, sum(1 for s in lot if s["decompte"])), 1),
+        }
+
+    return {
+        "saisons": len(fusion_ep),
+        "episode_median": bloc_fusion.get("episode_median"),
+        "avant": _portrait(avant),
+        "apres": _portrait(apres),
+        "rang_force_avant": _arr(obs_r_av, 1),
+        "rang_force_apres": _arr(obs_r_ap, 1),
+        "force_effectif_avant": n_av,
+        "force_effectif_apres": n_ap,
+        "robustesse": robustesse,
+        "ambassadeurs": dict(portrait_amb, **detail_amb),
+        "tests": [t for t in (t_sexe, t_force, t_serre, t_amb) if t],
+    }
+
+
 def _fichier(nom):
     """Lit un fichier de _data/ produit par un autre script.
 
@@ -2452,10 +2722,13 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
     fu = fusion(par_saison, parts, conseils, epreuves)
     ru = ruptures(par_saison, indicateurs_saison)
     au = audience(par_saison, indicateurs_saison, _fichier("audiences.yml"))
+    # Avant `tout` ne retire les cles techniques de `f` : ce bloc a besoin des
+    # forces estimees, personne par personne.
+    aa = avant_apres(par_saison, parts, conseils, epreuves, f, fu)
 
     # Les cles techniques du modele de force n'ont rien a faire dans le fichier
     # publie : elles servent aux regressions de suivi, pas au site.
-    for cle in ("_theta", "_disputees", "_exposition"):
+    for cle in ("_theta", "_disputees", "_exposition", "_solides"):
         f.pop(cle, None)
 
     registre = []
@@ -2473,6 +2746,9 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
         registre.append(t)
     for t in au.get("tests") or []:
         t["origine"] = "audience"
+        registre.append(t)
+    for t in aa.get("tests") or []:
+        t["origine"] = "avant_apres"
         registre.append(t)
 
     for bloc, origine in ((al, "alliances"), (ru, "ruptures"),
@@ -2506,6 +2782,7 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
         "fusion": fu,
         "ruptures": ru,
         "audience": au,
+        "avant_apres": aa,
         "registre": [{k: t[k] for k in
                       ("cle", "libelle", "question", "origine", "observe",
                        "attendu", "unite", "ecart_types", "p", "p_ajustee",

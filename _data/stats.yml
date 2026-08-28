@@ -11604,7 +11604,7 @@ modeles:
         observe: 9.9412
         moyenne_nulle: 9.6948
       origine: casting
-      p_ajustee: 0.02
+      p_ajustee: 0.0205
       retenu: true
     - cle: familles_metiers
       libelle: La variété des métiers
@@ -11704,7 +11704,7 @@ modeles:
         observe: 0.2839
         moyenne_nulle: 0.2508
       origine: casting
-      p_ajustee: 0.3592
+      p_ajustee: 0.3639
       retenu: false
     - cle: tribus_femmes
       libelle: La composition des deux tribus
@@ -11755,7 +11755,7 @@ modeles:
         observe: 13.0253
         moyenne_nulle: 18.8726
       origine: casting
-      p_ajustee: 0.121
+      p_ajustee: 0.1251
       retenu: false
     - cle: tribus_ages
       libelle: L'âge moyen des deux tribus
@@ -11806,7 +11806,7 @@ modeles:
         observe: 5.7496
         moyenne_nulle: 3.8505
       origine: casting
-      p_ajustee: 0.004
+      p_ajustee: 0.0041
       retenu: true
     - cle: tribus_ages_mediane
       libelle: L'âge des deux tribus, à la médiane
@@ -11856,7 +11856,7 @@ modeles:
         observe: 4.1597
         moyenne_nulle: 3.331
       origine: casting
-      p_ajustee: 0.3661
+      p_ajustee: 0.3737
       retenu: false
     sensibilite:
     - cle: etendue_ages
@@ -11975,7 +11975,7 @@ modeles:
         observe: 10.7308
         moyenne_nulle: 10.2831
       origine: pronostic
-      p_ajustee: 0.762
+      p_ajustee: 0.7831
       retenu: false
     classement:
     - nom: Ambre Daudet
@@ -12506,7 +12506,7 @@ modeles:
       tirages: 2000
       lecture: 'Écart entre deux probabilités : voter ensemble après avoir voté ensemble, et voter ensemble
         après avoir voté séparément. À zéro, chaque conseil repart de zéro et il n''y a pas d''alliance.'
-      nulle: &id034
+      nulle: &id038
         bornes:
         - -4.9516
         - 34.285
@@ -12543,7 +12543,7 @@ modeles:
         observe: 32.5015
         moyenne_nulle: 1.4279
       origine: alliances
-      p_ajustee: 0.001
+      p_ajustee: 0.0011
       retenu: true
     majorite:
       effectif: 177
@@ -12690,7 +12690,7 @@ modeles:
         moyenne_nulle: 46.8767
       bulletins: 1840
       origine: homophilie
-      p_ajustee: 0.2645
+      p_ajustee: 0.2657
       retenu: false
     - cle: vote_ecart_age
       libelle: L'écart d'âge avec sa cible
@@ -12742,7 +12742,7 @@ modeles:
         moyenne_nulle: 11.6264
       bulletins: 1840
       origine: homophilie
-      p_ajustee: 0.1657
+      p_ajustee: 0.1741
       retenu: false
     - cle: vote_meme_metier
       libelle: Viser la même famille de métier
@@ -12794,7 +12794,7 @@ modeles:
         moyenne_nulle: 9.8932
       bulletins: 1840
       origine: homophilie
-      p_ajustee: 0.7934
+      p_ajustee: 0.7958
       retenu: false
     - cle: vote_meme_bandeau
       libelle: Viser son propre bandeau de départ
@@ -12916,7 +12916,7 @@ modeles:
       tirages: 4000
       lecture: Part des bulletins visant quelqu'un avec qui l'auteur avait déjà voté. Un observé SOUS
         l'attendu veut dire que l'alliance protège ; au-dessus, qu'elle expose.
-      nulle: &id036
+      nulle: &id040
         bornes:
         - 50.8495
         - 63.0454
@@ -13101,7 +13101,7 @@ modeles:
       tirages: 10000
       lecture: Nombre de fois où deux sorties consécutives viennent du même bandeau de départ. Un observé
         AU-DESSUS de l'attendu est la signature d'un camp démonté un par un.
-      nulle: &id037
+      nulle: &id041
         bornes:
         - 59.7
         - 110.3
@@ -13537,7 +13537,7 @@ modeles:
       lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
         dans un ordre au hasard. Une coupure existe toujours ; la question est de savoir si celle-ci vaut
         mieux que n'importe quelle autre.
-      nulle: &id035
+      nulle: &id039
         bornes:
         - 0.5141
         - 59.3185
@@ -14551,7 +14551,250 @@ modeles:
         observe: -0.2958
         moyenne_nulle: -0.0001
       origine: audience
-      p_ajustee: 0.1575
+      p_ajustee: 0.1643
+      retenu: false
+  avant_apres:
+    saisons: 21
+    episode_median: 6.0
+    avant:
+      conseils: 171
+      saisons: 21
+      presents_moyen: 17.0
+      part_femmes: 53.8
+      age_moyen: 35.1
+      part_serres: 34.9
+    apres:
+      conseils: 229
+      saisons: 21
+      presents_moyen: 8.3
+      part_femmes: 46.7
+      age_moyen: 33.0
+      part_serres: 55.5
+    rang_force_avant: 62.7
+    rang_force_apres: 47.7
+    force_effectif_avant: 81
+    force_effectif_apres: 215
+    robustesse:
+      correlation_exposition_force: -0.101
+      apparie:
+        avant: 65.3
+        avant_effectif: 72
+        apres: 55.4
+        apres_effectif: 125
+        ecart: -9.9
+    ambassadeurs:
+      effectif: 16
+      saisons: 16
+      episode_median: 7.0
+      presents_moyen: 13.1
+      part_femmes: 37.5
+      age_moyen: 34.4
+      avec_force: 13
+      rang_moyen: 52.5
+      effectif_force: 13
+    tests:
+    - cle: fusion_sexe
+      libelle: Le sexe des éliminés, avant et après la fusion
+      question: La part de femmes parmi les éliminés change-t-elle à la réunification ?
+      observe: -7.076
+      attendu: -0.763
+      unite: ' points'
+      ecart_types: -1.29
+      p: 0.1992
+      tirages: 10000
+      lecture: 'Différence entre l''après et l''avant, en points de pourcentage. Le hasard, ici, c''est
+        tirer l''éliminé parmi les présents de chaque conseil : la composition du camp est donc déjà neutralisée,
+        et un écart qui subsiste est un choix.'
+      nulle: &id034
+        bornes:
+        - -19.3874
+        - 20.7204
+        cases:
+        - 0
+        - 5
+        - 14
+        - 15
+        - 58
+        - 122
+        - 223
+        - 315
+        - 462
+        - 669
+        - 902
+        - 1077
+        - 1134
+        - 1108
+        - 1019
+        - 967
+        - 717
+        - 487
+        - 316
+        - 174
+        - 112
+        - 62
+        - 25
+        - 11
+        - 3
+        - 2
+        - 1
+        - 0
+        largeur_case: 1.43242
+        observe: -7.0763
+        moyenne_nulle: -0.763
+      origine: avant_apres
+      p_ajustee: 0.2657
+      retenu: false
+    - cle: fusion_force
+      libelle: La force des éliminés, avant et après la fusion
+      question: Élimine-t-on le faible avant la réunification et le fort après ?
+      observe: -14.975
+      attendu: -0.051
+      unite: ' points de rang'
+      ecart_types: -4.44
+      p: 0.0001
+      tirages: 10000
+      lecture: 'Rang de l''éliminé parmi les présents, sur la force estimée aux épreuves : 0 le plus faible
+        du camp, 100 le plus fort. On compare l''après à l''avant. Positif, cela veut dire qu''on élimine
+        plus haut dans le classement après la fusion.'
+      nulle: &id035
+        bornes:
+        - -16.3664
+        - 14.2436
+        cases:
+        - 0
+        - 0
+        - 0
+        - 1
+        - 5
+        - 14
+        - 32
+        - 69
+        - 145
+        - 260
+        - 496
+        - 671
+        - 941
+        - 1173
+        - 1311
+        - 1306
+        - 1129
+        - 847
+        - 633
+        - 470
+        - 251
+        - 154
+        - 55
+        - 22
+        - 8
+        - 3
+        - 4
+        - 0
+        largeur_case: 1.093213
+        observe: -14.975
+        moyenne_nulle: -0.0507
+      origine: avant_apres
+      p_ajustee: 0.0005
+      retenu: true
+    - cle: fusion_serre
+      libelle: Des conseils plus serrés après la fusion ?
+      question: Le vote se divise-t-il davantage une fois les tribus réunies ?
+      observe: 20.591
+      attendu: 0.082
+      unite: ' points'
+      ecart_types: 3.35
+      p: 0.0009
+      tirages: 10000
+      lecture: Part de conseils où l'éliminé ne rassemble pas plus de la moitié des voix, après moins
+        avant. Le hasard est ici une redistribution des étiquettes « avant » et « après » entre les mêmes
+        conseils.
+      nulle: &id036
+        bornes:
+        - -23.8856
+        - 27.439
+        cases:
+        - 0
+        - 3
+        - 13
+        - 33
+        - 43
+        - 53
+        - 120
+        - 460
+        - 412
+        - 573
+        - 693
+        - 1719
+        - 974
+        - 956
+        - 946
+        - 810
+        - 1164
+        - 377
+        - 265
+        - 168
+        - 166
+        - 24
+        - 11
+        - 12
+        - 2
+        - 2
+        - 1
+        - 0
+        largeur_case: 1.833022
+        observe: 20.5907
+        moyenne_nulle: 0.0817
+      origine: avant_apres
+      p_ajustee: 0.0018
+      retenu: true
+    - cle: ambassadeurs_force
+      libelle: Qui les ambassadeurs éliminent-ils ?
+      question: Deux ambassadeurs qui décident seuls choisissent-ils autrement qu'un tirage ?
+      observe: 52.455
+      attendu: 49.854
+      unite: ' points de rang'
+      ecart_types: 0.3
+      p: 0.7652
+      tirages: 10000
+      lecture: Rang de l'éliminé parmi les présents, sur la force estimée aux épreuves. Au-dessus de 50,
+        les ambassadeurs sacrifient un joueur plus fort que la moyenne du camp ; en dessous, un plus faible.
+      nulle: &id037
+        bornes:
+        - 18.646
+        - 84.1235
+        cases:
+        - 0
+        - 4
+        - 9
+        - 26
+        - 61
+        - 121
+        - 195
+        - 308
+        - 481
+        - 625
+        - 798
+        - 958
+        - 1080
+        - 1066
+        - 994
+        - 925
+        - 757
+        - 576
+        - 389
+        - 263
+        - 170
+        - 96
+        - 62
+        - 17
+        - 13
+        - 4
+        - 2
+        - 0
+        largeur_case: 2.338481
+        observe: 52.455
+        moyenne_nulle: 49.8535
+      origine: avant_apres
+      p_ajustee: 0.7958
       retenu: false
   registre:
   - cle: parite
@@ -14578,7 +14821,7 @@ modeles:
     unite: annees
     ecart_types: 2.53
     p: 0.0118
-    p_ajustee: 0.02
+    p_ajustee: 0.0205
     retenu: true
     tirages: 10000
     lecture: Rebattre les aventuriers entre saisons donne l'écart-type général. Un écart observé PLUS
@@ -14608,7 +14851,7 @@ modeles:
     unite: ''
     ecart_types: 1.06
     p: 0.2939
-    p_ajustee: 0.3592
+    p_ajustee: 0.3639
     retenu: false
     tirages: 10000
     lecture: Distance entre le mélange de profils d'une saison et le mélange général. Un observé PLUS
@@ -14624,7 +14867,7 @@ modeles:
     unite: points de %
     ecart_types: -1.76
     p: 0.077
-    p_ajustee: 0.121
+    p_ajustee: 0.1251
     retenu: false
     tirages: 10000
     lecture: On rebat les bandeaux à l'intérieur de chaque saison. Un écart observé PLUS PETIT que l'attendu
@@ -14640,7 +14883,7 @@ modeles:
     unite: annees
     ecart_types: 3.03
     p: 0.0022
-    p_ajustee: 0.004
+    p_ajustee: 0.0041
     retenu: true
     tirages: 10000
     lecture: 'Même méthode, sur l''âge moyen de chaque bandeau. Un écart observé PLUS GRAND que l''attendu
@@ -14655,7 +14898,7 @@ modeles:
     unite: annees
     ecart_types: 1.02
     p: 0.3162
-    p_ajustee: 0.3661
+    p_ajustee: 0.3737
     retenu: false
     tirages: 10000
     lecture: La médiane ignore les valeurs extrêmes. Si elle ne s'écarte pas, c'est que l'écart moyen
@@ -14671,7 +14914,7 @@ modeles:
     unite: rang moyen
     ecart_types: 0.41
     p: 0.6927
-    p_ajustee: 0.762
+    p_ajustee: 0.7831
     retenu: false
     tirages: 10000
     lecture: Le modèle classe les candidats d'une saison ; on relève la place qu'il donne à celui qui
@@ -14686,7 +14929,7 @@ modeles:
     unite: '%'
     ecart_types: -1.32
     p: 0.2044
-    p_ajustee: 0.2645
+    p_ajustee: 0.2657
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -14702,7 +14945,7 @@ modeles:
     unite: années
     ecart_types: 1.54
     p: 0.1205
-    p_ajustee: 0.1657
+    p_ajustee: 0.1741
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -14718,7 +14961,7 @@ modeles:
     unite: '%'
     ecart_types: -0.3
     p: 0.7573
-    p_ajustee: 0.7934
+    p_ajustee: 0.7958
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -14901,13 +15144,75 @@ modeles:
     unite: ''
     ecart_types: -1.62
     p: 0.1074
-    p_ajustee: 0.1575
+    p_ajustee: 0.1643
     retenu: false
     tirages: 10000
     lecture: Corrélation de rang entre l'audience d'une saison et l'effectif de la suivante, une fois
       la tendance temporelle retirée des deux séries. Sans cette précaution, le lien brut ne mesure que
       le passage du temps.
     nulle: *id033
+  - cle: fusion_sexe
+    libelle: Le sexe des éliminés, avant et après la fusion
+    question: La part de femmes parmi les éliminés change-t-elle à la réunification ?
+    origine: avant_apres
+    observe: -7.076
+    attendu: -0.763
+    unite: ' points'
+    ecart_types: -1.29
+    p: 0.1992
+    p_ajustee: 0.2657
+    retenu: false
+    tirages: 10000
+    lecture: 'Différence entre l''après et l''avant, en points de pourcentage. Le hasard, ici, c''est
+      tirer l''éliminé parmi les présents de chaque conseil : la composition du camp est donc déjà neutralisée,
+      et un écart qui subsiste est un choix.'
+    nulle: *id034
+  - cle: fusion_force
+    libelle: La force des éliminés, avant et après la fusion
+    question: Élimine-t-on le faible avant la réunification et le fort après ?
+    origine: avant_apres
+    observe: -14.975
+    attendu: -0.051
+    unite: ' points de rang'
+    ecart_types: -4.44
+    p: 0.0001
+    p_ajustee: 0.0005
+    retenu: true
+    tirages: 10000
+    lecture: 'Rang de l''éliminé parmi les présents, sur la force estimée aux épreuves : 0 le plus faible
+      du camp, 100 le plus fort. On compare l''après à l''avant. Positif, cela veut dire qu''on élimine
+      plus haut dans le classement après la fusion.'
+    nulle: *id035
+  - cle: fusion_serre
+    libelle: Des conseils plus serrés après la fusion ?
+    question: Le vote se divise-t-il davantage une fois les tribus réunies ?
+    origine: avant_apres
+    observe: 20.591
+    attendu: 0.082
+    unite: ' points'
+    ecart_types: 3.35
+    p: 0.0009
+    p_ajustee: 0.0018
+    retenu: true
+    tirages: 10000
+    lecture: Part de conseils où l'éliminé ne rassemble pas plus de la moitié des voix, après moins avant.
+      Le hasard est ici une redistribution des étiquettes « avant » et « après » entre les mêmes conseils.
+    nulle: *id036
+  - cle: ambassadeurs_force
+    libelle: Qui les ambassadeurs éliminent-ils ?
+    question: Deux ambassadeurs qui décident seuls choisissent-ils autrement qu'un tirage ?
+    origine: avant_apres
+    observe: 52.455
+    attendu: 49.854
+    unite: ' points de rang'
+    ecart_types: 0.3
+    p: 0.7652
+    p_ajustee: 0.7958
+    retenu: false
+    tirages: 10000
+    lecture: Rang de l'éliminé parmi les présents, sur la force estimée aux épreuves. Au-dessus de 50,
+      les ambassadeurs sacrifient un joueur plus fort que la moyenne du camp ; en dessous, un plus faible.
+    nulle: *id037
   - cle: persistance_alliances
     libelle: La persistance des alliances
     question: Deux aventuriers qui ont vote ensemble votent-ils encore ensemble au conseil suivant, plus
@@ -14918,12 +15223,12 @@ modeles:
     unite: points de %
     ecart_types: 19.15
     p: 0.0005
-    p_ajustee: 0.001
+    p_ajustee: 0.0011
     retenu: true
     tirages: 2000
     lecture: 'Écart entre deux probabilités : voter ensemble après avoir voté ensemble, et voter ensemble
       après avoir voté séparément. À zéro, chaque conseil repart de zéro et il n''y a pas d''alliance.'
-    nulle: *id034
+    nulle: *id038
   - cle: rupture
     libelle: La rupture de régime
     question: Existe-t-il une date qui sépare les saisons en deux régimes mieux qu'une date tirée au sort
@@ -14940,7 +15245,7 @@ modeles:
     lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
       dans un ordre au hasard. Une coupure existe toujours ; la question est de savoir si celle-ci vaut
       mieux que n'importe quelle autre.
-    nulle: *id035
+    nulle: *id039
   - cle: trahison
     libelle: Écrire le nom d'un ancien allié
     question: Quand on a déjà voté avec quelqu'un, écrit-on son nom plus ou moins souvent qu'un autre
@@ -14956,7 +15261,7 @@ modeles:
     tirages: 4000
     lecture: Part des bulletins visant quelqu'un avec qui l'auteur avait déjà voté. Un observé SOUS l'attendu
       veut dire que l'alliance protège ; au-dessus, qu'elle expose.
-    nulle: *id036
+    nulle: *id040
   - cle: decimation
     libelle: L'élimination en série d'un camp
     question: Après la réunification, les sorties se suivent-elles par bandeau plus souvent que le hasard
@@ -14972,6 +15277,6 @@ modeles:
     tirages: 10000
     lecture: Nombre de fois où deux sorties consécutives viennent du même bandeau de départ. Un observé
       AU-DESSUS de l'attendu est la signature d'un camp démonté un par un.
-    nulle: *id037
-  nb_tests: 22
-  nb_retenus: 13
+    nulle: *id041
+  nb_tests: 26
+  nb_retenus: 15
