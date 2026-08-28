@@ -32,6 +32,7 @@ SORTIE = os.path.join(RACINE, "_includes", "graphiques")
 SERIES = [f"var(--serie-{i})" for i in range(1, 9)]
 ENCRE = "var(--encre)"
 ENCRE_DOUCE = "var(--encre-douce)"
+ENCRE_MUETTE = "var(--encre-muette)"
 GRILLE = "var(--grille)"
 SURFACE = "var(--surface)"
 
@@ -398,3 +399,309 @@ def peigne(traits, *, titre, description, jour_max, mediane=None, legende=None,
             + fig.rendu().replace('<figure class="figure">\n', '')
                          .replace('</figure>\n', '')
             + '</div>\n')
+
+
+def arcs(noeuds, liens, *, titre, description, largeur=980, hauteur_arc=150,
+         etiquettes=None, legende=None, hauteur_etiquettes=96):
+    """Diagramme en arcs : des gens sur une ligne, un arc par relation.
+
+    C'est la forme juste quand les entites ont un ORDRE naturel -- ici l'ordre
+    de sortie, ou l'ordre d'arrivee dans le programme. Un graphe pose au hasard
+    donnerait un nuage de spaghettis dont la disposition ne voudrait rien dire ;
+    sur une ligne ordonnee, la portee d'un arc est elle-meme une information.
+
+    `noeuds` : [{"nom":…, "poids":…, "couleur":…}] deja dans l'ordre voulu.
+    `liens`  : [{"de": i, "vers": j, "poids": n}] par indices de noeuds.
+    """
+    if not noeuds:
+        return ""
+    gauche, droite = 26, 26
+    haut = 26 + (22 if legende else 0)
+    piste = largeur - gauche - droite
+    base = haut + hauteur_arc
+    hauteur = base + hauteur_etiquettes
+    pas = piste / max(1, len(noeuds) - 1)
+    poids_max = max((l.get("poids") or 1) for l in liens) if liens else 1
+
+    def x(i):
+        return gauche + pas * i
+
+    fig = Figure(largeur, hauteur, titre, description)
+
+    # Les arcs d'abord : ils passent DERRIERE les points, jamais devant.
+    for l in liens:
+        a, b = x(l["de"]), x(l["vers"])
+        if a == b:
+            continue
+        r = abs(b - a) / 2
+        h = min(hauteur_arc, r)
+        p = (l.get("poids") or 1) / poids_max
+        # Un arc epais est un lien repete : l'epaisseur porte la meme
+        # information que l'opacite, pour qui ne distingue pas les nuances.
+        # Courbe de Bezier quadratique plutot qu'arc elliptique : le point de
+        # controle se choisit, la hauteur du sommet vaut exactement h, et il
+        # n'y a aucun drapeau de sens a interpreter -- donc aucun risque que
+        # les arcs partent du mauvais cote de l'axe.
+        g_, d_ = min(a, b), max(a, b)
+        fig.ajouter(
+            f'<path d="M{g_:.1f},{base} Q{(g_ + d_) / 2:.1f},{base - 2 * h:.1f} '
+            f'{d_:.1f},{base}" fill="none" stroke="{ENCRE_DOUCE}" '
+            f'stroke-width="{0.6 + 2.2 * p:.2f}" opacity="{0.16 + 0.5 * p:.2f}"/>')
+
+    fig.ajouter(f'<line x1="{gauche - 8}" y1="{base}" x2="{largeur - droite + 8}" '
+                f'y2="{base}" stroke="var(--axe)" stroke-width="1"/>')
+
+    poids_n = max((n.get("poids") or 1) for n in noeuds)
+    for i, n in enumerate(noeuds):
+        r = 2.6 + 4.4 * ((n.get("poids") or 1) / poids_n) ** 0.5
+        teinte = n.get("couleur") or SERIES[0]
+        info = n.get("detail") or n["nom"]
+        fig.ajouter(f'<g class="marque"><title>{e(info)}</title>'
+                    f'<circle cx="{x(i):.1f}" cy="{base}" r="{r:.1f}" fill="{teinte}" '
+                    f'stroke="{SURFACE}" stroke-width="1.5"/></g>')
+
+    # Les noms tournes a la verticale : soixante-dix noms cote a cote ne
+    # tiennent pas autrement, et les tronquer les rendrait inutiles.
+    if etiquettes is None:
+        etiquettes = len(noeuds) <= 46
+    if etiquettes:
+        for i, n in enumerate(noeuds):
+            fig.ajouter(
+                f'<text x="{x(i):.1f}" y="{base + 12}" fill="{ENCRE_DOUCE}" '
+                f'font-size="11" text-anchor="end" '
+                f'transform="rotate(-60 {x(i):.1f} {base + 12})">{e(n["nom"])}</text>')
+
+    if legende:
+        xx = gauche
+        for nom, teinte in legende:
+            fig.ajouter(f'<rect x="{xx}" y="12" width="11" height="11" rx="2" fill="{teinte}"/>')
+            fig.ajouter(_texte(xx + 17, 18, nom, couleur=ENCRE, taille=12))
+            xx += 26 + 7.2 * len(nom)
+
+    return fig.rendu()
+
+
+def petits_multiples(series, *, titre, description, colonnes_par_rang=6,
+                     largeur=980, hauteur_vignette=86, unite=""):
+    """Une meme courbe repetee, aux memes echelles, pour comparer d'un regard.
+
+    La regle est simple et c'est toute la force de la forme : les axes ne
+    changent JAMAIS d'une vignette a l'autre. Une courbe qui plonge plonge
+    vraiment, elle n'est pas mise a l'echelle de sa propre case.
+
+    `series` : [{"titre":…, "sous_titre":…, "valeurs":[…], "couleur":…}]
+    Les valeurs sont des parts de 0 a 100, regulierement espacees.
+    """
+    series = [s for s in series if s.get("valeurs")]
+    if not series:
+        return ""
+    marge, entre = 8, 12
+    rangs = (len(series) + colonnes_par_rang - 1) // colonnes_par_rang
+    case_l = (largeur - 2 * marge - entre * (colonnes_par_rang - 1)) / colonnes_par_rang
+    hauteur = marge + rangs * (hauteur_vignette + 34) + 6
+    trace_h = hauteur_vignette - 22
+
+    fig = Figure(largeur, hauteur, titre, description)
+    for k, s in enumerate(series):
+        cx = marge + (k % colonnes_par_rang) * (case_l + entre)
+        cy = marge + (k // colonnes_par_rang) * (hauteur_vignette + 34) + 20
+        teinte = s.get("couleur") or SERIES[0]
+        vals = s["valeurs"]
+        pas = case_l / max(1, len(vals) - 1)
+
+        fig.ajouter(_texte(cx, cy - 12, s["titre"], couleur=ENCRE, taille=11, gras=True))
+        if s.get("sous_titre"):
+            fig.ajouter(_texte(cx + case_l, cy - 12, s["sous_titre"], ancre="end",
+                               couleur=ENCRE_MUETTE, taille=10))
+        # mi-hauteur : le repere qui permet de lire « la moitie du plateau »
+        fig.ajouter(f'<line x1="{cx:.1f}" y1="{cy + trace_h / 2:.1f}" '
+                    f'x2="{cx + case_l:.1f}" y2="{cy + trace_h / 2:.1f}" '
+                    f'stroke="{GRILLE}" stroke-width="1"/>')
+
+        pts = [(cx + pas * i, cy + trace_h * (1 - v / 100.0)) for i, v in enumerate(vals)]
+        aire = (f'M{pts[0][0]:.1f},{cy + trace_h:.1f} '
+                + " ".join(f"L{x:.1f},{y:.1f}" for x, y in pts)
+                + f" L{pts[-1][0]:.1f},{cy + trace_h:.1f} Z")
+        fig.ajouter(f'<path d="{aire}" fill="{teinte}" opacity="0.16"/>')
+        fig.ajouter(f'<polyline points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in pts)}" '
+                    f'fill="none" stroke="{teinte}" stroke-width="1.8" '
+                    f'stroke-linejoin="round"/>')
+        fig.ajouter(f'<g class="marque"><title>{e(s.get("detail") or s["titre"])}</title>'
+                    f'<rect x="{cx:.1f}" y="{cy - 4:.1f}" width="{case_l:.1f}" '
+                    f'height="{trace_h + 8:.1f}" fill="transparent"/></g>')
+        fig.ajouter(f'<line x1="{cx:.1f}" y1="{cy + trace_h:.1f}" '
+                    f'x2="{cx + case_l:.1f}" y2="{cy + trace_h:.1f}" '
+                    f'stroke="var(--axe)" stroke-width="1"/>')
+    return fig.rendu()
+
+
+def nuage(points, *, titre, description, x_min, x_max, legende=None,
+          largeur=980, hauteur=380, x_titre="", y_titre=""):
+    """Un point par individu : la population entiere, sans moyenne.
+
+    Utile quand l'agregat cache la dispersion. Les points se chevauchent : on
+    les rend donc semi-transparents et cercles nets, plutot que de secouer
+    leur position, ce qui deplacerait la donnee.
+
+    `points` : [{"x":…, "y":…, "couleur":…, "detail":…}] y en 0..100.
+    """
+    points = [p for p in points if p.get("x") is not None and p.get("y") is not None]
+    if not points:
+        return ""
+    haut, bas, gauche, droite = 26 + (22 if legende else 0), 46, 46, 16
+    piste_l = largeur - gauche - droite
+    piste_h = hauteur - haut - bas
+
+    def px(v):
+        return gauche + piste_l * (v - x_min) / max(1, x_max - x_min)
+
+    def py(v):
+        return haut + piste_h * (1 - v / 100.0)
+
+    fig = Figure(largeur, hauteur, titre, description)
+    for f in (0, 25, 50, 75, 100):
+        y = py(f)
+        fig.ajouter(f'<line x1="{gauche}" y1="{y:.1f}" x2="{largeur - droite}" '
+                    f'y2="{y:.1f}" stroke="{GRILLE}" stroke-width="1"/>')
+        fig.ajouter(_texte(gauche - 8, y, f"{f} %", ancre="end",
+                           couleur=ENCRE_DOUCE, taille=11))
+    pas_x = 10 if (x_max - x_min) <= 60 else 20
+    v = x_min - x_min % pas_x + pas_x
+    while v <= x_max:
+        fig.ajouter(_texte(px(v), hauteur - bas + 18, str(v), ancre="middle",
+                           couleur=ENCRE_DOUCE, taille=11))
+        v += pas_x
+
+    for p in points:
+        fig.ajouter(
+            f'<g class="marque"><title>{e(p.get("detail") or "")}</title>'
+            f'<circle cx="{px(p["x"]):.1f}" cy="{py(p["y"]):.1f}" r="4" '
+            f'fill="{p.get("couleur") or SERIES[0]}" opacity="0.62"/></g>')
+
+    if x_titre:
+        fig.ajouter(_texte(largeur - droite, hauteur - bas + 36, x_titre,
+                           ancre="end", couleur=ENCRE_MUETTE, taille=11))
+    if y_titre:
+        fig.ajouter(_texte(gauche - 8, haut - 12, y_titre, ancre="start",
+                           couleur=ENCRE_MUETTE, taille=11))
+    if legende:
+        x = gauche
+        for nom, teinte in legende:
+            fig.ajouter(f'<circle cx="{x + 5}" cy="18" r="5" fill="{teinte}"/>')
+            fig.ajouter(_texte(x + 15, 18, nom, couleur=ENCRE, taille=12))
+            x += 24 + 7.2 * len(nom)
+    fig.ajouter(f'<line x1="{gauche}" y1="{haut + piste_h}" x2="{largeur - droite}" '
+                f'y2="{haut + piste_h}" stroke="var(--axe)" stroke-width="1"/>')
+    return fig.rendu()
+
+
+def halteres(donnees, *, titre, description, unite="", largeur=880,
+             hauteur_ligne=20, marge_gauche=210, legende=None):
+    """Un segment par ligne, entre deux bornes, avec un point median.
+
+    C'est la forme d'une ETENDUE. Une barre dirait « de zero a tant » ; ici la
+    donnee commence au minimum, et la longueur du segment EST l'ecart.
+
+    `donnees` : [{"libelle":…, "min":…, "median":…, "max":…, "couleur":…}]
+    """
+    donnees = [d for d in donnees if d.get("min") is not None]
+    if not donnees:
+        return ""
+    haut = 30 + (22 if legende else 0)
+    bas, droite = 34, 54
+    hauteur = haut + bas + len(donnees) * hauteur_ligne
+    piste = largeur - marge_gauche - droite
+    vmin = min(d["min"] for d in donnees)
+    vmax = max(d["max"] for d in donnees)
+    etendue = (vmax - vmin) or 1
+
+    def px(v):
+        return marge_gauche + piste * (v - vmin) / etendue
+
+    fig = Figure(largeur, hauteur, titre, description)
+    pas = 10
+    v = vmin - vmin % pas + pas
+    while v <= vmax:
+        fig.ajouter(f'<line x1="{px(v):.1f}" y1="{haut - 10}" x2="{px(v):.1f}" '
+                    f'y2="{hauteur - bas + 4}" stroke="{GRILLE}" stroke-width="1"/>')
+        fig.ajouter(_texte(px(v), haut - 18, f"{v}{unite}", ancre="middle",
+                           couleur=ENCRE_DOUCE, taille=11))
+        v += pas
+
+    for i, d in enumerate(donnees):
+        y = haut + i * hauteur_ligne + hauteur_ligne / 2
+        teinte = d.get("couleur") or SERIES[0]
+        info = d.get("detail") or (f'{d["libelle"]} : de {d["min"]} à {d["max"]}{unite}')
+        fig.ajouter(f'<g class="marque"><title>{e(info)}</title>'
+                    f'<line x1="{px(d["min"]):.1f}" y1="{y:.1f}" '
+                    f'x2="{px(d["max"]):.1f}" y2="{y:.1f}" stroke="{teinte}" '
+                    f'stroke-width="3" stroke-linecap="round" opacity="0.5"/>'
+                    f'<circle cx="{px(d["min"]):.1f}" cy="{y:.1f}" r="3.4" fill="{teinte}"/>'
+                    f'<circle cx="{px(d["max"]):.1f}" cy="{y:.1f}" r="3.4" fill="{teinte}"/>'
+                    + (f'<circle cx="{px(d["median"]):.1f}" cy="{y:.1f}" r="2.6" '
+                       f'fill="{SURFACE}" stroke="{teinte}" stroke-width="1.6"/>'
+                       if d.get("median") is not None else "")
+                    + '</g>')
+        fig.ajouter(_texte(marge_gauche - 10, y, d["libelle"], ancre="end",
+                           couleur=ENCRE, taille=11))
+        fig.ajouter(_texte(px(d["max"]) + 9, y, f'{d["max"] - d["min"]}{unite}',
+                           couleur=ENCRE_DOUCE, taille=11))
+
+    if legende:
+        x = marge_gauche
+        for nom, teinte in legende:
+            fig.ajouter(f'<rect x="{x}" y="8" width="11" height="11" rx="2" fill="{teinte}"/>')
+            fig.ajouter(_texte(x + 17, 14, nom, couleur=ENCRE, taille=12))
+            x += 26 + 7.2 * len(nom)
+    return fig.rendu()
+
+
+def frise(lignes, *, titre, description, debut, fin, largeur=980,
+          hauteur_ligne=16, marge_gauche=214, legende=None):
+    """Une barre par saison, posee sur un axe de temps commun.
+
+    Les creux se lisent aussi bien que les barres : une annee sans diffusion
+    saute aux yeux, ce qu'une simple liste ordonnee ne montrerait pas.
+
+    `lignes` : [{"libelle":…, "debut": annee reelle, "fin":…, "couleur":…}]
+    """
+    lignes = [l for l in lignes if l.get("debut") is not None]
+    if not lignes:
+        return ""
+    haut = 32 + (22 if legende else 0)
+    bas, droite = 30, 20
+    hauteur = haut + bas + len(lignes) * hauteur_ligne
+    piste = largeur - marge_gauche - droite
+    etendue = (fin - debut) or 1
+
+    def px(v):
+        return marge_gauche + piste * (v - debut) / etendue
+
+    fig = Figure(largeur, hauteur, titre, description)
+    an = debut - debut % 5
+    while an <= fin:
+        if an >= debut:
+            fig.ajouter(f'<line x1="{px(an):.1f}" y1="{haut - 10}" x2="{px(an):.1f}" '
+                        f'y2="{hauteur - bas + 4}" stroke="{GRILLE}" stroke-width="1"/>')
+            fig.ajouter(_texte(px(an), haut - 18, str(an), ancre="middle",
+                               couleur=ENCRE_DOUCE, taille=11))
+        an += 5
+
+    for i, l in enumerate(lignes):
+        y = haut + i * hauteur_ligne + 2
+        x1, x2 = px(l["debut"]), px(l.get("fin") or l["debut"])
+        teinte = l.get("couleur") or SERIES[0]
+        fig.ajouter(f'<g class="marque"><title>{e(l.get("detail") or l["libelle"])}</title>'
+                    f'<rect x="{x1:.1f}" y="{y:.1f}" width="{max(3.0, x2 - x1):.1f}" '
+                    f'height="{hauteur_ligne - 5:.1f}" rx="2" fill="{teinte}" '
+                    f'stroke="{SURFACE}" stroke-width="1"/></g>')
+        fig.ajouter(_texte(marge_gauche - 10, y + (hauteur_ligne - 5) / 2, l["libelle"],
+                           ancre="end", couleur=ENCRE, taille=10.5))
+
+    if legende:
+        x = marge_gauche
+        for nom, teinte in legende:
+            fig.ajouter(f'<rect x="{x}" y="8" width="11" height="11" rx="2" fill="{teinte}"/>')
+            fig.ajouter(_texte(x + 17, 14, nom, couleur=ENCRE, taille=12))
+            x += 26 + 7.2 * len(nom)
+    return fig.rendu()

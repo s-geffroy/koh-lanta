@@ -72,16 +72,31 @@ plus tôt que les hommes en moyenne — et remportent pourtant
   <p><a href="{{ '/statistiques/jeu-social/' | relative_url }}">Le jeu social</a></p>
 </div>
 
+## Et un piège que les chiffres tendent
+
+<div class="constat">
+  <p>{% assign rv = site.data.stats.revenants %}Les aventuriers rappelés pour
+  une seconde saison tiennent en moyenne plus longtemps que les autres. On en
+  conclut volontiers que <b>l’expérience paie</b>. C’est faux.</p>
+  <p>Ils tenaient déjà <b>{{ rv.paradoxe[1].survie_moyenne }} %</b> de la saison
+  lors de leur <b>première</b> aventure, contre
+  {{ rv.paradoxe[0].survie_moyenne }} % pour ceux qui n’ont jamais été
+  rappelés — et quand ils reviennent, ils redescendent à
+  <b>{{ rv.paradoxe[2].survie_moyenne }} %</b>. Le tri s’est fait avant le
+  retour ; le retour lui-même se passe moins bien.</p>
+  <p><a href="{{ '/statistiques/revenants/' | relative_url }}">Les revenants</a></p>
+</div>
+
 ## Par où commencer
 
 <ul class="cartes">
   <li class="carte">
     <a href="{{ '/statistiques/' | relative_url }}">
-      <span class="carte-rang">NEUF ENTRÉES</span>
+      <span class="carte-rang">ONZE ENTRÉES</span>
       <span class="carte-titre">Les statistiques</span>
-      <span class="carte-resume">Le profil des vainqueurs, les tribus, les
-        métiers, la longévité, les épreuves, les colliers, les conseils et le
-        jeu social.</span>
+      <span class="carte-resume">Les vainqueurs, les tribus, les métiers, les
+        prénoms, la longévité, les sorties, les épreuves, les colliers, le jeu
+        social, les conseils et les revenants.</span>
     </a>
   </li>
   <li class="carte">

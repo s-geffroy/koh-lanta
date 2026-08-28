@@ -24,8 +24,10 @@ import yaml
 RACINE = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 sys.path.insert(0, os.path.join(RACINE, "tools", "extraction"))
 from csp import classer, libelles           # noqa: E402
+import analyses                              # noqa: E402
 sys.path.insert(0, os.path.join(RACINE, "tools"))
-from indicateurs import (indicateurs_individuels, indicateurs_saison,  # noqa: E402
+from indicateurs import (eliminations, votes_du_jury,  # noqa: E402
+                         indicateurs_individuels, indicateurs_saison,  # noqa: E402
                          fantomes, SEUIL_CONSEILS, SEUIL_EPREUVES)
 
 ENTETE = """# ATTENTION : fichier genere. Ne pas editer a la main.
@@ -158,13 +160,18 @@ def bloc_couleurs(parts):
             "finales": finales,
             "taux_finale": part(finales, len(lot)),
         })
-    return sorted(out, key=lambda x: -x["effectif"])
+    return sorted(out, key=lambda x: (-x["effectif"], x["couleur"]))
 
 
 def bloc_metiers(parts):
     lib = libelles()
     out = []
-    for code in {p["_csp"] for p in parts if p["_csp"]}:
+    # `sorted` autour de l'ensemble : l'ordre d'iteration d'un set de chaines
+    # change d'un processus a l'autre (l'empreinte des chaines est tiree au
+    # hasard au demarrage). Sans lui, deux constructions du meme jeu de
+    # donnees ne donnaient pas le meme fichier -- et le site changeait tout
+    # seul entre deux publications.
+    for code in sorted({p["_csp"] for p in parts if p["_csp"]}):
         lot = [p for p in parts if p["_csp"] == code]
         finales = sum(1 for p in lot if p.get("sort") in ("vainqueur", "finaliste"))
         survies = [p["_survie"] for p in lot if p["_survie"] is not None]
@@ -180,7 +187,7 @@ def bloc_metiers(parts):
             "survie_moyenne": arrondi(mean(survies)) if survies else None,
             "age_moyen": arrondi(mean(ages)) if ages else None,
         })
-    return sorted(out, key=lambda x: -x["effectif"])
+    return sorted(out, key=lambda x: (-x["effectif"], x["libelle"]))
 
 
 def bloc_genre(parts):
@@ -302,7 +309,10 @@ def bloc_records(parts, personnes):
 
 
 def bloc_conseils(conseils, parts, par_saison):
-    utiles = [c for c in conseils
+    # Le vote du jury final est mis de cote : on n'y elimine personne, on y
+    # designe un vainqueur. Le melanger aux conseils fausserait le decompte
+    # comme la part de conseils serres.
+    utiles = [c for c in eliminations(conseils)
               if not par_saison.get(c["saison"], {}).get("en_cours")]
     complets = [c for c in utiles if c.get("complet")]
     avec_decompte = [c for c in utiles if c.get("votes_exprimes")]
@@ -340,6 +350,30 @@ def bloc_conseils(conseils, parts, par_saison):
             {"votant": g1, "cible": g2, "effectif": n, "part": part(n, total_g)}
             for (g1, g2), n in sorted(genre.items(), key=lambda x: -x[1])],
     }
+
+
+def bloc_jury(conseils, parts, par_saison):
+    """Le vote du jury final, quand la source le donne.
+
+    Il n'est releve que pour huit saisons : ailleurs, les pages sources ne
+    publient pas le detail du scrutin final. C'est trop peu pour en tirer une
+    statistique, assez pour etre montre tel quel.
+    """
+    idx = {(p["saison"], p["id"]): p for p in parts}
+    lignes = []
+    for c in sorted(votes_du_jury(conseils), key=lambda c: c["saison"]):
+        sa = par_saison.get(c["saison"]) or {}
+        p = idx.get((c["saison"], c["laureat"])) or {}
+        lignes.append({
+            "saison": c["saison"],
+            "titre": sa.get("titre"),
+            "annee": sa.get("annee"),
+            "laureat": p.get("nom_complet") or p.get("nom") or c["laureat"],
+            "voix_pour": c.get("votes_pour"),
+            "voix_exprimees": c.get("votes_exprimes"),
+            "bulletins_releves": len(c.get("votes") or []),
+        })
+    return {"effectif": len(lignes), "scrutins": lignes}
 
 
 def bloc_epreuves(epreuves, conseils, parts, saisons, par_saison):
@@ -623,6 +657,21 @@ def main():
         "saisons": bloc_saisons(saisons, parts),
         "records": bloc_records(toutes, personnes),
         "conseils": bloc_conseils(conseils, parts, par_saison),
+        "jury": bloc_jury(conseils, parts, par_saison),
+        # --- les analyses ajoutees ensuite. Elles prennent les participations
+        # brutes, sans le filtre « saisons classiques » applique plus haut :
+        # chacune dit elle-meme sur quel perimetre elle porte.
+        "revenants": analyses.revenants(par_saison, parts, personnes),
+        "risque": analyses.risque(par_saison, parts),
+        "survie_saisons": analyses.survie_par_saison(par_saison, parts),
+        "casting": analyses.casting(par_saison, parts),
+        "programme": analyses.programme(par_saison),
+        "reciprocite": analyses.reciprocite(eliminations(conseils), parts, par_saison),
+        "arc_des_votes": analyses.arc_des_votes(eliminations(conseils), parts, par_saison),
+        "voix_pour_eliminer": analyses.voix_pour_eliminer(
+            [c for c in eliminations(conseils)
+             if not par_saison.get(c["saison"], {}).get("en_cours")]),
+        "premiere_epreuve": analyses.premiere_epreuve(par_saison, parts, epreuves),
         "epreuves": bloc_epreuves(epreuves, conseils, parts, saisons, par_saison),
         "colliers": bloc_colliers(colliers, par_saison),
         "indicateurs": bloc_indicateurs(saisons, parts, conseils, epreuves, colliers),

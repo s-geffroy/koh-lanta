@@ -34,6 +34,9 @@
     - titre: Le métier
       url: /statistiques/professions/
       resume: Qui compose le casting, et quels métiers mènent le plus loin.
+    - titre: Les prénoms
+      url: /statistiques/prenoms/
+      resume: "Alexandra revient sept fois. Est-ce beaucoup ? Réponse chiffrée."
     - titre: Âge et longévité
       url: /statistiques/longevite/
       resume: À quel âge on tient, et l'écart entre femmes et hommes.
@@ -52,6 +55,9 @@
     - titre: Les conseils
       url: /statistiques/conseils/
       resume: Les votes serrés, les colliers, qui vote contre qui.
+    - titre: Les revenants
+      url: /statistiques/revenants/
+      resume: "Le retour paie-t-il ? Le chiffre évident est un piège."
 
 - section: Les données
   entrees:

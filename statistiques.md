@@ -3,7 +3,7 @@ layout: page
 title: Les statistiques
 permalink: /statistiques/
 chapeau: >-
-  Neuf entrées dans le même jeu de données. Chacune répond à une question
+  Onze entrées dans le même jeu de données. Chacune répond à une question
   que se posent les téléspectateurs depuis vingt-cinq ans.
 ---
 
@@ -27,7 +27,7 @@ mêmes personnes et fausseraient les moyennes d’âge comme de longévité.
   <li class="chiffre"><b>{{ s.records.nb_multi_participants }}</b><span>aventuriers revenus jouer</span></li>
 </ul>
 
-## Les neuf entrées
+## Les onze entrées
 
 <ul class="cartes">
 {%- for groupe in site.data.navigation -%}

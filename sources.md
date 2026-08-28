@@ -33,6 +33,20 @@ Aucune des deux ne suffit seule. Pour chaque saison, la source de référence es
 **celle dont l’effectif correspond au nombre de candidats annoncé** ; l’autre
 vient compléter, champ par champ.
 
+## Une troisième source, pour un seul usage
+
+**[Le fichier des prénoms de l’INSEE](https://www.insee.fr/fr/statistiques/8595130)**
+— nombre de naissances par prénom, par sexe et par année depuis 1900, sous
+[licence ouverte v2](https://www.etalab.gouv.fr/licence-ouverte-open-licence/).
+Il ne sert qu’à une chose : donner un point de comparaison aux
+[prénoms des aventuriers]({{ '/statistiques/prenoms/' | relative_url }}). Aucune
+donnée de Koh-Lanta n’en provient.
+
+Le sous-ensemble effectivement lu — nos prénoms, nos années de naissance — est
+versionné dans le dépôt, comme le wikitexte brut : c’est la preuve de
+provenance, et elle permet de refaire le calcul sans redemander le fichier
+complet à l’INSEE.
+
 ## La traçabilité
 
 Chaque enregistrement du jeu de données porte un bloc `sources` qui indique,
@@ -101,6 +115,12 @@ Le jeu de données n’est pas complet, et le dire fait partie du travail.
   dépouillement complet <em>et</em> un éliminé rattaché : quelques dizaines de
   conseils, pas les {{ site.data.stats.conseils.conseils }}. L’indicateur est
   publié avec sa base, et penche vers les saisons les mieux documentées.
+- **Le vote du jury final n’est pas un conseil.** Huit saisons en publient le
+  détail, et les tableaux sources le présentent comme un scrutin ordinaire —
+  avec le vainqueur en « sortant ». Or on n’y élimine personne : écrire un nom
+  y signifie « qu’il gagne ». Ces {{ site.data.stats.jury.effectif }} scrutins
+  sont marqués `type: jury` dans les données et tenus à l’écart de tout calcul
+  d’élimination.
 - **La saison en cours** au moment de la constitution des données n’a pas de
   vainqueur ni de jours de sortie complets : elle est exclue de tous les calculs.
 

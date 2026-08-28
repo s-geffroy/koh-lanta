@@ -10,8 +10,9 @@ import yaml
 
 RACINE = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 sys.path.insert(0, os.path.join(RACINE, "tools"))
-from graphiques import (barres_horizontales, barres_groupees, colonnes,  # noqa: E402
-                        courbes, ecrire, peigne, SERIES, TRIBUS)
+from graphiques import (arcs, barres_horizontales, barres_groupees,  # noqa: E402
+                        colonnes, courbes, ecrire, frise, halteres, nuage,
+                        peigne, petits_multiples, ENCRE_MUETTE, SERIES, TRIBUS)
 
 NOM_COULEUR = {"jaune": "Jaune", "rouge": "Rouge", "bleu": "Bleu", "vert": "Vert",
                "orange": "Orange", "violet": "Violet", "noir": "Noire", "blanc": "Blanche"}
@@ -62,6 +63,10 @@ def main():
     # --- la figure d'ouverture -------------------------------------------
     n, mediane, jmax = figure_peigne()
     print(f"    ({n} traits, mediane jour {mediane}, maximum jour {jmax})")
+
+    figures_ajoutees(stats)
+    figure_prenoms()
+    figure_nuage()
 
     # --- vainqueurs -------------------------------------------------------
     v = stats["vainqueurs"]
@@ -391,6 +396,282 @@ def main():
             unite=" %", couleur=SERIES[0], largeur=760, hauteur=300,
             etiquettes_valeurs=False))
     return 0
+
+
+
+def figures_ajoutees(stats):
+    """Les figures de la seconde serie : revenants, risque, casting, prenoms.
+
+    Elles sont ecrites a part pour que la premiere serie reste lisible, mais
+    elles suivent exactement les memes regles : couleurs prises aux variables
+    CSS, jamais en hexadecimal ; une etiquette de valeur sur chaque marque ;
+    un <title> par marque pour l'infobulle native.
+    """
+    # ------------------------------------------------------------ revenants
+    r = stats.get("revenants") or {}
+    if r.get("paradoxe"):
+        ecrire("revenants-paradoxe.svg", barres_horizontales(
+            [{"libelle": x["libelle"], "valeur": x["survie_moyenne"],
+              "couleur": SERIES[2] if i == 1 else (SERIES[1] if i == 2 else SERIES[0]),
+              "detail": f'{x["libelle"]} : {x["effectif"]} aventures, '
+                        f'{x["survie_moyenne"]} % de la saison en moyenne'}
+             for i, x in enumerate(r["paradoxe"])],
+            titre="Le paradoxe des revenants",
+            description="Part moyenne de la saison passée en jeu, selon que "
+                        "l'aventurier a été rappelé ou non, et selon qu'il "
+                        "s'agit de sa première aventure ou d'un retour.",
+            unite=" %", marge_gauche=260, largeur=880, valeur_max=100))
+
+    g = (r.get("graphe") or {})
+    if g.get("noeuds"):
+        ecrire("revenants-graphe.svg", arcs(
+            [{"nom": n["nom"].split()[0], "poids": n["degre"],
+              "couleur": SERIES[0] if n["saisons"] == 2 else SERIES[1],
+              "detail": f'{n["nom"]} — {n["saisons"]} saisons, '
+                        f'{n["degre"]} aventuriers croisés parmi les revenants'}
+             for n in g["noeuds"]],
+            [{"de": a["de"], "vers": a["vers"], "poids": a["poids"]}
+             for a in g["aretes"]],
+            titre="Le petit monde des revenants",
+            description="Chaque point est un aventurier revenu au moins deux "
+                        "fois, rangé par ordre d'arrivée dans le programme. Un "
+                        "arc relie deux personnes ayant partagé une saison.",
+            legende=[("Deux saisons", SERIES[0]), ("Trois et plus", SERIES[1])],
+            etiquettes=False, hauteur_etiquettes=16, hauteur_arc=190))
+
+    if r.get("carrieres"):
+        ecrire("revenants-carrieres.svg", barres_horizontales(
+            [{"libelle": c["nom"], "valeur": c["jours"],
+              "couleur": SERIES[0] if c["part_du_temps"] < 100 else SERIES[2],
+              "detail": f'{c["nom"]} : {c["jours"]} jours sur '
+                        f'{c["jours_possibles"]} possibles ({c["part_du_temps"]} %), '
+                        f'en {c["saisons"]} saisons'}
+             for c in r["carrieres"][:12]],
+            titre="Les plus longues carrières",
+            description="Jours de jeu cumulés sur toutes les participations. "
+                        "En vert, ceux qui n'ont jamais été éliminés : ils ont "
+                        "joué 100 % du temps possible.",
+            unite=" j", marge_gauche=180, largeur=880))
+
+    if r.get("duos"):
+        ecrire("revenants-duos.svg", barres_horizontales(
+            [{"libelle": f'{d["a"].split()[0]} et {d["b"].split()[0]}',
+              "valeur": d["saisons"], "couleur": SERIES[3],
+              "detail": f'{d["a"]} et {d["b"]} : {d["saisons"]} saisons ensemble'}
+             for d in r["duos"][:10]],
+            titre="Les duos qui n'en finissent pas",
+            description="Nombre de saisons partagées par les mêmes deux personnes.",
+            unite=" saisons", marge_gauche=210, largeur=880))
+
+    # --------------------------------------------------------------- risque
+    q = stats.get("risque") or {}
+    if q.get("tranches"):
+        # Le dernier palier vaut 100 % par construction -- tout le monde sort a
+        # la fin. L'afficher ecraserait l'echelle et n'apprendrait rien.
+        lot = [t for t in q["tranches"] if t["tranche"] < 100 and t["encore_en_jeu"] > 20]
+        ecrire("risque-courbe.svg", colonnes(
+            [{"libelle": f'{t["tranche"]} %', "valeur": t["risque"],
+              "detail": f'À {t["tranche"]} % de la saison : {t["sortants"]} sortants '
+                        f'sur {t["encore_en_jeu"]} encore en jeu'}
+             for t in lot],
+            titre="Le risque de sortir, selon l'avancement de la saison",
+            description="Part des aventuriers encore en jeu qui quittent "
+                        "l'aventure à ce moment-là. La finale est exclue : "
+                        "tout le monde en sort.",
+            unite=" %", couleur=SERIES[1], largeur=880, hauteur=300))
+
+    if q.get("jours_les_plus_meurtriers"):
+        ecrire("risque-jours.svg", barres_horizontales(
+            [{"libelle": f'Jour {x["jour"]}', "valeur": x["sortants"],
+              "couleur": SERIES[7],
+              "detail": f'Jour {x["jour"]} : {x["sortants"]} départs'}
+             for x in q["jours_les_plus_meurtriers"]],
+            titre="Les jours qui font le plus de sortants",
+            description="Nombre de départs par jour de jeu, saisons classiques.",
+            marge_gauche=110, largeur=760))
+
+    # ---------------------------------------------------- petits multiples
+    ss = stats.get("survie_saisons") or []
+    if ss:
+        ecrire("saisons-petits-multiples.svg", petits_multiples(
+            [{"titre": (f'{x["numero"]}' if x["numero"] and not x["speciale"]
+                        else x["titre"][:13]),
+              "sous_titre": str(x["annee"]),
+              "valeurs": x["restants"],
+              "couleur": SERIES[4] if x["speciale"] else SERIES[0],
+              "detail": f'{x["titre"]} ({x["annee"]}) — {x["effectif"]} aventuriers'}
+             for x in ss],
+            titre="Les trente-trois saisons, à la même échelle",
+            description="Part des aventuriers encore en jeu, du premier au "
+                        "dernier jour de chaque saison. Les axes sont "
+                        "identiques partout : les courbes se comparent "
+                        "directement. En rose, les éditions spéciales."))
+
+    # -------------------------------------------------------------- casting
+    c = stats.get("casting") or {}
+    if c.get("etendues"):
+        ecrire("casting-ages.svg", halteres(
+            [{"libelle": f'{x["titre"]} ({x["annee"]})',
+              "min": x["min"], "median": x["median"], "max": x["max"],
+              "couleur": SERIES[4] if x["speciale"] else SERIES[0],
+              "detail": f'{x["titre"]} ({x["annee"]}) : de {x["min"]} à '
+                        f'{x["max"]} ans, médiane {x["median"]}'}
+             for x in c["etendues"]],
+            titre="L'âge du casting, saison par saison",
+            description="Du plus jeune au plus âgé de chaque casting ; le point "
+                        "creux marque l'âge médian. Le nombre à droite est "
+                        "l'écart entre les deux extrêmes.",
+            unite=" ans", largeur=880, marge_gauche=230,
+            legende=[("Édition classique", SERIES[0]), ("Édition spéciale", SERIES[4])]))
+
+    if c.get("generations"):
+        ecrire("casting-generations.svg", colonnes(
+            [{"libelle": f'{x["decennie"]}', "valeur": x["effectif"],
+              "detail": f'Nés dans les années {x["decennie"]} : {x["effectif"]} aventuriers'}
+             for x in c["generations"]],
+            titre="La génération des aventuriers",
+            description="Année de naissance déduite de l'âge annoncé et de "
+                        "l'année de la saison, par décennie de naissance.",
+            couleur=SERIES[6], largeur=760, hauteur=290))
+
+    # ------------------------------------------------------------ programme
+    pr = stats.get("programme") or {}
+    if pr.get("saisons"):
+        lignes = [x for x in pr["saisons"] if x.get("debut")]
+        annees = [int(x["debut"][:4]) for x in lignes]
+        ecrire("programme-frise.svg", frise(
+            [{"libelle": f'{x["titre"]} ({x["annee"]})',
+              "debut": int(x["debut"][:4]) + (int(x["debut"][5:7]) - 1) / 12.0,
+              "fin": (int(x["fin"][:4]) + (int(x["fin"][5:7]) - 1) / 12.0
+                      if x.get("fin") else None),
+              "couleur": SERIES[4] if x["speciale"] else SERIES[0],
+              "detail": f'{x["titre"]} — diffusée du {x["debut"]} au '
+                        f'{x.get("fin") or "?"}, le {x.get("jour_semaine") or "?"}'}
+             for x in lignes],
+            titre="Vingt-cinq ans de diffusion",
+            description="Période de diffusion de chaque saison. Les creux sont "
+                        "aussi parlants que les barres.",
+            debut=min(annees), fin=max(annees) + 1, largeur=920,
+            legende=[("Édition classique", SERIES[0]), ("Édition spéciale", SERIES[4])]))
+
+    if pr.get("jour_de_lancement"):
+        ecrire("programme-jours.svg", barres_horizontales(
+            [{"libelle": x["jour"].capitalize(), "valeur": x["effectif"],
+              "couleur": SERIES[0],
+              "detail": f'{x["effectif"]} saisons lancées un {x["jour"]}'}
+             for x in pr["jour_de_lancement"]],
+            titre="Le jour de la semaine du premier épisode",
+            description="Jour de diffusion du premier épisode de chaque saison.",
+            marge_gauche=110, largeur=680))
+
+    # ---------------------------------------------------------------- votes
+    a = stats.get("arc_des_votes") or {}
+    if a.get("noeuds"):
+        ecrire("votes-arc.svg", arcs(
+            [{"nom": n["nom"], "poids": 1,
+              "couleur": TRIBUS.get(n.get("couleur"), ENCRE_MUETTE),
+              "detail": f'{n["nom"]} — sorti au jour {n["jour_sortie"]}'}
+             for n in a["noeuds"]],
+            [{"de": l["de"], "vers": l["vers"], "poids": l["poids"]}
+             for l in a["liens"]],
+            titre=f'Qui a écrit le nom de qui — {a["titre"]} ({a["annee"]})',
+            description="Les aventuriers sont rangés dans l'ordre de leur "
+                        "sortie, du premier parti au vainqueur. Un arc relie "
+                        "deux personnes dont l'une a écrit le nom de l'autre ; "
+                        "plus il est épais, plus elle l'a fait souvent.",
+            hauteur_arc=170, hauteur_etiquettes=104))
+
+    v = stats.get("voix_pour_eliminer") or {}
+    if v.get("repartition"):
+        ecrire("conseils-voix.svg", colonnes(
+            [{"libelle": str(x["voix"]), "valeur": x["effectif"],
+              "detail": f'{x["effectif"]} conseils se sont joués à '
+                        f'{x["voix"]} voix ({x["part"]} %)'}
+             for x in v["repartition"]],
+            titre="Combien de voix faut-il pour partir ?",
+            description="Nombre de bulletins portant le nom de l'éliminé.",
+            couleur=SERIES[0], largeur=760, hauteur=300))
+    return
+
+def figure_prenoms():
+    """Les prenoms du casting compares a ceux de la France, nee les memes annees.
+
+    Seuls les prenoms dont l'ATTENDU atteint 1 sont classes. En dessous, un
+    seul porteur suffit a afficher un facteur quarante : l'indice devient un
+    artefact du seuil, pas un resultat. C'est la reserve la plus importante de
+    cette figure, et elle est appliquee ici plutot que laissee au lecteur.
+    """
+    chemin = os.path.join(RACINE, "_data", "prenoms.yml")
+    if not os.path.exists(chemin):
+        return
+    d = yaml.safe_load(open(chemin, encoding="utf-8"))
+    solides = [x for x in d["prenoms"]
+               if not x["absent_du_fichier"] and x["attendu"] >= 1]
+    if not solides:
+        return
+    haut = sorted(solides, key=lambda x: -x["indice"])[:8]
+    bas = sorted(solides, key=lambda x: x["indice"])[:8]
+    lot = haut + list(reversed(bas))
+
+    ecrire("prenoms-ecart.svg", barres_groupees(
+        [{"libelle": x["prenom"], "valeurs": [x["observe"], x["attendu"]],
+          "details": [f'{x["prenom"]} : {x["observe"]} aventuriers',
+                      f'{x["prenom"]} : {x["attendu"]} attendus si le casting '
+                      f'suivait les naissances françaises']}
+         for x in lot],
+        [{"nom": "Observé à Koh-Lanta", "couleur": SERIES[1]},
+         {"nom": "Attendu en France", "couleur": SERIES[0]}],
+        titre="Les prénoms sur-représentés, et les absents",
+        description="Nombre d'aventuriers portant ce prénom, face au nombre "
+                    "attendu si le casting était un échantillon ordinaire des "
+                    "naissances françaises des mêmes années. Les huit premiers "
+                    "sont sur-représentés, les huit derniers sous-représentés.",
+        largeur=880, marge_gauche=150, hauteur_groupe=30))
+    print(f"    ({len(solides)} prénoms classés, "
+          f"{sum(1 for x in d['prenoms'] if x['absent_du_fichier'])} introuvables)")
+
+
+def figure_nuage():
+    """Un point par aventurier : l'age contre la part de saison tenue.
+
+    L'agregat par tranche d'age lisse ce que cette figure montre en clair --
+    a tout age on peut sortir au troisieme jour comme aller en finale. La
+    dispersion EST le resultat.
+    """
+    parts = _lire("participations.yml")
+    saisons = {s["id"]: s for s in _lire("saisons.yml")}
+    SORTS = {"vainqueur": ("Vainqueurs", SERIES[2]),
+             "finaliste": ("Finalistes", SERIES[3])}
+    points = []
+    for p in parts:
+        s = saisons.get(p["saison"], {})
+        if s.get("speciale") or s.get("annulee"):
+            continue
+        d, j, a = s.get("duree_jours"), p.get("jour_sortie"), p.get("age")
+        if not (d and j and a):
+            continue
+        nom, teinte = SORTS.get(p.get("sort"), ("Éliminés et abandons", ENCRE_MUETTE))
+        points.append({
+            "x": a, "y": 100.0 * j / d, "couleur": teinte,
+            "detail": f'{p.get("nom_complet") or p["nom"]} — {a} ans, '
+                      f'{s["titre"]} ({s["annee"]}), sorti au jour {j} sur {d}',
+            "_rang": 0 if teinte == ENCRE_MUETTE else 1,
+        })
+    # Les vainqueurs et finalistes dessines en dernier : sinon la masse des
+    # elimines les recouvre, et c'est justement eux qu'on cherche.
+    points.sort(key=lambda p: p["_rang"])
+    ages = [p["x"] for p in points]
+
+    ecrire("longevite-nuage.svg", nuage(
+        points, x_min=min(ages), x_max=max(ages),
+        titre="L'âge et la longévité, aventurier par aventurier",
+        description="Chaque point est une participation à une saison "
+                    "classique : son âge en abscisse, la part de la saison "
+                    "qu'il a tenue en ordonnée.",
+        x_titre="âge au moment du tournage", y_titre="part de la saison tenue",
+        legende=[("Vainqueurs", SERIES[2]), ("Finalistes", SERIES[3]),
+                 ("Éliminés et abandons", ENCRE_MUETTE)],
+        largeur=920, hauteur=400))
 
 
 if __name__ == "__main__":

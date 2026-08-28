@@ -287,6 +287,52 @@ def verifier_colliers(colliers, saisons, parts, c):
                   f"— {', '.join(libelles[:6])}")
 
 
+def verifier_conseils(conseils, saisons, parts, c):
+    """Le scrutin final n'est pas un conseil, et rien ne doit les confondre.
+
+    Les tableaux sources presentent le vote du jury final comme un conseil
+    ordinaire, en placant le VAINQUEUR dans la colonne du sortant. Ecrire un
+    nom y signifie pourtant « qu'il gagne » : compter ces bulletins comme des
+    eliminations inverse le sens de chacun d'eux. La separation se fait a la
+    generation ; ce controle est la pour qu'elle ne se perde pas.
+    """
+    vainqueurs = {(p["saison"], p["id"]) for p in parts
+                  if p.get("sort") == "vainqueur"}
+    ids = {(p["saison"], p["id"]) for p in parts}
+    connus = {s["id"] for s in saisons}
+
+    for x in conseils:
+        ref = f'{x.get("saison")} conseil {x.get("numero")}'
+        t = x.get("type")
+        if t not in ("elimination", "jury"):
+            c.erreur(f"{ref} : `type` absent ou inconnu ({t!r}) — "
+                     f"attendu `elimination` ou `jury`")
+            continue
+        if x.get("saison") not in connus:
+            c.erreur(f"{ref} : saison inconnue")
+
+        if t == "jury":
+            for interdit in ("elimine", "elimine_rattache", "votes_contre"):
+                if interdit in x:
+                    c.erreur(f"{ref} : vote de jury portant `{interdit}` — "
+                             f"personne n'y est elimine")
+            if x.get("laureat") and (x["saison"], x["laureat"]) not in vainqueurs:
+                c.erreur(f"{ref} : le laureat « {x['laureat']} » n'est pas le "
+                         f"vainqueur declare de la saison")
+        else:
+            if "laureat" in x:
+                c.erreur(f"{ref} : conseil d'elimination portant `laureat`")
+            if x.get("elimine_rattache") and (x["saison"], x["elimine"]) in vainqueurs:
+                c.erreur(f"{ref} : le vainqueur de la saison y est donne pour "
+                         f"elimine — c'est le vote du jury, pas un conseil")
+
+        for b in x.get("votes") or []:
+            if b.get("votant_rattache") and (x["saison"], b["votant"]) not in ids:
+                c.erreur(f"{ref} : votant « {b['votant']} » absent des participations")
+            if b.get("cible_rattachee") and (x["saison"], b["cible"]) not in ids:
+                c.erreur(f"{ref} : cible « {b['cible']} » absente des participations")
+
+
 def verifier_personnes(personnes, parts, c):
     ids_parts = Counter(p["id"] for p in parts)
     ids_pers = {g["id"] for g in personnes}
@@ -328,6 +374,7 @@ def main():
     parts = charger("participations.yml")
     personnes = charger("personnes.yml")
     epreuves = charger("epreuves.yml")
+    conseils = charger("conseils.yml")
     colliers = charger("colliers.yml")
 
     if saisons is None:
@@ -344,6 +391,8 @@ def main():
         trous(parts, saisons, c)
     if saisons and parts and epreuves:
         verifier_epreuves(epreuves, saisons, parts, c)
+    if saisons and parts and conseils:
+        verifier_conseils(conseils, saisons, parts, c)
     if saisons and parts and colliers:
         verifier_colliers(colliers, saisons, parts, c)
     if parts and personnes:
@@ -353,6 +402,7 @@ def main():
     print(f"participations : {len(parts or [])}")
     print(f"personnes      : {len(personnes or [])}")
     print(f"epreuves       : {len(epreuves or [])}")
+    print(f"conseils       : {len(conseils or [])}")
     print(f"colliers       : {len(colliers or [])}")
 
     if c.avertissements:

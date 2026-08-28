@@ -105,6 +105,22 @@ la seconde.
 </table>
 </div>
 
+## Chaque aventurier, un point
+
+Les moyennes par tranche d’âge lissent ce que cette figure montre en clair : à
+tout âge, on peut sortir au troisième jour comme aller en finale.
+
+{% include graphiques/longevite-nuage.svg %}
+
+<p class="legende-figure">Une participation à une saison classique par point :
+l’âge en abscisse, la part de la saison tenue en ordonnée. Les vainqueurs et
+les finalistes sont dessinés par-dessus la masse, sans quoi elle les
+recouvrirait.</p>
+
+**La dispersion est le résultat.** Le nuage n’a pas de pente marquée : l’âge ne
+prédit pas la longévité. Ce qu’on voit, c’est une bande dense de sorties
+précoces à tous les âges, et des vainqueurs répartis de vingt à cinquante ans.
+
 ## Les revenants
 
 {{ s.records.nb_multi_participants }} aventuriers ont joué plus d’une fois.

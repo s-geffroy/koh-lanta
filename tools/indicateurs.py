@@ -22,6 +22,25 @@ SEUIL_CONSEILS = 4        # sous ce nombre, un taux de vote n'a pas de sens
 SEUIL_EPREUVES = 8        # idem pour un ratio d'epreuves
 
 
+def eliminations(conseils):
+    """Les conseils qui font sortir quelqu'un -- et eux seuls.
+
+    Le dernier scrutin d'une saison n'est pas un conseil mais le vote du jury
+    final : y ecrire un nom veut dire « qu'il gagne ». Le compter comme une
+    elimination inverserait le sens de chaque bulletin. Huit saisons sont
+    concernees, pour 49 bulletins.
+
+    Tout calcul portant sur les eliminations passe par ici. Les lignes plus
+    anciennes n'ayant pas de champ `type`, l'absence vaut `elimination`.
+    """
+    return [c for c in conseils if c.get("type", "elimination") != "jury"]
+
+
+def votes_du_jury(conseils):
+    """L'inverse : les scrutins finaux, ou l'on vote POUR."""
+    return [c for c in conseils if c.get("type") == "jury"]
+
+
 def _episode_de_sortie(conseils, parts, epreuves):
     """(saison, personne) -> episode ou la personne quitte le jeu."""
     sortie = {}
@@ -74,6 +93,7 @@ def indicateurs_individuels(saisons, parts, conseils, epreuves):
     voix_recues = Counter()
     survecus_vise = Counter()
 
+    conseils = eliminations(conseils)
     conseils_par_saison = defaultdict(list)
     for c in conseils:
         conseils_par_saison[c["saison"]].append(c)
@@ -211,7 +231,7 @@ def indicateurs_saison(saisons, parts, conseils, epreuves, colliers):
         parts_par_saison[p["saison"]].append(p)
 
     conseils_par_saison = defaultdict(list)
-    for c in conseils:
+    for c in eliminations(conseils):
         conseils_par_saison[c["saison"]].append(c)
 
     epreuves_par_saison = defaultdict(list)

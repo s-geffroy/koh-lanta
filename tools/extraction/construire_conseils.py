@@ -32,6 +32,12 @@ ENTETE = """# ATTENTION : fichier genere. Ne pas editer a la main.
 # `annule: true` sur un bulletin signale une voix rendue nulle par un collier
 # d'immunite : c'est ce qui permet de mesurer l'effet reel des colliers.
 #
+# `type` vaut `elimination` ou `jury`. Le dernier scrutin d'une saison n'est
+# pas un conseil : c'est le vote du jury final, et le sens du bulletin y est
+# INVERSE -- ecrire un nom veut dire « qu'il gagne », pas « qu'il parte ». Une
+# ligne `jury` porte donc `laureat` et `votes_pour`, jamais `elimine` ni
+# `votes_contre`, pour qu'aucun calcul ne puisse les confondre.
+#
 #     tools/atelier python3 tools/extraction/construire_conseils.py --ecrire
 #
 """
@@ -57,6 +63,12 @@ def resoudre(nom, index_saison):
 
 def construire(saisons, parts, rapport):
     index = index_participations(parts)
+    # Le vainqueur d'une saison ne peut pas avoir ete elimine au conseil : si
+    # une matrice le donne « sortant », c'est qu'on lit le vote du jury final.
+    # La cle porte la saison : l'identifiant seul est celui de la PERSONNE, et
+    # un vainqueur qui rejoue une autre saison n'y est pas vainqueur pour
+    # autant. Sans la saison, on classerait « jury » des conseils ordinaires.
+    vainqueurs = {(p["saison"], p["id"]) for p in parts if p.get("sort") == "vainqueur"}
     conseils = []
 
     for s in saisons:
@@ -103,17 +115,32 @@ def construire(saisons, parts, rapport):
                     "cible_rattachee": bool(cid),
                     "annule": b["annule"],
                 })
-            conseils.append({
+            jury = bool(elimine_id) and (sid, elimine_id) in vainqueurs
+            if jury:
+                rapport.append(f"{sid} conseil {c['numero']} : vote du JURY FINAL "
+                               f"(« {c['elimine']} » n'est pas sortant, il gagne)")
+            commun = {
                 "saison": sid,
                 "numero": c["numero"],
+                "type": "jury" if jury else "elimination",
                 "complet": c.get("complet", False),
                 "episode": c["episode"],
-                "elimine": elimine_id or c["elimine"],
-                "elimine_rattache": bool(elimine_id),
-                "votes_contre": c["votes_contre"],
-                "votes_exprimes": c["votes_exprimes"],
-                "votes": bulletins,
-            })
+            }
+            if jury:
+                commun.update({
+                    "laureat": elimine_id,
+                    "laureat_rattache": True,
+                    "votes_pour": c["votes_contre"],
+                })
+            else:
+                commun.update({
+                    "elimine": elimine_id or c["elimine"],
+                    "elimine_rattache": bool(elimine_id),
+                    "votes_contre": c["votes_contre"],
+                })
+            commun["votes_exprimes"] = c["votes_exprimes"]
+            commun["votes"] = bulletins
+            conseils.append(commun)
     return conseils
 
 
@@ -126,7 +153,8 @@ def main():
     bulletins = sum(len(c["votes"]) for c in conseils)
     rattaches = sum(1 for c in conseils for b in c["votes"]
                     if b["votant_rattache"] and b["cible_rattachee"])
-    print(f"conseils   : {len(conseils)}")
+    jurys = [c for c in conseils if c["type"] == "jury"]
+    print(f"conseils   : {len(conseils)} dont {len(jurys)} votes de jury final")
     print(f"bulletins  : {bulletins}")
     print(f"rattaches  : {rattaches}  ({100*rattaches/bulletins:.1f} %)")
 

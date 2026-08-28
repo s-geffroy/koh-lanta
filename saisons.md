@@ -80,6 +80,19 @@ moyennes d’âge vers le haut sans rien dire du casting ordinaire.
 </table>
 </div>
 
+## Les trente-trois saisons, à la même échelle
+
+{% include graphiques/saisons-petits-multiples.svg %}
+
+<p class="legende-figure">Part des aventuriers encore en jeu, du premier au
+dernier jour de chaque saison. Les axes sont identiques partout : une courbe
+qui plonge plonge vraiment, elle n’est pas mise à l’échelle de sa propre case.
+La ligne grise marque la moitié du plateau.</p>
+
+Les éditions spéciales, en rose, se reconnaissent à leur pente : plus courtes,
+elles éliminent plus vite. Chez les classiques, la forme est remarquablement
+stable d’une saison à l’autre — le format tient depuis vingt-cinq ans.
+
 ## Les saisons comparées
 
 Au-delà du casting, quatre indicateurs disent ce qu’a été chaque saison.
@@ -164,6 +177,47 @@ Sans JavaScript, il reste entièrement lisible, dans l’ordre chronologique.</p
 <p class="note">Un tiret signale une saison dont les sources ne permettent pas
 de calculer l’indicateur : pas de bilan d’épreuves, ou trop peu de conseils au
 dépouillement complet.</p>
+
+## Vingt-cinq ans de diffusion
+
+{% include graphiques/programme-frise.svg %}
+
+<p class="legende-figure">Période de diffusion de chaque saison. Les creux sont
+aussi parlants que les barres.</p>
+
+{% assign pr = site.data.stats.programme %}
+{{ pr.presentateurs[0].nom }} a présenté **{{ pr.presentateurs[0].saisons }} des
+{{ site.data.stats.general.saisons_diffusees }} saisons diffusées** ; la
+première, en {{ site.data.stats.general.premiere_annee }}, l’avait été par
+{{ pr.presentateurs[1].nom }}.
+
+### Le jour de la semaine
+
+{% include graphiques/programme-jours.svg %}
+
+<p class="legende-figure">Jour de diffusion du premier épisode de chaque
+saison.</p>
+
+**{{ pr.jour_de_lancement[0].effectif }} saisons ont été lancées un
+{{ pr.jour_de_lancement[0].jour }}**, contre
+{{ pr.jour_de_lancement[1].effectif }} un {{ pr.jour_de_lancement[1].jour }} :
+la case du programme a changé en cours de route, et c’est l’un des rares faits
+de grille que les données laissent lire.
+
+## L’âge du casting
+
+{% include graphiques/casting-ages.svg %}
+
+<p class="legende-figure">Du plus jeune au plus âgé de chaque casting ; le
+point creux marque l’âge médian, et le nombre à droite l’écart entre les deux
+extrêmes.</p>
+
+{% assign ca = site.data.stats.casting %}
+Le casting le plus large est celui de **{{ ca.plus_large.titre }}
+({{ ca.plus_large.annee }})** : de {{ ca.plus_large.min }} à
+{{ ca.plus_large.max }} ans, **{{ ca.plus_large.etendue }} ans d’écart**. Le plus
+resserré est **{{ ca.plus_resserree.titre }} ({{ ca.plus_resserree.annee }})**,
+avec {{ ca.plus_resserree.etendue }} ans seulement.
 
 ## Composition du casting
 

@@ -1,0 +1,35 @@
+<figure class="figure">
+<svg class="graphique" viewBox="0 0 760 310" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Les jours qui font le plus de sortants">
+  <title>Les jours qui font le plus de sortants</title>
+  <desc>Nombre de départs par jour de jeu, saisons classiques.</desc>
+  <line x1="257.0" y1="10" x2="257.0" y2="284" stroke="var(--grille)" stroke-width="1"/>
+  <line x1="404.0" y1="10" x2="404.0" y2="284" stroke="var(--grille)" stroke-width="1"/>
+  <line x1="551.0" y1="10" x2="551.0" y2="284" stroke="var(--grille)" stroke-width="1"/>
+  <line x1="698.0" y1="10" x2="698.0" y2="284" stroke="var(--grille)" stroke-width="1"/>
+  <g class="marque"><title>Jour 40 : 45 départs</title><rect x="110" y="16" width="588.0" height="26" rx="4" fill="var(--serie-8)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="100.0" y="29.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Jour 40</text>
+  <text x="706.0" y="29.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">45</text>
+  <g class="marque"><title>Jour 39 : 34 départs</title><rect x="110" y="50" width="444.3" height="26" rx="4" fill="var(--serie-8)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="100.0" y="63.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Jour 39</text>
+  <text x="562.3" y="63.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">34</text>
+  <g class="marque"><title>Jour 3 : 22 départs</title><rect x="110" y="84" width="287.5" height="26" rx="4" fill="var(--serie-8)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="100.0" y="97.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Jour 3</text>
+  <text x="405.5" y="97.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">22</text>
+  <g class="marque"><title>Jour 38 : 22 départs</title><rect x="110" y="118" width="287.5" height="26" rx="4" fill="var(--serie-8)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="100.0" y="131.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Jour 38</text>
+  <text x="405.5" y="131.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">22</text>
+  <g class="marque"><title>Jour 9 : 19 départs</title><rect x="110" y="152" width="248.3" height="26" rx="4" fill="var(--serie-8)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="100.0" y="165.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Jour 9</text>
+  <text x="366.3" y="165.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">19</text>
+  <g class="marque"><title>Jour 12 : 17 départs</title><rect x="110" y="186" width="222.1" height="26" rx="4" fill="var(--serie-8)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="100.0" y="199.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Jour 12</text>
+  <text x="340.1" y="199.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">17</text>
+  <g class="marque"><title>Jour 6 : 16 départs</title><rect x="110" y="220" width="209.1" height="26" rx="4" fill="var(--serie-8)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="100.0" y="233.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Jour 6</text>
+  <text x="327.1" y="233.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">16</text>
+  <g class="marque"><title>Jour 18 : 16 départs</title><rect x="110" y="254" width="209.1" height="26" rx="4" fill="var(--serie-8)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="100.0" y="267.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Jour 18</text>
+  <text x="327.1" y="267.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">16</text>
+  <line x1="110" y1="10" x2="110" y2="284" stroke="var(--axe)" stroke-width="1"/>
+</svg>
+</figure>

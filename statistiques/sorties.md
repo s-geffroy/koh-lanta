@@ -44,6 +44,38 @@ récentes — colliers, totems, duels.
 contre {{ s.sorties.par_decennie[0].conseil }} % dans les années 2000. Moins on
 abandonne, plus on est éliminé par les autres.
 
+## Le risque, à mesure que la saison avance
+
+Une courbe de survie dit combien il en reste. Celle-ci dit tout autre chose :
+**parmi ceux qui sont encore en jeu, quelle part s’en va maintenant.** C’est ce
+que les statisticiens appellent un taux de hasard, et c’est la seule forme qui
+montre que le jeu ne se contente pas de vider le camp — il devient plus
+dangereux.
+
+{% include graphiques/risque-courbe.svg %}
+
+<p class="legende-figure">Part des aventuriers encore en jeu qui quittent
+l’aventure à ce moment-là, par tranche de dix pour cent de la saison. La finale
+est exclue : tout le monde en sort.</p>
+
+{% assign q = site.data.stats.risque %}
+Le risque part de **{{ q.tranches[1].risque }} %** au premier dixième de la
+saison et atteint **{{ q.tranches[9].risque }} %** au neuvième. Tenir n’allège
+donc rien : à mesure que le camp se vide, chaque conseil emporte une part plus
+grande de ceux qui restent. Le calcul porte sur {{ q.effectif }} participations
+aux saisons classiques.
+
+### Les jours qui font le plus de sortants
+
+{% include graphiques/risque-jours.svg %}
+
+<p class="legende-figure">Nombre de départs par jour de jeu. Les premiers rangs
+sont les jours de finale, où plusieurs personnes sortent d’un coup.</p>
+
+Passé les jours de finale, c’est le **jour {{ q.jours_les_plus_meurtriers[2].jour }}**
+qui a fait le plus de sortants : {{ q.jours_les_plus_meurtriers[2].sortants }}
+départs. Le tout premier conseil est le plus meurtrier de la saison.
+
 ## Le détail
 
 <div class="tableau-large">

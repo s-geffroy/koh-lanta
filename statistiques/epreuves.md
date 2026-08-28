@@ -103,6 +103,19 @@ effectifs pourtant identiques. Rapproché du fait que les deux gagnent la finale
 aussi souvent, cela dit une chose simple : **la domination sportive n’est pas
 ce qui fait gagner Koh-Lanta.**
 
+## Gagner la première mène-t-il plus loin ?
+
+{% assign pe = site.data.stats.premiere_epreuve %}
+La première épreuve individuelle d’une saison marque le début du jeu personnel.
+Celui qui la remporte tient en moyenne **{{ pe.survie_gagnants }} %** de la
+saison, contre **{{ pe.survie_ensemble }} %** pour l’ensemble des aventuriers.
+
+L’écart est réel, et il est modeste : neuf points. Surtout, il repose sur
+**{{ pe.effectif }} cas seulement** — une saison ne fournit qu’une première
+épreuve individuelle, et {{ pe.saisons_couvertes }} saisons en ont une de
+relevée. À cette taille, l’écart resterait compatible avec le hasard : il est
+donné pour ce qu’il est, une indication, pas une loi.
+
 ## Ce que cette page ne dit pas
 
 **Cinq saisons manquent** — {{ e.saisons_sans_donnee | join: ", " }} — faute de

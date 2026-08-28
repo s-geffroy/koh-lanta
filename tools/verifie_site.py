@@ -13,6 +13,7 @@ chiffre qui sort vide -- et qu'on ne verrait qu'en ligne, une fois publie :
 
     tools/atelier python3 tools/verifie_site.py
 """
+import ast
 import os
 import re
 import subprocess
@@ -40,6 +41,40 @@ class Controle:
 
     def avertir(self, m):
         self.avertissements.append(m)
+
+
+def controler_reproductibilite(c):
+    """Une construction doit rendre deux fois le meme fichier.
+
+    L'ordre d'iteration d'un ensemble de chaines change d'un processus a
+    l'autre : l'empreinte des chaines est tiree au hasard au demarrage de
+    Python. Boucler sur un ensemble non trie dans un script de construction
+    fait donc varier _data/stats.yml sans qu'aucune donnee ait bouge, et le
+    site change tout seul entre deux publications. Le defaut a deja ete paye
+    une fois, sur le classement des familles de metiers.
+
+    Le controle passe par l'arbre syntaxique et non par une expression
+    reguliere : cherchee dans le texte, la faute se trouvait jusque dans les
+    commentaires qui l'expliquent.
+    """
+    for base, _, fichiers in os.walk(os.path.join(RACINE, "tools")):
+        for f in sorted(fichiers):
+            if not f.endswith(".py"):
+                continue
+            chemin = os.path.join(base, f)
+            try:
+                arbre = ast.parse(open(chemin, encoding="utf-8").read(), filename=chemin)
+            except SyntaxError as e:
+                c.erreur(f"{os.path.relpath(chemin, RACINE)} : ne compile pas — {e}")
+                continue
+            for n in ast.walk(arbre):
+                if isinstance(n, (ast.For, ast.comprehension)):
+                    it = n.iter
+                    if isinstance(it, (ast.Set, ast.SetComp)):
+                        rel = os.path.relpath(chemin, RACINE)
+                        c.erreur(f"{rel}:{it.lineno} : boucle sur un ensemble non "
+                                 f"trie — l'ordre change d'une execution a "
+                                 f"l'autre ; enfermer dans sorted()")
 
 
 def controler_sass(c):
@@ -209,6 +244,7 @@ def main():
                          f"chmod 600 .secrets/{nom}")
 
     controler_sass(c)
+    controler_reproductibilite(c)
 
     if os.path.isdir(os.path.join(RACINE, "_site")):
         c.avertir("_site/ existe : verifier qu'il est bien ignore par Git")

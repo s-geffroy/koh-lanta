@@ -309,15 +309,6 @@ metiers:
   taux_finale: 10.5
   survie_moyenne: 53.5
   age_moyen: 22.0
-- code: transport
-  libelle: Transport et logistique
-  effectif: 29
-  part_du_casting: 5.7
-  victoires: 1
-  finales: 2
-  taux_finale: 6.9
-  survie_moyenne: 58.3
-  age_moyen: 32.9
 - code: action_securite
   libelle: Action et sécurité
   effectif: 29
@@ -336,6 +327,15 @@ metiers:
   taux_finale: 6.9
   survie_moyenne: 60.8
   age_moyen: 35.8
+- code: transport
+  libelle: Transport et logistique
+  effectif: 29
+  part_du_casting: 5.7
+  victoires: 1
+  finales: 2
+  taux_finale: 6.9
+  survie_moyenne: 58.3
+  age_moyen: 32.9
 - code: agriculture
   libelle: Agriculture et nature
   effectif: 24
@@ -1361,15 +1361,15 @@ records:
     - sp4
   nb_multi_participants: 83
 conseils:
-  conseils: 687
-  conseils_avec_decompte: 446
+  conseils: 679
+  conseils_avec_decompte: 439
   conseils_complets: 267
-  bulletins: 3370
+  bulletins: 3321
   bulletins_conseils_complets: 2087
   part_unanimes: 0.9
-  part_serres: 46.4
-  voix_annulees_par_collier: 300
-  conseils_avec_collier_joue: 73
+  part_serres: 46.9
+  voix_annulees_par_collier: 296
+  conseils_avec_collier_joue: 72
   vote_par_genre:
   - votant: h
     cible: f
@@ -1387,6 +1387,4867 @@ conseils:
     cible: f
     effectif: 438
     part: 22.0
+jury:
+  effectif: 8
+  scrutins:
+  - saison: s01
+    titre: Les Aventuriers de Koh-Lanta
+    annee: 2001
+    laureat: Gilles Nicolet
+    voix_pour: 4
+    voix_exprimees: 7
+    bulletins_releves: 4
+  - saison: s21
+    titre: Les 4 Terres
+    annee: 2020
+    laureat: Alexandra Pornet
+    voix_pour: 7
+    voix_exprimees: 12
+    bulletins_releves: 0
+  - saison: s22
+    titre: Les Armes secrètes
+    annee: 2021
+    laureat: Maxine Eouzan
+    voix_pour: 9
+    voix_exprimees: 13
+    bulletins_releves: 9
+  - saison: s24
+    titre: Le Feu sacré
+    annee: 2023
+    laureat: Frédéric Khouvilay
+    voix_pour: 7
+    voix_exprimees: 9
+    bulletins_releves: 7
+  - saison: s26
+    titre: La Tribu maudite
+    annee: 2024
+    laureat: Thibault Bélanger
+    voix_pour: 9
+    voix_exprimees: 13
+    bulletins_releves: 8
+  - saison: s27
+    titre: La Revanche des 4 Terres
+    annee: 2025
+    laureat: Gaëlle Fleury
+    voix_pour: 7
+    voix_exprimees: 11
+    bulletins_releves: 7
+  - saison: s28
+    titre: Les Reliques du destin
+    annee: 2026
+    laureat: Cynthia Combes
+    voix_pour: 10
+    voix_exprimees: 13
+    bulletins_releves: 10
+  - saison: sp7
+    titre: La Légende
+    annee: 2021
+    laureat: Claude Dartois
+    voix_pour: null
+    voix_exprimees: null
+    bulletins_releves: 4
+revenants:
+  paradoxe:
+  - libelle: Jamais rappelés
+    effectif: 452
+    survie_moyenne: 56.8
+  - libelle: Revenants, leur première saison
+    effectif: 83
+    survie_moyenne: 83.5
+  - libelle: Revenants, leurs saisons suivantes
+    effectif: 90
+    survie_moyenne: 63.9
+  carrieres:
+  - &id001
+    id: claude-dartois
+    nom: Claude Dartois
+    saisons: 4
+    jours: 130
+    jours_possibles: 130
+    part_du_temps: 100.0
+  - id: teheiura-teahui
+    nom: Teheiura Teahui
+    saisons: 5
+    jours: 118
+    jours_possibles: 154
+    part_du_temps: 76.6
+  - &id002
+    id: laurent-maistret
+    nom: Laurent Maistret
+    saisons: 3
+    jours: 99
+    jours_possibles: 99
+    part_du_temps: 100.0
+  - id: jade-handi
+    nom: Jade Handi
+    saisons: 3
+    jours: 95
+    jours_possibles: 96
+    part_du_temps: 99.0
+  - id: moussa-niangane
+    nom: Moussa Niangane
+    saisons: 3
+    jours: 91
+    jours_possibles: 95
+    part_du_temps: 95.8
+  - id: coumba-baradji
+    nom: Coumba Baradji
+    saisons: 4
+    jours: 89
+    jours_possibles: 119
+    part_du_temps: 74.8
+  - id: clemence-castel
+    nom: Clémence Castel
+    saisons: 3
+    jours: 82
+    jours_possibles: 93
+    part_du_temps: 88.2
+  - id: ugo-lartiche
+    nom: Ugo Lartiche
+    saisons: 2
+    jours: 80
+    jours_possibles: 82
+    part_du_temps: 97.6
+  - id: candice-boisson
+    nom: Candice Boisson
+    saisons: 3
+    jours: 74
+    jours_possibles: 109
+    part_du_temps: 67.9
+  - id: freddy-boucher
+    nom: Freddy Boucher
+    saisons: 5
+    jours: 73
+    jours_possibles: 141
+    part_du_temps: 51.8
+  - id: christelle-gauzet
+    nom: Christelle Gauzet
+    saisons: 3
+    jours: 72
+    jours_possibles: 96
+    part_du_temps: 75.0
+  - &id003
+    id: pascal-salviani
+    nom: Pascal Salviani
+    saisons: 2
+    jours: 72
+    jours_possibles: 72
+    part_du_temps: 100.0
+  - id: loic-riowal
+    nom: Loïc Riowal
+    saisons: 2
+    jours: 68
+    jours_possibles: 75
+    part_du_temps: 90.7
+  - id: nathalie-ensargueix
+    nom: Nathalie Ensargueix
+    saisons: 2
+    jours: 68
+    jours_possibles: 72
+    part_du_temps: 94.4
+  - id: frederic-khouvilay
+    nom: Frédéric Khouvilay
+    saisons: 2
+    jours: 67
+    jours_possibles: 80
+    part_du_temps: 83.8
+  - id: patrick-merle
+    nom: Patrick Merle
+    saisons: 3
+    jours: 67
+    jours_possibles: 97
+    part_du_temps: 69.1
+  - id: christina-chevry
+    nom: Christina Chevry
+    saisons: 3
+    jours: 65
+    jours_possibles: 83
+    part_du_temps: 78.3
+  - id: guenaelle-biras
+    nom: Guénaëlle Biras
+    saisons: 2
+    jours: 64
+    jours_possibles: 66
+    part_du_temps: 97.0
+  - id: moundir-zoughari
+    nom: Moundir Zoughari
+    saisons: 3
+    jours: 63
+    jours_possibles: 84
+    part_du_temps: 75.0
+  - id: alexandra-pornet
+    nom: Alexandra Pornet
+    saisons: 2
+    jours: 62
+    jours_possibles: 75
+    part_du_temps: 82.7
+  sans_faute:
+  - *id001
+  - *id002
+  - *id003
+  duos:
+  - a: Christina Chevry
+    b: Freddy Boucher
+    saisons: 4
+  - a: Claude Dartois
+    b: Teheiura Teahui
+    saisons: 3
+  - a: Coumba Baradji
+    b: Freddy Boucher
+    saisons: 3
+  - a: Freddy Boucher
+    b: Isabelle Da Silva
+    saisons: 3
+  - a: Freddy Boucher
+    b: Patrick Merle
+    saisons: 3
+  - a: Freddy Boucher
+    b: Teheiura Teahui
+    saisons: 3
+  - a: Laurent Maistret
+    b: Teheiura Teahui
+    saisons: 3
+  - a: Alban Pellegrin
+    b: Chantal Ménard
+    saisons: 2
+  - a: Alban Pellegrin
+    b: Cédric Giosserand-Lucas
+    saisons: 2
+  - a: Alexandra Pornet
+    b: Alix Noblat
+    saisons: 2
+  - a: Alexandra Pornet
+    b: Loïc Riowal
+    saisons: 2
+  - a: Alix Noblat
+    b: Loïc Riowal
+    saisons: 2
+  - a: Antoine Sanchez
+    b: Moundir Zoughari
+    saisons: 2
+  - a: Camille Sold
+    b: Ugo Lartiche
+    saisons: 2
+  - a: Candice Boisson
+    b: Julie Navarro-Camilleri
+    saisons: 2
+  nb_duos_recurrents: 75
+  graphe:
+    noeuds:
+    - rang: 0
+      nom: Alban Pellegrin
+      saisons: 2
+      degre: 17
+      arrivee: 17
+    - rang: 1
+      nom: Alexandra Pornet
+      saisons: 2
+      degre: 17
+      arrivee: 26
+    - rang: 2
+      nom: Alix Noblat
+      saisons: 2
+      degre: 17
+      arrivee: 26
+    - rang: 3
+      nom: Amel Fatnassi
+      saisons: 2
+      degre: 15
+      arrivee: 1
+    - rang: 4
+      nom: Antoine Sanchez
+      saisons: 2
+      degre: 14
+      arrivee: 2
+    - rang: 5
+      nom: Bertrand Bolle
+      saisons: 2
+      degre: 19
+      arrivee: 7
+    - rang: 6
+      nom: Candice Boisson
+      saisons: 3
+      degre: 34
+      arrivee: 19
+    - rang: 7
+      nom: Cassandre Girard
+      saisons: 2
+      degre: 18
+      arrivee: 18
+    - rang: 8
+      nom: Catherine Ehret-Mader
+      saisons: 2
+      degre: 14
+      arrivee: 3
+    - rang: 9
+      nom: Cédric Giosserand-Lucas
+      saisons: 2
+      degre: 17
+      arrivee: 17
+    - rang: 10
+      nom: Chantal Ménard
+      saisons: 2
+      degre: 17
+      arrivee: 17
+    - rang: 11
+      nom: Christelle Gauzet
+      saisons: 3
+      degre: 32
+      arrivee: 7
+    - rang: 12
+      nom: Christina Chevry
+      saisons: 3
+      degre: 23
+      arrivee: 9
+    - rang: 13
+      nom: Christophe Guttatoro-Martin
+      saisons: 2
+      degre: 10
+      arrivee: 7
+    - rang: 14
+      nom: Cindy Poumeyrol
+      saisons: 2
+      degre: 17
+      arrivee: 24
+    - rang: 15
+      nom: Claude Dartois
+      saisons: 4
+      degre: 31
+      arrivee: 11
+    - rang: 16
+      nom: Clémence Castel
+      saisons: 3
+      degre: 33
+      arrivee: 4
+    - rang: 17
+      nom: Clémentine Julien
+      saisons: 2
+      degre: 17
+      arrivee: 20
+    - rang: 18
+      nom: Coumba Baradji
+      saisons: 4
+      degre: 34
+      arrivee: 4
+    - rang: 19
+      nom: Dylan Thiry
+      saisons: 2
+      degre: 17
+      arrivee: 20
+    - rang: 20
+      nom: Émilie Frahi
+      saisons: 2
+      degre: 14
+      arrivee: 5
+    - rang: 21
+      nom: Fabienne Lefebvre-Trehoux
+      saisons: 2
+      degre: 17
+      arrivee: 9
+    - rang: 22
+      nom: Filomène Mendonca
+      saisons: 2
+      degre: 14
+      arrivee: 6
+    - rang: 23
+      nom: Florence Delbarre
+      saisons: 2
+      degre: 14
+      arrivee: 12
+    - rang: 24
+      nom: Francis Bordas
+      saisons: 2
+      degre: 17
+      arrivee: 4
+    - rang: 25
+      nom: François-David Cardonnel
+      saisons: 2
+      degre: 14
+      arrivee: 5
+    - rang: 26
+      nom: Freddy Boucher
+      saisons: 5
+      degre: 43
+      arrivee: 9
+    - rang: 27
+      nom: Frédéric Khouvilay
+      saisons: 2
+      degre: 1
+      arrivee: 30
+    - rang: 28
+      nom: Grégoire Delachaux
+      saisons: 2
+      degre: 8
+      arrivee: 6
+    - rang: 29
+      nom: Guénaëlle Biras
+      saisons: 2
+      degre: 17
+      arrivee: 0
+    - rang: 30
+      nom: Isabelle Da Silva
+      saisons: 3
+      degre: 26
+      arrivee: 9
+    - rang: 31
+      nom: Jade Handi
+      saisons: 3
+      degre: 30
+      arrivee: 6
+    - rang: 32
+      nom: Javier Rodriguez
+      saisons: 2
+      degre: 21
+      arrivee: 14
+    - rang: 33
+      nom: Jean-Bernard Hauton-Arnaud
+      saisons: 2
+      degre: 16
+      arrivee: 7
+    - rang: 34
+      nom: Jean-Luc Fiorina
+      saisons: 2
+      degre: 15
+      arrivee: 0
+    - rang: 35
+      nom: Jérémy Raffin
+      saisons: 2
+      degre: 17
+      arrivee: 19
+    - rang: 36
+      nom: Julie Navarro-Camilleri
+      saisons: 2
+      degre: 17
+      arrivee: 19
+    - rang: 37
+      nom: Karima Neggaz
+      saisons: 2
+      degre: 19
+      arrivee: 18
+    - rang: 38
+      nom: Laurence Pizzocchia
+      saisons: 2
+      degre: 15
+      arrivee: 11
+    - rang: 39
+      nom: Laurent Maistret
+      saisons: 3
+      degre: 29
+      arrivee: 12
+    - rang: 40
+      nom: Linda Alario
+      saisons: 2
+      degre: 9
+      arrivee: 3
+    - rang: 41
+      nom: Loïc Riowal
+      saisons: 2
+      degre: 17
+      arrivee: 26
+    - rang: 42
+      nom: Ludovic Laresche
+      saisons: 2
+      degre: 19
+      arrivee: 5
+    - rang: 43
+      nom: Marine Plissonneau
+      saisons: 2
+      degre: 17
+      arrivee: 11
+    - rang: 44
+      nom: Martin Bazin
+      saisons: 2
+      degre: 14
+      arrivee: 12
+    - rang: 45
+      nom: Maud Garnier
+      saisons: 2
+      degre: 16
+      arrivee: 1
+    - rang: 46
+      nom: Maxime Berthon
+      saisons: 2
+      degre: 17
+      arrivee: 24
+    - rang: 47
+      nom: Mohamed Derradji
+      saisons: 2
+      degre: 8
+      arrivee: 4
+    - rang: 48
+      nom: Moundir Zoughari
+      saisons: 3
+      degre: 26
+      arrivee: 2
+    - rang: 49
+      nom: Moussa Niangane
+      saisons: 3
+      degre: 22
+      arrivee: 2
+    - rang: 50
+      nom: Namadia Thaï Thaï
+      saisons: 2
+      degre: 20
+      arrivee: 14
+    - rang: 51
+      nom: Nathalie Ensargueix
+      saisons: 2
+      degre: 21
+      arrivee: 7
+    - rang: 52
+      nom: Nicolas Leoni
+      saisons: 2
+      degre: 16
+      arrivee: 1
+    - rang: 53
+      nom: Olivier Moenaert
+      saisons: 2
+      degre: 22
+      arrivee: 12
+    - rang: 54
+      nom: Pascal Salviani
+      saisons: 2
+      degre: 18
+      arrivee: 18
+    - rang: 55
+      nom: Patricia Morel
+      saisons: 2
+      degre: 19
+      arrivee: 12
+    - rang: 56
+      nom: Patrick Merle
+      saisons: 3
+      degre: 30
+      arrivee: 9
+    - rang: 57
+      nom: Philippe Bizet
+      saisons: 2
+      degre: 15
+      arrivee: 14
+    - rang: 58
+      nom: Philippe Bordier
+      saisons: 2
+      degre: 14
+      arrivee: 3
+    - rang: 59
+      nom: Philippe Duron
+      saisons: 2
+      degre: 15
+      arrivee: 11
+    - rang: 60
+      nom: Raphaële Navarro
+      saisons: 2
+      degre: 22
+      arrivee: 9
+    - rang: 61
+      nom: Romuald Lafite
+      saisons: 2
+      degre: 14
+      arrivee: 3
+    - rang: 62
+      nom: Sam Haliti
+      saisons: 2
+      degre: 19
+      arrivee: 25
+    - rang: 63
+      nom: Sandra Acabado
+      saisons: 2
+      degre: 14
+      arrivee: 0
+    - rang: 64
+      nom: Sara Tallon
+      saisons: 2
+      degre: 18
+      arrivee: 14
+    - rang: 65
+      nom: Teheiura Teahui
+      saisons: 5
+      degre: 38
+      arrivee: 12
+    - rang: 66
+      nom: Tiffany Gounin
+      saisons: 2
+      degre: 17
+      arrivee: 21
+    - rang: 67
+      nom: Ugo Lartiche
+      saisons: 2
+      degre: 24
+      arrivee: 14
+    - rang: 68
+      nom: Wafa El Mejjad
+      saisons: 2
+      degre: 17
+      arrivee: 11
+    - rang: 69
+      nom: Yassin Metiri
+      saisons: 2
+      degre: 21
+      arrivee: 20
+    aretes:
+    - de: 0
+      vers: 6
+      poids: 1
+    - de: 0
+      vers: 7
+      poids: 1
+    - de: 0
+      vers: 9
+      poids: 2
+    - de: 0
+      vers: 10
+      poids: 2
+    - de: 0
+      vers: 16
+      poids: 1
+    - de: 0
+      vers: 17
+      poids: 1
+    - de: 0
+      vers: 19
+      poids: 1
+    - de: 0
+      vers: 32
+      poids: 1
+    - de: 0
+      vers: 35
+      poids: 1
+    - de: 0
+      vers: 36
+      poids: 1
+    - de: 0
+      vers: 42
+      poids: 1
+    - de: 0
+      vers: 51
+      poids: 1
+    - de: 0
+      vers: 53
+      poids: 1
+    - de: 0
+      vers: 54
+      poids: 1
+    - de: 0
+      vers: 60
+      poids: 1
+    - de: 0
+      vers: 66
+      poids: 1
+    - de: 0
+      vers: 69
+      poids: 1
+    - de: 1
+      vers: 2
+      poids: 2
+    - de: 1
+      vers: 6
+      poids: 1
+    - de: 1
+      vers: 11
+      poids: 1
+    - de: 1
+      vers: 14
+      poids: 1
+    - de: 1
+      vers: 15
+      poids: 1
+    - de: 1
+      vers: 18
+      poids: 1
+    - de: 1
+      vers: 26
+      poids: 1
+    - de: 1
+      vers: 31
+      poids: 1
+    - de: 1
+      vers: 37
+      poids: 1
+    - de: 1
+      vers: 39
+      poids: 1
+    - de: 1
+      vers: 41
+      poids: 2
+    - de: 1
+      vers: 46
+      poids: 1
+    - de: 1
+      vers: 50
+      poids: 1
+    - de: 1
+      vers: 56
+      poids: 1
+    - de: 1
+      vers: 62
+      poids: 1
+    - de: 1
+      vers: 65
+      poids: 1
+    - de: 1
+      vers: 67
+      poids: 1
+    - de: 2
+      vers: 6
+      poids: 1
+    - de: 2
+      vers: 11
+      poids: 1
+    - de: 2
+      vers: 14
+      poids: 1
+    - de: 2
+      vers: 15
+      poids: 1
+    - de: 2
+      vers: 18
+      poids: 1
+    - de: 2
+      vers: 26
+      poids: 1
+    - de: 2
+      vers: 31
+      poids: 1
+    - de: 2
+      vers: 37
+      poids: 1
+    - de: 2
+      vers: 39
+      poids: 1
+    - de: 2
+      vers: 41
+      poids: 2
+    - de: 2
+      vers: 46
+      poids: 1
+    - de: 2
+      vers: 50
+      poids: 1
+    - de: 2
+      vers: 56
+      poids: 1
+    - de: 2
+      vers: 62
+      poids: 1
+    - de: 2
+      vers: 65
+      poids: 1
+    - de: 2
+      vers: 67
+      poids: 1
+    - de: 3
+      vers: 4
+      poids: 1
+    - de: 3
+      vers: 8
+      poids: 1
+    - de: 3
+      vers: 11
+      poids: 1
+    - de: 3
+      vers: 16
+      poids: 1
+    - de: 3
+      vers: 20
+      poids: 1
+    - de: 3
+      vers: 22
+      poids: 1
+    - de: 3
+      vers: 25
+      poids: 1
+    - de: 3
+      vers: 31
+      poids: 1
+    - de: 3
+      vers: 33
+      poids: 1
+    - de: 3
+      vers: 34
+      poids: 1
+    - de: 3
+      vers: 45
+      poids: 1
+    - de: 3
+      vers: 48
+      poids: 1
+    - de: 3
+      vers: 52
+      poids: 1
+    - de: 3
+      vers: 58
+      poids: 1
+    - de: 3
+      vers: 61
+      poids: 1
+    - de: 4
+      vers: 8
+      poids: 1
+    - de: 4
+      vers: 11
+      poids: 1
+    - de: 4
+      vers: 16
+      poids: 1
+    - de: 4
+      vers: 20
+      poids: 1
+    - de: 4
+      vers: 22
+      poids: 1
+    - de: 4
+      vers: 25
+      poids: 1
+    - de: 4
+      vers: 31
+      poids: 1
+    - de: 4
+      vers: 33
+      poids: 1
+    - de: 4
+      vers: 34
+      poids: 1
+    - de: 4
+      vers: 48
+      poids: 2
+    - de: 4
+      vers: 49
+      poids: 1
+    - de: 4
+      vers: 58
+      poids: 1
+    - de: 4
+      vers: 61
+      poids: 1
+    - de: 5
+      vers: 11
+      poids: 1
+    - de: 5
+      vers: 13
+      poids: 1
+    - de: 5
+      vers: 15
+      poids: 1
+    - de: 5
+      vers: 18
+      poids: 1
+    - de: 5
+      vers: 21
+      poids: 1
+    - de: 5
+      vers: 24
+      poids: 1
+    - de: 5
+      vers: 26
+      poids: 1
+    - de: 5
+      vers: 29
+      poids: 1
+    - de: 5
+      vers: 30
+      poids: 1
+    - de: 5
+      vers: 33
+      poids: 1
+    - de: 5
+      vers: 43
+      poids: 1
+    - de: 5
+      vers: 45
+      poids: 1
+    - de: 5
+      vers: 49
+      poids: 1
+    - de: 5
+      vers: 51
+      poids: 1
+    - de: 5
+      vers: 52
+      poids: 1
+    - de: 5
+      vers: 55
+      poids: 1
+    - de: 5
+      vers: 56
+      poids: 1
+    - de: 5
+      vers: 65
+      poids: 1
+    - de: 5
+      vers: 68
+      poids: 1
+    - de: 6
+      vers: 7
+      poids: 1
+    - de: 6
+      vers: 9
+      poids: 1
+    - de: 6
+      vers: 10
+      poids: 1
+    - de: 6
+      vers: 11
+      poids: 1
+    - de: 6
+      vers: 14
+      poids: 1
+    - de: 6
+      vers: 15
+      poids: 1
+    - de: 6
+      vers: 16
+      poids: 1
+    - de: 6
+      vers: 17
+      poids: 1
+    - de: 6
+      vers: 18
+      poids: 1
+    - de: 6
+      vers: 19
+      poids: 1
+    - de: 6
+      vers: 26
+      poids: 1
+    - de: 6
+      vers: 31
+      poids: 1
+    - de: 6
+      vers: 32
+      poids: 1
+    - de: 6
+      vers: 35
+      poids: 2
+    - de: 6
+      vers: 36
+      poids: 2
+    - de: 6
+      vers: 37
+      poids: 1
+    - de: 6
+      vers: 39
+      poids: 1
+    - de: 6
+      vers: 41
+      poids: 1
+    - de: 6
+      vers: 42
+      poids: 1
+    - de: 6
+      vers: 46
+      poids: 1
+    - de: 6
+      vers: 50
+      poids: 1
+    - de: 6
+      vers: 51
+      poids: 1
+    - de: 6
+      vers: 53
+      poids: 1
+    - de: 6
+      vers: 54
+      poids: 1
+    - de: 6
+      vers: 56
+      poids: 1
+    - de: 6
+      vers: 60
+      poids: 1
+    - de: 6
+      vers: 62
+      poids: 1
+    - de: 6
+      vers: 65
+      poids: 1
+    - de: 6
+      vers: 66
+      poids: 1
+    - de: 6
+      vers: 67
+      poids: 1
+    - de: 6
+      vers: 69
+      poids: 1
+    - de: 7
+      vers: 9
+      poids: 1
+    - de: 7
+      vers: 10
+      poids: 1
+    - de: 7
+      vers: 16
+      poids: 1
+    - de: 7
+      vers: 17
+      poids: 1
+    - de: 7
+      vers: 19
+      poids: 1
+    - de: 7
+      vers: 32
+      poids: 1
+    - de: 7
+      vers: 35
+      poids: 1
+    - de: 7
+      vers: 36
+      poids: 1
+    - de: 7
+      vers: 37
+      poids: 1
+    - de: 7
+      vers: 42
+      poids: 1
+    - de: 7
+      vers: 51
+      poids: 1
+    - de: 7
+      vers: 53
+      poids: 1
+    - de: 7
+      vers: 54
+      poids: 2
+    - de: 7
+      vers: 60
+      poids: 1
+    - de: 7
+      vers: 66
+      poids: 1
+    - de: 7
+      vers: 69
+      poids: 1
+    - de: 8
+      vers: 11
+      poids: 1
+    - de: 8
+      vers: 16
+      poids: 1
+    - de: 8
+      vers: 20
+      poids: 1
+    - de: 8
+      vers: 22
+      poids: 1
+    - de: 8
+      vers: 25
+      poids: 1
+    - de: 8
+      vers: 31
+      poids: 1
+    - de: 8
+      vers: 33
+      poids: 1
+    - de: 8
+      vers: 34
+      poids: 1
+    - de: 8
+      vers: 40
+      poids: 1
+    - de: 8
+      vers: 48
+      poids: 1
+    - de: 8
+      vers: 58
+      poids: 2
+    - de: 8
+      vers: 61
+      poids: 2
+    - de: 9
+      vers: 10
+      poids: 2
+    - de: 9
+      vers: 16
+      poids: 1
+    - de: 9
+      vers: 17
+      poids: 1
+    - de: 9
+      vers: 19
+      poids: 1
+    - de: 9
+      vers: 32
+      poids: 1
+    - de: 9
+      vers: 35
+      poids: 1
+    - de: 9
+      vers: 36
+      poids: 1
+    - de: 9
+      vers: 42
+      poids: 1
+    - de: 9
+      vers: 51
+      poids: 1
+    - de: 9
+      vers: 53
+      poids: 1
+    - de: 9
+      vers: 54
+      poids: 1
+    - de: 9
+      vers: 60
+      poids: 1
+    - de: 9
+      vers: 66
+      poids: 1
+    - de: 9
+      vers: 69
+      poids: 1
+    - de: 10
+      vers: 16
+      poids: 1
+    - de: 10
+      vers: 17
+      poids: 1
+    - de: 10
+      vers: 19
+      poids: 1
+    - de: 10
+      vers: 32
+      poids: 1
+    - de: 10
+      vers: 35
+      poids: 1
+    - de: 10
+      vers: 36
+      poids: 1
+    - de: 10
+      vers: 42
+      poids: 1
+    - de: 10
+      vers: 51
+      poids: 1
+    - de: 10
+      vers: 53
+      poids: 1
+    - de: 10
+      vers: 54
+      poids: 1
+    - de: 10
+      vers: 60
+      poids: 1
+    - de: 10
+      vers: 66
+      poids: 1
+    - de: 10
+      vers: 69
+      poids: 1
+    - de: 11
+      vers: 13
+      poids: 1
+    - de: 11
+      vers: 14
+      poids: 1
+    - de: 11
+      vers: 15
+      poids: 1
+    - de: 11
+      vers: 16
+      poids: 1
+    - de: 11
+      vers: 18
+      poids: 1
+    - de: 11
+      vers: 20
+      poids: 1
+    - de: 11
+      vers: 22
+      poids: 1
+    - de: 11
+      vers: 25
+      poids: 1
+    - de: 11
+      vers: 26
+      poids: 1
+    - de: 11
+      vers: 31
+      poids: 2
+    - de: 11
+      vers: 33
+      poids: 2
+    - de: 11
+      vers: 34
+      poids: 1
+    - de: 11
+      vers: 37
+      poids: 1
+    - de: 11
+      vers: 39
+      poids: 1
+    - de: 11
+      vers: 41
+      poids: 1
+    - de: 11
+      vers: 46
+      poids: 1
+    - de: 11
+      vers: 48
+      poids: 1
+    - de: 11
+      vers: 50
+      poids: 1
+    - de: 11
+      vers: 51
+      poids: 1
+    - de: 11
+      vers: 56
+      poids: 1
+    - de: 11
+      vers: 58
+      poids: 1
+    - de: 11
+      vers: 61
+      poids: 1
+    - de: 11
+      vers: 62
+      poids: 1
+    - de: 11
+      vers: 65
+      poids: 1
+    - de: 11
+      vers: 67
+      poids: 1
+    - de: 12
+      vers: 13
+      poids: 1
+    - de: 12
+      vers: 18
+      poids: 1
+    - de: 12
+      vers: 21
+      poids: 1
+    - de: 12
+      vers: 23
+      poids: 1
+    - de: 12
+      vers: 26
+      poids: 4
+    - de: 12
+      vers: 28
+      poids: 1
+    - de: 12
+      vers: 30
+      poids: 2
+    - de: 12
+      vers: 38
+      poids: 1
+    - de: 12
+      vers: 39
+      poids: 1
+    - de: 12
+      vers: 40
+      poids: 1
+    - de: 12
+      vers: 44
+      poids: 1
+    - de: 12
+      vers: 47
+      poids: 1
+    - de: 12
+      vers: 48
+      poids: 1
+    - de: 12
+      vers: 49
+      poids: 1
+    - de: 12
+      vers: 56
+      poids: 1
+    - de: 12
+      vers: 57
+      poids: 1
+    - de: 12
+      vers: 59
+      poids: 1
+    - de: 12
+      vers: 60
+      poids: 1
+    - de: 12
+      vers: 63
+      poids: 1
+    - de: 12
+      vers: 64
+      poids: 1
+    - de: 12
+      vers: 65
+      poids: 1
+    - de: 12
+      vers: 67
+      poids: 1
+    - de: 12
+      vers: 69
+      poids: 1
+    - de: 13
+      vers: 18
+      poids: 1
+    - de: 13
+      vers: 26
+      poids: 1
+    - de: 13
+      vers: 28
+      poids: 1
+    - de: 13
+      vers: 33
+      poids: 1
+    - de: 13
+      vers: 40
+      poids: 1
+    - de: 13
+      vers: 47
+      poids: 1
+    - de: 13
+      vers: 51
+      poids: 1
+    - de: 14
+      vers: 15
+      poids: 1
+    - de: 14
+      vers: 18
+      poids: 1
+    - de: 14
+      vers: 26
+      poids: 1
+    - de: 14
+      vers: 31
+      poids: 1
+    - de: 14
+      vers: 37
+      poids: 1
+    - de: 14
+      vers: 39
+      poids: 1
+    - de: 14
+      vers: 41
+      poids: 1
+    - de: 14
+      vers: 46
+      poids: 2
+    - de: 14
+      vers: 50
+      poids: 1
+    - de: 14
+      vers: 56
+      poids: 1
+    - de: 14
+      vers: 62
+      poids: 1
+    - de: 14
+      vers: 65
+      poids: 1
+    - de: 14
+      vers: 67
+      poids: 1
+    - de: 15
+      vers: 18
+      poids: 2
+    - de: 15
+      vers: 21
+      poids: 1
+    - de: 15
+      vers: 24
+      poids: 1
+    - de: 15
+      vers: 26
+      poids: 2
+    - de: 15
+      vers: 29
+      poids: 1
+    - de: 15
+      vers: 30
+      poids: 1
+    - de: 15
+      vers: 31
+      poids: 1
+    - de: 15
+      vers: 37
+      poids: 1
+    - de: 15
+      vers: 38
+      poids: 1
+    - de: 15
+      vers: 39
+      poids: 1
+    - de: 15
+      vers: 41
+      poids: 1
+    - de: 15
+      vers: 43
+      poids: 2
+    - de: 15
+      vers: 45
+      poids: 1
+    - de: 15
+      vers: 46
+      poids: 1
+    - de: 15
+      vers: 49
+      poids: 2
+    - de: 15
+      vers: 50
+      poids: 1
+    - de: 15
+      vers: 52
+      poids: 1
+    - de: 15
+      vers: 55
+      poids: 1
+    - de: 15
+      vers: 56
+      poids: 2
+    - de: 15
+      vers: 59
+      poids: 1
+    - de: 15
+      vers: 62
+      poids: 2
+    - de: 15
+      vers: 64
+      poids: 1
+    - de: 15
+      vers: 65
+      poids: 3
+    - de: 15
+      vers: 67
+      poids: 1
+    - de: 15
+      vers: 68
+      poids: 2
+    - de: 16
+      vers: 17
+      poids: 1
+    - de: 16
+      vers: 18
+      poids: 1
+    - de: 16
+      vers: 19
+      poids: 1
+    - de: 16
+      vers: 20
+      poids: 1
+    - de: 16
+      vers: 22
+      poids: 1
+    - de: 16
+      vers: 24
+      poids: 1
+    - de: 16
+      vers: 25
+      poids: 1
+    - de: 16
+      vers: 31
+      poids: 1
+    - de: 16
+      vers: 32
+      poids: 1
+    - de: 16
+      vers: 33
+      poids: 1
+    - de: 16
+      vers: 34
+      poids: 1
+    - de: 16
+      vers: 35
+      poids: 1
+    - de: 16
+      vers: 36
+      poids: 1
+    - de: 16
+      vers: 42
+      poids: 1
+    - de: 16
+      vers: 47
+      poids: 1
+    - de: 16
+      vers: 48
+      poids: 1
+    - de: 16
+      vers: 51
+      poids: 1
+    - de: 16
+      vers: 53
+      poids: 1
+    - de: 16
+      vers: 54
+      poids: 1
+    - de: 16
+      vers: 58
+      poids: 1
+    - de: 16
+      vers: 60
+      poids: 1
+    - de: 16
+      vers: 61
+      poids: 1
+    - de: 16
+      vers: 66
+      poids: 1
+    - de: 16
+      vers: 69
+      poids: 1
+    - de: 17
+      vers: 19
+      poids: 2
+    - de: 17
+      vers: 32
+      poids: 1
+    - de: 17
+      vers: 35
+      poids: 1
+    - de: 17
+      vers: 36
+      poids: 1
+    - de: 17
+      vers: 42
+      poids: 1
+    - de: 17
+      vers: 51
+      poids: 1
+    - de: 17
+      vers: 53
+      poids: 1
+    - de: 17
+      vers: 54
+      poids: 1
+    - de: 17
+      vers: 60
+      poids: 1
+    - de: 17
+      vers: 66
+      poids: 1
+    - de: 17
+      vers: 69
+      poids: 2
+    - de: 18
+      vers: 21
+      poids: 1
+    - de: 18
+      vers: 24
+      poids: 2
+    - de: 18
+      vers: 26
+      poids: 3
+    - de: 18
+      vers: 28
+      poids: 1
+    - de: 18
+      vers: 29
+      poids: 1
+    - de: 18
+      vers: 30
+      poids: 1
+    - de: 18
+      vers: 31
+      poids: 1
+    - de: 18
+      vers: 37
+      poids: 1
+    - de: 18
+      vers: 39
+      poids: 1
+    - de: 18
+      vers: 40
+      poids: 1
+    - de: 18
+      vers: 41
+      poids: 1
+    - de: 18
+      vers: 43
+      poids: 1
+    - de: 18
+      vers: 45
+      poids: 1
+    - de: 18
+      vers: 46
+      poids: 1
+    - de: 18
+      vers: 47
+      poids: 2
+    - de: 18
+      vers: 49
+      poids: 1
+    - de: 18
+      vers: 50
+      poids: 1
+    - de: 18
+      vers: 52
+      poids: 1
+    - de: 18
+      vers: 55
+      poids: 1
+    - de: 18
+      vers: 56
+      poids: 2
+    - de: 18
+      vers: 62
+      poids: 1
+    - de: 18
+      vers: 65
+      poids: 2
+    - de: 18
+      vers: 67
+      poids: 1
+    - de: 18
+      vers: 68
+      poids: 1
+    - de: 19
+      vers: 32
+      poids: 1
+    - de: 19
+      vers: 35
+      poids: 1
+    - de: 19
+      vers: 36
+      poids: 1
+    - de: 19
+      vers: 42
+      poids: 1
+    - de: 19
+      vers: 51
+      poids: 1
+    - de: 19
+      vers: 53
+      poids: 1
+    - de: 19
+      vers: 54
+      poids: 1
+    - de: 19
+      vers: 60
+      poids: 1
+    - de: 19
+      vers: 66
+      poids: 1
+    - de: 19
+      vers: 69
+      poids: 2
+    - de: 20
+      vers: 22
+      poids: 1
+    - de: 20
+      vers: 25
+      poids: 2
+    - de: 20
+      vers: 31
+      poids: 1
+    - de: 20
+      vers: 33
+      poids: 1
+    - de: 20
+      vers: 34
+      poids: 1
+    - de: 20
+      vers: 42
+      poids: 1
+    - de: 20
+      vers: 48
+      poids: 1
+    - de: 20
+      vers: 58
+      poids: 1
+    - de: 20
+      vers: 61
+      poids: 1
+    - de: 21
+      vers: 24
+      poids: 1
+    - de: 21
+      vers: 26
+      poids: 2
+    - de: 21
+      vers: 29
+      poids: 1
+    - de: 21
+      vers: 30
+      poids: 2
+    - de: 21
+      vers: 43
+      poids: 1
+    - de: 21
+      vers: 45
+      poids: 1
+    - de: 21
+      vers: 49
+      poids: 1
+    - de: 21
+      vers: 52
+      poids: 1
+    - de: 21
+      vers: 55
+      poids: 1
+    - de: 21
+      vers: 56
+      poids: 2
+    - de: 21
+      vers: 60
+      poids: 1
+    - de: 21
+      vers: 65
+      poids: 1
+    - de: 21
+      vers: 68
+      poids: 1
+    - de: 22
+      vers: 25
+      poids: 1
+    - de: 22
+      vers: 28
+      poids: 1
+    - de: 22
+      vers: 31
+      poids: 2
+    - de: 22
+      vers: 33
+      poids: 1
+    - de: 22
+      vers: 34
+      poids: 1
+    - de: 22
+      vers: 48
+      poids: 1
+    - de: 22
+      vers: 58
+      poids: 1
+    - de: 22
+      vers: 61
+      poids: 1
+    - de: 23
+      vers: 26
+      poids: 1
+    - de: 23
+      vers: 30
+      poids: 1
+    - de: 23
+      vers: 38
+      poids: 1
+    - de: 23
+      vers: 39
+      poids: 2
+    - de: 23
+      vers: 44
+      poids: 2
+    - de: 23
+      vers: 48
+      poids: 1
+    - de: 23
+      vers: 53
+      poids: 1
+    - de: 23
+      vers: 55
+      poids: 1
+    - de: 23
+      vers: 57
+      poids: 1
+    - de: 23
+      vers: 59
+      poids: 1
+    - de: 23
+      vers: 63
+      poids: 1
+    - de: 23
+      vers: 64
+      poids: 1
+    - de: 23
+      vers: 65
+      poids: 2
+    - de: 24
+      vers: 26
+      poids: 1
+    - de: 24
+      vers: 29
+      poids: 1
+    - de: 24
+      vers: 30
+      poids: 1
+    - de: 24
+      vers: 43
+      poids: 1
+    - de: 24
+      vers: 45
+      poids: 1
+    - de: 24
+      vers: 47
+      poids: 1
+    - de: 24
+      vers: 49
+      poids: 1
+    - de: 24
+      vers: 52
+      poids: 1
+    - de: 24
+      vers: 55
+      poids: 1
+    - de: 24
+      vers: 56
+      poids: 1
+    - de: 24
+      vers: 65
+      poids: 1
+    - de: 24
+      vers: 68
+      poids: 1
+    - de: 25
+      vers: 31
+      poids: 1
+    - de: 25
+      vers: 33
+      poids: 1
+    - de: 25
+      vers: 34
+      poids: 1
+    - de: 25
+      vers: 42
+      poids: 1
+    - de: 25
+      vers: 48
+      poids: 1
+    - de: 25
+      vers: 58
+      poids: 1
+    - de: 25
+      vers: 61
+      poids: 1
+    - de: 26
+      vers: 28
+      poids: 1
+    - de: 26
+      vers: 29
+      poids: 1
+    - de: 26
+      vers: 30
+      poids: 3
+    - de: 26
+      vers: 31
+      poids: 1
+    - de: 26
+      vers: 37
+      poids: 1
+    - de: 26
+      vers: 38
+      poids: 1
+    - de: 26
+      vers: 39
+      poids: 2
+    - de: 26
+      vers: 40
+      poids: 1
+    - de: 26
+      vers: 41
+      poids: 1
+    - de: 26
+      vers: 43
+      poids: 1
+    - de: 26
+      vers: 44
+      poids: 1
+    - de: 26
+      vers: 45
+      poids: 1
+    - de: 26
+      vers: 46
+      poids: 1
+    - de: 26
+      vers: 47
+      poids: 1
+    - de: 26
+      vers: 48
+      poids: 1
+    - de: 26
+      vers: 49
+      poids: 2
+    - de: 26
+      vers: 50
+      poids: 1
+    - de: 26
+      vers: 52
+      poids: 1
+    - de: 26
+      vers: 55
+      poids: 1
+    - de: 26
+      vers: 56
+      poids: 3
+    - de: 26
+      vers: 57
+      poids: 1
+    - de: 26
+      vers: 59
+      poids: 1
+    - de: 26
+      vers: 60
+      poids: 1
+    - de: 26
+      vers: 62
+      poids: 1
+    - de: 26
+      vers: 63
+      poids: 1
+    - de: 26
+      vers: 64
+      poids: 1
+    - de: 26
+      vers: 65
+      poids: 3
+    - de: 26
+      vers: 67
+      poids: 2
+    - de: 26
+      vers: 68
+      poids: 1
+    - de: 26
+      vers: 69
+      poids: 1
+    - de: 27
+      vers: 67
+      poids: 1
+    - de: 28
+      vers: 31
+      poids: 1
+    - de: 28
+      vers: 40
+      poids: 1
+    - de: 28
+      vers: 47
+      poids: 1
+    - de: 29
+      vers: 30
+      poids: 1
+    - de: 29
+      vers: 34
+      poids: 1
+    - de: 29
+      vers: 43
+      poids: 1
+    - de: 29
+      vers: 45
+      poids: 1
+    - de: 29
+      vers: 49
+      poids: 1
+    - de: 29
+      vers: 52
+      poids: 1
+    - de: 29
+      vers: 55
+      poids: 1
+    - de: 29
+      vers: 56
+      poids: 1
+    - de: 29
+      vers: 63
+      poids: 1
+    - de: 29
+      vers: 65
+      poids: 1
+    - de: 29
+      vers: 68
+      poids: 1
+    - de: 30
+      vers: 38
+      poids: 1
+    - de: 30
+      vers: 39
+      poids: 1
+    - de: 30
+      vers: 43
+      poids: 1
+    - de: 30
+      vers: 44
+      poids: 1
+    - de: 30
+      vers: 45
+      poids: 1
+    - de: 30
+      vers: 48
+      poids: 1
+    - de: 30
+      vers: 49
+      poids: 1
+    - de: 30
+      vers: 52
+      poids: 1
+    - de: 30
+      vers: 55
+      poids: 1
+    - de: 30
+      vers: 56
+      poids: 2
+    - de: 30
+      vers: 57
+      poids: 1
+    - de: 30
+      vers: 59
+      poids: 1
+    - de: 30
+      vers: 60
+      poids: 1
+    - de: 30
+      vers: 63
+      poids: 1
+    - de: 30
+      vers: 64
+      poids: 1
+    - de: 30
+      vers: 65
+      poids: 2
+    - de: 30
+      vers: 68
+      poids: 1
+    - de: 31
+      vers: 33
+      poids: 1
+    - de: 31
+      vers: 34
+      poids: 1
+    - de: 31
+      vers: 37
+      poids: 1
+    - de: 31
+      vers: 39
+      poids: 1
+    - de: 31
+      vers: 41
+      poids: 1
+    - de: 31
+      vers: 46
+      poids: 1
+    - de: 31
+      vers: 48
+      poids: 1
+    - de: 31
+      vers: 50
+      poids: 1
+    - de: 31
+      vers: 56
+      poids: 1
+    - de: 31
+      vers: 58
+      poids: 1
+    - de: 31
+      vers: 61
+      poids: 1
+    - de: 31
+      vers: 62
+      poids: 1
+    - de: 31
+      vers: 65
+      poids: 1
+    - de: 31
+      vers: 67
+      poids: 1
+    - de: 32
+      vers: 35
+      poids: 1
+    - de: 32
+      vers: 36
+      poids: 1
+    - de: 32
+      vers: 42
+      poids: 1
+    - de: 32
+      vers: 50
+      poids: 1
+    - de: 32
+      vers: 51
+      poids: 1
+    - de: 32
+      vers: 53
+      poids: 1
+    - de: 32
+      vers: 54
+      poids: 1
+    - de: 32
+      vers: 57
+      poids: 1
+    - de: 32
+      vers: 60
+      poids: 1
+    - de: 32
+      vers: 64
+      poids: 1
+    - de: 32
+      vers: 66
+      poids: 1
+    - de: 32
+      vers: 67
+      poids: 1
+    - de: 32
+      vers: 69
+      poids: 1
+    - de: 33
+      vers: 34
+      poids: 1
+    - de: 33
+      vers: 48
+      poids: 1
+    - de: 33
+      vers: 51
+      poids: 1
+    - de: 33
+      vers: 58
+      poids: 1
+    - de: 33
+      vers: 61
+      poids: 1
+    - de: 34
+      vers: 48
+      poids: 1
+    - de: 34
+      vers: 58
+      poids: 1
+    - de: 34
+      vers: 61
+      poids: 1
+    - de: 34
+      vers: 63
+      poids: 1
+    - de: 35
+      vers: 36
+      poids: 2
+    - de: 35
+      vers: 42
+      poids: 1
+    - de: 35
+      vers: 51
+      poids: 1
+    - de: 35
+      vers: 53
+      poids: 1
+    - de: 35
+      vers: 54
+      poids: 1
+    - de: 35
+      vers: 60
+      poids: 1
+    - de: 35
+      vers: 66
+      poids: 1
+    - de: 35
+      vers: 69
+      poids: 1
+    - de: 36
+      vers: 42
+      poids: 1
+    - de: 36
+      vers: 51
+      poids: 1
+    - de: 36
+      vers: 53
+      poids: 1
+    - de: 36
+      vers: 54
+      poids: 1
+    - de: 36
+      vers: 60
+      poids: 1
+    - de: 36
+      vers: 66
+      poids: 1
+    - de: 36
+      vers: 69
+      poids: 1
+    - de: 37
+      vers: 39
+      poids: 1
+    - de: 37
+      vers: 41
+      poids: 1
+    - de: 37
+      vers: 46
+      poids: 1
+    - de: 37
+      vers: 50
+      poids: 1
+    - de: 37
+      vers: 54
+      poids: 1
+    - de: 37
+      vers: 56
+      poids: 1
+    - de: 37
+      vers: 62
+      poids: 1
+    - de: 37
+      vers: 65
+      poids: 1
+    - de: 37
+      vers: 67
+      poids: 1
+    - de: 38
+      vers: 39
+      poids: 1
+    - de: 38
+      vers: 43
+      poids: 1
+    - de: 38
+      vers: 44
+      poids: 1
+    - de: 38
+      vers: 48
+      poids: 1
+    - de: 38
+      vers: 57
+      poids: 1
+    - de: 38
+      vers: 59
+      poids: 2
+    - de: 38
+      vers: 63
+      poids: 1
+    - de: 38
+      vers: 64
+      poids: 1
+    - de: 38
+      vers: 65
+      poids: 1
+    - de: 38
+      vers: 68
+      poids: 1
+    - de: 39
+      vers: 41
+      poids: 1
+    - de: 39
+      vers: 44
+      poids: 2
+    - de: 39
+      vers: 46
+      poids: 1
+    - de: 39
+      vers: 48
+      poids: 1
+    - de: 39
+      vers: 50
+      poids: 1
+    - de: 39
+      vers: 53
+      poids: 1
+    - de: 39
+      vers: 55
+      poids: 1
+    - de: 39
+      vers: 56
+      poids: 1
+    - de: 39
+      vers: 57
+      poids: 1
+    - de: 39
+      vers: 59
+      poids: 1
+    - de: 39
+      vers: 62
+      poids: 1
+    - de: 39
+      vers: 63
+      poids: 1
+    - de: 39
+      vers: 64
+      poids: 1
+    - de: 39
+      vers: 65
+      poids: 3
+    - de: 39
+      vers: 67
+      poids: 1
+    - de: 40
+      vers: 47
+      poids: 1
+    - de: 40
+      vers: 58
+      poids: 1
+    - de: 40
+      vers: 61
+      poids: 1
+    - de: 41
+      vers: 46
+      poids: 1
+    - de: 41
+      vers: 50
+      poids: 1
+    - de: 41
+      vers: 56
+      poids: 1
+    - de: 41
+      vers: 62
+      poids: 1
+    - de: 41
+      vers: 65
+      poids: 1
+    - de: 41
+      vers: 67
+      poids: 1
+    - de: 42
+      vers: 51
+      poids: 1
+    - de: 42
+      vers: 53
+      poids: 1
+    - de: 42
+      vers: 54
+      poids: 1
+    - de: 42
+      vers: 60
+      poids: 1
+    - de: 42
+      vers: 66
+      poids: 1
+    - de: 42
+      vers: 69
+      poids: 1
+    - de: 43
+      vers: 45
+      poids: 1
+    - de: 43
+      vers: 49
+      poids: 1
+    - de: 43
+      vers: 52
+      poids: 1
+    - de: 43
+      vers: 55
+      poids: 1
+    - de: 43
+      vers: 56
+      poids: 1
+    - de: 43
+      vers: 59
+      poids: 1
+    - de: 43
+      vers: 65
+      poids: 1
+    - de: 43
+      vers: 68
+      poids: 2
+    - de: 44
+      vers: 48
+      poids: 1
+    - de: 44
+      vers: 53
+      poids: 1
+    - de: 44
+      vers: 55
+      poids: 1
+    - de: 44
+      vers: 57
+      poids: 1
+    - de: 44
+      vers: 59
+      poids: 1
+    - de: 44
+      vers: 63
+      poids: 1
+    - de: 44
+      vers: 64
+      poids: 1
+    - de: 44
+      vers: 65
+      poids: 2
+    - de: 45
+      vers: 49
+      poids: 1
+    - de: 45
+      vers: 52
+      poids: 2
+    - de: 45
+      vers: 55
+      poids: 1
+    - de: 45
+      vers: 56
+      poids: 1
+    - de: 45
+      vers: 65
+      poids: 1
+    - de: 45
+      vers: 68
+      poids: 1
+    - de: 46
+      vers: 50
+      poids: 1
+    - de: 46
+      vers: 56
+      poids: 1
+    - de: 46
+      vers: 62
+      poids: 1
+    - de: 46
+      vers: 65
+      poids: 1
+    - de: 46
+      vers: 67
+      poids: 1
+    - de: 48
+      vers: 49
+      poids: 1
+    - de: 48
+      vers: 57
+      poids: 1
+    - de: 48
+      vers: 58
+      poids: 1
+    - de: 48
+      vers: 59
+      poids: 1
+    - de: 48
+      vers: 61
+      poids: 1
+    - de: 48
+      vers: 63
+      poids: 1
+    - de: 48
+      vers: 64
+      poids: 1
+    - de: 48
+      vers: 65
+      poids: 1
+    - de: 49
+      vers: 52
+      poids: 1
+    - de: 49
+      vers: 55
+      poids: 1
+    - de: 49
+      vers: 56
+      poids: 1
+    - de: 49
+      vers: 62
+      poids: 1
+    - de: 49
+      vers: 64
+      poids: 1
+    - de: 49
+      vers: 65
+      poids: 2
+    - de: 49
+      vers: 67
+      poids: 1
+    - de: 49
+      vers: 68
+      poids: 1
+    - de: 49
+      vers: 69
+      poids: 1
+    - de: 50
+      vers: 56
+      poids: 1
+    - de: 50
+      vers: 57
+      poids: 1
+    - de: 50
+      vers: 62
+      poids: 1
+    - de: 50
+      vers: 64
+      poids: 1
+    - de: 50
+      vers: 65
+      poids: 1
+    - de: 50
+      vers: 67
+      poids: 2
+    - de: 51
+      vers: 53
+      poids: 1
+    - de: 51
+      vers: 54
+      poids: 1
+    - de: 51
+      vers: 60
+      poids: 1
+    - de: 51
+      vers: 66
+      poids: 1
+    - de: 51
+      vers: 69
+      poids: 1
+    - de: 52
+      vers: 55
+      poids: 1
+    - de: 52
+      vers: 56
+      poids: 1
+    - de: 52
+      vers: 65
+      poids: 1
+    - de: 52
+      vers: 68
+      poids: 1
+    - de: 53
+      vers: 54
+      poids: 1
+    - de: 53
+      vers: 55
+      poids: 1
+    - de: 53
+      vers: 60
+      poids: 1
+    - de: 53
+      vers: 65
+      poids: 1
+    - de: 53
+      vers: 66
+      poids: 1
+    - de: 53
+      vers: 69
+      poids: 1
+    - de: 54
+      vers: 60
+      poids: 1
+    - de: 54
+      vers: 66
+      poids: 1
+    - de: 54
+      vers: 69
+      poids: 1
+    - de: 55
+      vers: 56
+      poids: 1
+    - de: 55
+      vers: 65
+      poids: 2
+    - de: 55
+      vers: 68
+      poids: 1
+    - de: 56
+      vers: 60
+      poids: 1
+    - de: 56
+      vers: 62
+      poids: 1
+    - de: 56
+      vers: 65
+      poids: 2
+    - de: 56
+      vers: 67
+      poids: 1
+    - de: 56
+      vers: 68
+      poids: 1
+    - de: 57
+      vers: 59
+      poids: 1
+    - de: 57
+      vers: 63
+      poids: 1
+    - de: 57
+      vers: 64
+      poids: 2
+    - de: 57
+      vers: 65
+      poids: 1
+    - de: 57
+      vers: 67
+      poids: 1
+    - de: 58
+      vers: 61
+      poids: 2
+    - de: 59
+      vers: 63
+      poids: 1
+    - de: 59
+      vers: 64
+      poids: 1
+    - de: 59
+      vers: 65
+      poids: 1
+    - de: 59
+      vers: 68
+      poids: 1
+    - de: 60
+      vers: 66
+      poids: 1
+    - de: 60
+      vers: 69
+      poids: 1
+    - de: 62
+      vers: 64
+      poids: 1
+    - de: 62
+      vers: 65
+      poids: 2
+    - de: 62
+      vers: 67
+      poids: 1
+    - de: 63
+      vers: 64
+      poids: 1
+    - de: 63
+      vers: 65
+      poids: 1
+    - de: 64
+      vers: 65
+      poids: 2
+    - de: 64
+      vers: 67
+      poids: 1
+    - de: 65
+      vers: 67
+      poids: 1
+    - de: 65
+      vers: 68
+      poids: 1
+    - de: 66
+      vers: 69
+      poids: 1
+    - de: 67
+      vers: 69
+      poids: 1
+    nb_liens_total: 5859
+  les_plus_connectes:
+  - nom: Freddy Boucher
+    liens: 94
+    saisons: 5
+  - nom: Teheiura Teahui
+    liens: 85
+    saisons: 5
+  - nom: Ugo Lartiche
+    liens: 79
+    saisons: 2
+  - nom: Claude Dartois
+    liens: 71
+    saisons: 4
+  - nom: Moussa Niangane
+    liens: 68
+    saisons: 3
+  - nom: Coumba Baradji
+    liens: 64
+    saisons: 4
+  - nom: Christina Chevry
+    liens: 59
+    saisons: 3
+  - nom: Candice Boisson
+    liens: 56
+    saisons: 3
+  - nom: Yassin Metiri
+    liens: 54
+    saisons: 2
+  - nom: Patrick Merle
+    liens: 52
+    saisons: 3
+risque:
+  effectif: 511
+  pas: 10
+  tranches:
+  - tranche: 0
+    sortants: 1
+    encore_en_jeu: 511
+    risque: 0.2
+  - tranche: 10
+    sortants: 39
+    encore_en_jeu: 510
+    risque: 7.6
+  - tranche: 20
+    sortants: 53
+    encore_en_jeu: 471
+    risque: 11.3
+  - tranche: 30
+    sortants: 34
+    encore_en_jeu: 418
+    risque: 8.1
+  - tranche: 40
+    sortants: 49
+    encore_en_jeu: 384
+    risque: 12.8
+  - tranche: 50
+    sortants: 35
+    encore_en_jeu: 335
+    risque: 10.4
+  - tranche: 60
+    sortants: 61
+    encore_en_jeu: 300
+    risque: 20.3
+  - tranche: 70
+    sortants: 32
+    encore_en_jeu: 239
+    risque: 13.4
+  - tranche: 80
+    sortants: 48
+    encore_en_jeu: 207
+    risque: 23.2
+  - tranche: 90
+    sortants: 40
+    encore_en_jeu: 159
+    risque: 25.2
+  - tranche: 100
+    sortants: 119
+    encore_en_jeu: 119
+    risque: 100.0
+  jours_les_plus_meurtriers:
+  - jour: 40
+    sortants: 45
+  - jour: 39
+    sortants: 34
+  - jour: 3
+    sortants: 22
+  - jour: 38
+    sortants: 22
+  - jour: 9
+    sortants: 19
+  - jour: 12
+    sortants: 17
+  - jour: 6
+    sortants: 16
+  - jour: 18
+    sortants: 16
+survie_saisons:
+- id: s01
+  numero: 1
+  titre: Les Aventuriers de Koh-Lanta
+  annee: 2001
+  speciale: false
+  effectif: 16
+  restants:
+  - 100
+  - 100
+  - 94
+  - 94
+  - 88
+  - 81
+  - 81
+  - 75
+  - 69
+  - 62
+  - 62
+  - 56
+  - 50
+  - 50
+  - 44
+  - 44
+  - 38
+  - 31
+  - 31
+  - 25
+  - 12
+- id: s02
+  numero: 2
+  titre: Nicoya
+  annee: 2002
+  speciale: false
+  effectif: 16
+  restants:
+  - 100
+  - 100
+  - 100
+  - 94
+  - 88
+  - 81
+  - 81
+  - 75
+  - 69
+  - 69
+  - 62
+  - 56
+  - 56
+  - 50
+  - 44
+  - 44
+  - 38
+  - 31
+  - 31
+  - 25
+  - 12
+- id: s03
+  numero: 3
+  titre: Bocas del Toro
+  annee: 2003
+  speciale: false
+  effectif: 18
+  restants:
+  - 100
+  - 100
+  - 100
+  - 89
+  - 89
+  - 89
+  - 72
+  - 67
+  - 61
+  - 56
+  - 50
+  - 50
+  - 44
+  - 39
+  - 39
+  - 33
+  - 33
+  - 33
+  - 28
+  - 22
+  - 11
+- id: s04
+  numero: 4
+  titre: Panama
+  annee: 2004
+  speciale: false
+  effectif: 16
+  restants:
+  - 100
+  - 100
+  - 100
+  - 94
+  - 94
+  - 94
+  - 81
+  - 75
+  - 75
+  - 69
+  - 62
+  - 62
+  - 56
+  - 56
+  - 50
+  - 44
+  - 38
+  - 38
+  - 31
+  - 25
+  - 19
+- id: s05
+  numero: 5
+  titre: Pacifique
+  annee: 2005
+  speciale: false
+  effectif: 17
+  restants:
+  - 100
+  - 100
+  - 88
+  - 88
+  - 88
+  - 76
+  - 76
+  - 71
+  - 65
+  - 65
+  - 59
+  - 59
+  - 53
+  - 47
+  - 47
+  - 41
+  - 35
+  - 35
+  - 29
+  - 24
+  - 12
+- id: s06
+  numero: 6
+  titre: Vanuatu
+  annee: 2006
+  speciale: false
+  effectif: 16
+  restants:
+  - 100
+  - 100
+  - 94
+  - 94
+  - 94
+  - 94
+  - 88
+  - 75
+  - 75
+  - 75
+  - 62
+  - 62
+  - 56
+  - 50
+  - 50
+  - 44
+  - 38
+  - 38
+  - 31
+  - 25
+  - 19
+- id: s07
+  numero: 7
+  titre: Palawan
+  annee: 2007
+  speciale: false
+  effectif: 16
+  restants:
+  - 100
+  - 100
+  - 100
+  - 94
+  - 88
+  - 88
+  - 81
+  - 75
+  - 75
+  - 69
+  - 62
+  - 62
+  - 56
+  - 50
+  - 50
+  - 44
+  - 38
+  - 38
+  - 31
+  - 25
+  - 12
+- id: s08
+  numero: 8
+  titre: Caramoan
+  annee: 2008
+  speciale: false
+  effectif: 17
+  restants:
+  - 100
+  - 100
+  - 100
+  - 88
+  - 82
+  - 76
+  - 76
+  - 71
+  - 65
+  - 65
+  - 59
+  - 59
+  - 53
+  - 47
+  - 41
+  - 41
+  - 35
+  - 29
+  - 29
+  - 24
+  - 12
+- id: sp1
+  numero: null
+  titre: Le Retour des héros
+  annee: 2009
+  speciale: true
+  effectif: 14
+  restants:
+  - 100
+  - 93
+  - 93
+  - 86
+  - 86
+  - 79
+  - 79
+  - 71
+  - 71
+  - 64
+  - 57
+  - 57
+  - 50
+  - 50
+  - 43
+  - 43
+  - 36
+  - 36
+  - 29
+  - 21
+  - 14
+- id: s09
+  numero: 9
+  titre: Palau
+  annee: 2009
+  speciale: false
+  effectif: 18
+  restants:
+  - 100
+  - 94
+  - 83
+  - 83
+  - 78
+  - 72
+  - 72
+  - 67
+  - 61
+  - 61
+  - 61
+  - 50
+  - 50
+  - 44
+  - 39
+  - 39
+  - 33
+  - 28
+  - 28
+  - 17
+  - 11
+- id: sp2
+  numero: null
+  titre: Le Choc des héros
+  annee: 2010
+  speciale: true
+  effectif: 14
+  restants:
+  - 100
+  - 100
+  - 100
+  - 93
+  - 93
+  - 86
+  - 86
+  - 79
+  - 79
+  - 71
+  - 64
+  - 64
+  - 57
+  - 57
+  - 50
+  - 50
+  - 43
+  - 43
+  - 36
+  - 21
+  - 14
+- id: s10
+  numero: 10
+  titre: Viêtnam
+  annee: 2010
+  speciale: false
+  effectif: 18
+  restants:
+  - 100
+  - 100
+  - 94
+  - 94
+  - 89
+  - 89
+  - 83
+  - 78
+  - 72
+  - 72
+  - 67
+  - 61
+  - 56
+  - 44
+  - 44
+  - 39
+  - 39
+  - 33
+  - 28
+  - 28
+  - 17
+- id: s11
+  numero: 11
+  titre: Raja Ampat
+  annee: 2011
+  speciale: false
+  effectif: 20
+  restants:
+  - 100
+  - 100
+  - 95
+  - 90
+  - 85
+  - 75
+  - 70
+  - 70
+  - 65
+  - 60
+  - 55
+  - 50
+  - 45
+  - 45
+  - 40
+  - 40
+  - 40
+  - 30
+  - 25
+  - 25
+  - 15
+- id: sp3
+  numero: null
+  titre: La Revanche des héros
+  annee: 2012
+  speciale: true
+  effectif: 16
+  restants:
+  - 100
+  - 100
+  - 94
+  - 88
+  - 88
+  - 88
+  - 81
+  - 75
+  - 75
+  - 69
+  - 62
+  - 62
+  - 62
+  - 56
+  - 50
+  - 50
+  - 50
+  - 44
+  - 44
+  - 31
+  - 19
+- id: s12
+  numero: 12
+  titre: Malaisie
+  annee: 2012
+  speciale: false
+  effectif: 20
+  restants:
+  - 100
+  - 100
+  - 95
+  - 90
+  - 90
+  - 90
+  - 80
+  - 80
+  - 75
+  - 70
+  - 65
+  - 60
+  - 55
+  - 55
+  - 50
+  - 40
+  - 40
+  - 40
+  - 30
+  - 25
+  - 10
+- id: sp4
+  numero: null
+  titre: La Nouvelle Édition
+  annee: 2014
+  speciale: true
+  effectif: 12
+  restants:
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 100
+  - 92
+  - 75
+  - 75
+  - 75
+  - 75
+  - 75
+  - 67
+  - 58
+  - 50
+  - 50
+  - 42
+  - 42
+  - 33
+  - 25
+  - 17
+- id: s14
+  numero: 14
+  titre: Johor
+  annee: 2015
+  speciale: false
+  effectif: 20
+  restants:
+  - 100
+  - 100
+  - 95
+  - 95
+  - 90
+  - 85
+  - 85
+  - 75
+  - 70
+  - 70
+  - 60
+  - 55
+  - 50
+  - 50
+  - 40
+  - 35
+  - 35
+  - 30
+  - 25
+  - 20
+  - 10
+- id: s15
+  numero: 15
+  titre: Thaïlande
+  annee: 2016
+  speciale: false
+  effectif: 21
+  restants:
+  - 100
+  - 100
+  - 90
+  - 90
+  - 81
+  - 76
+  - 76
+  - 71
+  - 67
+  - 67
+  - 57
+  - 52
+  - 48
+  - 48
+  - 38
+  - 33
+  - 33
+  - 29
+  - 24
+  - 19
+  - 10
+- id: s16
+  numero: 16
+  titre: L'Île au trésor
+  annee: 2016
+  speciale: false
+  effectif: 20
+  restants:
+  - 100
+  - 100
+  - 95
+  - 90
+  - 90
+  - 85
+  - 80
+  - 80
+  - 75
+  - 70
+  - 65
+  - 60
+  - 55
+  - 50
+  - 50
+  - 45
+  - 35
+  - 35
+  - 30
+  - 25
+  - 10
+- id: s17
+  numero: 17
+  titre: Cambodge
+  annee: 2017
+  speciale: false
+  effectif: 21
+  restants:
+  - 100
+  - 100
+  - 95
+  - 95
+  - 90
+  - 86
+  - 86
+  - 81
+  - 76
+  - 71
+  - 57
+  - 57
+  - 52
+  - 48
+  - 43
+  - 38
+  - 38
+  - 29
+  - 24
+  - 24
+  - 14
+- id: s18
+  numero: 18
+  titre: Fidji
+  annee: 2017
+  speciale: false
+  effectif: 21
+  restants:
+  - 100
+  - 100
+  - 90
+  - 90
+  - 86
+  - 76
+  - 71
+  - 71
+  - 67
+  - 62
+  - 62
+  - 57
+  - 48
+  - 48
+  - 43
+  - 38
+  - 38
+  - 33
+  - 24
+  - 24
+  - 14
+- id: sp5
+  numero: null
+  titre: Le Combat des héros
+  annee: 2018
+  speciale: true
+  effectif: 18
+  restants:
+  - 100
+  - 94
+  - 89
+  - 89
+  - 83
+  - 83
+  - 78
+  - 78
+  - 67
+  - 67
+  - 61
+  - 50
+  - 50
+  - 44
+  - 39
+  - 39
+  - 28
+  - 22
+  - 22
+  - 17
+  - 11
+- id: s20
+  numero: 20
+  titre: La Guerre des chefs
+  annee: 2019
+  speciale: false
+  effectif: 21
+  restants:
+  - 100
+  - 100
+  - 100
+  - 95
+  - 95
+  - 86
+  - 86
+  - 81
+  - 76
+  - 71
+  - 62
+  - 62
+  - 57
+  - 48
+  - 48
+  - 43
+  - 38
+  - 33
+  - 29
+  - 24
+  - 14
+- id: sp6
+  numero: null
+  titre: L'Île des héros
+  annee: 2020
+  speciale: true
+  effectif: 20
+  restants:
+  - 100
+  - 100
+  - 90
+  - 90
+  - 90
+  - 85
+  - 85
+  - 80
+  - 80
+  - 70
+  - 55
+  - 50
+  - 45
+  - 45
+  - 40
+  - 40
+  - 35
+  - 35
+  - 35
+  - 25
+  - 15
+- id: s21
+  numero: 21
+  titre: Les 4 Terres
+  annee: 2020
+  speciale: false
+  effectif: 24
+  restants:
+  - 100
+  - 100
+  - 100
+  - 92
+  - 92
+  - 88
+  - 75
+  - 75
+  - 71
+  - 67
+  - 62
+  - 62
+  - 54
+  - 50
+  - 46
+  - 42
+  - 42
+  - 33
+  - 25
+  - 25
+  - 12
+- id: sp7
+  numero: null
+  titre: La Légende
+  annee: 2021
+  speciale: true
+  effectif: 20
+  restants:
+  - 100
+  - 95
+  - 90
+  - 90
+  - 80
+  - 75
+  - 75
+  - 70
+  - 65
+  - 65
+  - 55
+  - 50
+  - 50
+  - 45
+  - 45
+  - 35
+  - 35
+  - 25
+  - 20
+  - 20
+  - 10
+- id: s22
+  numero: 22
+  titre: Les Armes secrètes
+  annee: 2021
+  speciale: false
+  effectif: 21
+  restants:
+  - 100
+  - 100
+  - 95
+  - 95
+  - 90
+  - 90
+  - 86
+  - 81
+  - 81
+  - 71
+  - 62
+  - 62
+  - 52
+  - 48
+  - 48
+  - 38
+  - 38
+  - 33
+  - 33
+  - 14
+  - 10
+- id: s23
+  numero: 23
+  titre: Le Totem maudit
+  annee: 2022
+  speciale: false
+  effectif: 24
+  restants:
+  - 100
+  - 100
+  - 92
+  - 88
+  - 83
+  - 79
+  - 75
+  - 75
+  - 75
+  - 67
+  - 67
+  - 62
+  - 54
+  - 46
+  - 46
+  - 42
+  - 33
+  - 29
+  - 25
+  - 21
+  - 17
+- id: s24
+  numero: 24
+  titre: Le Feu sacré
+  annee: 2023
+  speciale: false
+  effectif: 20
+  restants:
+  - 100
+  - 100
+  - 95
+  - 95
+  - 90
+  - 85
+  - 80
+  - 80
+  - 75
+  - 75
+  - 65
+  - 60
+  - 50
+  - 45
+  - 40
+  - 35
+  - 35
+  - 25
+  - 20
+  - 20
+  - 15
+- id: s25
+  numero: 25
+  titre: Les Chasseurs d'immunité
+  annee: 2024
+  speciale: false
+  effectif: 22
+  restants:
+  - 100
+  - 100
+  - 95
+  - 95
+  - 86
+  - 82
+  - 82
+  - 77
+  - 73
+  - 68
+  - 68
+  - 64
+  - 59
+  - 55
+  - 45
+  - 45
+  - 41
+  - 32
+  - 27
+  - 23
+  - 14
+- id: s26
+  numero: 26
+  titre: La Tribu maudite
+  annee: 2024
+  speciale: false
+  effectif: 24
+  restants:
+  - 100
+  - 100
+  - 96
+  - 96
+  - 92
+  - 88
+  - 88
+  - 71
+  - 67
+  - 62
+  - 58
+  - 54
+  - 50
+  - 46
+  - 42
+  - 42
+  - 38
+  - 33
+  - 33
+  - 29
+  - 12
+- id: s27
+  numero: 27
+  titre: La Revanche des 4 Terres
+  annee: 2025
+  speciale: false
+  effectif: 24
+  restants:
+  - 100
+  - 100
+  - 96
+  - 96
+  - 92
+  - 88
+  - 75
+  - 75
+  - 71
+  - 67
+  - 62
+  - 62
+  - 58
+  - 50
+  - 46
+  - 42
+  - 42
+  - 29
+  - 25
+  - 25
+  - 12
+- id: s28
+  numero: 28
+  titre: Les Reliques du destin
+  annee: 2026
+  speciale: false
+  effectif: 20
+  restants:
+  - 100
+  - 100
+  - 95
+  - 90
+  - 90
+  - 85
+  - 80
+  - 80
+  - 75
+  - 75
+  - 65
+  - 65
+  - 60
+  - 55
+  - 55
+  - 45
+  - 40
+  - 40
+  - 35
+  - 25
+  - 15
+casting:
+  etendues:
+  - id: s01
+    numero: 1
+    titre: Les Aventuriers de Koh-Lanta
+    annee: 2001
+    speciale: false
+    min: 18
+    median: 27.0
+    max: 58
+    etendue: 40
+  - id: s02
+    numero: 2
+    titre: Nicoya
+    annee: 2002
+    speciale: false
+    min: 22
+    median: 29.0
+    max: 51
+    etendue: 29
+  - id: s03
+    numero: 3
+    titre: Bocas del Toro
+    annee: 2003
+    speciale: false
+    min: 22
+    median: 29.0
+    max: 58
+    etendue: 36
+  - id: s04
+    numero: 4
+    titre: Panama
+    annee: 2004
+    speciale: false
+    min: 20
+    median: 30.0
+    max: 57
+    etendue: 37
+  - id: s05
+    numero: 5
+    titre: Pacifique
+    annee: 2005
+    speciale: false
+    min: 20
+    median: 30
+    max: 59
+    etendue: 39
+  - id: s06
+    numero: 6
+    titre: Vanuatu
+    annee: 2006
+    speciale: false
+    min: 21
+    median: 31.0
+    max: 60
+    etendue: 39
+  - id: s07
+    numero: 7
+    titre: Palawan
+    annee: 2007
+    speciale: false
+    min: 21
+    median: 33.0
+    max: 55
+    etendue: 34
+  - id: s08
+    numero: 8
+    titre: Caramoan
+    annee: 2008
+    speciale: false
+    min: 20
+    median: 32
+    max: 56
+    etendue: 36
+  - id: sp1
+    numero: null
+    titre: Le Retour des héros
+    annee: 2009
+    speciale: true
+    min: 24
+    median: 34.5
+    max: 64
+    etendue: 40
+  - id: s09
+    numero: 9
+    titre: Palau
+    annee: 2009
+    speciale: false
+    min: 19
+    median: 30.0
+    max: 62
+    etendue: 43
+  - &id005
+    id: sp2
+    numero: null
+    titre: Le Choc des héros
+    annee: 2010
+    speciale: true
+    min: 23
+    median: 34.5
+    max: 42
+    etendue: 19
+  - id: s10
+    numero: 10
+    titre: Viêtnam
+    annee: 2010
+    speciale: false
+    min: 20
+    median: 31.0
+    max: 55
+    etendue: 35
+  - &id004
+    id: s11
+    numero: 11
+    titre: Raja Ampat
+    annee: 2011
+    speciale: false
+    min: 20
+    median: 30.0
+    max: 65
+    etendue: 45
+  - id: sp3
+    numero: null
+    titre: La Revanche des héros
+    annee: 2012
+    speciale: true
+    min: 27
+    median: 36.0
+    max: 66
+    etendue: 39
+  - id: s12
+    numero: 12
+    titre: Malaisie
+    annee: 2012
+    speciale: false
+    min: 18
+    median: 35.0
+    max: 60
+    etendue: 42
+  - id: sp4
+    numero: null
+    titre: La Nouvelle Édition
+    annee: 2014
+    speciale: true
+    min: 26
+    median: 37
+    max: 45
+    etendue: 19
+  - id: s14
+    numero: 14
+    titre: Johor
+    annee: 2015
+    speciale: false
+    min: 20
+    median: 30.5
+    max: 54
+    etendue: 34
+  - id: s15
+    numero: 15
+    titre: Thaïlande
+    annee: 2016
+    speciale: false
+    min: 21
+    median: 33
+    max: 56
+    etendue: 35
+  - id: s16
+    numero: 16
+    titre: L'Île au trésor
+    annee: 2016
+    speciale: false
+    min: 19
+    median: 34.5
+    max: 56
+    etendue: 37
+  - id: s17
+    numero: 17
+    titre: Cambodge
+    annee: 2017
+    speciale: false
+    min: 21
+    median: 32
+    max: 53
+    etendue: 32
+  - id: s18
+    numero: 18
+    titre: Fidji
+    annee: 2017
+    speciale: false
+    min: 19
+    median: 29
+    max: 57
+    etendue: 38
+  - id: sp5
+    numero: null
+    titre: Le Combat des héros
+    annee: 2018
+    speciale: true
+    min: 20
+    median: 38.0
+    max: 50
+    etendue: 30
+  - id: s20
+    numero: 20
+    titre: La Guerre des chefs
+    annee: 2019
+    speciale: false
+    min: 20
+    median: 32
+    max: 53
+    etendue: 33
+  - id: sp6
+    numero: null
+    titre: L'Île des héros
+    annee: 2020
+    speciale: true
+    min: 20
+    median: 37
+    max: 58
+    etendue: 38
+  - id: s21
+    numero: 21
+    titre: Les 4 Terres
+    annee: 2020
+    speciale: false
+    min: 20
+    median: 30
+    max: 54
+    etendue: 34
+  - id: sp7
+    numero: null
+    titre: La Légende
+    annee: 2021
+    speciale: true
+    min: 21
+    median: 36
+    max: 51
+    etendue: 30
+  - id: s22
+    numero: 22
+    titre: Les Armes secrètes
+    annee: 2021
+    speciale: false
+    min: 25
+    median: 34
+    max: 48
+    etendue: 23
+  - id: s23
+    numero: 23
+    titre: Le Totem maudit
+    annee: 2022
+    speciale: false
+    min: 20
+    median: 34.5
+    max: 52
+    etendue: 32
+  - id: s24
+    numero: 24
+    titre: Le Feu sacré
+    annee: 2023
+    speciale: false
+    min: 22
+    median: 33.5
+    max: 56
+    etendue: 34
+  - id: s25
+    numero: 25
+    titre: Les Chasseurs d'immunité
+    annee: 2024
+    speciale: false
+    min: 21
+    median: 34.5
+    max: 62
+    etendue: 41
+  - id: s26
+    numero: 26
+    titre: La Tribu maudite
+    annee: 2024
+    speciale: false
+    min: 23
+    median: 34.5
+    max: 51
+    etendue: 28
+  - id: s27
+    numero: 27
+    titre: La Revanche des 4 Terres
+    annee: 2025
+    speciale: false
+    min: 20
+    median: 32.5
+    max: 63
+    etendue: 43
+  - id: sp8
+    numero: null
+    titre: All Stars
+    annee: 2026
+    speciale: true
+    min: 26
+    median: 35.0
+    max: 48
+    etendue: 22
+  - id: s28
+    numero: 28
+    titre: Les Reliques du destin
+    annee: 2026
+    speciale: false
+    min: 21
+    median: 36.0
+    max: 51
+    etendue: 30
+  plus_large: *id004
+  plus_resserree: *id005
+  generations:
+  - decennie: 1940
+    effectif: 9
+  - decennie: 1950
+    effectif: 18
+  - decennie: 1960
+    effectif: 72
+  - decennie: 1970
+    effectif: 158
+  - decennie: 1980
+    effectif: 218
+  - decennie: 1990
+    effectif: 139
+  - decennie: 2000
+    effectif: 25
+programme:
+  saisons:
+  - id: s01
+    numero: 1
+    titre: Les Aventuriers de Koh-Lanta
+    annee: 2001
+    speciale: false
+    presentateur: Hubert Auriol
+    debut: '2001-08-04'
+    fin: '2001-09-22'
+    jour_semaine: samedi
+    duree_jours: 43
+  - id: s02
+    numero: 2
+    titre: Nicoya
+    annee: 2002
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2002-06-28'
+    fin: '2002-09-13'
+    jour_semaine: vendredi
+    duree_jours: 40
+  - id: s03
+    numero: 3
+    titre: Bocas del Toro
+    annee: 2003
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2003-06-06'
+    fin: '2003-08-29'
+    jour_semaine: vendredi
+    duree_jours: 40
+  - id: s04
+    numero: 4
+    titre: Panama
+    annee: 2004
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2004-07-02'
+    fin: '2004-08-31'
+    jour_semaine: vendredi
+    duree_jours: 40
+  - id: s05
+    numero: 5
+    titre: Pacifique
+    annee: 2005
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2005-07-01'
+    fin: '2005-09-06'
+    jour_semaine: vendredi
+    duree_jours: 40
+  - id: s06
+    numero: 6
+    titre: Vanuatu
+    annee: 2006
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2006-07-21'
+    fin: '2006-09-05'
+    jour_semaine: vendredi
+    duree_jours: 40
+  - id: s07
+    numero: 7
+    titre: Palawan
+    annee: 2007
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2007-06-29'
+    fin: '2007-09-11'
+    jour_semaine: vendredi
+    duree_jours: 40
+  - id: s08
+    numero: 8
+    titre: Caramoan
+    annee: 2008
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2008-07-04'
+    fin: '2008-09-20'
+    jour_semaine: vendredi
+    duree_jours: 40
+  - id: sp1
+    numero: null
+    titre: Le Retour des héros
+    annee: 2009
+    speciale: true
+    presentateur: Denis Brogniart
+    debut: '2009-01-13'
+    fin: '2009-02-13'
+    jour_semaine: mardi
+    duree_jours: 21
+  - id: s09
+    numero: 9
+    titre: Palau
+    annee: 2009
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2009-08-28'
+    fin: '2009-10-30'
+    jour_semaine: vendredi
+    duree_jours: 39
+  - id: sp2
+    numero: null
+    titre: Le Choc des héros
+    annee: 2010
+    speciale: true
+    presentateur: Denis Brogniart
+    debut: '2010-03-26'
+    fin: '2010-05-21'
+    jour_semaine: vendredi
+    duree_jours: 21
+  - id: s10
+    numero: 10
+    titre: Viêtnam
+    annee: 2010
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2010-09-17'
+    fin: '2010-12-17'
+    jour_semaine: vendredi
+    duree_jours: 40
+  - id: s11
+    numero: 11
+    titre: Raja Ampat
+    annee: 2011
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2011-09-09'
+    fin: '2011-12-16'
+    jour_semaine: vendredi
+    duree_jours: 41
+  - id: sp3
+    numero: null
+    titre: La Revanche des héros
+    annee: 2012
+    speciale: true
+    presentateur: Denis Brogniart
+    debut: '2012-04-06'
+    fin: '2012-06-01'
+    jour_semaine: vendredi
+    duree_jours: 23
+  - id: s12
+    numero: 12
+    titre: Malaisie
+    annee: 2012
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2012-11-02'
+    fin: '2013-02-01'
+    jour_semaine: vendredi
+    duree_jours: 42
+  - id: sp4
+    numero: null
+    titre: La Nouvelle Édition
+    annee: 2014
+    speciale: true
+    presentateur: Denis Brogniart
+    debut: '2014-09-12'
+    fin: '2014-11-21'
+    jour_semaine: vendredi
+    duree_jours: 23
+  - id: s14
+    numero: 14
+    titre: Johor
+    annee: 2015
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2015-04-24'
+    fin: '2015-07-24'
+    jour_semaine: vendredi
+    duree_jours: 40
+  - id: s15
+    numero: 15
+    titre: Thaïlande
+    annee: 2016
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2016-02-12'
+    fin: '2016-05-27'
+    jour_semaine: vendredi
+    duree_jours: 40
+  - id: s16
+    numero: 16
+    titre: L'Île au trésor
+    annee: 2016
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2016-08-26'
+    fin: '2016-12-09'
+    jour_semaine: vendredi
+    duree_jours: 42
+  - id: s17
+    numero: 17
+    titre: Cambodge
+    annee: 2017
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2017-03-10'
+    fin: '2017-06-16'
+    jour_semaine: vendredi
+    duree_jours: 40
+  - id: s18
+    numero: 18
+    titre: Fidji
+    annee: 2017
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2017-09-01'
+    fin: '2017-12-15'
+    jour_semaine: vendredi
+    duree_jours: 41
+  - id: sp5
+    numero: null
+    titre: Le Combat des héros
+    annee: 2018
+    speciale: true
+    presentateur: Denis Brogniart
+    debut: '2018-03-16'
+    fin: '2018-05-25'
+    jour_semaine: vendredi
+    duree_jours: 32
+  - id: s20
+    numero: 20
+    titre: La Guerre des chefs
+    annee: 2019
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2019-03-15'
+    fin: '2019-06-21'
+    jour_semaine: vendredi
+    duree_jours: 39
+  - id: sp6
+    numero: null
+    titre: L'Île des héros
+    annee: 2020
+    speciale: true
+    presentateur: Denis Brogniart
+    debut: '2020-02-21'
+    fin: '2020-06-05'
+    jour_semaine: vendredi
+    duree_jours: 32
+  - id: s21
+    numero: 21
+    titre: Les 4 Terres
+    annee: 2020
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2020-08-28'
+    fin: '2020-12-04'
+    jour_semaine: vendredi
+    duree_jours: 40
+  - id: sp7
+    numero: null
+    titre: La Légende
+    annee: 2021
+    speciale: true
+    presentateur: Denis Brogniart
+    debut: '2021-08-24'
+    fin: '2021-12-14'
+    jour_semaine: mardi
+    duree_jours: 35
+  - id: s22
+    numero: 22
+    titre: Les Armes secrètes
+    annee: 2021
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2021-03-12'
+    fin: '2021-06-04'
+    jour_semaine: vendredi
+    duree_jours: 36
+  - id: s23
+    numero: 23
+    titre: Le Totem maudit
+    annee: 2022
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2022-02-22'
+    fin: '2022-06-21'
+    jour_semaine: mardi
+    duree_jours: 39
+  - id: s24
+    numero: 24
+    titre: Le Feu sacré
+    annee: 2023
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2023-02-21'
+    fin: '2023-06-13'
+    jour_semaine: mardi
+    duree_jours: 40
+  - id: s25
+    numero: 25
+    titre: Les Chasseurs d'immunité
+    annee: 2024
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2024-02-13'
+    fin: '2024-06-04'
+    jour_semaine: mardi
+    duree_jours: 38
+  - id: s26
+    numero: 26
+    titre: La Tribu maudite
+    annee: 2024
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2024-08-20'
+    fin: '2024-12-03'
+    jour_semaine: mardi
+    duree_jours: 40
+  - id: s27
+    numero: 27
+    titre: La Revanche des 4 Terres
+    annee: 2025
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2025-02-25'
+    fin: '2025-06-24'
+    jour_semaine: mardi
+    duree_jours: 40
+  - id: sp8
+    numero: null
+    titre: All Stars
+    annee: 2026
+    speciale: true
+    presentateur: Denis Brogniart
+    debut: '2026-08-25'
+    fin: null
+    jour_semaine: mardi
+    duree_jours: null
+  - id: s28
+    numero: 28
+    titre: Les Reliques du destin
+    annee: 2026
+    speciale: false
+    presentateur: Denis Brogniart
+    debut: '2026-03-03'
+    fin: '2026-06-23'
+    jour_semaine: mardi
+    duree_jours: 39
+  jour_de_lancement:
+  - jour: vendredi
+    effectif: 24
+  - jour: mardi
+    effectif: 9
+  - jour: samedi
+    effectif: 1
+  presentateurs:
+  - nom: Denis Brogniart
+    saisons: 33
+  - nom: Hubert Auriol
+    saisons: 1
+  mecaniques:
+  - code: ambassadeurs
+    saisons: 33
+    premiere: 2001
+    derniere: 2026
+  - code: collier_immunite
+    saisons: 21
+    premiere: 2011
+    derniere: 2026
+  - code: destins_lies
+    saisons: 9
+    premiere: 2012
+    derniere: 2024
+  - code: heros
+    saisons: 7
+    premiere: 2009
+    derniere: 2026
+  - code: ile_speciale
+    saisons: 4
+    premiere: 2012
+    derniere: 2021
+  - code: capitaines
+    saisons: 2
+    premiere: 2019
+    derniere: 2024
+  - code: quatre_terres
+    saisons: 2
+    premiere: 2020
+    derniere: 2025
+  - code: antre_du_destin
+    saisons: 1
+    premiere: 2026
+    derniere: 2026
+  - code: armes_secretes
+    saisons: 1
+    premiere: 2021
+    derniere: 2021
+  - code: binomes
+    saisons: 1
+    premiere: 2026
+    derniere: 2026
+  - code: chasseurs_immunite
+    saisons: 1
+    premiere: 2024
+    derniere: 2024
+  - code: separation_par_sexe
+    saisons: 1
+    premiere: 2021
+    derniere: 2021
+  - code: totem_maudit
+    saisons: 1
+    premiere: 2022
+    derniere: 2022
+  - code: tribu_maudite
+    saisons: 1
+    premiere: 2024
+    derniere: 2024
+reciprocite:
+  couples: 1768
+  reciproques: 692
+  part: 39.1
+arc_des_votes:
+  saison: s16
+  titre: L'Île au trésor
+  annee: 2016
+  noeuds:
+  - rang: 0
+    nom: Myriam
+    jour_sortie: 3
+    couleur: rouge
+  - rang: 1
+    nom: Amandine
+    jour_sortie: 6
+    couleur: jaune
+  - rang: 2
+    nom: Sophie
+    jour_sortie: 9
+    couleur: rouge
+  - rang: 3
+    nom: Sandrine
+    jour_sortie: 12
+    couleur: jaune
+  - rang: 4
+    nom: Laurent
+    jour_sortie: 16
+    couleur: rouge
+  - rang: 5
+    nom: Jean-Luc
+    jour_sortie: 18
+    couleur: jaune
+  - rang: 6
+    nom: Jérôme
+    jour_sortie: 20
+    couleur: jaune
+  - rang: 7
+    nom: Lau
+    jour_sortie: 21
+    couleur: rouge
+  - rang: 8
+    nom: Béryl
+    jour_sortie: 24
+    couleur: jaune
+  - rang: 9
+    nom: Alexandra
+    jour_sortie: 27
+    couleur: jaune
+  - rang: 10
+    nom: Yannick
+    jour_sortie: 30
+    couleur: jaune
+  - rang: 11
+    nom: Julie
+    jour_sortie: 32
+    couleur: rouge
+  - rang: 12
+    nom: Jérémy
+    jour_sortie: 33
+    couleur: jaune
+  - rang: 13
+    nom: Stéphane
+    jour_sortie: 36
+    couleur: rouge
+  - rang: 14
+    nom: Ludivine
+    jour_sortie: 39
+    couleur: rouge
+  - rang: 15
+    nom: Bruno
+    jour_sortie: 40
+    couleur: rouge
+  - rang: 16
+    nom: Candice
+    jour_sortie: 40
+    couleur: rouge
+  - rang: 17
+    nom: Freddy
+    jour_sortie: 41
+    couleur: jaune
+  - rang: 18
+    nom: Benoît
+    jour_sortie: 42
+    couleur: rouge
+  - rang: 19
+    nom: Jesta
+    jour_sortie: 42
+    couleur: jaune
+  liens:
+  - de: 0
+    vers: 2
+    poids: 1
+  - de: 0
+    vers: 4
+    poids: 1
+  - de: 1
+    vers: 9
+    poids: 2
+  - de: 2
+    vers: 0
+    poids: 1
+  - de: 2
+    vers: 7
+    poids: 2
+  - de: 3
+    vers: 1
+    poids: 1
+  - de: 3
+    vers: 5
+    poids: 2
+  - de: 4
+    vers: 0
+    poids: 1
+  - de: 4
+    vers: 2
+    poids: 1
+  - de: 4
+    vers: 7
+    poids: 1
+  - de: 4
+    vers: 11
+    poids: 1
+  - de: 5
+    vers: 1
+    poids: 1
+  - de: 5
+    vers: 3
+    poids: 1
+  - de: 5
+    vers: 4
+    poids: 1
+  - de: 5
+    vers: 15
+    poids: 2
+  - de: 6
+    vers: 1
+    poids: 1
+  - de: 6
+    vers: 3
+    poids: 1
+  - de: 7
+    vers: 0
+    poids: 1
+  - de: 7
+    vers: 2
+    poids: 1
+  - de: 7
+    vers: 4
+    poids: 1
+  - de: 7
+    vers: 5
+    poids: 1
+  - de: 7
+    vers: 12
+    poids: 2
+  - de: 7
+    vers: 18
+    poids: 1
+  - de: 8
+    vers: 1
+    poids: 1
+  - de: 8
+    vers: 3
+    poids: 1
+  - de: 8
+    vers: 7
+    poids: 1
+  - de: 8
+    vers: 18
+    poids: 2
+  - de: 8
+    vers: 19
+    poids: 1
+  - de: 9
+    vers: 1
+    poids: 1
+  - de: 9
+    vers: 3
+    poids: 1
+  - de: 9
+    vers: 7
+    poids: 1
+  - de: 9
+    vers: 11
+    poids: 1
+  - de: 9
+    vers: 16
+    poids: 1
+  - de: 9
+    vers: 18
+    poids: 2
+  - de: 10
+    vers: 1
+    poids: 1
+  - de: 10
+    vers: 3
+    poids: 1
+  - de: 10
+    vers: 7
+    poids: 1
+  - de: 10
+    vers: 11
+    poids: 1
+  - de: 10
+    vers: 16
+    poids: 2
+  - de: 10
+    vers: 18
+    poids: 1
+  - de: 11
+    vers: 0
+    poids: 1
+  - de: 11
+    vers: 2
+    poids: 1
+  - de: 11
+    vers: 4
+    poids: 1
+  - de: 11
+    vers: 5
+    poids: 1
+  - de: 11
+    vers: 8
+    poids: 1
+  - de: 11
+    vers: 9
+    poids: 1
+  - de: 11
+    vers: 10
+    poids: 1
+  - de: 11
+    vers: 12
+    poids: 1
+  - de: 11
+    vers: 18
+    poids: 1
+  - de: 12
+    vers: 1
+    poids: 1
+  - de: 12
+    vers: 3
+    poids: 1
+  - de: 12
+    vers: 7
+    poids: 1
+  - de: 12
+    vers: 9
+    poids: 1
+  - de: 12
+    vers: 17
+    poids: 2
+  - de: 12
+    vers: 18
+    poids: 2
+  - de: 13
+    vers: 0
+    poids: 1
+  - de: 13
+    vers: 2
+    poids: 1
+  - de: 13
+    vers: 5
+    poids: 1
+  - de: 13
+    vers: 8
+    poids: 1
+  - de: 13
+    vers: 9
+    poids: 1
+  - de: 13
+    vers: 10
+    poids: 1
+  - de: 13
+    vers: 11
+    poids: 1
+  - de: 13
+    vers: 12
+    poids: 2
+  - de: 13
+    vers: 17
+    poids: 2
+  - de: 13
+    vers: 18
+    poids: 1
+  - de: 14
+    vers: 0
+    poids: 1
+  - de: 14
+    vers: 2
+    poids: 1
+  - de: 14
+    vers: 7
+    poids: 1
+  - de: 14
+    vers: 12
+    poids: 1
+  - de: 14
+    vers: 15
+    poids: 1
+  - de: 14
+    vers: 16
+    poids: 1
+  - de: 14
+    vers: 17
+    poids: 1
+  - de: 14
+    vers: 18
+    poids: 2
+  - de: 14
+    vers: 19
+    poids: 1
+  - de: 15
+    vers: 0
+    poids: 1
+  - de: 15
+    vers: 2
+    poids: 1
+  - de: 15
+    vers: 5
+    poids: 1
+  - de: 15
+    vers: 8
+    poids: 1
+  - de: 15
+    vers: 9
+    poids: 1
+  - de: 15
+    vers: 10
+    poids: 1
+  - de: 15
+    vers: 11
+    poids: 1
+  - de: 15
+    vers: 12
+    poids: 2
+  - de: 15
+    vers: 17
+    poids: 1
+  - de: 15
+    vers: 18
+    poids: 1
+  - de: 15
+    vers: 19
+    poids: 1
+  - de: 16
+    vers: 0
+    poids: 1
+  - de: 16
+    vers: 2
+    poids: 1
+  - de: 16
+    vers: 4
+    poids: 1
+  - de: 16
+    vers: 5
+    poids: 1
+  - de: 16
+    vers: 8
+    poids: 1
+  - de: 16
+    vers: 9
+    poids: 1
+  - de: 16
+    vers: 10
+    poids: 1
+  - de: 16
+    vers: 12
+    poids: 2
+  - de: 16
+    vers: 13
+    poids: 1
+  - de: 16
+    vers: 14
+    poids: 1
+  - de: 16
+    vers: 18
+    poids: 1
+  - de: 17
+    vers: 3
+    poids: 1
+  - de: 17
+    vers: 7
+    poids: 1
+  - de: 17
+    vers: 9
+    poids: 1
+  - de: 17
+    vers: 11
+    poids: 1
+  - de: 17
+    vers: 12
+    poids: 1
+  - de: 17
+    vers: 13
+    poids: 1
+  - de: 17
+    vers: 14
+    poids: 1
+  - de: 17
+    vers: 15
+    poids: 1
+  - de: 17
+    vers: 18
+    poids: 2
+  - de: 18
+    vers: 0
+    poids: 1
+  - de: 18
+    vers: 2
+    poids: 1
+  - de: 18
+    vers: 4
+    poids: 1
+  - de: 18
+    vers: 5
+    poids: 1
+  - de: 18
+    vers: 8
+    poids: 1
+  - de: 18
+    vers: 9
+    poids: 1
+  - de: 18
+    vers: 10
+    poids: 1
+  - de: 18
+    vers: 12
+    poids: 1
+  - de: 18
+    vers: 13
+    poids: 1
+  - de: 18
+    vers: 14
+    poids: 1
+  - de: 18
+    vers: 17
+    poids: 1
+  - de: 19
+    vers: 7
+    poids: 1
+  - de: 19
+    vers: 9
+    poids: 2
+  - de: 19
+    vers: 11
+    poids: 1
+  - de: 19
+    vers: 13
+    poids: 1
+  - de: 19
+    vers: 14
+    poids: 2
+  - de: 19
+    vers: 18
+    poids: 1
+  bulletins: 140
+voix_pour_eliminer:
+  effectif: 435
+  mode: 4
+  repartition:
+  - voix: 1
+    effectif: 7
+    part: 1.6
+  - voix: 2
+    effectif: 13
+    part: 3.0
+  - voix: 3
+    effectif: 47
+    part: 10.8
+  - voix: 4
+    effectif: 104
+    part: 23.9
+  - voix: 5
+    effectif: 93
+    part: 21.4
+  - voix: 6
+    effectif: 91
+    part: 20.9
+  - voix: 7
+    effectif: 45
+    part: 10.3
+  - voix: 8
+    effectif: 23
+    part: 5.3
+  - voix: 9
+    effectif: 9
+    part: 2.1
+  - voix: 10
+    effectif: 2
+    part: 0.5
+  - voix: 11
+    effectif: 1
+    part: 0.2
+premiere_epreuve:
+  effectif: 32
+  survie_gagnants: 71.9
+  survie_ensemble: 61.4
+  saisons_couvertes: 28
 epreuves:
   epreuves: 766
   saisons_couvertes: 29
@@ -2165,7 +7026,7 @@ indicateurs:
     saison: sp7
     titre: La Légende
     annee: 2021
-    conseils: 21
+    conseils: 20
     sort: vainqueur
     survie: 100.0
   - nom: Cindy Poumeyrol
@@ -2179,14 +7040,14 @@ indicateurs:
     saison: s21
     titre: Les 4 Terres
     annee: 2020
-    conseils: 18
+    conseils: 17
     sort: elimine_poteaux
     survie: 100.0
   - nom: Thibault Bélanger
     saison: s26
     titre: La Tribu maudite
     annee: 2024
-    conseils: 18
+    conseils: 17
     sort: vainqueur
     survie: 100.0
   - nom: Clémence Castel
@@ -2308,9 +7169,9 @@ indicateurs:
     survie_moyenne: 61.5
     abandons: 0
     taux_abandon: 0.0
-    conseils: 16
+    conseils: 15
     conseils_complets: 11
-    tension_conseils: 53.8
+    tension_conseils: 50.0
     dispersion_votes: 0.852
     epreuves: 22
     epreuves_individuelles: 11
@@ -2789,9 +7650,9 @@ indicateurs:
     survie_moyenne: 62.0
     abandons: 2
     taux_abandon: 8.3
-    conseils: 26
+    conseils: 25
     conseils_complets: 0
-    tension_conseils: 55.6
+    tension_conseils: 58.8
     dispersion_votes: null
     epreuves: 37
     epreuves_individuelles: 13
@@ -2818,9 +7679,9 @@ indicateurs:
     survie_moyenne: 63.5
     abandons: 1
     taux_abandon: 4.8
-    conseils: 22
+    conseils: 21
     conseils_complets: 5
-    tension_conseils: 57.1
+    tension_conseils: 61.5
     dispersion_votes: 0.893
     epreuves: 23
     epreuves_individuelles: 10
@@ -2875,9 +7736,9 @@ indicateurs:
     survie_moyenne: 60.2
     abandons: 3
     taux_abandon: 15.0
-    conseils: 24
+    conseils: 23
     conseils_complets: 4
-    tension_conseils: 43.8
+    tension_conseils: 46.7
     dispersion_votes: 0.843
     epreuves: 30
     epreuves_individuelles: 16
@@ -2932,9 +7793,9 @@ indicateurs:
     survie_moyenne: 61.1
     abandons: 1
     taux_abandon: 4.2
-    conseils: 23
+    conseils: 22
     conseils_complets: 2
-    tension_conseils: 36.4
+    tension_conseils: 40.0
     dispersion_votes: 0.891
     epreuves: 27
     epreuves_individuelles: 13
@@ -2961,9 +7822,9 @@ indicateurs:
     survie_moyenne: 62.0
     abandons: 3
     taux_abandon: 12.5
-    conseils: 26
+    conseils: 25
     conseils_complets: 6
-    tension_conseils: 28.6
+    tension_conseils: 30.8
     dispersion_votes: 0.695
     epreuves: 32
     epreuves_individuelles: 0
@@ -2989,9 +7850,9 @@ indicateurs:
     survie_moyenne: 65.5
     abandons: 0
     taux_abandon: 0.0
-    conseils: 22
+    conseils: 21
     conseils_complets: 11
-    tension_conseils: 46.2
+    tension_conseils: 50.0
     dispersion_votes: 0.803
     epreuves: 34
     epreuves_individuelles: 18
@@ -3185,7 +8046,7 @@ indicateurs:
     survie_moyenne: 56.7
     abandons: 1
     taux_abandon: 4.8
-    conseils: 26
+    conseils: 25
     conseils_complets: 1
     tension_conseils: 50.0
     dispersion_votes: 0.65

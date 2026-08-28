@@ -38,6 +38,42 @@ d’immunité, réparties sur **{{ c.conseils_avec_collier_joue }} conseils**. C
 fait un peu plus de quatre voix annulées par collier joué : quand un collier
 sort du sac, il ne renverse pas une voix, il en efface un paquet.
 
+## Combien de voix faut-il pour partir ?
+
+{% include graphiques/conseils-voix.svg %}
+
+<p class="legende-figure">Nombre de bulletins portant le nom de l’éliminé, sur
+les conseils dont le décompte est connu.</p>
+
+{% assign v = site.data.stats.voix_pour_eliminer %}
+Le cas le plus fréquent est **{{ v.mode }} voix**. La distribution est étalée —
+de une à plus de dix — parce que les castings ont grossi : un conseil à seize
+n’a pas le même arithmétique qu’un conseil à vingt-quatre.
+
+## Qui a écrit le nom de qui
+
+{% assign a = site.data.stats.arc_des_votes %}
+Le détail des bulletins permet de dessiner le camp entier. La saison montrée
+ici est **{{ a.titre }} ({{ a.annee }})** — retenue par le calcul, parce que
+c’est celle dont le dépouillement est le plus complet : {{ a.bulletins }}
+bulletins rattachés.
+
+{% include graphiques/votes-arc.svg %}
+
+<p class="legende-figure">Les aventuriers sont rangés dans l’ordre de leur
+sortie, du premier parti à gauche au vainqueur à droite. Un arc relie deux
+personnes dont l’une a écrit le nom de l’autre ; plus il est épais, plus elle
+l’a fait souvent. La couleur du point est celle de la tribu de départ.</p>
+
+### Le vote se rend
+
+{% assign rec = site.data.stats.reciprocite %}
+Sur les **{{ rec.couples }} couples** votant → cible relevés dans les conseils
+au dépouillement complet, **{{ rec.reciproques }} sont réciproques** :
+**{{ rec.part }} %**. Écrire le nom de quelqu’un, c’est donc avoir près d’une
+chance sur deux qu’il ait écrit le vôtre le même soir ou un autre. Le conseil
+n’est pas une meute contre un isolé, c’est un affrontement à deux camps.
+
 ## Qui vote contre qui
 
 {% include graphiques/conseils-genre.svg %}
@@ -51,6 +87,34 @@ d’**un homme contre une femme** sont les plus nombreux
 ({{ c.vote_par_genre[0].part }} %), et ceux d’**une femme contre une femme** les
 moins nombreux ({{ c.vote_par_genre[3].part }} %). L’écart est réel mais
 modeste, de l’ordre de huit points entre les deux extrêmes.
+
+## Le vote du jury final
+
+{% assign j = site.data.stats.jury %}
+Le dernier scrutin d’une saison n’est pas un conseil : **on n’y élimine
+personne, on y désigne un vainqueur**, et le sens du bulletin est inversé.
+Les sources n’en publient le détail que pour **{{ j.effectif }} saisons**. Ces
+scrutins sont tenus à l’écart de tous les calculs de cette page.
+
+<div class="tableau-large">
+<table data-triable>
+<thead><tr>
+  <th>Saison</th><th class="nombre">Année</th><th>Lauréat</th>
+  <th class="nombre">Voix pour</th><th class="nombre">Voix exprimées</th>
+</tr></thead>
+<tbody>
+{% for x in j.scrutins %}
+<tr>
+  <td>{{ x.titre }}</td>
+  <td class="nombre">{{ x.annee }}</td>
+  <td>{{ x.laureat }}</td>
+  <td class="nombre">{% if x.voix_pour %}{{ x.voix_pour }}{% else %}—{% endif %}</td>
+  <td class="nombre">{% if x.voix_exprimees %}{{ x.voix_exprimees }}{% else %}—{% endif %}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
 
 <p class="note">Cette dernière analyse ne porte que sur les
 {{ c.conseils_complets }} conseils dont le dépouillement est complet, c’est-à-dire

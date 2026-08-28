@@ -1,0 +1,20 @@
+<figure class="figure">
+<svg class="graphique" viewBox="0 0 680 140" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Le jour de la semaine du premier épisode">
+  <title>Le jour de la semaine du premier épisode</title>
+  <desc>Jour de diffusion du premier épisode de chaque saison.</desc>
+  <line x1="237.0" y1="10" x2="237.0" y2="114" stroke="var(--grille)" stroke-width="1"/>
+  <line x1="364.0" y1="10" x2="364.0" y2="114" stroke="var(--grille)" stroke-width="1"/>
+  <line x1="491.0" y1="10" x2="491.0" y2="114" stroke="var(--grille)" stroke-width="1"/>
+  <line x1="618.0" y1="10" x2="618.0" y2="114" stroke="var(--grille)" stroke-width="1"/>
+  <g class="marque"><title>24 saisons lancées un vendredi</title><rect x="110" y="16" width="508.0" height="26" rx="4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="100.0" y="29.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Vendredi</text>
+  <text x="626.0" y="29.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">24</text>
+  <g class="marque"><title>9 saisons lancées un mardi</title><rect x="110" y="50" width="190.5" height="26" rx="4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="100.0" y="63.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Mardi</text>
+  <text x="308.5" y="63.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">9</text>
+  <g class="marque"><title>1 saisons lancées un samedi</title><rect x="110" y="84" width="21.2" height="26" rx="4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="100.0" y="97.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Samedi</text>
+  <text x="139.2" y="97.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">1</text>
+  <line x1="110" y1="10" x2="110" y2="114" stroke="var(--axe)" stroke-width="1"/>
+</svg>
+</figure>
