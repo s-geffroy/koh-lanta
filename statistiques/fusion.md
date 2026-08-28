@@ -178,6 +178,68 @@ C’est un résultat en creux, et il vaut d’être dit : le seul moment du jeu 
 l’élimination échappe au vote collectif est aussi celui où l’on ne détecte
 aucune logique — ni le fort, ni le faible, ni un sexe, ni un âge.
 
+### Qui part en ambassade ? On l’a cherché dans la prose
+
+{% assign ng = a.negociateurs %}
+
+Aucune table ne donne le nom des ambassadeurs. Il n’apparaît que dans une note
+de bas de page accrochée à la ligne d’élimination : « <em>Les deux ambassadeurs
+(Léa et Pauline) se mettent d’accord pour éliminer Ricky.</em> » C’est de la
+prose, donc une lecture faillible — et c’est pourquoi elle est **mesurée**.
+
+<div class="constat">
+  <p><b>{{ ng.lues }} ambassades sur {{ ng.total }}</b> livrent le nom de leurs
+  ambassadeurs, soit {{ ng.part_lues }} % — {{ ng.distincts }} personnes
+  distinctes.</p>
+  <p>Là où les <b>deux sources</b> les nomment, elles s’accordent
+  {{ ng.sources_accord }} fois sur {{ ng.sources_accord | plus: ng.sources_desaccord }}.
+  La seule divergence porte sur <i>Les Reliques du destin</i> : Wikipédia
+  compte Jade parmi les quatre ambassadeurs, Fandom compte Cynthia. Aucun des
+  deux n’est retenu.</p>
+</div>
+
+Trois contrôles écartent une lecture douteuse : chaque nom doit désigner un
+participant de la saison sans homonyme, chaque ambassadeur doit être **encore
+en jeu** à cet épisode, et le nombre de noms lus doit correspondre à celui que
+la note annonce. C’est ce dernier qui écarte <i>Les Armes secrètes</i> : la note
+parle de « deux ambassadeurs » puis ajoute une « ambassadrice secrète », ce qui
+en fait trois. La règle du dépôt est de s’abstenir plutôt que d’arbitrer.
+
+<p class="note">Les huit ambassades muettes ne le sont pas par hasard : ce sont
+les plus anciennes éditions et les saisons spéciales, celles dont les articles
+sont les plus courts. Comme partout sur ce site, ce qui manque manque du même
+côté.</p>
+
+### Quand ils ne s’accordent pas, l’un des deux part
+
+<div class="constat">
+  <p>Sur les {{ ng.lues }} ambassades lues, <b>{{ ng.par_tirage }} se sont
+  terminées par un tirage au sort</b> faute d’accord. Dans les
+  {{ ng.par_tirage }} cas, <b>c’est un des deux ambassadeurs qui est parti</b>.</p>
+  <p>Ce n’est pas une découverte statistique, c’est la règle du jeu — mais elle
+  chiffre le risque : un aventurier sur quatre qui accepte l’ambassade en
+  revient éliminé.</p>
+</div>
+
+### Et cela ne change rien à la suite
+
+{% include graphiques/ambassadeurs-survie.svg %}
+
+<p class="legende-figure">Rang de l’ambassadeur parmi les présents du jour, sur
+le jour de sortie. Le hasard, ici, c’est désigner les ambassadeurs au sort parmi
+les présents.</p>
+
+{% assign tn = reg | where: "cle", "ambassadeurs_survie" | first %}
+<div class="constat">
+  <p>Sur les {{ ng.ambassades }} ambassades où le camp est reconstituable —
+  {{ ng.ambassadeurs }} ambassadeurs — le rang moyen vaut
+  <b>{{ ng.rang_moyen }} sur 100</b>, contre {{ tn.attendu }} attendus.
+  {{ tn.ecart_types }} écart-type, p ajustée {{ tn.p_ajustee }}.</p>
+  <p><b>Partir négocier ne fait ni durer plus longtemps, ni sortir plus tôt.</b>
+  Avec vingt-deux ambassadeurs, on ne détecterait qu’un décalage d’une douzaine
+  de points de rang : la réponse est « rien de gros », pas « rien du tout ».</p>
+</div>
+
 ## Ce que cette page ne dit pas
 
 <p class="note"><strong>La force est celle d’une carrière, pas d’un soir.</strong>
@@ -192,7 +254,8 @@ ne peuvent donc pas être coupées en deux ; une sixième, <em>Cambodge</em>, a 
 repère de réunification aberrant et est écartée. Les éditions spéciales le sont
 aussi : leurs revenants faussent la comparaison des forces.</p>
 
-<p class="note"><strong>On ne sait pas QUI part en ambassade</strong>, seulement
-qui en revient éliminé. Le nom des deux ambassadeurs n’apparaît que dans le
-récit des épisodes, jamais dans un tableau. La question la plus intéressante —
-l’ambassadeur qui négocie s’en sort-il mieux ? — reste donc sans réponse.</p>
+<p class="note"><strong>Le nom des ambassadeurs vient de la prose</strong>, pas
+d’un tableau : {{ a.negociateurs.part_lues }} % des ambassades seulement, et
+l’extraction s’abstient dès qu’un doute apparaît. Les huit manquantes sont les
+plus anciennes éditions et les saisons spéciales — le trou n’est pas
+aléatoire.</p>

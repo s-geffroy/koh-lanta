@@ -1073,6 +1073,8 @@ def figures_des_modeles(stats):
             ecrire("fusion-serre-nulle.svg", distribution_nulle(t, couleur=SERIES[0]))
         elif t["cle"] == "ambassadeurs_force":
             ecrire("ambassadeurs-nulle.svg", distribution_nulle(t, couleur=SERIES[6]))
+        elif t["cle"] == "ambassadeurs_survie":
+            ecrire("ambassadeurs-survie.svg", distribution_nulle(t, couleur=SERIES[4]))
 
     hm = m.get("hasard_mecanique") or {}
     if hm.get("paliers"):

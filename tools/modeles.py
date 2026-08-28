@@ -2652,6 +2652,73 @@ def avant_apres(par_saison, parts, conseils, epreuves, bloc_force, bloc_fusion):
                     "plus faible.")
         detail_amb = {"rang_moyen": _arr(obs_amb, 1), "effectif_force": len(rangs_amb)}
 
+    # --- l'ambassadeur qui negocie s'en sort-il mieux ? -------------------
+    #
+    # Les noms ne figurent que dans la prose des sources ; ils sont lus par
+    # tools/extraction/ambassadeurs.py, qui mesure son propre taux de reussite.
+    # Douze ambassades sur vingt, vingt-huit ambassadeurs : c'est peu, et le
+    # resultat est publie avec sa taille d'echantillon.
+    negociateurs = _fichier("ambassadeurs.yml") or {}
+    duree = {}
+    for p2 in parts:
+        if p2.get("jour_sortie"):
+            duree[(p2["saison"], p2["id"])] = p2["jour_sortie"]
+
+    couples, t_nego, bilan = [], {}, {}
+    for l in negociateurs.get("lignes") or []:
+        noms = l.get("ambassadeurs")
+        episode = l.get("episode")
+        if not noms or episode is None:
+            continue
+        sid = l["saison"]
+        presents = [q for q in par_s[sid]
+                    if sortie.get((sid, q["id"]), -1) >= episode
+                    and (sid, q["id"]) in duree]
+        if len(presents) < 6:
+            continue
+        connus = [n for n in noms if (sid, n) in duree]
+        if len(connus) < 2:
+            continue
+        couples.append({"saison": sid, "presents": presents, "noms": connus})
+
+    def _rang_duree(ids, presents):
+        """Rang centile moyen des `ids` parmi les presents, sur le jour de sortie."""
+        jours = sorted(duree[(p2["saison"], p2["id"])] for p2 in presents)
+        rangs = []
+        for i in ids:
+            sid = presents[0]["saison"]
+            mien = duree[(sid, i)]
+            dessous = sum(1 for j in jours if j < mien)
+            egaux = sum(1 for j in jours if j == mien)
+            rangs.append(100.0 * (dessous + (egaux - 1) / 2.0) / (len(jours) - 1))
+        return float(np.mean(rangs))
+
+    if len(couples) >= 8:
+        obs_nego = float(np.mean([_rang_duree(c["noms"], c["presents"]) for c in couples]))
+        g4 = rng("negociateurs")
+        nulle_nego = []
+        for _ in range(N_PERMUTATIONS):
+            valeurs = []
+            for c in couples:
+                tires = [c["presents"][k]["id"] for k in
+                         g4.choice(len(c["presents"]), size=len(c["noms"]), replace=False)]
+                valeurs.append(_rang_duree(tires, c["presents"]))
+            nulle_nego.append(float(np.mean(valeurs)))
+        t_nego = _test(
+            "ambassadeurs_survie", "L'ambassadeur qui négocie s'en sort-il mieux ?",
+            "Partir en ambassade change-t-il la distance que l'on parcourt ensuite ?",
+            obs_nego, nulle_nego, unite=" points de rang",
+            lecture="Rang de l'ambassadeur parmi les présents du jour, sur le jour de "
+                    "sortie : 50 c'est la médiane du camp. Au-dessus, l'ambassade "
+                    "accompagne une fin de parcours plus tardive ; en dessous, plus "
+                    "précoce. Le hasard, ici, c'est désigner les ambassadeurs au sort "
+                    "parmi les présents.")
+        bilan = {
+            "ambassades": len(couples),
+            "ambassadeurs": sum(len(c["noms"]) for c in couples),
+            "rang_moyen": _arr(obs_nego, 1),
+        }
+
     def _portrait(lot):
         elimines = [fiche[(s["saison"], s["elimine"])] for s in lot]
         ages = [p["age"] for p in elimines if p.get("age")]
@@ -2677,7 +2744,17 @@ def avant_apres(par_saison, parts, conseils, epreuves, bloc_force, bloc_fusion):
         "force_effectif_apres": n_ap,
         "robustesse": robustesse,
         "ambassadeurs": dict(portrait_amb, **detail_amb),
-        "tests": [t for t in (t_sexe, t_force, t_serre, t_amb) if t],
+        "negociateurs": dict({
+            "lues": negociateurs.get("nommees"),
+            "total": negociateurs.get("ambassades"),
+            "part_lues": negociateurs.get("part_nommees"),
+            "sources_accord": negociateurs.get("sources_accord"),
+            "sources_desaccord": negociateurs.get("sources_desaccord"),
+            "par_tirage": negociateurs.get("par_tirage"),
+            "elimine_ambassadeur": negociateurs.get("elimine_ambassadeur"),
+            "distincts": negociateurs.get("ambassadeurs_distincts"),
+        }, **bilan),
+        "tests": [t for t in (t_sexe, t_force, t_serre, t_amb, t_nego) if t],
     }
 
 

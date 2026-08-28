@@ -1,0 +1,186 @@
+# Fichier genere par tools/extraction/ambassadeurs.py.
+# Ne pas editer a la main : toute modification sera ecrasee.
+ambassades: 20
+nommees: 12
+part_nommees: 60.0
+sources_accord: 5
+sources_desaccord: 1
+par_tirage: 3
+elimine_ambassadeur: 3
+ambassadeurs_distincts: 27
+lignes:
+- saison: s10
+  elimine: boris-deltell
+  episode: 8
+  ambassadeurs:
+  - claude-dartois
+  - kunle-m-babacere-pakorona
+  nombre: 2
+  tirage_au_sort: false
+  elimine_est_ambassadeur: false
+  source: fandom
+  phrase: Les ambassadeurs Claude et Kunlé se sont mis d'accord pour éliminer Boris aux ambassadeurs.
+- saison: s11
+  elimine: maxime-boulet
+  episode: 7
+  ambassadeurs:
+  - olivier-moenaert
+  - teheiura-teahui
+  nombre: 2
+  tirage_au_sort: false
+  elimine_est_ambassadeur: false
+  source: fandom
+  phrase: Les ambassadeurs Olivier et Teheiura ont dû se mettre d'accord sur le nom d'un candidat qui
+    sera éliminé directement (tandis que les émissaires Anthony et Martin ont pu les espionner et écouter
+    leur conversation depuis une île voisine). Ils se sont finalement mis d'accord pour éliminer Maxime.
+- saison: s12
+  elimine: anthony-dito
+  episode: null
+  ambassadeurs:
+  - anthony-dito
+  - javier-rodriguez
+  nombre: 2
+  tirage_au_sort: true
+  elimine_est_ambassadeur: true
+  source: wikipedia-fr
+  phrase: Anthony et Javier ont été désignés ambassadeurs par les émissaires. Ne s'étant pas mis d'accord
+    pour éliminer un aventurier, un tirage au sort a eu lieu, à l'issue duquel Anthony est éliminé.
+- saison: s14
+  elimine: alban-pellegrin
+  episode: 7
+  ambassadeurs:
+  - cedric-giosserand-lucas
+  - jeff-santiago
+  nombre: 2
+  tirage_au_sort: false
+  elimine_est_ambassadeur: false
+  source: fandom
+  phrase: Les ambassadeurs Cédric et Jeff se sont mis d'accord pour éliminer Alban (à noter qu'ils ne
+    pouvaient pas désigner Christophe, qui est revenu dans le jeu au cours de la réunion).
+- saison: s15
+  elimine: cassandre-girard
+  episode: 7
+  ambassadeurs:
+  - cassandre-girard
+  - romain-palazzetti
+  nombre: 2
+  tirage_au_sort: true
+  elimine_est_ambassadeur: true
+  source: fandom
+  phrase: Les deux ambassadeurs Cassandre et Romain n'arrivant pas à se mettre d'accord, un tirage au
+    sort a été effectué et Cassandre est éliminée.
+- saison: s16
+  elimine: jerome-merlier
+  ambassadeurs: null
+  motif: non nomme
+- saison: s17
+  elimine: yassin-metiri
+  ambassadeurs: null
+  motif: non nomme
+- saison: s18
+  elimine: tugdual-paul
+  episode: 8
+  ambassadeurs:
+  - fabian-rocha-rocha
+  - marguerite-leblanc
+  nombre: 2
+  tirage_au_sort: false
+  elimine_est_ambassadeur: false
+  source: wikipedia-fr
+  phrase: D'un accord commun, les deux ambassadeurs Fabian et Marguerite décident d'éliminer Tugdual.
+- saison: s22
+  elimine: frederic-baudet
+  ambassadeurs: null
+  motif: compte annonce non tenu
+- saison: s23
+  elimine: setha-el-hajjami
+  episode: 8
+  ambassadeurs:
+  - colin-mottas
+  - louana-roy
+  nombre: 2
+  tirage_au_sort: false
+  elimine_est_ambassadeur: false
+  source: fandom
+  phrase: Setha est éliminée par les ambassadeurs Colin et Louana.
+- saison: s25
+  elimine: ricky-poyet
+  ambassadeurs: null
+  motif: non nomme
+- saison: s26
+  elimine: emmanuelle-boisseau
+  episode: 7
+  ambassadeurs:
+  - gustin-comanescu
+  - sophia-mansouri
+  nombre: 2
+  tirage_au_sort: false
+  elimine_est_ambassadeur: false
+  source: wikipedia-fr
+  phrase: Les deux ambassadeurs (Gustin et Sophia) se mettent d'accord pour éliminer Emmanuelle.
+- saison: s28
+  elimine: jonathan-guez
+  ambassadeurs: null
+  motif: sources en desaccord
+- saison: sp1
+  elimine: philippe-bordier
+  ambassadeurs: null
+  motif: non nomme
+- saison: sp2
+  elimine: gwendal-peizerat
+  ambassadeurs: null
+  motif: non nomme
+- saison: sp3
+  elimine: patricia-morel
+  ambassadeurs: null
+  motif: non nomme
+- saison: sp4
+  elimine: florence-delbarre
+  episode: null
+  ambassadeurs:
+  - freddy-boucher
+  - florence-delbarre
+  nombre: 2
+  tirage_au_sort: true
+  elimine_est_ambassadeur: true
+  source: wikipedia-fr
+  phrase: Les ambassadeurs Freddy et Florence ne s'étant pas mis d'accord pour éliminer un aventurier,
+    un tirage au sort a eu lieu, à l'issue duquel Florence est éliminée.
+- saison: sp5
+  elimine: ludovic-laresche
+  episode: null
+  ambassadeurs:
+  - dylan-thiry
+  - yassin-metiri
+  nombre: 2
+  tirage_au_sort: false
+  elimine_est_ambassadeur: false
+  source: wikipedia-fr
+  phrase: Les ambassadeurs Dylan et Yassin se sont mis d'accord sur le nom de Ludovic
+- saison: sp6
+  elimine: delphine-hergault
+  episode: 5
+  ambassadeurs:
+  - ahmad-abadie
+  - alexandra-leveau
+  - claude-dartois
+  - moussa-niangane
+  nombre: 4
+  tirage_au_sort: false
+  elimine_est_ambassadeur: false
+  source: fandom
+  phrase: Delphine est éliminée par les ambassadeurs, à savoir Ahmad, Alexandra, Claude et Moussa.
+- saison: sp7
+  elimine: coumba-baradji
+  episode: 8
+  ambassadeurs:
+  - clemence-castel
+  - laurent-maistret
+  - philippe-bizet
+  - ugo-lartiche
+  nombre: 4
+  tirage_au_sort: false
+  elimine_est_ambassadeur: false
+  source: wikipedia-fr
+  phrase: Trois des quatre ambassadeurs (Clémence, Laurent, Phil et Ugo) se mettent d’accord (Clémence,
+    Laurent et Ugo) pour éliminer Coumba.

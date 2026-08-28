@@ -115,6 +115,35 @@ ligne de synthèse. Rien n’est corrigé à la main.
 Limite de nature : c’est l’audience **veille**, en direct. Le rattrapage n’y est
 pas, et il pèse aujourd’hui près d’un quart de l’audience du programme.
 
+## Un nom lu dans la prose, et ce que ça coûte
+
+{% assign ng = site.data.ambassadeurs %}
+
+Une seule information de ce site ne vient pas d’un tableau : **le nom des
+ambassadeurs**. Il n’apparaît que dans une note de bas de page — « <em>Les deux
+ambassadeurs (Léa et Pauline) se mettent d’accord pour éliminer Ricky.</em> »
+Lire de la prose est faillible, et la seule réponse honnête est de mesurer.
+
+<div class="constat">
+  <p><b>{{ ng.nommees }} ambassades sur {{ ng.ambassades }}</b> livrent leurs
+  noms — {{ ng.part_nommees }} %. Là où les deux sources les nomment, elles
+  s’accordent {{ ng.sources_accord }} fois sur
+  {{ ng.sources_accord | plus: ng.sources_desaccord }}.</p>
+</div>
+
+Trois contrôles écartent une lecture douteuse : le nom doit désigner un
+participant de la saison **sans homonyme**, l’ambassadeur doit être **encore en
+jeu** à cet épisode, et le nombre de noms lus doit correspondre à celui que la
+note annonce. Ce dernier contrôle écarte une saison où la note dit « deux
+ambassadeurs » avant d’ajouter une « ambassadrice secrète ».
+
+Et une divergence a été trouvée : sur <i>Les Reliques du destin</i>, Wikipédia
+compte Jade parmi les quatre ambassadeurs, Fandom compte Cynthia. Aucun des deux
+n’est retenu. Elle n’est apparue qu’après correction d’un motif de lecture trop
+strict qui ne lisait qu’une des deux sources : **une comparaison ne vaut que si
+les deux côtés ont vraiment été lus**, et le premier chiffrage annonçait à tort
+zéro divergence.
+
 ## La traçabilité
 
 Chaque enregistrement du jeu de données porte un bloc `sources` qui indique,
