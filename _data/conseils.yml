@@ -13528,13 +13528,43 @@
 - saison: s21
   numero: 1
   type: elimination
-  complet: false
+  complet: true
   episode: '1'
   elimine: marie-france-schieber
   elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 6
-  votes: []
+  votes:
+  - votant: lola-besse
+    votant_rattache: true
+    cible: marie-france-schieber
+    cible_rattachee: true
+    annule: false
+  - votant: angelique-ti
+    votant_rattache: true
+    cible: marie-france-schieber
+    cible_rattachee: true
+    annule: false
+  - votant: fabrice-pietrzak
+    votant_rattache: true
+    cible: marie-france-schieber
+    cible_rattachee: true
+    annule: false
+  - votant: marie-france-schieber
+    votant_rattache: true
+    cible: angelique-ti
+    cible_rattachee: true
+    annule: false
+  - votant: adrien-ferreira
+    votant_rattache: true
+    cible: marie-france-schieber
+    cible_rattachee: true
+    annule: false
+  - votant: samuel-degoute
+    votant_rattache: true
+    cible: marie-france-schieber
+    cible_rattachee: true
+    annule: false
 - saison: s21
   numero: 2
   type: elimination
@@ -13548,23 +13578,83 @@
 - saison: s21
   numero: 3
   type: elimination
-  complet: false
+  complet: true
   episode: '2'
   elimine: carole-collado
   elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 6
-  votes: []
+  votes:
+  - votant: ava-maisini
+    votant_rattache: true
+    cible: carole-collado
+    cible_rattachee: true
+    annule: false
+  - votant: alix-noblat
+    votant_rattache: true
+    cible: carole-collado
+    cible_rattachee: true
+    annule: false
+  - votant: sebastien-aberlenc
+    votant_rattache: true
+    cible: carole-collado
+    cible_rattachee: true
+    annule: false
+  - votant: aubin-bligny
+    votant_rattache: true
+    cible: carole-collado
+    cible_rattachee: true
+    annule: false
+  - votant: mathieu-blanchard
+    votant_rattache: true
+    cible: carole-collado
+    cible_rattachee: true
+    annule: false
+  - votant: carole-collado
+    votant_rattache: true
+    cible: ava-maisini
+    cible_rattachee: true
+    annule: false
 - saison: s21
   numero: 4
   type: elimination
-  complet: false
+  complet: true
   episode: '3'
   elimine: diane-goulesque-perez
   elimine_rattache: true
   votes_contre: 1
   votes_exprimes: 6
-  votes: []
+  votes:
+  - votant: brice-petit
+    votant_rattache: true
+    cible: estelle-fabrice
+    cible_rattachee: true
+    annule: true
+  - votant: dorian-louvet
+    votant_rattache: true
+    cible: estelle-fabrice
+    cible_rattachee: true
+    annule: true
+  - votant: jody-favier
+    votant_rattache: true
+    cible: estelle-fabrice
+    cible_rattachee: true
+    annule: true
+  - votant: marie-france-schieber
+    votant_rattache: true
+    cible: estelle-fabrice
+    cible_rattachee: true
+    annule: true
+  - votant: estelle-fabrice
+    votant_rattache: true
+    cible: diane-goulesque-perez
+    cible_rattachee: true
+    annule: false
+  - votant: diane-goulesque-perez
+    votant_rattache: true
+    cible: estelle-fabrice
+    cible_rattachee: true
+    annule: true
 - saison: s21
   numero: 5
   type: elimination
@@ -13578,43 +13668,163 @@
 - saison: s21
   numero: 6
   type: elimination
-  complet: false
+  complet: true
   episode: '4'
   elimine: diane-goulesque-perez
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 5
-  votes: []
+  votes:
+  - votant: lola-besse
+    votant_rattache: true
+    cible: diane-goulesque-perez
+    cible_rattachee: true
+    annule: false
+  - votant: angelique-ti
+    votant_rattache: true
+    cible: diane-goulesque-perez
+    cible_rattachee: true
+    annule: false
+  - votant: fabrice-pietrzak
+    votant_rattache: true
+    cible: diane-goulesque-perez
+    cible_rattachee: true
+    annule: false
+  - votant: adrien-ferreira
+    votant_rattache: true
+    cible: diane-goulesque-perez
+    cible_rattachee: true
+    annule: false
+  - votant: diane-goulesque-perez
+    votant_rattache: true
+    cible: adrien-ferreira
+    cible_rattachee: true
+    annule: false
 - saison: s21
   numero: 7
   type: elimination
-  complet: false
+  complet: true
   episode: '4'
   elimine: estelle-fabrice
   elimine_rattache: true
   votes_contre: 3
   votes_exprimes: 5
-  votes: []
+  votes:
+  - votant: brice-petit
+    votant_rattache: true
+    cible: estelle-fabrice
+    cible_rattachee: true
+    annule: false
+  - votant: dorian-louvet
+    votant_rattache: true
+    cible: estelle-fabrice
+    cible_rattachee: true
+    annule: false
+  - votant: jody-favier
+    votant_rattache: true
+    cible: estelle-fabrice
+    cible_rattachee: true
+    annule: false
+  - votant: marie-france-schieber
+    votant_rattache: true
+    cible: jody-favier
+    cible_rattachee: true
+    annule: false
+  - votant: estelle-fabrice
+    votant_rattache: true
+    cible: jody-favier
+    cible_rattachee: true
+    annule: false
 - saison: s21
   numero: 8
   type: elimination
-  complet: false
+  complet: true
   episode: '4'
   elimine: mathieu-blanchard
   elimine_rattache: true
   votes_contre: 1
   votes_exprimes: 5
-  votes: []
+  votes:
+  - votant: ava-maisini
+    votant_rattache: true
+    cible: aubin-bligny
+    cible_rattachee: true
+    annule: true
+  - votant: alix-noblat
+    votant_rattache: true
+    cible: aubin-bligny
+    cible_rattachee: true
+    annule: true
+  - votant: sebastien-aberlenc
+    votant_rattache: true
+    cible: aubin-bligny
+    cible_rattachee: true
+    annule: true
+  - votant: aubin-bligny
+    votant_rattache: true
+    cible: mathieu-blanchard
+    cible_rattachee: true
+    annule: false
+  - votant: mathieu-blanchard
+    votant_rattache: true
+    cible: aubin-bligny
+    cible_rattachee: true
+    annule: true
 - saison: s21
   numero: 9
   type: elimination
-  complet: false
+  complet: true
   episode: '5'
   elimine: adrien-ferreira
   elimine_rattache: true
   votes_contre: 7
   votes_exprimes: 9
-  votes: []
+  votes:
+  - votant: brice-petit
+    votant_rattache: true
+    cible: adrien-ferreira
+    cible_rattachee: true
+    annule: false
+  - votant: ava-maisini
+    votant_rattache: true
+    cible: adrien-ferreira
+    cible_rattachee: true
+    annule: false
+  - votant: fabrice-pietrzak
+    votant_rattache: true
+    cible: joaquina-glaud
+    cible_rattachee: true
+    annule: false
+  - votant: joaquina-glaud
+    votant_rattache: true
+    cible: adrien-ferreira
+    cible_rattachee: true
+    annule: false
+  - votant: bertrand-kamal-loudrhiri
+    votant_rattache: true
+    cible: adrien-ferreira
+    cible_rattachee: true
+    annule: false
+  - votant: hadja-cisse
+    votant_rattache: true
+    cible: adrien-ferreira
+    cible_rattachee: true
+    annule: false
+  - votant: marie-france-schieber
+    votant_rattache: true
+    cible: adrien-ferreira
+    cible_rattachee: true
+    annule: false
+  - votant: sebastien-aberlenc
+    votant_rattache: true
+    cible: adrien-ferreira
+    cible_rattachee: true
+    annule: false
+  - votant: adrien-ferreira
+    votant_rattache: true
+    cible: joaquina-glaud
+    cible_rattachee: true
+    annule: false
 - saison: s21
   numero: 10
   type: elimination
@@ -13624,17 +13834,102 @@
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 10
-  votes: []
+  votes:
+  - votant: alexandra-pornet
+    votant_rattache: true
+    cible: jody-favier
+    cible_rattachee: true
+    annule: false
+  - votant: loic-riowal
+    votant_rattache: true
+    cible: aubin-bligny
+    cible_rattachee: true
+    annule: false
+  - votant: lola-besse
+    votant_rattache: true
+    cible: aubin-bligny
+    cible_rattachee: true
+    annule: false
+  - votant: dorian-louvet
+    votant_rattache: true
+    cible: aubin-bligny
+    cible_rattachee: true
+    annule: false
+  - votant: angelique-ti
+    votant_rattache: true
+    cible: jody-favier
+    cible_rattachee: true
+    annule: false
+  - votant: alix-noblat
+    votant_rattache: true
+    cible: jody-favier
+    cible_rattachee: true
+    annule: false
+  - votant: laurent-affri
+    votant_rattache: true
+    cible: aubin-bligny
+    cible_rattachee: true
+    annule: false
+  - votant: jody-favier
+    votant_rattache: true
+    cible: aubin-bligny
+    cible_rattachee: true
+    annule: false
+  - votant: aubin-bligny
+    votant_rattache: true
+    cible: jody-favier
+    cible_rattachee: true
+    annule: false
 - saison: s21
   numero: 11
   type: elimination
-  complet: false
+  complet: true
   episode: '7'
   elimine: sebastien-aberlenc
   elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 8
-  votes: []
+  votes:
+  - votant: brice-petit
+    votant_rattache: true
+    cible: sebastien-aberlenc
+    cible_rattachee: true
+    annule: false
+  - votant: ava-maisini
+    votant_rattache: true
+    cible: marie-france-schieber
+    cible_rattachee: true
+    annule: false
+  - votant: fabrice-pietrzak
+    votant_rattache: true
+    cible: marie-france-schieber
+    cible_rattachee: true
+    annule: false
+  - votant: joaquina-glaud
+    votant_rattache: true
+    cible: sebastien-aberlenc
+    cible_rattachee: true
+    annule: false
+  - votant: bertrand-kamal-loudrhiri
+    votant_rattache: true
+    cible: sebastien-aberlenc
+    cible_rattachee: true
+    annule: false
+  - votant: hadja-cisse
+    votant_rattache: true
+    cible: sebastien-aberlenc
+    cible_rattachee: true
+    annule: false
+  - votant: marie-france-schieber
+    votant_rattache: true
+    cible: sebastien-aberlenc
+    cible_rattachee: true
+    annule: false
+  - votant: sebastien-aberlenc
+    votant_rattache: true
+    cible: marie-france-schieber
+    cible_rattachee: true
+    annule: false
 - saison: s21
   numero: 12
   type: elimination
@@ -13644,17 +13939,97 @@
   elimine_rattache: true
   votes_contre: 2
   votes_exprimes: null
-  votes: []
+  votes:
+  - votant: loic-riowal
+    votant_rattache: true
+    cible: marie-france-schieber
+    cible_rattachee: true
+    annule: false
+  - votant: hadja-cisse
+    votant_rattache: true
+    cible: marie-france-schieber
+    cible_rattachee: true
+    annule: false
 - saison: s21
   numero: 13
   type: elimination
-  complet: false
+  complet: true
   episode: '8'
   elimine: hadja-cisse
   elimine_rattache: true
   votes_contre: 7
   votes_exprimes: 14
-  votes: []
+  votes:
+  - votant: alexandra-pornet
+    votant_rattache: true
+    cible: hadja-cisse
+    cible_rattachee: true
+    annule: false
+  - votant: brice-petit
+    votant_rattache: true
+    cible: angelique-ti
+    cible_rattachee: true
+    annule: false
+  - votant: loic-riowal
+    votant_rattache: true
+    cible: dorian-louvet
+    cible_rattachee: true
+    annule: true
+  - votant: lola-besse
+    votant_rattache: true
+    cible: hadja-cisse
+    cible_rattachee: true
+    annule: false
+  - votant: dorian-louvet
+    votant_rattache: true
+    cible: hadja-cisse
+    cible_rattachee: true
+    annule: false
+  - votant: angelique-ti
+    votant_rattache: true
+    cible: hadja-cisse
+    cible_rattachee: true
+    annule: false
+  - votant: ava-maisini
+    votant_rattache: true
+    cible: angelique-ti
+    cible_rattachee: true
+    annule: false
+  - votant: fabrice-pietrzak
+    votant_rattache: true
+    cible: laurent-affri
+    cible_rattachee: true
+    annule: false
+  - votant: alix-noblat
+    votant_rattache: true
+    cible: hadja-cisse
+    cible_rattachee: true
+    annule: false
+  - votant: laurent-affri
+    votant_rattache: true
+    cible: hadja-cisse
+    cible_rattachee: true
+    annule: false
+  - votant: jody-favier
+    votant_rattache: true
+    cible: hadja-cisse
+    cible_rattachee: true
+    annule: false
+  - votant: joaquina-glaud
+    votant_rattache: true
+    cible: angelique-ti
+    cible_rattachee: true
+    annule: false
+  - votant: bertrand-kamal-loudrhiri
+    votant_rattache: true
+    cible: angelique-ti
+    cible_rattachee: true
+    annule: false
+  - votant: hadja-cisse
+    votant_rattache: true
+    cible: angelique-ti
+    cible_rattachee: true
+    annule: false
 - saison: s21
   numero: 14
   type: elimination
@@ -13674,7 +14049,67 @@
   elimine_rattache: true
   votes_contre: 7
   votes_exprimes: 13
-  votes: []
+  votes:
+  - votant: alexandra-pornet
+    votant_rattache: true
+    cible: joaquina-glaud
+    cible_rattachee: true
+    annule: false
+  - votant: brice-petit
+    votant_rattache: true
+    cible: alexandra-pornet
+    cible_rattachee: true
+    annule: false
+  - votant: loic-riowal
+    votant_rattache: true
+    cible: lola-besse
+    cible_rattachee: true
+    annule: false
+  - votant: lola-besse
+    votant_rattache: true
+    cible: joaquina-glaud
+    cible_rattachee: true
+    annule: false
+  - votant: dorian-louvet
+    votant_rattache: true
+    cible: joaquina-glaud
+    cible_rattachee: true
+    annule: false
+  - votant: angelique-ti
+    votant_rattache: true
+    cible: joaquina-glaud
+    cible_rattachee: true
+    annule: false
+  - votant: ava-maisini
+    votant_rattache: true
+    cible: lola-besse
+    cible_rattachee: true
+    annule: false
+  - votant: fabrice-pietrzak
+    votant_rattache: true
+    cible: joaquina-glaud
+    cible_rattachee: true
+    annule: false
+  - votant: alix-noblat
+    votant_rattache: true
+    cible: joaquina-glaud
+    cible_rattachee: true
+    annule: false
+  - votant: laurent-affri
+    votant_rattache: true
+    cible: joaquina-glaud
+    cible_rattachee: true
+    annule: false
+  - votant: jody-favier
+    votant_rattache: true
+    cible: lola-besse
+    cible_rattachee: true
+    annule: false
+  - votant: joaquina-glaud
+    votant_rattache: true
+    cible: lola-besse
+    cible_rattachee: true
+    annule: false
 - saison: s21
   numero: 16
   type: elimination
@@ -13683,8 +14118,63 @@
   elimine: jody-favier
   elimine_rattache: true
   votes_contre: 4
-  votes_exprimes: 12
-  votes: []
+  votes_exprimes: 13
+  votes:
+  - votant: alexandra-pornet
+    votant_rattache: true
+    cible: angelique-ti
+    cible_rattachee: true
+    annule: true
+  - votant: brice-petit
+    votant_rattache: true
+    cible: angelique-ti
+    cible_rattachee: true
+    annule: true
+  - votant: loic-riowal
+    votant_rattache: true
+    cible: angelique-ti
+    cible_rattachee: true
+    annule: true
+  - votant: lola-besse
+    votant_rattache: true
+    cible: jody-favier
+    cible_rattachee: true
+    annule: false
+  - votant: dorian-louvet
+    votant_rattache: true
+    cible: angelique-ti
+    cible_rattachee: true
+    annule: true
+  - votant: angelique-ti
+    votant_rattache: true
+    cible: jody-favier
+    cible_rattachee: true
+    annule: false
+  - votant: ava-maisini
+    votant_rattache: true
+    cible: angelique-ti
+    cible_rattachee: true
+    annule: true
+  - votant: fabrice-pietrzak
+    votant_rattache: true
+    cible: jody-favier
+    cible_rattachee: true
+    annule: false
+  - votant: alix-noblat
+    votant_rattache: true
+    cible: jody-favier
+    cible_rattachee: true
+    annule: false
+  - votant: laurent-affri
+    votant_rattache: true
+    cible: fabrice-pietrzak
+    cible_rattachee: true
+    annule: false
+  - votant: jody-favier
+    votant_rattache: true
+    cible: fabrice-pietrzak
+    cible_rattachee: true
+    annule: false
 - saison: s21
   numero: 17
   type: elimination
@@ -13694,7 +14184,57 @@
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 11
-  votes: []
+  votes:
+  - votant: alexandra-pornet
+    votant_rattache: true
+    cible: laurent-affri
+    cible_rattachee: true
+    annule: false
+  - votant: brice-petit
+    votant_rattache: true
+    cible: laurent-affri
+    cible_rattachee: true
+    annule: false
+  - votant: loic-riowal
+    votant_rattache: true
+    cible: brice-petit
+    cible_rattachee: true
+    annule: false
+  - votant: lola-besse
+    votant_rattache: true
+    cible: brice-petit
+    cible_rattachee: true
+    annule: false
+  - votant: dorian-louvet
+    votant_rattache: true
+    cible: fabrice-pietrzak
+    cible_rattachee: true
+    annule: false
+  - votant: angelique-ti
+    votant_rattache: true
+    cible: laurent-affri
+    cible_rattachee: true
+    annule: false
+  - votant: ava-maisini
+    votant_rattache: true
+    cible: laurent-affri
+    cible_rattachee: true
+    annule: false
+  - votant: fabrice-pietrzak
+    votant_rattache: true
+    cible: laurent-affri
+    cible_rattachee: true
+    annule: false
+  - votant: alix-noblat
+    votant_rattache: true
+    cible: fabrice-pietrzak
+    cible_rattachee: true
+    annule: false
+  - votant: laurent-affri
+    votant_rattache: true
+    cible: fabrice-pietrzak
+    cible_rattachee: true
+    annule: false
 - saison: s21
   numero: 18
   type: elimination
@@ -13702,8 +14242,8 @@
   episode: '11'
   elimine: alix-noblat
   elimine_rattache: true
-  votes_contre: 6
-  votes_exprimes: 11
+  votes_contre: 0
+  votes_exprimes: null
   votes: []
 - saison: s21
   numero: 19
@@ -13724,7 +14264,42 @@
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 8
-  votes: []
+  votes:
+  - votant: alexandra-pornet
+    votant_rattache: true
+    cible: ava-maisini
+    cible_rattachee: true
+    annule: false
+  - votant: brice-petit
+    votant_rattache: true
+    cible: lola-besse
+    cible_rattachee: true
+    annule: false
+  - votant: loic-riowal
+    votant_rattache: true
+    cible: ava-maisini
+    cible_rattachee: true
+    annule: false
+  - votant: lola-besse
+    votant_rattache: true
+    cible: ava-maisini
+    cible_rattachee: true
+    annule: false
+  - votant: dorian-louvet
+    votant_rattache: true
+    cible: ava-maisini
+    cible_rattachee: true
+    annule: false
+  - votant: angelique-ti
+    votant_rattache: true
+    cible: ava-maisini
+    cible_rattachee: true
+    annule: false
+  - votant: ava-maisini
+    votant_rattache: true
+    cible: dorian-louvet
+    cible_rattachee: true
+    annule: false
 - saison: s21
   numero: 21
   type: elimination
@@ -13734,7 +14309,37 @@
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 7
-  votes: []
+  votes:
+  - votant: alexandra-pornet
+    votant_rattache: true
+    cible: brice-petit
+    cible_rattachee: true
+    annule: false
+  - votant: brice-petit
+    votant_rattache: true
+    cible: angelique-ti
+    cible_rattachee: true
+    annule: false
+  - votant: loic-riowal
+    votant_rattache: true
+    cible: angelique-ti
+    cible_rattachee: true
+    annule: false
+  - votant: lola-besse
+    votant_rattache: true
+    cible: brice-petit
+    cible_rattachee: true
+    annule: false
+  - votant: dorian-louvet
+    votant_rattache: true
+    cible: angelique-ti
+    cible_rattachee: true
+    annule: false
+  - votant: angelique-ti
+    votant_rattache: true
+    cible: brice-petit
+    cible_rattachee: true
+    annule: false
 - saison: s21
   numero: 22
   type: elimination
@@ -13764,7 +14369,12 @@
   elimine_rattache: true
   votes_contre: 1
   votes_exprimes: null
-  votes: []
+  votes:
+  - votant: brice-petit
+    votant_rattache: true
+    cible: loic-riowal
+    cible_rattachee: true
+    annule: false
 - saison: s21
   numero: 25
   type: elimination
@@ -13774,7 +14384,32 @@
   elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 12
-  votes: []
+  votes:
+  - votant: dorian-louvet
+    votant_rattache: true
+    cible: brice-petit
+    cible_rattachee: true
+    annule: false
+  - votant: ava-maisini
+    votant_rattache: true
+    cible: brice-petit
+    cible_rattachee: true
+    annule: false
+  - votant: fabrice-pietrzak
+    votant_rattache: true
+    cible: brice-petit
+    cible_rattachee: true
+    annule: false
+  - votant: joaquina-glaud
+    votant_rattache: true
+    cible: brice-petit
+    cible_rattachee: true
+    annule: false
+  - votant: hadja-cisse
+    votant_rattache: true
+    cible: brice-petit
+    cible_rattachee: true
+    annule: false
 - saison: s21
   numero: 26
   type: jury
@@ -13784,7 +14419,42 @@
   laureat_rattache: true
   votes_pour: 7
   votes_exprimes: 12
-  votes: []
+  votes:
+  - votant: loic-riowal
+    votant_rattache: true
+    cible: alexandra-pornet
+    cible_rattachee: true
+    annule: false
+  - votant: lola-besse
+    votant_rattache: true
+    cible: alexandra-pornet
+    cible_rattachee: true
+    annule: false
+  - votant: angelique-ti
+    votant_rattache: true
+    cible: alexandra-pornet
+    cible_rattachee: true
+    annule: false
+  - votant: alix-noblat
+    votant_rattache: true
+    cible: alexandra-pornet
+    cible_rattachee: true
+    annule: false
+  - votant: laurent-affri
+    votant_rattache: true
+    cible: alexandra-pornet
+    cible_rattachee: true
+    annule: false
+  - votant: jody-favier
+    votant_rattache: true
+    cible: alexandra-pornet
+    cible_rattachee: true
+    annule: false
+  - votant: bertrand-kamal-loudrhiri
+    votant_rattache: true
+    cible: alexandra-pornet
+    cible_rattachee: true
+    annule: false
 - saison: s22
   numero: 1
   type: elimination
@@ -13908,13 +14578,18 @@
 - saison: s22
   numero: 3
   type: elimination
-  complet: true
+  complet: false
   episode: '3'
   elimine: elodie-faelens
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 10
   votes:
+  - votant: lucie-bertaud
+    votant_rattache: true
+    cible: laetitia-saphores
+    cible_rattachee: true
+    annule: false
   - votant: lucie-bertaud
     votant_rattache: true
     cible: laetitia-saphores
@@ -14083,13 +14758,18 @@
 - saison: s22
   numero: 7
   type: elimination
-  complet: true
+  complet: false
   episode: '5'
   elimine: aurelien-tesson
   elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 9
   votes:
+  - votant: lucie-bertaud
+    votant_rattache: true
+    cible: aurelien-tesson
+    cible_rattachee: true
+    annule: false
   - votant: lucie-bertaud
     votant_rattache: true
     cible: aurelien-tesson
@@ -14163,7 +14843,7 @@
 - saison: s22
   numero: 9
   type: elimination
-  complet: true
+  complet: false
   episode: '6'
   elimine: herve-comte
   elimine_rattache: true
@@ -14175,6 +14855,11 @@
     cible: herve-comte
     cible_rattachee: true
     annule: false
+  - votant: lucie-bertaud
+    votant_rattache: true
+    cible: arnaud-deshayes
+    cible_rattachee: true
+    annule: true
   - votant: lucie-bertaud
     votant_rattache: true
     cible: arnaud-deshayes
@@ -14253,7 +14938,7 @@
 - saison: s22
   numero: 11
   type: elimination
-  complet: false
+  complet: true
   episode: '7'
   elimine: shanice-mendy
   elimine_rattache: true
@@ -14263,6 +14948,11 @@
   - votant: maxine-eouzan
     votant_rattache: true
     cible: shanice-mendy
+    cible_rattachee: true
+    annule: false
+  - votant: lucie-bertaud
+    votant_rattache: true
+    cible: laure-canevarolo
     cible_rattachee: true
     annule: false
   - votant: lucie-bertaud
@@ -14340,6 +15030,11 @@
     cible: myriam-chafik
     cible_rattachee: true
     annule: false
+  - votant: lucie-bertaud
+    votant_rattache: true
+    cible: myriam-chafik
+    cible_rattachee: true
+    annule: false
   - votant: jonathan-julien
     votant_rattache: true
     cible: myriam-chafik
@@ -14388,7 +15083,7 @@
 - saison: s22
   numero: 13
   type: elimination
-  complet: false
+  complet: true
   episode: '9'
   elimine: vincent-blier
   elimine_rattache: true
@@ -14396,6 +15091,11 @@
   votes_exprimes: 11
   votes:
   - votant: maxine-eouzan
+    votant_rattache: true
+    cible: vincent-blier
+    cible_rattachee: true
+    annule: false
+  - votant: lucie-bertaud
     votant_rattache: true
     cible: vincent-blier
     cible_rattachee: true
@@ -14458,7 +15158,7 @@
 - saison: s22
   numero: 15
   type: elimination
-  complet: false
+  complet: true
   episode: '10'
   elimine: thomas-plisson
   elimine_rattache: true
@@ -14466,6 +15166,11 @@
   votes_exprimes: 9
   votes:
   - votant: maxine-eouzan
+    votant_rattache: true
+    cible: thomas-plisson
+    cible_rattachee: true
+    annule: false
+  - votant: lucie-bertaud
     votant_rattache: true
     cible: thomas-plisson
     cible_rattachee: true
@@ -14535,6 +15240,11 @@
     cible: magali-sevenier
     cible_rattachee: true
     annule: false
+  - votant: lucie-bertaud
+    votant_rattache: true
+    cible: magali-sevenier
+    cible_rattachee: true
+    annule: false
   - votant: jonathan-julien
     votant_rattache: true
     cible: lucie-bertaud
@@ -14574,7 +15284,7 @@
   numero: 20
   type: elimination
   complet: false
-  episode: '13'
+  episode: '12'
   elimine: jonathan-julien
   elimine_rattache: true
   votes_contre: 1
@@ -14589,10 +15299,10 @@
   numero: 21
   type: elimination
   complet: false
-  episode: '13'
+  episode: '12'
   elimine: lucie-bertaud
   elimine_rattache: true
-  votes_contre: 4
+  votes_contre: 9
   votes_exprimes: 13
   votes:
   - votant: magali-sevenier
@@ -14619,10 +15329,10 @@
   numero: 22
   type: jury
   complet: false
-  episode: '13'
+  episode: '12'
   laureat: maxine-eouzan
   laureat_rattache: true
-  votes_pour: 9
+  votes_pour: 4
   votes_exprimes: 13
   votes:
   - votant: jonathan-julien
@@ -14679,7 +15389,47 @@
   elimine_rattache: true
   votes_contre: 8
   votes_exprimes: 9
-  votes: []
+  votes:
+  - votant: francois-descamp
+    votant_rattache: true
+    cible: lili-gasnier
+    cible_rattachee: true
+    annule: false
+  - votant: ambre-daudet
+    votant_rattache: true
+    cible: lili-gasnier
+    cible_rattachee: true
+    annule: false
+  - votant: nicolas-bellon
+    votant_rattache: true
+    cible: lili-gasnier
+    cible_rattachee: true
+    annule: false
+  - votant: louana-roy
+    votant_rattache: true
+    cible: lili-gasnier
+    cible_rattachee: true
+    annule: false
+  - votant: pauline-pourchaire
+    votant_rattache: true
+    cible: lili-gasnier
+    cible_rattachee: true
+    annule: false
+  - votant: jean-philippe-masy
+    votant_rattache: true
+    cible: lili-gasnier
+    cible_rattachee: true
+    annule: false
+  - votant: franck-le-totem-maudit
+    votant_rattache: true
+    cible: lili-gasnier
+    cible_rattachee: true
+    annule: false
+  - votant: lili-gasnier
+    votant_rattache: true
+    cible: pauline-pourchaire
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 2
   type: elimination
@@ -14689,7 +15439,47 @@
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 9
-  votes: []
+  votes:
+  - votant: bastien-san-pedro
+    votant_rattache: true
+    cible: celine-dufrenoy
+    cible_rattachee: true
+    annule: false
+  - votant: jean-charles-chatelus
+    votant_rattache: true
+    cible: celine-dufrenoy
+    cible_rattachee: true
+    annule: false
+  - votant: anne-sophie-mounier
+    votant_rattache: true
+    cible: setha-el-hajjami
+    cible_rattachee: true
+    annule: false
+  - votant: yannick-zachee
+    votant_rattache: true
+    cible: celine-dufrenoy
+    cible_rattachee: true
+    annule: false
+  - votant: setha-el-hajjami
+    votant_rattache: true
+    cible: stephanie-tribot
+    cible_rattachee: true
+    annule: false
+  - votant: stephanie-tribot
+    votant_rattache: true
+    cible: setha-el-hajjami
+    cible_rattachee: true
+    annule: false
+  - votant: matteo-real
+    votant_rattache: true
+    cible: celine-dufrenoy
+    cible_rattachee: true
+    annule: false
+  - votant: celine-dufrenoy
+    votant_rattache: true
+    cible: stephanie-tribot
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 3
   type: elimination
@@ -14709,7 +15499,42 @@
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 8
-  votes: []
+  votes:
+  - votant: bastien-san-pedro
+    votant_rattache: true
+    cible: stephanie-tribot
+    cible_rattachee: true
+    annule: false
+  - votant: jean-charles-chatelus
+    votant_rattache: true
+    cible: stephanie-tribot
+    cible_rattachee: true
+    annule: false
+  - votant: ambre-daudet
+    votant_rattache: true
+    cible: matteo-real
+    cible_rattachee: true
+    annule: false
+  - votant: anne-sophie-mounier
+    votant_rattache: true
+    cible: matteo-real
+    cible_rattachee: true
+    annule: false
+  - votant: yannick-zachee
+    votant_rattache: true
+    cible: matteo-real
+    cible_rattachee: true
+    annule: false
+  - votant: stephanie-tribot
+    votant_rattache: true
+    cible: matteo-real
+    cible_rattachee: true
+    annule: false
+  - votant: matteo-real
+    votant_rattache: true
+    cible: stephanie-tribot
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 5
   type: elimination
@@ -14719,7 +15544,57 @@
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 11
-  votes: []
+  votes:
+  - votant: francois-descamp
+    votant_rattache: true
+    cible: samira-ait-brahim
+    cible_rattachee: true
+    annule: false
+  - votant: geraldine-nicolle
+    votant_rattache: true
+    cible: pauline-pourchaire
+    cible_rattachee: true
+    annule: false
+  - votant: jean-charles-chatelus
+    votant_rattache: true
+    cible: samira-ait-brahim
+    cible_rattachee: true
+    annule: false
+  - votant: ambre-daudet
+    votant_rattache: true
+    cible: samira-ait-brahim
+    cible_rattachee: true
+    annule: false
+  - votant: fouzi-de-la-fuente
+    votant_rattache: true
+    cible: pauline-pourchaire
+    cible_rattachee: true
+    annule: false
+  - votant: louana-roy
+    votant_rattache: true
+    cible: samira-ait-brahim
+    cible_rattachee: true
+    annule: false
+  - votant: maxime-tournoux
+    votant_rattache: true
+    cible: pauline-pourchaire
+    cible_rattachee: true
+    annule: false
+  - votant: pauline-pourchaire
+    votant_rattache: true
+    cible: samira-ait-brahim
+    cible_rattachee: true
+    annule: false
+  - votant: jean-philippe-masy
+    votant_rattache: true
+    cible: samira-ait-brahim
+    cible_rattachee: true
+    annule: false
+  - votant: samira-ait-brahim
+    votant_rattache: true
+    cible: pauline-pourchaire
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 6
   type: elimination
@@ -14729,7 +15604,57 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
-  votes: []
+  votes:
+  - votant: bastien-san-pedro
+    votant_rattache: true
+    cible: stephanie-tribot
+    cible_rattachee: true
+    annule: false
+  - votant: olga-khokhlova
+    votant_rattache: true
+    cible: setha-el-hajjami
+    cible_rattachee: true
+    annule: false
+  - votant: nicolas-bellon
+    votant_rattache: true
+    cible: stephanie-tribot
+    cible_rattachee: true
+    annule: false
+  - votant: anne-sophie-mounier
+    votant_rattache: true
+    cible: benjamin-breerette
+    cible_rattachee: true
+    annule: false
+  - votant: yannick-zachee
+    votant_rattache: true
+    cible: benjamin-breerette
+    cible_rattachee: true
+    annule: false
+  - votant: colin-mottas
+    votant_rattache: true
+    cible: stephanie-tribot
+    cible_rattachee: true
+    annule: false
+  - votant: setha-el-hajjami
+    votant_rattache: true
+    cible: stephanie-tribot
+    cible_rattachee: true
+    annule: false
+  - votant: alexandra-elize
+    votant_rattache: true
+    cible: benjamin-breerette
+    cible_rattachee: true
+    annule: false
+  - votant: stephanie-tribot
+    votant_rattache: true
+    cible: benjamin-breerette
+    cible_rattachee: true
+    annule: false
+  - votant: benjamin-breerette
+    votant_rattache: true
+    cible: alexandra-elize
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 7
   type: elimination
@@ -14739,7 +15664,52 @@
   elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 11
-  votes: []
+  votes:
+  - votant: bastien-san-pedro
+    votant_rattache: true
+    cible: stephanie-tribot
+    cible_rattachee: true
+    annule: false
+  - votant: olga-khokhlova
+    votant_rattache: true
+    cible: stephanie-tribot
+    cible_rattachee: true
+    annule: false
+  - votant: nicolas-bellon
+    votant_rattache: true
+    cible: stephanie-tribot
+    cible_rattachee: true
+    annule: false
+  - votant: anne-sophie-mounier
+    votant_rattache: true
+    cible: setha-el-hajjami
+    cible_rattachee: true
+    annule: false
+  - votant: yannick-zachee
+    votant_rattache: true
+    cible: olga-khokhlova
+    cible_rattachee: true
+    annule: false
+  - votant: colin-mottas
+    votant_rattache: true
+    cible: stephanie-tribot
+    cible_rattachee: true
+    annule: false
+  - votant: setha-el-hajjami
+    votant_rattache: true
+    cible: stephanie-tribot
+    cible_rattachee: true
+    annule: false
+  - votant: alexandra-elize
+    votant_rattache: true
+    cible: yannick-zachee
+    cible_rattachee: true
+    annule: false
+  - votant: stephanie-tribot
+    votant_rattache: true
+    cible: alexandra-elize
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 8
   type: elimination
@@ -14759,7 +15729,52 @@
   elimine_rattache: true
   votes_contre: 8
   votes_exprimes: 10
-  votes: []
+  votes:
+  - votant: francois-descamp
+    votant_rattache: true
+    cible: stephanie-tribot
+    cible_rattachee: true
+    annule: false
+  - votant: geraldine-nicolle
+    votant_rattache: true
+    cible: stephanie-tribot
+    cible_rattachee: true
+    annule: false
+  - votant: jean-charles-chatelus
+    votant_rattache: true
+    cible: stephanie-tribot
+    cible_rattachee: true
+    annule: false
+  - votant: ambre-daudet
+    votant_rattache: true
+    cible: stephanie-tribot
+    cible_rattachee: true
+    annule: false
+  - votant: fouzi-de-la-fuente
+    votant_rattache: true
+    cible: stephanie-tribot
+    cible_rattachee: true
+    annule: false
+  - votant: louana-roy
+    votant_rattache: true
+    cible: stephanie-tribot
+    cible_rattachee: true
+    annule: false
+  - votant: maxime-tournoux
+    votant_rattache: true
+    cible: stephanie-tribot
+    cible_rattachee: true
+    annule: false
+  - votant: pauline-pourchaire
+    votant_rattache: true
+    cible: stephanie-tribot
+    cible_rattachee: true
+    annule: false
+  - votant: stephanie-tribot
+    votant_rattache: true
+    cible: maxime-tournoux
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 10
   type: elimination
@@ -14769,7 +15784,47 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
-  votes: []
+  votes:
+  - votant: bastien-san-pedro
+    votant_rattache: true
+    cible: alexandra-elize
+    cible_rattachee: true
+    annule: false
+  - votant: olga-khokhlova
+    votant_rattache: true
+    cible: setha-el-hajjami
+    cible_rattachee: true
+    annule: false
+  - votant: nicolas-bellon
+    votant_rattache: true
+    cible: alexandra-elize
+    cible_rattachee: true
+    annule: false
+  - votant: anne-sophie-mounier
+    votant_rattache: true
+    cible: setha-el-hajjami
+    cible_rattachee: true
+    annule: false
+  - votant: yannick-zachee
+    votant_rattache: true
+    cible: alexandra-elize
+    cible_rattachee: true
+    annule: false
+  - votant: colin-mottas
+    votant_rattache: true
+    cible: setha-el-hajjami
+    cible_rattachee: true
+    annule: false
+  - votant: setha-el-hajjami
+    votant_rattache: true
+    cible: alexandra-elize
+    cible_rattachee: true
+    annule: false
+  - votant: alexandra-elize
+    votant_rattache: true
+    cible: setha-el-hajjami
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 11
   type: elimination
@@ -14779,7 +15834,17 @@
   elimine_rattache: true
   votes_contre: 2
   votes_exprimes: null
-  votes: []
+  votes:
+  - votant: louana-roy
+    votant_rattache: true
+    cible: setha-el-hajjami
+    cible_rattachee: true
+    annule: false
+  - votant: colin-mottas
+    votant_rattache: true
+    cible: setha-el-hajjami
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 12
   type: elimination
@@ -14789,7 +15854,77 @@
   elimine_rattache: true
   votes_contre: 7
   votes_exprimes: 17
-  votes: []
+  votes:
+  - votant: bastien-san-pedro
+    votant_rattache: true
+    cible: maxime-tournoux
+    cible_rattachee: true
+    annule: false
+  - votant: francois-descamp
+    votant_rattache: true
+    cible: colin-mottas
+    cible_rattachee: true
+    annule: false
+  - votant: geraldine-nicolle
+    votant_rattache: true
+    cible: colin-mottas
+    cible_rattachee: true
+    annule: false
+  - votant: jean-charles-chatelus
+    votant_rattache: true
+    cible: colin-mottas
+    cible_rattachee: true
+    annule: false
+  - votant: ambre-daudet
+    votant_rattache: true
+    cible: colin-mottas
+    cible_rattachee: true
+    annule: false
+  - votant: olga-khokhlova
+    votant_rattache: true
+    cible: maxime-tournoux
+    cible_rattachee: true
+    annule: false
+  - votant: nicolas-bellon
+    votant_rattache: true
+    cible: maxime-tournoux
+    cible_rattachee: true
+    annule: false
+  - votant: fouzi-de-la-fuente
+    votant_rattache: true
+    cible: colin-mottas
+    cible_rattachee: true
+    annule: false
+  - votant: louana-roy
+    votant_rattache: true
+    cible: yannick-zachee
+    cible_rattachee: true
+    annule: false
+  - votant: maxime-tournoux
+    votant_rattache: true
+    cible: colin-mottas
+    cible_rattachee: true
+    annule: false
+  - votant: anne-sophie-mounier
+    votant_rattache: true
+    cible: maxime-tournoux
+    cible_rattachee: true
+    annule: false
+  - votant: yannick-zachee
+    votant_rattache: true
+    cible: maxime-tournoux
+    cible_rattachee: true
+    annule: false
+  - votant: pauline-pourchaire
+    votant_rattache: true
+    cible: colin-mottas
+    cible_rattachee: true
+    annule: false
+  - votant: colin-mottas
+    votant_rattache: true
+    cible: maxime-tournoux
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 13
   type: elimination
@@ -14809,7 +15944,67 @@
   elimine_rattache: true
   votes_contre: 8
   votes_exprimes: 15
-  votes: []
+  votes:
+  - votant: bastien-san-pedro
+    votant_rattache: true
+    cible: louana-roy
+    cible_rattachee: true
+    annule: false
+  - votant: francois-descamp
+    votant_rattache: true
+    cible: yannick-zachee
+    cible_rattachee: true
+    annule: false
+  - votant: geraldine-nicolle
+    votant_rattache: true
+    cible: yannick-zachee
+    cible_rattachee: true
+    annule: false
+  - votant: jean-charles-chatelus
+    votant_rattache: true
+    cible: yannick-zachee
+    cible_rattachee: true
+    annule: false
+  - votant: ambre-daudet
+    votant_rattache: true
+    cible: yannick-zachee
+    cible_rattachee: true
+    annule: false
+  - votant: olga-khokhlova
+    votant_rattache: true
+    cible: louana-roy
+    cible_rattachee: true
+    annule: false
+  - votant: nicolas-bellon
+    votant_rattache: true
+    cible: louana-roy
+    cible_rattachee: true
+    annule: false
+  - votant: fouzi-de-la-fuente
+    votant_rattache: true
+    cible: yannick-zachee
+    cible_rattachee: true
+    annule: false
+  - votant: louana-roy
+    votant_rattache: true
+    cible: yannick-zachee
+    cible_rattachee: true
+    annule: false
+  - votant: maxime-tournoux
+    votant_rattache: true
+    cible: yannick-zachee
+    cible_rattachee: true
+    annule: false
+  - votant: anne-sophie-mounier
+    votant_rattache: true
+    cible: louana-roy
+    cible_rattachee: true
+    annule: false
+  - votant: yannick-zachee
+    votant_rattache: true
+    cible: louana-roy
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 15
   type: elimination
@@ -14819,7 +16014,62 @@
   elimine_rattache: true
   votes_contre: 7
   votes_exprimes: 12
-  votes: []
+  votes:
+  - votant: bastien-san-pedro
+    votant_rattache: true
+    cible: maxime-tournoux
+    cible_rattachee: true
+    annule: false
+  - votant: francois-descamp
+    votant_rattache: true
+    cible: anne-sophie-mounier
+    cible_rattachee: true
+    annule: false
+  - votant: geraldine-nicolle
+    votant_rattache: true
+    cible: anne-sophie-mounier
+    cible_rattachee: true
+    annule: false
+  - votant: jean-charles-chatelus
+    votant_rattache: true
+    cible: anne-sophie-mounier
+    cible_rattachee: true
+    annule: false
+  - votant: ambre-daudet
+    votant_rattache: true
+    cible: anne-sophie-mounier
+    cible_rattachee: true
+    annule: false
+  - votant: olga-khokhlova
+    votant_rattache: true
+    cible: maxime-tournoux
+    cible_rattachee: true
+    annule: false
+  - votant: nicolas-bellon
+    votant_rattache: true
+    cible: maxime-tournoux
+    cible_rattachee: true
+    annule: false
+  - votant: fouzi-de-la-fuente
+    votant_rattache: true
+    cible: anne-sophie-mounier
+    cible_rattachee: true
+    annule: false
+  - votant: louana-roy
+    votant_rattache: true
+    cible: anne-sophie-mounier
+    cible_rattachee: true
+    annule: false
+  - votant: maxime-tournoux
+    votant_rattache: true
+    cible: anne-sophie-mounier
+    cible_rattachee: true
+    annule: false
+  - votant: anne-sophie-mounier
+    votant_rattache: true
+    cible: maxime-tournoux
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 16
   type: elimination
@@ -14829,7 +16079,57 @@
   elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 13
-  votes: []
+  votes:
+  - votant: bastien-san-pedro
+    votant_rattache: true
+    cible: maxime-tournoux
+    cible_rattachee: true
+    annule: false
+  - votant: francois-descamp
+    votant_rattache: true
+    cible: maxime-tournoux
+    cible_rattachee: true
+    annule: false
+  - votant: geraldine-nicolle
+    votant_rattache: true
+    cible: nicolas-bellon
+    cible_rattachee: true
+    annule: false
+  - votant: jean-charles-chatelus
+    votant_rattache: true
+    cible: fouzi-de-la-fuente
+    cible_rattachee: true
+    annule: false
+  - votant: ambre-daudet
+    votant_rattache: true
+    cible: maxime-tournoux
+    cible_rattachee: true
+    annule: false
+  - votant: olga-khokhlova
+    votant_rattache: true
+    cible: maxime-tournoux
+    cible_rattachee: true
+    annule: false
+  - votant: nicolas-bellon
+    votant_rattache: true
+    cible: fouzi-de-la-fuente
+    cible_rattachee: true
+    annule: false
+  - votant: fouzi-de-la-fuente
+    votant_rattache: true
+    cible: nicolas-bellon
+    cible_rattachee: true
+    annule: false
+  - votant: louana-roy
+    votant_rattache: true
+    cible: fouzi-de-la-fuente
+    cible_rattachee: true
+    annule: false
+  - votant: maxime-tournoux
+    votant_rattache: true
+    cible: nicolas-bellon
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 17
   type: elimination
@@ -14859,7 +16159,37 @@
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 9
-  votes: []
+  votes:
+  - votant: bastien-san-pedro
+    votant_rattache: true
+    cible: geraldine-nicolle
+    cible_rattachee: true
+    annule: false
+  - votant: francois-descamp
+    votant_rattache: true
+    cible: olga-khokhlova
+    cible_rattachee: true
+    annule: false
+  - votant: geraldine-nicolle
+    votant_rattache: true
+    cible: jean-charles-chatelus
+    cible_rattachee: true
+    annule: false
+  - votant: jean-charles-chatelus
+    votant_rattache: true
+    cible: geraldine-nicolle
+    cible_rattachee: true
+    annule: false
+  - votant: ambre-daudet
+    votant_rattache: true
+    cible: olga-khokhlova
+    cible_rattachee: true
+    annule: false
+  - votant: olga-khokhlova
+    votant_rattache: true
+    cible: nicolas-bellon
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 20
   type: elimination
@@ -14869,7 +16199,12 @@
   elimine_rattache: true
   votes_contre: 3
   votes_exprimes: 8
-  votes: []
+  votes:
+  - votant: olga-khokhlova
+    votant_rattache: true
+    cible: ambre-daudet
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 21
   type: elimination
@@ -14899,7 +16234,32 @@
   elimine_rattache: true
   votes_contre: 3
   votes_exprimes: 11
-  votes: []
+  votes:
+  - votant: ambre-daudet
+    votant_rattache: true
+    cible: francois-descamp
+    cible_rattachee: true
+    annule: false
+  - votant: olga-khokhlova
+    votant_rattache: true
+    cible: geraldine-nicolle
+    cible_rattachee: true
+    annule: false
+  - votant: nicolas-bellon
+    votant_rattache: true
+    cible: francois-descamp
+    cible_rattachee: true
+    annule: false
+  - votant: louana-roy
+    votant_rattache: true
+    cible: geraldine-nicolle
+    cible_rattachee: true
+    annule: false
+  - votant: maxime-tournoux
+    votant_rattache: true
+    cible: geraldine-nicolle
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 24
   type: jury
@@ -14909,7 +16269,22 @@
   laureat_rattache: true
   votes_pour: 4
   votes_exprimes: 11
-  votes: []
+  votes:
+  - votant: jean-charles-chatelus
+    votant_rattache: true
+    cible: bastien-san-pedro
+    cible_rattachee: true
+    annule: false
+  - votant: fouzi-de-la-fuente
+    votant_rattache: true
+    cible: francois-descamp
+    cible_rattachee: true
+    annule: false
+  - votant: pauline-pourchaire
+    votant_rattache: true
+    cible: francois-descamp
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 25
   type: jury
@@ -14919,7 +16294,22 @@
   laureat_rattache: true
   votes_pour: 4
   votes_exprimes: 11
-  votes: []
+  votes:
+  - votant: anne-sophie-mounier
+    votant_rattache: true
+    cible: bastien-san-pedro
+    cible_rattachee: true
+    annule: false
+  - votant: yannick-zachee
+    votant_rattache: true
+    cible: bastien-san-pedro
+    cible_rattachee: true
+    annule: false
+  - votant: colin-mottas
+    votant_rattache: true
+    cible: bastien-san-pedro
+    cible_rattachee: true
+    annule: false
 - saison: s24
   numero: 1
   type: elimination
@@ -16700,7 +18090,7 @@
     cible: Cécile
     cible_rattachee: false
     annule: false
-  - votant: Cécile
+  - votant: Cécile G
     votant_rattache: false
     cible: fabrice-giordano
     cible_rattachee: true
@@ -16715,7 +18105,7 @@
   votes_contre: 6
   votes_exprimes: 10
   votes:
-  - votant: Cécile
+  - votant: Cécile B
     votant_rattache: false
     cible: ari-bentolila
     cible_rattachee: true
@@ -16775,51 +18165,51 @@
   votes_contre: null
   votes_exprimes: null
   votes:
-  - votant: Cécile
+  - votant: Cécile B
     votant_rattache: false
     cible: alexandre-cheron
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: ugo-lartiche
     votant_rattache: true
     cible: marie-vilaseca
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: cassandre-lambert
     votant_rattache: true
     cible: alexandre-cheron
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: gustin-comanescu
     votant_rattache: true
     cible: marie-vilaseca
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: maxim-iarkov
     votant_rattache: true
     cible: alexandre-cheron
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: sarah-aboudeine
     votant_rattache: true
     cible: marie-vilaseca
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: maud-collas
     votant_rattache: true
     cible: marie-vilaseca
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: alexandre-cheron
     votant_rattache: true
     cible: ugo-lartiche
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: marie-vilaseca
     votant_rattache: true
     cible: alexandre-cheron
     cible_rattachee: true
-    annule: false
+    annule: true
 - saison: s26
   numero: 4
   type: elimination
@@ -16834,54 +18224,69 @@
     votant_rattache: true
     cible: charlotte-rasquin
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: charlotte-rasquin
     votant_rattache: true
     cible: michel-huy
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: ilyesse-benyoub
     votant_rattache: true
     cible: lola-potabes
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: jacques-roque
     votant_rattache: true
     cible: charlotte-rasquin
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: sophia-mansouri
     votant_rattache: true
     cible: michel-huy
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: frederic-khouvilay
     votant_rattache: true
     cible: charlotte-rasquin
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: fabrice-giordano
     votant_rattache: true
     cible: lola-potabes
     cible_rattachee: true
-    annule: false
-  - votant: melissa-pierru
-    votant_rattache: true
-    cible: michel-huy
-    cible_rattachee: true
-    annule: false
+    annule: true
   - votant: michel-huy
     votant_rattache: true
     cible: lola-potabes
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: lola-potabes
     votant_rattache: true
     cible: michel-huy
     cible_rattachee: true
-    annule: false
+    annule: true
 - saison: s26
   numero: 5
+  type: elimination
+  complet: false
+  episode: '5'
+  elimine: nathanael-branchereau
+  elimine_rattache: true
+  votes_contre: null
+  votes_exprimes: null
+  votes: []
+- saison: s26
+  numero: 6
+  type: elimination
+  complet: false
+  episode: '5'
+  elimine: vanessa-feuillatte
+  elimine_rattache: true
+  votes_contre: null
+  votes_exprimes: null
+  votes: []
+- saison: s26
+  numero: 7
   type: elimination
   complet: false
   episode: '5'
@@ -16891,9 +18296,9 @@
   votes_exprimes: null
   votes: []
 - saison: s26
-  numero: 6
+  numero: 8
   type: elimination
-  complet: false
+  complet: true
   episode: '5'
   elimine: michel-huy
   elimine_rattache: true
@@ -16935,19 +18340,24 @@
     cible: melissa-pierru
     cible_rattachee: true
     annule: true
+  - votant: melissa-pierru
+    votant_rattache: true
+    cible: michel-huy
+    cible_rattachee: true
+    annule: false
   - votant: michel-huy
     votant_rattache: true
     cible: melissa-pierru
     cible_rattachee: true
     annule: true
 - saison: s26
-  numero: 7
+  numero: 9
   type: elimination
-  complet: false
+  complet: true
   episode: '6'
   elimine: melissa-pierru
   elimine_rattache: true
-  votes_contre: 6
+  votes_contre: 7
   votes_exprimes: 8
   votes:
   - votant: thibault-belanger
@@ -16985,8 +18395,13 @@
     cible: melissa-pierru
     cible_rattachee: true
     annule: false
+  - votant: melissa-pierru
+    votant_rattache: true
+    cible: frederic-khouvilay
+    cible_rattachee: true
+    annule: false
 - saison: s26
-  numero: 8
+  numero: 10
   type: elimination
   complet: false
   episode: '7'
@@ -17006,7 +18421,7 @@
     cible_rattachee: true
     annule: false
 - saison: s26
-  numero: 9
+  numero: 11
   type: elimination
   complet: false
   episode: '8'
@@ -17019,74 +18434,74 @@
     votant_rattache: true
     cible: sarah-aboudeine
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: charlotte-rasquin
     votant_rattache: true
     cible: sarah-aboudeine
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: ilyesse-benyoub
     votant_rattache: true
     cible: sarah-aboudeine
     cible_rattachee: true
-    annule: false
-  - votant: Cécile
-    votant_rattache: false
-    cible: fabrice-giordano
-    cible_rattachee: true
-    annule: false
+    annule: true
   - votant: jacques-roque
     votant_rattache: true
     cible: sarah-aboudeine
     cible_rattachee: true
-    annule: false
+    annule: true
+  - votant: Cécile B
+    votant_rattache: false
+    cible: fabrice-giordano
+    cible_rattachee: true
+    annule: true
   - votant: ugo-lartiche
     votant_rattache: true
     cible: fabrice-giordano
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: sophia-mansouri
     votant_rattache: true
     cible: sarah-aboudeine
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: cassandre-lambert
     votant_rattache: true
     cible: fabrice-giordano
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: gustin-comanescu
     votant_rattache: true
     cible: fabrice-giordano
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: maxim-iarkov
     votant_rattache: true
     cible: fabrice-giordano
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: frederic-khouvilay
     votant_rattache: true
     cible: sarah-aboudeine
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: sarah-aboudeine
     votant_rattache: true
     cible: fabrice-giordano
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: maud-collas
     votant_rattache: true
     cible: fabrice-giordano
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: fabrice-giordano
     votant_rattache: true
     cible: sarah-aboudeine
     cible_rattachee: true
-    annule: false
+    annule: true
 - saison: s26
-  numero: 10
+  numero: 12
   type: elimination
   complet: false
   episode: '9'
@@ -17096,7 +18511,7 @@
   votes_exprimes: null
   votes: []
 - saison: s26
-  numero: 11
+  numero: 13
   type: elimination
   complet: false
   episode: '9'
@@ -17115,14 +18530,14 @@
     cible: sarah-aboudeine
     cible_rattachee: true
     annule: false
-  - votant: Cécile
-    votant_rattache: false
-    cible: frederic-khouvilay
-    cible_rattachee: true
-    annule: false
   - votant: jacques-roque
     votant_rattache: true
     cible: sarah-aboudeine
+    cible_rattachee: true
+    annule: false
+  - votant: Cécile B
+    votant_rattache: false
+    cible: frederic-khouvilay
     cible_rattachee: true
     annule: false
   - votant: ugo-lartiche
@@ -17161,7 +18576,7 @@
     cible_rattachee: true
     annule: false
 - saison: s26
-  numero: 12
+  numero: 14
   type: elimination
   complet: false
   episode: '10'
@@ -17185,14 +18600,14 @@
     cible: ugo-lartiche
     cible_rattachee: true
     annule: false
-  - votant: Cécile
-    votant_rattache: false
-    cible: frederic-khouvilay
-    cible_rattachee: true
-    annule: false
   - votant: jacques-roque
     votant_rattache: true
     cible: ugo-lartiche
+    cible_rattachee: true
+    annule: false
+  - votant: Cécile B
+    votant_rattache: false
+    cible: frederic-khouvilay
     cible_rattachee: true
     annule: false
   - votant: ugo-lartiche
@@ -17226,7 +18641,7 @@
     cible_rattachee: true
     annule: false
 - saison: s26
-  numero: 13
+  numero: 15
   type: elimination
   complet: false
   episode: '11'
@@ -17250,13 +18665,13 @@
     cible: maxim-iarkov
     cible_rattachee: true
     annule: false
-  - votant: Cécile
-    votant_rattache: false
+  - votant: jacques-roque
+    votant_rattache: true
     cible: maxim-iarkov
     cible_rattachee: true
     annule: false
-  - votant: jacques-roque
-    votant_rattache: true
+  - votant: Cécile B
+    votant_rattache: false
     cible: maxim-iarkov
     cible_rattachee: true
     annule: false
@@ -17286,17 +18701,17 @@
     cible_rattachee: true
     annule: false
 - saison: s26
-  numero: 14
+  numero: 16
   type: elimination
   complet: false
   episode: '11'
   elimine: cassandre-lambert
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
+  votes_contre: 6
+  votes_exprimes: 11
   votes: []
 - saison: s26
-  numero: 15
+  numero: 17
   type: elimination
   complet: false
   episode: '12'
@@ -17320,16 +18735,16 @@
     cible: Cécile
     cible_rattachee: false
     annule: false
-  - votant: Cécile
-    votant_rattache: false
-    cible: gustin-comanescu
-    cible_rattachee: true
-    annule: false
   - votant: jacques-roque
     votant_rattache: true
     cible: cassandre-lambert
     cible_rattachee: true
     annule: true
+  - votant: Cécile B
+    votant_rattache: false
+    cible: gustin-comanescu
+    cible_rattachee: true
+    annule: false
   - votant: ugo-lartiche
     votant_rattache: true
     cible: gustin-comanescu
@@ -17351,7 +18766,7 @@
     cible_rattachee: false
     annule: false
 - saison: s26
-  numero: 16
+  numero: 18
   type: elimination
   complet: false
   episode: '13'
@@ -17369,39 +18784,39 @@
     votant_rattache: true
     cible: cassandre-lambert
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: ilyesse-benyoub
     votant_rattache: true
     cible: ugo-lartiche
     cible_rattachee: true
     annule: true
-  - votant: Cécile
-    votant_rattache: false
-    cible: ilyesse-benyoub
-    cible_rattachee: true
-    annule: false
   - votant: jacques-roque
     votant_rattache: true
     cible: cassandre-lambert
     cible_rattachee: true
-    annule: false
+    annule: true
+  - votant: Cécile B
+    votant_rattache: false
+    cible: ilyesse-benyoub
+    cible_rattachee: true
+    annule: true
   - votant: ugo-lartiche
     votant_rattache: true
     cible: ilyesse-benyoub
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: sophia-mansouri
     votant_rattache: true
     cible: cassandre-lambert
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: cassandre-lambert
     votant_rattache: true
     cible: ilyesse-benyoub
     cible_rattachee: true
-    annule: false
+    annule: true
 - saison: s26
-  numero: 17
+  numero: 19
   type: elimination
   complet: false
   episode: '14'
@@ -17411,7 +18826,7 @@
   votes_exprimes: null
   votes: []
 - saison: s26
-  numero: 18
+  numero: 20
   type: elimination
   complet: false
   episode: '14'
@@ -17435,13 +18850,13 @@
     cible: ugo-lartiche
     cible_rattachee: true
     annule: false
-  - votant: Cécile
-    votant_rattache: false
+  - votant: jacques-roque
+    votant_rattache: true
     cible: ugo-lartiche
     cible_rattachee: true
     annule: false
-  - votant: jacques-roque
-    votant_rattache: true
+  - votant: Cécile B
+    votant_rattache: false
     cible: ugo-lartiche
     cible_rattachee: true
     annule: false
@@ -17451,22 +18866,7 @@
     cible_rattachee: true
     annule: false
 - saison: s26
-  numero: 19
-  type: elimination
-  complet: false
-  episode: '15'
-  elimine: jacques-roque
-  elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
-  votes:
-  - votant: emmanuelle-boisseau
-    votant_rattache: true
-    cible: thibault-belanger
-    cible_rattachee: true
-    annule: false
-- saison: s26
-  numero: 20
+  numero: 21
   type: elimination
   complet: false
   episode: '15'
@@ -17476,7 +18876,17 @@
   votes_exprimes: null
   votes: []
 - saison: s26
-  numero: 21
+  numero: 22
+  type: elimination
+  complet: false
+  episode: '15'
+  elimine: jacques-roque
+  elimine_rattache: true
+  votes_contre: 0
+  votes_exprimes: null
+  votes: []
+- saison: s26
+  numero: 23
   type: elimination
   complet: false
   episode: '16'
@@ -17490,13 +18900,8 @@
     cible: ilyesse-benyoub
     cible_rattachee: true
     annule: false
-  - votant: maxim-iarkov
-    votant_rattache: true
-    cible: charlotte-rasquin
-    cible_rattachee: true
-    annule: false
 - saison: s26
-  numero: 22
+  numero: 24
   type: elimination
   complet: false
   episode: '16'
@@ -17505,7 +18910,7 @@
   votes_contre: 4
   votes_exprimes: 13
   votes:
-  - votant: Cécile
+  - votant: Cécile B
     votant_rattache: false
     cible: charlotte-rasquin
     cible_rattachee: true
@@ -17520,8 +18925,13 @@
     cible: charlotte-rasquin
     cible_rattachee: true
     annule: false
+  - votant: maxim-iarkov
+    votant_rattache: true
+    cible: charlotte-rasquin
+    cible_rattachee: true
+    annule: false
 - saison: s26
-  numero: 23
+  numero: 25
   type: jury
   complet: false
   episode: '16'
@@ -17566,6 +18976,11 @@
     cible_rattachee: true
     annule: false
   - votant: fabrice-giordano
+    votant_rattache: true
+    cible: thibault-belanger
+    cible_rattachee: true
+    annule: false
+  - votant: emmanuelle-boisseau
     votant_rattache: true
     cible: thibault-belanger
     cible_rattachee: true
@@ -17832,9 +19247,14 @@
   episode: '6'
   elimine: pauline-leperchois
   elimine_rattache: true
-  votes_contre: null
-  votes_exprimes: null
+  votes_contre: 9
+  votes_exprimes: 11
   votes:
+  - votant: Jérôme
+    votant_rattache: false
+    cible: andrea-zogron
+    cible_rattachee: true
+    annule: true
   - votant: Jérôme
     votant_rattache: false
     cible: andrea-zogron
@@ -17842,11 +19262,6 @@
     annule: true
   - votant: claire-passas
     votant_rattache: true
-    cible: andrea-zogron
-    cible_rattachee: true
-    annule: true
-  - votant: Jérôme
-    votant_rattache: false
     cible: andrea-zogron
     cible_rattachee: true
     annule: true
@@ -17895,13 +19310,13 @@
     cible: andrea-zogron
     cible_rattachee: true
     annule: false
-  - votant: claire-passas
-    votant_rattache: true
+  - votant: Jérôme
+    votant_rattache: false
     cible: andrea-zogron
     cible_rattachee: true
     annule: false
-  - votant: Jérôme
-    votant_rattache: false
+  - votant: claire-passas
+    votant_rattache: true
     cible: andrea-zogron
     cible_rattachee: true
     annule: false
@@ -17974,72 +19389,72 @@
     votant_rattache: true
     cible: adrien-bernaert
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: mael-lozach
     votant_rattache: true
     cible: adrien-bernaert
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: Jérôme
     votant_rattache: false
     cible: noemie-bessec
     cible_rattachee: true
-    annule: false
+    annule: true
+  - votant: Jérôme
+    votant_rattache: false
+    cible: adrien-bernaert
+    cible_rattachee: true
+    annule: true
   - votant: claire-passas
     votant_rattache: true
     cible: noemie-bessec
     cible_rattachee: true
-    annule: false
-  - votant: Jérôme
-    votant_rattache: false
-    cible: adrien-bernaert
-    cible_rattachee: true
-    annule: false
+    annule: true
   - votant: celine-faccio
     votant_rattache: true
     cible: adrien-bernaert
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: noemie-bessec
     votant_rattache: true
     cible: adrien-bernaert
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: pierre-marie-ponsot
     votant_rattache: true
     cible: noemie-bessec
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: nais-napoletano
     votant_rattache: true
     cible: noemie-bessec
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: joana-callico
     votant_rattache: true
     cible: noemie-bessec
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: louise-picavet
     votant_rattache: true
     cible: adrien-bernaert
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: jessica-murcia
     votant_rattache: true
     cible: noemie-bessec
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: frederic-pignard
     votant_rattache: true
     cible: adrien-bernaert
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: adrien-bernaert
     votant_rattache: true
     cible: noemie-bessec
     cible_rattachee: true
-    annule: false
+    annule: true
 - saison: s27
   numero: 13
   type: elimination
@@ -18085,14 +19500,14 @@
     cible: louise-picavet
     cible_rattachee: true
     annule: false
-  - votant: claire-passas
-    votant_rattache: true
-    cible: louise-picavet
-    cible_rattachee: true
-    annule: false
   - votant: Jérôme
     votant_rattache: false
     cible: nais-napoletano
+    cible_rattachee: true
+    annule: false
+  - votant: claire-passas
+    votant_rattache: true
+    cible: louise-picavet
     cible_rattachee: true
     annule: false
   - votant: celine-faccio
@@ -18155,14 +19570,14 @@
     cible: joana-callico
     cible_rattachee: true
     annule: false
-  - votant: claire-passas
-    votant_rattache: true
-    cible: nais-napoletano
-    cible_rattachee: true
-    annule: false
   - votant: Jérôme
     votant_rattache: false
     cible: joana-callico
+    cible_rattachee: true
+    annule: false
+  - votant: claire-passas
+    votant_rattache: true
+    cible: nais-napoletano
     cible_rattachee: true
     annule: false
   - votant: celine-faccio
@@ -18215,9 +19630,9 @@
     cible: nais-napoletano
     cible_rattachee: true
     annule: false
-  - votant: claire-passas
-    votant_rattache: true
-    cible: Jérôme
+  - votant: Jérôme
+    votant_rattache: false
+    cible: Jérôme (O)
     cible_rattachee: false
     annule: true
   - votant: Jérôme
@@ -18225,6 +19640,11 @@
     cible: nais-napoletano
     cible_rattachee: true
     annule: false
+  - votant: claire-passas
+    votant_rattache: true
+    cible: Jérôme (O)
+    cible_rattachee: false
+    annule: true
   - votant: celine-faccio
     votant_rattache: true
     cible: nais-napoletano
@@ -18242,12 +19662,12 @@
     annule: false
   - votant: pierre-marie-ponsot
     votant_rattache: true
-    cible: Jérôme
+    cible: Jérôme (O)
     cible_rattachee: false
     annule: true
   - votant: nais-napoletano
     votant_rattache: true
-    cible: Jérôme
+    cible: Jérôme (O)
     cible_rattachee: false
     annule: true
 - saison: s27
@@ -18257,8 +19677,8 @@
   episode: '12'
   elimine: pierre-marie-ponsot
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
+  votes_contre: 6
+  votes_exprimes: 11
   votes: []
 - saison: s27
   numero: 19
@@ -18295,14 +19715,14 @@
     cible: noemie-bessec
     cible_rattachee: true
     annule: false
-  - votant: claire-passas
-    votant_rattache: true
-    cible: noemie-bessec
-    cible_rattachee: true
-    annule: false
   - votant: Jérôme
     votant_rattache: false
     cible: gaelle-fleury
+    cible_rattachee: true
+    annule: false
+  - votant: claire-passas
+    votant_rattache: true
+    cible: noemie-bessec
     cible_rattachee: true
     annule: false
   - votant: celine-faccio
@@ -18340,13 +19760,13 @@
     cible: celine-faccio
     cible_rattachee: true
     annule: false
-  - votant: claire-passas
-    votant_rattache: true
+  - votant: Jérôme
+    votant_rattache: false
     cible: celine-faccio
     cible_rattachee: true
     annule: false
-  - votant: Jérôme
-    votant_rattache: false
+  - votant: claire-passas
+    votant_rattache: true
     cible: celine-faccio
     cible_rattachee: true
     annule: false
@@ -18360,8 +19780,8 @@
   type: elimination
   complet: false
   episode: '16'
-  elimine: Jérôme
-  elimine_rattache: false
+  elimine: claire-passas
+  elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
   votes: []
@@ -18370,8 +19790,8 @@
   type: elimination
   complet: false
   episode: '16'
-  elimine: claire-passas
-  elimine_rattache: true
+  elimine: Jérôme
+  elimine_rattache: false
   votes_contre: 0
   votes_exprimes: null
   votes: []
@@ -18382,7 +19802,7 @@
   episode: '17'
   elimine: Jérôme
   elimine_rattache: false
-  votes_contre: 1
+  votes_contre: 0
   votes_exprimes: null
   votes:
   - votant: gaelle-fleury
@@ -18472,61 +19892,71 @@
   episode: '1'
   elimine: lionel-dubouchet
   elimine_rattache: true
-  votes_contre: 9
+  votes_contre: 1
   votes_exprimes: 10
   votes:
   - votant: clarisse-cresseveur
     votant_rattache: true
     cible: lionel-dubouchet
     cible_rattachee: true
-    annule: true
+    annule: false
   - votant: caroline-ledos
     votant_rattache: true
     cible: lionel-dubouchet
     cible_rattachee: true
-    annule: true
+    annule: false
   - votant: daniel-duquesnoy
     votant_rattache: true
     cible: lionel-dubouchet
     cible_rattachee: true
-    annule: true
+    annule: false
   - votant: zakariya-bougoudouima
     votant_rattache: true
     cible: lionel-dubouchet
     cible_rattachee: true
-    annule: true
+    annule: false
   - votant: antonin-fortunato
     votant_rattache: true
     cible: lionel-dubouchet
     cible_rattachee: true
-    annule: true
+    annule: false
   - votant: cindy-sulpice-gonzalez
     votant_rattache: true
     cible: lionel-dubouchet
     cible_rattachee: true
-    annule: true
+    annule: false
   - votant: johan-pinaud
     votant_rattache: true
     cible: lionel-dubouchet
     cible_rattachee: true
-    annule: true
+    annule: false
   - votant: lionel-dubouchet
     votant_rattache: true
     cible: francoise-fournier-grigis
     cible_rattachee: true
-    annule: true
+    annule: false
   - votant: karine-iraundegui
     votant_rattache: true
     cible: lionel-dubouchet
     cible_rattachee: true
-    annule: true
+    annule: false
   - votant: francoise-fournier-grigis
     votant_rattache: true
     cible: lionel-dubouchet
     cible_rattachee: true
-    annule: true
+    annule: false
 - saison: s28
   numero: 2
+  type: elimination
+  complet: false
+  episode: '1'
+  elimine: francoise-fournier-grigis
+  elimine_rattache: true
+  votes_contre: 0
+  votes_exprimes: null
+  votes: []
+- saison: s28
+  numero: 3
   type: elimination
   complet: true
   episode: '2'
@@ -18586,7 +20016,7 @@
     cible_rattachee: true
     annule: false
 - saison: s28
-  numero: 3
+  numero: 4
   type: elimination
   complet: true
   episode: '3'
@@ -18641,7 +20071,7 @@
     cible_rattachee: true
     annule: false
 - saison: s28
-  numero: 4
+  numero: 5
   type: elimination
   complet: true
   episode: '4'
@@ -18691,7 +20121,7 @@
     cible_rattachee: true
     annule: false
 - saison: s28
-  numero: 5
+  numero: 6
   type: elimination
   complet: true
   episode: '5'
@@ -18746,7 +20176,7 @@
     cible_rattachee: true
     annule: false
 - saison: s28
-  numero: 6
+  numero: 7
   type: elimination
   complet: true
   episode: '6'
@@ -18796,7 +20226,7 @@
     cible_rattachee: true
     annule: false
 - saison: s28
-  numero: 7
+  numero: 8
   type: elimination
   complet: false
   episode: '7'
@@ -18805,12 +20235,12 @@
   votes_contre: 4
   votes_exprimes: null
   votes:
-  - votant: zakariya-bougoudouima
+  - votant: cynthia-combes
     votant_rattache: true
     cible: jonathan-guez
     cible_rattachee: true
     annule: false
-  - votant: jade-correa
+  - votant: zakariya-bougoudouima
     votant_rattache: true
     cible: jonathan-guez
     cible_rattachee: true
@@ -18826,12 +20256,12 @@
     cible_rattachee: true
     annule: false
 - saison: s28
-  numero: 8
+  numero: 9
   type: elimination
   complet: false
   episode: '8'
-  elimine: ulrich-bandeira
-  elimine_rattache: true
+  elimine: Égalité
+  elimine_rattache: false
   votes_contre: null
   votes_exprimes: null
   votes:
@@ -18906,7 +20336,87 @@
     cible_rattachee: true
     annule: true
 - saison: s28
-  numero: 9
+  numero: 10
+  type: elimination
+  complet: true
+  episode: '8'
+  elimine: ulrich-bandeira
+  elimine_rattache: true
+  votes_contre: 7
+  votes_exprimes: 14
+  votes:
+  - votant: cynthia-combes
+    votant_rattache: true
+    cible: antonin-fortunato
+    cible_rattachee: true
+    annule: false
+  - votant: clarisse-cresseveur
+    votant_rattache: true
+    cible: ulrich-bandeira
+    cible_rattachee: true
+    annule: false
+  - votant: guillaume-le-deun
+    votant_rattache: true
+    cible: antonin-fortunato
+    cible_rattachee: true
+    annule: false
+  - votant: caroline-ledos
+    votant_rattache: true
+    cible: ulrich-bandeira
+    cible_rattachee: true
+    annule: false
+  - votant: hugo-van-aertryck
+    votant_rattache: true
+    cible: antonin-fortunato
+    cible_rattachee: true
+    annule: false
+  - votant: daniel-duquesnoy
+    votant_rattache: true
+    cible: ulrich-bandeira
+    cible_rattachee: true
+    annule: false
+  - votant: zakariya-bougoudouima
+    votant_rattache: true
+    cible: ulrich-bandeira
+    cible_rattachee: true
+    annule: false
+  - votant: antonin-fortunato
+    votant_rattache: true
+    cible: ulrich-bandeira
+    cible_rattachee: true
+    annule: false
+  - votant: cindy-sulpice-gonzalez
+    votant_rattache: true
+    cible: ulrich-bandeira
+    cible_rattachee: true
+    annule: false
+  - votant: jade-correa
+    votant_rattache: true
+    cible: antonin-fortunato
+    cible_rattachee: true
+    annule: false
+  - votant: lola-krast
+    votant_rattache: true
+    cible: antonin-fortunato
+    cible_rattachee: true
+    annule: false
+  - votant: paul-estival
+    votant_rattache: true
+    cible: antonin-fortunato
+    cible_rattachee: true
+    annule: false
+  - votant: johan-pinaud
+    votant_rattache: true
+    cible: ulrich-bandeira
+    cible_rattachee: true
+    annule: false
+  - votant: ulrich-bandeira
+    votant_rattache: true
+    cible: antonin-fortunato
+    cible_rattachee: true
+    annule: false
+- saison: s28
+  numero: 11
   type: elimination
   complet: true
   episode: '9'
@@ -18981,7 +20491,7 @@
     cible_rattachee: true
     annule: true
 - saison: s28
-  numero: 10
+  numero: 12
   type: elimination
   complet: false
   episode: '10'
@@ -18991,7 +20501,7 @@
   votes_exprimes: null
   votes: []
 - saison: s28
-  numero: 11
+  numero: 13
   type: elimination
   complet: true
   episode: '10'
@@ -19032,7 +20542,7 @@
     annule: false
   - votant: zakariya-bougoudouima
     votant_rattache: true
-    cible: guillaume-le-deun
+    cible: caroline-ledos
     cible_rattachee: true
     annule: false
   - votant: antonin-fortunato
@@ -19056,7 +20566,7 @@
     cible_rattachee: true
     annule: false
 - saison: s28
-  numero: 12
+  numero: 14
   type: elimination
   complet: true
   episode: '11'
@@ -19116,22 +20626,22 @@
     cible_rattachee: true
     annule: false
 - saison: s28
-  numero: 13
+  numero: 15
   type: elimination
   complet: false
   episode: '11'
   elimine: jade-correa
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
+  votes_contre: 8
+  votes_exprimes: 10
   votes: []
 - saison: s28
-  numero: 14
+  numero: 16
   type: elimination
   complet: false
   episode: '12'
-  elimine: hugo-van-aertryck
-  elimine_rattache: true
+  elimine: Égalité
+  elimine_rattache: false
   votes_contre: null
   votes_exprimes: null
   votes:
@@ -19181,7 +20691,72 @@
     cible_rattachee: true
     annule: true
 - saison: s28
-  numero: 15
+  numero: 17
+  type: elimination
+  complet: true
+  episode: '12'
+  elimine: hugo-van-aertryck
+  elimine_rattache: true
+  votes_contre: 6
+  votes_exprimes: 9
+  votes:
+  - votant: cynthia-combes
+    votant_rattache: true
+    cible: caroline-ledos
+    cible_rattachee: true
+    annule: false
+  - votant: clarisse-cresseveur
+    votant_rattache: true
+    cible: hugo-van-aertryck
+    cible_rattachee: true
+    annule: false
+  - votant: guillaume-le-deun
+    votant_rattache: true
+    cible: hugo-van-aertryck
+    cible_rattachee: true
+    annule: false
+  - votant: caroline-ledos
+    votant_rattache: true
+    cible: hugo-van-aertryck
+    cible_rattachee: true
+    annule: false
+  - votant: hugo-van-aertryck
+    votant_rattache: true
+    cible: caroline-ledos
+    cible_rattachee: true
+    annule: false
+  - votant: daniel-duquesnoy
+    votant_rattache: true
+    cible: hugo-van-aertryck
+    cible_rattachee: true
+    annule: false
+  - votant: zakariya-bougoudouima
+    votant_rattache: true
+    cible: hugo-van-aertryck
+    cible_rattachee: true
+    annule: false
+  - votant: antonin-fortunato
+    votant_rattache: true
+    cible: hugo-van-aertryck
+    cible_rattachee: true
+    annule: false
+  - votant: cindy-sulpice-gonzalez
+    votant_rattache: true
+    cible: hugo-van-aertryck
+    cible_rattachee: true
+    annule: false
+- saison: s28
+  numero: 18
+  type: elimination
+  complet: false
+  episode: '13'
+  elimine: cindy-sulpice-gonzalez
+  elimine_rattache: true
+  votes_contre: 0
+  votes_exprimes: null
+  votes: []
+- saison: s28
+  numero: 19
   type: elimination
   complet: true
   episode: '13'
@@ -19197,7 +20772,7 @@
     annule: false
   - votant: clarisse-cresseveur
     votant_rattache: true
-    cible: hugo-van-aertryck
+    cible: cynthia-combes
     cible_rattachee: true
     annule: true
   - votant: guillaume-le-deun
@@ -19217,7 +20792,7 @@
     annule: false
   - votant: daniel-duquesnoy
     votant_rattache: true
-    cible: cynthia-combes
+    cible: hugo-van-aertryck
     cible_rattachee: true
     annule: true
   - votant: zakariya-bougoudouima
@@ -19231,7 +20806,7 @@
     cible_rattachee: true
     annule: true
 - saison: s28
-  numero: 16
+  numero: 20
   type: elimination
   complet: false
   episode: '14'
@@ -19241,7 +20816,7 @@
   votes_exprimes: null
   votes: []
 - saison: s28
-  numero: 17
+  numero: 21
   type: elimination
   complet: true
   episode: '14'
@@ -19276,7 +20851,17 @@
     cible_rattachee: true
     annule: false
 - saison: s28
-  numero: 18
+  numero: 22
+  type: elimination
+  complet: false
+  episode: '15'
+  elimine: daniel-duquesnoy
+  elimine_rattache: true
+  votes_contre: 0
+  votes_exprimes: null
+  votes: []
+- saison: s28
+  numero: 23
   type: elimination
   complet: false
   episode: '15'
@@ -19286,7 +20871,7 @@
   votes_exprimes: null
   votes: []
 - saison: s28
-  numero: 19
+  numero: 24
   type: elimination
   complet: false
   episode: '15'
@@ -19296,7 +20881,7 @@
   votes_exprimes: null
   votes: []
 - saison: s28
-  numero: 20
+  numero: 25
   type: elimination
   complet: false
   episode: '16'
@@ -19311,7 +20896,7 @@
     cible_rattachee: true
     annule: false
 - saison: s28
-  numero: 21
+  numero: 26
   type: elimination
   complet: false
   episode: '16'
@@ -19330,13 +20915,13 @@
     cible: clarisse-cresseveur
     cible_rattachee: true
     annule: false
-  - votant: antonin-fortunato
+  - votant: cindy-sulpice-gonzalez
     votant_rattache: true
     cible: clarisse-cresseveur
     cible_rattachee: true
     annule: false
 - saison: s28
-  numero: 22
+  numero: 27
   type: jury
   complet: false
   episode: '16'
@@ -19360,7 +20945,7 @@
     cible: cynthia-combes
     cible_rattachee: true
     annule: false
-  - votant: cindy-sulpice-gonzalez
+  - votant: antonin-fortunato
     votant_rattache: true
     cible: cynthia-combes
     cible_rattachee: true
@@ -23740,10 +25325,110 @@
   type: elimination
   complet: false
   episode: '1'
-  elimine: maxime-lubian
-  elimine_rattache: true
+  elimine: '{{Tribebox-bw'
+  elimine_rattache: false
   votes_contre: null
   votes_exprimes: null
+  votes:
+  - votant: camille-sold
+    votant_rattache: true
+    cible: maxime-lubian
+    cible_rattachee: true
+    annule: true
+  - votant: charlotte-rasquin
+    votant_rattache: true
+    cible: laure-canevarolo
+    cible_rattachee: true
+    annule: true
+  - votant: christina-chevry
+    votant_rattache: true
+    cible: laure-canevarolo
+    cible_rattachee: true
+    annule: true
+  - votant: clementine-jullien
+    votant_rattache: true
+    cible: laure-canevarolo
+    cible_rattachee: true
+    annule: true
+  - votant: dorian-louvet
+    votant_rattache: true
+    cible: maxime-lubian
+    cible_rattachee: true
+    annule: true
+  - votant: freddy-boucher
+    votant_rattache: true
+    cible: laure-canevarolo
+    cible_rattachee: true
+    annule: true
+  - votant: jacques-roque
+    votant_rattache: true
+    cible: laure-canevarolo
+    cible_rattachee: true
+    annule: true
+  - votant: joana-callico
+    votant_rattache: true
+    cible: laure-canevarolo
+    cible_rattachee: true
+    annule: true
+  - votant: laure-canevarolo
+    votant_rattache: true
+    cible: maxime-lubian
+    cible_rattachee: true
+    annule: true
+  - votant: lola-besse
+    votant_rattache: true
+    cible: maxime-lubian
+    cible_rattachee: true
+    annule: true
+  - votant: maxime-lubian
+    votant_rattache: true
+    cible: laure-canevarolo
+    cible_rattachee: true
+    annule: true
+  - votant: moussa-niangane
+    votant_rattache: true
+    cible: laure-canevarolo
+    cible_rattachee: true
+    annule: true
+  - votant: naoil-tita
+    votant_rattache: true
+    cible: laure-canevarolo
+    cible_rattachee: true
+    annule: true
+  - votant: nicolas-pretot
+    votant_rattache: true
+    cible: maxime-lubian
+    cible_rattachee: true
+    annule: true
+  - votant: tania-cakarevic
+    votant_rattache: true
+    cible: maxime-lubian
+    cible_rattachee: true
+    annule: true
+  - votant: ugo-lartiche
+    votant_rattache: true
+    cible: maxime-lubian
+    cible_rattachee: true
+    annule: true
+  - votant: vincent-blier
+    votant_rattache: true
+    cible: maxime-lubian
+    cible_rattachee: true
+    annule: true
+  - votant: yassin-metiri
+    votant_rattache: true
+    cible: maxime-lubian
+    cible_rattachee: true
+    annule: true
+- saison: sp8
+  numero: 2
+  type: elimination
+  complet: true
+  episode: '1'
+  elimine: '}} Égalité'
+  elimine_rattache: false
+  votes_contre: 11
+  votes_exprimes: 18
   votes:
   - votant: camille-sold
     votant_rattache: true
@@ -23762,7 +25447,7 @@
     annule: false
   - votant: clementine-jullien
     votant_rattache: true
-    cible: laure-canevarolo
+    cible: maxime-lubian
     cible_rattachee: true
     annule: false
   - votant: dorian-louvet
@@ -23777,7 +25462,7 @@
     annule: false
   - votant: jacques-roque
     votant_rattache: true
-    cible: laure-canevarolo
+    cible: maxime-lubian
     cible_rattachee: true
     annule: false
   - votant: joana-callico
@@ -23836,12 +25521,22 @@
     cible_rattachee: true
     annule: false
 - saison: sp8
-  numero: 2
+  numero: 3
   type: elimination
   complet: false
   episode: '1'
+  elimine: maxime-lubian
+  elimine_rattache: true
+  votes_contre: 11
+  votes_exprimes: 18
+  votes: []
+- saison: sp8
+  numero: 4
+  type: elimination
+  complet: false
+  episode: null
   elimine: joana-callico
   elimine_rattache: true
-  votes_contre: 0
+  votes_contre: null
   votes_exprimes: null
   votes: []

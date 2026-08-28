@@ -1363,32 +1363,32 @@ records:
     - sp7
   nb_multi_participants: 83
 conseils:
-  conseils: 655
-  conseils_avec_decompte: 416
-  conseils_complets: 264
-  bulletins: 3188
-  bulletins_conseils_complets: 2063
+  conseils: 662
+  conseils_avec_decompte: 421
+  conseils_complets: 277
+  bulletins: 3477
+  bulletins_conseils_complets: 2167
   part_unanimes: 0.2
-  part_serres: 47.6
-  voix_annulees_par_collier: 296
-  conseils_avec_collier_joue: 72
+  part_serres: 47.5
+  voix_annulees_par_collier: 355
+  conseils_avec_collier_joue: 79
   vote_par_genre:
   - votant: h
     cible: f
-    effectif: 599
+    effectif: 630
     part: 30.4
   - votant: f
     cible: h
-    effectif: 476
-    part: 24.2
+    effectif: 499
+    part: 24.1
   - votant: h
     cible: h
-    effectif: 460
-    part: 23.4
+    effectif: 480
+    part: 23.1
   - votant: f
     cible: f
-    effectif: 435
-    part: 22.1
+    effectif: 465
+    part: 22.4
 jury:
   effectif: 32
   scrutins:
@@ -1531,12 +1531,12 @@ jury:
     laureat: Alexandra Pornet
     voix_pour: 7
     voix_exprimees: 12
-    bulletins_releves: 0
+    bulletins_releves: 7
   - saison: s22
     titre: Les Armes secrètes
     annee: 2021
     laureat: Maxine Eouzan
-    voix_pour: 9
+    voix_pour: 4
     voix_exprimees: 13
     bulletins_releves: 9
   - saison: s23
@@ -1545,14 +1545,14 @@ jury:
     laureat: François Descamp
     voix_pour: 4
     voix_exprimees: 11
-    bulletins_releves: 0
+    bulletins_releves: 3
   - saison: s23
     titre: Le Totem maudit
     annee: 2022
     laureat: Bastien San Pedro
     voix_pour: 4
     voix_exprimees: 11
-    bulletins_releves: 0
+    bulletins_releves: 3
   - saison: s24
     titre: Le Feu sacré
     annee: 2023
@@ -1566,7 +1566,7 @@ jury:
     laureat: Thibault Bélanger
     voix_pour: 9
     voix_exprimees: 13
-    bulletins_releves: 8
+    bulletins_releves: 9
   - saison: s27
     titre: La Revanche des 4 Terres
     annee: 2025
@@ -6093,9 +6093,9 @@ programme:
     premiere: 2024
     derniere: 2024
 reciprocite:
-  couples: 1750
-  reciproques: 672
-  part: 38.4
+  couples: 1850
+  reciproques: 696
+  part: 37.6
 arc_des_votes:
   saison: s16
   titre: L'Île au trésor
@@ -6535,36 +6535,36 @@ arc_des_votes:
     poids: 1
   bulletins: 130
 voix_pour_eliminer:
-  effectif: 412
+  effectif: 417
   mode: 4
   repartition:
   - voix: 1
-    effectif: 7
-    part: 1.7
+    effectif: 8
+    part: 1.9
   - voix: 2
     effectif: 13
-    part: 3.2
+    part: 3.1
   - voix: 3
     effectif: 43
-    part: 10.4
+    part: 10.3
   - voix: 4
-    effectif: 102
-    part: 24.8
+    effectif: 101
+    part: 24.2
   - voix: 5
     effectif: 89
-    part: 21.6
+    part: 21.3
   - voix: 6
-    effectif: 87
+    effectif: 88
     part: 21.1
   - voix: 7
-    effectif: 40
-    part: 9.7
+    effectif: 42
+    part: 10.1
   - voix: 8
-    effectif: 22
-    part: 5.3
+    effectif: 23
+    part: 5.5
   - voix: 9
-    effectif: 7
-    part: 1.7
+    effectif: 8
+    part: 1.9
   - voix: 10
     effectif: 1
     part: 0.2
@@ -6590,8 +6590,8 @@ epreuves:
   immunites: 392
   conforts: 374
   seuil_classement: 8
-  classement_effectif: 148
-  ratio_moyen: 19.7
+  classement_effectif: 149
+  ratio_moyen: 19.8
   classement_ratio:
   - personne: Claude Dartois
     id: claude-dartois
@@ -7057,7 +7057,7 @@ colliers:
 indicateurs:
   seuil_conseils: 4
   seuil_epreuves: 8
-  mesurables: 473
+  mesurables: 477
   meilleure_justesse:
   - nom: Marianne Mondon
     saison: s02
@@ -7161,8 +7161,8 @@ indicateurs:
     titre: Le Totem maudit
     annee: 2022
     speciale: false
-    valeur: 4.5
-    base: 6
+    valeur: 3.86
+    base: 7
     sort: elimine_conseil
   - nom: Marvyn Leone
     saison: s18
@@ -7179,14 +7179,6 @@ indicateurs:
     speciale: true
     valeur: 2.55
     base: 11
-    sort: elimine_conseil
-  - nom: Yannick Zachée
-    saison: s23
-    titre: Le Totem maudit
-    annee: 2022
-    speciale: false
-    valeur: 2.5
-    base: 8
     sort: elimine_conseil
   - nom: Sarah Aboudeine
     saison: s26
@@ -7243,6 +7235,14 @@ indicateurs:
     speciale: true
     valeur: 1.83
     base: 12
+    sort: elimine_conseil
+  - nom: Yannick Zachée
+    saison: s23
+    titre: Le Totem maudit
+    annee: 2022
+    speciale: false
+    valeur: 1.82
+    base: 11
     sort: elimine_conseil
   - nom: Michèle Valembois
     saison: s01
@@ -7375,7 +7375,7 @@ indicateurs:
     saison: s21
     titre: Les 4 Terres
     annee: 2020
-    conseils: 17
+    conseils: 18
     sort: elimine_poteaux
     survie: 100.0
   - nom: Thibault Bélanger
@@ -7392,6 +7392,20 @@ indicateurs:
     conseils: 17
     sort: elimine_orientation
     survie: 95.0
+  - nom: François Descamp
+    saison: s23
+    titre: Le Totem maudit
+    annee: 2022
+    conseils: 16
+    sort: vainqueur
+    survie: 100.0
+  - nom: Bastien San Pedro
+    saison: s23
+    titre: Le Totem maudit
+    annee: 2022
+    conseils: 16
+    sort: vainqueur
+    survie: 100.0
   - nom: Sandrine Dubourdy
     saison: s18
     titre: Fidji
@@ -7399,6 +7413,13 @@ indicateurs:
     conseils: 16
     sort: elimine_orientation
     survie: 97.6
+  - nom: Claire Passas
+    saison: s27
+    titre: La Revanche des 4 Terres
+    annee: 2025
+    conseils: 16
+    sort: elimine_orientation
+    survie: 97.5
   - nom: Clémence Castel
     saison: s05
     titre: Pacifique
@@ -7413,94 +7434,73 @@ indicateurs:
     conseils: 15
     sort: elimine_poteaux
     survie: 100.0
-  - nom: Gérard Urdampilleta
-    saison: s11
-    titre: Raja Ampat
-    annee: 2011
-    conseils: 15
-    sort: vainqueur
-    survie: 100.0
-  - nom: Mohamed Derradji
-    saison: s05
-    titre: Pacifique
-    annee: 2005
-    conseils: 15
-    sort: elimine_poteaux
-    survie: 97.5
-  - nom: Claire Passas
-    saison: s27
-    titre: La Revanche des 4 Terres
-    annee: 2025
-    conseils: 15
-    sort: elimine_orientation
-    survie: 97.5
-  nb_fantomes: 65
+  nb_fantomes: 67
   fantomes_issue:
   - sort: abandon_medical
     libelle: Abandon médical
     effectif: 15
-    part_fantomes: 23.1
+    part_fantomes: 22.4
     part_ensemble: 7.7
-    part_endurants: 5.5
+    part_endurants: 5.4
+  - sort: elimine_conseil
+    libelle: Éliminé au conseil
+    effectif: 13
+    part_fantomes: 19.4
+    part_ensemble: 64.0
+    part_endurants: 60.3
   - sort: vainqueur
     libelle: Vainqueur
     effectif: 12
-    part_fantomes: 18.5
+    part_fantomes: 17.9
     part_ensemble: 5.7
-    part_endurants: 8.2
-  - sort: elimine_conseil
-    libelle: Éliminé au conseil
-    effectif: 11
-    part_fantomes: 16.9
-    part_ensemble: 64.0
-    part_endurants: 59.8
+    part_endurants: 8.1
   - sort: elimine_ambassadeurs
     libelle: Éliminé aux ambassadeurs
     effectif: 7
-    part_fantomes: 10.8
+    part_fantomes: 10.4
     part_ensemble: 3.2
     part_endurants: 3.2
   - sort: elimine_orientation
     libelle: Éliminé à l'orientation
     effectif: 6
-    part_fantomes: 9.2
+    part_fantomes: 9.0
     part_ensemble: 6.7
-    part_endurants: 8.2
+    part_endurants: 8.1
   - sort: elimine_poteaux
     libelle: Éliminé aux poteaux
     effectif: 5
-    part_fantomes: 7.7
+    part_fantomes: 7.5
     part_ensemble: 4.8
-    part_endurants: 6.2
+    part_endurants: 6.1
   - sort: finaliste
     libelle: Finaliste
     effectif: 5
-    part_fantomes: 7.7
+    part_fantomes: 7.5
     part_ensemble: 4.9
-    part_endurants: 7.1
+    part_endurants: 7.0
   - sort: abandon_volontaire
     libelle: Abandon volontaire
     effectif: 4
-    part_fantomes: 6.2
+    part_fantomes: 6.0
     part_ensemble: 2.7
     part_endurants: 1.6
   comparables: 627
-  endurants: 438
+  endurants: 443
   seuil_fantome: 5
   justesse_par_sort:
-    elimine_conseil: 61.1
-    finaliste: 77.6
-    vainqueur: 77.4
-    elimine_poteaux: 78.7
-    elimine_orientation: 73.9
+    elimine_conseil: 60.6
+    finaliste: 76.3
+    vainqueur: 78.0
+    elimine_poteaux: 78.3
+    elimine_orientation: 76.4
   menace_par_sort:
     elimine_conseil: 0.9
-    finaliste: 0.4
+    finaliste: 0.3
     vainqueur: 0.1
     elimine_poteaux: 0.4
     abandon_medical: 0.2
     elimine_orientation: 0.4
-    elimine_ambassadeurs: 0.4
+    elimine_ambassadeurs: 0.3
   saisons:
   - id: s01
     numero: 1
@@ -7996,9 +7996,9 @@ indicateurs:
     abandons: 2
     taux_abandon: 8.3
     conseils: 25
-    conseils_complets: 0
-    tension_conseils: 58.8
-    dispersion_votes: null
+    conseils_complets: 9
+    tension_conseils: 56.2
+    dispersion_votes: 0.763
     epreuves: 37
     epreuves_individuelles: 13
     domination_epreuves: 0.145
@@ -8026,8 +8026,8 @@ indicateurs:
     taux_abandon: 4.8
     conseils: 21
     conseils_complets: 5
-    tension_conseils: 61.5
-    dispersion_votes: 0.893
+    tension_conseils: 53.8
+    dispersion_votes: 0.791
     epreuves: 23
     epreuves_individuelles: 10
     domination_epreuves: 0.148
@@ -8138,10 +8138,10 @@ indicateurs:
     survie_moyenne: 61.1
     abandons: 1
     taux_abandon: 4.2
-    conseils: 22
-    conseils_complets: 2
-    tension_conseils: 40.0
-    dispersion_votes: 0.891
+    conseils: 24
+    conseils_complets: 4
+    tension_conseils: 45.5
+    dispersion_votes: 0.843
     epreuves: 27
     epreuves_individuelles: 13
     domination_epreuves: 0.172
@@ -8169,7 +8169,7 @@ indicateurs:
     taux_abandon: 12.5
     conseils: 25
     conseils_complets: 6
-    tension_conseils: 30.8
+    tension_conseils: 33.3
     dispersion_votes: 0.695
     epreuves: 32
     epreuves_individuelles: 0
@@ -8195,10 +8195,10 @@ indicateurs:
     survie_moyenne: 65.5
     abandons: 0
     taux_abandon: 0.0
-    conseils: 21
-    conseils_complets: 11
-    tension_conseils: 50.0
-    dispersion_votes: 0.803
+    conseils: 26
+    conseils_complets: 13
+    tension_conseils: 53.3
+    dispersion_votes: 0.815
     epreuves: 34
     epreuves_individuelles: 18
     domination_epreuves: 0.138
@@ -8421,10 +8421,10 @@ indicateurs:
     survie_moyenne: null
     abandons: 0
     taux_abandon: 0.0
-    conseils: 2
-    conseils_complets: 0
-    tension_conseils: null
-    dispersion_votes: null
+    conseils: 4
+    conseils_complets: 1
+    tension_conseils: 0.0
+    dispersion_votes: 0.964
     epreuves: 2
     epreuves_individuelles: 2
     domination_epreuves: 0.25
@@ -11364,7 +11364,7 @@ modeles:
       tirages: 10000
       lecture: 'Un ecart observe plus PETIT que l''attendu est la signature d''un quota : le hasard, lui,
         produit des castings desequilibres de temps en temps.'
-      nulle: &id010
+      nulle: &id018
         bornes:
         - 0.2019
         - 2.9519
@@ -11414,7 +11414,7 @@ modeles:
       tirages: 10000
       lecture: Rebattre les aventuriers entre saisons donne l'ecart-type general. Un ecart observe PLUS
         GRAND veut dire qu'on place expres un jeune et un ancien dans chaque casting.
-      nulle: &id011
+      nulle: &id019
         bornes:
         - 9.21
         - 10.008
@@ -11451,7 +11451,7 @@ modeles:
         observe: 9.9412
         moyenne_nulle: 9.6948
       origine: casting
-      p_ajustee: 0.0204
+      p_ajustee: 0.02
       retenu: true
     - cle: familles_metiers
       libelle: La variete des metiers
@@ -11464,7 +11464,7 @@ modeles:
       tirages: 10000
       lecture: On compte, pour chaque saison, le nombre de familles de metiers representees. Un total
         observe PLUS GRAND veut dire qu'on veille a n'oublier aucune famille.
-      nulle: &id012
+      nulle: &id020
         bornes:
         - 224.95
         - 270.05
@@ -11514,7 +11514,7 @@ modeles:
       tirages: 10000
       lecture: Distance entre le melange de profils d'une saison et le melange general. Un observe PLUS
         PETIT que l'attendu veut dire que les saisons se ressemblent plus que le hasard ne l'expliquerait.
-      nulle: &id013
+      nulle: &id021
         bornes:
         - 0.1377
         - 0.4058
@@ -11551,7 +11551,7 @@ modeles:
         observe: 0.2839
         moyenne_nulle: 0.2508
       origine: casting
-      p_ajustee: 0.3723
+      p_ajustee: 0.3592
       retenu: false
     - cle: tribus_femmes
       libelle: La composition des deux tribus
@@ -11565,7 +11565,7 @@ modeles:
       tirages: 10000
       lecture: On rebat les bandeaux a l'interieur de chaque saison. Un ecart observe PLUS PETIT que l'attendu
         veut dire que les tribus sont composees a l'equilibre, pas tirees au sort.
-      nulle: &id014
+      nulle: &id022
         bornes:
         - 6.8021
         - 34.3229
@@ -11602,7 +11602,7 @@ modeles:
         observe: 13.0253
         moyenne_nulle: 18.8726
       origine: casting
-      p_ajustee: 0.1125
+      p_ajustee: 0.121
       retenu: false
     - cle: tribus_ages
       libelle: L'age moyen des deux tribus
@@ -11616,7 +11616,7 @@ modeles:
       tirages: 10000
       lecture: 'Meme methode, sur l''age moyen de chaque bandeau. Un ecart observe PLUS GRAND que l''attendu
         veut dire l''inverse d''un equilibre : deux tribus construites pour differer.'
-      nulle: &id015
+      nulle: &id023
         bornes:
         - 1.5354
         - 6.486
@@ -11653,7 +11653,7 @@ modeles:
         observe: 5.7496
         moyenne_nulle: 3.8505
       origine: casting
-      p_ajustee: 0.0042
+      p_ajustee: 0.004
       retenu: true
     - cle: tribus_ages_mediane
       libelle: L'age des deux tribus, a la mediane
@@ -11666,7 +11666,7 @@ modeles:
       tirages: 10000
       lecture: La mediane ignore les valeurs extremes. Si elle ne s'ecarte pas, c'est que l'ecart moyen
         tient a quelques editions et non a une regle de composition.
-      nulle: &id016
+      nulle: &id024
         bornes:
         - 0.5875
         - 6.9125
@@ -11703,7 +11703,7 @@ modeles:
         observe: 4.1597
         moyenne_nulle: 3.331
       origine: casting
-      p_ajustee: 0.3755
+      p_ajustee: 0.3661
       retenu: false
     sensibilite:
     - cle: etendue_ages
@@ -11785,7 +11785,7 @@ modeles:
       tirages: 10000
       lecture: Le modele classe les candidats d'une saison ; on releve la place qu'il donne a celui qui
         a gagne. Plus BAS que l'attendu veut dire qu'une part du resultat se joue au recrutement.
-      nulle: &id017
+      nulle: &id025
         bornes:
         - 5.5798
         - 14.824
@@ -11822,7 +11822,7 @@ modeles:
         observe: 10.7308
         moyenne_nulle: 10.2831
       origine: pronostic
-      p_ajustee: 0.7312
+      p_ajustee: 0.762
       retenu: false
     classement:
     - nom: Ambre Daudet
@@ -11874,60 +11874,68 @@ modeles:
       score: -1.719
       vainqueur: false
   force:
-    epreuves_retenues: 247
+    epreuves_retenues: 250
     saisons_retenues: 24
     epreuves_ecartees_saison: 18
-    vainqueur_hors_plateau: 9
-    taux_echec_reconstruction: 3.52
-    joueurs: 320
+    vainqueur_hors_plateau: 6
+    taux_echec_reconstruction: 2.34
+    joueurs: 323
     seuil: 8
-    classes: 127
+    classes: 133
     classement:
     - id: claude-dartois
       nom: Claude Dartois
       force: 4.65
-      bas: 2.55
-      haut: 7.65
+      bas: 2.48
+      haut: 7.35
       victoires: 15
       disputees: 39
       ratio: 38.5
     - id: maxime-berthon
       nom: Maxime Berthon
       force: 3.9
-      bas: 1.78
-      haut: 5.62
+      bas: 1.82
+      haut: 5.78
       victoires: 6
       disputees: 15
       ratio: 40.0
     - id: teheiura-teahui
       nom: Teheiura Teahui
       force: 3.89
-      bas: 1.82
-      haut: 6.46
+      bas: 1.76
+      haut: 6.48
       victoires: 11
       disputees: 36
       ratio: 30.6
     - id: clemence-noquet
       nom: Clémence Noquet
       force: 3.47
-      bas: 0.71
-      haut: 6.12
+      bas: 0.58
+      haut: 5.97
       victoires: 3
       disputees: 8
       ratio: 37.5
     - id: mohamed-derradji
       nom: Mohamed Derradji
       force: 2.86
-      bas: 0.89
-      haut: 5.1
+      bas: 0.67
+      haut: 5.33
       victoires: 4
       disputees: 10
       ratio: 40.0
+    - id: daniel-duquesnoy
+      nom: Daniel Duquesnoy
+      force: 2.72
+      bas: 0.55
+      haut: 5.41
+      victoires: 3
+      disputees: 10
+      ratio: 30.0
     - id: martin-bazin
       nom: Martin Bazin
       force: 2.63
-      bas: 0.76
-      haut: 5.18
+      bas: 0.89
+      haut: 4.61
       victoires: 4
       disputees: 13
       ratio: 30.8
@@ -11935,55 +11943,55 @@ modeles:
       nom: Gilles De Baere
       force: 2.48
       bas: 0.48
-      haut: 5.16
+      haut: 5.21
       victoires: 2
       disputees: 8
       ratio: 25.0
     - id: bertrand-bolle
       nom: Bertrand Bolle
       force: 2.41
-      bas: 0.95
-      haut: 4.31
+      bas: 0.88
+      haut: 4.28
       victoires: 7
       disputees: 22
       ratio: 31.8
     - id: nicolas-pretot
       nom: Nicolas Pretot
       force: 2.35
-      bas: 0.55
-      haut: 4.75
+      bas: 0.64
+      haut: 4.73
       victoires: 4
       disputees: 14
       ratio: 28.6
     - id: nicolas-rouye
       nom: Nicolas Rouyé
       force: 2.3
-      bas: 0.57
-      haut: 3.99
+      bas: 0.75
+      haut: 3.71
       victoires: 3
       disputees: 8
       ratio: 37.5
     - id: naoil-tita
       nom: Naoil Tita
       force: 2.26
-      bas: 0.44
-      haut: 4.68
+      bas: 0.42
+      haut: 4.55
       victoires: 2
       disputees: 8
       ratio: 25.0
     - id: clemence-castel
       nom: Clémence Castel
       force: 2.23
-      bas: 0.68
-      haut: 4.34
+      bas: 0.61
+      haut: 4.82
       victoires: 4
       disputees: 20
       ratio: 20.0
     - id: philippe-duron
       nom: Philippe Duron
       force: 2.21
-      bas: 0.44
-      haut: 4.2
+      bas: 0.37
+      haut: 4.84
       victoires: 3
       disputees: 11
       ratio: 27.3
@@ -11991,55 +11999,47 @@ modeles:
       nom: Karima Neggaz
       force: 2.08
       bas: 0.4
-      haut: 4.18
+      haut: 4.38
       victoires: 2
       disputees: 8
       ratio: 25.0
     - id: william-lecomte
       nom: William Lecomte
       force: 2.01
-      bas: 0.36
-      haut: 3.97
+      bas: 0.38
+      haut: 4.06
       victoires: 3
       disputees: 9
       ratio: 33.3
     - id: meissa-seck
       nom: Meïssa Seck
       force: 2.0
-      bas: 0.44
-      haut: 3.58
+      bas: 0.4
+      haut: 3.44
       victoires: 3
       disputees: 10
       ratio: 30.0
     - id: sam-haliti
       nom: Sam Haliti
       force: 1.98
-      bas: 0.35
-      haut: 4.14
+      bas: 0.37
+      haut: 4.4
       victoires: 2
       disputees: 16
       ratio: 12.5
     - id: gregoire-delachaux
       nom: Grégoire Delachaux
       force: 1.87
-      bas: 0.39
-      haut: 3.92
+      bas: 0.34
+      haut: 3.9
       victoires: 2
       disputees: 8
       ratio: 25.0
     - id: angelique-ti
       nom: Angélique Ti
       force: 1.78
-      bas: 0.33
-      haut: 3.36
-      victoires: 2
-      disputees: 9
-      ratio: 22.2
-    - id: lola-besse
-      nom: Lola Besse
-      force: 1.78
-      bas: 0.33
-      haut: 4.13
+      bas: 0.28
+      haut: 4.07
       victoires: 2
       disputees: 9
       ratio: 22.2
@@ -12069,98 +12069,98 @@ modeles:
       rang_victoires: 9
       force: 2.86
       victoires: 4
-    - nom: Martin Bazin
+    - nom: Daniel Duquesnoy
       rang_force: 6
+      rang_victoires: 13
+      force: 2.72
+      victoires: 3
+    - nom: Martin Bazin
+      rang_force: 7
       rang_victoires: 8
       force: 2.63
       victoires: 4
     - &id006
       nom: Gilles De Baere
-      rang_force: 7
-      rang_victoires: 37
+      rang_force: 8
+      rang_victoires: 38
       force: 2.48
       victoires: 2
     - nom: Bertrand Bolle
-      rang_force: 8
+      rang_force: 9
       rang_victoires: 3
       force: 2.41
       victoires: 7
     - nom: Nicolas Pretot
-      rang_force: 9
+      rang_force: 10
       rang_victoires: 10
       force: 2.35
       victoires: 4
-    - nom: Nicolas Rouyé
-      rang_force: 10
-      rang_victoires: 17
-      force: 2.3
-      victoires: 3
     - nom: Clémence Castel
-      rang_force: 12
+      rang_force: 13
       rang_victoires: 6
       force: 2.23
       victoires: 4
     - nom: François-David Cardonnel
-      rang_force: 25
+      rang_force: 23
       rang_victoires: 7
       force: 1.72
       victoires: 4
     - &id007
       nom: Jade Handi
-      rang_force: 39
+      rang_force: 42
       rang_victoires: 4
       force: 1.34
       victoires: 6
     plus_forte_montee: *id006
     plus_forte_chute: *id007
   force_et_jeu:
-    effectif: 272
+    effectif: 277
     voix:
       libelle: Bulletins recus, par epreuve disputee
       force:
-        estimation: 0.926
-        bas: 0.8
-        haut: 1.072
-        p: 0.3037
+        estimation: 0.915
+        bas: 0.792
+        haut: 1.056
+        p: 0.2246
       femme:
-        estimation: 1.226
-        bas: 0.97
-        haut: 1.55
-        p: 0.0879
+        estimation: 1.2
+        bas: 0.952
+        haut: 1.513
+        p: 0.1231
       age:
-        estimation: 1.15
-        bas: 1.02
-        haut: 1.297
-        p: 0.0225
+        estimation: 1.157
+        bas: 1.029
+        haut: 1.301
+        p: 0.015
       lecture: Rapport de taux par doublement de la force. Au-dessus de 1, un athlete attire davantage
         de bulletins.
     survie:
       libelle: Part de la saison tenue
       force:
-        estimation: -1.004
-        bas: -4.392
-        haut: 2.384
-        p: 0.5614
+        estimation: -0.67
+        bas: -4.037
+        haut: 2.698
+        p: 0.6968
       femme:
-        estimation: -4.053
-        bas: -8.948
-        haut: 0.842
-        p: 0.1047
+        estimation: -3.464
+        bas: -8.346
+        haut: 1.418
+        p: 0.1643
       age:
-        estimation: -2.096
-        bas: -4.886
-        haut: 0.694
-        p: 0.1409
+        estimation: -2.063
+        bas: -4.811
+        haut: 0.684
+        p: 0.1411
       lecture: Points de pourcentage gagnes quand la force double.
   equilibre:
     rattrapage:
       effectif: 106
       saisons: 18
       ecart_max: 4
-      rapport_de_cotes: 0.927
-      bas: 0.712
-      haut: 1.209
-      p: 0.5771
+      rapport_de_cotes: 0.858
+      bas: 0.632
+      haut: 1.166
+      p: 0.3283
       lecture: Cote de victoire de la tribu jaune quand elle compte un aventurier de plus. Au-dessus de
         1, l'avantage du nombre joue ; en dessous, la tribu en difficulte se rattrape ; a 1, l'effectif
         ne change rien.
@@ -12228,147 +12228,145 @@ modeles:
         que la reference ; en dessous, plus lentement. L'intervalle qui contient 1 veut dire que ces donnees
         ne permettent pas de conclure.
   hasard_mecanique:
-    conseils: 501
-    conseils_hors_finale: 427
+    conseils: 508
+    conseils_hors_finale: 434
     paliers:
     - palier: 0-10 %
-      observe: 8.6
+      observe: 8.3
       mecanique: 5.4
-      conseils: 77
-      presents_moyen: 18.8
-      rapport: 1.59
+      conseils: 82
+      presents_moyen: 18.9
+      rapport: 1.54
     - palier: 10-20 %
-      observe: 7.5
+      observe: 7.7
       mecanique: 6.0
       conseils: 47
       presents_moyen: 16.9
-      rapport: 1.25
+      rapport: 1.28
     - palier: 20-30 %
-      observe: 9.0
+      observe: 10.0
       mecanique: 6.6
-      conseils: 44
-      presents_moyen: 15.4
-      rapport: 1.36
+      conseils: 47
+      presents_moyen: 15.6
+      rapport: 1.52
     - palier: 30-40 %
-      observe: 10.4
-      mecanique: 7.3
-      conseils: 52
-      presents_moyen: 13.8
+      observe: 10.5
+      mecanique: 7.4
+      conseils: 50
+      presents_moyen: 13.7
       rapport: 1.42
     - palier: 40-50 %
-      observe: 11.7
+      observe: 11.9
       mecanique: 8.9
-      conseils: 59
+      conseils: 61
       presents_moyen: 11.4
-      rapport: 1.31
+      rapport: 1.34
     - palier: 50-60 %
-      observe: 15.4
+      observe: 15.0
       mecanique: 10.6
       conseils: 47
       presents_moyen: 9.6
-      rapport: 1.45
+      rapport: 1.42
     - palier: 60-70 %
-      observe: 16.9
+      observe: 17.2
       mecanique: 13.0
       conseils: 54
       presents_moyen: 7.8
-      rapport: 1.3
+      rapport: 1.32
     - palier: 70-80 %
-      observe: 26.2
-      mecanique: 17.7
-      conseils: 47
-      presents_moyen: 5.7
-      rapport: 1.48
+      observe: 27.5
+      mecanique: 17.6
+      conseils: 46
+      presents_moyen: 5.8
+      rapport: 1.56
     - palier: 80-90 %
-      observe: 74.5
-      mecanique: 24.3
-      conseils: 61
+      observe: 77.2
+      mecanique: 24.1
+      conseils: 63
       presents_moyen: 4.2
-      rapport: 3.07
+      rapport: 3.2
     - palier: 90-100 %
-      observe: 89.7
-      mecanique: 35.9
-      conseils: 13
+      observe: 87.9
+      mecanique: 36.4
+      conseils: 11
       presents_moyen: 2.8
-      rapport: 2.5
-    ecart_moyen: 5.0
-    rapport_moyen: 1.4
-    correlation: 0.517
+      rapport: 2.41
+    ecart_moyen: 5.22
+    rapport_moyen: 1.43
+    correlation: 0.515
     lecture: 'Risque observe de sortir a un conseil, et risque qu''un simple 1/nombre-de-presents predit.
       Les deux derniers paliers sont ceux de la finale : tout le monde y sort le meme jour, et la comparaison
       n''y a plus de sens.'
   mecaniques:
-    saisons: 24
+    saisons: 25
     mecaniques_testees:
     - collier_immunite
     - destins_lies
     effets:
     - mecanique: collier_immunite
       sur: dispersion_votes
-      saisons: 14
+      saisons: 15
       effet: 0.06
       bas: -0.03
       haut: 0.15
-      p: 0.2071
+      p: 0.187
     - mecanique: destins_lies
       sur: dispersion_votes
-      saisons: 5
-      effet: -0.04
-      bas: -0.13
+      saisons: 6
+      effet: -0.03
+      bas: -0.1
       haut: 0.04
-      p: 0.312
+      p: 0.3655
     - mecanique: collier_immunite
       sur: taux_abandon
-      saisons: 14
-      effet: -2.18
-      bas: -11.46
-      haut: 7.1
-      p: 0.6454
+      saisons: 15
+      effet: -2.21
+      bas: -11.47
+      haut: 7.04
+      p: 0.6389
     - mecanique: destins_lies
       sur: taux_abandon
-      saisons: 5
-      effet: -0.3
-      bas: -7.69
-      haut: 7.09
-      p: 0.9371
+      saisons: 6
+      effet: -0.45
+      bas: -6.88
+      haut: 5.98
+      p: 0.891
     lecture: Effet de la presence d'une mecanique, l'annee tenue constante. Un intervalle qui contient
       zero veut dire que ces vingt-six saisons ne permettent pas de conclure.
   alliances:
-    saisons: 23
-    conseils: 227
-    bulletins: 1753
-    paires_suivies: 3037
-    apres_ensemble: 60.0
-    apres_separes: 28.4
+    saisons: 24
+    conseils: 238
+    bulletins: 1840
+    paires_suivies: 3200
+    apres_ensemble: 60.7
+    apres_separes: 28.2
     test:
       cle: persistance_alliances
       libelle: La persistance des alliances
       question: Deux aventuriers qui ont vote ensemble votent-ils encore ensemble au conseil suivant,
         plus souvent que le hasard ne le voudrait ?
-      observe: 31.521
-      attendu: 1.206
+      observe: 32.502
+      attendu: 1.428
       unite: points de %
-      ecart_types: 17.92
+      ecart_types: 19.15
       p: 0.0005
       tirages: 2000
       lecture: 'Ecart entre deux probabilites : voter ensemble apres avoir vote ensemble, et voter ensemble
         apres avoir vote separement. A zero, chaque conseil repart de zero et il n''y a pas d''alliance.'
-      nulle: &id023
+      nulle: &id034
         bornes:
-        - -5.9743
-        - 33.3065
+        - -4.9516
+        - 34.285
         cases:
         - 0
-        - 8
-        - 66
-        - 267
-        - 595
-        - 635
-        - 303
-        - 97
-        - 24
-        - 4
-        - 1
+        - 21
+        - 163
+        - 450
+        - 692
+        - 444
+        - 197
+        - 26
+        - 7
         - 0
         - 0
         - 0
@@ -12386,26 +12384,28 @@ modeles:
         - 0
         - 0
         - 0
-        largeur_case: 1.402886
-        observe: 31.521
-        moyenne_nulle: 1.2062
+        - 0
+        - 0
+        largeur_case: 1.401307
+        observe: 32.5015
+        moyenne_nulle: 1.4279
       origine: alliances
-      p_ajustee: 0.0011
+      p_ajustee: 0.001
       retenu: true
     majorite:
-      effectif: 171
+      effectif: 177
       variables:
       - libelle: Toujours du côté de la majorité
-        estimation: 19.03
-        bas: 9.63
-        haut: 28.43
-        p: 0.0001
+        estimation: 17.4
+        bas: 7.41
+        haut: 27.39
+        p: 0.0006
       - libelle: Une voix reçue de plus par conseil
-        estimation: -3.71
-        bas: -7.13
-        haut: -0.29
-        p: 0.0337
-      r2: 0.384
+        estimation: -3.93
+        bas: -7.54
+        haut: -0.33
+        p: 0.0323
+      r2: 0.378
       lecture: Points de saison gagnes ou perdus, le nombre de conseils traverses tenu constant. Ce controle
         etant trop severe, les deux effets sont des bornes basses.
     les_plus_souvent_du_bon_cote:
@@ -12445,24 +12445,12 @@ modeles:
       conseils: 8
       survie: 97.5
       voix: 3
-    - nom: Caroline Ledos
-      saison: s28
-      part: 100.0
-      conseils: 8
-      survie: 97.4
-      voix: 11
     - nom: Christelle Gauzet
       saison: s08
       part: 100.0
       conseils: 8
       survie: 100.0
       voix: 0
-    - nom: Daniel Duquesnoy
-      saison: s28
-      part: 100.0
-      conseils: 8
-      survie: 94.9
-      voix: 3
     - nom: François-David Cardonnel
       saison: s06
       part: 100.0
@@ -12481,184 +12469,196 @@ modeles:
       conseils: 8
       survie: 100.0
       voix: 5
+    - nom: Bruno Peisey
+      saison: s14
+      part: 100.0
+      conseils: 7
+      survie: 95.0
+      voix: 0
+    - nom: Charles Clément
+      saison: s12
+      part: 100.0
+      conseils: 7
+      survie: 88.1
+      voix: 5
   homophilie:
-    bulletins: 1753
-    conseils: 227
-    conseils_mixtes: 129
-    bulletins_mixtes: 1033
+    bulletins: 1840
+    conseils: 238
+    conseils_mixtes: 137
+    bulletins_mixtes: 1103
     tests:
     - cle: vote_meme_sexe
       libelle: Viser quelqu'un du même sexe
       question: Parmi les présents, écrit-on plutôt le nom de quelqu'un de son sexe ?
-      observe: 45.522
-      attendu: 46.664
+      observe: 45.978
+      attendu: 46.877
       unite: '%'
-      ecart_types: -1.6
-      p: 0.1115
+      ecart_types: -1.32
+      p: 0.2044
       tirages: 4000
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
         : la popularite d''une cible est donc neutralisee. Un observe au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-      nulle: &id018
+      nulle: &id026
         bornes:
-        - 43.8848
-        - 49.7832
+        - 44.2228
+        - 49.3641
         cases:
         - 0
+        - 1
         - 2
-        - 4
-        - 11
-        - 9
-        - 41
-        - 64
-        - 132
-        - 175
-        - 327
-        - 186
-        - 454
-        - 465
-        - 497
-        - 462
-        - 417
+        - 2
+        - 24
+        - 8
+        - 38
+        - 90
+        - 161
+        - 102
         - 280
-        - 110
-        - 182
-        - 100
-        - 36
-        - 32
-        - 10
+        - 384
+        - 234
+        - 518
+        - 491
+        - 237
+        - 420
+        - 360
+        - 143
+        - 223
+        - 122
+        - 79
+        - 22
+        - 43
+        - 12
         - 2
-        - 1
+        - 2
         - 0
-        - 1
-        - 0
-        largeur_case: 0.210659
-        observe: 45.522
-        moyenne_nulle: 46.6635
-      bulletins: 1753
+        largeur_case: 0.183618
+        observe: 45.9783
+        moyenne_nulle: 46.8767
+      bulletins: 1840
       origine: homophilie
-      p_ajustee: 0.1513
+      p_ajustee: 0.2645
       retenu: false
     - cle: vote_ecart_age
       libelle: L'écart d'âge avec sa cible
       question: Écrit-on plutôt le nom de quelqu'un de sa génération, ou d'une autre ?
-      observe: 11.777
-      attendu: 11.62
+      observe: 11.754
+      attendu: 11.626
       unite: années
-      ecart_types: 1.82
-      p: 0.0677
+      ecart_types: 1.54
+      p: 0.1205
       tirages: 4000
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
         : la popularite d''une cible est donc neutralisee. Un observe au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-      nulle: &id019
+      nulle: &id027
         bornes:
-        - 11.2937
-        - 11.9362
+        - 11.3279
+        - 11.9341
         cases:
         - 0
-        - 2
-        - 9
-        - 9
-        - 13
-        - 35
-        - 44
-        - 90
-        - 125
-        - 191
-        - 261
-        - 324
-        - 379
-        - 399
-        - 446
+        - 4
+        - 4
+        - 11
+        - 29
+        - 39
+        - 70
+        - 108
+        - 150
+        - 224
+        - 303
+        - 341
+        - 383
         - 402
-        - 353
-        - 275
-        - 245
-        - 162
-        - 101
-        - 58
-        - 43
-        - 21
-        - 6
+        - 416
+        - 381
+        - 317
+        - 290
+        - 200
+        - 135
+        - 73
+        - 51
+        - 33
+        - 24
+        - 5
         - 5
         - 2
         - 0
-        largeur_case: 0.022948
-        observe: 11.777
-        moyenne_nulle: 11.6198
-      bulletins: 1753
+        largeur_case: 0.02165
+        observe: 11.7543
+        moyenne_nulle: 11.6264
+      bulletins: 1840
       origine: homophilie
-      p_ajustee: 0.1072
+      p_ajustee: 0.1657
       retenu: false
     - cle: vote_meme_metier
       libelle: Viser la même famille de métier
       question: Le métier rapproche-t-il ou éloigne-t-il du bulletin ?
-      observe: 9.641
-      attendu: 9.971
+      observe: 9.783
+      attendu: 9.893
       unite: '%'
-      ecart_types: -0.89
-      p: 0.3877
+      ecart_types: -0.3
+      p: 0.7573
       tirages: 4000
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
         : la popularite d''une cible est donc neutralisee. Un observe au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-      nulle: &id020
+      nulle: &id028
         bornes:
-        - 8.4855
-        - 11.3092
+        - 8.4429
+        - 11.6114
         cases:
         - 0
-        - 2
-        - 3
-        - 5
-        - 10
-        - 16
-        - 30
-        - 36
-        - 105
-        - 182
+        - 1
+        - 1
+        - 7
+        - 20
+        - 23
+        - 64
+        - 186
         - 248
-        - 176
-        - 386
-        - 525
-        - 480
-        - 513
-        - 184
-        - 362
-        - 266
-        - 181
-        - 61
-        - 113
-        - 51
-        - 38
-        - 14
-        - 11
-        - 2
+        - 290
+        - 402
+        - 383
+        - 487
+        - 484
+        - 382
+        - 341
+        - 253
+        - 178
+        - 107
+        - 67
+        - 53
+        - 12
+        - 6
+        - 3
+        - 1
         - 0
-        largeur_case: 0.100848
-        observe: 9.6406
-        moyenne_nulle: 9.9712
-      bulletins: 1753
+        - 1
+        - 0
+        largeur_case: 0.11316
+        observe: 9.7826
+        moyenne_nulle: 9.8932
+      bulletins: 1840
       origine: homophilie
-      p_ajustee: 0.4333
+      p_ajustee: 0.7934
       retenu: false
     - cle: vote_meme_bandeau
       libelle: Viser son propre bandeau de départ
       question: Le camp d'origine protège-t-il, une fois les tribus mélangées ?
-      observe: 59.612
-      attendu: 65.832
+      observe: 58.533
+      attendu: 64.959
       unite: '%'
-      ecart_types: -10.48
+      ecart_types: -10.98
       p: 0.0002
       tirages: 4000
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
         : la popularite d''une cible est donc neutralisee. Un observe au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-      nulle: &id021
+      nulle: &id029
         bornes:
-        - 59.1957
-        - 68.3571
+        - 58.1168
+        - 67.2636
         cases:
         - 0
         - 0
@@ -12674,24 +12674,24 @@ modeles:
         - 0
         - 0
         - 0
-        - 9
-        - 26
-        - 107
-        - 249
-        - 541
-        - 856
-        - 892
-        - 596
-        - 453
-        - 185
-        - 64
-        - 17
-        - 5
+        - 2
+        - 10
+        - 47
+        - 124
+        - 372
+        - 649
+        - 842
+        - 811
+        - 606
+        - 366
+        - 132
+        - 32
+        - 7
         - 0
-        largeur_case: 0.327194
-        observe: 59.6121
-        moyenne_nulle: 65.832
-      bulletins: 1753
+        largeur_case: 0.326669
+        observe: 58.5326
+        moyenne_nulle: 64.959
+      bulletins: 1840
       origine: homophilie
       p_ajustee: 0.0005
       retenu: true
@@ -12699,18 +12699,18 @@ modeles:
       libelle: Épargner son bandeau de départ
       question: Une fois les tribus mélangées, écrit-on moins souvent le nom de quelqu'un de son camp
         d'origine ?
-      observe: 31.559
-      attendu: 42.106
+      observe: 30.916
+      attendu: 41.639
       unite: '%'
-      ecart_types: -10.61
+      ecart_types: -11.05
       p: 0.0002
       tirages: 4000
       lecture: Mesuré sur les seuls conseils réunissant plusieurs bandeaux. Un observé SOUS l'attendu
         veut dire que le camp de départ protège encore, longtemps après avoir cessé d'exister.
-      nulle: &id022
+      nulle: &id030
         bornes:
-        - 30.8519
-        - 46.3988
+        - 30.2131
+        - 45.6709
         cases:
         - 0
         - 0
@@ -12725,48 +12725,48 @@ modeles:
         - 0
         - 0
         - 0
-        - 0
         - 1
-        - 31
-        - 109
-        - 238
-        - 556
-        - 857
-        - 914
-        - 573
-        - 446
-        - 196
-        - 65
-        - 13
-        - 1
+        - 2
+        - 18
+        - 50
+        - 172
+        - 379
+        - 799
+        - 912
+        - 771
+        - 541
+        - 242
+        - 83
+        - 26
+        - 4
         - 0
-        largeur_case: 0.555248
-        observe: 31.5586
-        moyenne_nulle: 42.1065
-      bulletins: 1033
+        largeur_case: 0.552066
+        observe: 30.9157
+        moyenne_nulle: 41.6392
+      bulletins: 1103
       origine: homophilie
       p_ajustee: 0.0005
       retenu: true
   trahison:
-    bulletins: 1327
-    conseils: 227
+    bulletins: 1389
+    conseils: 238
     test:
       cle: trahison
       libelle: Écrire le nom d'un ancien allié
       question: Quand on a déjà voté avec quelqu'un, écrit-on son nom plus ou moins souvent qu'un autre
         ?
-      observe: 51.545
-      attendu: 60.103
+      observe: 51.404
+      attendu: 60.057
       unite: '%'
-      ecart_types: -12.55
+      ecart_types: -13.01
       p: 0.0002
       tirages: 4000
       lecture: Part des bulletins visant quelqu'un avec qui l'auteur avait déjà voté. Un observé SOUS
         l'attendu veut dire que l'alliance protège ; au-dessus, qu'elle expose.
-      nulle: &id025
+      nulle: &id036
         bornes:
-        - 51.0023
-        - 62.939
+        - 50.8495
+        - 63.0454
         cases:
         - 0
         - 0
@@ -12782,32 +12782,32 @@ modeles:
         - 0
         - 0
         - 0
-        - 1
-        - 1
-        - 15
-        - 45
-        - 237
-        - 436
-        - 904
-        - 1037
-        - 694
-        - 431
-        - 154
-        - 33
-        - 12
         - 0
-        largeur_case: 0.426311
-        observe: 51.5448
-        moyenne_nulle: 60.1031
+        - 2
+        - 9
+        - 76
+        - 245
+        - 605
+        - 945
+        - 1002
+        - 685
+        - 299
+        - 103
+        - 27
+        - 2
+        - 0
+        largeur_case: 0.435565
+        observe: 51.4039
+        moyenne_nulle: 60.0574
       origine: trahison
       p_ajustee: 0.0005
       retenu: true
     effet:
-      effectif: 169
-      estimation: 4.44
-      bas: -3.64
-      haut: 12.53
-      p: 0.2816
+      effectif: 174
+      estimation: 5.18
+      bas: -3.07
+      haut: 13.43
+      p: 0.2182
       lecture: Points de saison gagnes ou perdus quand on passe de « jamais » a « toujours » viser un
         ancien allie, le nombre de bulletins emis tenu constant.
     les_plus_infideles:
@@ -12862,18 +12862,18 @@ modeles:
       bulletins: 8
       survie: 100.0
   confort_maudit:
-    conseils: 74
-    bulletins: 563
-    observe: 17.6
+    conseils: 76
+    bulletins: 581
+    observe: 17.2
     attendu: 18.2
-    bas: 14.5
-    haut: 21.0
-    p: 0.7433
+    bas: 14.2
+    haut: 20.5
+    p: 0.5547
     lecture: Part des bulletins visant un gagnant du confort du meme episode, comparee a la part que ces
       gagnants representent parmi les presents.
   decimation:
     saisons: 17
-    sorties: 196
+    sorties: 198
     detail:
     - saison: s22
       titre: Les Armes secrètes
@@ -12911,6 +12911,12 @@ modeles:
       joueurs: 11
       plus_longue_serie: 5
       suite: JRRJJJRRRRR
+    - saison: s28
+      titre: Les Reliques du destin
+      annee: 2026
+      joueurs: 14
+      plus_longue_serie: 5
+      suite: JRJJJRRRRRJRJJ
     - saison: s04
       titre: Panama
       annee: 2004
@@ -12929,81 +12935,75 @@ modeles:
       joueurs: 14
       plus_longue_serie: 4
       suite: JJRRJRRRJRJJJJ
-    - saison: s01
-      titre: Les Aventuriers de Koh-Lanta
-      annee: 2001
-      joueurs: 10
-      plus_longue_serie: 3
-      suite: JJJRRJJRRR
     test:
       cle: decimation
       libelle: L'élimination en série d'un camp
       question: Après la réunification, les sorties se suivent-elles par bandeau plus souvent que le hasard
         ne le voudrait ?
-      observe: 106.0
-      attendu: 83.967
+      observe: 108.0
+      attendu: 84.794
       unite: enchaînements
-      ecart_types: 3.46
-      p: 0.0005
+      ecart_types: 3.6
+      p: 0.0003
       tirages: 10000
       lecture: Nombre de fois où deux sorties consécutives viennent du même bandeau de départ. Un observé
         AU-DESSUS de l'attendu est la signature d'un camp démonté un par un.
-      nulle: &id026
+      nulle: &id037
         bornes:
-        - 60.7
-        - 111.3
+        - 59.7
+        - 110.3
         cases:
         - 0
-        - 9
-        - 17
-        - 15
-        - 58
-        - 140
-        - 280
-        - 414
-        - 293
-        - 747
-        - 990
-        - 1130
-        - 1203
-        - 623
-        - 1188
-        - 974
-        - 716
-        - 519
-        - 355
-        - 91
-        - 133
-        - 57
-        - 33
-        - 7
+        - 3
         - 4
-        - 2
-        - 2
+        - 11
+        - 29
+        - 73
+        - 157
+        - 285
+        - 204
+        - 529
+        - 748
+        - 989
+        - 1172
+        - 594
+        - 1264
+        - 1140
+        - 928
+        - 724
+        - 492
+        - 178
+        - 224
+        - 126
+        - 72
+        - 32
+        - 5
+        - 14
+        - 3
         - 0
         largeur_case: 1.807143
-        observe: 106.0
-        moyenne_nulle: 83.9668
+        observe: 108.0
+        moyenne_nulle: 84.7942
       origine: decimation
-      p_ajustee: 0.0011
+      p_ajustee: 0.0007
       retenu: true
   jury_final:
-    bulletins: 177
-    saisons: 27
+    bulletins: 191
+    saisons: 29
     coefficients:
     - libelle: A écrit le nom du juré au conseil
-      rapport: 0.854
-      bas: 0.484
-      haut: 1.505
-      p: 0.5845
+      rapport: 0.729
+      bas: 0.428
+      haut: 1.241
+      p: 0.2443
     - libelle: A voté avec le juré, par conseil partagé
-      rapport: 1.162
-      bas: 1.028
-      haut: 1.314
-      p: 0.0167
-    part_vers_bourreau: 57.1
-    bulletins_avec_bourreau_disponible: 138
-    part_quand_disponible: 73.2
+      rapport: 1.122
+      bas: 1.005
+      haut: 1.254
+      p: 0.0412
+    part_vers_bourreau: 55.0
+    bulletins_avec_bourreau_disponible: 149
+    part_quand_disponible: 70.5
     lecture: 'Rapport de cotes : au-dessus de 1, le jure vote plus souvent pour ce finaliste ; en dessous,
       moins souvent. Un intervalle qui contient 1 veut dire qu''on ne peut pas conclure.'
   fusion:
@@ -13139,11 +13139,11 @@ modeles:
       annee: 2026
       casting: 20
       episode: 7
-      restants: 12
+      restants: 14
     episode_median: 6.0
     episode_variation: 12.3
     restants_median: 12.0
-    restants_variation: 16.7
+    restants_variation: 16.9
     casting_min: 16
     casting_max: 24
     pente_episode:
@@ -13152,9 +13152,9 @@ modeles:
       haut: 0.152
       p: 0.9098
     pente_restants:
-      pente: 0.647
-      bas: 0.552
-      haut: 0.741
+      pente: 0.65
+      bas: 0.553
+      haut: 0.747
       p: 0.0
     lecture: 'Pente : de combien l''episode de fusion, puis le nombre de joueurs restants, bougent quand
       le casting gagne un membre. Une pente nulle sur l''episode et une pente de 1 sur les restants signent
@@ -13257,7 +13257,7 @@ modeles:
     - annee: 2024
       titre: La Tribu maudite
       effectif: 24
-      conseils: 22
+      conseils: 24
     - annee: 2025
       titre: La Revanche des 4 Terres
       effectif: 24
@@ -13265,7 +13265,7 @@ modeles:
     - annee: 2026
       titre: Les Reliques du destin
       effectif: 20
-      conseils: 21
+      conseils: 26
     annee_rupture: 2019
     derniere_avant:
       annee: 2017
@@ -13286,8 +13286,8 @@ modeles:
       ecart_types: 1.49
     - libelle: Nombre de conseils
       avant: 19.18
-      apres: 22.78
-      ecart_types: 1.35
+      apres: 23.56
+      ecart_types: 1.49
     - libelle: Durée de la saison
       avant: 40.47
       apres: 39.0
@@ -13303,121 +13303,1103 @@ modeles:
     profil:
     - annee: 2005
       titre: Pacifique
-      gain: 27.68
+      gain: 27.25
     - annee: 2006
       titre: Vanuatu
-      gain: 32.75
+      gain: 32.23
     - annee: 2007
       titre: Palawan
-      gain: 37.68
+      gain: 37.19
     - annee: 2008
       titre: Caramoan
-      gain: 46.08
+      gain: 45.33
     - annee: 2009
       titre: Palau
-      gain: 52.61
+      gain: 51.88
     - annee: 2010
       titre: Viêtnam
-      gain: 49.15
+      gain: 48.97
     - annee: 2011
       titre: Raja Ampat
-      gain: 52.1
+      gain: 52.17
     - &id009
       annee: 2012
       titre: Malaisie
-      gain: 54.19
+      gain: 54.51
     - annee: 2015
       titre: Johor
-      gain: 50.04
+      gain: 50.76
     - annee: 2016
       titre: Thaïlande
-      gain: 50.09
+      gain: 51.17
     - annee: 2016
       titre: L'Île au trésor
-      gain: 48.02
+      gain: 49.34
     - annee: 2017
       titre: Cambodge
-      gain: 48.54
+      gain: 50.15
     - annee: 2017
       titre: Fidji
-      gain: 48.87
+      gain: 50.85
     - &id008
       annee: 2019
       titre: La Guerre des chefs
-      gain: 54.29
+      gain: 56.65
     - annee: 2020
       titre: Les 4 Terres
-      gain: 49.66
+      gain: 52.42
     - annee: 2021
       titre: Les Armes secrètes
-      gain: 40.89
+      gain: 43.88
     - annee: 2022
       titre: Le Totem maudit
-      gain: 37.98
+      gain: 41.49
     - annee: 2023
       titre: Le Feu sacré
-      gain: 36.84
+      gain: 40.74
     - annee: 2024
       titre: Les Chasseurs d'immunité
-      gain: 37.72
+      gain: 42.04
     exaequo:
     - *id008
-    - *id009
-    nb_exaequo: 2
+    nb_exaequo: 1
+    nb_proches: 6
+    avance: 3.8
+    fenetre:
+      debut: 2009
+      fin: 2020
+      etendue: 11
     second: *id009
     test:
       cle: rupture
       libelle: La rupture de régime
       question: Existe-t-il une date qui sépare les saisons en deux régimes mieux qu'une date tirée au
         sort ?
-      observe: 54.285
-      attendu: 13.164
+      observe: 56.646
+      attendu: 13.264
       unite: ''
-      ecart_types: 7.21
+      ecart_types: 7.39
       p: 0.0001
       tirages: 10000
       lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
         dans un ordre au hasard. Une coupure existe toujours ; la question est de savoir si celle-ci vaut
         mieux que n'importe quelle autre.
-      nulle: &id024
+      nulle: &id035
         bornes:
-        - 0.4572
-        - 56.8486
+        - 0.5141
+        - 59.3185
         cases:
         - 0
-        - 50
-        - 585
-        - 1394
-        - 1805
-        - 1679
-        - 1203
-        - 1005
-        - 729
-        - 496
-        - 324
-        - 254
-        - 160
-        - 117
-        - 82
-        - 58
-        - 19
-        - 15
-        - 13
-        - 6
-        - 4
-        - 1
+        - 81
+        - 743
+        - 1625
+        - 1798
+        - 1551
+        - 1236
+        - 900
+        - 681
+        - 427
+        - 329
+        - 211
+        - 147
+        - 100
+        - 68
+        - 53
+        - 10
+        - 21
+        - 9
+        - 5
+        - 3
         - 0
-        - 1
-        - 0
+        - 2
         - 0
         - 0
         - 0
-        largeur_case: 2.013981
-        observe: 54.2854
-        moyenne_nulle: 13.1637
+        - 0
+        - 0
+        largeur_case: 2.100159
+        observe: 56.6456
+        moyenne_nulle: 13.2644
       origine: ruptures
       p_ajustee: 0.0005
       retenu: true
+  audience:
+    saisons: 33
+    serie:
+    - &id010
+      saison: s01
+      annee: 2001
+      titre: Les Aventuriers de Koh-Lanta
+      speciale: false
+      moyenne: 4367000
+      lancement: 4200000
+      finale: 4600000
+      pdm: 39.9
+      jour: Samedi
+      effectif: 16
+    - saison: s02
+      annee: 2002
+      titre: Nicoya
+      speciale: false
+      moyenne: 6092000
+      lancement: 5200000
+      finale: 7700000
+      pdm: 32.7
+      jour: Vendredi
+      effectif: 16
+    - saison: s03
+      annee: 2003
+      titre: Bocas del Toro
+      speciale: false
+      moyenne: 5414000
+      lancement: 5120000
+      finale: 7091560
+      pdm: 32.4
+      jour: Vendredi
+      effectif: 18
+    - saison: s04
+      annee: 2004
+      titre: Panama
+      speciale: false
+      moyenne: 6081000
+      lancement: 6200000
+      finale: 8300000
+      pdm: 31.9
+      jour: Vendredi
+      effectif: 16
+    - saison: s05
+      annee: 2005
+      titre: Pacifique
+      speciale: false
+      moyenne: 6889000
+      lancement: 6604800
+      finale: 8476160
+      pdm: 35.0
+      jour: Vendredi
+      effectif: 17
+    - saison: s06
+      annee: 2006
+      titre: Vanuatu
+      speciale: false
+      moyenne: 6868000
+      lancement: 6110540
+      finale: 7800000
+      pdm: 37.2
+      jour: Vendredi
+      effectif: 16
+    - saison: s07
+      annee: 2007
+      titre: Palawan
+      speciale: false
+      moyenne: 8127000
+      lancement: 8445320
+      finale: 9408880
+      pdm: 39.5
+      jour: Vendredi
+      effectif: 16
+    - &id017
+      saison: s08
+      annee: 2008
+      titre: Caramoan
+      speciale: false
+      moyenne: 6844000
+      lancement: 7170000
+      finale: 7090000
+      pdm: 34.0
+      jour: Vendredi
+      effectif: 17
+    - saison: s09
+      annee: 2009
+      titre: Palau
+      speciale: false
+      moyenne: 7512000
+      lancement: 7300000
+      finale: 7537000
+      pdm: 32.1
+      jour: Vendredi
+      effectif: 18
+    - &id012
+      saison: sp1
+      annee: 2009
+      titre: Le Retour des héros
+      speciale: true
+      moyenne: 8288000
+      lancement: 7945000
+      finale: 9169000
+      pdm: null
+      jour: Mardi
+      effectif: 14
+    - saison: s10
+      annee: 2010
+      titre: Viêtnam
+      speciale: false
+      moyenne: 6801000
+      lancement: 7796000
+      finale: 7048000
+      pdm: 27.6
+      jour: Vendredi
+      effectif: 18
+    - saison: sp2
+      annee: 2010
+      titre: Le Choc des héros
+      speciale: true
+      moyenne: 7007000
+      lancement: 8261000
+      finale: 7322000
+      pdm: 29.7
+      jour: Vendredi
+      effectif: 14
+    - saison: s11
+      annee: 2011
+      titre: Raja Ampat
+      speciale: false
+      moyenne: 7237000
+      lancement: 7359000
+      finale: 7647000
+      pdm: 29.2
+      jour: Vendredi
+      effectif: 20
+    - saison: s12
+      annee: 2012
+      titre: Malaisie
+      speciale: false
+      moyenne: 7098000
+      lancement: 7181000
+      finale: 7556000
+      pdm: 29.5
+      jour: Vendredi
+      effectif: 20
+    - saison: sp3
+      annee: 2012
+      titre: La Revanche des héros
+      speciale: true
+      moyenne: 6986000
+      lancement: 7768000
+      finale: 7105000
+      pdm: 28.3
+      jour: Vendredi
+      effectif: 16
+    - saison: sp4
+      annee: 2014
+      titre: La Nouvelle Édition
+      speciale: true
+      moyenne: 6593000
+      lancement: 6898000
+      finale: 6235000
+      pdm: 29.3
+      jour: Vendredi
+      effectif: 13
+    - saison: s14
+      annee: 2015
+      titre: Johor
+      speciale: false
+      moyenne: 5625000
+      lancement: 5881000
+      finale: 6099000
+      pdm: 27.0
+      jour: Vendredi
+      effectif: 20
+    - saison: s15
+      annee: 2016
+      titre: Thaïlande
+      speciale: false
+      moyenne: 5933000
+      lancement: 6235000
+      finale: 6434000
+      pdm: 26.5
+      jour: Vendredi
+      effectif: 21
+    - saison: s16
+      annee: 2016
+      titre: L'Île au trésor
+      speciale: false
+      moyenne: 5730000
+      lancement: 5450000
+      finale: 6577000
+      pdm: 27.3
+      jour: Vendredi
+      effectif: 20
+    - saison: s17
+      annee: 2017
+      titre: Cambodge
+      speciale: false
+      moyenne: 5570000
+      lancement: 6011000
+      finale: 5762000
+      pdm: 26.8
+      jour: Vendredi
+      effectif: 21
+    - saison: s18
+      annee: 2017
+      titre: Fidji
+      speciale: false
+      moyenne: 5010000
+      lancement: 5374000
+      finale: 5343000
+      pdm: 24.3
+      jour: Vendredi
+      effectif: 21
+    - saison: sp5
+      annee: 2018
+      titre: Le Combat des héros
+      speciale: true
+      moyenne: 4851000
+      lancement: 4885000
+      finale: 5274000
+      pdm: 24.1
+      jour: Vendredi
+      effectif: 18
+    - saison: s20
+      annee: 2019
+      titre: La Guerre des chefs
+      speciale: false
+      moyenne: 4334000
+      lancement: 5646000
+      finale: 3606000
+      pdm: 22.9
+      jour: Vendredi
+      effectif: 21
+    - saison: s21
+      annee: 2020
+      titre: Les 4 Terres
+      speciale: false
+      moyenne: 5520000
+      lancement: 5663000
+      finale: 6319000
+      pdm: 26.3
+      jour: Vendredi
+      effectif: 24
+    - saison: sp6
+      annee: 2020
+      titre: L'Île des héros
+      speciale: true
+      moyenne: 6600000
+      lancement: 4642000
+      finale: 6925000
+      pdm: 26.1
+      jour: Vendredi
+      effectif: 20
+    - &id013
+      saison: s22
+      annee: 2021
+      titre: Les Armes secrètes
+      speciale: false
+      moyenne: 5510000
+      lancement: 5740000
+      finale: 5716000
+      pdm: 25.6
+      jour: Vendredi
+      effectif: 21
+    - &id014
+      saison: sp7
+      annee: 2021
+      titre: La Légende
+      speciale: true
+      moyenne: 4332000
+      lancement: 5586000
+      finale: 4384000
+      pdm: null
+      jour: Mardi
+      effectif: 21
+    - saison: s23
+      annee: 2022
+      titre: Le Totem maudit
+      speciale: false
+      moyenne: 3590000
+      lancement: 4270000
+      finale: 2960000
+      pdm: 19.4
+      jour: Mardi
+      effectif: 24
+    - saison: s24
+      annee: 2023
+      titre: Le Feu sacré
+      speciale: false
+      moyenne: 3410000
+      lancement: 4170000
+      finale: 3440000
+      pdm: null
+      jour: Mardi
+      effectif: 20
+    - saison: s25
+      annee: 2024
+      titre: Les Chasseurs d'immunité
+      speciale: false
+      moyenne: 3160000
+      lancement: 3660000
+      finale: 3270000
+      pdm: 18.7
+      jour: Mardi
+      effectif: 22
+    - saison: s26
+      annee: 2024
+      titre: La Tribu maudite
+      speciale: false
+      moyenne: 3020000
+      lancement: 3716000
+      finale: 3203000
+      pdm: null
+      jour: Mardi
+      effectif: 24
+    - saison: s27
+      annee: 2025
+      titre: La Revanche des 4 Terres
+      speciale: false
+      moyenne: 2840000
+      lancement: 3560000
+      finale: 2881000
+      pdm: 17.6
+      jour: Mardi
+      effectif: 24
+    - &id011
+      saison: s28
+      annee: 2026
+      titre: Les Reliques du destin
+      speciale: false
+      moyenne: 2455000
+      lancement: 3265000
+      finale: 2622000
+      pdm: 16.5
+      jour: Mardi
+      effectif: 20
+    premiere: *id010
+    derniere: *id011
+    sommet: *id012
+    chute: 70.4
+    annee_rupture: 2021
+    derniere_avant: *id013
+    premiere_apres: *id014
+    avant: 26
+    apres: 7
+    moyenne_avant: 6264885
+    moyenne_apres: 3258143
+    profil:
+    - annee: 2005
+      titre: Pacifique
+      gain: 0.04
+    - annee: 2006
+      titre: Vanuatu
+      gain: 0.05
+    - annee: 2007
+      titre: Palawan
+      gain: 0.32
+    - annee: 2008
+      titre: Caramoan
+      gain: 1.49
+    - annee: 2009
+      titre: Palau
+      gain: 2.2
+    - annee: 2009
+      titre: Le Retour des héros
+      gain: 3.61
+    - annee: 2010
+      titre: Viêtnam
+      gain: 6.21
+    - annee: 2010
+      titre: Le Choc des héros
+      gain: 7.33
+    - annee: 2011
+      titre: Raja Ampat
+      gain: 8.85
+    - annee: 2012
+      titre: Malaisie
+      gain: 10.88
+    - annee: 2012
+      titre: La Revanche des héros
+      gain: 12.92
+    - annee: 2014
+      titre: La Nouvelle Édition
+      gain: 15.01
+    - annee: 2015
+      titre: Johor
+      gain: 16.62
+    - annee: 2016
+      titre: Thaïlande
+      gain: 16.61
+    - annee: 2016
+      titre: L'Île au trésor
+      gain: 17.3
+    - annee: 2017
+      titre: Cambodge
+      gain: 17.76
+    - annee: 2017
+      titre: Fidji
+      gain: 18.06
+    - annee: 2018
+      titre: Le Combat des héros
+      gain: 17.41
+    - annee: 2019
+      titre: La Guerre des chefs
+      gain: 16.59
+    - annee: 2020
+      titre: Les 4 Terres
+      gain: 14.92
+    - annee: 2020
+      titre: L'Île des héros
+      gain: 15.67
+    - annee: 2021
+      titre: Les Armes secrètes
+      gain: 19.09
+    - &id015
+      annee: 2021
+      titre: La Légende
+      gain: 20.68
+    - &id016
+      annee: 2022
+      titre: Le Totem maudit
+      gain: 19.75
+    - annee: 2023
+      titre: Le Feu sacré
+      gain: 17.17
+    - annee: 2024
+      titre: Les Chasseurs d'immunité
+      gain: 14.36
+    exaequo:
+    - *id015
+    nb_exaequo: 1
+    nb_proches: 3
+    avance: 4.5
+    fenetre:
+      debut: 2021
+      fin: 2022
+      etendue: 1
+    second: *id016
+    retournement:
+      avant: 7
+      apres: 26
+      bascule: *id017
+      ratio_avant: 1.282
+      ratio_apres: 0.965
+    courbes:
+    - saison: s05
+      titre: Pacifique
+      annee: 2005
+      mesures: 12
+      indices:
+      - 100.0
+      - 100.8
+      - 105.0
+      - 87.8
+      - 96.4
+      - 98.3
+      - 100.8
+      - 92.5
+      - 102.5
+      - 115.0
+      - 124.2
+      - 128.3
+    - saison: s12
+      titre: Malaisie
+      annee: 2012
+      mesures: 14
+      indices:
+      - 100.0
+      - 96.1
+      - 101.2
+      - 99.0
+      - 98.6
+      - 98.0
+      - 96.5
+      - 95.4
+      - 92.6
+      - 99.4
+      - 99.3
+      - 102.2
+      - 100.3
+      - 105.2
+    - saison: s18
+      titre: Fidji
+      annee: 2017
+      mesures: 14
+      indices:
+      - 100.0
+      - 96.5
+      - 95.7
+      - 91.4
+      - 85.8
+      - 94.6
+      - 89.8
+      - 89.0
+      - 90.3
+      - 93.0
+      - 90.5
+      - 92.9
+      - 96.5
+      - 99.4
+    - saison: s21
+      titre: Les 4 Terres
+      annee: 2020
+      mesures: 15
+      indices:
+      - 100.0
+      - 96.8
+      - 91.5
+      - 90.6
+      - 90.6
+      - 88.6
+      - 89.5
+      - 91.4
+      - 95.3
+      - 103.5
+      - 99.0
+      - 100.6
+      - 100.7
+      - 111.4
+      - 111.6
+    - saison: s22
+      titre: Les Armes secrètes
+      annee: 2021
+      mesures: 13
+      indices:
+      - 100.0
+      - 94.9
+      - 86.2
+      - 98.0
+      - 92.7
+      - 92.0
+      - 97.1
+      - 98.1
+      - 100.3
+      - 93.5
+      - 97.5
+      - 97.5
+      - 99.6
+    - saison: s24
+      titre: Le Feu sacré
+      annee: 2023
+      mesures: 35
+      indices:
+      - 100.0
+      - 82.3
+      - 89.4
+      - 74.6
+      - 92.3
+      - 72.7
+      - 87.8
+      - 76.3
+      - 89.7
+      - 76.7
+      - 89.2
+      - 80.3
+      - 91.1
+      - 75.1
+      - 84.2
+      - 71.5
+      - 91.1
+      - 74.8
+      - 79.4
+      - 68.6
+      - 81.8
+      - 72.9
+      - 84.7
+      - 73.9
+      - 85.9
+      - 78.4
+      - 83.7
+      - 76.3
+      - 88.2
+      - 79.1
+      - 88.0
+      - 82.5
+      - 88.7
+      - 74.1
+      - 75.8
+    - saison: s25
+      titre: Les Chasseurs d'immunité
+      annee: 2024
+      mesures: 33
+      indices:
+      - 100.0
+      - 82.8
+      - 102.7
+      - 85.8
+      - 106.0
+      - 90.4
+      - 95.9
+      - 84.2
+      - 94.3
+      - 79.5
+      - 94.0
+      - 70.8
+      - 93.2
+      - 80.3
+      - 88.8
+      - 79.0
+      - 82.0
+      - 69.7
+      - 89.3
+      - 78.7
+      - 88.0
+      - 84.4
+      - 86.6
+      - 81.4
+      - 90.7
+      - 79.0
+      - 88.8
+      - 80.9
+      - 93.2
+      - 85.2
+      - 89.3
+      - 67.2
+      - 80.1
+    - saison: s26
+      titre: La Tribu maudite
+      annee: 2024
+      mesures: 33
+      indices:
+      - 100.0
+      - 85.5
+      - 98.9
+      - 75.5
+      - 94.1
+      - 76.1
+      - 82.3
+      - 64.5
+      - 79.8
+      - 68.0
+      - 89.2
+      - 74.7
+      - 80.4
+      - 67.7
+      - 89.8
+      - 73.4
+      - 84.4
+      - 71.2
+      - 91.7
+      - 75.3
+      - 94.6
+      - 79.0
+      - 85.8
+      - 71.0
+      - 87.4
+      - 75.3
+      - 93.5
+      - 80.4
+      - 82.4
+      - 70.2
+      - 86.1
+      - 65.3
+      - 73.4
+    - saison: s27
+      titre: La Revanche des 4 Terres
+      annee: 2025
+      mesures: 35
+      indices:
+      - 100.0
+      - 78.1
+      - 80.2
+      - 64.9
+      - 76.8
+      - 62.4
+      - 84.8
+      - 66.9
+      - 89.2
+      - 79.8
+      - 81.1
+      - 69.7
+      - 89.6
+      - 75.0
+      - 76.7
+      - 68.0
+      - 88.1
+      - 80.9
+      - 79.5
+      - 71.1
+      - 78.5
+      - 68.0
+      - 92.9
+      - 83.1
+      - 87.2
+      - 77.5
+      - 88.2
+      - 82.9
+      - 85.2
+      - 79.5
+      - 90.0
+      - 87.1
+      - 80.9
+      - 69.4
+      - 74.4
+    - saison: s28
+      titre: Les Reliques du destin
+      annee: 2026
+      mesures: 33
+      indices:
+      - 100.0
+      - 74.7
+      - 87.6
+      - 72.3
+      - 73.1
+      - 60.6
+      - 78.1
+      - 63.4
+      - 82.7
+      - 68.9
+      - 79.3
+      - 67.1
+      - 83.6
+      - 68.0
+      - 79.3
+      - 66.5
+      - 78.1
+      - 67.7
+      - 93.1
+      - 80.2
+      - 78.7
+      - 63.4
+      - 78.1
+      - 68.9
+      - 75.7
+      - 65.2
+      - 85.5
+      - 70.8
+      - 81.2
+      - 74.7
+      - 80.3
+      - 61.3
+      - 68.3
+    - saison: sp3
+      titre: La Revanche des héros
+      annee: 2012
+      mesures: 9
+      indices:
+      - 100.0
+      - 97.5
+      - 97.7
+      - 95.8
+      - 92.4
+      - 93.0
+      - 92.3
+      - 78.2
+      - 90.3
+    - saison: sp5
+      titre: Le Combat des héros
+      annee: 2018
+      mesures: 11
+      indices:
+      - 100.0
+      - 84.5
+      - 109.4
+      - 101.1
+      - 101.7
+      - 87.1
+      - 98.6
+      - 99.5
+      - 98.1
+      - 104.4
+      - 108.0
+    - saison: sp6
+      titre: L'Île des héros
+      annee: 2020
+      mesures: 15
+      indices:
+      - 100.0
+      - 97.9
+      - 102.1
+      - 123.8
+      - 139.7
+      - 141.3
+      - 147.2
+      - 150.0
+      - 139.9
+      - 151.9
+      - 141.6
+      - 139.7
+      - 140.6
+      - 139.4
+      - 149.2
+    - saison: sp7
+      titre: La Légende
+      annee: 2021
+      mesures: 15
+      indices:
+      - 100.0
+      - 94.6
+      - 76.9
+      - 79.5
+      - 70.0
+      - 73.9
+      - 70.2
+      - 68.7
+      - 75.6
+      - 74.3
+      - 80.8
+      - 72.6
+      - 69.4
+      - 77.8
+      - 79.2
+    jours:
+    - jour: Vendredi
+      saisons: 24
+      moyenne: 6259667
+      premiere: 2002
+      derniere: 2021
+    - jour: Mardi
+      saisons: 8
+      moyenne: 3886875
+      premiere: 2009
+      derniere: 2026
+    - jour: Samedi
+      saisons: 1
+      moyenne: 4367000
+      premiere: 2001
+      derniere: 2001
+    bascule_jour: *id014
+    format_correlation_brute: -0.643
+    tests:
+    - cle: audience_rupture
+      libelle: La rupture d'audience
+      question: La chute d'audience tombe-t-elle a une date, ou se fait-elle par glissement ?
+      observe: 20.681
+      attendu: 3.503
+      unite: ''
+      ecart_types: 8.09
+      p: 0.0001
+      tirages: 10000
+      lecture: Gain de la meilleure coupure de la serie d'audience, compare a celui obtenu sur des saisons
+        remises dans un ordre au hasard. Le profil complet des coupures dit ensuite si cette date est
+        identifiee ou si plusieurs se valent.
+      nulle: &id031
+        bornes:
+        - -0.7371
+        - 21.7011
+        cases:
+        - 0
+        - 265
+        - 1532
+        - 1971
+        - 1740
+        - 1349
+        - 1049
+        - 675
+        - 488
+        - 328
+        - 208
+        - 142
+        - 89
+        - 64
+        - 41
+        - 18
+        - 21
+        - 6
+        - 5
+        - 3
+        - 2
+        - 1
+        - 1
+        - 1
+        - 0
+        - 0
+        - 1
+        - 0
+        largeur_case: 0.801363
+        observe: 20.6811
+        moyenne_nulle: 3.5032
+      origine: audience
+      p_ajustee: 0.0005
+      retenu: true
+    - cle: audience_retournement
+      libelle: Le retournement finale / lancement
+      question: La finale attire-t-elle toujours plus de monde que le lancement ?
+      observe: -0.654
+      attendu: 0.002
+      unite: ''
+      ecart_types: -3.64
+      p: 0.0002
+      tirages: 10000
+      lecture: Correlation de rang entre l'annee et le rapport finale / lancement. Negative, elle dit
+        que l'avantage de la finale se reduit d'annee en annee.
+      nulle: &id032
+        bornes:
+        - -0.7197
+        - 0.7321
+        cases:
+        - 0
+        - 1
+        - 6
+        - 13
+        - 31
+        - 62
+        - 115
+        - 228
+        - 345
+        - 508
+        - 709
+        - 910
+        - 1051
+        - 1092
+        - 1122
+        - 996
+        - 896
+        - 716
+        - 495
+        - 323
+        - 189
+        - 101
+        - 56
+        - 24
+        - 5
+        - 4
+        - 2
+        - 0
+        largeur_case: 0.051851
+        observe: -0.6537
+        moyenne_nulle: 0.0016
+      origine: audience
+      p_ajustee: 0.0005
+      retenu: true
+    - cle: audience_format
+      libelle: Le format suit-il l'audience ?
+      question: Une saison moins regardee que son epoque ne le laissait attendre est-elle suivie d'un
+        casting plus large ?
+      observe: -0.296
+      attendu: -0.0
+      unite: ''
+      ecart_types: -1.62
+      p: 0.1074
+      tirages: 10000
+      lecture: Correlation de rang entre l'audience d'une saison et l'effectif de la suivante, une fois
+        la tendance temporelle retiree des deux series. Sans cette precaution, le lien brut ne mesure
+        que le passage du temps.
+      nulle: &id033
+        bornes:
+        - -0.6809
+        - 0.7022
+        cases:
+        - 0
+        - 3
+        - 11
+        - 19
+        - 44
+        - 93
+        - 173
+        - 268
+        - 386
+        - 538
+        - 766
+        - 840
+        - 1031
+        - 1042
+        - 1023
+        - 968
+        - 850
+        - 674
+        - 483
+        - 323
+        - 223
+        - 139
+        - 55
+        - 27
+        - 14
+        - 6
+        - 1
+        - 0
+        largeur_case: 0.049395
+        observe: -0.2958
+        moyenne_nulle: -0.0001
+      origine: audience
+      p_ajustee: 0.1575
+      retenu: false
   registre:
   - cle: parite
     libelle: L'equilibre hommes-femmes
@@ -13433,7 +14415,7 @@ modeles:
     tirages: 10000
     lecture: 'Un ecart observe plus PETIT que l''attendu est la signature d''un quota : le hasard, lui,
       produit des castings desequilibres de temps en temps.'
-    nulle: *id010
+    nulle: *id018
   - cle: etendue_ages
     libelle: L'ecart d'age dans un meme casting
     question: Un casting melange-t-il les ages plus qu'un tirage au hasard ne le ferait ?
@@ -13443,12 +14425,12 @@ modeles:
     unite: annees
     ecart_types: 2.53
     p: 0.0118
-    p_ajustee: 0.0204
+    p_ajustee: 0.02
     retenu: true
     tirages: 10000
     lecture: Rebattre les aventuriers entre saisons donne l'ecart-type general. Un ecart observe PLUS
       GRAND veut dire qu'on place expres un jeune et un ancien dans chaque casting.
-    nulle: *id011
+    nulle: *id019
   - cle: familles_metiers
     libelle: La variete des metiers
     question: Un casting couvre-t-il plus de familles de metiers qu'un tirage au hasard ?
@@ -13463,7 +14445,7 @@ modeles:
     tirages: 10000
     lecture: On compte, pour chaque saison, le nombre de familles de metiers representees. Un total observe
       PLUS GRAND veut dire qu'on veille a n'oublier aucune famille.
-    nulle: *id012
+    nulle: *id020
   - cle: melange_archetypes
     libelle: Le melange d'archetypes
     question: Chaque saison contient-elle toujours le meme melange de profils ?
@@ -13473,12 +14455,12 @@ modeles:
     unite: ''
     ecart_types: 1.06
     p: 0.2939
-    p_ajustee: 0.3723
+    p_ajustee: 0.3592
     retenu: false
     tirages: 10000
     lecture: Distance entre le melange de profils d'une saison et le melange general. Un observe PLUS
       PETIT que l'attendu veut dire que les saisons se ressemblent plus que le hasard ne l'expliquerait.
-    nulle: *id013
+    nulle: *id021
   - cle: tribus_femmes
     libelle: La composition des deux tribus
     question: Les deux tribus de depart sont-elles plus semblables en part de femmes qu'un tirage au hasard
@@ -13489,12 +14471,12 @@ modeles:
     unite: points de %
     ecart_types: -1.76
     p: 0.077
-    p_ajustee: 0.1125
+    p_ajustee: 0.121
     retenu: false
     tirages: 10000
     lecture: On rebat les bandeaux a l'interieur de chaque saison. Un ecart observe PLUS PETIT que l'attendu
       veut dire que les tribus sont composees a l'equilibre, pas tirees au sort.
-    nulle: *id014
+    nulle: *id022
   - cle: tribus_ages
     libelle: L'age moyen des deux tribus
     question: Les deux tribus de depart ont-elles des ages moyens plus proches qu'un tirage au hasard
@@ -13505,12 +14487,12 @@ modeles:
     unite: annees
     ecart_types: 3.03
     p: 0.0022
-    p_ajustee: 0.0042
+    p_ajustee: 0.004
     retenu: true
     tirages: 10000
     lecture: 'Meme methode, sur l''age moyen de chaque bandeau. Un ecart observe PLUS GRAND que l''attendu
       veut dire l''inverse d''un equilibre : deux tribus construites pour differer.'
-    nulle: *id015
+    nulle: *id023
   - cle: tribus_ages_mediane
     libelle: L'age des deux tribus, a la mediane
     question: 'Le meme ecart, mesure a la mediane : est-il general, ou porte par quelques saisons ?'
@@ -13520,12 +14502,12 @@ modeles:
     unite: annees
     ecart_types: 1.02
     p: 0.3162
-    p_ajustee: 0.3755
+    p_ajustee: 0.3661
     retenu: false
     tirages: 10000
     lecture: La mediane ignore les valeurs extremes. Si elle ne s'ecarte pas, c'est que l'ecart moyen
       tient a quelques editions et non a une regle de composition.
-    nulle: *id016
+    nulle: *id024
   - cle: pronostic_vainqueur
     libelle: Pronostiquer le vainqueur au casting
     question: En ne connaissant que l'age, le sexe, le metier et la couleur, place-t-on le futur vainqueur
@@ -13536,68 +14518,68 @@ modeles:
     unite: rang moyen
     ecart_types: 0.41
     p: 0.6927
-    p_ajustee: 0.7312
+    p_ajustee: 0.762
     retenu: false
     tirages: 10000
     lecture: Le modele classe les candidats d'une saison ; on releve la place qu'il donne a celui qui
       a gagne. Plus BAS que l'attendu veut dire qu'une part du resultat se joue au recrutement.
-    nulle: *id017
+    nulle: *id025
   - cle: vote_meme_sexe
     libelle: Viser quelqu'un du même sexe
     question: Parmi les présents, écrit-on plutôt le nom de quelqu'un de son sexe ?
     origine: homophilie
-    observe: 45.522
-    attendu: 46.664
+    observe: 45.978
+    attendu: 46.877
     unite: '%'
-    ecart_types: -1.6
-    p: 0.1115
-    p_ajustee: 0.1513
+    ecart_types: -1.32
+    p: 0.2044
+    p_ajustee: 0.2645
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
       : la popularite d''une cible est donc neutralisee. Un observe au-dessus de l''attendu veut dire
       qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-    nulle: *id018
+    nulle: *id026
   - cle: vote_ecart_age
     libelle: L'écart d'âge avec sa cible
     question: Écrit-on plutôt le nom de quelqu'un de sa génération, ou d'une autre ?
     origine: homophilie
-    observe: 11.777
-    attendu: 11.62
+    observe: 11.754
+    attendu: 11.626
     unite: années
-    ecart_types: 1.82
-    p: 0.0677
-    p_ajustee: 0.1072
+    ecart_types: 1.54
+    p: 0.1205
+    p_ajustee: 0.1657
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
       : la popularite d''une cible est donc neutralisee. Un observe au-dessus de l''attendu veut dire
       qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-    nulle: *id019
+    nulle: *id027
   - cle: vote_meme_metier
     libelle: Viser la même famille de métier
     question: Le métier rapproche-t-il ou éloigne-t-il du bulletin ?
     origine: homophilie
-    observe: 9.641
-    attendu: 9.971
+    observe: 9.783
+    attendu: 9.893
     unite: '%'
-    ecart_types: -0.89
-    p: 0.3877
-    p_ajustee: 0.4333
+    ecart_types: -0.3
+    p: 0.7573
+    p_ajustee: 0.7934
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
       : la popularite d''une cible est donc neutralisee. Un observe au-dessus de l''attendu veut dire
       qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-    nulle: *id020
+    nulle: *id028
   - cle: vote_meme_bandeau
     libelle: Viser son propre bandeau de départ
     question: Le camp d'origine protège-t-il, une fois les tribus mélangées ?
     origine: homophilie
-    observe: 59.612
-    attendu: 65.832
+    observe: 58.533
+    attendu: 64.959
     unite: '%'
-    ecart_types: -10.48
+    ecart_types: -10.98
     p: 0.0002
     p_ajustee: 0.0005
     retenu: true
@@ -13605,23 +14587,23 @@ modeles:
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le meme jeu de cibles
       : la popularite d''une cible est donc neutralisee. Un observe au-dessus de l''attendu veut dire
       qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-    nulle: *id021
+    nulle: *id029
   - cle: vote_bandeau_apres_fusion
     libelle: Épargner son bandeau de départ
     question: Une fois les tribus mélangées, écrit-on moins souvent le nom de quelqu'un de son camp d'origine
       ?
     origine: homophilie
-    observe: 31.559
-    attendu: 42.106
+    observe: 30.916
+    attendu: 41.639
     unite: '%'
-    ecart_types: -10.61
+    ecart_types: -11.05
     p: 0.0002
     p_ajustee: 0.0005
     retenu: true
     tirages: 4000
     lecture: Mesuré sur les seuls conseils réunissant plusieurs bandeaux. Un observé SOUS l'attendu veut
       dire que le camp de départ protège encore, longtemps après avoir cessé d'exister.
-    nulle: *id022
+    nulle: *id030
   - cle: geographie_departements
     libelle: L'origine géographique, par département
     question: Les aventuriers viennent-ils de départements plus variés, ou plus concentrés, qu'un tirage
@@ -13725,31 +14707,79 @@ modeles:
       largeur_case: 2.220808
       observe: 58.7614
       moyenne_nulle: 16.0706
+  - cle: audience_rupture
+    libelle: La rupture d'audience
+    question: La chute d'audience tombe-t-elle a une date, ou se fait-elle par glissement ?
+    origine: audience
+    observe: 20.681
+    attendu: 3.503
+    unite: ''
+    ecart_types: 8.09
+    p: 0.0001
+    p_ajustee: 0.0005
+    retenu: true
+    tirages: 10000
+    lecture: Gain de la meilleure coupure de la serie d'audience, compare a celui obtenu sur des saisons
+      remises dans un ordre au hasard. Le profil complet des coupures dit ensuite si cette date est identifiee
+      ou si plusieurs se valent.
+    nulle: *id031
+  - cle: audience_retournement
+    libelle: Le retournement finale / lancement
+    question: La finale attire-t-elle toujours plus de monde que le lancement ?
+    origine: audience
+    observe: -0.654
+    attendu: 0.002
+    unite: ''
+    ecart_types: -3.64
+    p: 0.0002
+    p_ajustee: 0.0005
+    retenu: true
+    tirages: 10000
+    lecture: Correlation de rang entre l'annee et le rapport finale / lancement. Negative, elle dit que
+      l'avantage de la finale se reduit d'annee en annee.
+    nulle: *id032
+  - cle: audience_format
+    libelle: Le format suit-il l'audience ?
+    question: Une saison moins regardee que son epoque ne le laissait attendre est-elle suivie d'un casting
+      plus large ?
+    origine: audience
+    observe: -0.296
+    attendu: -0.0
+    unite: ''
+    ecart_types: -1.62
+    p: 0.1074
+    p_ajustee: 0.1575
+    retenu: false
+    tirages: 10000
+    lecture: Correlation de rang entre l'audience d'une saison et l'effectif de la suivante, une fois
+      la tendance temporelle retiree des deux series. Sans cette precaution, le lien brut ne mesure que
+      le passage du temps.
+    nulle: *id033
   - cle: persistance_alliances
     libelle: La persistance des alliances
     question: Deux aventuriers qui ont vote ensemble votent-ils encore ensemble au conseil suivant, plus
       souvent que le hasard ne le voudrait ?
     origine: alliances
-    observe: 31.521
-    attendu: 1.206
+    observe: 32.502
+    attendu: 1.428
     unite: points de %
-    ecart_types: 17.92
+    ecart_types: 19.15
     p: 0.0005
-    p_ajustee: 0.0011
+    p_ajustee: 0.001
     retenu: true
     tirages: 2000
     lecture: 'Ecart entre deux probabilites : voter ensemble apres avoir vote ensemble, et voter ensemble
       apres avoir vote separement. A zero, chaque conseil repart de zero et il n''y a pas d''alliance.'
-    nulle: *id023
+    nulle: *id034
   - cle: rupture
     libelle: La rupture de régime
     question: Existe-t-il une date qui sépare les saisons en deux régimes mieux qu'une date tirée au sort
       ?
     origine: ruptures
-    observe: 54.285
-    attendu: 13.164
+    observe: 56.646
+    attendu: 13.264
     unite: ''
-    ecart_types: 7.21
+    ecart_types: 7.39
     p: 0.0001
     p_ajustee: 0.0005
     retenu: true
@@ -13757,38 +14787,38 @@ modeles:
     lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
       dans un ordre au hasard. Une coupure existe toujours ; la question est de savoir si celle-ci vaut
       mieux que n'importe quelle autre.
-    nulle: *id024
+    nulle: *id035
   - cle: trahison
     libelle: Écrire le nom d'un ancien allié
     question: Quand on a déjà voté avec quelqu'un, écrit-on son nom plus ou moins souvent qu'un autre
       ?
     origine: trahison
-    observe: 51.545
-    attendu: 60.103
+    observe: 51.404
+    attendu: 60.057
     unite: '%'
-    ecart_types: -12.55
+    ecart_types: -13.01
     p: 0.0002
     p_ajustee: 0.0005
     retenu: true
     tirages: 4000
     lecture: Part des bulletins visant quelqu'un avec qui l'auteur avait déjà voté. Un observé SOUS l'attendu
       veut dire que l'alliance protège ; au-dessus, qu'elle expose.
-    nulle: *id025
+    nulle: *id036
   - cle: decimation
     libelle: L'élimination en série d'un camp
     question: Après la réunification, les sorties se suivent-elles par bandeau plus souvent que le hasard
       ne le voudrait ?
     origine: decimation
-    observe: 106.0
-    attendu: 83.967
+    observe: 108.0
+    attendu: 84.794
     unite: enchaînements
-    ecart_types: 3.46
-    p: 0.0005
-    p_ajustee: 0.0011
+    ecart_types: 3.6
+    p: 0.0003
+    p_ajustee: 0.0007
     retenu: true
     tirages: 10000
     lecture: Nombre de fois où deux sorties consécutives viennent du même bandeau de départ. Un observé
       AU-DESSUS de l'attendu est la signature d'un camp démonté un par un.
-    nulle: *id026
-  nb_tests: 19
-  nb_retenus: 11
+    nulle: *id037
+  nb_tests: 22
+  nb_retenus: 13

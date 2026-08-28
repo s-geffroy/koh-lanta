@@ -24,6 +24,8 @@ Trois regles propres a ce module :
     reproductible et le site changerait tout seul d'une publication a l'autre.
     `tools/verifie_site.py` le controle par arbre syntaxique.
 """
+import collections
+
 import numpy as np
 
 GRAINE = 20260828
@@ -88,6 +90,32 @@ def benjamini_hochberg(pvaleurs):
         precedent = min(precedent, pvaleurs[i] * n / k)
         ajustees[i] = min(1.0, precedent)
     return ajustees
+
+
+def _detendance(t, v):
+    """Ce qui reste d'une serie une fois sa tendance temporelle retiree.
+
+    Deux grandeurs qui derivent chacune avec les annees se correlent toujours,
+    et le lien ne dit alors rien de plus que « le temps passe ». On ajuste donc
+    une droite sur l'annee et on ne garde que les residus.
+    """
+    t = np.asarray(t, dtype=float)
+    v = np.asarray(v, dtype=float)
+    a, b = np.polyfit(t, v, 1)
+    return v - (a * t + b)
+
+
+def _spearman(x, y):
+    """Correlation de rang. Ecrite ici plutot qu'importee : elle doit rendre le
+    meme chiffre a chaque construction, et sur des rangs sans ex aequo la
+    formule de Pearson sur les rangs suffit."""
+    def rangs(v):
+        ordre = np.argsort(np.argsort(v, kind="stable"), kind="stable")
+        return ordre.astype(float)
+    a, b = rangs(np.asarray(x, dtype=float)), rangs(np.asarray(y, dtype=float))
+    a, b = a - a.mean(), b - b.mean()
+    d = float(np.sqrt((a * a).sum() * (b * b).sum()))
+    return float((a * b).sum() / d) if d else 0.0
 
 
 def _p_bilaterale(observe, nulle):
@@ -1596,6 +1624,19 @@ def ruptures(par_saison, indicateurs_saison):
     # moins deplacerait.
     seuil = ordonne[0]["gain"] * 0.98
     exaequo = [x for x in ordonne if x["gain"] >= seuil]
+    # Un critere plat ne designe pas une date. On mesure donc deux choses : de
+    # combien la meilleure coupure devance la deuxieme, et combien de dates
+    # tiennent a 10 % pres. C'est ce couple, et non le maximum seul, qui dit
+    # si l'annee est identifiee.
+    proches = [x for x in ordonne if x["gain"] >= ordonne[0]["gain"] * 0.90]
+    avance = _arr(100.0 * (1 - ordonne[1]["gain"] / ordonne[0]["gain"]), 1) \
+        if len(ordonne) > 1 else None
+    # L'etendue en annees des coupures presque aussi bonnes. C'est ELLE qui
+    # dit si la date est identifiee : une avance de 4 % sur onze ans de
+    # concurrentes ne designe rien ; la meme avance sur deux ans, si.
+    fenetre = {"debut": min(x["annee"] for x in proches),
+               "fin": max(x["annee"] for x in proches)}
+    fenetre["etendue"] = fenetre["fin"] - fenetre["debut"]
 
     g = rng("ruptures")
     nulle = np.array([meilleure_coupure(g.permutation(Y))[1]
@@ -1626,6 +1667,9 @@ def ruptures(par_saison, indicateurs_saison):
         "profil": profil,
         "exaequo": exaequo,
         "nb_exaequo": len(exaequo),
+        "nb_proches": len(proches),
+        "avance": avance,
+        "fenetre": fenetre,
         "second": ordonne[1] if len(ordonne) > 1 else None,
         "test": _test(
             "rupture", "La rupture de régime",
@@ -2173,6 +2217,236 @@ def decimation(par_saison, parts, conseils, epreuves):
 
 # --- assemblage ------------------------------------------------------------
 
+# --- L. L'audience : la seule variable que le jeu ne controle pas -----------
+
+def audience(par_saison, indicateurs_saison, mesures):
+    """L'audience televisee, saison par saison, et ce qu'elle explique.
+
+    Ce site a longtemps ecrit qu'aucune donnee d'audience n'existait en source
+    publique. C'etait faux : l'article general de Wikipedia en porte un tableau
+    complet. C'est la seule grandeur du jeu de donnees que la production
+    n'ecrit pas : elle la subit. D'ou trois questions.
+
+    1. La chute d'audience a-t-elle une DATE, ou est-elle continue ? La meme
+       segmentation binaire que pour le format, sur la seule serie de
+       l'audience moyenne -- et surtout le profil complet des coupures, qui
+       dit si la date est identifiee.
+    2. Le rapport finale / lancement s'est-il retourne ? Longtemps la finale
+       faisait mieux que le lancement ; ce n'est plus vrai.
+    3. Le format suit-il l'audience ? On regarde si l'audience d'une saison
+       annonce la taille du casting de la SUIVANTE. C'est la question de fond,
+       et elle est sous-dimensionnee : on publie l'intervalle, pas un verdict.
+    """
+    if not mesures:
+        return {}
+    par_id = {m["saison"]: m for m in mesures.get("saisons") or []}
+    ind = {i["id"]: i for i in indicateurs_saison}
+
+    lignes = []
+    for sid, m in par_id.items():
+        s = par_saison.get(sid) or {}
+        if s.get("annulee") or s.get("en_cours") or not m.get("moyenne"):
+            continue
+        lignes.append({
+            "saison": sid, "annee": m["annee"], "titre": m.get("titre"),
+            "speciale": bool(s.get("speciale")),
+            "moyenne": m["moyenne"], "lancement": m.get("lancement"),
+            "finale": m.get("finale"), "pdm": m.get("moyenne_pdm"),
+            "jour": m.get("jour"),
+            "effectif": (ind.get(sid) or {}).get("effectif"),
+        })
+    if len(lignes) < 16:
+        return {}
+    lignes.sort(key=lambda x: (x["annee"], x["saison"]))
+
+    # --- 1. la rupture d'audience ----------------------------------------
+    y = np.array([float(l["moyenne"]) for l in lignes])
+    z = (y - y.mean()) / (y.std() or 1.0)
+
+    def cout(v):
+        return float(np.sum((v - v.mean()) ** 2))
+
+    def meilleure(v, marge=4):
+        total, meilleur, gain = cout(v), None, 0.0
+        for k in range(marge, len(v) - marge + 1):
+            g = total - cout(v[:k]) - cout(v[k:])
+            if g > gain:
+                meilleur, gain = k, g
+        return meilleur, gain
+
+    k, gain = meilleure(z)
+    g = rng("audience_rupture")
+    nulle = np.array([meilleure(g.permutation(z))[1] for _ in range(N_PERMUTATIONS)])
+
+    total = cout(z)
+    profil = [{"annee": int(lignes[i]["annee"]), "titre": lignes[i]["titre"],
+               "gain": _arr(total - cout(z[:i]) - cout(z[i:]), 2)}
+              for i in range(4, len(z) - 3)]
+    ordonne = sorted(profil, key=lambda x: -x["gain"])
+    exaequo = [x for x in ordonne if x["gain"] >= ordonne[0]["gain"] * 0.98]
+    proches = [x for x in ordonne if x["gain"] >= ordonne[0]["gain"] * 0.90]
+    avance = _arr(100.0 * (1 - ordonne[1]["gain"] / ordonne[0]["gain"]), 1) \
+        if len(ordonne) > 1 else None
+    # L'etendue en annees des coupures presque aussi bonnes. C'est ELLE qui
+    # dit si la date est identifiee : une avance de 4 % sur onze ans de
+    # concurrentes ne designe rien ; la meme avance sur deux ans, si.
+    fenetre = {"debut": min(x["annee"] for x in proches),
+               "fin": max(x["annee"] for x in proches)}
+    fenetre["etendue"] = fenetre["fin"] - fenetre["debut"]
+
+    t_rupture = _test(
+        "audience_rupture", "La rupture d'audience",
+        "La chute d'audience tombe-t-elle a une date, ou se fait-elle par glissement ?",
+        gain, nulle, unite="",
+        lecture="Gain de la meilleure coupure de la serie d'audience, compare a "
+                "celui obtenu sur des saisons remises dans un ordre au hasard. "
+                "Le profil complet des coupures dit ensuite si cette date est "
+                "identifiee ou si plusieurs se valent.")
+
+    # --- 2. le retournement finale / lancement ---------------------------
+    duo = [l for l in lignes if l["lancement"] and l["finale"]]
+    annees = np.array([float(l["annee"]) for l in duo])
+    ratio = np.array([l["finale"] / l["lancement"] for l in duo])
+    obs = float(_spearman(annees, ratio))
+    g2 = rng("audience_retournement")
+    nulle2 = np.array([float(_spearman(annees, g2.permutation(ratio)))
+                       for _ in range(N_PERMUTATIONS)])
+    t_retournement = _test(
+        "audience_retournement", "Le retournement finale / lancement",
+        "La finale attire-t-elle toujours plus de monde que le lancement ?",
+        obs, nulle2, unite="",
+        lecture="Correlation de rang entre l'annee et le rapport finale / "
+                "lancement. Negative, elle dit que l'avantage de la finale se "
+                "reduit d'annee en annee.")
+
+    bascule = None
+    for l in sorted(duo, key=lambda x: x["annee"]):
+        if l["finale"] < l["lancement"] and bascule is None:
+            bascule = l
+    apres = [l for l in duo if l["annee"] >= (bascule or duo[-1])["annee"]]
+    avant = [l for l in duo if l["annee"] < (bascule or duo[-1])["annee"]]
+
+    # --- 3. le format suit-il l'audience ? -------------------------------
+    #
+    # Piege : l'audience baisse avec les annees, le casting grossit avec les
+    # annees. Les correler directement donne un lien negatif fort qui ne dit
+    # rien d'autre que « le temps passe ». On retire donc de CHAQUE serie sa
+    # tendance temporelle, et on ne correle que ce qui reste -- l'ecart d'une
+    # saison a ce que son annee laissait attendre. La correlation brute est
+    # publiee a cote, pour montrer ce que la precaution enleve.
+    couples = []
+    suite = sorted(lignes, key=lambda x: (x["annee"], x["saison"]))
+    for a, b in zip(suite, suite[1:]):
+        if a.get("moyenne") and b.get("effectif"):
+            couples.append((float(a["annee"]), float(a["moyenne"]), float(b["effectif"])))
+    t_suite, brute = {}, None
+    if len(couples) >= 16:
+        an = np.array([c[0] for c in couples])
+        xa = np.array([c[1] for c in couples])
+        yb = np.array([c[2] for c in couples])
+        brute = _arr(float(_spearman(xa, yb)), 3)
+        rx, ry = _detendance(an, xa), _detendance(an, yb)
+        obs3 = float(_spearman(rx, ry))
+        g3 = rng("audience_format")
+        nulle3 = np.array([float(_spearman(rx, g3.permutation(ry)))
+                           for _ in range(N_PERMUTATIONS)])
+        t_suite = _test(
+            "audience_format", "Le format suit-il l'audience ?",
+            "Une saison moins regardee que son epoque ne le laissait attendre "
+            "est-elle suivie d'un casting plus large ?",
+            obs3, nulle3, unite="",
+            lecture="Correlation de rang entre l'audience d'une saison et "
+                    "l'effectif de la suivante, une fois la tendance temporelle "
+                    "retiree des deux series. Sans cette precaution, le lien "
+                    "brut ne mesure que le passage du temps.")
+
+    # --- le soir de diffusion --------------------------------------------
+    #
+    # Le programme a change de soir une fois, en aout 2021. La coupure trouvee
+    # plus haut tombe sur cette meme saison. Les deux variables sont donc la
+    # MEME : aucune statistique sur trente-trois saisons ne peut les separer.
+    # On donne les moyennes par soir, et on le dit.
+    par_jour = {}
+    for l in lignes:
+        par_jour.setdefault(l.get("jour") or "inconnu", []).append(l)
+    jours = [{"jour": j, "saisons": len(v),
+              "moyenne": int(round(float(np.mean([x["moyenne"] for x in v])))),
+              "premiere": min(x["annee"] for x in v),
+              "derniere": max(x["annee"] for x in v)}
+             for j, v in par_jour.items()]
+    jours.sort(key=lambda x: -x["saisons"])
+    bascule_jour = None
+    for a_, b_ in zip(lignes, lignes[1:]):
+        if a_.get("jour") and b_.get("jour") and a_["jour"] != b_["jour"] \
+                and b_["annee"] >= 2015:
+            bascule_jour = b_
+            break
+
+    # --- la courbe interne d'une saison ----------------------------------
+    par_ep = collections.defaultdict(list)
+    for e in mesures.get("episodes") or []:
+        par_ep[e["saison"]].append(e)
+    courbes = []
+    for sid, lot in sorted(par_ep.items()):
+        s = par_saison.get(sid) or {}
+        if s.get("annulee") or len(lot) < 6:
+            continue
+        lot = sorted(lot, key=lambda x: x["mesure"])
+        base = lot[0]["telespectateurs"]
+        courbes.append({
+            "saison": sid, "titre": s.get("titre"), "annee": s.get("annee"),
+            "mesures": len(lot),
+            "indices": [_arr(100.0 * x["telespectateurs"] / base, 1) for x in lot],
+        })
+
+    return {
+        "saisons": len(lignes),
+        "serie": lignes,
+        "premiere": lignes[0], "derniere": lignes[-1],
+        "sommet": max(lignes, key=lambda x: x["moyenne"]),
+        "chute": _arr(100.0 * (1 - lignes[-1]["moyenne"]
+                               / max(l["moyenne"] for l in lignes)), 1),
+        "annee_rupture": int(lignes[k]["annee"]),
+        "derniere_avant": lignes[k - 1], "premiere_apres": lignes[k],
+        "avant": k, "apres": len(lignes) - k,
+        "moyenne_avant": int(round(float(y[:k].mean()))),
+        "moyenne_apres": int(round(float(y[k:].mean()))),
+        "profil": profil, "exaequo": exaequo, "nb_exaequo": len(exaequo),
+        "nb_proches": len(proches), "avance": avance, "fenetre": fenetre,
+        "second": ordonne[1] if len(ordonne) > 1 else None,
+        "retournement": {
+            "avant": len(avant), "apres": len(apres),
+            "bascule": bascule,
+            "ratio_avant": _arr(float(np.mean([l["finale"] / l["lancement"]
+                                               for l in avant])), 3) if avant else None,
+            "ratio_apres": _arr(float(np.mean([l["finale"] / l["lancement"]
+                                               for l in apres])), 3) if apres else None,
+        },
+        "courbes": courbes,
+        "jours": jours,
+        "bascule_jour": bascule_jour,
+        "format_correlation_brute": brute,
+        "tests": [t for t in (t_rupture, t_retournement, t_suite) if t],
+    }
+
+
+def _fichier(nom):
+    """Lit un fichier de _data/ produit par un autre script.
+
+    Deux blocs de ce module s'appuient sur des donnees calculees ailleurs --
+    la population INSEE, les audiences. Leurs tests rejoignent malgre tout le
+    registre commun : la correction pour tests multiples ne vaut que si elle
+    les couvre tous.
+    """
+    import os
+    import yaml
+    chemin = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                          "_data", nom)
+    if not os.path.exists(chemin):
+        return {}
+    return yaml.safe_load(open(chemin, encoding="utf-8")) or {}
+
+
 def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
     """Lance les quatre axes et corrige l'ensemble des tests d'un seul coup.
 
@@ -2196,6 +2470,7 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
     ju = jury_final(par_saison, parts, conseils)
     fu = fusion(par_saison, parts, conseils, epreuves)
     ru = ruptures(par_saison, indicateurs_saison)
+    au = audience(par_saison, indicateurs_saison, _fichier("audiences.yml"))
 
     # Les cles techniques du modele de force n'ont rien a faire dans le fichier
     # publie : elles servent aux regressions de suivi, pas au site.
@@ -2211,15 +2486,12 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
     # La geographie est calculee a part -- elle depend d'un fichier INSEE
     # telecharge -- mais ses tests entrent dans le MEME registre : la
     # correction pour tests multiples ne vaut que si elle les couvre tous.
-    import os
-    chemin = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                          "_data", "geographie.yml")
-    geo = {}
-    if os.path.exists(chemin):
-        import yaml
-        geo = yaml.safe_load(open(chemin, encoding="utf-8")) or {}
+    geo = _fichier("geographie.yml") or {}
     for t in geo.get("tests") or []:
         t["origine"] = "geographie"
+        registre.append(t)
+    for t in au.get("tests") or []:
+        t["origine"] = "audience"
         registre.append(t)
 
     for bloc, origine in ((al, "alliances"), (ru, "ruptures"),
@@ -2252,6 +2524,7 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
         "jury_final": ju,
         "fusion": fu,
         "ruptures": ru,
+        "audience": au,
         "registre": [{k: t[k] for k in
                       ("cle", "libelle", "question", "origine", "observe",
                        "attendu", "unite", "ecart_types", "p", "p_ajustee",

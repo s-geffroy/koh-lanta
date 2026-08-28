@@ -9,7 +9,7 @@ chapeau: >-
 
 {% assign m = site.data.stats.modeles %}
 
-Neuf pages de ce site reposent sur des modèles plutôt que sur des comptages :
+Dix pages de ce site reposent sur des modèles plutôt que sur des comptages :
 [La recette du casting]({{ '/statistiques/casting/' | relative_url }}),
 [Le pronostic]({{ '/statistiques/pronostic/' | relative_url }}),
 [La force réelle]({{ '/statistiques/force/' | relative_url }}),
@@ -18,7 +18,8 @@ Neuf pages de ce site reposent sur des modèles plutôt que sur des comptages :
 [La grille]({{ '/statistiques/grille/' | relative_url }}),
 [Qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }}) et
 [Le vote du jury]({{ '/statistiques/jury/' | relative_url }}) et
-[D’où ils viennent]({{ '/statistiques/geographie/' | relative_url }}). Cette page dit
+[D’où ils viennent]({{ '/statistiques/geographie/' | relative_url }}) et
+[L’audience]({{ '/statistiques/audience/' | relative_url }}). Cette page dit
 comment ils sont construits et ce qu’ils ne peuvent pas établir.
 
 ## Trois règles, tenues partout
@@ -155,6 +156,17 @@ la contrainte posée. L’épisode est raconté sur
 dit mieux que tout ce qu’un test de permutation vaut : **exactement ce que vaut
 son modèle nul**.
 
+### La corrélation de rang, et la tendance qu’il faut d’abord retirer
+
+Deux grandeurs qui dérivent chacune avec les années se corrèlent toujours, et le
+lien ne dit alors rien de plus que « le temps passe ». Chaque fois que deux
+séries temporelles sont mises face à face, on ajuste donc une droite sur l’année
+et on ne corrèle que les **résidus** — l’écart d’une saison à ce que son époque
+laissait attendre. La corrélation brute est publiée à côté, pour qu’on voie ce
+que la précaution enlève : sur
+[L’audience]({{ '/statistiques/audience/' | relative_url }}), elle fait passer un
+lien de −0,64 à −0,30, et le résultat de spectaculaire à nul.
+
 ### La validation « une saison exclue à chaque tour »
 
 Pour le pronostic. Le modèle apprend sur toutes les saisons sauf une et
@@ -191,9 +203,10 @@ qu’un jeu de données de cette taille peut encore distinguer du hasard.
 <thead><tr><th>Niveau d’analyse</th><th class="nombre">Observations</th><th class="nombre">Plus petit effet décelable</th></tr></thead>
 <tbody>
 <tr><td>Une grandeur de saison</td><td class="nombre">26</td><td class="nombre">0,55 écart-type</td></tr>
+<tr><td>Une grandeur de saison, audience comprise</td><td class="nombre">33</td><td class="nombre">0,49 écart-type</td></tr>
 <tr><td>Une grandeur de participation</td><td class="nombre">509</td><td class="nombre">0,12 écart-type</td></tr>
-<tr><td>Une part au niveau du bulletin</td><td class="nombre">1 753</td><td class="nombre">3,3 points</td></tr>
-<tr><td>Une part sur les conseils mixtes</td><td class="nombre">1 033</td><td class="nombre">4,4 points</td></tr>
+<tr><td>Une part au niveau du bulletin</td><td class="nombre">1 840</td><td class="nombre">3,2 points</td></tr>
+<tr><td>Une part sur les conseils mixtes</td><td class="nombre">1 103</td><td class="nombre">4,2 points</td></tr>
 <tr><td>Une part sur le vote du jury</td><td class="nombre">177</td><td class="nombre">10,5 points</td></tr>
 </tbody>
 </table>
@@ -244,18 +257,30 @@ génération, il n’épouse pas sa géographie. Il ne reste, après elle, aucun
 du jeu de données dont on n’ait rien tiré.
 
 **Mais un jeu de données ne s’épuise pas comme une piste.** Cette page a d’abord
-conclu que le travail s’arrêtait là. Une troisième source est arrivée depuis —
-les pages individuelles du wiki Fandom — et elle a comblé
-{{ site.data.stats.completude.comblees }} valeurs vides, réuni des personnes
-comptées deux fois, et rendu son nom de famille à sept aventuriers qui n’en
-avaient pas. Elle n’a pas ouvert de question neuve ; elle a rendu deux réponses
-plus fermes et une plus fragile. C’est le rappel utile : **avant de manquer de
-méthode, on manque de données**, et il en reste toujours à aller chercher.
+conclu que le travail s’arrêtait là. Deux fois de suite, elle s’est trompée.
 
-Ce qui manque vraiment, c’est ce qu’aucune source publique ne porte : aucune
-audience, aucun temps d’antenne, aucune nature d’épreuve, aucun ordre de vote.
-Ce sont précisément les choses qui permettraient de dire quelque chose du
-**montage**.
+D’abord une troisième source : les **pages individuelles du wiki Fandom**, qui
+ont comblé {{ site.data.stats.completude.comblees }} valeurs vides, réuni des
+personnes comptées deux fois, et rendu son nom de famille à sept aventuriers qui
+n’en avaient pas.
+
+Puis, pire : cette page affirmait qu’**aucune donnée d’audience n’existait en
+source publique**. C’était faux, et il suffisait de regarder — l’article général
+de Wikipédia porte un tableau complet, saison par saison, depuis 2001, avec ses
+références de presse. La phrase avait été écrite sans vérification, et elle a
+fermé pendant tout ce temps la piste la plus intéressante du jeu : la seule
+grandeur que la production **ne décide pas**. Elle a donné
+[L’audience]({{ '/statistiques/audience/' | relative_url }}), et deux des
+résultats les plus nets du site.
+
+La leçon n’est pas « il faut chercher davantage ». Elle est plus précise :
+**une limite qu’on énonce sans la vérifier est une erreur qui se protège
+elle-même.** Celle-là est restée en place parce qu’elle avait l’air prudente.
+
+Ce qui manque réellement, après vérification cette fois : le **temps d’antenne**
+par aventurier, la **nature de chaque épreuve**, l’**ordre des bulletins** à un
+conseil. Ce sont les choses qui permettraient de dire quelque chose du
+**montage** — et aucune n’apparaît dans une source publique consultable.
 
 ## Ce que ces données ne peuvent pas établir
 
@@ -263,9 +288,11 @@ Ce sont précisément les choses qui permettraient de dire quelque chose du
 ont vingt-six observations. Seuls de gros effets y sont détectables ; un test non
 concluant est publié comme non concluant, jamais retiré.
 
-**Aucune donnée de montage ni d’audience.** Le temps d’antenne, la construction
-des personnages, les chiffres de diffusion : rien de tout cela n’existe dans ce
-jeu de données, et rien n’en sera dit.
+**Aucune donnée de montage.** Le temps d’antenne, la construction des
+personnages, l’ordre dans lequel les bulletins sont dépouillés : rien de tout
+cela n’existe dans ce jeu de données, et rien n’en sera dit. Les **chiffres de
+diffusion**, eux, existent — cette page a longtemps prétendu le contraire — mais
+ils s’arrêtent à l’audience « veille » et ignorent le rattrapage.
 
 **Une corrélation n’est pas une intention.** C’est la limite qui traverse tout ce
 travail. Une parité tenue au candidat près peut venir d’une consigne de casting

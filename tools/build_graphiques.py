@@ -949,6 +949,48 @@ def figures_des_modeles(stats):
                         "plusieurs dates se valent.",
             unite="", largeur=880, hauteur=300))
 
+    # --- G bis. l'audience ---------------------------------------------------
+    au = m.get("audience") or {}
+    if au.get("serie"):
+        serie = au["serie"]
+        annees = [str(x["annee"]) for x in serie]
+        ecrire("audience-serie.svg", courbes(
+            [{"nom": "audience moyenne",
+              "valeurs": [round(x["moyenne"] / 1e6, 2) for x in serie],
+              "couleur": SERIES[0]}],
+            annees,
+            titre=f'L\u2019audience moyenne, saison par saison '
+                  f'({serie[0]["annee"]}\u2013{serie[-1]["annee"]})',
+            description="Nombre moyen de telespectateurs par saison, en millions. "
+                        "La serie couvre toutes les editions achevees.",
+            unite=" M", largeur=880, hauteur=320))
+        ecrire("audience-lancement-finale.svg", courbes(
+            [{"nom": "lancement",
+              "valeurs": [round((x["lancement"] or 0) / 1e6, 2) for x in serie],
+              "couleur": SERIES[0]},
+             {"nom": "finale",
+              "valeurs": [round((x["finale"] or 0) / 1e6, 2) for x in serie],
+              "couleur": SERIES[3]}],
+            annees,
+            titre="Le lancement et la finale, saison par saison",
+            description="Audience du premier et du dernier episode de chaque saison, "
+                        "en millions de telespectateurs.",
+            unite=" M", largeur=880, hauteur=320))
+    if au.get("test") or au.get("tests"):
+        for t in au.get("tests") or []:
+            if t["cle"] == "audience_rupture":
+                ecrire("audience-nulle.svg", distribution_nulle(t, couleur=SERIES[1]))
+    if au.get("profil"):
+        ecrire("audience-profil.svg", colonnes(
+            [{"libelle": str(x["annee"]), "valeur": x["gain"],
+              "detail": f'coupure avant {x["titre"]} ({x["annee"]}) : gain {x["gain"]}'}
+             for x in au["profil"]],
+            titre="Chaque coupure possible de la serie d\u2019audience",
+            description="Gain de separation pour chaque date de coupure envisageable. "
+                        "Un pic isole designe une date ; un plateau dirait que "
+                        "plusieurs se valent.",
+            unite="", largeur=880, hauteur=300))
+
     hm = m.get("hasard_mecanique") or {}
     if hm.get("paliers"):
         ecrire("risque-mecanique.svg", barres_groupees(

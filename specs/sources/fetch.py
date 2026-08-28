@@ -1,10 +1,27 @@
-import json, urllib.request, urllib.parse, os, sys, time
+import json, re, unicodedata, urllib.request, urllib.parse, os, sys, time
 
 UA = {"User-Agent": "koh-lanta-dataset/1.0 (personal research)"}
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "wiki")
 os.makedirs(OUT, exist_ok=True)
 
+def _cle(titre):
+    """Forme comparable d'un titre : sans accents, sans ponctuation, en bas de
+    casse. « Koh-Lanta : Nicoya » et « Koh-Lanta: Nicoya » sont le meme titre ;
+    « Koh-Lanta » ne l'est pas."""
+    t = unicodedata.normalize("NFD", titre or "")
+    t = "".join(c for c in t if unicodedata.category(c) != "Mn")
+    return re.sub(r"[^a-z0-9]+", "", t.lower())
+
+
 def wikitext(host, title, tries=4):
+    """Le wikitexte de `title`, ou None.
+
+    On demande explicitement les redirections (`redirects=1`) : sans elles,
+    « Koh-Lanta : Malaisie » ne resout pas. Mais une redirection peut mener
+    AILLEURS -- « Koh-Lanta: Bocas del Toro » renvoie a l'article general du
+    programme, qui fait 19 ko et passe donc tous les controles de taille. On
+    verifie donc que la page atteinte est bien celle demandee.
+    """
     q = urllib.parse.urlencode({
         "action": "query", "prop": "revisions", "rvprop": "content",
         "rvslots": "main", "format": "json", "titles": title, "redirects": "1"})
@@ -21,8 +38,16 @@ def wikitext(host, title, tries=4):
             time.sleep(8 * (attempt + 1))
     else:
         return None
-    pages = d.get("query", {}).get("pages", {})
-    for pid, p in pages.items():
+    q = d.get("query", {})
+    arrivee = title
+    for etape in ("normalized", "redirects"):
+        for m in q.get(etape, []) or []:
+            if m["from"] == arrivee:
+                arrivee = m["to"]
+    if _cle(arrivee) != _cle(title):
+        print(f"  ! {title} redirige vers « {arrivee} » : ignore", file=sys.stderr)
+        return None
+    for pid, p in (q.get("pages") or {}).items():
         if pid == "-1" or "revisions" not in p:
             return None
         return p["revisions"][0]["slots"]["main"]["*"]

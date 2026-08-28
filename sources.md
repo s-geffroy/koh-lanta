@@ -90,6 +90,31 @@ de naissance ; les départements et les années de nos saisons — est versionn�
 dans le dépôt, comme le wikitexte brut : c’est la preuve de provenance, et elle
 permet de refaire le calcul sans redemander les fichiers complets à l’INSEE.
 
+## Les audiences
+
+{% assign au = site.data.audiences %}
+
+**[L’article général de Wikipédia](https://fr.wikipedia.org/wiki/Koh-Lanta)**
+porte un tableau d’audiences que ce site a longtemps ignoré : pour chaque
+saison, l’audience du lancement, celle de la finale, la moyenne, la part de
+marché et — sur douze saisons — les recettes publicitaires, chaque ligne
+appuyée sur une source de presse. Les articles de saison y ajoutent le détail
+**épisode par épisode** quand ils l’ont.
+
+- {{ au.saisons_couvertes }} saisons sur {{ au.saisons_diffusees }} ont une
+  audience de saison. La seule qui manque est celle en cours.
+- {{ au.episodes | size }} mesures épisode par épisode, sur
+  {{ au.saisons_par_episode | size }} saisons.
+
+Le contrôle est direct et il est publié : sur les quatorze saisons où l’on a à
+la fois le détail et la moyenne annoncée, **douze concordent à 0,5 % près**. Les
+deux autres — *La Revanche des héros* et *L’Île des héros* — s’écartent de 5 %,
+et l’écart vient de la source, dont le tableau ne s’accorde pas avec sa propre
+ligne de synthèse. Rien n’est corrigé à la main.
+
+Limite de nature : c’est l’audience **veille**, en direct. Le rattrapage n’y est
+pas, et il pèse aujourd’hui près d’un quart de l’audience du programme.
+
 ## La traçabilité
 
 Chaque enregistrement du jeu de données porte un bloc `sources` qui indique,
@@ -249,6 +274,42 @@ Trois chiffres publiés ont bougé, tous dans le sens d’une base plus large :
 Deux conseils restent volontairement non rattachés : leur source donne le
 vainqueur de la saison pour sortant en milieu de parcours, ce qui est
 impossible. Plutôt que de trancher, on laisse la valeur vide.
+
+## Deux autres pannes silencieuses, et ce qu’elles cachaient
+
+La réparation du `75px` racontée plus haut n’était pas la dernière. Deux autres
+défauts d’extraction ne produisaient **aucune erreur** : simplement, des données
+manquaient.
+
+**Les bulletins enveloppés dans une pastille de tribu.** Depuis 2020, les
+tableaux de Fandom n’écrivent plus le nom visé en clair : ils l’enveloppent dans
+un modèle, `{% raw %}{{Tribebox-bw|Ilog|Lili}}{% endraw %}`, dont le premier
+paramètre est la tribu et le second le nom. Le nettoyage général du wikitexte
+retire les modèles — et donc effaçait le nom. Résultat :
+*Les 4 Terres* et *Le Totem maudit* n’avaient **aucun bulletin**, et six autres
+saisons récentes en avaient la moitié. Le second paramètre est désormais sorti
+du modèle avant nettoyage : **{{ site.data.stats.conseils.bulletins }} bulletins
+au lieu de 3 206**, et {{ site.data.stats.conseils.conseils_complets }} conseils
+au dépouillement garanti complet au lieu de 264.
+
+Deux autres bugs de lecture tombaient au même endroit : un intitulé de ligne
+écrit `|►Votes` — avec le tuyau du tableau resté collé — faisait chercher les
+votants tout en bas de la table, où il n’y en a pas ; et le nom du votant était
+lu dans la première colonne d’étiquette alors qu’il est dans la dernière, quand
+la ligne y loge d’abord ses pastilles de tribu.
+
+Un contrôle refuse désormais qu’une saison entière annonce des décomptes de
+voix sans qu’un seul bulletin en soit lu. C’est exactement la forme qu’avait
+cette panne, et elle ne pouvait pas se voir autrement.
+
+**Un article qui n’était pas le bon.** Le récupérateur demandait à Wikipédia
+« Koh-Lanta: Bocas del Toro », que le wiki **redirige vers l’article général du
+programme** — dix-neuf kilo-octets, qui passaient donc tous les contrôles de
+taille. Le fichier était dans le dépôt depuis le début, présenté comme la source
+de la saison 3. Il n’apportait rien, mais il mentait sur sa provenance. Le
+récupérateur vérifie maintenant que la page atteinte est bien celle demandée, et
+refuse la redirection vers un autre article ; la saison 3 est désormais
+déclarée sans source Wikipédia, ce qu’elle a toujours été.
 
 ## Comment c’est fabriqué
 

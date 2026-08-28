@@ -129,10 +129,21 @@ def est_un_vote(nom):
     return not RE_PAS_UN_VOTE.search(nom)
 
 
+# Depuis 2020, les tables Fandom n'ecrivent plus le nom vise en clair : elles
+# l'enveloppent dans une pastille de tribu, « {{Tribebox-bw|Ilog|Lili}} », dont
+# le premier parametre est la tribu et le second le nom. Le nettoyage general
+# du wikitexte retire les modeles : sans traitement, ces cellules sont vides et
+# le conseil parait sans bulletins. Huit saisons recentes sont dans ce cas.
+RE_PASTILLE = re.compile(r"\{\{\s*Tribebox-bw\s*\|([^|}]*)\|([^}]*)\}\}", re.I)
+
+
 def cible(cell):
     """Rend (nom_vise, voix_annulee)."""
     brut = re.sub(r"<ref.*?(?:/>|</ref>)", "", cell or "", flags=re.S)
     barre = bool(RE_BARRE.search(brut))
+    # Le second parametre de la pastille est le nom ; on le sort du modele
+    # avant le nettoyage, qui sinon effacerait tout.
+    brut = RE_PASTILLE.sub(lambda m: " " + m.group(2).strip() + " ", brut)
     return (plain(brut).strip() or None), barre
 
 
@@ -142,11 +153,24 @@ RE_FLECHE = re.compile(r"[\u25ba\u25b6\u25bc\u25b2\s]+")
 
 
 def etiquette(cell):
-    return RE_FLECHE.sub(" ", texte(cell)).strip()
+    """L'intitule d'une ligne, debarrasse de ses fleches et de son tuyau.
+
+    Certaines tables ecrivent « |►Votes » : le tuyau appartient a la syntaxe du
+    tableau et n'a pas ete separe des attributs. Le laisser fait echouer la
+    reconnaissance de la ligne -- et, silencieusement, la ligne des votants est
+    alors cherchee ailleurs, tout en bas de la table.
+    """
+    return RE_FLECHE.sub(" ", texte(cell)).strip(" |").strip()
 
 
-def trouver_ligne(grille, motif):
-    for rang in grille:
+def trouver_ligne(grille, motif, depuis=0, jusqu_a=None):
+    """La premiere ligne dont l'intitule correspond, dans une fenetre donnee.
+
+    La fenetre n'est pas un detail : les lignes d'en-tete sont toutes dans les
+    cinq premieres, et une ligne de bas de table (« Votes noirs ») porte le
+    meme mot. Sans borne, on prend la mauvaise et on perd tous les votants.
+    """
+    for i, rang in enumerate(grille[depuis:jusqu_a], depuis):
         if rang and re.match(motif, etiquette(rang[0]), re.I):
             return rang
     return None
@@ -160,11 +184,14 @@ def parse_page(wikitexte, saison_id=None):
     if not grille:
         return []
 
-    l_episode = trouver_ligne(grille, r"[ÉEée]pisode")
-    l_elimine = trouver_ligne(grille, r"[ÉEée]limin")
-    l_votes = trouver_ligne(grille, r"Votes?\b")
+    # Les trois lignes d'en-tete sont contigues et en haut de table. On borne
+    # la recherche : « Votes » se retrouve aussi en pied de table.
+    l_episode = trouver_ligne(grille, r"[ÉEée]pisode", jusqu_a=8)
+    l_elimine = trouver_ligne(grille, r"[ÉEée]limin", jusqu_a=8)
     if l_episode is None or l_elimine is None:
         return []
+    apres = grille.index(l_elimine) + 1
+    l_votes = trouver_ligne(grille, r"Votes?\b", depuis=apres, jusqu_a=apres + 3)
 
     largeur = max(len(l) for l in grille)
 
@@ -181,8 +208,15 @@ def parse_page(wikitexte, saison_id=None):
     depart = grille.index(l_votes) + 1 if l_votes is not None else grille.index(l_elimine) + 1
     votants = []
     for rang in grille[depart:]:
-        nom = texte(rang[0]) if rang else ""
-        nom = re.sub(r'\b\w+\s*=\s*"[^"]*"', "", nom).strip()
+        # Le nom du votant est dans la DERNIERE colonne d'etiquette, pas la
+        # premiere : quand l'intitule est fusionne sur deux ou trois colonnes,
+        # les lignes de votants y logent d'abord leurs pastilles de tribu.
+        nom = ""
+        for c in range(min(debut_donnees, len(rang)) - 1, -1, -1):
+            candidat = re.sub(r'\b\w+\s*=\s*"[^"]*"', "", texte(rang[c])).strip()
+            if candidat:
+                nom = candidat
+                break
         # ecarter les lignes d'en-tete (« ▼ Candidats », « Jury final », les
         # totaux) : ce ne sont pas des votants.
         if not nom or len(nom) > 30:

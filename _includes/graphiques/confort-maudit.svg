@@ -2,11 +2,11 @@
 <svg class="graphique" viewBox="0 0 740 132" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Gagner le confort rend-il cible ?">
   <title>Gagner le confort rend-il cible ?</title>
   <desc>Part des bulletins visant un gagnant du confort du meme episode. Le trait vertical marque la part que ces gagnants representent parmi les presents.</desc>
-  <line x1="490.4" y1="26" x2="490.4" y2="80" stroke="var(--encre-douce)" stroke-width="1.4" stroke-dasharray="4 3"/>
-  <text x="490.4" y="20.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">18.2</text>
-  <g class="marque"><title>17.6 % des bulletins (intervalle 14.5 à 21.0), pour 18.2 % attendus</title><line x1="314.7" y1="57.0" x2="623.3" y2="57.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="461.9" cy="57.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <line x1="510.6" y1="26" x2="510.6" y2="80" stroke="var(--encre-douce)" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <text x="510.6" y="20.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">18.2</text>
+  <g class="marque"><title>17.2 % des bulletins (intervalle 14.2 à 20.5), pour 18.2 % attendus</title><line x1="314.7" y1="57.0" x2="623.3" y2="57.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="461.7" cy="57.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
   <text x="280.0" y="57.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Bulletins visant un gagnant du confort</text>
-  <text x="660.0" y="57.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">17.6 %</text>
-  <text x="290.0" y="118.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">74 conseils · 563 bulletins · p = 0.7433</text>
+  <text x="660.0" y="57.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">17.2 %</text>
+  <text x="290.0" y="118.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">76 conseils · 581 bulletins · p = 0.5547</text>
 </svg>
 </figure>

@@ -99,6 +99,30 @@ def verifier_saisons(saisons, c):
                 c.erreur(f"{sid} : la diffusion se termine avant de commencer")
 
 
+def verifier_matrices_de_votes(conseils, c):
+    """Une saison entiere sans un seul bulletin est une panne, pas une absence.
+
+    La matrice « Detail des votes » existe pour presque toutes les saisons. Si
+    on n'en tire aucun bulletin alors qu'elle annonce des decomptes, c'est que
+    la lecture a echoue -- et elle echoue en silence. Deux saisons entieres
+    (Les 4 Terres, Le Totem maudit) sont restees vides des mois pour cette
+    raison : les noms y etaient enveloppes dans un modele que le nettoyage du
+    wikitexte effacait.
+    """
+    par_saison = defaultdict(lambda: [0, 0, 0])
+    for x in conseils:
+        etat = par_saison[x.get("saison")]
+        etat[0] += len(x.get("votes") or [])
+        if x.get("votes_exprimes"):
+            etat[1] += 1
+        etat[2] += 1
+    for sid, (bulletins, annonces, total) in sorted(par_saison.items()):
+        if annonces and not bulletins:
+            c.erreur(f"{sid} : {total} conseils, {annonces} decomptes annonces, "
+                     f"et AUCUN bulletin lu — la matrice des votes n'a pas ete "
+                     f"comprise")
+
+
 def verifier_participations(parts, saisons, c):
     par_id = {s["id"]: s for s in saisons}
     par_saison = defaultdict(list)
@@ -445,6 +469,7 @@ def main():
         verifier_epreuves(epreuves, saisons, parts, c)
     if saisons and parts and conseils:
         verifier_conseils(conseils, saisons, parts, c)
+        verifier_matrices_de_votes(conseils, c)
     if saisons and parts and colliers:
         verifier_colliers(colliers, saisons, parts, c)
     if parts and personnes:

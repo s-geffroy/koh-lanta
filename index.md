@@ -128,16 +128,37 @@ plus tôt que les hommes en moyenne — et remportent pourtant
   · <a href="{{ '/statistiques/prenoms/' | relative_url }}">Les prénoms</a></p>
 </div>
 
+## Et une chose que le programme subit
+
+{% assign au = site.data.stats.modeles.audience %}
+{% assign tra = site.data.stats.modeles.registre | where: "cle", "audience_rupture" | first %}
+<div class="constat">
+  <p>L’audience est la seule grandeur de ce jeu de données que la production ne
+  décide pas. Elle est passée de
+  <b>{{ au.sommet.moyenne | divided_by: 100000 | divided_by: 10.0 }} millions</b>
+  de téléspectateurs en {{ au.sommet.annee }} à
+  <b>{{ au.derniere.moyenne | divided_by: 100000 | divided_by: 10.0 }} millions</b>
+  en {{ au.derniere.annee }} — <b>−{{ au.chute }} %</b>.</p>
+  <p>Et sa chute a une <b>date</b> : elle tombe sur
+  <i>{{ au.premiere_apres.titre }}</i> ({{ au.premiere_apres.annee }}),
+  {{ tra.ecart_types }} écarts-types au-dessus d’une coupure au hasard. C’est
+  aussi la première saison diffusée le mardi après vingt ans de vendredi. Les
+  deux dates sont la même date — et c’est exactement pourquoi on ne peut pas
+  conclure.</p>
+  <p><a href="{{ '/statistiques/audience/' | relative_url }}">L’audience</a>
+  · <a href="{{ '/statistiques/grille/' | relative_url }}">La grille</a></p>
+</div>
+
 ## Par où commencer
 
 <ul class="cartes">
   <li class="carte">
     <a href="{{ '/statistiques/' | relative_url }}">
-      <span class="carte-rang">VINGT ENTRÉES</span>
+      <span class="carte-rang">VINGT ET UNE ENTRÉES</span>
       <span class="carte-titre">Les statistiques</span>
       <span class="carte-resume">Les vainqueurs, les tribus, les métiers, les
         prénoms, la longévité, les sorties, les épreuves, les colliers, le jeu
-        social, les conseils, les revenants — puis neuf pages où les modèles
+        social, les conseils, les revenants — puis dix pages où les modèles
         prennent le relais des comptages.</span>
     </a>
   </li>

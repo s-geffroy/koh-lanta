@@ -83,29 +83,32 @@ coupure obtenue sur des saisons remises dans un ordre au hasard.</p>
   {{ r.test.p_ajustee }}. Remettez les {{ r.saisons }} saisons dans le désordre
   et aucune coupure n’approche celle-ci.</p>
   <p><b>Mais sa date n’est pas identifiée.</b> La meilleure coupure tombe en
-  {{ r.annee_rupture }} ({{ r.test.observe }}) ; la deuxième, en
-  {{ r.second.annee }} ({{ r.second.gain }}), en est à
-  {% assign ecart = r.test.observe | minus: r.second.gain %}{{ ecart }} près.
-  Ces deux dates-là sont <b>indiscernables</b>, et tout le plateau
-  intermédiaire n’est guère plus bas.</p>
+  {{ r.annee_rupture }} et ne devance la deuxième — {{ r.second.annee }} — que
+  de <b>{{ r.avance }} %</b>. Et <b>{{ r.nb_proches }} dates</b> tiennent à
+  10 % près, réparties sur <b>{{ r.fenetre.etendue }} ans</b>, de
+  {{ r.fenetre.debut }} à {{ r.fenetre.fin }}.</p>
 </div>
 
 {% include graphiques/ruptures-profil.svg %}
 
 <p class="legende-figure">Ce que chaque date de coupure envisageable sépare. Un
-pic isolé désignerait une année ; ce profil-là est un plateau, de 2009 à 2019.</p>
+pic isolé désignerait une année ; ce profil-là est un plateau étalé sur
+{{ r.fenetre.etendue }} ans.</p>
 
 Il faut le dire dans ce sens, et pas dans l’autre : **le jeu d’avant n’est pas
 le jeu d’après, et c’est solide** ; **l’année du basculement, elle, n’est pas
 mesurable ici**. La lecture qui reste debout est celle d’une dérive étalée sur
-une décennie, pas d’un changement de grille annoncé un mardi soir.
+une décennie, pas d’un changement de grille annoncé un vendredi soir.
 
-<p class="note">Une version antérieure de cette page datait la rupture de 2012
-et l’affirmait sans réserve. C’était une lecture du seul maximum, dans un profil
-où le maximum ne se détache pas. Le complément de données d’août 2026 — les
-âges et les effectifs manquants — a suffi à faire passer le maximum de 2012 à
-{{ r.annee_rupture }} : la bonne conclusion n’est pas que la date a changé, c’est
-qu’elle n’était pas déterminée.</p>
+<p class="note"><strong>Comment on le sait.</strong> Une version antérieure de
+cette page datait la rupture de 2012 et l’affirmait sans réserve. Deux
+compléments de données — les âges manquants, puis trois cents bulletins de
+conseil retrouvés — ont déplacé le maximum, d’abord vers
+{{ r.annee_rupture }}, puis en creusant son avance. Un critère qu’une révision
+de données déplace de sept ans ne désigne pas une année : il désigne une
+époque. C’est <a href="{{ '/statistiques/audience/' | relative_url }}">sur
+l’audience</a> qu’on voit à quoi ressemble une date, elle, identifiée — trois
+concurrentes serrées sur deux ans au lieu de six sur onze.</p>
 
 {% include graphiques/ruptures-serie.svg %}
 
