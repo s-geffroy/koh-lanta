@@ -51,6 +51,27 @@ L’accès à la finale confirme le creux du milieu de trentaine et l’avantage
 </table>
 </div>
 
+### Le doyen du conseil, lui, ne paie pas son âge
+
+{% assign af = site.data.stats.modeles.autour_du_feu %}
+{% assign tdo = site.data.stats.modeles.registre | where: "cle", "doyen_du_camp" | first %}
+
+Les moyennes ci-dessus portent sur des carrières entières. Posée conseil par
+conseil, la question devient : **le plus âgé des présents part-il plus souvent
+que les autres ?**
+
+Il part dans {{ af.age[0].probabilite }} % des cas, contre
+{{ af.age[1].probabilite }} % pour ceux qui ne sont ni le plus âgé ni le plus
+jeune — près de cinq points d’écart, qui ressemblent fort à un résultat. Ils
+n’en sont pas : **on est plus souvent le doyen d’un camp de six que d’un camp de douze**,
+et un camp de six élimine une personne sur six. Le hasard propre à cette
+catégorie vaut {{ af.age[0].hasard }} %, pas {{ af.hasard }} %. Une fois ce
+décalage absorbé — et en comparant le doyen à **tous** les autres présents,
+benjamins compris — il reste {{ tdo.observe | round: 1 }} points,
+{{ tdo.ecart_types }} écarts-types, p ajustée {{ tdo.p_ajustee }} :
+**non concluant**.
+[Sachant qui est autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }}).
+
 ## Femmes et hommes
 
 Le casting est **rigoureusement paritaire** :
@@ -81,6 +102,25 @@ C’est le résultat le plus intéressant de cette page : les femmes sortent plu
 tôt **en moyenne**, mais celles qui passent la réunification vont au bout aussi
 souvent que les hommes. L’écart se joue dans la première moitié du jeu, pas dans
 la seconde.
+
+### Ce qui compte n’est pas le sexe, c’est d’être en minorité — et cela protège
+
+{% assign tsx = site.data.stats.modeles.registre | where: "cle", "sexe_minoritaire" | first %}
+
+Conseil par conseil, être une femme n’expose pas :
+{{ af.genre[0].probabilite }} % de risque de partir contre
+{{ af.genre[1].probabilite }} % pour un homme, ce que ces effectifs ne
+distinguent pas d’un tirage. En revanche, **être du sexe le moins représenté du
+camp assis ce soir-là protège** — {{ af.sexe[0].probabilite }} % contre
+{{ af.sexe[1].probabilite }} % pour le sexe majoritaire,
+{{ tsx.observe | round: 1 }} points, {{ tsx.ecart_types }} écarts-types, p
+ajustée {{ tsx.p_ajustee }}.
+
+L’explication la plus économe : **la majorité se mange elle-même.** Quand un
+camp compte six hommes et trois femmes, les bulletins des six se partagent entre
+eux. C’est cohérent avec le paragraphe ci-dessus — l’écart de longévité ne se
+joue pas au conseil, où les femmes ne sont pas visées davantage, mais avant lui.
+[Sachant qui est autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }}).
 
 <div class="tableau-large">
 <table data-triable>

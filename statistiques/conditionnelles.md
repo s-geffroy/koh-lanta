@@ -179,6 +179,44 @@ pas.</p>
 </table>
 </div>
 
+## La menace s’éteint-elle ?
+
+Si le nom sorti la fois d’avant compte, celui sorti **deux** conseils plus tôt
+compte-t-il encore ?
+
+<div class="tableau-large">
+<table>
+<thead><tr><th>Voix à l’avant-dernier conseil</th><th class="nombre">Présences</th><th class="nombre">Éliminations</th><th class="nombre">Probabilité</th><th class="nombre">Le hasard</th></tr></thead>
+<tbody>
+{% for x in c.par_voix_deux_pas %}
+<tr>
+  <td>{{ x.modalite | capitalize }}</td>
+  <td class="nombre">{{ x.effectif }}</td><td class="nombre">{{ x.cas }}</td>
+  <td class="nombre"><b>{{ x.probabilite }} %</b></td>
+  <td class="nombre">{{ x.hasard }} %</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+{% assign t6 = reg | where: "cle", "menace_deux_pas" | first %}
+{% include graphiques/conditionnelles-deux-pas.svg %}
+
+<p class="legende-figure">Écart entre partir quand on avait été visé deux
+conseils plus tôt et partir quand on ne l’avait pas été.</p>
+
+<div class="constat">
+  <p>{{ t6.observe | round: 1 }} points d’écart — presque autant qu’au conseil
+  précédent — mais sur {{ c.par_voix_deux_pas[1].effectif | plus: c.par_voix_deux_pas[2].effectif }}
+  présences seulement : {{ t6.ecart_types }} écarts-types, p brute {{ t6.p }},
+  p ajustée {{ t6.p_ajustee }}. <b>Non concluant.</b></p>
+  <p>La chaîne se raccourcit vite : exiger deux conseils complets d’affilée
+  derrière soi ne laisse que {{ c.par_voix_deux_pas[0].effectif | plus: c.par_voix_deux_pas[1].effectif | plus: c.par_voix_deux_pas[2].effectif }}
+  présences. Ce qu’on peut dire : rien n’indique que la menace s’éteigne au
+  conseil suivant, et l’écart mesuré va dans le sens contraire.</p>
+</div>
+
 ## À conseil égal
 
 Le tableau ci-dessus compare des soirées entre elles. Le modèle ci-dessous ne
@@ -368,6 +406,12 @@ plus rare — et beaucoup plus lisible.
   premier trou. Les saisons les mieux documentées y pèsent plus que les
   autres.</p>
 </div>
+
+La question inverse — non plus « sachant mon passé », mais **« sachant qui est
+assis autour du feu ce soir »** — est traitée sur
+[Sachant qui est autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }}) :
+le bandeau minoritaire, le sexe minoritaire, le doyen, le gagnant du confort, et
+la seule probabilité conditionnelle du jeu qui vaut exactement zéro.
 
 La liste complète des tests de ce site, leur correction pour tests multiples et
 ce que chaque modèle ne peut pas établir sont sur

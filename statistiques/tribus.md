@@ -31,6 +31,31 @@ jeu, en moyenne, selon la couleur de la tribu de départ.</p>
 L’écart entre jaune et rouge se compte en points, sur des effectifs de plus de
 deux cents aventuriers chacun : il n’y a pas de signal.
 
+## Ce que la couleur décide quand même
+
+{% assign af = site.data.stats.modeles.autour_du_feu %}
+{% assign tba = site.data.stats.modeles.registre | where: "cle", "bandeau_minoritaire" | first %}
+
+Le bandeau ne décide rien du palmarès. Il décide en revanche **qui part**, dès
+qu’on se retrouve du mauvais côté du compte.
+
+<div class="constat">
+  <p>Sachant que son bandeau d’origine est le <b>moins représenté</b> du camp
+  assis au conseil, on est éliminé dans
+  <b>{{ af.bandeau[0].probabilite }} %</b> des cas
+  ({{ af.bandeau[0].cas }} sur {{ af.bandeau[0].effectif }}) ; quand il est le
+  plus représenté, dans <b>{{ af.bandeau[1].probabilite }} %</b>.</p>
+  <p>{{ tba.observe | round: 1 }} points d’écart, {{ tba.ecart_types }}
+  écarts-types au-dessus d’un tirage au sort parmi les présents de chaque
+  conseil, p ajustée {{ tba.p_ajustee }}.</p>
+</div>
+
+Les deux résultats de cette page ne se contredisent pas : **la couleur n’est pas
+un avantage, c’est une appartenance.** Elle ne fait gagner personne, et elle
+condamne celui qui se retrouve seul de sa sorte.
+[Sachant qui est autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }})
+détaille, avant et après la réunification.
+
 ## Le détail
 
 <div class="tableau-large">

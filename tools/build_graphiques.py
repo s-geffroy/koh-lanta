@@ -1139,6 +1139,53 @@ def figures_des_modeles(stats):
         if t and t.get("nulle"):
             ecrire(f"{nom}.svg", distribution_nulle(t, couleur=teinte))
 
+    # --- M. sachant qui est autour du feu -----------------------------------
+    af = m.get("autour_du_feu") or {}
+    if af.get("bandeau"):
+        rangs = (af["immunite"] + af["bandeau"] + af["sexe"] + af["age"]
+                 + af["confort"] + af["genre"])
+        ecrire("feu-positions.svg", barres_groupees(
+            [{"libelle": x["modalite"],
+              "valeurs": [x["probabilite"], x["hasard"]],
+              "details": [f'{x["cas"]} éliminations sur {x["effectif"]} présences, '
+                          f'soit {x["probabilite"]} % (intervalle {x["bas"]} à {x["haut"]} %)',
+                          f'{x["hasard"]} % si l’éliminé était tiré au hasard parmi '
+                          f'les présents de ces soirs-là']}
+             for x in rangs],
+            [{"nom": "risque observé", "couleur": SERIES[0]},
+             {"nom": "1 / nombre de présents", "couleur": SERIES[5]}],
+            titre="Sachant la place qu’on occupe dans le camp",
+            description="Probabilité d’être éliminé selon sa position parmi les "
+                        "présents, comparée au tirage au sort. Chaque catégorie a "
+                        "son propre hasard : on est plus souvent le doyen d’un petit "
+                        "camp que d’un grand.",
+            unite=" %", largeur=820, marge_gauche=250, hauteur_groupe=38))
+
+        ecrire("feu-bandeau-fusion.svg", barres_groupees(
+            [{"libelle": lab,
+              "valeurs": [bloc[0]["probabilite"], bloc[1]["probabilite"]],
+              "details": [f'bandeau minoritaire : {bloc[0]["cas"]} sur {bloc[0]["effectif"]}',
+                          f'bandeau majoritaire : {bloc[1]["cas"]} sur {bloc[1]["effectif"]}']}
+             for lab, bloc in (("avant la réunification", af["bandeau_avant"]),
+                               ("après la réunification", af["bandeau_apres"]))
+             if len(bloc) == 2],
+            [{"nom": "bandeau minoritaire", "couleur": TRIBUS["rouge"]},
+             {"nom": "bandeau majoritaire", "couleur": TRIBUS["jaune"]}],
+            titre="Le bandeau d’origine, avant et après la fusion",
+            description="Probabilité d’être éliminé selon que son bandeau de départ "
+                        "est le moins ou le plus représenté du camp présent.",
+            unite=" %", largeur=720, marge_gauche=200))
+
+    for cle, nom, teinte in (("bandeau_minoritaire", "feu-bandeau", SERIES[0]),
+                             ("sexe_minoritaire", "feu-sexe", SERIES[2]),
+                             ("doyen_du_camp", "feu-doyen", SERIES[5]),
+                             ("confort_sortie", "feu-confort", SERIES[5]),
+                             ("menace_deux_pas", "conditionnelles-deux-pas", SERIES[5])):
+        t = par_cle.get(cle)
+        if t and t.get("nulle"):
+            ecrire(f"{nom}.svg", distribution_nulle(
+                t, couleur=teinte if t.get("retenu") else SERIES[5]))
+
     hm = m.get("hasard_mecanique") or {}
     if hm.get("paliers"):
         ecrire("risque-mecanique.svg", barres_groupees(

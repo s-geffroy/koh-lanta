@@ -170,6 +170,24 @@ plus tôt que les hommes en moyenne — et remportent pourtant
   <p><a href="{{ '/statistiques/conditionnelles/' | relative_url }}">Sachant le conseil d’avant</a></p>
 </div>
 
+## Et une chose que le bandeau décide encore
+
+{% assign af = site.data.stats.modeles.autour_du_feu %}
+{% assign tba = site.data.stats.modeles.registre | where: "cle", "bandeau_minoritaire" | first %}
+<div class="constat">
+  <p>La couleur de départ ne décide rien du palmarès — douze victoires jaunes,
+  douze rouges. Elle décide en revanche <b>qui part</b> : sachant que son
+  bandeau d’origine est le moins représenté du camp présent, on est éliminé dans
+  <b>{{ af.bandeau[0].probabilite }} %</b> des cas, contre
+  {{ af.bandeau[1].probabilite }} % quand il est le plus représenté.</p>
+  <p>{{ tba.ecart_types }} écarts-types au-dessus d’un tirage au sort parmi les
+  présents, p ajustée {{ tba.p_ajustee }}. Et l’écart est <b>plus fort avant la
+  réunification qu’après</b> : c’est le sort réservé à celui qu’un échange de
+  tribus vient de déposer chez les autres.</p>
+  <p><a href="{{ '/statistiques/autour-du-feu/' | relative_url }}">Sachant qui est autour du feu</a>
+  · <a href="{{ '/statistiques/tribus/' | relative_url }}">Jaune contre rouge</a></p>
+</div>
+
 ## Et une chose que le programme subit
 
 {% assign au = site.data.stats.modeles.audience %}
@@ -196,11 +214,11 @@ plus tôt que les hommes en moyenne — et remportent pourtant
 <ul class="cartes">
   <li class="carte">
     <a href="{{ '/statistiques/' | relative_url }}">
-      <span class="carte-rang">VINGT-TROIS ENTRÉES</span>
+      <span class="carte-rang">VINGT-QUATRE ENTRÉES</span>
       <span class="carte-titre">Les statistiques</span>
       <span class="carte-resume">Les vainqueurs, les tribus, les métiers, les
         prénoms, la longévité, les sorties, les épreuves, les colliers, le jeu
-        social, les conseils, les revenants — puis douze pages où les modèles
+        social, les conseils, les revenants — puis treize pages où les modèles
         prennent le relais des comptages.</span>
     </a>
   </li>

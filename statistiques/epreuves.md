@@ -282,6 +282,21 @@ Sur **{{ cf.conseils }} conseils** et {{ cf.bulletins }} bulletins,
 L’intervalle laisse encore place à un écart de trois points dans un sens ou dans
 l’autre : ce qu’on peut affirmer, c’est qu’il n’y a pas d’effet marqué.
 
+{% assign cw = site.data.stats.modeles.autour_du_feu.confort | first %}
+{% assign cn = site.data.stats.modeles.autour_du_feu.confort | last %}
+{% assign tcf = site.data.stats.modeles.registre | where: "cle", "confort_sortie" | first %}
+<p class="note"><strong>La même question posée en sortie, et non en
+bulletins.</strong> Sachant qu’on vient de gagner le confort de l’épisode, on est
+éliminé le soir même dans <b>{{ cw.probabilite }} %</b> des cas
+({{ cw.cas }} sur {{ cw.effectif }}), contre {{ cn.probabilite }} % pour ceux qui
+n’ont rien gagné — {{ tcf.observe | round: 1 }} points, {{ tcf.ecart_types }}
+écarts-types, p ajustée {{ tcf.p_ajustee }}. L’écart va cette fois dans le sens
+de la légende, mais il reste <em>non concluant</em> : à {{ cw.effectif }}
+présences, on ne peut pas le distinguer d’un tirage. Deux mesures de la même
+idée, deux verdicts prudents et un seul enseignement — la malédiction n’est pas
+établie.
+<a href="{{ '/statistiques/autour-du-feu/' | relative_url }}">Sachant qui est autour du feu</a>.</p>
+
 <p class="note">Un total de victoires mélange le niveau et le temps passé en
 jeu, et une victoire au premier épisode ne vaut pas une victoire à
 l’avant-dernier. <a href="{{ '/statistiques/force/' | relative_url }}">La force

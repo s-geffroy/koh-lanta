@@ -288,6 +288,60 @@ def verifier_epreuves(epreuves, saisons, parts, c):
                   f"{diffusees} : {', '.join(absentes)}")
 
 
+def verifier_immunite_individuelle(conseils, epreuves, c):
+    """L'immunise du soir ne peut pas etre l'elimine du soir.
+
+    C'est une regle du jeu, donc un invariant : si les donnees la violent, c'est
+    qu'un rattachement est faux -- celui du vainqueur d'epreuve, celui de
+    l'elimine, ou celui de l'episode.
+
+    Le controle ne vaut que sur les soirs a CONSEIL UNIQUE. Un episode qui en
+    compte trois enchaine trois eliminations, et l'immunite gagnee avant le
+    premier ne protege pas au troisieme : rapproche sur le seul numero
+    d'episode, ce meme controle annoncait 19 violations, toutes fausses.
+    """
+    par_soir = Counter()
+    scrutins = []
+    for x in conseils:
+        if x.get("type") == "jury":
+            continue
+        try:
+            episode = int(x["episode"])
+        except (TypeError, ValueError, KeyError):
+            continue
+        par_soir[(x["saison"], episode)] += 1
+        if x.get("elimine_rattache"):
+            scrutins.append((x, episode))
+
+    immunises = defaultdict(set)
+    for e in epreuves:
+        if e.get("type") != "immunite" or e.get("forme") != "individuelle":
+            continue
+        try:
+            episode = int(e["episode"])
+        except (TypeError, ValueError, KeyError):
+            continue
+        for v in (e.get("vainqueurs") or []):
+            if v.get("type") == "personne" and v.get("id"):
+                immunises[(e["saison"], episode)].add(v["id"])
+
+    controles = 0
+    for x, episode in scrutins:
+        if par_soir[(x["saison"], episode)] != 1:
+            continue
+        gagnants = immunises.get((x["saison"], episode))
+        if not gagnants:
+            continue
+        controles += 1
+        if x["elimine"] in gagnants:
+            c.erreur(f"{x['saison']} ep.{episode} : {x['elimine']} gagne l'immunite "
+                     f"individuelle ET part au conseil du meme soir — "
+                     f"rattachement incoherent")
+    if controles < 40:
+        c.avertir(f"immunite individuelle : seulement {controles} conseils "
+                  f"controlables, l'invariant ne dit plus grand-chose")
+
+
 ISSUES_VALIDES = {"annulation_efficace", "joue_pour_rien", "elimine_avec_collier",
                   "garde_sans_usage", "non_decouvert"}
 STATUTS_VALIDES = {"utilise", "non_utilise", "non_decouvert", "perdu"}
@@ -467,6 +521,8 @@ def main():
         trous(parts, saisons, c)
     if saisons and parts and epreuves:
         verifier_epreuves(epreuves, saisons, parts, c)
+    if epreuves and conseils:
+        verifier_immunite_individuelle(conseils, epreuves, c)
     if saisons and parts and conseils:
         verifier_conseils(conseils, saisons, parts, c)
         verifier_matrices_de_votes(conseils, c)

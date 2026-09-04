@@ -157,6 +157,23 @@ la contrainte posée. L’épisode est raconté sur
 dit mieux que tout ce qu’un test de permutation vaut : **exactement ce que vaut
 son modèle nul**.
 
+### Le repère mobile : une chance sur n
+
+Une probabilité de sortir ne se lit jamais seule. À un conseil à six, on part
+une fois sur six ; à douze, une fois sur douze. Le repère de toutes les
+probabilités conditionnelles de ce site est donc **la moyenne de 1/n sur les
+présences considérées**, et il change d’une catégorie à l’autre : le doyen d’un
+camp l’est plus souvent quand le camp est petit, donc son hasard à lui est plus
+haut que la moyenne générale.
+
+Le modèle nul correspondant est le plus simple qui soit et c’est lui qui fait
+tout le travail : à chaque conseil, **on tire l’éliminé au hasard parmi les
+présents**. La taille du conseil, la saison, l’époque, la composition du camp
+restent exactement ce qu’elles étaient ; seule disparaît la question posée. Un
+écart qui survit à ce brassage ne peut plus être un effet de taille. Sans lui,
+[le doyen du camp]({{ '/statistiques/autour-du-feu/' | relative_url }}) aurait
+été publié comme un résultat.
+
 ### Le modèle nul des comptes de voix
 
 Le brassage ci-dessus a une limite qu’il faut nommer, parce qu’elle a failli

@@ -1,0 +1,25 @@
+<figure class="figure">
+<svg class="graphique" viewBox="0 0 720 166" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Le bandeau d’origine, avant et après la fusion">
+  <title>Le bandeau d’origine, avant et après la fusion</title>
+  <desc>Probabilité d’être éliminé selon que son bandeau de départ est le moins ou le plus représenté du camp présent.</desc>
+  <line x1="313.5" y1="36" x2="313.5" y2="142" stroke="var(--grille)" stroke-width="1"/>
+  <line x1="427.0" y1="36" x2="427.0" y2="142" stroke="var(--grille)" stroke-width="1"/>
+  <line x1="540.5" y1="36" x2="540.5" y2="142" stroke="var(--grille)" stroke-width="1"/>
+  <line x1="654.0" y1="36" x2="654.0" y2="142" stroke="var(--grille)" stroke-width="1"/>
+  <rect x="200" y="12" width="11" height="11" rx="3" fill="var(--tribu-rouge)"/>
+  <text x="217.0" y="18.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">bandeau minoritaire</text>
+  <rect x="362.8" y="12" width="11" height="11" rx="3" fill="var(--tribu-jaune)"/>
+  <text x="379.8" y="18.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">bandeau majoritaire</text>
+  <text x="190.0" y="65.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">avant la réunification</text>
+  <g class="marque"><title>bandeau minoritaire : 20 sur 101</title><rect x="200" y="44.0" width="454.0" height="20.0" rx="3" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1"/></g>
+  <text x="661.0" y="54.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">19.8 %</text>
+  <g class="marque"><title>bandeau majoritaire : 26 sur 238</title><rect x="200" y="66.0" width="249.9" height="20.0" rx="3" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1"/></g>
+  <text x="456.9" y="76.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">10.9 %</text>
+  <text x="190.0" y="119.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">après la réunification</text>
+  <g class="marque"><title>bandeau minoritaire : 44 sur 291</title><rect x="200" y="98.0" width="346.2" height="20.0" rx="3" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1"/></g>
+  <text x="553.2" y="108.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">15.1 %</text>
+  <g class="marque"><title>bandeau majoritaire : 52 sur 519</title><rect x="200" y="120.0" width="229.3" height="20.0" rx="3" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1"/></g>
+  <text x="436.3" y="130.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">10.0 %</text>
+  <line x1="200" y1="36" x2="200" y2="142" stroke="var(--axe)" stroke-width="1"/>
+</svg>
+</figure>

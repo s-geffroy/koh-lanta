@@ -390,6 +390,39 @@ fabriquées de toutes pièces par la confusion des deux tours d’un même épis
 La règle stricte donne moins de bulletins et un taux d’accord plus élevé : les
 deux chiffres sont vrais, les précédents ne l’étaient pas.</p>
 
+## Le soir à plusieurs conseils, piège récurrent
+
+{% assign af = site.data.stats.modeles.autour_du_feu %}
+{% assign imm = af.immunite | first %}
+
+Le paragraphe ci-dessus décrit un piège rencontré sur l’appariement des
+bulletins. Il s’est représenté ailleurs, sous une autre forme, et il mérite
+d’être nommé une bonne fois : **un épisode n’est pas un conseil.**
+
+Un même soir peut en compter deux, trois, parfois quatre — une égalité suivie
+d’un second vote, deux tribus qui votent chacune de leur côté, un épisode final
+qui enchaîne les éliminations. Tout rapprochement fait sur le seul numéro
+d’épisode y devient faux.
+
+<div class="constat">
+  <p>Contrôle : <b>l’aventurier qui gagne l’immunité individuelle ne peut pas
+  être éliminé le soir même.</b> C’est une règle du jeu ; si les données la
+  violent, c’est qu’un rattachement est bancal.</p>
+  <p>Rapproché sur le seul épisode, le contrôle sortait <b>19 violations</b>.
+  Toutes les dix-neuf tombaient sur un soir à plusieurs conseils : dans un
+  épisode qui en compte trois, l’immunité gagnée avant le premier ne protège
+  pas au troisième.</p>
+  <p>Rapproché correctement — soirs à conseil unique, camp lu dans les
+  bulletins — il sort <b>{{ imm.cas }} violation sur {{ imm.effectif }}
+  présences</b>. La donnée était juste ; c’est la question qui était mal
+  posée.</p>
+</div>
+
+Conséquence pour tout ce site : une épreuve du soir n’est jamais rattachée à un
+conseil quand l’épisode en compte plusieurs.
+[Sachant qui est autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }})
+s’appuie sur cette règle.
+
 ## Comment c’est fabriqué
 
 Les données sont extraites, croisées et vérifiées par des scripts Python, puis

@@ -3002,6 +3002,30 @@ def _couples_rendus(plateaux, lignes, cibles=None):
     return couples
 
 
+def _avant_avant(plateaux, arcs):
+    """L'AVANT-dernier conseil de chaque personne, quand il est connu.
+
+    Meme regle que pour le precedent : la remontee s'arrete au premier conseil
+    non depouille. Sert a demander si la menace s'eteint apres un conseil ou
+    si elle porte encore deux tours plus loin.
+    """
+    avant = {}
+    for sid, i, p, _ in arcs:
+        liste = plateaux[sid]
+        trouves = []
+        for j in range(i - 1, -1, -1):
+            if not liste[j]["complet"]:
+                trouves = []
+                break
+            if p in liste[j]["votants"]:
+                trouves.append(j)
+                if len(trouves) == 2:
+                    break
+        if len(trouves) == 2:
+            avant[(sid, i, p)] = trouves[1]
+    return avant
+
+
 def _tester_persistance(plateaux, arcs, g):
     """« Celui dont le nom est sorti la fois d'avant le revoit-il sortir ? »
 
@@ -3082,6 +3106,16 @@ def conditionnelles(par_saison, parts, conseils):
     relache = _mesurer(plateaux, _arcs(plateaux, strict=False))
     couples = _couples_rendus(plateaux, lignes)
 
+    # Les voix recues DEUX conseils plus tot, pour savoir si la menace s'eteint.
+    avant2 = _avant_avant(plateaux, arcs)
+    for l in lignes:
+        j = avant2.get((l["saison"], l["indice"], l["personne"]))
+        if j is None:
+            l["voix_prec2"] = None
+        else:
+            l["voix_prec2"] = collections.Counter(
+                plateaux[l["saison"]][j]["cibles"]).get(l["personne"], 0)
+
     conseils_vus = sorted({(l["saison"], l["indice"]) for l in lignes})
     noms = {p["id"]: (p.get("nom_complet") or p.get("nom")) for p in parts}
 
@@ -3093,6 +3127,11 @@ def conditionnelles(par_saison, parts, conseils):
     # cinq fois que son camp a renonce a sortir.
     par_voix_sans_collier = _taux([l for l in lignes if not l["prec_annule"]],
                                   lambda l: _bucket_voix(l["voix_prec"]), ORDRE_VOIX)
+
+    par_voix2 = _taux([l for l in lignes if l["voix_prec2"] is not None],
+                      lambda l: ("aucune voix" if l["voix_prec2"] == 0 else
+                                 ("1 voix" if l["voix_prec2"] == 1 else "2 voix et plus")),
+                      ["aucune voix", "1 voix", "2 voix et plus"])
 
     # --- 2. la lecture inverse, celle que la television montre -------------
     sortis = [l for l in lignes if l["sorti"]]
@@ -3170,6 +3209,8 @@ def conditionnelles(par_saison, parts, conseils):
          masque(lambda l: l["voix_prec"] >= 4)),
         ("camp_perdant", masque(lambda l: l["camp_prec"] == 0),
          masque(lambda l: l["camp_prec"] == 1)),
+        ("menace_deux_pas", masque(lambda l: bool(l["voix_prec2"])),
+         masque(lambda l: l["voix_prec2"] == 0)),
     ]
 
     def valeurs(v):
@@ -3206,6 +3247,12 @@ def conditionnelles(par_saison, parts, conseils):
               observes[2], np.array(nulles[2]), unite=" points",
               lecture="Écart entre partir après avoir voté avec la minorité et "
                       "partir après avoir voté avec la majorité."),
+        _test("menace_deux_pas", "La menace, deux conseils plus tard",
+              "Les voix reçues à l'avant-dernier conseil comptent-elles encore ?",
+              observes[3], np.array(nulles[3]), unite=" points",
+              lecture="Écart entre partir quand on avait été visé DEUX conseils plus "
+                      "tôt et partir quand on ne l'avait pas été. Un écart qui tient "
+                      "dit que la menace ne s'éteint pas au conseil suivant."),
     ]
 
     # --- le second modele nul : on rebat qui a ecrit quoi ------------------
@@ -3280,6 +3327,7 @@ def conditionnelles(par_saison, parts, conseils):
         "hasard": _arr(100.0 * sum(1.0 / l["risque"] for l in lignes) / len(lignes)),
         "globale": _arr(100.0 * sum(l["sorti"] for l in lignes) / len(lignes)),
         "par_voix": par_voix,
+        "par_voix_deux_pas": par_voix2,
         "par_voix_relache": par_voix_relache,
         "par_voix_sans_collier": par_voix_sans_collier,
         "inverse": inverse,
@@ -3338,6 +3386,259 @@ def _logit_conditionnel(lignes):
     }
 
 
+# --- M. Sachant qui est autour du feu --------------------------------------
+
+# Le camp d'un conseil se connait de deux facons, et l'une vaut mieux que
+# l'autre. Quand le depouillement est complet, la liste des votants EST le
+# camp : rien n'est reconstruit. Sinon, apres la reunification et pour les
+# soirs a conseil unique, on rebatit le camp des encore-en-jeu -- exact aussi,
+# puisqu'apres la fusion tout le monde vote au meme feu. Avant la fusion, une
+# reconstruction melangerait les deux tribus : on ne la fait pas.
+SEUIL_CAMP = 400            # sous ce nombre de presences, on ne publie rien
+
+
+def _gagnants_par_episode(epreuves, type_epreuve, forme=None):
+    """(saison, episode) -> les vainqueurs personnes de cette epreuve."""
+    d = collections.defaultdict(set)
+    for e in epreuves:
+        if e.get("type") != type_epreuve:
+            continue
+        if forme and e.get("forme") != forme:
+            continue
+        try:
+            episode = int(e["episode"])
+        except (TypeError, ValueError):
+            continue
+        for v in (e.get("vainqueurs") or []):
+            if v.get("type") == "personne" and v.get("id"):
+                d[(e["saison"], episode)].add(v["id"])
+    return d
+
+
+def _camps(par_saison, parts, conseils, epreuves, fusion_ep):
+    """Une ligne par presence a un conseil, avec ce qui la situe dans le camp."""
+    from indicateurs import _episode_de_sortie, eliminations
+
+    sortie, _ = _episode_de_sortie(conseils, parts, epreuves)
+    par_s = collections.defaultdict(list)
+    for p in parts:
+        par_s[p["saison"]].append(p)
+    fiche = {(p["saison"], p["id"]): p for p in parts}
+    confort = _gagnants_par_episode(epreuves, "confort")
+    immunite = _gagnants_par_episode(epreuves, "immunite", "individuelle")
+
+    # Combien de conseils le meme soir. Un episode qui en compte plusieurs ne
+    # permet plus de dire qu'une immunite gagnee ce soir-la valait a CE
+    # conseil-ci : dans un episode a trois conseils, l'immunite d'avant le
+    # premier ne protege pas au troisieme. Le comptage porte sur TOUS les
+    # conseils d'elimination, y compris ceux dont l'elimine n'est pas rattache
+    # -- sinon un soir a deux conseils dont un seul est lu passerait pour un
+    # soir unique.
+    par_soir = collections.Counter()
+    scrutins = []
+    for c in eliminations(conseils):
+        s = par_saison.get(c["saison"]) or {}
+        if s.get("annulee") or s.get("en_cours"):
+            continue
+        try:
+            episode = int(c["episode"])
+        except (TypeError, ValueError):
+            continue
+        par_soir[(c["saison"], episode)] += 1
+        if c.get("elimine_rattache"):
+            scrutins.append((c, episode))
+
+    lignes = []
+    for c, episode in scrutins:
+        sid = c["saison"]
+        if c.get("complet") and c.get("votes"):
+            camp = sorted({b["votant"] for b in c["votes"] if b.get("votant_rattache")})
+            origine = "bulletins"
+        else:
+            f = fusion_ep.get(sid)
+            if f is None or episode <= f or par_soir[(sid, episode)] != 1:
+                continue
+            camp = sorted(p["id"] for p in par_s[sid]
+                          if sortie.get((sid, p["id"]), -1) >= episode)
+            origine = "reconstruit"
+        if len(camp) < 4 or c["elimine"] not in camp:
+            continue
+        fiches = [fiche[(sid, i)] for i in camp if (sid, i) in fiche]
+        if len(fiches) != len(camp):
+            continue
+
+        soir_unique = par_soir[(sid, episode)] == 1
+        ages = [p["age"] for p in fiches if p.get("age")]
+        couleurs = collections.Counter(p.get("couleur") for p in fiches if p.get("couleur"))
+        genres = collections.Counter(p.get("genre") for p in fiches if p.get("genre"))
+        f = fusion_ep.get(sid)
+        for p in fiches:
+            couleur, genre, age = p.get("couleur"), p.get("genre"), p.get("age")
+            bandeau = None
+            if couleur and len(couleurs) >= 2 and min(couleurs.values()) < max(couleurs.values()):
+                if couleurs[couleur] == min(couleurs.values()):
+                    bandeau = 1
+                elif couleurs[couleur] == max(couleurs.values()):
+                    bandeau = 0
+            sexe = None
+            if genre and len(genres) == 2:
+                autre = [g for g in genres if g != genre][0]
+                if genres[genre] != genres[autre]:
+                    sexe = 1 if genres[genre] < genres[autre] else 0
+            lignes.append({
+                "saison": sid, "episode": episode, "conseil": c["numero"],
+                "personne": p["id"],
+                "nom": p.get("nom_complet") or p.get("nom"),
+                "risque": len(fiches), "origine": origine,
+                "apres_fusion": bool(f is not None and episode > f),
+                "sorti": 1 if p["id"] == c["elimine"] else 0,
+                "bandeau_minoritaire": bandeau,
+                "sexe_minoritaire": sexe,
+                "doyen": None if not age or len(ages) < 5 else int(age == max(ages)),
+                "benjamin": None if not age or len(ages) < 5 else int(age == min(ages)),
+                "femme": None if not genre else int(genre == "f"),
+                "confort": (None if not soir_unique or not confort.get((sid, episode))
+                            else int(p["id"] in confort[(sid, episode)])),
+                "immunite": (None if not soir_unique or not immunite.get((sid, episode))
+                             else int(p["id"] in immunite[(sid, episode)])),
+            })
+    return lignes
+
+
+def autour_du_feu(par_saison, parts, conseils, epreuves, bloc_fusion):
+    """Sachant qui est autour du feu, qui part ?
+
+    La page precedente conditionne sur le passe -- les voix de la fois d'avant.
+    Celle-ci conditionne sur le PRESENT : la place qu'on occupe dans le camp de
+    ce soir. Etre du bandeau minoritaire, du sexe minoritaire, le plus age,
+    celui qui vient de gagner le confort : autant de positions qui se lisent
+    avant le vote.
+
+    Le repere reste le meme et il est indispensable : une chance sur n. Il
+    change d'une categorie a l'autre -- le plus age d'un camp l'est plus
+    souvent quand le camp est petit, donc son hasard a lui est plus haut que
+    la moyenne. Comparer sa probabilite au taux general ferait voir un effet
+    la ou il n'y a qu'un effet de taille.
+    """
+    fusion_ep = {l["saison"]: l["episode"] for l in (bloc_fusion.get("lignes") or [])}
+    if len(fusion_ep) < 12:
+        return {}
+    lignes = _camps(par_saison, parts, conseils, epreuves, fusion_ep)
+    if len(lignes) < SEUIL_CAMP:
+        return {}
+
+    def _oui_non(cle, oui, non):
+        return _taux(lignes, lambda l: (None if l[cle] is None
+                                        else (oui if l[cle] else non)), [oui, non])
+
+    bandeau = _oui_non("bandeau_minoritaire", "bandeau minoritaire", "bandeau majoritaire")
+    sexe = _oui_non("sexe_minoritaire", "sexe minoritaire", "sexe majoritaire")
+    def _place_age(l):
+        if l["doyen"] is None:
+            return None
+        if l["doyen"]:
+            return "le plus âgé du camp"
+        if l["benjamin"]:
+            return "le plus jeune du camp"
+        return "entre les deux"
+
+    age = _taux(lignes, _place_age,
+                ["le plus âgé du camp", "entre les deux", "le plus jeune du camp"])
+    genre = _oui_non("femme", "une femme", "un homme")
+    conf = _oui_non("confort", "a gagné le confort du soir", "n’a rien gagné ce soir")
+    imm = _oui_non("immunite", "a gagné l’immunité individuelle",
+                   "n’a pas gagné l’immunité")
+
+    par_origine = collections.Counter(l["origine"] for l in lignes)
+    conseils_vus = sorted({(l["saison"], l["conseil"]) for l in lignes})
+
+    # --- les tests ---------------------------------------------------------
+    g = rng("autour_du_feu")
+    par_conseil = collections.defaultdict(list)
+    for i, l in enumerate(lignes):
+        par_conseil[(l["saison"], l["conseil"])].append(i)
+    groupes = [np.array(v) for _, v in sorted(par_conseil.items())]
+    sorti = np.array([l["sorti"] for l in lignes], dtype=float)
+
+    def masque(f):
+        return np.array([bool(f(l)) for l in lignes])
+
+    contrastes = [
+        ("bandeau", masque(lambda l: l["bandeau_minoritaire"] == 1),
+         masque(lambda l: l["bandeau_minoritaire"] == 0)),
+        ("sexe", masque(lambda l: l["sexe_minoritaire"] == 1),
+         masque(lambda l: l["sexe_minoritaire"] == 0)),
+        ("doyen", masque(lambda l: l["doyen"] == 1),
+         masque(lambda l: l["doyen"] == 0)),
+        ("confort", masque(lambda l: l["confort"] == 1),
+         masque(lambda l: l["confort"] == 0)),
+    ]
+
+    def valeurs(v):
+        return [100.0 * (v[a].mean() - v[b].mean()) for _, a, b in contrastes]
+
+    observes = valeurs(sorti)
+    nulles = [[] for _ in contrastes]
+    for _ in range(N_PERMUTATIONS):
+        tire = np.zeros(len(lignes))
+        for idx in groupes:
+            tire[idx[int(g.integers(0, len(idx)))]] = 1.0
+        for i, v in enumerate(valeurs(tire)):
+            nulles[i].append(v)
+
+    tests = [
+        _test("bandeau_minoritaire", "Le bandeau minoritaire",
+              "Appartenir au bandeau le moins représenté du camp expose-t-il ?",
+              observes[0], np.array(nulles[0]), unite=" points",
+              lecture="Écart entre partir quand son bandeau d'origine est le moins "
+                      "représenté du camp et partir quand il est le plus représenté. "
+                      "Le modèle nul tire l'éliminé au hasard parmi les présents : "
+                      "la taille du camp et sa composition restent celles du soir."),
+        _test("sexe_minoritaire", "Le sexe minoritaire",
+              "Être du sexe le moins représenté du camp expose-t-il ?",
+              observes[1], np.array(nulles[1]), unite=" points",
+              lecture="Écart entre partir quand son sexe est le moins représenté du "
+                      "camp et partir quand il est le plus représenté."),
+        _test("doyen_du_camp", "Le plus âgé du camp",
+              "Le doyen d'un conseil part-il plus souvent que les autres ?",
+              observes[2], np.array(nulles[2]), unite=" points",
+              lecture="Écart entre partir quand on est le plus âgé des présents et "
+                      "partir quand on ne l'est pas. Le modèle nul absorbe le fait "
+                      "qu'on est plus souvent le doyen d'un petit camp que d'un "
+                      "grand."),
+        _test("confort_sortie", "Le confort du soir",
+              "Gagner le confort fait-il partir le soir même ?",
+              observes[3], np.array(nulles[3]), unite=" points",
+              lecture="Écart entre partir quand on vient de gagner le confort de "
+                      "l'épisode et partir quand on n'a rien gagné. Lu sur les seuls "
+                      "soirs à conseil unique : sinon l'épreuve du soir ne se "
+                      "rattache pas au bon conseil."),
+    ]
+
+    return {
+        "presences": len(lignes), "conseils": len(conseils_vus),
+        "saisons": len({l["saison"] for l in lignes}),
+        "par_bulletins": int(par_origine["bulletins"]),
+        "par_reconstruction": int(par_origine["reconstruit"]),
+        "hasard": _arr(100.0 * sum(1.0 / l["risque"] for l in lignes) / len(lignes)),
+        "globale": _arr(100.0 * sum(l["sorti"] for l in lignes) / len(lignes)),
+        "bandeau": bandeau,
+        "bandeau_avant": _taux([l for l in lignes if not l["apres_fusion"]],
+                               lambda l: (None if l["bandeau_minoritaire"] is None else
+                                          ("bandeau minoritaire" if l["bandeau_minoritaire"]
+                                           else "bandeau majoritaire")),
+                               ["bandeau minoritaire", "bandeau majoritaire"]),
+        "bandeau_apres": _taux([l for l in lignes if l["apres_fusion"]],
+                               lambda l: (None if l["bandeau_minoritaire"] is None else
+                                          ("bandeau minoritaire" if l["bandeau_minoritaire"]
+                                           else "bandeau majoritaire")),
+                               ["bandeau minoritaire", "bandeau majoritaire"]),
+        "sexe": sexe, "age": age, "genre": genre,
+        "confort": conf, "immunite": imm,
+        "tests": tests,
+    }
+
+
 def _fichier(nom):
     """Lit un fichier de _data/ produit par un autre script.
 
@@ -3383,6 +3684,7 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
     # forces estimees, personne par personne.
     aa = avant_apres(par_saison, parts, conseils, epreuves, f, fu)
     co = conditionnelles(par_saison, parts, conseils)
+    af = autour_du_feu(par_saison, parts, conseils, epreuves, fu)
 
     # Les cles techniques du modele de force n'ont rien a faire dans le fichier
     # publie : elles servent aux regressions de suivi, pas au site.
@@ -3410,6 +3712,9 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
         registre.append(t)
     for t in co.get("tests") or []:
         t["origine"] = "conditionnelles"
+        registre.append(t)
+    for t in af.get("tests") or []:
+        t["origine"] = "autour_du_feu"
         registre.append(t)
 
     for bloc, origine in ((al, "alliances"), (ru, "ruptures"),
@@ -3445,6 +3750,7 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
         "audience": au,
         "avant_apres": aa,
         "conditionnelles": co,
+        "autour_du_feu": af,
         "registre": [{k: t[k] for k in
                       ("cle", "libelle", "question", "origine", "observe",
                        "attendu", "unite", "ecart_types", "p", "p_ajustee",
