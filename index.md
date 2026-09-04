@@ -188,6 +188,22 @@ plus tôt que les hommes en moyenne — et remportent pourtant
   · <a href="{{ '/statistiques/tribus/' | relative_url }}">Jaune contre rouge</a></p>
 </div>
 
+## Et une chose que le conseil rend prévisible
+
+{% assign pp = site.data.stats.modeles.pire_place %}
+{% assign tvi = site.data.stats.modeles.registre | where: "cle", "vote_isole" | first %}
+<div class="constat">
+  <p>Deux choses se savent <b>avant</b> qu’un bulletin ne soit écrit : le nom
+  qui est sorti de l’urne la fois d’avant, et le nombre de gens, encore assis
+  là, avec qui on a déjà voté.</p>
+  <p>Aucun des deux signaux : <b>{{ pp.cumul[0].probabilite }} %</b> de risque
+  de partir. Un seul : {{ pp.cumul[1].probabilite }} %. <b>Les deux</b> :
+  <b>{{ pp.cumul[2].probabilite }} %</b> — presque un sur deux. Et les deux
+  survivent dans le même modèle, à conseil égal : ce ne sont pas deux façons de
+  dire la même chose.</p>
+  <p><a href="{{ '/statistiques/pire-place/' | relative_url }}">La pire place au conseil</a></p>
+</div>
+
 ## Et une chose que le programme subit
 
 {% assign au = site.data.stats.modeles.audience %}
@@ -214,11 +230,11 @@ plus tôt que les hommes en moyenne — et remportent pourtant
 <ul class="cartes">
   <li class="carte">
     <a href="{{ '/statistiques/' | relative_url }}">
-      <span class="carte-rang">VINGT-QUATRE ENTRÉES</span>
+      <span class="carte-rang">VINGT-CINQ ENTRÉES</span>
       <span class="carte-titre">Les statistiques</span>
       <span class="carte-resume">Les vainqueurs, les tribus, les métiers, les
         prénoms, la longévité, les sorties, les épreuves, les colliers, le jeu
-        social, les conseils, les revenants — puis treize pages où les modèles
+        social, les conseils, les revenants — puis quatorze pages où les modèles
         prennent le relais des comptages.</span>
     </a>
   </li>

@@ -3,8 +3,8 @@ layout: page
 title: Les statistiques
 permalink: /statistiques/
 chapeau: >-
-  Vingt-quatre entrées dans le même jeu de données. Onze comptent ce qui
-  s’est passé ; treize le mettent à l’épreuve d’un modèle.
+  Vingt-cinq entrées dans le même jeu de données. Onze comptent ce qui
+  s’est passé ; quatorze le mettent à l’épreuve d’un modèle.
 ---
 
 {% assign s = site.data.stats %}
@@ -28,14 +28,14 @@ mêmes personnes et fausseraient les moyennes d’âge comme de longévité.
 </ul>
 
 Les onze premières entrées **décrivent** : elles comptent, elles font des parts
-et des moyennes. Les treize dernières **testent** — elles comparent ce qu’on
+et des moyennes. Les quatorze dernières **testent** — elles comparent ce qu’on
 observe à ce que le hasard produirait, et publient un intervalle plutôt qu’un
 point. Elles ne remplacent pas les premières : on ne teste bien qu’un écart
 qu’on a d’abord regardé. La [méthode]({{ '/methode/' | relative_url }}) les
 détaille, et donne la liste complète des tests menés — y compris ceux qui
 n’ont rien donné.
 
-## Les vingt-quatre entrées
+## Les vingt-cinq entrées
 
 <ul class="cartes">
 {%- for groupe in site.data.navigation -%}

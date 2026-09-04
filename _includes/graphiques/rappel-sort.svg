@@ -1,0 +1,35 @@
+<figure class="figure">
+<svg class="graphique" viewBox="0 0 760 310" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Qui la production redemande">
+  <title>Qui la production redemande</title>
+  <desc>Part des aventuriers rappelés dans une édition ultérieure, selon la façon dont leur première aventure s’est terminée.</desc>
+  <line x1="332.0" y1="10" x2="332.0" y2="284" stroke="var(--grille)" stroke-width="1"/>
+  <line x1="454.0" y1="10" x2="454.0" y2="284" stroke="var(--grille)" stroke-width="1"/>
+  <line x1="576.0" y1="10" x2="576.0" y2="284" stroke="var(--grille)" stroke-width="1"/>
+  <line x1="698.0" y1="10" x2="698.0" y2="284" stroke="var(--grille)" stroke-width="1"/>
+  <g class="marque"><title>Finaliste : 13 rappelés sur 22, soit 59.1 % (intervalle 38.7 à 76.7 %)</title><rect x="210" y="16" width="488.0" height="26" rx="4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="200.0" y="29.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Finaliste</text>
+  <text x="706.0" y="29.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">59.1 %</text>
+  <g class="marque"><title>Vainqueur : 14 rappelés sur 29, soit 48.3 % (intervalle 31.4 à 65.6 %)</title><rect x="210" y="50" width="398.8" height="26" rx="4" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="200.0" y="63.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Vainqueur</text>
+  <text x="616.8" y="63.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">48.3 %</text>
+  <g class="marque"><title>Éliminé à l’orientation : 12 rappelés sur 29, soit 41.4 % (intervalle 25.5 à 59.3 %)</title><rect x="210" y="84" width="341.8" height="26" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="200.0" y="97.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Éliminé à l’orientation</text>
+  <text x="559.8" y="97.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">41.4 %</text>
+  <g class="marque"><title>Éliminé aux poteaux : 9 rappelés sur 23, soit 39.1 % (intervalle 22.2 à 59.2 %)</title><rect x="210" y="118" width="322.9" height="26" rx="4" fill="var(--serie-4)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="200.0" y="131.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Éliminé aux poteaux</text>
+  <text x="540.9" y="131.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">39.1 %</text>
+  <g class="marque"><title>Éliminé aux ambassadeurs : 3 rappelés sur 15, soit 20.0 % (intervalle 7.0 à 45.2 %)</title><rect x="210" y="152" width="165.1" height="26" rx="4" fill="var(--serie-5)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="200.0" y="165.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Éliminé aux ambassadeurs</text>
+  <text x="383.1" y="165.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">20.0 %</text>
+  <g class="marque"><title>Éliminé au conseil : 41 rappelés sur 313, soit 13.1 % (intervalle 9.8 à 17.3 %)</title><rect x="210" y="186" width="108.2" height="26" rx="4" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="200.0" y="199.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Éliminé au conseil</text>
+  <text x="326.2" y="199.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">13.1 %</text>
+  <g class="marque"><title>Abandon médical : 1 rappelés sur 44, soit 2.3 % (intervalle 0.4 à 11.8 %)</title><rect x="210" y="220" width="19.0" height="26" rx="4" fill="var(--serie-7)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="200.0" y="233.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Abandon médical</text>
+  <text x="237.0" y="233.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">2.3 %</text>
+  <g class="marque"><title>Abandon volontaire : 0 rappelés sur 15, soit 0.0 % (intervalle 0.0 à 20.4 %)</title><rect x="210" y="254" width="3.0" height="26" rx="4" fill="var(--serie-8)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="200.0" y="267.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Abandon volontaire</text>
+  <text x="221.0" y="267.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="13" font-weight="600">0.0 %</text>
+  <line x1="210" y1="10" x2="210" y2="284" stroke="var(--axe)" stroke-width="1"/>
+</svg>
+</figure>

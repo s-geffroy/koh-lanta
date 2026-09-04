@@ -1,0 +1,49 @@
+<figure class="figure">
+<svg class="graphique" viewBox="0 0 680 320" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Le rappel suit la durée, presque seul">
+  <title>Le rappel suit la durée, presque seul</title>
+  <desc>Part des aventuriers rappelés selon le cinquième de longévité auquel ils appartiennent.</desc>
+  <line x1="46" y1="254.0" x2="668" y2="254.0" stroke="var(--grille)" stroke-width="1"/>
+  <text x="38.0" y="254.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">0</text>
+  <line x1="46" y1="197.0" x2="668" y2="197.0" stroke="var(--grille)" stroke-width="1"/>
+  <text x="38.0" y="197.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">14</text>
+  <line x1="46" y1="140.0" x2="668" y2="140.0" stroke="var(--grille)" stroke-width="1"/>
+  <text x="38.0" y="140.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">28</text>
+  <line x1="46" y1="83.0" x2="668" y2="83.0" stroke="var(--grille)" stroke-width="1"/>
+  <text x="38.0" y="83.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">41</text>
+  <line x1="46" y1="26.0" x2="668" y2="26.0" stroke="var(--grille)" stroke-width="1"/>
+  <text x="38.0" y="26.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">55</text>
+  <g class="marque"><title>3 à 28 % de la saison : 2 rappelés sur 98</title><rect x="85.2" y="245.7" width="46.0" height="8.3" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g stroke="var(--surface)" stroke-width="4"><line x1="108.2" y1="224.7" x2="108.2" y2="251.5"/><line x1="103.2" y1="224.7" x2="113.2" y2="224.7"/><line x1="103.2" y1="251.5" x2="113.2" y2="251.5"/></g>
+  <g stroke="var(--encre)" stroke-width="1.6"><line x1="108.2" y1="224.7" x2="108.2" y2="251.5"/><line x1="103.2" y1="224.7" x2="113.2" y2="224.7"/><line x1="103.2" y1="251.5" x2="113.2" y2="251.5"/></g>
+  <text x="108.2" y="214.7" text-anchor="middle" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">2.0 %</text>
+  <text x="108.2" y="270.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">3 à 28 %</text>
+  <text x="108.2" y="285.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-muette)" font-size="10">98 aventuriers</text>
+  <g class="marque"><title>29 à 50 % de la saison : 8 rappelés sur 98</title><rect x="209.6" y="220.1" width="46.0" height="33.9" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g stroke="var(--surface)" stroke-width="4"><line x1="232.6" y1="190.8" x2="232.6" y2="236.7"/><line x1="227.6" y1="190.8" x2="237.6" y2="190.8"/><line x1="227.6" y1="236.7" x2="237.6" y2="236.7"/></g>
+  <g stroke="var(--encre)" stroke-width="1.6"><line x1="232.6" y1="190.8" x2="232.6" y2="236.7"/><line x1="227.6" y1="190.8" x2="237.6" y2="190.8"/><line x1="227.6" y1="236.7" x2="237.6" y2="236.7"/></g>
+  <text x="232.6" y="180.8" text-anchor="middle" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">8.2 %</text>
+  <text x="232.6" y="270.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">29 à 50 %</text>
+  <text x="232.6" y="285.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-muette)" font-size="10">98 aventuriers</text>
+  <g class="marque"><title>50 à 73 % de la saison : 16 rappelés sur 98</title><rect x="334.0" y="186.7" width="46.0" height="67.3" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g stroke="var(--surface)" stroke-width="4"><line x1="357.0" y1="151.2" x2="357.0" y2="211.5"/><line x1="352.0" y1="151.2" x2="362.0" y2="151.2"/><line x1="352.0" y1="211.5" x2="362.0" y2="211.5"/></g>
+  <g stroke="var(--encre)" stroke-width="1.6"><line x1="357.0" y1="151.2" x2="357.0" y2="211.5"/><line x1="352.0" y1="151.2" x2="362.0" y2="151.2"/><line x1="352.0" y1="211.5" x2="362.0" y2="211.5"/></g>
+  <text x="357.0" y="141.2" text-anchor="middle" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">16.3 %</text>
+  <text x="357.0" y="270.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">50 à 73 %</text>
+  <text x="357.0" y="285.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-muette)" font-size="10">98 aventuriers</text>
+  <g class="marque"><title>74 à 95 % de la saison : 22 rappelés sur 98</title><rect x="458.4" y="161.5" width="46.0" height="92.5" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g stroke="var(--surface)" stroke-width="4"><line x1="481.4" y1="123.1" x2="481.4" y2="190.8"/><line x1="476.4" y1="123.1" x2="486.4" y2="123.1"/><line x1="476.4" y1="190.8" x2="486.4" y2="190.8"/></g>
+  <g stroke="var(--encre)" stroke-width="1.6"><line x1="481.4" y1="123.1" x2="481.4" y2="190.8"/><line x1="476.4" y1="123.1" x2="486.4" y2="123.1"/><line x1="476.4" y1="190.8" x2="486.4" y2="190.8"/></g>
+  <text x="481.4" y="113.1" text-anchor="middle" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">22.4 %</text>
+  <text x="481.4" y="270.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">74 à 95 %</text>
+  <text x="481.4" y="285.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-muette)" font-size="10">98 aventuriers</text>
+  <g class="marque"><title>95 à 100 % de la saison : 45 rappelés sur 99</title><rect x="582.8" y="66.1" width="46.0" height="187.9" rx="4" fill="var(--serie-3)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g stroke="var(--surface)" stroke-width="4"><line x1="605.8" y1="26.0" x2="605.8" y2="105.3"/><line x1="600.8" y1="26.0" x2="610.8" y2="26.0"/><line x1="600.8" y1="105.3" x2="610.8" y2="105.3"/></g>
+  <g stroke="var(--encre)" stroke-width="1.6"><line x1="605.8" y1="26.0" x2="605.8" y2="105.3"/><line x1="600.8" y1="26.0" x2="610.8" y2="26.0"/><line x1="600.8" y1="105.3" x2="610.8" y2="105.3"/></g>
+  <text x="605.8" y="16.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">45.5 %</text>
+  <text x="605.8" y="270.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">95 à 100 %</text>
+  <text x="605.8" y="285.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-muette)" font-size="10">99 aventuriers</text>
+  <line x1="46" y1="175.9" x2="668" y2="175.9" stroke="var(--encre-douce)" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <text x="668.0" y="167.9" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">moyenne : 18.9 %</text>
+  <line x1="46" y1="254" x2="668" y2="254" stroke="var(--axe)" stroke-width="1"/>
+</svg>
+</figure>

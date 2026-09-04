@@ -1733,10 +1733,14 @@ def homophilie(par_saison, parts, conseils):
                        else 0.0 if a.get("_csp") and b.get("_csp") else None)
         meme_bandeau = (1.0 if a.get("couleur") and a.get("couleur") == b.get("couleur")
                         else 0.0 if a.get("couleur") and b.get("couleur") else None)
-        return meme_sexe, ecart_age, meme_metier, meme_bandeau
+        # Le departement : epargne-t-on le voisin ? La question n'avait jamais
+        # ete posee, et elle se pose exactement comme les quatre autres.
+        meme_lieu = (1.0 if a.get("localisation") and a.get("localisation") == b.get("localisation")
+                     else 0.0 if a.get("localisation") and b.get("localisation") else None)
+        return meme_sexe, ecart_age, meme_metier, meme_bandeau, meme_lieu
 
     def mesures(jeu):
-        cumuls = [[0.0, 0] for _ in range(4)]
+        cumuls = [[0.0, 0] for _ in range(5)]
         for s, _, bulletins in jeu:
             for votant, cible in bulletins:
                 t = traits(s, votant, cible)
@@ -1751,7 +1755,7 @@ def homophilie(par_saison, parts, conseils):
     observe, effectifs = mesures(couples)
     observe_mixte, effectifs_mixte = mesures(mixtes)
     g = rng("homophilie")
-    nulles = [[] for _ in range(4)]
+    nulles = [[] for _ in range(5)]
     nulle_mixte = []
     for _ in range(4000):
         melange, melange_mixte = [], []
@@ -1785,6 +1789,9 @@ def homophilie(par_saison, parts, conseils):
          "part sur 1", 1),
         ("vote_meme_bandeau", "Viser son propre bandeau de départ",
          "Le camp d'origine protège-t-il, une fois les tribus mélangées ?",
+         "part sur 1", 1),
+        ("vote_meme_departement", "Viser quelqu'un de son département",
+         "Épargne-t-on le voisin — celui qui vit dans le même département ?",
          "part sur 1", 1),
     ]
     tests = []
@@ -3639,6 +3646,369 @@ def autour_du_feu(par_saison, parts, conseils, epreuves, bloc_fusion):
     }
 
 
+# --- N. La pire place au conseil -------------------------------------------
+
+# Deux signaux se lisent sur la meme chaine de conseils : les voix recues la
+# fois d'avant, et le nombre d'allies encore assis autour du feu. Un allie est
+# quelqu'un avec qui on a deja ecrit le MEME nom a un conseil anterieur --
+# l'alliance se noue en votant ensemble, et elle ne se defait jamais dans ce
+# calcul : ce qu'on mesure est « a-t-il deja ete mon allie », pas « l'est-il
+# encore ». La meme convention que pour la trahison.
+
+
+def _allies_par_conseil(plateaux):
+    """(saison, indice, personne) -> ceux avec qui il a deja vote, avant ce soir.
+
+    La chaine se rompt au premier conseil non depouille : additionner par-dessus
+    un conseil qu'on n'a pas lu ferait passer une lacune pour une absence
+    d'alliance.
+    """
+    allies, isole = {}, set()
+    for sid, liste in plateaux.items():
+        vus = collections.defaultdict(set)
+        emis = collections.Counter()
+        for i, c in enumerate(liste):
+            if not c["complet"]:
+                vus, emis = collections.defaultdict(set), collections.Counter()
+                continue
+            for p in c["votants"]:
+                allies[(sid, i, p)] = set(vus[p])
+                if emis[p] and not vus[p]:
+                    isole.add((sid, i, p))
+            par_cible = collections.defaultdict(list)
+            for auteur, cible in zip(c["auteurs"], c["cibles"]):
+                par_cible[cible].append(auteur)
+            for _, gens in sorted(par_cible.items()):
+                for x in gens:
+                    emis[x] += 1
+                    for y in gens:
+                        if x != y:
+                            vus[x].add(y)
+    return allies, isole
+
+
+def _immunises_du_soir(conseils, epreuves):
+    """Le vainqueur de l'immunite individuelle, sur les seuls soirs a UN conseil.
+
+    Un episode qui compte plusieurs conseils enchaine plusieurs eliminations :
+    l'immunite gagnee avant le premier ne vaut pas au troisieme. Le
+    rapprochement n'y est donc pas fait -- c'est la meme regle que pour le camp.
+    """
+    from indicateurs import eliminations
+
+    par_soir = collections.Counter()
+    episode_de = {}
+    for c in eliminations(conseils):
+        try:
+            episode = int(c["episode"])
+        except (TypeError, ValueError, KeyError):
+            continue
+        par_soir[(c["saison"], episode)] += 1
+        episode_de[(c["saison"], c["numero"])] = episode
+    gagnants = _gagnants_par_episode(epreuves, "immunite", "individuelle")
+    return {cle: gagnants[(cle[0], ep)]
+            for cle, ep in sorted(episode_de.items())
+            if par_soir[(cle[0], ep)] == 1 and gagnants.get((cle[0], ep))}
+
+
+def pire_place(par_saison, parts, conseils, epreuves):
+    """Deux signaux, et ce qu'ils font ensemble.
+
+    Etre vise la fois d'avant expose ; n'avoir plus personne avec qui on ait
+    deja vote expose davantage. La question qui vaut la peine n'est pas de
+    savoir si chacun compte separement -- les deux pages precedentes le disent
+    -- mais s'ils comptent ENSEMBLE, ou si l'un n'est que l'ombre de l'autre.
+    Un logit conditionnel, un conseil par groupe, tranche.
+    """
+    plateaux = _plateaux_conseils(par_saison, conseils)
+    if not plateaux:
+        return {}
+    arcs = _arcs(plateaux, strict=True)
+    lignes = _mesurer(plateaux, arcs)
+    if len(lignes) < SEUIL_CHAINE:
+        return {}
+    allies, isole = _allies_par_conseil(plateaux)
+
+    par_conseil = collections.defaultdict(list)
+    for l in lignes:
+        par_conseil[(l["saison"], l["indice"])].append(l)
+    for (sid, i), groupe in sorted(par_conseil.items()):
+        presents = {l["personne"] for l in groupe}
+        for l in groupe:
+            ensemble = allies.get((sid, i, l["personne"]), set())
+            l["allies_presents"] = len(ensemble & presents)
+            l["allies_connus"] = len(ensemble)
+            l["jamais_allie"] = (sid, i, l["personne"]) in isole
+
+    # --- 1. l'isolement, decompose ----------------------------------------
+    def _place(l):
+        if l["allies_presents"]:
+            return ("1 ou 2 alliés présents" if l["allies_presents"] <= 2
+                    else "3 alliés ou plus")
+        return ("n’a jamais voté avec personne" if l["jamais_allie"]
+                else "tous ses alliés sont partis")
+
+    isolement = _taux(lignes, _place,
+                      ["n’a jamais voté avec personne", "tous ses alliés sont partis",
+                       "1 ou 2 alliés présents", "3 alliés ou plus"])
+
+    # --- 2. les deux signaux, ensemble ------------------------------------
+    def _cumul(l):
+        n = (1 if l["voix_prec"] else 0) + (0 if l["allies_presents"] else 1)
+        return {0: "aucun des deux signaux", 1: "un seul des deux",
+                2: "les deux à la fois"}[n]
+
+    cumul = _taux(lignes, _cumul,
+                  ["aucun des deux signaux", "un seul des deux", "les deux à la fois"])
+
+    # --- 3. le modele conjoint --------------------------------------------
+    import statsmodels.api as sm
+
+    groupes, y, X, index = [], [], [], {}
+    for l in lignes:
+        cle = (l["saison"], l["indice"])
+        index.setdefault(cle, len(index) + 1)
+        groupes.append(index[cle])
+        y.append(float(l["sorti"]))
+        X.append([1.0 if l["voix_prec"] else 0.0,
+                  0.0 if l["allies_presents"] else 1.0])
+    modele = {}
+    if len(index) >= 30:
+        r = sm.ConditionalLogit(np.array(y), np.array(X),
+                                groups=np.array(groupes)).fit(disp=0)
+        ic = r.conf_int()
+        noms = ("Visé au conseil précédent", "Plus aucun allié présent")
+        modele = {
+            "conseils": len(index), "presences": len(lignes),
+            "coefficients": [
+                {"libelle": noms[i], "rapport": _arr(float(np.exp(r.params[i])), 2),
+                 "bas": _arr(float(np.exp(ic[i][0])), 2),
+                 "haut": _arr(float(np.exp(ic[i][1])), 2),
+                 "p": _arr(float(r.pvalues[i]), 4)}
+                for i in range(len(noms))],
+            "lecture": "Rapport de cotes à conseil égal : chaque conseil est son "
+                       "propre groupe de comparaison. Les deux signaux sont dans le "
+                       "même modèle — s'ils y survivent tous les deux, ils ne sont "
+                       "pas l'ombre l'un de l'autre.",
+        }
+
+    # --- 4. le dos au mur --------------------------------------------------
+    # Celui qu'on vient de viser se bat-il mieux a l'epreuve d'immunite ?
+    immunises = _immunises_du_soir(conseils, epreuves)
+    dos, conseils_dos = [], set()
+    for l in lignes:
+        gagnants = immunises.get((l["saison"], l["conseil"]))
+        if not gagnants:
+            continue
+        conseils_dos.add((l["saison"], l["indice"]))
+        dos.append({"vise": 1 if l["voix_prec"] else 0,
+                    "gagne": 1 if l["personne"] in gagnants else 0,
+                    "risque": l["risque"], "saison": l["saison"],
+                    "indice": l["indice"], "sorti": l["sorti"]})
+    mur = []
+    if len(dos) >= 200:
+        for lab, valeur in (("visé au conseil précédent", 1),
+                            ("pas visé", 0)):
+            g = [d for d in dos if d["vise"] == valeur]
+            gagnants = sum(d["gagne"] for d in g)
+            bas, haut = _wilson(gagnants, len(g))
+            mur.append({"modalite": lab, "effectif": len(g), "cas": gagnants,
+                        "probabilite": _arr(100.0 * gagnants / len(g)),
+                        "bas": _arr(bas), "haut": _arr(haut),
+                        "hasard": _arr(100.0 * sum(1.0 / d["risque"] for d in g) / len(g))})
+
+    # --- 5. le controle : vise-t-on celui qui ne peut pas partir ? ---------
+    from indicateurs import eliminations
+    bulletins = perdus = 0
+    for c in eliminations(conseils):
+        gagnants = immunises.get((c["saison"], c["numero"]))
+        if not gagnants or not (c.get("complet") and c.get("votes")):
+            continue
+        for b in c["votes"]:
+            if not b.get("cible_rattachee"):
+                continue
+            bulletins += 1
+            perdus += 1 if b["cible"] in gagnants else 0
+
+    # --- 6. les tests ------------------------------------------------------
+    g = rng("pire_place")
+    groupes_idx = [np.array([i for i, l in enumerate(lignes)
+                             if (l["saison"], l["indice"]) == cle])
+                   for cle in sorted(par_conseil)]
+    sorti = np.array([l["sorti"] for l in lignes], dtype=float)
+    seul = np.array([not l["allies_presents"] for l in lignes])
+    entoure = ~seul
+
+    def contraste(v):
+        return 100.0 * (v[seul].mean() - v[entoure].mean())
+
+    observe = contraste(sorti)
+    nulle = []
+    for _ in range(N_PERMUTATIONS):
+        tire = np.zeros(len(lignes))
+        for idx in groupes_idx:
+            tire[idx[int(g.integers(0, len(idx)))]] = 1.0
+        nulle.append(contraste(tire))
+
+    tests = [_test(
+        "vote_isole", "N’avoir plus personne avec qui on ait voté",
+        "Se retrouver sans un seul allié parmi les présents expose-t-il ?",
+        observe, np.array(nulle), unite=" points",
+        lecture="Écart entre partir quand plus aucun de ceux avec qui on a déjà "
+                "voté n'est présent, et partir quand il en reste au moins un. Le "
+                "modèle nul tire l'éliminé au hasard parmi les présents.")]
+
+    if mur:
+        vise = np.array([bool(d["vise"]) for d in dos])
+        gagne = np.array([float(d["gagne"]) for d in dos])
+        par_soir_dos = collections.defaultdict(list)
+        for i, d in enumerate(dos):
+            par_soir_dos[(d["saison"], d["indice"])].append(i)
+        idx_dos = [np.array(v) for _, v in sorted(par_soir_dos.items())]
+
+        def contraste_mur(v):
+            return 100.0 * (v[vise].mean() - v[~vise].mean())
+
+        nulle_mur = []
+        for _ in range(N_PERMUTATIONS):
+            tire = np.zeros(len(dos))
+            for idx in idx_dos:
+                tire[idx[int(g.integers(0, len(idx)))]] = 1.0
+            nulle_mur.append(contraste_mur(tire))
+        tests.append(_test(
+            "dos_au_mur", "Le dos au mur",
+            "Celui qu'on vient de viser gagne-t-il plus souvent l'immunité ?",
+            contraste_mur(gagne), np.array(nulle_mur), unite=" points",
+            lecture="Écart entre gagner l'immunité individuelle du soir quand on a "
+                    "été visé au conseil précédent et la gagner quand on ne l'a pas "
+                    "été. Le modèle nul tire le vainqueur au hasard parmi les "
+                    "présents."))
+
+    return {
+        "presences": len(lignes), "conseils": len(par_conseil),
+        "saisons": len({l["saison"] for l in lignes}),
+        "isolement": isolement, "cumul": cumul, "modele": modele,
+        "dos_au_mur": mur, "conseils_immunite": len(conseils_dos),
+        "bulletins_lus": bulletins, "bulletins_perdus": perdus,
+        "part_perdue": _arr(100.0 * perdus / bulletins, 2) if bulletins else None,
+        "tests": tests,
+    }
+
+
+# --- O. Qui la production rappelle -----------------------------------------
+
+# Le seul choix de production que ces donnees laissent voir de bout en bout :
+# parmi tous ceux qui ont joue, lesquels ont ete redemandes. On ne compte que
+# les PREMIERES participations, et seulement celles assez anciennes pour qu'un
+# rappel ait eu le temps de se produire.
+ANNEE_LIMITE_RAPPEL = 2024
+
+# Les libelles publiables des sorts. Les codes de `participations.yml` sont des
+# identifiants ; ce qui s'affiche doit etre du francais accentue -- c'est un
+# controle de `tools/verifie_site.py`, pas une preference.
+LIBELLE_SORT = {
+    "vainqueur": "Vainqueur", "finaliste": "Finaliste",
+    "elimine_conseil": "Éliminé au conseil",
+    "elimine_poteaux": "Éliminé aux poteaux",
+    "elimine_orientation": "Éliminé à l’orientation",
+    "elimine_ambassadeurs": "Éliminé aux ambassadeurs",
+    "elimine_duel": "Éliminé en duel", "elimine_exil": "Éliminé sur l’île",
+    "abandon_medical": "Abandon médical",
+    "abandon_volontaire": "Abandon volontaire",
+    "disqualifie": "Disqualifié",
+}
+
+
+def rappel(par_saison, parts):
+    """Sachant comment on est sorti, la production vous redemande-t-elle ?"""
+    import statsmodels.api as sm
+
+    par_personne = collections.defaultdict(list)
+    for p in parts:
+        par_personne[p["id"]].append(p)
+    annee = {s: (par_saison[s] or {}).get("annee") for s in par_saison}
+
+    lignes = []
+    for p in parts:
+        s = par_saison.get(p["saison"]) or {}
+        if s.get("annulee") or p.get("edition_origine"):
+            continue
+        an = annee.get(p["saison"])
+        duree = s.get("duree_jours")
+        if an is None or an >= ANNEE_LIMITE_RAPPEL or not duree or not p.get("jour_sortie"):
+            continue
+        lignes.append({
+            "id": p["id"], "saison": p["saison"], "annee": an,
+            "nom": p.get("nom_complet") or p.get("nom"),
+            "rappele": 1 if any(annee.get(q["saison"], 0) > an
+                                for q in par_personne[p["id"]]) else 0,
+            "survie": 100.0 * p["jour_sortie"] / duree,
+            "sort": p.get("sort"), "genre": p.get("genre"), "age": p.get("age"),
+            "abandon": 1 if (p.get("sort") or "") in ABANDONS else 0,
+        })
+    if len(lignes) < 200:
+        return {}
+
+    par_sort = collections.defaultdict(lambda: [0, 0])
+    for l in lignes:
+        if not l["sort"]:
+            continue
+        par_sort[l["sort"]][0] += 1
+        par_sort[l["sort"]][1] += l["rappele"]
+    sorts = []
+    for cle, (n, r) in sorted(par_sort.items(), key=lambda x: -x[1][1] / x[1][0]):
+        if n < 10:
+            continue
+        bas, haut = _wilson(r, n)
+        sorts.append({"modalite": LIBELLE_SORT.get(cle, lisible(cle)),
+                      "effectif": n, "cas": r,
+                      "probabilite": _arr(100.0 * r / n),
+                      "bas": _arr(bas), "haut": _arr(haut)})
+
+    ordre = sorted(lignes, key=lambda l: (l["survie"], l["saison"], l["id"]))
+    tranches = []
+    for k in range(5):
+        part = ordre[k * len(ordre) // 5:(k + 1) * len(ordre) // 5]
+        r = sum(l["rappele"] for l in part)
+        bas, haut = _wilson(r, len(part))
+        tranches.append({"modalite": f"{part[0]['survie']:.0f} à "
+                                     f"{part[-1]['survie']:.0f} % de la saison",
+                         "effectif": len(part), "cas": r,
+                         "probabilite": _arr(100.0 * r / len(part)),
+                         "bas": _arr(bas), "haut": _arr(haut)})
+
+    X = sm.add_constant(np.column_stack([
+        np.array([l["survie"] for l in lignes]),
+        np.array([float(l["abandon"]) for l in lignes]),
+        np.array([1.0 if l["genre"] == "f" else 0.0 for l in lignes]),
+        np.array([((l["age"] or 33) - 33) / 10.0 for l in lignes]),
+        np.array([(l["annee"] - 2012) / 10.0 for l in lignes])]))
+    r = sm.Logit(np.array([float(l["rappele"]) for l in lignes]), X).fit(disp=0)
+    ic = r.conf_int()
+    noms = ("Part de saison tenue (+10 points)", "Avoir abandonné",
+            "Être une femme", "Âge (+10 ans)", "Époque (+10 ans)")
+    echelle = (10.0, 1.0, 1.0, 1.0, 1.0)
+    coefficients = [
+        {"libelle": noms[i],
+         "rapport": _arr(float(np.exp(r.params[i + 1] * echelle[i])), 2),
+         "bas": _arr(float(np.exp(ic[i + 1][0] * echelle[i])), 2),
+         "haut": _arr(float(np.exp(ic[i + 1][1] * echelle[i])), 2),
+         "p": _arr(float(r.pvalues[i + 1]), 4)}
+        for i in range(len(noms))]
+
+    return {
+        "effectif": len(lignes), "rappeles": sum(l["rappele"] for l in lignes),
+        "part": _arr(100.0 * sum(l["rappele"] for l in lignes) / len(lignes)),
+        "annee_limite": ANNEE_LIMITE_RAPPEL,
+        "par_sort": sorts, "par_survie": tranches,
+        "coefficients": coefficients,
+        "lecture": "Régression logistique sur les premières participations. Un "
+                   "rapport au-dessus de 1 veut dire « rappelé plus souvent », à "
+                   "toutes les autres variables égales. Un intervalle qui contient "
+                   "1 ne permet pas de conclure.",
+    }
+
+
 def _fichier(nom):
     """Lit un fichier de _data/ produit par un autre script.
 
@@ -3685,6 +4055,8 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
     aa = avant_apres(par_saison, parts, conseils, epreuves, f, fu)
     co = conditionnelles(par_saison, parts, conseils)
     af = autour_du_feu(par_saison, parts, conseils, epreuves, fu)
+    pp = pire_place(par_saison, parts, conseils, epreuves)
+    rp = rappel(par_saison, parts)
 
     # Les cles techniques du modele de force n'ont rien a faire dans le fichier
     # publie : elles servent aux regressions de suivi, pas au site.
@@ -3715,6 +4087,9 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
         registre.append(t)
     for t in af.get("tests") or []:
         t["origine"] = "autour_du_feu"
+        registre.append(t)
+    for t in pp.get("tests") or []:
+        t["origine"] = "pire_place"
         registre.append(t)
 
     for bloc, origine in ((al, "alliances"), (ru, "ruptures"),
@@ -3751,6 +4126,8 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
         "avant_apres": aa,
         "conditionnelles": co,
         "autour_du_feu": af,
+        "pire_place": pp,
+        "rappel": rp,
         "registre": [{k: t[k] for k in
                       ("cle", "libelle", "question", "origine", "observe",
                        "attendu", "unite", "ecart_types", "p", "p_ajustee",

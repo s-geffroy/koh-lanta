@@ -1,0 +1,35 @@
+<figure class="figure">
+<svg class="graphique" viewBox="0 0 780 274" role="img" preserveAspectRatio="xMidYMid meet" aria-label="L’isolement, décomposé">
+  <title>L’isolement, décomposé</title>
+  <desc>Probabilité d’être éliminé selon le nombre de gens avec qui on a déjà voté et qui sont encore présents.</desc>
+  <line x1="366.0" y1="36" x2="366.0" y2="250" stroke="var(--grille)" stroke-width="1"/>
+  <line x1="482.0" y1="36" x2="482.0" y2="250" stroke="var(--grille)" stroke-width="1"/>
+  <line x1="598.0" y1="36" x2="598.0" y2="250" stroke="var(--grille)" stroke-width="1"/>
+  <line x1="714.0" y1="36" x2="714.0" y2="250" stroke="var(--grille)" stroke-width="1"/>
+  <rect x="250" y="12" width="11" height="11" rx="3" fill="var(--serie-1)"/>
+  <text x="267.0" y="18.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">risque observé</text>
+  <rect x="376.8" y="12" width="11" height="11" rx="3" fill="var(--serie-6)"/>
+  <text x="393.8" y="18.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">1 / nombre de présents</text>
+  <text x="240.0" y="65.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">n’a jamais voté avec personne</text>
+  <g class="marque"><title>9 éliminations sur 25 présences</title><rect x="250" y="44.0" width="464.0" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <text x="721.0" y="54.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">36.0 %</text>
+  <g class="marque"><title>14.6 % si l’éliminé était tiré au hasard</title><rect x="250" y="66.0" width="188.2" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
+  <text x="445.2" y="76.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">14.6 %</text>
+  <text x="240.0" y="119.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">tous ses alliés sont partis</text>
+  <g class="marque"><title>6 éliminations sur 26 présences</title><rect x="250" y="98.0" width="297.7" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <text x="554.7" y="108.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">23.1 %</text>
+  <g class="marque"><title>15.9 % si l’éliminé était tiré au hasard</title><rect x="250" y="120.0" width="204.9" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
+  <text x="461.9" y="130.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">15.9 %</text>
+  <text x="240.0" y="173.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">1 ou 2 alliés présents</text>
+  <g class="marque"><title>14 éliminations sur 88 présences</title><rect x="250" y="152.0" width="204.9" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <text x="461.9" y="162.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">15.9 %</text>
+  <g class="marque"><title>14.6 % si l’éliminé était tiré au hasard</title><rect x="250" y="174.0" width="188.2" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
+  <text x="445.2" y="184.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">14.6 %</text>
+  <text x="240.0" y="227.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">3 alliés ou plus</text>
+  <g class="marque"><title>79 éliminations sur 641 présences</title><rect x="250" y="206.0" width="158.5" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <text x="415.5" y="216.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">12.3 %</text>
+  <g class="marque"><title>13.6 % si l’éliminé était tiré au hasard</title><rect x="250" y="228.0" width="175.3" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
+  <text x="432.3" y="238.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">13.6 %</text>
+  <line x1="250" y1="36" x2="250" y2="250" stroke="var(--axe)" stroke-width="1"/>
+</svg>
+</figure>

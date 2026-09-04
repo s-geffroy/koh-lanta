@@ -157,6 +157,20 @@ la contrainte posée. L’épisode est raconté sur
 dit mieux que tout ce qu’un test de permutation vaut : **exactement ce que vaut
 son modèle nul**.
 
+### La régression logistique, pour un oui ou un non
+
+Quand la chose à expliquer est binaire — être rappelé ou non, partir ou non — et
+que les observations ne se regroupent pas naturellement, c’est le modèle
+ordinaire. Il rend des **rapports de cotes** : au-dessus de 1, l’événement est
+plus probable, toutes les autres variables tenues fixes. Il sert sur
+[Les revenants]({{ '/statistiques/revenants/' | relative_url }}) pour séparer ce
+que la production choisit de ce que la longévité explique déjà.
+
+Ses coefficients ne figurent **pas** dans le registre des tests corrigés :
+celui-ci ne contient que les tests de permutation, dont le modèle nul est
+explicite et vérifiable. Un coefficient de régression y est publié avec son
+intervalle, et il se lit comme tel — une estimation, pas une découverte.
+
 ### Le repère mobile : une chance sur n
 
 Une probabilité de sortir ne se lit jamais seule. À un conseil à six, on part

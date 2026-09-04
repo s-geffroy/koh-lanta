@@ -97,6 +97,35 @@ gens partagent votre famille de métier dans un camp de vingt.
 tests multiples (p ajustée {{ t.p_ajustee }}), et **il vaut deux mois**. Il n’y a
 rien à en tirer.
 
+## Le voisin : peut-être, mais on ne peut pas le dire
+
+{% assign td = site.data.stats.modeles.registre | where: "cle", "vote_meme_departement" | first %}
+
+Quatre traits étaient testés jusqu’ici. En voici un cinquième, qu’on n’avait
+jamais posé : **épargne-t-on celui qui vit dans le même département ?** Les
+aventuriers ne se connaissent pas avant le tournage, mais un voisin est un
+voisin — on se découvre du pays commun, et l’on suppose que cela crée quelque
+chose.
+
+{% include graphiques/vise-departement.svg %}
+
+<p class="legende-figure">Part des bulletins visant quelqu’un du même
+département, contre {{ td.tirages }} redistributions des bulletins à
+l’intérieur de chaque conseil.</p>
+
+<div class="constat">
+  <p><b>{{ td.observe }} %</b> des bulletins visent quelqu’un du même
+  département, pour <b>{{ td.attendu }} %</b> attendus : l’observé est
+  <b>sous</b> l’attendu, {{ td.ecart_types }} écarts-types, p brute {{ td.p }},
+  p ajustée <b>{{ td.p_ajustee }}</b>. <b>Non concluant.</b></p>
+  <p>L’écart va dans le sens d’une protection — on épargnerait un peu le voisin
+  — mais il ne franchit pas le seuil, et il ne le franchit pas de peu. Les
+  couples de même département sont rares dans un camp de huit : le test est
+  faible par construction. Ce qu’on peut dire, c’est qu’il faudrait beaucoup
+  plus de conseils pour trancher ; ce qu’on ne peut pas dire, c’est que le pays
+  commun protège.</p>
+</div>
+
 ## Le bandeau de départ : le seul qui compte, et il compte beaucoup
 
 {% assign t = reg | where: "cle", "vote_bandeau_apres_fusion" | first %}

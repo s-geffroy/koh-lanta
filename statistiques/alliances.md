@@ -187,6 +187,15 @@ l’ordre : <code>J</code> pour jaune, <code>R</code> pour rouge. Sept sorties
 jaunes d’affilée en 2021 ne prouvent rien à elles seules — c’est l’accumulation
 sur {{ de.saisons }} saisons qui fait le résultat.</p>
 
+<p class="note"><strong>Ce que l’alliance vaut, en probabilité de survie.</strong>
+Cette page mesure l’existence et la durée des alliances. Leur <em>rendement</em>
+se lit ailleurs : sachant qu’il ne reste plus un seul des gens avec qui on a
+déjà voté, le risque de partir au conseil monte à
+{% assign pp = site.data.stats.modeles.pire_place %}<b>{{ pp.isolement[0].probabilite }} %</b>
+pour qui n’a jamais voté avec personne, contre
+{{ pp.isolement[3].probabilite }} % pour qui garde trois alliés ou plus.
+<a href="{{ '/statistiques/pire-place/' | relative_url }}">La pire place au conseil</a>.</p>
+
 <p class="note">Ce que cette page ne dit pas. Elle ne distingue pas <em>former</em>
 une majorité de <em>la rejoindre</em> : les bulletins ne portent pas d’heure, et
 rien dans ces données ne dit qui a proposé le nom. Un suiveur discipliné et un

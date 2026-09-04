@@ -1,0 +1,15 @@
+<figure class="figure">
+<svg class="graphique" viewBox="0 0 720 150" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Les deux signaux, dans le même modèle">
+  <title>Les deux signaux, dans le même modèle</title>
+  <desc>Rapports de cotes d’un logit conditionnel : chaque conseil est son propre groupe de comparaison. Si les deux survivent ensemble, ils ne sont pas l’ombre l’un de l’autre.</desc>
+  <line x1="238.8" y1="26" x2="238.8" y2="98" stroke="var(--encre-douce)" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <text x="238.8" y="20.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">1</text>
+  <g class="marque"><title>Visé au conseil précédent : cote multipliée par 1.87 (de 1.23 à 2.84)</title><line x1="254.0" y1="53.0" x2="360.5" y2="53.0" stroke="var(--serie-1)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="296.4" cy="53.0" r="4.4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="200.0" y="53.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Visé au conseil précédent</text>
+  <text x="640.0" y="53.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.87</text>
+  <g class="marque"><title>Plus aucun allié présent : cote multipliée par 3.1 (de 1.49 à 6.45)</title><line x1="271.2" y1="79.0" x2="599.2" y2="79.0" stroke="var(--serie-1)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="377.7" cy="79.0" r="4.4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="200.0" y="79.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Plus aucun allié présent</text>
+  <text x="640.0" y="79.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">3.1</text>
+  <text x="210.0" y="136.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">780 présences, 108 conseils</text>
+</svg>
+</figure>

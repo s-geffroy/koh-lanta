@@ -1,0 +1,24 @@
+<figure class="figure">
+<svg class="graphique" viewBox="0 0 780 228" role="img" preserveAspectRatio="xMidYMid meet" aria-label="À longévité égale, qui est redemandé">
+  <title>À longévité égale, qui est redemandé</title>
+  <desc>Rapports de cotes d’une régression logistique sur les premières participations. Au-dessus de 1 : rappelé plus souvent, toutes les autres variables tenues fixes.</desc>
+  <line x1="514.4" y1="26" x2="514.4" y2="176" stroke="var(--encre-douce)" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <text x="514.4" y="20.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">1</text>
+  <g class="marque"><title>Part de saison tenue (+10 points) : cote multipliée par 1.43 (de 1.28 à 1.6)</title><line x1="581.3" y1="53.0" x2="657.8" y2="53.0" stroke="var(--serie-1)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="617.2" cy="53.0" r="4.4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="240.0" y="53.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Part de saison tenue (+10 points)</text>
+  <text x="700.0" y="53.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.43</text>
+  <g class="marque"><title>Avoir abandonné : cote multipliée par 0.18 (de 0.02 à 1.36)</title><line x1="280.2" y1="79.0" x2="600.4" y2="79.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="318.4" cy="79.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="240.0" y="79.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Avoir abandonné</text>
+  <text x="700.0" y="79.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.18</text>
+  <g class="marque"><title>Être une femme : cote multipliée par 0.86 (de 0.52 à 1.42)</title><line x1="399.7" y1="105.0" x2="614.8" y2="105.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="480.9" cy="105.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="240.0" y="105.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Être une femme</text>
+  <text x="700.0" y="105.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.86</text>
+  <g class="marque"><title>Âge (+10 ans) : cote multipliée par 0.7 (de 0.52 à 0.93)</title><line x1="399.7" y1="131.0" x2="497.7" y2="131.0" stroke="var(--serie-1)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="442.7" cy="131.0" r="4.4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="240.0" y="131.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Âge (+10 ans)</text>
+  <text x="700.0" y="131.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.7</text>
+  <g class="marque"><title>Époque (+10 ans) : cote multipliée par 0.77 (de 0.53 à 1.12)</title><line x1="402.1" y1="157.0" x2="543.1" y2="157.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="459.4" cy="157.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="240.0" y="157.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Époque (+10 ans)</text>
+  <text x="700.0" y="157.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.77</text>
+  <text x="250.0" y="214.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">491 premières participations, 93 rappelées</text>
+</svg>
+</figure>

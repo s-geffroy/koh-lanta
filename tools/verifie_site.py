@@ -274,6 +274,9 @@ def resoudre(racine, chemin):
 # La liste est volontairement courte et sans ambiguite : « observe », « compare »
 # ou « elimine » sont de vrais mots francais et n'y figurent pas, meme quand ils
 # tiennent la place d'un participe accentue.
+# Un mot n'entre ici que si sa forme SANS accent n'est pas du francais. « victoire »
+# y figurait a tort -- il n'a pas d'accent -- et le controle elargi aux modalites
+# des tableaux l'a fait apparaitre comme une fausse alerte.
 MOTS_SANS_ACCENT = """
 ecart ecarts ecarte ecartent age ages mediane medianes metier metiers
 general generale generaux depart departs meme memes melange melanges
@@ -285,7 +288,8 @@ separement zero identifiee identifiees extremes edition editions regle regles
 interieur composees tirees equilibre differer methode methodes neutralisee
 popularite telespectateurs episode episodes etendue reunification deroulement
 resultat resultats categorie categories reference references annulee annulees
-elimination eliminations moitie moitiee sejour sejours defaite victoire
+elimination eliminations elimine elimines eliminee eliminees
+moitie moitiee sejour sejours defaite disqualifie
 """
 MOTS_SUSPECTS = set(MOTS_SANS_ACCENT.split())
 RE_MOT = re.compile(r"[A-Za-z][A-Za-z'-]*")
@@ -318,9 +322,23 @@ def controler_accents(c):
     chemin = os.path.join(RACINE, "_data", "stats.yml")
     if os.path.exists(chemin):
         stats = yaml.safe_load(open(chemin, encoding="utf-8")) or {}
-        for t in ((stats.get("modeles") or {}).get("registre") or []):
-            for champ in ("libelle", "question", "lecture"):
-                examiner(f"registre « {t.get('cle')} » / {champ}", t.get(champ))
+        # Tout ce que les modeles publient comme etiquette est du contenu : les
+        # libelles de tests, mais aussi les modalites des tableaux de
+        # probabilites conditionnelles, ou un code de sort (« elimine
+        # orientation ») s'etait deja glisse.
+        def parcourir(noeud, chemin_lisible):
+            if isinstance(noeud, dict):
+                for cle, valeur in noeud.items():
+                    if cle in ("libelle", "question", "lecture", "modalite") \
+                            and isinstance(valeur, str):
+                        examiner(f"modeles.{chemin_lisible}.{cle}", valeur)
+                    elif isinstance(valeur, (dict, list)):
+                        parcourir(valeur, f"{chemin_lisible}.{cle}")
+            elif isinstance(noeud, list):
+                for valeur in noeud:
+                    parcourir(valeur, chemin_lisible)
+
+        parcourir(stats.get("modeles") or {}, "")
 
     for origine, mots in fautes:
         c.avertir(f"{origine} : texte publie sans accents — {', '.join(mots)}")

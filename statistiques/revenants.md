@@ -52,6 +52,110 @@ et l’on vote contre ceux qu’on redoute ; mais les éditions spéciales
 rassemblent aussi des joueurs tous très forts, où la moitié doit forcément
 sortir tôt.</p>
 
+## Qui la production redemande
+
+{% assign rp = site.data.stats.modeles.rappel %}
+
+Avant de se demander si revenir paie, il faut se demander **qui est
+rappelé** — et là, ce n’est plus le jeu qui décide, c’est la production. Sur
+les **{{ rp.effectif }} premières participations** assez anciennes pour qu’un
+retour ait eu le temps de se produire (avant {{ rp.annee_limite }}),
+**{{ rp.rappeles }} ont été suivies d’une autre édition** :
+{{ rp.part }} %.
+
+{% include graphiques/rappel-sort.svg %}
+
+<p class="legende-figure">Part des aventuriers rappelés dans une édition
+ultérieure, selon la façon dont leur première aventure s’est terminée.</p>
+
+<div class="tableau-large">
+<table data-triable>
+<thead><tr><th>Fin de la première aventure</th><th class="nombre">Aventuriers</th><th class="nombre">Rappelés</th><th class="nombre">Probabilité</th><th class="nombre">Intervalle</th></tr></thead>
+<tbody>
+{% for x in rp.par_sort %}
+<tr>
+  <td>{{ x.modalite }}</td>
+  <td class="nombre">{{ x.effectif }}</td><td class="nombre">{{ x.cas }}</td>
+  <td class="nombre" data-val="{{ x.probabilite }}"><b>{{ x.probabilite }} %</b></td>
+  <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+{% assign fin = rp.par_sort | first %}
+{% assign dernier = rp.par_sort | last %}
+La gradation est sans trou : **{{ fin.probabilite }} %** en haut du tableau,
+**{{ dernier.probabilite }} %** en bas. Entre les deux, chaque façon de sortir a
+sa probabilité d’être redemandé, et elles se rangent exactement dans l’ordre où
+l’on s’attendrait à les trouver.
+
+### La durée explique presque tout
+
+{% include graphiques/rappel-survie.svg %}
+
+<p class="legende-figure">Part des aventuriers rappelés selon le cinquième de
+longévité auquel ils appartiennent.</p>
+
+Le cinquième qui va le plus loin est rappelé
+**{{ rp.par_survie[4].probabilite }} %** du temps, contre
+**{{ rp.par_survie[0].probabilite }} %** pour celui qui sort le plus tôt : plus
+de vingt fois moins. Le tableau des sorts, ci-dessus, ne dit peut-être rien de
+plus que cela — un éliminé aux poteaux est allé loin par définition.
+
+### Ce qui reste quand la durée est tenue fixe
+
+{% include graphiques/rappel-modele.svg %}
+
+<p class="legende-figure">Rapports de cotes d’une régression logistique sur les
+{{ rp.effectif }} premières participations. Au-dessus de 1 : rappelé plus
+souvent, toutes les autres variables tenues fixes.</p>
+
+<div class="tableau-large">
+<table>
+<thead><tr><th>Variable</th><th class="nombre">Cote multipliée par</th><th class="nombre">Intervalle</th><th class="nombre">p</th></tr></thead>
+<tbody>
+{% for x in rp.coefficients %}
+<tr><td>{{ x.libelle }}</td>
+    <td class="nombre"><b>{{ x.rapport }}</b></td>
+    <td class="nombre">{{ x.bas }} – {{ x.haut }}</td>
+    <td class="nombre">{{ x.p }}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+<div class="constat">
+  <p><b>La longévité domine</b> : dix points de saison tenus en plus multiplient
+  la cote d’être rappelé par {{ rp.coefficients[0].rapport }}.</p>
+  <p><b>L’âge compte, et il compte contre.</b> Dix ans de plus au casting
+  divisent la cote par {{ 1.0 | divided_by: rp.coefficients[3].rapport | round: 2 }},
+  à longévité, sexe et époque égaux — intervalle
+  {{ rp.coefficients[3].bas }} à {{ rp.coefficients[3].haut }},
+  p {{ rp.coefficients[3].p }}. La production rappelle plutôt les jeunes, et ce
+  n’est pas parce qu’ils vont plus loin : c’est justement ce que le modèle tient
+  fixe. [Âge et longévité]({{ '/statistiques/longevite/' | relative_url }}) montre
+  d’ailleurs que ce sont les 30-34 ans qui durent le plus.</p>
+  <p><b>Le sexe, non</b> : cote multipliée par {{ rp.coefficients[2].rapport }},
+  intervalle {{ rp.coefficients[2].bas }} à {{ rp.coefficients[2].haut }}. Le
+  rappel est aussi paritaire que le casting — et
+  [la recette du casting]({{ '/statistiques/casting/' | relative_url }}) montre
+  que cette parité-là est un quota.</p>
+  <p><b>L’abandon coûte cher, sans qu’on puisse le chiffrer.</b> Cote multipliée
+  par {{ rp.coefficients[1].rapport }} — divisée par cinq, donc — mais
+  l’intervalle ({{ rp.coefficients[1].bas }} à {{ rp.coefficients[1].haut }})
+  contient 1. Le tableau des sorts dit pourquoi : les deux dernières lignes
+  réunissent quelques dizaines d’abandons et <b>un seul</b> retour. On voit la
+  direction, pas l’ampleur.</p>
+</div>
+
+<p class="note"><strong>Ce que ce modèle ne peut pas voir.</strong> Il ne
+connaît ni le temps d’antenne, ni le personnage que le montage a construit, ni
+qui a refusé de revenir. Un aventurier peut n’avoir jamais été rappelé, ou avoir
+dit non : ces données ne distinguent pas les deux, et l’écart mesuré mêle le
+choix de la production et celui du candidat.</p>
+
 ## Le petit monde des revenants
 
 {% include graphiques/revenants-graphe.svg %}

@@ -1,0 +1,37 @@
+<figure class="figure">
+<svg class="graphique" viewBox="0 0 620 320" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Deux signaux, et ce qu’ils font ensemble">
+  <title>Deux signaux, et ce qu’ils font ensemble</title>
+  <desc>Probabilité d’être éliminé selon qu’on cumule zéro, un ou deux signaux : avoir été visé au conseil précédent, et n’avoir plus aucun allié parmi les présents.</desc>
+  <line x1="46" y1="254.0" x2="608" y2="254.0" stroke="var(--grille)" stroke-width="1"/>
+  <text x="38.0" y="254.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">0</text>
+  <line x1="46" y1="197.0" x2="608" y2="197.0" stroke="var(--grille)" stroke-width="1"/>
+  <text x="38.0" y="197.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">17</text>
+  <line x1="46" y1="140.0" x2="608" y2="140.0" stroke="var(--grille)" stroke-width="1"/>
+  <text x="38.0" y="140.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">34</text>
+  <line x1="46" y1="83.0" x2="608" y2="83.0" stroke="var(--grille)" stroke-width="1"/>
+  <text x="38.0" y="83.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">52</text>
+  <line x1="46" y1="26.0" x2="608" y2="26.0" stroke="var(--grille)" stroke-width="1"/>
+  <text x="38.0" y="26.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">69</text>
+  <g class="marque"><title>aucun des deux signaux : 60 éliminations sur 549 présences, soit 10.9 %</title><rect x="116.7" y="218.0" width="46.0" height="36.0" rx="4" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g stroke="var(--surface)" stroke-width="4"><line x1="139.7" y1="208.4" x2="139.7" y2="225.6"/><line x1="134.7" y1="208.4" x2="144.7" y2="208.4"/><line x1="134.7" y1="225.6" x2="144.7" y2="225.6"/></g>
+  <g stroke="var(--encre)" stroke-width="1.6"><line x1="139.7" y1="208.4" x2="139.7" y2="225.6"/><line x1="134.7" y1="208.4" x2="144.7" y2="208.4"/><line x1="134.7" y1="225.6" x2="144.7" y2="225.6"/></g>
+  <text x="139.7" y="198.4" text-anchor="middle" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">10.9 %</text>
+  <text x="139.7" y="270.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">aucun</text>
+  <text x="139.7" y="285.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-muette)" font-size="10">549 présences</text>
+  <g class="marque"><title>un seul des deux : 40 éliminations sur 214 présences, soit 18.7 %</title><rect x="304.0" y="192.2" width="46.0" height="61.8" rx="4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g stroke="var(--surface)" stroke-width="4"><line x1="327.0" y1="173.4" x2="327.0" y2="207.7"/><line x1="322.0" y1="173.4" x2="332.0" y2="173.4"/><line x1="322.0" y1="207.7" x2="332.0" y2="207.7"/></g>
+  <g stroke="var(--encre)" stroke-width="1.6"><line x1="327.0" y1="173.4" x2="327.0" y2="207.7"/><line x1="322.0" y1="173.4" x2="332.0" y2="173.4"/><line x1="322.0" y1="207.7" x2="332.0" y2="207.7"/></g>
+  <text x="327.0" y="163.4" text-anchor="middle" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">18.7 %</text>
+  <text x="327.0" y="270.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">un seul</text>
+  <text x="327.0" y="285.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-muette)" font-size="10">214 présences</text>
+  <g class="marque"><title>les deux à la fois : 8 éliminations sur 17 présences, soit 47.1 %</title><rect x="491.3" y="98.4" width="46.0" height="155.6" rx="4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g stroke="var(--surface)" stroke-width="4"><line x1="514.3" y1="26.0" x2="514.3" y2="167.4"/><line x1="509.3" y1="26.0" x2="519.3" y2="26.0"/><line x1="509.3" y1="167.4" x2="519.3" y2="167.4"/></g>
+  <g stroke="var(--encre)" stroke-width="1.6"><line x1="514.3" y1="26.0" x2="514.3" y2="167.4"/><line x1="509.3" y1="26.0" x2="519.3" y2="26.0"/><line x1="509.3" y1="167.4" x2="519.3" y2="167.4"/></g>
+  <text x="514.3" y="16.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">47.1 %</text>
+  <text x="514.3" y="270.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">les deux</text>
+  <text x="514.3" y="285.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-muette)" font-size="10">17 présences</text>
+  <line x1="46" y1="209.1" x2="608" y2="209.1" stroke="var(--encre-douce)" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <text x="608.0" y="201.1" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">le hasard : 13.6 %</text>
+  <line x1="46" y1="254" x2="608" y2="254" stroke="var(--axe)" stroke-width="1"/>
+</svg>
+</figure>

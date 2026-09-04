@@ -1186,6 +1186,104 @@ def figures_des_modeles(stats):
             ecrire(f"{nom}.svg", distribution_nulle(
                 t, couleur=teinte if t.get("retenu") else SERIES[5]))
 
+    # --- N. la pire place au conseil ----------------------------------------
+    pp = m.get("pire_place") or {}
+    if pp.get("cumul"):
+        ecrire("pire-place-cumul.svg", colonnes(
+            [{"libelle": x["modalite"].replace("aucun des deux signaux", "aucun")
+                                      .replace("un seul des deux", "un seul")
+                                      .replace("les deux à la fois", "les deux"),
+              "sous_titre": f'{x["effectif"]} présences',
+              "valeur": x["probabilite"], "bas": x["bas"], "haut": x["haut"],
+              "couleur": SERIES[0] if x["probabilite"] >= pp["cumul"][0]["hasard"] else SERIES[5],
+              "detail": f'{x["modalite"]} : {x["cas"]} éliminations sur '
+                        f'{x["effectif"]} présences, soit {x["probabilite"]} %'}
+             for x in pp["cumul"]],
+            titre="Deux signaux, et ce qu’ils font ensemble",
+            description="Probabilité d’être éliminé selon qu’on cumule zéro, un ou "
+                        "deux signaux : avoir été visé au conseil précédent, et "
+                        "n’avoir plus aucun allié parmi les présents.",
+            unite=" %", largeur=620, hauteur=320,
+            reference=pp["cumul"][0]["hasard"],
+            reference_libelle=f'le hasard : {pp["cumul"][0]["hasard"]} %'))
+
+        ecrire("pire-place-isolement.svg", barres_groupees(
+            [{"libelle": x["modalite"],
+              "valeurs": [x["probabilite"], x["hasard"]],
+              "details": [f'{x["cas"]} éliminations sur {x["effectif"]} présences',
+                          f'{x["hasard"]} % si l’éliminé était tiré au hasard']}
+             for x in pp["isolement"]],
+            [{"nom": "risque observé", "couleur": SERIES[0]},
+             {"nom": "1 / nombre de présents", "couleur": SERIES[5]}],
+            titre="L’isolement, décomposé",
+            description="Probabilité d’être éliminé selon le nombre de gens avec "
+                        "qui on a déjà voté et qui sont encore présents.",
+            unite=" %", largeur=780, marge_gauche=250))
+
+    if (pp.get("modele") or {}).get("coefficients"):
+        ecrire("pire-place-modele.svg", foret(
+            [{"libelle": c["libelle"], "estimation": c["rapport"],
+              "bas": c["bas"], "haut": c["haut"],
+              "detail": f'{c["libelle"]} : cote multipliée par {c["rapport"]} '
+                        f'(de {c["bas"]} à {c["haut"]})'}
+             for c in pp["modele"]["coefficients"]],
+            titre="Les deux signaux, dans le même modèle",
+            description="Rapports de cotes d’un logit conditionnel : chaque conseil "
+                        "est son propre groupe de comparaison. Si les deux survivent "
+                        "ensemble, ils ne sont pas l’ombre l’un de l’autre.",
+            marge_gauche=210, largeur=720,
+            note=f'{pp["modele"]["presences"]} présences, '
+                 f'{pp["modele"]["conseils"]} conseils'))
+
+    # --- O. qui la production rappelle --------------------------------------
+    rp = m.get("rappel") or {}
+    if rp.get("par_sort"):
+        ecrire("rappel-sort.svg", barres_horizontales(
+            [{"libelle": x["modalite"], "valeur": x["probabilite"],
+              "detail": f'{x["modalite"]} : {x["cas"]} rappelés sur {x["effectif"]}, '
+                        f'soit {x["probabilite"]} % (intervalle {x["bas"]} à {x["haut"]} %)'}
+             for x in rp["par_sort"]],
+            titre="Qui la production redemande",
+            description="Part des aventuriers rappelés dans une édition ultérieure, "
+                        "selon la façon dont leur première aventure s’est terminée.",
+            unite=" %", largeur=760, marge_gauche=210))
+
+        ecrire("rappel-survie.svg", colonnes(
+            [{"libelle": x["modalite"].replace(" de la saison", ""),
+              "sous_titre": f'{x["effectif"]} aventuriers',
+              "valeur": x["probabilite"], "bas": x["bas"], "haut": x["haut"],
+              "couleur": SERIES[2],
+              "detail": f'{x["modalite"]} : {x["cas"]} rappelés sur {x["effectif"]}'}
+             for x in rp["par_survie"]],
+            titre="Le rappel suit la durée, presque seul",
+            description="Part des aventuriers rappelés selon le cinquième de "
+                        "longévité auquel ils appartiennent.",
+            unite=" %", largeur=680, hauteur=320,
+            reference=rp["part"],
+            reference_libelle=f'moyenne : {rp["part"]} %'))
+
+    if rp.get("coefficients"):
+        ecrire("rappel-modele.svg", foret(
+            [{"libelle": c["libelle"], "estimation": c["rapport"],
+              "bas": c["bas"], "haut": c["haut"],
+              "detail": f'{c["libelle"]} : cote multipliée par {c["rapport"]} '
+                        f'(de {c["bas"]} à {c["haut"]})'}
+             for c in rp["coefficients"]],
+            titre="À longévité égale, qui est redemandé",
+            description="Rapports de cotes d’une régression logistique sur les "
+                        "premières participations. Au-dessus de 1 : rappelé plus "
+                        "souvent, toutes les autres variables tenues fixes.",
+            marge_gauche=250, largeur=780,
+            note=f'{rp["effectif"]} premières participations, {rp["rappeles"]} rappelées'))
+
+    for cle, nom, teinte in (("vote_isole", "pire-place-nulle", SERIES[0]),
+                             ("dos_au_mur", "pire-place-mur", SERIES[5]),
+                             ("vote_meme_departement", "vise-departement", SERIES[5])):
+        t = par_cle.get(cle)
+        if t and t.get("nulle"):
+            ecrire(f"{nom}.svg", distribution_nulle(
+                t, couleur=teinte if t.get("retenu") else SERIES[5]))
+
     hm = m.get("hasard_mecanique") or {}
     if hm.get("paliers"):
         ecrire("risque-mecanique.svg", barres_groupees(
