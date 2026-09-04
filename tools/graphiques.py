@@ -126,21 +126,44 @@ def barres_horizontales(donnees, *, titre, description, unite="",
 
 
 def colonnes(donnees, *, titre, description, unite="", largeur=680, hauteur=300,
-             couleur=None, etiquettes_valeurs=True):
-    """Colonnes verticales : pour une progression ou une distribution ordonnee."""
+             couleur=None, etiquettes_valeurs=True, reference=None,
+             reference_libelle=""):
+    """Colonnes verticales : pour une progression ou une distribution ordonnee.
+
+    Deux options servent aux probabilites conditionnelles : `bas`/`haut` sur une
+    donnee dessinent son intervalle de confiance -- sans lui, une case a vingt
+    observations se lit comme une case a six cents -- et `reference` trace le
+    repere horizontal auquel la lecture doit comparer, le hasard par exemple.
+    Une colonne se lit toujours PAR RAPPORT a quelque chose ; ce quelque chose
+    doit etre dessine.
+    """
     donnees = [d for d in donnees if d.get("valeur") is not None]
     if not donnees:
         return ""
+    # La marge basse ne s'agrandit que si une donnee porte un sous-titre :
+    # sans cette condition, ajouter l'option deplacerait les dix figures en
+    # colonnes deja publiees.
     haut, bas, gauche, droite = 26, 52, 46, 12
+    if any(d.get("sous_titre") for d in donnees):
+        bas = 66
     piste_h = hauteur - haut - bas
     piste_l = largeur - gauche - droite
-    vmax = max(d["valeur"] for d in donnees) or 1
+    vmax = max([d["valeur"] for d in donnees]
+               + [d.get("haut") or 0 for d in donnees]
+               + [reference or 0]) or 1
     pas = piste_l / len(donnees)
     epaisseur = min(46, pas - 8)
+
+    def py(v):
+        return haut + piste_h * (1 - v / vmax)
 
     fig = Figure(largeur, hauteur, titre, description)
     for f in (0, 0.25, 0.5, 0.75, 1.0):
         y = haut + piste_h * (1 - f)
+        # Une graduation qui tombe sur le repere ferait un trait double, et le
+        # lecteur croirait a deux valeurs la ou il n'y en a qu'une.
+        if reference is not None and abs(y - py(reference)) < 6 and f > 0:
+            continue
         fig.ajouter(f'<line x1="{gauche}" y1="{y:.1f}" x2="{largeur - droite}" '
                     f'y2="{y:.1f}" stroke="{GRILLE}" stroke-width="1"/>')
         fig.ajouter(_texte(gauche - 8, y, f"{vmax * f:.0f}", ancre="end",
@@ -148,8 +171,8 @@ def colonnes(donnees, *, titre, description, unite="", largeur=680, hauteur=300,
 
     for i, d in enumerate(donnees):
         cx = gauche + pas * i + pas / 2
-        h = max(3.0, piste_h * d["valeur"] / vmax)
-        y = haut + piste_h - h
+        y = py(d["valeur"])
+        h = max(3.0, haut + piste_h - y)
         teinte = d.get("couleur") or couleur or SERIES[0]
         info = d.get("detail") or f'{d["libelle"]} : {d["valeur"]}{unite}'
         fig.ajouter(
@@ -157,11 +180,31 @@ def colonnes(donnees, *, titre, description, unite="", largeur=680, hauteur=300,
             f'<rect x="{cx - epaisseur / 2:.1f}" y="{y:.1f}" width="{epaisseur:.1f}" '
             f'height="{h:.1f}" rx="4" fill="{teinte}" stroke="{SURFACE}" '
             f'stroke-width="2"/></g>')
+        if d.get("bas") is not None and d.get("haut") is not None:
+            yb, yh = py(d["bas"]), py(d["haut"])
+            barre = (f'<line x1="{cx:.1f}" y1="{yh:.1f}" x2="{cx:.1f}" y2="{yb:.1f}"/>'
+                     f'<line x1="{cx - 5:.1f}" y1="{yh:.1f}" x2="{cx + 5:.1f}" y2="{yh:.1f}"/>'
+                     f'<line x1="{cx - 5:.1f}" y1="{yb:.1f}" x2="{cx + 5:.1f}" y2="{yb:.1f}"/>')
+            fig.ajouter(f'<g stroke="{SURFACE}" stroke-width="4">{barre}</g>')
+            fig.ajouter(f'<g stroke="{ENCRE}" stroke-width="1.6">{barre}</g>')
         if etiquettes_valeurs:
-            fig.ajouter(_texte(cx, y - 10, f'{d["valeur"]}{unite}', ancre="middle",
+            cime = min(y, py(d.get("haut") or d["valeur"]))
+            fig.ajouter(_texte(cx, cime - 10, f'{d["valeur"]}{unite}', ancre="middle",
                                couleur=ENCRE, taille=11, gras=True))
         fig.ajouter(_texte(cx, hauteur - bas + 16, d["libelle"], ancre="middle",
                            couleur=ENCRE_DOUCE, taille=11))
+        if d.get("sous_titre"):
+            fig.ajouter(_texte(cx, hauteur - bas + 31, d["sous_titre"], ancre="middle",
+                               couleur=ENCRE_MUETTE, taille=10))
+
+    if reference is not None:
+        y = py(reference)
+        fig.ajouter(f'<line x1="{gauche}" y1="{y:.1f}" x2="{largeur - droite}" '
+                    f'y2="{y:.1f}" stroke="{ENCRE_DOUCE}" stroke-width="1.4" '
+                    f'stroke-dasharray="5 4"/>')
+        if reference_libelle:
+            fig.ajouter(_texte(largeur - droite, y - 8, reference_libelle,
+                               ancre="end", couleur=ENCRE_DOUCE, taille=11))
 
     fig.ajouter(f'<line x1="{gauche}" y1="{haut + piste_h}" x2="{largeur - droite}" '
                 f'y2="{haut + piste_h}" stroke="var(--axe)" stroke-width="1"/>')

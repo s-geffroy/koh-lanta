@@ -117,6 +117,12 @@ deux, finalistes puis éliminés de la finale s’échelonnent proprement.
 Autrement dit : on ne gagne pas Koh-Lanta en survivant aux votes, on le gagne en
 n’en recevant pas.
 
+Ce chiffre est une moyenne de carrière. Sa version datée — *sachant les voix du
+conseil précédent, quelles chances de partir ce soir ?* — est sur
+[Sachant le conseil d’avant]({{ '/statistiques/conditionnelles/' | relative_url }}),
+et elle réserve un retournement : au-delà de quatre voix encaissées, le risque
+**redescend**.
+
 ## Être du bon côté du vote
 
 La *justesse de vote* mesure la part des bulletins portés sur la personne qui a

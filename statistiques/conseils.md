@@ -117,6 +117,14 @@ au dépouillement complet, **{{ rec.reciproques }} sont réciproques** :
 chance sur deux qu’il ait écrit le vôtre le même soir ou un autre. Le conseil
 n’est pas une meute contre un isolé, c’est un affrontement à deux camps.
 
+Cette réciprocité-là est **sans ordre** : à un moment ou un autre. Sa version
+datée — *celui dont j’ai écrit le nom la fois d’avant écrit-il le mien ce
+soir ?* — vaut
+{{ site.data.stats.modeles.conditionnelles.retour.probabilite }} %, contre
+{% assign trb = site.data.stats.modeles.registre | where: "cle", "retour_de_baton" | first %}{{ trb.attendu | round: 1 }} %
+si les bulletins étaient tirés au sort.
+[Sachant le conseil d’avant]({{ '/statistiques/conditionnelles/' | relative_url }}).
+
 Et ces camps **durent**. Deux aventuriers qui ont voté ensemble votent encore
 ensemble au conseil suivant dans
 {{ site.data.stats.modeles.alliances.apres_ensemble }} % des cas, contre

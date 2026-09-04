@@ -1076,6 +1076,69 @@ def figures_des_modeles(stats):
         elif t["cle"] == "ambassadeurs_survie":
             ecrire("ambassadeurs-survie.svg", distribution_nulle(t, couleur=SERIES[4]))
 
+    # --- L. sachant le conseil d'avant -------------------------------------
+    co = m.get("conditionnelles") or {}
+    if co.get("par_voix"):
+        ecrire("conditionnelles-menace.svg", colonnes(
+            [{"libelle": x["modalite"].replace(" voix et plus", " et +")
+                                      .replace("aucune voix", "aucune"),
+              "sous_titre": f'{x["effectif"]} présences',
+              "valeur": x["probabilite"], "bas": x["bas"], "haut": x["haut"],
+              "couleur": SERIES[0] if x["probabilite"] >= co["hasard"] else SERIES[5],
+              "detail": f'{x["modalite"]} au conseil précédent : '
+                        f'{x["cas"]} éliminations sur {x["effectif"]} présences, '
+                        f'soit {x["probabilite"]} % (intervalle {x["bas"]} à '
+                        f'{x["haut"]} %)'}
+             for x in co["par_voix"]],
+            titre="Partir ce soir, sachant les voix de la fois d'avant",
+            description="Probabilité d'être éliminé à un conseil selon le nombre "
+                        "de voix reçues au conseil précédent. Le trait vertical "
+                        "est l'intervalle de confiance à 95 %, le trait tireté le "
+                        "risque qu'un tirage au sort donnerait.",
+            unite=" %", largeur=720, hauteur=330,
+            reference=co["hasard"],
+            reference_libelle=f'le hasard : {co["hasard"]} %'))
+
+    if co.get("persistance"):
+        ecrire("conditionnelles-cible.svg", colonnes(
+            [{"libelle": x["modalite"].replace(" voix et plus", " et +")
+                                      .replace("aucune voix", "aucune"),
+              "sous_titre": f'{x["effectif"]} présences',
+              "valeur": x["probabilite"], "bas": x["bas"], "haut": x["haut"],
+              "couleur": SERIES[2],
+              "detail": f'{x["modalite"]} au conseil précédent : le nom ressort '
+                        f'{x["cas"]} fois sur {x["effectif"]}, soit '
+                        f'{x["probabilite"]} %'}
+             for x in co["persistance"]],
+            titre="Revoir son nom sortir de l'urne",
+            description="Probabilité de recevoir au moins une voix ce soir, selon "
+                        "le nombre de voix reçues au conseil précédent.",
+            unite=" %", largeur=620, hauteur=310))
+
+    modele = co.get("modele") or {}
+    if modele.get("coefficients"):
+        ecrire("conditionnelles-modele.svg", foret(
+            [{"libelle": c["libelle"], "estimation": c["rapport"],
+              "bas": c["bas"], "haut": c["haut"],
+              "detail": f'{c["libelle"]} au conseil précédent : cote multipliée '
+                        f'par {c["rapport"]} (de {c["bas"]} à {c["haut"]})'}
+             for c in modele["coefficients"]],
+            titre="Le même calcul, à conseil égal",
+            description="Rapports de cotes d'un logit conditionnel : chaque conseil "
+                        "est son propre groupe de comparaison, ce qui tient la "
+                        "taille du conseil rigoureusement fixe. Référence : aucune "
+                        "voix au conseil précédent.",
+            marge_gauche=170, largeur=700,
+            note=f'{modele["presences"]} présences, {modele["conseils"]} conseils'))
+
+    for cle, nom, teinte in (("menace_voix", "conditionnelles-nulle", SERIES[0]),
+                             ("menace_sommet", "conditionnelles-sommet", SERIES[3]),
+                             ("cible_persistante", "conditionnelles-cible-nulle", SERIES[2]),
+                             ("retour_de_baton", "conditionnelles-retour", SERIES[6])):
+        t = par_cle.get(cle)
+        if t and t.get("nulle"):
+            ecrire(f"{nom}.svg", distribution_nulle(t, couleur=teinte))
+
     hm = m.get("hasard_mecanique") or {}
     if hm.get("paliers"):
         ecrire("risque-mecanique.svg", barres_groupees(

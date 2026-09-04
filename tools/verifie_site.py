@@ -15,6 +15,7 @@ chiffre qui sort vide -- et qu'on ne verrait qu'en ligne, une fois publie :
 """
 import ast
 import html
+import math
 import os
 import re
 import subprocess
@@ -367,6 +368,40 @@ def controler_identifiants(c):
     return len(fautes)
 
 
+def controler_modeles_nuls(c):
+    """Refuse un test dont le modele nul ne bouge pas.
+
+    Le piege est silencieux et il a ete paye une fois : un modele nul mal
+    choisi peut laisser la statistique observee RIGOUREUSEMENT inchangee a
+    chaque tirage. Le test rend alors p = 1 et zero ecart-type -- ce qui se lit
+    « non concluant », alors que la verite est « ce test ne teste rien ». La
+    faute etait de rebattre les bulletins pour interroger un nombre de voix :
+    la permutation change qui a ecrit, jamais combien de voix chacun recoit.
+
+    Deux signatures suffisent a l'attraper : un ecart-type non fini, et une
+    distribution nulle dont toute la masse tient dans une seule case.
+    """
+    chemin = os.path.join(RACINE, "_data", "stats.yml")
+    if not os.path.exists(chemin):
+        return 0
+    stats = yaml.safe_load(open(chemin, encoding="utf-8")) or {}
+    fautes = 0
+    for t in ((stats.get("modeles") or {}).get("registre") or []):
+        cle = t.get("cle")
+        ecarts = t.get("ecart_types")
+        if ecarts is None or not math.isfinite(float(ecarts)):
+            c.erreur(f"test « {cle} » : ecart-type non fini — le modele nul ne "
+                     f"produit aucune variation, le test ne teste rien")
+            fautes += 1
+            continue
+        cases = [x for x in ((t.get("nulle") or {}).get("cases") or []) if x]
+        if len(cases) == 1:
+            c.erreur(f"test « {cle} » : tous les tirages tombent dans la meme "
+                     f"case — modele nul sans variation")
+            fautes += 1
+    return fautes
+
+
 def main():
     c = Controle()
     donnees = charger_donnees()
@@ -471,6 +506,7 @@ def main():
     controler_aleatoire(c)
     controler_accents(c)
     controler_identifiants(c)
+    controler_modeles_nuls(c)
 
     if os.path.isdir(os.path.join(RACINE, "_site")):
         c.avertir("_site/ existe : verifier qu'il est bien ignore par Git")

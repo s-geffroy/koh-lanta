@@ -2758,6 +2758,586 @@ def avant_apres(par_saison, parts, conseils, epreuves, bloc_force, bloc_fusion):
     }
 
 
+# --- L. Sachant le conseil d'avant -----------------------------------------
+
+# Un conseil n'entre dans la chaine que si son depouillement est COMPLET : le
+# drapeau `complet` dit que le nombre de bulletins lus egale le nombre de voix
+# annoncees. C'est la seule garantie que « zero voix recue » signifie zero, et
+# non « bulletin non releve ». La chaine se rompt des qu'un conseil manque :
+# faute de savoir qui y etait, on ne sait plus lequel etait « le precedent ».
+SEUIL_CHAINE = 200          # sous ce nombre de presences, on ne publie rien
+
+# Rebattre les bulletins coute cher : chaque tirage refait toute la chaine. Le
+# meme compromis que pour la trahison -- 4 000 tirages donnent la p-value au
+# demi-millieme, ce qui suffit tres largement ici.
+N_PERMUTATIONS_BULLETINS = 4_000
+
+
+def _wilson(succes, total, z=1.959963985):
+    """Intervalle de Wilson pour une proportion, en pourcentage.
+
+    Pas l'intervalle normal : sur une case a vingt observations il sortirait
+    de [0, 100] et annoncerait une largeur fausse. Celui de Wilson reste borne
+    et garde sa couverture sur les petits effectifs -- or ce sont justement
+    les petits effectifs qui portent le resultat le plus surprenant de cette
+    page.
+    """
+    if not total:
+        return None, None
+    p = succes / total
+    d = 1 + z * z / total
+    centre = (p + z * z / (2 * total)) / d
+    demi = z * ((p * (1 - p) / total + z * z / (4 * total * total)) ** 0.5) / d
+    return 100.0 * max(0.0, centre - demi), 100.0 * min(1.0, centre + demi)
+
+
+def _plateaux_conseils(par_saison, conseils):
+    """Par saison, les conseils d'elimination dans l'ordre du jeu.
+
+    Les conseils incomplets sont GARDES, sans leurs bulletins : ce sont eux
+    qui signalent les trous de la chaine, et un trou n'est pas un non-evenement
+    -- c'est un conseil dont on ignore qui y etait.
+    """
+    from indicateurs import eliminations
+
+    par_s = collections.defaultdict(list)
+    for c in eliminations(conseils):
+        s = par_saison.get(c["saison"]) or {}
+        if s.get("annulee") or s.get("en_cours"):
+            continue
+        complet = bool(c.get("complet") and c.get("votes"))
+        bulletins = [(b["votant"], b["cible"]) for b in (c.get("votes") or [])
+                     if b.get("votant_rattache") and b.get("cible_rattachee")] if complet else []
+        votants = sorted({b["votant"] for b in (c.get("votes") or [])
+                          if b.get("votant_rattache")}) if complet else []
+        par_s[c["saison"]].append({
+            "saison": c["saison"], "numero": c["numero"], "complet": complet,
+            "votants": votants,
+            "auteurs": [v for v, _ in bulletins],
+            "cibles": [t for _, t in bulletins],
+            "elimine": c["elimine"] if c.get("elimine_rattache") else None,
+            "annulation": bool(c.get("annulation")),
+        })
+    for s in par_s:
+        par_s[s].sort(key=lambda c: c["numero"])
+    return dict(sorted(par_s.items()))
+
+
+def _arcs(plateaux, strict=True):
+    """Pour chaque presence, le conseil precedent de CETTE personne.
+
+    « Le conseil precedent » n'est pas celui de la saison : avant la
+    reunification, deux tribus votent chacune de leur cote. C'est donc le
+    dernier conseil auquel cette personne-la a assiste.
+
+    En mode strict, un conseil au depouillement incomplet interrompt la
+    remontee : on ne peut pas jurer que l'aventurier n'y etait pas, donc pas
+    davantage que le conseil trouve plus loin soit bien « celui d'avant ». Le
+    mode relache enjambe ces trous ; il sert de controle de sensibilite.
+    """
+    arcs = []
+    for sid, liste in plateaux.items():
+        for i, c in enumerate(liste):
+            if not c["complet"]:
+                continue
+            for p in c["votants"]:
+                avant = None
+                for j in range(i - 1, -1, -1):
+                    if not liste[j]["complet"]:
+                        if strict:
+                            avant = None
+                            break
+                        continue
+                    if p in liste[j]["votants"]:
+                        avant = j
+                        break
+                if avant is not None:
+                    arcs.append((sid, i, p, avant))
+    return arcs
+
+
+def _mesurer(plateaux, arcs, cibles=None):
+    """Les lignes de la chaine, pour un jeu de bulletins donne.
+
+    `cibles` permet de rejouer la mesure sur des bulletins rebattus : la
+    structure -- qui etait la, quel est son conseil precedent -- ne bouge pas,
+    seuls les noms ecrits changent. C'est exactement ce que le modele nul doit
+    detruire, et rien d'autre.
+    """
+    recues, ecrits = {}, {}
+    for sid, liste in plateaux.items():
+        for i, c in enumerate(liste):
+            if not c["complet"]:
+                continue
+            t = (cibles or {}).get((sid, i)) or c["cibles"]
+            compte = collections.Counter(t)
+            recues[(sid, i)] = compte
+            ecrits[(sid, i)] = dict(zip(c["auteurs"], t))
+
+    # Le cumul se lit conseil par conseil, dans l'ordre, et repart de zero des
+    # qu'un trou casse la chaine : additionner par-dessus un conseil non lu
+    # ferait passer une lacune pour une absence de voix.
+    cumul = {}
+    for sid, liste in plateaux.items():
+        vu = collections.Counter()
+        for i, c in enumerate(liste):
+            if not c["complet"]:
+                vu = collections.Counter()
+                continue
+            for p in c["votants"]:
+                cumul[(sid, i, p)] = vu[p]
+            for p, n in recues[(sid, i)].items():
+                vu[p] += n
+
+    lignes = []
+    for sid, i, p, j in arcs:
+        c, prec = plateaux[sid][i], plateaux[sid][j]
+        k = recues[(sid, j)].get(p, 0)
+        mien = ecrits[(sid, j)].get(p)
+        camp = None
+        if mien is not None and prec["elimine"] is not None:
+            camp = 1 if mien == prec["elimine"] else 0
+        lignes.append({
+            "saison": sid, "conseil": c["numero"], "indice": i, "personne": p,
+            "voix_prec": k,
+            "part_prec": k / (len(prec["cibles"]) or 1),
+            "camp_prec": camp, "cible_prec": mien,
+            "cumul_avant": cumul.get((sid, i, p), 0),
+            "voix_ici": recues[(sid, i)].get(p, 0),
+            "prec_annule": prec["annulation"],
+        })
+
+    # On ne garde que les conseils ou l'elimine appartient a l'ensemble a
+    # risque : sans cela la somme des probabilites d'un conseil ne vaut pas 1
+    # et « une chance sur n » n'est plus un point de comparaison.
+    par_conseil = collections.defaultdict(list)
+    for l in lignes:
+        par_conseil[(l["saison"], l["indice"])].append(l)
+    retenues = []
+    for cle in sorted(par_conseil):
+        groupe = par_conseil[cle]
+        elimine = plateaux[cle[0]][cle[1]]["elimine"]
+        if len(groupe) < 3 or elimine is None:
+            continue
+        if elimine not in {l["personne"] for l in groupe}:
+            continue
+        for l in groupe:
+            l["risque"] = len(groupe)
+            l["sorti"] = 1 if l["personne"] == elimine else 0
+        retenues.extend(groupe)
+    return retenues
+
+
+def _bucket_voix(k):
+    if k >= 5:
+        return "5 voix et plus"
+    return {0: "aucune voix", 1: "1 voix", 2: "2 voix",
+            3: "3 voix", 4: "4 voix"}[k]
+
+
+ORDRE_VOIX = ["aucune voix", "1 voix", "2 voix", "3 voix", "4 voix",
+              "5 voix et plus"]
+
+
+def _taux(lignes, cle, ordre=None, quoi="sorti"):
+    """Une probabilite conditionnelle par modalite, avec son intervalle."""
+    groupes = collections.defaultdict(lambda: [0, 0, 0.0])
+    for l in lignes:
+        v = cle(l)
+        if v is None:
+            continue
+        g = groupes[v]
+        g[0] += 1
+        g[1] += (l[quoi] if quoi == "sorti" else (1 if l[quoi] else 0))
+        g[2] += 1.0 / l["risque"]
+    sortie = []
+    for v in (ordre or sorted(groupes, key=str)):
+        if v not in groupes:
+            continue
+        n, s, u = groupes[v]
+        bas, haut = _wilson(s, n)
+        sortie.append({"modalite": v, "effectif": n, "cas": s,
+                       "probabilite": _arr(100.0 * s / n),
+                       "bas": _arr(bas), "haut": _arr(haut),
+                       "hasard": _arr(100.0 * u / n)})
+    return sortie
+
+
+def _ecart(lignes, gauche, droite, quoi="sorti"):
+    """Ecart, en points, entre deux probabilites conditionnelles."""
+    a = [l for l in lignes if gauche(l)]
+    b = [l for l in lignes if droite(l)]
+    if not a or not b:
+        return None
+    fa = sum(1 for l in a if l[quoi]) / len(a)
+    fb = sum(1 for l in b if l[quoi]) / len(b)
+    return 100.0 * (fa - fb)
+
+
+def _couples_rendus(plateaux, lignes, cibles=None):
+    """« J'ai ecrit son nom la fois d'avant : ecrit-il le mien ce soir ? »
+
+    On n'en retient un couple que si les deux sont encore la ce soir ET que
+    les deux votent : sans quoi un « non rendu » ne dirait que l'absence de
+    l'un des deux.
+    """
+    ecrits = {}
+    for sid, liste in plateaux.items():
+        for i, c in enumerate(liste):
+            if c["complet"]:
+                t = (cibles or {}).get((sid, i)) or c["cibles"]
+                ecrits[(sid, i)] = dict(zip(c["auteurs"], t))
+    couples = []
+    for l in lignes:
+        q = l["cible_prec"]
+        if q is None:
+            continue
+        b = ecrits.get((l["saison"], l["indice"])) or {}
+        if l["personne"] not in b or q not in b:
+            continue
+        couples.append({"saison": l["saison"], "conseil": l["conseil"],
+                        "auteur": l["personne"], "cible": q,
+                        "rendu": 1 if b[q] == l["personne"] else 0,
+                        "risque": l["risque"]})
+    return couples
+
+
+def _tester_persistance(plateaux, arcs, g):
+    """« Celui dont le nom est sorti la fois d'avant le revoit-il sortir ? »
+
+    On ne passe pas par les bulletins : seul compte, ici, le nombre de voix
+    recues par chacun. Le modele nul redistribue ces nombres entre les presents
+    d'un meme conseil -- l'elimine gardant le sien, pour que la forme du
+    depouillement ET son resultat restent ceux du soir. Ce qui disparait est le
+    seul lien d'un conseil au suivant : le fait que ce soit la MEME personne
+    qui recoive.
+    """
+    compte, libres, fixes = {}, {}, {}
+    for sid, liste in plateaux.items():
+        for i, c in enumerate(liste):
+            if not c["complet"]:
+                continue
+            n = collections.Counter(c["cibles"])
+            compte[(sid, i)] = {p: n.get(p, 0) for p in c["votants"]}
+            libres[(sid, i)] = [p for p in c["votants"] if p != c["elimine"]]
+            fixes[(sid, i)] = {p: n.get(p, 0) for p in c["votants"]
+                               if p == c["elimine"]}
+
+    def statistique(table):
+        a = [0, 0]
+        b = [0, 0]
+        for sid, i, p, j in arcs:
+            avant = table[(sid, j)].get(p, 0)
+            ici = 1 if table[(sid, i)].get(p, 0) else 0
+            cible = a if avant else b
+            cible[0] += 1
+            cible[1] += ici
+        if not a[0] or not b[0]:
+            return None
+        return 100.0 * (a[1] / a[0] - b[1] / b[0])
+
+    observe = statistique(compte)
+    if observe is None:
+        return None, None
+    nulle = []
+    cles = sorted(compte)
+    for _ in range(N_PERMUTATIONS):
+        table = {}
+        for cle in cles:
+            t = dict(fixes[cle])
+            gens = libres[cle]
+            valeurs = g.permutation(np.array([compte[cle][p] for p in gens]))
+            for p, v in zip(gens, valeurs):
+                t[p] = int(v)
+            table[cle] = t
+        v = statistique(table)
+        if v is not None:
+            nulle.append(v)
+    return observe, (np.array(nulle) if len(nulle) > 1 else None)
+
+
+def conditionnelles(par_saison, parts, conseils):
+    """Sachant le conseil d'avant : quelles chances de partir ce soir ?
+
+    Le jeu se joue sur une information que tout le monde possede -- le
+    depouillement precedent, lu a voix haute. La question posee ici est celle
+    d'un joueur assis autour du feu : mon nom est sorti deux fois la derniere
+    fois ; qu'est-ce que cela change a mes chances de partir ce soir ?
+
+    Le point de comparaison n'est pas zero mais **une chance sur n**, n etant
+    le nombre de personnes qui votent ce soir-la. Un conseil a six ne
+    ressemble pas a un conseil a douze, et une part des ecarts apparents entre
+    categories n'est que cet effet de taille. Le modele nul le neutralise
+    entierement : a chaque conseil, on tire l'elimine AU HASARD parmi les
+    presents. La taille du conseil, la saison, l'epoque, la composition du
+    camp restent fixes ; ne bouge que la question posee.
+    """
+    plateaux = _plateaux_conseils(par_saison, conseils)
+    if not plateaux:
+        return {}
+    arcs = _arcs(plateaux, strict=True)
+    lignes = _mesurer(plateaux, arcs)
+    if len(lignes) < SEUIL_CHAINE:
+        return {}
+    relache = _mesurer(plateaux, _arcs(plateaux, strict=False))
+    couples = _couples_rendus(plateaux, lignes)
+
+    conseils_vus = sorted({(l["saison"], l["indice"]) for l in lignes})
+    noms = {p["id"]: (p.get("nom_complet") or p.get("nom")) for p in parts}
+
+    # --- 1. la question posee ---------------------------------------------
+    par_voix = _taux(lignes, lambda l: _bucket_voix(l["voix_prec"]), ORDRE_VOIX)
+    par_voix_relache = _taux(relache, lambda l: _bucket_voix(l["voix_prec"]), ORDRE_VOIX)
+    # Sans les conseils ou un collier a annule des voix : un aventurier vise
+    # cinq fois qui reste en jeu grace a un objet n'est pas un aventurier vise
+    # cinq fois que son camp a renonce a sortir.
+    par_voix_sans_collier = _taux([l for l in lignes if not l["prec_annule"]],
+                                  lambda l: _bucket_voix(l["voix_prec"]), ORDRE_VOIX)
+
+    # --- 2. la lecture inverse, celle que la television montre -------------
+    sortis = [l for l in lignes if l["sorti"]]
+    restes = [l for l in lignes if not l["sorti"]]
+    inverse = {
+        "sortis": len(sortis), "restes": len(restes),
+        "vise_si_sorti": _arr(100.0 * sum(1 for l in sortis if l["voix_prec"]) / len(sortis)),
+        "vise_si_reste": _arr(100.0 * sum(1 for l in restes if l["voix_prec"]) / len(restes)),
+        "voix_si_sorti": _arr(sum(l["voix_prec"] for l in sortis) / len(sortis), 2),
+        "voix_si_reste": _arr(sum(l["voix_prec"] for l in restes) / len(restes), 2),
+    }
+
+    # --- 3. les autres conditionnements -----------------------------------
+    par_camp = _taux(lignes,
+                     lambda l: (None if l["camp_prec"] is None else
+                                ("avec la majorité" if l["camp_prec"]
+                                 else "avec la minorité")),
+                     ["avec la majorité", "avec la minorité"])
+    par_cumul = _taux(lignes,
+                      lambda l: ("jamais visé" if l["cumul_avant"] == 0 else
+                                 ("1 ou 2 voix en tout" if l["cumul_avant"] <= 2
+                                  else "3 voix ou plus en tout")),
+                      ["jamais visé", "1 ou 2 voix en tout", "3 voix ou plus en tout"])
+    par_histoire = _taux(
+        lignes,
+        lambda l: ("visé la dernière fois, et déjà avant"
+                   if l["voix_prec"] and l["cumul_avant"] > l["voix_prec"]
+                   else ("visé la dernière fois seulement" if l["voix_prec"]
+                         else ("visé avant, plus la dernière fois"
+                               if l["cumul_avant"] else "jamais visé"))),
+        ["jamais visé", "visé avant, plus la dernière fois",
+         "visé la dernière fois seulement", "visé la dernière fois, et déjà avant"])
+
+    # --- 4. la cible reste-t-elle la cible ? -------------------------------
+    # La question change : non plus « sort-il ce soir ? » mais « son nom
+    # ressort-il de l'urne ce soir ? ». Elle ne demande pas de savoir qui est
+    # parti, seulement de savoir lire les bulletins.
+    persistance = _taux(lignes,
+                        lambda l: ("aucune voix" if l["voix_prec"] == 0 else
+                                   ("1 voix" if l["voix_prec"] == 1 else
+                                    ("2 voix" if l["voix_prec"] == 2
+                                     else "3 voix et plus"))),
+                        ["aucune voix", "1 voix", "2 voix", "3 voix et plus"],
+                        quoi="voix_ici")
+
+    retour = None
+    if len(couples) >= 100:
+        rendus = sum(x["rendu"] for x in couples)
+        bas, haut = _wilson(rendus, len(couples))
+        retour = {"couples": len(couples), "rendus": rendus,
+                  "probabilite": _arr(100.0 * rendus / len(couples)),
+                  "bas": _arr(bas), "haut": _arr(haut)}
+
+    # --- 5. la taille du conseil, tenue fixe par le modele -----------------
+    modele = _logit_conditionnel(lignes)
+
+    # --- 6. les tests ------------------------------------------------------
+    # Les trois premiers partagent le MEME tirage : ils interrogent la meme
+    # soiree sous trois angles, et rien ne justifierait de les faire diverger
+    # par le hasard du tirage.
+    g = rng("conditionnelles")
+    par_conseil = collections.defaultdict(list)
+    for i, l in enumerate(lignes):
+        par_conseil[(l["saison"], l["indice"])].append(i)
+    groupes = [np.array(v) for _, v in sorted(par_conseil.items())]
+    sorti = np.array([l["sorti"] for l in lignes], dtype=float)
+
+    def masque(f):
+        return np.array([bool(f(l)) for l in lignes])
+
+    contrastes = [
+        ("menace_voix", masque(lambda l: l["voix_prec"] > 0),
+         masque(lambda l: l["voix_prec"] == 0)),
+        ("menace_sommet", masque(lambda l: 1 <= l["voix_prec"] <= 3),
+         masque(lambda l: l["voix_prec"] >= 4)),
+        ("camp_perdant", masque(lambda l: l["camp_prec"] == 0),
+         masque(lambda l: l["camp_prec"] == 1)),
+    ]
+
+    def valeurs(v):
+        return [100.0 * (v[a].mean() - v[b].mean()) for _, a, b in contrastes]
+
+    observes = valeurs(sorti)
+    nulles = [[] for _ in contrastes]
+    for _ in range(N_PERMUTATIONS):
+        tire = np.zeros(len(lignes))
+        for idx in groupes:
+            tire[idx[int(g.integers(0, len(idx)))]] = 1.0
+        for i, v in enumerate(valeurs(tire)):
+            nulles[i].append(v)
+
+    tests = [
+        _test("menace_voix", "Le nom sorti la fois d'avant",
+              "Sortir est-il plus probable quand on a reçu au moins une voix au "
+              "conseil précédent ?",
+              observes[0], np.array(nulles[0]), unite=" points",
+              lecture="Écart entre deux probabilités conditionnelles : partir "
+                      "sachant qu'on a été visé la fois d'avant, moins partir "
+                      "sachant qu'on ne l'a pas été. Le modèle nul tire l'éliminé "
+                      "au hasard parmi les présents, ce qui tient la taille du "
+                      "conseil rigoureusement fixe."),
+        _test("menace_sommet", "Trop visé pour partir",
+              "Être visé beaucoup expose-t-il moins qu'être visé un peu ?",
+              observes[1], np.array(nulles[1]), unite=" points",
+              lecture="Écart entre partir après une à trois voix et partir après "
+                      "quatre voix ou plus. Un écart positif dit que la menace a un "
+                      "sommet : au-delà, celui qui a survécu à un vote massif est "
+                      "mieux protégé que celui qui a survécu à deux bulletins."),
+        _test("camp_perdant", "Avoir voté du mauvais côté",
+              "S'être trompé de cible au conseil précédent expose-t-il au suivant ?",
+              observes[2], np.array(nulles[2]), unite=" points",
+              lecture="Écart entre partir après avoir voté avec la minorité et "
+                      "partir après avoir voté avec la majorité."),
+    ]
+
+    # --- le second modele nul : on rebat qui a ecrit quoi ------------------
+    # Les deux questions qui suivent ne portent pas sur la sortie mais sur les
+    # bulletins eux-memes. Le nul qui leur convient n'est donc pas de tirer
+    # l'elimine, c'est de rebattre les bulletins a l'interieur de chaque
+    # conseil : chaque soiree garde exactement sa repartition de voix, et seul
+    # le lien d'un conseil au suivant disparait.
+    def _rebattre(g):
+        neuf = {}
+        for sid, liste in plateaux.items():
+            for i, c in enumerate(liste):
+                if not c["complet"] or not c["auteurs"]:
+                    continue
+                m = _permuter_sans_soi(c["auteurs"], c["cibles"], g)
+                neuf[(sid, i)] = m if m else list(c["cibles"])
+        return neuf
+
+    obs_retour = (100.0 * sum(x["rendu"] for x in couples) / len(couples)
+                  if len(couples) >= 100 else None)
+    nulle_retour = []
+    for _ in range(N_PERMUTATIONS_BULLETINS):
+        cibles = _rebattre(g)
+        faux = _mesurer(plateaux, arcs, cibles)
+        if obs_retour is not None:
+            fc = _couples_rendus(plateaux, faux, cibles)
+            if fc:
+                nulle_retour.append(100.0 * sum(x["rendu"] for x in fc) / len(fc))
+
+    # Rebattre les bulletins ne convient PAS a la question de la cible : la
+    # permutation change qui a ecrit, jamais combien de voix chacun recoit --
+    # le nombre de voix d'une personne est rigoureusement le meme avant et
+    # apres, et le test ne testerait rien. Le nul qu'il faut ici redistribue
+    # les COMPTES entre les presents, l'elimine gardant le sien : chaque
+    # conseil conserve sa forme de depouillement (cinq voix, deux voix, une) et
+    # son resultat, et seule l'identite de ceux qui les recoivent est tiree au
+    # sort.
+    obs_persist, nulle_persist = _tester_persistance(plateaux, arcs, g)
+
+    if nulle_persist is not None and obs_persist is not None:
+        tests.append(_test(
+            "cible_persistante", "La cible reste la cible",
+            "Recevoir une voix ce soir est-il plus probable quand on en a reçu "
+            "au conseil précédent ?",
+            obs_persist, nulle_persist, unite=" points",
+            lecture="Écart entre voir son nom ressortir quand il était déjà sorti "
+                    "et le voir sortir quand il ne l'était pas."))
+    if nulle_retour and obs_retour is not None:
+        tests.append(_test(
+            "retour_de_baton", "Le nom rendu au conseil suivant",
+            "Celui dont j'ai écrit le nom la fois d'avant écrit-il le mien ce soir ?",
+            obs_retour, np.array(nulle_retour), unite="%",
+            lecture="Part des couples où la cible de la dernière fois écrit à son "
+                    "tour le nom de son auteur, tous deux étant présents et votants."))
+
+    # Un ancrage concret : ceux qui ont vu quatre bulletins ou plus porter
+    # leur nom et qui etaient encore la au conseil suivant. C'est le groupe
+    # qui porte le retournement de la courbe, et il tient en une page.
+    survivants = sorted(
+        ({"nom": noms.get(l["personne"], l["personne"]), "saison": l["saison"],
+          "voix": l["voix_prec"], "conseil": l["conseil"],
+          "collier": l["prec_annule"], "sorti": bool(l["sorti"])}
+         for l in lignes if l["voix_prec"] >= 4),
+        key=lambda x: (-x["voix"], x["saison"], x["nom"]))
+
+    return {
+        "presences": len(lignes), "conseils": len(conseils_vus),
+        "saisons": len({l["saison"] for l in lignes}),
+        "presences_relachees": len(relache),
+        "conseils_relaches": len({(l["saison"], l["indice"]) for l in relache}),
+        "taille_moyenne": _arr(sum(l["risque"] for l in lignes) / len(lignes), 1),
+        "hasard": _arr(100.0 * sum(1.0 / l["risque"] for l in lignes) / len(lignes)),
+        "globale": _arr(100.0 * sum(l["sorti"] for l in lignes) / len(lignes)),
+        "par_voix": par_voix,
+        "par_voix_relache": par_voix_relache,
+        "par_voix_sans_collier": par_voix_sans_collier,
+        "inverse": inverse,
+        "par_camp": par_camp,
+        "par_cumul": par_cumul,
+        "par_histoire": par_histoire,
+        "persistance": persistance,
+        "retour": retour,
+        "modele": modele,
+        "survivants": survivants,
+        "tests": tests,
+    }
+
+
+def _logit_conditionnel(lignes):
+    """La taille du conseil, tenue fixe par construction.
+
+    Chaque conseil forme son propre groupe de comparaison : le modele ne
+    compare jamais deux soirees entre elles, seulement les presents d'une meme
+    soiree. La taille du conseil, la saison, l'epoque et la composition du camp
+    disparaissent donc du calcul sans qu'on ait a les mesurer.
+    """
+    import statsmodels.api as sm
+
+    groupes, y, X = [], [], []
+    index = {}
+    for l in lignes:
+        cle = (l["saison"], l["indice"])
+        if cle not in index:
+            index[cle] = len(index) + 1
+        groupes.append(index[cle])
+        y.append(float(l["sorti"]))
+        k = l["voix_prec"]
+        X.append([1.0 if k in (1, 2) else 0.0,
+                  1.0 if k == 3 else 0.0,
+                  1.0 if k >= 4 else 0.0])
+    if len(index) < 30:
+        return {}
+    r = sm.ConditionalLogit(np.array(y), np.array(X),
+                            groups=np.array(groupes)).fit(disp=0)
+    ic = r.conf_int()
+    libelles = ("1 ou 2 voix", "3 voix", "4 voix et plus")
+    return {
+        "conseils": len(index), "presences": len(lignes),
+        "coefficients": [
+            {"libelle": libelles[i],
+             "rapport": _arr(float(np.exp(r.params[i])), 2),
+             "bas": _arr(float(np.exp(ic[i][0])), 2),
+             "haut": _arr(float(np.exp(ic[i][1])), 2),
+             "p": _arr(float(r.pvalues[i]), 4)}
+            for i in range(len(libelles))],
+        "lecture": "Rapport de cotes par rapport à « aucune voix au conseil "
+                   "précédent », à conseil égal. Au-dessus de 1, le risque monte ; "
+                   "en dessous, il baisse. Un intervalle qui contient 1 ne permet "
+                   "pas de conclure.",
+    }
+
+
 def _fichier(nom):
     """Lit un fichier de _data/ produit par un autre script.
 
@@ -2802,6 +3382,7 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
     # Avant `tout` ne retire les cles techniques de `f` : ce bloc a besoin des
     # forces estimees, personne par personne.
     aa = avant_apres(par_saison, parts, conseils, epreuves, f, fu)
+    co = conditionnelles(par_saison, parts, conseils)
 
     # Les cles techniques du modele de force n'ont rien a faire dans le fichier
     # publie : elles servent aux regressions de suivi, pas au site.
@@ -2826,6 +3407,9 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
         registre.append(t)
     for t in aa.get("tests") or []:
         t["origine"] = "avant_apres"
+        registre.append(t)
+    for t in co.get("tests") or []:
+        t["origine"] = "conditionnelles"
         registre.append(t)
 
     for bloc, origine in ((al, "alliances"), (ru, "ruptures"),
@@ -2860,6 +3444,7 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
         "ruptures": ru,
         "audience": au,
         "avant_apres": aa,
+        "conditionnelles": co,
         "registre": [{k: t[k] for k in
                       ("cle", "libelle", "question", "origine", "observe",
                        "attendu", "unite", "ecart_types", "p", "p_ajustee",

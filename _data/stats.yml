@@ -11604,7 +11604,7 @@ modeles:
         observe: 9.9412
         moyenne_nulle: 9.6948
       origine: casting
-      p_ajustee: 0.0212
+      p_ajustee: 0.021
       retenu: true
     - cle: familles_metiers
       libelle: La variété des métiers
@@ -11704,7 +11704,7 @@ modeles:
         observe: 0.2839
         moyenne_nulle: 0.2508
       origine: casting
-      p_ajustee: 0.3779
+      p_ajustee: 0.3617
       retenu: false
     - cle: tribus_femmes
       libelle: La composition des deux tribus
@@ -11755,7 +11755,7 @@ modeles:
         observe: 13.0253
         moyenne_nulle: 18.8726
       origine: casting
-      p_ajustee: 0.1299
+      p_ajustee: 0.1232
       retenu: false
     - cle: tribus_ages
       libelle: L'âge moyen des deux tribus
@@ -11806,7 +11806,7 @@ modeles:
         observe: 5.7496
         moyenne_nulle: 3.8505
       origine: casting
-      p_ajustee: 0.0042
+      p_ajustee: 0.0044
       retenu: true
     - cle: tribus_ages_mediane
       libelle: L'âge des deux tribus, à la médiane
@@ -11856,7 +11856,7 @@ modeles:
         observe: 4.1597
         moyenne_nulle: 3.331
       origine: casting
-      p_ajustee: 0.3881
+      p_ajustee: 0.3748
       retenu: false
     sensibilite:
     - cle: etendue_ages
@@ -11975,7 +11975,7 @@ modeles:
         observe: 10.7308
         moyenne_nulle: 10.2831
       origine: pronostic
-      p_ajustee: 0.7793
+      p_ajustee: 0.7644
       retenu: false
     classement:
     - nom: Ambre Daudet
@@ -12506,7 +12506,7 @@ modeles:
       tirages: 2000
       lecture: 'Écart entre deux probabilités : voter ensemble après avoir voté ensemble, et voter ensemble
         après avoir voté séparément. À zéro, chaque conseil repart de zéro et il n''y a pas d''alliance.'
-      nulle: &id039
+      nulle: &id044
         bornes:
         - -4.9516
         - 34.285
@@ -12690,7 +12690,7 @@ modeles:
         moyenne_nulle: 46.8767
       bulletins: 1840
       origine: homophilie
-      p_ajustee: 0.2759
+      p_ajustee: 0.2616
       retenu: false
     - cle: vote_ecart_age
       libelle: L'écart d'âge avec sa cible
@@ -12742,7 +12742,7 @@ modeles:
         moyenne_nulle: 11.6264
       bulletins: 1840
       origine: homophilie
-      p_ajustee: 0.1807
+      p_ajustee: 0.1677
       retenu: false
     - cle: vote_meme_metier
       libelle: Viser la même famille de métier
@@ -12794,7 +12794,7 @@ modeles:
         moyenne_nulle: 9.8932
       bulletins: 1840
       origine: homophilie
-      p_ajustee: 0.7946
+      p_ajustee: 0.7899
       retenu: false
     - cle: vote_meme_bandeau
       libelle: Viser son propre bandeau de départ
@@ -12916,7 +12916,7 @@ modeles:
       tirages: 4000
       lecture: Part des bulletins visant quelqu'un avec qui l'auteur avait déjà voté. Un observé SOUS
         l'attendu veut dire que l'alliance protège ; au-dessus, qu'elle expose.
-      nulle: &id041
+      nulle: &id046
         bornes:
         - 50.8495
         - 63.0454
@@ -13101,7 +13101,7 @@ modeles:
       tirages: 10000
       lecture: Nombre de fois où deux sorties consécutives viennent du même bandeau de départ. Un observé
         AU-DESSUS de l'attendu est la signature d'un camp démonté un par un.
-      nulle: &id042
+      nulle: &id047
         bornes:
         - 59.7
         - 110.3
@@ -13537,7 +13537,7 @@ modeles:
       lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
         dans un ordre au hasard. Une coupure existe toujours ; la question est de savoir si celle-ci vaut
         mieux que n'importe quelle autre.
-      nulle: &id040
+      nulle: &id045
         bornes:
         - 0.5141
         - 59.3185
@@ -14551,7 +14551,7 @@ modeles:
         observe: -0.2958
         moyenne_nulle: -0.0001
       origine: audience
-      p_ajustee: 0.1706
+      p_ajustee: 0.1562
       retenu: false
   avant_apres:
     saisons: 21
@@ -14654,7 +14654,7 @@ modeles:
         observe: -7.0763
         moyenne_nulle: -0.763
       origine: avant_apres
-      p_ajustee: 0.2759
+      p_ajustee: 0.2616
       retenu: false
     - cle: fusion_force
       libelle: La force des éliminés, avant et après la fusion
@@ -14806,7 +14806,7 @@ modeles:
         observe: 52.455
         moyenne_nulle: 49.8535
       origine: avant_apres
-      p_ajustee: 0.7946
+      p_ajustee: 0.7899
       retenu: false
     - cle: ambassadeurs_survie
       libelle: L'ambassadeur qui négocie s'en sort-il mieux ?
@@ -14857,8 +14857,788 @@ modeles:
         observe: 47.1663
         moyenne_nulle: 50.0368
       origine: avant_apres
-      p_ajustee: 0.7736
+      p_ajustee: 0.7531
       retenu: false
+  conditionnelles:
+    presences: 780
+    conseils: 108
+    saisons: 25
+    presences_relachees: 1327
+    conseils_relaches: 178
+    taille_moyenne: 7.8
+    hasard: 13.8
+    globale: 13.8
+    par_voix:
+    - modalite: aucune voix
+      effectif: 583
+      cas: 67
+      probabilite: 11.5
+      bas: 9.2
+      haut: 14.3
+      hasard: 13.7
+    - modalite: 1 voix
+      effectif: 105
+      cas: 22
+      probabilite: 21.0
+      bas: 14.3
+      haut: 29.7
+      hasard: 15.1
+    - modalite: 2 voix
+      effectif: 30
+      cas: 11
+      probabilite: 36.7
+      bas: 21.9
+      haut: 54.5
+      hasard: 15.4
+    - modalite: 3 voix
+      effectif: 19
+      cas: 5
+      probabilite: 26.3
+      bas: 11.8
+      haut: 48.8
+      hasard: 13.9
+    - modalite: 4 voix
+      effectif: 19
+      cas: 2
+      probabilite: 10.5
+      bas: 2.9
+      haut: 31.4
+      hasard: 12.5
+    - modalite: 5 voix et plus
+      effectif: 24
+      cas: 1
+      probabilite: 4.2
+      bas: 0.7
+      haut: 20.2
+      hasard: 10.3
+    par_voix_relache:
+    - modalite: aucune voix
+      effectif: 988
+      cas: 113
+      probabilite: 11.4
+      bas: 9.6
+      haut: 13.6
+      hasard: 13.4
+    - modalite: 1 voix
+      effectif: 164
+      cas: 37
+      probabilite: 22.6
+      bas: 16.8
+      haut: 29.5
+      hasard: 14.3
+    - modalite: 2 voix
+      effectif: 59
+      cas: 14
+      probabilite: 23.7
+      bas: 14.7
+      haut: 36.0
+      hasard: 14.3
+    - modalite: 3 voix
+      effectif: 35
+      cas: 7
+      probabilite: 20.0
+      bas: 10.0
+      haut: 35.9
+      hasard: 13.4
+    - modalite: 4 voix
+      effectif: 29
+      cas: 5
+      probabilite: 17.2
+      bas: 7.6
+      haut: 34.5
+      hasard: 12.7
+    - modalite: 5 voix et plus
+      effectif: 52
+      cas: 2
+      probabilite: 3.8
+      bas: 1.1
+      haut: 13.0
+      hasard: 11.3
+    par_voix_sans_collier:
+    - modalite: aucune voix
+      effectif: 501
+      cas: 59
+      probabilite: 11.8
+      bas: 9.2
+      haut: 14.9
+      hasard: 14.2
+    - modalite: 1 voix
+      effectif: 91
+      cas: 21
+      probabilite: 23.1
+      bas: 15.6
+      haut: 32.7
+      hasard: 15.6
+    - modalite: 2 voix
+      effectif: 28
+      cas: 10
+      probabilite: 35.7
+      bas: 20.7
+      haut: 54.2
+      hasard: 15.4
+    - modalite: 3 voix
+      effectif: 17
+      cas: 4
+      probabilite: 23.5
+      bas: 9.6
+      haut: 47.3
+      hasard: 14.3
+    - modalite: 4 voix
+      effectif: 17
+      cas: 2
+      probabilite: 11.8
+      bas: 3.3
+      haut: 34.3
+      hasard: 12.9
+    - modalite: 5 voix et plus
+      effectif: 14
+      cas: 0
+      probabilite: 0.0
+      bas: 0.0
+      haut: 21.5
+      hasard: 10.8
+    inverse:
+      sortis: 108
+      restes: 672
+      vise_si_sorti: 38.0
+      vise_si_reste: 23.2
+      voix_si_sorti: 0.68
+      voix_si_reste: 0.57
+    par_camp:
+    - modalite: avec la majorité
+      effectif: 557
+      cas: 71
+      probabilite: 12.7
+      bas: 10.2
+      haut: 15.8
+      hasard: 14.1
+    - modalite: avec la minorité
+      effectif: 210
+      cas: 34
+      probabilite: 16.2
+      bas: 11.8
+      haut: 21.8
+      hasard: 13.0
+    par_cumul:
+    - modalite: jamais visé
+      effectif: 511
+      cas: 52
+      probabilite: 10.2
+      bas: 7.8
+      haut: 13.1
+      hasard: 13.5
+    - modalite: 1 ou 2 voix en tout
+      effectif: 167
+      cas: 40
+      probabilite: 24.0
+      bas: 18.1
+      haut: 31.0
+      hasard: 15.2
+    - modalite: 3 voix ou plus en tout
+      effectif: 102
+      cas: 16
+      probabilite: 15.7
+      bas: 9.9
+      haut: 24.0
+      hasard: 13.4
+    par_histoire:
+    - modalite: jamais visé
+      effectif: 511
+      cas: 52
+      probabilite: 10.2
+      bas: 7.8
+      haut: 13.1
+      hasard: 13.5
+    - modalite: visé avant, plus la dernière fois
+      effectif: 72
+      cas: 15
+      probabilite: 20.8
+      bas: 13.1
+      haut: 31.6
+      hasard: 15.3
+    - modalite: visé la dernière fois seulement
+      effectif: 151
+      cas: 33
+      probabilite: 21.9
+      bas: 16.0
+      haut: 29.1
+      hasard: 13.8
+    - modalite: visé la dernière fois, et déjà avant
+      effectif: 46
+      cas: 8
+      probabilite: 17.4
+      bas: 9.1
+      haut: 30.7
+      hasard: 15.3
+    persistance:
+    - modalite: aucune voix
+      effectif: 583
+      cas: 171
+      probabilite: 29.3
+      bas: 25.8
+      haut: 33.2
+      hasard: 13.7
+    - modalite: 1 voix
+      effectif: 105
+      cas: 53
+      probabilite: 50.5
+      bas: 41.1
+      haut: 59.9
+      hasard: 15.1
+    - modalite: 2 voix
+      effectif: 30
+      cas: 19
+      probabilite: 63.3
+      bas: 45.5
+      haut: 78.1
+      hasard: 15.4
+    - modalite: 3 voix et plus
+      effectif: 62
+      cas: 24
+      probabilite: 38.7
+      bas: 27.6
+      haut: 51.2
+      hasard: 12.1
+    retour:
+      couples: 347
+      rendus: 73
+      probabilite: 21.0
+      bas: 17.1
+      haut: 25.6
+    modele:
+      conseils: 108
+      presences: 780
+      coefficients:
+      - libelle: 1 ou 2 voix
+        rapport: 2.18
+        bas: 1.37
+        haut: 3.48
+        p: 0.001
+      - libelle: 3 voix
+        rapport: 2.38
+        bas: 0.85
+        haut: 6.69
+        p: 0.0985
+      - libelle: 4 voix et plus
+        rapport: 0.69
+        bas: 0.21
+        haut: 2.26
+        p: 0.5349
+      lecture: Rapport de cotes par rapport à « aucune voix au conseil précédent », à conseil égal. Au-dessus
+        de 1, le risque monte ; en dessous, il baisse. Un intervalle qui contient 1 ne permet pas de conclure.
+    survivants:
+    - nom: Myriam Zenasni
+      saison: s16
+      voix: 9
+      conseil: 3
+      collier: false
+      sorti: false
+    - nom: Romain Palazzetti
+      saison: s15
+      voix: 8
+      conseil: 11
+      collier: true
+      sorti: false
+    - nom: Sophie Le Nestic Sabattier
+      saison: s16
+      voix: 8
+      conseil: 5
+      collier: false
+      sorti: false
+    - nom: Anthony Amar
+      saison: s11
+      voix: 7
+      conseil: 11
+      collier: false
+      sorti: false
+    - nom: Patricia Morel
+      saison: s11
+      voix: 7
+      conseil: 12
+      collier: true
+      sorti: false
+    - nom: Babeth Delettre
+      saison: s14
+      voix: 7
+      conseil: 3
+      collier: false
+      sorti: false
+    - nom: Julien Castro
+      saison: s15
+      voix: 7
+      conseil: 12
+      collier: true
+      sorti: false
+    - nom: Amandine Schmitt
+      saison: s16
+      voix: 7
+      conseil: 4
+      collier: false
+      sorti: false
+    - nom: Benoît Assadi
+      saison: s16
+      voix: 7
+      conseil: 10
+      collier: true
+      sorti: false
+    - nom: Lau Émilien
+      saison: s16
+      voix: 7
+      conseil: 9
+      collier: true
+      sorti: false
+    - nom: Antonin Fortunato
+      saison: s28
+      voix: 7
+      conseil: 11
+      collier: false
+      sorti: false
+    - nom: Lisa Legouverneur
+      saison: s11
+      voix: 6
+      conseil: 2
+      collier: false
+      sorti: false
+    - nom: Christophe Pendon
+      saison: s14
+      voix: 6
+      conseil: 18
+      collier: true
+      sorti: false
+    - nom: Carine Cazals
+      saison: s15
+      voix: 6
+      conseil: 15
+      collier: false
+      sorti: false
+    - nom: Karima Neggaz
+      saison: s15
+      voix: 6
+      conseil: 16
+      collier: false
+      sorti: false
+    - nom: Alexandra Pharisien
+      saison: s16
+      voix: 6
+      conseil: 11
+      collier: true
+      sorti: false
+    - nom: Jérémy Raffin
+      saison: s16
+      voix: 6
+      conseil: 9
+      collier: true
+      sorti: false
+    - nom: Mélissa Pierru
+      saison: s26
+      voix: 6
+      conseil: 9
+      collier: true
+      sorti: true
+    - nom: Caroline Ledos
+      saison: s28
+      voix: 6
+      conseil: 14
+      collier: false
+      sorti: false
+    - nom: Freddy Boucher
+      saison: sp3
+      voix: 6
+      conseil: 8
+      collier: false
+      sorti: false
+    - nom: Isabelle Da Silva
+      saison: s09
+      voix: 5
+      conseil: 15
+      collier: false
+      sorti: false
+    - nom: Florence Delbarre
+      saison: s11
+      voix: 5
+      conseil: 13
+      collier: false
+      sorti: false
+    - nom: Béryl Libault de la Chevasnerie
+      saison: s16
+      voix: 5
+      conseil: 10
+      collier: true
+      sorti: false
+    - nom: Laurent Mischkind
+      saison: s16
+      voix: 5
+      conseil: 6
+      collier: false
+      sorti: false
+    - nom: Bernard Lenoir
+      saison: s02
+      voix: 4
+      conseil: 10
+      collier: false
+      sorti: false
+    - nom: Coumba Baradji
+      saison: s05
+      voix: 4
+      conseil: 11
+      collier: false
+      sorti: false
+    - nom: Thierry Ramos
+      saison: s05
+      voix: 4
+      conseil: 9
+      collier: false
+      sorti: false
+    - nom: Patrick Brasier De Thuy
+      saison: s07
+      voix: 4
+      conseil: 10
+      collier: false
+      sorti: false
+    - nom: Kader Rebaï
+      saison: s09
+      voix: 4
+      conseil: 16
+      collier: false
+      sorti: false
+    - nom: Alexandra Pouillon
+      saison: s11
+      voix: 4
+      conseil: 17
+      collier: false
+      sorti: false
+    - nom: Benoît Mahieux
+      saison: s11
+      voix: 4
+      conseil: 7
+      collier: false
+      sorti: false
+    - nom: Délisia Fettasi
+      saison: s11
+      voix: 4
+      conseil: 8
+      collier: false
+      sorti: false
+    - nom: Olivier Moenaert
+      saison: s11
+      voix: 4
+      conseil: 11
+      collier: false
+      sorti: true
+    - nom: Olivier Moenaert
+      saison: s11
+      voix: 4
+      conseil: 12
+      collier: true
+      sorti: false
+    - nom: Teheiura Teahui
+      saison: s11
+      voix: 4
+      conseil: 13
+      collier: false
+      sorti: false
+    - nom: Virginie Jarry
+      saison: s11
+      voix: 4
+      conseil: 2
+      collier: false
+      sorti: false
+    - nom: Jeff Santiago
+      saison: s14
+      voix: 4
+      conseil: 17
+      collier: false
+      sorti: false
+    - nom: Cécilia Siharaj
+      saison: s15
+      voix: 4
+      conseil: 11
+      collier: true
+      sorti: false
+    - nom: Nicolas Rouyé
+      saison: s15
+      voix: 4
+      conseil: 17
+      collier: false
+      sorti: false
+    - nom: Stéphane Cipolla
+      saison: s16
+      voix: 4
+      conseil: 16
+      collier: false
+      sorti: false
+    - nom: Magali Sevenier
+      saison: s22
+      voix: 4
+      conseil: 5
+      collier: false
+      sorti: true
+    - nom: Marine Plissonneau
+      saison: sp3
+      voix: 4
+      conseil: 3
+      collier: false
+      sorti: false
+    - nom: Maud Garnier
+      saison: sp3
+      voix: 4
+      conseil: 8
+      collier: false
+      sorti: false
+    tests:
+    - cle: menace_voix
+      libelle: Le nom sorti la fois d'avant
+      question: Sortir est-il plus probable quand on a reçu au moins une voix au conseil précédent ?
+      observe: 9.32
+      attendu: 0.449
+      unite: ' points'
+      ecart_types: 3.0
+      p: 0.003
+      tirages: 10000
+      lecture: 'Écart entre deux probabilités conditionnelles : partir sachant qu''on a été visé la fois
+        d''avant, moins partir sachant qu''on ne l''a pas été. Le modèle nul tire l''éliminé au hasard
+        parmi les présents, ce qui tient la taille du conseil rigoureusement fixe.'
+      nulle: &id039
+        bornes:
+        - -9.3904
+        - 13.7683
+        cases:
+        - 0
+        - 7
+        - 51
+        - 64
+        - 106
+        - 171
+        - 255
+        - 864
+        - 666
+        - 766
+        - 825
+        - 1794
+        - 894
+        - 832
+        - 679
+        - 574
+        - 755
+        - 248
+        - 162
+        - 121
+        - 112
+        - 25
+        - 14
+        - 6
+        - 4
+        - 4
+        - 1
+        - 0
+        largeur_case: 0.827096
+        observe: 9.3199
+        moyenne_nulle: 0.4489
+      origine: conditionnelles
+      p_ajustee: 0.0056
+      retenu: true
+    - cle: menace_sommet
+      libelle: Trop visé pour partir
+      question: Être visé beaucoup expose-t-il moins qu'être visé un peu ?
+      observe: 17.699
+      attendu: 3.74
+      unite: ' points'
+      ecart_types: 2.51
+      p: 0.0142
+      tirages: 10000
+      lecture: 'Écart entre partir après une à trois voix et partir après quatre voix ou plus. Un écart
+        positif dit que la menace a un sommet : au-delà, celui qui a survécu à un vote massif est mieux
+        protégé que celui qui a survécu à deux bulletins.'
+      nulle: &id040
+        bornes:
+        - -20.6728
+        - 26.1545
+        cases:
+        - 0
+        - 4
+        - 4
+        - 6
+        - 26
+        - 46
+        - 81
+        - 151
+        - 194
+        - 350
+        - 503
+        - 743
+        - 962
+        - 1138
+        - 1137
+        - 1232
+        - 1034
+        - 854
+        - 656
+        - 422
+        - 254
+        - 118
+        - 50
+        - 30
+        - 3
+        - 0
+        - 2
+        - 0
+        largeur_case: 1.672402
+        observe: 17.6986
+        moyenne_nulle: 3.7398
+      origine: conditionnelles
+      p_ajustee: 0.0239
+      retenu: true
+    - cle: camp_perdant
+      libelle: Avoir voté du mauvais côté
+      question: S'être trompé de cible au conseil précédent expose-t-il au suivant ?
+      observe: 3.444
+      attendu: -1.105
+      unite: ' points'
+      ecart_types: 1.68
+      p: 0.0968
+      tirages: 10000
+      lecture: Écart entre partir après avoir voté avec la minorité et partir après avoir voté avec la
+        majorité.
+      nulle: &id041
+        bornes:
+        - -12.2438
+        - 11.559
+        cases:
+        - 0
+        - 1
+        - 2
+        - 12
+        - 21
+        - 95
+        - 131
+        - 220
+        - 615
+        - 744
+        - 725
+        - 846
+        - 1558
+        - 1236
+        - 901
+        - 1201
+        - 680
+        - 349
+        - 256
+        - 266
+        - 63
+        - 36
+        - 30
+        - 7
+        - 2
+        - 2
+        - 1
+        - 0
+        largeur_case: 0.850099
+        observe: 3.4436
+        moyenne_nulle: -1.1049
+      origine: conditionnelles
+      p_ajustee: 0.1475
+      retenu: false
+    - cle: cible_persistante
+      libelle: La cible reste la cible
+      question: Recevoir une voix ce soir est-il plus probable quand on en a reçu au conseil précédent
+        ?
+      observe: 19.882
+      attendu: 1.218
+      unite: ' points'
+      ecart_types: 5.19
+      p: 0.0001
+      tirages: 10000
+      lecture: Écart entre voir son nom ressortir quand il était déjà sorti et le voir sortir quand il
+        ne l'était pas.
+      nulle: &id042
+        bornes:
+        - -13.1927
+        - 21.4575
+        cases:
+        - 0
+        - 2
+        - 10
+        - 29
+        - 64
+        - 160
+        - 272
+        - 494
+        - 780
+        - 1077
+        - 1213
+        - 1388
+        - 1294
+        - 1119
+        - 844
+        - 573
+        - 325
+        - 208
+        - 97
+        - 30
+        - 16
+        - 2
+        - 2
+        - 1
+        - 0
+        - 0
+        - 0
+        - 0
+        largeur_case: 1.237504
+        observe: 19.8825
+        moyenne_nulle: 1.2183
+      origine: conditionnelles
+      p_ajustee: 0.0005
+      retenu: true
+    - cle: retour_de_baton
+      libelle: Le nom rendu au conseil suivant
+      question: Celui dont j'ai écrit le nom la fois d'avant écrit-il le mien ce soir ?
+      observe: 21.037
+      attendu: 13.543
+      unite: '%'
+      ecart_types: 5.8
+      p: 0.0002
+      tirages: 4000
+      lecture: Part des couples où la cible de la dernière fois écrit à son tour le nom de son auteur,
+        tous deux étant présents et votants.
+      nulle: &id043
+        bornes:
+        - 9.0208
+        - 21.6097
+        cases:
+        - 0
+        - 8
+        - 12
+        - 44
+        - 58
+        - 186
+        - 245
+        - 396
+        - 535
+        - 468
+        - 661
+        - 354
+        - 442
+        - 216
+        - 197
+        - 84
+        - 54
+        - 24
+        - 8
+        - 6
+        - 2
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        largeur_case: 0.449603
+        observe: 21.0375
+        moyenne_nulle: 13.5427
+      origine: conditionnelles
+      p_ajustee: 0.0005
+      retenu: true
   registre:
   - cle: parite
     libelle: L'équilibre hommes-femmes
@@ -14884,7 +15664,7 @@ modeles:
     unite: annees
     ecart_types: 2.53
     p: 0.0118
-    p_ajustee: 0.0212
+    p_ajustee: 0.021
     retenu: true
     tirages: 10000
     lecture: Rebattre les aventuriers entre saisons donne l'écart-type général. Un écart observé PLUS
@@ -14914,7 +15694,7 @@ modeles:
     unite: ''
     ecart_types: 1.06
     p: 0.2939
-    p_ajustee: 0.3779
+    p_ajustee: 0.3617
     retenu: false
     tirages: 10000
     lecture: Distance entre le mélange de profils d'une saison et le mélange général. Un observé PLUS
@@ -14930,7 +15710,7 @@ modeles:
     unite: points de %
     ecart_types: -1.76
     p: 0.077
-    p_ajustee: 0.1299
+    p_ajustee: 0.1232
     retenu: false
     tirages: 10000
     lecture: On rebat les bandeaux à l'intérieur de chaque saison. Un écart observé PLUS PETIT que l'attendu
@@ -14946,7 +15726,7 @@ modeles:
     unite: annees
     ecart_types: 3.03
     p: 0.0022
-    p_ajustee: 0.0042
+    p_ajustee: 0.0044
     retenu: true
     tirages: 10000
     lecture: 'Même méthode, sur l''âge moyen de chaque bandeau. Un écart observé PLUS GRAND que l''attendu
@@ -14961,7 +15741,7 @@ modeles:
     unite: annees
     ecart_types: 1.02
     p: 0.3162
-    p_ajustee: 0.3881
+    p_ajustee: 0.3748
     retenu: false
     tirages: 10000
     lecture: La médiane ignore les valeurs extrêmes. Si elle ne s'écarte pas, c'est que l'écart moyen
@@ -14977,7 +15757,7 @@ modeles:
     unite: rang moyen
     ecart_types: 0.41
     p: 0.6927
-    p_ajustee: 0.7793
+    p_ajustee: 0.7644
     retenu: false
     tirages: 10000
     lecture: Le modèle classe les candidats d'une saison ; on relève la place qu'il donne à celui qui
@@ -14992,7 +15772,7 @@ modeles:
     unite: '%'
     ecart_types: -1.32
     p: 0.2044
-    p_ajustee: 0.2759
+    p_ajustee: 0.2616
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -15008,7 +15788,7 @@ modeles:
     unite: années
     ecart_types: 1.54
     p: 0.1205
-    p_ajustee: 0.1807
+    p_ajustee: 0.1677
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -15024,7 +15804,7 @@ modeles:
     unite: '%'
     ecart_types: -0.3
     p: 0.7573
-    p_ajustee: 0.7946
+    p_ajustee: 0.7899
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -15207,7 +15987,7 @@ modeles:
     unite: ''
     ecart_types: -1.62
     p: 0.1074
-    p_ajustee: 0.1706
+    p_ajustee: 0.1562
     retenu: false
     tirages: 10000
     lecture: Corrélation de rang entre l'audience d'une saison et l'effectif de la suivante, une fois
@@ -15223,7 +16003,7 @@ modeles:
     unite: ' points'
     ecart_types: -1.29
     p: 0.1992
-    p_ajustee: 0.2759
+    p_ajustee: 0.2616
     retenu: false
     tirages: 10000
     lecture: 'Différence entre l''après et l''avant, en points de pourcentage. Le hasard, ici, c''est
@@ -15270,7 +16050,7 @@ modeles:
     unite: ' points de rang'
     ecart_types: 0.3
     p: 0.7652
-    p_ajustee: 0.7946
+    p_ajustee: 0.7899
     retenu: false
     tirages: 10000
     lecture: Rang de l'éliminé parmi les présents, sur la force estimée aux épreuves. Au-dessus de 50,
@@ -15285,13 +16065,89 @@ modeles:
     unite: ' points de rang'
     ecart_types: -0.45
     p: 0.659
-    p_ajustee: 0.7736
+    p_ajustee: 0.7531
     retenu: false
     tirages: 10000
     lecture: 'Rang de l''ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c''est la
       médiane du camp. Au-dessus, l''ambassade accompagne une fin de parcours plus tardive ; en dessous,
       plus précoce. Le hasard, ici, c''est désigner les ambassadeurs au sort parmi les présents.'
     nulle: *id038
+  - cle: menace_voix
+    libelle: Le nom sorti la fois d'avant
+    question: Sortir est-il plus probable quand on a reçu au moins une voix au conseil précédent ?
+    origine: conditionnelles
+    observe: 9.32
+    attendu: 0.449
+    unite: ' points'
+    ecart_types: 3.0
+    p: 0.003
+    p_ajustee: 0.0056
+    retenu: true
+    tirages: 10000
+    lecture: 'Écart entre deux probabilités conditionnelles : partir sachant qu''on a été visé la fois
+      d''avant, moins partir sachant qu''on ne l''a pas été. Le modèle nul tire l''éliminé au hasard parmi
+      les présents, ce qui tient la taille du conseil rigoureusement fixe.'
+    nulle: *id039
+  - cle: menace_sommet
+    libelle: Trop visé pour partir
+    question: Être visé beaucoup expose-t-il moins qu'être visé un peu ?
+    origine: conditionnelles
+    observe: 17.699
+    attendu: 3.74
+    unite: ' points'
+    ecart_types: 2.51
+    p: 0.0142
+    p_ajustee: 0.0239
+    retenu: true
+    tirages: 10000
+    lecture: 'Écart entre partir après une à trois voix et partir après quatre voix ou plus. Un écart
+      positif dit que la menace a un sommet : au-delà, celui qui a survécu à un vote massif est mieux
+      protégé que celui qui a survécu à deux bulletins.'
+    nulle: *id040
+  - cle: camp_perdant
+    libelle: Avoir voté du mauvais côté
+    question: S'être trompé de cible au conseil précédent expose-t-il au suivant ?
+    origine: conditionnelles
+    observe: 3.444
+    attendu: -1.105
+    unite: ' points'
+    ecart_types: 1.68
+    p: 0.0968
+    p_ajustee: 0.1475
+    retenu: false
+    tirages: 10000
+    lecture: Écart entre partir après avoir voté avec la minorité et partir après avoir voté avec la majorité.
+    nulle: *id041
+  - cle: cible_persistante
+    libelle: La cible reste la cible
+    question: Recevoir une voix ce soir est-il plus probable quand on en a reçu au conseil précédent ?
+    origine: conditionnelles
+    observe: 19.882
+    attendu: 1.218
+    unite: ' points'
+    ecart_types: 5.19
+    p: 0.0001
+    p_ajustee: 0.0005
+    retenu: true
+    tirages: 10000
+    lecture: Écart entre voir son nom ressortir quand il était déjà sorti et le voir sortir quand il ne
+      l'était pas.
+    nulle: *id042
+  - cle: retour_de_baton
+    libelle: Le nom rendu au conseil suivant
+    question: Celui dont j'ai écrit le nom la fois d'avant écrit-il le mien ce soir ?
+    origine: conditionnelles
+    observe: 21.037
+    attendu: 13.543
+    unite: '%'
+    ecart_types: 5.8
+    p: 0.0002
+    p_ajustee: 0.0005
+    retenu: true
+    tirages: 4000
+    lecture: Part des couples où la cible de la dernière fois écrit à son tour le nom de son auteur, tous
+      deux étant présents et votants.
+    nulle: *id043
   - cle: persistance_alliances
     libelle: La persistance des alliances
     question: Deux aventuriers qui ont vote ensemble votent-ils encore ensemble au conseil suivant, plus
@@ -15307,7 +16163,7 @@ modeles:
     tirages: 2000
     lecture: 'Écart entre deux probabilités : voter ensemble après avoir voté ensemble, et voter ensemble
       après avoir voté séparément. À zéro, chaque conseil repart de zéro et il n''y a pas d''alliance.'
-    nulle: *id039
+    nulle: *id044
   - cle: rupture
     libelle: La rupture de régime
     question: Existe-t-il une date qui sépare les saisons en deux régimes mieux qu'une date tirée au sort
@@ -15324,7 +16180,7 @@ modeles:
     lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
       dans un ordre au hasard. Une coupure existe toujours ; la question est de savoir si celle-ci vaut
       mieux que n'importe quelle autre.
-    nulle: *id040
+    nulle: *id045
   - cle: trahison
     libelle: Écrire le nom d'un ancien allié
     question: Quand on a déjà voté avec quelqu'un, écrit-on son nom plus ou moins souvent qu'un autre
@@ -15340,7 +16196,7 @@ modeles:
     tirages: 4000
     lecture: Part des bulletins visant quelqu'un avec qui l'auteur avait déjà voté. Un observé SOUS l'attendu
       veut dire que l'alliance protège ; au-dessus, qu'elle expose.
-    nulle: *id041
+    nulle: *id046
   - cle: decimation
     libelle: L'élimination en série d'un camp
     question: Après la réunification, les sorties se suivent-elles par bandeau plus souvent que le hasard
@@ -15356,9 +16212,9 @@ modeles:
     tirages: 10000
     lecture: Nombre de fois où deux sorties consécutives viennent du même bandeau de départ. Un observé
       AU-DESSUS de l'attendu est la signature d'un camp démonté un par un.
-    nulle: *id042
-  nb_tests: 27
-  nb_retenus: 15
+    nulle: *id047
+  nb_tests: 32
+  nb_retenus: 19
 completude_saisons:
   colonnes:
   - cle: casting

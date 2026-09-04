@@ -1,0 +1,18 @@
+<figure class="figure">
+<svg class="graphique" viewBox="0 0 700 176" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Le même calcul, à conseil égal">
+  <title>Le même calcul, à conseil égal</title>
+  <desc>Rapports de cotes d&#x27;un logit conditionnel : chaque conseil est son propre groupe de comparaison, ce qui tient la taille du conseil rigoureusement fixe. Référence : aucune voix au conseil précédent.</desc>
+  <line x1="246.2" y1="26" x2="246.2" y2="124" stroke="var(--encre-douce)" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <text x="246.2" y="20.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">1</text>
+  <g class="marque"><title>1 ou 2 voix au conseil précédent : cote multipliée par 2.18 (de 1.37 à 3.48)</title><line x1="267.8" y1="53.0" x2="390.7" y2="53.0" stroke="var(--serie-1)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="315.0" cy="53.0" r="4.4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="160.0" y="53.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">1 ou 2 voix</text>
+  <text x="620.0" y="53.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">2.18</text>
+  <g class="marque"><title>3 voix au conseil précédent : cote multipliée par 2.38 (de 0.85 à 6.69)</title><line x1="237.5" y1="79.0" x2="577.8" y2="79.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="326.7" cy="79.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="160.0" y="79.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">3 voix</text>
+  <text x="620.0" y="79.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">2.38</text>
+  <g class="marque"><title>4 voix et plus au conseil précédent : cote multipliée par 0.69 (de 0.21 à 2.26)</title><line x1="200.2" y1="105.0" x2="319.7" y2="105.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="228.2" cy="105.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="160.0" y="105.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">4 voix et plus</text>
+  <text x="620.0" y="105.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.69</text>
+  <text x="170.0" y="162.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">780 présences, 108 conseils</text>
+</svg>
+</figure>

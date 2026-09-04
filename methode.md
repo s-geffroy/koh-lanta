@@ -157,6 +157,21 @@ la contrainte posée. L’épisode est raconté sur
 dit mieux que tout ce qu’un test de permutation vaut : **exactement ce que vaut
 son modèle nul**.
 
+### Le modèle nul des comptes de voix
+
+Le brassage ci-dessus a une limite qu’il faut nommer, parce qu’elle a failli
+produire un test vide : **il change qui a écrit, jamais combien de voix chacun
+reçoit.** Le nombre de voix d’une personne y est rigoureusement le même avant et
+après la permutation. Toute question portant sur ce nombre — « celui qui a été
+visé la dernière fois est-il visé encore ? » — resterait donc invariante, et le
+test rendrait mécaniquement zéro.
+
+Le nul qu’il faut alors redistribue les **comptes** entre les présents d’un même
+conseil, l’éliminé gardant le sien : chaque soirée conserve sa forme de
+dépouillement — cinq voix, deux voix, une — et son résultat, et seule l’identité
+de ceux qui les reçoivent est tirée au sort. Il sert sur
+[Sachant le conseil d’avant]({{ '/statistiques/conditionnelles/' | relative_url }}).
+
 ### La corrélation de rang, et la tendance qu’il faut d’abord retirer
 
 Deux grandeurs qui dérivent chacune avec les années se corrèlent toujours, et le

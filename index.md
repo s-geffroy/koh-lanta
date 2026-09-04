@@ -151,6 +151,25 @@ plus tôt que les hommes en moyenne — et remportent pourtant
   <p><a href="{{ '/statistiques/fusion/' | relative_url }}">Avant et après la fusion</a></p>
 </div>
 
+## Et une chose que le conseil d’avant annonce
+
+{% assign co = site.data.stats.modeles.conditionnelles %}
+{% assign tmv = site.data.stats.modeles.registre | where: "cle", "menace_voix" | first %}
+{% assign tms = site.data.stats.modeles.registre | where: "cle", "menace_sommet" | first %}
+<div class="constat">
+  <p>Sachant qu’on n’a reçu <b>aucune voix</b> au conseil précédent, on part
+  dans {{ co.par_voix[0].probabilite }} % des cas. Sachant qu’on en a reçu
+  <b>deux</b>, dans <b>{{ co.par_voix[2].probabilite }} %</b> —
+  {{ tmv.ecart_types }} écarts-types au-dessus du hasard, p ajustée
+  {{ tmv.p_ajustee }}.</p>
+  {% assign gr = co.par_voix | where: "modalite", "5 voix et plus" | first %}
+  <p>Mais la menace a un <b>sommet</b>. À cinq voix et plus, la probabilité
+  retombe à <b>{{ gr.probabilite }} %</b>, sous le hasard : qui a encaissé un
+  vote massif et se trouve encore là au conseil suivant a nécessairement été
+  protégé, et cette protection ne s’évapore pas.</p>
+  <p><a href="{{ '/statistiques/conditionnelles/' | relative_url }}">Sachant le conseil d’avant</a></p>
+</div>
+
 ## Et une chose que le programme subit
 
 {% assign au = site.data.stats.modeles.audience %}
@@ -177,11 +196,11 @@ plus tôt que les hommes en moyenne — et remportent pourtant
 <ul class="cartes">
   <li class="carte">
     <a href="{{ '/statistiques/' | relative_url }}">
-      <span class="carte-rang">VINGT-DEUX ENTRÉES</span>
+      <span class="carte-rang">VINGT-TROIS ENTRÉES</span>
       <span class="carte-titre">Les statistiques</span>
       <span class="carte-resume">Les vainqueurs, les tribus, les métiers, les
         prénoms, la longévité, les sorties, les épreuves, les colliers, le jeu
-        social, les conseils, les revenants — puis onze pages où les modèles
+        social, les conseils, les revenants — puis douze pages où les modèles
         prennent le relais des comptages.</span>
     </a>
   </li>
