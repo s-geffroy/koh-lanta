@@ -98,6 +98,68 @@ l’exposition prise en compte. À l’inverse, **{{ ch.nom }}** descend de la
 {{ ch.rang_victoires }}<sup>e</sup> à la {{ ch.rang_force }}<sup>e</sup> place :
 ses {{ ch.victoires }} victoires ont été prises sur beaucoup d’épreuves.
 
+## Le tenant du titre : élan ou niveau ?
+
+{% assign tt = site.data.stats.modeles.tenant_du_titre %}
+{% assign ttt = site.data.stats.modeles.registre | where: "cle", "tenant_du_titre" | first %}
+
+Voici le genre de chiffre qui se lit tout seul, et qu’il faut se méfier de lire
+tout seul.
+
+{% include graphiques/tenant-du-titre.svg %}
+
+<p class="legende-figure">Probabilité de remporter l’épreuve d’immunité
+individuelle selon qu’on a gagné la précédente ou non, sur
+{{ tt.epreuves }} épreuves et {{ tt.saisons }} saisons.</p>
+
+Celui qui a gagné la dernière immunité gagne la suivante dans
+**{{ tt.tenant.probabilite }} %** des cas
+({{ tt.tenant.cas }} sur {{ tt.tenant.effectif }}), contre
+**{{ tt.autres.probabilite }} %** pour n’importe quel autre présent — plus du
+double. On y verrait volontiers un **élan** : la confiance, l’habitude du
+parcours, l’adversaire qui doute.
+
+### Ce que la force explique déjà
+
+Deux modèles nuls répondent, et c’est leur écart qui est le résultat.
+
+<div class="tableau-large">
+<table>
+<thead><tr><th>Modèle nul</th><th>Ce qu’il suppose</th><th class="nombre">Écart attendu</th></tr></thead>
+<tbody>
+<tr><td>uniforme</td><td>chacun gagne avec la même probabilité</td>
+    <td class="nombre">{{ tt.attendu_uniforme }} points</td></tr>
+<tr><td><b>par la force</b></td><td>chacun gagne selon son <i>θ</i> estimé plus haut</td>
+    <td class="nombre"><b>{{ tt.attendu_force }} points</b></td></tr>
+<tr><td>observé</td><td>—</td><td class="nombre"><b>{{ tt.brut }} points</b></td></tr>
+</tbody>
+</table>
+</div>
+
+{% include graphiques/tenant-du-titre-nulle.svg %}
+
+<p class="legende-figure">L’écart observé, contre {{ ttt.tirages }} saisons
+simulées où les vainqueurs sont tirés <strong>selon les forces estimées</strong>.
+Un tirage uniforme, lui, ne produirait que {{ tt.attendu_uniforme }} points.</p>
+
+<div class="constat">
+  <p>Contre un tirage uniforme, l’enchaînement est massif :
+  {{ tt.ecarts_types_uniforme }} écarts-types. Contre un tirage <b>selon les
+  forces</b>, il ne reste que {{ ttt.ecart_types }} écart-type, p ajustée
+  {{ ttt.p_ajustee }}. <b>Non concluant.</b></p>
+  <p>Autrement dit : <b>{{ tt.part_expliquee }} % de l’enchaînement est déjà
+  produit par le simple fait que les forts sont forts</b>, et ce qui dépasse
+  n’est pas distinguable du hasard. Le tenant du titre ne rejoue pas mieux
+  parce qu’il vient de gagner ; il regagne parce que c’était déjà lui le
+  meilleur.</p>
+</div>
+
+<p class="note"><strong>Ce test est conservateur, et il faut le dire.</strong>
+Les forces <i>θ</i> sont ajustées sur ces épreuves-là, enchaînements compris :
+un élan réel serait donc en partie absorbé par la force estimée. Conclure
+« rien au-delà de la force » est prudent ; conclure l’inverse ne le serait
+pas.</p>
+
 ## Et le jeu, dans tout ça ?
 
 Deux croyances tenaces se testent ici. On vote contre les forts, dit-on ; et la

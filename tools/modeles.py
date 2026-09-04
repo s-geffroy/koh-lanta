@@ -1861,11 +1861,12 @@ def jury_final(par_saison, parts, conseils):
                     covote[cle] = covote.get(cle, 0) + 1
 
     finalistes = {}
+    fiche_j = {(p["saison"], p["id"]): p for p in parts}
     for p in parts:
         if p.get("sort") in ("vainqueur", "finaliste"):
             finalistes.setdefault(p["saison"], []).append(p["id"])
 
-    groupes, y, X, detail = [], [], [], []
+    groupes, y, X, detail, bandeau = [], [], [], [], []
     numero = 0
     for c in votes_du_jury(conseils):
         s = par_saison.get(c["saison"]) or {}
@@ -1881,13 +1882,22 @@ def jury_final(par_saison, parts, conseils):
             if choisi not in candidats or jure in candidats:
                 continue
             numero += 1
+            couleur_jure = (fiche_j.get((c["saison"], jure)) or {}).get("couleur")
             for cand in candidats:
+                couleur_cand = (fiche_j.get((c["saison"], cand)) or {}).get("couleur")
                 groupes.append(numero)
                 y.append(1.0 if cand == choisi else 0.0)
                 X.append([
                     1.0 if (c["saison"], cand, jure) in ecrit else 0.0,
                     float(covote.get((c["saison"], jure, cand), 0)),
                 ])
+                # Le bandeau de depart : il a cesse d'exister depuis longtemps
+                # quand le jury vote, et c'est justement ce qui rend la
+                # question interessante. Il n'entre PAS dans le modele
+                # principal -- celui-ci etait publie avant que la question ne
+                # soit posee -- mais dans un second, a cote.
+                bandeau.append(1.0 if (couleur_jure and couleur_cand
+                                       and couleur_jure == couleur_cand) else 0.0)
             detail.append((c["saison"], jure, choisi, len(candidats)))
 
     if len(detail) < 60:
@@ -1896,7 +1906,8 @@ def jury_final(par_saison, parts, conseils):
     modele = sm.ConditionalLogit(np.array(y), np.array(X),
                                  groups=np.array(groupes)).fit(disp=0)
     ic = modele.conf_int()
-    noms = ("A écrit le nom du juré au conseil", "A voté avec le juré, par conseil partagé")
+    noms = ("A écrit le nom du juré au conseil",
+            "A voté avec le juré, par conseil partagé")
     coefficients = [
         {"libelle": noms[i],
          "rapport": _arr(float(np.exp(modele.params[i])), 3),
@@ -1904,6 +1915,28 @@ def jury_final(par_saison, parts, conseils):
          "haut": _arr(float(np.exp(ic[i][1])), 3),
          "p": _arr(float(modele.pvalues[i]), 4)}
         for i in range(len(noms))]
+
+    # Le meme modele, plus le bandeau de depart. Il ne remplace pas le
+    # precedent : il l'eprouve. Si le camp d'origine -- qui gouverne le
+    # bulletin en cours de jeu mieux que tout le reste -- gouvernait aussi le
+    # vote du jury, l'effet du co-vote pourrait n'etre que son reflet.
+    avec_bandeau = {}
+    if any(bandeau):
+        X2 = np.column_stack([np.array(X), np.array(bandeau)])
+        m2 = sm.ConditionalLogit(np.array(y), X2, groups=np.array(groupes)).fit(disp=0)
+        ic2 = m2.conf_int()
+        noms2 = noms + ("Partage le bandeau de départ du juré",)
+        avec_bandeau = {
+            "coefficients": [
+                {"libelle": noms2[i],
+                 "rapport": _arr(float(np.exp(m2.params[i])), 3),
+                 "bas": _arr(float(np.exp(ic2[i][0])), 3),
+                 "haut": _arr(float(np.exp(ic2[i][1])), 3),
+                 "p": _arr(float(m2.pvalues[i]), 4)}
+                for i in range(len(noms2))],
+            "lecture": "Le même modèle, avec une variable de plus : les deux "
+                       "partagent-ils le bandeau de départ ?",
+        }
 
     # La lecture brute, sans modele : la part de bulletins de jury qui vont a
     # quelqu'un qui avait ecrit le nom du jure.
@@ -1916,6 +1949,7 @@ def jury_final(par_saison, parts, conseils):
         "bulletins": len(detail),
         "saisons": len(sorted({d[0] for d in detail})),
         "coefficients": coefficients,
+        "avec_bandeau": avec_bandeau,
         "part_vers_bourreau": _arr(100.0 * vers_bourreau / len(detail)),
         "bulletins_avec_bourreau_disponible": dispo,
         "part_quand_disponible": _arr(100.0 * vers_bourreau / dispo) if dispo else None,
@@ -3687,6 +3721,26 @@ def _allies_par_conseil(plateaux):
     return allies, isole
 
 
+def _adversaires_par_conseil(plateaux):
+    """(saison, indice, personne) -> ceux qui ont deja ecrit son nom, avant ce soir.
+
+    Le miroir exact de `_allies_par_conseil`. Meme regle de rupture : la chaine
+    repart de zero au premier conseil non depouille.
+    """
+    adversaires = {}
+    for sid, liste in plateaux.items():
+        vus = collections.defaultdict(set)
+        for i, c in enumerate(liste):
+            if not c["complet"]:
+                vus = collections.defaultdict(set)
+                continue
+            for p in c["votants"]:
+                adversaires[(sid, i, p)] = set(vus[p])
+            for auteur, cible in zip(c["auteurs"], c["cibles"]):
+                vus[cible].add(auteur)
+    return adversaires
+
+
 def _immunises_du_soir(conseils, epreuves):
     """Le vainqueur de l'immunite individuelle, sur les seuls soirs a UN conseil.
 
@@ -3739,6 +3793,28 @@ def pire_place(par_saison, parts, conseils, epreuves):
             l["allies_presents"] = len(ensemble & presents)
             l["allies_connus"] = len(ensemble)
             l["jamais_allie"] = (sid, i, l["personne"]) in isole
+
+    # --- 0. l'adversaire, encore la ou deja parti -------------------------
+    # Le miroir de l'allie : ceux qui ont deja ecrit MON nom. La question qui
+    # s'y pose n'est pas « combien », mais « sont-ils encore la ? ».
+    adversaires = _adversaires_par_conseil(plateaux)
+    for (sid, i), groupe in sorted(par_conseil.items()):
+        presents = {l["personne"] for l in groupe}
+        for l in groupe:
+            ensemble = adversaires.get((sid, i, l["personne"]), set())
+            l["adversaires_connus"] = len(ensemble)
+            l["adversaires_presents"] = len(ensemble & presents)
+
+    def _adverse(l):
+        if not l["adversaires_connus"]:
+            return "jamais visé jusqu’ici"
+        if not l["adversaires_presents"]:
+            return "ses adversaires sont partis"
+        return "au moins un adversaire encore là"
+
+    adverse = _taux(lignes, _adverse,
+                    ["jamais visé jusqu’ici", "ses adversaires sont partis",
+                     "au moins un adversaire encore là"])
 
     # --- 1. l'isolement, decompose ----------------------------------------
     def _place(l):
@@ -3887,7 +3963,8 @@ def pire_place(par_saison, parts, conseils, epreuves):
     return {
         "presences": len(lignes), "conseils": len(par_conseil),
         "saisons": len({l["saison"] for l in lignes}),
-        "isolement": isolement, "cumul": cumul, "modele": modele,
+        "isolement": isolement, "adverse": adverse,
+        "cumul": cumul, "modele": modele,
         "dos_au_mur": mur, "conseils_immunite": len(conseils_dos),
         "bulletins_lus": bulletins, "bulletins_perdus": perdus,
         "part_perdue": _arr(100.0 * perdus / bulletins, 2) if bulletins else None,
@@ -4009,6 +4086,226 @@ def rappel(par_saison, parts):
     }
 
 
+# --- P. Le tenant du titre -------------------------------------------------
+
+# L'enchainement des victoires est le genre de chiffre qui se lit tout seul :
+# celui qui a gagne la derniere epreuve gagne la suivante deux fois plus
+# souvent. Reste a savoir si c'est de l'elan ou simplement de la force -- et
+# c'est le modele de Plackett-Luce, deja ajuste pour `/statistiques/force/`,
+# qui repond : on tire les vainqueurs SELON LES FORCES ESTIMEES et l'on regarde
+# quel enchainement cela produit tout seul.
+
+
+def tenant_du_titre(par_saison, parts, conseils, epreuves, bloc_force):
+    """Gagner l'immunite quand on l'a deja gagnee la fois d'avant.
+
+    Deux modeles nuls, et c'est leur ecart qui est le resultat :
+
+      * le nul UNIFORME -- chacun gagne avec la meme probabilite -- mesure
+        l'enchainement brut ;
+      * le nul DE FORCE -- chacun gagne selon son theta -- mesure ce qui reste
+        une fois que les niveaux sont admis.
+
+    Le second est conservateur, et il faut le dire : theta est ajuste sur ces
+    epreuves-la, enchainements compris. Un elan reel serait donc en partie
+    absorbe par la force estimee. Conclure « rien au-dela de la force » est
+    prudent ; conclure l'inverse ne le serait pas.
+    """
+    theta = (bloc_force or {}).get("_theta") or {}
+    if not theta:
+        return {}
+    plateaux, _, _, _ = _plateaux(par_saison, parts, conseils, epreuves)
+    if not plateaux:
+        return {}
+
+    # On ne garde que les epreuves d'IMMUNITE, une par episode. Sans cela deux
+    # epreuves du meme episode se suivent dans la chaine, et le « tenant du
+    # titre » n'est que le meme vainqueur compte deux fois.
+    immunites = set()
+    for e in epreuves:
+        if e.get("forme") != "individuelle" or e.get("type") != "immunite":
+            continue
+        try:
+            episode = int(e["episode"])
+        except (TypeError, ValueError, KeyError):
+            continue
+        gagnants = [v["id"] for v in (e.get("vainqueurs") or [])
+                    if v.get("type") == "personne" and v.get("id")]
+        if len(gagnants) == 1:
+            immunites.add((e["saison"], episode, gagnants[0]))
+
+    retenus, vus = [], set()
+    for p in plateaux:
+        cle = (p["saison"], p["episode"])
+        if (p["saison"], p["episode"], p["gagnant"]) not in immunites or cle in vus:
+            continue
+        vus.add(cle)
+        retenus.append(p)
+    if len(retenus) < 60:
+        return {}
+
+    par_s = collections.defaultdict(list)
+    for i, p in enumerate(retenus):
+        par_s[p["saison"]].append(i)
+    for s in par_s:
+        par_s[s].sort(key=lambda i: retenus[i]["episode"])
+
+    def compter(gagnants):
+        tenant, autres = [0, 0], [0, 0]
+        for _, indices in sorted(par_s.items()):
+            for k in range(1, len(indices)):
+                avant = gagnants[indices[k - 1]]
+                champ = retenus[indices[k]]["champ"]
+                if avant not in champ:
+                    continue
+                vainqueur = gagnants[indices[k]]
+                for joueur in champ:
+                    cible = tenant if joueur == avant else autres
+                    cible[0] += 1
+                    cible[1] += 1 if joueur == vainqueur else 0
+        return tenant, autres
+
+    def contraste(gagnants):
+        tenant, autres = compter(gagnants)
+        if not tenant[0] or not autres[0]:
+            return None
+        return 100.0 * (tenant[1] / tenant[0] - autres[1] / autres[0])
+
+    reels = [p["gagnant"] for p in retenus]
+    tenant, autres = compter(reels)
+    observe = contraste(reels)
+    if observe is None:
+        return {}
+
+    g = rng("tenant_du_titre")
+    poids = [np.array([max(theta.get(j, 1.0), 1e-9) for j in p["champ"]])
+             for p in retenus]
+    nulle_force, nulle_uniforme = [], []
+    for _ in range(N_PERMUTATIONS_BULLETINS):
+        tire = [retenus[i]["champ"][int(g.choice(len(poids[i]),
+                                                 p=poids[i] / poids[i].sum()))]
+                for i in range(len(retenus))]
+        v = contraste(tire)
+        if v is not None:
+            nulle_force.append(v)
+        tire = [retenus[i]["champ"][int(g.integers(0, len(retenus[i]["champ"])))]
+                for i in range(len(retenus))]
+        v = contraste(tire)
+        if v is not None:
+            nulle_uniforme.append(v)
+    if not nulle_force or not nulle_uniforme:
+        return {}
+
+    test = _test(
+        "tenant_du_titre", "Le tenant du titre",
+        "Celui qui a gagné la dernière immunité la regagne-t-il plus souvent "
+        "que sa force ne l'explique ?",
+        observe, np.array(nulle_force), unite=" points",
+        lecture="Écart entre gagner l'immunité quand on l'a gagnée la fois d'avant "
+                "et la gagner quand on ne l'a pas gagnée. Le modèle nul ne tire pas "
+                "au hasard : il tire les vainqueurs SELON LES FORCES estimées par le "
+                "modèle de Plackett-Luce. Ce qui subsiste au-dessus de lui serait un "
+                "élan, et non un niveau.")
+
+    uniforme = np.array(nulle_uniforme)
+    ecart_uniforme = uniforme.std(ddof=1) or float("nan")
+    return {
+        "epreuves": len(retenus), "saisons": len(par_s),
+        "paires": tenant[0],
+        "tenant": {"effectif": tenant[0], "cas": tenant[1],
+                   "probabilite": _arr(100.0 * tenant[1] / tenant[0]),
+                   "bas": _arr(_wilson(tenant[1], tenant[0])[0]),
+                   "haut": _arr(_wilson(tenant[1], tenant[0])[1])},
+        "autres": {"effectif": autres[0], "cas": autres[1],
+                   "probabilite": _arr(100.0 * autres[1] / autres[0]),
+                   "bas": _arr(_wilson(autres[1], autres[0])[0]),
+                   "haut": _arr(_wilson(autres[1], autres[0])[1])},
+        "brut": _arr(observe, 1),
+        "attendu_force": _arr(float(np.mean(nulle_force)), 1),
+        "attendu_uniforme": _arr(float(uniforme.mean()), 1),
+        "ecarts_types_uniforme": _arr((observe - float(uniforme.mean())) / ecart_uniforme, 2),
+        "part_expliquee": _arr(100.0 * float(np.mean(nulle_force)) / observe),
+        "test": test,
+    }
+
+
+# --- Q. L'age de l'elimine, avant et apres la reunification ----------------
+
+def age_au_conseil(par_saison, parts, conseils, epreuves, bloc_fusion):
+    """Celui qui part est-il plus vieux que son camp ?
+
+    Le doyen d'un conseil est une categorie grossiere : elle jette l'ecart
+    d'age reel et ne retient qu'un rang. La mesure continue -- de combien
+    d'annees l'elimine s'ecarte de la moyenne de son camp -- utilise toute
+    l'information, et elle repond a la meme question avec plus de finesse.
+    """
+    fusion_ep = {l["saison"]: l["episode"] for l in (bloc_fusion.get("lignes") or [])}
+    if len(fusion_ep) < 12:
+        return {}
+    lignes = _camps(par_saison, parts, conseils, epreuves, fusion_ep)
+    if len(lignes) < SEUIL_CAMP:
+        return {}
+    ages = {(p["saison"], p["id"]): p.get("age") for p in parts}
+    for l in lignes:
+        l["age"] = ages.get((l["saison"], l["personne"]))
+
+    par_conseil = collections.defaultdict(list)
+    for i, l in enumerate(lignes):
+        par_conseil[(l["saison"], l["conseil"])].append(i)
+    groupes = [np.array(v) for _, v in sorted(par_conseil.items())
+               if all(lignes[i]["age"] for i in v)]
+    if len(groupes) < 60:
+        return {}
+    avant = [g for g in groupes if not lignes[g[0]]["apres_fusion"]]
+    apres = [g for g in groupes if lignes[g[0]]["apres_fusion"]]
+    if len(avant) < 30 or len(apres) < 30:
+        return {}
+    ages_v = np.array([l["age"] or 0 for l in lignes], dtype=float)
+    sorti = np.array([l["sorti"] for l in lignes], dtype=float)
+
+    def moyenne(v, sous):
+        total, n = 0.0, 0
+        for g in sous:
+            a, s = ages_v[g], v[g]
+            if s.sum() != 1:
+                continue
+            total += float(a[s.astype(bool)][0] - a.mean())
+            n += 1
+        return (total / n if n else 0.0), n
+
+    def contraste(v):
+        return moyenne(v, avant)[0] - moyenne(v, apres)[0]
+
+    m_avant, n_avant = moyenne(sorti, avant)
+    m_apres, n_apres = moyenne(sorti, apres)
+    m_tout, n_tout = moyenne(sorti, groupes)
+    observe = m_avant - m_apres
+
+    g = rng("age_au_conseil")
+    nulle = []
+    for _ in range(N_PERMUTATIONS):
+        tire = np.zeros(len(lignes))
+        for grp in groupes:
+            tire[grp[int(g.integers(0, len(grp)))]] = 1.0
+        nulle.append(contraste(tire))
+
+    test = _test(
+        "age_bascule_fusion", "L'âge de l'éliminé, avant et après la fusion",
+        "Élimine-t-on le plus âgé avant la réunification, et plus après ?",
+        observe, np.array(nulle), unite=" ans",
+        lecture="Écart d'âge de l'éliminé à la moyenne de son camp, avant la "
+                "réunification moins après. Le modèle nul tire l'éliminé au hasard "
+                "parmi les présents : la composition d'âge de chaque soirée reste "
+                "celle du soir.")
+
+    return {
+        "conseils": len(groupes), "conseils_avant": n_avant, "conseils_apres": n_apres,
+        "ecart_tout": _arr(m_tout, 2), "ecart_avant": _arr(m_avant, 2),
+        "ecart_apres": _arr(m_apres, 2),
+        "test": test,
+    }
+
+
 def _fichier(nom):
     """Lit un fichier de _data/ produit par un autre script.
 
@@ -4053,6 +4350,8 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
     # Avant `tout` ne retire les cles techniques de `f` : ce bloc a besoin des
     # forces estimees, personne par personne.
     aa = avant_apres(par_saison, parts, conseils, epreuves, f, fu)
+    tt = tenant_du_titre(par_saison, parts, conseils, epreuves, f)
+    ag = age_au_conseil(par_saison, parts, conseils, epreuves, fu)
     co = conditionnelles(par_saison, parts, conseils)
     af = autour_du_feu(par_saison, parts, conseils, epreuves, fu)
     pp = pire_place(par_saison, parts, conseils, epreuves)
@@ -4093,7 +4392,8 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
         registre.append(t)
 
     for bloc, origine in ((al, "alliances"), (ru, "ruptures"),
-                          (tr, "trahison"), (de, "decimation")):
+                          (tr, "trahison"), (de, "decimation"),
+                          (tt, "tenant_du_titre"), (ag, "age_au_conseil")):
         t = bloc.get("test")
         if t:
             t["origine"] = origine
@@ -4127,6 +4427,8 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
         "conditionnelles": co,
         "autour_du_feu": af,
         "pire_place": pp,
+        "tenant_du_titre": tt,
+        "age_au_conseil": ag,
         "rappel": rp,
         "registre": [{k: t[k] for k in
                       ("cle", "libelle", "question", "origine", "observe",

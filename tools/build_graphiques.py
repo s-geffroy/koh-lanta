@@ -1284,6 +1284,47 @@ def figures_des_modeles(stats):
             ecrire(f"{nom}.svg", distribution_nulle(
                 t, couleur=teinte if t.get("retenu") else SERIES[5]))
 
+    # --- P. le tenant du titre ----------------------------------------------
+    tt = m.get("tenant_du_titre") or {}
+    if tt.get("tenant"):
+        ecrire("tenant-du-titre.svg", colonnes(
+            [{"libelle": "le tenant du titre", "sous_titre": f'{tt["tenant"]["effectif"]} fois',
+              "valeur": tt["tenant"]["probabilite"], "bas": tt["tenant"]["bas"],
+              "haut": tt["tenant"]["haut"], "couleur": SERIES[0],
+              "detail": f'{tt["tenant"]["cas"]} victoires sur {tt["tenant"]["effectif"]}'},
+             {"libelle": "les autres présents", "sous_titre": f'{tt["autres"]["effectif"]} fois',
+              "valeur": tt["autres"]["probabilite"], "bas": tt["autres"]["bas"],
+              "haut": tt["autres"]["haut"], "couleur": SERIES[5],
+              "detail": f'{tt["autres"]["cas"]} victoires sur {tt["autres"]["effectif"]}'}],
+            titre="Gagner l’immunité quand on l’a déjà gagnée",
+            description="Probabilité de remporter l’épreuve d’immunité individuelle "
+                        "selon qu’on a gagné la précédente ou non.",
+            unite=" %", largeur=520, hauteur=310))
+    if tt.get("test", {}).get("nulle"):
+        ecrire("tenant-du-titre-nulle.svg", distribution_nulle(
+            tt["test"], couleur=SERIES[5] if not tt["test"].get("retenu") else SERIES[0]))
+
+    # --- Q. l'age de l'elimine, de part et d'autre de la fusion --------------
+    ag = m.get("age_au_conseil") or {}
+    if ag.get("test", {}).get("nulle"):
+        ecrire("age-bascule-nulle.svg", distribution_nulle(
+            ag["test"], couleur=SERIES[5] if not ag["test"].get("retenu") else SERIES[3]))
+
+    # --- l'adversaire, encore la ou deja parti -------------------------------
+    if (m.get("pire_place") or {}).get("adverse"):
+        ecrire("pire-place-adverse.svg", barres_groupees(
+            [{"libelle": x["modalite"],
+              "valeurs": [x["probabilite"], x["hasard"]],
+              "details": [f'{x["cas"]} éliminations sur {x["effectif"]} présences',
+                          f'{x["hasard"]} % si l’éliminé était tiré au hasard']}
+             for x in m["pire_place"]["adverse"]],
+            [{"nom": "risque observé", "couleur": SERIES[0]},
+             {"nom": "1 / nombre de présents", "couleur": SERIES[5]}],
+            titre="L’adversaire, encore là ou déjà parti",
+            description="Probabilité d’être éliminé selon que ceux qui ont déjà "
+                        "écrit votre nom sont encore présents ou non.",
+            unite=" %", largeur=780, marge_gauche=260))
+
     hm = m.get("hasard_mecanique") or {}
     if hm.get("paliers"):
         ecrire("risque-mecanique.svg", barres_groupees(

@@ -82,6 +82,43 @@ l’éliminé de chaque conseil est pris au hasard parmi les présents.</p>
   exposée.</p>
 </div>
 
+## L’adversaire, encore là ou déjà parti
+
+L’allié a un miroir : **celui qui a déjà écrit votre nom.** On s’attend à ce
+qu’un adversaire encore assis là soit plus dangereux qu’un adversaire éliminé
+depuis. Ce n’est pas le cas.
+
+{% include graphiques/pire-place-adverse.svg %}
+
+<p class="legende-figure">Probabilité d’être éliminé selon que ceux qui ont déjà
+écrit votre nom sont encore présents ou non.</p>
+
+<div class="tableau-large">
+<table>
+<thead><tr><th>Ceux qui ont déjà écrit mon nom</th><th class="nombre">Présences</th><th class="nombre">Éliminations</th><th class="nombre">Probabilité</th><th class="nombre">Le hasard</th></tr></thead>
+<tbody>
+{% for x in p.adverse %}
+<tr><td>{{ x.modalite | capitalize }}</td>
+    <td class="nombre">{{ x.effectif }}</td><td class="nombre">{{ x.cas }}</td>
+    <td class="nombre"><b>{{ x.probabilite }} %</b></td>
+    <td class="nombre">{{ x.hasard }} %</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+**La menace ne s’éteint pas avec son auteur.** Avoir été visé par des gens tous
+partis depuis mène à {{ p.adverse[1].probabilite }} % ; en avoir au moins un
+encore là, à {{ p.adverse[2].probabilite }} %. L’écart est dans le sens
+inverse de l’intuition et bien trop petit pour compter. Ce qui compte est
+d’avoir été visé **un jour** — le camp a désigné quelqu’un, et cette
+désignation lui survit.
+
+Aucun test n’est déclaré ici : la question est la même que celle du
+[nom sorti la fois d’avant]({{ '/statistiques/conditionnelles/' | relative_url }}),
+posée sous un autre angle. La compter deux fois dans la correction pour tests
+multiples reviendrait à la payer deux fois.
+
 ## Les deux signaux ensemble
 
 {% include graphiques/pire-place-cumul.svg %}

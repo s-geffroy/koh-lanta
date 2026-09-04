@@ -170,6 +170,17 @@ suffirait à afficher 100 %.</p>
 Ceux-là ont vu leur nom sortir de l’urne plusieurs fois sans jamais partir. La
 plupart finissent tout de même par tomber : échapper au vote se paie plus tard.
 
+<p class="note"><strong>Ce que « survivre quand on est visé » vaut en
+probabilité.</strong> Ce tableau classe des individus ; la loi générale, elle,
+est ailleurs. Avoir été visé au conseil précédent fait passer le risque de
+partir de {{ site.data.stats.modeles.conditionnelles.par_voix[0].probabilite }} %
+à {{ site.data.stats.modeles.conditionnelles.par_voix[1].probabilite }} % pour
+une voix — mais il retombe à
+{% assign gros = site.data.stats.modeles.conditionnelles.par_voix | where: "modalite", "5 voix et plus" | first %}{{ gros.probabilite }} %
+au-delà de cinq voix, parce que survivre à un vote massif prouve qu’on est
+protégé.
+<a href="{{ '/statistiques/conditionnelles/' | relative_url }}">Sachant le conseil d’avant</a>.</p>
+
 ## Les plus visés
 
 <div class="tableau-large">

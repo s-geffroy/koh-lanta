@@ -171,6 +171,25 @@ celui-ci ne contient que les tests de permutation, dont le modèle nul est
 explicite et vérifiable. Un coefficient de régression y est publié avec son
 intervalle, et il se lit comme tel — une estimation, pas une découverte.
 
+### Le modèle nul qui n’est pas un tirage au hasard
+
+Les nuls décrits jusqu’ici tirent uniformément : l’éliminé au hasard parmi les
+présents, les bulletins rebattus, les comptes redistribués. Un quatrième type
+existe et il répond à une autre question — **ce que le hasard produit** n’est
+plus la bonne référence quand on veut savoir si un effet dépasse **ce qu’un
+modèle déjà ajusté explique**.
+
+Pour l’enchaînement des victoires d’épreuve, le nul tire donc les vainqueurs
+**selon les forces estimées** par le modèle de Plackett-Luce. Un enchaînement
+qui n’excède pas ce nul-là ne dit rien de plus que « les forts sont forts ».
+[La force réelle]({{ '/statistiques/force/' | relative_url }}) publie les deux
+références côte à côte, parce que c’est leur écart qui est le résultat.
+
+Ce nul est **conservateur** : les forces sont ajustées sur les mêmes épreuves,
+enchaînements compris, si bien qu’un élan réel y serait partiellement absorbé.
+Il permet de conclure « rien au-delà du niveau » ; il ne permettrait pas de
+conclure l’inverse.
+
 ### Le repère mobile : une chance sur n
 
 Une probabilité de sortir ne se lit jamais seule. À un conseil à six, on part

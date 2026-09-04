@@ -128,6 +128,55 @@ C’est cohérent avec ce que montre
 fusion, plusieurs groupes coexistent et chacun écrit son nom. Avant, une tribu
 qui vient de perdre une épreuve a souvent déjà tranché sur le chemin du retour.
 
+## L’âge bascule dans le même sens — mais on ne peut pas l’affirmer
+
+{% assign ag = site.data.stats.modeles.age_au_conseil %}
+{% assign tag = reg | where: "cle", "age_bascule_fusion" | first %}
+
+Si la tribu sacrifie le joueur qu’elle a vu gagner, sacrifie-t-elle aussi le
+plus vieux ? La mesure est directe : de combien d’années l’éliminé s’écarte de
+la moyenne d’âge de son camp, ce soir-là.
+
+<div class="tableau-large">
+<table>
+<thead><tr><th></th><th class="nombre">Conseils</th><th class="nombre">Écart d’âge de l’éliminé</th></tr></thead>
+<tbody>
+<tr><td>Avant la réunification</td><td class="nombre">{{ ag.conseils_avant }}</td>
+    <td class="nombre"><b>{{ ag.ecart_avant }} an</b></td></tr>
+<tr><td>Après la réunification</td><td class="nombre">{{ ag.conseils_apres }}</td>
+    <td class="nombre"><b>{{ ag.ecart_apres }} an</b></td></tr>
+<tr><td>Sur l’ensemble</td><td class="nombre">{{ ag.conseils }}</td>
+    <td class="nombre">{{ ag.ecart_tout }} an</td></tr>
+</tbody>
+</table>
+</div>
+
+{% include graphiques/age-bascule-nulle.svg %}
+
+<p class="legende-figure">Écart d’âge de l’éliminé à la moyenne de son camp,
+avant la réunification moins après, contre {{ tag.tirages }} tirages où
+l’éliminé de chaque conseil est pris au hasard parmi les présents.</p>
+
+<div class="constat">
+  <p>Avant la fusion, celui qui part a en moyenne <b>{{ ag.ecart_avant }} an de
+  plus</b> que son camp. Après, <b>{{ ag.ecart_apres }}</b> — il est un peu plus
+  jeune que la moyenne.</p>
+  <p>La bascule vaut {{ tag.observe | round: 1 }} ans, {{ tag.ecart_types }}
+  écarts-types, p brute {{ tag.p }}, p ajustée {{ tag.p_ajustee }}.
+  <b>Non concluant.</b></p>
+  <p>C’est exactement le sens de la bascule de la force — et c’est ce qui rend
+  le résultat frustrant plutôt qu’anodin. Deux ans d’écart sur
+  {{ ag.conseils }} conseils, cela ne se distingue pas d’un tirage. On peut dire
+  que rien ne contredit l’hypothèse ; on ne peut pas dire qu’elle est
+  vérifiée.</p>
+</div>
+
+<p class="note">Le doyen du camp, lui, est traité comme une catégorie sur
+<a href="{{ '/statistiques/autour-du-feu/' | relative_url }}">Sachant qui est
+autour du feu</a> : même conclusion prudente, sur une autre découpe de la même
+donnée. Deux façons de poser la question de l’âge au conseil, deux fois
+« non concluant » — c’est une information, et elle vaut mieux que le silence.</p>
+
 ## Et le sexe, lui, ne change pas
 
 <div class="constat">

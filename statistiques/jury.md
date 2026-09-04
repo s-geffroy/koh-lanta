@@ -71,6 +71,46 @@ mêmes noms — la même variable qui, en cours de jeu, fait tenir plus longtemp
 que tout le reste.
 [Les alliances]({{ '/statistiques/alliances/' | relative_url }}).
 
+### La mise à l’épreuve : et si ce n’était que le bandeau ?
+
+{% assign ab = j.avec_bandeau %}
+
+Le camp d’origine gouverne le bulletin **en cours de jeu** mieux que tout le
+reste — c’est le résultat le plus net de
+[Qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }}). Or deux
+personnes du même bandeau votent souvent ensemble. L’effet du co-vote pourrait
+donc n’être que le reflet du bandeau. Le même modèle, avec cette variable de
+plus :
+
+<div class="tableau-large">
+<table>
+<thead><tr><th>Variable</th><th class="nombre">Cote multipliée par</th><th class="nombre">Intervalle</th><th class="nombre">p</th></tr></thead>
+<tbody>
+{% for x in ab.coefficients %}
+<tr><td>{{ x.libelle }}</td>
+    <td class="nombre"><b>{{ x.rapport }}</b></td>
+    <td class="nombre">{{ x.bas }} – {{ x.haut }}</td>
+    <td class="nombre">{{ x.p }}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+<div class="constat">
+  <p><b>Le bandeau, ici, ne fait rien</b> : cote ×{{ ab.coefficients[2].rapport }},
+  intervalle {{ ab.coefficients[2].bas }} à {{ ab.coefficients[2].haut }},
+  p = {{ ab.coefficients[2].p }}. Ce qui gouverne le conseil ne gouverne pas le
+  jury — et c’est en soi un résultat, vu la force de l’effet en cours de jeu.</p>
+  <p><b>Mais l’effet du co-vote ne survit pas intact à ce contrôle.</b>
+  L’estimation ne bouge pas ({{ c1.rapport }} devient
+  {{ ab.coefficients[1].rapport }}), l’intervalle s’élargit et traverse 1 :
+  {{ ab.coefficients[1].bas }} à {{ ab.coefficients[1].haut }},
+  p = {{ ab.coefficients[1].p }}. Il faut donc lire la conclusion de cette page
+  pour ce qu’elle est : <b>une tendance nette dans son estimation, fragile dans
+  sa signification</b>. Le jury prolonge l’alliance ; sur ces
+  {{ j.bulletins }} bulletins, on ne peut pas le démontrer plus fermement.</p>
+</div>
+
 <p class="note">Les limites, et elles sont réelles. {{ j.bulletins }} bulletins,
 c’est peu : l’intervalle sur l’effet « m’a éliminé » va de {{ c0.bas }} à
 {{ c0.haut }}, et une rancune modérée y tiendrait sans être détectée. On ne peut
