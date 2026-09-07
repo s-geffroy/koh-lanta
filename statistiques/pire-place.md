@@ -5,7 +5,7 @@ permalink: /statistiques/pire-place/
 chapeau: >-
   Deux signaux se lisent avant le vote : le nom qui est sorti la fois d’avant,
   et le nombre d’alliés encore assis autour du feu. Ensemble, ils font passer le
-  risque de 11 % à 47 %.
+  risque de 10 % à 47 %.
 ---
 
 {% assign m = site.data.stats.modeles %}

@@ -7466,8 +7466,8 @@
   type: elimination
   complet: true
   episode: '1'
-  elimine: Mélanie Boimare Mélanie
-  elimine_rattache: false
+  elimine: melanie-boimare
+  elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 8
   votes:
@@ -7516,8 +7516,8 @@
   type: elimination
   complet: true
   episode: '2'
-  elimine: Mickaël Kalfallah Mickaël
-  elimine_rattache: false
+  elimine: mickael-kalfallah
+  elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 10
   votes:
@@ -7576,8 +7576,8 @@
   type: elimination
   complet: true
   episode: '3'
-  elimine: Élodie Saleder Élodie
-  elimine_rattache: false
+  elimine: elodie-saleder
+  elimine_rattache: true
   votes_contre: 7
   votes_exprimes: 10
   votes:
@@ -7636,8 +7636,8 @@
   type: elimination
   complet: false
   episode: '4'
-  elimine: Sara Tallon Sara
-  elimine_rattache: false
+  elimine: sara-tallon
+  elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
   votes: []
@@ -7646,8 +7646,8 @@
   type: elimination
   complet: true
   episode: '4'
-  elimine: Nadine De Carpentry Nadine
-  elimine_rattache: false
+  elimine: nadine-de-carpentry
+  elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 9
   annulation: partielle
@@ -7705,8 +7705,8 @@
   type: elimination
   complet: true
   episode: '5'
-  elimine: Élodie Saleder Élodie
-  elimine_rattache: false
+  elimine: elodie-saleder
+  elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 8
   votes:
@@ -7815,8 +7815,8 @@
   type: elimination
   complet: false
   episode: '7'
-  elimine: Anthony Dito Anthony
-  elimine_rattache: false
+  elimine: anthony-dito
+  elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
   votes: []
@@ -7825,8 +7825,8 @@
   type: elimination
   complet: true
   episode: '7'
-  elimine: Javier Rodriguez Javier
-  elimine_rattache: false
+  elimine: javier-rodriguez
+  elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 15
   annulation: partielle
@@ -7915,8 +7915,8 @@
   type: elimination
   complet: true
   episode: '8'
-  elimine: Namadia Thaï Thaï Namadia
-  elimine_rattache: false
+  elimine: namadia-thai-thai
+  elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 12
   votes:
@@ -7985,8 +7985,8 @@
   type: elimination
   complet: true
   episode: '9'
-  elimine: Marylou Sidibé Marylou
-  elimine_rattache: false
+  elimine: marylou-sidibe
+  elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 12
   votes:
@@ -8055,8 +8055,8 @@
   type: elimination
   complet: true
   episode: '10'
-  elimine: Catherine Perez Catherine
-  elimine_rattache: false
+  elimine: catherine-perez
+  elimine_rattache: true
   votes_contre: 3
   votes_exprimes: 11
   annulation: partielle
@@ -8125,8 +8125,8 @@
   type: elimination
   complet: false
   episode: '10'
-  elimine: Camille Sold Camille
-  elimine_rattache: false
+  elimine: camille-sold
+  elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
   votes: []
@@ -8135,8 +8135,8 @@
   type: elimination
   complet: true
   episode: '11'
-  elimine: Thierry Villette Thierry
-  elimine_rattache: false
+  elimine: thierry-villette
+  elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 9
   votes:
@@ -8190,8 +8190,8 @@
   type: elimination
   complet: false
   episode: '12'
-  elimine: Charles Clément Charles
-  elimine_rattache: false
+  elimine: charles-clement
+  elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
   votes: []
@@ -8200,8 +8200,8 @@
   type: elimination
   complet: false
   episode: '12'
-  elimine: Thierry Villette Thierry
-  elimine_rattache: false
+  elimine: thierry-villette
+  elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 8
   votes:
@@ -8245,8 +8245,8 @@
   type: elimination
   complet: true
   episode: '13'
-  elimine: Myriam Modde Myriam
-  elimine_rattache: false
+  elimine: myriam-modde
+  elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 7
   votes:
@@ -8290,8 +8290,8 @@
   type: elimination
   complet: false
   episode: '14'
-  elimine: Bernard Deniaud Bernard
-  elimine_rattache: false
+  elimine: bernard-deniaud
+  elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
   votes: []
@@ -8300,8 +8300,8 @@
   type: elimination
   complet: false
   episode: '14'
-  elimine: Philippe Bizet Philippe
-  elimine_rattache: false
+  elimine: philippe-bizet
+  elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
   votes: []
@@ -8310,8 +8310,8 @@
   type: elimination
   complet: false
   episode: '14'
-  elimine: Vanessa Alvarez Vanessa
-  elimine_rattache: false
+  elimine: vanessa-alvarez
+  elimine_rattache: true
   votes_contre: 1
   votes_exprimes: null
   votes:
@@ -8325,8 +8325,8 @@
   type: jury
   complet: false
   episode: Finaliste
-  finaliste: Brice Martinet Brice
-  finaliste_rattache: false
+  finaliste: brice-martinet
+  finaliste_rattache: true
   votes_pour: 1
   votes_exprimes: 11
   votes:
@@ -8340,8 +8340,8 @@
   type: jury
   complet: false
   episode: Gagnant
-  laureat: Ugo Lartiche Ugo
-  laureat_rattache: false
+  laureat: ugo-lartiche
+  laureat_rattache: true
   votes_pour: 10
   votes_exprimes: 11
   votes:
@@ -22797,8 +22797,8 @@
   type: elimination
   complet: true
   episode: '1'
-  elimine: Isabelle Da Silva Isabelle
-  elimine_rattache: false
+  elimine: isabelle-da-silva
+  elimine_rattache: true
   votes_contre: 7
   votes_exprimes: 11
   votes:
@@ -22862,8 +22862,8 @@
   type: elimination
   complet: false
   episode: '2'
-  elimine: Sandra Acabado Sandra
-  elimine_rattache: false
+  elimine: sandra-acabado
+  elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
   votes: []
@@ -22872,8 +22872,8 @@
   type: elimination
   complet: true
   episode: '2'
-  elimine: Sara Tallon Sara
-  elimine_rattache: false
+  elimine: sara-tallon
+  elimine_rattache: true
   votes_contre: 3
   votes_exprimes: 6
   votes:
@@ -22912,8 +22912,8 @@
   type: elimination
   complet: false
   episode: '3'
-  elimine: Isabelle Da Silva Isabelle
-  elimine_rattache: false
+  elimine: isabelle-da-silva
+  elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
   votes: []
@@ -22922,8 +22922,8 @@
   type: elimination
   complet: true
   episode: '3'
-  elimine: Laurence Pizzocchia Laurence
-  elimine_rattache: false
+  elimine: laurence-pizzocchia
+  elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 6
   votes:
@@ -22962,8 +22962,8 @@
   type: elimination
   complet: true
   episode: '4'
-  elimine: Sara Tallon Sara
-  elimine_rattache: false
+  elimine: sara-tallon
+  elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 6
   votes:
@@ -23002,8 +23002,8 @@
   type: elimination
   complet: false
   episode: '5'
-  elimine: Florence Delbarre Florence
-  elimine_rattache: false
+  elimine: florence-delbarre
+  elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
   votes: []
@@ -23012,8 +23012,8 @@
   type: elimination
   complet: false
   episode: '5'
-  elimine: Christina Chevry Christina
-  elimine_rattache: false
+  elimine: christina-chevry
+  elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 10
   votes:
@@ -23067,8 +23067,8 @@
   type: elimination
   complet: true
   episode: '6'
-  elimine: Freddy Boucher Freddy
-  elimine_rattache: false
+  elimine: freddy-boucher
+  elimine_rattache: true
   votes_contre: 3
   votes_exprimes: 8
   annulation: partielle
@@ -23121,8 +23121,8 @@
   type: elimination
   complet: false
   episode: '7'
-  elimine: Martin Bazin Martin
-  elimine_rattache: false
+  elimine: martin-bazin
+  elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
   votes: []
@@ -23131,8 +23131,8 @@
   type: elimination
   complet: true
   episode: '7'
-  elimine: Teheiura Teahui Teheiura
-  elimine_rattache: false
+  elimine: teheiura-teahui
+  elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 6
   votes:
@@ -23171,8 +23171,8 @@
   type: elimination
   complet: true
   episode: '8'
-  elimine: Philippe Duron Philippe
-  elimine_rattache: false
+  elimine: philippe-duron
+  elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 6
   votes:
@@ -23211,8 +23211,8 @@
   type: elimination
   complet: false
   episode: '9'
-  elimine: Moundir Zoughari Moundir
-  elimine_rattache: false
+  elimine: moundir-zoughari
+  elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
   votes: []
@@ -23221,8 +23221,8 @@
   type: elimination
   complet: false
   episode: '9'
-  elimine: Philippe Bizet Philippe
-  elimine_rattache: false
+  elimine: philippe-bizet
+  elimine_rattache: true
   votes_contre: 1
   votes_exprimes: null
   votes:
@@ -23236,8 +23236,8 @@
   type: jury
   complet: false
   episode: Finaliste
-  finaliste: Martin Bazin Martin
-  finaliste_rattache: false
+  finaliste: martin-bazin
+  finaliste_rattache: true
   votes_pour: 0
   votes_exprimes: 7
   votes: []
@@ -23246,8 +23246,8 @@
   type: jury
   complet: true
   episode: Gagnant
-  laureat: Laurent Maistret Laurent
-  laureat_rattache: false
+  laureat: laurent-maistret
+  laureat_rattache: true
   votes_pour: 7
   votes_exprimes: 7
   votes:
@@ -23291,8 +23291,8 @@
   type: elimination
   complet: true
   episode: '1'
-  elimine: Julie Navarro-Camilleri Julie
-  elimine_rattache: false
+  elimine: julie-navarro-camilleri
+  elimine_rattache: true
   votes_contre: 8
   votes_exprimes: 9
   votes:
@@ -23346,8 +23346,8 @@
   type: elimination
   complet: true
   episode: '1'
-  elimine: Chantal Ménard Chantal
-  elimine_rattache: false
+  elimine: chantal-menard
+  elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 8
   votes:
@@ -23396,8 +23396,8 @@
   type: elimination
   complet: true
   episode: '2'
-  elimine: Raphaële Navarro Raphaële
-  elimine_rattache: false
+  elimine: raphaele-navarro
+  elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 7
   votes:
@@ -23441,8 +23441,8 @@
   type: elimination
   complet: true
   episode: '3'
-  elimine: Cédric Giosserand-Lucas Cédric
-  elimine_rattache: false
+  elimine: cedric-giosserand-lucas
+  elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 6
   votes:
@@ -23481,8 +23481,8 @@
   type: elimination
   complet: false
   episode: '4'
-  elimine: Olivier Moenaert Olivier
-  elimine_rattache: false
+  elimine: olivier-moenaert
+  elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
   votes: []
@@ -23491,8 +23491,8 @@
   type: elimination
   complet: true
   episode: '4'
-  elimine: Tiffany Gounin Tiffany
-  elimine_rattache: false
+  elimine: tiffany-gounin
+  elimine_rattache: true
   votes_contre: 1
   votes_exprimes: 6
   annulation: partielle
@@ -23535,8 +23535,8 @@
   type: elimination
   complet: true
   episode: '5'
-  elimine: Clémentine Jullien Clémentine
-  elimine_rattache: false
+  elimine: clementine-jullien
+  elimine_rattache: true
   votes_contre: 3
   votes_exprimes: 5
   votes:
@@ -23570,8 +23570,8 @@
   type: elimination
   complet: false
   episode: '6'
-  elimine: Ludovic Laresche Ludovic
-  elimine_rattache: false
+  elimine: ludovic-laresche
+  elimine_rattache: true
   votes_contre: 2
   votes_exprimes: null
   votes:
@@ -23652,8 +23652,8 @@
   type: elimination
   complet: true
   episode: '6'
-  elimine: Jérémy Raffin Jérémy
-  elimine_rattache: false
+  elimine: jeremy-raffin
+  elimine_rattache: true
   votes_contre: 7
   votes_exprimes: 10
   votes:
@@ -23712,8 +23712,8 @@
   type: elimination
   complet: false
   episode: '7'
-  elimine: Dylan Thiry Dylan
-  elimine_rattache: false
+  elimine: dylan-thiry
+  elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
   votes: []
@@ -23722,8 +23722,8 @@
   type: elimination
   complet: false
   episode: '7'
-  elimine: Candice Boisson Candice
-  elimine_rattache: false
+  elimine: candice-boisson
+  elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 9
   votes:
@@ -23772,8 +23772,8 @@
   type: elimination
   complet: false
   episode: '8'
-  elimine: Alban Pellegrin Alban
-  elimine_rattache: false
+  elimine: alban-pellegrin
+  elimine_rattache: true
   votes_contre: 7
   votes_exprimes: 9
   votes:
@@ -23822,8 +23822,8 @@
   type: elimination
   complet: false
   episode: '8'
-  elimine: Yassin Metiri Yassin
-  elimine_rattache: false
+  elimine: yassin-metiri
+  elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
   votes: []
@@ -23832,8 +23832,8 @@
   type: elimination
   complet: false
   episode: '9'
-  elimine: Cassandre Girard Cassandre
-  elimine_rattache: false
+  elimine: cassandre-girard
+  elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 8
   votes:
@@ -23872,8 +23872,8 @@
   type: elimination
   complet: false
   episode: '10'
-  elimine: Nathalie Ensargueix Nathalie
-  elimine_rattache: false
+  elimine: nathalie-ensargueix
+  elimine_rattache: true
   votes_contre: 3
   votes_exprimes: 6
   annulation: partielle
@@ -23911,8 +23911,8 @@
   type: elimination
   complet: false
   episode: '11'
-  elimine: Javier Rodriguez Javier
-  elimine_rattache: false
+  elimine: javier-rodriguez
+  elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
   votes: []
@@ -23921,8 +23921,8 @@
   type: elimination
   complet: false
   episode: '11'
-  elimine: Jérémy Raffin Jérémy
-  elimine_rattache: false
+  elimine: jeremy-raffin
+  elimine_rattache: true
   votes_contre: 1
   votes_exprimes: null
   votes:
@@ -23936,8 +23936,8 @@
   type: jury
   complet: false
   episode: Finaliste
-  finaliste: Pascal Salviani Pascal
-  finaliste_rattache: false
+  finaliste: pascal-salviani
+  finaliste_rattache: true
   votes_pour: 4
   votes_exprimes: 9
   votes:

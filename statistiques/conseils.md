@@ -176,10 +176,12 @@ scrutins sont tenus à l’écart de tous les calculs de cette page.
 </table>
 </div>
 
-<p class="note">{{ j.sans_nom }} de ces scrutins n’affichent pas de nom : la
-cellule source y mêle une vignette et un prénom, et le libellé qui en sort ne
-se rattache à personne. Le décompte des voix, lui, est bon. Plutôt que de
-deviner qui se cache derrière, la case reste vide.</p>
+{% if j.sans_nom > 0 %}
+<p class="note">{% if j.sans_nom == 1 %}Un de ces scrutins n’affiche{% else %}{{ j.sans_nom }} de ces scrutins n’affichent{% endif %}
+pas de nom : la cellule source y mêle une vignette et un prénom, et le libellé
+qui en sort ne se rattache à personne. Le décompte des voix, lui, est bon.
+Plutôt que de deviner qui se cache derrière, la case reste vide.</p>
+{% endif %}
 
 <p class="note">Cette dernière analyse ne porte que sur les
 {{ c.conseils_complets }} conseils dont le dépouillement est complet, c’est-à-dire

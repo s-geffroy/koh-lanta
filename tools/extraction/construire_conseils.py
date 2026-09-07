@@ -64,21 +64,59 @@ ENTETE = """# ATTENTION : fichier genere. Ne pas editer a la main.
 
 
 def index_participations(parts):
-    """prenom normalise -> liste de participations, par saison."""
+    """prenom normalise -> liste de participations, par saison.
+
+    Le nom COMPLET entre dans le meme index, sous sa propre cle. Il ne sert
+    qu'a rattraper les libelles ou la source donne les deux formes a la suite :
+    la cellule « [[Fichier:Ugo.png|75px|link=Ugo Lartiche]]<br />Ugo » sort de
+    l'extraction en « Ugo Lartiche Ugo », et aucune des deux moities seules
+    n'est ce qui est ecrit.
+    """
     idx = defaultdict(lambda: defaultdict(list))
+    complets = defaultdict(lambda: defaultdict(list))
     for p in parts:
         idx[p["saison"]][slug(p["nom"])].append(p)
+        if p.get("nom_complet"):
+            complets[p["saison"]][slug(p["nom_complet"])].append(p)
+    for sid, table in complets.items():
+        idx[sid]["_complets"] = table
     return idx
 
 
+def _un_seul(cands):
+    ids = {p["id"] for p in cands}
+    return cands[0]["id"] if len(ids) == 1 else None
+
+
 def resoudre(nom, index_saison):
-    """Rend (identifiant, motif_d_echec)."""
+    """Rend (identifiant, motif_d_echec).
+
+    Deux passes, toutes deux par egalite EXACTE -- on ne devine jamais.
+
+    1. le libelle entier, contre les prenoms de la saison ;
+    2. son plus long prefixe qui soit exactement un NOM COMPLET de la saison.
+
+    La seconde passe n'existe que pour les libelles doubles decrits plus haut.
+    Elle ne s'applique qu'a un nom complet, jamais a un prenom nu : « Marie
+    Laure » ne doit pas devenir « Marie » parce qu'une Marie joue cette
+    saison-la.
+    """
     cands = index_saison.get(slug(nom or ""))
-    if not cands:
-        return None, "inconnu"
-    if len(cands) > 1:
-        return None, "homonyme"
-    return cands[0]["id"], None
+    if cands:
+        if len({p["id"] for p in cands}) > 1:
+            return None, "homonyme"
+        return cands[0]["id"], None
+
+    complets = index_saison.get("_complets") or {}
+    mots = (nom or "").split()
+    for k in range(len(mots) - 1, 1, -1):
+        lot = complets.get(slug(" ".join(mots[:k])))
+        if not lot:
+            continue
+        if len({p["id"] for p in lot}) > 1:
+            return None, "homonyme"
+        return lot[0]["id"], None
+    return None, "inconnu"
 
 
 def completer_par_seconde_source(base, autre, sid, rapport):

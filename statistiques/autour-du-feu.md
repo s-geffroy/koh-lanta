@@ -151,7 +151,7 @@ clair. [Qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }}) montre
 la même chose au niveau du bulletin : le bandeau est le seul trait qui guide
 l’écriture d’un nom.
 
-## Le sexe minoritaire, lui, protège
+## Le sexe minoritaire : l’écart tient, la démonstration a cédé
 
 {% assign smin = f.sexe | first %}
 {% assign smaj = f.sexe | last %}
@@ -166,16 +166,29 @@ représenté du camp et partir quand il est le plus représenté.</p>
   ({{ smin.cas }} sur {{ smin.effectif }}). Sexe majoritaire :
   <b>{{ smaj.probabilite }} %</b> ({{ smaj.cas }} sur {{ smaj.effectif }}).</p>
   <p>{{ ts.observe | round: 1 }} points, {{ ts.ecart_types }} écarts-types
-  <b>sous</b> le hasard, p ajustée {{ ts.p_ajustee }}. C’est la <b>plus haute
-  des p ajustées retenues de ce site</b>, et il faut le dire ainsi : une saison
-  de plus pourrait la faire basculer dans un sens comme dans l’autre.</p>
+  <b>sous</b> le hasard. Prise seule, la p vaut {{ ts.p }} ; corrigée avec les
+  quarante et un autres tests de ce site, elle vaut
+  <b>{{ ts.p_ajustee }}</b> — et <b>ce résultat n’est donc plus retenu</b>.</p>
 </div>
 
-C’est l’inverse du bandeau, et c’est l’inverse de l’intuition. La lecture la
-plus économe est que **la majorité se mange elle-même** : quand un camp compte
-six hommes et trois femmes, les bulletins des six se partagent entre eux. Rien
-ici ne dit qu’il s’agit d’une stratégie ; le chiffre dit seulement où tombent
-les voix.
+<p class="note"><strong>Cette phrase-ci a remplacé la précédente, et il vaut la
+peine de dire pourquoi.</strong> Cette page annonçait que ce résultat portait la
+plus haute des p ajustées retenues, et qu’« une saison de plus pourrait la faire
+basculer ». Ce n’est pas une saison qui l’a fait basculer, c’est une
+<a href="{{ '/sources/' | relative_url }}">réparation d’extraction</a> : des
+libellés de la forme « Ugo Lartiche Ugo », résidus d’une cellule qui mêle une
+vignette et un prénom, ne se rattachaient à personne. Quarante-quatre
+éliminations sont revenues, l’écart n’a presque pas bougé — de
+{{ ts.observe | round: 1 }} points contre 4,5 auparavant — mais la correction
+pour tests multiples ne le garde plus. <strong>L’effet est le même ; c’est notre
+droit de l’affirmer qui a changé.</strong></p>
+
+L’écart va à l’inverse du bandeau, et à l’inverse de l’intuition. La lecture la
+plus économe serait que **la majorité se mange elle-même** : quand un camp compte
+six hommes et trois femmes, les bulletins des six se partagent entre eux. Mais
+il faut lire cette explication pour ce qu’elle est — une explication d’un écart
+qu’on ne peut plus distinguer du hasard une fois la correction appliquée. Elle
+attend d’autres saisons.
 
 <p class="note"><strong>Une seconde lecture, tout aussi compatible, et elle
 oblige à la prudence.</strong> Un sexe devient minoritaire dans un camp <em>parce
@@ -268,9 +281,11 @@ de l’épisode et partir quand on n’a rien gagné.</p>
   conseils tribaux au dépouillement incomplet, on ignore qui était là — ils sont
   écartés, et [la complétude]({{ '/completude/' | relative_url }}) montre que
   cela concerne surtout les saisons récentes.</p>
-  <p><b>Quatre tests, deux retenus</b> — et l’un des deux de justesse. Les deux
-  autres sont publiés comme non concluants, avec leur écart et leur intervalle :
-  ils ne sont pas cachés, ils sont le prix de la liste déclarée d’avance. Le
-  registre complet et la correction pour tests multiples sont sur
-  [La méthode]({{ '/methode/' | relative_url }}).</p>
+  <p><b>Quatre tests, un seul retenu</b> : le bandeau. Les trois autres sont
+  publiés comme non concluants, avec leur écart et leur intervalle — ils ne sont
+  pas cachés, ils sont le prix de la liste déclarée d’avance. Le sexe
+  minoritaire était le deuxième jusqu’à ce qu’une réparation de données le fasse
+  repasser sous le seuil : c’est précisément à cela que sert une liste arrêtée
+  avant de regarder. Le registre complet et la correction pour tests multiples
+  sont sur [La méthode]({{ '/methode/' | relative_url }}).</p>
 </div>

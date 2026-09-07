@@ -357,6 +357,23 @@ passent de 203 à **578**, et l’index « épisode de sortie » — celui qui d
 l’exposition aux épreuves — de 248 à environ 600 participations sur 645. Un
 contrôle refuse désormais tout nom contenant de la syntaxe MediaWiki.
 
+**La même vignette avait une seconde moitié, trouvée bien plus tard.** Quand la
+cellule porte à la fois la vignette et le prénom —
+`[[Fichier:Ugo.png|75px|link=Ugo Lartiche]]<br />Ugo` — le nettoyage rend les
+deux à la suite : « Ugo Lartiche Ugo », qui n’est le nom de personne. Trois
+saisons entières y perdaient leurs éliminés. La résolution essaie désormais, à
+défaut du libellé entier, son plus long préfixe qui soit **exactement** un nom
+complet de la saison : aucune valeur n’est devinée, et un préfixe ne peut jamais
+valoir un prénom nu. Les éliminés rattachés passent de 578 à **622** sur 649.
+
+Cette réparation-là a coûté un résultat. L’effet du **sexe minoritaire** portait
+la plus haute des p ajustées retenues du site, et
+[la page le disait]({{ '/statistiques/autour-du-feu/' | relative_url }}) — « une
+saison de plus pourrait la faire basculer ». Quarante-quatre éliminations de
+plus ont suffi : l’écart n’a presque pas bougé, la correction pour tests
+multiples ne le garde plus. C’est exactement ce à quoi sert une liste de tests
+arrêtée avant de regarder.
+
 Trois chiffres publiés ont bougé, tous dans le sens d’une base plus large :
 
 - les **votes du jury final** détectés passent de 8 à
