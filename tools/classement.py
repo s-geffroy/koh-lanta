@@ -868,6 +868,29 @@ def tout(saisons, parts, conseils, epreuves):
                   if not any(mesures[k]["_sort"] == "vainqueur"
                              for k in cles_par[s["cle"]])]
 
+    # Les longues carrieres, et ou elles tombent. C'est la question qu'on pose
+    # en premier devant un classement -- « et untel ? » -- et la reponse est
+    # souvent plus instructive que le top lui-meme : un nom que tout le monde
+    # connait n'est pas forcement un nom que les donnees distinguent. La regle
+    # de selection est enoncee, pas choisie : au moins trois participations
+    # dans une saison achevee.
+    carrieres = []
+    for s in sujets:
+        ks = cles_par[s["cle"]]
+        if len(ks) < 3:
+            continue
+        p = [mesures[k] for k in ks]
+        carrieres.append({
+            "rang": s["rang"], "nom": s["nom"], "score": round(s["score"], 3),
+            "participations": len(ks),
+            "titres": sum(1 for m in p if m["_sort"] == "vainqueur"),
+            "part_top": s.get("part_top"),
+            "rang_p05": s.get("rang_p05"), "rang_p95": s.get("rang_p95"),
+            "facettes": {c: round(s["z"][c], 2) for c in CLES},
+            "preuve": {c: int(s["preuve"][c]) for c in CLES},
+        })
+    carrieres.sort(key=lambda x: (-x["participations"], x["rang"]))
+
     facettes = []
     for cle, libelle, question, mesure, denominateur, sens, _ in FACETTES:
         classement = sorted(sujets, key=lambda s: (-s["z"][cle], s["cle"]))
@@ -934,6 +957,7 @@ def tout(saisons, parts, conseils, epreuves):
         "correlations_bornes": bornes_des_correlations(correl),
         "artefacts": artefacts,
         "couverture_epreuves": couverture,
+        "carrieres": carrieres,
         "palmares": {
             "auc": round(auc, 3) if auc is not None else None,
             "rang_median_vainqueurs": int(np.median(

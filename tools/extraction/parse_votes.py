@@ -33,6 +33,42 @@ RE_ROWSPAN = re.compile(r'rowspan\s*=\s*"?(\d+)"?', re.I)
 RE_BARRE = re.compile(r"<s>(.*?)</s>", re.S | re.I)
 
 
+def _couper_hors_modele(reste):
+    """Coupe sur « || » et « !! », mais JAMAIS a l'interieur d'un modele.
+
+    Un separateur de cellules est un `||` de premier niveau. Or les tableaux
+    Fandom recents ecrivent l'elimine ainsi :
+
+        |{{Tribebox-bw||}}<span style="color:black">Égalité</span>
+
+    Le `||` est ici un argument VIDE du modele, pas une fin de cellule. Coupe
+    dessus, la ligne rendait deux cellules -- « {{Tribebox-bw » et
+    « }}…Égalité » -- et le releve des conseils d'All Stars s'est retrouve avec
+    un elimine nomme « {{Tribebox-bw ». Le compteur de profondeur existait
+    deja, mais il ne servait qu'entre les lignes.
+    """
+    morceaux, buf, t, l, i = [], [], 0, 0, 0
+    while i < len(reste):
+        deux = reste[i:i + 2]
+        if deux == "{{":
+            t += 1
+        elif deux == "}}":
+            t = max(0, t - 1)
+        elif deux == "[[":
+            l += 1
+        elif deux == "]]":
+            l = max(0, l - 1)
+        elif deux in ("||", "!!") and t == 0 and l == 0:
+            morceaux.append("".join(buf))
+            buf = []
+            i += 2
+            continue
+        buf.append(reste[i])
+        i += 1
+    morceaux.append("".join(buf))
+    return morceaux
+
+
 def cellules_brutes(ligne):
     """Coupe une ligne de tableau en cellules, attributs conserves."""
     cells, buf, t, l = [], None, 0, 0
@@ -43,7 +79,7 @@ def cellules_brutes(ligne):
             if buf is not None:
                 cells.append("\n".join(buf))
             reste = s[1:]
-            morceaux = re.split(r"\|\||!!", reste)
+            morceaux = _couper_hors_modele(reste)
             buf = [morceaux[0]]
             for m in morceaux[1:]:
                 cells.append("\n".join(buf))

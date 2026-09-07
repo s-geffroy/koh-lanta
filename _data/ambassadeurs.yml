@@ -3,7 +3,7 @@
 ambassades: 20
 nommees: 12
 part_nommees: 60.0
-sources_accord: 5
+sources_accord: 4
 sources_desaccord: 1
 par_tirage: 3
 elimine_ambassadeur: 3
@@ -143,7 +143,7 @@ lignes:
   nombre: 2
   tirage_au_sort: true
   elimine_est_ambassadeur: true
-  source: wikipedia-fr
+  source: fandom
   phrase: Les ambassadeurs Freddy et Florence ne s'étant pas mis d'accord pour éliminer un aventurier,
     un tirage au sort a eu lieu, à l'issue duquel Florence est éliminée.
 - saison: sp5

@@ -1401,10 +1401,10 @@ conseils:
     part_moyenne: 58.7
   - periode: 2025-2029
     debut: 2025
-    conseils: 30
-    voix_moyennes: 6.0
-    votants_moyens: 9.7
-    part_moyenne: 63.5
+    conseils: 32
+    voix_moyennes: 6.3
+    votants_moyens: 10.1
+    part_moyenne: 64.3
   conseils_unanimes: 0
   part_unanimes: 0.0
   part_serres: 45.1
@@ -1703,8 +1703,8 @@ finale:
     rangs_confirmes: 10
     rangs_dementis: 0
     ordre_atteste: 5
-    ordre_croisable: 8
-    ordre_concordant: 8
+    ordre_croisable: 7
+    ordre_concordant: 7
     saisons_sans_poteaux:
     - s02
     - s08
@@ -2329,7 +2329,7 @@ revenants:
   titres_total: 36
   vainqueurs_revenus: 12
   vainqueurs_regagnants: 1
-  vainqueurs_en_jeu: 3
+  vainqueurs_en_jeu: 2
   apres_le_titre:
   - sort: elimine_conseil
     effectif: 13
@@ -6953,9 +6953,9 @@ programme:
     premiere: 2024
     derniere: 2024
 reciprocite:
-  couples: 1860
-  reciproques: 700
-  part: 37.6
+  couples: 1875
+  reciproques: 702
+  part: 37.4
 arc_des_votes:
   saison: s16
   titre: L'Île au trésor
@@ -7434,7 +7434,7 @@ premiere_epreuve:
   survie_ensemble: 61.4
   saisons_couvertes: 29
 epreuves:
-  epreuves: 749
+  epreuves: 753
   saisons_couvertes: 29
   saisons_sans_donnee:
   - s03
@@ -7442,10 +7442,10 @@ epreuves:
   - s12
   - s14
   - sp2
-  collectives: 374
-  individuelles: 375
-  immunites: 383
-  conforts: 366
+  collectives: 376
+  individuelles: 377
+  immunites: 384
+  conforts: 369
   seuil_classement: 8
   classement_effectif: 158
   ratio_moyen: 20.0
@@ -7694,6 +7694,9 @@ epreuves:
   - personne: François-David Cardonnel
     id: francois-david-cardonnel
     victoires: 7
+  - personne: Lola Besse
+    id: lola-besse
+    victoires: 7
   - personne: Romuald Lafite
     id: romuald-lafite
     victoires: 6
@@ -7717,9 +7720,6 @@ epreuves:
     victoires: 5
   - personne: Martin Bazin
     id: martin-bazin
-    victoires: 5
-  - personne: Pascal Salviani
-    id: pascal-salviani
     victoires: 5
   par_metier:
   - code: encadrement
@@ -9608,7 +9608,7 @@ indicateurs:
     conseils_complets: 4
     tension_conseils: 25.0
     dispersion_votes: 0.716
-    epreuves: 24
+    epreuves: 26
     epreuves_individuelles: 15
     domination_epreuves: 0.246
     meilleur_gagnant: claude-dartois
@@ -9664,15 +9664,15 @@ indicateurs:
     survie_moyenne: null
     abandons: 0
     taux_abandon: 0.0
-    conseils: 4
-    conseils_complets: 1
+    conseils: 5
+    conseils_complets: 2
     tension_conseils: 0.0
-    dispersion_votes: 0.964
-    epreuves: 2
-    epreuves_individuelles: 2
-    domination_epreuves: 0.25
-    meilleur_gagnant: clementine-jullien
-    victoires_du_meilleur: 1
+    dispersion_votes: 0.778
+    epreuves: 4
+    epreuves_individuelles: 4
+    domination_epreuves: 0.188
+    meilleur_gagnant: dorian-louvet
+    victoires_du_meilleur: 2
     colliers: 0
     colliers_joues: 0
     voix_annulees: 0
@@ -9718,15 +9718,15 @@ completude:
     depuis_page_individuelle: 10
   - champ: jour_sortie
     libelle: Jour de sortie
-    remplis: 629
-    manquants: 16
-    part: 97.5
+    remplis: 631
+    manquants: 14
+    part: 97.8
     depuis_page_individuelle: 2
   - champ: sort
     libelle: Manière de sortir
-    remplis: 629
-    manquants: 16
-    part: 97.5
+    remplis: 631
+    manquants: 14
+    part: 97.8
     depuis_page_individuelle: 0
   - champ: localisation
     libelle: Département d'origine
@@ -9766,10 +9766,10 @@ completude:
     depuis_page_individuelle: 547
   champs_complets: 4
   champs_suivis: 13
-  trous: 410
+  trous: 406
   valeurs_suivies: 8385
   comblees: 2311
-  part_remplie: 95.11
+  part_remplie: 95.16
 palmares:
   renseignees: 549
   compares: 472
@@ -11300,6 +11300,331 @@ classement:
     fiche_absente: 80
     victoires_invisibles: 73
     participations_invisibles: 39
+  carrieres:
+  - rang: 4
+    nom: Teheiura Teahui
+    score: 1.874
+    participations: 5
+    titres: 0
+    part_top: 76.7
+    rang_p05: 2
+    rang_p95: 148
+    facettes:
+      parcours: 1.84
+      epreuves: 5.63
+      discretion: -0.59
+      lecture: 0.62
+    preuve:
+      parcours: 5
+      epreuves: 48
+      discretion: 26
+      lecture: 18
+  - rang: 505
+    nom: Freddy Boucher
+    score: -0.721
+    participations: 5
+    titres: 0
+    part_top: 0.0
+    rang_p05: 377
+    rang_p95: 519
+    facettes:
+      parcours: -0.59
+      epreuves: -0.24
+      discretion: -0.04
+      lecture: -2.02
+    preuve:
+      parcours: 5
+      epreuves: 9
+      discretion: 20
+      lecture: 8
+  - rang: 1
+    nom: Claude Dartois
+    score: 3.137
+    participations: 4
+    titres: 1
+    part_top: 94.5
+    rang_p05: 1
+    rang_p95: 28
+    facettes:
+      parcours: 5.07
+      epreuves: 7.11
+      discretion: -0.04
+      lecture: 0.42
+    preuve:
+      parcours: 4
+      epreuves: 49
+      discretion: 20
+      lecture: 13
+  - rang: 13
+    nom: Clémence Castel
+    score: 1.318
+    participations: 4
+    titres: 2
+    part_top: 73.9
+    rang_p05: 4
+    rang_p95: 53
+    facettes:
+      parcours: 2.39
+      epreuves: 0.38
+      discretion: 0.79
+      lecture: 1.71
+    preuve:
+      parcours: 4
+      epreuves: 32
+      discretion: 23
+      lecture: 15
+  - rang: 28
+    nom: Coumba Baradji
+    score: 1.015
+    participations: 4
+    titres: 0
+    part_top: 48.4
+    rang_p05: 4
+    rang_p95: 152
+    facettes:
+      parcours: 1.7
+      epreuves: -0.35
+      discretion: 0.29
+      lecture: 2.42
+    preuve:
+      parcours: 4
+      epreuves: 25
+      discretion: 24
+      lecture: 14
+  - rang: 3
+    nom: Jade Handi
+    score: 1.922
+    participations: 3
+    titres: 1
+    part_top: 99.7
+    rang_p05: 1
+    rang_p95: 18
+    facettes:
+      parcours: 3.67
+      epreuves: 1.75
+      discretion: 0.94
+      lecture: 1.33
+    preuve:
+      parcours: 3
+      epreuves: 43
+      discretion: 19
+      lecture: 13
+  - rang: 6
+    nom: Laurent Maistret
+    score: 1.543
+    participations: 3
+    titres: 1
+    part_top: 75.8
+    rang_p05: 3
+    rang_p95: 106
+    facettes:
+      parcours: 3.87
+      epreuves: 1.8
+      discretion: 0.75
+      lecture: -0.25
+    preuve:
+      parcours: 3
+      epreuves: 37
+      discretion: 20
+      lecture: 14
+  - rang: 32
+    nom: Ugo Lartiche
+    score: 0.927
+    participations: 3
+    titres: 1
+    part_top: 45.6
+    rang_p05: 4
+    rang_p95: 456
+    facettes:
+      parcours: 3.41
+      epreuves: 1.4
+      discretion: 0.92
+      lecture: -2.02
+    preuve:
+      parcours: 3
+      epreuves: 29
+      discretion: 17
+      lecture: 8
+  - rang: 40
+    nom: Christelle Gauzet
+    score: 0.819
+    participations: 3
+    titres: 1
+    part_top: 28.0
+    rang_p05: 11
+    rang_p95: 132
+    facettes:
+      parcours: 1.1
+      epreuves: -0.39
+      discretion: 0.9
+      lecture: 1.67
+    preuve:
+      parcours: 3
+      epreuves: 33
+      discretion: 15
+      lecture: 10
+  - rang: 49
+    nom: Candice Boisson
+    score: 0.728
+    participations: 3
+    titres: 0
+    part_top: 1.2
+    rang_p05: 28
+    rang_p95: 209
+    facettes:
+      parcours: 0.2
+      epreuves: 1.71
+      discretion: -0.04
+      lecture: 1.05
+    preuve:
+      parcours: 3
+      epreuves: 21
+      discretion: 20
+      lecture: 16
+  - rang: 167
+    nom: Isabelle Da Silva
+    score: 0.125
+    participations: 3
+    titres: 0
+    part_top: 2.8
+    rang_p05: 31
+    rang_p95: 446
+    facettes:
+      parcours: -0.84
+      epreuves: -0.14
+      discretion: -0.6
+      lecture: 2.08
+    preuve:
+      parcours: 3
+      epreuves: 1
+      discretion: 15
+      lecture: 7
+  - rang: 172
+    nom: Clémentine Jullien
+    score: 0.111
+    participations: 3
+    titres: 0
+    part_top: 3.4
+    rang_p05: 30
+    rang_p95: 482
+    facettes:
+      parcours: 0.64
+      epreuves: -1.18
+      discretion: -1.09
+      lecture: 2.08
+    preuve:
+      parcours: 3
+      epreuves: 17
+      discretion: 13
+      lecture: 7
+  - rang: 231
+    nom: Philippe Bizet
+    score: 0.015
+    participations: 3
+    titres: 0
+    part_top: 9.4
+    rang_p05: 14
+    rang_p95: 488
+    facettes:
+      parcours: 2.81
+      epreuves: -1.02
+      discretion: -1.23
+      lecture: -0.5
+    preuve:
+      parcours: 3
+      epreuves: 24
+      discretion: 20
+      lecture: 13
+  - rang: 260
+    nom: Moussa Niangane
+    score: -0.04
+    participations: 3
+    titres: 0
+    part_top: 10.6
+    rang_p05: 13
+    rang_p95: 524
+    facettes:
+      parcours: 2.47
+      epreuves: -2.29
+      discretion: 0.71
+      lecture: -1.05
+    preuve:
+      parcours: 3
+      epreuves: 20
+      discretion: 18
+      lecture: 11
+  - rang: 274
+    nom: Moundir Zoughari
+    score: -0.072
+    participations: 3
+    titres: 0
+    part_top: 0.0
+    rang_p05: 111
+    rang_p95: 472
+    facettes:
+      parcours: 0.49
+      epreuves: -1.16
+      discretion: -0.52
+      lecture: 0.9
+    preuve:
+      parcours: 3
+      epreuves: 8
+      discretion: 16
+      lecture: 11
+  - rang: 291
+    nom: Patrick Merle
+    score: -0.108
+    participations: 3
+    titres: 0
+    part_top: 0.0
+    rang_p05: 123
+    rang_p95: 506
+    facettes:
+      parcours: 0.65
+      epreuves: -1.7
+      discretion: -0.04
+      lecture: 0.66
+    preuve:
+      parcours: 3
+      epreuves: 13
+      discretion: 16
+      lecture: 10
+  - rang: 331
+    nom: Christina Chevry
+    score: -0.191
+    participations: 3
+    titres: 1
+    part_top: 0.0
+    rang_p05: 145
+    rang_p95: 479
+    facettes:
+      parcours: 0.78
+      epreuves: -0.31
+      discretion: 0.11
+      lecture: -1.35
+    preuve:
+      parcours: 3
+      epreuves: 2
+      discretion: 19
+      lecture: 10
+  - rang: 497
+    nom: Sara Tallon
+    score: -0.652
+    participations: 3
+    titres: 0
+    part_top: 0.0
+    rang_p05: 276
+    rang_p95: 531
+    facettes:
+      parcours: -2.69
+      epreuves: -0.14
+      discretion: 0.48
+      lecture: -0.26
+    preuve:
+      parcours: 3
+      epreuves: 1
+      discretion: 10
+      lecture: 3
   palmares:
     auc: 0.852
     rang_median_vainqueurs: 59
@@ -14671,7 +14996,7 @@ modeles:
   force:
     epreuves_retenues: 284
     saisons_retenues: 28
-    epreuves_ecartees_saison: 2
+    epreuves_ecartees_saison: 4
     vainqueur_hors_plateau: 9
     taux_echec_reconstruction: 3.07
     joueurs: 355
@@ -17321,7 +17646,7 @@ modeles:
       lues: 12
       total: 20
       part_lues: 60.0
-      sources_accord: 5
+      sources_accord: 4
       sources_desaccord: 1
       par_tirage: 3
       elimine_ambassadeur: 3
@@ -22750,7 +23075,7 @@ completude_saisons:
       nature: part
     - cle: epreuves
       valeur: 100.0
-      texte: 24 relevées
+      texte: 26 relevées
       etat: complet
       nature: fait
     - cle: colliers
@@ -23631,7 +23956,7 @@ completude_saisons:
     annee: 2026
     speciale: true
     effectif: 18
-    score: 50.5
+    score: 54.0
     cellules:
     - cle: casting
       valeur: 100.0
@@ -23664,8 +23989,8 @@ completude_saisons:
       etat: manquant
       nature: part
     - cle: jour_sortie
-      valeur: 11.1
-      texte: 2/18
+      valeur: 22.2
+      texte: 4/18
       etat: mince
       nature: part
     - cle: votes_recus
@@ -23684,18 +24009,18 @@ completude_saisons:
       etat: mince
       nature: part
     - cle: conseils
-      valeur: 50.0
-      texte: 2/4
-      etat: partiel
+      valeur: 80.0
+      texte: 4/5
+      etat: eleve
       nature: part
     - cle: bulletins
-      valeur: 25.0
-      texte: 1/4
+      valeur: 40.0
+      texte: 2/5
       etat: mince
       nature: part
     - cle: epreuves
       valeur: 100.0
-      texte: 2 relevées
+      texte: 4 relevées
       etat: complet
       nature: fait
     - cle: colliers
@@ -23775,7 +24100,7 @@ completude_saisons:
     libelle: Jour de sortie
     court: Sortie
     nature: part
-    moyenne: 97.4
+    moyenne: 97.7
     completes: 33
     concernees: 34
   - cle: votes_recus
@@ -23803,14 +24128,14 @@ completude_saisons:
     libelle: Conseils rattachés à un éliminé
     court: Conseils
     nature: part
-    moyenne: 94.5
+    moyenne: 95.4
     completes: 21
     concernees: 34
   - cle: bulletins
     libelle: Conseils au dépouillement complet
     court: Bulletins
     nature: part
-    moyenne: 46.1
+    moyenne: 46.5
     completes: 0
     concernees: 34
   - cle: epreuves
@@ -23864,6 +24189,6 @@ completude_saisons:
     concernees: 27
   saisons: 34
   cases: 604
-  moyenne: 84.5
+  moyenne: 84.6
   meilleure: s05
   pire: sp8

@@ -25688,7 +25688,7 @@
   type: elimination
   complet: false
   episode: '1'
-  elimine: '{{Tribebox-bw'
+  elimine: Égalité
   elimine_rattache: false
   votes_contre: null
   votes_exprimes: null
@@ -25790,8 +25790,8 @@
   type: elimination
   complet: true
   episode: '1'
-  elimine: '}} Égalité'
-  elimine_rattache: false
+  elimine: maxime-lubian
+  elimine_rattache: true
   votes_contre: 11
   votes_exprimes: 18
   votes:
@@ -25890,7 +25890,7 @@
   type: elimination
   complet: false
   episode: '1'
-  elimine: maxime-lubian
+  elimine: joana-callico
   elimine_rattache: true
   votes_contre: 11
   votes_exprimes: 18
@@ -25898,10 +25898,100 @@
 - saison: sp8
   numero: 4
   type: elimination
-  complet: false
-  episode: null
-  elimine: joana-callico
+  complet: true
+  episode: '2'
+  elimine: moussa-niangane
   elimine_rattache: true
-  votes_contre: null
-  votes_exprimes: null
+  votes_contre: 12
+  votes_exprimes: 16
+  votes:
+  - votant: camille-sold
+    votant_rattache: true
+    cible: moussa-niangane
+    cible_rattachee: true
+    annule: false
+  - votant: charlotte-rasquin
+    votant_rattache: true
+    cible: moussa-niangane
+    cible_rattachee: true
+    annule: false
+  - votant: christina-chevry
+    votant_rattache: true
+    cible: moussa-niangane
+    cible_rattachee: true
+    annule: false
+  - votant: clementine-jullien
+    votant_rattache: true
+    cible: moussa-niangane
+    cible_rattachee: true
+    annule: false
+  - votant: dorian-louvet
+    votant_rattache: true
+    cible: moussa-niangane
+    cible_rattachee: true
+    annule: false
+  - votant: freddy-boucher
+    votant_rattache: true
+    cible: moussa-niangane
+    cible_rattachee: true
+    annule: false
+  - votant: jacques-roque
+    votant_rattache: true
+    cible: nicolas-pretot
+    cible_rattachee: true
+    annule: false
+  - votant: laure-canevarolo
+    votant_rattache: true
+    cible: moussa-niangane
+    cible_rattachee: true
+    annule: false
+  - votant: lola-besse
+    votant_rattache: true
+    cible: moussa-niangane
+    cible_rattachee: true
+    annule: false
+  - votant: moussa-niangane
+    votant_rattache: true
+    cible: laure-canevarolo
+    cible_rattachee: true
+    annule: false
+  - votant: naoil-tita
+    votant_rattache: true
+    cible: vincent-blier
+    cible_rattachee: true
+    annule: false
+  - votant: nicolas-pretot
+    votant_rattache: true
+    cible: moussa-niangane
+    cible_rattachee: true
+    annule: false
+  - votant: tania-cakarevic
+    votant_rattache: true
+    cible: moussa-niangane
+    cible_rattachee: true
+    annule: false
+  - votant: ugo-lartiche
+    votant_rattache: true
+    cible: moussa-niangane
+    cible_rattachee: true
+    annule: false
+  - votant: vincent-blier
+    votant_rattache: true
+    cible: moussa-niangane
+    cible_rattachee: true
+    annule: false
+  - votant: yassin-metiri
+    votant_rattache: true
+    cible: laure-canevarolo
+    cible_rattachee: true
+    annule: false
+- saison: sp8
+  numero: 5
+  type: elimination
+  complet: false
+  episode: '2'
+  elimine: naoil-tita
+  elimine_rattache: true
+  votes_contre: 12
+  votes_exprimes: 16
   votes: []

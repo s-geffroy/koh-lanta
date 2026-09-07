@@ -44,9 +44,21 @@ SEASONS=[
  ("sp7","Koh-Lanta : La Légende"),("sp8","Koh-Lanta All Stars"),
 ]
 
+# Meme regle que dans fetch.py : le wikitexte est versionne comme preuve de
+# provenance et ne se retelecharge pas -- sauf pour une saison EN COURS, dont
+# la page grossit d'un episode par semaine.
+#
+#     tools/atelier python3 specs/sources/fetch_fandom.py --rafraichir sp8
+RAFRAICHIR = set()
+if "--rafraichir" in sys.argv:
+    RAFRAICHIR.update(sys.argv[sys.argv.index("--rafraichir") + 1:])
+    SEASONS = [(sid, t) for sid, t in SEASONS if sid in RAFRAICHIR] or SEASONS
+    print("redemande forcee :", ", ".join(sorted(RAFRAICHIR)))
+
 for sid,title in SEASONS:
     path=os.path.join(OUT,sid+".fandom.wiki")
-    if os.path.exists(path) and os.path.getsize(path)>5000:
+    if (os.path.exists(path) and os.path.getsize(path)>5000
+            and sid not in RAFRAICHIR):
         print(f"{sid:5s} cache            {os.path.getsize(path)}"); continue
     t=content(title); used=title
     if not t or "Tribebox" not in t:

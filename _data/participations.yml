@@ -25003,74 +25003,6 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
-- id: maxime-lubian
-  nom: Maxime
-  nom_complet: Maxime Lubian
-  saison: sp8
-  genre: h
-  age: 34
-  profession: Responsable communication de la fédération de pêche
-  localisation: Vosges
-  edition_origine: La Revanche des 4 Terres
-  tribu: Violet
-  couleur: null
-  parcours: null
-  jour_sortie: 3
-  sort: elimine_conseil
-  motif: Éliminé au conseil
-  votes_recus: 20
-  classement: 18
-  victoires_collectives: 0
-  victoires_individuelles: 0
-  sources:
-    genre: wikipedia-fr
-    age: wikipedia-fr
-    tribu: fandom
-    jour_sortie: fandom
-    sort: fandom
-    motif: fandom
-    nom_complet: fandom
-    votes_recus: fandom
-    edition_origine: fandom
-    localisation: fandom (page individuelle)
-    profession: fandom (page individuelle)
-    classement: fandom (page individuelle)
-    victoires_collectives: fandom (page individuelle)
-    victoires_individuelles: fandom (page individuelle)
-- id: joana-callico
-  nom: Joana
-  nom_complet: Joana Callico
-  saison: sp8
-  genre: f
-  age: 33
-  profession: Gérante d'un salon de beauté
-  localisation: Seine-Saint-Denis
-  edition_origine: La Revanche des 4 Terres
-  tribu: Violet
-  couleur: null
-  parcours: null
-  jour_sortie: 3
-  sort: elimine_conseil
-  motif: Éliminée au conseil
-  votes_recus: 0
-  classement: 17
-  victoires_collectives: 0
-  victoires_individuelles: 0
-  sources:
-    genre: wikipedia-fr
-    age: wikipedia-fr
-    tribu: fandom
-    jour_sortie: fandom
-    sort: fandom
-    motif: fandom
-    nom_complet: fandom
-    votes_recus: fandom
-    edition_origine: fandom
-    localisation: fandom (page individuelle)
-    profession: fandom (page individuelle)
-    classement: fandom (page individuelle)
-    victoires_collectives: fandom (page individuelle)
-    victoires_individuelles: fandom (page individuelle)
 - id: camille-sold
   nom: Camille
   nom_complet: Camille Sold
@@ -25253,6 +25185,40 @@
     edition_origine: fandom
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
+- id: joana-callico
+  nom: Joana
+  nom_complet: Joana Callico
+  saison: sp8
+  genre: f
+  age: 33
+  profession: Gérante d'un salon de beauté
+  localisation: Seine-Saint-Denis
+  edition_origine: La Revanche des 4 Terres
+  tribu: Violet
+  couleur: null
+  parcours: null
+  jour_sortie: 3
+  sort: elimine_conseil
+  motif: Éliminée au conseil
+  votes_recus: 0
+  classement: 17
+  victoires_collectives: 0
+  victoires_individuelles: 0
+  sources:
+    genre: wikipedia-fr
+    age: wikipedia-fr
+    tribu: fandom
+    jour_sortie: fandom
+    sort: fandom
+    motif: fandom
+    nom_complet: fandom
+    votes_recus: fandom
+    edition_origine: fandom
+    localisation: fandom (page individuelle)
+    profession: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: laure-canevarolo
   nom: Laure
   nom_complet: Laure Canevarolo
@@ -25268,7 +25234,7 @@
   jour_sortie: null
   sort: null
   motif: Encore en jeu
-  votes_recus: 16
+  votes_recus: 17
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -25305,6 +25271,40 @@
     edition_origine: fandom
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
+- id: maxime-lubian
+  nom: Maxime
+  nom_complet: Maxime Lubian
+  saison: sp8
+  genre: h
+  age: 34
+  profession: Responsable communication de la fédération de pêche
+  localisation: Vosges
+  edition_origine: La Revanche des 4 Terres
+  tribu: Violet
+  couleur: null
+  parcours: null
+  jour_sortie: 3
+  sort: elimine_conseil
+  motif: Éliminé au conseil
+  votes_recus: 20
+  classement: 18
+  victoires_collectives: 0
+  victoires_individuelles: 0
+  sources:
+    genre: wikipedia-fr
+    age: wikipedia-fr
+    tribu: fandom
+    jour_sortie: fandom
+    sort: fandom
+    motif: fandom
+    nom_complet: fandom
+    votes_recus: fandom
+    edition_origine: fandom
+    localisation: fandom (page individuelle)
+    profession: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: moussa-niangane
   nom: Moussa
   nom_complet: Moussa Niangane
@@ -25317,14 +25317,16 @@
   tribu: Beige
   couleur: null
   parcours: null
-  jour_sortie: null
-  sort: null
-  motif: Encore en jeu
-  votes_recus: 0
+  jour_sortie: 5
+  sort: elimine_conseil
+  motif: Éliminé au conseil
+  votes_recus: 12
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
     tribu: fandom
+    jour_sortie: fandom
+    sort: fandom
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -25343,14 +25345,16 @@
   tribu: Beige
   couleur: null
   parcours: null
-  jour_sortie: null
-  sort: null
-  motif: Encore en jeu
+  jour_sortie: 5
+  sort: elimine_conseil
+  motif: Éliminée au conseil
   votes_recus: 0
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
     tribu: fandom
+    jour_sortie: fandom
+    sort: fandom
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -25372,7 +25376,7 @@
   jour_sortie: null
   sort: null
   motif: Encore en jeu
-  votes_recus: 0
+  votes_recus: 1
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -25450,7 +25454,7 @@
   jour_sortie: null
   sort: null
   motif: Encore en jeu
-  votes_recus: 0
+  votes_recus: 2
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr

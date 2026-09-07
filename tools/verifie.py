@@ -13,6 +13,7 @@ Ce fichier est la contrepartie de l'exhaustivite : plus le jeu de donnees
 grossit, moins on peut le relire a l'oeil, et plus il faut que les invariants
 soient verifies par une machine.
 """
+import hashlib
 import os
 import re
 import sys
@@ -81,6 +82,49 @@ def charger(nom):
         return None
     with open(chemin, encoding="utf-8") as f:
         return yaml.safe_load(f)
+
+
+# Ce qu'une page de Wikipedia en FRANCAIS porte et qu'une anglaise n'a jamais.
+# Sert a demasquer un fichier `.en.wiki` qui n'est pas anglais.
+MARQUEURS_FRANCAIS = ("Infobox Émission de télévision", "Sources secondaires",
+                      "Travail inédit", "Palette Koh-Lanta")
+
+
+def verifier_sources(c):
+    """La provenance des wikitextes : pas de doublon, pas d'etiquette menteuse.
+
+    Le wikitexte brut est versionne parce qu'il est la PREUVE de provenance :
+    il permet de refaire tout le chemin sans redemander les pages. Une preuve
+    qui ment est pire que pas de preuve.
+
+    Deux fautes se sont produites. Un fichier `sp8.en.wiki` etait la copie
+    octet pour octet de la page FRANCAISE -- les lecteurs d'epreuves et de
+    colliers, qui lisent ce suffixe comme une troisieme source, croyaient donc
+    lire l'anglais. Et le fichier ne se rafraichissant jamais, la copie a
+    survecu a la mise a jour de l'original : elle etait devenue perimee EN PLUS
+    d'etre mal etiquetee.
+    """
+    dossier = os.path.join(RACINE, "specs", "sources", "wiki")
+    if not os.path.isdir(dossier):
+        return
+    empreintes = defaultdict(list)
+    for nom in sorted(os.listdir(dossier)):
+        if not nom.endswith(".wiki"):
+            continue
+        chemin = os.path.join(dossier, nom)
+        with open(chemin, "rb") as f:
+            contenu = f.read()
+        empreintes[hashlib.sha256(contenu).hexdigest()].append(nom)
+        if nom.endswith(".en.wiki"):
+            texte = contenu.decode("utf-8", "replace")
+            trouves = [m for m in MARQUEURS_FRANCAIS if m in texte]
+            if trouves:
+                c.erreur(f"specs/sources/wiki/{nom} : etiquete anglais mais porte "
+                         f"« {trouves[0]} » — provenance fausse")
+    for noms in empreintes.values():
+        if len(noms) > 1:
+            c.erreur(f"specs/sources/wiki : {' et '.join(noms)} sont identiques "
+                     f"octet pour octet — deux etiquettes, une seule source")
 
 
 def verifier_saisons(saisons, c):
@@ -849,6 +893,7 @@ def main():
 
     if saisons:
         verifier_saisons(saisons, c)
+    verifier_sources(c)
     if saisons and parts:
         verifier_participations(parts, saisons, c)
         trous(parts, saisons, c)

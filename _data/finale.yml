@@ -23,8 +23,8 @@ couverture:
   rangs_confirmes: 10
   rangs_dementis: 0
   ordre_atteste: 5
-  ordre_croisable: 8
-  ordre_concordant: 8
+  ordre_croisable: 7
+  ordre_concordant: 7
   saisons_sans_poteaux:
   - s02
   - s08
@@ -509,14 +509,13 @@ lignes:
     - martin-bazin
     - laurent-maistret
     - philippe-bizet
-    ordre_croise: true
   poteaux:
     elimine: philippe-bizet
     vainqueur: martin-bazin
     autre_finaliste: laurent-maistret
   sources:
-    orientation: tableau wikipedia
-    poteaux: tableau wikipedia
+    orientation: tableau fandom
+    poteaux: tableau fandom
 - saison: sp6
   titre: L'Île des héros
   annee: 2020

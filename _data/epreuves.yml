@@ -7361,7 +7361,27 @@
   source: bilan par episode
 - saison: sp6
   episode: 1
+  type: confort
+  forme: collective
+  vainqueurs:
+  - libelle: Nacomo
+    type: tribu
+    id: null
+    resolu: true
+  source: bilan par episode
+- saison: sp6
+  episode: 1
   type: immunite
+  forme: collective
+  vainqueurs:
+  - libelle: Lawaki
+    type: tribu
+    id: null
+    resolu: true
+  source: bilan par episode
+- saison: sp6
+  episode: 2
+  type: confort
   forme: collective
   vainqueurs:
   - libelle: Nacomo
@@ -7879,5 +7899,33 @@
   - libelle: Freddy
     type: personne
     id: freddy-boucher
+    resolu: true
+  source: deroulement
+- saison: sp8
+  episode: 2
+  type: confort
+  forme: individuelle
+  vainqueurs:
+  - libelle: Dorian
+    type: personne
+    id: dorian-louvet
+    resolu: true
+  - libelle: Lola
+    type: personne
+    id: lola-besse
+    resolu: true
+  source: deroulement
+- saison: sp8
+  episode: 2
+  type: immunite
+  forme: individuelle
+  vainqueurs:
+  - libelle: Dorian
+    type: personne
+    id: dorian-louvet
+    resolu: true
+  - libelle: Lola
+    type: personne
+    id: lola-besse
     resolu: true
   source: deroulement

@@ -248,11 +248,13 @@ treize ans d’intervalle.</p>
 
 {% if r.vainqueurs_en_jeu > 0 %}
 <p class="note"><strong>Et ce chiffre peut tomber.</strong>
-{{ r.vainqueurs_en_jeu }} anciens vainqueurs jouent dans l’édition
-<strong>en cours de diffusion</strong>, qui n’entre dans aucun calcul de ce site
-tant qu’elle n’est pas terminée — une saison sans issue connue ne peut pas
-compter. Si l’un d’eux l’emporte, « une seule personne a gagné deux fois »
-cessera d’être vrai, et cette page le dira.</p>
+{{ r.vainqueurs_en_jeu }} anciens vainqueurs sont <strong>encore en
+course</strong> dans l’édition en cours de diffusion, qui n’entre dans aucun
+calcul de ce site tant qu’elle n’est pas terminée — une saison sans issue
+connue ne peut pas compter. Si l’un d’eux l’emporte, « une seule personne a
+gagné deux fois » cessera d’être vrai, et cette page le dira. Une troisième y
+était engagée et vient d’en sortir : le compte se met à jour à chaque
+rafraîchissement de la source, il n’est pas écrit à la main.</p>
 {% endif %}
 
 ## Les plus longues carrières

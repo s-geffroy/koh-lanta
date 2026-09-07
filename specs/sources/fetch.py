@@ -53,9 +53,20 @@ def wikitext(host, title, tries=4):
         return p["revisions"][0]["slots"]["main"]["*"]
     return None
 
+# Les saisons dont il faut REDEMANDER la page, cache ou pas. Le wikitexte est
+# versionne comme preuve de provenance, et on ne le retelecharge donc jamais --
+# sauf pour une saison EN COURS DE DIFFUSION, dont la page grossit d'un episode
+# par semaine. Sans cette liste, le depot garderait indefiniment l'etat du jour
+# ou la saison a ete ajoutee : All Stars y est restee bloquee a deux episodes.
+#
+#     tools/atelier python3 specs/sources/fetch.py specs/sources/spec.json --rafraichir sp8
+RAFRAICHIR = set()
+
+
 def grab(sid, candidates):
     path = os.path.join(OUT, sid + ".wiki")
-    if os.path.exists(path) and os.path.getsize(path) > 2000:
+    if (os.path.exists(path) and os.path.getsize(path) > 2000
+            and sid not in RAFRAICHIR):
         return sid, "cache", os.path.getsize(path)
     for host, title in candidates:
         try:
@@ -69,7 +80,15 @@ def grab(sid, candidates):
     return sid, "INTROUVABLE", 0
 
 if __name__ == "__main__":
-    spec = json.load(open(sys.argv[1]))
+    args = sys.argv[1:]
+    if "--rafraichir" in args:
+        i = args.index("--rafraichir")
+        RAFRAICHIR.update(args[i + 1:])
+        args = args[:i]
+    spec = json.load(open(args[0]))
+    if RAFRAICHIR:
+        print("redemande forcee :", ", ".join(sorted(RAFRAICHIR)))
+        spec = [(sid, c) for sid, c in spec if sid in RAFRAICHIR] or spec
     for sid, cands in spec:
         print("%-5s %-60s %s" % grab(sid, [tuple(c) for c in cands]), flush=True)
         time.sleep(2.5)

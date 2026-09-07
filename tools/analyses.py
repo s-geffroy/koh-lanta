@@ -159,7 +159,11 @@ def revenants(saisons, parts, personnes):
             if p.get("sort") != "vainqueur" or p["saison"] in en_cours:
                 continue
             apres = rangees[i + 1:]
-            if any(q["saison"] in en_cours for q in apres):
+            # « Encore en course » veut dire : engage dans la saison en cours
+            # ET pas encore sorti. Naoil Tita a ete eliminee d'All Stars trois
+            # episodes apres son entree : la compter parmi ceux qui peuvent
+            # encore gagner un second titre serait faux.
+            if any(q["saison"] in en_cours and not q.get("sort") for q in apres):
                 en_jeu += 1
             acheves = [q for q in apres if q["saison"] not in en_cours]
             if not acheves:

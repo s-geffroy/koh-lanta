@@ -138,6 +138,14 @@ lit ce que la precedente a ecrit :
     tools/atelier python3 tools/extraction/ambassadeurs.py --ecrire   # noms lus dans la prose
     tools/atelier python3 tools/extraction/finale.py --ecrire         # orientation, poteaux
 
+Le wikitexte deja recupere n'est JAMAIS redemande : il est versionne comme
+preuve de provenance. Une saison en cours de diffusion fait exception -- sa page
+grossit d'un episode par semaine -- et les deux recuperateurs prennent pour cela
+une option explicite :
+
+    tools/atelier python3 specs/sources/fetch.py specs/sources/spec.json --rafraichir sp8
+    tools/atelier python3 specs/sources/fetch_fandom.py --rafraichir sp8
+
 La deuxieme passe n'est pas une precaution : `fusionner` rend son nom de famille
 a un prenom nu, et la page individuelle de cette personne n'est demandee qu'une
 fois ce nom connu.

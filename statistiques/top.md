@@ -161,6 +161,59 @@ décider que le physique compte plus que le vote.
 </table>
 </div>
 
+## Et les visages qu’on connaît ?
+
+C’est la question qu’on pose en premier devant un classement — *« et untel ? »*
+— et la réponse est souvent plus instructive que le top lui-même. Voici, sans
+tri d’auteur, **tous les aventuriers d’au moins trois saisons achevées**, et où
+ils tombent.
+
+<div class="tableau-large">
+<table data-triable>
+<thead><tr>
+  <th class="nombre">Rang</th><th>Aventurier</th>
+  <th class="nombre">Saisons</th><th class="nombre">Titres</th>
+  <th class="nombre">Score</th>
+  {% for f in c.facettes %}<th class="nombre">{{ f.libelle | remove: "Le " | remove: "La " | remove: "Les " }}</th>{% endfor %}
+</tr></thead>
+<tbody>
+{% for l in c.carrieres %}
+<tr><td class="nombre">{{ l.rang }}</td><td>{{ l.nom }}</td>
+    <td class="nombre">{{ l.participations }}</td>
+    <td class="nombre">{{ l.titres }}</td>
+    <td class="nombre">{{ l.score }}</td>
+    {% for f in c.facettes %}<td class="nombre">{{ l.facettes[f.cle] }}</td>{% endfor %}</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+<p class="legende-figure">Les quatre dernières colonnes sont des écarts à la
+moyenne, en écarts-types : 0 est la moyenne du programme, positif est meilleur.</p>
+
+{% assign cr = c.carrieres %}
+
+<div class="constat">
+  <p><b>{{ cr[0].nom }} est {{ cr[0].rang }}<sup>e</sup>,
+  {{ cr[1].nom }} est {{ cr[1].rang }}<sup>e</sup></b> — et tous deux ont joué
+  {{ cr[0].participations }} saisons. Le nombre de participations ne dit donc
+  rien du niveau : il dit qui la production redemande, ce que
+  <a href="{{ '/statistiques/revenants/' | relative_url }}">les revenants</a>
+  mesurent à part.</p>
+  <p>Ce qui les sépare tient en une colonne. {{ cr[0].nom }} est à
+  <b>{{ cr[0].facettes.epreuves }}</b> sur les épreuves — le deuxième meilleur
+  du programme. {{ cr[1].nom }} est à <b>{{ cr[1].facettes.lecture }}</b> sur la
+  lecture : sur les {{ cr[1].preuve.lecture }} bulletins qu’on peut lire de sa
+  carrière, il a rarement écrit le nom de celui qui partait.</p>
+</div>
+
+<p class="note">Un nom que tout le monde connaît n’est pas un nom que les
+données distinguent, et c’est le plus utile de ce tableau. La notoriété se
+construit à l’écran — sur une phrase, un caractère, une scène. Ce classement ne
+voit ni l’écran ni le montage : il voit des bulletins, des épreuves et des jours
+tenus. <strong>Les deux ne se recouvrent pas, et rien n’oblige à préférer
+celui-ci.</strong></p>
+
 ## Les quatre facettes parlent-elles du même talent ?
 
 Si « bon joueur » désignait quelque chose, les facettes iraient ensemble : celui

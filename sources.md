@@ -561,6 +561,64 @@ c’est un biais systématique contre les moins documentés, et il ne se voit pa
 dans un contrôle de cohérence : les données étaient exactes, c’est la question
 qui était mal posée.</p>
 
+## Une saison qui se joue encore, et trois sources qui mentaient
+
+Le wikitexte brut est versionné dans le dépôt : c’est la **preuve de
+provenance**, et c’est elle qui permet de refaire tout le chemin sans
+redemander les pages. Les scripts de récupération refusent donc de retélécharger
+ce qu’ils ont déjà.
+
+Cette règle est juste pour une saison terminée. Elle est **fausse pour une
+saison en cours** : *All Stars* était figée à l’état du 27 août 2026, deux
+épisodes, alors que trois avaient été diffusés. Les deux récupérateurs prennent
+désormais une option explicite — `--rafraichir sp8` — et le rafraîchissement a
+livré les éliminations de Moussa et de **Naoil Tita**, l’une des trois
+anciennes vainqueures engagées.
+
+### Trois fichiers de provenance fausse
+
+Le contrôle qui les a trouvés est neuf, et il tient en deux règles : deux
+fichiers de source ne peuvent pas être **identiques octet pour octet**, et un
+fichier étiqueté `.en.wiki` ne peut pas porter les marqueurs d’une page
+française. Il a sonné trois fois.
+
+- **`sp8.en.wiki`** était la copie octet pour octet de la page **française**.
+  Les lecteurs d’épreuves et de colliers lisent ce suffixe comme une troisième
+  source : ils croyaient donc lire l’anglais. Et comme un fichier en cache ne se
+  rafraîchit jamais, la copie avait survécu à la mise à jour de l’original —
+  elle était **périmée en plus d’être mal étiquetée**.
+- **`sp2.wiki`** et **`sp4.wiki`** — *Le Choc des héros* et *La Nouvelle
+  Édition* — sont des pages **Fandom** déposées sous le nom de Wikipédia. Pour
+  ces deux saisons, le dépôt croyait croiser deux sources indépendantes alors
+  qu’il comparait une source à elle-même.
+
+<div class="constat">
+  <p>Conséquence directe sur le chiffre publié plus haut : l’épreuve croisée
+  des bulletins portait sur <b>568 bulletins communs</b>. Elle en porte
+  aujourd’hui <b>{{ site.data.croisement_votes.bulletins_communs }}</b>.
+  <b>Un bulletin croisé sur six était une source comparée à elle-même</b>, et
+  son accord parfait était acquis d’avance.</p>
+  <p>Le taux, lui, ne bouge pas : {{ site.data.croisement_votes.part_identiques }} %
+  d’accord, {{ site.data.croisement_votes.divergents }} divergences. Ce qui
+  était faux n’était pas le résultat, c’était la <em>quantité de preuve</em>
+  qu’on lui prêtait.</p>
+</div>
+
+### Un modèle coupé en deux, encore
+
+Le rafraîchissement a aussi réveillé un vieux piège, sous une forme neuve. Les
+tableaux Fandom récents écrivent l’éliminé ainsi :
+
+    |{{Tribebox-bw||}}<span style="color:black">Égalité</span>
+
+Le `||` est ici un **argument vide du modèle**, pas une fin de cellule. Le
+découpage des cellules coupait dessus, et le relevé des conseils d’*All Stars*
+s’est retrouvé avec un éliminé nommé « `{{Tribebox-bw` » et un autre nommé
+« `}} Égalité` ». Le compteur de profondeur existait dans le code — il ne
+servait qu’entre les lignes, jamais à l’intérieur d’une ligne. Il y sert
+désormais, et aucune autre saison n’en est affectée : le contrôle a comparé les
+699 conseils avant et après.
+
 ## Ce qui manque
 
 Le jeu de données n’est pas complet, et le dire fait partie du travail. Voici la
