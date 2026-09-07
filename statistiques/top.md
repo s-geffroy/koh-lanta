@@ -624,5 +624,10 @@ le détail.</p>
 Pour aller voir les mesures une par une :
 [le jeu social]({{ '/statistiques/jeu-social/' | relative_url }}),
 [les épreuves]({{ '/statistiques/epreuves/' | relative_url }}),
+[les colliers]({{ '/statistiques/colliers/' | relative_url }}),
 [la force réelle]({{ '/statistiques/force/' | relative_url }}) et
 [les revenants]({{ '/statistiques/revenants/' | relative_url }}).
+
+Et pour la donnée brute, participation par participation —
+âge, métier, tribu, jour de sortie —
+[les aventuriers]({{ '/aventuriers/' | relative_url }}).

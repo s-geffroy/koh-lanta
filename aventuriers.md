@@ -14,6 +14,14 @@ confondues. {{ g.personnes }} personnes différentes : la différence tient aux
 {{ site.data.stats.records.nb_multi_participants }} aventuriers revenus jouer
 une ou plusieurs fois.
 
+<p class="note">Ce tableau décrit <strong>une aventure à la fois</strong> :
+qui, où, quand, jusqu’à quel jour. Il ne dit pas comment on a joué. Pour cela,
+<a href="{{ '/statistiques/top/' | relative_url }}">le classement des
+joueurs</a> range les
+{{ site.data.stats.classement.joueurs_classes }} aventuriers sur quatre
+facettes — aller loin, gagner les épreuves, n’être pas visé au conseil, écrire
+le nom de celui qui part — et il se cherche de la même façon.</p>
+
 <div class="filtres" data-filtre="tableau-aventuriers">
   <div class="champ">
     <label for="q">Chercher un nom, un métier, une tribu, un département</label>
@@ -97,3 +105,9 @@ sources</a> disent pourquoi pas dans les trois autres.</p>
 </tbody>
 </table>
 </div>
+
+<p class="note">Une même personne revient ici autant de fois qu’elle a joué :
+c’est un tableau de <strong>participations</strong>, pas de personnes. Le
+<a href="{{ '/statistiques/top/' | relative_url }}">classement des joueurs</a>
+fait l’inverse — une ligne par aventurier, ses saisons cumulées, et son rang
+sur chacune des quatre facettes.</p>
