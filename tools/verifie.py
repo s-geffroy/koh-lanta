@@ -450,6 +450,15 @@ def verifier_conseils(conseils, saisons, parts, c):
                     and (x["saison"], x["finaliste"]) not in finalistes):
                 c.erreur(f"{ref} : « {x['finaliste']} » tient la colonne du "
                          f"finaliste battu sans porter `sort: finaliste`")
+            # Le total annonce par la matrice contre les bulletins qu'on y lit.
+            # Un ecart n'est pas forcement une faute de lecture -- la ligne des
+            # totaux est parfois decalee d'une colonne a la source -- mais il
+            # doit se voir.
+            lus = len(x.get("votes") or [])
+            if x.get("votes_pour") is not None and x["votes_pour"] != lus:
+                c.avertir(f"{ref} : le scrutin annonce {x['votes_pour']} voix et "
+                          f"en fait lire {lus} — la ligne des totaux de la "
+                          f"matrice est probablement decalee")
         else:
             for interdit in ("laureat", "finaliste"):
                 if interdit in x:

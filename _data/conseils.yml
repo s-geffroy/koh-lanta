@@ -3177,12 +3177,12 @@
     annule: false
 - saison: s05
   numero: 17
-  type: elimination
+  type: jury
   complet: false
   episode: '13'
-  elimine: francis-bordas
-  elimine_rattache: true
-  votes_contre: 0
+  finaliste: francis-bordas
+  finaliste_rattache: true
+  votes_pour: 0
   votes_exprimes: 7
   votes: []
 - saison: s05
@@ -3832,12 +3832,12 @@
     annule: false
 - saison: s06
   numero: 18
-  type: elimination
+  type: jury
   complet: false
   episode: '13'
-  elimine: emilie-frahi
-  elimine_rattache: true
-  votes_contre: 3
+  finaliste: emilie-frahi
+  finaliste_rattache: true
+  votes_pour: 3
   votes_exprimes: 8
   votes:
   - votant: sebastien-roulle
@@ -5159,12 +5159,12 @@
     annule: false
 - saison: s08
   numero: 18
-  type: elimination
+  type: jury
   complet: false
   episode: '13'
-  elimine: frederic-favier
-  elimine_rattache: true
-  votes_contre: 1
+  finaliste: frederic-favier
+  finaliste_rattache: true
+  votes_pour: 1
   votes_exprimes: 7
   votes:
   - votant: bertrand-bolle
@@ -5839,12 +5839,12 @@
     annule: false
 - saison: s09
   numero: 22
-  type: elimination
+  type: jury
   complet: false
   episode: '13'
-  elimine: patrick-merle
-  elimine_rattache: true
-  votes_contre: 2
+  finaliste: patrick-merle
+  finaliste_rattache: true
+  votes_pour: 2
   votes_exprimes: 7
   votes:
   - votant: isabelle-da-silva
@@ -6569,12 +6569,12 @@
     annule: false
 - saison: s10
   numero: 20
-  type: elimination
+  type: jury
   complet: false
   episode: '14'
-  elimine: claude-dartois
-  elimine_rattache: true
-  votes_contre: null
+  finaliste: claude-dartois
+  finaliste_rattache: true
+  votes_pour: null
   votes_exprimes: null
   votes:
   - votant: kunle-m-babacere-pakorona
@@ -11082,12 +11082,12 @@
     annule: false
 - saison: s16
   numero: 20
-  type: elimination
+  type: jury
   complet: false
   episode: '14'
-  elimine: jesta-hillmann
-  elimine_rattache: true
-  votes_contre: 0
+  finaliste: jesta-hillmann
+  finaliste_rattache: true
+  votes_pour: 0
   votes_exprimes: 10
   votes: []
 - saison: s16
@@ -13561,12 +13561,12 @@
     annule: false
 - saison: s20
   numero: 22
-  type: elimination
+  type: jury
   complet: false
   episode: '14'
-  elimine: cindy-poumeyrol
-  elimine_rattache: true
-  votes_contre: 6
+  finaliste: cindy-poumeyrol
+  finaliste_rattache: true
+  votes_pour: 6
   votes_exprimes: 13
   votes:
   - votant: steeve-demana
@@ -14512,12 +14512,12 @@
     annule: false
 - saison: s21
   numero: 25
-  type: elimination
+  type: jury
   complet: false
   episode: '15'
-  elimine: brice-petit
-  elimine_rattache: true
-  votes_contre: 5
+  finaliste: brice-petit
+  finaliste_rattache: true
+  votes_pour: 5
   votes_exprimes: 12
   votes:
   - votant: dorian-louvet
@@ -15440,12 +15440,12 @@
     annule: false
 - saison: s22
   numero: 21
-  type: elimination
+  type: jury
   complet: false
   episode: '12'
-  elimine: lucie-bertaud
-  elimine_rattache: true
-  votes_contre: 9
+  finaliste: lucie-bertaud
+  finaliste_rattache: true
+  votes_pour: 9
   votes_exprimes: 13
   votes:
   - votant: magali-sevenier
@@ -16370,12 +16370,12 @@
   votes: []
 - saison: s23
   numero: 23
-  type: elimination
+  type: jury
   complet: false
   episode: '14'
-  elimine: geraldine-nicolle
-  elimine_rattache: true
-  votes_contre: 3
+  finaliste: geraldine-nicolle
+  finaliste_rattache: true
+  votes_pour: 3
   votes_exprimes: 11
   votes:
   - votant: ambre-daudet
@@ -17251,12 +17251,12 @@
     annule: false
 - saison: s24
   numero: 23
-  type: elimination
+  type: jury
   complet: false
   episode: '17'
-  elimine: tania-cakarevic
-  elimine_rattache: true
-  votes_contre: 2
+  finaliste: tania-cakarevic
+  finaliste_rattache: true
+  votes_pour: 2
   votes_exprimes: 9
   votes:
   - votant: julie-debever
@@ -18150,12 +18150,12 @@
     annule: false
 - saison: s25
   numero: 22
-  type: elimination
+  type: jury
   complet: false
   episode: '16'
-  elimine: meissa-seck
-  elimine_rattache: true
-  votes_contre: 3
+  finaliste: meissa-seck
+  finaliste_rattache: true
+  votes_pour: 3
   votes_exprimes: 11
   votes:
   - votant: julie-rignault
@@ -18175,12 +18175,12 @@
     annule: false
 - saison: s25
   numero: 23
-  type: elimination
+  type: jury
   complet: false
   episode: '16'
-  elimine: Léa
-  elimine_rattache: false
-  votes_contre: 8
+  laureat: lea-sahin
+  laureat_rattache: true
+  votes_pour: 8
   votes_exprimes: 11
   votes:
   - votant: pauline-bonneil
@@ -19156,12 +19156,12 @@
     annule: false
 - saison: s26
   numero: 24
-  type: elimination
+  type: jury
   complet: false
   episode: '16'
-  elimine: charlotte-rasquin
-  elimine_rattache: true
-  votes_contre: 4
+  finaliste: charlotte-rasquin
+  finaliste_rattache: true
+  votes_pour: 4
   votes_exprimes: 13
   votes:
   - votant: Cécile B
@@ -20080,12 +20080,12 @@
     annule: false
 - saison: s27
   numero: 25
-  type: elimination
+  type: jury
   complet: false
   episode: '17'
-  elimine: mael-lozach
-  elimine_rattache: true
-  votes_contre: 4
+  finaliste: mael-lozach
+  finaliste_rattache: true
+  votes_pour: 4
   votes_exprimes: 11
   votes:
   - votant: Jérôme
@@ -21191,12 +21191,12 @@
     annule: false
 - saison: s28
   numero: 26
-  type: elimination
+  type: jury
   complet: false
   episode: '16'
-  elimine: clarisse-cresseveur
-  elimine_rattache: true
-  votes_contre: 3
+  finaliste: clarisse-cresseveur
+  finaliste_rattache: true
+  votes_pour: 3
   votes_exprimes: 13
   votes:
   - votant: caroline-ledos
@@ -23966,8 +23966,8 @@
   type: jury
   complet: false
   episode: Gagnante
-  laureat: Clémence Clémence
-  laureat_rattache: false
+  laureat: clemence-castel
+  laureat_rattache: true
   votes_pour: 5
   votes_exprimes: 9
   votes:
@@ -24676,12 +24676,12 @@
     annule: false
 - saison: sp6
   numero: 21
-  type: elimination
+  type: jury
   complet: false
   episode: '11'
-  elimine: ines-loucif
-  elimine_rattache: true
-  votes_contre: 2
+  finaliste: ines-loucif
+  finaliste_rattache: true
+  votes_pour: 2
   votes_exprimes: 9
   votes:
   - votant: moussa-niangane
@@ -25621,12 +25621,12 @@
     annule: true
 - saison: sp7
   numero: 25
-  type: elimination
+  type: jury
   complet: false
   episode: '15'
-  elimine: laurent-maistret
-  elimine_rattache: true
-  votes_contre: null
+  finaliste: laurent-maistret
+  finaliste_rattache: true
+  votes_pour: null
   votes_exprimes: null
   annulation: totale
   voix_annulees: 2

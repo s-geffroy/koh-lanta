@@ -101,13 +101,15 @@ def resoudre(nom, index_saison):
     Laure » ne doit pas devenir « Marie » parce qu'une Marie joue cette
     saison-la.
     """
-    cands = index_saison.get(slug(nom or ""))
-    if cands:
+    complets = index_saison.get("_complets") or {}
+    for table in (index_saison, complets):
+        cands = table.get(slug(nom or ""))
+        if not cands:
+            continue
         if len({p["id"] for p in cands}) > 1:
             return None, "homonyme"
         return cands[0]["id"], None
 
-    complets = index_saison.get("_complets") or {}
     mots = (nom or "").split()
     for k in range(len(mots) - 1, 1, -1):
         lot = complets.get(slug(" ".join(mots[:k])))
@@ -117,6 +119,33 @@ def resoudre(nom, index_saison):
             return None, "homonyme"
         return lot[0]["id"], None
     return None, "inconnu"
+
+
+def laureat_declare(libelle, saison, idx):
+    """Rattrape la colonne du laureat quand son libelle ne se resout pas.
+
+    `saisons.yml` est tenu a la main et tranche les homonymes la ou ils
+    existent : « Lea Sahin » plutot que « Lea », parce que deux Lea jouent
+    cette saison-la. Ce n'est donc pas une devinette, c'est la seule source du
+    depot qui sache repondre -- et on ne s'en sert qu'a deux conditions : le
+    conseil doit etre une colonne du scrutin FINAL, et le prenom du vainqueur
+    declare doit etre exactement celui que la colonne porte en tete.
+    """
+    tete = slug((libelle or "").split()[0]) if (libelle or "").split() else ""
+    if not tete:
+        return None
+    trouves = set()
+    for declare in saison.get("vainqueurs") or []:
+        pid, _ = resoudre(declare, idx)
+        if not pid:
+            continue
+        for cands in idx.values():
+            if not isinstance(cands, list):
+                continue
+            for p in cands:
+                if p["id"] == pid and slug(p["nom"]) == tete:
+                    trouves.add(pid)
+    return trouves.pop() if len(trouves) == 1 else None
 
 
 def completer_par_seconde_source(base, autre, sid, rapport):
@@ -179,6 +208,16 @@ def construire(saisons, parts, rapport):
     # un vainqueur qui rejoue une autre saison n'y est pas vainqueur pour
     # autant. Sans la saison, on classerait « jury » des conseils ordinaires.
     vainqueurs = {(p["saison"], p["id"]) for p in parts if p.get("sort") == "vainqueur"}
+    # Le FINALISTE battu non plus n'a pas ete elimine au conseil : il a perdu
+    # au vote du jury. Sa colonne est la seconde moitie du scrutin final, et
+    # les matrices ne la titrent pas toujours « Finaliste » -- souvent, elles
+    # lui donnent simplement le numero de l'episode, comme a un conseil
+    # ordinaire. Le titre ne suffit donc pas : il faut aussi la PLACE.
+    finalistes = {(p["saison"], p["id"]) for p in parts if p.get("sort") == "finaliste"}
+    places_finales = defaultdict(int)
+    for p in parts:
+        if p.get("sort") in ("vainqueur", "finaliste"):
+            places_finales[p["saison"]] += 1
     conseils = []
     accord = {"communs": 0, "accord": 0, "ajoutes": 0, "desaccords": 0}
 
@@ -222,9 +261,17 @@ def construire(saisons, parts, rapport):
 
         idx = index.get(sid, {})
         # Bornes du vote de jury, calculees avant la boucle : le dernier numero
-        # de conseil de la saison, et le nombre de vainqueurs declares.
+        # de conseil de la saison, et le nombre de gens arrives au bout. Le
+        # scrutin final tient UNE COLONNE PAR PERSONNE qui l'a atteint -- deux
+        # d'ordinaire, trois quand le jury a sacre deux laureats -- et ce sont
+        # les dernieres colonnes de la matrice.
+        #
+        # Sur une saison EN COURS, les sorts ne sont pas encore joues : la
+        # fenetre serait grande ouverte et avalerait de vrais conseils. On s'en
+        # tient alors au titre de colonne, qui ne se trompe pas.
         dernier_conseil = max((c["numero"] for c in meilleure), default=0)
-        nb_laureats = max(1, len(s.get("vainqueurs") or []))
+        nb_places = (0 if s.get("en_cours")
+                     else max(1, places_finales.get(sid) or len(s.get("vainqueurs") or [])))
         for c in meilleure:
             elimine_id, echec = resoudre(c["elimine"], idx)
             if echec:
@@ -252,10 +299,18 @@ def construire(saisons, parts, rapport):
             # conseil de milieu de saison qui donne le vainqueur « sortant »
             # n'est pas un vote de jury : c'est une extraction fautive, et on
             # prefere ne rien affirmer plutot que d'affirmer faux.
-            gagnant = bool(elimine_id) and (sid, elimine_id) in vainqueurs
-            final = c["numero"] > dernier_conseil - nb_laureats
+            final = nb_places > 0 and c["numero"] > dernier_conseil - nb_places
             entete = entete_de_colonne(c["episode"])
-            jury = (gagnant and final) or entete in EN_TETES_JURY
+            if not elimine_id and (final or entete in EN_TETES_JURY):
+                repeche = laureat_declare(c["elimine"], s, idx)
+                if repeche:
+                    rapport.append(f"{sid} conseil {c['numero']} : colonne du "
+                                   f"scrutin final rattachee au vainqueur declare "
+                                   f"dans saisons.yml (« {c['elimine']} » → {repeche})")
+                    elimine_id = repeche
+            gagnant = bool(elimine_id) and (sid, elimine_id) in vainqueurs
+            battu = bool(elimine_id) and (sid, elimine_id) in finalistes
+            jury = ((gagnant or battu) and final) or entete in EN_TETES_JURY
             if gagnant and not final and entete not in EN_TETES_JURY:
                 rapport.append(f"{sid} conseil {c['numero']} : ABERRANT — "
                                f"« {c['elimine']} » gagne la saison mais serait "
@@ -265,7 +320,7 @@ def construire(saisons, parts, rapport):
             # Le scrutin final tient UNE LIGNE PAR FINALISTE : celle du gagnant
             # et celle du battu. Les deux sont des bulletins de jury ; seule
             # change la personne au sommet de la colonne.
-            laureat = gagnant or entete in EN_TETES_LAUREAT
+            laureat = gagnant or (entete in EN_TETES_LAUREAT and not battu)
             if jury:
                 rapport.append(
                     f"{sid} conseil {c['numero']} : vote du JURY FINAL, colonne "

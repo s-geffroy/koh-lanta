@@ -4,7 +4,7 @@ title: Le vote du jury
 permalink: /statistiques/jury/
 chapeau: >-
   Le seul scrutin où écrire un nom veut dire « qu’il gagne » — et le seul rendu
-  par des gens qu’on a fait sortir. Pardonnent-ils ?
+  par des gens qu’on a fait sortir. Pardonnent-ils ? Non.
 ---
 
 {% assign m = site.data.stats.modeles %}
@@ -36,14 +36,15 @@ Ils le sont maintenant : **{{ j.bulletins }} bulletins de jury** sur
   figure parmi les candidats, c’est même
   <b>{{ j.part_quand_disponible }} %</b> — sur
   {{ j.bulletins_avec_bourreau_disponible }} bulletins.</p>
-  <p>Plus de deux jurés sur trois couronnent donc celui qui les a sortis. On
+  <p>Près de deux jurés sur trois couronnent donc celui qui les a sortis. On
   tient la démonstration : le jury récompense l’audace.</p>
 </div>
 
-Sauf que non. Un finaliste a traversé toute la saison, il a voté à chaque
-conseil, il a donc écrit beaucoup de noms — dont probablement le vôtre. La
-question n’est pas « le juré vote-t-il pour son bourreau », elle est **« le juré
-vote-t-il pour son bourreau plus souvent que pour l’autre finaliste »**.
+Sauf que non — et le retournement est complet. Un finaliste a traversé toute la
+saison, il a voté à chaque conseil, il a donc écrit beaucoup de noms — dont
+probablement le vôtre. La question n’est pas « le juré vote-t-il pour son
+bourreau », elle est **« le juré vote-t-il pour son bourreau plus souvent que
+pour l’autre finaliste »**. Posée ainsi, elle donne l’inverse.
 
 ## Le modèle
 
@@ -63,21 +64,33 @@ pas conclure.</p>
 {% assign c0 = j.coefficients[0] %}{% assign c1 = j.coefficients[1] %}
 
 <div class="constat">
-  <p><b>Avoir éliminé le juré ne change rien.</b> Cote
-  ×{{ c0.rapport }}, intervalle {{ c0.bas }} à {{ c0.haut }}, p =
-  {{ c0.p }}. Ni rancune, ni respect : les {{ j.part_quand_disponible }} % du
-  chiffre brut s’expliquent entièrement par le fait qu’un finaliste écrit
-  beaucoup de noms.</p>
-  <p><b>Avoir voté avec le juré, en revanche, compte.</b> Chaque conseil passé
-  du même côté multiplie la cote par <b>{{ c1.rapport }}</b>
+  <p><b>Avoir éliminé le juré coûte.</b> Cote ×{{ c0.rapport }}, intervalle
+  {{ c0.bas }} à {{ c0.haut }}, p = {{ c0.p }} — l’intervalle <b>ne contient pas
+  1</b>. À conseils partagés égaux, le finaliste qui a écrit le nom d’un juré
+  voit ses chances d’obtenir sa voix réduites de près de quatre dixièmes. <b>Le
+  jury n’oublie pas.</b></p>
+  <p><b>Avoir voté avec le juré rapporte davantage encore.</b> Chaque conseil
+  passé du même côté multiplie la cote par <b>{{ c1.rapport }}</b>
   ({{ c1.bas }} à {{ c1.haut }}, p = {{ c1.p }}). Sur cinq conseils partagés,
-  cela double les chances.</p>
+  cela fait plus que doubler les chances.</p>
 </div>
 
-Le jury final ne juge donc ni le parcours ni l’affront : **il prolonge
-l’alliance**. Ce que le juré récompense, c’est celui avec qui il écrivait les
-mêmes noms — la même variable qui, en cours de jeu, fait tenir plus longtemps
-que tout le reste.
+Le jury final ne juge donc ni le parcours ni le mérite : **il solde les
+comptes**. Il couronne celui avec qui le juré écrivait les mêmes noms — la même
+variable qui, en cours de jeu, fait tenir plus longtemps que tout le reste — et
+il fait payer celui qui a écrit le sien.
+
+<p class="note"><strong>Cette page disait le contraire, et il faut dire
+pourquoi.</strong> Elle concluait « ni rancune, ni respect » sur 196 bulletins
+dont <b>195 allaient au lauréat</b> : le scrutin final tient une colonne par
+finaliste, et celle du battu n’était pas extraite. Un échantillon composé
+presque uniquement de jurés ayant voté pour le vainqueur ne pouvait, sur cette
+variable-là, que ne rien trouver — le bourreau y est presque toujours celui qui
+gagne. Les colonnes manquantes ont été récupérées : {{ j.bulletins }} bulletins
+sur {{ j.saisons }} saisons, et l’effet apparaît. Il n’a pas changé de valeur,
+il est devenu <em>observable</em>.
+<a href="{{ '/sources/' | relative_url }}">Les sources</a> racontent la
+réparation.</p>
 [Les alliances]({{ '/statistiques/alliances/' | relative_url }}).
 
 ### La mise à l’épreuve : et si ce n’était que le bandeau ?
@@ -106,7 +119,7 @@ plus :
 </div>
 
 <div class="constat">
-  <p><b>Le bandeau, ici, ne fait rien</b> : cote ×{{ ab.coefficients[2].rapport }},
+  <p><b>Le bandeau, ici, ne fait rigoureusement rien</b> : cote ×{{ ab.coefficients[2].rapport }},
   intervalle {{ ab.coefficients[2].bas }} à {{ ab.coefficients[2].haut }},
   p = {{ ab.coefficients[2].p }}. Ce qui gouverne le conseil ne gouverne pas le
   jury — et c’est en soi un résultat, vu la force de l’effet en cours de jeu.</p>
@@ -118,19 +131,19 @@ plus :
   conseil, que le juré récompense.</p>
 </div>
 
-<p class="note">Cette conclusion-là est neuve. Tant que la colonne du finaliste
-battu manquait, l’intervalle du co-vote traversait 1 sous ce contrôle et la
-page concluait à une tendance qu’on ne pouvait pas démontrer. Les bulletins
-rendus n’ont pas déplacé l’estimation — ils l’ont resserrée. C’est le
-comportement attendu quand ce qui manquait était de l’effectif et non un biais,
-et il vaut d’être dit : la conclusion n’a pas changé de sens, elle a changé de
-statut.</p>
+<p class="note">Le contraste vaut d’être noté : le bandeau tombe à
+{{ ab.coefficients[2].rapport }}, c’est-à-dire exactement rien, tandis que les
+deux autres variables tiennent sans bouger. Ce qui décide au conseil — d’où l’on
+vient — cesse d’exister au jury ; ce qui décide au jury, c’est ce qu’on s’est
+fait l’un à l’autre.</p>
 
-<p class="note">Les limites, et elles sont réelles. {{ j.bulletins }} bulletins,
-c’est peu : l’intervalle sur l’effet « m’a éliminé » va de {{ c0.bas }} à
-{{ c0.haut }}, et une rancune modérée y tiendrait sans être détectée. On ne peut
-donc pas conclure qu’il n’y a <em>aucun</em> effet, seulement qu’il n’y en a pas
-de grand. Par ailleurs le modèle ne connaît du parcours d’un finaliste que ses
-bulletins : ni ses épreuves gagnées, ni son plaidoyer final, ni ce que le jury a
-vu de lui à l’écran. Ce sont peut-être ces choses-là qui décident, et elles ne
-sont nulle part dans ces données.</p>
+<p class="note">Les limites, et elles sont réelles. {{ j.bulletins }} bulletins
+restent peu : l’intervalle sur l’effet « m’a éliminé » va de {{ c0.bas }} à
+{{ c0.haut }}, et son bord supérieur frôle 1 — la rancune est établie, son
+ampleur ne l’est qu’approximativement. Aucun de ces deux tests n’est déclaré au
+registre corrigé de <a href="{{ '/methode/' | relative_url }}">la méthode</a> :
+ce sont les coefficients d’un modèle, publiés avec leur intervalle, et il faut
+les lire comme tels. Enfin le modèle ne connaît du parcours d’un finaliste que
+ses bulletins : ni ses épreuves gagnées, ni son plaidoyer final, ni ce que le
+jury a vu de lui à l’écran. Ce sont peut-être ces choses-là qui décident, et
+elles ne sont nulle part dans ces données.</p>

@@ -183,20 +183,46 @@ cessera d’être l’ordre d’arrivée,
 [la page qui en vit]({{ '/statistiques/finale/' | relative_url }}) cessera
 d’être publiable, et on le saura sans avoir à y penser.
 
-## Ce que le scrutin final ne dit toujours pas
+## Le scrutin final, retrouvé en deux fois
 
-Le vote du jury tient **une ligne par finaliste** dans les matrices sources :
-celle du gagnant et celle du battu. Seule la première était reconnue ; les
-dix-sept autres étaient rangées du côté des éliminations, où leurs bulletins
-comptaient à l’envers. C’est réparé, et
-[la page du jury]({{ '/statistiques/jury/' | relative_url }}) raconte ce que ces
-quarante-neuf bulletins rendus y ont changé.
+{% assign jj = site.data.stats.jury %}
 
-Il reste un trou, et il est du même ordre. En comparant le nombre de voix
-annoncé au nombre de bulletins effectivement relevés, **41 bulletins de jury
-manquent encore**, répartis sur douze saisons : la colonne du finaliste battu
-n’y a jamais été extraite du tout. Ce n’est plus un problème de classement mais
-de lecture des matrices, et il n’est pas corrigé à ce jour.
+Le vote du jury tient **une colonne par finaliste** dans les matrices sources :
+celle du gagnant et celle du battu. Seule la première était reconnue. Les autres
+étaient rangées du côté des éliminations, où leurs bulletins comptaient à
+l’envers — un juré qui écrit « Cynthia » pour la couronner était compté comme
+votant contre elle.
+
+La première réparation s’est appuyée sur le **titre** de la colonne :
+« Finaliste », « Gagnant ». Elle a rendu quarante-neuf bulletins. Mais dix-sept
+saisons ne titrent pas leur colonne finale : elles lui donnent simplement le
+**numéro de l’épisode**, comme à un conseil ordinaire, et elles échappaient donc
+au titre.
+
+La seconde réparation ne regarde plus le titre mais la **place**. Le scrutin
+final occupe les dernières colonnes de la matrice, une par personne arrivée au
+bout — et celui qu’on y donne pour « éliminé » est un **finaliste déclaré**, ce
+qui est impossible pour une vraie élimination : un finaliste, par définition, va
+jusqu’au vote. Les deux conditions réunies, sans jamais l’une sans l’autre,
+identifient la colonne sans ambiguïté.
+
+<div class="constat">
+  <p><b>{{ jj.effectif }} scrutins de jury</b> sur {{ jj.saisons }} saisons,
+  contre 32 avant les deux réparations, et <b>299 bulletins</b> contre 196.
+  Le décompte annoncé et les bulletins relevés coïncident partout sauf
+  {{ jj.desaccords }} fois, où c’est la ligne des totaux de la source qui est
+  décalée d’une colonne.</p>
+  <p>Il ne manque plus <b>qu’un seul bulletin</b>, sur
+  <i>Les Chasseurs d’immunité</i> : la matrice y annonce onze voix et n’en fait
+  lire que dix.</p>
+</div>
+
+Ce qui a été retrouvé n’était pas neutre. L’échantillon d’avant contenait
+195 bulletins sur 196 **allant au lauréat** : sur la question « le juré
+punit-il celui qui l’a éliminé », il ne pouvait rien montrer, puisque le
+bourreau y était presque toujours le gagnant. Avec les deux côtés du choix,
+[la page du jury]({{ '/statistiques/jury/' | relative_url }}) conclut désormais
+l’inverse de ce qu’elle concluait.
 
 ## La traçabilité
 

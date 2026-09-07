@@ -152,15 +152,17 @@ modeste, de l’ordre de huit points entre les deux extrêmes.
 {% assign j = site.data.stats.jury %}
 Le dernier scrutin d’une saison n’est pas un conseil : **on n’y élimine
 personne, on y désigne un vainqueur**, et le sens du bulletin est inversé.
-Les sources n’en publient le détail que pour **{{ j.effectif }} scrutins**, sur
-{{ j.saisons }} saisons — une saison à double vainqueur en compte deux. Ces
-scrutins sont tenus à l’écart de tous les calculs de cette page.
+Les sources en publient le détail pour **{{ j.effectif }} scrutins**, sur
+{{ j.saisons }} saisons — le scrutin tient une colonne par finaliste, et cette
+table ne montre que celle du lauréat. Ces scrutins sont tenus à l’écart de tous
+les calculs de cette page.
 
 <div class="tableau-large">
 <table data-triable>
 <thead><tr>
   <th>Saison</th><th class="nombre">Année</th><th>Lauréat</th>
-  <th class="nombre">Voix pour</th><th class="nombre">Voix exprimées</th>
+  <th class="nombre">Voix pour</th><th class="nombre">Bulletins lus</th>
+  <th class="nombre">Voix exprimées</th>
 </tr></thead>
 <tbody>
 {% for x in j.scrutins %}
@@ -169,6 +171,7 @@ scrutins sont tenus à l’écart de tous les calculs de cette page.
   <td class="nombre">{{ x.annee }}</td>
   <td>{% if x.laureat %}{{ x.laureat }}{% else %}—{% endif %}</td>
   <td class="nombre">{% if x.voix_pour %}{{ x.voix_pour }}{% else %}—{% endif %}</td>
+  <td class="nombre">{{ x.bulletins_releves }}</td>
   <td class="nombre">{% if x.voix_exprimees %}{{ x.voix_exprimees }}{% else %}—{% endif %}</td>
 </tr>
 {% endfor %}
@@ -179,9 +182,19 @@ scrutins sont tenus à l’écart de tous les calculs de cette page.
 {% if j.sans_nom > 0 %}
 <p class="note">{% if j.sans_nom == 1 %}Un de ces scrutins n’affiche{% else %}{{ j.sans_nom }} de ces scrutins n’affichent{% endif %}
 pas de nom : la cellule source y mêle une vignette et un prénom, et le libellé
-qui en sort ne se rattache à personne. Le décompte des voix, lui, est bon.
-Plutôt que de deviner qui se cache derrière, la case reste vide.</p>
+qui en sort ne se rattache à personne. Plutôt que de deviner qui se cache
+derrière, la case reste vide.</p>
 {% endif %}
+
+<p class="note"><strong>Deux colonnes qui devraient dire la même chose, et
+{{ j.desaccords }} fois ne la disent pas.</strong> « Voix pour » est le total
+que la matrice annonce ; « bulletins lus » est le nombre de bulletins qui
+portent effectivement le nom du lauréat. Là où ils divergent, c’est la ligne des
+totaux qui est décalée d’une colonne à la source — sur <i>Les Armes secrètes</i>,
+elle attribue à Maxine le score de Lucie et réciproquement. <b>Les bulletins
+font foi</b> : chacun porte un nom, et c’est eux, non les totaux, qui entrent
+dans <a href="{{ '/statistiques/jury/' | relative_url }}">le modèle du
+jury</a>.</p>
 
 <p class="note">Cette dernière analyse ne porte que sur les
 {{ c.conseils_complets }} conseils dont le dépouillement est complet, c’est-à-dire

@@ -149,8 +149,8 @@ c’est pourquoi son effectif est plus court que le premier, et c’est lui qu�
 faut lire.
 
 {{ vv.par_sort[0].menace_moyenne }} voix par conseil contre
-{{ vv.par_sort[2].menace_moyenne }} pour l’ensemble du casting : quatre fois et
-demie moins. **L’écart est spectaculaire, et il ne prouve à peu près rien.** On
+{{ vv.par_sort[2].menace_moyenne }} pour l’ensemble du casting : plus de quatre
+fois moins. **L’écart est spectaculaire, et il ne prouve à peu près rien.** On
 ne gagne pas si l’on est sorti, et l’on sort quand on est écrit : être peu visé
 et aller au bout sont deux faces du même fait. Comparer un vainqueur à
 quelqu’un parti au troisième conseil, c’est comparer un survivant à ceux qui

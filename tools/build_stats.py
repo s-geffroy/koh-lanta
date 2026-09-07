@@ -415,10 +415,19 @@ def bloc_jury(conseils, parts, par_saison):
             "voix_exprimees": c.get("votes_exprimes"),
             "bulletins_releves": len(c.get("votes") or []),
         })
+    # Le decompte annonce par la matrice et le nombre de bulletins qu'on y lit
+    # ne coincident pas toujours : sur quelques saisons, la ligne des totaux est
+    # decalee d'une colonne et attribue au laureat le score de son finaliste.
+    # Les bulletins, eux, portent chacun un nom : ce sont eux qui font foi. On
+    # publie les deux plutot que de trancher en silence.
+    desaccords = sum(1 for x in lignes
+                     if x["voix_pour"] is not None
+                     and x["voix_pour"] != x["bulletins_releves"])
     return {
         "effectif": len(lignes),
         "saisons": len({x["saison"] for x in lignes}),
         "sans_nom": sum(1 for x in lignes if not x["laureat"]),
+        "desaccords": desaccords,
         "scrutins": lignes,
     }
 
