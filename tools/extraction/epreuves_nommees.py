@@ -155,6 +155,66 @@ def lire(saisons):
     return catalogue, rapport
 
 
+def palmares_par_personne(catalogue, saisons, parts):
+    """Qui a gagne quelles epreuves nommees, et de quelle nature.
+
+    Le raccord a l'EPISODE est presque toujours indecidable : le catalogue ne
+    dit pas dans quel episode une epreuve a eu lieu, et un aventurier gagne
+    souvent plusieurs epreuves du meme type dans une saison. C'est mesure plus
+    haut, et c'est bas -- 10,7 %.
+
+    Mais l'episode n'est pas necessaire pour tout. Le catalogue nomme la SAISON
+    et le VAINQUEUR, et cela suffit a dire « Claude a gagne telle epreuve, de
+    nature force ». Ce raccord-la, au niveau de la personne, aboutit dans plus
+    de neuf cas sur dix -- et c'est lui qui porte la seule chose que le site ne
+    savait pas dire : quel profil gagne quelle NATURE d'epreuve.
+
+    Une reserve, et elle compte : on compte des CITATIONS, pas des victoires
+    distinctes. Une epreuve porte souvent deux natures -- le parcours du
+    combattant est force ET rapidite -- et une meme victoire alimente alors
+    deux compteurs.
+    """
+    par_prenom = collections.defaultdict(list)
+    for p in parts:
+        par_prenom[(p["saison"], slug(p["nom"]))].append(p)
+    tribus = {(s["id"], slug(t["nom"])) for s in saisons for t in (s.get("tribus") or [])}
+
+    lignes = collections.defaultdict(lambda: {"epreuves": [], "natures": collections.Counter()})
+    motifs = collections.Counter()
+    for entree in catalogue:
+        for a in entree["detail"]:
+            for nom in a["vainqueurs"]:
+                cle = (a["saison"], slug(nom))
+                if cle in tribus:
+                    motifs["gagnee par une tribu"] += 1
+                    continue
+                candidats = par_prenom.get(cle)
+                if not candidats:
+                    motifs["nom introuvable dans la saison"] += 1
+                    continue
+                if len(candidats) > 1:
+                    motifs["homonyme, non tranche"] += 1
+                    continue
+                motifs["attribuee"] += 1
+                fiche = lignes[(a["saison"], candidats[0]["id"])]
+                fiche["epreuves"].append(entree["nom"])
+                for n in entree["natures"]:
+                    fiche["natures"][n] += 1
+
+    sortie = [{"saison": sid, "id": pid,
+               "epreuves": sorted(v["epreuves"]),
+               "natures": dict(sorted(v["natures"].items()))}
+              for (sid, pid), v in sorted(lignes.items())]
+    total = sum(motifs.values())
+    return sortie, {
+        "citations": total,
+        "attribuees": motifs["attribuee"],
+        "part": round(100.0 * motifs["attribuee"] / total, 1) if total else None,
+        "personnes": len(sortie),
+        "motifs": [{"motif": m, "effectif": n} for m, n in motifs.most_common()],
+    }
+
+
 def mesurer_raccord(catalogue, saisons, parts, epreuves):
     """Combien d'epreuves relevees peuvent recevoir une nature, et pourquoi si peu."""
     par_prenom = collections.defaultdict(list)
@@ -219,6 +279,7 @@ def main():
 
     catalogue, rapport = lire(saisons)
     raccord = mesurer_raccord(catalogue, saisons, parts, epreuves)
+    palmares, couverture = palmares_par_personne(catalogue, saisons, parts)
 
     par_nature = collections.Counter()
     for e in catalogue:
@@ -236,6 +297,10 @@ def main():
         print(f"    {m['motif']:52s} {m['effectif']}")
     for r in rapport:
         print("  " + r)
+    print(f"raccord a la PERSONNE : {couverture['attribuees']}/{couverture['citations']} "
+          f"({couverture['part']} %), {couverture['personnes']} aventuriers")
+    for m in couverture["motifs"]:
+        print(f"    {m['motif']:52s} {m['effectif']}")
 
     sortie = {
         "source": "https://kohlanta.fandom.com/fr/wiki/Catégorie:Épreuves",
@@ -245,6 +310,11 @@ def main():
         "par_nature": [{"nature": n, "libelle": NATURES.get(n, "Non qualifiée"),
                         "effectif": c} for n, c in par_nature.most_common()],
         "raccord": raccord,
+        # Le raccord a l'episode est presque toujours indecidable ; celui a la
+        # PERSONNE aboutit dans plus de neuf cas sur dix, et c'est lui qui
+        # porte la nature des epreuves gagnees.
+        "couverture_par_personne": couverture,
+        "palmares": palmares,
     }
     if a.ecrire:
         with open(SORTIE, "w", encoding="utf-8") as f:

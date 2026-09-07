@@ -149,6 +149,29 @@ def main():
                         "l'aventurier a assisté, par sort final.",
             couleur=SERIES[0]))
 
+    # --- la nature des epreuves -------------------------------------------
+    nat = stats.get("natures") or {}
+    if nat:
+        lot = [x for x in nat["par_nature"] if x["assez"]]
+        ecrire("natures-femmes.svg", foret(
+            [{"libelle": f'{x["libelle"]} ({x["effectif"]})',
+              "estimation": x["femmes"]["probabilite"],
+              "bas": x["femmes"]["bas"], "haut": x["femmes"]["haut"]} for x in lot],
+            titre="Part des victoires revenant à une femme, par nature d'épreuve",
+            description="Part des victoires d'épreuves nommées revenant à une femme, "
+                        "avec son intervalle, comparée à la part observée toutes "
+                        "natures confondues.",
+            reference=nat["part_femmes"], unite=" %"))
+
+        ecrire("natures-bout.svg", foret(
+            [{"libelle": f'{x["libelle"]} ({x["effectif"]})',
+              "estimation": x["au_bout"]["probabilite"],
+              "bas": x["au_bout"]["bas"], "haut": x["au_bout"]["haut"]} for x in lot],
+            titre="Part des victoires revenant à quelqu'un allé au bout",
+            description="Part des victoires d'épreuves nommées revenant à un "
+                        "finaliste, un vainqueur ou un éliminé des poteaux.",
+            reference=nat["part_au_bout"], unite=" %"))
+
     # --- la fin de saison -------------------------------------------------
     fin = stats.get("finale") or {}
     if fin:

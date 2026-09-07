@@ -729,6 +729,87 @@ def voix_des_vainqueurs(lignes):
     }
 
 
+NATURES_LIBELLE = {
+    "rapidite": "Rapidité", "precision": "Précision", "force": "Force",
+    "statique": "Statique", "equilibre": "Équilibre", "reflexion": "Réflexion",
+    "logique": "Logique", "aquatique": "Aquatique", "adresse": "Adresse",
+    "memoire": "Mémoire", "endurance": "Endurance",
+}
+SEUIL_NATURE = 30      # sous ce nombre de victoires, une part ne veut rien dire
+
+
+def bloc_natures(nommees, parts, par_saison):
+    """La nature des epreuves gagnees, et ce qu'elle ne separe pas.
+
+    Le site a longtemps ecrit que la nature d'une epreuve -- force, rapidite,
+    equilibre -- n'etait exploitable nulle part. Elle l'est desormais : pas au
+    niveau de l'EPISODE, ou le rapprochement reste indecidable neuf fois sur
+    dix, mais au niveau de la PERSONNE, ou il aboutit presque toujours. La
+    question devient donc posable, et c'est tout ce qu'on lui demandait.
+
+    On compte des CITATIONS, pas des victoires distinctes : une epreuve porte
+    souvent deux natures -- le parcours du combattant est force ET rapidite --
+    et une meme victoire alimente alors deux compteurs. La reference est donc
+    la part observee sur l'ensemble de ces citations, jamais le casting.
+    """
+    palmares = (nommees or {}).get("palmares") or []
+    if not palmares:
+        return {}
+    fiches = {(p["saison"], p["id"]): p for p in parts}
+    AU_BOUT = {"vainqueur", "finaliste", "elimine_poteaux"}
+
+    par = defaultdict(lambda: {"n": 0, "femmes": 0, "au_bout": 0, "ages": []})
+    for ligne in palmares:
+        p = fiches.get((ligne["saison"], ligne["id"]))
+        if not p:
+            continue
+        for nature, k in (ligne.get("natures") or {}).items():
+            d = par[nature]
+            d["n"] += k
+            d["femmes"] += k if p.get("genre") == "f" else 0
+            d["au_bout"] += k if p.get("sort") in AU_BOUT else 0
+            if p.get("age"):
+                d["ages"] += [p["age"]] * k
+
+    total = sum(d["n"] for d in par.values())
+    if not total:
+        return {}
+    ref_f = part(sum(d["femmes"] for d in par.values()), total)
+    ref_b = part(sum(d["au_bout"] for d in par.values()), total)
+    tous_ages = [a for d in par.values() for a in d["ages"]]
+
+    def issue(succes, n, hasard):
+        bas, haut = modeles._wilson(succes, n) if n else (None, None)
+        return {"cas": succes, "probabilite": part(succes, n),
+                "bas": arrondi(bas) if bas is not None else None,
+                "haut": arrondi(haut) if haut is not None else None,
+                "hasard": hasard}
+
+    lignes = [{
+        "nature": nature,
+        "libelle": NATURES_LIBELLE.get(nature, nature.capitalize()),
+        "effectif": d["n"],
+        "assez": d["n"] >= SEUIL_NATURE,
+        "femmes": issue(d["femmes"], d["n"], ref_f),
+        "au_bout": issue(d["au_bout"], d["n"], ref_b),
+        "age_moyen": arrondi(mean(d["ages"])) if d["ages"] else None,
+    } for nature, d in sorted(par.items(), key=lambda x: -x[1]["n"])]
+
+    couv = (nommees or {}).get("couverture_par_personne") or {}
+    return {
+        "citations": couv.get("citations"),
+        "attribuees": couv.get("attribuees"),
+        "part": couv.get("part"),
+        "personnes": couv.get("personnes"),
+        "victoires": total,
+        "part_femmes": ref_f,
+        "part_au_bout": ref_b,
+        "age_moyen": arrondi(mean(tous_ages)) if tous_ages else None,
+        "seuil": SEUIL_NATURE,
+        "par_nature": lignes,
+    }
+
+
 def bloc_finale(finale, parts, par_saison):
     """La fin de saison : orientation, poteaux, choix du finaliste, victoire.
 
@@ -1245,6 +1326,7 @@ def main():
         "conseils": bloc_conseils(conseils, parts, par_saison),
         "jury": bloc_jury(conseils, parts, par_saison),
         "finale": bloc_finale(finale, parts, par_saison),
+        "natures": bloc_natures(_fichier_data("epreuves_nommees.yml"), parts, par_saison),
         # --- les analyses ajoutees ensuite. Elles prennent les participations
         # brutes, sans le filtre « saisons classiques » applique plus haut :
         # chacune dit elle-meme sur quel perimetre elle porte.

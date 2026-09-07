@@ -2122,6 +2122,153 @@ finale:
     vainqueur: Cynthia Combes
     choix_atteste: true
     poteaux_gagne: true
+natures:
+  citations: 498
+  attribuees: 316
+  part: 63.5
+  personnes: 183
+  victoires: 431
+  part_femmes: 42.7
+  part_au_bout: 40.4
+  age_moyen: 32.0
+  seuil: 30
+  par_nature:
+  - nature: rapidite
+    libelle: Rapidité
+    effectif: 127
+    assez: true
+    femmes:
+      cas: 54
+      probabilite: 42.5
+      bas: 34.3
+      haut: 51.2
+      hasard: 42.7
+    au_bout:
+      cas: 48
+      probabilite: 37.8
+      bas: 29.8
+      haut: 46.5
+      hasard: 40.4
+    age_moyen: 30.7
+  - nature: precision
+    libelle: Précision
+    effectif: 92
+    assez: true
+    femmes:
+      cas: 34
+      probabilite: 37.0
+      bas: 27.8
+      haut: 47.2
+      hasard: 42.7
+    au_bout:
+      cas: 38
+      probabilite: 41.3
+      bas: 31.8
+      haut: 51.5
+      hasard: 40.4
+    age_moyen: 34.5
+  - nature: force
+    libelle: Force
+    effectif: 84
+    assez: true
+    femmes:
+      cas: 38
+      probabilite: 45.2
+      bas: 35.0
+      haut: 55.9
+      hasard: 42.7
+    au_bout:
+      cas: 36
+      probabilite: 42.9
+      bas: 32.8
+      haut: 53.5
+      hasard: 40.4
+    age_moyen: 30.2
+  - nature: statique
+    libelle: Statique
+    effectif: 63
+    assez: true
+    femmes:
+      cas: 26
+      probabilite: 41.3
+      bas: 30.0
+      haut: 53.6
+      hasard: 42.7
+    au_bout:
+      cas: 25
+      probabilite: 39.7
+      bas: 28.5
+      haut: 52.0
+      hasard: 40.4
+    age_moyen: 33.4
+  - nature: equilibre
+    libelle: Équilibre
+    effectif: 37
+    assez: true
+    femmes:
+      cas: 19
+      probabilite: 51.4
+      bas: 35.9
+      haut: 66.6
+      hasard: 42.7
+    au_bout:
+      cas: 18
+      probabilite: 48.6
+      bas: 33.4
+      haut: 64.1
+      hasard: 40.4
+    age_moyen: 29.7
+  - nature: reflexion
+    libelle: Réflexion
+    effectif: 12
+    assez: false
+    femmes:
+      cas: 5
+      probabilite: 41.7
+      bas: 19.3
+      haut: 68.0
+      hasard: 42.7
+    au_bout:
+      cas: 4
+      probabilite: 33.3
+      bas: 13.8
+      haut: 60.9
+      hasard: 40.4
+    age_moyen: 33.0
+  - nature: logique
+    libelle: Logique
+    effectif: 11
+    assez: false
+    femmes:
+      cas: 6
+      probabilite: 54.5
+      bas: 28.0
+      haut: 78.7
+      hasard: 42.7
+    au_bout:
+      cas: 3
+      probabilite: 27.3
+      bas: 9.7
+      haut: 56.6
+      hasard: 40.4
+    age_moyen: 33.8
+  - nature: aquatique
+    libelle: Aquatique
+    effectif: 5
+    assez: false
+    femmes:
+      cas: 2
+      probabilite: 40.0
+      bas: 11.8
+      haut: 76.9
+      hasard: 42.7
+    au_bout:
+      cas: 2
+      probabilite: 40.0
+      bas: 11.8
+      haut: 76.9
+      hasard: 40.4
+    age_moyen: 41.2
 revenants:
   paradoxe:
   - libelle: Jamais rappelés

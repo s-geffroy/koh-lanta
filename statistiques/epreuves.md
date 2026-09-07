@@ -3,7 +3,7 @@ layout: page
 title: Les épreuves
 permalink: /statistiques/epreuves/
 chapeau: >-
-  Les meilleurs ratios, les totaux de carrière, et le profil qui domine vraiment — âge, métier, sexe.
+  Les meilleurs ratios, les totaux de carrière, le profil qui domine vraiment — et une nature d’épreuve qui, elle, ne trie personne.
 ---
 
 {% assign e = site.data.stats.epreuves %}
@@ -160,7 +160,7 @@ Le parcours du combattant a été couru **{{ en.epreuves[0].apparitions }} fois*
 les flambeaux {{ en.epreuves[1].apparitions }} ; le tir à l’arc et l’épreuve de
 la boue une vingtaine chacun. Voilà pour le catalogue.
 
-## Pourquoi ce catalogue ne sert à rien ici
+## Pourquoi ce catalogue ne se raccorde pas aux épisodes
 
 C’est la seconde moitié de la phrase qui tenait, et il valait mieux la mesurer
 que l’affirmer.
@@ -190,12 +190,93 @@ que l’affirmer.
 gagnées par quelqu’un qui n’en a gagné qu’une de ce genre cette saison-là —
 c’est-à-dire les vainqueurs les moins dominants. Chercher là si la nature d’une
 épreuve change qui la gagne reviendrait à ne regarder que les joueurs qui gagnent
-peu. C’est pourquoi cette nature **n’est pas attachée aux données** et ne nourrit
-aucun modèle : la publier serait une invitation à une erreur.
+peu. Aucune nature n’est donc attachée à une épreuve **datée**, et aucun modèle
+épisode par épisode n’en reçoit.
 
 <p class="note">Ce qu’il faudrait pour que cela marche : le nom de l’épreuve
 dans le bilan par épisode, ou le numéro d’épisode dans la fiche de l’épreuve.
 Ni l’un ni l’autre n’existe. C’est une limite de source, cette fois vérifiée.</p>
+
+## La question se posait autrement
+
+{% assign n = site.data.stats.natures %}
+
+L’épisode manquait ; le **nom** ne manquait pas. Le catalogue dit la saison et
+le vainqueur, et cela suffit à écrire « untel a gagné telle épreuve, de nature
+force » — sans savoir quel soir. Or c’est tout ce qu’il fallait pour poser la
+question. Le biais du paragraphe précédent disparaît avec elle : on ne garde
+plus les seules citations décidables, on les garde **toutes**.
+
+<ul class="chiffres">
+  <li class="chiffre"><b>{{ n.attribuees }}</b><span>citations rattachées à une personne, sur {{ n.citations }}</span></li>
+  <li class="chiffre"><b>{{ n.personnes }}</b><span>aventuriers concernés</span></li>
+  <li class="chiffre"><b>{{ n.victoires }}</b><span>victoires portant une nature</span></li>
+</ul>
+
+<p class="note">Le reste des citations n’est pas perdu, il est ailleurs :
+{{ n.citations | minus: n.attribuees }} reviennent à une <em>tribu</em> — une
+épreuve collective n’a pas de vainqueur individuel — ou portent un prénom que la
+saison ne connaît pas. Et l’on compte ici des <strong>citations</strong>, pas des
+victoires distinctes : le parcours du combattant est force <em>et</em> rapidité,
+et une seule victoire alimente alors deux compteurs.</p>
+
+## Et elle ne sépare rien
+
+{% include graphiques/natures-femmes.svg %}
+
+<p class="legende-figure">Part des victoires revenant à une femme, nature par
+nature, avec son intervalle. Le trait vertical est la part observée toutes
+natures confondues : {{ n.part_femmes }} %.</p>
+
+{% include graphiques/natures-bout.svg %}
+
+<p class="legende-figure">La même chose pour les victoires revenant à quelqu’un
+qui ira au bout — finaliste, vainqueur, ou éliminé aux poteaux. Le repère est
+{{ n.part_au_bout }} %.</p>
+
+<div class="tableau-large">
+<table data-triable>
+<thead><tr>
+  <th>Nature</th><th class="nombre">Victoires</th>
+  <th class="nombre">Part femmes</th><th class="nombre">Intervalle</th>
+  <th class="nombre">Part allés au bout</th><th class="nombre">Âge moyen</th>
+</tr></thead>
+<tbody>
+{% for x in n.par_nature %}
+<tr>
+  <td>{{ x.libelle }}</td>
+  <td class="nombre">{{ x.effectif }}</td>
+  <td class="nombre">{{ x.femmes.probabilite }} %</td>
+  <td class="nombre">{{ x.femmes.bas }} – {{ x.femmes.haut }} %</td>
+  <td class="nombre">{{ x.au_bout.probabilite }} %</td>
+  <td class="nombre">{{ x.age_moyen }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+<div class="constat">
+  <p><b>Aucun intervalle ne s’écarte de sa référence.</b> Ni pour le sexe, ni
+  pour la distance parcourue dans le jeu. L’équilibre revient à une femme
+  {{ n.par_nature[4].femmes.probabilite }} % du temps contre
+  {{ n.part_femmes }} % en général, la précision {{ n.par_nature[1].femmes.probabilite }} % —
+  et les deux intervalles contiennent la référence.</p>
+  <p>L’âge ne trie pas davantage : de {{ n.par_nature[4].age_moyen }} ans pour
+  l’équilibre à {{ n.par_nature[1].age_moyen }} pour la précision, autour d’une
+  moyenne de {{ n.age_moyen }}.</p>
+  <p><b>La nature d’une épreuve ne dit pas qui la gagne.</b> C’était la question
+  que ce catalogue promettait de rendre posable ; elle l’est, et la réponse est
+  non.</p>
+</div>
+
+<p class="note">Deux réserves, et la seconde est la plus lourde. Les natures
+au-delà de la cinquième reposent sur moins de {{ n.seuil }} victoires : elles
+figurent au tableau mais aucune figure ne les montre, leurs intervalles étant
+trop larges pour dire quoi que ce soit. Et surtout, <strong>la nature vient du
+wiki, pas d’une mesure</strong> : c’est le mot qu’un rédacteur a choisi pour
+qualifier une épreuve, pas une propriété observée. Si ces étiquettes sont
+approximatives, l’absence d’écart mesurée ici l’est aussi.</p>
 
 ## Quel profil gagne les épreuves
 

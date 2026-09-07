@@ -806,3 +806,1435 @@ raccord:
   part_raccordee: 10.7
   individuelles_relevees: 368
   individuelles_raccordees: 72
+couverture_par_personne:
+  citations: 498
+  attribuees: 316
+  part: 63.5
+  personnes: 183
+  motifs:
+  - motif: attribuee
+    effectif: 316
+  - motif: gagnee par une tribu
+    effectif: 159
+  - motif: nom introuvable dans la saison
+    effectif: 23
+palmares:
+- saison: s01
+  id: francoise-avignon
+  epreuves:
+  - Tir à l'arc
+  natures:
+    precision: 1
+- saison: s01
+  id: michele-valembois
+  epreuves:
+  - Parcours du combattant
+  natures:
+    force: 1
+    rapidite: 1
+- saison: s01
+  id: romain-bissol
+  epreuves:
+  - Parcours du combattant
+  natures:
+    force: 1
+    rapidite: 1
+- saison: s02
+  id: francois-xavier-arguillere
+  epreuves:
+  - Parcours du combattant
+  - Tir à l'arc
+  natures:
+    force: 1
+    precision: 1
+    rapidite: 1
+- saison: s02
+  id: isabelle-vial
+  epreuves:
+  - Parcours du combattant
+  natures:
+    force: 1
+    rapidite: 1
+- saison: s02
+  id: marianne-mondon
+  epreuves:
+  - Boue
+  natures:
+    rapidite: 1
+- saison: s03
+  id: antoine-sanchez
+  epreuves:
+  - Poids sous l'eau
+  natures:
+    aquatique: 1
+- saison: s03
+  id: delphine-bano
+  epreuves:
+  - Parcours du combattant
+  natures:
+    force: 1
+    rapidite: 1
+- saison: s03
+  id: helene-patry
+  epreuves:
+  - Aveugle
+  natures:
+    rapidite: 1
+- saison: s03
+  id: moundir-zoughari
+  epreuves:
+  - Tir à l'arc
+  natures:
+    precision: 1
+- saison: s03
+  id: moussa-niangane
+  epreuves:
+  - Boue
+  - Parcours du combattant
+  - Sacs
+  natures:
+    equilibre: 1
+    force: 2
+    rapidite: 2
+- saison: s04
+  id: alban-oswald
+  epreuves:
+  - Parcours du combattant
+  natures:
+    force: 1
+    rapidite: 1
+- saison: s04
+  id: amelie-gregoire
+  epreuves:
+  - Parcours du combattant
+  - Tir à l'arc
+  natures:
+    force: 1
+    precision: 1
+    rapidite: 1
+- saison: s04
+  id: philippe-bordier
+  epreuves:
+  - Bambous
+  natures:
+    statique: 1
+- saison: s04
+  id: raphael-andres
+  epreuves:
+  - Sacs
+  natures:
+    equilibre: 1
+    force: 1
+- saison: s04
+  id: romuald-lafite
+  epreuves:
+  - Aveugle
+  natures:
+    rapidite: 1
+- saison: s04
+  id: sophie-eeckhout
+  epreuves:
+  - Paresseux
+  natures:
+    statique: 1
+- saison: s05
+  id: alexis-tournier
+  epreuves:
+  - Aveugle
+  natures:
+    rapidite: 1
+- saison: s05
+  id: christine-isoart
+  epreuves:
+  - Bambous
+  natures:
+    statique: 1
+- saison: s05
+  id: clemence-castel
+  epreuves:
+  - Sacs
+  natures:
+    equilibre: 1
+    force: 1
+- saison: s05
+  id: coumba-baradji
+  epreuves:
+  - Parcours du combattant
+  natures:
+    force: 1
+    rapidite: 1
+- saison: s05
+  id: francis-bordas
+  epreuves:
+  - Tir à l'arc
+  natures:
+    precision: 1
+- saison: s05
+  id: jerome-villaseque
+  epreuves:
+  - Boue
+  natures:
+    rapidite: 1
+- saison: s05
+  id: mohamed-derradji
+  epreuves:
+  - Parcours du combattant
+  - Paresseux
+  natures:
+    force: 1
+    rapidite: 1
+    statique: 1
+- saison: s06
+  id: francois-david-cardonnel
+  epreuves:
+  - Boue
+  natures:
+    rapidite: 1
+- saison: s06
+  id: gaelle-zanetton
+  epreuves:
+  - Parcours du combattant
+  - Paresseux
+  natures:
+    force: 1
+    rapidite: 1
+    statique: 1
+- saison: s06
+  id: ludovic-laresche
+  epreuves:
+  - Bambous
+  - la bascule
+  natures:
+    statique: 1
+- saison: s06
+  id: marie-bayard
+  epreuves:
+  - Sacs
+  natures:
+    equilibre: 1
+    force: 1
+- saison: s06
+  id: sebastien-roulle
+  epreuves:
+  - Grappins
+  - Parcours du combattant
+  natures:
+    force: 1
+    precision: 1
+    rapidite: 2
+- saison: s07
+  id: gregoire-delachaux
+  epreuves:
+  - Parcours du combattant
+  natures:
+    force: 1
+    rapidite: 1
+- saison: s07
+  id: jade-handi
+  epreuves:
+  - Koalas inversés
+  - Parcours du combattant
+  - Paresseux
+  natures:
+    force: 1
+    rapidite: 1
+    statique: 2
+- saison: s07
+  id: kevin-cuoco
+  epreuves:
+  - Tir à l'arc
+  natures:
+    precision: 1
+- saison: s07
+  id: patrick-brasier-de-thuy
+  epreuves:
+  - Boue
+  - Grappins
+  natures:
+    precision: 1
+    rapidite: 2
+- saison: s07
+  id: simon-quintilla
+  epreuves:
+  - Sacs
+  natures:
+    equilibre: 1
+    force: 1
+- saison: s08
+  id: bertrand-bolle
+  epreuves:
+  - A bout de souffle
+  - Bambous
+  - Boue
+  - Parcours du combattant
+  - Sacs
+  natures:
+    equilibre: 1
+    force: 2
+    rapidite: 2
+    statique: 2
+- saison: s08
+  id: carole-rapin
+  epreuves:
+  - Paresseux
+  natures:
+    statique: 1
+- saison: s08
+  id: charlene-hoffness
+  epreuves:
+  - Boue
+  natures:
+    rapidite: 1
+- saison: s08
+  id: christelle-gauzet
+  epreuves:
+  - Parcours du combattant
+  - Plots
+  natures:
+    equilibre: 1
+    force: 1
+    logique: 1
+    rapidite: 1
+- saison: s08
+  id: frederic-favier
+  epreuves:
+  - Grappins
+  natures:
+    precision: 1
+    rapidite: 1
+- saison: s09
+  id: christina-chevry
+  epreuves:
+  - A bout de souffle
+  - Aveugle
+  - Boue
+  - Parcours du combattant
+  natures:
+    force: 1
+    rapidite: 3
+    statique: 1
+- saison: s09
+  id: freddy-boucher
+  epreuves:
+  - Boue
+  - Parcours du combattant
+  natures:
+    force: 1
+    rapidite: 2
+- saison: s09
+  id: isabelle-da-silva
+  epreuves:
+  - Massues
+  natures:
+    precision: 1
+- saison: s09
+  id: patrick-merle
+  epreuves:
+  - Perche
+  natures:
+    precision: 1
+- saison: s09
+  id: raphaele-navarro
+  epreuves:
+  - Paresseux
+  natures:
+    statique: 1
+- saison: s10
+  id: aurelie-gasser
+  epreuves:
+  - Parcours du combattant
+  natures:
+    force: 1
+    rapidite: 1
+- saison: s10
+  id: claude-dartois
+  epreuves:
+  - Boue
+  - Parcours du combattant
+  - Paresseux
+  - Sacs
+  - Tir à l'arc
+  natures:
+    equilibre: 1
+    force: 2
+    precision: 1
+    rapidite: 2
+    statique: 1
+- saison: s10
+  id: kunle-m-babacere-pakorona
+  epreuves:
+  - Bambous
+  natures:
+    statique: 1
+- saison: s10
+  id: philippe-duron
+  epreuves:
+  - Grappins
+  natures:
+    precision: 1
+    rapidite: 1
+- saison: s11
+  id: ella-gbezan
+  epreuves:
+  - Bambous
+  - Grappins
+  natures:
+    precision: 1
+    rapidite: 1
+    statique: 1
+- saison: s11
+  id: florence-delbarre
+  epreuves:
+  - Bambous
+  natures:
+    statique: 1
+- saison: s11
+  id: gerard-urdampilleta
+  epreuves:
+  - Tir à l'arc
+  - la bascule
+  natures:
+    precision: 1
+- saison: s11
+  id: laurent-maistret
+  epreuves:
+  - A bout de souffle
+  natures:
+    statique: 1
+- saison: s11
+  id: martin-bazin
+  epreuves:
+  - Aveugle
+  - Noix de coco
+  - Parcours du combattant
+  natures:
+    force: 1
+    precision: 1
+    rapidite: 2
+- saison: s11
+  id: patricia-morel
+  epreuves:
+  - Parcours du combattant
+  natures:
+    force: 1
+    rapidite: 1
+- saison: s11
+  id: teheiura-teahui
+  epreuves:
+  - Sacs
+  - Étoile
+  natures:
+    equilibre: 1
+    force: 1
+    statique: 1
+- saison: s12
+  id: bernard-deniaud
+  epreuves:
+  - Étoile
+  natures:
+    statique: 1
+- saison: s12
+  id: catherine-perez
+  epreuves:
+  - Parcours du combattant
+  natures:
+    force: 1
+    rapidite: 1
+- saison: s12
+  id: marylou-sidibe
+  epreuves:
+  - Sacs
+  natures:
+    equilibre: 1
+    force: 1
+- saison: s12
+  id: philippe-bizet
+  epreuves:
+  - A bout de souffle
+  - Aveugle
+  - Boue
+  - Parcours du combattant
+  - Perche
+  natures:
+    force: 1
+    precision: 1
+    rapidite: 3
+    statique: 1
+- saison: s12
+  id: ugo-lartiche
+  epreuves:
+  - Tir à l'arc
+  natures:
+    precision: 1
+- saison: s14
+  id: bruno-peisey
+  epreuves:
+  - Pendule
+  natures:
+    precision: 1
+- saison: s14
+  id: chantal-menard
+  epreuves:
+  - Paresseux
+  natures:
+    statique: 1
+- saison: s14
+  id: jessica-potel
+  epreuves:
+  - Parcours du combattant
+  - Plots
+  - Sacs
+  natures:
+    equilibre: 2
+    force: 2
+    logique: 1
+    rapidite: 1
+- saison: s14
+  id: manon-allender
+  epreuves:
+  - Grappins
+  natures:
+    precision: 1
+    rapidite: 1
+- saison: s14
+  id: marc-rambaud
+  epreuves:
+  - Boue
+  - Parcours du combattant
+  - Trapèzes
+  - Étoile
+  natures:
+    force: 1
+    rapidite: 2
+    statique: 2
+- saison: s14
+  id: melissa-bastin
+  epreuves:
+  - Labyrinthe
+  - Tables à bascule
+  natures:
+    precision: 1
+    rapidite: 1
+    reflexion: 1
+- saison: s14
+  id: sebastien-ballesteros
+  epreuves:
+  - Grappins
+  - Noix de coco
+  natures:
+    precision: 2
+    rapidite: 1
+- saison: s15
+  id: alain-chrisostome
+  epreuves:
+  - Tables à bascule
+  natures:
+    precision: 1
+- saison: s15
+  id: carine-cazals
+  epreuves:
+  - Paresseux
+  natures:
+    statique: 1
+- saison: s15
+  id: gabriel-gubbels
+  epreuves:
+  - Aveugle
+  - Sacs
+  natures:
+    equilibre: 1
+    force: 1
+    rapidite: 1
+- saison: s15
+  id: karima-neggaz
+  epreuves:
+  - Boue
+  - Parcours du combattant
+  - Paresseux
+  natures:
+    force: 1
+    rapidite: 2
+    statique: 1
+- saison: s15
+  id: nicolas-rouye
+  epreuves:
+  - A bout de souffle
+  - Labyrinthe
+  - Parcours du combattant
+  - Trapèzes
+  natures:
+    force: 1
+    rapidite: 2
+    reflexion: 1
+    statique: 2
+- saison: s15
+  id: pascal-salviani
+  epreuves:
+  - Paresseux
+  - Tir à l'arc
+  natures:
+    precision: 1
+    statique: 1
+- saison: s15
+  id: wendy-gervois
+  epreuves:
+  - Aveugle
+  natures:
+    rapidite: 1
+- saison: s16
+  id: alexandra-pharisien
+  epreuves:
+  - Barils
+  natures:
+    force: 1
+- saison: s16
+  id: benoit-assadi
+  epreuves:
+  - Barils
+  - Grappins
+  - Sacs
+  natures:
+    equilibre: 1
+    force: 2
+    precision: 1
+    rapidite: 1
+- saison: s16
+  id: bruno-troester
+  epreuves:
+  - Barils
+  - Tables à bascule
+  natures:
+    force: 1
+    precision: 1
+- saison: s16
+  id: candice-boisson
+  epreuves:
+  - Barils
+  - Parcours du combattant
+  - Paresseux
+  - Poteries en équikibre
+  - Étoile
+  natures:
+    equilibre: 1
+    force: 2
+    rapidite: 1
+    statique: 2
+- saison: s16
+  id: jeremy-raffin
+  epreuves:
+  - Massues
+  - Parcours du combattant
+  natures:
+    force: 1
+    precision: 1
+    rapidite: 1
+- saison: s16
+  id: jesta-hillmann
+  epreuves:
+  - Boue
+  natures:
+    rapidite: 1
+- saison: s16
+  id: julie-navarro-camilleri
+  epreuves:
+  - Paresseux
+  natures:
+    statique: 1
+- saison: s16
+  id: ludivine-wiart
+  epreuves:
+  - Aveugle
+  - Tir à l'arc
+  natures:
+    precision: 1
+    rapidite: 1
+- saison: s16
+  id: stephane-cipolla
+  epreuves:
+  - Barils
+  - Bouées
+  - Trapèzes
+  natures:
+    force: 1
+    precision: 1
+    rapidite: 1
+    statique: 1
+- saison: s17
+  id: claire-pradayrol
+  epreuves:
+  - Poteries en équikibre
+  natures:
+    equilibre: 1
+- saison: s17
+  id: clementine-jullien
+  epreuves:
+  - Parcours du combattant
+  natures:
+    force: 1
+    rapidite: 1
+- saison: s17
+  id: frederic-blancher
+  epreuves:
+  - Pendule
+  natures:
+    precision: 1
+- saison: s17
+  id: mathilde-chevalier
+  epreuves:
+  - Dominos
+  natures:
+    precision: 1
+- saison: s17
+  id: sebastien-gottiniaux
+  epreuves:
+  - Labyrinthe
+  - Paresseux
+  - Tables à bascule
+  natures:
+    precision: 1
+    rapidite: 1
+    reflexion: 1
+    statique: 1
+- saison: s17
+  id: vincent-roux
+  epreuves:
+  - Aveugle
+  - Colonnes
+  - Parcours du combattant
+  - Sacs
+  natures:
+    equilibre: 1
+    force: 2
+    logique: 1
+    rapidite: 2
+- saison: s17
+  id: yassin-metiri
+  epreuves:
+  - Bambous
+  natures:
+    statique: 1
+- saison: s18
+  id: andre-deleplace
+  epreuves:
+  - A bout de souffle
+  - Grappins
+  natures:
+    precision: 1
+    rapidite: 1
+    statique: 1
+- saison: s18
+  id: magalie-gustave
+  epreuves:
+  - Aveugle
+  - Noix de coco
+  - Tir à l'arc
+  natures:
+    precision: 2
+    rapidite: 1
+- saison: s18
+  id: maxime-stafrach
+  epreuves:
+  - Grappins
+  natures:
+    precision: 1
+    rapidite: 1
+- saison: s18
+  id: melanie-moret
+  epreuves:
+  - Boules
+  - Parcours du combattant
+  natures:
+    equilibre: 1
+    force: 1
+    precision: 1
+    rapidite: 1
+- saison: s18
+  id: romain-delaroche
+  epreuves:
+  - Dominos
+  - Parcours du combattant
+  natures:
+    force: 1
+    precision: 1
+    rapidite: 1
+- saison: s18
+  id: sandrine-dubourdy
+  epreuves:
+  - Aveugle
+  natures:
+    rapidite: 1
+- saison: s18
+  id: sebastien-meriaux
+  epreuves:
+  - Étoile
+  natures:
+    statique: 1
+- saison: s18
+  id: tiffany-gounin
+  epreuves:
+  - Douche
+  natures:
+    force: 1
+- saison: s20
+  id: angelique-mastio
+  epreuves:
+  - Parcours du combattant
+  natures:
+    force: 1
+    rapidite: 1
+- saison: s20
+  id: beatrice-kabore
+  epreuves:
+  - Boules
+  - la bascule
+  natures:
+    equilibre: 1
+    precision: 1
+- saison: s20
+  id: cindy-poumeyrol
+  epreuves:
+  - Tir à l'arc
+  natures:
+    precision: 1
+- saison: s20
+  id: clo-dessard-arribas
+  epreuves:
+  - Tir à l'arc
+  natures:
+    precision: 1
+- saison: s20
+  id: cyril-rouanne
+  epreuves:
+  - Noix de coco
+  natures:
+    precision: 1
+- saison: s20
+  id: maud-bamps
+  epreuves:
+  - Noix de coco
+  - Tir à l'arc
+  natures:
+    precision: 2
+- saison: s20
+  id: maxime-berthon
+  epreuves:
+  - Parcours du combattant
+  - Sacs
+  - Trapèzes
+  natures:
+    equilibre: 1
+    force: 2
+    rapidite: 1
+    statique: 1
+- saison: s20
+  id: nicolas-van-brabandt
+  epreuves:
+  - Tir à l'arc
+  natures:
+    precision: 1
+- saison: s20
+  id: steeve-demana
+  epreuves:
+  - Pendule
+  - Tir à l'arc
+  - Vague
+  natures:
+    logique: 1
+    precision: 2
+- saison: s21
+  id: alexandra-pornet
+  epreuves:
+  - Palets
+  - Poteries en équikibre
+  natures:
+    equilibre: 1
+    precision: 1
+    rapidite: 1
+- saison: s21
+  id: alix-noblat
+  epreuves:
+  - Koalas inversés
+  - Parcours du combattant
+  - la bascule
+  natures:
+    force: 1
+    rapidite: 1
+    statique: 1
+- saison: s21
+  id: angelique-ti
+  epreuves:
+  - Grappins
+  - Tir à l'arc
+  natures:
+    precision: 2
+    rapidite: 1
+- saison: s21
+  id: brice-petit
+  epreuves:
+  - Boules
+  - Poteries en équikibre
+  natures:
+    equilibre: 2
+    precision: 1
+- saison: s21
+  id: hadja-cisse
+  epreuves:
+  - Bambous
+  natures:
+    statique: 1
+- saison: s21
+  id: joaquina-glaud
+  epreuves:
+  - Bambous
+  natures:
+    statique: 1
+- saison: s21
+  id: loic-riowal
+  epreuves:
+  - Labyrinthe
+  - Palets
+  - Parcours du combattant
+  natures:
+    force: 1
+    precision: 1
+    rapidite: 3
+    reflexion: 1
+- saison: s21
+  id: lola-besse
+  epreuves:
+  - Poteries en équikibre
+  - Sacs
+  - Trapèzes
+  natures:
+    equilibre: 2
+    force: 1
+    statique: 1
+- saison: s22
+  id: arnaud-deshayes
+  epreuves:
+  - Planches à bascules
+  - Remonte-balle
+  natures:
+    precision: 2
+- saison: s22
+  id: herve-comte
+  epreuves:
+  - Parcours du combattant
+  - Paresseux
+  natures:
+    force: 1
+    rapidite: 1
+    statique: 1
+- saison: s22
+  id: jonathan-julien
+  epreuves:
+  - Paresseux
+  - Trapèzes
+  - Étoile
+  natures:
+    statique: 3
+- saison: s22
+  id: laure-canevarolo
+  epreuves:
+  - Parcours du combattant
+  - Plots
+  natures:
+    equilibre: 1
+    force: 1
+    logique: 1
+    rapidite: 1
+- saison: s22
+  id: lucie-bertaud
+  epreuves:
+  - Planches à bascules
+  natures:
+    precision: 1
+- saison: s22
+  id: maxine-eouzan
+  epreuves:
+  - Bouées
+  - Sacs
+  - Tables à bascule
+  natures:
+    equilibre: 1
+    force: 1
+    precision: 2
+    rapidite: 1
+- saison: s22
+  id: myriam-chafik
+  epreuves:
+  - Tir à l'arc
+  natures:
+    precision: 1
+- saison: s22
+  id: thomas-plisson
+  epreuves:
+  - Boules
+  natures:
+    equilibre: 1
+    precision: 1
+- saison: s23
+  id: bastien-san-pedro
+  epreuves:
+  - A bout de souffle
+  - Parcours du combattant
+  - Tables à bascule
+  natures:
+    force: 1
+    precision: 1
+    rapidite: 1
+    statique: 1
+- saison: s23
+  id: francois-descamp
+  epreuves:
+  - Grappins
+  - Sacs
+  natures:
+    equilibre: 1
+    force: 1
+    precision: 1
+    rapidite: 1
+- saison: s23
+  id: louana-roy
+  epreuves:
+  - Labyrinthe
+  - Parcours du combattant
+  natures:
+    force: 1
+    rapidite: 2
+    reflexion: 1
+- saison: s23
+  id: olga-khokhlova
+  epreuves:
+  - Boules
+  natures:
+    equilibre: 1
+    precision: 1
+- saison: s24
+  id: helena-roosen
+  epreuves:
+  - Parcours du combattant
+  natures:
+    force: 1
+    rapidite: 1
+- saison: s24
+  id: nicolas-pretot
+  epreuves:
+  - Parcours du combattant
+  natures:
+    force: 1
+    rapidite: 1
+- saison: s25
+  id: amri-madani
+  epreuves:
+  - A bout de souffle
+  natures:
+    statique: 1
+- saison: s25
+  id: jean-belmonte
+  epreuves:
+  - Parcours du combattant
+  - la bascule
+  natures:
+    force: 1
+    rapidite: 1
+- saison: s26
+  id: ilyesse-benyoub
+  epreuves:
+  - la bascule
+  natures: {}
+- saison: s27
+  id: louise-picavet
+  epreuves:
+  - Parcours du combattant
+  natures:
+    force: 1
+    rapidite: 1
+- saison: sp1
+  id: emilie-frahi
+  epreuves:
+  - Aveugle
+  natures:
+    rapidite: 1
+- saison: sp1
+  id: filomene-mendonca
+  epreuves:
+  - Tir à l'arc
+  natures:
+    precision: 1
+- saison: sp1
+  id: francois-david-cardonnel
+  epreuves:
+  - Boue
+  - Parcours du combattant
+  - Plots
+  natures:
+    equilibre: 1
+    force: 1
+    logique: 1
+    rapidite: 2
+- saison: sp1
+  id: jade-handi
+  epreuves:
+  - Parcours du combattant
+  - Sacs
+  natures:
+    equilibre: 1
+    force: 2
+    rapidite: 1
+- saison: sp1
+  id: jean-bernard-hauton-arnaud
+  epreuves:
+  - Grappins
+  natures:
+    precision: 1
+    rapidite: 1
+- saison: sp2
+  id: christina-chevry
+  epreuves:
+  - Bambous
+  natures:
+    statique: 1
+- saison: sp2
+  id: coumba-baradji
+  epreuves:
+  - Boue
+  natures:
+    rapidite: 1
+- saison: sp2
+  id: freddy-boucher
+  epreuves:
+  - Boue
+  natures:
+    rapidite: 1
+- saison: sp2
+  id: gregoire-delachaux
+  epreuves:
+  - Sacs
+  natures:
+    equilibre: 1
+    force: 1
+- saison: sp2
+  id: linda-alario
+  epreuves:
+  - Tir à l'arc
+  natures:
+    precision: 1
+- saison: sp3
+  id: bertrand-bolle
+  epreuves:
+  - Aveugle
+  natures:
+    rapidite: 1
+- saison: sp3
+  id: claude-dartois
+  epreuves:
+  - Grappins
+  - Massues
+  - Paresseux
+  natures:
+    precision: 2
+    rapidite: 1
+    statique: 1
+- saison: sp3
+  id: coumba-baradji
+  epreuves:
+  - Parcours du combattant
+  natures:
+    force: 1
+    rapidite: 1
+- saison: sp3
+  id: freddy-boucher
+  epreuves:
+  - Parcours du combattant
+  natures:
+    force: 1
+    rapidite: 1
+- saison: sp3
+  id: teheiura-teahui
+  epreuves:
+  - Perche
+  natures:
+    precision: 1
+- saison: sp4
+  id: laurent-maistret
+  epreuves:
+  - Parcours du combattant
+  - Tir à l'arc
+  natures:
+    force: 1
+    precision: 1
+    rapidite: 1
+- saison: sp4
+  id: martin-bazin
+  epreuves:
+  - Bambous
+  natures:
+    statique: 1
+- saison: sp4
+  id: teheiura-teahui
+  epreuves:
+  - Massues
+  - Trapèzes
+  natures:
+    precision: 1
+    statique: 1
+- saison: sp5
+  id: candice-boisson
+  epreuves:
+  - Labyrinthe
+  - Parcours du combattant
+  natures:
+    force: 1
+    rapidite: 2
+    reflexion: 1
+- saison: sp5
+  id: cassandre-girard
+  epreuves:
+  - Boue
+  - Relais aquatiques
+  natures:
+    aquatique: 1
+    rapidite: 1
+- saison: sp5
+  id: clemence-castel
+  epreuves:
+  - Relais aquatiques
+  natures:
+    aquatique: 1
+- saison: sp5
+  id: clementine-jullien
+  epreuves:
+  - Tables à bascule
+  natures:
+    precision: 1
+- saison: sp5
+  id: dylan-thiry
+  epreuves:
+  - Paresseux
+  natures:
+    statique: 1
+- saison: sp5
+  id: javier-rodriguez
+  epreuves:
+  - Sacs
+  natures:
+    equilibre: 1
+    force: 1
+- saison: sp5
+  id: jeremy-raffin
+  epreuves:
+  - Cubes
+  natures:
+    logique: 1
+- saison: sp5
+  id: julie-navarro-camilleri
+  epreuves:
+  - Bambous
+  natures:
+    statique: 1
+- saison: sp5
+  id: nathalie-ensargueix
+  epreuves:
+  - Boue
+  - Tir à l'arc
+  natures:
+    precision: 1
+    rapidite: 1
+- saison: sp5
+  id: pascal-salviani
+  epreuves:
+  - Aveugle
+  - Relais aquatiques
+  natures:
+    aquatique: 1
+    rapidite: 1
+- saison: sp5
+  id: raphaele-navarro
+  epreuves:
+  - Boules
+  - Colonnes
+  natures:
+    equilibre: 1
+    logique: 1
+    precision: 1
+- saison: sp5
+  id: yassin-metiri
+  epreuves:
+  - Grappins
+  - Parcours du combattant
+  - Relais aquatiques
+  natures:
+    aquatique: 1
+    force: 1
+    precision: 1
+    rapidite: 2
+- saison: sp6
+  id: charlotte-caron
+  epreuves:
+  - Remonte-balle
+  natures:
+    precision: 1
+- saison: sp6
+  id: claude-dartois
+  epreuves:
+  - Catapulte
+  - Dominos
+  - Labyrinthe aquatique
+  - Parcours du combattant
+  - Tables à bascule
+  natures:
+    force: 2
+    precision: 3
+    rapidite: 2
+    reflexion: 1
+- saison: sp6
+  id: jessica-potel
+  epreuves:
+  - Labyrinthe aquatique
+  - Parcours du combattant
+  natures:
+    force: 1
+    rapidite: 2
+    reflexion: 1
+- saison: sp6
+  id: naoil-tita
+  epreuves:
+  - Labyrinthe aquatique
+  - Sacs
+  - Tables à bascule
+  - Étoile
+  natures:
+    equilibre: 1
+    force: 1
+    precision: 1
+    rapidite: 1
+    reflexion: 1
+    statique: 1
+- saison: sp6
+  id: regis-rappailles
+  epreuves:
+  - Labyrinthe aquatique
+  natures:
+    rapidite: 1
+    reflexion: 1
+- saison: sp6
+  id: sam-haliti
+  epreuves:
+  - Paresseux
+  natures:
+    statique: 1
+- saison: sp6
+  id: teheiura-teahui
+  epreuves:
+  - Labyrinthe
+  - Perche
+  - Remonte-balle
+  - Tir à l'arc
+  natures:
+    precision: 3
+    rapidite: 1
+    reflexion: 1
+- saison: sp7
+  id: alexandra-pornet
+  epreuves:
+  - Tables à bascule
+  natures:
+    precision: 1
+- saison: sp7
+  id: alix-noblat
+  epreuves:
+  - Boue
+  - Remonte-balle
+  natures:
+    precision: 1
+    rapidite: 1
+- saison: sp7
+  id: christelle-gauzet
+  epreuves:
+  - Cubes
+  natures:
+    logique: 1
+- saison: sp7
+  id: claude-dartois
+  epreuves:
+  - Bambous
+  - Parcours du combattant
+  - Paresseux
+  natures:
+    force: 1
+    rapidite: 1
+    statique: 2
+- saison: sp7
+  id: clemence-castel
+  epreuves:
+  - A bout de souffle
+  - Trapèzes
+  natures:
+    statique: 2
+- saison: sp7
+  id: coumba-baradji
+  epreuves:
+  - Grappins
+  - Vague
+  natures:
+    logique: 1
+    precision: 1
+    rapidite: 1
+- saison: sp7
+  id: jade-handi
+  epreuves:
+  - Étoile
+  natures:
+    statique: 1
+- saison: sp7
+  id: laurent-maistret
+  epreuves:
+  - Bambous
+  natures:
+    statique: 1
+- saison: sp7
+  id: loic-riowal
+  epreuves:
+  - Aveugle
+  - Noix de coco
+  natures:
+    precision: 1
+    rapidite: 1
+- saison: sp7
+  id: maxime-berthon
+  epreuves:
+  - Palets
+  natures:
+    precision: 1
+    rapidite: 1
+- saison: sp7
+  id: philippe-bizet
+  epreuves:
+  - Boue
+  - Étoile
+  natures:
+    rapidite: 1
+    statique: 1
+- saison: sp7
+  id: teheiura-teahui
+  epreuves:
+  - Tir à l'arc
+  natures:
+    precision: 1
+- saison: sp7
+  id: ugo-lartiche
+  epreuves:
+  - Aveugle
+  - Boules
+  - Colonnes
+  - Dominos
+  - Labyrinthe
+  - Perche
+  - la bascule
+  natures:
+    equilibre: 1
+    logique: 1
+    precision: 3
+    rapidite: 2
+    reflexion: 1
