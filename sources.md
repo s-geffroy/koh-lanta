@@ -373,6 +373,34 @@ perd les deux. Les cas ambigus n’y figurent pas : « Brassac » est dans le Ta
 *et* dans le Puy-de-Dôme, « Mauléon » dans les Deux-Sèvres *et* les
 Pyrénées-Atlantiques. Ces deux-là restent tels quels, et hors du calcul.
 
+## Cinq saisons sans épreuves, et pourquoi elles le resteront
+
+*Bocas del Toro*, *Palau*, *Malaisie*, *Johor* et *Le Choc des héros* n’ont
+aucune épreuve relevée — ni confort, ni immunité, pas une ligne. Ce n’est pas un
+défaut de lecture, et la question a été reprise à zéro.
+
+Le relevé cherche un tableau sous cinq titres différents, dont « Bilan par
+épisode », « Déroulement » et « Détail des éliminations ». **Aucune de ces cinq
+saisons n’en porte un.** *Malaisie* a bien une section « Détail des
+éliminations » — c’est la matrice des votes, qui ne dit rien des épreuves.
+Wikipédia n’a par ailleurs **aucun article français** pour *Bocas del Toro*,
+*Palau* ni *Johor* : les deux dernières ont été récupérées sur la version
+anglaise, qui ne publie que l’ordre d’élimination et les votes.
+
+Une seule piste existait : *Bocas del Toro* est la seule des cinq à publier un
+résumé par épisode, et cette prose nomme des vainqueurs. Elle a été essayée,
+puis écartée — elle ne rend que **six épisodes sur treize**, elle ne nomme que
+des **tribus**, et elle s’arrête à la réunification, c’est-à-dire précisément là
+où commencent les épreuves individuelles. Or ce sont elles qui manquent : sans
+elles, pas de dénominateur, pas de ratio. Une extraction qui livrerait la moitié
+d’une moitié, au prix d’une lecture de prose libre, coûterait plus en fausses
+lignes qu’elle ne rapporterait.
+
+<p class="note">Le palmarès, lui, n’est pas perdu. Les fiches individuelles
+donnent le compte de victoires par personne et par saison — il est renseigné
+pour 77 des 90 participations de ces cinq éditions. Ce qui manque n’est pas
+« combien chacun a gagné », c’est « quelle épreuve, quel soir ».</p>
+
 ## Ce qui manque
 
 Le jeu de données n’est pas complet, et le dire fait partie du travail. Voici la
