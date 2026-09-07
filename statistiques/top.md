@@ -175,6 +175,7 @@ ils tombent.
   <th class="nombre">Saisons</th><th class="nombre">Titres</th>
   <th class="nombre">Score</th>
   {% for f in c.facettes %}<th class="nombre">{{ f.libelle | remove: "Le " | remove: "La " | remove: "Les " }}</th>{% endfor %}
+  <th class="nombre">Rang, 5<sup>e</sup>–95<sup>e</sup> centile</th>
 </tr></thead>
 <tbody>
 {% for l in c.carrieres %}
@@ -182,14 +183,18 @@ ils tombent.
     <td class="nombre">{{ l.participations }}</td>
     <td class="nombre">{{ l.titres }}</td>
     <td class="nombre">{{ l.score }}</td>
-    {% for f in c.facettes %}<td class="nombre">{{ l.facettes[f.cle] }}</td>{% endfor %}</tr>
+    {% for f in c.facettes %}<td class="nombre">{{ l.facettes[f.cle] }}</td>{% endfor %}
+    <td class="nombre" data-val="{{ l.rang_p95 | minus: l.rang_p05 }}">{{ l.rang_p05 }} – {{ l.rang_p95 }}</td></tr>
 {% endfor %}
 </tbody>
 </table>
 </div>
 
-<p class="legende-figure">Les quatre dernières colonnes sont des écarts à la
-moyenne, en écarts-types : 0 est la moyenne du programme, positif est meilleur.</p>
+<p class="legende-figure">Les quatre colonnes de facettes sont des écarts à la
+moyenne, en écarts-types : 0 est la moyenne du programme, positif est meilleur.
+La dernière donne l’étendue des rangs sous les
+{{ rb.tirages }} pondérations tirées — plus elle est large, moins le rang
+affiché veut dire quelque chose.</p>
 
 {% assign cr = c.carrieres %}
 
