@@ -33,14 +33,26 @@ chiffre veut dire :
 
     parcours     part du casting depassee, par participation
     epreuves     epreuves individuelles gagnees / disputees avant sa sortie
-    discretion   voix recues / conseils traverses            (bas = bon)
-    resistance   conseils survecus alors qu'il etait vise / conseils ou vise
-    lecture      bulletins portes sur l'elimine / bulletins emis
+    discretion   voix recues / conseils traverses, HORS LE SOIR DU DEPART
+    lecture      bulletins justes / bulletins emis, HORS CELUI DE SON DEPART
 
-Les trois dernieres ne se lisent que sur les conseils au depouillement
-COMPLET. Ce depouillement s'effondre a l'epoque recente -- 61 % des conseils
-avant 2005, 18 % entre 2020 et 2024 -- et c'est le biais principal de ce
-classement. Il est mesure ici (`biais_epoque`) plutot que taise.
+Le « hors le soir du depart » n'est pas un detail. Une cinquieme facette avait
+ete construite -- survivre a un conseil ou l'on est vise -- avant qu'on ne
+s'apercoive que 38 % de ses occasions etaient le conseil qui elimine le joueur,
+c'est-a-dire un echec que personne ne peut eviter. En les retirant, il ne
+reste que des survies : le taux monte a 100 % pour tout le monde. La facette
+n'avait pas d'autre signal que cet echec obligatoire, et elle a ete retiree.
+`artefacts_du_dernier_soir` en refait la preuve a chaque construction.
+
+Le meme piege abimait les deux facettes qui restent, et il est desamorce :
+un aventurier ne vote jamais pour lui-meme, donc son dernier bulletin est faux
+par construction ; et les voix qui le sortent mesurent la maniere dont il est
+sorti, pas sa discretion.
+
+Les deux dernieres ne se lisent que sur les conseils au depouillement COMPLET.
+Ce depouillement s'effondre a l'epoque recente -- 67 % des conseils avant 2005,
+20 % entre 2020 et 2024 -- et c'est le biais principal de ce classement. Il est
+mesure ici (`biais_epoque`) plutot que taise.
 """
 from collections import Counter, defaultdict
 
@@ -72,6 +84,25 @@ PLAFOND_K = 200.0
 # `sens` vaut +1 quand un chiffre eleve est bon, -1 quand il est mauvais.
 # `nature` dit quelle loi sert de prior : une proportion se retrecit vers une
 # beta, un comptage par occasion vers une gamma.
+# Quatre facettes, et pas cinq. Une cinquieme -- « la resistance », survivre a
+# un conseil ou l'on est vise -- a ete construite puis RETIREE : la preuve de
+# son retrait est calculee a chaque construction par `artefacts_du_dernier_soir`
+# et publiee sur la page. En deux mots : 38 % de ses occasions etaient le
+# conseil qui elimine le joueur, un echec que personne ne peut eviter ; en les
+# retirant, le taux monte a 100 % pour tout le monde. La facette n'avait pas
+# d'autre signal que cet echec obligatoire.
+#
+# Le meme piege guette les deux facettes qui restent au bulletin, et il est
+# desamorce dans `mesurer` plutot que dissimule :
+#
+#   * un aventurier ne vote JAMAIS pour lui-meme : le bulletin qu'il emet le
+#     soir de son elimination est faux par construction -- 264 fois sur 264.
+#     Il est ecarte du calcul de la lecture.
+#   * les voix qui le font sortir sont, elles aussi, structurelles : elles
+#     representent 63 % des voix relevees. Les compter dans la discretion
+#     revient a mesurer « a-t-il ete elimine au conseil ? », ce que le parcours
+#     dit deja -- 1,35 voix par conseil pour un elimine au conseil contre 0,14
+#     pour un vainqueur. Le soir du depart est donc ecarte des deux cotes.
 FACETTES = [
     ("parcours", "Le parcours",
      "Aller loin, et le refaire",
@@ -84,16 +115,13 @@ FACETTES = [
      +1, "proportion"),
     ("discretion", "La discrétion",
      "Traverser les conseils sans que personne n’écrive votre nom",
-     "Voix reçues", "les conseils traversés",
+     "Voix reçues, hors le conseil qui l’élimine",
+     "les conseils dépouillés qu’il a traversés, hors celui-là",
      -1, "comptage"),
-    ("resistance", "La résistance",
-     "S’en sortir quand le nom écrit est le vôtre",
-     "Conseils survécus alors qu’il était visé",
-     "les conseils où il a reçu au moins une voix",
-     +1, "proportion"),
     ("lecture", "La lecture",
      "Écrire le nom de celui qui part, conseil après conseil",
-     "Bulletins portés sur l’éliminé", "les bulletins qu’il a émis",
+     "Bulletins portés sur l’éliminé, hors celui de son propre départ",
+     "les bulletins qu’il a émis, hors celui-là",
      +1, "proportion"),
 ]
 CLES = [f[0] for f in FACETTES]
@@ -267,27 +295,38 @@ def mesurer(saisons, parts, conseils, epreuves):
     for p in parts:
         jours[p["saison"]].append(p.get("jour_sortie"))
 
-    # justesse et evasion se recomptent ici : indicateurs.py les rend par
-    # participation avec un seuil, or le seuil doit tomber APRES l'agregation.
+    # Les deux facettes au bulletin se recomptent ici, et le SOIR DU DEPART y
+    # est ecarte des deux cotes. Ce n'est pas un ajustement de confort : le
+    # bulletin qu'un aventurier emet le soir ou il part ne peut pas etre juste,
+    # puisqu'on ne vote pas pour soi ; et les voix qui le sortent ne mesurent
+    # pas sa discretion mais le fait qu'il ait ete elimine au conseil, ce que
+    # le parcours porte deja. `artefacts_du_dernier_soir` en publie la preuve.
+    sortie, _ = I._episode_de_sortie(conseils, parts, epreuves)
     justes = Counter(); emis = Counter()
-    vises = Counter(); survecus = Counter()
+    voix = Counter(); presents = Counter()
     for c in I.eliminations(conseils):
         s = par_saison.get(c["saison"]) or {}
         if s.get("annulee") or s.get("en_cours") or not c.get("complet"):
             continue
         el = c.get("elimine") if c.get("elimine_rattache") else None
+        try:
+            ep = int(c["episode"])
+        except (TypeError, ValueError, KeyError):
+            continue
+        for (sid, pid), ep_sortie in sortie.items():
+            if sid == c["saison"] and ep_sortie >= ep and not (el and pid == el):
+                presents[(sid, pid)] += 1
         contre = Counter()
         for b in c.get("votes") or []:
             if b.get("cible_rattachee"):
                 contre[b["cible"]] += 1
-            if el and b.get("votant_rattache"):
+            if el and b.get("votant_rattache") and b["votant"] != el:
                 emis[(c["saison"], b["votant"])] += 1
                 if b.get("cible_rattachee") and b["cible"] == el:
                     justes[(c["saison"], b["votant"])] += 1
-        for pid in contre:
-            vises[(c["saison"], pid)] += 1
-            if el and pid != el:
-                survecus[(c["saison"], pid)] += 1
+        for pid, n in contre.items():
+            if not (el and pid == el):
+                voix[(c["saison"], pid)] += n
 
     mesures = {}
     for p in parts:
@@ -320,9 +359,7 @@ def mesurer(saisons, parts, conseils, epreuves):
                           float(l["epreuves_disputees"]))
                          if l.get("epreuves_disputees") is not None
                          else (0.0, 0.0)),
-            "discretion": (float(p.get("votes_recus") or 0),
-                           float(l["conseils_assistes"])),
-            "resistance": (float(survecus[(sid, pid)]), float(vises[(sid, pid)])),
+            "discretion": (float(voix[(sid, pid)]), float(presents[(sid, pid)])),
             "lecture": (float(justes[(sid, pid)]), float(emis[(sid, pid)])),
             "_rang_atteste": atteste,
             "_annee": l["annee"],
@@ -332,6 +369,88 @@ def mesurer(saisons, parts, conseils, epreuves):
             "_titre": (par_saison.get(sid) or {}).get("titre"),
         }
     return mesures
+
+
+def artefacts_du_dernier_soir(saisons, parts, conseils, epreuves):
+    """La preuve, refaite a chaque construction, de ce que le soir du depart fabrique.
+
+    Trois nombres, et ils decident de la forme du classement.
+
+      * `resistance` : sur les occasions ou quelqu'un est vise a un conseil
+        depouille, la part qui EST le conseil qui l'elimine. Un echec que
+        personne ne peut eviter. En les retirant, il ne reste que des
+        survies -- le taux monte a 100 % pour tout le monde, et la facette
+        cesse de distinguer qui que ce soit. C'est pourquoi elle n'existe pas.
+      * `lecture` : le bulletin qu'un aventurier emet le soir de son depart est
+        faux par construction, puisqu'on ne vote pas pour soi. Le compter
+        rabaisse d'autant ceux dont on ne lit que ce bulletin-la.
+      * `discretion` : les voix qui font sortir quelqu'un pesent la majorite
+        des voix relevees, et elles separent les sorts plus qu'elles ne
+        separent les joueurs.
+
+    Rien ici n'entre dans un score : ce bloc sert a EXPLIQUER le classement, et
+    a le contredire si un jour les chiffres changent.
+    """
+    par_saison = {x["id"]: x for x in saisons}
+    sortie, _ = I._episode_de_sortie(conseils, parts, epreuves)
+    vises = 0; vises_fatals = 0
+    seuls = 0; seuls_fatals = 0
+    voix_total = 0; voix_fatales = 0
+    bulletins_partant = 0; justes_partant = 0
+    bulletins_autres = 0; justes_autres = 0
+    par_part = defaultdict(lambda: [0, 0])
+    for c in I.eliminations(conseils):
+        s = par_saison.get(c["saison"]) or {}
+        if s.get("annulee") or s.get("en_cours") or not c.get("complet"):
+            continue
+        el = c.get("elimine") if c.get("elimine_rattache") else None
+        contre = Counter()
+        for b in c.get("votes") or []:
+            if b.get("cible_rattachee"):
+                contre[b["cible"]] += 1
+            if el and b.get("votant_rattache"):
+                juste = bool(b.get("cible_rattachee") and b["cible"] == el)
+                if b["votant"] == el:
+                    bulletins_partant += 1
+                    justes_partant += int(juste)
+                else:
+                    bulletins_autres += 1
+                    justes_autres += int(juste)
+        for pid, n in contre.items():
+            vises += 1
+            voix_total += n
+            par_part[(c["saison"], pid)][0] += 1
+            if el and pid == el:
+                vises_fatals += 1
+                voix_fatales += n
+                par_part[(c["saison"], pid)][1] += 1
+    for occasions, fatals in par_part.values():
+        if occasions == 1:
+            seuls += 1
+            seuls_fatals += fatals
+    pc = lambda a, b: round(100.0 * a / b, 1) if b else None
+    return {
+        "resistance": {
+            "occasions": vises, "dont_le_soir_du_depart": vises_fatals,
+            "part": pc(vises_fatals, vises),
+            "une_seule_occasion": seuls,
+            "une_seule_et_fatale": seuls_fatals,
+            "part_une_seule": pc(seuls_fatals, seuls),
+        },
+        "lecture": {
+            "bulletins_du_partant": bulletins_partant,
+            "justes_du_partant": justes_partant,
+            "bulletins_des_autres_soirs": bulletins_autres,
+            "justes_des_autres_soirs": justes_autres,
+            "taux_des_autres_soirs": pc(justes_autres, bulletins_autres),
+            "taux_tout_compris": pc(justes_partant + justes_autres,
+                                    bulletins_partant + bulletins_autres),
+        },
+        "discretion": {
+            "voix_relevees": voix_total, "dont_le_soir_du_depart": voix_fatales,
+            "part": pc(voix_fatales, voix_total),
+        },
+    }
 
 
 def agreger(mesures, cles):
@@ -667,6 +786,7 @@ def tout(saisons, parts, conseils, epreuves):
     if not mesures:
         return {}
     pr = priors(mesures)
+    artefacts = artefacts_du_dernier_soir(saisons, parts, conseils, epreuves)
 
     # --- unite « joueur », perimetre complet
     sujets, cles_par = _sujets_joueurs(mesures, lambda m: True)
@@ -763,6 +883,7 @@ def tout(saisons, parts, conseils, epreuves):
         "correlation_moyenne": round(
             float(np.mean([c["rho"] for c in correl])), 3),
         "correlations_bornes": bornes_des_correlations(correl),
+        "artefacts": artefacts,
         "palmares": {
             "auc": round(auc, 3) if auc is not None else None,
             "rang_median_vainqueurs": int(np.median(

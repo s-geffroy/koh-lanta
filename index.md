@@ -225,24 +225,20 @@ plus tôt que les hommes en moyenne — et remportent pourtant
   · <a href="{{ '/statistiques/grille/' | relative_url }}">La grille</a></p>
 </div>
 
-## Et une chose que le mot « meilleur joueur » recouvre
+## Et une chose que le mot « meilleur joueur » ne recouvre pas
 
 {% assign cl = site.data.stats.classement %}
-{% assign sansEp = cl.correlations_bornes.sans_epreuves %}
-{% assign avecEp = cl.correlations_bornes.avec_epreuves %}
 <div class="constat">
-  <p>Cinq façons de bien jouer ont été mesurées sur les
+  <p>Quatre façons de bien jouer ont été mesurées sur les
   {{ cl.joueurs_classes }} aventuriers, <b>sans jamais regarder qui avait
-  gagné</b>. Quatre vont ensemble : aller loin, n’être pas visé, survivre quand
-  on l’est, écrire le bon nom — elles s’accordent deux à deux entre
-  {{ sansEp.min }} et {{ sansEp.max }}.</p>
-  <p><b>La cinquième, les épreuves, n’est corrélée à rien</b> :
-  {{ avecEp.min }} à {{ avecEp.max }} avec chacune des autres. Gagner les
-  épreuves et bien jouer le conseil sont deux talents <b>sans rapport
-  mesurable</b> — et c’est pourquoi il n’existe pas un classement des joueurs,
-  mais autant qu’on choisit de pondérations : <b>{{ cl.robustesse.candidats }}
-  aventuriers différents</b> entrent dans le top {{ cl.taille }} selon les
-  poids.</p>
+  gagné</b> : aller loin, gagner les épreuves, n’être pas visé au conseil,
+  écrire le nom de celui qui part.</p>
+  <p><b>Aucune ne prédit les autres.</b> Sur les six paires possibles, la
+  corrélation la plus forte vaut {{ cl.correlations[0].rho }} — c’est-à-dire
+  rien. Être bon quelque part ne dit pas qu’on est bon ailleurs, et
+  « meilleur joueur » ne désigne donc pas une qualité mais un arbitrage :
+  <b>{{ cl.robustesse.candidats }} aventuriers différents</b> entrent dans le
+  top {{ cl.taille }} selon les poids qu’on leur donne.</p>
   <p><a href="{{ '/statistiques/top/' | relative_url }}">Le top des joueurs</a>
   · <a href="{{ '/statistiques/epreuves/' | relative_url }}">Les épreuves</a></p>
 </div>

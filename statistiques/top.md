@@ -3,21 +3,21 @@ layout: page
 title: Le top des joueurs
 permalink: /statistiques/top/
 chapeau: >-
-  Cinq facettes, aucune victoire dans le calcul, et deux découvertes : gagner
-  les épreuves n’a **aucun rapport** avec bien jouer le conseil, et
-  **quatre-vingt-quatorze joueurs** peuvent entrer dans ce top selon les poids
-  qu’on choisit.
+  Quatre façons de bien jouer, mesurées sans jamais regarder qui a gagné.
+  **Aucune ne prédit les autres** — et une cinquième a dû être retirée parce
+  qu’elle ne mesurait qu’une chose : le soir où l’on part.
 ---
 
 {% assign c = site.data.stats.classement %}
 {% assign rb = c.robustesse %}
 {% assign h = c.hasard %}
 {% assign pl = c.palmares %}
+{% assign ar = c.artefacts %}
 
 Tout le monde a son classement, personne n’a le même, et aucun n’explique
 comment il a été fait. Celui-ci est fabriqué devant vous, sur les
-{{ c.joueurs_classes }} aventuriers du programme, à partir de cinq mesures
-tirées des données — et il est publié **avec de quoi le démolir**.
+{{ c.joueurs_classes }} aventuriers du programme, et il est publié **avec de
+quoi le démolir**.
 
 Une règle a présidé à tout le reste : **le palmarès n’entre pas dans le
 calcul**. Ni le titre, ni la place de finaliste. Un classement qui compte la
@@ -28,10 +28,10 @@ regarde **après**, pour voir si le score la retrouve tout seul.
 <ul class="chiffres">
   <li class="chiffre"><b>{{ c.joueurs_classes }}</b><span>aventuriers classés</span></li>
   <li class="chiffre"><b>{{ rb.candidats }}</b><span>entrent dans le top {{ c.taille }} selon les poids</span></li>
-  <li class="chiffre"><b>{{ rb.socle }}</b><span>y sont sous plus de 99 % des pondérations</span></li>
+  <li class="chiffre"><b>{{ c.correlations[0].rho }}</b><span>corrélation la plus forte entre deux facettes</span></li>
 </ul>
 
-## Les cinq facettes, et leur dénominateur
+## Les quatre facettes, et leur dénominateur
 
 Un chiffre ne veut rien dire sans ce qui le divise. Chaque facette porte donc
 le sien, et il est publié à côté du classement.
@@ -57,7 +57,8 @@ fabriquerait un classement de survivants. On <em>rétrécit</em> donc chaque tau
 vers la moyenne de la population, d’autant plus fort que les essais sont rares.
 La force de ce rétrécissement n’est pas choisie à la main : elle est estimée
 sur les données elles-mêmes, par la méthode des moments. Faute de preuve, un
-joueur vaut la moyenne — il ne vaut ni zéro, ni l’exclusion.</p>
+joueur vaut la moyenne — il ne vaut ni zéro, ni l’exclusion.
+<a href="{{ '/methode/' | relative_url }}">La méthode</a> le détaille.</p>
 
 <p class="note">Une précision sur le parcours : le rang final est donné en
 clair par la source pour {{ c.rangs_attestes }} des
@@ -66,21 +67,62 @@ clair par la source pour {{ c.rangs_attestes }} des
 les ex æquo se partageant le rang. Rien n’est deviné, mais ce n’est pas la même
 qualité de donnée, et c’est dit.</p>
 
-<p class="note"><strong>Une conséquence à signaler, parce qu’elle décide de
-la moitié du classement.</strong> Sur la facette du parcours, la dispersion
-entre joueurs n’est pas décelable — ce que la section sur la stabilité mesure
-plus bas — et le rétrécissement y part donc au plafond. La facette se comporte
-alors comme un <em>cumul</em> : elle récompense d’être allé loin <em>et</em> de
-l’avoir refait. Un vainqueur d’une seule saison y plafonne là où un habitué des
-retours accumule. C’est assumé : « meilleur joueur » ne pose pas la même
-question que « meilleure saison jouée », et la seconde a sa propre liste plus
-bas.</p>
+## La cinquième facette, et pourquoi elle n’existe pas
+
+Il y en avait cinq. La cinquième s’appelait **la résistance** : s’en sortir
+quand le nom écrit au conseil est le vôtre. C’est la qualité que tout le monde
+cite en premier pour désigner un grand joueur. Elle a été construite, publiée,
+puis retirée.
+
+<div class="constat">
+  <p>Sur les <b>{{ ar.resistance.occasions }} occasions</b> où quelqu’un est
+  visé à un conseil dépouillé, <b>{{ ar.resistance.dont_le_soir_du_depart }}</b>
+  — soit {{ ar.resistance.part }} % — <b>sont le conseil qui l’élimine</b>.
+  C’est un échec que personne ne peut éviter, et il était compté comme un
+  échec.</p>
+  <p>Retirez-les : il ne reste que des survies, et le taux monte à
+  <b>100 % pour tout le monde</b>. La facette n’avait pas d’autre signal que
+  cet échec obligatoire. Elle ne mesurait pas l’art de s’en sortir — elle
+  mesurait <em>combien de fois on nous a vu partir</em>.</p>
+</div>
+
+Le coup est plus dur encore sur ceux qu’on observe peu :
+**{{ ar.resistance.une_seule_occasion }} participations** n’ont qu’une seule
+occasion mesurée, et pour **{{ ar.resistance.une_seule_et_fatale }} d’entre
+elles** — {{ ar.resistance.part_une_seule }} % — cette unique occasion *est*
+l’élimination. Leur résistance valait zéro par construction.
+
+### Le même piège, désamorcé sur les deux facettes qui restent
+
+<div class="constat">
+  <p><b>Un aventurier ne vote jamais pour lui-même.</b> Le bulletin qu’il émet
+  le soir de son élimination est donc faux par construction :
+  <b>{{ ar.lecture.justes_du_partant }} juste sur
+  {{ ar.lecture.bulletins_du_partant }}</b>. Les autres soirs, la justesse est
+  de {{ ar.lecture.taux_des_autres_soirs }} % — contre
+  {{ ar.lecture.taux_tout_compris }} % si l’on garde tout. Ce bulletin-là est
+  écarté.</p>
+  <p><b>Les voix qui vous sortent ne mesurent pas votre discrétion.</b> Elles
+  pèsent <b>{{ ar.discretion.part }} %</b> de toutes les voix relevées, et elles
+  séparent les <em>manières de sortir</em> bien plus que les joueurs : 1,35 voix
+  par conseil pour un éliminé au conseil, 0,14 pour un vainqueur. Les compter
+  revient à redemander « a-t-il été éliminé au conseil ? », ce que le parcours
+  dit déjà. Le soir du départ est écarté des deux côtés.</p>
+</div>
+
+<p class="note">Ces trois corrections ne sont pas des ajustements de confort :
+elles ont <strong>renversé le résultat principal de cette page</strong>. Dans sa
+première version, les quatre facettes non physiques s’accordaient entre 0,349 et
+0,507, et la page en concluait qu’il existait un « jeu social » cohérent. Cet
+accord était fabriqué par le soir du départ, présent dans les trois à la fois.
+Retiré, il ne reste rien — la section suivante le montre.
+<a href="{{ '/sources/' | relative_url }}">Les sources</a> racontent la revue.</p>
 
 ## Le top {{ c.taille }}
 
-Le score est la moyenne des cinq facettes, ramenées chacune à une même échelle.
-Poids égaux : c’est la seule pondération qui ne demande à personne de décider
-que le physique compte plus que le vote.
+Le score est la moyenne des quatre facettes, ramenées chacune à une même
+échelle. Poids égaux : c’est la seule pondération qui ne demande à personne de
+décider que le physique compte plus que le vote.
 
 <div class="tableau-large">
 <table data-triable>
@@ -104,11 +146,41 @@ que le physique compte plus que le vote.
 </table>
 </div>
 
+## Les quatre facettes parlent-elles du même talent ?
+
+Si « bon joueur » désignait quelque chose, les facettes iraient ensemble : celui
+qui gagne les épreuves devrait aussi voter juste. On peut le vérifier
+directement.
+
+{% include graphiques/top-correlations.svg %}
+
+<p class="legende-figure">Corrélation de rang entre chaque paire de facettes,
+en valeur absolue, sur les {{ c.joueurs_classes }} joueurs classés. En clair,
+les paires dont la corrélation est négative.</p>
+
+<div class="constat">
+  <p><b>Rien ne va avec rien.</b> Sur les six paires possibles, la plus forte
+  vaut <b>{{ c.correlations[0].rho }}</b> et la plus faible
+  {{ c.correlations[5].rho }}. La moyenne des six est
+  {{ c.correlation_moyenne }}.</p>
+  <p>Il n’existe donc pas de « bon joueur » au singulier. Être bon quelque part
+  ne dit rien de ce qu’on vaut ailleurs, et un score synthétique ne fait
+  qu’<em>additionner quatre qualités sans rapport</em>. Son premier est celui
+  que la moyenne a favorisé.</p>
+</div>
+
+<p class="note">C’est ce qui explique l’ampleur du mouvement mesuré plus bas :
+quand les composantes divergent à ce point, changer les poids change les noms.
+Et c’est aussi ce qui rend la première version de cette page fausse : elle
+lisait un accord de 0,35 à 0,51 entre les facettes du conseil, mais cet accord
+venait du soir du départ, compté trois fois. Une corrélation qui disparaît
+quand on retire un artefact commun n’était pas une corrélation.</p>
+
 ## Ce que les poids décident — et c’est presque tout
 
 Voilà l’objection qu’on fait à tous les classements : *vos poids sont
 arbitraires*. Elle est juste. Plutôt que de défendre les miens, je les ai tous
-essayés — **{{ rb.tirages }} pondérations tirées au hasard** sur les cinq
+essayés — **{{ rb.tirages }} pondérations tirées au hasard** sur les quatre
 facettes, sans aucune opinion sur leur importance relative, et le classement
 refait à chaque fois.
 
@@ -123,10 +195,12 @@ médian, et l’intervalle qui contient 90 % de ses rangs selon la pondération.
   <p>{% if rb.toujours == 0 %}<b>Aucun</b> n’y figure sous <em>toutes</em> les
   pondérations.{% elsif rb.toujours == 1 %}<b>Un seul</b> y figure sous
   <em>toutes</em> les pondérations.{% else %}<b>{{ rb.toujours }}</b> y figurent
-  sous <em>toutes</em> les pondérations.{% endif %} Ils ne sont que
+  sous <em>toutes</em> les pondérations.{% endif %}
+  {% if rb.socle == 1 %}Un seul y est dans plus de 99 % des cas
+  — <b>{{ rb.socle_noms | join: " et " }}</b>{% else %}Ils ne sont que
   <b>{{ rb.socle }}</b> à y être dans plus de 99 % des cas —
-  {{ rb.socle_noms | join: " et " }} — et le moins solide du top actuel n’y
-  tient que {{ rb.part_top_minimale_du_top }} % du temps.</p>
+  {{ rb.socle_noms | join: " et " }}{% endif %} — et le moins solide du top
+  actuel n’y tient que {{ rb.part_top_minimale_du_top }} % du temps.</p>
 </div>
 
 <div class="tableau-large">
@@ -164,56 +238,14 @@ classement réel et pour un classement où les résultats ont été tirés au so
 <div class="constat">
   <p>Le hasard produit un premier à <b>{{ h.premier }}</b>, un vingt-cinquième
   à {{ h.vingt_cinquieme }}, et un écart de {{ h.ecart }} entre les deux. Il
-  produit aussi des noms — {{ h.noms | join: ", " }} — qu’on pourrait commenter
-  avec le même aplomb.</p>
+  produit surtout une liste de noms — {{ h.noms | join: ", " }} — que rien ne
+  distingue, à la lecture, d’un vrai palmarès.</p>
   <p><b>Le classement réel tient l’épreuve</b> : son premier est à
   {{ h.reel_premier }}, et l’écart du premier au vingt-cinquième vaut
   {{ h.reel_ecart }} — <b>{{ h.reel_ecart | divided_by: h.ecart | round: 1 }} fois</b>
   celui du hasard. La hiérarchie n’est donc pas fabriquée de toutes pièces. Mais
   un top tiré au sort a de l’allure, et c’est ce qu’il fallait montrer.</p>
 </div>
-
-## Les cinq facettes parlent-elles du même talent ?
-
-Si « bon joueur » désigne quelque chose, les cinq facettes doivent aller
-ensemble : celui qui gagne les épreuves devrait aussi voter juste. Sinon, le
-score synthétique ne fait que moyenner cinq qualités sans rapport, et son
-premier est celui que la moyenne a favorisé.
-
-{% include graphiques/top-correlations.svg %}
-
-<p class="legende-figure">Corrélation de rang entre chaque paire de facettes,
-sur les {{ c.joueurs_classes }} joueurs classés. En clair, les quatre paires qui
-font intervenir les épreuves.</p>
-
-La corrélation moyenne vaut {{ c.correlation_moyenne }} — et c’est le chiffre à
-ne pas retenir, parce qu’il moyenne deux régimes opposés.
-
-{% assign sansEp = c.correlations_bornes.sans_epreuves %}
-{% assign avecEp = c.correlations_bornes.avec_epreuves %}
-
-<div class="constat">
-  <p><b>Les quatre facettes du jeu social se tiennent</b> : parcours,
-  discrétion, résistance et lecture s’accordent deux à deux entre
-  {{ sansEp.min }} et {{ sansEp.max }}, pour une moyenne de
-  {{ sansEp.moyenne }} sur leurs {{ sansEp.paires }} paires. Celui qui vote
-  juste est aussi celui qu’on n’écrit pas, et il va plus loin.</p>
-  <p><b>Les épreuves, elles, ne sont corrélées à rien.</b> Les
-  {{ avecEp.paires }} paires qui les font intervenir tiennent toutes entre
-  {{ avecEp.min }} et {{ avecEp.max }}, moyenne {{ avecEp.moyenne }} —
-  c’est-à-dire <em>zéro</em>. Gagner les épreuves et bien jouer le conseil sont
-  deux talents <b>sans aucun rapport mesurable</b> dans ces données.</p>
-</div>
-
-<p class="note">Conséquence directe sur la lecture du top : un classement qui
-pèse plus le physique et un classement qui pèse plus le social ne sont pas deux
-versions du même palmarès, ce sont <strong>deux palmarès différents</strong>.
-C’est aussi ce qui explique l’ampleur du mouvement mesuré plus haut — quand les
-facettes divergent à ce point, changer les poids change les noms. Une réserve
-enfin, qui joue vers le haut : le rétrécissement ramène à la moyenne les joueurs
-peu documentés <em>sur toutes les facettes à la fois</em>, ce qui crée à lui
-seul un peu d’accord. Les corrélations sociales sont donc majorées ; celle des
-épreuves, déjà nulle, ne peut que l’être aussi.</p>
 
 ## Un bon joueur l’est-il encore la fois suivante ?
 
@@ -232,35 +264,35 @@ aventuriers qui ont joué au moins deux fois, face à {{ t.tirages }} appariemen
 tirés au hasard.</p>
 
 <div class="constat">
-  <p><b>Rien.</b> La corrélation observée vaut {{ t.observe }}, contre
-  {{ t.attendu }} attendu du hasard : {{ t.ecart_types }} écart-type,
+  <p>La corrélation observée vaut <b>{{ t.observe }}</b>, contre
+  {{ t.attendu }} attendu du hasard : {{ t.ecart_types }} écarts-types,
   p = {{ t.p }} — et {{ t.p_ajustee }} après correction pour tests multiples.
-  Le trait tombe au milieu de la masse.</p>
-  <p>Sur ces données, <b>la performance d’un aventurier ne se reproduit pas</b>
-  d’une saison à l’autre. Ce que ce classement mesure est donc, pour une part
-  qu’on ne sait pas borner, ce qui lui est arrivé — et non ce qu’il est.</p>
+  <b>Le test n’est pas retenu</b>, et il s’en faut de peu.</p>
+  <p>Ce qu’il faut en dire, ni plus ni moins : <b>quelque chose se reproduit
+  d’une saison à l’autre, mais on ne peut pas le distinguer du hasard sur
+  {{ c.stabilite.effectif }} aventuriers</b>. Un joueur bon une fois l’est
+  peut-être encore ; ces données ne permettent pas de l’affirmer.</p>
 </div>
 
-<p>Une seconde mesure, indépendante de ce test, dit la même chose. Pour savoir
-de combien rétrécir la facette du parcours, on compare ce qu’un même aventurier
-fait varier d’une saison à l’autre à ce qui sépare les aventuriers entre eux.
-<b>Le premier dépasse le second</b> : aucun écart stable entre joueurs n’y est
-décelable, et le rétrécissement part au plafond. Deux calculs sans rapport,
-une seule conclusion.</p>
-
-<p class="note"><strong>Une réserve, et elle joue dans le sens inverse.</strong>
-Ces {{ c.stabilite.effectif }} aventuriers ne sont pas un échantillon : ce sont
-ceux que la production a <em>rappelés</em>, donc les meilleurs de leur saison.
+<p class="note"><strong>Deux réserves, en sens contraires.</strong> Ces
+{{ c.stabilite.effectif }} aventuriers ne sont pas un échantillon : ce sont ceux
+que la production a <em>rappelés</em>, donc les meilleurs de leur saison.
 Comparer des gens déjà triés sur le talent écrase mécaniquement la corrélation —
-c’est le même effet qui fait qu’en ne regardant que les recrues d’une équipe
-première, on ne trouve plus de lien entre taille et performance. L’absence de
-lien mesurée ici est donc un plancher, pas une preuve que le talent n’existe
-pas. Elle suffit néanmoins à dire qu’il ne <em>domine</em> pas.</p>
+le vrai lien est donc plus fort que {{ t.observe }}. En sens inverse, une
+édition de revenants n’est pas une saison ordinaire : on y affronte des
+adversaires bien plus forts, ce que le classement ne sait pas corriger, et cela
+brouille la comparaison dans l’autre sens.</p>
+
+<p class="note">Ce test est le seul déclaré ici, et il entre au
+<a href="{{ '/methode/' | relative_url }}">registre corrigé</a> avec les
+autres : un test qu’on tiendrait à l’écart de la liste serait un test gratuit.
+Dans la première version de cette page, il valait 0,039 pour p = 0,73 — c’est le
+même artefact du soir du départ qui l’écrasait.</p>
 
 ## Le score n’a jamais vu le palmarès — et il le retrouve
 
-Le contrôle qui manquerait à n’importe quel autre top. Aucune des cinq facettes
-ne sait qui a gagné. Où tombent les vainqueurs ?
+Le contrôle qui manquerait à n’importe quel autre top. Aucune des quatre
+facettes ne sait qui a gagné. Où tombent les vainqueurs ?
 
 <div class="constat">
   <p>Le rang médian des <b>{{ pl.vainqueurs_total }} vainqueurs</b> est
@@ -296,10 +328,11 @@ mis la victoire dans le calcul.
 </table>
 </div>
 
-## Les cinq classements par facette
+## Les quatre classements par facette
 
-Le top synthétique cache ce qu’il moyenne. Voici les cinq classements séparés,
-chacun sur sa mesure et avec le compte brut qui la fonde.
+Le top synthétique cache ce qu’il moyenne — et puisque les facettes ne se
+parlent pas, ce sont ces quatre listes qui portent l’information. Chacune sur sa
+mesure, avec le compte brut qui la fonde.
 
 {% for f in c.facettes %}
 ### {{ f.libelle }} — {{ f.question | downcase }}
@@ -326,7 +359,7 @@ moins une observation ; les autres valent la moyenne, faute de preuve.</p>
 ## La meilleure saison jamais jouée
 
 Autre question, autre liste. Ci-dessus, un joueur ; ici, **une saison** — une
-participation, sur ses seules cinq facettes, sans rien cumuler.
+participation, sur ses seules quatre facettes, sans rien cumuler.
 
 <div class="tableau-large">
 <table data-triable>
@@ -365,11 +398,11 @@ seules saisons classiques, sur {{ c.joueurs_classiques }} joueurs :
 
 {% assign be = c.biais_epoque %}
 
-Trois facettes sur cinq — la discrétion, la résistance, la lecture — se lisent
-sur les bulletins, et **le dépouillement des conseils s’effondre à l’époque
-récente**. Les joueurs des dernières saisons sont donc, sur ces trois facettes,
-ramenés à la moyenne faute d’observations. Ce n’est pas une opinion sur leur
-niveau, c’est un trou dans la source.
+Deux facettes sur quatre — la discrétion, la lecture — se lisent sur les
+bulletins, et **le dépouillement des conseils s’effondre à l’époque récente**.
+Les joueurs des dernières saisons sont donc, sur ces deux facettes, ramenés à la
+moyenne faute d’observations. Ce n’est pas une opinion sur leur niveau, c’est
+un trou dans la source.
 
 <div class="tableau-large">
 <table>
@@ -398,24 +431,22 @@ contraint :
 </div>
 
 <p class="note">Les limites, en un bloc, parce qu’elles comptent autant que le
-classement. <strong>Le test de stabilité ne trouve rien</strong> : la
-performance ne se reproduit pas d’une saison à l’autre, et c’est le résultat le
-plus gênant de cette page. <strong>Les poids sont arbitraires</strong> :
-{{ rb.socle }} joueurs seulement tiennent dans plus de 99 % des pondérations,
-et {{ rb.candidats }} peuvent entrer dans le top.
-<strong>Trois facettes sur cinq dépendent d’un dépouillement inégal.</strong>
-<strong>La discrétion est ambivalente</strong> : n’être jamais écrit peut aussi
-vouloir dire qu’on ne menaçait personne — c’est exactement ce que
+classement. <strong>Les facettes ne se parlent pas</strong> : la moyenne des
+quatre est une convention, pas une grandeur.
+<strong>Les poids sont arbitraires</strong> : {{ rb.socle }} joueur seulement
+tient dans plus de 99 % des pondérations, quand {{ rb.candidats }} peuvent
+entrer dans le top.
+<strong>La stabilité n’est pas établie</strong> — p = {{ t.p }}, à la limite.
+<strong>Deux facettes sur quatre dépendent d’un dépouillement inégal.</strong>
+<strong>La discrétion reste ambivalente</strong> : n’être jamais écrit peut
+aussi vouloir dire qu’on ne menaçait personne — c’est ce que
 <a href="{{ '/statistiques/jeu-social/' | relative_url }}">le jeu social</a>
 montre en ne la classant que deuxième.
 <strong>Et deux dimensions entières manquent</strong> : les colliers d’immunité,
 relevés sur {{ site.data.stats.colliers.saisons_couvertes }} saisons seulement,
 et les objets qui les ont remplacés — armes secrètes, totem maudit, talisman —
-dont
-<a href="{{ '/sources/' | relative_url }}">les sources</a> ne donnent pas le
-détail. Le seul test déclaré ici est celui de la stabilité, et il entre au
-<a href="{{ '/methode/' | relative_url }}">registre corrigé</a> avec les autres :
-un test qu’on tiendrait à l’écart de la liste serait un test gratuit.</p>
+dont <a href="{{ '/sources/' | relative_url }}">les sources</a> ne donnent pas
+le détail.</p>
 
 Pour aller voir les mesures une par une :
 [le jeu social]({{ '/statistiques/jeu-social/' | relative_url }}),

@@ -261,6 +261,34 @@ Quand elle **n’est pas décelable** — c’est le cas de la longueur de parco
 le rétrécissement part au plafond, et la facette cesse de distinguer les joueurs
 un à un. C’est un résultat, pas un réglage.
 
+### Le dernier événement d’une trajectoire n’est pas un événement comme les autres
+
+Le piège est général et il ne se voit dans aucun contrôle de cohérence : les
+données sont exactes, c’est la question qui est mal posée.
+
+Dès qu’on mesure un **taux le long d’une trajectoire qui se termine**, le
+dernier événement est structurellement différent — et il est présent exactement
+une fois pour chacun. « S’en sort-il quand il est visé au conseil ? » compte
+alors l’élimination elle-même, un échec que personne ne peut éviter. « Écrit-il
+le nom de celui qui part ? » compte le bulletin qu’il a émis le soir de son
+propre départ, faux par construction puisqu’on ne vote pas pour soi.
+
+Sur un joueur bien documenté, cet événement se dilue. Sur un joueur qu’on
+n’observe qu’une fois, il est **toute** la mesure. Le biais n’est donc pas du
+bruit : il est systématiquement dirigé contre les moins documentés.
+
+Le [top des joueurs]({{ '/statistiques/top/' | relative_url }}) en porte les
+trois conséquences, toutes publiées : une facette **retirée** parce que son
+seul signal était cet échec obligatoire, deux facettes **corrigées** en
+écartant le soir du départ, et un résultat publié qui **s’est renversé** —
+l’accord entre facettes qu’on croyait mesurer n’était que cet artefact, compté
+trois fois.
+
+Le contrôle qui l’attrape est simple, et il vaut pour toute couche datée :
+**retirer le dernier événement de chaque trajectoire, et regarder ce qu’il
+reste de la mesure**. S’il ne reste rien — un taux de 100 % pour tout le
+monde — la mesure ne mesurait que lui.
+
 ### Tirer les pondérations plutôt que d’en défendre une
 
 Dès qu’un chiffre agrège plusieurs mesures, quelqu’un a décidé de leur poids

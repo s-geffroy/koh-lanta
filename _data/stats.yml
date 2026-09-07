@@ -9867,35 +9867,35 @@ classement:
       valeur: 50.7
       brut: 2 / 3
       preuve: 3
-      rang_general: 9
+      rang_general: 6
     - rang: 3
       nom: Jade Handi
       id: jade-handi
       valeur: 50.6
       brut: 2 / 3
       preuve: 3
-      rang_general: 8
+      rang_general: 3
     - rang: 4
       nom: Ugo Lartiche
       id: ugo-lartiche
       valeur: 50.6
       brut: 2 / 3
       preuve: 3
-      rang_general: 45
+      rang_general: 32
     - rang: 5
       nom: Philippe Bizet
       id: philippe-bizet
       valeur: 50.5
       brut: 2 / 3
       preuve: 3
-      rang_general: 11
+      rang_general: 231
     - rang: 6
       nom: Pascal Salviani
       id: pascal-salviani
       valeur: 50.4
       brut: 1 / 2
       preuve: 2
-      rang_general: 3
+      rang_general: 61
     - rang: 7
       nom: Bertrand Bolle
       id: bertrand-bolle
@@ -9909,21 +9909,21 @@ classement:
       valeur: 50.4
       brut: 2 / 3
       preuve: 3
-      rang_general: 151
+      rang_general: 260
     - rang: 9
       nom: Clémence Castel
       id: clemence-castel
       valeur: 50.4
       brut: 2 / 4
       preuve: 4
-      rang_general: 71
+      rang_general: 13
     - rang: 10
       nom: Romuald Lafite
       id: romuald-lafite
       valeur: 50.4
       brut: 1 / 2
       preuve: 2
-      rang_general: 5
+      rang_general: 17
   - cle: epreuves
     libelle: Les épreuves
     mesure: Épreuves individuelles gagnées
@@ -9962,292 +9962,211 @@ classement:
       valeur: 22.8
       brut: 5 / 9
       preuve: 9
-      rang_general: 18
+      rang_general: 7
     - rang: 5
       nom: Nicolas Rouyé
       id: nicolas-rouye
       valeur: 21.8
       brut: 5 / 11
       preuve: 11
-      rang_general: 65
+      rang_general: 18
     - rang: 6
       nom: Louise Picavet
       id: louise-picavet
       valeur: 21.1
       brut: 3 / 3
       preuve: 3
-      rang_general: 35
+      rang_general: 14
     - rang: 7
       nom: François-David Cardonnel
       id: francois-david-cardonnel
       valeur: 21.1
       brut: 7 / 22
       preuve: 22
-      rang_general: 7
+      rang_general: 10
     - rang: 8
       nom: François Descamp
       id: francois-descamp
       valeur: 20.8
       brut: 5 / 13
       preuve: 13
-      rang_general: 26
+      rang_general: 19
     - rang: 9
       nom: Lola Besse
       id: lola-besse
       valeur: 20.8
       brut: 5 / 13
       preuve: 13
-      rang_general: 21
+      rang_general: 8
     - rang: 10
       nom: Maxime Berthon
       id: maxime-berthon
       valeur: 20.8
       brut: 6 / 18
       preuve: 18
-      rang_general: 114
+      rang_general: 128
   - cle: discretion
     libelle: La discrétion
-    mesure: Voix reçues
+    mesure: Voix reçues, hors le conseil qui l’élimine
     question: Traverser les conseils sans que personne n’écrive votre nom
-    denominateur: les conseils traversés
+    denominateur: les conseils dépouillés qu’il a traversés, hors celui-là
     sens: bas
     unite: ' voix par conseil'
-    moyenne: 0.62
-    essais_fictifs: 1.5
-    documentes: 517
+    moyenne: 0.24
+    essais_fictifs: 3.5
+    documentes: 473
     top:
     - rang: 1
-      nom: Loïc Riowal
-      id: loic-riowal
-      valeur: 0.03
-      brut: 0 / 32
-      preuve: 32
-      rang_general: 100
-    - rang: 2
-      nom: Yassin Metiri
-      id: yassin-metiri
+      nom: Jade Handi
+      id: jade-handi
       valeur: 0.04
-      brut: 0 / 20
-      preuve: 20
-      rang_general: 150
+      brut: 0 / 19
+      preuve: 19
+      rang_general: 3
+    - rang: 2
+      nom: Martin Bazin
+      id: martin-bazin
+      valeur: 0.04
+      brut: 0 / 17
+      preuve: 17
+      rang_general: 35
     - rang: 3
-      nom: Bruno Peisey
-      id: bruno-peisey
-      valeur: 0.05
+      nom: Ugo Lartiche
+      id: ugo-lartiche
+      valeur: 0.04
       brut: 0 / 17
       preuve: 17
-      rang_general: 41
+      rang_general: 32
     - rang: 4
-      nom: Steeve Demana
-      id: steeve-demana
-      valeur: 0.05
-      brut: 0 / 17
-      preuve: 17
-      rang_general: 140
+      nom: Guénaëlle Biras
+      id: guenaelle-biras
+      valeur: 0.04
+      brut: 0 / 16
+      preuve: 16
+      rang_general: 70
     - rang: 5
-      nom: Claire Passas
-      id: claire-passas
-      valeur: 0.05
-      brut: 0 / 16
-      preuve: 16
-      rang_general: 212
-    - rang: 6
-      nom: Sandrine Dubourdy
-      id: sandrine-dubourdy
-      valeur: 0.05
-      brut: 0 / 16
-      preuve: 16
-      rang_general: 131
-    - rang: 7
-      nom: Thibault Bélanger
-      id: thibault-belanger
-      valeur: 0.05
-      brut: 0 / 16
-      preuve: 16
-      rang_general: 160
-    - rang: 8
-      nom: Bastien San Pedro
-      id: bastien-san-pedro
-      valeur: 0.06
+      nom: Christelle Gauzet
+      id: christelle-gauzet
+      valeur: 0.04
       brut: 0 / 15
       preuve: 15
       rang_general: 40
-    - rang: 9
-      nom: François Descamp
-      id: francois-descamp
-      valeur: 0.06
+    - rang: 6
+      nom: Yassin Metiri
+      id: yassin-metiri
+      valeur: 0.04
       brut: 0 / 15
       preuve: 15
-      rang_general: 26
-    - rang: 10
+      rang_general: 121
+    - rang: 7
+      nom: Cassandre Girard
+      id: cassandre-girard
+      valeur: 0.05
+      brut: 0 / 13
+      preuve: 13
+      rang_general: 82
+    - rang: 8
       nom: Gérard Urdampilleta
       id: gerard-urdampilleta
-      valeur: 0.06
-      brut: 0 / 15
-      preuve: 15
+      valeur: 0.05
+      brut: 0 / 12
+      preuve: 12
       rang_general: 76
-  - cle: resistance
-    libelle: La résistance
-    mesure: Conseils survécus alors qu’il était visé
-    question: S’en sortir quand le nom écrit est le vôtre
-    denominateur: les conseils où il a reçu au moins une voix
-    sens: haut
-    unite: ' %'
-    moyenne: 58.5
-    essais_fictifs: 70.1
-    documentes: 344
-    top:
-    - rang: 1
-      nom: Pascal Salviani
-      id: pascal-salviani
-      valeur: 62.3
-      brut: 7 / 7
-      preuve: 7
-      rang_general: 3
-    - rang: 2
-      nom: Philippe Bizet
-      id: philippe-bizet
-      valeur: 62.3
-      brut: 7 / 7
-      preuve: 7
-      rang_general: 11
-    - rang: 3
-      nom: Patricia Morel
-      id: patricia-morel
-      valeur: 61.8
-      brut: 6 / 6
-      preuve: 6
-      rang_general: 230
-    - rang: 4
-      nom: Bernard Deniaud
-      id: bernard-deniaud
-      valeur: 61.3
-      brut: 5 / 5
-      preuve: 5
-      rang_general: 74
-    - rang: 5
-      nom: Émilie Frahi
-      id: emilie-frahi
-      valeur: 61.0
-      brut: 6 / 7
-      preuve: 7
-      rang_general: 13
-    - rang: 6
-      nom: Ella Gbezan
-      id: ella-gbezan
-      valeur: 60.7
-      brut: 4 / 4
-      preuve: 4
-      rang_general: 49
-    - rang: 7
-      nom: Freddy Bolzer
-      id: freddy-bolzer
-      valeur: 60.7
-      brut: 4 / 4
-      preuve: 4
-      rang_general: 81
-    - rang: 8
-      nom: Mélissa Bastin
-      id: melissa-bastin
-      valeur: 60.7
-      brut: 4 / 4
-      preuve: 4
-      rang_general: 34
     - rang: 9
-      nom: Nathalie Ensargueix
-      id: nathalie-ensargueix
-      valeur: 60.7
-      brut: 4 / 4
-      preuve: 4
-      rang_general: 20
+      nom: Vanessa Alvarez
+      id: vanessa-alvarez
+      valeur: 0.05
+      brut: 0 / 12
+      preuve: 12
+      rang_general: 146
     - rang: 10
-      nom: Patrick Brasier De Thuy
-      id: patrick-brasier-de-thuy
-      valeur: 60.7
-      brut: 4 / 4
-      preuve: 4
-      rang_general: 38
+      nom: Alban Pellegrin
+      id: alban-pellegrin
+      valeur: 0.06
+      brut: 0 / 11
+      preuve: 11
+      rang_general: 267
   - cle: lecture
     libelle: La lecture
-    mesure: Bulletins portés sur l’éliminé
+    mesure: Bulletins portés sur l’éliminé, hors celui de son propre départ
     question: Écrire le nom de celui qui part, conseil après conseil
-    denominateur: les bulletins qu’il a émis
+    denominateur: les bulletins qu’il a émis, hors celui-là
     sens: haut
     unite: ' %'
-    moyenne: 64.0
-    essais_fictifs: 14.8
-    documentes: 461
+    moyenne: 73.5
+    essais_fictifs: 20.1
+    documentes: 423
     top:
     - rang: 1
       nom: Wendy Gervois
       id: wendy-gervois
-      valeur: 78.6
+      valeur: 82.3
       brut: 10 / 10
       preuve: 10
-      rang_general: 15
+      rang_general: 11
     - rang: 2
       nom: Marianne Mondon
       id: marianne-mondon
-      valeur: 77.6
+      valeur: 81.7
       brut: 9 / 9
       preuve: 9
-      rang_general: 22
+      rang_general: 42
     - rang: 3
-      nom: Bernard Lenoir
-      id: bernard-lenoir
-      valeur: 76.7
-      brut: 8 / 8
-      preuve: 8
-      rang_general: 12
-    - rang: 4
-      nom: Frédéric Favier
-      id: frederic-favier
-      valeur: 76.7
-      brut: 8 / 8
-      preuve: 8
-      rang_general: 6
-    - rang: 5
-      nom: Bruno Peisey
-      id: bruno-peisey
-      valeur: 75.6
-      brut: 7 / 7
-      preuve: 7
-      rang_general: 41
-    - rang: 6
-      nom: Gabriel Gubbels
-      id: gabriel-gubbels
-      valeur: 75.6
-      brut: 7 / 7
-      preuve: 7
-      rang_general: 10
-    - rang: 7
-      nom: Kevin Cuoco
-      id: kevin-cuoco
-      valeur: 75.6
-      brut: 7 / 7
-      preuve: 7
-      rang_general: 32
-    - rang: 8
-      nom: Simon Quintilla
-      id: simon-quintilla
-      valeur: 75.6
-      brut: 7 / 7
-      preuve: 7
-      rang_general: 16
-    - rang: 9
       nom: Coumba Baradji
       id: coumba-baradji
-      valeur: 75.4
-      brut: 13 / 15
-      preuve: 15
-      rang_general: 48
+      valeur: 81.4
+      brut: 13 / 14
+      preuve: 14
+      rang_general: 28
+    - rang: 4
+      nom: Bernard Lenoir
+      id: bernard-lenoir
+      valeur: 81.0
+      brut: 8 / 8
+      preuve: 8
+      rang_general: 39
+    - rang: 5
+      nom: Frédéric Favier
+      id: frederic-favier
+      valeur: 81.0
+      brut: 8 / 8
+      preuve: 8
+      rang_general: 5
+    - rang: 6
+      nom: Kunlé M'Babacéré Pakorona
+      id: kunle-m-babacere-pakorona
+      valeur: 81.0
+      brut: 8 / 8
+      preuve: 8
+      rang_general: 68
+    - rang: 7
+      nom: Amélie Grégoire
+      id: amelie-gregoire
+      valeur: 80.3
+      brut: 7 / 7
+      preuve: 7
+      rang_general: 21
+    - rang: 8
+      nom: Bruno Peisey
+      id: bruno-peisey
+      valeur: 80.3
+      brut: 7 / 7
+      preuve: 7
+      rang_general: 29
+    - rang: 9
+      nom: Carole Rapin
+      id: carole-rapin
+      valeur: 80.3
+      brut: 7 / 7
+      preuve: 7
+      rang_general: 45
     - rang: 10
-      nom: Jade Handi
-      id: jade-handi
-      valeur: 73.7
-      brut: 11 / 13
-      preuve: 13
-      rang_general: 8
+      nom: Clémentine Jullien
+      id: clementine-jullien
+      valeur: 80.3
+      brut: 7 / 7
+      preuve: 7
+      rang_general: 172
   definitions:
   - cle: parcours
     libelle: Le parcours
@@ -10262,1233 +10181,1176 @@ classement:
   - cle: discretion
     libelle: La discrétion
     question: Traverser les conseils sans que personne n’écrive votre nom
-    mesure: Voix reçues
-    denominateur: les conseils traversés
-  - cle: resistance
-    libelle: La résistance
-    question: S’en sortir quand le nom écrit est le vôtre
-    mesure: Conseils survécus alors qu’il était visé
-    denominateur: les conseils où il a reçu au moins une voix
+    mesure: Voix reçues, hors le conseil qui l’élimine
+    denominateur: les conseils dépouillés qu’il a traversés, hors celui-là
   - cle: lecture
     libelle: La lecture
     question: Écrire le nom de celui qui part, conseil après conseil
-    mesure: Bulletins portés sur l’éliminé
-    denominateur: les bulletins qu’il a émis
+    mesure: Bulletins portés sur l’éliminé, hors celui de son propre départ
+    denominateur: les bulletins qu’il a émis, hors celui-là
   top:
   - rang: 1
     nom: Claude Dartois
     id: claude-dartois
-    score: 3.28
+    score: 3.137
     participations: 4
     titres: 1
     finales: 3
     saisons: L'Île des héros, La Légende, La Revanche des héros, Viêtnam
-    part_top: 100.0
+    part_top: 94.5
     rang_min: 1
-    rang_max: 27
+    rang_max: 317
     rang_median: 1
     rang_p05: 1
-    rang_p95: 4
+    rang_p95: 28
     facettes:
       parcours: 5.07
       epreuves: 7.11
-      discretion: 0.82
-      resistance: 2.12
-      lecture: 1.29
+      discretion: -0.04
+      lecture: 0.42
     preuve:
       parcours: 4
       epreuves: 49
-      discretion: 56
-      resistance: 3
+      discretion: 20
       lecture: 13
-    rang_classique: 2
+    rang_classique: 3
   - rang: 2
     nom: Bertrand Bolle
     id: bertrand-bolle
-    score: 2.164
+    score: 2.316
     participations: 2
     titres: 1
     finales: 1
     saisons: Caramoan, La Revanche des héros
-    part_top: 96.0
-    rang_min: 2
-    rang_max: 65
+    part_top: 97.5
+    rang_min: 1
+    rang_max: 71
     rang_median: 3
     rang_p05: 2
-    rang_p95: 23
+    rang_p95: 18
     facettes:
       parcours: 2.53
       epreuves: 5.14
-      discretion: 0.8
-      resistance: 0.73
-      lecture: 1.62
+      discretion: 0.69
+      lecture: 0.9
     preuve:
       parcours: 2
       epreuves: 28
-      discretion: 22
-      resistance: 1
+      discretion: 17
       lecture: 11
     rang_classique: 1
   - rang: 3
-    nom: Pascal Salviani
-    id: pascal-salviani
-    score: 2.016
-    participations: 2
-    titres: 0
-    finales: 2
-    saisons: Le Combat des héros, Thaïlande
-    part_top: 93.2
-    rang_min: 1
-    rang_max: 100
-    rang_median: 5
-    rang_p05: 1
-    rang_p95: 27
-    facettes:
-      parcours: 2.58
-      epreuves: 1.29
-      discretion: 0.52
-      resistance: 4.68
-      lecture: 1.01
-    preuve:
-      parcours: 2
-      epreuves: 24
-      discretion: 29
-      resistance: 7
-      lecture: 15
-    rang_classique: 5
-  - rang: 4
-    nom: Teheiura Teahui
-    id: teheiura-teahui
-    score: 1.893
-    participations: 5
-    titres: 0
-    finales: 1
-    saisons: L'Île des héros, La Légende, La Nouvelle Édition, La Revanche des héros, Raja Ampat
-    part_top: 82.1
-    rang_min: 2
-    rang_max: 145
-    rang_median: 7
-    rang_p05: 2
-    rang_p95: 51
-    facettes:
-      parcours: 1.84
-      epreuves: 5.63
-      discretion: 0.44
-      resistance: 0.81
-      lecture: 0.75
-    preuve:
-      parcours: 5
-      epreuves: 48
-      discretion: 51
-      resistance: 6
-      lecture: 20
-    rang_classique: 6
-  - rang: 5
-    nom: Romuald Lafite
-    id: romuald-lafite
-    score: 1.842
-    participations: 2
-    titres: 1
-    finales: 1
-    saisons: Le Retour des héros, Panama
-    part_top: 99.8
-    rang_min: 3
-    rang_max: 72
-    rang_median: 7
-    rang_p05: 4
-    rang_p95: 16
-    facettes:
-      parcours: 2.32
-      epreuves: 2.06
-      discretion: 0.54
-      resistance: 2.78
-      lecture: 1.51
-    preuve:
-      parcours: 2
-      epreuves: 24
-      discretion: 23
-      resistance: 4
-      lecture: 14
-    rang_classique: 11
-  - rang: 6
-    nom: Frédéric Favier
-    id: frederic-favier
-    score: 1.671
-    participations: 1
-    titres: 0
-    finales: 1
-    saisons: Caramoan
-    part_top: 90.7
-    rang_min: 1
-    rang_max: 68
-    rang_median: 8
-    rang_p05: 3
-    rang_p95: 33
-    facettes:
-      parcours: 1.27
-      epreuves: 2.85
-      discretion: 0.84
-      resistance: 0.73
-      lecture: 2.66
-    preuve:
-      parcours: 1
-      epreuves: 19
-      discretion: 13
-      resistance: 1
-      lecture: 8
-    rang_classique: 3
-  - rang: 7
-    nom: François-David Cardonnel
-    id: francois-david-cardonnel
-    score: 1.65
-    participations: 2
-    titres: 1
-    finales: 1
-    saisons: Le Retour des héros, Vanuatu
-    part_top: 96.9
-    rang_min: 4
-    rang_max: 125
-    rang_median: 10
-    rang_p05: 5
-    rang_p95: 23
-    facettes:
-      parcours: 1.56
-      epreuves: 3.16
-      discretion: 0.45
-      resistance: 1.78
-      lecture: 1.29
-    preuve:
-      parcours: 2
-      epreuves: 22
-      discretion: 19
-      resistance: 5
-      lecture: 13
-    rang_classique: 4
-  - rang: 8
     nom: Jade Handi
     id: jade-handi
-    score: 1.643
+    score: 1.922
     participations: 3
     titres: 1
     finales: 2
     saisons: La Légende, Le Retour des héros, Palawan
-    part_top: 82.9
-    rang_min: 2
-    rang_max: 157
-    rang_median: 10
-    rang_p05: 2
-    rang_p95: 54
+    part_top: 99.7
+    rang_min: 1
+    rang_max: 32
+    rang_median: 4
+    rang_p05: 1
+    rang_p95: 18
     facettes:
       parcours: 3.67
       epreuves: 1.75
-      discretion: 0.75
-      resistance: 0.01
-      lecture: 2.04
+      discretion: 0.94
+      lecture: 1.33
     preuve:
       parcours: 3
       epreuves: 43
-      discretion: 40
-      resistance: 0
+      discretion: 19
       lecture: 13
-    rang_classique: 14
-  - rang: 9
+    rang_classique: 4
+  - rang: 4
+    nom: Teheiura Teahui
+    id: teheiura-teahui
+    score: 1.874
+    participations: 5
+    titres: 0
+    finales: 1
+    saisons: L'Île des héros, La Légende, La Nouvelle Édition, La Revanche des héros, Raja Ampat
+    part_top: 76.7
+    rang_min: 2
+    rang_max: 441
+    rang_median: 6
+    rang_p05: 2
+    rang_p95: 148
+    facettes:
+      parcours: 1.84
+      epreuves: 5.63
+      discretion: -0.59
+      lecture: 0.62
+    preuve:
+      parcours: 5
+      epreuves: 48
+      discretion: 26
+      lecture: 18
+    rang_classique: 26
+  - rang: 5
+    nom: Frédéric Favier
+    id: frederic-favier
+    score: 1.745
+    participations: 1
+    titres: 0
+    finales: 1
+    saisons: Caramoan
+    part_top: 98.8
+    rang_min: 1
+    rang_max: 118
+    rang_median: 6
+    rang_p05: 2
+    rang_p95: 16
+    facettes:
+      parcours: 1.27
+      epreuves: 2.85
+      discretion: 0.56
+      lecture: 2.29
+    preuve:
+      parcours: 1
+      epreuves: 19
+      discretion: 12
+      lecture: 8
+    rang_classique: 2
+  - rang: 6
     nom: Laurent Maistret
     id: laurent-maistret
-    score: 1.606
+    score: 1.543
     participations: 3
     titres: 1
     finales: 2
     saisons: La Légende, La Nouvelle Édition, Raja Ampat
-    part_top: 80.0
+    part_top: 75.8
     rang_min: 2
-    rang_max: 95
-    rang_median: 13
-    rang_p05: 2
-    rang_p95: 45
+    rang_max: 355
+    rang_median: 11
+    rang_p05: 3
+    rang_p95: 106
     facettes:
       parcours: 3.87
       epreuves: 1.8
-      discretion: 0.84
-      resistance: 0.73
-      lecture: 0.79
+      discretion: 0.75
+      lecture: -0.25
     preuve:
       parcours: 3
       epreuves: 37
-      discretion: 43
-      resistance: 1
+      discretion: 20
       lecture: 14
-    rang_classique: 73
-  - rang: 10
-    nom: Gabriel Gubbels
-    id: gabriel-gubbels
-    score: 1.534
-    participations: 1
-    titres: 0
-    finales: 0
-    saisons: Thaïlande
-    part_top: 90.9
-    rang_min: 1
-    rang_max: 60
-    rang_median: 11
-    rang_p05: 4
-    rang_p95: 30
-    facettes:
-      parcours: 1.16
-      epreuves: 1.16
-      discretion: 0.79
-      resistance: 2.12
-      lecture: 2.44
-    preuve:
-      parcours: 1
-      epreuves: 13
-      discretion: 15
-      resistance: 3
-      lecture: 7
-    rang_classique: 7
-  - rang: 11
-    nom: Philippe Bizet
-    id: philippe-bizet
-    score: 1.516
-    participations: 3
-    titres: 0
-    finales: 0
-    saisons: La Légende, La Nouvelle Édition, Malaisie
-    part_top: 63.9
-    rang_min: 1
-    rang_max: 460
-    rang_median: 13
-    rang_p05: 2
-    rang_p95: 141
-    facettes:
-      parcours: 2.81
-      epreuves: -1.02
-      discretion: 0.57
-      resistance: 4.68
-      lecture: 0.55
-    preuve:
-      parcours: 3
-      epreuves: 24
-      discretion: 41
-      resistance: 7
-      lecture: 13
-    rang_classique: 72
-  - rang: 12
-    nom: Bernard Lenoir
-    id: bernard-lenoir
-    score: 1.462
-    participations: 1
-    titres: 0
-    finales: 0
-    saisons: Nicoya
-    part_top: 79.1
-    rang_min: 1
-    rang_max: 187
-    rang_median: 15
-    rang_p05: 4
-    rang_p95: 41
-    facettes:
-      parcours: 1.07
-      epreuves: 1.16
-      discretion: 0.31
-      resistance: 2.12
-      lecture: 2.66
-    preuve:
-      parcours: 1
-      epreuves: 13
-      discretion: 13
-      resistance: 3
-      lecture: 8
-    rang_classique: 10
-  - rang: 13
-    nom: Émilie Frahi
-    id: emilie-frahi
-    score: 1.443
-    participations: 2
-    titres: 0
-    finales: 1
-    saisons: Le Retour des héros, Vanuatu
-    part_top: 71.5
-    rang_min: 3
-    rang_max: 236
-    rang_median: 16
-    rang_p05: 5
-    rang_p95: 49
-    facettes:
-      parcours: 1.14
-      epreuves: 1.02
-      discretion: 0.14
-      resistance: 3.07
-      lecture: 1.84
-    preuve:
-      parcours: 2
-      epreuves: 20
-      discretion: 18
-      resistance: 7
-      lecture: 12
-    rang_classique: 13
-  - rang: 14
-    nom: Philippe Duron
-    id: philippe-duron
-    score: 1.396
-    participations: 2
-    titres: 1
-    finales: 1
-    saisons: La Nouvelle Édition, Viêtnam
-    part_top: 78.6
-    rang_min: 7
-    rang_max: 122
-    rang_median: 15
-    rang_p05: 9
-    rang_p95: 52
-    facettes:
-      parcours: 1.93
-      epreuves: 2.52
-      discretion: 0.6
-      resistance: 0.42
-      lecture: 1.51
-    preuve:
-      parcours: 2
-      epreuves: 21
-      discretion: 24
-      resistance: 3
-      lecture: 14
-    rang_classique: 12
-  - rang: 15
-    nom: Wendy Gervois
-    id: wendy-gervois
-    score: 1.39
-    participations: 1
-    titres: 1
-    finales: 1
-    saisons: Thaïlande
-    part_top: 66.9
-    rang_min: 1
-    rang_max: 73
-    rang_median: 18
-    rang_p05: 2
-    rang_p95: 46
-    facettes:
-      parcours: 1.45
-      epreuves: 0.85
-      discretion: 0.86
-      resistance: 0.73
-      lecture: 3.05
-    preuve:
-      parcours: 1
-      epreuves: 15
-      discretion: 15
-      resistance: 1
-      lecture: 10
-    rang_classique: 15
-  - rang: 16
-    nom: Simon Quintilla
-    id: simon-quintilla
-    score: 1.363
-    participations: 1
-    titres: 0
-    finales: 0
-    saisons: Palawan
-    part_top: 72.0
-    rang_min: 4
-    rang_max: 105
-    rang_median: 19
-    rang_p05: 8
-    rang_p95: 38
-    facettes:
-      parcours: 0.87
-      epreuves: 1.3
-      discretion: 0.76
-      resistance: 1.43
-      lecture: 2.44
-    preuve:
-      parcours: 1
-      epreuves: 18
-      discretion: 13
-      resistance: 2
-      lecture: 7
-    rang_classique: 16
-  - rang: 17
-    nom: Maxine Eouzan
-    id: maxine-eouzan
-    score: 1.325
-    participations: 1
-    titres: 1
-    finales: 1
-    saisons: Les Armes secrètes
-    part_top: 78.7
-    rang_min: 6
-    rang_max: 69
-    rang_median: 19
-    rang_p05: 12
-    rang_p95: 40
-    facettes:
-      parcours: 1.45
-      epreuves: 1.66
-      discretion: 0.85
-      resistance: 0.73
-      lecture: 1.93
-    preuve:
-      parcours: 1
-      epreuves: 10
-      discretion: 14
-      resistance: 1
-      lecture: 5
-    rang_classique: 17
-  - rang: 18
+    rang_classique: 65
+  - rang: 7
     nom: Jean Belmonte
     id: jean-belmonte
-    score: 1.299
+    score: 1.526
     participations: 1
     titres: 0
     finales: 0
     saisons: Les Chasseurs d'immunité
-    part_top: 55.0
-    rang_min: 3
-    rang_max: 195
-    rang_median: 22
+    part_top: 74.3
+    rang_min: 2
+    rang_max: 186
+    rang_median: 10
     rang_p05: 4
-    rang_p95: 117
+    rang_p95: 76
     facettes:
       parcours: 0.35
       epreuves: 3.93
-      discretion: 0.91
-      resistance: 0.01
-      lecture: 1.3
+      discretion: 0.77
+      lecture: 1.05
     preuve:
       parcours: 1
       epreuves: 9
-      discretion: 12
-      resistance: 0
+      discretion: 8
       lecture: 3
-    rang_classique: 18
-  - rang: 19
-    nom: Candice Boisson
-    id: candice-boisson
-    score: 1.27
-    participations: 3
-    titres: 0
-    finales: 0
-    saisons: L'Île au trésor, La Légende, Le Combat des héros
-    part_top: 62.1
-    rang_min: 7
-    rang_max: 218
-    rang_median: 22
-    rang_p05: 11
-    rang_p95: 86
-    facettes:
-      parcours: 0.2
-      epreuves: 1.71
-      discretion: 0.43
-      resistance: 2.12
-      lecture: 1.9
-    preuve:
-      parcours: 3
-      epreuves: 21
-      discretion: 32
-      resistance: 3
-      lecture: 16
-    rang_classique: 8
-  - rang: 20
-    nom: Nathalie Ensargueix
-    id: nathalie-ensargueix
-    score: 1.219
-    participations: 2
-    titres: 0
-    finales: 0
-    saisons: Caramoan, Le Combat des héros
-    part_top: 51.5
-    rang_min: 5
-    rang_max: 230
-    rang_median: 25
-    rang_p05: 7
-    rang_p95: 75
-    facettes:
-      parcours: 1.67
-      epreuves: 0.29
-      discretion: 0.23
-      resistance: 2.78
-      lecture: 1.12
-    preuve:
-      parcours: 2
-      epreuves: 26
-      discretion: 26
-      resistance: 4
-      lecture: 9
-    rang_classique: 28
-  - rang: 21
+    rang_classique: 5
+  - rang: 8
     nom: Lola Besse
     id: lola-besse
-    score: 1.199
+    score: 1.497
     participations: 1
     titres: 0
     finales: 0
     saisons: Les 4 Terres
-    part_top: 49.2
-    rang_min: 7
-    rang_max: 200
-    rang_median: 26
-    rang_p05: 8
-    rang_p95: 95
+    part_top: 87.6
+    rang_min: 3
+    rang_max: 71
+    rang_median: 10
+    rang_p05: 6
+    rang_p95: 32
     facettes:
       parcours: 1.08
       epreuves: 3.06
-      discretion: 0.55
-      resistance: 0.01
-      lecture: 1.3
+      discretion: 0.8
+      lecture: 1.05
     preuve:
       parcours: 1
       epreuves: 13
-      discretion: 16
-      resistance: 0
+      discretion: 9
       lecture: 3
-    rang_classique: 20
-  - rang: 22
-    nom: Marianne Mondon
-    id: marianne-mondon
-    score: 1.198
-    participations: 1
-    titres: 0
-    finales: 0
-    saisons: Nicoya
-    part_top: 45.9
-    rang_min: 2
-    rang_max: 105
-    rang_median: 27
-    rang_p05: 5
-    rang_p95: 72
+    rang_classique: 6
+  - rang: 9
+    nom: Philippe Duron
+    id: philippe-duron
+    score: 1.495
+    participations: 2
+    titres: 1
+    finales: 1
+    saisons: La Nouvelle Édition, Viêtnam
+    part_top: 93.1
+    rang_min: 6
+    rang_max: 256
+    rang_median: 11
+    rang_p05: 7
+    rang_p95: 28
     facettes:
-      parcours: 0.87
-      epreuves: 0.2
-      discretion: 0.61
-      resistance: 1.43
-      lecture: 2.87
+      parcours: 1.93
+      epreuves: 2.52
+      discretion: 0.2
+      lecture: 1.33
     preuve:
-      parcours: 1
-      epreuves: 13
-      discretion: 13
-      resistance: 2
-      lecture: 9
-    rang_classique: 23
-  - rang: 23
-    nom: Naoil Tita
-    id: naoil-tita
-    score: 1.197
+      parcours: 2
+      epreuves: 21
+      discretion: 16
+      lecture: 13
+    rang_classique: 8
+  - rang: 10
+    nom: François-David Cardonnel
+    id: francois-david-cardonnel
+    score: 1.391
+    participations: 2
+    titres: 1
+    finales: 1
+    saisons: Le Retour des héros, Vanuatu
+    part_top: 72.7
+    rang_min: 5
+    rang_max: 408
+    rang_median: 14
+    rang_p05: 6
+    rang_p95: 97
+    facettes:
+      parcours: 1.56
+      epreuves: 3.16
+      discretion: -0.28
+      lecture: 1.12
+    preuve:
+      parcours: 2
+      epreuves: 22
+      discretion: 16
+      lecture: 12
+    rang_classique: 14
+  - rang: 11
+    nom: Wendy Gervois
+    id: wendy-gervois
+    score: 1.386
     participations: 1
     titres: 1
     finales: 1
-    saisons: L'Île des héros
-    part_top: 53.7
-    rang_min: 5
-    rang_max: 154
-    rang_median: 24
-    rang_p05: 11
-    rang_p95: 87
+    saisons: Thaïlande
+    part_top: 78.1
+    rang_min: 1
+    rang_max: 135
+    rang_median: 12
+    rang_p05: 1
+    rang_p95: 43
     facettes:
       parcours: 1.45
-      epreuves: 2.68
-      discretion: 0.91
-      resistance: 0.01
-      lecture: 0.93
+      epreuves: 0.85
+      discretion: 0.56
+      lecture: 2.68
     preuve:
       parcours: 1
       epreuves: 15
       discretion: 12
-      resistance: 0
+      lecture: 10
+    rang_classique: 9
+  - rang: 12
+    nom: Naoil Tita
+    id: naoil-tita
+    score: 1.367
+    participations: 1
+    titres: 1
+    finales: 1
+    saisons: L'Île des héros
+    part_top: 81.4
+    rang_min: 8
+    rang_max: 117
+    rang_median: 13
+    rang_p05: 10
+    rang_p95: 40
+    facettes:
+      parcours: 1.45
+      epreuves: 2.68
+      discretion: 0.6
+      lecture: 0.73
+    preuve:
+      parcours: 1
+      epreuves: 15
+      discretion: 4
       lecture: 2
     rang_classique: null
-  - rang: 24
-    nom: Claire Pradayrol
-    id: claire-pradayrol
-    score: 1.172
+  - rang: 13
+    nom: Clémence Castel
+    id: clemence-castel
+    score: 1.318
+    participations: 4
+    titres: 2
+    finales: 2
+    saisons: La Légende, Le Combat des héros, Le Retour des héros, Pacifique
+    part_top: 73.9
+    rang_min: 2
+    rang_max: 100
+    rang_median: 13
+    rang_p05: 4
+    rang_p95: 53
+    facettes:
+      parcours: 2.39
+      epreuves: 0.38
+      discretion: 0.79
+      lecture: 1.71
+    preuve:
+      parcours: 4
+      epreuves: 32
+      discretion: 23
+      lecture: 15
+    rang_classique: 25
+  - rang: 14
+    nom: Louise Picavet
+    id: louise-picavet
+    score: 1.246
+    participations: 1
+    titres: 0
+    finales: 0
+    saisons: La Revanche des 4 Terres
+    part_top: 57.1
+    rang_min: 5
+    rang_max: 234
+    rang_median: 21
+    rang_p05: 7
+    rang_p95: 120
+    facettes:
+      parcours: 0.06
+      epreuves: 3.16
+      discretion: 0.7
+      lecture: 1.05
+    preuve:
+      parcours: 1
+      epreuves: 3
+      discretion: 6
+      lecture: 3
+    rang_classique: 10
+  - rang: 15
+    nom: Sébastien Gottiniaux
+    id: sebastien-gottiniaux
+    score: 1.216
     participations: 1
     titres: 0
     finales: 0
     saisons: Cambodge
-    part_top: 43.5
-    rang_min: 8
-    rang_max: 125
-    rang_median: 29
-    rang_p05: 10
-    rang_p95: 78
+    part_top: 63.1
+    rang_min: 6
+    rang_max: 104
+    rang_median: 20
+    rang_p05: 11
+    rang_p95: 57
     facettes:
-      parcours: 0.73
-      epreuves: 2.89
-      discretion: 0.64
-      resistance: 0.73
-      lecture: 0.88
+      parcours: 0.87
+      epreuves: 2.48
+      discretion: 0.77
+      lecture: 0.73
     preuve:
       parcours: 1
-      epreuves: 9
-      discretion: 14
-      resistance: 1
+      epreuves: 11
+      discretion: 8
+      lecture: 2
+    rang_classique: 11
+  - rang: 16
+    nom: Maxine Eouzan
+    id: maxine-eouzan
+    score: 1.209
+    participations: 1
+    titres: 1
+    finales: 1
+    saisons: Les Armes secrètes
+    part_top: 74.6
+    rang_min: 11
+    rang_max: 291
+    rang_median: 20
+    rang_p05: 13
+    rang_p95: 51
+    facettes:
+      parcours: 1.45
+      epreuves: 1.66
+      discretion: 0.11
+      lecture: 1.61
+    preuve:
+      parcours: 1
+      epreuves: 10
+      discretion: 5
       lecture: 5
-    rang_classique: 21
-  - rang: 25
-    nom: Daniel Duquesnoy
-    id: daniel-duquesnoy
-    score: 1.172
+    rang_classique: 12
+  - rang: 17
+    nom: Romuald Lafite
+    id: romuald-lafite
+    score: 1.18
+    participations: 2
+    titres: 1
+    finales: 1
+    saisons: Le Retour des héros, Panama
+    part_top: 57.8
+    rang_min: 6
+    rang_max: 411
+    rang_median: 22
+    rang_p05: 8
+    rang_p95: 152
+    facettes:
+      parcours: 2.32
+      epreuves: 2.06
+      discretion: -0.3
+      lecture: 0.64
+    preuve:
+      parcours: 2
+      epreuves: 24
+      discretion: 19
+      lecture: 14
+    rang_classique: 19
+  - rang: 18
+    nom: Nicolas Rouyé
+    id: nicolas-rouye
+    score: 1.14
     participations: 1
     titres: 0
     finales: 0
-    saisons: Les Reliques du destin
-    part_top: 40.6
-    rang_min: 10
-    rang_max: 132
-    rang_median: 27
-    rang_p05: 18
-    rang_p95: 54
+    saisons: Thaïlande
+    part_top: 51.0
+    rang_min: 2
+    rang_max: 384
+    rang_median: 24
+    rang_p05: 5
+    rang_p95: 189
     facettes:
-      parcours: 0.69
-      epreuves: 1.61
-      discretion: 0.75
-      resistance: 1.43
-      lecture: 1.38
+      parcours: 0.73
+      epreuves: 3.48
+      discretion: 0.82
+      lecture: -0.47
     preuve:
       parcours: 1
-      epreuves: 16
-      discretion: 17
-      resistance: 2
-      lecture: 10
+      epreuves: 11
+      discretion: 10
+      lecture: 6
+    rang_classique: 16
+  - rang: 19
+    nom: François Descamp
+    id: francois-descamp
+    score: 1.134
+    participations: 1
+    titres: 1
+    finales: 1
+    saisons: Le Totem maudit
+    part_top: 51.4
+    rang_min: 7
+    rang_max: 320
+    rang_median: 24
+    rang_p05: 10
+    rang_p95: 181
+    facettes:
+      parcours: 1.45
+      epreuves: 3.06
+      discretion: 0.01
+      lecture: 0.01
+    preuve:
+      parcours: 1
+      epreuves: 13
+      discretion: 0
+      lecture: 0
+    rang_classique: 15
+  - rang: 20
+    nom: Gaëlle Zanetton
+    id: gaelle-zanetton
+    score: 1.114
+    participations: 1
+    titres: 0
+    finales: 0
+    saisons: Vanuatu
+    part_top: 53.0
+    rang_min: 2
+    rang_max: 164
+    rang_median: 24
+    rang_p05: 8
+    rang_p95: 75
+    facettes:
+      parcours: 0.49
+      epreuves: 1.32
+      discretion: 0.8
+      lecture: 1.85
+    preuve:
+      parcours: 1
+      epreuves: 12
+      discretion: 9
+      lecture: 6
+    rang_classique: 20
+  - rang: 21
+    nom: Amélie Grégoire
+    id: amelie-gregoire
+    score: 1.099
+    participations: 1
+    titres: 0
+    finales: 0
+    saisons: Panama
+    part_top: 47.0
+    rang_min: 3
+    rang_max: 177
+    rang_median: 27
+    rang_p05: 8
+    rang_p95: 71
+    facettes:
+      parcours: 0.68
+      epreuves: 1.16
+      discretion: 0.48
+      lecture: 2.08
+    preuve:
+      parcours: 1
+      epreuves: 13
+      discretion: 10
+      lecture: 7
+    rang_classique: 24
+  - rang: 22
+    nom: Simon Quintilla
+    id: simon-quintilla
+    score: 1.099
+    participations: 1
+    titres: 0
+    finales: 0
+    saisons: Palawan
+    part_top: 46.6
+    rang_min: 4
+    rang_max: 289
+    rang_median: 27
+    rang_p05: 9
+    rang_p95: 82
+    facettes:
+      parcours: 0.87
+      epreuves: 1.3
+      discretion: 0.14
+      lecture: 2.08
+    preuve:
+      parcours: 1
+      epreuves: 18
+      discretion: 10
+      lecture: 7
     rang_classique: 22
+  - rang: 23
+    nom: Claire Pradayrol
+    id: claire-pradayrol
+    score: 1.097
+    participations: 1
+    titres: 0
+    finales: 0
+    saisons: Cambodge
+    part_top: 44.7
+    rang_min: 9
+    rang_max: 232
+    rang_median: 30
+    rang_p05: 11
+    rang_p95: 109
+    facettes:
+      parcours: 0.73
+      epreuves: 2.89
+      discretion: 0.37
+      lecture: 0.4
+    preuve:
+      parcours: 1
+      epreuves: 9
+      discretion: 8
+      lecture: 5
+    rang_classique: 18
+  - rang: 24
+    nom: Grégoire Delachaux
+    id: gregoire-delachaux
+    score: 1.095
+    participations: 2
+    titres: 1
+    finales: 1
+    saisons: Le Choc des héros, Palawan
+    part_top: 49.8
+    rang_min: 13
+    rang_max: 208
+    rang_median: 26
+    rang_p05: 17
+    rang_p95: 59
+    facettes:
+      parcours: 1.63
+      epreuves: 1.66
+      discretion: 0.4
+      lecture: 0.69
+    preuve:
+      parcours: 2
+      epreuves: 10
+      discretion: 15
+      lecture: 6
+    rang_classique: 50
+  - rang: 25
+    nom: Gabriel Gubbels
+    id: gabriel-gubbels
+    score: 1.091
+    participations: 1
+    titres: 0
+    finales: 0
+    saisons: Thaïlande
+    part_top: 45.9
+    rang_min: 6
+    rang_max: 325
+    rang_median: 27
+    rang_p05: 9
+    rang_p95: 91
+    facettes:
+      parcours: 1.16
+      epreuves: 1.16
+      discretion: -0.04
+      lecture: 2.08
+    preuve:
+      parcours: 1
+      epreuves: 13
+      discretion: 12
+      lecture: 7
+    rang_classique: 21
   top_classique:
   - rang: 1
     nom: Bertrand Bolle
     id: bertrand-bolle
-    score: 2.009
+    score: 2.201
     rang_general: 2
   - rang: 2
-    nom: Claude Dartois
-    id: claude-dartois
-    score: 1.773
-    rang_general: 1
-  - rang: 3
     nom: Frédéric Favier
     id: frederic-favier
-    score: 1.723
-    rang_general: 6
-  - rang: 4
-    nom: François-David Cardonnel
-    id: francois-david-cardonnel
-    score: 1.7
-    rang_general: 7
-  - rang: 5
-    nom: Pascal Salviani
-    id: pascal-salviani
-    score: 1.695
-    rang_general: 3
-  - rang: 6
-    nom: Teheiura Teahui
-    id: teheiura-teahui
-    score: 1.612
-    rang_general: 4
-  - rang: 7
-    nom: Gabriel Gubbels
-    id: gabriel-gubbels
-    score: 1.583
-    rang_general: 10
-  - rang: 8
-    nom: Candice Boisson
-    id: candice-boisson
-    score: 1.534
-    rang_general: 19
-  - rang: 9
-    nom: Nicolas Leoni
-    id: nicolas-leoni
-    score: 1.517
-    rang_general: 56
-  - rang: 10
-    nom: Bernard Lenoir
-    id: bernard-lenoir
-    score: 1.5
-    rang_general: 12
-  - rang: 11
-    nom: Romuald Lafite
-    id: romuald-lafite
-    score: 1.484
+    score: 1.802
     rang_general: 5
-  - rang: 12
-    nom: Philippe Duron
-    id: philippe-duron
-    score: 1.483
-    rang_general: 14
-  - rang: 13
-    nom: Émilie Frahi
-    id: emilie-frahi
-    score: 1.469
-    rang_general: 13
-  - rang: 14
+  - rang: 3
+    nom: Claude Dartois
+    id: claude-dartois
+    score: 1.759
+    rang_general: 1
+  - rang: 4
     nom: Jade Handi
     id: jade-handi
-    score: 1.435
-    rang_general: 8
-  - rang: 15
-    nom: Wendy Gervois
-    id: wendy-gervois
-    score: 1.417
-    rang_general: 15
-  - rang: 16
-    nom: Simon Quintilla
-    id: simon-quintilla
-    score: 1.396
-    rang_general: 16
-  - rang: 17
-    nom: Maxine Eouzan
-    id: maxine-eouzan
-    score: 1.372
-    rang_general: 17
-  - rang: 18
+    score: 1.643
+    rang_general: 3
+  - rang: 5
     nom: Jean Belmonte
     id: jean-belmonte
-    score: 1.342
-    rang_general: 18
-  - rang: 19
-    nom: Christelle Gauzet
-    id: christelle-gauzet
-    score: 1.264
-    rang_general: 126
-  - rang: 20
+    score: 1.581
+    rang_general: 7
+  - rang: 6
     nom: Lola Besse
     id: lola-besse
-    score: 1.243
-    rang_general: 21
-  - rang: 21
-    nom: Claire Pradayrol
-    id: claire-pradayrol
-    score: 1.222
-    rang_general: 24
-  - rang: 22
-    nom: Daniel Duquesnoy
-    id: daniel-duquesnoy
-    score: 1.213
-    rang_general: 25
-  - rang: 23
-    nom: Marianne Mondon
-    id: marianne-mondon
-    score: 1.211
-    rang_general: 22
-  - rang: 24
-    nom: Clémence Castel
-    id: clemence-castel
-    score: 1.193
-    rang_general: 71
-  - rang: 25
+    score: 1.561
+    rang_general: 8
+  - rang: 7
+    nom: Christelle Gauzet
+    id: christelle-gauzet
+    score: 1.477
+    rang_general: 40
+  - rang: 8
+    nom: Philippe Duron
+    id: philippe-duron
+    score: 1.433
+    rang_general: 9
+  - rang: 9
+    nom: Wendy Gervois
+    id: wendy-gervois
+    score: 1.414
+    rang_general: 11
+  - rang: 10
+    nom: Louise Picavet
+    id: louise-picavet
+    score: 1.28
+    rang_general: 14
+  - rang: 11
+    nom: Sébastien Gottiniaux
+    id: sebastien-gottiniaux
+    score: 1.267
+    rang_general: 15
+  - rang: 12
+    nom: Maxine Eouzan
+    id: maxine-eouzan
+    score: 1.262
+    rang_general: 16
+  - rang: 13
+    nom: Nicolas Leoni
+    id: nicolas-leoni
+    score: 1.25
+    rang_general: 46
+  - rang: 14
+    nom: François-David Cardonnel
+    id: francois-david-cardonnel
+    score: 1.239
+    rang_general: 10
+  - rang: 15
     nom: François Descamp
     id: francois-descamp
-    score: 1.167
+    score: 1.224
+    rang_general: 19
+  - rang: 16
+    nom: Nicolas Rouyé
+    id: nicolas-rouye
+    score: 1.213
+    rang_general: 18
+  - rang: 17
+    nom: Candice Boisson
+    id: candice-boisson
+    score: 1.185
+    rang_general: 49
+  - rang: 18
+    nom: Claire Pradayrol
+    id: claire-pradayrol
+    score: 1.156
+    rang_general: 23
+  - rang: 19
+    nom: Romuald Lafite
+    id: romuald-lafite
+    score: 1.142
+    rang_general: 17
+  - rang: 20
+    nom: Gaëlle Zanetton
+    id: gaelle-zanetton
+    score: 1.125
+    rang_general: 20
+  - rang: 21
+    nom: Gabriel Gubbels
+    id: gabriel-gubbels
+    score: 1.124
+    rang_general: 25
+  - rang: 22
+    nom: Simon Quintilla
+    id: simon-quintilla
+    score: 1.124
+    rang_general: 22
+  - rang: 23
+    nom: Meïssa Seck
+    id: meissa-seck
+    score: 1.115
     rang_general: 26
+  - rang: 24
+    nom: Amélie Grégoire
+    id: amelie-gregoire
+    score: 1.113
+    rang_general: 21
+  - rang: 25
+    nom: Clémence Castel
+    id: clemence-castel
+    score: 1.083
+    rang_general: 13
   top_saisons:
   - rang: 1
     nom: Bertrand Bolle — Caramoan
-    score: 2.008
-    part_top: 90.5
+    score: 2.204
+    part_top: 98.5
     sort: Éliminé aux poteaux
     aventurier: Bertrand Bolle
     saison: Caramoan
     annee: 2008
   - rang: 2
-    nom: Claude Dartois — Viêtnam
-    score: 1.76
-    part_top: 72.3
-    sort: Finaliste
-    aventurier: Claude Dartois
-    saison: Viêtnam
-    annee: 2010
-  - rang: 3
-    nom: Pascal Salviani — Thaïlande
-    score: 1.733
-    part_top: 65.3
-    sort: Finaliste
-    aventurier: Pascal Salviani
-    saison: Thaïlande
-    annee: 2016
-  - rang: 4
     nom: Frédéric Favier — Caramoan
-    score: 1.728
-    part_top: 89.4
+    score: 1.814
+    part_top: 99.2
     sort: Finaliste
     aventurier: Frédéric Favier
     saison: Caramoan
     annee: 2008
-  - rang: 5
-    nom: François-David Cardonnel — Vanuatu
-    score: 1.722
-    part_top: 92.5
-    sort: Vainqueur
-    aventurier: François-David Cardonnel
-    saison: Vanuatu
-    annee: 2006
-  - rang: 6
-    nom: Teheiura Teahui — Raja Ampat
-    score: 1.605
-    part_top: 66.2
+  - rang: 3
+    nom: Claude Dartois — Viêtnam
+    score: 1.735
+    part_top: 72.2
     sort: Finaliste
-    aventurier: Teheiura Teahui
-    saison: Raja Ampat
-    annee: 2011
-  - rang: 7
-    nom: Gabriel Gubbels — Thaïlande
-    score: 1.604
-    part_top: 85.2
-    sort: Éliminé aux poteaux
-    aventurier: Gabriel Gubbels
-    saison: Thaïlande
-    annee: 2016
-  - rang: 8
-    nom: Candice Boisson — L'Île au trésor
-    score: 1.547
-    part_top: 85.3
-    sort: Éliminé à l'orientation
-    aventurier: Candice Boisson
-    saison: L'Île au trésor
-    annee: 2016
-  - rang: 9
-    nom: Nicolas Leoni — Nicoya
-    score: 1.536
-    part_top: 76.9
-    sort: Finaliste
-    aventurier: Nicolas Leoni
-    saison: Nicoya
-    annee: 2002
-  - rang: 10
-    nom: Bernard Lenoir — Nicoya
-    score: 1.525
-    part_top: 73.6
-    sort: Éliminé aux poteaux
-    aventurier: Bernard Lenoir
-    saison: Nicoya
-    annee: 2002
-  - rang: 11
-    nom: Laurent Maistret — La Nouvelle Édition
-    score: 1.523
-    part_top: 74.0
-    sort: Vainqueur
-    aventurier: Laurent Maistret
-    saison: La Nouvelle Édition
-    annee: 2014
-  - rang: 12
-    nom: Émilie Frahi — Vanuatu
-    score: 1.494
-    part_top: 71.6
-    sort: Finaliste
-    aventurier: Émilie Frahi
-    saison: Vanuatu
-    annee: 2006
-  - rang: 13
-    nom: Romuald Lafite — Panama
-    score: 1.493
-    part_top: 75.2
-    sort: Éliminé au conseil
-    aventurier: Romuald Lafite
-    saison: Panama
-    annee: 2004
-  - rang: 14
-    nom: Philippe Duron — Viêtnam
-    score: 1.488
-    part_top: 83.5
-    sort: Vainqueur
-    aventurier: Philippe Duron
+    aventurier: Claude Dartois
     saison: Viêtnam
     annee: 2010
-  - rang: 15
-    nom: Wendy Gervois — Thaïlande
-    score: 1.432
-    part_top: 60.4
-    sort: Vainqueur
-    aventurier: Wendy Gervois
-    saison: Thaïlande
-    annee: 2016
-  - rang: 16
+  - rang: 4
     nom: Jade Handi — Palawan
-    score: 1.43
-    part_top: 67.1
+    score: 1.644
+    part_top: 92.5
     sort: Vainqueur
     aventurier: Jade Handi
     saison: Palawan
     annee: 2007
-  - rang: 17
-    nom: Simon Quintilla — Palawan
-    score: 1.411
-    part_top: 61.9
-    sort: Éliminé à l'orientation
-    aventurier: Simon Quintilla
-    saison: Palawan
-    annee: 2007
-  - rang: 18
-    nom: Maxine Eouzan — Les Armes secrètes
-    score: 1.378
-    part_top: 66.8
-    sort: Vainqueur
-    aventurier: Maxine Eouzan
-    saison: Les Armes secrètes
-    annee: 2021
-  - rang: 19
+  - rang: 5
     nom: Jean Belmonte — Les Chasseurs d'immunité
-    score: 1.331
-    part_top: 49.2
+    score: 1.577
+    part_top: 72.2
     sort: Abandon médical
     aventurier: Jean Belmonte
     saison: Les Chasseurs d'immunité
     annee: 2024
-  - rang: 20
-    nom: Claude Dartois — La Revanche des héros
-    score: 1.327
-    part_top: 49.7
-    sort: Finaliste
-    aventurier: Claude Dartois
-    saison: La Revanche des héros
-    annee: 2012
-  - rang: 21
-    nom: Christelle Gauzet — Caramoan
-    score: 1.27
-    part_top: 46.9
-    sort: Vainqueur
-    aventurier: Christelle Gauzet
-    saison: Caramoan
-    annee: 2008
-  - rang: 22
-    nom: Naoil Tita — L'Île des héros
-    score: 1.247
-    part_top: 49.6
-    sort: Vainqueur
-    aventurier: Naoil Tita
-    saison: L'Île des héros
-    annee: 2020
-  - rang: 23
+  - rang: 6
     nom: Lola Besse — Les 4 Terres
-    score: 1.239
-    part_top: 43.2
+    score: 1.562
+    part_top: 87.6
     sort: Éliminé à l'orientation
     aventurier: Lola Besse
     saison: Les 4 Terres
     annee: 2020
-  - rang: 24
-    nom: Marianne Mondon — Nicoya
-    score: 1.233
-    part_top: 39.4
+  - rang: 7
+    nom: Christelle Gauzet — Caramoan
+    score: 1.5
+    part_top: 84.4
+    sort: Vainqueur
+    aventurier: Christelle Gauzet
+    saison: Caramoan
+    annee: 2008
+  - rang: 8
+    nom: Laurent Maistret — La Nouvelle Édition
+    score: 1.464
+    part_top: 75.4
+    sort: Vainqueur
+    aventurier: Laurent Maistret
+    saison: La Nouvelle Édition
+    annee: 2014
+  - rang: 9
+    nom: Philippe Duron — Viêtnam
+    score: 1.439
+    part_top: 95.6
+    sort: Vainqueur
+    aventurier: Philippe Duron
+    saison: Viêtnam
+    annee: 2010
+  - rang: 10
+    nom: Wendy Gervois — Thaïlande
+    score: 1.439
+    part_top: 73.1
+    sort: Vainqueur
+    aventurier: Wendy Gervois
+    saison: Thaïlande
+    annee: 2016
+  - rang: 11
+    nom: Naoil Tita — L'Île des héros
+    score: 1.439
+    part_top: 81.7
+    sort: Vainqueur
+    aventurier: Naoil Tita
+    saison: L'Île des héros
+    annee: 2020
+  - rang: 12
+    nom: Louise Picavet — La Revanche des 4 Terres
+    score: 1.279
+    part_top: 53.6
     sort: Éliminé au conseil
-    aventurier: Marianne Mondon
+    aventurier: Louise Picavet
+    saison: La Revanche des 4 Terres
+    annee: 2025
+  - rang: 13
+    nom: Maxine Eouzan — Les Armes secrètes
+    score: 1.268
+    part_top: 67.2
+    sort: Vainqueur
+    aventurier: Maxine Eouzan
+    saison: Les Armes secrètes
+    annee: 2021
+  - rang: 14
+    nom: Sébastien Gottiniaux — Cambodge
+    score: 1.267
+    part_top: 61.4
+    sort: Éliminé au conseil
+    aventurier: Sébastien Gottiniaux
+    saison: Cambodge
+    annee: 2017
+  - rang: 15
+    nom: Nicolas Leoni — Nicoya
+    score: 1.264
+    part_top: 54.2
+    sort: Finaliste
+    aventurier: Nicolas Leoni
     saison: Nicoya
     annee: 2002
-  - rang: 25
-    nom: Daniel Duquesnoy — Les Reliques du destin
-    score: 1.222
-    part_top: 17.8
+  - rang: 16
+    nom: François-David Cardonnel — Vanuatu
+    score: 1.245
+    part_top: 55.4
+    sort: Vainqueur
+    aventurier: François-David Cardonnel
+    saison: Vanuatu
+    annee: 2006
+  - rang: 17
+    nom: Claude Dartois — La Légende
+    score: 1.218
+    part_top: 56.1
+    sort: Vainqueur
+    aventurier: Claude Dartois
+    saison: La Légende
+    annee: 2021
+  - rang: 18
+    nom: François Descamp — Le Totem maudit
+    score: 1.206
+    part_top: 51.4
+    sort: Vainqueur
+    aventurier: François Descamp
+    saison: Le Totem maudit
+    annee: 2022
+  - rang: 19
+    nom: Nicolas Rouyé — Thaïlande
+    score: 1.197
+    part_top: 49.7
     sort: Éliminé au conseil
-    aventurier: Daniel Duquesnoy
-    saison: Les Reliques du destin
-    annee: 2026
+    aventurier: Nicolas Rouyé
+    saison: Thaïlande
+    annee: 2016
+  - rang: 20
+    nom: Candice Boisson — L'Île au trésor
+    score: 1.187
+    part_top: 47.3
+    sort: Éliminé à l'orientation
+    aventurier: Candice Boisson
+    saison: L'Île au trésor
+    annee: 2016
+  - rang: 21
+    nom: Claire Pradayrol — Cambodge
+    score: 1.146
+    part_top: 41.4
+    sort: Éliminé au conseil
+    aventurier: Claire Pradayrol
+    saison: Cambodge
+    annee: 2017
+  - rang: 22
+    nom: Gaëlle Zanetton — Vanuatu
+    score: 1.141
+    part_top: 42.9
+    sort: Éliminé au conseil
+    aventurier: Gaëlle Zanetton
+    saison: Vanuatu
+    annee: 2006
+  - rang: 23
+    nom: Simon Quintilla — Palawan
+    score: 1.135
+    part_top: 38.0
+    sort: Éliminé à l'orientation
+    aventurier: Simon Quintilla
+    saison: Palawan
+    annee: 2007
+  - rang: 24
+    nom: Gabriel Gubbels — Thaïlande
+    score: 1.134
+    part_top: 40.1
+    sort: Éliminé aux poteaux
+    aventurier: Gabriel Gubbels
+    saison: Thaïlande
+    annee: 2016
+  - rang: 25
+    nom: Romuald Lafite — Panama
+    score: 1.132
+    part_top: 39.3
+    sort: Éliminé au conseil
+    aventurier: Romuald Lafite
+    saison: Panama
+    annee: 2004
   sans_titre:
-  - rang: 3
-    nom: Pascal Salviani
-    score: 2.016
-    part_top: 93.2
   - rang: 4
     nom: Teheiura Teahui
-    score: 1.893
-    part_top: 82.1
-  - rang: 6
+    score: 1.874
+    part_top: 76.7
+  - rang: 5
     nom: Frédéric Favier
-    score: 1.671
-    part_top: 90.7
-  - rang: 10
-    nom: Gabriel Gubbels
-    score: 1.534
-    part_top: 90.9
-  - rang: 11
-    nom: Philippe Bizet
-    score: 1.516
-    part_top: 63.9
-  - rang: 12
-    nom: Bernard Lenoir
-    score: 1.462
-    part_top: 79.1
-  - rang: 13
-    nom: Émilie Frahi
-    score: 1.443
-    part_top: 71.5
-  - rang: 16
-    nom: Simon Quintilla
-    score: 1.363
-    part_top: 72.0
-  - rang: 18
+    score: 1.745
+    part_top: 98.8
+  - rang: 7
     nom: Jean Belmonte
-    score: 1.299
-    part_top: 55.0
-  - rang: 19
-    nom: Candice Boisson
-    score: 1.27
-    part_top: 62.1
+    score: 1.526
+    part_top: 74.3
+  - rang: 8
+    nom: Lola Besse
+    score: 1.497
+    part_top: 87.6
+  - rang: 14
+    nom: Louise Picavet
+    score: 1.246
+    part_top: 57.1
+  - rang: 15
+    nom: Sébastien Gottiniaux
+    score: 1.216
+    part_top: 63.1
+  - rang: 18
+    nom: Nicolas Rouyé
+    score: 1.14
+    part_top: 51.0
+  - rang: 20
+    nom: Gaëlle Zanetton
+    score: 1.114
+    part_top: 53.0
+  - rang: 21
+    nom: Amélie Grégoire
+    score: 1.099
+    part_top: 47.0
+  - rang: 22
+    nom: Simon Quintilla
+    score: 1.099
+    part_top: 46.6
   robustesse:
     tirages: 10000
     taille: 25
-    socle: 2
+    socle: 1
     socle_noms:
-    - Claude Dartois
-    - Romuald Lafite
+    - Jade Handi
     paliers:
     - seuil: 99.0
-      effectif: 2
+      effectif: 1
     - seuil: 90.0
-      effectif: 7
+      effectif: 5
     - seuil: 75.0
-      effectif: 13
+      effectif: 10
     - seuil: 50.0
-      effectif: 21
+      effectif: 20
     - seuil: 25.0
-      effectif: 35
+      effectif: 37
     - seuil: 0.01
-      effectif: 94
-    toujours: 1
-    hors_top_mais_parfois_dedans: 69
-    candidats: 94
-    part_top_mediane_du_top: 78.6
-    part_top_minimale_du_top: 40.6
+      effectif: 90
+    toujours: 0
+    hors_top_mais_parfois_dedans: 65
+    candidats: 90
+    part_top_mediane_du_top: 73.9
+    part_top_minimale_du_top: 44.7
   correlations:
-  - a: resistance
+  - a: parcours
     b: lecture
-    libelle_a: La résistance
+    libelle_a: Le parcours
     libelle_b: La lecture
-    rho: 0.507
+    rho: 0.107
   - a: parcours
     b: discretion
     libelle_a: Le parcours
     libelle_b: La discrétion
-    rho: 0.449
-  - a: parcours
-    b: resistance
-    libelle_a: Le parcours
-    libelle_b: La résistance
-    rho: 0.446
-  - a: discretion
-    b: resistance
-    libelle_a: La discrétion
-    libelle_b: La résistance
-    rho: 0.373
-  - a: parcours
-    b: lecture
-    libelle_a: Le parcours
-    libelle_b: La lecture
-    rho: 0.367
+    rho: 0.101
   - a: discretion
     b: lecture
     libelle_a: La discrétion
     libelle_b: La lecture
-    rho: 0.349
+    rho: -0.059
   - a: epreuves
     b: discretion
     libelle_a: Les épreuves
     libelle_b: La discrétion
-    rho: 0.041
-  - a: epreuves
-    b: resistance
-    libelle_a: Les épreuves
-    libelle_b: La résistance
-    rho: -0.031
+    rho: 0.05
   - a: epreuves
     b: lecture
     libelle_a: Les épreuves
     libelle_b: La lecture
-    rho: 0.031
+    rho: 0.043
   - a: parcours
     b: epreuves
     libelle_a: Le parcours
     libelle_b: Les épreuves
     rho: -0.001
-  correlation_moyenne: 0.253
+  correlation_moyenne: 0.04
   correlations_bornes:
     avec_epreuves:
-      paires: 4
-      min: -0.031
-      max: 0.041
-      moyenne: 0.01
+      paires: 3
+      min: -0.001
+      max: 0.05
+      moyenne: 0.031
     sans_epreuves:
-      paires: 6
-      min: 0.349
-      max: 0.507
-      moyenne: 0.415
+      paires: 3
+      min: -0.059
+      max: 0.107
+      moyenne: 0.05
+  artefacts:
+    resistance:
+      occasions: 689
+      dont_le_soir_du_depart: 265
+      part: 38.5
+      une_seule_occasion: 206
+      une_seule_et_fatale: 123
+      part_une_seule: 59.7
+    lecture:
+      bulletins_du_partant: 264
+      justes_du_partant: 0
+      bulletins_des_autres_soirs: 1790
+      justes_des_autres_soirs: 1315
+      taux_des_autres_soirs: 73.5
+      taux_tout_compris: 64.0
+    discretion:
+      voix_relevees: 2122
+      dont_le_soir_du_depart: 1335
+      part: 62.9
   palmares:
-    auc: 0.881
-    rang_median_vainqueurs: 58
-    rang_median_autres: 282
-    vainqueurs_dans_le_top: 10
+    auc: 0.852
+    rang_median_vainqueurs: 59
+    rang_median_autres: 280
+    vainqueurs_dans_le_top: 13
     vainqueurs_total: 35
   hasard:
-    premier: 1.816
-    vingt_cinquieme: 0.703
-    ecart: 1.113
-    reel_premier: 3.28
-    reel_vingt_cinquieme: 1.172
-    reel_ecart: 2.108
+    premier: 1.721
+    vingt_cinquieme: 0.823
+    ecart: 0.899
+    reel_premier: 3.137
+    reel_vingt_cinquieme: 1.091
+    reel_ecart: 2.046
     noms:
-    - Christelle Gauzet
-    - Freddy Boucher
-    - Julie Debever
-    - Laurent Affri
-    - Nicolas Leoni
+    - Simon Quintilla
+    - Françoise Avignon
+    - Cyril Rouanne
+    - Jonathan Julien
+    - Jérémy Raffin
     courbe_reelle:
-    - 3.28
-    - 2.164
-    - 2.016
-    - 1.893
-    - 1.842
-    - 1.671
-    - 1.65
-    - 1.643
-    - 1.606
-    - 1.534
-    - 1.516
-    - 1.462
-    - 1.443
-    - 1.396
-    - 1.39
-    - 1.363
-    - 1.325
-    - 1.299
-    - 1.27
-    - 1.219
-    - 1.199
-    - 1.198
-    - 1.197
-    - 1.172
-    - 1.172
+    - 3.137
+    - 2.316
+    - 1.922
+    - 1.874
+    - 1.745
+    - 1.543
+    - 1.526
+    - 1.497
+    - 1.495
+    - 1.391
+    - 1.386
+    - 1.367
+    - 1.318
+    - 1.246
+    - 1.216
+    - 1.209
+    - 1.18
+    - 1.14
+    - 1.134
+    - 1.114
+    - 1.099
+    - 1.099
+    - 1.097
+    - 1.095
+    - 1.091
     courbe_hasard:
-    - 1.816
-    - 1.229
-    - 1.19
-    - 1.147
-    - 1.027
-    - 1.025
-    - 0.929
-    - 0.924
-    - 0.892
-    - 0.849
-    - 0.827
+    - 1.721
+    - 1.628
+    - 1.582
+    - 1.523
+    - 1.44
+    - 1.422
+    - 1.268
+    - 1.186
+    - 1.127
+    - 1.117
+    - 1.106
+    - 1.091
+    - 1.088
+    - 1.046
+    - 0.977
+    - 0.968
+    - 0.963
+    - 0.957
+    - 0.925
+    - 0.904
+    - 0.833
+    - 0.832
+    - 0.83
+    - 0.828
     - 0.823
-    - 0.823
-    - 0.821
-    - 0.814
-    - 0.782
-    - 0.771
-    - 0.755
-    - 0.721
-    - 0.721
-    - 0.719
-    - 0.714
-    - 0.709
-    - 0.706
-    - 0.703
   biais_epoque:
     communs: 22
     taille: 25
-    deplacement_median: 3
+    deplacement_median: 2
     sortants:
-    - Candice Boisson
-    - Nathalie Ensargueix
+    - Nicolas Rouyé
     - Claire Pradayrol
+    - Gabriel Gubbels
     entrants:
-    - Gilles Nicolet
-    - Laure Canevarolo
-    - Charlotte Rasquin
+    - Meïssa Seck
+    - Nicolas Pretot
+    - Arnaud Deshayes
     depouillement:
     - periode: 2000-2004
       conseils: 64
@@ -14452,7 +14314,7 @@ modeles:
         observe: 0.2839
         moyenne_nulle: 0.2508
       origine: casting
-      p_ajustee: 0.3717
+      p_ajustee: 0.3611
       retenu: false
     - cle: tribus_femmes
       libelle: La composition des deux tribus
@@ -14503,7 +14365,7 @@ modeles:
         observe: 13.0253
         moyenne_nulle: 18.8726
       origine: casting
-      p_ajustee: 0.1324
+      p_ajustee: 0.1273
       retenu: false
     - cle: tribus_ages
       libelle: L'âge moyen des deux tribus
@@ -14604,7 +14466,7 @@ modeles:
         observe: 4.1597
         moyenne_nulle: 3.331
       origine: casting
-      p_ajustee: 0.3878
+      p_ajustee: 0.3774
       retenu: false
     sensibilite:
     - cle: etendue_ages
@@ -14723,7 +14585,7 @@ modeles:
         observe: 10.7308
         moyenne_nulle: 10.2831
       origine: pronostic
-      p_ajustee: 0.7451
+      p_ajustee: 0.7269
       retenu: false
     classement:
     - nom: Ambre Daudet
@@ -15448,7 +15310,7 @@ modeles:
         moyenne_nulle: 47.0878
       bulletins: 1855
       origine: homophilie
-      p_ajustee: 0.2712
+      p_ajustee: 0.2632
       retenu: false
     - cle: vote_ecart_age
       libelle: L'écart d'âge avec sa cible
@@ -15500,7 +15362,7 @@ modeles:
         moyenne_nulle: 11.6008
       bulletins: 1855
       origine: homophilie
-      p_ajustee: 0.2509
+      p_ajustee: 0.2425
       retenu: false
     - cle: vote_meme_metier
       libelle: Viser la même famille de métier
@@ -15552,7 +15414,7 @@ modeles:
         moyenne_nulle: 10.0294
       bulletins: 1855
       origine: homophilie
-      p_ajustee: 0.7451
+      p_ajustee: 0.7269
       retenu: false
     - cle: vote_meme_bandeau
       libelle: Viser son propre bandeau de départ
@@ -17382,7 +17244,7 @@ modeles:
         observe: -0.2958
         moyenne_nulle: -0.0001
       origine: audience
-      p_ajustee: 0.171
+      p_ajustee: 0.1649
       retenu: false
   avant_apres:
     saisons: 22
@@ -17485,7 +17347,7 @@ modeles:
         observe: -7.8613
         moyenne_nulle: -1.0719
       origine: avant_apres
-      p_ajustee: 0.2509
+      p_ajustee: 0.2425
       retenu: false
     - cle: fusion_force
       libelle: La force des éliminés, avant et après la fusion
@@ -17637,7 +17499,7 @@ modeles:
         observe: 46.875
         moyenne_nulle: 49.9517
       origine: avant_apres
-      p_ajustee: 0.7451
+      p_ajustee: 0.7269
       retenu: false
     - cle: ambassadeurs_survie
       libelle: L'ambassadeur qui négocie s'en sort-il mieux ?
@@ -17688,7 +17550,7 @@ modeles:
         observe: 39.4452
         moyenne_nulle: 50.0632
       origine: avant_apres
-      p_ajustee: 0.11
+      p_ajustee: 0.1056
       retenu: false
   conditionnelles:
     presences: 862
@@ -18449,7 +18311,7 @@ modeles:
         observe: 1.9443
         moyenne_nulle: -1.1894
       origine: conditionnelles
-      p_ajustee: 0.2712
+      p_ajustee: 0.2632
       retenu: false
     - cle: menace_deux_pas
       libelle: La menace, deux conseils plus tard
@@ -18499,7 +18361,7 @@ modeles:
         observe: 6.0215
         moyenne_nulle: 0.2929
       origine: conditionnelles
-      p_ajustee: 0.265
+      p_ajustee: 0.2565
       retenu: false
     - cle: cible_persistante
       libelle: La cible reste la cible
@@ -18887,7 +18749,7 @@ modeles:
         observe: 4.0134
         moyenne_nulle: 0.9969
       origine: autour_du_feu
-      p_ajustee: 0.2712
+      p_ajustee: 0.2632
       retenu: false
     - cle: confort_sortie
       libelle: Le confort du soir
@@ -18938,7 +18800,7 @@ modeles:
         observe: 4.2728
         moyenne_nulle: 0.4529
       origine: autour_du_feu
-      p_ajustee: 0.3878
+      p_ajustee: 0.3774
       retenu: false
   pire_place:
     presences: 862
@@ -19227,7 +19089,7 @@ modeles:
         observe: 11.4187
         moyenne_nulle: 8.5249
       origine: tenant_du_titre
-      p_ajustee: 0.5882
+      p_ajustee: 0.5727
       retenu: false
   age_au_conseil:
     conseils: 302
@@ -19286,7 +19148,7 @@ modeles:
         observe: 1.7452
         moyenne_nulle: -0.0069
       origine: age_au_conseil
-      p_ajustee: 0.1604
+      p_ajustee: 0.1545
       retenu: false
   rappel:
     effectif: 491
@@ -19457,7 +19319,7 @@ modeles:
     unite: ''
     ecart_types: 1.06
     p: 0.2939
-    p_ajustee: 0.3717
+    p_ajustee: 0.3611
     retenu: false
     tirages: 10000
     lecture: Distance entre le mélange de profils d'une saison et le mélange général. Un observé PLUS
@@ -19473,7 +19335,7 @@ modeles:
     unite: points de %
     ecart_types: -1.76
     p: 0.077
-    p_ajustee: 0.1324
+    p_ajustee: 0.1273
     retenu: false
     tirages: 10000
     lecture: On rebat les bandeaux à l'intérieur de chaque saison. Un écart observé PLUS PETIT que l'attendu
@@ -19504,7 +19366,7 @@ modeles:
     unite: annees
     ecart_types: 1.02
     p: 0.3162
-    p_ajustee: 0.3878
+    p_ajustee: 0.3774
     retenu: false
     tirages: 10000
     lecture: La médiane ignore les valeurs extrêmes. Si elle ne s'écarte pas, c'est que l'écart moyen
@@ -19520,7 +19382,7 @@ modeles:
     unite: rang moyen
     ecart_types: 0.41
     p: 0.6927
-    p_ajustee: 0.7451
+    p_ajustee: 0.7269
     retenu: false
     tirages: 10000
     lecture: Le modèle classe les candidats d'une saison ; on relève la place qu'il donne à celui qui
@@ -19535,7 +19397,7 @@ modeles:
     unite: '%'
     ecart_types: -1.31
     p: 0.2054
-    p_ajustee: 0.2712
+    p_ajustee: 0.2632
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -19551,7 +19413,7 @@ modeles:
     unite: années
     ecart_types: 1.4
     p: 0.1692
-    p_ajustee: 0.2509
+    p_ajustee: 0.2425
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -19567,7 +19429,7 @@ modeles:
     unite: '%'
     ecart_types: -0.45
     p: 0.6666
-    p_ajustee: 0.7451
+    p_ajustee: 0.7269
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -19766,7 +19628,7 @@ modeles:
     unite: ''
     ecart_types: -1.62
     p: 0.1074
-    p_ajustee: 0.171
+    p_ajustee: 0.1649
     retenu: false
     tirages: 10000
     lecture: Corrélation de rang entre l'audience d'une saison et l'effectif de la suivante, une fois
@@ -19782,7 +19644,7 @@ modeles:
     unite: ' points'
     ecart_types: -1.39
     p: 0.1646
-    p_ajustee: 0.2509
+    p_ajustee: 0.2425
     retenu: false
     tirages: 10000
     lecture: 'Différence entre l''après et l''avant, en points de pourcentage. Le hasard, ici, c''est
@@ -19829,7 +19691,7 @@ modeles:
     unite: ' points de rang'
     ecart_types: -0.4
     p: 0.6931
-    p_ajustee: 0.7451
+    p_ajustee: 0.7269
     retenu: false
     tirages: 10000
     lecture: Rang de l'éliminé parmi les présents, sur la force estimée aux épreuves. Au-dessus de 50,
@@ -19844,7 +19706,7 @@ modeles:
     unite: ' points de rang'
     ecart_types: -1.88
     p: 0.0614
-    p_ajustee: 0.11
+    p_ajustee: 0.1056
     retenu: false
     tirages: 10000
     lecture: 'Rang de l''ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c''est la
@@ -19892,7 +19754,7 @@ modeles:
     unite: ' points'
     ecart_types: 1.27
     p: 0.2081
-    p_ajustee: 0.2712
+    p_ajustee: 0.2632
     retenu: false
     tirages: 10000
     lecture: Écart entre partir après avoir voté avec la minorité et partir après avoir voté avec la majorité.
@@ -19906,7 +19768,7 @@ modeles:
     unite: ' points'
     ecart_types: 1.35
     p: 0.1849
-    p_ajustee: 0.265
+    p_ajustee: 0.2565
     retenu: false
     tirages: 10000
     lecture: Écart entre partir quand on avait été visé DEUX conseils plus tôt et partir quand on ne l'avait
@@ -19982,7 +19844,7 @@ modeles:
     unite: ' points'
     ecart_types: 1.37
     p: 0.199
-    p_ajustee: 0.2712
+    p_ajustee: 0.2632
     retenu: false
     tirages: 10000
     lecture: Écart entre partir quand on est le plus âgé des présents et partir quand on ne l'est pas.
@@ -19997,7 +19859,7 @@ modeles:
     unite: ' points'
     ecart_types: 1.07
     p: 0.3247
-    p_ajustee: 0.3878
+    p_ajustee: 0.3774
     retenu: false
     tirages: 10000
     lecture: 'Écart entre partir quand on vient de gagner le confort de l''épisode et partir quand on
@@ -20109,7 +19971,7 @@ modeles:
     unite: ' points'
     ecart_types: 0.67
     p: 0.5061
-    p_ajustee: 0.5882
+    p_ajustee: 0.5727
     retenu: false
     tirages: 4000
     lecture: 'Écart entre gagner l''immunité quand on l''a gagnée la fois d''avant et la gagner quand
@@ -20126,7 +19988,7 @@ modeles:
     unite: ' ans'
     ecart_types: 1.67
     p: 0.097
-    p_ajustee: 0.1604
+    p_ajustee: 0.1545
     retenu: false
     tirages: 10000
     lecture: 'Écart d''âge de l''éliminé à la moyenne de son camp, avant la réunification moins après.
@@ -20138,51 +20000,51 @@ modeles:
     question: Le score d’un aventurier à sa première participation prédit-il celui de ses participations
       suivantes ?
     origine: classement
-    observe: 0.042
-    attendu: -0.0
+    observe: 0.227
+    attendu: 0.0
     unite: ''
-    ecart_types: 0.35
-    p: 0.7273
-    p_ajustee: 0.7628
+    ecart_types: 1.9
+    p: 0.0588
+    p_ajustee: 0.1053
     retenu: false
     tirages: 10000
     lecture: 71 aventuriers ont joué au moins deux fois.
     nulle:
       bornes:
-      - -0.5025
-      - 0.4567
+      - -0.4867
+      - 0.4423
       cases:
       - 0
-      - 2
-      - 2
-      - 5
+      - 3
+      - 1
+      - 8
+      - 20
+      - 43
+      - 84
+      - 162
+      - 246
+      - 403
+      - 555
+      - 725
+      - 980
+      - 1035
+      - 1096
+      - 1092
+      - 944
+      - 794
+      - 661
+      - 453
+      - 314
+      - 176
+      - 94
+      - 69
+      - 26
       - 13
-      - 31
-      - 82
-      - 141
-      - 264
-      - 373
-      - 597
-      - 769
-      - 889
-      - 1075
-      - 1147
-      - 1088
-      - 1000
-      - 821
-      - 610
-      - 451
-      - 292
-      - 167
-      - 96
-      - 53
-      - 19
-      - 10
       - 3
       - 0
-      largeur_case: 0.034256
-      observe: 0.0419
-      moyenne_nulle: -0.0004
+      largeur_case: 0.033178
+      observe: 0.2266
+      moyenne_nulle: 0.0002
   nb_tests: 43
   nb_retenus: 21
 completude_saisons:

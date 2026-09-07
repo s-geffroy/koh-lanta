@@ -508,6 +508,59 @@ changement de conclusion. Ce qui change est la
 [complétude]({{ '/completude/' | relative_url }}) : seize trous de plus,
 assumés, là où il y avait seize réponses inventées.
 
+## Le soir du départ, qui faussait trois mesures à la fois
+
+Une question posée à la page du classement — *« et Freddy ? il est bien
+classé ? »* — a déclenché une revue complète. Il était **530<sup>e</sup> sur
+531**. Ce n’était pas un jugement sévère : c’était un défaut de construction.
+
+Trois des cinq facettes du classement se lisaient sur les bulletins d’un
+conseil. Toutes trois comptaient **le soir où l’aventurier quitte le jeu**, et
+ce soir-là n’est pas un soir comme les autres.
+
+**La résistance — retirée.** Elle demandait : « s’en sort-il quand son nom est
+écrit ? ». Sur les 689 occasions où quelqu’un est visé à un conseil dépouillé,
+**265 sont le conseil qui l’élimine** — un échec que personne ne peut éviter,
+compté comme un échec. Retirez-les et il ne reste que des survies : le taux
+monte à **100 % pour tout le monde**. La facette n’avait pas d’autre signal que
+cet échec obligatoire. Pire pour ceux qu’on observe peu : sur les
+206 participations à une seule occasion mesurée, **123 n’ont pour toute
+observation que leur propre élimination**. La facette n’a pas été corrigée, elle
+a été **supprimée** — on ne répare pas une mesure qui ne mesure rien.
+
+**La lecture — corrigée.** On ne vote pas pour soi-même : le bulletin qu’un
+aventurier émet le soir de son départ est faux par construction. **Zéro juste
+sur 264.** Les autres soirs, la justesse est de **73,5 %**, contre 64,0 % si
+l’on garde tout. Ce bulletin-là est désormais écarté.
+
+**La discrétion — corrigée.** Les voix qui vous éliminent pèsent **62,9 %** de
+toutes les voix relevées, et elles séparent les *manières de sortir* bien plus
+que les joueurs : 1,35 voix par conseil pour un éliminé au conseil, 0,14 pour un
+vainqueur. Les compter revenait à redemander « a-t-il été éliminé au conseil ? »,
+ce que le parcours dit déjà. Le soir du départ en est écarté aussi.
+
+<div class="constat">
+  <p><b>Ce que la correction a renversé.</b> La page affirmait que les quatre
+  facettes non physiques « se tiennent », avec des corrélations de 0,349 à
+  0,507, et en concluait qu’il existait un jeu social cohérent. Cet accord
+  <b>était fabriqué par le soir du départ</b>, présent dans les trois à la fois.
+  Une fois retiré, la corrélation la plus forte entre deux facettes tombe à
+  <b>{{ site.data.stats.classement.correlations[0].rho }}</b> — il n’y a plus
+  d’accord du tout.</p>
+  <p>Dans l’autre sens : le test de stabilité — un bon joueur l’est-il encore la
+  fois suivante ? — passait de 0,039 pour p = 0,73 à <b>0,227 pour p = 0,06</b>.
+  Le même artefact l’écrasait.</p>
+</div>
+
+<p class="note"><strong>La leçon, et elle dépasse ce classement.</strong> Chaque
+fois qu’on mesure un taux sur une trajectoire qui se termine, le dernier
+événement est structurellement différent des autres — et il est présent une fois
+pour chacun. Sur un joueur bien documenté il se dilue ; sur un joueur qu’on
+n’observe qu’une fois, il est <em>toute</em> la mesure. Ce n’est pas du bruit,
+c’est un biais systématique contre les moins documentés, et il ne se voit pas
+dans un contrôle de cohérence : les données étaient exactes, c’est la question
+qui était mal posée.</p>
+
 ## Ce qui manque
 
 Le jeu de données n’est pas complet, et le dire fait partie du travail. Voici la

@@ -129,20 +129,20 @@ def figures_du_classement(stats):
     ecrire("top-correlations.svg", barres_horizontales(
         [{"libelle": f'{c["libelle_a"]} · {c["libelle_b"]}'.replace("Le ", "")
                      .replace("La ", "").replace("Les ", ""),
-          "valeur": round(100 * c["rho"], 1),
-          # Les quatre paires qui touchent aux epreuves sont teintees a part :
-          # c'est le resultat de la figure, et il se voit mieux qu'il ne se
-          # deduit d'une moyenne.
-          "couleur": SERIES[4] if "epreuves" in (c["a"], c["b"]) else SERIES[2],
+          # Une correlation negative n'a pas de longueur : on dessine sa
+          # valeur absolue et le libelle porte le signe. Sur des valeurs
+          # toutes proches de zero, c'est la seule lecture honnete.
+          "valeur": abs(round(100 * c["rho"], 1)),
+          "couleur": SERIES[2] if c["rho"] >= 0 else SERIES[4],
           "detail": f'ρ = {c["rho"]} entre {c["libelle_a"].lower()} et '
                     f'{c["libelle_b"].lower()}'}
          for c in cl["correlations"]],
-        titre="Les cinq facettes décrivent-elles le même talent ?",
+        titre="Les quatre facettes décrivent-elles le même talent ?",
         description="Corrélation de rang entre chaque paire de facettes, sur les "
-                    f'{cl["joueurs_classes"]} joueurs classés. Zéro : deux qualités '
-                    "sans rapport. En clair, les paires qui font intervenir les "
-                    "épreuves.",
-        unite=" %", marge_gauche=260, largeur=760))
+                    f'{cl["joueurs_classes"]} joueurs classés, en valeur absolue. '
+                    "Zéro : deux qualités sans rapport. En clair, les paires dont "
+                    "la corrélation est négative.",
+        unite=" %", valeur_max=100, marge_gauche=260, largeur=760))
 
     # 4. le test de stabilite, avec sa distribution nulle
     test = next((t for t in (stats.get("modeles") or {}).get("registre") or []
