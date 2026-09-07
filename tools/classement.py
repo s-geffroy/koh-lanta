@@ -450,6 +450,27 @@ def correlations(sujets):
     return out
 
 
+def bornes_des_correlations(correl):
+    """Les correlations rangees en deux familles, avec leurs bornes.
+
+    Le resultat de cette page tient dans le CONTRASTE entre les deux : les
+    facettes du jeu social s'accordent, celle des epreuves ne s'accorde avec
+    rien. La moyenne des dix, elle, ne dit rien -- elle moyenne deux regimes
+    opposes.
+
+    Calcule ici, pas dans le gabarit. Jekyll 3.10 en safe mode n'a pas de quoi
+    filtrer une liste de dictionnaires sans y laisser sa syntaxe, et ce depot
+    a pour regle que les calculs sortent de Python.
+    """
+    def borne(lot):
+        rhos = sorted(x["rho"] for x in lot)
+        return {"paires": len(lot), "min": rhos[0], "max": rhos[-1],
+                "moyenne": round(sum(rhos) / len(rhos), 3)} if rhos else None
+    avec = [x for x in correl if "epreuves" in (x["a"], x["b"])]
+    sans = [x for x in correl if "epreuves" not in (x["a"], x["b"])]
+    return {"avec_epreuves": borne(avec), "sans_epreuves": borne(sans)}
+
+
 def top_du_hasard(sujets, pr):
     """Le meme classement, sur des performances tirees au sort.
 
@@ -741,6 +762,7 @@ def tout(saisons, parts, conseils, epreuves):
         "correlations": correl,
         "correlation_moyenne": round(
             float(np.mean([c["rho"] for c in correl])), 3),
+        "correlations_bornes": bornes_des_correlations(correl),
         "palmares": {
             "auc": round(auc, 3) if auc is not None else None,
             "rang_median_vainqueurs": int(np.median(

@@ -11395,6 +11395,17 @@ classement:
     libelle_b: Les épreuves
     rho: -0.001
   correlation_moyenne: 0.253
+  correlations_bornes:
+    avec_epreuves:
+      paires: 4
+      min: -0.031
+      max: 0.041
+      moyenne: 0.01
+    sans_epreuves:
+      paires: 6
+      min: 0.349
+      max: 0.507
+      moyenne: 0.415
   palmares:
     auc: 0.881
     rang_median_vainqueurs: 58

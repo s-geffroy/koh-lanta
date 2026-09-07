@@ -189,19 +189,20 @@ font intervenir les épreuves.</p>
 La corrélation moyenne vaut {{ c.correlation_moyenne }} — et c’est le chiffre à
 ne pas retenir, parce qu’il moyenne deux régimes opposés.
 
-{% assign sansEp = c.correlations | where_exp: "x", "x.a != 'epreuves'" | where_exp: "x", "x.b != 'epreuves'" | map: "rho" | sort %}
-{% assign avecEp = c.correlations | where_exp: "x", "x.a == 'epreuves' or x.b == 'epreuves'" | map: "rho" | sort %}
+{% assign sansEp = c.correlations_bornes.sans_epreuves %}
+{% assign avecEp = c.correlations_bornes.avec_epreuves %}
 
 <div class="constat">
   <p><b>Les quatre facettes du jeu social se tiennent</b> : parcours,
   discrétion, résistance et lecture s’accordent deux à deux entre
-  {{ sansEp.first }} et {{ sansEp.last }}. Celui qui vote juste est aussi celui
-  qu’on n’écrit pas, et il va plus loin.</p>
+  {{ sansEp.min }} et {{ sansEp.max }}, pour une moyenne de
+  {{ sansEp.moyenne }} sur leurs {{ sansEp.paires }} paires. Celui qui vote
+  juste est aussi celui qu’on n’écrit pas, et il va plus loin.</p>
   <p><b>Les épreuves, elles, ne sont corrélées à rien.</b> Les
-  {{ avecEp | size }} paires qui les font intervenir tiennent toutes entre
-  {{ avecEp.first }} et {{ avecEp.last }} — c’est-à-dire <em>zéro</em>. Gagner
-  les épreuves et bien jouer le conseil sont deux talents <b>sans aucun rapport
-  mesurable</b> dans ces données.</p>
+  {{ avecEp.paires }} paires qui les font intervenir tiennent toutes entre
+  {{ avecEp.min }} et {{ avecEp.max }}, moyenne {{ avecEp.moyenne }} —
+  c’est-à-dire <em>zéro</em>. Gagner les épreuves et bien jouer le conseil sont
+  deux talents <b>sans aucun rapport mesurable</b> dans ces données.</p>
 </div>
 
 <p class="note">Conséquence directe sur la lecture du top : un classement qui

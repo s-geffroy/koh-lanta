@@ -31,6 +31,20 @@ RE_DATA = re.compile(r"site\.data\.([A-Za-z0-9_.]+)")
 RE_ASSIGN = re.compile(r"\{%\s*assign\s+(\w+)\s*=\s*site\.data\.([A-Za-z0-9_.]+)\s*%\}")
 RE_VAR = re.compile(r"\{\{\s*([a-z_][A-Za-z0-9_]*)\.([A-Za-z0-9_.]+)")
 
+# Le Liquid qu'on n'ecrit pas ici, et pourquoi. Le site ne peut pas etre
+# construit sur cet hote -- Jekyll 3.10 en safe mode, decision assumee du
+# depot -- donc une erreur de gabarit ne se decouvre qu'APRES le push, dans
+# l'onglet Actions. On s'interdit donc le Liquid dont le comportement se
+# discute, et `where_exp` est le premier de la liste : il a fait echouer une
+# construction entiere sur une « Liquid syntax error » sans que rien n'ait pu
+# le voir venir. Un calcul sur une liste se fait en Python, dans
+# tools/build_stats.py, et le gabarit ne fait qu'afficher. La regle etait deja
+# ecrite dans _layouts/page.html ; elle est maintenant verifiee.
+LIQUID_INTERDIT = (
+    ("where_exp", "filtrer une liste se fait en Python, pas dans le gabarit "
+                  "— publie le resultat dans stats.yml"),
+)
+
 EXCLUS_ATTENDUS = {"CLAUDE.md", "README.md", "app.yaml", "compose.yaml", "specs/"}
 
 
@@ -473,6 +487,10 @@ def main():
                 c.erreur(f"{rel} : inclusion introuvable — _includes/{inc}")
 
         # chemins ecrits en toutes lettres
+        for motif, conseil in LIQUID_INTERDIT:
+            if motif in corps:
+                c.erreur(f"{rel} : `{motif}` interdit dans un gabarit — {conseil}")
+
         for parcours in RE_DATA.findall(corps):
             ok, _ = resoudre(donnees, parcours)
             if not ok:

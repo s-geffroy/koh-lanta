@@ -228,16 +228,16 @@ plus tôt que les hommes en moyenne — et remportent pourtant
 ## Et une chose que le mot « meilleur joueur » recouvre
 
 {% assign cl = site.data.stats.classement %}
-{% assign sansEp = cl.correlations | where_exp: "x", "x.a != 'epreuves'" | where_exp: "x", "x.b != 'epreuves'" | map: "rho" | sort %}
-{% assign avecEp = cl.correlations | where_exp: "x", "x.a == 'epreuves' or x.b == 'epreuves'" | map: "rho" | sort %}
+{% assign sansEp = cl.correlations_bornes.sans_epreuves %}
+{% assign avecEp = cl.correlations_bornes.avec_epreuves %}
 <div class="constat">
   <p>Cinq façons de bien jouer ont été mesurées sur les
   {{ cl.joueurs_classes }} aventuriers, <b>sans jamais regarder qui avait
   gagné</b>. Quatre vont ensemble : aller loin, n’être pas visé, survivre quand
   on l’est, écrire le bon nom — elles s’accordent deux à deux entre
-  {{ sansEp.first }} et {{ sansEp.last }}.</p>
+  {{ sansEp.min }} et {{ sansEp.max }}.</p>
   <p><b>La cinquième, les épreuves, n’est corrélée à rien</b> :
-  {{ avecEp.first }} à {{ avecEp.last }} avec chacune des autres. Gagner les
+  {{ avecEp.min }} à {{ avecEp.max }} avec chacune des autres. Gagner les
   épreuves et bien jouer le conseil sont deux talents <b>sans rapport
   mesurable</b> — et c’est pourquoi il n’existe pas un classement des joueurs,
   mais autant qu’on choisit de pondérations : <b>{{ cl.robustesse.candidats }}
