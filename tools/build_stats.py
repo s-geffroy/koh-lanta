@@ -364,6 +364,9 @@ def bloc_conseils(conseils, parts, par_saison):
         "conseils_complets": len(complets),
         "bulletins": sum(len(c["votes"]) for c in utiles),
         "bulletins_conseils_complets": sum(len(c["votes"]) for c in complets),
+        # Le compte brut autant que la part : « 0,0 % » ne se lit pas, « aucun
+        # conseil sur 404 » se lit.
+        "conseils_unanimes": len(unanimes),
         "part_unanimes": part(len(unanimes), len(avec_decompte)),
         "part_serres": part(len(serres), len(avec_decompte)),
         "voix_annulees_par_objet": voix_objet,
@@ -384,25 +387,39 @@ def bloc_conseils(conseils, parts, par_saison):
 def bloc_jury(conseils, parts, par_saison):
     """Le vote du jury final, quand la source le donne.
 
-    Il n'est releve que pour huit saisons : ailleurs, les pages sources ne
-    publient pas le detail du scrutin final. C'est trop peu pour en tirer une
-    statistique, assez pour etre montre tel quel.
+    Le scrutin tient une ligne par finaliste. Cette table en montre une par
+    LAUREAT : « qui a gagne, avec combien de voix ». La colonne du finaliste
+    battu porte `finaliste` et non `laureat` ; elle compte dans les bulletins
+    du modele, pas dans ce tableau, qui repondrait sinon deux fois a la meme
+    question.
     """
     idx = {(p["saison"], p["id"]): p for p in parts}
     lignes = []
-    for c in sorted(votes_du_jury(conseils), key=lambda c: c["saison"]):
+    for c in sorted((x for x in votes_du_jury(conseils) if x.get("laureat")),
+                    key=lambda c: c["saison"]):
         sa = par_saison.get(c["saison"]) or {}
         p = idx.get((c["saison"], c["laureat"])) or {}
+        # Un laureat non rattache n'a pas de nom sur lequel s'appuyer : la
+        # source en donne un libelle mal decoupe (« Ugo Lartiche Ugo »), residu
+        # d'une cellule qui porte a la fois une vignette et un prenom. On ne le
+        # publie pas, et on ne le devine pas non plus : la ligne reste, sans
+        # nom, et leur nombre est dit sous le tableau.
         lignes.append({
             "saison": c["saison"],
             "titre": sa.get("titre"),
             "annee": sa.get("annee"),
-            "laureat": p.get("nom_complet") or p.get("nom") or c["laureat"],
+            "laureat": (p.get("nom_complet") or p.get("nom")
+                        if c.get("laureat_rattache") else None),
             "voix_pour": c.get("votes_pour"),
             "voix_exprimees": c.get("votes_exprimes"),
             "bulletins_releves": len(c.get("votes") or []),
         })
-    return {"effectif": len(lignes), "scrutins": lignes}
+    return {
+        "effectif": len(lignes),
+        "saisons": len({x["saison"] for x in lignes}),
+        "sans_nom": sum(1 for x in lignes if not x["laureat"]),
+        "scrutins": lignes,
+    }
 
 
 def bloc_epreuves(epreuves, conseils, parts, saisons, par_saison):
@@ -599,6 +616,109 @@ def bloc_colliers(colliers, par_saison):
     }
 
 
+def voix_des_vainqueurs(lignes):
+    """Combien de voix les vainqueurs ont-ils recues avant de gagner ?
+
+    Le total de voix vient de `participations.yml:votes_recus`, releve pour la
+    saison entiere par le tableau des candidats -- et non de la somme des
+    conseils dont on a le depouillement complet, qui n'en couvre qu'une partie.
+    C'est le choix deja fait par `indicateurs.py` pour l'indicateur `menace`.
+
+    Le piege du sujet est le denominateur. Compare a TOUT le casting, un
+    vainqueur parait invisible ; mais on ne gagne pas si on est sorti, et on
+    sort quand on est ecrit : l'ecart est alors en grande partie mecanique. La
+    comparaison qui apprend quelque chose est celle du FINALISTE, qui a
+    traverse exactement les memes conseils. Les deux sont rendues ici, dans cet
+    ordre, pour qu'on ne puisse pas lire la premiere sans la seconde.
+    """
+    v = [x for x in lignes if x["sort"] == "vainqueur" and x["voix_recues"] is not None]
+    if not v:
+        return {}
+    voix = [x["voix_recues"] for x in v]
+    sans = sum(1 for n in voix if n == 0)
+
+    def groupe(libelle, lot):
+        recues = [x["voix_recues"] for x in lot if x["voix_recues"] is not None]
+        menaces = [x["menace"] for x in lot if x["menace"] is not None]
+        if not recues:
+            return None
+        return {
+            "libelle": libelle,
+            "effectif": len(recues),
+            "voix_moyennes": arrondi(mean(recues), 2),
+            "voix_medianes": arrondi(median(recues), 1),
+            # `menace` = voix recues par conseil traverse. Elle n'existe qu'au
+            # dela de SEUIL_CONSEILS : son effectif est donc dit a part, sans
+            # quoi on lirait une moyenne sur un denominateur invente.
+            "menace_moyenne": arrondi(mean(menaces), 3) if menaces else None,
+            "mesures": len(menaces),
+        }
+
+    par_sort = [g for g in (
+        groupe("Vainqueurs", [x for x in lignes if x["sort"] == "vainqueur"]),
+        groupe("Finalistes", [x for x in lignes if x["sort"] == "finaliste"]),
+        groupe("Tout le casting", lignes),
+    ) if g]
+
+    # La comparaison appariee : un couple par (vainqueur, finaliste) d'une meme
+    # saison. Les saisons a double victoire donnent donc deux couples, et celles
+    # ou le finaliste manque n'en donnent aucun -- plutot que d'inventer un
+    # adversaire.
+    par_saison = defaultdict(lambda: {"v": [], "f": []})
+    for x in lignes:
+        if x["sort"] == "vainqueur":
+            par_saison[x["saison"]]["v"].append(x)
+        elif x["sort"] == "finaliste":
+            par_saison[x["saison"]]["f"].append(x)
+    couples = []
+    for sid in sorted(par_saison):
+        b = par_saison[sid]
+        for a in b["v"]:
+            for f in b["f"]:
+                if a["voix_recues"] is None or f["voix_recues"] is None:
+                    continue
+                couples.append({
+                    "saison": sid, "titre": a["titre"], "annee": a["annee"],
+                    "vainqueur": a["nom"], "voix_vainqueur": a["voix_recues"],
+                    "finaliste": f["nom"], "voix_finaliste": f["voix_recues"],
+                    "conseils": a["conseils_assistes"],
+                })
+    couples.sort(key=lambda x: (x["annee"], x["saison"]))
+    moins = sum(1 for x in couples if x["voix_vainqueur"] < x["voix_finaliste"])
+    plus = sum(1 for x in couples if x["voix_vainqueur"] > x["voix_finaliste"])
+
+    return {
+        "effectif": len(v),
+        "total": sum(voix),
+        "moyenne": arrondi(mean(voix), 2),
+        "mediane": arrondi(median(voix), 1),
+        "maximum": max(voix),
+        "sans_aucune_voix": sans,
+        "part_sans_voix": part(sans, len(voix)),
+        "jamais_ecrits": [{"nom": x["nom"], "titre": x["titre"], "annee": x["annee"]}
+                          for x in sorted(v, key=lambda x: x["annee"])
+                          if x["voix_recues"] == 0],
+        "records": [{"nom": x["nom"], "titre": x["titre"], "annee": x["annee"],
+                     "voix": x["voix_recues"]}
+                    for x in sorted(v, key=lambda x: (-x["voix_recues"], x["annee"]))
+                    if x["voix_recues"] == max(voix)],
+        "distribution": [{"voix": n, "effectif": sum(1 for k in voix if k == n)}
+                         for n in range(0, max(voix) + 1)],
+        "par_sort": par_sort,
+        "couples": couples,
+        "couples_resume": {
+            "effectif": len(couples),
+            "vainqueur_moins_vise": moins,
+            "egalite": len(couples) - moins - plus,
+            "vainqueur_plus_vise": plus,
+            "moyenne_vainqueur": arrondi(mean([x["voix_vainqueur"] for x in couples]), 2)
+                                 if couples else None,
+            "moyenne_finaliste": arrondi(mean([x["voix_finaliste"] for x in couples]), 2)
+                                 if couples else None,
+        },
+    }
+
+
 def bloc_indicateurs(saisons, parts, conseils, epreuves, colliers):
     """Les indicateurs avances, individuels et par saison."""
     lignes = indicateurs_individuels(saisons, parts, conseils, epreuves)
@@ -655,6 +775,7 @@ def bloc_indicateurs(saisons, parts, conseils, epreuves, colliers):
              "part_endurants": part(
                  sum(1 for x in endurants if x["sort"] == k), len(endurants))}
             for k, n in Counter(x["sort"] for x in invisibles).most_common()],
+        "voix_des_vainqueurs": voix_des_vainqueurs(classiques),
         "comparables": len(lignes),
         "endurants": len(endurants),
         "seuil_fantome": SEUIL_FANTOME,

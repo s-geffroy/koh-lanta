@@ -28,8 +28,9 @@ def eliminations(conseils):
 
     Le dernier scrutin d'une saison n'est pas un conseil mais le vote du jury
     final : y ecrire un nom veut dire « qu'il gagne ». Le compter comme une
-    elimination inverserait le sens de chaque bulletin. Huit saisons sont
-    concernees, pour 49 bulletins.
+    elimination inverserait le sens de chaque bulletin. Ce scrutin tient une
+    ligne par finaliste -- celle du gagnant et celle du battu -- et les deux
+    sont ecartees ici.
 
     Tout calcul portant sur les eliminations passe par ici. Les lignes plus
     anciennes n'ayant pas de champ `type`, l'absence vaut `elimination`.

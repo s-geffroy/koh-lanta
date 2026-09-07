@@ -22,6 +22,9 @@ import yaml
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "extraction"))
 import lieux  # noqa: E402
+# Les en-tetes de colonne du scrutin final, definis la ou l'extraction les lit :
+# une seule liste, pour que le controle et la generation ne divergent jamais.
+from construire_conseils import EN_TETES_JURY, entete_de_colonne  # noqa: E402
 
 RACINE = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 DATA = os.path.join(RACINE, "_data")
@@ -412,6 +415,8 @@ def verifier_conseils(conseils, saisons, parts, c):
     """
     vainqueurs = {(p["saison"], p["id"]) for p in parts
                   if p.get("sort") == "vainqueur"}
+    finalistes = {(p["saison"], p["id"]) for p in parts
+                  if p.get("sort") == "finaliste"}
     ids = {(p["saison"], p["id"]) for p in parts}
     connus = {s["id"] for s in saisons}
 
@@ -430,12 +435,33 @@ def verifier_conseils(conseils, saisons, parts, c):
                 if interdit in x:
                     c.erreur(f"{ref} : vote de jury portant `{interdit}` — "
                              f"personne n'y est elimine")
-            if x.get("laureat") and (x["saison"], x["laureat"]) not in vainqueurs:
+            # Le scrutin final tient une ligne par finaliste : celle du
+            # gagnant (`laureat`) et celle du battu (`finaliste`). Une ligne
+            # de jury porte exactement l'une des deux.
+            portes = [ch for ch in ("laureat", "finaliste") if ch in x]
+            if len(portes) != 1:
+                c.erreur(f"{ref} : vote de jury portant {portes or 'aucun'} — "
+                         f"attendu exactement `laureat` OU `finaliste`")
+            if (x.get("laureat_rattache")
+                    and (x["saison"], x["laureat"]) not in vainqueurs):
                 c.erreur(f"{ref} : le laureat « {x['laureat']} » n'est pas le "
                          f"vainqueur declare de la saison")
+            if (x.get("finaliste_rattache")
+                    and (x["saison"], x["finaliste"]) not in finalistes):
+                c.erreur(f"{ref} : « {x['finaliste']} » tient la colonne du "
+                         f"finaliste battu sans porter `sort: finaliste`")
         else:
-            if "laureat" in x:
-                c.erreur(f"{ref} : conseil d'elimination portant `laureat`")
+            for interdit in ("laureat", "finaliste"):
+                if interdit in x:
+                    c.erreur(f"{ref} : conseil d'elimination portant `{interdit}`")
+            # La colonne du scrutin final est titree par la source
+            # (« Gagnant », « Finaliste »...). La voir ici, c'est qu'elle a ete
+            # rangee du cote des eliminations : les bulletins y comptent alors
+            # a l'envers, sans qu'aucun calcul ne s'en plaigne.
+            if entete_de_colonne(x.get("episode")) in EN_TETES_JURY:
+                c.erreur(f"{ref} : conseil d'elimination titre "
+                         f"« {x.get('episode')} » — c'est une colonne du vote "
+                         f"du jury final, pas un conseil")
             if x.get("elimine_rattache") and (x["saison"], x["elimine"]) in vainqueurs:
                 c.erreur(f"{ref} : le vainqueur de la saison y est donne pour "
                          f"elimine — c'est le vote du jury, pas un conseil")
@@ -446,7 +472,7 @@ def verifier_conseils(conseils, saisons, parts, c):
         # l'extraction et laissait « 75px » en guise d'aventurier, rendant 478
         # eliminations sur 681 non rattachables. La faute est corrigee dans
         # `plain()` ; ce controle est la pour qu'elle ne revienne pas.
-        for champ in ("elimine", "laureat"):
+        for champ in ("elimine", "laureat", "finaliste"):
             v = x.get(champ)
             if isinstance(v, str) and RE_RESIDU_WIKI.search(v):
                 c.erreur(f"{ref} : `{champ}` porte de la syntaxe MediaWiki "

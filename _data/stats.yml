@@ -1363,13 +1363,14 @@ records:
     - sp7
   nb_multi_participants: 83
 conseils:
-  conseils: 662
-  conseils_avec_decompte: 421
-  conseils_complets: 277
-  bulletins: 3486
-  bulletins_conseils_complets: 2169
-  part_unanimes: 0.2
-  part_serres: 47.5
+  conseils: 645
+  conseils_avec_decompte: 404
+  conseils_complets: 276
+  bulletins: 3437
+  bulletins_conseils_complets: 2162
+  conseils_unanimes: 0
+  part_unanimes: 0.0
+  part_serres: 46.3
   voix_annulees_par_objet: 249
   conseils_avec_objet_joue: 64
   saisons_avec_objet_joue: 20
@@ -1383,21 +1384,23 @@ conseils:
   - votant: h
     cible: f
     effectif: 630
-    part: 30.4
+    part: 30.5
   - votant: f
     cible: h
-    effectif: 499
-    part: 24.1
+    effectif: 497
+    part: 24.0
   - votant: h
     cible: h
-    effectif: 480
-    part: 23.1
+    effectif: 476
+    part: 23.0
   - votant: f
     cible: f
     effectif: 465
-    part: 22.4
+    part: 22.5
 jury:
-  effectif: 32
+  effectif: 35
+  saisons: 32
+  sans_nom: 3
   scrutins:
   - saison: s01
     titre: Les Aventuriers de Koh-Lanta
@@ -1490,6 +1493,13 @@ jury:
     voix_pour: 7
     voix_exprimees: 9
     bulletins_releves: 7
+  - saison: s12
+    titre: Malaisie
+    annee: 2012
+    laureat: null
+    voix_pour: 10
+    voix_exprimees: 11
+    bulletins_releves: 10
   - saison: s14
     titre: Johor
     annee: 2015
@@ -1609,6 +1619,20 @@ jury:
     voix_pour: 9
     voix_exprimees: 10
     bulletins_releves: 9
+  - saison: sp4
+    titre: La Nouvelle Édition
+    annee: 2014
+    laureat: null
+    voix_pour: 7
+    voix_exprimees: 7
+    bulletins_releves: 7
+  - saison: sp5
+    titre: Le Combat des héros
+    annee: 2018
+    laureat: null
+    voix_pour: 5
+    voix_exprimees: 9
+    bulletins_releves: 5
   - saison: sp6
     titre: L'Île des héros
     annee: 2020
@@ -6246,8 +6270,8 @@ programme:
     premiere: 2024
     derniere: 2024
 reciprocite:
-  couples: 1850
-  reciproques: 696
+  couples: 1844
+  reciproques: 694
   part: 37.6
 arc_des_votes:
   saison: s16
@@ -6688,39 +6712,36 @@ arc_des_votes:
     poids: 1
   bulletins: 130
 voix_pour_eliminer:
-  effectif: 417
+  effectif: 402
   mode: 4
   repartition:
   - voix: 1
-    effectif: 8
-    part: 1.9
+    effectif: 5
+    part: 1.2
   - voix: 2
-    effectif: 13
-    part: 3.1
+    effectif: 7
+    part: 1.7
   - voix: 3
-    effectif: 43
-    part: 10.3
+    effectif: 42
+    part: 10.4
   - voix: 4
-    effectif: 101
-    part: 24.2
+    effectif: 100
+    part: 24.9
   - voix: 5
-    effectif: 89
-    part: 21.3
+    effectif: 87
+    part: 21.6
   - voix: 6
     effectif: 88
-    part: 21.1
+    part: 21.9
   - voix: 7
-    effectif: 42
-    part: 10.1
+    effectif: 41
+    part: 10.2
   - voix: 8
     effectif: 23
-    part: 5.5
+    part: 5.7
   - voix: 9
     effectif: 8
-    part: 1.9
-  - voix: 10
-    effectif: 1
-    part: 0.2
+    part: 2.0
   - voix: 11
     effectif: 1
     part: 0.2
@@ -7637,6 +7658,291 @@ indicateurs:
     part_fantomes: 6.0
     part_ensemble: 2.7
     part_endurants: 1.6
+  voix_des_vainqueurs:
+    effectif: 29
+    total: 65
+    moyenne: 2.24
+    mediane: 2.0
+    maximum: 7
+    sans_aucune_voix: 9
+    part_sans_voix: 31.0
+    jamais_ecrits:
+    - nom: Delphine Bano
+      titre: Bocas del Toro
+      annee: 2003
+    - nom: Clémence Castel
+      titre: Pacifique
+      annee: 2005
+    - nom: Jade Handi
+      titre: Palawan
+      annee: 2007
+    - nom: Christelle Gauzet
+      titre: Caramoan
+      annee: 2008
+    - nom: Gérard Urdampilleta
+      titre: Raja Ampat
+      annee: 2011
+    - nom: Ugo Lartiche
+      titre: Malaisie
+      annee: 2012
+    - nom: François Descamp
+      titre: Le Totem maudit
+      annee: 2022
+    - nom: Bastien San Pedro
+      titre: Le Totem maudit
+      annee: 2022
+    - nom: Thibault Bélanger
+      titre: La Tribu maudite
+      annee: 2024
+    records:
+    - nom: Benoît Assadi
+      titre: L'Île au trésor
+      annee: 2016
+      voix: 7
+    - nom: Maud Bamps
+      titre: La Guerre des chefs
+      annee: 2019
+      voix: 7
+    - nom: Cynthia Combes
+      titre: Les Reliques du destin
+      annee: 2026
+      voix: 7
+    distribution:
+    - voix: 0
+      effectif: 9
+    - voix: 1
+      effectif: 4
+    - voix: 2
+      effectif: 6
+    - voix: 3
+      effectif: 3
+    - voix: 4
+      effectif: 2
+    - voix: 5
+      effectif: 1
+    - voix: 6
+      effectif: 1
+    - voix: 7
+      effectif: 3
+    par_sort:
+    - libelle: Vainqueurs
+      effectif: 29
+      voix_moyennes: 2.24
+      voix_medianes: 2.0
+      menace_moyenne: 0.143
+      mesures: 29
+    - libelle: Finalistes
+      effectif: 23
+      voix_moyennes: 4.91
+      voix_medianes: 5.0
+      menace_moyenne: 0.347
+      mesures: 23
+    - libelle: Tout le casting
+      effectif: 510
+      voix_moyennes: 5.77
+      voix_medianes: 5.0
+      menace_moyenne: 0.647
+      mesures: 409
+    couples:
+    - saison: s01
+      titre: Les Aventuriers de Koh-Lanta
+      annee: 2001
+      vainqueur: Gilles Nicolet
+      voix_vainqueur: 3
+      finaliste: Guénaëlle Biras
+      voix_finaliste: 0
+      conseils: 13
+    - saison: s02
+      titre: Nicoya
+      annee: 2002
+      vainqueur: Amel Fatnassi
+      voix_vainqueur: 2
+      finaliste: Nicolas Leoni
+      voix_finaliste: 3
+      conseils: 13
+    - saison: s04
+      titre: Panama
+      annee: 2004
+      vainqueur: Philippe Bordier
+      voix_vainqueur: 2
+      finaliste: Linda Alario
+      voix_finaliste: 11
+      conseils: 14
+    - saison: s05
+      titre: Pacifique
+      annee: 2005
+      vainqueur: Clémence Castel
+      voix_vainqueur: 0
+      finaliste: Francis Bordas
+      voix_finaliste: 11
+      conseils: 15
+    - saison: s06
+      titre: Vanuatu
+      annee: 2006
+      vainqueur: François-David Cardonnel
+      voix_vainqueur: 5
+      finaliste: Émilie Frahi
+      voix_finaliste: 5
+      conseils: 14
+    - saison: s08
+      titre: Caramoan
+      annee: 2008
+      vainqueur: Christelle Gauzet
+      voix_vainqueur: 0
+      finaliste: Frédéric Favier
+      voix_finaliste: 1
+      conseils: 14
+    - saison: s09
+      titre: Palau
+      annee: 2009
+      vainqueur: Christina Chevry
+      voix_vainqueur: 3
+      finaliste: Patrick Merle
+      voix_finaliste: 1
+      conseils: 14
+    - saison: s10
+      titre: Viêtnam
+      annee: 2010
+      vainqueur: Philippe Duron
+      voix_vainqueur: 1
+      finaliste: Claude Dartois
+      voix_finaliste: 1
+      conseils: 17
+    - saison: s11
+      titre: Raja Ampat
+      annee: 2011
+      vainqueur: Gérard Urdampilleta
+      voix_vainqueur: 0
+      finaliste: Teheiura Teahui
+      voix_finaliste: 5
+      conseils: 15
+    - saison: s12
+      titre: Malaisie
+      annee: 2012
+      vainqueur: Ugo Lartiche
+      voix_vainqueur: 0
+      finaliste: Brice Martinet
+      voix_finaliste: 12
+      conseils: 14
+    - saison: s14
+      titre: Johor
+      annee: 2015
+      vainqueur: Marc Rambaud
+      voix_vainqueur: 4
+      finaliste: Chantal Ménard
+      voix_finaliste: 9
+      conseils: 17
+    - saison: s15
+      titre: Thaïlande
+      annee: 2016
+      vainqueur: Wendy Gervois
+      voix_vainqueur: 1
+      finaliste: Pascal Salviani
+      voix_finaliste: 12
+      conseils: 15
+    - saison: s16
+      titre: L'Île au trésor
+      annee: 2016
+      vainqueur: Benoît Assadi
+      voix_vainqueur: 7
+      finaliste: Jesta Hillmann
+      voix_finaliste: 3
+      conseils: 16
+    - saison: s17
+      titre: Cambodge
+      annee: 2017
+      vainqueur: Frédéric Blancher
+      voix_vainqueur: 2
+      finaliste: Clémentine Jullien
+      voix_finaliste: 1
+      conseils: 16
+    - saison: s18
+      titre: Fidji
+      annee: 2017
+      vainqueur: André Deleplace
+      voix_vainqueur: 6
+      finaliste: Tiffany Gounin
+      voix_finaliste: 6
+      conseils: 16
+    - saison: s20
+      titre: La Guerre des chefs
+      annee: 2019
+      vainqueur: Maud Bamps
+      voix_vainqueur: 7
+      finaliste: Cindy Poumeyrol
+      voix_finaliste: 0
+      conseils: 18
+    - saison: s21
+      titre: Les 4 Terres
+      annee: 2020
+      vainqueur: Alexandra Pornet
+      voix_vainqueur: 2
+      finaliste: Brice Petit
+      voix_finaliste: 5
+      conseils: 18
+    - saison: s22
+      titre: Les Armes secrètes
+      annee: 2021
+      vainqueur: Maxine Eouzan
+      voix_vainqueur: 1
+      finaliste: Lucie Bertaud
+      voix_finaliste: 8
+      conseils: 15
+    - saison: s23
+      titre: Le Totem maudit
+      annee: 2022
+      vainqueur: François Descamp
+      voix_vainqueur: 0
+      finaliste: Géraldine Nicolle
+      voix_finaliste: 5
+      conseils: 16
+    - saison: s23
+      titre: Le Totem maudit
+      annee: 2022
+      vainqueur: Bastien San Pedro
+      voix_vainqueur: 0
+      finaliste: Géraldine Nicolle
+      voix_finaliste: 5
+      conseils: 16
+    - saison: s25
+      titre: Les Chasseurs d'immunité
+      annee: 2024
+      vainqueur: Léa Sahin
+      voix_vainqueur: 2
+      finaliste: Meïssa Seck
+      voix_finaliste: 5
+      conseils: 17
+    - saison: s26
+      titre: La Tribu maudite
+      annee: 2024
+      vainqueur: Thibault Bélanger
+      voix_vainqueur: 0
+      finaliste: Charlotte Rasquin
+      voix_finaliste: 6
+      conseils: 17
+    - saison: s27
+      titre: La Revanche des 4 Terres
+      annee: 2025
+      vainqueur: Gaëlle Fleury
+      voix_vainqueur: 4
+      finaliste: Maël Lozach
+      voix_finaliste: 1
+      conseils: 18
+    - saison: s28
+      titre: Les Reliques du destin
+      annee: 2026
+      vainqueur: Cynthia Combes
+      voix_vainqueur: 7
+      finaliste: Clarisse Cresseveur
+      voix_finaliste: 2
+      conseils: 19
+    couples_resume:
+      effectif: 24
+      vainqueur_moins_vise: 14
+      egalite: 3
+      vainqueur_plus_vise: 7
+      moyenne_vainqueur: 2.46
+      moyenne_finaliste: 4.92
   comparables: 627
   endurants: 443
   seuil_fantome: 5
@@ -7667,9 +7973,9 @@ indicateurs:
     survie_moyenne: 61.5
     abandons: 0
     taux_abandon: 0.0
-    conseils: 15
+    conseils: 14
     conseils_complets: 11
-    tension_conseils: 50.0
+    tension_conseils: 45.5
     dispersion_votes: 0.852
     epreuves: 22
     epreuves_individuelles: 11
@@ -7693,9 +7999,9 @@ indicateurs:
     survie_moyenne: 61.4
     abandons: 1
     taux_abandon: 6.2
-    conseils: 16
+    conseils: 15
     conseils_complets: 12
-    tension_conseils: 46.2
+    tension_conseils: 41.7
     dispersion_votes: 0.834
     epreuves: 25
     epreuves_individuelles: 13
@@ -7745,9 +8051,9 @@ indicateurs:
     survie_moyenne: 63.8
     abandons: 2
     taux_abandon: 12.5
-    conseils: 17
+    conseils: 16
     conseils_complets: 11
-    tension_conseils: 28.6
+    tension_conseils: 30.8
     dispersion_votes: 0.81
     epreuves: 27
     epreuves_individuelles: 15
@@ -7927,9 +8233,9 @@ indicateurs:
     survie_moyenne: 58.2
     abandons: 3
     taux_abandon: 15.0
-    conseils: 20
+    conseils: 19
     conseils_complets: 12
-    tension_conseils: 71.4
+    tension_conseils: 69.2
     dispersion_votes: 0.862
     epreuves: 28
     epreuves_individuelles: 15
@@ -7954,9 +8260,9 @@ indicateurs:
     survie_moyenne: 64.2
     abandons: 2
     taux_abandon: 10.0
-    conseils: 22
+    conseils: 20
     conseils_complets: 12
-    tension_conseils: 53.3
+    tension_conseils: 53.8
     dispersion_votes: 0.847
     epreuves: 0
     epreuves_individuelles: 0
@@ -7983,9 +8289,9 @@ indicateurs:
     survie_moyenne: 60.1
     abandons: 4
     taux_abandon: 20.0
-    conseils: 22
+    conseils: 21
     conseils_complets: 8
-    tension_conseils: 46.2
+    tension_conseils: 41.7
     dispersion_votes: 0.781
     epreuves: 0
     epreuves_individuelles: 0
@@ -8011,9 +8317,9 @@ indicateurs:
     survie_moyenne: 56.5
     abandons: 2
     taux_abandon: 9.5
-    conseils: 20
+    conseils: 19
     conseils_complets: 12
-    tension_conseils: 28.6
+    tension_conseils: 23.1
     dispersion_votes: 0.759
     epreuves: 28
     epreuves_individuelles: 15
@@ -8066,9 +8372,9 @@ indicateurs:
     survie_moyenne: 61.3
     abandons: 3
     taux_abandon: 14.3
-    conseils: 22
+    conseils: 21
     conseils_complets: 8
-    tension_conseils: 53.3
+    tension_conseils: 50.0
     dispersion_votes: 0.803
     epreuves: 42
     epreuves_individuelles: 14
@@ -8093,9 +8399,9 @@ indicateurs:
     survie_moyenne: 59.1
     abandons: 3
     taux_abandon: 14.3
-    conseils: 22
+    conseils: 21
     conseils_complets: 6
-    tension_conseils: 57.1
+    tension_conseils: 53.8
     dispersion_votes: 0.879
     epreuves: 26
     epreuves_individuelles: 10
@@ -8376,9 +8682,9 @@ indicateurs:
     survie_moyenne: 59.9
     abandons: 0
     taux_abandon: 0.0
-    conseils: 14
+    conseils: 13
     conseils_complets: 8
-    tension_conseils: 55.6
+    tension_conseils: 50.0
     dispersion_votes: 0.831
     epreuves: 15
     epreuves_individuelles: 9
@@ -8403,9 +8709,9 @@ indicateurs:
     survie_moyenne: 66.0
     abandons: 0
     taux_abandon: 0.0
-    conseils: 13
+    conseils: 12
     conseils_complets: 8
-    tension_conseils: 44.4
+    tension_conseils: 37.5
     dispersion_votes: 0.616
     epreuves: 0
     epreuves_individuelles: 0
@@ -8430,9 +8736,9 @@ indicateurs:
     survie_moyenne: 66.3
     abandons: 0
     taux_abandon: 0.0
-    conseils: 15
+    conseils: 14
     conseils_complets: 5
-    tension_conseils: 55.6
+    tension_conseils: 50.0
     dispersion_votes: 0.919
     epreuves: 15
     epreuves_individuelles: 9
@@ -8457,10 +8763,10 @@ indicateurs:
     survie_moyenne: 67.9
     abandons: 2
     taux_abandon: 15.4
-    conseils: 16
-    conseils_complets: 8
-    tension_conseils: 20.0
-    dispersion_votes: 0.676
+    conseils: 14
+    conseils_complets: 7
+    tension_conseils: 25.0
+    dispersion_votes: 0.789
     epreuves: 15
     epreuves_individuelles: 7
     domination_epreuves: 0.429
@@ -8484,9 +8790,9 @@ indicateurs:
     survie_moyenne: 57.8
     abandons: 1
     taux_abandon: 5.6
-    conseils: 20
+    conseils: 18
     conseils_complets: 7
-    tension_conseils: 53.8
+    tension_conseils: 45.5
     dispersion_votes: 0.724
     epreuves: 20
     epreuves_individuelles: 9
@@ -11975,7 +12281,7 @@ modeles:
         observe: 10.7308
         moyenne_nulle: 10.2831
       origine: pronostic
-      p_ajustee: 0.7656
+      p_ajustee: 0.746
       retenu: false
     classement:
     - nom: Ambre Daudet
@@ -12487,39 +12793,40 @@ modeles:
     lecture: Effet de la présence d'une mécanique, l'année tenue constante. Un intervalle qui contient
       zéro veut dire que ces vingt-six saisons ne permettent pas de conclure.
   alliances:
-    saisons: 24
-    conseils: 238
-    bulletins: 1840
-    paires_suivies: 3200
+    saisons: 23
+    conseils: 232
+    bulletins: 1800
+    paires_suivies: 3161
     apres_ensemble: 60.7
-    apres_separes: 28.2
+    apres_separes: 27.6
     test:
       cle: persistance_alliances
       libelle: La persistance des alliances
       question: Deux aventuriers qui ont vote ensemble votent-ils encore ensemble au conseil suivant,
         plus souvent que le hasard ne le voudrait ?
-      observe: 32.502
-      attendu: 1.428
+      observe: 33.093
+      attendu: 1.483
       unite: points de %
-      ecart_types: 19.15
+      ecart_types: 18.78
       p: 0.0005
       tirages: 2000
       lecture: 'Écart entre deux probabilités : voter ensemble après avoir voté ensemble, et voter ensemble
         après avoir voté séparément. À zéro, chaque conseil repart de zéro et il n''y a pas d''alliance.'
       nulle: &id052
         bornes:
-        - -4.9516
-        - 34.285
+        - -6.0031
+        - 34.9548
         cases:
         - 0
-        - 21
-        - 163
-        - 450
-        - 692
-        - 444
-        - 197
-        - 26
-        - 7
+        - 2
+        - 59
+        - 269
+        - 620
+        - 616
+        - 311
+        - 111
+        - 9
+        - 3
         - 0
         - 0
         - 0
@@ -12538,27 +12845,26 @@ modeles:
         - 0
         - 0
         - 0
-        - 0
-        largeur_case: 1.401307
-        observe: 32.5015
-        moyenne_nulle: 1.4279
+        largeur_case: 1.462782
+        observe: 33.093
+        moyenne_nulle: 1.4832
       origine: alliances
       p_ajustee: 0.0015
       retenu: true
     majorite:
-      effectif: 177
+      effectif: 174
       variables:
       - libelle: Toujours du côté de la majorité
-        estimation: 17.4
-        bas: 7.41
-        haut: 27.39
-        p: 0.0006
+        estimation: 16.38
+        bas: 6.21
+        haut: 26.55
+        p: 0.0016
       - libelle: Une voix reçue de plus par conseil
-        estimation: -3.93
-        bas: -7.54
-        haut: -0.33
-        p: 0.0323
-      r2: 0.378
+        estimation: -3.76
+        bas: -7.39
+        haut: -0.13
+        p: 0.0421
+      r2: 0.381
       lecture: Points de saison gagnés ou perdus, le nombre de conseils traverses tenu constant. Ce controle
         etant trop severe, les deux effets sont des bornes basses.
     les_plus_souvent_du_bon_cote:
@@ -12635,174 +12941,174 @@ modeles:
       survie: 88.1
       voix: 5
   homophilie:
-    bulletins: 1840
-    conseils: 238
-    conseils_mixtes: 137
-    bulletins_mixtes: 1103
+    bulletins: 1800
+    conseils: 232
+    conseils_mixtes: 132
+    bulletins_mixtes: 1069
     tests:
     - cle: vote_meme_sexe
       libelle: Viser quelqu'un du même sexe
       question: Parmi les présents, écrit-on plutôt le nom de quelqu'un de son sexe ?
-      observe: 45.978
-      attendu: 46.877
+      observe: 45.722
+      attendu: 46.59
       unite: '%'
-      ecart_types: -1.32
-      p: 0.2044
+      ecart_types: -1.26
+      p: 0.2244
       tirages: 4000
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
         : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
       nulle: &id026
         bornes:
-        - 44.2228
-        - 49.3641
+        - 43.7722
+        - 50.0056
         cases:
         - 0
         - 1
-        - 2
-        - 2
-        - 24
-        - 8
-        - 38
-        - 90
-        - 161
-        - 102
-        - 280
-        - 384
-        - 234
-        - 518
-        - 491
-        - 237
-        - 420
-        - 360
-        - 143
-        - 223
-        - 122
+        - 5
+        - 3
+        - 16
+        - 31
         - 79
-        - 22
-        - 43
-        - 12
+        - 121
+        - 222
+        - 338
+        - 368
+        - 471
+        - 509
+        - 499
+        - 433
+        - 352
+        - 248
+        - 146
+        - 75
+        - 46
+        - 27
+        - 6
         - 2
-        - 2
+        - 1
         - 0
-        largeur_case: 0.183618
-        observe: 45.9783
-        moyenne_nulle: 46.8767
-      bulletins: 1840
+        - 0
+        - 1
+        - 0
+        largeur_case: 0.222619
+        observe: 45.7222
+        moyenne_nulle: 46.5897
+      bulletins: 1800
       origine: homophilie
-      p_ajustee: 0.2683
+      p_ajustee: 0.2945
       retenu: false
     - cle: vote_ecart_age
       libelle: L'écart d'âge avec sa cible
       question: Écrit-on plutôt le nom de quelqu'un de sa génération, ou d'une autre ?
-      observe: 11.754
-      attendu: 11.626
+      observe: 11.869
+      attendu: 11.748
       unite: années
-      ecart_types: 1.54
-      p: 0.1205
+      ecart_types: 1.42
+      p: 0.1532
       tirages: 4000
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
         : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
       nulle: &id027
         bornes:
-        - 11.3279
-        - 11.9341
+        - 11.3874
+        - 12.1048
         cases:
         - 0
-        - 4
-        - 4
-        - 11
-        - 29
-        - 39
-        - 70
-        - 108
-        - 150
-        - 224
-        - 303
-        - 341
-        - 383
-        - 402
-        - 416
-        - 381
-        - 317
-        - 290
-        - 200
-        - 135
-        - 73
-        - 51
-        - 33
-        - 24
-        - 5
-        - 5
-        - 2
+        - 1
         - 0
-        largeur_case: 0.02165
-        observe: 11.7543
-        moyenne_nulle: 11.6264
-      bulletins: 1840
+        - 4
+        - 6
+        - 15
+        - 42
+        - 68
+        - 111
+        - 181
+        - 269
+        - 359
+        - 442
+        - 484
+        - 448
+        - 403
+        - 395
+        - 305
+        - 199
+        - 124
+        - 74
+        - 38
+        - 18
+        - 9
+        - 3
+        - 1
+        - 1
+        - 0
+        largeur_case: 0.025623
+        observe: 11.8689
+        moyenne_nulle: 11.7485
+      bulletins: 1800
       origine: homophilie
-      p_ajustee: 0.1745
+      p_ajustee: 0.2219
       retenu: false
     - cle: vote_meme_metier
       libelle: Viser la même famille de métier
       question: Le métier rapproche-t-il ou éloigne-t-il du bulletin ?
-      observe: 9.783
-      attendu: 9.893
+      observe: 9.778
+      attendu: 9.926
       unite: '%'
-      ecart_types: -0.3
-      p: 0.7573
+      ecart_types: -0.41
+      p: 0.6863
       tirages: 4000
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
         : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
       nulle: &id028
         bornes:
-        - 8.4429
-        - 11.6114
+        - 8.5333
+        - 11.4667
         cases:
         - 0
-        - 1
-        - 1
-        - 7
-        - 20
-        - 23
-        - 64
-        - 186
-        - 248
-        - 290
-        - 402
-        - 383
-        - 487
-        - 484
-        - 382
-        - 341
-        - 253
-        - 178
-        - 107
-        - 67
-        - 53
-        - 12
-        - 6
         - 3
+        - 4
+        - 7
+        - 22
+        - 29
+        - 54
+        - 132
+        - 188
+        - 274
+        - 325
+        - 409
+        - 510
+        - 234
+        - 511
+        - 396
+        - 327
+        - 214
+        - 152
+        - 103
+        - 53
+        - 31
+        - 9
+        - 6
+        - 4
+        - 2
         - 1
         - 0
-        - 1
-        - 0
-        largeur_case: 0.11316
-        observe: 9.7826
-        moyenne_nulle: 9.8932
-      bulletins: 1840
+        largeur_case: 0.104762
+        observe: 9.7778
+        moyenne_nulle: 9.9264
+      bulletins: 1800
       origine: homophilie
-      p_ajustee: 0.8035
+      p_ajustee: 0.746
       retenu: false
     - cle: vote_meme_bandeau
       libelle: Viser son propre bandeau de départ
       question: Le camp d'origine protège-t-il, une fois les tribus mélangées ?
-      observe: 58.533
-      attendu: 64.959
+      observe: 58.778
+      attendu: 65.383
       unite: '%'
-      ecart_types: -10.98
+      ecart_types: -11.24
       p: 0.0002
       tirages: 4000
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -12810,8 +13116,8 @@ modeles:
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
       nulle: &id029
         bornes:
-        - 58.1168
-        - 67.2636
+        - 58.3389
+        - 67.9944
         cases:
         - 0
         - 0
@@ -12827,95 +13133,95 @@ modeles:
         - 0
         - 0
         - 0
-        - 2
-        - 10
-        - 47
-        - 124
-        - 372
-        - 649
-        - 842
-        - 811
-        - 606
-        - 366
-        - 132
-        - 32
-        - 7
         - 0
-        largeur_case: 0.326669
-        observe: 58.5326
-        moyenne_nulle: 64.959
-      bulletins: 1840
+        - 17
+        - 58
+        - 207
+        - 582
+        - 796
+        - 903
+        - 720
+        - 416
+        - 225
+        - 61
+        - 9
+        - 6
+        - 0
+        largeur_case: 0.344841
+        observe: 58.7778
+        moyenne_nulle: 65.3829
+      bulletins: 1800
       origine: homophilie
       p_ajustee: 0.0007
       retenu: true
     - cle: vote_meme_departement
       libelle: Viser quelqu'un de son département
       question: Épargne-t-on le voisin — celui qui vit dans le même département ?
-      observe: 1.512
-      attendu: 1.942
+      observe: 1.551
+      attendu: 1.991
       unite: '%'
-      ecart_types: -1.96
-      p: 0.0542
+      ecart_types: -1.97
+      p: 0.0495
       tirages: 4000
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
         : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
       nulle: &id030
         bornes:
-        - 1.1215
-        - 2.7869
+        - 1.0698
+        - 3.1319
         cases:
         - 0
-        - 2
-        - 2
-        - 8
-        - 22
-        - 27
-        - 71
-        - 107
-        - 184
-        - 270
-        - 326
-        - 401
-        - 461
-        - 266
-        - 202
-        - 407
-        - 368
-        - 281
-        - 225
-        - 173
-        - 82
-        - 52
-        - 39
-        - 13
-        - 7
-        - 3
         - 1
         - 0
-        largeur_case: 0.059478
-        observe: 1.5123
-        moyenne_nulle: 1.9417
-      bulletins: 1587
+        - 9
+        - 12
+        - 29
+        - 81
+        - 101
+        - 192
+        - 248
+        - 762
+        - 441
+        - 465
+        - 415
+        - 373
+        - 314
+        - 214
+        - 233
+        - 63
+        - 25
+        - 12
+        - 1
+        - 3
+        - 1
+        - 3
+        - 1
+        - 1
+        - 0
+        largeur_case: 0.073645
+        observe: 1.5514
+        moyenne_nulle: 1.9909
+      bulletins: 1547
       origine: homophilie
-      p_ajustee: 0.099
+      p_ajustee: 0.0904
       retenu: false
     - cle: vote_bandeau_apres_fusion
       libelle: Épargner son bandeau de départ
       question: Une fois les tribus mélangées, écrit-on moins souvent le nom de quelqu'un de son camp
         d'origine ?
-      observe: 30.916
-      attendu: 41.639
+      observe: 30.683
+      attendu: 41.801
       unite: '%'
-      ecart_types: -11.05
+      ecart_types: -10.96
       p: 0.0002
       tirages: 4000
       lecture: Mesuré sur les seuls conseils réunissant plusieurs bandeaux. Un observé SOUS l'attendu
         veut dire que le camp de départ protège encore, longtemps après avoir cessé d'exister.
       nulle: &id031
         bornes:
-        - 30.2131
-        - 45.6709
+        - 29.9486
+        - 46.1038
         cases:
         - 0
         - 0
@@ -12930,48 +13236,48 @@ modeles:
         - 0
         - 0
         - 0
-        - 1
-        - 2
-        - 18
-        - 50
-        - 172
-        - 379
-        - 799
-        - 912
-        - 771
-        - 541
-        - 242
-        - 83
-        - 26
-        - 4
         - 0
-        largeur_case: 0.552066
-        observe: 30.9157
-        moyenne_nulle: 41.6392
-      bulletins: 1103
+        - 2
+        - 17
+        - 65
+        - 233
+        - 471
+        - 727
+        - 859
+        - 788
+        - 535
+        - 221
+        - 55
+        - 21
+        - 6
+        - 0
+        largeur_case: 0.576974
+        observe: 30.6829
+        moyenne_nulle: 41.8012
+      bulletins: 1069
       origine: homophilie
       p_ajustee: 0.0007
       retenu: true
   trahison:
-    bulletins: 1389
-    conseils: 238
+    bulletins: 1361
+    conseils: 232
     test:
       cle: trahison
       libelle: Écrire le nom d'un ancien allié
       question: Quand on a déjà voté avec quelqu'un, écrit-on son nom plus ou moins souvent qu'un autre
         ?
-      observe: 51.404
-      attendu: 60.057
+      observe: 51.506
+      attendu: 60.285
       unite: '%'
-      ecart_types: -13.01
+      ecart_types: -12.94
       p: 0.0002
       tirages: 4000
       lecture: Part des bulletins visant quelqu'un avec qui l'auteur avait déjà voté. Un observé SOUS
         l'attendu veut dire que l'alliance protège ; au-dessus, qu'elle expose.
       nulle: &id054
         bornes:
-        - 50.8495
-        - 63.0454
+        - 50.9478
+        - 63.2329
         cases:
         - 0
         - 0
@@ -12988,31 +13294,31 @@ modeles:
         - 0
         - 0
         - 0
-        - 2
-        - 9
-        - 76
-        - 245
-        - 605
-        - 945
-        - 1002
-        - 685
-        - 299
-        - 103
-        - 27
-        - 2
         - 0
-        largeur_case: 0.435565
-        observe: 51.4039
-        moyenne_nulle: 60.0574
+        - 13
+        - 57
+        - 178
+        - 526
+        - 862
+        - 1053
+        - 770
+        - 368
+        - 137
+        - 32
+        - 4
+        - 0
+        largeur_case: 0.438753
+        observe: 51.5062
+        moyenne_nulle: 60.2854
       origine: trahison
       p_ajustee: 0.0007
       retenu: true
     effet:
-      effectif: 174
-      estimation: 5.18
-      bas: -3.07
-      haut: 13.43
-      p: 0.2182
+      effectif: 171
+      estimation: 4.47
+      bas: -3.78
+      haut: 12.71
+      p: 0.2883
       lecture: Points de saison gagnés ou perdus quand on passe de « jamais » a « toujours » viser un
         ancien allie, le nombre de bulletins emis tenu constant.
     les_plus_infideles:
@@ -13193,41 +13499,41 @@ modeles:
       p_ajustee: 0.001
       retenu: true
   jury_final:
-    bulletins: 191
-    saisons: 29
+    bulletins: 238
+    saisons: 32
     coefficients:
     - libelle: A écrit le nom du juré au conseil
-      rapport: 0.73
-      bas: 0.429
-      haut: 1.242
-      p: 0.2454
+      rapport: 0.698
+      bas: 0.432
+      haut: 1.128
+      p: 0.1423
     - libelle: A voté avec le juré, par conseil partagé
-      rapport: 1.123
-      bas: 1.006
-      haut: 1.254
-      p: 0.0396
+      rapport: 1.15
+      bas: 1.037
+      haut: 1.276
+      p: 0.0081
     avec_bandeau:
       coefficients:
       - libelle: A écrit le nom du juré au conseil
-        rapport: 0.73
-        bas: 0.429
-        haut: 1.242
-        p: 0.2453
+        rapport: 0.702
+        bas: 0.434
+        haut: 1.136
+        p: 0.1494
       - libelle: A voté avec le juré, par conseil partagé
-        rapport: 1.126
-        bas: 0.981
-        haut: 1.293
-        p: 0.091
+        rapport: 1.173
+        bas: 1.027
+        haut: 1.34
+        p: 0.0187
       - libelle: Partage le bandeau de départ du juré
-        rapport: 0.981
-        bas: 0.59
-        haut: 1.63
-        p: 0.9412
+        rapport: 0.891
+        bas: 0.55
+        haut: 1.444
+        p: 0.6396
       lecture: 'Le même modèle, avec une variable de plus : les deux partagent-ils le bandeau de départ
         ?'
-    part_vers_bourreau: 55.0
-    bulletins_avec_bourreau_disponible: 149
-    part_quand_disponible: 70.5
+    part_vers_bourreau: 53.4
+    bulletins_avec_bourreau_disponible: 184
+    part_quand_disponible: 69.0
     lecture: 'Rapport de cotes : au-dessus de 1, le jure vote plus souvent pour ce finaliste ; en dessous,
       moins souvent. Un intervalle qui contient 1 veut dire qu''on ne peut pas conclure.'
   fusion:
@@ -13389,11 +13695,11 @@ modeles:
     - annee: 2001
       titre: Les Aventuriers de Koh-Lanta
       effectif: 16
-      conseils: 15
+      conseils: 14
     - annee: 2002
       titre: Nicoya
       effectif: 16
-      conseils: 16
+      conseils: 15
     - annee: 2003
       titre: Bocas del Toro
       effectif: 18
@@ -13401,7 +13707,7 @@ modeles:
     - annee: 2004
       titre: Panama
       effectif: 16
-      conseils: 17
+      conseils: 16
     - annee: 2005
       titre: Pacifique
       effectif: 17
@@ -13429,19 +13735,19 @@ modeles:
     - annee: 2011
       titre: Raja Ampat
       effectif: 20
-      conseils: 20
+      conseils: 19
     - annee: 2012
       titre: Malaisie
       effectif: 20
-      conseils: 22
+      conseils: 20
     - annee: 2015
       titre: Johor
       effectif: 20
-      conseils: 22
+      conseils: 21
     - annee: 2016
       titre: Thaïlande
       effectif: 21
-      conseils: 20
+      conseils: 19
     - annee: 2016
       titre: L'Île au trésor
       effectif: 20
@@ -13449,11 +13755,11 @@ modeles:
     - annee: 2017
       titre: Cambodge
       effectif: 21
-      conseils: 22
+      conseils: 21
     - annee: 2017
       titre: Fidji
       effectif: 21
-      conseils: 22
+      conseils: 21
     - annee: 2019
       titre: La Guerre des chefs
       effectif: 21
@@ -13500,6 +13806,10 @@ modeles:
     avant: 17
     apres: 9
     detail:
+    - libelle: Nombre de conseils
+      avant: 18.59
+      apres: 23.56
+      ecart_types: 1.6
     - libelle: Objets d'immunité en jeu
       avant: 0.0
       apres: 6.89
@@ -13507,10 +13817,6 @@ modeles:
     - libelle: Taille du casting
       avant: 18.29
       apres: 22.22
-      ecart_types: 1.49
-    - libelle: Nombre de conseils
-      avant: 19.18
-      apres: 23.56
       ecart_types: 1.49
     - libelle: Durée de la saison
       avant: 40.47
@@ -13527,82 +13833,82 @@ modeles:
     profil:
     - annee: 2005
       titre: Pacifique
-      gain: 27.25
+      gain: 27.85
     - annee: 2006
       titre: Vanuatu
-      gain: 32.23
+      gain: 32.21
     - annee: 2007
       titre: Palawan
-      gain: 37.19
+      gain: 36.62
     - annee: 2008
       titre: Caramoan
-      gain: 45.33
+      gain: 43.98
     - annee: 2009
       titre: Palau
-      gain: 51.88
+      gain: 49.92
     - annee: 2010
       titre: Viêtnam
-      gain: 48.97
+      gain: 46.91
     - annee: 2011
       titre: Raja Ampat
-      gain: 52.17
-    - &id009
-      annee: 2012
+      gain: 49.74
+    - annee: 2012
       titre: Malaisie
-      gain: 54.51
+      gain: 52.64
     - annee: 2015
       titre: Johor
-      gain: 50.76
+      gain: 50.57
     - annee: 2016
       titre: Thaïlande
-      gain: 51.17
+      gain: 51.61
     - annee: 2016
       titre: L'Île au trésor
-      gain: 49.34
+      gain: 50.36
     - annee: 2017
       titre: Cambodge
-      gain: 50.15
+      gain: 50.78
     - annee: 2017
       titre: Fidji
-      gain: 50.85
+      gain: 52.15
     - &id008
       annee: 2019
       titre: La Guerre des chefs
-      gain: 56.65
-    - annee: 2020
+      gain: 58.65
+    - &id009
+      annee: 2020
       titre: Les 4 Terres
-      gain: 52.42
+      gain: 54.12
     - annee: 2021
       titre: Les Armes secrètes
-      gain: 43.88
+      gain: 45.27
     - annee: 2022
       titre: Le Totem maudit
-      gain: 41.49
+      gain: 42.65
     - annee: 2023
       titre: Le Feu sacré
-      gain: 40.74
+      gain: 41.65
     - annee: 2024
       titre: Les Chasseurs d'immunité
-      gain: 42.04
+      gain: 42.73
     exaequo:
     - *id008
     nb_exaequo: 1
-    nb_proches: 6
-    avance: 3.8
+    nb_proches: 2
+    avance: 7.7
     fenetre:
-      debut: 2009
+      debut: 2019
       fin: 2020
-      etendue: 11
+      etendue: 1
     second: *id009
     test:
       cle: rupture
       libelle: La rupture de régime
       question: Existe-t-il une date qui sépare les saisons en deux régimes mieux qu'une date tirée au
         sort ?
-      observe: 56.646
-      attendu: 13.264
+      observe: 58.645
+      attendu: 13.29
       unite: ''
-      ecart_types: 7.39
+      ecart_types: 7.67
       p: 0.0001
       tirages: 10000
       lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
@@ -13610,40 +13916,40 @@ modeles:
         mieux que n'importe quelle autre.
       nulle: &id053
         bornes:
-        - 0.5141
-        - 59.3185
+        - 0.4611
+        - 61.4158
         cases:
         - 0
-        - 81
-        - 743
-        - 1625
-        - 1798
-        - 1551
-        - 1236
-        - 900
-        - 681
-        - 427
-        - 329
-        - 211
-        - 147
-        - 100
-        - 68
-        - 53
-        - 10
-        - 21
-        - 9
-        - 5
-        - 3
-        - 0
+        - 90
+        - 832
+        - 1768
+        - 1813
+        - 1548
+        - 1192
+        - 877
+        - 647
+        - 380
+        - 316
+        - 176
+        - 140
+        - 82
+        - 61
+        - 32
+        - 18
+        - 12
+        - 8
+        - 4
         - 2
+        - 1
+        - 1
         - 0
         - 0
         - 0
         - 0
         - 0
-        largeur_case: 2.100159
-        observe: 56.6456
-        moyenne_nulle: 13.2644
+        largeur_case: 2.176953
+        observe: 58.6451
+        moyenne_nulle: 13.2896
       origine: ruptures
       p_ajustee: 0.0007
       retenu: true
@@ -14725,7 +15031,7 @@ modeles:
         observe: -7.0763
         moyenne_nulle: -0.763
       origine: avant_apres
-      p_ajustee: 0.2683
+      p_ajustee: 0.2699
       retenu: false
     - cle: fusion_force
       libelle: La force des éliminés, avant et après la fusion
@@ -14928,7 +15234,7 @@ modeles:
         observe: 47.1663
         moyenne_nulle: 50.0368
       origine: avant_apres
-      p_ajustee: 0.7481
+      p_ajustee: 0.746
       retenu: false
   conditionnelles:
     presences: 780
@@ -15686,49 +15992,49 @@ modeles:
       question: Recevoir une voix ce soir est-il plus probable quand on en a reçu au conseil précédent
         ?
       observe: 19.882
-      attendu: 1.218
+      attendu: 1.298
       unite: ' points'
-      ecart_types: 5.19
+      ecart_types: 5.14
       p: 0.0001
       tirages: 10000
       lecture: Écart entre voir son nom ressortir quand il était déjà sorti et le voir sortir quand il
         ne l'était pas.
       nulle: &id044
         bornes:
-        - -13.1927
-        - 21.4575
+        - -13.0016
+        - 21.4484
         cases:
         - 0
-        - 2
-        - 10
-        - 29
-        - 64
-        - 160
-        - 272
-        - 494
-        - 780
-        - 1077
-        - 1213
-        - 1388
-        - 1294
-        - 1119
-        - 844
-        - 573
-        - 325
-        - 208
-        - 97
-        - 30
-        - 16
-        - 2
-        - 2
-        - 1
+        - 5
+        - 11
+        - 22
+        - 71
+        - 148
+        - 311
+        - 540
+        - 762
+        - 1050
+        - 1263
+        - 1355
+        - 1274
+        - 1137
+        - 813
+        - 564
+        - 315
+        - 189
+        - 94
+        - 43
+        - 27
+        - 6
         - 0
         - 0
         - 0
         - 0
-        largeur_case: 1.237504
+        - 0
+        - 0
+        largeur_case: 1.230355
         observe: 19.8825
-        moyenne_nulle: 1.2183
+        moyenne_nulle: 1.2978
       origine: conditionnelles
       p_ajustee: 0.0007
       retenu: true
@@ -15736,39 +16042,39 @@ modeles:
       libelle: Le nom rendu au conseil suivant
       question: Celui dont j'ai écrit le nom la fois d'avant écrit-il le mien ce soir ?
       observe: 21.037
-      attendu: 13.543
+      attendu: 13.46
       unite: '%'
-      ecart_types: 5.8
+      ecart_types: 5.88
       p: 0.0002
       tirages: 4000
       lecture: Part des couples où la cible de la dernière fois écrit à son tour le nom de son auteur,
         tous deux étant présents et votants.
       nulle: &id045
         bornes:
-        - 9.0208
-        - 21.6097
+        - 8.7156
+        - 21.6242
         cases:
         - 0
+        - 4
         - 8
-        - 12
-        - 44
-        - 58
-        - 186
-        - 245
-        - 396
-        - 535
-        - 468
-        - 661
-        - 354
-        - 442
-        - 216
-        - 197
-        - 84
-        - 54
-        - 24
-        - 8
-        - 6
-        - 2
+        - 33
+        - 86
+        - 103
+        - 258
+        - 288
+        - 550
+        - 471
+        - 593
+        - 598
+        - 332
+        - 327
+        - 149
+        - 109
+        - 46
+        - 29
+        - 10
+        - 5
+        - 1
         - 0
         - 0
         - 0
@@ -15776,9 +16082,9 @@ modeles:
         - 0
         - 0
         - 0
-        largeur_case: 0.449603
+        largeur_case: 0.461023
         observe: 21.0375
-        moyenne_nulle: 13.5427
+        moyenne_nulle: 13.4602
       origine: conditionnelles
       p_ajustee: 0.0007
       retenu: true
@@ -16700,7 +17006,7 @@ modeles:
     unite: rang moyen
     ecart_types: 0.41
     p: 0.6927
-    p_ajustee: 0.7656
+    p_ajustee: 0.746
     retenu: false
     tirages: 10000
     lecture: Le modèle classe les candidats d'une saison ; on relève la place qu'il donne à celui qui
@@ -16710,12 +17016,12 @@ modeles:
     libelle: Viser quelqu'un du même sexe
     question: Parmi les présents, écrit-on plutôt le nom de quelqu'un de son sexe ?
     origine: homophilie
-    observe: 45.978
-    attendu: 46.877
+    observe: 45.722
+    attendu: 46.59
     unite: '%'
-    ecart_types: -1.32
-    p: 0.2044
-    p_ajustee: 0.2683
+    ecart_types: -1.26
+    p: 0.2244
+    p_ajustee: 0.2945
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -16726,12 +17032,12 @@ modeles:
     libelle: L'écart d'âge avec sa cible
     question: Écrit-on plutôt le nom de quelqu'un de sa génération, ou d'une autre ?
     origine: homophilie
-    observe: 11.754
-    attendu: 11.626
+    observe: 11.869
+    attendu: 11.748
     unite: années
-    ecart_types: 1.54
-    p: 0.1205
-    p_ajustee: 0.1745
+    ecart_types: 1.42
+    p: 0.1532
+    p_ajustee: 0.2219
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -16742,12 +17048,12 @@ modeles:
     libelle: Viser la même famille de métier
     question: Le métier rapproche-t-il ou éloigne-t-il du bulletin ?
     origine: homophilie
-    observe: 9.783
-    attendu: 9.893
+    observe: 9.778
+    attendu: 9.926
     unite: '%'
-    ecart_types: -0.3
-    p: 0.7573
-    p_ajustee: 0.8035
+    ecart_types: -0.41
+    p: 0.6863
+    p_ajustee: 0.746
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -16758,10 +17064,10 @@ modeles:
     libelle: Viser son propre bandeau de départ
     question: Le camp d'origine protège-t-il, une fois les tribus mélangées ?
     origine: homophilie
-    observe: 58.533
-    attendu: 64.959
+    observe: 58.778
+    attendu: 65.383
     unite: '%'
-    ecart_types: -10.98
+    ecart_types: -11.24
     p: 0.0002
     p_ajustee: 0.0007
     retenu: true
@@ -16774,12 +17080,12 @@ modeles:
     libelle: Viser quelqu'un de son département
     question: Épargne-t-on le voisin — celui qui vit dans le même département ?
     origine: homophilie
-    observe: 1.512
-    attendu: 1.942
+    observe: 1.551
+    attendu: 1.991
     unite: '%'
-    ecart_types: -1.96
-    p: 0.0542
-    p_ajustee: 0.099
+    ecart_types: -1.97
+    p: 0.0495
+    p_ajustee: 0.0904
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -16791,10 +17097,10 @@ modeles:
     question: Une fois les tribus mélangées, écrit-on moins souvent le nom de quelqu'un de son camp d'origine
       ?
     origine: homophilie
-    observe: 30.916
-    attendu: 41.639
+    observe: 30.683
+    attendu: 41.801
     unite: '%'
-    ecart_types: -11.05
+    ecart_types: -10.96
     p: 0.0002
     p_ajustee: 0.0007
     retenu: true
@@ -16962,7 +17268,7 @@ modeles:
     unite: ' points'
     ecart_types: -1.29
     p: 0.1992
-    p_ajustee: 0.2683
+    p_ajustee: 0.2699
     retenu: false
     tirages: 10000
     lecture: 'Différence entre l''après et l''avant, en points de pourcentage. Le hasard, ici, c''est
@@ -17024,7 +17330,7 @@ modeles:
     unite: ' points de rang'
     ecart_types: -0.45
     p: 0.659
-    p_ajustee: 0.7481
+    p_ajustee: 0.746
     retenu: false
     tirages: 10000
     lecture: 'Rang de l''ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c''est la
@@ -17097,9 +17403,9 @@ modeles:
     question: Recevoir une voix ce soir est-il plus probable quand on en a reçu au conseil précédent ?
     origine: conditionnelles
     observe: 19.882
-    attendu: 1.218
+    attendu: 1.298
     unite: ' points'
-    ecart_types: 5.19
+    ecart_types: 5.14
     p: 0.0001
     p_ajustee: 0.0007
     retenu: true
@@ -17112,9 +17418,9 @@ modeles:
     question: Celui dont j'ai écrit le nom la fois d'avant écrit-il le mien ce soir ?
     origine: conditionnelles
     observe: 21.037
-    attendu: 13.543
+    attendu: 13.46
     unite: '%'
-    ecart_types: 5.8
+    ecart_types: 5.88
     p: 0.0002
     p_ajustee: 0.0007
     retenu: true
@@ -17219,10 +17525,10 @@ modeles:
     question: Deux aventuriers qui ont vote ensemble votent-ils encore ensemble au conseil suivant, plus
       souvent que le hasard ne le voudrait ?
     origine: alliances
-    observe: 32.502
-    attendu: 1.428
+    observe: 33.093
+    attendu: 1.483
     unite: points de %
-    ecart_types: 19.15
+    ecart_types: 18.78
     p: 0.0005
     p_ajustee: 0.0015
     retenu: true
@@ -17235,10 +17541,10 @@ modeles:
     question: Existe-t-il une date qui sépare les saisons en deux régimes mieux qu'une date tirée au sort
       ?
     origine: ruptures
-    observe: 56.646
-    attendu: 13.264
+    observe: 58.645
+    attendu: 13.29
     unite: ''
-    ecart_types: 7.39
+    ecart_types: 7.67
     p: 0.0001
     p_ajustee: 0.0007
     retenu: true
@@ -17252,10 +17558,10 @@ modeles:
     question: Quand on a déjà voté avec quelqu'un, écrit-on son nom plus ou moins souvent qu'un autre
       ?
     origine: trahison
-    observe: 51.404
-    attendu: 60.057
+    observe: 51.506
+    attendu: 60.285
     unite: '%'
-    ecart_types: -13.01
+    ecart_types: -12.94
     p: 0.0002
     p_ajustee: 0.0007
     retenu: true
@@ -17398,7 +17704,107 @@ completude_saisons:
     annee: 2001
     speciale: false
     effectif: 16
-    score: 92.1
+    score: 92.4
+    cellules:
+    - cle: casting
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: age
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: profession
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: localisation
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: couleur
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: parcours
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: jour_sortie
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: votes_recus
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: classement
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: victoires
+      valeur: 100.0
+      texte: 16/16
+      etat: complet
+      nature: part
+    - cle: conseils
+      valeur: 100.0
+      texte: 14/14
+      etat: complet
+      nature: part
+    - cle: bulletins
+      valeur: 78.6
+      texte: 11/14
+      etat: partiel
+      nature: part
+    - cle: epreuves
+      valeur: 100.0
+      texte: 22 relevées
+      etat: complet
+      nature: fait
+    - cle: colliers
+      valeur: null
+      texte: pas de collier
+      etat: sans_objet
+      nature: fait
+    - cle: fusion
+      valeur: 100.0
+      texte: repérée
+      etat: complet
+      nature: fait
+    - cle: ambassadeurs
+      valeur: null
+      texte: pas d'ambassade
+      etat: sans_objet
+      nature: fait
+    - cle: audience_saison
+      valeur: 100.0
+      texte: connue
+      etat: complet
+      nature: fait
+    - cle: audience_episode
+      valeur: 0.0
+      texte: inconnue
+      etat: manquant
+      nature: fait
+  - saison: s02
+    numero: 2
+    titre: Nicoya
+    pays: Costa Rica
+    lieu: Péninsule de Nicoya
+    annee: 2002
+    speciale: false
+    effectif: 16
+    score: 92.5
     cellules:
     - cle: casting
       valeur: 100.0
@@ -17456,109 +17862,9 @@ completude_saisons:
       etat: complet
       nature: part
     - cle: bulletins
-      valeur: 73.3
-      texte: 11/15
-      etat: partiel
-      nature: part
-    - cle: epreuves
-      valeur: 100.0
-      texte: 22 relevées
-      etat: complet
-      nature: fait
-    - cle: colliers
-      valeur: null
-      texte: pas de collier
-      etat: sans_objet
-      nature: fait
-    - cle: fusion
-      valeur: 100.0
-      texte: repérée
-      etat: complet
-      nature: fait
-    - cle: ambassadeurs
-      valeur: null
-      texte: pas d'ambassade
-      etat: sans_objet
-      nature: fait
-    - cle: audience_saison
-      valeur: 100.0
-      texte: connue
-      etat: complet
-      nature: fait
-    - cle: audience_episode
-      valeur: 0.0
-      texte: inconnue
-      etat: manquant
-      nature: fait
-  - saison: s02
-    numero: 2
-    titre: Nicoya
-    pays: Costa Rica
-    lieu: Péninsule de Nicoya
-    annee: 2002
-    speciale: false
-    effectif: 16
-    score: 92.2
-    cellules:
-    - cle: casting
-      valeur: 100.0
-      texte: 16/16
-      etat: complet
-      nature: part
-    - cle: age
-      valeur: 100.0
-      texte: 16/16
-      etat: complet
-      nature: part
-    - cle: profession
-      valeur: 100.0
-      texte: 16/16
-      etat: complet
-      nature: part
-    - cle: localisation
-      valeur: 100.0
-      texte: 16/16
-      etat: complet
-      nature: part
-    - cle: couleur
-      valeur: 100.0
-      texte: 16/16
-      etat: complet
-      nature: part
-    - cle: parcours
-      valeur: 100.0
-      texte: 16/16
-      etat: complet
-      nature: part
-    - cle: jour_sortie
-      valeur: 100.0
-      texte: 16/16
-      etat: complet
-      nature: part
-    - cle: votes_recus
-      valeur: 100.0
-      texte: 16/16
-      etat: complet
-      nature: part
-    - cle: classement
-      valeur: 100.0
-      texte: 16/16
-      etat: complet
-      nature: part
-    - cle: victoires
-      valeur: 100.0
-      texte: 16/16
-      etat: complet
-      nature: part
-    - cle: conseils
-      valeur: 100.0
-      texte: 16/16
-      etat: complet
-      nature: part
-    - cle: bulletins
-      valeur: 75.0
-      texte: 12/16
-      etat: partiel
+      valeur: 80.0
+      texte: 12/15
+      etat: eleve
       nature: part
     - cle: epreuves
       valeur: 100.0
@@ -17698,7 +18004,7 @@ completude_saisons:
     annee: 2004
     speciale: false
     effectif: 16
-    score: 74.0
+    score: 74.2
     cellules:
     - cle: casting
       valeur: 100.0
@@ -17752,12 +18058,12 @@ completude_saisons:
       nature: part
     - cle: conseils
       valeur: 100.0
-      texte: 17/17
+      texte: 16/16
       etat: complet
       nature: part
     - cle: bulletins
-      valeur: 64.7
-      texte: 11/17
+      valeur: 68.8
+      texte: 11/16
       etat: partiel
       nature: part
     - cle: epreuves
@@ -18298,7 +18604,7 @@ completude_saisons:
     annee: 2009
     speciale: true
     effectif: 14
-    score: 83.0
+    score: 83.3
     cellules:
     - cle: casting
       valeur: 100.0
@@ -18352,12 +18658,12 @@ completude_saisons:
       nature: part
     - cle: conseils
       valeur: 100.0
-      texte: 14/14
+      texte: 13/13
       etat: complet
       nature: part
     - cle: bulletins
-      valeur: 57.1
-      texte: 8/14
+      valeur: 61.5
+      texte: 8/13
       etat: partiel
       nature: part
     - cle: epreuves
@@ -18498,7 +18804,7 @@ completude_saisons:
     annee: 2010
     speciale: true
     effectif: 14
-    score: 56.7
+    score: 56.8
     cellules:
     - cle: casting
       valeur: 100.0
@@ -18551,13 +18857,13 @@ completude_saisons:
       etat: mince
       nature: part
     - cle: conseils
-      valeur: 46.2
-      texte: 6/13
+      valeur: 41.7
+      texte: 5/12
       etat: mince
       nature: part
     - cle: bulletins
-      valeur: 61.5
-      texte: 8/13
+      valeur: 66.7
+      texte: 8/12
       etat: partiel
       nature: part
     - cle: epreuves
@@ -18598,7 +18904,7 @@ completude_saisons:
     annee: 2011
     speciale: false
     effectif: 20
-    score: 77.5
+    score: 77.7
     cellules:
     - cle: casting
       valeur: 100.0
@@ -18652,12 +18958,12 @@ completude_saisons:
       nature: part
     - cle: conseils
       valeur: 100.0
-      texte: 20/20
+      texte: 19/19
       etat: complet
       nature: part
     - cle: bulletins
-      valeur: 60.0
-      texte: 12/20
+      valeur: 63.2
+      texte: 12/19
       etat: partiel
       nature: part
     - cle: epreuves
@@ -18698,7 +19004,7 @@ completude_saisons:
     annee: 2012
     speciale: false
     effectif: 20
-    score: 72.2
+    score: 72.5
     cellules:
     - cle: casting
       valeur: 100.0
@@ -18752,12 +19058,12 @@ completude_saisons:
       nature: part
     - cle: conseils
       valeur: 0.0
-      texte: 0/22
+      texte: 0/20
       etat: manquant
       nature: part
     - cle: bulletins
-      valeur: 54.5
-      texte: 12/22
+      valeur: 60.0
+      texte: 12/20
       etat: partiel
       nature: part
     - cle: epreuves
@@ -18798,7 +19104,7 @@ completude_saisons:
     annee: 2012
     speciale: true
     effectif: 16
-    score: 84.9
+    score: 85.0
     cellules:
     - cle: casting
       valeur: 100.0
@@ -18852,12 +19158,12 @@ completude_saisons:
       nature: part
     - cle: conseils
       valeur: 100.0
-      texte: 15/15
+      texte: 14/14
       etat: complet
       nature: part
     - cle: bulletins
-      valeur: 33.3
-      texte: 5/15
+      valeur: 35.7
+      texte: 5/14
       etat: mince
       nature: part
     - cle: epreuves
@@ -18952,12 +19258,12 @@ completude_saisons:
       nature: part
     - cle: conseils
       valeur: 0.0
-      texte: 0/16
+      texte: 0/14
       etat: manquant
       nature: part
     - cle: bulletins
       valeur: 50.0
-      texte: 8/16
+      texte: 7/14
       etat: partiel
       nature: part
     - cle: epreuves
@@ -19052,12 +19358,12 @@ completude_saisons:
       nature: part
     - cle: conseils
       valeur: 100.0
-      texte: 22/22
+      texte: 21/21
       etat: complet
       nature: part
     - cle: bulletins
-      valeur: 36.4
-      texte: 8/22
+      valeur: 38.1
+      texte: 8/21
       etat: mince
       nature: part
     - cle: epreuves
@@ -19098,7 +19404,7 @@ completude_saisons:
     annee: 2016
     speciale: false
     effectif: 21
-    score: 85.9
+    score: 86.1
     cellules:
     - cle: casting
       valeur: 100.0
@@ -19152,12 +19458,12 @@ completude_saisons:
       nature: part
     - cle: conseils
       valeur: 100.0
-      texte: 20/20
+      texte: 19/19
       etat: complet
       nature: part
     - cle: bulletins
-      valeur: 60.0
-      texte: 12/20
+      valeur: 63.2
+      texte: 12/19
       etat: partiel
       nature: part
     - cle: epreuves
@@ -19298,7 +19604,7 @@ completude_saisons:
     annee: 2017
     speciale: false
     effectif: 21
-    score: 74.2
+    score: 74.3
     cellules:
     - cle: casting
       valeur: 100.0
@@ -19352,12 +19658,12 @@ completude_saisons:
       nature: part
     - cle: conseils
       valeur: 100.0
-      texte: 22/22
+      texte: 21/21
       etat: complet
       nature: part
     - cle: bulletins
-      valeur: 36.4
-      texte: 8/22
+      valeur: 38.1
+      texte: 8/21
       etat: mince
       nature: part
     - cle: epreuves
@@ -19451,13 +19757,13 @@ completude_saisons:
       etat: complet
       nature: part
     - cle: conseils
-      valeur: 95.5
-      texte: 21/22
+      valeur: 95.2
+      texte: 20/21
       etat: eleve
       nature: part
     - cle: bulletins
-      valeur: 27.3
-      texte: 6/22
+      valeur: 28.6
+      texte: 6/21
       etat: mince
       nature: part
     - cle: epreuves
@@ -19498,7 +19804,7 @@ completude_saisons:
     annee: 2018
     speciale: true
     effectif: 18
-    score: 90.3
+    score: 90.5
     cellules:
     - cle: casting
       valeur: 100.0
@@ -19552,12 +19858,12 @@ completude_saisons:
       nature: part
     - cle: conseils
       valeur: 0.0
-      texte: 0/20
+      texte: 0/18
       etat: manquant
       nature: part
     - cle: bulletins
-      valeur: 35.0
-      texte: 7/20
+      valeur: 38.9
+      texte: 7/18
       etat: mince
       nature: part
     - cle: epreuves
@@ -20865,14 +21171,14 @@ completude_saisons:
     libelle: Conseils rattachés à un éliminé
     court: Conseils
     nature: part
-    moyenne: 86.1
+    moyenne: 85.9
     completes: 20
     concernees: 34
   - cle: bulletins
     libelle: Conseils au dépouillement complet
     court: Bulletins
     nature: part
-    moyenne: 43.6
+    moyenne: 45.0
     completes: 0
     concernees: 34
   - cle: epreuves
@@ -20919,6 +21225,6 @@ completude_saisons:
     concernees: 34
   saisons: 34
   cases: 577
-  moyenne: 82.6
+  moyenne: 82.7
   meilleure: s21
   pire: sp8

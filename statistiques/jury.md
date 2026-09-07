@@ -16,6 +16,15 @@ deux n’avait jamais été mesurée — les bulletins de jury n’étaient pas
 exploitables avant la [réparation d’extraction]({{ '/sources/' | relative_url }})
 qui a fait passer les éliminations rattachées de 203 à 578.
 
+Une seconde réparation a suivi, et elle touche cette page plus que toute autre.
+Le scrutin final tient **une ligne par finaliste** dans les tableaux sources :
+celle du gagnant, et celle du battu. L’extraction ne reconnaissait que la
+première — la seconde était rangée du côté des éliminations, où ses bulletins
+comptaient à l’envers. L’échantillon ne contenait donc, à un bulletin près, que
+des jurés ayant voté **pour le futur vainqueur**. Les voix de l’autre côté du
+choix sont revenues ; les chiffres de cette page ont bougé, et l’une de ses
+conclusions avec.
+
 Ils le sont maintenant : **{{ j.bulletins }} bulletins de jury** sur
 {{ j.saisons }} saisons.
 
@@ -27,8 +36,8 @@ Ils le sont maintenant : **{{ j.bulletins }} bulletins de jury** sur
   figure parmi les candidats, c’est même
   <b>{{ j.part_quand_disponible }} %</b> — sur
   {{ j.bulletins_avec_bourreau_disponible }} bulletins.</p>
-  <p>Trois jurés sur quatre couronnent donc celui qui les a sortis. On tient
-  la démonstration : le jury récompense l’audace.</p>
+  <p>Plus de deux jurés sur trois couronnent donc celui qui les a sortis. On
+  tient la démonstration : le jury récompense l’audace.</p>
 </div>
 
 Sauf que non. Un finaliste a traversé toute la saison, il a voté à chaque
@@ -101,15 +110,21 @@ plus :
   intervalle {{ ab.coefficients[2].bas }} à {{ ab.coefficients[2].haut }},
   p = {{ ab.coefficients[2].p }}. Ce qui gouverne le conseil ne gouverne pas le
   jury — et c’est en soi un résultat, vu la force de l’effet en cours de jeu.</p>
-  <p><b>Mais l’effet du co-vote ne survit pas intact à ce contrôle.</b>
-  L’estimation ne bouge pas ({{ c1.rapport }} devient
-  {{ ab.coefficients[1].rapport }}), l’intervalle s’élargit et traverse 1 :
-  {{ ab.coefficients[1].bas }} à {{ ab.coefficients[1].haut }},
-  p = {{ ab.coefficients[1].p }}. Il faut donc lire la conclusion de cette page
-  pour ce qu’elle est : <b>une tendance nette dans son estimation, fragile dans
-  sa signification</b>. Le jury prolonge l’alliance ; sur ces
-  {{ j.bulletins }} bulletins, on ne peut pas le démontrer plus fermement.</p>
+  <p><b>Et l’effet du co-vote survit au contrôle.</b> L’estimation ne bouge
+  pas ({{ c1.rapport }} devient {{ ab.coefficients[1].rapport }}), l’intervalle
+  s’élargit sans atteindre 1 : {{ ab.coefficients[1].bas }} à
+  {{ ab.coefficients[1].haut }}, p = {{ ab.coefficients[1].p }}. Ce n’est donc
+  pas le bandeau déguisé : c’est bien avec qui l’on a voté, conseil après
+  conseil, que le juré récompense.</p>
 </div>
+
+<p class="note">Cette conclusion-là est neuve. Tant que la colonne du finaliste
+battu manquait, l’intervalle du co-vote traversait 1 sous ce contrôle et la
+page concluait à une tendance qu’on ne pouvait pas démontrer. Les bulletins
+rendus n’ont pas déplacé l’estimation — ils l’ont resserrée. C’est le
+comportement attendu quand ce qui manquait était de l’effectif et non un biais,
+et il vaut d’être dit : la conclusion n’a pas changé de sens, elle a changé de
+statut.</p>
 
 <p class="note">Les limites, et elles sont réelles. {{ j.bulletins }} bulletins,
 c’est peu : l’intervalle sur l’effet « m’a éliminé » va de {{ c0.bas }} à

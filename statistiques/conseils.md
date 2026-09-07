@@ -3,7 +3,7 @@ layout: page
 title: Les conseils
 permalink: /statistiques/conseils/
 chapeau: >-
-  Le vote est presque toujours serré, l’unanimité rarissime, et le sexe du votant joue — à la marge.
+  Le vote est presque toujours serré, l’unanimité n’existe pas, et le sexe du votant joue — à la marge.
 ---
 
 {% assign c = site.data.stats.conseils %}
@@ -26,10 +26,11 @@ Sur les {{ c.conseils_avec_decompte }} conseils dont le décompte est connu,
 nombre de bulletins contre la personne éliminée n’y dépasse pas la moitié des
 votes exprimés.
 
-À l’autre bout, l’unanimité est **rarissime** : {{ c.part_unanimes }} % des
-conseils seulement. L’image du camp entier se retournant d’un bloc contre un
-aventurier est une image de fiction — dans les faits, le vote se divise presque
-toujours.
+À l’autre bout, l’unanimité n’existe pas : sur ces
+{{ c.conseils_avec_decompte }} conseils, **{% if c.conseils_unanimes == 0 %}aucun{% else %}{{ c.conseils_unanimes }}{% endif %}
+n’a vu tous les bulletins porter le même nom**. L’image du camp entier se
+retournant d’un bloc contre un aventurier est une image de fiction — dans les
+faits, le vote se divise toujours.
 
 ## Peut-on croire ces bulletins ?
 
@@ -151,7 +152,8 @@ modeste, de l’ordre de huit points entre les deux extrêmes.
 {% assign j = site.data.stats.jury %}
 Le dernier scrutin d’une saison n’est pas un conseil : **on n’y élimine
 personne, on y désigne un vainqueur**, et le sens du bulletin est inversé.
-Les sources n’en publient le détail que pour **{{ j.effectif }} saisons**. Ces
+Les sources n’en publient le détail que pour **{{ j.effectif }} scrutins**, sur
+{{ j.saisons }} saisons — une saison à double vainqueur en compte deux. Ces
 scrutins sont tenus à l’écart de tous les calculs de cette page.
 
 <div class="tableau-large">
@@ -165,7 +167,7 @@ scrutins sont tenus à l’écart de tous les calculs de cette page.
 <tr>
   <td>{{ x.titre }}</td>
   <td class="nombre">{{ x.annee }}</td>
-  <td>{{ x.laureat }}</td>
+  <td>{% if x.laureat %}{{ x.laureat }}{% else %}—{% endif %}</td>
   <td class="nombre">{% if x.voix_pour %}{{ x.voix_pour }}{% else %}—{% endif %}</td>
   <td class="nombre">{% if x.voix_exprimees %}{{ x.voix_exprimees }}{% else %}—{% endif %}</td>
 </tr>
@@ -173,6 +175,11 @@ scrutins sont tenus à l’écart de tous les calculs de cette page.
 </tbody>
 </table>
 </div>
+
+<p class="note">{{ j.sans_nom }} de ces scrutins n’affichent pas de nom : la
+cellule source y mêle une vignette et un prénom, et le libellé qui en sort ne
+se rattache à personne. Le décompte des voix, lui, est bon. Plutôt que de
+deviner qui se cache derrière, la case reste vide.</p>
 
 <p class="note">Cette dernière analyse ne porte que sur les
 {{ c.conseils_complets }} conseils dont le dépouillement est complet, c’est-à-dire

@@ -120,6 +120,35 @@ def main():
         description="Nombre de victoires par famille de métiers, saisons classiques.",
         couleur=SERIES[0]))
 
+    vv = stats["indicateurs"].get("voix_des_vainqueurs") or {}
+    if vv:
+        # Une colonne se lit PAR RAPPORT a quelque chose. Le repere n'est pas le
+        # casting entier -- on ne gagne pas si on est sorti, la comparaison
+        # serait truquee -- mais le finaliste, qui a traverse les memes conseils.
+        repere = next((g["voix_moyennes"] for g in vv["par_sort"]
+                       if g["libelle"] == "Finalistes"), None)
+        ecrire("vainqueurs-voix.svg", colonnes(
+            [{"libelle": str(d["voix"]), "valeur": d["effectif"],
+              "detail": f'{d["effectif"]} vainqueur(s) ayant reçu {d["voix"]} voix '
+                        f'contre eux sur toute leur saison'}
+             for d in vv["distribution"]],
+            titre="Voix reçues par les vainqueurs, sur toute leur saison",
+            description="Nombre de vainqueurs par nombre total de voix reçues, "
+                        "saisons classiques achevées.",
+            couleur=SERIES[0], hauteur=300,
+            reference=repere,
+            reference_libelle=f"moyenne des finalistes : {repere}" if repere else ""))
+
+        ecrire("vainqueurs-menace.svg", barres_horizontales(
+            [{"libelle": g["libelle"], "valeur": g["menace_moyenne"],
+              "detail": f'{g["libelle"]} : {g["menace_moyenne"]} voix par conseil '
+                        f'traversé, sur {g["mesures"]} parcours mesurables'}
+             for g in vv["par_sort"] if g["menace_moyenne"] is not None],
+            titre="Voix reçues par conseil traversé",
+            description="Voix reçues rapportées au nombre de conseils auxquels "
+                        "l'aventurier a assisté, par sort final.",
+            couleur=SERIES[0]))
+
     # --- tribus -----------------------------------------------------------
     couleurs = [c for c in stats["couleurs"] if c["effectif"] >= 8]
     ecrire("tribus-victoires.svg", barres_horizontales(

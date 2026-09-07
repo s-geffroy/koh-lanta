@@ -10,8 +10,13 @@
 # `type` vaut `elimination` ou `jury`. Le dernier scrutin d'une saison n'est
 # pas un conseil : c'est le vote du jury final, et le sens du bulletin y est
 # INVERSE -- ecrire un nom veut dire « qu'il gagne », pas « qu'il parte ». Une
-# ligne `jury` porte donc `laureat` et `votes_pour`, jamais `elimine` ni
-# `votes_contre`, pour qu'aucun calcul ne puisse les confondre.
+# ligne `jury` porte donc `votes_pour`, jamais `elimine` ni `votes_contre`,
+# pour qu'aucun calcul ne puisse les confondre.
+#
+# Ce scrutin tient UNE LIGNE PAR FINALISTE : la colonne du gagnant porte
+# `laureat`, celle du finaliste battu porte `finaliste`. Les deux comptent des
+# bulletins de jury ; ne lire que la premiere ne montrerait qu'un cote du
+# choix.
 #
 #     tools/atelier python3 tools/extraction/construire_conseils.py --ecrire
 #
@@ -597,12 +602,12 @@
     annule: false
 - saison: s01
   numero: 15
-  type: elimination
+  type: jury
   complet: false
   episode: Finaliste
-  elimine: guenaelle-biras
-  elimine_rattache: true
-  votes_contre: 3
+  finaliste: guenaelle-biras
+  finaliste_rattache: true
+  votes_pour: 3
   votes_exprimes: 7
   votes:
   - votant: patricia-tanguy
@@ -1217,12 +1222,12 @@
     annule: false
 - saison: s02
   numero: 16
-  type: elimination
+  type: jury
   complet: false
   episode: Finaliste
-  elimine: nicolas-leoni
-  elimine_rattache: true
-  votes_contre: 2
+  finaliste: nicolas-leoni
+  finaliste_rattache: true
+  votes_pour: 2
   votes_exprimes: 7
   votes:
   - votant: bernard-lenoir
@@ -2482,12 +2487,12 @@
     annule: false
 - saison: s04
   numero: 17
-  type: elimination
+  type: jury
   complet: false
   episode: Finaliste
-  elimine: linda-alario
-  elimine_rattache: true
-  votes_contre: 0
+  finaliste: linda-alario
+  finaliste_rattache: true
+  votes_pour: 0
   votes_exprimes: 7
   votes: []
 - saison: s04
@@ -7393,12 +7398,12 @@
     annule: false
 - saison: s11
   numero: 20
-  type: elimination
+  type: jury
   complet: false
   episode: Finaliste
-  elimine: teheiura-teahui
-  elimine_rattache: true
-  votes_contre: 2
+  finaliste: teheiura-teahui
+  finaliste_rattache: true
+  votes_pour: 2
   votes_exprimes: 9
   votes:
   - votant: ella-gbezan
@@ -8317,12 +8322,12 @@
     annule: false
 - saison: s12
   numero: 21
-  type: elimination
+  type: jury
   complet: false
   episode: Finaliste
-  elimine: Brice Martinet Brice
-  elimine_rattache: false
-  votes_contre: 1
+  finaliste: Brice Martinet Brice
+  finaliste_rattache: false
+  votes_pour: 1
   votes_exprimes: 11
   votes:
   - votant: vanessa-alvarez
@@ -8332,12 +8337,12 @@
     annule: false
 - saison: s12
   numero: 22
-  type: elimination
+  type: jury
   complet: false
   episode: Gagnant
-  elimine: Ugo Lartiche Ugo
-  elimine_rattache: false
-  votes_contre: 10
+  laureat: Ugo Lartiche Ugo
+  laureat_rattache: false
+  votes_pour: 10
   votes_exprimes: 11
   votes:
   - votant: philippe-bizet
@@ -9233,12 +9238,12 @@
     annule: false
 - saison: s14
   numero: 22
-  type: elimination
+  type: jury
   complet: false
   episode: Finaliste
-  elimine: chantal-menard
-  elimine_rattache: true
-  votes_contre: 2
+  finaliste: chantal-menard
+  finaliste_rattache: true
+  votes_pour: 2
   votes_exprimes: 11
   votes:
   - votant: bruno-peisey
@@ -10096,12 +10101,12 @@
     annule: false
 - saison: s15
   numero: 20
-  type: elimination
+  type: jury
   complet: false
   episode: Finaliste
-  elimine: pascal-salviani
-  elimine_rattache: true
-  votes_contre: 5
+  finaliste: pascal-salviani
+  finaliste_rattache: true
+  votes_pour: 5
   votes_exprimes: 11
   votes:
   - votant: alain-chrisostome
@@ -11875,12 +11880,12 @@
     annule: false
 - saison: s17
   numero: 22
-  type: elimination
+  type: jury
   complet: false
   episode: Finaliste
-  elimine: clementine-jullien
-  elimine_rattache: true
-  votes_contre: 2
+  finaliste: clementine-jullien
+  finaliste_rattache: true
+  votes_pour: 2
   votes_exprimes: 8
   votes:
   - votant: mathilde-chevalier
@@ -12706,12 +12711,12 @@
     annule: false
 - saison: s18
   numero: 22
-  type: elimination
+  type: jury
   complet: false
   episode: Finaliste
-  elimine: tiffany-gounin
-  elimine_rattache: true
-  votes_contre: 1
+  finaliste: tiffany-gounin
+  finaliste_rattache: true
+  votes_pour: 1
   votes_exprimes: 9
   votes:
   - votant: magalie-gustave
@@ -21666,12 +21671,12 @@
     annule: false
 - saison: sp1
   numero: 14
-  type: elimination
+  type: jury
   complet: false
   episode: Finaliste
-  elimine: jade-handi
-  elimine_rattache: true
-  votes_contre: 2
+  finaliste: jade-handi
+  finaliste_rattache: true
+  votes_pour: 2
   votes_exprimes: 7
   votes:
   - votant: catherine-ehret-mader
@@ -22146,12 +22151,12 @@
     annule: false
 - saison: sp2
   numero: 13
-  type: elimination
+  type: jury
   complet: false
   episode: Finaliste
-  elimine: freddy-boucher
-  elimine_rattache: true
-  votes_contre: 2
+  finaliste: freddy-boucher
+  finaliste_rattache: true
+  votes_pour: 2
   votes_exprimes: 8
   votes:
   - votant: christina-chevry
@@ -22719,12 +22724,12 @@
     annule: false
 - saison: sp3
   numero: 15
-  type: elimination
+  type: jury
   complet: false
   episode: Finaliste
-  elimine: claude-dartois
-  elimine_rattache: true
-  votes_contre: 1
+  finaliste: claude-dartois
+  finaliste_rattache: true
+  votes_pour: 1
   votes_exprimes: 10
   votes:
   - votant: coumba-baradji
@@ -23228,22 +23233,22 @@
     annule: false
 - saison: sp4
   numero: 15
-  type: elimination
+  type: jury
   complet: false
   episode: Finaliste
-  elimine: Martin Bazin Martin
-  elimine_rattache: false
-  votes_contre: 0
+  finaliste: Martin Bazin Martin
+  finaliste_rattache: false
+  votes_pour: 0
   votes_exprimes: 7
   votes: []
 - saison: sp4
   numero: 16
-  type: elimination
+  type: jury
   complet: true
   episode: Gagnant
-  elimine: Laurent Maistret Laurent
-  elimine_rattache: false
-  votes_contre: 7
+  laureat: Laurent Maistret Laurent
+  laureat_rattache: false
+  votes_pour: 7
   votes_exprimes: 7
   votes:
   - votant: philippe-bizet
@@ -23928,12 +23933,12 @@
     annule: false
 - saison: sp5
   numero: 19
-  type: elimination
+  type: jury
   complet: false
   episode: Finaliste
-  elimine: Pascal Salviani Pascal
-  elimine_rattache: false
-  votes_contre: 4
+  finaliste: Pascal Salviani Pascal
+  finaliste_rattache: false
+  votes_pour: 4
   votes_exprimes: 9
   votes:
   - votant: jeremy-raffin
@@ -23958,12 +23963,12 @@
     annule: false
 - saison: sp5
   numero: 20
-  type: elimination
+  type: jury
   complet: false
   episode: Gagnante
-  elimine: Clémence Clémence
-  elimine_rattache: false
-  votes_contre: 5
+  laureat: Clémence Clémence
+  laureat_rattache: false
+  votes_pour: 5
   votes_exprimes: 9
   votes:
   - votant: yassin-metiri

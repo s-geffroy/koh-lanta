@@ -23,6 +23,21 @@ WIKI = os.environ.get("KL_WIKI", os.path.join(RACINE, "specs", "sources", "wiki"
 from parse_fandom import slug
 from parse_votes import parse_page
 
+# La matrice titre elle-meme la colonne du scrutin final. Ces en-tetes viennent
+# de la source : ils ne sont pas devines, et ils rattrapent les deux cas que la
+# detection par le nom du vainqueur laissait passer -- la ligne du FINALISTE
+# battu, qui ne porte jamais le nom d'un vainqueur, et celle du gagnant dont le
+# nom ne se resout pas (« Ugo Lartiche Ugo »).
+EN_TETES_LAUREAT = {"gagnant", "gagnante", "gagnants", "gagnantes",
+                    "vainqueur", "vainqueure", "vainqueurs"}
+EN_TETES_FINALISTE = {"finaliste", "finalistes"}
+EN_TETES_JURY = EN_TETES_LAUREAT | EN_TETES_FINALISTE
+
+
+def entete_de_colonne(episode):
+    """Le libelle de la colonne, normalise -- ou "" si c'est un numero."""
+    return episode.strip().lower() if isinstance(episode, str) else ""
+
 ENTETE = """# ATTENTION : fichier genere. Ne pas editer a la main.
 #
 # Detail des conseils : qui part, avec combien de voix, et le bulletin de
@@ -35,8 +50,13 @@ ENTETE = """# ATTENTION : fichier genere. Ne pas editer a la main.
 # `type` vaut `elimination` ou `jury`. Le dernier scrutin d'une saison n'est
 # pas un conseil : c'est le vote du jury final, et le sens du bulletin y est
 # INVERSE -- ecrire un nom veut dire « qu'il gagne », pas « qu'il parte ». Une
-# ligne `jury` porte donc `laureat` et `votes_pour`, jamais `elimine` ni
-# `votes_contre`, pour qu'aucun calcul ne puisse les confondre.
+# ligne `jury` porte donc `votes_pour`, jamais `elimine` ni `votes_contre`,
+# pour qu'aucun calcul ne puisse les confondre.
+#
+# Ce scrutin tient UNE LIGNE PAR FINALISTE : la colonne du gagnant porte
+# `laureat`, celle du finaliste battu porte `finaliste`. Les deux comptent des
+# bulletins de jury ; ne lire que la premiere ne montrerait qu'un cote du
+# choix.
 #
 #     tools/atelier python3 tools/extraction/construire_conseils.py --ecrire
 #
@@ -196,16 +216,23 @@ def construire(saisons, parts, rapport):
             # prefere ne rien affirmer plutot que d'affirmer faux.
             gagnant = bool(elimine_id) and (sid, elimine_id) in vainqueurs
             final = c["numero"] > dernier_conseil - nb_laureats
-            jury = gagnant and final
-            if gagnant and not final:
+            entete = entete_de_colonne(c["episode"])
+            jury = (gagnant and final) or entete in EN_TETES_JURY
+            if gagnant and not final and entete not in EN_TETES_JURY:
                 rapport.append(f"{sid} conseil {c['numero']} : ABERRANT — "
                                f"« {c['elimine']} » gagne la saison mais serait "
                                f"sortant au conseil {c['numero']}/{dernier_conseil} ; "
                                f"elimine laisse non rattache")
                 elimine_id = None
+            # Le scrutin final tient UNE LIGNE PAR FINALISTE : celle du gagnant
+            # et celle du battu. Les deux sont des bulletins de jury ; seule
+            # change la personne au sommet de la colonne.
+            laureat = gagnant or entete in EN_TETES_LAUREAT
             if jury:
-                rapport.append(f"{sid} conseil {c['numero']} : vote du JURY FINAL "
-                               f"(« {c['elimine']} » n'est pas sortant, il gagne)")
+                rapport.append(
+                    f"{sid} conseil {c['numero']} : vote du JURY FINAL, colonne "
+                    f"{'du laureat' if laureat else 'du finaliste battu'} "
+                    f"(« {c['elimine']} » n'est pas sortant)")
             commun = {
                 "saison": sid,
                 "numero": c["numero"],
@@ -214,9 +241,10 @@ def construire(saisons, parts, rapport):
                 "episode": c["episode"],
             }
             if jury:
+                champ = "laureat" if laureat else "finaliste"
                 commun.update({
-                    "laureat": elimine_id,
-                    "laureat_rattache": True,
+                    champ: elimine_id or c["elimine"],
+                    champ + "_rattache": bool(elimine_id),
                     "votes_pour": c["votes_contre"],
                 })
             else:
