@@ -514,6 +514,7 @@ def verifier_conseils(conseils, saisons, parts, c):
                   if p.get("sort") == "finaliste"}
     ids = {(p["saison"], p["id"]) for p in parts}
     connus = {s["id"] for s in saisons}
+    revenus = []
 
     for x in conseils:
         ref = f'{x.get("saison")} conseil {x.get("numero")}'
@@ -578,6 +579,8 @@ def verifier_conseils(conseils, saisons, parts, c):
             if x.get("elimine_rattache") and (x["saison"], x["elimine"]) in vainqueurs:
                 c.erreur(f"{ref} : le vainqueur de la saison y est donne pour "
                          f"elimine — c'est le vote du jury, pas un conseil")
+            if x.get("elimine_rattache") and (x["saison"], x["elimine"]) in finalistes:
+                revenus.append(f"{x['saison']} ep.{x.get('episode')} {x['elimine']}")
 
         # Un libelle non rattache reste tel quel dans le fichier : il doit au
         # moins ressembler a un nom. La syntaxe de vignette MediaWiki --
@@ -600,6 +603,15 @@ def verifier_conseils(conseils, saisons, parts, c):
                 c.erreur(f"{ref} : votant « {b['votant']} » absent des participations")
             if b.get("cible_rattachee") and (x["saison"], b["cible"]) not in ids:
                 c.erreur(f"{ref} : cible « {b['cible']} » absente des participations")
+
+    # Un finaliste donne pour elimine a un conseil n'est pas une faute : il a
+    # ete elimine PUIS il est revenu. Le fait doit se voir -- c'est lui qui
+    # empechait de compter ses conseils, et Francis, finaliste du Pacifique,
+    # n'en comptait que trois.
+    if revenus:
+        c.constater(f"retour en jeu : {len(revenus)} elimination(s) au conseil "
+                    f"frappant quelqu'un qui a fini la saison "
+                    f"({', '.join(sorted(revenus))})")
 
     # Le scrutin final se lit en entier ou il ne se lit pas. Les colonnes des
     # finalistes battus ont longtemps manque, et rien ne le signalait : le

@@ -296,6 +296,32 @@ de Nekmao — « Mawar » étant la tribu rouge de <i>Malaisie</i>, une autre sa
 La fiche anglaise et le wiki Fandom ne connaissent que Klahan et Nekmao : deux
 sources contre une, et la couleur pour arbitre.</p>
 
+## Éliminé, puis revenu
+
+Cinq conseils donnent pour éliminé quelqu’un qui a fini la saison. Ce n’est pas
+une faute de lecture : **quatre sont de vrais retours en jeu**, et les sources
+les racontent. Panama consacre à l’un d’eux le titre de son neuvième épisode —
+« <i>Le retour de Linda</i> ». Au <i>Feu sacré</i>, Tania est votée deux fois et
+revient deux fois, une fois par un duel, une fois pour remplacer un abandon. À
+<i>La Nouvelle Édition</i>, Martin sort dernier d’une épreuve d’immunité et
+revient par un duel à l’épisode suivant.
+
+Le jeu de données ne sait pas dire « éliminé puis revenu » : `sort` ne retient
+que le point d’arrivée. Tant qu’on ne le savait pas, **la première élimination
+d’un revenant passait pour sa sortie** — Francis, finaliste du <i>Pacifique</i>,
+comptait trois conseils traversés et zéro épreuve disputée, au lieu de quatorze
+et onze. C’est corrigé : une élimination au conseil ne date la sortie que de
+ceux qui en sont réellement sortis.
+
+<p class="note"><strong>Le cinquième cas n’est pas un retour, c’est une source
+qui se contredit.</strong> Au <i>Pacifique</i>, la matrice des votes donne
+Francis éliminé au deuxième épisode par sept voix sur huit, et le tableau des
+candidats de la même page en fait le finaliste, sorti au quarantième jour. Aucun
+récit ne mentionne de repêchage cette saison-là, et Wikipédia ne publie pas de
+matrice pour cette édition : il n’y a rien à croiser. Les deux affirmations sont
+gardées telles quelles — l’élimination dans les conseils, la finale dans les
+participations — et le désaccord est dit ici plutôt que tranché au hasard.</p>
+
 ## La traçabilité
 
 Chaque enregistrement du jeu de données porte un bloc `sources` qui indique,

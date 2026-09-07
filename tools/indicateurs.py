@@ -44,10 +44,28 @@ def votes_du_jury(conseils):
 
 
 def _episode_de_sortie(conseils, parts, epreuves):
-    """(saison, personne) -> episode ou la personne quitte le jeu."""
+    """(saison, personne) -> episode ou la personne quitte le jeu.
+
+    Une elimination au conseil ne vaut date de sortie que pour ceux qui en sont
+    reellement sortis. Quatre aventuriers ont ete elimines PUIS SONT REVENUS --
+    Linda a Panama (« Le retour de Linda », episode 9), Tania deux fois au Feu
+    sacre, Martin par un duel a La Nouvelle Edition, Francis au Pacifique. Leur
+    premiere elimination etait prise pour leur sortie : Francis, FINALISTE,
+    comptait trois conseils assistes et zero epreuve disputee. Leur `sort` dit
+    ou ils sont vraiment arrives, et c'est lui qui tranche.
+    """
+    # On n'ecarte QUE ceux dont on sait qu'ils ont fini la saison. Ecarter tous
+    # ceux dont le `sort` n'est pas `elimine_conseil` serait bien pire : les
+    # sorties aux poteaux, a l'orientation ou en duel figurent elles aussi dans
+    # la matrice comme des colonnes d'elimination, et 159 aventuriers y
+    # perdaient leur date de sortie.
+    revenus = {(p["saison"], p["id"]) for p in parts
+               if p.get("sort") in ("vainqueur", "finaliste")}
     sortie = {}
     for c in conseils:
         if c.get("elimine_rattache") and c.get("episode"):
+            if (c["saison"], c["elimine"]) in revenus:
+                continue
             try:
                 sortie[(c["saison"], c["elimine"])] = int(c["episode"])
             except (TypeError, ValueError):

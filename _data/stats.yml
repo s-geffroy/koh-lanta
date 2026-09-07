@@ -7706,7 +7706,7 @@ colliers:
 indicateurs:
   seuil_conseils: 4
   seuil_epreuves: 8
-  mesurables: 512
+  mesurables: 513
   meilleure_justesse:
   - nom: Marianne Mondon
     saison: s02
@@ -8096,7 +8096,7 @@ indicateurs:
     effectif: 14
     part_fantomes: 19.7
     part_ensemble: 64.0
-    part_endurants: 60.8
+    part_endurants: 60.6
   - sort: vainqueur
     libelle: Vainqueur
     effectif: 12
@@ -8126,7 +8126,7 @@ indicateurs:
     effectif: 5
     part_fantomes: 7.0
     part_ensemble: 4.9
-    part_endurants: 6.3
+    part_endurants: 6.5
   - sort: abandon_volontaire
     libelle: Abandon volontaire
     effectif: 4
@@ -8210,14 +8210,14 @@ indicateurs:
       effectif: 23
       voix_moyennes: 4.91
       voix_medianes: 5.0
-      menace_moyenne: 0.338
-      mesures: 22
+      menace_moyenne: 0.332
+      mesures: 23
     - libelle: Tout le casting
       effectif: 510
       voix_moyennes: 5.77
       voix_medianes: 5.0
-      menace_moyenne: 0.652
-      mesures: 423
+      menace_moyenne: 0.651
+      mesures: 424
     couples:
     - saison: s01
       titre: Les Aventuriers de Koh-Lanta
@@ -8419,7 +8419,7 @@ indicateurs:
       moyenne_vainqueur: 2.46
       moyenne_finaliste: 4.92
   comparables: 627
-  endurants: 474
+  endurants: 475
   seuil_fantome: 5
   justesse_par_sort:
     elimine_conseil: 59.7
@@ -12809,172 +12809,172 @@ modeles:
       score: -1.719
       vainqueur: false
   force:
-    epreuves_retenues: 266
+    epreuves_retenues: 271
     saisons_retenues: 26
     epreuves_ecartees_saison: 2
-    vainqueur_hors_plateau: 9
-    taux_echec_reconstruction: 3.27
+    vainqueur_hors_plateau: 4
+    taux_echec_reconstruction: 1.45
     joueurs: 332
     seuil: 8
-    classes: 135
+    classes: 139
     classement:
     - id: claude-dartois
       nom: Claude Dartois
-      force: 4.7
-      bas: 2.44
-      haut: 7.34
+      force: 4.68
+      bas: 2.56
+      haut: 7.24
       victoires: 15
       disputees: 39
       ratio: 38.5
     - id: teheiura-teahui
       nom: Teheiura Teahui
-      force: 4.27
-      bas: 2.25
-      haut: 7.02
+      force: 4.29
+      bas: 2.3
+      haut: 6.91
       victoires: 13
       disputees: 41
       ratio: 31.7
     - id: maxime-berthon
       nom: Maxime Berthon
       force: 3.91
-      bas: 1.75
-      haut: 5.82
+      bas: 1.65
+      haut: 5.77
       victoires: 6
       disputees: 15
       ratio: 40.0
     - id: clemence-noquet
       nom: Clémence Noquet
       force: 3.47
-      bas: 0.64
-      haut: 5.97
+      bas: 0.66
+      haut: 6.11
       victoires: 3
       disputees: 8
       ratio: 37.5
-    - id: mohamed-derradji
-      nom: Mohamed Derradji
-      force: 2.84
-      bas: 0.95
-      haut: 5.67
-      victoires: 4
-      disputees: 8
-      ratio: 50.0
     - id: daniel-duquesnoy
       nom: Daniel Duquesnoy
       force: 2.72
-      bas: 0.39
-      haut: 5.72
+      bas: 0.44
+      haut: 5.39
       victoires: 3
       disputees: 10
       ratio: 30.0
     - id: bertrand-bolle
       nom: Bertrand Bolle
       force: 2.61
-      bas: 0.99
-      haut: 4.73
+      bas: 1.04
+      haut: 4.67
       victoires: 7
       disputees: 22
       ratio: 31.8
+    - id: mohamed-derradji
+      nom: Mohamed Derradji
+      force: 2.56
+      bas: 0.69
+      haut: 5.17
+      victoires: 4
+      disputees: 10
+      ratio: 40.0
     - id: gilles-de-baere
       nom: Gilles De Baere
       force: 2.48
       bas: 0.48
-      haut: 4.77
+      haut: 4.95
       victoires: 2
       disputees: 8
       ratio: 25.0
-    - id: nicolas-rouye
-      nom: Nicolas Rouyé
-      force: 2.31
-      bas: 0.46
-      haut: 4.12
-      victoires: 3
-      disputees: 8
-      ratio: 37.5
+    - id: martin-bazin
+      nom: Martin Bazin
+      force: 2.46
+      bas: 0.75
+      haut: 4.22
+      victoires: 5
+      disputees: 20
+      ratio: 25.0
     - id: nicolas-pretot
       nom: Nicolas Pretot
-      force: 2.3
-      bas: 0.57
-      haut: 4.74
+      force: 2.35
+      bas: 0.63
+      haut: 4.91
       victoires: 4
       disputees: 14
       ratio: 28.6
-    - id: martin-bazin
-      nom: Martin Bazin
-      force: 2.29
-      bas: 0.65
-      haut: 4.23
-      victoires: 4
-      disputees: 18
-      ratio: 22.2
+    - id: nicolas-rouye
+      nom: Nicolas Rouyé
+      force: 2.31
+      bas: 0.43
+      haut: 4.06
+      victoires: 3
+      disputees: 8
+      ratio: 37.5
     - id: naoil-tita
       nom: Naoil Tita
       force: 2.29
-      bas: 0.4
-      haut: 4.75
+      bas: 0.42
+      haut: 4.71
       victoires: 2
       disputees: 8
       ratio: 25.0
     - id: candice-boisson
       nom: Candice Boisson
-      force: 2.12
-      bas: 0.63
-      haut: 4.09
+      force: 2.11
+      bas: 0.32
+      haut: 4.0
       victoires: 4
       disputees: 20
       ratio: 20.0
     - id: karima-neggaz
       nom: Karima Neggaz
       force: 2.09
-      bas: 0.4
-      haut: 4.26
+      bas: 0.38
+      haut: 4.29
       victoires: 2
       disputees: 8
       ratio: 25.0
-    - id: philippe-duron
-      nom: Philippe Duron
-      force: 2.04
-      bas: 0.57
-      haut: 4.12
-      victoires: 4
-      disputees: 17
-      ratio: 23.5
     - id: sam-haliti
       nom: Sam Haliti
-      force: 2.04
-      bas: 0.35
-      haut: 4.37
+      force: 2.03
+      bas: 0.34
+      haut: 4.42
       victoires: 2
       disputees: 16
       ratio: 12.5
     - id: william-lecomte
       nom: William Lecomte
       force: 2.01
-      bas: 0.36
-      haut: 3.79
+      bas: 0.39
+      haut: 3.72
       victoires: 3
       disputees: 9
       ratio: 33.3
+    - id: philippe-duron
+      nom: Philippe Duron
+      force: 1.97
+      bas: 0.53
+      haut: 3.83
+      victoires: 4
+      disputees: 18
+      ratio: 22.2
     - id: meissa-seck
       nom: Meïssa Seck
       force: 1.94
-      bas: 0.51
-      haut: 3.3
+      bas: 0.56
+      haut: 3.27
       victoires: 3
       disputees: 11
       ratio: 27.3
     - id: gregoire-delachaux
       nom: Grégoire Delachaux
       force: 1.87
-      bas: 0.34
-      haut: 4.22
+      bas: 0.3
+      haut: 4.0
       victoires: 2
       disputees: 8
       ratio: 25.0
     - id: angelique-ti
       nom: Angélique Ti
       force: 1.79
-      bas: 0.34
-      haut: 3.82
+      bas: 0.32
+      haut: 3.74
       victoires: 2
       disputees: 9
       ratio: 22.2
@@ -12982,12 +12982,12 @@ modeles:
     - nom: Claude Dartois
       rang_force: 1
       rang_victoires: 1
-      force: 4.7
+      force: 4.68
       victoires: 15
     - nom: Teheiura Teahui
       rang_force: 2
       rang_victoires: 2
-      force: 4.27
+      force: 4.29
       victoires: 13
     - nom: Maxime Berthon
       rang_force: 3
@@ -12999,118 +12999,113 @@ modeles:
       rang_victoires: 14
       force: 3.47
       victoires: 3
-    - nom: Mohamed Derradji
-      rang_force: 5
-      rang_victoires: 11
-      force: 2.84
-      victoires: 4
     - nom: Daniel Duquesnoy
-      rang_force: 6
+      rang_force: 5
       rang_victoires: 15
       force: 2.72
       victoires: 3
     - nom: Bertrand Bolle
-      rang_force: 7
+      rang_force: 6
       rang_victoires: 3
       force: 2.61
       victoires: 7
+    - nom: Mohamed Derradji
+      rang_force: 7
+      rang_victoires: 11
+      force: 2.56
+      victoires: 4
     - &id006
       nom: Gilles De Baere
       rang_force: 8
-      rang_victoires: 40
+      rang_victoires: 41
       force: 2.48
       victoires: 2
-    - nom: Nicolas Rouyé
+    - nom: Martin Bazin
       rang_force: 9
-      rang_victoires: 20
-      force: 2.31
-      victoires: 3
+      rang_victoires: 7
+      force: 2.46
+      victoires: 5
     - nom: Nicolas Pretot
       rang_force: 10
       rang_victoires: 12
-      force: 2.3
-      victoires: 4
-    - nom: Martin Bazin
-      rang_force: 11
-      rang_victoires: 10
-      force: 2.29
+      force: 2.35
       victoires: 4
     - nom: Candice Boisson
       rang_force: 13
-      rang_victoires: 7
-      force: 2.12
+      rang_victoires: 8
+      force: 2.11
       victoires: 4
     - nom: François-David Cardonnel
       rang_force: 24
-      rang_victoires: 8
-      force: 1.7
+      rang_victoires: 9
+      force: 1.69
       victoires: 4
     - nom: Laurent Maistret
       rang_force: 28
-      rang_victoires: 9
-      force: 1.68
+      rang_victoires: 10
+      force: 1.64
       victoires: 4
     - nom: Clémence Castel
-      rang_force: 29
+      rang_force: 33
       rang_victoires: 6
-      force: 1.67
+      force: 1.56
       victoires: 5
     - &id007
       nom: Jade Handi
-      rang_force: 43
+      rang_force: 44
       rang_victoires: 4
-      force: 1.35
+      force: 1.34
       victoires: 6
     plus_forte_montee: *id006
     plus_forte_chute: *id007
   force_et_jeu:
-    effectif: 291
+    effectif: 292
     voix:
       libelle: Bulletins recus, par epreuve disputee
       force:
-        estimation: 0.87
-        bas: 0.755
-        haut: 1.002
-        p: 0.0527
+        estimation: 0.88
+        bas: 0.765
+        haut: 1.012
+        p: 0.072
       femme:
-        estimation: 1.165
-        bas: 0.931
-        haut: 1.458
-        p: 0.1808
+        estimation: 1.168
+        bas: 0.934
+        haut: 1.461
+        p: 0.1727
       age:
-        estimation: 1.134
-        bas: 1.005
-        haut: 1.28
-        p: 0.042
+        estimation: 1.14
+        bas: 1.014
+        haut: 1.281
+        p: 0.0287
       lecture: Rapport de taux par doublement de la force. Au-dessus de 1, un athlete attire davantage
         de bulletins.
     survie:
       libelle: Part de la saison tenue
       force:
-        estimation: -0.045
-        bas: -3.299
-        haut: 3.209
-        p: 0.9784
+        estimation: 0.05
+        bas: -3.18
+        haut: 3.281
+        p: 0.9756
       femme:
-        estimation: -2.947
-        bas: -7.703
-        haut: 1.81
-        p: 0.2246
+        estimation: -2.979
+        bas: -7.73
+        haut: 1.771
+        p: 0.219
       age:
-        estimation: -1.796
-        bas: -4.494
-        haut: 0.903
-        p: 0.1922
+        estimation: -1.551
+        bas: -4.216
+        haut: 1.114
+        p: 0.254
       lecture: Points de pourcentage gagnes quand la force double.
   equilibre:
     rattrapage:
       effectif: 115
       saisons: 20
       ecart_max: 5
-      rapport_de_cotes: 1.056
-      bas: 0.814
-      haut: 1.369
-      p: 0.6827
+      rapport_de_cotes: 1.049
+      bas: 0.812
+      haut: 1.356
+      p: 0.7143
       lecture: Cote de victoire de la tribu jaune quand elle compte un aventurier de plus. Au-dessus de
         1, l'avantage du nombre joue ; en dessous, la tribu en difficulté se rattrape ; à 1, l'effectif
         ne change rien.
@@ -13179,7 +13174,7 @@ modeles:
         ne permettent pas de conclure.
   hasard_mecanique:
     conseils: 512
-    conseils_hors_finale: 451
+    conseils_hors_finale: 454
     paliers:
     - palier: 0-10 %
       observe: 8.3
@@ -13188,17 +13183,17 @@ modeles:
       presents_moyen: 18.9
       rapport: 1.54
     - palier: 10-20 %
-      observe: 7.9
+      observe: 7.7
       mecanique: 6.0
       conseils: 51
       presents_moyen: 16.9
-      rapport: 1.32
+      rapport: 1.28
     - palier: 20-30 %
-      observe: 10.0
+      observe: 9.9
       mecanique: 6.6
-      conseils: 47
-      presents_moyen: 15.6
-      rapport: 1.52
+      conseils: 48
+      presents_moyen: 15.5
+      rapport: 1.5
     - palier: 30-40 %
       observe: 10.4
       mecanique: 7.4
@@ -13206,44 +13201,44 @@ modeles:
       presents_moyen: 13.7
       rapport: 1.41
     - palier: 40-50 %
-      observe: 11.8
+      observe: 12.0
       mecanique: 8.9
-      conseils: 63
+      conseils: 65
       presents_moyen: 11.4
-      rapport: 1.33
+      rapport: 1.35
     - palier: 50-60 %
-      observe: 15.2
-      mecanique: 10.6
-      conseils: 49
-      presents_moyen: 9.6
-      rapport: 1.43
+      observe: 14.8
+      mecanique: 10.5
+      conseils: 47
+      presents_moyen: 9.7
+      rapport: 1.41
     - palier: 60-70 %
-      observe: 17.2
+      observe: 17.1
       mecanique: 13.0
-      conseils: 57
+      conseils: 58
       presents_moyen: 7.8
       rapport: 1.32
     - palier: 70-80 %
-      observe: 30.9
+      observe: 30.3
       mecanique: 17.7
-      conseils: 48
+      conseils: 49
       presents_moyen: 5.7
-      rapport: 1.75
+      rapport: 1.71
     - palier: 80-90 %
-      observe: 70.3
-      mecanique: 24.3
-      conseils: 54
-      presents_moyen: 4.2
-      rapport: 2.89
+      observe: 73.3
+      mecanique: 23.6
+      conseils: 52
+      presents_moyen: 4.3
+      rapport: 3.11
     - palier: 90-100 %
-      observe: 81.0
-      mecanique: 38.1
-      conseils: 7
-      presents_moyen: 2.7
-      rapport: 2.13
-    ecart_moyen: 5.54
-    rapport_moyen: 1.47
-    correlation: 0.538
+      observe: 77.8
+      mecanique: 36.1
+      conseils: 6
+      presents_moyen: 2.8
+      rapport: 2.16
+    ecart_moyen: 5.57
+    rapport_moyen: 1.46
+    correlation: 0.528
     lecture: 'Risque observé de sortir à un conseil, et risque qu''un simple 1/nombre-de-présents prédit.
       Les deux derniers paliers sont ceux de la finale : tout le monde y sort le même jour, et la comparaison
       n''y a plus de sens.'
@@ -13875,7 +13870,7 @@ modeles:
       gagnants représentent parmi les présents.
   decimation:
     saisons: 17
-    sorties: 197
+    sorties: 198
     detail:
     - saison: s22
       titre: Les Armes secrètes
@@ -13919,12 +13914,6 @@ modeles:
       joueurs: 14
       plus_longue_serie: 5
       suite: JRJJJRRRRRJJRJ
-    - saison: s04
-      titre: Panama
-      annee: 2004
-      joueurs: 10
-      plus_longue_serie: 4
-      suite: RJJJJRJRRR
     - saison: s11
       titre: Raja Ampat
       annee: 2011
@@ -13937,57 +13926,63 @@ modeles:
       joueurs: 14
       plus_longue_serie: 4
       suite: JJRRJRRRJRJJJJ
+    - saison: s01
+      titre: Les Aventuriers de Koh-Lanta
+      annee: 2001
+      joueurs: 10
+      plus_longue_serie: 3
+      suite: JJJRRJJRRR
     test:
       cle: decimation
       libelle: L'élimination en série d'un camp
       question: Après la réunification, les sorties se suivent-elles par bandeau plus souvent que le hasard
         ne le voudrait ?
-      observe: 109.0
-      attendu: 84.31
+      observe: 108.0
+      attendu: 84.769
       unite: enchaînements
-      ecart_types: 3.76
-      p: 0.0004
+      ecart_types: 3.6
+      p: 0.0005
       tirages: 10000
       lecture: Nombre de fois où deux sorties consécutives viennent du même bandeau de départ. Un observé
         AU-DESSUS de l'attendu est la signature d'un camp démonté un par un.
       nulle: &id055
         bornes:
-        - 56.45
-        - 112.55
+        - 57.5
+        - 112.5
         cases:
         - 0
         - 1
-        - 5
-        - 11
-        - 20
+        - 3
+        - 6
+        - 23
         - 48
-        - 101
-        - 202
-        - 318
-        - 477
-        - 678
-        - 898
-        - 1111
-        - 1212
-        - 1198
-        - 1119
-        - 905
-        - 686
-        - 417
-        - 269
-        - 163
-        - 91
-        - 44
-        - 12
-        - 10
-        - 2
+        - 103
+        - 199
+        - 382
+        - 532
+        - 801
+        - 1020
+        - 1105
+        - 629
+        - 1192
+        - 1131
+        - 979
+        - 689
+        - 514
+        - 312
+        - 154
+        - 86
+        - 49
+        - 28
+        - 8
+        - 4
         - 2
         - 0
-        largeur_case: 2.003571
-        observe: 109.0
-        moyenne_nulle: 84.3102
+        largeur_case: 1.964286
+        observe: 108.0
+        moyenne_nulle: 84.7692
       origine: decimation
-      p_ajustee: 0.0013
+      p_ajustee: 0.0014
       retenu: true
   jury_final:
     bulletins: 292
@@ -14058,7 +14053,7 @@ modeles:
       annee: 2005
       casting: 17
       episode: 6
-      restants: 9
+      restants: 10
     - saison: s06
       titre: Vanuatu
       annee: 2006
@@ -14164,7 +14159,7 @@ modeles:
     episode_median: 6.0
     episode_variation: 12.3
     restants_median: 12.0
-    restants_variation: 17.5
+    restants_variation: 16.9
     casting_min: 16
     casting_max: 24
     pente_episode:
@@ -14173,9 +14168,9 @@ modeles:
       haut: 0.152
       p: 0.9098
     pente_restants:
-      pente: 0.666
-      bas: 0.559
-      haut: 0.772
+      pente: 0.65
+      bas: 0.553
+      haut: 0.747
       p: 0.0
     lecture: 'Pente : de combien l''episode de fusion, puis le nombre de joueurs restants, bougent quand
       le casting gagne un membre. Une pente nulle sur l''episode et une pente de 1 sur les restants signent
@@ -15427,29 +15422,29 @@ modeles:
     avant:
       conseils: 171
       saisons: 21
-      presents_moyen: 16.9
+      presents_moyen: 17.0
       part_femmes: 53.8
       age_moyen: 35.1
       part_serres: 34.9
     apres:
-      conseils: 218
+      conseils: 223
       saisons: 21
-      presents_moyen: 8.5
-      part_femmes: 46.3
-      age_moyen: 33.0
-      part_serres: 53.8
-    rang_force_avant: 62.2
-    rang_force_apres: 46.3
+      presents_moyen: 8.4
+      part_femmes: 45.7
+      age_moyen: 32.9
+      part_serres: 53.4
+    rang_force_avant: 62.3
+    rang_force_apres: 46.5
     force_effectif_avant: 82
-    force_effectif_apres: 204
+    force_effectif_apres: 209
     robustesse:
-      correlation_exposition_force: -0.088
+      correlation_exposition_force: -0.094
       apparie:
-        avant: 65.1
-        avant_effectif: 72
-        apres: 56.1
-        apres_effectif: 112
-        ecart: -9.0
+        avant: 64.2
+        avant_effectif: 70
+        apres: 55.4
+        apres_effectif: 116
+        ecart: -8.8
     ambassadeurs:
       effectif: 19
       saisons: 19
@@ -15476,61 +15471,61 @@ modeles:
     - cle: fusion_sexe
       libelle: Le sexe des éliminés, avant et après la fusion
       question: La part de femmes parmi les éliminés change-t-elle à la réunification ?
-      observe: -7.471
-      attendu: -0.498
+      observe: -8.061
+      attendu: -0.578
       unite: ' points'
-      ecart_types: -1.38
-      p: 0.1679
+      ecart_types: -1.5
+      p: 0.1359
       tirages: 10000
       lecture: 'Différence entre l''après et l''avant, en points de pourcentage. Le hasard, ici, c''est
         tirer l''éliminé parmi les présents de chaque conseil : la composition du camp est donc déjà neutralisée,
         et un écart qui subsiste est un choix.'
       nulle: &id035
         bornes:
-        - -22.056
-        - 18.0188
+        - -21.9129
+        - 20.7827
         cases:
         - 0
         - 2
         - 3
-        - 7
-        - 17
-        - 31
-        - 57
-        - 108
-        - 189
-        - 329
-        - 468
-        - 673
-        - 966
-        - 1002
-        - 1071
-        - 1177
-        - 994
-        - 866
-        - 722
-        - 492
-        - 357
-        - 209
-        - 119
-        - 85
-        - 29
-        - 19
-        - 8
+        - 4
+        - 25
+        - 45
+        - 79
+        - 186
+        - 312
+        - 460
+        - 658
+        - 930
+        - 1043
+        - 1241
+        - 1300
+        - 1024
+        - 885
+        - 706
+        - 464
+        - 305
+        - 182
+        - 81
+        - 36
+        - 16
+        - 10
+        - 2
+        - 1
         - 0
-        largeur_case: 1.431244
-        observe: -7.4709
-        moyenne_nulle: -0.4979
+        largeur_case: 1.524842
+        observe: -8.0613
+        moyenne_nulle: -0.5785
       origine: avant_apres
-      p_ajustee: 0.245
+      p_ajustee: 0.2039
       retenu: false
     - cle: fusion_force
       libelle: La force des éliminés, avant et après la fusion
       question: Élimine-t-on le faible avant la réunification et le fort après ?
-      observe: -15.878
-      attendu: -0.024
+      observe: -15.848
+      attendu: -0.033
       unite: ' points de rang'
-      ecart_types: -4.6
+      ecart_types: -4.62
       p: 0.0001
       tirages: 10000
       lecture: 'Rang de l''éliminé parmi les présents, sur la force estimée aux épreuves : 0 le plus faible
@@ -15538,93 +15533,93 @@ modeles:
         plus haut dans le classement après la fusion.'
       nulle: &id036
         bornes:
-        - -17.3348
-        - 14.7154
+        - -17.288
+        - 14.3853
         cases:
         - 0
-        - 0
-        - 0
-        - 0
-        - 4
-        - 6
-        - 26
-        - 48
-        - 133
-        - 222
-        - 420
-        - 633
-        - 885
-        - 1145
-        - 1296
-        - 1380
-        - 1163
-        - 951
-        - 713
-        - 428
-        - 295
-        - 137
-        - 60
-        - 32
-        - 18
-        - 4
         - 1
         - 0
-        largeur_case: 1.144653
-        observe: -15.878
-        moyenne_nulle: -0.0239
+        - 1
+        - 2
+        - 11
+        - 27
+        - 44
+        - 106
+        - 208
+        - 400
+        - 610
+        - 851
+        - 1121
+        - 1265
+        - 1347
+        - 1217
+        - 993
+        - 723
+        - 481
+        - 295
+        - 159
+        - 83
+        - 36
+        - 11
+        - 7
+        - 1
+        - 0
+        largeur_case: 1.131191
+        observe: -15.8483
+        moyenne_nulle: -0.0327
       origine: avant_apres
       p_ajustee: 0.0006
       retenu: true
     - cle: fusion_serre
       libelle: Des conseils plus serrés après la fusion ?
       question: Le vote se divise-t-il davantage une fois les tribus réunies ?
-      observe: 18.962
-      attendu: -0.054
+      observe: 18.551
+      attendu: 0.1
       unite: ' points'
-      ecart_types: 3.04
-      p: 0.0024
+      ecart_types: 2.95
+      p: 0.0057
       tirages: 10000
       lecture: Part de conseils où l'éliminé ne rassemble pas plus de la moitié des voix, après moins
         avant. Le hasard est ici une redistribution des étiquettes « avant » et « après » entre les mêmes
         conseils.
       nulle: &id037
         bornes:
-        - -26.5209
-        - 22.7463
+        - -25.2974
+        - 25.4749
         cases:
         - 0
         - 1
-        - 1
-        - 8
-        - 16
-        - 32
-        - 58
-        - 85
-        - 148
-        - 274
-        - 914
-        - 611
-        - 744
-        - 977
-        - 990
-        - 974
-        - 863
-        - 1557
-        - 597
-        - 391
-        - 303
-        - 180
-        - 130
-        - 66
-        - 67
         - 9
-        - 4
+        - 14
+        - 26
+        - 48
+        - 73
+        - 130
+        - 588
+        - 445
+        - 603
+        - 715
+        - 896
+        - 953
+        - 1954
+        - 872
+        - 754
+        - 565
+        - 481
+        - 548
+        - 135
+        - 90
+        - 44
+        - 24
+        - 22
+        - 8
+        - 2
         - 0
-        largeur_case: 1.759541
-        observe: 18.9624
-        moyenne_nulle: -0.0536
+        largeur_case: 1.813294
+        observe: 18.5514
+        moyenne_nulle: 0.1
       origine: avant_apres
-      p_ajustee: 0.0056
+      p_ajustee: 0.0126
       retenu: true
     - cle: ambassadeurs_force
       libelle: Qui les ambassadeurs éliminent-ils ?
@@ -15633,7 +15628,7 @@ modeles:
       attendu: 50.052
       unite: ' points de rang'
       ecart_types: -0.68
-      p: 0.5031
+      p: 0.5037
       tirages: 10000
       lecture: Rang de l'éliminé parmi les présents, sur la force estimée aux épreuves. Au-dessus de 50,
         les ambassadeurs sacrifient un joueur plus fort que la moyenne du camp ; en dessous, un plus faible.
@@ -15644,37 +15639,37 @@ modeles:
         cases:
         - 0
         - 1
-        - 7
-        - 13
+        - 6
+        - 14
         - 29
-        - 57
-        - 111
-        - 182
-        - 317
-        - 454
-        - 729
-        - 839
-        - 960
-        - 1091
-        - 1129
-        - 1019
-        - 937
+        - 55
+        - 115
+        - 185
+        - 314
+        - 456
         - 717
-        - 524
-        - 376
-        - 248
-        - 130
-        - 79
+        - 853
+        - 957
+        - 1085
+        - 1138
+        - 1015
+        - 935
+        - 715
+        - 530
+        - 373
+        - 247
+        - 131
+        - 77
         - 34
-        - 13
+        - 14
         - 2
         - 2
         - 0
         largeur_case: 2.284539
         observe: 44.5455
-        moyenne_nulle: 50.0522
+        moyenne_nulle: 50.0521
       origine: avant_apres
-      p_ajustee: 0.5711
+      p_ajustee: 0.5567
       retenu: false
     - cle: ambassadeurs_survie
       libelle: L'ambassadeur qui négocie s'en sort-il mieux ?
@@ -16640,27 +16635,27 @@ modeles:
       p_ajustee: 0.0007
       retenu: true
   autour_du_feu:
-    presences: 2395
-    conseils: 301
+    presences: 2401
+    conseils: 302
     saisons: 33
     par_bulletins: 2043
-    par_reconstruction: 352
+    par_reconstruction: 358
     hasard: 12.6
     globale: 12.6
     bandeau:
     - modalite: bandeau minoritaire
-      effectif: 429
-      cas: 70
-      probabilite: 16.3
-      bas: 13.1
-      haut: 20.1
-      hasard: 11.6
+      effectif: 430
+      cas: 71
+      probabilite: 16.5
+      bas: 13.3
+      haut: 20.3
+      hasard: 11.7
     - modalite: bandeau majoritaire
-      effectif: 835
+      effectif: 840
       cas: 84
-      probabilite: 10.1
-      bas: 8.2
-      haut: 12.3
+      probabilite: 10.0
+      bas: 8.1
+      haut: 12.2
       hasard: 12.1
     bandeau_avant:
     - modalite: bandeau minoritaire
@@ -16679,66 +16674,66 @@ modeles:
       hasard: 13.0
     bandeau_apres:
     - modalite: bandeau minoritaire
-      effectif: 287
-      cas: 43
-      probabilite: 15.0
-      bas: 11.3
-      haut: 19.6
+      effectif: 288
+      cas: 44
+      probabilite: 15.3
+      bas: 11.6
+      haut: 19.9
       hasard: 11.2
     - modalite: bandeau majoritaire
-      effectif: 509
+      effectif: 514
       cas: 51
-      probabilite: 10.0
-      bas: 7.7
-      haut: 12.9
+      probabilite: 9.9
+      bas: 7.6
+      haut: 12.8
       hasard: 11.5
     sexe:
     - modalite: sexe minoritaire
-      effectif: 674
-      cas: 68
-      probabilite: 10.1
-      bas: 8.0
-      haut: 12.6
+      effectif: 673
+      cas: 67
+      probabilite: 10.0
+      bas: 7.9
+      haut: 12.4
       hasard: 12.1
     - modalite: sexe majoritaire
-      effectif: 1030
+      effectif: 1027
       cas: 142
       probabilite: 13.8
-      bas: 11.8
-      haut: 16.0
-      hasard: 12.5
+      bas: 11.9
+      haut: 16.1
+      hasard: 12.4
     age:
     - modalite: le plus âgé du camp
-      effectif: 303
+      effectif: 304
       cas: 48
       probabilite: 15.8
-      bas: 12.2
-      haut: 20.4
+      bas: 12.1
+      haut: 20.3
       hasard: 13.4
     - modalite: entre les deux
-      effectif: 1723
-      cas: 202
-      probabilite: 11.7
+      effectif: 1727
+      cas: 203
+      probabilite: 11.8
       bas: 10.3
-      haut: 13.3
+      haut: 13.4
       hasard: 12.2
     - modalite: le plus jeune du camp
-      effectif: 353
+      effectif: 354
       cas: 47
       probabilite: 13.3
-      bas: 10.2
-      haut: 17.3
+      bas: 10.1
+      haut: 17.2
       hasard: 13.3
     genre:
     - modalite: une femme
-      effectif: 1119
-      cas: 154
+      effectif: 1123
+      cas: 155
       probabilite: 13.8
       bas: 11.9
       haut: 15.9
       hasard: 12.5
     - modalite: un homme
-      effectif: 1276
+      effectif: 1278
       cas: 147
       probabilite: 11.5
       bas: 9.9
@@ -16751,13 +16746,13 @@ modeles:
       probabilite: 16.8
       bas: 11.0
       haut: 24.8
-      hasard: 13.6
+      hasard: 13.5
     - modalite: n’a rien gagné ce soir
-      effectif: 550
+      effectif: 552
       cas: 67
-      probabilite: 12.2
+      probabilite: 12.1
       bas: 9.7
-      haut: 15.2
+      haut: 15.1
       hasard: 12.8
     immunite:
     - modalite: a gagné l’immunité individuelle
@@ -16768,9 +16763,9 @@ modeles:
       haut: 4.0
       hasard: 13.3
     - modalite: n’a pas gagné l’immunité
-      effectif: 652
+      effectif: 654
       cas: 91
-      probabilite: 14.0
+      probabilite: 13.9
       bas: 11.5
       haut: 16.8
       hasard: 12.1
@@ -16778,202 +16773,202 @@ modeles:
     - cle: bandeau_minoritaire
       libelle: Le bandeau minoritaire
       question: Appartenir au bandeau le moins représenté du camp expose-t-il ?
-      observe: 6.257
-      attendu: -0.426
+      observe: 6.512
+      attendu: -0.453
       unite: ' points'
-      ecart_types: 3.37
-      p: 0.0005
+      ecart_types: 3.52
+      p: 0.0003
       tirages: 10000
       lecture: 'Écart entre partir quand son bandeau d''origine est le moins représenté du camp et partir
         quand il est le plus représenté. Le modèle nul tire l''éliminé au hasard parmi les présents :
         la taille du camp et sa composition restent celles du soir.'
       nulle: &id046
         bornes:
-        - -7.8449
-        - 7.5493
+        - -7.7795
+        - 7.5663
         cases:
         - 0
         - 3
-        - 3
-        - 31
-        - 55
+        - 9
+        - 19
+        - 56
         - 119
-        - 136
-        - 279
-        - 462
-        - 534
-        - 858
-        - 1012
-        - 938
-        - 1133
-        - 1108
-        - 863
-        - 842
-        - 575
-        - 357
-        - 322
-        - 180
-        - 95
-        - 57
-        - 21
-        - 8
+        - 158
+        - 290
+        - 485
+        - 590
+        - 837
+        - 1102
+        - 974
+        - 1131
+        - 1068
+        - 796
+        - 781
+        - 598
+        - 327
+        - 300
+        - 168
+        - 64
+        - 67
+        - 39
+        - 10
         - 7
         - 2
         - 0
-        largeur_case: 0.549791
-        observe: 6.2571
-        moyenne_nulle: -0.4258
+        largeur_case: 0.548064
+        observe: 6.5116
+        moyenne_nulle: -0.4532
       origine: autour_du_feu
-      p_ajustee: 0.0014
+      p_ajustee: 0.001
       retenu: true
     - cle: sexe_minoritaire
       libelle: Le sexe minoritaire
       question: Être du sexe le moins représenté du camp expose-t-il ?
-      observe: -3.697
-      attendu: -0.367
+      observe: -3.871
+      attendu: -0.361
       unite: ' points'
-      ecart_types: -1.95
-      p: 0.05
+      ecart_types: -2.05
+      p: 0.044
       tirages: 10000
       lecture: Écart entre partir quand son sexe est le moins représenté du camp et partir quand il est
         le plus représenté.
       nulle: &id047
         bornes:
-        - -7.0601
-        - 7.5199
+        - -8.7904
+        - 7.4429
         cases:
         - 0
-        - 4
-        - 7
-        - 16
-        - 28
-        - 143
-        - 206
-        - 306
-        - 501
-        - 711
-        - 911
-        - 1076
-        - 1122
-        - 1081
-        - 1476
-        - 813
-        - 581
-        - 409
-        - 296
-        - 152
-        - 86
-        - 43
-        - 21
-        - 6
         - 1
-        - 3
         - 1
         - 0
-        largeur_case: 0.520716
-        observe: -3.6974
-        moyenne_nulle: -0.367
+        - 3
+        - 13
+        - 34
+        - 56
+        - 241
+        - 268
+        - 429
+        - 952
+        - 899
+        - 1077
+        - 1721
+        - 1070
+        - 1421
+        - 672
+        - 437
+        - 427
+        - 131
+        - 77
+        - 49
+        - 9
+        - 6
+        - 5
+        - 1
+        - 0
+        largeur_case: 0.579761
+        observe: -3.8713
+        moyenne_nulle: -0.3607
       origine: autour_du_feu
-      p_ajustee: 0.0875
+      p_ajustee: 0.0803
       retenu: false
     - cle: doyen_du_camp
       libelle: Le plus âgé du camp
       question: Le doyen d'un conseil part-il plus souvent que les autres ?
-      observe: 3.847
-      attendu: 1.036
+      observe: 3.776
+      attendu: 1.049
       unite: ' points'
-      ecart_types: 1.27
-      p: 0.2297
+      ecart_types: 1.23
+      p: 0.227
       tirages: 10000
       lecture: Écart entre partir quand on est le plus âgé des présents et partir quand on ne l'est pas.
         Le modèle nul absorbe le fait qu'on est plus souvent le doyen d'un petit camp que d'un grand.
       nulle: &id048
         bornes:
-        - -8.8035
-        - 11.5816
+        - -7.2513
+        - 11.4103
         cases:
+        - 0
+        - 2
+        - 12
+        - 20
+        - 67
+        - 148
+        - 285
+        - 228
+        - 656
+        - 962
+        - 1147
+        - 670
+        - 1398
+        - 1245
+        - 1095
+        - 840
+        - 277
+        - 426
+        - 238
+        - 168
+        - 42
+        - 39
+        - 30
+        - 2
         - 0
         - 1
         - 2
-        - 4
-        - 14
-        - 42
-        - 91
-        - 101
-        - 319
-        - 553
-        - 835
-        - 1018
-        - 1343
-        - 1351
-        - 1358
-        - 977
-        - 822
-        - 517
-        - 318
-        - 178
-        - 46
-        - 68
-        - 26
-        - 10
-        - 4
-        - 1
-        - 1
         - 0
-        largeur_case: 0.72804
-        observe: 3.8474
-        moyenne_nulle: 1.0364
+        largeur_case: 0.666484
+        observe: 3.776
+        moyenne_nulle: 1.0493
       origine: autour_du_feu
-      p_ajustee: 0.2923
+      p_ajustee: 0.2889
       retenu: false
     - cle: confort_sortie
       libelle: Le confort du soir
       question: Gagner le confort fait-il partir le soir même ?
-      observe: 4.632
-      attendu: 0.717
+      observe: 4.676
+      attendu: 0.723
       unite: ' points'
-      ecart_types: 1.06
-      p: 0.3078
+      ecart_types: 1.07
+      p: 0.309
       tirages: 10000
       lecture: 'Écart entre partir quand on vient de gagner le confort de l''épisode et partir quand on
         n''a rien gagné. Lu sur les seuls soirs à conseil unique : sinon l''épreuve du soir ne se rattache
         pas au bon conseil.'
       nulle: &id049
         bornes:
-        - -12.8094
-        - 18.8738
+        - -13.714
+        - 15.6042
         cases:
         - 0
         - 1
-        - 7
-        - 16
-        - 70
-        - 313
-        - 344
-        - 557
-        - 777
-        - 961
-        - 1079
-        - 1184
-        - 1136
-        - 990
-        - 796
-        - 604
-        - 462
-        - 272
-        - 188
-        - 121
-        - 61
-        - 40
-        - 19
-        - 1
+        - 4
+        - 10
+        - 26
+        - 47
+        - 108
+        - 203
+        - 370
+        - 556
+        - 820
+        - 969
+        - 1111
+        - 1120
+        - 1140
+        - 950
+        - 801
+        - 606
+        - 446
+        - 293
+        - 178
+        - 114
+        - 73
+        - 36
+        - 12
+        - 4
+        - 2
         - 0
-        - 0
-        - 1
-        - 0
-        largeur_case: 1.131542
-        observe: 4.6323
-        moyenne_nulle: 0.7166
+        largeur_case: 1.047077
+        observe: 4.6765
+        moyenne_nulle: 0.7226
       origine: autour_du_feu
       p_ajustee: 0.3689
       retenu: false
@@ -17139,7 +17134,7 @@ modeles:
         observe: 15.3994
         moyenne_nulle: 1.4034
       origine: pire_place
-      p_ajustee: 0.0082
+      p_ajustee: 0.0086
       retenu: true
     - cle: dos_au_mur
       libelle: Le dos au mur
@@ -17192,36 +17187,36 @@ modeles:
       p_ajustee: 0.8892
       retenu: false
   tenant_du_titre:
-    epreuves: 159
+    epreuves: 160
     saisons: 26
-    paires: 124
+    paires: 125
     tenant:
-      effectif: 124
+      effectif: 125
       cas: 29
-      probabilite: 23.4
-      bas: 16.8
-      haut: 31.6
+      probabilite: 23.2
+      bas: 16.7
+      haut: 31.3
     autres:
-      effectif: 846
-      cas: 95
-      probabilite: 11.2
-      bas: 9.3
-      haut: 13.5
-    brut: 12.2
-    attendu_force: 9.3
-    attendu_uniforme: 2.1
-    ecarts_types_uniforme: 2.65
-    part_expliquee: 76.7
+      effectif: 862
+      cas: 96
+      probabilite: 11.1
+      bas: 9.2
+      haut: 13.4
+    brut: 12.1
+    attendu_force: 8.9
+    attendu_uniforme: 1.9
+    ecarts_types_uniforme: 2.74
+    part_expliquee: 73.7
     test:
       cle: tenant_du_titre
       libelle: Le tenant du titre
       question: Celui qui a gagné la dernière immunité la regagne-t-il plus souvent que sa force ne l'explique
         ?
-      observe: 12.158
-      attendu: 9.33
+      observe: 12.063
+      attendu: 8.89
       unite: ' points'
-      ecart_types: 0.64
-      p: 0.5341
+      ecart_types: 0.72
+      p: 0.4704
       tirages: 4000
       lecture: 'Écart entre gagner l''immunité quand on l''a gagnée la fois d''avant et la gagner quand
         on ne l''a pas gagnée. Le modèle nul ne tire pas au hasard : il tire les vainqueurs SELON LES
@@ -17229,101 +17224,101 @@ modeles:
         et non un niveau.'
       nulle: &id056
         bornes:
-        - -6.6255
-        - 28.5408
+        - -7.7441
+        - 27.3636
         cases:
         - 0
-        - 3
-        - 2
-        - 13
-        - 33
-        - 45
-        - 88
-        - 164
-        - 255
-        - 312
-        - 374
-        - 436
-        - 456
-        - 404
-        - 358
-        - 331
-        - 280
-        - 191
-        - 100
-        - 53
-        - 49
-        - 32
-        - 11
-        - 7
-        - 2
-        - 0
         - 1
+        - 3
+        - 5
+        - 11
+        - 36
+        - 84
+        - 133
+        - 182
+        - 250
+        - 340
+        - 408
+        - 462
+        - 432
+        - 403
+        - 381
+        - 300
+        - 220
+        - 130
+        - 102
+        - 51
+        - 30
+        - 18
+        - 10
+        - 5
+        - 1
+        - 2
         - 0
-        largeur_case: 1.255939
-        observe: 12.1578
-        moyenne_nulle: 9.3302
+        largeur_case: 1.253849
+        observe: 12.0631
+        moyenne_nulle: 8.8895
       origine: tenant_du_titre
-      p_ajustee: 0.5903
+      p_ajustee: 0.534
       retenu: false
   age_au_conseil:
-    conseils: 301
+    conseils: 302
     conseils_avant: 187
-    conseils_apres: 114
-    ecart_tout: 0.69
+    conseils_apres: 115
+    ecart_tout: 0.7
     ecart_avant: 1.47
-    ecart_apres: -0.58
+    ecart_apres: -0.54
     test:
       cle: age_bascule_fusion
       libelle: L'âge de l'éliminé, avant et après la fusion
       question: Élimine-t-on le plus âgé avant la réunification, et plus après ?
-      observe: 2.051
-      attendu: 0.024
+      observe: 2.007
+      attendu: -0.009
       unite: ' ans'
-      ecart_types: 1.95
-      p: 0.05
+      ecart_types: 1.93
+      p: 0.054
       tirages: 10000
       lecture: 'Écart d''âge de l''éliminé à la moyenne de son camp, avant la réunification moins après.
         Le modèle nul tire l''éliminé au hasard parmi les présents : la composition d''âge de chaque soirée
         reste celle du soir.'
       nulle: &id057
         bornes:
-        - -4.2275
-        - 3.9953
+        - -4.9113
+        - 4.0563
         cases:
         - 0
+        - 1
         - 2
-        - 4
-        - 5
-        - 35
-        - 47
-        - 95
-        - 145
-        - 278
-        - 405
-        - 601
-        - 783
-        - 987
-        - 1064
-        - 1152
-        - 1049
-        - 960
-        - 769
-        - 600
-        - 438
-        - 284
-        - 127
-        - 88
+        - 2
+        - 9
+        - 18
+        - 32
+        - 70
+        - 148
+        - 258
+        - 429
+        - 581
+        - 818
+        - 1044
+        - 1153
+        - 1248
+        - 1132
+        - 975
+        - 814
+        - 567
+        - 323
+        - 187
+        - 101
         - 50
         - 21
-        - 7
-        - 4
+        - 12
+        - 5
         - 0
-        largeur_case: 0.29367
-        observe: 2.0512
-        moyenne_nulle: 0.0236
+        largeur_case: 0.320274
+        observe: 2.007
+        moyenne_nulle: -0.0093
       origine: age_au_conseil
-      p_ajustee: 0.0875
+      p_ajustee: 0.0945
       retenu: false
   rappel:
     effectif: 491
@@ -17814,12 +17809,12 @@ modeles:
     libelle: Le sexe des éliminés, avant et après la fusion
     question: La part de femmes parmi les éliminés change-t-elle à la réunification ?
     origine: avant_apres
-    observe: -7.471
-    attendu: -0.498
+    observe: -8.061
+    attendu: -0.578
     unite: ' points'
-    ecart_types: -1.38
-    p: 0.1679
-    p_ajustee: 0.245
+    ecart_types: -1.5
+    p: 0.1359
+    p_ajustee: 0.2039
     retenu: false
     tirages: 10000
     lecture: 'Différence entre l''après et l''avant, en points de pourcentage. Le hasard, ici, c''est
@@ -17830,10 +17825,10 @@ modeles:
     libelle: La force des éliminés, avant et après la fusion
     question: Élimine-t-on le faible avant la réunification et le fort après ?
     origine: avant_apres
-    observe: -15.878
-    attendu: -0.024
+    observe: -15.848
+    attendu: -0.033
     unite: ' points de rang'
-    ecart_types: -4.6
+    ecart_types: -4.62
     p: 0.0001
     p_ajustee: 0.0006
     retenu: true
@@ -17846,12 +17841,12 @@ modeles:
     libelle: Des conseils plus serrés après la fusion ?
     question: Le vote se divise-t-il davantage une fois les tribus réunies ?
     origine: avant_apres
-    observe: 18.962
-    attendu: -0.054
+    observe: 18.551
+    attendu: 0.1
     unite: ' points'
-    ecart_types: 3.04
-    p: 0.0024
-    p_ajustee: 0.0056
+    ecart_types: 2.95
+    p: 0.0057
+    p_ajustee: 0.0126
     retenu: true
     tirages: 10000
     lecture: Part de conseils où l'éliminé ne rassemble pas plus de la moitié des voix, après moins avant.
@@ -17865,8 +17860,8 @@ modeles:
     attendu: 50.052
     unite: ' points de rang'
     ecart_types: -0.68
-    p: 0.5031
-    p_ajustee: 0.5711
+    p: 0.5037
+    p_ajustee: 0.5567
     retenu: false
     tirages: 10000
     lecture: Rang de l'éliminé parmi les présents, sur la force estimée aux épreuves. Au-dessus de 50,
@@ -17983,12 +17978,12 @@ modeles:
     libelle: Le bandeau minoritaire
     question: Appartenir au bandeau le moins représenté du camp expose-t-il ?
     origine: autour_du_feu
-    observe: 6.257
-    attendu: -0.426
+    observe: 6.512
+    attendu: -0.453
     unite: ' points'
-    ecart_types: 3.37
-    p: 0.0005
-    p_ajustee: 0.0014
+    ecart_types: 3.52
+    p: 0.0003
+    p_ajustee: 0.001
     retenu: true
     tirages: 10000
     lecture: 'Écart entre partir quand son bandeau d''origine est le moins représenté du camp et partir
@@ -17999,12 +17994,12 @@ modeles:
     libelle: Le sexe minoritaire
     question: Être du sexe le moins représenté du camp expose-t-il ?
     origine: autour_du_feu
-    observe: -3.697
-    attendu: -0.367
+    observe: -3.871
+    attendu: -0.361
     unite: ' points'
-    ecart_types: -1.95
-    p: 0.05
-    p_ajustee: 0.0875
+    ecart_types: -2.05
+    p: 0.044
+    p_ajustee: 0.0803
     retenu: false
     tirages: 10000
     lecture: Écart entre partir quand son sexe est le moins représenté du camp et partir quand il est
@@ -18014,12 +18009,12 @@ modeles:
     libelle: Le plus âgé du camp
     question: Le doyen d'un conseil part-il plus souvent que les autres ?
     origine: autour_du_feu
-    observe: 3.847
-    attendu: 1.036
+    observe: 3.776
+    attendu: 1.049
     unite: ' points'
-    ecart_types: 1.27
-    p: 0.2297
-    p_ajustee: 0.2923
+    ecart_types: 1.23
+    p: 0.227
+    p_ajustee: 0.2889
     retenu: false
     tirages: 10000
     lecture: Écart entre partir quand on est le plus âgé des présents et partir quand on ne l'est pas.
@@ -18029,11 +18024,11 @@ modeles:
     libelle: Le confort du soir
     question: Gagner le confort fait-il partir le soir même ?
     origine: autour_du_feu
-    observe: 4.632
-    attendu: 0.717
+    observe: 4.676
+    attendu: 0.723
     unite: ' points'
-    ecart_types: 1.06
-    p: 0.3078
+    ecart_types: 1.07
+    p: 0.309
     p_ajustee: 0.3689
     retenu: false
     tirages: 10000
@@ -18050,7 +18045,7 @@ modeles:
     unite: ' points'
     ecart_types: 3.11
     p: 0.0037
-    p_ajustee: 0.0082
+    p_ajustee: 0.0086
     retenu: true
     tirages: 10000
     lecture: Écart entre partir quand plus aucun de ceux avec qui on a déjà voté n'est présent, et partir
@@ -18125,12 +18120,12 @@ modeles:
     question: Après la réunification, les sorties se suivent-elles par bandeau plus souvent que le hasard
       ne le voudrait ?
     origine: decimation
-    observe: 109.0
-    attendu: 84.31
+    observe: 108.0
+    attendu: 84.769
     unite: enchaînements
-    ecart_types: 3.76
-    p: 0.0004
-    p_ajustee: 0.0013
+    ecart_types: 3.6
+    p: 0.0005
+    p_ajustee: 0.0014
     retenu: true
     tirages: 10000
     lecture: Nombre de fois où deux sorties consécutives viennent du même bandeau de départ. Un observé
@@ -18141,12 +18136,12 @@ modeles:
     question: Celui qui a gagné la dernière immunité la regagne-t-il plus souvent que sa force ne l'explique
       ?
     origine: tenant_du_titre
-    observe: 12.158
-    attendu: 9.33
+    observe: 12.063
+    attendu: 8.89
     unite: ' points'
-    ecart_types: 0.64
-    p: 0.5341
-    p_ajustee: 0.5903
+    ecart_types: 0.72
+    p: 0.4704
+    p_ajustee: 0.534
     retenu: false
     tirages: 4000
     lecture: 'Écart entre gagner l''immunité quand on l''a gagnée la fois d''avant et la gagner quand
@@ -18158,12 +18153,12 @@ modeles:
     libelle: L'âge de l'éliminé, avant et après la fusion
     question: Élimine-t-on le plus âgé avant la réunification, et plus après ?
     origine: age_au_conseil
-    observe: 2.051
-    attendu: 0.024
+    observe: 2.007
+    attendu: -0.009
     unite: ' ans'
-    ecart_types: 1.95
-    p: 0.05
-    p_ajustee: 0.0875
+    ecart_types: 1.93
+    p: 0.054
+    p_ajustee: 0.0945
     retenu: false
     tirages: 10000
     lecture: 'Écart d''âge de l''éliminé à la moyenne de son camp, avant la réunification moins après.
