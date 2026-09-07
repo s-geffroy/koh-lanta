@@ -502,7 +502,13 @@ def main():
             if nom not in alias:
                 continue
             parcours = f"{alias[nom]}.{suite.rstrip('.')}"
-            parcours = re.sub(r"\.(first|last|size)$", "", parcours)
+            # `first`, `last` et `size` ne sont pas des cles de donnees : ce
+            # sont des acces de Liquid, et ils peuvent tomber AU MILIEU d'un
+            # chemin -- `depouillement.first.part` designe la premiere ligne
+            # d'une liste, puis son champ. Les retirer seulement en fin de
+            # chemin faisait echouer un chemin parfaitement valide.
+            parcours = ".".join(x for x in parcours.split(".")
+                                if x not in ("first", "last", "size"))
             ok, _ = resoudre(donnees, parcours)
             if not ok:
                 c.erreur(f"{rel} : {nom}.{suite} → site.data.{parcours} n'existe pas")

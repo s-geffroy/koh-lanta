@@ -12,6 +12,13 @@ chapeau: >-
 Chaque page de ce site dit ce qui lui manque. Aucune ne le montrait d’un coup
 d’œil. Voici la grille complète.
 
+<p class="note">Cette grille n’est pas qu’un inventaire : elle explique
+pourquoi certains aventuriers sont mieux mesurés que d’autres. Le
+<a href="{{ '/statistiques/top/' | relative_url }}">classement des joueurs</a>
+en dépend directement — deux de ses quatre facettes ne se lisent que sur un
+conseil dépouillé, et il publie le décompte période par période plutôt que de
+faire comme si la couverture était uniforme.</p>
+
 <ul class="chiffres">
   <li class="chiffre"><b>{{ c.moyenne }} %</b><span>de complétude, toutes cases confondues</span></li>
   <li class="chiffre"><b>{{ c.saisons }}</b><span>éditions en ligne</span></li>
@@ -121,7 +128,19 @@ moitié des conseils n’annonce même pas combien de voix ont été exprimées,
 bien que leur complétude n’est pas vérifiable. C’est la colonne la plus basse de
 la grille, et c’est aussi celle dont dépendent les résultats les plus forts du
 site — [les alliances]({{ '/statistiques/alliances/' | relative_url }}),
-[qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }}).
+[qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }}) et
+[le classement des joueurs]({{ '/statistiques/top/' | relative_url }}).
+
+{% assign dep = site.data.stats.classement.biais_epoque.depouillement %}
+{% assign parts_dep = dep | map: "part" | sort %}
+
+<p class="note"><strong>Et cette colonne s’effondre avec le temps</strong>, ce
+qu’une moyenne ne montre pas : de <b>{{ dep.first.part }} %</b> de conseils
+dépouillés sur {{ dep.first.periode }} à <b>{{ parts_dep.first }} %</b> au plus
+bas. Les aventuriers des saisons récentes sont donc, sur tout ce qui se lit au
+bulletin, ramenés à la moyenne faute d’observations — ce n’est pas un jugement
+sur leur niveau, c’est ce trou-ci. Le classement mesure de combien il déplace
+son propre résultat, et le publie.</p>
 
 ## Comment lire une ligne
 
