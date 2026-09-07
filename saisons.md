@@ -20,6 +20,15 @@ type de donnée par type de donnée, tient dans un seul tableau :
 <a href="{{ '/completude/' | relative_url }}">La complétude, édition par
 édition</a>.</p>
 
+<p class="note">Cette page regarde les saisons ; le
+<a href="{{ '/statistiques/top/' | relative_url }}">classement des joueurs</a>
+regarde les gens qui les ont jouées, et il porte aussi la liste des
+<strong>meilleures saisons jamais jouées</strong> — une participation à la
+fois, sur quatre facettes. Le premier du programme n’y est pas un vainqueur :
+c’est <b>{{ site.data.stats.classement.top_saisons[0].aventurier }}</b> à
+<i>{{ site.data.stats.classement.top_saisons[0].saison }}</i>
+({{ site.data.stats.classement.top_saisons[0].sort | downcase }}).</p>
+
 ## Les éditions classiques
 
 <ul class="saison-grille">
@@ -119,6 +128,14 @@ tout raflé.</p>
 Le **Viêtnam (2010)** détient le record des saisons classiques : Claude Dartois
 y remporte sept épreuves individuelles à lui seul. À l’opposé, **Fidji (2017)**
 est la saison la plus partagée du programme.
+
+<p class="note">Ce que cette figure mesure est la <em>concentration</em> dans
+une saison, pas la force d’un aventurier. Rapportées à ce que chacun a
+réellement disputé, les victoires donnent un autre classement — celui de la
+facette « épreuves » du
+<a href="{{ '/statistiques/top/' | relative_url }}">top des joueurs</a>, où
+Claude Dartois est premier sur l’ensemble de sa carrière, et non sur une seule
+saison.</p>
 
 ### Le camp vote-t-il d’un bloc ?
 
