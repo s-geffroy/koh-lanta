@@ -21,9 +21,10 @@ deja constituees.
 """
 import re
 import sys
+from collections import Counter
 
-from parse_fandom import (plain, slug, extract_table, indices_de_tribu,
-                          COULEURS_HEX)
+from parse_fandom import (plain, slug, extract_table, extract_tables,
+                          indices_de_tribu, COULEURS_HEX)
 from parse_votes import developper, texte
 
 # Ce qui n'est pas un vainqueur : pas d'epreuve, epreuve annulee, cellule vide.
@@ -128,6 +129,22 @@ def _colonne_episode(grille, i_entete):
     return None
 
 
+def _colonne_date(grille, i_entete):
+    """La colonne de diffusion, quand aucune colonne ne numerote les episodes.
+
+    Les tableaux « Challenges » de Wikipedia en anglais n'ont pas de colonne
+    d'episode : ils ont une DATE DE DIFFUSION, et une ligne par elimination.
+    Numeroter les lignes y fabrique donc autant d'« episodes » que de sorties
+    -- vingt-et-un pour le Cambodge, qui en compte quatorze. La date, elle, est
+    recopiee par le `rowspan` sur toutes les lignes d'un meme soir : compter
+    les dates DISTINCTES rend le vrai numero d'episode, sans rien deviner.
+    """
+    for col, cell in enumerate(grille[i_entete]):
+        if re.search(r"air\s*date|diffusion|^date$", texte(cell), re.I):
+            return col
+    return None
+
+
 def parse_tableau(table, saison_id, forme_source, couleurs_admises=None):
     grille = developper(table)
     if not grille:
@@ -136,6 +153,8 @@ def parse_tableau(table, saison_id, forme_source, couleurs_admises=None):
     if not roles:
         return []
     col_episode = _colonne_episode(grille, i_entete)
+    col_date = _colonne_date(grille, i_entete) if col_episode is None else None
+    dates_vues = []
 
     epreuves = []
     numero_implicite = 0
@@ -162,6 +181,12 @@ def parse_tableau(table, saison_id, forme_source, couleurs_admises=None):
             m = re.search(r"(\d{1,2})", texte(rang[col_episode]))
             if m:
                 episode = int(m.group(1))
+        if episode is None and col_date is not None and col_date < len(rang):
+            jour = texte(rang[col_date])
+            if jour:
+                if not dates_vues or dates_vues[-1] != jour:
+                    dates_vues.append(jour)
+                episode = len(dates_vues)
         if episode is None:
             numero_implicite += 1
             episode = numero_implicite
@@ -188,7 +213,28 @@ def parse_tableau(table, saison_id, forme_source, couleurs_admises=None):
                 "couleur": couleur_de(cellule),
                 "source": forme_source,
             })
-    return epreuves
+    return epreuves if not _est_un_classement(epreuves) else []
+
+
+def _est_un_classement(epreuves):
+    """Un tableau de classement n'a pas de vainqueur : il a un ordre d'arrivee.
+
+    Les saisons a quatre equipes en publient un, juste avant le vrai bilan :
+    « Confort » y chapeaute quatre colonnes, une par tribu, dans l'ordre ou
+    elles ont fini. Lu comme un tableau de resultats, il fabrique quatre
+    victoires par epreuve -- trente-deux fausses lignes pour la seule Revanche
+    des 4 Terres, dont le bon tableau se trouve juste en dessous.
+
+    Un `colspan` sur un en-tete legitime produit lui aussi plusieurs colonnes
+    pour un role, mais les cellules dessous sont IDENTIQUES et la signature les
+    a deja fondues. Ce qui distingue le classement, c'est donc le nombre de
+    vainqueurs DIFFERENTS pour un meme role au meme episode.
+    """
+    groupes = Counter((e["episode"], e["type"]) for e in epreuves)
+    if len(groupes) < 2:
+        return False
+    charges = sum(1 for n in groupes.values() if n >= 3)
+    return charges >= len(groupes) / 2
 
 
 # Le meme tableau se range sous des titres differents selon les pages. L'ordre
@@ -204,13 +250,21 @@ TITRES = [
 
 
 def parse_page(wikitexte, saison_id=None, couleurs_admises=None):
+    """Le bilan des epreuves d'une page, quel que soit le titre qui le porte.
+
+    Chaque section peut contenir plusieurs tableaux : on les lit tous et on
+    garde le plus fourni de ceux qui ont la bonne forme. `parse_tableau`
+    ecarte de lui-meme les tableaux de classement, qui n'ont pas de vainqueur
+    unique -- sans quoi le plus fourni serait justement le mauvais.
+    """
     for motif, etiquette in TITRES:
-        table = extract_table(wikitexte, titre=motif)
-        if table is None:
-            continue
-        lot = parse_tableau(table, saison_id, etiquette, couleurs_admises)
-        if lot:
-            return lot
+        meilleur = []
+        for table in extract_tables(wikitexte, titre=motif):
+            lot = parse_tableau(table, saison_id, etiquette, couleurs_admises)
+            if len(lot) > len(meilleur):
+                meilleur = lot
+        if meilleur:
+            return meilleur
     return []
 
 

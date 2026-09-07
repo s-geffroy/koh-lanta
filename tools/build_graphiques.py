@@ -86,6 +86,76 @@ def figure_peigne():
     return len(traits), mediane, max(jours)
 
 
+def figures_du_classement(stats):
+    """Les quatre figures du top : ce qu'il dit, et ce qu'il ne dit pas.
+
+    L'ordre compte. On montre d'abord de combien le classement bouge quand on
+    change les poids, ENSUITE le meme classement fabrique par le hasard, et
+    seulement apres ce qui le rend defendable. Un top qu'on n'aurait pas mis a
+    l'epreuve d'abord se lirait comme un palmares.
+    """
+    cl = stats.get("classement") or {}
+    if not cl:
+        return
+
+    # 1. l'etendue des rangs selon la ponderation
+    ecrire("top-rangs.svg", halteres(
+        [{"libelle": f'{l["rang"]}. {l["nom"]}',
+          "min": l["rang_p05"], "median": l["rang_median"], "max": l["rang_p95"],
+          "couleur": SERIES[0] if l["part_top"] >= 99 else SERIES[4]}
+         for l in cl["top"]],
+        titre="Le même joueur, selon ce qu’on décide d’appeler « bon »",
+        description=f'Rang obtenu sous {cl["robustesse"]["tirages"]:,} pondérations '
+                    f'tirées au hasard : intervalle central (5 % – 95 %) et rang '
+                    f'médian.'.replace(",", " "),
+        legende=[(f'dans le top {cl["taille"]} sous plus de 99 % des poids',
+                  SERIES[0]),
+                 ("moins souvent", SERIES[4])],
+        marge_gauche=230, hauteur_ligne=22, largeur=920))
+
+    # 2. le meme classement, fabrique par le hasard
+    h = cl["hasard"]
+    ecrire("top-hasard.svg", courbes(
+        [{"nom": "classement réel", "valeurs": h["courbe_reelle"]},
+         {"nom": "classement tiré au sort", "valeurs": h["courbe_hasard"]}],
+        [str(i) for i in range(1, len(h["courbe_reelle"]) + 1)],
+        titre="Un top fabriqué par le hasard a la même allure",
+        description="Score du 1er au dernier du top, pour le classement réel et "
+                    "pour un classement où chacun garde ses occasions mais reçoit "
+                    "ses résultats au hasard.",
+        largeur=880, hauteur=340))
+
+    # 3. les facettes se parlent-elles ?
+    ecrire("top-correlations.svg", barres_horizontales(
+        [{"libelle": f'{c["libelle_a"]} · {c["libelle_b"]}'.replace("Le ", "")
+                     .replace("La ", "").replace("Les ", ""),
+          "valeur": round(100 * c["rho"], 1),
+          # Les quatre paires qui touchent aux epreuves sont teintees a part :
+          # c'est le resultat de la figure, et il se voit mieux qu'il ne se
+          # deduit d'une moyenne.
+          "couleur": SERIES[4] if "epreuves" in (c["a"], c["b"]) else SERIES[2],
+          "detail": f'ρ = {c["rho"]} entre {c["libelle_a"].lower()} et '
+                    f'{c["libelle_b"].lower()}'}
+         for c in cl["correlations"]],
+        titre="Les cinq facettes décrivent-elles le même talent ?",
+        description="Corrélation de rang entre chaque paire de facettes, sur les "
+                    f'{cl["joueurs_classes"]} joueurs classés. Zéro : deux qualités '
+                    "sans rapport. En clair, les paires qui font intervenir les "
+                    "épreuves.",
+        unite=" %", marge_gauche=260, largeur=760))
+
+    # 4. le test de stabilite, avec sa distribution nulle
+    test = next((t for t in (stats.get("modeles") or {}).get("registre") or []
+                 if t["cle"] == "talent_stable"), None)
+    if test:
+        ecrire("top-stabilite.svg", distribution_nulle(
+            test,
+            titre="Un bon joueur l’est-il encore la fois suivante ?",
+            description="Corrélation entre le score de la première participation "
+                        "et celui des suivantes, face à ce que donne un "
+                        "appariement au hasard."))
+
+
 def main():
     stats = yaml.safe_load(open(os.path.join(RACINE, "_data", "stats.yml"), encoding="utf-8"))
     print("figures ecrites :")
@@ -100,6 +170,8 @@ def main():
     figure_prenoms()
     figure_nuage()
     figures_des_modeles(stats)
+
+    figures_du_classement(stats)
 
     # --- vainqueurs -------------------------------------------------------
     v = stats["vainqueurs"]

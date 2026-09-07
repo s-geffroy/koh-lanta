@@ -329,16 +329,21 @@ def controler_accents(c):
         def parcourir(noeud, chemin_lisible):
             if isinstance(noeud, dict):
                 for cle, valeur in noeud.items():
-                    if cle in ("libelle", "question", "lecture", "modalite") \
+                    if cle in ("libelle", "question", "lecture", "modalite",
+                               "mesure", "denominateur") \
                             and isinstance(valeur, str):
-                        examiner(f"modeles.{chemin_lisible}.{cle}", valeur)
+                        examiner(f"{chemin_lisible}.{cle}", valeur)
                     elif isinstance(valeur, (dict, list)):
                         parcourir(valeur, f"{chemin_lisible}.{cle}")
             elif isinstance(noeud, list):
                 for valeur in noeud:
                     parcourir(valeur, chemin_lisible)
 
-        parcourir(stats.get("modeles") or {}, "")
+        parcourir(stats.get("modeles") or {}, "modeles")
+        # Le classement des joueurs publie lui aussi des libelles -- le nom
+        # d'une facette, la question qu'elle pose, la mesure qui la fonde.
+        # C'est du contenu, au meme titre que celui des modeles.
+        parcourir(stats.get("classement") or {}, "classement")
 
     for origine, mots in fautes:
         c.avertir(f"{origine} : texte publie sans accents — {', '.join(mots)}")

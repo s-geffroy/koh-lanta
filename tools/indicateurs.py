@@ -180,6 +180,15 @@ def indicateurs_individuels(saisons, parts, conseils, epreuves):
         if ep_sortie:
             disputees = sum(1 for e in individuelles.get(sid, [])
                             if e["episode"] <= ep_sortie)
+            # L'episode de sortie vient de la matrice des votes, dont le
+            # dernier conseil numerote PRECEDE d'un episode ou deux les
+            # epreuves de la finale : celui qui sort aux poteaux ou a
+            # l'orientation a donc dispute des epreuves posterieures a la
+            # colonne qui l'elimine. Treize victoires tombaient ainsi hors de
+            # leur propre denominateur, dont deux de Claude Dartois. La regle
+            # de rattrapage ne devine rien : si l'on sait qu'il l'a GAGNEE,
+            # c'est qu'il l'a disputee.
+            disputees = max(disputees, gagnees[(sid, pid)])
 
         def taux(num, den, seuil=1):
             return round(100.0 * num / den, 1) if den and den >= seuil else None

@@ -353,6 +353,42 @@ def parse_row(row, saison_id=None):
         "votes_recus": votes,
     }
 
+def extract_tables(text, titre=r"Candidats?"):
+    """Tous les tableaux de la section demandee, dans l'ordre de la page.
+
+    Une section en porte souvent plusieurs : un encart deroulant avant le vrai
+    tableau, une annexe apres. S'arreter au premier fait lire l'encart et
+    ignorer la donnee -- c'est ce qui arrivait au bilan des epreuves de la
+    Revanche des 4 Terres.
+    """
+    m = re.search(r"^==+\s*" + titre + r"\s*(?:\[[^\]]*\])?\s*==+\s*$",
+                  text, re.M | re.I)
+    if not m:
+        return []
+    reste = text[m.end():]
+    fin = re.search(r"^==[^=]", reste, re.M)
+    section = reste[:fin.start()] if fin else reste
+    lignes = section.split("\n")
+    tables, i = [], 0
+    while i < len(lignes):
+        if not lignes[i].lstrip().startswith("{|"):
+            i += 1
+            continue
+        prof, fin_i = 0, len(lignes)
+        for j in range(i, len(lignes)):
+            nu = lignes[j].lstrip()
+            if nu.startswith("{|"):
+                prof += 1
+            elif nu.startswith("|}"):
+                prof -= 1
+                if prof == 0:
+                    fin_i = j
+                    break
+        tables.append("\n".join(lignes[i:fin_i]))
+        i = fin_i + 1
+    return tables
+
+
 def extract_table(text, titre=r"Candidats?"):
     """Isole le premier tableau de la section demandee."""
     # Certaines pages portent du texte d'interface colle au titre

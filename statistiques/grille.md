@@ -31,32 +31,58 @@ réunification. {{ f.saisons }} saisons classiques s’y prêtent.</p>
 <p class="legende-figure">Chaque saison figure deux fois : par l’épisode où la
 fusion tombe, et par le nombre de joueurs qu’elle laisse en jeu.</p>
 
+{% assign croissance = f.casting_max | minus: f.casting_min %}
+
 <div class="constat">
-  <p>Quand le casting gagne un membre, l’épisode de la fusion bouge de
+  <p>Quand le casting gagne un membre, l’épisode de la fusion recule de
   <b>{{ f.pente_episode.pente }}</b> — intervalle
   {{ f.pente_episode.bas }} à {{ f.pente_episode.haut }}, p =
-  {{ f.pente_episode.p }}. Autrement dit : <b>il ne bouge pas</b>. La médiane
-  est l’épisode {{ f.episode_median }}, de 2001 à 2026.</p>
+  {{ f.pente_episode.p }}. Sur toute la croissance observée, de
+  {{ f.casting_min }} à {{ f.casting_max }} personnes, cela fait
+  <b>{{ croissance | times: f.pente_episode.pente | round: 1 }} épisode</b>.
+  La médiane reste l’épisode {{ f.episode_median }}, de 2001 à 2026.</p>
   <p>Le nombre de joueurs restants, lui, bouge de
   <b>{{ f.pente_restants.pente }}</b> ({{ f.pente_restants.bas }} à
-  {{ f.pente_restants.haut }}) — presque un pour un.</p>
-  <p>La réunification est donc calée sur la <b>grille de diffusion</b>, pas sur
-  l’état du jeu. Les castings ont grossi de huit personnes ; la fusion est
-  restée à l’épisode {{ f.episode_median }}, et le plateau réuni est passé d’une
-  dizaine de joueurs à une quinzaine.</p>
+  {{ f.pente_restants.haut }}) — soit
+  <b>{{ croissance | times: f.pente_restants.pente | round: 1 }} joueurs</b> de
+  plus sur la même croissance, cinq fois davantage.</p>
+  <p>La réunification suit donc la <b>grille de diffusion</b> bien plus que
+  l’état du jeu. Les castings ont grossi de {{ croissance }} personnes ; la
+  fusion a reculé de moins d’un épisode, et le plateau réuni est passé d’une
+  dizaine de joueurs à une quinzaine. C’est le programme qui décide, et le jeu
+  qui s’adapte — mais pas tout à fait sans concession.</p>
 </div>
+
+<p class="note"><strong>Cette page disait « il ne bouge pas », et il faut dire
+pourquoi elle ne le dit plus.</strong> La pente valait 0,008 avec un intervalle
+de −0,135 à 0,152 : rien. Deux saisons ont changé depuis, et pour la même
+raison — <a href="{{ '/sources/' | relative_url }}">une réparation du relevé des
+épreuves</a>. <i>Cambodge</i> était <em>écartée</em> du calcul, son dernier
+collectif tombant à un épisode qui ne laissait que quatre joueurs ; c’était un
+défaut de numérotation, et la saison rentre aujourd’hui dans le rang.
+<i>La Revanche des 4 Terres</i> plaçait sa fusion à l’épisode 4 sur 17 — un
+chiffre lu dans un tableau de classement des quatre tribus pris pour un tableau
+de résultats ; elle la place désormais à l’épisode 8. Deux corrections, et une
+conclusion qui bascule : c’est aussi ce que vaut un résultat tenu par
+{{ f.saisons }} saisons. L’intervalle exclut zéro de peu, et il faut le lire
+comme tel.</p>
 
 Cela se voit indirectement ailleurs sur ce site. Les
 [petits multiples]({{ '/saisons/' | relative_url }}) montrent des courbes de
-survie « remarquablement stables » : elles le sont parce que le calendrier, lui,
-n’a pas bougé.
+survie « remarquablement stables » : le calendrier n’a presque pas bougé, et
+c’est ce « presque » que la pente ci-dessus mesure.
 
-{% if f.ecartees %}
+{% if f.ecartees.size > 0 %}
 <p class="note">{{ f.ecartees | size }} saison est écartée du calcul :
 {% for x in f.ecartees %}<b>{{ x.titre }}</b> porte une immunité collective à
 l’épisode {{ x.episode }}, qui ne laisserait que {{ x.restants }} joueurs — ce
 n’est pas une réunification mais une épreuve par équipes d’après-fusion. Le
 repère y échoue, et on le dit plutôt que de le corriger à la main.{% endfor %}</p>
+{% else %}
+<p class="note">Aucune saison n’est écartée du calcul : le repère — dernier
+épisode à immunité collective — trouve une réunification plausible sur les
+{{ f.saisons }} saisons classiques qui s’y prêtent. Ce n’était pas le cas
+auparavant, et c’est la même réparation qui l’a permis.</p>
 {% endif %}
 
 ## Le jeu a changé — mais la date ne se laisse pas fixer

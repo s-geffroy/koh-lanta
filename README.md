@@ -142,6 +142,13 @@ La deuxieme passe n'est pas une precaution : `fusionner` rend son nom de famille
 a un prenom nu, et la page individuelle de cette personne n'est demandee qu'une
 fois ce nom connu.
 
+L'ordre `construire_conseils` puis `construire_epreuves` n'est pas cosmetique
+non plus. Deux pages peuvent decrire les memes epreuves avec deux numerotations
+d'episodes -- Wikipedia en anglais en compte dix-sept au Totem maudit la ou le
+tableau des votes en compte quatorze. `construire_epreuves` lit donc
+`conseils.yml` pour choisir la source qui s'accorde avec lui : sans cela,
+« l'epreuve a-t-elle eu lieu avant sa sortie ? » n'a plus de reponse juste.
+
 Il ne construit PAS le site : GitHub Pages s'en charge. Consequence assumee, le
 rendu ne peut pas etre essaye ici ; il se decouvre en ligne.
 

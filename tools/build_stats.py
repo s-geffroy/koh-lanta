@@ -26,6 +26,7 @@ sys.path.insert(0, os.path.join(RACINE, "tools", "extraction"))
 from csp import classer, libelles           # noqa: E402
 import analyses
 import modeles                              # noqa: E402
+import classement                           # noqa: E402
 sys.path.insert(0, os.path.join(RACINE, "tools"))
 from indicateurs import (eliminations, votes_du_jury,  # noqa: E402
                          indicateurs_individuels, indicateurs_saison,  # noqa: E402
@@ -1418,13 +1419,19 @@ def main():
         "palmares": bloc_palmares(parts, epreuves, par_saison),
     }
 
+    # Le classement des joueurs vient AVANT les modeles : son test de
+    # stabilite entre dans le meme registre corrige, et un test qu'on
+    # n'ajoute qu'apres avoir vu la correction n'est plus un test.
+    stats["classement"] = classement.tout(saisons, parts, conseils, epreuves)
+
     # Les modeles viennent en dernier : ils s'appuient sur les indicateurs de
     # saison calcules juste au-dessus, et ce sont les seuls calculs du fichier
     # a reposer sur un tirage. Leur graine est fixe (modeles.GRAINE) et
     # `tools/verifie_site.py` refuse tout tirage qui n'en derive pas.
     stats["modeles"] = modeles.tout(
         par_saison, parts, conseils, epreuves,
-        (stats["indicateurs"] or {}).get("saisons") or [])
+        (stats["indicateurs"] or {}).get("saisons") or [],
+        tests_externes=(stats["classement"] or {}).pop("tests", []))
 
     stats["completude_saisons"] = bloc_completude_saisons(
         saisons, parts, conseils, epreuves, colliers, stats["modeles"], finale)
@@ -1469,6 +1476,13 @@ def main():
     if ind:
         print(f"  indicateurs : {ind['mesurables']} participations mesurables, "
               f"{ind['nb_fantomes']} fantomes")
+    cl = stats.get("classement") or {}
+    if cl:
+        print(f"  classement : {cl['joueurs_classes']} joueurs, "
+              f"{cl['participations_classees']} participations ; "
+              f"{cl['robustesse']['candidats']} entrent dans le top "
+              f"{cl['taille']} selon les poids, {cl['robustesse']['socle']} y "
+              f"sont sous plus de 99 % des ponderations")
     e = stats.get("epreuves") or {}
     if e:
         print(f"  epreuves : {e['epreuves']} sur {e['saisons_couvertes']} saisons, "

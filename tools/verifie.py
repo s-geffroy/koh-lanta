@@ -339,6 +339,49 @@ def verifier_epreuves(epreuves, saisons, parts, c):
                   f"{diffusees} : {', '.join(absentes)}")
 
 
+def constater_epreuves_apres_la_sortie(conseils, epreuves, parts, c):
+    """Une victoire posterieure a la colonne qui elimine son vainqueur.
+
+    Ce n'est pas une incoherence de la source : l'episode de sortie se lit
+    dans la matrice des votes, dont le dernier conseil NUMEROTE precede d'un
+    episode ou deux les epreuves de la finale. Celui qui sort aux poteaux ou a
+    l'orientation dispute donc des epreuves apres la colonne qui l'elimine.
+
+    C'est rattrape la ou il faut -- `indicateurs.py` prend pour denominateur au
+    moins le nombre d'epreuves gagnees -- mais le fait merite d'etre compte :
+    sans lui, treize victoires tombaient hors de leur propre denominateur.
+    """
+    sortie = {}
+    finissent = {(p["saison"], p["id"]) for p in parts
+                 if p.get("sort") in ("vainqueur", "finaliste")}
+    for x in conseils:
+        if x.get("type") == "jury" or not x.get("elimine_rattache"):
+            continue
+        if (x["saison"], x["elimine"]) in finissent:
+            continue
+        try:
+            sortie[(x["saison"], x["elimine"])] = int(x["episode"])
+        except (TypeError, ValueError, KeyError):
+            pass
+    tardives = []
+    for e in epreuves:
+        try:
+            ep = int(e["episode"])
+        except (TypeError, ValueError, KeyError):
+            continue
+        for v in e.get("vainqueurs") or []:
+            if v.get("type") != "personne" or not v.get("id"):
+                continue
+            depart = sortie.get((e["saison"], v["id"]))
+            if depart is not None and ep > depart:
+                tardives.append(f"{e['saison']} ep.{ep} {v['id']}")
+    if tardives:
+        c.constater(f"{len(tardives)} victoire(s) d'epreuve posterieure(s) a la "
+                    f"colonne d'elimination de leur vainqueur — sortie aux "
+                    f"poteaux ou a l'orientation, denominateur rattrape "
+                    f"({', '.join(tardives[:4])}...)")
+
+
 def verifier_immunite_individuelle(conseils, epreuves, c):
     """L'immunise du soir ne peut pas etre l'elimine du soir.
 
@@ -739,6 +782,8 @@ def main():
         verifier_epreuves(epreuves, saisons, parts, c)
     if epreuves and conseils:
         verifier_immunite_individuelle(conseils, epreuves, c)
+    if epreuves and conseils and parts:
+        constater_epreuves_apres_la_sortie(conseils, epreuves, parts, c)
     if saisons and parts and conseils:
         verifier_conseils(conseils, saisons, parts, c)
         verifier_matrices_de_votes(conseils, c)

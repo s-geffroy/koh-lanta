@@ -7406,11 +7406,11 @@ voix_pour_eliminer:
     part: 0.3
 premiere_epreuve:
   effectif: 32
-  survie_gagnants: 71.9
+  survie_gagnants: 73.7
   survie_ensemble: 61.4
-  saisons_couvertes: 28
+  saisons_couvertes: 29
 epreuves:
-  epreuves: 766
+  epreuves: 749
   saisons_couvertes: 29
   saisons_sans_donnee:
   - s03
@@ -7418,13 +7418,13 @@ epreuves:
   - s12
   - s14
   - sp2
-  collectives: 398
-  individuelles: 368
-  immunites: 392
-  conforts: 374
+  collectives: 374
+  individuelles: 375
+  immunites: 383
+  conforts: 366
   seuil_classement: 8
-  classement_effectif: 153
-  ratio_moyen: 19.9
+  classement_effectif: 158
+  ratio_moyen: 20.0
   classement_ratio:
   - personne: Jean Belmonte
     id: jean-belmonte
@@ -7456,21 +7456,6 @@ epreuves:
     genre: h
     age: 30
     csp: transport
-  - personne: Louana Roy
-    id: louana-roy
-    saison: s23
-    titre: Le Totem maudit
-    annee: 2022
-    speciale: false
-    gagnees: 4
-    immunites: 2
-    conforts: 2
-    disputees: 8
-    ratio: 50.0
-    sort: elimine_conseil
-    genre: f
-    age: 28
-    csp: commerce
   - personne: Laurent Maistret
     id: laurent-maistret
     saison: sp4
@@ -7531,6 +7516,36 @@ epreuves:
     genre: h
     age: 39
     csp: transport
+  - personne: Claire Pradayrol
+    id: claire-pradayrol
+    saison: s17
+    titre: Cambodge
+    annee: 2017
+    speciale: false
+    gagnees: 4
+    immunites: 2
+    conforts: 2
+    disputees: 9
+    ratio: 44.4
+    sort: elimine_conseil
+    genre: f
+    age: 38
+    csp: sport
+  - personne: Louana Roy
+    id: louana-roy
+    saison: s23
+    titre: Le Totem maudit
+    annee: 2022
+    speciale: false
+    gagnees: 4
+    immunites: 2
+    conforts: 2
+    disputees: 9
+    ratio: 44.4
+    sort: elimine_conseil
+    genre: f
+    age: 28
+    csp: commerce
   - personne: Maxime Berthon
     id: maxime-berthon
     saison: s20
@@ -7576,6 +7591,21 @@ epreuves:
     genre: f
     age: 23
     csp: etudiant
+  - personne: François Descamp
+    id: francois-descamp
+    saison: s23
+    titre: Le Totem maudit
+    annee: 2022
+    speciale: false
+    gagnees: 5
+    immunites: 2
+    conforts: 3
+    disputees: 13
+    ratio: 38.5
+    sort: vainqueur
+    genre: h
+    age: 38
+    csp: action_securite
   - personne: Mohamed Derradji
     id: mohamed-derradji
     saison: s05
@@ -7591,21 +7621,21 @@ epreuves:
     genre: h
     age: 24
     csp: transport
-  - personne: François Descamp
-    id: francois-descamp
-    saison: s23
-    titre: Le Totem maudit
-    annee: 2022
+  - personne: Sébastien Gottiniaux
+    id: sebastien-gottiniaux
+    saison: s17
+    titre: Cambodge
+    annee: 2017
     speciale: false
-    gagnees: 6
-    immunites: 3
-    conforts: 3
-    disputees: 17
-    ratio: 35.3
-    sort: vainqueur
+    gagnees: 4
+    immunites: 2
+    conforts: 2
+    disputees: 11
+    ratio: 36.4
+    sort: elimine_conseil
     genre: h
-    age: 38
-    csp: action_securite
+    age: 35
+    csp: sport
   - personne: Jade Handi
     id: jade-handi
     saison: s07
@@ -7621,36 +7651,6 @@ epreuves:
     genre: f
     age: 24
     csp: encadrement
-  - personne: Romuald Lafite
-    id: romuald-lafite
-    saison: s04
-    titre: Panama
-    annee: 2004
-    speciale: false
-    gagnees: 5
-    immunites: 3
-    conforts: 2
-    disputees: 15
-    ratio: 33.3
-    sort: elimine_conseil
-    genre: h
-    age: 26
-    csp: sport
-  - personne: Naoil Tita
-    id: naoil-tita
-    saison: sp6
-    titre: L'Île des héros
-    annee: 2020
-    speciale: true
-    gagnees: 5
-    immunites: 3
-    conforts: 2
-    disputees: 15
-    ratio: 33.3
-    sort: vainqueur
-    genre: f
-    age: 37
-    csp: sport
   meilleurs_cumuls:
   - personne: Claude Dartois
     id: claude-dartois
@@ -7682,9 +7682,6 @@ epreuves:
   - personne: Maxime Berthon
     id: maxime-berthon
     victoires: 6
-  - personne: François Descamp
-    id: francois-descamp
-    victoires: 6
   - personne: Ugo Lartiche
     id: ugo-lartiche
     victoires: 6
@@ -7697,22 +7694,25 @@ epreuves:
   - personne: Martin Bazin
     id: martin-bazin
     victoires: 5
+  - personne: Pascal Salviani
+    id: pascal-salviani
+    victoires: 5
   par_metier:
-  - code: sport
-    libelle: Sport et coaching
-    victoires: 60
-    aventuriers: 49
-    victoires_par_aventurier: 1.22
   - code: encadrement
     libelle: Encadrement et professions intellectuelles
-    victoires: 54
+    victoires: 58
     aventuriers: 100
-    victoires_par_aventurier: 0.54
+    victoires_par_aventurier: 0.58
+  - code: sport
+    libelle: Sport et coaching
+    victoires: 53
+    aventuriers: 49
+    victoires_par_aventurier: 1.08
   - code: artisanat_btp
     libelle: Artisanat et bâtiment
-    victoires: 39
+    victoires: 42
     aventuriers: 43
-    victoires_par_aventurier: 0.91
+    victoires_par_aventurier: 0.98
   - code: arts_medias
     libelle: Arts, médias et image
     victoires: 38
@@ -7720,9 +7720,14 @@ epreuves:
     victoires_par_aventurier: 0.81
   - code: commerce
     libelle: Commerce et vente
-    victoires: 36
+    victoires: 34
     aventuriers: 64
-    victoires_par_aventurier: 0.56
+    victoires_par_aventurier: 0.53
+  - code: action_securite
+    libelle: Action et sécurité
+    victoires: 27
+    aventuriers: 29
+    victoires_par_aventurier: 0.93
   - code: agriculture
     libelle: Agriculture et nature
     victoires: 27
@@ -7733,11 +7738,11 @@ epreuves:
     victoires: 26
     aventuriers: 29
     victoires_par_aventurier: 0.9
-  - code: action_securite
-    libelle: Action et sécurité
-    victoires: 22
-    aventuriers: 29
-    victoires_par_aventurier: 0.76
+  - code: enseignement
+    libelle: Enseignement et éducation
+    victoires: 21
+    aventuriers: 30
+    victoires_par_aventurier: 0.7
   - code: restauration_hotellerie
     libelle: Restauration et hôtellerie
     victoires: 21
@@ -7748,11 +7753,6 @@ epreuves:
     victoires: 21
     aventuriers: 38
     victoires_par_aventurier: 0.55
-  - code: enseignement
-    libelle: Enseignement et éducation
-    victoires: 20
-    aventuriers: 30
-    victoires_par_aventurier: 0.67
   - code: sans_emploi
     libelle: Sans activité déclarée
     victoires: 13
@@ -7760,45 +7760,45 @@ epreuves:
     victoires_par_aventurier: 0.76
   - code: sante
     libelle: Santé
-    victoires: 8
+    victoires: 7
     aventuriers: 18
-    victoires_par_aventurier: 0.44
+    victoires_par_aventurier: 0.39
   par_genre:
   - genre: f
     libelle: Femmes
-    victoires: 147
+    victoires: 148
     aventuriers: 256
-    victoires_par_aventurier: 0.57
+    victoires_par_aventurier: 0.58
   - genre: h
     libelle: Hommes
-    victoires: 238
+    victoires: 240
     aventuriers: 255
-    victoires_par_aventurier: 0.93
+    victoires_par_aventurier: 0.94
   par_age:
   - tranche: 18-24 ans
-    victoires: 73
+    victoires: 76
     aventuriers: 101
-    victoires_par_aventurier: 0.72
+    victoires_par_aventurier: 0.75
   - tranche: 25-29 ans
-    victoires: 110
+    victoires: 109
     aventuriers: 108
-    victoires_par_aventurier: 1.02
+    victoires_par_aventurier: 1.01
   - tranche: 30-34 ans
-    victoires: 92
+    victoires: 90
     aventuriers: 86
-    victoires_par_aventurier: 1.07
+    victoires_par_aventurier: 1.05
   - tranche: 35-39 ans
     victoires: 45
     aventuriers: 86
     victoires_par_aventurier: 0.52
   - tranche: 40-44 ans
-    victoires: 36
+    victoires: 38
     aventuriers: 54
-    victoires_par_aventurier: 0.67
+    victoires_par_aventurier: 0.7
   - tranche: 45 ans et plus
-    victoires: 29
+    victoires: 30
     aventuriers: 76
-    victoires_par_aventurier: 0.38
+    victoires_par_aventurier: 0.39
 colliers:
   colliers: 74
   trouves: 62
@@ -9136,11 +9136,11 @@ indicateurs:
     conseils_complets: 8
     tension_conseils: 50.0
     dispersion_votes: 0.803
-    epreuves: 42
-    epreuves_individuelles: 14
-    domination_epreuves: 0.198
+    epreuves: 32
+    epreuves_individuelles: 11
+    domination_epreuves: 0.204
     meilleur_gagnant: sebastien-gottiniaux
-    victoires_du_meilleur: 5
+    victoires_du_meilleur: 4
     colliers: 0
     colliers_joues: 0
     voix_annulees: 0
@@ -9275,11 +9275,11 @@ indicateurs:
     conseils_complets: 0
     tension_conseils: 75.0
     dispersion_votes: null
-    epreuves: 32
-    epreuves_individuelles: 17
-    domination_epreuves: 0.127
+    epreuves: 26
+    epreuves_individuelles: 13
+    domination_epreuves: 0.17
     meilleur_gagnant: francois-descamp
-    victoires_du_meilleur: 6
+    victoires_du_meilleur: 5
     colliers: 0
     colliers_joues: 0
     voix_annulees: 0
@@ -9390,11 +9390,11 @@ indicateurs:
     conseils_complets: 6
     tension_conseils: 28.6
     dispersion_votes: 0.695
-    epreuves: 32
-    epreuves_individuelles: 0
-    domination_epreuves: null
-    meilleur_gagnant: null
-    victoires_du_meilleur: null
+    epreuves: 31
+    epreuves_individuelles: 14
+    domination_epreuves: 0.164
+    meilleur_gagnant: jerome-molas
+    victoires_du_meilleur: 4
     colliers: 12
     colliers_joues: 5
     voix_annulees: 19
@@ -9749,8 +9749,8 @@ completude:
 palmares:
   renseignees: 549
   compares: 472
-  identiques: 343
-  part_identiques: 72.7
+  identiques: 349
+  part_identiques: 73.9
   ecart_median: 1
   saisons_ajoutees:
   - saison: s03
@@ -9834,6 +9834,1677 @@ palmares:
     individuelles: 6
     collectives: 10
     saisons: 3
+classement:
+  taille: 25
+  taille_facette: 10
+  rangs_attestes: 568
+  rangs_deduits: 59
+  joueurs_classes: 531
+  participations_classees: 627
+  joueurs_classiques: 509
+  facettes:
+  - cle: parcours
+    libelle: Le parcours
+    mesure: Part du casting dépassée
+    question: Aller loin, et le refaire
+    denominateur: une participation
+    sens: haut
+    unite: ' %'
+    moyenne: 50.0
+    essais_fictifs: 200.0
+    documentes: 531
+    top:
+    - rang: 1
+      nom: Claude Dartois
+      id: claude-dartois
+      valeur: 50.9
+      brut: 3 / 4
+      preuve: 4
+      rang_general: 1
+    - rang: 2
+      nom: Laurent Maistret
+      id: laurent-maistret
+      valeur: 50.7
+      brut: 2 / 3
+      preuve: 3
+      rang_general: 9
+    - rang: 3
+      nom: Jade Handi
+      id: jade-handi
+      valeur: 50.6
+      brut: 2 / 3
+      preuve: 3
+      rang_general: 8
+    - rang: 4
+      nom: Ugo Lartiche
+      id: ugo-lartiche
+      valeur: 50.6
+      brut: 2 / 3
+      preuve: 3
+      rang_general: 45
+    - rang: 5
+      nom: Philippe Bizet
+      id: philippe-bizet
+      valeur: 50.5
+      brut: 2 / 3
+      preuve: 3
+      rang_general: 11
+    - rang: 6
+      nom: Pascal Salviani
+      id: pascal-salviani
+      valeur: 50.4
+      brut: 1 / 2
+      preuve: 2
+      rang_general: 3
+    - rang: 7
+      nom: Bertrand Bolle
+      id: bertrand-bolle
+      valeur: 50.4
+      brut: 1 / 2
+      preuve: 2
+      rang_general: 2
+    - rang: 8
+      nom: Moussa Niangane
+      id: moussa-niangane
+      valeur: 50.4
+      brut: 2 / 3
+      preuve: 3
+      rang_general: 151
+    - rang: 9
+      nom: Clémence Castel
+      id: clemence-castel
+      valeur: 50.4
+      brut: 2 / 4
+      preuve: 4
+      rang_general: 71
+    - rang: 10
+      nom: Romuald Lafite
+      id: romuald-lafite
+      valeur: 50.4
+      brut: 1 / 2
+      preuve: 2
+      rang_general: 5
+  - cle: epreuves
+    libelle: Les épreuves
+    mesure: Épreuves individuelles gagnées
+    question: Gagner les épreuves qui se courent seul
+    denominateur: les épreuves individuelles — confort et immunité — disputées avant sa sortie
+    sens: haut
+    unite: ' %'
+    moyenne: 14.1
+    essais_fictifs: 33.9
+    documentes: 359
+    top:
+    - rang: 1
+      nom: Claude Dartois
+      id: claude-dartois
+      valeur: 29.9
+      brut: 20 / 49
+      preuve: 49
+      rang_general: 1
+    - rang: 2
+      nom: Teheiura Teahui
+      id: teheiura-teahui
+      valeur: 26.6
+      brut: 17 / 48
+      preuve: 48
+      rang_general: 4
+    - rang: 3
+      nom: Bertrand Bolle
+      id: bertrand-bolle
+      valeur: 25.5
+      brut: 11 / 28
+      preuve: 28
+      rang_general: 2
+    - rang: 4
+      nom: Jean Belmonte
+      id: jean-belmonte
+      valeur: 22.8
+      brut: 5 / 9
+      preuve: 9
+      rang_general: 18
+    - rang: 5
+      nom: Nicolas Rouyé
+      id: nicolas-rouye
+      valeur: 21.8
+      brut: 5 / 11
+      preuve: 11
+      rang_general: 65
+    - rang: 6
+      nom: Louise Picavet
+      id: louise-picavet
+      valeur: 21.1
+      brut: 3 / 3
+      preuve: 3
+      rang_general: 35
+    - rang: 7
+      nom: François-David Cardonnel
+      id: francois-david-cardonnel
+      valeur: 21.1
+      brut: 7 / 22
+      preuve: 22
+      rang_general: 7
+    - rang: 8
+      nom: François Descamp
+      id: francois-descamp
+      valeur: 20.8
+      brut: 5 / 13
+      preuve: 13
+      rang_general: 26
+    - rang: 9
+      nom: Lola Besse
+      id: lola-besse
+      valeur: 20.8
+      brut: 5 / 13
+      preuve: 13
+      rang_general: 21
+    - rang: 10
+      nom: Maxime Berthon
+      id: maxime-berthon
+      valeur: 20.8
+      brut: 6 / 18
+      preuve: 18
+      rang_general: 114
+  - cle: discretion
+    libelle: La discrétion
+    mesure: Voix reçues
+    question: Traverser les conseils sans que personne n’écrive votre nom
+    denominateur: les conseils traversés
+    sens: bas
+    unite: ' voix par conseil'
+    moyenne: 0.62
+    essais_fictifs: 1.5
+    documentes: 517
+    top:
+    - rang: 1
+      nom: Loïc Riowal
+      id: loic-riowal
+      valeur: 0.03
+      brut: 0 / 32
+      preuve: 32
+      rang_general: 100
+    - rang: 2
+      nom: Yassin Metiri
+      id: yassin-metiri
+      valeur: 0.04
+      brut: 0 / 20
+      preuve: 20
+      rang_general: 150
+    - rang: 3
+      nom: Bruno Peisey
+      id: bruno-peisey
+      valeur: 0.05
+      brut: 0 / 17
+      preuve: 17
+      rang_general: 41
+    - rang: 4
+      nom: Steeve Demana
+      id: steeve-demana
+      valeur: 0.05
+      brut: 0 / 17
+      preuve: 17
+      rang_general: 140
+    - rang: 5
+      nom: Claire Passas
+      id: claire-passas
+      valeur: 0.05
+      brut: 0 / 16
+      preuve: 16
+      rang_general: 212
+    - rang: 6
+      nom: Sandrine Dubourdy
+      id: sandrine-dubourdy
+      valeur: 0.05
+      brut: 0 / 16
+      preuve: 16
+      rang_general: 131
+    - rang: 7
+      nom: Thibault Bélanger
+      id: thibault-belanger
+      valeur: 0.05
+      brut: 0 / 16
+      preuve: 16
+      rang_general: 160
+    - rang: 8
+      nom: Bastien San Pedro
+      id: bastien-san-pedro
+      valeur: 0.06
+      brut: 0 / 15
+      preuve: 15
+      rang_general: 40
+    - rang: 9
+      nom: François Descamp
+      id: francois-descamp
+      valeur: 0.06
+      brut: 0 / 15
+      preuve: 15
+      rang_general: 26
+    - rang: 10
+      nom: Gérard Urdampilleta
+      id: gerard-urdampilleta
+      valeur: 0.06
+      brut: 0 / 15
+      preuve: 15
+      rang_general: 76
+  - cle: resistance
+    libelle: La résistance
+    mesure: Conseils survécus alors qu’il était visé
+    question: S’en sortir quand le nom écrit est le vôtre
+    denominateur: les conseils où il a reçu au moins une voix
+    sens: haut
+    unite: ' %'
+    moyenne: 58.5
+    essais_fictifs: 70.1
+    documentes: 344
+    top:
+    - rang: 1
+      nom: Pascal Salviani
+      id: pascal-salviani
+      valeur: 62.3
+      brut: 7 / 7
+      preuve: 7
+      rang_general: 3
+    - rang: 2
+      nom: Philippe Bizet
+      id: philippe-bizet
+      valeur: 62.3
+      brut: 7 / 7
+      preuve: 7
+      rang_general: 11
+    - rang: 3
+      nom: Patricia Morel
+      id: patricia-morel
+      valeur: 61.8
+      brut: 6 / 6
+      preuve: 6
+      rang_general: 230
+    - rang: 4
+      nom: Bernard Deniaud
+      id: bernard-deniaud
+      valeur: 61.3
+      brut: 5 / 5
+      preuve: 5
+      rang_general: 74
+    - rang: 5
+      nom: Émilie Frahi
+      id: emilie-frahi
+      valeur: 61.0
+      brut: 6 / 7
+      preuve: 7
+      rang_general: 13
+    - rang: 6
+      nom: Ella Gbezan
+      id: ella-gbezan
+      valeur: 60.7
+      brut: 4 / 4
+      preuve: 4
+      rang_general: 49
+    - rang: 7
+      nom: Freddy Bolzer
+      id: freddy-bolzer
+      valeur: 60.7
+      brut: 4 / 4
+      preuve: 4
+      rang_general: 81
+    - rang: 8
+      nom: Mélissa Bastin
+      id: melissa-bastin
+      valeur: 60.7
+      brut: 4 / 4
+      preuve: 4
+      rang_general: 34
+    - rang: 9
+      nom: Nathalie Ensargueix
+      id: nathalie-ensargueix
+      valeur: 60.7
+      brut: 4 / 4
+      preuve: 4
+      rang_general: 20
+    - rang: 10
+      nom: Patrick Brasier De Thuy
+      id: patrick-brasier-de-thuy
+      valeur: 60.7
+      brut: 4 / 4
+      preuve: 4
+      rang_general: 38
+  - cle: lecture
+    libelle: La lecture
+    mesure: Bulletins portés sur l’éliminé
+    question: Écrire le nom de celui qui part, conseil après conseil
+    denominateur: les bulletins qu’il a émis
+    sens: haut
+    unite: ' %'
+    moyenne: 64.0
+    essais_fictifs: 14.8
+    documentes: 461
+    top:
+    - rang: 1
+      nom: Wendy Gervois
+      id: wendy-gervois
+      valeur: 78.6
+      brut: 10 / 10
+      preuve: 10
+      rang_general: 15
+    - rang: 2
+      nom: Marianne Mondon
+      id: marianne-mondon
+      valeur: 77.6
+      brut: 9 / 9
+      preuve: 9
+      rang_general: 22
+    - rang: 3
+      nom: Bernard Lenoir
+      id: bernard-lenoir
+      valeur: 76.7
+      brut: 8 / 8
+      preuve: 8
+      rang_general: 12
+    - rang: 4
+      nom: Frédéric Favier
+      id: frederic-favier
+      valeur: 76.7
+      brut: 8 / 8
+      preuve: 8
+      rang_general: 6
+    - rang: 5
+      nom: Bruno Peisey
+      id: bruno-peisey
+      valeur: 75.6
+      brut: 7 / 7
+      preuve: 7
+      rang_general: 41
+    - rang: 6
+      nom: Gabriel Gubbels
+      id: gabriel-gubbels
+      valeur: 75.6
+      brut: 7 / 7
+      preuve: 7
+      rang_general: 10
+    - rang: 7
+      nom: Kevin Cuoco
+      id: kevin-cuoco
+      valeur: 75.6
+      brut: 7 / 7
+      preuve: 7
+      rang_general: 32
+    - rang: 8
+      nom: Simon Quintilla
+      id: simon-quintilla
+      valeur: 75.6
+      brut: 7 / 7
+      preuve: 7
+      rang_general: 16
+    - rang: 9
+      nom: Coumba Baradji
+      id: coumba-baradji
+      valeur: 75.4
+      brut: 13 / 15
+      preuve: 15
+      rang_general: 48
+    - rang: 10
+      nom: Jade Handi
+      id: jade-handi
+      valeur: 73.7
+      brut: 11 / 13
+      preuve: 13
+      rang_general: 8
+  definitions:
+  - cle: parcours
+    libelle: Le parcours
+    question: Aller loin, et le refaire
+    mesure: Part du casting dépassée
+    denominateur: une participation
+  - cle: epreuves
+    libelle: Les épreuves
+    question: Gagner les épreuves qui se courent seul
+    mesure: Épreuves individuelles gagnées
+    denominateur: les épreuves individuelles — confort et immunité — disputées avant sa sortie
+  - cle: discretion
+    libelle: La discrétion
+    question: Traverser les conseils sans que personne n’écrive votre nom
+    mesure: Voix reçues
+    denominateur: les conseils traversés
+  - cle: resistance
+    libelle: La résistance
+    question: S’en sortir quand le nom écrit est le vôtre
+    mesure: Conseils survécus alors qu’il était visé
+    denominateur: les conseils où il a reçu au moins une voix
+  - cle: lecture
+    libelle: La lecture
+    question: Écrire le nom de celui qui part, conseil après conseil
+    mesure: Bulletins portés sur l’éliminé
+    denominateur: les bulletins qu’il a émis
+  top:
+  - rang: 1
+    nom: Claude Dartois
+    id: claude-dartois
+    score: 3.28
+    participations: 4
+    titres: 1
+    finales: 3
+    saisons: L'Île des héros, La Légende, La Revanche des héros, Viêtnam
+    part_top: 100.0
+    rang_min: 1
+    rang_max: 27
+    rang_median: 1
+    rang_p05: 1
+    rang_p95: 4
+    facettes:
+      parcours: 5.07
+      epreuves: 7.11
+      discretion: 0.82
+      resistance: 2.12
+      lecture: 1.29
+    preuve:
+      parcours: 4
+      epreuves: 49
+      discretion: 56
+      resistance: 3
+      lecture: 13
+    rang_classique: 2
+  - rang: 2
+    nom: Bertrand Bolle
+    id: bertrand-bolle
+    score: 2.164
+    participations: 2
+    titres: 1
+    finales: 1
+    saisons: Caramoan, La Revanche des héros
+    part_top: 96.0
+    rang_min: 2
+    rang_max: 65
+    rang_median: 3
+    rang_p05: 2
+    rang_p95: 23
+    facettes:
+      parcours: 2.53
+      epreuves: 5.14
+      discretion: 0.8
+      resistance: 0.73
+      lecture: 1.62
+    preuve:
+      parcours: 2
+      epreuves: 28
+      discretion: 22
+      resistance: 1
+      lecture: 11
+    rang_classique: 1
+  - rang: 3
+    nom: Pascal Salviani
+    id: pascal-salviani
+    score: 2.016
+    participations: 2
+    titres: 0
+    finales: 2
+    saisons: Le Combat des héros, Thaïlande
+    part_top: 93.2
+    rang_min: 1
+    rang_max: 100
+    rang_median: 5
+    rang_p05: 1
+    rang_p95: 27
+    facettes:
+      parcours: 2.58
+      epreuves: 1.29
+      discretion: 0.52
+      resistance: 4.68
+      lecture: 1.01
+    preuve:
+      parcours: 2
+      epreuves: 24
+      discretion: 29
+      resistance: 7
+      lecture: 15
+    rang_classique: 5
+  - rang: 4
+    nom: Teheiura Teahui
+    id: teheiura-teahui
+    score: 1.893
+    participations: 5
+    titres: 0
+    finales: 1
+    saisons: L'Île des héros, La Légende, La Nouvelle Édition, La Revanche des héros, Raja Ampat
+    part_top: 82.1
+    rang_min: 2
+    rang_max: 145
+    rang_median: 7
+    rang_p05: 2
+    rang_p95: 51
+    facettes:
+      parcours: 1.84
+      epreuves: 5.63
+      discretion: 0.44
+      resistance: 0.81
+      lecture: 0.75
+    preuve:
+      parcours: 5
+      epreuves: 48
+      discretion: 51
+      resistance: 6
+      lecture: 20
+    rang_classique: 6
+  - rang: 5
+    nom: Romuald Lafite
+    id: romuald-lafite
+    score: 1.842
+    participations: 2
+    titres: 1
+    finales: 1
+    saisons: Le Retour des héros, Panama
+    part_top: 99.8
+    rang_min: 3
+    rang_max: 72
+    rang_median: 7
+    rang_p05: 4
+    rang_p95: 16
+    facettes:
+      parcours: 2.32
+      epreuves: 2.06
+      discretion: 0.54
+      resistance: 2.78
+      lecture: 1.51
+    preuve:
+      parcours: 2
+      epreuves: 24
+      discretion: 23
+      resistance: 4
+      lecture: 14
+    rang_classique: 11
+  - rang: 6
+    nom: Frédéric Favier
+    id: frederic-favier
+    score: 1.671
+    participations: 1
+    titres: 0
+    finales: 1
+    saisons: Caramoan
+    part_top: 90.7
+    rang_min: 1
+    rang_max: 68
+    rang_median: 8
+    rang_p05: 3
+    rang_p95: 33
+    facettes:
+      parcours: 1.27
+      epreuves: 2.85
+      discretion: 0.84
+      resistance: 0.73
+      lecture: 2.66
+    preuve:
+      parcours: 1
+      epreuves: 19
+      discretion: 13
+      resistance: 1
+      lecture: 8
+    rang_classique: 3
+  - rang: 7
+    nom: François-David Cardonnel
+    id: francois-david-cardonnel
+    score: 1.65
+    participations: 2
+    titres: 1
+    finales: 1
+    saisons: Le Retour des héros, Vanuatu
+    part_top: 96.9
+    rang_min: 4
+    rang_max: 125
+    rang_median: 10
+    rang_p05: 5
+    rang_p95: 23
+    facettes:
+      parcours: 1.56
+      epreuves: 3.16
+      discretion: 0.45
+      resistance: 1.78
+      lecture: 1.29
+    preuve:
+      parcours: 2
+      epreuves: 22
+      discretion: 19
+      resistance: 5
+      lecture: 13
+    rang_classique: 4
+  - rang: 8
+    nom: Jade Handi
+    id: jade-handi
+    score: 1.643
+    participations: 3
+    titres: 1
+    finales: 2
+    saisons: La Légende, Le Retour des héros, Palawan
+    part_top: 82.9
+    rang_min: 2
+    rang_max: 157
+    rang_median: 10
+    rang_p05: 2
+    rang_p95: 54
+    facettes:
+      parcours: 3.67
+      epreuves: 1.75
+      discretion: 0.75
+      resistance: 0.01
+      lecture: 2.04
+    preuve:
+      parcours: 3
+      epreuves: 43
+      discretion: 40
+      resistance: 0
+      lecture: 13
+    rang_classique: 14
+  - rang: 9
+    nom: Laurent Maistret
+    id: laurent-maistret
+    score: 1.606
+    participations: 3
+    titres: 1
+    finales: 2
+    saisons: La Légende, La Nouvelle Édition, Raja Ampat
+    part_top: 80.0
+    rang_min: 2
+    rang_max: 95
+    rang_median: 13
+    rang_p05: 2
+    rang_p95: 45
+    facettes:
+      parcours: 3.87
+      epreuves: 1.8
+      discretion: 0.84
+      resistance: 0.73
+      lecture: 0.79
+    preuve:
+      parcours: 3
+      epreuves: 37
+      discretion: 43
+      resistance: 1
+      lecture: 14
+    rang_classique: 73
+  - rang: 10
+    nom: Gabriel Gubbels
+    id: gabriel-gubbels
+    score: 1.534
+    participations: 1
+    titres: 0
+    finales: 0
+    saisons: Thaïlande
+    part_top: 90.9
+    rang_min: 1
+    rang_max: 60
+    rang_median: 11
+    rang_p05: 4
+    rang_p95: 30
+    facettes:
+      parcours: 1.16
+      epreuves: 1.16
+      discretion: 0.79
+      resistance: 2.12
+      lecture: 2.44
+    preuve:
+      parcours: 1
+      epreuves: 13
+      discretion: 15
+      resistance: 3
+      lecture: 7
+    rang_classique: 7
+  - rang: 11
+    nom: Philippe Bizet
+    id: philippe-bizet
+    score: 1.516
+    participations: 3
+    titres: 0
+    finales: 0
+    saisons: La Légende, La Nouvelle Édition, Malaisie
+    part_top: 63.9
+    rang_min: 1
+    rang_max: 460
+    rang_median: 13
+    rang_p05: 2
+    rang_p95: 141
+    facettes:
+      parcours: 2.81
+      epreuves: -1.02
+      discretion: 0.57
+      resistance: 4.68
+      lecture: 0.55
+    preuve:
+      parcours: 3
+      epreuves: 24
+      discretion: 41
+      resistance: 7
+      lecture: 13
+    rang_classique: 72
+  - rang: 12
+    nom: Bernard Lenoir
+    id: bernard-lenoir
+    score: 1.462
+    participations: 1
+    titres: 0
+    finales: 0
+    saisons: Nicoya
+    part_top: 79.1
+    rang_min: 1
+    rang_max: 187
+    rang_median: 15
+    rang_p05: 4
+    rang_p95: 41
+    facettes:
+      parcours: 1.07
+      epreuves: 1.16
+      discretion: 0.31
+      resistance: 2.12
+      lecture: 2.66
+    preuve:
+      parcours: 1
+      epreuves: 13
+      discretion: 13
+      resistance: 3
+      lecture: 8
+    rang_classique: 10
+  - rang: 13
+    nom: Émilie Frahi
+    id: emilie-frahi
+    score: 1.443
+    participations: 2
+    titres: 0
+    finales: 1
+    saisons: Le Retour des héros, Vanuatu
+    part_top: 71.5
+    rang_min: 3
+    rang_max: 236
+    rang_median: 16
+    rang_p05: 5
+    rang_p95: 49
+    facettes:
+      parcours: 1.14
+      epreuves: 1.02
+      discretion: 0.14
+      resistance: 3.07
+      lecture: 1.84
+    preuve:
+      parcours: 2
+      epreuves: 20
+      discretion: 18
+      resistance: 7
+      lecture: 12
+    rang_classique: 13
+  - rang: 14
+    nom: Philippe Duron
+    id: philippe-duron
+    score: 1.396
+    participations: 2
+    titres: 1
+    finales: 1
+    saisons: La Nouvelle Édition, Viêtnam
+    part_top: 78.6
+    rang_min: 7
+    rang_max: 122
+    rang_median: 15
+    rang_p05: 9
+    rang_p95: 52
+    facettes:
+      parcours: 1.93
+      epreuves: 2.52
+      discretion: 0.6
+      resistance: 0.42
+      lecture: 1.51
+    preuve:
+      parcours: 2
+      epreuves: 21
+      discretion: 24
+      resistance: 3
+      lecture: 14
+    rang_classique: 12
+  - rang: 15
+    nom: Wendy Gervois
+    id: wendy-gervois
+    score: 1.39
+    participations: 1
+    titres: 1
+    finales: 1
+    saisons: Thaïlande
+    part_top: 66.9
+    rang_min: 1
+    rang_max: 73
+    rang_median: 18
+    rang_p05: 2
+    rang_p95: 46
+    facettes:
+      parcours: 1.45
+      epreuves: 0.85
+      discretion: 0.86
+      resistance: 0.73
+      lecture: 3.05
+    preuve:
+      parcours: 1
+      epreuves: 15
+      discretion: 15
+      resistance: 1
+      lecture: 10
+    rang_classique: 15
+  - rang: 16
+    nom: Simon Quintilla
+    id: simon-quintilla
+    score: 1.363
+    participations: 1
+    titres: 0
+    finales: 0
+    saisons: Palawan
+    part_top: 72.0
+    rang_min: 4
+    rang_max: 105
+    rang_median: 19
+    rang_p05: 8
+    rang_p95: 38
+    facettes:
+      parcours: 0.87
+      epreuves: 1.3
+      discretion: 0.76
+      resistance: 1.43
+      lecture: 2.44
+    preuve:
+      parcours: 1
+      epreuves: 18
+      discretion: 13
+      resistance: 2
+      lecture: 7
+    rang_classique: 16
+  - rang: 17
+    nom: Maxine Eouzan
+    id: maxine-eouzan
+    score: 1.325
+    participations: 1
+    titres: 1
+    finales: 1
+    saisons: Les Armes secrètes
+    part_top: 78.7
+    rang_min: 6
+    rang_max: 69
+    rang_median: 19
+    rang_p05: 12
+    rang_p95: 40
+    facettes:
+      parcours: 1.45
+      epreuves: 1.66
+      discretion: 0.85
+      resistance: 0.73
+      lecture: 1.93
+    preuve:
+      parcours: 1
+      epreuves: 10
+      discretion: 14
+      resistance: 1
+      lecture: 5
+    rang_classique: 17
+  - rang: 18
+    nom: Jean Belmonte
+    id: jean-belmonte
+    score: 1.299
+    participations: 1
+    titres: 0
+    finales: 0
+    saisons: Les Chasseurs d'immunité
+    part_top: 55.0
+    rang_min: 3
+    rang_max: 195
+    rang_median: 22
+    rang_p05: 4
+    rang_p95: 117
+    facettes:
+      parcours: 0.35
+      epreuves: 3.93
+      discretion: 0.91
+      resistance: 0.01
+      lecture: 1.3
+    preuve:
+      parcours: 1
+      epreuves: 9
+      discretion: 12
+      resistance: 0
+      lecture: 3
+    rang_classique: 18
+  - rang: 19
+    nom: Candice Boisson
+    id: candice-boisson
+    score: 1.27
+    participations: 3
+    titres: 0
+    finales: 0
+    saisons: L'Île au trésor, La Légende, Le Combat des héros
+    part_top: 62.1
+    rang_min: 7
+    rang_max: 218
+    rang_median: 22
+    rang_p05: 11
+    rang_p95: 86
+    facettes:
+      parcours: 0.2
+      epreuves: 1.71
+      discretion: 0.43
+      resistance: 2.12
+      lecture: 1.9
+    preuve:
+      parcours: 3
+      epreuves: 21
+      discretion: 32
+      resistance: 3
+      lecture: 16
+    rang_classique: 8
+  - rang: 20
+    nom: Nathalie Ensargueix
+    id: nathalie-ensargueix
+    score: 1.219
+    participations: 2
+    titres: 0
+    finales: 0
+    saisons: Caramoan, Le Combat des héros
+    part_top: 51.5
+    rang_min: 5
+    rang_max: 230
+    rang_median: 25
+    rang_p05: 7
+    rang_p95: 75
+    facettes:
+      parcours: 1.67
+      epreuves: 0.29
+      discretion: 0.23
+      resistance: 2.78
+      lecture: 1.12
+    preuve:
+      parcours: 2
+      epreuves: 26
+      discretion: 26
+      resistance: 4
+      lecture: 9
+    rang_classique: 28
+  - rang: 21
+    nom: Lola Besse
+    id: lola-besse
+    score: 1.199
+    participations: 1
+    titres: 0
+    finales: 0
+    saisons: Les 4 Terres
+    part_top: 49.2
+    rang_min: 7
+    rang_max: 200
+    rang_median: 26
+    rang_p05: 8
+    rang_p95: 95
+    facettes:
+      parcours: 1.08
+      epreuves: 3.06
+      discretion: 0.55
+      resistance: 0.01
+      lecture: 1.3
+    preuve:
+      parcours: 1
+      epreuves: 13
+      discretion: 16
+      resistance: 0
+      lecture: 3
+    rang_classique: 20
+  - rang: 22
+    nom: Marianne Mondon
+    id: marianne-mondon
+    score: 1.198
+    participations: 1
+    titres: 0
+    finales: 0
+    saisons: Nicoya
+    part_top: 45.9
+    rang_min: 2
+    rang_max: 105
+    rang_median: 27
+    rang_p05: 5
+    rang_p95: 72
+    facettes:
+      parcours: 0.87
+      epreuves: 0.2
+      discretion: 0.61
+      resistance: 1.43
+      lecture: 2.87
+    preuve:
+      parcours: 1
+      epreuves: 13
+      discretion: 13
+      resistance: 2
+      lecture: 9
+    rang_classique: 23
+  - rang: 23
+    nom: Naoil Tita
+    id: naoil-tita
+    score: 1.197
+    participations: 1
+    titres: 1
+    finales: 1
+    saisons: L'Île des héros
+    part_top: 53.7
+    rang_min: 5
+    rang_max: 154
+    rang_median: 24
+    rang_p05: 11
+    rang_p95: 87
+    facettes:
+      parcours: 1.45
+      epreuves: 2.68
+      discretion: 0.91
+      resistance: 0.01
+      lecture: 0.93
+    preuve:
+      parcours: 1
+      epreuves: 15
+      discretion: 12
+      resistance: 0
+      lecture: 2
+    rang_classique: null
+  - rang: 24
+    nom: Claire Pradayrol
+    id: claire-pradayrol
+    score: 1.172
+    participations: 1
+    titres: 0
+    finales: 0
+    saisons: Cambodge
+    part_top: 43.5
+    rang_min: 8
+    rang_max: 125
+    rang_median: 29
+    rang_p05: 10
+    rang_p95: 78
+    facettes:
+      parcours: 0.73
+      epreuves: 2.89
+      discretion: 0.64
+      resistance: 0.73
+      lecture: 0.88
+    preuve:
+      parcours: 1
+      epreuves: 9
+      discretion: 14
+      resistance: 1
+      lecture: 5
+    rang_classique: 21
+  - rang: 25
+    nom: Daniel Duquesnoy
+    id: daniel-duquesnoy
+    score: 1.172
+    participations: 1
+    titres: 0
+    finales: 0
+    saisons: Les Reliques du destin
+    part_top: 40.6
+    rang_min: 10
+    rang_max: 132
+    rang_median: 27
+    rang_p05: 18
+    rang_p95: 54
+    facettes:
+      parcours: 0.69
+      epreuves: 1.61
+      discretion: 0.75
+      resistance: 1.43
+      lecture: 1.38
+    preuve:
+      parcours: 1
+      epreuves: 16
+      discretion: 17
+      resistance: 2
+      lecture: 10
+    rang_classique: 22
+  top_classique:
+  - rang: 1
+    nom: Bertrand Bolle
+    id: bertrand-bolle
+    score: 2.009
+    rang_general: 2
+  - rang: 2
+    nom: Claude Dartois
+    id: claude-dartois
+    score: 1.773
+    rang_general: 1
+  - rang: 3
+    nom: Frédéric Favier
+    id: frederic-favier
+    score: 1.723
+    rang_general: 6
+  - rang: 4
+    nom: François-David Cardonnel
+    id: francois-david-cardonnel
+    score: 1.7
+    rang_general: 7
+  - rang: 5
+    nom: Pascal Salviani
+    id: pascal-salviani
+    score: 1.695
+    rang_general: 3
+  - rang: 6
+    nom: Teheiura Teahui
+    id: teheiura-teahui
+    score: 1.612
+    rang_general: 4
+  - rang: 7
+    nom: Gabriel Gubbels
+    id: gabriel-gubbels
+    score: 1.583
+    rang_general: 10
+  - rang: 8
+    nom: Candice Boisson
+    id: candice-boisson
+    score: 1.534
+    rang_general: 19
+  - rang: 9
+    nom: Nicolas Leoni
+    id: nicolas-leoni
+    score: 1.517
+    rang_general: 56
+  - rang: 10
+    nom: Bernard Lenoir
+    id: bernard-lenoir
+    score: 1.5
+    rang_general: 12
+  - rang: 11
+    nom: Romuald Lafite
+    id: romuald-lafite
+    score: 1.484
+    rang_general: 5
+  - rang: 12
+    nom: Philippe Duron
+    id: philippe-duron
+    score: 1.483
+    rang_general: 14
+  - rang: 13
+    nom: Émilie Frahi
+    id: emilie-frahi
+    score: 1.469
+    rang_general: 13
+  - rang: 14
+    nom: Jade Handi
+    id: jade-handi
+    score: 1.435
+    rang_general: 8
+  - rang: 15
+    nom: Wendy Gervois
+    id: wendy-gervois
+    score: 1.417
+    rang_general: 15
+  - rang: 16
+    nom: Simon Quintilla
+    id: simon-quintilla
+    score: 1.396
+    rang_general: 16
+  - rang: 17
+    nom: Maxine Eouzan
+    id: maxine-eouzan
+    score: 1.372
+    rang_general: 17
+  - rang: 18
+    nom: Jean Belmonte
+    id: jean-belmonte
+    score: 1.342
+    rang_general: 18
+  - rang: 19
+    nom: Christelle Gauzet
+    id: christelle-gauzet
+    score: 1.264
+    rang_general: 126
+  - rang: 20
+    nom: Lola Besse
+    id: lola-besse
+    score: 1.243
+    rang_general: 21
+  - rang: 21
+    nom: Claire Pradayrol
+    id: claire-pradayrol
+    score: 1.222
+    rang_general: 24
+  - rang: 22
+    nom: Daniel Duquesnoy
+    id: daniel-duquesnoy
+    score: 1.213
+    rang_general: 25
+  - rang: 23
+    nom: Marianne Mondon
+    id: marianne-mondon
+    score: 1.211
+    rang_general: 22
+  - rang: 24
+    nom: Clémence Castel
+    id: clemence-castel
+    score: 1.193
+    rang_general: 71
+  - rang: 25
+    nom: François Descamp
+    id: francois-descamp
+    score: 1.167
+    rang_general: 26
+  top_saisons:
+  - rang: 1
+    nom: Bertrand Bolle — Caramoan
+    score: 2.008
+    part_top: 90.5
+    sort: Éliminé aux poteaux
+    aventurier: Bertrand Bolle
+    saison: Caramoan
+    annee: 2008
+  - rang: 2
+    nom: Claude Dartois — Viêtnam
+    score: 1.76
+    part_top: 72.3
+    sort: Finaliste
+    aventurier: Claude Dartois
+    saison: Viêtnam
+    annee: 2010
+  - rang: 3
+    nom: Pascal Salviani — Thaïlande
+    score: 1.733
+    part_top: 65.3
+    sort: Finaliste
+    aventurier: Pascal Salviani
+    saison: Thaïlande
+    annee: 2016
+  - rang: 4
+    nom: Frédéric Favier — Caramoan
+    score: 1.728
+    part_top: 89.4
+    sort: Finaliste
+    aventurier: Frédéric Favier
+    saison: Caramoan
+    annee: 2008
+  - rang: 5
+    nom: François-David Cardonnel — Vanuatu
+    score: 1.722
+    part_top: 92.5
+    sort: Vainqueur
+    aventurier: François-David Cardonnel
+    saison: Vanuatu
+    annee: 2006
+  - rang: 6
+    nom: Teheiura Teahui — Raja Ampat
+    score: 1.605
+    part_top: 66.2
+    sort: Finaliste
+    aventurier: Teheiura Teahui
+    saison: Raja Ampat
+    annee: 2011
+  - rang: 7
+    nom: Gabriel Gubbels — Thaïlande
+    score: 1.604
+    part_top: 85.2
+    sort: Éliminé aux poteaux
+    aventurier: Gabriel Gubbels
+    saison: Thaïlande
+    annee: 2016
+  - rang: 8
+    nom: Candice Boisson — L'Île au trésor
+    score: 1.547
+    part_top: 85.3
+    sort: Éliminé à l'orientation
+    aventurier: Candice Boisson
+    saison: L'Île au trésor
+    annee: 2016
+  - rang: 9
+    nom: Nicolas Leoni — Nicoya
+    score: 1.536
+    part_top: 76.9
+    sort: Finaliste
+    aventurier: Nicolas Leoni
+    saison: Nicoya
+    annee: 2002
+  - rang: 10
+    nom: Bernard Lenoir — Nicoya
+    score: 1.525
+    part_top: 73.6
+    sort: Éliminé aux poteaux
+    aventurier: Bernard Lenoir
+    saison: Nicoya
+    annee: 2002
+  - rang: 11
+    nom: Laurent Maistret — La Nouvelle Édition
+    score: 1.523
+    part_top: 74.0
+    sort: Vainqueur
+    aventurier: Laurent Maistret
+    saison: La Nouvelle Édition
+    annee: 2014
+  - rang: 12
+    nom: Émilie Frahi — Vanuatu
+    score: 1.494
+    part_top: 71.6
+    sort: Finaliste
+    aventurier: Émilie Frahi
+    saison: Vanuatu
+    annee: 2006
+  - rang: 13
+    nom: Romuald Lafite — Panama
+    score: 1.493
+    part_top: 75.2
+    sort: Éliminé au conseil
+    aventurier: Romuald Lafite
+    saison: Panama
+    annee: 2004
+  - rang: 14
+    nom: Philippe Duron — Viêtnam
+    score: 1.488
+    part_top: 83.5
+    sort: Vainqueur
+    aventurier: Philippe Duron
+    saison: Viêtnam
+    annee: 2010
+  - rang: 15
+    nom: Wendy Gervois — Thaïlande
+    score: 1.432
+    part_top: 60.4
+    sort: Vainqueur
+    aventurier: Wendy Gervois
+    saison: Thaïlande
+    annee: 2016
+  - rang: 16
+    nom: Jade Handi — Palawan
+    score: 1.43
+    part_top: 67.1
+    sort: Vainqueur
+    aventurier: Jade Handi
+    saison: Palawan
+    annee: 2007
+  - rang: 17
+    nom: Simon Quintilla — Palawan
+    score: 1.411
+    part_top: 61.9
+    sort: Éliminé à l'orientation
+    aventurier: Simon Quintilla
+    saison: Palawan
+    annee: 2007
+  - rang: 18
+    nom: Maxine Eouzan — Les Armes secrètes
+    score: 1.378
+    part_top: 66.8
+    sort: Vainqueur
+    aventurier: Maxine Eouzan
+    saison: Les Armes secrètes
+    annee: 2021
+  - rang: 19
+    nom: Jean Belmonte — Les Chasseurs d'immunité
+    score: 1.331
+    part_top: 49.2
+    sort: Abandon médical
+    aventurier: Jean Belmonte
+    saison: Les Chasseurs d'immunité
+    annee: 2024
+  - rang: 20
+    nom: Claude Dartois — La Revanche des héros
+    score: 1.327
+    part_top: 49.7
+    sort: Finaliste
+    aventurier: Claude Dartois
+    saison: La Revanche des héros
+    annee: 2012
+  - rang: 21
+    nom: Christelle Gauzet — Caramoan
+    score: 1.27
+    part_top: 46.9
+    sort: Vainqueur
+    aventurier: Christelle Gauzet
+    saison: Caramoan
+    annee: 2008
+  - rang: 22
+    nom: Naoil Tita — L'Île des héros
+    score: 1.247
+    part_top: 49.6
+    sort: Vainqueur
+    aventurier: Naoil Tita
+    saison: L'Île des héros
+    annee: 2020
+  - rang: 23
+    nom: Lola Besse — Les 4 Terres
+    score: 1.239
+    part_top: 43.2
+    sort: Éliminé à l'orientation
+    aventurier: Lola Besse
+    saison: Les 4 Terres
+    annee: 2020
+  - rang: 24
+    nom: Marianne Mondon — Nicoya
+    score: 1.233
+    part_top: 39.4
+    sort: Éliminé au conseil
+    aventurier: Marianne Mondon
+    saison: Nicoya
+    annee: 2002
+  - rang: 25
+    nom: Daniel Duquesnoy — Les Reliques du destin
+    score: 1.222
+    part_top: 17.8
+    sort: Éliminé au conseil
+    aventurier: Daniel Duquesnoy
+    saison: Les Reliques du destin
+    annee: 2026
+  sans_titre:
+  - rang: 3
+    nom: Pascal Salviani
+    score: 2.016
+    part_top: 93.2
+  - rang: 4
+    nom: Teheiura Teahui
+    score: 1.893
+    part_top: 82.1
+  - rang: 6
+    nom: Frédéric Favier
+    score: 1.671
+    part_top: 90.7
+  - rang: 10
+    nom: Gabriel Gubbels
+    score: 1.534
+    part_top: 90.9
+  - rang: 11
+    nom: Philippe Bizet
+    score: 1.516
+    part_top: 63.9
+  - rang: 12
+    nom: Bernard Lenoir
+    score: 1.462
+    part_top: 79.1
+  - rang: 13
+    nom: Émilie Frahi
+    score: 1.443
+    part_top: 71.5
+  - rang: 16
+    nom: Simon Quintilla
+    score: 1.363
+    part_top: 72.0
+  - rang: 18
+    nom: Jean Belmonte
+    score: 1.299
+    part_top: 55.0
+  - rang: 19
+    nom: Candice Boisson
+    score: 1.27
+    part_top: 62.1
+  robustesse:
+    tirages: 10000
+    taille: 25
+    socle: 2
+    socle_noms:
+    - Claude Dartois
+    - Romuald Lafite
+    paliers:
+    - seuil: 99.0
+      effectif: 2
+    - seuil: 90.0
+      effectif: 7
+    - seuil: 75.0
+      effectif: 13
+    - seuil: 50.0
+      effectif: 21
+    - seuil: 25.0
+      effectif: 35
+    - seuil: 0.01
+      effectif: 94
+    toujours: 1
+    hors_top_mais_parfois_dedans: 69
+    candidats: 94
+    part_top_mediane_du_top: 78.6
+    part_top_minimale_du_top: 40.6
+  correlations:
+  - a: resistance
+    b: lecture
+    libelle_a: La résistance
+    libelle_b: La lecture
+    rho: 0.507
+  - a: parcours
+    b: discretion
+    libelle_a: Le parcours
+    libelle_b: La discrétion
+    rho: 0.449
+  - a: parcours
+    b: resistance
+    libelle_a: Le parcours
+    libelle_b: La résistance
+    rho: 0.446
+  - a: discretion
+    b: resistance
+    libelle_a: La discrétion
+    libelle_b: La résistance
+    rho: 0.373
+  - a: parcours
+    b: lecture
+    libelle_a: Le parcours
+    libelle_b: La lecture
+    rho: 0.367
+  - a: discretion
+    b: lecture
+    libelle_a: La discrétion
+    libelle_b: La lecture
+    rho: 0.349
+  - a: epreuves
+    b: discretion
+    libelle_a: Les épreuves
+    libelle_b: La discrétion
+    rho: 0.041
+  - a: epreuves
+    b: resistance
+    libelle_a: Les épreuves
+    libelle_b: La résistance
+    rho: -0.031
+  - a: epreuves
+    b: lecture
+    libelle_a: Les épreuves
+    libelle_b: La lecture
+    rho: 0.031
+  - a: parcours
+    b: epreuves
+    libelle_a: Le parcours
+    libelle_b: Les épreuves
+    rho: -0.001
+  correlation_moyenne: 0.253
+  palmares:
+    auc: 0.881
+    rang_median_vainqueurs: 58
+    rang_median_autres: 282
+    vainqueurs_dans_le_top: 10
+    vainqueurs_total: 35
+  hasard:
+    premier: 1.816
+    vingt_cinquieme: 0.703
+    ecart: 1.113
+    reel_premier: 3.28
+    reel_vingt_cinquieme: 1.172
+    reel_ecart: 2.108
+    noms:
+    - Christelle Gauzet
+    - Freddy Boucher
+    - Julie Debever
+    - Laurent Affri
+    - Nicolas Leoni
+    courbe_reelle:
+    - 3.28
+    - 2.164
+    - 2.016
+    - 1.893
+    - 1.842
+    - 1.671
+    - 1.65
+    - 1.643
+    - 1.606
+    - 1.534
+    - 1.516
+    - 1.462
+    - 1.443
+    - 1.396
+    - 1.39
+    - 1.363
+    - 1.325
+    - 1.299
+    - 1.27
+    - 1.219
+    - 1.199
+    - 1.198
+    - 1.197
+    - 1.172
+    - 1.172
+    courbe_hasard:
+    - 1.816
+    - 1.229
+    - 1.19
+    - 1.147
+    - 1.027
+    - 1.025
+    - 0.929
+    - 0.924
+    - 0.892
+    - 0.849
+    - 0.827
+    - 0.823
+    - 0.823
+    - 0.821
+    - 0.814
+    - 0.782
+    - 0.771
+    - 0.755
+    - 0.721
+    - 0.721
+    - 0.719
+    - 0.714
+    - 0.709
+    - 0.706
+    - 0.703
+  biais_epoque:
+    communs: 22
+    taille: 25
+    deplacement_median: 3
+    sortants:
+    - Candice Boisson
+    - Nathalie Ensargueix
+    - Claire Pradayrol
+    entrants:
+    - Gilles Nicolet
+    - Laure Canevarolo
+    - Charlotte Rasquin
+    depouillement:
+    - periode: 2000-2004
+      conseils: 64
+      complets: 43
+      part: 67.2
+    - periode: 2005-2009
+      conseils: 100
+      complets: 65
+      part: 65.0
+    - periode: 2010-2014
+      conseils: 98
+      complets: 54
+      part: 55.1
+    - periode: 2015-2019
+      conseils: 140
+      complets: 61
+      part: 43.6
+    - periode: 2020-2024
+      conseils: 176
+      complets: 35
+      part: 19.9
+    - periode: 2025-2029
+      conseils: 49
+      complets: 19
+      part: 38.8
+  stabilite:
+    effectif: 71
 modeles:
   graine: 20260828
   permutations: 10000
@@ -12620,7 +14291,7 @@ modeles:
         observe: 0.3269
         moyenne_nulle: 1.7498
       origine: casting
-      p_ajustee: 0.0006
+      p_ajustee: 0.0007
       retenu: true
     - cle: etendue_ages
       libelle: L'écart d'âge dans un même casting
@@ -12670,7 +14341,7 @@ modeles:
         observe: 9.9412
         moyenne_nulle: 9.6948
       origine: casting
-      p_ajustee: 0.0248
+      p_ajustee: 0.0254
       retenu: true
     - cle: familles_metiers
       libelle: La variété des métiers
@@ -12770,7 +14441,7 @@ modeles:
         observe: 0.2839
         moyenne_nulle: 0.2508
       origine: casting
-      p_ajustee: 0.3631
+      p_ajustee: 0.3717
       retenu: false
     - cle: tribus_femmes
       libelle: La composition des deux tribus
@@ -12821,7 +14492,7 @@ modeles:
         observe: 13.0253
         moyenne_nulle: 18.8726
       origine: casting
-      p_ajustee: 0.1244
+      p_ajustee: 0.1324
       retenu: false
     - cle: tribus_ages
       libelle: L'âge moyen des deux tribus
@@ -12872,7 +14543,7 @@ modeles:
         observe: 5.7496
         moyenne_nulle: 3.8505
       origine: casting
-      p_ajustee: 0.0054
+      p_ajustee: 0.0053
       retenu: true
     - cle: tribus_ages_mediane
       libelle: L'âge des deux tribus, à la médiane
@@ -12922,7 +14593,7 @@ modeles:
         observe: 4.1597
         moyenne_nulle: 3.331
       origine: casting
-      p_ajustee: 0.3689
+      p_ajustee: 0.3878
       retenu: false
     sensibilite:
     - cle: etendue_ages
@@ -13041,7 +14712,7 @@ modeles:
         observe: 10.7308
         moyenne_nulle: 10.2831
       origine: pronostic
-      p_ajustee: 0.7273
+      p_ajustee: 0.7451
       retenu: false
     classement:
     - nom: Ambre Daudet
@@ -13093,36 +14764,36 @@ modeles:
       score: -1.719
       vainqueur: false
   force:
-    epreuves_retenues: 271
-    saisons_retenues: 26
+    epreuves_retenues: 284
+    saisons_retenues: 28
     epreuves_ecartees_saison: 2
-    vainqueur_hors_plateau: 4
-    taux_echec_reconstruction: 1.45
-    joueurs: 332
+    vainqueur_hors_plateau: 9
+    taux_echec_reconstruction: 3.07
+    joueurs: 355
     seuil: 8
-    classes: 139
+    classes: 147
     classement:
     - id: claude-dartois
       nom: Claude Dartois
-      force: 4.68
-      bas: 2.56
-      haut: 7.24
+      force: 4.69
+      bas: 2.72
+      haut: 7.59
       victoires: 15
       disputees: 39
       ratio: 38.5
     - id: teheiura-teahui
       nom: Teheiura Teahui
-      force: 4.29
-      bas: 2.3
-      haut: 6.91
+      force: 4.3
+      bas: 2.26
+      haut: 6.8
       victoires: 13
       disputees: 41
       ratio: 31.7
     - id: maxime-berthon
       nom: Maxime Berthon
       force: 3.91
-      bas: 1.65
-      haut: 5.77
+      bas: 1.89
+      haut: 5.7
       victoires: 6
       disputees: 15
       ratio: 40.0
@@ -13130,148 +14801,148 @@ modeles:
       nom: Clémence Noquet
       force: 3.47
       bas: 0.66
-      haut: 6.11
+      haut: 5.87
       victoires: 3
       disputees: 8
       ratio: 37.5
     - id: daniel-duquesnoy
       nom: Daniel Duquesnoy
       force: 2.72
-      bas: 0.44
-      haut: 5.39
+      bas: 0.56
+      haut: 4.95
       victoires: 3
       disputees: 10
       ratio: 30.0
     - id: bertrand-bolle
       nom: Bertrand Bolle
       force: 2.61
-      bas: 1.04
-      haut: 4.67
+      bas: 1.01
+      haut: 4.7
       victoires: 7
       disputees: 22
       ratio: 31.8
     - id: mohamed-derradji
       nom: Mohamed Derradji
       force: 2.56
-      bas: 0.69
-      haut: 5.17
+      bas: 0.39
+      haut: 4.98
       victoires: 4
       disputees: 10
       ratio: 40.0
     - id: gilles-de-baere
       nom: Gilles De Baere
       force: 2.48
-      bas: 0.48
-      haut: 4.95
+      bas: 0.44
+      haut: 5.03
       victoires: 2
       disputees: 8
       ratio: 25.0
     - id: martin-bazin
       nom: Martin Bazin
       force: 2.46
-      bas: 0.75
-      haut: 4.22
+      bas: 0.8
+      haut: 4.75
       victoires: 5
       disputees: 20
       ratio: 25.0
+    - id: francois-descamp
+      nom: François Descamp
+      force: 2.43
+      bas: 0.43
+      haut: 5.23
+      victoires: 3
+      disputees: 9
+      ratio: 33.3
     - id: nicolas-pretot
       nom: Nicolas Pretot
       force: 2.35
-      bas: 0.63
-      haut: 4.91
+      bas: 0.53
+      haut: 4.8
       victoires: 4
       disputees: 14
       ratio: 28.6
     - id: nicolas-rouye
       nom: Nicolas Rouyé
       force: 2.31
-      bas: 0.43
-      haut: 4.06
+      bas: 0.58
+      haut: 4.12
       victoires: 3
       disputees: 8
       ratio: 37.5
     - id: naoil-tita
       nom: Naoil Tita
       force: 2.29
-      bas: 0.42
-      haut: 4.71
+      bas: 0.44
+      haut: 5.27
       victoires: 2
       disputees: 8
       ratio: 25.0
     - id: candice-boisson
       nom: Candice Boisson
       force: 2.11
-      bas: 0.32
-      haut: 4.0
+      bas: 0.66
+      haut: 3.78
       victoires: 4
       disputees: 20
       ratio: 20.0
     - id: karima-neggaz
       nom: Karima Neggaz
       force: 2.09
-      bas: 0.38
-      haut: 4.29
+      bas: 0.42
+      haut: 3.89
       victoires: 2
       disputees: 8
       ratio: 25.0
     - id: sam-haliti
       nom: Sam Haliti
-      force: 2.03
-      bas: 0.34
-      haut: 4.42
+      force: 2.04
+      bas: 0.37
+      haut: 4.15
       victoires: 2
       disputees: 16
       ratio: 12.5
     - id: william-lecomte
       nom: William Lecomte
       force: 2.01
-      bas: 0.39
-      haut: 3.72
+      bas: 0.37
+      haut: 3.89
       victoires: 3
       disputees: 9
       ratio: 33.3
     - id: philippe-duron
       nom: Philippe Duron
       force: 1.97
-      bas: 0.53
-      haut: 3.83
+      bas: 0.59
+      haut: 3.8
       victoires: 4
       disputees: 18
       ratio: 22.2
     - id: meissa-seck
       nom: Meïssa Seck
       force: 1.94
-      bas: 0.56
-      haut: 3.27
+      bas: 0.44
+      haut: 3.24
       victoires: 3
       disputees: 11
       ratio: 27.3
     - id: gregoire-delachaux
       nom: Grégoire Delachaux
       force: 1.87
-      bas: 0.3
-      haut: 4.0
+      bas: 0.32
+      haut: 4.1
       victoires: 2
       disputees: 8
       ratio: 25.0
-    - id: angelique-ti
-      nom: Angélique Ti
-      force: 1.79
-      bas: 0.32
-      haut: 3.74
-      victoires: 2
-      disputees: 9
-      ratio: 22.2
     pentes:
     - nom: Claude Dartois
       rang_force: 1
       rang_victoires: 1
-      force: 4.68
+      force: 4.69
       victoires: 15
     - nom: Teheiura Teahui
       rang_force: 2
       rang_victoires: 2
-      force: 4.29
+      force: 4.3
       victoires: 13
     - nom: Maxime Berthon
       rang_force: 3
@@ -13309,77 +14980,77 @@ modeles:
       rang_victoires: 7
       force: 2.46
       victoires: 5
-    - nom: Nicolas Pretot
+    - nom: François Descamp
       rang_force: 10
-      rang_victoires: 12
-      force: 2.35
-      victoires: 4
+      rang_victoires: 16
+      force: 2.43
+      victoires: 3
     - nom: Candice Boisson
-      rang_force: 13
+      rang_force: 14
       rang_victoires: 8
       force: 2.11
       victoires: 4
     - nom: François-David Cardonnel
-      rang_force: 24
+      rang_force: 28
       rang_victoires: 9
       force: 1.69
       victoires: 4
     - nom: Laurent Maistret
-      rang_force: 28
+      rang_force: 32
       rang_victoires: 10
-      force: 1.64
+      force: 1.65
       victoires: 4
     - nom: Clémence Castel
-      rang_force: 33
+      rang_force: 37
       rang_victoires: 6
       force: 1.56
       victoires: 5
     - &id007
       nom: Jade Handi
-      rang_force: 44
+      rang_force: 48
       rang_victoires: 4
       force: 1.34
       victoires: 6
     plus_forte_montee: *id006
     plus_forte_chute: *id007
   force_et_jeu:
-    effectif: 292
+    effectif: 309
     voix:
       libelle: Bulletins recus, par epreuve disputee
       force:
-        estimation: 0.88
-        bas: 0.765
-        haut: 1.012
-        p: 0.072
+        estimation: 0.898
+        bas: 0.783
+        haut: 1.031
+        p: 0.1281
       femme:
-        estimation: 1.168
-        bas: 0.934
-        haut: 1.461
-        p: 0.1727
+        estimation: 1.236
+        bas: 0.989
+        haut: 1.544
+        p: 0.0623
       age:
-        estimation: 1.14
-        bas: 1.014
+        estimation: 1.141
+        bas: 1.016
         haut: 1.281
-        p: 0.0287
+        p: 0.0257
       lecture: Rapport de taux par doublement de la force. Au-dessus de 1, un athlete attire davantage
         de bulletins.
     survie:
       libelle: Part de la saison tenue
       force:
-        estimation: 0.05
-        bas: -3.18
-        haut: 3.281
-        p: 0.9756
+        estimation: -0.037
+        bas: -3.131
+        haut: 3.057
+        p: 0.9814
       femme:
-        estimation: -2.979
-        bas: -7.73
-        haut: 1.771
-        p: 0.219
+        estimation: -2.721
+        bas: -7.246
+        haut: 1.803
+        p: 0.2385
       age:
-        estimation: -1.551
-        bas: -4.216
-        haut: 1.114
-        p: 0.254
+        estimation: -1.633
+        bas: -4.226
+        haut: 0.96
+        p: 0.217
       lecture: Points de pourcentage gagnes quand la force double.
   equilibre:
     rattrapage:
@@ -13509,11 +15180,11 @@ modeles:
       presents_moyen: 5.7
       rapport: 1.71
     - palier: 80-90 %
-      observe: 73.3
+      observe: 77.6
       mecanique: 23.6
       conseils: 52
       presents_moyen: 4.3
-      rapport: 3.11
+      rapport: 3.29
     - palier: 90-100 %
       observe: 77.8
       mecanique: 36.1
@@ -13766,7 +15437,7 @@ modeles:
         moyenne_nulle: 47.0878
       bulletins: 1855
       origine: homophilie
-      p_ajustee: 0.2731
+      p_ajustee: 0.2712
       retenu: false
     - cle: vote_ecart_age
       libelle: L'écart d'âge avec sa cible
@@ -13818,7 +15489,7 @@ modeles:
         moyenne_nulle: 11.6008
       bulletins: 1855
       origine: homophilie
-      p_ajustee: 0.245
+      p_ajustee: 0.2509
       retenu: false
     - cle: vote_meme_metier
       libelle: Viser la même famille de métier
@@ -13870,7 +15541,7 @@ modeles:
         moyenne_nulle: 10.0294
       bulletins: 1855
       origine: homophilie
-      p_ajustee: 0.7179
+      p_ajustee: 0.7451
       retenu: false
     - cle: vote_meme_bandeau
       libelle: Viser son propre bandeau de départ
@@ -13974,7 +15645,7 @@ modeles:
         moyenne_nulle: 2.0962
       bulletins: 1752
       origine: homophilie
-      p_ajustee: 0.0787
+      p_ajustee: 0.077
       retenu: false
     - cle: vote_bandeau_apres_fusion
       libelle: Épargner son bandeau de départ
@@ -14307,12 +15978,8 @@ modeles:
     lecture: 'Rapport de cotes : au-dessus de 1, le jure vote plus souvent pour ce finaliste ; en dessous,
       moins souvent. Un intervalle qui contient 1 veut dire qu''on ne peut pas conclure.'
   fusion:
-    saisons: 21
-    ecartees:
-    - saison: s17
-      titre: Cambodge
-      episode: 13
-      restants: 4
+    saisons: 22
+    ecartees: []
     lignes:
     - saison: s01
       titre: Les Aventuriers de Koh-Lanta
@@ -14380,6 +16047,12 @@ modeles:
       casting: 20
       episode: 6
       restants: 14
+    - saison: s17
+      titre: Cambodge
+      annee: 2017
+      casting: 21
+      episode: 7
+      restants: 12
     - saison: s18
       titre: Fidji
       annee: 2017
@@ -14432,8 +16105,8 @@ modeles:
       titre: La Revanche des 4 Terres
       annee: 2025
       casting: 24
-      episode: 4
-      restants: 16
+      episode: 8
+      restants: 13
     - saison: s28
       titre: Les Reliques du destin
       annee: 2026
@@ -14441,20 +16114,20 @@ modeles:
       episode: 7
       restants: 14
     episode_median: 6.0
-    episode_variation: 12.3
+    episode_variation: 10.4
     restants_median: 12.0
-    restants_variation: 16.9
+    restants_variation: 15.3
     casting_min: 16
     casting_max: 24
     pente_episode:
-      pente: 0.008
-      bas: -0.135
-      haut: 0.152
-      p: 0.9098
+      pente: 0.111
+      bas: 0.016
+      haut: 0.205
+      p: 0.0217
     pente_restants:
-      pente: 0.65
-      bas: 0.553
-      haut: 0.747
+      pente: 0.569
+      bas: 0.459
+      haut: 0.679
       p: 0.0
     lecture: 'Pente : de combien l''episode de fusion, puis le nombre de joueurs restants, bougent quand
       le casting gagne un membre. Une pente nulle sur l''episode et une pente de 1 sur les restants signent
@@ -14721,7 +16394,7 @@ modeles:
         observe: 57.135
         moyenne_nulle: 13.2333
       origine: ruptures
-      p_ajustee: 0.0006
+      p_ajustee: 0.0007
       retenu: true
   audience:
     saisons: 33
@@ -15596,7 +17269,7 @@ modeles:
         observe: 20.6811
         moyenne_nulle: 3.5032
       origine: audience
-      p_ajustee: 0.0006
+      p_ajustee: 0.0007
       retenu: true
     - cle: audience_retournement
       libelle: Le retournement finale / lancement
@@ -15698,37 +17371,37 @@ modeles:
         observe: -0.2958
         moyenne_nulle: -0.0001
       origine: audience
-      p_ajustee: 0.1671
+      p_ajustee: 0.171
       retenu: false
   avant_apres:
-    saisons: 21
+    saisons: 22
     episode_median: 6.0
     avant:
-      conseils: 171
-      saisons: 21
-      presents_moyen: 17.0
-      part_femmes: 53.8
-      age_moyen: 35.1
-      part_serres: 34.9
+      conseils: 185
+      saisons: 22
+      presents_moyen: 16.9
+      part_femmes: 53.5
+      age_moyen: 35.0
+      part_serres: 34.5
     apres:
-      conseils: 223
-      saisons: 21
-      presents_moyen: 8.4
+      conseils: 230
+      saisons: 22
+      presents_moyen: 8.3
       part_femmes: 45.7
-      age_moyen: 32.9
-      part_serres: 53.4
-    rang_force_avant: 62.3
-    rang_force_apres: 46.5
-    force_effectif_avant: 82
-    force_effectif_apres: 209
+      age_moyen: 33.0
+      part_serres: 54.8
+    rang_force_avant: 62.0
+    rang_force_apres: 48.2
+    force_effectif_avant: 85
+    force_effectif_apres: 230
     robustesse:
-      correlation_exposition_force: -0.094
+      correlation_exposition_force: -0.084
       apparie:
-        avant: 64.2
-        avant_effectif: 70
-        apres: 55.4
-        apres_effectif: 116
-        ecart: -8.8
+        avant: 64.4
+        avant_effectif: 73
+        apres: 57.1
+        apres_effectif: 136
+        ecart: -7.3
     ambassadeurs:
       effectif: 19
       saisons: 19
@@ -15736,9 +17409,9 @@ modeles:
       presents_moyen: 12.8
       part_femmes: 36.8
       age_moyen: 34.5
-      avec_force: 15
-      rang_moyen: 44.5
-      effectif_force: 15
+      avec_force: 16
+      rang_moyen: 46.9
+      effectif_force: 16
     negociateurs:
       lues: 12
       total: 20
@@ -15755,205 +17428,205 @@ modeles:
     - cle: fusion_sexe
       libelle: Le sexe des éliminés, avant et après la fusion
       question: La part de femmes parmi les éliminés change-t-elle à la réunification ?
-      observe: -8.061
-      attendu: -0.578
+      observe: -7.861
+      attendu: -1.072
       unite: ' points'
-      ecart_types: -1.5
-      p: 0.1359
+      ecart_types: -1.39
+      p: 0.1646
       tirages: 10000
       lecture: 'Différence entre l''après et l''avant, en points de pourcentage. Le hasard, ici, c''est
         tirer l''éliminé parmi les présents de chaque conseil : la composition du camp est donc déjà neutralisée,
         et un écart qui subsiste est un choix.'
       nulle: &id035
         bornes:
-        - -21.9129
-        - 20.7827
+        - -21.0347
+        - 18.5317
         cases:
         - 0
-        - 2
         - 3
-        - 4
-        - 25
-        - 45
-        - 79
-        - 186
-        - 312
-        - 460
-        - 658
-        - 930
-        - 1043
-        - 1241
-        - 1300
-        - 1024
-        - 885
-        - 706
-        - 464
-        - 305
-        - 182
-        - 81
-        - 36
-        - 16
-        - 10
         - 2
+        - 13
+        - 27
+        - 42
+        - 99
+        - 225
+        - 286
+        - 446
+        - 680
+        - 855
+        - 1086
+        - 1109
+        - 1147
+        - 1046
+        - 909
+        - 695
+        - 542
+        - 335
+        - 201
+        - 145
+        - 57
+        - 35
+        - 12
         - 1
+        - 2
         - 0
-        largeur_case: 1.524842
-        observe: -8.0613
-        moyenne_nulle: -0.5785
+        largeur_case: 1.413085
+        observe: -7.8613
+        moyenne_nulle: -1.0719
       origine: avant_apres
-      p_ajustee: 0.2039
+      p_ajustee: 0.2509
       retenu: false
     - cle: fusion_force
       libelle: La force des éliminés, avant et après la fusion
       question: Élimine-t-on le faible avant la réunification et le fort après ?
-      observe: -15.848
-      attendu: -0.033
+      observe: -13.757
+      attendu: 0.011
       unite: ' points de rang'
-      ecart_types: -4.62
-      p: 0.0001
+      ecart_types: -4.17
+      p: 0.0002
       tirages: 10000
       lecture: 'Rang de l''éliminé parmi les présents, sur la force estimée aux épreuves : 0 le plus faible
         du camp, 100 le plus fort. On compare l''après à l''avant. Positif, cela veut dire qu''on élimine
         plus haut dans le classement après la fusion.'
       nulle: &id036
         bornes:
-        - -17.288
-        - 14.3853
+        - -15.1973
+        - 16.4851
         cases:
         - 0
+        - 0
+        - 5
+        - 5
+        - 14
+        - 34
+        - 74
+        - 172
+        - 333
+        - 557
+        - 816
+        - 1069
+        - 1312
+        - 1403
+        - 1253
+        - 1043
+        - 781
+        - 551
+        - 291
+        - 163
+        - 81
+        - 32
+        - 8
+        - 1
         - 1
         - 0
         - 1
-        - 2
-        - 11
-        - 27
-        - 44
-        - 106
-        - 208
-        - 400
-        - 610
-        - 851
-        - 1121
-        - 1265
-        - 1347
-        - 1217
-        - 993
-        - 723
-        - 481
-        - 295
-        - 159
-        - 83
-        - 36
-        - 11
-        - 7
-        - 1
         - 0
-        largeur_case: 1.131191
-        observe: -15.8483
-        moyenne_nulle: -0.0327
+        largeur_case: 1.131513
+        observe: -13.7572
+        moyenne_nulle: 0.0106
       origine: avant_apres
-      p_ajustee: 0.0006
+      p_ajustee: 0.0007
       retenu: true
     - cle: fusion_serre
       libelle: Des conseils plus serrés après la fusion ?
       question: Le vote se divise-t-il davantage une fois les tribus réunies ?
-      observe: 18.551
-      attendu: 0.1
+      observe: 20.282
+      attendu: 0.062
       unite: ' points'
-      ecart_types: 2.95
-      p: 0.0057
+      ecart_types: 3.4
+      p: 0.0009
       tirages: 10000
       lecture: Part de conseils où l'éliminé ne rassemble pas plus de la moitié des voix, après moins
         avant. Le hasard est ici une redistribution des étiquettes « avant » et « après » entre les mêmes
         conseils.
       nulle: &id037
         bornes:
-        - -25.2974
-        - 25.4749
+        - -24.3256
+        - 25.466
         cases:
         - 0
-        - 1
-        - 9
-        - 14
-        - 26
-        - 48
-        - 73
-        - 130
-        - 588
-        - 445
-        - 603
-        - 715
-        - 896
-        - 953
-        - 1954
-        - 872
-        - 754
-        - 565
+        - 3
+        - 3
+        - 16
+        - 19
+        - 35
+        - 76
+        - 360
+        - 300
+        - 440
+        - 617
+        - 1562
+        - 926
+        - 1007
+        - 1002
+        - 838
+        - 1366
         - 481
-        - 548
-        - 135
-        - 90
-        - 44
-        - 24
-        - 22
-        - 8
-        - 2
+        - 345
+        - 248
+        - 241
+        - 60
+        - 33
+        - 14
+        - 4
+        - 3
+        - 1
         - 0
-        largeur_case: 1.813294
-        observe: 18.5514
-        moyenne_nulle: 0.1
+        largeur_case: 1.778273
+        observe: 20.2824
+        moyenne_nulle: 0.0619
       origine: avant_apres
-      p_ajustee: 0.0126
+      p_ajustee: 0.0023
       retenu: true
     - cle: ambassadeurs_force
       libelle: Qui les ambassadeurs éliminent-ils ?
       question: Deux ambassadeurs qui décident seuls choisissent-ils autrement qu'un tirage ?
-      observe: 44.545
-      attendu: 50.052
+      observe: 46.875
+      attendu: 49.952
       unite: ' points de rang'
-      ecart_types: -0.68
-      p: 0.5037
+      ecart_types: -0.4
+      p: 0.6931
       tirages: 10000
       lecture: Rang de l'éliminé parmi les présents, sur la force estimée aux épreuves. Au-dessus de 50,
         les ambassadeurs sacrifient un joueur plus fort que la moyenne du camp ; en dessous, un plus faible.
       nulle: &id038
         bornes:
-        - 17.6795
-        - 81.6466
+        - 16.5338
+        - 79.5792
         cases:
         - 0
         - 1
+        - 2
+        - 4
+        - 15
+        - 32
+        - 65
+        - 125
+        - 232
+        - 321
+        - 541
+        - 690
+        - 938
+        - 1062
+        - 1174
+        - 1102
+        - 1009
+        - 841
+        - 675
+        - 485
+        - 319
+        - 196
+        - 94
+        - 38
+        - 21
+        - 12
         - 6
-        - 14
-        - 29
-        - 55
-        - 115
-        - 185
-        - 314
-        - 456
-        - 717
-        - 853
-        - 957
-        - 1085
-        - 1138
-        - 1015
-        - 935
-        - 715
-        - 530
-        - 373
-        - 247
-        - 131
-        - 77
-        - 34
-        - 14
-        - 2
-        - 2
         - 0
-        largeur_case: 2.284539
-        observe: 44.5455
-        moyenne_nulle: 50.0521
+        largeur_case: 2.251623
+        observe: 46.875
+        moyenne_nulle: 49.9517
       origine: avant_apres
-      p_ajustee: 0.5567
+      p_ajustee: 0.7451
       retenu: false
     - cle: ambassadeurs_survie
       libelle: L'ambassadeur qui négocie s'en sort-il mieux ?
@@ -16004,7 +17677,7 @@ modeles:
         observe: 39.4452
         moyenne_nulle: 50.0632
       origine: avant_apres
-      p_ajustee: 0.1032
+      p_ajustee: 0.11
       retenu: false
   conditionnelles:
     presences: 862
@@ -16664,7 +18337,7 @@ modeles:
         observe: 10.0774
         moyenne_nulle: 0.3702
       origine: conditionnelles
-      p_ajustee: 0.0021
+      p_ajustee: 0.0022
       retenu: true
     - cle: menace_sommet
       libelle: Trop visé pour partir
@@ -16715,7 +18388,7 @@ modeles:
         observe: 15.4181
         moyenne_nulle: 3.4144
       origine: conditionnelles
-      p_ajustee: 0.0392
+      p_ajustee: 0.0401
       retenu: true
     - cle: camp_perdant
       libelle: Avoir voté du mauvais côté
@@ -16765,7 +18438,7 @@ modeles:
         observe: 1.9443
         moyenne_nulle: -1.1894
       origine: conditionnelles
-      p_ajustee: 0.2731
+      p_ajustee: 0.2712
       retenu: false
     - cle: menace_deux_pas
       libelle: La menace, deux conseils plus tard
@@ -16815,7 +18488,7 @@ modeles:
         observe: 6.0215
         moyenne_nulle: 0.2929
       origine: conditionnelles
-      p_ajustee: 0.2589
+      p_ajustee: 0.265
       retenu: false
     - cle: cible_persistante
       libelle: La cible reste la cible
@@ -16866,7 +18539,7 @@ modeles:
         observe: 19.6275
         moyenne_nulle: 1.2391
       origine: conditionnelles
-      p_ajustee: 0.0006
+      p_ajustee: 0.0007
       retenu: true
     - cle: retour_de_baton
       libelle: Le nom rendu au conseil suivant
@@ -16919,342 +18592,342 @@ modeles:
       p_ajustee: 0.0007
       retenu: true
   autour_du_feu:
-    presences: 2401
+    presences: 2377
     conseils: 302
     saisons: 33
     par_bulletins: 2043
-    par_reconstruction: 358
-    hasard: 12.6
-    globale: 12.6
+    par_reconstruction: 334
+    hasard: 12.7
+    globale: 12.7
     bandeau:
     - modalite: bandeau minoritaire
-      effectif: 430
+      effectif: 428
       cas: 71
-      probabilite: 16.5
-      bas: 13.3
-      haut: 20.3
-      hasard: 11.7
+      probabilite: 16.6
+      bas: 13.4
+      haut: 20.4
+      hasard: 11.8
     - modalite: bandeau majoritaire
-      effectif: 840
-      cas: 84
+      effectif: 828
+      cas: 83
       probabilite: 10.0
-      bas: 8.1
-      haut: 12.2
-      hasard: 12.1
+      bas: 8.2
+      haut: 12.3
+      hasard: 12.3
     bandeau_avant:
     - modalite: bandeau minoritaire
-      effectif: 142
-      cas: 27
-      probabilite: 19.0
-      bas: 13.4
-      haut: 26.3
-      hasard: 12.6
+      effectif: 140
+      cas: 26
+      probabilite: 18.6
+      bas: 13.0
+      haut: 25.8
+      hasard: 12.7
     - modalite: bandeau majoritaire
-      effectif: 326
-      cas: 33
-      probabilite: 10.1
-      bas: 7.3
-      haut: 13.9
-      hasard: 13.0
+      effectif: 321
+      cas: 34
+      probabilite: 10.6
+      bas: 7.7
+      haut: 14.4
+      hasard: 13.1
     bandeau_apres:
     - modalite: bandeau minoritaire
       effectif: 288
-      cas: 44
-      probabilite: 15.3
-      bas: 11.6
-      haut: 19.9
-      hasard: 11.2
+      cas: 45
+      probabilite: 15.6
+      bas: 11.9
+      haut: 20.3
+      hasard: 11.3
     - modalite: bandeau majoritaire
-      effectif: 514
-      cas: 51
-      probabilite: 9.9
-      bas: 7.6
-      haut: 12.8
-      hasard: 11.5
+      effectif: 507
+      cas: 49
+      probabilite: 9.7
+      bas: 7.4
+      haut: 12.5
+      hasard: 11.8
     sexe:
     - modalite: sexe minoritaire
-      effectif: 673
-      cas: 67
-      probabilite: 10.0
-      bas: 7.9
-      haut: 12.4
-      hasard: 12.1
+      effectif: 663
+      cas: 65
+      probabilite: 9.8
+      bas: 7.8
+      haut: 12.3
+      hasard: 12.2
     - modalite: sexe majoritaire
-      effectif: 1027
-      cas: 142
-      probabilite: 13.8
-      bas: 11.9
-      haut: 16.1
-      hasard: 12.4
+      effectif: 1007
+      cas: 143
+      probabilite: 14.2
+      bas: 12.2
+      haut: 16.5
+      hasard: 12.6
     age:
     - modalite: le plus âgé du camp
       effectif: 304
-      cas: 48
-      probabilite: 15.8
-      bas: 12.1
-      haut: 20.3
-      hasard: 13.4
+      cas: 49
+      probabilite: 16.1
+      bas: 12.4
+      haut: 20.7
+      hasard: 13.5
     - modalite: entre les deux
-      effectif: 1727
-      cas: 203
-      probabilite: 11.8
-      bas: 10.3
-      haut: 13.4
-      hasard: 12.2
+      effectif: 1703
+      cas: 202
+      probabilite: 11.9
+      bas: 10.4
+      haut: 13.5
+      hasard: 12.3
     - modalite: le plus jeune du camp
       effectif: 354
       cas: 47
       probabilite: 13.3
       bas: 10.1
       haut: 17.2
-      hasard: 13.3
+      hasard: 13.4
     genre:
     - modalite: une femme
-      effectif: 1123
-      cas: 155
-      probabilite: 13.8
-      bas: 11.9
-      haut: 15.9
-      hasard: 12.5
+      effectif: 1105
+      cas: 156
+      probabilite: 14.1
+      bas: 12.2
+      haut: 16.3
+      hasard: 12.7
     - modalite: un homme
-      effectif: 1278
-      cas: 147
+      effectif: 1272
+      cas: 146
       probabilite: 11.5
-      bas: 9.9
-      haut: 13.4
-      hasard: 12.6
+      bas: 9.8
+      haut: 13.3
+      hasard: 12.7
     confort:
     - modalite: a gagné le confort du soir
-      effectif: 113
-      cas: 19
-      probabilite: 16.8
-      bas: 11.0
-      haut: 24.8
+      effectif: 120
+      cas: 20
+      probabilite: 16.7
+      bas: 11.1
+      haut: 24.3
       hasard: 13.5
     - modalite: n’a rien gagné ce soir
-      effectif: 552
-      cas: 67
-      probabilite: 12.1
-      bas: 9.7
-      haut: 15.1
-      hasard: 12.8
+      effectif: 589
+      cas: 73
+      probabilite: 12.4
+      bas: 10.0
+      haut: 15.3
+      hasard: 13.0
     immunite:
     - modalite: a gagné l’immunité individuelle
-      effectif: 92
+      effectif: 98
       cas: 0
       probabilite: 0.0
       bas: 0.0
-      haut: 4.0
+      haut: 3.8
       hasard: 13.3
     - modalite: n’a pas gagné l’immunité
-      effectif: 654
-      cas: 91
-      probabilite: 13.9
-      bas: 11.5
+      effectif: 711
+      cas: 100
+      probabilite: 14.1
+      bas: 11.7
       haut: 16.8
-      hasard: 12.1
+      hasard: 12.2
     tests:
     - cle: bandeau_minoritaire
       libelle: Le bandeau minoritaire
       question: Appartenir au bandeau le moins représenté du camp expose-t-il ?
-      observe: 6.512
-      attendu: -0.453
+      observe: 6.565
+      attendu: -0.551
       unite: ' points'
-      ecart_types: 3.52
-      p: 0.0003
+      ecart_types: 3.58
+      p: 0.0004
       tirages: 10000
       lecture: 'Écart entre partir quand son bandeau d''origine est le moins représenté du camp et partir
         quand il est le plus représenté. Le modèle nul tire l''éliminé au hasard parmi les présents :
         la taille du camp et sa composition restent celles du soir.'
       nulle: &id046
         bornes:
-        - -7.7795
-        - 7.5663
+        - -8.1088
+        - 8.1325
         cases:
         - 0
         - 3
-        - 9
+        - 11
+        - 25
+        - 50
+        - 109
+        - 200
+        - 307
+        - 426
+        - 670
+        - 894
+        - 1155
+        - 1182
+        - 1170
+        - 1021
+        - 888
+        - 677
+        - 474
+        - 306
+        - 196
+        - 103
+        - 68
+        - 35
         - 19
-        - 56
-        - 119
-        - 158
-        - 290
-        - 485
-        - 590
-        - 837
-        - 1102
-        - 974
-        - 1131
-        - 1068
-        - 796
-        - 781
-        - 598
-        - 327
-        - 300
-        - 168
-        - 64
-        - 67
-        - 39
-        - 10
-        - 7
+        - 6
+        - 3
         - 2
         - 0
-        largeur_case: 0.548064
-        observe: 6.5116
-        moyenne_nulle: -0.4532
+        largeur_case: 0.580045
+        observe: 6.5646
+        moyenne_nulle: -0.5513
       origine: autour_du_feu
-      p_ajustee: 0.001
+      p_ajustee: 0.0013
       retenu: true
     - cle: sexe_minoritaire
       libelle: Le sexe minoritaire
       question: Être du sexe le moins représenté du camp expose-t-il ?
-      observe: -3.871
-      attendu: -0.361
+      observe: -4.397
+      attendu: -0.397
       unite: ' points'
-      ecart_types: -2.05
-      p: 0.044
+      ecart_types: -2.3
+      p: 0.0266
       tirages: 10000
       lecture: Écart entre partir quand son sexe est le moins représenté du camp et partir quand il est
         le plus représenté.
       nulle: &id047
         bornes:
-        - -8.7904
-        - 7.4429
+        - -7.7985
+        - 6.5092
         cases:
         - 0
         - 1
         - 1
-        - 0
-        - 3
-        - 13
-        - 34
-        - 56
-        - 241
-        - 268
-        - 429
-        - 952
-        - 899
-        - 1077
-        - 1721
-        - 1070
-        - 1421
-        - 672
-        - 437
-        - 427
-        - 131
+        - 7
+        - 19
+        - 35
+        - 64
+        - 126
+        - 237
+        - 366
+        - 540
+        - 738
+        - 933
+        - 1088
+        - 1718
+        - 1049
+        - 932
+        - 761
+        - 553
+        - 367
+        - 203
+        - 124
         - 77
-        - 49
-        - 9
-        - 6
-        - 5
-        - 1
+        - 32
+        - 11
+        - 14
+        - 4
         - 0
-        largeur_case: 0.579761
-        observe: -3.8713
-        moyenne_nulle: -0.3607
+        largeur_case: 0.510989
+        observe: -4.3967
+        moyenne_nulle: -0.397
       origine: autour_du_feu
-      p_ajustee: 0.0803
+      p_ajustee: 0.052
       retenu: false
     - cle: doyen_du_camp
       libelle: Le plus âgé du camp
       question: Le doyen d'un conseil part-il plus souvent que les autres ?
-      observe: 3.776
-      attendu: 1.049
+      observe: 4.013
+      attendu: 0.997
       unite: ' points'
-      ecart_types: 1.23
-      p: 0.227
+      ecart_types: 1.37
+      p: 0.199
       tirages: 10000
       lecture: Écart entre partir quand on est le plus âgé des présents et partir quand on ne l'est pas.
         Le modèle nul absorbe le fait qu'on est plus souvent le doyen d'un petit camp que d'un grand.
       nulle: &id048
         bornes:
-        - -7.2513
-        - 11.4103
+        - -7.8232
+        - 11.6968
         cases:
         - 0
-        - 2
-        - 12
-        - 20
-        - 67
-        - 148
-        - 285
-        - 228
-        - 656
-        - 962
-        - 1147
-        - 670
-        - 1398
-        - 1245
-        - 1095
-        - 840
-        - 277
-        - 426
-        - 238
-        - 168
-        - 42
-        - 39
-        - 30
-        - 2
-        - 0
         - 1
+        - 1
+        - 21
+        - 16
+        - 92
+        - 163
+        - 355
+        - 679
+        - 968
+        - 572
+        - 1237
+        - 1316
+        - 1245
+        - 1099
+        - 879
+        - 592
+        - 221
+        - 262
+        - 155
+        - 79
+        - 29
+        - 12
+        - 3
+        - 1
+        - 0
         - 2
         - 0
-        largeur_case: 0.666484
-        observe: 3.776
-        moyenne_nulle: 1.0493
+        largeur_case: 0.697141
+        observe: 4.0134
+        moyenne_nulle: 0.9969
       origine: autour_du_feu
-      p_ajustee: 0.2889
+      p_ajustee: 0.2712
       retenu: false
     - cle: confort_sortie
       libelle: Le confort du soir
       question: Gagner le confort fait-il partir le soir même ?
-      observe: 4.676
-      attendu: 0.723
+      observe: 4.273
+      attendu: 0.453
       unite: ' points'
       ecart_types: 1.07
-      p: 0.309
+      p: 0.3247
       tirages: 10000
       lecture: 'Écart entre partir quand on vient de gagner le confort de l''épisode et partir quand on
         n''a rien gagné. Lu sur les seuls soirs à conseil unique : sinon l''épreuve du soir ne se rattache
         pas au bon conseil.'
       nulle: &id049
         bornes:
-        - -13.714
-        - 15.6042
+        - -12.0278
+        - 15.5578
         cases:
         - 0
-        - 1
-        - 4
+        - 6
         - 10
-        - 26
-        - 47
-        - 108
-        - 203
-        - 370
-        - 556
-        - 820
-        - 969
-        - 1111
-        - 1120
-        - 1140
-        - 950
-        - 801
-        - 606
-        - 446
-        - 293
-        - 178
-        - 114
-        - 73
-        - 36
-        - 12
-        - 4
-        - 2
+        - 30
+        - 65
+        - 132
+        - 275
+        - 384
+        - 575
+        - 816
+        - 923
+        - 1097
+        - 1110
+        - 1059
+        - 997
+        - 752
+        - 643
+        - 439
+        - 277
+        - 189
+        - 99
+        - 61
+        - 32
+        - 17
+        - 5
+        - 6
+        - 1
         - 0
-        largeur_case: 1.047077
-        observe: 4.6765
-        moyenne_nulle: 0.7226
+        largeur_case: 0.9852
+        observe: 4.2728
+        moyenne_nulle: 0.4529
       origine: autour_du_feu
-      p_ajustee: 0.3689
+      p_ajustee: 0.3878
       retenu: false
   pire_place:
     presences: 862
@@ -17418,7 +19091,7 @@ modeles:
         observe: 15.3994
         moyenne_nulle: 1.4034
       origine: pire_place
-      p_ajustee: 0.0086
+      p_ajustee: 0.0084
       retenu: true
     - cle: dos_au_mur
       libelle: Le dos au mur
@@ -17468,39 +19141,39 @@ modeles:
         observe: 1.2334
         moyenne_nulle: 0.5939
       origine: pire_place
-      p_ajustee: 0.8892
+      p_ajustee: 0.8887
       retenu: false
   tenant_du_titre:
-    epreuves: 160
-    saisons: 26
-    paires: 125
+    epreuves: 168
+    saisons: 28
+    paires: 129
     tenant:
-      effectif: 125
+      effectif: 129
       cas: 29
-      probabilite: 23.2
-      bas: 16.7
-      haut: 31.3
+      probabilite: 22.5
+      bas: 16.1
+      haut: 30.4
     autres:
-      effectif: 862
-      cas: 96
+      effectif: 904
+      cas: 100
       probabilite: 11.1
       bas: 9.2
-      haut: 13.4
-    brut: 12.1
-    attendu_force: 8.9
-    attendu_uniforme: 1.9
+      haut: 13.3
+    brut: 11.4
+    attendu_force: 8.5
+    attendu_uniforme: 1.5
     ecarts_types_uniforme: 2.74
-    part_expliquee: 73.7
+    part_expliquee: 74.7
     test:
       cle: tenant_du_titre
       libelle: Le tenant du titre
       question: Celui qui a gagné la dernière immunité la regagne-t-il plus souvent que sa force ne l'explique
         ?
-      observe: 12.063
-      attendu: 8.89
+      observe: 11.419
+      attendu: 8.525
       unite: ' points'
-      ecart_types: 0.72
-      p: 0.4704
+      ecart_types: 0.67
+      p: 0.5061
       tirages: 4000
       lecture: 'Écart entre gagner l''immunité quand on l''a gagnée la fois d''avant et la gagner quand
         on ne l''a pas gagnée. Le modèle nul ne tire pas au hasard : il tire les vainqueurs SELON LES
@@ -17508,101 +19181,101 @@ modeles:
         et non un niveau.'
       nulle: &id056
         bornes:
-        - -7.7441
-        - 27.3636
+        - -6.5898
+        - 31.1284
         cases:
         - 0
-        - 1
-        - 3
-        - 5
-        - 11
-        - 36
-        - 84
-        - 133
+        - 6
+        - 7
+        - 17
+        - 53
+        - 91
         - 182
-        - 250
-        - 340
-        - 408
-        - 462
-        - 432
-        - 403
-        - 381
-        - 300
-        - 220
+        - 283
+        - 366
+        - 421
+        - 473
+        - 511
+        - 467
+        - 354
+        - 289
+        - 200
         - 130
-        - 102
-        - 51
-        - 30
-        - 18
-        - 10
+        - 76
+        - 40
+        - 14
+        - 11
         - 5
-        - 1
         - 2
+        - 1
         - 0
-        largeur_case: 1.253849
-        observe: 12.0631
-        moyenne_nulle: 8.8895
+        - 0
+        - 1
+        - 0
+        largeur_case: 1.347079
+        observe: 11.4187
+        moyenne_nulle: 8.5249
       origine: tenant_du_titre
-      p_ajustee: 0.534
+      p_ajustee: 0.5882
       retenu: false
   age_au_conseil:
     conseils: 302
     conseils_avant: 187
     conseils_apres: 115
-    ecart_tout: 0.7
-    ecart_avant: 1.47
-    ecart_apres: -0.54
+    ecart_tout: 0.77
+    ecart_avant: 1.43
+    ecart_apres: -0.31
     test:
       cle: age_bascule_fusion
       libelle: L'âge de l'éliminé, avant et après la fusion
       question: Élimine-t-on le plus âgé avant la réunification, et plus après ?
-      observe: 2.007
-      attendu: -0.009
+      observe: 1.745
+      attendu: -0.007
       unite: ' ans'
-      ecart_types: 1.93
-      p: 0.054
+      ecart_types: 1.67
+      p: 0.097
       tirages: 10000
       lecture: 'Écart d''âge de l''éliminé à la moyenne de son camp, avant la réunification moins après.
         Le modèle nul tire l''éliminé au hasard parmi les présents : la composition d''âge de chaque soirée
         reste celle du soir.'
       nulle: &id057
         bornes:
-        - -4.9113
-        - 4.0563
+        - -4.2756
+        - 4.0293
         cases:
         - 0
-        - 1
         - 2
-        - 2
-        - 9
-        - 18
-        - 32
-        - 70
-        - 148
-        - 258
-        - 429
-        - 581
-        - 818
-        - 1044
-        - 1153
-        - 1248
-        - 1132
-        - 975
-        - 814
-        - 567
-        - 323
-        - 187
-        - 101
-        - 50
-        - 21
-        - 12
         - 5
+        - 9
+        - 37
+        - 52
+        - 91
+        - 169
+        - 300
+        - 424
+        - 593
+        - 797
+        - 960
+        - 1060
+        - 1122
+        - 1113
+        - 1004
+        - 729
+        - 597
+        - 389
+        - 250
+        - 145
+        - 81
+        - 36
+        - 23
+        - 9
+        - 3
         - 0
-        largeur_case: 0.320274
-        observe: 2.007
-        moyenne_nulle: -0.0093
+        largeur_case: 0.296602
+        observe: 1.7452
+        moyenne_nulle: -0.0069
       origine: age_au_conseil
-      p_ajustee: 0.0945
+      p_ajustee: 0.1604
       retenu: false
   rappel:
     effectif: 491
@@ -17728,7 +19401,7 @@ modeles:
     unite: personnes
     ecart_types: -5.36
     p: 0.0001
-    p_ajustee: 0.0006
+    p_ajustee: 0.0007
     retenu: true
     tirages: 10000
     lecture: 'Un écart observé plus PETIT que l''attendu est la signature d''un quota : le hasard, lui,
@@ -17743,7 +19416,7 @@ modeles:
     unite: annees
     ecart_types: 2.53
     p: 0.0118
-    p_ajustee: 0.0248
+    p_ajustee: 0.0254
     retenu: true
     tirages: 10000
     lecture: Rebattre les aventuriers entre saisons donne l'écart-type général. Un écart observé PLUS
@@ -17773,7 +19446,7 @@ modeles:
     unite: ''
     ecart_types: 1.06
     p: 0.2939
-    p_ajustee: 0.3631
+    p_ajustee: 0.3717
     retenu: false
     tirages: 10000
     lecture: Distance entre le mélange de profils d'une saison et le mélange général. Un observé PLUS
@@ -17789,7 +19462,7 @@ modeles:
     unite: points de %
     ecart_types: -1.76
     p: 0.077
-    p_ajustee: 0.1244
+    p_ajustee: 0.1324
     retenu: false
     tirages: 10000
     lecture: On rebat les bandeaux à l'intérieur de chaque saison. Un écart observé PLUS PETIT que l'attendu
@@ -17805,7 +19478,7 @@ modeles:
     unite: annees
     ecart_types: 3.03
     p: 0.0022
-    p_ajustee: 0.0054
+    p_ajustee: 0.0053
     retenu: true
     tirages: 10000
     lecture: 'Même méthode, sur l''âge moyen de chaque bandeau. Un écart observé PLUS GRAND que l''attendu
@@ -17820,7 +19493,7 @@ modeles:
     unite: annees
     ecart_types: 1.02
     p: 0.3162
-    p_ajustee: 0.3689
+    p_ajustee: 0.3878
     retenu: false
     tirages: 10000
     lecture: La médiane ignore les valeurs extrêmes. Si elle ne s'écarte pas, c'est que l'écart moyen
@@ -17836,7 +19509,7 @@ modeles:
     unite: rang moyen
     ecart_types: 0.41
     p: 0.6927
-    p_ajustee: 0.7273
+    p_ajustee: 0.7451
     retenu: false
     tirages: 10000
     lecture: Le modèle classe les candidats d'une saison ; on relève la place qu'il donne à celui qui
@@ -17851,7 +19524,7 @@ modeles:
     unite: '%'
     ecart_types: -1.31
     p: 0.2054
-    p_ajustee: 0.2731
+    p_ajustee: 0.2712
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -17867,7 +19540,7 @@ modeles:
     unite: années
     ecart_types: 1.4
     p: 0.1692
-    p_ajustee: 0.245
+    p_ajustee: 0.2509
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -17883,7 +19556,7 @@ modeles:
     unite: '%'
     ecart_types: -0.45
     p: 0.6666
-    p_ajustee: 0.7179
+    p_ajustee: 0.7451
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -17915,7 +19588,7 @@ modeles:
     unite: '%'
     ecart_types: -2.11
     p: 0.0412
-    p_ajustee: 0.0787
+    p_ajustee: 0.077
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -17948,7 +19621,7 @@ modeles:
     unite: ''
     ecart_types: 5.6
     p: 0.0001
-    p_ajustee: 0.0006
+    p_ajustee: 0.0007
     retenu: true
     tirages: 10000
     lecture: 'Dispersion entre les effectifs observés et ceux qu''on attendrait d''un tirage au hasard
@@ -18000,7 +19673,7 @@ modeles:
     unite: ''
     ecart_types: 8.26
     p: 0.0001
-    p_ajustee: 0.0006
+    p_ajustee: 0.0007
     retenu: true
     tirages: 10000
     lecture: 'Même mesure, agrégée par région. C''est le niveau où la question se décide : un département
@@ -18050,7 +19723,7 @@ modeles:
     unite: ''
     ecart_types: 8.09
     p: 0.0001
-    p_ajustee: 0.0006
+    p_ajustee: 0.0007
     retenu: true
     tirages: 10000
     lecture: Gain de la meilleure coupure de la série d'audience, comparé à celui obtenu sur des saisons
@@ -18082,7 +19755,7 @@ modeles:
     unite: ''
     ecart_types: -1.62
     p: 0.1074
-    p_ajustee: 0.1671
+    p_ajustee: 0.171
     retenu: false
     tirages: 10000
     lecture: Corrélation de rang entre l'audience d'une saison et l'effectif de la suivante, une fois
@@ -18093,12 +19766,12 @@ modeles:
     libelle: Le sexe des éliminés, avant et après la fusion
     question: La part de femmes parmi les éliminés change-t-elle à la réunification ?
     origine: avant_apres
-    observe: -8.061
-    attendu: -0.578
+    observe: -7.861
+    attendu: -1.072
     unite: ' points'
-    ecart_types: -1.5
-    p: 0.1359
-    p_ajustee: 0.2039
+    ecart_types: -1.39
+    p: 0.1646
+    p_ajustee: 0.2509
     retenu: false
     tirages: 10000
     lecture: 'Différence entre l''après et l''avant, en points de pourcentage. Le hasard, ici, c''est
@@ -18109,12 +19782,12 @@ modeles:
     libelle: La force des éliminés, avant et après la fusion
     question: Élimine-t-on le faible avant la réunification et le fort après ?
     origine: avant_apres
-    observe: -15.848
-    attendu: -0.033
+    observe: -13.757
+    attendu: 0.011
     unite: ' points de rang'
-    ecart_types: -4.62
-    p: 0.0001
-    p_ajustee: 0.0006
+    ecart_types: -4.17
+    p: 0.0002
+    p_ajustee: 0.0007
     retenu: true
     tirages: 10000
     lecture: 'Rang de l''éliminé parmi les présents, sur la force estimée aux épreuves : 0 le plus faible
@@ -18125,12 +19798,12 @@ modeles:
     libelle: Des conseils plus serrés après la fusion ?
     question: Le vote se divise-t-il davantage une fois les tribus réunies ?
     origine: avant_apres
-    observe: 18.551
-    attendu: 0.1
+    observe: 20.282
+    attendu: 0.062
     unite: ' points'
-    ecart_types: 2.95
-    p: 0.0057
-    p_ajustee: 0.0126
+    ecart_types: 3.4
+    p: 0.0009
+    p_ajustee: 0.0023
     retenu: true
     tirages: 10000
     lecture: Part de conseils où l'éliminé ne rassemble pas plus de la moitié des voix, après moins avant.
@@ -18140,12 +19813,12 @@ modeles:
     libelle: Qui les ambassadeurs éliminent-ils ?
     question: Deux ambassadeurs qui décident seuls choisissent-ils autrement qu'un tirage ?
     origine: avant_apres
-    observe: 44.545
-    attendu: 50.052
+    observe: 46.875
+    attendu: 49.952
     unite: ' points de rang'
-    ecart_types: -0.68
-    p: 0.5037
-    p_ajustee: 0.5567
+    ecart_types: -0.4
+    p: 0.6931
+    p_ajustee: 0.7451
     retenu: false
     tirages: 10000
     lecture: Rang de l'éliminé parmi les présents, sur la force estimée aux épreuves. Au-dessus de 50,
@@ -18160,7 +19833,7 @@ modeles:
     unite: ' points de rang'
     ecart_types: -1.88
     p: 0.0614
-    p_ajustee: 0.1032
+    p_ajustee: 0.11
     retenu: false
     tirages: 10000
     lecture: 'Rang de l''ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c''est la
@@ -18176,7 +19849,7 @@ modeles:
     unite: ' points'
     ecart_types: 3.55
     p: 0.0008
-    p_ajustee: 0.0021
+    p_ajustee: 0.0022
     retenu: true
     tirages: 10000
     lecture: 'Écart entre deux probabilités conditionnelles : partir sachant qu''on a été visé la fois
@@ -18192,7 +19865,7 @@ modeles:
     unite: ' points'
     ecart_types: 2.31
     p: 0.0196
-    p_ajustee: 0.0392
+    p_ajustee: 0.0401
     retenu: true
     tirages: 10000
     lecture: 'Écart entre partir après une à trois voix et partir après quatre voix ou plus. Un écart
@@ -18208,7 +19881,7 @@ modeles:
     unite: ' points'
     ecart_types: 1.27
     p: 0.2081
-    p_ajustee: 0.2731
+    p_ajustee: 0.2712
     retenu: false
     tirages: 10000
     lecture: Écart entre partir après avoir voté avec la minorité et partir après avoir voté avec la majorité.
@@ -18222,7 +19895,7 @@ modeles:
     unite: ' points'
     ecart_types: 1.35
     p: 0.1849
-    p_ajustee: 0.2589
+    p_ajustee: 0.265
     retenu: false
     tirages: 10000
     lecture: Écart entre partir quand on avait été visé DEUX conseils plus tôt et partir quand on ne l'avait
@@ -18237,7 +19910,7 @@ modeles:
     unite: ' points'
     ecart_types: 5.09
     p: 0.0001
-    p_ajustee: 0.0006
+    p_ajustee: 0.0007
     retenu: true
     tirages: 10000
     lecture: Écart entre voir son nom ressortir quand il était déjà sorti et le voir sortir quand il ne
@@ -18262,12 +19935,12 @@ modeles:
     libelle: Le bandeau minoritaire
     question: Appartenir au bandeau le moins représenté du camp expose-t-il ?
     origine: autour_du_feu
-    observe: 6.512
-    attendu: -0.453
+    observe: 6.565
+    attendu: -0.551
     unite: ' points'
-    ecart_types: 3.52
-    p: 0.0003
-    p_ajustee: 0.001
+    ecart_types: 3.58
+    p: 0.0004
+    p_ajustee: 0.0013
     retenu: true
     tirages: 10000
     lecture: 'Écart entre partir quand son bandeau d''origine est le moins représenté du camp et partir
@@ -18278,12 +19951,12 @@ modeles:
     libelle: Le sexe minoritaire
     question: Être du sexe le moins représenté du camp expose-t-il ?
     origine: autour_du_feu
-    observe: -3.871
-    attendu: -0.361
+    observe: -4.397
+    attendu: -0.397
     unite: ' points'
-    ecart_types: -2.05
-    p: 0.044
-    p_ajustee: 0.0803
+    ecart_types: -2.3
+    p: 0.0266
+    p_ajustee: 0.052
     retenu: false
     tirages: 10000
     lecture: Écart entre partir quand son sexe est le moins représenté du camp et partir quand il est
@@ -18293,12 +19966,12 @@ modeles:
     libelle: Le plus âgé du camp
     question: Le doyen d'un conseil part-il plus souvent que les autres ?
     origine: autour_du_feu
-    observe: 3.776
-    attendu: 1.049
+    observe: 4.013
+    attendu: 0.997
     unite: ' points'
-    ecart_types: 1.23
-    p: 0.227
-    p_ajustee: 0.2889
+    ecart_types: 1.37
+    p: 0.199
+    p_ajustee: 0.2712
     retenu: false
     tirages: 10000
     lecture: Écart entre partir quand on est le plus âgé des présents et partir quand on ne l'est pas.
@@ -18308,12 +19981,12 @@ modeles:
     libelle: Le confort du soir
     question: Gagner le confort fait-il partir le soir même ?
     origine: autour_du_feu
-    observe: 4.676
-    attendu: 0.723
+    observe: 4.273
+    attendu: 0.453
     unite: ' points'
     ecart_types: 1.07
-    p: 0.309
-    p_ajustee: 0.3689
+    p: 0.3247
+    p_ajustee: 0.3878
     retenu: false
     tirages: 10000
     lecture: 'Écart entre partir quand on vient de gagner le confort de l''épisode et partir quand on
@@ -18329,7 +20002,7 @@ modeles:
     unite: ' points'
     ecart_types: 3.11
     p: 0.0037
-    p_ajustee: 0.0086
+    p_ajustee: 0.0084
     retenu: true
     tirages: 10000
     lecture: Écart entre partir quand plus aucun de ceux avec qui on a déjà voté n'est présent, et partir
@@ -18344,7 +20017,7 @@ modeles:
     unite: ' points'
     ecart_types: 0.16
     p: 0.868
-    p_ajustee: 0.8892
+    p_ajustee: 0.8887
     retenu: false
     tirages: 10000
     lecture: Écart entre gagner l'immunité individuelle du soir quand on a été visé au conseil précédent
@@ -18376,7 +20049,7 @@ modeles:
     unite: ''
     ecart_types: 7.51
     p: 0.0001
-    p_ajustee: 0.0006
+    p_ajustee: 0.0007
     retenu: true
     tirages: 10000
     lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
@@ -18420,12 +20093,12 @@ modeles:
     question: Celui qui a gagné la dernière immunité la regagne-t-il plus souvent que sa force ne l'explique
       ?
     origine: tenant_du_titre
-    observe: 12.063
-    attendu: 8.89
+    observe: 11.419
+    attendu: 8.525
     unite: ' points'
-    ecart_types: 0.72
-    p: 0.4704
-    p_ajustee: 0.534
+    ecart_types: 0.67
+    p: 0.5061
+    p_ajustee: 0.5882
     retenu: false
     tirages: 4000
     lecture: 'Écart entre gagner l''immunité quand on l''a gagnée la fois d''avant et la gagner quand
@@ -18437,19 +20110,69 @@ modeles:
     libelle: L'âge de l'éliminé, avant et après la fusion
     question: Élimine-t-on le plus âgé avant la réunification, et plus après ?
     origine: age_au_conseil
-    observe: 2.007
-    attendu: -0.009
+    observe: 1.745
+    attendu: -0.007
     unite: ' ans'
-    ecart_types: 1.93
-    p: 0.054
-    p_ajustee: 0.0945
+    ecart_types: 1.67
+    p: 0.097
+    p_ajustee: 0.1604
     retenu: false
     tirages: 10000
     lecture: 'Écart d''âge de l''éliminé à la moyenne de son camp, avant la réunification moins après.
       Le modèle nul tire l''éliminé au hasard parmi les présents : la composition d''âge de chaque soirée
       reste celle du soir.'
     nulle: *id057
-  nb_tests: 42
+  - cle: talent_stable
+    libelle: La qualité d’un joueur se retrouve-t-elle d’une saison à l’autre ?
+    question: Le score d’un aventurier à sa première participation prédit-il celui de ses participations
+      suivantes ?
+    origine: classement
+    observe: 0.042
+    attendu: -0.0
+    unite: ''
+    ecart_types: 0.35
+    p: 0.7273
+    p_ajustee: 0.7628
+    retenu: false
+    tirages: 10000
+    lecture: 71 aventuriers ont joué au moins deux fois.
+    nulle:
+      bornes:
+      - -0.5025
+      - 0.4567
+      cases:
+      - 0
+      - 2
+      - 2
+      - 5
+      - 13
+      - 31
+      - 82
+      - 141
+      - 264
+      - 373
+      - 597
+      - 769
+      - 889
+      - 1075
+      - 1147
+      - 1088
+      - 1000
+      - 821
+      - 610
+      - 451
+      - 292
+      - 167
+      - 96
+      - 53
+      - 19
+      - 10
+      - 3
+      - 0
+      largeur_case: 0.034256
+      observe: 0.0419
+      moyenne_nulle: -0.0004
+  nb_tests: 43
   nb_retenus: 21
 completude_saisons:
   colonnes:
@@ -20533,7 +22256,7 @@ completude_saisons:
     annee: 2017
     speciale: false
     effectif: 21
-    score: 70.4
+    score: 75.7
     cellules:
     - cle: casting
       valeur: 100.0
@@ -20597,7 +22320,7 @@ completude_saisons:
       nature: part
     - cle: epreuves
       valeur: 100.0
-      texte: 42 relevées
+      texte: 32 relevées
       etat: complet
       nature: fait
     - cle: colliers
@@ -20606,9 +22329,9 @@ completude_saisons:
       etat: manquant
       nature: fait
     - cle: fusion
-      valeur: 0.0
-      texte: non repérée
-      etat: manquant
+      valeur: 100.0
+      texte: repérée
+      etat: complet
       nature: fait
     - cle: ambassadeurs
       valeur: 0.0
@@ -21437,7 +23160,7 @@ completude_saisons:
       nature: part
     - cle: epreuves
       valeur: 100.0
-      texte: 32 relevées
+      texte: 26 relevées
       etat: complet
       nature: fait
     - cle: colliers
@@ -21857,7 +23580,7 @@ completude_saisons:
       nature: part
     - cle: epreuves
       valeur: 100.0
-      texte: 32 relevées
+      texte: 31 relevées
       etat: complet
       nature: fait
     - cle: colliers
@@ -22203,8 +23926,8 @@ completude_saisons:
     libelle: Réunification repérée
     court: Fusion
     nature: fait
-    moyenne: 80.8
-    completes: 21
+    moyenne: 84.6
+    completes: 22
     concernees: 26
   - cle: ambassadeurs
     libelle: Ambassadeurs nommés
@@ -22236,6 +23959,6 @@ completude_saisons:
     concernees: 27
   saisons: 34
   cases: 604
-  moyenne: 84.4
+  moyenne: 84.5
   meilleure: s05
   pire: sp8

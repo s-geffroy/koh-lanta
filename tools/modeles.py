@@ -4323,7 +4323,8 @@ def _fichier(nom):
     return yaml.safe_load(open(chemin, encoding="utf-8")) or {}
 
 
-def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
+def tout(par_saison, parts, conseils, epreuves, indicateurs_saison,
+         tests_externes=()):
     """Lance les quatre axes et corrige l'ensemble des tests d'un seul coup.
 
     La correction ne vaut que si la liste des tests est arretee AVANT de
@@ -4398,6 +4399,13 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison):
         if t:
             t["origine"] = origine
             registre.append(t)
+    # Des tests calcules ailleurs -- le classement des joueurs -- entrent dans
+    # le MEME registre. La correction pour tests multiples ne vaut que si elle
+    # les couvre tous : un test tenu a l'ecart de la liste serait un test
+    # gratuit, et c'est exactement ce que la procedure sert a empecher.
+    for t in tests_externes or ():
+        t.setdefault("origine", "classement")
+        registre.append(t)
     ajustees = benjamini_hochberg([t["p"] for t in registre])
     for t, pa in zip(registre, ajustees):
         t["p_ajustee"] = _arr(pa, 4)

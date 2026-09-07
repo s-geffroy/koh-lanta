@@ -233,6 +233,49 @@ que la précaution enlève : sur
 [L’audience]({{ '/statistiques/audience/' | relative_url }}), elle fait passer un
 lien de −0,64 à −0,30, et le résultat de spectaculaire à nul.
 
+### Le rétrécissement vers la moyenne, plutôt qu’un seuil qui exclut
+
+Un taux sur trois essais ne veut rien dire — mais écarter d’un classement tous
+ceux qui n’ont que trois essais fabrique un classement de survivants, et les
+seuils employés ailleurs sur ce site
+([les épreuves]({{ '/statistiques/epreuves/' | relative_url }}),
+[le jeu social]({{ '/statistiques/jeu-social/' | relative_url }})) coupent la
+population en deux plutôt que de la mesurer.
+
+Le [top des joueurs]({{ '/statistiques/top/' | relative_url }}) prend l’autre
+route : chaque taux est tiré vers la moyenne de la population, d’autant plus
+fort que les essais sont rares. Faute de preuve, un aventurier vaut la
+moyenne — il ne vaut ni zéro, ni l’exclusion, et il reste dans le classement
+avec son incertitude.
+
+La force du rétrécissement n’est **pas choisie à la main**. Elle est estimée sur
+les données par la méthode des moments : on retranche à la dispersion observée
+des taux la part qui s’explique par le seul hasard d’échantillonnage — binomiale
+pour une proportion, de Poisson pour un comptage, et pour une note continue la
+variance d’un même joueur d’une saison à l’autre. Ce qui reste est la dispersion
+**entre** joueurs, et c’est elle qui décide.
+
+Deux conséquences se lisent directement, et elles sont publiées. Quand cette
+dispersion est franche, le rétrécissement est faible et le classement est net.
+Quand elle **n’est pas décelable** — c’est le cas de la longueur de parcours —
+le rétrécissement part au plafond, et la facette cesse de distinguer les joueurs
+un à un. C’est un résultat, pas un réglage.
+
+### Tirer les pondérations plutôt que d’en défendre une
+
+Dès qu’un chiffre agrège plusieurs mesures, quelqu’un a décidé de leur poids
+relatif, et cette décision ne se démontre pas. Plutôt que de la défendre, on
+l’échantillonne : dix mille pondérations tirées uniformément sur le simplexe —
+une loi de Dirichlet de paramètres tous égaux à 1, c’est-à-dire *aucune opinion*
+sur l’importance relative des composantes — et le classement refait à chaque
+fois.
+
+Ce qu’on publie alors n’est plus un rang mais une **distribution de rangs** :
+la part des pondérations qui gardent un joueur dans le top, et l’intervalle
+central de ses rangs. Ce qui survit à toutes les pondérations est un fait ; le
+reste est un choix d’auteur, et il est affiché comme tel. La même précaution
+vaudrait pour n’importe quel indice composite, et elle manque à la plupart.
+
 ### La validation « une saison exclue à chaque tour »
 
 Pour le pronostic. Le modèle apprend sur toutes les saisons sauf une et

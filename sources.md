@@ -401,6 +401,74 @@ donnent le compte de victoires par personne et par saison — il est renseigné
 pour 77 des 90 participations de ces cinq éditions. Ce qui manque n’est pas
 « combien chacun a gagné », c’est « quelle épreuve, quel soir ».</p>
 
+## Trois défauts dans la lecture des épreuves, trouvés en construisant un classement
+
+Vouloir classer les joueurs oblige à diviser leurs victoires par leurs
+occasions. C’est en cherchant ce dénominateur qu’on s’est aperçu que quatre
+aventuriers de *Cambodge* affichaient **cinq victoires pour zéro épreuve
+disputée**. Le tirage du fil a sorti trois défauts distincts, tous silencieux.
+
+**Le premier : un tableau de classement lu comme un tableau de résultats.** La
+section « Bilan par épisode » de *La Revanche des 4 Terres* contient deux
+tableaux. Le premier est un encart déroulant qui donne l’**ordre d’arrivée des
+quatre tribus** sur les épisodes 1 à 4 ; le vrai bilan de la saison vient juste
+en dessous. Le lecteur s’arrêtait au premier tableau. Quatre colonnes sous
+« Confort », quatre sous « Immunité », lues comme quatre vainqueurs :
+**trente-deux victoires fabriquées**, et le vrai tableau jamais ouvert. Le
+lecteur parcourt désormais tous les tableaux d’une section, et rejette ceux qui
+donnent plusieurs vainqueurs *différents* pour un même rôle au même épisode —
+ce qui distingue un classement d’un résultat, un `colspan` sur un en-tête
+légitime produisant, lui, des cellules identiques.
+
+**Le deuxième : une ligne par élimination prise pour un épisode.** Le tableau
+« Challenges » de Wikipédia en anglais n’a pas de colonne d’épisode : il a une
+**date de diffusion**, et une ligne par sortie. Le compteur implicite donnait
+donc vingt-et-un « épisodes » au *Cambodge*, qui en compte quatorze — et toutes
+ses épreuves individuelles se retrouvaient numérotées après la sortie de ceux
+qui les avaient gagnées. La date, elle, est recopiée sur chaque ligne d’un même
+soir : compter les dates **distinctes** rend le vrai numéro, sans rien deviner.
+
+**Le troisième : deux sources, deux numérotations.** Wikipédia en anglais
+compte dix-sept épisodes au *Totem maudit* là où le tableau des votes en compte
+quatorze — il coupe en deux des soirées que la page française garde entières.
+Les deux décrivent les mêmes épreuves, mais « l’épreuve a-t-elle eu lieu avant
+sa sortie ? » n’a plus de réponse juste quand les deux fichiers ne parlent pas
+la même langue. Le choix de la source ne se fait donc plus au volume mais à
+l’**accord avec les conseils** : une page dont la numérotation dépasse de plus
+de deux le dernier conseil numéroté est écartée, et le rapport le dit.
+
+<p class="note"><strong>La réparation a elle-même révélé une contradiction.</strong>
+Une fois le vrai tableau de <em>La Revanche des 4 Terres</em> ouvert, le
+vérificateur a signalé que Maxime gagnait l’immunité individuelle de l’épisode
+13 <em>et</em> partait au conseil du même soir. Les deux ne peuvent pas tenir
+ensemble. La cellule « Immunité » de ce soir-là porte trois noms : ce sont les
+rescapés d’une <em>épreuve éliminatoire</em>, pas les vainqueurs d’une immunité.
+Quand les deux faits se contredisent, c’est le conseil qui l’emporte — il est
+attesté par ses bulletins, l’immunité ne l’est que par un nom dans une cellule.
+La seule attribution qui se contredit est retirée, les deux autres restent, et
+la ligne figure au rapport de construction.</p>
+
+Ce que cela déplace : **766 épreuves relevées deviennent 749**, dont
+**375 individuelles au lieu de 368** — on en perd en volume, on en gagne en
+vérité. La couverture de la première épreuve passe de 28 à 29 saisons, le modèle
+de force est estimé sur 284 épreuves au lieu de 271 et sur 28 saisons au lieu de
+26. Aucun des tests du
+[registre corrigé]({{ '/methode/' | relative_url }}) ne change de conclusion :
+21 retenus avant, 21 après.
+
+**Une conclusion publiée a néanmoins basculé, et il faut la nommer.**
+[La grille]({{ '/statistiques/grille/' | relative_url }}) affirmait que
+l’épisode de la réunification **ne bouge pas** avec la taille du casting —
+pente 0,008, intervalle −0,135 à 0,152. Elle vaut désormais 0,111, intervalle
+0,016 à 0,205, p = 0,022 : la fusion recule bel et bien, d’environ
+**un épisode** sur toute la croissance des castings. Deux saisons expliquent le
+renversement, et les deux étaient fausses. *Cambodge* était <em>écartée</em> du
+calcul parce que son dernier collectif tombait à un épisode ne laissant que
+quatre joueurs — c’était le décalage de numérotation. *La Revanche des 4 Terres*
+plaçait sa fusion à l’épisode 4 sur 17, chiffre lu dans le tableau de classement
+des quatre tribus ; elle la place maintenant à l’épisode 8. La page a été
+réécrite, et elle raconte ce qu’elle disait avant.
+
 ## Ce qui manque
 
 Le jeu de données n’est pas complet, et le dire fait partie du travail. Voici la
