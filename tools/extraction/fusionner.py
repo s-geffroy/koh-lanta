@@ -69,6 +69,11 @@ LIBELLE = {
 # libelle affiche perd un « l » que la cible du lien porte, et que toutes les
 # autres cellules de la meme page ecrivent correctement. Sans cela, « Phiippe »
 # entre dans la comparaison des prenoms avec le fichier INSEE.
+# Ce qu'une source ecrit quand l'aventure n'est pas finie pour cette personne.
+# C'est une AFFIRMATION, pas une absence : elle prime sur tout sort deduit
+# ailleurs.
+RE_EN_JEU = re.compile(r"encore en jeu|toujours en jeu", re.I)
+
 COQUILLES = {
     ("sp4", "Phiippe"): "Philippe",
 }
@@ -231,6 +236,29 @@ def fusionner_saison(saison, rows_f, rows_w, rapport, saisons_connues=()):
                 rapport.append(f"{sid} / {nom} : sort diverge — "
                                f"wikipedia-fr={sw}, fandom={sf} "
                                f"(retenu : {fiche.get('sort')})")
+
+        # « Encore en jeu » : la source le DIT, et elle a le dernier mot.
+        #
+        # Sur une saison en cours de diffusion, la colonne de depart d'un
+        # tableau de candidats est vide -- personne n'est encore sorti. La
+        # colonne voisine, elle, porte le palmares anterieur (« Vainqueur de
+        # la saison 9 », « Eliminee le 12e jour du Choc des heros ») et le
+        # lecteur de Wikipedia finit par la prendre pour un depart. All Stars
+        # 2026 s'est ainsi retrouvee avec trois vainqueurs et quatre
+        # finalistes pour quatre conseils joues.
+        #
+        # `parse_wikipedia_fr` ecarte desormais les cellules de palmares avant
+        # de chercher le depart, mais son motif exige le mot « saison » et
+        # certaines les nomment par leur titre. Plutot que d'allonger un motif
+        # sans fin, on s'appuie sur ce qu'une source AFFIRME : quand elle
+        # ecrit « Encore en jeu », l'aventurier n'a pas de sort, et aucune
+        # deduction faite ailleurs ne peut en inventer un.
+        if RE_EN_JEU.search(fiche.get("motif") or ""):
+            if fiche.get("sort"):
+                rapport.append(f"{sid} / {nom} : « {fiche['motif']} » — sort "
+                               f"« {fiche['sort']} » deduit d'un palmares, ecarte")
+            fiche["sort"] = None
+            provenance.pop("sort", None)
 
         fiche["sources"] = provenance
         out.append(fiche)

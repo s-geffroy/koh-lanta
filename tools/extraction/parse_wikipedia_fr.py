@@ -102,18 +102,28 @@ def parse_row(row, saison_id=None):
         if t:
             restantes.append(t)
 
+    # Sur les editions de retour, une colonne porte le PALMARES anterieur
+    # (« Vainqueur de la saison 5 », « Finaliste de la saison 26 »). Elle doit
+    # sortir AVANT qu'on cherche le depart, et pas seulement avant qu'on
+    # cherche le metier : quand la vraie colonne de depart est vide -- une
+    # saison en cours de diffusion --, le palmares est la derniere cellule qui
+    # « ressemble a un sort », et All Stars 2026 s'est retrouvee avec trois
+    # vainqueurs et quatre finalistes alors que la source ecrit « Encore en
+    # jeu » pour seize de ses dix-huit candidats.
+    #
+    # Ce que le motif exige : un mot de sort ET une mention de saison. Un vrai
+    # depart -- « Eliminee au conseil », « Eliminé le 12e jour » -- ne nomme
+    # jamais de saison, c'est ce qui les separe.
+    palmares = [t for t in restantes if RE_PALMARES.search(t)]
+    for t in palmares:
+        restantes.remove(t)
+
     # le depart est la derniere cellule textuelle qui ressemble a un sort
     for t in reversed(restantes):
         if classify(t)[0]:
             depart = t
             restantes.remove(t)
             break
-    # Sur les editions de retour, la colonne qui tient lieu de metier porte en
-    # fait un palmares (« Vainqueur de la saison 5 »). Ce n'est pas une
-    # profession : la ranger comme telle fausserait la taxonomie des metiers.
-    for t in list(restantes):
-        if RE_PALMARES.search(t):
-            restantes.remove(t)
     if restantes:
         profession = restantes[0]
 

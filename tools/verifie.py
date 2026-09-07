@@ -240,6 +240,29 @@ def verifier_participations(parts, saisons, c):
 
         vainqueurs = [p for p in lignes if p.get("sort") == "vainqueur"]
         declares = s.get("vainqueurs") or []
+        if s.get("en_cours"):
+            # Le point aveugle repare : jusqu'ici, une saison EN COURS
+            # echappait a tout controle de sort, et All Stars 2026 y a porte
+            # trois vainqueurs et quatre finalistes pour quatre conseils
+            # joues. Ils venaient de la colonne « Saisons precedentes » du
+            # tableau des candidats, prise pour la colonne de depart -- vide,
+            # puisque la saison n'est pas finie.
+            #
+            # Une saison qui n'est pas terminee n'a ni vainqueur ni finaliste.
+            # Elle n'a que des elimines, et ceux-la sont attestes.
+            au_bout = [p for p in lignes
+                       if p.get("sort") in ("vainqueur", "finaliste")]
+            if au_bout:
+                c.erreur(f"{sid} : saison en cours, mais "
+                         f"{len(au_bout)} aventurier(s) portent deja un sort de "
+                         f"fin d'aventure — "
+                         f"{', '.join(sorted(p['id'] for p in au_bout))}")
+        # Un sort ne peut pas contredire une source qui dit « encore en jeu ».
+        for p in lignes:
+            if p.get("sort") and re.search(r"encore en jeu|toujours en jeu",
+                                           p.get("motif") or "", re.I):
+                c.erreur(f"{sid} / {p['nom']} : sort « {p['sort']} » alors que la "
+                         f"source ecrit « {p['motif']} »")
         if not s.get("en_cours"):
             if len(vainqueurs) != len(declares):
                 c.erreur(f"{sid} : {len(vainqueurs)} vainqueur(s) dans les donnees "

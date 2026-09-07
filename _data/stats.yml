@@ -9680,12 +9680,6 @@ completude:
     manquants: 0
     part: 100.0
     depuis_page_individuelle: 59
-  - champ: sort
-    libelle: Manière de sortir
-    remplis: 645
-    manquants: 0
-    part: 100.0
-    depuis_page_individuelle: 0
   - champ: tribu
     libelle: Tribu de départ
     remplis: 645
@@ -9704,6 +9698,12 @@ completude:
     manquants: 16
     part: 97.5
     depuis_page_individuelle: 2
+  - champ: sort
+    libelle: Manière de sortir
+    remplis: 629
+    manquants: 16
+    part: 97.5
+    depuis_page_individuelle: 0
   - champ: localisation
     libelle: Département d'origine
     remplis: 627
@@ -9740,12 +9740,12 @@ completude:
     manquants: 98
     part: 84.8
     depuis_page_individuelle: 547
-  champs_complets: 5
+  champs_complets: 4
   champs_suivis: 13
-  trous: 394
+  trous: 410
   valeurs_suivies: 8385
   comblees: 2311
-  part_remplie: 95.3
+  part_remplie: 95.11
 palmares:
   renseignees: 549
   compares: 472

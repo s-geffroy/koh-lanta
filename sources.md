@@ -469,6 +469,45 @@ plaçait sa fusion à l’épisode 4 sur 17, chiffre lu dans le tableau de class
 des quatre tribus ; elle la place maintenant à l’épisode 8. La page a été
 réécrite, et elle raconte ce qu’elle disait avant.
 
+## Trois vainqueurs pour une saison qui n’est pas finie
+
+*All Stars* a commencé le 25 août 2026 ; au moment où ces données sont
+constituées, quatre conseils ont été joués et deux personnes sont sorties. Le
+fichier, lui, portait **trois vainqueurs et quatre finalistes** — alors que la
+source écrit, pour seize des dix-huit candidats, « Encore en jeu ».
+
+La cause est une colonne. Le tableau des candidats de Wikipédia porte
+« Saisons précédentes » — « Vainqueur de la saison 9 », « Finaliste de la
+saison 26 », « Éliminée le 12<sup>e</sup> jour du *Choc des héros* » — et, juste
+après, « Départ ». Sur une saison en cours, la colonne de départ est **vide** :
+personne n’est encore sorti. Le lecteur, qui retient « la dernière cellule qui
+ressemble à un sort », tombait alors sur le palmarès et le prenait pour un
+départ.
+
+Le code connaissait pourtant le piège : il écartait déjà ces cellules pour ne
+pas les ranger comme des **métiers**. Il le faisait simplement trop tard. Le
+retrait a été remonté avant la recherche du départ.
+
+Cela ne suffisait pas : un palmarès qui nomme une édition par son titre plutôt
+que par son numéro échappe au motif. Plutôt que d’allonger sans fin une
+expression régulière, on s’appuie désormais sur ce qu’une source **affirme** :
+quand elle écrit « Encore en jeu », l’aventurier n’a pas de sort, et aucune
+déduction faite ailleurs ne peut lui en inventer un.
+
+<p class="note"><strong>Le point aveugle du vérificateur, et sa réparation.</strong>
+Le contrôle « autant de vainqueurs dans les données que la saison en déclare »
+sautait explicitement les saisons en cours — c’est pourquoi rien n’a
+sonné. Deux règles le remplacent : une saison non terminée ne peut porter
+<em>aucun</em> sort de fin d’aventure, et un sort ne peut pas contredire une
+source qui écrit « encore en jeu ». Les deux ont été éprouvées en
+réintroduisant la faute exacte.</p>
+
+Effet sur les chiffres du site : **aucun**. Une saison en cours est écartée de
+tous les calculs, et le balayage des 170 intervalles publiés ne montre aucun
+changement de conclusion. Ce qui change est la
+[complétude]({{ '/completude/' | relative_url }}) : seize trous de plus,
+assumés, là où il y avait seize réponses inventées.
+
 ## Ce qui manque
 
 Le jeu de données n’est pas complet, et le dire fait partie du travail. Voici la
