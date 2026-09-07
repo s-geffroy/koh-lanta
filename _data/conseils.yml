@@ -17749,7 +17749,7 @@
 - saison: s25
   numero: 10
   type: elimination
-  complet: false
+  complet: true
   episode: '9'
   elimine: Léa
   elimine_rattache: false
@@ -17760,6 +17760,11 @@
   proteges:
   - oceane-montenegro
   votes:
+  - votant: Léa
+    votant_rattache: false
+    cible: Léa
+    cible_rattachee: false
+    annule: false
   - votant: meissa-seck
     votant_rattache: true
     cible: oceane-montenegro
@@ -18185,38 +18190,43 @@
   votes:
   - votant: pauline-bonneil
     votant_rattache: true
-    cible: Léa
-    cible_rattachee: false
+    cible: lea-sahin
+    cible_rattachee: true
     annule: false
   - votant: sebastien-cazaux
     votant_rattache: true
-    cible: Léa
-    cible_rattachee: false
+    cible: lea-sahin
+    cible_rattachee: true
     annule: false
   - votant: david-murail
     votant_rattache: true
-    cible: Léa
-    cible_rattachee: false
+    cible: lea-sahin
+    cible_rattachee: true
     annule: false
   - votant: jean-belmonte
     votant_rattache: true
-    cible: Léa
-    cible_rattachee: false
+    cible: lea-sahin
+    cible_rattachee: true
     annule: false
   - votant: aurelien-dulau
     votant_rattache: true
-    cible: Léa
-    cible_rattachee: false
+    cible: lea-sahin
+    cible_rattachee: true
     annule: false
   - votant: cecile-poprawa
     votant_rattache: true
-    cible: Léa
-    cible_rattachee: false
+    cible: lea-sahin
+    cible_rattachee: true
     annule: false
   - votant: oceane-montenegro
     votant_rattache: true
-    cible: Léa
-    cible_rattachee: false
+    cible: lea-sahin
+    cible_rattachee: true
+    annule: false
+  - votant: lea-notardonato
+    votant_rattache: true
+    cible: lea-sahin
+    cible_rattachee: true
     annule: false
 - saison: s26
   numero: 1

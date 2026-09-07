@@ -1365,9 +1365,9 @@ records:
 conseils:
   conseils: 627
   conseils_avec_decompte: 388
-  conseils_complets: 276
-  bulletins: 3383
-  bulletins_conseils_complets: 2162
+  conseils_complets: 277
+  bulletins: 3384
+  bulletins_conseils_complets: 2175
   conseils_unanimes: 0
   part_unanimes: 0.0
   part_serres: 45.1
@@ -1383,7 +1383,7 @@ conseils:
   vote_par_genre:
   - votant: h
     cible: f
-    effectif: 630
+    effectif: 633
     part: 30.5
   - votant: f
     cible: h
@@ -1395,13 +1395,13 @@ conseils:
     part: 23.0
   - votant: f
     cible: f
-    effectif: 465
-    part: 22.5
+    effectif: 468
+    part: 22.6
 jury:
   effectif: 36
   saisons: 33
   sans_nom: 0
-  desaccords: 4
+  desaccords: 3
   scrutins:
   - saison: s01
     titre: Les Aventuriers de Koh-Lanta
@@ -1584,7 +1584,7 @@ jury:
     laureat: Léa Sahin
     voix_pour: 8
     voix_exprimees: 11
-    bulletins_releves: 7
+    bulletins_releves: 8
   - saison: s26
     titre: La Tribu maudite
     annee: 2024
@@ -6745,9 +6745,9 @@ programme:
     premiere: 2024
     derniere: 2024
 reciprocite:
-  couples: 1844
+  couples: 1850
   reciproques: 694
-  part: 37.6
+  part: 37.5
 arc_des_votes:
   saison: s16
   titre: L'Île au trésor
@@ -9044,9 +9044,9 @@ indicateurs:
     abandons: 1
     taux_abandon: 4.5
     conseils: 21
-    conseils_complets: 7
+    conseils_complets: 8
     tension_conseils: 50.0
-    dispersion_votes: 0.608
+    dispersion_votes: 0.532
     epreuves: 28
     epreuves_individuelles: 13
     domination_epreuves: 0.224
@@ -12756,7 +12756,7 @@ modeles:
         observe: 10.7308
         moyenne_nulle: 10.2831
       origine: pronostic
-      p_ajustee: 0.7273
+      p_ajustee: 0.746
       retenu: false
     classement:
     - nom: Ambre Daudet
@@ -13252,15 +13252,15 @@ modeles:
       saisons: 15
       effet: 0.06
       bas: -0.03
-      haut: 0.15
-      p: 0.221
+      haut: 0.16
+      p: 0.1977
     - mecanique: destins_lies
       sur: dispersion_votes
       saisons: 6
-      effet: -0.03
-      bas: -0.1
-      haut: 0.03
-      p: 0.3275
+      effet: -0.05
+      bas: -0.13
+      haut: 0.04
+      p: 0.3005
     - mecanique: collier_immunite
       sur: taux_abandon
       saisons: 15
@@ -13279,39 +13279,38 @@ modeles:
       zéro veut dire que ces vingt-six saisons ne permettent pas de conclure.
   alliances:
     saisons: 23
-    conseils: 232
-    bulletins: 1800
-    paires_suivies: 3161
-    apres_ensemble: 60.7
+    conseils: 233
+    bulletins: 1806
+    paires_suivies: 3171
+    apres_ensemble: 60.9
     apres_separes: 27.6
     test:
       cle: persistance_alliances
       libelle: La persistance des alliances
       question: Deux aventuriers qui ont vote ensemble votent-ils encore ensemble au conseil suivant,
         plus souvent que le hasard ne le voudrait ?
-      observe: 33.093
-      attendu: 1.483
+      observe: 33.326
+      attendu: 1.841
       unite: points de %
-      ecart_types: 18.78
+      ecart_types: 18.86
       p: 0.0005
       tirages: 2000
       lecture: 'Écart entre deux probabilités : voter ensemble après avoir voté ensemble, et voter ensemble
         après avoir voté séparément. À zéro, chaque conseil repart de zéro et il n''y a pas d''alliance.'
       nulle: &id052
         bornes:
-        - -6.0031
-        - 34.9548
+        - -5.3719
+        - 35.1685
         cases:
         - 0
-        - 2
-        - 59
-        - 269
-        - 620
-        - 616
-        - 311
-        - 111
-        - 9
-        - 3
+        - 5
+        - 65
+        - 333
+        - 657
+        - 571
+        - 276
+        - 79
+        - 14
         - 0
         - 0
         - 0
@@ -13330,9 +13329,10 @@ modeles:
         - 0
         - 0
         - 0
-        largeur_case: 1.462782
-        observe: 33.093
-        moyenne_nulle: 1.4832
+        - 0
+        largeur_case: 1.447872
+        observe: 33.3258
+        moyenne_nulle: 1.8414
       origine: alliances
       p_ajustee: 0.0014
       retenu: true
@@ -13426,174 +13426,174 @@ modeles:
       survie: 88.1
       voix: 5
   homophilie:
-    bulletins: 1800
-    conseils: 232
+    bulletins: 1806
+    conseils: 233
     conseils_mixtes: 132
     bulletins_mixtes: 1069
     tests:
     - cle: vote_meme_sexe
       libelle: Viser quelqu'un du même sexe
       question: Parmi les présents, écrit-on plutôt le nom de quelqu'un de son sexe ?
-      observe: 45.722
-      attendu: 46.59
+      observe: 45.736
+      attendu: 46.565
       unite: '%'
-      ecart_types: -1.26
-      p: 0.2244
+      ecart_types: -1.21
+      p: 0.2539
       tirages: 4000
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
         : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
       nulle: &id026
         bornes:
-        - 43.7722
-        - 50.0056
+        - 43.8372
+        - 49.0753
         cases:
         - 0
-        - 1
         - 5
+        - 0
         - 3
-        - 16
-        - 31
+        - 17
+        - 11
+        - 37
         - 79
-        - 121
-        - 222
-        - 338
-        - 368
-        - 471
-        - 509
-        - 499
-        - 433
-        - 352
-        - 248
-        - 146
-        - 75
-        - 46
+        - 134
+        - 106
+        - 275
+        - 358
+        - 241
+        - 467
+        - 522
+        - 266
+        - 465
+        - 370
+        - 144
+        - 186
+        - 155
+        - 82
+        - 29
         - 27
-        - 6
-        - 2
-        - 1
+        - 14
+        - 3
+        - 4
         - 0
-        - 0
-        - 1
-        - 0
-        largeur_case: 0.222619
-        observe: 45.7222
-        moyenne_nulle: 46.5897
-      bulletins: 1800
+        largeur_case: 0.187075
+        observe: 45.7364
+        moyenne_nulle: 46.5654
+      bulletins: 1806
       origine: homophilie
-      p_ajustee: 0.304
+      p_ajustee: 0.3414
       retenu: false
     - cle: vote_ecart_age
       libelle: L'écart d'âge avec sa cible
       question: Écrit-on plutôt le nom de quelqu'un de sa génération, ou d'une autre ?
-      observe: 11.869
-      attendu: 11.748
+      observe: 11.847
+      attendu: 11.727
       unite: années
-      ecart_types: 1.42
-      p: 0.1532
+      ecart_types: 1.43
+      p: 0.1547
       tirages: 4000
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
         : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
       nulle: &id027
         bornes:
-        - 11.3874
-        - 12.1048
+        - 11.3906
+        - 12.0424
         cases:
         - 0
         - 1
-        - 0
-        - 4
-        - 6
-        - 15
-        - 42
-        - 68
-        - 111
-        - 181
-        - 269
-        - 359
-        - 442
-        - 484
-        - 448
-        - 403
-        - 395
-        - 305
-        - 199
-        - 124
-        - 74
-        - 38
-        - 18
+        - 2
+        - 7
         - 9
-        - 3
-        - 1
-        - 1
+        - 22
+        - 42
+        - 61
+        - 136
+        - 144
+        - 262
+        - 315
+        - 338
+        - 464
+        - 429
+        - 436
+        - 354
+        - 348
+        - 225
+        - 169
+        - 97
+        - 69
+        - 41
+        - 16
+        - 9
+        - 2
+        - 2
         - 0
-        largeur_case: 0.025623
-        observe: 11.8689
-        moyenne_nulle: 11.7485
-      bulletins: 1800
+        largeur_case: 0.023276
+        observe: 11.8466
+        moyenne_nulle: 11.7267
+      bulletins: 1806
       origine: homophilie
-      p_ajustee: 0.2383
+      p_ajustee: 0.2406
       retenu: false
     - cle: vote_meme_metier
       libelle: Viser la même famille de métier
       question: Le métier rapproche-t-il ou éloigne-t-il du bulletin ?
-      observe: 9.778
-      attendu: 9.926
+      observe: 9.856
+      attendu: 10.008
       unite: '%'
       ecart_types: -0.41
-      p: 0.6863
+      p: 0.7133
       tirages: 4000
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
         : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
       nulle: &id028
         bornes:
-        - 8.5333
-        - 11.4667
+        - 8.4468
+        - 11.4313
         cases:
         - 0
         - 3
-        - 4
-        - 7
-        - 22
-        - 29
-        - 54
-        - 132
-        - 188
-        - 274
-        - 325
-        - 409
-        - 510
-        - 234
-        - 511
-        - 396
-        - 327
-        - 214
-        - 152
-        - 103
-        - 53
-        - 31
-        - 9
-        - 6
-        - 4
-        - 2
         - 1
+        - 2
+        - 5
+        - 31
+        - 26
+        - 26
+        - 70
+        - 137
+        - 236
+        - 333
+        - 390
+        - 452
+        - 510
+        - 420
+        - 412
+        - 325
+        - 227
+        - 180
+        - 53
+        - 79
+        - 43
+        - 19
+        - 16
+        - 2
+        - 2
         - 0
-        largeur_case: 0.104762
-        observe: 9.7778
-        moyenne_nulle: 9.9264
-      bulletins: 1800
+        largeur_case: 0.106589
+        observe: 9.856
+        moyenne_nulle: 10.0084
+      bulletins: 1806
       origine: homophilie
-      p_ajustee: 0.7273
+      p_ajustee: 0.749
       retenu: false
     - cle: vote_meme_bandeau
       libelle: Viser son propre bandeau de départ
       question: Le camp d'origine protège-t-il, une fois les tribus mélangées ?
-      observe: 58.778
-      attendu: 65.383
+      observe: 58.583
+      attendu: 65.178
       unite: '%'
-      ecart_types: -11.24
+      ecart_types: -11.29
       p: 0.0002
       tirages: 4000
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -13601,8 +13601,8 @@ modeles:
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
       nulle: &id029
         bornes:
-        - 58.3389
-        - 67.9944
+        - 58.1312
+        - 68.0592
         cases:
         - 0
         - 0
@@ -13618,95 +13618,95 @@ modeles:
         - 0
         - 0
         - 0
+        - 4
+        - 37
+        - 111
+        - 398
+        - 640
+        - 864
+        - 983
+        - 565
+        - 287
+        - 82
+        - 23
+        - 5
+        - 1
         - 0
-        - 17
-        - 58
-        - 207
-        - 582
-        - 796
-        - 903
-        - 720
-        - 416
-        - 225
-        - 61
-        - 9
-        - 6
-        - 0
-        largeur_case: 0.344841
-        observe: 58.7778
-        moyenne_nulle: 65.3829
-      bulletins: 1800
+        largeur_case: 0.354572
+        observe: 58.5825
+        moyenne_nulle: 65.1782
+      bulletins: 1806
       origine: homophilie
       p_ajustee: 0.0006
       retenu: true
     - cle: vote_meme_departement
       libelle: Viser quelqu'un de son département
       question: Épargne-t-on le voisin — celui qui vit dans le même département ?
-      observe: 1.551
-      attendu: 1.991
+      observe: 1.545
+      attendu: 1.98
       unite: '%'
-      ecart_types: -1.97
-      p: 0.0495
+      ecart_types: -1.94
+      p: 0.0517
       tirages: 4000
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
         : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
       nulle: &id030
         bornes:
-        - 1.0698
-        - 3.1319
+        - 1.1429
+        - 2.9156
         cases:
         - 0
         - 1
-        - 0
-        - 9
-        - 12
+        - 2
+        - 6
+        - 20
+        - 28
+        - 69
+        - 120
+        - 190
+        - 287
+        - 338
+        - 412
+        - 440
+        - 446
+        - 403
+        - 384
+        - 303
+        - 199
+        - 150
+        - 94
+        - 56
         - 29
-        - 81
-        - 101
-        - 192
-        - 248
-        - 762
-        - 441
-        - 465
-        - 415
-        - 373
-        - 314
-        - 214
-        - 233
-        - 63
-        - 25
         - 12
-        - 1
-        - 3
-        - 1
-        - 3
+        - 7
+        - 2
         - 1
         - 1
         - 0
-        largeur_case: 0.073645
-        observe: 1.5514
-        moyenne_nulle: 1.9909
-      bulletins: 1547
+        largeur_case: 0.063313
+        observe: 1.5454
+        moyenne_nulle: 1.9797
+      bulletins: 1553
       origine: homophilie
-      p_ajustee: 0.0896
+      p_ajustee: 0.0905
       retenu: false
     - cle: vote_bandeau_apres_fusion
       libelle: Épargner son bandeau de départ
       question: Une fois les tribus mélangées, écrit-on moins souvent le nom de quelqu'un de son camp
         d'origine ?
       observe: 30.683
-      attendu: 41.801
+      attendu: 41.817
       unite: '%'
-      ecart_types: -10.96
+      ecart_types: -11.16
       p: 0.0002
       tirages: 4000
       lecture: Mesuré sur les seuls conseils réunissant plusieurs bandeaux. Un observé SOUS l'attendu
         veut dire que le camp de départ protège encore, longtemps après avoir cessé d'exister.
       nulle: &id031
         bornes:
-        - 29.9486
-        - 46.1038
+        - 29.9626
+        - 45.8092
         cases:
         - 0
         - 0
@@ -13723,46 +13723,46 @@ modeles:
         - 0
         - 0
         - 2
-        - 17
-        - 65
-        - 233
-        - 471
-        - 727
-        - 859
-        - 788
-        - 535
-        - 221
-        - 55
-        - 21
-        - 6
+        - 11
+        - 33
+        - 163
+        - 381
+        - 632
+        - 854
+        - 800
+        - 623
+        - 353
+        - 118
+        - 25
+        - 5
         - 0
-        largeur_case: 0.576974
+        largeur_case: 0.565949
         observe: 30.6829
-        moyenne_nulle: 41.8012
+        moyenne_nulle: 41.8165
       bulletins: 1069
       origine: homophilie
       p_ajustee: 0.0006
       retenu: true
   trahison:
-    bulletins: 1361
-    conseils: 232
+    bulletins: 1367
+    conseils: 233
     test:
       cle: trahison
       libelle: Écrire le nom d'un ancien allié
       question: Quand on a déjà voté avec quelqu'un, écrit-on son nom plus ou moins souvent qu'un autre
         ?
-      observe: 51.506
-      attendu: 60.285
+      observe: 51.28
+      attendu: 60.01
       unite: '%'
-      ecart_types: -12.94
+      ecart_types: -13.02
       p: 0.0002
       tirages: 4000
       lecture: Part des bulletins visant quelqu'un avec qui l'auteur avait déjà voté. Un observé SOUS
         l'attendu veut dire que l'alliance protège ; au-dessus, qu'elle expose.
       nulle: &id054
         bornes:
-        - 50.9478
-        - 63.2329
+        - 50.7169
+        - 63.109
         cases:
         - 0
         - 0
@@ -13779,22 +13779,22 @@ modeles:
         - 0
         - 0
         - 0
-        - 0
+        - 2
         - 13
-        - 57
-        - 178
-        - 526
-        - 862
-        - 1053
-        - 770
-        - 368
-        - 137
-        - 32
+        - 78
+        - 301
+        - 668
+        - 980
+        - 938
+        - 649
+        - 266
+        - 88
+        - 13
         - 4
         - 0
-        largeur_case: 0.438753
-        observe: 51.5062
-        moyenne_nulle: 60.2854
+        largeur_case: 0.442575
+        observe: 51.2802
+        moyenne_nulle: 60.0103
       origine: trahison
       p_ajustee: 0.0006
       retenu: true
@@ -13984,41 +13984,41 @@ modeles:
       p_ajustee: 0.0012
       retenu: true
   jury_final:
-    bulletins: 283
+    bulletins: 291
     saisons: 33
     coefficients:
     - libelle: A écrit le nom du juré au conseil
-      rapport: 0.618
-      bas: 0.403
-      haut: 0.949
-      p: 0.028
+      rapport: 0.566
+      bas: 0.372
+      haut: 0.863
+      p: 0.0082
     - libelle: A voté avec le juré, par conseil partagé
-      rapport: 1.186
-      bas: 1.079
-      haut: 1.305
-      p: 0.0004
+      rapport: 1.157
+      bas: 1.056
+      haut: 1.268
+      p: 0.0018
     avec_bandeau:
       coefficients:
       - libelle: A écrit le nom du juré au conseil
-        rapport: 0.618
-        bas: 0.402
-        haut: 0.95
-        p: 0.0282
+        rapport: 0.566
+        bas: 0.371
+        haut: 0.862
+        p: 0.0081
       - libelle: A voté avec le juré, par conseil partagé
-        rapport: 1.187
-        bas: 1.057
-        haut: 1.332
-        p: 0.0036
+        rapport: 1.15
+        bas: 1.03
+        haut: 1.284
+        p: 0.0131
       - libelle: Partage le bandeau de départ du juré
-        rapport: 0.998
-        bas: 0.654
-        haut: 1.522
-        p: 0.9921
+        rapport: 1.042
+        bas: 0.694
+        haut: 1.564
+        p: 0.8425
       lecture: 'Le même modèle, avec une variable de plus : les deux partagent-ils le bandeau de départ
         ?'
-    part_vers_bourreau: 49.5
-    bulletins_avec_bourreau_disponible: 217
-    part_quand_disponible: 64.5
+    part_vers_bourreau: 48.1
+    bulletins_avec_bourreau_disponible: 220
+    part_quand_disponible: 63.6
     lecture: 'Rapport de cotes : au-dessus de 1, le jure vote plus souvent pour ce finaliste ; en dessous,
       moins souvent. Un intervalle qui contient 1 veut dire qu''on ne peut pas conclure.'
   fusion:
@@ -15719,7 +15719,7 @@ modeles:
         observe: 47.1663
         moyenne_nulle: 50.0368
       origine: avant_apres
-      p_ajustee: 0.7273
+      p_ajustee: 0.7284
       retenu: false
   conditionnelles:
     presences: 857
@@ -16531,49 +16531,49 @@ modeles:
       question: Recevoir une voix ce soir est-il plus probable quand on en a reçu au conseil précédent
         ?
       observe: 19.882
-      attendu: 0.934
+      attendu: 0.971
       unite: ' points'
-      ecart_types: 5.27
+      ecart_types: 5.21
       p: 0.0001
       tirages: 10000
       lecture: Écart entre voir son nom ressortir quand il était déjà sorti et le voir sortir quand il
         ne l'était pas.
       nulle: &id044
         bornes:
-        - -13.0697
-        - 21.4516
+        - -14.1137
+        - 21.5013
         cases:
         - 0
         - 3
-        - 12
-        - 30
-        - 88
-        - 180
-        - 360
-        - 534
-        - 883
-        - 1123
-        - 1361
-        - 1355
-        - 1239
-        - 1013
-        - 735
-        - 506
-        - 279
+        - 4
+        - 14
+        - 65
+        - 118
+        - 223
+        - 412
+        - 747
+        - 988
+        - 1276
+        - 1366
+        - 1371
+        - 1162
+        - 871
+        - 643
+        - 390
         - 173
-        - 67
-        - 44
-        - 8
-        - 5
-        - 2
+        - 99
+        - 48
+        - 15
+        - 10
+        - 1
+        - 1
         - 0
         - 0
         - 0
         - 0
-        - 0
-        largeur_case: 1.232905
+        largeur_case: 1.271966
         observe: 19.8825
-        moyenne_nulle: 0.934
+        moyenne_nulle: 0.9708
       origine: conditionnelles
       p_ajustee: 0.0006
       retenu: true
@@ -16581,37 +16581,37 @@ modeles:
       libelle: Le nom rendu au conseil suivant
       question: Celui dont j'ai écrit le nom la fois d'avant écrit-il le mien ce soir ?
       observe: 20.647
-      attendu: 13.13
+      attendu: 13.145
       unite: '%'
-      ecart_types: 6.47
+      ecart_types: 6.35
       p: 0.0002
       tirages: 4000
       lecture: Part des couples où la cible de la dernière fois écrit à son tour le nom de son auteur,
         tous deux étant présents et votants.
       nulle: &id045
         bornes:
-        - 8.8439
-        - 21.2088
+        - 8.6559
+        - 21.2178
         cases:
         - 0
-        - 4
-        - 13
-        - 38
-        - 97
-        - 133
-        - 286
-        - 456
-        - 652
-        - 552
-        - 486
-        - 503
-        - 369
-        - 198
-        - 115
-        - 58
-        - 31
-        - 6
-        - 2
+        - 1
+        - 8
+        - 17
+        - 72
+        - 176
+        - 274
+        - 338
+        - 527
+        - 594
+        - 600
+        - 517
+        - 318
+        - 278
+        - 175
+        - 71
+        - 18
+        - 10
+        - 5
         - 1
         - 0
         - 0
@@ -16621,9 +16621,9 @@ modeles:
         - 0
         - 0
         - 0
-        largeur_case: 0.441604
+        largeur_case: 0.448636
         observe: 20.6468
-        moyenne_nulle: 13.1303
+        moyenne_nulle: 13.1448
       origine: conditionnelles
       p_ajustee: 0.0006
       retenu: true
@@ -17075,9 +17075,9 @@ modeles:
       haut: 17.0
       hasard: 13.0
     conseils_immunite: 51
-    bulletins_lus: 489
+    bulletins_lus: 496
     bulletins_perdus: 3
-    part_perdue: 0.61
+    part_perdue: 0.6
     tests:
     - cle: vote_isole
       libelle: N’avoir plus personne avec qui on ait voté
@@ -17311,7 +17311,7 @@ modeles:
         observe: 2.0461
         moyenne_nulle: -0.0159
       origine: age_au_conseil
-      p_ajustee: 0.0896
+      p_ajustee: 0.0905
       retenu: false
   rappel:
     effectif: 491
@@ -17545,7 +17545,7 @@ modeles:
     unite: rang moyen
     ecart_types: 0.41
     p: 0.6927
-    p_ajustee: 0.7273
+    p_ajustee: 0.746
     retenu: false
     tirages: 10000
     lecture: Le modèle classe les candidats d'une saison ; on relève la place qu'il donne à celui qui
@@ -17555,12 +17555,12 @@ modeles:
     libelle: Viser quelqu'un du même sexe
     question: Parmi les présents, écrit-on plutôt le nom de quelqu'un de son sexe ?
     origine: homophilie
-    observe: 45.722
-    attendu: 46.59
+    observe: 45.736
+    attendu: 46.565
     unite: '%'
-    ecart_types: -1.26
-    p: 0.2244
-    p_ajustee: 0.304
+    ecart_types: -1.21
+    p: 0.2539
+    p_ajustee: 0.3414
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -17571,12 +17571,12 @@ modeles:
     libelle: L'écart d'âge avec sa cible
     question: Écrit-on plutôt le nom de quelqu'un de sa génération, ou d'une autre ?
     origine: homophilie
-    observe: 11.869
-    attendu: 11.748
+    observe: 11.847
+    attendu: 11.727
     unite: années
-    ecart_types: 1.42
-    p: 0.1532
-    p_ajustee: 0.2383
+    ecart_types: 1.43
+    p: 0.1547
+    p_ajustee: 0.2406
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -17587,12 +17587,12 @@ modeles:
     libelle: Viser la même famille de métier
     question: Le métier rapproche-t-il ou éloigne-t-il du bulletin ?
     origine: homophilie
-    observe: 9.778
-    attendu: 9.926
+    observe: 9.856
+    attendu: 10.008
     unite: '%'
     ecart_types: -0.41
-    p: 0.6863
-    p_ajustee: 0.7273
+    p: 0.7133
+    p_ajustee: 0.749
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -17603,10 +17603,10 @@ modeles:
     libelle: Viser son propre bandeau de départ
     question: Le camp d'origine protège-t-il, une fois les tribus mélangées ?
     origine: homophilie
-    observe: 58.778
-    attendu: 65.383
+    observe: 58.583
+    attendu: 65.178
     unite: '%'
-    ecart_types: -11.24
+    ecart_types: -11.29
     p: 0.0002
     p_ajustee: 0.0006
     retenu: true
@@ -17619,12 +17619,12 @@ modeles:
     libelle: Viser quelqu'un de son département
     question: Épargne-t-on le voisin — celui qui vit dans le même département ?
     origine: homophilie
-    observe: 1.551
-    attendu: 1.991
+    observe: 1.545
+    attendu: 1.98
     unite: '%'
-    ecart_types: -1.97
-    p: 0.0495
-    p_ajustee: 0.0896
+    ecart_types: -1.94
+    p: 0.0517
+    p_ajustee: 0.0905
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -17637,9 +17637,9 @@ modeles:
       ?
     origine: homophilie
     observe: 30.683
-    attendu: 41.801
+    attendu: 41.817
     unite: '%'
-    ecart_types: -10.96
+    ecart_types: -11.16
     p: 0.0002
     p_ajustee: 0.0006
     retenu: true
@@ -17869,7 +17869,7 @@ modeles:
     unite: ' points de rang'
     ecart_types: -0.45
     p: 0.659
-    p_ajustee: 0.7273
+    p_ajustee: 0.7284
     retenu: false
     tirages: 10000
     lecture: 'Rang de l''ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c''est la
@@ -17942,9 +17942,9 @@ modeles:
     question: Recevoir une voix ce soir est-il plus probable quand on en a reçu au conseil précédent ?
     origine: conditionnelles
     observe: 19.882
-    attendu: 0.934
+    attendu: 0.971
     unite: ' points'
-    ecart_types: 5.27
+    ecart_types: 5.21
     p: 0.0001
     p_ajustee: 0.0006
     retenu: true
@@ -17957,9 +17957,9 @@ modeles:
     question: Celui dont j'ai écrit le nom la fois d'avant écrit-il le mien ce soir ?
     origine: conditionnelles
     observe: 20.647
-    attendu: 13.13
+    attendu: 13.145
     unite: '%'
-    ecart_types: 6.47
+    ecart_types: 6.35
     p: 0.0002
     p_ajustee: 0.0006
     retenu: true
@@ -18064,10 +18064,10 @@ modeles:
     question: Deux aventuriers qui ont vote ensemble votent-ils encore ensemble au conseil suivant, plus
       souvent que le hasard ne le voudrait ?
     origine: alliances
-    observe: 33.093
-    attendu: 1.483
+    observe: 33.326
+    attendu: 1.841
     unite: points de %
-    ecart_types: 18.78
+    ecart_types: 18.86
     p: 0.0005
     p_ajustee: 0.0014
     retenu: true
@@ -18097,10 +18097,10 @@ modeles:
     question: Quand on a déjà voté avec quelqu'un, écrit-on son nom plus ou moins souvent qu'un autre
       ?
     origine: trahison
-    observe: 51.506
-    attendu: 60.285
+    observe: 51.28
+    attendu: 60.01
     unite: '%'
-    ecart_types: -12.94
+    ecart_types: -13.02
     p: 0.0002
     p_ajustee: 0.0006
     retenu: true
@@ -18151,7 +18151,7 @@ modeles:
     unite: ' ans'
     ecart_types: 1.95
     p: 0.0512
-    p_ajustee: 0.0896
+    p_ajustee: 0.0905
     retenu: false
     tirages: 10000
     lecture: 'Écart d''âge de l''éliminé à la moyenne de son camp, avant la réunification moins après.
@@ -21292,7 +21292,7 @@ completude_saisons:
     annee: 2024
     speciale: false
     effectif: 22
-    score: 87.6
+    score: 87.9
     cellules:
     - cle: casting
       valeur: 100.0
@@ -21350,8 +21350,8 @@ completude_saisons:
       etat: eleve
       nature: part
     - cle: bulletins
-      valeur: 33.3
-      texte: 7/21
+      valeur: 38.1
+      texte: 8/21
       etat: mince
       nature: part
     - cle: epreuves
@@ -21891,7 +21891,7 @@ completude_saisons:
     libelle: Conseils au dépouillement complet
     court: Bulletins
     nature: part
-    moyenne: 45.9
+    moyenne: 46.1
     completes: 0
     concernees: 34
   - cle: epreuves

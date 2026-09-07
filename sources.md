@@ -207,15 +207,25 @@ jusqu’au vote. Les deux conditions réunies, sans jamais l’une sans l’autr
 identifient la colonne sans ambiguïté.
 
 <div class="constat">
-  <p><b>{{ jj.effectif }} scrutins de jury</b> sur {{ jj.saisons }} saisons,
-  contre 32 avant les deux réparations, et <b>299 bulletins</b> contre 196.
-  Le décompte annoncé et les bulletins relevés coïncident partout sauf
+  <p><b>67 scrutins de jury</b> sur {{ jj.saisons }} saisons, contre 32 avant
+  les réparations, et <b>300 bulletins</b> contre 196 —
+  {{ jj.effectif }} colonnes de lauréat, le reste étant celles des finalistes
+  battus. <b>Il n’en manque plus aucun</b> : chaque voix annoncée par les
+  sources est lue et attribuée.</p>
+  <p>Le décompte annoncé et les bulletins relevés coïncident partout sauf
   {{ jj.desaccords }} fois, où c’est la ligne des totaux de la source qui est
   décalée d’une colonne.</p>
-  <p>Il ne manque plus <b>qu’un seul bulletin</b>, sur
-  <i>Les Chasseurs d’immunité</i> : la matrice y annonce onze voix et n’en fait
-  lire que dix.</p>
 </div>
+
+Le tout dernier bulletin a demandé un troisième geste. Sur
+<i>Les Chasseurs d’immunité</i>, la matrice annonçait onze voix et n’en faisait
+lire que dix : le lecteur de matrice écarte les cellules qui répètent le nom de
+leur propre ligne, parce qu’on ne vote pas pour soi. **Sauf que deux Léa jouent
+cette saison-là** — l’une siège au jury, l’autre est en finale — et « Léa vote
+Léa » n’était pas la diagonale du tableau, c’était un vrai bulletin. Le
+garde-fou connaît désormais les prénoms portés en double : sur tout le corpus,
+il n’écartait que **trois cellules, et les trois étaient des homonymes**. Aucune
+n’était l’artefact contre lequel il avait été écrit.
 
 Ce qui a été retrouvé n’était pas neutre. L’échantillon d’avant contenait
 195 bulletins sur 196 **allant au lauréat** : sur la question « le juré

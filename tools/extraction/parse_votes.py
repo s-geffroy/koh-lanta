@@ -15,6 +15,10 @@ Ensuite seulement on lit :
   ligne « Votes »            -> le decompte, sous la forme « 6/10 »
   lignes suivantes           -> le bulletin de chaque votant
 
+`homonymes` recoit les prenoms portes par deux aventuriers de la saison. Sans
+lui, un bulletin ou une Lea ecrit le nom de l'autre Lea serait pris pour la
+diagonale de la matrice et jete.
+
 Un nom barre (<s>Nom</s>) signale une voix annulee par un collier d'immunite :
 l'information est conservee telle quelle, elle sert a mesurer l'effet reel des
 colliers.
@@ -176,7 +180,7 @@ def trouver_ligne(grille, motif, depuis=0, jusqu_a=None):
     return None
 
 
-def parse_page(wikitexte, saison_id=None):
+def parse_page(wikitexte, saison_id=None, homonymes=()):
     table = extract_table(wikitexte, titre=r"D[ée]tails? des votes")
     if table is None:
         return []
@@ -245,7 +249,16 @@ def parse_page(wikitexte, saison_id=None):
             if col >= len(rang):
                 continue
             vise, annule = cible(rang[col])
-            if not est_un_vote(vise) or vise == nom:
+            if not est_un_vote(vise):
+                continue
+            # Une cellule qui repete le nom de sa propre ligne est d'ordinaire
+            # un artefact de la matrice : on ne vote pas pour soi. Sauf quand
+            # DEUX aventuriers de la saison portent ce prenom -- deux Lea en
+            # 25, deux Jerome en 27 -- et la, ce sont deux personnes
+            # differentes et le bulletin est vrai. `homonymes` porte ces
+            # prenoms-la, normalises, et il est le seul a pouvoir le savoir :
+            # cette fonction ne connait pas le casting.
+            if vise == nom and slug(nom) not in homonymes:
                 continue
             bulletins.append({"votant": nom, "cible": vise, "annule": annule})
 

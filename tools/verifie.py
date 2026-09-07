@@ -497,6 +497,24 @@ def verifier_conseils(conseils, saisons, parts, c):
             if b.get("cible_rattachee") and (x["saison"], b["cible"]) not in ids:
                 c.erreur(f"{ref} : cible « {b['cible']} » absente des participations")
 
+    # Le scrutin final se lit en entier ou il ne se lit pas. Les colonnes des
+    # finalistes battus ont longtemps manque, et rien ne le signalait : le
+    # total annonce par la matrice donne le nombre de jures, et la somme des
+    # bulletins de la saison doit l'atteindre.
+    jury_lus, jury_annonces = defaultdict(int), {}
+    for x in conseils:
+        if x.get("type") != "jury":
+            continue
+        jury_lus[x["saison"]] += len(x.get("votes") or [])
+        if x.get("votes_exprimes"):
+            jury_annonces[x["saison"]] = max(jury_annonces.get(x["saison"], 0),
+                                             x["votes_exprimes"])
+    for sid, annonce in sorted(jury_annonces.items()):
+        if jury_lus[sid] < annonce:
+            c.avertir(f"{sid} : le vote du jury annonce {annonce} voix et n'en "
+                      f"fait lire que {jury_lus[sid]} — une colonne de finaliste "
+                      f"manque probablement au relevé")
+
 
 def verifier_personnes(personnes, parts, c):
     ids_parts = Counter(p["id"] for p in parts)

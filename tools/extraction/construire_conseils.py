@@ -121,6 +121,22 @@ def resoudre(nom, index_saison):
     return None, "inconnu"
 
 
+def resoudre_parmi(nom, idx, autorises):
+    """Resout un prenom en le restreignant a un ensemble d'identifiants.
+
+    Sert la ou la STRUCTURE du scrutin leve l'ambiguite sans qu'on ait rien a
+    deviner : sur un vote de jury, la cible est forcement un finaliste, et le
+    votant forcement quelqu'un qui ne l'est pas -- un finaliste ne siege pas a
+    son propre jury. Quand deux Lea jouent la meme saison et qu'une seule est
+    finaliste, « Lea » dans la colonne du jury ne peut designer qu'elle.
+    """
+    cands = idx.get(slug(nom or ""))
+    if not cands:
+        return None
+    ids = {p["id"] for p in cands} & set(autorises)
+    return ids.pop() if len(ids) == 1 else None
+
+
 def laureat_declare(libelle, saison, idx):
     """Rattrape la colonne du laureat quand son libelle ne se resout pas.
 
@@ -218,6 +234,14 @@ def construire(saisons, parts, rapport):
     for p in parts:
         if p.get("sort") in ("vainqueur", "finaliste"):
             places_finales[p["saison"]] += 1
+    # Les prenoms portes par deux aventuriers d'une meme saison. Ils servent au
+    # lecteur de matrice, qui sans eux confondrait « Lea vote pour Lea » avec la
+    # diagonale du tableau.
+    compte_prenoms = defaultdict(lambda: defaultdict(int))
+    for p in parts:
+        compte_prenoms[p["saison"]][slug(p["nom"])] += 1
+    homonymes = {sid: {n for n, k in table.items() if k > 1}
+                 for sid, table in compte_prenoms.items()}
     conseils = []
     accord = {"communs": 0, "accord": 0, "ajoutes": 0, "desaccords": 0}
 
@@ -233,7 +257,8 @@ def construire(saisons, parts, rapport):
             if not os.path.exists(chemin):
                 continue
             try:
-                lus = parse_page(open(chemin, encoding="utf-8").read(), sid)
+                lus = parse_page(open(chemin, encoding="utf-8").read(), sid,
+                                 homonymes=homonymes.get(sid) or set())
             except Exception as e:
                 rapport.append(f"{sid} : lecture des votes impossible ({suffixe}) — {e}")
                 continue
@@ -260,6 +285,9 @@ def construire(saisons, parts, rapport):
             accord["desaccords"] += croisement[3]
 
         idx = index.get(sid, {})
+        au_bout_ids = {pid for (s2, pid) in vainqueurs | finalistes if s2 == sid}
+        jures_possibles = {p["id"] for p in parts
+                           if p["saison"] == sid and p["id"] not in au_bout_ids}
         # Bornes du vote de jury, calculees avant la boucle : le dernier numero
         # de conseil de la saison, et le nombre de gens arrives au bout. Le
         # scrutin final tient UNE COLONNE PAR PERSONNE qui l'a atteint -- deux
@@ -362,6 +390,17 @@ def construire(saisons, parts, rapport):
                 if commun["annulation"] == "partielle":
                     proteges = sorted({b["cible"] for b in barres})
                     commun["proteges"] = proteges
+            if jury:
+                # Les homonymes que la structure du scrutin suffit a trancher.
+                for b_ in bulletins:
+                    if not b_["cible_rattachee"]:
+                        pid = resoudre_parmi(b_["cible"], idx, au_bout_ids)
+                        if pid:
+                            b_["cible"], b_["cible_rattachee"] = pid, True
+                    if not b_["votant_rattache"]:
+                        pid = resoudre_parmi(b_["votant"], idx, jures_possibles)
+                        if pid:
+                            b_["votant"], b_["votant_rattache"] = pid, True
             commun["votes"] = bulletins
             conseils.append(commun)
 

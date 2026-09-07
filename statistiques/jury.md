@@ -67,8 +67,8 @@ pas conclure.</p>
   <p><b>Avoir éliminé le juré coûte.</b> Cote ×{{ c0.rapport }}, intervalle
   {{ c0.bas }} à {{ c0.haut }}, p = {{ c0.p }} — l’intervalle <b>ne contient pas
   1</b>. À conseils partagés égaux, le finaliste qui a écrit le nom d’un juré
-  voit ses chances d’obtenir sa voix réduites de près de quatre dixièmes. <b>Le
-  jury n’oublie pas.</b></p>
+  voit sa cote d’obtenir sa voix <b>presque divisée par deux</b>. Le jury
+  n’oublie pas.</p>
   <p><b>Avoir voté avec le juré rapporte davantage encore.</b> Chaque conseil
   passé du même côté multiplie la cote par <b>{{ c1.rapport }}</b>
   ({{ c1.bas }} à {{ c1.haut }}, p = {{ c1.p }}). Sur cinq conseils partagés,
@@ -86,9 +86,11 @@ dont <b>195 allaient au lauréat</b> : le scrutin final tient une colonne par
 finaliste, et celle du battu n’était pas extraite. Un échantillon composé
 presque uniquement de jurés ayant voté pour le vainqueur ne pouvait, sur cette
 variable-là, que ne rien trouver — le bourreau y est presque toujours celui qui
-gagne. Les colonnes manquantes ont été récupérées : {{ j.bulletins }} bulletins
-sur {{ j.saisons }} saisons, et l’effet apparaît. Il n’a pas changé de valeur,
-il est devenu <em>observable</em>.
+gagne. Les colonnes manquantes ont été récupérées, puis le dernier bulletin
+absent avec elles : <b>le scrutin final est aujourd’hui complet</b>, chaque voix
+annoncée par les sources étant lue et attribuée. {{ j.bulletins }} bulletins sur
+{{ j.saisons }} saisons, et l’effet apparaît. Il n’a pas changé de valeur, il
+est devenu <em>observable</em>.
 <a href="{{ '/sources/' | relative_url }}">Les sources</a> racontent la
 réparation.</p>
 [Les alliances]({{ '/statistiques/alliances/' | relative_url }}).
@@ -139,8 +141,8 @@ fait l’un à l’autre.</p>
 
 <p class="note">Les limites, et elles sont réelles. {{ j.bulletins }} bulletins
 restent peu : l’intervalle sur l’effet « m’a éliminé » va de {{ c0.bas }} à
-{{ c0.haut }}, et son bord supérieur frôle 1 — la rancune est établie, son
-ampleur ne l’est qu’approximativement. Aucun de ces deux tests n’est déclaré au
+{{ c0.haut }} — la rancune est établie, son ampleur ne l’est
+qu’approximativement. Aucun de ces deux tests n’est déclaré au
 registre corrigé de <a href="{{ '/methode/' | relative_url }}">la méthode</a> :
 ce sont les coefficients d’un modèle, publiés avec leur intervalle, et il faut
 les lire comme tels. Enfin le modèle ne connaît du parcours d’un finaliste que
