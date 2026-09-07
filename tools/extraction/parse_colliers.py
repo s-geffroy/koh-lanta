@@ -100,7 +100,7 @@ def _roles(grille):
     return fin, trouve
 
 
-def parse_page(wikitexte, saison_id=None):
+def parse_page(wikitexte, saison_id=None, couleurs_admises=None):
     table = None
     for titre in (r"Colliers? d'immunit[ée]", r"Bilan des objets d'immunit[ée]",
                   r"Objets d'immunit[ée]", r"Bilan des objets strat[ée]giques",
@@ -171,7 +171,7 @@ def parse_page(wikitexte, saison_id=None):
             # Les notes « De la tribu jaune » accrochees aux noms de la ligne :
             # c'est la source qui separe ses homonymes, et il faut la lire.
             "indices": {k: v for cel in valeurs.values()
-                        for k, v in indices_de_tribu(cel).items()},
+                        for k, v in indices_de_tribu(cel, couleurs_admises).items()},
         })
     return colliers
 

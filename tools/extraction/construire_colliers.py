@@ -95,13 +95,19 @@ def construire(saisons, parts, rapport):
         if s.get("annulee"):
             continue
         sid = s["id"]
+        # Le surlignage d'un nom suit la tribu du MOMENT : apres la
+        # reunification, ce n'est plus la tribu de depart. On ne lit donc que
+        # les couleurs de depart de la saison.
+        couleurs_depart = {t.get("couleur") for t in (s.get("tribus") or [])
+                           if not t.get("apres_fusion") and t.get("couleur")}
         meilleur = []
         for suf in SUFFIXES:
             chemin = os.path.join(WIKI, sid + suf)
             if not os.path.exists(chemin):
                 continue
             try:
-                lot = parse_page(open(chemin, encoding="utf-8").read(), sid)
+                lot = parse_page(open(chemin, encoding="utf-8").read(), sid,
+                                 couleurs_depart)
             except Exception as e:
                 rapport.append(f"{sid} : lecture des colliers impossible ({suf}) — {e}")
                 continue

@@ -258,20 +258,33 @@ parfois deux qui le partagent : deux Léa aux *Chasseurs d’immunité*, deux C�
 seulement, peuvent trancher — et toutes viennent de la source ou de la structure
 du jeu :
 
-- **ce que la source écrit à côté du nom.** Elle sait qu’elle est ambiguë et le
-  dit : « Léa<sup>De la tribu jaune</sup> ». Ailleurs elle ne l’écrit pas, elle
-  le **peint** — la table des colliers surligne chaque nom à la couleur de sa
-  tribu. Les deux se lisent.
+- **le nom de la note.** La source écrit une note exprès pour les séparer, et
+  elle la **nomme** : `<ref name="jerome-orange">`. Ce nom voyage avec la note
+  même quand elle est simplement rappelée, sans son texte. C’est le signal le
+  plus sûr, et c’est celui qui a réglé le dernier cas.
+- **le texte de la note**, quand il est là : « Léa<sup>De la tribu jaune</sup> ».
+- **le surlignage**, à défaut : la table des colliers peint chaque nom à la
+  couleur de sa tribu. Avec une précaution qui a été payée — le surlignage suit
+  la tribu du **moment**, qui après la réunification n’est plus celle d’origine.
+  On ne lit donc que les couleurs de départ de la saison.
 - **la présence.** On ne ramasse pas un collier après être sorti du jeu : celui
   du 38<sup>e</sup> jour ne peut pas appartenir à la Léa partie au 23<sup>e</sup>.
 - **la place dans le scrutin.** Sur un vote de jury, la cible est forcément un
   finaliste et le votant forcément quelqu’un qui n’en est pas un.
 
-Ce qu’aucune des trois n’atteint reste non rattaché, et se compte : **un seul
-nom** aujourd’hui, le détenteur d’un collier de *La Revanche des 4 Terres*. La
-source dit pourtant lequel — « de la tribu du Sud » — mais elle nomme les tribus
-en tagalog dans ses tableaux et en français dans ses notes, et ce pont-là n’est
-pas construit. Le collier n’a jamais été joué.
+**Il ne reste aucun nom non rattaché** : 80 citations de colliers sur 80,
+865 vainqueurs d’épreuve sur 865.
+
+<p class="note"><strong>Une piste a été suivie puis abandonnée, et elle mérite
+d’être racontée.</strong> Les tribus de <i>La Revanche des 4 Terres</i>
+s’appellent Timog, Hilaga, Kanluran, Silangan dans les tableaux — et « la tribu
+du Sud » dans les notes. Le récit fait lui-même la traduction (« Timog du
+sud »), et il était tentant de s’en servir pour rattacher un nom. La mise à
+l’épreuve l’a écartée : sur un autre collier, la note dit « valable que pour un
+membre de la tribu du Sud » — c’est <em>le collier</em> qui est restreint, pas
+sa détentrice, et le rapprochement lui aurait attribué une tribu qui n’est pas
+la sienne. Une phrase où un nom et une tribu se croisent ne dit pas que l’un
+appartient à l’autre. Le pont n’a pas été gardé.</p>
 
 <p class="note">Deux corrections nommées accompagnent ce chantier, chacune
 appuyée sur la source elle-même. <i>La Nouvelle Édition</i> affiche

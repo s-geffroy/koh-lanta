@@ -88,19 +88,43 @@ RE_SURLIGNE = re.compile(
     r"\{\{\s*Surlign[ée]e?\s*\|\s*(#[0-9a-fA-F]{3,6})\s*\|\s*([^}|]+?)\s*\}\}", re.I)
 
 
-def indices_de_tribu(cellule):
+# La note de desambiguisation porte un nom, et ce nom dit tout :
+# « <ref name="jerome-orange" /> ». Une note ainsi rappelee n'a plus de texte --
+# c'est la forme auto-fermante -- mais son nom, lui, voyage avec elle.
+RE_NOM_DE_NOTE = re.compile(r"<ref[^>]*\bname\s*=\s*\"?([a-z0-9-]+)\"?", re.I)
+COULEURS_CONNUES = {"jaune", "rouge", "bleu", "vert", "orange", "violet", "noir",
+                    "blanc", "gris", "rose", "marron"}
+
+
+def indices_de_tribu(cellule, couleurs_admises=None):
     """{prenom normalise: couleur} — ce que la source dit de ses homonymes.
 
-    Deux ecritures, toutes deux explicites : une note « De la tribu jaune »
-    accrochee au nom, ou le nom surligne a la teinte de sa tribu.
+    Trois ecritures, de la plus sure a la moins sure :
+
+      1. le NOM de la note : « <ref name="jerome-orange" /> ». La source a
+         nomme sa note pour separer deux Jerome, et ce nom survit meme quand la
+         note est simplement rappelee, sans son texte ;
+      2. le TEXTE de la note : « De la tribu jaune » ;
+      3. le SURLIGNAGE du nom, a la teinte de sa tribu.
+
+    La troisieme demande une precaution, et elle a ete payee : le surlignage
+    suit la tribu du MOMENT, qui apres la reunification n'est plus celle
+    d'origine. `couleurs_admises` borne alors la lecture aux couleurs de depart
+    de la saison -- sans quoi un Jerome surligne en jaune parce que sa tribu
+    reunifiee l'est deviendrait le Jerome de la tribu jaune.
     """
     out = {}
+    for m in RE_NOM_DE_NOTE.finditer(cellule or ""):
+        tete, _, queue = m.group(1).rpartition("-")
+        couleur = COULEURS_FEMININES.get(queue, queue)
+        if tete and couleur in COULEURS_CONNUES:
+            out[slug(tete)] = couleur
     for m in RE_INDICE_TRIBU.finditer(cellule or ""):
         couleur = m.group(2).lower()
-        out[slug(m.group(1))] = COULEURS_FEMININES.get(couleur, couleur)
+        out.setdefault(slug(m.group(1)), COULEURS_FEMININES.get(couleur, couleur))
     for m in RE_SURLIGNE.finditer(cellule or ""):
         couleur = COULEURS_HEX.get(m.group(1).lower())
-        if couleur:
+        if couleur and (couleurs_admises is None or couleur in couleurs_admises):
             out.setdefault(slug(m.group(2)), couleur)
     return out
 

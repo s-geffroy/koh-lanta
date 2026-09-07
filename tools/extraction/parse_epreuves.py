@@ -128,7 +128,7 @@ def _colonne_episode(grille, i_entete):
     return None
 
 
-def parse_tableau(table, saison_id, forme_source):
+def parse_tableau(table, saison_id, forme_source, couleurs_admises=None):
     grille = developper(table)
     if not grille:
         return []
@@ -184,7 +184,7 @@ def parse_tableau(table, saison_id, forme_source):
                 "episode": episode,
                 "type": role,
                 "libelles": noms,
-                "indices": indices_de_tribu(cellule),
+                "indices": indices_de_tribu(cellule, couleurs_admises),
                 "couleur": couleur_de(cellule),
                 "source": forme_source,
             })
@@ -203,12 +203,12 @@ TITRES = [
 ]
 
 
-def parse_page(wikitexte, saison_id=None):
+def parse_page(wikitexte, saison_id=None, couleurs_admises=None):
     for motif, etiquette in TITRES:
         table = extract_table(wikitexte, titre=motif)
         if table is None:
             continue
-        lot = parse_tableau(table, saison_id, etiquette)
+        lot = parse_tableau(table, saison_id, etiquette, couleurs_admises)
         if lot:
             return lot
     return []
