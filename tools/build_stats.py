@@ -1000,6 +1000,24 @@ def bloc_indicateurs(saisons, parts, conseils, epreuves, colliers, par_saison):
                       "sort": x["sort"], "survie": x["survie"]}
                      for x in invisibles[:12]],
         "nb_fantomes": len(invisibles),
+        # Etre invisible une saison peut etre un accident de casting. L'etre
+        # DEUX FOIS ressemble a une maniere de jouer. Ils sont cinq, et l'une
+        # d'elles a gagne une des deux saisons ou personne ne l'a ecrite.
+        "fantomes_recidivistes": [
+            {"nom": nom, "fois": len(lot),
+             "saisons": ", ".join(x["titre"] for x in lot),
+             "sorts": ", ".join(LIBELLE_SORT.get(x["sort"], x["sort"]) for x in lot)}
+            for nom, lot in sorted(
+                ((n, [x for x in invisibles if x["id"] == i])
+                 for i, n in sorted({x["id"]: x["nom"] for x in invisibles}.items())),
+                key=lambda kv: (-len(kv[1]), kv[0]))
+            if len(lot) > 1],
+        # Douze fantomes ont GAGNE leur saison : c'est le contre-exemple le plus
+        # net a l'idee qu'il faut se faire remarquer pour aller au bout.
+        "fantomes_vainqueurs": [
+            {"nom": x["nom"], "titre": x["titre"], "annee": x["annee"],
+             "conseils": x["conseils_assistes"]}
+            for x in invisibles if x["sort"] == "vainqueur"],
         # Ce que devient un aventurier que personne n'a jamais ecrit sur un
         # bulletin, compare a ce que devient un aventurier ordinaire. C'est la
         # comparaison des deux colonnes qui fait le resultat, pas la premiere

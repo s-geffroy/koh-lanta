@@ -102,6 +102,43 @@ Et l’un comme l’autre ne se connaissent qu’en cours de jeu. Au casting,
 </table>
 </div>
 
+### Cinq y sont revenus
+
+Être invisible une saison peut être un accident de casting : une tribu qui
+gagne, un conseil qu’on ne fait pas, un plus gros poisson à sortir. L’être
+**deux fois** ressemble à une manière de jouer.
+
+<div class="tableau-large">
+<table>
+<thead><tr><th>Aventurier</th><th class="nombre">Fois</th><th>Saisons</th><th>Ce qu’il y a fait</th></tr></thead>
+<tbody>
+{% for x in i.fantomes_recidivistes %}
+<tr><td><strong>{{ x.nom }}</strong></td>
+    <td class="nombre">{{ x.fois }}</td>
+    <td>{{ x.saisons }}</td>
+    <td>{{ x.sorts }}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+<div class="constat">
+  <p>Ils sont <b>{{ i.fantomes_recidivistes | size }}</b> sur les
+  {{ i.nb_fantomes }} participations invisibles, et
+  <b>{{ i.fantomes_vainqueurs | size }} fantômes ont gagné leur saison</b> —
+  {% for x in i.fantomes_vainqueurs limit: 4 %}{{ x.nom }} à <i>{{ x.titre }}</i>{% unless forloop.last %}, {% endunless %}{% endfor %}
+  et {{ i.fantomes_vainqueurs | size | minus: 4 }} autres.</p>
+  <p>C’est le contre-exemple le plus net à l’idée qu’il faut se faire remarquer
+  pour aller au bout. On peut traverser quinze conseils <b>sans que personne
+  n’écrive votre nom une seule fois</b>, et repartir avec le chèque.</p>
+</div>
+
+<p class="note">La réserve tient au dénominateur, et elle est la même que
+partout ici : le voile ne se lève que sur les conseils au dépouillement
+complet. Un aventurier dont la saison est mal relevée peut passer pour un
+fantôme sans l’être. Le seuil de {{ i.seuil_fantome }} conseils traversés
+protège des cas les plus légers, pas de tous.</p>
+
 ## Être visé, et ce que ça coûte
 
 {% include graphiques/menace-sort.svg %}

@@ -8292,6 +8292,76 @@ indicateurs:
     sort: vainqueur
     survie: 100.0
   nb_fantomes: 71
+  fantomes_recidivistes:
+  - nom: Coumba Baradji
+    fois: 3
+    saisons: La Légende, Le Choc des héros, La Revanche des héros
+    sorts: Éliminé aux ambassadeurs, Éliminé à l'orientation, Éliminé à l'orientation
+  - nom: Claude Dartois
+    fois: 2
+    saisons: La Légende, L'Île des héros
+    sorts: Vainqueur, Éliminé aux poteaux
+  - nom: Jade Handi
+    fois: 2
+    saisons: Palawan, Le Retour des héros
+    sorts: Vainqueur, Finaliste
+  - nom: Loïc Riowal
+    fois: 2
+    saisons: Les 4 Terres, La Légende
+    sorts: Éliminé aux poteaux, Éliminé au conseil
+  - nom: Yassin Metiri
+    fois: 2
+    saisons: Le Combat des héros, Cambodge
+    sorts: Éliminé au conseil, Éliminé aux ambassadeurs
+  fantomes_vainqueurs:
+  - nom: Claude Dartois
+    titre: La Légende
+    annee: 2021
+    conseils: 19
+  - nom: Thibault Bélanger
+    titre: La Tribu maudite
+    annee: 2024
+    conseils: 16
+  - nom: Gérard Urdampilleta
+    titre: Raja Ampat
+    annee: 2011
+    conseils: 15
+  - nom: François Descamp
+    titre: Le Totem maudit
+    annee: 2022
+    conseils: 15
+  - nom: Bastien San Pedro
+    titre: Le Totem maudit
+    annee: 2022
+    conseils: 15
+  - nom: Clémence Castel
+    titre: Pacifique
+    annee: 2005
+    conseils: 14
+  - nom: Ugo Lartiche
+    titre: Malaisie
+    annee: 2012
+    conseils: 14
+  - nom: Jade Handi
+    titre: Palawan
+    annee: 2007
+    conseils: 13
+  - nom: Christelle Gauzet
+    titre: Caramoan
+    annee: 2008
+    conseils: 13
+  - nom: Delphine Bano
+    titre: Bocas del Toro
+    annee: 2003
+    conseils: 12
+  - nom: Naoil Tita
+    titre: L'Île des héros
+    annee: 2020
+    conseils: 12
+  - nom: Bertrand Bolle
+    titre: La Revanche des héros
+    annee: 2012
+    conseils: 9
   fantomes_issue:
   - sort: abandon_medical
     libelle: Abandon médical
