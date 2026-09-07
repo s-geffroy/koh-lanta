@@ -891,6 +891,14 @@ def tout(saisons, parts, conseils, epreuves):
         })
     carrieres.sort(key=lambda x: (-x["participations"], x["rang"]))
 
+    # Le rang de chacun SUR CHAQUE facette. Il sert a montrer, sans commentaire,
+    # que les facettes ne se parlent pas : le premier des epreuves peut etre
+    # quatre-centieme de la discretion, et la table le dit d'elle-meme.
+    rangs_par_facette = {}
+    for cle_f in CLES:
+        for i, x in enumerate(sorted(sujets, key=lambda s: (-s["z"][cle_f], s["cle"])), 1):
+            rangs_par_facette.setdefault(x["cle"], {})[cle_f] = i
+
     facettes = []
     for cle, libelle, question, mesure, denominateur, sens, _ in FACETTES:
         classement = sorted(sujets, key=lambda s: (-s["z"][cle], s["cle"]))
@@ -912,6 +920,7 @@ def tout(saisons, parts, conseils, epreuves):
                          if s["mesures"][cle][1] else "—"),
                 "preuve": int(s["preuve"][cle]),
                 "rang_general": s["rang"],
+                "rangs": rangs_par_facette[s["cle"]],
             } for i, s in enumerate(classement[:TAILLE_FACETTE], 1)],
         })
 

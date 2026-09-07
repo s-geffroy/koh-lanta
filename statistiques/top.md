@@ -252,6 +252,43 @@ Le premier d’un classement composite n’est donc pas le meilleur partout : c�
 celui qui est excellent <b>là où l’écart-type est le plus large</b>, et qui se
 contente d’être moyen ailleurs.</p>
 
+### Un exemple que tout le monde croit connaître
+
+« Être fort aux épreuves fait de vous une cible » : la phrase est dans toutes
+les bouches. Voici les meilleurs aux épreuves, et leur rang en discrétion.
+
+{% assign fe = c.facettes | where: "cle", "epreuves" | first %}
+{% assign fd = c.facettes | where: "cle", "discretion" | first %}
+
+<div class="tableau-large">
+<table>
+<thead><tr><th class="nombre">#</th><th>Aventurier</th><th class="nombre">{{ fe.mesure }}</th><th class="nombre">Rang en {{ fd.libelle | downcase }}</th></tr></thead>
+<tbody>
+{% for l in fe.top %}
+<tr><td class="nombre">{{ l.rang }}</td><td>{{ l.nom }}</td>
+    <td class="nombre">{{ l.brut }}</td>
+    <td class="nombre">{{ l.rangs.discretion }}<sup>e</sup></td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+<div class="constat">
+  <p><b>Aucun motif.</b> Les meilleurs aux épreuves s’étalent sur toute la
+  largeur du classement de la discrétion. La corrélation entre les deux vaut
+  {% for x in c.correlations %}{% if x.a == "epreuves" and x.b == "discretion" %}<b>{{ x.rho }}</b>{% endif %}{% endfor %}
+  — et si elle penche, c’est du mauvais côté pour la légende : les forts sont
+  très légèrement <em>moins</em> visés, pas plus.</p>
+</div>
+
+<p class="note"><strong>Sans contradiction avec
+<a href="{{ '/statistiques/fusion/' | relative_url }}">« on élimine le fort
+avant la fusion »</a></strong>, qui est un résultat retenu. Les deux ne parlent
+pas de la même chose : cette page-là mesure <em>qui</em> sort à un moment donné,
+celle-ci compte les voix reçues <em>hors du soir où l’on part</em>. Être sorti
+parce qu’on est fort et être écrit toute la saison sont deux faits distincts —
+et le second n’a pas lieu.</p>
+
 <p class="note">C’est ce qui explique l’ampleur du mouvement mesuré plus bas :
 quand les composantes divergent à ce point, changer les poids change les noms.
 Et c’est aussi ce qui rend la première version de cette page fausse : elle

@@ -9955,6 +9955,11 @@ classement:
       brut: 3 / 4
       preuve: 4
       rang_general: 1
+      rangs: &id006
+        parcours: 1
+        epreuves: 1
+        discretion: 393
+        lecture: 144
     - rang: 2
       nom: Laurent Maistret
       id: laurent-maistret
@@ -9962,6 +9967,11 @@ classement:
       brut: 2 / 3
       preuve: 3
       rang_general: 6
+      rangs:
+        parcours: 2
+        epreuves: 24
+        discretion: 52
+        lecture: 355
     - rang: 3
       nom: Jade Handi
       id: jade-handi
@@ -9969,6 +9979,11 @@ classement:
       brut: 2 / 3
       preuve: 3
       rang_general: 3
+      rangs: &id008
+        parcours: 3
+        epreuves: 26
+        discretion: 1
+        lecture: 40
     - rang: 4
       nom: Ugo Lartiche
       id: ugo-lartiche
@@ -9976,6 +9991,11 @@ classement:
       brut: 2 / 3
       preuve: 3
       rang_general: 32
+      rangs: &id009
+        parcours: 4
+        epreuves: 38
+        discretion: 3
+        lecture: 519
     - rang: 5
       nom: Philippe Bizet
       id: philippe-bizet
@@ -9983,6 +10003,11 @@ classement:
       brut: 2 / 3
       preuve: 3
       rang_general: 231
+      rangs:
+        parcours: 5
+        epreuves: 466
+        discretion: 471
+        lecture: 398
     - rang: 6
       nom: Pascal Salviani
       id: pascal-salviani
@@ -9990,6 +10015,11 @@ classement:
       brut: 1 / 2
       preuve: 2
       rang_general: 61
+      rangs:
+        parcours: 6
+        epreuves: 44
+        discretion: 487
+        lecture: 350
     - rang: 7
       nom: Bertrand Bolle
       id: bertrand-bolle
@@ -9997,6 +10027,11 @@ classement:
       brut: 1 / 2
       preuve: 2
       rang_general: 2
+      rangs: &id007
+        parcours: 7
+        epreuves: 3
+        discretion: 102
+        lecture: 74
     - rang: 8
       nom: Moussa Niangane
       id: moussa-niangane
@@ -10004,6 +10039,11 @@ classement:
       brut: 2 / 3
       preuve: 3
       rang_general: 260
+      rangs:
+        parcours: 8
+        epreuves: 531
+        discretion: 76
+        lecture: 450
     - rang: 9
       nom: Clémence Castel
       id: clemence-castel
@@ -10011,6 +10051,11 @@ classement:
       brut: 2 / 4
       preuve: 4
       rang_general: 13
+      rangs:
+        parcours: 9
+        epreuves: 102
+        discretion: 30
+        lecture: 19
     - rang: 10
       nom: Romuald Lafite
       id: romuald-lafite
@@ -10018,6 +10063,11 @@ classement:
       brut: 1 / 2
       preuve: 2
       rang_general: 17
+      rangs:
+        parcours: 10
+        epreuves: 22
+        discretion: 417
+        lecture: 142
   - cle: epreuves
     libelle: Les épreuves
     mesure: Épreuves individuelles gagnées
@@ -10036,6 +10086,7 @@ classement:
       brut: 20 / 49
       preuve: 49
       rang_general: 1
+      rangs: *id006
     - rang: 2
       nom: Teheiura Teahui
       id: teheiura-teahui
@@ -10043,6 +10094,11 @@ classement:
       brut: 17 / 48
       preuve: 48
       rang_general: 4
+      rangs:
+        parcours: 13
+        epreuves: 2
+        discretion: 440
+        lecture: 143
     - rang: 3
       nom: Bertrand Bolle
       id: bertrand-bolle
@@ -10050,6 +10106,7 @@ classement:
       brut: 11 / 28
       preuve: 28
       rang_general: 2
+      rangs: *id007
     - rang: 4
       nom: Jean Belmonte
       id: jean-belmonte
@@ -10057,6 +10114,11 @@ classement:
       brut: 5 / 9
       preuve: 9
       rang_general: 7
+      rangs:
+        parcours: 196
+        epreuves: 4
+        discretion: 40
+        lecture: 55
     - rang: 5
       nom: Nicolas Rouyé
       id: nicolas-rouye
@@ -10064,6 +10126,11 @@ classement:
       brut: 5 / 11
       preuve: 11
       rang_general: 18
+      rangs:
+        parcours: 129
+        epreuves: 5
+        discretion: 18
+        lecture: 393
     - rang: 6
       nom: Louise Picavet
       id: louise-picavet
@@ -10071,6 +10138,11 @@ classement:
       brut: 3 / 3
       preuve: 3
       rang_general: 14
+      rangs:
+        parcours: 250
+        epreuves: 6
+        discretion: 91
+        lecture: 59
     - rang: 7
       nom: François-David Cardonnel
       id: francois-david-cardonnel
@@ -10078,6 +10150,11 @@ classement:
       brut: 7 / 22
       preuve: 22
       rang_general: 10
+      rangs:
+        parcours: 21
+        epreuves: 7
+        discretion: 415
+        lecture: 47
     - rang: 8
       nom: François Descamp
       id: francois-descamp
@@ -10085,6 +10162,11 @@ classement:
       brut: 5 / 13
       preuve: 13
       rang_general: 19
+      rangs:
+        parcours: 29
+        epreuves: 8
+        discretion: 336
+        lecture: 286
     - rang: 9
       nom: Lola Besse
       id: lola-besse
@@ -10092,6 +10174,11 @@ classement:
       brut: 5 / 13
       preuve: 13
       rang_general: 8
+      rangs:
+        parcours: 76
+        epreuves: 9
+        discretion: 26
+        lecture: 58
     - rang: 10
       nom: Maxime Berthon
       id: maxime-berthon
@@ -10099,6 +10186,11 @@ classement:
       brut: 6 / 18
       preuve: 18
       rang_general: 128
+      rangs:
+        parcours: 303
+        epreuves: 10
+        discretion: 259
+        lecture: 509
   - cle: discretion
     libelle: La discrétion
     mesure: Voix reçues, hors le conseil qui l’élimine
@@ -10117,6 +10209,7 @@ classement:
       brut: 0 / 19
       preuve: 19
       rang_general: 3
+      rangs: *id008
     - rang: 2
       nom: Martin Bazin
       id: martin-bazin
@@ -10124,6 +10217,11 @@ classement:
       brut: 0 / 17
       preuve: 17
       rang_general: 35
+      rangs:
+        parcours: 11
+        epreuves: 29
+        discretion: 2
+        lecture: 485
     - rang: 3
       nom: Ugo Lartiche
       id: ugo-lartiche
@@ -10131,6 +10229,7 @@ classement:
       brut: 0 / 17
       preuve: 17
       rang_general: 32
+      rangs: *id009
     - rang: 4
       nom: Guénaëlle Biras
       id: guenaelle-biras
@@ -10138,6 +10237,11 @@ classement:
       brut: 0 / 16
       preuve: 16
       rang_general: 70
+      rangs:
+        parcours: 15
+        epreuves: 436
+        discretion: 4
+        lecture: 220
     - rang: 5
       nom: Christelle Gauzet
       id: christelle-gauzet
@@ -10145,6 +10249,11 @@ classement:
       brut: 0 / 15
       preuve: 15
       rang_general: 40
+      rangs:
+        parcours: 73
+        epreuves: 387
+        discretion: 5
+        lecture: 20
     - rang: 6
       nom: Yassin Metiri
       id: yassin-metiri
@@ -10152,6 +10261,11 @@ classement:
       brut: 0 / 15
       preuve: 15
       rang_general: 121
+      rangs:
+        parcours: 212
+        epreuves: 94
+        discretion: 6
+        lecture: 435
     - rang: 7
       nom: Cassandre Girard
       id: cassandre-girard
@@ -10159,6 +10273,11 @@ classement:
       brut: 0 / 13
       preuve: 13
       rang_general: 82
+      rangs:
+        parcours: 202
+        epreuves: 105
+        discretion: 7
+        lecture: 168
     - rang: 8
       nom: Gérard Urdampilleta
       id: gerard-urdampilleta
@@ -10166,6 +10285,11 @@ classement:
       brut: 0 / 12
       preuve: 12
       rang_general: 76
+      rangs:
+        parcours: 49
+        epreuves: 25
+        discretion: 8
+        lecture: 516
     - rang: 9
       nom: Vanessa Alvarez
       id: vanessa-alvarez
@@ -10173,6 +10297,11 @@ classement:
       brut: 0 / 12
       preuve: 12
       rang_general: 146
+      rangs:
+        parcours: 71
+        epreuves: 291
+        discretion: 9
+        lecture: 483
     - rang: 10
       nom: Alban Pellegrin
       id: alban-pellegrin
@@ -10180,6 +10309,11 @@ classement:
       brut: 0 / 11
       preuve: 11
       rang_general: 267
+      rangs:
+        parcours: 277
+        epreuves: 392
+        discretion: 10
+        lecture: 382
   - cle: lecture
     libelle: La lecture
     mesure: Bulletins portés sur l’éliminé, hors celui de son propre départ
@@ -10198,6 +10332,11 @@ classement:
       brut: 10 / 10
       preuve: 10
       rang_general: 11
+      rangs:
+        parcours: 39
+        epreuves: 67
+        discretion: 175
+        lecture: 1
     - rang: 2
       nom: Marianne Mondon
       id: marianne-mondon
@@ -10205,6 +10344,11 @@ classement:
       brut: 9 / 9
       preuve: 9
       rang_general: 42
+      rangs:
+        parcours: 109
+        epreuves: 117
+        discretion: 423
+        lecture: 2
     - rang: 3
       nom: Coumba Baradji
       id: coumba-baradji
@@ -10212,6 +10356,11 @@ classement:
       brut: 13 / 14
       preuve: 14
       rang_general: 28
+      rangs:
+        parcours: 17
+        epreuves: 382
+        discretion: 260
+        lecture: 3
     - rang: 4
       nom: Bernard Lenoir
       id: bernard-lenoir
@@ -10219,6 +10368,11 @@ classement:
       brut: 8 / 8
       preuve: 8
       rang_general: 39
+      rangs:
+        parcours: 78
+        epreuves: 47
+        discretion: 473
+        lecture: 4
     - rang: 5
       nom: Frédéric Favier
       id: frederic-favier
@@ -10226,6 +10380,11 @@ classement:
       brut: 8 / 8
       preuve: 8
       rang_general: 5
+      rangs:
+        parcours: 54
+        epreuves: 13
+        discretion: 173
+        lecture: 5
     - rang: 6
       nom: Kunlé M'Babacéré Pakorona
       id: kunle-m-babacere-pakorona
@@ -10233,6 +10392,11 @@ classement:
       brut: 8 / 8
       preuve: 8
       rang_general: 68
+      rangs:
+        parcours: 123
+        epreuves: 420
+        discretion: 420
+        lecture: 6
     - rang: 7
       nom: Amélie Grégoire
       id: amelie-gregoire
@@ -10240,6 +10404,11 @@ classement:
       brut: 7 / 7
       preuve: 7
       rang_general: 21
+      rangs:
+        parcours: 143
+        epreuves: 45
+        discretion: 207
+        lecture: 7
     - rang: 8
       nom: Bruno Peisey
       id: bruno-peisey
@@ -10247,6 +10416,11 @@ classement:
       brut: 7 / 7
       preuve: 7
       rang_general: 29
+      rangs:
+        parcours: 91
+        epreuves: 150
+        discretion: 34
+        lecture: 8
     - rang: 9
       nom: Carole Rapin
       id: carole-rapin
@@ -10254,6 +10428,11 @@ classement:
       brut: 7 / 7
       preuve: 7
       rang_general: 45
+      rangs:
+        parcours: 125
+        epreuves: 350
+        discretion: 176
+        lecture: 9
     - rang: 10
       nom: Clémentine Jullien
       id: clementine-jullien
@@ -10261,6 +10440,11 @@ classement:
       brut: 7 / 7
       preuve: 7
       rang_general: 172
+      rangs:
+        parcours: 150
+        epreuves: 487
+        discretion: 468
+        lecture: 10
   definitions:
   - cle: parcours
     libelle: Le parcours
@@ -14554,7 +14738,7 @@ modeles:
       tirages: 10000
       lecture: 'Un écart observé plus PETIT que l''attendu est la signature d''un quota : le hasard, lui,
         produit des castings déséquilibrés de temps en temps.'
-      nulle: &id018
+      nulle: &id022
         bornes:
         - 0.2019
         - 2.9519
@@ -14604,7 +14788,7 @@ modeles:
       tirages: 10000
       lecture: Rebattre les aventuriers entre saisons donne l'écart-type général. Un écart observé PLUS
         GRAND veut dire qu'on place exprès un jeune et un ancien dans chaque casting.
-      nulle: &id019
+      nulle: &id023
         bornes:
         - 9.21
         - 10.008
@@ -14654,7 +14838,7 @@ modeles:
       tirages: 10000
       lecture: On compte, pour chaque saison, le nombre de familles de métiers représentées. Un total
         observé PLUS GRAND veut dire qu'on veille à n'oublier aucune famille.
-      nulle: &id020
+      nulle: &id024
         bornes:
         - 224.95
         - 270.05
@@ -14704,7 +14888,7 @@ modeles:
       tirages: 10000
       lecture: Distance entre le mélange de profils d'une saison et le mélange général. Un observé PLUS
         PETIT que l'attendu veut dire que les saisons se ressemblent plus que le hasard ne l'expliquerait.
-      nulle: &id021
+      nulle: &id025
         bornes:
         - 0.1377
         - 0.4058
@@ -14755,7 +14939,7 @@ modeles:
       tirages: 10000
       lecture: On rebat les bandeaux à l'intérieur de chaque saison. Un écart observé PLUS PETIT que l'attendu
         veut dire que les tribus sont composées à l'équilibre, pas tirées au sort.
-      nulle: &id022
+      nulle: &id026
         bornes:
         - 6.8021
         - 34.3229
@@ -14806,7 +14990,7 @@ modeles:
       tirages: 10000
       lecture: 'Même méthode, sur l''âge moyen de chaque bandeau. Un écart observé PLUS GRAND que l''attendu
         veut dire l''inverse d''un équilibre : deux tribus construites pour différer.'
-      nulle: &id023
+      nulle: &id027
         bornes:
         - 1.5354
         - 6.486
@@ -14856,7 +15040,7 @@ modeles:
       tirages: 10000
       lecture: La médiane ignore les valeurs extrêmes. Si elle ne s'écarte pas, c'est que l'écart moyen
         tient à quelques éditions et non à une règle de composition.
-      nulle: &id024
+      nulle: &id028
         bornes:
         - 0.5875
         - 6.9125
@@ -14975,7 +15159,7 @@ modeles:
       tirages: 10000
       lecture: Le modèle classe les candidats d'une saison ; on relève la place qu'il donne à celui qui
         a gagné. Plus BAS que l'attendu veut dire qu'une part du résultat se joue au recrutement.
-      nulle: &id025
+      nulle: &id029
         bornes:
         - 5.5798
         - 14.824
@@ -15269,7 +15453,7 @@ modeles:
       rang_victoires: 11
       force: 2.56
       victoires: 4
-    - &id006
+    - &id010
       nom: Gilles De Baere
       rang_force: 8
       rang_victoires: 41
@@ -15305,14 +15489,14 @@ modeles:
       rang_victoires: 6
       force: 1.56
       victoires: 5
-    - &id007
+    - &id011
       nom: Jade Handi
       rang_force: 48
       rang_victoires: 4
       force: 1.34
       victoires: 6
-    plus_forte_montee: *id006
-    plus_forte_chute: *id007
+    plus_forte_montee: *id010
+    plus_forte_chute: *id011
   force_et_jeu:
     effectif: 309
     voix:
@@ -15553,7 +15737,7 @@ modeles:
       tirages: 2000
       lecture: 'Écart entre deux probabilités : voter ensemble après avoir voté ensemble, et voter ensemble
         après avoir voté séparément. À zéro, chaque conseil repart de zéro et il n''y a pas d''alliance.'
-      nulle: &id052
+      nulle: &id056
         bornes:
         - -5.414
         - 34.8411
@@ -15699,7 +15883,7 @@ modeles:
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
         : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-      nulle: &id026
+      nulle: &id030
         bornes:
         - 44.4474
         - 49.7844
@@ -15751,7 +15935,7 @@ modeles:
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
         : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-      nulle: &id027
+      nulle: &id031
         bornes:
         - 11.266
         - 11.9017
@@ -15803,7 +15987,7 @@ modeles:
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
         : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-      nulle: &id028
+      nulle: &id032
         bornes:
         - 8.5984
         - 11.5633
@@ -15855,7 +16039,7 @@ modeles:
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
         : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-      nulle: &id029
+      nulle: &id033
         bornes:
         - 57.8949
         - 67.442
@@ -15907,7 +16091,7 @@ modeles:
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
         : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-      nulle: &id030
+      nulle: &id034
         bornes:
         - 1.29
         - 3.0462
@@ -15959,7 +16143,7 @@ modeles:
       tirages: 4000
       lecture: Mesuré sur les seuls conseils réunissant plusieurs bandeaux. Un observé SOUS l'attendu
         veut dire que le camp de départ protège encore, longtemps après avoir cessé d'exister.
-      nulle: &id031
+      nulle: &id035
         bornes:
         - 30.0452
         - 45.3617
@@ -16015,7 +16199,7 @@ modeles:
       tirages: 4000
       lecture: Part des bulletins visant quelqu'un avec qui l'auteur avait déjà voté. Un observé SOUS
         l'attendu veut dire que l'alliance protège ; au-dessus, qu'elle expose.
-      nulle: &id054
+      nulle: &id058
         bornes:
         - 50.3709
         - 62.6106
@@ -16200,7 +16384,7 @@ modeles:
       tirages: 10000
       lecture: Nombre de fois où deux sorties consécutives viennent du même bandeau de départ. Un observé
         AU-DESSUS de l'attendu est la signature d'un camp démonté un par un.
-      nulle: &id055
+      nulle: &id059
         bornes:
         - 57.5
         - 112.5
@@ -16595,7 +16779,7 @@ modeles:
     - annee: 2011
       titre: Raja Ampat
       gain: 51.94
-    - &id009
+    - &id013
       annee: 2012
       titre: Malaisie
       gain: 54.33
@@ -16614,7 +16798,7 @@ modeles:
     - annee: 2017
       titre: Fidji
       gain: 51.36
-    - &id008
+    - &id012
       annee: 2019
       titre: La Guerre des chefs
       gain: 57.13
@@ -16634,7 +16818,7 @@ modeles:
       titre: Les Chasseurs d'immunité
       gain: 41.89
     exaequo:
-    - *id008
+    - *id012
     nb_exaequo: 1
     nb_proches: 6
     avance: 4.9
@@ -16642,7 +16826,7 @@ modeles:
       debut: 2011
       fin: 2020
       etendue: 9
-    second: *id009
+    second: *id013
     test:
       cle: rupture
       libelle: La rupture de régime
@@ -16657,7 +16841,7 @@ modeles:
       lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
         dans un ordre au hasard. Une coupure existe toujours ; la question est de savoir si celle-ci vaut
         mieux que n'importe quelle autre.
-      nulle: &id053
+      nulle: &id057
         bornes:
         - 0.4586
         - 59.8339
@@ -16699,7 +16883,7 @@ modeles:
   audience:
     saisons: 33
     serie:
-    - &id010
+    - &id014
       saison: s01
       annee: 2001
       titre: Les Aventuriers de Koh-Lanta
@@ -16770,7 +16954,7 @@ modeles:
       pdm: 39.5
       jour: Vendredi
       effectif: 16
-    - &id017
+    - &id021
       saison: s08
       annee: 2008
       titre: Caramoan
@@ -16791,7 +16975,7 @@ modeles:
       pdm: 32.1
       jour: Vendredi
       effectif: 18
-    - &id012
+    - &id016
       saison: sp1
       annee: 2009
       titre: Le Retour des héros
@@ -16952,7 +17136,7 @@ modeles:
       pdm: 26.1
       jour: Vendredi
       effectif: 20
-    - &id013
+    - &id017
       saison: s22
       annee: 2021
       titre: Les Armes secrètes
@@ -16963,7 +17147,7 @@ modeles:
       pdm: 25.6
       jour: Vendredi
       effectif: 21
-    - &id014
+    - &id018
       saison: sp7
       annee: 2021
       titre: La Légende
@@ -17024,7 +17208,7 @@ modeles:
       pdm: 17.6
       jour: Mardi
       effectif: 24
-    - &id011
+    - &id015
       saison: s28
       annee: 2026
       titre: Les Reliques du destin
@@ -17035,13 +17219,13 @@ modeles:
       pdm: 16.5
       jour: Mardi
       effectif: 20
-    premiere: *id010
-    derniere: *id011
-    sommet: *id012
+    premiere: *id014
+    derniere: *id015
+    sommet: *id016
     chute: 70.4
     annee_rupture: 2021
-    derniere_avant: *id013
-    premiere_apres: *id014
+    derniere_avant: *id017
+    premiere_apres: *id018
     avant: 26
     apres: 7
     moyenne_avant: 6264885
@@ -17113,11 +17297,11 @@ modeles:
     - annee: 2021
       titre: Les Armes secrètes
       gain: 19.09
-    - &id015
+    - &id019
       annee: 2021
       titre: La Légende
       gain: 20.68
-    - &id016
+    - &id020
       annee: 2022
       titre: Le Totem maudit
       gain: 19.75
@@ -17128,7 +17312,7 @@ modeles:
       titre: Les Chasseurs d'immunité
       gain: 14.36
     exaequo:
-    - *id015
+    - *id019
     nb_exaequo: 1
     nb_proches: 3
     avance: 4.5
@@ -17136,11 +17320,11 @@ modeles:
       debut: 2021
       fin: 2022
       etendue: 1
-    second: *id016
+    second: *id020
     retournement:
       avant: 7
       apres: 26
-      bascule: *id017
+      bascule: *id021
       ratio_avant: 1.282
       ratio_apres: 0.965
     courbes:
@@ -17517,7 +17701,7 @@ modeles:
       moyenne: 4367000
       premiere: 2001
       derniere: 2001
-    bascule_jour: *id014
+    bascule_jour: *id018
     format_correlation_brute: -0.643
     tests:
     - cle: audience_rupture
@@ -17532,7 +17716,7 @@ modeles:
       lecture: Gain de la meilleure coupure de la série d'audience, comparé à celui obtenu sur des saisons
         remises dans un ordre au hasard. Le profil complet des coupures dit ensuite si cette date est
         identifiée ou si plusieurs se valent.
-      nulle: &id032
+      nulle: &id036
         bornes:
         - -0.7371
         - 21.7011
@@ -17582,7 +17766,7 @@ modeles:
       tirages: 10000
       lecture: Corrélation de rang entre l'année et le rapport finale / lancement. Négative, elle dit
         que l'avantage de la finale se réduit d'année en année.
-      nulle: &id033
+      nulle: &id037
         bornes:
         - -0.7197
         - 0.7321
@@ -17634,7 +17818,7 @@ modeles:
       lecture: Corrélation de rang entre l'audience d'une saison et l'effectif de la suivante, une fois
         la tendance temporelle retirée des deux séries. Sans cette précaution, le lien brut ne mesure
         que le passage du temps.
-      nulle: &id034
+      nulle: &id038
         bornes:
         - -0.6809
         - 0.7022
@@ -17737,7 +17921,7 @@ modeles:
       lecture: 'Différence entre l''après et l''avant, en points de pourcentage. Le hasard, ici, c''est
         tirer l''éliminé parmi les présents de chaque conseil : la composition du camp est donc déjà neutralisée,
         et un écart qui subsiste est un choix.'
-      nulle: &id035
+      nulle: &id039
         bornes:
         - -21.0347
         - 18.5317
@@ -17788,7 +17972,7 @@ modeles:
       lecture: 'Rang de l''éliminé parmi les présents, sur la force estimée aux épreuves : 0 le plus faible
         du camp, 100 le plus fort. On compare l''après à l''avant. Positif, cela veut dire qu''on élimine
         plus haut dans le classement après la fusion.'
-      nulle: &id036
+      nulle: &id040
         bornes:
         - -15.1973
         - 16.4851
@@ -17839,7 +18023,7 @@ modeles:
       lecture: Part de conseils où l'éliminé ne rassemble pas plus de la moitié des voix, après moins
         avant. Le hasard est ici une redistribution des étiquettes « avant » et « après » entre les mêmes
         conseils.
-      nulle: &id037
+      nulle: &id041
         bornes:
         - -24.3256
         - 25.466
@@ -17889,7 +18073,7 @@ modeles:
       tirages: 10000
       lecture: Rang de l'éliminé parmi les présents, sur la force estimée aux épreuves. Au-dessus de 50,
         les ambassadeurs sacrifient un joueur plus fort que la moyenne du camp ; en dessous, un plus faible.
-      nulle: &id038
+      nulle: &id042
         bornes:
         - 16.5338
         - 79.5792
@@ -17940,7 +18124,7 @@ modeles:
       lecture: 'Rang de l''ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c''est la
         médiane du camp. Au-dessus, l''ambassade accompagne une fin de parcours plus tardive ; en dessous,
         plus précoce. Le hasard, ici, c''est désigner les ambassadeurs au sort parmi les présents.'
-      nulle: &id039
+      nulle: &id043
         bornes:
         - 25.7663
         - 72.1745
@@ -18600,7 +18784,7 @@ modeles:
       lecture: 'Écart entre deux probabilités conditionnelles : partir sachant qu''on a été visé la fois
         d''avant, moins partir sachant qu''on ne l''a pas été. Le modèle nul tire l''éliminé au hasard
         parmi les présents, ce qui tient la taille du conseil rigoureusement fixe.'
-      nulle: &id040
+      nulle: &id044
         bornes:
         - -10.3684
         - 12.3222
@@ -18651,7 +18835,7 @@ modeles:
       lecture: 'Écart entre partir après une à trois voix et partir après quatre voix ou plus. Un écart
         positif dit que la menace a un sommet : au-delà, celui qui a survécu à un vote massif est mieux
         protégé que celui qui a survécu à deux bulletins.'
-      nulle: &id041
+      nulle: &id045
         bornes:
         - -20.8708
         - 23.9299
@@ -18701,7 +18885,7 @@ modeles:
       tirages: 10000
       lecture: Écart entre partir après avoir voté avec la minorité et partir après avoir voté avec la
         majorité.
-      nulle: &id042
+      nulle: &id046
         bornes:
         - -10.7147
         - 9.2242
@@ -18751,7 +18935,7 @@ modeles:
       tirages: 10000
       lecture: Écart entre partir quand on avait été visé DEUX conseils plus tôt et partir quand on ne
         l'avait pas été. Un écart qui tient dit que la menace ne s'éteint pas au conseil suivant.
-      nulle: &id043
+      nulle: &id047
         bornes:
         - -17.1667
         - 17.4892
@@ -18802,7 +18986,7 @@ modeles:
       tirages: 10000
       lecture: Écart entre voir son nom ressortir quand il était déjà sorti et le voir sortir quand il
         ne l'était pas.
-      nulle: &id044
+      nulle: &id048
         bornes:
         - -13.378
         - 21.1992
@@ -18852,7 +19036,7 @@ modeles:
       tirages: 4000
       lecture: Part des couples où la cible de la dernière fois écrit à son tour le nom de son auteur,
         tous deux étant présents et votants.
-      nulle: &id045
+      nulle: &id049
         bornes:
         - 8.8199
         - 21.2016
@@ -19039,7 +19223,7 @@ modeles:
       lecture: 'Écart entre partir quand son bandeau d''origine est le moins représenté du camp et partir
         quand il est le plus représenté. Le modèle nul tire l''éliminé au hasard parmi les présents :
         la taille du camp et sa composition restent celles du soir.'
-      nulle: &id046
+      nulle: &id050
         bornes:
         - -8.1088
         - 8.1325
@@ -19089,7 +19273,7 @@ modeles:
       tirages: 10000
       lecture: Écart entre partir quand son sexe est le moins représenté du camp et partir quand il est
         le plus représenté.
-      nulle: &id047
+      nulle: &id051
         bornes:
         - -7.7985
         - 6.5092
@@ -19139,7 +19323,7 @@ modeles:
       tirages: 10000
       lecture: Écart entre partir quand on est le plus âgé des présents et partir quand on ne l'est pas.
         Le modèle nul absorbe le fait qu'on est plus souvent le doyen d'un petit camp que d'un grand.
-      nulle: &id048
+      nulle: &id052
         bornes:
         - -7.8232
         - 11.6968
@@ -19190,7 +19374,7 @@ modeles:
       lecture: 'Écart entre partir quand on vient de gagner le confort de l''épisode et partir quand on
         n''a rien gagné. Lu sur les seuls soirs à conseil unique : sinon l''épreuve du soir ne se rattache
         pas au bon conseil.'
-      nulle: &id049
+      nulle: &id053
         bornes:
         - -12.0278
         - 15.5578
@@ -19354,7 +19538,7 @@ modeles:
       tirages: 10000
       lecture: Écart entre partir quand plus aucun de ceux avec qui on a déjà voté n'est présent, et partir
         quand il en reste au moins un. Le modèle nul tire l'éliminé au hasard parmi les présents.
-      nulle: &id050
+      nulle: &id054
         bornes:
         - -14.3766
         - 20.7534
@@ -19404,7 +19588,7 @@ modeles:
       tirages: 10000
       lecture: Écart entre gagner l'immunité individuelle du soir quand on a été visé au conseil précédent
         et la gagner quand on ne l'a pas été. Le modèle nul tire le vainqueur au hasard parmi les présents.
-      nulle: &id051
+      nulle: &id055
         bornes:
         - -13.8864
         - 18.3334
@@ -19479,7 +19663,7 @@ modeles:
         on ne l''a pas gagnée. Le modèle nul ne tire pas au hasard : il tire les vainqueurs SELON LES
         FORCES estimées par le modèle de Plackett-Luce. Ce qui subsiste au-dessus de lui serait un élan,
         et non un niveau.'
-      nulle: &id056
+      nulle: &id060
         bornes:
         - -6.5898
         - 31.1284
@@ -19538,7 +19722,7 @@ modeles:
       lecture: 'Écart d''âge de l''éliminé à la moyenne de son camp, avant la réunification moins après.
         Le modèle nul tire l''éliminé au hasard parmi les présents : la composition d''âge de chaque soirée
         reste celle du soir.'
-      nulle: &id057
+      nulle: &id061
         bornes:
         - -4.2756
         - 4.0293
@@ -19706,7 +19890,7 @@ modeles:
     tirages: 10000
     lecture: 'Un écart observé plus PETIT que l''attendu est la signature d''un quota : le hasard, lui,
       produit des castings déséquilibrés de temps en temps.'
-    nulle: *id018
+    nulle: *id022
   - cle: etendue_ages
     libelle: L'écart d'âge dans un même casting
     question: Un casting mélange-t-il les âges plus qu'un tirage au hasard ne le ferait ?
@@ -19721,7 +19905,7 @@ modeles:
     tirages: 10000
     lecture: Rebattre les aventuriers entre saisons donne l'écart-type général. Un écart observé PLUS
       GRAND veut dire qu'on place exprès un jeune et un ancien dans chaque casting.
-    nulle: *id019
+    nulle: *id023
   - cle: familles_metiers
     libelle: La variété des métiers
     question: Un casting couvre-t-il plus de familles de métiers qu'un tirage au hasard ?
@@ -19736,7 +19920,7 @@ modeles:
     tirages: 10000
     lecture: On compte, pour chaque saison, le nombre de familles de métiers représentées. Un total observé
       PLUS GRAND veut dire qu'on veille à n'oublier aucune famille.
-    nulle: *id020
+    nulle: *id024
   - cle: melange_archetypes
     libelle: Le mélange d'archétypes
     question: Chaque saison contient-elle toujours le même mélange de profils ?
@@ -19751,7 +19935,7 @@ modeles:
     tirages: 10000
     lecture: Distance entre le mélange de profils d'une saison et le mélange général. Un observé PLUS
       PETIT que l'attendu veut dire que les saisons se ressemblent plus que le hasard ne l'expliquerait.
-    nulle: *id021
+    nulle: *id025
   - cle: tribus_femmes
     libelle: La composition des deux tribus
     question: Les deux tribus de départ sont-elles plus semblables en part de femmes qu'un tirage au hasard
@@ -19767,7 +19951,7 @@ modeles:
     tirages: 10000
     lecture: On rebat les bandeaux à l'intérieur de chaque saison. Un écart observé PLUS PETIT que l'attendu
       veut dire que les tribus sont composées à l'équilibre, pas tirées au sort.
-    nulle: *id022
+    nulle: *id026
   - cle: tribus_ages
     libelle: L'âge moyen des deux tribus
     question: Les deux tribus de départ ont-elles des âges moyens plus proches qu'un tirage au hasard
@@ -19783,7 +19967,7 @@ modeles:
     tirages: 10000
     lecture: 'Même méthode, sur l''âge moyen de chaque bandeau. Un écart observé PLUS GRAND que l''attendu
       veut dire l''inverse d''un équilibre : deux tribus construites pour différer.'
-    nulle: *id023
+    nulle: *id027
   - cle: tribus_ages_mediane
     libelle: L'âge des deux tribus, à la médiane
     question: 'Le même écart, mesuré à la médiane : est-il général, ou porté par quelques saisons ?'
@@ -19798,7 +19982,7 @@ modeles:
     tirages: 10000
     lecture: La médiane ignore les valeurs extrêmes. Si elle ne s'écarte pas, c'est que l'écart moyen
       tient à quelques éditions et non à une règle de composition.
-    nulle: *id024
+    nulle: *id028
   - cle: pronostic_vainqueur
     libelle: Pronostiquer le vainqueur au casting
     question: En ne connaissant que l'âge, le sexe, le métier et la couleur, place-t-on le futur vainqueur
@@ -19814,7 +19998,7 @@ modeles:
     tirages: 10000
     lecture: Le modèle classe les candidats d'une saison ; on relève la place qu'il donne à celui qui
       a gagné. Plus BAS que l'attendu veut dire qu'une part du résultat se joue au recrutement.
-    nulle: *id025
+    nulle: *id029
   - cle: vote_meme_sexe
     libelle: Viser quelqu'un du même sexe
     question: Parmi les présents, écrit-on plutôt le nom de quelqu'un de son sexe ?
@@ -19830,7 +20014,7 @@ modeles:
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
       : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
       qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-    nulle: *id026
+    nulle: *id030
   - cle: vote_ecart_age
     libelle: L'écart d'âge avec sa cible
     question: Écrit-on plutôt le nom de quelqu'un de sa génération, ou d'une autre ?
@@ -19846,7 +20030,7 @@ modeles:
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
       : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
       qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-    nulle: *id027
+    nulle: *id031
   - cle: vote_meme_metier
     libelle: Viser la même famille de métier
     question: Le métier rapproche-t-il ou éloigne-t-il du bulletin ?
@@ -19862,7 +20046,7 @@ modeles:
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
       : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
       qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-    nulle: *id028
+    nulle: *id032
   - cle: vote_meme_bandeau
     libelle: Viser son propre bandeau de départ
     question: Le camp d'origine protège-t-il, une fois les tribus mélangées ?
@@ -19878,7 +20062,7 @@ modeles:
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
       : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
       qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-    nulle: *id029
+    nulle: *id033
   - cle: vote_meme_departement
     libelle: Viser quelqu'un de son département
     question: Épargne-t-on le voisin — celui qui vit dans le même département ?
@@ -19894,7 +20078,7 @@ modeles:
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
       : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
       qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-    nulle: *id030
+    nulle: *id034
   - cle: vote_bandeau_apres_fusion
     libelle: Épargner son bandeau de départ
     question: Une fois les tribus mélangées, écrit-on moins souvent le nom de quelqu'un de son camp d'origine
@@ -19910,7 +20094,7 @@ modeles:
     tirages: 4000
     lecture: Mesuré sur les seuls conseils réunissant plusieurs bandeaux. Un observé SOUS l'attendu veut
       dire que le camp de départ protège encore, longtemps après avoir cessé d'exister.
-    nulle: *id031
+    nulle: *id035
   - cle: geographie_departements
     libelle: L'origine géographique, par département
     question: Les aventuriers viennent-ils de départements plus variés, ou plus concentrés, qu'un tirage
@@ -20029,7 +20213,7 @@ modeles:
     lecture: Gain de la meilleure coupure de la série d'audience, comparé à celui obtenu sur des saisons
       remises dans un ordre au hasard. Le profil complet des coupures dit ensuite si cette date est identifiée
       ou si plusieurs se valent.
-    nulle: *id032
+    nulle: *id036
   - cle: audience_retournement
     libelle: Le retournement finale / lancement
     question: La finale attire-t-elle toujours plus de monde que le lancement ?
@@ -20044,7 +20228,7 @@ modeles:
     tirages: 10000
     lecture: Corrélation de rang entre l'année et le rapport finale / lancement. Négative, elle dit que
       l'avantage de la finale se réduit d'année en année.
-    nulle: *id033
+    nulle: *id037
   - cle: audience_format
     libelle: Le format suit-il l'audience ?
     question: Une saison moins regardée que son époque ne le laissait attendre est-elle suivie d'un casting
@@ -20061,7 +20245,7 @@ modeles:
     lecture: Corrélation de rang entre l'audience d'une saison et l'effectif de la suivante, une fois
       la tendance temporelle retirée des deux séries. Sans cette précaution, le lien brut ne mesure que
       le passage du temps.
-    nulle: *id034
+    nulle: *id038
   - cle: fusion_sexe
     libelle: Le sexe des éliminés, avant et après la fusion
     question: La part de femmes parmi les éliminés change-t-elle à la réunification ?
@@ -20077,7 +20261,7 @@ modeles:
     lecture: 'Différence entre l''après et l''avant, en points de pourcentage. Le hasard, ici, c''est
       tirer l''éliminé parmi les présents de chaque conseil : la composition du camp est donc déjà neutralisée,
       et un écart qui subsiste est un choix.'
-    nulle: *id035
+    nulle: *id039
   - cle: fusion_force
     libelle: La force des éliminés, avant et après la fusion
     question: Élimine-t-on le faible avant la réunification et le fort après ?
@@ -20093,7 +20277,7 @@ modeles:
     lecture: 'Rang de l''éliminé parmi les présents, sur la force estimée aux épreuves : 0 le plus faible
       du camp, 100 le plus fort. On compare l''après à l''avant. Positif, cela veut dire qu''on élimine
       plus haut dans le classement après la fusion.'
-    nulle: *id036
+    nulle: *id040
   - cle: fusion_serre
     libelle: Des conseils plus serrés après la fusion ?
     question: Le vote se divise-t-il davantage une fois les tribus réunies ?
@@ -20108,7 +20292,7 @@ modeles:
     tirages: 10000
     lecture: Part de conseils où l'éliminé ne rassemble pas plus de la moitié des voix, après moins avant.
       Le hasard est ici une redistribution des étiquettes « avant » et « après » entre les mêmes conseils.
-    nulle: *id037
+    nulle: *id041
   - cle: ambassadeurs_force
     libelle: Qui les ambassadeurs éliminent-ils ?
     question: Deux ambassadeurs qui décident seuls choisissent-ils autrement qu'un tirage ?
@@ -20123,7 +20307,7 @@ modeles:
     tirages: 10000
     lecture: Rang de l'éliminé parmi les présents, sur la force estimée aux épreuves. Au-dessus de 50,
       les ambassadeurs sacrifient un joueur plus fort que la moyenne du camp ; en dessous, un plus faible.
-    nulle: *id038
+    nulle: *id042
   - cle: ambassadeurs_survie
     libelle: L'ambassadeur qui négocie s'en sort-il mieux ?
     question: Partir en ambassade change-t-il la distance que l'on parcourt ensuite ?
@@ -20139,7 +20323,7 @@ modeles:
     lecture: 'Rang de l''ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c''est la
       médiane du camp. Au-dessus, l''ambassade accompagne une fin de parcours plus tardive ; en dessous,
       plus précoce. Le hasard, ici, c''est désigner les ambassadeurs au sort parmi les présents.'
-    nulle: *id039
+    nulle: *id043
   - cle: menace_voix
     libelle: Le nom sorti la fois d'avant
     question: Sortir est-il plus probable quand on a reçu au moins une voix au conseil précédent ?
@@ -20155,7 +20339,7 @@ modeles:
     lecture: 'Écart entre deux probabilités conditionnelles : partir sachant qu''on a été visé la fois
       d''avant, moins partir sachant qu''on ne l''a pas été. Le modèle nul tire l''éliminé au hasard parmi
       les présents, ce qui tient la taille du conseil rigoureusement fixe.'
-    nulle: *id040
+    nulle: *id044
   - cle: menace_sommet
     libelle: Trop visé pour partir
     question: Être visé beaucoup expose-t-il moins qu'être visé un peu ?
@@ -20171,7 +20355,7 @@ modeles:
     lecture: 'Écart entre partir après une à trois voix et partir après quatre voix ou plus. Un écart
       positif dit que la menace a un sommet : au-delà, celui qui a survécu à un vote massif est mieux
       protégé que celui qui a survécu à deux bulletins.'
-    nulle: *id041
+    nulle: *id045
   - cle: camp_perdant
     libelle: Avoir voté du mauvais côté
     question: S'être trompé de cible au conseil précédent expose-t-il au suivant ?
@@ -20185,7 +20369,7 @@ modeles:
     retenu: false
     tirages: 10000
     lecture: Écart entre partir après avoir voté avec la minorité et partir après avoir voté avec la majorité.
-    nulle: *id042
+    nulle: *id046
   - cle: menace_deux_pas
     libelle: La menace, deux conseils plus tard
     question: Les voix reçues à l'avant-dernier conseil comptent-elles encore ?
@@ -20200,7 +20384,7 @@ modeles:
     tirages: 10000
     lecture: Écart entre partir quand on avait été visé DEUX conseils plus tôt et partir quand on ne l'avait
       pas été. Un écart qui tient dit que la menace ne s'éteint pas au conseil suivant.
-    nulle: *id043
+    nulle: *id047
   - cle: cible_persistante
     libelle: La cible reste la cible
     question: Recevoir une voix ce soir est-il plus probable quand on en a reçu au conseil précédent ?
@@ -20215,7 +20399,7 @@ modeles:
     tirages: 10000
     lecture: Écart entre voir son nom ressortir quand il était déjà sorti et le voir sortir quand il ne
       l'était pas.
-    nulle: *id044
+    nulle: *id048
   - cle: retour_de_baton
     libelle: Le nom rendu au conseil suivant
     question: Celui dont j'ai écrit le nom la fois d'avant écrit-il le mien ce soir ?
@@ -20230,7 +20414,7 @@ modeles:
     tirages: 4000
     lecture: Part des couples où la cible de la dernière fois écrit à son tour le nom de son auteur, tous
       deux étant présents et votants.
-    nulle: *id045
+    nulle: *id049
   - cle: bandeau_minoritaire
     libelle: Le bandeau minoritaire
     question: Appartenir au bandeau le moins représenté du camp expose-t-il ?
@@ -20246,7 +20430,7 @@ modeles:
     lecture: 'Écart entre partir quand son bandeau d''origine est le moins représenté du camp et partir
       quand il est le plus représenté. Le modèle nul tire l''éliminé au hasard parmi les présents : la
       taille du camp et sa composition restent celles du soir.'
-    nulle: *id046
+    nulle: *id050
   - cle: sexe_minoritaire
     libelle: Le sexe minoritaire
     question: Être du sexe le moins représenté du camp expose-t-il ?
@@ -20261,7 +20445,7 @@ modeles:
     tirages: 10000
     lecture: Écart entre partir quand son sexe est le moins représenté du camp et partir quand il est
       le plus représenté.
-    nulle: *id047
+    nulle: *id051
   - cle: doyen_du_camp
     libelle: Le plus âgé du camp
     question: Le doyen d'un conseil part-il plus souvent que les autres ?
@@ -20276,7 +20460,7 @@ modeles:
     tirages: 10000
     lecture: Écart entre partir quand on est le plus âgé des présents et partir quand on ne l'est pas.
       Le modèle nul absorbe le fait qu'on est plus souvent le doyen d'un petit camp que d'un grand.
-    nulle: *id048
+    nulle: *id052
   - cle: confort_sortie
     libelle: Le confort du soir
     question: Gagner le confort fait-il partir le soir même ?
@@ -20292,7 +20476,7 @@ modeles:
     lecture: 'Écart entre partir quand on vient de gagner le confort de l''épisode et partir quand on
       n''a rien gagné. Lu sur les seuls soirs à conseil unique : sinon l''épreuve du soir ne se rattache
       pas au bon conseil.'
-    nulle: *id049
+    nulle: *id053
   - cle: vote_isole
     libelle: N’avoir plus personne avec qui on ait voté
     question: Se retrouver sans un seul allié parmi les présents expose-t-il ?
@@ -20307,7 +20491,7 @@ modeles:
     tirages: 10000
     lecture: Écart entre partir quand plus aucun de ceux avec qui on a déjà voté n'est présent, et partir
       quand il en reste au moins un. Le modèle nul tire l'éliminé au hasard parmi les présents.
-    nulle: *id050
+    nulle: *id054
   - cle: dos_au_mur
     libelle: Le dos au mur
     question: Celui qu'on vient de viser gagne-t-il plus souvent l'immunité ?
@@ -20322,7 +20506,7 @@ modeles:
     tirages: 10000
     lecture: Écart entre gagner l'immunité individuelle du soir quand on a été visé au conseil précédent
       et la gagner quand on ne l'a pas été. Le modèle nul tire le vainqueur au hasard parmi les présents.
-    nulle: *id051
+    nulle: *id055
   - cle: persistance_alliances
     libelle: La persistance des alliances
     question: Deux aventuriers qui ont vote ensemble votent-ils encore ensemble au conseil suivant, plus
@@ -20338,7 +20522,7 @@ modeles:
     tirages: 2000
     lecture: 'Écart entre deux probabilités : voter ensemble après avoir voté ensemble, et voter ensemble
       après avoir voté séparément. À zéro, chaque conseil repart de zéro et il n''y a pas d''alliance.'
-    nulle: *id052
+    nulle: *id056
   - cle: rupture
     libelle: La rupture de régime
     question: Existe-t-il une date qui sépare les saisons en deux régimes mieux qu'une date tirée au sort
@@ -20355,7 +20539,7 @@ modeles:
     lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
       dans un ordre au hasard. Une coupure existe toujours ; la question est de savoir si celle-ci vaut
       mieux que n'importe quelle autre.
-    nulle: *id053
+    nulle: *id057
   - cle: trahison
     libelle: Écrire le nom d'un ancien allié
     question: Quand on a déjà voté avec quelqu'un, écrit-on son nom plus ou moins souvent qu'un autre
@@ -20371,7 +20555,7 @@ modeles:
     tirages: 4000
     lecture: Part des bulletins visant quelqu'un avec qui l'auteur avait déjà voté. Un observé SOUS l'attendu
       veut dire que l'alliance protège ; au-dessus, qu'elle expose.
-    nulle: *id054
+    nulle: *id058
   - cle: decimation
     libelle: L'élimination en série d'un camp
     question: Après la réunification, les sorties se suivent-elles par bandeau plus souvent que le hasard
@@ -20387,7 +20571,7 @@ modeles:
     tirages: 10000
     lecture: Nombre de fois où deux sorties consécutives viennent du même bandeau de départ. Un observé
       AU-DESSUS de l'attendu est la signature d'un camp démonté un par un.
-    nulle: *id055
+    nulle: *id059
   - cle: tenant_du_titre
     libelle: Le tenant du titre
     question: Celui qui a gagné la dernière immunité la regagne-t-il plus souvent que sa force ne l'explique
@@ -20405,7 +20589,7 @@ modeles:
       on ne l''a pas gagnée. Le modèle nul ne tire pas au hasard : il tire les vainqueurs SELON LES FORCES
       estimées par le modèle de Plackett-Luce. Ce qui subsiste au-dessus de lui serait un élan, et non
       un niveau.'
-    nulle: *id056
+    nulle: *id060
   - cle: age_bascule_fusion
     libelle: L'âge de l'éliminé, avant et après la fusion
     question: Élimine-t-on le plus âgé avant la réunification, et plus après ?
@@ -20421,7 +20605,7 @@ modeles:
     lecture: 'Écart d''âge de l''éliminé à la moyenne de son camp, avant la réunification moins après.
       Le modèle nul tire l''éliminé au hasard parmi les présents : la composition d''âge de chaque soirée
       reste celle du soir.'
-    nulle: *id057
+    nulle: *id061
   - cle: talent_stable
     libelle: La qualité d’un joueur se retrouve-t-elle d’une saison à l’autre ?
     question: Le score d’un aventurier à sa première participation prédit-il celui de ses participations
