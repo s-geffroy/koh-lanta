@@ -121,6 +121,65 @@ def resoudre(nom, index_saison):
     return None, "inconnu"
 
 
+def recoller_le_scrutin_final(lignes, rapport):
+    """Remet chaque bulletin de jury dans la colonne de celui qu'il nomme.
+
+    Le scrutin final tient une colonne par finaliste, et un bulletin appartient
+    a la colonne de la personne dont il porte le nom : c'est la definition meme
+    du scrutin. Une matrice le respecte presque toujours -- mais celle du
+    Totem maudit etale le jury sur trois colonnes et y range chaque jure selon
+    la ligne qu'il occupe, pas selon le nom qu'il ecrit. Trois bulletins s'y
+    retrouvaient dans la mauvaise colonne, et le vote a egalite qui a fait deux
+    vainqueurs devenait invisible.
+
+    Une fois recolle, le decompte de chaque colonne EST le nombre de ses
+    bulletins. On s'en sert pour corriger le total annonce, mais seulement
+    quand le scrutin est complet -- la somme des bulletins atteignant le nombre
+    de voix que la source annonce. Sans cette garantie, un total lu vaut mieux
+    qu'un total recalcule sur un relevé partiel.
+    """
+    jurys = [x for x in lignes if x["type"] == "jury"]
+    if len(jurys) < 2:
+        jurys = [x for x in jurys if x.get("votes")]
+    if not jurys:
+        return
+    place = {}
+    for x in jurys:
+        pid = x.get("laureat") if "laureat" in x else x.get("finaliste")
+        if x.get("laureat_rattache") or x.get("finaliste_rattache"):
+            place[pid] = x
+    if len(place) < 2:
+        return
+
+    tous = [b for x in jurys for b in x.get("votes") or []]
+    deplaces = 0
+    for x in jurys:
+        x["votes"] = []
+    for b in tous:
+        destination = place.get(b["cible"]) if b.get("cible_rattachee") else None
+        if destination is None:
+            destination = jurys[-1]          # on ne perd aucun bulletin
+        destination["votes"].append(b)
+    for x in jurys:
+        pid = x.get("laureat") if "laureat" in x else x.get("finaliste")
+        deplaces += sum(1 for b in x["votes"]
+                        if b.get("cible_rattachee") and b["cible"] != pid)
+
+    exprimes = max((x.get("votes_exprimes") or 0 for x in jurys), default=0)
+    complet = exprimes and len(tous) == exprimes
+    for x in jurys:
+        lus = len(x["votes"])
+        if complet and x.get("votes_pour") is not None and x["votes_pour"] != lus:
+            sid = x["saison"]
+            pid = x.get("laureat") if "laureat" in x else x.get("finaliste")
+            rapport.append(f"{sid} conseil {x['numero']} : la source annonce "
+                           f"{x['votes_pour']} voix pour « {pid} » et en fait lire "
+                           f"{lus} ; le scrutin etant complet, ce sont les "
+                           f"bulletins qui font foi")
+        if complet:
+            x["votes_pour"] = lus
+
+
 def resoudre_parmi(nom, idx, autorises):
     """Resout un prenom en le restreignant a un ensemble d'identifiants.
 
@@ -285,6 +344,7 @@ def construire(saisons, parts, rapport):
             accord["desaccords"] += croisement[3]
 
         idx = index.get(sid, {})
+        debut_saison = len(conseils)
         au_bout_ids = {pid for (s2, pid) in vainqueurs | finalistes if s2 == sid}
         jures_possibles = {p["id"] for p in parts
                            if p["saison"] == sid and p["id"] not in au_bout_ids}
@@ -403,6 +463,8 @@ def construire(saisons, parts, rapport):
                             b_["votant"], b_["votant_rattache"] = pid, True
             commun["votes"] = bulletins
             conseils.append(commun)
+
+        recoller_le_scrutin_final(conseils[debut_saison:], rapport)
 
     if accord["communs"]:
         rapport.append(

@@ -1401,7 +1401,7 @@ jury:
   effectif: 36
   saisons: 33
   sans_nom: 0
-  desaccords: 3
+  desaccords: 0
   scrutins:
   - saison: s01
     titre: Les Aventuriers de Koh-Lanta
@@ -1554,7 +1554,7 @@ jury:
     titre: Les Armes secrètes
     annee: 2021
     laureat: Maxine Eouzan
-    voix_pour: 4
+    voix_pour: 9
     voix_exprimees: 13
     bulletins_releves: 9
   - saison: s23
@@ -1563,14 +1563,14 @@ jury:
     laureat: François Descamp
     voix_pour: 4
     voix_exprimees: 11
-    bulletins_releves: 3
+    bulletins_releves: 4
   - saison: s23
     titre: Le Totem maudit
     annee: 2022
     laureat: Bastien San Pedro
     voix_pour: 4
     voix_exprimees: 11
-    bulletins_releves: 3
+    bulletins_releves: 4
   - saison: s24
     titre: Le Feu sacré
     annee: 2023

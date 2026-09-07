@@ -459,6 +459,15 @@ def verifier_conseils(conseils, saisons, parts, c):
                 c.avertir(f"{ref} : le scrutin annonce {x['votes_pour']} voix et "
                           f"en fait lire {lus} — la ligne des totaux de la "
                           f"matrice est probablement decalee")
+            # Un bulletin de jury appartient a la colonne de celui qu'il nomme.
+            # Ailleurs, c'est que la matrice range les jures par leur ligne et
+            # non par leur vote -- et le decompte des colonnes devient faux.
+            titulaire = x.get("laureat") if "laureat" in x else x.get("finaliste")
+            for b in x.get("votes") or []:
+                if b.get("cible_rattachee") and b["cible"] != titulaire:
+                    c.erreur(f"{ref} : bulletin pour « {b['cible']} » range dans "
+                             f"la colonne de « {titulaire} » — le scrutin final "
+                             f"n'a pas ete recolle")
         else:
             for interdit in ("laureat", "finaliste"):
                 if interdit in x:

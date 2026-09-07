@@ -15445,7 +15445,7 @@
   episode: '12'
   finaliste: lucie-bertaud
   finaliste_rattache: true
-  votes_pour: 9
+  votes_pour: 4
   votes_exprimes: 13
   votes:
   - votant: magali-sevenier
@@ -15475,7 +15475,7 @@
   episode: '12'
   laureat: maxine-eouzan
   laureat_rattache: true
-  votes_pour: 4
+  votes_pour: 9
   votes_exprimes: 13
   votes:
   - votant: jonathan-julien
@@ -16378,19 +16378,9 @@
   votes_pour: 3
   votes_exprimes: 11
   votes:
-  - votant: ambre-daudet
-    votant_rattache: true
-    cible: francois-descamp
-    cible_rattachee: true
-    annule: false
   - votant: olga-khokhlova
     votant_rattache: true
     cible: geraldine-nicolle
-    cible_rattachee: true
-    annule: false
-  - votant: nicolas-bellon
-    votant_rattache: true
-    cible: francois-descamp
     cible_rattachee: true
     annule: false
   - votant: louana-roy
@@ -16413,9 +16403,14 @@
   votes_pour: 4
   votes_exprimes: 11
   votes:
-  - votant: jean-charles-chatelus
+  - votant: ambre-daudet
     votant_rattache: true
-    cible: bastien-san-pedro
+    cible: francois-descamp
+    cible_rattachee: true
+    annule: false
+  - votant: nicolas-bellon
+    votant_rattache: true
+    cible: francois-descamp
     cible_rattachee: true
     annule: false
   - votant: fouzi-de-la-fuente
@@ -16438,6 +16433,11 @@
   votes_pour: 4
   votes_exprimes: 11
   votes:
+  - votant: jean-charles-chatelus
+    votant_rattache: true
+    cible: bastien-san-pedro
+    cible_rattachee: true
+    annule: false
   - votant: anne-sophie-mounier
     votant_rattache: true
     cible: bastien-san-pedro

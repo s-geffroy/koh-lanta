@@ -212,10 +212,25 @@ identifient la colonne sans ambiguïté.
   {{ jj.effectif }} colonnes de lauréat, le reste étant celles des finalistes
   battus. <b>Il n’en manque plus aucun</b> : chaque voix annoncée par les
   sources est lue et attribuée.</p>
-  <p>Le décompte annoncé et les bulletins relevés coïncident partout sauf
-  {{ jj.desaccords }} fois, où c’est la ligne des totaux de la source qui est
-  décalée d’une colonne.</p>
+  <p>Le décompte annoncé et les bulletins relevés coïncident désormais
+  <b>partout</b>.</p>
 </div>
+
+Restaient cinq colonnes dont le total annoncé contredisait les bulletins, et
+elles ne disaient pas la même chose. Sur <i>Les Armes secrètes</i>, la source de
+référence intervertit simplement les deux totaux — l’autre wiki les donne dans
+le bon ordre, et les bulletins tranchent : Maxine l’emporte par neuf voix contre
+quatre. Sur <i>Le Totem maudit</i>, la matrice étale le jury sur trois colonnes
+et y range chaque juré selon **sa propre ligne**, pas selon le nom qu’il écrit :
+trois bulletins étaient dans la colonne voisine, et l’égalité **4-4** d’où sont
+sortis les deux vainqueurs de cette saison-là restait invisible.
+
+Un bulletin de jury appartient à la colonne de celui qu’il nomme — c’est la
+définition du scrutin, pas une préférence. Le relevé les y remet, et le décompte
+d’une colonne devient le nombre de ses bulletins. Cette substitution ne se fait
+qu’à une condition : que le scrutin soit **complet**, la somme des bulletins
+atteignant le nombre de voix annoncé. Sur un relevé partiel, un total lu vaut
+mieux qu’un total recalculé.
 
 Le tout dernier bulletin a demandé un troisième geste. Sur
 <i>Les Chasseurs d’immunité</i>, la matrice annonçait onze voix et n’en faisait
