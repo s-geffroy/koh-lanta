@@ -405,6 +405,57 @@ def constater_epreuves_apres_la_sortie(conseils, epreuves, parts, c):
                     f"({', '.join(tardives[:4])}...)")
 
 
+def constater_victoires_impossibles(conseils, epreuves, parts, c):
+    """Une victoire individuelle datee d'apres le depart de son vainqueur.
+
+    Les fiches individuelles du wiki donnent un total de victoires PAR SAISON,
+    mais leur infobox n'a pas toujours de champ « Saison » : `fusionner`
+    rattache alors les rangs par ordre chronologique, et le rattachement peut
+    se tromper de saison. On le voit quand une fiche credite quelqu'un d'une
+    victoire individuelle dans une saison ou il est parti AVANT la premiere
+    epreuve individuelle -- Julie Navarro, sortie le premier jour du Combat des
+    heros, y compte une victoire ; Raphaele, sortie au sixieme, en compte trois.
+
+    Ce n'est pas rattrapable : on sait que la valeur est fausse pour CETTE
+    saison, on ne sait pas a laquelle elle appartient. Elle reste donc en
+    place, comptee et signalee -- et le classement des joueurs, lui, ne s'en
+    sert pas : il ne lit que le tableau date.
+    """
+    par_saison = defaultdict(list)
+    for e in epreuves:
+        if e.get("forme") == "individuelle":
+            try:
+                par_saison[e["saison"]].append(int(e["episode"]))
+            except (TypeError, ValueError, KeyError):
+                pass
+    premiere = {sid: min(eps) for sid, eps in par_saison.items() if eps}
+    sortie = {}
+    finissent = {(p["saison"], p["id"]) for p in parts
+                 if p.get("sort") in ("vainqueur", "finaliste")}
+    for x in conseils:
+        if x.get("type") == "jury" or not x.get("elimine_rattache"):
+            continue
+        if (x["saison"], x["elimine"]) in finissent:
+            continue
+        try:
+            sortie[(x["saison"], x["elimine"])] = int(x["episode"])
+        except (TypeError, ValueError, KeyError):
+            pass
+    fautives = []
+    for p in parts:
+        vi = p.get("victoires_individuelles")
+        cle = (p["saison"], p["id"])
+        if not vi or p["saison"] not in premiere or cle not in sortie:
+            continue
+        if sortie[cle] < premiere[p["saison"]]:
+            fautives.append(f"{p['saison']}/{p['nom']} ({vi})")
+    if fautives:
+        c.constater(f"{len(fautives)} fiche(s) creditent une victoire individuelle "
+                    f"a quelqu'un parti avant la premiere epreuve individuelle de "
+                    f"sa saison — rattachement de saison fautif dans l'infobox "
+                    f"({', '.join(fautives[:4])}...)")
+
+
 def verifier_immunite_individuelle(conseils, epreuves, c):
     """L'immunise du soir ne peut pas etre l'elimine du soir.
 
@@ -807,6 +858,7 @@ def main():
         verifier_immunite_individuelle(conseils, epreuves, c)
     if epreuves and conseils and parts:
         constater_epreuves_apres_la_sortie(conseils, epreuves, parts, c)
+        constater_victoires_impossibles(conseils, epreuves, parts, c)
     if saisons and parts and conseils:
         verifier_conseils(conseils, saisons, parts, c)
         verifier_matrices_de_votes(conseils, c)

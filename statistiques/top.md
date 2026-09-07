@@ -60,6 +60,21 @@ sur les données elles-mêmes, par la méthode des moments. Faute de preuve, un
 joueur vaut la moyenne — il ne vaut ni zéro, ni l’exclusion.
 <a href="{{ '/methode/' | relative_url }}">La méthode</a> le détaille.</p>
 
+{% assign ce = c.couverture_epreuves %}
+
+<p class="note"><strong>Ce que la facette des épreuves ne peut pas voir.</strong>
+Deux sources comptent les victoires individuelles, et elles ne disent pas la
+même chose. Le <em>tableau de saison</em> date chaque épreuve : lui seul fournit
+un dénominateur, donc lui seul sert ici. La <em>fiche individuelle</em> donne un
+total par saison, sans dates. Là où les deux se comparent, elles s’accordent
+sur <b>{{ ce.part_accord }} %</b> des {{ ce.comparables }} participations.
+Surtout, la fiche attribue <b>{{ ce.victoires_invisibles }} victoires</b> à
+{{ ce.participations_invisibles }} participations pour lesquelles le tableau ne
+fournit aucun dénominateur — les cinq saisons sans relevé d’épreuves, pour
+l’essentiel. Ces victoires-là sont <strong>invisibles au classement</strong>.
+Un aventurier dont deux saisons sur trois sont dans ce cas est donc jugé sur la
+troisième, et il faut le savoir avant de lire son rang.</p>
+
 <p class="note">Une précision sur le parcours : le rang final est donné en
 clair par la source pour {{ c.rangs_attestes }} des
 {{ c.participations_classees }} participations. Pour les
@@ -437,7 +452,9 @@ quatre est une convention, pas une grandeur.
 tient dans plus de 99 % des pondérations, quand {{ rb.candidats }} peuvent
 entrer dans le top.
 <strong>La stabilité n’est pas établie</strong> — p = {{ t.p }}, à la limite.
-<strong>Deux facettes sur quatre dépendent d’un dépouillement inégal.</strong>
+<strong>Deux facettes sur quatre dépendent d’un dépouillement inégal</strong>, et
+la troisième — les épreuves — ignore {{ ce.victoires_invisibles }} victoires
+faute de dénominateur.
 <strong>La discrétion reste ambivalente</strong> : n’être jamais écrit peut
 aussi vouloir dire qu’on ne menaçait personne — c’est ce que
 <a href="{{ '/statistiques/jeu-social/' | relative_url }}">le jeu social</a>

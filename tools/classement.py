@@ -371,6 +371,54 @@ def mesurer(saisons, parts, conseils, epreuves):
     return mesures
 
 
+def couverture_des_epreuves(saisons, parts, conseils, epreuves):
+    """Ce que la facette des epreuves voit, et ce qu'elle ne peut pas voir.
+
+    Deux sources comptent les victoires individuelles, et elles ne disent pas
+    la meme chose. Le TABLEAU DE SAISON date chaque epreuve : lui seul fournit
+    un denominateur, donc lui seul sert au classement. La FICHE INDIVIDUELLE
+    donne un total par saison, sans dates -- elle couvre plus de monde, mais
+    son rattachement a la bonne saison est fragile : `fusionner` signale
+    lui-meme des centaines de rangs d'infobox attribues par ordre
+    chronologique, faute de champ « Saison ».
+
+    Ce bloc mesure l'ecart plutot que de choisir en silence. Il compte aussi
+    les victoires que la fiche attribue LA OU LE TABLEAU N'A PAS DE
+    DENOMINATEUR : ce sont des victoires invisibles au classement, et leur
+    nombre est la vraie mesure de ce que la facette ignore.
+    """
+    fiche = {(p["saison"], p["id"]): p for p in parts}
+    lignes = I.indicateurs_individuels(saisons, parts, conseils, epreuves)
+    comparable = accord = nul = absente = 0
+    invisibles = 0
+    participations_invisibles = 0
+    for l in lignes:
+        p = fiche.get((l["saison"], l["id"])) or {}
+        vi = p.get("victoires_individuelles")
+        if vi is None:
+            absente += 1
+            continue
+        den = l.get("epreuves_disputees")
+        if not den:
+            nul += 1
+            if vi > 0:
+                invisibles += vi
+                participations_invisibles += 1
+            continue
+        comparable += 1
+        if vi == l["epreuves_gagnees"]:
+            accord += 1
+    return {
+        "comparables": comparable,
+        "accord": accord,
+        "part_accord": round(100.0 * accord / comparable, 1) if comparable else None,
+        "sans_denominateur": nul,
+        "fiche_absente": absente,
+        "victoires_invisibles": invisibles,
+        "participations_invisibles": participations_invisibles,
+    }
+
+
 def artefacts_du_dernier_soir(saisons, parts, conseils, epreuves):
     """La preuve, refaite a chaque construction, de ce que le soir du depart fabrique.
 
@@ -787,6 +835,7 @@ def tout(saisons, parts, conseils, epreuves):
         return {}
     pr = priors(mesures)
     artefacts = artefacts_du_dernier_soir(saisons, parts, conseils, epreuves)
+    couverture = couverture_des_epreuves(saisons, parts, conseils, epreuves)
 
     # --- unite « joueur », perimetre complet
     sujets, cles_par = _sujets_joueurs(mesures, lambda m: True)
@@ -884,6 +933,7 @@ def tout(saisons, parts, conseils, epreuves):
             float(np.mean([c["rho"] for c in correl])), 3),
         "correlations_bornes": bornes_des_correlations(correl),
         "artefacts": artefacts,
+        "couverture_epreuves": couverture,
         "palmares": {
             "auc": round(auc, 3) if auc is not None else None,
             "rang_median_vainqueurs": int(np.median(
