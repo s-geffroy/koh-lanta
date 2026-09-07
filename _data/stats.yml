@@ -10067,7 +10067,7 @@ classement:
       brut: 2 / 3
       preuve: 3
       rang_general: 6
-      rangs:
+      rangs: &id012
         parcours: 2
         epreuves: 24
         discretion: 52
@@ -10103,7 +10103,7 @@ classement:
       brut: 2 / 3
       preuve: 3
       rang_general: 231
-      rangs:
+      rangs: &id039
         parcours: 5
         epreuves: 466
         discretion: 471
@@ -10115,7 +10115,7 @@ classement:
       brut: 1 / 2
       preuve: 2
       rang_general: 61
-      rangs:
+      rangs: &id030
         parcours: 6
         epreuves: 44
         discretion: 487
@@ -10139,7 +10139,7 @@ classement:
       brut: 2 / 3
       preuve: 3
       rang_general: 260
-      rangs:
+      rangs: &id040
         parcours: 8
         epreuves: 531
         discretion: 76
@@ -10151,7 +10151,7 @@ classement:
       brut: 2 / 4
       preuve: 4
       rang_general: 13
-      rangs:
+      rangs: &id017
         parcours: 9
         epreuves: 102
         discretion: 30
@@ -10163,7 +10163,7 @@ classement:
       brut: 1 / 2
       preuve: 2
       rang_general: 17
-      rangs:
+      rangs: &id019
         parcours: 10
         epreuves: 22
         discretion: 417
@@ -10194,7 +10194,7 @@ classement:
       brut: 17 / 48
       preuve: 48
       rang_general: 4
-      rangs:
+      rangs: &id010
         parcours: 13
         epreuves: 2
         discretion: 440
@@ -10214,7 +10214,7 @@ classement:
       brut: 5 / 9
       preuve: 9
       rang_general: 7
-      rangs:
+      rangs: &id013
         parcours: 196
         epreuves: 4
         discretion: 40
@@ -10226,7 +10226,7 @@ classement:
       brut: 5 / 11
       preuve: 11
       rang_general: 18
-      rangs:
+      rangs: &id020
         parcours: 129
         epreuves: 5
         discretion: 18
@@ -10238,7 +10238,7 @@ classement:
       brut: 3 / 3
       preuve: 3
       rang_general: 14
-      rangs:
+      rangs: &id018
         parcours: 250
         epreuves: 6
         discretion: 91
@@ -10250,7 +10250,7 @@ classement:
       brut: 7 / 22
       preuve: 22
       rang_general: 10
-      rangs:
+      rangs: &id015
         parcours: 21
         epreuves: 7
         discretion: 415
@@ -10262,7 +10262,7 @@ classement:
       brut: 5 / 13
       preuve: 13
       rang_general: 19
-      rangs:
+      rangs: &id021
         parcours: 29
         epreuves: 8
         discretion: 336
@@ -10274,7 +10274,7 @@ classement:
       brut: 5 / 13
       preuve: 13
       rang_general: 8
-      rangs:
+      rangs: &id014
         parcours: 76
         epreuves: 9
         discretion: 26
@@ -10286,7 +10286,7 @@ classement:
       brut: 6 / 18
       preuve: 18
       rang_general: 128
-      rangs:
+      rangs: &id036
         parcours: 303
         epreuves: 10
         discretion: 259
@@ -10317,7 +10317,7 @@ classement:
       brut: 0 / 17
       preuve: 17
       rang_general: 35
-      rangs:
+      rangs: &id025
         parcours: 11
         epreuves: 29
         discretion: 2
@@ -10337,7 +10337,7 @@ classement:
       brut: 0 / 16
       preuve: 16
       rang_general: 70
-      rangs:
+      rangs: &id032
         parcours: 15
         epreuves: 436
         discretion: 4
@@ -10349,7 +10349,7 @@ classement:
       brut: 0 / 15
       preuve: 15
       rang_general: 40
-      rangs:
+      rangs: &id027
         parcours: 73
         epreuves: 387
         discretion: 5
@@ -10361,7 +10361,7 @@ classement:
       brut: 0 / 15
       preuve: 15
       rang_general: 121
-      rangs:
+      rangs: &id035
         parcours: 212
         epreuves: 94
         discretion: 6
@@ -10373,7 +10373,7 @@ classement:
       brut: 0 / 13
       preuve: 13
       rang_general: 82
-      rangs:
+      rangs: &id034
         parcours: 202
         epreuves: 105
         discretion: 7
@@ -10385,7 +10385,7 @@ classement:
       brut: 0 / 12
       preuve: 12
       rang_general: 76
-      rangs:
+      rangs: &id033
         parcours: 49
         epreuves: 25
         discretion: 8
@@ -10397,7 +10397,7 @@ classement:
       brut: 0 / 12
       preuve: 12
       rang_general: 146
-      rangs:
+      rangs: &id037
         parcours: 71
         epreuves: 291
         discretion: 9
@@ -10409,7 +10409,7 @@ classement:
       brut: 0 / 11
       preuve: 11
       rang_general: 267
-      rangs:
+      rangs: &id041
         parcours: 277
         epreuves: 392
         discretion: 10
@@ -10432,7 +10432,7 @@ classement:
       brut: 10 / 10
       preuve: 10
       rang_general: 11
-      rangs:
+      rangs: &id016
         parcours: 39
         epreuves: 67
         discretion: 175
@@ -10444,7 +10444,7 @@ classement:
       brut: 9 / 9
       preuve: 9
       rang_general: 42
-      rangs:
+      rangs: &id028
         parcours: 109
         epreuves: 117
         discretion: 423
@@ -10456,7 +10456,7 @@ classement:
       brut: 13 / 14
       preuve: 14
       rang_general: 28
-      rangs:
+      rangs: &id023
         parcours: 17
         epreuves: 382
         discretion: 260
@@ -10468,7 +10468,7 @@ classement:
       brut: 8 / 8
       preuve: 8
       rang_general: 39
-      rangs:
+      rangs: &id026
         parcours: 78
         epreuves: 47
         discretion: 473
@@ -10480,7 +10480,7 @@ classement:
       brut: 8 / 8
       preuve: 8
       rang_general: 5
-      rangs:
+      rangs: &id011
         parcours: 54
         epreuves: 13
         discretion: 173
@@ -10492,7 +10492,7 @@ classement:
       brut: 8 / 8
       preuve: 8
       rang_general: 68
-      rangs:
+      rangs: &id031
         parcours: 123
         epreuves: 420
         discretion: 420
@@ -10504,7 +10504,7 @@ classement:
       brut: 7 / 7
       preuve: 7
       rang_general: 21
-      rangs:
+      rangs: &id022
         parcours: 143
         epreuves: 45
         discretion: 207
@@ -10516,7 +10516,7 @@ classement:
       brut: 7 / 7
       preuve: 7
       rang_general: 29
-      rangs:
+      rangs: &id024
         parcours: 91
         epreuves: 150
         discretion: 34
@@ -10528,7 +10528,7 @@ classement:
       brut: 7 / 7
       preuve: 7
       rang_general: 45
-      rangs:
+      rangs: &id029
         parcours: 125
         epreuves: 350
         discretion: 176
@@ -10540,7 +10540,7 @@ classement:
       brut: 7 / 7
       preuve: 7
       rang_general: 172
-      rangs:
+      rangs: &id038
         parcours: 150
         epreuves: 487
         discretion: 468
@@ -11979,6 +11979,7297 @@ classement:
       epreuves: 1
       discretion: 10
       lecture: 3
+  tous:
+  - rang: 1
+    nom: Claude Dartois
+    id: claude-dartois
+    saisons: 4
+    titres: 1
+    score: 3.137
+    part_top: 94.5
+    rang_p05: 1
+    rang_p95: 28
+    rangs: *id006
+  - rang: 2
+    nom: Bertrand Bolle
+    id: bertrand-bolle
+    saisons: 2
+    titres: 1
+    score: 2.316
+    part_top: 97.5
+    rang_p05: 2
+    rang_p95: 18
+    rangs: *id007
+  - rang: 3
+    nom: Jade Handi
+    id: jade-handi
+    saisons: 3
+    titres: 1
+    score: 1.922
+    part_top: 99.7
+    rang_p05: 1
+    rang_p95: 18
+    rangs: *id008
+  - rang: 4
+    nom: Teheiura Teahui
+    id: teheiura-teahui
+    saisons: 5
+    titres: 0
+    score: 1.874
+    part_top: 76.7
+    rang_p05: 2
+    rang_p95: 148
+    rangs: *id010
+  - rang: 5
+    nom: Frédéric Favier
+    id: frederic-favier
+    saisons: 1
+    titres: 0
+    score: 1.745
+    part_top: 98.8
+    rang_p05: 2
+    rang_p95: 16
+    rangs: *id011
+  - rang: 6
+    nom: Laurent Maistret
+    id: laurent-maistret
+    saisons: 3
+    titres: 1
+    score: 1.543
+    part_top: 75.8
+    rang_p05: 3
+    rang_p95: 106
+    rangs: *id012
+  - rang: 7
+    nom: Jean Belmonte
+    id: jean-belmonte
+    saisons: 1
+    titres: 0
+    score: 1.526
+    part_top: 74.3
+    rang_p05: 4
+    rang_p95: 76
+    rangs: *id013
+  - rang: 8
+    nom: Lola Besse
+    id: lola-besse
+    saisons: 1
+    titres: 0
+    score: 1.497
+    part_top: 87.6
+    rang_p05: 6
+    rang_p95: 32
+    rangs: *id014
+  - rang: 9
+    nom: Philippe Duron
+    id: philippe-duron
+    saisons: 2
+    titres: 1
+    score: 1.495
+    part_top: 93.1
+    rang_p05: 7
+    rang_p95: 28
+    rangs:
+      parcours: 12
+      epreuves: 15
+      discretion: 296
+      lecture: 41
+  - rang: 10
+    nom: François-David Cardonnel
+    id: francois-david-cardonnel
+    saisons: 2
+    titres: 1
+    score: 1.391
+    part_top: 72.7
+    rang_p05: 6
+    rang_p95: 97
+    rangs: *id015
+  - rang: 11
+    nom: Wendy Gervois
+    id: wendy-gervois
+    saisons: 1
+    titres: 1
+    score: 1.386
+    part_top: 78.1
+    rang_p05: 1
+    rang_p95: 43
+    rangs: *id016
+  - rang: 12
+    nom: Naoil Tita
+    id: naoil-tita
+    saisons: 1
+    titres: 1
+    score: 1.367
+    part_top: 81.4
+    rang_p05: 10
+    rang_p95: 40
+    rangs:
+      parcours: 37
+      epreuves: 14
+      discretion: 160
+      lecture: 115
+  - rang: 13
+    nom: Clémence Castel
+    id: clemence-castel
+    saisons: 4
+    titres: 2
+    score: 1.318
+    part_top: 73.9
+    rang_p05: 4
+    rang_p95: 53
+    rangs: *id017
+  - rang: 14
+    nom: Louise Picavet
+    id: louise-picavet
+    saisons: 1
+    titres: 0
+    score: 1.246
+    part_top: 57.1
+    rang_p05: 7
+    rang_p95: 120
+    rangs: *id018
+  - rang: 15
+    nom: Sébastien Gottiniaux
+    id: sebastien-gottiniaux
+    saisons: 1
+    titres: 0
+    score: 1.216
+    part_top: 63.1
+    rang_p05: 11
+    rang_p95: 57
+    rangs:
+      parcours: 111
+      epreuves: 17
+      discretion: 51
+      lecture: 128
+  - rang: 16
+    nom: Maxine Eouzan
+    id: maxine-eouzan
+    saisons: 1
+    titres: 1
+    score: 1.209
+    part_top: 74.6
+    rang_p05: 13
+    rang_p95: 51
+    rangs:
+      parcours: 36
+      epreuves: 32
+      discretion: 303
+      lecture: 25
+  - rang: 17
+    nom: Romuald Lafite
+    id: romuald-lafite
+    saisons: 2
+    titres: 1
+    score: 1.18
+    part_top: 57.8
+    rang_p05: 8
+    rang_p95: 152
+    rangs: *id019
+  - rang: 18
+    nom: Nicolas Rouyé
+    id: nicolas-rouye
+    saisons: 1
+    titres: 0
+    score: 1.14
+    part_top: 51.0
+    rang_p05: 5
+    rang_p95: 189
+    rangs: *id020
+  - rang: 19
+    nom: François Descamp
+    id: francois-descamp
+    saisons: 1
+    titres: 1
+    score: 1.134
+    part_top: 51.4
+    rang_p05: 10
+    rang_p95: 181
+    rangs: *id021
+  - rang: 20
+    nom: Gaëlle Zanetton
+    id: gaelle-zanetton
+    saisons: 1
+    titres: 0
+    score: 1.114
+    part_top: 53.0
+    rang_p05: 8
+    rang_p95: 75
+    rangs:
+      parcours: 173
+      epreuves: 42
+      discretion: 25
+      lecture: 18
+  - rang: 21
+    nom: Amélie Grégoire
+    id: amelie-gregoire
+    saisons: 1
+    titres: 0
+    score: 1.099
+    part_top: 47.0
+    rang_p05: 8
+    rang_p95: 71
+    rangs: *id022
+  - rang: 22
+    nom: Simon Quintilla
+    id: simon-quintilla
+    saisons: 1
+    titres: 0
+    score: 1.099
+    part_top: 46.6
+    rang_p05: 9
+    rang_p95: 82
+    rangs:
+      parcours: 112
+      epreuves: 43
+      discretion: 298
+      lecture: 16
+  - rang: 23
+    nom: Claire Pradayrol
+    id: claire-pradayrol
+    saisons: 1
+    titres: 0
+    score: 1.097
+    part_top: 44.7
+    rang_p05: 11
+    rang_p95: 109
+    rangs:
+      parcours: 126
+      epreuves: 11
+      discretion: 250
+      lecture: 151
+  - rang: 24
+    nom: Grégoire Delachaux
+    id: gregoire-delachaux
+    saisons: 2
+    titres: 1
+    score: 1.095
+    part_top: 49.8
+    rang_p05: 17
+    rang_p95: 59
+    rangs:
+      parcours: 19
+      epreuves: 31
+      discretion: 248
+      lecture: 134
+  - rang: 25
+    nom: Gabriel Gubbels
+    id: gabriel-gubbels
+    saisons: 1
+    titres: 0
+    score: 1.091
+    part_top: 45.9
+    rang_p05: 9
+    rang_p95: 91
+    rangs:
+      parcours: 62
+      epreuves: 49
+      discretion: 389
+      lecture: 11
+  - rang: 26
+    nom: Meïssa Seck
+    id: meissa-seck
+    saisons: 1
+    titres: 0
+    score: 1.074
+    part_top: 42.1
+    rang_p05: 14
+    rang_p95: 39
+    rangs:
+      parcours: 45
+      epreuves: 50
+      discretion: 45
+      lecture: 62
+  - rang: 27
+    nom: Nicolas Pretot
+    id: nicolas-pretot
+    saisons: 1
+    titres: 0
+    score: 1.021
+    part_top: 20.2
+    rang_p05: 22
+    rang_p95: 53
+    rangs:
+      parcours: 70
+      epreuves: 34
+      discretion: 163
+      lecture: 118
+  - rang: 28
+    nom: Coumba Baradji
+    id: coumba-baradji
+    saisons: 4
+    titres: 0
+    score: 1.015
+    part_top: 48.4
+    rang_p05: 4
+    rang_p95: 152
+    rangs: *id023
+  - rang: 29
+    nom: Bruno Peisey
+    id: bruno-peisey
+    saisons: 1
+    titres: 0
+    score: 0.974
+    part_top: 42.5
+    rang_p05: 6
+    rang_p95: 89
+    rangs: *id024
+  - rang: 30
+    nom: Arnaud Deshayes
+    id: arnaud-deshayes
+    saisons: 1
+    titres: 0
+    score: 0.946
+    part_top: 23.7
+    rang_p05: 18
+    rang_p95: 65
+    rangs:
+      parcours: 106
+      epreuves: 83
+      discretion: 105
+      lecture: 22
+  - rang: 31
+    nom: Sébastien Roullé
+    id: sebastien-roulle
+    saisons: 1
+    titres: 0
+    score: 0.933
+    part_top: 28.8
+    rang_p05: 18
+    rang_p95: 249
+    rangs:
+      parcours: 56
+      epreuves: 18
+      discretion: 439
+      lecture: 137
+  - rang: 32
+    nom: Ugo Lartiche
+    id: ugo-lartiche
+    saisons: 3
+    titres: 1
+    score: 0.927
+    part_top: 45.6
+    rang_p05: 4
+    rang_p95: 456
+    rangs: *id009
+  - rang: 33
+    nom: Bastien San Pedro
+    id: bastien-san-pedro
+    saisons: 1
+    titres: 1
+    score: 0.896
+    part_top: 26.6
+    rang_p05: 20
+    rang_p95: 198
+    rangs:
+      parcours: 26
+      epreuves: 20
+      discretion: 321
+      lecture: 256
+  - rang: 34
+    nom: Kevin Cuoco
+    id: kevin-cuoco
+    saisons: 1
+    titres: 1
+    score: 0.875
+    part_top: 35.3
+    rang_p05: 9
+    rang_p95: 151
+    rangs:
+      parcours: 40
+      epreuves: 388
+      discretion: 209
+      lecture: 14
+  - rang: 35
+    nom: Martin Bazin
+    id: martin-bazin
+    saisons: 2
+    titres: 0
+    score: 0.86
+    part_top: 42.3
+    rang_p05: 7
+    rang_p95: 394
+    rangs: *id025
+  - rang: 36
+    nom: Louana Roy
+    id: louana-roy
+    saisons: 1
+    titres: 0
+    score: 0.838
+    part_top: 25.0
+    rang_p05: 15
+    rang_p95: 224
+    rangs:
+      parcours: 180
+      epreuves: 12
+      discretion: 353
+      lecture: 310
+  - rang: 37
+    nom: Tiffany Gounin
+    id: tiffany-gounin
+    saisons: 2
+    titres: 0
+    score: 0.836
+    part_top: 11.8
+    rang_p05: 19
+    rang_p95: 91
+    rangs:
+      parcours: 164
+      epreuves: 89
+      discretion: 19
+      lecture: 38
+  - rang: 38
+    nom: Marie Bayard
+    id: marie-bayard
+    saisons: 1
+    titres: 0
+    score: 0.827
+    part_top: 23.6
+    rang_p05: 12
+    rang_p95: 111
+    rangs:
+      parcours: 145
+      epreuves: 119
+      discretion: 210
+      lecture: 15
+  - rang: 39
+    nom: Bernard Lenoir
+    id: bernard-lenoir
+    saisons: 1
+    titres: 0
+    score: 0.821
+    part_top: 26.7
+    rang_p05: 9
+    rang_p95: 405
+    rangs: *id026
+  - rang: 40
+    nom: Christelle Gauzet
+    id: christelle-gauzet
+    saisons: 3
+    titres: 1
+    score: 0.819
+    part_top: 28.0
+    rang_p05: 11
+    rang_p95: 132
+    rangs: *id027
+  - rang: 41
+    nom: Sébastien Ballesteros
+    id: sebastien-ballesteros
+    saisons: 1
+    titres: 0
+    score: 0.817
+    part_top: 16.9
+    rang_p05: 17
+    rang_p95: 99
+    rangs:
+      parcours: 117
+      epreuves: 275
+      discretion: 49
+      lecture: 27
+  - rang: 42
+    nom: Marianne Mondon
+    id: marianne-mondon
+    saisons: 1
+    titres: 0
+    score: 0.808
+    part_top: 25.1
+    rang_p05: 6
+    rang_p95: 250
+    rangs: *id028
+  - rang: 43
+    nom: Charlotte Rasquin
+    id: charlotte-rasquin
+    saisons: 1
+    titres: 0
+    score: 0.799
+    part_top: 0.0
+    rang_p05: 34
+    rang_p95: 146
+    rangs:
+      parcours: 42
+      epreuves: 48
+      discretion: 376
+      lecture: 91
+  - rang: 44
+    nom: Antoine Sanchez
+    id: antoine-sanchez
+    saisons: 2
+    titres: 0
+    score: 0.793
+    part_top: 3.0
+    rang_p05: 27
+    rang_p95: 297
+    rangs:
+      parcours: 55
+      epreuves: 52
+      discretion: 451
+      lecture: 29
+  - rang: 45
+    nom: Carole Rapin
+    id: carole-rapin
+    saisons: 1
+    titres: 0
+    score: 0.787
+    part_top: 22.0
+    rang_p05: 12
+    rang_p95: 131
+    rangs: *id029
+  - rang: 46
+    nom: Nicolas Leoni
+    id: nicolas-leoni
+    saisons: 2
+    titres: 0
+    score: 0.763
+    part_top: 6.2
+    rang_p05: 25
+    rang_p95: 192
+    rangs:
+      parcours: 221
+      epreuves: 51
+      discretion: 315
+      lecture: 21
+  - rang: 47
+    nom: Daniel Duquesnoy
+    id: daniel-duquesnoy
+    saisons: 1
+    titres: 0
+    score: 0.748
+    part_top: 0.0
+    rang_p05: 33
+    rang_p95: 157
+    rangs:
+      parcours: 138
+      epreuves: 33
+      discretion: 311
+      lecture: 139
+  - rang: 48
+    nom: Émilie Frahi
+    id: emilie-frahi
+    saisons: 2
+    titres: 0
+    score: 0.734
+    part_top: 14.4
+    rang_p05: 20
+    rang_p95: 397
+    rangs:
+      parcours: 72
+      epreuves: 55
+      discretion: 470
+      lecture: 17
+  - rang: 49
+    nom: Candice Boisson
+    id: candice-boisson
+    saisons: 3
+    titres: 0
+    score: 0.728
+    part_top: 1.2
+    rang_p05: 28
+    rang_p95: 209
+    rangs:
+      parcours: 220
+      epreuves: 28
+      discretion: 392
+      lecture: 48
+  - rang: 50
+    nom: Quentin Paygnard
+    id: quentin-paygnard
+    saisons: 1
+    titres: 0
+    score: 0.721
+    part_top: 0.0
+    rang_p05: 41
+    rang_p95: 78
+    rangs:
+      parcours: 116
+      epreuves: 80
+      discretion: 165
+      lecture: 123
+  - rang: 51
+    nom: François-Xavier Arguillère
+    id: francois-xavier-arguillere
+    saisons: 1
+    titres: 0
+    score: 0.688
+    part_top: 0.0
+    rang_p05: 38
+    rang_p95: 142
+    rangs:
+      parcours: 205
+      epreuves: 40
+      discretion: 216
+      lecture: 133
+  - rang: 52
+    nom: Alban Oswald
+    id: alban-oswald
+    saisons: 1
+    titres: 0
+    score: 0.681
+    part_top: 0.0
+    rang_p05: 37
+    rang_p95: 170
+    rangs:
+      parcours: 172
+      epreuves: 35
+      discretion: 307
+      lecture: 132
+  - rang: 53
+    nom: Sandro Gonzalez Schena
+    id: sandro-gonzalez-schena
+    saisons: 1
+    titres: 0
+    score: 0.678
+    part_top: 2.6
+    rang_p05: 29
+    rang_p95: 144
+    rangs:
+      parcours: 229
+      epreuves: 77
+      discretion: 48
+      lecture: 65
+  - rang: 54
+    nom: Alexis Tournier
+    id: alexis-tournier
+    saisons: 1
+    titres: 0
+    score: 0.664
+    part_top: 0.0
+    rang_p05: 47
+    rang_p95: 85
+    rangs:
+      parcours: 101
+      epreuves: 95
+      discretion: 172
+      lecture: 138
+  - rang: 55
+    nom: Guillaume Le Deun
+    id: guillaume-le-deun
+    saisons: 1
+    titres: 0
+    score: 0.663
+    part_top: 7.4
+    rang_p05: 23
+    rang_p95: 136
+    rangs:
+      parcours: 68
+      epreuves: 356
+      discretion: 11
+      lecture: 70
+  - rang: 56
+    nom: Noémie Bessec
+    id: noemie-bessec
+    saisons: 1
+    titres: 0
+    score: 0.652
+    part_top: 0.0
+    rang_p05: 47
+    rang_p95: 123
+    rangs:
+      parcours: 135
+      epreuves: 88
+      discretion: 292
+      lecture: 63
+  - rang: 57
+    nom: Magalie Gustave
+    id: magalie-gustave
+    saisons: 1
+    titres: 0
+    score: 0.649
+    part_top: 0.0
+    rang_p05: 37
+    rang_p95: 142
+    rangs:
+      parcours: 64
+      epreuves: 87
+      discretion: 92
+      lecture: 237
+  - rang: 58
+    nom: Raphaël Andrès
+    id: raphael-andres
+    saisons: 1
+    titres: 0
+    score: 0.645
+    part_top: 0.0
+    rang_p05: 47
+    rang_p95: 142
+    rangs:
+      parcours: 81
+      epreuves: 66
+      discretion: 178
+      lecture: 225
+  - rang: 59
+    nom: Alexandra Pornet
+    id: alexandra-pornet
+    saisons: 2
+    titres: 1
+    score: 0.638
+    part_top: 11.6
+    rang_p05: 19
+    rang_p95: 153
+    rangs:
+      parcours: 20
+      epreuves: 355
+      discretion: 13
+      lecture: 160
+  - rang: 60
+    nom: Gilles De Baere
+    id: gilles-de-baere
+    saisons: 1
+    titres: 0
+    score: 0.634
+    part_top: 0.0
+    rang_p05: 43
+    rang_p95: 142
+    rangs:
+      parcours: 217
+      epreuves: 58
+      discretion: 143
+      lecture: 97
+  - rang: 61
+    nom: Pascal Salviani
+    id: pascal-salviani
+    saisons: 2
+    titres: 0
+    score: 0.633
+    part_top: 19.4
+    rang_p05: 11
+    rang_p95: 442
+    rangs: *id030
+  - rang: 62
+    nom: Béatrice Kabore
+    id: beatrice-kabore
+    saisons: 1
+    titres: 0
+    score: 0.631
+    part_top: 2.3
+    rang_p05: 29
+    rang_p95: 205
+    rangs:
+      parcours: 305
+      epreuves: 39
+      discretion: 57
+      lecture: 86
+  - rang: 63
+    nom: Vincent Roux
+    id: vincent-roux
+    saisons: 1
+    titres: 0
+    score: 0.62
+    part_top: 0.0
+    rang_p05: 35
+    rang_p95: 146
+    rangs:
+      parcours: 66
+      epreuves: 97
+      discretion: 74
+      lecture: 241
+  - rang: 64
+    nom: Javier Rodriguez
+    id: javier-rodriguez
+    saisons: 2
+    titres: 0
+    score: 0.611
+    part_top: 0.0
+    rang_p05: 50
+    rang_p95: 180
+    rangs:
+      parcours: 161
+      epreuves: 68
+      discretion: 312
+      lecture: 54
+  - rang: 65
+    nom: Benoît Assadi
+    id: benoit-assadi
+    saisons: 1
+    titres: 1
+    score: 0.605
+    part_top: 0.6
+    rang_p05: 32
+    rang_p95: 415
+    rangs:
+      parcours: 27
+      epreuves: 46
+      discretion: 467
+      lecture: 73
+  - rang: 66
+    nom: Jonathan Julien
+    id: jonathan-julien
+    saisons: 1
+    titres: 0
+    score: 0.58
+    part_top: 0.0
+    rang_p05: 55
+    rang_p95: 172
+    rangs:
+      parcours: 63
+      epreuves: 85
+      discretion: 302
+      lecture: 153
+  - rang: 67
+    nom: Aurélien Soulimant
+    id: aurelien-soulimant
+    saisons: 1
+    titres: 0
+    score: 0.577
+    part_top: 0.2
+    rang_p05: 36
+    rang_p95: 130
+    rangs:
+      parcours: 83
+      epreuves: 349
+      discretion: 55
+      lecture: 85
+  - rang: 68
+    nom: Kunlé M'Babacéré Pakorona
+    id: kunle-m-babacere-pakorona
+    saisons: 1
+    titres: 0
+    score: 0.562
+    part_top: 13.6
+    rang_p05: 15
+    rang_p95: 363
+    rangs: *id031
+  - rang: 69
+    nom: Delphine Bano
+    id: delphine-bano
+    saisons: 1
+    titres: 1
+    score: 0.552
+    part_top: 2.1
+    rang_p05: 31
+    rang_p95: 167
+    rangs:
+      parcours: 53
+      epreuves: 176
+      discretion: 23
+      lecture: 234
+  - rang: 70
+    nom: Guénaëlle Biras
+    id: guenaelle-biras
+    saisons: 2
+    titres: 0
+    score: 0.548
+    part_top: 14.7
+    rang_p05: 14
+    rang_p95: 302
+    rangs: *id032
+  - rang: 71
+    nom: Maud Bamps
+    id: maud-bamps
+    saisons: 1
+    titres: 1
+    score: 0.525
+    part_top: 3.6
+    rang_p05: 28
+    rang_p95: 359
+    rangs:
+      parcours: 35
+      epreuves: 79
+      discretion: 67
+      lecture: 445
+  - rang: 72
+    nom: Nathalie Ensargueix
+    id: nathalie-ensargueix
+    saisons: 2
+    titres: 0
+    score: 0.519
+    part_top: 2.4
+    rang_p05: 31
+    rang_p95: 291
+    rangs:
+      parcours: 18
+      epreuves: 104
+      discretion: 416
+      lecture: 148
+  - rang: 73
+    nom: Romain Delaroche
+    id: romain-delaroche
+    saisons: 1
+    titres: 0
+    score: 0.506
+    part_top: 0.0
+    rang_p05: 51
+    rang_p95: 128
+    rangs:
+      parcours: 130
+      epreuves: 302
+      discretion: 125
+      lecture: 126
+  - rang: 74
+    nom: Amri Madani
+    id: amri-madani
+    saisons: 1
+    titres: 0
+    score: 0.49
+    part_top: 0.0
+    rang_p05: 47
+    rang_p95: 165
+    rangs:
+      parcours: 103
+      epreuves: 112
+      discretion: 31
+      lecture: 228
+  - rang: 75
+    nom: Loïc Riowal
+    id: loic-riowal
+    saisons: 2
+    titres: 0
+    score: 0.488
+    part_top: 6.2
+    rang_p05: 23
+    rang_p95: 397
+    rangs:
+      parcours: 24
+      epreuves: 81
+      discretion: 17
+      lecture: 465
+  - rang: 76
+    nom: Gérard Urdampilleta
+    id: gerard-urdampilleta
+    saisons: 1
+    titres: 1
+    score: 0.477
+    part_top: 12.7
+    rang_p05: 19
+    rang_p95: 477
+    rangs: *id033
+  - rang: 77
+    nom: Ilyesse Benyoub
+    id: ilyesse-benyoub
+    saisons: 1
+    titres: 0
+    score: 0.475
+    part_top: 14.1
+    rang_p05: 21
+    rang_p95: 478
+    rangs:
+      parcours: 58
+      epreuves: 21
+      discretion: 147
+      lecture: 505
+  - rang: 78
+    nom: Gilles Nicolet
+    id: gilles-nicolet
+    saisons: 1
+    titres: 1
+    score: 0.471
+    part_top: 0.3
+    rang_p05: 32
+    rang_p95: 406
+    rangs:
+      parcours: 31
+      epreuves: 36
+      discretion: 396
+      lecture: 446
+  - rang: 79
+    nom: Mélanie Moret
+    id: melanie-moret
+    saisons: 1
+    titres: 0
+    score: 0.47
+    part_top: 0.0
+    rang_p05: 56
+    rang_p95: 137
+    rangs:
+      parcours: 156
+      epreuves: 301
+      discretion: 117
+      lecture: 114
+  - rang: 80
+    nom: Mohamed Derradji
+    id: mohamed-derradji
+    saisons: 2
+    titres: 0
+    score: 0.466
+    part_top: 13.2
+    rang_p05: 18
+    rang_p95: 438
+    rangs:
+      parcours: 241
+      epreuves: 16
+      discretion: 129
+      lecture: 486
+  - rang: 81
+    nom: Mégane Rouland
+    id: megane-rouland
+    saisons: 1
+    titres: 0
+    score: 0.451
+    part_top: 0.0
+    rang_p05: 48
+    rang_p95: 228
+    rangs:
+      parcours: 176
+      epreuves: 69
+      discretion: 44
+      lecture: 369
+  - rang: 82
+    nom: Cassandre Girard
+    id: cassandre-girard
+    saisons: 2
+    titres: 0
+    score: 0.446
+    part_top: 1.0
+    rang_p05: 44
+    rang_p95: 153
+    rangs: *id034
+  - rang: 83
+    nom: Ludovic Laresche
+    id: ludovic-laresche
+    saisons: 2
+    titres: 0
+    score: 0.444
+    part_top: 0.0
+    rang_p05: 64
+    rang_p95: 160
+    rangs:
+      parcours: 178
+      epreuves: 99
+      discretion: 75
+      lecture: 221
+  - rang: 84
+    nom: Jérôme Villaseque
+    id: jerome-villaseque
+    saisons: 1
+    titres: 0
+    score: 0.44
+    part_top: 0.0
+    rang_p05: 57
+    rang_p95: 253
+    rangs:
+      parcours: 254
+      epreuves: 73
+      discretion: 388
+      lecture: 56
+  - rang: 85
+    nom: Maxime Lubian
+    id: maxime-lubian
+    saisons: 1
+    titres: 0
+    score: 0.436
+    part_top: 0.0
+    rang_p05: 58
+    rang_p95: 203
+    rangs:
+      parcours: 160
+      epreuves: 300
+      discretion: 291
+      lecture: 61
+  - rang: 86
+    nom: Clarisse Cresseveur
+    id: clarisse-cresseveur
+    saisons: 1
+    titres: 0
+    score: 0.428
+    part_top: 0.0
+    rang_p05: 52
+    rang_p95: 276
+    rangs:
+      parcours: 48
+      epreuves: 98
+      discretion: 256
+      lecture: 379
+  - rang: 87
+    nom: Alexandre André
+    id: alexandre-andre
+    saisons: 1
+    titres: 0
+    score: 0.419
+    part_top: 0.0
+    rang_p05: 41
+    rang_p95: 275
+    rangs:
+      parcours: 327
+      epreuves: 90
+      discretion: 287
+      lecture: 32
+  - rang: 88
+    nom: Laura Yelpa
+    id: laura-yelpa
+    saisons: 1
+    titres: 0
+    score: 0.412
+    part_top: 0.0
+    rang_p05: 52
+    rang_p95: 337
+    rangs:
+      parcours: 139
+      epreuves: 56
+      discretion: 155
+      lecture: 417
+  - rang: 89
+    nom: Céline Faccio
+    id: celine-faccio
+    saisons: 1
+    titres: 0
+    score: 0.408
+    part_top: 0.0
+    rang_p05: 49
+    rang_p95: 289
+    rangs:
+      parcours: 119
+      epreuves: 433
+      discretion: 80
+      lecture: 89
+  - rang: 90
+    nom: Charlotte Caron
+    id: charlotte-caron
+    saisons: 1
+    titres: 0
+    score: 0.406
+    part_top: 0.0
+    rang_p05: 68
+    rang_p95: 178
+    rangs:
+      parcours: 244
+      epreuves: 106
+      discretion: 138
+      lecture: 90
+  - rang: 91
+    nom: Isabelle Vial
+    id: isabelle-vial
+    saisons: 1
+    titres: 0
+    score: 0.395
+    part_top: 5.2
+    rang_p05: 25
+    rang_p95: 427
+    rangs:
+      parcours: 174
+      epreuves: 298
+      discretion: 462
+      lecture: 13
+  - rang: 92
+    nom: William Lecomte
+    id: william-lecomte
+    saisons: 1
+    titres: 0
+    score: 0.388
+    part_top: 0.1
+    rang_p05: 35
+    rang_p95: 386
+    rangs:
+      parcours: 177
+      epreuves: 23
+      discretion: 421
+      lecture: 397
+  - rang: 93
+    nom: Stéphane Cipolla
+    id: stephane-cipolla
+    saisons: 1
+    titres: 0
+    score: 0.382
+    part_top: 0.2
+    rang_p05: 53
+    rang_p95: 261
+    rangs:
+      parcours: 168
+      epreuves: 96
+      discretion: 12
+      lecture: 381
+  - rang: 94
+    nom: Brice Petit
+    id: brice-petit
+    saisons: 1
+    titres: 0
+    score: 0.381
+    part_top: 1.4
+    rang_p05: 36
+    rang_p95: 382
+    rangs:
+      parcours: 41
+      epreuves: 114
+      discretion: 21
+      lecture: 439
+  - rang: 95
+    nom: Sylvie Pommier
+    id: sylvie-pommier
+    saisons: 1
+    titres: 0
+    score: 0.38
+    part_top: 0.0
+    rang_p05: 66
+    rang_p95: 181
+    rangs:
+      parcours: 240
+      epreuves: 282
+      discretion: 128
+      lecture: 130
+  - rang: 96
+    nom: Léa Sahin
+    id: lea-sahin
+    saisons: 1
+    titres: 1
+    score: 0.371
+    part_top: 2.5
+    rang_p05: 31
+    rang_p95: 362
+    rangs:
+      parcours: 33
+      epreuves: 446
+      discretion: 41
+      lecture: 307
+  - rang: 97
+    nom: Thierry Ramos
+    id: thierry-ramos
+    saisons: 1
+    titres: 0
+    score: 0.358
+    part_top: 0.0
+    rang_p05: 44
+    rang_p95: 251
+    rangs:
+      parcours: 318
+      epreuves: 286
+      discretion: 98
+      lecture: 67
+  - rang: 98
+    nom: Béatrice Cloix Penisson
+    id: beatrice-cloix-penisson
+    saisons: 1
+    titres: 0
+    score: 0.358
+    part_top: 2.5
+    rang_p05: 30
+    rang_p95: 424
+    rangs:
+      parcours: 236
+      epreuves: 27
+      discretion: 33
+      lecture: 476
+  - rang: 99
+    nom: Clémence Noquet
+    id: clemence-noquet
+    saisons: 1
+    titres: 0
+    score: 0.346
+    part_top: 0.0
+    rang_p05: 42
+    rang_p95: 382
+    rangs:
+      parcours: 192
+      epreuves: 30
+      discretion: 377
+      lecture: 408
+  - rang: 100
+    nom: Alix Noblat
+    id: alix-noblat
+    saisons: 2
+    titres: 0
+    score: 0.343
+    part_top: 0.4
+    rang_p05: 45
+    rang_p95: 335
+    rangs:
+      parcours: 61
+      epreuves: 381
+      discretion: 14
+      lecture: 357
+  - rang: 101
+    nom: David Noël
+    id: david-noel
+    saisons: 1
+    titres: 0
+    score: 0.332
+    part_top: 0.0
+    rang_p05: 45
+    rang_p95: 247
+    rangs:
+      parcours: 306
+      epreuves: 314
+      discretion: 82
+      lecture: 50
+  - rang: 102
+    nom: Christopher Lavaud
+    id: christopher-lavaud
+    saisons: 1
+    titres: 0
+    score: 0.326
+    part_top: 0.0
+    rang_p05: 50
+    rang_p95: 278
+    rangs:
+      parcours: 283
+      epreuves: 57
+      discretion: 36
+      lecture: 360
+  - rang: 103
+    nom: Francis Bordas
+    id: francis-bordas
+    saisons: 2
+    titres: 0
+    score: 0.32
+    part_top: 0.0
+    rang_p05: 79
+    rang_p95: 386
+    rangs:
+      parcours: 104
+      epreuves: 103
+      discretion: 441
+      lecture: 140
+  - rang: 104
+    nom: Jérôme Molas
+    id: jerome-molas
+    saisons: 1
+    titres: 0
+    score: 0.315
+    part_top: 0.0
+    rang_p05: 75
+    rang_p95: 277
+    rangs:
+      parcours: 59
+      epreuves: 209
+      discretion: 344
+      lecture: 299
+  - rang: 105
+    nom: Pierre-Marie Ponsot
+    id: pierre-marie-ponsot
+    saisons: 1
+    titres: 0
+    score: 0.315
+    part_top: 0.0
+    rang_p05: 108
+    rang_p95: 199
+    rangs:
+      parcours: 181
+      epreuves: 109
+      discretion: 293
+      lecture: 208
+  - rang: 106
+    nom: Frédéric Blancher
+    id: frederic-blancher
+    saisons: 1
+    titres: 1
+    score: 0.314
+    part_top: 1.6
+    rang_p05: 35
+    rang_p95: 380
+    rangs:
+      parcours: 30
+      epreuves: 419
+      discretion: 38
+      lecture: 384
+  - rang: 107
+    nom: Fabian Rocha Rocha
+    id: fabian-rocha-rocha
+    saisons: 1
+    titres: 0
+    score: 0.311
+    part_top: 0.0
+    rang_p05: 77
+    rang_p95: 256
+    rangs:
+      parcours: 204
+      epreuves: 92
+      discretion: 109
+      lecture: 362
+  - rang: 108
+    nom: Naïs Napoletano
+    id: nais-napoletano
+    saisons: 1
+    titres: 0
+    score: 0.311
+    part_top: 0.0
+    rang_p05: 83
+    rang_p95: 203
+    rangs:
+      parcours: 201
+      epreuves: 108
+      discretion: 94
+      lecture: 326
+  - rang: 109
+    nom: Lola Krast
+    id: lola-krast
+    saisons: 1
+    titres: 0
+    score: 0.308
+    part_top: 0.1
+    rang_p05: 49
+    rang_p95: 317
+    rangs:
+      parcours: 268
+      epreuves: 59
+      discretion: 27
+      lecture: 388
+  - rang: 110
+    nom: Érick Africaa
+    id: erick-africaa
+    saisons: 1
+    titres: 0
+    score: 0.304
+    part_top: 0.0
+    rang_p05: 75
+    rang_p95: 265
+    rangs:
+      parcours: 307
+      epreuves: 91
+      discretion: 288
+      lecture: 95
+  - rang: 111
+    nom: Stéphane Bertheau
+    id: stephane-bertheau
+    saisons: 1
+    titres: 0
+    score: 0.297
+    part_top: 0.0
+    rang_p05: 47
+    rang_p95: 272
+    rangs:
+      parcours: 275
+      epreuves: 409
+      discretion: 97
+      lecture: 66
+  - rang: 112
+    nom: Kaouther Ferdjani
+    id: kaouther-ferdjani
+    saisons: 1
+    titres: 0
+    score: 0.294
+    part_top: 0.0
+    rang_p05: 73
+    rang_p95: 240
+    rangs:
+      parcours: 302
+      epreuves: 216
+      discretion: 111
+      lecture: 105
+  - rang: 113
+    nom: Ambre Daudet
+    id: ambre-daudet
+    saisons: 1
+    titres: 0
+    score: 0.293
+    part_top: 0.0
+    rang_p05: 95
+    rang_p95: 272
+    rangs:
+      parcours: 96
+      epreuves: 110
+      discretion: 318
+      lecture: 249
+  - rang: 114
+    nom: Guillaume Brauer
+    id: guillaume-brauer
+    saisons: 1
+    titres: 0
+    score: 0.289
+    part_top: 0.0
+    rang_p05: 48
+    rang_p95: 276
+    rangs:
+      parcours: 309
+      epreuves: 368
+      discretion: 87
+      lecture: 53
+  - rang: 115
+    nom: Alain Chrisostome
+    id: alain-chrisostome
+    saisons: 1
+    titres: 0
+    score: 0.284
+    part_top: 0.0
+    rang_p05: 41
+    rang_p95: 419
+    rangs:
+      parcours: 105
+      epreuves: 438
+      discretion: 435
+      lecture: 28
+  - rang: 116
+    nom: Jérôme Salvatore
+    id: jerome-salvatore
+    saisons: 1
+    titres: 0
+    score: 0.284
+    part_top: 0.0
+    rang_p05: 87
+    rang_p95: 280
+    rangs:
+      parcours: 75
+      epreuves: 210
+      discretion: 345
+      lecture: 300
+  - rang: 117
+    nom: Maryline Hemelsdael
+    id: maryline-hemelsdael
+    saisons: 1
+    titres: 0
+    score: 0.283
+    part_top: 0.0
+    rang_p05: 78
+    rang_p95: 314
+    rangs:
+      parcours: 79
+      epreuves: 389
+      discretion: 211
+      lecture: 317
+  - rang: 118
+    nom: Lucie Bertaud
+    id: lucie-bertaud
+    saisons: 1
+    titres: 0
+    score: 0.281
+    part_top: 0.0
+    rang_p05: 52
+    rang_p95: 372
+    rangs:
+      parcours: 46
+      epreuves: 384
+      discretion: 112
+      lecture: 389
+  - rang: 119
+    nom: Jessica Potel
+    id: jessica-potel
+    saisons: 2
+    titres: 0
+    score: 0.281
+    part_top: 0.0
+    rang_p05: 58
+    rang_p95: 425
+    rangs:
+      parcours: 77
+      epreuves: 482
+      discretion: 177
+      lecture: 135
+  - rang: 120
+    nom: Maxime Boulet
+    id: maxime-boulet
+    saisons: 1
+    titres: 0
+    score: 0.277
+    part_top: 0.0
+    rang_p05: 64
+    rang_p95: 243
+    rangs:
+      parcours: 296
+      epreuves: 332
+      discretion: 68
+      lecture: 112
+  - rang: 121
+    nom: Yassin Metiri
+    id: yassin-metiri
+    saisons: 2
+    titres: 0
+    score: 0.275
+    part_top: 0.6
+    rang_p05: 55
+    rang_p95: 359
+    rangs: *id035
+  - rang: 122
+    nom: Sandrine Dubourdy
+    id: sandrine-dubourdy
+    saisons: 1
+    titres: 0
+    score: 0.272
+    part_top: 0.0
+    rang_p05: 67
+    rang_p95: 347
+    rangs:
+      parcours: 87
+      epreuves: 386
+      discretion: 96
+      lecture: 373
+  - rang: 123
+    nom: Steeve Demana
+    id: steeve-demana
+    saisons: 1
+    titres: 0
+    score: 0.271
+    part_top: 0.0
+    rang_p05: 56
+    rang_p95: 380
+    rangs:
+      parcours: 65
+      epreuves: 352
+      discretion: 73
+      lecture: 431
+  - rang: 124
+    nom: Johan Pinaud
+    id: johan-pinaud
+    saisons: 1
+    titres: 0
+    score: 0.27
+    part_top: 1.3
+    rang_p05: 34
+    rang_p95: 349
+    rangs:
+      parcours: 320
+      epreuves: 429
+      discretion: 65
+      lecture: 33
+  - rang: 125
+    nom: Ricky Poyet
+    id: ricky-poyet
+    saisons: 1
+    titres: 0
+    score: 0.268
+    part_top: 0.0
+    rang_p05: 56
+    rang_p95: 305
+    rangs:
+      parcours: 317
+      epreuves: 65
+      discretion: 70
+      lecture: 370
+  - rang: 126
+    nom: Frédéric Khouvilay
+    id: frederic-khouvilay
+    saisons: 2
+    titres: 1
+    score: 0.266
+    part_top: 0.0
+    rang_p05: 44
+    rang_p95: 437
+    rangs:
+      parcours: 22
+      epreuves: 70
+      discretion: 387
+      lecture: 478
+  - rang: 127
+    nom: Olga Khokhlova
+    id: olga-khokhlova
+    saisons: 1
+    titres: 0
+    score: 0.261
+    part_top: 0.0
+    rang_p05: 106
+    rang_p95: 276
+    rangs:
+      parcours: 120
+      epreuves: 118
+      discretion: 363
+      lecture: 330
+  - rang: 128
+    nom: Maxime Berthon
+    id: maxime-berthon
+    saisons: 2
+    titres: 0
+    score: 0.257
+    part_top: 13.5
+    rang_p05: 17
+    rang_p95: 498
+    rangs: *id036
+  - rang: 129
+    nom: Cécile Belec
+    id: cecile-belec
+    saisons: 1
+    titres: 0
+    score: 0.252
+    part_top: 0.0
+    rang_p05: 102
+    rang_p95: 283
+    rangs:
+      parcours: 97
+      epreuves: 161
+      discretion: 325
+      lecture: 266
+  - rang: 130
+    nom: Abdellah Akriche
+    id: abdellah-akriche
+    saisons: 1
+    titres: 0
+    score: 0.252
+    part_top: 0.0
+    rang_p05: 79
+    rang_p95: 277
+    rangs:
+      parcours: 238
+      epreuves: 390
+      discretion: 103
+      lecture: 76
+  - rang: 131
+    nom: Philippe Huquet
+    id: philippe-huquet
+    saisons: 1
+    titres: 0
+    score: 0.251
+    part_top: 0.0
+    rang_p05: 76
+    rang_p95: 278
+    rangs:
+      parcours: 325
+      epreuves: 267
+      discretion: 124
+      lecture: 120
+  - rang: 132
+    nom: Patricia Tanguy
+    id: patricia-tanguy
+    saisons: 1
+    titres: 0
+    score: 0.246
+    part_top: 0.0
+    rang_p05: 42
+    rang_p95: 466
+    rangs:
+      parcours: 80
+      epreuves: 509
+      discretion: 294
+      lecture: 45
+  - rang: 133
+    nom: Odile Héritier
+    id: odile-heritier
+    saisons: 1
+    titres: 0
+    score: 0.246
+    part_top: 1.8
+    rang_p05: 33
+    rang_p95: 426
+    rangs:
+      parcours: 274
+      epreuves: 474
+      discretion: 46
+      lecture: 36
+  - rang: 134
+    nom: Gaëlle Fleury
+    id: gaelle-fleury
+    saisons: 1
+    titres: 1
+    score: 0.242
+    part_top: 1.0
+    rang_p05: 35
+    rang_p95: 489
+    rangs:
+      parcours: 43
+      epreuves: 521
+      discretion: 86
+      lecture: 96
+  - rang: 135
+    nom: Caroline Demartis
+    id: caroline-demartis
+    saisons: 1
+    titres: 0
+    score: 0.234
+    part_top: 0.0
+    rang_p05: 83
+    rang_p95: 283
+    rangs:
+      parcours: 329
+      epreuves: 157
+      discretion: 135
+      lecture: 88
+  - rang: 136
+    nom: Valérie Dot
+    id: valerie-dot
+    saisons: 1
+    titres: 0
+    score: 0.228
+    part_top: 0.0
+    rang_p05: 93
+    rang_p95: 288
+    rangs:
+      parcours: 188
+      epreuves: 289
+      discretion: 101
+      lecture: 377
+  - rang: 137
+    nom: Sébastien Mériaux
+    id: sebastien-meriaux
+    saisons: 1
+    titres: 0
+    score: 0.227
+    part_top: 0.0
+    rang_p05: 72
+    rang_p95: 366
+    rangs:
+      parcours: 230
+      epreuves: 78
+      discretion: 127
+      lecture: 428
+  - rang: 138
+    nom: Sébastien Cazaux
+    id: sebastien-cazaux
+    saisons: 1
+    titres: 0
+    score: 0.217
+    part_top: 0.0
+    rang_p05: 71
+    rang_p95: 378
+    rangs:
+      parcours: 124
+      epreuves: 447
+      discretion: 50
+      lecture: 239
+  - rang: 139
+    nom: Bertrand-Kamal Loudrhiri
+    id: bertrand-kamal-loudrhiri
+    saisons: 1
+    titres: 0
+    score: 0.215
+    part_top: 0.0
+    rang_p05: 77
+    rang_p95: 284
+    rangs:
+      parcours: 260
+      epreuves: 101
+      discretion: 20
+      lecture: 358
+  - rang: 140
+    nom: Hadja Cissé
+    id: hadja-cisse
+    saisons: 1
+    titres: 0
+    score: 0.212
+    part_top: 0.0
+    rang_p05: 66
+    rang_p95: 295
+    rangs:
+      parcours: 288
+      epreuves: 398
+      discretion: 39
+      lecture: 99
+  - rang: 141
+    nom: Estelle Granger
+    id: estelle-granger
+    saisons: 1
+    titres: 0
+    score: 0.211
+    part_top: 0.0
+    rang_p05: 53
+    rang_p95: 350
+    rangs:
+      parcours: 308
+      epreuves: 425
+      discretion: 83
+      lecture: 52
+  - rang: 142
+    nom: Pholien Systermans
+    id: pholien-systermans
+    saisons: 1
+    titres: 0
+    score: 0.203
+    part_top: 0.0
+    rang_p05: 91
+    rang_p95: 284
+    rangs:
+      parcours: 322
+      epreuves: 336
+      discretion: 164
+      lecture: 121
+  - rang: 143
+    nom: Jérôme Merlier
+    id: jerome-merlier
+    saisons: 1
+    titres: 0
+    score: 0.201
+    part_top: 0.0
+    rang_p05: 71
+    rang_p95: 308
+    rangs:
+      parcours: 346
+      epreuves: 325
+      discretion: 64
+      lecture: 103
+  - rang: 144
+    nom: Maël Lozach
+    id: mael-lozach
+    saisons: 1
+    titres: 0
+    score: 0.199
+    part_top: 0.0
+    rang_p05: 41
+    rang_p95: 490
+    rangs:
+      parcours: 44
+      epreuves: 522
+      discretion: 290
+      lecture: 60
+  - rang: 145
+    nom: Ahmad Abadie
+    id: ahmad-abadie
+    saisons: 1
+    titres: 0
+    score: 0.198
+    part_top: 0.0
+    rang_p05: 92
+    rang_p95: 277
+    rangs:
+      parcours: 291
+      epreuves: 358
+      discretion: 131
+      lecture: 78
+  - rang: 146
+    nom: Vanessa Alvarez
+    id: vanessa-alvarez
+    saisons: 1
+    titres: 0
+    score: 0.194
+    part_top: 0.6
+    rang_p05: 47
+    rang_p95: 447
+    rangs: *id037
+  - rang: 147
+    nom: Nathalie Lapicque
+    id: nathalie-lapicque
+    saisons: 1
+    titres: 0
+    score: 0.192
+    part_top: 0.0
+    rang_p05: 85
+    rang_p95: 301
+    rangs:
+      parcours: 339
+      epreuves: 333
+      discretion: 121
+      lecture: 117
+  - rang: 148
+    nom: Ulrich Bandeira
+    id: ulrich-bandeira
+    saisons: 1
+    titres: 0
+    score: 0.187
+    part_top: 0.0
+    rang_p05: 55
+    rang_p95: 343
+    rangs:
+      parcours: 348
+      epreuves: 410
+      discretion: 99
+      lecture: 68
+  - rang: 149
+    nom: Linda Alario
+    id: linda-alario
+    saisons: 2
+    titres: 0
+    score: 0.179
+    part_top: 1.9
+    rang_p05: 38
+    rang_p95: 472
+    rangs:
+      parcours: 14
+      epreuves: 296
+      discretion: 491
+      lecture: 147
+  - rang: 150
+    nom: Isabelle Seguin
+    id: isabelle-seguin
+    saisons: 1
+    titres: 1
+    score: 0.179
+    part_top: 0.0
+    rang_p05: 63
+    rang_p95: 400
+    rangs:
+      parcours: 32
+      epreuves: 203
+      discretion: 419
+      lecture: 386
+  - rang: 151
+    nom: Maxime Barbet
+    id: maxime-barbet
+    saisons: 1
+    titres: 0
+    score: 0.169
+    part_top: 0.0
+    rang_p05: 80
+    rang_p95: 325
+    rangs:
+      parcours: 365
+      epreuves: 331
+      discretion: 93
+      lecture: 111
+  - rang: 152
+    nom: Alexandra Leveau
+    id: alexandra-leveau
+    saisons: 1
+    titres: 0
+    score: 0.168
+    part_top: 0.0
+    rang_p05: 66
+    rang_p95: 472
+    rangs:
+      parcours: 113
+      epreuves: 503
+      discretion: 132
+      lecture: 79
+  - rang: 153
+    nom: Thibault Bélanger
+    id: thibault-belanger
+    saisons: 1
+    titres: 1
+    score: 0.166
+    part_top: 0.1
+    rang_p05: 48
+    rang_p95: 426
+    rangs:
+      parcours: 38
+      epreuves: 448
+      discretion: 171
+      lecture: 432
+  - rang: 154
+    nom: Joana Callico
+    id: joana-callico
+    saisons: 1
+    titres: 0
+    score: 0.165
+    part_top: 0.0
+    rang_p05: 98
+    rang_p95: 347
+    rangs:
+      parcours: 223
+      epreuves: 428
+      discretion: 90
+      lecture: 184
+  - rang: 155
+    nom: Marc Rambaud
+    id: marc-rambaud
+    saisons: 1
+    titres: 1
+    score: 0.163
+    part_top: 0.0
+    rang_p05: 59
+    rang_p95: 462
+    rangs:
+      parcours: 34
+      epreuves: 229
+      discretion: 478
+      lecture: 156
+  - rang: 156
+    nom: Angélique Ti
+    id: angelique-ti
+    saisons: 1
+    titres: 0
+    score: 0.162
+    part_top: 0.0
+    rang_p05: 66
+    rang_p95: 468
+    rangs:
+      parcours: 118
+      epreuves: 113
+      discretion: 490
+      lecture: 49
+  - rang: 157
+    nom: Boris Deltell
+    id: boris-deltell
+    saisons: 1
+    titres: 0
+    score: 0.162
+    part_top: 0.0
+    rang_p05: 112
+    rang_p95: 266
+    rangs:
+      parcours: 301
+      epreuves: 309
+      discretion: 106
+      lecture: 167
+  - rang: 158
+    nom: Gustin Comanescu
+    id: gustin-comanescu
+    saisons: 1
+    titres: 0
+    score: 0.159
+    part_top: 0.0
+    rang_p05: 79
+    rang_p95: 426
+    rangs:
+      parcours: 179
+      epreuves: 84
+      discretion: 145
+      lecture: 459
+  - rang: 159
+    nom: Régis Rappailles
+    id: regis-rappailles
+    saisons: 1
+    titres: 0
+    score: 0.157
+    part_top: 0.0
+    rang_p05: 73
+    rang_p95: 463
+    rangs:
+      parcours: 142
+      epreuves: 502
+      discretion: 166
+      lecture: 124
+  - rang: 160
+    nom: Audrey Perez
+    id: audrey-perez
+    saisons: 1
+    titres: 0
+    score: 0.15
+    part_top: 0.0
+    rang_p05: 117
+    rang_p95: 294
+    rangs:
+      parcours: 324
+      epreuves: 138
+      discretion: 134
+      lecture: 163
+  - rang: 161
+    nom: Bastien Muñez
+    id: bastien-munez
+    saisons: 1
+    titres: 0
+    score: 0.148
+    part_top: 0.0
+    rang_p05: 92
+    rang_p95: 318
+    rangs:
+      parcours: 356
+      epreuves: 141
+      discretion: 56
+      lecture: 164
+  - rang: 162
+    nom: Eliane Vigneron
+    id: eliane-vigneron
+    saisons: 1
+    titres: 0
+    score: 0.135
+    part_top: 0.0
+    rang_p05: 107
+    rang_p95: 313
+    rangs:
+      parcours: 350
+      epreuves: 180
+      discretion: 108
+      lecture: 174
+  - rang: 163
+    nom: Valentin D'Hoore
+    id: valentin-d-hoore
+    saisons: 1
+    titres: 0
+    score: 0.134
+    part_top: 0.0
+    rang_p05: 108
+    rang_p95: 315
+    rangs:
+      parcours: 271
+      epreuves: 411
+      discretion: 100
+      lecture: 214
+  - rang: 164
+    nom: Alexandra Élizé
+    id: alexandra-elize
+    saisons: 1
+    titres: 0
+    score: 0.128
+    part_top: 0.0
+    rang_p05: 77
+    rang_p95: 326
+    rangs:
+      parcours: 332
+      epreuves: 60
+      discretion: 317
+      lecture: 244
+  - rang: 165
+    nom: Helena Roosen
+    id: helena-roosen
+    saisons: 1
+    titres: 0
+    score: 0.126
+    part_top: 0.0
+    rang_p05: 95
+    rang_p95: 415
+    rangs:
+      parcours: 245
+      epreuves: 461
+      discretion: 146
+      lecture: 100
+  - rang: 166
+    nom: Chantal Ménard
+    id: chantal-menard
+    saisons: 2
+    titres: 0
+    score: 0.125
+    part_top: 0.0
+    rang_p05: 68
+    rang_p95: 426
+    rangs:
+      parcours: 265
+      epreuves: 165
+      discretion: 450
+      lecture: 42
+  - rang: 167
+    nom: Isabelle Da Silva
+    id: isabelle-da-silva
+    saisons: 3
+    titres: 0
+    score: 0.125
+    part_top: 2.8
+    rang_p05: 31
+    rang_p95: 446
+    rangs:
+      parcours: 406
+      epreuves: 322
+      discretion: 442
+      lecture: 12
+  - rang: 168
+    nom: Alexandre Bérard
+    id: alexandre-berard
+    saisons: 1
+    titres: 0
+    score: 0.124
+    part_top: 0.0
+    rang_p05: 110
+    rang_p95: 310
+    rangs:
+      parcours: 300
+      epreuves: 127
+      discretion: 373
+      lecture: 80
+  - rang: 169
+    nom: Margot Perrot Houwaer
+    id: margot-perrot-houwaer
+    saisons: 1
+    titres: 0
+    score: 0.123
+    part_top: 0.0
+    rang_p05: 120
+    rang_p95: 313
+    rangs:
+      parcours: 347
+      epreuves: 230
+      discretion: 156
+      lecture: 191
+  - rang: 170
+    nom: Marine Mocellin
+    id: marine-mocellin
+    saisons: 1
+    titres: 0
+    score: 0.122
+    part_top: 0.0
+    rang_p05: 109
+    rang_p95: 323
+    rangs:
+      parcours: 364
+      epreuves: 240
+      discretion: 113
+      lecture: 194
+  - rang: 171
+    nom: Grâce Jeantel
+    id: grace-jeantel
+    saisons: 1
+    titres: 0
+    score: 0.12
+    part_top: 0.0
+    rang_p05: 99
+    rang_p95: 364
+    rangs:
+      parcours: 295
+      epreuves: 427
+      discretion: 144
+      lecture: 98
+  - rang: 172
+    nom: Clémentine Jullien
+    id: clementine-jullien
+    saisons: 3
+    titres: 0
+    score: 0.111
+    part_top: 3.4
+    rang_p05: 30
+    rang_p95: 482
+    rangs: *id038
+  - rang: 173
+    nom: Antonin Fortunato
+    id: antonin-fortunato
+    saisons: 1
+    titres: 0
+    score: 0.111
+    part_top: 0.0
+    rang_p05: 57
+    rang_p95: 471
+    rangs:
+      parcours: 190
+      epreuves: 41
+      discretion: 489
+      lecture: 222
+  - rang: 174
+    nom: Vincent Blier
+    id: vincent-blier
+    saisons: 1
+    titres: 0
+    score: 0.107
+    part_top: 0.0
+    rang_p05: 139
+    rang_p95: 362
+    rangs:
+      parcours: 231
+      epreuves: 432
+      discretion: 206
+      lecture: 217
+  - rang: 175
+    nom: Thierry Villette
+    id: thierry-villette
+    saisons: 1
+    titres: 0
+    score: 0.107
+    part_top: 0.0
+    rang_p05: 127
+    rang_p95: 387
+    rangs:
+      parcours: 169
+      epreuves: 287
+      discretion: 213
+      lecture: 399
+  - rang: 176
+    nom: Sarah Aboudeine
+    id: sarah-aboudeine
+    saisons: 1
+    titres: 0
+    score: 0.106
+    part_top: 0.0
+    rang_p05: 129
+    rang_p95: 361
+    rangs:
+      parcours: 251
+      epreuves: 431
+      discretion: 168
+      lecture: 211
+  - rang: 177
+    nom: Mathilde Chevalier
+    id: mathilde-chevalier
+    saisons: 1
+    titres: 0
+    score: 0.104
+    part_top: 0.0
+    rang_p05: 97
+    rang_p95: 394
+    rangs:
+      parcours: 86
+      epreuves: 421
+      discretion: 253
+      lecture: 391
+  - rang: 178
+    nom: Myriam Lamare
+    id: myriam-lamare
+    saisons: 1
+    titres: 0
+    score: 0.099
+    part_top: 0.0
+    rang_p05: 150
+    rang_p95: 298
+    rangs:
+      parcours: 197
+      epreuves: 257
+      discretion: 359
+      lecture: 325
+  - rang: 179
+    nom: Nathalie Bella
+    id: nathalie-bella
+    saisons: 1
+    titres: 0
+    score: 0.097
+    part_top: 0.0
+    rang_p05: 92
+    rang_p95: 423
+    rangs:
+      parcours: 273
+      epreuves: 462
+      discretion: 120
+      lecture: 116
+  - rang: 180
+    nom: Dorian Louvet
+    id: dorian-louvet
+    saisons: 1
+    titres: 0
+    score: 0.092
+    part_top: 0.0
+    rang_p05: 102
+    rang_p95: 411
+    rangs:
+      parcours: 99
+      epreuves: 440
+      discretion: 215
+      lecture: 361
+  - rang: 181
+    nom: Jessica Murcia
+    id: jessica-murcia
+    saisons: 1
+    titres: 0
+    score: 0.085
+    part_top: 0.0
+    rang_p05: 130
+    rang_p95: 307
+    rangs:
+      parcours: 261
+      epreuves: 369
+      discretion: 89
+      lecture: 301
+  - rang: 182
+    nom: Anthony Dito
+    id: anthony-dito
+    saisons: 1
+    titres: 0
+    score: 0.083
+    part_top: 0.0
+    rang_p05: 110
+    rang_p95: 320
+    rangs:
+      parcours: 342
+      epreuves: 134
+      discretion: 54
+      lecture: 229
+  - rang: 183
+    nom: Sophia Mansouri
+    id: sophia-mansouri
+    saisons: 1
+    titres: 0
+    score: 0.081
+    part_top: 0.0
+    rang_p05: 76
+    rang_p95: 494
+    rangs:
+      parcours: 136
+      epreuves: 519
+      discretion: 169
+      lecture: 129
+  - rang: 184
+    nom: Sébastien Loew
+    id: sebastien-loew
+    saisons: 1
+    titres: 0
+    score: 0.08
+    part_top: 0.0
+    rang_p05: 119
+    rang_p95: 389
+    rangs:
+      parcours: 214
+      epreuves: 276
+      discretion: 126
+      lecture: 427
+  - rang: 185
+    nom: Romane Ouvrard
+    id: romane-ouvrard
+    saisons: 1
+    titres: 0
+    score: 0.075
+    part_top: 0.0
+    rang_p05: 90
+    rang_p95: 399
+    rangs:
+      parcours: 449
+      epreuves: 271
+      discretion: 167
+      lecture: 127
+  - rang: 186
+    nom: Maud Collas
+    id: maud-collas
+    saisons: 1
+    titres: 0
+    score: 0.075
+    part_top: 0.0
+    rang_p05: 135
+    rang_p95: 371
+    rangs:
+      parcours: 262
+      epreuves: 430
+      discretion: 158
+      lecture: 198
+  - rang: 187
+    nom: Nessim Kouachi
+    id: nessim-kouachi
+    saisons: 1
+    titres: 0
+    score: 0.073
+    part_top: 0.0
+    rang_p05: 122
+    rang_p95: 391
+    rangs:
+      parcours: 218
+      epreuves: 264
+      discretion: 122
+      lecture: 425
+  - rang: 188
+    nom: Jean-Claude Errin
+    id: jean-claude-errin
+    saisons: 1
+    titres: 0
+    score: 0.073
+    part_top: 0.0
+    rang_p05: 91
+    rang_p95: 375
+    rangs:
+      parcours: 370
+      epreuves: 399
+      discretion: 88
+      lecture: 102
+  - rang: 189
+    nom: Mika Tailleur
+    id: mika-tailleur
+    saisons: 1
+    titres: 0
+    score: 0.069
+    part_top: 0.0
+    rang_p05: 81
+    rang_p95: 393
+    rangs:
+      parcours: 338
+      epreuves: 74
+      discretion: 118
+      lecture: 422
+  - rang: 190
+    nom: Jeff Santiago
+    id: jeff-santiago
+    saisons: 1
+    titres: 0
+    score: 0.069
+    part_top: 0.0
+    rang_p05: 114
+    rang_p95: 412
+    rangs:
+      parcours: 193
+      epreuves: 207
+      discretion: 110
+      lecture: 443
+  - rang: 191
+    nom: Mathieu Blanchard
+    id: mathieu-blanchard
+    saisons: 1
+    titres: 0
+    score: 0.066
+    part_top: 0.0
+    rang_p05: 113
+    rang_p95: 361
+    rangs:
+      parcours: 398
+      epreuves: 244
+      discretion: 115
+      lecture: 196
+  - rang: 192
+    nom: Andréa Zogron
+    id: andrea-zogron
+    saisons: 1
+    titres: 0
+    score: 0.066
+    part_top: 0.0
+    rang_p05: 132
+    rang_p95: 310
+    rangs:
+      parcours: 333
+      epreuves: 133
+      discretion: 104
+      lecture: 250
+  - rang: 193
+    nom: Jean-Philippe Masy
+    id: jean-philippe-masy
+    saisons: 1
+    titres: 0
+    score: 0.065
+    part_top: 0.0
+    rang_p05: 80
+    rang_p95: 360
+    rangs:
+      parcours: 382
+      epreuves: 62
+      discretion: 343
+      lecture: 298
+  - rang: 194
+    nom: Jennifer Lieutaud
+    id: jennifer-lieutaud
+    saisons: 1
+    titres: 0
+    score: 0.064
+    part_top: 0.0
+    rang_p05: 124
+    rang_p95: 352
+    rangs:
+      parcours: 393
+      epreuves: 208
+      discretion: 151
+      lecture: 182
+  - rang: 195
+    nom: Julie Bourdon
+    id: julie-bourdon
+    saisons: 1
+    titres: 0
+    score: 0.064
+    part_top: 0.0
+    rang_p05: 124
+    rang_p95: 353
+    rangs:
+      parcours: 394
+      epreuves: 213
+      discretion: 152
+      lecture: 185
+  - rang: 196
+    nom: Adrien Bernaert
+    id: adrien-bernaert
+    saisons: 1
+    titres: 0
+    score: 0.064
+    part_top: 0.0
+    rang_p05: 134
+    rang_p95: 296
+    rangs:
+      parcours: 313
+      epreuves: 304
+      discretion: 77
+      lecture: 242
+  - rang: 197
+    nom: Alexandre Cheron
+    id: alexandre-cheron
+    saisons: 1
+    titres: 0
+    score: 0.063
+    part_top: 0.0
+    rang_p05: 137
+    rang_p95: 342
+    rangs:
+      parcours: 381
+      epreuves: 128
+      discretion: 180
+      lecture: 161
+  - rang: 198
+    nom: André Deleplace
+    id: andre-deleplace
+    saisons: 1
+    titres: 1
+    score: 0.063
+    part_top: 0.0
+    rang_p05: 57
+    rang_p95: 481
+    rangs:
+      parcours: 25
+      epreuves: 82
+      discretion: 411
+      lecture: 488
+  - rang: 199
+    nom: Claire Passas
+    id: claire-passas
+    saisons: 1
+    titres: 0
+    score: 0.06
+    part_top: 0.0
+    rang_p05: 69
+    rang_p95: 503
+    rangs:
+      parcours: 98
+      epreuves: 520
+      discretion: 81
+      lecture: 171
+  - rang: 200
+    nom: Angélique Mastio
+    id: angelique-mastio
+    saisons: 1
+    titres: 0
+    score: 0.057
+    part_top: 0.0
+    rang_p05: 77
+    rang_p95: 478
+    rangs:
+      parcours: 227
+      epreuves: 496
+      discretion: 53
+      lecture: 82
+  - rang: 201
+    nom: Jacques Roque
+    id: jacques-roque
+    saisons: 1
+    titres: 0
+    score: 0.055
+    part_top: 0.0
+    rang_p05: 89
+    rang_p95: 433
+    rangs:
+      parcours: 88
+      epreuves: 443
+      discretion: 149
+      lecture: 416
+  - rang: 202
+    nom: Alexis Tchernychev
+    id: alexis-tchernychev
+    saisons: 1
+    titres: 0
+    score: 0.054
+    part_top: 0.0
+    rang_p05: 103
+    rang_p95: 379
+    rangs:
+      parcours: 417
+      epreuves: 306
+      discretion: 181
+      lecture: 81
+  - rang: 203
+    nom: Frédéric Pignard
+    id: frederic-pignard
+    saisons: 1
+    titres: 0
+    score: 0.053
+    part_top: 0.0
+    rang_p05: 139
+    rang_p95: 314
+    rangs:
+      parcours: 287
+      epreuves: 367
+      discretion: 85
+      lecture: 290
+  - rang: 204
+    nom: Myriam Chafik
+    id: myriam-chafik
+    saisons: 1
+    titres: 0
+    score: 0.053
+    part_top: 0.0
+    rang_p05: 85
+    rang_p95: 436
+    rangs:
+      parcours: 258
+      epreuves: 75
+      discretion: 195
+      lecture: 469
+  - rang: 205
+    nom: Mélissa Bastin
+    id: melissa-bastin
+    saisons: 1
+    titres: 0
+    score: 0.049
+    part_top: 0.0
+    rang_p05: 95
+    rang_p95: 444
+    rangs:
+      parcours: 69
+      epreuves: 250
+      discretion: 461
+      lecture: 353
+  - rang: 206
+    nom: Florence Delbarre
+    id: florence-delbarre
+    saisons: 2
+    titres: 0
+    score: 0.047
+    part_top: 0.0
+    rang_p05: 69
+    rang_p95: 454
+    rangs:
+      parcours: 298
+      epreuves: 471
+      discretion: 262
+      lecture: 43
+  - rang: 207
+    nom: Naouel Hadjaf
+    id: naouel-hadjaf
+    saisons: 1
+    titres: 0
+    score: 0.046
+    part_top: 0.0
+    rang_p05: 126
+    rang_p95: 366
+    rangs:
+      parcours: 404
+      epreuves: 261
+      discretion: 161
+      lecture: 204
+  - rang: 208
+    nom: Taïg Khris
+    id: taig-khris
+    saisons: 1
+    titres: 0
+    score: 0.043
+    part_top: 0.0
+    rang_p05: 165
+    rang_p95: 306
+    rangs:
+      parcours: 233
+      epreuves: 284
+      discretion: 371
+      lecture: 342
+  - rang: 209
+    nom: Filomène Mendonca
+    id: filomene-mendonca
+    saisons: 2
+    titres: 0
+    score: 0.042
+    part_top: 0.0
+    rang_p05: 114
+    rang_p95: 438
+    rangs:
+      parcours: 102
+      epreuves: 465
+      discretion: 401
+      lecture: 146
+  - rang: 210
+    nom: Jean-Bernard De Cools
+    id: jean-bernard-de-cools
+    saisons: 1
+    titres: 0
+    score: 0.042
+    part_top: 0.0
+    rang_p05: 137
+    rang_p95: 345
+    rangs:
+      parcours: 369
+      epreuves: 324
+      discretion: 150
+      lecture: 181
+  - rang: 211
+    nom: Félicie Greugny
+    id: felicie-greugny
+    saisons: 1
+    titres: 0
+    score: 0.039
+    part_top: 0.0
+    rang_p05: 128
+    rang_p95: 371
+    rangs:
+      parcours: 409
+      epreuves: 185
+      discretion: 142
+      lecture: 177
+  - rang: 212
+    nom: Caroline Lamotte
+    id: caroline-lamotte
+    saisons: 1
+    titres: 0
+    score: 0.037
+    part_top: 0.0
+    rang_p05: 65
+    rang_p95: 433
+    rangs:
+      parcours: 474
+      epreuves: 53
+      discretion: 270
+      lecture: 265
+  - rang: 213
+    nom: Christophe Guttatoro-Martin
+    id: christophe-guttatoro-martin
+    saisons: 2
+    titres: 0
+    score: 0.035
+    part_top: 0.0
+    rang_p05: 103
+    rang_p95: 455
+    rangs:
+      parcours: 90
+      epreuves: 481
+      discretion: 395
+      lecture: 150
+  - rang: 214
+    nom: Pauline Leperchois
+    id: pauline-leperchois
+    saisons: 1
+    titres: 0
+    score: 0.034
+    part_top: 0.0
+    rang_p05: 137
+    rang_p95: 331
+    rangs:
+      parcours: 354
+      epreuves: 266
+      discretion: 123
+      lecture: 332
+  - rang: 215
+    nom: Shanice Mendy
+    id: shanice-mendy
+    saisons: 1
+    titres: 0
+    score: 0.034
+    part_top: 0.0
+    rang_p05: 203
+    rang_p95: 276
+    rangs:
+      parcours: 280
+      epreuves: 343
+      discretion: 243
+      lecture: 337
+  - rang: 216
+    nom: Béryl Libault de la Chevasnerie
+    id: beryl-libault-de-la-chevasnerie
+    saisons: 1
+    titres: 0
+    score: 0.032
+    part_top: 0.0
+    rang_p05: 132
+    rang_p95: 349
+    rangs:
+      parcours: 293
+      epreuves: 394
+      discretion: 58
+      lecture: 231
+  - rang: 217
+    nom: Inès Loucif
+    id: ines-loucif
+    saisons: 1
+    titres: 0
+    score: 0.031
+    part_top: 0.0
+    rang_p05: 62
+    rang_p95: 507
+    rangs:
+      parcours: 50
+      epreuves: 524
+      discretion: 380
+      lecture: 101
+  - rang: 218
+    nom: Marta Morino
+    id: marta-morino
+    saisons: 1
+    titres: 0
+    score: 0.029
+    part_top: 0.0
+    rang_p05: 150
+    rang_p95: 350
+    rangs:
+      parcours: 389
+      epreuves: 242
+      discretion: 238
+      lecture: 195
+  - rang: 219
+    nom: Catherine Perez
+    id: catherine-perez
+    saisons: 1
+    titres: 0
+    score: 0.028
+    part_top: 0.0
+    rang_p05: 103
+    rang_p95: 417
+    rangs:
+      parcours: 242
+      epreuves: 160
+      discretion: 22
+      lecture: 441
+  - rang: 220
+    nom: Laure Canevarolo
+    id: laure-canevarolo
+    saisons: 1
+    titres: 0
+    score: 0.026
+    part_top: 0.3
+    rang_p05: 37
+    rang_p95: 515
+    rangs:
+      parcours: 85
+      epreuves: 86
+      discretion: 524
+      lecture: 23
+  - rang: 221
+    nom: Mathieu Orsolani
+    id: mathieu-orsolani
+    saisons: 1
+    titres: 0
+    score: 0.024
+    part_top: 0.0
+    rang_p05: 189
+    rang_p95: 296
+    rangs:
+      parcours: 311
+      epreuves: 329
+      discretion: 194
+      lecture: 318
+  - rang: 222
+    nom: Julie Rignault
+    id: julie-rignault
+    saisons: 1
+    titres: 0
+    score: 0.022
+    part_top: 0.0
+    rang_p05: 62
+    rang_p95: 498
+    rangs:
+      parcours: 60
+      epreuves: 516
+      discretion: 433
+      lecture: 57
+  - rang: 223
+    nom: Émilie Clavis
+    id: emilie-clavis
+    saisons: 1
+    titres: 0
+    score: 0.021
+    part_top: 0.0
+    rang_p05: 140
+    rang_p95: 361
+    rangs:
+      parcours: 391
+      epreuves: 316
+      discretion: 140
+      lecture: 175
+  - rang: 224
+    nom: Fouzi de la Fuente
+    id: fouzi-de-la-fuente
+    saisons: 1
+    titres: 0
+    score: 0.021
+    part_top: 0.0
+    rang_p05: 161
+    rang_p95: 377
+    rangs:
+      parcours: 159
+      epreuves: 417
+      discretion: 334
+      lecture: 283
+  - rang: 225
+    nom: Sam Haliti
+    id: sam-haliti
+    saisons: 2
+    titres: 0
+    score: 0.02
+    part_top: 0.0
+    rang_p05: 85
+    rang_p95: 461
+    rangs:
+      parcours: 148
+      epreuves: 437
+      discretion: 464
+      lecture: 64
+  - rang: 226
+    nom: Charlaine Cuny
+    id: charlaine-cuny
+    saisons: 1
+    titres: 0
+    score: 0.02
+    part_top: 0.0
+    rang_p05: 143
+    rang_p95: 397
+    rangs:
+      parcours: 243
+      epreuves: 166
+      discretion: 137
+      lecture: 405
+  - rang: 227
+    nom: Gaël Gollen
+    id: gael-gollen
+    saisons: 1
+    titres: 0
+    score: 0.019
+    part_top: 0.0
+    rang_p05: 139
+    rang_p95: 374
+    rangs:
+      parcours: 411
+      epreuves: 193
+      discretion: 192
+      lecture: 179
+  - rang: 228
+    nom: Véronique Bègue
+    id: veronique-begue
+    saisons: 1
+    titres: 0
+    score: 0.018
+    part_top: 0.0
+    rang_p05: 62
+    rang_p95: 484
+    rangs:
+      parcours: 100
+      epreuves: 423
+      discretion: 496
+      lecture: 46
+  - rang: 229
+    nom: Romain Bissol
+    id: romain-bissol
+    saisons: 1
+    titres: 0
+    score: 0.017
+    part_top: 0.0
+    rang_p05: 129
+    rang_p95: 418
+    rangs:
+      parcours: 110
+      epreuves: 422
+      discretion: 436
+      lecture: 226
+  - rang: 230
+    nom: Paul Estival
+    id: paul-estival
+    saisons: 1
+    titres: 0
+    score: 0.017
+    part_top: 0.0
+    rang_p05: 102
+    rang_p95: 436
+    rangs:
+      parcours: 297
+      epreuves: 463
+      discretion: 28
+      lecture: 157
+  - rang: 231
+    nom: Philippe Bizet
+    id: philippe-bizet
+    saisons: 3
+    titres: 0
+    score: 0.015
+    part_top: 9.4
+    rang_p05: 14
+    rang_p95: 488
+    rangs: *id039
+  - rang: 232
+    nom: Dylan Thiry
+    id: dylan-thiry
+    saisons: 2
+    titres: 0
+    score: 0.015
+    part_top: 0.0
+    rang_p05: 62
+    rang_p95: 495
+    rangs:
+      parcours: 528
+      epreuves: 61
+      discretion: 397
+      lecture: 69
+  - rang: 233
+    nom: Cassandre Lambert
+    id: cassandre-lambert
+    saisons: 1
+    titres: 0
+    score: 0.013
+    part_top: 0.0
+    rang_p05: 108
+    rang_p95: 486
+    rangs:
+      parcours: 157
+      epreuves: 506
+      discretion: 136
+      lecture: 169
+  - rang: 234
+    nom: Wafa El Mejjad
+    id: wafa-el-mejjad
+    saisons: 2
+    titres: 0
+    score: 0.012
+    part_top: 0.0
+    rang_p05: 46
+    rang_p95: 514
+    rangs:
+      parcours: 89
+      epreuves: 529
+      discretion: 437
+      lecture: 31
+  - rang: 235
+    nom: Delphine Hergault
+    id: delphine-hergault
+    saisons: 1
+    titres: 0
+    score: 0.01
+    part_top: 0.0
+    rang_p05: 125
+    rang_p95: 348
+    rangs:
+      parcours: 345
+      epreuves: 315
+      discretion: 378
+      lecture: 93
+  - rang: 236
+    nom: Aurélien Dulau
+    id: aurelien-dulau
+    saisons: 1
+    titres: 0
+    score: 0.007
+    part_top: 0.0
+    rang_p05: 111
+    rang_p95: 448
+    rangs:
+      parcours: 219
+      epreuves: 469
+      discretion: 32
+      lecture: 230
+  - rang: 237
+    nom: Mohamed Ayari
+    id: mohamed-ayari
+    saisons: 1
+    titres: 0
+    score: 0.003
+    part_top: 0.0
+    rang_p05: 141
+    rang_p95: 352
+    rangs:
+      parcours: 383
+      epreuves: 255
+      discretion: 119
+      lecture: 322
+  - rang: 238
+    nom: Cynthia Combes
+    id: cynthia-combes
+    saisons: 1
+    titres: 1
+    score: 0.002
+    part_top: 4.9
+    rang_p05: 26
+    rang_p95: 522
+    rangs:
+      parcours: 28
+      epreuves: 19
+      discretion: 410
+      lecture: 528
+  - rang: 239
+    nom: Sophie Eeckhout
+    id: sophie-eeckhout
+    saisons: 1
+    titres: 0
+    score: -0.001
+    part_top: 0.0
+    rang_p05: 186
+    rang_p95: 364
+    rangs:
+      parcours: 210
+      epreuves: 354
+      discretion: 400
+      lecture: 240
+  - rang: 240
+    nom: Sakhone Holaphong
+    id: sakhone-holaphong
+    saisons: 1
+    titres: 0
+    score: -0.001
+    part_top: 0.0
+    rang_p05: 68
+    rang_p95: 463
+    rangs:
+      parcours: 284
+      epreuves: 339
+      discretion: 466
+      lecture: 37
+  - rang: 241
+    nom: Frédérique Jossinet
+    id: frederique-jossinet
+    saisons: 1
+    titres: 0
+    score: -0.013
+    part_top: 0.0
+    rang_p05: 183
+    rang_p95: 316
+    rangs:
+      parcours: 276
+      epreuves: 191
+      discretion: 339
+      lecture: 292
+  - rang: 242
+    nom: Adrien Ferreira
+    id: adrien-ferreira
+    saisons: 1
+    titres: 0
+    score: -0.013
+    part_top: 0.0
+    rang_p05: 125
+    rang_p95: 366
+    rangs:
+      parcours: 380
+      epreuves: 357
+      discretion: 285
+      lecture: 77
+  - rang: 243
+    nom: Pascal Nickert
+    id: pascal-nickert
+    saisons: 1
+    titres: 0
+    score: -0.015
+    part_top: 0.0
+    rang_p05: 172
+    rang_p95: 382
+    rangs:
+      parcours: 239
+      epreuves: 265
+      discretion: 414
+      lecture: 238
+  - rang: 244
+    nom: Sylvie Sébert
+    id: sylvie-sebert
+    saisons: 1
+    titres: 0
+    score: -0.016
+    part_top: 0.0
+    rang_p05: 130
+    rang_p95: 411
+    rangs:
+      parcours: 451
+      epreuves: 283
+      discretion: 170
+      lecture: 212
+  - rang: 245
+    nom: Samuel Degoute
+    id: samuel-degoute
+    saisons: 1
+    titres: 0
+    score: -0.017
+    part_top: 0.0
+    rang_p05: 108
+    rang_p95: 429
+    rangs:
+      parcours: 472
+      epreuves: 273
+      discretion: 95
+      lecture: 210
+  - rang: 246
+    nom: Délisia Fettasi
+    id: delisia-fettasi
+    saisons: 1
+    titres: 0
+    score: -0.021
+    part_top: 0.0
+    rang_p05: 89
+    rang_p95: 438
+    rangs:
+      parcours: 344
+      epreuves: 175
+      discretion: 445
+      lecture: 51
+  - rang: 247
+    nom: Laurence Pizzocchia
+    id: laurence-pizzocchia
+    saisons: 2
+    titres: 0
+    score: -0.023
+    part_top: 0.4
+    rang_p05: 61
+    rang_p95: 493
+    rangs:
+      parcours: 340
+      epreuves: 500
+      discretion: 16
+      lecture: 71
+  - rang: 248
+    nom: Bruno Troester
+    id: bruno-troester
+    saisons: 1
+    titres: 0
+    score: -0.025
+    part_top: 0.0
+    rang_p05: 107
+    rang_p95: 449
+    rangs:
+      parcours: 92
+      epreuves: 115
+      discretion: 409
+      lecture: 449
+  - rang: 249
+    nom: Clo Dessard Arribas
+    id: clo-dessard-arribas
+    saisons: 1
+    titres: 0
+    score: -0.026
+    part_top: 0.0
+    rang_p05: 92
+    rang_p95: 465
+    rangs:
+      parcours: 107
+      epreuves: 476
+      discretion: 61
+      lecture: 409
+  - rang: 250
+    nom: Nelly Baradeau
+    id: nelly-baradeau
+    saisons: 1
+    titres: 0
+    score: -0.026
+    part_top: 0.0
+    rang_p05: 155
+    rang_p95: 384
+    rangs:
+      parcours: 414
+      epreuves: 335
+      discretion: 198
+      lecture: 206
+  - rang: 251
+    nom: Vicky Szikman
+    id: vicky-szikman
+    saisons: 1
+    titres: 0
+    score: -0.026
+    part_top: 0.0
+    rang_p05: 155
+    rang_p95: 384
+    rangs:
+      parcours: 416
+      epreuves: 345
+      discretion: 204
+      lecture: 215
+  - rang: 252
+    nom: Michel Huy
+    id: michel-huy
+    saisons: 1
+    titres: 0
+    score: -0.027
+    part_top: 0.0
+    rang_p05: 185
+    rang_p95: 337
+    rangs:
+      parcours: 353
+      epreuves: 252
+      discretion: 240
+      lecture: 321
+  - rang: 253
+    nom: Céga Coulibaly
+    id: cega-coulibaly
+    saisons: 1
+    titres: 0
+    score: -0.028
+    part_top: 0.0
+    rang_p05: 88
+    rang_p95: 437
+    rangs:
+      parcours: 479
+      epreuves: 71
+      discretion: 223
+      lecture: 268
+  - rang: 254
+    nom: Marylou Sidibé
+    id: marylou-sidibe
+    saisons: 1
+    titres: 0
+    score: -0.033
+    part_top: 0.0
+    rang_p05: 176
+    rang_p95: 379
+    rangs:
+      parcours: 269
+      epreuves: 243
+      discretion: 252
+      lecture: 390
+  - rang: 255
+    nom: Anne-Sophie Antoine
+    id: anne-sophie-antoine
+    saisons: 1
+    titres: 0
+    score: -0.035
+    part_top: 0.0
+    rang_p05: 137
+    rang_p95: 402
+    rangs:
+      parcours: 292
+      epreuves: 424
+      discretion: 374
+      lecture: 83
+  - rang: 256
+    nom: Laurent Affri
+    id: laurent-affri
+    saisons: 1
+    titres: 0
+    score: -0.036
+    part_top: 0.0
+    rang_p05: 148
+    rang_p95: 472
+    rangs:
+      parcours: 198
+      epreuves: 489
+      discretion: 217
+      lecture: 187
+  - rang: 257
+    nom: Caroline Matteucci
+    id: caroline-matteucci
+    saisons: 1
+    titres: 0
+    score: -0.037
+    part_top: 0.0
+    rang_p05: 196
+    rang_p95: 317
+    rangs:
+      parcours: 319
+      epreuves: 158
+      discretion: 300
+      lecture: 232
+  - rang: 258
+    nom: Léa Notardonato
+    id: lea-notardonato
+    saisons: 1
+    titres: 0
+    score: -0.037
+    part_top: 0.0
+    rang_p05: 193
+    rang_p95: 321
+    rangs:
+      parcours: 289
+      epreuves: 220
+      discretion: 350
+      lecture: 306
+  - rang: 259
+    nom: Yves Rey
+    id: yves-rey
+    saisons: 1
+    titres: 0
+    score: -0.039
+    part_top: 0.0
+    rang_p05: 67
+    rang_p95: 474
+    rangs:
+      parcours: 312
+      epreuves: 295
+      discretion: 479
+      lecture: 39
+  - rang: 260
+    nom: Moussa Niangane
+    id: moussa-niangane
+    saisons: 3
+    titres: 0
+    score: -0.04
+    part_top: 10.6
+    rang_p05: 13
+    rang_p95: 524
+    rangs: *id040
+  - rang: 261
+    nom: Carole Poncelet
+    id: carole-poncelet
+    saisons: 1
+    titres: 0
+    score: -0.04
+    part_top: 0.0
+    rang_p05: 169
+    rang_p95: 362
+    rangs:
+      parcours: 386
+      epreuves: 155
+      discretion: 187
+      lecture: 263
+  - rang: 262
+    nom: Alain Merdel
+    id: alain-merdel
+    saisons: 1
+    titres: 0
+    score: -0.041
+    part_top: 0.0
+    rang_p05: 142
+    rang_p95: 417
+    rangs:
+      parcours: 452
+      epreuves: 124
+      discretion: 179
+      lecture: 159
+  - rang: 263
+    nom: Mel Moresve
+    id: mel-moresve
+    saisons: 1
+    titres: 0
+    score: -0.044
+    part_top: 0.0
+    rang_p05: 154
+    rang_p95: 404
+    rangs:
+      parcours: 440
+      epreuves: 248
+      discretion: 239
+      lecture: 200
+  - rang: 264
+    nom: Cécile Poprawa
+    id: cecile-poprawa
+    saisons: 1
+    titres: 0
+    score: -0.046
+    part_top: 0.0
+    rang_p05: 136
+    rang_p95: 426
+    rangs:
+      parcours: 248
+      epreuves: 449
+      discretion: 35
+      lecture: 359
+  - rang: 265
+    nom: Hélène Patry
+    id: helene-patry
+    saisons: 1
+    titres: 0
+    score: -0.048
+    part_top: 0.0
+    rang_p05: 95
+    rang_p95: 480
+    rangs:
+      parcours: 152
+      epreuves: 199
+      discretion: 63
+      lecture: 491
+  - rang: 266
+    nom: Patrick Brasier De Thuy
+    id: patrick-brasier-de-thuy
+    saisons: 1
+    titres: 0
+    score: -0.053
+    part_top: 0.0
+    rang_p05: 82
+    rang_p95: 493
+    rangs:
+      parcours: 146
+      epreuves: 121
+      discretion: 503
+      lecture: 72
+  - rang: 267
+    nom: Alban Pellegrin
+    id: alban-pellegrin
+    saisons: 2
+    titres: 0
+    score: -0.055
+    part_top: 0.0
+    rang_p05: 128
+    rang_p95: 404
+    rangs: *id041
+  - rang: 268
+    nom: Brahma Sadeyen
+    id: brahma-sadeyen
+    saisons: 1
+    titres: 0
+    score: -0.056
+    part_top: 0.0
+    rang_p05: 125
+    rang_p95: 404
+    rangs:
+      parcours: 385
+      epreuves: 148
+      discretion: 413
+      lecture: 87
+  - rang: 269
+    nom: Benjamin Di Benedetto
+    id: benjamin-di-benedetto
+    saisons: 1
+    titres: 0
+    score: -0.061
+    part_top: 0.0
+    rang_p05: 164
+    rang_p95: 392
+    rangs:
+      parcours: 400
+      epreuves: 361
+      discretion: 183
+      lecture: 165
+  - rang: 270
+    nom: Vanessa Feuillatte
+    id: vanessa-feuillatte
+    saisons: 1
+    titres: 0
+    score: -0.064
+    part_top: 0.0
+    rang_p05: 172
+    rang_p95: 378
+    rangs:
+      parcours: 399
+      epreuves: 292
+      discretion: 203
+      lecture: 345
+  - rang: 271
+    nom: Maxime Stafrach
+    id: maxime-stafrach
+    saisons: 1
+    titres: 0
+    score: -0.066
+    part_top: 0.0
+    rang_p05: 107
+    rang_p95: 481
+    rangs:
+      parcours: 184
+      epreuves: 107
+      discretion: 116
+      lecture: 492
+  - rang: 272
+    nom: Aurélien Tesson
+    id: aurelien-tesson
+    saisons: 1
+    titres: 0
+    score: -0.067
+    part_top: 0.0
+    rang_p05: 191
+    rang_p95: 365
+    rangs:
+      parcours: 384
+      epreuves: 139
+      discretion: 220
+      lecture: 255
+  - rang: 273
+    nom: Sébastien Aberlenc
+    id: sebastien-aberlenc
+    saisons: 1
+    titres: 0
+    score: -0.067
+    part_top: 0.0
+    rang_p05: 159
+    rang_p95: 371
+    rangs:
+      parcours: 335
+      epreuves: 379
+      discretion: 71
+      lecture: 376
+  - rang: 274
+    nom: Moundir Zoughari
+    id: moundir-zoughari
+    saisons: 3
+    titres: 0
+    score: -0.072
+    part_top: 0.0
+    rang_p05: 111
+    rang_p95: 472
+    rangs:
+      parcours: 171
+      epreuves: 485
+      discretion: 438
+      lecture: 75
+  - rang: 275
+    nom: Anthony Amar
+    id: anthony-amar
+    saisons: 1
+    titres: 0
+    score: -0.079
+    part_top: 0.0
+    rang_p05: 153
+    rang_p95: 430
+    rangs:
+      parcours: 267
+      epreuves: 308
+      discretion: 79
+      lecture: 438
+  - rang: 276
+    nom: Hada Ghoulam
+    id: hada-ghoulam
+    saisons: 1
+    titres: 0
+    score: -0.08
+    part_top: 0.0
+    rang_p05: 157
+    rang_p95: 430
+    rangs:
+      parcours: 463
+      epreuves: 197
+      discretion: 230
+      lecture: 180
+  - rang: 277
+    nom: Thomas Hébert
+    id: thomas-hebert
+    saisons: 1
+    titres: 0
+    score: -0.08
+    part_top: 0.0
+    rang_p05: 156
+    rang_p95: 430
+    rangs:
+      parcours: 466
+      epreuves: 288
+      discretion: 244
+      lecture: 213
+  - rang: 278
+    nom: Manuella Baudet
+    id: manuella-baudet
+    saisons: 1
+    titres: 0
+    score: -0.083
+    part_top: 0.0
+    rang_p05: 146
+    rang_p95: 420
+    rangs:
+      parcours: 256
+      epreuves: 402
+      discretion: 42
+      lecture: 419
+  - rang: 279
+    nom: Marjorie Rousseeuw
+    id: marjorie-rousseeuw
+    saisons: 1
+    titres: 0
+    score: -0.085
+    part_top: 0.0
+    rang_p05: 131
+    rang_p95: 444
+    rangs:
+      parcours: 207
+      epreuves: 455
+      discretion: 43
+      lecture: 420
+  - rang: 280
+    nom: Caroline Colusso
+    id: caroline-colusso
+    saisons: 1
+    titres: 0
+    score: -0.085
+    part_top: 0.0
+    rang_p05: 174
+    rang_p95: 393
+    rangs:
+      parcours: 418
+      epreuves: 156
+      discretion: 188
+      lecture: 264
+  - rang: 281
+    nom: Laureen Hugel
+    id: laureen-hugel
+    saisons: 1
+    titres: 0
+    score: -0.091
+    part_top: 0.0
+    rang_p05: 190
+    rang_p95: 424
+    rangs:
+      parcours: 228
+      epreuves: 453
+      discretion: 398
+      lecture: 155
+  - rang: 282
+    nom: Linda Delamarre
+    id: linda-delamarre
+    saisons: 1
+    titres: 0
+    score: -0.091
+    part_top: 0.0
+    rang_p05: 179
+    rang_p95: 387
+    rangs:
+      parcours: 363
+      epreuves: 221
+      discretion: 404
+      lecture: 188
+  - rang: 283
+    nom: Jimmy Denis
+    id: jimmy-denis
+    saisons: 1
+    titres: 0
+    score: -0.092
+    part_top: 0.0
+    rang_p05: 251
+    rang_p95: 369
+    rangs:
+      parcours: 272
+      epreuves: 370
+      discretion: 258
+      lecture: 364
+  - rang: 284
+    nom: Nathanaël Branchereau
+    id: nathanael-branchereau
+    saisons: 1
+    titres: 0
+    score: -0.095
+    part_top: 0.0
+    rang_p05: 176
+    rang_p95: 400
+    rangs:
+      parcours: 425
+      epreuves: 262
+      discretion: 197
+      lecture: 327
+  - rang: 285
+    nom: Cindy Poumeyrol
+    id: cindy-poumeyrol
+    saisons: 2
+    titres: 0
+    score: -0.096
+    part_top: 0.0
+    rang_p05: 151
+    rang_p95: 433
+    rangs:
+      parcours: 232
+      epreuves: 435
+      discretion: 60
+      lecture: 407
+  - rang: 286
+    nom: Céline Fortier
+    id: celine-fortier
+    saisons: 1
+    titres: 0
+    score: -0.101
+    part_top: 0.0
+    rang_p05: 173
+    rang_p95: 422
+    rangs:
+      parcours: 444
+      epreuves: 313
+      discretion: 224
+      lecture: 170
+  - rang: 287
+    nom: Benoît Piedfer
+    id: benoit-piedfer
+    saisons: 1
+    titres: 0
+    score: -0.104
+    part_top: 0.0
+    rang_p05: 178
+    rang_p95: 386
+    rangs:
+      parcours: 397
+      epreuves: 145
+      discretion: 375
+      lecture: 166
+  - rang: 288
+    nom: Manon Allender
+    id: manon-allender
+    saisons: 1
+    titres: 0
+    score: -0.104
+    part_top: 0.0
+    rang_p05: 127
+    rang_p95: 425
+    rangs:
+      parcours: 432
+      epreuves: 227
+      discretion: 405
+      lecture: 107
+  - rang: 289
+    nom: Marie Ovaere
+    id: marie-ovaere
+    saisons: 1
+    titres: 0
+    score: -0.107
+    part_top: 0.0
+    rang_p05: 178
+    rang_p95: 408
+    rangs:
+      parcours: 433
+      epreuves: 236
+      discretion: 193
+      lecture: 314
+  - rang: 290
+    nom: Diane Goulesque-Perez
+    id: diane-goulesque-perez
+    saisons: 1
+    titres: 0
+    score: -0.107
+    part_top: 0.0
+    rang_p05: 160
+    rang_p95: 421
+    rangs:
+      parcours: 446
+      epreuves: 178
+      discretion: 139
+      lecture: 278
+  - rang: 291
+    nom: Patrick Merle
+    id: patrick-merle
+    saisons: 3
+    titres: 0
+    score: -0.108
+    part_top: 0.0
+    rang_p05: 123
+    rang_p95: 506
+    rangs:
+      parcours: 149
+      epreuves: 517
+      discretion: 391
+      lecture: 141
+  - rang: 292
+    nom: Romain Palazzetti
+    id: romain-palazzetti
+    saisons: 1
+    titres: 0
+    score: -0.109
+    part_top: 0.0
+    rang_p05: 243
+    rang_p95: 361
+    rangs:
+      parcours: 279
+      epreuves: 338
+      discretion: 304
+      lecture: 371
+  - rang: 293
+    nom: Amir Doukhan
+    id: amir-doukhan
+    saisons: 1
+    titres: 0
+    score: -0.109
+    part_top: 0.0
+    rang_p05: 169
+    rang_p95: 411
+    rangs:
+      parcours: 328
+      epreuves: 132
+      discretion: 133
+      lecture: 400
+  - rang: 294
+    nom: Franck Michel
+    id: franck-michel
+    saisons: 1
+    titres: 0
+    score: -0.113
+    part_top: 0.0
+    rang_p05: 179
+    rang_p95: 413
+    rangs:
+      parcours: 439
+      epreuves: 186
+      discretion: 191
+      lecture: 285
+  - rang: 295
+    nom: Géraldine Nicolle
+    id: geraldine-nicolle
+    saisons: 1
+    titres: 0
+    score: -0.121
+    part_top: 0.0
+    rang_p05: 97
+    rang_p95: 505
+    rangs:
+      parcours: 57
+      epreuves: 514
+      discretion: 340
+      lecture: 293
+  - rang: 296
+    nom: Nicolas Maire
+    id: nicolas-maire
+    saisons: 1
+    titres: 0
+    score: -0.121
+    part_top: 0.0
+    rang_p05: 78
+    rang_p95: 468
+    rangs:
+      parcours: 428
+      epreuves: 64
+      discretion: 162
+      lecture: 471
+  - rang: 297
+    nom: Vidéli Dittmar
+    id: videli-dittmar
+    saisons: 1
+    titres: 0
+    score: -0.123
+    part_top: 0.0
+    rang_p05: 162
+    rang_p95: 455
+    rangs:
+      parcours: 478
+      epreuves: 346
+      discretion: 205
+      lecture: 216
+  - rang: 298
+    nom: Frédéric Blanchard
+    id: frederic-blanchard
+    saisons: 1
+    titres: 0
+    score: -0.123
+    part_top: 0.0
+    rang_p05: 175
+    rang_p95: 424
+    rangs:
+      parcours: 358
+      epreuves: 426
+      discretion: 84
+      lecture: 289
+  - rang: 299
+    nom: Christine Isoart
+    id: christine-isoart
+    saisons: 1
+    titres: 0
+    score: -0.124
+    part_top: 0.0
+    rang_p05: 192
+    rang_p95: 435
+    rangs:
+      parcours: 226
+      epreuves: 450
+      discretion: 418
+      lecture: 149
+  - rang: 300
+    nom: Djamel Bouras
+    id: djamel-bouras
+    saisons: 1
+    titres: 0
+    score: -0.124
+    part_top: 0.0
+    rang_p05: 224
+    rang_p95: 351
+    rangs:
+      parcours: 351
+      epreuves: 179
+      discretion: 332
+      lecture: 279
+  - rang: 301
+    nom: Pascale Bodin
+    id: pascale-bodin
+    saisons: 1
+    titres: 0
+    score: -0.125
+    part_top: 0.0
+    rang_p05: 101
+    rang_p95: 452
+    rangs:
+      parcours: 477
+      epreuves: 76
+      discretion: 364
+      lecture: 331
+  - rang: 302
+    nom: Cécilia Siharaj
+    id: cecilia-siharaj
+    saisons: 1
+    titres: 0
+    score: -0.13
+    part_top: 0.0
+    rang_p05: 130
+    rang_p95: 454
+    rangs:
+      parcours: 84
+      epreuves: 439
+      discretion: 443
+      lecture: 352
+  - rang: 303
+    nom: Laëtitia Saphores
+    id: laetitia-saphores
+    saisons: 1
+    titres: 0
+    score: -0.141
+    part_top: 0.0
+    rang_p05: 95
+    rang_p95: 500
+    rangs:
+      parcours: 206
+      epreuves: 93
+      discretion: 154
+      lecture: 507
+  - rang: 304
+    nom: Ludivine Wiart
+    id: ludivine-wiart
+    saisons: 1
+    titres: 0
+    score: -0.141
+    part_top: 0.0
+    rang_p05: 106
+    rang_p95: 500
+    rangs:
+      parcours: 140
+      epreuves: 116
+      discretion: 174
+      lecture: 517
+  - rang: 305
+    nom: Richard Lecourt
+    id: richard-lecourt
+    saisons: 1
+    titres: 0
+    score: -0.142
+    part_top: 0.0
+    rang_p05: 128
+    rang_p95: 475
+    rangs:
+      parcours: 270
+      epreuves: 269
+      discretion: 485
+      lecture: 125
+  - rang: 306
+    nom: Steve Best
+    id: steve-best
+    saisons: 1
+    titres: 0
+    score: -0.143
+    part_top: 0.0
+    rang_p05: 206
+    rang_p95: 440
+    rangs:
+      parcours: 211
+      epreuves: 458
+      discretion: 254
+      lecture: 395
+  - rang: 307
+    nom: Steve Lemercier
+    id: steve-lemercier
+    saisons: 1
+    titres: 0
+    score: -0.145
+    part_top: 0.0
+    rang_p05: 182
+    rang_p95: 435
+    rangs:
+      parcours: 459
+      epreuves: 280
+      discretion: 201
+      lecture: 340
+  - rang: 308
+    nom: Jean-Charles Chatelus
+    id: jean-charles-chatelus
+    saisons: 1
+    titres: 0
+    score: -0.152
+    part_top: 0.0
+    rang_p05: 113
+    rang_p95: 508
+    rangs:
+      parcours: 74
+      epreuves: 515
+      discretion: 342
+      lecture: 297
+  - rang: 309
+    nom: Lola Potabes
+    id: lola-potabes
+    saisons: 1
+    titres: 0
+    score: -0.154
+    part_top: 0.0
+    rang_p05: 202
+    rang_p95: 426
+    rangs:
+      parcours: 447
+      epreuves: 224
+      discretion: 235
+      lecture: 309
+  - rang: 310
+    nom: Alain Ponton
+    id: alain-ponton
+    saisons: 1
+    titres: 0
+    score: -0.155
+    part_top: 0.0
+    rang_p05: 167
+    rang_p95: 476
+    rangs:
+      parcours: 235
+      epreuves: 479
+      discretion: 78
+      lecture: 356
+  - rang: 311
+    nom: Corentin Albertini
+    id: corentin-albertini
+    saisons: 1
+    titres: 0
+    score: -0.158
+    part_top: 0.0
+    rang_p05: 131
+    rang_p95: 474
+    rangs:
+      parcours: 183
+      epreuves: 470
+      discretion: 37
+      lecture: 442
+  - rang: 312
+    nom: Anthony Parra
+    id: anthony-parra
+    saisons: 1
+    titres: 0
+    score: -0.159
+    part_top: 0.0
+    rang_p05: 220
+    rang_p95: 405
+    rangs:
+      parcours: 420
+      epreuves: 135
+      discretion: 266
+      lecture: 252
+  - rang: 313
+    nom: Colin Mottas
+    id: colin-mottas
+    saisons: 1
+    titres: 0
+    score: -0.16
+    part_top: 0.0
+    rang_p05: 283
+    rang_p95: 387
+    rangs:
+      parcours: 285
+      epreuves: 397
+      discretion: 329
+      lecture: 275
+  - rang: 314
+    nom: Brice Martinet
+    id: brice-martinet
+    saisons: 1
+    titres: 0
+    score: -0.161
+    part_top: 0.0
+    rang_p05: 90
+    rang_p95: 494
+    rangs:
+      parcours: 47
+      epreuves: 149
+      discretion: 501
+      lecture: 351
+  - rang: 315
+    nom: Karine Iraundegui
+    id: karine-iraundegui
+    saisons: 1
+    titres: 0
+    score: -0.164
+    part_top: 0.0
+    rang_p05: 185
+    rang_p95: 451
+    rangs:
+      parcours: 457
+      epreuves: 372
+      discretion: 234
+      lecture: 186
+  - rang: 316
+    nom: Sabira
+    id: sabira
+    saisons: 1
+    titres: 0
+    score: -0.164
+    part_top: 0.0
+    rang_p05: 74
+    rang_p95: 484
+    rangs:
+      parcours: 465
+      epreuves: 54
+      discretion: 242
+      lecture: 472
+  - rang: 317
+    nom: Marvyn Leone
+    id: marvyn-leone
+    saisons: 1
+    titres: 0
+    score: -0.166
+    part_top: 0.0
+    rang_p05: 136
+    rang_p95: 477
+    rangs:
+      parcours: 257
+      epreuves: 328
+      discretion: 484
+      lecture: 110
+  - rang: 318
+    nom: Nicolas Van Brabandt
+    id: nicolas-van-brabandt
+    saisons: 1
+    titres: 0
+    score: -0.168
+    part_top: 0.0
+    rang_p05: 113
+    rang_p95: 496
+    rangs:
+      parcours: 185
+      epreuves: 120
+      discretion: 502
+      lecture: 119
+  - rang: 319
+    nom: Véronique Lobjoie
+    id: veronique-lobjoie
+    saisons: 1
+    titres: 0
+    score: -0.168
+    part_top: 0.0
+    rang_p05: 150
+    rang_p95: 496
+    rangs:
+      parcours: 131
+      epreuves: 510
+      discretion: 390
+      lecture: 227
+  - rang: 320
+    nom: Pierre Vaney
+    id: pierre-vaney
+    saisons: 1
+    titres: 0
+    score: -0.171
+    part_top: 0.0
+    rang_p05: 174
+    rang_p95: 482
+    rangs:
+      parcours: 162
+      epreuves: 492
+      discretion: 295
+      lecture: 354
+  - rang: 321
+    nom: Yannick Zachée
+    id: yannick-zachee
+    saisons: 1
+    titres: 0
+    score: -0.171
+    part_top: 0.0
+    rang_p05: 249
+    rang_p95: 433
+    rangs:
+      parcours: 252
+      epreuves: 459
+      discretion: 372
+      lecture: 349
+  - rang: 322
+    nom: Marius Torterat
+    id: marius-torterat
+    saisons: 1
+    titres: 0
+    score: -0.176
+    part_top: 0.0
+    rang_p05: 204
+    rang_p95: 441
+    rangs:
+      parcours: 464
+      epreuves: 241
+      discretion: 237
+      lecture: 316
+  - rang: 323
+    nom: Loïc Crespin
+    id: loic-crespin
+    saisons: 1
+    titres: 0
+    score: -0.177
+    part_top: 0.0
+    rang_p05: 136
+    rang_p95: 457
+    rangs:
+      parcours: 403
+      epreuves: 223
+      discretion: 448
+      lecture: 106
+  - rang: 324
+    nom: Gwendal Peizerat
+    id: gwendal-peizerat
+    saisons: 1
+    titres: 0
+    score: -0.18
+    part_top: 0.0
+    rang_p05: 241
+    rang_p95: 385
+    rangs:
+      parcours: 395
+      epreuves: 196
+      discretion: 341
+      lecture: 295
+  - rang: 325
+    nom: Pierre Cambon
+    id: pierre-cambon
+    saisons: 1
+    titres: 0
+    score: -0.181
+    part_top: 0.0
+    rang_p05: 146
+    rang_p95: 452
+    rangs:
+      parcours: 371
+      epreuves: 337
+      discretion: 449
+      lecture: 122
+  - rang: 326
+    nom: Marie-Laure Dagniaux
+    id: marie-laure-dagniaux
+    saisons: 1
+    titres: 0
+    score: -0.184
+    part_top: 0.0
+    rang_p05: 189
+    rang_p95: 455
+    rangs:
+      parcours: 445
+      epreuves: 404
+      discretion: 236
+      lecture: 192
+  - rang: 327
+    nom: Christian Chambon
+    id: christian-chambon
+    saisons: 1
+    titres: 0
+    score: -0.185
+    part_top: 0.0
+    rang_p05: 206
+    rang_p95: 448
+    rangs:
+      parcours: 469
+      epreuves: 169
+      discretion: 225
+      lecture: 272
+  - rang: 328
+    nom: Cédric Giosserand-Lucas
+    id: cedric-giosserand-lucas
+    saisons: 2
+    titres: 0
+    score: -0.189
+    part_top: 0.0
+    rang_p05: 211
+    rang_p95: 445
+    rangs:
+      parcours: 468
+      epreuves: 163
+      discretion: 257
+      lecture: 233
+  - rang: 329
+    nom: William Plancq
+    id: william-plancq
+    saisons: 1
+    titres: 0
+    score: -0.19
+    part_top: 0.0
+    rang_p05: 235
+    rang_p95: 428
+    rangs:
+      parcours: 442
+      epreuves: 347
+      discretion: 246
+      lecture: 348
+  - rang: 330
+    nom: Allan Rousseeuw
+    id: allan-rousseeuw
+    saisons: 1
+    titres: 0
+    score: -0.19
+    part_top: 0.0
+    rang_p05: 186
+    rang_p95: 467
+    rangs:
+      parcours: 497
+      epreuves: 130
+      discretion: 182
+      lecture: 248
+  - rang: 331
+    nom: Christina Chevry
+    id: christina-chevry
+    saisons: 3
+    titres: 1
+    score: -0.191
+    part_top: 0.0
+    rang_p05: 145
+    rang_p95: 479
+    rangs:
+      parcours: 121
+      epreuves: 362
+      discretion: 299
+      lecture: 484
+  - rang: 332
+    nom: Eric Peyrache
+    id: eric-peyrache
+    saisons: 1
+    titres: 0
+    score: -0.191
+    part_top: 0.0
+    rang_p05: 137
+    rang_p95: 494
+    rangs:
+      parcours: 166
+      epreuves: 498
+      discretion: 446
+      lecture: 94
+  - rang: 333
+    nom: Carine Cazals
+    id: carine-cazals
+    saisons: 1
+    titres: 0
+    score: -0.191
+    part_top: 0.0
+    rang_p05: 148
+    rang_p95: 489
+    rangs:
+      parcours: 182
+      epreuves: 122
+      discretion: 249
+      lecture: 494
+  - rang: 334
+    nom: Benoît Mahieux
+    id: benoit-mahieux
+    saisons: 1
+    titres: 0
+    score: -0.191
+    part_top: 0.0
+    rang_p05: 199
+    rang_p95: 427
+    rangs:
+      parcours: 374
+      epreuves: 144
+      discretion: 185
+      lecture: 401
+  - rang: 335
+    nom: Setha El Hajjami
+    id: setha-el-hajjami
+    saisons: 1
+    titres: 0
+    score: -0.192
+    part_top: 0.0
+    rang_p05: 299
+    rang_p95: 394
+    rangs:
+      parcours: 316
+      epreuves: 408
+      discretion: 367
+      lecture: 336
+  - rang: 336
+    nom: Nora Toubal
+    id: nora-toubal
+    saisons: 1
+    titres: 0
+    score: -0.196
+    part_top: 0.0
+    rang_p05: 211
+    rang_p95: 414
+    rangs:
+      parcours: 405
+      epreuves: 376
+      discretion: 385
+      lecture: 207
+  - rang: 337
+    nom: Nicolas Bellon
+    id: nicolas-bellon
+    saisons: 1
+    titres: 0
+    score: -0.197
+    part_top: 0.0
+    rang_p05: 158
+    rang_p95: 498
+    rangs:
+      parcours: 134
+      epreuves: 508
+      discretion: 362
+      lecture: 329
+  - rang: 338
+    nom: Xavier Lemasson
+    id: xavier-lemasson
+    saisons: 1
+    titres: 0
+    score: -0.198
+    part_top: 0.0
+    rang_p05: 179
+    rang_p95: 491
+    rangs:
+      parcours: 527
+      epreuves: 348
+      discretion: 247
+      lecture: 219
+  - rang: 339
+    nom: Charles Clément
+    id: charles-clement
+    saisons: 1
+    titres: 0
+    score: -0.2
+    part_top: 0.0
+    rang_p05: 175
+    rang_p95: 453
+    rangs:
+      parcours: 191
+      epreuves: 167
+      discretion: 453
+      lecture: 383
+  - rang: 340
+    nom: Mélanie Guyon
+    id: melanie-guyon
+    saisons: 1
+    titres: 0
+    score: -0.201
+    part_top: 0.0
+    rang_p05: 156
+    rang_p95: 448
+    rangs:
+      parcours: 413
+      epreuves: 405
+      discretion: 406
+      lecture: 113
+  - rang: 341
+    nom: Tugdual Paul
+    id: tugdual-paul
+    saisons: 1
+    titres: 0
+    score: -0.203
+    part_top: 0.0
+    rang_p05: 258
+    rang_p95: 420
+    rangs:
+      parcours: 281
+      epreuves: 344
+      discretion: 305
+      lecture: 434
+  - rang: 342
+    nom: Pauline Pourchaire
+    id: pauline-pourchaire
+    saisons: 1
+    titres: 0
+    score: -0.203
+    part_top: 0.0
+    rang_p05: 270
+    rang_p95: 439
+    rangs:
+      parcours: 263
+      epreuves: 457
+      discretion: 365
+      lecture: 333
+  - rang: 343
+    nom: Candice Cohen
+    id: candice-cohen
+    saisons: 1
+    titres: 0
+    score: -0.206
+    part_top: 0.0
+    rang_p05: 208
+    rang_p95: 459
+    rangs:
+      parcours: 481
+      epreuves: 152
+      discretion: 222
+      lecture: 259
+  - rang: 344
+    nom: Anne-Sophie Mounier
+    id: anne-sophie-mounier
+    saisons: 1
+    titres: 0
+    score: -0.207
+    part_top: 0.0
+    rang_p05: 231
+    rang_p95: 463
+    rangs:
+      parcours: 222
+      epreuves: 467
+      discretion: 319
+      lecture: 251
+  - rang: 345
+    nom: Valérie Gernigon
+    id: valerie-gernigon
+    saisons: 1
+    titres: 0
+    score: -0.211
+    part_top: 0.0
+    rang_p05: 228
+    rang_p95: 442
+    rangs:
+      parcours: 460
+      epreuves: 290
+      discretion: 282
+      lecture: 343
+  - rang: 346
+    nom: Stéphanie Tribot
+    id: stephanie-tribot
+    saisons: 1
+    titres: 0
+    score: -0.215
+    part_top: 0.0
+    rang_p05: 315
+    rang_p95: 373
+    rangs:
+      parcours: 355
+      epreuves: 380
+      discretion: 368
+      lecture: 338
+  - rang: 347
+    nom: Michel Jeandel
+    id: michel-jeandel
+    saisons: 1
+    titres: 0
+    score: -0.22
+    part_top: 0.0
+    rang_p05: 194
+    rang_p95: 448
+    rangs:
+      parcours: 454
+      epreuves: 253
+      discretion: 407
+      lecture: 203
+  - rang: 348
+    nom: Lau Émilien
+    id: lau-emilien
+    saisons: 1
+    titres: 0
+    score: -0.22
+    part_top: 0.0
+    rang_p05: 207
+    rang_p95: 455
+    rangs:
+      parcours: 321
+      epreuves: 326
+      discretion: 455
+      lecture: 154
+  - rang: 349
+    nom: Esteban Garcia-Mora
+    id: esteban-garcia-mora
+    saisons: 1
+    titres: 0
+    score: -0.224
+    part_top: 0.0
+    rang_p05: 160
+    rang_p95: 497
+    rangs:
+      parcours: 167
+      epreuves: 499
+      discretion: 141
+      lecture: 410
+  - rang: 350
+    nom: Michèle Valembois
+    id: michele-valembois
+    saisons: 1
+    titres: 0
+    score: -0.225
+    part_top: 0.0
+    rang_p05: 54
+    rang_p95: 515
+    rangs:
+      parcours: 208
+      epreuves: 123
+      discretion: 520
+      lecture: 26
+  - rang: 351
+    nom: Joaquina Glaud
+    id: joaquina-glaud
+    saisons: 1
+    titres: 0
+    score: -0.227
+    part_top: 0.0
+    rang_p05: 266
+    rang_p95: 442
+    rangs:
+      parcours: 249
+      epreuves: 452
+      discretion: 308
+      lecture: 365
+  - rang: 352
+    nom: Manu Delanghe
+    id: manu-delanghe
+    saisons: 1
+    titres: 0
+    score: -0.227
+    part_top: 0.0
+    rang_p05: 238
+    rang_p95: 423
+    rangs:
+      parcours: 310
+      epreuves: 228
+      discretion: 382
+      lecture: 418
+  - rang: 353
+    nom: Carinne Fossey Elka
+    id: carinne-fossey-elka
+    saisons: 1
+    titres: 0
+    score: -0.23
+    part_top: 0.0
+    rang_p05: 212
+    rang_p95: 476
+    rangs:
+      parcours: 491
+      epreuves: 310
+      discretion: 186
+      lecture: 261
+  - rang: 354
+    nom: Chloé Vavasseur
+    id: chloe-vavasseur
+    saisons: 1
+    titres: 0
+    score: -0.234
+    part_top: 0.0
+    rang_p05: 220
+    rang_p95: 441
+    rangs:
+      parcours: 336
+      epreuves: 396
+      discretion: 107
+      lecture: 406
+  - rang: 355
+    nom: Maxime Tournoux
+    id: maxime-tournoux
+    saisons: 1
+    titres: 0
+    score: -0.236
+    part_top: 0.0
+    rang_p05: 214
+    rang_p95: 486
+    rangs:
+      parcours: 200
+      epreuves: 490
+      discretion: 357
+      lecture: 320
+  - rang: 356
+    nom: Virginie Mercadal Pioli
+    id: virginie-mercadal-pioli
+    saisons: 1
+    titres: 0
+    score: -0.236
+    part_top: 0.0
+    rang_p05: 199
+    rang_p95: 449
+    rangs:
+      parcours: 422
+      epreuves: 293
+      discretion: 429
+      lecture: 218
+  - rang: 357
+    nom: Guillaume Noël
+    id: guillaume-noel
+    saisons: 1
+    titres: 0
+    score: -0.239
+    part_top: 0.0
+    rang_p05: 232
+    rang_p95: 459
+    rangs:
+      parcours: 475
+      epreuves: 195
+      discretion: 276
+      lecture: 294
+  - rang: 358
+    nom: Candice Rousset
+    id: candice-rousset
+    saisons: 1
+    titres: 0
+    score: -0.239
+    part_top: 0.0
+    rang_p05: 255
+    rang_p95: 428
+    rangs:
+      parcours: 437
+      epreuves: 153
+      discretion: 324
+      lecture: 260
+  - rang: 359
+    nom: Morgane Rodriguès
+    id: morgane-rodrigues
+    saisons: 1
+    titres: 0
+    score: -0.24
+    part_top: 0.0
+    rang_p05: 252
+    rang_p95: 444
+    rangs:
+      parcours: 419
+      epreuves: 406
+      discretion: 241
+      lecture: 323
+  - rang: 360
+    nom: Marie-Cécile Maréchal
+    id: marie-cecile-marechal
+    saisons: 1
+    titres: 0
+    score: -0.242
+    part_top: 0.0
+    rang_p05: 266
+    rang_p95: 394
+    rangs:
+      parcours: 388
+      epreuves: 234
+      discretion: 383
+      lecture: 368
+  - rang: 361
+    nom: Philippe Bordier
+    id: philippe-bordier
+    saisons: 2
+    titres: 1
+    score: -0.243
+    part_top: 0.0
+    rang_p05: 131
+    rang_p95: 521
+    rangs:
+      parcours: 132
+      epreuves: 528
+      discretion: 130
+      lecture: 380
+  - rang: 362
+    nom: Cindy Sulpice-Gonzalez
+    id: cindy-sulpice-gonzalez
+    saisons: 1
+    titres: 0
+    score: -0.244
+    part_top: 0.0
+    rang_p05: 203
+    rang_p95: 508
+    rangs:
+      parcours: 216
+      epreuves: 511
+      discretion: 261
+      lecture: 223
+  - rang: 363
+    nom: Flavio Soares Tavares
+    id: flavio-soares-tavares
+    saisons: 1
+    titres: 0
+    score: -0.244
+    part_top: 0.0
+    rang_p05: 159
+    rang_p95: 490
+    rangs:
+      parcours: 154
+      epreuves: 297
+      discretion: 301
+      lecture: 490
+  - rang: 364
+    nom: Myriam Desvergne
+    id: myriam-desvergne
+    saisons: 1
+    titres: 0
+    score: -0.244
+    part_top: 0.0
+    rang_p05: 233
+    rang_p95: 464
+    rangs:
+      parcours: 482
+      epreuves: 256
+      discretion: 280
+      lecture: 324
+  - rang: 365
+    nom: Vivien Escouflaire
+    id: vivien-escouflaire
+    saisons: 1
+    titres: 0
+    score: -0.244
+    part_top: 0.0
+    rang_p05: 233
+    rang_p95: 464
+    rangs:
+      parcours: 483
+      epreuves: 294
+      discretion: 283
+      lecture: 347
+  - rang: 366
+    nom: François Zabalo
+    id: francois-zabalo
+    saisons: 1
+    titres: 0
+    score: -0.248
+    part_top: 0.0
+    rang_p05: 211
+    rang_p95: 489
+    rangs:
+      parcours: 512
+      epreuves: 187
+      discretion: 227
+      lecture: 287
+  - rang: 367
+    nom: Marie-Anne Queniart
+    id: marie-anne-queniart
+    saisons: 1
+    titres: 0
+    score: -0.249
+    part_top: 0.0
+    rang_p05: 235
+    rang_p95: 467
+    rangs:
+      parcours: 489
+      epreuves: 232
+      discretion: 278
+      lecture: 311
+  - rang: 368
+    nom: Jean-Luc Duboscq
+    id: jean-luc-duboscq
+    saisons: 1
+    titres: 0
+    score: -0.25
+    part_top: 0.0
+    rang_p05: 247
+    rang_p95: 435
+    rangs:
+      parcours: 376
+      epreuves: 204
+      discretion: 430
+      lecture: 235
+  - rang: 369
+    nom: Sabine Ollivier
+    id: sabine-ollivier
+    saisons: 1
+    titres: 0
+    score: -0.251
+    part_top: 0.0
+    rang_p05: 236
+    rang_p95: 470
+    rangs:
+      parcours: 495
+      epreuves: 272
+      discretion: 281
+      lecture: 334
+  - rang: 370
+    nom: Jessica Joullié
+    id: jessica-joullie
+    saisons: 1
+    titres: 0
+    score: -0.251
+    part_top: 0.0
+    rang_p05: 227
+    rang_p95: 436
+    rangs:
+      parcours: 387
+      epreuves: 400
+      discretion: 403
+      lecture: 183
+  - rang: 371
+    nom: Alicia Bouly
+    id: alicia-bouly
+    saisons: 1
+    titres: 0
+    score: -0.252
+    part_top: 0.0
+    rang_p05: 238
+    rang_p95: 472
+    rangs:
+      parcours: 496
+      epreuves: 129
+      discretion: 264
+      lecture: 247
+  - rang: 372
+    nom: Lisa Legouverneur
+    id: lisa-legouverneur
+    saisons: 1
+    titres: 0
+    score: -0.253
+    part_top: 0.0
+    rang_p05: 188
+    rang_p95: 491
+    rangs:
+      parcours: 518
+      epreuves: 222
+      discretion: 352
+      lecture: 189
+  - rang: 373
+    nom: Mélanie Boimare
+    id: melanie-boimare
+    saisons: 1
+    titres: 0
+    score: -0.253
+    part_top: 0.0
+    rang_p05: 188
+    rang_p95: 491
+    rangs:
+      parcours: 521
+      epreuves: 249
+      discretion: 358
+      lecture: 201
+  - rang: 374
+    nom: Jérémy Raffin
+    id: jeremy-raffin
+    saisons: 2
+    titres: 0
+    score: -0.254
+    part_top: 0.0
+    rang_p05: 95
+    rang_p95: 494
+    rangs:
+      parcours: 23
+      epreuves: 494
+      discretion: 452
+      lecture: 387
+  - rang: 375
+    nom: Ari Bentolila
+    id: ari-bentolila
+    saisons: 1
+    titres: 0
+    score: -0.255
+    part_top: 0.0
+    rang_p05: 239
+    rang_p95: 476
+    rangs:
+      parcours: 498
+      epreuves: 136
+      discretion: 267
+      lecture: 253
+  - rang: 376
+    nom: Carole Collado
+    id: carole-collado
+    saisons: 1
+    titres: 0
+    score: -0.255
+    part_top: 0.0
+    rang_p05: 239
+    rang_p95: 475
+    rangs:
+      parcours: 499
+      epreuves: 154
+      discretion: 269
+      lecture: 262
+  - rang: 377
+    nom: Alexandre Delaunay
+    id: alexandre-delaunay
+    saisons: 1
+    titres: 0
+    score: -0.256
+    part_top: 0.0
+    rang_p05: 276
+    rang_p95: 452
+    rangs:
+      parcours: 455
+      epreuves: 305
+      discretion: 263
+      lecture: 245
+  - rang: 378
+    nom: Alexandre Amico
+    id: alexandre-amico
+    saisons: 1
+    titres: 0
+    score: -0.262
+    part_top: 0.0
+    rang_p05: 222
+    rang_p95: 458
+    rangs:
+      parcours: 299
+      epreuves: 126
+      discretion: 286
+      lecture: 451
+  - rang: 379
+    nom: Jody Favier
+    id: jody-favier
+    saisons: 1
+    titres: 0
+    score: -0.262
+    part_top: 0.0
+    rang_p05: 246
+    rang_p95: 469
+    rangs:
+      parcours: 224
+      epreuves: 472
+      discretion: 309
+      lecture: 366
+  - rang: 380
+    nom: Julien Mairesse
+    id: julien-mairesse
+    saisons: 1
+    titres: 0
+    score: -0.263
+    part_top: 0.0
+    rang_p05: 261
+    rang_p95: 443
+    rangs:
+      parcours: 453
+      epreuves: 214
+      discretion: 347
+      lecture: 304
+  - rang: 381
+    nom: Sophie Chevalier
+    id: sophie-chevalier
+    saisons: 1
+    titres: 0
+    score: -0.264
+    part_top: 0.0
+    rang_p05: 188
+    rang_p95: 489
+    rangs:
+      parcours: 259
+      epreuves: 486
+      discretion: 72
+      lecture: 429
+  - rang: 382
+    nom: Gabin Peillon
+    id: gabin-peillon
+    saisons: 1
+    titres: 0
+    score: -0.264
+    part_top: 0.0
+    rang_p05: 236
+    rang_p95: 446
+    rangs:
+      parcours: 410
+      epreuves: 192
+      discretion: 228
+      lecture: 413
+  - rang: 383
+    nom: Huw Francis
+    id: huw-francis
+    saisons: 1
+    titres: 0
+    score: -0.264
+    part_top: 0.0
+    rang_p05: 236
+    rang_p95: 445
+    rangs:
+      parcours: 412
+      epreuves: 201
+      discretion: 232
+      lecture: 415
+  - rang: 384
+    nom: Corinne Bargoin Samuelian
+    id: corinne-bargoin-samuelian
+    saisons: 1
+    titres: 0
+    score: -0.265
+    part_top: 0.0
+    rang_p05: 184
+    rang_p95: 481
+    rangs:
+      parcours: 294
+      epreuves: 173
+      discretion: 480
+      lecture: 173
+  - rang: 385
+    nom: Julien Castro
+    id: julien-castro
+    saisons: 1
+    titres: 0
+    score: -0.265
+    part_top: 0.0
+    rang_p05: 266
+    rang_p95: 446
+    rangs:
+      parcours: 255
+      epreuves: 401
+      discretion: 289
+      lecture: 444
+  - rang: 386
+    nom: Pauline Bonneil
+    id: pauline-bonneil
+    saisons: 1
+    titres: 0
+    score: -0.266
+    part_top: 0.0
+    rang_p05: 92
+    rang_p95: 516
+    rangs:
+      parcours: 82
+      epreuves: 518
+      discretion: 47
+      lecture: 481
+  - rang: 387
+    nom: Victor Rollinger
+    id: victor-rollinger
+    saisons: 1
+    titres: 0
+    score: -0.267
+    part_top: 0.0
+    rang_p05: 257
+    rang_p95: 461
+    rangs:
+      parcours: 441
+      epreuves: 414
+      discretion: 245
+      lecture: 346
+  - rang: 388
+    nom: Nadine De Carpentry
+    id: nadine-de-carpentry
+    saisons: 1
+    titres: 0
+    score: -0.268
+    part_top: 0.0
+    rang_p05: 214
+    rang_p95: 457
+    rangs:
+      parcours: 434
+      epreuves: 260
+      discretion: 196
+      lecture: 424
+  - rang: 389
+    nom: Sandrine Bouzekri
+    id: sandrine-bouzekri
+    saisons: 1
+    titres: 0
+    score: -0.268
+    part_top: 0.0
+    rang_p05: 214
+    rang_p95: 457
+    rangs:
+      parcours: 435
+      epreuves: 274
+      discretion: 200
+      lecture: 426
+  - rang: 390
+    nom: Jacky Forteron
+    id: jacky-forteron
+    saisons: 1
+    titres: 0
+    score: -0.269
+    part_top: 0.0
+    rang_p05: 217
+    rang_p95: 463
+    rangs:
+      parcours: 337
+      epreuves: 323
+      discretion: 148
+      lecture: 461
+  - rang: 391
+    nom: Laurent Mischkind
+    id: laurent-mischkind
+    saisons: 1
+    titres: 0
+    score: -0.271
+    part_top: 0.0
+    rang_p05: 278
+    rang_p95: 410
+    rangs:
+      parcours: 402
+      epreuves: 219
+      discretion: 381
+      lecture: 367
+  - rang: 392
+    nom: Élodie Faelens
+    id: elodie-faelens
+    saisons: 1
+    titres: 0
+    score: -0.275
+    part_top: 0.0
+    rang_p05: 265
+    rang_p95: 452
+    rangs:
+      parcours: 461
+      epreuves: 181
+      discretion: 333
+      lecture: 280
+  - rang: 393
+    nom: Géraldine Doyen
+    id: geraldine-doyen
+    saisons: 1
+    titres: 0
+    score: -0.276
+    part_top: 0.0
+    rang_p05: 180
+    rang_p95: 482
+    rangs:
+      parcours: 237
+      epreuves: 451
+      discretion: 62
+      lecture: 479
+  - rang: 394
+    nom: Benjamin Breerette
+    id: benjamin-breerette
+    saisons: 1
+    titres: 0
+    score: -0.278
+    part_top: 0.0
+    rang_p05: 330
+    rang_p95: 418
+    rangs:
+      parcours: 396
+      epreuves: 360
+      discretion: 322
+      lecture: 257
+  - rang: 395
+    nom: Maria Beccaris
+    id: maria-beccaris
+    saisons: 1
+    titres: 0
+    score: -0.282
+    part_top: 0.0
+    rang_p05: 142
+    rang_p95: 492
+    rangs:
+      parcours: 331
+      epreuves: 231
+      discretion: 493
+      lecture: 109
+  - rang: 396
+    nom: Thomas Plisson
+    id: thomas-plisson
+    saisons: 1
+    titres: 0
+    score: -0.282
+    part_top: 0.0
+    rang_p05: 214
+    rang_p95: 467
+    rangs:
+      parcours: 186
+      epreuves: 464
+      discretion: 386
+      lecture: 433
+  - rang: 397
+    nom: Aude Réant
+    id: aude-reant
+    saisons: 1
+    titres: 0
+    score: -0.287
+    part_top: 0.0
+    rang_p05: 245
+    rang_p95: 494
+    rangs:
+      parcours: 504
+      epreuves: 137
+      discretion: 268
+      lecture: 254
+  - rang: 398
+    nom: Charlie Vincent-Mussard
+    id: charlie-vincent-mussard
+    saisons: 1
+    titres: 0
+    score: -0.287
+    part_top: 0.0
+    rang_p05: 245
+    rang_p95: 494
+    rangs:
+      parcours: 509
+      epreuves: 168
+      discretion: 272
+      lecture: 271
+  - rang: 399
+    nom: Claudia Chatel
+    id: claudia-chatel
+    saisons: 1
+    titres: 0
+    score: -0.287
+    part_top: 0.0
+    rang_p05: 245
+    rang_p95: 494
+    rangs:
+      parcours: 510
+      epreuves: 172
+      discretion: 273
+      lecture: 273
+  - rang: 400
+    nom: Joëlle Bourlier
+    id: joelle-bourlier
+    saisons: 1
+    titres: 0
+    score: -0.287
+    part_top: 0.0
+    rang_p05: 245
+    rang_p95: 494
+    rangs:
+      parcours: 515
+      epreuves: 211
+      discretion: 277
+      lecture: 302
+  - rang: 401
+    nom: Marine Alves
+    id: marine-alves
+    saisons: 1
+    titres: 0
+    score: -0.287
+    part_top: 0.0
+    rang_p05: 245
+    rang_p95: 494
+    rangs:
+      parcours: 520
+      epreuves: 239
+      discretion: 279
+      lecture: 315
+  - rang: 402
+    nom: Fabrice Pietrzak
+    id: fabrice-pietrzak
+    saisons: 1
+    titres: 0
+    score: -0.287
+    part_top: 0.0
+    rang_p05: 121
+    rang_p95: 508
+    rangs:
+      parcours: 158
+      epreuves: 416
+      discretion: 24
+      lecture: 513
+  - rang: 403
+    nom: Ella Gbezan
+    id: ella-gbezan
+    saisons: 1
+    titres: 0
+    score: -0.288
+    part_top: 0.0
+    rang_p05: 136
+    rang_p95: 492
+    rangs:
+      parcours: 94
+      epreuves: 441
+      discretion: 494
+      lecture: 224
+  - rang: 404
+    nom: Aubin Bligny
+    id: aubin-bligny
+    saisons: 1
+    titres: 0
+    score: -0.292
+    part_top: 0.0
+    rang_p05: 164
+    rang_p95: 480
+    rangs:
+      parcours: 352
+      epreuves: 359
+      discretion: 465
+      lecture: 84
+  - rang: 405
+    nom: Frank Lebœuf
+    id: frank-leb-uf
+    saisons: 1
+    titres: 0
+    score: -0.292
+    part_top: 0.0
+    rang_p05: 268
+    rang_p95: 463
+    rangs:
+      parcours: 473
+      epreuves: 188
+      discretion: 337
+      lecture: 288
+  - rang: 406
+    nom: Emin Luka
+    id: emin-luka
+    saisons: 1
+    titres: 0
+    score: -0.294
+    part_top: 0.0
+    rang_p05: 280
+    rang_p95: 480
+    rangs:
+      parcours: 487
+      epreuves: 318
+      discretion: 275
+      lecture: 281
+  - rang: 407
+    nom: Benoît Fourmont
+    id: benoit-fourmont
+    saisons: 1
+    titres: 0
+    score: -0.294
+    part_top: 0.0
+    rang_p05: 211
+    rang_p95: 469
+    rangs:
+      parcours: 373
+      epreuves: 142
+      discretion: 184
+      lecture: 454
+  - rang: 408
+    nom: Matteo Real
+    id: matteo-real
+    saisons: 1
+    titres: 0
+    score: -0.298
+    part_top: 0.0
+    rang_p05: 316
+    rang_p95: 446
+    rangs:
+      parcours: 448
+      epreuves: 330
+      discretion: 356
+      lecture: 319
+  - rang: 409
+    nom: Brice Chauvinc
+    id: brice-chauvinc
+    saisons: 1
+    titres: 0
+    score: -0.3
+    part_top: 0.0
+    rang_p05: 202
+    rang_p95: 494
+    rangs:
+      parcours: 278
+      epreuves: 480
+      discretion: 59
+      lecture: 402
+  - rang: 410
+    nom: Mohamed Siaaliti
+    id: mohamed-siaaliti
+    saisons: 1
+    titres: 0
+    score: -0.302
+    part_top: 0.0
+    rang_p05: 168
+    rang_p95: 513
+    rangs:
+      parcours: 209
+      epreuves: 513
+      discretion: 69
+      lecture: 423
+  - rang: 411
+    nom: Rudy Noël
+    id: rudy-noel
+    saisons: 1
+    titres: 0
+    score: -0.304
+    part_top: 0.0
+    rang_p05: 228
+    rang_p95: 469
+    rangs:
+      parcours: 323
+      epreuves: 377
+      discretion: 463
+      lecture: 209
+  - rang: 412
+    nom: Samira Aït-Brahim
+    id: samira-ait-brahim
+    saisons: 1
+    titres: 0
+    score: -0.309
+    part_top: 0.0
+    rang_p05: 335
+    rang_p95: 442
+    rangs:
+      parcours: 426
+      epreuves: 378
+      discretion: 366
+      lecture: 335
+  - rang: 413
+    nom: Joseph Farret
+    id: joseph-farret
+    saisons: 1
+    titres: 0
+    score: -0.31
+    part_top: 0.0
+    rang_p05: 271
+    rang_p95: 475
+    rangs:
+      parcours: 488
+      epreuves: 212
+      discretion: 346
+      lecture: 303
+  - rang: 414
+    nom: Jean-Bernard Hauton-Arnaud
+    id: jean-bernard-hauton-arnaud
+    saisons: 2
+    titres: 0
+    score: -0.31
+    part_top: 0.0
+    rang_p05: 215
+    rang_p95: 472
+    rangs:
+      parcours: 189
+      epreuves: 444
+      discretion: 313
+      lecture: 447
+  - rang: 415
+    nom: Delphine Bruyère
+    id: delphine-bruyere
+    saisons: 1
+    titres: 0
+    score: -0.312
+    part_top: 0.0
+    rang_p05: 273
+    rang_p95: 478
+    rangs:
+      parcours: 492
+      epreuves: 177
+      discretion: 331
+      lecture: 277
+  - rang: 416
+    nom: Marie Oheix
+    id: marie-oheix
+    saisons: 1
+    titres: 0
+    score: -0.312
+    part_top: 0.0
+    rang_p05: 273
+    rang_p95: 478
+    rangs:
+      parcours: 494
+      epreuves: 235
+      discretion: 355
+      lecture: 313
+  - rang: 417
+    nom: Camille Sold
+    id: camille-sold
+    saisons: 1
+    titres: 0
+    score: -0.316
+    part_top: 0.0
+    rang_p05: 161
+    rang_p95: 506
+    rangs:
+      parcours: 215
+      epreuves: 151
+      discretion: 208
+      lecture: 512
+  - rang: 418
+    nom: Alain Garcia
+    id: alain-garcia
+    saisons: 1
+    titres: 0
+    score: -0.317
+    part_top: 0.0
+    rang_p05: 239
+    rang_p95: 462
+    rangs:
+      parcours: 349
+      epreuves: 391
+      discretion: 444
+      lecture: 158
+  - rang: 419
+    nom: Harry Levy
+    id: harry-levy
+    saisons: 1
+    titres: 0
+    score: -0.324
+    part_top: 0.0
+    rang_p05: 284
+    rang_p95: 441
+    rangs:
+      parcours: 368
+      epreuves: 198
+      discretion: 379
+      lecture: 414
+  - rang: 420
+    nom: Maxim Iarkov
+    id: maxim-iarkov
+    saisons: 1
+    titres: 0
+    score: -0.324
+    part_top: 0.0
+    rang_p05: 195
+    rang_p95: 496
+    rangs:
+      parcours: 199
+      epreuves: 484
+      discretion: 159
+      lecture: 467
+  - rang: 421
+    nom: Françoise Avignon
+    id: francoise-avignon
+    saisons: 1
+    titres: 0
+    score: -0.326
+    part_top: 0.0
+    rang_p05: 179
+    rang_p95: 484
+    rangs:
+      parcours: 144
+      epreuves: 418
+      discretion: 408
+      lecture: 482
+  - rang: 422
+    nom: Franck (Le Totem Maudit)
+    id: franck-le-totem-maudit
+    saisons: 1
+    titres: 0
+    score: -0.33
+    part_top: 0.0
+    rang_p05: 319
+    rang_p95: 468
+    rangs:
+      parcours: 470
+      epreuves: 320
+      discretion: 335
+      lecture: 284
+  - rang: 423
+    nom: Laurent Boudes
+    id: laurent-boudes
+    saisons: 1
+    titres: 0
+    score: -0.336
+    part_top: 0.0
+    rang_p05: 182
+    rang_p95: 497
+    rangs:
+      parcours: 175
+      epreuves: 434
+      discretion: 218
+      lecture: 496
+  - rang: 424
+    nom: Clémence Dubent
+    id: clemence-dubent
+    saisons: 1
+    titres: 0
+    score: -0.337
+    part_top: 0.0
+    rang_p05: 297
+    rang_p95: 492
+    rangs:
+      parcours: 486
+      epreuves: 364
+      discretion: 274
+      lecture: 274
+  - rang: 425
+    nom: Christophe Pendon
+    id: christophe-pendon
+    saisons: 1
+    titres: 0
+    score: -0.34
+    part_top: 0.0
+    rang_p05: 172
+    rang_p95: 482
+    rangs:
+      parcours: 165
+      epreuves: 170
+      discretion: 454
+      lecture: 477
+  - rang: 426
+    nom: Théotime Bernardin
+    id: theotime-bernardin
+    saisons: 1
+    titres: 0
+    score: -0.34
+    part_top: 0.0
+    rang_p05: 224
+    rang_p95: 480
+    rangs:
+      parcours: 415
+      epreuves: 285
+      discretion: 202
+      lecture: 474
+  - rang: 427
+    nom: Christine Mayonnade
+    id: christine-mayonnade
+    saisons: 1
+    titres: 0
+    score: -0.344
+    part_top: 0.0
+    rang_p05: 263
+    rang_p95: 472
+    rangs:
+      parcours: 343
+      epreuves: 363
+      discretion: 189
+      lecture: 455
+  - rang: 428
+    nom: Marguerite Leblanc
+    id: marguerite-leblanc
+    saisons: 1
+    titres: 0
+    score: -0.347
+    part_top: 0.0
+    rang_p05: 111
+    rang_p95: 513
+    rangs:
+      parcours: 108
+      epreuves: 385
+      discretion: 518
+      lecture: 108
+  - rang: 429
+    nom: Louis-Laurent Léger
+    id: louis-laurent-leger
+    saisons: 1
+    titres: 0
+    score: -0.348
+    part_top: 0.0
+    rang_p05: 128
+    rang_p95: 517
+    rangs:
+      parcours: 213
+      epreuves: 226
+      discretion: 66
+      lecture: 522
+  - rang: 430
+    nom: Betty Lise
+    id: betty-lise
+    saisons: 1
+    titres: 0
+    score: -0.348
+    part_top: 0.0
+    rang_p05: 282
+    rang_p95: 503
+    rangs:
+      parcours: 506
+      epreuves: 147
+      discretion: 323
+      lecture: 258
+  - rang: 431
+    nom: Cécile Guy
+    id: cecile-guy
+    saisons: 1
+    titres: 0
+    score: -0.348
+    part_top: 0.0
+    rang_p05: 283
+    rang_p95: 503
+    rangs:
+      parcours: 507
+      epreuves: 162
+      discretion: 326
+      lecture: 267
+  - rang: 432
+    nom: Cynthian Steinbach
+    id: cynthian-steinbach
+    saisons: 1
+    titres: 0
+    score: -0.348
+    part_top: 0.0
+    rang_p05: 283
+    rang_p95: 504
+    rangs:
+      parcours: 511
+      epreuves: 174
+      discretion: 330
+      lecture: 276
+  - rang: 433
+    nom: Frédérique Brugiroux
+    id: frederique-brugiroux
+    saisons: 1
+    titres: 0
+    score: -0.348
+    part_top: 0.0
+    rang_p05: 282
+    rang_p95: 504
+    rangs:
+      parcours: 514
+      epreuves: 190
+      discretion: 338
+      lecture: 291
+  - rang: 434
+    nom: Karine Amorsi
+    id: karine-amorsi
+    saisons: 1
+    titres: 0
+    score: -0.348
+    part_top: 0.0
+    rang_p05: 283
+    rang_p95: 504
+    rangs:
+      parcours: 516
+      epreuves: 217
+      discretion: 348
+      lecture: 305
+  - rang: 435
+    nom: Marie Boyer
+    id: marie-boyer
+    saisons: 1
+    titres: 0
+    score: -0.348
+    part_top: 0.0
+    rang_p05: 282
+    rang_p95: 504
+    rangs:
+      parcours: 519
+      epreuves: 233
+      discretion: 354
+      lecture: 312
+  - rang: 436
+    nom: Nelson Parente
+    id: nelson-parente
+    saisons: 1
+    titres: 0
+    score: -0.348
+    part_top: 0.0
+    rang_p05: 282
+    rang_p95: 504
+    rangs:
+      parcours: 523
+      epreuves: 263
+      discretion: 361
+      lecture: 328
+  - rang: 437
+    nom: Steve Grenier
+    id: steve-grenier
+    saisons: 1
+    titres: 0
+    score: -0.348
+    part_top: 0.0
+    rang_p05: 282
+    rang_p95: 504
+    rangs:
+      parcours: 524
+      epreuves: 279
+      discretion: 369
+      lecture: 339
+  - rang: 438
+    nom: Sylviane Simonnet
+    id: sylviane-simonnet
+    saisons: 1
+    titres: 0
+    score: -0.348
+    part_top: 0.0
+    rang_p05: 282
+    rang_p95: 503
+    rangs:
+      parcours: 525
+      epreuves: 281
+      discretion: 370
+      lecture: 341
+  - rang: 439
+    nom: Cyril Rouanne
+    id: cyril-rouanne
+    saisons: 1
+    titres: 0
+    score: -0.355
+    part_top: 0.0
+    rang_p05: 158
+    rang_p95: 497
+    rangs:
+      parcours: 127
+      epreuves: 477
+      discretion: 492
+      lecture: 152
+  - rang: 440
+    nom: Céline Dufrenoy
+    id: celine-dufrenoy
+    saisons: 1
+    titres: 0
+    score: -0.362
+    part_top: 0.0
+    rang_p05: 321
+    rang_p95: 490
+    rangs:
+      parcours: 500
+      epreuves: 312
+      discretion: 328
+      lecture: 270
+  - rang: 441
+    nom: Martin Burrus
+    id: martin-burrus
+    saisons: 1
+    titres: 0
+    score: -0.362
+    part_top: 0.0
+    rang_p05: 251
+    rang_p95: 479
+    rangs:
+      parcours: 379
+      epreuves: 375
+      discretion: 157
+      lecture: 466
+  - rang: 442
+    nom: Sarah Diawara
+    id: sarah-diawara
+    saisons: 1
+    titres: 0
+    score: -0.365
+    part_top: 0.0
+    rang_p05: 349
+    rang_p95: 445
+    rangs:
+      parcours: 366
+      epreuves: 342
+      discretion: 431
+      lecture: 375
+  - rang: 443
+    nom: Amel Fatnassi
+    id: amel-fatnassi
+    saisons: 2
+    titres: 1
+    score: -0.376
+    part_top: 0.0
+    rang_p05: 167
+    rang_p95: 508
+    rangs:
+      parcours: 253
+      epreuves: 111
+      discretion: 255
+      lecture: 514
+  - rang: 444
+    nom: Ali Jaffar
+    id: ali-jaffar
+    saisons: 1
+    titres: 0
+    score: -0.376
+    part_top: 0.0
+    rang_p05: 270
+    rang_p95: 516
+    rangs:
+      parcours: 502
+      epreuves: 393
+      discretion: 219
+      lecture: 246
+  - rang: 445
+    nom: Nico Felger
+    id: nico-felger
+    saisons: 1
+    titres: 0
+    score: -0.381
+    part_top: 0.0
+    rang_p05: 93
+    rang_p95: 516
+    rangs:
+      parcours: 427
+      epreuves: 63
+      discretion: 199
+      lecture: 510
+  - rang: 446
+    nom: Tania Cakarevic
+    id: tania-cakarevic
+    saisons: 1
+    titres: 0
+    score: -0.386
+    part_top: 0.0
+    rang_p05: 90
+    rang_p95: 517
+    rangs:
+      parcours: 52
+      epreuves: 478
+      discretion: 517
+      lecture: 131
+  - rang: 447
+    nom: Célia Litzellmann
+    id: celia-litzellmann
+    saisons: 1
+    titres: 0
+    score: -0.393
+    part_top: 0.0
+    rang_p05: 324
+    rang_p95: 512
+    rangs:
+      parcours: 508
+      epreuves: 311
+      discretion: 327
+      lecture: 269
+  - rang: 448
+    nom: Lili Gasnier
+    id: lili-gasnier
+    saisons: 1
+    titres: 0
+    score: -0.393
+    part_top: 0.0
+    rang_p05: 324
+    rang_p95: 512
+    rangs:
+      parcours: 517
+      epreuves: 327
+      discretion: 351
+      lecture: 308
+  - rang: 449
+    nom: Jade Correa
+    id: jade-correa
+    saisons: 1
+    titres: 0
+    score: -0.396
+    part_top: 0.0
+    rang_p05: 140
+    rang_p95: 518
+    rangs:
+      parcours: 246
+      epreuves: 299
+      discretion: 15
+      lecture: 521
+  - rang: 450
+    nom: Gégé Icardi
+    id: gege-icardi
+    saisons: 1
+    titres: 0
+    score: -0.398
+    part_top: 0.0
+    rang_p05: 256
+    rang_p95: 490
+    rangs:
+      parcours: 430
+      epreuves: 194
+      discretion: 229
+      lecture: 458
+  - rang: 451
+    nom: Frédéric Baudet
+    id: frederic-baudet
+    saisons: 1
+    titres: 0
+    score: -0.403
+    part_top: 0.0
+    rang_p05: 304
+    rang_p95: 456
+    rangs:
+      parcours: 357
+      epreuves: 189
+      discretion: 426
+      lecture: 412
+  - rang: 452
+    nom: Mathieu Huguin
+    id: mathieu-huguin
+    saisons: 1
+    titres: 0
+    score: -0.405
+    part_top: 0.0
+    rang_p05: 218
+    rang_p95: 499
+    rangs:
+      parcours: 480
+      epreuves: 245
+      discretion: 458
+      lecture: 197
+  - rang: 453
+    nom: Aliséa Lecomte
+    id: alisea-lecomte
+    saisons: 1
+    titres: 0
+    score: -0.41
+    part_top: 0.0
+    rang_p05: 237
+    rang_p95: 512
+    rangs:
+      parcours: 503
+      epreuves: 307
+      discretion: 425
+      lecture: 162
+  - rang: 454
+    nom: Catherine Barnier
+    id: catherine-barnier
+    saisons: 1
+    titres: 0
+    score: -0.41
+    part_top: 0.0
+    rang_p05: 291
+    rang_p95: 499
+    rangs:
+      parcours: 485
+      epreuves: 159
+      discretion: 271
+      lecture: 403
+  - rang: 455
+    nom: Alexandra Pouillon
+    id: alexandra-pouillon
+    saisons: 1
+    titres: 0
+    score: -0.41
+    part_top: 0.0
+    rang_p05: 166
+    rang_p95: 510
+    rangs:
+      parcours: 137
+      epreuves: 504
+      discretion: 475
+      lecture: 145
+  - rang: 456
+    nom: Emmanuelle Boisseau
+    id: emmanuelle-boisseau
+    saisons: 1
+    titres: 0
+    score: -0.427
+    part_top: 0.0
+    rang_p05: 294
+    rang_p95: 487
+    rangs:
+      parcours: 314
+      epreuves: 319
+      discretion: 481
+      lecture: 282
+  - rang: 457
+    nom: Alexandra Pharisien
+    id: alexandra-pharisien
+    saisons: 1
+    titres: 0
+    score: -0.436
+    part_top: 0.0
+    rang_p05: 176
+    rang_p95: 490
+    rangs:
+      parcours: 266
+      epreuves: 100
+      discretion: 476
+      lecture: 437
+  - rang: 458
+    nom: Kader Rebaï
+    id: kader-rebai
+    saisons: 1
+    titres: 0
+    score: -0.444
+    part_top: 0.0
+    rang_p05: 109
+    rang_p95: 523
+    rangs:
+      parcours: 122
+      epreuves: 215
+      discretion: 526
+      lecture: 136
+  - rang: 459
+    nom: Fabrice Giordano
+    id: fabrice-giordano
+    saisons: 1
+    titres: 0
+    score: -0.444
+    part_top: 0.0
+    rang_p05: 328
+    rang_p95: 463
+    rangs:
+      parcours: 286
+      epreuves: 366
+      discretion: 447
+      lecture: 411
+  - rang: 460
+    nom: Adonis Koupaki
+    id: adonis-koupaki
+    saisons: 1
+    titres: 0
+    score: -0.447
+    part_top: 0.0
+    rang_p05: 291
+    rang_p95: 496
+    rangs:
+      parcours: 304
+      epreuves: 303
+      discretion: 284
+      lecture: 487
+  - rang: 461
+    nom: Yannick Delalleau
+    id: yannick-delalleau
+    saisons: 1
+    titres: 0
+    score: -0.447
+    part_top: 0.0
+    rang_p05: 195
+    rang_p95: 511
+    rangs:
+      parcours: 247
+      epreuves: 475
+      discretion: 29
+      lecture: 497
+  - rang: 462
+    nom: Isabelle Fidanza
+    id: isabelle-fidanza
+    saisons: 1
+    titres: 0
+    score: -0.473
+    part_top: 0.0
+    rang_p05: 320
+    rang_p95: 481
+    rangs:
+      parcours: 375
+      epreuves: 202
+      discretion: 402
+      lecture: 460
+  - rang: 463
+    nom: Catherine Ehret-Mader
+    id: catherine-ehret-mader
+    saisons: 2
+    titres: 0
+    score: -0.475
+    part_top: 0.0
+    rang_p05: 81
+    rang_p95: 527
+    rangs:
+      parcours: 147
+      epreuves: 526
+      discretion: 506
+      lecture: 30
+  - rang: 464
+    nom: Émilie Tybot
+    id: emilie-tybot
+    saisons: 1
+    titres: 0
+    score: -0.485
+    part_top: 0.0
+    rang_p05: 300
+    rang_p95: 507
+    rangs:
+      parcours: 462
+      epreuves: 317
+      discretion: 226
+      lecture: 457
+  - rang: 465
+    nom: Zakariya Bougoudouima
+    id: zakariya-bougoudouima
+    saisons: 1
+    titres: 0
+    score: -0.493
+    part_top: 0.0
+    rang_p05: 213
+    rang_p95: 508
+    rangs:
+      parcours: 170
+      epreuves: 460
+      discretion: 316
+      lecture: 501
+  - rang: 466
+    nom: Mehdi Bounab-Lamiral
+    id: mehdi-bounab-lamiral
+    saisons: 1
+    titres: 0
+    score: -0.494
+    part_top: 0.0
+    rang_p05: 327
+    rang_p95: 494
+    rangs:
+      parcours: 424
+      epreuves: 247
+      discretion: 384
+      lecture: 468
+  - rang: 467
+    nom: Françoise Fournier-Grigis
+    id: francoise-fournier-grigis
+    saisons: 1
+    titres: 0
+    score: -0.495
+    part_top: 0.0
+    rang_p05: 256
+    rang_p95: 516
+    rangs:
+      parcours: 513
+      epreuves: 321
+      discretion: 457
+      lecture: 178
+  - rang: 468
+    nom: Hervé Comte
+    id: herve-comte
+    saisons: 1
+    titres: 0
+    score: -0.498
+    part_top: 0.0
+    rang_p05: 235
+    rang_p95: 512
+    rangs:
+      parcours: 330
+      epreuves: 200
+      discretion: 231
+      lecture: 504
+  - rang: 469
+    nom: Adrien Torrin
+    id: adrien-torrin
+    saisons: 1
+    titres: 0
+    score: -0.511
+    part_top: 0.0
+    rang_p05: 295
+    rang_p95: 512
+    rangs:
+      parcours: 234
+      epreuves: 495
+      discretion: 306
+      lecture: 436
+  - rang: 470
+    nom: Lolo Facione
+    id: lolo-facione
+    saisons: 1
+    titres: 0
+    score: -0.512
+    part_top: 0.0
+    rang_p05: 69
+    rang_p95: 523
+    rangs:
+      parcours: 359
+      epreuves: 225
+      discretion: 522
+      lecture: 24
+  - rang: 471
+    nom: Amandine Schmitt
+    id: amandine-schmitt
+    saisons: 1
+    titres: 0
+    score: -0.513
+    part_top: 0.0
+    rang_p05: 304
+    rang_p95: 511
+    rangs:
+      parcours: 484
+      epreuves: 131
+      discretion: 265
+      lecture: 452
+  - rang: 472
+    nom: Jean-Pierre Pigato
+    id: jean-pierre-pigato
+    saisons: 1
+    titres: 0
+    score: -0.52
+    part_top: 0.0
+    rang_p05: 316
+    rang_p95: 494
+    rangs:
+      parcours: 362
+      epreuves: 206
+      discretion: 482
+      lecture: 363
+  - rang: 473
+    nom: David Murail
+    id: david-murail
+    saisons: 1
+    titres: 0
+    score: -0.52
+    part_top: 0.0
+    rang_p05: 194
+    rang_p95: 519
+    rangs:
+      parcours: 151
+      epreuves: 507
+      discretion: 251
+      lecture: 489
+  - rang: 474
+    nom: Sophie Le Nestic Sabattier
+    id: sophie-le-nestic-sabattier
+    saisons: 1
+    titres: 0
+    score: -0.544
+    part_top: 0.0
+    rang_p05: 355
+    rang_p95: 498
+    rangs:
+      parcours: 458
+      epreuves: 278
+      discretion: 428
+      lecture: 430
+  - rang: 475
+    nom: Magali Sevenier
+    id: magali-sevenier
+    saisons: 1
+    titres: 0
+    score: -0.553
+    part_top: 0.0
+    rang_p05: 87
+    rang_p95: 525
+    rangs:
+      parcours: 128
+      epreuves: 483
+      discretion: 523
+      lecture: 34
+  - rang: 476
+    nom: Élodie Saleder
+    id: elodie-saleder
+    saisons: 1
+    titres: 0
+    score: -0.572
+    part_top: 0.0
+    rang_p05: 245
+    rang_p95: 518
+    rangs:
+      parcours: 401
+      epreuves: 182
+      discretion: 190
+      lecture: 503
+  - rang: 477
+    nom: Laurence Corbellotti
+    id: laurence-corbellotti
+    saisons: 1
+    titres: 0
+    score: -0.576
+    part_top: 0.0
+    rang_p05: 346
+    rang_p95: 514
+    rangs:
+      parcours: 493
+      epreuves: 218
+      discretion: 349
+      lecture: 463
+  - rang: 478
+    nom: Jonathan Guez
+    id: jonathan-guez
+    saisons: 1
+    titres: 0
+    score: -0.584
+    part_top: 0.0
+    rang_p05: 196
+    rang_p95: 509
+    rangs:
+      parcours: 377
+      epreuves: 371
+      discretion: 508
+      lecture: 104
+  - rang: 479
+    nom: Julie Navarro-Camilleri
+    id: julie-navarro-camilleri
+    saisons: 2
+    titres: 0
+    score: -0.586
+    part_top: 0.0
+    rang_p05: 142
+    rang_p95: 525
+    rangs:
+      parcours: 443
+      epreuves: 488
+      discretion: 474
+      lecture: 44
+  - rang: 480
+    nom: Freddy Bolzer
+    id: freddy-bolzer
+    saisons: 1
+    titres: 0
+    score: -0.592
+    part_top: 0.0
+    rang_p05: 156
+    rang_p95: 514
+    rangs:
+      parcours: 67
+      epreuves: 442
+      discretion: 469
+      lecture: 498
+  - rang: 481
+    nom: Sophie Guilloix
+    id: sophie-guilloix
+    saisons: 1
+    titres: 0
+    score: -0.595
+    part_top: 0.0
+    rang_p05: 361
+    rang_p95: 500
+    rangs:
+      parcours: 421
+      epreuves: 277
+      discretion: 427
+      lecture: 473
+  - rang: 482
+    nom: Ava Maisini
+    id: ava-maisini
+    saisons: 1
+    titres: 0
+    score: -0.597
+    part_top: 0.0
+    rang_p05: 184
+    rang_p95: 522
+    rangs:
+      parcours: 133
+      epreuves: 505
+      discretion: 214
+      lecture: 511
+  - rang: 483
+    nom: Céline Parat-Yeghiayan
+    id: celine-parat-yeghiayan
+    saisons: 1
+    titres: 0
+    score: -0.598
+    part_top: 0.0
+    rang_p05: 366
+    rang_p95: 499
+    rangs:
+      parcours: 438
+      epreuves: 164
+      discretion: 456
+      lecture: 404
+  - rang: 484
+    nom: Julie Debever
+    id: julie-debever
+    saisons: 1
+    titres: 0
+    score: -0.599
+    part_top: 0.0
+    rang_p05: 136
+    rang_p95: 527
+    rangs:
+      parcours: 95
+      epreuves: 527
+      discretion: 153
+      lecture: 506
+  - rang: 485
+    nom: Marie-France Schieber
+    id: marie-france-schieber
+    saisons: 1
+    titres: 0
+    score: -0.599
+    part_top: 0.0
+    rang_p05: 367
+    rang_p95: 491
+    rangs:
+      parcours: 315
+      epreuves: 403
+      discretion: 434
+      lecture: 480
+  - rang: 486
+    nom: Mama El Fayed
+    id: mama-el-fayed
+    saisons: 1
+    titres: 0
+    score: -0.61
+    part_top: 0.0
+    rang_p05: 293
+    rang_p95: 514
+    rangs:
+      parcours: 476
+      epreuves: 374
+      discretion: 483
+      lecture: 190
+  - rang: 487
+    nom: Babeth Delettre
+    id: babeth-delettre
+    saisons: 1
+    titres: 0
+    score: -0.612
+    part_top: 0.0
+    rang_p05: 354
+    rang_p95: 521
+    rangs:
+      parcours: 505
+      epreuves: 140
+      discretion: 320
+      lecture: 453
+  - rang: 488
+    nom: Myriam Zenasni
+    id: myriam-zenasni
+    saisons: 1
+    titres: 0
+    score: -0.612
+    part_top: 0.0
+    rang_p05: 354
+    rang_p95: 521
+    rangs:
+      parcours: 522
+      epreuves: 259
+      discretion: 360
+      lecture: 470
+  - rang: 489
+    nom: Claire Rolet
+    id: claire-rolet
+    saisons: 1
+    titres: 0
+    score: -0.616
+    part_top: 0.0
+    rang_p05: 231
+    rang_p95: 511
+    rangs:
+      parcours: 392
+      epreuves: 171
+      discretion: 509
+      lecture: 172
+  - rang: 490
+    nom: Sandra Acabado
+    id: sandra-acabado
+    saisons: 2
+    titres: 0
+    score: -0.617
+    part_top: 0.0
+    rang_p05: 370
+    rang_p95: 528
+    rangs:
+      parcours: 529
+      epreuves: 340
+      discretion: 399
+      lecture: 372
+  - rang: 491
+    nom: May Peitavi
+    id: may-peitavi
+    saisons: 1
+    titres: 0
+    score: -0.623
+    part_top: 0.0
+    rang_p05: 223
+    rang_p95: 514
+    rangs:
+      parcours: 360
+      epreuves: 246
+      discretion: 513
+      lecture: 199
+  - rang: 492
+    nom: Jesta Hillmann
+    id: jesta-hillmann
+    saisons: 1
+    titres: 0
+    score: -0.629
+    part_top: 0.0
+    rang_p05: 120
+    rang_p95: 524
+    rangs:
+      parcours: 51
+      epreuves: 445
+      discretion: 314
+      lecture: 525
+  - rang: 493
+    nom: Raphaële Navarro
+    id: raphaele-navarro
+    saisons: 2
+    titres: 0
+    score: -0.63
+    part_top: 0.0
+    rang_p05: 287
+    rang_p95: 506
+    rangs:
+      parcours: 282
+      epreuves: 268
+      discretion: 504
+      lecture: 394
+  - rang: 494
+    nom: Hugo Van Aertryck
+    id: hugo-van-aertryck
+    saisons: 1
+    titres: 0
+    score: -0.637
+    part_top: 0.0
+    rang_p05: 176
+    rang_p95: 516
+    rangs:
+      parcours: 115
+      epreuves: 351
+      discretion: 495
+      lecture: 499
+  - rang: 495
+    nom: Estelle Fabrice
+    id: estelle-fabrice
+    saisons: 1
+    titres: 0
+    score: -0.648
+    part_top: 0.0
+    rang_p05: 241
+    rang_p95: 514
+    rangs:
+      parcours: 423
+      epreuves: 183
+      discretion: 507
+      lecture: 176
+  - rang: 496
+    nom: Olivier Moenaert
+    id: olivier-moenaert
+    saisons: 2
+    titres: 0
+    score: -0.651
+    part_top: 0.0
+    rang_p05: 434
+    rang_p95: 502
+    rangs:
+      parcours: 407
+      epreuves: 407
+      discretion: 424
+      lecture: 448
+  - rang: 497
+    nom: Sara Tallon
+    id: sara-tallon
+    saisons: 3
+    titres: 0
+    score: -0.652
+    part_top: 0.0
+    rang_p05: 276
+    rang_p95: 531
+    rangs:
+      parcours: 531
+      epreuves: 341
+      discretion: 212
+      lecture: 374
+  - rang: 498
+    nom: Charlène Hoffness
+    id: charlene-hoffness
+    saisons: 1
+    titres: 0
+    score: -0.665
+    part_top: 0.0
+    rang_p05: 292
+    rang_p95: 510
+    rangs:
+      parcours: 225
+      epreuves: 383
+      discretion: 460
+      lecture: 495
+  - rang: 499
+    nom: Caroline Ledos
+    id: caroline-ledos
+    saisons: 1
+    titres: 0
+    score: -0.675
+    part_top: 0.0
+    rang_p05: 179
+    rang_p95: 526
+    rangs:
+      parcours: 93
+      epreuves: 525
+      discretion: 488
+      lecture: 378
+  - rang: 500
+    nom: Benoît Jorion-Fahy
+    id: benoit-jorion-fahy
+    saisons: 1
+    titres: 0
+    score: -0.676
+    part_top: 0.0
+    rang_p05: 290
+    rang_p95: 523
+    rangs:
+      parcours: 456
+      epreuves: 143
+      discretion: 221
+      lecture: 502
+  - rang: 501
+    nom: Kelly Beaugrand
+    id: kelly-beaugrand
+    saisons: 1
+    titres: 0
+    score: -0.68
+    part_top: 0.0
+    rang_p05: 211
+    rang_p95: 519
+    rangs:
+      parcours: 155
+      epreuves: 473
+      discretion: 515
+      lecture: 236
+  - rang: 502
+    nom: Catherine Brun
+    id: catherine-brun
+    saisons: 1
+    titres: 0
+    score: -0.687
+    part_top: 0.0
+    rang_p05: 301
+    rang_p95: 515
+    rangs:
+      parcours: 203
+      epreuves: 497
+      discretion: 459
+      lecture: 440
+  - rang: 503
+    nom: Océane Montenegro
+    id: oceane-montenegro
+    saisons: 1
+    titres: 0
+    score: -0.689
+    part_top: 0.0
+    rang_p05: 110
+    rang_p95: 525
+    rangs:
+      parcours: 264
+      epreuves: 456
+      discretion: 525
+      lecture: 35
+  - rang: 504
+    nom: Jean-Luc Fiorina
+    id: jean-luc-fiorina
+    saisons: 2
+    titres: 0
+    score: -0.72
+    part_top: 0.0
+    rang_p05: 302
+    rang_p95: 530
+    rangs:
+      parcours: 530
+      epreuves: 205
+      discretion: 233
+      lecture: 462
+  - rang: 505
+    nom: Freddy Boucher
+    id: freddy-boucher
+    saisons: 5
+    titres: 0
+    score: -0.721
+    part_top: 0.0
+    rang_p05: 377
+    rang_p95: 519
+    rangs:
+      parcours: 361
+      epreuves: 353
+      discretion: 394
+      lecture: 515
+  - rang: 506
+    nom: Hakim Djellali
+    id: hakim-djellali
+    saisons: 1
+    titres: 0
+    score: -0.738
+    part_top: 0.0
+    rang_p05: 286
+    rang_p95: 522
+    rangs:
+      parcours: 195
+      epreuves: 512
+      discretion: 477
+      lecture: 385
+  - rang: 507
+    nom: Chloé Chaize
+    id: chloe-chaize
+    saisons: 1
+    titres: 0
+    score: -0.777
+    part_top: 0.0
+    rang_p05: 225
+    rang_p95: 521
+    rangs:
+      parcours: 408
+      epreuves: 395
+      discretion: 516
+      lecture: 92
+  - rang: 508
+    nom: Régis Colombier
+    id: regis-colombier
+    saisons: 1
+    titres: 0
+    score: -0.784
+    part_top: 0.0
+    rang_p05: 245
+    rang_p95: 527
+    rangs:
+      parcours: 163
+      epreuves: 523
+      discretion: 297
+      lecture: 518
+  - rang: 509
+    nom: Xavier Vançon
+    id: xavier-vancon
+    saisons: 1
+    titres: 0
+    score: -0.801
+    part_top: 0.0
+    rang_p05: 437
+    rang_p95: 516
+    rangs:
+      parcours: 390
+      epreuves: 415
+      discretion: 432
+      lecture: 493
+  - rang: 510
+    nom: Alexandra Denikine
+    id: alexandra-denikine
+    saisons: 1
+    titres: 0
+    score: -0.804
+    part_top: 0.0
+    rang_p05: 355
+    rang_p95: 524
+    rangs:
+      parcours: 501
+      epreuves: 125
+      discretion: 498
+      lecture: 243
+  - rang: 511
+    nom: Nathalie Suhard
+    id: nathalie-suhard
+    saisons: 1
+    titres: 0
+    score: -0.817
+    part_top: 0.0
+    rang_p05: 299
+    rang_p95: 522
+    rangs:
+      parcours: 467
+      epreuves: 334
+      discretion: 514
+      lecture: 205
+  - rang: 512
+    nom: Virginie Jarry
+    id: virginie-jarry
+    saisons: 1
+    titres: 0
+    score: -0.822
+    part_top: 0.0
+    rang_p05: 290
+    rang_p95: 521
+    rangs:
+      parcours: 194
+      epreuves: 493
+      discretion: 505
+      lecture: 396
+  - rang: 513
+    nom: Véronique Lambert
+    id: veronique-lambert
+    saisons: 1
+    titres: 0
+    score: -0.865
+    part_top: 0.0
+    rang_p05: 447
+    rang_p95: 513
+    rangs:
+      parcours: 372
+      epreuves: 413
+      discretion: 486
+      lecture: 475
+  - rang: 514
+    nom: Karima Neggaz
+    id: karima-neggaz
+    saisons: 2
+    titres: 0
+    score: -0.879
+    part_top: 0.0
+    rang_p05: 78
+    rang_p95: 531
+    rangs:
+      parcours: 326
+      epreuves: 37
+      discretion: 310
+      lecture: 531
+  - rang: 515
+    nom: Bernard Deniaud
+    id: bernard-deniaud
+    saisons: 1
+    titres: 0
+    score: -0.916
+    part_top: 0.0
+    rang_p05: 181
+    rang_p95: 526
+    rangs:
+      parcours: 114
+      epreuves: 146
+      discretion: 500
+      lecture: 523
+  - rang: 516
+    nom: Mickaël Kalfallah
+    id: mickael-kalfallah
+    saisons: 1
+    titres: 0
+    score: -0.927
+    part_top: 0.0
+    rang_p05: 413
+    rang_p95: 522
+    rangs:
+      parcours: 490
+      epreuves: 254
+      discretion: 499
+      lecture: 421
+  - rang: 517
+    nom: Marie Vilaseca
+    id: marie-vilaseca
+    saisons: 1
+    titres: 0
+    score: -0.935
+    part_top: 0.0
+    rang_p05: 283
+    rang_p95: 526
+    rangs:
+      parcours: 471
+      epreuves: 238
+      discretion: 521
+      lecture: 193
+  - rang: 518
+    nom: Mélissa Pierru
+    id: melissa-pierru
+    saisons: 1
+    titres: 0
+    score: -0.946
+    part_top: 0.0
+    rang_p05: 230
+    rang_p95: 527
+    rangs:
+      parcours: 334
+      epreuves: 251
+      discretion: 527
+      lecture: 202
+  - rang: 519
+    nom: Fabienne Lefebvre-Trehoux
+    id: fabienne-lefebvre-trehoux
+    saisons: 2
+    titres: 0
+    score: -0.975
+    part_top: 0.0
+    rang_p05: 355
+    rang_p95: 526
+    rangs:
+      parcours: 341
+      epreuves: 184
+      discretion: 422
+      lecture: 524
+  - rang: 520
+    nom: Valérie Tartacède-Bollaert
+    id: valerie-tartacede-bollaert
+    saisons: 1
+    titres: 0
+    score: -1.01
+    part_top: 0.0
+    rang_p05: 414
+    rang_p95: 528
+    rangs:
+      parcours: 526
+      epreuves: 412
+      discretion: 512
+      lecture: 344
+  - rang: 521
+    nom: Namadia Thaï Thaï
+    id: namadia-thai-thai
+    saisons: 2
+    titres: 0
+    score: -1.014
+    part_top: 0.0
+    rang_p05: 445
+    rang_p95: 526
+    rangs:
+      parcours: 367
+      epreuves: 491
+      discretion: 497
+      lecture: 392
+  - rang: 522
+    nom: Maud Garnier
+    id: maud-garnier
+    saisons: 2
+    titres: 0
+    score: -1.017
+    part_top: 0.1
+    rang_p05: 140
+    rang_p95: 530
+    rangs:
+      parcours: 16
+      epreuves: 530
+      discretion: 472
+      lecture: 520
+  - rang: 523
+    nom: Aurélie Gasser
+    id: aurelie-gasser
+    saisons: 1
+    titres: 0
+    score: -1.026
+    part_top: 0.0
+    rang_p05: 295
+    rang_p95: 528
+    rangs:
+      parcours: 187
+      epreuves: 468
+      discretion: 412
+      lecture: 526
+  - rang: 524
+    nom: Irya Cissé
+    id: irya-cisse
+    saisons: 1
+    titres: 0
+    score: -1.056
+    part_top: 0.0
+    rang_p05: 181
+    rang_p95: 529
+    rangs:
+      parcours: 450
+      epreuves: 72
+      discretion: 528
+      lecture: 296
+  - rang: 525
+    nom: Marine Plissonneau
+    id: marine-plissonneau
+    saisons: 2
+    titres: 0
+    score: -1.082
+    part_top: 0.0
+    rang_p05: 352
+    rang_p95: 530
+    rangs:
+      parcours: 436
+      epreuves: 454
+      discretion: 114
+      lecture: 527
+  - rang: 526
+    nom: Elodie Migeal
+    id: elodie-migeal
+    saisons: 1
+    titres: 0
+    score: -1.119
+    part_top: 0.0
+    rang_p05: 469
+    rang_p95: 524
+    rangs:
+      parcours: 429
+      epreuves: 365
+      discretion: 510
+      lecture: 456
+  - rang: 527
+    nom: Lionel Dubouchet
+    id: lionel-dubouchet
+    saisons: 1
+    titres: 0
+    score: -1.119
+    part_top: 0.0
+    rang_p05: 468
+    rang_p95: 524
+    rangs:
+      parcours: 431
+      epreuves: 373
+      discretion: 511
+      lecture: 464
+  - rang: 528
+    nom: Myriam Modde
+    id: myriam-modde
+    saisons: 1
+    titres: 0
+    score: -1.304
+    part_top: 0.0
+    rang_p05: 223
+    rang_p95: 529
+    rangs:
+      parcours: 141
+      epreuves: 258
+      discretion: 529
+      lecture: 500
+  - rang: 529
+    nom: Patricia Morel
+    id: patricia-morel
+    saisons: 2
+    titres: 0
+    score: -1.938
+    part_top: 0.0
+    rang_p05: 515
+    rang_p95: 531
+    rangs:
+      parcours: 290
+      epreuves: 501
+      discretion: 519
+      lecture: 529
+  - rang: 530
+    nom: Rodolphe Assi
+    id: rodolphe-assi
+    saisons: 1
+    titres: 0
+    score: -2.379
+    part_top: 0.0
+    rang_p05: 361
+    rang_p95: 531
+    rangs:
+      parcours: 153
+      epreuves: 270
+      discretion: 530
+      lecture: 530
+  - rang: 531
+    nom: Marie Parmentier
+    id: marie-parmentier
+    saisons: 1
+    titres: 0
+    score: -2.992
+    part_top: 0.0
+    rang_p05: 498
+    rang_p95: 531
+    rangs:
+      parcours: 378
+      epreuves: 237
+      discretion: 531
+      lecture: 508
   palmares:
     auc: 0.852
     rang_median_vainqueurs: 59
@@ -14838,7 +22129,7 @@ modeles:
       tirages: 10000
       lecture: 'Un écart observé plus PETIT que l''attendu est la signature d''un quota : le hasard, lui,
         produit des castings déséquilibrés de temps en temps.'
-      nulle: &id022
+      nulle: &id054
         bornes:
         - 0.2019
         - 2.9519
@@ -14888,7 +22179,7 @@ modeles:
       tirages: 10000
       lecture: Rebattre les aventuriers entre saisons donne l'écart-type général. Un écart observé PLUS
         GRAND veut dire qu'on place exprès un jeune et un ancien dans chaque casting.
-      nulle: &id023
+      nulle: &id055
         bornes:
         - 9.21
         - 10.008
@@ -14938,7 +22229,7 @@ modeles:
       tirages: 10000
       lecture: On compte, pour chaque saison, le nombre de familles de métiers représentées. Un total
         observé PLUS GRAND veut dire qu'on veille à n'oublier aucune famille.
-      nulle: &id024
+      nulle: &id056
         bornes:
         - 224.95
         - 270.05
@@ -14988,7 +22279,7 @@ modeles:
       tirages: 10000
       lecture: Distance entre le mélange de profils d'une saison et le mélange général. Un observé PLUS
         PETIT que l'attendu veut dire que les saisons se ressemblent plus que le hasard ne l'expliquerait.
-      nulle: &id025
+      nulle: &id057
         bornes:
         - 0.1377
         - 0.4058
@@ -15039,7 +22330,7 @@ modeles:
       tirages: 10000
       lecture: On rebat les bandeaux à l'intérieur de chaque saison. Un écart observé PLUS PETIT que l'attendu
         veut dire que les tribus sont composées à l'équilibre, pas tirées au sort.
-      nulle: &id026
+      nulle: &id058
         bornes:
         - 6.8021
         - 34.3229
@@ -15090,7 +22381,7 @@ modeles:
       tirages: 10000
       lecture: 'Même méthode, sur l''âge moyen de chaque bandeau. Un écart observé PLUS GRAND que l''attendu
         veut dire l''inverse d''un équilibre : deux tribus construites pour différer.'
-      nulle: &id027
+      nulle: &id059
         bornes:
         - 1.5354
         - 6.486
@@ -15140,7 +22431,7 @@ modeles:
       tirages: 10000
       lecture: La médiane ignore les valeurs extrêmes. Si elle ne s'écarte pas, c'est que l'écart moyen
         tient à quelques éditions et non à une règle de composition.
-      nulle: &id028
+      nulle: &id060
         bornes:
         - 0.5875
         - 6.9125
@@ -15259,7 +22550,7 @@ modeles:
       tirages: 10000
       lecture: Le modèle classe les candidats d'une saison ; on relève la place qu'il donne à celui qui
         a gagné. Plus BAS que l'attendu veut dire qu'une part du résultat se joue au recrutement.
-      nulle: &id029
+      nulle: &id061
         bornes:
         - 5.5798
         - 14.824
@@ -15553,7 +22844,7 @@ modeles:
       rang_victoires: 11
       force: 2.56
       victoires: 4
-    - &id010
+    - &id042
       nom: Gilles De Baere
       rang_force: 8
       rang_victoires: 41
@@ -15589,14 +22880,14 @@ modeles:
       rang_victoires: 6
       force: 1.56
       victoires: 5
-    - &id011
+    - &id043
       nom: Jade Handi
       rang_force: 48
       rang_victoires: 4
       force: 1.34
       victoires: 6
-    plus_forte_montee: *id010
-    plus_forte_chute: *id011
+    plus_forte_montee: *id042
+    plus_forte_chute: *id043
   force_et_jeu:
     effectif: 309
     voix:
@@ -15837,7 +23128,7 @@ modeles:
       tirages: 2000
       lecture: 'Écart entre deux probabilités : voter ensemble après avoir voté ensemble, et voter ensemble
         après avoir voté séparément. À zéro, chaque conseil repart de zéro et il n''y a pas d''alliance.'
-      nulle: &id056
+      nulle: &id088
         bornes:
         - -5.414
         - 34.8411
@@ -15983,7 +23274,7 @@ modeles:
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
         : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-      nulle: &id030
+      nulle: &id062
         bornes:
         - 44.4474
         - 49.7844
@@ -16035,7 +23326,7 @@ modeles:
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
         : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-      nulle: &id031
+      nulle: &id063
         bornes:
         - 11.266
         - 11.9017
@@ -16087,7 +23378,7 @@ modeles:
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
         : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-      nulle: &id032
+      nulle: &id064
         bornes:
         - 8.5984
         - 11.5633
@@ -16139,7 +23430,7 @@ modeles:
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
         : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-      nulle: &id033
+      nulle: &id065
         bornes:
         - 57.8949
         - 67.442
@@ -16191,7 +23482,7 @@ modeles:
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
         : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-      nulle: &id034
+      nulle: &id066
         bornes:
         - 1.29
         - 3.0462
@@ -16243,7 +23534,7 @@ modeles:
       tirages: 4000
       lecture: Mesuré sur les seuls conseils réunissant plusieurs bandeaux. Un observé SOUS l'attendu
         veut dire que le camp de départ protège encore, longtemps après avoir cessé d'exister.
-      nulle: &id035
+      nulle: &id067
         bornes:
         - 30.0452
         - 45.3617
@@ -16299,7 +23590,7 @@ modeles:
       tirages: 4000
       lecture: Part des bulletins visant quelqu'un avec qui l'auteur avait déjà voté. Un observé SOUS
         l'attendu veut dire que l'alliance protège ; au-dessus, qu'elle expose.
-      nulle: &id058
+      nulle: &id090
         bornes:
         - 50.3709
         - 62.6106
@@ -16484,7 +23775,7 @@ modeles:
       tirages: 10000
       lecture: Nombre de fois où deux sorties consécutives viennent du même bandeau de départ. Un observé
         AU-DESSUS de l'attendu est la signature d'un camp démonté un par un.
-      nulle: &id059
+      nulle: &id091
         bornes:
         - 57.5
         - 112.5
@@ -16879,7 +24170,7 @@ modeles:
     - annee: 2011
       titre: Raja Ampat
       gain: 51.94
-    - &id013
+    - &id045
       annee: 2012
       titre: Malaisie
       gain: 54.33
@@ -16898,7 +24189,7 @@ modeles:
     - annee: 2017
       titre: Fidji
       gain: 51.36
-    - &id012
+    - &id044
       annee: 2019
       titre: La Guerre des chefs
       gain: 57.13
@@ -16918,7 +24209,7 @@ modeles:
       titre: Les Chasseurs d'immunité
       gain: 41.89
     exaequo:
-    - *id012
+    - *id044
     nb_exaequo: 1
     nb_proches: 6
     avance: 4.9
@@ -16926,7 +24217,7 @@ modeles:
       debut: 2011
       fin: 2020
       etendue: 9
-    second: *id013
+    second: *id045
     test:
       cle: rupture
       libelle: La rupture de régime
@@ -16941,7 +24232,7 @@ modeles:
       lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
         dans un ordre au hasard. Une coupure existe toujours ; la question est de savoir si celle-ci vaut
         mieux que n'importe quelle autre.
-      nulle: &id057
+      nulle: &id089
         bornes:
         - 0.4586
         - 59.8339
@@ -16983,7 +24274,7 @@ modeles:
   audience:
     saisons: 33
     serie:
-    - &id014
+    - &id046
       saison: s01
       annee: 2001
       titre: Les Aventuriers de Koh-Lanta
@@ -17054,7 +24345,7 @@ modeles:
       pdm: 39.5
       jour: Vendredi
       effectif: 16
-    - &id021
+    - &id053
       saison: s08
       annee: 2008
       titre: Caramoan
@@ -17075,7 +24366,7 @@ modeles:
       pdm: 32.1
       jour: Vendredi
       effectif: 18
-    - &id016
+    - &id048
       saison: sp1
       annee: 2009
       titre: Le Retour des héros
@@ -17236,7 +24527,7 @@ modeles:
       pdm: 26.1
       jour: Vendredi
       effectif: 20
-    - &id017
+    - &id049
       saison: s22
       annee: 2021
       titre: Les Armes secrètes
@@ -17247,7 +24538,7 @@ modeles:
       pdm: 25.6
       jour: Vendredi
       effectif: 21
-    - &id018
+    - &id050
       saison: sp7
       annee: 2021
       titre: La Légende
@@ -17308,7 +24599,7 @@ modeles:
       pdm: 17.6
       jour: Mardi
       effectif: 24
-    - &id015
+    - &id047
       saison: s28
       annee: 2026
       titre: Les Reliques du destin
@@ -17319,13 +24610,13 @@ modeles:
       pdm: 16.5
       jour: Mardi
       effectif: 20
-    premiere: *id014
-    derniere: *id015
-    sommet: *id016
+    premiere: *id046
+    derniere: *id047
+    sommet: *id048
     chute: 70.4
     annee_rupture: 2021
-    derniere_avant: *id017
-    premiere_apres: *id018
+    derniere_avant: *id049
+    premiere_apres: *id050
     avant: 26
     apres: 7
     moyenne_avant: 6264885
@@ -17397,11 +24688,11 @@ modeles:
     - annee: 2021
       titre: Les Armes secrètes
       gain: 19.09
-    - &id019
+    - &id051
       annee: 2021
       titre: La Légende
       gain: 20.68
-    - &id020
+    - &id052
       annee: 2022
       titre: Le Totem maudit
       gain: 19.75
@@ -17412,7 +24703,7 @@ modeles:
       titre: Les Chasseurs d'immunité
       gain: 14.36
     exaequo:
-    - *id019
+    - *id051
     nb_exaequo: 1
     nb_proches: 3
     avance: 4.5
@@ -17420,11 +24711,11 @@ modeles:
       debut: 2021
       fin: 2022
       etendue: 1
-    second: *id020
+    second: *id052
     retournement:
       avant: 7
       apres: 26
-      bascule: *id021
+      bascule: *id053
       ratio_avant: 1.282
       ratio_apres: 0.965
     courbes:
@@ -17801,7 +25092,7 @@ modeles:
       moyenne: 4367000
       premiere: 2001
       derniere: 2001
-    bascule_jour: *id018
+    bascule_jour: *id050
     format_correlation_brute: -0.643
     tests:
     - cle: audience_rupture
@@ -17816,7 +25107,7 @@ modeles:
       lecture: Gain de la meilleure coupure de la série d'audience, comparé à celui obtenu sur des saisons
         remises dans un ordre au hasard. Le profil complet des coupures dit ensuite si cette date est
         identifiée ou si plusieurs se valent.
-      nulle: &id036
+      nulle: &id068
         bornes:
         - -0.7371
         - 21.7011
@@ -17866,7 +25157,7 @@ modeles:
       tirages: 10000
       lecture: Corrélation de rang entre l'année et le rapport finale / lancement. Négative, elle dit
         que l'avantage de la finale se réduit d'année en année.
-      nulle: &id037
+      nulle: &id069
         bornes:
         - -0.7197
         - 0.7321
@@ -17918,7 +25209,7 @@ modeles:
       lecture: Corrélation de rang entre l'audience d'une saison et l'effectif de la suivante, une fois
         la tendance temporelle retirée des deux séries. Sans cette précaution, le lien brut ne mesure
         que le passage du temps.
-      nulle: &id038
+      nulle: &id070
         bornes:
         - -0.6809
         - 0.7022
@@ -18021,7 +25312,7 @@ modeles:
       lecture: 'Différence entre l''après et l''avant, en points de pourcentage. Le hasard, ici, c''est
         tirer l''éliminé parmi les présents de chaque conseil : la composition du camp est donc déjà neutralisée,
         et un écart qui subsiste est un choix.'
-      nulle: &id039
+      nulle: &id071
         bornes:
         - -21.0347
         - 18.5317
@@ -18072,7 +25363,7 @@ modeles:
       lecture: 'Rang de l''éliminé parmi les présents, sur la force estimée aux épreuves : 0 le plus faible
         du camp, 100 le plus fort. On compare l''après à l''avant. Positif, cela veut dire qu''on élimine
         plus haut dans le classement après la fusion.'
-      nulle: &id040
+      nulle: &id072
         bornes:
         - -15.1973
         - 16.4851
@@ -18123,7 +25414,7 @@ modeles:
       lecture: Part de conseils où l'éliminé ne rassemble pas plus de la moitié des voix, après moins
         avant. Le hasard est ici une redistribution des étiquettes « avant » et « après » entre les mêmes
         conseils.
-      nulle: &id041
+      nulle: &id073
         bornes:
         - -24.3256
         - 25.466
@@ -18173,7 +25464,7 @@ modeles:
       tirages: 10000
       lecture: Rang de l'éliminé parmi les présents, sur la force estimée aux épreuves. Au-dessus de 50,
         les ambassadeurs sacrifient un joueur plus fort que la moyenne du camp ; en dessous, un plus faible.
-      nulle: &id042
+      nulle: &id074
         bornes:
         - 16.5338
         - 79.5792
@@ -18224,7 +25515,7 @@ modeles:
       lecture: 'Rang de l''ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c''est la
         médiane du camp. Au-dessus, l''ambassade accompagne une fin de parcours plus tardive ; en dessous,
         plus précoce. Le hasard, ici, c''est désigner les ambassadeurs au sort parmi les présents.'
-      nulle: &id043
+      nulle: &id075
         bornes:
         - 25.7663
         - 72.1745
@@ -18884,7 +26175,7 @@ modeles:
       lecture: 'Écart entre deux probabilités conditionnelles : partir sachant qu''on a été visé la fois
         d''avant, moins partir sachant qu''on ne l''a pas été. Le modèle nul tire l''éliminé au hasard
         parmi les présents, ce qui tient la taille du conseil rigoureusement fixe.'
-      nulle: &id044
+      nulle: &id076
         bornes:
         - -10.3684
         - 12.3222
@@ -18935,7 +26226,7 @@ modeles:
       lecture: 'Écart entre partir après une à trois voix et partir après quatre voix ou plus. Un écart
         positif dit que la menace a un sommet : au-delà, celui qui a survécu à un vote massif est mieux
         protégé que celui qui a survécu à deux bulletins.'
-      nulle: &id045
+      nulle: &id077
         bornes:
         - -20.8708
         - 23.9299
@@ -18985,7 +26276,7 @@ modeles:
       tirages: 10000
       lecture: Écart entre partir après avoir voté avec la minorité et partir après avoir voté avec la
         majorité.
-      nulle: &id046
+      nulle: &id078
         bornes:
         - -10.7147
         - 9.2242
@@ -19035,7 +26326,7 @@ modeles:
       tirages: 10000
       lecture: Écart entre partir quand on avait été visé DEUX conseils plus tôt et partir quand on ne
         l'avait pas été. Un écart qui tient dit que la menace ne s'éteint pas au conseil suivant.
-      nulle: &id047
+      nulle: &id079
         bornes:
         - -17.1667
         - 17.4892
@@ -19086,7 +26377,7 @@ modeles:
       tirages: 10000
       lecture: Écart entre voir son nom ressortir quand il était déjà sorti et le voir sortir quand il
         ne l'était pas.
-      nulle: &id048
+      nulle: &id080
         bornes:
         - -13.378
         - 21.1992
@@ -19136,7 +26427,7 @@ modeles:
       tirages: 4000
       lecture: Part des couples où la cible de la dernière fois écrit à son tour le nom de son auteur,
         tous deux étant présents et votants.
-      nulle: &id049
+      nulle: &id081
         bornes:
         - 8.8199
         - 21.2016
@@ -19323,7 +26614,7 @@ modeles:
       lecture: 'Écart entre partir quand son bandeau d''origine est le moins représenté du camp et partir
         quand il est le plus représenté. Le modèle nul tire l''éliminé au hasard parmi les présents :
         la taille du camp et sa composition restent celles du soir.'
-      nulle: &id050
+      nulle: &id082
         bornes:
         - -8.1088
         - 8.1325
@@ -19373,7 +26664,7 @@ modeles:
       tirages: 10000
       lecture: Écart entre partir quand son sexe est le moins représenté du camp et partir quand il est
         le plus représenté.
-      nulle: &id051
+      nulle: &id083
         bornes:
         - -7.7985
         - 6.5092
@@ -19423,7 +26714,7 @@ modeles:
       tirages: 10000
       lecture: Écart entre partir quand on est le plus âgé des présents et partir quand on ne l'est pas.
         Le modèle nul absorbe le fait qu'on est plus souvent le doyen d'un petit camp que d'un grand.
-      nulle: &id052
+      nulle: &id084
         bornes:
         - -7.8232
         - 11.6968
@@ -19474,7 +26765,7 @@ modeles:
       lecture: 'Écart entre partir quand on vient de gagner le confort de l''épisode et partir quand on
         n''a rien gagné. Lu sur les seuls soirs à conseil unique : sinon l''épreuve du soir ne se rattache
         pas au bon conseil.'
-      nulle: &id053
+      nulle: &id085
         bornes:
         - -12.0278
         - 15.5578
@@ -19638,7 +26929,7 @@ modeles:
       tirages: 10000
       lecture: Écart entre partir quand plus aucun de ceux avec qui on a déjà voté n'est présent, et partir
         quand il en reste au moins un. Le modèle nul tire l'éliminé au hasard parmi les présents.
-      nulle: &id054
+      nulle: &id086
         bornes:
         - -14.3766
         - 20.7534
@@ -19688,7 +26979,7 @@ modeles:
       tirages: 10000
       lecture: Écart entre gagner l'immunité individuelle du soir quand on a été visé au conseil précédent
         et la gagner quand on ne l'a pas été. Le modèle nul tire le vainqueur au hasard parmi les présents.
-      nulle: &id055
+      nulle: &id087
         bornes:
         - -13.8864
         - 18.3334
@@ -19763,7 +27054,7 @@ modeles:
         on ne l''a pas gagnée. Le modèle nul ne tire pas au hasard : il tire les vainqueurs SELON LES
         FORCES estimées par le modèle de Plackett-Luce. Ce qui subsiste au-dessus de lui serait un élan,
         et non un niveau.'
-      nulle: &id060
+      nulle: &id092
         bornes:
         - -6.5898
         - 31.1284
@@ -19822,7 +27113,7 @@ modeles:
       lecture: 'Écart d''âge de l''éliminé à la moyenne de son camp, avant la réunification moins après.
         Le modèle nul tire l''éliminé au hasard parmi les présents : la composition d''âge de chaque soirée
         reste celle du soir.'
-      nulle: &id061
+      nulle: &id093
         bornes:
         - -4.2756
         - 4.0293
@@ -19990,7 +27281,7 @@ modeles:
     tirages: 10000
     lecture: 'Un écart observé plus PETIT que l''attendu est la signature d''un quota : le hasard, lui,
       produit des castings déséquilibrés de temps en temps.'
-    nulle: *id022
+    nulle: *id054
   - cle: etendue_ages
     libelle: L'écart d'âge dans un même casting
     question: Un casting mélange-t-il les âges plus qu'un tirage au hasard ne le ferait ?
@@ -20005,7 +27296,7 @@ modeles:
     tirages: 10000
     lecture: Rebattre les aventuriers entre saisons donne l'écart-type général. Un écart observé PLUS
       GRAND veut dire qu'on place exprès un jeune et un ancien dans chaque casting.
-    nulle: *id023
+    nulle: *id055
   - cle: familles_metiers
     libelle: La variété des métiers
     question: Un casting couvre-t-il plus de familles de métiers qu'un tirage au hasard ?
@@ -20020,7 +27311,7 @@ modeles:
     tirages: 10000
     lecture: On compte, pour chaque saison, le nombre de familles de métiers représentées. Un total observé
       PLUS GRAND veut dire qu'on veille à n'oublier aucune famille.
-    nulle: *id024
+    nulle: *id056
   - cle: melange_archetypes
     libelle: Le mélange d'archétypes
     question: Chaque saison contient-elle toujours le même mélange de profils ?
@@ -20035,7 +27326,7 @@ modeles:
     tirages: 10000
     lecture: Distance entre le mélange de profils d'une saison et le mélange général. Un observé PLUS
       PETIT que l'attendu veut dire que les saisons se ressemblent plus que le hasard ne l'expliquerait.
-    nulle: *id025
+    nulle: *id057
   - cle: tribus_femmes
     libelle: La composition des deux tribus
     question: Les deux tribus de départ sont-elles plus semblables en part de femmes qu'un tirage au hasard
@@ -20051,7 +27342,7 @@ modeles:
     tirages: 10000
     lecture: On rebat les bandeaux à l'intérieur de chaque saison. Un écart observé PLUS PETIT que l'attendu
       veut dire que les tribus sont composées à l'équilibre, pas tirées au sort.
-    nulle: *id026
+    nulle: *id058
   - cle: tribus_ages
     libelle: L'âge moyen des deux tribus
     question: Les deux tribus de départ ont-elles des âges moyens plus proches qu'un tirage au hasard
@@ -20067,7 +27358,7 @@ modeles:
     tirages: 10000
     lecture: 'Même méthode, sur l''âge moyen de chaque bandeau. Un écart observé PLUS GRAND que l''attendu
       veut dire l''inverse d''un équilibre : deux tribus construites pour différer.'
-    nulle: *id027
+    nulle: *id059
   - cle: tribus_ages_mediane
     libelle: L'âge des deux tribus, à la médiane
     question: 'Le même écart, mesuré à la médiane : est-il général, ou porté par quelques saisons ?'
@@ -20082,7 +27373,7 @@ modeles:
     tirages: 10000
     lecture: La médiane ignore les valeurs extrêmes. Si elle ne s'écarte pas, c'est que l'écart moyen
       tient à quelques éditions et non à une règle de composition.
-    nulle: *id028
+    nulle: *id060
   - cle: pronostic_vainqueur
     libelle: Pronostiquer le vainqueur au casting
     question: En ne connaissant que l'âge, le sexe, le métier et la couleur, place-t-on le futur vainqueur
@@ -20098,7 +27389,7 @@ modeles:
     tirages: 10000
     lecture: Le modèle classe les candidats d'une saison ; on relève la place qu'il donne à celui qui
       a gagné. Plus BAS que l'attendu veut dire qu'une part du résultat se joue au recrutement.
-    nulle: *id029
+    nulle: *id061
   - cle: vote_meme_sexe
     libelle: Viser quelqu'un du même sexe
     question: Parmi les présents, écrit-on plutôt le nom de quelqu'un de son sexe ?
@@ -20114,7 +27405,7 @@ modeles:
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
       : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
       qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-    nulle: *id030
+    nulle: *id062
   - cle: vote_ecart_age
     libelle: L'écart d'âge avec sa cible
     question: Écrit-on plutôt le nom de quelqu'un de sa génération, ou d'une autre ?
@@ -20130,7 +27421,7 @@ modeles:
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
       : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
       qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-    nulle: *id031
+    nulle: *id063
   - cle: vote_meme_metier
     libelle: Viser la même famille de métier
     question: Le métier rapproche-t-il ou éloigne-t-il du bulletin ?
@@ -20146,7 +27437,7 @@ modeles:
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
       : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
       qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-    nulle: *id032
+    nulle: *id064
   - cle: vote_meme_bandeau
     libelle: Viser son propre bandeau de départ
     question: Le camp d'origine protège-t-il, une fois les tribus mélangées ?
@@ -20162,7 +27453,7 @@ modeles:
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
       : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
       qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-    nulle: *id033
+    nulle: *id065
   - cle: vote_meme_departement
     libelle: Viser quelqu'un de son département
     question: Épargne-t-on le voisin — celui qui vit dans le même département ?
@@ -20178,7 +27469,7 @@ modeles:
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
       : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
       qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-    nulle: *id034
+    nulle: *id066
   - cle: vote_bandeau_apres_fusion
     libelle: Épargner son bandeau de départ
     question: Une fois les tribus mélangées, écrit-on moins souvent le nom de quelqu'un de son camp d'origine
@@ -20194,7 +27485,7 @@ modeles:
     tirages: 4000
     lecture: Mesuré sur les seuls conseils réunissant plusieurs bandeaux. Un observé SOUS l'attendu veut
       dire que le camp de départ protège encore, longtemps après avoir cessé d'exister.
-    nulle: *id035
+    nulle: *id067
   - cle: geographie_departements
     libelle: L'origine géographique, par département
     question: Les aventuriers viennent-ils de départements plus variés, ou plus concentrés, qu'un tirage
@@ -20313,7 +27604,7 @@ modeles:
     lecture: Gain de la meilleure coupure de la série d'audience, comparé à celui obtenu sur des saisons
       remises dans un ordre au hasard. Le profil complet des coupures dit ensuite si cette date est identifiée
       ou si plusieurs se valent.
-    nulle: *id036
+    nulle: *id068
   - cle: audience_retournement
     libelle: Le retournement finale / lancement
     question: La finale attire-t-elle toujours plus de monde que le lancement ?
@@ -20328,7 +27619,7 @@ modeles:
     tirages: 10000
     lecture: Corrélation de rang entre l'année et le rapport finale / lancement. Négative, elle dit que
       l'avantage de la finale se réduit d'année en année.
-    nulle: *id037
+    nulle: *id069
   - cle: audience_format
     libelle: Le format suit-il l'audience ?
     question: Une saison moins regardée que son époque ne le laissait attendre est-elle suivie d'un casting
@@ -20345,7 +27636,7 @@ modeles:
     lecture: Corrélation de rang entre l'audience d'une saison et l'effectif de la suivante, une fois
       la tendance temporelle retirée des deux séries. Sans cette précaution, le lien brut ne mesure que
       le passage du temps.
-    nulle: *id038
+    nulle: *id070
   - cle: fusion_sexe
     libelle: Le sexe des éliminés, avant et après la fusion
     question: La part de femmes parmi les éliminés change-t-elle à la réunification ?
@@ -20361,7 +27652,7 @@ modeles:
     lecture: 'Différence entre l''après et l''avant, en points de pourcentage. Le hasard, ici, c''est
       tirer l''éliminé parmi les présents de chaque conseil : la composition du camp est donc déjà neutralisée,
       et un écart qui subsiste est un choix.'
-    nulle: *id039
+    nulle: *id071
   - cle: fusion_force
     libelle: La force des éliminés, avant et après la fusion
     question: Élimine-t-on le faible avant la réunification et le fort après ?
@@ -20377,7 +27668,7 @@ modeles:
     lecture: 'Rang de l''éliminé parmi les présents, sur la force estimée aux épreuves : 0 le plus faible
       du camp, 100 le plus fort. On compare l''après à l''avant. Positif, cela veut dire qu''on élimine
       plus haut dans le classement après la fusion.'
-    nulle: *id040
+    nulle: *id072
   - cle: fusion_serre
     libelle: Des conseils plus serrés après la fusion ?
     question: Le vote se divise-t-il davantage une fois les tribus réunies ?
@@ -20392,7 +27683,7 @@ modeles:
     tirages: 10000
     lecture: Part de conseils où l'éliminé ne rassemble pas plus de la moitié des voix, après moins avant.
       Le hasard est ici une redistribution des étiquettes « avant » et « après » entre les mêmes conseils.
-    nulle: *id041
+    nulle: *id073
   - cle: ambassadeurs_force
     libelle: Qui les ambassadeurs éliminent-ils ?
     question: Deux ambassadeurs qui décident seuls choisissent-ils autrement qu'un tirage ?
@@ -20407,7 +27698,7 @@ modeles:
     tirages: 10000
     lecture: Rang de l'éliminé parmi les présents, sur la force estimée aux épreuves. Au-dessus de 50,
       les ambassadeurs sacrifient un joueur plus fort que la moyenne du camp ; en dessous, un plus faible.
-    nulle: *id042
+    nulle: *id074
   - cle: ambassadeurs_survie
     libelle: L'ambassadeur qui négocie s'en sort-il mieux ?
     question: Partir en ambassade change-t-il la distance que l'on parcourt ensuite ?
@@ -20423,7 +27714,7 @@ modeles:
     lecture: 'Rang de l''ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c''est la
       médiane du camp. Au-dessus, l''ambassade accompagne une fin de parcours plus tardive ; en dessous,
       plus précoce. Le hasard, ici, c''est désigner les ambassadeurs au sort parmi les présents.'
-    nulle: *id043
+    nulle: *id075
   - cle: menace_voix
     libelle: Le nom sorti la fois d'avant
     question: Sortir est-il plus probable quand on a reçu au moins une voix au conseil précédent ?
@@ -20439,7 +27730,7 @@ modeles:
     lecture: 'Écart entre deux probabilités conditionnelles : partir sachant qu''on a été visé la fois
       d''avant, moins partir sachant qu''on ne l''a pas été. Le modèle nul tire l''éliminé au hasard parmi
       les présents, ce qui tient la taille du conseil rigoureusement fixe.'
-    nulle: *id044
+    nulle: *id076
   - cle: menace_sommet
     libelle: Trop visé pour partir
     question: Être visé beaucoup expose-t-il moins qu'être visé un peu ?
@@ -20455,7 +27746,7 @@ modeles:
     lecture: 'Écart entre partir après une à trois voix et partir après quatre voix ou plus. Un écart
       positif dit que la menace a un sommet : au-delà, celui qui a survécu à un vote massif est mieux
       protégé que celui qui a survécu à deux bulletins.'
-    nulle: *id045
+    nulle: *id077
   - cle: camp_perdant
     libelle: Avoir voté du mauvais côté
     question: S'être trompé de cible au conseil précédent expose-t-il au suivant ?
@@ -20469,7 +27760,7 @@ modeles:
     retenu: false
     tirages: 10000
     lecture: Écart entre partir après avoir voté avec la minorité et partir après avoir voté avec la majorité.
-    nulle: *id046
+    nulle: *id078
   - cle: menace_deux_pas
     libelle: La menace, deux conseils plus tard
     question: Les voix reçues à l'avant-dernier conseil comptent-elles encore ?
@@ -20484,7 +27775,7 @@ modeles:
     tirages: 10000
     lecture: Écart entre partir quand on avait été visé DEUX conseils plus tôt et partir quand on ne l'avait
       pas été. Un écart qui tient dit que la menace ne s'éteint pas au conseil suivant.
-    nulle: *id047
+    nulle: *id079
   - cle: cible_persistante
     libelle: La cible reste la cible
     question: Recevoir une voix ce soir est-il plus probable quand on en a reçu au conseil précédent ?
@@ -20499,7 +27790,7 @@ modeles:
     tirages: 10000
     lecture: Écart entre voir son nom ressortir quand il était déjà sorti et le voir sortir quand il ne
       l'était pas.
-    nulle: *id048
+    nulle: *id080
   - cle: retour_de_baton
     libelle: Le nom rendu au conseil suivant
     question: Celui dont j'ai écrit le nom la fois d'avant écrit-il le mien ce soir ?
@@ -20514,7 +27805,7 @@ modeles:
     tirages: 4000
     lecture: Part des couples où la cible de la dernière fois écrit à son tour le nom de son auteur, tous
       deux étant présents et votants.
-    nulle: *id049
+    nulle: *id081
   - cle: bandeau_minoritaire
     libelle: Le bandeau minoritaire
     question: Appartenir au bandeau le moins représenté du camp expose-t-il ?
@@ -20530,7 +27821,7 @@ modeles:
     lecture: 'Écart entre partir quand son bandeau d''origine est le moins représenté du camp et partir
       quand il est le plus représenté. Le modèle nul tire l''éliminé au hasard parmi les présents : la
       taille du camp et sa composition restent celles du soir.'
-    nulle: *id050
+    nulle: *id082
   - cle: sexe_minoritaire
     libelle: Le sexe minoritaire
     question: Être du sexe le moins représenté du camp expose-t-il ?
@@ -20545,7 +27836,7 @@ modeles:
     tirages: 10000
     lecture: Écart entre partir quand son sexe est le moins représenté du camp et partir quand il est
       le plus représenté.
-    nulle: *id051
+    nulle: *id083
   - cle: doyen_du_camp
     libelle: Le plus âgé du camp
     question: Le doyen d'un conseil part-il plus souvent que les autres ?
@@ -20560,7 +27851,7 @@ modeles:
     tirages: 10000
     lecture: Écart entre partir quand on est le plus âgé des présents et partir quand on ne l'est pas.
       Le modèle nul absorbe le fait qu'on est plus souvent le doyen d'un petit camp que d'un grand.
-    nulle: *id052
+    nulle: *id084
   - cle: confort_sortie
     libelle: Le confort du soir
     question: Gagner le confort fait-il partir le soir même ?
@@ -20576,7 +27867,7 @@ modeles:
     lecture: 'Écart entre partir quand on vient de gagner le confort de l''épisode et partir quand on
       n''a rien gagné. Lu sur les seuls soirs à conseil unique : sinon l''épreuve du soir ne se rattache
       pas au bon conseil.'
-    nulle: *id053
+    nulle: *id085
   - cle: vote_isole
     libelle: N’avoir plus personne avec qui on ait voté
     question: Se retrouver sans un seul allié parmi les présents expose-t-il ?
@@ -20591,7 +27882,7 @@ modeles:
     tirages: 10000
     lecture: Écart entre partir quand plus aucun de ceux avec qui on a déjà voté n'est présent, et partir
       quand il en reste au moins un. Le modèle nul tire l'éliminé au hasard parmi les présents.
-    nulle: *id054
+    nulle: *id086
   - cle: dos_au_mur
     libelle: Le dos au mur
     question: Celui qu'on vient de viser gagne-t-il plus souvent l'immunité ?
@@ -20606,7 +27897,7 @@ modeles:
     tirages: 10000
     lecture: Écart entre gagner l'immunité individuelle du soir quand on a été visé au conseil précédent
       et la gagner quand on ne l'a pas été. Le modèle nul tire le vainqueur au hasard parmi les présents.
-    nulle: *id055
+    nulle: *id087
   - cle: persistance_alliances
     libelle: La persistance des alliances
     question: Deux aventuriers qui ont vote ensemble votent-ils encore ensemble au conseil suivant, plus
@@ -20622,7 +27913,7 @@ modeles:
     tirages: 2000
     lecture: 'Écart entre deux probabilités : voter ensemble après avoir voté ensemble, et voter ensemble
       après avoir voté séparément. À zéro, chaque conseil repart de zéro et il n''y a pas d''alliance.'
-    nulle: *id056
+    nulle: *id088
   - cle: rupture
     libelle: La rupture de régime
     question: Existe-t-il une date qui sépare les saisons en deux régimes mieux qu'une date tirée au sort
@@ -20639,7 +27930,7 @@ modeles:
     lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
       dans un ordre au hasard. Une coupure existe toujours ; la question est de savoir si celle-ci vaut
       mieux que n'importe quelle autre.
-    nulle: *id057
+    nulle: *id089
   - cle: trahison
     libelle: Écrire le nom d'un ancien allié
     question: Quand on a déjà voté avec quelqu'un, écrit-on son nom plus ou moins souvent qu'un autre
@@ -20655,7 +27946,7 @@ modeles:
     tirages: 4000
     lecture: Part des bulletins visant quelqu'un avec qui l'auteur avait déjà voté. Un observé SOUS l'attendu
       veut dire que l'alliance protège ; au-dessus, qu'elle expose.
-    nulle: *id058
+    nulle: *id090
   - cle: decimation
     libelle: L'élimination en série d'un camp
     question: Après la réunification, les sorties se suivent-elles par bandeau plus souvent que le hasard
@@ -20671,7 +27962,7 @@ modeles:
     tirages: 10000
     lecture: Nombre de fois où deux sorties consécutives viennent du même bandeau de départ. Un observé
       AU-DESSUS de l'attendu est la signature d'un camp démonté un par un.
-    nulle: *id059
+    nulle: *id091
   - cle: tenant_du_titre
     libelle: Le tenant du titre
     question: Celui qui a gagné la dernière immunité la regagne-t-il plus souvent que sa force ne l'explique
@@ -20689,7 +27980,7 @@ modeles:
       on ne l''a pas gagnée. Le modèle nul ne tire pas au hasard : il tire les vainqueurs SELON LES FORCES
       estimées par le modèle de Plackett-Luce. Ce qui subsiste au-dessus de lui serait un élan, et non
       un niveau.'
-    nulle: *id060
+    nulle: *id092
   - cle: age_bascule_fusion
     libelle: L'âge de l'éliminé, avant et après la fusion
     question: Élimine-t-on le plus âgé avant la réunification, et plus après ?
@@ -20705,7 +27996,7 @@ modeles:
     lecture: 'Écart d''âge de l''éliminé à la moyenne de son camp, avant la réunification moins après.
       Le modèle nul tire l''éliminé au hasard parmi les présents : la composition d''âge de chaque soirée
       reste celle du soir.'
-    nulle: *id061
+    nulle: *id093
   - cle: talent_stable
     libelle: La qualité d’un joueur se retrouve-t-elle d’une saison à l’autre ?
     question: Le score d’un aventurier à sa première participation prédit-il celui de ses participations

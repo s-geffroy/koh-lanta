@@ -514,6 +514,57 @@ seules saisons classiques, sur {{ c.joueurs_classiques }} joueurs :
 </table>
 </div>
 
+## Le classement complet, nom par nom
+
+Les {{ c.joueurs_classes }} aventuriers, cherchables et triables. Les quatre
+colonnes de droite donnent le rang **sur chaque facette** : c’est là que se voit
+le mieux qu’un bon rang général peut cacher une facette au fond du tableau, et
+l’inverse.
+
+<div class="filtres" data-filtre="tableau-classement">
+  <div class="champ">
+    <label for="qc">Chercher un aventurier</label>
+    <input type="search" id="qc" data-role="texte" placeholder="Claude Dartois, Jade Handi, Moundir…" autocomplete="off">
+  </div>
+  <button type="button" class="bascule" data-role="vider">Tout effacer</button>
+  <p class="compte" data-role="compte" aria-live="polite"></p>
+</div>
+
+<div class="tableau-large tableau-haut">
+<table id="tableau-classement" data-triable>
+<thead><tr>
+  <th class="nombre">Rang</th><th>Aventurier</th>
+  <th class="nombre">Saisons</th><th class="nombre">Titres</th>
+  <th class="nombre">Score</th>
+  <th class="nombre">Dans le top {{ c.taille }}</th>
+  <th class="nombre">Rang, 5<sup>e</sup>–95<sup>e</sup></th>
+  {% for f in c.facettes %}<th class="nombre">{{ f.libelle | remove: "Le " | remove: "La " | remove: "Les " }}</th>{% endfor %}
+</tr></thead>
+<tbody>
+{% for l in c.tous %}
+<tr>
+  <td class="nombre">{{ l.rang }}</td>
+  <td>{{ l.nom }}</td>
+  <td class="nombre">{{ l.saisons }}</td>
+  <td class="nombre">{{ l.titres }}</td>
+  <td class="nombre">{{ l.score }}</td>
+  <td class="nombre">{{ l.part_top }} %</td>
+  <td class="nombre" data-val="{{ l.rang_p95 | minus: l.rang_p05 }}">{{ l.rang_p05 }} – {{ l.rang_p95 }}</td>
+  {% for f in c.facettes %}<td class="nombre">{{ l.rangs[f.cle] }}</td>{% endfor %}
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+<p class="note">Un rang n’est pas une note. La colonne « dans le top » dit sous
+quelle part des {{ rb.tirages }} pondérations l’aventurier y figure, et
+l’avant-dernière l’étendue de ses rangs : quand elle est large, le rang de
+gauche ne veut pas dire grand-chose. Et pour les
+{{ c.joueurs_classes | minus: c.carrieres.size }} aventuriers d’une ou deux
+saisons, la preuve reste mince — le rétrécissement les tient près de la
+moyenne, ce qui est la seule chose honnête à faire quand on ne sait pas.</p>
+
 ## Le biais que ce classement ne sait pas réparer
 
 {% assign be = c.biais_epoque %}

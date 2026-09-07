@@ -924,6 +924,24 @@ def tout(saisons, parts, conseils, epreuves):
             } for i, s in enumerate(classement[:TAILLE_FACETTE], 1)],
         })
 
+    # Le classement ENTIER, pas seulement sa tete. Une page qui ne publie que
+    # ses vingt-cinq premiers oblige a demander « et untel ? » un nom apres
+    # l'autre ; celle-ci se cherche. Le rang par facette y est plus utile que
+    # la cote z : c'est lui qui repond directement a la question posee.
+    tous = []
+    for s in sujets:
+        ks = cles_par[s["cle"]]
+        p = [mesures[k] for k in ks]
+        tous.append({
+            "rang": s["rang"], "nom": s["nom"], "id": s["cle"],
+            "saisons": len(ks),
+            "titres": sum(1 for m in p if m["_sort"] == "vainqueur"),
+            "score": round(s["score"], 3),
+            "part_top": s.get("part_top"),
+            "rang_p05": s.get("rang_p05"), "rang_p95": s.get("rang_p95"),
+            "rangs": rangs_par_facette[s["cle"]],
+        })
+
     stabilite = test_stabilite(parts_sujets, mesures)
 
     attestes = sum(1 for m in mesures.values() if m["_rang_atteste"])
@@ -967,6 +985,7 @@ def tout(saisons, parts, conseils, epreuves):
         "artefacts": artefacts,
         "couverture_epreuves": couverture,
         "carrieres": carrieres,
+        "tous": tous,
         "palmares": {
             "auc": round(auc, 3) if auc is not None else None,
             "rang_median_vainqueurs": int(np.median(
