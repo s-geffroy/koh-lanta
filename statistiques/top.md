@@ -237,6 +237,16 @@ les paires dont la corrélation est négative.</p>
   que la moyenne a favorisé.</p>
 </div>
 
+{% assign menees = 0 %}{% for f in c.facettes %}{% if f.top[0].id == c.top[0].id %}{% assign menees = menees | plus: 1 %}{% endif %}{% endfor %}
+
+<p>La démonstration tient en un nom. <b>{{ c.top[0].nom }}</b>, premier du
+classement général, n’est en tête que de <b>{{ menees }} facettes sur
+{{ c.facettes | size }}</b>. Qui mène sur chacune :
+{% for f in c.facettes %}{{ f.libelle | downcase }} — <b>{{ f.top[0].nom }}</b>{% unless forloop.last %} ; {% endunless %}{% endfor %}.
+Le premier d’un classement composite n’est donc pas le meilleur partout : c’est
+celui qui est excellent <b>là où l’écart-type est le plus large</b>, et qui se
+contente d’être moyen ailleurs.</p>
+
 <p class="note">C’est ce qui explique l’ampleur du mouvement mesuré plus bas :
 quand les composantes divergent à ce point, changer les poids change les noms.
 Et c’est aussi ce qui rend la première version de cette page fausse : elle
