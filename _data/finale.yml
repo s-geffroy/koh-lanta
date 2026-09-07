@@ -1,0 +1,542 @@
+# ATTENTION : fichier genere. Ne pas editer a la main.
+#
+# La fin de saison : qui s'est qualifie a l'orientation et dans quel ordre, qui
+# a gagne les poteaux, qui il a emmene en finale, et qui a gagne.
+#
+# Produit par tools/extraction/finale.py, qui croise le tableau de deroulement
+# des deux wikis et la prose des notes de bas de page.
+#
+# `ordre_atteste` dit si une source ENONCE l'ordre d'arrivee a l'orientation ;
+# `choix_atteste` dit si une source ENONCE que le vainqueur des poteaux a
+# choisi son finaliste. Sans eux, l'ordre reste celui de la cellule et
+# `autre_finaliste` reste une simple arithmetique -- pas un choix constate.
+#
+#     tools/atelier python3 tools/extraction/finale.py --ecrire
+#
+couverture:
+  saisons_au_format: 27
+  vainqueur_des_poteaux_connu: 20
+  part_poteaux: 74.1
+  choix_atteste: 9
+  qualifies_connus: 17
+  saisons_ordre_teste: 5
+  rangs_confirmes: 10
+  rangs_dementis: 0
+  ordre_atteste: 5
+  ordre_croisable: 8
+  ordre_concordant: 8
+  saisons_sans_poteaux:
+  - s02
+  - s08
+  - s09
+  - s11
+  - s14
+  - s17
+  - sp2
+lignes:
+- saison: s02
+  titre: Nicoya
+  annee: 2002
+  speciale: false
+  vainqueur: amel-fatnassi
+  orientation:
+    elimines: []
+  poteaux:
+    elimine: bernard-lenoir
+  sources: {}
+- saison: s04
+  titre: Panama
+  annee: 2004
+  speciale: false
+  vainqueur: philippe-bordier
+  orientation:
+    elimines: []
+    qualifies:
+    - philippe-bordier
+    - linda-alario
+    - raphael-andres
+  poteaux:
+    elimine: raphael-andres
+    vainqueur: linda-alario
+    autre_finaliste: philippe-bordier
+  sources:
+    orientation: tableau fandom
+    poteaux: tableau fandom
+- saison: s05
+  titre: Pacifique
+  annee: 2005
+  speciale: false
+  vainqueur: clemence-castel
+  orientation:
+    elimines:
+    - alexis-tournier
+    qualifies:
+    - francis-bordas
+    - mohamed-derradji
+    - clemence-castel
+  poteaux:
+    elimine: mohamed-derradji
+    vainqueur: clemence-castel
+    autre_finaliste: francis-bordas
+  sources:
+    orientation: tableau fandom
+    poteaux: tableau fandom
+- saison: s06
+  titre: Vanuatu
+  annee: 2006
+  speciale: false
+  vainqueur: francois-david-cardonnel
+  orientation:
+    elimines:
+    - ludovic-laresche
+    qualifies:
+    - sebastien-roulle
+    - francois-david-cardonnel
+    - emilie-frahi
+  poteaux:
+    elimine: sebastien-roulle
+    vainqueur: emilie-frahi
+    autre_finaliste: francois-david-cardonnel
+  sources:
+    orientation: tableau fandom
+    poteaux: tableau fandom
+- saison: s08
+  titre: Caramoan
+  annee: 2008
+  speciale: false
+  vainqueur: christelle-gauzet
+  orientation:
+    elimines:
+    - nathalie-ensargueix
+  poteaux:
+    elimine: bertrand-bolle
+  sources: {}
+- saison: s09
+  titre: Palau
+  annee: 2009
+  speciale: false
+  vainqueur: christina-chevry
+  orientation:
+    elimines:
+    - fabienne-lefebvre-trehoux
+  poteaux:
+    elimine: isabelle-da-silva
+  sources: {}
+- saison: s10
+  titre: Viêtnam
+  annee: 2010
+  speciale: false
+  vainqueur: philippe-duron
+  orientation:
+    elimines:
+    - veronique-begue
+  poteaux:
+    elimine: wafa-el-mejjad
+    vainqueur: philippe-duron
+    choisi: claude-dartois
+    choix_atteste: true
+    autre_finaliste: claude-dartois
+  sources:
+    poteaux: prose fandom
+    choix: prose fandom
+- saison: s11
+  titre: Raja Ampat
+  annee: 2011
+  speciale: false
+  vainqueur: gerard-urdampilleta
+  orientation:
+    elimines:
+    - ella-gbezan
+  poteaux:
+    elimine: laurent-maistret
+  sources: {}
+- saison: s12
+  titre: Malaisie
+  annee: 2012
+  speciale: false
+  vainqueur: ugo-lartiche
+  orientation:
+    elimines:
+    - bernard-deniaud
+    - philippe-bizet
+  poteaux:
+    elimine: vanessa-alvarez
+    vainqueur: ugo-lartiche
+    autre_finaliste: brice-martinet
+  sources:
+    poteaux: prose wikipedia
+- saison: s14
+  titre: Johor
+  annee: 2015
+  speciale: false
+  vainqueur: marc-rambaud
+  orientation:
+    elimines:
+    - bruno-peisey
+  poteaux:
+    elimine: melissa-bastin
+  sources: {}
+- saison: s15
+  titre: Thaïlande
+  annee: 2016
+  speciale: false
+  vainqueur: wendy-gervois
+  orientation:
+    elimines:
+    - cecilia-siharaj
+    qualifies:
+    - pascal-salviani
+    - gabriel-gubbels
+    - wendy-gervois
+  poteaux:
+    elimine: gabriel-gubbels
+    vainqueur: pascal-salviani
+    autre_finaliste: wendy-gervois
+  sources:
+    orientation: tableau fandom
+    poteaux: tableau fandom
+- saison: s16
+  titre: L'Île au trésor
+  annee: 2016
+  speciale: false
+  vainqueur: benoit-assadi
+  orientation:
+    elimines:
+    - bruno-troester
+    - candice-boisson
+    qualifies:
+    - freddy-bolzer
+    - jesta-hillmann
+    - benoit-assadi
+  poteaux:
+    elimine: freddy-bolzer
+    vainqueur: benoit-assadi
+    autre_finaliste: jesta-hillmann
+  sources:
+    orientation: tableau fandom
+    poteaux: tableau fandom
+- saison: s17
+  titre: Cambodge
+  annee: 2017
+  speciale: false
+  vainqueur: frederic-blancher
+  orientation:
+    elimines:
+    - mathilde-chevalier
+  poteaux:
+    elimine: vincent-roux
+  sources: {}
+- saison: s18
+  titre: Fidji
+  annee: 2017
+  speciale: false
+  vainqueur: andre-deleplace
+  orientation:
+    elimines:
+    - sandrine-dubourdy
+    qualifies:
+    - tiffany-gounin
+    - magalie-gustave
+    - andre-deleplace
+    ordre_croise: true
+  poteaux:
+    elimine: magalie-gustave
+    vainqueur: andre-deleplace
+    autre_finaliste: tiffany-gounin
+  sources:
+    orientation: tableau wikipedia
+    poteaux: tableau wikipedia
+- saison: s20
+  titre: La Guerre des chefs
+  annee: 2019
+  speciale: false
+  vainqueur: maud-bamps
+  orientation:
+    elimines:
+    - aurelien-soulimant
+    - clo-dessard-arribas
+    qualifies:
+    - steeve-demana
+    - cindy-poumeyrol
+    - maud-bamps
+    ordre_croise: true
+    rangs_confirmes: 1
+    rangs_dementis: 0
+    ordre_atteste: true
+  poteaux:
+    elimine: steeve-demana
+    vainqueur: cindy-poumeyrol
+    autre_finaliste: maud-bamps
+  sources:
+    orientation: tableau wikipedia
+    poteaux: tableau wikipedia
+    ordre: prose wikipedia
+- saison: s21
+  titre: Les 4 Terres
+  annee: 2020
+  speciale: false
+  vainqueur: alexandra-pornet
+  orientation:
+    elimines:
+    - dorian-louvet
+    - lola-besse
+    qualifies:
+    - loic-riowal
+    - brice-petit
+    - alexandra-pornet
+    ordre_croise: true
+    rangs_confirmes: 3
+    rangs_dementis: 0
+    ordre_atteste: true
+  poteaux:
+    elimine: loic-riowal
+    vainqueur: brice-petit
+    choisi: alexandra-pornet
+    choix_atteste: true
+    autre_finaliste: alexandra-pornet
+  sources:
+    orientation: tableau wikipedia
+    poteaux: tableau wikipedia
+    choix: prose wikipedia
+    ordre: prose wikipedia
+- saison: s22
+  titre: Les Armes secrètes
+  annee: 2021
+  speciale: false
+  vainqueur: maxine-eouzan
+  orientation:
+    elimines:
+    - arnaud-deshayes
+    - laure-canevarolo
+    qualifies:
+    - jonathan-julien
+    - lucie-bertaud
+    - maxine-eouzan
+    ordre_croise: true
+    rangs_confirmes: 3
+    rangs_dementis: 0
+    ordre_atteste: true
+  poteaux:
+    elimine: jonathan-julien
+    vainqueur: maxine-eouzan
+    choisi: lucie-bertaud
+    choix_atteste: true
+    autre_finaliste: lucie-bertaud
+  sources:
+    orientation: tableau wikipedia
+    poteaux: tableau wikipedia
+    choix: prose wikipedia
+    ordre: prose wikipedia
+- saison: s24
+  titre: Le Feu sacré
+  annee: 2023
+  speciale: false
+  vainqueur: frederic-khouvilay
+  orientation:
+    elimines:
+    - julie-debever
+    qualifies:
+    - nicolas-pretot
+    - tania-cakarevic
+    - frederic-khouvilay
+    ordre_croise: true
+    rangs_confirmes: 1
+    rangs_dementis: 0
+    ordre_atteste: true
+  poteaux:
+    elimine: nicolas-pretot
+    vainqueur: frederic-khouvilay
+    choisi: tania-cakarevic
+    choix_atteste: true
+    autre_finaliste: tania-cakarevic
+  sources:
+    orientation: tableau wikipedia
+    poteaux: tableau wikipedia
+    choix: prose wikipedia
+    ordre: prose wikipedia
+- saison: s25
+  titre: Les Chasseurs d'immunité
+  annee: 2024
+  speciale: false
+  vainqueur: lea-sahin
+  orientation:
+    elimines:
+    - amri-madani
+    - pauline-bonneil
+    qualifies:
+    - lea-sahin
+    - meissa-seck
+    - julie-rignault
+    rangs_confirmes: 2
+    rangs_dementis: 0
+    ordre_atteste: true
+  poteaux:
+    elimine: julie-rignault
+    vainqueur: lea-sahin
+    choisi: meissa-seck
+    choix_atteste: true
+    autre_finaliste: meissa-seck
+  sources:
+    orientation: tableau wikipedia
+    poteaux: tableau wikipedia
+    choix: prose wikipedia
+    ordre: prose wikipedia
+- saison: s26
+  titre: La Tribu maudite
+  annee: 2024
+  speciale: false
+  vainqueur: thibault-belanger
+  orientation:
+    elimines:
+    - cecile-belec
+    - jacques-roque
+    qualifies:
+    - thibault-belanger
+    - ilyesse-benyoub
+    - charlotte-rasquin
+    ordre_croise: true
+  poteaux:
+    elimine: ilyesse-benyoub
+    vainqueur: charlotte-rasquin
+    choisi: thibault-belanger
+    choix_atteste: true
+    autre_finaliste: thibault-belanger
+  sources:
+    orientation: tableau wikipedia
+    poteaux: tableau wikipedia
+    choix: prose wikipedia
+- saison: s27
+  titre: La Revanche des 4 Terres
+  annee: 2025
+  speciale: false
+  vainqueur: gaelle-fleury
+  orientation:
+    elimines:
+    - claire-passas
+    - jerome-salvatore
+    qualifies:
+    - jerome-molas
+    - mael-lozach
+    - gaelle-fleury
+  poteaux:
+    elimine: jerome-molas
+    vainqueur: gaelle-fleury
+    choisi: mael-lozach
+    choix_atteste: true
+    autre_finaliste: mael-lozach
+  sources:
+    orientation: tableau wikipedia
+    poteaux: tableau wikipedia
+    choix: prose wikipedia
+- saison: s28
+  titre: Les Reliques du destin
+  annee: 2026
+  speciale: false
+  vainqueur: cynthia-combes
+  orientation:
+    elimines:
+    - caroline-ledos
+    - hugo-van-aertryck
+    qualifies:
+    - clarisse-cresseveur
+    - cynthia-combes
+    - guillaume-le-deun
+  poteaux:
+    elimine: guillaume-le-deun
+    vainqueur: cynthia-combes
+    choisi: clarisse-cresseveur
+    choix_atteste: true
+    autre_finaliste: clarisse-cresseveur
+  sources:
+    orientation: tableau wikipedia
+    poteaux: tableau wikipedia
+    choix: prose wikipedia
+- saison: sp1
+  titre: Le Retour des héros
+  annee: 2009
+  speciale: true
+  vainqueur: romuald-lafite
+  orientation:
+    elimines:
+    - jean-bernard-hauton-arnaud
+    qualifies:
+    - jade-handi
+    - filomene-mendonca
+    - romuald-lafite
+  poteaux:
+    elimine: filomene-mendonca
+    vainqueur: jade-handi
+    autre_finaliste: romuald-lafite
+  sources:
+    orientation: tableau fandom
+    poteaux: tableau fandom
+- saison: sp2
+  titre: Le Choc des héros
+  annee: 2010
+  speciale: true
+  vainqueur: gregoire-delachaux
+  orientation:
+    elimines:
+    - coumba-baradji
+    - linda-alario
+  poteaux:
+    elimine: christophe-guttatoro-martin
+  sources: {}
+- saison: sp3
+  titre: La Revanche des héros
+  annee: 2012
+  speciale: true
+  vainqueur: bertrand-bolle
+  orientation:
+    elimines:
+    - coumba-baradji
+    - patrick-merle
+  poteaux:
+    elimine: maud-garnier
+    vainqueur: bertrand-bolle
+    autre_finaliste: claude-dartois
+  sources:
+    poteaux: prose wikipedia
+- saison: sp4
+  titre: La Nouvelle Édition
+  annee: 2014
+  speciale: true
+  vainqueur: laurent-maistret
+  orientation:
+    elimines:
+    - moundir-zoughari
+    qualifies:
+    - martin-bazin
+    - laurent-maistret
+    - philippe-bizet
+    ordre_croise: true
+  poteaux:
+    elimine: philippe-bizet
+    vainqueur: martin-bazin
+    autre_finaliste: laurent-maistret
+  sources:
+    orientation: tableau wikipedia
+    poteaux: tableau wikipedia
+- saison: sp6
+  titre: L'Île des héros
+  annee: 2020
+  speciale: true
+  vainqueur: naoil-tita
+  orientation:
+    elimines:
+    - moussa-niangane
+    qualifies:
+    - claude-dartois
+    - ines-loucif
+    - naoil-tita
+    ordre_croise: true
+  poteaux:
+    elimine: claude-dartois
+    vainqueur: naoil-tita
+    choisi: ines-loucif
+    choix_atteste: true
+    autre_finaliste: ines-loucif
+  sources:
+    orientation: tableau wikipedia
+    poteaux: tableau wikipedia
+    choix: prose wikipedia

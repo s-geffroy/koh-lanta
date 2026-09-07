@@ -1647,6 +1647,473 @@ jury:
     voix_pour: null
     voix_exprimees: null
     bulletins_releves: 4
+finale:
+  couverture:
+    saisons_au_format: 27
+    vainqueur_des_poteaux_connu: 20
+    part_poteaux: 74.1
+    choix_atteste: 9
+    qualifies_connus: 17
+    saisons_ordre_teste: 5
+    rangs_confirmes: 10
+    rangs_dementis: 0
+    ordre_atteste: 5
+    ordre_croisable: 8
+    ordre_concordant: 8
+    saisons_sans_poteaux:
+    - s02
+    - s08
+    - s09
+    - s11
+    - s14
+    - s17
+    - sp2
+  poteaux:
+    effectif: 20
+    vainqueur_des_poteaux:
+      effectif: 20
+      cas: 12
+      probabilite: 60.0
+      bas: 38.7
+      haut: 78.1
+      hasard: 50.0
+    autre_finaliste:
+      effectif: 20
+      cas: 8
+      probabilite: 40.0
+      bas: 21.9
+      haut: 61.3
+      hasard: 50.0
+    choix_atteste:
+      effectif: 9
+      cas: 7
+      probabilite: 77.8
+      bas: 45.3
+      haut: 93.7
+      hasard: 50.0
+  par_rang:
+  - rang: 1
+    libelle: Premier arrivé
+    effectif: 17
+    gagne_les_poteaux:
+      effectif: 17
+      cas: 4
+      probabilite: 23.5
+      bas: 9.6
+      haut: 47.3
+      hasard: 33.3
+    gagne_la_saison:
+      effectif: 17
+      cas: 3
+      probabilite: 17.6
+      bas: 6.2
+      haut: 41.0
+      hasard: 33.3
+    elimine_aux_poteaux:
+      effectif: 17
+      cas: 8
+      probabilite: 47.1
+      bas: 26.2
+      haut: 69.0
+      hasard: 33.3
+  - rang: 2
+    libelle: Deuxième
+    effectif: 17
+    gagne_les_poteaux:
+      effectif: 17
+      cas: 4
+      probabilite: 23.5
+      bas: 9.6
+      haut: 47.3
+      hasard: 33.3
+    gagne_la_saison:
+      effectif: 17
+      cas: 3
+      probabilite: 17.6
+      bas: 6.2
+      haut: 41.0
+      hasard: 33.3
+    elimine_aux_poteaux:
+      effectif: 17
+      cas: 5
+      probabilite: 29.4
+      bas: 13.3
+      haut: 53.1
+      hasard: 33.3
+  - rang: 3
+    libelle: Dernier qualifié
+    effectif: 17
+    gagne_les_poteaux:
+      effectif: 17
+      cas: 9
+      probabilite: 52.9
+      bas: 31.0
+      haut: 73.8
+      hasard: 33.3
+    gagne_la_saison:
+      effectif: 17
+      cas: 11
+      probabilite: 64.7
+      bas: 41.3
+      haut: 82.7
+      hasard: 33.3
+    elimine_aux_poteaux:
+      effectif: 17
+      cas: 4
+      probabilite: 23.5
+      bas: 9.6
+      haut: 47.3
+      hasard: 33.3
+  saisons_ordonnees: 17
+  table:
+  - saison: s02
+    titre: Nicoya
+    annee: 2002
+    speciale: false
+    qualifies: []
+    poteaux: null
+    autre_finaliste: null
+    elimine: Bernard Lenoir
+    vainqueur: Amel Fatnassi
+    choix_atteste: false
+    poteaux_gagne: null
+  - saison: s04
+    titre: Panama
+    annee: 2004
+    speciale: false
+    qualifies:
+    - Philippe Bordier
+    - Linda Alario
+    - Raphaël Andrès
+    poteaux: Linda Alario
+    autre_finaliste: Philippe Bordier
+    elimine: Raphaël Andrès
+    vainqueur: Philippe Bordier
+    choix_atteste: false
+    poteaux_gagne: false
+  - saison: s05
+    titre: Pacifique
+    annee: 2005
+    speciale: false
+    qualifies:
+    - Francis Bordas
+    - Mohamed Derradji
+    - Clémence Castel
+    poteaux: Clémence Castel
+    autre_finaliste: Francis Bordas
+    elimine: Mohamed Derradji
+    vainqueur: Clémence Castel
+    choix_atteste: false
+    poteaux_gagne: true
+  - saison: s06
+    titre: Vanuatu
+    annee: 2006
+    speciale: false
+    qualifies:
+    - Sébastien Roullé
+    - François-David Cardonnel
+    - Émilie Frahi
+    poteaux: Émilie Frahi
+    autre_finaliste: François-David Cardonnel
+    elimine: Sébastien Roullé
+    vainqueur: François-David Cardonnel
+    choix_atteste: false
+    poteaux_gagne: false
+  - saison: s08
+    titre: Caramoan
+    annee: 2008
+    speciale: false
+    qualifies: []
+    poteaux: null
+    autre_finaliste: null
+    elimine: Bertrand Bolle
+    vainqueur: Christelle Gauzet
+    choix_atteste: false
+    poteaux_gagne: null
+  - saison: s09
+    titre: Palau
+    annee: 2009
+    speciale: false
+    qualifies: []
+    poteaux: null
+    autre_finaliste: null
+    elimine: Isabelle Da Silva
+    vainqueur: Christina Chevry
+    choix_atteste: false
+    poteaux_gagne: null
+  - saison: sp1
+    titre: Le Retour des héros
+    annee: 2009
+    speciale: true
+    qualifies:
+    - Jade Handi
+    - Filomène Mendonca
+    - Romuald Lafite
+    poteaux: Jade Handi
+    autre_finaliste: Romuald Lafite
+    elimine: Filomène Mendonca
+    vainqueur: Romuald Lafite
+    choix_atteste: false
+    poteaux_gagne: false
+  - saison: s10
+    titre: Viêtnam
+    annee: 2010
+    speciale: false
+    qualifies: []
+    poteaux: Philippe Duron
+    autre_finaliste: Claude Dartois
+    elimine: Wafa El Mejjad
+    vainqueur: Philippe Duron
+    choix_atteste: true
+    poteaux_gagne: true
+  - saison: sp2
+    titre: Le Choc des héros
+    annee: 2010
+    speciale: true
+    qualifies: []
+    poteaux: null
+    autre_finaliste: null
+    elimine: Christophe Guttatoro-Martin
+    vainqueur: Grégoire Delachaux
+    choix_atteste: false
+    poteaux_gagne: null
+  - saison: s11
+    titre: Raja Ampat
+    annee: 2011
+    speciale: false
+    qualifies: []
+    poteaux: null
+    autre_finaliste: null
+    elimine: Laurent Maistret
+    vainqueur: Gérard Urdampilleta
+    choix_atteste: false
+    poteaux_gagne: null
+  - saison: s12
+    titre: Malaisie
+    annee: 2012
+    speciale: false
+    qualifies: []
+    poteaux: Ugo Lartiche
+    autre_finaliste: Brice Martinet
+    elimine: Vanessa Alvarez
+    vainqueur: Ugo Lartiche
+    choix_atteste: false
+    poteaux_gagne: true
+  - saison: sp3
+    titre: La Revanche des héros
+    annee: 2012
+    speciale: true
+    qualifies: []
+    poteaux: Bertrand Bolle
+    autre_finaliste: Claude Dartois
+    elimine: Maud Garnier
+    vainqueur: Bertrand Bolle
+    choix_atteste: false
+    poteaux_gagne: true
+  - saison: sp4
+    titre: La Nouvelle Édition
+    annee: 2014
+    speciale: true
+    qualifies:
+    - Martin Bazin
+    - Laurent Maistret
+    - Philippe Bizet
+    poteaux: Martin Bazin
+    autre_finaliste: Laurent Maistret
+    elimine: Philippe Bizet
+    vainqueur: Laurent Maistret
+    choix_atteste: false
+    poteaux_gagne: false
+  - saison: s14
+    titre: Johor
+    annee: 2015
+    speciale: false
+    qualifies: []
+    poteaux: null
+    autre_finaliste: null
+    elimine: Mélissa Bastin
+    vainqueur: Marc Rambaud
+    choix_atteste: false
+    poteaux_gagne: null
+  - saison: s15
+    titre: Thaïlande
+    annee: 2016
+    speciale: false
+    qualifies:
+    - Pascal Salviani
+    - Gabriel Gubbels
+    - Wendy Gervois
+    poteaux: Pascal Salviani
+    autre_finaliste: Wendy Gervois
+    elimine: Gabriel Gubbels
+    vainqueur: Wendy Gervois
+    choix_atteste: false
+    poteaux_gagne: false
+  - saison: s16
+    titre: L'Île au trésor
+    annee: 2016
+    speciale: false
+    qualifies:
+    - Freddy Bolzer
+    - Jesta Hillmann
+    - Benoît Assadi
+    poteaux: Benoît Assadi
+    autre_finaliste: Jesta Hillmann
+    elimine: Freddy Bolzer
+    vainqueur: Benoît Assadi
+    choix_atteste: false
+    poteaux_gagne: true
+  - saison: s17
+    titre: Cambodge
+    annee: 2017
+    speciale: false
+    qualifies: []
+    poteaux: null
+    autre_finaliste: null
+    elimine: Vincent Roux
+    vainqueur: Frédéric Blancher
+    choix_atteste: false
+    poteaux_gagne: null
+  - saison: s18
+    titre: Fidji
+    annee: 2017
+    speciale: false
+    qualifies:
+    - Tiffany Gounin
+    - Magalie Gustave
+    - André Deleplace
+    poteaux: André Deleplace
+    autre_finaliste: Tiffany Gounin
+    elimine: Magalie Gustave
+    vainqueur: André Deleplace
+    choix_atteste: false
+    poteaux_gagne: true
+  - saison: s20
+    titre: La Guerre des chefs
+    annee: 2019
+    speciale: false
+    qualifies:
+    - Steeve Demana
+    - Cindy Poumeyrol
+    - Maud Bamps
+    poteaux: Cindy Poumeyrol
+    autre_finaliste: Maud Bamps
+    elimine: Steeve Demana
+    vainqueur: Maud Bamps
+    choix_atteste: false
+    poteaux_gagne: false
+  - saison: s21
+    titre: Les 4 Terres
+    annee: 2020
+    speciale: false
+    qualifies:
+    - Loïc Riowal
+    - Brice Petit
+    - Alexandra Pornet
+    poteaux: Brice Petit
+    autre_finaliste: Alexandra Pornet
+    elimine: Loïc Riowal
+    vainqueur: Alexandra Pornet
+    choix_atteste: true
+    poteaux_gagne: false
+  - saison: sp6
+    titre: L'Île des héros
+    annee: 2020
+    speciale: true
+    qualifies:
+    - Claude Dartois
+    - Inès Loucif
+    - Naoil Tita
+    poteaux: Naoil Tita
+    autre_finaliste: Inès Loucif
+    elimine: Claude Dartois
+    vainqueur: Naoil Tita
+    choix_atteste: true
+    poteaux_gagne: true
+  - saison: s22
+    titre: Les Armes secrètes
+    annee: 2021
+    speciale: false
+    qualifies:
+    - Jonathan Julien
+    - Lucie Bertaud
+    - Maxine Eouzan
+    poteaux: Maxine Eouzan
+    autre_finaliste: Lucie Bertaud
+    elimine: Jonathan Julien
+    vainqueur: Maxine Eouzan
+    choix_atteste: true
+    poteaux_gagne: true
+  - saison: s24
+    titre: Le Feu sacré
+    annee: 2023
+    speciale: false
+    qualifies:
+    - Nicolas Pretot
+    - Tania Cakarevic
+    - Frédéric Khouvilay
+    poteaux: Frédéric Khouvilay
+    autre_finaliste: Tania Cakarevic
+    elimine: Nicolas Pretot
+    vainqueur: Frédéric Khouvilay
+    choix_atteste: true
+    poteaux_gagne: true
+  - saison: s25
+    titre: Les Chasseurs d'immunité
+    annee: 2024
+    speciale: false
+    qualifies:
+    - Léa Sahin
+    - Meïssa Seck
+    - Julie Rignault
+    poteaux: Léa Sahin
+    autre_finaliste: Meïssa Seck
+    elimine: Julie Rignault
+    vainqueur: Léa Sahin
+    choix_atteste: true
+    poteaux_gagne: true
+  - saison: s26
+    titre: La Tribu maudite
+    annee: 2024
+    speciale: false
+    qualifies:
+    - Thibault Bélanger
+    - Ilyesse Benyoub
+    - Charlotte Rasquin
+    poteaux: Charlotte Rasquin
+    autre_finaliste: Thibault Bélanger
+    elimine: Ilyesse Benyoub
+    vainqueur: Thibault Bélanger
+    choix_atteste: true
+    poteaux_gagne: false
+  - saison: s27
+    titre: La Revanche des 4 Terres
+    annee: 2025
+    speciale: false
+    qualifies:
+    - Jérôme Molas
+    - Maël Lozach
+    - Gaëlle Fleury
+    poteaux: Gaëlle Fleury
+    autre_finaliste: Maël Lozach
+    elimine: Jérôme Molas
+    vainqueur: Gaëlle Fleury
+    choix_atteste: true
+    poteaux_gagne: true
+  - saison: s28
+    titre: Les Reliques du destin
+    annee: 2026
+    speciale: false
+    qualifies:
+    - Clarisse Cresseveur
+    - Cynthia Combes
+    - Guillaume Le Deun
+    poteaux: Cynthia Combes
+    autre_finaliste: Clarisse Cresseveur
+    elimine: Guillaume Le Deun
+    vainqueur: Cynthia Combes
+    choix_atteste: true
+    poteaux_gagne: true
 revenants:
   paradoxe:
   - libelle: Jamais rappelés
@@ -17695,6 +18162,10 @@ completude_saisons:
     libelle: Audience par épisode
     court: Audience/ép.
     nature: fait
+  - cle: poteaux
+    libelle: Vainqueur des poteaux
+    court: Poteaux
+    nature: fait
   lignes:
   - saison: s01
     numero: 1
@@ -17796,6 +18267,11 @@ completude_saisons:
       texte: inconnue
       etat: manquant
       nature: fait
+    - cle: poteaux
+      valeur: null
+      texte: fin hors format
+      etat: sans_objet
+      nature: fait
   - saison: s02
     numero: 2
     titre: Nicoya
@@ -17804,7 +18280,7 @@ completude_saisons:
     annee: 2002
     speciale: false
     effectif: 16
-    score: 92.5
+    score: 87.1
     cellules:
     - cle: casting
       valeur: 100.0
@@ -17894,6 +18370,11 @@ completude_saisons:
     - cle: audience_episode
       valeur: 0.0
       texte: inconnue
+      etat: manquant
+      nature: fait
+    - cle: poteaux
+      valeur: 0.0
+      texte: non nommé
       etat: manquant
       nature: fait
   - saison: s03
@@ -17996,6 +18477,11 @@ completude_saisons:
       texte: inconnue
       etat: manquant
       nature: fait
+    - cle: poteaux
+      valeur: null
+      texte: fin hors format
+      etat: sans_objet
+      nature: fait
   - saison: s04
     numero: 4
     titre: Panama
@@ -18004,7 +18490,7 @@ completude_saisons:
     annee: 2004
     speciale: false
     effectif: 16
-    score: 74.2
+    score: 75.7
     cellules:
     - cle: casting
       valeur: 100.0
@@ -18096,6 +18582,11 @@ completude_saisons:
       texte: inconnue
       etat: manquant
       nature: fait
+    - cle: poteaux
+      valeur: 100.0
+      texte: nommé
+      etat: complet
+      nature: fait
   - saison: s05
     numero: 5
     titre: Pacifique
@@ -18104,7 +18595,7 @@ completude_saisons:
     annee: 2005
     speciale: false
     effectif: 17
-    score: 86.0
+    score: 86.9
     cellules:
     - cle: casting
       valeur: 100.0
@@ -18196,6 +18687,11 @@ completude_saisons:
       texte: connue
       etat: complet
       nature: fait
+    - cle: poteaux
+      valeur: 100.0
+      texte: nommé
+      etat: complet
+      nature: fait
   - saison: s06
     numero: 6
     titre: Vanuatu
@@ -18204,7 +18700,7 @@ completude_saisons:
     annee: 2006
     speciale: false
     effectif: 16
-    score: 86.6
+    score: 87.4
     cellules:
     - cle: casting
       valeur: 100.0
@@ -18295,6 +18791,11 @@ completude_saisons:
       valeur: 0.0
       texte: inconnue
       etat: manquant
+      nature: fait
+    - cle: poteaux
+      valeur: 100.0
+      texte: nommé
+      etat: complet
       nature: fait
   - saison: s07
     numero: 7
@@ -18396,6 +18897,11 @@ completude_saisons:
       texte: inconnue
       etat: manquant
       nature: fait
+    - cle: poteaux
+      valeur: null
+      texte: fin hors format
+      etat: sans_objet
+      nature: fait
   - saison: s08
     numero: 8
     titre: Caramoan
@@ -18404,7 +18910,7 @@ completude_saisons:
     annee: 2008
     speciale: false
     effectif: 17
-    score: 91.3
+    score: 85.9
     cellules:
     - cle: casting
       valeur: 100.0
@@ -18496,6 +19002,11 @@ completude_saisons:
       texte: inconnue
       etat: manquant
       nature: fait
+    - cle: poteaux
+      valeur: 0.0
+      texte: non nommé
+      etat: manquant
+      nature: fait
   - saison: s09
     numero: 9
     titre: Palau
@@ -18504,7 +19015,7 @@ completude_saisons:
     annee: 2009
     speciale: false
     effectif: 18
-    score: 62.7
+    score: 59.0
     cellules:
     - cle: casting
       valeur: 100.0
@@ -18596,6 +19107,11 @@ completude_saisons:
       texte: inconnue
       etat: manquant
       nature: fait
+    - cle: poteaux
+      valeur: 0.0
+      texte: non nommé
+      etat: manquant
+      nature: fait
   - saison: sp1
     numero: null
     titre: Le Retour des héros
@@ -18604,7 +19120,7 @@ completude_saisons:
     annee: 2009
     speciale: true
     effectif: 14
-    score: 83.3
+    score: 84.3
     cellules:
     - cle: casting
       valeur: 100.0
@@ -18696,6 +19212,11 @@ completude_saisons:
       texte: inconnue
       etat: manquant
       nature: fait
+    - cle: poteaux
+      valeur: 100.0
+      texte: nommé
+      etat: complet
+      nature: fait
   - saison: s10
     numero: 10
     titre: Viêtnam
@@ -18704,7 +19225,7 @@ completude_saisons:
     annee: 2010
     speciale: false
     effectif: 18
-    score: 82.0
+    score: 83.0
     cellules:
     - cle: casting
       valeur: 100.0
@@ -18796,6 +19317,11 @@ completude_saisons:
       texte: inconnue
       etat: manquant
       nature: fait
+    - cle: poteaux
+      valeur: 100.0
+      texte: nommé
+      etat: complet
+      nature: fait
   - saison: sp2
     numero: null
     titre: Le Choc des héros
@@ -18804,7 +19330,7 @@ completude_saisons:
     annee: 2010
     speciale: true
     effectif: 14
-    score: 56.8
+    score: 53.4
     cellules:
     - cle: casting
       valeur: 100.0
@@ -18896,6 +19422,11 @@ completude_saisons:
       texte: inconnue
       etat: manquant
       nature: fait
+    - cle: poteaux
+      valeur: 0.0
+      texte: non nommé
+      etat: manquant
+      nature: fait
   - saison: s11
     numero: 11
     titre: Raja Ampat
@@ -18904,7 +19435,7 @@ completude_saisons:
     annee: 2011
     speciale: false
     effectif: 20
-    score: 77.7
+    score: 73.6
     cellules:
     - cle: casting
       valeur: 100.0
@@ -18996,6 +19527,11 @@ completude_saisons:
       texte: inconnue
       etat: manquant
       nature: fait
+    - cle: poteaux
+      valeur: 0.0
+      texte: non nommé
+      etat: manquant
+      nature: fait
   - saison: s12
     numero: 12
     titre: Malaisie
@@ -19004,7 +19540,7 @@ completude_saisons:
     annee: 2012
     speciale: false
     effectif: 20
-    score: 72.5
+    score: 73.9
     cellules:
     - cle: casting
       valeur: 100.0
@@ -19096,6 +19632,11 @@ completude_saisons:
       texte: connue
       etat: complet
       nature: fait
+    - cle: poteaux
+      valeur: 100.0
+      texte: nommé
+      etat: complet
+      nature: fait
   - saison: sp3
     numero: null
     titre: La Revanche des héros
@@ -19104,7 +19645,7 @@ completude_saisons:
     annee: 2012
     speciale: true
     effectif: 16
-    score: 85.0
+    score: 85.9
     cellules:
     - cle: casting
       valeur: 100.0
@@ -19196,6 +19737,11 @@ completude_saisons:
       texte: connue
       etat: complet
       nature: fait
+    - cle: poteaux
+      valeur: 100.0
+      texte: nommé
+      etat: complet
+      nature: fait
   - saison: sp4
     numero: null
     titre: La Nouvelle Édition
@@ -19204,7 +19750,7 @@ completude_saisons:
     annee: 2014
     speciale: true
     effectif: 13
-    score: 72.6
+    score: 74.1
     cellules:
     - cle: casting
       valeur: 100.0
@@ -19296,6 +19842,11 @@ completude_saisons:
       texte: inconnue
       etat: manquant
       nature: fait
+    - cle: poteaux
+      valeur: 100.0
+      texte: nommé
+      etat: complet
+      nature: fait
   - saison: s14
     numero: 14
     titre: Johor
@@ -19304,7 +19855,7 @@ completude_saisons:
     annee: 2015
     speciale: false
     effectif: 20
-    score: 72.9
+    score: 69.1
     cellules:
     - cle: casting
       valeur: 100.0
@@ -19396,6 +19947,11 @@ completude_saisons:
       texte: inconnue
       etat: manquant
       nature: fait
+    - cle: poteaux
+      valeur: 0.0
+      texte: non nommé
+      etat: manquant
+      nature: fait
   - saison: s15
     numero: 15
     titre: Thaïlande
@@ -19404,7 +19960,7 @@ completude_saisons:
     annee: 2016
     speciale: false
     effectif: 21
-    score: 86.1
+    score: 86.8
     cellules:
     - cle: casting
       valeur: 100.0
@@ -19496,6 +20052,11 @@ completude_saisons:
       texte: inconnue
       etat: manquant
       nature: fait
+    - cle: poteaux
+      valeur: 100.0
+      texte: nommé
+      etat: complet
+      nature: fait
   - saison: s16
     numero: 16
     titre: L'Île au trésor
@@ -19504,7 +20065,7 @@ completude_saisons:
     annee: 2016
     speciale: false
     effectif: 20
-    score: 80.0
+    score: 81.1
     cellules:
     - cle: casting
       valeur: 100.0
@@ -19596,6 +20157,11 @@ completude_saisons:
       texte: inconnue
       etat: manquant
       nature: fait
+    - cle: poteaux
+      valeur: 100.0
+      texte: nommé
+      etat: complet
+      nature: fait
   - saison: s17
     numero: 17
     titre: Cambodge
@@ -19604,7 +20170,7 @@ completude_saisons:
     annee: 2017
     speciale: false
     effectif: 21
-    score: 74.3
+    score: 70.4
     cellules:
     - cle: casting
       valeur: 100.0
@@ -19696,6 +20262,11 @@ completude_saisons:
       texte: inconnue
       etat: manquant
       nature: fait
+    - cle: poteaux
+      valeur: 0.0
+      texte: non nommé
+      etat: manquant
+      nature: fait
   - saison: s18
     numero: 18
     titre: Fidji
@@ -19704,7 +20275,7 @@ completude_saisons:
     annee: 2017
     speciale: false
     effectif: 21
-    score: 90.2
+    score: 90.7
     cellules:
     - cle: casting
       valeur: 100.0
@@ -19794,6 +20365,11 @@ completude_saisons:
     - cle: audience_episode
       valeur: 100.0
       texte: connue
+      etat: complet
+      nature: fait
+    - cle: poteaux
+      valeur: 100.0
+      texte: nommé
       etat: complet
       nature: fait
   - saison: sp5
@@ -19896,6 +20472,11 @@ completude_saisons:
       texte: connue
       etat: complet
       nature: fait
+    - cle: poteaux
+      valeur: null
+      texte: fin hors format
+      etat: sans_objet
+      nature: fait
   - saison: s20
     numero: 20
     titre: La Guerre des chefs
@@ -19904,7 +20485,7 @@ completude_saisons:
     annee: 2019
     speciale: false
     effectif: 21
-    score: 90.1
+    score: 90.7
     cellules:
     - cle: casting
       valeur: 100.0
@@ -19996,6 +20577,11 @@ completude_saisons:
       texte: inconnue
       etat: manquant
       nature: fait
+    - cle: poteaux
+      valeur: 100.0
+      texte: nommé
+      etat: complet
+      nature: fait
   - saison: s21
     numero: 21
     titre: Les 4 Terres
@@ -20004,7 +20590,7 @@ completude_saisons:
     annee: 2020
     speciale: false
     effectif: 24
-    score: 94.8
+    score: 95.1
     cellules:
     - cle: casting
       valeur: 100.0
@@ -20096,6 +20682,11 @@ completude_saisons:
       texte: connue
       etat: complet
       nature: fait
+    - cle: poteaux
+      valeur: 100.0
+      texte: nommé
+      etat: complet
+      nature: fait
   - saison: sp6
     numero: null
     titre: L'Île des héros
@@ -20104,7 +20695,7 @@ completude_saisons:
     annee: 2020
     speciale: true
     effectif: 20
-    score: 94.6
+    score: 94.9
     cellules:
     - cle: casting
       valeur: 100.0
@@ -20196,6 +20787,11 @@ completude_saisons:
       texte: connue
       etat: complet
       nature: fait
+    - cle: poteaux
+      valeur: 100.0
+      texte: nommé
+      etat: complet
+      nature: fait
   - saison: s22
     numero: 22
     titre: Les Armes secrètes
@@ -20204,7 +20800,7 @@ completude_saisons:
     annee: 2021
     speciale: false
     effectif: 21
-    score: 83.9
+    score: 84.7
     cellules:
     - cle: casting
       valeur: 100.0
@@ -20294,6 +20890,11 @@ completude_saisons:
     - cle: audience_episode
       valeur: 100.0
       texte: connue
+      etat: complet
+      nature: fait
+    - cle: poteaux
+      valeur: 100.0
+      texte: nommé
       etat: complet
       nature: fait
   - saison: sp7
@@ -20396,6 +20997,11 @@ completude_saisons:
       texte: connue
       etat: complet
       nature: fait
+    - cle: poteaux
+      valeur: null
+      texte: fin hors format
+      etat: sans_objet
+      nature: fait
   - saison: s23
     numero: 23
     titre: Le Totem maudit
@@ -20496,6 +21102,11 @@ completude_saisons:
       texte: inconnue
       etat: manquant
       nature: fait
+    - cle: poteaux
+      valeur: null
+      texte: fin hors format
+      etat: sans_objet
+      nature: fait
   - saison: s24
     numero: 24
     titre: Le Feu sacré
@@ -20504,7 +21115,7 @@ completude_saisons:
     annee: 2023
     speciale: false
     effectif: 20
-    score: 94.3
+    score: 94.6
     cellules:
     - cle: casting
       valeur: 100.0
@@ -20596,6 +21207,11 @@ completude_saisons:
       texte: connue
       etat: complet
       nature: fait
+    - cle: poteaux
+      valeur: 100.0
+      texte: nommé
+      etat: complet
+      nature: fait
   - saison: s25
     numero: 25
     titre: Les Chasseurs d'immunité
@@ -20604,7 +21220,7 @@ completude_saisons:
     annee: 2024
     speciale: false
     effectif: 22
-    score: 86.6
+    score: 87.3
     cellules:
     - cle: casting
       valeur: 100.0
@@ -20696,6 +21312,11 @@ completude_saisons:
       texte: connue
       etat: complet
       nature: fait
+    - cle: poteaux
+      valeur: 100.0
+      texte: nommé
+      etat: complet
+      nature: fait
   - saison: s26
     numero: 26
     titre: La Tribu maudite
@@ -20704,7 +21325,7 @@ completude_saisons:
     annee: 2024
     speciale: false
     effectif: 24
-    score: 94.0
+    score: 94.3
     cellules:
     - cle: casting
       valeur: 100.0
@@ -20796,6 +21417,11 @@ completude_saisons:
       texte: connue
       etat: complet
       nature: fait
+    - cle: poteaux
+      valeur: 100.0
+      texte: nommé
+      etat: complet
+      nature: fait
   - saison: s27
     numero: 27
     titre: La Revanche des 4 Terres
@@ -20804,7 +21430,7 @@ completude_saisons:
     annee: 2025
     speciale: false
     effectif: 24
-    score: 94.6
+    score: 94.9
     cellules:
     - cle: casting
       valeur: 100.0
@@ -20896,6 +21522,11 @@ completude_saisons:
       texte: connue
       etat: complet
       nature: fait
+    - cle: poteaux
+      valeur: 100.0
+      texte: nommé
+      etat: complet
+      nature: fait
   - saison: s28
     numero: 28
     titre: Les Reliques du destin
@@ -20904,7 +21535,7 @@ completude_saisons:
     annee: 2026
     speciale: false
     effectif: 20
-    score: 91.2
+    score: 91.7
     cellules:
     - cle: casting
       valeur: 100.0
@@ -20994,6 +21625,11 @@ completude_saisons:
     - cle: audience_episode
       valeur: 100.0
       texte: connue
+      etat: complet
+      nature: fait
+    - cle: poteaux
+      valeur: 100.0
+      texte: nommé
       etat: complet
       nature: fait
   - saison: sp8
@@ -21095,6 +21731,11 @@ completude_saisons:
       valeur: 100.0
       texte: connue
       etat: complet
+      nature: fait
+    - cle: poteaux
+      valeur: null
+      texte: fin hors format
+      etat: sans_objet
       nature: fait
   par_colonne:
   - cle: casting
@@ -21223,8 +21864,15 @@ completude_saisons:
     moyenne: 44.1
     completes: 15
     concernees: 34
+  - cle: poteaux
+    libelle: Vainqueur des poteaux
+    court: Poteaux
+    nature: fait
+    moyenne: 74.1
+    completes: 20
+    concernees: 27
   saisons: 34
-  cases: 577
-  moyenne: 82.7
+  cases: 604
+  moyenne: 82.3
   meilleure: s21
   pire: sp8

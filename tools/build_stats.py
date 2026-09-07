@@ -87,6 +87,7 @@ def charger():
     conseils = lire("conseils.yml")
     epreuves = lire("epreuves.yml")
     colliers = lire("colliers.yml")
+    finale = lire("finale.yml") or {}
 
     par_saison = {s["id"]: s for s in saisons}
     for p in parts:
@@ -98,7 +99,7 @@ def charger():
         p["_csp"] = classer(p.get("profession"))
         d = p.get("jour_sortie")
         p["_survie"] = round(100.0 * d / s["duree_jours"], 1) if d and s.get("duree_jours") else None
-    return saisons, parts, personnes, conseils, epreuves, colliers, par_saison
+    return saisons, parts, personnes, conseils, epreuves, colliers, finale, par_saison
 
 
 def perimetre(parts, avec_speciales):
@@ -719,6 +720,89 @@ def voix_des_vainqueurs(lignes):
     }
 
 
+def bloc_finale(finale, parts, par_saison):
+    """La fin de saison : orientation, poteaux, choix du finaliste, victoire.
+
+    Deux questions, et un seul modele nul pour la premiere : entre deux
+    finalistes, c'est pile ou face. Pour la seconde, le hasard vaut un tiers --
+    trois qualifies a l'orientation, un seul gagne.
+
+    Aucune p-valeur n'est publiee ici. Les tests de ce site sont declares
+    d'avance et corriges ensemble (`modeles.registre`) ; en ajouter un
+    deplacerait les p ajustees de tous les autres. Une proportion, son
+    intervalle de Wilson et la ligne du hasard disent la meme chose sans
+    toucher a la correction.
+    """
+    if not finale:
+        return {}
+    lignes = finale.get("lignes") or []
+    noms = {(p_["saison"], p_["id"]): (p_.get("nom_complet") or p_.get("nom"))
+            for p_ in parts}
+
+    def nom(sid, pid):
+        return noms.get((sid, pid)) if pid else None
+
+    avec = [x for x in lignes if x["poteaux"].get("vainqueur")]
+    gagne = sum(1 for x in avec if x["poteaux"]["vainqueur"] == x["vainqueur"])
+    atteste = [x for x in avec if x["poteaux"].get("choix_atteste")]
+    gagne_atteste = sum(1 for x in atteste
+                        if x["poteaux"]["vainqueur"] == x["vainqueur"])
+
+    def issue(succes, total, hasard):
+        bas, haut = modeles._wilson(succes, total) if total else (None, None)
+        return {"effectif": total, "cas": succes, "probabilite": part(succes, total),
+                "bas": arrondi(bas) if bas is not None else None,
+                "haut": arrondi(haut) if haut is not None else None,
+                "hasard": hasard}
+
+    # Le rang d'arrivee a l'orientation.
+    rangs = {}
+    ordonnees = [x for x in lignes
+                 if x["orientation"].get("qualifies") and x["poteaux"].get("vainqueur")]
+    for x in ordonnees:
+        for r, pid in enumerate(x["orientation"]["qualifies"], 1):
+            d = rangs.setdefault(r, {"n": 0, "poteaux": 0, "victoire": 0, "elimine": 0})
+            d["n"] += 1
+            d["poteaux"] += pid == x["poteaux"]["vainqueur"]
+            d["victoire"] += pid == x["vainqueur"]
+            d["elimine"] += pid == x["poteaux"]["elimine"]
+
+    LIBELLE_RANG = {1: "Premier arrivé", 2: "Deuxième", 3: "Dernier qualifié"}
+    par_rang = [{
+        "rang": r,
+        "libelle": LIBELLE_RANG.get(r, f"Rang {r}"),
+        "effectif": d["n"],
+        "gagne_les_poteaux": issue(d["poteaux"], d["n"], arrondi(100.0 / 3)),
+        "gagne_la_saison": issue(d["victoire"], d["n"], arrondi(100.0 / 3)),
+        "elimine_aux_poteaux": issue(d["elimine"], d["n"], arrondi(100.0 / 3)),
+    } for r, d in sorted(rangs.items())]
+
+    return {
+        "couverture": finale.get("couverture"),
+        "poteaux": {
+            "effectif": len(avec),
+            "vainqueur_des_poteaux": issue(gagne, len(avec), 50.0),
+            "autre_finaliste": issue(len(avec) - gagne, len(avec), 50.0),
+            "choix_atteste": issue(gagne_atteste, len(atteste), 50.0),
+        },
+        "par_rang": par_rang,
+        "saisons_ordonnees": len(ordonnees),
+        "table": [{
+            "saison": x["saison"], "titre": x["titre"], "annee": x["annee"],
+            "speciale": x["speciale"],
+            "qualifies": [nom(x["saison"], i)
+                          for i in (x["orientation"].get("qualifies") or [])],
+            "poteaux": nom(x["saison"], x["poteaux"].get("vainqueur")),
+            "autre_finaliste": nom(x["saison"], x["poteaux"].get("autre_finaliste")),
+            "elimine": nom(x["saison"], x["poteaux"].get("elimine")),
+            "vainqueur": nom(x["saison"], x["vainqueur"]),
+            "choix_atteste": bool(x["poteaux"].get("choix_atteste")),
+            "poteaux_gagne": (x["poteaux"].get("vainqueur") == x["vainqueur"]
+                              if x["poteaux"].get("vainqueur") else None),
+        } for x in sorted(lignes, key=lambda x: (x["annee"], x["saison"]))],
+    }
+
+
 def bloc_indicateurs(saisons, parts, conseils, epreuves, colliers):
     """Les indicateurs avances, individuels et par saison."""
     lignes = indicateurs_individuels(saisons, parts, conseils, epreuves)
@@ -828,6 +912,7 @@ COLONNES_COMPLETUDE = [
     ("ambassadeurs", "Ambassadeurs nommés", "Ambassade", "fait"),
     ("audience_saison", "Audience de la saison", "Audience", "fait"),
     ("audience_episode", "Audience par épisode", "Audience/ép.", "fait"),
+    ("poteaux", "Vainqueur des poteaux", "Poteaux", "fait"),
 ]
 
 # Champs de participation dont la part se calcule directement.
@@ -838,7 +923,7 @@ PART_DIRECTE = {"age": "age", "profession": "profession",
                 "victoires": "victoires_individuelles"}
 
 
-def bloc_completude_saisons(saisons, parts, conseils, epreuves, colliers, modeles):
+def bloc_completude_saisons(saisons, parts, conseils, epreuves, colliers, modeles, finale):
     """Une ligne par edition, une colonne par type de donnee, une part au croisement.
 
     C'est la carte des trous. Elle sert a deux choses : voir d'un coup d'oeil
@@ -867,6 +952,12 @@ def bloc_completude_saisons(saisons, parts, conseils, epreuves, colliers, modele
     amb_nommees = {l["saison"] for l in (ambassades.get("lignes") or [])
                    if l.get("ambassadeurs")}
     amb_toutes = {l["saison"] for l in (ambassades.get("lignes") or [])}
+    # La fin de saison : la colonne ne vaut que la ou le format des poteaux
+    # existe. Une saison dont la fin n'a pas ce format n'a pas de trou, elle a
+    # une autre histoire -- « sans objet », pas « manquant ».
+    fin_lignes = (finale or {}).get("lignes") or []
+    fin_format = {l["saison"] for l in fin_lignes}
+    fin_connu = {l["saison"] for l in fin_lignes if l["poteaux"].get("vainqueur")}
 
     def part(n, total):
         return round(100.0 * n / total, 1) if total else None
@@ -925,6 +1016,12 @@ def bloc_completude_saisons(saisons, parts, conseils, epreuves, colliers, modele
             elif cle == "audience_episode":
                 valeur = 100.0 if sid in aud_episode else 0.0
                 texte = "connue" if sid in aud_episode else "inconnue"
+            elif cle == "poteaux":
+                if sid not in fin_format:
+                    etat, valeur, texte = "sans_objet", None, "fin hors format"
+                else:
+                    valeur = 100.0 if sid in fin_connu else 0.0
+                    texte = "nommé" if sid in fin_connu else "non nommé"
 
             if etat != "sans_objet":
                 if valeur is None:
@@ -1106,7 +1203,7 @@ def bloc_palmares(parts, epreuves, par_saison):
 
 
 def main():
-    saisons, parts, personnes, conseils, epreuves, colliers, par_saison = charger()
+    saisons, parts, personnes, conseils, epreuves, colliers, finale, par_saison = charger()
     classiques = perimetre(parts, avec_speciales=False)
     toutes = perimetre(parts, avec_speciales=True)
 
@@ -1138,6 +1235,7 @@ def main():
         "records": bloc_records(toutes, personnes),
         "conseils": bloc_conseils(conseils, parts, par_saison),
         "jury": bloc_jury(conseils, parts, par_saison),
+        "finale": bloc_finale(finale, parts, par_saison),
         # --- les analyses ajoutees ensuite. Elles prennent les participations
         # brutes, sans le filtre « saisons classiques » applique plus haut :
         # chacune dit elle-meme sur quel perimetre elle porte.
@@ -1169,7 +1267,7 @@ def main():
         (stats["indicateurs"] or {}).get("saisons") or [])
 
     stats["completude_saisons"] = bloc_completude_saisons(
-        saisons, parts, conseils, epreuves, colliers, stats["modeles"])
+        saisons, parts, conseils, epreuves, colliers, stats["modeles"], finale)
 
     # les records renvoient des participations entieres : on n'en garde que l'utile
     for cle in ("plus_jeune_vainqueur", "plus_age_vainqueur"):

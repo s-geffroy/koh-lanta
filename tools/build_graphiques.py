@@ -149,6 +149,61 @@ def main():
                         "l'aventurier a assisté, par sort final.",
             couleur=SERIES[0]))
 
+    # --- la fin de saison -------------------------------------------------
+    fin = stats.get("finale") or {}
+    if fin:
+        pot = fin["poteaux"]
+        ecrire("finale-poteaux.svg", colonnes(
+            [{"libelle": "Le vainqueur des poteaux",
+              "valeur": pot["vainqueur_des_poteaux"]["probabilite"],
+              "bas": pot["vainqueur_des_poteaux"]["bas"],
+              "haut": pot["vainqueur_des_poteaux"]["haut"],
+              "detail": f'{pot["vainqueur_des_poteaux"]["cas"]} saisons sur '
+                        f'{pot["effectif"]}'},
+             {"libelle": "Celui qu'il emmène",
+              "valeur": pot["autre_finaliste"]["probabilite"],
+              "bas": pot["autre_finaliste"]["bas"],
+              "haut": pot["autre_finaliste"]["haut"],
+              "detail": f'{pot["autre_finaliste"]["cas"]} saisons sur '
+                        f'{pot["effectif"]}'}],
+            titre="Qui gagne la saison, du vainqueur des poteaux ou de son finaliste",
+            description="Part des saisons remportées par chacun des deux "
+                        "finalistes, avec leur intervalle de confiance.",
+            unite=" %", couleur=SERIES[0], hauteur=320,
+            reference=50.0, reference_libelle="pile ou face"))
+
+        ecrire("finale-rang.svg", colonnes(
+            [{"libelle": r["libelle"],
+              "valeur": r["gagne_la_saison"]["probabilite"],
+              "bas": r["gagne_la_saison"]["bas"], "haut": r["gagne_la_saison"]["haut"],
+              "sous_titre": f'{r["gagne_la_saison"]["cas"]}/{r["effectif"]}',
+              "detail": f'{r["libelle"]} à l\'orientation : '
+                        f'{r["gagne_la_saison"]["cas"]} victoires sur '
+                        f'{r["effectif"]} saisons'}
+             for r in fin["par_rang"]],
+            titre="Gagner la saison, selon son rang d'arrivée à l'orientation",
+            description="Part des saisons remportées par le premier, le deuxième "
+                        "et le dernier qualifié de l'épreuve d'orientation.",
+            unite=" %", couleur=SERIES[0], hauteur=340,
+            reference=fin["par_rang"][0]["gagne_la_saison"]["hasard"],
+            reference_libelle="le hasard : un sur trois"))
+
+        ecrire("finale-poteaux-rang.svg", colonnes(
+            [{"libelle": r["libelle"],
+              "valeur": r["gagne_les_poteaux"]["probabilite"],
+              "bas": r["gagne_les_poteaux"]["bas"], "haut": r["gagne_les_poteaux"]["haut"],
+              "sous_titre": f'{r["gagne_les_poteaux"]["cas"]}/{r["effectif"]}',
+              "detail": f'{r["libelle"]} à l\'orientation : '
+                        f'{r["gagne_les_poteaux"]["cas"]} victoires aux poteaux '
+                        f'sur {r["effectif"]} saisons'}
+             for r in fin["par_rang"]],
+            titre="Gagner les poteaux, selon son rang d'arrivée à l'orientation",
+            description="Part des saisons où le premier, le deuxième et le dernier "
+                        "qualifié de l'orientation remporte l'épreuve des poteaux.",
+            unite=" %", couleur=SERIES[1], hauteur=340,
+            reference=fin["par_rang"][0]["gagne_les_poteaux"]["hasard"],
+            reference_libelle="le hasard : un sur trois"))
+
     # --- tribus -----------------------------------------------------------
     couleurs = [c for c in stats["couleurs"] if c["effectif"] >= 8]
     ecrire("tribus-victoires.svg", barres_horizontales(

@@ -3,7 +3,7 @@ layout: page
 title: La complétude, édition par édition
 permalink: /completude/
 chapeau: >-
-  Le tableau complet : les 34 éditions en ligne, les 18 types de données en
+  Le tableau complet : les 34 éditions en ligne, les 19 types de données en
   colonne, et à l’intersection ce qui est réellement renseigné.
 ---
 

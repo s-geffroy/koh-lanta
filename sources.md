@@ -144,6 +144,60 @@ strict qui ne lisait qu’une des deux sources : **une comparaison ne vaut que s
 les deux côtés ont vraiment été lus**, et le premier chiffrage annonçait à tort
 zéro divergence.
 
+## La fin de saison, lue dans deux colonnes et dans le récit
+
+{% assign fc = site.data.stats.finale.couverture %}
+
+Deuxième information à ne pas venir d’un tableau de résultats : **qui a gagné
+l’épreuve des poteaux**. `epreuves.yml` ne porte aucun nom d’épreuve, et le
+catalogue des épreuves nommées ne raccorde « Poteaux » à aucune saison. Pire :
+la dernière épreuve d’immunité individuelle relevée **n’est pas** les poteaux —
+pour huit saisons, son vainqueur est justement la personne portée
+`elimine_poteaux`. La déduire aurait donné un résultat faux et silencieux.
+
+Deux gisements ont été croisés : la colonne « Épreuve des poteaux » du tableau
+de déroulement des deux wikis, et les notes de bas de page, dont la tournure est
+stable — « <em>Cynthia, vainqueur de l’épreuve des poteaux, décide d’affronter
+Clarisse</em> ».
+
+<div class="constat">
+  <p><b>{{ fc.vainqueur_des_poteaux_connu }} saisons sur
+  {{ fc.saisons_au_format }}</b> livrent le vainqueur des poteaux —
+  {{ fc.part_poteaux }} %. Le choix du finaliste n’est explicitement énoncé que
+  pour {{ fc.choix_atteste }} d’entre elles ; ailleurs, l’autre finaliste est
+  déduit par soustraction et le champ le dit.</p>
+</div>
+
+L’ordre d’arrivée à l’orientation pose une question de nature différente : les
+sources listent les qualifiés, mais **rien n’annonce que cette liste soit
+ordonnée**. Deux vérifications indépendantes ont donc été montées, et elles
+tournent à chaque régénération. Le récit nomme parfois un rang — « <em>Loïc
+trouve le premier poignard</em> » : sur {{ fc.saisons_ordre_teste }} saisons,
+**{{ fc.rangs_confirmes }} rangs** sont ainsi confrontables à la place que la
+cellule leur donne, et {{ fc.rangs_dementis }} la contredit. Et les deux wikis,
+rédigés séparément, écrivent le même ordre sur {{ fc.ordre_concordant }} des
+{{ fc.ordre_croisable }} saisons où les deux le détaillent.
+
+`verifie.py` échoue si un seul rang vient à être démenti : le jour où l’ordre
+cessera d’être l’ordre d’arrivée,
+[la page qui en vit]({{ '/statistiques/finale/' | relative_url }}) cessera
+d’être publiable, et on le saura sans avoir à y penser.
+
+## Ce que le scrutin final ne dit toujours pas
+
+Le vote du jury tient **une ligne par finaliste** dans les matrices sources :
+celle du gagnant et celle du battu. Seule la première était reconnue ; les
+dix-sept autres étaient rangées du côté des éliminations, où leurs bulletins
+comptaient à l’envers. C’est réparé, et
+[la page du jury]({{ '/statistiques/jury/' | relative_url }}) raconte ce que ces
+quarante-neuf bulletins rendus y ont changé.
+
+Il reste un trou, et il est du même ordre. En comparant le nombre de voix
+annoncé au nombre de bulletins effectivement relevés, **41 bulletins de jury
+manquent encore**, répartis sur douze saisons : la colonne du finaliste battu
+n’y a jamais été extraite du tout. Ce n’est plus un problème de classement mais
+de lecture des matrices, et il n’est pas corrigé à ce jour.
+
 ## La traçabilité
 
 Chaque enregistrement du jeu de données porte un bloc `sources` qui indique,

@@ -91,6 +91,9 @@
     - titre: La pire place au conseil
       url: /statistiques/pire-place/
       resume: "Visé la fois d'avant et sans allié : le risque passe de 11 à 47 %."
+    - titre: La fin de saison
+      url: /statistiques/finale/
+      resume: "Gagner les poteaux ne suffit pas. Arriver dernier à l'orientation, si."
     - titre: Le vote du jury
       url: /statistiques/jury/
       resume: Le juré ne punit pas son bourreau ; il prolonge son alliance.
@@ -113,7 +116,7 @@
       # `badge` pointe dans _data/stats.yml : le rail affiche la valeur a cote
       # du titre, et elle se met a jour toute seule.
       badge: completude_saisons.moyenne
-      resume: "Le tableau : 34 éditions en ligne, 18 types de données en colonne."
+      resume: "Le tableau : 34 éditions en ligne, 19 types de données en colonne."
     - titre: Les saisons
       url: /saisons/
       resume: Chaque édition, son lieu, son casting, son vainqueur.

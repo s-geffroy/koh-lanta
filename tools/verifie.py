@@ -524,6 +524,52 @@ def trous(parts, saisons, c):
                   + ", ".join(qui[:6]) + (" …" if len(qui) > 6 else ""))
 
 
+def verifier_finale(finale, saisons, parts, c):
+    """Le trio des poteaux doit etre le trio des poteaux.
+
+    Trois personnes s'y presentent : deux en sortiront finalistes, une sera
+    eliminee. Si la source dit qu'un quatrieme a gagne les poteaux, ou que le
+    vainqueur des poteaux est celui qui en a ete elimine, c'est la lecture qui
+    est fausse -- pas l'histoire. On le dit fort plutot que de le publier.
+    """
+    sorts = {(p["saison"], p["id"]): p.get("sort") for p in parts}
+    connus = {s["id"] for s in saisons}
+    for x in finale.get("lignes") or []:
+        sid = x.get("saison")
+        ref = f"finale {sid}"
+        if sid not in connus:
+            c.erreur(f"{ref} : saison inconnue")
+            continue
+        pot = x.get("poteaux") or {}
+        gagnant, elimine = pot.get("vainqueur"), pot.get("elimine")
+        autre = pot.get("autre_finaliste")
+        if sorts.get((sid, elimine)) != "elimine_poteaux":
+            c.erreur(f"{ref} : « {elimine} » tient la place de l'elimine des "
+                     f"poteaux sans porter `sort: elimine_poteaux`")
+        for champ, pid in (("vainqueur", gagnant), ("autre_finaliste", autre)):
+            if pid and sorts.get((sid, pid)) not in ("vainqueur", "finaliste"):
+                c.erreur(f"{ref} : `poteaux.{champ}` = « {pid} », qui n'est ni "
+                         f"vainqueur ni finaliste de la saison")
+        trio = [i for i in (gagnant, autre, elimine) if i]
+        if len(set(trio)) != len(trio):
+            c.erreur(f"{ref} : le trio des poteaux cite deux fois la meme personne")
+        if pot.get("choix_atteste") and pot.get("choisi") != autre:
+            c.erreur(f"{ref} : le choix atteste designe « {pot.get('choisi')} », "
+                     f"l'arithmetique designe « {autre} »")
+        qualifies = (x.get("orientation") or {}).get("qualifies") or []
+        if qualifies and not set(qualifies) <= set(trio):
+            c.erreur(f"{ref} : la cellule d'orientation cite quelqu'un qui n'est "
+                     f"pas du trio des poteaux")
+        if x.get("vainqueur") and sorts.get((sid, x["vainqueur"])) != "vainqueur":
+            c.erreur(f"{ref} : « {x['vainqueur']} » donne vainqueur de la saison "
+                     f"sans porter `sort: vainqueur`")
+    couv = finale.get("couverture") or {}
+    if couv.get("rangs_dementis"):
+        c.erreur(f"finale : {couv['rangs_dementis']} rang(s) d'arrivee a "
+                 f"l'orientation contredisent l'ordre de la cellule — l'ordre "
+                 f"publie ne serait plus l'ordre d'arrivee")
+
+
 def main():
     c = Controle()
     saisons = charger("saisons.yml")
@@ -532,6 +578,7 @@ def main():
     epreuves = charger("epreuves.yml")
     conseils = charger("conseils.yml")
     colliers = charger("colliers.yml")
+    finale = charger("finale.yml")
 
     if saisons is None:
         c.erreur("_data/saisons.yml est absent")
@@ -556,6 +603,8 @@ def main():
         verifier_colliers(colliers, saisons, parts, c)
     if parts and personnes:
         verifier_personnes(personnes, parts, c)
+    if saisons and parts and finale:
+        verifier_finale(finale, saisons, parts, c)
 
     print(f"saisons        : {len(saisons or [])}")
     print(f"participations : {len(parts or [])}")
@@ -563,6 +612,7 @@ def main():
     print(f"epreuves       : {len(epreuves or [])}")
     print(f"conseils       : {len(conseils or [])}")
     print(f"colliers       : {len(colliers or [])}")
+    print(f"fins de saison : {len((finale or {}).get('lignes') or [])}")
 
     if c.avertissements:
         print(f"\n{len(c.avertissements)} avertissement(s) :")

@@ -136,6 +136,7 @@ lit ce que la precedente a ecrit :
     tools/atelier python3 tools/extraction/fetch_epreuves.py           # epreuves nommees
     tools/atelier python3 tools/extraction/epreuves_nommees.py --ecrire
     tools/atelier python3 tools/extraction/ambassadeurs.py --ecrire   # noms lus dans la prose
+    tools/atelier python3 tools/extraction/finale.py --ecrire         # orientation, poteaux
 
 La deuxieme passe n'est pas une precaution : `fusionner` rend son nom de famille
 a un prenom nu, et la page individuelle de cette personne n'est demandee qu'une
