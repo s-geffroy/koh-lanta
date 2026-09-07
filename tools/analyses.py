@@ -127,8 +127,60 @@ def revenants(saisons, parts, personnes):
          for i, n in degre_total.items()),
         key=lambda x: (-x["liens"], x["nom"]))
 
+    # --- le palmares des revenants : ce que le retour rapporte VRAIMENT
+    #
+    # La page s'intitule « le retour paie-t-il ? » et repond en jours tenus.
+    # Il reste la question qu'on pose au comptoir : quelqu'un a-t-il gagne DEUX
+    # FOIS ? Le compte est court, et c'est le resultat.
+    titres = Counter()
+    for p in parts:
+        if p.get("sort") == "vainqueur" and not saisons.get(p["saison"], {}).get("en_cours"):
+            titres[p["id"]] += 1
+    multi = sorted(
+        ({"id": i, "nom": noms.get(i, i), "titres": n, "saisons": nb.get(i, 0),
+          "editions": [saisons[q["saison"]].get("titre") for q in parts
+                       if q["id"] == i and q.get("sort") == "vainqueur"]}
+         for i, n in titres.items() if n > 1),
+        key=lambda x: (-x["titres"], x["nom"]))
+
+    # Combien de vainqueurs sont revenus, et qu'ont-ils fait ensuite ?
+    #
+    # Une saison EN COURS n'entre pas dans le compte : elle n'a pas de sort a
+    # donner, et le chiffre bougerait d'une semaine a l'autre. Mais elle n'est
+    # pas passee sous silence pour autant -- `vainqueurs_en_jeu` dit combien
+    # d'anciens vainqueurs jouent en ce moment, ce qui est precisement ce qui
+    # pourrait defaire le « un seul a gagne deux fois ».
+    en_cours = {sid for sid, s in saisons.items() if s.get("en_cours")}
+    revenus, regagne, sorts_apres = 0, 0, Counter()
+    en_jeu = 0
+    for pid, lignes in par_pers.items():
+        rangees = sorted(lignes, key=lambda p: ordre.get(p["saison"], 0))
+        for i, p in enumerate(rangees):
+            if p.get("sort") != "vainqueur" or p["saison"] in en_cours:
+                continue
+            apres = rangees[i + 1:]
+            if any(q["saison"] in en_cours for q in apres):
+                en_jeu += 1
+            acheves = [q for q in apres if q["saison"] not in en_cours]
+            if not acheves:
+                break
+            revenus += 1
+            if any(q.get("sort") == "vainqueur" for q in acheves):
+                regagne += 1
+            for q in acheves:
+                sorts_apres[q.get("sort") or "inconnu"] += 1
+            break
+
     return {
         "paradoxe": paradoxe,
+        "vainqueurs_multiples": multi,
+        "titres_distincts": len(titres),
+        "titres_total": sum(titres.values()),
+        "vainqueurs_revenus": revenus,
+        "vainqueurs_regagnants": regagne,
+        "vainqueurs_en_jeu": en_jeu,
+        "apres_le_titre": [{"sort": k, "effectif": v}
+                           for k, v in sorts_apres.most_common()],
         "carrieres": carrieres[:20],
         "sans_faute": [c for c in carrieres if c["part_du_temps"] == 100.0],
         "duos": duos[:15],

@@ -2317,6 +2317,30 @@ revenants:
   - libelle: Revenants, leurs saisons suivantes
     effectif: 96
     survie_moyenne: 63.7
+  vainqueurs_multiples:
+  - id: clemence-castel
+    nom: Clémence Castel
+    titres: 2
+    saisons: 4
+    editions:
+    - Pacifique
+    - Le Combat des héros
+  titres_distincts: 35
+  titres_total: 36
+  vainqueurs_revenus: 12
+  vainqueurs_regagnants: 1
+  vainqueurs_en_jeu: 3
+  apres_le_titre:
+  - sort: elimine_conseil
+    effectif: 13
+  - sort: finaliste
+    effectif: 2
+  - sort: elimine_ambassadeurs
+    effectif: 1
+  - sort: vainqueur
+    effectif: 1
+  - sort: elimine_orientation
+    effectif: 1
   carrieres:
   - &id001
     id: claude-dartois

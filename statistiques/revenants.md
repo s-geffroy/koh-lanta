@@ -197,6 +197,64 @@ vingtaine de personnes qui se connaissent déjà.
 saisons ne suffit pas : ce qui compte est la **taille** des castings qu’on a
 traversés.
 
+## Un seul a gagné deux fois
+
+La question se pose d’elle-même après le tableau ci-dessus, et la réponse tient
+en un nom.
+
+{% assign vm = r.vainqueurs_multiples %}
+
+<ul class="chiffres">
+  <li class="chiffre"><b>{{ r.titres_distincts }}</b><span>vainqueurs différents</span></li>
+  <li class="chiffre"><b>{{ r.titres_total }}</b><span>titres décernés</span></li>
+  <li class="chiffre"><b>{{ r.vainqueurs_revenus }}</b><span>vainqueurs sont revenus jouer</span></li>
+</ul>
+
+<div class="constat">
+  <p>En vingt-cinq ans, <b>{{ vm | size }} personne</b> a gagné deux fois :
+  {% for v in vm %}<b>{{ v.nom }}</b>, {{ v.editions | join: " et " }}{% unless forloop.last %} ; {% endunless %}{% endfor %}.
+  {{ r.titres_distincts }} vainqueurs distincts pour
+  {{ r.titres_total }} titres — l’écart, c’est elle.</p>
+  <p><b>{{ r.vainqueurs_revenus }} vainqueurs sont revenus</b> jouer après leur
+  titre. <b>Un seul a regagné.</b></p>
+</div>
+
+Ce que sont devenues leurs participations d’après-titre :
+
+<div class="tableau-large">
+<table>
+<thead><tr><th>Fin de parcours</th><th class="nombre">Participations</th></tr></thead>
+<tbody>
+{% for x in r.apres_le_titre %}
+<tr><td>{{ x.sort | replace: "elimine_conseil", "Éliminé au conseil"
+                 | replace: "elimine_orientation", "Éliminé à l’orientation"
+                 | replace: "elimine_ambassadeurs", "Éliminé aux ambassadeurs"
+                 | replace: "elimine_poteaux", "Éliminé aux poteaux"
+                 | replace: "finaliste", "Finaliste"
+                 | replace: "vainqueur", "Vainqueur"
+                 | replace: "abandon_medical", "Abandon médical"
+                 | replace: "abandon_volontaire", "Abandon volontaire" }}</td>
+    <td class="nombre">{{ x.effectif }}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+<p class="note">C’est la même leçon que le paradoxe du haut de page, vue par
+l’autre bout. Revenir avec un titre, ce n’est pas revenir avec un avantage :
+c’est revenir avec une <strong>cible</strong>. Le conseil s’en charge dans la
+grande majorité des cas, et la seule à s’en être extraite deux fois l’a fait à
+treize ans d’intervalle.</p>
+
+{% if r.vainqueurs_en_jeu > 0 %}
+<p class="note"><strong>Et ce chiffre peut tomber.</strong>
+{{ r.vainqueurs_en_jeu }} anciens vainqueurs jouent dans l’édition
+<strong>en cours de diffusion</strong>, qui n’entre dans aucun calcul de ce site
+tant qu’elle n’est pas terminée — une saison sans issue connue ne peut pas
+compter. Si l’un d’eux l’emporte, « une seule personne a gagné deux fois »
+cessera d’être vrai, et cette page le dira.</p>
+{% endif %}
+
 ## Les plus longues carrières
 
 {% include graphiques/revenants-carrieres.svg %}

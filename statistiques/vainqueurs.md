@@ -13,6 +13,17 @@ Il y a **{{ v.effectif }} vainqueurs** sur les saisons classiques achevées —
 plus que de saisons, parce que trois éditions se sont terminées sur une égalité
 des voix du jury et ont sacré deux personnes.
 
+{% assign vm = site.data.stats.revenants.vainqueurs_multiples %}
+Toutes éditions confondues, le programme a décerné
+{{ site.data.stats.revenants.titres_total }} titres à
+**{{ site.data.stats.revenants.titres_distincts }} personnes différentes**.
+L’écart tient à une seule : {% for x in vm %}**{{ x.nom }}**, sacrée à
+*{{ x.editions | join: "* puis à *" }}*{% endfor %} — la seule à avoir gagné
+deux fois en vingt-cinq ans.
+{{ site.data.stats.revenants.vainqueurs_revenus | minus: 1 }} autres vainqueurs
+sont revenus jouer sans y parvenir ; [les revenants]({{ '/statistiques/revenants/' | relative_url }})
+racontent ce qui leur arrive.
+
 <ul class="chiffres">
   <li class="chiffre"><b>{{ v.age_moyen }} ans</b><span>âge moyen</span></li>
   <li class="chiffre"><b>{{ v.age_median }} ans</b><span>âge médian</span></li>
