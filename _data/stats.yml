@@ -7826,6 +7826,106 @@ epreuves:
 colliers:
   colliers: 74
   trouves: 62
+  porteurs: 51
+  colliers_attribues: 62
+  palmares:
+  - id: amri-madani
+    nom: Amri Madani
+    trouves: 3
+    joues: 3
+    efficaces: 3
+  - id: cynthia-combes
+    nom: Cynthia Combes
+    trouves: 2
+    joues: 2
+    efficaces: 2
+  - id: lola-besse
+    nom: Lola Besse
+    trouves: 2
+    joues: 2
+    efficaces: 1
+  - id: pauline-bonneil
+    nom: Pauline Bonneil
+    trouves: 2
+    joues: 2
+    efficaces: 1
+  - id: julie-navarro-camilleri
+    nom: Julie Navarro-Camilleri
+    trouves: 3
+    joues: 1
+    efficaces: 1
+  - id: alix-noblat
+    nom: Alix Noblat
+    trouves: 1
+    joues: 1
+    efficaces: 1
+  - id: andrea-zogron
+    nom: Andréa Zogron
+    trouves: 1
+    joues: 1
+    efficaces: 1
+  - id: aubin-bligny
+    nom: Aubin Bligny
+    trouves: 1
+    joues: 1
+    efficaces: 1
+  - id: cindy-sulpice-gonzalez
+    nom: Cindy Sulpice-Gonzalez
+    trouves: 1
+    joues: 1
+    efficaces: 1
+  - id: clementine-jullien
+    nom: Clémentine Jullien
+    trouves: 1
+    joues: 1
+    efficaces: 1
+  - id: cyril-rouanne
+    nom: Cyril Rouanne
+    trouves: 1
+    joues: 1
+    efficaces: 1
+  - id: cecile-poprawa
+    nom: Cécile Poprawa
+    trouves: 1
+    joues: 1
+    efficaces: 1
+  elimines_avec_collier:
+  - nom: Victor Rollinger
+    saison: s20
+    titre: La Guerre des chefs
+    annee: 2019
+  - nom: William Plancq
+    saison: s25
+    titre: Les Chasseurs d'immunité
+    annee: 2024
+  - nom: Céline Faccio
+    saison: s27
+    titre: La Revanche des 4 Terres
+    annee: 2025
+  - nom: Maxime Lubian
+    saison: s27
+    titre: La Revanche des 4 Terres
+    annee: 2025
+  - nom: Julie Navarro-Camilleri
+    saison: sp5
+    titre: Le Combat des héros
+    annee: 2018
+  - nom: Julie Navarro-Camilleri
+    saison: sp5
+    titre: Le Combat des héros
+    annee: 2018
+  - nom: Jessica Potel
+    saison: sp6
+    titre: L'Île des héros
+    annee: 2020
+  - nom: Teheiura Teahui
+    saison: sp6
+    titre: L'Île des héros
+    annee: 2020
+  - nom: Charlotte Caron
+    saison: sp6
+    titre: L'Île des héros
+    annee: 2020
   jamais_trouves: 12
   saisons_couvertes: 9
   voix_annulees: 105

@@ -587,7 +587,7 @@ LIBELLE_ISSUE = {
 }
 
 
-def bloc_colliers(colliers, par_saison):
+def bloc_colliers(colliers, par_saison, parts=None):
     """Le destin des colliers, et deux denominateurs qui changent tout.
 
     Rapporter les issues a TOUS les colliers ou seulement a ceux qui ont ete
@@ -604,9 +604,44 @@ def bloc_colliers(colliers, par_saison):
              and c.get("votes_annules") is not None]
     annulees = sum(c["votes_annules"] for c in joues)
 
+    # Le palmares par personne, que la page n'avait pas. Trois comptes, et
+    # c'est le troisieme qui vaut : trouver un collier n'est pas le jouer, et
+    # le jouer n'est pas annuler des voix. Amri Madani est le seul a faire
+    # trois sur trois.
+    noms = {}
+    for p in (parts or []):
+        noms[p["id"]] = p.get("nom_complet") or p.get("nom")
+    trouve_par, joue_par, efficace_par = Counter(), Counter(), Counter()
+    perdus = []
+    for c in colliers:
+        for d in (c.get("detenteurs") or []):
+            if not d.get("id"):
+                continue
+            trouve_par[d["id"]] += 1
+            if c.get("statut") == "utilise":
+                joue_par[d["id"]] += 1
+            if c.get("issue") == "annulation_efficace":
+                efficace_par[d["id"]] += 1
+        if c.get("issue") == "elimine_avec_collier":
+            for d in (c.get("detenteurs") or []):
+                perdus.append({
+                    "nom": noms.get(d.get("id"), d.get("libelle")),
+                    "saison": c["saison"],
+                    "titre": par_saison.get(c["saison"], {}).get("titre"),
+                    "annee": par_saison.get(c["saison"], {}).get("annee")})
+    palmares = sorted(
+        ({"id": i, "nom": noms.get(i, i), "trouves": n,
+          "joues": joue_par[i], "efficaces": efficace_par[i]}
+         for i, n in trouve_par.items()),
+        key=lambda x: (-x["efficaces"], -x["joues"], -x["trouves"], x["nom"]))
+
     return {
         "colliers": total,
         "trouves": len(trouves),
+        "porteurs": len(trouve_par),
+        "colliers_attribues": sum(trouve_par.values()),
+        "palmares": palmares[:12],
+        "elimines_avec_collier": perdus,
         "jamais_trouves": compte.get("non_decouvert", 0),
         "saisons_couvertes": len({c["saison"] for c in colliers}),
         "voix_annulees": annulees,
@@ -1430,7 +1465,7 @@ def main():
              if not par_saison.get(c["saison"], {}).get("en_cours")]),
         "premiere_epreuve": analyses.premiere_epreuve(par_saison, parts, epreuves),
         "epreuves": bloc_epreuves(epreuves, conseils, parts, saisons, par_saison),
-        "colliers": bloc_colliers(colliers, par_saison),
+        "colliers": bloc_colliers(colliers, par_saison, parts),
         "indicateurs": bloc_indicateurs(saisons, parts, conseils, epreuves, colliers,
                                         par_saison),
         "completude": bloc_completude(parts, personnes),

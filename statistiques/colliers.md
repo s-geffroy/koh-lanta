@@ -66,6 +66,59 @@ ne le raconte.
 moyenne **{{ c.voix_par_collier_joue }} voix**. Il ne renverse pas une voix : il
 efface un paquet de bulletins d’un coup.
 
+## Qui les trouve, qui les joue, qui en tire quelque chose
+
+Trois comptes, et c’est le troisième qui vaut : **trouver un collier n’est pas
+le jouer, et le jouer n’est pas annuler des voix.**
+
+<div class="tableau-large">
+<table data-triable>
+<thead><tr><th>Aventurier</th><th class="nombre">Trouvés</th><th class="nombre">Joués</th><th class="nombre">Annulations efficaces</th></tr></thead>
+<tbody>
+{% for x in c.palmares %}
+<tr><td><strong>{{ x.nom }}</strong></td>
+    <td class="nombre">{{ x.trouves }}</td>
+    <td class="nombre">{{ x.joues }}</td>
+    <td class="nombre">{{ x.efficaces }}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+<div class="constat">
+  <p><b>{{ c.porteurs }} aventuriers</b> se partagent les
+  {{ c.colliers_attribues }} colliers attribués : personne ou presque n’en
+  trouve plusieurs, et <b>{{ c.palmares[0].nom }}</b> est le seul à faire
+  {{ c.palmares[0].trouves }} sur {{ c.palmares[0].trouves }} — trouvés, joués,
+  et efficaces à chaque fois.</p>
+</div>
+
+### Éliminé avec le collier dans la poche
+
+{% assign perdus = c.elimines_avec_collier %}
+La catégorie la plus cruelle du tableau : l’avoir trouvé, ne pas l’avoir joué,
+et partir quand même. Elle compte **{{ perdus | size }} cas**.
+
+<div class="tableau-large">
+<table data-triable>
+<thead><tr><th>Aventurier</th><th>Saison</th><th class="nombre">Année</th></tr></thead>
+<tbody>
+{% for x in perdus %}
+<tr><td>{{ x.nom }}</td><td>{{ x.titre }}</td><td class="nombre">{{ x.annee }}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+<p class="note"><strong>Ce palmarès n’est pas un palmarès de carrière.</strong>
+Les colliers ne sont relevés que sur <b>{{ c.saisons_couvertes }} saisons</b>.
+Un aventurier absent de ce tableau n’en a pas forcément jamais trouvé : il a
+peut-être joué là où la source ne dit rien. Claude Dartois, premier du
+<a href="{{ '/statistiques/top/' | relative_url }}">classement des joueurs</a>,
+en est un exemple — une seule de ses quatre saisons est couverte ici, et il n’y
+apparaît pas. C’est pour cette raison exactement que les colliers ne sont pas
+une facette de ce classement.</p>
+
 ## Saison par saison
 
 {% include graphiques/colliers-saison.svg %}
