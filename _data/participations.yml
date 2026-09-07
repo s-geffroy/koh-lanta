@@ -2068,15 +2068,22 @@
   genre: h
   age: 36
   profession: Agents de joueurs de football
-  localisation: null
+  localisation: Isère
   edition_origine: null
   tribu: Mogo
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Mogo
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 4
   jour_sortie: 4
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 4
+  classement: 16
+  victoires_collectives: 0
+  victoires_individuelles: 0
   sources:
     genre: fandom
     age: fandom
@@ -2088,6 +2095,11 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: videli-dittmar
   nom: Vidéli
   nom_complet: Vidéli Dittmar
@@ -2095,15 +2107,22 @@
   genre: h
   age: 44
   profession: Décorateur-sculpteur
-  localisation: null
+  localisation: Pyrénées
   edition_origine: null
   tribu: Mogo
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Mogo
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 10
   jour_sortie: 10
   sort: abandon_medical
   motif: Abandon médical
   votes_recus: 0
+  classement: 15
+  victoires_collectives: 1
+  victoires_individuelles: 0
   sources:
     age: fandom
     profession: fandom
@@ -2115,6 +2134,11 @@
     votes_recus: fandom
     couleur: saisons.yml
     genre: arbitrage manuel
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: sabira
   nom: Sabira
   nom_complet: Sabira
@@ -2222,15 +2246,22 @@
   genre: f
   age: 28
   profession: Conseillère d'éducation
-  localisation: null
+  localisation: Vosges
   edition_origine: null
   tribu: Chapera
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Chapera
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 19
   jour_sortie: 19
   sort: elimine_conseil
   motif: Éliminée au conseil
   votes_recus: 5
+  classement: 11
+  victoires_collectives: 5
+  victoires_individuelles: 0
   sources:
     genre: fandom
     age: fandom
@@ -2242,6 +2273,11 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: guillaume-brauer
   nom: Guillaume
   nom_complet: Guillaume Brauer
@@ -2249,15 +2285,26 @@
   genre: h
   age: 20
   profession: Étudiant en droit
-  localisation: null
+  localisation: Var
   edition_origine: null
   tribu: Mogo
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Mogo
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 20
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: 20
+    jour_fin: 22
   jour_sortie: 22
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 5
+  classement: 10
+  victoires_collectives: 6
+  victoires_individuelles: 0
   sources:
     genre: fandom
     age: fandom
@@ -2269,6 +2316,11 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: odile-heritier
   nom: Odile
   nom_complet: Odile Héritier
@@ -2361,15 +2413,30 @@
   genre: f
   age: 27
   profession: Sage-femme
-  localisation: null
+  localisation: Seine-Saint-Denis
   edition_origine: null
   tribu: Chapera
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Chapera
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 7
+  - tribu: Mogo
+    couleur: rouge
+    jour_debut: 8
+    jour_fin: 20
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: 20
+    jour_fin: 31
   jour_sortie: 31
   sort: elimine_conseil
   motif: Éliminée au conseil
   votes_recus: 11
+  classement: 7
+  victoires_collectives: 6
+  victoires_individuelles: 1
   sources:
     genre: fandom
     age: fandom
@@ -2381,6 +2448,11 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: alban-oswald
   nom: Alban
   nom_complet: Alban Oswald
@@ -2430,15 +2502,26 @@
   genre: f
   age: 25
   profession: Animatrice de centre aéré
-  localisation: null
+  localisation: Isère
   edition_origine: null
   tribu: Chapera
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Chapera
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 20
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: 20
+    jour_fin: 37
   jour_sortie: 37
   sort: elimine_conseil
   motif: Éliminée au conseil
   votes_recus: 4
+  classement: 5
+  victoires_collectives: 5
+  victoires_individuelles: 3
   sources:
     genre: fandom
     age: fandom
@@ -2450,6 +2533,11 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: romuald-lafite
   nom: Romuald
   nom_complet: Romuald Lafite
@@ -2504,15 +2592,30 @@
   genre: h
   age: 40
   profession: Soudeur
-  localisation: null
+  localisation: Saône-et-Loire
   edition_origine: null
   tribu: Mogo
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Mogo
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 8
+  - tribu: Chapera
+    couleur: jaune
+    jour_debut: 8
+    jour_fin: 20
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: 20
+    jour_fin: 40
   jour_sortie: 40
   sort: elimine_poteaux
   motif: Éliminé aux poteaux
   votes_recus: 7
+  classement: 3
+  victoires_collectives: 5
+  victoires_individuelles: 2
   sources:
     genre: fandom
     age: fandom
@@ -2524,6 +2627,11 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: linda-alario
   nom: Linda
   nom_complet: Linda Alario
@@ -2531,15 +2639,30 @@
   genre: f
   age: 32
   profession: Gérante de boutique en prêt-à-porter
-  localisation: null
+  localisation: Alpes-Maritimes
   edition_origine: null
   tribu: Chapera
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Chapera
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 8
+  - tribu: Mogo
+    couleur: rouge
+    jour_debut: 8
+    jour_fin: 20
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: 20
+    jour_fin: 40
   jour_sortie: 40
   sort: finaliste
   motif: Finaliste
   votes_recus: 11
+  classement: 2
+  victoires_collectives: 7
+  victoires_individuelles: 1
   sources:
     age: fandom
     profession: fandom
@@ -2551,6 +2674,11 @@
     votes_recus: fandom
     couleur: saisons.yml
     genre: recoupement sur le prenom
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: philippe-bordier
   nom: Philippe
   nom_complet: Philippe Bordier
@@ -2586,15 +2714,22 @@
   genre: f
   age: 30
   profession: Maquilleuse
-  localisation: null
+  localisation: Seine-et-Marne
   edition_origine: null
   tribu: Kumo
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Kumo
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 3
   jour_sortie: 3
   sort: abandon_volontaire
   motif: Abandon volontaire
   votes_recus: 7
+  classement: 17
+  victoires_collectives: 0
+  victoires_individuelles: 0
   sources:
     age: fandom
     profession: fandom
@@ -2606,6 +2741,11 @@
     votes_recus: fandom
     couleur: saisons.yml
     genre: arbitrage manuel
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: mathieu-huguin
   nom: Mathieu
   nom_complet: Mathieu Huguin
@@ -2613,15 +2753,22 @@
   genre: h
   age: 21
   profession: Étudiant en pharmacie
-  localisation: null
+  localisation: Meurthe-et-Moselle
   edition_origine: null
   tribu: Kumo
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Kumo
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 3
   jour_sortie: 3
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 5
+  classement: 16
+  victoires_collectives: 0
+  victoires_individuelles: 0
   sources:
     genre: fandom
     age: fandom
@@ -2633,6 +2780,11 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: sylvie-sebert
   nom: Sylvie
   nom_complet: Sylvie Sébert
@@ -2640,15 +2792,22 @@
   genre: f
   age: 43
   profession: Ordonnatrice de pompes funèbres
-  localisation: null
+  localisation: Seine-Saint-Denis
   edition_origine: null
   tribu: Kanawa
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Kanawa
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 9
   jour_sortie: 9
   sort: abandon_medical
   motif: Abandon médical
   votes_recus: 0
+  classement: 15
+  victoires_collectives: 3
+  victoires_individuelles: 0
   sources:
     age: fandom
     profession: fandom
@@ -2660,6 +2819,11 @@
     votes_recus: fandom
     couleur: saisons.yml
     genre: recoupement sur le prenom
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: caroline-colusso
   nom: Caroline
   nom_complet: Caroline Colusso
@@ -2667,15 +2831,22 @@
   genre: f
   age: 29
   profession: Créatrice de mode
-  localisation: null
+  localisation: Pyrénées-Atlantiques
   edition_origine: null
   tribu: Kumo
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Kumo
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 9
   jour_sortie: 9
   sort: elimine_conseil
   motif: Éliminée au conseil
   votes_recus: 4
+  classement: 14
+  victoires_collectives: 3
+  victoires_individuelles: 0
   sources:
     genre: fandom
     age: fandom
@@ -2687,6 +2858,11 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: marie-cecile-marechal
   nom: Marie-Cécile
   nom_complet: Marie-Cécile Maréchal
@@ -2772,15 +2948,22 @@
   genre: f
   age: 38
   profession: Boucher
-  localisation: null
+  localisation: Drôme
   edition_origine: null
   tribu: Kanawa
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Kanawa
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 18
   jour_sortie: 18
   sort: elimine_conseil
   motif: Éliminée au conseil
   votes_recus: 4
+  classement: 11
+  victoires_collectives: 5
+  victoires_individuelles: 0
   sources:
     genre: fandom
     age: fandom
@@ -2792,6 +2975,11 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: sakhone-holaphong
   nom: Sakhone
   nom_complet: Sakhone Holaphong
@@ -2889,15 +3077,26 @@
   genre: f
   age: 35
   profession: Gérante d'auto-école
-  localisation: null
+  localisation: Var
   edition_origine: null
   tribu: Kanawa
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Kanawa
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 19
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: 1
+    jour_fin: 28
   jour_sortie: 28
   sort: elimine_conseil
   motif: Éliminée au conseil
   votes_recus: 8
+  classement: 8
+  victoires_collectives: 5
+  victoires_individuelles: 0
   sources:
     genre: fandom
     age: fandom
@@ -2909,6 +3108,11 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: coumba-baradji
   nom: Coumba
   nom_complet: Coumba Baradji
@@ -2959,15 +3163,26 @@
   genre: h
   age: 51
   profession: Graphiste
-  localisation: null
+  localisation: Meurthe-et-Moselle
   edition_origine: null
   tribu: Kanawa
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Kanawa
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 19
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: 19
+    jour_fin: 34
   jour_sortie: 34
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 6
+  classement: 6
+  victoires_collectives: 5
+  victoires_individuelles: 0
   sources:
     genre: fandom
     age: fandom
@@ -2979,6 +3194,11 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: veronique-lobjoie
   nom: Véronique
   nom_complet: Véronique Lobjoie
@@ -5028,7 +5248,7 @@
   genre: f
   age: 56
   profession: Formatrice financière
-  localisation: null
+  localisation: Seine-Saint-Denis
   edition_origine: null
   tribu: Bannie
   couleur: null
@@ -5037,6 +5257,9 @@
   sort: abandon_medical
   motif: Abandon médical
   votes_recus: 0
+  classement: 17
+  victoires_collectives: 0
+  victoires_individuelles: 0
   sources:
     age: fandom
     profession: fandom
@@ -5047,6 +5270,10 @@
     nom_complet: fandom
     votes_recus: fandom
     genre: recoupement sur le prenom
+    localisation: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: julien-mairesse
   nom: Julien
   nom_complet: Julien Mairesse
@@ -5093,15 +5320,22 @@
   genre: h
   age: 24
   profession: Ambulancier
-  localisation: null
+  localisation: Bouches-du-Rhône
   edition_origine: null
   tribu: Mawaï
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Mawaï
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 6
   jour_sortie: 6
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 5
+  classement: 15
+  victoires_collectives: 1
+  victoires_individuelles: 0
   sources:
     genre: fandom
     age: fandom
@@ -5113,6 +5347,11 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: claire-rolet
   nom: Claire
   nom_complet: Claire Rolet
@@ -5196,15 +5435,22 @@
   genre: f
   age: 26
   profession: Attachée consulaire
-  localisation: null
+  localisation: Paris
   edition_origine: null
   tribu: Mawaï
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Mawaï
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 15
   jour_sortie: 15
   sort: abandon_volontaire
   motif: Abandon volontaire
   votes_recus: 0
+  classement: 11
+  victoires_collectives: 2
+  victoires_individuelles: 0
   sources:
     age: fandom
     profession: fandom
@@ -5216,6 +5462,11 @@
     votes_recus: fandom
     couleur: saisons.yml
     genre: arbitrage manuel
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: alexandre-amico
   nom: Alexandre
   nom_complet: Alexandre Amico
@@ -5313,15 +5564,26 @@
   genre: h
   age: 39
   profession: Cadre SNCF
-  localisation: null
+  localisation: Bas-Rhin
   edition_origine: null
   tribu: Mawaï
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Mawaï
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 18
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: 18
+    jour_fin: 24
   jour_sortie: 24
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 7
+  classement: 9
+  victoires_collectives: 2
+  victoires_individuelles: 0
   sources:
     genre: fandom
     age: fandom
@@ -5333,6 +5595,11 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: louis-laurent-leger
   nom: Louis-Laurent
   nom_complet: Louis-Laurent Léger
@@ -5340,15 +5607,30 @@
   genre: h
   age: 28
   profession: Directeur d'agence d'import-export
-  localisation: null
+  localisation: Essonne
   edition_origine: null
   tribu: Mawaï
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Mawaï
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 11
+  - tribu: Koror
+    couleur: rouge
+    jour_debut: 11
+    jour_fin: 18
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: 18
+    jour_fin: 27
   jour_sortie: 27
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 4
+  classement: 8
+  victoires_collectives: 4
+  victoires_individuelles: 1
   sources:
     genre: fandom
     age: fandom
@@ -5360,6 +5642,11 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: raphaele-navarro
   nom: Raphaële
   nom_complet: Raphaële Navarro
@@ -5410,15 +5697,26 @@
   genre: h
   age: 52
   profession: Carrossier
-  localisation: null
+  localisation: Bouches-du-Rhône
   edition_origine: null
   tribu: Mawaï
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Mawaï
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 18
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: 18
+    jour_fin: 33
   jour_sortie: 33
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 5
+  classement: 6
+  victoires_collectives: 2
+  victoires_individuelles: 1
   sources:
     genre: fandom
     age: fandom
@@ -5430,6 +5728,11 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: kader-rebai
   nom: Kader
   nom_complet: Kader Rebaï
@@ -5437,15 +5740,26 @@
   genre: h
   age: 45
   profession: Responsable sécurité
-  localisation: null
+  localisation: Maine-et-Loire
   edition_origine: null
   tribu: Mawaï
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Mawaï
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 18
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: 18
+    jour_fin: 36
   jour_sortie: 36
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 18
+  classement: 5
+  victoires_collectives: 2
+  victoires_individuelles: 1
   sources:
     genre: fandom
     age: fandom
@@ -5457,6 +5771,11 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: fabienne-lefebvre-trehoux
   nom: Fabienne
   nom_complet: Fabienne Lefebvre-Trehoux
@@ -5464,15 +5783,26 @@
   genre: f
   age: 44
   profession: Assistante maternelle
-  localisation: null
+  localisation: Alpes-Maritimes
   edition_origine: null
   tribu: Mawaï
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Mawaï
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 18
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: 18
+    jour_fin: 37
   jour_sortie: 37
   sort: elimine_orientation
   motif: Éliminée à l'orientation
   votes_recus: 4
+  classement: 4
+  victoires_collectives: 2
+  victoires_individuelles: 0
   sources:
     genre: fandom
     age: fandom
@@ -5484,6 +5814,11 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: isabelle-da-silva
   nom: Isabelle
   nom_complet: Isabelle Da Silva
@@ -6960,6 +7295,9 @@
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 8
+  classement: 19
+  victoires_collectives: 1
+  victoires_individuelles: 0
   sources:
     genre: wikipedia-fr
     age: fandom
@@ -6973,6 +7311,9 @@
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: sara-tallon
   nom: Sara
   nom_complet: Sara Tallon
@@ -7075,6 +7416,9 @@
   sort: elimine_conseil
   motif: Éliminée au conseil
   votes_recus: 12
+  classement: 16
+  victoires_collectives: 5
+  victoires_individuelles: 0
   sources:
     genre: wikipedia-fr
     age: fandom
@@ -7088,6 +7432,9 @@
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: marie-parmentier
   nom: Marie
   nom_complet: Marie Parmentier
@@ -7147,6 +7494,9 @@
   sort: elimine_ambassadeurs
   motif: Éliminé aux ambassadeurs
   votes_recus: 0
+  classement: 14
+  victoires_collectives: 4
+  victoires_individuelles: 0
   sources:
     genre: wikipedia-fr
     age: fandom
@@ -7160,6 +7510,9 @@
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: javier-rodriguez
   nom: Javier
   nom_complet: Javier Rodriguez
@@ -7414,6 +7767,9 @@
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 11
+  classement: 7
+  victoires_collectives: 4
+  victoires_individuelles: 0
   sources:
     genre: wikipedia-fr
     age: fandom
@@ -7427,6 +7783,9 @@
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: myriam-modde
   nom: Myriam
   nom_complet: Myriam Modde
@@ -14194,6 +14553,9 @@
   sort: elimine_conseil
   motif: Éliminée au conseil
   votes_recus: 3
+  classement: 9
+  victoires_collectives: 5
+  victoires_individuelles: 1
   sources:
     genre: wikipedia-fr
     age: fandom
@@ -14207,6 +14569,9 @@
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: thomas-plisson
   nom: Thomas
   nom_complet: Thomas Plisson
@@ -17021,6 +17386,9 @@
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 9
+  classement: 7
+  victoires_collectives: 6
+  victoires_individuelles: 0
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -17034,6 +17402,9 @@
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: sebastien-cazaux
   nom: Sébastien
   nom_complet: Sébastien Cazaux
@@ -17054,6 +17425,9 @@
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 11
+  classement: 6
+  victoires_collectives: 8
+  victoires_individuelles: 0
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -17067,6 +17441,9 @@
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: amri-madani
   nom: Amri
   nom_complet: Amri Madani
@@ -17087,6 +17464,9 @@
   sort: elimine_orientation
   motif: Éliminé à l'orientation
   votes_recus: 17
+  classement: 5
+  victoires_collectives: 8
+  victoires_individuelles: 2
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -17100,6 +17480,9 @@
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: pauline-bonneil
   nom: Pauline
   nom_complet: Pauline Bonneil
@@ -17120,6 +17503,9 @@
   sort: elimine_orientation
   motif: Éliminée à l'orientation
   votes_recus: 2
+  classement: 4
+  victoires_collectives: 8
+  victoires_individuelles: 0
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -17133,6 +17519,9 @@
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: julie-rignault
   nom: Julie
   nom_complet: Julie Rignault
@@ -17153,6 +17542,9 @@
   sort: elimine_poteaux
   motif: Éliminée à l'épreuve des poteaux
   votes_recus: 7
+  classement: 3
+  victoires_collectives: 6
+  victoires_individuelles: 0
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -17166,6 +17558,9 @@
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: meissa-seck
   nom: Meïssa
   nom_complet: Meïssa Seck
@@ -17186,6 +17581,9 @@
   sort: finaliste
   motif: Finaliste
   votes_recus: 5
+  classement: 2
+  victoires_collectives: 6
+  victoires_individuelles: 3
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -17199,6 +17597,9 @@
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: lea-sahin
   nom: Léa
   nom_complet: Léa Sahin
@@ -17219,6 +17620,9 @@
   sort: vainqueur
   motif: Gagnante
   votes_recus: 2
+  classement: 1
+  victoires_collectives: 8
+  victoires_individuelles: 3
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -17232,6 +17636,9 @@
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: cecile-guy
   nom: Cécile
   nom_complet: Cécile Guy
@@ -20546,15 +20953,22 @@
   genre: f
   age: 37
   profession: Record de France de triple saut (1997-2007)
-  localisation: null
+  localisation: Martinique
   edition_origine: null
   tribu: Malabou
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Malabou
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 3
   jour_sortie: 3
   sort: elimine_conseil
   motif: Éliminée au conseil
   votes_recus: 3
+  classement: 14
+  victoires_collectives: 1
+  victoires_individuelles: 0
   sources:
     genre: fandom
     age: fandom
@@ -20566,6 +20980,11 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: frank-leb-uf
   nom: Frank Lebœuf
   nom_complet: Frank Lebœuf
@@ -20573,15 +20992,22 @@
   genre: h
   age: 42
   profession: Champion du monde de football (1998)
-  localisation: null
+  localisation: Bouches-du-Rhône
   edition_origine: null
   tribu: Malabou
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Malabou
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 5
   jour_sortie: 5
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 4
+  classement: 13
+  victoires_collectives: 2
+  victoires_individuelles: 0
   sources:
     genre: fandom
     age: fandom
@@ -20593,6 +21019,11 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: mohamed-derradji
   nom: Mohamed
   nom_complet: Mohamed Derradji
@@ -20629,15 +21060,22 @@
   genre: h
   age: 37
   profession: Champion olympique de danse sur glace (2002)
-  localisation: null
+  localisation: Rhône
   edition_origine: null
   tribu: Malabou
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Malabou
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 9
   jour_sortie: 9
   sort: elimine_ambassadeurs
   motif: Éliminé par les ambassadeurs
   votes_recus: 1
+  classement: 11
+  victoires_collectives: 4
+  victoires_individuelles: 0
   sources:
     genre: fandom
     age: fandom
@@ -20649,6 +21087,11 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: djamel-bouras
   nom: Djamel Bouras
   nom_complet: Djamel Bouras
@@ -20656,15 +21099,26 @@
   genre: h
   age: 38
   profession: Champion olympique de judo (1996)
-  localisation: null
+  localisation: Rhône
   edition_origine: null
   tribu: Malabou
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Malabou
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 10
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: 9
+    jour_fin: 10
   jour_sortie: 10
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 7
+  classement: 10
+  victoires_collectives: 4
+  victoires_individuelles: 0
   sources:
     genre: fandom
     age: fandom
@@ -20676,6 +21130,11 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: christina-chevry
   nom: Christina
   nom_complet: Christina Chevry
@@ -20712,15 +21171,26 @@
   genre: f
   age: 34
   profession: Vice-championne olympique de judo (2004)
-  localisation: null
+  localisation: Seine-Saint-Denis
   edition_origine: null
   tribu: Malabou
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Malabou
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 9
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: 9
+    jour_fin: 14
   jour_sortie: 14
   sort: elimine_conseil
   motif: Éliminée au conseil
   votes_recus: 7
+  classement: 8
+  victoires_collectives: 4
+  victoires_individuelles: 1
   sources:
     genre: fandom
     age: fandom
@@ -20732,6 +21202,11 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: taig-khris
   nom: Taïg Khris
   nom_complet: Taïg Khris
@@ -20739,15 +21214,26 @@
   genre: h
   age: 34
   profession: Champion du monde de roller en ligne (2000-2001)
-  localisation: null
+  localisation: Paris
   edition_origine: null
   tribu: Malabou
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Malabou
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 9
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: 9
+    jour_fin: 16
   jour_sortie: 16
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 6
+  classement: 7
+  victoires_collectives: 4
+  victoires_individuelles: 0
   sources:
     genre: fandom
     age: fandom
@@ -20759,6 +21245,11 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: myriam-lamare
   nom: Myriam Lamare
   nom_complet: Myriam Lamare
@@ -20766,15 +21257,26 @@
   genre: f
   age: 35
   profession: Championne du monde de boxe (2004-2006)
-  localisation: null
+  localisation: Saint-Denis
   edition_origine: null
   tribu: Malabou
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Malabou
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 9
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: 9
+    jour_fin: 18
   jour_sortie: 18
   sort: elimine_conseil
   motif: Éliminée au conseil
   votes_recus: 6
+  classement: 6
+  victoires_collectives: 4
+  victoires_individuelles: 3
   sources:
     genre: fandom
     age: fandom
@@ -20786,22 +21288,38 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: linda-alario
   nom: Linda
   nom_complet: Linda Alario
   saison: sp2
   genre: f
   age: 38
-  profession: Gérante de boutique en prêt-à-porter
-  localisation: null
+  profession: Gérant de boutique de prêt-à-porter
+  localisation: Alpes-Maritimes
   edition_origine: Panama
   tribu: Tiac
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Tiac
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 10
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: 10
+    jour_fin: 19
   jour_sortie: 19
   sort: elimine_orientation
   motif: Éliminée à l'orientation
   votes_recus: 6
+  classement: 5
+  victoires_collectives: 3
+  victoires_individuelles: 0
   sources:
     genre: fandom
     age: fandom
@@ -20813,7 +21331,12 @@
     votes_recus: fandom
     edition_origine: fandom
     couleur: saisons.yml
-    profession: reprise de sa participation de 2004
+    localisation: fandom (page individuelle)
+    profession: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: coumba-baradji
   nom: Coumba
   nom_complet: Coumba Baradji
@@ -20994,6 +21517,9 @@
   sort: elimine_conseil
   motif: Éliminée lors d’une épreuve éliminatoire
   votes_recus: 0
+  classement: 16
+  victoires_collectives: 0
+  victoires_individuelles: 0
   sources:
     genre: wikipedia-fr
     age: fandom
@@ -21007,6 +21533,9 @@
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: marine-plissonneau
   nom: Marine
   nom_complet: Marine Plissonneau

@@ -2,7 +2,7 @@
 # Ne pas editer a la main : toute modification sera ecrasee.
 source: https://www.insee.fr/fr/statistiques/fichier/8560704/2_Pop1janv_grages_depreg.xlsx
 champ: population de 20 a 59 ans, au 1er janvier de l'annee de chaque saison
-participations: 437
+participations: 459
 hors_fichier:
 - Australie
 - Belgique
@@ -14,389 +14,394 @@ hors_fichier:
 - Mauléon
 - Monaco
 - Portugal
+- Pyrénées
 - Suisse
-nb_hors_fichier: 33
+nb_hors_fichier: 34
 annees:
 - 2001
 - 2026
 derniere_annee_insee: 2025
-departements_classes: 73
-dispersion_observee: 172.3
-dispersion_attendue: 98.9
-p: 0.0002
+departements_classes: 74
+dispersion_observee: 181.7
+dispersion_attendue: 99.0
+p: 0.0001
 tirages: 10000
 departements:
 - departement: Lot
   observe: 3
-  attendu: 1.01
-  indice: 2.98
+  attendu: 1.06
+  indice: 2.82
 - departement: Pyrénées-Orientales
   observe: 8
-  attendu: 2.82
-  indice: 2.83
+  attendu: 2.96
+  indice: 2.7
 - departement: Corse
   observe: 6
-  attendu: 2.15
-  indice: 2.79
+  attendu: 2.25
+  indice: 2.67
 - departement: Pyrénées-Atlantiques
-  observe: 10
-  attendu: 4.3
+  observe: 11
+  attendu: 4.51
+  indice: 2.44
+- departement: Alpes-Maritimes
+  observe: 17
+  attendu: 7.28
   indice: 2.33
 - departement: Haute-Savoie
   observe: 12
-  attendu: 5.5
-  indice: 2.18
-- departement: Alpes-Maritimes
-  observe: 15
-  attendu: 6.93
-  indice: 2.16
+  attendu: 5.75
+  indice: 2.09
+- departement: Bouches-du-Rhône
+  observe: 28
+  attendu: 14.01
+  indice: 2.0
 - departement: Landes
   observe: 5
-  attendu: 2.49
-  indice: 2.0
-- departement: Bouches-du-Rhône
-  observe: 26
-  attendu: 13.34
-  indice: 1.95
+  attendu: 2.62
+  indice: 1.91
 - departement: Ain
   observe: 8
-  attendu: 4.2
-  indice: 1.91
-- departement: Charente-Maritime
-  observe: 7
-  attendu: 3.84
+  attendu: 4.4
   indice: 1.82
+- departement: Paris
+  observe: 31
+  attendu: 17.54
+  indice: 1.77
+- departement: Var
+  observe: 12
+  attendu: 6.78
+  indice: 1.77
 - departement: Hauts-de-Seine
   observe: 21
-  attendu: 11.59
-  indice: 1.81
-- departement: Paris
-  observe: 30
-  attendu: 16.66
-  indice: 1.8
+  attendu: 12.17
+  indice: 1.73
+- departement: Charente-Maritime
+  observe: 7
+  attendu: 4.04
+  indice: 1.73
 - departement: Gers
   observe: 2
-  attendu: 1.13
-  indice: 1.78
-- departement: Var
-  observe: 10
-  attendu: 6.47
-  indice: 1.55
+  attendu: 1.18
+  indice: 1.69
+- departement: Vosges
+  observe: 4
+  attendu: 2.44
+  indice: 1.64
+- departement: Meurthe-et-Moselle
+  observe: 8
+  attendu: 5.19
+  indice: 1.54
 - departement: Val-de-Marne
   observe: 15
-  attendu: 9.78
-  indice: 1.53
+  attendu: 10.26
+  indice: 1.46
 - departement: Allier
   observe: 3
-  attendu: 2.04
-  indice: 1.47
+  attendu: 2.16
+  indice: 1.39
+- departement: Isère
+  observe: 12
+  attendu: 8.73
+  indice: 1.37
 - departement: Gironde
   observe: 15
-  attendu: 10.65
-  indice: 1.41
+  attendu: 11.15
+  indice: 1.35
+- departement: Seine-Saint-Denis
+  observe: 16
+  attendu: 11.94
+  indice: 1.34
 - departement: Hérault
   observe: 10
-  attendu: 7.37
-  indice: 1.36
+  attendu: 7.71
+  indice: 1.3
 - departement: Calvados
   observe: 6
-  attendu: 4.46
-  indice: 1.34
+  attendu: 4.69
+  indice: 1.28
 - departement: Gard
   observe: 6
-  attendu: 4.6
-  indice: 1.31
-- departement: Vosges
-  observe: 3
-  attendu: 2.31
-  indice: 1.3
+  attendu: 4.82
+  indice: 1.24
 - departement: Tarn-et-Garonne
   observe: 2
-  attendu: 1.57
-  indice: 1.27
+  attendu: 1.65
+  indice: 1.21
+- departement: Drôme
+  observe: 4
+  attendu: 3.33
+  indice: 1.2
 - departement: Jura
   observe: 2
-  attendu: 1.62
-  indice: 1.23
-- departement: Meurthe-et-Moselle
-  observe: 6
-  attendu: 4.93
-  indice: 1.22
+  attendu: 1.71
+  indice: 1.17
 - departement: Nord
   observe: 21
-  attendu: 17.51
-  indice: 1.2
-- departement: Isère
-  observe: 10
-  attendu: 8.32
-  indice: 1.2
-- departement: Seine-Saint-Denis
-  observe: 13
-  attendu: 11.39
+  attendu: 18.42
   indice: 1.14
+- departement: Bas-Rhin
+  observe: 9
+  attendu: 8.17
+  indice: 1.1
 - departement: Vaucluse
   observe: 4
-  attendu: 3.5
-  indice: 1.14
+  attendu: 3.68
+  indice: 1.09
 - departement: Doubs
   observe: 4
-  attendu: 3.55
-  indice: 1.13
+  attendu: 3.73
+  indice: 1.07
 - departement: Seine-Maritime
   observe: 9
-  attendu: 8.24
-  indice: 1.09
+  attendu: 8.67
+  indice: 1.04
 - departement: Morbihan
   observe: 5
-  attendu: 4.58
-  indice: 1.09
+  attendu: 4.81
+  indice: 1.04
 - departement: Vienne
   observe: 3
-  attendu: 2.79
-  indice: 1.08
+  attendu: 2.93
+  indice: 1.02
 - departement: Savoie
   observe: 3
-  attendu: 2.83
-  indice: 1.06
-- departement: Bas-Rhin
-  observe: 8
-  attendu: 7.77
-  indice: 1.03
-- departement: Ardèche
-  observe: 2
-  attendu: 1.98
+  attendu: 2.97
   indice: 1.01
-- departement: Yonne
+- departement: Ardèche
   observe: 2
   attendu: 2.08
   indice: 0.96
-- departement: Drôme
-  observe: 3
-  attendu: 3.17
-  indice: 0.95
-- departement: Yvelines
-  observe: 9
-  attendu: 9.8
+- departement: Maine-et-Loire
+  observe: 5
+  attendu: 5.45
   indice: 0.92
-- departement: Loiret
-  observe: 4
-  attendu: 4.35
-  indice: 0.92
-- departement: Charente
+- departement: Yonne
   observe: 2
   attendu: 2.19
-  indice: 0.92
+  indice: 0.91
+- departement: Loiret
+  observe: 4
+  attendu: 4.57
+  indice: 0.88
+- departement: Yvelines
+  observe: 9
+  attendu: 10.3
+  indice: 0.87
+- departement: Charente
+  observe: 2
+  attendu: 2.3
+  indice: 0.87
 - departement: Loire-Atlantique
   observe: 8
-  attendu: 9.22
-  indice: 0.87
+  attendu: 9.65
+  indice: 0.83
 - departement: Ille-et-Vilaine
   observe: 6
-  attendu: 7.05
-  indice: 0.85
-- departement: Moselle
-  observe: 6
-  attendu: 7.1
-  indice: 0.85
+  attendu: 7.39
+  indice: 0.81
 - departement: Tarn
   observe: 2
-  attendu: 2.35
-  indice: 0.85
+  attendu: 2.46
+  indice: 0.81
 - departement: Haute-Garonne
   observe: 8
-  attendu: 9.56
-  indice: 0.84
+  attendu: 10.0
+  indice: 0.8
+- departement: Moselle
+  observe: 6
+  attendu: 7.47
+  indice: 0.8
 - departement: Loire
   observe: 4
-  attendu: 4.78
-  indice: 0.84
+  attendu: 5.03
+  indice: 0.79
 - departement: Dordogne
   observe: 2
-  attendu: 2.44
-  indice: 0.82
+  attendu: 2.56
+  indice: 0.78
 - departement: Martinique
   observe: 2
-  attendu: 2.43
-  indice: 0.82
-- departement: Nièvre
-  observe: 1
-  attendu: 1.24
-  indice: 0.81
+  attendu: 2.56
+  indice: 0.78
 - departement: Rhône
   observe: 10
-  attendu: 12.53
-  indice: 0.8
+  attendu: 13.13
+  indice: 0.76
+- departement: Essonne
+  observe: 7
+  attendu: 9.25
+  indice: 0.76
+- departement: Nièvre
+  observe: 1
+  attendu: 1.31
+  indice: 0.76
 - departement: Marne
   observe: 3
-  attendu: 3.8
-  indice: 0.79
-- departement: Maine-et-Loire
-  observe: 4
-  attendu: 5.19
-  indice: 0.77
+  attendu: 4.0
+  indice: 0.75
 - departement: Indre-et-Loire
   observe: 3
-  attendu: 3.9
-  indice: 0.77
-- departement: Essonne
-  observe: 6
-  attendu: 8.81
-  indice: 0.68
+  attendu: 4.1
+  indice: 0.73
 - departement: Haute-Saône
   observe: 1
-  attendu: 1.48
-  indice: 0.67
+  attendu: 1.56
+  indice: 0.64
+- departement: Seine-et-Marne
+  observe: 6
+  attendu: 10.06
+  indice: 0.6
 - departement: Aveyron
   observe: 1
-  attendu: 1.67
-  indice: 0.6
+  attendu: 1.76
+  indice: 0.57
 - departement: Val-d'Oise
   observe: 5
-  attendu: 8.49
-  indice: 0.59
+  attendu: 8.91
+  indice: 0.56
 - departement: Aisne
   observe: 2
-  attendu: 3.41
-  indice: 0.59
+  attendu: 3.59
+  indice: 0.56
 - departement: Côte-d'Or
   observe: 2
-  attendu: 3.53
-  indice: 0.57
-- departement: Ardennes
-  observe: 1
-  attendu: 1.77
-  indice: 0.57
+  attendu: 3.71
+  indice: 0.54
 - departement: Côtes-d'Armor
   observe: 2
-  attendu: 3.55
-  indice: 0.56
+  attendu: 3.73
+  indice: 0.54
 - departement: Sarthe
   observe: 2
-  attendu: 3.55
-  indice: 0.56
+  attendu: 3.73
+  indice: 0.54
+- departement: Ardennes
+  observe: 1
+  attendu: 1.86
+  indice: 0.54
 - departement: Oise
   observe: 3
-  attendu: 5.5
-  indice: 0.55
-- departement: Seine-et-Marne
-  observe: 5
-  attendu: 9.59
+  attendu: 5.78
   indice: 0.52
 - departement: Lot-et-Garonne
   observe: 1
-  attendu: 1.99
-  indice: 0.5
+  attendu: 2.09
+  indice: 0.48
 - departement: Puy-de-Dôme
   observe: 2
-  attendu: 4.28
-  indice: 0.47
+  attendu: 4.5
+  indice: 0.44
 - departement: Aude
   observe: 1
-  attendu: 2.2
-  indice: 0.45
+  attendu: 2.31
+  indice: 0.43
 - departement: Deux-Sèvres
   observe: 1
-  attendu: 2.32
-  indice: 0.43
+  attendu: 2.44
+  indice: 0.41
 - departement: Pas-de-Calais
   observe: 4
-  attendu: 9.54
-  indice: 0.42
+  attendu: 10.04
+  indice: 0.4
 - departement: Eure-et-Loir
   observe: 1
-  attendu: 2.76
-  indice: 0.36
+  attendu: 2.91
+  indice: 0.34
 - departement: Finistère
   observe: 2
-  attendu: 5.75
-  indice: 0.35
+  attendu: 6.05
+  indice: 0.33
 - departement: Manche
   observe: 1
-  attendu: 3.05
-  indice: 0.33
+  attendu: 3.21
+  indice: 0.31
+- departement: Saône-et-Loire
+  observe: 1
+  attendu: 3.55
+  indice: 0.28
 - departement: Eure
   observe: 1
-  attendu: 3.84
-  indice: 0.26
+  attendu: 4.04
+  indice: 0.25
 - departement: Creuse
   observe: 1
-  attendu: 0.69
+  attendu: 0.73
   indice: null
 - departement: Alpes-de-Haute-Provence
   observe: 0
-  attendu: 0.98
-  indice: null
+  attendu: 1.03
+  indice: 0.0
 - departement: Ariège
   observe: 0
-  attendu: 0.93
+  attendu: 0.98
   indice: null
 - departement: Aube
   observe: 0
-  attendu: 1.96
+  attendu: 2.06
   indice: 0.0
 - departement: Cantal
   observe: 0
-  attendu: 0.89
+  attendu: 0.94
   indice: null
 - departement: Cher
   observe: 0
-  attendu: 1.88
+  attendu: 1.99
   indice: 0.0
 - departement: Corrèze
   observe: 0
-  attendu: 1.46
+  attendu: 1.54
   indice: 0.0
 - departement: Guadeloupe
   observe: 0
-  attendu: 2.52
+  attendu: 2.65
   indice: 0.0
 - departement: Guyane
   observe: 0
-  attendu: 1.63
+  attendu: 1.7
   indice: 0.0
 - departement: Haut-Rhin
   observe: 0
-  attendu: 5.07
+  attendu: 5.33
   indice: 0.0
 - departement: Haute-Loire
   observe: 0
-  attendu: 1.39
+  attendu: 1.46
   indice: 0.0
 - departement: Haute-Marne
   observe: 0
-  attendu: 1.11
+  attendu: 1.17
   indice: 0.0
 - departement: Haute-Vienne
   observe: 0
-  attendu: 2.35
+  attendu: 2.48
   indice: 0.0
 - departement: Hautes-Alpes
   observe: 0
-  attendu: 0.86
+  attendu: 0.91
   indice: null
 - departement: Hautes-Pyrénées
   observe: 0
-  attendu: 1.41
+  attendu: 1.48
   indice: 0.0
 - departement: Indre
   observe: 0
-  attendu: 1.34
+  attendu: 1.41
   indice: 0.0
 - departement: La Réunion
   observe: 0
-  attendu: 5.7
+  attendu: 5.97
   indice: 0.0
 - departement: Loir-et-Cher
   observe: 0
-  attendu: 2.01
+  attendu: 2.12
   indice: 0.0
 - departement: Lozère
   observe: 0
-  attendu: 0.47
+  attendu: 0.5
   indice: null
 - departement: Mayenne
   observe: 0
-  attendu: 1.89
+  attendu: 1.99
   indice: 0.0
 - departement: Mayotte
   observe: 0
@@ -404,148 +409,142 @@ departements:
   indice: null
 - departement: Meuse
   observe: 0
-  attendu: 1.19
+  attendu: 1.25
   indice: 0.0
 - departement: Orne
   observe: 0
-  attendu: 1.71
-  indice: 0.0
-- departement: Saône-et-Loire
-  observe: 0
-  attendu: 3.37
+  attendu: 1.81
   indice: 0.0
 - departement: Somme
   observe: 0
-  attendu: 3.74
+  attendu: 3.94
   indice: 0.0
 - departement: Territoire de Belfort
   observe: 0
-  attendu: 0.94
+  attendu: 0.99
   indice: null
 - departement: Vendée
   observe: 0
-  attendu: 4.05
+  attendu: 4.25
   indice: 0.0
 regions:
-- &id001
-  region: Corse
+- region: Corse
   observe: 6
-  attendu: 2.1
-  indice: 2.79
-  indice_bas: 1.03
-  indice_haut: 6.03
-- &id002
+  attendu: 2.2
+  indice: 2.67
+  indice_bas: 0.98
+  indice_haut: 5.76
+- &id001
   region: Provence-Alpes-Côte d'Azur
-  observe: 55
-  attendu: 32.1
-  indice: 1.71
-  indice_bas: 1.31
-  indice_haut: 2.19
+  observe: 61
+  attendu: 33.7
+  indice: 1.81
+  indice_bas: 1.41
+  indice_haut: 2.28
 - region: Nouvelle-Aquitaine
-  observe: 47
-  attendu: 37.5
-  indice: 1.25
-  indice_bas: 0.93
-  indice_haut: 1.64
-- &id003
+  observe: 48
+  attendu: 39.4
+  indice: 1.22
+  indice_bas: 0.91
+  indice_haut: 1.59
+- &id002
   region: Île-de-France
-  observe: 104
-  attendu: 86.1
-  indice: 1.21
-  indice_bas: 1.01
-  indice_haut: 1.42
+  observe: 110
+  attendu: 90.4
+  indice: 1.22
+  indice_bas: 1.02
+  indice_haut: 1.43
 - region: Occitanie
   observe: 43
-  attendu: 37.1
-  indice: 1.16
-  indice_bas: 0.85
-  indice_haut: 1.54
+  attendu: 38.9
+  indice: 1.11
+  indice_bas: 0.81
+  indice_haut: 1.47
 - region: Auvergne-Rhône-Alpes
-  observe: 57
-  attendu: 51.9
+  observe: 60
+  attendu: 54.5
   indice: 1.1
-  indice_bas: 0.84
+  indice_bas: 0.85
   indice_haut: 1.39
+- region: Grand Est
+  observe: 31
+  attendu: 39.0
+  indice: 0.8
+  indice_bas: 0.55
+  indice_haut: 1.11
 - region: Martinique
   observe: 2
-  attendu: 2.4
-  indice: 0.82
-  indice_bas: 0.1
-  indice_haut: 2.96
+  attendu: 2.6
+  indice: 0.78
+  indice_bas: 0.09
+  indice_haut: 2.8
 - region: Normandie
   observe: 17
-  attendu: 21.3
-  indice: 0.8
-  indice_bas: 0.47
-  indice_haut: 1.26
+  attendu: 22.4
+  indice: 0.76
+  indice_bas: 0.44
+  indice_haut: 1.2
 - region: Hauts-de-France
   observe: 30
-  attendu: 39.7
-  indice: 0.76
-  indice_bas: 0.52
-  indice_haut: 1.06
-- region: Grand Est
-  observe: 27
-  attendu: 37.0
-  indice: 0.73
+  attendu: 41.8
+  indice: 0.72
   indice_bas: 0.49
-  indice_haut: 1.05
+  indice_haut: 1.01
+- region: Bourgogne-Franche-Comté
+  observe: 13
+  attendu: 18.8
+  indice: 0.69
+  indice_bas: 0.37
+  indice_haut: 1.17
 - region: Bretagne
   observe: 15
-  attendu: 20.9
-  indice: 0.72
-  indice_bas: 0.4
-  indice_haut: 1.17
-- region: Bourgogne-Franche-Comté
-  observe: 12
-  attendu: 17.8
-  indice: 0.67
-  indice_bas: 0.35
-  indice_haut: 1.17
-- &id004
+  attendu: 22.0
+  indice: 0.68
+  indice_bas: 0.38
+  indice_haut: 1.11
+- &id003
   region: Pays de la Loire
-  observe: 14
-  attendu: 23.9
-  indice: 0.59
-  indice_bas: 0.32
-  indice_haut: 0.97
-- &id005
+  observe: 15
+  attendu: 25.1
+  indice: 0.6
+  indice_bas: 0.34
+  indice_haut: 0.98
+- &id004
   region: Centre-Val de Loire
   observe: 8
-  attendu: 16.2
-  indice: 0.49
-  indice_bas: 0.21
-  indice_haut: 0.96
+  attendu: 17.1
+  indice: 0.47
+  indice_bas: 0.2
+  indice_haut: 0.91
 - region: Guadeloupe
   observe: 0
-  attendu: 2.5
+  attendu: 2.7
   indice: 0.0
   indice_bas: 0.0
-  indice_haut: 1.46
+  indice_haut: 1.39
 - region: Guyane
   observe: 0
-  attendu: 1.6
+  attendu: 1.7
   indice: 0.0
   indice_bas: 0.0
-  indice_haut: 2.25
-- &id006
+  indice_haut: 2.16
+- &id005
   region: La Réunion
   observe: 0
-  attendu: 5.7
+  attendu: 6.0
   indice: 0.0
   indice_bas: 0.0
-  indice_haut: 0.64
-regions_dispersion_observee: 58.8
+  indice_haut: 0.62
+regions_dispersion_observee: 65.5
 regions_dispersion_attendue: 16.1
 regions_p: 0.0001
 regions_hautes:
 - *id001
 - *id002
-- *id003
 regions_basses:
+- *id003
 - *id004
 - *id005
-- *id006
 outremer:
   regions:
   - Martinique
@@ -553,7 +552,7 @@ outremer:
   - Guyane
   - La Réunion
   observe: 2
-  attendu: 12.2
+  attendu: 13.0
 couverture:
 - saison: s01
   annee: 2001
@@ -574,12 +573,12 @@ couverture:
   annee: 2004
   titre: Panama
   effectif: 16
-  localisees: 4
+  localisees: 12
 - saison: s05
   annee: 2005
   titre: Pacifique
   effectif: 17
-  localisees: 10
+  localisees: 17
 - saison: s06
   annee: 2006
   titre: Vanuatu
@@ -599,7 +598,7 @@ couverture:
   annee: 2009
   titre: Palau
   effectif: 18
-  localisees: 8
+  localisees: 16
 - saison: s10
   annee: 2010
   titre: Viêtnam
@@ -686,103 +685,103 @@ couverture:
   effectif: 20
   localisees: 20
 saisons_classiques: 26
-saisons_completes: 21
+saisons_completes: 22
 saisons_sans_lieu: []
 tests:
 - cle: geographie_departements
   libelle: L'origine géographique, par département
   question: Les aventuriers viennent-ils de départements plus variés, ou plus concentrés, qu'un tirage
     dans la population française ne le donnerait ?
-  observe: 172.341
-  attendu: 98.917
+  observe: 181.723
+  attendu: 98.954
   unite: ''
-  ecart_types: 5.02
-  p: 0.0002
+  ecart_types: 5.61
+  p: 0.0001
   tirages: 10000
   lecture: 'Dispersion entre les effectifs observés et ceux qu''on attendrait d''un tirage au hasard dans
     la population de 20 à 59 ans, année par année. Au-dessus de l''attendu : le recrutement n''épouse
     pas la démographie.'
   nulle:
     bornes:
-    - 47.0811
-    - 180.2732
+    - 48.7166
+    - 188.0564
     cases:
     - 0
-    - 3
-    - 4
-    - 43
-    - 109
-    - 257
-    - 500
-    - 771
-    - 1115
-    - 1290
-    - 1329
-    - 1220
-    - 1015
-    - 809
-    - 563
-    - 383
-    - 257
-    - 151
-    - 75
-    - 56
+    - 5
+    - 28
+    - 65
+    - 181
+    - 405
+    - 769
+    - 1011
+    - 1314
+    - 1389
+    - 1291
+    - 1069
+    - 868
+    - 607
+    - 410
+    - 254
+    - 146
+    - 93
+    - 49
     - 23
     - 14
-    - 6
-    - 5
+    - 3
+    - 2
+    - 4
     - 0
-    - 1
-    - 1
     - 0
-    largeur_case: 4.756861
-    observe: 172.3406
-    moyenne_nulle: 98.9173
+    - 0
+    - 0
+    largeur_case: 4.976418
+    observe: 181.7227
+    moyenne_nulle: 98.9537
 - cle: geographie_regions
   libelle: L'origine géographique, par région
   question: À l'échelle des régions — assez peuplées pour trancher — le recrutement suit-il la démographie
     française ?
-  observe: 58.761
-  attendu: 16.071
+  observe: 65.529
+  attendu: 16.108
   unite: ''
-  ecart_types: 7.23
+  ecart_types: 8.52
   p: 0.0001
   tirages: 10000
   lecture: 'Même mesure, agrégée par région. C''est le niveau où la question se décide : un département
     compte trois aventuriers, une région une vingtaine.'
   nulle:
     bornes:
-    - -0.5947
-    - 61.5879
+    - -0.2146
+    - 68.6594
     cases:
     - 0
-    - 10
-    - 131
-    - 488
-    - 1046
-    - 1418
-    - 1651
-    - 1511
-    - 1202
-    - 931
-    - 609
-    - 396
-    - 255
-    - 145
-    - 86
-    - 50
-    - 40
-    - 7
-    - 13
+    - 25
+    - 272
+    - 837
+    - 1471
+    - 1792
+    - 1691
+    - 1393
+    - 997
+    - 645
+    - 414
+    - 214
+    - 120
+    - 63
+    - 34
+    - 16
+    - 9
     - 3
     - 1
-    - 3
-    - 4
+    - 1
     - 0
     - 0
+    - 1
     - 0
     - 0
+    - 1
     - 0
-    largeur_case: 2.220808
-    observe: 58.7614
-    moyenne_nulle: 16.0706
+    - 0
+    largeur_case: 2.459787
+    observe: 65.5288
+    moyenne_nulle: 16.1077

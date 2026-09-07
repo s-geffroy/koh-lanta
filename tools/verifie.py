@@ -453,7 +453,7 @@ RE_RESIDU_WIKI = re.compile(
 def _constater_lieux(ambigus, c):
     if ambigus:
         c.constater(f"localisation : {len(ambigus)} valeur(s) qu'on refuse de "
-                    f"trancher — la commune existe dans deux departements "
+                    f"trancher — le nom designe plusieurs lieux "
                     f"({', '.join(sorted(ambigus))})")
 
 

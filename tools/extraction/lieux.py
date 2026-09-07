@@ -65,6 +65,12 @@ Sénégal, Espagne, Portugal, Italie, Allemagne, Royaume-Uni, Angleterre,
 AMBIGUS = {
     "brassac": ("Tarn", "Puy-de-Dôme"),
     "mauleon": ("Deux-Sèvres", "Pyrénées-Atlantiques"),
+    # « Saint-Denis » nomme une trentaine de communes, dont deux tres connues :
+    # celle de Seine-Saint-Denis et celle de La Reunion.
+    "saint-denis": ("Seine-Saint-Denis", "La Réunion"),
+    # Et « Pyrenees » n'est pas une commune du tout : c'est une chaine, qui
+    # traverse trois departements qui en portent le nom.
+    "pyrenees": ("Pyrénées-Atlantiques", "Hautes-Pyrénées", "Pyrénées-Orientales"),
 }
 
 VILLES = {
@@ -77,6 +83,7 @@ VILLES = {
     "Courneuve": "Seine-Saint-Denis",
     "Fourmies": "Nord",
     "Garges-les-Gonesses": "Val-d'Oise",
+    "Givors": "Rhône",
     "Grenoble": "Isère",
     "La Garenne-Colombes": "Hauts-de-Seine",
     "Lambersart": "Nord",
@@ -88,6 +95,7 @@ VILLES = {
     "Nice": "Alpes-Maritimes",
     "Noisy-le-Grand": "Seine-Saint-Denis",
     "Pollestres": "Pyrénées-Orientales",
+    "Rosny-sous-Bois": "Seine-Saint-Denis",
     "Strasbourg": "Bas-Rhin",
     "Toulouse": "Haute-Garonne",
     # Provinces d'Ancien Regime, encore employees comme adresse.

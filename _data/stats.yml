@@ -9374,8 +9374,8 @@ indicateurs:
     - binomes
 completude:
   participations: 645
-  avec_fiche: 555
-  sans_fiche: 90
+  avec_fiche: 599
+  sans_fiche: 46
   personnes: 531
   champs:
   - champ: age
@@ -9395,7 +9395,7 @@ completude:
     remplis: 645
     manquants: 0
     part: 100.0
-    depuis_page_individuelle: 58
+    depuis_page_individuelle: 59
   - champ: sort
     libelle: Manière de sortir
     remplis: 645
@@ -9420,53 +9420,53 @@ completude:
     manquants: 16
     part: 97.5
     depuis_page_individuelle: 2
+  - champ: localisation
+    libelle: Département d'origine
+    remplis: 626
+    manquants: 19
+    part: 97.1
+    depuis_page_individuelle: 254
   - champ: couleur
     libelle: Couleur de départ
     remplis: 623
     manquants: 22
     part: 96.6
     depuis_page_individuelle: 0
-  - champ: localisation
-    libelle: Département d'origine
-    remplis: 595
-    manquants: 50
-    part: 92.2
-    depuis_page_individuelle: 223
   - champ: parcours
     libelle: Trajectoire de tribus
-    remplis: 544
-    manquants: 101
-    part: 84.3
-    depuis_page_individuelle: 259
+    remplis: 574
+    manquants: 71
+    part: 89.0
+    depuis_page_individuelle: 289
   - champ: classement
     libelle: Rang final
-    remplis: 522
-    manquants: 123
-    part: 80.9
-    depuis_page_individuelle: 522
+    remplis: 566
+    manquants: 79
+    part: 87.8
+    depuis_page_individuelle: 566
   - champ: victoires_individuelles
     libelle: Victoires individuelles
-    remplis: 504
-    manquants: 141
-    part: 78.1
-    depuis_page_individuelle: 504
+    remplis: 548
+    manquants: 97
+    part: 85.0
+    depuis_page_individuelle: 548
   - champ: victoires_collectives
     libelle: Victoires collectives
-    remplis: 502
-    manquants: 143
-    part: 77.8
-    depuis_page_individuelle: 502
+    remplis: 546
+    manquants: 99
+    part: 84.7
+    depuis_page_individuelle: 546
   champs_complets: 5
   champs_suivis: 13
-  trous: 598
+  trous: 405
   valeurs_suivies: 8385
-  comblees: 2106
-  part_remplie: 92.87
+  comblees: 2300
+  part_remplie: 95.17
 palmares:
-  renseignees: 504
-  compares: 447
-  identiques: 322
-  part_identiques: 72.0
+  renseignees: 548
+  compares: 471
+  identiques: 342
+  part_identiques: 72.6
   ecart_median: 1
   saisons_ajoutees:
   - saison: s03
@@ -9476,15 +9476,15 @@ palmares:
   - saison: s09
     titre: Palau
     annee: 2009
-    aventuriers: 8
+    aventuriers: 16
   - saison: sp2
     titre: Le Choc des héros
     annee: 2010
-    aventuriers: 3
+    aventuriers: 11
   - saison: s12
     titre: Malaisie
     annee: 2012
-    aventuriers: 13
+    aventuriers: 17
   - saison: s14
     titre: Johor
     annee: 2015
@@ -12336,7 +12336,7 @@ modeles:
         observe: 0.3269
         moyenne_nulle: 1.7498
       origine: casting
-      p_ajustee: 0.0007
+      p_ajustee: 0.0006
       retenu: true
     - cle: etendue_ages
       libelle: L'écart d'âge dans un même casting
@@ -12486,7 +12486,7 @@ modeles:
         observe: 0.2839
         moyenne_nulle: 0.2508
       origine: casting
-      p_ajustee: 0.3741
+      p_ajustee: 0.3631
       retenu: false
     - cle: tribus_femmes
       libelle: La composition des deux tribus
@@ -12537,7 +12537,7 @@ modeles:
         observe: 13.0253
         moyenne_nulle: 18.8726
       origine: casting
-      p_ajustee: 0.1294
+      p_ajustee: 0.1244
       retenu: false
     - cle: tribus_ages
       libelle: L'âge moyen des deux tribus
@@ -12638,7 +12638,7 @@ modeles:
         observe: 4.1597
         moyenne_nulle: 3.331
       origine: casting
-      p_ajustee: 0.3794
+      p_ajustee: 0.3689
       retenu: false
     sensibilite:
     - cle: etendue_ages
@@ -13487,7 +13487,7 @@ modeles:
         moyenne_nulle: 47.0878
       bulletins: 1855
       origine: homophilie
-      p_ajustee: 0.2819
+      p_ajustee: 0.2731
       retenu: false
     - cle: vote_ecart_age
       libelle: L'écart d'âge avec sa cible
@@ -13539,7 +13539,7 @@ modeles:
         moyenne_nulle: 11.6008
       bulletins: 1855
       origine: homophilie
-      p_ajustee: 0.2538
+      p_ajustee: 0.245
       retenu: false
     - cle: vote_meme_metier
       libelle: Viser la même famille de métier
@@ -13648,54 +13648,54 @@ modeles:
     - cle: vote_meme_departement
       libelle: Viser quelqu'un de son département
       question: Épargne-t-on le voisin — celui qui vit dans le même département ?
-      observe: 1.498
-      attendu: 1.922
+      observe: 1.665
+      attendu: 2.108
       unite: '%'
-      ecart_types: -1.95
-      p: 0.0537
+      ecart_types: -2.11
+      p: 0.0412
       tirages: 4000
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
         : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
       nulle: &id030
         bornes:
-        - 1.1042
-        - 2.8883
+        - 1.2974
+        - 3.0636
         cases:
         - 0
+        - 1
         - 3
+        - 11
+        - 26
+        - 53
+        - 79
+        - 125
+        - 198
+        - 248
+        - 309
+        - 401
+        - 450
+        - 780
+        - 410
+        - 294
+        - 225
+        - 168
+        - 82
+        - 66
+        - 42
+        - 12
+        - 8
+        - 5
         - 2
-        - 6
-        - 16
-        - 39
-        - 76
-        - 118
-        - 186
-        - 242
-        - 326
-        - 383
-        - 496
-        - 495
-        - 623
-        - 372
-        - 213
-        - 181
-        - 116
-        - 59
-        - 19
-        - 16
-        - 7
-        - 3
-        - 1
-        - 1
-        - 1
         - 0
-        largeur_case: 0.06372
-        observe: 1.4981
-        moyenne_nulle: 1.9215
-      bulletins: 1602
+        - 2
+        - 0
+        largeur_case: 0.063079
+        observe: 1.6648
+        moyenne_nulle: 2.1082
+      bulletins: 1742
       origine: homophilie
-      p_ajustee: 0.094
+      p_ajustee: 0.0787
       retenu: false
     - cle: vote_bandeau_apres_fusion
       libelle: Épargner son bandeau de départ
@@ -14442,7 +14442,7 @@ modeles:
         observe: 57.135
         moyenne_nulle: 13.2333
       origine: ruptures
-      p_ajustee: 0.0007
+      p_ajustee: 0.0006
       retenu: true
   audience:
     saisons: 33
@@ -15317,7 +15317,7 @@ modeles:
         observe: 20.6811
         moyenne_nulle: 3.5032
       origine: audience
-      p_ajustee: 0.0007
+      p_ajustee: 0.0006
       retenu: true
     - cle: audience_retournement
       libelle: Le retournement finale / lancement
@@ -15419,7 +15419,7 @@ modeles:
         observe: -0.2958
         moyenne_nulle: -0.0001
       origine: audience
-      p_ajustee: 0.1735
+      p_ajustee: 0.1671
       retenu: false
   avant_apres:
     saisons: 21
@@ -15469,9 +15469,9 @@ modeles:
       par_tirage: 3
       elimine_ambassadeur: 3
       distincts: 27
-      ambassades: 9
-      ambassadeurs: 22
-      rang_moyen: 47.2
+      ambassades: 12
+      ambassadeurs: 28
+      rang_moyen: 39.4
     tests:
     - cle: fusion_sexe
       libelle: Le sexe des éliminés, avant et après la fusion
@@ -15522,7 +15522,7 @@ modeles:
         observe: -7.4709
         moyenne_nulle: -0.4979
       origine: avant_apres
-      p_ajustee: 0.2538
+      p_ajustee: 0.245
       retenu: false
     - cle: fusion_force
       libelle: La force des éliminés, avant et après la fusion
@@ -15573,7 +15573,7 @@ modeles:
         observe: -15.878
         moyenne_nulle: -0.0239
       origine: avant_apres
-      p_ajustee: 0.0007
+      p_ajustee: 0.0006
       retenu: true
     - cle: fusion_serre
       libelle: Des conseils plus serrés après la fusion ?
@@ -15674,58 +15674,58 @@ modeles:
         observe: 44.5455
         moyenne_nulle: 50.0522
       origine: avant_apres
-      p_ajustee: 0.5869
+      p_ajustee: 0.5711
       retenu: false
     - cle: ambassadeurs_survie
       libelle: L'ambassadeur qui négocie s'en sort-il mieux ?
       question: Partir en ambassade change-t-il la distance que l'on parcourt ensuite ?
-      observe: 47.166
-      attendu: 50.037
+      observe: 39.445
+      attendu: 50.063
       unite: ' points de rang'
-      ecart_types: -0.45
-      p: 0.659
+      ecart_types: -1.88
+      p: 0.0614
       tirages: 10000
       lecture: 'Rang de l''ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c''est la
         médiane du camp. Au-dessus, l''ambassade accompagne une fin de parcours plus tardive ; en dessous,
         plus précoce. Le hasard, ici, c''est désigner les ambassadeurs au sort parmi les présents.'
       nulle: &id039
         bornes:
-        - 24.5804
-        - 74.658
+        - 25.7663
+        - 72.1745
         cases:
         - 0
-        - 5
-        - 3
-        - 12
-        - 24
-        - 51
-        - 113
-        - 220
-        - 313
-        - 466
-        - 604
-        - 875
-        - 999
-        - 1048
-        - 1087
-        - 1053
-        - 898
-        - 731
-        - 589
-        - 357
-        - 260
-        - 149
-        - 75
-        - 50
-        - 13
-        - 3
+        - 1
         - 2
+        - 6
+        - 14
+        - 30
+        - 65
+        - 136
+        - 228
+        - 380
+        - 602
+        - 716
+        - 944
+        - 1106
+        - 1153
+        - 1132
+        - 1000
+        - 870
+        - 595
+        - 427
+        - 261
+        - 178
+        - 85
+        - 46
+        - 14
+        - 6
+        - 3
         - 0
-        largeur_case: 1.788489
-        observe: 47.1663
-        moyenne_nulle: 50.0368
+        largeur_case: 1.657434
+        observe: 39.4452
+        moyenne_nulle: 50.0632
       origine: avant_apres
-      p_ajustee: 0.7179
+      p_ajustee: 0.1032
       retenu: false
   conditionnelles:
     presences: 862
@@ -16486,7 +16486,7 @@ modeles:
         observe: 1.9443
         moyenne_nulle: -1.1894
       origine: conditionnelles
-      p_ajustee: 0.2819
+      p_ajustee: 0.2731
       retenu: false
     - cle: menace_deux_pas
       libelle: La menace, deux conseils plus tard
@@ -16536,7 +16536,7 @@ modeles:
         observe: 6.0215
         moyenne_nulle: 0.2929
       origine: conditionnelles
-      p_ajustee: 0.2678
+      p_ajustee: 0.2589
       retenu: false
     - cle: cible_persistante
       libelle: La cible reste la cible
@@ -16587,7 +16587,7 @@ modeles:
         observe: 19.6275
         moyenne_nulle: 1.2391
       origine: conditionnelles
-      p_ajustee: 0.0007
+      p_ajustee: 0.0006
       retenu: true
     - cle: retour_de_baton
       libelle: Le nom rendu au conseil suivant
@@ -16874,7 +16874,7 @@ modeles:
         observe: -3.6974
         moyenne_nulle: -0.367
       origine: autour_du_feu
-      p_ajustee: 0.0913
+      p_ajustee: 0.0875
       retenu: false
     - cle: doyen_du_camp
       libelle: Le plus âgé du camp
@@ -16924,7 +16924,7 @@ modeles:
         observe: 3.8474
         moyenne_nulle: 1.0364
       origine: autour_du_feu
-      p_ajustee: 0.3015
+      p_ajustee: 0.2923
       retenu: false
     - cle: confort_sortie
       libelle: Le confort du soir
@@ -16975,7 +16975,7 @@ modeles:
         observe: 4.6323
         moyenne_nulle: 0.7166
       origine: autour_du_feu
-      p_ajustee: 0.3794
+      p_ajustee: 0.3689
       retenu: false
   pire_place:
     presences: 862
@@ -17264,7 +17264,7 @@ modeles:
         observe: 12.1578
         moyenne_nulle: 9.3302
       origine: tenant_du_titre
-      p_ajustee: 0.6063
+      p_ajustee: 0.5903
       retenu: false
   age_au_conseil:
     conseils: 301
@@ -17323,7 +17323,7 @@ modeles:
         observe: 2.0512
         moyenne_nulle: 0.0236
       origine: age_au_conseil
-      p_ajustee: 0.0913
+      p_ajustee: 0.0875
       retenu: false
   rappel:
     effectif: 491
@@ -17449,7 +17449,7 @@ modeles:
     unite: personnes
     ecart_types: -5.36
     p: 0.0001
-    p_ajustee: 0.0007
+    p_ajustee: 0.0006
     retenu: true
     tirages: 10000
     lecture: 'Un écart observé plus PETIT que l''attendu est la signature d''un quota : le hasard, lui,
@@ -17494,7 +17494,7 @@ modeles:
     unite: ''
     ecart_types: 1.06
     p: 0.2939
-    p_ajustee: 0.3741
+    p_ajustee: 0.3631
     retenu: false
     tirages: 10000
     lecture: Distance entre le mélange de profils d'une saison et le mélange général. Un observé PLUS
@@ -17510,7 +17510,7 @@ modeles:
     unite: points de %
     ecart_types: -1.76
     p: 0.077
-    p_ajustee: 0.1294
+    p_ajustee: 0.1244
     retenu: false
     tirages: 10000
     lecture: On rebat les bandeaux à l'intérieur de chaque saison. Un écart observé PLUS PETIT que l'attendu
@@ -17541,7 +17541,7 @@ modeles:
     unite: annees
     ecart_types: 1.02
     p: 0.3162
-    p_ajustee: 0.3794
+    p_ajustee: 0.3689
     retenu: false
     tirages: 10000
     lecture: La médiane ignore les valeurs extrêmes. Si elle ne s'écarte pas, c'est que l'écart moyen
@@ -17572,7 +17572,7 @@ modeles:
     unite: '%'
     ecart_types: -1.31
     p: 0.2054
-    p_ajustee: 0.2819
+    p_ajustee: 0.2731
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -17588,7 +17588,7 @@ modeles:
     unite: années
     ecart_types: 1.4
     p: 0.1692
-    p_ajustee: 0.2538
+    p_ajustee: 0.245
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -17631,12 +17631,12 @@ modeles:
     libelle: Viser quelqu'un de son département
     question: Épargne-t-on le voisin — celui qui vit dans le même département ?
     origine: homophilie
-    observe: 1.498
-    attendu: 1.922
+    observe: 1.665
+    attendu: 2.108
     unite: '%'
-    ecart_types: -1.95
-    p: 0.0537
-    p_ajustee: 0.094
+    ecart_types: -2.11
+    p: 0.0412
+    p_ajustee: 0.0787
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -17664,12 +17664,12 @@ modeles:
     question: Les aventuriers viennent-ils de départements plus variés, ou plus concentrés, qu'un tirage
       dans la population française ne le donnerait ?
     origine: geographie
-    observe: 172.341
-    attendu: 98.917
+    observe: 181.723
+    attendu: 98.954
     unite: ''
-    ecart_types: 5.02
-    p: 0.0002
-    p_ajustee: 0.0007
+    ecart_types: 5.61
+    p: 0.0001
+    p_ajustee: 0.0006
     retenu: true
     tirages: 10000
     lecture: 'Dispersion entre les effectifs observés et ceux qu''on attendrait d''un tirage au hasard
@@ -17677,91 +17677,91 @@ modeles:
       pas la démographie.'
     nulle:
       bornes:
-      - 47.0811
-      - 180.2732
+      - 48.7166
+      - 188.0564
       cases:
       - 0
-      - 3
-      - 4
-      - 43
-      - 109
-      - 257
-      - 500
-      - 771
-      - 1115
-      - 1290
-      - 1329
-      - 1220
-      - 1015
-      - 809
-      - 563
-      - 383
-      - 257
-      - 151
-      - 75
-      - 56
+      - 5
+      - 28
+      - 65
+      - 181
+      - 405
+      - 769
+      - 1011
+      - 1314
+      - 1389
+      - 1291
+      - 1069
+      - 868
+      - 607
+      - 410
+      - 254
+      - 146
+      - 93
+      - 49
       - 23
       - 14
-      - 6
-      - 5
+      - 3
+      - 2
+      - 4
       - 0
-      - 1
-      - 1
       - 0
-      largeur_case: 4.756861
-      observe: 172.3406
-      moyenne_nulle: 98.9173
+      - 0
+      - 0
+      largeur_case: 4.976418
+      observe: 181.7227
+      moyenne_nulle: 98.9537
   - cle: geographie_regions
     libelle: L'origine géographique, par région
     question: À l'échelle des régions — assez peuplées pour trancher — le recrutement suit-il la démographie
       française ?
     origine: geographie
-    observe: 58.761
-    attendu: 16.071
+    observe: 65.529
+    attendu: 16.108
     unite: ''
-    ecart_types: 7.23
+    ecart_types: 8.52
     p: 0.0001
-    p_ajustee: 0.0007
+    p_ajustee: 0.0006
     retenu: true
     tirages: 10000
     lecture: 'Même mesure, agrégée par région. C''est le niveau où la question se décide : un département
       compte trois aventuriers, une région une vingtaine.'
     nulle:
       bornes:
-      - -0.5947
-      - 61.5879
+      - -0.2146
+      - 68.6594
       cases:
       - 0
-      - 10
-      - 131
-      - 488
-      - 1046
-      - 1418
-      - 1651
-      - 1511
-      - 1202
-      - 931
-      - 609
-      - 396
-      - 255
-      - 145
-      - 86
-      - 50
-      - 40
-      - 7
-      - 13
+      - 25
+      - 272
+      - 837
+      - 1471
+      - 1792
+      - 1691
+      - 1393
+      - 997
+      - 645
+      - 414
+      - 214
+      - 120
+      - 63
+      - 34
+      - 16
+      - 9
       - 3
       - 1
-      - 3
-      - 4
+      - 1
       - 0
       - 0
+      - 1
       - 0
       - 0
+      - 1
       - 0
-      largeur_case: 2.220808
-      observe: 58.7614
-      moyenne_nulle: 16.0706
+      - 0
+      largeur_case: 2.459787
+      observe: 65.5288
+      moyenne_nulle: 16.1077
   - cle: audience_rupture
     libelle: La rupture d'audience
     question: La chute d'audience tombe-t-elle à une date, ou se fait-elle par glissement ?
@@ -17771,7 +17771,7 @@ modeles:
     unite: ''
     ecart_types: 8.09
     p: 0.0001
-    p_ajustee: 0.0007
+    p_ajustee: 0.0006
     retenu: true
     tirages: 10000
     lecture: Gain de la meilleure coupure de la série d'audience, comparé à celui obtenu sur des saisons
@@ -17803,7 +17803,7 @@ modeles:
     unite: ''
     ecart_types: -1.62
     p: 0.1074
-    p_ajustee: 0.1735
+    p_ajustee: 0.1671
     retenu: false
     tirages: 10000
     lecture: Corrélation de rang entre l'audience d'une saison et l'effectif de la suivante, une fois
@@ -17819,7 +17819,7 @@ modeles:
     unite: ' points'
     ecart_types: -1.38
     p: 0.1679
-    p_ajustee: 0.2538
+    p_ajustee: 0.245
     retenu: false
     tirages: 10000
     lecture: 'Différence entre l''après et l''avant, en points de pourcentage. Le hasard, ici, c''est
@@ -17835,7 +17835,7 @@ modeles:
     unite: ' points de rang'
     ecart_types: -4.6
     p: 0.0001
-    p_ajustee: 0.0007
+    p_ajustee: 0.0006
     retenu: true
     tirages: 10000
     lecture: 'Rang de l''éliminé parmi les présents, sur la force estimée aux épreuves : 0 le plus faible
@@ -17866,7 +17866,7 @@ modeles:
     unite: ' points de rang'
     ecart_types: -0.68
     p: 0.5031
-    p_ajustee: 0.5869
+    p_ajustee: 0.5711
     retenu: false
     tirages: 10000
     lecture: Rang de l'éliminé parmi les présents, sur la force estimée aux épreuves. Au-dessus de 50,
@@ -17876,12 +17876,12 @@ modeles:
     libelle: L'ambassadeur qui négocie s'en sort-il mieux ?
     question: Partir en ambassade change-t-il la distance que l'on parcourt ensuite ?
     origine: avant_apres
-    observe: 47.166
-    attendu: 50.037
+    observe: 39.445
+    attendu: 50.063
     unite: ' points de rang'
-    ecart_types: -0.45
-    p: 0.659
-    p_ajustee: 0.7179
+    ecart_types: -1.88
+    p: 0.0614
+    p_ajustee: 0.1032
     retenu: false
     tirages: 10000
     lecture: 'Rang de l''ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c''est la
@@ -17929,7 +17929,7 @@ modeles:
     unite: ' points'
     ecart_types: 1.27
     p: 0.2081
-    p_ajustee: 0.2819
+    p_ajustee: 0.2731
     retenu: false
     tirages: 10000
     lecture: Écart entre partir après avoir voté avec la minorité et partir après avoir voté avec la majorité.
@@ -17943,7 +17943,7 @@ modeles:
     unite: ' points'
     ecart_types: 1.35
     p: 0.1849
-    p_ajustee: 0.2678
+    p_ajustee: 0.2589
     retenu: false
     tirages: 10000
     lecture: Écart entre partir quand on avait été visé DEUX conseils plus tôt et partir quand on ne l'avait
@@ -17958,7 +17958,7 @@ modeles:
     unite: ' points'
     ecart_types: 5.09
     p: 0.0001
-    p_ajustee: 0.0007
+    p_ajustee: 0.0006
     retenu: true
     tirages: 10000
     lecture: Écart entre voir son nom ressortir quand il était déjà sorti et le voir sortir quand il ne
@@ -18004,7 +18004,7 @@ modeles:
     unite: ' points'
     ecart_types: -1.95
     p: 0.05
-    p_ajustee: 0.0913
+    p_ajustee: 0.0875
     retenu: false
     tirages: 10000
     lecture: Écart entre partir quand son sexe est le moins représenté du camp et partir quand il est
@@ -18019,7 +18019,7 @@ modeles:
     unite: ' points'
     ecart_types: 1.27
     p: 0.2297
-    p_ajustee: 0.3015
+    p_ajustee: 0.2923
     retenu: false
     tirages: 10000
     lecture: Écart entre partir quand on est le plus âgé des présents et partir quand on ne l'est pas.
@@ -18034,7 +18034,7 @@ modeles:
     unite: ' points'
     ecart_types: 1.06
     p: 0.3078
-    p_ajustee: 0.3794
+    p_ajustee: 0.3689
     retenu: false
     tirages: 10000
     lecture: 'Écart entre partir quand on vient de gagner le confort de l''épisode et partir quand on
@@ -18097,7 +18097,7 @@ modeles:
     unite: ''
     ecart_types: 7.51
     p: 0.0001
-    p_ajustee: 0.0007
+    p_ajustee: 0.0006
     retenu: true
     tirages: 10000
     lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
@@ -18146,7 +18146,7 @@ modeles:
     unite: ' points'
     ecart_types: 0.64
     p: 0.5341
-    p_ajustee: 0.6063
+    p_ajustee: 0.5903
     retenu: false
     tirages: 4000
     lecture: 'Écart entre gagner l''immunité quand on l''a gagnée la fois d''avant et la gagner quand
@@ -18163,7 +18163,7 @@ modeles:
     unite: ' ans'
     ecart_types: 1.95
     p: 0.05
-    p_ajustee: 0.0913
+    p_ajustee: 0.0875
     retenu: false
     tirages: 10000
     lecture: 'Écart d''âge de l''éliminé à la moyenne de son camp, avant la réunification moins après.
@@ -18574,7 +18574,7 @@ completude_saisons:
     annee: 2004
     speciale: false
     effectif: 16
-    score: 75.7
+    score: 87.5
     cellules:
     - cle: casting
       valeur: 100.0
@@ -18592,9 +18592,9 @@ completude_saisons:
       etat: complet
       nature: part
     - cle: localisation
-      valeur: 25.0
-      texte: 4/16
-      etat: mince
+      valeur: 75.0
+      texte: 12/16
+      etat: partiel
       nature: part
     - cle: couleur
       valeur: 100.0
@@ -18602,9 +18602,9 @@ completude_saisons:
       etat: complet
       nature: part
     - cle: parcours
-      valeur: 37.5
-      texte: 6/16
-      etat: mince
+      valeur: 87.5
+      texte: 14/16
+      etat: eleve
       nature: part
     - cle: jour_sortie
       valeur: 100.0
@@ -18617,14 +18617,14 @@ completude_saisons:
       etat: complet
       nature: part
     - cle: classement
-      valeur: 37.5
-      texte: 6/16
-      etat: mince
+      valeur: 87.5
+      texte: 14/16
+      etat: eleve
       nature: part
     - cle: victoires
-      valeur: 18.8
-      texte: 3/16
-      etat: mince
+      valeur: 68.8
+      texte: 11/16
+      etat: partiel
       nature: part
     - cle: conseils
       valeur: 100.0
@@ -18679,7 +18679,7 @@ completude_saisons:
     annee: 2005
     speciale: false
     effectif: 17
-    score: 87.1
+    score: 96.8
     cellules:
     - cle: casting
       valeur: 100.0
@@ -18697,9 +18697,9 @@ completude_saisons:
       etat: complet
       nature: part
     - cle: localisation
-      valeur: 58.8
-      texte: 10/17
-      etat: partiel
+      valeur: 100.0
+      texte: 17/17
+      etat: complet
       nature: part
     - cle: couleur
       valeur: 100.0
@@ -18707,9 +18707,9 @@ completude_saisons:
       etat: complet
       nature: part
     - cle: parcours
-      valeur: 47.1
-      texte: 8/17
-      etat: mince
+      valeur: 88.2
+      texte: 15/17
+      etat: eleve
       nature: part
     - cle: jour_sortie
       valeur: 100.0
@@ -18722,14 +18722,14 @@ completude_saisons:
       etat: complet
       nature: part
     - cle: classement
-      valeur: 47.1
-      texte: 8/17
-      etat: mince
+      valeur: 88.2
+      texte: 15/17
+      etat: eleve
       nature: part
     - cle: victoires
-      valeur: 47.1
-      texte: 8/17
-      etat: mince
+      valeur: 88.2
+      texte: 15/17
+      etat: eleve
       nature: part
     - cle: conseils
       valeur: 100.0
@@ -19099,7 +19099,7 @@ completude_saisons:
     annee: 2009
     speciale: false
     effectif: 18
-    score: 59.1
+    score: 69.2
     cellules:
     - cle: casting
       valeur: 100.0
@@ -19117,9 +19117,9 @@ completude_saisons:
       etat: complet
       nature: part
     - cle: localisation
-      valeur: 44.4
-      texte: 8/18
-      etat: mince
+      valeur: 88.9
+      texte: 16/18
+      etat: eleve
       nature: part
     - cle: couleur
       valeur: 88.9
@@ -19127,9 +19127,9 @@ completude_saisons:
       etat: eleve
       nature: part
     - cle: parcours
-      valeur: 44.4
-      texte: 8/18
-      etat: mince
+      valeur: 83.3
+      texte: 15/18
+      etat: eleve
       nature: part
     - cle: jour_sortie
       valeur: 100.0
@@ -19142,14 +19142,14 @@ completude_saisons:
       etat: complet
       nature: part
     - cle: classement
-      valeur: 44.4
-      texte: 8/18
-      etat: mince
+      valeur: 88.9
+      texte: 16/18
+      etat: eleve
       nature: part
     - cle: victoires
-      valeur: 44.4
-      texte: 8/18
-      etat: mince
+      valeur: 88.9
+      texte: 16/18
+      etat: eleve
       nature: part
     - cle: conseils
       valeur: 85.7
@@ -19414,7 +19414,7 @@ completude_saisons:
     annee: 2010
     speciale: true
     effectif: 14
-    score: 53.4
+    score: 66.9
     cellules:
     - cle: casting
       valeur: 100.0
@@ -19432,9 +19432,9 @@ completude_saisons:
       etat: complet
       nature: part
     - cle: localisation
-      valeur: 35.7
-      texte: 5/14
-      etat: mince
+      valeur: 92.9
+      texte: 13/14
+      etat: eleve
       nature: part
     - cle: couleur
       valeur: 100.0
@@ -19442,9 +19442,9 @@ completude_saisons:
       etat: complet
       nature: part
     - cle: parcours
-      valeur: 21.4
-      texte: 3/14
-      etat: mince
+      valeur: 78.6
+      texte: 11/14
+      etat: partiel
       nature: part
     - cle: jour_sortie
       valeur: 100.0
@@ -19457,14 +19457,14 @@ completude_saisons:
       etat: complet
       nature: part
     - cle: classement
-      valeur: 21.4
-      texte: 3/14
-      etat: mince
+      valeur: 78.6
+      texte: 11/14
+      etat: partiel
       nature: part
     - cle: victoires
-      valeur: 21.4
-      texte: 3/14
-      etat: mince
+      valeur: 78.6
+      texte: 11/14
+      etat: partiel
       nature: part
     - cle: conseils
       valeur: 41.7
@@ -19624,7 +19624,7 @@ completude_saisons:
     annee: 2012
     speciale: false
     effectif: 20
-    score: 78.9
+    score: 81.1
     cellules:
     - cle: casting
       valeur: 100.0
@@ -19667,14 +19667,14 @@ completude_saisons:
       etat: complet
       nature: part
     - cle: classement
-      valeur: 80.0
-      texte: 16/20
-      etat: eleve
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
       nature: part
     - cle: victoires
-      valeur: 65.0
-      texte: 13/20
-      etat: partiel
+      valeur: 85.0
+      texte: 17/20
+      etat: eleve
       nature: part
     - cle: conseils
       valeur: 95.0
@@ -19729,7 +19729,7 @@ completude_saisons:
     annee: 2012
     speciale: true
     effectif: 16
-    score: 85.9
+    score: 86.7
     cellules:
     - cle: casting
       valeur: 100.0
@@ -19772,13 +19772,13 @@ completude_saisons:
       etat: complet
       nature: part
     - cle: classement
-      valeur: 62.5
-      texte: 10/16
+      valeur: 68.8
+      texte: 11/16
       etat: partiel
       nature: part
     - cle: victoires
-      valeur: 62.5
-      texte: 10/16
+      valeur: 68.8
+      texte: 11/16
       etat: partiel
       nature: part
     - cle: conseils
@@ -20884,7 +20884,7 @@ completude_saisons:
     annee: 2021
     speciale: false
     effectif: 21
-    score: 84.8
+    score: 85.3
     cellules:
     - cle: casting
       valeur: 100.0
@@ -20927,13 +20927,13 @@ completude_saisons:
       etat: complet
       nature: part
     - cle: classement
-      valeur: 95.2
-      texte: 20/21
-      etat: eleve
+      valeur: 100.0
+      texte: 21/21
+      etat: complet
       nature: part
     - cle: victoires
-      valeur: 90.5
-      texte: 19/21
+      valeur: 95.2
+      texte: 20/21
       etat: eleve
       nature: part
     - cle: conseils
@@ -21304,7 +21304,7 @@ completude_saisons:
     annee: 2024
     speciale: false
     effectif: 22
-    score: 87.9
+    score: 91.2
     cellules:
     - cle: casting
       valeur: 100.0
@@ -21347,14 +21347,14 @@ completude_saisons:
       etat: complet
       nature: part
     - cle: classement
-      valeur: 68.2
-      texte: 15/22
-      etat: partiel
+      valeur: 100.0
+      texte: 22/22
+      etat: complet
       nature: part
     - cle: victoires
-      valeur: 68.2
-      texte: 15/22
-      etat: partiel
+      valeur: 100.0
+      texte: 22/22
+      etat: complet
       nature: part
     - cle: conseils
       valeur: 95.2
@@ -21847,8 +21847,8 @@ completude_saisons:
     libelle: Département d'origine
     court: Origine
     nature: part
-    moyenne: 90.9
-    completes: 28
+    moyenne: 96.6
+    completes: 29
     concernees: 34
   - cle: couleur
     libelle: Bandeau de départ
@@ -21861,7 +21861,7 @@ completude_saisons:
     libelle: Tribus datées en jours
     court: Tribus
     nature: part
-    moyenne: 82.2
+    moyenne: 87.7
     completes: 21
     concernees: 34
   - cle: jour_sortie
@@ -21882,15 +21882,15 @@ completude_saisons:
     libelle: Rang final
     court: Rang
     nature: part
-    moyenne: 79.0
-    completes: 13
+    moyenne: 86.5
+    completes: 16
     concernees: 34
   - cle: victoires
     libelle: Palmarès d'épreuves
     court: Palmarès
     nature: part
-    moyenne: 76.3
-    completes: 12
+    moyenne: 83.9
+    completes: 13
     concernees: 34
   - cle: conseils
     libelle: Conseils rattachés à un éliminé
@@ -21957,6 +21957,6 @@ completude_saisons:
     concernees: 27
   saisons: 34
   cases: 604
-  moyenne: 82.8
-  meilleure: sp5
+  moyenne: 84.3
+  meilleure: s05
   pire: sp8
