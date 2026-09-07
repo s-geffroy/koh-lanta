@@ -22832,8 +22832,8 @@
     cible: isabelle-da-silva
     cible_rattachee: true
     annule: false
-  - votant: Philippe
-    votant_rattache: false
+  - votant: philippe-duron
+    votant_rattache: true
     cible: isabelle-da-silva
     cible_rattachee: true
     annule: false
@@ -22897,8 +22897,8 @@
     cible: sara-tallon
     cible_rattachee: true
     annule: false
-  - votant: Philippe
-    votant_rattache: false
+  - votant: philippe-duron
+    votant_rattache: true
     cible: sara-tallon
     cible_rattachee: true
     annule: false
@@ -22909,13 +22909,13 @@
     annule: false
   - votant: christina-chevry
     votant_rattache: true
-    cible: Philippe
-    cible_rattachee: false
+    cible: philippe-duron
+    cible_rattachee: true
     annule: false
   - votant: sara-tallon
     votant_rattache: true
-    cible: Philippe
-    cible_rattachee: false
+    cible: philippe-duron
+    cible_rattachee: true
     annule: false
 - saison: sp4
   numero: 4
@@ -23047,8 +23047,8 @@
     cible: christina-chevry
     cible_rattachee: true
     annule: false
-  - votant: Philippe
-    votant_rattache: false
+  - votant: philippe-duron
+    votant_rattache: true
     cible: christina-chevry
     cible_rattachee: true
     annule: false
@@ -23069,8 +23069,8 @@
     annule: false
   - votant: sara-tallon
     votant_rattache: true
-    cible: Philippe
-    cible_rattachee: false
+    cible: philippe-duron
+    cible_rattachee: true
     annule: false
 - saison: sp4
   numero: 9
@@ -23106,8 +23106,8 @@
     cible: freddy-boucher
     cible_rattachee: true
     annule: false
-  - votant: Philippe
-    votant_rattache: false
+  - votant: philippe-duron
+    votant_rattache: true
     cible: teheiura-teahui
     cible_rattachee: true
     annule: true
@@ -23161,8 +23161,8 @@
     cible: teheiura-teahui
     cible_rattachee: true
     annule: false
-  - votant: Philippe
-    votant_rattache: false
+  - votant: philippe-duron
+    votant_rattache: true
     cible: teheiura-teahui
     cible_rattachee: true
     annule: false
@@ -23188,33 +23188,33 @@
   votes:
   - votant: laurent-maistret
     votant_rattache: true
-    cible: Philippe
-    cible_rattachee: false
+    cible: philippe-duron
+    cible_rattachee: true
     annule: false
   - votant: martin-bazin
     votant_rattache: true
-    cible: Philippe
-    cible_rattachee: false
+    cible: philippe-duron
+    cible_rattachee: true
     annule: false
   - votant: philippe-bizet
     votant_rattache: true
-    cible: Philippe
-    cible_rattachee: false
+    cible: philippe-duron
+    cible_rattachee: true
     annule: false
   - votant: moundir-zoughari
     votant_rattache: true
     cible: philippe-bizet
     cible_rattachee: true
     annule: false
-  - votant: Philippe
-    votant_rattache: false
+  - votant: philippe-duron
+    votant_rattache: true
     cible: laurent-maistret
     cible_rattachee: true
     annule: false
   - votant: teheiura-teahui
     votant_rattache: true
-    cible: Philippe
-    cible_rattachee: false
+    cible: philippe-duron
+    cible_rattachee: true
     annule: false
 - saison: sp4
   numero: 13
@@ -23271,8 +23271,8 @@
     cible: laurent-maistret
     cible_rattachee: true
     annule: false
-  - votant: Philippe
-    votant_rattache: false
+  - votant: philippe-duron
+    votant_rattache: true
     cible: laurent-maistret
     cible_rattachee: true
     annule: false

@@ -43,15 +43,31 @@ VICTOIRES_MAX = 40
 
 
 class Controle:
+    """Trois registres, et la difference compte.
+
+    ERREUR    : les donnees se contredisent. Le script sort en 1.
+    AVERTIR   : quelque chose ressemble a un defaut de lecture. A regarder.
+    CONSTAT   : une limite CONNUE et assumee, dont on publie le compte plutot
+                que de la repeter en avertissement a chaque passage. « Brassac »
+                designe deux communes et le restera ; deux Jerome jouent la
+                meme saison et la source n'en distingue qu'un. Ce ne sont pas
+                des defauts a corriger, ce sont des choses que ces donnees ne
+                savent pas -- et les taire serait pire que les compter.
+    """
+
     def __init__(self):
         self.erreurs = []
         self.avertissements = []
+        self.constats = []
 
     def erreur(self, message):
         self.erreurs.append(message)
 
     def avertir(self, message):
         self.avertissements.append(message)
+
+    def constater(self, message):
+        self.constats.append(message)
 
     def exiger(self, condition, message):
         if not condition:
@@ -126,10 +142,18 @@ def verifier_matrices_de_votes(conseils, c):
                      f"comprise")
 
 
+# Ce que la colonne « tribu » dit parfois a la place d'une tribu : une
+# situation. Banni sur une ile, absent d'un episode -- la personne n'est alors
+# dans aucun campement, et la saison n'a aucune raison de declarer ces mots.
+SITUATIONS_HORS_TRIBU = {"banni", "bannie", "absent", "absente",
+                         "exile", "exilee", "en-attente"}
+
+
 def verifier_participations(parts, saisons, c):
     par_id = {s["id"]: s for s in saisons}
     par_saison = defaultdict(list)
     effectifs = Counter(p.get("saison") for p in parts)
+    ambigus = []
 
     for p in parts:
         sid = p.get("saison")
@@ -179,11 +203,17 @@ def verifier_participations(parts, saisons, c):
 
         lieu = p.get("localisation")
         if lieu and lieux.normaliser(lieu) is None:
-            c.avertir(f"{sid} / {p.get('nom')} : localisation « {lieu} » hors de "
-                      f"la liste des lieux connus")
+            if lieux.est_ambigu(lieu):
+                ambigus.append(f"{sid}/{p.get('nom')} « {lieu} »")
+            else:
+                c.avertir(f"{sid} / {p.get('nom')} : localisation « {lieu} » hors "
+                          f"de la liste des lieux connus")
 
         tribu = p.get("tribu")
-        if tribu and s.get("tribus"):
+        # « Bannie », « Absente » : la case dit ou la personne se trouvait, pas
+        # de quelle tribu elle etait. Ce sont des situations, pas des campements,
+        # et aucune saison ne les declare.
+        if tribu and s.get("tribus") and lieux._norm(tribu) not in SITUATIONS_HORS_TRIBU:
             connues = {t["nom"].lower() for t in s["tribus"]}
             if tribu.lower() not in connues:
                 c.avertir(f"{sid} / {p.get('nom')} : tribu « {tribu} » absente "
@@ -228,12 +258,16 @@ def verifier_participations(parts, saisons, c):
                 c.avertir(f"{sid} / {p['nom']} : finaliste sorti au jour "
                           f"{p['jour_sortie']} pour une saison de {s['duree_jours']} jours")
 
+    _constater_lieux(ambigus, c)
+
 
 def verifier_epreuves(epreuves, saisons, parts, c):
     par_id = {s["id"]: s for s in saisons}
     ids = {(p["saison"], p["id"]) for p in parts}
     tribus = {s["id"]: {t["nom"].lower() for t in (s.get("tribus") or [])}
               for s in saisons}
+    homonymes = prenoms_en_double(parts)
+    groupe_final = groupes_de_fin(parts)
     par_saison = defaultdict(list)
 
     for e in epreuves:
@@ -267,27 +301,41 @@ def verifier_epreuves(epreuves, saisons, parts, c):
         s = par_id[sid]
         if s.get("annulee"):
             c.erreur(f"{sid} : saison annulee mais des epreuves existent")
-        # deux vainqueurs pour une meme epreuve, c'est possible ; trois, c'est
-        # presque toujours une cellule mal lue
+        # Plusieurs noms sur une meme epreuve n'est pas toujours une cellule
+        # mal lue. Deux familles sont legitimes, et il a fallu les regarder une
+        # a une pour s'en assurer :
+        #
+        #   * un CONFORT se partage. Le vainqueur invite qui il veut, ou c'est
+        #     une equipe entiere qui gagne : citer quatre noms est exact.
+        #   * la DERNIERE epreuve d'une saison ne designe pas un vainqueur mais
+        #     les qualifies pour les poteaux. Les trois noms sont alors les
+        #     trois qui iront au bout -- verifiable, puisque ce sont exactement
+        #     les finalistes et l'elimine des poteaux.
+        #
+        # Ce qui reste suspect : trois noms sur une immunite individuelle qui
+        # ne sont pas ce trio-la.
         for e in lot:
             noms = [v["libelle"] for v in e["vainqueurs"]]
-            if len(noms) > 2 and e.get("forme") != "collective":
-                c.avertir(f"{sid} ep.{e['episode']} ({e['type']}) : "
-                          f"{len(noms)} vainqueurs cites — {', '.join(noms)}")
+            if len(noms) <= 2 or e.get("forme") == "collective":
+                continue
+            if e.get("type") == "confort":
+                continue
+            cites = {v.get("id") for v in e["vainqueurs"]}
+            if cites and None not in cites and cites <= groupe_final.get(sid, set()):
+                continue
+            c.avertir(f"{sid} ep.{e['episode']} ({e['type']}) : "
+                      f"{len(noms)} vainqueurs cites — {', '.join(noms)}")
 
-    non_resolus = [v for e in epreuves for v in e["vainqueurs"] if not v.get("resolu")]
-    if non_resolus:
-        libelles = sorted({v["libelle"] for v in non_resolus})
-        c.avertir(f"vainqueurs d'epreuve non rattaches : {len(non_resolus)} "
-                  f"citation(s) — {', '.join(libelles[:6])}"
-                  + (" …" if len(libelles) > 6 else ""))
+    non_resolus = [(e["saison"], v) for e in epreuves for v in e["vainqueurs"]
+                   if not v.get("resolu")]
+    _rendre_compte_des_noms(non_resolus, "vainqueur d'epreuve", homonymes, c)
 
     couvertes = len(par_saison)
     diffusees = sum(1 for s in saisons if not s.get("annulee"))
     if couvertes < diffusees:
         absentes = [s["id"] for s in saisons
                     if not s.get("annulee") and s["id"] not in par_saison]
-        c.avertir(f"epreuves absentes pour {len(absentes)} saison(s) sur "
+        c.constater(f"epreuves absentes pour {len(absentes)} saison(s) sur "
                   f"{diffusees} : {', '.join(absentes)}")
 
 
@@ -353,6 +401,7 @@ STATUTS_VALIDES = {"utilise", "non_utilise", "non_decouvert", "perdu"}
 def verifier_colliers(colliers, saisons, parts, c):
     par_id = {s["id"]: s for s in saisons}
     ids = {(p["saison"], p["id"]) for p in parts}
+    homonymes = prenoms_en_double(parts)
 
     for col in colliers:
         sid = col.get("saison")
@@ -387,13 +436,10 @@ def verifier_colliers(colliers, saisons, parts, c):
             c.erreur(f"{sid} : collier trouve au jour {jour}, "
                      f"or la saison dure {duree} jours")
 
-    non_resolus = [x for col in colliers
+    non_resolus = [(col["saison"], x) for col in colliers
                    for role in ("detenteurs", "proteges")
                    for x in col.get(role) or [] if not x.get("resolu")]
-    if non_resolus:
-        libelles = sorted({x["libelle"] for x in non_resolus})
-        c.avertir(f"noms de colliers non rattaches : {len(non_resolus)} citation(s) "
-                  f"— {', '.join(libelles[:6])}")
+    _rendre_compte_des_noms(non_resolus, "detenteur de collier", homonymes, c)
 
 
 # Ce qui trahit un fragment de wikitexte reste dans un nom d'aventurier :
@@ -402,6 +448,55 @@ def verifier_colliers(colliers, saisons, parts, c):
 RE_RESIDU_WIKI = re.compile(
     r"\b\d{2,4}px\b|\||\blink\s*=|\b(?:File|Fichier|Image|Media)\s*:|"
     r"\bvignette\b|\bthumb\b|\[\[|\]\]", re.I)
+
+
+def _constater_lieux(ambigus, c):
+    if ambigus:
+        c.constater(f"localisation : {len(ambigus)} valeur(s) qu'on refuse de "
+                    f"trancher — la commune existe dans deux departements "
+                    f"({', '.join(sorted(ambigus))})")
+
+
+def prenoms_en_double(parts):
+    """{saison: {prenom normalise}} pour les prenoms portes par deux personnes."""
+    compte = defaultdict(Counter)
+    for p in parts:
+        compte[p["saison"]][lieux._norm(p["nom"])] += 1
+    return {sid: {n for n, k in table.items() if k > 1}
+            for sid, table in compte.items()}
+
+
+def groupes_de_fin(parts):
+    """{saison: {identifiants de ceux qui ont atteint les poteaux}}."""
+    out = defaultdict(set)
+    for p in parts:
+        if p.get("sort") in ("vainqueur", "finaliste", "elimine_poteaux"):
+            out[p["saison"]].add(p["id"])
+    return out
+
+
+def _rendre_compte_des_noms(non_resolus, role, homonymes, c):
+    """Separe ce qui est indecidable de ce qui n'a pas ete compris.
+
+    Un prenom porte par DEUX aventuriers de la meme saison, sans que la source
+    dise lequel, ne sera jamais rattache : ce n'est pas un defaut d'extraction,
+    c'est une limite de la source. On en publie le compte -- taire ce qu'on ne
+    sait pas serait pire -- mais on ne le crie pas a chaque passage.
+
+    Un libelle qui ne correspond a personne, lui, est un vrai signal.
+    """
+    indecidables = [(sid, x) for sid, x in non_resolus
+                    if lieux._norm(x["libelle"]) in homonymes.get(sid, set())]
+    incompris = [(sid, x) for sid, x in non_resolus if (sid, x) not in indecidables]
+    if indecidables:
+        detail = sorted({f"{sid}/{x['libelle']}" for sid, x in indecidables})
+        c.constater(f"{role} : {len(indecidables)} citation(s) qu'aucune source ne "
+                    f"desambigue — deux aventuriers y portent le meme prenom "
+                    f"({', '.join(detail)})")
+    if incompris:
+        libelles = sorted({x["libelle"] for _, x in incompris})
+        c.avertir(f"{role} non rattache : {len(incompris)} citation(s) — "
+                  + ", ".join(libelles[:6]) + (" …" if len(libelles) > 6 else ""))
 
 
 def verifier_conseils(conseils, saisons, parts, c):
@@ -649,6 +744,11 @@ def main():
     print(f"conseils       : {len(conseils or [])}")
     print(f"colliers       : {len(colliers or [])}")
     print(f"fins de saison : {len((finale or {}).get('lignes') or [])}")
+
+    if c.constats:
+        print(f"\n{len(c.constats)} limite(s) connue(s) et assumee(s) :")
+        for x in c.constats:
+            print(f"  · {x}")
 
     if c.avertissements:
         print(f"\n{len(c.avertissements)} avertissement(s) :")

@@ -63,6 +63,48 @@ def plain(t):
     t = re.sub(r"\s+", " ", t)
     return t.strip()
 
+# Quand deux aventuriers d'une saison portent le meme prenom, la source accroche
+# au nom une note qui les separe : « Lea<ref name="lea-jaune">De la tribu
+# jaune.</ref> ». C'est la source qui desambigue, pas nous -- il suffit de lire
+# la note et de la rendre avec le nom qu'elle accompagne.
+RE_INDICE_TRIBU = re.compile(
+    r"([A-ZÉÈÊÀÂÎÔÛÇ][\wÀ-ÿ'’-]+)\s*<ref[^>]*>\s*De la tribu\s+([a-zà-ÿ]+)", re.I)
+# « bleue », « verte » : la tribu est feminine, la couleur du jeu ne l'est pas.
+COULEURS_FEMININES = {"bleue": "bleu", "verte": "vert", "violette": "violet",
+                      "noire": "noir", "blanche": "blanc", "grise": "gris"}
+
+# Teintes employees par les tableaux pour designer une tribu.
+COULEURS_HEX = {
+    "#fee347": "jaune", "#ffff00": "jaune", "#fc5d5d": "rouge", "#ff0000": "rouge",
+    "#5dadec": "bleu", "#0000ff": "bleu", "#5dce5d": "vert", "#00ff00": "vert",
+    "#f39442": "orange", "#ffa500": "orange", "#b25080": "violet", "#800080": "violet",
+    "#000000": "noir", "#ffffff": None, "#ececec": None, "#dcdcdc": None,
+}
+
+# L'autre facon dont la source separe ses homonymes : elle SURLIGNE le nom a la
+# couleur de sa tribu. « {{Surligne|#fee347|Lea}} » vaut la note en toutes
+# lettres, et la table des colliers n'emploie que celle-la.
+RE_SURLIGNE = re.compile(
+    r"\{\{\s*Surlign[ée]e?\s*\|\s*(#[0-9a-fA-F]{3,6})\s*\|\s*([^}|]+?)\s*\}\}", re.I)
+
+
+def indices_de_tribu(cellule):
+    """{prenom normalise: couleur} — ce que la source dit de ses homonymes.
+
+    Deux ecritures, toutes deux explicites : une note « De la tribu jaune »
+    accrochee au nom, ou le nom surligne a la teinte de sa tribu.
+    """
+    out = {}
+    for m in RE_INDICE_TRIBU.finditer(cellule or ""):
+        couleur = m.group(2).lower()
+        out[slug(m.group(1))] = COULEURS_FEMININES.get(couleur, couleur)
+    for m in RE_SURLIGNE.finditer(cellule or ""):
+        couleur = COULEURS_HEX.get(m.group(1).lower())
+        if couleur:
+            out.setdefault(slug(m.group(2)), couleur)
+    return out
+
+
 def sansaccent(s):
     s = unicodedata.normalize("NFKD", s)
     return "".join(c for c in s if not unicodedata.combining(c))
@@ -134,6 +176,11 @@ SORTS = [
     ("elimine_duel",         "h", r"elimin[ée][^.]*(duel|arene|antre|1 contre 1)"),
     ("elimine_exil",         "f", r"elimin[ée]e[^.]*(exil|banni)"),
     ("elimine_exil",         "h", r"elimin[ée][^.]*(exil|banni)"),
+    # « Echange avec Gregoire » : un seul cas, Palawan 2007. La note de la
+    # source ne laisse pas de doute -- « Adrien decide d'abandonner pour
+    # permettre a Gregoire de revenir dans le jeu ». C'est donc un abandon
+    # volontaire, et le motif d'origine reste lisible dans `motif`.
+    ("abandon_volontaire",   None, r"^echange\b"),
     ("abandon_medical",      None, r"abandon m[ée]dical|evacuation|evacue|blessure|raison[s]? m[ée]dicale"),
     ("abandon_volontaire",   None, r"abandon"),
     ("disqualifie",          None, r"disqualifi|exclu|retire de la competition"),

@@ -58,6 +58,15 @@ Sénégal, Espagne, Portugal, Italie, Allemagne, Royaume-Uni, Angleterre,
 # Les cas ambigus sont volontairement absents : « Brassac » est dans le Tarn
 # ET dans le Puy-de-Dome ; « Mauleon » dans les Deux-Sevres ET les
 # Pyrenees-Atlantiques. Sans autre indice, on prefere ne rien dire.
+# Les communes homonymes, nommement. Elles ne sont pas absentes de VILLES par
+# oubli : elles en sont exclues parce qu'on ne peut pas choisir. Les lister ici
+# permet de dire « on refuse de trancher » plutot que « on ne connait pas », et
+# ce n'est pas la meme chose.
+AMBIGUS = {
+    "brassac": ("Tarn", "Puy-de-Dôme"),
+    "mauleon": ("Deux-Sèvres", "Pyrénées-Atlantiques"),
+}
+
 VILLES = {
     "Bordeaux": "Gironde",
     "Boulogne-Billancourt": "Hauts-de-Seine",
@@ -129,6 +138,15 @@ def normaliser(texte):
         if n in CANONIQUE:
             return CANONIQUE[n]
     return None
+
+def est_ambigu(texte):
+    """Vrai si le lieu designe plusieurs communes, et qu'on l'a constate."""
+    if not texte:
+        return False
+    brut = re.sub(r"\s+", " ", str(texte)).strip(" .,;-")
+    return any(_norm(m.strip()) in AMBIGUS
+               for m in [brut] + re.split(r"[,/;]| - ", brut))
+
 
 def separer(texte):
     """Rend (localisation, profession). La localisation vaut None si absente."""

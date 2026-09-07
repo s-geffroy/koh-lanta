@@ -53,11 +53,32 @@ ENTETE = """# ATTENTION : fichier genere. Ne pas editer a la main.
 """
 
 
-def resoudre(nom, index):
+def resoudre(nom, index, indices=None, jour=None):
+    """L'identifiant, ou (None, motif).
+
+    Deux aventuriers d'une saison peuvent porter le meme prenom. Deux choses
+    peuvent alors trancher, et aucune n'est une devinette :
+
+      * ce que la SOURCE dit -- une note « De la tribu jaune » accrochee au
+        nom, ou le nom surligne a la teinte de sa tribu ;
+      * le JOUR ou le collier a ete trouve : on ne trouve pas un collier apres
+        etre sorti du jeu. Un collier ramasse au 38e jour ne peut appartenir a
+        celle des deux Lea qui etait partie au 23e.
+
+    Sans l'une ni l'autre, le nom reste non rattache.
+    """
     cands = index.get(slug(nom or ""))
     if not cands:
         return None, "inconnu"
     if len(cands) > 1:
+        couleur = (indices or {}).get(slug(nom or ""))
+        lot = [p for p in cands if couleur and p.get("couleur") == couleur]
+        if len(lot) == 1:
+            return lot[0]["id"], None
+        if jour:
+            encore = [p for p in cands if (p.get("jour_sortie") or 0) >= jour]
+            if len(encore) == 1:
+                return encore[0]["id"], None
         return None, "homonyme"
     return cands[0]["id"], None
 
@@ -94,7 +115,8 @@ def construire(saisons, parts, rapport):
             def rattacher(noms, role):
                 out = []
                 for n in noms:
-                    pid, echec = resoudre(n, index)
+                    pid, echec = resoudre(n, index, c.get("indices"),
+                                          c.get("jour_trouve"))
                     if echec:
                         rapport.append(f"{sid} : {role} « {n} » non rattache ({echec})")
                     out.append({"libelle": n, "id": pid, "resolu": bool(pid)})

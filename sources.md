@@ -249,6 +249,40 @@ bourreau y était presque toujours le gagnant. Avec les deux côtés du choix,
 [la page du jury]({{ '/statistiques/jury/' | relative_url }}) conclut désormais
 l’inverse de ce qu’elle concluait.
 
+## Deux personnes, un seul prénom
+
+Les tables ne désignent les gens que par leur prénom, et une saison en compte
+parfois deux qui le partagent : deux Léa aux *Chasseurs d’immunité*, deux Cécile
+à *La Tribu maudite*, deux Jérôme à *La Revanche des 4 Terres*, deux Philippe à
+*La Nouvelle Édition*. Aucun de ces noms n’est deviné. Trois choses, et trois
+seulement, peuvent trancher — et toutes viennent de la source ou de la structure
+du jeu :
+
+- **ce que la source écrit à côté du nom.** Elle sait qu’elle est ambiguë et le
+  dit : « Léa<sup>De la tribu jaune</sup> ». Ailleurs elle ne l’écrit pas, elle
+  le **peint** — la table des colliers surligne chaque nom à la couleur de sa
+  tribu. Les deux se lisent.
+- **la présence.** On ne ramasse pas un collier après être sorti du jeu : celui
+  du 38<sup>e</sup> jour ne peut pas appartenir à la Léa partie au 23<sup>e</sup>.
+- **la place dans le scrutin.** Sur un vote de jury, la cible est forcément un
+  finaliste et le votant forcément quelqu’un qui n’en est pas un.
+
+Ce qu’aucune des trois n’atteint reste non rattaché, et se compte : **un seul
+nom** aujourd’hui, le détenteur d’un collier de *La Revanche des 4 Terres*. La
+source dit pourtant lequel — « de la tribu du Sud » — mais elle nomme les tribus
+en tagalog dans ses tableaux et en français dans ses notes, et ce pont-là n’est
+pas construit. Le collier n’a jamais été joué.
+
+<p class="note">Deux corrections nommées accompagnent ce chantier, chacune
+appuyée sur la source elle-même. <i>La Nouvelle Édition</i> affiche
+« [[Philippe Duron|Phiippe]] » : le libellé perd un « l » que la cible du lien
+porte, et que le reste de la page écrit correctement — sans quoi « Phiippe »
+entrait dans la comparaison des prénoms avec le fichier de l’INSEE. Et la fiche
+française de <i>La Revanche des Héros</i> nomme une tribu « Mawar » à la teinte
+de Nekmao — « Mawar » étant la tribu rouge de <i>Malaisie</i>, une autre saison.
+La fiche anglaise et le wiki Fandom ne connaissent que Klahan et Nekmao : deux
+sources contre une, et la couleur pour arbitre.</p>
+
 ## La traçabilité
 
 Chaque enregistrement du jeu de données porte un bloc `sources` qui indique,

@@ -14,6 +14,7 @@ participation reste tel quel, avec `resolu: false`.
     tools/atelier python3 tools/extraction/construire_epreuves.py --ecrire
 """
 import os
+import re
 import sys
 from collections import Counter, defaultdict
 
@@ -43,6 +44,11 @@ ENTETE = """# ATTENTION : fichier genere. Ne pas editer a la main.
 #     tools/atelier python3 tools/extraction/construire_epreuves.py --ecrire
 #
 """
+
+
+# « Equipe de X », « Team de X » : le groupe mene par X. La source designe
+# ainsi le vainqueur d'un confort par equipes, sans lister ses membres.
+RE_EQUIPE = re.compile(r"^(?:[ÉEée]quipe|Team)\s+d[eu'’]\s*(.+)$", re.I)
 
 
 def index_saison(saison, parts):
@@ -111,11 +117,36 @@ def construire(saisons, parts, rapport):
                                        "id": personnes[cle][0]["id"], "resolu": True})
                     formes.add("individuelle")
                 elif cle in personnes:
-                    vainqueurs.append({"libelle": libelle, "type": "personne",
-                                       "id": None, "resolu": False})
+                    # Deux aventuriers du meme prenom. La source le sait et
+                    # accroche au nom une note « De la tribu jaune » : on la
+                    # lit, on ne devine pas. Sans note, le nom reste non
+                    # rattache.
+                    couleur = (e.get("indices") or {}).get(cle)
+                    lot = [p_ for p_ in personnes[cle] if p_.get("couleur") == couleur]
+                    if couleur and len(lot) == 1:
+                        vainqueurs.append({"libelle": libelle, "type": "personne",
+                                           "id": lot[0]["id"], "resolu": True})
+                        rapport.append(f"{sid} ep.{e['episode']} : « {libelle} » "
+                                       f"homonyme, tranche par la note de la source "
+                                       f"(tribu {couleur}) → {lot[0]['id']}")
+                    else:
+                        vainqueurs.append({"libelle": libelle, "type": "personne",
+                                           "id": None, "resolu": False})
+                        rapport.append(f"{sid} ep.{e['episode']} : « {libelle} » est un "
+                                       f"homonyme, vainqueur non rattache")
                     formes.add("individuelle")
-                    rapport.append(f"{sid} ep.{e['episode']} : « {libelle} » est un "
-                                   f"homonyme, vainqueur non rattache")
+                elif RE_EQUIPE.match(libelle):
+                    # « Equipe de Guillaume » : une recompense de confort
+                    # partagee, dont la source ne nomme que le capitaine. Ce
+                    # n'est ni une tribu ni une personne, mais ce n'est pas non
+                    # plus un libelle incompris : c'est un GROUPE, et l'epreuve
+                    # est donc collective.
+                    chef = slug(RE_EQUIPE.match(libelle).group(1))
+                    pid = (personnes[chef][0]["id"]
+                           if chef in personnes and len(personnes[chef]) == 1 else None)
+                    vainqueurs.append({"libelle": libelle, "type": "equipe",
+                                       "id": pid, "resolu": True})
+                    formes.add("collective")
                 else:
                     vainqueurs.append({"libelle": libelle, "type": None,
                                        "id": None, "resolu": False})

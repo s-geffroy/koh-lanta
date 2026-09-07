@@ -3,37 +3,38 @@
   <title>L&#x27;âge de l&#x27;éliminé, avant et après la fusion</title>
   <desc>Élimine-t-on le plus âgé avant la réunification, et plus après ?</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
-  <g class="marque"><title>2 tirages sur 10000 entre -4.24 et -3.89</title><rect x="68.7" y="203.8" width="20.3" height="0.2" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>3 tirages sur 10000 entre -3.89 et -3.55</title><rect x="90.5" y="203.6" width="20.3" height="0.4" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>5 tirages sur 10000 entre -3.55 et -3.2</title><rect x="112.4" y="203.4" width="20.3" height="0.6" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>25 tirages sur 10000 entre -3.2 et -2.86</title><rect x="134.2" y="200.9" width="20.3" height="3.1" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>53 tirages sur 10000 entre -2.86 et -2.51</title><rect x="156.1" y="197.4" width="20.3" height="6.6" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>123 tirages sur 10000 entre -2.51 et -2.17</title><rect x="177.9" y="188.8" width="20.3" height="15.2" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>243 tirages sur 10000 entre -2.17 et -1.83</title><rect x="199.8" y="173.9" width="20.3" height="30.1" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>404 tirages sur 10000 entre -1.83 et -1.48</title><rect x="221.7" y="154.0" width="20.3" height="50.0" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>596 tirages sur 10000 entre -1.48 et -1.14</title><rect x="243.5" y="130.3" width="20.3" height="73.7" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>851 tirages sur 10000 entre -1.14 et -0.793</title><rect x="265.4" y="98.7" width="20.3" height="105.3" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>1084 tirages sur 10000 entre -0.793 et -0.449</title><rect x="287.2" y="69.9" width="20.3" height="134.1" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>1275 tirages sur 10000 entre -0.449 et -0.105</title><rect x="309.1" y="46.2" width="20.3" height="157.8" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>1277 tirages sur 10000 entre -0.105 et 0.24</title><rect x="330.9" y="46.0" width="20.3" height="158.0" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>1202 tirages sur 10000 entre 0.24 et 0.584</title><rect x="352.8" y="55.3" width="20.3" height="148.7" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>1011 tirages sur 10000 entre 0.584 et 0.928</title><rect x="374.7" y="78.9" width="20.3" height="125.1" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>723 tirages sur 10000 entre 0.928 et 1.27</title><rect x="396.5" y="114.5" width="20.3" height="89.5" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>496 tirages sur 10000 entre 1.27 et 1.62</title><rect x="418.4" y="142.6" width="20.3" height="61.4" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>315 tirages sur 10000 entre 1.62 et 1.96</title><rect x="440.2" y="165.0" width="20.3" height="39.0" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>179 tirages sur 10000 entre 1.96 et 2.31</title><rect x="462.1" y="181.9" width="20.3" height="22.1" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>80 tirages sur 10000 entre 2.31 et 2.65</title><rect x="483.9" y="194.1" width="20.3" height="9.9" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>35 tirages sur 10000 entre 2.65 et 2.99</title><rect x="505.8" y="199.7" width="20.3" height="4.3" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>10 tirages sur 10000 entre 2.99 et 3.34</title><rect x="527.7" y="202.8" width="20.3" height="1.2" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>4 tirages sur 10000 entre 3.34 et 3.68</title><rect x="549.5" y="203.5" width="20.3" height="0.5" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>3 tirages sur 10000 entre 3.68 et 4.03</title><rect x="571.4" y="203.6" width="20.3" height="0.4" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>1 tirages sur 10000 entre 4.37 et 4.72</title><rect x="615.1" y="203.9" width="20.3" height="0.1" fill="var(--serie-6)" opacity="0.45"/></g>
-  <line x1="335.8" y1="40" x2="335.8" y2="204" stroke="var(--encre-muette)" stroke-width="1" stroke-dasharray="3 3"/>
-  <text x="335.8" y="34.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">attendu</text>
-  <line x1="466.7" y1="26" x2="466.7" y2="210" stroke="var(--encre)" stroke-width="2.4"/>
-  <text x="459.7" y="22.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="12" font-weight="600">observé : 2.046  ans</text>
-  <text x="46.0" y="222.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">-4.58</text>
-  <text x="658.0" y="222.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">5.06</text>
-  <text x="658.0" y="238.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">10 000 tirages · p = 0,0905</text>
+  <g class="marque"><title>2 tirages sur 10000 entre -3.93 et -3.64</title><rect x="68.7" y="203.7" width="20.3" height="0.3" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>4 tirages sur 10000 entre -3.64 et -3.35</title><rect x="90.5" y="203.5" width="20.3" height="0.5" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>5 tirages sur 10000 entre -3.35 et -3.05</title><rect x="112.4" y="203.3" width="20.3" height="0.7" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>35 tirages sur 10000 entre -3.05 et -2.76</title><rect x="134.2" y="199.2" width="20.3" height="4.8" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>47 tirages sur 10000 entre -2.76 et -2.47</title><rect x="156.1" y="197.6" width="20.3" height="6.4" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>95 tirages sur 10000 entre -2.47 et -2.17</title><rect x="177.9" y="191.0" width="20.3" height="13.0" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>145 tirages sur 10000 entre -2.17 et -1.88</title><rect x="199.8" y="184.1" width="20.3" height="19.9" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>278 tirages sur 10000 entre -1.88 et -1.58</title><rect x="221.7" y="165.9" width="20.3" height="38.1" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>405 tirages sur 10000 entre -1.58 et -1.29</title><rect x="243.5" y="148.5" width="20.3" height="55.5" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>601 tirages sur 10000 entre -1.29 et -0.997</title><rect x="265.4" y="121.6" width="20.3" height="82.4" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>783 tirages sur 10000 entre -0.997 et -0.703</title><rect x="287.2" y="96.6" width="20.3" height="107.4" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>987 tirages sur 10000 entre -0.703 et -0.41</title><rect x="309.1" y="68.6" width="20.3" height="135.4" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>1064 tirages sur 10000 entre -0.41 et -0.116</title><rect x="330.9" y="58.1" width="20.3" height="145.9" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>1152 tirages sur 10000 entre -0.116 et 0.178</title><rect x="352.8" y="46.0" width="20.3" height="158.0" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>1049 tirages sur 10000 entre 0.178 et 0.471</title><rect x="374.7" y="60.1" width="20.3" height="143.9" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>960 tirages sur 10000 entre 0.471 et 0.765</title><rect x="396.5" y="72.3" width="20.3" height="131.7" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>769 tirages sur 10000 entre 0.765 et 1.06</title><rect x="418.4" y="98.5" width="20.3" height="105.5" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>600 tirages sur 10000 entre 1.06 et 1.35</title><rect x="440.2" y="121.7" width="20.3" height="82.3" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>438 tirages sur 10000 entre 1.35 et 1.65</title><rect x="462.1" y="143.9" width="20.3" height="60.1" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>284 tirages sur 10000 entre 1.65 et 1.94</title><rect x="483.9" y="165.0" width="20.3" height="39.0" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>127 tirages sur 10000 entre 1.94 et 2.23</title><rect x="505.8" y="186.6" width="20.3" height="17.4" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>88 tirages sur 10000 entre 2.23 et 2.53</title><rect x="527.7" y="191.9" width="20.3" height="12.1" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>50 tirages sur 10000 entre 2.53 et 2.82</title><rect x="549.5" y="197.1" width="20.3" height="6.9" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>21 tirages sur 10000 entre 2.82 et 3.11</title><rect x="571.4" y="201.1" width="20.3" height="2.9" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>7 tirages sur 10000 entre 3.11 et 3.41</title><rect x="593.2" y="203.0" width="20.3" height="1.0" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>4 tirages sur 10000 entre 3.41 et 3.7</title><rect x="615.1" y="203.5" width="20.3" height="0.5" fill="var(--serie-6)" opacity="0.45"/></g>
+  <line x1="362.4" y1="40" x2="362.4" y2="204" stroke="var(--encre-muette)" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="362.4" y="34.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">attendu</text>
+  <line x1="513.3" y1="26" x2="513.3" y2="210" stroke="var(--encre)" stroke-width="2.4"/>
+  <text x="506.3" y="22.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="12" font-weight="600">observé : 2.051  ans</text>
+  <text x="46.0" y="222.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">-4.23</text>
+  <text x="658.0" y="222.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">4</text>
+  <text x="658.0" y="238.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">10 000 tirages · p = 0,0913</text>
 </svg>
 </figure>

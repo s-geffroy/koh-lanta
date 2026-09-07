@@ -17,7 +17,7 @@ personne n'a trouve est une information, pas une absence de donnee.
 import re
 import sys
 
-from parse_fandom import plain, extract_table
+from parse_fandom import plain, extract_table, indices_de_tribu
 from parse_votes import developper, texte
 
 # intitule de colonne -> role. Teste dans l'ordre : le premier qui colle gagne.
@@ -168,6 +168,10 @@ def parse_page(wikitexte, saison_id=None):
             "episode_utilisation": episode,
             "votes_annules": annules,
             "votes_exprimes": total,
+            # Les notes « De la tribu jaune » accrochees aux noms de la ligne :
+            # c'est la source qui separe ses homonymes, et il faut la lire.
+            "indices": {k: v for cel in valeurs.values()
+                        for k, v in indices_de_tribu(cel).items()},
         })
     return colliers
 

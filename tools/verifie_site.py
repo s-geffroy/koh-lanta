@@ -445,7 +445,11 @@ def main():
             c.avertir(f"{rel} : `title` manquant")
         lien = entete.get("permalink")
         if lien:
-            if not lien.startswith("/") or not lien.endswith("/"):
+            # Un permalien qui designe un FICHIER (404.html, robots.txt) n'a pas
+            # a finir par une barre oblique : ce n'est pas un repertoire, et
+            # GitHub Pages ne servirait pas la page d'erreur sous « /404.html/ ».
+            fichier = re.search(r"\.[a-z0-9]{2,4}$", lien, re.I)
+            if not lien.startswith("/") or (not lien.endswith("/") and not fichier):
                 c.avertir(f"{rel} : permalink « {lien} » sans barre oblique initiale ou finale")
             if lien in permaliens:
                 c.erreur(f"{rel} : permalink « {lien} » deja pris par {permaliens[lien]}")

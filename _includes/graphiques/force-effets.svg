@@ -2,17 +2,17 @@
 <svg class="graphique" viewBox="0 0 740 176" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Ce que la force change aux bulletins reçus">
   <title>Ce que la force change aux bulletins reçus</title>
   <desc>Rapports de taux, a exposition egale. Un intervalle qui traverse 1 veut dire qu&#x27;on ne peut pas conclure.</desc>
-  <line x1="406.5" y1="26" x2="406.5" y2="124" stroke="var(--encre-douce)" stroke-width="1.4" stroke-dasharray="4 3"/>
-  <text x="406.5" y="20.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">1</text>
-  <g class="marque"><title>Force doublée → bulletins reçus : 0.875 (intervalle 0.76 à 1.008)</title><line x1="294.2" y1="53.0" x2="410.3" y2="53.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="348.0" cy="53.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <line x1="408.4" y1="26" x2="408.4" y2="124" stroke="var(--encre-douce)" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <text x="408.4" y="20.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">1</text>
+  <g class="marque"><title>Force doublée → bulletins reçus : 0.87 (intervalle 0.755 à 1.002)</title><line x1="294.2" y1="53.0" x2="409.3" y2="53.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="347.8" cy="53.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
   <text x="258.0" y="53.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Force doublée → bulletins reçus</text>
-  <text x="660.0" y="53.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.875</text>
-  <g class="marque"><title>Femme → bulletins reçus : 1.166 (intervalle 0.931 à 1.46)</title><line x1="374.2" y1="79.0" x2="621.8" y2="79.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="484.2" cy="79.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="660.0" y="53.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">0.87</text>
+  <g class="marque"><title>Femme → bulletins reçus : 1.165 (intervalle 0.931 à 1.458)</title><line x1="376.2" y1="79.0" x2="621.8" y2="79.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="485.3" cy="79.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/></g>
   <text x="258.0" y="79.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Femme → bulletins reçus</text>
-  <text x="660.0" y="79.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.166</text>
-  <g class="marque"><title>Dix ans de plus → bulletins reçus : 1.133 (intervalle 1.004 à 1.279)</title><line x1="408.4" y1="105.0" x2="537.1" y2="105.0" stroke="var(--serie-1)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="468.8" cy="105.0" r="4.4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1.6"/></g>
+  <text x="660.0" y="79.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.165</text>
+  <g class="marque"><title>Dix ans de plus → bulletins reçus : 1.134 (intervalle 1.005 à 1.28)</title><line x1="410.7" y1="105.0" x2="538.8" y2="105.0" stroke="var(--serie-1)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="470.8" cy="105.0" r="4.4" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1.6"/></g>
   <text x="258.0" y="105.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Dix ans de plus → bulletins reçus</text>
-  <text x="660.0" y="105.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.133</text>
+  <text x="660.0" y="105.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">1.134</text>
   <text x="268.0" y="162.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">La ligne verticale marque « aucun effet ».</text>
 </svg>
 </figure>

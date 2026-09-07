@@ -3816,12 +3816,12 @@
 - saison: s18
   episode: 10
   type: confort
-  forme: null
+  forme: collective
   vainqueurs:
   - libelle: Équipe de Romain
-    type: null
-    id: null
-    resolu: false
+    type: equipe
+    id: romain-delaroche
+    resolu: true
   source: bilan par episode
 - saison: s18
   episode: 10
@@ -4856,12 +4856,12 @@
 - saison: s22
   episode: 9
   type: confort
-  forme: null
+  forme: collective
   vainqueurs:
   - libelle: Équipe de Vincent
-    type: null
-    id: null
-    resolu: false
+    type: equipe
+    id: vincent-blier
+    resolu: true
   source: bilan par episode
 - saison: s22
   episode: 9
@@ -5866,8 +5866,8 @@
   vainqueurs:
   - libelle: Léa
     type: personne
-    id: null
-    resolu: false
+    id: lea-sahin
+    resolu: true
   source: bilan par episode
 - saison: s25
   episode: 13
@@ -6154,12 +6154,12 @@
 - saison: s26
   episode: 13
   type: confort
-  forme: null
+  forme: collective
   vainqueurs:
   - libelle: Équipe de Charlotte
-    type: null
-    id: null
-    resolu: false
+    type: equipe
+    id: charlotte-rasquin
+    resolu: true
   source: bilan par episode
 - saison: s26
   episode: 13
@@ -6834,12 +6834,12 @@
 - saison: s28
   episode: 16
   type: confort
-  forme: null
+  forme: collective
   vainqueurs:
   - libelle: Équipe de Guillaume
-    type: null
-    id: null
-    resolu: false
+    type: equipe
+    id: guillaume-le-deun
+    resolu: true
   source: bilan par episode
 - saison: s28
   episode: 16
@@ -6854,12 +6854,12 @@
 - saison: s28
   episode: 17
   type: confort
-  forme: null
+  forme: collective
   vainqueurs:
   - libelle: Équipe de Guillaume
-    type: null
-    id: null
-    resolu: false
+    type: equipe
+    id: guillaume-le-deun
+    resolu: true
   source: bilan par episode
 - saison: s28
   episode: 17
@@ -7299,9 +7299,9 @@
   forme: individuelle
   vainqueurs:
   - libelle: Philippe
-    type: null
-    id: null
-    resolu: false
+    type: personne
+    id: philippe-duron
+    resolu: true
   - libelle: Laurent
     type: personne
     id: laurent-maistret
@@ -7310,12 +7310,12 @@
 - saison: sp4
   episode: 7
   type: immunite
-  forme: null
+  forme: individuelle
   vainqueurs:
   - libelle: Philippe
-    type: null
-    id: null
-    resolu: false
+    type: personne
+    id: philippe-duron
+    resolu: true
   source: bilan par episode
 - saison: sp4
   episode: 8
@@ -7460,12 +7460,12 @@
 - saison: sp5
   episode: 8
   type: confort
-  forme: null
+  forme: collective
   vainqueurs:
   - libelle: Équipe de Pascal
-    type: null
-    id: null
-    resolu: false
+    type: equipe
+    id: pascal-salviani
+    resolu: true
   source: bilan par episode
 - saison: sp5
   episode: 8
@@ -7736,12 +7736,12 @@
 - saison: sp6
   episode: 11
   type: confort
-  forme: null
+  forme: collective
   vainqueurs:
   - libelle: Équipe de Naoil
-    type: null
-    id: null
-    resolu: false
+    type: equipe
+    id: naoil-tita
+    resolu: true
   source: bilan par episode
 - saison: sp6
   episode: 11

@@ -742,6 +742,11 @@ prenoms:
   attendu: 0.72
   indice: 1.4
   absent_du_fichier: false
+- prenom: Philippe
+  observe: 6
+  attendu: 4.418
+  indice: 1.4
+  absent_du_fichier: false
 - prenom: Thibault
   observe: 1
   attendu: 0.716
@@ -855,11 +860,6 @@ prenoms:
 - prenom: Noémie
   observe: 1
   attendu: 0.871
-  indice: 1.1
-  absent_du_fichier: false
-- prenom: Philippe
-  observe: 5
-  attendu: 4.418
   indice: 1.1
   absent_du_fichier: false
 - prenom: Sabine
@@ -1665,11 +1665,6 @@ prenoms:
 - prenom: Olga
   observe: 1
   attendu: 0.046
-  indice: null
-  absent_du_fichier: true
-- prenom: Phiippe
-  observe: 1
-  attendu: 0.0
   indice: null
   absent_du_fichier: true
 - prenom: Phil

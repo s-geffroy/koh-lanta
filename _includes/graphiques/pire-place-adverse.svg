@@ -11,20 +11,20 @@
   <rect x="386.8" y="12" width="11" height="11" rx="3" fill="var(--serie-6)"/>
   <text x="403.8" y="18.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">1 / nombre de présents</text>
   <text x="250.0" y="65.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">jamais visé jusqu’ici</text>
-  <g class="marque"><title>55 éliminations sur 558 présences</title><rect x="260" y="44.0" width="206.2" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="473.2" y="54.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">9.9 %</text>
-  <g class="marque"><title>13.4 % si l’éliminé était tiré au hasard</title><rect x="260" y="66.0" width="279.1" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="546.1" y="76.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">13.4 %</text>
+  <g class="marque"><title>56 éliminations sur 560 présences</title><rect x="260" y="44.0" width="210.2" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <text x="477.2" y="54.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">10.0 %</text>
+  <g class="marque"><title>13.4 % si l’éliminé était tiré au hasard</title><rect x="260" y="66.0" width="281.6" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
+  <text x="548.6" y="76.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">13.4 %</text>
   <text x="250.0" y="119.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">ses adversaires sont partis</text>
-  <g class="marque"><title>22 éliminations sur 101 présences</title><rect x="260" y="98.0" width="454.0" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="721.0" y="108.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">21.8 %</text>
-  <g class="marque"><title>15.1 % si l’éliminé était tiré au hasard</title><rect x="260" y="120.0" width="314.5" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="581.5" y="130.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">15.1 %</text>
+  <g class="marque"><title>22 éliminations sur 102 présences</title><rect x="260" y="98.0" width="454.0" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <text x="721.0" y="108.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">21.6 %</text>
+  <g class="marque"><title>15.1 % si l’éliminé était tiré au hasard</title><rect x="260" y="120.0" width="317.4" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
+  <text x="584.4" y="130.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">15.1 %</text>
   <text x="250.0" y="173.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">au moins un adversaire encore là</text>
-  <g class="marque"><title>40 éliminations sur 198 présences</title><rect x="260" y="152.0" width="420.7" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="687.7" y="162.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">20.2 %</text>
-  <g class="marque"><title>13.6 % si l’éliminé était tiré au hasard</title><rect x="260" y="174.0" width="283.2" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="550.2" y="184.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">13.6 %</text>
+  <g class="marque"><title>40 éliminations sur 200 présences</title><rect x="260" y="152.0" width="420.4" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <text x="687.4" y="162.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">20.0 %</text>
+  <g class="marque"><title>13.7 % si l’éliminé était tiré au hasard</title><rect x="260" y="174.0" width="288.0" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
+  <text x="555.0" y="184.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">13.7 %</text>
   <line x1="260" y1="36" x2="260" y2="196" stroke="var(--axe)" stroke-width="1"/>
 </svg>
 </figure>

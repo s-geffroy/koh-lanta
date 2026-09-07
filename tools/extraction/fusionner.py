@@ -63,6 +63,28 @@ LIBELLE = {
     "f": "fandom",
 }
 
+# Les coquilles de la source, corrigees nommement. Chaque ligne est un fait
+# verifiable dans le wikitexte lui-meme, pas une correction d'usage : sur
+# La Nouvelle Edition, la table ecrit « [[Philippe Duron|Phiippe]] » -- le
+# libelle affiche perd un « l » que la cible du lien porte, et que toutes les
+# autres cellules de la meme page ecrivent correctement. Sans cela, « Phiippe »
+# entre dans la comparaison des prenoms avec le fichier INSEE.
+COQUILLES = {
+    ("sp4", "Phiippe"): "Philippe",
+}
+
+# Une tribu nommee par erreur. La legende de la fiche francaise de
+# La Revanche des Heros ecrit « Mawar (jour 1 - 6) » a la teinte #fc5d5d, qui
+# est celle de Nekmao dans cette meme legende -- et « Mawar » est le nom de la
+# tribu rouge de Malaisie, une autre saison. Les deux autres sources, la fiche
+# anglaise et le wiki Fandom, ne connaissent que Klahan et Nekmao. Deux sources
+# contre une, et la couleur pour arbitre : la correction est ecrite ici plutot
+# que subie a chaque lecture.
+TRIBUS_FAUTIVES = {
+    ("sp3", "Mawar"): "Nekmao",
+}
+
+
 def cle(nom):
     return F.slug(nom or "")
 
@@ -174,7 +196,7 @@ def fusionner_saison(saison, rows_f, rows_w, rapport, saisons_connues=()):
                     fiche["localisation"] = lieu
                     provenance["localisation"] = provenance.get("profession", "?")
 
-        nom = r.get("nom")
+        nom = COQUILLES.get((sid, r.get("nom")), r.get("nom"))
         fiche["nom"] = nom
         if not fiche.get("nom_complet"):
             fiche["nom_complet"] = nom
@@ -616,6 +638,51 @@ def completer_depuis_pages(participations, saisons, rapport):
                        + (" …" if len(liste) > 6 else ""))
 
 
+def corriger_tribus(participations, rapport):
+    """Applique TRIBUS_FAUTIVES a la tribu de depart et au parcours."""
+    corriges = 0
+    for p in participations:
+        bon = TRIBUS_FAUTIVES.get((p["saison"], p.get("tribu")))
+        if bon:
+            p["tribu"] = bon
+            p.setdefault("sources", {})["tribu"] = "correction, cf. TRIBUS_FAUTIVES"
+            corriges += 1
+        for etape in p.get("parcours") or []:
+            bon = TRIBUS_FAUTIVES.get((p["saison"], etape.get("tribu")))
+            if bon:
+                etape["tribu"] = bon
+                corriges += 1
+    if corriges:
+        rapport.append(f"tribu : {corriges} nom(s) corrige(s) — nom de tribu "
+                       f"fautif dans la source, arbitre par les deux autres")
+
+
+def tribu_depuis_le_parcours(participations, rapport):
+    """Le premier campement du parcours EST la tribu de depart.
+
+    La table de saison laisse parfois la case vide -- pour Ugo en Legende, dont
+    le parcours commence par « Tribu des hommes » avant deux passages par le
+    banissement. Ce n'est pas une deduction : le parcours date ses etapes, et
+    la premiere est celle du premier jour.
+    """
+    combles = 0
+    for p in participations:
+        if p.get("tribu") or not p.get("parcours"):
+            continue
+        premiere = p["parcours"][0]
+        if not premiere.get("tribu"):
+            continue
+        p["tribu"] = premiere["tribu"]
+        p.setdefault("sources", {})["tribu"] = "premiere etape du parcours"
+        if not p.get("couleur") and premiere.get("couleur"):
+            p["couleur"] = premiere["couleur"]
+            p["sources"]["couleur"] = "premiere etape du parcours"
+        combles += 1
+    if combles:
+        rapport.append(f"tribu : {combles} valeur(s) comblee(s) par la premiere "
+                       f"etape du parcours")
+
+
 def charger(sid):
     f_path = os.path.join(WIKI, f"{sid}.fandom.wiki")
     w_path = os.path.join(WIKI, f"{sid}.wiki")
@@ -641,6 +708,9 @@ def main():
     appliquer_vainqueurs(participations, saisons, rapport)
     completer_genre(participations, rapport)
     completer_depuis_pages(participations, saisons, rapport)
+    # Apres les pages individuelles : c'est d'elles que vient le parcours.
+    tribu_depuis_le_parcours(participations, rapport)
+    corriger_tribus(participations, rapport)
     normaliser_lieux(participations, rapport)
     verifier_classements(participations, saisons, rapport)
     completer_depuis_autres_participations(participations, saisons, rapport)

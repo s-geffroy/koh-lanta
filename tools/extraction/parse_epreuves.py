@@ -22,7 +22,8 @@ deja constituees.
 import re
 import sys
 
-from parse_fandom import plain, slug, extract_table
+from parse_fandom import (plain, slug, extract_table, indices_de_tribu,
+                          COULEURS_HEX)
 from parse_votes import developper, texte
 
 # Ce qui n'est pas un vainqueur : pas d'epreuve, epreuve annulee, cellule vide.
@@ -41,13 +42,9 @@ RE_PAS_UN_VAINQUEUR = re.compile(
 RE_COULEUR = re.compile(
     r'(?:bgcolor|background-color)\s*[:=]\s*"?\s*(#[0-9A-Fa-f]{3,6})', re.I)
 
-# Teintes employees par les tableaux pour designer une tribu.
-COULEURS = {
-    "#fee347": "jaune", "#ffff00": "jaune", "#fc5d5d": "rouge", "#ff0000": "rouge",
-    "#5dadec": "bleu", "#0000ff": "bleu", "#5dce5d": "vert", "#00ff00": "vert",
-    "#f39442": "orange", "#ffa500": "orange", "#b25080": "violet", "#800080": "violet",
-    "#000000": "noir", "#ffffff": None, "#ececec": None, "#dcdcdc": None,
-}
+# Teintes employees par les tableaux pour designer une tribu. La table est
+# tenue dans parse_fandom : elle sert aussi a separer les homonymes.
+COULEURS = COULEURS_HEX
 
 
 def couleur_de(cellule):
@@ -187,6 +184,7 @@ def parse_tableau(table, saison_id, forme_source):
                 "episode": episode,
                 "type": role,
                 "libelles": noms,
+                "indices": indices_de_tribu(cellule),
                 "couleur": couleur_de(cellule),
                 "source": forme_source,
             })

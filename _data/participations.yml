@@ -4061,7 +4061,7 @@
   couleur: jaune
   parcours: null
   jour_sortie: 29
-  sort: null
+  sort: abandon_volontaire
   motif: Échange avec Grégoire
   votes_recus: 2
   sources:
@@ -4069,6 +4069,7 @@
     profession: fandom
     tribu: fandom
     jour_sortie: fandom
+    sort: fandom
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -21054,10 +21055,10 @@
   profession: Responsable d'un service de client
   localisation: Deux-Sèvres
   edition_origine: null
-  tribu: Mawar
+  tribu: Nekmao
   couleur: rouge
   parcours:
-  - tribu: Mawar
+  - tribu: Nekmao
     couleur: rouge
     jour_debut: 1
     jour_fin: 6
@@ -21070,7 +21071,7 @@
     age: fandom
     profession: wikipedia-fr
     localisation: wikipedia-fr
-    tribu: wikipedia-fr
+    tribu: correction, cf. TRIBUS_FAUTIVES
     couleur: wikipedia-fr
     parcours: wikipedia-fr
     jour_sortie: fandom
@@ -21842,7 +21843,7 @@
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
 - id: philippe-duron
-  nom: Phiippe
+  nom: Philippe
   nom_complet: Philippe Duron
   saison: sp4
   genre: h
@@ -24314,8 +24315,8 @@
   profession: Fauconnier
   localisation: Pyrénées-Orientales
   edition_origine: null
-  tribu: null
-  couleur: null
+  tribu: Tribu des hommes
+  couleur: bleu
   parcours:
   - tribu: Tribu des hommes
     couleur: bleu
@@ -24358,6 +24359,8 @@
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
     jour_sortie: fandom (page individuelle)
+    tribu: premiere etape du parcours
+    couleur: premiere etape du parcours
 - id: laurent-maistret
   nom: Laurent
   nom_complet: Laurent Maistret
