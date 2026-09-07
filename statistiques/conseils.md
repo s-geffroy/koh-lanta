@@ -3,7 +3,7 @@ layout: page
 title: Les conseils
 permalink: /statistiques/conseils/
 chapeau: >-
-  Le vote est presque toujours serré, l’unanimité n’existe pas, et le sexe du votant joue — à la marge.
+  Le vote est presque toujours serré, l’unanimité n’existe pas — et les conseils ne se sont pas durcis avec les années, ils se sont divisés.
 ---
 
 {% assign c = site.data.stats.conseils %}
@@ -93,6 +93,67 @@ les conseils dont le décompte est connu.</p>
 Le cas le plus fréquent est **{{ v.mode }} voix**. La distribution est étalée —
 de une à plus de dix — parce que les castings ont grossi : un conseil à seize
 n’a pas le même arithmétique qu’un conseil à vingt-quatre.
+
+## Il en faut plus qu’avant, et pourtant on s’accorde moins
+
+{% assign per = c.par_periode %}
+{% assign p0 = per | first %}{% assign p9 = per | last %}
+
+{% include graphiques/conseils-epoques.svg %}
+
+<p class="legende-figure">Moyennes par tranche de cinq ans : le nombre de
+votants au conseil, et le nombre de voix portées sur celui qui part.</p>
+
+Le nombre de voix qu’il faut pour sortir quelqu’un **monte** — de
+{{ p0.voix_moyennes }} au début des années 2000 à {{ p9.voix_moyennes }}
+aujourd’hui. Mais ce chiffre ne dit presque rien tout seul : le conseil compte
+aussi plus de monde, de {{ p0.votants_moyens }} votants à
+{{ p9.votants_moyens }}. Il en faut mécaniquement davantage.
+
+La mesure de l’accord, c’est la **part** des votants qui écrivent le même nom.
+
+{% include graphiques/conseils-accord.svg %}
+
+<p class="legende-figure">Part des votants dont le bulletin porte le nom de
+l’éliminé, par tranche de cinq ans.</p>
+
+<div class="tableau-large">
+<table data-triable>
+<thead><tr>
+  <th>Période</th><th class="nombre">Conseils</th>
+  <th class="nombre">Votants</th><th class="nombre">Voix sur l’éliminé</th>
+  <th class="nombre">Part d’accord</th>
+</tr></thead>
+<tbody>
+{% for x in per %}
+<tr>
+  <td>{{ x.periode }}</td>
+  <td class="nombre">{{ x.conseils }}</td>
+  <td class="nombre">{{ x.votants_moyens }}</td>
+  <td class="nombre">{{ x.voix_moyennes }}</td>
+  <td class="nombre" data-val="{{ x.part_moyenne }}"><b>{{ x.part_moyenne }} %</b></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+<div class="constat">
+  <p>Elle <b>baisse</b> : de {{ p0.part_moyenne }} % au début des années 2000 à
+  {{ per[4].part_moyenne }} % au début des années 2020. Le camp est plus
+  nombreux, il lui faut plus de voix, et il en donne <em>proportionnellement</em>
+  moins à celui qu’il élimine.</p>
+  <p>Autrement dit : <b>les conseils ne se sont pas durcis, ils se sont
+  divisés.</b> L’image du bloc qui désigne sa victime appartient aux premières
+  saisons, pas aux dernières.</p>
+</div>
+
+<p class="note">Deux réserves. La dernière tranche ne contient que
+{{ p9.conseils }} conseils et remonte à {{ p9.part_moyenne }} % : une saison ou
+deux suffisent à la faire bouger, et il faut la lire pour ce qu’elle est — un
+début, pas un retournement. Et cette part n’est pas un test : aucune tendance
+n’est déclarée au <a href="{{ '/methode/' | relative_url }}">registre</a>, ce
+sont des moyennes par tranche, sans intervalle.</p>
 
 ## Qui a écrit le nom de qui
 

@@ -109,6 +109,42 @@ lui, on sous-estime. La vérité est au-dessus du chiffre affiché.</p>
 </table>
 </div>
 
+## Les duos qui n’ont jamais divergé
+
+{% assign du = site.data.stats.indicateurs.duos %}
+
+Tout ce qui précède mesure la persistance **en agrégat** : elle ne dit jamais
+qui. Voici les paires elles-mêmes — celles qui, sur au moins
+{{ du.seuil }} conseils traversés ensemble, ont écrit le même nom le plus souvent.
+
+<div class="tableau-large">
+<table data-triable>
+<thead><tr>
+  <th>Le duo</th><th>Saison</th><th class="nombre">Année</th>
+  <th class="nombre">Conseils ensemble</th><th class="nombre">Mêmes bulletins</th>
+  <th class="nombre">Part</th>
+</tr></thead>
+<tbody>
+{% for x in du.meilleures %}
+<tr>
+  <td><strong>{{ x.un }}</strong> et <strong>{{ x.deux }}</strong></td>
+  <td>{{ x.titre }}</td><td class="nombre">{{ x.annee }}</td>
+  <td class="nombre">{{ x.ensemble }}</td>
+  <td class="nombre" data-val="{{ x.accord }}"><b>{{ x.accord }}</b></td>
+  <td class="nombre">{{ x.part }} %</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+<p class="note">Le dénominateur est exigeant, et c’est lui qui fait la rareté de
+ce tableau : deux personnes ne se comparent que sur les conseils où
+<em>toutes deux</em> ont voté <em>et</em> dont le dépouillement est complet.
+{{ du.paires }} paires seulement franchissent le seuil de {{ du.seuil }} conseils
+communs, sur des milliers possibles. Un duo absent d’ici n’est pas un duo
+faible : c’est le plus souvent un duo qu’on ne peut pas mesurer.</p>
+
 ## La trahison protège moins qu’on ne croit — parce qu’elle est rare
 
 {% assign tr = m.trahison %}{% assign tt = tr.test %}

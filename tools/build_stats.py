@@ -367,6 +367,7 @@ def bloc_conseils(conseils, parts, par_saison):
         "bulletins_conseils_complets": sum(len(c["votes"]) for c in complets),
         # Le compte brut autant que la part : « 0,0 % » ne se lit pas, « aucun
         # conseil sur 404 » se lit.
+        "par_periode": periodes_du_conseil(conseils, par_saison),
         "conseils_unanimes": len(unanimes),
         "part_unanimes": part(len(unanimes), len(avec_decompte)),
         "part_serres": part(len(serres), len(avec_decompte)),
@@ -738,6 +739,72 @@ NATURES_LIBELLE = {
 SEUIL_NATURE = 30      # sous ce nombre de victoires, une part ne veut rien dire
 
 
+def periodes_du_conseil(conseils, par_saison):
+    """Combien de voix il faut pour partir, epoque par epoque.
+
+    Deux chiffres qui ne racontent pas la meme histoire. Le NOMBRE de voix qui
+    sort quelqu'un monte avec les annees -- mais les conseils comptent plus de
+    monde qu'avant, et il en faut donc mecaniquement davantage. La PART des
+    votants qui ecrivent le meme nom, elle, est la mesure de l'accord : c'est
+    elle qu'il faut regarder pour savoir si le camp se resserre ou se divise.
+    """
+    par = defaultdict(list)
+    for c in eliminations(conseils):
+        s = par_saison.get(c["saison"]) or {}
+        annee, contre, exprimes = s.get("annee"), c.get("votes_contre"), c.get("votes_exprimes")
+        if not (annee and contre and exprimes):
+            continue
+        par[(annee // 5) * 5].append((contre, exprimes))
+    lignes = []
+    for debut in sorted(par):
+        lot = par[debut]
+        lignes.append({
+            "periode": f"{debut}-{debut + 4}",
+            "debut": debut,
+            "conseils": len(lot),
+            "voix_moyennes": arrondi(mean(v for v, _ in lot)),
+            "votants_moyens": arrondi(mean(e for _, e in lot)),
+            "part_moyenne": arrondi(100.0 * mean(v / e for v, e in lot)),
+        })
+    return lignes
+
+
+def duos_les_plus_alignes(conseils, parts, par_saison, mini=6, combien=12):
+    """Les paires qui ont le plus souvent ecrit le meme nom, nommement.
+
+    La page des alliances mesure la persistance en AGREGAT ; elle ne dit jamais
+    qui. Deux personnes ne peuvent etre comparees que sur les conseils ou
+    toutes deux ont vote et ou le depouillement est complet : c'est le
+    denominateur, et il est rarement grand -- d'ou le seuil.
+    """
+    ensemble, accord = Counter(), Counter()
+    for c in eliminations(conseils):
+        if not c.get("complet"):
+            continue
+        bulletins = [b for b in c["votes"]
+                     if b.get("votant_rattache") and b.get("cible_rattachee")]
+        for i in range(len(bulletins)):
+            for j in range(i + 1, len(bulletins)):
+                a, b = bulletins[i], bulletins[j]
+                cle = (c["saison"],) + tuple(sorted([a["votant"], b["votant"]]))
+                ensemble[cle] += 1
+                if a["cible"] == b["cible"]:
+                    accord[cle] += 1
+    noms = {(p["saison"], p["id"]): (p.get("nom_complet") or p.get("nom")) for p in parts}
+    lot = [{
+        "saison": cle[0],
+        "titre": (par_saison.get(cle[0]) or {}).get("titre"),
+        "annee": (par_saison.get(cle[0]) or {}).get("annee"),
+        "un": noms.get((cle[0], cle[1]), cle[1]),
+        "deux": noms.get((cle[0], cle[2]), cle[2]),
+        "ensemble": n,
+        "accord": accord[cle],
+        "part": part(accord[cle], n),
+    } for cle, n in ensemble.items() if n >= mini]
+    lot.sort(key=lambda x: (-x["accord"], -x["part"], x["annee"] or 0))
+    return {"seuil": mini, "paires": len(lot), "meilleures": lot[:combien]}
+
+
 def bloc_natures(nommees, parts, par_saison):
     """La nature des epreuves gagnees, et ce qu'elle ne separe pas.
 
@@ -893,7 +960,7 @@ def bloc_finale(finale, parts, par_saison):
     }
 
 
-def bloc_indicateurs(saisons, parts, conseils, epreuves, colliers):
+def bloc_indicateurs(saisons, parts, conseils, epreuves, colliers, par_saison):
     """Les indicateurs avances, individuels et par saison."""
     lignes = indicateurs_individuels(saisons, parts, conseils, epreuves)
     classiques = [x for x in lignes if not x["speciale"]]
@@ -950,6 +1017,7 @@ def bloc_indicateurs(saisons, parts, conseils, epreuves, colliers):
                  sum(1 for x in endurants if x["sort"] == k), len(endurants))}
             for k, n in Counter(x["sort"] for x in invisibles).most_common()],
         "voix_des_vainqueurs": voix_des_vainqueurs(classiques),
+        "duos": duos_les_plus_alignes(conseils, parts, par_saison),
         "comparables": len(lignes),
         "endurants": len(endurants),
         "seuil_fantome": SEUIL_FANTOME,
@@ -1344,7 +1412,8 @@ def main():
         "premiere_epreuve": analyses.premiere_epreuve(par_saison, parts, epreuves),
         "epreuves": bloc_epreuves(epreuves, conseils, parts, saisons, par_saison),
         "colliers": bloc_colliers(colliers, par_saison),
-        "indicateurs": bloc_indicateurs(saisons, parts, conseils, epreuves, colliers),
+        "indicateurs": bloc_indicateurs(saisons, parts, conseils, epreuves, colliers,
+                                        par_saison),
         "completude": bloc_completude(parts, personnes),
         "palmares": bloc_palmares(parts, epreuves, par_saison),
     }

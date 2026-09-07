@@ -1368,6 +1368,43 @@ conseils:
   conseils_complets: 277
   bulletins: 3384
   bulletins_conseils_complets: 2175
+  par_periode:
+  - periode: 2000-2004
+    debut: 2000
+    conseils: 47
+    voix_moyennes: 4.6
+    votants_moyens: 6.9
+    part_moyenne: 67.8
+  - periode: 2005-2009
+    debut: 2005
+    conseils: 67
+    voix_moyennes: 4.8
+    votants_moyens: 7.2
+    part_moyenne: 67.2
+  - periode: 2010-2014
+    debut: 2010
+    conseils: 63
+    voix_moyennes: 4.9
+    votants_moyens: 8.3
+    part_moyenne: 59.9
+  - periode: 2015-2019
+    debut: 2015
+    conseils: 88
+    voix_moyennes: 5.4
+    votants_moyens: 8.8
+    part_moyenne: 61.7
+  - periode: 2020-2024
+    debut: 2020
+    conseils: 95
+    voix_moyennes: 5.6
+    votants_moyens: 9.7
+    part_moyenne: 58.7
+  - periode: 2025-2029
+    debut: 2025
+    conseils: 30
+    voix_moyennes: 6.0
+    votants_moyens: 9.7
+    part_moyenne: 63.5
   conseils_unanimes: 0
   part_unanimes: 0.0
   part_serres: 45.1
@@ -8565,6 +8602,106 @@ indicateurs:
       vainqueur_plus_vise: 7
       moyenne_vainqueur: 2.46
       moyenne_finaliste: 4.92
+  duos:
+    seuil: 6
+    paires: 322
+    meilleures:
+    - saison: s28
+      titre: Les Reliques du destin
+      annee: 2026
+      un: Caroline Ledos
+      deux: Clarisse Cresseveur
+      ensemble: 10
+      accord: 10
+      part: 100.0
+    - saison: s16
+      titre: L'Île au trésor
+      annee: 2016
+      un: Benoît Assadi
+      deux: Candice Boisson
+      ensemble: 11
+      accord: 10
+      part: 90.9
+    - saison: s16
+      titre: L'Île au trésor
+      annee: 2016
+      un: Bruno Troester
+      deux: Stéphane Cipolla
+      ensemble: 11
+      accord: 10
+      part: 90.9
+    - saison: s02
+      titre: Nicoya
+      annee: 2002
+      un: Marianne Mondon
+      deux: Nicolas Leoni
+      ensemble: 9
+      accord: 9
+      part: 100.0
+    - saison: s01
+      titre: Les Aventuriers de Koh-Lanta
+      annee: 2001
+      un: Guénaëlle Biras
+      deux: Patricia Tanguy
+      ensemble: 8
+      accord: 8
+      part: 100.0
+    - saison: s06
+      titre: Vanuatu
+      annee: 2006
+      un: Émilie Frahi
+      deux: François-David Cardonnel
+      ensemble: 8
+      accord: 8
+      part: 100.0
+    - saison: s08
+      titre: Caramoan
+      annee: 2008
+      un: Christelle Gauzet
+      deux: Frédéric Favier
+      ensemble: 8
+      accord: 8
+      part: 100.0
+    - saison: s08
+      titre: Caramoan
+      annee: 2008
+      un: Bertrand Bolle
+      deux: Christelle Gauzet
+      ensemble: 8
+      accord: 8
+      part: 100.0
+    - saison: s08
+      titre: Caramoan
+      annee: 2008
+      un: Bertrand Bolle
+      deux: Frédéric Favier
+      ensemble: 8
+      accord: 8
+      part: 100.0
+    - saison: s16
+      titre: L'Île au trésor
+      annee: 2016
+      un: Benoît Assadi
+      deux: Julie Navarro-Camilleri
+      ensemble: 8
+      accord: 8
+      part: 100.0
+    - saison: s16
+      titre: L'Île au trésor
+      annee: 2016
+      un: Candice Boisson
+      deux: Julie Navarro-Camilleri
+      ensemble: 8
+      accord: 8
+      part: 100.0
+    - saison: s12
+      titre: Malaisie
+      annee: 2012
+      un: Myriam Modde
+      deux: Thierry Villette
+      ensemble: 10
+      accord: 8
+      part: 80.0
   comparables: 627
   endurants: 475
   seuil_fantome: 5

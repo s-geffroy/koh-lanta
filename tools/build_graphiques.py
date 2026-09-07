@@ -149,6 +149,30 @@ def main():
                         "l'aventurier a assisté, par sort final.",
             couleur=SERIES[0]))
 
+    # --- l'epoque du conseil ----------------------------------------------
+    per = (stats.get("conseils") or {}).get("par_periode") or []
+    if per:
+        ecrire("conseils-epoques.svg", courbes(
+            [{"nom": "Votants au conseil", "couleur": SERIES[0],
+              "valeurs": [p_["votants_moyens"] for p_ in per]},
+             {"nom": "Voix qui font partir", "couleur": SERIES[1],
+              "valeurs": [p_["voix_moyennes"] for p_ in per]}],
+            [p_["periode"].replace("-", "\u2013") for p_ in per],
+            titre="Voix pour éliminer, et monde autour du feu",
+            description="Moyennes par tranche de cinq ans : le nombre de votants "
+                        "au conseil, et le nombre de voix portées sur l'éliminé."))
+
+        ecrire("conseils-accord.svg", colonnes(
+            [{"libelle": p_["periode"].replace("-", "\u2013"),
+              "valeur": p_["part_moyenne"],
+              "sous_titre": f'{p_["conseils"]} conseils',
+              "detail": f'{p_["periode"]} : {p_["part_moyenne"]} % des votants '
+                        f'ecrivent le nom de l\'elimine'}
+             for p_ in per],
+            titre="Part des votants qui écrivent le nom de l'éliminé",
+            description="Accord du camp au moment du vote, par tranche de cinq ans.",
+            unite=" %", couleur=SERIES[1], hauteur=320))
+
     # --- la nature des epreuves -------------------------------------------
     nat = stats.get("natures") or {}
     if nat:
