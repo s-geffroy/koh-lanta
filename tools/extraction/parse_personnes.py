@@ -120,6 +120,7 @@ ALIAS = {
     "votes contre": "votes_recus",
     "nombre de jours a koh lanta": "jours",
     "nombre de jours a koh-lanta": "jours",
+    "nombre de jours": "jours",
     "classement": "classement",
     "tribu": "tribu",
     "saison": "saison",
@@ -127,6 +128,50 @@ ALIAS = {
     "age": "age",
     "prenom": "prenom",
 }
+
+
+# Toutes les pages individuelles ne portent pas l'`Infobox Aventuriers`. Deux
+# autres formes disent la meme chose, et l'une comme l'autre est anterieure au
+# modele : une PROSE a intitules gras (« CLASSEMENT : 16/20 », le titre en
+# triples apostrophes) et un vieux WIKITABLEAU fait a la main (« !Classement= »
+# puis la valeur a la ligne suivante). On ne les lit qu'a defaut du modele, et
+# les cles inconnues sont ecartees plus loin comme celles du modele.
+RE_PROSE = re.compile(r"'''\s*([^'\n:|]{3,40}?)\s*'''\s*:\s*([^\n]+)")
+RE_TABLE_CLE = re.compile(r"^!\s*([^=\n!|]{2,40}?)\s*=\s*$")
+
+
+def _champs_hors_modele(texte):
+    """{cle: valeur} pour les pages sans infobox, meme forme que le modele."""
+    champs = {}
+    for m in RE_PROSE.finditer(texte or ""):
+        champs.setdefault(m.group(1).strip(), m.group(2).strip())
+
+    lignes = (texte or "").split("\n")
+    for i, ligne in enumerate(lignes):
+        m = RE_TABLE_CLE.match(ligne.strip())
+        if not m:
+            continue
+        for suite in lignes[i + 1:i + 5]:
+            s = suite.strip()
+            if s.startswith("!") or s.startswith("|-") or s.startswith("|}"):
+                break
+            s = s.lstrip("|").lstrip("*").strip()
+            if s:
+                champs.setdefault(m.group(1).strip(), s)
+                break
+    return champs
+
+
+def exploitable(texte):
+    """Vrai si la page porte de quoi remplir au moins trois champs connus.
+
+    Le telechargeur s'en sert pour decider s'il garde une page : la plupart des
+    fiches sans infobox sont des ebauches ne contenant qu'une image, et les
+    mettre en cache n'apporterait rien.
+    """
+    champs = _decouper_modele(texte) or _champs_hors_modele(texte)
+    connus = {ALIAS.get(_rang(c)[0]) for c in champs}
+    return len(connus - {None}) >= 3
 
 
 def _propre(v):
@@ -154,13 +199,21 @@ def _lignes(v):
 
 
 def _parcours(v):
-    """« Paniman (Jour 1-23)<br/>Tribu réunifiée (Jour 23-29) » -> etapes."""
+    """« Paniman (Jour 1-23)<br/>Tribu réunifiée (Jour 23-29) » -> etapes.
+
+    Les vieilles fiches mettent la SAISON entre parentheses la ou le modele met
+    les jours : « Mambok(Raja Ampat) ». La garder collerait le titre de la
+    saison au nom de la tribu.
+    """
     etapes = []
     for ligne in _lignes(v):
         m = RE_JOURS.search(ligne) or RE_JOURS_NU.search(ligne)
         nom = RE_LIEN.sub(lambda x: x.group(2) or x.group(1), ligne)
         if m:
             nom = nom[:m.start()] if m.start() < len(nom) else nom
+        else:
+            nom = re.sub(r"\(([^)]*)\)?\s*$",
+                         lambda x: "" if _saison(x.group(1)) else x.group(0), nom)
         nom = nom.strip(" ()[]-–,;:")
         if not nom:
             continue
@@ -201,7 +254,7 @@ def lire(chemin, personne):
     `participations` sert de repli quand l'infobox ne nomme pas les saisons.
     """
     texte = open(chemin, encoding="utf-8").read()
-    champs = _decouper_modele(texte)
+    champs = _decouper_modele(texte) or _champs_hors_modele(texte)
     if not champs:
         return {}, []
 

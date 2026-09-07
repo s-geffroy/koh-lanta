@@ -6993,11 +6993,16 @@
   edition_origine: null
   tribu: Mambok
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Mambok
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 33
   sort: abandon_medical
   motif: Abandon médical
   votes_recus: 8
+  classement: 8
   sources:
     age: fandom
     profession: fandom
@@ -7010,6 +7015,8 @@
     localisation: fandom
     couleur: saisons.yml
     genre: recoupement sur le prenom
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
 - id: patricia-morel
   nom: Patricia
   nom_complet: Patricia Morel
@@ -7050,11 +7057,16 @@
   edition_origine: null
   tribu: Wasaï
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Wasaï
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 36
   sort: elimine_conseil
   motif: Eliminée au conseil
   votes_recus: 10
+  classement: 6
   sources:
     genre: fandom
     age: fandom
@@ -7067,6 +7079,8 @@
     votes_recus: fandom
     localisation: fandom
     couleur: saisons.yml
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
 - id: martin-bazin
   nom: Martin
   nom_complet: Martin Bazin
@@ -7107,11 +7121,16 @@
   edition_origine: null
   tribu: Mambok
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Mambok
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 40
   sort: elimine_orientation
   motif: Eliminée à l'orientation
   votes_recus: 10
+  classement: 4
   sources:
     genre: fandom
     age: fandom
@@ -7124,6 +7143,8 @@
     votes_recus: fandom
     localisation: fandom
     couleur: saisons.yml
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
 - id: laurent-maistret
   nom: Laurent
   nom_complet: Laurent Maistret
@@ -9840,15 +9861,22 @@
   genre: h
   age: 36
   profession: Chef d'entreprise
-  localisation: null
+  localisation: Nord
   edition_origine: null
   tribu: Sambor
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Sambor
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 16
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 6
+  classement: 16
+  victoires_collectives: 2
+  victoires_individuelles: 0
   sources:
     genre: fandom
     age: fandom
@@ -9860,6 +9888,11 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    localisation: fandom (page individuelle)
+    parcours: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
 - id: jean-luc-duboscq
   nom: Jean-Luc
   nom_complet: Jean-Luc Duboscq

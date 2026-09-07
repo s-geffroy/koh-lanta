@@ -139,21 +139,37 @@ def main():
         attente.append(p)
     print(f"{len(personnes)} personnes, {len(attente)} a recuperer")
 
-    trouve = manque = 0
+    sys.path.insert(0, os.path.join(RACINE, "tools", "extraction"))
+    import parse_personnes as PP
+
+    trouve = vide = absente = 0
+    ebauches = []
     for i in range(0, len(attente), LOT):
         lot = attente[i:i + LOT]
         res = contenus([p["nom"] for p in lot])
         for p in lot:
             t = res.get(p["nom"])
-            if t and "Infobox" in t:
+            # « Introuvable » etait le mot faux : ces pages EXISTENT presque
+            # toutes. La plupart sont des ebauches qui ne contiennent qu'une
+            # image, et les garder n'apporterait rien. On ne retient donc que
+            # celles qui remplissent au moins trois champs -- que ce soit par
+            # l'infobox ou par les deux formes plus anciennes qu'elle.
+            if t and PP.exploitable(t):
                 open(os.path.join(SORTIE, p["id"] + ".fandom.wiki"), "w", encoding="utf-8").write(t)
                 trouve += 1
+            elif t:
+                vide += 1
+                ebauches.append(f"{p['id']} ({len(t)} o)")
             else:
-                manque += 1
-                print(f"  INTROUVABLE {p['id']:34s} {p['nom']}")
-        print(f"  lot {i // LOT + 1}: {trouve} trouves, {manque} manquants")
+                absente += 1
+                print(f"  ABSENTE DU WIKI {p['id']:30s} {p['nom']}")
+        print(f"  lot {i // LOT + 1}: {trouve} retenues, {vide} sans donnees, "
+              f"{absente} absentes")
         time.sleep(1.5)
-    print(f"\n{trouve} pages ecrites, {manque} introuvables")
+    print(f"\n{trouve} pages ecrites, {vide} ebauches sans donnees exploitables, "
+          f"{absente} absentes du wiki")
+    if ebauches:
+        print("  ebauches : " + ", ".join(sorted(ebauches)))
     recuperer_categories(None)
 
 

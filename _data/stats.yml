@@ -9374,8 +9374,8 @@ indicateurs:
     - binomes
 completude:
   participations: 645
-  avec_fiche: 599
-  sans_fiche: 46
+  avec_fiche: 603
+  sans_fiche: 42
   personnes: 531
   champs:
   - champ: age
@@ -9422,10 +9422,10 @@ completude:
     depuis_page_individuelle: 2
   - champ: localisation
     libelle: Département d'origine
-    remplis: 626
-    manquants: 19
-    part: 97.1
-    depuis_page_individuelle: 254
+    remplis: 627
+    manquants: 18
+    part: 97.2
+    depuis_page_individuelle: 255
   - champ: couleur
     libelle: Couleur de départ
     remplis: 623
@@ -9434,39 +9434,39 @@ completude:
     depuis_page_individuelle: 0
   - champ: parcours
     libelle: Trajectoire de tribus
-    remplis: 574
-    manquants: 71
-    part: 89.0
-    depuis_page_individuelle: 289
+    remplis: 578
+    manquants: 67
+    part: 89.6
+    depuis_page_individuelle: 293
   - champ: classement
     libelle: Rang final
-    remplis: 566
-    manquants: 79
-    part: 87.8
-    depuis_page_individuelle: 566
+    remplis: 570
+    manquants: 75
+    part: 88.4
+    depuis_page_individuelle: 570
   - champ: victoires_individuelles
     libelle: Victoires individuelles
-    remplis: 548
-    manquants: 97
-    part: 85.0
-    depuis_page_individuelle: 548
+    remplis: 549
+    manquants: 96
+    part: 85.1
+    depuis_page_individuelle: 549
   - champ: victoires_collectives
     libelle: Victoires collectives
-    remplis: 546
-    manquants: 99
-    part: 84.7
-    depuis_page_individuelle: 546
+    remplis: 547
+    manquants: 98
+    part: 84.8
+    depuis_page_individuelle: 547
   champs_complets: 5
   champs_suivis: 13
-  trous: 405
+  trous: 394
   valeurs_suivies: 8385
-  comblees: 2300
-  part_remplie: 95.17
+  comblees: 2311
+  part_remplie: 95.3
 palmares:
-  renseignees: 548
-  compares: 471
-  identiques: 342
-  part_identiques: 72.6
+  renseignees: 549
+  compares: 472
+  identiques: 343
+  part_identiques: 72.7
   ecart_median: 1
   saisons_ajoutees:
   - saison: s03
@@ -13648,8 +13648,8 @@ modeles:
     - cle: vote_meme_departement
       libelle: Viser quelqu'un de son département
       question: Épargne-t-on le voisin — celui qui vit dans le même département ?
-      observe: 1.665
-      attendu: 2.108
+      observe: 1.655
+      attendu: 2.096
       unite: '%'
       ecart_types: -2.11
       p: 0.0412
@@ -13659,8 +13659,8 @@ modeles:
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
       nulle: &id030
         bornes:
-        - 1.2974
-        - 3.0636
+        - 1.29
+        - 3.0462
         cases:
         - 0
         - 1
@@ -13690,10 +13690,10 @@ modeles:
         - 0
         - 2
         - 0
-        largeur_case: 0.063079
-        observe: 1.6648
-        moyenne_nulle: 2.1082
-      bulletins: 1742
+        largeur_case: 0.062719
+        observe: 1.6553
+        moyenne_nulle: 2.0962
+      bulletins: 1752
       origine: homophilie
       p_ajustee: 0.0787
       retenu: false
@@ -17631,8 +17631,8 @@ modeles:
     libelle: Viser quelqu'un de son département
     question: Épargne-t-on le voisin — celui qui vit dans le même département ?
     origine: homophilie
-    observe: 1.665
-    attendu: 2.108
+    observe: 1.655
+    attendu: 2.096
     unite: '%'
     ecart_types: -2.11
     p: 0.0412
@@ -17664,10 +17664,10 @@ modeles:
     question: Les aventuriers viennent-ils de départements plus variés, ou plus concentrés, qu'un tirage
       dans la population française ne le donnerait ?
     origine: geographie
-    observe: 181.723
-    attendu: 98.954
+    observe: 181.66
+    attendu: 98.977
     unite: ''
-    ecart_types: 5.61
+    ecart_types: 5.6
     p: 0.0001
     p_ajustee: 0.0006
     retenu: true
@@ -17677,49 +17677,49 @@ modeles:
       pas la démographie.'
     nulle:
       bornes:
-      - 48.7166
-      - 188.0564
+      - 49.1291
+      - 187.9709
       cases:
       - 0
-      - 5
-      - 28
-      - 65
-      - 181
-      - 405
-      - 769
-      - 1011
-      - 1314
-      - 1389
-      - 1291
-      - 1069
-      - 868
-      - 607
-      - 410
-      - 254
-      - 146
-      - 93
-      - 49
-      - 23
-      - 14
+      - 6
+      - 26
+      - 70
+      - 188
+      - 438
+      - 766
+      - 1043
+      - 1330
+      - 1378
+      - 1265
+      - 1034
+      - 869
+      - 598
+      - 425
+      - 237
+      - 142
+      - 88
+      - 47
+      - 26
+      - 13
+      - 4
       - 3
-      - 2
       - 4
       - 0
       - 0
       - 0
       - 0
-      largeur_case: 4.976418
-      observe: 181.7227
-      moyenne_nulle: 98.9537
+      largeur_case: 4.958637
+      observe: 181.6599
+      moyenne_nulle: 98.9771
   - cle: geographie_regions
     libelle: L'origine géographique, par région
     question: À l'échelle des régions — assez peuplées pour trancher — le recrutement suit-il la démographie
       française ?
     origine: geographie
-    observe: 65.529
-    attendu: 16.108
+    observe: 64.051
+    attendu: 15.956
     unite: ''
-    ecart_types: 8.52
+    ecart_types: 8.26
     p: 0.0001
     p_ajustee: 0.0006
     retenu: true
@@ -17728,40 +17728,40 @@ modeles:
       compte trois aventuriers, une région une vingtaine.'
     nulle:
       bornes:
-      - -0.2146
-      - 68.6594
+      - -1.1238
+      - 67.155
       cases:
       - 0
-      - 25
-      - 272
-      - 837
-      - 1471
-      - 1792
-      - 1691
-      - 1393
-      - 997
-      - 645
-      - 414
-      - 214
-      - 120
-      - 63
-      - 34
-      - 16
+      - 13
+      - 147
+      - 588
+      - 1267
+      - 1729
+      - 1815
+      - 1478
+      - 1124
+      - 748
+      - 464
+      - 288
+      - 143
+      - 88
+      - 46
+      - 30
+      - 15
       - 9
-      - 3
+      - 6
       - 1
-      - 1
-      - 0
       - 0
       - 1
       - 0
       - 0
-      - 1
       - 0
       - 0
-      largeur_case: 2.459787
-      observe: 65.5288
-      moyenne_nulle: 16.1077
+      - 0
+      - 0
+      largeur_case: 2.438527
+      observe: 64.0514
+      moyenne_nulle: 15.9561
   - cle: audience_rupture
     libelle: La rupture d'audience
     question: La chute d'audience tombe-t-elle à une date, ou se fait-elle par glissement ?
@@ -19519,7 +19519,7 @@ completude_saisons:
     annee: 2011
     speciale: false
     effectif: 20
-    score: 73.6
+    score: 75.2
     cellules:
     - cle: casting
       valeur: 100.0
@@ -19547,9 +19547,9 @@ completude_saisons:
       etat: complet
       nature: part
     - cle: parcours
-      valeur: 45.0
-      texte: 9/20
-      etat: mince
+      valeur: 60.0
+      texte: 12/20
+      etat: partiel
       nature: part
     - cle: jour_sortie
       valeur: 100.0
@@ -19562,9 +19562,9 @@ completude_saisons:
       etat: complet
       nature: part
     - cle: classement
-      valeur: 45.0
-      texte: 9/20
-      etat: mince
+      valeur: 60.0
+      texte: 12/20
+      etat: partiel
       nature: part
     - cle: victoires
       valeur: 45.0
@@ -20149,7 +20149,7 @@ completude_saisons:
     annee: 2016
     speciale: false
     effectif: 20
-    score: 81.2
+    score: 82.3
     cellules:
     - cle: casting
       valeur: 100.0
@@ -20167,9 +20167,9 @@ completude_saisons:
       etat: complet
       nature: part
     - cle: localisation
-      valeur: 95.0
-      texte: 19/20
-      etat: eleve
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
       nature: part
     - cle: couleur
       valeur: 100.0
@@ -20177,9 +20177,9 @@ completude_saisons:
       etat: complet
       nature: part
     - cle: parcours
-      valeur: 95.0
-      texte: 19/20
-      etat: eleve
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
       nature: part
     - cle: jour_sortie
       valeur: 100.0
@@ -20192,14 +20192,14 @@ completude_saisons:
       etat: complet
       nature: part
     - cle: classement
-      valeur: 95.0
-      texte: 19/20
-      etat: eleve
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
       nature: part
     - cle: victoires
-      valeur: 95.0
-      texte: 19/20
-      etat: eleve
+      valeur: 100.0
+      texte: 20/20
+      etat: complet
       nature: part
     - cle: conseils
       valeur: 94.7
@@ -21847,8 +21847,8 @@ completude_saisons:
     libelle: Département d'origine
     court: Origine
     nature: part
-    moyenne: 96.6
-    completes: 29
+    moyenne: 96.7
+    completes: 30
     concernees: 34
   - cle: couleur
     libelle: Bandeau de départ
@@ -21861,8 +21861,8 @@ completude_saisons:
     libelle: Tribus datées en jours
     court: Tribus
     nature: part
-    moyenne: 87.7
-    completes: 21
+    moyenne: 88.3
+    completes: 22
     concernees: 34
   - cle: jour_sortie
     libelle: Jour de sortie
@@ -21882,15 +21882,15 @@ completude_saisons:
     libelle: Rang final
     court: Rang
     nature: part
-    moyenne: 86.5
-    completes: 16
+    moyenne: 87.1
+    completes: 17
     concernees: 34
   - cle: victoires
     libelle: Palmarès d'épreuves
     court: Palmarès
     nature: part
-    moyenne: 83.9
-    completes: 13
+    moyenne: 84.0
+    completes: 14
     concernees: 34
   - cle: conseils
     libelle: Conseils rattachés à un éliminé
@@ -21957,6 +21957,6 @@ completude_saisons:
     concernees: 27
   saisons: 34
   cases: 604
-  moyenne: 84.3
+  moyenne: 84.4
   meilleure: s05
   pire: sp8
