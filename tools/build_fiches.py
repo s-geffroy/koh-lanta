@@ -577,10 +577,14 @@ def faq_aventurier(e, joueurs_classes):
     return [{"q": question, "r": reponse} for question, reponse in q]
 
 
+# `image` remplace, pour cette page seule, la vignette par defaut posee dans
+# _config.yml. Sans cette ligne, les 621 pages partageaient le meme apercu :
+# celui du site, quel que soit le lien envoye.
 GABARIT = """---
 layout: {layout}
 title: {titre}
 description: {description}
+image: {image}
 permalink: {permalink}
 {cle}: {valeur}
 ---
@@ -588,7 +592,7 @@ permalink: {permalink}
 
 
 def ecrire_pages(dossier, layout, cle, entrees, titre_de, description_de,
-                 permalink_de, rapport):
+                 permalink_de, rapport, image_de=None):
     """Ecrit une page par entree, et RETIRE celles qui n'ont plus de donnee.
 
     Sans le retrait, une personne disparue des donnees laisserait derriere elle
@@ -609,6 +613,8 @@ def ecrire_pages(dossier, layout, cle, entrees, titre_de, description_de,
             layout=layout,
             titre=json.dumps(titre_de(e), ensure_ascii=False),
             description=json.dumps(description_de(e), ensure_ascii=False),
+            image=(image_de(cid) if image_de
+                   else f"/assets/partage/{os.path.basename(dossier)}/{cid}.png"),
             permalink=permalink_de(cid), cle=cle, valeur=cid)
         chemin = os.path.join(dossier, nom)
         ancien = None
