@@ -136,6 +136,12 @@
     - titre: Les aventuriers
       url: /aventuriers/
       resume: Toutes les participations, filtrables et triables.
+    # « nommees » n'est pas un ornement : /statistiques/epreuves/ analyse
+    # les 753 epreuves relevees, celle-ci ne montre que celles qui portent un
+    # nom ET dont on connait les vainqueurs. Deux pages, deux perimetres.
+    - titre: Les épreuves nommées
+      url: /epreuves/
+      resume: Chaque épreuve, ses éditions, et son record de victoires.
     - titre: Les sources
       url: /sources/
       resume: D'où viennent ces données, et ce qui leur manque.

@@ -1,6 +1,11 @@
 ---
 layout: home
-title: Accueil
+# « Accueil » etait le pire titre du site : la page la plus importante ne
+# disait rien a un moteur. Ce titre-ci n'apparait NULLE PART a l'ecran -- le
+# H1 de l'accueil est `.accueil-titre`, ecrit plus bas dans ce fichier, et
+# `layout: home` ne lit jamais `page.title`. Seul jekyll-seo-tag le lit, et il
+# y colle « | Koh-Lanta en chiffres ».
+title: Statistiques, classement et records
 description: >-
   Vingt-cinq ans de Koh-Lanta mis en données : chaque participation, chaque
   épreuve, chaque bulletin de vote, et ce que les chiffres disent du jeu.

@@ -217,6 +217,7 @@ def controler_aleatoire(c):
 FAMILLES_DE_FICHES = {
     "fiche-aventurier": "/aventuriers/",
     "fiche-saison": "/saisons/",
+    "fiche-epreuve": "/epreuves/",
 }
 
 

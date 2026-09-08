@@ -17,6 +17,7 @@
 {%- assign racine = '/' | absolute_url -%}
 {%- assign url_aventuriers = '/aventuriers/' | absolute_url -%}
 {%- assign url_saisons = '/saisons/' | absolute_url -%}
+{%- assign url_epreuves = '/epreuves/' | absolute_url -%}
 {%- if page.aventurier -%}
   {%- assign a = site.data.fiches.aventuriers[page.aventurier] -%}
   {%- if a -%}
@@ -48,6 +49,16 @@
 {"@type":"ListItem","position":1,"name":"Accueil","item":{{ racine | jsonify }}},
 {"@type":"ListItem","position":2,"name":"Les saisons","item":{{ url_saisons | jsonify }}},
 {"@type":"ListItem","position":3,"name":{{ s.titre | jsonify }}}]}]}
+</script>
+  {%- endif -%}
+{%- elsif page.epreuve -%}
+  {%- assign x = site.data.epreuves_fiches.epreuves[page.epreuve] -%}
+  {%- if x -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Accueil","item":{{ racine | jsonify }}},
+{"@type":"ListItem","position":2,"name":"Les épreuves nommées","item":{{ url_epreuves | jsonify }}},
+{"@type":"ListItem","position":3,"name":{{ x.nom | jsonify }}}]}
 </script>
   {%- endif -%}
 {%- endif -%}

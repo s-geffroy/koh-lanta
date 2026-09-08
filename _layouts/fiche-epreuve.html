@@ -1,0 +1,87 @@
+---
+layout: default
+---
+{%- comment -%}
+  La fiche d'une epreuve nommee. Meme principe que les deux autres fiches : la
+  page ne porte qu'un identifiant, tout vient de `_data/epreuves_fiches.yml`,
+  l'acces se fait par cle. Aucun calcul ici.
+
+  Toutes les epreuves nommees n'ont PAS de page : le raccord entre le nom cite
+  par le wiki et l'epreuve relevee dans la saison ne tient que sur 14,3 % des
+  cas. tools/build_epreuves.py garde celles qui portent un tableau et laisse
+  les autres a leur ligne sur /statistiques/epreuves/.
+{%- endcomment -%}
+{%- assign e = site.data.epreuves_fiches.epreuves[page.epreuve] -%}
+
+<header class="page-entete">
+  <p class="oeil">
+    <span>LES ÉPREUVES</span>
+    <span class="oeil-rang">{{ e.apparitions }}<i>× courue</i></span>
+  </p>
+  <h1 class="page-titre">{{ e.nom }}</h1>
+  <p class="chapeau">
+    {%- if e.type %}{{ e.type }}{% endif -%}
+    {%- if e.premiere_annee %} · de {{ e.premiere_annee }} à {{ e.derniere_annee }}{% endif -%}
+    {%- if e.editions.size > 0 %} · {{ e.editions.size }} éditions{% endif -%}
+  </p>
+</header>
+
+<div class="prose">
+
+<ul class="chiffres">
+  <li class="chiffre"><b>{{ e.apparitions }}</b><span>fois courue</span></li>
+  <li class="chiffre"><b>{{ e.editions.size }}</b><span>éditions concernées</span></li>
+  <li class="chiffre"><b>{{ e.palmares.size }}</b><span>vainqueurs identifiés</span></li>
+</ul>
+
+{%- if e.record %}
+<div class="constat">
+  <p><b>Le record</b> :
+  <a href="{{ '/aventuriers/' | append: e.record.id | append: '/' | relative_url }}">{{ e.record.nom }}</a>,
+  {% if e.record.victoires > 1 %}{{ e.record.victoires }} victoires{% else %}une victoire{% endif %}.</p>
+</div>
+{%- endif %}
+
+<h2>Qui l’a gagnée</h2>
+
+<p>Les victoires connues nommément, la plus fournie d’abord. Cette liste ne
+couvre pas toutes les fois où l’épreuve a été courue : le nom de l’épreuve et
+le relevé de la saison ne se raccordent pas toujours, et une épreuve gagnée par
+une tribu entière n’a pas de vainqueur individuel.
+<a href="{{ '/sources/' | relative_url }}">Les sources</a> disent ce qui manque
+et pourquoi.</p>
+
+<div class="tableau-large">
+<table data-triable>
+<thead><tr>
+  <th>Aventurier</th><th class="nombre">Victoires</th><th>Éditions</th>
+</tr></thead>
+<tbody>
+  {%- for p in e.palmares %}
+  <tr>
+    <td>{% include lien-aventurier.html id=p.id nom=p.nom %}</td>
+    <td class="nombre" data-val="{{ p.victoires }}">{{ p.victoires }}</td>
+    <td>{% for s in p.saisons %}<a href="{{ '/saisons/' | append: s.id | append: '/' | relative_url }}">{{ s.titre }}</a> ({{ s.annee }}){% unless forloop.last %}, {% endunless %}{% endfor %}</td>
+  </tr>
+  {%- endfor %}
+</tbody>
+</table>
+</div>
+
+<h2>Les éditions où elle a été courue</h2>
+
+<p>
+{%- for s in e.editions -%}
+<a href="{{ '/saisons/' | append: s.id | append: '/' | relative_url }}">{{ s.titre }}</a> ({{ s.annee }}){% unless forloop.last %} · {% endunless %}
+{%- endfor -%}
+</p>
+
+<p class="note">Une épreuve peut être courue plusieurs fois dans la même
+édition : {{ e.apparitions }} apparitions pour {{ e.editions.size }} éditions.</p>
+
+<p><a href="{{ '/epreuves/' | relative_url }}">Toutes les épreuves nommées</a> ·
+<a href="{{ '/statistiques/epreuves/' | relative_url }}">Ce que les épreuves disent du jeu</a> ·
+<a href="{{ '/aventuriers/' | relative_url }}">Tous les aventuriers</a> ·
+<a href="{{ '/sources/' | relative_url }}">Les sources</a></p>
+
+</div>
