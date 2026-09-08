@@ -107,14 +107,21 @@ laquelle.</p>
     {%- comment -%}
       Deux pieges de Liquid, tous deux silencieux.
 
-      1. ZERO EST VRAI : nil est la seule valeur fausse. Un
-         `{% if p.voix_recues %}` laisse donc passer « 0 voix recues », qu'il
-         faut ecrire autrement -- et distinguer de « la source ne le dit pas »,
-         qui est le seul vrai nil.
+      1. ZERO EST VRAI : nil est la seule valeur fausse. Un simple test
+         d'existence sur `p.voix_recues` laisse donc passer « 0 voix recues »,
+         qu'il faut ecrire autrement -- et distinguer de « la source ne le dit
+         pas », qui est le seul vrai nil.
       2. `nil > 0` N'EST PAS FAUX, c'est une erreur de comparaison. En mode
          laxiste elle ne casse pas la construction : elle imprime son message
          au milieu de la page. On teste donc l'existence AVANT de comparer, et
          tous les compteurs sortent de Python a 0 plutot qu'a nil.
+
+      Et un troisieme, paye par une construction en echec : UNE BALISE ECRITE
+      DANS UN COMMENTAIRE N'EST PAS INERTE. Liquid decoupe les balises avant de
+      savoir qu'il est dans un commentaire ; un `if` cite ici en exemple ouvre
+      un bloc que `endcomment` ne ferme pas, et toute la construction s'arrete
+      sur « 'endcomment' is not a valid delimiter for if tags ». On ecrit donc
+      les exemples en toutes lettres. `verifie_site.py` le verifie.
     {%- endcomment -%}
     {%- if p.voix_recues -%}
       {%- if p.voix_recues == 0 %}<b>Jamais visé{% if a.genre == "f" %}e{% endif %}</b>{% if p.conseils_assistes %} en {{ p.conseils_assistes }} conseils traversés{% endif %}. {% else %}<b>{{ p.voix_recues }}</b> voix reçue{% if p.voix_recues > 1 %}s{% endif %}{% if p.conseils_assistes %} sur {{ p.conseils_assistes }} conseils traversés{% endif %}{% if p.menace %}, soit {{ p.menace }} par conseil{% endif %}. {% endif -%}

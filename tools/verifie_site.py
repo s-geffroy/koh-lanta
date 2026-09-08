@@ -34,6 +34,27 @@ RE_COMMENTAIRE = re.compile(r"\{%-?\s*comment\s*-?%\}.*?\{%-?\s*endcomment\s*-?%
                             re.S)
 
 
+# Les balises que Liquid ouvre et qu'il faut refermer. Ecrites DANS un
+# commentaire, elles ne sont pas inertes : Liquid decoupe les balises avant de
+# savoir qu'il est dans un commentaire, et l'ouverture reste ouverte. Une
+# construction entiere est tombee sur un `if` cite en exemple dans un
+# commentaire de _layouts/fiche-aventurier.html -- « 'endcomment' is not a
+# valid delimiter for if tags ». Les exemples s'ecrivent en toutes lettres.
+BALISES_BLOQUANTES = ("if", "unless", "for", "case", "capture", "tablerow",
+                      "raw", "comment", "assign", "include")
+RE_BALISE = re.compile(r"\{%-?\s*(\w+)")
+
+
+def balises_en_commentaire(corps):
+    """Les balises Liquid ecrites a l'interieur d'un bloc `comment`."""
+    trouvees = []
+    for m in RE_COMMENTAIRE.finditer(corps):
+        for b in RE_BALISE.finditer(m.group(0)[m.group(0).index("%}") + 2:]):
+            if b.group(1) in BALISES_BLOQUANTES:
+                trouvees.append(b.group(1))
+    return trouvees
+
+
 def sans_commentaires(corps):
     """Retire les blocs `{% comment %}` avant tout controle de gabarit.
 
@@ -543,6 +564,11 @@ def main():
             if motif in corps:
                 c.erreur(f"{rel} : `{motif}` interdit dans un gabarit — {conseil}")
 
+        for nom_balise in balises_en_commentaire(texte[m.end():]):
+            c.erreur(f"{rel} : balise `{nom_balise}` ecrite DANS un commentaire "
+                     f"Liquid — elle n'y est pas inerte, elle ouvre un bloc que "
+                     f"`endcomment` ne ferme pas et la construction s'arrete")
+
         for parcours in RE_DATA.findall(corps):
             ok, _ = resoudre(donnees, parcours)
             if not ok:
@@ -586,6 +612,11 @@ def main():
             for motif, conseil in LIQUID_INTERDIT:
                 if motif in corps:
                     c.erreur(f"{rel} : `{motif}` interdit dans un gabarit — {conseil}")
+            for nom_balise in balises_en_commentaire(
+                    open(os.path.join(dossier, nom), encoding="utf-8").read()):
+                c.erreur(f"{rel} : balise `{nom_balise}` ecrite DANS un commentaire "
+                         f"Liquid — elle n'y est pas inerte, elle ouvre un bloc que "
+                         f"`endcomment` ne ferme pas et la construction s'arrete")
             for parcours in RE_DATA.findall(corps):
                 ok, _ = resoudre(donnees, parcours)
                 if not ok:
