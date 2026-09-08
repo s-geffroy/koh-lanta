@@ -20,10 +20,20 @@ lang: fr_FR
 
 # La vignette de partage, fabriquee par tools/build_partage.py. Sans elle,
 # chaque lien du site partage dans une messagerie ou sur un reseau sortait
-# sans image -- le depot ne contenait aucun fichier bitmap, tout le visuel
-# etant en SVG inline. jekyll-seo-tag en fait une URL absolue et bascule au
-# passage la carte Twitter en grand format.
-image: /assets/partage.png
+# sans image : le depot ne contenait aucun fichier bitmap, tout le visuel
+# etant en SVG inline.
+#
+# ELLE PASSE PAR `defaults:`, ET C'EST OBLIGATOIRE. jekyll-seo-tag 2.8 lit
+# `page.image`, PAS une cle `image:` posee a la racine de ce fichier : ecrite
+# la, elle est ignoree sans le moindre avertissement -- la construction
+# reussit, et `og:image` n'est simplement pas emise. `defaults:` pose la
+# valeur dans le front matter de chaque page, ou le greffon la trouve. Une
+# image presente bascule aussi la carte Twitter en grand format.
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/partage.png
 
 # L'adresse publique du site, sans barre oblique finale.
 #   site de projet    : https://<utilisateur>.github.io
