@@ -88,10 +88,60 @@ fiche. Si un `id` manque, la reparation est dans cette fonction, pas dans le
 gabarit : **aucun calcul en Liquid**, le site ne peut pas etre essaye avant le
 push.
 
+## Les photos : jamais sans leur credit
+
+Les portraits viennent de **Wikimedia Commons**, jamais de la presse, et
+uniquement sous licence libre (domaine public, CC0, CC BY, CC BY-SA). La liste
+`LICENCES_LIBRES` de `tools/extraction/wikidata.py` est FERMEE : une licence
+inconnue n'est pas presumee libre.
+
+**L'auteur et la licence s'affichent SOUS la photo**, sur la fiche. Ce n'est
+pas negociable et ce n'est pas allegeable : CC BY et CC BY-SA exigent
+l'attribution, et une photo republiee sans son auteur ne l'est pas legalement.
+`controler_portraits()` refuse une photo sans credit complet, un fichier absent
+du depot, et un gabarit qui n'afficherait plus `portrait.auteur`.
+
+**Le nom ne prouve pas l'identite.** Trente et un aventuriers ont un homonyme
+exact sur la Wikipedia francophone -- parmi eux une danseuse ukrainienne et un
+avocat. Un element Wikidata n'est retenu que s'il est un etre humain ET que le
+jeu est ecrit dans ses declarations ou dans le texte de l'article. Sans preuve,
+pas de photo : une fiche nue vaut mieux qu'une fiche qui montre quelqu'un
+d'autre. Meme regle pour les comptes de reseaux sociaux, tires des memes
+elements.
+
+## Les questions frequentes
+
+Six par fiche, ecrites en Python (`faq_aventurier`), VISIBLES sur la page. Ne
+pas en attendre l'affichage enrichi : depuis 2023 Google le reserve aux sites
+gouvernementaux et de sante. C'est le texte de la page qui travaille.
+
+Trois pieges de redaction, deja payes : `_edition()` passe par l'annee pour ne
+pas ecrire « lors de Les Aventuriers » ; `de_()` elide devant voyelle, sinon
+138 fiches publiaient « le metier de Abdellah » ; et `.capitalize()` minuscule
+les noms propres -- ne jamais l'employer sur une phrase qui en contient.
+
+## Les pages d'epreuve
+
+Un seuil, pas un catalogue : `tools/build_epreuves.py` ne publie que les
+epreuves ayant au moins cinq apparitions ET quatre vainqueurs nommes -- 19 sur
+53. Le raccord entre le nom cite par le wiki et l'epreuve relevee ne tient que
+sur 14,3 % des cas ; publier les 53 donnerait des coquilles vides, ce qu'un
+moteur compte contre le site ENTIER. Si le seuil bouge, la page /epreuves/ dit
+le nombre et sa raison : la mettre a jour aussi.
+
+## Les adresses de saison
+
+`/saisons/koh-lanta-palawan/`, et non `/saisons/s07/`. L'ancienne reste vivante
+par `redirect_from` (greffon `jekyll-redirect-from`, liste blanche). Aucun
+gabarit ne construit ce lien a la main : tout passe par
+`_includes/lien-saison.html`, qui traduit l'identifiant par
+`_data/saisons_urls.yml`.
+
 ## Ce qu'on ne fait pas
 
-- **Aucun permalien ne change.** `/saisons/s01/` reste opaque : le titre et le
-  H1 portent le vrai nom, et deplacer une URL casse des liens ailleurs.
+- **Aucun permalien ne change sans accord explicite ET sans `redirect_from`.**
+  Les saisons ont ete deplacees le 8 septembre 2026, l'ancienne adresse servie
+  par le greffon. Sans lui, tout lien pose ailleurs tombait en silence.
 - **Aucun fichier `CNAME` ecrit a la main.** C'est GitHub qui le commite,
   depuis Settings > Pages, une fois le DNS verifie. Le poser avant fait servir
   une erreur a la place du site.
