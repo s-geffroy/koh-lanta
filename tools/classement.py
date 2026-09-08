@@ -367,6 +367,10 @@ def mesurer(saisons, parts, conseils, epreuves):
             "_sort": p.get("sort"),
             "_nom": p.get("nom_complet") or p.get("nom"),
             "_titre": (par_saison.get(sid) or {}).get("titre"),
+            # L'identifiant de la saison, et pas seulement son titre : sans
+            # lui, le classement publie des noms de saison que rien ne relie a
+            # leur fiche.
+            "_saison": sid,
         }
     return mesures
 
@@ -807,6 +811,11 @@ def _ligne_publiee(s, mesures, cles):
         "titres": titres,
         "finales": sum(1 for m in p if m["_sort"] in ("vainqueur", "finaliste")),
         "saisons": ", ".join(sorted({m["_titre"] for m in p if m["_titre"]})),
+        # Les memes saisons, mais avec de quoi les lier : une par participation,
+        # de la plus ancienne a la plus recente.
+        "editions": [{"id": m["_saison"], "titre": m["_titre"], "annee": m["_annee"]}
+                     for m in sorted(p, key=lambda m: (m["_annee"], m["_saison"]))
+                     if m["_titre"]],
         "part_top": s.get("part_top"),
         "rang_min": s.get("rang_min"), "rang_max": s.get("rang_max"),
         "rang_median": s.get("rang_median"),
@@ -971,6 +980,7 @@ def tout(saisons, parts, conseils, epreuves):
                                                   mesures[s["cle"]]["_sort"]),
                          "aventurier": mesures[s["cle"]]["_nom"],
                          "saison": mesures[s["cle"]]["_titre"],
+                         "saison_id": mesures[s["cle"]]["_saison"],
                          "annee": mesures[s["cle"]]["_annee"]}
                         for s in parts_sujets[:TAILLE]],
         "sans_titre": [{"rang": s["rang"], "nom": s["nom"],

@@ -32,6 +32,234 @@ regarde **après**, pour voir si le score la retrouve tout seul.
   <li class="chiffre"><b>{{ c.correlations[0].rho }}</b><span>corrélation la plus forte entre deux facettes</span></li>
 </ul>
 
+## Le top {{ c.taille }}
+
+Le score est la moyenne des quatre facettes, ramenées chacune à une même
+échelle. Poids égaux : c’est la seule pondération qui ne demande à personne de
+décider que le physique compte plus que le vote.
+
+<div class="tableau-large">
+<table data-triable>
+<thead><tr>
+  <th class="nombre">#</th><th>Aventurier</th><th class="nombre">Score</th>
+  <th class="nombre">Saisons</th><th class="nombre">Titres</th>
+  <th class="nombre">Dans le top selon les poids</th>
+  <th class="nombre">Rang, du 5<sup>e</sup> au 95<sup>e</sup> centile</th>
+</tr></thead>
+<tbody>
+{% for l in c.top %}
+<tr><td class="nombre">{{ l.rang }}</td>
+    <td>{% include lien-aventurier.html id=l.id nom=l.nom %}<br>
+      <small>{% for s in l.editions %}{% include lien-saison.html id=s.id titre=s.titre %}{% unless forloop.last %}, {% endunless %}{% endfor %}</small></td>
+    <td class="nombre">{{ l.score }}</td>
+    <td class="nombre">{{ l.participations }}</td>
+    <td class="nombre">{{ l.titres }}</td>
+    <td class="nombre">{{ l.part_top }} %</td>
+    <td class="nombre">{{ l.rang_p05 }} – {{ l.rang_p95 }}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+## Le classement complet, nom par nom
+
+Les {{ c.joueurs_classes }} aventuriers, cherchables et triables. Les quatre
+colonnes de droite donnent le rang **sur chaque facette** : c’est là que se voit
+le mieux qu’un bon rang général peut cacher une facette au fond du tableau, et
+l’inverse.
+
+<div class="filtres" data-filtre="tableau-classement">
+  <div class="champ">
+    <label for="qc">Chercher un aventurier</label>
+    <input type="search" id="qc" data-role="texte" placeholder="Claude Dartois, Jade Handi, Moundir…" autocomplete="off">
+  </div>
+  <button type="button" class="bascule" data-role="vider">Tout effacer</button>
+  <p class="compte" data-role="compte" aria-live="polite"></p>
+</div>
+
+<div class="tableau-large tableau-haut">
+<table id="tableau-classement" data-triable>
+<thead><tr>
+  <th class="nombre">Rang</th><th>Aventurier</th>
+  <th class="nombre">Saisons</th><th class="nombre">Titres</th>
+  <th class="nombre">Score</th>
+  <th class="nombre">Dans le top {{ c.taille }}</th>
+  <th class="nombre">Rang, 5<sup>e</sup>–95<sup>e</sup></th>
+  {% for f in c.facettes %}<th class="nombre">{{ f.libelle | remove: "Le " | remove: "La " | remove: "Les " }}</th>{% endfor %}
+</tr></thead>
+<tbody>
+{% for l in c.tous %}
+<tr>
+  <td class="nombre">{{ l.rang }}</td>
+  <td>{% include lien-aventurier.html id=l.id nom=l.nom %}</td>
+  <td class="nombre">{{ l.saisons }}</td>
+  <td class="nombre">{{ l.titres }}</td>
+  <td class="nombre">{{ l.score }}</td>
+  <td class="nombre">{{ l.part_top }} %</td>
+  <td class="nombre" data-val="{{ l.rang_p95 | minus: l.rang_p05 }}">{{ l.rang_p05 }} – {{ l.rang_p95 }}</td>
+  {% for f in c.facettes %}<td class="nombre">{{ l.rangs[f.cle] }}</td>{% endfor %}
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+<p class="note">Un rang n’est pas une note. La colonne « dans le top » dit sous
+quelle part des {{ rb.tirages }} pondérations l’aventurier y figure, et
+l’avant-dernière l’étendue de ses rangs : quand elle est large, le rang de
+gauche ne veut pas dire grand-chose. Et pour les
+{{ c.joueurs_classes | minus: c.carrieres.size }} aventuriers d’une ou deux
+saisons, la preuve reste mince — le rétrécissement les tient près de la
+moyenne, ce qui est la seule chose honnête à faire quand on ne sait pas.</p>
+
+## Les quatre classements par facette
+
+Le top synthétique cache ce qu’il moyenne — et puisque les facettes ne se
+parlent pas, ce sont ces quatre listes qui portent l’information. Chacune sur sa
+mesure, avec le compte brut qui la fonde.
+
+{% for f in c.facettes %}
+### {{ f.libelle }} — {{ f.question | downcase }}
+
+<p class="note">{{ f.mesure }}, rapporté à {{ f.denominateur }}. Moyenne du
+programme : {{ f.moyenne }}{{ f.unite }}. {{ f.documentes }} joueurs ont au
+moins une observation ; les autres valent la moyenne, faute de preuve.</p>
+
+<div class="tableau-large">
+<table data-triable>
+<thead><tr><th class="nombre">#</th><th>Aventurier</th><th class="nombre">Valeur</th><th class="nombre">Compte brut</th><th class="nombre">Rang général</th></tr></thead>
+<tbody>
+{% for l in f.top %}
+<tr><td class="nombre">{{ l.rang }}</td><td>{% include lien-aventurier.html id=l.id nom=l.nom %}</td>
+    <td class="nombre">{{ l.valeur }}{{ f.unite }}</td>
+    <td class="nombre">{{ l.brut }}</td>
+    <td class="nombre">{{ l.rang_general }}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+{% endfor %}
+
+## Les meilleurs qui n’ont jamais gagné
+
+La sous-liste la plus intéressante du lot, et celle qui justifie de ne pas avoir
+mis la victoire dans le calcul.
+
+<div class="tableau-large">
+<table data-triable>
+<thead><tr><th class="nombre">Rang général</th><th>Aventurier</th><th class="nombre">Score</th><th class="nombre">Dans le top selon les poids</th></tr></thead>
+<tbody>
+{% for l in c.sans_titre %}
+<tr><td class="nombre">{{ l.rang }}</td><td>{% include lien-aventurier.html id=l.id nom=l.nom %}</td>
+    <td class="nombre">{{ l.score }}</td>
+    <td class="nombre">{{ l.part_top }} %</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+## La meilleure saison jamais jouée
+
+Autre question, autre liste. Ci-dessus, un joueur ; ici, **une saison** — une
+participation, sur ses seules quatre facettes, sans rien cumuler.
+
+<div class="tableau-large">
+<table data-triable>
+<thead><tr><th class="nombre">#</th><th>Aventurier</th><th>Saison</th><th class="nombre">Année</th><th>Fin de parcours</th><th class="nombre">Score</th></tr></thead>
+<tbody>
+{% for l in c.top_saisons %}
+<tr><td class="nombre">{{ l.rang }}</td><td>{% include lien-aventurier.html id=l.id nom=l.aventurier %}</td>
+    <td>{% include lien-saison.html id=l.saison_id titre=l.saison %}</td><td class="nombre">{{ l.annee }}</td>
+    <td>{{ l.sort }}</td><td class="nombre">{{ l.score }}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+## Et sans les éditions de revenants ?
+
+Les {{ c.joueurs_classes }} joueurs ci-dessus comprennent les éditions
+spéciales, où le casting est trié sur le volet : on y affronte des adversaires
+bien plus forts, ce que le classement ne sait pas corriger. Refait sur les
+seules saisons classiques, sur {{ c.joueurs_classiques }} joueurs :
+
+<div class="tableau-large">
+<table data-triable>
+<thead><tr><th class="nombre">#</th><th>Aventurier</th><th class="nombre">Score</th><th class="nombre">Rang toutes saisons</th></tr></thead>
+<tbody>
+{% for l in c.top_classique %}
+<tr><td class="nombre">{{ l.rang }}</td><td>{% include lien-aventurier.html id=l.id nom=l.nom %}</td>
+    <td class="nombre">{{ l.score }}</td>
+    <td class="nombre">{{ l.rang_general }}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+## Et les visages qu’on connaît ?
+
+C’est la question qu’on pose en premier devant un classement — *« et untel ? »*
+— et la réponse est souvent plus instructive que le top lui-même. Voici, sans
+tri d’auteur, **tous les aventuriers d’au moins trois saisons achevées**, et où
+ils tombent.
+
+<div class="tableau-large">
+<table data-triable>
+<thead><tr>
+  <th class="nombre">Rang</th><th>Aventurier</th>
+  <th class="nombre">Saisons</th><th class="nombre">Titres</th>
+  <th class="nombre">Score</th>
+  {% for f in c.facettes %}<th class="nombre">{{ f.libelle | remove: "Le " | remove: "La " | remove: "Les " }}</th>{% endfor %}
+  <th class="nombre">Rang, 5<sup>e</sup>–95<sup>e</sup> centile</th>
+</tr></thead>
+<tbody>
+{% for l in c.carrieres %}
+<tr><td class="nombre">{{ l.rang }}</td><td>{% include lien-aventurier.html id=l.id nom=l.nom %}</td>
+    <td class="nombre">{{ l.participations }}</td>
+    <td class="nombre">{{ l.titres }}</td>
+    <td class="nombre">{{ l.score }}</td>
+    {% for f in c.facettes %}<td class="nombre">{{ l.facettes[f.cle] }}</td>{% endfor %}
+    <td class="nombre" data-val="{{ l.rang_p95 | minus: l.rang_p05 }}">{{ l.rang_p05 }} – {{ l.rang_p95 }}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+<p class="legende-figure">Les quatre colonnes de facettes sont des écarts à la
+moyenne, en écarts-types : 0 est la moyenne du programme, positif est meilleur.
+La dernière donne l’étendue des rangs sous les
+{{ rb.tirages }} pondérations tirées — plus elle est large, moins le rang
+affiché veut dire quelque chose.</p>
+
+{% assign cr = c.carrieres %}
+
+<div class="constat">
+  <p><b>{{ cr[0].nom }} est {{ cr[0].rang }}<sup>e</sup>,
+  {{ cr[1].nom }} est {{ cr[1].rang }}<sup>e</sup></b> — et tous deux ont joué
+  {{ cr[0].participations }} saisons. Le nombre de participations ne dit donc
+  rien du niveau : il dit qui la production redemande, ce que
+  <a href="{{ '/statistiques/revenants/' | relative_url }}">les revenants</a>
+  mesurent à part.</p>
+  <p>Ce qui les sépare tient en une colonne. {{ cr[0].nom }} est à
+  <b>{{ cr[0].facettes.epreuves }}</b> sur les épreuves — le deuxième meilleur
+  du programme. {{ cr[1].nom }} est à <b>{{ cr[1].facettes.lecture }}</b> sur la
+  lecture : sur les {{ cr[1].preuve.lecture }} bulletins qu’on peut lire de sa
+  carrière, il a rarement écrit le nom de celui qui partait.</p>
+</div>
+
+<p class="note">Un nom que tout le monde connaît n’est pas un nom que les
+données distinguent, et c’est le plus utile de ce tableau. La notoriété se
+construit à l’écran — sur une phrase, un caractère, une scène. Ce classement ne
+voit ni l’écran ni le montage : il voit des bulletins, des épreuves et des jours
+tenus. <strong>Les deux ne se recouvrent pas, et rien n’oblige à préférer
+celui-ci.</strong></p>
+
+## Comment ce classement est fabriqué
+
+Tout ce qui précède se lit sans rien savoir de la méthode. Tout ce qui suit
+l’explique, la met à l’épreuve, et donne de quoi la contester — y compris la
+facette qu’il a fallu retirer et le biais qui reste.
+
 ## Les quatre facettes, et leur dénominateur
 
 Un chiffre ne veut rien dire sans ce qui le divise. Chaque facette porte donc
@@ -133,92 +361,6 @@ première version, les quatre facettes non physiques s’accordaient entre 0,349
 accord était fabriqué par le soir du départ, présent dans les trois à la fois.
 Retiré, il ne reste rien — la section suivante le montre.
 <a href="{{ '/sources/' | relative_url }}">Les sources</a> racontent la revue.</p>
-
-## Le top {{ c.taille }}
-
-Le score est la moyenne des quatre facettes, ramenées chacune à une même
-échelle. Poids égaux : c’est la seule pondération qui ne demande à personne de
-décider que le physique compte plus que le vote.
-
-<div class="tableau-large">
-<table data-triable>
-<thead><tr>
-  <th class="nombre">#</th><th>Aventurier</th><th class="nombre">Score</th>
-  <th class="nombre">Saisons</th><th class="nombre">Titres</th>
-  <th class="nombre">Dans le top selon les poids</th>
-  <th class="nombre">Rang, du 5<sup>e</sup> au 95<sup>e</sup> centile</th>
-</tr></thead>
-<tbody>
-{% for l in c.top %}
-<tr><td class="nombre">{{ l.rang }}</td>
-    <td>{{ l.nom }}<br><small>{{ l.saisons }}</small></td>
-    <td class="nombre">{{ l.score }}</td>
-    <td class="nombre">{{ l.participations }}</td>
-    <td class="nombre">{{ l.titres }}</td>
-    <td class="nombre">{{ l.part_top }} %</td>
-    <td class="nombre">{{ l.rang_p05 }} – {{ l.rang_p95 }}</td></tr>
-{% endfor %}
-</tbody>
-</table>
-</div>
-
-## Et les visages qu’on connaît ?
-
-C’est la question qu’on pose en premier devant un classement — *« et untel ? »*
-— et la réponse est souvent plus instructive que le top lui-même. Voici, sans
-tri d’auteur, **tous les aventuriers d’au moins trois saisons achevées**, et où
-ils tombent.
-
-<div class="tableau-large">
-<table data-triable>
-<thead><tr>
-  <th class="nombre">Rang</th><th>Aventurier</th>
-  <th class="nombre">Saisons</th><th class="nombre">Titres</th>
-  <th class="nombre">Score</th>
-  {% for f in c.facettes %}<th class="nombre">{{ f.libelle | remove: "Le " | remove: "La " | remove: "Les " }}</th>{% endfor %}
-  <th class="nombre">Rang, 5<sup>e</sup>–95<sup>e</sup> centile</th>
-</tr></thead>
-<tbody>
-{% for l in c.carrieres %}
-<tr><td class="nombre">{{ l.rang }}</td><td>{% include lien-aventurier.html id=l.id nom=l.nom %}</td>
-    <td class="nombre">{{ l.participations }}</td>
-    <td class="nombre">{{ l.titres }}</td>
-    <td class="nombre">{{ l.score }}</td>
-    {% for f in c.facettes %}<td class="nombre">{{ l.facettes[f.cle] }}</td>{% endfor %}
-    <td class="nombre" data-val="{{ l.rang_p95 | minus: l.rang_p05 }}">{{ l.rang_p05 }} – {{ l.rang_p95 }}</td></tr>
-{% endfor %}
-</tbody>
-</table>
-</div>
-
-<p class="legende-figure">Les quatre colonnes de facettes sont des écarts à la
-moyenne, en écarts-types : 0 est la moyenne du programme, positif est meilleur.
-La dernière donne l’étendue des rangs sous les
-{{ rb.tirages }} pondérations tirées — plus elle est large, moins le rang
-affiché veut dire quelque chose.</p>
-
-{% assign cr = c.carrieres %}
-
-<div class="constat">
-  <p><b>{{ cr[0].nom }} est {{ cr[0].rang }}<sup>e</sup>,
-  {{ cr[1].nom }} est {{ cr[1].rang }}<sup>e</sup></b> — et tous deux ont joué
-  {{ cr[0].participations }} saisons. Le nombre de participations ne dit donc
-  rien du niveau : il dit qui la production redemande, ce que
-  <a href="{{ '/statistiques/revenants/' | relative_url }}">les revenants</a>
-  mesurent à part.</p>
-  <p>Ce qui les sépare tient en une colonne. {{ cr[0].nom }} est à
-  <b>{{ cr[0].facettes.epreuves }}</b> sur les épreuves — le deuxième meilleur
-  du programme. {{ cr[1].nom }} est à <b>{{ cr[1].facettes.lecture }}</b> sur la
-  lecture : sur les {{ cr[1].preuve.lecture }} bulletins qu’on peut lire de sa
-  carrière, il a rarement écrit le nom de celui qui partait.</p>
-</div>
-
-<p class="note">Un nom que tout le monde connaît n’est pas un nom que les
-données distinguent, et c’est le plus utile de ce tableau. La notoriété se
-construit à l’écran — sur une phrase, un caractère, une scène. Ce classement ne
-voit ni l’écran ni le montage : il voit des bulletins, des épreuves et des jours
-tenus. <strong>Les deux ne se recouvrent pas, et rien n’oblige à préférer
-celui-ci.</strong></p>
 
 ## Les quatre facettes parlent-elles du même talent ?
 
@@ -430,141 +572,6 @@ facettes ne sait qui a gagné. Où tombent les vainqueurs ?
 autres n’y sont pas, et ce n’est pas une anomalie : gagner une saison demande
 d’aller au bout d’une seule, quand ce classement demande d’avoir bien joué
 partout où l’on a joué.</p>
-
-## Les meilleurs qui n’ont jamais gagné
-
-La sous-liste la plus intéressante du lot, et celle qui justifie de ne pas avoir
-mis la victoire dans le calcul.
-
-<div class="tableau-large">
-<table data-triable>
-<thead><tr><th class="nombre">Rang général</th><th>Aventurier</th><th class="nombre">Score</th><th class="nombre">Dans le top selon les poids</th></tr></thead>
-<tbody>
-{% for l in c.sans_titre %}
-<tr><td class="nombre">{{ l.rang }}</td><td>{% include lien-aventurier.html id=l.id nom=l.nom %}</td>
-    <td class="nombre">{{ l.score }}</td>
-    <td class="nombre">{{ l.part_top }} %</td></tr>
-{% endfor %}
-</tbody>
-</table>
-</div>
-
-## Les quatre classements par facette
-
-Le top synthétique cache ce qu’il moyenne — et puisque les facettes ne se
-parlent pas, ce sont ces quatre listes qui portent l’information. Chacune sur sa
-mesure, avec le compte brut qui la fonde.
-
-{% for f in c.facettes %}
-### {{ f.libelle }} — {{ f.question | downcase }}
-
-<p class="note">{{ f.mesure }}, rapporté à {{ f.denominateur }}. Moyenne du
-programme : {{ f.moyenne }}{{ f.unite }}. {{ f.documentes }} joueurs ont au
-moins une observation ; les autres valent la moyenne, faute de preuve.</p>
-
-<div class="tableau-large">
-<table data-triable>
-<thead><tr><th class="nombre">#</th><th>Aventurier</th><th class="nombre">Valeur</th><th class="nombre">Compte brut</th><th class="nombre">Rang général</th></tr></thead>
-<tbody>
-{% for l in f.top %}
-<tr><td class="nombre">{{ l.rang }}</td><td>{% include lien-aventurier.html id=l.id nom=l.nom %}</td>
-    <td class="nombre">{{ l.valeur }}{{ f.unite }}</td>
-    <td class="nombre">{{ l.brut }}</td>
-    <td class="nombre">{{ l.rang_general }}</td></tr>
-{% endfor %}
-</tbody>
-</table>
-</div>
-{% endfor %}
-
-## La meilleure saison jamais jouée
-
-Autre question, autre liste. Ci-dessus, un joueur ; ici, **une saison** — une
-participation, sur ses seules quatre facettes, sans rien cumuler.
-
-<div class="tableau-large">
-<table data-triable>
-<thead><tr><th class="nombre">#</th><th>Aventurier</th><th>Saison</th><th class="nombre">Année</th><th>Fin de parcours</th><th class="nombre">Score</th></tr></thead>
-<tbody>
-{% for l in c.top_saisons %}
-<tr><td class="nombre">{{ l.rang }}</td><td>{% include lien-aventurier.html id=l.id nom=l.aventurier %}</td>
-    <td>{{ l.saison }}</td><td class="nombre">{{ l.annee }}</td>
-    <td>{{ l.sort }}</td><td class="nombre">{{ l.score }}</td></tr>
-{% endfor %}
-</tbody>
-</table>
-</div>
-
-## Et sans les éditions de revenants ?
-
-Les {{ c.joueurs_classes }} joueurs ci-dessus comprennent les éditions
-spéciales, où le casting est trié sur le volet : on y affronte des adversaires
-bien plus forts, ce que le classement ne sait pas corriger. Refait sur les
-seules saisons classiques, sur {{ c.joueurs_classiques }} joueurs :
-
-<div class="tableau-large">
-<table data-triable>
-<thead><tr><th class="nombre">#</th><th>Aventurier</th><th class="nombre">Score</th><th class="nombre">Rang toutes saisons</th></tr></thead>
-<tbody>
-{% for l in c.top_classique %}
-<tr><td class="nombre">{{ l.rang }}</td><td>{% include lien-aventurier.html id=l.id nom=l.nom %}</td>
-    <td class="nombre">{{ l.score }}</td>
-    <td class="nombre">{{ l.rang_general }}</td></tr>
-{% endfor %}
-</tbody>
-</table>
-</div>
-
-## Le classement complet, nom par nom
-
-Les {{ c.joueurs_classes }} aventuriers, cherchables et triables. Les quatre
-colonnes de droite donnent le rang **sur chaque facette** : c’est là que se voit
-le mieux qu’un bon rang général peut cacher une facette au fond du tableau, et
-l’inverse.
-
-<div class="filtres" data-filtre="tableau-classement">
-  <div class="champ">
-    <label for="qc">Chercher un aventurier</label>
-    <input type="search" id="qc" data-role="texte" placeholder="Claude Dartois, Jade Handi, Moundir…" autocomplete="off">
-  </div>
-  <button type="button" class="bascule" data-role="vider">Tout effacer</button>
-  <p class="compte" data-role="compte" aria-live="polite"></p>
-</div>
-
-<div class="tableau-large tableau-haut">
-<table id="tableau-classement" data-triable>
-<thead><tr>
-  <th class="nombre">Rang</th><th>Aventurier</th>
-  <th class="nombre">Saisons</th><th class="nombre">Titres</th>
-  <th class="nombre">Score</th>
-  <th class="nombre">Dans le top {{ c.taille }}</th>
-  <th class="nombre">Rang, 5<sup>e</sup>–95<sup>e</sup></th>
-  {% for f in c.facettes %}<th class="nombre">{{ f.libelle | remove: "Le " | remove: "La " | remove: "Les " }}</th>{% endfor %}
-</tr></thead>
-<tbody>
-{% for l in c.tous %}
-<tr>
-  <td class="nombre">{{ l.rang }}</td>
-  <td>{% include lien-aventurier.html id=l.id nom=l.nom %}</td>
-  <td class="nombre">{{ l.saisons }}</td>
-  <td class="nombre">{{ l.titres }}</td>
-  <td class="nombre">{{ l.score }}</td>
-  <td class="nombre">{{ l.part_top }} %</td>
-  <td class="nombre" data-val="{{ l.rang_p95 | minus: l.rang_p05 }}">{{ l.rang_p05 }} – {{ l.rang_p95 }}</td>
-  {% for f in c.facettes %}<td class="nombre">{{ l.rangs[f.cle] }}</td>{% endfor %}
-</tr>
-{% endfor %}
-</tbody>
-</table>
-</div>
-
-<p class="note">Un rang n’est pas une note. La colonne « dans le top » dit sous
-quelle part des {{ rb.tirages }} pondérations l’aventurier y figure, et
-l’avant-dernière l’étendue de ses rangs : quand elle est large, le rang de
-gauche ne veut pas dire grand-chose. Et pour les
-{{ c.joueurs_classes | minus: c.carrieres.size }} aventuriers d’une ou deux
-saisons, la preuve reste mince — le rétrécissement les tient près de la
-moyenne, ce qui est la seule chose honnête à faire quand on ne sait pas.</p>
 
 ## Le biais que ce classement ne sait pas réparer
 

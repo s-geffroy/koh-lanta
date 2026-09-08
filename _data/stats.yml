@@ -10760,6 +10760,19 @@ classement:
     titres: 1
     finales: 3
     saisons: L'Île des héros, La Légende, La Revanche des héros, Viêtnam
+    editions:
+    - id: s10
+      titre: Viêtnam
+      annee: 2010
+    - id: sp3
+      titre: La Revanche des héros
+      annee: 2012
+    - id: sp6
+      titre: L'Île des héros
+      annee: 2020
+    - id: sp7
+      titre: La Légende
+      annee: 2021
     part_top: 88.9
     rang_min: 1
     rang_max: 424
@@ -10785,6 +10798,13 @@ classement:
     titres: 1
     finales: 1
     saisons: Caramoan, La Revanche des héros
+    editions:
+    - id: s08
+      titre: Caramoan
+      annee: 2008
+    - id: sp3
+      titre: La Revanche des héros
+      annee: 2012
     part_top: 98.5
     rang_min: 1
     rang_max: 54
@@ -10810,6 +10830,10 @@ classement:
     titres: 1
     finales: 1
     saisons: Le Totem maudit
+    editions:
+    - id: s23
+      titre: Le Totem maudit
+      annee: 2022
     part_top: 100.0
     rang_min: 1
     rang_max: 23
@@ -10835,6 +10859,22 @@ classement:
     titres: 0
     finales: 1
     saisons: L'Île des héros, La Légende, La Nouvelle Édition, La Revanche des héros, Raja Ampat
+    editions:
+    - id: s11
+      titre: Raja Ampat
+      annee: 2011
+    - id: sp3
+      titre: La Revanche des héros
+      annee: 2012
+    - id: sp4
+      titre: La Nouvelle Édition
+      annee: 2014
+    - id: sp6
+      titre: L'Île des héros
+      annee: 2020
+    - id: sp7
+      titre: La Légende
+      annee: 2021
     part_top: 72.7
     rang_min: 2
     rang_max: 383
@@ -10860,6 +10900,10 @@ classement:
     titres: 0
     finales: 1
     saisons: Caramoan
+    editions:
+    - id: s08
+      titre: Caramoan
+      annee: 2008
     part_top: 99.1
     rang_min: 2
     rang_max: 97
@@ -10885,6 +10929,16 @@ classement:
     titres: 1
     finales: 2
     saisons: La Légende, Le Retour des héros, Palawan
+    editions:
+    - id: s07
+      titre: Palawan
+      annee: 2007
+    - id: sp1
+      titre: Le Retour des héros
+      annee: 2009
+    - id: sp7
+      titre: La Légende
+      annee: 2021
     part_top: 86.2
     rang_min: 1
     rang_max: 140
@@ -10910,6 +10964,13 @@ classement:
     titres: 1
     finales: 1
     saisons: La Nouvelle Édition, Viêtnam
+    editions:
+    - id: s10
+      titre: Viêtnam
+      annee: 2010
+    - id: sp4
+      titre: La Nouvelle Édition
+      annee: 2014
     part_top: 96.8
     rang_min: 5
     rang_max: 238
@@ -10935,6 +10996,10 @@ classement:
     titres: 0
     finales: 0
     saisons: Les Chasseurs d'immunité
+    editions:
+    - id: s25
+      titre: Les Chasseurs d'immunité
+      annee: 2024
     part_top: 73.6
     rang_min: 2
     rang_max: 185
@@ -10960,6 +11025,13 @@ classement:
     titres: 1
     finales: 1
     saisons: Le Retour des héros, Vanuatu
+    editions:
+    - id: s06
+      titre: Vanuatu
+      annee: 2006
+    - id: sp1
+      titre: Le Retour des héros
+      annee: 2009
     part_top: 82.1
     rang_min: 5
     rang_max: 368
@@ -10985,6 +11057,10 @@ classement:
     titres: 1
     finales: 1
     saisons: L'Île des héros
+    editions:
+    - id: sp6
+      titre: L'Île des héros
+      annee: 2020
     part_top: 86.7
     rang_min: 5
     rang_max: 87
@@ -11010,6 +11086,10 @@ classement:
     titres: 1
     finales: 1
     saisons: Thaïlande
+    editions:
+    - id: s15
+      titre: Thaïlande
+      annee: 2016
     part_top: 80.2
     rang_min: 1
     rang_max: 120
@@ -11035,6 +11115,19 @@ classement:
     titres: 2
     finales: 2
     saisons: La Légende, Le Combat des héros, Le Retour des héros, Pacifique
+    editions:
+    - id: s05
+      titre: Pacifique
+      annee: 2005
+    - id: sp1
+      titre: Le Retour des héros
+      annee: 2009
+    - id: sp5
+      titre: Le Combat des héros
+      annee: 2018
+    - id: sp7
+      titre: La Légende
+      annee: 2021
     part_top: 73.0
     rang_min: 1
     rang_max: 100
@@ -11060,6 +11153,13 @@ classement:
     titres: 1
     finales: 1
     saisons: Le Retour des héros, Panama
+    editions:
+    - id: s04
+      titre: Panama
+      annee: 2004
+    - id: sp1
+      titre: Le Retour des héros
+      annee: 2009
     part_top: 69.8
     rang_min: 5
     rang_max: 374
@@ -11085,6 +11185,10 @@ classement:
     titres: 0
     finales: 0
     saisons: Thaïlande
+    editions:
+    - id: s15
+      titre: Thaïlande
+      annee: 2016
     part_top: 55.3
     rang_min: 2
     rang_max: 366
@@ -11110,6 +11214,13 @@ classement:
     titres: 1
     finales: 1
     saisons: Le Choc des héros, Palawan
+    editions:
+    - id: s07
+      titre: Palawan
+      annee: 2007
+    - id: sp2
+      titre: Le Choc des héros
+      annee: 2010
     part_top: 64.4
     rang_min: 14
     rang_max: 190
@@ -11135,6 +11246,16 @@ classement:
     titres: 1
     finales: 2
     saisons: La Légende, La Nouvelle Édition, Raja Ampat
+    editions:
+    - id: s11
+      titre: Raja Ampat
+      annee: 2011
+    - id: sp4
+      titre: La Nouvelle Édition
+      annee: 2014
+    - id: sp7
+      titre: La Légende
+      annee: 2021
     part_top: 53.7
     rang_min: 2
     rang_max: 491
@@ -11160,6 +11281,10 @@ classement:
     titres: 0
     finales: 0
     saisons: Palawan
+    editions:
+    - id: s07
+      titre: Palawan
+      annee: 2007
     part_top: 52.5
     rang_min: 5
     rang_max: 262
@@ -11185,6 +11310,10 @@ classement:
     titres: 0
     finales: 0
     saisons: Thaïlande
+    editions:
+    - id: s15
+      titre: Thaïlande
+      annee: 2016
     part_top: 54.0
     rang_min: 7
     rang_max: 311
@@ -11210,6 +11339,10 @@ classement:
     titres: 0
     finales: 0
     saisons: Vanuatu
+    editions:
+    - id: s06
+      titre: Vanuatu
+      annee: 2006
     part_top: 55.2
     rang_min: 2
     rang_max: 160
@@ -11235,6 +11368,10 @@ classement:
     titres: 0
     finales: 0
     saisons: Panama
+    editions:
+    - id: s04
+      titre: Panama
+      annee: 2004
     part_top: 51.7
     rang_min: 5
     rang_max: 153
@@ -11260,6 +11397,10 @@ classement:
     titres: 0
     finales: 1
     saisons: Les Chasseurs d'immunité
+    editions:
+    - id: s25
+      titre: Les Chasseurs d'immunité
+      annee: 2024
     part_top: 44.9
     rang_min: 9
     rang_max: 59
@@ -11285,6 +11426,10 @@ classement:
     titres: 0
     finales: 0
     saisons: La Revanche des 4 Terres
+    editions:
+    - id: s27
+      titre: La Revanche des 4 Terres
+      annee: 2025
     part_top: 44.2
     rang_min: 5
     rang_max: 240
@@ -11310,6 +11455,10 @@ classement:
     titres: 0
     finales: 0
     saisons: Vanuatu
+    editions:
+    - id: s06
+      titre: Vanuatu
+      annee: 2006
     part_top: 37.6
     rang_min: 13
     rang_max: 407
@@ -11335,6 +11484,10 @@ classement:
     titres: 0
     finales: 0
     saisons: Le Totem maudit
+    editions:
+    - id: s23
+      titre: Le Totem maudit
+      annee: 2022
     part_top: 41.8
     rang_min: 4
     rang_max: 169
@@ -11360,6 +11513,10 @@ classement:
     titres: 0
     finales: 0
     saisons: Le Feu sacré
+    editions:
+    - id: s24
+      titre: Le Feu sacré
+      annee: 2023
     part_top: 29.6
     rang_min: 10
     rang_max: 212
@@ -11511,6 +11668,7 @@ classement:
     sort: Éliminé aux poteaux
     aventurier: Bertrand Bolle
     saison: Caramoan
+    saison_id: s08
     annee: 2008
     id: bertrand-bolle
   - rang: 2
@@ -11520,6 +11678,7 @@ classement:
     sort: Vainqueur
     aventurier: François Descamp
     saison: Le Totem maudit
+    saison_id: s23
     annee: 2022
     id: francois-descamp
   - rang: 3
@@ -11529,6 +11688,7 @@ classement:
     sort: Finaliste
     aventurier: Frédéric Favier
     saison: Caramoan
+    saison_id: s08
     annee: 2008
     id: frederic-favier
   - rang: 4
@@ -11538,6 +11698,7 @@ classement:
     sort: Finaliste
     aventurier: Claude Dartois
     saison: Viêtnam
+    saison_id: s10
     annee: 2010
     id: claude-dartois
   - rang: 5
@@ -11547,6 +11708,7 @@ classement:
     sort: Vainqueur
     aventurier: Jade Handi
     saison: Palawan
+    saison_id: s07
     annee: 2007
     id: jade-handi
   - rang: 6
@@ -11556,6 +11718,7 @@ classement:
     sort: Abandon médical
     aventurier: Jean Belmonte
     saison: Les Chasseurs d'immunité
+    saison_id: s25
     annee: 2024
     id: jean-belmonte
   - rang: 7
@@ -11565,6 +11728,7 @@ classement:
     sort: Vainqueur
     aventurier: Laurent Maistret
     saison: La Nouvelle Édition
+    saison_id: sp4
     annee: 2014
     id: laurent-maistret
   - rang: 8
@@ -11574,6 +11738,7 @@ classement:
     sort: Vainqueur
     aventurier: Naoil Tita
     saison: L'Île des héros
+    saison_id: sp6
     annee: 2020
     id: naoil-tita
   - rang: 9
@@ -11583,6 +11748,7 @@ classement:
     sort: Vainqueur
     aventurier: Christelle Gauzet
     saison: Caramoan
+    saison_id: s08
     annee: 2008
     id: christelle-gauzet
   - rang: 10
@@ -11592,6 +11758,7 @@ classement:
     sort: Vainqueur
     aventurier: Philippe Duron
     saison: Viêtnam
+    saison_id: s10
     annee: 2010
     id: philippe-duron
   - rang: 11
@@ -11601,6 +11768,7 @@ classement:
     sort: Vainqueur
     aventurier: Wendy Gervois
     saison: Thaïlande
+    saison_id: s15
     annee: 2016
     id: wendy-gervois
   - rang: 12
@@ -11610,6 +11778,7 @@ classement:
     sort: Finaliste
     aventurier: Nicolas Leoni
     saison: Nicoya
+    saison_id: s02
     annee: 2002
     id: nicolas-leoni
   - rang: 13
@@ -11619,6 +11788,7 @@ classement:
     sort: Vainqueur
     aventurier: François-David Cardonnel
     saison: Vanuatu
+    saison_id: s06
     annee: 2006
     id: francois-david-cardonnel
   - rang: 14
@@ -11628,6 +11798,7 @@ classement:
     sort: Éliminé à l'orientation
     aventurier: Candice Boisson
     saison: L'Île au trésor
+    saison_id: s16
     annee: 2016
     id: candice-boisson
   - rang: 15
@@ -11637,6 +11808,7 @@ classement:
     sort: Éliminé au conseil
     aventurier: Nicolas Rouyé
     saison: Thaïlande
+    saison_id: s15
     annee: 2016
     id: nicolas-rouye
   - rang: 16
@@ -11646,6 +11818,7 @@ classement:
     sort: Éliminé au conseil
     aventurier: Romuald Lafite
     saison: Panama
+    saison_id: s04
     annee: 2004
     id: romuald-lafite
   - rang: 17
@@ -11655,6 +11828,7 @@ classement:
     sort: Finaliste
     aventurier: Teheiura Teahui
     saison: Raja Ampat
+    saison_id: s11
     annee: 2011
     id: teheiura-teahui
   - rang: 18
@@ -11664,6 +11838,7 @@ classement:
     sort: Éliminé aux poteaux
     aventurier: Gabriel Gubbels
     saison: Thaïlande
+    saison_id: s15
     annee: 2016
     id: gabriel-gubbels
   - rang: 19
@@ -11673,6 +11848,7 @@ classement:
     sort: Éliminé à l'orientation
     aventurier: Simon Quintilla
     saison: Palawan
+    saison_id: s07
     annee: 2007
     id: simon-quintilla
   - rang: 20
@@ -11682,6 +11858,7 @@ classement:
     sort: Éliminé au conseil
     aventurier: Amélie Grégoire
     saison: Panama
+    saison_id: s04
     annee: 2004
     id: amelie-gregoire
   - rang: 21
@@ -11691,6 +11868,7 @@ classement:
     sort: Éliminé au conseil
     aventurier: Gaëlle Zanetton
     saison: Vanuatu
+    saison_id: s06
     annee: 2006
     id: gaelle-zanetton
   - rang: 22
@@ -11700,6 +11878,7 @@ classement:
     sort: Vainqueur
     aventurier: Clémence Castel
     saison: Pacifique
+    saison_id: s05
     annee: 2005
     id: clemence-castel
   - rang: 23
@@ -11709,6 +11888,7 @@ classement:
     sort: Finaliste
     aventurier: Meïssa Seck
     saison: Les Chasseurs d'immunité
+    saison_id: s25
     annee: 2024
     id: meissa-seck
   - rang: 24
@@ -11718,6 +11898,7 @@ classement:
     sort: Éliminé au conseil
     aventurier: Louise Picavet
     saison: La Revanche des 4 Terres
+    saison_id: s27
     annee: 2025
     id: louise-picavet
   - rang: 25
@@ -11727,6 +11908,7 @@ classement:
     sort: Éliminé aux poteaux
     aventurier: Sébastien Roullé
     saison: Vanuatu
+    saison_id: s06
     annee: 2006
     id: sebastien-roulle
   sans_titre:
