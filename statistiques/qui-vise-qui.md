@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Qui vise qui
+description: "Qui vise qui à Koh-Lanta : écrit-on le nom de celui qui ne nous ressemble pas ? Non, sauf sur un point — qui survit à la disparition des tribus."
 permalink: /statistiques/qui-vise-qui/
 chapeau: >-
   Écrit-on le nom de celui qui ne nous ressemble pas ? La réponse est non —

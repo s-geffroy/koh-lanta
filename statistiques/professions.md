@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Le métier
+description: "Le métier des aventuriers de Koh-Lanta : près de cinq cents professions déclarées, regroupées en familles, pour savoir laquelle mène le plus loin."
 permalink: /statistiques/professions/
 chapeau: >-
   Près de cinq cents métiers déclarés, regroupés en familles — pour répondre à une question simple : lequel mène le plus loin ?

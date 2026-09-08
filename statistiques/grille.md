@@ -1,6 +1,7 @@
 ---
 layout: page
 title: La grille
+description: "Deux décisions que Koh-Lanta ne commente jamais : le jour où la production réunit les tribus, et l’année où elle a changé de jeu."
 permalink: /statistiques/grille/
 chapeau: >-
   Deux décisions que la production ne commente jamais : le jour où elle réunit

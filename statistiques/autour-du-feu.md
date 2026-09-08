@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Sachant qui est autour du feu
+description: "Qui part au conseil de Koh-Lanta, sachant qui est autour du feu : six positions dans le camp, six probabilités — dont une qui vaut exactement zéro."
 permalink: /statistiques/autour-du-feu/
 chapeau: >-
   On ne part pas au hasard, mais on ne part pas non plus pour ce qu’on croit.

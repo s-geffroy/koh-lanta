@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Le pronostic
+description: "Peut-on deviner le vainqueur de Koh-Lanta sur sa fiche d’inscription ? On a essayé, puis on a posé la même question au conseil. Deux réponses."
 permalink: /statistiques/pronostic/
 chapeau: >-
   Si la production choisit ses vainqueurs au casting, cela doit se voir : une

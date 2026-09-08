@@ -1,0 +1,22 @@
+{%- comment -%}
+  Le nom d'un aventurier, rendu comme un lien vers sa fiche.
+
+  Des centaines de noms etaient du texte mort au milieu des tableaux alors que
+  la page de la personne existe : ni le lecteur ni un moteur n'avaient de
+  chemin vers elle depuis les pages d'analyse.
+
+  L'identifiant vient de `poser_les_identifiants()` dans tools/build_stats.py,
+  qui le pose a cote de chaque nom d'aventurier de `_data/stats.yml`. Il peut
+  manquer -- un homonyme n'est jamais devine -- et le nom sort alors nu :
+  mieux vaut pas de lien qu'un lien vers la mauvaise fiche.
+
+  Appel : `include lien-aventurier.html id=x.id nom=x.nom` -- ecrit ici sans
+  ses accolades, parce qu'une balise Liquid citee dans un commentaire n'est
+  PAS inerte : le decoupage precede la lecture du commentaire, l'ouverture
+  reste ouverte, et la construction du site s'arrete.
+{%- endcomment -%}
+{%- if include.id -%}
+<a href="{{ '/aventuriers/' | append: include.id | append: '/' | relative_url }}">{{ include.nom }}</a>
+{%- else -%}
+{{ include.nom }}
+{%- endif -%}

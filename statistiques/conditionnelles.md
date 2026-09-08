@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Sachant le conseil d’avant
+description: "Mon nom est sorti deux fois au dernier conseil de Koh-Lanta : qu’est-ce que cela change à mes chances de partir ? Sept probabilités conditionnelles."
 permalink: /statistiques/conditionnelles/
 chapeau: >-
   Mon nom est sorti deux fois la dernière fois. Qu’est-ce que cela change à mes
@@ -181,7 +182,7 @@ qu’ils y sont dessinés. Ni le retournement ni sa <em>hauteur</em> ne sont
 <tbody>
 {% for x in c.survivants limit: 15 %}
 <tr>
-  <td>{{ x.nom }}</td>
+  <td>{% include lien-aventurier.html id=x.id nom=x.nom %}</td>
   <td>{% assign s = site.data.saisons | where: "id", x.saison | first %}{{ s.titre }} ({{ s.annee }})</td>
   <td class="nombre">{{ x.voix }}</td>
   <td>{% if x.collier %}oui{% else %}non{% endif %}</td>

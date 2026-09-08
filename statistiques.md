@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Les statistiques
+title: Les statistiques de Koh-Lanta
+description: "Toutes les analyses des données de Koh-Lanta : ce qui se compte, et ce que le hasard suffirait à expliquer. Le sommaire des entrées du site."
 permalink: /statistiques/
 chapeau: >-
   Vingt-six entrées dans le même jeu de données. Onze comptent ce qui

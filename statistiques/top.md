@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Le top des joueurs
+title: Le top des joueurs de Koh-Lanta
+description: "Le top des joueurs de Koh-Lanta : quatre façons de bien jouer, mesurées sans jamais regarder qui a gagné, et le classement des 531 aventuriers."
 permalink: /statistiques/top/
 chapeau: >-
   Quatre façons de bien jouer, mesurées sans jamais regarder qui a gagné.
@@ -179,7 +180,7 @@ ils tombent.
 </tr></thead>
 <tbody>
 {% for l in c.carrieres %}
-<tr><td class="nombre">{{ l.rang }}</td><td>{{ l.nom }}</td>
+<tr><td class="nombre">{{ l.rang }}</td><td>{% include lien-aventurier.html id=l.id nom=l.nom %}</td>
     <td class="nombre">{{ l.participations }}</td>
     <td class="nombre">{{ l.titres }}</td>
     <td class="nombre">{{ l.score }}</td>
@@ -265,7 +266,7 @@ les bouches. Voici les meilleurs aux épreuves, et leur rang en discrétion.
 <thead><tr><th class="nombre">#</th><th>Aventurier</th><th class="nombre">{{ fe.mesure }}</th><th class="nombre">Rang en {{ fd.libelle | downcase }}</th></tr></thead>
 <tbody>
 {% for l in fe.top %}
-<tr><td class="nombre">{{ l.rang }}</td><td>{{ l.nom }}</td>
+<tr><td class="nombre">{{ l.rang }}</td><td>{% include lien-aventurier.html id=l.id nom=l.nom %}</td>
     <td class="nombre">{{ l.brut }}</td>
     <td class="nombre">{{ l.rangs.discretion }}<sup>e</sup></td></tr>
 {% endfor %}
@@ -440,7 +441,7 @@ mis la victoire dans le calcul.
 <thead><tr><th class="nombre">Rang général</th><th>Aventurier</th><th class="nombre">Score</th><th class="nombre">Dans le top selon les poids</th></tr></thead>
 <tbody>
 {% for l in c.sans_titre %}
-<tr><td class="nombre">{{ l.rang }}</td><td>{{ l.nom }}</td>
+<tr><td class="nombre">{{ l.rang }}</td><td>{% include lien-aventurier.html id=l.id nom=l.nom %}</td>
     <td class="nombre">{{ l.score }}</td>
     <td class="nombre">{{ l.part_top }} %</td></tr>
 {% endfor %}
@@ -466,7 +467,7 @@ moins une observation ; les autres valent la moyenne, faute de preuve.</p>
 <thead><tr><th class="nombre">#</th><th>Aventurier</th><th class="nombre">Valeur</th><th class="nombre">Compte brut</th><th class="nombre">Rang général</th></tr></thead>
 <tbody>
 {% for l in f.top %}
-<tr><td class="nombre">{{ l.rang }}</td><td>{{ l.nom }}</td>
+<tr><td class="nombre">{{ l.rang }}</td><td>{% include lien-aventurier.html id=l.id nom=l.nom %}</td>
     <td class="nombre">{{ l.valeur }}{{ f.unite }}</td>
     <td class="nombre">{{ l.brut }}</td>
     <td class="nombre">{{ l.rang_general }}</td></tr>
@@ -486,7 +487,7 @@ participation, sur ses seules quatre facettes, sans rien cumuler.
 <thead><tr><th class="nombre">#</th><th>Aventurier</th><th>Saison</th><th class="nombre">Année</th><th>Fin de parcours</th><th class="nombre">Score</th></tr></thead>
 <tbody>
 {% for l in c.top_saisons %}
-<tr><td class="nombre">{{ l.rang }}</td><td>{{ l.aventurier }}</td>
+<tr><td class="nombre">{{ l.rang }}</td><td>{% include lien-aventurier.html id=l.id nom=l.aventurier %}</td>
     <td>{{ l.saison }}</td><td class="nombre">{{ l.annee }}</td>
     <td>{{ l.sort }}</td><td class="nombre">{{ l.score }}</td></tr>
 {% endfor %}
@@ -506,7 +507,7 @@ seules saisons classiques, sur {{ c.joueurs_classiques }} joueurs :
 <thead><tr><th class="nombre">#</th><th>Aventurier</th><th class="nombre">Score</th><th class="nombre">Rang toutes saisons</th></tr></thead>
 <tbody>
 {% for l in c.top_classique %}
-<tr><td class="nombre">{{ l.rang }}</td><td>{{ l.nom }}</td>
+<tr><td class="nombre">{{ l.rang }}</td><td>{% include lien-aventurier.html id=l.id nom=l.nom %}</td>
     <td class="nombre">{{ l.score }}</td>
     <td class="nombre">{{ l.rang_general }}</td></tr>
 {% endfor %}
@@ -544,7 +545,7 @@ l’inverse.
 {% for l in c.tous %}
 <tr>
   <td class="nombre">{{ l.rang }}</td>
-  <td>{{ l.nom }}</td>
+  <td>{% include lien-aventurier.html id=l.id nom=l.nom %}</td>
   <td class="nombre">{{ l.saisons }}</td>
   <td class="nombre">{{ l.titres }}</td>
   <td class="nombre">{{ l.score }}</td>

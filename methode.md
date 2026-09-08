@@ -1,6 +1,7 @@
 ---
 layout: page
 title: La méthode
+description: "La méthode derrière les chiffres de Koh-Lanta : quels modèles, sur quelles données, avec quelles limites, et le registre complet des tests menés."
 permalink: /methode/
 chapeau: >-
   Quels modèles, sur quelles données, avec quelles limites — et la liste

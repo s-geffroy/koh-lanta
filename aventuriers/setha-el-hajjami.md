@@ -1,6 +1,7 @@
 ---
 layout: fiche-aventurier
-title: "Setha El Hajjami"
+title: "Setha El Hajjami (2022)"
+description: "Setha El Hajjami, Koh-Lanta Le Totem maudit (2022) : sort aux ambassadeurs le 22e jour, 15e sur 24. 460e sur 531 au classement des aventuriers."
 permalink: /aventuriers/setha-el-hajjami/
 aventurier: setha-el-hajjami
 ---

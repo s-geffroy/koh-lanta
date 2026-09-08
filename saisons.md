@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Les saisons
+title: Les 34 saisons de Koh-Lanta
+description: "Les 34 saisons de Koh-Lanta, de 2001 à 2026 : effectif, durée, conseils, audience et vainqueur de chaque édition, plus les deux saisons interrompues."
 permalink: /saisons/
 chapeau: >-
   Trente-quatre éditions diffusées, deux interrompues, et quatre indicateurs

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Les colliers d’immunité
+description: "Les colliers d’immunité de Koh-Lanta suivis un par un : où ils étaient cachés, qui les a trouvés, et ce qu’ils ont réellement changé au conseil."
 permalink: /statistiques/colliers/
 chapeau: >-
   Chaque collier d’immunité suivi un par un : où il était caché, qui l’a trouvé, et ce qu’il a réellement changé au conseil.
@@ -76,7 +77,7 @@ le jouer, et le jouer n’est pas annuler des voix.**
 <thead><tr><th>Aventurier</th><th class="nombre">Trouvés</th><th class="nombre">Joués</th><th class="nombre">Annulations efficaces</th></tr></thead>
 <tbody>
 {% for x in c.palmares %}
-<tr><td><strong>{{ x.nom }}</strong></td>
+<tr><td><strong>{% include lien-aventurier.html id=x.id nom=x.nom %}</strong></td>
     <td class="nombre">{{ x.trouves }}</td>
     <td class="nombre">{{ x.joues }}</td>
     <td class="nombre">{{ x.efficaces }}</td></tr>
@@ -104,7 +105,7 @@ et partir quand même. Elle compte **{{ perdus | size }} cas**.
 <thead><tr><th>Aventurier</th><th>Saison</th><th class="nombre">Année</th></tr></thead>
 <tbody>
 {% for x in perdus %}
-<tr><td>{{ x.nom }}</td><td>{{ x.titre }}</td><td class="nombre">{{ x.annee }}</td></tr>
+<tr><td>{% include lien-aventurier.html id=x.id nom=x.nom %}</td><td>{{ x.titre }}</td><td class="nombre">{{ x.annee }}</td></tr>
 {% endfor %}
 </tbody>
 </table>

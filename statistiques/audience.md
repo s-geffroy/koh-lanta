@@ -1,6 +1,7 @@
 ---
 layout: page
 title: L’audience
+description: "L’audience de Koh-Lanta depuis 2001 : une chute de 70 %, et une date précise. La seule grandeur du jeu que la production ne décide pas."
 permalink: /statistiques/audience/
 chapeau: >-
   La seule grandeur du jeu que la production ne décide pas. Elle a chuté de

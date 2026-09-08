@@ -256,16 +256,195 @@ def fiches_des_saisons(parts, saisons, conseils, epreuves, audiences, classement
     return out
 
 
+# --------------------------------------------------------------------------
+# LE FRONT MATTER QUE SEUL UN MOTEUR DE RECHERCHE LIT.
+#
+# `jekyll-seo-tag` fabrique le <title> et la <meta name="description"> a partir
+# de `title:` et de `description:`. Faute de `description:`, il retombe sur
+# celle du SITE : les 565 fiches servaient donc, mot pour mot, la meme phrase.
+# Un moteur lit cela comme 565 pages interchangeables et n'en indexe qu'une
+# partie. C'est le defaut que ces fonctions corrigent.
+#
+# CE QUI REND LA MANOEUVRE SANS RISQUE VISUEL : sur ces deux gabarits, le H1 ne
+# vient PAS de `page.title`. `_layouts/fiche-aventurier.html` affiche
+# `{{ a.nom }}`, `_layouts/fiche-saison.html` affiche `{{ s.titre }}`, tous
+# deux lus dans `_data/fiches.yml`. Ici `page.title` n'est lu que par le
+# greffon : on peut l'enrichir sans qu'un caractere bouge a l'ecran.
+#
+# LA LONGUEUR QU'ON OUBLIE. Le greffon ajoute « | Koh-Lanta en chiffres » a
+# tout titre : 24 caracteres qui comptent dans ce que le moteur affiche. Un
+# titre de fiche est donc plafonne a TITRE_MAX, et non a la soixantaine
+# habituelle. C'est aussi pourquoi ces titres ne repetent pas « Koh-Lanta » :
+# le suffixe le porte deja.
+SUFFIXE_TITRE = " | Koh-Lanta en chiffres"
+TITRE_MAX = 62 - len(SUFFIXE_TITRE)
+DESCRIPTION_MAX = 155
+
+# Le sort, dit au present et sans accord. Les libelles de `LIBELLE_SORT` sont
+# au masculin (« Elimine au conseil ») : les reprendre imposerait d'accorder
+# 531 fiches sur un champ `genre` a deux valeurs, et de trancher les cas ou il
+# manque. Un verbe n'a pas ce probleme.
+VERBE_SORT = {
+    "vainqueur": "gagne la saison",
+    "finaliste": "va en finale",
+    "elimine_conseil": "sort au conseil",
+    "elimine_poteaux": "sort aux poteaux",
+    "elimine_orientation": "sort à l'orientation",
+    "elimine_ambassadeurs": "sort aux ambassadeurs",
+    "elimine_duel": "sort en duel",
+    "elimine_exil": "sort sur l'île",
+    "abandon_medical": "abandonne sur blessure",
+    "abandon_volontaire": "abandonne",
+    "disqualifie": "quitte le jeu sur disqualification",
+}
+
+
+def ordinal(n):
+    return "1er" if n == 1 else f"{n}e"
+
+
+def compte(n, singulier, pluriel):
+    return f"{n} {singulier}" if abs(n) < 2 else f"{n} {pluriel}"
+
+
+def premier_qui_tient(candidats, maximum=TITRE_MAX):
+    """Rend le premier libelle qui tient, sinon le plus court, tronque.
+
+    Tronquer au caractere pres donne « Clarisse Cresseveur — Les Reliqu ».
+    On prefere une formule plus pauvre mais entiere, d'ou cette echelle de
+    repli ecrite d'avance, du plus informatif au plus sobre.
+    """
+    for c in candidats:
+        if len(c) <= maximum:
+            return c
+    court = min(candidats, key=len)
+    return court[:maximum].rstrip(" -—,:") if len(court) > maximum else court
+
+
+def assembler(tete, clauses, chute, maximum=DESCRIPTION_MAX):
+    """Ajoute les clauses tant que la phrase tient, et jette le reste.
+
+    Le budget est calcule chute comprise : une description coupee par le moteur
+    perd sa fin, or c'est la fin qui dit ce que la page apporte.
+    """
+    fin = f" {chute}" if chute else ""
+    texte = tete
+    for c in clauses:
+        if not c:
+            continue
+        essai = f"{texte}, {c}"
+        if len(essai) + 1 + len(fin) <= maximum:
+            texte = essai
+    if len(texte) + 1 + len(fin) <= maximum:
+        return f"{texte}.{fin}"
+    return f"{texte}."
+
+
+def avec_marque(titre):
+    """Prefixe « Koh-Lanta » -- sauf quand le titre le porte deja.
+
+    La saison 1 s'appelle « Les Aventuriers de Koh-Lanta » : sans ce garde-fou,
+    sa description commence par « Koh-Lanta Les Aventuriers de Koh-Lanta ».
+    """
+    return titre if "Koh-Lanta" in titre else f"Koh-Lanta {titre}"
+
+
+def titre_seo_aventurier(e):
+    p = e["participations"]
+    if len(p) == 1:
+        u = p[0]
+        return premier_qui_tient([
+            f"{e['nom']} — {u['titre']} ({u['annee']})",
+            f"{e['nom']} ({u['annee']})",
+            e["nom"],
+        ])
+    return premier_qui_tient([
+        f"{e['nom']} — {len(p)} saisons jouées",
+        f"{e['nom']} — {len(p)} saisons",
+        e["nom"],
+    ])
+
+
+def description_seo_aventurier(e, joueurs_classes):
+    p = e["participations"]
+    rang = (f"{ordinal(e['rang'])} sur {joueurs_classes} au classement"
+            if e.get("rang") and joueurs_classes else None)
+    if len(p) == 1:
+        u = p[0]
+        verbe = VERBE_SORT.get(u.get("sort"), "est encore en jeu")
+        tete = f"{e['nom']}, {avec_marque(u['titre'])} ({u['annee']}) : {verbe}"
+        if u.get("jour_sortie"):
+            tete += f" le {ordinal(u['jour_sortie'])} jour"
+        clauses = [
+            (f"{ordinal(u['classement'])} sur {u['effectif']}"
+             if u.get("classement") else None),
+            (compte(u["epreuves_gagnees"], "épreuve gagnée", "épreuves gagnées")
+             if u.get("epreuves_disputees") else None),
+            (compte(u["voix_recues"], "voix reçue", "voix reçues")
+             if u.get("voix_recues") else None),
+        ]
+        chute = f"{rang} des aventuriers." if rang else "Son parcours en chiffres."
+        return assembler(tete, clauses, chute)
+
+    annees = sorted(u["annee"] for u in p)
+    tete = (f"{e['nom']}, {len(p)} saisons de Koh-Lanta entre {annees[0]} et "
+            f"{annees[-1]} : {e['jours_total']} jours de jeu")
+    clauses = [
+        compte(e["titres"], "victoire", "victoires") if e.get("titres") else None,
+        compte(e["finales"], "finale", "finales") if e.get("finales") else None,
+        compte(e["voix_recues"], "voix reçue", "voix reçues") if e.get("voix_recues") else None,
+    ]
+    chute = f"{rang} des aventuriers." if rang else "Son parcours en chiffres."
+    return assembler(tete, clauses, chute)
+
+
+def titre_seo_saison(e):
+    rang = ("édition spéciale" if e.get("speciale")
+            else f"saison {e['numero']}" if e.get("numero") else None)
+    candidats = []
+    if rang:
+        candidats.append(f"{e['titre']} ({e['annee']}) — {rang}")
+    candidats.append(f"{e['titre']} ({e['annee']})")
+    candidats.append(e["titre"])
+    return premier_qui_tient(candidats)
+
+
+def description_seo_saison(e):
+    quoi = ("édition spéciale" if e.get("speciale")
+            else f"saison {e['numero']}" if e.get("numero") else "saison")
+    tete = f"{avec_marque(e['titre'])}, {quoi} diffusée en {e['annee']}"
+    if e.get("pays"):
+        tete += f" ({e['pays']})"
+    tete += f" : {compte(e['effectif'], 'aventurier', 'aventuriers')}"
+    clauses = [
+        f"{e['duree_jours']} jours" if e.get("duree_jours") else None,
+        compte(e["conseils"], "conseil", "conseils") if e.get("conseils") else None,
+        compte(e["bulletins"], "bulletin", "bulletins") if e.get("bulletins") else None,
+    ]
+    noms = [v["nom"] for v in (e.get("vainqueurs") or [])]
+    if e.get("en_cours"):
+        chute = "Saison en cours."
+    elif len(noms) > 1:
+        chute = f"Victoire de {' et '.join(noms)}."
+    elif noms:
+        chute = f"Victoire de {noms[0]}."
+    else:
+        chute = "Le casting et les chiffres de la saison."
+    return assembler(tete, clauses, chute)
+
+
 GABARIT = """---
 layout: {layout}
 title: {titre}
+description: {description}
 permalink: {permalink}
 {cle}: {valeur}
 ---
 """
 
 
-def ecrire_pages(dossier, layout, cle, entrees, titre_de, permalink_de, rapport):
+def ecrire_pages(dossier, layout, cle, entrees, titre_de, description_de,
+                 permalink_de, rapport):
     """Ecrit une page par entree, et RETIRE celles qui n'ont plus de donnee.
 
     Sans le retrait, une personne disparue des donnees laisserait derriere elle
@@ -282,9 +461,11 @@ def ecrire_pages(dossier, layout, cle, entrees, titre_de, permalink_de, rapport)
         # au milieu d'un front matter, il coupe la page en deux et Jekyll ne
         # voit plus ni le permalien ni l'identifiant. Une chaine JSON est un
         # scalaire YAML double-quote valide, et rien d'autre.
-        contenu = GABARIT.format(layout=layout,
-                                 titre=json.dumps(titre_de(e), ensure_ascii=False),
-                                 permalink=permalink_de(cid), cle=cle, valeur=cid)
+        contenu = GABARIT.format(
+            layout=layout,
+            titre=json.dumps(titre_de(e), ensure_ascii=False),
+            description=json.dumps(description_de(e), ensure_ascii=False),
+            permalink=permalink_de(cid), cle=cle, valeur=cid)
         chemin = os.path.join(dossier, nom)
         ancien = None
         if os.path.exists(chemin):
@@ -342,10 +523,17 @@ def main():
     print(f"ecrit : {SORTIE_DATA}")
 
     rapport = collections.Counter()
+    # Le titre du front matter n'est PAS celui qui s'affiche : le H1 des deux
+    # gabarits vient de `_data/fiches.yml`. Ce titre-ci ne sort que dans la
+    # balise <title>, ou il a de la place pour dire la saison et l'annee.
+    joueurs_classes = (stats.get("classement") or {}).get("joueurs_classes")
     n1 = ecrire_pages(DOSSIER_AVENTURIERS, "fiche-aventurier", "aventurier", av,
-                      lambda e: e["nom"], lambda cid: f"/aventuriers/{cid}/", rapport)
+                      titre_seo_aventurier,
+                      lambda e: description_seo_aventurier(e, joueurs_classes),
+                      lambda cid: f"/aventuriers/{cid}/", rapport)
     n2 = ecrire_pages(DOSSIER_SAISONS, "fiche-saison", "saison", sa,
-                      lambda e: e["titre"], lambda cid: f"/saisons/{cid}/", rapport)
+                      titre_seo_saison, description_seo_saison,
+                      lambda cid: f"/saisons/{cid}/", rapport)
     print(f"pages : {n1} aventuriers + {n2} saisons = {n1 + n2} "
           f"({rapport['ecrites']} ecrites, {rapport['retirees']} retirees)")
     return 0

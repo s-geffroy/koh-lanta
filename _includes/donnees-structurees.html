@@ -1,0 +1,53 @@
+{%- comment -%}
+  Les donnees structurees du site, en plus de ce que pose `{% seo %}`.
+
+  POURQUOI EN PLUS. jekyll-seo-tag publie un bloc `WebPage` identique sur les
+  599 pages : un moteur y lit « une page », rien de plus. Or le site publie
+  531 PERSONNES et 34 SAISONS de television, deux types que schema.org decrit
+  precisement -- et l'information est deja dans `_data/fiches.yml`.
+
+  AUCUN CALCUL ICI. Ce fichier ne fait que lire par cle et afficher, comme les
+  deux gabarits de fiche. Le site ne peut pas etre construit avant le push :
+  du Liquid dont le comportement se discute ne se decouvrirait qu'apres, par
+  une construction en echec et un site fige sur sa version d'avant.
+
+  `jsonify` echappe ce qu'il faut : un nom comme « L'Ile au tresor » sortirait
+  autrement avec une apostrophe nue au milieu d'une chaine JSON.
+{%- endcomment -%}
+{%- assign racine = '/' | absolute_url -%}
+{%- assign url_aventuriers = '/aventuriers/' | absolute_url -%}
+{%- assign url_saisons = '/saisons/' | absolute_url -%}
+{%- if page.aventurier -%}
+  {%- assign a = site.data.fiches.aventuriers[page.aventurier] -%}
+  {%- if a -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"ProfilePage","url":{{ page.url | absolute_url | jsonify }},"mainEntity":{
+"@type":"Person","name":{{ a.nom | jsonify }}
+{%- if a.prenom %},"givenName":{{ a.prenom | jsonify }}{% endif -%}
+{%- if a.profession %},"jobTitle":{{ a.profession | jsonify }}{% endif -%}
+,"url":{{ page.url | absolute_url | jsonify }}
+,"subjectOf":{"@type":"TVSeries","name":"Koh-Lanta"}}},
+{"@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Accueil","item":{{ racine | jsonify }}},
+{"@type":"ListItem","position":2,"name":"Les aventuriers","item":{{ url_aventuriers | jsonify }}},
+{"@type":"ListItem","position":3,"name":{{ a.nom | jsonify }}}]}]}
+</script>
+  {%- endif -%}
+{%- elsif page.saison -%}
+  {%- assign s = site.data.fiches.saisons[page.saison] -%}
+  {%- if s -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"TVSeason","name":{{ s.titre | jsonify }},"url":{{ page.url | absolute_url | jsonify }}
+{%- if s.numero %},"seasonNumber":{{ s.numero }}{% endif -%}
+{%- if s.annee %},"datePublished":{{ s.annee | append: '' | jsonify }}{% endif -%}
+{%- if s.lieu %},"contentLocation":{"@type":"Place","name":{{ s.lieu | jsonify }}}{% endif -%}
+,"partOfSeries":{"@type":"TVSeries","name":"Koh-Lanta","inLanguage":"fr"}},
+{"@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Accueil","item":{{ racine | jsonify }}},
+{"@type":"ListItem","position":2,"name":"Les saisons","item":{{ url_saisons | jsonify }}},
+{"@type":"ListItem","position":3,"name":{{ s.titre | jsonify }}}]}]}
+</script>
+  {%- endif -%}
+{%- endif -%}

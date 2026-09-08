@@ -1,6 +1,7 @@
 ---
 layout: page
 title: La recette du casting
+description: "Le casting de Koh-Lanta n’est pas un tirage au sort : ce que la production impose vraiment au recrutement, et ce qu’elle laisse au hasard."
 permalink: /statistiques/casting/
 chapeau: >-
   Un casting de vingt personnes n’est pas un tirage au sort. Reste à savoir

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Avant et après la fusion
+description: "Avant et après la réunification, Koh-Lanta est deux jeux. On élimine le faible avant et le fort après, dit-on. Les bulletins disent l’inverse."
 permalink: /statistiques/fusion/
 chapeau: >-
   La réunification coupe la saison en deux jeux. On dit qu’avant on élimine le

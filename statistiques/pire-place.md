@@ -1,6 +1,7 @@
 ---
 layout: page
 title: La pire place au conseil
+description: "La pire place au conseil de Koh-Lanta : le nom sorti la fois d’avant et le nombre d’alliés restants font passer le risque de partir de 10 % à 47 %."
 permalink: /statistiques/pire-place/
 chapeau: >-
   Deux signaux se lisent avant le vote : le nom qui est sorti la fois d’avant,

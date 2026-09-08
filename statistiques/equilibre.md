@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Le jeu tenu serré
+description: "Koh-Lanta tient-il le jeu serré ? Le risque monte avec la saison et la tribu en difficulté semble se rattraper : deux impressions, deux tests."
 permalink: /statistiques/equilibre/
 chapeau: >-
   Le risque monte à mesure que la saison avance, et la tribu en difficulté

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Les sources
+description: "D’où viennent les données de Koh-Lanta : chaque champ, sa source, la façon dont les contradictions ont été tranchées, et ce qui manque encore."
 permalink: /sources/
 chapeau: >-
   D’où vient chaque champ, comment les contradictions entre sources ont été tranchées, et ce qui manque encore.

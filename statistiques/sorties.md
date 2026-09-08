@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Comment on sort
+description: "Comment on sort de Koh-Lanta : conseil, poteaux, orientation, abandon — neuf façons de quitter le jeu, et des proportions qui ont nettement bougé."
 permalink: /statistiques/sorties/
 chapeau: >-
   Conseil, poteaux, orientation, abandon : neuf façons de quitter le jeu, et des proportions qui ont nettement bougé en vingt-cinq ans.

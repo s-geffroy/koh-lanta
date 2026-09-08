@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Les revenants
+description: "Rejouer Koh-Lanta est-il un avantage ? Le chiffre qui saute aux yeux dit oui. Le parcours des revenants dit surtout autre chose."
 permalink: /statistiques/revenants/
 chapeau: >-
   Rejouer Koh-Lanta, est-ce un avantage ? Le chiffre qui saute aux yeux dit
@@ -182,7 +183,7 @@ vingtaine de personnes qui se connaissent déjà.
 <tbody>
 {% for c in r.les_plus_connectes %}
 <tr>
-  <td>{{ c.nom }}</td>
+  <td>{% include lien-aventurier.html id=c.id nom=c.nom %}</td>
   <td class="nombre">{{ c.saisons }}</td>
   <td class="nombre">{{ c.liens }}</td>
 </tr>
@@ -279,7 +280,7 @@ Aucun conseil, aucun poteau, aucune orientation ne les a fait sortir.
 <tbody>
 {% for c in r.carrieres %}
 <tr>
-  <td>{{ c.nom }}</td>
+  <td>{% include lien-aventurier.html id=c.id nom=c.nom %}</td>
   <td class="nombre">{{ c.saisons }}</td>
   <td class="nombre">{{ c.jours }}</td>
   <td class="nombre">{{ c.jours_possibles }}</td>

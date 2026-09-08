@@ -14,7 +14,9 @@ chiffre qui sort vide -- et qu'on ne verrait qu'en ligne, une fois publie :
     tools/atelier python3 tools/verifie_site.py
 """
 import ast
+import collections
 import html
+import json
 import math
 import os
 import re
@@ -510,12 +512,103 @@ def controler_modeles_nuls(c):
     return fautes
 
 
+# Le suffixe que jekyll-seo-tag colle a TOUT titre de page : « | » plus le
+# titre du site. Il compte dans ce qu'un moteur affiche, et c'est ce qu'on
+# oublie en relisant un front matter -- ou le titre parait court.
+SUFFIXE_TITRE = " | Koh-Lanta en chiffres"
+TITRE_RENDU_MAX = 62
+DESCRIPTION_MAX = 160
+
+
+def controler_seo(c, entetes):
+    """Refuse ce qu'un moteur de recherche lit comme une page sans valeur.
+
+    Les 592 pages du site ont longtemps servi la MEME meta-description, celle
+    de `_config.yml` : faute de `description:` en front matter, jekyll-seo-tag
+    y retombe sans rien signaler. Rien ne casse, rien ne s'affiche de travers,
+    et un moteur n'indexe qu'une fraction de pages qu'il croit interchangeables.
+    C'est exactement le genre de panne que ce script existe pour attraper.
+
+    Trois refus, donc : la description absente, la description partagee, et la
+    longueur au-dela de laquelle le moteur coupe la phrase.
+    """
+    par_description = collections.defaultdict(list)
+    for rel, entete in sorted(entetes.items()):
+        titre = entete.get("title")
+        description = entete.get("description")
+        if not description:
+            c.erreur(f"{rel} : `description` manquante — la page servira celle "
+                     f"du site, comme toutes les autres")
+            continue
+        description = " ".join(str(description).split())
+        par_description[description].append(rel)
+        if len(description) > DESCRIPTION_MAX:
+            c.avertir(f"{rel} : description de {len(description)} caracteres — "
+                      f"coupee a l'affichage au-dela de {DESCRIPTION_MAX}")
+        if titre:
+            rendu = len(str(titre)) + len(SUFFIXE_TITRE)
+            if rendu > TITRE_RENDU_MAX:
+                c.avertir(f"{rel} : titre rendu de {rendu} caracteres "
+                          f"(« {titre}{SUFFIXE_TITRE} ») — coupe au-dela de "
+                          f"{TITRE_RENDU_MAX}")
+
+    for description, pages_ in sorted(par_description.items()):
+        if len(pages_) > 1:
+            c.erreur(f"{len(pages_)} pages partagent la meme description "
+                     f"(« {description[:60]}… ») — {', '.join(pages_[:3])}"
+                     f"{' …' if len(pages_) > 3 else ''}")
+
+
+# Une accolade Liquid, avec ce qu'elle contient. Sert a neutraliser le gabarit
+# de donnees structurees pour le lire comme du JSON.
+RE_LIQUID_VALEUR = re.compile(r"\{\{-?\s*.*?\s*-?\}\}")
+RE_LIQUID_BLOC = re.compile(r"\{%-?\s*(if|unless|elsif|else|endif|endunless|"
+                            r"assign|comment|endcomment)\b.*?-?%\}", re.S)
+
+
+def controler_donnees_structurees(c):
+    """Verifie que le JSON-LD reste du JSON, branches posees ou non.
+
+    Un bloc `application/ld+json` casse ne fait echouer NI la construction NI
+    l'affichage : le moteur jette le bloc en silence, et le travail est perdu
+    sans que rien ne le dise. Une virgule en trop derriere une clause `{% if %}`
+    suffit -- c'est pourquoi les deux etats de chaque clause sont essayes.
+    """
+    chemin = os.path.join(RACINE, "_includes", "donnees-structurees.html")
+    if not os.path.exists(chemin):
+        return
+    texte = RE_COMMENTAIRE.sub("", open(chemin, encoding="utf-8").read())
+
+    for toutes_posees in (True, False):
+        rendu = []
+        for ligne in texte.split("\n"):
+            bloc = RE_LIQUID_BLOC.search(ligne)
+            if bloc:
+                mot = bloc.group(1)
+                # Une ligne conditionnelle n'est gardee que dans l'essai « tout
+                # pose » ; la ligne d'ouverture d'un `if` porte souvent une
+                # valeur, d'ou le retrait de la balise et non de la ligne.
+                if not toutes_posees and mot in ("if", "unless", "elsif"):
+                    continue
+            ligne = RE_LIQUID_BLOC.sub("", ligne)
+            ligne = RE_LIQUID_VALEUR.sub('"x"', ligne)
+            rendu.append(ligne)
+        for morceau in re.findall(r"<script[^>]*>(.*?)</script>",
+                                  "\n".join(rendu), re.S):
+            try:
+                json.loads(morceau)
+            except ValueError as e:
+                etat = "toutes clauses posees" if toutes_posees else "clauses absentes"
+                c.erreur(f"_includes/donnees-structurees.html : JSON invalide "
+                         f"({etat}) — {e}")
+
 def main():
     c = Controle()
     donnees = charger_donnees()
 
     permaliens = {}
     gabarits = {}
+    entetes = {}
     for chemin in sorted(pages()):
         rel = os.path.relpath(chemin, RACINE)
         texte = open(chemin, encoding="utf-8").read()
@@ -530,6 +623,10 @@ def main():
             c.erreur(f"{rel} : front matter illisible — {e}")
             continue
 
+        # La page d'erreur n'est pas une page de contenu : elle n'a rien a
+        # faire dans un moteur, donc pas de description a lui reclamer.
+        if rel != "404.html":
+            entetes[rel] = entete
         if not entete.get("layout"):
             c.erreur(f"{rel} : `layout` manquant")
         if not entete.get("title"):
@@ -660,6 +757,8 @@ def main():
                 c.erreur(f".secrets/{nom} est lisible par d'autres — "
                          f"chmod 600 .secrets/{nom}")
 
+    controler_seo(c, entetes)
+    controler_donnees_structurees(c)
     controler_navigation(c, permaliens, gabarits)
     controler_sass(c)
     controler_reproductibilite(c)

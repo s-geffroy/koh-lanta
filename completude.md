@@ -1,6 +1,7 @@
 ---
 layout: page
 title: La complétude, édition par édition
+description: "Ce qui est réellement renseigné sur Koh-Lanta : 34 éditions en ligne, 19 types de données en colonne, et à l’intersection la part connue."
 permalink: /completude/
 chapeau: >-
   Le tableau complet : les 34 éditions en ligne, les 19 types de données en

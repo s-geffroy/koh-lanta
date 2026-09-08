@@ -11,6 +11,20 @@ description: >-
   et ce que les chiffres disent vraiment du jeu.
 author: Sylvain Geffroy
 
+# La langue du site, et le seul endroit ou elle se declare pour les moteurs.
+# Sans cette cle, jekyll-seo-tag publie « og:locale = en_US » sur un site
+# integralement en francais -- y compris sur les 565 fiches. Le `lang="fr"` de
+# _layouts/default.html ne la remplace pas : c'est une autre balise, lue par
+# une autre machine.
+lang: fr_FR
+
+# La vignette de partage, fabriquee par tools/build_partage.py. Sans elle,
+# chaque lien du site partage dans une messagerie ou sur un reseau sortait
+# sans image -- le depot ne contenait aucun fichier bitmap, tout le visuel
+# etant en SVG inline. jekyll-seo-tag en fait une URL absolue et bascule au
+# passage la carte Twitter en grand format.
+image: /assets/partage.png
+
 # L'adresse publique du site, sans barre oblique finale.
 #   site de projet    : https://<utilisateur>.github.io
 #   site d'utilisateur: https://<utilisateur>.github.io
@@ -36,8 +50,12 @@ theme: minima
 # purement et simplement tout fichier depose dans _plugins/. La liste a jour
 # est publiee sur https://pages.github.com/versions.json -- va la lire plutot
 # que de te fier a une recette trouvee ailleurs.
+# jekyll-feed a ete RETIRE. Il publiait un flux RSS de 687 octets, sans une
+# seule entree -- `_posts/` est vide et le site n'est pas un blog -- et
+# `{% feed_meta %}` le declarait sur les 599 pages. Le jour ou des articles
+# arrivent, remettre les deux ensemble : le greffon ici, la balise dans
+# _layouts/default.html.
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
 

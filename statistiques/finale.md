@@ -1,6 +1,7 @@
 ---
 layout: page
 title: La fin de saison
+description: "La fin de saison de Koh-Lanta : gagner les poteaux ne fait pas gagner. Arriver dernier à l’orientation, si — onze victoires sur dix-sept."
 permalink: /statistiques/finale/
 chapeau: >-
   Gagner les poteaux ne fait pas gagner la saison. Mais arriver **dernier** à

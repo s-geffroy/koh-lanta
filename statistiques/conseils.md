@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Les conseils
+description: "Les conseils de Koh-Lanta : le vote est presque toujours serré, l’unanimité n’existe pas, et le camp ne s’est pas durci — il s’est divisé."
 permalink: /statistiques/conseils/
 chapeau: >-
   Le vote est presque toujours serré, l’unanimité n’existe pas — et les conseils ne se sont pas durcis avec les années, ils se sont divisés.

@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Les aventuriers
+title: Les aventuriers de Koh-Lanta
+description: "Les 645 participations à Koh-Lanta, saison par saison : durée, épreuves, votes, manière de sortir. Un tableau qui se cherche, se filtre et se trie."
 permalink: /aventuriers/
 chapeau: >-
   Toutes les participations relevées, saison par saison. Le tableau se

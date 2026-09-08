@@ -1,6 +1,7 @@
 ---
 layout: fiche-aventurier
-title: "Myriam Zenasni"
+title: "Myriam Zenasni (2016)"
+description: "Myriam Zenasni, Koh-Lanta L'Île au trésor (2016) : sort au conseil le 3e jour, 20e sur 20, 9 voix reçues. 485e sur 531 au classement des aventuriers."
 permalink: /aventuriers/myriam-zenasni/
 aventurier: myriam-zenasni
 ---

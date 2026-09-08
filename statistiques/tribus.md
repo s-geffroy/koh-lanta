@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Jaune contre rouge
+description: "Jaune ou rouge à Koh-Lanta : vaut-il mieux commencer chez les Jaunes ou chez les Rouges ? La question revient chaque saison, la réponse tient en une ligne."
 permalink: /statistiques/tribus/
 chapeau: >-
   Vaut-il mieux commencer chez les Jaunes ou chez les Rouges ? La question revient à chaque saison. La réponse tient en une ligne.

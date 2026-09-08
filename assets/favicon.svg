@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Koh-Lanta en chiffres">
+  <title>Koh-Lanta en chiffres</title>
+  <!-- L'enseigne du site, reduite : la torche a deux bandeaux, jaune en haut,
+       rouge en bas, a parts strictement egales. C'est la meme forme que
+       `.enseigne-totem` dans assets/css/style.scss, et la meme egalite des
+       deux couleurs que porte tout le site. -->
+  <rect width="32" height="32" rx="6" fill="#edefe9"/>
+  <g clip-path="url(#torche)">
+    <rect x="10" y="4" width="12" height="12" fill="#eda100"/>
+    <rect x="10" y="16" width="12" height="12" fill="#e34948"/>
+  </g>
+  <defs>
+    <clipPath id="torche">
+      <path d="M16 4 L22 7.84 L22 28 L10 28 L10 7.84 Z"/>
+    </clipPath>
+  </defs>
+</svg>

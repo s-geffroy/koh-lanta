@@ -1,6 +1,7 @@
 ---
 layout: page
 title: La force réelle
+description: "La force réelle des aventuriers de Koh-Lanta : le total d’épreuves gagnées mélange le niveau et le temps passé en jeu. On peut les séparer."
 permalink: /statistiques/force/
 chapeau: >-
   Sept victoires en quinze épreuves, ou deux en trois ? Le total brut mélange
@@ -66,7 +67,7 @@ retirées au sort. Une force de 1 est la moyenne.</p>
 <tbody>
 {% for d in f.classement %}
 <tr>
-  <td>{{ d.nom }}</td>
+  <td>{% include lien-aventurier.html id=d.id nom=d.nom %}</td>
   <td class="nombre" data-val="{{ d.force }}"><b>{{ d.force }}</b></td>
   <td class="nombre">{{ d.bas }} – {{ d.haut }}</td>
   <td class="nombre">{{ d.victoires }}</td>

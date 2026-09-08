@@ -1,6 +1,7 @@
 ---
 layout: fiche-aventurier
-title: "Steve Best"
+title: "Steve Best — Thaïlande (2016)"
+description: "Steve Best, Koh-Lanta Thaïlande (2016) : sort au conseil le 26e jour, 9e sur 21, 0 épreuve gagnée. 282e sur 531 au classement des aventuriers."
 permalink: /aventuriers/steve-best/
 aventurier: steve-best
 ---

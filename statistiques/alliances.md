@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Les alliances
+description: "Les alliances de Koh-Lanta existent-elles ailleurs que dans le récit ? Les bulletins de vote permettent de trancher, saison par saison."
 permalink: /statistiques/alliances/
 chapeau: >-
   Le programme raconte des alliances à chaque épisode. Rien n’oblige à ce
@@ -97,7 +98,7 @@ lui, on sous-estime. La vérité est au-dessus du chiffre affiché.</p>
 <tbody>
 {% for x in a.les_plus_souvent_du_bon_cote %}
 <tr>
-  <td><strong>{{ x.nom }}</strong></td>
+  <td><strong>{% include lien-aventurier.html id=x.id nom=x.nom %}</strong></td>
   <td>{{ x.saison }}</td>
   <td class="nombre">{{ x.conseils }}</td>
   <td class="nombre" data-val="{{ x.part }}">{{ x.part }} %</td>

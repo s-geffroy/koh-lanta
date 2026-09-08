@@ -1,6 +1,7 @@
 ---
 layout: page
 title: D’où ils viennent
+description: "D’où viennent les aventuriers de Koh-Lanta : vingt-quatre Parisiens, est-ce beaucoup ? Comparaison avec la France qui vivait là ces années-là."
 permalink: /statistiques/geographie/
 chapeau: >-
   Vingt-quatre Parisiens, est-ce beaucoup ? La question n’a de réponse qu’en la

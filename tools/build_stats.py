@@ -1415,6 +1415,46 @@ def bloc_palmares(parts, epreuves, par_saison):
     }
 
 
+def poser_les_identifiants(noeud, index):
+    """Pose `id` a cote de tout nom d'aventurier deja publie.
+
+    POURQUOI UNE PASSE, ET PAS VINGT-TROIS CORRECTIONS. Vingt-trois listes de
+    `_data/stats.yml` publiaient un nom d'aventurier sans son identifiant. Un
+    gabarit ne pouvait donc pas construire le lien vers sa fiche, et des
+    centaines de noms restaient du texte mort au milieu des tableaux -- alors
+    que la page de la personne existe. Poser l'identifiant chez chaque
+    producteur demandait vingt-trois retouches, et d'y penser a la
+    vingt-quatrieme. Une passe sur l'arbre fini le fait une fois pour toutes,
+    y compris pour les blocs ecrits plus tard.
+
+    Elle n'ecrase jamais un `id` deja pose, et ne resout PAS un nom porte par
+    deux personnes : mieux vaut un nom sans lien qu'un lien vers la mauvaise
+    fiche. Les noms qui ne sont pas ceux d'un aventurier -- un presentateur,
+    une tribu -- ne sont simplement pas dans l'index.
+    """
+    if isinstance(noeud, dict):
+        if "id" not in noeud:
+            for cle in ("nom", "aventurier"):
+                cid = index.get(noeud.get(cle))
+                if cid:
+                    noeud["id"] = cid
+                    break
+        for valeur in noeud.values():
+            poser_les_identifiants(valeur, index)
+    elif isinstance(noeud, list):
+        for valeur in noeud:
+            poser_les_identifiants(valeur, index)
+
+
+def index_des_noms(personnes):
+    """Nom complet -> identifiant, les homonymes exclus."""
+    par_nom = defaultdict(list)
+    for g in personnes:
+        if g.get("nom") and g.get("id"):
+            par_nom[g["nom"]].append(g["id"])
+    return {nom: ids[0] for nom, ids in par_nom.items() if len(ids) == 1}
+
+
 def main():
     saisons, parts, personnes, conseils, epreuves, colliers, finale, par_saison = charger()
     classiques = perimetre(parts, avec_speciales=False)
@@ -1509,6 +1549,8 @@ def main():
                 "saison": p["saison"], "annee": p["_annee"],
                 "titre": p["_saison"].get("titre"),
             }
+
+    poser_les_identifiants(stats, index_des_noms(personnes))
 
     chemin = os.path.join(RACINE, "_data", "stats.yml")
     with open(chemin, "w", encoding="utf-8") as f:

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Le vote du jury
+description: "Le vote du jury final de Koh-Lanta : le seul scrutin rendu par ceux qu’on a fait sortir. Pardonnent-ils à celui qui les a éliminés ? Non."
 permalink: /statistiques/jury/
 chapeau: >-
   Le seul scrutin où écrire un nom veut dire « qu’il gagne » — et le seul rendu

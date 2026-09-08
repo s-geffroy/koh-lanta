@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Âge et longévité
+description: "Âge et longévité à Koh-Lanta : à quel âge tient-on le plus longtemps, et pourquoi les femmes sortent-elles plus tôt tout en gagnant autant de finales ?"
 permalink: /statistiques/longevite/
 chapeau: >-
   À quel âge tient-on le plus longtemps ? Et pourquoi les femmes sortent-elles plus tôt tout en gagnant autant de finales ?
@@ -187,7 +188,7 @@ précoces à tous les âges, et des vainqueurs répartis de vingt à cinquante a
 <thead><tr><th>Aventurier</th><th class="nombre">Participations</th></tr></thead>
 <tbody>
 {% for m in s.records.multi_participants %}
-<tr><td>{{ m.nom }}</td><td class="nombre">{{ m.participations }}</td></tr>
+<tr><td>{% include lien-aventurier.html id=m.id nom=m.nom %}</td><td class="nombre">{{ m.participations }}</td></tr>
 {% endfor %}
 </tbody>
 </table>

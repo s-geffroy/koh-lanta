@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Le jeu social
+description: "Le jeu social de Koh-Lanta : être visé, voter juste, ou n’être jamais écrit sur un bulletin — et pourquoi l’invisibilité n’est que le deuxième signal."
 permalink: /statistiques/jeu-social/
 chapeau: >-
   Être visé, voter juste, ou n’être jamais écrit sur un bulletin —
@@ -92,7 +93,7 @@ Et l’un comme l’autre ne se connaissent qu’en cours de jeu. Au casting,
 <tbody>
 {% for x in i.fantomes %}
 <tr>
-  <td><strong>{{ x.nom }}</strong></td>
+  <td><strong>{% include lien-aventurier.html id=x.id nom=x.nom %}</strong></td>
   <td>{{ x.titre }} ({{ x.annee }})</td>
   <td class="nombre">{{ x.conseils }}</td>
   <td>{{ x.sort | replace: "_", " " | capitalize }}</td>
@@ -113,7 +114,7 @@ gagne, un conseil qu’on ne fait pas, un plus gros poisson à sortir. L’être
 <thead><tr><th>Aventurier</th><th class="nombre">Fois</th><th>Saisons</th><th>Ce qu’il y a fait</th></tr></thead>
 <tbody>
 {% for x in i.fantomes_recidivistes %}
-<tr><td><strong>{{ x.nom }}</strong></td>
+<tr><td><strong>{% include lien-aventurier.html id=x.id nom=x.nom %}</strong></td>
     <td class="nombre">{{ x.fois }}</td>
     <td>{{ x.saisons }}</td>
     <td>{{ x.sorts }}</td></tr>
@@ -171,7 +172,7 @@ effectivement été éliminée. C’est l’indicateur de qui lit correctement l
 <tbody>
 {% for x in i.meilleure_justesse %}
 <tr>
-  <td>{{ x.nom }}</td><td>{{ x.titre }} ({{ x.annee }})</td>
+  <td>{% include lien-aventurier.html id=x.id nom=x.nom %}</td><td>{{ x.titre }} ({{ x.annee }})</td>
   <td class="nombre">{{ x.valeur }} %</td><td class="nombre">{{ x.base }}</td>
 </tr>
 {% endfor %}
@@ -195,7 +196,7 @@ suffirait à afficher 100 %.</p>
 <tbody>
 {% for x in i.meilleure_evasion %}
 <tr>
-  <td>{{ x.nom }}</td><td>{{ x.titre }} ({{ x.annee }})</td>
+  <td>{% include lien-aventurier.html id=x.id nom=x.nom %}</td><td>{{ x.titre }} ({{ x.annee }})</td>
   <td class="nombre">{{ x.base }}</td><td class="nombre">{{ x.valeur }} %</td>
   <td>{{ x.sort | replace: "_", " " }}</td>
 </tr>
@@ -226,7 +227,7 @@ protégé.
 <tbody>
 {% for x in i.plus_menaces %}
 <tr>
-  <td>{{ x.nom }}</td><td>{{ x.titre }} ({{ x.annee }})</td>
+  <td>{% include lien-aventurier.html id=x.id nom=x.nom %}</td><td>{{ x.titre }} ({{ x.annee }})</td>
   <td class="nombre">{{ x.valeur }}</td><td class="nombre">{{ x.base }}</td>
   <td>{{ x.sort | replace: "_", " " }}</td>
 </tr>

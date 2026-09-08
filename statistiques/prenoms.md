@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Les prénoms
+description: "Les prénoms des aventuriers de Koh-Lanta : Alexandra revient sept fois. Est-ce beaucoup ? Comparaison avec la France née les mêmes années."
 permalink: /statistiques/prenoms/
 chapeau: >-
   Alexandra revient sept fois à Koh-Lanta. Est-ce beaucoup ? La question n’a
