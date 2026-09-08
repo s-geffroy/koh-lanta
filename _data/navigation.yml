@@ -15,8 +15,13 @@
       url: /
       resume: Le jeu, vu de la donnée.
 
+# `repliable: true` : cette section-ci, et elle seule, se replie dans le rail.
+# Elle porte vingt-sept entrees sur les trente-cinq du sommaire, et deployee en
+# permanence elle faisait un rail plus haut que l'ecran. Elle s'ouvre d'elle-meme
+# quand on est dedans.
 - section: Les résultats
   fil: true
+  repliable: true
   entrees:
     # `hub: true` : la page d'entree de la section. Elle appartient au fil de
     # lecture -- on peut y revenir par « precedent » -- mais elle ne porte pas

@@ -1094,3 +1094,43 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); 
   color: var(--encre-muette);
   margin-right: 0.4rem;
 }
+
+/* Une section repliable du rail. La poignee garde exactement l'allure d'un
+   `.rail-titre` -- on ne veut pas deux styles d'intertitre dans le sommaire --
+   et n'y ajoute que le compte et le chevron. */
+.rail-groupe { margin: 0; }
+
+.rail-titre-poignee {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.rail-titre-poignee::-webkit-details-marker { display: none; }
+.rail-titre-poignee:hover { color: var(--encre-douce); }
+
+.rail-compte {
+  margin-left: auto;
+  font-family: var(--mono);
+  letter-spacing: 0;
+  color: var(--encre-muette);
+}
+
+/* Le chevron du groupe : meme dessin que celui du rail, en plus petit. */
+.rail-titre-poignee::after {
+  content: "";
+  width: 0.4rem;
+  height: 0.4rem;
+  flex: none;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translate(-0.1rem, -0.1rem);
+  transition: transform 0.15s ease;
+}
+.rail-groupe[open] > .rail-titre-poignee::after {
+  transform: rotate(-135deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .rail-titre-poignee::after { transition: none; }
+}

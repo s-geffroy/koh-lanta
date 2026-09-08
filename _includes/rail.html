@@ -20,7 +20,28 @@
 
   <nav class="rail-corps" aria-label="Sommaire du site">
     {%- for groupe in site.data.navigation -%}
+    {%- comment -%}
+      Une section marquee `repliable` se replie : « Les resultats » en porte
+      vingt-sept sur les trente-cinq du sommaire, et deployee en permanence
+      elle faisait un rail plus haut que l'ecran. Elle s'ouvre d'elle-meme
+      quand la page courante est dedans -- c'est un <details>, donc sans
+      JavaScript, et ses liens restent dans le document meme repliee.
+    {%- endcomment -%}
+    {%- assign ouvert = false -%}
+    {%- assign combien = 0 -%}
+    {%- for e in groupe.entrees -%}
+      {%- if page.url == e.url -%}{%- assign ouvert = true -%}{%- endif -%}
+      {%- unless e.hub -%}{%- assign combien = combien | plus: 1 -%}{%- endunless -%}
+    {%- endfor -%}
+    {%- if groupe.repliable -%}
+    <details class="rail-groupe"{% if ouvert %} open{% endif %}>
+      <summary class="rail-titre rail-titre-poignee">
+        <span>{{ groupe.section }}</span>
+        <span class="rail-compte">{{ combien }}</span>
+      </summary>
+    {%- else -%}
     <p class="rail-titre">{{ groupe.section }}</p>
+    {%- endif -%}
     <ul class="rail-liste">
       {%- for e in groupe.entrees -%}
       {%- assign ici = false -%}
@@ -39,6 +60,7 @@
       </li>
       {%- endfor -%}
     </ul>
+    {%- if groupe.repliable -%}</details>{%- endif -%}
     {%- endfor -%}
   </nav>
 </details>
