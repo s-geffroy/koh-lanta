@@ -47,6 +47,12 @@ ENTETE = """# ATTENTION : fichier genere. Ne pas editer a la main.
 # `annule: true` sur un bulletin signale une voix rendue nulle par un collier
 # d'immunite : c'est ce qui permet de mesurer l'effet reel des colliers.
 #
+# `votant: null` avec un champ `mecanique` : une voix que PERSONNE n'a ecrite.
+# Depuis 2017 le jeu en impose -- vote noir, penalite, malediction -- et la
+# source les compte dans son total. Elles comptent donc au-dessus de la cible,
+# jamais au-dessous d'un votant : `votant_rattache` est faux, ce qui les ecarte
+# d'office de toute mesure cote emetteur.
+#
 # `type` vaut `elimination` ou `jury`. Le dernier scrutin d'une saison n'est
 # pas un conseil : c'est le vote du jury final, et le sens du bulletin y est
 # INVERSE -- ecrire un nom veut dire « qu'il gagne », pas « qu'il parte ». Une
@@ -255,8 +261,12 @@ def completer_par_seconde_source(base, autre, sid, rapport):
         a, b_ = slug(c.get("elimine") or ""), slug(jumeau.get("elimine") or "")
         if not a or not b_ or a.split("-")[0] != b_.split("-")[0]:
             continue
-        connus = {x["votant"]: x for x in c["votes"]}
+        connus = {x["votant"]: x for x in c["votes"] if x.get("votant")}
         for x in jumeau["votes"]:
+            if not x.get("votant"):
+                # Sans votant, rien a apparier : deux bulletins de mecanique
+                # partageraient la meme cle et l'un effacerait l'autre.
+                continue
             if x["votant"] in connus:
                 communs += 1
                 # On compare les noms normalises : « Eric » et « Éric » sont la
@@ -367,8 +377,28 @@ def construire(saisons, parts, rapport):
                                f"non rattache ({echec})")
             bulletins = []
             for b in c["votes"]:
-                vid, e1 = resoudre(b["votant"], idx)
                 cid, e2 = resoudre(b["cible"], idx)
+                # Un bulletin de mecanique -- vote noir, penalite, malediction
+                # -- n'a PAS de votant : le jeu l'impose, personne ne l'ecrit.
+                # Il compte au dessus de la cible et jamais en dessous du
+                # votant ; c'est `votant_rattache` a false qui l'ecarte de tous
+                # les calculs cote emetteur, exactement comme un votant qu'on
+                # n'aurait pas su nommer.
+                if b.get("votant") is None:
+                    if e2:
+                        rapport.append(f"{sid} conseil {c['numero']} : bulletin de "
+                                       f"mecanique « {b.get('mecanique')} » -> "
+                                       f"« {b['cible']} » non rattache ({e2})")
+                    bulletins.append({
+                        "votant": None,
+                        "votant_rattache": False,
+                        "mecanique": b.get("mecanique"),
+                        "cible": cid or b["cible"],
+                        "cible_rattachee": bool(cid),
+                        "annule": b["annule"],
+                    })
+                    continue
+                vid, e1 = resoudre(b["votant"], idx)
                 if e1 or e2:
                     rapport.append(f"{sid} conseil {c['numero']} : bulletin "
                                    f"« {b['votant']} » -> « {b['cible']} » non rattache "

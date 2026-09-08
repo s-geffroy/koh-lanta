@@ -7,6 +7,12 @@
 # `annule: true` sur un bulletin signale une voix rendue nulle par un collier
 # d'immunite : c'est ce qui permet de mesurer l'effet reel des colliers.
 #
+# `votant: null` avec un champ `mecanique` : une voix que PERSONNE n'a ecrite.
+# Depuis 2017 le jeu en impose -- vote noir, penalite, malediction -- et la
+# source les compte dans son total. Elles comptent donc au-dessus de la cible,
+# jamais au-dessous d'un votant : `votant_rattache` est faux, ce qui les ecarte
+# d'office de toute mesure cote emetteur.
+#
 # `type` vaut `elimination` ou `jury`. Le dernier scrutin d'une saison n'est
 # pas un conseil : c'est le vote du jury final, et le sens du bulletin y est
 # INVERSE -- ecrire un nom veut dire « qu'il gagne », pas « qu'il parte ». Une
@@ -11598,7 +11604,7 @@
 - saison: s17
   numero: 14
   type: elimination
-  complet: false
+  complet: true
   episode: '9'
   elimine: sandro-gonzalez-schena
   elimine_rattache: true
@@ -11653,6 +11659,12 @@
   - votant: sandro-gonzalez-schena
     votant_rattache: true
     cible: marjorie-rousseeuw
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: sandro-gonzalez-schena
     cible_rattachee: true
     annule: false
 - saison: s17
@@ -11710,10 +11722,16 @@
     cible: corentin-albertini
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: corentin-albertini
+    cible_rattachee: true
+    annule: false
 - saison: s17
   numero: 16
   type: elimination
-  complet: false
+  complet: true
   episode: '11'
   elimine: corentin-albertini
   elimine_rattache: true
@@ -11760,6 +11778,12 @@
     cible: mathilde-chevalier
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: corentin-albertini
+    cible_rattachee: true
+    annule: false
 - saison: s17
   numero: 17
   type: elimination
@@ -11773,14 +11797,14 @@
 - saison: s17
   numero: 18
   type: elimination
-  complet: false
+  complet: true
   episode: '12'
   elimine: claire-pradayrol
   elimine_rattache: true
   votes_contre: 2
   votes_exprimes: 7
   annulation: partielle
-  voix_annulees: 4
+  voix_annulees: 5
   proteges:
   - mathilde-chevalier
   votes:
@@ -11814,10 +11838,16 @@
     cible: mathilde-chevalier
     cible_rattachee: true
     annule: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: mathilde-chevalier
+    cible_rattachee: true
+    annule: true
 - saison: s17
   numero: 19
   type: elimination
-  complet: false
+  complet: true
   episode: '13'
   elimine: sebastien-gottiniaux
   elimine_rattache: true
@@ -11851,6 +11881,12 @@
   - votant: sebastien-gottiniaux
     votant_rattache: true
     cible: frederic-blancher
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: sebastien-gottiniaux
     cible_rattachee: true
     annule: false
 - saison: s17
@@ -12081,7 +12117,7 @@
 - saison: s18
   numero: 5
   type: elimination
-  complet: false
+  complet: true
   episode: '3'
   elimine: mel-moresve
   elimine_rattache: true
@@ -12131,6 +12167,12 @@
   - votant: mel-moresve
     votant_rattache: true
     cible: may-peitavi
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité ou avantage
+    cible: mel-moresve
     cible_rattachee: true
     annule: false
 - saison: s18
@@ -12246,7 +12288,7 @@
 - saison: s18
   numero: 9
   type: elimination
-  complet: false
+  complet: true
   episode: '6'
   elimine: caroline-demartis
   elimine_rattache: true
@@ -12286,6 +12328,12 @@
   - votant: caroline-demartis
     votant_rattache: true
     cible: tiffany-gounin
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité ou avantage
+    cible: caroline-demartis
     cible_rattachee: true
     annule: false
 - saison: s18
@@ -12418,7 +12466,7 @@
 - saison: s18
   numero: 13
   type: elimination
-  complet: false
+  complet: true
   episode: '9'
   elimine: sebastien-meriaux
   elimine_rattache: true
@@ -12475,17 +12523,23 @@
     cible: tiffany-gounin
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: sebastien-meriaux
+    cible_rattachee: true
+    annule: false
 - saison: s18
   numero: 14
   type: elimination
-  complet: false
+  complet: true
   episode: '10'
   elimine: fabian-rocha-rocha
   elimine_rattache: true
   votes_contre: 3
   votes_exprimes: 10
   annulation: partielle
-  voix_annulees: 5
+  voix_annulees: 6
   proteges:
   - magalie-gustave
   votes:
@@ -12534,17 +12588,23 @@
     cible: magalie-gustave
     cible_rattachee: true
     annule: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: magalie-gustave
+    cible_rattachee: true
+    annule: true
 - saison: s18
   numero: 15
   type: elimination
-  complet: false
+  complet: true
   episode: '11'
   elimine: maxime-stafrach
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 9
   annulation: partielle
-  voix_annulees: 4
+  voix_annulees: 5
   proteges:
   - marguerite-leblanc
   votes:
@@ -12588,6 +12648,12 @@
     cible: marguerite-leblanc
     cible_rattachee: true
     annule: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: marguerite-leblanc
+    cible_rattachee: true
+    annule: true
 - saison: s18
   numero: 16
   type: elimination
@@ -12618,9 +12684,10 @@
   votes_contre: 2
   votes_exprimes: 6
   annulation: partielle
-  voix_annulees: 3
+  voix_annulees: 4
   proteges:
   - magalie-gustave
+  - melanie-moret
   votes:
   - votant: tiffany-gounin
     votant_rattache: true
@@ -12647,17 +12714,29 @@
     cible: magalie-gustave
     cible_rattachee: true
     annule: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: marguerite-leblanc
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité ou avantage
+    cible: melanie-moret
+    cible_rattachee: true
+    annule: true
 - saison: s18
   numero: 19
   type: elimination
-  complet: true
+  complet: false
   episode: '13'
   elimine: marguerite-leblanc
   elimine_rattache: true
   votes_contre: 3
   votes_exprimes: 5
   annulation: totale
-  voix_annulees: 5
+  voix_annulees: 6
   votes:
   - votant: andre-deleplace
     votant_rattache: true
@@ -12681,6 +12760,12 @@
     annule: true
   - votant: marguerite-leblanc
     votant_rattache: true
+    cible: andre-deleplace
+    cible_rattachee: true
+    annule: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
     cible: andre-deleplace
     cible_rattachee: true
     annule: true
@@ -13156,7 +13241,7 @@
 - saison: s20
   numero: 11
   type: elimination
-  complet: false
+  complet: true
   episode: '8'
   elimine: beatrice-kabore
   elimine_rattache: true
@@ -13228,10 +13313,16 @@
     cible: maud-bamps
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: beatrice-kabore
+    cible_rattachee: true
+    annule: false
 - saison: s20
   numero: 12
   type: elimination
-  complet: false
+  complet: true
   episode: '9'
   elimine: brice-chauvinc
   elimine_rattache: true
@@ -13298,6 +13389,12 @@
     cible: clo-dessard-arribas
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: sophie-chevalier
+    cible_rattachee: true
+    annule: false
 - saison: s20
   numero: 13
   type: elimination
@@ -13311,7 +13408,7 @@
 - saison: s20
   numero: 14
   type: elimination
-  complet: false
+  complet: true
   episode: '10'
   elimine: angelique-mastio
   elimine_rattache: true
@@ -13368,10 +13465,22 @@
     cible: maud-bamps
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: aurelien-soulimant
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Penalité
+    cible: maud-bamps
+    cible_rattachee: true
+    annule: false
 - saison: s20
   numero: 15
   type: elimination
-  complet: false
+  complet: true
   episode: '11'
   elimine: mohamed-siaaliti
   elimine_rattache: true
@@ -13427,6 +13536,12 @@
     cible: cyril-rouanne
     cible_rattachee: true
     annule: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: mohamed-siaaliti
+    cible_rattachee: true
+    annule: false
 - saison: s20
   numero: 16
   type: elimination
@@ -13440,7 +13555,7 @@
 - saison: s20
   numero: 17
   type: elimination
-  complet: false
+  complet: true
   episode: '12'
   elimine: maxime-berthon
   elimine_rattache: true
@@ -13482,6 +13597,12 @@
     cible: cyril-rouanne
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: cyril-rouanne
+    cible_rattachee: true
+    annule: false
 - saison: s20
   numero: 18
   type: elimination
@@ -13491,8 +13612,12 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
-  annulation: totale
+  annulation: partielle
   voix_annulees: 6
+  proteges:
+  - clo-dessard-arribas
+  - cyril-rouanne
+  - maud-bamps
   votes:
   - votant: maud-bamps
     votant_rattache: true
@@ -13524,6 +13649,12 @@
     cible: clo-dessard-arribas
     cible_rattachee: true
     annule: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: cyril-rouanne
+    cible_rattachee: true
+    annule: false
 - saison: s20
   numero: 19
   type: elimination
@@ -13861,7 +13992,7 @@
 - saison: s21
   numero: 8
   type: elimination
-  complet: true
+  complet: false
   episode: '4'
   elimine: mathieu-blanchard
   elimine_rattache: true
@@ -13882,6 +14013,11 @@
     cible: aubin-bligny
     cible_rattachee: true
     annule: true
+  - votant: hadja-cisse
+    votant_rattache: true
+    cible: -`
+    cible_rattachee: false
+    annule: false
   - votant: sebastien-aberlenc
     votant_rattache: true
     cible: aubin-bligny
@@ -13955,7 +14091,7 @@
 - saison: s21
   numero: 10
   type: elimination
-  complet: false
+  complet: true
   episode: '6'
   elimine: aubin-bligny
   elimine_rattache: true
@@ -14005,6 +14141,12 @@
   - votant: aubin-bligny
     votant_rattache: true
     cible: jody-favier
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: aubin-bligny
     cible_rattachee: true
     annule: false
 - saison: s21
@@ -14066,17 +14208,7 @@
   elimine_rattache: true
   votes_contre: 2
   votes_exprimes: null
-  votes:
-  - votant: loic-riowal
-    votant_rattache: true
-    cible: marie-france-schieber
-    cible_rattachee: true
-    annule: false
-  - votant: hadja-cisse
-    votant_rattache: true
-    cible: marie-france-schieber
-    cible_rattachee: true
-    annule: false
+  votes: []
 - saison: s21
   numero: 13
   type: elimination
@@ -14174,7 +14306,7 @@
 - saison: s21
   numero: 15
   type: elimination
-  complet: false
+  complet: true
   episode: '9'
   elimine: joaquina-glaud
   elimine_rattache: true
@@ -14241,6 +14373,12 @@
     cible: lola-besse
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: lola-besse
+    cible_rattachee: true
+    annule: false
 - saison: s21
   numero: 16
   type: elimination
@@ -14249,7 +14387,7 @@
   elimine: jody-favier
   elimine_rattache: true
   votes_contre: 4
-  votes_exprimes: 13
+  votes_exprimes: 12
   annulation: partielle
   voix_annulees: 5
   proteges:
@@ -14310,10 +14448,22 @@
     cible: fabrice-pietrzak
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: angelique-ti
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: alexandra-pornet
+    cible_rattachee: true
+    annule: false
 - saison: s21
   numero: 17
   type: elimination
-  complet: false
+  complet: true
   episode: '11'
   elimine: laurent-affri
   elimine_rattache: true
@@ -14367,7 +14517,13 @@
     annule: false
   - votant: laurent-affri
     votant_rattache: true
-    cible: fabrice-pietrzak
+    cible: brice-petit
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: laurent-affri
     cible_rattachee: true
     annule: false
 - saison: s21
@@ -14377,8 +14533,8 @@
   episode: '11'
   elimine: alix-noblat
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
+  votes_contre: 6
+  votes_exprimes: 11
   votes: []
 - saison: s21
   numero: 19
@@ -14393,7 +14549,7 @@
 - saison: s21
   numero: 20
   type: elimination
-  complet: false
+  complet: true
   episode: '12'
   elimine: ava-maisini
   elimine_rattache: true
@@ -14435,10 +14591,16 @@
     cible: dorian-louvet
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: ava-maisini
+    cible_rattachee: true
+    annule: false
 - saison: s21
   numero: 21
   type: elimination
-  complet: false
+  complet: true
   episode: '13'
   elimine: angelique-ti
   elimine_rattache: true
@@ -14473,6 +14635,12 @@
   - votant: angelique-ti
     votant_rattache: true
     cible: brice-petit
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: angelique-ti
     cible_rattachee: true
     annule: false
 - saison: s21
@@ -14593,7 +14761,7 @@
 - saison: s22
   numero: 1
   type: elimination
-  complet: false
+  complet: true
   episode: '1'
   elimine: sylviane-simonnet
   elimine_rattache: true
@@ -14650,10 +14818,28 @@
     cible: elodie-faelens
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: elodie-faelens
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: mathieu-orsolani
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: shanice-mendy
+    cible_rattachee: true
+    annule: false
 - saison: s22
   numero: 2
   type: elimination
-  complet: false
+  complet: true
   episode: '2'
   elimine: marie-oheix
   elimine_rattache: true
@@ -14708,6 +14894,18 @@
   - votant: marie-oheix
     votant_rattache: true
     cible: frederic-baudet
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: frederic-baudet
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: marie-oheix
     cible_rattachee: true
     annule: false
 - saison: s22
@@ -15077,7 +15275,7 @@
 - saison: s22
   numero: 11
   type: elimination
-  complet: true
+  complet: false
   episode: '7'
   elimine: shanice-mendy
   elimine_rattache: true
@@ -15147,6 +15345,12 @@
   - votant: shanice-mendy
     votant_rattache: true
     cible: laure-canevarolo
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: shanice-mendy
     cible_rattachee: true
     annule: false
 - saison: s22
@@ -15219,10 +15423,28 @@
     cible: arnaud-deshayes
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: arnaud-deshayes
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: arnaud-deshayes
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: vincent-blier
+    cible_rattachee: true
+    annule: false
 - saison: s22
   numero: 13
   type: elimination
-  complet: true
+  complet: false
   episode: '9'
   elimine: vincent-blier
   elimine_rattache: true
@@ -15288,6 +15510,12 @@
     cible: magali-sevenier
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: vincent-blier
+    cible_rattachee: true
+    annule: false
 - saison: s22
   numero: 14
   type: elimination
@@ -15301,7 +15529,7 @@
 - saison: s22
   numero: 15
   type: elimination
-  complet: true
+  complet: false
   episode: '10'
   elimine: thomas-plisson
   elimine_rattache: true
@@ -15353,6 +15581,12 @@
     cible: flavio-soares-tavares
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: thomas-plisson
+    cible_rattachee: true
+    annule: false
 - saison: s22
   numero: 16
   type: elimination
@@ -15366,7 +15600,7 @@
 - saison: s22
   numero: 17
   type: elimination
-  complet: false
+  complet: true
   episode: '11'
   elimine: magali-sevenier
   elimine_rattache: true
@@ -15400,6 +15634,12 @@
     annule: false
   - votant: arnaud-deshayes
     votant_rattache: true
+    cible: lucie-bertaud
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
     cible: lucie-bertaud
     cible_rattachee: true
     annule: false
@@ -15526,7 +15766,7 @@
 - saison: s23
   numero: 1
   type: elimination
-  complet: false
+  complet: true
   episode: '1'
   elimine: lili-gasnier
   elimine_rattache: true
@@ -15573,10 +15813,16 @@
     cible: pauline-pourchaire
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Malédiction/Pénalité
+    cible: lili-gasnier
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 2
   type: elimination
-  complet: false
+  complet: true
   episode: '1'
   elimine: celine-dufrenoy
   elimine_rattache: true
@@ -15621,6 +15867,12 @@
   - votant: celine-dufrenoy
     votant_rattache: true
     cible: stephanie-tribot
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Malédiction/Pénalité
+    cible: yannick-zachee
     cible_rattachee: true
     annule: false
 - saison: s23
@@ -15678,10 +15930,22 @@
     cible: stephanie-tribot
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Malédiction/Pénalité
+    cible: yannick-zachee
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Malédiction/Pénalité
+    cible: yannick-zachee
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 5
   type: elimination
-  complet: false
+  complet: true
   episode: '3'
   elimine: samira-ait-brahim
   elimine_rattache: true
@@ -15735,6 +15999,12 @@
     annule: false
   - votant: samira-ait-brahim
     votant_rattache: true
+    cible: pauline-pourchaire
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Malédiction/Pénalité
     cible: pauline-pourchaire
     cible_rattachee: true
     annule: false
@@ -15798,10 +16068,22 @@
     cible: alexandra-elize
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Malédiction/Pénalité
+    cible: yannick-zachee
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Malédiction/Pénalité
+    cible: yannick-zachee
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 7
   type: elimination
-  complet: false
+  complet: true
   episode: '5'
   elimine: stephanie-tribot
   elimine_rattache: true
@@ -15853,6 +16135,18 @@
     cible: alexandra-elize
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Malédiction/Pénalité
+    cible: yannick-zachee
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Malédiction/Pénalité
+    cible: yannick-zachee
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 8
   type: elimination
@@ -15866,7 +16160,7 @@
 - saison: s23
   numero: 9
   type: elimination
-  complet: false
+  complet: true
   episode: '6'
   elimine: stephanie-tribot
   elimine_rattache: true
@@ -15916,6 +16210,12 @@
   - votant: stephanie-tribot
     votant_rattache: true
     cible: maxime-tournoux
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Malédiction/Pénalité
+    cible: pauline-pourchaire
     cible_rattachee: true
     annule: false
 - saison: s23
@@ -15968,6 +16268,18 @@
     cible: setha-el-hajjami
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Malédiction/Pénalité
+    cible: yannick-zachee
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Malédiction/Pénalité
+    cible: yannick-zachee
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 11
   type: elimination
@@ -15991,7 +16303,7 @@
 - saison: s23
   numero: 12
   type: elimination
-  complet: false
+  complet: true
   episode: '8'
   elimine: colin-mottas
   elimine_rattache: true
@@ -16068,6 +16380,24 @@
     cible: maxime-tournoux
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Malédiction/Pénalité
+    cible: yannick-zachee
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Malédiction/Pénalité
+    cible: yannick-zachee
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Malédiction/Pénalité
+    cible: pauline-pourchaire
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 13
   type: elimination
@@ -16081,7 +16411,7 @@
 - saison: s23
   numero: 14
   type: elimination
-  complet: false
+  complet: true
   episode: '9'
   elimine: yannick-zachee
   elimine_rattache: true
@@ -16148,10 +16478,28 @@
     cible: louana-roy
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: louana-roy
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Malédiction/Pénalité
+    cible: fouzi-de-la-fuente
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Malédiction/Pénalité
+    cible: yannick-zachee
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 15
   type: elimination
-  complet: false
+  complet: true
   episode: '10'
   elimine: anne-sophie-mounier
   elimine_rattache: true
@@ -16213,10 +16561,16 @@
     cible: maxime-tournoux
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: maxime-tournoux
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 16
   type: elimination
-  complet: false
+  complet: true
   episode: '11'
   elimine: maxime-tournoux
   elimine_rattache: true
@@ -16273,6 +16627,24 @@
     cible: nicolas-bellon
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: maxime-tournoux
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Malédiction/Pénalité
+    cible: jean-charles-chatelus
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Malédiction/Pénalité
+    cible: nicolas-bellon
+    cible_rattachee: true
+    annule: false
 - saison: s23
   numero: 17
   type: elimination
@@ -16310,6 +16682,57 @@
     annule: false
   - votant: francois-descamp
     votant_rattache: true
+    cible: jean-charles-chatelus
+    cible_rattachee: true
+    annule: false
+  - votant: geraldine-nicolle
+    votant_rattache: true
+    cible: nicolas-bellon
+    cible_rattachee: true
+    annule: false
+  - votant: jean-charles-chatelus
+    votant_rattache: true
+    cible: nicolas-bellon
+    cible_rattachee: true
+    annule: false
+  - votant: ambre-daudet
+    votant_rattache: true
+    cible: jean-charles-chatelus
+    cible_rattachee: true
+    annule: false
+  - votant: olga-khokhlova
+    votant_rattache: true
+    cible: nicolas-bellon
+    cible_rattachee: true
+    annule: false
+  - votant: nicolas-bellon
+    votant_rattache: true
+    cible: geraldine-nicolle
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: geraldine-nicolle
+    cible_rattachee: true
+    annule: false
+- saison: s23
+  numero: 20
+  type: elimination
+  complet: true
+  episode: '13'
+  elimine: olga-khokhlova
+  elimine_rattache: true
+  votes_contre: 3
+  votes_exprimes: 8
+  votes:
+  - votant: bastien-san-pedro
+    votant_rattache: true
+    cible: geraldine-nicolle
+    cible_rattachee: true
+    annule: false
+  - votant: francois-descamp
+    votant_rattache: true
     cible: olga-khokhlova
     cible_rattachee: true
     annule: false
@@ -16330,22 +16753,19 @@
     annule: false
   - votant: olga-khokhlova
     votant_rattache: true
-    cible: nicolas-bellon
+    cible: ambre-daudet
     cible_rattachee: true
     annule: false
-- saison: s23
-  numero: 20
-  type: elimination
-  complet: false
-  episode: '13'
-  elimine: olga-khokhlova
-  elimine_rattache: true
-  votes_contre: 3
-  votes_exprimes: 8
-  votes:
-  - votant: olga-khokhlova
-    votant_rattache: true
-    cible: ambre-daudet
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: olga-khokhlova
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Malédiction/Pénalité
+    cible: jean-charles-chatelus
     cible_rattachee: true
     annule: false
 - saison: s23
@@ -16864,7 +17284,7 @@
 - saison: s24
   numero: 13
   type: elimination
-  complet: false
+  complet: true
   episode: '9'
   elimine: anne-sophie-antoine
   elimine_rattache: true
@@ -16926,10 +17346,16 @@
     cible: tania-cakarevic
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: julie-debever
+    cible_rattachee: true
+    annule: false
 - saison: s24
   numero: 14
   type: elimination
-  complet: false
+  complet: true
   episode: '10'
   elimine: helena-roosen
   elimine_rattache: true
@@ -16986,10 +17412,16 @@
     cible: tania-cakarevic
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: helena-roosen
+    cible_rattachee: true
+    annule: false
 - saison: s24
   numero: 15
   type: elimination
-  complet: false
+  complet: true
   episode: '11'
   elimine: gilles-de-baere
   elimine_rattache: true
@@ -17039,6 +17471,24 @@
   - votant: gilles-de-baere
     votant_rattache: true
     cible: esteban-garcia-mora
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: laura-yelpa
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: esteban-garcia-mora
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: gilles-de-baere
     cible_rattachee: true
     annule: false
 - saison: s24
@@ -17091,6 +17541,12 @@
     cible: nicolas-pretot
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: esteban-garcia-mora
+    cible_rattachee: true
+    annule: false
 - saison: s24
   numero: 17
   type: elimination
@@ -17104,7 +17560,7 @@
 - saison: s24
   numero: 18
   type: elimination
-  complet: false
+  complet: true
   episode: '13'
   elimine: tania-cakarevic
   elimine_rattache: true
@@ -17145,10 +17601,16 @@
     cible: tania-cakarevic
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: tania-cakarevic
+    cible_rattachee: true
+    annule: false
 - saison: s24
   numero: 19
   type: elimination
-  complet: false
+  complet: true
   episode: '14'
   elimine: laura-yelpa
   elimine_rattache: true
@@ -17185,17 +17647,29 @@
     cible: tania-cakarevic
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: quentin-paygnard
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: tania-cakarevic
+    cible_rattachee: true
+    annule: false
 - saison: s24
   numero: 20
   type: elimination
-  complet: false
+  complet: true
   episode: '15'
   elimine: quentin-paygnard
   elimine_rattache: true
   votes_contre: 2
   votes_exprimes: 7
   annulation: partielle
-  voix_annulees: 3
+  voix_annulees: 5
   proteges:
   - tania-cakarevic
   votes:
@@ -17221,6 +17695,18 @@
     annule: false
   - votant: quentin-paygnard
     votant_rattache: true
+    cible: tania-cakarevic
+    cible_rattachee: true
+    annule: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: tania-cakarevic
+    cible_rattachee: true
+    annule: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
     cible: tania-cakarevic
     cible_rattachee: true
     annule: true
@@ -18033,6 +18519,12 @@
     cible: amri-madani
     cible_rattachee: true
     annule: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: meissa-seck
+    cible_rattachee: true
+    annule: false
 - saison: s25
   numero: 17
   type: elimination
@@ -18116,6 +18608,12 @@
   - votant: sebastien-cazaux
     votant_rattache: true
     cible: julie-rignault
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: amri-madani
     cible_rattachee: true
     annule: false
 - saison: s25
@@ -18433,12 +18931,8 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
-  annulation: partielle
+  annulation: totale
   voix_annulees: 9
-  proteges:
-  - charlotte-rasquin
-  - lola-potabes
-  - michel-huy
   votes:
   - votant: thibault-belanger
     votant_rattache: true
@@ -18485,11 +18979,6 @@
     cible: michel-huy
     cible_rattachee: true
     annule: true
-  - votant: melissa-pierru
-    votant_rattache: true
-    cible: michel-huy
-    cible_rattachee: true
-    annule: false
 - saison: s26
   numero: 5
   type: elimination
@@ -18752,7 +19241,7 @@
 - saison: s26
   numero: 13
   type: elimination
-  complet: false
+  complet: true
   episode: '9'
   elimine: sarah-aboudeine
   elimine_rattache: true
@@ -18814,10 +19303,16 @@
     cible: frederic-khouvilay
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: sarah-aboudeine
+    cible_rattachee: true
+    annule: false
 - saison: s26
   numero: 14
   type: elimination
-  complet: false
+  complet: true
   episode: '10'
   elimine: frederic-khouvilay
   elimine_rattache: true
@@ -18879,6 +19374,12 @@
     cible: ugo-lartiche
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: frederic-khouvilay
+    cible_rattachee: true
+    annule: false
   - votant: Cécile
     votant_rattache: false
     cible: frederic-khouvilay
@@ -18887,7 +19388,7 @@
 - saison: s26
   numero: 15
   type: elimination
-  complet: false
+  complet: true
   episode: '11'
   elimine: maxim-iarkov
   elimine_rattache: true
@@ -18944,6 +19445,12 @@
     cible: jacques-roque
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: maxim-iarkov
+    cible_rattachee: true
+    annule: false
 - saison: s26
   numero: 16
   type: elimination
@@ -18957,7 +19464,7 @@
 - saison: s26
   numero: 17
   type: elimination
-  complet: false
+  complet: true
   episode: '12'
   elimine: gustin-comanescu
   elimine_rattache: true
@@ -19013,6 +19520,18 @@
     cible: Cécile
     cible_rattachee: false
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: gustin-comanescu
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: jacques-roque
+    cible_rattachee: true
+    annule: false
   - votant: Cécile
     votant_rattache: false
     cible: gustin-comanescu
@@ -19028,7 +19547,7 @@
   votes_contre: null
   votes_exprimes: null
   annulation: partielle
-  voix_annulees: 8
+  voix_annulees: 9
   proteges:
   - cassandre-lambert
   - ilyesse-benyoub
@@ -19074,6 +19593,12 @@
     cible: ilyesse-benyoub
     cible_rattachee: true
     annule: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: ugo-lartiche
+    cible_rattachee: true
+    annule: true
   - votant: Cécile
     votant_rattache: false
     cible: ilyesse-benyoub
@@ -19092,7 +19617,7 @@
 - saison: s26
   numero: 20
   type: elimination
-  complet: false
+  complet: true
   episode: '14'
   elimine: ugo-lartiche
   elimine_rattache: true
@@ -19126,6 +19651,12 @@
     annule: false
   - votant: ugo-lartiche
     votant_rattache: true
+    cible: charlotte-rasquin
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
     cible: charlotte-rasquin
     cible_rattachee: true
     annule: false
@@ -19452,7 +19983,7 @@
 - saison: s27
   numero: 8
   type: elimination
-  complet: false
+  complet: true
   episode: '5'
   elimine: mohamed-ayari
   elimine_rattache: true
@@ -19508,10 +20039,22 @@
     cible: nais-napoletano
     cible_rattachee: true
     annule: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: frederic-pignard
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: gaelle-fleury
+    cible_rattachee: true
+    annule: false
 - saison: s27
   numero: 9
   type: elimination
-  complet: false
+  complet: true
   episode: '6'
   elimine: pauline-leperchois
   elimine_rattache: true
@@ -19567,6 +20110,18 @@
     cible: andrea-zogron
     cible_rattachee: true
     annule: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: Jérôme
+    cible_rattachee: false
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: joana-callico
+    cible_rattachee: true
+    annule: false
 - saison: s27
   numero: 10
   type: elimination
@@ -19656,8 +20211,11 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
-  annulation: totale
+  annulation: partielle
   voix_annulees: 14
+  proteges:
+  - adrien-bernaert
+  - noemie-bessec
   votes:
   - votant: gaelle-fleury
     votant_rattache: true
@@ -19729,6 +20287,12 @@
     cible: noemie-bessec
     cible_rattachee: true
     annule: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: frederic-pignard
+    cible_rattachee: true
+    annule: false
 - saison: s27
   numero: 13
   type: elimination
@@ -19752,7 +20316,7 @@
 - saison: s27
   numero: 15
   type: elimination
-  complet: false
+  complet: true
   episode: '10'
   elimine: louise-picavet
   elimine_rattache: true
@@ -19819,10 +20383,16 @@
     cible: nais-napoletano
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: louise-picavet
+    cible_rattachee: true
+    annule: false
 - saison: s27
   numero: 16
   type: elimination
-  complet: false
+  complet: true
   episode: '11'
   elimine: joana-callico
   elimine_rattache: true
@@ -19884,17 +20454,29 @@
     cible: nais-napoletano
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: joana-callico
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: joana-callico
+    cible_rattachee: true
+    annule: false
 - saison: s27
   numero: 17
   type: elimination
-  complet: false
+  complet: true
   episode: '12'
   elimine: nais-napoletano
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 11
   annulation: partielle
-  voix_annulees: 4
+  voix_annulees: 5
   proteges:
   - Jérôme (O)
   votes:
@@ -19948,6 +20530,12 @@
     cible: Jérôme (O)
     cible_rattachee: false
     annule: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: Jérôme (O)
+    cible_rattachee: false
+    annule: true
 - saison: s27
   numero: 18
   type: elimination
@@ -19971,7 +20559,7 @@
 - saison: s27
   numero: 20
   type: elimination
-  complet: false
+  complet: true
   episode: '14'
   elimine: noemie-bessec
   elimine_rattache: true
@@ -20013,10 +20601,16 @@
     cible: gaelle-fleury
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: noemie-bessec
+    cible_rattachee: true
+    annule: false
 - saison: s27
   numero: 21
   type: elimination
-  complet: false
+  complet: true
   episode: '15'
   elimine: celine-faccio
   elimine_rattache: true
@@ -20050,6 +20644,18 @@
     annule: false
   - votant: celine-faccio
     votant_rattache: true
+    cible: Jérôme
+    cible_rattachee: false
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: celine-faccio
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
     cible: Jérôme
     cible_rattachee: false
     annule: false
@@ -23605,7 +24211,7 @@
   votes_contre: null
   votes_exprimes: null
   annulation: totale
-  voix_annulees: 10
+  voix_annulees: 11
   votes:
   - votant: clemence-castel
     votant_rattache: true
@@ -23655,6 +24261,12 @@
   - votant: dylan-thiry
     votant_rattache: true
     cible: jeremy-raffin
+    cible_rattachee: true
+    annule: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: javier-rodriguez
     cible_rattachee: true
     annule: true
 - saison: sp5
@@ -23730,7 +24342,7 @@
 - saison: sp5
   numero: 12
   type: elimination
-  complet: false
+  complet: true
   episode: '7'
   elimine: candice-boisson
   elimine_rattache: true
@@ -23777,10 +24389,16 @@
     cible: nathalie-ensargueix
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: nathalie-ensargueix
+    cible_rattachee: true
+    annule: false
 - saison: sp5
   numero: 13
   type: elimination
-  complet: false
+  complet: true
   episode: '8'
   elimine: alban-pellegrin
   elimine_rattache: true
@@ -23827,6 +24445,12 @@
     cible: jeremy-raffin
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: alban-pellegrin
+    cible_rattachee: true
+    annule: false
 - saison: sp5
   numero: 14
   type: elimination
@@ -23840,12 +24464,16 @@
 - saison: sp5
   numero: 15
   type: elimination
-  complet: false
+  complet: true
   episode: '9'
   elimine: cassandre-girard
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 8
+  annulation: partielle
+  voix_annulees: 1
+  proteges:
+  - clemence-castel
   votes:
   - votant: clemence-castel
     votant_rattache: true
@@ -23877,17 +24505,29 @@
     cible: jeremy-raffin
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: cassandre-girard
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: clemence-castel
+    cible_rattachee: true
+    annule: true
 - saison: sp5
   numero: 16
   type: elimination
-  complet: false
+  complet: true
   episode: '10'
   elimine: nathalie-ensargueix
   elimine_rattache: true
   votes_contre: 3
   votes_exprimes: 6
   annulation: partielle
-  voix_annulees: 2
+  voix_annulees: 3
   proteges:
   - jeremy-raffin
   votes:
@@ -23913,6 +24553,12 @@
     annule: false
   - votant: nathalie-ensargueix
     votant_rattache: true
+    cible: jeremy-raffin
+    cible_rattachee: true
+    annule: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
     cible: jeremy-raffin
     cible_rattachee: true
     annule: true
@@ -24271,7 +24917,7 @@
   votes_contre: null
   votes_exprimes: null
   annulation: partielle
-  voix_annulees: 11
+  voix_annulees: 12
   proteges:
   - ahmad-abadie
   - eric-peyrache
@@ -24342,10 +24988,16 @@
     cible: ahmad-abadie
     cible_rattachee: true
     annule: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: ahmad-abadie
+    cible_rattachee: true
+    annule: true
 - saison: sp6
   numero: 11
   type: elimination
-  complet: false
+  complet: true
   episode: '6'
   elimine: ahmad-abadie
   elimine_rattache: true
@@ -24412,10 +25064,16 @@
     cible: eric-peyrache
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: ahmad-abadie
+    cible_rattachee: true
+    annule: false
 - saison: sp6
   numero: 12
   type: elimination
-  complet: false
+  complet: true
   episode: '7'
   elimine: sam-haliti
   elimine_rattache: true
@@ -24477,6 +25135,18 @@
     cible: charlotte-caron
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: charlotte-caron
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: eric-peyrache
+    cible_rattachee: true
+    annule: false
 - saison: sp6
   numero: 13
   type: elimination
@@ -24487,7 +25157,7 @@
   votes_contre: null
   votes_exprimes: null
   annulation: totale
-  voix_annulees: 10
+  voix_annulees: 12
   votes:
   - votant: naoil-tita
     votant_rattache: true
@@ -24539,6 +25209,18 @@
     cible: eric-peyrache
     cible_rattachee: true
     annule: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: Alexandra/Eric
+    cible_rattachee: false
+    annule: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: eric-peyrache
+    cible_rattachee: true
+    annule: true
 - saison: sp6
   numero: 14
   type: elimination
@@ -24552,7 +25234,7 @@
 - saison: sp6
   numero: 15
   type: elimination
-  complet: false
+  complet: true
   episode: '9'
   elimine: jessica-potel
   elimine_rattache: true
@@ -24599,6 +25281,12 @@
     cible: alexandra-leveau
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: alexandra-leveau
+    cible_rattachee: true
+    annule: false
 - saison: sp6
   numero: 16
   type: elimination
@@ -24612,7 +25300,7 @@
 - saison: sp6
   numero: 17
   type: elimination
-  complet: false
+  complet: true
   episode: '10'
   elimine: regis-rappailles
   elimine_rattache: true
@@ -24647,6 +25335,12 @@
   - votant: regis-rappailles
     votant_rattache: true
     cible: alexandra-leveau
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: regis-rappailles
     cible_rattachee: true
     annule: false
 - saison: sp6
@@ -24814,6 +25508,12 @@
     cible: ugo-lartiche
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: sam-haliti
+    cible_rattachee: true
+    annule: false
 - saison: sp7
   numero: 3
   type: elimination
@@ -24824,11 +25524,6 @@
   votes_contre: 6
   votes_exprimes: 13
   votes:
-  - votant: ugo-lartiche
-    votant_rattache: true
-    cible: coumba-baradji
-    cible_rattachee: true
-    annule: false
   - votant: jade-handi
     votant_rattache: true
     cible: clemence-castel
@@ -24879,19 +25574,30 @@
     cible: karima-neggaz
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: alexandra-pornet
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: clementine-jullien
+    cible_rattachee: true
+    annule: false
 - saison: sp7
   numero: 4
   type: elimination
-  complet: false
+  complet: true
   episode: '2'
   elimine: patrick-merle
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 11
   annulation: partielle
-  voix_annulees: 5
+  voix_annulees: 4
   proteges:
-  - alix-noblat
   - maxime-berthon
   votes:
   - votant: claude-dartois
@@ -24902,11 +25608,6 @@
   - votant: laurent-maistret
     votant_rattache: true
     cible: maxime-berthon
-    cible_rattachee: true
-    annule: true
-  - votant: ugo-lartiche
-    votant_rattache: true
-    cible: alix-noblat
     cible_rattachee: true
     annule: true
   - votant: philippe-bizet
@@ -24944,10 +25645,22 @@
     cible: maxime-berthon
     cible_rattachee: true
     annule: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: laurent-maistret
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: patrick-merle
+    cible_rattachee: true
+    annule: false
 - saison: sp7
   numero: 5
   type: elimination
-  complet: false
+  complet: true
   episode: '2'
   elimine: cindy-poumeyrol
   elimine_rattache: true
@@ -25003,10 +25716,22 @@
     cible: alexandra-pornet
     cible_rattachee: true
     annule: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: christelle-gauzet
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: cindy-poumeyrol
+    cible_rattachee: true
+    annule: false
 - saison: sp7
   numero: 6
   type: elimination
-  complet: false
+  complet: true
   episode: '3'
   elimine: maxime-berthon
   elimine_rattache: true
@@ -25016,11 +25741,6 @@
   - votant: claude-dartois
     votant_rattache: true
     cible: maxime-berthon
-    cible_rattachee: true
-    annule: false
-  - votant: ugo-lartiche
-    votant_rattache: true
-    cible: alix-noblat
     cible_rattachee: true
     annule: false
   - votant: philippe-bizet
@@ -25061,7 +25781,7 @@
 - saison: sp7
   numero: 7
   type: elimination
-  complet: false
+  complet: true
   episode: '4'
   elimine: clementine-jullien
   elimine_rattache: true
@@ -25069,11 +25789,6 @@
   votes_exprimes: 8
   votes:
   - votant: laurent-maistret
-    votant_rattache: true
-    cible: jade-handi
-    cible_rattachee: true
-    annule: false
-  - votant: ugo-lartiche
     votant_rattache: true
     cible: jade-handi
     cible_rattachee: true
@@ -25209,12 +25924,7 @@
   elimine_rattache: false
   votes_contre: null
   votes_exprimes: null
-  votes:
-  - votant: ugo-lartiche
-    votant_rattache: true
-    cible: jade-handi
-    cible_rattachee: true
-    annule: false
+  votes: []
 - saison: sp7
   numero: 11
   type: elimination
@@ -25230,6 +25940,11 @@
     cible: coumba-baradji
     cible_rattachee: true
     annule: false
+  - votant: ugo-lartiche
+    votant_rattache: true
+    cible: coumba-baradji
+    cible_rattachee: true
+    annule: false
   - votant: clemence-castel
     votant_rattache: true
     cible: coumba-baradji
@@ -25238,14 +25953,14 @@
 - saison: sp7
   numero: 12
   type: elimination
-  complet: false
+  complet: true
   episode: '8'
   elimine: namadia-thai-thai
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 14
   annulation: partielle
-  voix_annulees: 6
+  voix_annulees: 7
   proteges:
   - alix-noblat
   votes:
@@ -25261,9 +25976,9 @@
     annule: false
   - votant: ugo-lartiche
     votant_rattache: true
-    cible: jade-handi
+    cible: alix-noblat
     cible_rattachee: true
-    annule: false
+    annule: true
   - votant: jade-handi
     votant_rattache: true
     cible: alix-noblat
@@ -25314,6 +26029,12 @@
     cible: alix-noblat
     cible_rattachee: true
     annule: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: namadia-thai-thai
+    cible_rattachee: true
+    annule: false
 - saison: sp7
   numero: 13
   type: elimination
@@ -25342,6 +26063,11 @@
   - votant: laurent-maistret
     votant_rattache: true
     cible: clemence-castel
+    cible_rattachee: true
+    annule: false
+  - votant: ugo-lartiche
+    votant_rattache: true
+    cible: alix-noblat
     cible_rattachee: true
     annule: false
   - votant: jade-handi
@@ -25404,6 +26130,11 @@
     cible: christelle-gauzet
     cible_rattachee: true
     annule: false
+  - votant: ugo-lartiche
+    votant_rattache: true
+    cible: jade-handi
+    cible_rattachee: true
+    annule: false
   - votant: jade-handi
     votant_rattache: true
     cible: laurent-maistret
@@ -25439,6 +26170,18 @@
     cible: alix-noblat
     cible_rattachee: true
     annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: jade-handi
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité
+    cible: sam-haliti
+    cible_rattachee: true
+    annule: false
 - saison: sp7
   numero: 16
   type: elimination
@@ -25458,14 +26201,7 @@
   elimine_rattache: false
   votes_contre: null
   votes_exprimes: null
-  annulation: totale
-  voix_annulees: 1
-  votes:
-  - votant: ugo-lartiche
-    votant_rattache: true
-    cible: claude-dartois
-    cible_rattachee: true
-    annule: true
+  votes: []
 - saison: sp7
   numero: 18
   type: elimination
@@ -25494,6 +26230,11 @@
   - votant: laurent-maistret
     votant_rattache: true
     cible: alix-noblat
+    cible_rattachee: true
+    annule: false
+  - votant: ugo-lartiche
+    votant_rattache: true
+    cible: jade-handi
     cible_rattachee: true
     annule: false
   - votant: jade-handi
@@ -25546,6 +26287,11 @@
     cible: ugo-lartiche
     cible_rattachee: true
     annule: false
+  - votant: ugo-lartiche
+    votant_rattache: true
+    cible: jade-handi
+    cible_rattachee: true
+    annule: false
   - votant: jade-handi
     votant_rattache: true
     cible: ugo-lartiche
@@ -25565,14 +26311,7 @@
   elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
-  annulation: totale
-  voix_annulees: 1
-  votes:
-  - votant: christelle-gauzet
-    votant_rattache: true
-    cible: claude-dartois
-    cible_rattachee: true
-    annule: true
+  votes: []
 - saison: sp7
   numero: 23
   type: elimination
@@ -25582,24 +26321,7 @@
   elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
-  annulation: totale
-  voix_annulees: 3
-  votes:
-  - votant: alexandra-pornet
-    votant_rattache: true
-    cible: claude-dartois
-    cible_rattachee: true
-    annule: true
-  - votant: coumba-baradji
-    votant_rattache: true
-    cible: claude-dartois
-    cible_rattachee: true
-    annule: true
-  - votant: clementine-jullien
-    votant_rattache: true
-    cible: claude-dartois
-    cible_rattachee: true
-    annule: true
+  votes: []
 - saison: sp7
   numero: 24
   type: elimination
@@ -25609,26 +26331,12 @@
   elimine_rattache: true
   votes_contre: 1
   votes_exprimes: null
-  annulation: partielle
-  voix_annulees: 2
-  proteges:
-  - laurent-maistret
   votes:
   - votant: laurent-maistret
     votant_rattache: true
     cible: ugo-lartiche
     cible_rattachee: true
     annule: false
-  - votant: alix-noblat
-    votant_rattache: true
-    cible: laurent-maistret
-    cible_rattachee: true
-    annule: true
-  - votant: loic-riowal
-    votant_rattache: true
-    cible: laurent-maistret
-    cible_rattachee: true
-    annule: true
 - saison: sp7
   numero: 25
   type: jury
@@ -25639,9 +26347,19 @@
   votes_pour: null
   votes_exprimes: null
   annulation: totale
-  voix_annulees: 2
+  voix_annulees: 4
   votes:
   - votant: jade-handi
+    votant_rattache: true
+    cible: laurent-maistret
+    cible_rattachee: true
+    annule: true
+  - votant: alix-noblat
+    votant_rattache: true
+    cible: laurent-maistret
+    cible_rattachee: true
+    annule: true
+  - votant: loic-riowal
     votant_rattache: true
     cible: laurent-maistret
     cible_rattachee: true
@@ -25661,8 +26379,13 @@
   votes_pour: null
   votes_exprimes: null
   annulation: totale
-  voix_annulees: 4
+  voix_annulees: 9
   votes:
+  - votant: ugo-lartiche
+    votant_rattache: true
+    cible: claude-dartois
+    cible_rattachee: true
+    annule: true
   - votant: philippe-bizet
     votant_rattache: true
     cible: claude-dartois
@@ -25673,12 +26396,32 @@
     cible: claude-dartois
     cible_rattachee: true
     annule: true
+  - votant: christelle-gauzet
+    votant_rattache: true
+    cible: claude-dartois
+    cible_rattachee: true
+    annule: true
+  - votant: alexandra-pornet
+    votant_rattache: true
+    cible: claude-dartois
+    cible_rattachee: true
+    annule: true
   - votant: teheiura-teahui
     votant_rattache: true
     cible: claude-dartois
     cible_rattachee: true
     annule: true
   - votant: clemence-castel
+    votant_rattache: true
+    cible: claude-dartois
+    cible_rattachee: true
+    annule: true
+  - votant: coumba-baradji
+    votant_rattache: true
+    cible: claude-dartois
+    cible_rattachee: true
+    annule: true
+  - votant: clementine-jullien
     votant_rattache: true
     cible: claude-dartois
     cible_rattachee: true

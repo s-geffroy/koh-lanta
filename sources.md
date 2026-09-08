@@ -864,6 +864,71 @@ conseil quand l’épisode en compte plusieurs.
 [Sachant qui est autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }})
 s’appuie sur cette règle.
 
+## Les bulletins que personne n’écrit
+
+{% assign cs = site.data.stats.conseils %}
+
+Le site mesurait **20 %** de conseils dépouillés sur la période 2020-2024, contre
+67 % au début des années 2000, et cette chute était donnée pour ce qu’elle
+semblait être : une source qui en dirait moins. Vérification faite, c’est faux.
+Le parseur lit **97 %** des bulletins que les matrices annoncent. Ce qui
+manquait n’était pas la donnée, c’était une **règle de tout ou rien**.
+
+Un conseil n’est déclaré dépouillé que si le nombre de bulletins lus égale
+exactement le nombre de voix que la source annonce. Or, depuis 2017, le jeu
+produit des voix **que personne n’écrit** : le *vote noir* qu’un éliminé offre à
+un survivant, la *pénalité*, la *malédiction* qui donne une voix d’office à
+celui qui la porte. La matrice leur consacre une ligne à part, sous les
+candidats. Elles comptent dans le total annoncé — et aucun calcul de ce site ne
+les comptait.
+
+Il en manquait donc systématiquement une ou deux par conseil, et le conseil
+entier tombait. Pas une erreur, pas un avertissement : simplement une case
+« complet » à `false`, et vingt-cinq conseils de la saison 23 absents de toutes
+les analyses au bulletin — sur une saison dont **82 % des bulletins étaient
+pourtant lus**.
+
+<div class="constat">
+  <p><b>120 bulletins sans votant</b> ont été rendus, sur treize saisons de 2017
+  à 2025 : 56 votes noirs, 44 pénalités, 20 malédictions.</p>
+  <p>Conseils dépouillés : <b>279 → {{ cs.conseils_complets }}</b>. Sur
+  2020-2024, la part passe de <b>20 % à 39 %</b> ; sur 2015-2019, de 44 % à
+  56 %. <b>Aucune saison antérieure à 2015 ne bouge d’un bulletin</b> — ce qui
+  est le contrôle : la réparation ne devait toucher que les saisons où ces
+  mécaniques existent.</p>
+</div>
+
+Un bulletin de mécanique **n’a pas de votant**, et le fichier le dit : il porte
+`votant: null` et le motif qui l’a produit. Toutes les mesures du côté de
+l’émetteur — la lecture, les alliances, la réciprocité, qui-vise-qui — le
+laissent donc de côté sans qu’aucune ne l’ait demandé, parce qu’elles filtrent
+déjà sur `votant_rattache`. Il ne compte que **là où il a un sens** : au-dessus
+de la personne visée.
+
+<p class="note"><strong>Un second défaut, trouvé en réparant le premier.</strong>
+Une cellule bien formée sépare ses attributs de son contenu par un tuyau :
+<code>| rowspan="3" | Lili</code>. Les tables récentes écrivent parfois
+<code>| rowspan="3" &#123;&#123;Tribebox-bw|Ilog|Lili&#125;&#125;</code> — sans le second
+tuyau, le suivant appartenant au modèle. Deux choses cassaient alors ensemble et
+sans bruit : le <code>rowspan</code> n’était jamais appliqué, donc toutes les
+lignes suivantes glissaient d’une colonne ; et le nom visé devenait
+<code>rowspan="3" Lili</code>, que le contrôle « est-ce un vote ? » rejetait à
+cause du signe égal — un contrôle posé, justement, pour attraper les attributs
+qui débordent.</p>
+
+<p class="note"><strong>Ce que la réparation a déplacé, et il faut le dire en
+entier.</strong> Trois résultats changent de statut après correction de
+Benjamini-Hochberg. Deux entrent :
+<a href="{{ '/statistiques/qui-vise-qui/' | relative_url }}">on épargne le
+voisin de département</a> et
+<a href="{{ '/statistiques/autour-du-feu/' | relative_url }}">être du sexe
+minoritaire protège</a>. Un sort :
+<a href="{{ '/statistiques/conditionnelles/' | relative_url }}">le sommet de la
+menace</a>, dont l’écart a maigri de moitié — 15,4 points à 9,5 — dès que les
+conseils qui lui manquaient sont arrivés. <strong>Un résultat qui tombe quand
+l’échantillon grandit est un résultat qui n’aurait pas dû être affirmé</strong> ;
+celui-là a été affirmé, et il l’est resté plusieurs semaines.</p>
+
 ## Comment c’est fabriqué
 
 Les données sont extraites, croisées et vérifiées par des scripts Python, puis

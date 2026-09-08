@@ -93,16 +93,40 @@ def cellules_brutes(ligne):
     return cells
 
 
+# Une cellule bien formee separe ses attributs de son contenu par un tuyau :
+# « | rowspan="3" | Lili ». Les tables recentes omettent parfois le second
+# tuyau et ecrivent « | rowspan="3" {{Tribebox-bw|Ilog|Lili}} ». Le tuyau
+# suivant appartient alors au MODELE, pas a la cellule : la regle du tuyau ne
+# trouve rien, les attributs restent colles au contenu, et deux choses cassent
+# en silence -- le `rowspan` n'est jamais applique (toutes les lignes
+# suivantes glissent d'une colonne) et le nom vise devient « rowspan="3" Lili »,
+# que `est_un_vote` refuse a cause du `="`. Onze bulletins de la saison 23
+# disparaissaient ainsi.
+RE_ATTRIBUTS_NUS = re.compile(r'^\s*((?:[a-zA-Z-]+\s*=\s*"[^"]*"\s*)+)(?=\S)')
+
+
 def separer_attributs(cell):
     """Rend (attributs, contenu) pour une cellule."""
     m = re.match(r'^([^|\[{\n]*?)\|(?!\|)', cell)
     if m and "=" in m.group(1):
         return m.group(1), cell[m.end():]
+    # Pas de tuyau separateur : on ne reconnait comme attributs qu'une suite de
+    # `nom="valeur"` en tete. Un contenu ordinaire n'a pas cette forme, et un
+    # nom d'aventurier encore moins.
+    m = RE_ATTRIBUTS_NUS.match(cell)
+    if m:
+        return m.group(1), cell[m.end():]
     return "", cell
 
 
-def developper(table):
-    """Developpe la table en grille rectangulaire, fusions recopiees."""
+def developper(table, avec_origine=False):
+    """Developpe la table en grille rectangulaire, fusions recopiees.
+
+    Avec `avec_origine`, rend aussi une grille de booleens disant si chaque
+    case a ete ECRITE a cet endroit ou seulement RECOPIEE depuis une fusion.
+    La distinction compte pour les lignes de mecanique : une case `rowspan="3"`
+    y couvre trois lignes mais ne vaut qu'un seul bulletin.
+    """
     lignes = re.split(r"\n\|-+[^\n]*", table)
     # Le premier morceau contient la ligne d'ouverture `{| ...` ET, souvent, la
     # premiere ligne d'en-tete. Jeter le morceau entier ferait disparaitre cette
@@ -115,11 +139,13 @@ def developper(table):
     lignes = [l for l in lignes if l.strip()]
 
     grille = []
+    origines = []
     # cellules encore actives verticalement : colonne -> (contenu, lignes restantes)
     reports = {}
 
     for ligne in lignes:
         rang = []
+        source = []
         col = 0
         # d'abord replacer les cellules reportees depuis les lignes du dessus
         def poser_reports():
@@ -127,6 +153,7 @@ def developper(table):
             while col in reports:
                 contenu, restant = reports[col]
                 rang.append(contenu)
+                source.append(False)
                 if restant <= 1:
                     del reports[col]
                 else:
@@ -138,14 +165,18 @@ def developper(table):
             attrs, contenu = separer_attributs(cell)
             largeur = int(RE_COLSPAN.search(attrs).group(1)) if RE_COLSPAN.search(attrs) else 1
             hauteur = int(RE_ROWSPAN.search(attrs).group(1)) if RE_ROWSPAN.search(attrs) else 1
-            for _ in range(largeur):
+            for i in range(largeur):
                 rang.append(contenu)
+                # Une case etalee horizontalement n'est ecrite qu'une fois :
+                # c'est sa premiere colonne. Les suivantes sont des copies.
+                source.append(i == 0)
                 if hauteur > 1:
                     reports[col] = (contenu, hauteur - 1)
                 col += 1
                 poser_reports()
         grille.append(rang)
-    return grille
+        origines.append(source)
+    return (grille, origines) if avec_origine else grille
 
 
 def texte(cell):
@@ -161,6 +192,18 @@ RE_PAS_UN_VOTE = re.compile(
     r"[ée]galit|retour|d[ée]faite|victoire|candidat|votes?\b|"
     r"[\u25ba\u25bc\u25b2]|=\"|\{\{|^[-/.\s]*$|^\d+$|^\d+\s*/\s*\d+$",
     re.I)
+
+
+# Depuis 2017, le jeu produit des bulletins qui n'ont PAS de votant : le « vote
+# noir » (un elimine offre une seconde voix a quelqu'un, la matrice ne dit pas
+# toujours a qui), la « penalite » et la « malediction » (une voix imposee par
+# le jeu). La matrice leur donne une ligne a part, sous les candidats. Ces
+# bulletins comptent dans le total annonce par la source : les ignorer rendait
+# le decompte incoherent, donc le conseil « incomplet », donc absent de TOUTE
+# analyse au bulletin. Cinquante-deux conseils, tous posterieurs a 2017,
+# etaient jetes pour cette seule raison.
+RE_LIGNE_MECANIQUE = re.compile(
+    r"^(vote\s*noir|p[ée]nalit[ée]?|mal[ée]diction)", re.I)
 
 
 def est_un_vote(nom):
@@ -220,7 +263,7 @@ def parse_page(wikitexte, saison_id=None, homonymes=()):
     table = extract_table(wikitexte, titre=r"D[ée]tails? des votes")
     if table is None:
         return []
-    grille = developper(table)
+    grille, ecrites = developper(table, avec_origine=True)
     if not grille:
         return []
 
@@ -247,7 +290,10 @@ def parse_page(wikitexte, saison_id=None, homonymes=()):
     # les lignes de votants : celles qui suivent la ligne des votes
     depart = grille.index(l_votes) + 1 if l_votes is not None else grille.index(l_elimine) + 1
     votants = []
-    for rang in grille[depart:]:
+    mecaniques = []
+    # enumerate plutot que grille.index : deux lignes de la matrice peuvent
+    # etre rigoureusement identiques, et `index` rendrait alors la premiere.
+    for rang_no, rang in enumerate(grille[depart:], depart):
         # Le nom du votant est dans la DERNIERE colonne d'etiquette, pas la
         # premiere : quand l'intitule est fusionne sur deux ou trois colonnes,
         # les lignes de votants y logent d'abord leurs pastilles de tribu.
@@ -261,7 +307,15 @@ def parse_page(wikitexte, saison_id=None, homonymes=()):
         # totaux) : ce ne sont pas des votants.
         if not nom or len(nom) > 30:
             continue
-        if re.match(r"^[►▼▲]", nom) or not est_un_vote(nom):
+        if re.match(r"^[►▼▲]", nom):
+            continue
+        if RE_LIGNE_MECANIQUE.match(re.sub(r"\s+", " ", nom)):
+            # Une ligne de mecanique : ses cases sont des bulletins, mais sans
+            # votant. On garde l'origine de chaque case, car une case fusionnee
+            # sur trois lignes ne vaut qu'un bulletin, pas trois.
+            mecaniques.append((re.sub(r"\s+", " ", nom), rang, ecrites[rang_no]))
+            continue
+        if not est_un_vote(nom):
             continue
         votants.append((nom, rang))
 
@@ -297,6 +351,19 @@ def parse_page(wikitexte, saison_id=None, homonymes=()):
             if vise == nom and slug(nom) not in homonymes:
                 continue
             bulletins.append({"votant": nom, "cible": vise, "annule": annule})
+
+        # Les bulletins sans votant : vote noir, penalite, malediction. On ne
+        # compte que les cases ECRITES a cette colonne ; une case etalee par
+        # `rowspan` ou `colspan` a ete recopiee, et la recopier au decompte
+        # multiplierait un bulletin unique par sa hauteur.
+        for libelle, rang, ecrite in mecaniques:
+            if col >= len(rang) or not (col < len(ecrite) and ecrite[col]):
+                continue
+            vise, annule = cible(rang[col])
+            if not est_un_vote(vise):
+                continue
+            bulletins.append({"votant": None, "mecanique": libelle,
+                              "cible": vise, "annule": annule})
 
         # Un conseil est dit complet quand le nombre de bulletins effectivement
         # lus egale le nombre de voix annonce par la source. Les statistiques

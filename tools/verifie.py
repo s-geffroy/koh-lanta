@@ -186,6 +186,38 @@ def verifier_matrices_de_votes(conseils, c):
                      f"comprise")
 
 
+def verifier_bulletins_sans_votant(conseils, c):
+    """Un bulletin sans votant doit dire POURQUOI il n'en a pas.
+
+    Depuis 2017, le jeu impose des voix que personne n'ecrit : vote noir,
+    penalite, malediction. Elles comptent dans le total annonce par la source,
+    et sans elles cinquante-huit conseils restaient « incomplets » -- donc
+    absents de toute analyse au bulletin, en silence.
+
+    Deux fautes se ressemblent et n'ont pas le meme sens. Un bulletin sans
+    votant ET sans motif est un votant qu'on a perdu ; un bulletin qui porte un
+    motif ET un votant est un votant qu'on a invente. Les deux sont des
+    erreurs, et aucune ne produirait le moindre message sans ce controle.
+    """
+    orphelins = motives = 0
+    for x in conseils:
+        for b in x.get("votes") or []:
+            a_votant = bool(b.get("votant"))
+            motif = b.get("mecanique")
+            if not a_votant and not motif:
+                orphelins += 1
+            if a_votant and motif:
+                motives += 1
+                c.erreur(f"{x.get('saison')} conseil {x.get('numero')} : le "
+                         f"bulletin « {b.get('votant')} » porte le motif "
+                         f"« {motif} » — un bulletin de mecanique n'a pas de "
+                         f"votant, par definition")
+    if orphelins:
+        c.erreur(f"{orphelins} bulletin(s) sans votant et sans motif : un "
+                 f"votant perdu ne se distingue plus d'une voix imposee par "
+                 f"le jeu")
+
+
 # Ce que la colonne « tribu » dit parfois a la place d'une tribu : une
 # situation. Banni sur une ile, absent d'un episode -- la personne n'est alors
 # dans aucun campement, et la saison n'a aucune raison de declarer ces mots.
@@ -907,6 +939,7 @@ def main():
     if saisons and parts and conseils:
         verifier_conseils(conseils, saisons, parts, c)
         verifier_matrices_de_votes(conseils, c)
+        verifier_bulletins_sans_votant(conseils, c)
     if saisons and parts and colliers:
         verifier_colliers(colliers, saisons, parts, c)
     if parts and personnes:

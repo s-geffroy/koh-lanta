@@ -114,10 +114,10 @@ chaque conseil est pris au hasard parmi les présents.</p>
   étaient. Ne bouge que la question posée.</p>
 </div>
 
-## Le retournement : trop visé pour partir
+## Le retournement : trop visé pour partir — et ce qu’on n’a plus le droit d’en dire
 
-La courbe ne monte pas indéfiniment. Elle culmine à deux ou trois voix, puis
-elle **redescend sous le hasard**.
+La courbe ne monte pas indéfiniment. Elle culmine à deux voix, puis elle
+**redescend sous le hasard**.
 
 {% include graphiques/conditionnelles-sommet.svg %}
 
@@ -132,14 +132,27 @@ nul.</p>
   <b>{{ gros.probabilite }} %</b> pour cinq voix et plus — soit un cas sur
   {{ gros.effectif }}.</p>
   <p>L’écart vaut {{ t2.observe | round: 1 }} points, {{ t2.ecart_types }} écarts-types,
-  p ajustée {{ t2.p_ajustee }}.</p>
+  p ajustée <b>{{ t2.p_ajustee }}</b> — <b>non retenu</b>.</p>
 </div>
 
-L’explication tient en une phrase, et elle est de survie : **qui a encaissé
-quatre bulletins et se trouve encore là au conseil suivant a nécessairement été
-protégé** — par un collier, par un tour nul, par une majorité qui s’est
-recomposée. Cette protection ne s’évapore pas entre deux conseils. Deux
-bulletins, eux, ne déclenchent rien : ils désignent sans sauver.
+<p class="note"><strong>Ce résultat était retenu ; il ne l’est plus, et le
+dénominateur a grandi.</strong> D’ordinaire un test tombe parce que les données
+manquent. Ici, cinquante-huit conseils dépouillés se sont AJOUTÉS — les
+<a href="{{ '/sources/' | relative_url }}">bulletins sans votant</a> que le jeu
+impose depuis 2017, vote noir, pénalité, malédiction, qu’aucun calcul ne
+comptait — et l’écart est passé de 15,4 points à
+{{ t2.observe | round: 1 }}, la p ajustée de 0,040 à {{ t2.p_ajustee }}.
+<strong>Le sommet n’a pas disparu ; il a maigri de moitié dès qu’on lui a donné
+les conseils qui lui manquaient.</strong> C’est exactement ce qu’un effet
+fabriqué par un petit échantillon fait quand l’échantillon grandit, et c’est
+pour cela qu’on le dit ici plutôt que de garder l’ancienne phrase.</p>
+
+L’explication qu’on avançait tenait en une phrase, et elle est de survie : qui a
+encaissé quatre bulletins et se trouve encore là au conseil suivant a
+nécessairement été protégé — par un collier, par un tour nul, par une majorité
+qui s’est recomposée. Elle reste la lecture la plus économe de la forme
+observée. Elle n’est plus une conclusion de ce site : c’est une hypothèse que la
+courbe illustre et que le test ne soutient pas.
 
 {% assign sc = c.par_voix_sans_collier | where: "modalite", "5 voix et plus" | first %}
 <p class="note"><strong>La vérification qui s’imposait.</strong> Si le
@@ -153,8 +166,8 @@ Voir <a href="{{ '/statistiques/colliers/' | relative_url }}">Les colliers</a>.<
 <p class="note"><strong>Ce que ces effectifs autorisent, et rien de plus.</strong>
 Les cases à quatre voix et plus tiennent en quelques dizaines de présences, et
 leurs intervalles sont larges — c’est visible sur la figure, et c’est pour cela
-qu’ils y sont dessinés. Le retournement est net, sa <em>hauteur</em> ne l’est
-pas.</p>
+qu’ils y sont dessinés. Ni le retournement ni sa <em>hauteur</em> ne sont
+établis.</p>
 
 ### Ceux qui ont encaissé quatre voix et sont restés
 

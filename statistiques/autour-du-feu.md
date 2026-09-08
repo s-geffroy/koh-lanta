@@ -167,28 +167,30 @@ représenté du camp et partir quand il est le plus représenté.</p>
   <b>{{ smaj.probabilite }} %</b> ({{ smaj.cas }} sur {{ smaj.effectif }}).</p>
   <p>{{ ts.observe | round: 1 }} points, {{ ts.ecart_types }} écarts-types
   <b>sous</b> le hasard. Prise seule, la p vaut {{ ts.p }} ; corrigée avec les
-  quarante et un autres tests de ce site, elle vaut
-  <b>{{ ts.p_ajustee }}</b> — et <b>ce résultat n’est donc plus retenu</b>.</p>
+  quarante-deux autres tests de ce site, elle vaut
+  <b>{{ ts.p_ajustee }}</b> — et <b>ce résultat est retenu</b>.</p>
 </div>
 
-<p class="note"><strong>Cette phrase-ci a remplacé la précédente, et il vaut la
-peine de dire pourquoi.</strong> Cette page annonçait que ce résultat portait la
-plus haute des p ajustées retenues, et qu’« une saison de plus pourrait la faire
-basculer ». Ce n’est pas une saison qui l’a fait basculer, c’est une
-<a href="{{ '/sources/' | relative_url }}">réparation d’extraction</a> : des
-libellés de la forme « Ugo Lartiche Ugo », résidus d’une cellule qui mêle une
-vignette et un prénom, ne se rattachaient à personne. Quarante-quatre
-éliminations sont revenues, l’écart n’a presque pas bougé — de
-{{ ts.observe | round: 1 }} points contre 4,5 auparavant — mais la correction
-pour tests multiples ne le garde plus. <strong>L’effet est le même ; c’est notre
-droit de l’affirmer qui a changé.</strong></p>
+<p class="note"><strong>Ce paragraphe en est à sa troisième version, et les
+trois méritent d’être dites.</strong> Cette page a d’abord annoncé le résultat
+comme retenu, en précisant qu’il portait la plus haute des p ajustées et qu’«&nbsp;une
+saison de plus pourrait le faire basculer&nbsp;». Une
+<a href="{{ '/sources/' | relative_url }}">réparation d’extraction</a> l’a
+ensuite fait basculer — des libellés « Ugo Lartiche Ugo » qui ne se rattachaient
+à personne, quarante-quatre éliminations revenues — et la page a écrit qu’il
+n’était plus retenu. Une seconde réparation vient de le rendre : les
+<a href="{{ '/sources/' | relative_url }}">bulletins sans votant</a> — vote noir,
+pénalité, malédiction — n’étaient comptés nulle part, et cinquante-huit conseils
+dépouillés en dépendaient. Avec eux, l’écart se creuse et la p ajustée retombe à
+{{ ts.p_ajustee }}. <strong>Trois états pour un seul fait : ce n’est pas le jeu
+qui a changé, c’est ce que nous avions le droit d’en dire.</strong> Une page qui
+ne raconte que le dernier état laisse croire à une certitude qui n’existe
+pas.</p>
 
 L’écart va à l’inverse du bandeau, et à l’inverse de l’intuition. La lecture la
-plus économe serait que **la majorité se mange elle-même** : quand un camp compte
-six hommes et trois femmes, les bulletins des six se partagent entre eux. Mais
-il faut lire cette explication pour ce qu’elle est — une explication d’un écart
-qu’on ne peut plus distinguer du hasard une fois la correction appliquée. Elle
-attend d’autres saisons.
+plus économe est que **la majorité se mange elle-même** : quand un camp compte
+six hommes et trois femmes, les bulletins des six se partagent entre eux. Elle
+tient, mais elle n’est pas la seule.
 
 <p class="note"><strong>Une seconde lecture, tout aussi compatible, et elle
 oblige à la prudence.</strong> Un sexe devient minoritaire dans un camp <em>parce

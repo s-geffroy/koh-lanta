@@ -163,10 +163,10 @@ plus tôt que les hommes en moyenne — et remportent pourtant
   {{ tmv.ecart_types }} écarts-types au-dessus du hasard, p ajustée
   {{ tmv.p_ajustee }}.</p>
   {% assign gr = co.par_voix | where: "modalite", "5 voix et plus" | first %}
-  <p>Mais la menace a un <b>sommet</b>. À cinq voix et plus, la probabilité
-  retombe à <b>{{ gr.probabilite }} %</b>, sous le hasard : qui a encaissé un
-  vote massif et se trouve encore là au conseil suivant a nécessairement été
-  protégé, et cette protection ne s’évapore pas.</p>
+  <p>Au-delà, la courbe redescend : à cinq voix et plus, la probabilité retombe
+  à <b>{{ gr.probabilite }} %</b>, sous le hasard. Sur {{ gr.effectif }} présences
+  seulement — <b>ce retournement-là n’est pas retenu</b> (p ajustée
+  {{ tms.p_ajustee }}), et la page dit pourquoi il a maigri.</p>
   <p><a href="{{ '/statistiques/conditionnelles/' | relative_url }}">Sachant le conseil d’avant</a></p>
 </div>
 

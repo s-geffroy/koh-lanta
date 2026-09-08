@@ -97,7 +97,7 @@ gens partagent votre famille de métier dans un camp de vingt.
 tests multiples (p ajustée {{ t.p_ajustee }}), et **il vaut deux mois**. Il n’y a
 rien à en tirer.
 
-## Le voisin : peut-être, mais on ne peut pas le dire
+## Le voisin : on l’épargne
 
 {% assign td = site.data.stats.modeles.registre | where: "cle", "vote_meme_departement" | first %}
 
@@ -117,14 +117,21 @@ l’intérieur de chaque conseil.</p>
   <p><b>{{ td.observe }} %</b> des bulletins visent quelqu’un du même
   département, pour <b>{{ td.attendu }} %</b> attendus : l’observé est
   <b>sous</b> l’attendu, {{ td.ecart_types }} écarts-types, p brute {{ td.p }},
-  p ajustée <b>{{ td.p_ajustee }}</b>. <b>Non concluant.</b></p>
-  <p>L’écart va dans le sens d’une protection — on épargnerait un peu le voisin
-  — mais il ne franchit pas le seuil, et il ne le franchit pas de peu. Les
-  couples de même département sont rares dans un camp de huit : le test est
-  faible par construction. Ce qu’on peut dire, c’est qu’il faudrait beaucoup
-  plus de conseils pour trancher ; ce qu’on ne peut pas dire, c’est que le pays
-  commun protège.</p>
+  p ajustée <b>{{ td.p_ajustee }}</b>. <b>Retenu.</b></p>
+  <p>On vise le voisin moins souvent que le partage des bulletins ne le
+  voudrait. C’est le seul trait de la fiche d’inscription qui protège au lieu
+  d’exposer — le bandeau, lui, expose.</p>
 </div>
+
+<p class="note"><strong>Cette section disait le contraire il y a deux jours, et
+c’est une réparation qui l’a retournée.</strong> Elle concluait « non concluant »,
+sur une p ajustée de 0,077. Les
+<a href="{{ '/sources/' | relative_url }}">bulletins sans votant</a> — vote noir,
+pénalité, malédiction — ont rendu cinquante-huit conseils dépouillés, et le test
+passe à {{ td.p_ajustee }}. Les couples de même département restent rares dans
+un camp de huit : le test était faible par manque de bulletins, pas par
+absence d’effet. <strong>Ce n’est pas une découverte, c’est un dénominateur qui
+a grandi.</strong></p>
 
 ## Le bandeau de départ : le seul qui compte, et il compte beaucoup
 
