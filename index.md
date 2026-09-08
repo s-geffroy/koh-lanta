@@ -273,7 +273,7 @@ plus tôt que les hommes en moyenne — et remportent pourtant
       <span class="carte-titre">Les statistiques</span>
       <span class="carte-resume">Les vainqueurs, les tribus, les métiers, les
         prénoms, la longévité, les sorties, les épreuves, les colliers, le jeu
-        social, les conseils, les revenants — puis quatorze pages où les modèles
+        social, les conseils, les revenants — puis seize pages où les modèles
         prennent le relais des comptages.</span>
     </a>
   </li>

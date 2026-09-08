@@ -602,6 +602,102 @@ def controler_donnees_structurees(c):
                 c.erreur(f"_includes/donnees-structurees.html : JSON invalide "
                          f"({etat}) — {e}")
 
+# Les nombres ecrits en toutes lettres, jusqu'a quarante : au-dela, le site
+# ecrit en chiffres. La table sert a relire ce que trois pages ANNONCENT et a
+# le comparer a ce que _data/navigation.yml CONTIENT.
+_UNITES = ["zero", "un", "deux", "trois", "quatre", "cinq", "six", "sept",
+           "huit", "neuf", "dix", "onze", "douze", "treize", "quatorze",
+           "quinze", "seize", "dix-sept", "dix-huit", "dix-neuf"]
+_DIZAINES = {20: "vingt", 30: "trente", 40: "quarante"}
+
+
+def _en_lettres():
+    mots = {mot: n for n, mot in enumerate(_UNITES)}
+    for base, mot in _DIZAINES.items():
+        mots[mot] = base
+        mots[f"{mot} et un"] = base + 1
+        for n in range(2, 10):
+            mots[f"{mot}-{_UNITES[n]}"] = base + n
+    return mots
+
+
+# « zero » et « un » sortent de la table : « un » est d'abord un article, et
+# le controle le relevait dans « on ne teste bien qu'un ecart ». Aucun compte
+# de ce fichier ne vaudra jamais 0 ou 1. Les composes qui le contiennent
+# -- « vingt et un » -- restent, eux, sans ambiguite.
+NOMBRES_EN_LETTRES = {m: n for m, n in _en_lettres().items() if m not in ("zero", "un")}
+# La limite de mot est indispensable : sans elle « six » se trouve dans
+# « dix-six »... et surtout « un » dans « aucun », « chacun », « commun ».
+RE_NOMBRE_LETTRES = re.compile(
+    r"\b(?:%s)\b" % "|".join(sorted((re.escape(m) for m in NOMBRES_EN_LETTRES),
+                                     key=len, reverse=True)), re.I)
+
+
+def controler_comptes_annonces(c):
+    """Refuse un nombre annonce en toutes lettres qui ne colle plus aux donnees.
+
+    Le sommaire des statistiques annoncait « Vingt-six entrees », le rail « Les
+    vingt entrees » et l'accueil « quatorze pages ou les modeles prennent le
+    relais » -- alors que navigation.yml en portait vingt-sept, onze
+    descriptives et seize a modeles. Trois textes, trois nombres faux, trois
+    derives independantes : personne n'avait touche a la meme phrase, on avait
+    seulement ajoute des pages. Rien ne le signalait, et le lecteur qui compte
+    les cartes trouvait autre chose que ce que la page venait de lui dire.
+
+    Le controle est volontairement grossier : dans trois zones bien delimitees,
+    TOUT nombre ecrit en toutes lettres doit valoir l'un des trois comptes
+    reels. Hors de ces zones on ne regarde rien -- « apres vingt ans de
+    vendredi » est une phrase juste ailleurs dans l'accueil.
+    """
+    chemin = os.path.join(RACINE, "_data", "navigation.yml")
+    if not os.path.exists(chemin):
+        return
+    sections = yaml.safe_load(open(chemin, encoding="utf-8")) or []
+    fil = next((g for g in sections if g.get("fil")), None)
+    if not fil:
+        return
+    entrees = [e for e in fil.get("entrees") or [] if not e.get("hub")]
+    frontiere = next((i for i, e in enumerate(entrees) if e.get("modeles")), None)
+    if frontiere is None:
+        c.erreur("_data/navigation.yml : aucune entree marquee `modeles: true` — "
+                 "la frontiere entre pages descriptives et pages a modeles n'est "
+                 "plus derivable, et les nombres annonces ne sont plus verifiables")
+        return
+    attendus = {len(entrees), frontiere, len(entrees) - frontiere}
+
+    hub = next((e for e in fil.get("entrees") or [] if e.get("hub")), {})
+    zones = [("_data/navigation.yml (resume du sommaire)", hub.get("resume") or "")]
+
+    # Le sommaire : son chapeau, et le corps jusqu'au titre qui annonce le
+    # compte. Plus bas, la page parle d'autre chose.
+    chemin = os.path.join(RACINE, "statistiques.md")
+    if os.path.exists(chemin):
+        texte = open(chemin, encoding="utf-8").read()
+        m = RE_FRONT.match(texte)
+        entete = yaml.safe_load(m.group(1)) if m else {}
+        corps = texte[m.end():] if m else texte
+        coupe = re.search(r"^##\s.*$", corps, re.M)
+        zones.append(("statistiques.md (chapeau)", str(entete.get("chapeau") or "")))
+        zones.append(("statistiques.md (presentation)",
+                      corps[:coupe.end()] if coupe else corps))
+
+    # L'accueil : la seule carte qui pointe vers /statistiques/.
+    chemin = os.path.join(RACINE, "index.md")
+    if os.path.exists(chemin):
+        for carte in re.findall(r"<li class=\"carte\">.*?</li>",
+                                open(chemin, encoding="utf-8").read(), re.S):
+            if "'/statistiques/'" in carte:
+                zones.append(("index.md (carte des statistiques)", carte))
+
+    for origine, texte in zones:
+        for trouve in RE_NOMBRE_LETTRES.findall(texte or ""):
+            valeur = NOMBRES_EN_LETTRES[trouve.lower()]
+            if valeur not in attendus:
+                c.erreur(f"{origine} : « {trouve} » ne correspond a aucun compte "
+                         f"reel — navigation.yml porte {len(entrees)} entrees, "
+                         f"{frontiere} descriptives et {len(entrees) - frontiere} "
+                         f"a modeles")
+
 def main():
     c = Controle()
     donnees = charger_donnees()
@@ -758,6 +854,7 @@ def main():
                          f"chmod 600 .secrets/{nom}")
 
     controler_seo(c, entetes)
+    controler_comptes_annonces(c)
     controler_donnees_structurees(c)
     controler_navigation(c, permaliens, gabarits)
     controler_sass(c)

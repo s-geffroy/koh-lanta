@@ -24,7 +24,7 @@
     - titre: Vue d'ensemble
       url: /statistiques/
       hub: true
-      resume: Les vingt entrées, et les chiffres qui les tiennent.
+      resume: Les vingt-sept entrées, et les chiffres qui les tiennent.
     - titre: Le profil du vainqueur
       url: /statistiques/vainqueurs/
       resume: "Âge, sexe, métier, couleur : ce que les vainqueurs ont en commun."
@@ -58,10 +58,17 @@
     - titre: Les revenants
       url: /statistiques/revenants/
       resume: "Le retour paie-t-il ? Le chiffre évident est un piège."
-    # Les quatre pages qui reposent sur des modeles et non sur des comptages.
-    # Elles viennent apres les pages descriptives : on ne teste bien qu'un
-    # ecart qu'on a d'abord regarde.
+    # A PARTIR D'ICI, les pages reposent sur des modeles et non sur des
+    # comptages. Elles viennent apres les pages descriptives : on ne teste bien
+    # qu'un ecart qu'on a d'abord regarde.
+    #
+    # `modeles: true` marque la frontiere pour les machines, et pas seulement
+    # pour le lecteur de ce fichier : trois pages annoncent en toutes lettres
+    # combien d'entrees decrivent et combien testent, et les trois avaient
+    # derive chacune de son cote (« vingt-six », « vingt », « quatorze »).
+    # controler_comptes_annonces() les compare desormais a ce qui est ici.
     - titre: La recette du casting
+      modeles: true
       url: /statistiques/casting/
       resume: "La parité est un quota. Le reste ne l'est pas."
     - titre: Le pronostic
