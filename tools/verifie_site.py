@@ -266,6 +266,14 @@ def controler_navigation(c, permaliens, gabarits):
         texte = ""
         if source and os.path.exists(os.path.join(RACINE, source)):
             texte = open(os.path.join(RACINE, source), encoding="utf-8").read()
+            # Le lien peut etre construit dans un `include` plutot que dans la
+            # page -- c'est le cas des saisons, dont l'adresse passe par une
+            # table de traduction. On lit donc aussi ce que la page inclut,
+            # sinon le controle refuserait une page qui lie parfaitement.
+            for inc in RE_INCLUDE.findall(texte):
+                chemin_inc = os.path.join(RACINE, "_includes", inc)
+                if os.path.exists(chemin_inc):
+                    texte += open(chemin_inc, encoding="utf-8").read()
         if f"'{mere}' | append:" not in texte:
             c.erreur(f"{source} ne construit aucun lien vers ses {len(fiches)} "
                      f"fiches (`'{mere}' | append:` introuvable) — les fiches "

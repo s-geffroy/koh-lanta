@@ -130,7 +130,7 @@ laquelle.</p>
     {%- if p.justesse_vote %}{% if a.genre == "f" %}Elle{% else %}Il{% endif %} écrivait le nom de l’éliminé dans <b>{{ p.justesse_vote }} %</b> de ses bulletins{% if p.bulletins_emis %} ({{ p.bulletins_emis }} bulletin{% if p.bulletins_emis > 1 %}s{% endif %} connu{% if p.bulletins_emis > 1 %}s{% endif %}){% endif %}. {% endif -%}
     {%- if p.colliers > 0 %}<b>{{ p.colliers }}</b> collier{% if p.colliers > 1 %}s{% endif %} d’immunité{% if p.colliers_joues > 0 %}, dont {{ p.colliers_joues }} joué{% if p.colliers_joues > 1 %}s{% endif %}{% endif %}. {% endif -%}
   </p>
-  <p><a href="{{ '/saisons/' | append: p.saison | append: '/' | relative_url }}">La saison {{ p.titre }}</a></p>
+  <p>La saison {% include lien-saison.html id=p.saison titre=p.titre %}</p>
 </div>
 
 {%- if p.epreuves_nommees.size > 0 %}

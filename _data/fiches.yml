@@ -43927,6 +43927,7 @@ saisons:
     lieu: Parc national de Koh Lanta
     numero: 1
     pays: Thaïlande
+    slug: les-aventuriers-de-koh-lanta
     speciale: false
     survie_moyenne: null
     titre: Les Aventuriers de Koh-Lanta
@@ -44170,6 +44171,7 @@ saisons:
     lieu: Péninsule de Nicoya
     numero: 2
     pays: Costa Rica
+    slug: koh-lanta-nicoya
     speciale: false
     survie_moyenne: null
     titre: Nicoya
@@ -44438,6 +44440,7 @@ saisons:
     lieu: Archipel de Bocas del Toro
     numero: 3
     pays: Panama
+    slug: koh-lanta-bocas-del-toro
     speciale: false
     survie_moyenne: null
     titre: Bocas del Toro
@@ -44682,6 +44685,7 @@ saisons:
     lieu: Archipel des Perles (Las Perlas)
     numero: 4
     pays: Panama
+    slug: koh-lanta-panama
     speciale: false
     survie_moyenne: null
     titre: Panama
@@ -44938,6 +44942,7 @@ saisons:
     lieu: Îlots de l'île des Pins
     numero: 5
     pays: Nouvelle-Calédonie
+    slug: koh-lanta-pacifique
     speciale: false
     survie_moyenne: null
     titre: Pacifique
@@ -45181,6 +45186,7 @@ saisons:
     lieu: Archipel d'Éfaté
     numero: 6
     pays: Vanuatu
+    slug: koh-lanta-vanuatu
     speciale: false
     survie_moyenne: null
     titre: Vanuatu
@@ -45423,6 +45429,7 @@ saisons:
     lieu: Archipel de Palawan
     numero: 7
     pays: Philippines
+    slug: koh-lanta-palawan
     speciale: false
     survie_moyenne: null
     titre: Palawan
@@ -45680,6 +45687,7 @@ saisons:
     lieu: Péninsule de Caramoan
     numero: 8
     pays: Philippines
+    slug: koh-lanta-caramoan
     speciale: false
     survie_moyenne: null
     titre: Caramoan
@@ -45949,6 +45957,7 @@ saisons:
     lieu: Micronésie
     numero: 9
     pays: Palaos
+    slug: koh-lanta-palau
     speciale: false
     survie_moyenne: null
     titre: Palau
@@ -46218,6 +46227,7 @@ saisons:
     lieu: Archipel de Côn Đảo
     numero: 10
     pays: Viêt Nam
+    slug: koh-lanta-vietnam
     speciale: false
     survie_moyenne: null
     titre: Viêtnam
@@ -46513,6 +46523,7 @@ saisons:
     lieu: Archipel de Raja Ampat
     numero: 11
     pays: Indonésie
+    slug: koh-lanta-raja-ampat
     speciale: false
     survie_moyenne: null
     titre: Raja Ampat
@@ -46808,6 +46819,7 @@ saisons:
     lieu: Archipel de Seribuat
     numero: 12
     pays: Malaisie
+    slug: koh-lanta-malaisie
     speciale: false
     survie_moyenne: null
     titre: Malaisie
@@ -47103,6 +47115,7 @@ saisons:
     lieu: Archipel de Sibu
     numero: 14
     pays: Malaisie
+    slug: koh-lanta-johor
     speciale: false
     survie_moyenne: null
     titre: Johor
@@ -47411,6 +47424,7 @@ saisons:
     lieu: Archipel de Ko Yao
     numero: 15
     pays: Thaïlande
+    slug: koh-lanta-thailande
     speciale: false
     survie_moyenne: null
     titre: Thaïlande
@@ -47706,6 +47720,7 @@ saisons:
     lieu: Île de Koh Rong
     numero: 16
     pays: Cambodge
+    slug: koh-lanta-l-ile-au-tresor
     speciale: false
     survie_moyenne: null
     titre: L'Île au trésor
@@ -48014,6 +48029,7 @@ saisons:
     lieu: Île de Koh Rong
     numero: 17
     pays: Cambodge
+    slug: koh-lanta-cambodge
     speciale: false
     survie_moyenne: null
     titre: Cambodge
@@ -48324,6 +48340,7 @@ saisons:
     lieu: Archipel de Yasawa
     numero: 18
     pays: Fidji
+    slug: koh-lanta-fidji
     speciale: false
     survie_moyenne: null
     titre: Fidji
@@ -48632,6 +48649,7 @@ saisons:
     lieu: Archipel de Kadavu
     numero: 20
     pays: Fidji
+    slug: koh-lanta-la-guerre-des-chefs
     speciale: false
     survie_moyenne: null
     titre: La Guerre des chefs
@@ -48981,6 +48999,7 @@ saisons:
     lieu: Archipel de Kadavu
     numero: 21
     pays: Fidji
+    slug: koh-lanta-les-4-terres
     speciale: false
     survie_moyenne: null
     titre: Les 4 Terres
@@ -49299,6 +49318,7 @@ saisons:
     lieu: Île de Taha'a
     numero: 22
     pays: Polynésie française
+    slug: koh-lanta-les-armes-secretes
     speciale: false
     survie_moyenne: null
     titre: Les Armes secrètes
@@ -49647,6 +49667,7 @@ saisons:
     lieu: Archipel de Palawan
     numero: 23
     pays: Philippines
+    slug: koh-lanta-le-totem-maudit
     speciale: false
     survie_moyenne: null
     titre: Le Totem maudit
@@ -49951,6 +49972,7 @@ saisons:
     lieu: Péninsule de Caramoan
     numero: 24
     pays: Philippines
+    slug: koh-lanta-le-feu-sacre
     speciale: false
     survie_moyenne: null
     titre: Le Feu sacré
@@ -50272,6 +50294,7 @@ saisons:
     lieu: Péninsule de Caramoan
     numero: 25
     pays: Philippines
+    slug: koh-lanta-les-chasseurs-d-immunite
     speciale: false
     survie_moyenne: null
     titre: Les Chasseurs d'immunité
@@ -50619,6 +50642,7 @@ saisons:
     lieu: Péninsule de Caramoan
     numero: 26
     pays: Philippines
+    slug: koh-lanta-la-tribu-maudite
     speciale: false
     survie_moyenne: null
     titre: La Tribu maudite
@@ -50968,6 +50992,7 @@ saisons:
     lieu: Péninsule de Caramoan
     numero: 27
     pays: Philippines
+    slug: koh-lanta-la-revanche-des-4-terres
     speciale: false
     survie_moyenne: null
     titre: La Revanche des 4 Terres
@@ -51273,6 +51298,7 @@ saisons:
     lieu: Péninsule de Caramoan
     numero: 28
     pays: Philippines
+    slug: koh-lanta-les-reliques-du-destin
     speciale: false
     survie_moyenne: null
     titre: Les Reliques du destin
@@ -51490,6 +51516,7 @@ saisons:
     lieu: Amazonie, bord du Rio Negro
     numero: null
     pays: Brésil
+    slug: koh-lanta-le-retour-des-heros
     speciale: true
     survie_moyenne: null
     titre: Le Retour des héros
@@ -51707,6 +51734,7 @@ saisons:
     lieu: Poum
     numero: null
     pays: Nouvelle-Calédonie
+    slug: koh-lanta-le-choc-des-heros
     speciale: true
     survie_moyenne: null
     titre: Le Choc des héros
@@ -51950,6 +51978,7 @@ saisons:
     lieu: Île de Koh Rong
     numero: null
     pays: Cambodge
+    slug: koh-lanta-la-revanche-des-heros
     speciale: true
     survie_moyenne: null
     titre: La Revanche des héros
@@ -52154,6 +52183,7 @@ saisons:
     lieu: Archipel de Sibu
     numero: null
     pays: Malaisie
+    slug: koh-lanta-la-nouvelle-edition
     speciale: true
     survie_moyenne: null
     titre: La Nouvelle Édition
@@ -52423,6 +52453,7 @@ saisons:
     lieu: Archipel de Yasawa
     numero: null
     pays: Fidji
+    slug: koh-lanta-le-combat-des-heros
     speciale: true
     survie_moyenne: null
     titre: Le Combat des héros
@@ -52718,6 +52749,7 @@ saisons:
     lieu: Archipel de Kadavu
     numero: null
     pays: Fidji
+    slug: koh-lanta-l-ile-des-heros
     speciale: true
     survie_moyenne: null
     titre: L'Île des héros
@@ -53028,6 +53060,7 @@ saisons:
     lieu: Île de Taha'a
     numero: null
     pays: Polynésie française
+    slug: koh-lanta-la-legende
     speciale: true
     survie_moyenne: null
     titre: La Légende
@@ -53300,6 +53333,7 @@ saisons:
     lieu: Archipel des Perles (Las Perlas)
     numero: null
     pays: Panama
+    slug: koh-lanta-all-stars
     speciale: true
     survie_moyenne: null
     titre: All Stars

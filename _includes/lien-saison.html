@@ -1,0 +1,26 @@
+{%- comment -%}
+  Le titre d'une saison, rendu comme un lien vers sa fiche.
+
+  L'adresse d'une saison n'est plus son identifiant technique : /saisons/s07/
+  est devenu /saisons/koh-lanta-palawan/, parce qu'un « s07 » ne dit rien ni
+  dans la barre d'adresse ni dans un resultat de recherche. Les gabarits, eux,
+  ne connaissent souvent que l'identifiant -- il vient de participations.yml,
+  de saisons.yml ou des editions d'une epreuve.
+
+  D'ou cette table : `_data/saisons_urls.yml`, ecrite par
+  tools/build_fiches.py, traduit l'identifiant en adresse. Un acces par cle,
+  jamais un calcul.
+
+  Appel : `include lien-saison.html id=x.id titre=x.titre` -- ecrit sans ses
+  accolades, parce qu'une balise Liquid citee dans un commentaire n'est PAS
+  inerte : le decoupage precede la lecture du commentaire, l'ouverture reste
+  ouverte, et la construction du site s'arrete.
+
+  L'ancienne adresse reste vivante : chaque fiche porte un `redirect_from`.
+{%- endcomment -%}
+{%- assign adresse = site.data.saisons_urls[include.id] -%}
+{%- if adresse -%}
+<a href="{{ '/saisons/' | append: adresse | append: '/' | relative_url }}">{{ include.titre }}</a>
+{%- else -%}
+{{ include.titre }}
+{%- endif -%}

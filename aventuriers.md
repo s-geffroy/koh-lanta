@@ -95,7 +95,7 @@ sources</a> disent pourquoi pas dans les trois autres.</p>
   {% for x in saisons %}{% if x.id == p.saison %}{% assign sa = x %}{% endif %}{% endfor %}
 <tr data-saison="{{ p.saison }}" data-sort="{{ p.sort }}">
   <td><a href="{{ '/aventuriers/' | append: p.id | append: '/' | relative_url }}">{{ p.nom_complet | default: p.nom }}</a></td>
-  <td><a href="{{ '/saisons/' | append: p.saison | append: '/' | relative_url }}">{{ sa.titre }}</a></td>
+  <td>{% include lien-saison.html id=p.saison titre=sa.titre %}</td>
   <td class="nombre">{{ sa.annee }}</td>
   <td class="nombre">{{ p.age }}</td>
   <td>{% if p.genre == "f" %}F{% elsif p.genre == "h" %}H{% endif %}</td>

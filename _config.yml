@@ -74,7 +74,13 @@ theme: minima
 #
 # Le jour ou des articles arrivent, remettre les deux ensemble : le greffon
 # ici, et la balise dans _layouts/default.html.
+# jekyll-redirect-from garde vivantes les anciennes adresses des saisons :
+# /saisons/s07/ menait a la fiche, elle mene desormais a
+# /saisons/koh-lanta-palawan/. Sans ce greffon, tout lien pose ailleurs vers
+# l'ancienne forme tomberait le jour de la bascule -- et on ne le saurait
+# jamais.
 plugins:
+  - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-sitemap
 

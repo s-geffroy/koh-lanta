@@ -45,6 +45,7 @@ from build_stats import LIBELLE_SORT, arrondi                 # noqa: E402
 DOSSIER_AVENTURIERS = os.path.join(RACINE, "aventuriers")
 DOSSIER_SAISONS = os.path.join(RACINE, "saisons")
 SORTIE_DATA = os.path.join(DATA, "fiches.yml")
+SORTIE_URLS = os.path.join(DATA, "saisons_urls.yml")
 
 ENTETE = ("# ATTENTION : fichier genere par tools/build_fiches.py.\n"
           "# Ne pas editer a la main : toute modification sera ecrasee.\n"
@@ -475,6 +476,21 @@ def affichable(nom):
     return nom[:1].upper() + nom[1:] if nom else nom
 
 
+def slug_saison(titre):
+    """L'URL d'une saison : « koh-lanta-palawan » et non « s07 ».
+
+    Un identifiant technique ne dit rien a personne, ni dans la barre
+    d'adresse ni dans un resultat de recherche -- alors que le nom de la
+    saison EST ce qu'on tape. Le prefixe n'est pas ajoute quand le titre porte
+    deja la marque : la saison 1 s'appelle « Les Aventuriers de Koh-Lanta ».
+
+    L'ancienne adresse ne meurt pas pour autant : `redirect_from` la garde
+    vivante, sinon tout lien pose ailleurs vers /saisons/s07/ tomberait.
+    """
+    base = identifiant(titre)
+    return base if "koh-lanta" in base else f"koh-lanta-{base}"
+
+
 def accord(genre, masculin, feminin):
     """Accorde au feminin quand `genre` vaut « f ». Le champ est renseigne sur
     les 531 fiches -- verifie -- donc pas de troisieme cas a prevoir."""
@@ -586,13 +602,13 @@ title: {titre}
 description: {description}
 image: {image}
 permalink: {permalink}
-{cle}: {valeur}
+{redirect}{cle}: {valeur}
 ---
 """
 
 
 def ecrire_pages(dossier, layout, cle, entrees, titre_de, description_de,
-                 permalink_de, rapport, image_de=None):
+                 permalink_de, rapport, image_de=None, redirect_de=None):
     """Ecrit une page par entree, et RETIRE celles qui n'ont plus de donnee.
 
     Sans le retrait, une personne disparue des donnees laisserait derriere elle
@@ -615,7 +631,9 @@ def ecrire_pages(dossier, layout, cle, entrees, titre_de, description_de,
             description=json.dumps(description_de(e), ensure_ascii=False),
             image=(image_de(cid) if image_de
                    else f"/assets/partage/{os.path.basename(dossier)}/{cid}.png"),
-            permalink=permalink_de(cid), cle=cle, valeur=cid)
+            permalink=permalink_de(cid),
+            redirect=(redirect_de(cid) if redirect_de else ""),
+            cle=cle, valeur=cid)
         chemin = os.path.join(dossier, nom)
         ancien = None
         if os.path.exists(chemin):
@@ -669,12 +687,27 @@ def main():
     joueurs_classes = (stats.get("classement") or {}).get("joueurs_classes")
     for e in av.values():
         e["faq"] = faq_aventurier(e, joueurs_classes)
+    for cid, e in sa.items():
+        e["slug"] = slug_saison(e["titre"])
+    doublons = len(sa) - len({e["slug"] for e in sa.values()})
+    if doublons:
+        print(f"ARRET : {doublons} slug(s) de saison en double")
+        return 1
 
     with open(SORTIE_DATA, "w", encoding="utf-8") as f:
         f.write(ENTETE)
         yaml.safe_dump({"aventuriers": av, "saisons": sa}, f,
                        allow_unicode=True, sort_keys=True, default_flow_style=False)
     print(f"ecrit : {SORTIE_DATA}")
+
+    # Une table id -> slug, lue par les gabarits qui ne connaissent qu'un `s07`
+    # et doivent en faire une URL. Un acces par cle, jamais un calcul.
+    with open(SORTIE_URLS, "w", encoding="utf-8") as f:
+        f.write("# ATTENTION : fichier genere par tools/build_fiches.py.\n"
+                "# L'identifiant d'une saison vers son adresse publique.\n")
+        yaml.safe_dump({cid: e["slug"] for cid, e in sa.items()}, f,
+                       allow_unicode=True, sort_keys=True, default_flow_style=False)
+    print(f"ecrit : {SORTIE_URLS}")
 
     rapport = collections.Counter()
     # Le titre du front matter n'est PAS celui qui s'affiche : le H1 des deux
@@ -686,7 +719,9 @@ def main():
                       lambda cid: f"/aventuriers/{cid}/", rapport)
     n2 = ecrire_pages(DOSSIER_SAISONS, "fiche-saison", "saison", sa,
                       titre_seo_saison, description_seo_saison,
-                      lambda cid: f"/saisons/{cid}/", rapport)
+                      lambda cid: f"/saisons/{sa[cid]['slug']}/", rapport,
+                      image_de=lambda cid: f"/assets/partage/saisons/{cid}.png",
+                      redirect_de=lambda cid: f"redirect_from: /saisons/{cid}/\n")
     print(f"pages : {n1} aventuriers + {n2} saisons = {n1 + n2} "
           f"({rapport['ecrites']} ecrites, {rapport['retirees']} retirees)")
     return 0

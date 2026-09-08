@@ -61,7 +61,7 @@ et pourquoi.</p>
   <tr>
     <td>{% include lien-aventurier.html id=p.id nom=p.nom %}</td>
     <td class="nombre" data-val="{{ p.victoires }}">{{ p.victoires }}</td>
-    <td>{% for s in p.saisons %}<a href="{{ '/saisons/' | append: s.id | append: '/' | relative_url }}">{{ s.titre }}</a> ({{ s.annee }}){% unless forloop.last %}, {% endunless %}{% endfor %}</td>
+    <td>{% for s in p.saisons %}{% include lien-saison.html id=s.id titre=s.titre %} ({{ s.annee }}){% unless forloop.last %}, {% endunless %}{% endfor %}</td>
   </tr>
   {%- endfor %}
 </tbody>
@@ -72,7 +72,7 @@ et pourquoi.</p>
 
 <p>
 {%- for s in e.editions -%}
-<a href="{{ '/saisons/' | append: s.id | append: '/' | relative_url }}">{{ s.titre }}</a> ({{ s.annee }}){% unless forloop.last %} · {% endunless %}
+{% include lien-saison.html id=s.id titre=s.titre %} ({{ s.annee }}){% unless forloop.last %} · {% endunless %}
 {%- endfor -%}
 </p>
 
