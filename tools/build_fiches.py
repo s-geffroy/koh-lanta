@@ -29,6 +29,7 @@ import collections
 import json
 import os
 import sys
+import unicodedata
 
 import yaml
 
@@ -138,7 +139,9 @@ def fiches_des_aventuriers(parts, personnes, saisons, indiv, classement, natures
                 "ratio_epreuves": i.get("ratio_epreuves"),
                 "colliers": cols.get((p["saison"], pid)) or 0,
                 "colliers_joues": joues.get((p["saison"], pid)) or 0,
-                "epreuves_nommees": n.get("epreuves") or [],
+                "epreuves_nommees": [{"nom": affichable(x),
+                                      "id": identifiant(x)}
+                                     for x in (n.get("epreuves") or [])],
                 "natures": [{"nature": k, "effectif": v}
                             for k, v in sorted((n.get("natures") or {}).items(),
                                                key=lambda x: (-x[1], x[0]))],
@@ -433,6 +436,147 @@ def description_seo_saison(e):
     return assembler(tete, clauses, chute)
 
 
+# --------------------------------------------------------------------------
+# LES QUESTIONS QU'ON POSE VRAIMENT.
+#
+# « quel age avait X a koh lanta », « X a-t-il gagne koh lanta », « combien de
+# fois X a participe » : ce sont des recherches, et la fiche avait la reponse
+# sans jamais la formuler. Six questions par aventurier, ecrites comme on les
+# tape, et repondues avec les champs deja calcules.
+#
+# UNE RESERVE A CONNAITRE AVANT D'EN ATTENDRE TROP : depuis 2023, Google
+# reserve l'AFFICHAGE enrichi des blocs FAQ aux sites gouvernementaux et de
+# sante. L'accordeon n'apparaitra donc pas dans les resultats. Ce qui travaille
+# ici, c'est le texte visible sur la page -- il repond mot pour mot a la
+# question tapee, et c'est cela qui se classe. Le balisage FAQPage est pose en
+# plus, pour ce qu'il vaut, pas pour ce qu'il promet.
+
+
+def identifiant(nom):
+    """Un slug d'URL, sans accent ni majuscule, stable dans le temps.
+
+    Vit ici et non dans tools/build_epreuves.py parce que les DEUX en ont
+    besoin : celui-la pour nommer la page d'une epreuve, celui-ci pour poser
+    dans la fiche d'un aventurier de quoi la lier.
+    """
+    plat = unicodedata.normalize("NFKD", nom).encode("ascii", "ignore").decode()
+    garde = [c.lower() if c.isalnum() else "-" for c in plat]
+    return "-".join("".join(garde).split("-")).strip("-")
+
+
+def affichable(nom):
+    """La premiere lettre en capitale, et rien d'autre.
+
+    Les noms d'epreuve viennent du wiki tels quels : « la bascule » y voisine
+    avec « Parcours du combattant ». En tete d'un titre de page et d'un H1, la
+    minuscule se lit comme une faute. On ne touche a rien d'autre : corriger
+    silencieusement un nom de source serait pire que la minuscule.
+    """
+    return nom[:1].upper() + nom[1:] if nom else nom
+
+
+def accord(genre, masculin, feminin):
+    """Accorde au feminin quand `genre` vaut « f ». Le champ est renseigne sur
+    les 531 fiches -- verifie -- donc pas de troisieme cas a prevoir."""
+    return feminin if genre == "f" else masculin
+
+
+def de_(nom):
+    """« de Claude » mais « d'Abdellah ». L'elision devant voyelle ou h.
+
+    Sans elle, une question sur six s'ouvrait sur « Quel est le metier de
+    Abdellah Akriche ? » -- une faute que personne n'ecrit, et que 138 des 531
+    fiches auraient publiee.
+    """
+    return f"d’{nom}" if nom[:1].lower() in "aeiouyhàâäéèêëîïôöùûü" else f"de {nom}"
+
+
+def _liste(morceaux):
+    """« a, b et c » -- la virgule partout sauf devant le dernier."""
+    if len(morceaux) < 2:
+        return "".join(morceaux)
+    return ", ".join(morceaux[:-1]) + " et " + morceaux[-1]
+
+
+def _edition(p):
+    """« en 2001 (Les Aventuriers de Koh-Lanta) ».
+
+    La forme est cette annee-la, et pas « lors de {titre} », parce que la
+    saison 1 s'appelle « Les Aventuriers de Koh-Lanta » : toute preposition
+    donnait « lors de Les Aventuriers ». Passer par l'annee evite d'avoir a
+    contracter l'article de trente-quatre titres.
+    """
+    return f"en {p['annee']} ({p['titre']})"
+
+
+def faq_aventurier(e, joueurs_classes):
+    nom, genre = e["nom"], e.get("genre")
+    il = accord(genre, "il", "elle")
+    a_t_il = accord(genre, "a-t-il", "a-t-elle")
+    alle = accord(genre, "allé", "allée")
+    parts = sorted(e["participations"], key=lambda p: p["annee"])
+    q = []
+
+    q.append((
+        f"Quel âge avait {nom} à Koh-Lanta ?",
+        _liste([f"{p['age']} ans {_edition(p)}" for p in parts]) + ".",
+    ))
+
+    metiers = []
+    for p in parts:
+        if p.get("profession") and p["profession"] not in [m[0] for m in metiers]:
+            metiers.append((p["profession"], p["annee"]))
+    if len(metiers) == 1:
+        reponse = f"{metiers[0][0]}, profession déclarée au casting."
+    else:
+        reponse = _liste([f"{m} ({an})" for m, an in metiers]) + "."
+    q.append((f"Quel est le métier {de_(nom)} ?", reponse))
+
+    titres = [p for p in parts if p.get("sort") == "vainqueur"]
+    if len(titres) > 1:
+        reponse = (f"Oui, {compte(len(titres), 'fois', 'fois')} : "
+                   f"{_liste([_edition(p) for p in titres])}.")
+    elif titres:
+        reponse = f"Oui, {_edition(titres[0])}."
+    elif e.get("finales"):
+        reponse = (f"Non. {nom} est {alle} en finale "
+                   f"{compte(e['finales'], 'fois', 'fois')} sans jamais "
+                   f"remporter le titre.")
+    elif len(parts) == 1:
+        reponse = f"Non. {nom} n’a joué qu’une saison, {_edition(parts[0])}."
+    else:
+        reponse = f"Non, sur ses {len(parts)} participations."
+    q.append((f"{nom} {a_t_il} gagné Koh-Lanta ?", reponse))
+
+    if len(parts) == 1:
+        reponse = f"Une seule fois, {_edition(parts[0])}."
+    else:
+        editions = [f"{p['titre']} ({p['annee']})" for p in parts]
+        reponse = f"{len(parts)} fois : {_liste(editions)}."
+    q.append((f"Combien de fois {nom} {a_t_il} participé à Koh-Lanta ?", reponse))
+
+    meilleure = min(parts, key=lambda p: (p.get("classement") or 999))
+    verbe = VERBE_SORT.get(meilleure.get("sort"), "est encore en jeu")
+    if meilleure.get("classement"):
+        reponse = (f"Son meilleur parcours : {ordinal(meilleure['classement'])} sur "
+                   f"{meilleure['effectif']} {_edition(meilleure)}, où {il} {verbe}")
+    else:
+        reponse = f"{_edition(meilleure).capitalize()}, où {il} {verbe}"
+    if meilleure.get("jour_sortie"):
+        reponse += f" le {ordinal(meilleure['jour_sortie'])} jour"
+    q.append((f"Jusqu’où {nom} est-{il} {alle} à Koh-Lanta ?", reponse + "."))
+
+    if e.get("rang") and joueurs_classes:
+        q.append((
+            f"Quel est le classement {de_(nom)} parmi les aventuriers de Koh-Lanta ?",
+            f"{ordinal(e['rang'])} sur {joueurs_classes}. Ce classement mesure "
+            f"quatre façons de bien jouer — le parcours, les épreuves, la "
+            f"discrétion et la lecture du vote — sans jamais regarder qui a gagné.",
+        ))
+
+    return [{"q": question, "r": reponse} for question, reponse in q]
+
+
 GABARIT = """---
 layout: {layout}
 title: {titre}
@@ -516,6 +660,10 @@ def main():
         print("essai a blanc : rien n'est ecrit (--ecrire pour ecrire)")
         return 0
 
+    joueurs_classes = (stats.get("classement") or {}).get("joueurs_classes")
+    for e in av.values():
+        e["faq"] = faq_aventurier(e, joueurs_classes)
+
     with open(SORTIE_DATA, "w", encoding="utf-8") as f:
         f.write(ENTETE)
         yaml.safe_dump({"aventuriers": av, "saisons": sa}, f,
@@ -526,7 +674,6 @@ def main():
     # Le titre du front matter n'est PAS celui qui s'affiche : le H1 des deux
     # gabarits vient de `_data/fiches.yml`. Ce titre-ci ne sort que dans la
     # balise <title>, ou il a de la place pour dire la saison et l'annee.
-    joueurs_classes = (stats.get("classement") or {}).get("joueurs_classes")
     n1 = ecrire_pages(DOSSIER_AVENTURIERS, "fiche-aventurier", "aventurier", av,
                       titre_seo_aventurier,
                       lambda e: description_seo_aventurier(e, joueurs_classes),

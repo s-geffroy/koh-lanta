@@ -563,8 +563,46 @@ def controler_seo(c, entetes):
 # Une accolade Liquid, avec ce qu'elle contient. Sert a neutraliser le gabarit
 # de donnees structurees pour le lire comme du JSON.
 RE_LIQUID_VALEUR = re.compile(r"\{\{-?\s*.*?\s*-?\}\}")
-RE_LIQUID_BLOC = re.compile(r"\{%-?\s*(if|unless|elsif|else|endif|endunless|"
-                            r"assign|comment|endcomment)\b.*?-?%\}", re.S)
+RE_LIQUID_BLOC = re.compile(r"\{%-?\s*(?:if|unless|elsif|else|endif|endunless|for|"
+                            r"endfor|assign|comment|endcomment)\b.*?-?%\}", re.S)
+RE_OUVRE = re.compile(r"\{%-?\s*(?:if|unless)\b")
+RE_FERME = re.compile(r"\{%-?\s*end(?:if|unless)\b")
+# Le separateur d'une boucle : ce que Liquid n'ecrit PAS au dernier tour. On
+# simule un seul tour, donc il ne s'ecrit jamais -- et c'est ce qui fait la
+# difference entre du JSON valide et une virgule orpheline avant un crochet.
+RE_SEPARATEUR = re.compile(r"\{%-?\s*unless\s+forloop\.last\s*-?%\}.*?"
+                           r"\{%-?\s*endunless\s*-?%\}", re.S)
+
+
+def _rendre_sans_liquid(texte, toutes_posees):
+    """Rend le gabarit comme si toutes ses clauses etaient vraies, ou fausses.
+
+    Une clause peut tenir sur une ligne -- `{%- if x %},"cle":{{ x }}{% endif -%}`
+    -- ou s'etendre sur plusieurs. Les deux se simulent differemment : la
+    premiere se jette d'un bloc, la seconde demande de compter les ouvertures
+    jusqu'a sa fermeture. Sans ce comptage, le controle lisait le contenu d'un
+    `{% if %}` multi-lignes comme s'il etait toujours ecrit, et ne verifiait
+    donc jamais la branche fausse.
+    """
+    rendu = []
+    profondeur = 0
+    saut = None
+    for ligne in texte.split("\n"):
+        ouvertures = len(RE_OUVRE.findall(ligne))
+        fermetures = len(RE_FERME.findall(ligne))
+        if saut is not None:
+            profondeur += ouvertures - fermetures
+            if profondeur <= saut:
+                saut = None
+            continue
+        if not toutes_posees and ouvertures:
+            if ouvertures > fermetures:
+                saut = profondeur
+                profondeur += ouvertures - fermetures
+            continue
+        profondeur += ouvertures - fermetures
+        rendu.append(RE_LIQUID_VALEUR.sub('"x"', RE_LIQUID_BLOC.sub("", ligne)))
+    return "\n".join(rendu)
 
 
 def controler_donnees_structurees(c):
@@ -578,30 +616,19 @@ def controler_donnees_structurees(c):
     chemin = os.path.join(RACINE, "_includes", "donnees-structurees.html")
     if not os.path.exists(chemin):
         return
-    texte = RE_COMMENTAIRE.sub("", open(chemin, encoding="utf-8").read())
+    texte = RE_SEPARATEUR.sub("", RE_COMMENTAIRE.sub(
+        "", open(chemin, encoding="utf-8").read()))
 
     for toutes_posees in (True, False):
-        rendu = []
-        for ligne in texte.split("\n"):
-            bloc = RE_LIQUID_BLOC.search(ligne)
-            if bloc:
-                mot = bloc.group(1)
-                # Une ligne conditionnelle n'est gardee que dans l'essai « tout
-                # pose » ; la ligne d'ouverture d'un `if` porte souvent une
-                # valeur, d'ou le retrait de la balise et non de la ligne.
-                if not toutes_posees and mot in ("if", "unless", "elsif"):
-                    continue
-            ligne = RE_LIQUID_BLOC.sub("", ligne)
-            ligne = RE_LIQUID_VALEUR.sub('"x"', ligne)
-            rendu.append(ligne)
-        for morceau in re.findall(r"<script[^>]*>(.*?)</script>",
-                                  "\n".join(rendu), re.S):
+        rendu = _rendre_sans_liquid(texte, toutes_posees)
+        for morceau in re.findall(r"<script[^>]*>(.*?)</script>", rendu, re.S):
             try:
                 json.loads(morceau)
             except ValueError as e:
                 etat = "toutes clauses posees" if toutes_posees else "clauses absentes"
                 c.erreur(f"_includes/donnees-structurees.html : JSON invalide "
                          f"({etat}) — {e}")
+
 
 # Les nombres ecrits en toutes lettres, jusqu'a quarante : au-dela, le site
 # ecrit en chiffres. La table sert a relire ce que trois pages ANNONCENT et a

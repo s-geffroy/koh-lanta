@@ -135,10 +135,12 @@ laquelle.</p>
 
 {%- if p.epreuves_nommees.size > 0 %}
 <p class="note"><strong>Épreuves identifiées par leur nom :</strong>
-{% for e in p.epreuves_nommees %}{{ e }}{% unless forloop.last %}, {% endunless %}{% endfor %}.
-Le wiki ne nomme que 57 épreuves récurrentes et ne dit jamais dans quel épisode
-elles ont eu lieu : cette liste est une part de ce qu’il a gagné, jamais son
-palmarès complet.</p>
+{% for e in p.epreuves_nommees %}{% if site.data.epreuves_fiches.epreuves[e.id] %}<a href="{{ '/epreuves/' | append: e.id | append: '/' | relative_url }}">{{ e.nom }}</a>{% else %}{{ e.nom }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}.
+Le wiki ne nomme que {{ site.data.epreuves_nommees.nb_epreuves }} épreuves
+récurrentes et ne dit jamais dans quel épisode elles ont eu lieu : cette liste
+est une part de ce qu’il a gagné, jamais son palmarès complet. Seules celles
+dont on connaît aussi les vainqueurs ont une
+<a href="{{ '/epreuves/' | relative_url }}">page à elles</a>.</p>
 {%- endif %}
 {%- endfor %}
 
@@ -148,6 +150,22 @@ saisi à la main : tout vient des sources publiques listées sur
 un champ que la source ne donne pas — pas une valeur nulle. La
 <a href="{{ '/completude/' | relative_url }}">grille de complétude</a> dit,
 saison par saison, ce qui manque.</p>
+
+{%- if a.faq.size > 0 %}
+<h2>Questions fréquentes</h2>
+
+{%- comment -%}
+  Les six questions et leurs reponses sont ecrites en Python
+  (`faq_aventurier` dans tools/build_fiches.py) et lues ici. Elles sont
+  VISIBLES a dessein : depuis 2023 Google reserve l'affichage enrichi des
+  blocs FAQ aux sites gouvernementaux et de sante, donc c'est le texte de la
+  page qui travaille, pas le balisage.
+{%- endcomment -%}
+{%- for x in a.faq %}
+<h3>{{ x.q }}</h3>
+<p>{{ x.r }}</p>
+{%- endfor %}
+{%- endif %}
 
 <p><a href="{{ '/aventuriers/' | relative_url }}">Tous les aventuriers</a> ·
 <a href="{{ '/statistiques/top/' | relative_url }}">Le classement des joueurs</a></p>

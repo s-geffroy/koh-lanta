@@ -25,7 +25,6 @@ import argparse
 import collections
 import os
 import sys
-import unicodedata
 
 import yaml
 
@@ -34,8 +33,9 @@ sys.path.insert(0, ICI)
 RACINE = os.path.dirname(ICI)
 DATA = os.path.join(RACINE, "_data")
 
-from build_fiches import (assembler, charger, compte, ecrire_pages,  # noqa: E402
-                          liste, premier_qui_tient)
+from build_fiches import (affichable, assembler, charger, compte,  # noqa: E402
+                          ecrire_pages, identifiant, liste,
+                          premier_qui_tient)
 
 DOSSIER = os.path.join(RACINE, "epreuves")
 SORTIE_DATA = os.path.join(DATA, "epreuves_fiches.yml")
@@ -55,24 +55,6 @@ ENTETE = ("# ATTENTION : fichier genere par tools/build_epreuves.py.\n"
           "#\n"
           "#     tools/atelier python3 tools/build_epreuves.py --ecrire\n"
           "#\n")
-
-
-def identifiant(nom):
-    """Un slug d'URL, sans accent ni majuscule, stable dans le temps."""
-    plat = unicodedata.normalize("NFKD", nom).encode("ascii", "ignore").decode()
-    garde = [c.lower() if c.isalnum() else "-" for c in plat]
-    return "-".join("".join(garde).split("-")).strip("-")
-
-
-def affichable(nom):
-    """La premiere lettre en capitale, et rien d'autre.
-
-    Les noms viennent du wiki tels quels : « la bascule » y voisine avec
-    « Parcours du combattant ». En tete d'un titre de page et d'un H1, la
-    minuscule se lit comme une faute. On ne touche a rien d'autre -- corriger
-    silencieusement un nom de source serait pire.
-    """
-    return nom[:1].upper() + nom[1:] if nom else nom
 
 
 def fiches_des_epreuves(nommees, saisons, fiches):
