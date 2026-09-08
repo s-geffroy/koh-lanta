@@ -439,7 +439,7 @@ def controler_accents(c):
             if isinstance(noeud, dict):
                 for cle, valeur in noeud.items():
                     if cle in ("libelle", "question", "lecture", "modalite",
-                               "mesure", "denominateur") \
+                               "mesure", "denominateur", "unite") \
                             and isinstance(valeur, str):
                         examiner(f"{chemin_lisible}.{cle}", valeur)
                     elif isinstance(valeur, (dict, list)):
@@ -828,6 +828,77 @@ def _boite_texte(attrs, contenu):
             min(p[1] for p in points), max(p[1] for p in points))
 
 
+# Pour le chevauchement, la boite d'un texte est ramenee a la hauteur reelle
+# des glyphes, capitale et jambage compris -- 1.15 em est l'interligne, pas
+# l'encombrement. Avec l'interligne, vingt paires d'annotations distantes de
+# douze pixels etaient signalees a tort.
+HAUTEUR_GLYPHE = 0.80
+MARGE_CHEVAUCHEMENT = 0.5
+
+
+def _coins_texte(attrs, contenu, hauteur_em):
+    x, y = float(_attribut(attrs, "x", 0)), float(_attribut(attrs, "y", 0))
+    taille = float(_attribut(attrs, "font-size", 13))
+    ancre = _attribut(attrs, "text-anchor", "start")
+    tourne = RE_SVG_ROTATE.search(attrs)
+    angle = math.radians(float(tourne.group(1))) if tourne else 0.0
+    largeur, hauteur = len(contenu) * taille * LARGEUR_CARACTERE, taille * hauteur_em
+    x0 = {"end": x - largeur, "middle": x - largeur / 2}.get(ancre, x)
+    coins = [(x0 - x, -hauteur / 2), (x0 + largeur - x, -hauteur / 2),
+             (x0 + largeur - x, hauteur / 2), (x0 - x, hauteur / 2)]
+    return [(x + dx * math.cos(angle) - dy * math.sin(angle),
+             y + dx * math.sin(angle) + dy * math.cos(angle)) for dx, dy in coins]
+
+
+def _se_touchent(A, B):
+    """Deux rectangles TOURNES se recouvrent-ils ? (axes separateurs)
+
+    Une boite alignee sur les axes ne suffit pas : sur des annees inclinees a
+    quarante-cinq degres, elle conclut a trente-deux chevauchements la ou il
+    n'y en a aucun.
+    """
+    for P in (A, B):
+        for i in range(4):
+            ax, ay = P[(i + 1) % 4][0] - P[i][0], P[(i + 1) % 4][1] - P[i][1]
+            norme = math.hypot(ax, ay) or 1.0
+            nx, ny = -ay / norme, ax / norme
+            pa = [nx * x + ny * y for x, y in A]
+            pb = [nx * x + ny * y for x, y in B]
+            if max(pa) - MARGE_CHEVAUCHEMENT <= min(pb) \
+                    or max(pb) - MARGE_CHEVAUCHEMENT <= min(pa):
+                return False
+    return True
+
+
+def controler_figures_chevauchent(c):
+    """Refuse deux etiquettes de figure ecrites l'une sur l'autre.
+
+    Meme silence que le debordement : rien n'echoue, le texte se superpose et
+    devient illisible, et on ne le voit qu'en regardant la figure publiee. Il y
+    en avait soixante paires, sur six figures -- des graduations tous les dix
+    sur une echelle qui va jusqu'a cinq cents, seize noms tasses en haut d'un
+    graphique de pentes, deux fins de courbe a la meme hauteur.
+    """
+    dossier = os.path.join(RACINE, "_includes", "graphiques")
+    if not os.path.isdir(dossier):
+        return
+    for nom in sorted(os.listdir(dossier)):
+        if not nom.endswith(".svg"):
+            continue
+        texte = open(os.path.join(dossier, nom), encoding="utf-8").read()
+        boites = []
+        for m in RE_SVG_TEXTE.finditer(texte):
+            contenu = html.unescape(m.group("contenu"))
+            if contenu.strip():
+                boites.append((contenu,
+                               _coins_texte(m.group("attrs"), contenu, HAUTEUR_GLYPHE)))
+        for i in range(len(boites)):
+            for j in range(i + 1, len(boites)):
+                if _se_touchent(boites[i][1], boites[j][1]):
+                    c.erreur(f"{nom} : « {boites[i][0][:26]} » et "
+                             f"« {boites[j][0][:26]} » s'ecrivent l'une sur l'autre")
+
+
 def controler_figures(c):
     """Refuse un texte de figure qui sort du cadre.
 
@@ -1024,6 +1095,7 @@ def main():
 
     controler_seo(c, entetes)
     controler_figures(c)
+    controler_figures_chevauchent(c)
     controler_portraits(c)
     controler_comptes_annonces(c)
     controler_donnees_structurees(c)

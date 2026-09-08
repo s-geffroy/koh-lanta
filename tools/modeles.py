@@ -159,13 +159,22 @@ def _test(cle, libelle, question, observe, nulle, unite="", lecture=""):
     """
     nulle = np.asarray(nulle, dtype=float)
     ecart_type = float(nulle.std(ddof=1)) or float("nan")
+
+    def _propre(v):
+        """Un entier s'ecrit entier : « 246.0 cases remplies » se lisait ainsi."""
+        v = _arr(v, 3)
+        return int(v) if isinstance(v, float) and v.is_integer() else v
+
     return {
         "cle": cle,
         "libelle": libelle,
         "question": question,
-        "observe": _arr(observe, 3),
-        "attendu": _arr(float(nulle.mean()), 3),
-        "unite": unite,
+        "observe": _propre(observe),
+        "attendu": _propre(float(nulle.mean())),
+        # L'unite est ECRITE SANS ESPACE de tete : la figure en ajoute une
+        # elle-meme, et dix-huit tests en portaient une seconde -- « observe :
+        # -4.657  points », avec son double espace, etait publie tel quel.
+        "unite": (unite or "").strip(),
         "ecart_types": _arr((observe - float(nulle.mean())) / ecart_type, 2),
         "p": _arr(_p_bilaterale(observe, nulle), 4),
         "tirages": int(len(nulle)),
@@ -383,7 +392,7 @@ def recette_casting(par_saison, parts):
     tests.append(_test(
         "etendue_ages", "L'écart d'âge dans un même casting",
         "Un casting mélange-t-il les âges plus qu'un tirage au hasard ne le ferait ?",
-        observe, nulle, unite="annees",
+        observe, nulle, unite="années",
         lecture="Rebattre les aventuriers entre saisons donne l'écart-type général. Un écart observé PLUS GRAND veut dire qu'on place exprès un jeune et un ancien dans chaque casting."))
 
     # --- 3. faut-il un representant de chaque famille de metier ? -----------
@@ -480,13 +489,13 @@ def recette_casting(par_saison, parts):
             "tribus_ages", "L'âge moyen des deux tribus",
             "Les deux tribus de départ ont-elles des âges moyens plus proches qu'un tirage au hasard ne les ferait ?",
             ecart_age(reel), np.array([ecart_age(t) for t in tirages]),
-            unite="annees",
+            unite="années",
             lecture="Même méthode, sur l'âge moyen de chaque bandeau. Un écart observé PLUS GRAND que l'attendu veut dire l'inverse d'un équilibre : deux tribus construites pour différer."))
         tests.append(_test(
             "tribus_ages_mediane", "L'âge des deux tribus, à la médiane",
             'Le même écart, mesuré à la médiane : est-il général, ou porté par quelques saisons ?',
             ecart_age_median(reel), np.array([ecart_age_median(t) for t in tirages]),
-            unite="annees",
+            unite="années",
             lecture="La médiane ignore les valeurs extrêmes. Si elle ne s'écarte pas, c'est que l'écart moyen tient à quelques éditions et non à une règle de composition."))
         ecarts_reels = sorted(zip(_ecarts_age(reel), [d[0][0]["saison"] for d in duos]),
                               reverse=True)

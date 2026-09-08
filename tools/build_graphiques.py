@@ -1229,14 +1229,17 @@ def figures_des_modeles(stats):
         # et « le mardi » sont statistiquement la meme variable -- la page le
         # dit, la figure le montrait pas. Une initiale suffit tant qu'elles
         # sont distinctes ; sinon on prend deux lettres.
+        # Les abreviations FRANCAISES usuelles, et non l'initiale : « M » ne
+        # distingue pas mardi de mercredi, et le lecteur n'a aucune raison de
+        # savoir qu'aucune saison n'a ete diffusee un mercredi. La table est
+        # fixe -- elle vaudra encore le jour ou une saison passera le jeudi.
+        ABREGE = {"lundi": "Lu", "mardi": "Ma", "mercredi": "Me", "jeudi": "Je",
+                  "vendredi": "Ve", "samedi": "Sa", "dimanche": "Di"}
         jours = [x.get("jour") for x in serie]
-        distincts = sorted({j for j in jours if j})
-        taille_initiale = 1
-        while len({j[:taille_initiale] for j in distincts}) < len(distincts):
-            taille_initiale += 1
-        bande_jours = [{"lettre": j[:taille_initiale].upper(), "titre": j}
-                       if j else None for j in jours]
-        legende_jours = ", ".join(f"{j[:taille_initiale].upper()} {j.lower()}"
+        distincts = sorted({j for j in jours if j}, key=lambda j: list(ABREGE).index(j.lower()))
+        bande_jours = [{"lettre": ABREGE[j.lower()], "titre": j} if j else None
+                       for j in jours]
+        legende_jours = ", ".join(f"{ABREGE[j.lower()]} {j.lower()}"
                                   for j in distincts)
 
         # Les mois de diffusion, en chiffres. Une saison lancee en fevrier et
@@ -1256,14 +1259,21 @@ def figures_des_modeles(stats):
             def _de(mois):
                 return f"d’{mois}" if mois[0] in "aeiouyâéèêîôû" else f"de {mois}"
 
-            if fin and fin.month != debut.month:
-                lettre = f"{debut.month}–{fin.month}"
-                titre = (f"{_de(MOIS[debut.month - 1])} "
-                         f"à {MOIS[fin.month - 1]}")
+            fin = fin or debut
+            if fin.month != debut.month or fin.year != debut.year:
+                titre = f"{_de(MOIS[debut.month - 1])} à {MOIS[fin.month - 1]}"
             else:
-                lettre = str(debut.month)
                 titre = f"en {MOIS[debut.month - 1]}"
-            bande_mois.append({"lettre": lettre, "titre": titre})
+            # La reglette porte l'annee civile de bout en bout. Une saison qui
+            # deborde sur l'annee suivante -- Malaisie, novembre a fevrier --
+            # donne DEUX segments : la fin de l'une, le debut de l'autre. Les
+            # ecraser en un seul dirait une diffusion de fevrier a novembre.
+            if fin.year != debut.year or fin.month < debut.month:
+                segments = [((debut.month - 1) / 12, 1.0), (0.0, fin.month / 12)]
+                titre += f" ({debut.year}–{fin.year})"
+            else:
+                segments = [((debut.month - 1) / 12, fin.month / 12)]
+            bande_mois.append({"segments": segments, "titre": titre})
         ecrire("audience-serie.svg", courbes(
             [{"nom": "audience moyenne",
               "valeurs": [round(x["moyenne"] / 1e6, 2) for x in serie],
@@ -1274,8 +1284,8 @@ def figures_des_modeles(stats):
             description="Nombre moyen de téléspectateurs par saison, en millions. "
                         "La série couvre toutes les éditions achevées. Sous "
                         "l\u2019axe, le jour de diffusion de chaque saison ("
-                        + legende_jours + ") puis ses mois de diffusion, en "
-                        "chiffres.",
+                        + legende_jours + ") puis une réglette où le segment "
+                        "marque les mois de diffusion dans l\u2019année.",
             unite=" M", largeur=880, hauteur=350,
             bandes=[bande_jours, bande_mois]))
         ecrire("audience-lancement-finale.svg", courbes(
@@ -1289,8 +1299,8 @@ def figures_des_modeles(stats):
             titre="Le lancement et la finale, saison par saison",
             description="Audience du premier et du dernier épisode de chaque saison, "
                         "en millions de téléspectateurs. Sous l\u2019axe, le jour "
-                        "de diffusion (" + legende_jours + ") puis les mois, en "
-                        "chiffres.",
+                        "de diffusion (" + legende_jours + ") puis une réglette "
+                        "où le segment marque les mois de diffusion.",
             unite=" M", largeur=880, hauteur=350,
             bandes=[bande_jours, bande_mois]))
     if au.get("test") or au.get("tests"):

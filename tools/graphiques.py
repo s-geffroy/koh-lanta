@@ -131,6 +131,25 @@ def _rangs_legende(legende, largeur_utile, taille=12, ecart=30):
     return rangs
 
 
+def _ecarter(positions, mini=13.0):
+    """Ecarte des etiquettes verticalement sans changer leur ordre.
+
+    Les traits restent a leur vraie place ; seules les ETIQUETTES bougent.
+    Sans cela, seize noms ranges par un rang qui va de 1 a plusieurs centaines
+    se tassent tous en haut du dessin et s'ecrivent les uns sur les autres.
+
+    `positions` : [(cle, y)]. Rend {cle: y ajuste}.
+    """
+    ordre = sorted(positions, key=lambda kv: kv[1])
+    out, precedent = {}, None
+    for cle, y in ordre:
+        if precedent is not None and y - precedent < mini:
+            y = precedent + mini
+        out[cle] = y
+        precedent = y
+    return out
+
+
 def _etiquettes_serrees(libelles, pas, taille):
     """Vrai si les etiquettes d'abscisse ne tiennent pas cote a cote.
 
@@ -255,7 +274,8 @@ def colonnes(donnees, *, titre, description, unite="", largeur=680, hauteur=300,
             fig.ajouter(f'<g stroke="{ENCRE}" stroke-width="1.6">{barre}</g>')
         if etiquettes_valeurs:
             cime = min(y, py(d.get("haut") or d["valeur"]))
-            fig.ajouter(_texte(cx, cime - 10, f'{d["valeur"]}{unite}', ancre="middle",
+            fig.ajouter(_texte_tenu(cx, cime - 10, f'{d["valeur"]}{unite}',
+                                    largeur_max=pas - 3, ancre="middle",
                                couleur=ENCRE, taille=11, gras=True))
         fig.ajouter(_texte(cx, hauteur - bas + 16, d["libelle"], ancre="middle",
                            couleur=ENCRE_DOUCE, taille=11))
@@ -332,6 +352,21 @@ def courbes(series, abscisses, *, titre, description, unite="", largeur=680,
         fig.ajouter(_texte(gauche - 8, y, f"{vmin + etendue * f:.0f}", ancre="end",
                            couleur=ENCRE_DOUCE, taille=11))
 
+    # Les etiquettes de bout de courbe, ecartees d'au moins une ligne : deux
+    # series qui finissent a la meme hauteur -- « Femmes » et « Hommes » --
+    # ecrivaient l'une par-dessus l'autre.
+    bouts = {}
+    for k, s in enumerate(series):
+        dernier = max((i for i, v in enumerate(s["valeurs"]) if v is not None),
+                      default=None)
+        if dernier is not None:
+            bouts[k] = [dernier, py(s["valeurs"][dernier])]
+    for k in sorted(bouts, key=lambda k: bouts[k][1]):
+        for autre in bouts:
+            if autre != k and bouts[autre][0] == bouts[k][0] \
+                    and 0 < bouts[k][1] - bouts[autre][1] < 13:
+                bouts[k][1] = bouts[autre][1] + 13
+
     for k, s in enumerate(series):
         teinte = s.get("couleur") or SERIES[k % len(SERIES)]
         points = [(px(i), py(v)) for i, v in enumerate(s["valeurs"]) if v is not None]
@@ -354,26 +389,42 @@ def courbes(series, abscisses, *, titre, description, unite="", largeur=680,
             # gauche quand elle n'y tient pas : « audience moyenne » sortait
             # de cent pixels hors du cadre, ou elle etait simplement invisible.
             w = _largeur(s["nom"], 11)
+            y_bout = bouts[k][1]
             if px(dernier) + 8 + w <= largeur - 2:
-                fig.ajouter(_texte(px(dernier) + 8, py(s["valeurs"][dernier]),
-                                   s["nom"], couleur=ENCRE, taille=11, gras=True))
+                fig.ajouter(_texte(px(dernier) + 8, y_bout, s["nom"],
+                                   couleur=ENCRE, taille=11, gras=True))
             else:
-                fig.ajouter(_texte(px(dernier) - 8, py(s["valeurs"][dernier]),
-                                   s["nom"], ancre="end", couleur=ENCRE,
-                                   taille=11, gras=True))
+                fig.ajouter(_texte(px(dernier) - 8, y_bout, s["nom"],
+                                   ancre="end", couleur=ENCRE, taille=11,
+                                   gras=True))
 
     # Les rangs categoriels, juste sous l'axe, avant les abscisses.
     y_bande = haut + piste_h + 16
+    largeur_piste = min(pas - 5, 22)
     for rang, bande in enumerate(bandes):
         y = y_bande + 18 * rang
         for i, x in enumerate(bande):
             if not x:
                 continue
-            fig.ajouter(f'<g class="marque"><title>{e(abscisses[i])} — '
-                        f'{e(x.get("titre") or x["lettre"])}</title>'
-                        + _texte(px(i), y, x["lettre"], ancre="middle",
-                                 couleur=ENCRE_DOUCE, taille=10, mono=True)
-                        + '</g>')
+            info = (f'<title>{e(abscisses[i])} — '
+                    f'{e(x.get("titre") or x.get("lettre") or "")}</title>')
+            if x.get("segments"):
+                # Une reglette : la position du segment DANS l'annee se lit
+                # d'un coup sur trente-trois colonnes, la ou « 3–6 » demandait
+                # de compter. Le fond gris est l'annee entiere.
+                x0 = px(i) - largeur_piste / 2
+                dessin = (f'<rect x="{x0:.1f}" y="{y - 1.5:.1f}" '
+                          f'width="{largeur_piste:.1f}" height="3" rx="1.5" '
+                          f'fill="{GRILLE}"/>')
+                for a0, a1 in x["segments"]:
+                    dessin += (f'<rect x="{x0 + largeur_piste * a0:.1f}" '
+                               f'y="{y - 1.5:.1f}" '
+                               f'width="{max(1.5, largeur_piste * (a1 - a0)):.1f}" '
+                               f'height="3" rx="1.5" fill="{ENCRE_DOUCE}"/>')
+            else:
+                dessin = _texte(px(i), y, x["lettre"], ancre="middle",
+                                couleur=ENCRE_DOUCE, taille=10, mono=True)
+            fig.ajouter(f'<g class="marque">{info}{dessin}</g>')
 
     y_abscisses = y_bande + (18 * len(bandes) if bandes else 2)
     for i, a in enumerate(abscisses):
@@ -890,7 +941,13 @@ def halteres(donnees, *, titre, description, unite="", largeur=880,
         return marge_gauche + piste * (v - vmin) / etendue
 
     fig = Figure(largeur, hauteur, titre, description)
+    # Le pas etait fixe a 10 : sur une echelle de 90 a 530, cela fait
+    # quarante-quatre graduations pour huit cent quatre-vingts pixels, et
+    # « 90 » s'ecrivait sur « 100 ». On choisit le pas d'apres la place.
     pas = 10
+    while (vmax - vmin) / pas * 1 > piste / (_largeur(f"{vmax:.0f}{unite}", 11) + 14):
+        pas *= 2 if str(pas)[0] == "1" else 2.5
+        pas = int(pas)
     v = vmin - vmin % pas + pas
     while v <= vmax:
         fig.ajouter(f'<line x1="{px(v):.1f}" y1="{haut - 10}" x2="{px(v):.1f}" '
@@ -1136,10 +1193,13 @@ def plan(points, *, titre, description, x_titre="", y_titre="", reperes=None,
                     f'<circle cx="{px(p["x"]):.1f}" cy="{py(p["y"]):.1f}" r="3.2" '
                     f'fill="{teinte}" opacity="0.42"/></g>')
 
-    for r in (reperes or []):
+    # Les noms de modalite s'ecartent quand ils se recouvrent : le point reste
+    # a sa vraie place, l'etiquette glisse.
+    y_repere = _ecarter([(i, py(r["y"]) - 1) for i, r in enumerate(reperes or [])])
+    for i, r in enumerate(reperes or []):
         fig.ajouter(f'<circle cx="{px(r["x"]):.1f}" cy="{py(r["y"]):.1f}" r="3" '
                     f'fill="{SURFACE}" stroke="{ENCRE}" stroke-width="1.6"/>')
-        fig.ajouter(_texte(px(r["x"]) + 7, py(r["y"]) - 1, r["libelle"],
+        fig.ajouter(_texte(px(r["x"]) + 7, y_repere[i], r["libelle"],
                            couleur=ENCRE, taille=11))
 
     if x_titre:
@@ -1184,13 +1244,16 @@ def pentes(lignes, *, titre, description, gauche, droite, largeur=700,
     def y(rang):
         return haut + (hauteur - haut - bas) * (rang - rmin) / ((rmax - rmin) or 1)
 
+    yg_etiquette = _ecarter([(i, y(l["rang_gauche"])) for i, l in enumerate(lignes)])
+    yd_etiquette = _ecarter([(i, y(l["rang_droite"])) for i, l in enumerate(lignes)])
+
     fig = Figure(largeur, hauteur, titre, description)
     fig.ajouter(_texte(xg, haut - 20, gauche, ancre="end", couleur=ENCRE_DOUCE,
                        taille=11.5, gras=True))
     fig.ajouter(_texte(xd, haut - 20, droite, couleur=ENCRE_DOUCE,
                        taille=11.5, gras=True))
 
-    for l in lignes:
+    for i, l in enumerate(lignes):
         monte = l["rang_droite"] < l["rang_gauche"]
         teinte = l.get("couleur") or (SERIES[2] if monte else SERIES[1])
         plat = l["rang_droite"] == l["rang_gauche"]
@@ -1205,9 +1268,9 @@ def pentes(lignes, *, titre, description, gauche, droite, largeur=700,
                     f'<circle cx="{xg + 6}" cy="{yg:.1f}" r="3" fill="{teinte}"/>'
                     f'<circle cx="{xd - 6}" cy="{yd:.1f}" r="3" fill="{teinte}"/>'
                     f'</g>')
-        fig.ajouter(_texte(xg - 6, yg, f'{l["rang_gauche"]}. {l["libelle"]}',
+        fig.ajouter(_texte(xg - 6, yg_etiquette[i], f'{l["rang_gauche"]}. {l["libelle"]}',
                            ancre="end", couleur=ENCRE, taille=11))
-        fig.ajouter(_texte(xd + 6, yd, f'{l["rang_droite"]}. {l["libelle"]}',
+        fig.ajouter(_texte(xd + 6, yd_etiquette[i], f'{l["rang_droite"]}. {l["libelle"]}',
                            couleur=ENCRE, taille=11))
     return fig.rendu()
 

@@ -22958,7 +22958,7 @@ modeles:
       question: Un casting mélange-t-il les âges plus qu'un tirage au hasard ne le ferait ?
       observe: 9.941
       attendu: 9.695
-      unite: annees
+      unite: années
       ecart_types: 2.53
       p: 0.0118
       tirages: 10000
@@ -23006,7 +23006,7 @@ modeles:
     - cle: familles_metiers
       libelle: La variété des métiers
       question: Un casting couvre-t-il plus de familles de métiers qu'un tirage au hasard ?
-      observe: 246.0
+      observe: 246
       attendu: 246.624
       unite: cases remplies
       ecart_types: -0.12
@@ -23160,7 +23160,7 @@ modeles:
         ne les ferait ?
       observe: 5.75
       attendu: 3.85
-      unite: annees
+      unite: années
       ecart_types: 3.03
       p: 0.0022
       tirages: 10000
@@ -23210,7 +23210,7 @@ modeles:
       question: 'Le même écart, mesuré à la médiane : est-il général, ou porté par quelques saisons ?'
       observe: 4.16
       attendu: 3.331
-      unite: annees
+      unite: années
       ecart_types: 1.02
       p: 0.3162
       tirages: 10000
@@ -24351,7 +24351,7 @@ modeles:
       question: Une fois les tribus mélangées, écrit-on moins souvent le nom de quelqu'un de son camp
         d'origine ?
       observe: 29.29
-      attendu: 39.0
+      attendu: 39
       unite: '%'
       ecart_types: -12.1
       p: 0.0002
@@ -24601,7 +24601,7 @@ modeles:
       libelle: L'élimination en série d'un camp
       question: Après la réunification, les sorties se suivent-elles par bandeau plus souvent que le hasard
         ne le voudrait ?
-      observe: 108.0
+      observe: 108
       attendu: 84.769
       unite: enchaînements
       ecart_types: 3.6
@@ -26035,7 +26035,7 @@ modeles:
       question: Une saison moins regardée que son époque ne le laissait attendre est-elle suivie d'un
         casting plus large ?
       observe: -0.296
-      attendu: -0.0
+      attendu: 0
       unite: ''
       ecart_types: -1.62
       p: 0.1074
@@ -26139,7 +26139,7 @@ modeles:
       question: La part de femmes parmi les éliminés change-t-elle à la réunification ?
       observe: -7.861
       attendu: -1.072
-      unite: ' points'
+      unite: points
       ecart_types: -1.39
       p: 0.1646
       tirages: 10000
@@ -26190,7 +26190,7 @@ modeles:
       question: Élimine-t-on le faible avant la réunification et le fort après ?
       observe: -13.757
       attendu: 0.011
-      unite: ' points de rang'
+      unite: points de rang
       ecart_types: -4.17
       p: 0.0002
       tirages: 10000
@@ -26241,7 +26241,7 @@ modeles:
       question: Le vote se divise-t-il davantage une fois les tribus réunies ?
       observe: 20.615
       attendu: 0.029
-      unite: ' points'
+      unite: points
       ecart_types: 3.39
       p: 0.0009
       tirages: 10000
@@ -26292,7 +26292,7 @@ modeles:
       question: Deux ambassadeurs qui décident seuls choisissent-ils autrement qu'un tirage ?
       observe: 46.875
       attendu: 49.952
-      unite: ' points de rang'
+      unite: points de rang
       ecart_types: -0.4
       p: 0.6931
       tirages: 10000
@@ -26342,7 +26342,7 @@ modeles:
       question: Partir en ambassade change-t-il la distance que l'on parcourt ensuite ?
       observe: 39.445
       attendu: 50.063
-      unite: ' points de rang'
+      unite: points de rang
       ecart_types: -1.88
       p: 0.0614
       tirages: 10000
@@ -27153,7 +27153,7 @@ modeles:
       question: Sortir est-il plus probable quand on a reçu au moins une voix au conseil précédent ?
       observe: 9.298
       attendu: 0.536
-      unite: ' points'
+      unite: points
       ecart_types: 3.5
       p: 0.0008
       tirages: 10000
@@ -27204,7 +27204,7 @@ modeles:
       question: Être visé beaucoup expose-t-il moins qu'être visé un peu ?
       observe: 9.484
       attendu: 3.125
-      unite: ' points'
+      unite: points
       ecart_types: 1.38
       p: 0.1696
       tirages: 10000
@@ -27255,7 +27255,7 @@ modeles:
       question: S'être trompé de cible au conseil précédent expose-t-il au suivant ?
       observe: 1.027
       attendu: -1.181
-      unite: ' points'
+      unite: points
       ecart_types: 1.01
       p: 0.323
       tirages: 10000
@@ -27305,7 +27305,7 @@ modeles:
       question: Les voix reçues à l'avant-dernier conseil comptent-elles encore ?
       observe: 7.299
       attendu: 0.663
-      unite: ' points'
+      unite: points
       ecart_types: 1.68
       p: 0.0915
       tirages: 10000
@@ -27356,7 +27356,7 @@ modeles:
         ?
       observe: 18.631
       attendu: 1.553
-      unite: ' points'
+      unite: points
       ecart_types: 5.22
       p: 0.0001
       tirages: 10000
@@ -27592,7 +27592,7 @@ modeles:
       question: Appartenir au bandeau le moins représenté du camp expose-t-il ?
       observe: 7.095
       attendu: -0.439
-      unite: ' points'
+      unite: points
       ecart_types: 4.16
       p: 0.0001
       tirages: 10000
@@ -27643,7 +27643,7 @@ modeles:
       question: Être du sexe le moins représenté du camp expose-t-il ?
       observe: -4.657
       attendu: -0.356
-      unite: ' points'
+      unite: points
       ecart_types: -2.64
       p: 0.0085
       tirages: 10000
@@ -27693,7 +27693,7 @@ modeles:
       question: Le doyen d'un conseil part-il plus souvent que les autres ?
       observe: 3.651
       attendu: 0.96
-      unite: ' points'
+      unite: points
       ecart_types: 1.29
       p: 0.2043
       tirages: 10000
@@ -27743,7 +27743,7 @@ modeles:
       question: Gagner le confort fait-il partir le soir même ?
       observe: 5.416
       attendu: 0.54
-      unite: ' points'
+      unite: points
       ecart_types: 1.42
       p: 0.1564
       tirages: 10000
@@ -27908,7 +27908,7 @@ modeles:
       question: Se retrouver sans un seul allié parmi les présents expose-t-il ?
       observe: 15.945
       attendu: 1.691
-      unite: ' points'
+      unite: points
       ecart_types: 3.4
       p: 0.002
       tirages: 10000
@@ -27958,7 +27958,7 @@ modeles:
       question: Celui qu'on vient de viser gagne-t-il plus souvent l'immunité ?
       observe: 0.883
       attendu: 0.871
-      unite: ' points'
+      unite: points
       ecart_types: 0.0
       p: 1.0
       tirages: 10000
@@ -28031,7 +28031,7 @@ modeles:
         ?
       observe: 11.419
       attendu: 8.525
-      unite: ' points'
+      unite: points
       ecart_types: 0.67
       p: 0.5061
       tirages: 4000
@@ -28091,7 +28091,7 @@ modeles:
       question: Élimine-t-on le plus âgé avant la réunification, et plus après ?
       observe: 1.336
       attendu: 0.005
-      unite: ' ans'
+      unite: ans
       ecart_types: 1.38
       p: 0.1667
       tirages: 10000
@@ -28273,7 +28273,7 @@ modeles:
     origine: casting
     observe: 9.941
     attendu: 9.695
-    unite: annees
+    unite: années
     ecart_types: 2.53
     p: 0.0118
     p_ajustee: 0.0236
@@ -28286,7 +28286,7 @@ modeles:
     libelle: La variété des métiers
     question: Un casting couvre-t-il plus de familles de métiers qu'un tirage au hasard ?
     origine: casting
-    observe: 246.0
+    observe: 246
     attendu: 246.624
     unite: cases remplies
     ecart_types: -0.12
@@ -28335,7 +28335,7 @@ modeles:
     origine: casting
     observe: 5.75
     attendu: 3.85
-    unite: annees
+    unite: années
     ecart_types: 3.03
     p: 0.0022
     p_ajustee: 0.0048
@@ -28350,7 +28350,7 @@ modeles:
     origine: casting
     observe: 4.16
     attendu: 3.331
-    unite: annees
+    unite: années
     ecart_types: 1.02
     p: 0.3162
     p_ajustee: 0.374
@@ -28461,7 +28461,7 @@ modeles:
       ?
     origine: homophilie
     observe: 29.29
-    attendu: 39.0
+    attendu: 39
     unite: '%'
     ecart_types: -12.1
     p: 0.0002
@@ -28611,7 +28611,7 @@ modeles:
       plus large ?
     origine: audience
     observe: -0.296
-    attendu: -0.0
+    attendu: 0
     unite: ''
     ecart_types: -1.62
     p: 0.1074
@@ -28628,7 +28628,7 @@ modeles:
     origine: avant_apres
     observe: -7.861
     attendu: -1.072
-    unite: ' points'
+    unite: points
     ecart_types: -1.39
     p: 0.1646
     p_ajustee: 0.2261
@@ -28644,7 +28644,7 @@ modeles:
     origine: avant_apres
     observe: -13.757
     attendu: 0.011
-    unite: ' points de rang'
+    unite: points de rang
     ecart_types: -4.17
     p: 0.0002
     p_ajustee: 0.0006
@@ -28660,7 +28660,7 @@ modeles:
     origine: avant_apres
     observe: 20.615
     attendu: 0.029
-    unite: ' points'
+    unite: points
     ecart_types: 3.39
     p: 0.0009
     p_ajustee: 0.0022
@@ -28675,7 +28675,7 @@ modeles:
     origine: avant_apres
     observe: 46.875
     attendu: 49.952
-    unite: ' points de rang'
+    unite: points de rang
     ecart_types: -0.4
     p: 0.6931
     p_ajustee: 0.7261
@@ -28690,7 +28690,7 @@ modeles:
     origine: avant_apres
     observe: 39.445
     attendu: 50.063
-    unite: ' points de rang'
+    unite: points de rang
     ecart_types: -1.88
     p: 0.0614
     p_ajustee: 0.11
@@ -28706,7 +28706,7 @@ modeles:
     origine: conditionnelles
     observe: 9.298
     attendu: 0.536
-    unite: ' points'
+    unite: points
     ecart_types: 3.5
     p: 0.0008
     p_ajustee: 0.0021
@@ -28722,7 +28722,7 @@ modeles:
     origine: conditionnelles
     observe: 9.484
     attendu: 3.125
-    unite: ' points'
+    unite: points
     ecart_types: 1.38
     p: 0.1696
     p_ajustee: 0.2261
@@ -28738,7 +28738,7 @@ modeles:
     origine: conditionnelles
     observe: 1.027
     attendu: -1.181
-    unite: ' points'
+    unite: points
     ecart_types: 1.01
     p: 0.323
     p_ajustee: 0.374
@@ -28752,7 +28752,7 @@ modeles:
     origine: conditionnelles
     observe: 7.299
     attendu: 0.663
-    unite: ' points'
+    unite: points
     ecart_types: 1.68
     p: 0.0915
     p_ajustee: 0.1491
@@ -28767,7 +28767,7 @@ modeles:
     origine: conditionnelles
     observe: 18.631
     attendu: 1.553
-    unite: ' points'
+    unite: points
     ecart_types: 5.22
     p: 0.0001
     p_ajustee: 0.0006
@@ -28797,7 +28797,7 @@ modeles:
     origine: autour_du_feu
     observe: 7.095
     attendu: -0.439
-    unite: ' points'
+    unite: points
     ecart_types: 4.16
     p: 0.0001
     p_ajustee: 0.0006
@@ -28813,7 +28813,7 @@ modeles:
     origine: autour_du_feu
     observe: -4.657
     attendu: -0.356
-    unite: ' points'
+    unite: points
     ecart_types: -2.64
     p: 0.0085
     p_ajustee: 0.0178
@@ -28828,7 +28828,7 @@ modeles:
     origine: autour_du_feu
     observe: 3.651
     attendu: 0.96
-    unite: ' points'
+    unite: points
     ecart_types: 1.29
     p: 0.2043
     p_ajustee: 0.2644
@@ -28843,7 +28843,7 @@ modeles:
     origine: autour_du_feu
     observe: 5.416
     attendu: 0.54
-    unite: ' points'
+    unite: points
     ecart_types: 1.42
     p: 0.1564
     p_ajustee: 0.2261
@@ -28859,7 +28859,7 @@ modeles:
     origine: pire_place
     observe: 15.945
     attendu: 1.691
-    unite: ' points'
+    unite: points
     ecart_types: 3.4
     p: 0.002
     p_ajustee: 0.0046
@@ -28874,7 +28874,7 @@ modeles:
     origine: pire_place
     observe: 0.883
     attendu: 0.871
-    unite: ' points'
+    unite: points
     ecart_types: 0.0
     p: 1.0
     p_ajustee: 1.0
@@ -28937,7 +28937,7 @@ modeles:
     question: Après la réunification, les sorties se suivent-elles par bandeau plus souvent que le hasard
       ne le voudrait ?
     origine: decimation
-    observe: 108.0
+    observe: 108
     attendu: 84.769
     unite: enchaînements
     ecart_types: 3.6
@@ -28955,7 +28955,7 @@ modeles:
     origine: tenant_du_titre
     observe: 11.419
     attendu: 8.525
-    unite: ' points'
+    unite: points
     ecart_types: 0.67
     p: 0.5061
     p_ajustee: 0.5567
@@ -28972,7 +28972,7 @@ modeles:
     origine: age_au_conseil
     observe: 1.336
     attendu: 0.005
-    unite: ' ans'
+    unite: ans
     ecart_types: 1.38
     p: 0.1667
     p_ajustee: 0.2261
