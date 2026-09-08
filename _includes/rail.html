@@ -20,47 +20,24 @@
 
   <nav class="rail-corps" aria-label="Sommaire du site">
     {%- for groupe in site.data.navigation -%}
-    {%- comment -%}
-      Une section marquee `repliable` se replie : « Les resultats » en porte
-      vingt-sept sur les trente-cinq du sommaire, et deployee en permanence
-      elle faisait un rail plus haut que l'ecran. Elle s'ouvre d'elle-meme
-      quand la page courante est dedans -- c'est un <details>, donc sans
-      JavaScript, et ses liens restent dans le document meme repliee.
-    {%- endcomment -%}
-    {%- assign ouvert = false -%}
-    {%- assign combien = 0 -%}
-    {%- for e in groupe.entrees -%}
-      {%- if page.url == e.url -%}{%- assign ouvert = true -%}{%- endif -%}
-      {%- unless e.hub -%}{%- assign combien = combien | plus: 1 -%}{%- endunless -%}
-    {%- endfor -%}
-    {%- if groupe.repliable -%}
-    <details class="rail-groupe"{% if ouvert %} open{% endif %}>
-      <summary class="rail-titre rail-titre-poignee">
-        <span>{{ groupe.section }}</span>
-        <span class="rail-compte">{{ combien }}</span>
-      </summary>
-    {%- else -%}
     <p class="rail-titre">{{ groupe.section }}</p>
-    {%- endif -%}
+    {%- if groupe.entrees.size > 0 -%}
     <ul class="rail-liste">
-      {%- for e in groupe.entrees -%}
-      {%- assign ici = false -%}
-      {%- if page.url == e.url -%}{%- assign ici = true -%}{%- endif -%}
-      {%- assign valeur = nil -%}
-      {%- if e.badge -%}
-        {%- assign noeud = site.data.stats -%}
-        {%- assign chemin = e.badge | split: "." -%}
-        {%- for cle in chemin -%}{%- assign noeud = noeud[cle] -%}{%- endfor -%}
-        {%- assign valeur = noeud -%}
-      {%- endif -%}
-      <li>
-        <a href="{{ e.url | relative_url }}"
-           class="rail-lien{% if ici %} ici{% endif %}"
-           {% if ici %}aria-current="page"{% endif %}>{{ e.titre }}{% if valeur %}<span class="rail-badge">{{ valeur }}&nbsp;%</span>{% endif %}</a>
-      </li>
-      {%- endfor -%}
+      {%- for e in groupe.entrees -%}{% include rail-entree.html e=e %}{%- endfor -%}
     </ul>
-    {%- if groupe.repliable -%}</details>{%- endif -%}
+    {%- endif -%}
+    {%- comment -%}
+      Les themes d'une section. Vingt-sept entrees en liste plate faisaient un
+      sommaire plus haut que l'ecran, et muet : rien n'y disait qu'« Les
+      alliances » et « Qui vise qui » parlent du meme moment du jeu. Chaque
+      theme est un bloc, et son intertitre porte le compte de ses entrees.
+    {%- endcomment -%}
+    {%- for theme in groupe.themes -%}
+    <p class="rail-theme">{{ theme.titre }}<span class="rail-compte">{{ theme.entrees.size }}</span></p>
+    <ul class="rail-liste">
+      {%- for e in theme.entrees -%}{% include rail-entree.html e=e %}{%- endfor -%}
+    </ul>
+    {%- endfor -%}
     {%- endfor -%}
   </nav>
 </details>

@@ -28,23 +28,32 @@ mêmes personnes et fausseraient les moyennes d’âge comme de longévité.
   <li class="chiffre"><b>{{ s.records.nb_multi_participants }}</b><span>aventuriers revenus jouer</span></li>
 </ul>
 
-Les onze premières entrées **décrivent** : elles comptent, elles font des parts
-et des moyennes. Les seize dernières **testent** — elles comparent ce qu’on
-observe à ce que le hasard produirait, et publient un intervalle plutôt qu’un
-point. Elles ne remplacent pas les premières : on ne teste bien qu’un écart
-qu’on a d’abord regardé. La [méthode]({{ '/methode/' | relative_url }}) les
-détaille, et donne la liste complète des tests menés — y compris ceux qui
-n’ont rien donné.
+Onze entrées **décrivent** : elles comptent, elles font des parts et des
+moyennes. Seize **testent** — elles comparent ce qu’on observe à ce que le
+hasard produirait, et publient un intervalle plutôt qu’un point. Elles ne
+remplacent pas les premières : on ne teste bien qu’un écart qu’on a d’abord
+regardé. Les unes et les autres sont mêlées ci-dessous, parce qu’elles sont
+rangées par **sujet** et non par méthode : « Les alliances » et « Qui vise
+qui » parlent du même moment du jeu, quoi qu’elles emploient pour le dire. La
+[méthode]({{ '/methode/' | relative_url }}) les détaille, et donne la liste
+complète des tests menés — y compris ceux qui n’ont rien donné.
 
 ## Les vingt-sept entrées
 
-<ul class="cartes">
 {%- for groupe in site.data.navigation -%}
 {%- if groupe.fil -%}
 {%- assign total = 0 -%}
-{%- for e in groupe.entrees -%}{%- unless e.hub -%}{%- assign total = total | plus: 1 -%}{%- endunless -%}{%- endfor -%}
+{%- for t in groupe.themes -%}
+{%- for e in t.entrees -%}{%- unless e.hub -%}{%- assign total = total | plus: 1 -%}{%- endunless -%}{%- endfor -%}
+{%- endfor -%}
 {%- assign rang = 0 -%}
-{%- for e in groupe.entrees -%}
+{%- for t in groupe.themes -%}
+### {{ t.titre }}
+
+<p class="chapeau-theme">{{ t.resume }}</p>
+
+<ul class="cartes">
+{%- for e in t.entrees -%}
 {%- unless e.hub -%}
 {%- assign rang = rang | plus: 1 -%}
   <li class="carte">
@@ -56,9 +65,10 @@ n’ont rien donné.
   </li>
 {%- endunless -%}
 {%- endfor -%}
+</ul>
+{%- endfor -%}
 {%- endif -%}
 {%- endfor -%}
-</ul>
 
 ## Le tableau d’ensemble
 

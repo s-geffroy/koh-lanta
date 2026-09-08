@@ -1,0 +1,27 @@
+{%- comment -%}
+  Une entree du sommaire. Extraite du rail parce qu'elle s'y rend maintenant a
+  deux endroits -- les entrees d'une section et celles de chacun de ses themes
+  -- et qu'une entree affichee de deux facons finirait par diverger.
+
+  `badge:` est un chemin pointe dans site.data.stats (« completude_saisons.
+  moyenne »). La valeur affichee vient donc du fichier de statistiques, jamais
+  d'un chiffre recopie a la main dans la navigation.
+
+  Appel : `include rail-entree.html e=e` -- ecrit sans ses accolades, parce
+  qu'une balise Liquid citee dans un commentaire n'est PAS inerte.
+{%- endcomment -%}
+{%- assign e = include.e -%}
+{%- assign ici = false -%}
+{%- if page.url == e.url -%}{%- assign ici = true -%}{%- endif -%}
+{%- assign valeur = nil -%}
+{%- if e.badge -%}
+  {%- assign noeud = site.data.stats -%}
+  {%- assign chemin = e.badge | split: "." -%}
+  {%- for cle in chemin -%}{%- assign noeud = noeud[cle] -%}{%- endfor -%}
+  {%- assign valeur = noeud -%}
+{%- endif -%}
+<li>
+  <a href="{{ e.url | relative_url }}"
+     class="rail-lien{% if ici %} ici{% endif %}"
+     {% if ici %}aria-current="page"{% endif %}>{{ e.titre }}{% if valeur %}<span class="rail-badge">{{ valeur }}&nbsp;%</span>{% endif %}</a>
+</li>

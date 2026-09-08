@@ -221,6 +221,19 @@ FAMILLES_DE_FICHES = {
 }
 
 
+def entrees_a_plat(groupe):
+    """Les entrees d'une section, themes compris, DANS L'ORDRE du sommaire.
+
+    Une section peut ranger ses entrees en `themes` -- « Les resultats » en a
+    cinq. Un controle qui ne lirait que `entrees` verrait la section vide et
+    declarerait ses vingt-sept pages introuvables.
+    """
+    out = list(groupe.get("entrees") or [])
+    for theme in groupe.get("themes") or []:
+        out.extend(theme.get("entrees") or [])
+    return out
+
+
 def controler_navigation(c, permaliens, gabarits):
     """Toute page publiee doit etre atteignable, et toute entree doit exister.
 
@@ -243,7 +256,7 @@ def controler_navigation(c, permaliens, gabarits):
     sections = yaml.safe_load(open(chemin, encoding="utf-8")) or []
     listees = {}
     for groupe in sections:
-        for entree in groupe.get("entrees") or []:
+        for entree in entrees_a_plat(groupe):
             url = entree.get("url")
             if url in listees:
                 c.erreur(f"navigation.yml : « {url} » listee deux fois")
@@ -692,16 +705,16 @@ def controler_comptes_annonces(c):
     fil = next((g for g in sections if g.get("fil")), None)
     if not fil:
         return
-    entrees = [e for e in fil.get("entrees") or [] if not e.get("hub")]
-    frontiere = next((i for i, e in enumerate(entrees) if e.get("modeles")), None)
-    if frontiere is None:
+    entrees = [e for e in entrees_a_plat(fil) if not e.get("hub")]
+    modeles = sum(1 for e in entrees if e.get("modeles"))
+    if not modeles:
         c.erreur("_data/navigation.yml : aucune entree marquee `modeles: true` — "
-                 "la frontiere entre pages descriptives et pages a modeles n'est "
+                 "le partage entre pages descriptives et pages a modeles n'est "
                  "plus derivable, et les nombres annonces ne sont plus verifiables")
         return
-    attendus = {len(entrees), frontiere, len(entrees) - frontiere}
+    attendus = {len(entrees), modeles, len(entrees) - modeles}
 
-    hub = next((e for e in fil.get("entrees") or [] if e.get("hub")), {})
+    hub = next((e for e in entrees_a_plat(fil) if e.get("hub")), {})
     zones = [("_data/navigation.yml (resume du sommaire)", hub.get("resume") or "")]
 
     # Le sommaire : son chapeau, et le corps jusqu'au titre qui annonce le
@@ -731,7 +744,7 @@ def controler_comptes_annonces(c):
             if valeur not in attendus:
                 c.erreur(f"{origine} : « {trouve} » ne correspond a aucun compte "
                          f"reel — navigation.yml porte {len(entrees)} entrees, "
-                         f"{frontiere} descriptives et {len(entrees) - frontiere} "
+                         f"{len(entrees) - modeles} descriptives et {modeles} "
                          f"a modeles")
 
 def controler_portraits(c):

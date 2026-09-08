@@ -4,9 +4,17 @@
   Une page hors du fil -- accueil, saisons, aventuriers, sources -- ne recoit
   rien : on y arrive par le rail, pas par enchainement.
 {%- endcomment -%}
+{%- comment -%}
+  L'ordre de lecture aplatit la section : d'abord ses entrees propres -- la
+  page d'entree -- puis celles de chaque theme, theme apres theme. C'est
+  exactement l'ordre du sommaire, et il n'est ecrit qu'a un seul endroit.
+{%- endcomment -%}
 {%- assign fil = "" | split: "" -%}
 {%- for g in site.data.navigation -%}
-  {%- if g.fil -%}{%- assign fil = fil | concat: g.entrees -%}{%- endif -%}
+  {%- if g.fil -%}
+    {%- assign fil = fil | concat: g.entrees -%}
+    {%- for t in g.themes -%}{%- assign fil = fil | concat: t.entrees -%}{%- endfor -%}
+  {%- endif -%}
 {%- endfor -%}
 {%- assign pos = -1 -%}
 {%- for e in fil -%}

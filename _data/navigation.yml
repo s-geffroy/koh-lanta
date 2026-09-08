@@ -9,147 +9,168 @@
 # `fil: true` place la page dans l'ordre de lecture propose en bas de page.
 # L'accueil et les pages de donnees en sont exclus : on n'y entre pas par
 # enchainement, on y va directement.
+#
+# LA SECTION « LES RESULTATS » EST DECOUPEE EN `themes`. Ses vingt-sept entrees
+# en liste plate faisaient un sommaire plus haut que l'ecran, et surtout muet :
+# rien n'y disait qu'« Les alliances » et « Qui vise qui » parlent du meme
+# moment du jeu. L'ordre des themes, puis des entrees dans chacun, EST l'ordre
+# de lecture : le fil et les cartes les aplatissent dans cet ordre-la.
+#
+# `modeles: true` marque les entrees qui reposent sur un modele plutot que sur
+# un comptage. C'etait une frontiere de POSITION tant que la liste etait plate ;
+# le regroupement par theme les melange, donc chaque entree porte desormais son
+# propre marqueur. Trois pages annoncent en toutes lettres combien d'entrees
+# decrivent et combien testent : controler_comptes_annonces() les compare a ce
+# qui est ici.
+
 - section: Découvrir
   entrees:
-    - titre: Accueil
+    - titre: "Accueil"
       url: /
-      resume: Le jeu, vu de la donnée.
+      resume: "Le jeu, vu de la donnée."
 
-# `repliable: true` : cette section-ci, et elle seule, se replie dans le rail.
-# Elle porte vingt-sept entrees sur les trente-cinq du sommaire, et deployee en
-# permanence elle faisait un rail plus haut que l'ecran. Elle s'ouvre d'elle-meme
-# quand on est dedans.
 - section: Les résultats
   fil: true
-  repliable: true
+  # La page d'entree de la section : elle appartient au fil de lecture
+  # -- on y revient par « precedent » -- mais elle ne porte pas de rang,
+  # et elle ne figure pas dans son propre sommaire.
   entrees:
-    # `hub: true` : la page d'entree de la section. Elle appartient au fil de
-    # lecture -- on peut y revenir par « precedent » -- mais elle ne porte pas
-    # de rang, et elle ne figure pas dans son propre sommaire.
-    - titre: Vue d'ensemble
+    - titre: "Vue d'ensemble"
       url: /statistiques/
       hub: true
-      resume: Les vingt-sept entrées, et les chiffres qui les tiennent.
-    - titre: Le profil du vainqueur
-      url: /statistiques/vainqueurs/
-      resume: "Âge, sexe, métier, couleur : ce que les vainqueurs ont en commun."
-    - titre: Jaune contre rouge
-      url: /statistiques/tribus/
-      resume: La couleur de départ change-t-elle quelque chose ?
-    - titre: Le métier
-      url: /statistiques/professions/
-      resume: Qui compose le casting, et quels métiers mènent le plus loin.
-    - titre: Les prénoms
-      url: /statistiques/prenoms/
-      resume: "Alexandra revient sept fois. Est-ce beaucoup ? Réponse chiffrée."
-    - titre: Âge et longévité
-      url: /statistiques/longevite/
-      resume: À quel âge on tient, et l'écart entre femmes et hommes.
-    - titre: Comment on sort
-      url: /statistiques/sorties/
-      resume: Conseil, poteaux, orientation, abandon — et leur évolution.
-    - titre: Les épreuves
-      url: /statistiques/epreuves/
-      resume: Ratios, totaux de carrière, et quel profil domine vraiment.
-    - titre: Les colliers
-      url: /statistiques/colliers/
-      resume: Joués, gardés, ou jamais trouvés.
-    - titre: Le jeu social
-      url: /statistiques/jeu-social/
-      resume: Être visé, voter juste, ou n'être jamais écrit nulle part.
-    - titre: Les conseils
-      url: /statistiques/conseils/
-      resume: "Les votes serrés, les colliers, et un camp qui s'accorde de moins en moins."
-    - titre: Les revenants
-      url: /statistiques/revenants/
-      resume: "Le retour paie-t-il ? Le chiffre évident est un piège."
-    # A PARTIR D'ICI, les pages reposent sur des modeles et non sur des
-    # comptages. Elles viennent apres les pages descriptives : on ne teste bien
-    # qu'un ecart qu'on a d'abord regarde.
-    #
-    # `modeles: true` marque la frontiere pour les machines, et pas seulement
-    # pour le lecteur de ce fichier : trois pages annoncent en toutes lettres
-    # combien d'entrees decrivent et combien testent, et les trois avaient
-    # derive chacune de son cote (« vingt-six », « vingt », « quatorze »).
-    # controler_comptes_annonces() les compare desormais a ce qui est ici.
-    - titre: La recette du casting
-      modeles: true
-      url: /statistiques/casting/
-      resume: "La parité est un quota. Le reste ne l'est pas."
-    - titre: Le pronostic
-      url: /statistiques/pronostic/
-      resume: La fiche d'inscription contient-elle déjà le vainqueur ?
-    - titre: La force réelle
-      url: /statistiques/force/
-      resume: Le classement des athlètes, corrigé du temps passé en jeu.
-    - titre: Le jeu tenu serré
-      url: /statistiques/equilibre/
-      resume: "Le risque qui monte, la tribu qui se rattrape : deux illusions."
-    - titre: Les alliances
-      url: /statistiques/alliances/
-      resume: Elles existent, elles durent, et elles pèsent plus que tout.
-    - titre: La grille
-      url: /statistiques/grille/
-      resume: "Le jour de la fusion, et l'année où le jeu a changé."
-    - titre: Qui vise qui
-      url: /statistiques/qui-vise-qui/
-      resume: Ni le sexe ni le métier ne guident le bulletin. Le bandeau, si.
-    - titre: Sachant le conseil d'avant
-      url: /statistiques/conditionnelles/
-      resume: "Six probabilités conditionnelles : partir, sachant les voix de la fois d'avant."
-    - titre: Sachant qui est autour du feu
-      url: /statistiques/autour-du-feu/
-      resume: "Le bandeau minoritaire part ; le doyen, non ; et un résultat qui vient de céder."
-    - titre: La pire place au conseil
-      url: /statistiques/pire-place/
-      resume: "Visé la fois d'avant et sans allié : le risque passe de 11 à 47 %."
-    - titre: La fin de saison
-      url: /statistiques/finale/
-      resume: "Gagner les poteaux ne suffit pas. Arriver dernier à l'orientation, si."
-    - titre: Le vote du jury
-      url: /statistiques/jury/
-      resume: Le juré fait payer son bourreau, et couronne son allié.
-    - titre: D'où ils viennent
-      url: /statistiques/geographie/
-      resume: "La Corse fournit quatre fois sa part ; l'outre-mer, presque rien."
-    - titre: Avant et après la fusion
-      url: /statistiques/fusion/
-      resume: "On elimine le fort AVANT la reunification, pas apres."
-    - titre: L'audience
-      url: /statistiques/audience/
-      resume: La seule grandeur que la production ne decide pas. Elle a chute de 70 %.
-    # En dernier, et ce n'est pas un hasard : le classement des joueurs
-    # emprunte a toutes les pages qui precedent, et il ne se lit bien qu'apres
-    # elles.
-    - titre: Le top des joueurs
-      url: /statistiques/top/
-      resume: "Quatre facettes qui ne se parlent pas, et une cinquieme qu'il a fallu retirer."
+      resume: "Les vingt-sept entrées, et les chiffres qui les tiennent."
+  themes:
+    - titre: "Le casting"
+      resume: "Qui monte dans l’avion, et jusqu’où il va."
+      entrees:
+        - titre: "Le profil du vainqueur"
+          url: /statistiques/vainqueurs/
+          resume: "Âge, sexe, métier, couleur : ce que les vainqueurs ont en commun."
+        - titre: "Le métier"
+          url: /statistiques/professions/
+          resume: "Qui compose le casting, et quels métiers mènent le plus loin."
+        - titre: "Les prénoms"
+          url: /statistiques/prenoms/
+          resume: "Alexandra revient sept fois. Est-ce beaucoup ? Réponse chiffrée."
+        - titre: "Âge et longévité"
+          url: /statistiques/longevite/
+          resume: "À quel âge on tient, et l'écart entre femmes et hommes."
+        - titre: "Les revenants"
+          url: /statistiques/revenants/
+          resume: "Le retour paie-t-il ? Le chiffre évident est un piège."
+        - titre: "La recette du casting"
+          url: /statistiques/casting/
+          modeles: true
+          resume: "La parité est un quota. Le reste ne l'est pas."
+        - titre: "D'où ils viennent"
+          url: /statistiques/geographie/
+          modeles: true
+          resume: "La Corse fournit quatre fois sa part ; l'outre-mer, presque rien."
+    - titre: "Le conseil"
+      resume: "Le vote, ce qui le précède et ce qu’il décide."
+      entrees:
+        - titre: "Les conseils"
+          url: /statistiques/conseils/
+          resume: "Les votes serrés, les colliers, et un camp qui s'accorde de moins en moins."
+        - titre: "Les colliers"
+          url: /statistiques/colliers/
+          resume: "Joués, gardés, ou jamais trouvés."
+        - titre: "Le jeu social"
+          url: /statistiques/jeu-social/
+          resume: "Être visé, voter juste, ou n'être jamais écrit nulle part."
+        - titre: "Les alliances"
+          url: /statistiques/alliances/
+          modeles: true
+          resume: "Elles existent, elles durent, et elles pèsent plus que tout."
+        - titre: "Qui vise qui"
+          url: /statistiques/qui-vise-qui/
+          modeles: true
+          resume: "Ni le sexe ni le métier ne guident le bulletin. Le bandeau, si."
+        - titre: "Sachant le conseil d'avant"
+          url: /statistiques/conditionnelles/
+          modeles: true
+          resume: "Six probabilités conditionnelles : partir, sachant les voix de la fois d'avant."
+        - titre: "Sachant qui est autour du feu"
+          url: /statistiques/autour-du-feu/
+          modeles: true
+          resume: "Le bandeau minoritaire part ; le doyen, non ; et un résultat qui vient de céder."
+        - titre: "La pire place au conseil"
+          url: /statistiques/pire-place/
+          modeles: true
+          resume: "Visé la fois d'avant et sans allié : le risque passe de 11 à 47 %."
+        - titre: "Le vote du jury"
+          url: /statistiques/jury/
+          modeles: true
+          resume: "Le juré fait payer son bourreau, et couronne son allié."
+    - titre: "Les épreuves"
+      resume: "Gagner, et ce que gagner vaut."
+      entrees:
+        - titre: "Les épreuves"
+          url: /statistiques/epreuves/
+          resume: "Ratios, totaux de carrière, et quel profil domine vraiment."
+        - titre: "La force réelle"
+          url: /statistiques/force/
+          modeles: true
+          resume: "Le classement des athlètes, corrigé du temps passé en jeu."
+        - titre: "La fin de saison"
+          url: /statistiques/finale/
+          modeles: true
+          resume: "Gagner les poteaux ne suffit pas. Arriver dernier à l'orientation, si."
+    - titre: "La saison"
+      resume: "Le jeu comme parcours, du premier jour au dernier."
+      entrees:
+        - titre: "Jaune contre rouge"
+          url: /statistiques/tribus/
+          resume: "La couleur de départ change-t-elle quelque chose ?"
+        - titre: "Comment on sort"
+          url: /statistiques/sorties/
+          resume: "Conseil, poteaux, orientation, abandon — et leur évolution."
+        - titre: "Avant et après la fusion"
+          url: /statistiques/fusion/
+          modeles: true
+          resume: "On elimine le fort AVANT la reunification, pas apres."
+        - titre: "La grille"
+          url: /statistiques/grille/
+          modeles: true
+          resume: "Le jour de la fusion, et l'année où le jeu a changé."
+        - titre: "Le jeu tenu serré"
+          url: /statistiques/equilibre/
+          modeles: true
+          resume: "Le risque qui monte, la tribu qui se rattrape : deux illusions."
+        - titre: "L'audience"
+          url: /statistiques/audience/
+          modeles: true
+          resume: "La seule grandeur que la production ne decide pas. Elle a chute de 70 %."
+    - titre: "Le classement"
+      resume: "Deviner, et classer."
+      entrees:
+        - titre: "Le pronostic"
+          url: /statistiques/pronostic/
+          modeles: true
+          resume: "La fiche d'inscription contient-elle déjà le vainqueur ?"
+        - titre: "Le top des joueurs"
+          url: /statistiques/top/
+          modeles: true
+          resume: "Quatre facettes qui ne se parlent pas, et une cinquieme qu'il a fallu retirer."
 
 - section: Les données
   entrees:
-    # En tete de section : c'est la porte d'entree des donnees. On y voit d'un
-    # coup d'oeil ce que chaque edition contient avant d'aller lire le detail.
-    - titre: La complétude
+    - titre: "La complétude"
       url: /completude/
-      # `badge` pointe dans _data/stats.yml : le rail affiche la valeur a cote
-      # du titre, et elle se met a jour toute seule.
       badge: completude_saisons.moyenne
       resume: "Le tableau : 34 éditions en ligne, 19 types de données en colonne."
-    - titre: Les saisons
+    - titre: "Les saisons"
       url: /saisons/
-      resume: Chaque édition, son lieu, son casting, son vainqueur.
-    - titre: Les aventuriers
+      resume: "Chaque édition, son lieu, son casting, son vainqueur."
+    - titre: "Les aventuriers"
       url: /aventuriers/
-      resume: Toutes les participations, filtrables et triables.
-    # « nommees » n'est pas un ornement : /statistiques/epreuves/ analyse
-    # les 753 epreuves relevees, celle-ci ne montre que celles qui portent un
-    # nom ET dont on connait les vainqueurs. Deux pages, deux perimetres.
-    - titre: Les épreuves nommées
+      resume: "Toutes les participations, filtrables et triables."
+    - titre: "Les épreuves nommées"
       url: /epreuves/
-      resume: Chaque épreuve, ses éditions, et son record de victoires.
-    - titre: Les sources
+      resume: "Chaque épreuve, ses éditions, et son record de victoires."
+    - titre: "Les sources"
       url: /sources/
-      resume: D'où viennent ces données, et ce qui leur manque.
-    - titre: La méthode
+      resume: "D'où viennent ces données, et ce qui leur manque."
+    - titre: "La méthode"
       url: /methode/
-      resume: Les modèles, la liste complète des tests, et leurs limites.
+      resume: "Les modèles, la liste complète des tests, et leurs limites."
