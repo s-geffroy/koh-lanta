@@ -60,11 +60,20 @@ theme: minima
 # purement et simplement tout fichier depose dans _plugins/. La liste a jour
 # est publiee sur https://pages.github.com/versions.json -- va la lire plutot
 # que de te fier a une recette trouvee ailleurs.
-# jekyll-feed a ete RETIRE. Il publiait un flux RSS de 687 octets, sans une
-# seule entree -- `_posts/` est vide et le site n'est pas un blog -- et
-# `{% feed_meta %}` le declarait sur les 599 pages. Le jour ou des articles
-# arrivent, remettre les deux ensemble : le greffon ici, la balise dans
-# _layouts/default.html.
+# jekyll-feed a ete retire de cette liste : il publiait un flux vide -- le
+# site n'est pas un blog, `_posts/` ne contient qu'un .gitkeep -- et la balise
+# `feed_meta` le declarait sur les 599 pages. C'est la declaration qui comptait,
+# et elle a bien disparu.
+#
+# MAIS LE GREFFON TOURNE ENCORE, et le retirer d'ici n'y change rien : Jekyll
+# charge aussi les dependances du THEME, et `theme: minima` depend de
+# jekyll-feed. /feed.xml continue donc d'etre fabrique -- verifie en ligne, sa
+# date de derniere modification suit chaque construction. Il n'est plus lie
+# nulle part ni present dans le sitemap : on le laisse. Ne pas conclure d'une
+# liste `plugins:` ce qui tourne reellement.
+#
+# Le jour ou des articles arrivent, remettre les deux ensemble : le greffon
+# ici, et la balise dans _layouts/default.html.
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
