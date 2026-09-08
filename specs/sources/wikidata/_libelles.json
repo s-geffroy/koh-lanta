@@ -1,0 +1,1035 @@
+{
+ "head": {
+  "vars": [
+   "p",
+   "nom"
+  ]
+ },
+ "results": {
+  "bindings": [
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Frank Lebœuf",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q290769"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Olga Khokhlova",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q433150"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Gwendal Peizerat",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q443492"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Myriam Lamare",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q517020"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Philippe Duron",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q743479"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Djamel Bouras",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q773473"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Frédérique Jossinet",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q2639740"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Alexandre Bérard",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q2833511"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Bernard Lenoir",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q2898238"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Betty Lise",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q2900255"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Charles Clément",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q2958744"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Charles Clément",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q2958745"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "François-David Cardonnel",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3083340"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Isabelle Seguin",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3155033"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Lucie Bertaud",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3265247"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Moundir Zoughari",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3325961"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Taïg Khris",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3516547"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Vincent Roux",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3559827"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Vincent Roux",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q3559830"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Pholien Systermans",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q7187085"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Yannick Zachée",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q8048893"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "William Lecomte",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q9374852"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Charles Clément",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q15630954"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Vincent Roux",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q15971644"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Brice Martinet",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q19407701"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Hadja Cissé",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q24931852"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Laurent Maistret",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q28107840"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Pierre Cambon",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q50744433"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Julie Debever",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q52153495"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Frédéric Favier",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q57982378"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Clémence Castel",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q58034883"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Charles Clément",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q59362789"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Marguerite Leblanc",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q61780676"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Vanessa Feuillatte",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q61782440"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Frédéric Blanchard",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q63039234"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Nicolas Maire",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q64448885"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Mathieu Blanchard",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q71704832"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Alain Ponton",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q89908886"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Teheiura Teahui",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q95165523"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Sophie Chevalier",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q95386255"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Catherine Brun",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q96288629"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Gaëlle Fleury",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q98234125"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Sophie Chevalier",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q98237235"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Mathieu Blanchard",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q98716230"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Catherine Brun",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q99529377"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Harry Levy",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q102146144"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Alexandra Pornet",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q103839872"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Loïc Riowal",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q103839883"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Brice Petit",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q103839888"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Romuald Lafite",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q103845789"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "David Noël",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q104080995"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Djamel Bouras",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q104524826"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Marie Parmentier",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q107574538"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Franck Michel",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q108346669"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Claude Dartois",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q108353406"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Sophie Chevalier",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q108683015"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Nathalie Suhard",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q108770388"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Jonathan Julien",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q109440623"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Laure Canevarolo",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q109440693"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Magali Sevenier",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q109440878"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Thomas Plisson",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q109452828"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Guillaume Noël",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q109986453"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Brice Petit",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q110196467"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Mathieu Blanchard",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q111444870"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Sylvie Pommier",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q112154414"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Dylan Thiry",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q116854685"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Thomas Hébert",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q122038732"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Christian Chambon",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q122230773"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Thierry Villette",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q123579642"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Mohamed Ayari",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q126689827"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Catherine Brun",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q127274297"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Isabelle Seguin",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q127329223"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Julie Rignault",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q127687115"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Cassandre Lambert",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q129811727"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Vincent Roux",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q130237102"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Vincent Roux",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q130241745"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Pierre Cambon",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q130392190"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Nicolas Bellon",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q130427696"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Vincent Roux",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q131733851"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Nicolas Maire",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q132816521"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Alexandre André",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q137296971"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Clémentine Jullien",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q137515871"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Philippe Bordier",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q137538541"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Antoine Sanchez",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q137655398"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Véronique Lambert",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q137778363"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Martin Bazin",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q138427637"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Francis Bordas",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q138759369"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Loïc Crespin",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q139110610"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Alexandre André",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q139605171"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Jérôme Molas",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q139614532"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Patrick Merle",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q139617108"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Vincent Roux",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q140198848"
+    }
+   },
+   {
+    "nom": {
+     "type": "literal",
+     "value": "Julien Mairesse",
+     "xml:lang": "fr"
+    },
+    "p": {
+     "type": "uri",
+     "value": "http://www.wikidata.org/entity/Q140308168"
+    }
+   }
+  ]
+ }
+}

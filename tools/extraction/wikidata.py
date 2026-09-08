@@ -57,7 +57,16 @@ RESEAUX = [
 # Ce qui est reutilisable sans condition autre que le credit. La liste est
 # FERMEE : une licence inconnue n'est pas presumee libre.
 LICENCES_LIBRES = re.compile(
-    r"^(cc0|cc-by-\d|cc-by-sa-\d|pd-|public.?domain|attribution$)", re.I)
+    r"^(cc0|cc-by-\d|cc-by-sa-\d|pd$|pd-|public.?domain|attribution$)", re.I)
+
+# Commons distingue deux choses que le premier filtre confondait. « personality »
+# n'est PAS une restriction de droit d'auteur : c'est l'avertissement pose sur
+# toute photo ou une personne est reconnaissable, et il figure sur une large
+# part des portraits. Publier le portrait de quelqu'un sur la page qui lui est
+# consacree est precisement l'usage editorial pour lequel ces images sont
+# versees -- c'est ce que fait Wikipedia. Toute AUTRE restriction (marque,
+# usage limite) fait refuser l'image.
+RESTRICTIONS_ADMISES = {"", "personality"}
 
 LARGEUR_PORTRAIT = 480
 
@@ -172,6 +181,54 @@ def charger_elements_koh_lanta():
     ELEMENTS_KOH_LANTA.add("Q1707097")
 
 
+def par_libelle(noms):
+    """Les humains dont le libelle francais est exactement l'un de nos noms.
+
+    POURQUOI EN PLUS DU TITRE D'ARTICLE. Passer par l'article ne trouve que
+    ceux qui en ont un : 31 sur 531. Or beaucoup de participants ont un element
+    Wikidata -- avec photo et comptes -- sans article francais. Interroger les
+    LIBELLES en ramene 72.
+
+    Une seule requete, en POST : les 531 noms dans une clause VALUES font une
+    URL de plusieurs milliers de caracteres, et le service repond « 414 URI
+    Too Long » en GET.
+
+    Un nom porte par plusieurs elements n'est PAS tranche ici : la preuve, en
+    aval, s'en charge, et ce qui reste ambigu est abandonne.
+    """
+    valeurs = " ".join('"%s"@fr' % n.replace('"', "") for n in noms)
+    requete = ("SELECT ?p ?nom WHERE { VALUES ?nom { " + valeurs + " } "
+               "?p rdfs:label ?nom . ?p wdt:P31 wd:Q5 . }")
+
+    def demander():
+        corps = urllib.parse.urlencode({"query": requete}).encode()
+        r = urllib.request.Request(
+            "https://query.wikidata.org/sparql", data=corps,
+            headers={**UA, "Accept": "application/sparql-results+json",
+                     "Content-Type": "application/x-www-form-urlencoded"})
+        with urllib.request.urlopen(r, timeout=120) as reponse:
+            return json.load(reponse)
+
+    d = en_cache("_libelles", demander)
+    out = {}
+    for b in d["results"]["bindings"]:
+        out.setdefault(b["nom"]["value"], []).append(
+            b["p"]["value"].rsplit("/", 1)[-1])
+    return out
+
+
+def elements(ids):
+    """Les elements complets, par lots de 50 -- ce que l'API accepte."""
+    out = {}
+    for debut in range(0, len(ids), 50):
+        lot = ids[debut:debut + 50]
+        url = ("https://www.wikidata.org/w/api.php?action=wbgetentities&format=json"
+               "&props=claims|descriptions|labels|sitelinks&ids=" + "|".join(lot))
+        d = en_cache(f"ids_{debut // 50:03d}", lambda: api(url))
+        out.update((d.get("entities") or {}))
+    return out
+
+
 def extraits(titres):
     """Le texte des articles francais, pour PROUVER l'appariement.
 
@@ -212,11 +269,24 @@ RE_AUTEUR_PASSE_PARTOUT = re.compile(
     r"assumed \(based on copyright claims\)\.?$", re.I | re.S)
 
 
+# Ce que Commons ecrit quand l'auteur est inconnu. Recopie tel quel, cela donne
+# la legende « Photo : Pas d'auteur » sous un portrait -- une phrase absurde.
+# Une image du domaine public n'exige d'ailleurs aucune attribution : on
+# n'affiche alors que la licence.
+SANS_AUTEUR = {"", "pas d'auteur", "auteur inconnu", "unknown author",
+               "unknown", "anonymous", "anonyme", "inconnu"}
+
+
 def sans_balises(texte):
     plat = html.unescape(re.sub(r"<[^>]+>", " ", texte or ""))
     plat = re.sub(r"\s+", " ", plat).strip()
     trouve = RE_AUTEUR_PASSE_PARTOUT.match(plat)
-    return trouve.group(1).strip() if trouve else plat
+    if trouve:
+        plat = trouve.group(1).strip()
+    # Le retrait des balises laisse des espaces contre les parentheses :
+    # « Marie-Lan Nguyen ( User:Jastrow ) ».
+    plat = re.sub(r"\(\s+", "(", re.sub(r"\s+\)", ")", plat))
+    return "" if plat.lower() in SANS_AUTEUR else plat
 
 
 def image_commons(fichier):
@@ -232,7 +302,8 @@ def image_commons(fichier):
             licence = (meta.get("License") or {}).get("value", "")
             if not LICENCES_LIBRES.match(licence or ""):
                 return None
-            if (meta.get("Restrictions") or {}).get("value"):
+            restriction = ((meta.get("Restrictions") or {}).get("value") or "").strip()
+            if restriction.lower() not in RESTRICTIONS_ADMISES:
                 return None
             return {
                 "fichier": fichier,
@@ -263,27 +334,55 @@ def main():
     with open(os.path.join(DATA, "personnes.yml"), encoding="utf-8") as f:
         personnes = yaml.safe_load(f)
 
-    trouves = par_article([p["nom"] for p in personnes])
-    print(f"{len(trouves)} articles francais correspondent a un nom d'aventurier")
-    textes = extraits(sorted(trouves))
+    noms = [p["nom"] for p in personnes]
+
+    # Deux routes vers le meme endroit, et il en faut deux : le titre d'article
+    # trouve 31 noms, le libelle Wikidata en trouve 72, et les deux ensembles
+    # ne se recouvrent pas.
+    par_titre = par_article(noms)
+    par_nom = par_libelle(noms)
+    print(f"{len(par_titre)} articles francais et {len(par_nom)} libelles Wikidata "
+          f"correspondent a un nom d'aventurier")
+
+    candidats = {nom: [e] for nom, e in par_titre.items()}
+    manquants = sorted({q for nom, qs in par_nom.items() for q in qs
+                        if nom not in candidats})
+    for qid, e in elements(manquants).items():
+        for nom, qs in par_nom.items():
+            if qid in qs and nom not in par_titre:
+                candidats.setdefault(nom, []).append(e)
+
+    # Le texte de l'article, quand il y en a un : c'est la preuve la plus sure.
+    titres = sorted({((e.get("sitelinks") or {}).get("frwiki") or {}).get("title")
+                     for liste in candidats.values() for e in liste
+                     if ((e.get("sitelinks") or {}).get("frwiki") or {}).get("title")})
+    textes = extraits(titres)
     parle = {t for t, x in textes.items() if "koh-lanta" in (x or "").lower()}
-    print(f"{len(parle)} de ces articles parlent effectivement de Koh-Lanta")
+    print(f"{len(parle)} articles sur {len(titres)} parlent effectivement de Koh-Lanta")
 
     reseaux, portraits = {}, {}
     vus = telecharges = ecartes = 0
+    ambigus = avec_image = refusees = 0
     for p in personnes:
-        element = trouves.get(p["nom"])
-        if element is None:
+        # Trois preuves acceptees, et il en faut une : le jeu est ecrit dans
+        # les declarations de l'element, dans sa description, ou dans le texte
+        # de son article. Sans preuve on ne retient rien -- une fiche sans
+        # photo vaut mieux qu'une fiche qui montre quelqu'un d'autre.
+        retenus = []
+        for element in candidats.get(p["nom"]) or []:
+            humain = any(isinstance(v, dict) and v.get("id") == "Q5"
+                         for v in valeurs(element, "P31"))
+            titre = ((element.get("sitelinks") or {}).get("frwiki") or {}).get("title")
+            if humain and (parle_de_koh_lanta(element) or titre in parle):
+                retenus.append(element)
+        if not retenus:
+            ecartes += len(candidats.get(p["nom"]) or [])
             continue
-        humain = any(isinstance(v, dict) and v.get("id") == "Q5"
-                     for v in valeurs(element, "P31"))
-        # Deux preuves acceptees, et il en faut une : le jeu est ecrit dans
-        # l'element Wikidata, ou il est ecrit dans l'article. Sans preuve, on
-        # ne retient rien -- une fiche sans photo vaut mieux qu'une fiche qui
-        # montre quelqu'un d'autre.
-        if not humain or not (parle_de_koh_lanta(element) or p["nom"] in parle):
-            ecartes += 1
+        if len(retenus) > 1:
+            # Deux elements prouves pour un meme nom : on ne tranche pas.
+            ambigus += 1
             continue
+        element = retenus[0]
         vus += 1
 
         comptes = []
@@ -298,8 +397,14 @@ def main():
         for fichier in valeurs(element, "P18")[:1]:
             if not isinstance(fichier, str):
                 continue
+            avec_image += 1
             info = image_commons(fichier)
             if not info or not info.get("vignette"):
+                # Une image existe, mais sa licence n'est pas libre -- ou elle
+                # porte une restriction. On ne la prend pas, et on le compte :
+                # sans ce chiffre, « dix portraits » ne dit pas s'il n'y avait
+                # que dix photos ou si les autres ont ete refusees.
+                refusees += 1
                 continue
             extension = os.path.splitext(info["vignette"])[1].lower() or ".jpg"
             if extension not in (".jpg", ".jpeg", ".png", ".webp"):
@@ -330,10 +435,12 @@ def main():
                        sort_keys=True, default_flow_style=False)
 
     print(f"{len(personnes)} aventuriers, {vus} apparies sur Wikidata "
-          f"({ecartes} ecartes : pas un humain, ou aucun lien ecrit vers Koh-Lanta)")
+          f"({ecartes} candidats ecartes faute de preuve, "
+          f"{ambigus} noms abandonnes car deux elements les revendiquent)")
     print(f"  comptes  : {len(reseaux)} fiches, "
           f"{sum(len(v) for v in reseaux.values())} liens")
-    print(f"  portraits: {len(portraits)} sous licence libre "
+    print(f"  portraits: {avec_image} images trouvees, {refusees} refusees "
+          f"(licence non libre ou restreinte), {len(portraits)} publiees "
           f"({telecharges} telecharges)")
     return 0
 

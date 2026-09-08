@@ -53,8 +53,8 @@ layout: default
 <figure class="portrait">
   <img src="{{ portrait.fichier | relative_url }}" alt="Portrait de {{ a.nom }}" loading="lazy">
   <figcaption>
-    Photo&nbsp;: {{ portrait.auteur }}
-    {%- if portrait.licence %} — {% if portrait.licence_url %}<a href="{{ portrait.licence_url }}">{{ portrait.licence }}</a>{% else %}{{ portrait.licence }}{% endif %}{% endif -%}
+    Photo&nbsp;:{% if portrait.auteur %} {{ portrait.auteur }} —{% endif %}
+    {%- if portrait.licence %} {% if portrait.licence_url %}<a href="{{ portrait.licence_url }}">{{ portrait.licence }}</a>{% else %}{{ portrait.licence }}{% endif %}{% endif -%}
     {%- if portrait.source %}, via <a href="{{ portrait.source }}">Wikimedia Commons</a>{% endif -%}
   </figcaption>
 </figure>

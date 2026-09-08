@@ -966,15 +966,29 @@ Les {{ re.size }} fiches qui portent des comptes publics les tiennent de
 Wikidata, où un compte est rattaché à une personne identifiée. Chercher
 « Instagram + prénom » aurait donné des liens vers la mauvaise personne.
 
-**Le nom ne suffit pas à apparier, et c’est le point délicat.** Sur les 531
-aventuriers, 31 ont un homonyme exact portant un article sur la Wikipédia
-francophone — mais ces 31 articles parlent aussi bien de Claude Dartois et de
-Teheiura Teahui que d’une danseuse ukrainienne et d’un avocat. Aucune de ces
-deux catégories ne se distingue par son nom. Un élément n’est donc retenu que
-s’il réunit **deux conditions** : être un être humain, et que le jeu soit écrit
-quelque part — dans les déclarations de l’élément, ou dans le texte de
-l’article. Vingt-deux passent, neuf sont écartés.
+**Le nom ne suffit pas à apparier, et c’est le point délicat.** Deux routes
+mènent d’un nom à un élément Wikidata : le titre d’un article francophone (31
+correspondances) et le libellé de l’élément lui-même (72). Mais ces
+correspondances mêlent Claude Dartois et Teheiura Teahui à une danseuse
+ukrainienne et à un avocat, et rien dans le nom ne les sépare. Un élément n’est
+donc retenu que s’il réunit **deux conditions** : être un être humain, et que le
+jeu soit écrit quelque part — dans ses déclarations, dans sa description, ou
+dans le texte de son article. **Vingt-neuf** passent, cinquante candidats sont
+écartés faute de preuve.
+
+Sur ces vingt-neuf, quatorze portent une photo, et les quatorze sont libres.
 
 Ce que cela coûte, et qui est assumé : un aventurier dont l’article porte un
 titre désambiguïsé n’est pas trouvé, et reste sans photo. Une fiche nue vaut
-mieux qu’une fiche qui montre quelqu’un d’autre.
+mieux qu’une fiche qui montre quelqu’un d’autre. **Le plafond n’est pas dans le
+script, il est dans la source** : Wikimedia Commons n’héberge pas de photo
+libre de la plupart des participants, et il n’existe pas d’autre gisement
+d’images réutilisables pour ce programme.
+
+Deux précisions sur le filtre. Une image portant la mention *personality
+rights* est acceptée : ce n’est pas une restriction de droit d’auteur mais
+l’avertissement posé sur toute photo où une personne est reconnaissable, et
+publier le portrait de quelqu’un sur la page qui lui est consacrée est
+précisément l’usage éditorial pour lequel ces images sont versées. Et une image
+du domaine public peut n’avoir aucun auteur nommé : la licence s’affiche alors
+seule, l’attribution n’étant pas exigée.

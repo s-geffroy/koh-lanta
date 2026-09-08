@@ -752,7 +752,15 @@ def controler_portraits(c):
         return
     portraits = (yaml.safe_load(open(chemin, encoding="utf-8")) or {}).get("portraits") or {}
     for cle, p in sorted(portraits.items()):
-        for champ in ("fichier", "auteur", "licence", "source"):
+        # L'auteur peut manquer, et seulement dans ce cas : une image du
+        # domaine public n'exige aucune attribution, et Commons y ecrit
+        # parfois « Pas d'auteur ». La licence, elle, s'affiche toujours.
+        domaine_public = "domaine public" in (p.get("licence") or "").lower() \
+            or "public domain" in (p.get("licence") or "").lower()
+        exiges = ["fichier", "licence", "source"]
+        if not domaine_public:
+            exiges.append("auteur")
+        for champ in exiges:
             if not (p.get(champ) or "").strip():
                 c.erreur(f"portraits.yml : « {cle} » sans `{champ}` — une photo "
                          f"ne se publie pas sans son credit complet")
