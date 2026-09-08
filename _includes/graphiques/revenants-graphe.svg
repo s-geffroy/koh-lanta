@@ -1,5 +1,5 @@
 <figure class="figure">
-<svg class="graphique" viewBox="0 0 980 276" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Le petit monde des revenants">
+<svg class="graphique" viewBox="0 0 980 361" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Le petit monde des revenants">
   <title>Le petit monde des revenants</title>
   <desc>Chaque point est un aventurier revenu au moins deux fois, rangé par ordre d&#x27;arrivée dans le programme. Un arc relie deux personnes ayant partagé une saison, et sa couleur dit combien de saisons elles ont passées ensemble.</desc>
   <path d="M26.0,260 Q65.8,180.5 105.5,260" fill="none" stroke="var(--encre-douce)" stroke-width="1.15" opacity="0.29"/>
@@ -798,6 +798,77 @@
   <g class="marque"><title>Ugo Lartiche — 3 saisons, 26 aventuriers croisés parmi les revenants</title><circle cx="927.5" cy="260" r="5.8" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="1.5"/></g>
   <g class="marque"><title>Wafa El Mejjad — 2 saisons, 17 aventuriers croisés parmi les revenants</title><circle cx="940.7" cy="260" r="5.2" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1.5"/></g>
   <g class="marque"><title>Yassin Metiri — 2 saisons, 21 aventuriers croisés parmi les revenants</title><circle cx="954.0" cy="260" r="5.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1.5"/></g>
+  <text x="26.0" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 26.0 272)">Alban</text>
+  <text x="39.3" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 39.3 272)">Alexandra</text>
+  <text x="52.5" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 52.5 272)">Alix</text>
+  <text x="65.8" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 65.8 272)">Amel</text>
+  <text x="79.0" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 79.0 272)">Antoine</text>
+  <text x="92.3" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 92.3 272)">Bertrand</text>
+  <text x="105.5" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 105.5 272)">Candice</text>
+  <text x="118.8" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 118.8 272)">Cassandre</text>
+  <text x="132.1" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 132.1 272)">Catherine</text>
+  <text x="145.3" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 145.3 272)">Cédric</text>
+  <text x="158.6" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 158.6 272)">Chantal</text>
+  <text x="171.8" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 171.8 272)">Christelle</text>
+  <text x="185.1" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 185.1 272)">Christina</text>
+  <text x="198.3" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 198.3 272)">Christophe</text>
+  <text x="211.6" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 211.6 272)">Cindy</text>
+  <text x="224.9" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 224.9 272)">Claude</text>
+  <text x="238.1" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 238.1 272)">Clémence</text>
+  <text x="251.4" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 251.4 272)">Clémentine</text>
+  <text x="264.6" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 264.6 272)">Coumba</text>
+  <text x="277.9" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 277.9 272)">Dylan</text>
+  <text x="291.1" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 291.1 272)">Émilie</text>
+  <text x="304.4" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 304.4 272)">Fabienne</text>
+  <text x="317.7" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 317.7 272)">Filomène</text>
+  <text x="330.9" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 330.9 272)">Florence</text>
+  <text x="344.2" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 344.2 272)">Francis</text>
+  <text x="357.4" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 357.4 272)">François-David</text>
+  <text x="370.7" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 370.7 272)">Freddy</text>
+  <text x="383.9" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 383.9 272)">Frédéric</text>
+  <text x="397.2" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 397.2 272)">Grégoire</text>
+  <text x="410.5" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 410.5 272)">Guénaëlle</text>
+  <text x="423.7" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 423.7 272)">Isabelle</text>
+  <text x="437.0" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 437.0 272)">Jade</text>
+  <text x="450.2" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 450.2 272)">Javier</text>
+  <text x="463.5" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 463.5 272)">Jean-Bernard</text>
+  <text x="476.7" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 476.7 272)">Jean-Luc</text>
+  <text x="490.0" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 490.0 272)">Jérémy</text>
+  <text x="503.3" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 503.3 272)">Jessica</text>
+  <text x="516.5" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 516.5 272)">Julie</text>
+  <text x="529.8" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 529.8 272)">Karima</text>
+  <text x="543.0" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 543.0 272)">Laurence</text>
+  <text x="556.3" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 556.3 272)">Laurent</text>
+  <text x="569.5" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 569.5 272)">Linda</text>
+  <text x="582.8" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 582.8 272)">Loïc</text>
+  <text x="596.1" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 596.1 272)">Ludovic</text>
+  <text x="609.3" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 609.3 272)">Marine</text>
+  <text x="622.6" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 622.6 272)">Martin</text>
+  <text x="635.8" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 635.8 272)">Maud</text>
+  <text x="649.1" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 649.1 272)">Maxime</text>
+  <text x="662.3" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 662.3 272)">Mohamed</text>
+  <text x="675.6" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 675.6 272)">Moundir</text>
+  <text x="688.9" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 688.9 272)">Moussa</text>
+  <text x="702.1" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 702.1 272)">Namadia</text>
+  <text x="715.4" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 715.4 272)">Nathalie</text>
+  <text x="728.6" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 728.6 272)">Nicolas</text>
+  <text x="741.9" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 741.9 272)">Olivier</text>
+  <text x="755.1" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 755.1 272)">Pascal</text>
+  <text x="768.4" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 768.4 272)">Patricia</text>
+  <text x="781.7" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 781.7 272)">Patrick</text>
+  <text x="794.9" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 794.9 272)">Philippe</text>
+  <text x="808.2" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 808.2 272)">Philippe</text>
+  <text x="821.4" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 821.4 272)">Philippe</text>
+  <text x="834.7" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 834.7 272)">Raphaële</text>
+  <text x="847.9" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 847.9 272)">Romuald</text>
+  <text x="861.2" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 861.2 272)">Sam</text>
+  <text x="874.5" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 874.5 272)">Sandra</text>
+  <text x="887.7" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 887.7 272)">Sara</text>
+  <text x="901.0" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 901.0 272)">Teheiura</text>
+  <text x="914.2" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 914.2 272)">Tiffany</text>
+  <text x="927.5" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 927.5 272)">Ugo</text>
+  <text x="940.7" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 940.7 272)">Wafa</text>
+  <text x="954.0" y="272" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 954.0 272)">Yassin</text>
   <rect x="26" y="12" width="11" height="11" rx="2" fill="var(--serie-1)"/>
   <text x="43.0" y="18.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">Deux saisons jouées</text>
   <rect x="188.8" y="12" width="11" height="11" rx="2" fill="var(--serie-2)"/>

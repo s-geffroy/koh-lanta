@@ -20,6 +20,7 @@ est le mecanisme de lisibilite pour les daltoniens, il ne se reamenage pas.
     tools/atelier python3 tools/graphiques.py
 """
 import html
+import math
 import os
 import sys
 
@@ -89,6 +90,14 @@ def _texte(x, y, contenu, *, ancre="start", couleur=ENCRE_DOUCE, taille=13,
 # ne mesure rien, et deux etiquettes qui se chevauchent ne produisent aucune
 # erreur -- elles se lisent simplement mal, et seulement une fois en ligne.
 LARGEUR_CARACTERE = 0.62
+
+# Les noms sous un diagramme en arcs : taille, decalage sous l'axe, et les deux
+# cosinus de la rotation de -60 degres. Ils sont ici, et non au fil du code,
+# parce que la MESURE de la place a prendre et le TRACE doivent lire la meme
+# valeur -- sinon la marge calculee ne protege pas ce qui est reellement ecrit.
+TAILLE_NOM = 11
+DECALAGE_NOM = 12
+COS60, SIN60 = 0.5, 0.8660254
 
 
 def _largeur(contenu, taille):
@@ -748,6 +757,37 @@ def arcs(noeuds, liens, *, titre, description, largeur=980, hauteur_arc=150,
     rangs = [r for r in (("carre", legende), ("trait", legende_liens)) if r[1]]
     gauche, droite = 26, 26
     haut = 26 + 22 * len(rangs)
+
+    if etiquettes is None:
+        etiquettes = len(noeuds) <= 46
+
+    # LA PLACE DES NOMS SE MESURE, ELLE NE SE DEVINE PAS. Ecrits a -60 degres
+    # sous leur point, ils descendent vers la GAUCHE : un prenom de quatorze
+    # lettres fait 95 px de long, donc 83 px de haut et 48 px vers la gauche
+    # une fois tourne. Une hauteur ecrite en dur tient jusqu'au jour ou un nom
+    # plus long arrive -- et ce jour-la le texte s'ecrit hors du viewBox, ou le
+    # navigateur ne l'affiche tout simplement pas. Rien ne le signale.
+    #
+    # Les deux marges ne peuvent que GRANDIR : une figure qui se contentait de
+    # ce qu'elle demandait garde exactement sa geometrie.
+    if etiquettes and noeuds:
+        larges = [_largeur(n["nom"], TAILLE_NOM) for n in noeuds]
+        # Arrondi au pixel superieur, et c'est la raison qui compte : sans lui
+        # le viewBox sortait en « 360.68810519199997 ». Un nombre calcule
+        # s'ecrit arrondi, sinon il finit publie tel quel.
+        hauteur_etiquettes = max(
+            hauteur_etiquettes,
+            math.ceil(DECALAGE_NOM + SIN60 * max(larges) + 6))
+        # La marge gauche et l'ecart entre points se determinent l'un l'autre :
+        # elargir la marge resserre les points, ce qui redemande de la marge.
+        # Quelques tours suffisent a fixer le point.
+        for _ in range(8):
+            ecart = (largeur - gauche - droite) / max(1, len(noeuds) - 1)
+            besoin = max(COS60 * w - ecart * i for i, w in enumerate(larges))
+            if besoin <= gauche + 0.5:
+                break
+            gauche = math.ceil(besoin)
+
     piste = largeur - gauche - droite
     base = haut + hauteur_arc
     hauteur = base + hauteur_etiquettes
@@ -809,14 +849,13 @@ def arcs(noeuds, liens, *, titre, description, largeur=980, hauteur_arc=150,
 
     # Les noms tournes a la verticale : soixante-dix noms cote a cote ne
     # tiennent pas autrement, et les tronquer les rendrait inutiles.
-    if etiquettes is None:
-        etiquettes = len(noeuds) <= 46
     if etiquettes:
+        y_nom = base + DECALAGE_NOM
         for i, n in enumerate(noeuds):
             fig.ajouter(
-                f'<text x="{x(i):.1f}" y="{base + 12}" fill="{ENCRE_DOUCE}" '
-                f'font-size="11" text-anchor="end" '
-                f'transform="rotate(-60 {x(i):.1f} {base + 12})">{e(n["nom"])}</text>')
+                f'<text x="{x(i):.1f}" y="{y_nom}" fill="{ENCRE_DOUCE}" '
+                f'font-size="{TAILLE_NOM}" text-anchor="end" '
+                f'transform="rotate(-60 {x(i):.1f} {y_nom})">{e(n["nom"])}</text>')
 
     for k, (forme, entrees) in enumerate(rangs):
         y = 12 + 20 * k

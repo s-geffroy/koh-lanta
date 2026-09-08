@@ -717,7 +717,11 @@ def figures_ajoutees(stats):
             legende=[("Deux saisons jouées", SERIES[0]),
                      ("Trois et plus", SERIES[1])],
             legende_liens=[(_ensemble(n), teintes[n]) for n in poids],
-            etiquettes=False, hauteur_etiquettes=16, hauteur_arc=190))
+            # Les soixante et onze prenoms sous les points. La hauteur qu'ils
+            # reclament est calculee par arcs() d'apres les noms eux-memes :
+            # rien a tenir a jour ici le jour ou un nom plus long entre dans
+            # le graphe.
+            etiquettes=True, hauteur_arc=190))
 
     if r.get("carrieres"):
         ecrire("revenants-carrieres.svg", barres_horizontales(
