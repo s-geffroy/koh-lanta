@@ -36,7 +36,7 @@ c’est <b>{{ site.data.stats.classement.top_saisons[0].aventurier }}</b> à
 {%- unless x.speciale or x.annulee -%}
   <li class="saison">
     <p class="saison-numero">SAISON {{ x.numero }} · {{ x.annee }} · {{ x.duree_jours }} JOURS</p>
-    <p class="saison-titre">{{ x.titre }}</p>
+    <p class="saison-titre"><a href="{{ '/saisons/' | append: x.id | append: '/' | relative_url }}">{{ x.titre }}</a></p>
     <p class="saison-lieu">{{ x.lieu }}, {{ x.pays }}</p>
     <p class="saison-tribus">
       {%- for t in x.tribus -%}
@@ -65,7 +65,7 @@ moyennes d’âge vers le haut sans rien dire du casting ordinaire.
 {%- if x.speciale and x.annulee != true -%}
   <li class="saison">
     <p class="saison-numero">SPÉCIALE · {{ x.annee }} · {{ x.duree_jours }} JOURS</p>
-    <p class="saison-titre">{{ x.titre }}</p>
+    <p class="saison-titre"><a href="{{ '/saisons/' | append: x.id | append: '/' | relative_url }}">{{ x.titre }}</a></p>
     <p class="saison-lieu">{{ x.lieu }}, {{ x.pays }}</p>
     <p class="saison-vainqueur">
       {%- if x.vainqueurs -%}Vainqueur : <b>{{ x.vainqueurs | join: " et " }}</b>
@@ -184,7 +184,7 @@ Sans JavaScript, il reste entièrement lisible, dans l’ordre chronologique.</p
   {%- for y in s.saisons -%}{%- if y.numero == x.numero and y.speciale != true -%}{%- assign meta = y -%}{%- endif -%}{%- endfor -%}
 <tr>
   <td class="nombre">{{ x.numero }}</td>
-  <td>{{ x.titre }} <small>({{ x.annee }})</small></td>
+  <td><a href="{{ '/saisons/' | append: x.id | append: '/' | relative_url }}">{{ x.titre }}</a> <small>({{ x.annee }})</small></td>
   <td class="nombre">{{ meta.effectif }}</td>
   <td class="nombre">{{ meta.age_moyen }}</td>
   <td class="nombre">{{ meta.part_femmes }} %</td>

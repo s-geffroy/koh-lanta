@@ -1,0 +1,134 @@
+---
+layout: default
+---
+{%- comment -%}
+  La fiche d'un aventurier. La page elle-meme ne porte qu'un identifiant :
+  tout ce qui s'affiche ici vient de `_data/fiches.yml`, ecrit par
+  tools/build_fiches.py.
+
+  L'acces se fait PAR CLE -- `site.data.fiches.aventuriers[page.aventurier]` --
+  et jamais en parcourant la liste : 531 pages qui parcourraient 531 entrees
+  feraient 282 000 iterations a chaque construction, pour le meme resultat.
+
+  Aucun calcul ici. Tout ce qui se compte a ete compte en Python : ce gabarit
+  ne sait qu'afficher. C'est la regle du depot, et elle a une raison precise --
+  le site ne peut pas etre essaye avant publication, donc on n'ecrit que du
+  Liquid dont le comportement ne se discute pas.
+{%- endcomment -%}
+{%- assign a = site.data.fiches.aventuriers[page.aventurier] -%}
+
+<header class="page-entete">
+  <p class="oeil">
+    <span>LES AVENTURIERS</span>
+    {%- if a.rang -%}<span class="oeil-rang">{{ a.rang }}<i>/{{ site.data.stats.classement.taille }}</i></span>{%- endif -%}
+  </p>
+  <h1 class="page-titre">{{ a.nom }}</h1>
+  <p class="chapeau">
+    {%- if a.nb_participations > 1 -%}
+      {{ a.nb_participations }} saisons jouées
+    {%- else -%}
+      Une saison jouée
+    {%- endif -%}
+    {%- if a.titres > 0 %}, {% if a.titres > 1 %}{{ a.titres }} victoires{% else %}une victoire{% endif %}{% endif -%}
+    {%- if a.profession %} · {{ a.profession }}{% endif -%}
+    {%- if a.localisation %} · {{ a.localisation }}{% endif -%}
+  </p>
+</header>
+
+<div class="prose">
+
+<ul class="chiffres">
+  {%- if a.rang %}
+  <li class="chiffre"><b>{{ a.rang }}<sup>e</sup></b><span>au classement général</span></li>
+  {%- endif %}
+  <li class="chiffre"><b>{{ a.nb_participations }}</b><span>{% if a.nb_participations > 1 %}participations{% else %}participation{% endif %}</span></li>
+  {%- if a.jours_total %}
+  <li class="chiffre"><b>{{ a.jours_total }}</b><span>jours d’aventure au total</span></li>
+  {%- endif %}
+  {%- if a.voix_recues %}
+  <li class="chiffre"><b>{{ a.voix_recues }}</b><span>voix reçues au total</span></li>
+  {%- endif %}
+</ul>
+
+{%- if a.rang %}
+<h2>Sa place au classement</h2>
+
+<p>Le <a href="{{ '/statistiques/top/' | relative_url }}">classement des
+joueurs</a> mesure quatre facettes séparément, puis les agrège. Un rang
+s’y lit toujours avec son incertitude : la pondération des quatre facettes
+n’a pas de valeur unique, et on la fait varier dix mille fois.</p>
+
+<div class="constat">
+  <p><b>{{ a.rang }}<sup>e</sup> sur {{ site.data.stats.classement.taille }}</b>,
+  score {{ a.score }}.
+  {%- if a.part_top %} Présent dans le top 25 sous <b>{{ a.part_top }} %</b> des
+  pondérations tirées.{% endif %}</p>
+  <p>Selon la pondération choisie, son rang va de <b>{{ a.rang_p05 }}<sup>e</sup></b>
+  à <b>{{ a.rang_p95 }}<sup>e</sup></b> (5<sup>e</sup> et 95<sup>e</sup> centiles).</p>
+</div>
+
+<div class="tableau-large">
+<table data-triable>
+<thead><tr>
+  <th>Facette</th><th>Ce qu’elle mesure</th><th class="nombre">Rang</th>
+</tr></thead>
+<tbody>
+  {%- for f in site.data.stats.classement.facettes %}
+  <tr>
+    <td><a href="{{ '/statistiques/top/' | relative_url }}">{{ f.libelle }}</a></td>
+    <td>{{ f.question }}</td>
+    <td class="nombre" data-val="{{ a.rangs[f.cle] }}">{{ a.rangs[f.cle] }}<sup>e</sup></td>
+  </tr>
+  {%- endfor %}
+</tbody>
+</table>
+</div>
+
+<p class="note"><strong>Un rang de facette n’est pas un talent.</strong> Deux
+des quatre facettes — la discrétion et la lecture — ne se lisent que sur un
+conseil dont le dépouillement est connu, et cette couverture s’effondre avec les
+années. Un rang moyen peut n’être que le signe d’une saison peu documentée :
+la <a href="{{ '/completude/' | relative_url }}">grille de complétude</a> dit
+laquelle.</p>
+{%- endif %}
+
+<h2>Saison par saison</h2>
+
+{%- for p in a.participations %}
+<h3>{{ p.titre }}{% if p.annee %} <span class="saison-numero">{{ p.annee }}</span>{% endif %}</h3>
+
+<div class="constat">
+  <p><b>{{ p.libelle_sort }}</b>
+  {%- if p.jour_sortie %}, jour {{ p.jour_sortie }}{% endif -%}
+  {%- if p.classement %} — {{ p.classement }}<sup>e</sup> sur {{ p.effectif }}{% endif %}.
+  {%- if p.tribu %} Tribu {{ p.tribu }}{% if p.couleur %} ({{ p.couleur }}){% endif %}.{% endif %}
+  {%- if p.age %} {{ p.age }} ans.{% endif %}</p>
+  <p>
+    {%- if p.voix_recues %}<b>{{ p.voix_recues }}</b> voix reçues{% if p.conseils_assistes %} sur {{ p.conseils_assistes }} conseils traversés{% endif %}{% if p.menace %}, soit {{ p.menace }} par conseil{% endif %}. {% endif -%}
+    {%- if p.epreuves_gagnees > 0 %}<b>{{ p.epreuves_gagnees }}</b> épreuve{% if p.epreuves_gagnees > 1 %}s{% endif %} gagnée{% if p.epreuves_gagnees > 1 %}s{% endif %}{% if p.epreuves_disputees %} sur {{ p.epreuves_disputees }} disputées{% endif %}. {% endif -%}
+    {%- if p.justesse_vote %}Il écrivait le nom de l’éliminé dans <b>{{ p.justesse_vote }} %</b> de ses bulletins{% if p.bulletins_emis %} ({{ p.bulletins_emis }} bulletins connus){% endif %}. {% endif -%}
+    {%- if p.colliers > 0 %}<b>{{ p.colliers }}</b> collier{% if p.colliers > 1 %}s{% endif %} d’immunité{% if p.colliers_joues > 0 %}, dont {{ p.colliers_joues }} joué{% if p.colliers_joues > 1 %}s{% endif %}{% endif %}. {% endif -%}
+  </p>
+  <p><a href="{{ '/saisons/' | append: p.saison | append: '/' | relative_url }}">La saison {{ p.titre }}</a></p>
+</div>
+
+{%- if p.epreuves_nommees.size > 0 %}
+<p class="note"><strong>Épreuves identifiées par leur nom :</strong>
+{% for e in p.epreuves_nommees %}{{ e }}{% unless forloop.last %}, {% endunless %}{% endfor %}.
+Le wiki ne nomme que 57 épreuves récurrentes et ne dit jamais dans quel épisode
+elles ont eu lieu : cette liste est une part de ce qu’il a gagné, jamais son
+palmarès complet.</p>
+{%- endif %}
+{%- endfor %}
+
+<p class="note"><strong>Ce que cette fiche ne dit pas.</strong> Rien ici n’est
+saisi à la main : tout vient des sources publiques listées sur
+<a href="{{ '/sources/' | relative_url }}">Les sources</a>, et un champ vide est
+un champ que la source ne donne pas — pas une valeur nulle. La
+<a href="{{ '/completude/' | relative_url }}">grille de complétude</a> dit,
+saison par saison, ce qui manque.</p>
+
+<p><a href="{{ '/aventuriers/' | relative_url }}">Tous les aventuriers</a> ·
+<a href="{{ '/statistiques/top/' | relative_url }}">Le classement des joueurs</a></p>
+
+</div>

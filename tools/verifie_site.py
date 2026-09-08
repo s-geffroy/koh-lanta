@@ -30,6 +30,19 @@ RE_INCLUDE = re.compile(r"\{%\s*include\s+([^\s%]+)")
 RE_DATA = re.compile(r"site\.data\.([A-Za-z0-9_.]+)")
 RE_ASSIGN = re.compile(r"\{%\s*assign\s+(\w+)\s*=\s*site\.data\.([A-Za-z0-9_.]+)\s*%\}")
 RE_VAR = re.compile(r"\{\{\s*([a-z_][A-Za-z0-9_]*)\.([A-Za-z0-9_.]+)")
+RE_COMMENTAIRE = re.compile(r"\{%-?\s*comment\s*-?%\}.*?\{%-?\s*endcomment\s*-?%\}",
+                            re.S)
+
+
+def sans_commentaires(corps):
+    """Retire les blocs `{% comment %}` avant tout controle de gabarit.
+
+    Un commentaire n'est pas du code, et ce depot commente beaucoup : les
+    gabarits expliquent la regle qu'ils appliquent, `where_exp` compris. Sans
+    ce nettoyage, l'interdiction de `where_exp` se declenchait sur la phrase
+    qui explique pourquoi `where_exp` est interdit.
+    """
+    return RE_COMMENTAIRE.sub("", corps)
 
 # Le Liquid qu'on n'ecrit pas ici, et pourquoi. Le site ne peut pas etre
 # construit sur cet hote -- Jekyll 3.10 en safe mode, decision assumee du
@@ -171,7 +184,20 @@ def controler_aleatoire(c):
                                  f"reproductible")
 
 
-def controler_navigation(c, permaliens):
+# Les fiches engendrees par tools/build_fiches.py : une page par aventurier,
+# une par saison. Elles ne peuvent pas figurer dans navigation.yml -- 565
+# entrees dans le rail n'auraient aucun sens -- mais elles ne sont pas pour
+# autant dispensees d'etre atteignables. Chacune l'est par sa PAGE MERE, qui
+# doit a la fois figurer au sommaire et construire des liens vers la famille.
+# C'est cette seconde condition que le controle verifie : sans elle, 531 pages
+# seraient en ligne et introuvables, et l'exemption serait un trou.
+FAMILLES_DE_FICHES = {
+    "fiche-aventurier": "/aventuriers/",
+    "fiche-saison": "/saisons/",
+}
+
+
+def controler_navigation(c, permaliens, gabarits):
     """Toute page publiee doit etre atteignable, et toute entree doit exister.
 
     `_data/navigation.yml` est la seule source du rail, du fil de lecture et
@@ -180,9 +206,9 @@ def controler_navigation(c, permaliens):
     signale. L'inverse -- une entree qui pointe vers une page absente -- donne
     un lien mort.
 
-    Le seul cas tolere est une page volontairement hors navigation ; elle doit
-    alors etre listee ici, explicitement, pour que l'omission soit un choix et
-    non un oubli.
+    Deux cas toleres, et un seul est un choix a la main : une page
+    volontairement hors navigation, listee ici explicitement ; et une fiche
+    engendree, atteignable par sa page mere -- ce que ce controle verifie.
     """
     HORS_NAVIGATION = {"/404.html"}
 
@@ -199,7 +225,31 @@ def controler_navigation(c, permaliens):
                 c.erreur(f"navigation.yml : « {url} » listee deux fois")
             listees[url] = entree.get("titre")
 
-    for url in sorted(set(permaliens) - set(listees) - HORS_NAVIGATION):
+    # Une famille de fiches n'est exemptee que si sa page mere est au sommaire
+    # ET construit reellement des liens vers ses fiches. Le marqueur cherche
+    # est la construction du lien elle-meme : `'/aventuriers/' | append:`.
+    exemptes = set()
+    for gabarit, mere in FAMILLES_DE_FICHES.items():
+        fiches = {u for u, g in gabarits.items() if g == gabarit}
+        if not fiches:
+            continue
+        if mere not in listees:
+            c.erreur(f"{len(fiches)} fiches en `{gabarit}` mais leur page mere "
+                     f"« {mere} » n'est pas dans navigation.yml — elles seraient "
+                     f"toutes introuvables")
+            continue
+        source = permaliens.get(mere)
+        texte = ""
+        if source and os.path.exists(os.path.join(RACINE, source)):
+            texte = open(os.path.join(RACINE, source), encoding="utf-8").read()
+        if f"'{mere}' | append:" not in texte:
+            c.erreur(f"{source} ne construit aucun lien vers ses {len(fiches)} "
+                     f"fiches (`'{mere}' | append:` introuvable) — les fiches "
+                     f"seraient en ligne et sans un seul lien qui y mene")
+            continue
+        exemptes |= fiches
+
+    for url in sorted(set(permaliens) - set(listees) - HORS_NAVIGATION - exemptes):
         c.erreur(f"{url} : page publiee mais absente de navigation.yml — "
                  f"aucun lien du site n'y mene")
     for url in sorted(set(listees) - set(permaliens)):
@@ -444,6 +494,7 @@ def main():
     donnees = charger_donnees()
 
     permaliens = {}
+    gabarits = {}
     for chemin in sorted(pages()):
         rel = os.path.relpath(chemin, RACINE)
         texte = open(chemin, encoding="utf-8").read()
@@ -473,6 +524,7 @@ def main():
             if lien in permaliens:
                 c.erreur(f"{rel} : permalink « {lien} » deja pris par {permaliens[lien]}")
             permaliens[lien] = rel
+            gabarits[lien] = entete.get("layout")
         elif rel == "index.md":
             # L'accueil n'a pas de permalink : son URL est la racine. Il figure
             # bien dans navigation.yml, sous « / ».
@@ -480,7 +532,7 @@ def main():
         elif rel != "404.html":
             c.avertir(f"{rel} : pas de permalink explicite, l'URL suivra le chemin du fichier")
 
-        corps = texte[m.end():]
+        corps = sans_commentaires(texte[m.end():])
 
         for inc in RE_INCLUDE.findall(corps):
             if not os.path.exists(os.path.join(RACINE, "_includes", inc)):
@@ -512,6 +564,32 @@ def main():
             ok, _ = resoudre(donnees, parcours)
             if not ok:
                 c.erreur(f"{rel} : {nom}.{suite} → site.data.{parcours} n'existe pas")
+
+    # Les GABARITS, que la boucle ci-dessus ne voit pas -- elle ne parcourt que
+    # les pages. C'etait un trou : depuis que les fiches existent, l'essentiel
+    # des acces aux donnees vit dans _layouts/fiche-aventurier.html et
+    # _layouts/fiche-saison.html. Une cle mal ecrite y rendrait 565 fiches
+    # vides, sans une erreur de construction et sans que rien ne le signale.
+    for sous in ("_layouts", "_includes"):
+        dossier = os.path.join(RACINE, sous)
+        if not os.path.isdir(dossier):
+            continue
+        for nom in sorted(os.listdir(dossier)):
+            if not nom.endswith(".html"):
+                continue
+            rel = os.path.join(sous, nom)
+            corps = sans_commentaires(
+                open(os.path.join(dossier, nom), encoding="utf-8").read())
+            for inc in RE_INCLUDE.findall(corps):
+                if not os.path.exists(os.path.join(RACINE, "_includes", inc)):
+                    c.erreur(f"{rel} : inclusion introuvable — _includes/{inc}")
+            for motif, conseil in LIQUID_INTERDIT:
+                if motif in corps:
+                    c.erreur(f"{rel} : `{motif}` interdit dans un gabarit — {conseil}")
+            for parcours in RE_DATA.findall(corps):
+                ok, _ = resoudre(donnees, parcours)
+                if not ok:
+                    c.erreur(f"{rel} : site.data.{parcours} n'existe pas dans _data/")
 
     # configuration
     config = yaml.safe_load(open(os.path.join(RACINE, "_config.yml"), encoding="utf-8"))
@@ -551,7 +629,7 @@ def main():
                 c.erreur(f".secrets/{nom} est lisible par d'autres — "
                          f"chmod 600 .secrets/{nom}")
 
-    controler_navigation(c, permaliens)
+    controler_navigation(c, permaliens, gabarits)
     controler_sass(c)
     controler_reproductibilite(c)
     controler_aleatoire(c)

@@ -60,6 +60,11 @@ le nom de celui qui part — et il se cherche de la même façon.</p>
   <p class="compte" data-role="compte" aria-live="polite"></p>
 </div>
 
+<p class="note"><strong>Chaque nom est une fiche</strong>, et chaque titre de
+saison aussi. La fiche d’un aventurier rassemble ses saisons, sa place sur les
+quatre facettes du classement et ce qu’on sait de ses conseils ; celle d’une
+saison donne son casting entier, ses conseils et son audience.</p>
+
 <p class="note">Cliquez sur un en-tête pour trier le tableau sur cette colonne.
 Sans JavaScript, la recherche et les filtres disparaissent, mais le tableau
 reste entier et lisible, dans l’ordre chronologique des saisons puis de
@@ -88,8 +93,8 @@ sources</a> disent pourquoi pas dans les trois autres.</p>
   {% assign sa = "" %}
   {% for x in saisons %}{% if x.id == p.saison %}{% assign sa = x %}{% endif %}{% endfor %}
 <tr data-saison="{{ p.saison }}" data-sort="{{ p.sort }}">
-  <td>{{ p.nom_complet | default: p.nom }}</td>
-  <td>{{ sa.titre }}</td>
+  <td><a href="{{ '/aventuriers/' | append: p.id | append: '/' | relative_url }}">{{ p.nom_complet | default: p.nom }}</a></td>
+  <td><a href="{{ '/saisons/' | append: p.saison | append: '/' | relative_url }}">{{ sa.titre }}</a></td>
   <td class="nombre">{{ sa.annee }}</td>
   <td class="nombre">{{ p.age }}</td>
   <td>{% if p.genre == "f" %}F{% elsif p.genre == "h" %}H{% endif %}</td>

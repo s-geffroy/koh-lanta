@@ -1,0 +1,108 @@
+---
+layout: default
+---
+{%- comment -%}
+  La fiche d'une saison. Meme principe que fiche-aventurier : la page ne porte
+  qu'un identifiant, tout vient de `_data/fiches.yml` et l'acces se fait par
+  cle. Aucun calcul dans ce gabarit.
+{%- endcomment -%}
+{%- assign s = site.data.fiches.saisons[page.saison] -%}
+
+<header class="page-entete">
+  <p class="oeil">
+    <span>LES SAISONS</span>
+    {%- if s.numero -%}<span class="oeil-rang">{{ s.numero }}</span>{%- endif -%}
+  </p>
+  <h1 class="page-titre">{{ s.titre }}</h1>
+  <p class="chapeau">
+    {%- if s.annee %}{{ s.annee }}{% endif -%}
+    {%- if s.lieu %} · {{ s.lieu }}{% endif -%}
+    {%- if s.speciale %} · saison spéciale{% endif -%}
+    {%- if s.en_cours %} · <b>en cours de diffusion</b>{% endif -%}
+  </p>
+</header>
+
+<div class="prose">
+
+<ul class="chiffres">
+  <li class="chiffre"><b>{{ s.effectif }}</b><span>aventuriers</span></li>
+  {%- if s.duree_jours %}
+  <li class="chiffre"><b>{{ s.duree_jours }}</b><span>jours d’aventure</span></li>
+  {%- endif %}
+  <li class="chiffre"><b>{{ s.conseils }}</b><span>conseils d’élimination</span></li>
+  {%- if s.epreuves > 0 %}
+  <li class="chiffre"><b>{{ s.epreuves }}</b><span>épreuves relevées</span></li>
+  {%- endif %}
+</ul>
+
+{%- if s.vainqueurs.size > 0 %}
+<div class="constat">
+  <p>{% if s.vainqueurs.size > 1 %}<b>Vainqueurs</b>{% else %}<b>Vainqueur</b>{% endif %} :
+  {% for v in s.vainqueurs %}<a href="{{ '/aventuriers/' | append: v.id | append: '/' | relative_url }}">{{ v.nom }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}.</p>
+  {%- if s.finalistes.size > 0 %}
+  <p>{% if s.finalistes.size > 1 %}Finalistes{% else %}Finaliste{% endif %} :
+  {% for v in s.finalistes %}<a href="{{ '/aventuriers/' | append: v.id | append: '/' | relative_url }}">{{ v.nom }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}.</p>
+  {%- endif %}
+</div>
+{%- endif %}
+
+<h2>Ce qu’on sait de ses conseils</h2>
+
+<div class="constat">
+  <p><b>{{ s.conseils }}</b> conseils d’élimination, dont
+  <b>{{ s.conseils_complets }}</b> dont le dépouillement est connu au bulletin
+  près, pour {{ s.bulletins }} bulletins relevés.</p>
+  <p>Un conseil dont le dépouillement est incomplet compte pour ses agrégats —
+  qui part, avec combien de voix — mais reste hors de toute mesure au bulletin :
+  alliances, réciprocité, qui-vise-qui.
+  <a href="{{ '/completude/' | relative_url }}">La grille de complétude</a> dit
+  ce qui manque et pourquoi.</p>
+</div>
+
+{%- if s.audience_moyenne %}
+<h2>L’audience</h2>
+
+<div class="constat">
+  <p>Moyenne : <b>{{ s.audience_moyenne }}</b> téléspectateurs{% if s.audience_pdm %}, {{ s.audience_pdm }} % de part de marché{% endif %}.</p>
+  <p>Lancement {{ s.audience_lancement }}, finale {{ s.audience_finale }}.
+  <a href="{{ '/statistiques/audience/' | relative_url }}">Ce que l’audience dit du jeu</a></p>
+</div>
+{%- endif %}
+
+<h2>Le casting</h2>
+
+<p>Rangés par ordre d’arrivée dans le jeu : le vainqueur d’abord, puis les
+finalistes, puis les autres du plus tard au plus tôt sorti. La colonne
+<em>rang</em> renvoie au
+<a href="{{ '/statistiques/top/' | relative_url }}">classement des joueurs</a>,
+qui porte sur toute la carrière et pas sur cette seule saison.</p>
+
+<div class="tableau-large">
+<table data-triable>
+<thead><tr>
+  <th>Aventurier</th><th class="nombre">Âge</th><th>Métier</th>
+  <th>Tribu</th><th>Sort</th><th class="nombre">Jour</th>
+  <th class="nombre">Voix reçues</th><th class="nombre">Rang général</th>
+</tr></thead>
+<tbody>
+  {%- for c in s.casting %}
+  <tr>
+    <td><a href="{{ '/aventuriers/' | append: c.id | append: '/' | relative_url }}">{{ c.nom }}</a></td>
+    <td class="nombre" data-val="{{ c.age }}">{{ c.age }}</td>
+    <td>{{ c.profession }}</td>
+    <td>{{ c.tribu }}</td>
+    <td>{{ c.libelle_sort }}</td>
+    <td class="nombre" data-val="{{ c.jour_sortie }}">{{ c.jour_sortie }}</td>
+    <td class="nombre" data-val="{{ c.voix_recues }}">{{ c.voix_recues }}</td>
+    <td class="nombre" data-val="{{ c.rang }}">{{ c.rang }}</td>
+  </tr>
+  {%- endfor %}
+</tbody>
+</table>
+</div>
+
+<p><a href="{{ '/saisons/' | relative_url }}">Toutes les saisons</a> ·
+<a href="{{ '/aventuriers/' | relative_url }}">Tous les aventuriers</a> ·
+<a href="{{ '/sources/' | relative_url }}">Les sources</a></p>
+
+</div>

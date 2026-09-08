@@ -117,6 +117,13 @@ sur l'hote.
     tools/atelier python3 tools/verifie_site.py      # front matter, inclusions
     tools/atelier python3 tools/build_stats.py       # _data/stats.yml
     tools/atelier python3 tools/build_graphiques.py  # _includes/graphiques/
+    tools/atelier python3 tools/build_fiches.py --ecrire  # une page par personne
+
+`build_fiches.py` ecrit `_data/fiches.yml` et 565 pages minuscules -- une par
+aventurier, une par saison -- sous `aventuriers/` et `saisons/`. Elles sont
+COMMITEES parce que GitHub Pages n'a pas le droit de les fabriquer : le greffon
+qui engendre des pages depuis `_data/` n'est pas dans la liste blanche du safe
+mode. A relancer apres tout changement de `_data/stats.yml`.
 
 La chaine d'extraction, quand une source bouge, dans cet ordre -- chaque etape
 lit ce que la precedente a ecrit :
