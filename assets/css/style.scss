@@ -85,7 +85,23 @@
            Consolas, monospace;
 
   --rayon: 10px;
-  --colonne: 36rem;
+
+  /* La largeur du texte courant. Elle valait 36rem : le texte tenait une
+     colonne de lecture etroite, et les figures, les tableaux et les blocs de
+     chiffres debordaient sur sa droite jusqu'au bord du contenu. Les deux
+     largeurs ne coincidaient nulle part, et l'oeil se recalait a chaque
+     alternance texte / graphique.
+
+     `none` aligne le texte sur eux : dans .cadre, le contenu occupe la place
+     laissee par le rail, et tout ce qui est dans .prose la prend entierement.
+     C'est un ALIGNEMENT, pas un nombre : si la largeur du cadre ou du rail
+     change un jour, texte et figures bougeront ensemble, sans valeur a
+     tenir a jour ici.
+
+     Les trois textes qui gardent leur propre plafond -- le chapeau (34rem),
+     les legendes de figures (38rem) et le titre de page (18ch) -- le portent
+     dans leur propre regle et ne passent pas par ici. */
+  --colonne: none;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -408,8 +424,13 @@ a { color: inherit; }
 
 .prose > * { max-width: var(--colonne); }
 
-/* Les blocs larges echappent a la colonne de lecture. Une seule liste, pour
-   qu'aucune regle ne vienne en annuler une autre plus loin. */
+/* La liste ci-dessous est CONSERVEE alors que --colonne vaut `none` et qu'elle
+   ne retire donc plus rien. Elle n'est pas morte : sa specificite (0,2,0) bat
+   celle des regles de ces classes prises seules (0,1,0), et deux d'entre elles
+   -- .accueil-titre et .peigne-legende -- portent un max-width plus etroit
+   qu'elle annule. La supprimer ferait passer le grand titre de l'accueil a
+   15ch et la legende du peigne a 38rem : deux changements de mise en page
+   qu'aucune demande ne couvre. */
 .prose > .figure,
 .prose > .tableau-large,
 .prose > .chiffres,
