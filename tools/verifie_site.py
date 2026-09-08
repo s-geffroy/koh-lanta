@@ -734,6 +734,42 @@ def controler_comptes_annonces(c):
                          f"{frontiere} descriptives et {len(entrees) - frontiere} "
                          f"a modeles")
 
+def controler_portraits(c):
+    """Refuse une photo publiee sans son auteur et sa licence.
+
+    Les portraits viennent de Wikimedia Commons sous licence libre. « Libre »
+    ne veut pas dire « sans condition » : CC BY et CC BY-SA exigent
+    l'attribution, et une photo republiee sans son auteur ne l'est pas
+    legalement. Le credit n'est donc pas un ornement qu'on peut alleger un
+    jour de refonte -- ce controle existe pour que ce jour-la, la construction
+    le dise.
+
+    Il verifie les donnees ET le gabarit : un champ rempli ne sert a rien si
+    plus personne ne l'affiche.
+    """
+    chemin = os.path.join(RACINE, "_data", "portraits.yml")
+    if not os.path.exists(chemin):
+        return
+    portraits = (yaml.safe_load(open(chemin, encoding="utf-8")) or {}).get("portraits") or {}
+    for cle, p in sorted(portraits.items()):
+        for champ in ("fichier", "auteur", "licence", "source"):
+            if not (p.get(champ) or "").strip():
+                c.erreur(f"portraits.yml : « {cle} » sans `{champ}` — une photo "
+                         f"ne se publie pas sans son credit complet")
+        fichier = (p.get("fichier") or "").lstrip("/")
+        if fichier and not os.path.exists(os.path.join(RACINE, fichier)):
+            c.erreur(f"portraits.yml : « {cle} » pointe sur {p['fichier']}, "
+                     f"absent du depot")
+
+    gabarit = os.path.join(RACINE, "_layouts", "fiche-aventurier.html")
+    texte = open(gabarit, encoding="utf-8").read() if os.path.exists(gabarit) else ""
+    for champ in ("portrait.auteur", "portrait.licence"):
+        if portraits and champ not in texte:
+            c.erreur(f"_layouts/fiche-aventurier.html n'affiche plus "
+                     f"`{champ}` — {len(portraits)} photos seraient publiees "
+                     f"sans leur credit")
+
+
 def main():
     c = Controle()
     donnees = charger_donnees()
@@ -890,6 +926,7 @@ def main():
                          f"chmod 600 .secrets/{nom}")
 
     controler_seo(c, entetes)
+    controler_portraits(c)
     controler_comptes_annonces(c)
     controler_donnees_structurees(c)
     controler_navigation(c, permaliens, gabarits)

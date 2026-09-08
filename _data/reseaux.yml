@@ -1,0 +1,92 @@
+# ATTENTION : fichier genere par tools/extraction/wikidata.py.
+# Ne pas editer a la main : toute modification sera ecrasee.
+#
+# Les comptes publics rattaches a une personne sur Wikidata, avec sa reference.
+comptes:
+  claude-dartois:
+  - compte: claude_kohlanta
+    reseau: Instagram
+    url: https://www.instagram.com/claude_kohlanta/
+  clemence-castel:
+  - compte: clemencecastelofficiel
+    reseau: Instagram
+    url: https://www.instagram.com/clemencecastelofficiel/
+  - compte: clemencecastelofficiel
+    reseau: Facebook
+    url: https://www.facebook.com/clemencecastelofficiel
+  - compte: clemencecastel1
+    reseau: X
+    url: https://x.com/clemencecastel1
+  dylan-thiry:
+  - compte: dylanthiry
+    reseau: Instagram
+    url: https://www.instagram.com/dylanthiry/
+  - compte: DylanThiry_
+    reseau: X
+    url: https://x.com/DylanThiry_
+  frank-leb-uf:
+  - compte: frank.leboeuf
+    reseau: Instagram
+    url: https://www.instagram.com/frank.leboeuf/
+  - compte: frank.leboeuf.5
+    reseau: Facebook
+    url: https://www.facebook.com/frank.leboeuf.5
+  frederique-jossinet:
+  - compte: frederiquejossinet
+    reseau: Instagram
+    url: https://www.instagram.com/frederiquejossinet/
+  - compte: '100001367614730'
+    reseau: Facebook
+    url: https://www.facebook.com/100001367614730
+  - compte: frédérique-jossinet-525a7b18
+    reseau: LinkedIn
+    url: https://www.linkedin.com/in/frédérique-jossinet-525a7b18
+  - compte: FREDJOSSINET
+    reseau: X
+    url: https://x.com/FREDJOSSINET
+  gwendal-peizerat:
+  - compte: gwendal-peizerat-6508866a
+    reseau: LinkedIn
+    url: https://www.linkedin.com/in/gwendal-peizerat-6508866a
+  - compte: PeizeratGwendal
+    reseau: X
+    url: https://x.com/PeizeratGwendal
+  - compte: https://gwendalpeizerat.com/
+    reseau: Site officiel
+    url: https://gwendalpeizerat.com/
+  hadja-cisse:
+  - compte: hadjanas
+    reseau: Instagram
+    url: https://www.instagram.com/hadjanas/
+  - compte: hadja.cisse.5
+    reseau: Facebook
+    url: https://www.facebook.com/hadja.cisse.5
+  lucie-bertaud:
+  - compte: luciekohlanta
+    reseau: Instagram
+    url: https://www.instagram.com/luciekohlanta/
+  mathieu-blanchard:
+  - compte: https://www.mathieu-blanchard.com/
+    reseau: Site officiel
+    url: https://www.mathieu-blanchard.com/
+  pholien-systermans:
+  - compte: pholienkohlanta
+    reseau: Instagram
+    url: https://www.instagram.com/pholienkohlanta/
+  taig-khris:
+  - compte: taigkhris
+    reseau: X
+    url: https://x.com/taigkhris
+  - compte: http://www.taigkhris.com
+    reseau: Site officiel
+    url: http://www.taigkhris.com
+  teheiura-teahui:
+  - compte: TeheiuraTEAHUI
+    reseau: X
+    url: https://x.com/TeheiuraTEAHUI
+  - compte: teheiura
+    reseau: TikTok
+    url: https://www.tiktok.com/@teheiura
+  - compte: http://teheiura.fr/
+    reseau: Site officiel
+    url: http://teheiura.fr/

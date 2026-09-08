@@ -1,0 +1,76 @@
+# ATTENTION : fichier genere par tools/extraction/wikidata.py.
+# Ne pas editer a la main : toute modification sera ecrasee.
+#
+# Les portraits sous licence libre, AVEC leur auteur et leur licence.
+# Le gabarit les affiche sous la photo : ce n'est pas optionnel.
+portraits:
+  claude-dartois:
+    auteur: Claudethaithai
+    fichier: /assets/portraits/claude-dartois.jpg
+    licence: CC BY-SA 4.0
+    licence_url: https://creativecommons.org/licenses/by-sa/4.0
+    source: https://commons.wikimedia.org/wiki/File:Claude_Dartois_%C3%A0_l%27a%C3%A9roport.jpg
+    wikidata: Q108353406
+  frank-leb-uf:
+    auteur: Илья Хохлов
+    fichier: /assets/portraits/frank-leb-uf.jpg
+    licence: CC BY-SA 3.0
+    licence_url: https://creativecommons.org/licenses/by-sa/3.0
+    source: https://commons.wikimedia.org/wiki/File:Frank_Leboeuf.jpeg
+    wikidata: Q290769
+  frederique-jossinet:
+    auteur: EmmanuelFAIVRE
+    fichier: /assets/portraits/frederique-jossinet.jpg
+    licence: CC BY-SA 3.0
+    licence_url: http://creativecommons.org/licenses/by-sa/3.0/
+    source: https://commons.wikimedia.org/wiki/File:Frederique_Jossinet_TIVP_2005.jpg
+    wikidata: Q2639740
+  hadja-cisse:
+    auteur: Dacoucou
+    fichier: /assets/portraits/hadja-cisse.jpg
+    licence: CC BY-SA 4.0
+    licence_url: https://creativecommons.org/licenses/by-sa/4.0
+    source: https://commons.wikimedia.org/wiki/File:Hadja_Ciss%C3%A9_2016.jpg
+    wikidata: Q24931852
+  laurent-maistret:
+    auteur: Grenzo67
+    fichier: /assets/portraits/laurent-maistret.jpg
+    licence: CC BY 4.0
+    licence_url: https://creativecommons.org/licenses/by/4.0
+    source: https://commons.wikimedia.org/wiki/File:Laurent_Maistret.jpg
+    wikidata: Q28107840
+  lucie-bertaud:
+    auteur: Aalyah33
+    fichier: /assets/portraits/lucie-bertaud.jpg
+    licence: CC BY-SA 3.0
+    licence_url: https://creativecommons.org/licenses/by-sa/3.0
+    source: https://commons.wikimedia.org/wiki/File:Lucie_bertaud_adidas.jpg
+    wikidata: Q3265247
+  mathieu-blanchard:
+    auteur: Johann Conus
+    fichier: /assets/portraits/mathieu-blanchard.jpg
+    licence: CC BY-SA 4.0
+    licence_url: https://creativecommons.org/licenses/by-sa/4.0
+    source: https://commons.wikimedia.org/wiki/File:Sierre-Zinal_2022_Mathieu_Blanchard.jpg
+    wikidata: Q98716230
+  moundir-zoughari:
+    auteur: World Poker Tour
+    fichier: /assets/portraits/moundir-zoughari.jpg
+    licence: CC BY 3.0
+    licence_url: https://creativecommons.org/licenses/by/3.0
+    source: https://commons.wikimedia.org/wiki/File:Moundir_Zoughari_WPT.jpg
+    wikidata: Q3325961
+  taig-khris:
+    auteur: XK8ER
+    fichier: /assets/portraits/taig-khris.jpg
+    licence: CC BY-SA 3.0
+    licence_url: https://creativecommons.org/licenses/by-sa/3.0
+    source: https://commons.wikimedia.org/wiki/File:Taig_Khris11.jpg
+    wikidata: Q3516547
+  vanessa-feuillatte:
+    auteur: Mbaranger
+    fichier: /assets/portraits/vanessa-feuillatte.jpg
+    licence: CC BY-SA 4.0
+    licence_url: https://creativecommons.org/licenses/by-sa/4.0
+    source: https://commons.wikimedia.org/wiki/File:Vanessa_Feuillatte_dans_le_r%C3%B4le_d%27Esmeralda.jpg
+    wikidata: Q61782440

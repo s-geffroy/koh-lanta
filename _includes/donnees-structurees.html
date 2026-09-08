@@ -28,6 +28,10 @@
 {%- if a.prenom %},"givenName":{{ a.prenom | jsonify }}{% endif -%}
 {%- if a.profession %},"jobTitle":{{ a.profession | jsonify }}{% endif -%}
 ,"url":{{ page.url | absolute_url | jsonify }}
+{%- assign portrait = site.data.portraits.portraits[page.aventurier] -%}
+{%- if portrait %},"image":{{ portrait.fichier | absolute_url | jsonify }}{% endif -%}
+{%- assign comptes = site.data.reseaux.comptes[page.aventurier] -%}
+{%- if comptes %},"sameAs":[{% for c in comptes %}{{ c.url | jsonify }}{% unless forloop.last %},{% endunless %}{% endfor %}]{% endif -%}
 ,"subjectOf":{"@type":"TVSeries","name":"Koh-Lanta"}}},
 {"@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"Accueil","item":{{ racine | jsonify }}},

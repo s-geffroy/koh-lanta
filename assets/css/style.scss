@@ -1049,3 +1049,48 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); 
   min-width: 3.9rem;
   border-left: 1px solid var(--grille);
 }
+
+/* ---------------------------------------------------------------- portrait */
+
+/* Le portrait d'un aventurier et son credit. Les deux vont ENSEMBLE : les
+   licences libres de Wikimedia Commons demandent l'attribution, et une photo
+   republiee sans son auteur n'est pas republiee legalement. La legende n'est
+   donc pas un ornement qu'on masque au petit ecran -- elle reste lisible. */
+.portrait {
+  margin: 0 0 2rem;
+  max-width: 20rem;
+}
+
+.portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--rayon);
+  border: 1px solid var(--grille);
+  background: var(--surface-creuse);
+}
+
+.portrait figcaption {
+  margin-top: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: var(--encre-muette);
+}
+
+.portrait figcaption a { color: inherit; }
+
+/* Les comptes publics, quand Wikidata en rattache a la personne. */
+.reseaux {
+  margin: 0 0 1.8rem;
+  font-size: 0.92rem;
+}
+
+.reseaux span {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--encre-muette);
+  margin-right: 0.4rem;
+}

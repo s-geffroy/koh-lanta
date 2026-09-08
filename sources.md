@@ -947,3 +947,34 @@ tirages aléatoires partent tous d’une graine fixe, et la construction est jou
 deux fois pour vérifier qu’elle rend le même fichier au bit près.
 [La méthode]({{ '/methode/' | relative_url }}) en donne le détail et la liste
 complète des tests.
+
+## Les portraits et les comptes : une source, et deux preuves exigées
+
+{% assign po = site.data.portraits.portraits %}
+{% assign re = site.data.reseaux.comptes %}
+
+Le site n’héberge **aucune photo de presse**. Les {{ po.size }} portraits
+publiés viennent tous de Wikimedia Commons, et uniquement sous une licence qui
+autorise la republication : domaine public, CC0, CC BY, CC BY-SA. Toute image
+portant une restriction, une clause non commerciale ou une clause sans
+modification est écartée par le script, pas par un choix au cas par cas. **Le
+nom de l’auteur et la licence sont affichés sous chaque photo**, sur la fiche
+elle-même : c’est la condition de ces licences, et il n’y a pas de page annexe
+où les reléguer.
+
+Les {{ re.size }} fiches qui portent des comptes publics les tiennent de
+Wikidata, où un compte est rattaché à une personne identifiée. Chercher
+« Instagram + prénom » aurait donné des liens vers la mauvaise personne.
+
+**Le nom ne suffit pas à apparier, et c’est le point délicat.** Sur les 531
+aventuriers, 31 ont un homonyme exact portant un article sur la Wikipédia
+francophone — mais ces 31 articles parlent aussi bien de Claude Dartois et de
+Teheiura Teahui que d’une danseuse ukrainienne et d’un avocat. Aucune de ces
+deux catégories ne se distingue par son nom. Un élément n’est donc retenu que
+s’il réunit **deux conditions** : être un être humain, et que le jeu soit écrit
+quelque part — dans les déclarations de l’élément, ou dans le texte de
+l’article. Vingt-deux passent, neuf sont écartés.
+
+Ce que cela coûte, et qui est assumé : un aventurier dont l’article porte un
+titre désambiguïsé n’est pas trouvé, et reste sans photo. Une fiche nue vaut
+mieux qu’une fiche qui montre quelqu’un d’autre.

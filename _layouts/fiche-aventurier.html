@@ -37,6 +37,36 @@ layout: default
 
 <div class="prose">
 
+{%- comment -%}
+  Le portrait et les comptes viennent de Wikidata, via
+  tools/extraction/wikidata.py. Deux regles qui ne se negocient pas :
+
+  1. AUCUNE PHOTO SANS SON CREDIT. L'auteur et la licence sont affiches sous
+     l'image, pas dans une page annexe. C'est la condition des licences libres
+     et la seule facon honnete de republier le travail de quelqu'un.
+  2. Rien n'est devine. Un element Wikidata n'est retenu que s'il est un etre
+     humain ET qu'un lien vers Koh-Lanta y est ecrit ; sinon la fiche reste
+     sans photo. Un homonyme montre en photo serait pire qu'une fiche nue.
+{%- endcomment -%}
+{%- assign portrait = site.data.portraits.portraits[page.aventurier] -%}
+{%- if portrait %}
+<figure class="portrait">
+  <img src="{{ portrait.fichier | relative_url }}" alt="Portrait de {{ a.nom }}" loading="lazy">
+  <figcaption>
+    Photo&nbsp;: {{ portrait.auteur }}
+    {%- if portrait.licence %} — {% if portrait.licence_url %}<a href="{{ portrait.licence_url }}">{{ portrait.licence }}</a>{% else %}{{ portrait.licence }}{% endif %}{% endif -%}
+    {%- if portrait.source %}, via <a href="{{ portrait.source }}">Wikimedia Commons</a>{% endif -%}
+  </figcaption>
+</figure>
+{%- endif %}
+
+{%- assign comptes = site.data.reseaux.comptes[page.aventurier] -%}
+{%- if comptes %}
+<p class="reseaux"><span>Ses comptes publics&nbsp;:</span>
+  {% for c in comptes %}<a href="{{ c.url }}">{{ c.reseau }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}
+</p>
+{%- endif %}
+
 <ul class="chiffres">
   {%- if a.rang %}
   <li class="chiffre"><b>{{ a.rang }}<sup>e</sup></b><span>au classement général</span></li>
