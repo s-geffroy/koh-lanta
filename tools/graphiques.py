@@ -54,18 +54,25 @@ def e(t):
 class Figure:
     """Un SVG en cours d'ecriture."""
 
-    def __init__(self, largeur, hauteur, titre, description):
+    def __init__(self, largeur, hauteur, titre, description, classe=None):
+        # `classe` s'ajoute a « graphique » sur la balise <svg>. Elle sert a
+        # PORTER une feuille de style posee dans le SVG : un <style> inline
+        # dans un SVG inline n'est pas encapsule, ses regles s'appliquent a
+        # toute la page. Prefixer chaque selecteur par cette classe est ce qui
+        # empeche une regle ecrite pour une figure d'en repeindre une autre.
         self.l, self.h = largeur, hauteur
         self.titre, self.description = titre, description
+        self.classe = classe
         self.corps = []
 
     def ajouter(self, fragment):
         self.corps.append(fragment)
 
     def rendu(self):
+        classes = "graphique " + self.classe if self.classe else "graphique"
         return (
             f'<figure class="figure">\n'
-            f'<svg class="graphique" viewBox="0 0 {self.l} {self.h}" '
+            f'<svg class="{classes}" viewBox="0 0 {self.l} {self.h}" '
             f'role="img" preserveAspectRatio="xMidYMid meet" '
             f'aria-label="{e(self.titre)}">\n'
             f'  <title>{e(self.titre)}</title>\n'
@@ -731,9 +738,47 @@ def survie(series, toutes, *, titre, description, jour_max, mediane,
             + '</div>\n')
 
 
+def _surbrillance_arcs(portee, noeuds, liens):
+    """Le survol d'un point eteint tous les arcs sauf ceux qui en partent.
+
+    SANS UNE LIGNE DE JAVASCRIPT, et c'est possible pour une seule raison :
+    `:has()`. Un arc n'est ni le frere ni l'enfant du point survole -- il est
+    ailleurs dans le SVG -- donc aucun selecteur classique ne va de l'un a
+    l'autre. `svg:has(.p12:hover) .a12` remonte au SVG, constate qu'il
+    contient un point survole, et redescend vers les arcs de ce point.
+
+    Le repli est le bon : un navigateur qui ignore `:has()` jette la regle
+    entiere comme un selecteur invalide. Les DEUX regles tombent ensemble --
+    celle qui eteint et celle qui rallume -- donc la figure reste exactement
+    ce qu'elle etait, et l'infobulle native continue de repondre. Il n'y a pas
+    d'etat intermediaire ou tout serait eteint sans rien pour le rallumer.
+
+    Une regle par point, et rien pour ceux qui n'ont aucun arc : leur survol
+    ne doit pas eteindre la figure pour ne rien montrer en echange.
+
+    Limite assumee : c'est du survol, donc c'est a la souris. Les infobulles
+    <title> du SVG le sont deja ; aucune information n'est ici SEULEMENT dans
+    la surbrillance -- les noms sont ecrits, la legende dit les couleurs.
+    """
+    portants = sorted({l["de"] for l in liens} | {l["vers"] for l in liens})
+    if not portants:
+        return ""
+    regles = [
+        f".{portee} path{{transition:opacity .12s ease}}",
+        # Seuls les arcs sont des <path> dans cette figure : l'axe est une
+        # <line>, les points des <circle>. Ils ne s'eteignent donc pas.
+        f".{portee}:has(.p:hover) path{{opacity:.05}}",
+    ]
+    # Specificite : la regle qui eteint vaut (0,3,1), celle qui rallume
+    # (0,4,0). La seconde gagne, quel que soit l'ordre.
+    regles += [f".{portee}:has(.p{i}:hover) .a{i}{{opacity:1}}"
+               for i in portants]
+    return "<style>" + "".join(regles) + "</style>"
+
+
 def arcs(noeuds, liens, *, titre, description, largeur=980, hauteur_arc=150,
          etiquettes=None, legende=None, legende_liens=None,
-         hauteur_etiquettes=96):
+         hauteur_etiquettes=96, surbrillance=None):
     """Diagramme en arcs : des gens sur une ligne, un arc par relation.
 
     C'est la forme juste quand les entites ont un ORDRE naturel -- ici l'ordre
@@ -751,6 +796,9 @@ def arcs(noeuds, liens, *, titre, description, largeur=980, hauteur_arc=150,
     en carres, `legende_liens` decrit les arcs et se dessine en TRAITS. La
     forme dit de quoi parle la ligne avant meme qu'on lise le texte -- sans
     quoi deux echelles de couleur dans une meme figure sont indiscernables.
+
+    `surbrillance` : un nom court, unique dans la page. Passe, le survol d'un
+    point eteint tous les arcs sauf les siens. Voir _surbrillance_arcs().
     """
     if not noeuds:
         return ""
@@ -797,7 +845,10 @@ def arcs(noeuds, liens, *, titre, description, largeur=980, hauteur_arc=150,
     def x(i):
         return gauche + pas * i
 
-    fig = Figure(largeur, hauteur, titre, description)
+    portee = f"arcs-{surbrillance}" if surbrillance else None
+    fig = Figure(largeur, hauteur, titre, description, classe=portee)
+    if portee:
+        fig.ajouter(_surbrillance_arcs(portee, noeuds, liens))
 
     # Les arcs d'abord : ils passent DERRIERE les points, jamais devant.
     #
@@ -820,8 +871,11 @@ def arcs(noeuds, liens, *, titre, description, largeur=980, hauteur_arc=150,
         # les arcs partent du mauvais cote de l'axe.
         g_, d_ = min(a, b), max(a, b)
         teinte = l.get("couleur") or ENCRE_DOUCE
+        # Un arc porte la classe de SES DEUX extremites : survoler l'un ou
+        # l'autre de ses points le rallume.
+        cl = f' class="a{l["de"]} a{l["vers"]}"' if portee else ""
         trace = (
-            f'<path d="M{g_:.1f},{base} Q{(g_ + d_) / 2:.1f},{base - 2 * h:.1f} '
+            f'<path{cl} d="M{g_:.1f},{base} Q{(g_ + d_) / 2:.1f},{base - 2 * h:.1f} '
             f'{d_:.1f},{base}" fill="none" stroke="{teinte}" '
             f'stroke-width="{0.6 + 2.2 * p:.2f}" opacity="{0.16 + 0.5 * p:.2f}"/>')
         # Une infobulle SEULEMENT sur les arcs qui portent une couleur : c'est
@@ -843,8 +897,12 @@ def arcs(noeuds, liens, *, titre, description, largeur=980, hauteur_arc=150,
         r = 2.6 + 4.4 * ((n.get("poids") or 1) / poids_n) ** 0.5
         teinte = n.get("couleur") or SERIES[0]
         info = n.get("detail") or n["nom"]
+        # Les classes vont sur le CERCLE et non sur le groupe : c'est lui que
+        # le pointeur touche, et `:hover` sur le disque exact evite qu'un
+        # survol du <title> vide allume la figure.
+        cl = f' class="p p{i}"' if portee else ""
         fig.ajouter(f'<g class="marque"><title>{e(info)}</title>'
-                    f'<circle cx="{x(i):.1f}" cy="{base}" r="{r:.1f}" fill="{teinte}" '
+                    f'<circle{cl} cx="{x(i):.1f}" cy="{base}" r="{r:.1f}" fill="{teinte}" '
                     f'stroke="{SURFACE}" stroke-width="1.5"/></g>')
 
     # Les noms tournes a la verticale : soixante-dix noms cote a cote ne

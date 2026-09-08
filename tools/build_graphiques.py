@@ -721,7 +721,9 @@ def figures_ajoutees(stats):
             # reclament est calculee par arcs() d'apres les noms eux-memes :
             # rien a tenir a jour ici le jour ou un nom plus long entre dans
             # le graphe.
-            etiquettes=True, hauteur_arc=190))
+            etiquettes=True, hauteur_arc=190,
+            # Survoler un aventurier eteint tous les arcs sauf les siens.
+            surbrillance="revenants"))
 
     if r.get("carrieres"):
         ecrire("revenants-carrieres.svg", barres_horizontales(
