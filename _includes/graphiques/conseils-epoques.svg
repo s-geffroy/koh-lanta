@@ -19,7 +19,7 @@
   <g class="marque"><title>Votants au conseil — 2015–2019 : 8.8</title><circle cx="416.8" cy="79.3" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
   <g class="marque"><title>Votants au conseil — 2020–2024 : 9.7</title><circle cx="540.4" cy="60.4" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
   <g class="marque"><title>Votants au conseil — 2025–2029 : 10.1</title><circle cx="664.0" cy="52.0" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <text x="672.0" y="52.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">Votants au conseil</text>
+  <text x="656.0" y="52.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">Votants au conseil</text>
   <polyline points="46.0,167.4 169.6,163.2 293.2,161.1 416.8,150.7 540.4,146.5 664.0,131.8" fill="none" stroke="var(--serie-2)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
   <g class="marque"><title>Voix qui font partir — 2000–2004 : 4.6</title><circle cx="46.0" cy="167.4" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
   <g class="marque"><title>Voix qui font partir — 2005–2009 : 4.8</title><circle cx="169.6" cy="163.2" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
@@ -27,13 +27,13 @@
   <g class="marque"><title>Voix qui font partir — 2015–2019 : 5.4</title><circle cx="416.8" cy="150.7" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
   <g class="marque"><title>Voix qui font partir — 2020–2024 : 5.6</title><circle cx="540.4" cy="146.5" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
   <g class="marque"><title>Voix qui font partir — 2025–2029 : 6.3</title><circle cx="664.0" cy="131.8" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <text x="672.0" y="131.8" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">Voix qui font partir</text>
+  <text x="656.0" y="131.8" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">Voix qui font partir</text>
   <text x="46.0" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2000–2004</text>
   <text x="169.6" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2005–2009</text>
   <text x="293.2" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2010–2014</text>
   <text x="416.8" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2015–2019</text>
   <text x="540.4" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2020–2024</text>
-  <text x="664.0" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2025–2029</text>
+  <text x="648.3" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2025–2029</text>
   <rect x="46" y="14" width="11" height="11" rx="3" fill="var(--serie-1)"/>
   <text x="63.0" y="20.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">Votants au conseil</text>
   <rect x="199.6" y="14" width="11" height="11" rx="3" fill="var(--serie-2)"/>

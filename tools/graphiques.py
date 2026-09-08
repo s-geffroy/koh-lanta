@@ -91,6 +91,46 @@ def _texte(x, y, contenu, *, ancre="start", couleur=ENCRE_DOUCE, taille=13,
 LARGEUR_CARACTERE = 0.62
 
 
+def _largeur(contenu, taille):
+    return len(str(contenu)) * taille * LARGEUR_CARACTERE
+
+
+def _texte_tenu(x, y, contenu, *, largeur_max, taille=13, taille_min=9, **kw):
+    """Ecrit un libelle qui ne depassera pas `largeur_max`.
+
+    Il retrecit d'abord, et ne tronque qu'en dernier recours -- le texte entier
+    reste alors dans l'infobulle, jamais perdu.
+
+    POURQUOI CE GARDE-CORPS. « Encadrement et professions intellectuelles »
+    ecrit a 13 px fait 339 px ; pose a droite d'une marge de 190, il commencait
+    a moins 159, c'est-a-dire dans le vide a gauche du dessin. Rien ne le
+    signalait : un SVG ne mesure pas son texte et ne rogne rien. On ne le
+    voyait qu'en regardant la figure, une fois publiee.
+    """
+    contenu = str(contenu)
+    taille_finale = taille
+    while taille_finale > taille_min and _largeur(contenu, taille_finale) > largeur_max:
+        taille_finale -= 1
+    if _largeur(contenu, taille_finale) <= largeur_max:
+        return _texte(x, y, contenu, taille=taille_finale, **kw)
+    tenus = max(1, int(largeur_max / (taille_finale * LARGEUR_CARACTERE)) - 1)
+    coupe = contenu[:tenus].rstrip(" ,;-·") + "…"
+    return (f'<g class="marque"><title>{e(contenu)}</title>'
+            + _texte(x, y, coupe, taille=taille_finale, **kw) + "</g>")
+
+
+def _rangs_legende(legende, largeur_utile, taille=12, ecart=30):
+    """Combien de rangs il faut pour poser une legende sans la faire deborder."""
+    rangs, x = 1, 0.0
+    for nom, _ in legende:
+        large = ecart + _largeur(nom, taille)
+        if x > 0 and x + large > largeur_utile:
+            rangs += 1
+            x = 0.0
+        x += large
+    return rangs
+
+
 def _etiquettes_serrees(libelles, pas, taille):
     """Vrai si les etiquettes d'abscisse ne tiennent pas cote a cote.
 
@@ -116,7 +156,10 @@ def barres_horizontales(donnees, *, titre, description, unite="",
         return ""
     haut, bas, ecart = 16, 30, 8
     hauteur = haut + bas + len(donnees) * (hauteur_barre + ecart) - ecart
-    marge_droite = 62
+    # La marge droite accueille la valeur ecrite au bout de la barre la plus
+    # longue : la fixer a 62 faisait sortir « 16 epreuves » du cadre.
+    plus_longue = max(_largeur(f'{d["valeur"]}{unite}', 13) for d in donnees)
+    marge_droite = max(62, plus_longue + 16)
     piste = largeur - marge_gauche - marge_droite
     vmax = valeur_max or max(d["valeur"] for d in donnees) or 1
 
@@ -137,8 +180,9 @@ def barres_horizontales(donnees, *, titre, description, unite="",
             f'<rect x="{marge_gauche}" y="{y}" width="{longueur:.1f}" '
             f'height="{hauteur_barre}" rx="4" fill="{teinte}" '
             f'stroke="{SURFACE}" stroke-width="2"/></g>')
-        fig.ajouter(_texte(marge_gauche - 10, y + hauteur_barre / 2, d["libelle"],
-                           ancre="end", couleur=ENCRE))
+        fig.ajouter(_texte_tenu(marge_gauche - 10, y + hauteur_barre / 2,
+                                d["libelle"], largeur_max=marge_gauche - 14,
+                                ancre="end", couleur=ENCRE))
         fig.ajouter(_texte(marge_gauche + longueur + 8, y + hauteur_barre / 2,
                            f'{d["valeur"]}{unite}', couleur=ENCRE, gras=True))
 
@@ -234,15 +278,21 @@ def colonnes(donnees, *, titre, description, unite="", largeur=680, hauteur=300,
 
 
 def courbes(series, abscisses, *, titre, description, unite="", largeur=680,
-            hauteur=320, legende=True, bande=None):
+            hauteur=320, legende=True, bandes=None):
     """Une ou plusieurs courbes sur un axe commun. Jamais deux echelles.
 
-    `bande` : une valeur par abscisse, ecrite sous l'axe -- une lettre, pas une
-    couleur. Sert a porter une SECONDE information categorielle sans toucher a
-    la courbe : le jour de diffusion sous l'audience, par exemple. Chaque
-    entree est {"lettre": "V", "titre": "Vendredi"}. La correspondance se dit
-    dans `description` et dans la legende ecrite sous la figure : posee dans le
-    dessin, elle irait se cogner dans les dernieres lettres de la bande.
+    `bandes` : des rangs de valeurs sous l'axe, une par abscisse, ecrites en
+    TEXTE et non en couleur. Elles portent des informations categorielles de
+    plus sans toucher a la courbe -- le jour et les mois de diffusion sous
+    l'audience. Chaque entree est {"lettre": "V", "titre": "Vendredi"}, et un
+    rang est une liste alignee sur `abscisses`.
+
+    Du texte plutot qu'une couleur : le site en emploie deja pour les series et
+    pour les tribus, une famille de teintes de plus rendrait la figure
+    illisible -- et un caractere se lit aussi en noir et blanc. La
+    correspondance se dit dans `description` et dans la legende ecrite sous la
+    figure : posee dans le dessin, elle irait se cogner dans les dernieres
+    valeurs du rang.
 
     Une lettre plutot qu'une couleur : le site en emploie deja pour les series
     et pour les tribus, et une quatrieme famille de teintes rendrait la figure
@@ -258,8 +308,8 @@ def courbes(series, abscisses, *, titre, description, unite="", largeur=680,
     incline = _etiquettes_serrees(abscisses, pas_estime, 11)
     if incline:
         bas += 16
-    if bande:
-        bas += 18
+    bandes = [b for b in (bandes or []) if b]
+    bas += 18 * len(bandes)
     piste_h = hauteur - haut - bas
     piste_l = largeur - gauche - droite
     toutes = [v for s in series for v in s["valeurs"] if v is not None]
@@ -300,28 +350,43 @@ def courbes(series, abscisses, *, titre, description, unite="", largeur=680,
         # etiquette directe en bout de courbe : l'identite ne tient pas a la couleur
         dernier = max((i for i, v in enumerate(s["valeurs"]) if v is not None), default=None)
         if dernier is not None and len(series) <= 4:
-            fig.ajouter(_texte(px(dernier) + 8, py(s["valeurs"][dernier]), s["nom"],
-                               couleur=ENCRE, taille=11, gras=True))
+            # L'etiquette se pose a droite du dernier point, et bascule a sa
+            # gauche quand elle n'y tient pas : « audience moyenne » sortait
+            # de cent pixels hors du cadre, ou elle etait simplement invisible.
+            w = _largeur(s["nom"], 11)
+            if px(dernier) + 8 + w <= largeur - 2:
+                fig.ajouter(_texte(px(dernier) + 8, py(s["valeurs"][dernier]),
+                                   s["nom"], couleur=ENCRE, taille=11, gras=True))
+            else:
+                fig.ajouter(_texte(px(dernier) - 8, py(s["valeurs"][dernier]),
+                                   s["nom"], ancre="end", couleur=ENCRE,
+                                   taille=11, gras=True))
 
-    # La bande categorielle, juste sous l'axe, avant les abscisses.
+    # Les rangs categoriels, juste sous l'axe, avant les abscisses.
     y_bande = haut + piste_h + 16
-    if bande:
+    for rang, bande in enumerate(bandes):
+        y = y_bande + 18 * rang
         for i, x in enumerate(bande):
             if not x:
                 continue
             fig.ajouter(f'<g class="marque"><title>{e(abscisses[i])} — '
                         f'{e(x.get("titre") or x["lettre"])}</title>'
-                        + _texte(px(i), y_bande, x["lettre"], ancre="middle",
+                        + _texte(px(i), y, x["lettre"], ancre="middle",
                                  couleur=ENCRE_DOUCE, taille=10, mono=True)
                         + '</g>')
 
-    y_abscisses = y_bande + (18 if bande else 2)
+    y_abscisses = y_bande + (18 * len(bandes) if bandes else 2)
     for i, a in enumerate(abscisses):
         if incline:
             fig.ajouter(_texte(px(i) + 4, y_abscisses + 4, a, ancre="end",
                                couleur=ENCRE_DOUCE, taille=11, rotation=-45))
         else:
-            fig.ajouter(_texte(px(i), y_abscisses, a, ancre="middle",
+            # La premiere et la derniere abscisse sont centrees sur un point
+            # colle au bord : « 2025–2029 » sortait de quinze pixels. On les
+            # rentre, sans deplacer les autres.
+            demi = _largeur(a, 11) / 2
+            x = min(max(px(i), demi + 1), largeur - demi - 1)
+            fig.ajouter(_texte(x, y_abscisses, a, ancre="middle",
                                couleur=ENCRE_DOUCE, taille=11))
 
     if legende and len(series) > 1:
@@ -387,7 +452,8 @@ def barres_groupees(donnees, series, *, titre, description, unite="",
 
     for i, d in enumerate(donnees):
         y0 = haut + i * (hauteur_groupe + ecart)
-        fig.ajouter(_texte(marge_gauche - 10, y0 + hauteur_groupe / 2, d["libelle"],
+        fig.ajouter(_texte_tenu(marge_gauche - 10, y0 + hauteur_groupe / 2,
+                                d["libelle"], largeur_max=marge_gauche - 14,
                            ancre="end", couleur=ENCRE))
         for k, s in enumerate(series):
             v = d["valeurs"][k] if k < len(d["valeurs"]) else None
@@ -474,8 +540,12 @@ def peigne(traits, *, titre, description, jour_max, mediane=None, legende=None,
         fig.ajouter(f'<line x1="{gauche}" y1="{y:.1f}" x2="{largeur - droite + 8}" '
                     f'y2="{y:.1f}" stroke="{ENCRE}" stroke-width="1" '
                     f'stroke-dasharray="2 3" opacity="0.55"/>')
-        fig.ajouter(_texte(largeur - droite + 14, y,
-                           f"moitié sortie avant le jour {mediane}",
+        # La note se pose a GAUCHE du bout de la ligne, dans le dessin : a
+        # droite il ne reste que la colonne des mentions, cent pixels, et la
+        # phrase en fait deux cent vingt -- elle sortait du cadre. A la hauteur
+        # de la mediane, la zone a droite des traits est vide : la place y est.
+        fig.ajouter(_texte(largeur - droite + 4, y - 9,
+                           f"moitié sortie avant le jour {mediane}", ancre="end",
                            couleur=ENCRE, taille=12, gras=True))
 
     fig.ajouter(_texte(largeur - droite + 14, haut + 8, "un trait,",
@@ -709,7 +779,8 @@ def petits_multiples(series, *, titre, description, colonnes_par_rang=6,
         vals = s["valeurs"]
         pas = case_l / max(1, len(vals) - 1)
 
-        fig.ajouter(_texte(cx, cy - 12, s["titre"], couleur=ENCRE, taille=11, gras=True))
+        fig.ajouter(_texte_tenu(cx, cy - 12, s["titre"], largeur_max=case_l - 4,
+                                couleur=ENCRE, taille=11, gras=True))
         if s.get("sous_titre"):
             fig.ajouter(_texte(cx + case_l, cy - 12, s["sous_titre"], ancre="end",
                                couleur=ENCRE_MUETTE, taille=10))
@@ -842,9 +913,15 @@ def halteres(donnees, *, titre, description, unite="", largeur=880,
                        f'fill="{SURFACE}" stroke="{teinte}" stroke-width="1.6"/>'
                        if d.get("median") is not None else "")
                     + '</g>')
-        fig.ajouter(_texte(marge_gauche - 10, y, d["libelle"], ancre="end",
-                           couleur=ENCRE, taille=11))
-        fig.ajouter(_texte(px(d["max"]) + 9, y, f'{d["max"] - d["min"]}{unite}',
+        fig.ajouter(_texte_tenu(marge_gauche - 10, y, d["libelle"],
+                                largeur_max=marge_gauche - 14, ancre="end",
+                                couleur=ENCRE, taille=11))
+        # L'ecart est ARRONDI : 7.59 moins 2.72 vaut 4.869999999999999 en
+        # flottant, et ce nombre-la s'ecrivait tel quel sous les yeux du
+        # lecteur -- en debordant du cadre, par-dessus le marche.
+        ecart_v = round(d["max"] - d["min"], 2)
+        ecart_v = int(ecart_v) if float(ecart_v).is_integer() else ecart_v
+        fig.ajouter(_texte(px(d["max"]) + 9, y, f'{ecart_v}{unite}',
                            couleur=ENCRE_DOUCE, taille=11))
 
     if legende:
@@ -983,7 +1060,8 @@ def foret(donnees, *, titre, description, reference=1.0, unite="",
                     f'<circle cx="{px(d["estimation"]):.1f}" cy="{y:.1f}" r="4.4" '
                     f'fill="{teinte}" stroke="{SURFACE}" stroke-width="1.6"/>'
                     f'</g>')
-        fig.ajouter(_texte(marge_gauche - 10, y, d["libelle"], ancre="end",
+        fig.ajouter(_texte_tenu(marge_gauche - 10, y, d["libelle"],
+                                largeur_max=marge_gauche - 14, ancre="end",
                            couleur=ENCRE, taille=11.5))
         fig.ajouter(_texte(largeur - droite + 12, y,
                            f'{d["estimation"]}{unite}', couleur=ENCRE_DOUCE,
@@ -1008,7 +1086,11 @@ def plan(points, *, titre, description, x_titre="", y_titre="", reperes=None,
     if not points:
         return ""
     marge_g, marge_d = 54, 24
-    haut, bas = 30 + (22 if legende else 0), 46
+    # La legende s'ecrit sur autant de rangs qu'il faut : sur une seule ligne,
+    # « 45 ans et plus · Sans activite declaree » et ses voisines partaient a
+    # seize cents pixels sur un dessin qui en fait neuf cent quarante.
+    rangs_legende = _rangs_legende(legende, largeur - marge_g - marge_d) if legende else 0
+    haut, bas = 30 + 22 * rangs_legende, 46
     piste_x = largeur - marge_g - marge_d
     piste_y = hauteur - haut - bas
     tous = points + list(reperes or [])
@@ -1067,11 +1149,15 @@ def plan(points, *, titre, description, x_titre="", y_titre="", reperes=None,
         fig.ajouter(_texte(marge_g, haut - 10, y_titre, couleur=ENCRE_DOUCE,
                            taille=11.5))
     if legende:
-        x = marge_g
+        x, rang = marge_g, 0
         for nom, teinte in legende:
-            fig.ajouter(f'<circle cx="{x + 5}" cy="13" r="4.5" fill="{teinte}"/>')
-            fig.ajouter(_texte(x + 15, 14, nom, couleur=ENCRE, taille=12))
-            x += 30 + 7.2 * len(nom)
+            large = 30 + _largeur(nom, 12)
+            if x > marge_g and x + large > largeur - marge_d:
+                x, rang = marge_g, rang + 1
+            y = 13 + 22 * rang
+            fig.ajouter(f'<circle cx="{x + 5}" cy="{y}" r="4.5" fill="{teinte}"/>')
+            fig.ajouter(_texte(x + 15, y + 1, nom, couleur=ENCRE, taille=12))
+            x += large
     return fig.rendu()
 
 
@@ -1165,7 +1251,8 @@ def frise(lignes, *, titre, description, debut, fin, largeur=980,
                     f'<rect x="{x1:.1f}" y="{y:.1f}" width="{max(3.0, x2 - x1):.1f}" '
                     f'height="{hauteur_ligne - 5:.1f}" rx="2" fill="{teinte}" '
                     f'stroke="{SURFACE}" stroke-width="1"/></g>')
-        fig.ajouter(_texte(marge_gauche - 10, y + (hauteur_ligne - 5) / 2, l["libelle"],
+        fig.ajouter(_texte_tenu(marge_gauche - 10, y + (hauteur_ligne - 5) / 2,
+                                l["libelle"], largeur_max=marge_gauche - 14,
                            ancre="end", couleur=ENCRE, taille=10.5))
 
     if legende:

@@ -1238,6 +1238,32 @@ def figures_des_modeles(stats):
                        if j else None for j in jours]
         legende_jours = ", ".join(f"{j[:taille_initiale].upper()} {j.lower()}"
                                   for j in distincts)
+
+        # Les mois de diffusion, en chiffres. Une saison lancee en fevrier et
+        # une lancee en aout ne se comparent pas a la legere : l'ete n'a ni le
+        # meme public ni la meme concurrence. C'etait invisible sur la figure.
+        MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet",
+                "août", "septembre", "octobre", "novembre", "décembre"]
+        toutes_saisons = {x["id"]: x for x in _lire("saisons.yml")}
+        bande_mois = []
+        for x in serie:
+            d = (toutes_saisons.get(x["saison"]) or {}).get("diffusion") or {}
+            debut, fin = d.get("debut"), d.get("fin")
+            if not debut:
+                bande_mois.append(None)
+                continue
+            # « de aout » ne s'ecrit pas : avril, aout et octobre s'elident.
+            def _de(mois):
+                return f"d’{mois}" if mois[0] in "aeiouyâéèêîôû" else f"de {mois}"
+
+            if fin and fin.month != debut.month:
+                lettre = f"{debut.month}–{fin.month}"
+                titre = (f"{_de(MOIS[debut.month - 1])} "
+                         f"à {MOIS[fin.month - 1]}")
+            else:
+                lettre = str(debut.month)
+                titre = f"en {MOIS[debut.month - 1]}"
+            bande_mois.append({"lettre": lettre, "titre": titre})
         ecrire("audience-serie.svg", courbes(
             [{"nom": "audience moyenne",
               "valeurs": [round(x["moyenne"] / 1e6, 2) for x in serie],
@@ -1247,9 +1273,11 @@ def figures_des_modeles(stats):
                   f'({serie[0]["annee"]}\u2013{serie[-1]["annee"]})',
             description="Nombre moyen de téléspectateurs par saison, en millions. "
                         "La série couvre toutes les éditions achevées. Sous "
-                        "l\u2019axe, le jour de diffusion de chaque saison : "
-                        + legende_jours + ".",
-            unite=" M", largeur=880, hauteur=320, bande=bande_jours))
+                        "l\u2019axe, le jour de diffusion de chaque saison ("
+                        + legende_jours + ") puis ses mois de diffusion, en "
+                        "chiffres.",
+            unite=" M", largeur=880, hauteur=350,
+            bandes=[bande_jours, bande_mois]))
         ecrire("audience-lancement-finale.svg", courbes(
             [{"nom": "lancement",
               "valeurs": [round((x["lancement"] or 0) / 1e6, 2) for x in serie],
@@ -1261,8 +1289,10 @@ def figures_des_modeles(stats):
             titre="Le lancement et la finale, saison par saison",
             description="Audience du premier et du dernier épisode de chaque saison, "
                         "en millions de téléspectateurs. Sous l\u2019axe, le jour "
-                        "de diffusion : " + legende_jours + ".",
-            unite=" M", largeur=880, hauteur=320, bande=bande_jours))
+                        "de diffusion (" + legende_jours + ") puis les mois, en "
+                        "chiffres.",
+            unite=" M", largeur=880, hauteur=350,
+            bandes=[bande_jours, bande_mois]))
     if au.get("test") or au.get("tests"):
         for t in au.get("tests") or []:
             if t["cle"] == "audience_rupture":

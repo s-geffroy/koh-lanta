@@ -791,6 +791,82 @@ def controler_portraits(c):
                      f"sans leur credit")
 
 
+# La largeur d'un caractere, en fraction de la taille de police. Approchee, et
+# c'est assumé : il ne s'agit pas de composer au pixel pres, mais de voir qu'un
+# texte part cent pixels hors du dessin.
+LARGEUR_CARACTERE = 0.62
+HAUTEUR_LIGNE = 1.15
+# Deux pixels de tolerance : l'estimation de largeur n'est pas la mesure du
+# navigateur, et on ne veut pas d'alerte pour un demi-caractere.
+TOLERANCE_CADRE = 2.0
+
+RE_SVG_TEXTE = re.compile(r"<text\b(?P<attrs>[^>]*)>(?P<contenu>[^<]*)</text>")
+RE_SVG_VIEWBOX = re.compile(r'viewBox="0 0 ([\d.]+) ([\d.]+)"')
+RE_SVG_ROTATE = re.compile(r"rotate\((-?[\d.]+)")
+
+
+def _attribut(attrs, nom, defaut=None):
+    trouve = re.search(rf'{nom}="([^"]*)"', attrs)
+    return trouve.group(1) if trouve else defaut
+
+
+def _boite_texte(attrs, contenu):
+    """Le rectangle occupe par un <text>, rotation comprise."""
+    x, y = float(_attribut(attrs, "x", 0)), float(_attribut(attrs, "y", 0))
+    taille = float(_attribut(attrs, "font-size", 13))
+    ancre = _attribut(attrs, "text-anchor", "start")
+    tourne = RE_SVG_ROTATE.search(attrs)
+    angle = math.radians(float(tourne.group(1))) if tourne else 0.0
+    largeur = len(contenu) * taille * LARGEUR_CARACTERE
+    hauteur = taille * HAUTEUR_LIGNE
+    x0 = {"end": x - largeur, "middle": x - largeur / 2}.get(ancre, x)
+    coins = [(x0 - x, -hauteur / 2), (x0 + largeur - x, -hauteur / 2),
+             (x0 + largeur - x, hauteur / 2), (x0 - x, hauteur / 2)]
+    points = [(x + dx * math.cos(angle) - dy * math.sin(angle),
+               y + dx * math.sin(angle) + dy * math.cos(angle)) for dx, dy in coins]
+    return (min(p[0] for p in points), max(p[0] for p in points),
+            min(p[1] for p in points), max(p[1] for p in points))
+
+
+def controler_figures(c):
+    """Refuse un texte de figure qui sort du cadre.
+
+    Un SVG ne mesure pas son texte et n'en rogne rien : une etiquette trop
+    longue s'ecrit simplement dans le vide, hors du viewBox, ou le navigateur
+    ne l'affiche pas. Rien ne le signale -- ni la construction, ni le controle
+    des donnees -- et on ne le decouvre qu'en regardant la figure une fois
+    publiee. Il y en avait cinquante-deux, sur vingt-huit figures.
+
+    Le calcul est approche : la largeur d'un caractere est estimee. C'est
+    suffisant pour ce qu'on cherche, et TOLERANCE_CADRE evite de crier pour un
+    demi-caractere.
+    """
+    dossier = os.path.join(RACINE, "_includes", "graphiques")
+    if not os.path.isdir(dossier):
+        return
+    fautes = 0
+    for nom in sorted(os.listdir(dossier)):
+        if not nom.endswith(".svg"):
+            continue
+        texte = open(os.path.join(dossier, nom), encoding="utf-8").read()
+        cadre = RE_SVG_VIEWBOX.search(texte)
+        if not cadre:
+            continue
+        large, hauteur = float(cadre.group(1)), float(cadre.group(2))
+        for m in RE_SVG_TEXTE.finditer(texte):
+            contenu = html.unescape(m.group("contenu"))
+            if not contenu.strip():
+                continue
+            x0, x1, y0, y1 = _boite_texte(m.group("attrs"), contenu)
+            t = TOLERANCE_CADRE
+            if x0 < -t or x1 > large + t or y0 < -t or y1 > hauteur + t:
+                fautes += 1
+                c.erreur(f"{nom} : « {contenu[:40]} » sort du cadre "
+                         f"(x {x0:.0f}..{x1:.0f}, y {y0:.0f}..{y1:.0f}, "
+                         f"cadre {large:.0f}x{hauteur:.0f})")
+    return fautes
+
+
 def main():
     c = Controle()
     donnees = charger_donnees()
@@ -947,6 +1023,7 @@ def main():
                          f"chmod 600 .secrets/{nom}")
 
     controler_seo(c, entetes)
+    controler_figures(c)
     controler_portraits(c)
     controler_comptes_annonces(c)
     controler_donnees_structurees(c)
