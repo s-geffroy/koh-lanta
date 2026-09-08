@@ -104,9 +104,23 @@ laquelle.</p>
   {%- if p.tribu %} Tribu {{ p.tribu }}{% if p.couleur %} ({{ p.couleur }}){% endif %}.{% endif %}
   {%- if p.age %} {{ p.age }} ans.{% endif %}</p>
   <p>
-    {%- if p.voix_recues %}<b>{{ p.voix_recues }}</b> voix reçues{% if p.conseils_assistes %} sur {{ p.conseils_assistes }} conseils traversés{% endif %}{% if p.menace %}, soit {{ p.menace }} par conseil{% endif %}. {% endif -%}
+    {%- comment -%}
+      Deux pieges de Liquid, tous deux silencieux.
+
+      1. ZERO EST VRAI : nil est la seule valeur fausse. Un
+         `{% if p.voix_recues %}` laisse donc passer « 0 voix recues », qu'il
+         faut ecrire autrement -- et distinguer de « la source ne le dit pas »,
+         qui est le seul vrai nil.
+      2. `nil > 0` N'EST PAS FAUX, c'est une erreur de comparaison. En mode
+         laxiste elle ne casse pas la construction : elle imprime son message
+         au milieu de la page. On teste donc l'existence AVANT de comparer, et
+         tous les compteurs sortent de Python a 0 plutot qu'a nil.
+    {%- endcomment -%}
+    {%- if p.voix_recues -%}
+      {%- if p.voix_recues == 0 %}<b>Jamais visé{% if a.genre == "f" %}e{% endif %}</b>{% if p.conseils_assistes %} en {{ p.conseils_assistes }} conseils traversés{% endif %}. {% else %}<b>{{ p.voix_recues }}</b> voix reçue{% if p.voix_recues > 1 %}s{% endif %}{% if p.conseils_assistes %} sur {{ p.conseils_assistes }} conseils traversés{% endif %}{% if p.menace %}, soit {{ p.menace }} par conseil{% endif %}. {% endif -%}
+    {%- endif -%}
     {%- if p.epreuves_gagnees > 0 %}<b>{{ p.epreuves_gagnees }}</b> épreuve{% if p.epreuves_gagnees > 1 %}s{% endif %} gagnée{% if p.epreuves_gagnees > 1 %}s{% endif %}{% if p.epreuves_disputees %} sur {{ p.epreuves_disputees }} disputées{% endif %}. {% endif -%}
-    {%- if p.justesse_vote %}Il écrivait le nom de l’éliminé dans <b>{{ p.justesse_vote }} %</b> de ses bulletins{% if p.bulletins_emis %} ({{ p.bulletins_emis }} bulletins connus){% endif %}. {% endif -%}
+    {%- if p.justesse_vote %}{% if a.genre == "f" %}Elle{% else %}Il{% endif %} écrivait le nom de l’éliminé dans <b>{{ p.justesse_vote }} %</b> de ses bulletins{% if p.bulletins_emis %} ({{ p.bulletins_emis }} bulletin{% if p.bulletins_emis > 1 %}s{% endif %} connu{% if p.bulletins_emis > 1 %}s{% endif %}){% endif %}. {% endif -%}
     {%- if p.colliers > 0 %}<b>{{ p.colliers }}</b> collier{% if p.colliers > 1 %}s{% endif %} d’immunité{% if p.colliers_joues > 0 %}, dont {{ p.colliers_joues }} joué{% if p.colliers_joues > 1 %}s{% endif %}{% endif %}. {% endif -%}
   </p>
   <p><a href="{{ '/saisons/' | append: p.saison | append: '/' | relative_url }}">La saison {{ p.titre }}</a></p>

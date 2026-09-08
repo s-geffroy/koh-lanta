@@ -306,9 +306,33 @@ vaudrait pour n’importe quel indice composite, et elle manque à la plupart.
 
 ### La validation « une saison exclue à chaque tour »
 
-Pour le pronostic. Le modèle apprend sur toutes les saisons sauf une et
-pronostique celle qu’il n’a jamais vue. Un découpage au hasard serait tricher :
-deux aventuriers d’un même casting ne sont pas indépendants.
+Le modèle apprend sur toutes les saisons sauf une et pronostique celle qu’il n’a
+jamais vue. Un découpage au hasard serait tricher : deux aventuriers d’un même
+casting ne sont pas indépendants, et deux présences d’un même conseil encore
+moins.
+
+Deux modèles s’y soumettent, et ils répondent à deux questions différentes :
+le **pronostic du casting** — la fiche d’inscription annonce-t-elle le vainqueur
+— et le **pronostic du conseil** — sachant tout ce qui a précédé, peut-on
+désigner celui qui part ce soir. Le premier ne trouve rien. Le second trouve
+quelque chose, et c’est le seul résultat de ce site qu’aucune correction pour
+tests multiples n’a besoin de protéger : un modèle qui apprend du bruit le paie
+sur la saison qu’il n’a pas vue.
+[Le pronostic]({{ '/statistiques/pronostic/' | relative_url }}) porte les deux.
+
+<p class="note"><strong>Une association n’est pas une prévision, et ce site
+publiait surtout des associations.</strong> Un effet peut être solide,
+reproductible, et n’autoriser aucune désignation : c’est même le cas ordinaire
+quand les effets sont petits devant la variabilité individuelle. Mesurer hors
+échantillon est la seule façon de savoir lequel des deux on tient.</p>
+
+<p class="note"><strong>La pénalité du logit conditionnel est posée une fois,
+pas choisie.</strong> Elle vaut 1,0 sur la somme des carrés des coefficients,
+toutes les variables valant 0 ou 1. Son rôle n’est pas d’améliorer le
+résultat — c’est d’empêcher un coefficient de partir à l’infini quand une
+variable sépare parfaitement l’échantillon d’apprentissage. La régler au vu du
+résultat reviendrait à regarder les saisons qu’on avait mises de côté, ce qui
+est exactement ce que la validation cherche à interdire.</p>
 
 ## Reproductibilité
 

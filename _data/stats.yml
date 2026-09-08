@@ -19377,6 +19377,51 @@ classement:
       part: 53.1
   stabilite:
     effectif: 71
+prevision:
+  jeux:
+  - cle: fiche
+    libelle: La fiche d’inscription
+    description: Le sexe, le plus âgé du camp, le plus jeune. Rien de ce que la soirée a produit.
+    variables: 3
+    conseils: 341
+    plis: 33
+    presences: 2625
+    rang_moyen: 0.4927
+    rang_hasard: 0.5
+    taille_moyenne: 7.7
+    premiers: 14.7
+    premiers_hasard: 14.2
+    ecart_types: -0.4
+  - cle: place
+    libelle: La place dans le camp
+    description: 'On ajoute la position occupée ce soir-là : bandeau et sexe minoritaires, avant ou après
+      la réunification.'
+    variables: 6
+    conseils: 321
+    plis: 33
+    presences: 2435
+    rang_moyen: 0.4102
+    rang_hasard: 0.5
+    taille_moyenne: 7.6
+    premiers: 19.3
+    premiers_hasard: 14.3
+    ecart_types: -4.87
+  - cle: jeu
+    libelle: Ce que la soirée a produit
+    description: On ajoute le confort du soir et les voix déjà reçues — celles du conseil précédent, et
+      le total depuis le début.
+    variables: 11
+    conseils: 321
+    plis: 33
+    presences: 2435
+    rang_moyen: 0.3932
+    rang_hasard: 0.5
+    taille_moyenne: 7.6
+    premiers: 24.6
+    premiers_hasard: 14.3
+    ecart_types: -5.75
+  tirages: 10000
+  min_presents: 3
 modeles:
   graine: 20260828
   permutations: 10000
@@ -22213,7 +22258,7 @@ modeles:
         observe: 9.9412
         moyenne_nulle: 9.6948
       origine: casting
-      p_ajustee: 0.0242
+      p_ajustee: 0.0236
       retenu: true
     - cle: familles_metiers
       libelle: La variété des métiers
@@ -22263,7 +22308,7 @@ modeles:
         observe: 246.0
         moyenne_nulle: 246.6235
       origine: casting
-      p_ajustee: 0.9483
+      p_ajustee: 0.9477
       retenu: false
     - cle: melange_archetypes
       libelle: Le mélange d'archétypes
@@ -22313,7 +22358,7 @@ modeles:
         observe: 0.2839
         moyenne_nulle: 0.2508
       origine: casting
-      p_ajustee: 0.3611
+      p_ajustee: 0.3592
       retenu: false
     - cle: tribus_femmes
       libelle: La composition des deux tribus
@@ -22364,7 +22409,7 @@ modeles:
         observe: 13.0253
         moyenne_nulle: 18.8726
       origine: casting
-      p_ajustee: 0.1324
+      p_ajustee: 0.1303
       retenu: false
     - cle: tribus_ages
       libelle: L'âge moyen des deux tribus
@@ -22415,7 +22460,7 @@ modeles:
         observe: 5.7496
         moyenne_nulle: 3.8505
       origine: casting
-      p_ajustee: 0.005
+      p_ajustee: 0.0048
       retenu: true
     - cle: tribus_ages_mediane
       libelle: L'âge des deux tribus, à la médiane
@@ -22465,7 +22510,7 @@ modeles:
         observe: 4.1597
         moyenne_nulle: 3.331
       origine: casting
-      p_ajustee: 0.3754
+      p_ajustee: 0.374
       retenu: false
     sensibilite:
     - cle: etendue_ages
@@ -22584,7 +22629,7 @@ modeles:
         observe: 10.7308
         moyenne_nulle: 10.2831
       origine: pronostic
-      p_ajustee: 0.7269
+      p_ajustee: 0.7261
       retenu: false
     classement:
     - nom: Ambre Daudet
@@ -23309,7 +23354,7 @@ modeles:
         moyenne_nulle: 47.7705
       bulletins: 2471
       origine: homophilie
-      p_ajustee: 0.112
+      p_ajustee: 0.11
       retenu: false
     - cle: vote_ecart_age
       libelle: L'écart d'âge avec sa cible
@@ -23361,7 +23406,7 @@ modeles:
         moyenne_nulle: 11.0903
       bulletins: 2471
       origine: homophilie
-      p_ajustee: 0.4748
+      p_ajustee: 0.4734
       retenu: false
     - cle: vote_meme_metier
       libelle: Viser la même famille de métier
@@ -23413,7 +23458,7 @@ modeles:
         moyenne_nulle: 10.4169
       bulletins: 2471
       origine: homophilie
-      p_ajustee: 0.3281
+      p_ajustee: 0.3261
       retenu: false
     - cle: vote_meme_bandeau
       libelle: Viser son propre bandeau de départ
@@ -23465,7 +23510,7 @@ modeles:
         moyenne_nulle: 60.4457
       bulletins: 2471
       origine: homophilie
-      p_ajustee: 0.0007
+      p_ajustee: 0.0006
       retenu: true
     - cle: vote_meme_departement
       libelle: Viser quelqu'un de son département
@@ -23517,7 +23562,7 @@ modeles:
         moyenne_nulle: 2.127
       bulletins: 2368
       origine: homophilie
-      p_ajustee: 0.0395
+      p_ajustee: 0.0386
       retenu: true
     - cle: vote_bandeau_apres_fusion
       libelle: Épargner son bandeau de départ
@@ -23569,7 +23614,7 @@ modeles:
         moyenne_nulle: 39.0004
       bulletins: 1591
       origine: homophilie
-      p_ajustee: 0.0007
+      p_ajustee: 0.0006
       retenu: true
   trahison:
     bulletins: 1900
@@ -23624,7 +23669,7 @@ modeles:
         observe: 48.8421
         moyenne_nulle: 57.6196
       origine: trahison
-      p_ajustee: 0.0007
+      p_ajustee: 0.0006
       retenu: true
     effet:
       effectif: 249
@@ -25191,7 +25236,7 @@ modeles:
         observe: -0.6537
         moyenne_nulle: 0.0016
       origine: audience
-      p_ajustee: 0.0007
+      p_ajustee: 0.0006
       retenu: true
     - cle: audience_format
       libelle: Le format suit-il l'audience ?
@@ -25243,7 +25288,7 @@ modeles:
         observe: -0.2958
         moyenne_nulle: -0.0001
       origine: audience
-      p_ajustee: 0.171
+      p_ajustee: 0.1688
       retenu: false
   avant_apres:
     saisons: 22
@@ -25346,7 +25391,7 @@ modeles:
         observe: -7.8613
         moyenne_nulle: -1.0719
       origine: avant_apres
-      p_ajustee: 0.2279
+      p_ajustee: 0.2261
       retenu: false
     - cle: fusion_force
       libelle: La force des éliminés, avant et après la fusion
@@ -25397,7 +25442,7 @@ modeles:
         observe: -13.7572
         moyenne_nulle: 0.0106
       origine: avant_apres
-      p_ajustee: 0.0007
+      p_ajustee: 0.0006
       retenu: true
     - cle: fusion_serre
       libelle: Des conseils plus serrés après la fusion ?
@@ -25448,7 +25493,7 @@ modeles:
         observe: 20.6147
         moyenne_nulle: 0.0288
       origine: avant_apres
-      p_ajustee: 0.0023
+      p_ajustee: 0.0022
       retenu: true
     - cle: ambassadeurs_force
       libelle: Qui les ambassadeurs éliminent-ils ?
@@ -25498,7 +25543,7 @@ modeles:
         observe: 46.875
         moyenne_nulle: 49.9517
       origine: avant_apres
-      p_ajustee: 0.7269
+      p_ajustee: 0.7261
       retenu: false
     - cle: ambassadeurs_survie
       libelle: L'ambassadeur qui négocie s'en sort-il mieux ?
@@ -25549,7 +25594,7 @@ modeles:
         observe: 39.4452
         moyenne_nulle: 50.0632
       origine: avant_apres
-      p_ajustee: 0.112
+      p_ajustee: 0.11
       retenu: false
   conditionnelles:
     presences: 1074
@@ -26293,7 +26338,7 @@ modeles:
         observe: 9.2977
         moyenne_nulle: 0.5357
       origine: conditionnelles
-      p_ajustee: 0.0022
+      p_ajustee: 0.0021
       retenu: true
     - cle: menace_sommet
       libelle: Trop visé pour partir
@@ -26344,7 +26389,7 @@ modeles:
         observe: 9.4838
         moyenne_nulle: 3.1254
       origine: conditionnelles
-      p_ajustee: 0.2279
+      p_ajustee: 0.2261
       retenu: false
     - cle: camp_perdant
       libelle: Avoir voté du mauvais côté
@@ -26394,7 +26439,7 @@ modeles:
         observe: 1.0275
         moyenne_nulle: -1.1814
       origine: conditionnelles
-      p_ajustee: 0.3754
+      p_ajustee: 0.374
       retenu: false
     - cle: menace_deux_pas
       libelle: La menace, deux conseils plus tard
@@ -26444,7 +26489,7 @@ modeles:
         observe: 7.299
         moyenne_nulle: 0.6633
       origine: conditionnelles
-      p_ajustee: 0.1513
+      p_ajustee: 0.1491
       retenu: false
     - cle: cible_persistante
       libelle: La cible reste la cible
@@ -26545,7 +26590,7 @@ modeles:
         observe: 20.5394
         moyenne_nulle: 13.3444
       origine: conditionnelles
-      p_ajustee: 0.0007
+      p_ajustee: 0.0006
       retenu: true
   autour_du_feu:
     presences: 2729
@@ -26782,7 +26827,7 @@ modeles:
         observe: -4.6568
         moyenne_nulle: -0.3556
       origine: autour_du_feu
-      p_ajustee: 0.0183
+      p_ajustee: 0.0178
       retenu: true
     - cle: doyen_du_camp
       libelle: Le plus âgé du camp
@@ -26832,7 +26877,7 @@ modeles:
         observe: 3.6509
         moyenne_nulle: 0.9599
       origine: autour_du_feu
-      p_ajustee: 0.2662
+      p_ajustee: 0.2644
       retenu: false
     - cle: confort_sortie
       libelle: Le confort du soir
@@ -26883,7 +26928,7 @@ modeles:
         observe: 5.4165
         moyenne_nulle: 0.5403
       origine: autour_du_feu
-      p_ajustee: 0.2279
+      p_ajustee: 0.2261
       retenu: false
   pire_place:
     presences: 1074
@@ -27047,7 +27092,7 @@ modeles:
         observe: 15.9451
         moyenne_nulle: 1.6906
       origine: pire_place
-      p_ajustee: 0.0048
+      p_ajustee: 0.0046
       retenu: true
     - cle: dos_au_mur
       libelle: Le dos au mur
@@ -27172,7 +27217,7 @@ modeles:
         observe: 11.4187
         moyenne_nulle: 8.5249
       origine: tenant_du_titre
-      p_ajustee: 0.558
+      p_ajustee: 0.5567
       retenu: false
   age_au_conseil:
     conseils: 341
@@ -27231,7 +27276,7 @@ modeles:
         observe: 1.3359
         moyenne_nulle: 0.0047
       origine: age_au_conseil
-      p_ajustee: 0.2279
+      p_ajustee: 0.2261
       retenu: false
   rappel:
     effectif: 491
@@ -27372,7 +27417,7 @@ modeles:
     unite: annees
     ecart_types: 2.53
     p: 0.0118
-    p_ajustee: 0.0242
+    p_ajustee: 0.0236
     retenu: true
     tirages: 10000
     lecture: Rebattre les aventuriers entre saisons donne l'écart-type général. Un écart observé PLUS
@@ -27387,7 +27432,7 @@ modeles:
     unite: cases remplies
     ecart_types: -0.12
     p: 0.9262
-    p_ajustee: 0.9483
+    p_ajustee: 0.9477
     retenu: false
     tirages: 10000
     lecture: On compte, pour chaque saison, le nombre de familles de métiers représentées. Un total observé
@@ -27402,7 +27447,7 @@ modeles:
     unite: ''
     ecart_types: 1.06
     p: 0.2939
-    p_ajustee: 0.3611
+    p_ajustee: 0.3592
     retenu: false
     tirages: 10000
     lecture: Distance entre le mélange de profils d'une saison et le mélange général. Un observé PLUS
@@ -27418,7 +27463,7 @@ modeles:
     unite: points de %
     ecart_types: -1.76
     p: 0.077
-    p_ajustee: 0.1324
+    p_ajustee: 0.1303
     retenu: false
     tirages: 10000
     lecture: On rebat les bandeaux à l'intérieur de chaque saison. Un écart observé PLUS PETIT que l'attendu
@@ -27434,7 +27479,7 @@ modeles:
     unite: annees
     ecart_types: 3.03
     p: 0.0022
-    p_ajustee: 0.005
+    p_ajustee: 0.0048
     retenu: true
     tirages: 10000
     lecture: 'Même méthode, sur l''âge moyen de chaque bandeau. Un écart observé PLUS GRAND que l''attendu
@@ -27449,7 +27494,7 @@ modeles:
     unite: annees
     ecart_types: 1.02
     p: 0.3162
-    p_ajustee: 0.3754
+    p_ajustee: 0.374
     retenu: false
     tirages: 10000
     lecture: La médiane ignore les valeurs extrêmes. Si elle ne s'écarte pas, c'est que l'écart moyen
@@ -27465,7 +27510,7 @@ modeles:
     unite: rang moyen
     ecart_types: 0.41
     p: 0.6927
-    p_ajustee: 0.7269
+    p_ajustee: 0.7261
     retenu: false
     tirages: 10000
     lecture: Le modèle classe les candidats d'une saison ; on relève la place qu'il donne à celui qui
@@ -27480,7 +27525,7 @@ modeles:
     unite: '%'
     ecart_types: -1.9
     p: 0.0625
-    p_ajustee: 0.112
+    p_ajustee: 0.11
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -27496,7 +27541,7 @@ modeles:
     unite: années
     ecart_types: 0.81
     p: 0.4196
-    p_ajustee: 0.4748
+    p_ajustee: 0.4734
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -27512,7 +27557,7 @@ modeles:
     unite: '%'
     ecart_types: -1.18
     p: 0.2594
-    p_ajustee: 0.3281
+    p_ajustee: 0.3261
     retenu: false
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -27528,7 +27573,7 @@ modeles:
     unite: '%'
     ecart_types: -12.57
     p: 0.0002
-    p_ajustee: 0.0007
+    p_ajustee: 0.0006
     retenu: true
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -27544,7 +27589,7 @@ modeles:
     unite: '%'
     ecart_types: -2.47
     p: 0.0202
-    p_ajustee: 0.0395
+    p_ajustee: 0.0386
     retenu: true
     tirages: 4000
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
@@ -27561,7 +27606,7 @@ modeles:
     unite: '%'
     ecart_types: -12.1
     p: 0.0002
-    p_ajustee: 0.0007
+    p_ajustee: 0.0006
     retenu: true
     tirages: 4000
     lecture: Mesuré sur les seuls conseils réunissant plusieurs bandeaux. Un observé SOUS l'attendu veut
@@ -27695,7 +27740,7 @@ modeles:
     unite: ''
     ecart_types: -3.64
     p: 0.0002
-    p_ajustee: 0.0007
+    p_ajustee: 0.0006
     retenu: true
     tirages: 10000
     lecture: Corrélation de rang entre l'année et le rapport finale / lancement. Négative, elle dit que
@@ -27711,7 +27756,7 @@ modeles:
     unite: ''
     ecart_types: -1.62
     p: 0.1074
-    p_ajustee: 0.171
+    p_ajustee: 0.1688
     retenu: false
     tirages: 10000
     lecture: Corrélation de rang entre l'audience d'une saison et l'effectif de la suivante, une fois
@@ -27727,7 +27772,7 @@ modeles:
     unite: ' points'
     ecart_types: -1.39
     p: 0.1646
-    p_ajustee: 0.2279
+    p_ajustee: 0.2261
     retenu: false
     tirages: 10000
     lecture: 'Différence entre l''après et l''avant, en points de pourcentage. Le hasard, ici, c''est
@@ -27743,7 +27788,7 @@ modeles:
     unite: ' points de rang'
     ecart_types: -4.17
     p: 0.0002
-    p_ajustee: 0.0007
+    p_ajustee: 0.0006
     retenu: true
     tirages: 10000
     lecture: 'Rang de l''éliminé parmi les présents, sur la force estimée aux épreuves : 0 le plus faible
@@ -27759,7 +27804,7 @@ modeles:
     unite: ' points'
     ecart_types: 3.39
     p: 0.0009
-    p_ajustee: 0.0023
+    p_ajustee: 0.0022
     retenu: true
     tirages: 10000
     lecture: Part de conseils où l'éliminé ne rassemble pas plus de la moitié des voix, après moins avant.
@@ -27774,7 +27819,7 @@ modeles:
     unite: ' points de rang'
     ecart_types: -0.4
     p: 0.6931
-    p_ajustee: 0.7269
+    p_ajustee: 0.7261
     retenu: false
     tirages: 10000
     lecture: Rang de l'éliminé parmi les présents, sur la force estimée aux épreuves. Au-dessus de 50,
@@ -27789,7 +27834,7 @@ modeles:
     unite: ' points de rang'
     ecart_types: -1.88
     p: 0.0614
-    p_ajustee: 0.112
+    p_ajustee: 0.11
     retenu: false
     tirages: 10000
     lecture: 'Rang de l''ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c''est la
@@ -27805,7 +27850,7 @@ modeles:
     unite: ' points'
     ecart_types: 3.5
     p: 0.0008
-    p_ajustee: 0.0022
+    p_ajustee: 0.0021
     retenu: true
     tirages: 10000
     lecture: 'Écart entre deux probabilités conditionnelles : partir sachant qu''on a été visé la fois
@@ -27821,7 +27866,7 @@ modeles:
     unite: ' points'
     ecart_types: 1.38
     p: 0.1696
-    p_ajustee: 0.2279
+    p_ajustee: 0.2261
     retenu: false
     tirages: 10000
     lecture: 'Écart entre partir après une à trois voix et partir après quatre voix ou plus. Un écart
@@ -27837,7 +27882,7 @@ modeles:
     unite: ' points'
     ecart_types: 1.01
     p: 0.323
-    p_ajustee: 0.3754
+    p_ajustee: 0.374
     retenu: false
     tirages: 10000
     lecture: Écart entre partir après avoir voté avec la minorité et partir après avoir voté avec la majorité.
@@ -27851,7 +27896,7 @@ modeles:
     unite: ' points'
     ecart_types: 1.68
     p: 0.0915
-    p_ajustee: 0.1513
+    p_ajustee: 0.1491
     retenu: false
     tirages: 10000
     lecture: Écart entre partir quand on avait été visé DEUX conseils plus tôt et partir quand on ne l'avait
@@ -27881,7 +27926,7 @@ modeles:
     unite: '%'
     ecart_types: 6.48
     p: 0.0002
-    p_ajustee: 0.0007
+    p_ajustee: 0.0006
     retenu: true
     tirages: 4000
     lecture: Part des couples où la cible de la dernière fois écrit à son tour le nom de son auteur, tous
@@ -27912,7 +27957,7 @@ modeles:
     unite: ' points'
     ecart_types: -2.64
     p: 0.0085
-    p_ajustee: 0.0183
+    p_ajustee: 0.0178
     retenu: true
     tirages: 10000
     lecture: Écart entre partir quand son sexe est le moins représenté du camp et partir quand il est
@@ -27927,7 +27972,7 @@ modeles:
     unite: ' points'
     ecart_types: 1.29
     p: 0.2043
-    p_ajustee: 0.2662
+    p_ajustee: 0.2644
     retenu: false
     tirages: 10000
     lecture: Écart entre partir quand on est le plus âgé des présents et partir quand on ne l'est pas.
@@ -27942,7 +27987,7 @@ modeles:
     unite: ' points'
     ecart_types: 1.42
     p: 0.1564
-    p_ajustee: 0.2279
+    p_ajustee: 0.2261
     retenu: false
     tirages: 10000
     lecture: 'Écart entre partir quand on vient de gagner le confort de l''épisode et partir quand on
@@ -27958,7 +28003,7 @@ modeles:
     unite: ' points'
     ecart_types: 3.4
     p: 0.002
-    p_ajustee: 0.0048
+    p_ajustee: 0.0046
     retenu: true
     tirages: 10000
     lecture: Écart entre partir quand plus aucun de ceux avec qui on a déjà voté n'est présent, et partir
@@ -28022,7 +28067,7 @@ modeles:
     unite: '%'
     ecart_types: -15.18
     p: 0.0002
-    p_ajustee: 0.0007
+    p_ajustee: 0.0006
     retenu: true
     tirages: 4000
     lecture: Part des bulletins visant quelqu'un avec qui l'auteur avait déjà voté. Un observé SOUS l'attendu
@@ -28054,7 +28099,7 @@ modeles:
     unite: ' points'
     ecart_types: 0.67
     p: 0.5061
-    p_ajustee: 0.558
+    p_ajustee: 0.5567
     retenu: false
     tirages: 4000
     lecture: 'Écart entre gagner l''immunité quand on l''a gagnée la fois d''avant et la gagner quand
@@ -28071,7 +28116,7 @@ modeles:
     unite: ' ans'
     ecart_types: 1.38
     p: 0.1667
-    p_ajustee: 0.2279
+    p_ajustee: 0.2261
     retenu: false
     tirages: 10000
     lecture: 'Écart d''âge de l''éliminé à la moyenne de son camp, avant la réunification moins après.
@@ -28088,7 +28133,7 @@ modeles:
     unite: ''
     ecart_types: 1.4
     p: 0.1616
-    p_ajustee: 0.2279
+    p_ajustee: 0.2261
     retenu: false
     tirages: 10000
     lecture: 71 aventuriers ont joué au moins deux fois.
@@ -28128,8 +28173,61 @@ modeles:
       largeur_case: 0.031397
       observe: 0.1677
       moyenne_nulle: 0.0008
-  nb_tests: 43
-  nb_retenus: 22
+  - cle: prevision_conseil
+    libelle: Deviner qui part, dans une saison jamais vue
+    question: Un modèle entraîné sur toutes les saisons sauf une désigne-t-il l’éliminé de celle-là mieux
+      que le hasard ?
+    origine: classement
+    observe: 0.393
+    attendu: 0.5
+    unite: rang normalisé
+    ecart_types: -5.75
+    p: 0.0001
+    p_ajustee: 0.0006
+    retenu: true
+    tirages: 10000
+    lecture: 'Chaque conseil est classé du plus au moins menacé, puis on regarde à quelle place s''y trouve
+      celui qui est réellement parti — 0 pour la première, 1 pour la dernière. Le hasard donne 0,5. Un
+      observé PLUS PETIT veut dire que le modèle voit venir la sortie. Une saison est exclue à chaque
+      tour : le conseil pronostiqué n''a jamais servi à apprendre.'
+    nulle:
+      bornes:
+      - 0.384
+      - 0.5869
+      cases:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 1
+      - 0
+      - 0
+      - 8
+      - 18
+      - 65
+      - 172
+      - 334
+      - 612
+      - 951
+      - 1315
+      - 1522
+      - 1483
+      - 1328
+      - 1011
+      - 574
+      - 356
+      - 156
+      - 54
+      - 32
+      - 6
+      - 1
+      - 1
+      - 0
+      largeur_case: 0.007247
+      observe: 0.3932
+      moyenne_nulle: 0.5
+  nb_tests: 44
+  nb_retenus: 23
 completude_saisons:
   colonnes:
   - cle: casting

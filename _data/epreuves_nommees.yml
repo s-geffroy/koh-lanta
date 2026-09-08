@@ -791,21 +791,23 @@ par_nature:
   libelle: Non qualifiée
   effectif: 2
 raccord:
-  citations: 498
+  citations: 476
   motifs:
   - motif: plusieurs epreuves possibles, sans episode pour trancher
-    effectif: 243
+    effectif: 198
   - motif: aucune epreuve relevee qui corresponde
     effectif: 118
+  - motif: raccordee sur l'ensemble des vainqueurs
+    effectif: 106
   - motif: raccordee
-    effectif: 114
+    effectif: 31
   - motif: nom introuvable dans la saison
     effectif: 23
   epreuves_relevees: 753
-  epreuves_raccordees: 83
-  part_raccordee: 11.0
+  epreuves_raccordees: 108
+  part_raccordee: 14.3
   individuelles_relevees: 377
-  individuelles_raccordees: 74
+  individuelles_raccordees: 99
 couverture_par_personne:
   citations: 498
   attribuees: 316

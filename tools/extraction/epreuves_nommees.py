@@ -230,10 +230,46 @@ def mesurer_raccord(catalogue, saisons, parts, epreuves):
             elif v.get("type") == "tribu" and v.get("libelle"):
                 collectives[(e["saison"], slug(v["libelle"]), e.get("type"))].append(e)
 
+    # L'ENSEMBLE des vainqueurs, pas un nom a la fois. Une epreuve du catalogue
+    # cite souvent deux gagnants -- le meilleur homme et la meilleure femme du
+    # parcours du combattant. Cherchee nom par nom, elle rencontre toutes les
+    # epreuves de la saison que l'un OU l'autre a gagnees, et l'ambiguite ne se
+    # leve jamais ; cherchee par son ensemble complet, elle n'en rencontre le
+    # plus souvent qu'une. C'est un appariement plus STRICT, pas une devinette
+    # de plus : il exige que les deux listes coincident exactement.
+    par_ensemble = collections.defaultdict(list)
+    for e in epreuves:
+        vus = set()
+        for v in e.get("vainqueurs") or []:
+            if v.get("type") == "personne" and v.get("id"):
+                vus.add(("p", v["id"]))
+            elif v.get("type") == "tribu" and v.get("libelle"):
+                vus.add(("t", slug(v["libelle"])))
+        if vus:
+            par_ensemble[(e["saison"], e.get("type"), frozenset(vus))].append(e)
+
     motifs = collections.Counter()
     raccordees = {}
     for entree in catalogue:
         for a in entree["detail"]:
+            attendu, incertain = set(), False
+            for nom in a["vainqueurs"]:
+                cle = (a["saison"], slug(nom))
+                if cle in tribus:
+                    attendu.add(("t", slug(nom)))
+                    continue
+                candidats = par_prenom.get(cle)
+                if not candidats or len(candidats) > 1:
+                    incertain = True
+                    continue
+                attendu.add(("p", candidats[0]["id"]))
+            if attendu and not incertain:
+                lot = par_ensemble.get((a["saison"], a["genre"], frozenset(attendu))) or []
+                if len(lot) == 1:
+                    motifs["raccordee sur l'ensemble des vainqueurs"] += 1
+                    raccordees[id(lot[0])] = entree["natures"]
+                    continue
+
             for nom in a["vainqueurs"]:
                 cle = (a["saison"], slug(nom))
                 if cle in tribus:

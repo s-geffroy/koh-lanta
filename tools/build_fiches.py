@@ -124,12 +124,17 @@ def fiches_des_aventuriers(parts, personnes, saisons, indiv, classement, natures
                 "voix_recues": p.get("votes_recus"),
                 "conseils_assistes": i.get("conseils_assistes"),
                 "menace": i.get("menace"),
-                "bulletins_emis": i.get("bulletins_emis"),
+                # Les COMPTEURS valent 0, jamais nil : le gabarit doit pouvoir
+                # ecrire `{% if x > 0 %}` sans risquer une comparaison avec
+                # nil, que Liquid ne sait pas faire. Les MESURES, elles,
+                # restent nil quand elles n'existent pas -- « 0 % de justesse »
+                # et « justesse inconnue » ne sont pas la meme phrase.
+                "bulletins_emis": i.get("bulletins_emis") or 0,
                 "justesse_vote": i.get("justesse_vote"),
-                "conseils_vise": i.get("conseils_vise"),
+                "conseils_vise": i.get("conseils_vise") or 0,
                 "evasion": i.get("evasion"),
-                "epreuves_gagnees": i.get("epreuves_gagnees"),
-                "epreuves_disputees": i.get("epreuves_disputees"),
+                "epreuves_gagnees": i.get("epreuves_gagnees") or 0,
+                "epreuves_disputees": i.get("epreuves_disputees") or 0,
                 "ratio_epreuves": i.get("ratio_epreuves"),
                 "colliers": cols.get((p["saison"], pid)) or 0,
                 "colliers_joues": joues.get((p["saison"], pid)) or 0,

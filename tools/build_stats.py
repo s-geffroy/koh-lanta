@@ -27,6 +27,7 @@ from csp import classer, libelles           # noqa: E402
 import analyses
 import modeles                              # noqa: E402
 import classement                           # noqa: E402
+import prevision                           # noqa: E402
 sys.path.insert(0, os.path.join(RACINE, "tools"))
 from indicateurs import (eliminations, votes_du_jury,  # noqa: E402
                          indicateurs_individuels, indicateurs_saison,  # noqa: E402
@@ -1477,6 +1478,15 @@ def main():
     # n'ajoute qu'apres avoir vu la correction n'est plus un test.
     stats["classement"] = classement.tout(saisons, parts, conseils, epreuves)
 
+    # Meme regle pour la prevision hors echantillon : son test rejoint le
+    # registre commun, donc il doit exister AVANT que la correction de
+    # Benjamini-Hochberg soit calculee. Elle a besoin de l'episode de
+    # reunification, qu'on lui calcule ici -- `modeles.tout` le refera pour son
+    # propre compte, et c'est le prix a payer pour que l'ordre reste celui-la.
+    stats["prevision"] = prevision.tout(
+        par_saison, parts, conseils, epreuves,
+        modeles.fusion(par_saison, parts, conseils, epreuves))
+
     # Les modeles viennent en dernier : ils s'appuient sur les indicateurs de
     # saison calcules juste au-dessus, et ce sont les seuls calculs du fichier
     # a reposer sur un tirage. Leur graine est fixe (modeles.GRAINE) et
@@ -1484,7 +1494,8 @@ def main():
     stats["modeles"] = modeles.tout(
         par_saison, parts, conseils, epreuves,
         (stats["indicateurs"] or {}).get("saisons") or [],
-        tests_externes=(stats["classement"] or {}).pop("tests", []))
+        tests_externes=((stats["classement"] or {}).pop("tests", [])
+                        + (stats["prevision"] or {}).pop("tests", [])))
 
     stats["completude_saisons"] = bloc_completude_saisons(
         saisons, parts, conseils, epreuves, colliers, stats["modeles"], finale)

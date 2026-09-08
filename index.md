@@ -204,6 +204,27 @@ plus tôt que les hommes en moyenne — et remportent pourtant
   <p><a href="{{ '/statistiques/pire-place/' | relative_url }}">La pire place au conseil</a></p>
 </div>
 
+## Et une chose qu’on peut deviner d’une saison jamais vue
+
+{% assign pvi = site.data.stats.prevision %}
+{% assign jeui = pvi.jeux | last %}
+{% assign fici = pvi.jeux | first %}
+{% assign tpi = site.data.stats.modeles.registre | where: "cle", "prevision_conseil" | first %}
+<div class="constat">
+  <p>Toutes les pages ci-dessus disent « ceci compte ». Aucune ne dit « voilà ce
+  qu’on saurait deviner ». Un modèle apprend donc sur toutes les saisons sauf
+  une, et désigne l’éliminé de celle-là, soir par soir.</p>
+  <p>Avec la seule fiche d’inscription, il vise juste dans
+  {{ fici.premiers }} % des conseils — le hasard en donne
+  {{ fici.premiers_hasard }} %. Avec ce que la soirée a produit :
+  <b>{{ jeui.premiers }} %</b>, sur {{ jeui.conseils }} conseils, p ajustée
+  {{ tpi.p_ajustee }}.</p>
+  <p>Autrement dit : <b>trois conseils sur quatre où il se trompe de
+  personne</b>. Le jeu n’est pas imprévisible ; il est très loin d’être
+  prévisible.</p>
+  <p><a href="{{ '/statistiques/pronostic/' | relative_url }}">Le pronostic</a></p>
+</div>
+
 ## Et une chose que le programme subit
 
 {% assign au = site.data.stats.modeles.audience %}

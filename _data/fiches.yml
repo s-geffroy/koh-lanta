@@ -4490,7 +4490,7 @@ aventuriers:
       couleur: rouge
       effectif: 14
       en_cours: false
-      epreuves_disputees: null
+      epreuves_disputees: 0
       epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
@@ -4975,17 +4975,17 @@ aventuriers:
       voix_recues: 1
     - age: 32
       annee: 2026
-      bulletins_emis: null
+      bulletins_emis: 0
       classement: null
       colliers: 0
       colliers_joues: 0
       conseils_assistes: null
-      conseils_vise: null
+      conseils_vise: 0
       couleur: null
       effectif: 18
       en_cours: true
-      epreuves_disputees: null
-      epreuves_gagnees: null
+      epreuves_disputees: 0
+      epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
       jour_sortie: null
@@ -6266,7 +6266,7 @@ aventuriers:
       couleur: rouge
       effectif: 24
       en_cours: false
-      epreuves_disputees: null
+      epreuves_disputees: 0
       epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
@@ -6322,7 +6322,7 @@ aventuriers:
       couleur: jaune
       effectif: 24
       en_cours: false
-      epreuves_disputees: null
+      epreuves_disputees: 0
       epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
@@ -7311,17 +7311,17 @@ aventuriers:
       voix_recues: 6
     - age: 30
       annee: 2026
-      bulletins_emis: null
+      bulletins_emis: 0
       classement: null
       colliers: 0
       colliers_joues: 0
       conseils_assistes: null
-      conseils_vise: null
+      conseils_vise: 0
       couleur: null
       effectif: 18
       en_cours: true
-      epreuves_disputees: null
-      epreuves_gagnees: null
+      epreuves_disputees: 0
+      epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
       jour_sortie: null
@@ -7772,17 +7772,17 @@ aventuriers:
       voix_recues: 7
     - age: 40
       annee: 2026
-      bulletins_emis: null
+      bulletins_emis: 0
       classement: null
       colliers: 0
       colliers_joues: 0
       conseils_assistes: null
-      conseils_vise: null
+      conseils_vise: 0
       couleur: null
       effectif: 18
       en_cours: true
-      epreuves_disputees: null
-      epreuves_gagnees: null
+      epreuves_disputees: 0
+      epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
       jour_sortie: null
@@ -9140,17 +9140,17 @@ aventuriers:
       voix_recues: 5
     - age: 34
       annee: 2026
-      bulletins_emis: null
+      bulletins_emis: 0
       classement: null
       colliers: 0
       colliers_joues: 0
       conseils_assistes: null
-      conseils_vise: null
+      conseils_vise: 0
       couleur: null
       effectif: 18
       en_cours: true
-      epreuves_disputees: null
-      epreuves_gagnees: null
+      epreuves_disputees: 0
+      epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
       jour_sortie: null
@@ -10226,7 +10226,7 @@ aventuriers:
       couleur: rouge
       effectif: 14
       en_cours: false
-      epreuves_disputees: null
+      epreuves_disputees: 0
       epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
@@ -10304,17 +10304,17 @@ aventuriers:
       voix_recues: 2
     - age: 36
       annee: 2026
-      bulletins_emis: null
+      bulletins_emis: 0
       classement: null
       colliers: 0
       colliers_joues: 0
       conseils_assistes: null
-      conseils_vise: null
+      conseils_vise: 0
       couleur: null
       effectif: 18
       en_cours: true
-      epreuves_disputees: null
-      epreuves_gagnees: null
+      epreuves_disputees: 0
+      epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
       jour_sortie: null
@@ -12548,7 +12548,7 @@ aventuriers:
       couleur: rouge
       effectif: 14
       en_cours: false
-      epreuves_disputees: null
+      epreuves_disputees: 0
       epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
@@ -12820,17 +12820,17 @@ aventuriers:
       voix_recues: 0
     - age: 41
       annee: 2026
-      bulletins_emis: null
+      bulletins_emis: 0
       classement: null
       colliers: 0
       colliers_joues: 0
       conseils_assistes: null
-      conseils_vise: null
+      conseils_vise: 0
       couleur: null
       effectif: 18
       en_cours: true
-      epreuves_disputees: null
-      epreuves_gagnees: null
+      epreuves_disputees: 0
+      epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
       jour_sortie: null
@@ -13316,7 +13316,7 @@ aventuriers:
       couleur: rouge
       effectif: 14
       en_cours: false
-      epreuves_disputees: null
+      epreuves_disputees: 0
       epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
@@ -14472,7 +14472,7 @@ aventuriers:
       couleur: rouge
       effectif: 14
       en_cours: false
-      epreuves_disputees: null
+      epreuves_disputees: 0
       epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
@@ -15592,17 +15592,17 @@ aventuriers:
       voix_recues: 6
     - age: 40
       annee: 2026
-      bulletins_emis: null
+      bulletins_emis: 0
       classement: null
       colliers: 0
       colliers_joues: 0
       conseils_assistes: null
-      conseils_vise: null
+      conseils_vise: 0
       couleur: null
       effectif: 18
       en_cours: true
-      epreuves_disputees: null
-      epreuves_gagnees: null
+      epreuves_disputees: 0
+      epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
       jour_sortie: null
@@ -16786,7 +16786,7 @@ aventuriers:
       couleur: bleu
       effectif: 24
       en_cours: false
-      epreuves_disputees: null
+      epreuves_disputees: 0
       epreuves_gagnees: 4
       epreuves_nommees: []
       evasion: null
@@ -16842,7 +16842,7 @@ aventuriers:
       couleur: orange
       effectif: 24
       en_cours: false
-      epreuves_disputees: null
+      epreuves_disputees: 0
       epreuves_gagnees: 3
       epreuves_nommees: []
       evasion: null
@@ -17312,17 +17312,17 @@ aventuriers:
       voix_recues: 14
     - age: 33
       annee: 2026
-      bulletins_emis: null
+      bulletins_emis: 0
       classement: 17
       colliers: 0
       colliers_joues: 0
       conseils_assistes: null
-      conseils_vise: null
+      conseils_vise: 0
       couleur: null
       effectif: 18
       en_cours: true
-      epreuves_disputees: null
-      epreuves_gagnees: null
+      epreuves_disputees: 0
+      epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
       jour_sortie: 3
@@ -18844,17 +18844,17 @@ aventuriers:
       voix_recues: 7
     - age: 31
       annee: 2026
-      bulletins_emis: null
+      bulletins_emis: 0
       classement: null
       colliers: 0
       colliers_joues: 0
       conseils_assistes: null
-      conseils_vise: null
+      conseils_vise: 0
       couleur: null
       effectif: 18
       en_cours: true
-      epreuves_disputees: null
-      epreuves_gagnees: null
+      epreuves_disputees: 0
+      epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
       jour_sortie: null
@@ -19408,7 +19408,7 @@ aventuriers:
       couleur: rouge
       effectif: 22
       en_cours: false
-      epreuves_disputees: null
+      epreuves_disputees: 0
       epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
@@ -20025,17 +20025,17 @@ aventuriers:
       voix_recues: 6
     - age: 30
       annee: 2026
-      bulletins_emis: null
+      bulletins_emis: 0
       classement: null
       colliers: 0
       colliers_joues: 0
       conseils_assistes: null
-      conseils_vise: null
+      conseils_vise: 0
       couleur: null
       effectif: 18
       en_cours: true
-      epreuves_disputees: null
-      epreuves_gagnees: null
+      epreuves_disputees: 0
+      epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
       jour_sortie: null
@@ -21801,7 +21801,7 @@ aventuriers:
       couleur: jaune
       effectif: 20
       en_cours: false
-      epreuves_disputees: null
+      epreuves_disputees: 0
       epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: 50.0
@@ -23387,17 +23387,17 @@ aventuriers:
       voix_recues: 1
     - age: 34
       annee: 2026
-      bulletins_emis: null
+      bulletins_emis: 0
       classement: 18
       colliers: 0
       colliers_joues: 0
       conseils_assistes: null
-      conseils_vise: null
+      conseils_vise: 0
       couleur: null
       effectif: 18
       en_cours: true
-      epreuves_disputees: null
-      epreuves_gagnees: null
+      epreuves_disputees: 0
+      epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
       jour_sortie: 3
@@ -24976,17 +24976,17 @@ aventuriers:
       voix_recues: 0
     - age: 44
       annee: 2026
-      bulletins_emis: null
+      bulletins_emis: 0
       classement: null
       colliers: 0
       colliers_joues: 0
       conseils_assistes: null
-      conseils_vise: null
+      conseils_vise: 0
       couleur: null
       effectif: 18
       en_cours: true
-      epreuves_disputees: null
-      epreuves_gagnees: null
+      epreuves_disputees: 0
+      epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
       jour_sortie: 5
@@ -25156,7 +25156,7 @@ aventuriers:
       couleur: rouge
       effectif: 14
       en_cours: false
-      epreuves_disputees: null
+      epreuves_disputees: 0
       epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
@@ -25561,17 +25561,17 @@ aventuriers:
       voix_recues: 0
     - age: 43
       annee: 2026
-      bulletins_emis: null
+      bulletins_emis: 0
       classement: null
       colliers: 0
       colliers_joues: 0
       conseils_assistes: null
-      conseils_vise: null
+      conseils_vise: 0
       couleur: null
       effectif: 18
       en_cours: true
-      epreuves_disputees: null
-      epreuves_gagnees: null
+      epreuves_disputees: 0
+      epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
       jour_sortie: 5
@@ -26449,17 +26449,17 @@ aventuriers:
       voix_recues: 5
     - age: 46
       annee: 2026
-      bulletins_emis: null
+      bulletins_emis: 0
       classement: null
       colliers: 0
       colliers_joues: 0
       conseils_assistes: null
-      conseils_vise: null
+      conseils_vise: 0
       couleur: null
       effectif: 18
       en_cours: true
-      epreuves_disputees: null
-      epreuves_gagnees: null
+      epreuves_disputees: 0
+      epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
       jour_sortie: null
@@ -28822,7 +28822,7 @@ aventuriers:
       couleur: jaune
       effectif: 18
       en_cours: false
-      epreuves_disputees: null
+      epreuves_disputees: 0
       epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: 50.0
@@ -31573,7 +31573,7 @@ aventuriers:
       couleur: rouge
       effectif: 14
       en_cours: false
-      epreuves_disputees: null
+      epreuves_disputees: 0
       epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
@@ -31651,17 +31651,17 @@ aventuriers:
       voix_recues: null
     - age: 26
       annee: 2026
-      bulletins_emis: null
+      bulletins_emis: 0
       classement: null
       colliers: 0
       colliers_joues: 0
       conseils_assistes: null
-      conseils_vise: null
+      conseils_vise: 0
       couleur: null
       effectif: 18
       en_cours: true
-      epreuves_disputees: null
-      epreuves_gagnees: null
+      epreuves_disputees: 0
+      epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
       jour_sortie: null
@@ -32517,17 +32517,17 @@ aventuriers:
       voix_recues: 9
     - age: 45
       annee: 2026
-      bulletins_emis: null
+      bulletins_emis: 0
       classement: null
       colliers: 0
       colliers_joues: 0
       conseils_assistes: null
-      conseils_vise: null
+      conseils_vise: 0
       couleur: null
       effectif: 18
       en_cours: true
-      epreuves_disputees: null
-      epreuves_gagnees: null
+      epreuves_disputees: 0
+      epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
       jour_sortie: null
@@ -33332,17 +33332,17 @@ aventuriers:
       voix_recues: 9
     - age: 33
       annee: 2026
-      bulletins_emis: null
+      bulletins_emis: 0
       classement: null
       colliers: 0
       colliers_joues: 0
       conseils_assistes: null
-      conseils_vise: null
+      conseils_vise: 0
       couleur: null
       effectif: 18
       en_cours: true
-      epreuves_disputees: null
-      epreuves_gagnees: null
+      epreuves_disputees: 0
+      epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
       jour_sortie: null
@@ -34182,17 +34182,17 @@ aventuriers:
       voix_recues: 0
     - age: 48
       annee: 2026
-      bulletins_emis: null
+      bulletins_emis: 0
       classement: null
       colliers: 0
       colliers_joues: 0
       conseils_assistes: null
-      conseils_vise: null
+      conseils_vise: 0
       couleur: null
       effectif: 18
       en_cours: true
-      epreuves_disputees: null
-      epreuves_gagnees: null
+      epreuves_disputees: 0
+      epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
       jour_sortie: null

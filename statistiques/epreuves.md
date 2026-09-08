@@ -186,16 +186,33 @@ que l’affirmer.
 </table>
 </div>
 
-**Et ces 10 % ne sont pas un échantillon.** Ce sont exactement les épreuves
-gagnées par quelqu’un qui n’en a gagné qu’une de ce genre cette saison-là —
-c’est-à-dire les vainqueurs les moins dominants. Chercher là si la nature d’une
-épreuve change qui la gagne reviendrait à ne regarder que les joueurs qui gagnent
-peu. Aucune nature n’est donc attachée à une épreuve **datée**, et aucun modèle
-épisode par épisode n’en reçoit.
+**Et ces {{ en.raccord.part_raccordee }} % ne sont pas un échantillon.** Ce sont
+exactement les épreuves dont l’ensemble des vainqueurs ne se retrouve qu’une
+fois dans la saison — c’est-à-dire, en grande partie, les vainqueurs les moins
+dominants. Chercher là si la nature d’une épreuve change qui la gagne
+reviendrait à ne regarder que les joueurs qui gagnent peu. Aucune nature n’est
+donc attachée à une épreuve **datée**, et aucun modèle épisode par épisode n’en
+reçoit.
 
-<p class="note">Ce qu’il faudrait pour que cela marche : le nom de l’épreuve
-dans le bilan par épisode, ou le numéro d’épisode dans la fiche de l’épreuve.
-Ni l’un ni l’autre n’existe. C’est une limite de source, cette fois vérifiée.</p>
+<p class="note"><strong>L’appariement a été resserré, et il a gagné trois
+points.</strong> Il cherchait le vainqueur cité <em>un nom à la fois</em> : une
+épreuve qui en cite deux — le meilleur homme et la meilleure femme du parcours
+du combattant — rencontrait alors toutes les épreuves que l’un <em>ou</em>
+l’autre avait gagnées, et ne tranchait jamais. Exiger que <strong>l’ensemble
+complet des vainqueurs coïncide</strong> est une condition plus stricte, pas une
+devinette de plus : le raccord passe de 11,0 % à
+{{ en.raccord.part_raccordee }} %, et les épreuves individuelles — les seules qui
+comptent ici — de 74 à {{ en.raccord.individuelles_raccordees }}.</p>
+
+<p class="note"><strong>Le plafond, lui, a été vérifié à la source.</strong> La
+catégorie « Épreuves » du wiki compte <strong>57 pages et aucune
+sous-catégorie</strong> : ce n’est pas un extrait, c’est tout ce qui existe. Ce
+qu’il faudrait pour aller plus loin : le nom de l’épreuve dans le bilan par
+épisode, ou le numéro d’épisode dans la fiche de l’épreuve. Les résumés
+détaillés de Wikipédia décrivent bien les épreuves une à une — « les candidats
+doivent plonger, monter sur le voilier, récupérer un maximum d’éléments » — mais
+en prose, sans jamais les nommer ni les qualifier. En tirer une nature
+demanderait de juger ; ce site ne juge pas ses sources.</p>
 
 ## La question se posait autrement
 

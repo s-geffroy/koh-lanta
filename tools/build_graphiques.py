@@ -993,6 +993,26 @@ def figures_des_modeles(stats):
                         "variable est brouillée. Toutes restent minuscules.",
             unite=" places", couleur=SERIES[5], marge_gauche=210))
 
+    # --- B bis. la prevision hors echantillon ------------------------------
+    prev = (stats.get("prevision") or {}).get("jeux") or []
+    if prev:
+        # On dessine la part de conseils ou le modele designe l'elimine EN
+        # PREMIER, et le hasard est trace comme reference : une barre seule ne
+        # se lit pas, et 24,6 % ne veut rien dire sans les 14,3 % d'a cote.
+        ecrire("prevision-premiers.svg", colonnes(
+            [{"libelle": j["libelle"], "valeur": j["premiers"],
+              "couleur": SERIES[0] if j["cle"] == "jeu" else SERIES[2],
+              "detail": f'{j["libelle"]} : l\u2019éliminé est désigné en premier '
+                        f'dans {j["premiers"]} % des {j["conseils"]} conseils '
+                        f'(hasard : {j["premiers_hasard"]} %)'}
+             for j in prev],
+            titre="Désigner l\u2019éliminé d\u2019une saison jamais vue",
+            description="Part des conseils où le modèle place en tête celui qui "
+                        "part réellement. Une saison est exclue à chaque tour.",
+            unite=" %",
+            reference=prev[0]["premiers_hasard"],
+            reference_libelle="hasard"))
+
     # --- C. la force -------------------------------------------------------
     f = m.get("force") or {}
     if f.get("classement"):

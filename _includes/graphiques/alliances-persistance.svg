@@ -3,21 +3,21 @@
   <title>La persistance des alliances</title>
   <desc>Deux aventuriers qui ont vote ensemble votent-ils encore ensemble au conseil suivant, plus souvent que le hasard ne le voudrait ?</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
-  <g class="marque"><title>8 tirages sur 2000 entre -3.98 et -2.54</title><rect x="68.7" y="201.9" width="20.3" height="2.1" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>65 tirages sur 2000 entre -2.54 et -1.1</title><rect x="90.5" y="187.2" width="20.3" height="16.8" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>285 tirages sur 2000 entre -1.1 et 0.337</title><rect x="112.4" y="130.3" width="20.3" height="73.7" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>602 tirages sur 2000 entre 0.337 et 1.77</title><rect x="134.2" y="48.3" width="20.3" height="155.7" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>611 tirages sur 2000 entre 1.77 et 3.21</title><rect x="156.1" y="46.0" width="20.3" height="158.0" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>305 tirages sur 2000 entre 3.21 et 4.65</title><rect x="177.9" y="125.1" width="20.3" height="78.9" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>109 tirages sur 2000 entre 4.65 et 6.09</title><rect x="199.8" y="175.8" width="20.3" height="28.2" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>13 tirages sur 2000 entre 6.09 et 7.53</title><rect x="221.7" y="200.6" width="20.3" height="3.4" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>2 tirages sur 2000 entre 7.53 et 8.96</title><rect x="243.5" y="203.5" width="20.3" height="0.5" fill="var(--serie-3)" opacity="0.45"/></g>
-  <line x1="157.1" y1="40" x2="157.1" y2="204" stroke="var(--encre-muette)" stroke-width="1" stroke-dasharray="3 3"/>
-  <text x="157.1" y="34.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">attendu</text>
+  <g class="marque"><title>15 tirages sur 2000 entre -2.3 et -1.03</title><rect x="68.7" y="200.4" width="20.3" height="3.6" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>134 tirages sur 2000 entre -1.03 et 0.234</title><rect x="90.5" y="172.0" width="20.3" height="32.0" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>468 tirages sur 2000 entre 0.234 et 1.5</title><rect x="112.4" y="92.3" width="20.3" height="111.7" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>662 tirages sur 2000 entre 1.5 et 2.76</title><rect x="134.2" y="46.0" width="20.3" height="158.0" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>517 tirages sur 2000 entre 2.76 et 4.03</title><rect x="156.1" y="80.6" width="20.3" height="123.4" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>177 tirages sur 2000 entre 4.03 et 5.29</title><rect x="177.9" y="161.8" width="20.3" height="42.2" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>24 tirages sur 2000 entre 5.29 et 6.56</title><rect x="199.8" y="198.3" width="20.3" height="5.7" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>2 tirages sur 2000 entre 6.56 et 7.82</title><rect x="221.7" y="203.5" width="20.3" height="0.5" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>1 tirages sur 2000 entre 7.82 et 9.09</title><rect x="243.5" y="203.8" width="20.3" height="0.2" fill="var(--serie-3)" opacity="0.45"/></g>
+  <line x1="146.4" y1="40" x2="146.4" y2="204" stroke="var(--encre-muette)" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="146.4" y="34.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">attendu</text>
   <line x1="630.2" y1="26" x2="630.2" y2="210" stroke="var(--encre)" stroke-width="2.4"/>
-  <text x="623.2" y="22.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="12" font-weight="600">observé : 33.011 points de %</text>
-  <text x="46.0" y="222.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">-5.41</text>
-  <text x="658.0" y="222.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">34.8</text>
+  <text x="623.2" y="22.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="12" font-weight="600">observé : 30.248 points de %</text>
+  <text x="46.0" y="222.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">-3.56</text>
+  <text x="658.0" y="222.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">31.9</text>
   <text x="658.0" y="238.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">2 000 tirages · p = 0,0014</text>
 </svg>
 </figure>
