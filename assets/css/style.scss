@@ -1119,3 +1119,26 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); 
   color: var(--encre-douce);
   margin: 0 0 1rem;
 }
+
+/* ------------------------------------------- colonnes de rang et de nom */
+
+/* Les tableaux de classement se suivent par dizaines sur une meme page --
+   quatorze sur /statistiques/top/. Sans largeur imposee, la colonne du rang
+   fait deux caracteres dans l'un et treize dans l'autre (« # » contre « Rang
+   general »), et la colonne des noms demarre a une abscisse differente dans
+   chaque tableau : l'oeil, qui descend la page, doit se recaler a chaque fois.
+
+   Le selecteur ne vise QUE les tableaux dont la premiere colonne est un
+   nombre : ceux qui commencent par du texte -- « Facette », « Periode » --
+   gardent leurs largeurs naturelles. `+ td` cible la colonne qui suit ce
+   rang, sans avoir a la designer par son rang dans la ligne. */
+.prose table th:first-child.nombre,
+.prose table td:first-child.nombre {
+  width: 3.6rem;
+  white-space: normal;
+}
+
+.prose table th:first-child.nombre + th,
+.prose table td:first-child.nombre + td {
+  width: 13rem;
+}
