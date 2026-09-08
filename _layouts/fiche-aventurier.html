@@ -20,7 +20,7 @@ layout: default
 <header class="page-entete">
   <p class="oeil">
     <span>LES AVENTURIERS</span>
-    {%- if a.rang -%}<span class="oeil-rang">{{ a.rang }}<i>/{{ site.data.stats.classement.taille }}</i></span>{%- endif -%}
+    {%- if a.rang -%}<span class="oeil-rang">{{ a.rang }}<i>/{{ site.data.stats.classement.joueurs_classes }}</i></span>{%- endif -%}
   </p>
   <h1 class="page-titre">{{ a.nom }}</h1>
   <p class="chapeau">
@@ -59,7 +59,7 @@ s’y lit toujours avec son incertitude : la pondération des quatre facettes
 n’a pas de valeur unique, et on la fait varier dix mille fois.</p>
 
 <div class="constat">
-  <p><b>{{ a.rang }}<sup>e</sup> sur {{ site.data.stats.classement.taille }}</b>,
+  <p><b>{{ a.rang }}<sup>e</sup> sur {{ site.data.stats.classement.joueurs_classes }}</b>,
   score {{ a.score }}.
   {%- if a.part_top %} Présent dans le top 25 sous <b>{{ a.part_top }} %</b> des
   pondérations tirées.{% endif %}</p>
