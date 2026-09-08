@@ -75,11 +75,33 @@ class Figure:
 
 
 def _texte(x, y, contenu, *, ancre="start", couleur=ENCRE_DOUCE, taille=13,
-           gras=False, ligne_de_base="middle"):
+           gras=False, ligne_de_base="middle", rotation=0, mono=False):
     poids = ' font-weight="600"' if gras else ""
+    tourne = f' transform="rotate({rotation} {x:.1f} {y:.1f})"' if rotation else ""
+    police = ' font-family="var(--mono)"' if mono else ""
     return (f'<text x="{x:.1f}" y="{y:.1f}" text-anchor="{ancre}" '
             f'dominant-baseline="{ligne_de_base}" fill="{couleur}" '
-            f'font-size="{taille}"{poids}>{e(contenu)}</text>')
+            f'font-size="{taille}"{poids}{police}{tourne}>{e(contenu)}</text>')
+
+
+# Largeur approchee d'un caractere, en fraction de la taille de police. Sert a
+# savoir si des etiquettes d'axe vont se toucher AVANT de les ecrire : le SVG
+# ne mesure rien, et deux etiquettes qui se chevauchent ne produisent aucune
+# erreur -- elles se lisent simplement mal, et seulement une fois en ligne.
+LARGEUR_CARACTERE = 0.62
+
+
+def _etiquettes_serrees(libelles, pas, taille):
+    """Vrai si les etiquettes d'abscisse ne tiennent pas cote a cote.
+
+    Trente-trois annees espacees de 25,6 px, ecrites a 11 px : chacune occupe
+    environ 24 px. Elles se touchaient. Plutot que d'en cacher une sur deux --
+    ce qui fait perdre la lecture annee par annee -- on les incline.
+    """
+    if not libelles:
+        return False
+    plus_large = max(len(str(x)) for x in libelles) * taille * LARGEUR_CARACTERE
+    return plus_large > pas * 0.9
 
 
 def barres_horizontales(donnees, *, titre, description, unite="",
@@ -212,14 +234,32 @@ def colonnes(donnees, *, titre, description, unite="", largeur=680, hauteur=300,
 
 
 def courbes(series, abscisses, *, titre, description, unite="", largeur=680,
-            hauteur=320, legende=True):
-    """Une ou plusieurs courbes sur un axe commun. Jamais deux echelles."""
+            hauteur=320, legende=True, bande=None):
+    """Une ou plusieurs courbes sur un axe commun. Jamais deux echelles.
+
+    `bande` : une valeur par abscisse, ecrite sous l'axe -- une lettre, pas une
+    couleur. Sert a porter une SECONDE information categorielle sans toucher a
+    la courbe : le jour de diffusion sous l'audience, par exemple. Chaque
+    entree est {"lettre": "V", "titre": "Vendredi"}. La correspondance se dit
+    dans `description` et dans la legende ecrite sous la figure : posee dans le
+    dessin, elle irait se cogner dans les dernieres lettres de la bande.
+
+    Une lettre plutot qu'une couleur : le site en emploie deja pour les series
+    et pour les tribus, et une quatrieme famille de teintes rendrait la figure
+    illisible -- sans compter qu'une lettre se lit aussi en noir et blanc.
+    """
     series = [s for s in series if any(v is not None for v in s["valeurs"])]
     if not series or not abscisses:
         return ""
     haut, bas, gauche, droite = 26, 56, 46, 16
     if legende and len(series) > 1:
         haut += 26
+    pas_estime = (largeur - gauche - droite) / max(1, len(abscisses) - 1)
+    incline = _etiquettes_serrees(abscisses, pas_estime, 11)
+    if incline:
+        bas += 16
+    if bande:
+        bas += 18
     piste_h = hauteur - haut - bas
     piste_l = largeur - gauche - droite
     toutes = [v for s in series for v in s["valeurs"] if v is not None]
@@ -263,9 +303,26 @@ def courbes(series, abscisses, *, titre, description, unite="", largeur=680,
             fig.ajouter(_texte(px(dernier) + 8, py(s["valeurs"][dernier]), s["nom"],
                                couleur=ENCRE, taille=11, gras=True))
 
+    # La bande categorielle, juste sous l'axe, avant les abscisses.
+    y_bande = haut + piste_h + 16
+    if bande:
+        for i, x in enumerate(bande):
+            if not x:
+                continue
+            fig.ajouter(f'<g class="marque"><title>{e(abscisses[i])} — '
+                        f'{e(x.get("titre") or x["lettre"])}</title>'
+                        + _texte(px(i), y_bande, x["lettre"], ancre="middle",
+                                 couleur=ENCRE_DOUCE, taille=10, mono=True)
+                        + '</g>')
+
+    y_abscisses = y_bande + (18 if bande else 2)
     for i, a in enumerate(abscisses):
-        fig.ajouter(_texte(px(i), hauteur - bas + 18, a, ancre="middle",
-                           couleur=ENCRE_DOUCE, taille=11))
+        if incline:
+            fig.ajouter(_texte(px(i) + 4, y_abscisses + 4, a, ancre="end",
+                               couleur=ENCRE_DOUCE, taille=11, rotation=-45))
+        else:
+            fig.ajouter(_texte(px(i), y_abscisses, a, ancre="middle",
+                               couleur=ENCRE_DOUCE, taille=11))
 
     if legende and len(series) > 1:
         x = gauche

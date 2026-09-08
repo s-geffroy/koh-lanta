@@ -1223,6 +1223,21 @@ def figures_des_modeles(stats):
     if au.get("serie"):
         serie = au["serie"]
         annees = [str(x["annee"]) for x in serie]
+
+        # Le jour de diffusion, sous l'axe. Il n'est pas decoratif : la bascule
+        # du vendredi au mardi tombe au milieu de la chute, et « apres 2021 »
+        # et « le mardi » sont statistiquement la meme variable -- la page le
+        # dit, la figure le montrait pas. Une initiale suffit tant qu'elles
+        # sont distinctes ; sinon on prend deux lettres.
+        jours = [x.get("jour") for x in serie]
+        distincts = sorted({j for j in jours if j})
+        taille_initiale = 1
+        while len({j[:taille_initiale] for j in distincts}) < len(distincts):
+            taille_initiale += 1
+        bande_jours = [{"lettre": j[:taille_initiale].upper(), "titre": j}
+                       if j else None for j in jours]
+        legende_jours = ", ".join(f"{j[:taille_initiale].upper()} {j.lower()}"
+                                  for j in distincts)
         ecrire("audience-serie.svg", courbes(
             [{"nom": "audience moyenne",
               "valeurs": [round(x["moyenne"] / 1e6, 2) for x in serie],
@@ -1231,8 +1246,10 @@ def figures_des_modeles(stats):
             titre=f'L\u2019audience moyenne, saison par saison '
                   f'({serie[0]["annee"]}\u2013{serie[-1]["annee"]})',
             description="Nombre moyen de téléspectateurs par saison, en millions. "
-                        "La série couvre toutes les éditions achevées.",
-            unite=" M", largeur=880, hauteur=320))
+                        "La série couvre toutes les éditions achevées. Sous "
+                        "l\u2019axe, le jour de diffusion de chaque saison : "
+                        + legende_jours + ".",
+            unite=" M", largeur=880, hauteur=320, bande=bande_jours))
         ecrire("audience-lancement-finale.svg", courbes(
             [{"nom": "lancement",
               "valeurs": [round((x["lancement"] or 0) / 1e6, 2) for x in serie],
@@ -1243,8 +1260,9 @@ def figures_des_modeles(stats):
             annees,
             titre="Le lancement et la finale, saison par saison",
             description="Audience du premier et du dernier épisode de chaque saison, "
-                        "en millions de téléspectateurs.",
-            unite=" M", largeur=880, hauteur=320))
+                        "en millions de téléspectateurs. Sous l\u2019axe, le jour "
+                        "de diffusion : " + legende_jours + ".",
+            unite=" M", largeur=880, hauteur=320, bande=bande_jours))
     if au.get("test") or au.get("tests"):
         for t in au.get("tests") or []:
             if t["cle"] == "audience_rupture":

@@ -34,7 +34,8 @@ elle la subit. À ce titre, c’est la plus intéressante.
 {% include graphiques/audience-serie.svg %}
 
 <p class="legende-figure">Audience moyenne par saison, en millions de
-téléspectateurs. Source : Wikipédia, article général et articles de saison.</p>
+téléspectateurs. Sous l’axe, le jour de diffusion de chaque saison — <b>V</b> vendredi, <b>M</b> mardi, <b>S</b> samedi. La bascule au mardi tombe au milieu de la chute, et c’est tout le problème de cette page. Source : Wikipédia, article général et
+articles de saison.</p>
 
 ## La chute a une date — et c’est ce qui la distingue
 
@@ -122,7 +123,8 @@ lancement : on venait voir qui gagnait. Ce n’est plus vrai.
 {% include graphiques/audience-lancement-finale.svg %}
 
 <p class="legende-figure">Audience du premier et du dernier épisode de chaque
-saison. Les deux courbes se croisent, puis s’inversent.</p>
+saison. Les deux courbes se croisent, puis s’inversent. Sous l’axe, le jour de
+diffusion — <b>V</b> vendredi, <b>M</b> mardi, <b>S</b> samedi.</p>
 
 <div class="constat">
   <p>Avant <i>{{ a.retournement.bascule.titre }}</i>
