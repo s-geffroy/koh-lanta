@@ -163,8 +163,11 @@ choix de la production et celui du candidat.</p>
 
 <p class="legende-figure">Chaque point est un aventurier revenu au moins deux
 fois, rangé par ordre d’arrivée dans le programme ; sa taille dit combien
-d’autres revenants il a croisés. Un arc relie deux personnes ayant partagé une
-saison.</p>
+d’autres revenants il a croisés, sa couleur combien de saisons il a jouées. Un
+arc relie deux personnes ayant partagé une saison, et sa couleur dit combien
+elles en ont partagé : les {{ r.graphe.aretes | size }} liens sont gris quand
+la rencontre est unique, colorés dès qu’elle se répète. Survolez un arc coloré
+pour lire les deux noms.</p>
 
 Les {{ r.graphe.noeuds | size }} revenants forment un réseau serré :
 {{ r.graphe.aretes | size }} liens entre eux, alors qu’un groupe de cette taille

@@ -13,7 +13,8 @@ sys.path.insert(0, os.path.join(RACINE, "tools"))
 from graphiques import (arcs, barres_horizontales, barres_groupees,  # noqa: E402
                         colonnes, courbes, distribution_nulle, ecrire, foret,
                         frise, halteres, nuage, peigne, pentes,
-                        petits_multiples, plan, ENCRE_MUETTE, SERIES, TRIBUS, survie)
+                        petits_multiples, plan, ENCRE_DOUCE, ENCRE_MUETTE, SERIES, TRIBUS,
+                        survie)
 
 NOM_COULEUR = {"jaune": "Jaune", "rouge": "Rouge", "bleu": "Bleu", "vert": "Vert",
                "orange": "Orange", "violet": "Violet", "noir": "Noire", "blanc": "Blanche"}
@@ -663,19 +664,59 @@ def figures_ajoutees(stats):
 
     g = (r.get("graphe") or {})
     if g.get("noeuds"):
+        noms_g = [n["nom"] for n in g["noeuds"]]
+
+        # Le poids d'un arc est le nombre de saisons que la PAIRE a partagees
+        # -- a ne pas confondre avec le nombre de saisons jouees par une
+        # personne, qui est ce que dit la couleur des points. Deux quantites,
+        # deux echelles, dans une meme figure : d'ou les deux rangs de legende,
+        # l'un en carres pour les points, l'autre en traits pour les liens.
+        #
+        # L'echelle se construit sur les poids REELLEMENT presents, jamais sur
+        # un 1..4 ecrit en dur : le jour ou une paire partagera une cinquieme
+        # saison, elle prendra sa teinte au lieu de disparaitre dans le lot.
+        #
+        # Le poids le plus faible reste en encre douce, et c'est un choix :
+        # 647 des 724 liens valent 1. Les colorer ferait de la toile de fond
+        # une bouillie, et masquerait justement ce que la couleur doit montrer
+        # -- les rencontres repetees. Les teintes suivantes prennent la palette
+        # dans son ordre, a partir de SERIES[2] : SERIES[0] et SERIES[1] sont
+        # deja pris par les points, et deux sens pour une meme teinte dans une
+        # meme figure seraient illisibles.
+        poids = sorted({(a.get("poids") or 1) for a in g["aretes"]})
+        teintes = {n: (ENCRE_DOUCE if i == 0 else SERIES[(i + 1) % len(SERIES)])
+                   for i, n in enumerate(poids)}
+        MOTS = {1: "Une", 2: "Deux", 3: "Trois", 4: "Quatre", 5: "Cinq",
+                6: "Six", 7: "Sept", 8: "Huit"}
+
+        def _ensemble(n):
+            mot = MOTS.get(n, str(n))
+            return f'{mot} saison{"s" if n > 1 else ""} ensemble'
+
         ecrire("revenants-graphe.svg", arcs(
             [{"nom": n["nom"].split()[0], "poids": n["degre"],
               "couleur": SERIES[0] if n["saisons"] == 2 else SERIES[1],
               "detail": f'{n["nom"]} — {n["saisons"]} saisons, '
                         f'{n["degre"]} aventuriers croisés parmi les revenants'}
              for n in g["noeuds"]],
-            [{"de": a["de"], "vers": a["vers"], "poids": a["poids"]}
+            [{"de": a["de"], "vers": a["vers"], "poids": a["poids"],
+              "couleur": teintes[a.get("poids") or 1],
+              # Pas d'infobulle sur le poids le plus faible : sa teinte ne dit
+              # rien, et sept cent vingt-quatre <title> alourdiraient de
+              # quarante kilo-octets un SVG inline dans la page.
+              "detail": (f'{noms_g[a["de"]]} et {noms_g[a["vers"]]} : '
+                         f'{_ensemble(a.get("poids") or 1).lower()}')
+                        if (a.get("poids") or 1) > poids[0] else None}
              for a in g["aretes"]],
             titre="Le petit monde des revenants",
             description="Chaque point est un aventurier revenu au moins deux "
                         "fois, rangé par ordre d'arrivée dans le programme. Un "
-                        "arc relie deux personnes ayant partagé une saison.",
-            legende=[("Deux saisons", SERIES[0]), ("Trois et plus", SERIES[1])],
+                        "arc relie deux personnes ayant partagé une saison, et "
+                        "sa couleur dit combien de saisons elles ont passées "
+                        "ensemble.",
+            legende=[("Deux saisons jouées", SERIES[0]),
+                     ("Trois et plus", SERIES[1])],
+            legende_liens=[(_ensemble(n), teintes[n]) for n in poids],
             etiquettes=False, hauteur_etiquettes=16, hauteur_arc=190))
 
     if r.get("carrieres"):

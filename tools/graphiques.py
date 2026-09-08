@@ -723,7 +723,8 @@ def survie(series, toutes, *, titre, description, jour_max, mediane,
 
 
 def arcs(noeuds, liens, *, titre, description, largeur=980, hauteur_arc=150,
-         etiquettes=None, legende=None, hauteur_etiquettes=96):
+         etiquettes=None, legende=None, legende_liens=None,
+         hauteur_etiquettes=96):
     """Diagramme en arcs : des gens sur une ligne, un arc par relation.
 
     C'est la forme juste quand les entites ont un ORDRE naturel -- ici l'ordre
@@ -732,12 +733,21 @@ def arcs(noeuds, liens, *, titre, description, largeur=980, hauteur_arc=150,
     sur une ligne ordonnee, la portee d'un arc est elle-meme une information.
 
     `noeuds` : [{"nom":…, "poids":…, "couleur":…}] deja dans l'ordre voulu.
-    `liens`  : [{"de": i, "vers": j, "poids": n}] par indices de noeuds.
+    `liens`  : [{"de": i, "vers": j, "poids": n, "couleur":…, "detail":…}]
+               par indices de noeuds. `couleur` et `detail` sont FACULTATIFS :
+               sans eux l'arc est trace en encre douce et sans infobulle, ce
+               qui est le comportement d'origine.
+
+    Deux rangs de legende au plus : `legende` decrit les points et se dessine
+    en carres, `legende_liens` decrit les arcs et se dessine en TRAITS. La
+    forme dit de quoi parle la ligne avant meme qu'on lise le texte -- sans
+    quoi deux echelles de couleur dans une meme figure sont indiscernables.
     """
     if not noeuds:
         return ""
+    rangs = [r for r in (("carre", legende), ("trait", legende_liens)) if r[1]]
     gauche, droite = 26, 26
-    haut = 26 + (22 if legende else 0)
+    haut = 26 + 22 * len(rangs)
     piste = largeur - gauche - droite
     base = haut + hauteur_arc
     hauteur = base + hauteur_etiquettes
@@ -750,7 +760,12 @@ def arcs(noeuds, liens, *, titre, description, largeur=980, hauteur_arc=150,
     fig = Figure(largeur, hauteur, titre, description)
 
     # Les arcs d'abord : ils passent DERRIERE les points, jamais devant.
-    for l in liens:
+    #
+    # Et du plus leger au plus lourd : le peintre pose les arcs rares EN
+    # DERNIER, donc par-dessus la toile de fond. Sans cet ordre, l'unique lien
+    # de quatre saisons du graphe des revenants se retrouvait enfoui sous six
+    # cent quarante-sept arcs simples, sa couleur invisible.
+    for l in sorted(liens, key=lambda l: (l.get("poids") or 1)):
         a, b = x(l["de"]), x(l["vers"])
         if a == b:
             continue
@@ -764,10 +779,21 @@ def arcs(noeuds, liens, *, titre, description, largeur=980, hauteur_arc=150,
         # n'y a aucun drapeau de sens a interpreter -- donc aucun risque que
         # les arcs partent du mauvais cote de l'axe.
         g_, d_ = min(a, b), max(a, b)
-        fig.ajouter(
+        teinte = l.get("couleur") or ENCRE_DOUCE
+        trace = (
             f'<path d="M{g_:.1f},{base} Q{(g_ + d_) / 2:.1f},{base - 2 * h:.1f} '
-            f'{d_:.1f},{base}" fill="none" stroke="{ENCRE_DOUCE}" '
+            f'{d_:.1f},{base}" fill="none" stroke="{teinte}" '
             f'stroke-width="{0.6 + 2.2 * p:.2f}" opacity="{0.16 + 0.5 * p:.2f}"/>')
+        # Une infobulle SEULEMENT sur les arcs qui portent une couleur : c'est
+        # la ou la teinte dit quelque chose, et c'est donc la que la regle
+        # « la couleur ne porte jamais l'information seule » s'applique. En
+        # mettre une sur les sept cent vingt-quatre arcs ajouterait quarante
+        # kilo-octets a un SVG inline dans la page.
+        if l.get("detail"):
+            fig.ajouter(f'<g class="marque"><title>{e(l["detail"])}</title>'
+                        f'{trace}</g>')
+        else:
+            fig.ajouter(trace)
 
     fig.ajouter(f'<line x1="{gauche - 8}" y1="{base}" x2="{largeur - droite + 8}" '
                 f'y2="{base}" stroke="var(--axe)" stroke-width="1"/>')
@@ -792,11 +818,18 @@ def arcs(noeuds, liens, *, titre, description, largeur=980, hauteur_arc=150,
                 f'font-size="11" text-anchor="end" '
                 f'transform="rotate(-60 {x(i):.1f} {base + 12})">{e(n["nom"])}</text>')
 
-    if legende:
+    for k, (forme, entrees) in enumerate(rangs):
+        y = 12 + 20 * k
         xx = gauche
-        for nom, teinte in legende:
-            fig.ajouter(f'<rect x="{xx}" y="12" width="11" height="11" rx="2" fill="{teinte}"/>')
-            fig.ajouter(_texte(xx + 17, 18, nom, couleur=ENCRE, taille=12))
+        for nom, teinte in entrees:
+            if forme == "carre":
+                fig.ajouter(f'<rect x="{xx}" y="{y}" width="11" height="11" '
+                            f'rx="2" fill="{teinte}"/>')
+            else:
+                fig.ajouter(f'<line x1="{xx}" y1="{y + 5.5}" x2="{xx + 13}" '
+                            f'y2="{y + 5.5}" stroke="{teinte}" '
+                            f'stroke-width="2.6" stroke-linecap="round"/>')
+            fig.ajouter(_texte(xx + 17, y + 6, nom, couleur=ENCRE, taille=12))
             xx += 26 + 7.2 * len(nom)
 
     return fig.rendu()
