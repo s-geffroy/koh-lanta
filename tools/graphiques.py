@@ -1121,30 +1121,43 @@ def petits_multiples(series, *, titre, description, colonnes_par_rang=6,
         vals = s["valeurs"]
         pas = case_l / max(1, len(vals) - 1)
 
-        fig.ajouter(_texte_tenu(cx, cy - 12, s["titre"], largeur_max=case_l - 4,
-                                couleur=ENCRE, taille=11, gras=True))
-        if s.get("sous_titre"):
-            fig.ajouter(_texte(cx + case_l, cy - 12, s["sous_titre"], ancre="end",
-                               couleur=ENCRE_MUETTE, taille=10))
-        # mi-hauteur : le repere qui permet de lire « la moitie du plateau »
-        fig.ajouter(f'<line x1="{cx:.1f}" y1="{cy + trace_h / 2:.1f}" '
-                    f'x2="{cx + case_l:.1f}" y2="{cy + trace_h / 2:.1f}" '
-                    f'stroke="{GRILLE}" stroke-width="1"/>')
-
         pts = [(cx + pas * i, cy + trace_h * (1 - v / 100.0)) for i, v in enumerate(vals)]
         aire = (f'M{pts[0][0]:.1f},{cy + trace_h:.1f} '
                 + " ".join(f"L{x:.1f},{y:.1f}" for x, y in pts)
                 + f" L{pts[-1][0]:.1f},{cy + trace_h:.1f} Z")
-        fig.ajouter(f'<path d="{aire}" fill="{teinte}" opacity="0.16"/>')
-        fig.ajouter(f'<polyline points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in pts)}" '
-                    f'fill="none" stroke="{teinte}" stroke-width="1.8" '
-                    f'stroke-linejoin="round"/>')
-        fig.ajouter(f'<g class="marque"><title>{e(s.get("detail") or s["titre"])}</title>'
-                    f'<rect x="{cx:.1f}" y="{cy - 4:.1f}" width="{case_l:.1f}" '
-                    f'height="{trace_h + 8:.1f}" fill="transparent"/></g>')
-        fig.ajouter(f'<line x1="{cx:.1f}" y1="{cy + trace_h:.1f}" '
-                    f'x2="{cx + case_l:.1f}" y2="{cy + trace_h:.1f}" '
-                    f'stroke="var(--axe)" stroke-width="1"/>')
+
+        # LA VIGNETTE ENTIERE EST LA MARQUE, et cela repare un defaut reel :
+        # seul le rectangle de survol -- transparent -- portait `marque`. La
+        # mise au point au survol l'eteignait donc consciencieusement, sans que
+        # rien ne se voie, pendant que les trente-trois courbes restaient
+        # allumees. Le titre, le sous-titre, le repere de mi-hauteur, l'aire,
+        # la courbe, la zone de survol et la ligne de base sont desormais
+        # ensemble : c'est la vignette qui s'eteint.
+        #
+        # La zone transparente reste DERNIERE avant la ligne de base : c'est
+        # elle qui recoit le pointeur sur toute la surface de la case, y
+        # compris entre la courbe et l'axe.
+        fig.ajouter(
+            f'<g class="marque"><title>{e(s.get("detail") or s["titre"])}</title>'
+            + _texte_tenu(cx, cy - 12, s["titre"], largeur_max=case_l - 4,
+                          couleur=ENCRE, taille=11, gras=True)
+            + (_texte(cx + case_l, cy - 12, s["sous_titre"], ancre="end",
+                      couleur=ENCRE_MUETTE, taille=10)
+               if s.get("sous_titre") else "")
+            # mi-hauteur : le repere qui permet de lire « la moitie du plateau »
+            + f'<line x1="{cx:.1f}" y1="{cy + trace_h / 2:.1f}" '
+              f'x2="{cx + case_l:.1f}" y2="{cy + trace_h / 2:.1f}" '
+              f'stroke="{GRILLE}" stroke-width="1"/>'
+            + f'<path d="{aire}" fill="{teinte}" opacity="0.16"/>'
+            + f'<polyline points="{" ".join(f"{x:.1f},{y:.1f}" for x, y in pts)}" '
+              f'fill="none" stroke="{teinte}" stroke-width="1.8" '
+              f'stroke-linejoin="round"/>'
+            + f'<rect x="{cx:.1f}" y="{cy - 4:.1f}" width="{case_l:.1f}" '
+              f'height="{trace_h + 8:.1f}" fill="transparent"/>'
+            + f'<line x1="{cx:.1f}" y1="{cy + trace_h:.1f}" '
+              f'x2="{cx + case_l:.1f}" y2="{cy + trace_h:.1f}" '
+              f'stroke="var(--axe)" stroke-width="1"/>'
+            + '</g>')
     return fig.rendu()
 
 
@@ -1251,6 +1264,14 @@ def halteres(donnees, *, titre, description, unite="", largeur=880,
         y = haut + i * hauteur_ligne + hauteur_ligne / 2
         teinte = d.get("couleur") or SERIES[0]
         info = d.get("detail") or (f'{d["libelle"]} : de {d["min"]} à {d["max"]}{unite}')
+        # L'ecart est ARRONDI : 7.59 moins 2.72 vaut 4.869999999999999 en
+        # flottant, et ce nombre-la s'ecrivait tel quel sous les yeux du
+        # lecteur -- en debordant du cadre, par-dessus le marche.
+        ecart_v = round(d["max"] - d["min"], 2)
+        ecart_v = int(ecart_v) if float(ecart_v).is_integer() else ecart_v
+        # Une haltere, son intitule et son ecart : une seule marque. Voir la
+        # note de barres_horizontales -- le regroupement suffit a donner la
+        # mise au point au survol, sans une regle de plus.
         fig.ajouter(f'<g class="marque"><title>{e(info)}</title>'
                     f'<line x1="{px(d["min"]):.1f}" y1="{y:.1f}" '
                     f'x2="{px(d["max"]):.1f}" y2="{y:.1f}" stroke="{teinte}" '
@@ -1260,17 +1281,12 @@ def halteres(donnees, *, titre, description, unite="", largeur=880,
                     + (f'<circle cx="{px(d["median"]):.1f}" cy="{y:.1f}" r="2.6" '
                        f'fill="{SURFACE}" stroke="{teinte}" stroke-width="1.6"/>'
                        if d.get("median") is not None else "")
+                    + _texte_tenu(marge_gauche - 10, y, d["libelle"],
+                                  largeur_max=marge_gauche - 14, ancre="end",
+                                  couleur=ENCRE, taille=11)
+                    + _texte(px(d["max"]) + 9, y, f'{ecart_v}{unite}',
+                             couleur=ENCRE_DOUCE, taille=11)
                     + '</g>')
-        fig.ajouter(_texte_tenu(marge_gauche - 10, y, d["libelle"],
-                                largeur_max=marge_gauche - 14, ancre="end",
-                                couleur=ENCRE, taille=11))
-        # L'ecart est ARRONDI : 7.59 moins 2.72 vaut 4.869999999999999 en
-        # flottant, et ce nombre-la s'ecrivait tel quel sous les yeux du
-        # lecteur -- en debordant du cadre, par-dessus le marche.
-        ecart_v = round(d["max"] - d["min"], 2)
-        ecart_v = int(ecart_v) if float(ecart_v).is_integer() else ecart_v
-        fig.ajouter(_texte(px(d["max"]) + 9, y, f'{ecart_v}{unite}',
-                           couleur=ENCRE_DOUCE, taille=11))
 
     if legende:
         x = marge_gauche
@@ -1401,19 +1417,21 @@ def foret(donnees, *, titre, description, reference=1.0, unite="",
         info = d.get("detail") or (
             f'{d["libelle"]} : {d["estimation"]}{unite} '
             f'(intervalle {d["bas"]} à {d["haut"]})')
+        # L'intervalle, son estimation, son intitule et son chiffre : une
+        # seule marque. Voir la note de barres_horizontales.
         fig.ajouter(f'<g class="marque"><title>{e(info)}</title>'
                     f'<line x1="{px(d["bas"]):.1f}" y1="{y:.1f}" '
                     f'x2="{px(d["haut"]):.1f}" y2="{y:.1f}" stroke="{teinte}" '
                     f'stroke-width="2.6" stroke-linecap="round" opacity="0.55"/>'
                     f'<circle cx="{px(d["estimation"]):.1f}" cy="{y:.1f}" r="4.4" '
                     f'fill="{teinte}" stroke="{SURFACE}" stroke-width="1.6"/>'
-                    f'</g>')
-        fig.ajouter(_texte_tenu(marge_gauche - 10, y, d["libelle"],
-                                largeur_max=marge_gauche - 14, ancre="end",
-                           couleur=ENCRE, taille=11.5))
-        fig.ajouter(_texte(largeur - droite + 12, y,
-                           f'{d["estimation"]}{unite}', couleur=ENCRE_DOUCE,
-                           taille=11.5))
+                    + _texte_tenu(marge_gauche - 10, y, d["libelle"],
+                                  largeur_max=marge_gauche - 14, ancre="end",
+                                  couleur=ENCRE, taille=11.5)
+                    + _texte(largeur - droite + 12, y,
+                             f'{d["estimation"]}{unite}', couleur=ENCRE_DOUCE,
+                             taille=11.5)
+                    + '</g>')
     if note:
         fig.ajouter(_texte(marge_gauche, hauteur - 14, note, couleur=ENCRE_MUETTE,
                            taille=11))
@@ -1553,16 +1571,22 @@ def pentes(lignes, *, titre, description, gauche, droite, largeur=700,
         yg, yd = y(l["rang_gauche"]), y(l["rang_droite"])
         info = (f'{l["libelle"]} : {l["rang_gauche"]}\u1d49 au classement brut, '
                 f'{l["rang_droite"]}\u1d49 une fois corrige')
+        # La pente et SES DEUX ETIQUETTES dans une seule marque. C'est ici que
+        # le regroupement sert le plus : suivre un nom d'un bord a l'autre au
+        # milieu de seize traits croises etait le seul geste que la figure
+        # demandait, et le seul qu'elle ne rendait pas.
         fig.ajouter(f'<g class="marque"><title>{e(info)}</title>'
                     f'<line x1="{xg + 6}" y1="{yg:.1f}" x2="{xd - 6}" y2="{yd:.1f}" '
                     f'stroke="{teinte}" stroke-width="1.8" opacity="0.75"/>'
                     f'<circle cx="{xg + 6}" cy="{yg:.1f}" r="3" fill="{teinte}"/>'
                     f'<circle cx="{xd - 6}" cy="{yd:.1f}" r="3" fill="{teinte}"/>'
-                    f'</g>')
-        fig.ajouter(_texte(xg - 6, yg_etiquette[i], f'{l["rang_gauche"]}. {l["libelle"]}',
-                           ancre="end", couleur=ENCRE, taille=11))
-        fig.ajouter(_texte(xd + 6, yd_etiquette[i], f'{l["rang_droite"]}. {l["libelle"]}',
-                           couleur=ENCRE, taille=11))
+                    + _texte(xg - 6, yg_etiquette[i],
+                             f'{l["rang_gauche"]}. {l["libelle"]}',
+                             ancre="end", couleur=ENCRE, taille=11)
+                    + _texte(xd + 6, yd_etiquette[i],
+                             f'{l["rang_droite"]}. {l["libelle"]}',
+                             couleur=ENCRE, taille=11)
+                    + '</g>')
     return fig.rendu()
 
 
@@ -1601,13 +1625,15 @@ def frise(lignes, *, titre, description, debut, fin, largeur=980,
         y = haut + i * hauteur_ligne + 2
         x1, x2 = px(l["debut"]), px(l.get("fin") or l["debut"])
         teinte = l.get("couleur") or SERIES[0]
+        # La barre et son intitule : une seule marque. Voir barres_horizontales.
         fig.ajouter(f'<g class="marque"><title>{e(l.get("detail") or l["libelle"])}</title>'
                     f'<rect x="{x1:.1f}" y="{y:.1f}" width="{max(3.0, x2 - x1):.1f}" '
                     f'height="{hauteur_ligne - 5:.1f}" rx="2" fill="{teinte}" '
-                    f'stroke="{SURFACE}" stroke-width="1"/></g>')
-        fig.ajouter(_texte_tenu(marge_gauche - 10, y + (hauteur_ligne - 5) / 2,
-                                l["libelle"], largeur_max=marge_gauche - 14,
-                           ancre="end", couleur=ENCRE, taille=10.5))
+                    f'stroke="{SURFACE}" stroke-width="1"/>'
+                    + _texte_tenu(marge_gauche - 10, y + (hauteur_ligne - 5) / 2,
+                                  l["libelle"], largeur_max=marge_gauche - 14,
+                                  ancre="end", couleur=ENCRE, taille=10.5)
+                    + '</g>')
 
     if legende:
         x = marge_gauche
