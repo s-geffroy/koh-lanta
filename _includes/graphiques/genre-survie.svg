@@ -1,7 +1,8 @@
 <figure class="figure">
-<svg class="graphique" viewBox="0 0 680 320" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Longévité comparée des femmes et des hommes">
+<svg class="graphique surbrillance courbes-longevite-comparee-des-femmes-et-des-hommes" viewBox="0 0 680 320" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Longévité comparée des femmes et des hommes">
   <title>Longévité comparée des femmes et des hommes</title>
   <desc>Part moyenne de la saison passée dans le jeu, par décennie.</desc>
+  <style>.courbes-longevite-comparee-des-femmes-et-des-hommes .s{transition:opacity .12s ease}.courbes-longevite-comparee-des-femmes-et-des-hommes:has(.marque:not(.repere):hover) .s{opacity:.15}.courbes-longevite-comparee-des-femmes-et-des-hommes:has(.marque.s0:hover) .s.s0{opacity:1}.courbes-longevite-comparee-des-femmes-et-des-hommes:has(.marque.s1:hover) .s.s1{opacity:1}</style>
   <line x1="46" y1="264.0" x2="664" y2="264.0" stroke="var(--grille)" stroke-width="1"/>
   <text x="38.0" y="264.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">0</text>
   <line x1="46" y1="211.0" x2="664" y2="211.0" stroke="var(--grille)" stroke-width="1"/>
@@ -12,16 +13,16 @@
   <text x="38.0" y="105.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">49</text>
   <line x1="46" y1="52.0" x2="664" y2="52.0" stroke="var(--grille)" stroke-width="1"/>
   <text x="38.0" y="52.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">66</text>
-  <polyline points="46.0,80.7 355.0,82.0 664.0,66.5" fill="none" stroke="var(--serie-5)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-  <g class="marque"><title>Femmes — 2000s : 56.8 %</title><circle cx="46.0" cy="80.7" r="4.5" fill="var(--serie-5)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>Femmes — 2010s : 56.4 %</title><circle cx="355.0" cy="82.0" r="4.5" fill="var(--serie-5)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>Femmes — 2020s : 61.2 %</title><circle cx="664.0" cy="66.5" r="4.5" fill="var(--serie-5)" stroke="var(--surface)" stroke-width="2"/></g>
-  <text x="656.0" y="71.8" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">Femmes</text>
-  <polyline points="46.0,58.1 355.0,52.0 664.0,58.8" fill="none" stroke="var(--serie-1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-  <g class="marque"><title>Hommes — 2000s : 63.8 %</title><circle cx="46.0" cy="58.1" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>Hommes — 2010s : 65.7 %</title><circle cx="355.0" cy="52.0" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>Hommes — 2020s : 63.6 %</title><circle cx="664.0" cy="58.8" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <text x="656.0" y="58.8" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">Hommes</text>
+  <polyline class="s s0" points="46.0,80.7 355.0,82.0 664.0,66.5" fill="none" stroke="var(--serie-5)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <g class="marque s s0"><title>Femmes — 2000s : 56.8 %</title><circle cx="46.0" cy="80.7" r="4.5" fill="var(--serie-5)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>Femmes — 2010s : 56.4 %</title><circle cx="355.0" cy="82.0" r="4.5" fill="var(--serie-5)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>Femmes — 2020s : 61.2 %</title><circle cx="664.0" cy="66.5" r="4.5" fill="var(--serie-5)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="s s0"><text x="656.0" y="71.8" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">Femmes</text></g>
+  <polyline class="s s1" points="46.0,58.1 355.0,52.0 664.0,58.8" fill="none" stroke="var(--serie-1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <g class="marque s s1"><title>Hommes — 2000s : 63.8 %</title><circle cx="46.0" cy="58.1" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>Hommes — 2010s : 65.7 %</title><circle cx="355.0" cy="52.0" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>Hommes — 2020s : 63.6 %</title><circle cx="664.0" cy="58.8" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="s s1"><text x="656.0" y="58.8" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">Hommes</text></g>
   <text x="46.0" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2000s</text>
   <text x="355.0" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2010s</text>
   <text x="662.0" y="282.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2020s</text>

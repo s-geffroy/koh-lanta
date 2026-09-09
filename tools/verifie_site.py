@@ -899,6 +899,44 @@ def controler_figures_chevauchent(c):
                              f"« {boites[j][0][:26]} » s'ecrivent l'une sur l'autre")
 
 
+def controler_portees(c):
+    """Refuse que deux figures partagent une classe de portee.
+
+    Certaines figures embarquent leur propre feuille de style -- la
+    surbrillance des diagrammes en arcs, celle des courbes a plusieurs series.
+    Un <style> pose dans un SVG INLINE n'est pas encapsule : ses regles
+    s'appliquent a toute la page. Chaque selecteur est donc prefixe par une
+    classe de portee, tiree du titre de la figure par _portee() dans
+    tools/graphiques.py.
+
+    Deux figures qui partageraient cette classe melangeraient leurs regles des
+    qu'elles se trouveraient sur la meme page : la serie 0 de l'une allumerait
+    la serie 0 de l'autre. Rien ne le signalerait -- ni la construction, ni le
+    controle des donnees -- et on ne le verrait qu'en survolant la bonne figure
+    de la bonne page.
+
+    Le risque est reel et non theorique : _portee() TRONQUE le titre a
+    quarante-quatre caracteres. Deux titres qui commencent pareil donnent la
+    meme portee.
+    """
+    dossier = os.path.join(RACINE, "_includes", "graphiques")
+    if not os.path.isdir(dossier):
+        return
+    vues = {}
+    for nom in sorted(os.listdir(dossier)):
+        if not nom.endswith(".svg"):
+            continue
+        texte = open(os.path.join(dossier, nom), encoding="utf-8").read()
+        m = re.search(r'<svg class="graphique surbrillance ([a-z0-9-]+)"', texte)
+        if not m:
+            continue
+        portee = m.group(1)
+        if portee in vues:
+            c.erreur(f"{nom} et {vues[portee]} partagent la portee "
+                     f"« {portee} » : leurs feuilles de style se melangeront")
+        vues[portee] = nom
+
+
 def controler_figures(c):
     """Refuse un texte de figure qui sort du cadre.
 
@@ -1096,6 +1134,7 @@ def main():
     controler_seo(c, entetes)
     controler_figures(c)
     controler_figures_chevauchent(c)
+    controler_portees(c)
     controler_portraits(c)
     controler_comptes_annonces(c)
     controler_donnees_structurees(c)

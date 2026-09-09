@@ -1183,7 +1183,7 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); 
      exclues DES DEUX COTES : les survoler n'eteint pas la figure, et elles ne
      s'eteignent pas quand on survole une donnee.
 
-   * `.arcs-lie` -- les deux diagrammes en arcs ont leur propre surbrillance,
+   * `.surbrillance` -- les deux diagrammes en arcs ont leur propre surbrillance,
      ecrite dans leur SVG, qui allume aussi les points relies et leurs noms.
      Les deux jeux de regles se multiplieraient.
 
@@ -1197,9 +1197,9 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); 
 
    Specificite : (0,7,0) pour eteindre, (0,8,0) pour rallumer. La seconde gagne
    quel que soit l'ordre. */
-.graphique:not(.arcs-lie):has(.marque:not(.repere):hover) .marque:not(.repere) {
+.graphique:not(.surbrillance):has(.marque:not(.repere):hover) .marque:not(.repere) {
   opacity: 0.28;
 }
-.graphique:not(.arcs-lie):has(.marque:not(.repere):hover) .marque:not(.repere):hover {
+.graphique:not(.surbrillance):has(.marque:not(.repere):hover) .marque:not(.repere):hover {
   opacity: 1;
 }

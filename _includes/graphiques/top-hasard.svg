@@ -1,7 +1,8 @@
 <figure class="figure">
-<svg class="graphique" viewBox="0 0 880 340" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Un top fabriqué par le hasard a la même allure">
+<svg class="graphique surbrillance courbes-un-top-fabrique-par-le-hasard-a-la-meme-allu" viewBox="0 0 880 340" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Un top fabriqué par le hasard a la même allure">
   <title>Un top fabriqué par le hasard a la même allure</title>
   <desc>Score du 1er au dernier du top, pour le classement réel et pour un classement où chacun garde ses occasions mais reçoit ses résultats au hasard.</desc>
+  <style>.courbes-un-top-fabrique-par-le-hasard-a-la-meme-allu .s{transition:opacity .12s ease}.courbes-un-top-fabrique-par-le-hasard-a-la-meme-allu:has(.marque:not(.repere):hover) .s{opacity:.15}.courbes-un-top-fabrique-par-le-hasard-a-la-meme-allu:has(.marque.s0:hover) .s.s0{opacity:1}.courbes-un-top-fabrique-par-le-hasard-a-la-meme-allu:has(.marque.s1:hover) .s.s1{opacity:1}</style>
   <line x1="46" y1="284.0" x2="864" y2="284.0" stroke="var(--grille)" stroke-width="1"/>
   <text x="38.0" y="284.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">0</text>
   <line x1="46" y1="226.0" x2="864" y2="226.0" stroke="var(--grille)" stroke-width="1"/>
@@ -12,60 +13,60 @@
   <text x="38.0" y="110.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2</text>
   <line x1="46" y1="52.0" x2="864" y2="52.0" stroke="var(--grille)" stroke-width="1"/>
   <text x="38.0" y="52.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">3</text>
-  <polyline points="46.0,52.0 80.1,96.3 114.2,133.0 148.2,142.5 182.3,145.3 216.4,153.7 250.5,160.5 284.6,163.4 318.7,167.3 352.8,171.2 386.8,173.7 420.9,182.6 455.0,182.7 489.1,189.7 523.2,194.4 557.2,195.5 591.3,195.8 625.4,195.9 659.5,196.5 693.6,196.7 727.7,199.5 761.8,201.0 795.8,204.7 829.9,206.0 864.0,207.1" fill="none" stroke="var(--serie-1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-  <g class="marque"><title>classement réel — 1 : 2.906</title><circle cx="46.0" cy="52.0" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement réel — 2 : 2.351</title><circle cx="80.1" cy="96.3" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement réel — 3 : 1.891</title><circle cx="114.2" cy="133.0" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement réel — 4 : 1.772</title><circle cx="148.2" cy="142.5" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement réel — 5 : 1.737</title><circle cx="182.3" cy="145.3" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement réel — 6 : 1.632</title><circle cx="216.4" cy="153.7" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement réel — 7 : 1.547</title><circle cx="250.5" cy="160.5" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement réel — 8 : 1.51</title><circle cx="284.6" cy="163.4" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement réel — 9 : 1.462</title><circle cx="318.7" cy="167.3" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement réel — 10 : 1.413</title><circle cx="352.8" cy="171.2" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement réel — 11 : 1.382</title><circle cx="386.8" cy="173.7" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement réel — 12 : 1.27</title><circle cx="420.9" cy="182.6" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement réel — 13 : 1.269</title><circle cx="455.0" cy="182.7" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement réel — 14 : 1.181</title><circle cx="489.1" cy="189.7" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement réel — 15 : 1.122</title><circle cx="523.2" cy="194.4" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement réel — 16 : 1.109</title><circle cx="557.2" cy="195.5" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement réel — 17 : 1.105</title><circle cx="591.3" cy="195.8" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement réel — 18 : 1.104</title><circle cx="625.4" cy="195.9" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement réel — 19 : 1.096</title><circle cx="659.5" cy="196.5" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement réel — 20 : 1.093</title><circle cx="693.6" cy="196.7" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement réel — 21 : 1.058</title><circle cx="727.7" cy="199.5" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement réel — 22 : 1.04</title><circle cx="761.8" cy="201.0" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement réel — 23 : 0.993</title><circle cx="795.8" cy="204.7" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement réel — 24 : 0.977</title><circle cx="829.9" cy="206.0" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement réel — 25 : 0.963</title><circle cx="864.0" cy="207.1" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <text x="856.0" y="207.1" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">classement réel</text>
-  <polyline points="46.0,126.2 80.1,139.3 114.2,146.7 148.2,158.3 182.3,167.0 216.4,169.8 250.5,171.8 284.6,173.6 318.7,175.4 352.8,177.7 386.8,187.2 420.9,189.0 455.0,190.0 489.1,194.0 523.2,199.4 557.2,204.2 591.3,207.4 625.4,207.7 659.5,207.9 693.6,208.5 727.7,208.6 761.8,209.0 795.8,212.6 829.9,213.5 864.0,214.2" fill="none" stroke="var(--serie-2)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-  <g class="marque"><title>classement tiré au sort — 1 : 1.976</title><circle cx="46.0" cy="126.2" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement tiré au sort — 2 : 1.813</title><circle cx="80.1" cy="139.3" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement tiré au sort — 3 : 1.72</title><circle cx="114.2" cy="146.7" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement tiré au sort — 4 : 1.575</title><circle cx="148.2" cy="158.3" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement tiré au sort — 5 : 1.465</title><circle cx="182.3" cy="167.0" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement tiré au sort — 6 : 1.431</title><circle cx="216.4" cy="169.8" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement tiré au sort — 7 : 1.406</title><circle cx="250.5" cy="171.8" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement tiré au sort — 8 : 1.383</title><circle cx="284.6" cy="173.6" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement tiré au sort — 9 : 1.36</title><circle cx="318.7" cy="175.4" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement tiré au sort — 10 : 1.331</title><circle cx="352.8" cy="177.7" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement tiré au sort — 11 : 1.212</title><circle cx="386.8" cy="187.2" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement tiré au sort — 12 : 1.19</title><circle cx="420.9" cy="189.0" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement tiré au sort — 13 : 1.177</title><circle cx="455.0" cy="190.0" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement tiré au sort — 14 : 1.127</title><circle cx="489.1" cy="194.0" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement tiré au sort — 15 : 1.06</title><circle cx="523.2" cy="199.4" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement tiré au sort — 16 : 0.999</title><circle cx="557.2" cy="204.2" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement tiré au sort — 17 : 0.96</title><circle cx="591.3" cy="207.4" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement tiré au sort — 18 : 0.956</title><circle cx="625.4" cy="207.7" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement tiré au sort — 19 : 0.953</title><circle cx="659.5" cy="207.9" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement tiré au sort — 20 : 0.946</title><circle cx="693.6" cy="208.5" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement tiré au sort — 21 : 0.944</title><circle cx="727.7" cy="208.6" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement tiré au sort — 22 : 0.94</title><circle cx="761.8" cy="209.0" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement tiré au sort — 23 : 0.894</title><circle cx="795.8" cy="212.6" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement tiré au sort — 24 : 0.883</title><circle cx="829.9" cy="213.5" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>classement tiré au sort — 25 : 0.874</title><circle cx="864.0" cy="214.2" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
-  <text x="856.0" y="220.1" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">classement tiré au sort</text>
+  <polyline class="s s0" points="46.0,52.0 80.1,96.3 114.2,133.0 148.2,142.5 182.3,145.3 216.4,153.7 250.5,160.5 284.6,163.4 318.7,167.3 352.8,171.2 386.8,173.7 420.9,182.6 455.0,182.7 489.1,189.7 523.2,194.4 557.2,195.5 591.3,195.8 625.4,195.9 659.5,196.5 693.6,196.7 727.7,199.5 761.8,201.0 795.8,204.7 829.9,206.0 864.0,207.1" fill="none" stroke="var(--serie-1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <g class="marque s s0"><title>classement réel — 1 : 2.906</title><circle cx="46.0" cy="52.0" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>classement réel — 2 : 2.351</title><circle cx="80.1" cy="96.3" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>classement réel — 3 : 1.891</title><circle cx="114.2" cy="133.0" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>classement réel — 4 : 1.772</title><circle cx="148.2" cy="142.5" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>classement réel — 5 : 1.737</title><circle cx="182.3" cy="145.3" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>classement réel — 6 : 1.632</title><circle cx="216.4" cy="153.7" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>classement réel — 7 : 1.547</title><circle cx="250.5" cy="160.5" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>classement réel — 8 : 1.51</title><circle cx="284.6" cy="163.4" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>classement réel — 9 : 1.462</title><circle cx="318.7" cy="167.3" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>classement réel — 10 : 1.413</title><circle cx="352.8" cy="171.2" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>classement réel — 11 : 1.382</title><circle cx="386.8" cy="173.7" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>classement réel — 12 : 1.27</title><circle cx="420.9" cy="182.6" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>classement réel — 13 : 1.269</title><circle cx="455.0" cy="182.7" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>classement réel — 14 : 1.181</title><circle cx="489.1" cy="189.7" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>classement réel — 15 : 1.122</title><circle cx="523.2" cy="194.4" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>classement réel — 16 : 1.109</title><circle cx="557.2" cy="195.5" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>classement réel — 17 : 1.105</title><circle cx="591.3" cy="195.8" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>classement réel — 18 : 1.104</title><circle cx="625.4" cy="195.9" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>classement réel — 19 : 1.096</title><circle cx="659.5" cy="196.5" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>classement réel — 20 : 1.093</title><circle cx="693.6" cy="196.7" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>classement réel — 21 : 1.058</title><circle cx="727.7" cy="199.5" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>classement réel — 22 : 1.04</title><circle cx="761.8" cy="201.0" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>classement réel — 23 : 0.993</title><circle cx="795.8" cy="204.7" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>classement réel — 24 : 0.977</title><circle cx="829.9" cy="206.0" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s0"><title>classement réel — 25 : 0.963</title><circle cx="864.0" cy="207.1" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="s s0"><text x="856.0" y="207.1" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">classement réel</text></g>
+  <polyline class="s s1" points="46.0,126.2 80.1,139.3 114.2,146.7 148.2,158.3 182.3,167.0 216.4,169.8 250.5,171.8 284.6,173.6 318.7,175.4 352.8,177.7 386.8,187.2 420.9,189.0 455.0,190.0 489.1,194.0 523.2,199.4 557.2,204.2 591.3,207.4 625.4,207.7 659.5,207.9 693.6,208.5 727.7,208.6 761.8,209.0 795.8,212.6 829.9,213.5 864.0,214.2" fill="none" stroke="var(--serie-2)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <g class="marque s s1"><title>classement tiré au sort — 1 : 1.976</title><circle cx="46.0" cy="126.2" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>classement tiré au sort — 2 : 1.813</title><circle cx="80.1" cy="139.3" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>classement tiré au sort — 3 : 1.72</title><circle cx="114.2" cy="146.7" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>classement tiré au sort — 4 : 1.575</title><circle cx="148.2" cy="158.3" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>classement tiré au sort — 5 : 1.465</title><circle cx="182.3" cy="167.0" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>classement tiré au sort — 6 : 1.431</title><circle cx="216.4" cy="169.8" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>classement tiré au sort — 7 : 1.406</title><circle cx="250.5" cy="171.8" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>classement tiré au sort — 8 : 1.383</title><circle cx="284.6" cy="173.6" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>classement tiré au sort — 9 : 1.36</title><circle cx="318.7" cy="175.4" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>classement tiré au sort — 10 : 1.331</title><circle cx="352.8" cy="177.7" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>classement tiré au sort — 11 : 1.212</title><circle cx="386.8" cy="187.2" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>classement tiré au sort — 12 : 1.19</title><circle cx="420.9" cy="189.0" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>classement tiré au sort — 13 : 1.177</title><circle cx="455.0" cy="190.0" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>classement tiré au sort — 14 : 1.127</title><circle cx="489.1" cy="194.0" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>classement tiré au sort — 15 : 1.06</title><circle cx="523.2" cy="199.4" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>classement tiré au sort — 16 : 0.999</title><circle cx="557.2" cy="204.2" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>classement tiré au sort — 17 : 0.96</title><circle cx="591.3" cy="207.4" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>classement tiré au sort — 18 : 0.956</title><circle cx="625.4" cy="207.7" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>classement tiré au sort — 19 : 0.953</title><circle cx="659.5" cy="207.9" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>classement tiré au sort — 20 : 0.946</title><circle cx="693.6" cy="208.5" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>classement tiré au sort — 21 : 0.944</title><circle cx="727.7" cy="208.6" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>classement tiré au sort — 22 : 0.94</title><circle cx="761.8" cy="209.0" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>classement tiré au sort — 23 : 0.894</title><circle cx="795.8" cy="212.6" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>classement tiré au sort — 24 : 0.883</title><circle cx="829.9" cy="213.5" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque s s1"><title>classement tiré au sort — 25 : 0.874</title><circle cx="864.0" cy="214.2" r="4.5" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="s s1"><text x="856.0" y="220.1" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">classement tiré au sort</text></g>
   <text x="46.0" y="302.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">1</text>
   <text x="80.1" y="302.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2</text>
   <text x="114.2" y="302.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">3</text>

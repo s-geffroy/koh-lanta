@@ -22,7 +22,9 @@ est le mecanisme de lisibilite pour les daltoniens, il ne se reamenage pas.
 import html
 import math
 import os
+import re
 import sys
+import unicodedata
 
 import yaml
 
@@ -363,7 +365,13 @@ def courbes(series, abscisses, *, titre, description, unite="", largeur=680,
     def py(v):
         return haut + piste_h * (1 - (v - vmin) / etendue)
 
-    fig = Figure(largeur, hauteur, titre, description)
+    # Une seule courbe n'a rien a isoler : la regle generique de la feuille de
+    # style suffit, et le survol y eclaire le point plutot que la serie.
+    portee = _portee("courbes", titre) if len(series) > 1 else None
+    fig = Figure(largeur, hauteur, titre, description,
+                 classe=f"surbrillance {portee}" if portee else None)
+    if portee:
+        fig.ajouter(_surbrillance_series(portee, len(series)))
     for f in (0, 0.25, 0.5, 0.75, 1.0):
         y = haut + piste_h * (1 - f)
         fig.ajouter(f'<line x1="{gauche}" y1="{y:.1f}" x2="{largeur - droite}" '
@@ -389,15 +397,20 @@ def courbes(series, abscisses, *, titre, description, unite="", largeur=680,
     for k, s in enumerate(series):
         teinte = s.get("couleur") or SERIES[k % len(SERIES)]
         points = [(px(i), py(v)) for i, v in enumerate(s["valeurs"]) if v is not None]
+        # `s` : je fais partie d'une serie. `s{k}` : de celle-ci. La ligne, ses
+        # points et son etiquette de bout les portent tous les trois, et
+        # s'allument donc ensemble.
+        serie = f" s s{k}" if portee else ""      # a joindre a une classe
+        cl = f' class="{serie.strip()}"' if portee else ""   # attribut entier
         if len(points) > 1:
             trace = " ".join(f"{x:.1f},{y:.1f}" for x, y in points)
-            fig.ajouter(f'<polyline points="{trace}" fill="none" stroke="{teinte}" '
+            fig.ajouter(f'<polyline{cl} points="{trace}" fill="none" stroke="{teinte}" '
                         f'stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>')
         for i, v in enumerate(s["valeurs"]):
             if v is None:
                 continue
             fig.ajouter(
-                f'<g class="marque"><title>'
+                f'<g class="marque{serie}"><title>'
                 f'{e(s["nom"])} — {e(abscisses[i])} : {v}{e(unite)}</title>'
                 f'<circle cx="{px(i):.1f}" cy="{py(v):.1f}" r="4.5" fill="{teinte}" '
                 f'stroke="{SURFACE}" stroke-width="2"/></g>')
@@ -410,12 +423,14 @@ def courbes(series, abscisses, *, titre, description, unite="", largeur=680,
             w = _largeur(s["nom"], 11)
             y_bout = bouts[k][1]
             if px(dernier) + 8 + w <= largeur - 2:
-                fig.ajouter(_texte(px(dernier) + 8, y_bout, s["nom"],
-                                   couleur=ENCRE, taille=11, gras=True))
+                bout = _texte(px(dernier) + 8, y_bout, s["nom"],
+                              couleur=ENCRE, taille=11, gras=True)
             else:
-                fig.ajouter(_texte(px(dernier) - 8, y_bout, s["nom"],
-                                   ancre="end", couleur=ENCRE, taille=11,
-                                   gras=True))
+                bout = _texte(px(dernier) - 8, y_bout, s["nom"],
+                              ancre="end", couleur=ENCRE, taille=11, gras=True)
+            # _texte() ne prend pas de classe : on enveloppe. Un <g> ne deplace
+            # rien dans un SVG, et l'opacite s'y applique aussi bien.
+            fig.ajouter(f'<g{cl}>{bout}</g>' if portee else bout)
 
     # Les rangs categoriels, juste sous l'axe, avant les abscisses.
     y_bande = haut + piste_h + 16
@@ -747,6 +762,55 @@ def survie(series, toutes, *, titre, description, jour_max, mediane,
             + '</div>\n')
 
 
+def _portee(prefixe, titre):
+    """Une classe de portee stable, tiree du titre de la figure.
+
+    Elle sert a ENFERMER une feuille de style posee dans un SVG : inline dans
+    une page, un <style> n'est pas encapsule et ses regles s'appliquent
+    partout. Prefixer chaque selecteur par cette classe est ce qui empeche une
+    figure d'en repeindre une autre.
+
+    Tiree du titre plutot que d'un compteur, pour deux raisons : elle est
+    stable d'une construction a l'autre -- une figure inchangee garde son
+    fichier au bit pres -- et elle se lit dans le SVG produit, la ou un numero
+    ou une empreinte n'auraient rien dit.
+
+    L'unicite est controlee par controler_portees() dans tools/verifie_site.py :
+    deux figures qui partageraient une portee melangeraient leurs regles des
+    qu'elles se trouveraient sur la meme page.
+    """
+    t = unicodedata.normalize("NFKD", titre).encode("ascii", "ignore").decode()
+    t = re.sub(r"[^A-Za-z0-9]+", "-", t).strip("-").lower()
+    return f"{prefixe}-{t[:44].rstrip('-')}"
+
+
+def _surbrillance_series(portee, nb):
+    """Survoler un point d'une courbe allume la COURBE ENTIERE.
+
+    Sur un diagramme en arcs, ce qui est lie a un point, ce sont ses voisins.
+    Sur des courbes, c'est la serie : la ligne, tous ses points et son
+    etiquette de bout. Ils portent donc `s` -- « je fais partie d'une serie »
+    -- et `s{k}` -- « de celle-ci ».
+
+    Les REPERES sont hors du jeu : le rang des jours et mois de diffusion est
+    de la fourniture d'axe, le survoler ne doit rien eteindre. La legende et
+    les graduations n'ont pas la classe `s` et ne bougent pas non plus : la
+    legende est le decodeur des couleurs, on en a besoin au moment meme ou l'on
+    isole une serie.
+
+    Specificite : (0,5,0) pour eteindre, (0,6,0) pour rallumer. La seconde
+    gagne quel que soit l'ordre -- `.marque.s{k}` dans le :has() ne designe que
+    les POINTS de la serie, la polyligne n'etant pas une marque.
+    """
+    regles = [
+        f".{portee} .s{{transition:opacity .12s ease}}",
+        f".{portee}:has(.marque:not(.repere):hover) .s{{opacity:.15}}",
+    ]
+    regles += [f".{portee}:has(.marque.s{k}:hover) .s.s{k}{{opacity:1}}"
+               for k in range(nb)]
+    return "<style>" + "".join(regles) + "</style>"
+
+
 def _surbrillance_arcs(portee, noeuds, liens):
     """Le survol d'un point eteint tous les arcs sauf ceux qui en partent.
 
@@ -876,11 +940,11 @@ def arcs(noeuds, liens, *, titre, description, largeur=980, hauteur_arc=150,
         return gauche + pas * i
 
     portee = f"arcs-{surbrillance}" if surbrillance else None
-    # `arcs-lie` en plus de la portee : c'est le drapeau qui dit « cette figure
-    # a sa PROPRE surbrillance ». La regle generique de la feuille de style
-    # s'en ecarte, sans quoi les deux se multiplieraient.
+    # `surbrillance` en plus de la portee : c'est le drapeau qui dit « cette
+    # figure a la SIENNE ». La regle generique de la feuille de style s'en
+    # ecarte, sans quoi les deux jeux se multiplieraient.
     fig = Figure(largeur, hauteur, titre, description,
-                 classe=f"arcs-lie {portee}" if portee else None)
+                 classe=f"surbrillance {portee}" if portee else None)
     if portee:
         fig.ajouter(_surbrillance_arcs(portee, noeuds, liens))
 
