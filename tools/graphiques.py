@@ -527,7 +527,15 @@ def barres_groupees(donnees, series, *, titre, description, unite="",
     piste = largeur - marge_gauche - marge_droite
     vmax = max(v for d in donnees for v in d["valeurs"] if v is not None) or 1
 
-    fig = Figure(largeur, hauteur, titre, description)
+    # Meme geste que sur les courbes : une serie s'isole en survolant l'une de
+    # ses barres. Ici une serie n'est pas une ligne mais une barre par groupe,
+    # dispersee dans toute la figure -- c'est justement ce qui rend le survol
+    # utile, l'oeil ne les rassemble pas seul.
+    portee = _portee("barres", titre) if len(series) > 1 else None
+    fig = Figure(largeur, hauteur, titre, description,
+                 classe=f"surbrillance {portee}" if portee else None)
+    if portee:
+        fig.ajouter(_surbrillance_series(portee, len(series)))
     for f in (0.25, 0.5, 0.75, 1.0):
         x = marge_gauche + piste * f
         fig.ajouter(f'<line x1="{x:.1f}" y1="{haut - 8}" x2="{x:.1f}" '
@@ -555,13 +563,19 @@ def barres_groupees(donnees, series, *, titre, description, unite="",
             teinte = s.get("couleur") or SERIES[k % len(SERIES)]
             info = (d.get("details") or [None] * len(series))[k] \
                 or f'{d["libelle"]} — {s["nom"]} : {v}{unite}'
+            # La barre ET son chiffre appartiennent a la serie : ils
+            # s'eteignent et se rallument ensemble. L'intitule de categorie, a
+            # gauche, n'en fait pas partie -- c'est l'axe, il reste lisible.
+            serie = f" s s{k}" if portee else ""
             fig.ajouter(
-                f'<g class="marque"><title>{e(info)}</title>'
+                f'<g class="marque{serie}"><title>{e(info)}</title>'
                 f'<rect x="{marge_gauche}" y="{y:.1f}" width="{longueur:.1f}" '
                 f'height="{epaisseur:.1f}" rx="3" fill="{teinte}" '
                 f'stroke="{SURFACE}" stroke-width="1"/></g>')
-            fig.ajouter(_texte(marge_gauche + longueur + 7, y + epaisseur / 2,
-                               f'{v}{unite}', couleur=ENCRE, taille=11, gras=True))
+            chiffre = _texte(marge_gauche + longueur + 7, y + epaisseur / 2,
+                             f'{v}{unite}', couleur=ENCRE, taille=11, gras=True)
+            fig.ajouter(f'<g class="{serie.strip()}">{chiffre}</g>'
+                        if portee else chiffre)
 
     fig.ajouter(f'<line x1="{marge_gauche}" y1="{haut - 8}" x2="{marge_gauche}" '
                 f'y2="{hauteur - bas + 2}" stroke="var(--axe)" stroke-width="1"/>')

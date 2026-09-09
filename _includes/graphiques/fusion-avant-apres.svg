@@ -1,7 +1,8 @@
 <figure class="figure">
-<svg class="graphique" viewBox="0 0 680 348" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Ce que la réunification change">
+<svg class="graphique surbrillance barres-ce-que-la-reunification-change" viewBox="0 0 680 348" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Ce que la réunification change">
   <title>Ce que la réunification change</title>
   <desc>Cinq mesures du conseil, avant et après la réunification. Le rang de force va de 0, le plus faible du camp, à 100, le plus fort.</desc>
+  <style>.barres-ce-que-la-reunification-change .s{transition:opacity .12s ease}.barres-ce-que-la-reunification-change:has(.marque:not(.repere):hover) .s{opacity:.15}.barres-ce-que-la-reunification-change:has(.marque.s0:hover) .s.s0{opacity:1}.barres-ce-que-la-reunification-change:has(.marque.s1:hover) .s.s1{opacity:1}</style>
   <line x1="326.0" y1="36" x2="326.0" y2="324" stroke="var(--grille)" stroke-width="1"/>
   <line x1="422.0" y1="36" x2="422.0" y2="324" stroke="var(--grille)" stroke-width="1"/>
   <line x1="518.0" y1="36" x2="518.0" y2="324" stroke="var(--grille)" stroke-width="1"/>
@@ -11,30 +12,30 @@
   <rect x="364.0" y="12" width="11" height="11" rx="3" fill="var(--tribu-rouge)"/>
   <text x="381.0" y="18.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">après la fusion</text>
   <text x="220.0" y="67.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Présents au conseil</text>
-  <g class="marque"><title>16.9 en moyenne avant la fusion</title><rect x="230" y="44.0" width="104.7" height="22.0" rx="3" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="341.7" y="55.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">16.9</text>
-  <g class="marque"><title>8.3 après</title><rect x="230" y="68.0" width="51.4" height="22.0" rx="3" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="288.4" y="79.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">8.3</text>
+  <g class="marque s s0"><title>16.9 en moyenne avant la fusion</title><rect x="230" y="44.0" width="104.7" height="22.0" rx="3" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="341.7" y="55.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">16.9</text></g>
+  <g class="marque s s1"><title>8.3 après</title><rect x="230" y="68.0" width="51.4" height="22.0" rx="3" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="288.4" y="79.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">8.3</text></g>
   <text x="220.0" y="125.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Conseils serrés (%)</text>
-  <g class="marque"><title>34.5 % avant</title><rect x="230" y="102.0" width="213.7" height="22.0" rx="3" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="450.7" y="113.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">34.5</text>
-  <g class="marque"><title>55.1 % après</title><rect x="230" y="126.0" width="341.3" height="22.0" rx="3" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="578.3" y="137.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">55.1</text>
+  <g class="marque s s0"><title>34.5 % avant</title><rect x="230" y="102.0" width="213.7" height="22.0" rx="3" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="450.7" y="113.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">34.5</text></g>
+  <g class="marque s s1"><title>55.1 % après</title><rect x="230" y="126.0" width="341.3" height="22.0" rx="3" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="578.3" y="137.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">55.1</text></g>
   <text x="220.0" y="183.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="12">Femmes parmi les éliminés (%)</text>
-  <g class="marque"><title>53.5 % avant</title><rect x="230" y="160.0" width="331.4" height="22.0" rx="3" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="568.4" y="171.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">53.5</text>
-  <g class="marque"><title>45.7 % après</title><rect x="230" y="184.0" width="283.0" height="22.0" rx="3" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="520.0" y="195.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">45.7</text>
+  <g class="marque s s0"><title>53.5 % avant</title><rect x="230" y="160.0" width="331.4" height="22.0" rx="3" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="568.4" y="171.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">53.5</text></g>
+  <g class="marque s s1"><title>45.7 % après</title><rect x="230" y="184.0" width="283.0" height="22.0" rx="3" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="520.0" y="195.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">45.7</text></g>
   <text x="220.0" y="241.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Âge moyen des éliminés</text>
-  <g class="marque"><title>35.0 ans avant</title><rect x="230" y="218.0" width="216.8" height="22.0" rx="3" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="453.8" y="229.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">35.0</text>
-  <g class="marque"><title>33.0 ans après</title><rect x="230" y="242.0" width="204.4" height="22.0" rx="3" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="441.4" y="253.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">33.0</text>
+  <g class="marque s s0"><title>35.0 ans avant</title><rect x="230" y="218.0" width="216.8" height="22.0" rx="3" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="453.8" y="229.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">35.0</text></g>
+  <g class="marque s s1"><title>33.0 ans après</title><rect x="230" y="242.0" width="204.4" height="22.0" rx="3" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="441.4" y="253.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">33.0</text></g>
   <text x="220.0" y="299.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Rang de force de l’éliminé</text>
-  <g class="marque"><title>62.0 sur 100 avant</title><rect x="230" y="276.0" width="384.0" height="22.0" rx="3" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="621.0" y="287.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">62.0</text>
-  <g class="marque"><title>48.2 après</title><rect x="230" y="300.0" width="298.5" height="22.0" rx="3" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="535.5" y="311.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">48.2</text>
+  <g class="marque s s0"><title>62.0 sur 100 avant</title><rect x="230" y="276.0" width="384.0" height="22.0" rx="3" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="621.0" y="287.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">62.0</text></g>
+  <g class="marque s s1"><title>48.2 après</title><rect x="230" y="300.0" width="298.5" height="22.0" rx="3" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="535.5" y="311.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">48.2</text></g>
   <line x1="230" y1="36" x2="230" y2="324" stroke="var(--axe)" stroke-width="1"/>
 </svg>
 </figure>

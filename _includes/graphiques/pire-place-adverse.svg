@@ -1,7 +1,8 @@
 <figure class="figure">
-<svg class="graphique" viewBox="0 0 780 220" role="img" preserveAspectRatio="xMidYMid meet" aria-label="L’adversaire, encore là ou déjà parti">
+<svg class="graphique surbrillance barres-ladversaire-encore-la-ou-deja-parti" viewBox="0 0 780 220" role="img" preserveAspectRatio="xMidYMid meet" aria-label="L’adversaire, encore là ou déjà parti">
   <title>L’adversaire, encore là ou déjà parti</title>
   <desc>Probabilité d’être éliminé selon que ceux qui ont déjà écrit votre nom sont encore présents ou non.</desc>
+  <style>.barres-ladversaire-encore-la-ou-deja-parti .s{transition:opacity .12s ease}.barres-ladversaire-encore-la-ou-deja-parti:has(.marque:not(.repere):hover) .s{opacity:.15}.barres-ladversaire-encore-la-ou-deja-parti:has(.marque.s0:hover) .s.s0{opacity:1}.barres-ladversaire-encore-la-ou-deja-parti:has(.marque.s1:hover) .s.s1{opacity:1}</style>
   <line x1="373.5" y1="36" x2="373.5" y2="196" stroke="var(--grille)" stroke-width="1"/>
   <line x1="487.0" y1="36" x2="487.0" y2="196" stroke="var(--grille)" stroke-width="1"/>
   <line x1="600.5" y1="36" x2="600.5" y2="196" stroke="var(--grille)" stroke-width="1"/>
@@ -11,20 +12,20 @@
   <rect x="386.8" y="12" width="11" height="11" rx="3" fill="var(--serie-6)"/>
   <text x="403.8" y="18.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">1 / nombre de présents</text>
   <text x="250.0" y="65.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">jamais visé jusqu’ici</text>
-  <g class="marque"><title>74 éliminations sur 727 présences</title><rect x="260" y="44.0" width="224.8" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="491.8" y="54.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">10.2 %</text>
-  <g class="marque"><title>13.1 % si l’éliminé était tiré au hasard</title><rect x="260" y="66.0" width="288.7" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="555.7" y="76.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">13.1 %</text>
+  <g class="marque s s0"><title>74 éliminations sur 727 présences</title><rect x="260" y="44.0" width="224.8" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="491.8" y="54.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">10.2 %</text></g>
+  <g class="marque s s1"><title>13.1 % si l’éliminé était tiré au hasard</title><rect x="260" y="66.0" width="288.7" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="555.7" y="76.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">13.1 %</text></g>
   <text x="250.0" y="119.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">ses adversaires sont partis</text>
-  <g class="marque"><title>22 éliminations sur 107 présences</title><rect x="260" y="98.0" width="454.0" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="721.0" y="108.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">20.6 %</text>
-  <g class="marque"><title>15.2 % si l’éliminé était tiré au hasard</title><rect x="260" y="120.0" width="335.0" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="602.0" y="130.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">15.2 %</text>
+  <g class="marque s s0"><title>22 éliminations sur 107 présences</title><rect x="260" y="98.0" width="454.0" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="721.0" y="108.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">20.6 %</text></g>
+  <g class="marque s s1"><title>15.2 % si l’éliminé était tiré au hasard</title><rect x="260" y="120.0" width="335.0" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="602.0" y="130.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">15.2 %</text></g>
   <text x="250.0" y="173.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="12">au moins un adversaire encore là</text>
-  <g class="marque"><title>48 éliminations sur 240 présences</title><rect x="260" y="152.0" width="440.8" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="707.8" y="162.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">20.0 %</text>
-  <g class="marque"><title>13.6 % si l’éliminé était tiré au hasard</title><rect x="260" y="174.0" width="299.7" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="566.7" y="184.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">13.6 %</text>
+  <g class="marque s s0"><title>48 éliminations sur 240 présences</title><rect x="260" y="152.0" width="440.8" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="707.8" y="162.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">20.0 %</text></g>
+  <g class="marque s s1"><title>13.6 % si l’éliminé était tiré au hasard</title><rect x="260" y="174.0" width="299.7" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="566.7" y="184.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">13.6 %</text></g>
   <line x1="260" y1="36" x2="260" y2="196" stroke="var(--axe)" stroke-width="1"/>
 </svg>
 </figure>

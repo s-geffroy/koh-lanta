@@ -1,7 +1,8 @@
 <figure class="figure">
-<svg class="graphique" viewBox="0 0 760 598" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Le risque monte-t-il, ou le camp se vide-t-il ?">
+<svg class="graphique surbrillance barres-le-risque-monte-t-il-ou-le-camp-se-vide-t-il" viewBox="0 0 760 598" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Le risque monte-t-il, ou le camp se vide-t-il ?">
   <title>Le risque monte-t-il, ou le camp se vide-t-il ?</title>
   <desc>Risque de sortir à un conseil, par dixième de saison, compare au simple 1/nombre-de-presents.</desc>
+  <style>.barres-le-risque-monte-t-il-ou-le-camp-se-vide-t-il .s{transition:opacity .12s ease}.barres-le-risque-monte-t-il-ou-le-camp-se-vide-t-il:has(.marque:not(.repere):hover) .s{opacity:.15}.barres-le-risque-monte-t-il-ou-le-camp-se-vide-t-il:has(.marque.s0:hover) .s.s0{opacity:1}.barres-le-risque-monte-t-il-ou-le-camp-se-vide-t-il:has(.marque.s1:hover) .s.s1{opacity:1}</style>
   <line x1="256.0" y1="36" x2="256.0" y2="574" stroke="var(--grille)" stroke-width="1"/>
   <line x1="402.0" y1="36" x2="402.0" y2="574" stroke="var(--grille)" stroke-width="1"/>
   <line x1="548.0" y1="36" x2="548.0" y2="574" stroke="var(--grille)" stroke-width="1"/>
@@ -11,55 +12,55 @@
   <rect x="236.8" y="12" width="11" height="11" rx="3" fill="var(--serie-6)"/>
   <text x="253.8" y="18.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">1 / nombre de présents</text>
   <text x="100.0" y="65.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">0-10 %</text>
-  <g class="marque"><title>8.3 % observé sur 83 conseils</title><rect x="110" y="44.0" width="62.3" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="179.3" y="54.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">8.3 %</text>
-  <g class="marque"><title>5.4 % attendu avec 18.9 présents en moyenne</title><rect x="110" y="66.0" width="40.5" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="157.5" y="76.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">5.4 %</text>
+  <g class="marque s s0"><title>8.3 % observé sur 83 conseils</title><rect x="110" y="44.0" width="62.3" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="179.3" y="54.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">8.3 %</text></g>
+  <g class="marque s s1"><title>5.4 % attendu avec 18.9 présents en moyenne</title><rect x="110" y="66.0" width="40.5" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="157.5" y="76.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">5.4 %</text></g>
   <text x="100.0" y="119.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">10-20 %</text>
-  <g class="marque"><title>7.7 % observé sur 51 conseils</title><rect x="110" y="98.0" width="57.8" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="174.8" y="108.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">7.7 %</text>
-  <g class="marque"><title>6.0 % attendu avec 16.9 présents en moyenne</title><rect x="110" y="120.0" width="45.0" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="162.0" y="130.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">6.0 %</text>
+  <g class="marque s s0"><title>7.7 % observé sur 51 conseils</title><rect x="110" y="98.0" width="57.8" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="174.8" y="108.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">7.7 %</text></g>
+  <g class="marque s s1"><title>6.0 % attendu avec 16.9 présents en moyenne</title><rect x="110" y="120.0" width="45.0" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="162.0" y="130.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">6.0 %</text></g>
   <text x="100.0" y="173.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">20-30 %</text>
-  <g class="marque"><title>9.9 % observé sur 48 conseils</title><rect x="110" y="152.0" width="74.3" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="191.3" y="162.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">9.9 %</text>
-  <g class="marque"><title>6.6 % attendu avec 15.5 présents en moyenne</title><rect x="110" y="174.0" width="49.5" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="166.5" y="184.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">6.6 %</text>
+  <g class="marque s s0"><title>9.9 % observé sur 48 conseils</title><rect x="110" y="152.0" width="74.3" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="191.3" y="162.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">9.9 %</text></g>
+  <g class="marque s s1"><title>6.6 % attendu avec 15.5 présents en moyenne</title><rect x="110" y="174.0" width="49.5" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="166.5" y="184.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">6.6 %</text></g>
   <text x="100.0" y="227.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">30-40 %</text>
-  <g class="marque"><title>10.4 % observé sur 53 conseils</title><rect x="110" y="206.0" width="78.1" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="195.1" y="216.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">10.4 %</text>
-  <g class="marque"><title>7.4 % attendu avec 13.7 présents en moyenne</title><rect x="110" y="228.0" width="55.5" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="172.5" y="238.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">7.4 %</text>
+  <g class="marque s s0"><title>10.4 % observé sur 53 conseils</title><rect x="110" y="206.0" width="78.1" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="195.1" y="216.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">10.4 %</text></g>
+  <g class="marque s s1"><title>7.4 % attendu avec 13.7 présents en moyenne</title><rect x="110" y="228.0" width="55.5" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="172.5" y="238.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">7.4 %</text></g>
   <text x="100.0" y="281.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">40-50 %</text>
-  <g class="marque"><title>12.0 % observé sur 65 conseils</title><rect x="110" y="260.0" width="90.1" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="207.1" y="270.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">12.0 %</text>
-  <g class="marque"><title>8.9 % attendu avec 11.4 présents en moyenne</title><rect x="110" y="282.0" width="66.8" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="183.8" y="292.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">8.9 %</text>
+  <g class="marque s s0"><title>12.0 % observé sur 65 conseils</title><rect x="110" y="260.0" width="90.1" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="207.1" y="270.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">12.0 %</text></g>
+  <g class="marque s s1"><title>8.9 % attendu avec 11.4 présents en moyenne</title><rect x="110" y="282.0" width="66.8" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="183.8" y="292.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">8.9 %</text></g>
   <text x="100.0" y="335.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">50-60 %</text>
-  <g class="marque"><title>14.8 % observé sur 47 conseils</title><rect x="110" y="314.0" width="111.1" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="228.1" y="324.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">14.8 %</text>
-  <g class="marque"><title>10.5 % attendu avec 9.7 présents en moyenne</title><rect x="110" y="336.0" width="78.8" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="195.8" y="346.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">10.5 %</text>
+  <g class="marque s s0"><title>14.8 % observé sur 47 conseils</title><rect x="110" y="314.0" width="111.1" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="228.1" y="324.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">14.8 %</text></g>
+  <g class="marque s s1"><title>10.5 % attendu avec 9.7 présents en moyenne</title><rect x="110" y="336.0" width="78.8" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="195.8" y="346.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">10.5 %</text></g>
   <text x="100.0" y="389.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">60-70 %</text>
-  <g class="marque"><title>17.1 % observé sur 58 conseils</title><rect x="110" y="368.0" width="128.4" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="245.4" y="378.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">17.1 %</text>
-  <g class="marque"><title>13.0 % attendu avec 7.8 présents en moyenne</title><rect x="110" y="390.0" width="97.6" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="214.6" y="400.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">13.0 %</text>
+  <g class="marque s s0"><title>17.1 % observé sur 58 conseils</title><rect x="110" y="368.0" width="128.4" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="245.4" y="378.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">17.1 %</text></g>
+  <g class="marque s s1"><title>13.0 % attendu avec 7.8 présents en moyenne</title><rect x="110" y="390.0" width="97.6" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="214.6" y="400.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">13.0 %</text></g>
   <text x="100.0" y="443.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">70-80 %</text>
-  <g class="marque"><title>30.3 % observé sur 49 conseils</title><rect x="110" y="422.0" width="227.4" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="344.4" y="432.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">30.3 %</text>
-  <g class="marque"><title>17.7 % attendu avec 5.7 présents en moyenne</title><rect x="110" y="444.0" width="132.9" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="249.9" y="454.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">17.7 %</text>
+  <g class="marque s s0"><title>30.3 % observé sur 49 conseils</title><rect x="110" y="422.0" width="227.4" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="344.4" y="432.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">30.3 %</text></g>
+  <g class="marque s s1"><title>17.7 % attendu avec 5.7 présents en moyenne</title><rect x="110" y="444.0" width="132.9" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="249.9" y="454.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">17.7 %</text></g>
   <text x="100.0" y="497.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">80-90 %</text>
-  <g class="marque"><title>77.6 % observé sur 52 conseils</title><rect x="110" y="476.0" width="582.5" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="699.5" y="486.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">77.6 %</text>
-  <g class="marque"><title>23.6 % attendu avec 4.3 présents en moyenne</title><rect x="110" y="498.0" width="177.2" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="294.2" y="508.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">23.6 %</text>
+  <g class="marque s s0"><title>77.6 % observé sur 52 conseils</title><rect x="110" y="476.0" width="582.5" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="699.5" y="486.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">77.6 %</text></g>
+  <g class="marque s s1"><title>23.6 % attendu avec 4.3 présents en moyenne</title><rect x="110" y="498.0" width="177.2" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="294.2" y="508.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">23.6 %</text></g>
   <text x="100.0" y="551.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">90-100 %</text>
-  <g class="marque"><title>77.8 % observé sur 6 conseils</title><rect x="110" y="530.0" width="584.0" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="701.0" y="540.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">77.8 %</text>
-  <g class="marque"><title>36.1 % attendu avec 2.8 présents en moyenne</title><rect x="110" y="552.0" width="271.0" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
-  <text x="388.0" y="562.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">36.1 %</text>
+  <g class="marque s s0"><title>77.8 % observé sur 6 conseils</title><rect x="110" y="530.0" width="584.0" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="701.0" y="540.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">77.8 %</text></g>
+  <g class="marque s s1"><title>36.1 % attendu avec 2.8 présents en moyenne</title><rect x="110" y="552.0" width="271.0" height="20.0" rx="3" fill="var(--serie-6)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="388.0" y="562.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">36.1 %</text></g>
   <line x1="110" y1="36" x2="110" y2="574" stroke="var(--axe)" stroke-width="1"/>
 </svg>
 </figure>
