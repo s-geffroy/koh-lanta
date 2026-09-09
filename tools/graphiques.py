@@ -296,28 +296,42 @@ def colonnes(donnees, *, titre, description, unite="", largeur=680, hauteur=300,
         h = max(3.0, haut + piste_h - y)
         teinte = d.get("couleur") or couleur or SERIES[0]
         info = d.get("detail") or f'{d["libelle"]} : {d["valeur"]}{unite}'
-        fig.ajouter(
-            f'<g class="marque"><title>{e(info)}</title>'
+
+        # UNE SEULE MARQUE PAR COLONNE, comme une ligne de barres horizontales.
+        # La colonne, c'est le rectangle, son intervalle de confiance, sa
+        # valeur au-dessus, son intitule sous l'axe et son sous-titre : tout ce
+        # qui parle de cette case et rien d'autre. Reunis dans un <g>, la regle
+        # generique de la feuille de style les eteint et les rallume ensemble,
+        # et le survol prend sur l'intitule comme sur la barre -- ce qui compte
+        # ici plus qu'ailleurs, une colonne basse n'offrant que trois pixels de
+        # haut a viser.
+        #
+        # L'ordre de peinture ne bouge pas : la boucle emettait deja ces
+        # morceaux les uns apres les autres, colonne par colonne. Le repere
+        # horizontal, lui, est trace apres la boucle et reste donc au-dessus.
+        morceaux = [
             f'<rect x="{cx - epaisseur / 2:.1f}" y="{y:.1f}" width="{epaisseur:.1f}" '
             f'height="{h:.1f}" rx="4" fill="{teinte}" stroke="{SURFACE}" '
-            f'stroke-width="2"/></g>')
+            f'stroke-width="2"/>']
         if d.get("bas") is not None and d.get("haut") is not None:
             yb, yh = py(d["bas"]), py(d["haut"])
             barre = (f'<line x1="{cx:.1f}" y1="{yh:.1f}" x2="{cx:.1f}" y2="{yb:.1f}"/>'
                      f'<line x1="{cx - 5:.1f}" y1="{yh:.1f}" x2="{cx + 5:.1f}" y2="{yh:.1f}"/>'
                      f'<line x1="{cx - 5:.1f}" y1="{yb:.1f}" x2="{cx + 5:.1f}" y2="{yb:.1f}"/>')
-            fig.ajouter(f'<g stroke="{SURFACE}" stroke-width="4">{barre}</g>')
-            fig.ajouter(f'<g stroke="{ENCRE}" stroke-width="1.6">{barre}</g>')
+            morceaux.append(f'<g stroke="{SURFACE}" stroke-width="4">{barre}</g>')
+            morceaux.append(f'<g stroke="{ENCRE}" stroke-width="1.6">{barre}</g>')
         if etiquettes_valeurs:
             cime = min(y, py(d.get("haut") or d["valeur"]))
-            fig.ajouter(_texte_tenu(cx, cime - 10, f'{d["valeur"]}{unite}',
-                                    largeur_max=pas - 3, ancre="middle",
-                               couleur=ENCRE, taille=11, gras=True))
-        fig.ajouter(_texte(cx, hauteur - bas + 16, d["libelle"], ancre="middle",
-                           couleur=ENCRE_DOUCE, taille=11))
+            morceaux.append(_texte_tenu(cx, cime - 10, f'{d["valeur"]}{unite}',
+                                        largeur_max=pas - 3, ancre="middle",
+                                        couleur=ENCRE, taille=11, gras=True))
+        morceaux.append(_texte(cx, hauteur - bas + 16, d["libelle"], ancre="middle",
+                               couleur=ENCRE_DOUCE, taille=11))
         if d.get("sous_titre"):
-            fig.ajouter(_texte(cx, hauteur - bas + 31, d["sous_titre"], ancre="middle",
-                               couleur=ENCRE_MUETTE, taille=10))
+            morceaux.append(_texte(cx, hauteur - bas + 31, d["sous_titre"],
+                                   ancre="middle", couleur=ENCRE_MUETTE, taille=10))
+        fig.ajouter(f'<g class="marque"><title>{e(info)}</title>'
+                    + "".join(morceaux) + "</g>")
 
     if reference is not None:
         y = py(reference)
