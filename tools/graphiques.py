@@ -764,17 +764,21 @@ def _surbrillance_arcs(portee, noeuds, liens):
     if not portants:
         return ""
     regles = [
-        f".{portee} path,.{portee} circle{{transition:opacity .12s ease}}",
-        # L'axe est une <line> et les noms des <text> : ni l'un ni les autres
-        # ne s'eteignent. Les noms surtout -- c'est en les lisant qu'on sait
-        # QUI sont les points restes allumes. Les eteindre aurait retire a la
-        # surbrillance ce qui en fait l'interet.
+        f".{portee} path,.{portee} circle,.{portee} .n"
+        f"{{transition:opacity .12s ease}}",
+        # Trois intensites, et chacune a sa raison. Les arcs descendent le plus
+        # bas : ils sont des centaines et c'est leur masse qu'il faut retirer.
+        # Les points restent un peu plus lisibles : ils sont petits, et plus
+        # bas la ligne de points disparaitrait au lieu de rester le repere sur
+        # lequel se lit la figure. Les noms se lisent ou ne se lisent pas --
+        # 0,12 les efface franchement, ce qui est le but.
         #
-        # Les points s'eteignent moins fort que les arcs : ils sont petits, et
-        # a 0,05 la ligne de points disparaitrait au lieu de rester le repere
-        # sur lequel se lit la figure.
+        # `.n` et non `text` : les textes de LEGENDE ne s'eteignent jamais.
+        # C'est le decodeur des couleurs, et on en a d'autant plus besoin qu'on
+        # vient d'isoler un aventurier. L'axe, lui, est une <line>.
         f".{portee}:has(.p:hover) path{{opacity:.05}}",
         f".{portee}:has(.p:hover) circle{{opacity:.15}}",
+        f".{portee}:has(.p:hover) .n{{opacity:.12}}",
     ]
     # UNE SEULE REGLE PAR POINT, ET ELLE RALLUME LES DEUX CHOSES A LA FOIS.
     # C'est possible parce qu'un cercle porte les memes classes que les arcs
@@ -783,8 +787,11 @@ def _surbrillance_arcs(portee, noeuds, liens):
     # et les points qui lui sont relies -- aucune regle supplementaire, aucune
     # liste d'adjacence recopiee dans la feuille de style.
     #
-    # Specificite : les regles qui eteignent valent (0,3,1), celle qui rallume
-    # (0,4,0). La seconde gagne, quel que soit l'ordre.
+    # Specificite : les regles qui eteignent les arcs et les points valent
+    # (0,3,1), celle qui rallume (0,4,0) -- elle gagne quel que soit l'ordre.
+    # Celle qui eteint les NOMS vaut (0,4,0) elle aussi, a egalite : c'est
+    # alors l'ordre d'ecriture qui tranche, et les regles qui rallument sont
+    # ecrites apres. Ne pas les remonter au-dessus des trois premieres.
     regles += [f".{portee}:has(.p{i}:hover) .a{i}{{opacity:1}}"
                for i in portants]
     return "<style>" + "".join(regles) + "</style>"
@@ -906,12 +913,18 @@ def arcs(noeuds, liens, *, titre, description, largeur=980, hauteur_arc=150,
     fig.ajouter(f'<line x1="{gauche - 8}" y1="{base}" x2="{largeur - droite + 8}" '
                 f'y2="{base}" stroke="var(--axe)" stroke-width="1"/>')
 
+    # L'adjacence, ecrite une fois et posee sur DEUX elements : le point et son
+    # nom. Les deux portent exactement les memes classes, donc la meme regle
+    # les rallume -- `a{i}` pour soi, `a{k}` pour chaque voisin.
     voisins = {}
+    classe_de = {}
     if portee:
         for l in liens:
             if l["de"] != l["vers"]:
                 voisins.setdefault(l["de"], set()).add(l["vers"])
                 voisins.setdefault(l["vers"], set()).add(l["de"])
+        classe_de = {i: " ".join(f"a{k}" for k in sorted(voisins.get(i, set()) | {i}))
+                     for i in range(len(noeuds))}
 
     poids_n = max((n.get("poids") or 1) for n in noeuds)
     for i, n in enumerate(noeuds):
@@ -924,8 +937,7 @@ def arcs(noeuds, liens, *, titre, description, largeur=980, hauteur_arc=150,
         #
         # `p{i}` sert de cible au survol ; `a{i}` et les `a{k}` de ses voisins
         # le font rallumer quand on survole lui-meme ou l'un d'eux.
-        cl = (' class="p p' + str(i) + "".join(f" a{k}" for k in
-              sorted(voisins.get(i, set()) | {i})) + '"') if portee else ""
+        cl = f' class="p p{i} {classe_de[i]}"' if portee else ""
         fig.ajouter(f'<g class="marque"><title>{e(info)}</title>'
                     f'<circle{cl} cx="{x(i):.1f}" cy="{base}" r="{r:.1f}" fill="{teinte}" '
                     f'stroke="{SURFACE}" stroke-width="1.5"/></g>')
@@ -935,8 +947,12 @@ def arcs(noeuds, liens, *, titre, description, largeur=980, hauteur_arc=150,
     if etiquettes:
         y_nom = base + DECALAGE_NOM
         for i, n in enumerate(noeuds):
+            # `n` distingue les noms des textes de LEGENDE, qui eux ne doivent
+            # jamais s'eteindre : c'est le decodeur des couleurs, et on en a
+            # d'autant plus besoin qu'on vient d'isoler un aventurier.
+            cl = f' class="n {classe_de[i]}"' if portee else ""
             fig.ajouter(
-                f'<text x="{x(i):.1f}" y="{y_nom}" fill="{ENCRE_DOUCE}" '
+                f'<text{cl} x="{x(i):.1f}" y="{y_nom}" fill="{ENCRE_DOUCE}" '
                 f'font-size="{TAILLE_NOM}" text-anchor="end" '
                 f'transform="rotate(-60 {x(i):.1f} {y_nom})">{e(n["nom"])}</text>')
 
