@@ -1163,3 +1163,43 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); 
 .prose table td:first-child.nombre + td {
   width: 13rem;
 }
+
+/* ------------------------------------- la mise au point au survol des figures */
+
+/* Survoler une marque eteint les autres. C'est le geste des deux diagrammes en
+   arcs, ramene a ce que les cent vingt-six autres figures peuvent porter :
+   elles n'ont pas de relations entre marques, donc « ce qui reste allume » s'y
+   reduit a la marque survolee.
+
+   RIEN N'EST REGENERE POUR CELA. `.marque` est pose depuis toujours sur les
+   3 149 marques de donnees, pour l'infobulle native ; ces deux regles s'y
+   raccrochent et n'ajoutent pas un octet aux SVG.
+
+   Deux exclusions, et chacune evite un contresens :
+
+   * `.repere` -- 137 marques ne sont pas des donnees mais de la fourniture
+     d'axe : cinq intitules tronques dont le <title> rend le texte entier, et
+     le rang des jours et mois de diffusion sous les courbes. Elles sont
+     exclues DES DEUX COTES : les survoler n'eteint pas la figure, et elles ne
+     s'eteignent pas quand on survole une donnee.
+
+   * `.arcs-lie` -- les deux diagrammes en arcs ont leur propre surbrillance,
+     ecrite dans leur SVG, qui allume aussi les points relies et leurs noms.
+     Les deux jeux de regles se multiplieraient.
+
+   Pas de transition, et c'est delibere : le nuage des longevites et le plan du
+   casting portent cinq cents marques chacun ; une transition y ferait sept
+   repeints la ou il en faut un.
+
+   Repli : un navigateur sans `:has()` jette les deux regles ensemble comme des
+   selecteurs invalides. Les figures restent alors ce qu'elles etaient, avec
+   leurs infobulles. Aucun etat ou tout serait eteint sans rien pour rallumer.
+
+   Specificite : (0,7,0) pour eteindre, (0,8,0) pour rallumer. La seconde gagne
+   quel que soit l'ordre. */
+.graphique:not(.arcs-lie):has(.marque:not(.repere):hover) .marque:not(.repere) {
+  opacity: 0.28;
+}
+.graphique:not(.arcs-lie):has(.marque:not(.repere):hover) .marque:not(.repere):hover {
+  opacity: 1;
+}

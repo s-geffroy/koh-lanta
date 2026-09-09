@@ -131,7 +131,10 @@ def _texte_tenu(x, y, contenu, *, largeur_max, taille=13, taille_min=9, **kw):
         return _texte(x, y, contenu, taille=taille_finale, **kw)
     tenus = max(1, int(largeur_max / (taille_finale * LARGEUR_CARACTERE)) - 1)
     coupe = contenu[:tenus].rstrip(" ,;-·") + "…"
-    return (f'<g class="marque"><title>{e(contenu)}</title>'
+    # `repere` : voir la note sur cette classe plus bas, au rang des jours de
+    # diffusion. Un intitule tronque est un REPERE d'axe, pas une donnee -- son
+    # <title> ne sert qu'a rendre le texte entier qui ne tenait pas.
+    return (f'<g class="marque repere"><title>{e(contenu)}</title>'
             + _texte(x, y, coupe, taille=taille_finale, **kw) + "</g>")
 
 
@@ -440,7 +443,13 @@ def courbes(series, abscisses, *, titre, description, unite="", largeur=680,
             else:
                 dessin = _texte(px(i), y, x["lettre"], ancre="middle",
                                 couleur=ENCRE_DOUCE, taille=10, mono=True)
-            fig.ajouter(f'<g class="marque">{info}{dessin}</g>')
+            # `repere` ET NON une marque de donnee, alors que le <title> en dit
+            # une. Ce rang est de la FURNITURE D'AXE : une lettre ou une
+            # reglette par annee, alignee sous la graduation. Eteindre les
+            # trente-trois courbes parce qu'on survole le « Sa » de 2001 ne
+            # montrerait rien -- la mise au point au survol (assets/css/
+            # style.scss) l'exclut donc des deux cotes.
+            fig.ajouter(f'<g class="marque repere">{info}{dessin}</g>')
 
     y_abscisses = y_bande + (18 * len(bandes) if bandes else 2)
     for i, a in enumerate(abscisses):
@@ -867,7 +876,11 @@ def arcs(noeuds, liens, *, titre, description, largeur=980, hauteur_arc=150,
         return gauche + pas * i
 
     portee = f"arcs-{surbrillance}" if surbrillance else None
-    fig = Figure(largeur, hauteur, titre, description, classe=portee)
+    # `arcs-lie` en plus de la portee : c'est le drapeau qui dit « cette figure
+    # a sa PROPRE surbrillance ». La regle generique de la feuille de style
+    # s'en ecarte, sans quoi les deux se multiplieraient.
+    fig = Figure(largeur, hauteur, titre, description,
+                 classe=f"arcs-lie {portee}" if portee else None)
     if portee:
         fig.ajouter(_surbrillance_arcs(portee, noeuds, liens))
 
