@@ -764,12 +764,26 @@ def _surbrillance_arcs(portee, noeuds, liens):
     if not portants:
         return ""
     regles = [
-        f".{portee} path{{transition:opacity .12s ease}}",
-        # Seuls les arcs sont des <path> dans cette figure : l'axe est une
-        # <line>, les points des <circle>. Ils ne s'eteignent donc pas.
+        f".{portee} path,.{portee} circle{{transition:opacity .12s ease}}",
+        # L'axe est une <line> et les noms des <text> : ni l'un ni les autres
+        # ne s'eteignent. Les noms surtout -- c'est en les lisant qu'on sait
+        # QUI sont les points restes allumes. Les eteindre aurait retire a la
+        # surbrillance ce qui en fait l'interet.
+        #
+        # Les points s'eteignent moins fort que les arcs : ils sont petits, et
+        # a 0,05 la ligne de points disparaitrait au lieu de rester le repere
+        # sur lequel se lit la figure.
         f".{portee}:has(.p:hover) path{{opacity:.05}}",
+        f".{portee}:has(.p:hover) circle{{opacity:.15}}",
     ]
-    # Specificite : la regle qui eteint vaut (0,3,1), celle qui rallume
+    # UNE SEULE REGLE PAR POINT, ET ELLE RALLUME LES DEUX CHOSES A LA FOIS.
+    # C'est possible parce qu'un cercle porte les memes classes que les arcs
+    # qui le concernent : `a{i}` pour lui-meme, `a{k}` pour chacun de ses
+    # voisins. `.a12` designe donc a la fois les arcs qui touchent le point 12
+    # et les points qui lui sont relies -- aucune regle supplementaire, aucune
+    # liste d'adjacence recopiee dans la feuille de style.
+    #
+    # Specificite : les regles qui eteignent valent (0,3,1), celle qui rallume
     # (0,4,0). La seconde gagne, quel que soit l'ordre.
     regles += [f".{portee}:has(.p{i}:hover) .a{i}{{opacity:1}}"
                for i in portants]
@@ -892,6 +906,13 @@ def arcs(noeuds, liens, *, titre, description, largeur=980, hauteur_arc=150,
     fig.ajouter(f'<line x1="{gauche - 8}" y1="{base}" x2="{largeur - droite + 8}" '
                 f'y2="{base}" stroke="var(--axe)" stroke-width="1"/>')
 
+    voisins = {}
+    if portee:
+        for l in liens:
+            if l["de"] != l["vers"]:
+                voisins.setdefault(l["de"], set()).add(l["vers"])
+                voisins.setdefault(l["vers"], set()).add(l["de"])
+
     poids_n = max((n.get("poids") or 1) for n in noeuds)
     for i, n in enumerate(noeuds):
         r = 2.6 + 4.4 * ((n.get("poids") or 1) / poids_n) ** 0.5
@@ -900,7 +921,11 @@ def arcs(noeuds, liens, *, titre, description, largeur=980, hauteur_arc=150,
         # Les classes vont sur le CERCLE et non sur le groupe : c'est lui que
         # le pointeur touche, et `:hover` sur le disque exact evite qu'un
         # survol du <title> vide allume la figure.
-        cl = f' class="p p{i}"' if portee else ""
+        #
+        # `p{i}` sert de cible au survol ; `a{i}` et les `a{k}` de ses voisins
+        # le font rallumer quand on survole lui-meme ou l'un d'eux.
+        cl = (' class="p p' + str(i) + "".join(f" a{k}" for k in
+              sorted(voisins.get(i, set()) | {i})) + '"') if portee else ""
         fig.ajouter(f'<g class="marque"><title>{e(info)}</title>'
                     f'<circle{cl} cx="{x(i):.1f}" cy="{base}" r="{r:.1f}" fill="{teinte}" '
                     f'stroke="{SURFACE}" stroke-width="1.5"/></g>')
