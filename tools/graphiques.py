@@ -215,16 +215,31 @@ def barres_horizontales(donnees, *, titre, description, unite="",
         longueur = max(3.0, piste * d["valeur"] / vmax)
         teinte = d.get("couleur") or couleur or SERIES[i % len(SERIES)]
         info = d.get("detail") or f'{d["libelle"]} : {d["valeur"]}{unite}'
-        fig.ajouter(
-            f'<g class="marque"><title>{e(info)}</title>'
-            f'<rect x="{marge_gauche}" y="{y}" width="{longueur:.1f}" '
-            f'height="{hauteur_barre}" rx="4" fill="{teinte}" '
-            f'stroke="{SURFACE}" stroke-width="2"/></g>')
-        fig.ajouter(_texte_tenu(marge_gauche - 10, y + hauteur_barre / 2,
-                                d["libelle"], largeur_max=marge_gauche - 14,
-                                ancre="end", couleur=ENCRE))
-        fig.ajouter(_texte(marge_gauche + longueur + 8, y + hauteur_barre / 2,
-                           f'{d["valeur"]}{unite}', couleur=ENCRE, gras=True))
+
+        # UNE SEULE MARQUE PAR LIGNE, et c'est ce qui donne la surbrillance
+        # sans ecrire une regle. Une barre horizontale n'a pas de series : la
+        # ligne EST l'unite de lecture -- l'intitule, la barre, la valeur. En
+        # les rassemblant dans un seul <g class="marque">, la regle generique
+        # de la feuille de style les eteint et les rallume ensemble, et le
+        # survol prend partout sur la ligne, pas seulement sur la barre.
+        #
+        # Aucune portee, aucun <style> dans le SVG, pas un octet de regle :
+        # tout tient dans le regroupement. Un <g> ne deplace rien.
+        #
+        # L'intitule tronque, lui, reste un `.marque repere` IMBRIQUE. Il
+        # n'eteint donc rien quand on le survole -- mais l'opacite du groupe
+        # parent se multiplie a ses enfants, donc il s'assombrit bien avec sa
+        # ligne. Et son propre <title> continue de rendre le texte entier.
+        barre = (f'<rect x="{marge_gauche}" y="{y}" width="{longueur:.1f}" '
+                 f'height="{hauteur_barre}" rx="4" fill="{teinte}" '
+                 f'stroke="{SURFACE}" stroke-width="2"/>')
+        libelle = _texte_tenu(marge_gauche - 10, y + hauteur_barre / 2,
+                              d["libelle"], largeur_max=marge_gauche - 14,
+                              ancre="end", couleur=ENCRE)
+        valeur = _texte(marge_gauche + longueur + 8, y + hauteur_barre / 2,
+                        f'{d["valeur"]}{unite}', couleur=ENCRE, gras=True)
+        fig.ajouter(f'<g class="marque"><title>{e(info)}</title>'
+                    f'{barre}{libelle}{valeur}</g>')
 
     fig.ajouter(f'<line x1="{marge_gauche}" y1="{haut - 6}" x2="{marge_gauche}" '
                 f'y2="{hauteur - bas + 4}" stroke="var(--axe)" stroke-width="1"/>')
