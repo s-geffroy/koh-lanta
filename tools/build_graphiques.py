@@ -865,7 +865,11 @@ def figures_ajoutees(stats):
                         "sortie, du premier parti au vainqueur. Un arc relie "
                         "deux personnes dont l'une a écrit le nom de l'autre ; "
                         "plus il est épais, plus elle l'a fait souvent.",
-            hauteur_arc=170, hauteur_etiquettes=104))
+            hauteur_arc=170, hauteur_etiquettes=104,
+            # Survoler un aventurier eteint tous les arcs sauf les siens :
+            # c'est ce qui rend lisible « qui a ecrit le nom de qui » dans un
+            # entrelacs ou chaque nom est ecrit par plusieurs personnes.
+            surbrillance="votes"))
 
     v = stats.get("voix_pour_eliminer") or {}
     if v.get("repartition"):

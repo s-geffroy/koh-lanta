@@ -1,145 +1,146 @@
 <figure class="figure">
-<svg class="graphique" viewBox="0 0 980 300" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Qui a écrit le nom de qui — L&#x27;Île au trésor (2016)">
+<svg class="graphique arcs-votes" viewBox="0 0 980 300" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Qui a écrit le nom de qui — L&#x27;Île au trésor (2016)">
   <title>Qui a écrit le nom de qui — L&#x27;Île au trésor (2016)</title>
   <desc>Les aventuriers sont rangés dans l&#x27;ordre de leur sortie, du premier parti au vainqueur. Un arc relie deux personnes dont l&#x27;une a écrit le nom de l&#x27;autre ; plus il est épais, plus elle l&#x27;a fait souvent.</desc>
-  <path d="M26.0,196 Q74.8,98.3 123.7,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M26.0,196 Q123.7,0.6 221.4,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M26.0,196 Q74.8,98.3 123.7,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M74.8,196 Q123.7,98.3 172.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M26.0,196 Q123.7,0.6 221.4,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M123.7,196 Q172.5,98.3 221.4,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M221.4,196 Q294.6,49.5 367.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M221.4,196 Q392.3,-144.0 563.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M74.8,196 Q172.5,0.6 270.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M172.5,196 Q221.4,98.3 270.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M221.4,196 Q245.8,147.2 270.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M74.8,196 Q196.9,-48.2 319.1,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M172.5,196 Q245.8,49.5 319.1,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M26.0,196 Q196.9,-144.0 367.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M123.7,196 Q245.8,-48.2 367.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M221.4,196 Q294.6,49.5 367.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M270.2,196 Q319.1,98.3 367.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M74.8,196 Q245.8,-144.0 416.7,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M172.5,196 Q294.6,-48.2 416.7,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M367.9,196 Q392.3,147.2 416.7,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M416.7,196 Q660.9,-144.0 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M416.7,196 Q685.4,-144.0 954.0,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M74.8,196 Q270.2,-144.0 465.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M172.5,196 Q319.1,-97.1 465.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M367.9,196 Q416.7,98.3 465.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M465.6,196 Q514.4,98.3 563.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M465.6,196 Q636.5,-144.0 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M465.6,196 Q685.4,-144.0 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M74.8,196 Q294.6,-144.0 514.4,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M172.5,196 Q343.5,-144.0 514.4,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M367.9,196 Q441.2,49.5 514.4,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M514.4,196 Q538.8,147.2 563.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M514.4,196 Q709.8,-144.0 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M26.0,196 Q294.6,-144.0 563.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M123.7,196 Q343.5,-144.0 563.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M221.4,196 Q392.3,-144.0 563.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M270.2,196 Q416.7,-97.1 563.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M416.7,196 Q490.0,49.5 563.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M465.6,196 Q514.4,98.3 563.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M514.4,196 Q538.8,147.2 563.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M563.3,196 Q587.7,147.2 612.1,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M74.8,196 Q343.5,-144.0 612.1,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M172.5,196 Q392.3,-144.0 612.1,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M367.9,196 Q490.0,-48.2 612.1,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M465.6,196 Q538.8,49.5 612.1,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M612.1,196 Q758.6,-97.1 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M26.0,196 Q343.5,-144.0 660.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M123.7,196 Q392.3,-144.0 660.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M270.2,196 Q465.6,-144.0 660.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M416.7,196 Q538.8,-48.2 660.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M465.6,196 Q563.3,0.6 660.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M514.4,196 Q587.7,49.5 660.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M563.3,196 Q612.1,98.3 660.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M26.0,196 Q367.9,-144.0 709.8,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M123.7,196 Q416.7,-144.0 709.8,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M367.9,196 Q538.8,-144.0 709.8,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M612.1,196 Q660.9,98.3 709.8,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M709.8,196 Q734.2,147.2 758.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M709.8,196 Q758.6,98.3 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M709.8,196 Q783.1,49.5 856.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M709.8,196 Q807.5,0.6 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M709.8,196 Q831.9,-48.2 954.0,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M26.0,196 Q392.3,-144.0 758.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M123.7,196 Q441.2,-144.0 758.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M270.2,196 Q514.4,-144.0 758.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M416.7,196 Q587.7,-144.0 758.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M465.6,196 Q612.1,-97.1 758.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M514.4,196 Q636.5,-48.2 758.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M563.3,196 Q660.9,0.6 758.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M758.6,196 Q807.5,98.3 856.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M758.6,196 Q856.3,0.6 954.0,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M26.0,196 Q416.7,-144.0 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M123.7,196 Q465.6,-144.0 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M221.4,196 Q514.4,-144.0 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M270.2,196 Q538.8,-144.0 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M416.7,196 Q612.1,-144.0 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M465.6,196 Q636.5,-144.0 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M514.4,196 Q660.9,-97.1 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M660.9,196 Q734.2,49.5 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M709.8,196 Q758.6,98.3 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M172.5,196 Q514.4,-144.0 856.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M367.9,196 Q612.1,-144.0 856.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M465.6,196 Q660.9,-144.0 856.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M563.3,196 Q709.8,-97.1 856.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M612.1,196 Q734.2,-48.2 856.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M660.9,196 Q758.6,0.6 856.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M709.8,196 Q783.1,49.5 856.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M758.6,196 Q807.5,98.3 856.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M856.3,196 Q880.7,147.2 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M26.0,196 Q465.6,-144.0 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M123.7,196 Q514.4,-144.0 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M221.4,196 Q563.3,-144.0 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M270.2,196 Q587.7,-144.0 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M416.7,196 Q660.9,-144.0 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M465.6,196 Q685.4,-144.0 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M514.4,196 Q709.8,-144.0 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M612.1,196 Q758.6,-97.1 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M660.9,196 Q783.1,-48.2 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M709.8,196 Q807.5,0.6 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M856.3,196 Q880.7,147.2 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M367.9,196 Q660.9,-144.0 954.0,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M563.3,196 Q758.6,-144.0 954.0,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M660.9,196 Q807.5,-97.1 954.0,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M905.2,196 Q929.6,147.2 954.0,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
-  <path d="M74.8,196 Q270.2,-144.0 465.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
-  <path d="M123.7,196 Q245.8,-48.2 367.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
-  <path d="M172.5,196 Q221.4,98.3 270.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
-  <path d="M270.2,196 Q514.4,-144.0 758.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
-  <path d="M367.9,196 Q490.0,-48.2 612.1,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
-  <path d="M514.4,196 Q660.9,-97.1 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
-  <path d="M612.1,196 Q734.2,-48.2 856.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
-  <path d="M612.1,196 Q636.5,147.2 660.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
-  <path d="M660.9,196 Q758.6,0.6 856.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
-  <path d="M612.1,196 Q685.4,49.5 758.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
-  <path d="M612.1,196 Q709.8,0.6 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
-  <path d="M465.6,196 Q709.8,-144.0 954.0,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
-  <path d="M709.8,196 Q831.9,-48.2 954.0,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
+  <style>.arcs-votes path{transition:opacity .12s ease}.arcs-votes:has(.p:hover) path{opacity:.05}.arcs-votes:has(.p0:hover) .a0{opacity:1}.arcs-votes:has(.p1:hover) .a1{opacity:1}.arcs-votes:has(.p2:hover) .a2{opacity:1}.arcs-votes:has(.p3:hover) .a3{opacity:1}.arcs-votes:has(.p4:hover) .a4{opacity:1}.arcs-votes:has(.p5:hover) .a5{opacity:1}.arcs-votes:has(.p6:hover) .a6{opacity:1}.arcs-votes:has(.p7:hover) .a7{opacity:1}.arcs-votes:has(.p8:hover) .a8{opacity:1}.arcs-votes:has(.p9:hover) .a9{opacity:1}.arcs-votes:has(.p10:hover) .a10{opacity:1}.arcs-votes:has(.p11:hover) .a11{opacity:1}.arcs-votes:has(.p12:hover) .a12{opacity:1}.arcs-votes:has(.p13:hover) .a13{opacity:1}.arcs-votes:has(.p14:hover) .a14{opacity:1}.arcs-votes:has(.p15:hover) .a15{opacity:1}.arcs-votes:has(.p16:hover) .a16{opacity:1}.arcs-votes:has(.p17:hover) .a17{opacity:1}.arcs-votes:has(.p18:hover) .a18{opacity:1}.arcs-votes:has(.p19:hover) .a19{opacity:1}</style>
+  <path class="a0 a2" d="M26.0,196 Q74.8,98.3 123.7,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a0 a4" d="M26.0,196 Q123.7,0.6 221.4,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a2 a0" d="M26.0,196 Q74.8,98.3 123.7,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a3 a1" d="M74.8,196 Q123.7,98.3 172.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a4 a0" d="M26.0,196 Q123.7,0.6 221.4,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a4 a2" d="M123.7,196 Q172.5,98.3 221.4,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a4 a7" d="M221.4,196 Q294.6,49.5 367.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a4 a11" d="M221.4,196 Q392.3,-144.0 563.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a5 a1" d="M74.8,196 Q172.5,0.6 270.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a5 a3" d="M172.5,196 Q221.4,98.3 270.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a5 a4" d="M221.4,196 Q245.8,147.2 270.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a6 a1" d="M74.8,196 Q196.9,-48.2 319.1,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a6 a3" d="M172.5,196 Q245.8,49.5 319.1,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a7 a0" d="M26.0,196 Q196.9,-144.0 367.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a7 a2" d="M123.7,196 Q245.8,-48.2 367.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a7 a4" d="M221.4,196 Q294.6,49.5 367.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a7 a5" d="M270.2,196 Q319.1,98.3 367.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a8 a1" d="M74.8,196 Q245.8,-144.0 416.7,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a8 a3" d="M172.5,196 Q294.6,-48.2 416.7,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a8 a7" d="M367.9,196 Q392.3,147.2 416.7,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a8 a18" d="M416.7,196 Q660.9,-144.0 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a8 a19" d="M416.7,196 Q685.4,-144.0 954.0,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a9 a1" d="M74.8,196 Q270.2,-144.0 465.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a9 a3" d="M172.5,196 Q319.1,-97.1 465.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a9 a7" d="M367.9,196 Q416.7,98.3 465.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a9 a11" d="M465.6,196 Q514.4,98.3 563.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a9 a16" d="M465.6,196 Q636.5,-144.0 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a9 a18" d="M465.6,196 Q685.4,-144.0 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a10 a1" d="M74.8,196 Q294.6,-144.0 514.4,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a10 a3" d="M172.5,196 Q343.5,-144.0 514.4,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a10 a7" d="M367.9,196 Q441.2,49.5 514.4,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a10 a11" d="M514.4,196 Q538.8,147.2 563.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a10 a18" d="M514.4,196 Q709.8,-144.0 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a11 a0" d="M26.0,196 Q294.6,-144.0 563.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a11 a2" d="M123.7,196 Q343.5,-144.0 563.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a11 a4" d="M221.4,196 Q392.3,-144.0 563.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a11 a5" d="M270.2,196 Q416.7,-97.1 563.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a11 a8" d="M416.7,196 Q490.0,49.5 563.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a11 a9" d="M465.6,196 Q514.4,98.3 563.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a11 a10" d="M514.4,196 Q538.8,147.2 563.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a11 a12" d="M563.3,196 Q587.7,147.2 612.1,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a12 a1" d="M74.8,196 Q343.5,-144.0 612.1,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a12 a3" d="M172.5,196 Q392.3,-144.0 612.1,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a12 a7" d="M367.9,196 Q490.0,-48.2 612.1,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a12 a9" d="M465.6,196 Q538.8,49.5 612.1,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a12 a18" d="M612.1,196 Q758.6,-97.1 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a13 a0" d="M26.0,196 Q343.5,-144.0 660.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a13 a2" d="M123.7,196 Q392.3,-144.0 660.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a13 a5" d="M270.2,196 Q465.6,-144.0 660.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a13 a8" d="M416.7,196 Q538.8,-48.2 660.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a13 a9" d="M465.6,196 Q563.3,0.6 660.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a13 a10" d="M514.4,196 Q587.7,49.5 660.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a13 a11" d="M563.3,196 Q612.1,98.3 660.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a14 a0" d="M26.0,196 Q367.9,-144.0 709.8,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a14 a2" d="M123.7,196 Q416.7,-144.0 709.8,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a14 a7" d="M367.9,196 Q538.8,-144.0 709.8,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a14 a12" d="M612.1,196 Q660.9,98.3 709.8,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a14 a15" d="M709.8,196 Q734.2,147.2 758.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a14 a16" d="M709.8,196 Q758.6,98.3 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a14 a17" d="M709.8,196 Q783.1,49.5 856.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a14 a18" d="M709.8,196 Q807.5,0.6 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a14 a19" d="M709.8,196 Q831.9,-48.2 954.0,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a15 a0" d="M26.0,196 Q392.3,-144.0 758.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a15 a2" d="M123.7,196 Q441.2,-144.0 758.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a15 a5" d="M270.2,196 Q514.4,-144.0 758.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a15 a8" d="M416.7,196 Q587.7,-144.0 758.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a15 a9" d="M465.6,196 Q612.1,-97.1 758.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a15 a10" d="M514.4,196 Q636.5,-48.2 758.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a15 a11" d="M563.3,196 Q660.9,0.6 758.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a15 a17" d="M758.6,196 Q807.5,98.3 856.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a15 a19" d="M758.6,196 Q856.3,0.6 954.0,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a16 a0" d="M26.0,196 Q416.7,-144.0 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a16 a2" d="M123.7,196 Q465.6,-144.0 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a16 a4" d="M221.4,196 Q514.4,-144.0 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a16 a5" d="M270.2,196 Q538.8,-144.0 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a16 a8" d="M416.7,196 Q612.1,-144.0 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a16 a9" d="M465.6,196 Q636.5,-144.0 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a16 a10" d="M514.4,196 Q660.9,-97.1 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a16 a13" d="M660.9,196 Q734.2,49.5 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a16 a14" d="M709.8,196 Q758.6,98.3 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a17 a3" d="M172.5,196 Q514.4,-144.0 856.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a17 a7" d="M367.9,196 Q612.1,-144.0 856.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a17 a9" d="M465.6,196 Q660.9,-144.0 856.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a17 a11" d="M563.3,196 Q709.8,-97.1 856.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a17 a12" d="M612.1,196 Q734.2,-48.2 856.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a17 a13" d="M660.9,196 Q758.6,0.6 856.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a17 a14" d="M709.8,196 Q783.1,49.5 856.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a17 a15" d="M758.6,196 Q807.5,98.3 856.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a17 a18" d="M856.3,196 Q880.7,147.2 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a18 a0" d="M26.0,196 Q465.6,-144.0 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a18 a2" d="M123.7,196 Q514.4,-144.0 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a18 a4" d="M221.4,196 Q563.3,-144.0 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a18 a5" d="M270.2,196 Q587.7,-144.0 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a18 a8" d="M416.7,196 Q660.9,-144.0 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a18 a9" d="M465.6,196 Q685.4,-144.0 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a18 a10" d="M514.4,196 Q709.8,-144.0 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a18 a12" d="M612.1,196 Q758.6,-97.1 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a18 a13" d="M660.9,196 Q783.1,-48.2 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a18 a14" d="M709.8,196 Q807.5,0.6 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a18 a17" d="M856.3,196 Q880.7,147.2 905.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a19 a7" d="M367.9,196 Q660.9,-144.0 954.0,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a19 a11" d="M563.3,196 Q758.6,-144.0 954.0,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a19 a13" d="M660.9,196 Q807.5,-97.1 954.0,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a19 a18" d="M905.2,196 Q929.6,147.2 954.0,196" fill="none" stroke="var(--encre-douce)" stroke-width="1.70" opacity="0.41"/>
+  <path class="a1 a9" d="M74.8,196 Q270.2,-144.0 465.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
+  <path class="a2 a7" d="M123.7,196 Q245.8,-48.2 367.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
+  <path class="a3 a5" d="M172.5,196 Q221.4,98.3 270.2,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
+  <path class="a5 a15" d="M270.2,196 Q514.4,-144.0 758.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
+  <path class="a7 a12" d="M367.9,196 Q490.0,-48.2 612.1,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
+  <path class="a10 a16" d="M514.4,196 Q660.9,-97.1 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
+  <path class="a12 a17" d="M612.1,196 Q734.2,-48.2 856.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
+  <path class="a13 a12" d="M612.1,196 Q636.5,147.2 660.9,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
+  <path class="a13 a17" d="M660.9,196 Q758.6,0.6 856.3,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
+  <path class="a15 a12" d="M612.1,196 Q685.4,49.5 758.6,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
+  <path class="a16 a12" d="M612.1,196 Q709.8,0.6 807.5,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
+  <path class="a19 a9" d="M465.6,196 Q709.8,-144.0 954.0,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
+  <path class="a19 a14" d="M709.8,196 Q831.9,-48.2 954.0,196" fill="none" stroke="var(--encre-douce)" stroke-width="2.80" opacity="0.66"/>
   <line x1="18" y1="196" x2="962" y2="196" stroke="var(--axe)" stroke-width="1"/>
-  <g class="marque"><title>Myriam — sorti au jour 3</title><circle cx="26.0" cy="196" r="7.0" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1.5"/></g>
-  <g class="marque"><title>Amandine — sorti au jour 6</title><circle cx="74.8" cy="196" r="7.0" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1.5"/></g>
-  <g class="marque"><title>Sophie — sorti au jour 9</title><circle cx="123.7" cy="196" r="7.0" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1.5"/></g>
-  <g class="marque"><title>Sandrine — sorti au jour 12</title><circle cx="172.5" cy="196" r="7.0" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1.5"/></g>
-  <g class="marque"><title>Laurent — sorti au jour 16</title><circle cx="221.4" cy="196" r="7.0" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1.5"/></g>
-  <g class="marque"><title>Jean-Luc — sorti au jour 18</title><circle cx="270.2" cy="196" r="7.0" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1.5"/></g>
-  <g class="marque"><title>Jérôme — sorti au jour 20</title><circle cx="319.1" cy="196" r="7.0" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1.5"/></g>
-  <g class="marque"><title>Lau — sorti au jour 21</title><circle cx="367.9" cy="196" r="7.0" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1.5"/></g>
-  <g class="marque"><title>Béryl — sorti au jour 24</title><circle cx="416.7" cy="196" r="7.0" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1.5"/></g>
-  <g class="marque"><title>Alexandra — sorti au jour 27</title><circle cx="465.6" cy="196" r="7.0" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1.5"/></g>
-  <g class="marque"><title>Yannick — sorti au jour 30</title><circle cx="514.4" cy="196" r="7.0" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1.5"/></g>
-  <g class="marque"><title>Julie — sorti au jour 32</title><circle cx="563.3" cy="196" r="7.0" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1.5"/></g>
-  <g class="marque"><title>Jérémy — sorti au jour 33</title><circle cx="612.1" cy="196" r="7.0" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1.5"/></g>
-  <g class="marque"><title>Stéphane — sorti au jour 36</title><circle cx="660.9" cy="196" r="7.0" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1.5"/></g>
-  <g class="marque"><title>Ludivine — sorti au jour 39</title><circle cx="709.8" cy="196" r="7.0" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1.5"/></g>
-  <g class="marque"><title>Bruno — sorti au jour 40</title><circle cx="758.6" cy="196" r="7.0" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1.5"/></g>
-  <g class="marque"><title>Candice — sorti au jour 40</title><circle cx="807.5" cy="196" r="7.0" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1.5"/></g>
-  <g class="marque"><title>Freddy — sorti au jour 41</title><circle cx="856.3" cy="196" r="7.0" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1.5"/></g>
-  <g class="marque"><title>Benoît — sorti au jour 42</title><circle cx="905.2" cy="196" r="7.0" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1.5"/></g>
-  <g class="marque"><title>Jesta — sorti au jour 42</title><circle cx="954.0" cy="196" r="7.0" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1.5"/></g>
+  <g class="marque"><title>Myriam — sorti au jour 3</title><circle class="p p0" cx="26.0" cy="196" r="7.0" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1.5"/></g>
+  <g class="marque"><title>Amandine — sorti au jour 6</title><circle class="p p1" cx="74.8" cy="196" r="7.0" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1.5"/></g>
+  <g class="marque"><title>Sophie — sorti au jour 9</title><circle class="p p2" cx="123.7" cy="196" r="7.0" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1.5"/></g>
+  <g class="marque"><title>Sandrine — sorti au jour 12</title><circle class="p p3" cx="172.5" cy="196" r="7.0" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1.5"/></g>
+  <g class="marque"><title>Laurent — sorti au jour 16</title><circle class="p p4" cx="221.4" cy="196" r="7.0" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1.5"/></g>
+  <g class="marque"><title>Jean-Luc — sorti au jour 18</title><circle class="p p5" cx="270.2" cy="196" r="7.0" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1.5"/></g>
+  <g class="marque"><title>Jérôme — sorti au jour 20</title><circle class="p p6" cx="319.1" cy="196" r="7.0" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1.5"/></g>
+  <g class="marque"><title>Lau — sorti au jour 21</title><circle class="p p7" cx="367.9" cy="196" r="7.0" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1.5"/></g>
+  <g class="marque"><title>Béryl — sorti au jour 24</title><circle class="p p8" cx="416.7" cy="196" r="7.0" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1.5"/></g>
+  <g class="marque"><title>Alexandra — sorti au jour 27</title><circle class="p p9" cx="465.6" cy="196" r="7.0" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1.5"/></g>
+  <g class="marque"><title>Yannick — sorti au jour 30</title><circle class="p p10" cx="514.4" cy="196" r="7.0" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1.5"/></g>
+  <g class="marque"><title>Julie — sorti au jour 32</title><circle class="p p11" cx="563.3" cy="196" r="7.0" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1.5"/></g>
+  <g class="marque"><title>Jérémy — sorti au jour 33</title><circle class="p p12" cx="612.1" cy="196" r="7.0" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1.5"/></g>
+  <g class="marque"><title>Stéphane — sorti au jour 36</title><circle class="p p13" cx="660.9" cy="196" r="7.0" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1.5"/></g>
+  <g class="marque"><title>Ludivine — sorti au jour 39</title><circle class="p p14" cx="709.8" cy="196" r="7.0" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1.5"/></g>
+  <g class="marque"><title>Bruno — sorti au jour 40</title><circle class="p p15" cx="758.6" cy="196" r="7.0" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1.5"/></g>
+  <g class="marque"><title>Candice — sorti au jour 40</title><circle class="p p16" cx="807.5" cy="196" r="7.0" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1.5"/></g>
+  <g class="marque"><title>Freddy — sorti au jour 41</title><circle class="p p17" cx="856.3" cy="196" r="7.0" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1.5"/></g>
+  <g class="marque"><title>Benoît — sorti au jour 42</title><circle class="p p18" cx="905.2" cy="196" r="7.0" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1.5"/></g>
+  <g class="marque"><title>Jesta — sorti au jour 42</title><circle class="p p19" cx="954.0" cy="196" r="7.0" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1.5"/></g>
   <text x="26.0" y="208" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 26.0 208)">Myriam</text>
   <text x="74.8" y="208" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 74.8 208)">Amandine</text>
   <text x="123.7" y="208" fill="var(--encre-douce)" font-size="11" text-anchor="end" transform="rotate(-60 123.7 208)">Sophie</text>
