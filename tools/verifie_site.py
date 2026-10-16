@@ -626,6 +626,45 @@ def _rendre_sans_liquid(texte, toutes_posees):
     return "\n".join(rendu)
 
 
+# CE QUE PYYAML ECRIT COMME UNE CHAINE ET QUE LE YAML DE RUBY RELIT COMME UN
+# NOMBRE. Les scripts de ce depot ecrivent avec PyYAML ; Jekyll relit avec
+# Psych, qui suit YAML 1.1. Les deux ne resolvent pas les memes formes :
+#
+#   « 39,9 »  -- YAML 1.1 accepte la virgule comme separateur de milliers dans
+#                un entier : Psych y lit 399. PyYAML n'y voit qu'une chaine et
+#                l'ecrit donc sans guillemets. Paye en ligne : une part de
+#                marche publiee « 395 % » au lieu de « 39,5 % ».
+#   « 1:30 »  -- YAML 1.1 lit un sexagesimal : Psych y lit 90.
+#
+# Aucune des deux ne fait echouer quoi que ce soit : la construction passe, le
+# controle passe, la page s'affiche -- avec un nombre faux. D'ou ce controle,
+# qui relit le TEXTE et non l'arbre : vu par PyYAML, il n'y a rien a voir.
+RE_YAML_AMBIGU = re.compile(r"^[-+]?[0-9][0-9_]*(?:,[0-9_]+)+(?:\.[0-9_]*)?$"
+                            r"|^[-+]?[0-9][0-9_]*(?::[0-5]?[0-9])+$")
+# `cle: valeur` ou `- valeur`, la valeur nue -- ni guillemets, ni apostrophes,
+# ni bloc.
+RE_YAML_SCALAIRE = re.compile(r"^\s*(?:-\s+)?(?:[A-Za-z_][A-Za-z0-9_]*:\s+)?"
+                              r"(?P<valeur>[^\s'\"#|>&*].*?)\s*$")
+
+
+def controler_yaml_ambigu(c):
+    """Refuse un scalaire nu que Jekyll relirait comme un nombre."""
+    dossier = os.path.join(RACINE, "_data")
+    for nom in sorted(os.listdir(dossier)) if os.path.isdir(dossier) else []:
+        if not nom.endswith(".yml"):
+            continue
+        with open(os.path.join(dossier, nom), encoding="utf-8") as f:
+            for numero, ligne in enumerate(f, 1):
+                if ligne.lstrip().startswith("#"):
+                    continue
+                trouve = RE_YAML_SCALAIRE.match(ligne.rstrip("\n"))
+                if trouve and RE_YAML_AMBIGU.match(trouve.group("valeur")):
+                    c.erreur(f"_data/{nom}:{numero} : « {trouve.group('valeur')} » "
+                             f"est ecrit sans guillemets — PyYAML y voit une "
+                             f"chaine, le YAML de Ruby un nombre, et c'est "
+                             f"Ruby qui publie")
+
+
 def controler_donnees_structurees(c):
     """Verifie que le JSON-LD reste du JSON, branches posees ou non.
 
@@ -1179,6 +1218,7 @@ def main():
     controler_portraits(c)
     controler_comptes_annonces(c)
     controler_donnees_structurees(c)
+    controler_yaml_ambigu(c)
     controler_navigation(c, permaliens, gabarits)
     controler_sass(c)
     controler_reproductibilite(c)

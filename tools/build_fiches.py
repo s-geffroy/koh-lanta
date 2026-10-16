@@ -28,6 +28,7 @@ import argparse
 import collections
 import json
 import os
+import re
 import sys
 import unicodedata
 
@@ -40,6 +41,28 @@ RACINE = os.path.dirname(ICI)
 DATA = os.path.join(RACINE, "_data")
 
 import indicateurs                                            # noqa: E402
+
+# LES CHAINES QUE LE YAML DE RUBY LIT COMME DES NOMBRES, ET QUE PYYAML ECRIT
+# NUES. Le piege a ete paye en ligne. YAML 1.1 -- la version que Psych
+# implemente, donc celle de Jekyll -- accepte la VIRGULE comme separateur de
+# milliers dans un entier : « 39,9 » y vaut trois cent quatre-vingt-dix-neuf.
+# PyYAML ne connait pas cette forme : il n'y voit qu'une chaine et l'ecrit sans
+# guillemets. Les deux bibliotheques ne sont pas d'accord, et c'est le site qui
+# tranche -- la part de marche s'est publiee « 395 % » au lieu de « 39,5 % ».
+# Rien n'avait echoue : ni la construction, ni le controle, ni l'affichage.
+#
+# On force donc les guillemets des que la chaine ressemble a un nombre pour
+# Ruby. Une chaine entre guillemets est une chaine dans les deux versions de
+# YAML, et c'est la seule facon de ne pas dependre de celle qui relit.
+RE_NOMBRE_RUBY = re.compile(r"^[-+]?[0-9][0-9_,]*(\.[0-9_]*)?$")
+
+
+def _chaine_yaml(dumper, valeur):
+    style = '"' if RE_NOMBRE_RUBY.match(valeur) else None
+    return dumper.represent_scalar("tag:yaml.org,2002:str", valeur, style=style)
+
+
+yaml.SafeDumper.add_representer(str, _chaine_yaml)
 from build_stats import LIBELLE_SORT, arrondi                 # noqa: E402
 
 DOSSIER_AVENTURIERS = os.path.join(RACINE, "aventuriers")
