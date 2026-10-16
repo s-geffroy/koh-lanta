@@ -280,6 +280,9 @@ def fusionner_saison(saison, rows_f, rows_w, rapport, saisons_connues=()):
                                f"cours, aucun depart definitif a ce jour")
             fiche["sort"] = None
             fiche["jour_sortie"] = None
+            # Le motif aussi, et ce n'est pas un detail d'affichage : faute de
+            # sort, c'est LUI que la colonne « Sort » du casting publie.
+            fiche["motif"] = (dispo["f"] or {}).get("retour_en_jeu")
             provenance.pop("sort", None)
             provenance.pop("jour_sortie", None)
 

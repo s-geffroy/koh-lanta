@@ -354,7 +354,7 @@ def parse_row(row, saison_id=None):
     # On ne tranche pas ici -- `parse_fandom` ne sait pas si la saison est
     # terminee, et sur une saison finie un retour est suivi d'un second
     # depart. On RAPPORTE le fait ; fusionner.py en decide.
-    retour = False
+    retour = None
     if depart:
         apres = False
         for c in cells[i_photo + 1:]:
@@ -363,9 +363,16 @@ def parse_row(row, saison_id=None):
                 apres = depart in texte
                 continue
             if RE_RETOUR.search(texte):
-                retour = True
+                # Le LIBELLE, pas un oui/non : il remplacera le motif, et le
+                # motif s'AFFICHE -- c'est lui que la colonne « Sort » du
+                # casting sert quand il n'y a pas de sort. Sans cela la fiche
+                # publiait « Eliminee au conseil » pour quelqu'un revenu en
+                # jeu : le sort etait bien vide, l'affichage retombait sur le
+                # motif d'avant.
+                mj = RE_JOUR.search(texte)
+                retour = (texte[:mj.start()] if mj else texte).strip(" -–—:")
             elif RE_JOUR.search(texte) and texte[:RE_JOUR.search(texte).start()].strip(" -–—:"):
-                retour = False      # un depart plus tardif : il a le dernier mot
+                retour = None       # un depart plus tardif : il a le dernier mot
 
     sort, genre = classify(depart)
 
