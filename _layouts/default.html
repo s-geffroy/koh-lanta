@@ -31,7 +31,22 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,500..800,0..100,0..1&family=IBM+Plex+Mono:wght@400;500;600&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+  {%- comment -%}
+    L'axe SOFT de Fraunces est EPINGLE A 0, et ce n'est pas un detail de
+    forme : demande en plage `0..100`, il faisait peser la police latine
+    121 Ko ; epingle, 67 Ko. Cinquante-trois kilo-octets sur le chemin
+    critique -- cette feuille est bloquante et vient d'un autre domaine --
+    pour un axe que la feuille de style du site fixe de toute facon a 0
+    partout (`font-variation-settings: "WONK" 1, "SOFT" 0, "opsz" N`).
+    Rien ne change a l'ecran : Google sert exactement le meme fichier qu'en
+    retirant l'axe, octet pour octet.
+
+    Les autres demandes, elles, sont justifiees et ne s'allegent pas sans
+    perte : opsz varie de 40 a 144 selon le niveau de titre, WONK bascule de
+    0 a 1, les quatre graisses 400/500/600/700 servent, et l'italique de
+    Public Sans porte `<em>` et `<i>`.
+  {%- endcomment -%}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,500..800,0,0..1&family=IBM+Plex+Mono:wght@400;500;600&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
 </head>
 
 <body>
