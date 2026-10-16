@@ -729,6 +729,38 @@ def controler_titres_minuscules(c):
                  f"probablement un `.capitalize()` applique a une phrase")
 
 
+def controler_accord_rang(c):
+    """Refuse « 1er » sur la fiche d'une femme, et « 1re » sur celle d'un homme.
+
+    Quinze fiches publiaient « Son meilleur parcours : 1er sur 18 [...] ou
+    ELLE gagne la saison ». Seul le rang 1 s'accorde en francais -- « 2e » ne
+    bouge pas -- et c'est donc le seul cas a surveiller. Le genre est dans la
+    fiche : la confrontation est directe.
+
+    Le controle ne regarde PAS « le 1er jour », ou le mot accorde est masculin
+    quel que soit le sujet. D'ou le « sur » exige derriere l'ordinal : c'est ce
+    qui distingue un rang (« 1er sur 18 ») d'une date (« le 1er jour »).
+    """
+    chemin = os.path.join(RACINE, "_data", "fiches.yml")
+    if not os.path.exists(chemin):
+        return
+    aventuriers = (yaml.safe_load(open(chemin, encoding="utf-8")) or {}) \
+        .get("aventuriers") or {}
+    fautes = []
+    for cid, a in sorted(aventuriers.items()):
+        genre = a.get("genre")
+        if genre not in ("f", "h"):
+            continue
+        attendu, fautif = ("1re", "1er") if genre == "f" else ("1er", "1re")
+        for q in a.get("faq") or []:
+            for champ in ("q", "r"):
+                if f"{fautif} sur" in (q.get(champ) or ""):
+                    fautes.append((cid, a.get("nom"), fautif, attendu))
+    for cid, nom, fautif, attendu in fautes:
+        c.erreur(f"fiches.yml / {cid} : « {fautif} sur … » sur la fiche de "
+                 f"{nom} — le rang 1 s'accorde, il faut « {attendu} »")
+
+
 def controler_yaml_ambigu(c):
     """Refuse un scalaire nu que Jekyll relirait comme un nombre."""
     dossier = os.path.join(RACINE, "_data")
@@ -1302,6 +1334,7 @@ def main():
     controler_donnees_structurees(c)
     controler_yaml_ambigu(c)
     controler_titres_minuscules(c)
+    controler_accord_rang(c)
     controler_navigation(c, permaliens, gabarits)
     controler_sass(c)
     controler_reproductibilite(c)

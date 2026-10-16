@@ -532,6 +532,50 @@ def fusionner_identites(participations, rapport):
             p.setdefault("sources", {})["nom_complet"] = "page Fandom commune (redirection)"
 
 
+def vainqueur_premier(participations, saisons, rapport):
+    """Un vainqueur termine premier, par definition de la victoire.
+
+    Meme sorte de regle que le jour de sortie d'un finaliste dans
+    `appliquer_vainqueurs`, et elle repare deux defauts opposes.
+
+    Delphine Bano etait donnee 2e sur 18 a Bocas del Toro alors qu'elle a
+    gagne. L'infobox Fandom ne sait pas ecrire une egalite du jury : elle a
+    donc RANGE les deux gagnantes, 1 et 2. La fiche publiait « son meilleur
+    parcours : 2e sur 18 [...] ou elle gagne la saison » -- une phrase qui se
+    contredit toute seule.
+
+    Six autres vainqueurs n'avaient aucun rang, faute de page individuelle sur
+    le wiki. Le leur etait DEDUIT du jour de sortie, et comme ils sortent le
+    dernier jour, la deduction les mettait a egalite avec les finalistes. Il
+    devient atteste.
+
+    Ce n'est pas une invention : gagner la saison EST y finir premier, et les
+    deux gagnants du Totem maudit portaient deja 1 tous les deux.
+
+    APRES `completer_depuis_pages`, ET C'EST TOUT L'INTERET. Pose avant, la
+    regle s'appliquait aux trente-six vainqueurs -- aucun n'avait encore de
+    rang -- et effacait la provenance des vingt-neuf que le wiki attestait
+    deja correctement. Ici, elle ne touche que ce qui est faux ou manquant.
+    """
+    corriges, combles = 0, 0
+    for p in participations:
+        if p.get("sort") != "vainqueur" or p.get("classement") == 1:
+            continue
+        avant = p.get("classement")
+        p["classement"] = 1
+        p.setdefault("sources", {})["classement"] = (
+            "premier par definition (vainqueur)")
+        if avant is None:
+            combles += 1
+        else:
+            corriges += 1
+            rapport.append(f"{p['saison']} / {p['nom']} : classement {avant} "
+                           f"corrige a 1 — vainqueur de la saison")
+    if corriges or combles:
+        rapport.append(f"classement : {corriges} rang(s) de vainqueur corrige(s) "
+                       f"et {combles} comble(s) — premier par definition")
+
+
 def verifier_classements(participations, saisons, rapport):
     """Ecarte les rangs finaux impossibles, signale les rangs en double.
 
@@ -740,6 +784,7 @@ def main():
     tribu_depuis_le_parcours(participations, rapport)
     corriger_tribus(participations, rapport)
     normaliser_lieux(participations, rapport)
+    vainqueur_premier(participations, saisons, rapport)
     verifier_classements(participations, saisons, rapport)
     completer_depuis_autres_participations(participations, saisons, rapport)
 

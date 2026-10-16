@@ -1999,7 +1999,7 @@
   sort: vainqueur
   motif: Gagnante
   votes_recus: 0
-  classement: 2
+  classement: 1
   victoires_collectives: 4
   victoires_individuelles: 1
   sources:
@@ -2015,7 +2015,7 @@
     localisation: fandom
     couleur: saisons.yml
     parcours: fandom (page individuelle)
-    classement: fandom (page individuelle)
+    classement: premier par definition (vainqueur)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
 - id: isabelle-seguin
@@ -2695,6 +2695,7 @@
   sort: vainqueur
   motif: Gagnant
   votes_recus: 2
+  classement: 1
   sources:
     age: fandom
     profession: fandom
@@ -2707,6 +2708,7 @@
     couleur: saisons.yml
     genre: recoupement sur le prenom
     localisation: fandom (page individuelle)
+    classement: premier par definition (vainqueur)
 - id: aude-reant
   nom: Aude
   nom_complet: Aude Réant
@@ -4446,6 +4448,7 @@
   sort: vainqueur
   motif: Gagnants
   votes_recus: 2
+  classement: 1
   sources:
     age: fandom
     profession: fandom
@@ -4457,6 +4460,7 @@
     votes_recus: fandom
     couleur: saisons.yml
     genre: arbitrage manuel
+    classement: premier par definition (vainqueur)
 - id: jade-handi
   nom: Jade
   nom_complet: Jade Handi
@@ -5906,6 +5910,7 @@
   sort: vainqueur
   motif: Gagnante
   votes_recus: 3
+  classement: 1
   sources:
     genre: fandom
     age: fandom
@@ -5918,6 +5923,7 @@
     votes_recus: fandom
     couleur: saisons.yml
     localisation: fandom (page individuelle)
+    classement: premier par definition (vainqueur)
 - id: frederique-brugiroux
   nom: Frédérique
   nom_complet: Frédérique Brugiroux
@@ -7245,6 +7251,7 @@
   sort: vainqueur
   motif: Gagnant
   votes_recus: 0
+  classement: 1
   sources:
     age: fandom
     profession: fandom
@@ -7257,6 +7264,7 @@
     localisation: fandom
     couleur: saisons.yml
     genre: arbitrage manuel
+    classement: premier par definition (vainqueur)
 - id: melanie-boimare
   nom: Mélanie
   nom_complet: Mélanie Boimare
@@ -19594,6 +19602,7 @@
   sort: vainqueur
   motif: Gagnante
   votes_recus: 4
+  classement: 1
   victoires_collectives: 7
   victoires_individuelles: 1
   sources:
@@ -19611,6 +19620,7 @@
     votes_recus: fandom
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    classement: premier par definition (vainqueur)
 - id: francoise-fournier-grigis
   nom: Françoise
   nom_complet: Françoise Fournier-Grigis
@@ -21518,6 +21528,7 @@
   sort: vainqueur
   motif: Gagnant
   votes_recus: 2
+  classement: 1
   sources:
     age: fandom
     tribu: fandom
@@ -21529,6 +21540,7 @@
     edition_origine: fandom
     couleur: saisons.yml
     genre: recoupement sur le prenom
+    classement: premier par definition (vainqueur)
     profession: reprise de sa participation de 2007
 - id: fabienne-lefebvre-trehoux
   nom: Fabienne

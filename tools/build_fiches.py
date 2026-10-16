@@ -249,6 +249,28 @@ def fiches_des_saisons(parts, saisons, conseils, epreuves, audiences, classement
                 "rang": r.get("rang"),
             })
         el = [c for c in cons.get(sid) or [] if c.get("type") == "elimination"]
+        # L'EGALITE DU JURY FINAL, quand il y en a eu une. Trois saisons se
+        # sont terminees sur deux vainqueurs -- 2003, 2007 et 2022 -- et
+        # /statistiques/vainqueurs/ le dit depuis toujours (« 29 vainqueurs,
+        # plus que de saisons »). Les fiches de saison, elles, nommaient les
+        # deux personnes sans dire pourquoi elles etaient deux.
+        #
+        # Le decompte n'est PAS ecrit ici : il est lu dans les conseils de
+        # jury, un par finaliste, chacun portant `votes_pour` et
+        # `votes_exprimes`. On ne pose l'egalite que si les vainqueurs ont
+        # EXACTEMENT le meme nombre de voix -- sinon ce ne serait pas une
+        # egalite, et il vaut mieux ne rien dire que dire a cote.
+        egalite = None
+        vq = [c for c in casting if c["sort"] == "vainqueur"]
+        if len(vq) > 1:
+            jury = {c.get("laureat"): c for c in cons.get(sid) or []
+                    if c.get("type") == "jury" and c.get("laureat")}
+            voix = {jury[v["id"]].get("votes_pour")
+                    for v in vq if v["id"] in jury}
+            jures = {jury[v["id"]].get("votes_exprimes")
+                     for v in vq if v["id"] in jury}
+            if len(voix) == 1 and len(jures) == 1 and None not in voix | jures:
+                egalite = {"voix": voix.pop(), "jures": jures.pop()}
         a = aud.get(sid) or {}
         r = res.get(sid) or {}
         out[sid] = {
@@ -264,6 +286,7 @@ def fiches_des_saisons(parts, saisons, conseils, epreuves, audiences, classement
             "effectif": len(lot),
             "tribus": s.get("tribus") or [],
             "vainqueurs": [c for c in casting if c["sort"] == "vainqueur"],
+            "egalite_jury": egalite,
             "finalistes": [c for c in casting if c["sort"] == "finaliste"],
             "casting": casting,
             "conseils": len(el),
@@ -330,6 +353,21 @@ def ordinal(n):
     return "1er" if n == 1 else f"{n}e"
 
 
+def ordinal_rang(n, genre):
+    """« 1er », mais « 1re » pour une femme. Au-dela, « 2e » ne s'accorde pas.
+
+    Quinze fiches publiaient « Son meilleur parcours : 1er sur 18 [...] ou
+    ELLE gagne la saison » -- et quatre de plus depuis que le rang d'un
+    vainqueur est repare, puisqu'elles passent toutes a 1. La faute est la
+    meme que « le metier de Abdellah » : du francais qu'on n'ecrit pas, et que
+    seule l'echelle du site rend invisible.
+
+    `ordinal()` reste employe pour un JOUR -- « le 1er jour » -- ou le mot
+    accorde est masculin quel que soit le sujet de la phrase.
+    """
+    return accord(genre, "1er", "1re") if n == 1 else ordinal(n)
+
+
 def compte(n, singulier, pluriel):
     return f"{n} {singulier}" if abs(n) < 2 else f"{n} {pluriel}"
 
@@ -394,8 +432,8 @@ def titre_seo_aventurier(e):
 
 def description_seo_aventurier(e, joueurs_classes):
     p = e["participations"]
-    rang = (f"{ordinal(e['rang'])} sur {joueurs_classes} au classement"
-            if e.get("rang") and joueurs_classes else None)
+    rang = (f"{ordinal_rang(e['rang'], e.get('genre'))} sur {joueurs_classes} "
+            f"au classement" if e.get("rang") and joueurs_classes else None)
     if len(p) == 1:
         u = p[0]
         verbe = VERBE_SORT.get(u.get("sort"), "est encore en jeu")
@@ -403,7 +441,7 @@ def description_seo_aventurier(e, joueurs_classes):
         if u.get("jour_sortie"):
             tete += f" le {ordinal(u['jour_sortie'])} jour"
         clauses = [
-            (f"{ordinal(u['classement'])} sur {u['effectif']}"
+            (f"{ordinal_rang(u['classement'], e.get('genre'))} sur {u['effectif']}"
              if u.get("classement") else None),
             (compte(u["epreuves_gagnees"], "épreuve gagnée", "épreuves gagnées")
              if u.get("epreuves_disputees") else None),
@@ -667,7 +705,8 @@ def faq_aventurier(e, joueurs_classes):
     meilleure = min(parts, key=lambda p: (p.get("classement") or 999))
     verbe = VERBE_SORT.get(meilleure.get("sort"), "est encore en jeu")
     if meilleure.get("classement"):
-        reponse = (f"Son meilleur parcours : {ordinal(meilleure['classement'])} sur "
+        reponse = (f"Son meilleur parcours : "
+                   f"{ordinal_rang(meilleure['classement'], genre)} sur "
                    f"{meilleure['effectif']} {_edition(meilleure)}, où {il} {verbe}")
     else:
         # `affichable` et NON `.capitalize()` : celui-ci met la premiere lettre
@@ -685,7 +724,8 @@ def faq_aventurier(e, joueurs_classes):
     if e.get("rang") and joueurs_classes:
         q.append((
             f"Quel est le classement {de_(nom)} parmi les aventuriers de Koh-Lanta ?",
-            f"{ordinal(e['rang'])} sur {joueurs_classes}. Ce classement mesure "
+            f"{ordinal_rang(e['rang'], genre)} sur {joueurs_classes}. Ce classement "
+            f"mesure "
             f"quatre façons de bien jouer — le parcours, les épreuves, la "
             f"discrétion et la lecture du vote — sans jamais regarder qui a gagné.",
         ))
@@ -709,12 +749,16 @@ def faq_saison(e):
     complement, derriere `a_designation` ou `de_designation`, qui contractent
     l'article.
 
-    AUCUN COMPTE DE VAINQUEURS, AUCUNE QUALIFICATION. Trois saisons portent
-    deux noms au champ `vainqueurs` ; la fiche les affiche tous les deux depuis
-    toujours, et la reponse dit exactement la meme chose. Ecrire « ex aequo »
-    serait une these, et les donnees ne la portent pas : sur Bocas del Toro,
-    les deux noms n'ont pas le meme classement. Ecrire « 1 vainqueur » n'est
-    pas mieux -- on ne compte pas ce qu'on nomme.
+    ON NOMME, ON NE COMPTE PAS. « 1 vainqueur » n'a pas de sens quand le nom
+    est juste a cote : on ne compte pas ce qu'on nomme.
+
+    L'EGALITE, EN REVANCHE, SE DIT. Trois saisons portent deux noms au champ
+    `vainqueurs`, et c'est une egalite du jury final : les sources le disent
+    (la page Fandom de Bocas del Toro enumere les trois occurrences -- 2003,
+    2007, 2022 -- et Wikipedia donne « winner = X & Y » avec le partage de la
+    cagnotte), et les conseils de type `jury` du depot comptent les voix. Le
+    decompte vient donc de `egalite_jury`, pose par `fiches_des_saisons`, et
+    n'est ecrit nulle part a la main.
     """
     marque = avec_marque(e["titre"])
     a_elle, d_elle = a_designation(marque), de_designation(marque)
@@ -722,7 +766,26 @@ def faq_saison(e):
 
     noms = [v["nom"] for v in (e.get("vainqueurs") or [])]
     if noms:
-        reponse = f"{_liste(noms)}. La saison a été diffusée en {e['annee']}."
+        reponse = f"{_liste(noms)}."
+        # « EX AEQUO » SE DIT MAINTENANT, PARCE QU'IL EST SOURCE ET COMPTE.
+        # La reserve de la premiere version -- nommer les deux sans qualifier
+        # -- venait du champ `classement`, qui donnait 1 et 2 a Bocas del
+        # Toro. C'etait le classement qui avait tort : l'infobox Fandom ne
+        # sait pas ecrire une egalite et range donc les deux gagnantes. Les
+        # sources, elles, sont nettes et concordantes -- la page de saison
+        # Fandom enumere les trois occurrences (2003, 2007, 2022), Wikipedia
+        # donne « winner = X & Y » avec le partage de la cagnotte -- et les
+        # conseils de jury du depot comptent les voix une par une.
+        #
+        # « N voix contre N » et non « chacune » : deux gagnantes a Bocas del
+        # Toro, deux gagnants au Totem maudit, un de chaque a Palawan. La
+        # formule sans accord est la seule qui tienne pour les trois.
+        egalite = e.get("egalite_jury")
+        if egalite:
+            reponse += (f" Les deux sont ex æquo : {egalite['voix']} voix "
+                        f"contre {egalite['voix']} sur les {egalite['jures']} "
+                        f"du jury final.")
+        reponse += f" La saison a été diffusée en {e['annee']}."
         finalistes = [v["nom"] for v in (e.get("finalistes") or [])]
         if finalistes:
             mot = "Finaliste" if len(finalistes) == 1 else "Finalistes"
