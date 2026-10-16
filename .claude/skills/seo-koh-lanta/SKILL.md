@@ -257,19 +257,25 @@ Un lien de tableau de saison, `[[Lola Besse|Lola]]`, ne prouve pas que la page
 porte ce titre : ce peut etre une REDIRECTION. Onze noms du site en sont une,
 compte sur les 531 :
 
-| Le site publiait | Titre canonique Fandom |
-|---|---|
-| Carinne Fossey Elka | Carinne Elka-Dioza |
-| Charlene Hoffness | Charlene Hoffsess |
-| Fouzi de la Fuente | Fouzi Ould Bouamama |
-| Francois-Xavier Arguillere | Francois-Xavier Renou |
-| Julie Navarro-Camilleri | Julie Navarro |
-| ~~Lola Besse~~ | **Lola Labesse** (adopte) |
-| Marie Boyer | Marie Besnier |
-| Marta Morino | Marta Molino |
-| Matteo Real | Mattéo Real |
-| Nicolas Leoni | Nicolas Roy |
-| Philippe Bizet | Phil Bizet |
+Dix sont adoptees, une seule est refusee :
+
+| Le site publiait | Titre canonique Fandom | |
+|---|---|---|
+| Carinne Fossey Elka | Carinne Elka-Dioza | adopte |
+| Charlene Hoffness | Charlene Hoffsess | adopte |
+| Fouzi de la Fuente | Fouzi Ould Bouamama | adopte |
+| Francois-Xavier Arguillere | Francois-Xavier Renou | adopte |
+| Julie Navarro-Camilleri | Julie Navarro | adopte |
+| Lola Besse | Lola Labesse | adopte |
+| Marie Boyer | Marie Besnier | adopte |
+| Marta Morino | Marta Molino | adopte |
+| Matteo Real | Mattéo Real | adopte, **sans changer d'adresse** |
+| Nicolas Leoni | Nicolas Roy | adopte |
+| Philippe Bizet | Phil Bizet | **REFUSE** |
+
+« Matteo » et « Mattéo » donnent tous deux l'identifiant `matteo-real` : la
+translitteration efface l'accent. Seul le nom affiche bouge, aucune
+redirection n'est necessaire.
 
 **`NOMS_CANONIQUES` dans `fusionner.py` est une TABLE, pas une regle, et il
 faut que cela reste ainsi.** Le titre canonique n'est pas toujours le meilleur
@@ -288,6 +294,27 @@ Changer un nom change l'identifiant, donc l'adresse : voir la section
 precedente pour les trois fichiers qui suivent, et `ANCIENNES_ADRESSES` pour
 garder l'ancienne vivante. **La vignette de partage porte le nom DESSINE** :
 la renommer ne suffit pas, il faut relancer `build_partage.py --tout`.
+
+### `nom_source` : la forme que la source ecrit
+
+**Renommer quelqu'un casse le rattachement de ses bulletins si on ne garde pas
+l'ancienne forme.** Les tableaux de VOTES n'ont pas suivi le renommage du
+wiki : leur libelle sort de l'extraction en « Julie Navarro-Camilleri Julie »
+-- nom complet puis prenom, colles -- et `resoudre()` cherche le plus long
+prefixe qui soit un nom complet connu. Publier « Julie Navarro » lui retirait
+la forme par laquelle ses bulletins se reconnaissaient.
+
+`nom_source` garde donc l'ancienne forme a cote du nom publie, et les DEUX
+index qui rattachent par nom complet la connaissent : `construire_conseils` et
+`finale`. Il figure dans `ORDRE`, sans quoi il ne sort pas de fusionner.
+
+**Le controle qui valide un renommage : le classement ne doit bouger d'AUCUN
+rang.** Un seul bulletin perdu -- celui de Julie a Fidji -- a deplace 380
+scores et 303 rangs, jusqu'a 55 places. Les facettes sont CENTREES sur la
+population : un bulletin de moins deplace la moyenne et l'ecart-type, et le
+score de tout le monde glisse a la troisieme decimale. Rien n'echoue, nulle
+part. Si un renommage fait bouger un rang, c'est qu'un rattachement est
+tombe.
 
 ## Les adresses de saison
 
