@@ -157,6 +157,15 @@ La deuxieme passe n'est pas une precaution : `fusionner` rend son nom de famille
 a un prenom nu, et la page individuelle de cette personne n'est demandee qu'une
 fois ce nom connu.
 
+**La chaine se relance ENTIEREMENT, ou elle derive.** `_data/epreuves.yml` a
+vecu cinq semaines perime : il avait ete ecrit, puis un commit avait enrichi
+`conseils.yml` de cinquante-huit conseils sans relancer `construire_epreuves`
+-- qui lit precisement `conseils.yml`. Cinq saisons etaient donc derivees
+contre une numerotation d'episodes qui n'etait plus la bonne, et le jour ou la
+chaine a ete relancee, dix-neuf epreuves ont disparu et le classement des
+joueurs a bouge sur 420 rangs. Rien n'avait echoue entre-temps. Si une etape
+est relancee, toutes celles qui la suivent le sont aussi.
+
 L'ordre `construire_conseils` puis `construire_epreuves` n'est pas cosmetique
 non plus. Deux pages peuvent decrire les memes epreuves avec deux numerotations
 d'episodes -- Wikipedia en anglais en compte dix-sept au Totem maudit la ou le
