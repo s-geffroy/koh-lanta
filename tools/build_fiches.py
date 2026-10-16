@@ -530,7 +530,8 @@ LIGATURES = {"œ": "oe", "Œ": "OE", "æ": "ae", "Æ": "AE",
 # L'ancienne adresse d'une fiche dont l'identifiant a change, gardee vivante
 # par `jekyll-redirect-from`. Sans elle, tout lien pose ailleurs vers l'ancienne
 # forme tomberait le jour de la bascule -- et on ne le saurait jamais.
-ANCIENNES_ADRESSES = {"frank-leboeuf": "frank-leb-uf"}
+ANCIENNES_ADRESSES = {"frank-leboeuf": "frank-leb-uf",
+                      "lola-labesse": "lola-besse"}
 
 
 def identifiant(nom):

@@ -25403,32 +25403,105 @@ aventuriers:
     score: 0.424
     titres: 0
     voix_recues: 0
-  lola-besse:
+  lola-krast:
     faq:
-    - q: Quel âge avait Lola Besse à Koh-Lanta ?
+    - q: Quel âge avait Lola Krast à Koh-Lanta ?
+      r: 21 ans en 2026 (Les Reliques du destin).
+    - q: Quel est le métier de Lola Krast ?
+      r: Étudiante en sport, profession déclarée au casting.
+    - q: Lola Krast a-t-elle gagné Koh-Lanta ?
+      r: Non. Lola Krast n’a joué qu’une saison, en 2026 (Les Reliques du destin).
+    - q: Combien de fois Lola Krast a-t-elle participé à Koh-Lanta ?
+      r: Une seule fois, en 2026 (Les Reliques du destin).
+    - q: Jusqu’où Lola Krast est-elle allée à Koh-Lanta ?
+      r: 'Son meilleur parcours : 11e sur 20 en 2026 (Les Reliques du destin), où
+        elle sort au conseil le 28e jour.'
+    - q: Quel est le classement de Lola Krast parmi les aventuriers de Koh-Lanta ?
+      r: 97e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
+        les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
+        a gagné.
+    finales: 0
+    genre: f
+    id: lola-krast
+    jour_max: 28
+    jours_total: 28
+    localisation: Moselle
+    naissance: null
+    nb_participations: 1
+    nom: Lola Krast
+    part_top: 0.1
+    participations:
+    - age: 21
+      annee: 2026
+      bulletins_emis: 7
+      classement: 11
+      colliers: 0
+      colliers_joues: 0
+      conseils_assistes: 13
+      conseils_vise: 1
+      couleur: jaune
+      effectif: 20
+      en_cours: false
+      epreuves_disputees: 8
+      epreuves_gagnees: 2
+      epreuves_nommees: []
+      evasion: null
+      jour_sortie: 28
+      justesse_vote: 57.1
+      libelle_sort: Éliminé au conseil
+      lieu: Péninsule de Caramoan
+      localisation: Moselle
+      menace: 0.62
+      natures: []
+      numero: 28
+      profession: Étudiante en sport
+      ratio_epreuves: 25.0
+      saison: s28
+      sort: elimine_conseil
+      speciale: false
+      titre: Les Reliques du destin
+      tribu: Kalao
+      voix_recues: 8
+    prenom: Lola
+    profession: Étudiante en sport
+    rang: 97
+    rang_p05: 49
+    rang_p95: 269
+    rangs:
+      discretion: 34
+      epreuves: 56
+      lecture: 371
+      parcours: 267
+    score: 0.347
+    titres: 0
+    voix_recues: 8
+  lola-labesse:
+    faq:
+    - q: Quel âge avait Lola Labesse à Koh-Lanta ?
       r: 23 ans en 2020 (Les 4 Terres) et 30 ans en 2026 (All Stars).
-    - q: Quel est le métier de Lola Besse ?
+    - q: Quel est le métier de Lola Labesse ?
       r: Étudiante en marketing, profession déclarée au casting.
-    - q: Lola Besse a-t-elle gagné Koh-Lanta ?
+    - q: Lola Labesse a-t-elle gagné Koh-Lanta ?
       r: Non, sur ses 2 participations.
-    - q: Combien de fois Lola Besse a-t-elle participé à Koh-Lanta ?
+    - q: Combien de fois Lola Labesse a-t-elle participé à Koh-Lanta ?
       r: '2 fois : Les 4 Terres (2020) et All Stars (2026).'
-    - q: Jusqu’où Lola Besse est-elle allée à Koh-Lanta ?
+    - q: Jusqu’où Lola Labesse est-elle allée à Koh-Lanta ?
       r: 'Son meilleur parcours : 4e sur 24 en 2020 (Les 4 Terres), où elle sort à
         l''orientation le 39e jour.'
-    - q: Quel est le classement de Lola Besse parmi les aventuriers de Koh-Lanta ?
+    - q: Quel est le classement de Lola Labesse parmi les aventuriers de Koh-Lanta
+        ?
       r: 25e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
         a gagné.
     finales: 0
     genre: f
-    id: lola-besse
+    id: lola-labesse
     jour_max: 39
     jours_total: 39
     localisation: Pas-de-Calais
     naissance: null
     nb_participations: 2
-    nom: Lola Besse
+    nom: Lola Labesse
     part_top: 36.4
     participations:
     - age: 23
@@ -25518,78 +25591,6 @@ aventuriers:
     score: 0.957
     titres: 0
     voix_recues: 10
-  lola-krast:
-    faq:
-    - q: Quel âge avait Lola Krast à Koh-Lanta ?
-      r: 21 ans en 2026 (Les Reliques du destin).
-    - q: Quel est le métier de Lola Krast ?
-      r: Étudiante en sport, profession déclarée au casting.
-    - q: Lola Krast a-t-elle gagné Koh-Lanta ?
-      r: Non. Lola Krast n’a joué qu’une saison, en 2026 (Les Reliques du destin).
-    - q: Combien de fois Lola Krast a-t-elle participé à Koh-Lanta ?
-      r: Une seule fois, en 2026 (Les Reliques du destin).
-    - q: Jusqu’où Lola Krast est-elle allée à Koh-Lanta ?
-      r: 'Son meilleur parcours : 11e sur 20 en 2026 (Les Reliques du destin), où
-        elle sort au conseil le 28e jour.'
-    - q: Quel est le classement de Lola Krast parmi les aventuriers de Koh-Lanta ?
-      r: 97e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
-        les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
-        a gagné.
-    finales: 0
-    genre: f
-    id: lola-krast
-    jour_max: 28
-    jours_total: 28
-    localisation: Moselle
-    naissance: null
-    nb_participations: 1
-    nom: Lola Krast
-    part_top: 0.1
-    participations:
-    - age: 21
-      annee: 2026
-      bulletins_emis: 7
-      classement: 11
-      colliers: 0
-      colliers_joues: 0
-      conseils_assistes: 13
-      conseils_vise: 1
-      couleur: jaune
-      effectif: 20
-      en_cours: false
-      epreuves_disputees: 8
-      epreuves_gagnees: 2
-      epreuves_nommees: []
-      evasion: null
-      jour_sortie: 28
-      justesse_vote: 57.1
-      libelle_sort: Éliminé au conseil
-      lieu: Péninsule de Caramoan
-      localisation: Moselle
-      menace: 0.62
-      natures: []
-      numero: 28
-      profession: Étudiante en sport
-      ratio_epreuves: 25.0
-      saison: s28
-      sort: elimine_conseil
-      speciale: false
-      titre: Les Reliques du destin
-      tribu: Kalao
-      voix_recues: 8
-    prenom: Lola
-    profession: Étudiante en sport
-    rang: 97
-    rang_p05: 49
-    rang_p95: 269
-    rangs:
-      discretion: 34
-      epreuves: 56
-      lecture: 371
-      parcours: 267
-    score: 0.347
-    titres: 0
-    voix_recues: 8
   lola-potabes:
     faq:
     - q: Quel âge avait Lola Potabes à Koh-Lanta ?
@@ -49155,10 +49156,10 @@ saisons:
       classement: 4
       couleur: violet
       genre: f
-      id: lola-besse
+      id: lola-labesse
       jour_sortie: 39
       libelle_sort: Éliminé à l'orientation
-      nom: Lola Besse
+      nom: Lola Labesse
       profession: Étudiante en marketing
       rang: 25
       sort: elimine_orientation
@@ -54018,10 +54019,10 @@ saisons:
       classement: null
       couleur: jaune
       genre: f
-      id: lola-besse
+      id: lola-labesse
       jour_sortie: null
       libelle_sort: Retour dans l'aventure
-      nom: Lola Besse
+      nom: Lola Labesse
       profession: Étudiante en marketing
       rang: 25
       sort: null

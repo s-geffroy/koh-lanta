@@ -7711,8 +7711,8 @@ epreuves:
     genre: h
     age: 26
     csp: sport
-  - personne: Lola Besse
-    id: lola-besse
+  - personne: Lola Labesse
+    id: lola-labesse
     saison: s21
     titre: Les 4 Terres
     annee: 2020
@@ -7775,8 +7775,8 @@ epreuves:
   - personne: François-David Cardonnel
     id: francois-david-cardonnel
     victoires: 7
-  - personne: Lola Besse
-    id: lola-besse
+  - personne: Lola Labesse
+    id: lola-labesse
     victoires: 7
   - personne: Romuald Lafite
     id: romuald-lafite
@@ -7920,8 +7920,8 @@ colliers:
     trouves: 2
     joues: 2
     efficaces: 2
-  - id: lola-besse
-    nom: Lola Besse
+  - id: lola-labesse
+    nom: Lola Labesse
     trouves: 2
     joues: 2
     efficaces: 1
@@ -9582,7 +9582,7 @@ indicateurs:
     epreuves: 37
     epreuves_individuelles: 13
     domination_epreuves: 0.145
-    meilleur_gagnant: lola-besse
+    meilleur_gagnant: lola-labesse
     victoires_du_meilleur: 5
     colliers: 6
     colliers_joues: 5
@@ -10447,8 +10447,8 @@ classement:
         discretion: 19
         lecture: 5
     - rang: 10
-      nom: Lola Besse
-      id: lola-besse
+      nom: Lola Labesse
+      id: lola-labesse
       valeur: 21.2
       brut: 5 / 13
       preuve: 13
@@ -11488,8 +11488,8 @@ classement:
       lecture: 8
     rang_classique: 29
   - rang: 25
-    nom: Lola Besse
-    id: lola-besse
+    nom: Lola Labesse
+    id: lola-labesse
     score: 0.957
     participations: 1
     titres: 0
@@ -11628,8 +11628,8 @@ classement:
     score: 1.066
     rang_general: 28
   - rang: 23
-    nom: Lola Besse
-    id: lola-besse
+    nom: Lola Labesse
+    id: lola-labesse
     score: 1.031
     rang_general: 25
   - rang: 24
@@ -12656,8 +12656,8 @@ classement:
     rang_p95: 86
     rangs: *id021
   - rang: 25
-    nom: Lola Besse
-    id: lola-besse
+    nom: Lola Labesse
+    id: lola-labesse
     saisons: 1
     titres: 0
     score: 0.957
@@ -22059,9 +22059,9 @@ modeles:
     - x: 2.214
       y: 0.343
       groupe: 1
-      nom: Lola Besse
-      detail: Lola Besse — 18-24 ans, Étudiants
-      id: lola-besse
+      nom: Lola Labesse
+      detail: Lola Labesse — 18-24 ans, Étudiants
+      id: lola-labesse
     - x: 0.629
       y: 0.334
       groupe: 5

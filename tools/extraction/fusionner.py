@@ -78,6 +78,26 @@ COQUILLES = {
     ("sp4", "Phiippe"): "Philippe",
 }
 
+# LES NOMS QUE LES TABLES DE SAISON POINTENT PAR UNE REDIRECTION. Le lien
+# « [[Lola Besse|Lola]] » du tableau d'All Stars ne mene pas a une page
+# intitulee « Lola Besse » : l'API Fandom repond que ce titre REDIRIGE vers
+# « Lola Labesse », et c'est ce que son article ecrit de lui-meme -- « Lola
+# Labesse, nee le 12 mars 1996 ». Le site publiait donc un nom que sa propre
+# source a corrige, dans le H1 comme dans l'adresse.
+#
+# UNE TABLE ET NON UNE REGLE, et c'est delibere. Onze noms du site sont des
+# redirections ; le titre canonique n'est pas toujours le meilleur nom a
+# PUBLIER. « Philippe Bizet » redirige vers « Phil Bizet » : la page est bien
+# la meme personne, mais un diminutif ne remplace pas un prenom dans un H1.
+# Adopter mecaniquement le titre canonique aurait rebaptise onze fiches, dont
+# celle-la. Chaque entree est donc verifiee et voulue.
+#
+# Verifier une redirection, avant d'ajouter une ligne :
+#   action=query&titles=<nom>&redirects=1  sur kohlanta.fandom.com/fr/api.php
+NOMS_CANONIQUES = {
+    "Lola Besse": "Lola Labesse",
+}
+
 # Une tribu nommee par erreur. La legende de la fiche francaise de
 # La Revanche des Heros ecrit « Mawar (jour 1 - 6) » a la teinte #fc5d5d, qui
 # est celle de Nekmao dans cette meme legende -- et « Mawar » est le nom de la
@@ -205,6 +225,12 @@ def fusionner_saison(saison, rows_f, rows_w, rapport, saisons_connues=()):
         fiche["nom"] = nom
         if not fiche.get("nom_complet"):
             fiche["nom_complet"] = nom
+        # Le titre CANONIQUE de la page, quand celui que la table de saison
+        # pointe n'est qu'une redirection vers lui. L'identifiant -- donc
+        # l'adresse de la fiche -- en sort.
+        if fiche["nom_complet"] in NOMS_CANONIQUES:
+            fiche["nom_complet"] = NOMS_CANONIQUES[fiche["nom_complet"]]
+            provenance["nom_complet"] = "titre canonique Fandom (redirection)"
         fiche["saison"] = sid
         fiche["id"] = F.slug(fiche["nom_complet"])
 

@@ -13785,7 +13785,7 @@
   votes_contre: 5
   votes_exprimes: 6
   votes:
-  - votant: lola-besse
+  - votant: lola-labesse
     votant_rattache: true
     cible: marie-france-schieber
     cible_rattachee: true
@@ -13929,7 +13929,7 @@
   votes_contre: 4
   votes_exprimes: 5
   votes:
-  - votant: lola-besse
+  - votant: lola-labesse
     votant_rattache: true
     cible: diane-goulesque-perez
     cible_rattachee: true
@@ -14108,7 +14108,7 @@
     cible: aubin-bligny
     cible_rattachee: true
     annule: false
-  - votant: lola-besse
+  - votant: lola-labesse
     votant_rattache: true
     cible: aubin-bligny
     cible_rattachee: true
@@ -14238,7 +14238,7 @@
     cible: dorian-louvet
     cible_rattachee: true
     annule: true
-  - votant: lola-besse
+  - votant: lola-labesse
     votant_rattache: true
     cible: hadja-cisse
     cible_rattachee: true
@@ -14325,10 +14325,10 @@
     annule: false
   - votant: loic-riowal
     votant_rattache: true
-    cible: lola-besse
+    cible: lola-labesse
     cible_rattachee: true
     annule: false
-  - votant: lola-besse
+  - votant: lola-labesse
     votant_rattache: true
     cible: joaquina-glaud
     cible_rattachee: true
@@ -14345,7 +14345,7 @@
     annule: false
   - votant: ava-maisini
     votant_rattache: true
-    cible: lola-besse
+    cible: lola-labesse
     cible_rattachee: true
     annule: false
   - votant: fabrice-pietrzak
@@ -14365,18 +14365,18 @@
     annule: false
   - votant: jody-favier
     votant_rattache: true
-    cible: lola-besse
+    cible: lola-labesse
     cible_rattachee: true
     annule: false
   - votant: joaquina-glaud
     votant_rattache: true
-    cible: lola-besse
+    cible: lola-labesse
     cible_rattachee: true
     annule: false
   - votant: null
     votant_rattache: false
     mecanique: Vote noir
-    cible: lola-besse
+    cible: lola-labesse
     cible_rattachee: true
     annule: false
 - saison: s21
@@ -14408,7 +14408,7 @@
     cible: angelique-ti
     cible_rattachee: true
     annule: true
-  - votant: lola-besse
+  - votant: lola-labesse
     votant_rattache: true
     cible: jody-favier
     cible_rattachee: true
@@ -14485,7 +14485,7 @@
     cible: brice-petit
     cible_rattachee: true
     annule: false
-  - votant: lola-besse
+  - votant: lola-labesse
     votant_rattache: true
     cible: brice-petit
     cible_rattachee: true
@@ -14563,7 +14563,7 @@
     annule: false
   - votant: brice-petit
     votant_rattache: true
-    cible: lola-besse
+    cible: lola-labesse
     cible_rattachee: true
     annule: false
   - votant: loic-riowal
@@ -14571,7 +14571,7 @@
     cible: ava-maisini
     cible_rattachee: true
     annule: false
-  - votant: lola-besse
+  - votant: lola-labesse
     votant_rattache: true
     cible: ava-maisini
     cible_rattachee: true
@@ -14622,7 +14622,7 @@
     cible: angelique-ti
     cible_rattachee: true
     annule: false
-  - votant: lola-besse
+  - votant: lola-labesse
     votant_rattache: true
     cible: brice-petit
     cible_rattachee: true
@@ -14658,7 +14658,7 @@
   type: elimination
   complet: false
   episode: '14'
-  elimine: lola-besse
+  elimine: lola-labesse
   elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
@@ -14728,7 +14728,7 @@
     cible: alexandra-pornet
     cible_rattachee: true
     annule: false
-  - votant: lola-besse
+  - votant: lola-labesse
     votant_rattache: true
     cible: alexandra-pornet
     cible_rattachee: true
@@ -26463,7 +26463,7 @@
     cible: laure-canevarolo
     cible_rattachee: true
     annule: true
-  - votant: lola-besse
+  - votant: lola-labesse
     votant_rattache: true
     cible: maxime-lubian
     cible_rattachee: true
@@ -26563,7 +26563,7 @@
     cible: laure-canevarolo
     cible_rattachee: true
     annule: false
-  - votant: lola-besse
+  - votant: lola-labesse
     votant_rattache: true
     cible: maxime-lubian
     cible_rattachee: true
@@ -26673,7 +26673,7 @@
     cible: moussa-niangane
     cible_rattachee: true
     annule: false
-  - votant: lola-besse
+  - votant: lola-labesse
     votant_rattache: true
     cible: moussa-niangane
     cible_rattachee: true
@@ -26773,7 +26773,7 @@
     cible: jacques-roque
     cible_rattachee: true
     annule: false
-  - votant: lola-besse
+  - votant: lola-labesse
     votant_rattache: true
     cible: jacques-roque
     cible_rattachee: true
@@ -26833,7 +26833,7 @@
   type: elimination
   complet: true
   episode: '4'
-  elimine: lola-besse
+  elimine: lola-labesse
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 7
@@ -26845,27 +26845,27 @@
     annule: false
   - votant: christina-chevry
     votant_rattache: true
-    cible: lola-besse
+    cible: lola-labesse
     cible_rattachee: true
     annule: false
-  - votant: lola-besse
+  - votant: lola-labesse
     votant_rattache: true
     cible: christina-chevry
     cible_rattachee: true
     annule: false
   - votant: nicolas-pretot
     votant_rattache: true
-    cible: lola-besse
+    cible: lola-labesse
     cible_rattachee: true
     annule: false
   - votant: vincent-blier
     votant_rattache: true
-    cible: lola-besse
+    cible: lola-labesse
     cible_rattachee: true
     annule: false
   - votant: yassin-metiri
     votant_rattache: true
-    cible: lola-besse
+    cible: lola-labesse
     cible_rattachee: true
     annule: false
   - votant: charlotte-rasquin
@@ -27147,7 +27147,7 @@
     cible: yassin-metiri
     cible_rattachee: true
     annule: false
-  - votant: lola-besse
+  - votant: lola-labesse
     votant_rattache: true
     cible: vincent-blier
     cible_rattachee: true
