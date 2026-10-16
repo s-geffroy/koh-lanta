@@ -1,6 +1,6 @@
 ---
 name: seo-koh-lanta
-description: Les conventions de referencement du site Koh-Lanta en chiffres - gabarits de titre et de description, regle du H1, maillage des noms propres, controle avant push. A lire avant de toucher un front matter, un gabarit de fiche, _config.yml ou le <head>.
+description: Les conventions de referencement du site Koh-Lanta en chiffres - gabarits de titre et de description, regle du H1, maillage des noms propres, donnees structurees page par page, questions frequentes, identifiants et ligatures, poids des polices, controle avant push. A lire avant de toucher un front matter, un gabarit de fiche, un identifiant, _config.yml ou le <head>.
 ---
 
 # Referencement de « Koh-Lanta en chiffres »
@@ -101,6 +101,15 @@ l'attribution, et une photo republiee sans son auteur ne l'est pas legalement.
 `controler_portraits()` refuse une photo sans credit complet, un fichier absent
 du depot, et un gabarit qui n'afficherait plus `portrait.auteur`.
 
+**Chaque portrait porte `largeur` et `hauteur`, et le gabarit les pose en
+`width`/`height`.** Sans eux la fiche s'affiche puis SAUTE : credit, comptes
+et chiffres descendent d'un coup quand l'image se pose. Cela ne se corrige pas
+en CSS -- les quatorze portraits vont de 500x313 a 500x794, et les recadrer a
+un rapport commun couperait des visages. Les dimensions sont MESUREES sur le
+fichier par Pillow, jamais lues dans la reponse de Commons : l'API renvoie la
+largeur DEMANDEE (`iiurlwidth=480`) quand elle sert un fichier de 500.
+`controler_portraits()` confronte les deux et refuse l'ecart.
+
 **Le nom ne prouve pas l'identite.** Trente et un aventuriers ont un homonyme
 exact sur la Wikipedia francophone -- parmi eux une danseuse ukrainienne et un
 avocat. Un element Wikidata n'est retenu que s'il est un etre humain ET que le
@@ -111,14 +120,61 @@ elements.
 
 ## Les questions frequentes
 
-Six par fiche, ecrites en Python (`faq_aventurier`), VISIBLES sur la page. Ne
-pas en attendre l'affichage enrichi : depuis 2023 Google le reserve aux sites
-gouvernementaux et de sante. C'est le texte de la page qui travaille.
+Sur les deux sortes de fiche, ecrites en Python et VISIBLES sur la page :
+six par aventurier (`faq_aventurier`), cinq a sept par saison
+(`faq_saison`, 231 en tout). Ne pas en attendre l'affichage enrichi : depuis
+2023 Google le reserve aux sites gouvernementaux et de sante. C'est le texte
+de la page qui travaille.
 
-Trois pieges de redaction, deja payes : `_edition()` passe par l'annee pour ne
-pas ecrire « lors de Les Aventuriers » ; `de_()` elide devant voyelle, sinon
-138 fiches publiaient « le metier de Abdellah » ; et `.capitalize()` minuscule
-les noms propres -- ne jamais l'employer sur une phrase qui en contient.
+**Un titre de saison ne se met JAMAIS en sujet d'un verbe.** « Combien de
+jours a dure Les Aventuriers de Koh-Lanta ? » demanderait un accord par
+titre. Il reste complement, derriere `a_designation()` ou `de_designation()`
+qui contractent l'article : « aux Aventuriers de Koh-Lanta », « des
+Aventuriers de Koh-Lanta ». Une seule saison sur 34 declenche la contraction
+-- la premiere, la seule dont le titre porte deja la marque et n'est donc pas
+prefixe par `avec_marque()`.
+
+**On ne qualifie pas ce que les donnees ne disent pas.** Trois saisons
+portent deux noms au champ `vainqueurs` ; la reponse les nomme tous les deux,
+comme la fiche. « Ex aequo » serait une these : sur Bocas del Toro les deux
+noms n'ont pas le meme classement. « 1 vainqueur » n'est pas mieux -- on ne
+compte pas ce qu'on nomme.
+
+Trois pieges de redaction, deja payes sur les aventuriers : `_edition()` passe
+par l'annee pour ne pas ecrire « lors de Les Aventuriers » ; `de_()` elide
+devant voyelle, sinon 138 fiches publiaient « le metier de Abdellah » ; et
+`.capitalize()` minuscule les noms propres -- ne jamais l'employer sur une
+phrase qui en contient.
+
+## Les nombres se mettent en forme en Python
+
+Liquid n'a pas de filtre de milliers, et ce depot ne calcule pas dans un
+gabarit. Les audiences sortaient donc brutes : « 8127000 telespectateurs »,
+« 39.5 % ». Les champs `_texte` (`audience_moyenne_texte`,
+`audience_pdm_texte`...) sont fabriques par `milliers()` et `decimal()` dans
+`tools/build_fiches.py` ; le gabarit n'affiche plus que ceux-la. L'espace est
+insecable, la virgule decimale est francaise, et un entier perd son zero
+-- « 37 ans », pas « 37,0 ans ».
+
+## Les donnees structurees, page par page
+
+`_includes/donnees-structurees.html`, lu dans le `<head>` de toutes les pages.
+Acces par cle uniquement, jamais de calcul : le site ne peut pas etre essaye
+avant le push.
+
+| Page | Ce qui est pose EN PLUS de jekyll-seo-tag |
+|---|---|
+| Fiche aventurier | `ProfilePage` + `Person`, fil d'Ariane, `FAQPage` |
+| Fiche saison | `TVSeason`, fil d'Ariane, `FAQPage` |
+| Page d'epreuve | fil d'Ariane |
+| Les 27 pages d'analyse | fil d'Ariane, sur test de `page.url` |
+| Accueil | **rien** : le greffon y emet deja `WebSite` et non `WebPage` |
+
+Le test des pages d'analyse porte sur `page.url` et non sur une cle de front
+matter : rien a poser sur 27 fichiers, et rien a regler dans `defaults:`, dont
+la portee `path:` se compare par PREFIXE -- « statistiques » y attrape aussi
+`statistiques.md`. Cette page-la s'exclut explicitement : son fil se reduirait
+a « Accueil > Les statistiques », dont le dernier maillon serait elle-meme.
 
 ## Les pages d'epreuve
 
@@ -128,6 +184,33 @@ epreuves ayant au moins cinq apparitions ET quatre vainqueurs nommes -- 19 sur
 sur 14,3 % des cas ; publier les 53 donnerait des coquilles vides, ce qu'un
 moteur compte contre le site ENTIER. Si le seuil bouge, la page /epreuves/ dit
 le nombre et sa raison : la mettre a jour aussi.
+
+## Les identifiants : la ligature qu'on perd
+
+`unicodedata.normalize("NFKD", ...)` suivi d'un filtre ASCII decompose « e »
+accentue en « e » plus un accent, et garde le « e ». Une LIGATURE n'est pas
+une lettre accentuee : NFKD la laisse telle quelle, et le filtre l'efface.
+D'ou /aventuriers/frank-leb-uf/, un nom qui avalait sa propre lettre.
+
+La table `LIGATURES` est posee aux DEUX endroits qui fabriquent un
+identifiant, et il faut penser aux deux : `slug()` dans
+`tools/extraction/parse_fandom.py`, d'ou viennent les ids des personnes, et
+`identifiant()` dans `tools/build_fiches.py`, qui nomme les epreuves et les
+saisons.
+
+**Un identifiant se retrouve dans des NOMS DE FICHIER.** Le changer en
+demande trois renommages, et le premier s'est signale a l'execution : le
+wikitexte de la page individuelle
+(`specs/sources/personnes/<id>.fandom.wiki`) n'etant plus trouve, la
+regeneration a rendu une fiche amputee de sa localisation, de son parcours et
+de son classement. Les deux autres sont le portrait Commons
+(`assets/portraits/<id>.jpg`) et la vignette de partage
+(`assets/partage/aventuriers/<id>.png`). Apres renommage, `fusionner.py` ne
+doit plus changer qu'UNE ligne par fichier : verifier le diff, c'est la seule
+preuve.
+
+L'ancienne adresse reste vivante par `ANCIENNES_ADRESSES` dans
+`build_fiches.py`, qui ecrit le `redirect_from` de la fiche.
 
 ## Les adresses de saison
 
@@ -161,6 +244,21 @@ Tant que le site vit sous `s-geffroy.github.io/koh-lanta/`, son `robots.txt`
 est servi sous `/koh-lanta/robots.txt` et **aucun robot ne le lit** : ils ne
 lisent que la racine du domaine, qui repond 404. Le sitemap ne se declare donc
 que par Search Console, a la main.
+
+## Les polices sont sur le chemin critique
+
+La feuille Google Fonts du `<head>` est bloquante et vient d'un autre
+domaine : tout ce qu'elle traine retarde le premier rendu de CHAQUE page.
+Avant d'ajouter une graisse, un style ou un axe, verifier qu'il sert
+reellement -- et mesurer, le sous-ensemble `latin` est le seul qu'une page en
+francais telecharge.
+
+Fraunces demandait l'axe SOFT en plage `0..100` alors que la feuille du site
+le fixe a 0 partout : 121 Ko au lieu de 67. Il est desormais EPINGLE a 0 dans
+l'URL, et Google sert le meme fichier octet pour octet qu'en retirant l'axe.
+Les autres demandes servent, verifiees une par une : opsz varie de 40 a 144,
+WONK bascule de 0 a 1, les quatre graisses sont employees, et l'italique de
+Public Sans porte les `<em>` et `<i>`.
 
 ## Le controle, avant chaque push
 
