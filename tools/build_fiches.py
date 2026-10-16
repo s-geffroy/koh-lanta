@@ -670,7 +670,14 @@ def faq_aventurier(e, joueurs_classes):
         reponse = (f"Son meilleur parcours : {ordinal(meilleure['classement'])} sur "
                    f"{meilleure['effectif']} {_edition(meilleure)}, où {il} {verbe}")
     else:
-        reponse = f"{_edition(meilleure).capitalize()}, où {il} {verbe}"
+        # `affichable` et NON `.capitalize()` : celui-ci met la premiere lettre
+        # en capitale et MINUSCULE TOUT LE RESTE. « en 2007 (Palawan) »
+        # devenait « En 2007 (palawan) », et c'est ce qui etait publie sur les
+        # 43 fiches qui passent par cette branche -- celles dont aucune
+        # participation ne porte de classement. « (viêtnam) », « (la revanche
+        # des 4 terres) » : le piege est deja ecrit dans la competence du
+        # projet, il manquait seulement ici.
+        reponse = f"{affichable(_edition(meilleure))}, où {il} {verbe}"
     if meilleure.get("jour_sortie"):
         reponse += f" le {ordinal(meilleure['jour_sortie'])} jour"
     q.append((f"Jusqu’où {nom} est-{il} {alle} à Koh-Lanta ?", reponse + "."))

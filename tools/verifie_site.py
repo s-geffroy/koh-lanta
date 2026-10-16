@@ -647,6 +647,88 @@ RE_YAML_SCALAIRE = re.compile(r"^\s*(?:-\s+)?(?:[A-Za-z_][A-Za-z0-9_]*:\s+)?"
                               r"(?P<valeur>[^\s'\"#|>&*].*?)\s*$")
 
 
+# Les cles de _data/fiches.yml et du front matter qui portent de la PROSE.
+# Le controle ci-dessous ne regarde que celles-la : un titre de saison en
+# minuscules est fautif dans une phrase, et parfaitement normal dans un
+# identifiant -- l'adresse d'une saison EST « koh-lanta-palawan ». Chercher
+# dans le texte brut du fichier confondait les deux, et le premier essai a
+# signale les 34 slugs avant de signaler la vraie faute.
+CLES_PROSE = ("q", "r", "title", "description", "chapeau", "libelle_sort")
+
+
+def controler_titres_minuscules(c):
+    """Refuse un titre de saison publie dans une autre casse que la sienne.
+
+    `.capitalize()` met la premiere lettre en capitale et MINUSCULE TOUT LE
+    RESTE. Employe sur une phrase qui contient un nom propre, il le detruit :
+    « en 2007 (Palawan) » devenait « En 2007 (palawan) ». C'etait publie sur
+    43 fiches -- « (viêtnam) », « (la revanche des 4 terres) » -- et rien ne
+    le signalait : la page s'affichait, le front matter etait valide, et la
+    faute ne se voit qu'en lisant la phrase.
+
+    Le controle ne cherche pas l'appel fautif dans le code -- il y en aura
+    d'autres, et la competence du projet le rappelle deja. Il cherche le
+    RESULTAT : un titre de saison, tel que _data/saisons.yml l'ecrit, present
+    dans un texte publie avec une casse differente.
+    """
+    chemin = os.path.join(RACINE, "_data", "saisons.yml")
+    if not os.path.exists(chemin):
+        return
+    saisons = yaml.safe_load(open(chemin, encoding="utf-8")) or []
+    titres = sorted({s["titre"] for s in saisons
+                     if isinstance(s, dict) and s.get("titre")})
+
+    phrases = []
+
+    def recolter(noeud, origine):
+        if isinstance(noeud, dict):
+            for cle, valeur in sorted(noeud.items()):
+                if cle in CLES_PROSE and isinstance(valeur, str):
+                    phrases.append((origine, valeur))
+                elif isinstance(valeur, (dict, list)):
+                    recolter(valeur, origine)
+        elif isinstance(noeud, list):
+            for valeur in noeud:
+                recolter(valeur, origine)
+
+    fiches = os.path.join(RACINE, "_data", "fiches.yml")
+    if os.path.exists(fiches):
+        recolter(yaml.safe_load(open(fiches, encoding="utf-8")) or {},
+                 "_data/fiches.yml")
+    for dossier in ("aventuriers", "saisons", "epreuves"):
+        chemin_d = os.path.join(RACINE, dossier)
+        for nom in sorted(os.listdir(chemin_d)) if os.path.isdir(chemin_d) else []:
+            if not nom.endswith(".md"):
+                continue
+            texte = open(os.path.join(chemin_d, nom), encoding="utf-8").read()
+            m = RE_FRONT.match(texte)
+            if not m:
+                continue
+            try:
+                recolter(yaml.safe_load(m.group(1)) or {}, f"{dossier}/{nom}")
+            except yaml.YAMLError:
+                continue
+
+    fautes = collections.Counter()
+    exemples = {}
+    for origine, phrase in phrases:
+        for titre in titres:
+            # Deux casses fautives, et aucune n'est le titre : celle que
+            # `.capitalize()` fabrique, et le tout-minuscules.
+            for faux in sorted({titre[:1].upper() + titre[1:].lower(),
+                                titre.lower()}):
+                if faux == titre or faux not in phrase:
+                    continue
+                fautes[titre] += 1
+                exemples.setdefault(titre, (origine, faux, phrase))
+
+    for titre, n in sorted(fautes.items()):
+        origine, faux, phrase = exemples[titre]
+        c.erreur(f"« {faux} » publie a la place de « {titre} », {n} fois "
+                 f"— {origine} : « {phrase[:70]}… » ; un nom propre minuscule, "
+                 f"probablement un `.capitalize()` applique a une phrase")
+
+
 def controler_yaml_ambigu(c):
     """Refuse un scalaire nu que Jekyll relirait comme un nombre."""
     dossier = os.path.join(RACINE, "_data")
@@ -1219,6 +1301,7 @@ def main():
     controler_comptes_annonces(c)
     controler_donnees_structurees(c)
     controler_yaml_ambigu(c)
+    controler_titres_minuscules(c)
     controler_navigation(c, permaliens, gabarits)
     controler_sass(c)
     controler_reproductibilite(c)
