@@ -18,6 +18,7 @@
 {%- assign url_aventuriers = '/aventuriers/' | absolute_url -%}
 {%- assign url_saisons = '/saisons/' | absolute_url -%}
 {%- assign url_epreuves = '/epreuves/' | absolute_url -%}
+{%- assign url_statistiques = '/statistiques/' | absolute_url -%}
 {%- if page.aventurier -%}
   {%- assign a = site.data.fiches.aventuriers[page.aventurier] -%}
   {%- if a -%}
@@ -73,4 +74,30 @@
 {"@type":"ListItem","position":3,"name":{{ x.nom | jsonify }}}]}
 </script>
   {%- endif -%}
+{%- elsif page.url contains '/statistiques/' -%}
+  {%- comment -%}
+    Les vingt-sept pages d'analyse. Elles n'avaient AUCUNE donnee structuree :
+    jekyll-seo-tag y pose un `WebPage` identique, sans fil d'Ariane -- alors
+    que ce sont elles qui visent « statistiques koh lanta » et « classement
+    aventuriers koh lanta ». Un moteur affiche le chemin dans ses resultats
+    quand on le lui donne ; il ne le devine pas depuis l'URL.
+
+    Le test porte sur `page.url` et non sur une cle de front matter : il n'y a
+    rien a poser sur vingt-sept fichiers, et rien a regler dans `defaults:`
+    -- dont la portee `path:` se compare par prefixe et attraperait aussi
+    `statistiques.md`, la page de sommaire. Elle, justement, s'exclut ici :
+    son fil se reduirait a « Accueil > Les statistiques », ou le dernier
+    maillon est la page elle-meme.
+
+    `page.title` est le troisieme maillon. Sur ces pages, `layout: page`
+    l'affiche en H1 : le fil dit donc exactement ce que le visiteur voit.
+  {%- endcomment -%}
+  {%- unless page.url == '/statistiques/' -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Accueil","item":{{ racine | jsonify }}},
+{"@type":"ListItem","position":2,"name":"Les statistiques","item":{{ url_statistiques | jsonify }}},
+{"@type":"ListItem","position":3,"name":{{ page.title | jsonify }}}]}
+</script>
+  {%- endunless -%}
 {%- endif -%}
