@@ -14,17 +14,17 @@
 #     tools/atelier python3 tools/extraction/finale.py --ecrire
 #
 couverture:
-  saisons_au_format: 27
-  vainqueur_des_poteaux_connu: 20
-  part_poteaux: 74.1
-  choix_atteste: 9
-  qualifies_connus: 17
-  saisons_ordre_teste: 5
-  rangs_confirmes: 10
+  saisons_au_format: 26
+  vainqueur_des_poteaux_connu: 19
+  part_poteaux: 73.1
+  choix_atteste: 8
+  qualifies_connus: 16
+  saisons_ordre_teste: 4
+  rangs_confirmes: 9
   rangs_dementis: 0
-  ordre_atteste: 5
-  ordre_croisable: 7
-  ordre_concordant: 7
+  ordre_atteste: 4
+  ordre_croisable: 6
+  ordre_concordant: 6
   saisons_sans_poteaux:
   - s02
   - s08
@@ -322,33 +322,6 @@ lignes:
     choisi: lucie-bertaud
     choix_atteste: true
     autre_finaliste: lucie-bertaud
-  sources:
-    orientation: tableau wikipedia
-    poteaux: tableau wikipedia
-    choix: prose wikipedia
-    ordre: prose wikipedia
-- saison: s24
-  titre: Le Feu sacré
-  annee: 2023
-  speciale: false
-  vainqueur: frederic-khouvilay
-  orientation:
-    elimines:
-    - julie-debever
-    qualifies:
-    - nicolas-pretot
-    - tania-cakarevic
-    - frederic-khouvilay
-    ordre_croise: true
-    rangs_confirmes: 1
-    rangs_dementis: 0
-    ordre_atteste: true
-  poteaux:
-    elimine: nicolas-pretot
-    vainqueur: frederic-khouvilay
-    choisi: tania-cakarevic
-    choix_atteste: true
-    autre_finaliste: tania-cakarevic
   sources:
     orientation: tableau wikipedia
     poteaux: tableau wikipedia

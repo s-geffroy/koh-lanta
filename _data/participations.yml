@@ -12413,26 +12413,26 @@
     couleur: jaune
     jour_debut: 9
     jour_fin: 12
-  jour_sortie: 12
+  jour_sortie: 6
   sort: elimine_conseil
-  motif: Éliminé
+  motif: Éliminé au conseil
   votes_recus: 8
   classement: 18
   victoires_collectives: 0
   victoires_individuelles: 0
   sources:
     genre: wikipedia-fr
+    age: fandom
     profession: wikipedia-fr
     localisation: wikipedia-fr
     tribu: wikipedia-fr
     couleur: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: wikipedia-fr
-    sort: wikipedia-fr
-    motif: wikipedia-fr
-    nom_complet: categorie Fandom de la saison
-    age: fandom (page individuelle)
-    votes_recus: fandom (page individuelle)
+    jour_sortie: fandom
+    sort: fandom
+    motif: fandom
+    nom_complet: fandom
+    votes_recus: fandom
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
@@ -12534,26 +12534,26 @@
     couleur: bleu
     jour_debut: 5
     jour_fin: 18
-  jour_sortie: 18
+  jour_sortie: 3
   sort: elimine_conseil
-  motif: Éliminé
+  motif: Éliminé au conseil
   votes_recus: 5
   classement: 15
   victoires_collectives: 2
   victoires_individuelles: 0
   sources:
     genre: wikipedia-fr
+    age: fandom
     profession: wikipedia-fr
     localisation: wikipedia-fr
     tribu: wikipedia-fr
     couleur: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: wikipedia-fr
-    sort: wikipedia-fr
-    motif: wikipedia-fr
-    nom_complet: categorie Fandom de la saison
-    age: fandom (page individuelle)
-    votes_recus: fandom (page individuelle)
+    jour_sortie: fandom
+    sort: fandom
+    motif: fandom
+    nom_complet: fandom
+    votes_recus: fandom
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
@@ -13482,26 +13482,26 @@
     couleur: rouge
     jour_debut: 12
     jour_fin: 22
-  jour_sortie: 22
+  jour_sortie: 3
   sort: elimine_conseil
-  motif: Éliminée
+  motif: Éliminée au conseil
   votes_recus: 8
   classement: 15
   victoires_collectives: 2
   victoires_individuelles: 0
   sources:
     genre: wikipedia-fr
+    age: fandom
     profession: wikipedia-fr
     localisation: wikipedia-fr
     tribu: wikipedia-fr
     couleur: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: wikipedia-fr
-    sort: wikipedia-fr
-    motif: wikipedia-fr
-    nom_complet: categorie Fandom de la saison
-    age: fandom (page individuelle)
-    votes_recus: fandom (page individuelle)
+    jour_sortie: fandom
+    sort: fandom
+    motif: fandom
+    nom_complet: fandom
+    votes_recus: fandom
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
@@ -16314,10 +16314,10 @@
     couleur: jaune
     jour_debut: 18
     jour_fin: 21
-  jour_sortie: 21
+  jour_sortie: 15
   sort: elimine_conseil
-  motif: Éliminé
-  votes_recus: 3
+  motif: Éliminé au conseil
+  votes_recus: 10
   classement: 13
   victoires_collectives: 5
   victoires_individuelles: 0
@@ -16329,11 +16329,11 @@
     tribu: wikipedia-fr
     couleur: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: wikipedia-fr
-    sort: wikipedia-fr
-    motif: wikipedia-fr
-    nom_complet: categorie Fandom de la saison
-    votes_recus: fandom (page individuelle)
+    jour_sortie: fandom
+    sort: fandom
+    motif: fandom
+    nom_complet: fandom
+    votes_recus: fandom
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
@@ -16635,9 +16635,9 @@
     jour_debut: 10
     jour_fin: 23
   jour_sortie: 23
-  sort: elimine_conseil
-  motif: Éliminé
-  votes_recus: 2
+  sort: elimine_ambassadeurs
+  motif: Éliminé aux ambassadeurs
+  votes_recus: 5
   classement: 5
   victoires_collectives: 7
   victoires_individuelles: 2
@@ -16649,11 +16649,11 @@
     tribu: wikipedia-fr
     couleur: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: wikipedia-fr
-    sort: wikipedia-fr
-    motif: wikipedia-fr
-    nom_complet: categorie Fandom de la saison
-    votes_recus: fandom (page individuelle)
+    jour_sortie: fandom
+    sort: fandom
+    motif: fandom
+    nom_complet: fandom
+    votes_recus: fandom
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
@@ -16763,10 +16763,10 @@
     couleur: jaune
     jour_debut: 15
     jour_fin: 23
-  jour_sortie: 40
-  sort: finaliste
-  motif: Finaliste
-  votes_recus: null
+  jour_sortie: 12
+  sort: elimine_conseil
+  motif: Eliminée au conseil
+  votes_recus: 36
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -16775,10 +16775,11 @@
     tribu: wikipedia-fr
     couleur: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: dernier jour de la saison (finale)
-    sort: wikipedia-fr
-    motif: wikipedia-fr
-    nom_complet: rattache a son autre participation
+    jour_sortie: fandom
+    sort: fandom
+    motif: fandom
+    nom_complet: fandom
+    votes_recus: fandom
 - id: frederic-khouvilay
   nom: Frédéric
   nom_complet: Frédéric Khouvilay
@@ -23226,7 +23227,7 @@
   nom_complet: Jérémy Raffin
   saison: sp5
   genre: h
-  age: 28
+  age: 27
   profession: Blogueur
   localisation: Isère
   edition_origine: null
@@ -23237,26 +23238,26 @@
     couleur: rouge
     jour_debut: 1
     jour_fin: 17
-  jour_sortie: 17
+  jour_sortie: 18
   sort: elimine_conseil
-  motif: Éliminé
-  votes_recus: 11
+  motif: Éliminé au conseil
+  votes_recus: 17
   classement: 3
   victoires_collectives: 9
   victoires_individuelles: 2
   sources:
     genre: wikipedia-fr
+    age: fandom
     profession: wikipedia-fr
     localisation: wikipedia-fr
     tribu: wikipedia-fr
     couleur: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: wikipedia-fr
-    sort: wikipedia-fr
-    motif: wikipedia-fr
-    nom_complet: rattache a son autre participation
-    age: fandom (page individuelle)
-    votes_recus: fandom (page individuelle)
+    jour_sortie: fandom
+    sort: fandom
+    motif: fandom
+    nom_complet: fandom
+    votes_recus: fandom
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
@@ -23806,26 +23807,26 @@
     couleur: jaune
     jour_debut: 13
     jour_fin: 15
-  jour_sortie: 15
+  jour_sortie: 10
   sort: elimine_conseil
-  motif: Éliminé
+  motif: Éliminé au conseil
   votes_recus: 6
   classement: 9
   victoires_collectives: 2
   victoires_individuelles: 4
   sources:
     genre: wikipedia-fr
+    age: fandom
     profession: wikipedia-fr
     localisation: wikipedia-fr
     tribu: wikipedia-fr
     couleur: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: wikipedia-fr
-    sort: wikipedia-fr
-    motif: wikipedia-fr
-    nom_complet: rattache a son autre participation
-    age: fandom (page individuelle)
-    votes_recus: fandom (page individuelle)
+    jour_sortie: fandom
+    sort: fandom
+    motif: fandom
+    nom_complet: fandom
+    votes_recus: fandom
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
@@ -23834,7 +23835,7 @@
   nom_complet: Jessica Potel
   saison: sp6
   genre: f
-  age: 36
+  age: 35
   profession: Technicienne en apnée du sommeil
   localisation: Essonne
   edition_origine: null
@@ -23849,28 +23850,29 @@
     couleur: rouge
     jour_debut: 10
     jour_fin: 15
-  jour_sortie: 15
+  jour_sortie: 9
   sort: elimine_conseil
-  motif: Éliminée
-  votes_recus: null
+  motif: Éliminée à une épreuve éliminatoire
+  votes_recus: 6
   classement: 8
   victoires_collectives: 2
   victoires_individuelles: 1
   sources:
     genre: wikipedia-fr
+    age: fandom
     profession: wikipedia-fr
     localisation: wikipedia-fr
     tribu: wikipedia-fr
     couleur: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: wikipedia-fr
-    sort: wikipedia-fr
-    motif: wikipedia-fr
-    nom_complet: categorie Fandom de la saison
+    jour_sortie: fandom
+    sort: fandom
+    motif: fandom
+    nom_complet: fandom
+    votes_recus: fandom
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
-    age: deduit de sa participation de 2015
 - id: eric-peyrache
   nom: Éric
   nom_complet: Eric Peyrache
@@ -24531,7 +24533,7 @@
   age: 36
   profession: Gérante d'un café-concert
   localisation: Manche
-  edition_origine: null
+  edition_origine: Pacifique, Le Retour des Héros, Le Combat des Héros
   tribu: Lanta-naï
   couleur: jaune
   parcours:
@@ -24541,7 +24543,7 @@
     jour_fin: 16
   jour_sortie: 16
   sort: elimine_conseil
-  motif: Éliminée
+  motif: Éliminée au conseil
   votes_recus: 22
   classement: 12
   victoires_collectives: 4
@@ -24551,14 +24553,15 @@
     tribu: wikipedia-fr
     couleur: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: wikipedia-fr
-    sort: wikipedia-fr
-    motif: wikipedia-fr
-    nom_complet: categorie Fandom de la saison
+    jour_sortie: fandom
+    sort: fandom
+    motif: fandom
+    nom_complet: fandom
+    votes_recus: fandom
+    edition_origine: fandom
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
     age: fandom (page individuelle)
-    votes_recus: fandom (page individuelle)
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
@@ -24888,7 +24891,7 @@
   age: 40
   profession: Fauconnier
   localisation: Pyrénées-Orientales
-  edition_origine: null
+  edition_origine: Malaisie
   tribu: Tribu des hommes
   couleur: bleu
   parcours:
@@ -24912,27 +24915,28 @@
     couleur: null
     jour_debut: 33
     jour_fin: 35
-  jour_sortie: 35
+  jour_sortie: 3
   sort: elimine_conseil
-  motif: Éliminé
+  motif: Éliminé au conseil
   votes_recus: 13
   classement: 3
   victoires_collectives: 0
   victoires_individuelles: 9
   sources:
     genre: wikipedia-fr
-    sort: wikipedia-fr
-    motif: wikipedia-fr
-    nom_complet: rattache a son autre participation
+    jour_sortie: fandom
+    sort: fandom
+    motif: fandom
+    nom_complet: fandom
+    votes_recus: fandom
+    edition_origine: fandom
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
     age: fandom (page individuelle)
-    votes_recus: fandom (page individuelle)
     parcours: fandom (page individuelle)
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
-    jour_sortie: fandom (page individuelle)
     tribu: premiere etape du parcours
     couleur: premiere etape du parcours
 - id: laurent-maistret
@@ -25015,188 +25019,6 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
-- id: camille-sold
-  nom: Camille
-  nom_complet: Camille Sold
-  saison: sp8
-  genre: f
-  age: 32
-  profession: Étudiante en STAPS
-  localisation: Bas-Rhin
-  edition_origine: Malaisie
-  tribu: Blanc
-  couleur: null
-  parcours: null
-  jour_sortie: null
-  sort: null
-  motif: Encore en jeu
-  votes_recus: 0
-  sources:
-    genre: wikipedia-fr
-    age: wikipedia-fr
-    tribu: fandom
-    motif: fandom
-    nom_complet: fandom
-    votes_recus: fandom
-    edition_origine: fandom
-    localisation: fandom (page individuelle)
-    profession: fandom (page individuelle)
-- id: charlotte-rasquin
-  nom: Charlotte
-  nom_complet: Charlotte Rasquin
-  saison: sp8
-  genre: f
-  age: 30
-  profession: Médiatrice jeunesse
-  localisation: Belgique
-  edition_origine: La Tribu Maudite
-  tribu: Cyan
-  couleur: null
-  parcours: null
-  jour_sortie: null
-  sort: null
-  motif: Encore en jeu
-  votes_recus: 0
-  sources:
-    genre: wikipedia-fr
-    age: wikipedia-fr
-    tribu: fandom
-    motif: fandom
-    nom_complet: fandom
-    votes_recus: fandom
-    edition_origine: fandom
-    localisation: fandom (page individuelle)
-    profession: fandom (page individuelle)
-- id: christina-chevry
-  nom: Christina
-  nom_complet: Christina Chevry
-  saison: sp8
-  genre: f
-  age: 40
-  profession: Serveuse
-  localisation: Bouches-du-Rhône
-  edition_origine: Palau, Le Choc des Héros, La Nouvelle Édition
-  tribu: Rose
-  couleur: null
-  parcours: null
-  jour_sortie: null
-  sort: null
-  motif: Encore en jeu
-  votes_recus: 0
-  sources:
-    genre: wikipedia-fr
-    age: wikipedia-fr
-    tribu: fandom
-    motif: fandom
-    nom_complet: fandom
-    votes_recus: fandom
-    edition_origine: fandom
-    localisation: fandom (page individuelle)
-    profession: fandom (page individuelle)
-- id: clementine-jullien
-  nom: Clémentine
-  nom_complet: Clémentine Jullien
-  saison: sp8
-  genre: f
-  age: 34
-  profession: Entraîneuse de badminton
-  localisation: Haute-Savoie
-  edition_origine: Cambodge, Le Combat des Héros, La Légende
-  tribu: Gris
-  couleur: null
-  parcours: null
-  jour_sortie: null
-  sort: null
-  motif: Encore en jeu
-  votes_recus: 0
-  sources:
-    genre: wikipedia-fr
-    age: wikipedia-fr
-    tribu: fandom
-    motif: fandom
-    nom_complet: fandom
-    votes_recus: fandom
-    edition_origine: fandom
-    localisation: fandom (page individuelle)
-    profession: fandom (page individuelle)
-- id: dorian-louvet
-  nom: Dorian
-  nom_complet: Dorian Louvet
-  saison: sp8
-  genre: h
-  age: 36
-  profession: Contrôleur de train
-  localisation: Calvados
-  edition_origine: Les 4 Terres
-  tribu: Orange
-  couleur: null
-  parcours: null
-  jour_sortie: null
-  sort: null
-  motif: Encore en jeu
-  votes_recus: 0
-  sources:
-    genre: wikipedia-fr
-    age: wikipedia-fr
-    tribu: fandom
-    motif: fandom
-    nom_complet: fandom
-    votes_recus: fandom
-    edition_origine: fandom
-    localisation: fandom (page individuelle)
-    profession: fandom (page individuelle)
-- id: freddy-boucher
-  nom: Freddy
-  nom_complet: Freddy Boucher
-  saison: sp8
-  genre: h
-  age: 41
-  profession: Ingénieur
-  localisation: Nord
-  edition_origine: Palau, Le Choc des Héros, La Revanche des Héros, La Nouvelle Édition, La Légende
-  tribu: Rose
-  couleur: null
-  parcours: null
-  jour_sortie: null
-  sort: null
-  motif: Encore en jeu
-  votes_recus: 0
-  sources:
-    genre: wikipedia-fr
-    age: wikipedia-fr
-    tribu: fandom
-    motif: fandom
-    nom_complet: fandom
-    votes_recus: fandom
-    edition_origine: fandom
-    localisation: fandom (page individuelle)
-    profession: fandom (page individuelle)
-- id: jacques-roque
-  nom: Jacques
-  nom_complet: Jacques Roque
-  saison: sp8
-  genre: h
-  age: 40
-  profession: Danseur
-  localisation: Charente-Maritime
-  edition_origine: La Tribu Maudite
-  tribu: Cyan
-  couleur: null
-  parcours: null
-  jour_sortie: null
-  sort: null
-  motif: Encore en jeu
-  votes_recus: 0
-  sources:
-    genre: wikipedia-fr
-    age: wikipedia-fr
-    tribu: fandom
-    motif: fandom
-    nom_complet: fandom
-    votes_recus: fandom
-    edition_origine: fandom
-    localisation: fandom (page individuelle)
-    profession: fandom (page individuelle)
 - id: joana-callico
   nom: Joana
   nom_complet: Joana Callico
@@ -25231,92 +25053,6 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
-- id: laure-canevarolo
-  nom: Laure
-  nom_complet: Laure Canevarolo
-  saison: sp8
-  genre: f
-  age: 31
-  profession: Agricultrice
-  localisation: Doubs
-  edition_origine: Les Armes Secrètes
-  tribu: Bleu
-  couleur: null
-  parcours: null
-  jour_sortie: null
-  sort: null
-  motif: Encore en jeu
-  votes_recus: 17
-  sources:
-    genre: wikipedia-fr
-    age: wikipedia-fr
-    tribu: fandom
-    motif: fandom
-    nom_complet: fandom
-    votes_recus: fandom
-    edition_origine: fandom
-    localisation: fandom (page individuelle)
-    profession: fandom (page individuelle)
-- id: lola-besse
-  nom: Lola
-  nom_complet: Lola Besse
-  saison: sp8
-  genre: f
-  age: 30
-  profession: Étudiante en marketing
-  localisation: Pas-de-Calais
-  edition_origine: Les 4 Terres
-  tribu: Orange
-  couleur: null
-  parcours: null
-  jour_sortie: null
-  sort: null
-  motif: Encore en jeu
-  votes_recus: 0
-  sources:
-    genre: wikipedia-fr
-    age: wikipedia-fr
-    tribu: fandom
-    motif: fandom
-    nom_complet: fandom
-    votes_recus: fandom
-    edition_origine: fandom
-    localisation: fandom (page individuelle)
-    profession: fandom (page individuelle)
-- id: maxime-lubian
-  nom: Maxime
-  nom_complet: Maxime Lubian
-  saison: sp8
-  genre: h
-  age: 34
-  profession: Responsable communication de la fédération de pêche
-  localisation: Vosges
-  edition_origine: La Revanche des 4 Terres
-  tribu: Violet
-  couleur: null
-  parcours: null
-  jour_sortie: 3
-  sort: elimine_conseil
-  motif: Éliminé au conseil
-  votes_recus: 20
-  classement: 18
-  victoires_collectives: 0
-  victoires_individuelles: 0
-  sources:
-    genre: wikipedia-fr
-    age: wikipedia-fr
-    tribu: fandom
-    jour_sortie: fandom
-    sort: fandom
-    motif: fandom
-    nom_complet: fandom
-    votes_recus: fandom
-    edition_origine: fandom
-    localisation: fandom (page individuelle)
-    profession: fandom (page individuelle)
-    classement: fandom (page individuelle)
-    victoires_collectives: fandom (page individuelle)
-    victoires_individuelles: fandom (page individuelle)
 - id: moussa-niangane
   nom: Moussa
   nom_complet: Moussa Niangane
@@ -25329,7 +25065,7 @@
   tribu: Beige
   couleur: null
   parcours: null
-  jour_sortie: 5
+  jour_sortie: 6
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 12
@@ -25357,7 +25093,7 @@
   tribu: Beige
   couleur: null
   parcours: null
-  jour_sortie: 5
+  jour_sortie: 6
   sort: elimine_conseil
   motif: Éliminée au conseil
   votes_recus: 0
@@ -25373,26 +25109,94 @@
     edition_origine: fandom
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
-- id: nicolas-pretot
-  nom: Nicolas
-  nom_complet: Nicolas Pretot
+- id: jacques-roque
+  nom: Jacques
+  nom_complet: Jacques Roque
   saison: sp8
   genre: h
-  age: 46
-  profession: Entrepreneur
-  localisation: Corse
-  edition_origine: Le Feu Sacré
-  tribu: Vert
+  age: 40
+  profession: Danseur
+  localisation: Charente-Maritime
+  edition_origine: La Tribu Maudite
+  tribu: Cyan
   couleur: null
   parcours: null
-  jour_sortie: null
-  sort: null
-  motif: Encore en jeu
-  votes_recus: 1
+  jour_sortie: 9
+  sort: elimine_conseil
+  motif: Éliminé au conseil
+  votes_recus: 12
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
     tribu: fandom
+    jour_sortie: fandom
+    sort: fandom
+    motif: fandom
+    nom_complet: fandom
+    votes_recus: fandom
+    edition_origine: fandom
+    localisation: fandom (page individuelle)
+    profession: fandom (page individuelle)
+- id: laure-canevarolo
+  nom: Laure
+  nom_complet: Laure Canevarolo
+  saison: sp8
+  genre: f
+  age: 31
+  profession: Agricultrice
+  localisation: Doubs
+  edition_origine: Les Armes Secrètes
+  tribu: Sebako
+  couleur: rouge
+  parcours:
+  - tribu: Sebako
+    couleur: rouge
+    jour_debut: 9
+    jour_fin: 18
+  jour_sortie: 18
+  sort: abandon_medical
+  motif: Abandon médical
+  votes_recus: 17
+  sources:
+    genre: wikipedia-fr
+    age: wikipedia-fr
+    tribu: wikipedia-fr
+    couleur: wikipedia-fr
+    parcours: wikipedia-fr
+    jour_sortie: fandom
+    sort: fandom
+    motif: fandom
+    nom_complet: fandom
+    votes_recus: fandom
+    edition_origine: fandom
+    localisation: fandom (page individuelle)
+    profession: fandom (page individuelle)
+- id: charlotte-rasquin
+  nom: Charlotte
+  nom_complet: Charlotte Rasquin
+  saison: sp8
+  genre: f
+  age: 30
+  profession: Médiatrice jeunesse
+  localisation: Belgique
+  edition_origine: La Tribu Maudite
+  tribu: Taboga
+  couleur: jaune
+  parcours:
+  - tribu: Taboga
+    couleur: jaune
+    jour_debut: 9
+    jour_fin: 14
+  jour_sortie: null
+  sort: null
+  motif: Éliminée au conseil
+  votes_recus: 5
+  sources:
+    genre: wikipedia-fr
+    age: wikipedia-fr
+    tribu: wikipedia-fr
+    couleur: wikipedia-fr
+    parcours: wikipedia-fr
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -25408,9 +25212,115 @@
   profession: Diététicienne
   localisation: Seine-Saint-Denis
   edition_origine: Le Feu Sacré
-  tribu: Vert
-  couleur: null
-  parcours: null
+  tribu: Sebako
+  couleur: rouge
+  parcours:
+  - tribu: Sebako
+    couleur: rouge
+    jour_debut: 9
+    jour_fin: 18
+  jour_sortie: 18
+  sort: elimine_conseil
+  motif: Éliminée au conseil
+  votes_recus: 7
+  sources:
+    genre: wikipedia-fr
+    age: wikipedia-fr
+    tribu: wikipedia-fr
+    couleur: wikipedia-fr
+    parcours: wikipedia-fr
+    jour_sortie: fandom
+    sort: fandom
+    motif: fandom
+    nom_complet: fandom
+    votes_recus: fandom
+    edition_origine: fandom
+    localisation: fandom (page individuelle)
+    profession: fandom (page individuelle)
+- id: camille-sold
+  nom: Camille
+  nom_complet: Camille Sold
+  saison: sp8
+  genre: f
+  age: 32
+  profession: Étudiante en STAPS
+  localisation: Bas-Rhin
+  edition_origine: Malaisie
+  tribu: Taboga
+  couleur: jaune
+  parcours:
+  - tribu: Taboga
+    couleur: jaune
+    jour_debut: 9
+    jour_fin: 17
+  - tribu: Sebako
+    couleur: rouge
+    jour_debut: 18
+    jour_fin: 19
+  jour_sortie: null
+  sort: null
+  motif: Éliminée au conseil
+  votes_recus: 8
+  sources:
+    genre: wikipedia-fr
+    age: wikipedia-fr
+    tribu: wikipedia-fr
+    couleur: wikipedia-fr
+    parcours: wikipedia-fr
+    motif: fandom
+    nom_complet: fandom
+    votes_recus: fandom
+    edition_origine: fandom
+    localisation: fandom (page individuelle)
+    profession: fandom (page individuelle)
+- id: christina-chevry
+  nom: Christina
+  nom_complet: Christina Chevry
+  saison: sp8
+  genre: f
+  age: 40
+  profession: Serveuse
+  localisation: Bouches-du-Rhône
+  edition_origine: Palau, Le Choc des Héros, La Nouvelle Édition
+  tribu: Taboga
+  couleur: jaune
+  parcours:
+  - tribu: Taboga
+    couleur: jaune
+    jour_debut: 9
+    jour_fin: 19
+  jour_sortie: null
+  sort: null
+  motif: Encore en jeu
+  votes_recus: 4
+  sources:
+    genre: wikipedia-fr
+    age: wikipedia-fr
+    tribu: wikipedia-fr
+    couleur: wikipedia-fr
+    parcours: wikipedia-fr
+    motif: fandom
+    nom_complet: fandom
+    votes_recus: fandom
+    edition_origine: fandom
+    localisation: fandom (page individuelle)
+    profession: fandom (page individuelle)
+- id: clementine-jullien
+  nom: Clémentine
+  nom_complet: Clémentine Jullien
+  saison: sp8
+  genre: f
+  age: 34
+  profession: Entraîneuse de badminton
+  localisation: Haute-Savoie
+  edition_origine: Cambodge, Le Combat des Héros, La Légende
+  tribu: Sebako
+  couleur: rouge
+  parcours:
+  - tribu: Sebako
+    couleur: rouge
+    jour_debut: 9
+    jour_fin: 19
   jour_sortie: null
   sort: null
   motif: Encore en jeu
@@ -25418,7 +25328,175 @@
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
-    tribu: fandom
+    tribu: wikipedia-fr
+    couleur: wikipedia-fr
+    parcours: wikipedia-fr
+    motif: fandom
+    nom_complet: fandom
+    votes_recus: fandom
+    edition_origine: fandom
+    localisation: fandom (page individuelle)
+    profession: fandom (page individuelle)
+- id: dorian-louvet
+  nom: Dorian
+  nom_complet: Dorian Louvet
+  saison: sp8
+  genre: h
+  age: 36
+  profession: Contrôleur de train
+  localisation: Calvados
+  edition_origine: Les 4 Terres
+  tribu: Sebako
+  couleur: rouge
+  parcours:
+  - tribu: Sebako
+    couleur: rouge
+    jour_debut: 9
+    jour_fin: 19
+  jour_sortie: null
+  sort: null
+  motif: Encore en jeu
+  votes_recus: 0
+  sources:
+    genre: wikipedia-fr
+    age: wikipedia-fr
+    tribu: wikipedia-fr
+    couleur: wikipedia-fr
+    parcours: wikipedia-fr
+    motif: fandom
+    nom_complet: fandom
+    votes_recus: fandom
+    edition_origine: fandom
+    localisation: fandom (page individuelle)
+    profession: fandom (page individuelle)
+- id: freddy-boucher
+  nom: Freddy
+  nom_complet: Freddy Boucher
+  saison: sp8
+  genre: h
+  age: 41
+  profession: Ingénieur
+  localisation: Nord
+  edition_origine: Palau, Le Choc des Héros, La Revanche des Héros, La Nouvelle Édition, La Légende
+  tribu: Sebako
+  couleur: rouge
+  parcours:
+  - tribu: Sebako
+    couleur: rouge
+    jour_debut: 9
+    jour_fin: 19
+  jour_sortie: null
+  sort: null
+  motif: Encore en jeu
+  votes_recus: 0
+  sources:
+    genre: wikipedia-fr
+    age: wikipedia-fr
+    tribu: wikipedia-fr
+    couleur: wikipedia-fr
+    parcours: wikipedia-fr
+    motif: fandom
+    nom_complet: fandom
+    votes_recus: fandom
+    edition_origine: fandom
+    localisation: fandom (page individuelle)
+    profession: fandom (page individuelle)
+- id: lola-besse
+  nom: Lola
+  nom_complet: Lola Besse
+  saison: sp8
+  genre: f
+  age: 30
+  profession: Étudiante en marketing
+  localisation: Pas-de-Calais
+  edition_origine: Les 4 Terres
+  tribu: Taboga
+  couleur: jaune
+  parcours:
+  - tribu: Taboga
+    couleur: jaune
+    jour_debut: 9
+    jour_fin: 11
+  jour_sortie: null
+  sort: null
+  motif: Éliminée au conseil
+  votes_recus: 4
+  sources:
+    genre: wikipedia-fr
+    age: wikipedia-fr
+    tribu: wikipedia-fr
+    couleur: wikipedia-fr
+    parcours: wikipedia-fr
+    motif: fandom
+    nom_complet: fandom
+    votes_recus: fandom
+    edition_origine: fandom
+    localisation: fandom (page individuelle)
+    profession: fandom (page individuelle)
+- id: maxime-lubian
+  nom: Maxime
+  nom_complet: Maxime Lubian
+  saison: sp8
+  genre: h
+  age: 35
+  profession: Responsable communication de la fédération de pêche
+  localisation: Vosges
+  edition_origine: La Revanche des 4 Terres
+  tribu: Sebako
+  couleur: rouge
+  parcours:
+  - tribu: Sebako
+    couleur: rouge
+    jour_debut: 9
+    jour_fin: 19
+  jour_sortie: null
+  sort: null
+  motif: Éliminé au conseil
+  votes_recus: 20
+  classement: 18
+  victoires_collectives: 0
+  victoires_individuelles: 0
+  sources:
+    genre: wikipedia-fr
+    age: wikipedia-fr
+    tribu: wikipedia-fr
+    couleur: wikipedia-fr
+    parcours: wikipedia-fr
+    motif: fandom
+    nom_complet: fandom
+    votes_recus: fandom
+    edition_origine: fandom
+    localisation: fandom (page individuelle)
+    profession: fandom (page individuelle)
+    classement: fandom (page individuelle)
+    victoires_collectives: fandom (page individuelle)
+    victoires_individuelles: fandom (page individuelle)
+- id: nicolas-pretot
+  nom: Nicolas
+  nom_complet: Nicolas Pretot
+  saison: sp8
+  genre: h
+  age: 46
+  profession: Entrepreneur
+  localisation: Corse
+  edition_origine: Le Feu Sacré
+  tribu: Taboga
+  couleur: jaune
+  parcours:
+  - tribu: Taboga
+    couleur: jaune
+    jour_debut: 9
+    jour_fin: 18
+  jour_sortie: null
+  sort: null
+  motif: Éliminé au conseil
+  votes_recus: 6
+  sources:
+    genre: wikipedia-fr
+    age: wikipedia-fr
+    tribu: wikipedia-fr
+    couleur: wikipedia-fr
+    parcours: wikipedia-fr
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -25434,17 +25512,23 @@
   profession: Guide naturaliste
   localisation: Pyrénées-Orientales
   edition_origine: Malaisie, La Légende, La Tribu Maudite
-  tribu: Blanc
-  couleur: null
-  parcours: null
+  tribu: Sebako
+  couleur: rouge
+  parcours:
+  - tribu: Sebako
+    couleur: rouge
+    jour_debut: 9
+    jour_fin: 19
   jour_sortie: null
   sort: null
   motif: Encore en jeu
-  votes_recus: 0
+  votes_recus: 1
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
-    tribu: fandom
+    tribu: wikipedia-fr
+    couleur: wikipedia-fr
+    parcours: wikipedia-fr
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -25460,17 +25544,23 @@
   profession: Analyste financier
   localisation: Paris
   edition_origine: Les Armes Secrètes
-  tribu: Bleu
-  couleur: null
-  parcours: null
+  tribu: Taboga
+  couleur: jaune
+  parcours:
+  - tribu: Taboga
+    couleur: jaune
+    jour_debut: 9
+    jour_fin: 19
   jour_sortie: null
   sort: null
   motif: Encore en jeu
-  votes_recus: 2
+  votes_recus: 9
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
-    tribu: fandom
+    tribu: wikipedia-fr
+    couleur: wikipedia-fr
+    parcours: wikipedia-fr
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -25486,17 +25576,25 @@
   profession: Électricien
   localisation: Gironde
   edition_origine: Cambodge, Le Combat des Héros
-  tribu: Gris
-  couleur: null
-  parcours: null
-  jour_sortie: null
-  sort: null
-  motif: Encore en jeu
-  votes_recus: 0
+  tribu: Taboga
+  couleur: jaune
+  parcours:
+  - tribu: Taboga
+    couleur: jaune
+    jour_debut: 9
+    jour_fin: 19
+  jour_sortie: 21
+  sort: elimine_conseil
+  motif: Éliminé au conseil
+  votes_recus: 11
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
-    tribu: fandom
+    tribu: wikipedia-fr
+    couleur: wikipedia-fr
+    parcours: wikipedia-fr
+    jour_sortie: fandom
+    sort: fandom
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom

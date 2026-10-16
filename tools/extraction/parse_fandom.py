@@ -252,7 +252,7 @@ def parse_row(row, saison_id=None):
     if not cells:
         return None
     corps = "\n".join(cells)
-    if "Tribebox-bw" not in corps:
+    if not RE_LIGNE_CASTING.search(corps):
         return None
 
     # --- tribu d'origine : la Tribebox-bw, sinon la premiere Tribebox2
@@ -267,8 +267,9 @@ def parse_row(row, saison_id=None):
                 tribu = nom
                 break
 
-    # --- la cellule du nom : la premiere apres celle qui porte la Tribebox-bw
-    i_photo = next((i for i, c in enumerate(cells) if "Tribebox-bw" in c), 0)
+    # --- la cellule du nom : la premiere apres celle qui porte la PHOTO
+    i_photo = next((i for i, c in enumerate(cells)
+                    if RE_LIGNE_CASTING.search(c)), 0)
     cell_nom = cells[i_photo + 1] if i_photo + 1 < len(cells) else ""
 
     nom_complet = nom_court = None
@@ -344,6 +345,28 @@ def parse_row(row, saison_id=None):
                 depart = texte
                 break
 
+    # UN RETOUR EN JEU, quand la derniere chose que la ligne raconte est un
+    # retour. All Stars 2026 ramene cinq elimines dans l'aventure : leur
+    # cellule de depart garde l'elimination (« Eliminee au conseil, Jour 12 »)
+    # et une cellule SUIVANTE annonce « Retour dans l'aventure, Jour 19 ».
+    # Lue seule, la premiere fait sortir du jeu quelqu'un qui y joue encore.
+    #
+    # On ne tranche pas ici -- `parse_fandom` ne sait pas si la saison est
+    # terminee, et sur une saison finie un retour est suivi d'un second
+    # depart. On RAPPORTE le fait ; fusionner.py en decide.
+    retour = False
+    if depart:
+        apres = False
+        for c in cells[i_photo + 1:]:
+            texte = plain(c)
+            if not apres:
+                apres = depart in texte
+                continue
+            if RE_RETOUR.search(texte):
+                retour = True
+            elif RE_JOUR.search(texte) and texte[:RE_JOUR.search(texte).start()].strip(" -–—:"):
+                retour = False      # un depart plus tardif : il a le dernier mot
+
     sort, genre = classify(depart)
 
     # --- total des votes recus : derniere cellule purement numerique
@@ -365,6 +388,7 @@ def parse_row(row, saison_id=None):
         "tribu": tribu,
         "jour_sortie": jour,
         "sort": sort,
+        "retour_en_jeu": retour,
         "genre": genre,
         "motif": depart or None,
         "votes_recus": votes,
@@ -435,13 +459,34 @@ def extract_table(text, titre=r"Candidats?"):
                 break
     return "\n".join(lignes[debut:fin])
 
+# CE QUI FAIT UNE LIGNE DE CASTING : une PHOTO. Le filtre portait sur le modele
+# `Tribebox-bw`, qui enveloppait la vignette et donnait la tribu d'un seul
+# geste. Les redacteurs du wiki l'ont remplace, sur les lignes des aventuriers
+# revenus en jeu d'All Stars, par une couleur de fond posee a la main :
+#
+#   |rowspan="2" style="...background-color:#F4661B;"|[[Fichier:LolaKLAS.png]]
+#
+# Cinq lignes sur dix-huit ont donc disparu en silence -- celles des cinq
+# revenants, Lola comprise. Rien n'a echoue : la saison a garde ses dix-huit
+# participations, remplies par Wikipedia seule, qui ne donne pas les noms de
+# famille. L'identite de Lola s'en est trouvee dedoublee.
+#
+# Une photo, en revanche, est la sur toutes les lignes et dans toutes les
+# formes du tableau. C'est elle qui sert de signature.
+# Ce qu'une ligne ecrit quand l'aventurier revient apres etre sorti.
+RE_RETOUR = re.compile(r"retour dans l'aventure|r[ée]int[ée]gr|retour en jeu", re.I)
+
+RE_LIGNE_CASTING = re.compile(r"\{\{\s*Tribebox-bw|\[\[\s*(?:Fichier|File|Image)\s*:",
+                              re.I)
+
+
 def parse_page(text, saison_id=None):
     table = extract_table(text)
     if table is None:
         return []
     out = []
     for row in split_rows(table):
-        if "Tribebox-bw" not in row:
+        if not RE_LIGNE_CASTING.search(row):
             continue
         p = parse_row(row, saison_id)
         if p:

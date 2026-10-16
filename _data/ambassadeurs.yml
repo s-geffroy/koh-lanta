@@ -1,9 +1,9 @@
 # Fichier genere par tools/extraction/ambassadeurs.py.
 # Ne pas editer a la main : toute modification sera ecrasee.
-ambassades: 20
+ambassades: 21
 nommees: 12
-part_nommees: 60.0
-sources_accord: 4
+part_nommees: 57.1
+sources_accord: 5
 sources_desaccord: 1
 par_tirage: 3
 elimine_ambassadeur: 3
@@ -103,6 +103,10 @@ lignes:
   elimine_est_ambassadeur: false
   source: fandom
   phrase: Setha est éliminée par les ambassadeurs Colin et Louana.
+- saison: s24
+  elimine: quentin-paygnard
+  ambassadeurs: null
+  motif: ambassadeur deja sorti
 - saison: s25
   elimine: ricky-poyet
   ambassadeurs: null

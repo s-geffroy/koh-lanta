@@ -17737,12 +17737,12 @@
     annule: false
 - saison: s24
   numero: 23
-  type: jury
+  type: elimination
   complet: false
   episode: '17'
-  finaliste: tania-cakarevic
-  finaliste_rattache: true
-  votes_pour: 2
+  elimine: tania-cakarevic
+  elimine_rattache: true
+  votes_contre: 2
   votes_exprimes: 9
   votes:
   - votant: julie-debever
@@ -26443,11 +26443,6 @@
     cible: maxime-lubian
     cible_rattachee: true
     annule: true
-  - votant: charlotte-rasquin
-    votant_rattache: true
-    cible: laure-canevarolo
-    cible_rattachee: true
-    annule: true
   - votant: christina-chevry
     votant_rattache: true
     cible: laure-canevarolo
@@ -26468,21 +26463,6 @@
     cible: laure-canevarolo
     cible_rattachee: true
     annule: true
-  - votant: jacques-roque
-    votant_rattache: true
-    cible: laure-canevarolo
-    cible_rattachee: true
-    annule: true
-  - votant: joana-callico
-    votant_rattache: true
-    cible: laure-canevarolo
-    cible_rattachee: true
-    annule: true
-  - votant: laure-canevarolo
-    votant_rattache: true
-    cible: maxime-lubian
-    cible_rattachee: true
-    annule: true
   - votant: lola-besse
     votant_rattache: true
     cible: maxime-lubian
@@ -26493,22 +26473,7 @@
     cible: laure-canevarolo
     cible_rattachee: true
     annule: true
-  - votant: moussa-niangane
-    votant_rattache: true
-    cible: laure-canevarolo
-    cible_rattachee: true
-    annule: true
-  - votant: naoil-tita
-    votant_rattache: true
-    cible: laure-canevarolo
-    cible_rattachee: true
-    annule: true
   - votant: nicolas-pretot
-    votant_rattache: true
-    cible: maxime-lubian
-    cible_rattachee: true
-    annule: true
-  - votant: tania-cakarevic
     votant_rattache: true
     cible: maxime-lubian
     cible_rattachee: true
@@ -26526,6 +26491,41 @@
   - votant: yassin-metiri
     votant_rattache: true
     cible: maxime-lubian
+    cible_rattachee: true
+    annule: true
+  - votant: tania-cakarevic
+    votant_rattache: true
+    cible: maxime-lubian
+    cible_rattachee: true
+    annule: true
+  - votant: charlotte-rasquin
+    votant_rattache: true
+    cible: laure-canevarolo
+    cible_rattachee: true
+    annule: true
+  - votant: laure-canevarolo
+    votant_rattache: true
+    cible: maxime-lubian
+    cible_rattachee: true
+    annule: true
+  - votant: jacques-roque
+    votant_rattache: true
+    cible: laure-canevarolo
+    cible_rattachee: true
+    annule: true
+  - votant: naoil-tita
+    votant_rattache: true
+    cible: laure-canevarolo
+    cible_rattachee: true
+    annule: true
+  - votant: moussa-niangane
+    votant_rattache: true
+    cible: laure-canevarolo
+    cible_rattachee: true
+    annule: true
+  - votant: joana-callico
+    votant_rattache: true
+    cible: laure-canevarolo
     cible_rattachee: true
     annule: true
 - saison: sp8
@@ -26543,11 +26543,6 @@
     cible: maxime-lubian
     cible_rattachee: true
     annule: false
-  - votant: charlotte-rasquin
-    votant_rattache: true
-    cible: laure-canevarolo
-    cible_rattachee: true
-    annule: false
   - votant: christina-chevry
     votant_rattache: true
     cible: laure-canevarolo
@@ -26568,21 +26563,6 @@
     cible: laure-canevarolo
     cible_rattachee: true
     annule: false
-  - votant: jacques-roque
-    votant_rattache: true
-    cible: maxime-lubian
-    cible_rattachee: true
-    annule: false
-  - votant: joana-callico
-    votant_rattache: true
-    cible: laure-canevarolo
-    cible_rattachee: true
-    annule: false
-  - votant: laure-canevarolo
-    votant_rattache: true
-    cible: maxime-lubian
-    cible_rattachee: true
-    annule: false
   - votant: lola-besse
     votant_rattache: true
     cible: maxime-lubian
@@ -26593,22 +26573,7 @@
     cible: laure-canevarolo
     cible_rattachee: true
     annule: false
-  - votant: moussa-niangane
-    votant_rattache: true
-    cible: laure-canevarolo
-    cible_rattachee: true
-    annule: false
-  - votant: naoil-tita
-    votant_rattache: true
-    cible: laure-canevarolo
-    cible_rattachee: true
-    annule: false
   - votant: nicolas-pretot
-    votant_rattache: true
-    cible: maxime-lubian
-    cible_rattachee: true
-    annule: false
-  - votant: tania-cakarevic
     votant_rattache: true
     cible: maxime-lubian
     cible_rattachee: true
@@ -26626,6 +26591,41 @@
   - votant: yassin-metiri
     votant_rattache: true
     cible: maxime-lubian
+    cible_rattachee: true
+    annule: false
+  - votant: tania-cakarevic
+    votant_rattache: true
+    cible: maxime-lubian
+    cible_rattachee: true
+    annule: false
+  - votant: charlotte-rasquin
+    votant_rattache: true
+    cible: laure-canevarolo
+    cible_rattachee: true
+    annule: false
+  - votant: laure-canevarolo
+    votant_rattache: true
+    cible: maxime-lubian
+    cible_rattachee: true
+    annule: false
+  - votant: jacques-roque
+    votant_rattache: true
+    cible: maxime-lubian
+    cible_rattachee: true
+    annule: false
+  - votant: naoil-tita
+    votant_rattache: true
+    cible: laure-canevarolo
+    cible_rattachee: true
+    annule: false
+  - votant: moussa-niangane
+    votant_rattache: true
+    cible: laure-canevarolo
+    cible_rattachee: true
+    annule: false
+  - votant: joana-callico
+    votant_rattache: true
+    cible: laure-canevarolo
     cible_rattachee: true
     annule: false
 - saison: sp8
@@ -26653,11 +26653,6 @@
     cible: moussa-niangane
     cible_rattachee: true
     annule: false
-  - votant: charlotte-rasquin
-    votant_rattache: true
-    cible: moussa-niangane
-    cible_rattachee: true
-    annule: false
   - votant: christina-chevry
     votant_rattache: true
     cible: moussa-niangane
@@ -26678,37 +26673,12 @@
     cible: moussa-niangane
     cible_rattachee: true
     annule: false
-  - votant: jacques-roque
-    votant_rattache: true
-    cible: nicolas-pretot
-    cible_rattachee: true
-    annule: false
-  - votant: laure-canevarolo
-    votant_rattache: true
-    cible: moussa-niangane
-    cible_rattachee: true
-    annule: false
   - votant: lola-besse
     votant_rattache: true
     cible: moussa-niangane
     cible_rattachee: true
     annule: false
-  - votant: moussa-niangane
-    votant_rattache: true
-    cible: laure-canevarolo
-    cible_rattachee: true
-    annule: false
-  - votant: naoil-tita
-    votant_rattache: true
-    cible: vincent-blier
-    cible_rattachee: true
-    annule: false
   - votant: nicolas-pretot
-    votant_rattache: true
-    cible: moussa-niangane
-    cible_rattachee: true
-    annule: false
-  - votant: tania-cakarevic
     votant_rattache: true
     cible: moussa-niangane
     cible_rattachee: true
@@ -26728,6 +26698,36 @@
     cible: laure-canevarolo
     cible_rattachee: true
     annule: false
+  - votant: tania-cakarevic
+    votant_rattache: true
+    cible: moussa-niangane
+    cible_rattachee: true
+    annule: false
+  - votant: charlotte-rasquin
+    votant_rattache: true
+    cible: moussa-niangane
+    cible_rattachee: true
+    annule: false
+  - votant: laure-canevarolo
+    votant_rattache: true
+    cible: moussa-niangane
+    cible_rattachee: true
+    annule: false
+  - votant: jacques-roque
+    votant_rattache: true
+    cible: nicolas-pretot
+    cible_rattachee: true
+    annule: false
+  - votant: naoil-tita
+    votant_rattache: true
+    cible: vincent-blier
+    cible_rattachee: true
+    annule: false
+  - votant: moussa-niangane
+    votant_rattache: true
+    cible: laure-canevarolo
+    cible_rattachee: true
+    annule: false
 - saison: sp8
   numero: 5
   type: elimination
@@ -26738,3 +26738,448 @@
   votes_contre: 12
   votes_exprimes: 16
   votes: []
+- saison: sp8
+  numero: 6
+  type: elimination
+  complet: true
+  episode: '3'
+  elimine: jacques-roque
+  elimine_rattache: true
+  votes_contre: 12
+  votes_exprimes: 14
+  votes:
+  - votant: camille-sold
+    votant_rattache: true
+    cible: jacques-roque
+    cible_rattachee: true
+    annule: false
+  - votant: christina-chevry
+    votant_rattache: true
+    cible: jacques-roque
+    cible_rattachee: true
+    annule: false
+  - votant: clementine-jullien
+    votant_rattache: true
+    cible: jacques-roque
+    cible_rattachee: true
+    annule: false
+  - votant: dorian-louvet
+    votant_rattache: true
+    cible: jacques-roque
+    cible_rattachee: true
+    annule: false
+  - votant: freddy-boucher
+    votant_rattache: true
+    cible: jacques-roque
+    cible_rattachee: true
+    annule: false
+  - votant: lola-besse
+    votant_rattache: true
+    cible: jacques-roque
+    cible_rattachee: true
+    annule: false
+  - votant: nicolas-pretot
+    votant_rattache: true
+    cible: jacques-roque
+    cible_rattachee: true
+    annule: false
+  - votant: ugo-lartiche
+    votant_rattache: true
+    cible: jacques-roque
+    cible_rattachee: true
+    annule: false
+  - votant: vincent-blier
+    votant_rattache: true
+    cible: jacques-roque
+    cible_rattachee: true
+    annule: false
+  - votant: yassin-metiri
+    votant_rattache: true
+    cible: jacques-roque
+    cible_rattachee: true
+    annule: false
+  - votant: tania-cakarevic
+    votant_rattache: true
+    cible: jacques-roque
+    cible_rattachee: true
+    annule: false
+  - votant: charlotte-rasquin
+    votant_rattache: true
+    cible: tania-cakarevic
+    cible_rattachee: true
+    annule: false
+  - votant: laure-canevarolo
+    votant_rattache: true
+    cible: jacques-roque
+    cible_rattachee: true
+    annule: false
+  - votant: jacques-roque
+    votant_rattache: true
+    cible: tania-cakarevic
+    cible_rattachee: true
+    annule: false
+- saison: sp8
+  numero: 7
+  type: elimination
+  complet: false
+  episode: '3'
+  elimine: charlotte-rasquin
+  elimine_rattache: true
+  votes_contre: 12
+  votes_exprimes: 14
+  votes: []
+- saison: sp8
+  numero: 8
+  type: elimination
+  complet: true
+  episode: '4'
+  elimine: lola-besse
+  elimine_rattache: true
+  votes_contre: 4
+  votes_exprimes: 7
+  votes:
+  - votant: camille-sold
+    votant_rattache: true
+    cible: christina-chevry
+    cible_rattachee: true
+    annule: false
+  - votant: christina-chevry
+    votant_rattache: true
+    cible: lola-besse
+    cible_rattachee: true
+    annule: false
+  - votant: lola-besse
+    votant_rattache: true
+    cible: christina-chevry
+    cible_rattachee: true
+    annule: false
+  - votant: nicolas-pretot
+    votant_rattache: true
+    cible: lola-besse
+    cible_rattachee: true
+    annule: false
+  - votant: vincent-blier
+    votant_rattache: true
+    cible: lola-besse
+    cible_rattachee: true
+    annule: false
+  - votant: yassin-metiri
+    votant_rattache: true
+    cible: lola-besse
+    cible_rattachee: true
+    annule: false
+  - votant: charlotte-rasquin
+    votant_rattache: true
+    cible: christina-chevry
+    cible_rattachee: true
+    annule: false
+- saison: sp8
+  numero: 9
+  type: elimination
+  complet: false
+  episode: '5'
+  elimine: Égalité
+  elimine_rattache: false
+  votes_contre: null
+  votes_exprimes: null
+  annulation: totale
+  voix_annulees: 6
+  votes:
+  - votant: camille-sold
+    votant_rattache: true
+    cible: vincent-blier
+    cible_rattachee: true
+    annule: true
+  - votant: christina-chevry
+    votant_rattache: true
+    cible: Camille/Charlotte
+    cible_rattachee: false
+    annule: true
+  - votant: nicolas-pretot
+    votant_rattache: true
+    cible: Camille/Charlotte
+    cible_rattachee: false
+    annule: true
+  - votant: vincent-blier
+    votant_rattache: true
+    cible: charlotte-rasquin
+    cible_rattachee: true
+    annule: true
+  - votant: yassin-metiri
+    votant_rattache: true
+    cible: camille-sold
+    cible_rattachee: true
+    annule: true
+  - votant: charlotte-rasquin
+    votant_rattache: true
+    cible: vincent-blier
+    cible_rattachee: true
+    annule: true
+- saison: sp8
+  numero: 10
+  type: elimination
+  complet: true
+  episode: '5'
+  elimine: charlotte-rasquin
+  elimine_rattache: true
+  votes_contre: 3
+  votes_exprimes: 6
+  votes:
+  - votant: camille-sold
+    votant_rattache: true
+    cible: vincent-blier
+    cible_rattachee: true
+    annule: false
+  - votant: christina-chevry
+    votant_rattache: true
+    cible: charlotte-rasquin
+    cible_rattachee: true
+    annule: false
+  - votant: nicolas-pretot
+    votant_rattache: true
+    cible: charlotte-rasquin
+    cible_rattachee: true
+    annule: false
+  - votant: vincent-blier
+    votant_rattache: true
+    cible: charlotte-rasquin
+    cible_rattachee: true
+    annule: false
+  - votant: yassin-metiri
+    votant_rattache: true
+    cible: camille-sold
+    cible_rattachee: true
+    annule: false
+  - votant: charlotte-rasquin
+    votant_rattache: true
+    cible: vincent-blier
+    cible_rattachee: true
+    annule: false
+- saison: sp8
+  numero: 11
+  type: elimination
+  complet: true
+  episode: '6'
+  elimine: camille-sold
+  elimine_rattache: true
+  votes_contre: 5
+  votes_exprimes: 6
+  votes:
+  - votant: camille-sold
+    votant_rattache: true
+    cible: yassin-metiri
+    cible_rattachee: true
+    annule: false
+  - votant: christina-chevry
+    votant_rattache: true
+    cible: camille-sold
+    cible_rattachee: true
+    annule: false
+  - votant: nicolas-pretot
+    votant_rattache: true
+    cible: camille-sold
+    cible_rattachee: true
+    annule: false
+  - votant: vincent-blier
+    votant_rattache: true
+    cible: camille-sold
+    cible_rattachee: true
+    annule: false
+  - votant: yassin-metiri
+    votant_rattache: true
+    cible: camille-sold
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité/Avantage
+    cible: camille-sold
+    cible_rattachee: true
+    annule: false
+- saison: sp8
+  numero: 12
+  type: elimination
+  complet: false
+  episode: '7'
+  elimine: laure-canevarolo
+  elimine_rattache: true
+  votes_contre: 0
+  votes_exprimes: null
+  votes: []
+- saison: sp8
+  numero: 13
+  type: elimination
+  complet: false
+  episode: '7'
+  elimine: Égalité
+  elimine_rattache: false
+  votes_contre: null
+  votes_exprimes: null
+  annulation: totale
+  voix_annulees: 4
+  votes:
+  - votant: christina-chevry
+    votant_rattache: true
+    cible: yassin-metiri
+    cible_rattachee: true
+    annule: true
+  - votant: nicolas-pretot
+    votant_rattache: true
+    cible: yassin-metiri
+    cible_rattachee: true
+    annule: true
+  - votant: vincent-blier
+    votant_rattache: true
+    cible: nicolas-pretot
+    cible_rattachee: true
+    annule: true
+  - votant: yassin-metiri
+    votant_rattache: true
+    cible: nicolas-pretot
+    cible_rattachee: true
+    annule: true
+- saison: sp8
+  numero: 14
+  type: elimination
+  complet: false
+  episode: '7'
+  elimine: nicolas-pretot
+  elimine_rattache: true
+  votes_contre: null
+  votes_exprimes: null
+  votes:
+  - votant: christina-chevry
+    votant_rattache: true
+    cible: yassin-metiri
+    cible_rattachee: true
+    annule: false
+  - votant: nicolas-pretot
+    votant_rattache: true
+    cible: yassin-metiri
+    cible_rattachee: true
+    annule: false
+  - votant: vincent-blier
+    votant_rattache: true
+    cible: nicolas-pretot
+    cible_rattachee: true
+    annule: false
+  - votant: yassin-metiri
+    votant_rattache: true
+    cible: nicolas-pretot
+    cible_rattachee: true
+    annule: false
+- saison: sp8
+  numero: 15
+  type: elimination
+  complet: true
+  episode: '7'
+  elimine: tania-cakarevic
+  elimine_rattache: true
+  votes_contre: 5
+  votes_exprimes: 6
+  votes:
+  - votant: clementine-jullien
+    votant_rattache: true
+    cible: tania-cakarevic
+    cible_rattachee: true
+    annule: false
+  - votant: dorian-louvet
+    votant_rattache: true
+    cible: tania-cakarevic
+    cible_rattachee: true
+    annule: false
+  - votant: freddy-boucher
+    votant_rattache: true
+    cible: tania-cakarevic
+    cible_rattachee: true
+    annule: false
+  - votant: maxime-lubian
+    votant_rattache: true
+    cible: tania-cakarevic
+    cible_rattachee: true
+    annule: false
+  - votant: ugo-lartiche
+    votant_rattache: true
+    cible: tania-cakarevic
+    cible_rattachee: true
+    annule: false
+  - votant: tania-cakarevic
+    votant_rattache: true
+    cible: ugo-lartiche
+    cible_rattachee: true
+    annule: false
+- saison: sp8
+  numero: 16
+  type: elimination
+  complet: true
+  episode: '8'
+  elimine: yassin-metiri
+  elimine_rattache: true
+  votes_contre: 6
+  votes_exprimes: 12
+  annulation: partielle
+  voix_annulees: 1
+  proteges:
+  - nicolas-pretot
+  votes:
+  - votant: camille-sold
+    votant_rattache: true
+    cible: yassin-metiri
+    cible_rattachee: true
+    annule: false
+  - votant: christina-chevry
+    votant_rattache: true
+    cible: yassin-metiri
+    cible_rattachee: true
+    annule: false
+  - votant: clementine-jullien
+    votant_rattache: true
+    cible: yassin-metiri
+    cible_rattachee: true
+    annule: false
+  - votant: dorian-louvet
+    votant_rattache: true
+    cible: vincent-blier
+    cible_rattachee: true
+    annule: false
+  - votant: freddy-boucher
+    votant_rattache: true
+    cible: yassin-metiri
+    cible_rattachee: true
+    annule: false
+  - votant: lola-besse
+    votant_rattache: true
+    cible: vincent-blier
+    cible_rattachee: true
+    annule: false
+  - votant: maxime-lubian
+    votant_rattache: true
+    cible: yassin-metiri
+    cible_rattachee: true
+    annule: false
+  - votant: nicolas-pretot
+    votant_rattache: true
+    cible: vincent-blier
+    cible_rattachee: true
+    annule: false
+  - votant: ugo-lartiche
+    votant_rattache: true
+    cible: yassin-metiri
+    cible_rattachee: true
+    annule: false
+  - votant: vincent-blier
+    votant_rattache: true
+    cible: nicolas-pretot
+    cible_rattachee: true
+    annule: true
+  - votant: yassin-metiri
+    votant_rattache: true
+    cible: christina-chevry
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Pénalité/Avantage
+    cible: vincent-blier
+    cible_rattachee: true
+    annule: false

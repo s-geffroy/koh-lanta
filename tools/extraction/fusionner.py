@@ -260,6 +260,29 @@ def fusionner_saison(saison, rows_f, rows_w, rapport, saisons_connues=()):
             fiche["sort"] = None
             provenance.pop("sort", None)
 
+        # UN RETOUR EN JEU, SUR UNE SAISON QUI N'EST PAS FINIE. All Stars 2026
+        # ramene cinq elimines dans l'aventure : leur ligne garde
+        # l'elimination -- « Eliminee au conseil, Jour 12 » -- et une cellule
+        # suivante annonce « Retour dans l'aventure, Jour 19 ». Lue seule, la
+        # premiere fait sortir du jeu quelqu'un qui y joue encore, et la fiche
+        # publiait « sort au conseil le 12e jour ».
+        #
+        # La condition `en_cours` n'est pas une precaution, c'est le sens de la
+        # regle : sur une saison TERMINEE, un retour est suivi d'un second
+        # depart, et c'est ce depart qui compte. La seule a porter un retour
+        # sans depart final est une saison en cours de diffusion -- ou la
+        # bonne reponse est qu'il n'y a pas encore de sort.
+        elif saison.get("en_cours") and (dispo.get("f") or {}).get("retour_en_jeu"):
+            if fiche.get("sort"):
+                rapport.append(f"{sid} / {nom} : revenu en jeu le "
+                               f"{(dispo['f'] or {}).get('jour_sortie')}e jour "
+                               f"apres « {fiche.get('motif')} » — saison en "
+                               f"cours, aucun depart definitif a ce jour")
+            fiche["sort"] = None
+            fiche["jour_sortie"] = None
+            provenance.pop("sort", None)
+            provenance.pop("jour_sortie", None)
+
         fiche["sources"] = provenance
         out.append(fiche)
     return out
@@ -532,6 +555,38 @@ def fusionner_identites(participations, rapport):
             p.setdefault("sources", {})["nom_complet"] = "page Fandom commune (redirection)"
 
 
+def sans_depart_sans_jour(participations, saisons, rapport):
+    """Pas de sort, donc pas de jour de sortie -- sur une saison en cours.
+
+    Un aventurier encore en jeu n'a pas quitte le jeu : lui attribuer un jour
+    de sortie est une contradiction, et elle se propage. Le jour alimente la
+    facette « parcours » du classement quand le rang manque, et les courbes de
+    survie : « Encore en jeu, sorti le 19e jour » compte comme un depart au
+    19e jour.
+
+    Deux sources le posaient, chacune de bonne foi. Wikipedia donne le jour de
+    la derniere bascule de TRIBU, pas celui du depart -- 19 pour les six
+    aventuriers encore en jeu d'All Stars. Et la page individuelle d'un revenu
+    garde le nombre de jours qu'il avait au moment de sa premiere sortie :
+    trois, pour Maxime, revenu depuis.
+
+    APRES `completer_depuis_pages`, pour la meme raison que `vainqueur_premier`
+    -- c'est elle qui reposait la valeur qu'on venait de retirer.
+    """
+    en_cours = {s["id"] for s in saisons if s.get("en_cours")}
+    retires = []
+    for p in participations:
+        if p["saison"] in en_cours and not p.get("sort") and p.get("jour_sortie"):
+            retires.append(f"{p['saison']}/{p['nom']} ({p['jour_sortie']}e jour, "
+                           f"{(p.get('sources') or {}).get('jour_sortie')})")
+            p["jour_sortie"] = None
+            p.get("sources", {}).pop("jour_sortie", None)
+    if retires:
+        rapport.append(f"jour_sortie : {len(retires)} jour(s) retire(s) a des "
+                       f"aventuriers sans sort, saison en cours — "
+                       f"{', '.join(retires)}")
+
+
 def vainqueur_premier(participations, saisons, rapport):
     """Un vainqueur termine premier, par definition de la victoire.
 
@@ -784,6 +839,7 @@ def main():
     tribu_depuis_le_parcours(participations, rapport)
     corriger_tribus(participations, rapport)
     normaliser_lieux(participations, rapport)
+    sans_depart_sans_jour(participations, saisons, rapport)
     vainqueur_premier(participations, saisons, rapport)
     verifier_classements(participations, saisons, rapport)
     completer_depuis_autres_participations(participations, saisons, rapport)
