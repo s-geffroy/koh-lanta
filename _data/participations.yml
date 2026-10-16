@@ -11,9 +11,10 @@
 #
 #     tools/atelier python3 tools/extraction/fusionner.py --ecrire
 #
-- id: marie-boyer
+- id: marie-besnier
   nom: Marie
-  nom_complet: Marie Boyer
+  nom_complet: Marie Besnier
+  nom_source: Marie Boyer
   saison: s01
   genre: f
   age: 22
@@ -42,7 +43,7 @@
     jour_sortie: fandom
     sort: fandom
     motif: fandom
-    nom_complet: fandom
+    nom_complet: titre canonique Fandom (redirection)
     votes_recus: fandom
     couleur: saisons.yml
     localisation: fandom (page individuelle)
@@ -1041,9 +1042,10 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
-- id: francois-xavier-arguillere
+- id: francois-xavier-renou
   nom: François-Xavier
-  nom_complet: François-Xavier Arguillère
+  nom_complet: François-Xavier Renou
+  nom_source: François-Xavier Arguillère
   saison: s02
   genre: h
   age: 24
@@ -1076,7 +1078,7 @@
     jour_sortie: fandom
     sort: fandom
     motif: fandom
-    nom_complet: fandom
+    nom_complet: titre canonique Fandom (redirection)
     votes_recus: fandom
     couleur: saisons.yml
     localisation: fandom (page individuelle)
@@ -1260,9 +1262,10 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
-- id: nicolas-leoni
+- id: nicolas-roy
   nom: Nicolas
-  nom_complet: Nicolas Leoni
+  nom_complet: Nicolas Roy
+  nom_source: Nicolas Leoni
   saison: s02
   genre: h
   age: 29
@@ -1294,7 +1297,7 @@
     jour_sortie: fandom
     sort: fandom
     motif: fandom
-    nom_complet: fandom
+    nom_complet: titre canonique Fandom (redirection)
     votes_recus: fandom
     couleur: saisons.yml
     genre: recoupement sur le prenom
@@ -4867,9 +4870,10 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
-- id: charlene-hoffness
+- id: charlene-hoffsess
   nom: Charlène
-  nom_complet: Charlène Hoffness
+  nom_complet: Charlène Hoffsess
+  nom_source: Charlène Hoffness
   saison: s08
   genre: f
   age: 20
@@ -4898,7 +4902,7 @@
     jour_sortie: fandom
     sort: fandom
     motif: fandom
-    nom_complet: fandom
+    nom_complet: titre canonique Fandom (redirection)
     votes_recus: fandom
     localisation: fandom
     couleur: saisons.yml
@@ -10151,9 +10155,10 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
-- id: julie-navarro-camilleri
+- id: julie-navarro
   nom: Julie
-  nom_complet: Julie Navarro-Camilleri
+  nom_complet: Julie Navarro
+  nom_source: Julie Navarro-Camilleri
   saison: s16
   genre: f
   age: 38
@@ -10182,7 +10187,7 @@
     jour_sortie: fandom
     sort: fandom
     motif: fandom
-    nom_complet: fandom
+    nom_complet: titre canonique Fandom (redirection)
     votes_recus: fandom
     couleur: saisons.yml
     localisation: fandom (page individuelle)
@@ -11620,9 +11625,10 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
-- id: marta-morino
+- id: marta-molino
   nom: Marta
-  nom_complet: Marta Morino
+  nom_complet: Marta Molino
+  nom_source: Marta Morino
   saison: s18
   genre: f
   age: 21
@@ -11657,7 +11663,7 @@
     jour_sortie: fandom
     sort: fandom
     motif: fandom
-    nom_complet: fandom
+    nom_complet: titre canonique Fandom (redirection)
     votes_recus: fandom
     localisation: fandom (page individuelle)
     classement: fandom (page individuelle)
@@ -12315,9 +12321,10 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
-- id: carinne-fossey-elka
+- id: carinne-elka-dioza
   nom: Carinne
-  nom_complet: Carinne Fossey Elka
+  nom_complet: Carinne Elka-Dioza
+  nom_source: Carinne Fossey Elka
   saison: s20
   genre: f
   age: 45
@@ -12349,7 +12356,7 @@
     jour_sortie: fandom
     sort: fandom
     motif: fandom
-    nom_complet: fandom
+    nom_complet: titre canonique Fandom (redirection)
     votes_recus: fandom
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
@@ -13937,6 +13944,7 @@
 - id: lola-labesse
   nom: Lola
   nom_complet: Lola Labesse
+  nom_source: Lola Besse
   saison: s21
   genre: f
   age: 23
@@ -15044,7 +15052,8 @@
     victoires_individuelles: fandom (page individuelle)
 - id: matteo-real
   nom: Mattéo
-  nom_complet: Matteo Real
+  nom_complet: Mattéo Real
+  nom_source: Matteo Real
   saison: s23
   genre: h
   age: 20
@@ -15073,7 +15082,7 @@
     jour_sortie: fandom
     sort: fandom
     motif: fandom
-    nom_complet: fandom
+    nom_complet: titre canonique Fandom (redirection)
     votes_recus: fandom
     localisation: fandom
     couleur: saisons.yml
@@ -15633,9 +15642,10 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
-- id: fouzi-de-la-fuente
+- id: fouzi-ould-bouamama
   nom: Fouzi
-  nom_complet: Fouzi de la Fuente
+  nom_complet: Fouzi Ould Bouamama
+  nom_source: Fouzi de la Fuente
   saison: s23
   genre: h
   age: 28
@@ -15672,7 +15682,7 @@
     jour_sortie: fandom
     sort: fandom
     motif: fandom
-    nom_complet: fandom
+    nom_complet: titre canonique Fandom (redirection)
     votes_recus: fandom
     localisation: fandom
     couleur: saisons.yml
@@ -21621,9 +21631,10 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
-- id: nicolas-leoni
+- id: nicolas-roy
   nom: Nicolas
-  nom_complet: Nicolas Leoni
+  nom_complet: Nicolas Roy
+  nom_source: Nicolas Leoni
   saison: sp3
   genre: h
   age: 40
@@ -21652,7 +21663,7 @@
     jour_sortie: fandom
     sort: fandom
     motif: fandom
-    nom_complet: fandom
+    nom_complet: titre canonique Fandom (redirection)
     votes_recus: fandom
 - id: isabelle-da-silva
   nom: Isabelle
@@ -22660,9 +22671,10 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
-- id: julie-navarro-camilleri
+- id: julie-navarro
   nom: Julie
-  nom_complet: Julie Navarro-Camilleri
+  nom_complet: Julie Navarro
+  nom_source: Julie Navarro-Camilleri
   saison: sp5
   genre: f
   age: 39
@@ -22694,7 +22706,7 @@
     jour_sortie: fandom
     sort: fandom
     motif: fandom
-    nom_complet: fandom
+    nom_complet: titre canonique Fandom (redirection)
     votes_recus: fandom
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
@@ -25404,6 +25416,7 @@
 - id: lola-labesse
   nom: Lola
   nom_complet: Lola Labesse
+  nom_source: Lola Besse
   saison: sp8
   genre: f
   age: 30

@@ -115,6 +115,9 @@ def index_saison(parts, sid):
         idx[slug(p["nom"])].append(p)
         if p.get("nom_complet"):
             idx[slug(p["nom_complet"])].append(p)
+        # La forme que la source ecrit, quand elle differe du nom publie.
+        if p.get("nom_source"):
+            idx[slug(p["nom_source"])].append(p)
     return idx
 
 

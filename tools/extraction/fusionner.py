@@ -94,8 +94,23 @@ COQUILLES = {
 #
 # Verifier une redirection, avant d'ajouter une ligne :
 #   action=query&titles=<nom>&redirects=1  sur kohlanta.fandom.com/fr/api.php
+#
+# « Philippe Bizet » -> « Phil Bizet » est la SEULE des onze redirections
+# qu'on n'applique pas, et son absence est voulue : voir ci-dessus.
 NOMS_CANONIQUES = {
+    "Carinne Fossey Elka": "Carinne Elka-Dioza",
+    "Charlène Hoffness": "Charlène Hoffsess",
+    "Fouzi de la Fuente": "Fouzi Ould Bouamama",
+    "François-Xavier Arguillère": "François-Xavier Renou",
+    "Julie Navarro-Camilleri": "Julie Navarro",
     "Lola Besse": "Lola Labesse",
+    "Marie Boyer": "Marie Besnier",
+    "Marta Morino": "Marta Molino",
+    # Le seul qui ne change PAS d'identifiant : la translitteration efface
+    # l'accent, « Matteo » et « Mattéo » donnent tous deux `matteo-real`.
+    # L'adresse ne bouge pas, le nom affiche si.
+    "Matteo Real": "Mattéo Real",
+    "Nicolas Leoni": "Nicolas Roy",
 }
 
 # Une tribu nommee par erreur. La legende de la fiche francaise de
@@ -229,6 +244,15 @@ def fusionner_saison(saison, rows_f, rows_w, rapport, saisons_connues=()):
         # pointe n'est qu'une redirection vers lui. L'identifiant -- donc
         # l'adresse de la fiche -- en sort.
         if fiche["nom_complet"] in NOMS_CANONIQUES:
+            # LE NOM DE LA SOURCE EST CONSERVE, et ce n'est pas de la
+            # documentation : les tableaux de VOTES l'ecrivent encore. Un
+            # libelle de bulletin sort de l'extraction en « Julie
+            # Navarro-Camilleri Julie » -- nom complet puis prenom, colles --
+            # et le rattachement cherche le plus long prefixe qui soit un nom
+            # complet connu. Adopter « Julie Navarro » sans garder l'ancienne
+            # forme faisait perdre un bulletin : essaye, et le conseil est
+            # ressorti avec `elimine_rattache: false`.
+            fiche["nom_source"] = fiche["nom_complet"]
             fiche["nom_complet"] = NOMS_CANONIQUES[fiche["nom_complet"]]
             provenance["nom_complet"] = "titre canonique Fandom (redirection)"
         fiche["saison"] = sid
@@ -897,7 +921,12 @@ ENTETE = """# ATTENTION : fichier genere. Ne pas editer a la main.
 #
 """
 
-ORDRE = ["id", "nom", "nom_complet", "saison", "genre", "age", "profession",
+# `nom_source` suit `nom_complet` : la forme que la SOURCE ecrit, quand le site
+# publie le titre canonique du wiki a sa place. Elle n'est pas decorative --
+# les tableaux de votes n'ont pas suivi le renommage, et c'est par elle que
+# leurs bulletins se rattachent encore.
+ORDRE = ["id", "nom", "nom_complet", "nom_source", "saison", "genre", "age",
+         "profession",
          "localisation", "edition_origine", "tribu", "couleur", "parcours",
          "jour_sortie", "sort", "motif", "votes_recus",
          # Apportes par les pages individuelles du wiki Fandom : le rang final

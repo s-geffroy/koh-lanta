@@ -84,6 +84,12 @@ def index_participations(parts):
         idx[p["saison"]][slug(p["nom"])].append(p)
         if p.get("nom_complet"):
             complets[p["saison"]][slug(p["nom_complet"])].append(p)
+        # `nom_source` : la forme que la SOURCE ecrit, quand le site publie le
+        # titre canonique du wiki a la place. Les tableaux de votes, eux, n'ont
+        # pas suivi le renommage -- sans cet alias, un bulletin cesse de se
+        # rattacher le jour ou une fiche change de nom.
+        if p.get("nom_source"):
+            complets[p["saison"]][slug(p["nom_source"])].append(p)
     for sid, table in complets.items():
         idx[sid]["_complets"] = table
     return idx

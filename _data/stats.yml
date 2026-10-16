@@ -2741,11 +2741,11 @@ revenants:
       arrivee: 17
       id: jessica-potel
     - rang: 37
-      nom: Julie Navarro-Camilleri
+      nom: Julie Navarro
       saisons: 2
       degre: 17
       arrivee: 19
-      id: julie-navarro-camilleri
+      id: julie-navarro
     - rang: 38
       nom: Karima Neggaz
       saisons: 2
@@ -2837,11 +2837,11 @@ revenants:
       arrivee: 7
       id: nathalie-ensargueix
     - rang: 53
-      nom: Nicolas Leoni
+      nom: Nicolas Roy
       saisons: 2
       degre: 16
       arrivee: 1
-      id: nicolas-leoni
+      id: nicolas-roy
     - rang: 54
       nom: Olivier Moenaert
       saisons: 2
@@ -7930,8 +7930,8 @@ colliers:
     trouves: 2
     joues: 2
     efficaces: 1
-  - id: julie-navarro-camilleri
-    nom: Julie Navarro-Camilleri
+  - id: julie-navarro
+    nom: Julie Navarro
     trouves: 3
     joues: 1
     efficaces: 1
@@ -7991,16 +7991,16 @@ colliers:
     titre: La Revanche des 4 Terres
     annee: 2025
     id: maxime-lubian
-  - nom: Julie Navarro-Camilleri
+  - nom: Julie Navarro
     saison: sp5
     titre: Le Combat des héros
     annee: 2018
-    id: julie-navarro-camilleri
-  - nom: Julie Navarro-Camilleri
+    id: julie-navarro
+  - nom: Julie Navarro
     saison: sp5
     titre: Le Combat des héros
     annee: 2018
-    id: julie-navarro-camilleri
+    id: julie-navarro
   - nom: Jessica Potel
     saison: sp6
     titre: L'Île des héros
@@ -8124,7 +8124,7 @@ indicateurs:
     base: 8
     sort: elimine_poteaux
     id: bernard-lenoir
-  - nom: Nicolas Leoni
+  - nom: Nicolas Roy
     saison: s02
     titre: Nicoya
     annee: 2002
@@ -8132,7 +8132,7 @@ indicateurs:
     valeur: 100.0
     base: 9
     sort: finaliste
-    id: nicolas-leoni
+    id: nicolas-roy
   - nom: Émilie Frahi
     saison: s06
     titre: Vanuatu
@@ -8777,7 +8777,7 @@ indicateurs:
       annee: 2002
       vainqueur: Amel Fatnassi
       voix_vainqueur: 2
-      finaliste: Nicolas Leoni
+      finaliste: Nicolas Roy
       voix_finaliste: 3
       conseils: 13
     - saison: s04
@@ -8995,7 +8995,7 @@ indicateurs:
       titre: Nicoya
       annee: 2002
       un: Marianne Mondon
-      deux: Nicolas Leoni
+      deux: Nicolas Roy
       ensemble: 9
       accord: 9
       part: 100.0
@@ -9051,7 +9051,7 @@ indicateurs:
       titre: L'Île au trésor
       annee: 2016
       un: Benoît Assadi
-      deux: Julie Navarro-Camilleri
+      deux: Julie Navarro
       ensemble: 8
       accord: 8
       part: 100.0
@@ -9059,7 +9059,7 @@ indicateurs:
       titre: L'Île au trésor
       annee: 2016
       un: Candice Boisson
-      deux: Julie Navarro-Camilleri
+      deux: Julie Navarro
       ensemble: 8
       accord: 8
       part: 100.0
@@ -9127,7 +9127,7 @@ indicateurs:
     epreuves: 23
     epreuves_individuelles: 11
     domination_epreuves: 0.153
-    meilleur_gagnant: nicolas-leoni
+    meilleur_gagnant: nicolas-roy
     victoires_du_meilleur: 3
     colliers: 0
     colliers_joues: 0
@@ -11568,8 +11568,8 @@ classement:
     score: 1.412
     rang_general: 11
   - rang: 11
-    nom: Nicolas Leoni
-    id: nicolas-leoni
+    nom: Nicolas Roy
+    id: nicolas-roy
     score: 1.356
     rang_general: 36
   - rang: 12
@@ -11764,15 +11764,15 @@ classement:
     annee: 2016
     id: wendy-gervois
   - rang: 13
-    nom: Nicolas Leoni — Nicoya
+    nom: Nicolas Roy — Nicoya
     score: 1.365
     part_top: 66.3
     sort: Finaliste
-    aventurier: Nicolas Leoni
+    aventurier: Nicolas Roy
     saison: Nicoya
     saison_id: s02
     annee: 2002
-    id: nicolas-leoni
+    id: nicolas-roy
   - rang: 14
     nom: Romuald Lafite — Panama
     score: 1.282
@@ -12794,8 +12794,8 @@ classement:
       discretion: 14
       lecture: 418
   - rang: 36
-    nom: Nicolas Leoni
-    id: nicolas-leoni
+    nom: Nicolas Roy
+    id: nicolas-roy
     saisons: 2
     titres: 0
     score: 0.88
@@ -12902,8 +12902,8 @@ classement:
       discretion: 87
       lecture: 39
   - rang: 44
-    nom: François-Xavier Arguillère
-    id: francois-xavier-arguillere
+    nom: François-Xavier Renou
+    id: francois-xavier-renou
     saisons: 1
     titres: 0
     score: 0.762
@@ -16340,7 +16340,7 @@ classement:
       discretion: 437
       lecture: 485
   - rang: 293
-    nom: Matteo Real
+    nom: Mattéo Real
     id: matteo-real
     saisons: 1
     titres: 0
@@ -16760,8 +16760,8 @@ classement:
       discretion: 104
       lecture: 387
   - rang: 323
-    nom: Marta Morino
-    id: marta-morino
+    nom: Marta Molino
+    id: marta-molino
     saisons: 1
     titres: 0
     score: -0.164
@@ -16914,8 +16914,8 @@ classement:
       discretion: 309
       lecture: 354
   - rang: 334
-    nom: Fouzi de la Fuente
-    id: fouzi-de-la-fuente
+    nom: Fouzi Ould Bouamama
+    id: fouzi-ould-bouamama
     saisons: 1
     titres: 0
     score: -0.184
@@ -17288,8 +17288,8 @@ classement:
       discretion: 223
       lecture: 390
   - rang: 361
-    nom: Carinne Fossey Elka
-    id: carinne-fossey-elka
+    nom: Carinne Elka-Dioza
+    id: carinne-elka-dioza
     saisons: 1
     titres: 0
     score: -0.228
@@ -18246,8 +18246,8 @@ classement:
       discretion: 353
       lecture: 306
   - rang: 430
-    nom: Marie Boyer
-    id: marie-boyer
+    nom: Marie Besnier
+    id: marie-besnier
     saisons: 1
     titres: 0
     score: -0.346
@@ -18666,8 +18666,8 @@ classement:
       discretion: 436
       lecture: 400
   - rang: 460
-    nom: Charlène Hoffness
-    id: charlene-hoffness
+    nom: Charlène Hoffsess
+    id: charlene-hoffsess
     saisons: 1
     titres: 0
     score: -0.471
@@ -18834,8 +18834,8 @@ classement:
       discretion: 402
       lecture: 454
   - rang: 472
-    nom: Julie Navarro-Camilleri
-    id: julie-navarro-camilleri
+    nom: Julie Navarro
+    id: julie-navarro
     saisons: 2
     titres: 0
     score: -0.507
@@ -19754,7 +19754,7 @@ classement:
     - Kevin Cuoco
     entrants:
     - Nicolas Pretot
-    - François-Xavier Arguillère
+    - François-Xavier Renou
     - Maxine Eouzan
     depouillement:
     - periode: 2000-2004
@@ -19959,9 +19959,9 @@ modeles:
     - x: 2.214
       y: 0.343
       groupe: 1
-      nom: Marie Boyer
-      detail: Marie Boyer — 18-24 ans, Étudiants
-      id: marie-boyer
+      nom: Marie Besnier
+      detail: Marie Besnier — 18-24 ans, Étudiants
+      id: marie-besnier
     - x: 0.49
       y: 1.221
       groupe: 4
@@ -20109,9 +20109,9 @@ modeles:
     - x: 0.302
       y: 0.986
       groupe: 2
-      nom: François-Xavier Arguillère
-      detail: François-Xavier Arguillère — 18-24 ans, Artisanat et bâtiment
-      id: francois-xavier-arguillere
+      nom: François-Xavier Renou
+      detail: François-Xavier Renou — 18-24 ans, Artisanat et bâtiment
+      id: francois-xavier-renou
     - x: 0.227
       y: -1.177
       groupe: 3
@@ -20139,9 +20139,9 @@ modeles:
     - x: -0.174
       y: -0.211
       groupe: 5
-      nom: Nicolas Leoni
-      detail: Nicolas Leoni — 25-29 ans, Sans activité déclarée
-      id: nicolas-leoni
+      nom: Nicolas Roy
+      detail: Nicolas Roy — 25-29 ans, Sans activité déclarée
+      id: nicolas-roy
     - x: -0.129
       y: -0.51
       groupe: 3
@@ -20703,9 +20703,9 @@ modeles:
     - x: 2.214
       y: 0.343
       groupe: 1
-      nom: Charlène Hoffness
-      detail: Charlène Hoffness — 18-24 ans, Étudiants
-      id: charlene-hoffness
+      nom: Charlène Hoffsess
+      detail: Charlène Hoffsess — 18-24 ans, Étudiants
+      id: charlene-hoffsess
     - x: -0.642
       y: 0.338
       groupe: 2
@@ -21507,9 +21507,9 @@ modeles:
     - x: 0.227
       y: -1.177
       groupe: 3
-      nom: Julie Navarro-Camilleri
-      detail: Julie Navarro-Camilleri — 35-39 ans, Santé
-      id: julie-navarro-camilleri
+      nom: Julie Navarro
+      detail: Julie Navarro — 35-39 ans, Santé
+      id: julie-navarro
     - x: 1.18
       y: 0.498
       groupe: 4
@@ -21717,9 +21717,9 @@ modeles:
     - x: 2.214
       y: 0.343
       groupe: 1
-      nom: Marta Morino
-      detail: Marta Morino — 18-24 ans, Étudiants
-      id: marta-morino
+      nom: Marta Molino
+      detail: Marta Molino — 18-24 ans, Étudiants
+      id: marta-molino
     - x: 2.214
       y: 0.343
       groupe: 1
@@ -21819,9 +21819,9 @@ modeles:
     - x: -0.155
       y: -0.66
       groupe: 5
-      nom: Carinne Fossey Elka
-      detail: Carinne Fossey Elka — 45 ans et plus, Arts, médias et image
-      id: carinne-fossey-elka
+      nom: Carinne Elka-Dioza
+      detail: Carinne Elka-Dioza — 45 ans et plus, Arts, médias et image
+      id: carinne-elka-dioza
     - x: -0.114
       y: -0.919
       groupe: 3
@@ -22227,8 +22227,8 @@ modeles:
     - x: 0.662
       y: 0.225
       groupe: 4
-      nom: Matteo Real
-      detail: Matteo Real — 18-24 ans, Arts, médias et image
+      nom: Mattéo Real
+      detail: Mattéo Real — 18-24 ans, Arts, médias et image
       id: matteo-real
     - x: -0.175
       y: -0.433
@@ -22305,9 +22305,9 @@ modeles:
     - x: -0.361
       y: 0.19
       groupe: 2
-      nom: Fouzi de la Fuente
-      detail: Fouzi de la Fuente — 25-29 ans, Encadrement et professions intellectuelles
-      id: fouzi-de-la-fuente
+      nom: Fouzi Ould Bouamama
+      detail: Fouzi Ould Bouamama — 25-29 ans, Encadrement et professions intellectuelles
+      id: fouzi-ould-bouamama
     - x: -0.502
       y: 0.086
       groupe: 2
@@ -24176,13 +24176,13 @@ modeles:
       survie: 97.5
       voix: 4
       id: marianne-mondon
-    - nom: Nicolas Leoni
+    - nom: Nicolas Roy
       saison: s02
       part: 100.0
       conseils: 9
       survie: 100.0
       voix: 3
-      id: nicolas-leoni
+      id: nicolas-roy
     - nom: Philippe Duron
       saison: s10
       part: 100.0

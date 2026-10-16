@@ -11,8 +11,8 @@
 #
 #     tools/atelier python3 tools/extraction/fusionner.py --ecrire
 #
-- id: marie-boyer
-  nom: Marie Boyer
+- id: marie-besnier
+  nom: Marie Besnier
   prenom: Marie
   genre: f
   participations:
@@ -189,8 +189,8 @@
   participations:
   - s02
   nb_participations: 1
-- id: francois-xavier-arguillere
-  nom: François-Xavier Arguillère
+- id: francois-xavier-renou
+  nom: François-Xavier Renou
   prenom: François-Xavier
   genre: h
   participations:
@@ -225,8 +225,8 @@
   participations:
   - s02
   nb_participations: 1
-- id: nicolas-leoni
-  nom: Nicolas Leoni
+- id: nicolas-roy
+  nom: Nicolas Roy
   prenom: Nicolas
   genre: h
   participations:
@@ -912,8 +912,8 @@
   - s08
   - sp2
   nb_participations: 2
-- id: charlene-hoffness
-  nom: Charlène Hoffness
+- id: charlene-hoffsess
+  nom: Charlène Hoffsess
   prenom: Charlène
   genre: f
   participations:
@@ -1916,8 +1916,8 @@
   participations:
   - s16
   nb_participations: 1
-- id: julie-navarro-camilleri
-  nom: Julie Navarro-Camilleri
+- id: julie-navarro
+  nom: Julie Navarro
   prenom: Julie
   genre: f
   participations:
@@ -2171,8 +2171,8 @@
   participations:
   - s18
   nb_participations: 1
-- id: marta-morino
-  nom: Marta Morino
+- id: marta-molino
+  nom: Marta Molino
   prenom: Marta
   genre: f
   participations:
@@ -2291,8 +2291,8 @@
   participations:
   - s20
   nb_participations: 1
-- id: carinne-fossey-elka
-  nom: Carinne Fossey Elka
+- id: carinne-elka-dioza
+  nom: Carinne Elka-Dioza
   prenom: Carinne
   genre: f
   participations:
@@ -2777,7 +2777,7 @@
   - s23
   nb_participations: 1
 - id: matteo-real
-  nom: Matteo Real
+  nom: Mattéo Real
   prenom: Mattéo
   genre: h
   participations:
@@ -2867,8 +2867,8 @@
   participations:
   - s23
   nb_participations: 1
-- id: fouzi-de-la-fuente
-  nom: Fouzi de la Fuente
+- id: fouzi-ould-bouamama
+  nom: Fouzi Ould Bouamama
   prenom: Fouzi
   genre: h
   participations:

@@ -31,39 +31,39 @@
   type: elimination
   complet: true
   episode: '1'
-  elimine: marie-boyer
+  elimine: marie-besnier
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 8
   votes:
   - votant: gilles-nicolet
     votant_rattache: true
-    cible: marie-boyer
+    cible: marie-besnier
     cible_rattachee: true
     annule: false
   - votant: francoise-avignon
     votant_rattache: true
-    cible: marie-boyer
+    cible: marie-besnier
     cible_rattachee: true
     annule: false
   - votant: geraldine-doyen
     votant_rattache: true
-    cible: marie-boyer
+    cible: marie-besnier
     cible_rattachee: true
     annule: false
   - votant: stephane-bertheau
     votant_rattache: true
-    cible: marie-boyer
+    cible: marie-besnier
     cible_rattachee: true
     annule: false
   - votant: david-noel
     votant_rattache: true
-    cible: marie-boyer
+    cible: marie-besnier
     cible_rattachee: true
     annule: false
   - votant: sandra-acabado
     votant_rattache: true
-    cible: marie-boyer
+    cible: marie-besnier
     cible_rattachee: true
     annule: false
   - votant: jean-luc-fiorina
@@ -71,7 +71,7 @@
     cible: sandra-acabado
     cible_rattachee: true
     annule: false
-  - votant: marie-boyer
+  - votant: marie-besnier
     votant_rattache: true
     cible: gilles-nicolet
     cible_rattachee: true
@@ -731,7 +731,7 @@
   votes_contre: 7
   votes_exprimes: 8
   votes:
-  - votant: nicolas-leoni
+  - votant: nicolas-roy
     votant_rattache: true
     cible: caroline-lamotte
     cible_rattachee: true
@@ -751,7 +751,7 @@
     cible: caroline-lamotte
     cible_rattachee: true
     annule: false
-  - votant: francois-xavier-arguillere
+  - votant: francois-xavier-renou
     votant_rattache: true
     cible: caroline-lamotte
     cible_rattachee: true
@@ -781,7 +781,7 @@
   votes_contre: 4
   votes_exprimes: 7
   votes:
-  - votant: nicolas-leoni
+  - votant: nicolas-roy
     votant_rattache: true
     cible: celine-fortier
     cible_rattachee: true
@@ -801,7 +801,7 @@
     cible: celine-fortier
     cible_rattachee: true
     annule: false
-  - votant: francois-xavier-arguillere
+  - votant: francois-xavier-renou
     votant_rattache: true
     cible: isabelle-vial
     cible_rattachee: true
@@ -911,7 +911,7 @@
   votes_contre: 4
   votes_exprimes: 6
   votes:
-  - votant: nicolas-leoni
+  - votant: nicolas-roy
     votant_rattache: true
     cible: jacky-forteron
     cible_rattachee: true
@@ -926,7 +926,7 @@
     cible: jacky-forteron
     cible_rattachee: true
     annule: false
-  - votant: francois-xavier-arguillere
+  - votant: francois-xavier-renou
     votant_rattache: true
     cible: jacky-forteron
     cible_rattachee: true
@@ -938,7 +938,7 @@
     annule: false
   - votant: jacky-forteron
     votant_rattache: true
-    cible: francois-xavier-arguillere
+    cible: francois-xavier-renou
     cible_rattachee: true
     annule: false
 - saison: s02
@@ -951,7 +951,7 @@
   votes_contre: 4
   votes_exprimes: 5
   votes:
-  - votant: nicolas-leoni
+  - votant: nicolas-roy
     votant_rattache: true
     cible: adonis-koupaki
     cible_rattachee: true
@@ -966,7 +966,7 @@
     cible: adonis-koupaki
     cible_rattachee: true
     annule: false
-  - votant: francois-xavier-arguillere
+  - votant: francois-xavier-renou
     votant_rattache: true
     cible: adonis-koupaki
     cible_rattachee: true
@@ -991,7 +991,7 @@
     cible: bernard-lenoir
     cible_rattachee: true
     annule: false
-  - votant: nicolas-leoni
+  - votant: nicolas-roy
     votant_rattache: true
     cible: jimmy-denis
     cible_rattachee: true
@@ -1016,7 +1016,7 @@
     cible: jimmy-denis
     cible_rattachee: true
     annule: false
-  - votant: francois-xavier-arguillere
+  - votant: francois-xavier-renou
     votant_rattache: true
     cible: jimmy-denis
     cible_rattachee: true
@@ -1046,7 +1046,7 @@
     cible: marianne-mondon
     cible_rattachee: true
     annule: false
-  - votant: nicolas-leoni
+  - votant: nicolas-roy
     votant_rattache: true
     cible: beatrice-cloix-penisson
     cible_rattachee: true
@@ -1071,14 +1071,14 @@
     cible: beatrice-cloix-penisson
     cible_rattachee: true
     annule: false
-  - votant: francois-xavier-arguillere
+  - votant: francois-xavier-renou
     votant_rattache: true
     cible: beatrice-cloix-penisson
     cible_rattachee: true
     annule: false
   - votant: beatrice-cloix-penisson
     votant_rattache: true
-    cible: nicolas-leoni
+    cible: nicolas-roy
     cible_rattachee: true
     annule: false
 - saison: s02
@@ -1086,7 +1086,7 @@
   type: elimination
   complet: true
   episode: '10'
-  elimine: francois-xavier-arguillere
+  elimine: francois-xavier-renou
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 7
@@ -1096,19 +1096,19 @@
     cible: marianne-mondon
     cible_rattachee: true
     annule: false
-  - votant: nicolas-leoni
+  - votant: nicolas-roy
     votant_rattache: true
-    cible: francois-xavier-arguillere
+    cible: francois-xavier-renou
     cible_rattachee: true
     annule: false
   - votant: bernard-lenoir
     votant_rattache: true
-    cible: francois-xavier-arguillere
+    cible: francois-xavier-renou
     cible_rattachee: true
     annule: false
   - votant: marianne-mondon
     votant_rattache: true
-    cible: francois-xavier-arguillere
+    cible: francois-xavier-renou
     cible_rattachee: true
     annule: false
   - votant: maud-garnier
@@ -1118,10 +1118,10 @@
     annule: false
   - votant: isabelle-vial
     votant_rattache: true
-    cible: francois-xavier-arguillere
+    cible: francois-xavier-renou
     cible_rattachee: true
     annule: false
-  - votant: francois-xavier-arguillere
+  - votant: francois-xavier-renou
     votant_rattache: true
     cible: marianne-mondon
     cible_rattachee: true
@@ -1141,7 +1141,7 @@
     cible: isabelle-vial
     cible_rattachee: true
     annule: false
-  - votant: nicolas-leoni
+  - votant: nicolas-roy
     votant_rattache: true
     cible: isabelle-vial
     cible_rattachee: true
@@ -1178,10 +1178,10 @@
   votes:
   - votant: amel-fatnassi
     votant_rattache: true
-    cible: nicolas-leoni
+    cible: nicolas-roy
     cible_rattachee: true
     annule: false
-  - votant: nicolas-leoni
+  - votant: nicolas-roy
     votant_rattache: true
     cible: maud-garnier
     cible_rattachee: true
@@ -1198,7 +1198,7 @@
     annule: false
   - votant: maud-garnier
     votant_rattache: true
-    cible: nicolas-leoni
+    cible: nicolas-roy
     cible_rattachee: true
     annule: false
 - saison: s02
@@ -1231,19 +1231,19 @@
   type: jury
   complet: false
   episode: Finaliste
-  finaliste: nicolas-leoni
+  finaliste: nicolas-roy
   finaliste_rattache: true
   votes_pour: 2
   votes_exprimes: 7
   votes:
   - votant: bernard-lenoir
     votant_rattache: true
-    cible: nicolas-leoni
+    cible: nicolas-roy
     cible_rattachee: true
     annule: false
   - votant: marianne-mondon
     votant_rattache: true
-    cible: nicolas-leoni
+    cible: nicolas-roy
     cible_rattachee: true
     annule: false
 - saison: s02
@@ -1266,7 +1266,7 @@
     cible: amel-fatnassi
     cible_rattachee: true
     annule: false
-  - votant: francois-xavier-arguillere
+  - votant: francois-xavier-renou
     votant_rattache: true
     cible: amel-fatnassi
     cible_rattachee: true
@@ -4563,7 +4563,7 @@
     cible: valerie-tartacede-bollaert
     cible_rattachee: true
     annule: false
-  - votant: charlene-hoffness
+  - votant: charlene-hoffsess
     votant_rattache: true
     cible: irya-cisse
     cible_rattachee: true
@@ -4630,10 +4630,10 @@
     annule: false
   - votant: hakim-djellali
     votant_rattache: true
-    cible: charlene-hoffness
+    cible: charlene-hoffsess
     cible_rattachee: true
     annule: false
-  - votant: charlene-hoffness
+  - votant: charlene-hoffsess
     votant_rattache: true
     cible: irya-cisse
     cible_rattachee: true
@@ -4723,7 +4723,7 @@
     cible: jessica-joullie
     cible_rattachee: true
     annule: false
-  - votant: charlene-hoffness
+  - votant: charlene-hoffsess
     votant_rattache: true
     cible: alain-garcia
     cible_rattachee: true
@@ -4760,10 +4760,10 @@
     annule: false
   - votant: hakim-djellali
     votant_rattache: true
-    cible: charlene-hoffness
+    cible: charlene-hoffsess
     cible_rattachee: true
     annule: false
-  - votant: charlene-hoffness
+  - votant: charlene-hoffsess
     votant_rattache: true
     cible: alain-garcia
     cible_rattachee: true
@@ -4775,7 +4775,7 @@
     annule: false
   - votant: alain-garcia
     votant_rattache: true
-    cible: charlene-hoffness
+    cible: charlene-hoffsess
     cible_rattachee: true
     annule: false
 - saison: s08
@@ -4823,7 +4823,7 @@
     cible: jean-bernard-hauton-arnaud
     cible_rattachee: true
     annule: false
-  - votant: charlene-hoffness
+  - votant: charlene-hoffsess
     votant_rattache: true
     cible: hakim-djellali
     cible_rattachee: true
@@ -4885,10 +4885,10 @@
     annule: false
   - votant: hakim-djellali
     votant_rattache: true
-    cible: charlene-hoffness
+    cible: charlene-hoffsess
     cible_rattachee: true
     annule: false
-  - votant: charlene-hoffness
+  - votant: charlene-hoffsess
     votant_rattache: true
     cible: nathalie-ensargueix
     cible_rattachee: true
@@ -4958,7 +4958,7 @@
     cible: christophe-guttatoro-martin
     cible_rattachee: true
     annule: false
-  - votant: charlene-hoffness
+  - votant: charlene-hoffsess
     votant_rattache: true
     cible: christophe-guttatoro-martin
     cible_rattachee: true
@@ -4973,34 +4973,34 @@
   type: elimination
   complet: true
   episode: '9'
-  elimine: charlene-hoffness
+  elimine: charlene-hoffsess
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 8
   votes:
   - votant: christelle-gauzet
     votant_rattache: true
-    cible: charlene-hoffness
+    cible: charlene-hoffsess
     cible_rattachee: true
     annule: false
   - votant: frederic-favier
     votant_rattache: true
-    cible: charlene-hoffness
+    cible: charlene-hoffsess
     cible_rattachee: true
     annule: false
   - votant: bertrand-bolle
     votant_rattache: true
-    cible: charlene-hoffness
+    cible: charlene-hoffsess
     cible_rattachee: true
     annule: false
   - votant: nathalie-ensargueix
     votant_rattache: true
-    cible: charlene-hoffness
+    cible: charlene-hoffsess
     cible_rattachee: true
     annule: false
   - votant: carole-rapin
     votant_rattache: true
-    cible: charlene-hoffness
+    cible: charlene-hoffsess
     cible_rattachee: true
     annule: false
   - votant: regis-colombier
@@ -5010,10 +5010,10 @@
     annule: false
   - votant: hakim-djellali
     votant_rattache: true
-    cible: charlene-hoffness
+    cible: charlene-hoffsess
     cible_rattachee: true
     annule: false
-  - votant: charlene-hoffness
+  - votant: charlene-hoffsess
     votant_rattache: true
     cible: nathalie-ensargueix
     cible_rattachee: true
@@ -5203,7 +5203,7 @@
     cible: christelle-gauzet
     cible_rattachee: true
     annule: false
-  - votant: charlene-hoffness
+  - votant: charlene-hoffsess
     votant_rattache: true
     cible: christelle-gauzet
     cible_rattachee: true
@@ -10215,7 +10215,7 @@
     cible: myriam-zenasni
     cible_rattachee: true
     annule: false
-  - votant: julie-navarro-camilleri
+  - votant: julie-navarro
     votant_rattache: true
     cible: myriam-zenasni
     cible_rattachee: true
@@ -10335,7 +10335,7 @@
     cible: sophie-le-nestic-sabattier
     cible_rattachee: true
     annule: false
-  - votant: julie-navarro-camilleri
+  - votant: julie-navarro
     votant_rattache: true
     cible: sophie-le-nestic-sabattier
     cible_rattachee: true
@@ -10437,7 +10437,7 @@
     annule: false
   - votant: bruno-troester
     votant_rattache: true
-    cible: julie-navarro-camilleri
+    cible: julie-navarro
     cible_rattachee: true
     annule: false
   - votant: candice-boisson
@@ -10447,10 +10447,10 @@
     annule: false
   - votant: stephane-cipolla
     votant_rattache: true
-    cible: julie-navarro-camilleri
+    cible: julie-navarro
     cible_rattachee: true
     annule: false
-  - votant: julie-navarro-camilleri
+  - votant: julie-navarro
     votant_rattache: true
     cible: laurent-mischkind
     cible_rattachee: true
@@ -10467,7 +10467,7 @@
     annule: false
   - votant: laurent-mischkind
     votant_rattache: true
-    cible: julie-navarro-camilleri
+    cible: julie-navarro
     cible_rattachee: true
     annule: false
   - votant: sophie-le-nestic-sabattier
@@ -10505,7 +10505,7 @@
     cible: jean-luc-duboscq
     cible_rattachee: true
     annule: false
-  - votant: julie-navarro-camilleri
+  - votant: julie-navarro
     votant_rattache: true
     cible: jean-luc-duboscq
     cible_rattachee: true
@@ -10590,7 +10590,7 @@
     cible: lau-emilien
     cible_rattachee: true
     annule: false
-  - votant: julie-navarro-camilleri
+  - votant: julie-navarro
     votant_rattache: true
     cible: jeremy-raffin
     cible_rattachee: true
@@ -10679,7 +10679,7 @@
     cible: benoit-assadi
     cible_rattachee: true
     annule: true
-  - votant: julie-navarro-camilleri
+  - votant: julie-navarro
     votant_rattache: true
     cible: beryl-libault-de-la-chevasnerie
     cible_rattachee: true
@@ -10753,7 +10753,7 @@
     cible: alexandra-pharisien
     cible_rattachee: true
     annule: false
-  - votant: julie-navarro-camilleri
+  - votant: julie-navarro
     votant_rattache: true
     cible: alexandra-pharisien
     cible_rattachee: true
@@ -10765,7 +10765,7 @@
     annule: false
   - votant: alexandra-pharisien
     votant_rattache: true
-    cible: julie-navarro-camilleri
+    cible: julie-navarro
     cible_rattachee: true
     annule: false
   - votant: beryl-libault-de-la-chevasnerie
@@ -10790,12 +10790,12 @@
     annule: false
   - votant: jesta-hillmann
     votant_rattache: true
-    cible: julie-navarro-camilleri
+    cible: julie-navarro
     cible_rattachee: true
     annule: false
   - votant: freddy-bolzer
     votant_rattache: true
-    cible: julie-navarro-camilleri
+    cible: julie-navarro
     cible_rattachee: true
     annule: false
   - votant: bruno-troester
@@ -10823,7 +10823,7 @@
     cible: freddy-bolzer
     cible_rattachee: true
     annule: false
-  - votant: julie-navarro-camilleri
+  - votant: julie-navarro
     votant_rattache: true
     cible: yannick-delalleau
     cible_rattachee: true
@@ -10843,7 +10843,7 @@
   type: elimination
   complet: false
   episode: '11'
-  elimine: julie-navarro-camilleri
+  elimine: julie-navarro
   elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
@@ -10860,7 +10860,7 @@
   annulation: partielle
   voix_annulees: 1
   proteges:
-  - julie-navarro-camilleri
+  - julie-navarro
   votes:
   - votant: benoit-assadi
     votant_rattache: true
@@ -10904,7 +10904,7 @@
     annule: false
   - votant: yannick-delalleau
     votant_rattache: true
-    cible: julie-navarro-camilleri
+    cible: julie-navarro
     cible_rattachee: true
     annule: true
 - saison: s16
@@ -11136,7 +11136,7 @@
     cible: benoit-assadi
     cible_rattachee: true
     annule: false
-  - votant: julie-navarro-camilleri
+  - votant: julie-navarro
     votant_rattache: true
     cible: benoit-assadi
     cible_rattachee: true
@@ -12084,7 +12084,7 @@
     cible: marvyn-leone
     cible_rattachee: true
     annule: false
-  - votant: marta-morino
+  - votant: marta-molino
     votant_rattache: true
     cible: marvyn-leone
     cible_rattachee: true
@@ -12154,7 +12154,7 @@
     cible: mel-moresve
     cible_rattachee: true
     annule: false
-  - votant: marta-morino
+  - votant: marta-molino
     votant_rattache: true
     cible: may-peitavi
     cible_rattachee: true
@@ -12190,7 +12190,7 @@
   type: elimination
   complet: true
   episode: '4'
-  elimine: marta-morino
+  elimine: marta-molino
   elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 8
@@ -12202,27 +12202,27 @@
     annule: false
   - votant: sandrine-dubourdy
     votant_rattache: true
-    cible: marta-morino
+    cible: marta-molino
     cible_rattachee: true
     annule: false
   - votant: marguerite-leblanc
     votant_rattache: true
-    cible: marta-morino
+    cible: marta-molino
     cible_rattachee: true
     annule: false
   - votant: romain-delaroche
     votant_rattache: true
-    cible: marta-morino
+    cible: marta-molino
     cible_rattachee: true
     annule: false
   - votant: melanie-moret
     votant_rattache: true
-    cible: marta-morino
+    cible: marta-molino
     cible_rattachee: true
     annule: false
   - votant: sebastien-meriaux
     votant_rattache: true
-    cible: marta-morino
+    cible: marta-molino
     cible_rattachee: true
     annule: false
   - votant: tugdual-paul
@@ -12230,7 +12230,7 @@
     cible: marguerite-leblanc
     cible_rattachee: true
     annule: false
-  - votant: marta-morino
+  - votant: marta-molino
     votant_rattache: true
     cible: marguerite-leblanc
     cible_rattachee: true
@@ -12969,12 +12969,12 @@
   type: elimination
   complet: false
   episode: '3'
-  elimine: carinne-fossey-elka
+  elimine: carinne-elka-dioza
   elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
   votes:
-  - votant: carinne-fossey-elka
+  - votant: carinne-elka-dioza
     votant_rattache: true
     cible: Évacuée
     cible_rattachee: false
@@ -15972,7 +15972,7 @@
     cible: samira-ait-brahim
     cible_rattachee: true
     annule: false
-  - votant: fouzi-de-la-fuente
+  - votant: fouzi-ould-bouamama
     votant_rattache: true
     cible: pauline-pourchaire
     cible_rattachee: true
@@ -16187,7 +16187,7 @@
     cible: stephanie-tribot
     cible_rattachee: true
     annule: false
-  - votant: fouzi-de-la-fuente
+  - votant: fouzi-ould-bouamama
     votant_rattache: true
     cible: stephanie-tribot
     cible_rattachee: true
@@ -16345,7 +16345,7 @@
     cible: maxime-tournoux
     cible_rattachee: true
     annule: false
-  - votant: fouzi-de-la-fuente
+  - votant: fouzi-ould-bouamama
     votant_rattache: true
     cible: colin-mottas
     cible_rattachee: true
@@ -16453,7 +16453,7 @@
     cible: louana-roy
     cible_rattachee: true
     annule: false
-  - votant: fouzi-de-la-fuente
+  - votant: fouzi-ould-bouamama
     votant_rattache: true
     cible: yannick-zachee
     cible_rattachee: true
@@ -16487,7 +16487,7 @@
   - votant: null
     votant_rattache: false
     mecanique: Malédiction/Pénalité
-    cible: fouzi-de-la-fuente
+    cible: fouzi-ould-bouamama
     cible_rattachee: true
     annule: false
   - votant: null
@@ -16541,7 +16541,7 @@
     cible: maxime-tournoux
     cible_rattachee: true
     annule: false
-  - votant: fouzi-de-la-fuente
+  - votant: fouzi-ould-bouamama
     votant_rattache: true
     cible: anne-sophie-mounier
     cible_rattachee: true
@@ -16594,7 +16594,7 @@
     annule: false
   - votant: jean-charles-chatelus
     votant_rattache: true
-    cible: fouzi-de-la-fuente
+    cible: fouzi-ould-bouamama
     cible_rattachee: true
     annule: false
   - votant: ambre-daudet
@@ -16609,17 +16609,17 @@
     annule: false
   - votant: nicolas-bellon
     votant_rattache: true
-    cible: fouzi-de-la-fuente
+    cible: fouzi-ould-bouamama
     cible_rattachee: true
     annule: false
-  - votant: fouzi-de-la-fuente
+  - votant: fouzi-ould-bouamama
     votant_rattache: true
     cible: nicolas-bellon
     cible_rattachee: true
     annule: false
   - votant: louana-roy
     votant_rattache: true
-    cible: fouzi-de-la-fuente
+    cible: fouzi-ould-bouamama
     cible_rattachee: true
     annule: false
   - votant: maxime-tournoux
@@ -16660,7 +16660,7 @@
   type: elimination
   complet: false
   episode: '12'
-  elimine: fouzi-de-la-fuente
+  elimine: fouzi-ould-bouamama
   elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
@@ -16833,7 +16833,7 @@
     cible: francois-descamp
     cible_rattachee: true
     annule: false
-  - votant: fouzi-de-la-fuente
+  - votant: fouzi-ould-bouamama
     votant_rattache: true
     cible: francois-descamp
     cible_rattachee: true
@@ -22870,7 +22870,7 @@
     cible: marine-plissonneau
     cible_rattachee: true
     annule: false
-  - votant: nicolas-leoni
+  - votant: nicolas-roy
     votant_rattache: true
     cible: patrick-merle
     cible_rattachee: true
@@ -22885,24 +22885,24 @@
   type: elimination
   complet: true
   episode: '2'
-  elimine: nicolas-leoni
+  elimine: nicolas-roy
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 7
   votes:
   - votant: claude-dartois
     votant_rattache: true
-    cible: nicolas-leoni
+    cible: nicolas-roy
     cible_rattachee: true
     annule: false
   - votant: coumba-baradji
     votant_rattache: true
-    cible: nicolas-leoni
+    cible: nicolas-roy
     cible_rattachee: true
     annule: false
   - votant: patrick-merle
     votant_rattache: true
-    cible: nicolas-leoni
+    cible: nicolas-roy
     cible_rattachee: true
     annule: false
   - votant: guenaelle-biras
@@ -22912,10 +22912,10 @@
     annule: false
   - votant: teheiura-teahui
     votant_rattache: true
-    cible: nicolas-leoni
+    cible: nicolas-roy
     cible_rattachee: true
     annule: false
-  - votant: nicolas-leoni
+  - votant: nicolas-roy
     votant_rattache: true
     cible: claude-dartois
     cible_rattachee: true
@@ -23059,7 +23059,7 @@
     cible: freddy-boucher
     cible_rattachee: true
     annule: true
-  - votant: nicolas-leoni
+  - votant: nicolas-roy
     votant_rattache: true
     cible: claude-dartois
     cible_rattachee: true
@@ -23907,54 +23907,54 @@
   type: elimination
   complet: true
   episode: '1'
-  elimine: julie-navarro-camilleri
+  elimine: julie-navarro
   elimine_rattache: true
   votes_contre: 8
   votes_exprimes: 9
   votes:
   - votant: candice-boisson
     votant_rattache: true
-    cible: julie-navarro-camilleri
+    cible: julie-navarro
     cible_rattachee: true
     annule: false
   - votant: clementine-jullien
     votant_rattache: true
-    cible: julie-navarro-camilleri
+    cible: julie-navarro
     cible_rattachee: true
     annule: false
   - votant: dylan-thiry
     votant_rattache: true
-    cible: julie-navarro-camilleri
+    cible: julie-navarro
     cible_rattachee: true
     annule: false
   - votant: ludovic-laresche
     votant_rattache: true
-    cible: julie-navarro-camilleri
+    cible: julie-navarro
     cible_rattachee: true
     annule: false
   - votant: raphaele-navarro
     votant_rattache: true
-    cible: julie-navarro-camilleri
+    cible: julie-navarro
     cible_rattachee: true
     annule: false
   - votant: olivier-moenaert
     votant_rattache: true
-    cible: julie-navarro-camilleri
+    cible: julie-navarro
     cible_rattachee: true
     annule: false
   - votant: cedric-giosserand-lucas
     votant_rattache: true
-    cible: julie-navarro-camilleri
+    cible: julie-navarro
     cible_rattachee: true
     annule: false
-  - votant: julie-navarro-camilleri
+  - votant: julie-navarro
     votant_rattache: true
     cible: clementine-jullien
     cible_rattachee: true
     annule: false
   - votant: chantal-menard
     votant_rattache: true
-    cible: julie-navarro-camilleri
+    cible: julie-navarro
     cible_rattachee: true
     annule: false
 - saison: sp5
