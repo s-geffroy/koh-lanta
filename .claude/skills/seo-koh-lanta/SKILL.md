@@ -140,11 +140,50 @@ comme la fiche. « Ex aequo » serait une these : sur Bocas del Toro les deux
 noms n'ont pas le meme classement. « 1 vainqueur » n'est pas mieux -- on ne
 compte pas ce qu'on nomme.
 
-Trois pieges de redaction, deja payes sur les aventuriers : `_edition()` passe
-par l'annee pour ne pas ecrire « lors de Les Aventuriers » ; `de_()` elide
-devant voyelle, sinon 138 fiches publiaient « le metier de Abdellah » ; et
-`.capitalize()` minuscule les noms propres -- ne jamais l'employer sur une
-phrase qui en contient.
+Cinq pieges de redaction, tous payes en ligne :
+
+1. `_edition()` passe par l'annee pour ne pas ecrire « lors de Les
+   Aventuriers ».
+2. `de_()` elide devant voyelle, sinon 138 fiches publiaient « le metier de
+   Abdellah ».
+3. **`.capitalize()` minuscule les noms propres.** Ne jamais l'employer sur
+   une phrase qui en contient : 43 fiches ont publie « En 2007 (palawan) »,
+   « (viêtnam) », « (la revanche des 4 terres) ». `affichable()` existe et ne
+   fait que la premiere lettre.
+4. **`ordinal()` ne s'accorde pas.** Seul le rang 1 s'accorde en francais, et
+   15 fiches publiaient « 1er sur 18 [...] ou ELLE gagne la saison ».
+   `ordinal_rang(n, genre)` pour un RANG ; `ordinal()` reste bon pour un jour,
+   dont le mot accorde est masculin.
+5. **Le titre d'une saison n'est jamais sujet** (voir ci-dessus).
+
+Deux controles tiennent les deux fautes de casse et d'accord, et ils cherchent
+le RESULTAT, pas l'appel fautif : `controler_titres_minuscules()` confronte la
+prose publiee aux titres de `_data/saisons.yml`, `controler_accord_rang()`
+confronte l'ordinal au genre de la fiche. Le premier a ete mis au point par
+ses faux positifs : cherche dans le texte brut de `fiches.yml`, il signalait
+les 34 slugs -- « koh-lanta-palawan » est une adresse, pas une phrase. D'ou
+`CLES_PROSE`.
+
+## Les trois egalites du jury
+
+Trois saisons ont deux vainqueurs : Bocas del Toro (2003), Palawan (2007) et
+Le Totem maudit (2022). **Ce ne sont pas des doublons de donnees**, et les
+sources sont nettes : la page Fandom de Bocas del Toro raconte le conseil
+final et enumere les trois occurrences ; Wikipedia donne « winner = X & Y »
+avec le partage de la cagnotte. `/statistiques/vainqueurs/` l'annonce depuis
+toujours -- « 29 vainqueurs, plus que de saisons ».
+
+Le decompte des voix ne s'ecrit PAS a la main : `fiches_des_saisons` le lit
+dans les conseils de type `jury`, un par finaliste, et ne pose `egalite_jury`
+que si les vainqueurs ont le MEME nombre de voix.
+
+**Un vainqueur termine premier, et c'est une regle de la chaine d'extraction**
+(`vainqueur_premier` dans `fusionner.py`), pas un constat de source :
+l'infobox Fandom ne sait pas ecrire une egalite et rangeait les deux gagnantes
+de Bocas del Toro 1 et 2 -- la fiche publiait « 2e sur 18 [...] ou elle gagne
+la saison ». La regle est posee APRES `completer_depuis_pages` : avant, elle
+s'appliquait aux 36 vainqueurs et effacait la provenance des 29 que le wiki
+atteste correctement.
 
 ## Les nombres se mettent en forme en Python
 
