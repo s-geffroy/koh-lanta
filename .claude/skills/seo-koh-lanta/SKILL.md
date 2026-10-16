@@ -251,6 +251,44 @@ preuve.
 L'ancienne adresse reste vivante par `ANCIENNES_ADRESSES` dans
 `build_fiches.py`, qui ecrit le `redirect_from` de la fiche.
 
+## Les noms que le wiki a corriges
+
+Un lien de tableau de saison, `[[Lola Besse|Lola]]`, ne prouve pas que la page
+porte ce titre : ce peut etre une REDIRECTION. Onze noms du site en sont une,
+compte sur les 531 :
+
+| Le site publiait | Titre canonique Fandom |
+|---|---|
+| Carinne Fossey Elka | Carinne Elka-Dioza |
+| Charlene Hoffness | Charlene Hoffsess |
+| Fouzi de la Fuente | Fouzi Ould Bouamama |
+| Francois-Xavier Arguillere | Francois-Xavier Renou |
+| Julie Navarro-Camilleri | Julie Navarro |
+| ~~Lola Besse~~ | **Lola Labesse** (adopte) |
+| Marie Boyer | Marie Besnier |
+| Marta Morino | Marta Molino |
+| Matteo Real | Mattéo Real |
+| Nicolas Leoni | Nicolas Roy |
+| Philippe Bizet | Phil Bizet |
+
+**`NOMS_CANONIQUES` dans `fusionner.py` est une TABLE, pas une regle, et il
+faut que cela reste ainsi.** Le titre canonique n'est pas toujours le meilleur
+nom a publier : « Philippe Bizet » redirige vers « Phil Bizet » -- meme
+personne, mais un diminutif ne remplace pas un prenom dans un H1. Adopter
+mecaniquement le titre canonique rebaptiserait onze fiches, dont celle-la.
+
+Ne JAMAIS deduire le titre canonique de `_categories.json` en rattachant par
+le prenom : l'essai proposait « Philippe Bizet -> Philippe Duron », deux
+personnes differentes, et Philippe Duron est 7e au classement. Une
+redirection se verifie a la source :
+
+    action=query&titles=<nom>&redirects=1   sur kohlanta.fandom.com/fr/api.php
+
+Changer un nom change l'identifiant, donc l'adresse : voir la section
+precedente pour les trois fichiers qui suivent, et `ANCIENNES_ADRESSES` pour
+garder l'ancienne vivante. **La vignette de partage porte le nom DESSINE** :
+la renommer ne suffit pas, il faut relancer `build_partage.py --tout`.
+
 ## Les adresses de saison
 
 `/saisons/koh-lanta-palawan/`, et non `/saisons/s07/`. L'ancienne reste vivante
