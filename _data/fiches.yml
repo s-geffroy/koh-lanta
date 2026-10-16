@@ -15949,7 +15949,7 @@ aventuriers:
     score: -0.477
     titres: 0
     voix_recues: 1
-  frank-leb-uf:
+  frank-leboeuf:
     faq:
     - q: Quel âge avait Frank Lebœuf à Koh-Lanta ?
       r: 42 ans en 2010 (Le Choc des héros).
@@ -15969,7 +15969,7 @@ aventuriers:
         a gagné.
     finales: 0
     genre: h
-    id: frank-leb-uf
+    id: frank-leboeuf
     jour_max: 5
     jours_total: 5
     localisation: Bouches-du-Rhône
@@ -43699,9 +43699,13 @@ saisons:
     age_moyen: 31.3
     annee: 2001
     audience_finale: 4600000
+    audience_finale_texte: 4 600 000
     audience_lancement: 4200000
+    audience_lancement_texte: 4 200 000
     audience_moyenne: 4367000
+    audience_moyenne_texte: 4 367 000
     audience_pdm: 39.9
+    audience_pdm_texte: 39,9
     bulletins: 88
     casting:
     - &id002
@@ -43921,6 +43925,24 @@ saisons:
     en_cours: false
     epreuves: 22
     epreuves_individuelles: 11
+    faq:
+    - q: Qui a gagné Les Aventuriers de Koh-Lanta ?
+      r: 'Gilles Nicolet. La saison a été diffusée en 2001. Finaliste : Guénaëlle
+        Biras.'
+    - q: Combien d’aventuriers ont participé aux Aventuriers de Koh-Lanta ?
+      r: 16 aventuriers au départ, 31,3 ans de moyenne d’âge.
+    - q: Combien de jours a duré l’aventure aux Aventuriers de Koh-Lanta ?
+      r: 43 jours.
+    - q: Quel est le lieu de tournage des Aventuriers de Koh-Lanta ?
+      r: Parc national de Koh Lanta, Thaïlande.
+    - q: Combien de conseils d’élimination aux Aventuriers de Koh-Lanta ?
+      r: 14 conseils d’élimination. Le dépouillement de 11 d’entre eux est connu au
+        bulletin près, pour 88 bulletins relevés.
+    - q: Combien d’épreuves ont été courues aux Aventuriers de Koh-Lanta ?
+      r: 22 épreuves relevées, dont 11 individuelles.
+    - q: Quelle audience a fait Les Aventuriers de Koh-Lanta ?
+      r: 4 367 000 téléspectateurs en moyenne, 39,9 % de part de marché. Lancement
+        à 4 200 000, finale à 4 600 000.
     finalistes:
     - *id001
     id: s01
@@ -43943,9 +43965,13 @@ saisons:
     age_moyen: 31.0
     annee: 2002
     audience_finale: 7700000
+    audience_finale_texte: 7 700 000
     audience_lancement: 5200000
+    audience_lancement_texte: 5 200 000
     audience_moyenne: 6092000
+    audience_moyenne_texte: 6 092 000
     audience_pdm: 32.7
+    audience_pdm_texte: 32,7
     bulletins: 83
     casting:
     - &id004
@@ -44165,6 +44191,24 @@ saisons:
     en_cours: false
     epreuves: 25
     epreuves_individuelles: 13
+    faq:
+    - q: Qui a gagné Koh-Lanta Nicoya ?
+      r: 'Amel Fatnassi. La saison a été diffusée en 2002. Finaliste : Nicolas Leoni.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta Nicoya ?
+      r: 16 aventuriers au départ, 31 ans de moyenne d’âge. 1 abandon en cours de
+        jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta Nicoya ?
+      r: 40 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta Nicoya ?
+      r: Péninsule de Nicoya, Costa Rica.
+    - q: Combien de conseils d’élimination à Koh-Lanta Nicoya ?
+      r: 15 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
+        bulletin près, pour 83 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta Nicoya ?
+      r: 25 épreuves relevées, dont 13 individuelles.
+    - q: Quelle audience a fait Koh-Lanta Nicoya ?
+      r: 6 092 000 téléspectateurs en moyenne, 32,7 % de part de marché. Lancement
+        à 5 200 000, finale à 7 700 000.
     finalistes:
     - *id003
     id: s02
@@ -44187,9 +44231,13 @@ saisons:
     age_moyen: 31.6
     annee: 2003
     audience_finale: 7091560
+    audience_finale_texte: 7 091 560
     audience_lancement: 5120000
+    audience_lancement_texte: 5 120 000
     audience_moyenne: 5414000
+    audience_moyenne_texte: 5 414 000
     audience_pdm: 32.4
+    audience_pdm_texte: 32,4
     bulletins: 71
     casting:
     - &id005
@@ -44435,6 +44483,22 @@ saisons:
     en_cours: false
     epreuves: 0
     epreuves_individuelles: 0
+    faq:
+    - q: Qui a gagné Koh-Lanta Bocas del Toro ?
+      r: Delphine Bano et Isabelle Seguin. La saison a été diffusée en 2003.
+    - q: Combien d’aventuriers ont participé à Koh-Lanta Bocas del Toro ?
+      r: 18 aventuriers au départ, 31,6 ans de moyenne d’âge. 6 abandons en cours
+        de jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta Bocas del Toro ?
+      r: 40 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta Bocas del Toro ?
+      r: Archipel de Bocas del Toro, Panama.
+    - q: Combien de conseils d’élimination à Koh-Lanta Bocas del Toro ?
+      r: 19 conseils d’élimination. Le dépouillement de 9 d’entre eux est connu au
+        bulletin près, pour 71 bulletins relevés.
+    - q: Quelle audience a fait Koh-Lanta Bocas del Toro ?
+      r: 5 414 000 téléspectateurs en moyenne, 32,4 % de part de marché. Lancement
+        à 5 120 000, finale à 7 091 560.
     finalistes: []
     id: s03
     lieu: Archipel de Bocas del Toro
@@ -44457,9 +44521,13 @@ saisons:
     age_moyen: 33.7
     annee: 2004
     audience_finale: 8300000
+    audience_finale_texte: 8 300 000
     audience_lancement: 6200000
+    audience_lancement_texte: 6 200 000
     audience_moyenne: 6081000
+    audience_moyenne_texte: 6 081 000
     audience_pdm: 31.9
+    audience_pdm_texte: 31,9
     bulletins: 91
     casting:
     - &id008
@@ -44679,6 +44747,24 @@ saisons:
     en_cours: false
     epreuves: 27
     epreuves_individuelles: 15
+    faq:
+    - q: Qui a gagné Koh-Lanta Panama ?
+      r: 'Philippe Bordier. La saison a été diffusée en 2004. Finaliste : Linda Alario.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta Panama ?
+      r: 16 aventuriers au départ, 33,7 ans de moyenne d’âge. 2 abandons en cours
+        de jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta Panama ?
+      r: 40 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta Panama ?
+      r: Archipel des Perles (Las Perlas), Panama.
+    - q: Combien de conseils d’élimination à Koh-Lanta Panama ?
+      r: 16 conseils d’élimination. Le dépouillement de 11 d’entre eux est connu au
+        bulletin près, pour 91 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta Panama ?
+      r: 27 épreuves relevées, dont 15 individuelles.
+    - q: Quelle audience a fait Koh-Lanta Panama ?
+      r: 6 081 000 téléspectateurs en moyenne, 31,9 % de part de marché. Lancement
+        à 6 200 000, finale à 8 300 000.
     finalistes:
     - *id007
     id: s04
@@ -44701,9 +44787,13 @@ saisons:
     age_moyen: 32.6
     annee: 2005
     audience_finale: 8476160
+    audience_finale_texte: 8 476 160
     audience_lancement: 6604800
+    audience_lancement_texte: 6 604 800
     audience_moyenne: 6889000
+    audience_moyenne_texte: 6 889 000
     audience_pdm: 35.0
+    audience_pdm_texte: '35'
     bulletins: 95
     casting:
     - &id010
@@ -44936,6 +45026,24 @@ saisons:
     en_cours: false
     epreuves: 24
     epreuves_individuelles: 11
+    faq:
+    - q: Qui a gagné Koh-Lanta Pacifique ?
+      r: 'Clémence Castel. La saison a été diffusée en 2005. Finaliste : Francis Bordas.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta Pacifique ?
+      r: 17 aventuriers au départ, 32,6 ans de moyenne d’âge. 2 abandons en cours
+        de jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta Pacifique ?
+      r: 40 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta Pacifique ?
+      r: Îlots de l'île des Pins, Nouvelle-Calédonie.
+    - q: Combien de conseils d’élimination à Koh-Lanta Pacifique ?
+      r: 16 conseils d’élimination. Le dépouillement de 13 d’entre eux est connu au
+        bulletin près, pour 95 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta Pacifique ?
+      r: 24 épreuves relevées, dont 11 individuelles.
+    - q: Quelle audience a fait Koh-Lanta Pacifique ?
+      r: 6 889 000 téléspectateurs en moyenne, 35 % de part de marché. Lancement à
+        6 604 800, finale à 8 476 160.
     finalistes:
     - *id009
     id: s05
@@ -44958,9 +45066,13 @@ saisons:
     age_moyen: 33.2
     annee: 2006
     audience_finale: 7800000
+    audience_finale_texte: 7 800 000
     audience_lancement: 6110540
+    audience_lancement_texte: 6 110 540
     audience_moyenne: 6868000
+    audience_moyenne_texte: 6 868 000
     audience_pdm: 37.2
+    audience_pdm_texte: 37,2
     bulletins: 86
     casting:
     - &id012
@@ -45180,6 +45292,25 @@ saisons:
     en_cours: false
     epreuves: 32
     epreuves_individuelles: 17
+    faq:
+    - q: Qui a gagné Koh-Lanta Vanuatu ?
+      r: 'François-David Cardonnel. La saison a été diffusée en 2006. Finaliste :
+        Émilie Frahi.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta Vanuatu ?
+      r: 16 aventuriers au départ, 33,2 ans de moyenne d’âge. 3 abandons en cours
+        de jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta Vanuatu ?
+      r: 40 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta Vanuatu ?
+      r: Archipel d'Éfaté, Vanuatu.
+    - q: Combien de conseils d’élimination à Koh-Lanta Vanuatu ?
+      r: 17 conseils d’élimination. Le dépouillement de 11 d’entre eux est connu au
+        bulletin près, pour 86 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta Vanuatu ?
+      r: 32 épreuves relevées, dont 17 individuelles.
+    - q: Quelle audience a fait Koh-Lanta Vanuatu ?
+      r: 6 868 000 téléspectateurs en moyenne, 37,2 % de part de marché. Lancement
+        à 6 110 540, finale à 7 800 000.
     finalistes:
     - *id011
     id: s06
@@ -45202,9 +45333,13 @@ saisons:
     age_moyen: 32.7
     annee: 2007
     audience_finale: 9408880
+    audience_finale_texte: 9 408 880
     audience_lancement: 8445320
+    audience_lancement_texte: 8 445 320
     audience_moyenne: 8127000
+    audience_moyenne_texte: 8 127 000
     audience_pdm: 39.5
+    audience_pdm_texte: 39,5
     bulletins: 87
     casting:
     - &id013
@@ -45424,6 +45559,24 @@ saisons:
     en_cours: false
     epreuves: 32
     epreuves_individuelles: 18
+    faq:
+    - q: Qui a gagné Koh-Lanta Palawan ?
+      r: Jade Handi et Kevin Cuoco. La saison a été diffusée en 2007.
+    - q: Combien d’aventuriers ont participé à Koh-Lanta Palawan ?
+      r: 16 aventuriers au départ, 32,7 ans de moyenne d’âge. 2 abandons en cours
+        de jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta Palawan ?
+      r: 40 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta Palawan ?
+      r: Archipel de Palawan, Philippines.
+    - q: Combien de conseils d’élimination à Koh-Lanta Palawan ?
+      r: 16 conseils d’élimination. Le dépouillement de 10 d’entre eux est connu au
+        bulletin près, pour 87 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta Palawan ?
+      r: 32 épreuves relevées, dont 18 individuelles.
+    - q: Quelle audience a fait Koh-Lanta Palawan ?
+      r: 8 127 000 téléspectateurs en moyenne, 39,5 % de part de marché. Lancement
+        à 8 445 320, finale à 9 408 880.
     finalistes: []
     id: s07
     lieu: Archipel de Palawan
@@ -45446,9 +45599,13 @@ saisons:
     age_moyen: 32.6
     annee: 2008
     audience_finale: 7090000
+    audience_finale_texte: 7 090 000
     audience_lancement: 7170000
+    audience_lancement_texte: 7 170 000
     audience_moyenne: 6844000
+    audience_moyenne_texte: 6 844 000
     audience_pdm: 34.0
+    audience_pdm_texte: '34'
     bulletins: 90
     casting:
     - &id016
@@ -45681,6 +45838,25 @@ saisons:
     en_cours: false
     epreuves: 31
     epreuves_individuelles: 19
+    faq:
+    - q: Qui a gagné Koh-Lanta Caramoan ?
+      r: 'Christelle Gauzet. La saison a été diffusée en 2008. Finaliste : Frédéric
+        Favier.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta Caramoan ?
+      r: 17 aventuriers au départ, 32,6 ans de moyenne d’âge. 3 abandons en cours
+        de jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta Caramoan ?
+      r: 40 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta Caramoan ?
+      r: Péninsule de Caramoan, Philippines.
+    - q: Combien de conseils d’élimination à Koh-Lanta Caramoan ?
+      r: 17 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
+        bulletin près, pour 90 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta Caramoan ?
+      r: 31 épreuves relevées, dont 19 individuelles.
+    - q: Quelle audience a fait Koh-Lanta Caramoan ?
+      r: 6 844 000 téléspectateurs en moyenne, 34 % de part de marché. Lancement à
+        7 170 000, finale à 7 090 000.
     finalistes:
     - *id015
     id: s08
@@ -45703,9 +45879,13 @@ saisons:
     age_moyen: 34.7
     annee: 2009
     audience_finale: 7537000
+    audience_finale_texte: 7 537 000
     audience_lancement: 7300000
+    audience_lancement_texte: 7 300 000
     audience_moyenne: 7512000
+    audience_moyenne_texte: 7 512 000
     audience_pdm: 32.1
+    audience_pdm_texte: 32,1
     bulletins: 83
     casting:
     - &id018
@@ -45951,6 +46131,23 @@ saisons:
     en_cours: false
     epreuves: 0
     epreuves_individuelles: 0
+    faq:
+    - q: Qui a gagné Koh-Lanta Palau ?
+      r: 'Christina Chevry. La saison a été diffusée en 2009. Finaliste : Patrick
+        Merle.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta Palau ?
+      r: 18 aventuriers au départ, 34,7 ans de moyenne d’âge. 4 abandons en cours
+        de jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta Palau ?
+      r: 39 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta Palau ?
+      r: Micronésie, Palaos.
+    - q: Combien de conseils d’élimination à Koh-Lanta Palau ?
+      r: 21 conseils d’élimination. Le dépouillement de 11 d’entre eux est connu au
+        bulletin près, pour 83 bulletins relevés.
+    - q: Quelle audience a fait Koh-Lanta Palau ?
+      r: 7 512 000 téléspectateurs en moyenne, 32,1 % de part de marché. Lancement
+        à 7 300 000, finale à 7 537 000.
     finalistes:
     - *id017
     id: s09
@@ -45973,9 +46170,13 @@ saisons:
     age_moyen: 33.3
     annee: 2010
     audience_finale: 7048000
+    audience_finale_texte: 7 048 000
     audience_lancement: 7796000
+    audience_lancement_texte: 7 796 000
     audience_moyenne: 6801000
+    audience_moyenne_texte: 6 801 000
     audience_pdm: 27.6
+    audience_pdm_texte: 27,6
     bulletins: 97
     casting:
     - &id020
@@ -46221,6 +46422,24 @@ saisons:
     en_cours: false
     epreuves: 28
     epreuves_individuelles: 13
+    faq:
+    - q: Qui a gagné Koh-Lanta Viêtnam ?
+      r: 'Philippe Duron. La saison a été diffusée en 2010. Finaliste : Claude Dartois.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta Viêtnam ?
+      r: 18 aventuriers au départ, 33,3 ans de moyenne d’âge. 3 abandons en cours
+        de jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta Viêtnam ?
+      r: 40 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta Viêtnam ?
+      r: Archipel de Côn Đảo, Viêt Nam.
+    - q: Combien de conseils d’élimination à Koh-Lanta Viêtnam ?
+      r: 19 conseils d’élimination. Le dépouillement de 10 d’entre eux est connu au
+        bulletin près, pour 97 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta Viêtnam ?
+      r: 28 épreuves relevées, dont 13 individuelles.
+    - q: Quelle audience a fait Koh-Lanta Viêtnam ?
+      r: 6 801 000 téléspectateurs en moyenne, 27,6 % de part de marché. Lancement
+        à 7 796 000, finale à 7 048 000.
     finalistes:
     - *id019
     id: s10
@@ -46243,9 +46462,13 @@ saisons:
     age_moyen: 32.9
     annee: 2011
     audience_finale: 7647000
+    audience_finale_texte: 7 647 000
     audience_lancement: 7359000
+    audience_lancement_texte: 7 359 000
     audience_moyenne: 7237000
+    audience_moyenne_texte: 7 237 000
     audience_pdm: 29.2
+    audience_pdm_texte: 29,2
     bulletins: 116
     casting:
     - &id022
@@ -46517,6 +46740,25 @@ saisons:
     en_cours: false
     epreuves: 28
     epreuves_individuelles: 15
+    faq:
+    - q: Qui a gagné Koh-Lanta Raja Ampat ?
+      r: 'Gérard Urdampilleta. La saison a été diffusée en 2011. Finaliste : Teheiura
+        Teahui.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta Raja Ampat ?
+      r: 20 aventuriers au départ, 32,9 ans de moyenne d’âge. 3 abandons en cours
+        de jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta Raja Ampat ?
+      r: 41 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta Raja Ampat ?
+      r: Archipel de Raja Ampat, Indonésie.
+    - q: Combien de conseils d’élimination à Koh-Lanta Raja Ampat ?
+      r: 19 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
+        bulletin près, pour 116 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta Raja Ampat ?
+      r: 28 épreuves relevées, dont 15 individuelles.
+    - q: Quelle audience a fait Koh-Lanta Raja Ampat ?
+      r: 7 237 000 téléspectateurs en moyenne, 29,2 % de part de marché. Lancement
+        à 7 359 000, finale à 7 647 000.
     finalistes:
     - *id021
     id: s11
@@ -46539,9 +46781,13 @@ saisons:
     age_moyen: 35.6
     annee: 2012
     audience_finale: 7556000
+    audience_finale_texte: 7 556 000
     audience_lancement: 7181000
+    audience_lancement_texte: 7 181 000
     audience_moyenne: 7098000
+    audience_moyenne_texte: 7 098 000
     audience_pdm: 29.5
+    audience_pdm_texte: 29,5
     bulletins: 129
     casting:
     - &id024
@@ -46813,6 +47059,22 @@ saisons:
     en_cours: false
     epreuves: 0
     epreuves_individuelles: 0
+    faq:
+    - q: Qui a gagné Koh-Lanta Malaisie ?
+      r: 'Ugo Lartiche. La saison a été diffusée en 2012. Finaliste : Brice Martinet.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta Malaisie ?
+      r: 20 aventuriers au départ, 35,6 ans de moyenne d’âge. 2 abandons en cours
+        de jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta Malaisie ?
+      r: 42 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta Malaisie ?
+      r: Archipel de Seribuat, Malaisie.
+    - q: Combien de conseils d’élimination à Koh-Lanta Malaisie ?
+      r: 20 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
+        bulletin près, pour 129 bulletins relevés.
+    - q: Quelle audience a fait Koh-Lanta Malaisie ?
+      r: 7 098 000 téléspectateurs en moyenne, 29,5 % de part de marché. Lancement
+        à 7 181 000, finale à 7 556 000.
     finalistes:
     - *id023
     id: s12
@@ -46835,9 +47097,13 @@ saisons:
     age_moyen: 34.0
     annee: 2015
     audience_finale: 6099000
+    audience_finale_texte: 6 099 000
     audience_lancement: 5881000
+    audience_lancement_texte: 5 881 000
     audience_moyenne: 5625000
+    audience_moyenne_texte: 5 625 000
     audience_pdm: 27.0
+    audience_pdm_texte: '27'
     bulletins: 122
     casting:
     - &id026
@@ -47109,6 +47375,22 @@ saisons:
     en_cours: false
     epreuves: 0
     epreuves_individuelles: 0
+    faq:
+    - q: Qui a gagné Koh-Lanta Johor ?
+      r: 'Marc Rambaud. La saison a été diffusée en 2015. Finaliste : Chantal Ménard.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta Johor ?
+      r: 20 aventuriers au départ, 34 ans de moyenne d’âge. 4 abandons en cours de
+        jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta Johor ?
+      r: 40 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta Johor ?
+      r: Archipel de Sibu, Malaisie.
+    - q: Combien de conseils d’élimination à Koh-Lanta Johor ?
+      r: 21 conseils d’élimination. Le dépouillement de 8 d’entre eux est connu au
+        bulletin près, pour 122 bulletins relevés.
+    - q: Quelle audience a fait Koh-Lanta Johor ?
+      r: 5 625 000 téléspectateurs en moyenne, 27 % de part de marché. Lancement à
+        5 881 000, finale à 6 099 000.
     finalistes:
     - *id025
     id: s14
@@ -47131,9 +47413,13 @@ saisons:
     age_moyen: 35.1
     annee: 2016
     audience_finale: 6434000
+    audience_finale_texte: 6 434 000
     audience_lancement: 6235000
+    audience_lancement_texte: 6 235 000
     audience_moyenne: 5933000
+    audience_moyenne_texte: 5 933 000
     audience_pdm: 26.5
+    audience_pdm_texte: 26,5
     bulletins: 116
     casting:
     - &id028
@@ -47418,6 +47704,24 @@ saisons:
     en_cours: false
     epreuves: 28
     epreuves_individuelles: 15
+    faq:
+    - q: Qui a gagné Koh-Lanta Thaïlande ?
+      r: 'Wendy Gervois. La saison a été diffusée en 2016. Finaliste : Pascal Salviani.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta Thaïlande ?
+      r: 21 aventuriers au départ, 35,1 ans de moyenne d’âge. 2 abandons en cours
+        de jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta Thaïlande ?
+      r: 40 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta Thaïlande ?
+      r: Archipel de Ko Yao, Thaïlande.
+    - q: Combien de conseils d’élimination à Koh-Lanta Thaïlande ?
+      r: 19 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
+        bulletin près, pour 116 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta Thaïlande ?
+      r: 28 épreuves relevées, dont 15 individuelles.
+    - q: Quelle audience a fait Koh-Lanta Thaïlande ?
+      r: 5 933 000 téléspectateurs en moyenne, 26,5 % de part de marché. Lancement
+        à 6 235 000, finale à 6 434 000.
     finalistes:
     - *id027
     id: s15
@@ -47440,9 +47744,13 @@ saisons:
     age_moyen: 35.5
     annee: 2016
     audience_finale: 6577000
+    audience_finale_texte: 6 577 000
     audience_lancement: 5450000
+    audience_lancement_texte: 5 450 000
     audience_moyenne: 5730000
+    audience_moyenne_texte: 5 730 000
     audience_pdm: 27.3
+    audience_pdm_texte: 27,3
     bulletins: 139
     casting:
     - &id030
@@ -47714,6 +48022,23 @@ saisons:
     en_cours: false
     epreuves: 26
     epreuves_individuelles: 13
+    faq:
+    - q: Qui a gagné Koh-Lanta L'Île au trésor ?
+      r: 'Benoît Assadi. La saison a été diffusée en 2016. Finaliste : Jesta Hillmann.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta L'Île au trésor ?
+      r: 20 aventuriers au départ, 35,5 ans de moyenne d’âge.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta L'Île au trésor ?
+      r: 42 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta L'Île au trésor ?
+      r: Île de Koh Rong, Cambodge.
+    - q: Combien de conseils d’élimination à Koh-Lanta L'Île au trésor ?
+      r: 19 conseils d’élimination. Le dépouillement de 13 d’entre eux est connu au
+        bulletin près, pour 139 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta L'Île au trésor ?
+      r: 26 épreuves relevées, dont 13 individuelles.
+    - q: Quelle audience a fait Koh-Lanta L'Île au trésor ?
+      r: 5 730 000 téléspectateurs en moyenne, 27,3 % de part de marché. Lancement
+        à 5 450 000, finale à 6 577 000.
     finalistes:
     - *id029
     id: s16
@@ -47736,9 +48061,13 @@ saisons:
     age_moyen: 33.6
     annee: 2017
     audience_finale: 5762000
+    audience_finale_texte: 5 762 000
     audience_lancement: 6011000
+    audience_lancement_texte: 6 011 000
     audience_moyenne: 5570000
+    audience_moyenne_texte: 5 570 000
     audience_pdm: 26.8
+    audience_pdm_texte: 26,8
     bulletins: 107
     casting:
     - &id032
@@ -48023,6 +48352,25 @@ saisons:
     en_cours: false
     epreuves: 32
     epreuves_individuelles: 11
+    faq:
+    - q: Qui a gagné Koh-Lanta Cambodge ?
+      r: 'Frédéric Blancher. La saison a été diffusée en 2017. Finaliste : Clémentine
+        Jullien.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta Cambodge ?
+      r: 21 aventuriers au départ, 33,6 ans de moyenne d’âge. 3 abandons en cours
+        de jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta Cambodge ?
+      r: 40 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta Cambodge ?
+      r: Île de Koh Rong, Cambodge.
+    - q: Combien de conseils d’élimination à Koh-Lanta Cambodge ?
+      r: 21 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
+        bulletin près, pour 107 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta Cambodge ?
+      r: 32 épreuves relevées, dont 11 individuelles.
+    - q: Quelle audience a fait Koh-Lanta Cambodge ?
+      r: 5 570 000 téléspectateurs en moyenne, 26,8 % de part de marché. Lancement
+        à 6 011 000, finale à 5 762 000.
     finalistes:
     - *id031
     id: s17
@@ -48047,9 +48395,13 @@ saisons:
     age_moyen: 31.6
     annee: 2017
     audience_finale: 5343000
+    audience_finale_texte: 5 343 000
     audience_lancement: 5374000
+    audience_lancement_texte: 5 374 000
     audience_moyenne: 5010000
+    audience_moyenne_texte: 5 010 000
     audience_pdm: 24.3
+    audience_pdm_texte: 24,3
     bulletins: 117
     casting:
     - &id034
@@ -48334,6 +48686,24 @@ saisons:
     en_cours: false
     epreuves: 26
     epreuves_individuelles: 10
+    faq:
+    - q: Qui a gagné Koh-Lanta Fidji ?
+      r: 'André Deleplace. La saison a été diffusée en 2017. Finaliste : Tiffany Gounin.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta Fidji ?
+      r: 21 aventuriers au départ, 31,6 ans de moyenne d’âge. 3 abandons en cours
+        de jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta Fidji ?
+      r: 41 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta Fidji ?
+      r: Archipel de Yasawa, Fidji.
+    - q: Combien de conseils d’élimination à Koh-Lanta Fidji ?
+      r: 21 conseils d’élimination. Le dépouillement de 10 d’entre eux est connu au
+        bulletin près, pour 117 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta Fidji ?
+      r: 26 épreuves relevées, dont 10 individuelles.
+    - q: Quelle audience a fait Koh-Lanta Fidji ?
+      r: 5 010 000 téléspectateurs en moyenne, 24,3 % de part de marché. Lancement
+        à 5 374 000, finale à 5 343 000.
     finalistes:
     - *id033
     id: s18
@@ -48356,9 +48726,13 @@ saisons:
     age_moyen: 34.2
     annee: 2019
     audience_finale: 3606000
+    audience_finale_texte: 3 606 000
     audience_lancement: 5646000
+    audience_lancement_texte: 5 646 000
     audience_moyenne: 4334000
+    audience_moyenne_texte: 4 334 000
     audience_pdm: 22.9
+    audience_pdm_texte: 22,9
     bulletins: 120
     casting:
     - &id036
@@ -48643,6 +49017,24 @@ saisons:
     en_cours: false
     epreuves: 38
     epreuves_individuelles: 16
+    faq:
+    - q: Qui a gagné Koh-Lanta La Guerre des chefs ?
+      r: 'Maud Bamps. La saison a été diffusée en 2019. Finaliste : Cindy Poumeyrol.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta La Guerre des chefs ?
+      r: 21 aventuriers au départ, 34,2 ans de moyenne d’âge. 2 abandons en cours
+        de jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta La Guerre des chefs ?
+      r: 39 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta La Guerre des chefs ?
+      r: Archipel de Kadavu, Fidji.
+    - q: Combien de conseils d’élimination à Koh-Lanta La Guerre des chefs ?
+      r: 21 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
+        bulletin près, pour 120 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta La Guerre des chefs ?
+      r: 38 épreuves relevées, dont 16 individuelles.
+    - q: Quelle audience a fait Koh-Lanta La Guerre des chefs ?
+      r: 4 334 000 téléspectateurs en moyenne, 22,9 % de part de marché. Lancement
+        à 5 646 000, finale à 3 606 000.
     finalistes:
     - *id035
     id: s20
@@ -48667,9 +49059,13 @@ saisons:
     age_moyen: 34.0
     annee: 2020
     audience_finale: 6319000
+    audience_finale_texte: 6 319 000
     audience_lancement: 5663000
+    audience_lancement_texte: 5 663 000
     audience_moyenne: 5520000
+    audience_moyenne_texte: 5 520 000
     audience_pdm: 26.3
+    audience_pdm_texte: 26,3
     bulletins: 128
     casting:
     - &id038
@@ -48993,6 +49389,24 @@ saisons:
     en_cours: false
     epreuves: 37
     epreuves_individuelles: 13
+    faq:
+    - q: Qui a gagné Koh-Lanta Les 4 Terres ?
+      r: 'Alexandra Pornet. La saison a été diffusée en 2020. Finaliste : Brice Petit.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta Les 4 Terres ?
+      r: 24 aventuriers au départ, 34 ans de moyenne d’âge. 2 abandons en cours de
+        jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta Les 4 Terres ?
+      r: 40 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta Les 4 Terres ?
+      r: Archipel de Kadavu, Fidji.
+    - q: Combien de conseils d’élimination à Koh-Lanta Les 4 Terres ?
+      r: 24 conseils d’élimination. Le dépouillement de 13 d’entre eux est connu au
+        bulletin près, pour 128 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta Les 4 Terres ?
+      r: 37 épreuves relevées, dont 13 individuelles.
+    - q: Quelle audience a fait Koh-Lanta Les 4 Terres ?
+      r: 5 520 000 téléspectateurs en moyenne, 26,3 % de part de marché. Lancement
+        à 5 663 000, finale à 6 319 000.
     finalistes:
     - *id037
     id: s21
@@ -49025,9 +49439,13 @@ saisons:
     age_moyen: 33.6
     annee: 2021
     audience_finale: 5716000
+    audience_finale_texte: 5 716 000
     audience_lancement: 5740000
+    audience_lancement_texte: 5 740 000
     audience_moyenne: 5510000
+    audience_moyenne_texte: 5 510 000
     audience_pdm: 25.6
+    audience_pdm_texte: 25,6
     bulletins: 140
     casting:
     - &id040
@@ -49312,6 +49730,24 @@ saisons:
     en_cours: false
     epreuves: 23
     epreuves_individuelles: 10
+    faq:
+    - q: Qui a gagné Koh-Lanta Les Armes secrètes ?
+      r: 'Maxine Eouzan. La saison a été diffusée en 2021. Finaliste : Lucie Bertaud.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta Les Armes secrètes ?
+      r: 21 aventuriers au départ, 33,6 ans de moyenne d’âge. 1 abandon en cours de
+        jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta Les Armes secrètes ?
+      r: 36 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta Les Armes secrètes ?
+      r: Île de Taha'a, Polynésie française.
+    - q: Combien de conseils d’élimination à Koh-Lanta Les Armes secrètes ?
+      r: 20 conseils d’élimination. Le dépouillement de 5 d’entre eux est connu au
+        bulletin près, pour 140 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta Les Armes secrètes ?
+      r: 23 épreuves relevées, dont 10 individuelles.
+    - q: Quelle audience a fait Koh-Lanta Les Armes secrètes ?
+      r: 5 510 000 téléspectateurs en moyenne, 25,6 % de part de marché. Lancement
+        à 5 740 000, finale à 5 716 000.
     finalistes:
     - *id039
     id: s22
@@ -49334,9 +49770,13 @@ saisons:
     age_moyen: 34.0
     annee: 2022
     audience_finale: 2960000
+    audience_finale_texte: 2 960 000
     audience_lancement: 4270000
+    audience_lancement_texte: 4 270 000
     audience_moyenne: 3590000
+    audience_moyenne_texte: 3 590 000
     audience_pdm: 19.4
+    audience_pdm_texte: 19,4
     bulletins: 156
     casting:
     - &id042
@@ -49661,6 +50101,25 @@ saisons:
     en_cours: false
     epreuves: 26
     epreuves_individuelles: 13
+    faq:
+    - q: Qui a gagné Koh-Lanta Le Totem maudit ?
+      r: 'Bastien San Pedro et François Descamp. La saison a été diffusée en 2022.
+        Finaliste : Géraldine Nicolle.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta Le Totem maudit ?
+      r: 24 aventuriers au départ, 34 ans de moyenne d’âge. 2 abandons en cours de
+        jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta Le Totem maudit ?
+      r: 39 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta Le Totem maudit ?
+      r: Archipel de Palawan, Philippines.
+    - q: Combien de conseils d’élimination à Koh-Lanta Le Totem maudit ?
+      r: 22 conseils d’élimination. Le dépouillement de 10 d’entre eux est connu au
+        bulletin près, pour 156 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta Le Totem maudit ?
+      r: 26 épreuves relevées, dont 13 individuelles.
+    - q: Quelle audience a fait Koh-Lanta Le Totem maudit ?
+      r: 3 590 000 téléspectateurs en moyenne, 19,4 % de part de marché. Lancement
+        à 4 270 000, finale à 2 960 000.
     finalistes:
     - *id041
     id: s23
@@ -49692,8 +50151,11 @@ saisons:
     age_moyen: 35.2
     annee: 2023
     audience_finale: 3440000
+    audience_finale_texte: 3 440 000
     audience_lancement: 4170000
+    audience_lancement_texte: 4 170 000
     audience_moyenne: 3410000
+    audience_moyenne_texte: 3 410 000
     audience_pdm: null
     bulletins: 123
     casting:
@@ -49966,6 +50428,24 @@ saisons:
     en_cours: false
     epreuves: 30
     epreuves_individuelles: 16
+    faq:
+    - q: Qui a gagné Koh-Lanta Le Feu sacré ?
+      r: 'Frédéric Khouvilay. La saison a été diffusée en 2023. Finaliste : Tania
+        Cakarevic.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta Le Feu sacré ?
+      r: 20 aventuriers au départ, 35,2 ans de moyenne d’âge. 3 abandons en cours
+        de jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta Le Feu sacré ?
+      r: 40 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta Le Feu sacré ?
+      r: Péninsule de Caramoan, Philippines.
+    - q: Combien de conseils d’élimination à Koh-Lanta Le Feu sacré ?
+      r: 22 conseils d’élimination. Le dépouillement de 10 d’entre eux est connu au
+        bulletin près, pour 123 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta Le Feu sacré ?
+      r: 30 épreuves relevées, dont 16 individuelles.
+    - q: Quelle audience a fait Koh-Lanta Le Feu sacré ?
+      r: 3 410 000 téléspectateurs en moyenne. Lancement à 4 170 000, finale à 3 440 000.
     finalistes:
     - *id044
     id: s24
@@ -49988,9 +50468,13 @@ saisons:
     age_moyen: 35.1
     annee: 2024
     audience_finale: 3270000
+    audience_finale_texte: 3 270 000
     audience_lancement: 3660000
+    audience_lancement_texte: 3 660 000
     audience_moyenne: 3160000
+    audience_moyenne_texte: 3 160 000
     audience_pdm: 18.7
+    audience_pdm_texte: 18,7
     bulletins: 123
     casting:
     - &id047
@@ -50288,6 +50772,25 @@ saisons:
     en_cours: false
     epreuves: 28
     epreuves_individuelles: 13
+    faq:
+    - q: Qui a gagné Koh-Lanta Les Chasseurs d'immunité ?
+      r: 'Léa Sahin. La saison a été diffusée en 2024. Finaliste : Meïssa Seck.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta Les Chasseurs d'immunité
+        ?
+      r: 22 aventuriers au départ, 35,1 ans de moyenne d’âge. 1 abandon en cours de
+        jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta Les Chasseurs d'immunité ?
+      r: 38 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta Les Chasseurs d'immunité ?
+      r: Péninsule de Caramoan, Philippines.
+    - q: Combien de conseils d’élimination à Koh-Lanta Les Chasseurs d'immunité ?
+      r: 21 conseils d’élimination. Le dépouillement de 8 d’entre eux est connu au
+        bulletin près, pour 123 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta Les Chasseurs d'immunité ?
+      r: 28 épreuves relevées, dont 13 individuelles.
+    - q: Quelle audience a fait Koh-Lanta Les Chasseurs d'immunité ?
+      r: 3 160 000 téléspectateurs en moyenne, 18,7 % de part de marché. Lancement
+        à 3 660 000, finale à 3 270 000.
     finalistes:
     - *id046
     id: s25
@@ -50310,8 +50813,11 @@ saisons:
     age_moyen: 34.1
     annee: 2024
     audience_finale: 3203000
+    audience_finale_texte: 3 203 000
     audience_lancement: 3716000
+    audience_lancement_texte: 3 716 000
     audience_moyenne: 3020000
+    audience_moyenne_texte: 3 020 000
     audience_pdm: null
     bulletins: 141
     casting:
@@ -50636,6 +51142,24 @@ saisons:
     en_cours: false
     epreuves: 27
     epreuves_individuelles: 13
+    faq:
+    - q: Qui a gagné Koh-Lanta La Tribu maudite ?
+      r: 'Thibault Bélanger. La saison a été diffusée en 2024. Finaliste : Charlotte
+        Rasquin.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta La Tribu maudite ?
+      r: 24 aventuriers au départ, 34,1 ans de moyenne d’âge. 1 abandon en cours de
+        jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta La Tribu maudite ?
+      r: 40 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta La Tribu maudite ?
+      r: Péninsule de Caramoan, Philippines.
+    - q: Combien de conseils d’élimination à Koh-Lanta La Tribu maudite ?
+      r: 23 conseils d’élimination. Le dépouillement de 9 d’entre eux est connu au
+        bulletin près, pour 141 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta La Tribu maudite ?
+      r: 27 épreuves relevées, dont 13 individuelles.
+    - q: Quelle audience a fait Koh-Lanta La Tribu maudite ?
+      r: 3 020 000 téléspectateurs en moyenne. Lancement à 3 716 000, finale à 3 203 000.
     finalistes:
     - *id048
     id: s26
@@ -50660,9 +51184,13 @@ saisons:
     age_moyen: 34.4
     annee: 2025
     audience_finale: 2881000
+    audience_finale_texte: 2 881 000
     audience_lancement: 3560000
+    audience_lancement_texte: 3 560 000
     audience_moyenne: 2840000
+    audience_moyenne_texte: 2 840 000
     audience_pdm: 17.6
+    audience_pdm_texte: 17,6
     bulletins: 129
     casting:
     - &id051
@@ -50986,6 +51514,25 @@ saisons:
     en_cours: false
     epreuves: 31
     epreuves_individuelles: 14
+    faq:
+    - q: Qui a gagné Koh-Lanta La Revanche des 4 Terres ?
+      r: 'Gaëlle Fleury. La saison a été diffusée en 2025. Finaliste : Maël Lozach.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta La Revanche des 4 Terres
+        ?
+      r: 24 aventuriers au départ, 34,4 ans de moyenne d’âge. 3 abandons en cours
+        de jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta La Revanche des 4 Terres ?
+      r: 40 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta La Revanche des 4 Terres ?
+      r: Péninsule de Caramoan, Philippines.
+    - q: Combien de conseils d’élimination à Koh-Lanta La Revanche des 4 Terres ?
+      r: 24 conseils d’élimination. Le dépouillement de 13 d’entre eux est connu au
+        bulletin près, pour 129 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta La Revanche des 4 Terres ?
+      r: 31 épreuves relevées, dont 14 individuelles.
+    - q: Quelle audience a fait Koh-Lanta La Revanche des 4 Terres ?
+      r: 2 840 000 téléspectateurs en moyenne, 17,6 % de part de marché. Lancement
+        à 3 560 000, finale à 2 881 000.
     finalistes:
     - *id050
     id: s27
@@ -51018,9 +51565,13 @@ saisons:
     age_moyen: 35.0
     annee: 2026
     audience_finale: 2622000
+    audience_finale_texte: 2 622 000
     audience_lancement: 3265000
+    audience_lancement_texte: 3 265 000
     audience_moyenne: 2455000
+    audience_moyenne_texte: 2 455 000
     audience_pdm: 16.5
+    audience_pdm_texte: 16,5
     bulletins: 153
     casting:
     - &id053
@@ -51292,6 +51843,23 @@ saisons:
     en_cours: false
     epreuves: 34
     epreuves_individuelles: 18
+    faq:
+    - q: Qui a gagné Koh-Lanta Les Reliques du destin ?
+      r: 'Cynthia Combes. La saison a été diffusée en 2026. Finaliste : Clarisse Cresseveur.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta Les Reliques du destin ?
+      r: 20 aventuriers au départ, 35 ans de moyenne d’âge.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta Les Reliques du destin ?
+      r: 39 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta Les Reliques du destin ?
+      r: Péninsule de Caramoan, Philippines.
+    - q: Combien de conseils d’élimination à Koh-Lanta Les Reliques du destin ?
+      r: 25 conseils d’élimination. Le dépouillement de 13 d’entre eux est connu au
+        bulletin près, pour 153 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta Les Reliques du destin ?
+      r: 34 épreuves relevées, dont 18 individuelles.
+    - q: Quelle audience a fait Koh-Lanta Les Reliques du destin ?
+      r: 2 455 000 téléspectateurs en moyenne, 16,5 % de part de marché. Lancement
+        à 3 265 000, finale à 2 622 000.
     finalistes:
     - *id052
     id: s28
@@ -51314,8 +51882,11 @@ saisons:
     age_moyen: 36.5
     annee: 2009
     audience_finale: 9169000
+    audience_finale_texte: 9 169 000
     audience_lancement: 7945000
+    audience_lancement_texte: 7 945 000
     audience_moyenne: 8288000
+    audience_moyenne_texte: 8 288 000
     audience_pdm: null
     bulletins: 53
     casting:
@@ -51510,6 +52081,22 @@ saisons:
     en_cours: false
     epreuves: 15
     epreuves_individuelles: 9
+    faq:
+    - q: Qui a gagné Koh-Lanta Le Retour des héros ?
+      r: 'Romuald Lafite. La saison a été diffusée en 2009. Finaliste : Jade Handi.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta Le Retour des héros ?
+      r: 14 aventuriers au départ, 36,5 ans de moyenne d’âge.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta Le Retour des héros ?
+      r: 21 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta Le Retour des héros ?
+      r: Amazonie, bord du Rio Negro, Brésil.
+    - q: Combien de conseils d’élimination à Koh-Lanta Le Retour des héros ?
+      r: 13 conseils d’élimination. Le dépouillement de 8 d’entre eux est connu au
+        bulletin près, pour 53 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta Le Retour des héros ?
+      r: 15 épreuves relevées, dont 9 individuelles.
+    - q: Quelle audience a fait Koh-Lanta Le Retour des héros ?
+      r: 8 288 000 téléspectateurs en moyenne. Lancement à 7 945 000, finale à 9 169 000.
     finalistes:
     - *id054
     id: sp1
@@ -51532,9 +52119,13 @@ saisons:
     age_moyen: 33.3
     annee: 2010
     audience_finale: 7322000
+    audience_finale_texte: 7 322 000
     audience_lancement: 8261000
+    audience_lancement_texte: 8 261 000
     audience_moyenne: 7007000
+    audience_moyenne_texte: 7 007 000
     audience_pdm: 29.7
+    audience_pdm_texte: 29,7
     bulletins: 61
     casting:
     - &id057
@@ -51699,7 +52290,7 @@ saisons:
       classement: 13
       couleur: rouge
       genre: h
-      id: frank-leb-uf
+      id: frank-leboeuf
       jour_sortie: 5
       libelle_sort: Éliminé au conseil
       nom: Frank Lebœuf
@@ -51728,6 +52319,22 @@ saisons:
     en_cours: false
     epreuves: 0
     epreuves_individuelles: 0
+    faq:
+    - q: Qui a gagné Koh-Lanta Le Choc des héros ?
+      r: 'Grégoire Delachaux. La saison a été diffusée en 2010. Finaliste : Freddy
+        Boucher.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta Le Choc des héros ?
+      r: 14 aventuriers au départ, 33,3 ans de moyenne d’âge.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta Le Choc des héros ?
+      r: 21 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta Le Choc des héros ?
+      r: Poum, Nouvelle-Calédonie.
+    - q: Combien de conseils d’élimination à Koh-Lanta Le Choc des héros ?
+      r: 12 conseils d’élimination. Le dépouillement de 8 d’entre eux est connu au
+        bulletin près, pour 61 bulletins relevés.
+    - q: Quelle audience a fait Koh-Lanta Le Choc des héros ?
+      r: 7 007 000 téléspectateurs en moyenne, 29,7 % de part de marché. Lancement
+        à 8 261 000, finale à 7 322 000.
     finalistes:
     - *id056
     id: sp2
@@ -51750,9 +52357,13 @@ saisons:
     age_moyen: 37.1
     annee: 2012
     audience_finale: 7105000
+    audience_finale_texte: 7 105 000
     audience_lancement: 7768000
+    audience_lancement_texte: 7 768 000
     audience_moyenne: 6986000
+    audience_moyenne_texte: 6 986 000
     audience_pdm: 28.3
+    audience_pdm_texte: 28,3
     bulletins: 73
     casting:
     - &id059
@@ -51972,6 +52583,23 @@ saisons:
     en_cours: false
     epreuves: 15
     epreuves_individuelles: 9
+    faq:
+    - q: Qui a gagné Koh-Lanta La Revanche des héros ?
+      r: 'Bertrand Bolle. La saison a été diffusée en 2012. Finaliste : Claude Dartois.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta La Revanche des héros ?
+      r: 16 aventuriers au départ, 37,1 ans de moyenne d’âge.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta La Revanche des héros ?
+      r: 23 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta La Revanche des héros ?
+      r: Île de Koh Rong, Cambodge.
+    - q: Combien de conseils d’élimination à Koh-Lanta La Revanche des héros ?
+      r: 14 conseils d’élimination. Le dépouillement de 5 d’entre eux est connu au
+        bulletin près, pour 73 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta La Revanche des héros ?
+      r: 15 épreuves relevées, dont 9 individuelles.
+    - q: Quelle audience a fait Koh-Lanta La Revanche des héros ?
+      r: 6 986 000 téléspectateurs en moyenne, 28,3 % de part de marché. Lancement
+        à 7 768 000, finale à 7 105 000.
     finalistes:
     - *id058
     id: sp3
@@ -51994,9 +52622,13 @@ saisons:
     age_moyen: 36.8
     annee: 2014
     audience_finale: 6235000
+    audience_finale_texte: 6 235 000
     audience_lancement: 6898000
+    audience_lancement_texte: 6 898 000
     audience_moyenne: 6593000
+    audience_moyenne_texte: 6 593 000
     audience_pdm: 29.3
+    audience_pdm_texte: 29,3
     bulletins: 59
     casting:
     - &id061
@@ -52177,6 +52809,24 @@ saisons:
     en_cours: false
     epreuves: 15
     epreuves_individuelles: 8
+    faq:
+    - q: Qui a gagné Koh-Lanta La Nouvelle Édition ?
+      r: 'Laurent Maistret. La saison a été diffusée en 2014. Finaliste : Martin Bazin.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta La Nouvelle Édition ?
+      r: 13 aventuriers au départ, 36,8 ans de moyenne d’âge. 2 abandons en cours
+        de jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta La Nouvelle Édition ?
+      r: 23 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta La Nouvelle Édition ?
+      r: Archipel de Sibu, Malaisie.
+    - q: Combien de conseils d’élimination à Koh-Lanta La Nouvelle Édition ?
+      r: 14 conseils d’élimination. Le dépouillement de 7 d’entre eux est connu au
+        bulletin près, pour 59 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta La Nouvelle Édition ?
+      r: 15 épreuves relevées, dont 8 individuelles.
+    - q: Quelle audience a fait Koh-Lanta La Nouvelle Édition ?
+      r: 6 593 000 téléspectateurs en moyenne, 29,3 % de part de marché. Lancement
+        à 6 898 000, finale à 6 235 000.
     finalistes:
     - *id060
     id: sp4
@@ -52199,9 +52849,13 @@ saisons:
     age_moyen: 35.1
     annee: 2018
     audience_finale: 5274000
+    audience_finale_texte: 5 274 000
     audience_lancement: 4885000
+    audience_lancement_texte: 4 885 000
     audience_moyenne: 4851000
+    audience_moyenne_texte: 4 851 000
     audience_pdm: 24.1
+    audience_pdm_texte: 24,1
     bulletins: 97
     casting:
     - &id063
@@ -52447,6 +53101,24 @@ saisons:
     en_cours: false
     epreuves: 20
     epreuves_individuelles: 9
+    faq:
+    - q: Qui a gagné Koh-Lanta Le Combat des héros ?
+      r: 'Clémence Castel. La saison a été diffusée en 2018. Finaliste : Pascal Salviani.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta Le Combat des héros ?
+      r: 18 aventuriers au départ, 35,1 ans de moyenne d’âge. 1 abandon en cours de
+        jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta Le Combat des héros ?
+      r: 32 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta Le Combat des héros ?
+      r: Archipel de Yasawa, Fidji.
+    - q: Combien de conseils d’élimination à Koh-Lanta Le Combat des héros ?
+      r: 18 conseils d’élimination. Le dépouillement de 11 d’entre eux est connu au
+        bulletin près, pour 97 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta Le Combat des héros ?
+      r: 20 épreuves relevées, dont 9 individuelles.
+    - q: Quelle audience a fait Koh-Lanta Le Combat des héros ?
+      r: 4 851 000 téléspectateurs en moyenne, 24,1 % de part de marché. Lancement
+        à 4 885 000, finale à 5 274 000.
     finalistes:
     - *id062
     id: sp5
@@ -52469,9 +53141,13 @@ saisons:
     age_moyen: 36.8
     annee: 2020
     audience_finale: 6925000
+    audience_finale_texte: 6 925 000
     audience_lancement: 4642000
+    audience_lancement_texte: 4 642 000
     audience_moyenne: 6600000
+    audience_moyenne_texte: 6 600 000
     audience_pdm: 26.1
+    audience_pdm_texte: 26,1
     bulletins: 102
     casting:
     - &id065
@@ -52743,6 +53419,24 @@ saisons:
     en_cours: false
     epreuves: 26
     epreuves_individuelles: 15
+    faq:
+    - q: Qui a gagné Koh-Lanta L'Île des héros ?
+      r: 'Naoil Tita. La saison a été diffusée en 2020. Finaliste : Inès Loucif.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta L'Île des héros ?
+      r: 20 aventuriers au départ, 36,8 ans de moyenne d’âge. 4 abandons en cours
+        de jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta L'Île des héros ?
+      r: 32 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta L'Île des héros ?
+      r: Archipel de Kadavu, Fidji.
+    - q: Combien de conseils d’élimination à Koh-Lanta L'Île des héros ?
+      r: 20 conseils d’élimination. Le dépouillement de 8 d’entre eux est connu au
+        bulletin près, pour 102 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta L'Île des héros ?
+      r: 26 épreuves relevées, dont 15 individuelles.
+    - q: Quelle audience a fait Koh-Lanta L'Île des héros ?
+      r: 6 600 000 téléspectateurs en moyenne, 26,1 % de part de marché. Lancement
+        à 4 642 000, finale à 6 925 000.
     finalistes:
     - *id064
     id: sp6
@@ -52767,8 +53461,11 @@ saisons:
     age_moyen: 35.9
     annee: 2021
     audience_finale: 4384000
+    audience_finale_texte: 4 384 000
     audience_lancement: 5586000
+    audience_lancement_texte: 5 586 000
     audience_moyenne: 4332000
+    audience_moyenne_texte: 4 332 000
     audience_pdm: null
     bulletins: 126
     casting:
@@ -53054,6 +53751,23 @@ saisons:
     en_cours: false
     epreuves: 23
     epreuves_individuelles: 16
+    faq:
+    - q: Qui a gagné Koh-Lanta La Légende ?
+      r: 'Claude Dartois. La saison a été diffusée en 2021. Finaliste : Laurent Maistret.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta La Légende ?
+      r: 21 aventuriers au départ, 35,9 ans de moyenne d’âge. 1 abandon en cours de
+        jeu.
+    - q: Combien de jours a duré l’aventure à Koh-Lanta La Légende ?
+      r: 35 jours.
+    - q: Quel est le lieu de tournage de Koh-Lanta La Légende ?
+      r: Île de Taha'a, Polynésie française.
+    - q: Combien de conseils d’élimination à Koh-Lanta La Légende ?
+      r: 24 conseils d’élimination. Le dépouillement de 6 d’entre eux est connu au
+        bulletin près, pour 126 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta La Légende ?
+      r: 23 épreuves relevées, dont 16 individuelles.
+    - q: Quelle audience a fait Koh-Lanta La Légende ?
+      r: 4 332 000 téléspectateurs en moyenne. Lancement à 5 586 000, finale à 4 384 000.
     finalistes:
     - *id066
     id: sp7
@@ -53328,6 +54042,18 @@ saisons:
     en_cours: true
     epreuves: 4
     epreuves_individuelles: 4
+    faq:
+    - q: Qui a gagné Koh-Lanta All Stars ?
+      r: 'La saison est en cours de diffusion : le vainqueur n’est pas encore connu.'
+    - q: Combien d’aventuriers ont participé à Koh-Lanta All Stars ?
+      r: 18 aventuriers au départ, 37 ans de moyenne d’âge.
+    - q: Quel est le lieu de tournage de Koh-Lanta All Stars ?
+      r: Archipel des Perles (Las Perlas), Panama.
+    - q: Combien de conseils d’élimination à Koh-Lanta All Stars ?
+      r: 5 conseils d’élimination. Le dépouillement de 2 d’entre eux est connu au
+        bulletin près, pour 52 bulletins relevés.
+    - q: Combien d’épreuves ont été courues à Koh-Lanta All Stars ?
+      r: 4 épreuves relevées.
     finalistes: []
     id: sp8
     lieu: Archipel des Perles (Las Perlas)

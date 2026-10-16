@@ -63,8 +63,14 @@ layout: default
 <h2>L’audience</h2>
 
 <div class="constat">
-  <p>Moyenne : <b>{{ s.audience_moyenne }}</b> téléspectateurs{% if s.audience_pdm %}, {{ s.audience_pdm }} % de part de marché{% endif %}.</p>
-  <p>Lancement {{ s.audience_lancement }}, finale {{ s.audience_finale }}.
+  {%- comment -%}
+    Les champs `_texte`, et non les nombres bruts : une audience s'ecrit
+    « 8 127 000 », pas « 8127000 », et une part de marche « 39,5 % », pas
+    « 39.5 % ». Liquid n'a pas de filtre de milliers et ce depot ne calcule
+    pas dans un gabarit : la forme lisible vient de tools/build_fiches.py.
+  {%- endcomment -%}
+  <p>Moyenne : <b>{{ s.audience_moyenne_texte }}</b> téléspectateurs{% if s.audience_pdm_texte %}, {{ s.audience_pdm_texte }} % de part de marché{% endif %}.</p>
+  <p>Lancement {{ s.audience_lancement_texte }}, finale {{ s.audience_finale_texte }}.
   <a href="{{ '/statistiques/audience/' | relative_url }}">Ce que l’audience dit du jeu</a></p>
 </div>
 {%- endif %}
@@ -100,6 +106,24 @@ qui porte sur toute la carrière et pas sur cette seule saison.</p>
 </tbody>
 </table>
 </div>
+
+{%- if s.faq.size > 0 %}
+<h2>Questions fréquentes</h2>
+
+{%- comment -%}
+  Cinq a sept questions par saison, ecrites en Python (`faq_saison` dans
+  tools/build_fiches.py) et lues ici par cle. VISIBLES a dessein, comme sur les
+  fiches d'aventurier : depuis 2023 Google reserve l'affichage enrichi des
+  blocs FAQ aux sites gouvernementaux et de sante. C'est donc le texte de la
+  page qui travaille -- « qui a gagne Koh-Lanta Palawan » est une recherche, et
+  la fiche avait la reponse sans jamais la formuler. Le balisage FAQPage est
+  pose en plus, pour ce qu'il vaut.
+{%- endcomment -%}
+{%- for x in s.faq %}
+<h3>{{ x.q }}</h3>
+<p>{{ x.r }}</p>
+{%- endfor %}
+{%- endif %}
 
 <p><a href="{{ '/saisons/' | relative_url }}">Toutes les saisons</a> ·
 <a href="{{ '/aventuriers/' | relative_url }}">Tous les aventuriers</a> ·

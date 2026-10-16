@@ -129,7 +129,24 @@ def indices_de_tribu(cellule, couleurs_admises=None):
     return out
 
 
+# Les lettres que NFKD NE DECOMPOSE PAS. « e » accentue se decompose en « e »
+# plus un accent, que la suite ecarte : le « e » reste. « oe » colle est une
+# lettre a part entiere, pas une lettre accentuee -- NFKD la laisse telle
+# quelle, et le filtre `[^a-z0-9]` la remplace par un tiret. L'identifiant de
+# Frank Leboeuf etait donc « frank-leb-uf » : son nom avalait sa propre lettre,
+# dans l'adresse de sa fiche comme dans un resultat de recherche.
+#
+# Sur les 531 noms du site, c'est le SEUL caractere perdu -- verifie, pas
+# suppose. Les autres sont posees pour la meme raison : le jour ou un nom en
+# porte une, personne ne repassera par ici.
+LIGATURES = {"\u0153": "oe", "\u0152": "OE", "\u00e6": "ae", "\u00c6": "AE",
+             "\u00f8": "o", "\u00d8": "O", "\u00df": "ss",
+             "\u0111": "d", "\u0110": "D"}
+
+
 def sansaccent(s):
+    for lettre, remplacement in LIGATURES.items():
+        s = s.replace(lettre, remplacement)
     s = unicodedata.normalize("NFKD", s)
     return "".join(c for c in s if not unicodedata.combining(c))
 

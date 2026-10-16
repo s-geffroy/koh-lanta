@@ -453,6 +453,25 @@ def description_seo_saison(e):
 # plus, pour ce qu'il vaut, pas pour ce qu'il promet.
 
 
+# Les lettres que NFKD NE DECOMPOSE PAS. « é » se decompose en « e » plus un
+# accent, que l'encodage ASCII jette : le « e » reste. « œ » n'est pas une
+# lettre accentuee, c'est une lettre a part entiere -- NFKD la laisse telle
+# quelle, et l'ASCII la jette ENTIEREMENT. L'adresse de Frank Lebœuf etait donc
+# /aventuriers/frank-leb-uf/ : son nom avale sa propre lettre, dans la barre
+# d'adresse comme dans un resultat de recherche.
+#
+# Sur les 531 noms du site, « œ » est le seul caractere perdu -- verifie, pas
+# suppose. Les autres sont posees pour la meme raison : le jour ou un nom en
+# porte une, personne ne repassera par ici.
+LIGATURES = {"œ": "oe", "Œ": "OE", "æ": "ae", "Æ": "AE",
+             "ø": "o", "Ø": "O", "ß": "ss", "đ": "d", "Đ": "D"}
+
+# L'ancienne adresse d'une fiche dont l'identifiant a change, gardee vivante
+# par `jekyll-redirect-from`. Sans elle, tout lien pose ailleurs vers l'ancienne
+# forme tomberait le jour de la bascule -- et on ne le saurait jamais.
+ANCIENNES_ADRESSES = {"frank-leboeuf": "frank-leb-uf"}
+
+
 def identifiant(nom):
     """Un slug d'URL, sans accent ni majuscule, stable dans le temps.
 
@@ -460,6 +479,8 @@ def identifiant(nom):
     besoin : celui-la pour nommer la page d'une epreuve, celui-ci pour poser
     dans la fiche d'un aventurier de quoi la lier.
     """
+    for lettre, remplacement in LIGATURES.items():
+        nom = nom.replace(lettre, remplacement)
     plat = unicodedata.normalize("NFKD", nom).encode("ascii", "ignore").decode()
     garde = [c.lower() if c.isalnum() else "-" for c in plat]
     return "-".join("".join(garde).split("-")).strip("-")
@@ -505,6 +526,55 @@ def de_(nom):
     fiches auraient publiee.
     """
     return f"d’{nom}" if nom[:1].lower() in "aeiouyhàâäéèêëîïôöùûü" else f"de {nom}"
+
+
+def a_designation(d):
+    """« a Koh-Lanta Palawan », mais « aux Aventuriers de Koh-Lanta ».
+
+    Meme probleme que `de_` sur un prenom, et meme cause : UNE saison porte un
+    titre qui commence par un article. `avec_marque` prefixe « Koh-Lanta » a
+    trente-trois titres sur trente-quatre -- ceux-la commencent donc par un nom
+    propre et « a » suffit. La premiere, « Les Aventuriers de Koh-Lanta »,
+    porte deja la marque : rien ne la prefixe, et « a Les Aventuriers » est
+    une faute. Les autres articles sont traites aussi : ils ne se presentent
+    pas aujourd'hui, mais un titre futur n'aura pas a repasser ici.
+    """
+    for article, contracte in (("Les ", "aux "), ("Le ", "au "), ("La ", "à la ")):
+        if d.startswith(article):
+            return contracte + d[len(article):]
+    return f"à {d}"
+
+
+def de_designation(d):
+    """« de Koh-Lanta Palawan », mais « des Aventuriers de Koh-Lanta ».
+
+    Le pendant de `a_designation`, pour les tours ou la saison est complement
+    du nom : « le lieu de tournage DE Koh-Lanta Palawan ».
+    """
+    for article, contracte in (("Les ", "des "), ("Le ", "du "), ("La ", "de la ")):
+        if d.startswith(article):
+            return contracte + d[len(article):]
+    return f"de {d}"
+
+
+def milliers(n):
+    """8127000 -> « 8 127 000 ». L'espace, jamais la virgule anglaise.
+
+    Les audiences se comptent en millions : lues d'un bloc, elles ne se lisent
+    pas. Ce qui est publie l'est pour etre lu a voix haute.
+    """
+    return f"{int(n):,}".replace(",", "\u00a0")
+
+
+def decimal(x):
+    """32.7 -> « 32,7 », et 37.0 -> « 37 ». La virgule, pas le point.
+
+    Le point decimal est anglais. Et une moyenne qui tombe juste n'a pas
+    besoin de son zero : « 37 ans », pas « 37,0 ans ».
+    """
+    if float(x) == int(float(x)):
+        return str(int(float(x)))
+    return f"{x}".replace(".", ",")
 
 
 def _liste(morceaux):
@@ -591,6 +661,95 @@ def faq_aventurier(e, joueurs_classes):
         ))
 
     return [{"q": question, "r": reponse} for question, reponse in q]
+
+
+
+def faq_saison(e):
+    """Les questions qu'on tape sur une saison, et leurs reponses.
+
+    « qui a gagne koh lanta palawan », « combien de jours dure koh lanta »,
+    « ou a ete tourne koh lanta » : la fiche de saison avait tous ces chiffres
+    et n'en formulait aucun comme une question. Les 531 fiches d'aventurier en
+    posaient six chacune ; les 34 fiches de saison, aucune.
+
+    LA GRAMMAIRE EST LE PIEGE, et c'est le meme que sur les prenoms : un titre
+    de saison ne se met pas n'importe ou dans une phrase. On ne le place donc
+    jamais en SUJET d'un verbe -- « Combien de jours a dure Les Aventuriers de
+    Koh-Lanta ? » demanderait un accord par titre -- mais toujours en
+    complement, derriere `a_designation` ou `de_designation`, qui contractent
+    l'article.
+
+    AUCUN COMPTE DE VAINQUEURS, AUCUNE QUALIFICATION. Trois saisons portent
+    deux noms au champ `vainqueurs` ; la fiche les affiche tous les deux depuis
+    toujours, et la reponse dit exactement la meme chose. Ecrire « ex aequo »
+    serait une these, et les donnees ne la portent pas : sur Bocas del Toro,
+    les deux noms n'ont pas le meme classement. Ecrire « 1 vainqueur » n'est
+    pas mieux -- on ne compte pas ce qu'on nomme.
+    """
+    marque = avec_marque(e["titre"])
+    a_elle, d_elle = a_designation(marque), de_designation(marque)
+    q = []
+
+    noms = [v["nom"] for v in (e.get("vainqueurs") or [])]
+    if noms:
+        reponse = f"{_liste(noms)}. La saison a été diffusée en {e['annee']}."
+        finalistes = [v["nom"] for v in (e.get("finalistes") or [])]
+        if finalistes:
+            mot = "Finaliste" if len(finalistes) == 1 else "Finalistes"
+            reponse += f" {mot} : {_liste(finalistes)}."
+    elif e.get("en_cours"):
+        reponse = ("La saison est en cours de diffusion : le vainqueur n’est "
+                   "pas encore connu.")
+    else:
+        reponse = "Aucun vainqueur n’est relevé pour cette saison."
+    q.append((f"Qui a gagné {marque} ?", reponse))
+
+    reponse = f"{compte(e['effectif'], 'aventurier', 'aventuriers')} au départ"
+    if e.get("age_moyen"):
+        reponse += f", {decimal(e['age_moyen'])} ans de moyenne d’âge"
+    reponse += "."
+    if e.get("abandons"):
+        reponse += f" {compte(e['abandons'], 'abandon', 'abandons')} en cours de jeu."
+    q.append((f"Combien d’aventuriers ont participé {a_elle} ?", reponse))
+
+    if e.get("duree_jours"):
+        q.append((f"Combien de jours a duré l’aventure {a_elle} ?",
+                  f"{e['duree_jours']} jours."))
+
+    if e.get("lieu"):
+        reponse = e["lieu"]
+        if e.get("pays") and e["pays"] not in e["lieu"]:
+            reponse += f", {e['pays']}"
+        q.append((f"Quel est le lieu de tournage {d_elle} ?", reponse + "."))
+
+    reponse = f"{compte(e['conseils'], 'conseil', 'conseils')} d’élimination."
+    if e.get("conseils_complets"):
+        reponse += (f" Le dépouillement de {e['conseils_complets']} d’entre eux "
+                    f"est connu au bulletin près, pour "
+                    f"{compte(e['bulletins'], 'bulletin relevé', 'bulletins relevés')}.")
+    q.append((f"Combien de conseils d’élimination {a_elle} ?", reponse))
+
+    if e.get("epreuves"):
+        reponse = compte(e["epreuves"], "épreuve relevée", "épreuves relevées")
+        # La clause ne se pose que si elle apprend quelque chose : « 4 epreuves
+        # relevees, dont 4 individuelles » ne dit rien de plus que la premiere
+        # moitie de la phrase.
+        if 0 < (e.get("epreuves_individuelles") or 0) < e["epreuves"]:
+            reponse += f", dont {e['epreuves_individuelles']} individuelles"
+        q.append((f"Combien d’épreuves ont été courues {a_elle} ?", reponse + "."))
+
+    if e.get("audience_moyenne"):
+        reponse = f"{milliers(e['audience_moyenne'])} téléspectateurs en moyenne"
+        if e.get("audience_pdm"):
+            reponse += f", {decimal(e['audience_pdm'])} % de part de marché"
+        reponse += "."
+        if e.get("audience_lancement") and e.get("audience_finale"):
+            reponse += (f" Lancement à {milliers(e['audience_lancement'])}, "
+                        f"finale à {milliers(e['audience_finale'])}.")
+        q.append((f"Quelle audience a fait {marque} ?", reponse))
+
+    return [{"q": question, "r": reponse} for question, reponse in q]
+
 
 
 # `image` remplace, pour cette page seule, la vignette par defaut posee dans
@@ -689,6 +848,16 @@ def main():
         e["faq"] = faq_aventurier(e, joueurs_classes)
     for cid, e in sa.items():
         e["slug"] = slug_saison(e["titre"])
+        e["faq"] = faq_saison(e)
+        # Les audiences se comptent en millions. Le gabarit les affichait
+        # brutes -- « 8127000 telespectateurs », « 39.5 % » -- parce que Liquid
+        # n'a pas de filtre de milliers et que ce depot ne calcule pas dans un
+        # gabarit. La forme lisible se fabrique donc ici, a cote du reste.
+        for champ in ("audience_moyenne", "audience_lancement", "audience_finale"):
+            if e.get(champ):
+                e[champ + "_texte"] = milliers(e[champ])
+        if e.get("audience_pdm"):
+            e["audience_pdm_texte"] = decimal(e["audience_pdm"])
     doublons = len(sa) - len({e["slug"] for e in sa.values()})
     if doublons:
         print(f"ARRET : {doublons} slug(s) de saison en double")
@@ -716,7 +885,10 @@ def main():
     n1 = ecrire_pages(DOSSIER_AVENTURIERS, "fiche-aventurier", "aventurier", av,
                       titre_seo_aventurier,
                       lambda e: description_seo_aventurier(e, joueurs_classes),
-                      lambda cid: f"/aventuriers/{cid}/", rapport)
+                      lambda cid: f"/aventuriers/{cid}/", rapport,
+                      redirect_de=lambda cid: (
+                          f"redirect_from: /aventuriers/{ANCIENNES_ADRESSES[cid]}/\n"
+                          if cid in ANCIENNES_ADRESSES else ""))
     n2 = ecrire_pages(DOSSIER_SAISONS, "fiche-saison", "saison", sa,
                       titre_seo_saison, description_seo_saison,
                       lambda cid: f"/saisons/{sa[cid]['slug']}/", rapport,
