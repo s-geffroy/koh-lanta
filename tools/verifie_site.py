@@ -747,6 +747,25 @@ def controler_comptes_annonces(c):
                          f"{len(entrees) - modeles} descriptives et {modeles} "
                          f"a modeles")
 
+def _mesurer(chemin):
+    """Les dimensions d'une image, ou None si on ne sait pas les lire.
+
+    Pillow est dans l'atelier, mais ce script doit pouvoir tourner ailleurs :
+    faute de la bibliotheque, le controle des deux dimensions reste (elles
+    doivent etre presentes et positives) et seule la confrontation au fichier
+    est sautee. Mieux vaut un controle partiel qu'un script qui ne demarre pas.
+    """
+    try:
+        from PIL import Image
+    except ImportError:
+        return None
+    try:
+        with Image.open(chemin) as image:
+            return image.size
+    except OSError:
+        return None
+
+
 def controler_portraits(c):
     """Refuse une photo publiee sans son auteur et sa licence.
 
@@ -781,14 +800,36 @@ def controler_portraits(c):
         if fichier and not os.path.exists(os.path.join(RACINE, fichier)):
             c.erreur(f"portraits.yml : « {cle} » pointe sur {p['fichier']}, "
                      f"absent du depot")
+        # Les dimensions, et le fait qu'elles soient JUSTES. Posees dans
+        # `width`/`height`, elles reservent la place de la photo avant qu'elle
+        # arrive ; fausses, elles la reservent de travers et la page saute
+        # quand meme -- au lieu de corriger le defaut, on le deplace.
+        for champ in ("largeur", "hauteur"):
+            if not isinstance(p.get(champ), int) or p[champ] <= 0:
+                c.erreur(f"portraits.yml : « {cle} » sans `{champ}` — sans les "
+                         f"deux dimensions, la fiche saute quand la photo se pose")
+        if fichier and os.path.exists(os.path.join(RACINE, fichier)) \
+                and isinstance(p.get("largeur"), int) \
+                and isinstance(p.get("hauteur"), int):
+            mesure = _mesurer(os.path.join(RACINE, fichier))
+            if mesure and mesure != (p["largeur"], p["hauteur"]):
+                c.erreur(f"portraits.yml : « {cle} » annonce "
+                         f"{p['largeur']}x{p['hauteur']}, le fichier mesure "
+                         f"{mesure[0]}x{mesure[1]}")
 
     gabarit = os.path.join(RACINE, "_layouts", "fiche-aventurier.html")
     texte = open(gabarit, encoding="utf-8").read() if os.path.exists(gabarit) else ""
-    for champ in ("portrait.auteur", "portrait.licence"):
+    for champ in ("portrait.auteur", "portrait.licence",
+                  "portrait.largeur", "portrait.hauteur"):
         if portraits and champ not in texte:
-            c.erreur(f"_layouts/fiche-aventurier.html n'affiche plus "
-                     f"`{champ}` — {len(portraits)} photos seraient publiees "
-                     f"sans leur credit")
+            if champ.endswith(("largeur", "hauteur")):
+                c.erreur(f"_layouts/fiche-aventurier.html ne pose plus "
+                         f"`{champ}` — {len(portraits)} fiches sauteraient au "
+                         f"chargement de la photo")
+            else:
+                c.erreur(f"_layouts/fiche-aventurier.html n'affiche plus "
+                         f"`{champ}` — {len(portraits)} photos seraient publiees "
+                         f"sans leur credit")
 
 
 # La largeur d'un caractere, en fraction de la taille de police. Approchee, et

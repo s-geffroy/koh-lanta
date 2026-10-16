@@ -51,7 +51,19 @@ layout: default
 {%- assign portrait = site.data.portraits.portraits[page.aventurier] -%}
 {%- if portrait %}
 <figure class="portrait">
-  <img src="{{ portrait.fichier | relative_url }}" alt="Portrait de {{ a.nom }}" loading="lazy">
+  {%- comment -%}
+    `width` et `height` ne sont pas decoratifs : ils donnent au
+    navigateur le rapport de la photo AVANT qu'elle arrive, et la place
+    lui est reservee des le premier rendu. Sans eux, la fiche
+    s'affichait puis sautait -- credit, comptes, chiffres, tout
+    descendait d'un coup quand l'image se posait. La CSS garde la main
+    sur la taille affichee (`width: 100%` dans une boite de 12rem) :
+    ces deux attributs ne servent qu'a dire la forme.
+    Les quatorze portraits vont de 500x313 a 500x794 : aucune regle
+    commune n'aurait fait l'affaire.
+  {%- endcomment -%}
+  <img src="{{ portrait.fichier | relative_url }}" alt="Portrait de {{ a.nom }}"
+       width="{{ portrait.largeur }}" height="{{ portrait.hauteur }}" loading="lazy">
   <figcaption>
     Photo&nbsp;:{% if portrait.auteur %} {{ portrait.auteur }} —{% endif %}
     {%- if portrait.licence %} {% if portrait.licence_url %}<a href="{{ portrait.licence_url }}">{{ portrait.licence }}</a>{% else %}{{ portrait.licence }}{% endif %}{% endif -%}

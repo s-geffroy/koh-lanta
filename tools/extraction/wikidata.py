@@ -37,6 +37,7 @@ import urllib.parse
 import urllib.request
 
 import yaml
+from PIL import Image
 
 RACINE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DATA = os.path.join(RACINE, "_data")
@@ -329,6 +330,27 @@ def telecharger(url, chemin):
     return True
 
 
+def dimensions(chemin):
+    """La taille reelle du fichier recu, en pixels.
+
+    Elle part dans portraits.yml, puis dans les attributs `width`/`height` de
+    la balise. Sans eux, le navigateur ignore la hauteur de la photo jusqu'a
+    l'avoir recue : la fiche s'affiche, puis saute -- le credit, la biographie
+    et tout ce qui suit descendent d'un coup. C'est le « CLS » que mesure
+    Google, et il se corrige ici plutot qu'en CSS : une regle commune
+    supposerait un format commun, et recadrer 14 portraits a un meme rapport
+    couperait des visages.
+
+    ON MESURE LE FICHIER, PAS CE QUE L'API ANNONCE. Commons arrondit la
+    largeur demandee a la taille de vignette qu'il sait servir : pour
+    `iiurlwidth=480`, `thumbwidth` repond 480 et le fichier servi en fait 500.
+    Croire l'API posait donc un rapport legerement faux sur chaque fiche --
+    soit exactement le saut qu'on cherche a supprimer, en plus petit.
+    """
+    with Image.open(chemin) as image:
+        return image.size
+
+
 def main():
     charger_elements_koh_lanta()
     with open(os.path.join(DATA, "personnes.yml"), encoding="utf-8") as f:
@@ -410,13 +432,15 @@ def main():
             if extension not in (".jpg", ".jpeg", ".png", ".webp"):
                 extension = ".jpg"
             relatif = f"/assets/portraits/{p['id']}{extension}"
-            if telecharger(info["vignette"],
-                           os.path.join(PORTRAITS, p["id"] + extension)):
+            absolu = os.path.join(PORTRAITS, p["id"] + extension)
+            if telecharger(info["vignette"], absolu):
                 telecharges += 1
+            largeur, hauteur = dimensions(absolu)
             portraits[p["id"]] = {
                 "fichier": relatif, "licence": info["licence"],
                 "licence_url": info["licence_url"], "auteur": info["auteur"],
                 "source": info["page"], "wikidata": element.get("id"),
+                "largeur": largeur, "hauteur": hauteur,
             }
 
     entete = ("# ATTENTION : fichier genere par tools/extraction/wikidata.py.\n"
