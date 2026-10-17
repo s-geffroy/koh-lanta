@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Frédéric Pignard (2025)"
-description: "Frédéric Pignard, Koh-Lanta La Revanche des 4 Terres (2025) : abandonne sur blessure le 25e jour, 14e sur 24. 362e sur 531 au classement des aventuriers."
+description: "Frédéric Pignard, Koh-Lanta La Revanche des 4 Terres (2025) : abandonne sur blessure le 25e jour, 14e sur 24. 356e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/frederic-pignard.png
 permalink: /aventuriers/frederic-pignard/
 aventurier: frederic-pignard

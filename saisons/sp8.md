@@ -1,7 +1,7 @@
 ---
 layout: fiche-saison
 title: "All Stars (2026) — édition spéciale"
-description: "Koh-Lanta All Stars, édition spéciale diffusée en 2026 (Panama) : 18 aventuriers, 16 conseils, 117 bulletins. Saison en cours."
+description: "Koh-Lanta All Stars, édition spéciale diffusée en 2026 (Panama) : 18 aventuriers, 15 conseils, 117 bulletins. Saison en cours."
 image: /assets/partage/saisons/sp8.png
 permalink: /saisons/koh-lanta-all-stars/
 redirect_from: /saisons/sp8/

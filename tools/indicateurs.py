@@ -35,7 +35,11 @@ def eliminations(conseils):
     Tout calcul portant sur les eliminations passe par ici. Les lignes plus
     anciennes n'ayant pas de champ `type`, l'absence vaut `elimination`.
     """
-    return [c for c in conseils if c.get("type", "elimination") != "jury"]
+    # `sortie` non plus n'est pas un conseil : un abandon, une orientation, un
+    # duel n'ont pas de bulletin. Ces lignes restent dans conseils.yml parce
+    # qu'elles DATENT la sortie (`_episode_de_sortie`), jamais pour etre
+    # comptees comme des eliminations.
+    return [c for c in conseils if c.get("type", "elimination") == "elimination"]
 
 
 def votes_du_jury(conseils):

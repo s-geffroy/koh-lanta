@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Amel Fatnassi — 2 saisons jouées"
-description: "Amel Fatnassi, 2 saisons de Koh-Lanta entre 2002 et 2009 : 41 jours de jeu, 1 victoire, 1 finale. 347e sur 531 au classement des aventuriers."
+description: "Amel Fatnassi, 2 saisons de Koh-Lanta entre 2002 et 2009 : 41 jours de jeu, 1 victoire, 1 finale. 343e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/amel-fatnassi.png
 permalink: /aventuriers/amel-fatnassi/
 aventurier: amel-fatnassi

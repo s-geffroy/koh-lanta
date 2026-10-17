@@ -553,8 +553,13 @@ def verifier_immunite_individuelle(conseils, epreuves, c):
             episode = int(x["episode"])
         except (TypeError, ValueError, KeyError):
             continue
+        # Une SORTIE sans vote compte parmi les evenements du soir -- une
+        # orientation suivie des poteaux, c'est deux epreuves, et l'immunite
+        # gagnee a l'une ne protege pas a l'autre : le soir est ambigu, comme
+        # avant. Mais elle n'est jamais controlee comme une elimination au
+        # conseil : un immunise peut se blesser, ou perdre une course.
         par_soir[(x["saison"], episode)] += 1
-        if x.get("elimine_rattache"):
+        if x.get("elimine_rattache") and x.get("type", "elimination") == "elimination":
             scrutins.append((x, episode))
 
     immunises = defaultdict(set)
@@ -706,15 +711,41 @@ def verifier_conseils(conseils, saisons, parts, c):
     finalistes = {(p["saison"], p["id"]) for p in parts
                   if p.get("sort") == "finaliste"}
     ids = {(p["saison"], p["id"]) for p in parts}
+    sort_de = {(p["saison"], p["id"]): p.get("sort") for p in parts}
+    # Le dernier conseil d'elimination ou chacun a VOTE : c'est la preuve d'un
+    # retour en jeu, quand il est posterieur a sa propre elimination.
+    dernier_vote = {}
+    for x0 in conseils:
+        if x0.get("type", "elimination") != "elimination":
+            continue
+        for b0 in x0.get("votes") or []:
+            if b0.get("votant_rattache"):
+                k = (x0["saison"], b0["votant"])
+                dernier_vote[k] = max(dernier_vote.get(k, 0), x0.get("numero", 0))
     connus = {s["id"] for s in saisons}
     revenus = []
 
     for x in conseils:
         ref = f'{x.get("saison")} conseil {x.get("numero")}'
         t = x.get("type")
-        if t not in ("elimination", "jury"):
+        if t not in ("elimination", "jury", "sortie"):
             c.erreur(f"{ref} : `type` absent ou inconnu ({t!r}) — "
-                     f"attendu `elimination` ou `jury`")
+                     f"attendu `elimination`, `jury` ou `sortie`")
+            continue
+        if t == "sortie":
+            # Une sortie sans vote : une personne, une nature, AUCUN bulletin.
+            if x.get("votes"):
+                c.erreur(f"{ref} : sortie portant {len(x['votes'])} bulletins — "
+                         f"une sortie sans vote n'en a aucun")
+            if not x.get("elimine_rattache"):
+                c.erreur(f"{ref} : sortie sans personne rattachee")
+            nat = x.get("nature")
+            if nat not in ("abandon_medical", "abandon_volontaire", "elimine_orientation",
+                           "elimine_poteaux", "elimine_duel", "elimine_ambassadeurs"):
+                c.erreur(f"{ref} : sortie de nature inconnue ({nat!r})")
+            elif sort_de.get((x.get("saison"), x.get("elimine"))) != nat:
+                c.erreur(f"{ref} : sortie « {nat} » pour quelqu'un dont le sort est "
+                         f"« {sort_de.get((x.get('saison'), x.get('elimine')))} »")
             continue
         if x.get("saison") not in connus:
             c.erreur(f"{ref} : saison inconnue")
@@ -770,8 +801,16 @@ def verifier_conseils(conseils, saisons, parts, c):
                          f"« {x.get('episode')} » — c'est une colonne du vote "
                          f"du jury final, pas un conseil")
             if x.get("elimine_rattache") and (x["saison"], x["elimine"]) in vainqueurs:
-                c.erreur(f"{ref} : le vainqueur de la saison y est donne pour "
-                         f"elimine — c'est le vote du jury, pas un conseil")
+                # Sauf s'il est REVENU : sorti ici, il vote encore plus loin dans
+                # la meme saison. Christina Chevry a Palau (« Returned to
+                # game », Wikipedia), Andre Deleplace a Fidji (« Andre de
+                # retour », presse du 9 decembre 2017). La preuve exigee est la
+                # meme que dans construire_conseils : un bulletin posterieur.
+                if dernier_vote.get((x["saison"], x["elimine"]), 0) > x.get("numero", 0):
+                    revenus.append(f"{x['saison']} ep.{x.get('episode')} {x['elimine']}")
+                else:
+                    c.erreur(f"{ref} : le vainqueur de la saison y est donne pour "
+                             f"elimine — c'est le vote du jury, pas un conseil")
             if x.get("elimine_rattache") and (x["saison"], x["elimine"]) in finalistes:
                 revenus.append(f"{x['saison']} ep.{x.get('episode')} {x['elimine']}")
 
@@ -823,6 +862,162 @@ def verifier_conseils(conseils, saisons, parts, c):
             c.avertir(f"{sid} : le vote du jury annonce {annonce} voix et n'en "
                       f"fait lire que {jury_lus[sid]} — une colonne de finaliste "
                       f"manque probablement au relevé")
+
+
+# Les exceptions PROUVEES a la source. Chacune a ete lue dans le wikitexte ;
+# aucune n'est une tolerance de commodite. Une anomalie absente de cette liste
+# est une erreur.
+EXCEPTIONS_CONSEILS = {
+    # (saison, numero, personne) -> raison
+    ("s22", 17, "lucie-bertaud"): "arme secrete du detournement de vote : deux "
+                                  "bulletins, le sien et celui de Magali",
+    ("s05", 9, "thierry-ramos"): "vote au conseil qui suit sa sortie ; la seule "
+                                 "source le compte dans son total de 11, rien ne "
+                                 "permet de trancher",
+}
+
+# Ce qu'une case ecrit quand elle ne nomme personne. Lu comme un nom, cela a
+# deja produit un conseil dont l'elimine s'appelait « Egalite ».
+LIBELLES_NON_NOMS = {"egalite", "/", "evacuee", "evacue", "-", "-`"}
+
+SORTIES_SANS_VOTE_ = {"abandon_medical", "abandon_volontaire", "elimine_orientation",
+                      "elimine_poteaux", "elimine_duel", "elimine_ambassadeurs"}
+
+
+def verifier_qualite_des_conseils(conseils, saisons, parts, c):
+    """Les controles du chantier qualite des conseils (octobre 2026).
+
+    Chacun garde une panne qui a deja eu lieu, et qu'aucun autre controle ne
+    voyait : 159 conseils en portaient une, dont 104 marques complets. Leur
+    point commun est d'etre MUETTES -- la construction passe, les pages
+    s'affichent, et une statistique est fausse.
+    """
+    en_cours = {s["id"] for s in saisons if s.get("en_cours")}
+    sort_de = {(p["saison"], p["id"]): p.get("sort") for p in parts}
+
+    def norm(v):
+        return lieux._norm(v) if isinstance(v, str) else v
+
+    # La DERNIERE sortie de chacun : un revenant sort deux fois, et seule la
+    # seconde le retire du jeu.
+    # Et seulement si le sort FINAL est une sortie : un revenant qui finit
+    # vainqueur ou finaliste -- Christina a Palau, Tania au Feu sacre -- ou
+    # qui joue encore n'a pas de sortie definitive.
+    derniere = {}
+    for x in conseils:
+        if x.get("type") != "jury" and x.get("elimine_rattache"):
+            k = (x["saison"], x["elimine"])
+            if sort_de.get(k) in (None, "vainqueur", "finaliste"):
+                continue
+            derniere[k] = max(derniere.get(k, 0), x.get("numero", 0))
+
+    for x in conseils:
+        sid, num, t = x.get("saison"), x.get("numero"), x.get("type", "elimination")
+        ref = f"{sid} conseil {num}"
+        votes = x.get("votes") or []
+
+        # Un gabarit de case pris pour une personne.
+        for champ in ("elimine", "laureat", "finaliste"):
+            v = x.get(champ)
+            if isinstance(v, str) and (norm(v) in LIBELLES_NON_NOMS or v.strip() in LIBELLES_NON_NOMS):
+                c.erreur(f"{ref} : `{champ}` vaut « {v} » — ce n'est pas une personne")
+        for b in votes:
+            for champ in ("votant", "cible"):
+                v = b.get(champ)
+                if isinstance(v, str) and (norm(v) in LIBELLES_NON_NOMS or v.strip("-` ") == ""):
+                    c.erreur(f"{ref} : bulletin dont `{champ}` vaut « {v} » — ce n'est "
+                             f"pas un bulletin")
+
+        # Le vote noir de l'elimine : sans votant, avec un auteur deja sorti.
+        for b in votes:
+            if b.get("auteur") is not None:
+                if b.get("votant") is not None or b.get("mecanique") != "Vote noir":
+                    c.erreur(f"{ref} : bulletin portant un `auteur` sans etre un vote noir "
+                             f"de mecanique")
+                elif b.get("auteur_rattache"):
+                    sorti = [y.get("numero", 0) for y in conseils
+                             if y.get("saison") == sid and y.get("type") != "jury"
+                             and y.get("elimine") == b["auteur"]]
+                    if not sorti or min(sorti) >= num:
+                        c.erreur(f"{ref} : vote noir de « {b['auteur']} », qui n'est pas "
+                                 f"encore sorti du jeu")
+
+        if t != "elimination":
+            continue
+
+        # Un dépouillement complet se compte : bulletins et voix contre.
+        if x.get("complet"):
+            if x.get("votes_exprimes") is not None and len(votes) != x["votes_exprimes"]:
+                c.erreur(f"{ref} : complet, mais {len(votes)} bulletins pour "
+                         f"{x['votes_exprimes']} voix annoncees")
+            if x.get("elimine_rattache") and x.get("votes_contre") is not None:
+                lus = sum(1 for b in votes if not b.get("annule") and b.get("cible") == x["elimine"])
+                if lus != x["votes_contre"]:
+                    c.erreur(f"{ref} : complet, mais {lus} bulletins valides contre "
+                             f"l'elimine pour {x['votes_contre']} annonces")
+        if x.get("incoherence_source") and x.get("complet"):
+            c.erreur(f"{ref} : colonne incoherente a la source, mais marquee complete")
+
+        # Un votant ecrit une fois par tour.
+        vus = defaultdict(int)
+        for b in votes:
+            if b.get("votant_rattache"):
+                vus[(b["votant"], bool(b.get("annule")))] += 1
+        for (pid, _), n in sorted(vus.items()):
+            if n > 1 and (sid, num, pid) not in EXCEPTIONS_CONSEILS:
+                c.erreur(f"{ref} : « {pid} » ecrit {n} bulletins dans le meme tour")
+
+        # Personne ne vote, et personne n'est vise, apres sa sortie definitive.
+        for b in votes:
+            if b.get("annule"):
+                continue
+            pid = b.get("votant") if b.get("votant_rattache") else None
+            if pid and derniere.get((sid, pid), 10 ** 6) < num \
+                    and (sid, num, pid) not in EXCEPTIONS_CONSEILS:
+                c.erreur(f"{ref} : « {pid} » vote apres sa sortie definitive "
+                         f"(conseil {derniere[(sid, pid)]})")
+            cb = b.get("cible") if b.get("cible_rattachee") else None
+            if cb and derniere.get((sid, cb), 10 ** 6) < num:
+                c.erreur(f"{ref} : bulletin valide visant « {cb} », sorti pour de bon "
+                         f"au conseil {derniere[(sid, cb)]}")
+
+        # Une sortie sans vote n'est pas un conseil.
+        if (not votes and x.get("elimine_rattache")
+                and sort_de.get((sid, x["elimine"])) in SORTIES_SANS_VOTE_
+                and derniere.get((sid, x["elimine"])) == num):
+            c.erreur(f"{ref} : « {x['elimine']} » sort par "
+                     f"« {sort_de[(sid, x['elimine'])]} », sans vote — c'est une "
+                     f"sortie, pas un conseil")
+
+        # Une annulation partielle dit qui l'objet protegeait.
+        if x.get("annulation") == "partielle" and not x.get("proteges"):
+            c.erreur(f"{ref} : annulation partielle sans personne protegee")
+
+    # Toute sortie au conseil, sur une saison terminee, a son conseil.
+    nommes = {(x.get("saison"), x.get("elimine")) for x in conseils
+              if x.get("type") == "elimination" and x.get("elimine_rattache")}
+    for p in parts:
+        if (p.get("sort") == "elimine_conseil" and p["saison"] not in en_cours
+                and (p["saison"], p["id"]) not in nommes):
+            c.erreur(f"{p['saison']} / {p['id']} : sorti au conseil, mais aucun conseil "
+                     f"ne le fait sortir")
+
+    # Ce qu'on sait ne pas savoir, dit a chaque passage.
+    for (sid, num, pid), raison in sorted(EXCEPTIONS_CONSEILS.items()):
+        c.constater(f"{sid} conseil {num} / {pid} : {raison}")
+    incoherents = [f"{x['saison']} c{x['numero']}" for x in conseils if x.get("incoherence_source")]
+    if incoherents:
+        c.constater(f"{len(incoherents)} colonne(s) incoherente(s) a la source, sorties des "
+                    f"mesures au bulletin pres : {', '.join(incoherents)}")
+    rendus = [f"{x['saison']} c{x['numero']}" for x in conseils
+              if any(b.get("cible_source") for b in x.get("votes") or [])]
+    if rendus:
+        c.constater(f"case(s) visant quelqu'un deja sorti, rendue(s) a l'elimine par le "
+                    f"total annonce : {', '.join(rendus)}")
+    corriges = [x for x in conseils if x.get("votes_contre_annonce") is not None]
+    if corriges:
+        c.constater(f"{len(corriges)} total(aux) de la source contredit(s) par ses propres "
+                    f"bulletins, tous lus — les bulletins font foi")
 
 
 def verifier_personnes(personnes, parts, c):
@@ -940,6 +1135,7 @@ def main():
         verifier_conseils(conseils, saisons, parts, c)
         verifier_matrices_de_votes(conseils, c)
         verifier_bulletins_sans_votant(conseils, c)
+        verifier_qualite_des_conseils(conseils, saisons, parts, c)
     if saisons and parts and colliers:
         verifier_colliers(colliers, saisons, parts, c)
     if parts and personnes:

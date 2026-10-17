@@ -119,7 +119,7 @@ def separer_attributs(cell):
     return "", cell
 
 
-def developper(table, avec_origine=False):
+def developper(table, avec_origine=False, avec_attributs=False):
     """Developpe la table en grille rectangulaire, fusions recopiees.
 
     Avec `avec_origine`, rend aussi une grille de booleens disant si chaque
@@ -140,24 +140,27 @@ def developper(table, avec_origine=False):
 
     grille = []
     origines = []
+    attributs = []
     # cellules encore actives verticalement : colonne -> (contenu, lignes restantes)
     reports = {}
 
     for ligne in lignes:
         rang = []
         source = []
+        styles = []
         col = 0
         # d'abord replacer les cellules reportees depuis les lignes du dessus
         def poser_reports():
             nonlocal col
             while col in reports:
-                contenu, restant = reports[col]
+                contenu, restant, attrs_r = reports[col]
                 rang.append(contenu)
                 source.append(False)
+                styles.append(attrs_r)
                 if restant <= 1:
                     del reports[col]
                 else:
-                    reports[col] = (contenu, restant - 1)
+                    reports[col] = (contenu, restant - 1, attrs_r)
                 col += 1
 
         poser_reports()
@@ -170,13 +173,20 @@ def developper(table, avec_origine=False):
                 # Une case etalee horizontalement n'est ecrite qu'une fois :
                 # c'est sa premiere colonne. Les suivantes sont des copies.
                 source.append(i == 0)
+                styles.append(attrs)
                 if hauteur > 1:
-                    reports[col] = (contenu, hauteur - 1)
+                    reports[col] = (contenu, hauteur - 1, attrs)
                 col += 1
                 poser_reports()
         grille.append(rang)
         origines.append(source)
+        attributs.append(styles)
+    if avec_attributs:
+        return grille, origines, attributs
     return (grille, origines) if avec_origine else grille
+
+
+RE_CASE_NOIRE = re.compile(r"background(?:-color)?\s*:\s*(?:black|#000000|#000)\b", re.I)
 
 
 def texte(cell):
@@ -263,7 +273,7 @@ def parse_page(wikitexte, saison_id=None, homonymes=()):
     table = extract_table(wikitexte, titre=r"D[ée]tails? des votes")
     if table is None:
         return []
-    grille, ecrites = developper(table, avec_origine=True)
+    grille, ecrites, styles = developper(table, avec_origine=True, avec_attributs=True)
     if not grille:
         return []
 
@@ -298,10 +308,12 @@ def parse_page(wikitexte, saison_id=None, homonymes=()):
         # premiere : quand l'intitule est fusionne sur deux ou trois colonnes,
         # les lignes de votants y logent d'abord leurs pastilles de tribu.
         nom = ""
+        col_nom = None
         for c in range(min(debut_donnees, len(rang)) - 1, -1, -1):
             candidat = re.sub(r'\b\w+\s*=\s*"[^"]*"', "", texte(rang[c])).strip()
             if candidat:
                 nom = candidat
+                col_nom = c
                 break
         # ecarter les lignes d'en-tete (« ▼ Candidats », « Jury final », les
         # totaux) : ce ne sont pas des votants.
@@ -317,7 +329,19 @@ def parse_page(wikitexte, saison_id=None, homonymes=()):
             continue
         if not est_un_vote(nom):
             continue
-        votants.append((nom, rang))
+        # Le numero de LIGNE suit le bulletin : deux lignes « Jerome » sont
+        # deux personnes, meme quand rien d'autre ne les distingue.
+        #
+        # Une ligne dont le NOM est recopie d'au-dessus (`rowspan` sur l'en-tete)
+        # n'est pas une seconde personne : c'est une sous-ligne de la meme, que
+        # la source ouvre pour une case de plus -- une arme secrete, un vote
+        # detourne. Elle ne lit donc que ses cases ECRITES ; les autres sont des
+        # recopies de la ligne du dessus, et les lire faisait voter Lucie
+        # Bertaud deux fois dans sept conseils.
+        ecrite = ecrites[rang_no] if rang_no < len(ecrites) else []
+        sous_ligne = (col_nom is not None and col_nom < len(ecrite) and not ecrite[col_nom])
+        votants.append((nom, rang, rang_no, ecrite if sous_ligne else None,
+                        styles[rang_no] if rang_no < len(styles) else []))
 
     conseils = []
     for col in range(debut_donnees, largeur):
@@ -335,8 +359,11 @@ def parse_page(wikitexte, saison_id=None, homonymes=()):
             contre = int(decompte)
 
         bulletins = []
-        for nom, rang in votants:
+        for nom, rang, ligne, seules_ecrites, style_ligne in votants:
             if col >= len(rang):
+                continue
+            if seules_ecrites is not None and not (col < len(seules_ecrites)
+                                                   and seules_ecrites[col]):
                 continue
             vise, annule = cible(rang[col])
             if not est_un_vote(vise):
@@ -350,7 +377,13 @@ def parse_page(wikitexte, saison_id=None, homonymes=()):
             # cette fonction ne connait pas le casting.
             if vise == nom and slug(nom) not in homonymes:
                 continue
-            bulletins.append({"votant": nom, "cible": vise, "annule": annule})
+            # LA CASE NOIRE : la source peint ainsi le vote noir que l'elimine
+            # laisse au conseil suivant (« color:white;background-color:black »),
+            # et le barre quand il n'a pas ete compte. C'est une preuve case par
+            # case -- bien meilleure que de la deduire de la date du bulletin.
+            noir = bool(col < len(style_ligne) and RE_CASE_NOIRE.search(style_ligne[col] or ""))
+            bulletins.append({"votant": nom, "cible": vise, "annule": annule,
+                              "ligne": ligne, "noir": noir})
 
         # Les bulletins sans votant : vote noir, penalite, malediction. On ne
         # compte que les cases ECRITES a cette colonne ; une case etalee par

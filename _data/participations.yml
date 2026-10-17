@@ -16773,9 +16773,9 @@
     couleur: jaune
     jour_debut: 15
     jour_fin: 23
-  jour_sortie: 12
-  sort: elimine_conseil
-  motif: Eliminée au conseil
+  jour_sortie: 40
+  sort: finaliste
+  motif: Finaliste
   votes_recus: 36
   sources:
     genre: wikipedia-fr
@@ -16785,9 +16785,9 @@
     tribu: wikipedia-fr
     couleur: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: fandom
-    sort: fandom
-    motif: fandom
+    jour_sortie: dernier jour de la saison (finale)
+    sort: 'wikipedia-fr (revenant : etat final)'
+    motif: 'wikipedia-fr (revenant : etat final)'
     nom_complet: fandom
     votes_recus: fandom
 - id: frederic-khouvilay

@@ -322,6 +322,24 @@ def fusionner_saison(saison, rows_f, rows_w, rapport, saisons_connues=()):
         # depart, et c'est ce depart qui compte. La seule a porter un retour
         # sans depart final est une saison en cours de diffusion -- ou la
         # bonne reponse est qu'il n'y a pas encore de sort.
+        elif (not saison.get("en_cours") and (dispo.get("f") or {}).get("retour_en_jeu")
+                and (dispo.get("w") or {}).get("sort")):
+            # UN REVENANT, SUR UNE SAISON TERMINEE : sa ligne Fandom tient
+            # plusieurs etats -- « Eliminee au conseil, Jour 12 », « Reintegree,
+            # Jour 34 », « Finaliste » -- et le lecteur garde le PREMIER. Tania
+            # Cakarevic, finaliste du Feu sacre, etait ainsi enregistree sortie
+            # au douzieme jour ; la colonne du jury ou elle recoit deux voix
+            # passait pour un conseil, et le juré Esteban pour un vote d'outre-
+            # tombe. Wikipedia donne l'etat FINAL : il prime ici.
+            w = dispo["w"]
+            if fiche.get("sort") != w.get("sort"):
+                rapport.append(f"{sid} / {nom} : revenant — sort final « {w.get('sort')} » "
+                               f"(wikipedia-fr) retenu contre « {fiche.get('sort')} », "
+                               f"premier depart lu chez Fandom")
+                for champ in ("sort", "motif", "jour_sortie"):
+                    if w.get(champ) not in (None, ""):
+                        fiche[champ] = w[champ]
+                        provenance[champ] = LIBELLE["w"] + " (revenant : etat final)"
         elif saison.get("en_cours") and (dispo.get("f") or {}).get("retour_en_jeu"):
             if fiche.get("sort"):
                 rapport.append(f"{sid} / {nom} : revenu en jeu le "

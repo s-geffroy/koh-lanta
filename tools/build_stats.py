@@ -1152,7 +1152,7 @@ def bloc_completude_saisons(saisons, parts, conseils, epreuves, colliers, modele
         par_saison[p["saison"]].append(p)
     conseils_par = defaultdict(list)
     for c in conseils:
-        if c.get("type") != "jury":
+        if c.get("type", "elimination") == "elimination":
             conseils_par[c["saison"]].append(c)
     epreuves_par = Counter(e["saison"] for e in epreuves)
     colliers_par = Counter(c["saison"] for c in colliers)

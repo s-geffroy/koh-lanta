@@ -7,11 +7,35 @@
 # `annule: true` sur un bulletin signale une voix rendue nulle par un collier
 # d'immunite : c'est ce qui permet de mesurer l'effet reel des colliers.
 #
+# `mecanique: Vote noir` avec `auteur` : de 2011 a 2016, la derniere voix que
+# l'elimine laisse au conseil suivant. Son auteur est connu, mais il n'est plus
+# en jeu : il n'est donc pas `votant`.
+#
 # `votant: null` avec un champ `mecanique` : une voix que PERSONNE n'a ecrite.
 # Depuis 2017 le jeu en impose -- vote noir, penalite, malediction -- et la
 # source les compte dans son total. Elles comptent donc au-dessus de la cible,
 # jamais au-dessous d'un votant : `votant_rattache` est faux, ce qui les ecarte
 # d'office de toute mesure cote emetteur.
+#
+# `cible_source` : sur un bulletin, la cible que la case ecrivait quand elle
+# designait quelqu'un deja sorti du jeu, et que le total annonce a permis de
+# rendre a l'elimine.
+#
+# `votes_contre_annonce` : le total que la source ecrivait, quand ses propres
+# bulletins -- tous lus -- en portent un autre. `votes_contre` dit alors ce que
+# disent les bulletins. `incoherence_source` : une colonne dont les cases
+# contredisent l'elimine, sortie des mesures au bulletin pres.
+#
+# `voix_annulees` : les voix qu'un objet d'immunite a annulees -- bulletins
+# ecrits, plus les voix de mecanique visant la meme personne protegee.
+# `voix_mecanique_non_comptees` : les voix de mecanique barrees pour une autre
+# raison, le plus souvent une cible deja sortie du jeu.
+# `bulletins_ecartes` (sur une sortie) : une case egaree dans une colonne
+# d'abandon annoncee a zero voix, gardee pour la tracabilite.
+#
+# `type: sortie` : une sortie OU PERSONNE NE VOTE -- abandon, orientation,
+# poteaux, duel, ambassadeurs. La ligne est gardee parce qu'elle date la
+# sortie ; elle porte `nature`, et elle n'est pas un conseil.
 #
 # `type` vaut `elimination` ou `jury`. Le dernier scrutin d'une saison n'est
 # pas un conseil : c'est le vote du jury final, et le sens du bulletin y est
@@ -713,14 +737,14 @@
     annule: false
 - saison: s02
   numero: 2
-  type: elimination
+  type: sortie
   complet: false
   episode: '2'
   elimine: xavier-lemasson
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s02
   numero: 3
   type: elimination
@@ -1283,14 +1307,14 @@
     annule: false
 - saison: s03
   numero: 1
-  type: elimination
+  type: sortie
   complet: false
   episode: '1'
   elimine: alexandra-denikine
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s03
   numero: 2
   type: elimination
@@ -1338,14 +1362,14 @@
     annule: false
 - saison: s03
   numero: 3
-  type: elimination
+  type: sortie
   complet: false
   episode: '2'
   elimine: candice-cohen
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_volontaire
 - saison: s03
   numero: 4
   type: elimination
@@ -1393,14 +1417,14 @@
     annule: false
 - saison: s03
   numero: 5
-  type: elimination
+  type: sortie
   complet: false
   episode: '3'
   elimine: michel-jeandel
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s03
   numero: 6
   type: elimination
@@ -1448,14 +1472,14 @@
     annule: false
 - saison: s03
   numero: 7
-  type: elimination
+  type: sortie
   complet: false
   episode: '4'
   elimine: julie-bourdon
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s03
   numero: 8
   type: elimination
@@ -1498,64 +1522,85 @@
     annule: false
 - saison: s03
   numero: 9
-  type: elimination
+  type: sortie
   complet: false
   episode: '5'
   elimine: philippe-huquet
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s03
   numero: 10
   type: elimination
-  complet: true
+  complet: false
   episode: '5'
   elimine: alexandre-berard
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 6
-  votes:
+  incoherence_source: cases Richard 3, Alexandra 2, Alexandre 1 ; la source fait sortir Alexandre et annonce
+    4/6 — aucune seconde source ni note pour trancher
+  bulletins_ecartes:
   - votant: isabelle-seguin
     votant_rattache: true
     cible: alexandra-denikine
     cible_rattachee: true
     annule: false
+    _ligne: 6
+    _libelle: Isabelle
+    _noir: false
   - votant: moussa-niangane
     votant_rattache: true
     cible: alexandra-denikine
     cible_rattachee: true
     annule: false
+    _ligne: 7
+    _libelle: Moussa
+    _noir: false
   - votant: valerie-dot
     votant_rattache: true
     cible: richard-lecourt
     cible_rattachee: true
     annule: false
+    _ligne: 11
+    _libelle: Valérie
+    _noir: false
   - votant: sebastien-loew
     votant_rattache: true
     cible: richard-lecourt
     cible_rattachee: true
     annule: false
+    _ligne: 12
+    _libelle: Sébastien
+    _noir: false
   - votant: richard-lecourt
     votant_rattache: true
     cible: alexandre-berard
     cible_rattachee: true
     annule: false
+    _ligne: 14
+    _libelle: Richard
+    _noir: false
   - votant: alexandre-berard
     votant_rattache: true
     cible: richard-lecourt
     cible_rattachee: true
     annule: false
+    _ligne: 15
+    _libelle: Alexandre
+    _noir: false
+  votes: []
 - saison: s03
   numero: 11
-  type: elimination
+  type: sortie
   complet: false
   episode: '6'
   elimine: richard-lecourt
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s03
   numero: 12
   type: elimination
@@ -1803,14 +1848,14 @@
     annule: false
 - saison: s03
   numero: 18
-  type: elimination
+  type: sortie
   complet: false
   episode: '13'
   elimine: antoine-sanchez
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s03
   numero: 19
   type: elimination
@@ -1973,14 +2018,14 @@
     annule: false
 - saison: s04
   numero: 3
-  type: elimination
+  type: sortie
   complet: false
   episode: '3'
   elimine: videli-dittmar
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s04
   numero: 4
   type: elimination
@@ -2268,14 +2313,14 @@
     annule: false
 - saison: s04
   numero: 10
-  type: elimination
+  type: sortie
   complet: false
   episode: '9'
   elimine: odile-heritier
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s04
   numero: 11
   type: elimination
@@ -2693,14 +2738,14 @@
     annule: false
 - saison: s05
   numero: 4
-  type: elimination
+  type: sortie
   complet: false
   episode: '3'
   elimine: sylvie-sebert
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s05
   numero: 5
   type: elimination
@@ -2753,8 +2798,9 @@
   episode: '4'
   elimine: marie-cecile-marechal
   elimine_rattache: true
-  votes_contre: 5
+  votes_contre: 6
   votes_exprimes: 7
+  votes_contre_annonce: 5
   votes:
   - votant: clemence-castel
     votant_rattache: true
@@ -3158,14 +3204,14 @@
     annule: false
 - saison: s05
   numero: 15
-  type: elimination
+  type: sortie
   complet: false
   episode: '13'
   elimine: alexis-tournier
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s05
   numero: 16
   type: elimination
@@ -3383,24 +3429,24 @@
     annule: false
 - saison: s06
   numero: 4
-  type: elimination
+  type: sortie
   complet: false
   episode: '4'
   elimine: mama-el-fayed
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s06
   numero: 5
-  type: elimination
+  type: sortie
   complet: false
   episode: '4'
   elimine: nicolas-maire
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s06
   numero: 6
   type: elimination
@@ -3483,14 +3529,14 @@
     annule: false
 - saison: s06
   numero: 8
-  type: elimination
+  type: sortie
   complet: false
   episode: '6'
   elimine: jean-claude-errin
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s06
   numero: 9
   type: elimination
@@ -3813,14 +3859,14 @@
     annule: false
 - saison: s06
   numero: 16
-  type: elimination
+  type: sortie
   complet: false
   episode: '13'
   elimine: ludovic-laresche
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s06
   numero: 17
   type: elimination
@@ -3938,8 +3984,8 @@
     annule: false
   - votant: veronique-lambert
     votant_rattache: true
-    cible: Pascal
-    cible_rattachee: false
+    cible: pascale-bodin
+    cible_rattachee: true
     annule: false
   - votant: pascale-bodin
     votant_rattache: true
@@ -3948,14 +3994,14 @@
     annule: false
 - saison: s07
   numero: 2
-  type: elimination
+  type: sortie
   complet: false
   episode: '2'
   elimine: ali-jaffar
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_volontaire
 - saison: s07
   numero: 3
   type: elimination
@@ -3976,8 +4022,8 @@
     cible: pascale-bodin
     cible_rattachee: true
     annule: false
-  - votant: Marylise
-    votant_rattache: false
+  - votant: maryline-hemelsdael
+    votant_rattache: true
     cible: pascale-bodin
     cible_rattachee: true
     annule: false
@@ -4026,8 +4072,8 @@
     cible: marie-laure-dagniaux
     cible_rattachee: true
     annule: false
-  - votant: Marylise
-    votant_rattache: false
+  - votant: maryline-hemelsdael
+    votant_rattache: true
     cible: marie-laure-dagniaux
     cible_rattachee: true
     annule: false
@@ -4071,8 +4117,8 @@
     cible: melanie-guyon
     cible_rattachee: true
     annule: false
-  - votant: Marylise
-    votant_rattache: false
+  - votant: maryline-hemelsdael
+    votant_rattache: true
     cible: melanie-guyon
     cible_rattachee: true
     annule: false
@@ -4191,8 +4237,8 @@
     cible: erick-africaa
     cible_rattachee: true
     annule: false
-  - votant: Marylise
-    votant_rattache: false
+  - votant: maryline-hemelsdael
+    votant_rattache: true
     cible: erick-africaa
     cible_rattachee: true
     annule: false
@@ -4251,8 +4297,8 @@
     cible: filomene-mendonca
     cible_rattachee: true
     annule: false
-  - votant: Marylise
-    votant_rattache: false
+  - votant: maryline-hemelsdael
+    votant_rattache: true
     cible: filomene-mendonca
     cible_rattachee: true
     annule: false
@@ -4306,8 +4352,8 @@
     cible: gregoire-delachaux
     cible_rattachee: true
     annule: false
-  - votant: Marylise
-    votant_rattache: false
+  - votant: maryline-hemelsdael
+    votant_rattache: true
     cible: gregoire-delachaux
     cible_rattachee: true
     annule: false
@@ -4338,14 +4384,14 @@
     annule: false
 - saison: s07
   numero: 11
-  type: elimination
+  type: sortie
   complet: false
   episode: '10'
   elimine: adrien-torrin
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_volontaire
 - saison: s07
   numero: 12
   type: elimination
@@ -4366,8 +4412,8 @@
     cible: gregoire-delachaux
     cible_rattachee: true
     annule: false
-  - votant: Marylise
-    votant_rattache: false
+  - votant: maryline-hemelsdael
+    votant_rattache: true
     cible: gregoire-delachaux
     cible_rattachee: true
     annule: false
@@ -4411,8 +4457,8 @@
     cible: laurent-boudes
     cible_rattachee: true
     annule: false
-  - votant: Marylise
-    votant_rattache: false
+  - votant: maryline-hemelsdael
+    votant_rattache: true
     cible: laurent-boudes
     cible_rattachee: true
     annule: false
@@ -4453,8 +4499,8 @@
     cible: maryline-hemelsdael
     cible_rattachee: true
     annule: true
-  - votant: Marylise
-    votant_rattache: false
+  - votant: maryline-hemelsdael
+    votant_rattache: true
     cible: patrick-brasier-de-thuy
     cible_rattachee: true
     annule: true
@@ -4470,14 +4516,14 @@
     annule: true
 - saison: s07
   numero: 15
-  type: elimination
+  type: sortie
   complet: false
   episode: '13'
   elimine: simon-quintilla
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s07
   numero: 16
   type: elimination
@@ -4490,8 +4536,8 @@
   votes:
   - votant: jade-handi
     votant_rattache: true
-    cible: Marylise
-    cible_rattachee: false
+    cible: maryline-hemelsdael
+    cible_rattachee: true
     annule: false
 - saison: s07
   numero: 17
@@ -4528,8 +4574,8 @@
   votes_pour: 3
   votes_exprimes: 6
   votes:
-  - votant: Marylise
-    votant_rattache: false
+  - votant: maryline-hemelsdael
+    votant_rattache: true
     cible: jade-handi
     cible_rattachee: true
     annule: false
@@ -4548,8 +4594,8 @@
   type: elimination
   complet: true
   episode: '1'
-  elimine: Iria
-  elimine_rattache: false
+  elimine: irya-cisse
+  elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 8
   votes:
@@ -4595,24 +4641,24 @@
     annule: false
 - saison: s08
   numero: 2
-  type: elimination
+  type: sortie
   complet: false
   episode: '2'
   elimine: valerie-tartacede-bollaert
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_volontaire
 - saison: s08
   numero: 3
-  type: elimination
+  type: sortie
   complet: false
   episode: '2'
   elimine: cega-coulibaly
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s08
   numero: 4
   type: elimination
@@ -4905,14 +4951,14 @@
     annule: false
 - saison: s08
   numero: 10
-  type: elimination
+  type: sortie
   complet: false
   episode: '8'
   elimine: christopher-lavaud
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s08
   numero: 11
   type: elimination
@@ -5140,14 +5186,14 @@
     annule: false
 - saison: s08
   numero: 16
-  type: elimination
+  type: sortie
   complet: false
   episode: '13'
   elimine: nathalie-ensargueix
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s08
   numero: 17
   type: elimination
@@ -5240,14 +5286,14 @@
   votes: []
 - saison: s09
   numero: 3
-  type: elimination
+  type: sortie
   complet: false
   episode: '1'
   elimine: myriam-desvergne
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s09
   numero: 4
   type: elimination
@@ -5398,8 +5444,8 @@
   type: elimination
   complet: true
   episode: '4'
-  elimine: Christina
-  elimine_rattache: false
+  elimine: christina-chevry
+  elimine_rattache: true
   votes_contre: 3
   votes_exprimes: 7
   votes:
@@ -5440,24 +5486,24 @@
     annule: false
 - saison: s09
   numero: 8
-  type: elimination
+  type: sortie
   complet: false
   episode: '5'
   elimine: marine-mocellin
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s09
   numero: 9
-  type: elimination
+  type: sortie
   complet: false
   episode: '5'
   elimine: kaouther-ferdjani
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_volontaire
 - saison: s09
   numero: 10
   type: elimination
@@ -5514,25 +5560,15 @@
     cible_rattachee: true
     annule: false
 - saison: s09
-  numero: 12
-  type: elimination
-  complet: false
-  episode: '6'
-  elimine: /
-  elimine_rattache: false
-  votes_contre: null
-  votes_exprimes: null
-  votes: []
-- saison: s09
   numero: 13
-  type: elimination
+  type: sortie
   complet: false
   episode: '7'
   elimine: alexandre-amico
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s09
   numero: 14
   type: elimination
@@ -5748,8 +5784,8 @@
   type: elimination
   complet: true
   episode: '11'
-  elimine: Rodolhphe
-  elimine_rattache: false
+  elimine: rodolphe-assi
+  elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 6
   votes:
@@ -5820,14 +5856,14 @@
     annule: false
 - saison: s09
   numero: 20
-  type: elimination
+  type: sortie
   complet: false
   episode: '13'
   elimine: fabienne-lefebvre-trehoux
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s09
   numero: 21
   type: elimination
@@ -6055,19 +6091,20 @@
     annule: false
 - saison: s10
   numero: 4
-  type: elimination
+  type: sortie
   complet: false
   episode: '4'
   elimine: alain-merdel
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: philippe-duron
     votant_rattache: true
     cible: marine-plissonneau
     cible_rattachee: true
     annule: false
+  nature: abandon_medical
 - saison: s10
   numero: 5
   type: elimination
@@ -6111,53 +6148,74 @@
 - saison: s10
   numero: 6
   type: elimination
-  complet: true
+  complet: false
   episode: '5'
   elimine: marine-plissonneau
   elimine_rattache: true
   votes_contre: 3
   votes_exprimes: 6
-  votes:
+  incoherence_source: cases Jean-Pierre 3, Marine 2, Aurelie 1 ; la source fait sortir Marine et annonce
+    3/6 — aucune seconde source ni note pour trancher
+  bulletins_ecartes:
   - votant: philippe-duron
     votant_rattache: true
     cible: jean-pierre-pigato
     cible_rattachee: true
     annule: false
+    _ligne: 5
+    _libelle: Philippe
+    _noir: false
   - votant: veronique-begue
     votant_rattache: true
     cible: marine-plissonneau
     cible_rattachee: true
     annule: false
+    _ligne: 8
+    _libelle: Véronique
+    _noir: false
   - votant: kunle-m-babacere-pakorona
     votant_rattache: true
     cible: marine-plissonneau
     cible_rattachee: true
     annule: false
+    _ligne: 9
+    _libelle: Kunlé
+    _noir: false
   - votant: aurelie-gasser
     votant_rattache: true
     cible: jean-pierre-pigato
     cible_rattachee: true
     annule: false
+    _ligne: 11
+    _libelle: Aurélie
+    _noir: false
   - votant: marine-plissonneau
     votant_rattache: true
     cible: jean-pierre-pigato
     cible_rattachee: true
     annule: false
+    _ligne: 12
+    _libelle: Marine
+    _noir: false
   - votant: jean-pierre-pigato
     votant_rattache: true
     cible: aurelie-gasser
     cible_rattachee: true
     annule: false
+    _ligne: 17
+    _libelle: Jean-Pierre
+    _noir: false
+  votes: []
 - saison: s10
   numero: 7
-  type: elimination
+  type: sortie
   complet: false
   episode: '6'
   elimine: jennifer-lieutaud
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_volontaire
 - saison: s10
   numero: 8
   type: elimination
@@ -6320,14 +6378,14 @@
     annule: false
 - saison: s10
   numero: 12
-  type: elimination
+  type: sortie
   complet: false
   episode: '9'
   elimine: valentin-d-hoore
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s10
   numero: 13
   type: elimination
@@ -6550,14 +6608,14 @@
     annule: false
 - saison: s10
   numero: 18
-  type: elimination
+  type: sortie
   complet: false
   episode: '14'
   elimine: veronique-begue
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s10
   numero: 19
   type: elimination
@@ -6743,21 +6801,24 @@
     cible: virginie-jarry
     cible_rattachee: true
     annule: false
-  - votant: lisa-legouverneur
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: lisa-legouverneur
+    auteur_rattache: true
     cible: catherine-barnier
     cible_rattachee: true
     annule: false
 - saison: s11
   numero: 3
-  type: elimination
+  type: sortie
   complet: false
   episode: '3'
   elimine: steve-lemercier
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_volontaire
 - saison: s11
   numero: 4
   type: elimination
@@ -6815,14 +6876,14 @@
     annule: false
 - saison: s11
   numero: 5
-  type: elimination
+  type: sortie
   complet: false
   episode: '4'
   elimine: naouel-hadjaf
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_volontaire
 - saison: s11
   numero: 6
   type: elimination
@@ -6868,8 +6929,11 @@
     cible: alexandra-pouillon
     cible_rattachee: true
     annule: false
-  - votant: gege-icardi
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: gege-icardi
+    auteur_rattache: true
     cible: delisia-fettasi
     cible_rattachee: true
     annule: false
@@ -6913,8 +6977,11 @@
     cible: alexandra-pouillon
     cible_rattachee: true
     annule: false
-  - votant: benoit-mahieux
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: benoit-mahieux
+    auteur_rattache: true
     cible: patricia-morel
     cible_rattachee: true
     annule: false
@@ -6953,8 +7020,11 @@
     cible: patricia-morel
     cible_rattachee: true
     annule: false
-  - votant: delisia-fettasi
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: delisia-fettasi
+    auteur_rattache: true
     cible: caroline-matteucci
     cible_rattachee: true
     annule: false
@@ -7043,13 +7113,19 @@
     cible: olivier-moenaert
     cible_rattachee: true
     annule: false
-  - votant: caroline-matteucci
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: caroline-matteucci
+    auteur_rattache: true
     cible: alexandra-pouillon
     cible_rattachee: true
     annule: false
-  - votant: catherine-barnier
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: catherine-barnier
+    auteur_rattache: true
     cible: florence-delbarre
     cible_rattachee: true
     annule: false
@@ -7063,9 +7139,9 @@
   votes_contre: 4
   votes_exprimes: 11
   annulation: partielle
-  voix_annulees: 7
   proteges:
   - patricia-morel
+  voix_annulees: 7
   votes:
   - votant: gerard-urdampilleta
     votant_rattache: true
@@ -7117,8 +7193,11 @@
     cible: patricia-morel
     cible_rattachee: true
     annule: true
-  - votant: anthony-amar
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: anthony-amar
+    auteur_rattache: true
     cible: olivier-moenaert
     cible_rattachee: true
     annule: false
@@ -7177,8 +7256,11 @@
     cible: teheiura-teahui
     cible_rattachee: true
     annule: false
-  - votant: olivier-moenaert
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: olivier-moenaert
+    auteur_rattache: true
     cible: patricia-morel
     cible_rattachee: true
     annule: false
@@ -7232,21 +7314,24 @@
     cible: martin-bazin
     cible_rattachee: true
     annule: false
-  - votant: florence-delbarre
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: florence-delbarre
+    auteur_rattache: true
     cible: martin-bazin
     cible_rattachee: true
     annule: false
 - saison: s11
   numero: 14
-  type: elimination
+  type: sortie
   complet: false
   episode: '11'
   elimine: virginie-jarry
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s11
   numero: 15
   type: elimination
@@ -7332,8 +7417,11 @@
     cible: ella-gbezan
     cible_rattachee: true
     annule: false
-  - votant: patricia-morel
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: patricia-morel
+    auteur_rattache: true
     cible: ella-gbezan
     cible_rattachee: true
     annule: false
@@ -7372,21 +7460,24 @@
     cible: ella-gbezan
     cible_rattachee: true
     annule: false
-  - votant: alexandra-pouillon
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: alexandra-pouillon
+    auteur_rattache: true
     cible: ella-gbezan
     cible_rattachee: true
     annule: false
 - saison: s11
   numero: 18
-  type: elimination
+  type: sortie
   complet: false
   episode: '14'
   elimine: ella-gbezan
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s11
   numero: 19
   type: elimination
@@ -7572,8 +7663,11 @@
     cible: bernard-deniaud
     cible_rattachee: true
     annule: false
-  - votant: melanie-boimare
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: melanie-boimare
+    auteur_rattache: true
     cible: mickael-kalfallah
     cible_rattachee: true
     annule: false
@@ -7639,14 +7733,14 @@
     annule: false
 - saison: s12
   numero: 4
-  type: elimination
+  type: sortie
   complet: false
   episode: '4'
   elimine: sara-tallon
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s12
   numero: 5
   type: elimination
@@ -7656,10 +7750,7 @@
   elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 9
-  annulation: partielle
-  voix_annulees: 1
-  proteges:
-  - sara-tallon
+  voix_mecanique_non_comptees: 1
   votes:
   - votant: bernard-deniaud
     votant_rattache: true
@@ -7701,8 +7792,11 @@
     cible: myriam-modde
     cible_rattachee: true
     annule: false
-  - votant: mickael-kalfallah
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: mickael-kalfallah
+    auteur_rattache: true
     cible: sara-tallon
     cible_rattachee: true
     annule: true
@@ -7751,8 +7845,11 @@
     cible: myriam-modde
     cible_rattachee: true
     annule: false
-  - votant: nadine-de-carpentry
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: nadine-de-carpentry
+    auteur_rattache: true
     cible: myriam-modde
     cible_rattachee: true
     annule: false
@@ -7761,8 +7858,8 @@
   type: elimination
   complet: true
   episode: '6'
-  elimine: Maire Parmentier Marie
-  elimine_rattache: false
+  elimine: marie-parmentier
+  elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 10
   votes:
@@ -7811,21 +7908,24 @@
     cible: charles-clement
     cible_rattachee: true
     annule: false
-  - votant: elodie-saleder
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: elodie-saleder
+    auteur_rattache: true
     cible: marie-parmentier
     cible_rattachee: true
     annule: false
 - saison: s12
   numero: 8
-  type: elimination
+  type: sortie
   complet: false
   episode: '7'
   elimine: anthony-dito
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_ambassadeurs
 - saison: s12
   numero: 9
   type: elimination
@@ -7836,10 +7936,10 @@
   votes_contre: 5
   votes_exprimes: 15
   annulation: partielle
-  voix_annulees: 7
   proteges:
   - namadia-thai-thai
-  - philippe-bizet
+  voix_annulees: 6
+  voix_mecanique_non_comptees: 1
   votes:
   - votant: ugo-lartiche
     votant_rattache: true
@@ -7906,13 +8006,19 @@
     cible: namadia-thai-thai
     cible_rattachee: true
     annule: true
-  - votant: marie-parmentier
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: marie-parmentier
+    auteur_rattache: true
     cible: philippe-bizet
     cible_rattachee: true
     annule: true
-  - votant: elodie-saleder
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: elodie-saleder
+    auteur_rattache: true
     cible: myriam-modde
     cible_rattachee: true
     annule: false
@@ -7981,8 +8087,11 @@
     cible: brice-martinet
     cible_rattachee: true
     annule: false
-  - votant: javier-rodriguez
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: javier-rodriguez
+    auteur_rattache: true
     cible: namadia-thai-thai
     cible_rattachee: true
     annule: false
@@ -8051,8 +8160,11 @@
     cible: brice-martinet
     cible_rattachee: true
     annule: false
-  - votant: namadia-thai-thai
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: namadia-thai-thai
+    auteur_rattache: true
     cible: brice-martinet
     cible_rattachee: true
     annule: false
@@ -8066,10 +8178,10 @@
   votes_contre: 3
   votes_exprimes: 11
   annulation: partielle
-  voix_annulees: 7
   proteges:
   - myriam-modde
-  - philippe-bizet
+  voix_annulees: 6
+  voix_mecanique_non_comptees: 1
   votes:
   - votant: ugo-lartiche
     votant_rattache: true
@@ -8121,8 +8233,11 @@
     cible: myriam-modde
     cible_rattachee: true
     annule: true
-  - votant: marylou-sidibe
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: marylou-sidibe
+    auteur_rattache: true
     cible: philippe-bizet
     cible_rattachee: true
     annule: true
@@ -8186,21 +8301,24 @@
     cible: thierry-villette
     cible_rattachee: true
     annule: false
-  - votant: catherine-perez
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: catherine-perez
+    auteur_rattache: true
     cible: myriam-modde
     cible_rattachee: true
     annule: false
 - saison: s12
   numero: 15
-  type: elimination
+  type: sortie
   complet: false
   episode: '12'
   elimine: charles-clement
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s12
   numero: 16
   type: elimination
@@ -8243,8 +8361,14 @@
     annule: false
   - votant: thierry-villette
     votant_rattache: true
-    cible: Brice/Brice
-    cible_rattachee: false
+    cible: brice-martinet
+    cible_rattachee: true
+    annule: false
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    cible: brice-martinet
+    cible_rattachee: true
     annule: false
 - saison: s12
   numero: 17
@@ -8286,31 +8410,34 @@
     cible: bernard-deniaud
     cible_rattachee: true
     annule: false
-  - votant: thierry-villette
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: thierry-villette
+    auteur_rattache: true
     cible: bernard-deniaud
     cible_rattachee: true
     annule: false
 - saison: s12
   numero: 18
-  type: elimination
+  type: sortie
   complet: false
   episode: '14'
   elimine: bernard-deniaud
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s12
   numero: 19
-  type: elimination
+  type: sortie
   complet: false
   episode: '14'
   elimine: philippe-bizet
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s12
   numero: 20
   type: elimination
@@ -8566,21 +8693,24 @@
     cible: loic-crespin
     cible_rattachee: true
     annule: false
-  - votant: babeth-delettre
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: babeth-delettre
+    auteur_rattache: true
     cible: manon-allender
     cible_rattachee: true
     annule: false
 - saison: s14
   numero: 4
-  type: elimination
+  type: sortie
   complet: false
   episode: '4'
   elimine: manon-allender
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_volontaire
 - saison: s14
   numero: 5
   type: elimination
@@ -8631,26 +8761,30 @@
     cible: corinne-bargoin-samuelian
     cible_rattachee: true
     annule: false
-  - votant: marie-anne-queniart
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: marie-anne-queniart
+    auteur_rattache: true
     cible: corinne-bargoin-samuelian
     cible_rattachee: true
     annule: false
 - saison: s14
   numero: 6
-  type: elimination
+  type: sortie
   complet: false
   episode: '5'
   elimine: loic-crespin
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: corinne-bargoin-samuelian
     votant_rattache: true
     cible: isabelle-fidanza
     cible_rattachee: true
     annule: false
+  nature: abandon_medical
 - saison: s14
   numero: 7
   type: elimination
@@ -8660,10 +8794,7 @@
   elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 8
-  annulation: partielle
-  voix_annulees: 1
-  proteges:
-  - loic-crespin
+  voix_mecanique_non_comptees: 1
   votes:
   - votant: chantal-menard
     votant_rattache: true
@@ -8700,8 +8831,11 @@
     cible: jessica-potel
     cible_rattachee: true
     annule: false
-  - votant: benoit-jorion-fahy
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: benoit-jorion-fahy
+    auteur_rattache: true
     cible: loic-crespin
     cible_rattachee: true
     annule: true
@@ -8750,26 +8884,30 @@
     cible: christophe-pendon
     cible_rattachee: true
     annule: false
-  - votant: isabelle-fidanza
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: isabelle-fidanza
+    auteur_rattache: true
     cible: charlaine-cuny
     cible_rattachee: true
     annule: false
 - saison: s14
   numero: 9
-  type: elimination
+  type: sortie
   complet: false
   episode: '7'
   elimine: margot-perrot-houwaer
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: corinne-bargoin-samuelian
     votant_rattache: true
     cible: christophe-pendon
     cible_rattachee: true
     annule: false
+  nature: abandon_medical
 - saison: s14
   numero: 10
   type: elimination
@@ -8799,10 +8937,7 @@
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 13
-  annulation: partielle
-  voix_annulees: 1
-  proteges:
-  - alban-pellegrin
+  voix_mecanique_non_comptees: 1
   votes:
   - votant: marc-rambaud
     votant_rattache: true
@@ -8859,21 +8994,24 @@
     cible: jeff-santiago
     cible_rattachee: true
     annule: false
-  - votant: isabelle-fidanza
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: isabelle-fidanza
+    auteur_rattache: true
     cible: alban-pellegrin
     cible_rattachee: true
     annule: true
 - saison: s14
   numero: 12
-  type: elimination
+  type: sortie
   complet: false
   episode: '8'
   elimine: corinne-bargoin-samuelian
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s14
   numero: 13
   type: elimination
@@ -8884,9 +9022,9 @@
   votes_contre: 6
   votes_exprimes: 12
   annulation: partielle
-  voix_annulees: 6
   proteges:
   - melissa-bastin
+  voix_annulees: 6
   votes:
   - votant: marc-rambaud
     votant_rattache: true
@@ -9003,8 +9141,11 @@
     cible: christophe-pendon
     cible_rattachee: true
     annule: false
-  - votant: cedric-giosserand-lucas
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: cedric-giosserand-lucas
+    auteur_rattache: true
     cible: melissa-bastin
     cible_rattachee: true
     annule: false
@@ -9068,8 +9209,11 @@
     cible: christophe-pendon
     cible_rattachee: true
     annule: false
-  - votant: charlaine-cuny
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: charlaine-cuny
+    auteur_rattache: true
     cible: christophe-pendon
     cible_rattachee: true
     annule: false
@@ -9082,10 +9226,7 @@
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 8
-  annulation: partielle
-  voix_annulees: 1
-  proteges:
-  - marc-rambaud
+  voix_mecanique_non_comptees: 1
   votes:
   - votant: marc-rambaud
     votant_rattache: true
@@ -9122,8 +9263,11 @@
     cible: melissa-bastin
     cible_rattachee: true
     annule: false
-  - votant: jeff-santiago
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: jeff-santiago
+    auteur_rattache: true
     cible: marc-rambaud
     cible_rattachee: true
     annule: true
@@ -9167,8 +9311,11 @@
     cible: chantal-menard
     cible_rattachee: true
     annule: false
-  - votant: christophe-pendon
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: christophe-pendon
+    auteur_rattache: true
     cible: chantal-menard
     cible_rattachee: true
     annule: false
@@ -9181,11 +9328,8 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
-  annulation: partielle
+  annulation: totale
   voix_annulees: 5
-  proteges:
-  - chantal-menard
-  - sebastien-ballesteros
   votes:
   - votant: marc-rambaud
     votant_rattache: true
@@ -9212,21 +9356,24 @@
     cible: chantal-menard
     cible_rattachee: true
     annule: true
-  - votant: jessica-potel
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: jessica-potel
+    auteur_rattache: true
     cible: chantal-menard
     cible_rattachee: true
     annule: false
 - saison: s14
   numero: 20
-  type: elimination
+  type: sortie
   complet: false
   episode: '14'
   elimine: bruno-peisey
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s14
   numero: 21
   type: elimination
@@ -9319,14 +9466,14 @@
     annule: false
 - saison: s15
   numero: 1
-  type: elimination
+  type: sortie
   complet: false
   episode: '1'
   elimine: charlie-vincent-mussard
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_volontaire
 - saison: s15
   numero: 2
   type: elimination
@@ -9379,14 +9526,14 @@
     annule: false
 - saison: s15
   numero: 3
-  type: elimination
+  type: sortie
   complet: false
   episode: '2'
   elimine: marius-torterat
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_volontaire
 - saison: s15
   numero: 4
   type: elimination
@@ -9437,8 +9584,11 @@
     cible: laureen-hugel
     cible_rattachee: true
     annule: false
-  - votant: laurence-corbellotti
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: laurence-corbellotti
+    auteur_rattache: true
     cible: julien-castro
     cible_rattachee: true
     annule: false
@@ -9487,8 +9637,11 @@
     cible: lolo-facione
     cible_rattachee: true
     annule: false
-  - votant: celine-parat-yeghiayan
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: celine-parat-yeghiayan
+    auteur_rattache: true
     cible: laureen-hugel
     cible_rattachee: true
     annule: false
@@ -9542,8 +9695,11 @@
     cible: steve-best
     cible_rattachee: true
     annule: false
-  - votant: huw-francis
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: huw-francis
+    auteur_rattache: true
     cible: lolo-facione
     cible_rattachee: true
     annule: false
@@ -9557,7 +9713,8 @@
   votes_contre: null
   votes_exprimes: null
   annulation: totale
-  voix_annulees: 8
+  voix_annulees: 7
+  voix_mecanique_non_comptees: 1
   votes:
   - votant: pascal-salviani
     votant_rattache: true
@@ -9594,8 +9751,11 @@
     cible: amir-doukhan
     cible_rattachee: true
     annule: true
-  - votant: carole-poncelet
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: carole-poncelet
+    auteur_rattache: true
     cible: romain-palazzetti
     cible_rattachee: true
     annule: true
@@ -9639,21 +9799,24 @@
     cible: romain-palazzetti
     cible_rattachee: true
     annule: false
-  - votant: lolo-facione
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: lolo-facione
+    auteur_rattache: true
     cible: amir-doukhan
     cible_rattachee: true
     annule: false
 - saison: s15
   numero: 9
-  type: elimination
+  type: sortie
   complet: false
   episode: '7'
   elimine: cassandre-girard
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_ambassadeurs
 - saison: s15
   numero: 10
   type: elimination
@@ -9664,9 +9827,9 @@
   votes_contre: 8
   votes_exprimes: 13
   annulation: partielle
-  voix_annulees: 1
   proteges:
   - karima-neggaz
+  voix_annulees: 1
   votes:
   - votant: wendy-gervois
     votant_rattache: true
@@ -9728,8 +9891,11 @@
     cible: cecilia-siharaj
     cible_rattachee: true
     annule: false
-  - votant: amir-doukhan
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: amir-doukhan
+    auteur_rattache: true
     cible: romain-palazzetti
     cible_rattachee: true
     annule: false
@@ -9740,12 +9906,10 @@
   episode: '8'
   elimine: julien-castro
   elimine_rattache: true
-  votes_contre: 6
+  votes_contre: 7
   votes_exprimes: 12
-  annulation: partielle
-  voix_annulees: 1
-  proteges:
-  - karima-neggaz
+  voix_mecanique_non_comptees: 1
+  votes_contre_annonce: 6
   votes:
   - votant: wendy-gervois
     votant_rattache: true
@@ -9802,8 +9966,11 @@
     cible: carine-cazals
     cible_rattachee: true
     annule: false
-  - votant: romain-palazzetti
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: romain-palazzetti
+    auteur_rattache: true
     cible: karima-neggaz
     cible_rattachee: true
     annule: true
@@ -9814,12 +9981,13 @@
   episode: '9'
   elimine: laureen-hugel
   elimine_rattache: true
-  votes_contre: 7
+  votes_contre: 6
   votes_exprimes: 11
   annulation: partielle
-  voix_annulees: 1
   proteges:
   - pascal-salviani
+  voix_annulees: 1
+  votes_contre_annonce: 7
   votes:
   - votant: wendy-gervois
     votant_rattache: true
@@ -9871,8 +10039,11 @@
     cible: alain-chrisostome
     cible_rattachee: true
     annule: false
-  - votant: julien-castro
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: julien-castro
+    auteur_rattache: true
     cible: laureen-hugel
     cible_rattachee: true
     annule: false
@@ -9936,8 +10107,11 @@
     cible: pascal-salviani
     cible_rattachee: true
     annule: false
-  - votant: laureen-hugel
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: laureen-hugel
+    auteur_rattache: true
     cible: gabriel-gubbels
     cible_rattachee: true
     annule: false
@@ -9986,8 +10160,11 @@
     cible: gabriel-gubbels
     cible_rattachee: true
     annule: false
-  - votant: carine-cazals
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: carine-cazals
+    auteur_rattache: true
     cible: pascal-salviani
     cible_rattachee: true
     annule: false
@@ -9998,8 +10175,9 @@
   episode: '12'
   elimine: nicolas-rouye
   elimine_rattache: true
-  votes_contre: 6
+  votes_contre: 4
   votes_exprimes: 7
+  votes_contre_annonce: 6
   votes:
   - votant: wendy-gervois
     votant_rattache: true
@@ -10031,8 +10209,11 @@
     cible: pascal-salviani
     cible_rattachee: true
     annule: false
-  - votant: karima-neggaz
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: karima-neggaz
+    auteur_rattache: true
     cible: gabriel-gubbels
     cible_rattachee: true
     annule: false
@@ -10045,10 +10226,7 @@
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 6
-  annulation: partielle
-  voix_annulees: 1
-  proteges:
-  - wendy-gervois
+  voix_mecanique_non_comptees: 1
   votes:
   - votant: wendy-gervois
     votant_rattache: true
@@ -10075,21 +10253,24 @@
     cible: cecilia-siharaj
     cible_rattachee: true
     annule: false
-  - votant: nicolas-rouye
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: nicolas-rouye
+    auteur_rattache: true
     cible: wendy-gervois
     cible_rattachee: true
     annule: true
 - saison: s15
   numero: 18
-  type: elimination
+  type: sortie
   complet: false
   episode: '13'
   elimine: cecilia-siharaj
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s15
   numero: 19
   type: elimination
@@ -10355,8 +10536,11 @@
     cible: lau-emilien
     cible_rattachee: true
     annule: false
-  - votant: myriam-zenasni
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: myriam-zenasni
+    auteur_rattache: true
     cible: laurent-mischkind
     cible_rattachee: true
     annule: false
@@ -10415,8 +10599,11 @@
     cible: jean-luc-duboscq
     cible_rattachee: true
     annule: false
-  - votant: amandine-schmitt
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: amandine-schmitt
+    auteur_rattache: true
     cible: alexandra-pharisien
     cible_rattachee: true
     annule: false
@@ -10470,8 +10657,11 @@
     cible: julie-navarro
     cible_rattachee: true
     annule: false
-  - votant: sophie-le-nestic-sabattier
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: sophie-le-nestic-sabattier
+    auteur_rattache: true
     cible: lau-emilien
     cible_rattachee: true
     annule: false
@@ -10520,21 +10710,24 @@
     cible: bruno-troester
     cible_rattachee: true
     annule: false
-  - votant: laurent-mischkind
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: laurent-mischkind
+    auteur_rattache: true
     cible: lau-emilien
     cible_rattachee: true
     annule: false
 - saison: s16
   numero: 7
-  type: elimination
+  type: sortie
   complet: false
   episode: '7'
   elimine: jerome-merlier
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_ambassadeurs
 - saison: s16
   numero: 8
   type: elimination
@@ -10544,11 +10737,7 @@
   elimine_rattache: true
   votes_contre: 7
   votes_exprimes: 15
-  annulation: partielle
-  voix_annulees: 2
-  proteges:
-  - bruno-troester
-  - jean-luc-duboscq
+  voix_mecanique_non_comptees: 2
   votes:
   - votant: benoit-assadi
     votant_rattache: true
@@ -10615,13 +10804,19 @@
     cible: jeremy-raffin
     cible_rattachee: true
     annule: false
-  - votant: jean-luc-duboscq
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: jean-luc-duboscq
+    auteur_rattache: true
     cible: bruno-troester
     cible_rattachee: true
     annule: true
-  - votant: sandrine-bouzekri
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: sandrine-bouzekri
+    auteur_rattache: true
     cible: jean-luc-duboscq
     cible_rattachee: true
     annule: true
@@ -10635,9 +10830,9 @@
   votes_contre: 5
   votes_exprimes: 13
   annulation: partielle
-  voix_annulees: 7
   proteges:
   - benoit-assadi
+  voix_annulees: 7
   votes:
   - votant: benoit-assadi
     votant_rattache: true
@@ -10699,8 +10894,11 @@
     cible: benoit-assadi
     cible_rattachee: true
     annule: true
-  - votant: lau-emilien
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: lau-emilien
+    auteur_rattache: true
     cible: jeremy-raffin
     cible_rattachee: true
     annule: false
@@ -10713,10 +10911,7 @@
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 11
-  annulation: partielle
-  voix_annulees: 1
-  proteges:
-  - jesta-hillmann
+  voix_mecanique_non_comptees: 1
   votes:
   - votant: benoit-assadi
     votant_rattache: true
@@ -10768,8 +10963,11 @@
     cible: julie-navarro
     cible_rattachee: true
     annule: false
-  - votant: beryl-libault-de-la-chevasnerie
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: beryl-libault-de-la-chevasnerie
+    auteur_rattache: true
     cible: jesta-hillmann
     cible_rattachee: true
     annule: true
@@ -10833,8 +11031,11 @@
     cible: candice-boisson
     cible_rattachee: true
     annule: false
-  - votant: alexandra-pharisien
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: alexandra-pharisien
+    auteur_rattache: true
     cible: candice-boisson
     cible_rattachee: true
     annule: false
@@ -10857,10 +11058,7 @@
   elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 9
-  annulation: partielle
-  voix_annulees: 1
-  proteges:
-  - julie-navarro
+  voix_mecanique_non_comptees: 1
   votes:
   - votant: benoit-assadi
     votant_rattache: true
@@ -10902,8 +11100,11 @@
     cible: freddy-bolzer
     cible_rattachee: true
     annule: false
-  - votant: yannick-delalleau
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: yannick-delalleau
+    auteur_rattache: true
     cible: julie-navarro
     cible_rattachee: true
     annule: true
@@ -10912,10 +11113,11 @@
   type: elimination
   complet: false
   episode: '12'
-  elimine: Égalité
+  elimine: null
   elimine_rattache: false
   votes_contre: null
   votes_exprimes: null
+  sans_elimination: true
   votes:
   - votant: benoit-assadi
     votant_rattache: true
@@ -10952,8 +11154,11 @@
     cible: freddy-bolzer
     cible_rattachee: true
     annule: false
-  - votant: jeremy-raffin
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: jeremy-raffin
+    auteur_rattache: true
     cible: freddy-bolzer
     cible_rattachee: true
     annule: false
@@ -11011,10 +11216,7 @@
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 7
-  annulation: partielle
-  voix_annulees: 1
-  proteges:
-  - freddy-bolzer
+  voix_mecanique_non_comptees: 1
   votes:
   - votant: benoit-assadi
     votant_rattache: true
@@ -11046,31 +11248,34 @@
     cible: jesta-hillmann
     cible_rattachee: true
     annule: false
-  - votant: stephane-cipolla
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: stephane-cipolla
+    auteur_rattache: true
     cible: freddy-bolzer
     cible_rattachee: true
     annule: true
 - saison: s16
   numero: 17
-  type: elimination
+  type: sortie
   complet: false
   episode: '14'
   elimine: candice-boisson
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s16
   numero: 18
-  type: elimination
+  type: sortie
   complet: false
   episode: '14'
   elimine: bruno-troester
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s16
   numero: 19
   type: elimination
@@ -11393,14 +11598,14 @@
     annule: false
 - saison: s17
   numero: 6
-  type: elimination
+  type: sortie
   complet: false
   episode: '6'
   elimine: brahma-sadeyen
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_volontaire
 - saison: s17
   numero: 7
   type: elimination
@@ -11448,14 +11653,14 @@
     annule: false
 - saison: s17
   numero: 8
-  type: elimination
+  type: sortie
   complet: false
   episode: '7'
   elimine: bastien-munez
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s17
   numero: 9
   type: elimination
@@ -11593,14 +11798,14 @@
     annule: false
 - saison: s17
   numero: 13
-  type: elimination
+  type: sortie
   complet: false
   episode: '9'
   elimine: manuella-baudet
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s17
   numero: 14
   type: elimination
@@ -11804,9 +12009,9 @@
   votes_contre: 2
   votes_exprimes: 7
   annulation: partielle
-  voix_annulees: 5
   proteges:
   - mathilde-chevalier
+  voix_annulees: 5
   votes:
   - votant: frederic-blancher
     votant_rattache: true
@@ -11854,9 +12059,9 @@
   votes_contre: 4
   votes_exprimes: 6
   annulation: partielle
-  voix_annulees: 1
   proteges:
   - clementine-jullien
+  voix_annulees: 1
   votes:
   - votant: frederic-blancher
     votant_rattache: true
@@ -11891,14 +12096,14 @@
     annule: false
 - saison: s17
   numero: 20
-  type: elimination
+  type: sortie
   complet: false
   episode: '14'
   elimine: mathilde-chevalier
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s17
   numero: 21
   type: elimination
@@ -11976,14 +12181,14 @@
     annule: false
 - saison: s18
   numero: 1
-  type: elimination
+  type: sortie
   complet: false
   episode: '1'
   elimine: marine-alves
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s18
   numero: 2
   type: elimination
@@ -12106,14 +12311,14 @@
     annule: false
 - saison: s18
   numero: 4
-  type: elimination
+  type: sortie
   complet: false
   episode: '3'
   elimine: thomas-hebert
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s18
   numero: 5
   type: elimination
@@ -12539,9 +12744,9 @@
   votes_contre: 3
   votes_exprimes: 10
   annulation: partielle
-  voix_annulees: 6
   proteges:
   - magalie-gustave
+  voix_annulees: 6
   votes:
   - votant: andre-deleplace
     votant_rattache: true
@@ -12604,9 +12809,9 @@
   votes_contre: 4
   votes_exprimes: 9
   annulation: partielle
-  voix_annulees: 5
   proteges:
   - marguerite-leblanc
+  voix_annulees: 5
   votes:
   - votant: andre-deleplace
     votant_rattache: true
@@ -12659,21 +12864,21 @@
   type: elimination
   complet: false
   episode: '11'
-  elimine: André
-  elimine_rattache: false
+  elimine: andre-deleplace
+  elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 9
   votes: []
 - saison: s18
   numero: 17
-  type: elimination
+  type: sortie
   complet: false
   episode: '12'
   elimine: melanie-moret
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s18
   numero: 18
   type: elimination
@@ -12684,10 +12889,10 @@
   votes_contre: 2
   votes_exprimes: 6
   annulation: partielle
-  voix_annulees: 4
   proteges:
   - magalie-gustave
-  - melanie-moret
+  voix_annulees: 3
+  voix_mecanique_non_comptees: 1
   votes:
   - votant: tiffany-gounin
     votant_rattache: true
@@ -12736,7 +12941,8 @@
   votes_contre: 3
   votes_exprimes: 5
   annulation: totale
-  voix_annulees: 6
+  voix_annulees: 5
+  voix_mecanique_non_comptees: 1
   votes:
   - votant: andre-deleplace
     votant_rattache: true
@@ -12771,14 +12977,14 @@
     annule: true
 - saison: s18
   numero: 20
-  type: elimination
+  type: sortie
   complet: false
   episode: '14'
   elimine: sandrine-dubourdy
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s18
   numero: 21
   type: elimination
@@ -12906,19 +13112,14 @@
     annule: false
 - saison: s20
   numero: 2
-  type: elimination
+  type: sortie
   complet: false
   episode: '2'
   elimine: alisea-lecomte
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
-  votes:
-  - votant: alisea-lecomte
-    votant_rattache: true
-    cible: Évacuée
-    cible_rattachee: false
-    annule: false
+  votes: []
+  nature: abandon_medical
 - saison: s20
   numero: 3
   type: elimination
@@ -12966,19 +13167,14 @@
     annule: false
 - saison: s20
   numero: 4
-  type: elimination
+  type: sortie
   complet: false
   episode: '3'
   elimine: carinne-elka-dioza
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
-  votes:
-  - votant: carinne-elka-dioza
-    votant_rattache: true
-    cible: Évacuée
-    cible_rattachee: false
-    annule: false
+  votes: []
+  nature: abandon_medical
 - saison: s20
   numero: 5
   type: elimination
@@ -12989,9 +13185,9 @@
   votes_contre: 3
   votes_exprimes: 6
   annulation: partielle
-  voix_annulees: 2
   proteges:
   - chloe-chaize
+  voix_annulees: 2
   votes:
   - votant: maud-bamps
     votant_rattache: true
@@ -13487,9 +13683,9 @@
   votes_contre: 4
   votes_exprimes: 10
   annulation: partielle
-  voix_annulees: 6
   proteges:
   - cyril-rouanne
+  voix_annulees: 6
   votes:
   - votant: maud-bamps
     votant_rattache: true
@@ -13612,12 +13808,8 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
-  annulation: partielle
+  annulation: totale
   voix_annulees: 6
-  proteges:
-  - clo-dessard-arribas
-  - cyril-rouanne
-  - maud-bamps
   votes:
   - votant: maud-bamps
     votant_rattache: true
@@ -13657,24 +13849,24 @@
     annule: false
 - saison: s20
   numero: 19
-  type: elimination
+  type: sortie
   complet: false
   episode: '14'
   elimine: clo-dessard-arribas
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s20
   numero: 20
-  type: elimination
+  type: sortie
   complet: false
   episode: '14'
   elimine: aurelien-soulimant
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s20
   numero: 21
   type: elimination
@@ -13817,14 +14009,14 @@
     annule: false
 - saison: s21
   numero: 2
-  type: elimination
+  type: sortie
   complet: false
   episode: '2'
   elimine: francois-zabalo
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s21
   numero: 3
   type: elimination
@@ -13875,9 +14067,9 @@
   votes_contre: 1
   votes_exprimes: 6
   annulation: partielle
-  voix_annulees: 5
   proteges:
   - estelle-fabrice
+  voix_annulees: 5
   votes:
   - votant: brice-petit
     votant_rattache: true
@@ -13911,14 +14103,14 @@
     annule: true
 - saison: s21
   numero: 5
-  type: elimination
+  type: sortie
   complet: false
   episode: '4'
   elimine: samuel-degoute
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s21
   numero: 6
   type: elimination
@@ -13999,9 +14191,9 @@
   votes_contre: 1
   votes_exprimes: 5
   annulation: partielle
-  voix_annulees: 4
   proteges:
   - aubin-bligny
+  voix_annulees: 4
   votes:
   - votant: ava-maisini
     votant_rattache: true
@@ -14013,11 +14205,6 @@
     cible: aubin-bligny
     cible_rattachee: true
     annule: true
-  - votant: hadja-cisse
-    votant_rattache: true
-    cible: -`
-    cible_rattachee: false
-    annule: false
   - votant: sebastien-aberlenc
     votant_rattache: true
     cible: aubin-bligny
@@ -14219,9 +14406,9 @@
   votes_contre: 7
   votes_exprimes: 14
   annulation: partielle
-  voix_annulees: 1
   proteges:
   - dorian-louvet
+  voix_annulees: 1
   votes:
   - votant: alexandra-pornet
     votant_rattache: true
@@ -14389,9 +14576,9 @@
   votes_contre: 4
   votes_exprimes: 12
   annulation: partielle
-  voix_annulees: 5
   proteges:
   - angelique-ti
+  voix_annulees: 5
   votes:
   - votant: alexandra-pornet
     votant_rattache: true
@@ -14645,24 +14832,24 @@
     annule: false
 - saison: s21
   numero: 22
-  type: elimination
+  type: sortie
   complet: false
   episode: '14'
   elimine: dorian-louvet
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s21
   numero: 23
-  type: elimination
+  type: sortie
   complet: false
   episode: '14'
   elimine: lola-labesse
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s21
   numero: 24
   type: elimination
@@ -14911,18 +15098,13 @@
 - saison: s22
   numero: 3
   type: elimination
-  complet: false
+  complet: true
   episode: '3'
   elimine: elodie-faelens
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 10
   votes:
-  - votant: lucie-bertaud
-    votant_rattache: true
-    cible: laetitia-saphores
-    cible_rattachee: true
-    annule: false
   - votant: lucie-bertaud
     votant_rattache: true
     cible: laetitia-saphores
@@ -15080,29 +15262,24 @@
     annule: false
 - saison: s22
   numero: 6
-  type: elimination
+  type: sortie
   complet: false
   episode: '5'
   elimine: gabin-peillon
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s22
   numero: 7
   type: elimination
-  complet: false
+  complet: true
   episode: '5'
   elimine: aurelien-tesson
   elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 9
   votes:
-  - votant: lucie-bertaud
-    votant_rattache: true
-    cible: aurelien-tesson
-    cible_rattachee: true
-    annule: false
   - votant: lucie-bertaud
     votant_rattache: true
     cible: aurelien-tesson
@@ -15176,27 +15353,22 @@
 - saison: s22
   numero: 9
   type: elimination
-  complet: false
+  complet: true
   episode: '6'
   elimine: herve-comte
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 14
   annulation: partielle
-  voix_annulees: 5
   proteges:
   - arnaud-deshayes
+  voix_annulees: 4
   votes:
   - votant: maxine-eouzan
     votant_rattache: true
     cible: herve-comte
     cible_rattachee: true
     annule: false
-  - votant: lucie-bertaud
-    votant_rattache: true
-    cible: arnaud-deshayes
-    cible_rattachee: true
-    annule: true
   - votant: lucie-bertaud
     votant_rattache: true
     cible: arnaud-deshayes
@@ -15275,7 +15447,7 @@
 - saison: s22
   numero: 11
   type: elimination
-  complet: false
+  complet: true
   episode: '7'
   elimine: shanice-mendy
   elimine_rattache: true
@@ -15285,11 +15457,6 @@
   - votant: maxine-eouzan
     votant_rattache: true
     cible: shanice-mendy
-    cible_rattachee: true
-    annule: false
-  - votant: lucie-bertaud
-    votant_rattache: true
-    cible: laure-canevarolo
     cible_rattachee: true
     annule: false
   - votant: lucie-bertaud
@@ -15356,7 +15523,7 @@
 - saison: s22
   numero: 12
   type: elimination
-  complet: false
+  complet: true
   episode: '8'
   elimine: myriam-chafik
   elimine_rattache: true
@@ -15364,11 +15531,6 @@
   votes_exprimes: 14
   votes:
   - votant: maxine-eouzan
-    votant_rattache: true
-    cible: myriam-chafik
-    cible_rattachee: true
-    annule: false
-  - votant: lucie-bertaud
     votant_rattache: true
     cible: myriam-chafik
     cible_rattachee: true
@@ -15444,23 +15606,18 @@
 - saison: s22
   numero: 13
   type: elimination
-  complet: false
+  complet: true
   episode: '9'
   elimine: vincent-blier
   elimine_rattache: true
   votes_contre: 8
   votes_exprimes: 11
   annulation: partielle
-  voix_annulees: 1
   proteges:
   - thomas-plisson
+  voix_annulees: 1
   votes:
   - votant: maxine-eouzan
-    votant_rattache: true
-    cible: vincent-blier
-    cible_rattachee: true
-    annule: false
-  - votant: lucie-bertaud
     votant_rattache: true
     cible: vincent-blier
     cible_rattachee: true
@@ -15529,7 +15686,7 @@
 - saison: s22
   numero: 15
   type: elimination
-  complet: false
+  complet: true
   episode: '10'
   elimine: thomas-plisson
   elimine_rattache: true
@@ -15537,11 +15694,6 @@
   votes_exprimes: 9
   votes:
   - votant: maxine-eouzan
-    votant_rattache: true
-    cible: thomas-plisson
-    cible_rattachee: true
-    annule: false
-  - votant: lucie-bertaud
     votant_rattache: true
     cible: thomas-plisson
     cible_rattachee: true
@@ -15645,24 +15797,24 @@
     annule: false
 - saison: s22
   numero: 18
-  type: elimination
+  type: sortie
   complet: false
   episode: '12'
   elimine: arnaud-deshayes
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s22
   numero: 19
-  type: elimination
+  type: sortie
   complet: false
   episode: '12'
   elimine: laure-canevarolo
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s22
   numero: 20
   type: elimination
@@ -15877,14 +16029,14 @@
     annule: false
 - saison: s23
   numero: 3
-  type: elimination
+  type: sortie
   complet: false
   episode: '2'
   elimine: franck-le-totem-maudit
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_volontaire
 - saison: s23
   numero: 4
   type: elimination
@@ -16149,14 +16301,14 @@
     annule: false
 - saison: s23
   numero: 8
-  type: elimination
+  type: sortie
   complet: false
   episode: '6'
   elimine: jean-philippe-masy
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s23
   numero: 9
   type: elimination
@@ -16770,24 +16922,24 @@
     annule: false
 - saison: s23
   numero: 21
-  type: elimination
+  type: sortie
   complet: false
   episode: '14'
   elimine: ambre-daudet
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s23
   numero: 22
-  type: elimination
+  type: sortie
   complet: false
   episode: '14'
   elimine: jean-charles-chatelus
   elimine_rattache: true
   votes_contre: 2
-  votes_exprimes: null
   votes: []
+  nature: elimine_poteaux
 - saison: s23
   numero: 23
   type: jury
@@ -17068,9 +17220,9 @@
   votes_contre: 5
   votes_exprimes: 8
   annulation: partielle
-  voix_annulees: 1
   proteges:
   - quentin-paygnard
+  voix_annulees: 1
   votes:
   - votant: frederic-khouvilay
     votant_rattache: true
@@ -17109,14 +17261,14 @@
     annule: false
 - saison: s24
   numero: 6
-  type: elimination
+  type: sortie
   complet: false
   episode: '5'
   elimine: benjamin-di-benedetto
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_volontaire
 - saison: s24
   numero: 7
   type: elimination
@@ -17164,14 +17316,14 @@
     annule: false
 - saison: s24
   numero: 8
-  type: elimination
+  type: sortie
   complet: false
   episode: '6'
   elimine: martin-burrus
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s24
   numero: 9
   type: elimination
@@ -17227,9 +17379,9 @@
   votes_contre: 3
   votes_exprimes: 7
   annulation: partielle
-  voix_annulees: 3
   proteges:
   - tania-cakarevic
+  voix_annulees: 3
   votes:
   - votant: tania-cakarevic
     votant_rattache: true
@@ -17273,14 +17425,14 @@
   votes: []
 - saison: s24
   numero: 12
-  type: elimination
+  type: sortie
   complet: false
   episode: '9'
   elimine: grace-jeantel
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_volontaire
 - saison: s24
   numero: 13
   type: elimination
@@ -17567,9 +17719,9 @@
   votes_contre: 5
   votes_exprimes: 7
   annulation: partielle
-  voix_annulees: 1
   proteges:
   - quentin-paygnard
+  voix_annulees: 1
   votes:
   - votant: frederic-khouvilay
     votant_rattache: true
@@ -17669,9 +17821,9 @@
   votes_contre: 2
   votes_exprimes: 7
   annulation: partielle
-  voix_annulees: 5
   proteges:
   - tania-cakarevic
+  voix_annulees: 5
   votes:
   - votant: frederic-khouvilay
     votant_rattache: true
@@ -17712,14 +17864,14 @@
     annule: true
 - saison: s24
   numero: 21
-  type: elimination
+  type: sortie
   complet: false
   episode: '16'
   elimine: julie-debever
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s24
   numero: 22
   type: elimination
@@ -17737,12 +17889,12 @@
     annule: false
 - saison: s24
   numero: 23
-  type: elimination
+  type: jury
   complet: false
   episode: '17'
-  elimine: tania-cakarevic
-  elimine_rattache: true
-  votes_contre: 2
+  finaliste: tania-cakarevic
+  finaliste_rattache: true
+  votes_pour: 2
   votes_exprimes: 9
   votes:
   - votant: julie-debever
@@ -17810,8 +17962,8 @@
   votes_contre: 6
   votes_exprimes: 10
   votes:
-  - votant: Léa
-    votant_rattache: false
+  - votant: lea-sahin
+    votant_rattache: true
     cible: steve-grenier
     cible_rattachee: true
     annule: false
@@ -17900,8 +18052,8 @@
     cible: alicia-bouly
     cible_rattachee: true
     annule: false
-  - votant: Léa
-    votant_rattache: false
+  - votant: lea-notardonato
+    votant_rattache: true
     cible: alicia-bouly
     cible_rattachee: true
     annule: false
@@ -17927,14 +18079,14 @@
     annule: false
 - saison: s25
   numero: 3
-  type: elimination
+  type: sortie
   complet: false
   episode: '3'
   elimine: nathalie-suhard
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_duel
 - saison: s25
   numero: 4
   type: elimination
@@ -17945,8 +18097,8 @@
   votes_contre: 8
   votes_exprimes: 9
   votes:
-  - votant: Léa
-    votant_rattache: false
+  - votant: lea-sahin
+    votant_rattache: true
     cible: william-plancq
     cible_rattachee: true
     annule: false
@@ -18000,12 +18152,12 @@
   votes_contre: 5
   votes_exprimes: 8
   annulation: partielle
-  voix_annulees: 1
   proteges:
   - Léa
+  voix_annulees: 1
   votes:
-  - votant: Léa
-    votant_rattache: false
+  - votant: lea-sahin
+    votant_rattache: true
     cible: sarah-diawara
     cible_rattachee: true
     annule: false
@@ -18054,9 +18206,9 @@
   votes_contre: 8
   votes_exprimes: 10
   annulation: partielle
-  voix_annulees: 2
   proteges:
   - Léa
+  voix_annulees: 2
   votes:
   - votant: meissa-seck
     votant_rattache: true
@@ -18088,8 +18240,8 @@
     cible: Léa
     cible_rattachee: false
     annule: true
-  - votant: Léa
-    votant_rattache: false
+  - votant: lea-notardonato
+    votant_rattache: true
     cible: emilie-clavis
     cible_rattachee: true
     annule: false
@@ -18118,8 +18270,8 @@
   votes_contre: 4
   votes_exprimes: 7
   votes:
-  - votant: Léa
-    votant_rattache: false
+  - votant: lea-sahin
+    votant_rattache: true
     cible: sarah-diawara
     cible_rattachee: true
     annule: false
@@ -18163,9 +18315,9 @@
   votes_contre: 6
   votes_exprimes: 9
   annulation: partielle
-  voix_annulees: 1
   proteges:
   - david-murail
+  voix_annulees: 1
   votes:
   - votant: meissa-seck
     votant_rattache: true
@@ -18197,8 +18349,8 @@
     cible: maxime-barbet
     cible_rattachee: true
     annule: false
-  - votant: Léa
-    votant_rattache: false
+  - votant: lea-notardonato
+    votant_rattache: true
     cible: maxime-barbet
     cible_rattachee: true
     annule: false
@@ -18227,8 +18379,8 @@
     cible: ricky-poyet
     cible_rattachee: true
     annule: false
-  - votant: Léa
-    votant_rattache: false
+  - votant: lea-notardonato
+    votant_rattache: true
     cible: ricky-poyet
     cible_rattachee: true
     annule: false
@@ -18237,19 +18389,19 @@
   type: elimination
   complet: true
   episode: '9'
-  elimine: Léa
-  elimine_rattache: false
+  elimine: lea-notardonato
+  elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 13
   annulation: partielle
-  voix_annulees: 7
   proteges:
   - oceane-montenegro
+  voix_annulees: 7
   votes:
-  - votant: Léa
-    votant_rattache: false
-    cible: Léa
-    cible_rattachee: false
+  - votant: lea-sahin
+    votant_rattache: true
+    cible: lea-notardonato
+    cible_rattachee: true
     annule: false
   - votant: meissa-seck
     votant_rattache: true
@@ -18263,18 +18415,18 @@
     annule: true
   - votant: pauline-bonneil
     votant_rattache: true
-    cible: Léa
-    cible_rattachee: false
+    cible: lea-notardonato
+    cible_rattachee: true
     annule: false
   - votant: amri-madani
     votant_rattache: true
-    cible: Léa
-    cible_rattachee: false
+    cible: lea-notardonato
+    cible_rattachee: true
     annule: false
   - votant: sebastien-cazaux
     votant_rattache: true
-    cible: Léa
-    cible_rattachee: false
+    cible: lea-notardonato
+    cible_rattachee: true
     annule: false
   - votant: david-murail
     votant_rattache: true
@@ -18293,8 +18445,8 @@
     annule: true
   - votant: aurelien-dulau
     votant_rattache: true
-    cible: Léa
-    cible_rattachee: false
+    cible: lea-notardonato
+    cible_rattachee: true
     annule: false
   - votant: cecile-poprawa
     votant_rattache: true
@@ -18303,11 +18455,11 @@
     annule: true
   - votant: oceane-montenegro
     votant_rattache: true
-    cible: Léa
-    cible_rattachee: false
+    cible: lea-notardonato
+    cible_rattachee: true
     annule: false
-  - votant: Léa
-    votant_rattache: false
+  - votant: lea-notardonato
+    votant_rattache: true
     cible: oceane-montenegro
     cible_rattachee: true
     annule: true
@@ -18331,12 +18483,12 @@
   votes_contre: 5
   votes_exprimes: 12
   annulation: partielle
-  voix_annulees: 6
   proteges:
   - amri-madani
+  voix_annulees: 6
   votes:
-  - votant: Léa
-    votant_rattache: false
+  - votant: lea-sahin
+    votant_rattache: true
     cible: cecile-poprawa
     cible_rattachee: true
     annule: false
@@ -18400,8 +18552,8 @@
   votes_contre: 6
   votes_exprimes: 11
   votes:
-  - votant: Léa
-    votant_rattache: false
+  - votant: lea-sahin
+    votant_rattache: true
     cible: sebastien-cazaux
     cible_rattachee: true
     annule: false
@@ -18462,14 +18614,14 @@
   votes: []
 - saison: s25
   numero: 15
-  type: elimination
+  type: sortie
   complet: false
   episode: '12'
   elimine: jean-belmonte
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s25
   numero: 16
   type: elimination
@@ -18480,12 +18632,12 @@
   votes_contre: 4
   votes_exprimes: 9
   annulation: partielle
-  voix_annulees: 2
   proteges:
   - amri-madani
+  voix_annulees: 2
   votes:
-  - votant: Léa
-    votant_rattache: false
+  - votant: lea-sahin
+    votant_rattache: true
     cible: megane-rouland
     cible_rattachee: true
     annule: false
@@ -18535,8 +18687,8 @@
   votes_contre: null
   votes_exprimes: null
   votes:
-  - votant: Léa
-    votant_rattache: false
+  - votant: lea-sahin
+    votant_rattache: true
     cible: david-murail
     cible_rattachee: true
     annule: false
@@ -18580,8 +18732,8 @@
   votes_contre: 5
   votes_exprimes: 9
   votes:
-  - votant: Léa
-    votant_rattache: false
+  - votant: lea-sahin
+    votant_rattache: true
     cible: julie-rignault
     cible_rattachee: true
     annule: false
@@ -18618,24 +18770,24 @@
     annule: false
 - saison: s25
   numero: 19
-  type: elimination
+  type: sortie
   complet: false
   episode: '15'
   elimine: amri-madani
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s25
   numero: 20
-  type: elimination
+  type: sortie
   complet: false
   episode: '15'
   elimine: pauline-bonneil
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s25
   numero: 21
   type: elimination
@@ -18646,8 +18798,8 @@
   votes_contre: 1
   votes_exprimes: null
   votes:
-  - votant: Léa
-    votant_rattache: false
+  - votant: lea-sahin
+    votant_rattache: true
     cible: julie-rignault
     cible_rattachee: true
     annule: false
@@ -18721,7 +18873,7 @@
     cible: lea-sahin
     cible_rattachee: true
     annule: false
-  - votant: lea-notardonato
+  - votant: lea-sahin
     votant_rattache: true
     cible: lea-sahin
     cible_rattachee: true
@@ -18731,20 +18883,20 @@
   type: elimination
   complet: true
   episode: '1'
-  elimine: Cécile
-  elimine_rattache: false
+  elimine: cecile-guy
+  elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 10
   votes:
   - votant: thibault-belanger
     votant_rattache: true
-    cible: Cécile
-    cible_rattachee: false
+    cible: cecile-guy
+    cible_rattachee: true
     annule: false
   - votant: charlotte-rasquin
     votant_rattache: true
-    cible: Cécile
-    cible_rattachee: false
+    cible: cecile-guy
+    cible_rattachee: true
     annule: false
   - votant: jacques-roque
     votant_rattache: true
@@ -18753,8 +18905,8 @@
     annule: false
   - votant: sophia-mansouri
     votant_rattache: true
-    cible: Cécile
-    cible_rattachee: false
+    cible: cecile-guy
+    cible_rattachee: true
     annule: false
   - votant: frederic-khouvilay
     votant_rattache: true
@@ -18763,13 +18915,13 @@
     annule: false
   - votant: fabrice-giordano
     votant_rattache: true
-    cible: Cécile
-    cible_rattachee: false
+    cible: cecile-guy
+    cible_rattachee: true
     annule: false
   - votant: emmanuelle-boisseau
     votant_rattache: true
-    cible: Cécile
-    cible_rattachee: false
+    cible: cecile-guy
+    cible_rattachee: true
     annule: false
   - votant: michel-huy
     votant_rattache: true
@@ -18778,16 +18930,11 @@
     annule: false
   - votant: lola-potabes
     votant_rattache: true
-    cible: Cécile
-    cible_rattachee: false
-    annule: false
-  - votant: Cécile G
-    votant_rattache: false
-    cible: fabrice-giordano
+    cible: cecile-guy
     cible_rattachee: true
     annule: false
-  - votant: Cécile
-    votant_rattache: false
+  - votant: cecile-guy
+    votant_rattache: true
     cible: fabrice-giordano
     cible_rattachee: true
     annule: false
@@ -18801,8 +18948,8 @@
   votes_contre: 6
   votes_exprimes: 10
   votes:
-  - votant: Cécile B
-    votant_rattache: false
+  - votant: cecile-belec
+    votant_rattache: true
     cible: ari-bentolila
     cible_rattachee: true
     annule: false
@@ -18851,11 +18998,6 @@
     cible: marie-vilaseca
     cible_rattachee: true
     annule: false
-  - votant: Cécile
-    votant_rattache: false
-    cible: ari-bentolila
-    cible_rattachee: true
-    annule: false
 - saison: s26
   numero: 3
   type: elimination
@@ -18865,15 +19007,11 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
-  annulation: partielle
+  annulation: totale
   voix_annulees: 9
-  proteges:
-  - alexandre-cheron
-  - marie-vilaseca
-  - ugo-lartiche
   votes:
-  - votant: Cécile B
-    votant_rattache: false
+  - votant: cecile-belec
+    votant_rattache: true
     cible: alexandre-cheron
     cible_rattachee: true
     annule: true
@@ -18917,11 +19055,6 @@
     cible: alexandre-cheron
     cible_rattachee: true
     annule: true
-  - votant: Cécile
-    votant_rattache: false
-    cible: alexandre-cheron
-    cible_rattachee: true
-    annule: false
 - saison: s26
   numero: 4
   type: elimination
@@ -19001,14 +19134,14 @@
   votes: []
 - saison: s26
   numero: 7
-  type: elimination
+  type: sortie
   complet: false
   episode: '5'
   elimine: alexandre-cheron
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_volontaire
 - saison: s26
   numero: 8
   type: elimination
@@ -19019,9 +19152,9 @@
   votes_contre: 3
   votes_exprimes: 9
   annulation: partielle
-  voix_annulees: 6
   proteges:
   - melissa-pierru
+  voix_annulees: 6
   votes:
   - votant: thibault-belanger
     votant_rattache: true
@@ -19075,8 +19208,9 @@
   episode: '6'
   elimine: melissa-pierru
   elimine_rattache: true
-  votes_contre: 7
+  votes_contre: 6
   votes_exprimes: 8
+  votes_contre_annonce: 7
   votes:
   - votant: thibault-belanger
     votant_rattache: true
@@ -19147,11 +19281,8 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
-  annulation: partielle
+  annulation: totale
   voix_annulees: 14
-  proteges:
-  - fabrice-giordano
-  - sarah-aboudeine
   votes:
   - votant: thibault-belanger
     votant_rattache: true
@@ -19173,8 +19304,8 @@
     cible: sarah-aboudeine
     cible_rattachee: true
     annule: true
-  - votant: Cécile B
-    votant_rattache: false
+  - votant: cecile-belec
+    votant_rattache: true
     cible: fabrice-giordano
     cible_rattachee: true
     annule: true
@@ -19223,11 +19354,6 @@
     cible: sarah-aboudeine
     cible_rattachee: true
     annule: true
-  - votant: Cécile
-    votant_rattache: false
-    cible: fabrice-giordano
-    cible_rattachee: true
-    annule: false
 - saison: s26
   numero: 12
   type: elimination
@@ -19263,8 +19389,8 @@
     cible: sarah-aboudeine
     cible_rattachee: true
     annule: false
-  - votant: Cécile B
-    votant_rattache: false
+  - votant: cecile-belec
+    votant_rattache: true
     cible: frederic-khouvilay
     cible_rattachee: true
     annule: false
@@ -19339,8 +19465,8 @@
     cible: ugo-lartiche
     cible_rattachee: true
     annule: false
-  - votant: Cécile B
-    votant_rattache: false
+  - votant: cecile-belec
+    votant_rattache: true
     cible: frederic-khouvilay
     cible_rattachee: true
     annule: false
@@ -19380,11 +19506,6 @@
     cible: frederic-khouvilay
     cible_rattachee: true
     annule: false
-  - votant: Cécile
-    votant_rattache: false
-    cible: frederic-khouvilay
-    cible_rattachee: true
-    annule: false
 - saison: s26
   numero: 15
   type: elimination
@@ -19415,8 +19536,8 @@
     cible: maxim-iarkov
     cible_rattachee: true
     annule: false
-  - votant: Cécile B
-    votant_rattache: false
+  - votant: cecile-belec
+    votant_rattache: true
     cible: maxim-iarkov
     cible_rattachee: true
     annule: false
@@ -19471,9 +19592,9 @@
   votes_contre: 4
   votes_exprimes: 11
   annulation: partielle
-  voix_annulees: 4
   proteges:
   - cassandre-lambert
+  voix_annulees: 4
   votes:
   - votant: thibault-belanger
     votant_rattache: true
@@ -19487,16 +19608,16 @@
     annule: true
   - votant: ilyesse-benyoub
     votant_rattache: true
-    cible: Cécile
-    cible_rattachee: false
+    cible: cecile-belec
+    cible_rattachee: true
     annule: false
   - votant: jacques-roque
     votant_rattache: true
     cible: cassandre-lambert
     cible_rattachee: true
     annule: true
-  - votant: Cécile B
-    votant_rattache: false
+  - votant: cecile-belec
+    votant_rattache: true
     cible: gustin-comanescu
     cible_rattachee: true
     annule: false
@@ -19517,8 +19638,8 @@
     annule: false
   - votant: gustin-comanescu
     votant_rattache: true
-    cible: Cécile
-    cible_rattachee: false
+    cible: cecile-belec
+    cible_rattachee: true
     annule: false
   - votant: null
     votant_rattache: false
@@ -19532,11 +19653,6 @@
     cible: jacques-roque
     cible_rattachee: true
     annule: false
-  - votant: Cécile
-    votant_rattache: false
-    cible: gustin-comanescu
-    cible_rattachee: true
-    annule: false
 - saison: s26
   numero: 18
   type: elimination
@@ -19546,12 +19662,9 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
-  annulation: partielle
-  voix_annulees: 9
-  proteges:
-  - cassandre-lambert
-  - ilyesse-benyoub
-  - ugo-lartiche
+  annulation: totale
+  voix_annulees: 8
+  voix_mecanique_non_comptees: 1
   votes:
   - votant: thibault-belanger
     votant_rattache: true
@@ -19573,8 +19686,8 @@
     cible: cassandre-lambert
     cible_rattachee: true
     annule: true
-  - votant: Cécile B
-    votant_rattache: false
+  - votant: cecile-belec
+    votant_rattache: true
     cible: ilyesse-benyoub
     cible_rattachee: true
     annule: true
@@ -19599,11 +19712,6 @@
     cible: ugo-lartiche
     cible_rattachee: true
     annule: true
-  - votant: Cécile
-    votant_rattache: false
-    cible: ilyesse-benyoub
-    cible_rattachee: true
-    annule: false
 - saison: s26
   numero: 19
   type: elimination
@@ -19644,8 +19752,8 @@
     cible: ugo-lartiche
     cible_rattachee: true
     annule: false
-  - votant: Cécile B
-    votant_rattache: false
+  - votant: cecile-belec
+    votant_rattache: true
     cible: ugo-lartiche
     cible_rattachee: true
     annule: false
@@ -19662,24 +19770,24 @@
     annule: false
 - saison: s26
   numero: 21
-  type: elimination
+  type: sortie
   complet: false
   episode: '15'
-  elimine: Cécile
-  elimine_rattache: false
+  elimine: cecile-belec
+  elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s26
   numero: 22
-  type: elimination
+  type: sortie
   complet: false
   episode: '15'
   elimine: jacques-roque
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s26
   numero: 23
   type: elimination
@@ -19705,8 +19813,8 @@
   votes_pour: 4
   votes_exprimes: 13
   votes:
-  - votant: Cécile B
-    votant_rattache: false
+  - votant: cecile-belec
+    votant_rattache: true
     cible: charlotte-rasquin
     cible_rattachee: true
     annule: false
@@ -19857,14 +19965,14 @@
     annule: false
 - saison: s27
   numero: 3
-  type: elimination
+  type: sortie
   complet: false
   episode: '3'
   elimine: allan-rousseeuw
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s27
   numero: 4
   type: elimination
@@ -19937,14 +20045,14 @@
     annule: false
 - saison: s27
   numero: 6
-  type: elimination
+  type: sortie
   complet: false
   episode: '4'
   elimine: mehdi-bounab-lamiral
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_volontaire
 - saison: s27
   numero: 7
   type: elimination
@@ -19990,9 +20098,9 @@
   votes_contre: 3
   votes_exprimes: 11
   annulation: partielle
-  voix_annulees: 6
   proteges:
   - nais-napoletano
+  voix_annulees: 6
   votes:
   - votant: gaelle-fleury
     votant_rattache: true
@@ -20058,12 +20166,13 @@
   episode: '6'
   elimine: pauline-leperchois
   elimine_rattache: true
-  votes_contre: 9
+  votes_contre: 1
   votes_exprimes: 11
   annulation: partielle
-  voix_annulees: 8
   proteges:
   - andrea-zogron
+  voix_annulees: 8
+  votes_contre_annonce: 9
   votes:
   - votant: Jérôme
     votant_rattache: false
@@ -20211,11 +20320,8 @@
   elimine_rattache: true
   votes_contre: null
   votes_exprimes: null
-  annulation: partielle
+  annulation: totale
   voix_annulees: 14
-  proteges:
-  - adrien-bernaert
-  - noemie-bessec
   votes:
   - votant: gaelle-fleury
     votant_rattache: true
@@ -20295,14 +20401,14 @@
     annule: false
 - saison: s27
   numero: 13
-  type: elimination
+  type: sortie
   complet: false
   episode: '10'
   elimine: frederic-pignard
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: s27
   numero: 14
   type: elimination
@@ -20476,9 +20582,9 @@
   votes_contre: 6
   votes_exprimes: 11
   annulation: partielle
-  voix_annulees: 5
   proteges:
   - Jérôme (O)
+  voix_annulees: 5
   votes:
   - votant: gaelle-fleury
     votant_rattache: true
@@ -20661,14 +20767,14 @@
     annule: false
 - saison: s27
   numero: 22
-  type: elimination
+  type: sortie
   complet: false
   episode: '16'
   elimine: claire-passas
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s27
   numero: 23
   type: elimination
@@ -20776,8 +20882,9 @@
   episode: '1'
   elimine: lionel-dubouchet
   elimine_rattache: true
-  votes_contre: 1
+  votes_contre: 9
   votes_exprimes: 10
+  votes_contre_annonce: 1
   votes:
   - votant: clarisse-cresseveur
     votant_rattache: true
@@ -20909,9 +21016,9 @@
   votes_contre: 3
   votes_exprimes: 9
   annulation: partielle
-  voix_annulees: 3
   proteges:
   - lionel-dubouchet
+  voix_annulees: 3
   votes:
   - votant: clarisse-cresseveur
     votant_rattache: true
@@ -20968,9 +21075,9 @@
   votes_contre: 6
   votes_exprimes: 8
   annulation: partielle
-  voix_annulees: 1
   proteges:
   - cindy-sulpice-gonzalez
+  voix_annulees: 1
   votes:
   - votant: clarisse-cresseveur
     votant_rattache: true
@@ -21157,12 +21264,13 @@
   type: elimination
   complet: false
   episode: '8'
-  elimine: Égalité
+  elimine: null
   elimine_rattache: false
   votes_contre: null
   votes_exprimes: null
   annulation: totale
   voix_annulees: 14
+  sans_elimination: true
   votes:
   - votant: cynthia-combes
     votant_rattache: true
@@ -21324,9 +21432,9 @@
   votes_contre: 6
   votes_exprimes: 13
   annulation: partielle
-  voix_annulees: 7
   proteges:
   - hugo-van-aertryck
+  voix_annulees: 7
   votes:
   - votant: cynthia-combes
     votant_rattache: true
@@ -21410,8 +21518,9 @@
   episode: '10'
   elimine: guillaume-le-deun
   elimine_rattache: true
-  votes_contre: 6
+  votes_contre: 5
   votes_exprimes: 11
+  votes_contre_annonce: 6
   votes:
   - votant: cynthia-combes
     votant_rattache: true
@@ -21543,12 +21652,13 @@
   type: elimination
   complet: false
   episode: '12'
-  elimine: Égalité
+  elimine: null
   elimine_rattache: false
   votes_contre: null
   votes_exprimes: null
   annulation: totale
   voix_annulees: 9
+  sans_elimination: true
   votes:
   - votant: cynthia-combes
     votant_rattache: true
@@ -21602,8 +21712,9 @@
   episode: '12'
   elimine: hugo-van-aertryck
   elimine_rattache: true
-  votes_contre: 6
+  votes_contre: 7
   votes_exprimes: 9
+  votes_contre_annonce: 6
   votes:
   - votant: cynthia-combes
     votant_rattache: true
@@ -21670,10 +21781,10 @@
   votes_contre: 3
   votes_exprimes: 8
   annulation: partielle
-  voix_annulees: 4
   proteges:
   - cynthia-combes
   - hugo-van-aertryck
+  voix_annulees: 4
   votes:
   - votant: cynthia-combes
     votant_rattache: true
@@ -21772,24 +21883,24 @@
   votes: []
 - saison: s28
   numero: 23
-  type: elimination
+  type: sortie
   complet: false
   episode: '15'
   elimine: hugo-van-aertryck
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s28
   numero: 24
-  type: elimination
+  type: sortie
   complet: false
   episode: '15'
   elimine: caroline-ledos
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s28
   numero: 25
   type: elimination
@@ -22027,14 +22138,14 @@
     annule: false
 - saison: sp1
   numero: 6
-  type: elimination
+  type: sortie
   complet: false
   episode: '4'
   elimine: philippe-bordier
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_ambassadeurs
 - saison: sp1
   numero: 7
   type: elimination
@@ -22252,9 +22363,10 @@
     annule: false
   - votant: jean-bernard-hauton-arnaud
     votant_rattache: true
-    cible: francois-david-cardonnel
+    cible: catherine-ehret-mader
     cible_rattachee: true
     annule: false
+    cible_source: francois-david-cardonnel
   - votant: catherine-ehret-mader
     votant_rattache: true
     cible: romuald-lafite
@@ -22262,14 +22374,14 @@
     annule: false
 - saison: sp1
   numero: 12
-  type: elimination
+  type: sortie
   complet: false
   episode: '9'
   elimine: jean-bernard-hauton-arnaud
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: sp1
   numero: 13
   type: elimination
@@ -22345,80 +22457,81 @@
   type: elimination
   complet: true
   episode: '1'
-  elimine: Betty
-  elimine_rattache: false
-  votes_contre: 3
+  elimine: betty-lise
+  elimine_rattache: true
+  votes_contre: 2
   votes_exprimes: 6
+  votes_contre_annonce: 3
   votes:
-  - votant: Myriam
-    votant_rattache: false
-    cible: Frank
-    cible_rattachee: false
+  - votant: myriam-lamare
+    votant_rattache: true
+    cible: frank-leboeuf
+    cible_rattachee: true
     annule: false
-  - votant: Frédérique
-    votant_rattache: false
+  - votant: frederique-jossinet
+    votant_rattache: true
     cible: freddy-boucher
     cible_rattachee: true
     annule: false
-  - votant: Djamel
-    votant_rattache: false
-    cible: Betty
-    cible_rattachee: false
+  - votant: djamel-bouras
+    votant_rattache: true
+    cible: betty-lise
+    cible_rattachee: true
     annule: false
-  - votant: Gwendal
-    votant_rattache: false
-    cible: Frédérique
-    cible_rattachee: false
+  - votant: gwendal-peizerat
+    votant_rattache: true
+    cible: frederique-jossinet
+    cible_rattachee: true
     annule: false
-  - votant: Frank
-    votant_rattache: false
-    cible: Betty
-    cible_rattachee: false
+  - votant: frank-leboeuf
+    votant_rattache: true
+    cible: betty-lise
+    cible_rattachee: true
     annule: false
-  - votant: Betty
-    votant_rattache: false
-    cible: Frank
-    cible_rattachee: false
+  - votant: betty-lise
+    votant_rattache: true
+    cible: frank-leboeuf
+    cible_rattachee: true
     annule: false
 - saison: sp2
   numero: 2
   type: elimination
   complet: true
   episode: '2'
-  elimine: Frank
-  elimine_rattache: false
+  elimine: frank-leboeuf
+  elimine_rattache: true
   votes_contre: 2
   votes_exprimes: 6
   votes:
-  - votant: Myriam
-    votant_rattache: false
-    cible: Frank
-    cible_rattachee: false
+  - votant: myriam-lamare
+    votant_rattache: true
+    cible: frank-leboeuf
+    cible_rattachee: true
     annule: false
-  - votant: Taïg
-    votant_rattache: false
-    cible: Frank
-    cible_rattachee: false
+  - votant: taig-khris
+    votant_rattache: true
+    cible: frank-leboeuf
+    cible_rattachee: true
     annule: false
-  - votant: Frédérique
-    votant_rattache: false
-    cible: Gwendal
-    cible_rattachee: false
+  - votant: frederique-jossinet
+    votant_rattache: true
+    cible: gwendal-peizerat
+    cible_rattachee: true
     annule: false
-  - votant: Djamel
-    votant_rattache: false
-    cible: Taïg
-    cible_rattachee: false
+  - votant: djamel-bouras
+    votant_rattache: true
+    cible: taig-khris
+    cible_rattachee: true
     annule: false
-  - votant: Gwendal
-    votant_rattache: false
-    cible: Djamel
-    cible_rattachee: false
+  - votant: gwendal-peizerat
+    votant_rattache: true
+    cible: djamel-bouras
+    cible_rattachee: true
     annule: false
-  - votant: Frank
-    votant_rattache: false
-    cible: Frédérique
-    cible_rattachee: false
+  - votant: frank-leboeuf
+    votant_rattache: true
+    cible: frederique-jossinet
+    cible_rattachee: true
     annule: false
 - saison: sp2
   numero: 3
@@ -22470,78 +22583,78 @@
   type: elimination
   complet: false
   episode: '4'
-  elimine: Gwendal
-  elimine_rattache: false
+  elimine: gwendal-peizerat
+  elimine_rattache: true
   votes_contre: 2
   votes_exprimes: null
   votes:
-  - votant: Taïg
-    votant_rattache: false
-    cible: Gwendal
-    cible_rattachee: false
+  - votant: taig-khris
+    votant_rattache: true
+    cible: gwendal-peizerat
+    cible_rattachee: true
     annule: false
   - votant: christina-chevry
     votant_rattache: true
-    cible: Gwendal
-    cible_rattachee: false
+    cible: gwendal-peizerat
+    cible_rattachee: true
     annule: false
 - saison: sp2
   numero: 5
   type: elimination
   complet: true
   episode: '4'
-  elimine: Djamel
-  elimine_rattache: false
+  elimine: djamel-bouras
+  elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 10
   votes:
   - votant: gregoire-delachaux
     votant_rattache: true
-    cible: Djamel
-    cible_rattachee: false
+    cible: djamel-bouras
+    cible_rattachee: true
     annule: false
   - votant: freddy-boucher
     votant_rattache: true
-    cible: Djamel
-    cible_rattachee: false
+    cible: djamel-bouras
+    cible_rattachee: true
     annule: false
   - votant: christophe-guttatoro-martin
     votant_rattache: true
-    cible: Djamel
-    cible_rattachee: false
+    cible: djamel-bouras
+    cible_rattachee: true
     annule: false
   - votant: coumba-baradji
     votant_rattache: true
-    cible: Djamel
-    cible_rattachee: false
+    cible: djamel-bouras
+    cible_rattachee: true
     annule: false
   - votant: linda-alario
     votant_rattache: true
-    cible: Djamel
-    cible_rattachee: false
+    cible: djamel-bouras
+    cible_rattachee: true
     annule: false
-  - votant: Myriam
-    votant_rattache: false
+  - votant: myriam-lamare
+    votant_rattache: true
     cible: freddy-boucher
     cible_rattachee: true
     annule: false
-  - votant: Taïg
-    votant_rattache: false
+  - votant: taig-khris
+    votant_rattache: true
     cible: freddy-boucher
     cible_rattachee: true
     annule: false
-  - votant: Frédérique
-    votant_rattache: false
+  - votant: frederique-jossinet
+    votant_rattache: true
     cible: freddy-boucher
     cible_rattachee: true
     annule: false
   - votant: christina-chevry
     votant_rattache: true
-    cible: Djamel
-    cible_rattachee: false
+    cible: djamel-bouras
+    cible_rattachee: true
     annule: false
-  - votant: Djamel
-    votant_rattache: false
+  - votant: djamel-bouras
+    votant_rattache: true
     cible: freddy-boucher
     cible_rattachee: true
     annule: false
@@ -22580,68 +22693,68 @@
     cible: christina-chevry
     cible_rattachee: true
     annule: false
-  - votant: Myriam
-    votant_rattache: false
+  - votant: myriam-lamare
+    votant_rattache: true
     cible: linda-alario
     cible_rattachee: true
     annule: false
-  - votant: Frédérique
-    votant_rattache: false
+  - votant: frederique-jossinet
+    votant_rattache: true
     cible: linda-alario
     cible_rattachee: true
     annule: false
   - votant: christina-chevry
     votant_rattache: true
-    cible: Myriam
-    cible_rattachee: false
+    cible: myriam-lamare
+    cible_rattachee: true
     annule: false
 - saison: sp2
   numero: 7
   type: elimination
   complet: true
   episode: '6'
-  elimine: Frédérique
-  elimine_rattache: false
+  elimine: frederique-jossinet
+  elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 8
   votes:
   - votant: gregoire-delachaux
     votant_rattache: true
-    cible: Frédérique
-    cible_rattachee: false
+    cible: frederique-jossinet
+    cible_rattachee: true
     annule: false
   - votant: freddy-boucher
     votant_rattache: true
-    cible: Frédérique
-    cible_rattachee: false
+    cible: frederique-jossinet
+    cible_rattachee: true
     annule: false
   - votant: christophe-guttatoro-martin
     votant_rattache: true
-    cible: Frédérique
-    cible_rattachee: false
+    cible: frederique-jossinet
+    cible_rattachee: true
     annule: false
   - votant: coumba-baradji
     votant_rattache: true
-    cible: Frédérique
-    cible_rattachee: false
+    cible: frederique-jossinet
+    cible_rattachee: true
     annule: false
   - votant: linda-alario
     votant_rattache: true
-    cible: Frédérique
-    cible_rattachee: false
+    cible: frederique-jossinet
+    cible_rattachee: true
     annule: false
-  - votant: Myriam
-    votant_rattache: false
+  - votant: myriam-lamare
+    votant_rattache: true
     cible: christophe-guttatoro-martin
     cible_rattachee: true
     annule: false
-  - votant: Taïg
-    votant_rattache: false
+  - votant: taig-khris
+    votant_rattache: true
     cible: linda-alario
     cible_rattachee: true
     annule: false
-  - votant: Frédérique
-    votant_rattache: false
+  - votant: frederique-jossinet
+    votant_rattache: true
     cible: christophe-guttatoro-martin
     cible_rattachee: true
     annule: false
@@ -22650,43 +22763,43 @@
   type: elimination
   complet: true
   episode: '7'
-  elimine: Taïg
-  elimine_rattache: false
+  elimine: taig-khris
+  elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 7
   votes:
   - votant: gregoire-delachaux
     votant_rattache: true
-    cible: Taïg
-    cible_rattachee: false
+    cible: taig-khris
+    cible_rattachee: true
     annule: false
   - votant: freddy-boucher
     votant_rattache: true
-    cible: Taïg
-    cible_rattachee: false
+    cible: taig-khris
+    cible_rattachee: true
     annule: false
   - votant: christophe-guttatoro-martin
     votant_rattache: true
-    cible: Taïg
-    cible_rattachee: false
+    cible: taig-khris
+    cible_rattachee: true
     annule: false
   - votant: coumba-baradji
     votant_rattache: true
-    cible: Taïg
-    cible_rattachee: false
+    cible: taig-khris
+    cible_rattachee: true
     annule: false
   - votant: linda-alario
     votant_rattache: true
-    cible: Taïg
-    cible_rattachee: false
+    cible: taig-khris
+    cible_rattachee: true
     annule: false
-  - votant: Myriam
-    votant_rattache: false
+  - votant: myriam-lamare
+    votant_rattache: true
     cible: gregoire-delachaux
     cible_rattachee: true
     annule: false
-  - votant: Taïg
-    votant_rattache: false
+  - votant: taig-khris
+    votant_rattache: true
     cible: gregoire-delachaux
     cible_rattachee: true
     annule: false
@@ -22695,61 +22808,61 @@
   type: elimination
   complet: true
   episode: '8'
-  elimine: Myriam
-  elimine_rattache: false
+  elimine: myriam-lamare
+  elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 6
   votes:
   - votant: gregoire-delachaux
     votant_rattache: true
-    cible: Myriam
-    cible_rattachee: false
+    cible: myriam-lamare
+    cible_rattachee: true
     annule: false
   - votant: freddy-boucher
     votant_rattache: true
-    cible: Myriam
-    cible_rattachee: false
+    cible: myriam-lamare
+    cible_rattachee: true
     annule: false
   - votant: christophe-guttatoro-martin
     votant_rattache: true
-    cible: Myriam
-    cible_rattachee: false
+    cible: myriam-lamare
+    cible_rattachee: true
     annule: false
   - votant: coumba-baradji
     votant_rattache: true
-    cible: Myriam
-    cible_rattachee: false
+    cible: myriam-lamare
+    cible_rattachee: true
     annule: false
   - votant: linda-alario
     votant_rattache: true
-    cible: Myriam
-    cible_rattachee: false
+    cible: myriam-lamare
+    cible_rattachee: true
     annule: false
-  - votant: Myriam
-    votant_rattache: false
+  - votant: myriam-lamare
+    votant_rattache: true
     cible: christophe-guttatoro-martin
     cible_rattachee: true
     annule: false
 - saison: sp2
   numero: 10
-  type: elimination
+  type: sortie
   complet: false
   episode: '9'
   elimine: linda-alario
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: sp2
   numero: 11
-  type: elimination
+  type: sortie
   complet: false
   episode: '9'
   elimine: coumba-baradji
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: sp2
   numero: 12
   type: elimination
@@ -22780,8 +22893,8 @@
     cible: freddy-boucher
     cible_rattachee: true
     annule: false
-  - votant: Djamel
-    votant_rattache: false
+  - votant: djamel-bouras
+    votant_rattache: true
     cible: freddy-boucher
     cible_rattachee: true
     annule: false
@@ -22810,18 +22923,18 @@
     cible: gregoire-delachaux
     cible_rattachee: true
     annule: false
-  - votant: Myriam
-    votant_rattache: false
+  - votant: myriam-lamare
+    votant_rattache: true
     cible: gregoire-delachaux
     cible_rattachee: true
     annule: false
-  - votant: Taïg
-    votant_rattache: false
+  - votant: taig-khris
+    votant_rattache: true
     cible: gregoire-delachaux
     cible_rattachee: true
     annule: false
-  - votant: Frédérique
-    votant_rattache: false
+  - votant: frederique-jossinet
+    votant_rattache: true
     cible: gregoire-delachaux
     cible_rattachee: true
     annule: false
@@ -22920,8 +23033,11 @@
     cible: claude-dartois
     cible_rattachee: true
     annule: false
-  - votant: marine-plissonneau
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: marine-plissonneau
+    auteur_rattache: true
     cible: claude-dartois
     cible_rattachee: true
     annule: false
@@ -22977,14 +23093,14 @@
     annule: false
 - saison: sp3
   numero: 5
-  type: elimination
+  type: sortie
   complet: false
   episode: '4'
   elimine: patricia-morel
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_ambassadeurs
 - saison: sp3
   numero: 6
   type: elimination
@@ -22994,10 +23110,7 @@
   elimine_rattache: true
   votes_contre: 6
   votes_exprimes: 12
-  annulation: partielle
-  voix_annulees: 1
-  proteges:
-  - freddy-boucher
+  voix_mecanique_non_comptees: 1
   votes:
   - votant: bertrand-bolle
     votant_rattache: true
@@ -23054,13 +23167,19 @@
     cible: patrick-merle
     cible_rattachee: true
     annule: false
-  - votant: isabelle-da-silva
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: isabelle-da-silva
+    auteur_rattache: true
     cible: freddy-boucher
     cible_rattachee: true
     annule: true
-  - votant: nicolas-roy
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: nicolas-roy
+    auteur_rattache: true
     cible: claude-dartois
     cible_rattachee: true
     annule: false
@@ -23124,8 +23243,11 @@
     cible: maud-garnier
     cible_rattachee: true
     annule: false
-  - votant: francis-bordas
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: francis-bordas
+    auteur_rattache: true
     cible: claude-dartois
     cible_rattachee: true
     annule: false
@@ -23184,8 +23306,11 @@
     cible: maud-garnier
     cible_rattachee: true
     annule: false
-  - votant: freddy-boucher
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: freddy-boucher
+    auteur_rattache: true
     cible: maud-garnier
     cible_rattachee: true
     annule: false
@@ -23239,8 +23364,11 @@
     cible: moussa-niangane
     cible_rattachee: true
     annule: false
-  - votant: wafa-el-mejjad
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: wafa-el-mejjad
+    auteur_rattache: true
     cible: teheiura-teahui
     cible_rattachee: true
     annule: false
@@ -23263,10 +23391,7 @@
   elimine_rattache: true
   votes_contre: 4
   votes_exprimes: 6
-  annulation: partielle
-  voix_annulees: 1
-  proteges:
-  - moussa-niangane
+  voix_mecanique_non_comptees: 1
   votes:
   - votant: bertrand-bolle
     votant_rattache: true
@@ -23298,31 +23423,34 @@
     cible: claude-dartois
     cible_rattachee: true
     annule: false
-  - votant: teheiura-teahui
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: teheiura-teahui
+    auteur_rattache: true
     cible: moussa-niangane
     cible_rattachee: true
     annule: true
 - saison: sp3
   numero: 12
-  type: elimination
+  type: sortie
   complet: false
   episode: '9'
   elimine: patrick-merle
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: sp3
   numero: 13
-  type: elimination
+  type: sortie
   complet: false
   episode: '9'
   elimine: coumba-baradji
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: sp3
   numero: 14
   type: elimination
@@ -23475,14 +23603,14 @@
     annule: false
 - saison: sp4
   numero: 2
-  type: elimination
+  type: sortie
   complet: false
   episode: '2'
   elimine: sandra-acabado
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: sp4
   numero: 3
   type: elimination
@@ -23525,14 +23653,14 @@
     annule: false
 - saison: sp4
   numero: 4
-  type: elimination
+  type: sortie
   complet: false
   episode: '3'
   elimine: isabelle-da-silva
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: sp4
   numero: 5
   type: elimination
@@ -23568,8 +23696,11 @@
     cible: teheiura-teahui
     cible_rattachee: true
     annule: false
-  - votant: isabelle-da-silva
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: isabelle-da-silva
+    auteur_rattache: true
     cible: laurence-pizzocchia
     cible_rattachee: true
     annule: false
@@ -23608,21 +23739,24 @@
     cible: florence-delbarre
     cible_rattachee: true
     annule: false
-  - votant: laurence-pizzocchia
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: laurence-pizzocchia
+    auteur_rattache: true
     cible: sara-tallon
     cible_rattachee: true
     annule: false
 - saison: sp4
   numero: 7
-  type: elimination
+  type: sortie
   complet: false
   episode: '5'
   elimine: florence-delbarre
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_ambassadeurs
 - saison: sp4
   numero: 8
   type: elimination
@@ -23673,8 +23807,11 @@
     cible: moundir-zoughari
     cible_rattachee: true
     annule: false
-  - votant: sara-tallon
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: sara-tallon
+    auteur_rattache: true
     cible: philippe-duron
     cible_rattachee: true
     annule: false
@@ -23688,9 +23825,9 @@
   votes_contre: 3
   votes_exprimes: 8
   annulation: partielle
-  voix_annulees: 4
   proteges:
   - teheiura-teahui
+  voix_annulees: 4
   votes:
   - votant: laurent-maistret
     votant_rattache: true
@@ -23727,8 +23864,11 @@
     cible: teheiura-teahui
     cible_rattachee: true
     annule: true
-  - votant: christina-chevry
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: christina-chevry
+    auteur_rattache: true
     cible: moundir-zoughari
     cible_rattachee: true
     annule: false
@@ -23777,8 +23917,11 @@
     cible: philippe-bizet
     cible_rattachee: true
     annule: false
-  - votant: freddy-boucher
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: freddy-boucher
+    auteur_rattache: true
     cible: moundir-zoughari
     cible_rattachee: true
     annule: false
@@ -23817,21 +23960,24 @@
     cible: laurent-maistret
     cible_rattachee: true
     annule: false
-  - votant: teheiura-teahui
-    votant_rattache: true
+  - votant: null
+    votant_rattache: false
+    mecanique: Vote noir
+    auteur: teheiura-teahui
+    auteur_rattache: true
     cible: philippe-duron
     cible_rattachee: true
     annule: false
 - saison: sp4
   numero: 13
-  type: elimination
+  type: sortie
   complet: false
   episode: '9'
   elimine: moundir-zoughari
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: sp4
   numero: 14
   type: elimination
@@ -24094,14 +24240,14 @@
     annule: false
 - saison: sp5
   numero: 5
-  type: elimination
+  type: sortie
   complet: false
   episode: '4'
   elimine: olivier-moenaert
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: sp5
   numero: 6
   type: elimination
@@ -24112,9 +24258,9 @@
   votes_contre: 1
   votes_exprimes: 6
   annulation: partielle
-  voix_annulees: 5
   proteges:
   - clementine-jullien
+  voix_annulees: 5
   votes:
   - votant: clemence-castel
     votant_rattache: true
@@ -24206,12 +24352,14 @@
   type: elimination
   complet: false
   episode: '6'
-  elimine: Égalité
+  elimine: null
   elimine_rattache: false
   votes_contre: null
   votes_exprimes: null
   annulation: totale
-  voix_annulees: 11
+  voix_annulees: 10
+  voix_mecanique_non_comptees: 1
+  sans_elimination: true
   votes:
   - votant: clemence-castel
     votant_rattache: true
@@ -24468,12 +24616,10 @@
   episode: '9'
   elimine: cassandre-girard
   elimine_rattache: true
-  votes_contre: 4
+  votes_contre: 5
   votes_exprimes: 8
-  annulation: partielle
-  voix_annulees: 1
-  proteges:
-  - clemence-castel
+  voix_mecanique_non_comptees: 1
+  votes_contre_annonce: 4
   votes:
   - votant: clemence-castel
     votant_rattache: true
@@ -24527,9 +24673,9 @@
   votes_contre: 3
   votes_exprimes: 6
   annulation: partielle
-  voix_annulees: 3
   proteges:
   - jeremy-raffin
+  voix_annulees: 3
   votes:
   - votant: clemence-castel
     votant_rattache: true
@@ -24564,14 +24710,14 @@
     annule: true
 - saison: sp5
   numero: 17
-  type: elimination
+  type: sortie
   complet: false
   episode: '11'
   elimine: javier-rodriguez
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: sp5
   numero: 18
   type: elimination
@@ -24654,14 +24800,14 @@
     annule: false
 - saison: sp6
   numero: 1
-  type: elimination
+  type: sortie
   complet: false
   episode: '1'
   elimine: claudia-chatel
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: sp6
   numero: 2
   type: elimination
@@ -24764,14 +24910,14 @@
   votes: []
 - saison: sp6
   numero: 5
-  type: elimination
+  type: sortie
   complet: false
   episode: '3'
   elimine: marie-ovaere
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: sp6
   numero: 6
   type: elimination
@@ -24824,14 +24970,14 @@
     annule: false
 - saison: sp6
   numero: 7
-  type: elimination
+  type: sortie
   complet: false
   episode: '4'
   elimine: sara-tallon
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: sp6
   numero: 8
   type: elimination
@@ -24917,11 +25063,11 @@
   votes_contre: null
   votes_exprimes: null
   annulation: partielle
-  voix_annulees: 12
   proteges:
   - ahmad-abadie
   - eric-peyrache
   - pholien-systermans
+  voix_annulees: 12
   votes:
   - votant: naoil-tita
     votant_rattache: true
@@ -25157,7 +25303,8 @@
   votes_contre: null
   votes_exprimes: null
   annulation: totale
-  voix_annulees: 12
+  voix_annulees: 10
+  voix_mecanique_non_comptees: 2
   votes:
   - votant: naoil-tita
     votant_rattache: true
@@ -25345,24 +25492,24 @@
     annule: false
 - saison: sp6
   numero: 18
-  type: elimination
+  type: sortie
   complet: false
   episode: '11'
   elimine: alexandra-leveau
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: sp6
   numero: 19
-  type: elimination
+  type: sortie
   complet: false
   episode: '11'
   elimine: moussa-niangane
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: sp6
   numero: 20
   type: elimination
@@ -25445,14 +25592,14 @@
     annule: false
 - saison: sp7
   numero: 1
-  type: elimination
+  type: sortie
   complet: false
   episode: '1'
   elimine: freddy-boucher
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: sp7
   numero: 2
   type: elimination
@@ -25596,9 +25743,9 @@
   votes_contre: 6
   votes_exprimes: 11
   annulation: partielle
-  voix_annulees: 4
   proteges:
   - maxime-berthon
+  voix_annulees: 4
   votes:
   - votant: claude-dartois
     votant_rattache: true
@@ -25667,9 +25814,9 @@
   votes_contre: 6
   votes_exprimes: 11
   annulation: partielle
-  voix_annulees: 4
   proteges:
   - alexandra-pornet
+  voix_annulees: 4
   votes:
   - votant: jade-handi
     votant_rattache: true
@@ -25916,16 +26063,6 @@
     cible_rattachee: true
     annule: false
 - saison: sp7
-  numero: 10
-  type: elimination
-  complet: false
-  episode: '7'
-  elimine: /
-  elimine_rattache: false
-  votes_contre: null
-  votes_exprimes: null
-  votes: []
-- saison: sp7
   numero: 11
   type: elimination
   complet: false
@@ -25960,9 +26097,9 @@
   votes_contre: 4
   votes_exprimes: 14
   annulation: partielle
-  voix_annulees: 7
   proteges:
   - alix-noblat
+  voix_annulees: 7
   votes:
   - votant: claude-dartois
     votant_rattache: true
@@ -26193,16 +26330,6 @@
   votes_exprimes: null
   votes: []
 - saison: sp7
-  numero: 17
-  type: elimination
-  complet: false
-  episode: '11'
-  elimine: /
-  elimine_rattache: false
-  votes_contre: null
-  votes_exprimes: null
-  votes: []
-- saison: sp7
   numero: 18
   type: elimination
   complet: false
@@ -26304,24 +26431,24 @@
     annule: false
 - saison: sp7
   numero: 22
-  type: elimination
+  type: sortie
   complet: false
   episode: '14'
   elimine: philippe-bizet
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: sp7
   numero: 23
-  type: elimination
+  type: sortie
   complet: false
   episode: '14'
   elimine: jade-handi
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: sp7
   numero: 24
   type: elimination
@@ -26431,12 +26558,13 @@
   type: elimination
   complet: false
   episode: '1'
-  elimine: Égalité
+  elimine: null
   elimine_rattache: false
   votes_contre: null
   votes_exprimes: null
   annulation: totale
   voix_annulees: 18
+  sans_elimination: true
   votes:
   - votant: camille-sold
     votant_rattache: true
@@ -26878,12 +27006,13 @@
   type: elimination
   complet: false
   episode: '5'
-  elimine: Égalité
+  elimine: null
   elimine_rattache: false
   votes_contre: null
   votes_exprimes: null
   annulation: totale
   voix_annulees: 6
+  sans_elimination: true
   votes:
   - votant: camille-sold
     votant_rattache: true
@@ -26998,25 +27127,26 @@
     annule: false
 - saison: sp8
   numero: 12
-  type: elimination
+  type: sortie
   complet: false
   episode: '7'
   elimine: laure-canevarolo
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: abandon_medical
 - saison: sp8
   numero: 13
   type: elimination
   complet: false
   episode: '7'
-  elimine: Égalité
+  elimine: null
   elimine_rattache: false
   votes_contre: null
   votes_exprimes: null
   annulation: totale
   voix_annulees: 4
+  sans_elimination: true
   votes:
   - votant: christina-chevry
     votant_rattache: true
@@ -27118,9 +27248,9 @@
   votes_contre: 6
   votes_exprimes: 12
   annulation: partielle
-  voix_annulees: 1
   proteges:
   - nicolas-pretot
+  voix_annulees: 1
   votes:
   - votant: camille-sold
     votant_rattache: true

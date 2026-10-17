@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Rudy Noël — Le Feu sacré (2023)"
-description: "Rudy Noël, Koh-Lanta Le Feu sacré (2023) : sort au conseil le 15e jour, 13e sur 20, 0 épreuve gagnée. 389e sur 531 au classement des aventuriers."
+description: "Rudy Noël, Koh-Lanta Le Feu sacré (2023) : sort au conseil le 15e jour, 13e sur 20, 0 épreuve gagnée. 406e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/rudy-noel.png
 permalink: /aventuriers/rudy-noel/
 aventurier: rudy-noel

@@ -20,7 +20,7 @@ prenoms:
 - prenom: Ugo
   observe: 4
   attendu: 0.082
-  indice: 48.6
+  indice: 48.5
   absent_du_fichier: false
 - prenom: Moussa
   observe: 4
@@ -55,12 +55,12 @@ prenoms:
 - prenom: Colin
   observe: 1
   attendu: 0.051
-  indice: 19.7
+  indice: 19.6
   absent_du_fichier: false
 - prenom: Gabin
   observe: 1
   attendu: 0.051
-  indice: 19.6
+  indice: 19.5
   absent_du_fichier: false
 - prenom: Lola
   observe: 4
@@ -75,7 +75,7 @@ prenoms:
 - prenom: Pierre-Marie
   observe: 1
   attendu: 0.054
-  indice: 18.6
+  indice: 18.5
   absent_du_fichier: false
 - prenom: Fabian
   observe: 1
@@ -89,7 +89,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Tania
   observe: 2
-  attendu: 0.139
+  attendu: 0.138
   indice: 14.4
   absent_du_fichier: false
 - prenom: Amel
@@ -214,7 +214,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Steve
   observe: 3
-  attendu: 0.48
+  attendu: 0.481
   indice: 6.2
   absent_du_fichier: false
 - prenom: Grégoire
@@ -234,12 +234,12 @@ prenoms:
   absent_du_fichier: false
 - prenom: Brice
   observe: 3
-  attendu: 0.518
+  attendu: 0.519
   indice: 5.8
   absent_du_fichier: false
 - prenom: Maud
   observe: 4
-  attendu: 0.686
+  attendu: 0.685
   indice: 5.8
   absent_du_fichier: false
 - prenom: Maël
@@ -294,7 +294,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Steeve
   observe: 1
-  attendu: 0.216
+  attendu: 0.217
   indice: 4.6
   absent_du_fichier: false
 - prenom: Mohamed
@@ -329,7 +329,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Claude
   observe: 4
-  attendu: 1.14
+  attendu: 1.141
   indice: 3.5
   absent_du_fichier: false
 - prenom: Jean-Charles
@@ -349,12 +349,12 @@ prenoms:
   absent_du_fichier: false
 - prenom: Alexandra
   observe: 7
-  attendu: 2.047
+  attendu: 2.048
   indice: 3.4
   absent_du_fichier: false
 - prenom: Boris
   observe: 1
-  attendu: 0.297
+  attendu: 0.298
   indice: 3.4
   absent_du_fichier: false
 - prenom: Odile
@@ -379,7 +379,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Andréa
   observe: 1
-  attendu: 0.318
+  attendu: 0.319
   indice: 3.1
   absent_du_fichier: false
 - prenom: Bastien
@@ -392,11 +392,6 @@ prenoms:
   attendu: 0.674
   indice: 3.0
   absent_du_fichier: false
-- prenom: Rodolphe
-  observe: 1
-  attendu: 0.339
-  indice: 3.0
-  absent_du_fichier: false
 - prenom: Régis
   observe: 2
   attendu: 0.672
@@ -404,12 +399,17 @@ prenoms:
   absent_du_fichier: false
 - prenom: Dylan
   observe: 2
-  attendu: 0.681
+  attendu: 0.68
   indice: 2.9
   absent_du_fichier: false
 - prenom: Maxime
   observe: 8
-  attendu: 2.766
+  attendu: 2.764
+  indice: 2.9
+  absent_du_fichier: false
+- prenom: Rodolphe
+  observe: 1
+  attendu: 0.339
   indice: 2.9
   absent_du_fichier: false
 - prenom: Jacky
@@ -422,11 +422,6 @@ prenoms:
   attendu: 0.362
   indice: 2.8
   absent_du_fichier: false
-- prenom: Cécilia
-  observe: 1
-  attendu: 0.377
-  indice: 2.7
-  absent_du_fichier: false
 - prenom: Margot
   observe: 1
   attendu: 0.364
@@ -434,12 +429,17 @@ prenoms:
   absent_du_fichier: false
 - prenom: Rudy
   observe: 1
-  attendu: 0.373
+  attendu: 0.372
   indice: 2.7
   absent_du_fichier: false
 - prenom: Anne-Sophie
   observe: 2
-  attendu: 0.782
+  attendu: 0.783
+  indice: 2.6
+  absent_du_fichier: false
+- prenom: Cécilia
+  observe: 1
+  attendu: 0.378
   indice: 2.6
   absent_du_fichier: false
 - prenom: Michèle
@@ -454,7 +454,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Géraldine
   observe: 2
-  attendu: 0.856
+  attendu: 0.855
   indice: 2.3
   absent_du_fichier: false
 - prenom: Kelly
@@ -469,7 +469,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Alicia
   observe: 1
-  attendu: 0.464
+  attendu: 0.465
   indice: 2.2
   absent_du_fichier: false
 - prenom: Benoît
@@ -479,7 +479,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Jessica
   observe: 4
-  attendu: 1.825
+  attendu: 1.824
   indice: 2.2
   absent_du_fichier: false
 - prenom: Marianne
@@ -499,7 +499,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Aurélien
   observe: 3
-  attendu: 1.534
+  attendu: 1.535
   indice: 2.0
   absent_du_fichier: false
 - prenom: Catherine
@@ -524,7 +524,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Mélissa
   observe: 2
-  attendu: 1.018
+  attendu: 1.022
   indice: 2.0
   absent_du_fichier: false
 - prenom: Patricia
@@ -534,12 +534,12 @@ prenoms:
   absent_du_fichier: false
 - prenom: Adrien
   observe: 3
-  attendu: 1.539
+  attendu: 1.541
   indice: 1.9
   absent_du_fichier: false
 - prenom: Corentin
   observe: 1
-  attendu: 0.532
+  attendu: 0.531
   indice: 1.9
   absent_du_fichier: false
 - prenom: Gabriel
@@ -564,7 +564,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Marie-Laure
   observe: 1
-  attendu: 0.529
+  attendu: 0.528
   indice: 1.9
   absent_du_fichier: false
 - prenom: Béatrice
@@ -614,12 +614,12 @@ prenoms:
   absent_du_fichier: false
 - prenom: Marine
   observe: 4
-  attendu: 2.309
+  attendu: 2.311
   indice: 1.7
   absent_du_fichier: false
 - prenom: Nelly
   observe: 1
-  attendu: 0.586
+  attendu: 0.585
   indice: 1.7
   absent_du_fichier: false
 - prenom: Alain
@@ -634,12 +634,12 @@ prenoms:
   absent_du_fichier: false
 - prenom: Caroline
   observe: 5
-  attendu: 3.095
+  attendu: 3.094
   indice: 1.6
   absent_du_fichier: false
 - prenom: Charlotte
   observe: 3
-  attendu: 1.822
+  attendu: 1.825
   indice: 1.6
   absent_du_fichier: false
 - prenom: Lisa
@@ -647,14 +647,9 @@ prenoms:
   attendu: 0.609
   indice: 1.6
   absent_du_fichier: false
-- prenom: Mehdi
-  observe: 1
-  attendu: 0.645
-  indice: 1.6
-  absent_du_fichier: false
 - prenom: Estelle
   observe: 2
-  attendu: 1.363
+  attendu: 1.362
   indice: 1.5
   absent_du_fichier: false
 - prenom: Frédérique
@@ -664,27 +659,32 @@ prenoms:
   absent_du_fichier: false
 - prenom: Gaëlle
   observe: 2
-  attendu: 1.376
+  attendu: 1.375
   indice: 1.5
   absent_du_fichier: false
 - prenom: Jimmy
   observe: 1
-  attendu: 0.647
+  attendu: 0.649
   indice: 1.5
   absent_du_fichier: false
 - prenom: Laure
   observe: 2
-  attendu: 1.353
+  attendu: 1.352
   indice: 1.5
   absent_du_fichier: false
 - prenom: Laurence
   observe: 3
-  attendu: 2.034
+  attendu: 2.033
+  indice: 1.5
+  absent_du_fichier: false
+- prenom: Mehdi
+  observe: 1
+  attendu: 0.645
   indice: 1.5
   absent_du_fichier: false
 - prenom: Patrick
   observe: 4
-  attendu: 2.593
+  attendu: 2.594
   indice: 1.5
   absent_du_fichier: false
 - prenom: Aude
@@ -694,12 +694,12 @@ prenoms:
   absent_du_fichier: false
 - prenom: Chloé
   observe: 2
-  attendu: 1.435
+  attendu: 1.436
   indice: 1.4
   absent_du_fichier: false
 - prenom: Christopher
   observe: 1
-  attendu: 0.707
+  attendu: 0.708
   indice: 1.4
   absent_du_fichier: false
 - prenom: Gilles
@@ -709,7 +709,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Isabelle
   observe: 6
-  attendu: 4.304
+  attendu: 4.303
   indice: 1.4
   absent_du_fichier: false
 - prenom: Jean-Claude
@@ -729,7 +729,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Marjorie
   observe: 1
-  attendu: 0.715
+  attendu: 0.714
   indice: 1.4
   absent_du_fichier: false
 - prenom: Nadine
@@ -749,7 +749,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Thibault
   observe: 1
-  attendu: 0.716
+  attendu: 0.717
   indice: 1.4
   absent_du_fichier: false
 - prenom: Yannick
@@ -764,12 +764,12 @@ prenoms:
   absent_du_fichier: false
 - prenom: Charlène
   observe: 1
-  attendu: 0.746
+  attendu: 0.747
   indice: 1.3
   absent_du_fichier: false
 - prenom: Claire
   observe: 3
-  attendu: 2.294
+  attendu: 2.293
   indice: 1.3
   absent_du_fichier: false
 - prenom: Frédéric
@@ -784,12 +784,12 @@ prenoms:
   absent_du_fichier: false
 - prenom: Pauline
   observe: 3
-  attendu: 2.389
+  attendu: 2.391
   indice: 1.3
   absent_du_fichier: false
 - prenom: Véronique
   observe: 3
-  attendu: 2.306
+  attendu: 2.305
   indice: 1.3
   absent_du_fichier: false
 - prenom: Yves
@@ -799,7 +799,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Alexis
   observe: 2
-  attendu: 1.631
+  attendu: 1.63
   indice: 1.2
   absent_du_fichier: false
 - prenom: Charles
@@ -809,7 +809,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Cécile
   observe: 3
-  attendu: 2.429
+  attendu: 2.428
   indice: 1.2
   absent_du_fichier: false
 - prenom: Hugo
@@ -819,12 +819,12 @@ prenoms:
   absent_du_fichier: false
 - prenom: Julie
   observe: 5
-  attendu: 4.192
+  attendu: 4.193
   indice: 1.2
   absent_du_fichier: false
 - prenom: Laurent
   observe: 6
-  attendu: 4.881
+  attendu: 4.88
   indice: 1.2
   absent_du_fichier: false
 - prenom: Richard
@@ -834,17 +834,17 @@ prenoms:
   absent_du_fichier: false
 - prenom: Xavier
   observe: 2
-  attendu: 1.714
+  attendu: 1.713
   indice: 1.2
   absent_du_fichier: false
 - prenom: Alexandre
   observe: 5
-  attendu: 4.424
+  attendu: 4.425
   indice: 1.1
   absent_du_fichier: false
 - prenom: Delphine
   observe: 3
-  attendu: 2.783
+  attendu: 2.781
   indice: 1.1
   absent_du_fichier: false
 - prenom: Ludivine
@@ -854,12 +854,12 @@ prenoms:
   absent_du_fichier: false
 - prenom: Mathieu
   observe: 3
-  attendu: 2.733
+  attendu: 2.734
   indice: 1.1
   absent_du_fichier: false
 - prenom: Noémie
   observe: 1
-  attendu: 0.871
+  attendu: 0.872
   indice: 1.1
   absent_du_fichier: false
 - prenom: Sabine
@@ -869,12 +869,12 @@ prenoms:
   absent_du_fichier: false
 - prenom: Simon
   observe: 1
-  attendu: 0.888
+  attendu: 0.889
   indice: 1.1
   absent_du_fichier: false
 - prenom: Sébastien
   observe: 7
-  attendu: 6.53
+  attendu: 6.529
   indice: 1.1
   absent_du_fichier: false
 - prenom: Carine
@@ -884,12 +884,12 @@ prenoms:
   absent_du_fichier: false
 - prenom: Christine
   observe: 2
-  attendu: 2.048
+  attendu: 2.047
   indice: 1.0
   absent_du_fichier: false
 - prenom: Florence
   observe: 2
-  attendu: 1.969
+  attendu: 1.968
   indice: 1.0
   absent_du_fichier: false
 - prenom: Jean-Pierre
@@ -899,22 +899,22 @@ prenoms:
   absent_du_fichier: false
 - prenom: Jérôme
   observe: 4
-  attendu: 4.116
+  attendu: 4.115
   indice: 1.0
   absent_du_fichier: false
 - prenom: Marie
   observe: 6
-  attendu: 6.176
+  attendu: 6.177
   indice: 1.0
   absent_du_fichier: false
 - prenom: Mélanie
   observe: 3
-  attendu: 2.892
+  attendu: 2.894
   indice: 1.0
   absent_du_fichier: false
 - prenom: Nicolas
   observe: 8
-  attendu: 7.85
+  attendu: 7.849
   indice: 1.0
   absent_du_fichier: false
 - prenom: Pascal
@@ -924,12 +924,12 @@ prenoms:
   absent_du_fichier: false
 - prenom: Valentin
   observe: 1
-  attendu: 1.03
+  attendu: 1.028
   indice: 1.0
   absent_du_fichier: false
 - prenom: Émilie
   observe: 4
-  attendu: 4.0
+  attendu: 4.004
   indice: 1.0
   absent_du_fichier: false
 - prenom: Angélique
@@ -959,22 +959,22 @@ prenoms:
   absent_du_fichier: false
 - prenom: Gérard
   observe: 1
-  attendu: 1.062
+  attendu: 1.061
   indice: 0.9
   absent_du_fichier: false
 - prenom: Jonathan
   observe: 2
-  attendu: 2.278
+  attendu: 2.277
   indice: 0.9
   absent_du_fichier: false
 - prenom: Nathalie
   observe: 5
-  attendu: 5.366
+  attendu: 5.365
   indice: 0.9
   absent_du_fichier: false
 - prenom: Romain
   observe: 3
-  attendu: 3.282
+  attendu: 3.284
   indice: 0.9
   absent_du_fichier: false
 - prenom: Samuel
@@ -994,12 +994,12 @@ prenoms:
   absent_du_fichier: false
 - prenom: Sophie
   observe: 4
-  attendu: 4.38
+  attendu: 4.378
   indice: 0.9
   absent_du_fichier: false
 - prenom: Valérie
   observe: 3
-  attendu: 3.442
+  attendu: 3.441
   indice: 0.9
   absent_du_fichier: false
 - prenom: Vanessa
@@ -1014,17 +1014,17 @@ prenoms:
   absent_du_fichier: false
 - prenom: Benjamin
   observe: 2
-  attendu: 2.498
+  attendu: 2.495
   indice: 0.8
   absent_du_fichier: false
 - prenom: Camille
   observe: 2
-  attendu: 2.606
+  attendu: 2.608
   indice: 0.8
   absent_du_fichier: false
 - prenom: Céline
   observe: 4
-  attendu: 5.281
+  attendu: 5.277
   indice: 0.8
   absent_du_fichier: false
 - prenom: François
@@ -1034,7 +1034,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Karine
   observe: 2
-  attendu: 2.411
+  attendu: 2.41
   indice: 0.8
   absent_du_fichier: false
 - prenom: Lionel
@@ -1054,7 +1054,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Paul
   observe: 1
-  attendu: 1.181
+  attendu: 1.182
   indice: 0.8
   absent_du_fichier: false
 - prenom: Raphaël
@@ -1064,12 +1064,12 @@ prenoms:
   absent_du_fichier: false
 - prenom: Vincent
   observe: 3
-  attendu: 3.954
+  attendu: 3.955
   indice: 0.8
   absent_du_fichier: false
 - prenom: Franck
   observe: 2
-  attendu: 2.763
+  attendu: 2.764
   indice: 0.7
   absent_du_fichier: false
 - prenom: Guillaume
@@ -1079,7 +1079,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Hervé
   observe: 1
-  attendu: 1.436
+  attendu: 1.435
   indice: 0.7
   absent_du_fichier: false
 - prenom: Jérémy
@@ -1089,7 +1089,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Magali
   observe: 1
-  attendu: 1.505
+  attendu: 1.504
   indice: 0.7
   absent_du_fichier: false
 - prenom: Michel
@@ -1104,7 +1104,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Élodie
   observe: 3
-  attendu: 4.079
+  attendu: 4.076
   indice: 0.7
   absent_du_fichier: false
 - prenom: Amélie
@@ -1134,7 +1134,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Jennifer
   observe: 1
-  attendu: 1.772
+  attendu: 1.775
   indice: 0.6
   absent_du_fichier: false
 - prenom: Lucie
@@ -1144,7 +1144,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Manon
   observe: 1
-  attendu: 1.668
+  attendu: 1.669
   indice: 0.6
   absent_du_fichier: false
 - prenom: Mathilde
@@ -1154,22 +1154,22 @@ prenoms:
   absent_du_fichier: false
 - prenom: Quentin
   observe: 1
-  attendu: 1.566
+  attendu: 1.564
   indice: 0.6
   absent_du_fichier: false
 - prenom: Sylvie
   observe: 2
-  attendu: 3.099
+  attendu: 3.098
   indice: 0.6
   absent_du_fichier: false
 - prenom: Amandine
   observe: 1
-  attendu: 2.083
+  attendu: 2.082
   indice: 0.5
   absent_du_fichier: false
 - prenom: Christian
   observe: 1
-  attendu: 1.929
+  attendu: 1.928
   indice: 0.5
   absent_du_fichier: false
 - prenom: Christophe
@@ -1194,7 +1194,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Pierre
   observe: 2
-  attendu: 3.695
+  attendu: 3.696
   indice: 0.5
   absent_du_fichier: false
 - prenom: Thomas
@@ -1204,7 +1204,7 @@ prenoms:
   absent_du_fichier: false
 - prenom: Virginie
   observe: 2
-  attendu: 3.812
+  attendu: 3.811
   indice: 0.5
   absent_du_fichier: false
 - prenom: Arnaud
@@ -1214,22 +1214,22 @@ prenoms:
   absent_du_fichier: false
 - prenom: Laura
   observe: 1
-  attendu: 2.658
+  attendu: 2.659
   indice: 0.4
   absent_du_fichier: false
 - prenom: Mickaël
   observe: 1
-  attendu: 2.656
+  attendu: 2.655
   indice: 0.4
   absent_du_fichier: false
 - prenom: Olivier
   observe: 2
-  attendu: 4.498
+  attendu: 4.497
   indice: 0.4
   absent_du_fichier: false
 - prenom: Sandrine
   observe: 2
-  attendu: 4.563
+  attendu: 4.562
   indice: 0.4
   absent_du_fichier: false
 - prenom: Stéphane
@@ -1239,27 +1239,27 @@ prenoms:
   absent_du_fichier: false
 - prenom: Audrey
   observe: 1
-  attendu: 3.558
+  attendu: 3.556
   indice: 0.3
   absent_du_fichier: false
 - prenom: David
   observe: 2
-  attendu: 6.051
+  attendu: 6.052
   indice: 0.3
   absent_du_fichier: false
 - prenom: Julien
   observe: 2
-  attendu: 6.197
+  attendu: 6.198
   indice: 0.3
   absent_du_fichier: false
 - prenom: Kevin
   observe: 1
-  attendu: 2.989
+  attendu: 2.996
   indice: 0.3
   absent_du_fichier: false
 - prenom: Laëtitia
   observe: 1
-  attendu: 3.564
+  attendu: 3.56
   indice: 0.3
   absent_du_fichier: false
 - prenom: Éric
@@ -1269,17 +1269,17 @@ prenoms:
   absent_du_fichier: false
 - prenom: Aurélie
   observe: 1
-  attendu: 4.794
+  attendu: 4.793
   indice: 0.2
   absent_du_fichier: false
 - prenom: Jean
   observe: 1
-  attendu: 4.468
+  attendu: 4.467
   indice: 0.2
   absent_du_fichier: false
 - prenom: Stéphanie
   observe: 1
-  attendu: 5.678
+  attendu: 5.677
   indice: 0.2
   absent_du_fichier: false
 - prenom: Abdellah

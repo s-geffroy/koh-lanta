@@ -2501,7 +2501,10 @@ def avant_apres(par_saison, parts, conseils, epreuves, bloc_force, bloc_fusion):
     # --- les conseils exploitables, ranges par phase ----------------------
     scrutins = []
     for c in conseils:
-        if c.get("type") == "jury" or not c.get("elimine_rattache"):
+        # Un abandon, une orientation, des poteaux ne sont pas une DECISION
+        # du camp : les compter ici faisait lire des blesses comme des elimines
+        # « au merite ». Seul le conseil vote.
+        if c.get("type", "elimination") != "elimination" or not c.get("elimine_rattache"):
             continue
         sid = c["saison"]
         if sid not in fusion_ep:
