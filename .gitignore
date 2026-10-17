@@ -24,6 +24,10 @@ Gemfile.lock
 # refaire tout le chemin sans redemander les pages aux serveurs.
 specs/koh-lanta/*.pdf
 
+# Archives d'articles deposees pour relecture : documents de travail, pas des
+# sources de donnees. Elles restent sur le VPS, hors de l'historique public.
+specs/articles/*.zip
+
 # Secrets du projet : jeton GitHub. Sous le repertoire du projet pour que le
 # conteneur les voie (appctl refuse tout montage exterieur), mais JAMAIS dans
 # Git : un depot Pages est public, et son historique est definitif.
