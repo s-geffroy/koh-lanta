@@ -19,7 +19,7 @@ classiques, la réponse tient en une ligne.
 
 **{{ s.couleurs[0].victoires }} victoires pour le jaune, {{ s.couleurs[1].victoires }}
 pour le rouge.** Égalité stricte. Les couleurs minoritaires — bleu, vert,
-violet, orange — n’apparaissent que sur les saisons à trois ou quatre tribus, et
+violet, orange — n’apparaissent que sur les saisons à plus de deux tribus, et
 leurs effectifs sont trop faibles pour qu’on en tire quoi que ce soit.
 
 ## La survie
@@ -82,12 +82,12 @@ détaille, avant et après la réunification.
 </div>
 
 <p class="note">La couleur noire correspond à la tribu maudite de 2024 et à
-l’île des héros de 2020 : deux aventuriers seulement, aucune conclusion
+l’île des héros de 2020 : {{ s.mots.effectif_noir }} aventuriers seulement, aucune conclusion
 possible.</p>
 
 <p class="note">Deux autres pages recoupent ce résultat. Un modèle de durée
 ne trouve aucun effet du bandeau sur le risque d’élimination
 (<a href="{{ '/statistiques/equilibre/' | relative_url }}">Le jeu tenu serré</a>).
 Et les deux tribus de départ ne sont pas composées à l’équilibre par une règle
-générale : trois saisons seulement opposent nettement deux générations
+générale : {{ s.mots.tribus_contrastees }} saisons seulement opposent nettement deux générations
 (<a href="{{ '/statistiques/casting/' | relative_url }}">La recette du casting</a>).</p>

@@ -11,7 +11,7 @@ chapeau: >-
 {% assign v = s.vainqueurs %}
 
 Il y a **{{ v.effectif }} vainqueurs** sur les saisons classiques achevées —
-plus que de saisons, parce que trois éditions se sont terminées sur une égalité
+plus que de saisons, parce que {{ s.mots.egalites_jury }} éditions se sont terminées sur une égalité
 des voix du jury et ont sacré deux personnes.
 
 {% assign vm = site.data.stats.revenants.vainqueurs_multiples %}
@@ -20,8 +20,8 @@ Toutes éditions confondues, le programme a décerné
 **{{ site.data.stats.revenants.titres_distincts }} personnes différentes**.
 L’écart tient à une seule : {% for x in vm %}**{{ x.nom }}**, sacrée à
 *{{ x.editions | join: "* puis à *" }}*{% endfor %} — la seule à avoir gagné
-deux fois en vingt-cinq ans.
-{{ site.data.stats.revenants.vainqueurs_revenus | minus: 1 }} autres vainqueurs
+deux fois en {{ s.mots.etendue_annees }} ans.
+{{ site.data.stats.revenants.vainqueurs_revenus_autres }} autres vainqueurs
 sont revenus jouer sans y parvenir ; [les revenants]({{ '/statistiques/revenants/' | relative_url }})
 racontent ce qui leur arrive.
 
@@ -48,7 +48,7 @@ mieux qu’une moyenne :
   **{{ s.records.plus_age_vainqueur.age }}** ({{ s.records.plus_age_vainqueur.titre }},
   {{ s.records.plus_age_vainqueur.annee }}).
 
-Trente et un ans d’écart entre les deux. **{{ v.part_40_et_plus }} %** des
+{{ s.mots.ecart_age_vainqueurs_maj }} ans d’écart entre les deux. **{{ v.part_40_et_plus }} %** des
 vainqueurs ont quarante ans ou plus : l’idée d’un jeu réservé aux jeunes corps
 ne tient pas devant les chiffres.
 
@@ -161,7 +161,7 @@ c’est pourquoi son effectif est plus court que le premier, et c’est lui qu�
 faut lire.
 
 {{ vv.par_sort[0].menace_moyenne }} voix par conseil contre
-{{ vv.par_sort[2].menace_moyenne }} pour l’ensemble du casting : plus de quatre
+{{ vv.par_sort[2].menace_moyenne }} pour l’ensemble du casting : {{ vv.rapport_ensemble }}
 fois moins. **L’écart est spectaculaire, et il ne prouve à peu près rien.** On
 ne gagne pas si l’on est sorti, et l’on sort quand on est écrit : être peu visé
 et aller au bout sont deux faces du même fait. Comparer un vainqueur à

@@ -27,7 +27,7 @@ la dernière fois, quelles sont mes chances de partir ce soir ?**
 ## Le point de comparaison n’est pas zéro
 
 Une probabilité de partir ne se lit jamais seule. À un conseil à six, on part
-une fois sur six ; à un conseil à douze, une fois sur douze. La moitié des
+une fois sur six ; à un conseil à douze, une fois sur douze. Une bonne part des
 écarts entre catégories que l’on croit lire dans ce genre de tableau ne sont que
 cet effet de taille.
 
@@ -137,7 +137,7 @@ nul.</p>
 
 <p class="note"><strong>Ce résultat était retenu ; il ne l’est plus, et le
 dénominateur a grandi.</strong> D’ordinaire un test tombe parce que les données
-manquent. Ici, cinquante-huit conseils dépouillés se sont AJOUTÉS — les
+manquent. Ici, des conseils dépouillés se sont AJOUTÉS — les
 <a href="{{ '/sources/' | relative_url }}">bulletins sans votant</a> que le jeu
 impose depuis {{ site.data.stats.conseils.sans_votant.annee_min }}, vote noir, pénalité, malédiction, qu’aucun calcul ne
 comptait — et l’écart est passé de 15,4 points à
@@ -286,7 +286,7 @@ le passé d’un éliminé **qu’une fois qu’il est éliminé**.
 **{{ c.inverse.vise_si_sorti }} % de ceux qui partent avaient été visés la fois
 d’avant — mais {{ c.inverse.vise_si_reste }} % de ceux qui restent aussi.** Le
 signe annonciateur est réel et il est faible : la majorité des éliminations
-frappe quelqu’un dont le nom n’était jamais sorti. Confondre les deux sens de
+frappe quelqu’un dont le nom n’était pas sorti la fois d’avant. Confondre les deux sens de
 lecture est l’erreur ordinaire sur ce genre de chiffre, et le tableau est là
 pour la rendre impossible.
 
@@ -326,7 +326,7 @@ plus tard » n’est pas un résultat retenu.
 <thead><tr><th>Au conseil précédent, j’ai voté…</th><th class="nombre">Présences</th><th class="nombre">Probabilité de partir</th><th class="nombre">Intervalle</th></tr></thead>
 <tbody>
 {% for x in c.par_camp %}
-<tr><td>{{ x.modalite | capitalize }}</td><td class="nombre">{{ x.effectif }}</td>
+<tr><td>{{ x.modalite_maj }}</td><td class="nombre">{{ x.effectif }}</td>
     <td class="nombre"><b>{{ x.probabilite }} %</b></td>
     <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td></tr>
 {% endfor %}
@@ -339,7 +339,7 @@ plus tard » n’est pas un résultat retenu.
   {{ t3.p }}, p ajustée {{ t3.p_ajustee }}. <b>Non concluant.</b></p>
   <p>S’être trompé de cible expose peut-être un peu, mais à
   {{ c.par_camp[1].effectif }} présences du côté de la minorité, un écart de
-  trois points ne se distingue pas d’un tirage. On ne peut ni l’affirmer ni
+  {{ t3.observe_arrondi }} points ne se distingue pas d’un tirage. On ne peut ni l’affirmer ni
   l’écarter — et l’écrire ainsi vaut mieux que de le publier comme un
   résultat.</p>
 </div>
@@ -398,8 +398,8 @@ redistribution des bulletins à l’intérieur de chaque conseil.</p>
   {{ c.retour.couples }}, intervalle {{ c.retour.bas }} à {{ c.retour.haut }} %.
   Le hasard en donnerait {{ t5.attendu_arrondi }} %.</p>
   <p>{{ t5.ecart_types }} écarts-types, p ajustée {{ t5.p_ajustee }}. Écrire un
-  nom, c’est donc bien s’exposer à le voir revenir — mais quatre fois sur cinq,
-  il ne revient pas.</p>
+  nom, c’est donc bien s’exposer à le voir revenir — mais dans
+  {{ c.retour.non_rendus }} % des cas, il ne revient pas.</p>
 </div>
 
 [Les conseils]({{ '/statistiques/conseils/' | relative_url }}) mesurent la

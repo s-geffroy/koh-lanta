@@ -13,7 +13,7 @@ chapeau: >-
 {{ s.general.saisons_diffusees }} saisons diffusées entre
 {{ s.general.premiere_annee }} et {{ s.general.derniere_annee }} :
 {{ s.general.saisons_classiques }} éditions classiques et
-{{ s.general.saisons_speciales }} éditions spéciales. Deux saisons de plus ont
+{{ s.general.saisons_speciales }} éditions spéciales. {{ s.mots.saisons_annulees_maj }} saisons de plus ont
 été tournées mais **jamais diffusées**, interrompues en cours de tournage.
 
 <p class="note">Ce que l’on sait — et ce que l’on ignore — de chaque édition,
@@ -25,7 +25,7 @@ type de donnée par type de donnée, tient dans un seul tableau :
 <a href="{{ '/statistiques/top/' | relative_url }}">classement des joueurs</a>
 regarde les gens qui les ont jouées, et il porte aussi la liste des
 <strong>meilleures saisons jamais jouées</strong> — une participation à la
-fois, sur quatre facettes. Le premier du programme n’y est pas un vainqueur :
+fois, sur {{ s.mots.facettes }} facettes. Le premier du programme n’y est pas un vainqueur :
 c’est <b>{{ site.data.stats.classement.top_saisons[0].aventurier }}</b> à
 <i>{{ site.data.stats.classement.top_saisons[0].saison }}</i>
 ({{ site.data.stats.classement.top_saisons[0].sort | downcase }}).</p>
@@ -95,7 +95,7 @@ moyennes d’âge vers le haut sans rien dire du casting ordinaire.
 </table>
 </div>
 
-## Les trente-trois saisons, à la même échelle
+## Les {{ s.mots.survie_saisons }} saisons, à la même échelle
 
 {% include graphiques/saisons-petits-multiples.svg %}
 
@@ -106,7 +106,8 @@ La ligne grise marque la moitié du plateau.</p>
 
 Les éditions spéciales, en rose, se reconnaissent à leur pente : plus courtes,
 elles éliminent plus vite. Chez les classiques, la forme est remarquablement
-stable d’une saison à l’autre — le format tient depuis vingt-cinq ans.
+stable d’une saison à l’autre — le format tient depuis
+{{ s.mots.etendue_annees }} ans.
 
 Cette stabilité a une cause précise, et elle n’est pas ludique : la
 réunification tombe à un **épisode fixe**, l’épisode
@@ -126,16 +127,18 @@ Au-delà du casting, quatre indicateurs disent ce qu’a été chaque saison.
 Proche de zéro, les victoires ont circulé ; proche de un, une seule personne a
 tout raflé.</p>
 
-Le **Viêtnam (2010)** détient le record des saisons classiques : Claude Dartois
-y remporte sept épreuves individuelles à lui seul. À l’opposé, **Fidji (2017)**
-est la saison la plus partagée du programme.
+{% assign dmax = s.indicateurs.domination_max %}{% assign dmin = s.indicateurs.domination_min %}
+Le record des saisons classiques revient à **{{ dmax.titre }} ({{ dmax.annee }})** :
+{{ dmax.meilleur_gagnant }} y remporte {{ s.mots.victoires_domination_max }}
+épreuves individuelles. À l’opposé, la saison la plus partagée du programme est
+**{{ dmin.titre }} ({{ dmin.annee }})**.
 
 <p class="note">Ce que cette figure mesure est la <em>concentration</em> dans
 une saison, pas la force d’un aventurier. Rapportées à ce que chacun a
 réellement disputé, les victoires donnent un autre classement — celui de la
 facette « épreuves » du
 <a href="{{ '/statistiques/top/' | relative_url }}">top des joueurs</a>, où
-Claude Dartois est premier sur l’ensemble de sa carrière, et non sur une seule
+{% assign fe = s.classement.facettes | where: "cle", "epreuves" | first %}{{ fe.top[0].nom }} est premier sur l’ensemble de sa carrière, et non sur une seule
 saison.</p>
 
 ### Le camp vote-t-il d’un bloc ?
@@ -208,7 +211,7 @@ Sans JavaScript, il reste entièrement lisible, dans l’ordre chronologique.</p
 de calculer l’indicateur : pas de bilan d’épreuves, ou trop peu de conseils au
 dépouillement complet.</p>
 
-## Vingt-cinq ans de diffusion
+## {{ s.mots.etendue_annees_maj }} ans de diffusion
 
 {% include graphiques/programme-frise.svg %}
 

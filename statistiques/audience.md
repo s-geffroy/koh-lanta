@@ -18,14 +18,14 @@ chapeau: >-
 Ce site a longtemps écrit qu’aucune donnée d’audience n’existait en source
 publique. **C’était faux.** L’article général de Wikipédia porte un tableau
 complet : lancement, finale, moyenne et part de marché pour chaque saison, avec
-ses références de presse. Une quinzaine d’articles de saison donnent en plus le
+ses références de presse. {{ site.data.stats.mots.audience_courbes_maj }} articles de saison donnent en plus le
 détail épisode par épisode.
 
 C’est la seule grandeur de ce jeu de données que la production ne décide pas :
 elle la subit. À ce titre, c’est la plus intéressante.
 
 <ul class="chiffres">
-  <li class="chiffre"><b>{{ a.saisons }}</b><span>saisons mesurées sur 34</span></li>
+  <li class="chiffre"><b>{{ a.saisons }}</b><span>saisons mesurées sur {{ site.data.stats.general.saisons_diffusees }}</span></li>
   <li class="chiffre"><b>{{ a.sommet.moyenne_millions }} M</b><span>au sommet, en {{ a.sommet.annee }}</span></li>
   <li class="chiffre"><b>{{ a.derniere.moyenne_millions }} M</b><span>en {{ a.derniere.annee }}</span></li>
   <li class="chiffre"><b>−{{ a.chute }} %</b><span>depuis le sommet</span></li>
@@ -99,20 +99,22 @@ sérieuses soient toutes au même endroit.
 </div>
 
 *{{ a.bascule_jour.titre }}* ({{ a.bascule_jour.annee }}) est **la première
-saison diffusée le mardi** après vingt ans de vendredi. C’est aussi celle sur
+saison diffusée le mardi** après {{ site.data.stats.mots.annees_de_vendredi }} ans de
+vendredi. C’est aussi celle sur
 laquelle tombe la rupture d’audience. Les deux dates sont la même date.
 
 <p class="note"><strong>Et c’est précisément pourquoi on ne peut pas conclure.</strong>
 Le soir de diffusion change <em>une fois</em>, et il change là où l’audience
-chute. Statistiquement, « après 2021 » et « le mardi » sont la même variable :
-aucun modèle, sur trente-trois saisons, ne peut les séparer. D’autres
+chute. Statistiquement, « après {{ a.annee_rupture }} » et « le mardi » sont la même
+variable : aucun modèle, sur {{ site.data.stats.mots.audience_saisons }} saisons,
+ne peut les séparer. D’autres
 explications tombent au même endroit — l’érosion générale de la télévision
 linéaire, l’affaire de tricherie de cette saison-là, le report d’une part
 croissante de l’audience sur le rattrapage, que ces chiffres ne comptent pas.
 On donne la coïncidence ; on ne donne pas de cause.</p>
 
-Un détail va d’ailleurs contre la lecture simple : *Le Retour des héros* (2009)
-était déjà diffusé le mardi, et c’est **la meilleure audience de toute
+Un détail va d’ailleurs contre la lecture simple : *{{ a.sommet.titre }}*
+({{ a.sommet.annee }}) était déjà diffusé le mardi, et c’est **la meilleure audience de toute
 l’histoire du programme**. Le mardi n’a rien de fatal en soi.
 
 ## La finale ne tient plus
@@ -176,19 +178,18 @@ Les deux autres sont racontés sur
 ## Ce que ces chiffres ne mesurent pas
 
 <p class="note"><strong>C’est l’audience « veille », en direct.</strong> Elle
-ignore le rattrapage, dont TF1 dit qu’il représente aujourd’hui près d’un quart
-de l’audience du programme. Une part de la chute mesurée ici est donc un
-déplacement, pas une disparition — et cette part grandit avec les années, ce
+ignore le rattrapage, que ces données ne mesurent pas. Une part de la chute
+mesurée ici peut donc être un déplacement, pas une disparition — et cette part grandit avec les années, ce
 qui exagère la pente.</p>
 
 <p class="note"><strong>Un épisode ne vaut pas un épisode.</strong> Depuis 2022,
 un épisode est coupé en deux et mesuré deux fois. Les
 {{ a.courbes | size }} saisons au détail épisode par épisode mélangent donc des
 mesures d’épisode entier et de demi-épisode. Le contrôle est fait : sur les
-quatorze saisons où l’on a à la fois le détail et la moyenne annoncée, douze
-concordent à 0,5 % près. Les deux autres — <i>La Revanche des héros</i> et
-<i>L’Île des héros</i> — s’écartent de 5 %, et l’écart vient de la source
-elle-même, qui ne s’accorde pas avec sa propre moyenne.</p>
+{% assign ac = site.data.stats.audience_controle %}{{ ac.saisons }} saisons où
+l’on a à la fois le détail et la moyenne annoncée, {{ ac.concordantes }}
+concordent à 0,5 % près. Les autres — {{ ac.discordantes_texte }} — s’en
+écartent jusqu’à {{ ac.ecart_max }} %, et l’écart vient de la source elle-même, qui ne s’accorde pas avec sa propre moyenne.</p>
 
 <p class="note"><strong>Aucune audience n’existe pour la saison en cours</strong>
 au moment de la construction, ni pour les épisodes non encore diffusés.</p>

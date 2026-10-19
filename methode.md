@@ -285,10 +285,10 @@ bruit : il est systématiquement dirigé contre les moins documentés.
 
 Le [top des joueurs]({{ '/statistiques/top/' | relative_url }}) en porte les
 trois conséquences, toutes publiées : une facette **retirée** parce que son
-seul signal était cet échec obligatoire, deux facettes **corrigées** en
+seul signal était cet échec obligatoire, {{ site.data.stats.mots.facettes_corrigees }} facettes **corrigées** en
 écartant le soir du départ, et un résultat publié qui **s’est renversé** —
 l’accord entre facettes qu’on croyait mesurer n’était que cet artefact, compté
-trois fois.
+{{ site.data.stats.mots.artefacts }} fois.
 
 Le contrôle qui l’attrape est simple, et il vaut pour toute couche datée :
 **retirer le dernier événement de chaque trajectoire, et regarder ce qu’il

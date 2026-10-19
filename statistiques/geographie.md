@@ -105,12 +105,13 @@ qu’ensemble.
   <p>Et le trou le plus net n’est pas une région de métropole :
   <b>l’outre-mer pèse {{ g.outremer.observe }} aventuriers pour
   {{ g.outremer.attendu }} attendus</b>. La Réunion, la plus peuplée des
-  quatre, n’en a jamais fourni un seul ; les {{ g.outremer.observe }} viennent
+  {{ site.data.stats.mots.regions_outremer }}, n’en a jamais fourni un seul ; les {{ g.outremer.observe }} viennent
   tous deux de Martinique.</p>
 </div>
 
-La Corse garde le plus fort indice, mais son intervalle est large — six
-personnes, cela ne se mesure pas finement. Le résultat solide est ailleurs :
+{% assign corse = g.regions | where: "region", "Corse" | first %}
+La Corse garde le plus fort indice, mais son intervalle est large —
+{{ corse.observe }} personnes, cela ne se mesure pas finement. Le résultat solide est ailleurs :
 {% assign paca = g.regions | where: "region", "Provence-Alpes-Côte d'Azur" | first %}
 **Provence-Alpes-Côte d’Azur fournit {{ paca.indice }} fois sa part**, sur
 {{ paca.observe }} aventuriers, et son intervalle ne descend pas sous

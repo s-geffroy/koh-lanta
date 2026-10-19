@@ -4,7 +4,7 @@ title: La recette du casting
 description: "Le casting de Koh-Lanta n’est pas un tirage au sort : ce que la production impose vraiment au recrutement, et ce qu’elle laisse au hasard."
 permalink: /statistiques/casting/
 chapeau: >-
-  Un casting de vingt personnes n’est pas un tirage au sort. Reste à savoir
+  Un casting n’est pas un tirage au sort. Reste à savoir
   ce que la production impose vraiment — et ce qu’elle laisse au hasard.
 ---
 
@@ -49,7 +49,7 @@ trait vertical est ce qu’on observe réellement.</p>
 
 C’est le résultat le plus net de tout ce site, et il ne se voit nulle part à
 l’écran. La page [Âge et longévité]({{ '/statistiques/longevite/' | relative_url }})
-notait déjà 50,1 % de femmes au total ; ce qu’on mesure ici est différent et
+notait déjà {{ site.data.stats.genre.resume[0].part_du_casting }} % de femmes au total ; ce qu’on mesure ici est différent et
 bien plus fort : ce n’est pas le **total** qui est équilibré, c’est **chaque
 saison prise séparément**.
 
@@ -65,7 +65,7 @@ en années.</p>
 L’écart observé est de **{{ t.observe }} ans** contre **{{ t.attendu }}**
 attendus : le test le détecte ({{ t.ecart_types }} écarts-types, p ajustée
 {{ t.p_ajustee }}), et il tient quand on ne rebat les castings qu’à l’intérieur
-de leur propre décennie. Mais **l’écart vaut un quart d’année**. Il est réel et
+de leur propre décennie. Mais **l’écart vaut {{ site.data.stats.mots.ecart_ages_mois }} mois**. Il est réel et
 il est négligeable : la production mélange les âges à peine plus qu’un tirage au
 sort ne le ferait.
 
@@ -116,18 +116,18 @@ valeurs extrêmes.</p>
 <div class="constat">
   <p>À la médiane, l’écart tombe à {{ tm.observe }} ans contre
   {{ tm.attendu }} attendus, p = {{ tm.p }} : <b>plus rien</b>.</p>
-  <p>La moyenne était portée par trois saisons — {% for x in c.tribus_les_plus_contrastees %}<b>{{ x.titre }}</b> ({{ x.annee }}, {{ x.ecart }} ans d’écart){% unless forloop.last %}, {% endunless %}{% endfor %} —
+  <p>La moyenne était portée par {{ site.data.stats.mots.tribus_contrastees }} saisons — {% for x in c.tribus_les_plus_contrastees %}<b>{{ x.titre }}</b> ({{ x.annee }}, {{ x.ecart }} ans d’écart){% unless forloop.last %}, {% endunless %}{% endfor %} —
   où les deux camps opposent franchement deux générations. Ailleurs, les tribus
   sont composées comme le hasard les composerait.</p>
   <p>Il n’y a donc pas de règle de composition par l’âge. Il y a
-  <b>trois éditions</b> qui ont fait ce choix, et dix-sept qui ne l’ont pas
-  fait.</p>
+  <b>{{ site.data.stats.mots.tribus_contrastees }} éditions</b> qui ont fait ce choix, et
+  {{ site.data.stats.mots.tribus_non_contrastees }} qui ne l’ont pas fait.</p>
 </div>
 
 Sur la part de femmes, les deux tribus sont plus semblables que le hasard ne les
 ferait — {{ tf.observe }} points d’écart contre {{ tf.attendu }} attendus — mais
 p ajustée {{ tf.p_ajustee }} : c’est une piste, pas un résultat. Il faudrait
-plus de vingt saisons pour trancher.
+plus de {{ site.data.stats.mots.duos_de_tribus }} saisons pour trancher.
 
 ## Y a-t-il des archétypes ?
 
@@ -144,7 +144,7 @@ bas.</p>
 
 Sur l’âge, le sexe et le métier, la classification s’arrête à
 **{{ c.nb_archetypes }} groupes**, et cette fois le nombre n’est pas arbitraire :
-l’indice de silhouette monte jusqu’à six groupes ({{ c.silhouette }}) puis
+l’indice de silhouette monte jusqu’à {{ site.data.stats.mots.archetypes }} groupes ({{ c.silhouette }}) puis
 redescend. Il y a bien un découpage préféré.
 
 Reste qu’il sépare **moyennement** : {{ c.silhouette }} est loin des 0,5
@@ -167,7 +167,7 @@ que le plus petit groupe pèse au moins 2 % du casting, soit {{ c.plancher }}
 personnes. Parmi les découpes qui respectent ce plancher, on retient celle dont
 la silhouette est la plus haute : {{ c.nb_archetypes }} groupes.</p>
 
-Les six étiquettes se lisent comme un générique : la femme de la fin de la
+Les {{ site.data.stats.mots.archetypes }} étiquettes se lisent comme un générique : la femme de la fin de la
 vingtaine, dans le commerce,
 l’homme de trente ans du monde agricole, l’artisan de quarante ans, le
 quarante-cinq-ans-et-plus sans emploi déclaré, les moins de vingt-cinq ans, et
@@ -194,7 +194,7 @@ séparées.
 Le seul groupe qui tienne vraiment tout seul est celui des étudiantes de moins
 de 25 ans : le plus petit, et le seul dont une modalité soit à 100 %. Pour le
 reste, le casting est **un continuum d’âges et de métiers** que l’algorithme
-découpe en six — pas une galerie de personnages. Du moins au niveau de l’âge, du
+découpe en {{ site.data.stats.mots.archetypes }} — pas une galerie de personnages. Du moins au niveau de l’âge, du
 sexe et du métier, les seules choses que ce jeu de données connaisse.
 
 <p class="note"><strong>Un résultat spectaculaire, et faux.</strong> Tant que le
@@ -202,7 +202,8 @@ bandeau restait dans le calcul, un test disait que le mélange de profils change
 d’une saison à l’autre bien plus que le hasard ne le ferait — 7,95 écarts-types,
 un des plus forts du site. C’était mécanique : les couleurs en jeu ne sont pas
 les mêmes d’une saison à l’autre, donc une saison jaune-rouge ne peut pas
-contenir de profil « vert ». Le bandeau retiré, le même test tombe à 1,06 : il
+contenir de profil « vert ». Le bandeau retiré, le même test tombe à
+{% assign tma = reg | where: "cle", "melange_archetypes" | first %}{{ tma.ecart_types }} : il
 ne reste rien. Le mélange de profils d’une saison est indiscernable d’un tirage.
 C’est la deuxième fois qu’un modèle nul mal posé fabrique un résultat sur ce
 site — la première est racontée sur

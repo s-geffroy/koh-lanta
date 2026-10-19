@@ -100,7 +100,7 @@ aventuriers, <b>{{ site.data.stats.epreuves.epreuves }}</b> épreuves,
     <p><a href="{{ '/statistiques/pronostic/' | relative_url }}">Le pronostic</a></p>
   </li>
   <li>
-    <p><b>« Meilleur joueur » ne désigne pas une qualité.</b> Quatre façons de
+    <p><b>« Meilleur joueur » ne désigne pas une qualité.</b> {{ site.data.stats.mots.facettes_maj }} façons de
     bien jouer, et aucune ne prédit les autres :
     {{ cl.robustesse.candidats }} aventuriers différents entrent dans le top
     {{ cl.taille }} selon le poids donné à chacune.</p>
@@ -113,7 +113,7 @@ aventuriers, <b>{{ site.data.stats.epreuves.epreuves }}</b> épreuves,
 <ul class="cartes">
   <li class="carte">
     <a href="{{ '/statistiques/' | relative_url }}">
-      <span class="carte-rang">Vingt-sept entrées</span>
+      <span class="carte-rang">{{ site.data.stats.mots.sommaire_entrees_maj }} entrées</span>
       <span class="carte-titre">Les statistiques</span>
       <span class="carte-resume">Vainqueurs, tribus, longévité, épreuves,
         conseils, alliances : les comptages, puis les modèles.</span>

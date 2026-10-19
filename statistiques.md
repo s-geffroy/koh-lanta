@@ -28,8 +28,8 @@ mêmes personnes et fausseraient les moyennes d’âge comme de longévité.
   <li class="chiffre"><b>{{ s.records.nb_multi_participants }}</b><span>aventuriers revenus jouer</span></li>
 </ul>
 
-Onze entrées **décrivent** : elles comptent, elles font des parts et des
-moyennes. Seize **testent** — elles comparent ce qu’on observe à ce que le
+{{ s.mots.sommaire_descriptives_maj }} entrées **décrivent** : elles comptent, elles font des parts et des
+moyennes. {{ s.mots.sommaire_testees_maj }} **testent** — elles comparent ce qu’on observe à ce que le
 hasard produirait, et publient un intervalle plutôt qu’un point. Elles ne
 remplacent pas les premières : on ne teste bien qu’un écart qu’on a d’abord
 regardé. Les unes et les autres sont mêlées ci-dessous, parce qu’elles sont
@@ -38,7 +38,7 @@ qui » parlent du même moment du jeu, quoi qu’elles emploient pour le dire. L
 [méthode]({{ '/methode/' | relative_url }}) les détaille, et donne la liste
 complète des tests menés — y compris ceux qui n’ont rien donné.
 
-## Les vingt-sept entrées
+## Les {{ s.mots.sommaire_entrees }} entrées
 
 {%- for groupe in site.data.navigation -%}
 {%- if groupe.fil -%}
@@ -84,4 +84,4 @@ grandes en ont compté {{ site.data.stats.modeles.fusion.casting_max }}.</p>
 {% include graphiques/saisons-age.svg %}
 
 <p class="legende-figure">L’âge moyen du casting, lui, reste remarquablement
-stable autour de la trentaine sur vingt-cinq ans.</p>
+stable autour de la trentaine sur {{ s.mots.etendue_annees }} ans.</p>

@@ -19,7 +19,7 @@ une ou plusieurs fois.
 qui, où, quand, jusqu’à quel jour. Il ne dit pas comment on a joué. Pour cela,
 <a href="{{ '/statistiques/top/' | relative_url }}">le classement des
 joueurs</a> range les
-{{ site.data.stats.classement.joueurs_classes }} aventuriers sur quatre
+{{ site.data.stats.classement.joueurs_classes }} aventuriers sur {{ site.data.stats.mots.facettes }}
 facettes — aller loin, gagner les épreuves, n’être pas visé au conseil, écrire
 le nom de celui qui part — et il se cherche de la même façon.</p>
 
@@ -63,7 +63,7 @@ le nom de celui qui part — et il se cherche de la même façon.</p>
 
 <p class="note"><strong>Chaque nom est une fiche</strong>, et chaque titre de
 saison aussi. La fiche d’un aventurier rassemble ses saisons, sa place sur les
-quatre facettes du classement et ce qu’on sait de ses conseils ; celle d’une
+{{ site.data.stats.mots.facettes }} facettes du classement et ce qu’on sait de ses conseils ; celle d’une
 saison donne son casting entier, ses conseils et son audience.</p>
 
 <p class="note">Cliquez sur un en-tête pour trier le tableau sur cette colonne.
@@ -117,4 +117,4 @@ dans les autres.</p>
 c’est un tableau de <strong>participations</strong>, pas de personnes. Le
 <a href="{{ '/statistiques/top/' | relative_url }}">classement des joueurs</a>
 fait l’inverse — une ligne par aventurier, ses saisons cumulées, et son rang
-sur chacune des quatre facettes.</p>
+sur chacune des {{ site.data.stats.mots.facettes }} facettes.</p>

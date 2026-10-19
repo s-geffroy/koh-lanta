@@ -29,7 +29,8 @@ tournage et de l’année de la saison. Calculable pour
 {{ site.data.stats.general.participations }}.</p>
 
 Les aventuriers sont nés entre **{{ p.periode.debut }}** et
-**{{ p.periode.fin }}**, avec un sommet très net dans les années 1980. C’est
+**{{ p.periode.fin }}**, avec un sommet très net dans les années
+{{ site.data.stats.casting.decennie_sommet }}. C’est
 cette population-là — et pas la France d’aujourd’hui — qui sert de point de
 comparaison.
 
@@ -52,11 +53,11 @@ C’est le nombre d’aventuriers qui s’appelleraient ainsi si le casting éta
 
 <p class="legende-figure">Les huit prénoms les plus sur-représentés, puis les
 huit plus sous-représentés. Seuls les prénoms dont l’attendu atteint 1 sont
-classés : en dessous, un seul porteur suffirait à afficher un facteur quarante,
+classés : en dessous, un seul porteur suffirait à afficher un facteur de plusieurs dizaines,
 et l’indice ne mesurerait plus que la rareté du prénom.</p>
 
 Les écarts sont réels mais **modestes** : le plus sur-représenté ne dépasse pas
-un facteur trois et demi. Autrement dit, **le casting de Koh-Lanta ressemble
+un facteur {{ site.data.stats.prenoms.indice_max_tableau }}. Autrement dit, **le casting de Koh-Lanta ressemble
 beaucoup à la France de sa génération**. C’est en soi un résultat : on aurait pu
 imaginer un tri involontaire, il n’y en a pas de marqué.
 
@@ -81,18 +82,13 @@ imaginer un tri involontaire, il n’y en a pas de marqué.
 
 ## Ceux que le fichier national ne connaît pas
 
-{% assign absents = 0 %}{% assign porteurs = 0 %}
-{% for x in p.prenoms %}{% if x.absent_du_fichier %}
-  {% assign absents = absents | plus: 1 %}
-  {% assign porteurs = porteurs | plus: x.observe %}
-{% endif %}{% endfor %}
-
-**{{ absents }} prénoms** portés par **{{ porteurs }} aventuriers** n’apparaissent
+{% assign pab = site.data.stats.prenoms %}
+**{{ pab.absents }} prénoms** portés par **{{ pab.porteurs_absents }} aventuriers** n’apparaissent
 pas au fichier national sur la période : Teheiura, Coumba, Moundir, Filomène,
 Namadia, Guénaëlle, Wafa… L’INSEE verse en effet les prénoms trop rares dans un
 seul sac, et n’enregistre que les naissances survenues en France.
 
-C’est presque **un aventurier sur cinq**, et c’est sans doute le vrai résultat
+C’est **{{ pab.part_porteurs_absents }} % des aventuriers**, et c’est sans doute le vrai résultat
 de cette page : le casting va chercher bien au-delà des prénoms les plus donnés.
 
 <p class="note">Trois réserves, qui portent toutes dans le même sens. L’âge est

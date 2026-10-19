@@ -20,14 +20,14 @@ l’article général et les pages de chaque saison. C’est la référence pour
 liste des saisons, leurs dates de diffusion, leur lieu, leur durée, leurs tribus
 et leurs vainqueurs. Ses tableaux de candidats donnent le sexe en clair et
 bornent en jours l’appartenance à chaque tribu, donc la trajectoire complète
-d’un aventurier. Limite : seule une quinzaine de saisons dispose d’une page
+d’un aventurier. Limite : toutes les saisons ne disposent pas d’une page
 détaillée.
 
 **[Le wiki Koh-Lanta sur Fandom](https://kohlanta.fandom.com/fr/)** — une page
 par saison, pour les {{ g.saisons_diffusees }} éditions. C’est la source du nom
 complet, de l’âge, du métier, du département d’origine, du jour de sortie exact
 et du total des voix reçues, ainsi que du détail des conseils. Limite : son
-tableau de candidats est incomplet sur six saisons, et il ne donne le sexe que
+tableau de candidats est incomplet sur plusieurs saisons, et il ne donne le sexe que
 par l’accord du participe.
 
 Aucune des deux ne suffit seule. Pour chaque saison, la source de référence est
@@ -116,7 +116,7 @@ et l’écart vient de la source, dont le tableau ne s’accorde pas avec sa pro
 ligne de synthèse. Rien n’est corrigé à la main.
 
 Limite de nature : c’est l’audience **veille**, en direct. Le rattrapage n’y est
-pas, et il pèse aujourd’hui près d’un quart de l’audience du programme.
+pas, et ces données ne permettent pas de dire combien il pèse.
 
 ## Un nom lu dans la prose, et ce que ça coûte
 
@@ -360,9 +360,10 @@ scripts qui l’ont récupéré : n’importe qui peut refaire le chemin.
 
 Quelques points ont demandé une décision explicite.
 
-**Les durées de saison.** Sur 34 saisons, 29 voient le tableau récapitulatif et
-les tables de candidats s’accorder exactement. Pour cinq d’entre elles, ils
-divergent d’un jour. C’est alors le **jour attesté par les tables de candidats**
+**Les durées de saison.** Sur {{ site.data.stats.general.saisons_diffusees }} saisons,
+{{ site.data.stats.general.durees_concordantes }} voient le tableau récapitulatif et
+les tables de candidats s’accorder exactement. Pour
+{{ site.data.stats.mots.durees_divergentes }} d’entre elles, ils divergent d’un jour. C’est alors le **jour attesté par les tables de candidats**
 qui est retenu — la sortie d’un finaliste est datée plus précisément qu’une
 durée de résumé — et la valeur annoncée est conservée à côté.
 
@@ -370,7 +371,7 @@ durée de résumé — et la valeur annoncée est conservée à côté.
 ce sont bien des personnes différentes, et non des doublons. Elles sont
 distinguées par leur âge et leur métier, jamais devinées.
 
-**Les métiers.** Les quelque cinq cents intitulés distincts sont regroupés en
+**Les métiers.** Les {{ site.data.stats.general.metiers_distincts }} intitulés distincts sont regroupés en
 familles par une table de mots-clés, lue dans l’ordre : le premier poste dont un
 mot-clé apparaît l’emporte. L’ordre porte donc du sens — « éducateur sportif »
 rencontre le sport avant l’enseignement, « maître-nageur » rencontre l’action et
@@ -711,8 +712,9 @@ Ce qui reste, et pourquoi :
   ont été inspectés cellule par cellule : les cases sont **vides dans la source**.
   Ce n’est pas une lecture qui échoue, c’est un wiki qui n’a pas tout noté.
 - **Les épreuves ne couvrent pas toutes les saisons.**
-  {{ site.data.stats.epreuves.saisons_couvertes }} saisons sur 34 ont un bilan
-  épisode par épisode exploitable ; les cinq autres
+  {{ site.data.stats.epreuves.saisons_couvertes }} saisons sur
+  {{ site.data.stats.general.saisons_diffusees }} ont un bilan épisode par épisode
+  exploitable ; les {{ site.data.stats.mots.saisons_sans_bilan }} autres
   ({{ site.data.stats.epreuves.saisons_sans_donnee | join: ", " }}) n’en ont
   pas. Les épreuves de finale sont exclues : les tableaux sources y changent de
   colonnes et listent les qualifiés plutôt que le vainqueur. Quant à la
@@ -805,8 +807,8 @@ La réparation du `75px` racontée plus haut n’était pas la dernière. Deux a
 défauts d’extraction ne produisaient **aucune erreur** : simplement, des données
 manquaient.
 
-**Les bulletins enveloppés dans une pastille de tribu.** Depuis 2020, les
-tableaux de Fandom n’écrivent plus le nom visé en clair : ils l’enveloppent dans
+**Les bulletins enveloppés dans une pastille de tribu.** Dans les saisons
+récentes, les tableaux de Fandom n’écrivent plus le nom visé en clair : ils l’enveloppent dans
 un modèle, `{% raw %}{{Tribebox-bw|Ilog|Lili}}{% endraw %}`, dont le premier
 paramètre est la tribu et le second le nom. Le nettoyage général du wikitexte
 retire les modèles — et donc effaçait le nom. Résultat :

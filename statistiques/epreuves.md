@@ -21,7 +21,7 @@ personne.
   <li class="chiffre"><b>{{ e.epreuves }}</b><span>épreuves relevées</span></li>
   <li class="chiffre"><b>{{ e.individuelles }}</b><span>individuelles</span></li>
   <li class="chiffre"><b>{{ e.collectives }}</b><span>collectives</span></li>
-  <li class="chiffre"><b>{{ e.saisons_couvertes }}</b><span>saisons couvertes sur 34</span></li>
+  <li class="chiffre"><b>{{ e.saisons_couvertes }}</b><span>saisons couvertes sur {{ site.data.stats.general.saisons_diffusees }}</span></li>
 </ul>
 
 ## Le classement des ratios
@@ -81,7 +81,7 @@ de l’une d’elles n’apparaît nulle part sur cette page, quel qu’ait ét�
 parcours.
 
 Les fiches individuelles du wiki Fandom, elles, portent un total d’épreuves
-**par édition**, sur {{ pa.renseignees }} participations — dont les cinq saisons
+**par édition**, sur {{ pa.renseignees }} participations — dont les {{ site.data.stats.mots.saisons_sans_bilan }} saisons
 manquantes. Voici le classement qu’elles donnent.
 
 <div class="tableau-large">
@@ -158,8 +158,9 @@ qualificatif. Une épreuve peut en porter deux — le parcours du combattant est
 </div>
 
 Le parcours du combattant a été couru **{{ en.epreuves[0].apparitions }} fois**,
-les flambeaux {{ en.epreuves[1].apparitions }} ; le tir à l’arc et l’épreuve de
-la boue une vingtaine chacun. Voilà pour le catalogue.
+{% assign arc = en.epreuves | where: "nom", "Tir à l'arc" | first %}{% assign boue = en.epreuves | where: "nom", "Boue" | first %}
+les flambeaux {{ en.epreuves[1].apparitions }} ; le tir à l’arc
+{{ arc.apparitions }}, l’épreuve de la boue {{ boue.apparitions }}. Voilà pour le catalogue.
 
 ## Pourquoi ce catalogue ne se raccorde pas aux épisodes
 
@@ -195,8 +196,8 @@ reviendrait à ne regarder que les joueurs qui gagnent peu. Aucune nature n’es
 donc attachée à une épreuve **datée**, et aucun modèle épisode par épisode n’en
 reçoit.
 
-<p class="note"><strong>L’appariement a été resserré, et il a gagné trois
-points.</strong> Il cherchait le vainqueur cité <em>un nom à la fois</em> : une
+<p class="note"><strong>L’appariement a été resserré, et il a gagné
+{{ e.gain_appariement }} points.</strong> Il cherchait le vainqueur cité <em>un nom à la fois</em> : une
 épreuve qui en cite deux — le meilleur homme et la meilleure femme du parcours
 du combattant — rencontrait alors toutes les épreuves que l’un <em>ou</em>
 l’autre avait gagnées, et ne tranchait jamais. Exiger que <strong>l’ensemble
@@ -206,7 +207,7 @@ devinette de plus : le raccord passe de 11,0 % à
 comptent ici — de 74 à {{ en.raccord.individuelles_raccordees }}.</p>
 
 <p class="note"><strong>Le plafond, lui, a été vérifié à la source.</strong> La
-catégorie « Épreuves » du wiki compte <strong>57 pages et aucune
+catégorie « Épreuves » du wiki compte <strong>{{ e.pages_categorie }} pages et aucune
 sous-catégorie</strong> : ce n’est pas un extrait, c’est tout ce qui existe. Ce
 qu’il faudrait pour aller plus loin : le nom de l’épreuve dans le bilan par
 épisode, ou le numéro d’épisode dans la fiche de l’épreuve. Les résumés
@@ -317,8 +318,9 @@ perd le jury.
 
 {% include graphiques/epreuves-age.svg %}
 
-L’âge trace une courbe nette : les **25-34 ans** remportent environ une épreuve
-par personne, les **45 ans et plus** trois fois moins. C’est le seul domaine où
+L’âge trace une courbe nette : les **25-34 ans** remportent
+{{ e.victoires_25_34 }} épreuve par personne, les **45 ans et plus**
+{{ e.rapport_45_et_plus }} fois moins. C’est le seul domaine où
 l’âge pèse aussi franchement — et il éclaire la page
 [longévité]({{ '/statistiques/longevite/' | relative_url }}) : si les plus âgés
 sortent plus tôt, c’est d’abord qu’ils gagnent moins d’immunités.
@@ -349,9 +351,10 @@ une indication, pas une loi.
 
 ## Ce que cette page ne dit pas
 
-**Cinq saisons manquent** — {{ e.saisons_sans_donnee | join: ", " }} — faute de
+**{{ site.data.stats.mots.saisons_sans_bilan_maj }} saisons manquent** — {{ e.saisons_sans_donnee | join: ", " }} — faute de
 source donnant leurs épreuves épisode par épisode. Les totaux et les ratios
-portent donc sur {{ e.saisons_couvertes }} saisons, pas sur les 34.
+portent donc sur {{ e.saisons_couvertes }} saisons, pas sur les
+{{ site.data.stats.general.saisons_diffusees }}.
 
 **Les épreuves de finale sont exclues.** Dans les dernières émissions, les
 tableaux sources changent de colonnes et y listent les qualifiés plutôt que le
@@ -367,7 +370,7 @@ ne dit pas — est mesuré plus haut, sur les citations du catalogue.
 
 {% assign cf = site.data.stats.modeles.confort_maudit %}
 
-L’idée court depuis vingt-cinq ans : celui qui gagne le confort, qui part manger
+L’idée court depuis {{ site.data.stats.mots.etendue_annees }} ans : celui qui gagne le confort, qui part manger
 et dormir au sec pendant que les autres ont faim, se fait écrire au conseil du
 soir. Elle se teste sur le conseil du **même épisode**.
 
@@ -383,8 +386,8 @@ Sur **{{ cf.conseils }} conseils** et {{ cf.bulletins }} bulletins,
 {{ cf.bas }} à {{ cf.haut }} — pour {{ cf.attendu }} % attendus. p =
 {{ cf.p }}. **La malédiction du confort n’existe pas.**
 
-L’intervalle laisse encore place à un écart de trois points dans un sens ou dans
-l’autre : ce qu’on peut affirmer, c’est qu’il n’y a pas d’effet marqué.
+L’intervalle laisse encore place à un écart de {{ cf.marge }} points dans un sens ou
+dans l’autre : ce qu’on peut affirmer, c’est qu’il n’y a pas d’effet marqué.
 
 {% assign cw = site.data.stats.modeles.autour_du_feu.confort | first %}
 {% assign cn = site.data.stats.modeles.autour_du_feu.confort | last %}

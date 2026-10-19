@@ -64,7 +64,8 @@ collectif tombant à un épisode qui ne laissait que quatre joueurs ; c’était
 défaut de numérotation, et la saison rentre aujourd’hui dans le rang.
 <i>La Revanche des 4 Terres</i> plaçait sa fusion à l’épisode 4 sur 17 — un
 chiffre lu dans un tableau de classement des quatre tribus pris pour un tableau
-de résultats ; elle la place désormais à l’épisode 8. Deux corrections, et une
+de résultats ; elle la place désormais à l’épisode
+{% assign r4t = f.lignes | where: "saison", "s27" | first %}{{ r4t.episode }}. Deux corrections, et une
 conclusion qui bascule : c’est aussi ce que vaut un résultat tenu par
 {{ f.saisons }} saisons. L’intervalle exclut zéro de peu, et il faut le lire
 comme tel.</p>
@@ -93,8 +94,8 @@ Une émission ne publie pas ses changements de format. Mais si le jeu a basculé
 plusieurs indicateurs doivent basculer **ensemble**, et à la même date.
 
 <p class="note"><strong>La méthode.</strong> On cherche la coupure qui sépare le
-mieux les {{ r.saisons }} saisons classiques en deux régimes, sur six
-indicateurs à la fois — taille du casting, durée, âge moyen, taux d’abandon,
+mieux les {{ r.saisons }} saisons classiques en deux régimes, sur
+{{ site.data.stats.mots.indicateurs_rupture }} indicateurs à la fois — taille du casting, durée, âge moyen, taux d’abandon,
 nombre de conseils, objets d’immunité. <strong>La date sort des données</strong>,
 elle n’est pas choisie. Reste à savoir si cette coupure vaut mieux qu’une
 coupure au hasard : on remet donc les saisons dans un ordre aléatoire, et on
@@ -133,7 +134,7 @@ cette page datait la rupture de 2012 et l’affirmait sans réserve. Deux
 compléments de données — les âges manquants, puis trois cents bulletins de
 conseil retrouvés — ont déplacé le maximum, d’abord vers
 {{ r.annee_rupture }}, puis en creusant son avance. Un critère qu’une révision
-de données déplace de sept ans ne désigne pas une année : il désigne une
+de données déplace de {{ site.data.stats.mots.rupture_deplacement }} ans ne désigne pas une année : il désigne une
 époque. C’est <a href="{{ '/statistiques/audience/' | relative_url }}">sur
 l’audience</a> qu’on voit à quoi ressemble une date, elle, identifiée — {{ m.audience.nb_proches }}
 dates serrées sur {{ m.audience.fenetre.etendue }} an, au lieu de
@@ -169,7 +170,7 @@ Le portrait est cohérent, et il ne se réduit à aucun de ses traits. **Les obj
 d’immunité apparaissent** — ils étaient à zéro, ils sont à
 {{ objets.apres }} par saison. **Le casting grossit**
 ({{ casting.avant }} → {{ casting.apres }}), **les conseils se multiplient**,
-**le casting vieillit**, et **les abandons sont divisés par près de deux**
+**le casting vieillit**, et **les abandons sont divisés par {{ r.abandon_rapport }}**
 ({{ abandon.avant }} % → {{ abandon.apres }} %).
 
 Ce dernier point vaut d’être souligné : la page
@@ -178,7 +179,7 @@ chute des abandons comme une évolution graduelle, décennie par décennie. Elle
 l’est peut-être bien — la rupture, elle, ne sait pas dire l’année.
 
 <p class="note">Ce que cette rupture ne dit pas. Elle ne dit pas <em>ce qui</em>
-a changé en premier, ni pourquoi : six indicateurs qui bougent ensemble ne se
+a changé en premier, ni pourquoi : {{ site.data.stats.mots.indicateurs_rupture }} indicateurs qui bougent ensemble ne se
 hiérarchisent pas. Elle ne dit pas non plus qu’il n’y en a qu’une — la méthode
 en cherche une seule, et avec {{ r.saisons }} saisons il serait imprudent d’en
 chercher deux. Et elle ne dit surtout pas l’année : le tableau ci-dessus compare

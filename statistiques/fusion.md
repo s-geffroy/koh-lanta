@@ -32,7 +32,7 @@ Le repère fonctionne sur {{ a.saisons }} saisons classiques, et
 <a href="{{ '/statistiques/grille/' | relative_url }}">La grille</a> montre
 qu’il tombe presque toujours au même épisode — le {{ a.episode_median }}<sup>e</sup>.</p>
 
-## Deux jeux, cinq mesures
+## Deux jeux, {{ site.data.stats.mots.avant_apres_tests }} mesures
 
 {% include graphiques/fusion-avant-apres.svg %}
 
@@ -247,9 +247,9 @@ prose, donc une lecture faillible — et c’est pourquoi elle est **mesurée**.
   ambassadeurs, soit {{ ng.part_lues }} % — {{ ng.distincts }} personnes
   distinctes.</p>
   <p>Là où les <b>deux sources</b> les nomment, elles s’accordent
-  {{ ng.sources_accord }} fois sur {{ ng.sources_accord | plus: ng.sources_desaccord }}.
+  {{ ng.sources_accord }} fois sur {{ ng.sources_communes }}.
   La seule divergence porte sur <i>Les Reliques du destin</i> : Wikipédia
-  compte Jade parmi les quatre ambassadeurs, Fandom compte Cynthia. Aucun des
+  compte Jade parmi les ambassadeurs, Fandom compte Cynthia. Aucun des
   deux n’est retenu.</p>
 </div>
 

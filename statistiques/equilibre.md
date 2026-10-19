@@ -113,7 +113,7 @@ Trois lignes méritent d’être lues de près.
 {% assign c_cadre = cx | where: "variable", "Métier — Encadrement et professions intellectuelles" | first %}
 {% assign c_femme = cx | where: "variable", "Femme" | first %}
 **« Déjà venu » : risque ×{{ c_revenu.rapport }}.** Un aventurier qui a joué une autre saison est
-éliminé **trois fois moins vite**, à âge, sexe, métier et saison identiques.
+éliminé **{{ m.equilibre.cox.deja_venu_inverse }} fois moins vite**, à âge, sexe, métier et saison identiques.
 C’est le plus gros effet de tout le modèle — et c’est un piège. La production
 rappelle ceux qui sont allés loin : l’avantage était acquis **avant** le retour,
 il n’est pas causé par lui. C’est exactement le biais que documente
@@ -166,5 +166,5 @@ distinguer de zéro — tous les intervalles contiennent zéro.
 </table>
 </div>
 
-Ce n’est pas « les mécaniques ne servent à rien » : c’est « vingt-six saisons ne
+Ce n’est pas « les mécaniques ne servent à rien » : c’est « {{ site.data.stats.mots.mecaniques_saisons }} saisons ne
 suffisent pas à mesurer leur effet ». La différence compte.

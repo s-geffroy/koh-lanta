@@ -9,8 +9,8 @@ chapeau: >-
 
 {% assign s = site.data.stats %}
 
-Les {{ s.general.participations }} aventuriers déclarent près de cinq cents
-métiers différents. Regroupés en familles, ils dessinent un casting — et
+Les {{ s.general.participations }} aventuriers déclarent
+{{ s.general.metiers_distincts }} métiers différents. Regroupés en familles, ils dessinent un casting — et
 permettent de répondre à une question simple : **quel métier mène le plus
 loin ?**
 
@@ -19,7 +19,7 @@ loin ?**
 {% include graphiques/metiers-casting.svg %}
 
 L’encadrement domine largement le casting : cadres, dirigeants, gérants,
-ingénieurs et consultants forment à eux seuls le cinquième des départs. Viennent
+ingénieurs et consultants forment à eux seuls {{ s.metiers[0].part_du_casting }} % des départs. Viennent
 ensuite le commerce, puis le sport et le coaching.
 
 ## Qui arrive

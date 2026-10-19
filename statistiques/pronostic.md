@@ -31,7 +31,8 @@ jamais vue. Un découpage au hasard serait tricher : deux aventuriers du même
 casting ne sont pas indépendants, et la moitié d’une saison suffirait à deviner
 l’autre. On mesure ensuite <strong>à quelle place le modèle a rangé celui qui a
 réellement gagné</strong>, dans son propre casting. Le hasard donne
-{{ p.rang_hasard }} sur une vingtaine.</p>
+{{ p.rang_hasard }}, pour un casting de {{ p.casting_moyen }} personnes en
+moyenne.</p>
 
 ## Le résultat
 
@@ -66,7 +67,8 @@ prédire la moyenne pour tout le monde**.
 brouille une seule variable. Une valeur positive signifie que la variable
 servait un peu.</p>
 
-Les contributions sont de l’ordre d’une demi-place sur vingt. Aucune ne survit à
+Les contributions valent au plus {{ p.importances[0].perte }} place, sur un casting
+de {{ p.casting_moyen }}. Aucune ne survit à
 son propre intervalle. Il n’y a pas de variable cachée à trouver ici : il n’y a
 pas de signal du tout.
 
@@ -143,7 +145,7 @@ mieux.</p>
 **Ce chiffre se lit dans les deux sens, et les deux comptent.** Passer de
 {{ jeu.premiers_hasard }} % à {{ jeu.premiers }} % de bonnes désignations, c’est
 un signal réel, établi hors échantillon, sur {{ jeu.conseils }} conseils de
-{{ jeu.plis }} saisons. C’est aussi **trois conseils sur quatre où le modèle se
+{{ jeu.plis }} saisons. C’est aussi **{{ jeu.erreurs }} % de conseils où le modèle se
 trompe de personne**. Le jeu n’est pas imprévisible ; il est très loin d’être
 prévisible.
 
@@ -182,7 +184,7 @@ montre que l’encadrement accède moins souvent à la finale ;
 [Âge et longévité]({{ '/statistiques/longevite/' | relative_url }}) montre que
 les 30-34 ans tiennent le plus longtemps. Ces écarts sont réels — et ils sont
 si petits devant la variabilité individuelle qu’ils **ne permettent de
-pronostiquer personne**. Un écart moyen visible sur cinq cents personnes n’est
+pronostiquer personne**. Un écart moyen visible sur {{ p.effectif }} participations n’est
 pas une information sur une personne.
 
 <p class="note">Ce que ce résultat ne dit pas. Il ne dit pas que la production

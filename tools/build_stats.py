@@ -16,6 +16,7 @@ Deux perimetres coexistent partout :
 """
 import math
 import os
+import json
 import sys
 from collections import Counter, defaultdict
 from statistics import NormalDist, mean, median
@@ -1458,6 +1459,393 @@ def _niveau(part):
     return "mince"
 
 
+UNITES = ["zéro", "un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit",
+          "neuf", "dix", "onze", "douze", "treize", "quatorze", "quinze", "seize"]
+DIZAINES = {2: "vingt", 3: "trente", 4: "quarante", 5: "cinquante", 6: "soixante"}
+
+
+def en_lettres(n):
+    """Un entier de 0 a 99 en toutes lettres, a l'ancienne : « vingt et un »,
+    « soixante-dix », « quatre-vingts ». Au-dela, les chiffres."""
+    n = int(n)
+    if n < 17:
+        return UNITES[n]
+    if n < 20:
+        return "dix-" + UNITES[n - 10]
+    if n >= 100:
+        return str(n)
+    d, u = divmod(n, 10)
+    if d in (7, 9):
+        base = "soixante" if d == 7 else "quatre-vingt"
+        reste = 10 + u
+        if d == 7 and u == 1:
+            return "soixante et onze"
+        return base + "-" + en_lettres(reste)
+    base = "quatre-vingt" if d == 8 else DIZAINES[d]
+    if u == 0:
+        return "quatre-vingts" if d == 8 else base
+    if u == 1 and d != 8:
+        return base + " et un"
+    return base + "-" + UNITES[u]
+
+
+def ordinal_lettres(n):
+    """« cinquieme », « neuvieme » : l'ordinal en toutes lettres, n >= 2."""
+    mot = en_lettres(n)
+    if mot.endswith("cinq"):
+        return mot + "uième"
+    if mot.endswith("neuf"):
+        return mot[:-1] + "vième"
+    if mot.endswith("e"):
+        mot = mot[:-1]
+    return mot + "ième"
+
+
+def poser_les_mots(stats, valeurs):
+    """`stats.mots` : les comptes que la prose ecrit en toutes lettres.
+
+    Une page ecrivait « quatre facettes » ou « depuis vingt-cinq ans » a la
+    main ; le chiffre ne suivait pas les donnees. Le mot est fabrique ici, et
+    sa variante a majuscule pour un debut de phrase -- aucune mise en forme en
+    Liquid."""
+    mots = stats.setdefault("mots", {})
+    for cle, v in valeurs.items():
+        if v is None:
+            continue
+        mot = en_lettres(v)
+        mots[cle] = mot
+        mots[cle + "_maj"] = mot[0].upper() + mot[1:]
+
+
+def champs_du_texte(stats, saisons, parts):
+    """Les comptes que la prose citait a la main (lot 4b), page citee.
+
+    Chaque champ remplace un nombre ecrit dans une phrase ; quand la phrase
+    l'ecrit en toutes lettres, le mot est pose dans `stats.mots`."""
+    m, g = stats["modeles"], stats["general"]
+    mots = {
+        # Partout : « depuis vingt-cinq ans », « 34 saisons ».
+        "etendue_annees": g["etendue_annees"],
+        "saisons_diffusees": g["saisons_diffusees"],
+        "saisons_annulees": g["saisons_annulees"],
+        "facettes": len(stats["classement"]["facettes"]),
+        "saisons_sans_bilan": len(stats["epreuves"].get("saisons_sans_donnee") or []),
+        # /statistiques/grille/ : les indicateurs de la rupture.
+        "indicateurs_rupture": len(m["ruptures"]["detail"]),
+        # /statistiques/audience/
+        "audience_saisons": m["audience"]["saisons"],
+        "audience_courbes": len(m["audience"]["courbes"]),
+    }
+
+    # /statistiques/grille/ : de combien d'annees la rupture a bouge depuis la
+    # premiere datation publiee, 2012 -- un fait d'histoire du site, d'ou la
+    # constante.
+    r = m["ruptures"]
+    mots["rupture_deplacement"] = r["annee_rupture"] - 2012
+    ab = next(x for x in r["detail"] if x["libelle"] == "Taux d'abandon")
+    r["abandon_rapport"] = round(ab["avant"] / ab["apres"], 1) if ab["apres"] else None
+
+    # /statistiques/audience/ : les annees de vendredi avant la bascule au
+    # mardi, comptees depuis la premiere saison diffusee le vendredi.
+    a = m["audience"]
+    vendredis = [x["annee"] for x in a["serie"] if x.get("jour") == "Vendredi"]
+    if vendredis:
+        mots["annees_de_vendredi"] = a["bascule_jour"]["annee"] - min(vendredis)
+
+    # /statistiques/force/ : combien de fois le tenant du titre regagne.
+    tt = m["tenant_du_titre"]
+    tt["rapport"] = round(tt["tenant"]["probabilite"] / tt["autres"]["probabilite"], 1)
+
+    # /statistiques/alliances/ : l'episode median de la fusion, et la plus
+    # longue serie de sorties d'un meme bandeau.
+    mots["episode_fusion"] = m["fusion"]["episode_median"]
+    mots["serie_decimation"] = m["decimation"]["detail"][0]["plus_longue_serie"]
+
+    # /completude/ : la premiere saison a collier, les plus petit et plus grand
+    # castings, les annees des editions annulees.
+    avec_collier = [s["annee"] for s in saisons
+                    if "collier_immunite" in (s.get("mecaniques") or [])]
+    g["premiere_annee_collier"] = min(avec_collier) if avec_collier else None
+    mots["casting_min"] = m["fusion"]["casting_min"]
+    mots["casting_max"] = m["fusion"]["casting_max"]
+    annulees = sorted(s["annee"] for s in saisons if s.get("annulee") and s.get("annee"))
+    g["annees_annulees_texte"] = (" et de ".join(str(a) for a in annulees))
+
+    # /statistiques/qui-vise-qui/ : l'ancien coequipier vise « N % moins
+    # souvent » qu'attendu, apres la fusion.
+    for t in m["registre"]:
+        if t["cle"] == "vote_bandeau_apres_fusion" and t.get("attendu"):
+            t["ecart_relatif"] = _arrondi_entier(100 * (1 - t["observe"] / t["attendu"]))
+
+    # /saisons/ : la saison la plus dominee aux epreuves (classiques) et la
+    # plus partagee (toutes), l'ecart maximal a la parite.
+    ind = stats["indicateurs"]["saisons"]
+    dom = [x for x in ind if x.get("domination_epreuves") is not None]
+    classiques = [x for x in dom if not x["speciale"]]
+    if classiques:
+        dmax = max(classiques, key=lambda x: x["domination_epreuves"])
+        stats["indicateurs"]["domination_max"] = dmax
+        mots["victoires_domination_max"] = dmax["victoires_du_meilleur"]
+    if dom:
+        stats["indicateurs"]["domination_min"] = min(dom, key=lambda x: x["domination_epreuves"])
+    mots["survie_saisons"] = len(stats["survie_saisons"])
+    ecarts = []
+    for s in saisons:
+        if s.get("annulee") or s.get("speciale") or s.get("en_cours"):
+            continue
+        gens = [p for p in parts if p["saison"] == s["id"] and p.get("genre")]
+        if gens:
+            f = sum(1 for p in gens if p["genre"] == "f")
+            ecarts.append(abs(f - len(gens) / 2))
+    g["parite_ecart_max"] = max(ecarts) if ecarts else None
+
+    # /statistiques/pronostic/ : la taille moyenne d'un casting du modele, et
+    # la part des conseils ou le pronostic se trompe de personne.
+    pr = m["pronostic"]
+    pr["casting_moyen"] = round(pr["effectif"] / pr["saisons"], 1) if pr.get("saisons") else None
+    for jeu in stats["prevision"].get("jeux") or []:
+        if jeu.get("premiers") is not None:
+            jeu["erreurs"] = round(100 - jeu["premiers"], 1)
+
+    # /statistiques/jury/ : le co-vote sur cinq conseils partages.
+    jf = m["jury_final"]["coefficients"]
+    jf[1]["cinq_conseils"] = round(jf[1]["rapport"] ** 5, 1)
+
+    # /statistiques/vainqueurs/ : egalites du jury, ecart d'age, revenants,
+    # rapport des voix recues.
+    egalites = sum(1 for s in saisons if not s.get("annulee") and not s.get("speciale")
+                   and not s.get("en_cours") and len(s.get("vainqueurs") or []) > 1)
+    mots["egalites_jury"] = egalites
+    v = stats["vainqueurs"]
+    mots["ecart_age_vainqueurs"] = v["age_max"] - v["age_min"]
+    rv = stats["revenants"]
+    rv["vainqueurs_revenus_autres"] = rv["vainqueurs_revenus"] - len(rv["vainqueurs_multiples"])
+    vv = stats["indicateurs"]["voix_des_vainqueurs"]["par_sort"]
+    vv_rapport = round(vv[2]["menace_moyenne"] / vv[0]["menace_moyenne"], 1) if vv[0]["menace_moyenne"] else None
+    stats["indicateurs"]["voix_des_vainqueurs"]["rapport_ensemble"] = vv_rapport
+
+    # /statistiques/geographie/ : l'outre-mer et la Corse, que le texte nomme.
+    chemin_geo = os.path.join(RACINE, "_data", "geographie.yml")
+    if os.path.exists(chemin_geo):
+        geo = donnees.charger(open(chemin_geo, encoding="utf-8"))
+        reg = {x["region"]: x for x in geo.get("regions") or []}
+        sg = stats.setdefault("geographie", {})
+        sg["outremer_observe"] = (geo.get("outremer") or {}).get("observe")
+        sg["reunion_observe"] = (reg.get("La Réunion") or {}).get("observe")
+        sg["martinique_observe"] = (reg.get("Martinique") or {}).get("observe")
+        sg["premiere_region"] = (geo.get("regions") or [{}])[0].get("region")
+        mots["regions_outremer"] = len((geo.get("outremer") or {}).get("regions") or [])
+
+    # /statistiques/finale/ : les saisons ou le vainqueur des poteaux est
+    # connu, et celles ou le choix est atteste.
+    po = stats["finale"].get("poteaux") or {}
+    mots["poteaux_saisons"] = po.get("effectif")
+    mots["choix_atteste"] = (po.get("choix_atteste") or {}).get("effectif")
+
+    # /statistiques/top/ : la facette retiree, les corrections du soir du
+    # depart, les paires de facettes.
+    cl = stats["classement"]
+    mots["facettes_initiales"] = len(cl["facettes"]) + 1
+    mots["artefacts"] = len(cl["artefacts"])
+    mots["paires"] = len(cl["correlations"])
+
+    # /statistiques/casting/ : l'ecart d'etendue des ages en mois, les saisons
+    # aux tribus contrastees, les archetypes.
+    ca = m["casting"]
+    for t in m["registre"]:
+        if t["cle"] == "etendue_ages":
+            mots["ecart_ages_mois"] = round(12 * (t["observe"] - t["attendu"]))
+    mots["tribus_contrastees"] = len(ca["tribus_les_plus_contrastees"])
+    mots["tribus_non_contrastees"] = ca["duos_de_tribus"] - len(ca["tribus_les_plus_contrastees"])
+    mots["duos_de_tribus"] = ca["duos_de_tribus"]
+    mots["archetypes"] = ca["nb_archetypes"]
+
+    # /statistiques/conditionnelles/ : la part des noms rendus qui ne
+    # reviennent pas ; les modalites en debut de cellule, sans `capitalize`
+    # (qui minusculerait la suite).
+    co = m["conditionnelles"]
+    co["retour"]["non_rendus"] = round(100 - co["retour"]["probabilite"], 1)
+    for x in co.get("par_camp") or []:
+        x["modalite_maj"] = x["modalite"][:1].upper() + x["modalite"][1:]
+
+    # /statistiques/fusion/ : les mesures avant/apres, les ambassades nommees
+    # par les deux sources.
+    aa = m["avant_apres"]
+    mots["avant_apres_tests"] = len(aa["tests"])
+    ng = aa["negociateurs"]
+    if ng.get("sources_accord") is not None:
+        ng["sources_communes"] = ng["sources_accord"] + (ng.get("sources_desaccord") or 0)
+
+    # /statistiques/epreuves/ : les 25-34 ans par personne et l'ecart aux
+    # 45 ans et plus ; la marge de l'intervalle du confort ; le gain de
+    # l'appariement resserre, depuis 11,0 % (fait d'histoire du site).
+    ep = stats["epreuves"]
+    pa = {x["tranche"]: x for x in ep.get("par_age") or []}
+    jeunes = [pa[t] for t in ("25-29 ans", "30-34 ans") if t in pa]
+    if jeunes and "45 ans et plus" in pa:
+        par_tete = (sum(x["victoires"] for x in jeunes)
+                    / sum(x["aventuriers"] for x in jeunes))
+        ep["victoires_25_34"] = round(par_tete, 2)
+        ep["rapport_45_et_plus"] = round(par_tete / pa["45 ans et plus"]["victoires_par_aventurier"], 1)
+    cf = m["confort_maudit"]
+    cf["marge"] = _arrondi_entier(max(cf["haut"] - cf["attendu"], cf["attendu"] - cf["bas"]))
+    chemin_en = os.path.join(RACINE, "_data", "epreuves_nommees.yml")
+    if os.path.exists(chemin_en):
+        en = donnees.charger(open(chemin_en, encoding="utf-8"))
+        part_r = (en.get("raccord") or {}).get("part_raccordee")
+        if part_r is not None:
+            ep["gain_appariement"] = round(part_r - 11.0, 1)
+        # /epreuves/ : les noms sans apparition datee, et sans vainqueur nomme
+        # au palmares du wiki.
+        noms = [x["nom"] for x in en.get("epreuves") or []]
+        gagnees = {n for x in en.get("palmares") or [] for n in x.get("epreuves") or []}
+        mots["noms_sans_apparition"] = sum(1 for x in en.get("epreuves") or []
+                                           if not x.get("apparitions"))
+        mots["noms_sans_vainqueur"] = sum(1 for n in noms if n not in gagnees)
+
+    # /statistiques/autour-du-feu/ : victoires par couleur, tests de la page.
+    couleurs = {x["couleur"]: x for x in stats["couleurs"]}
+    mots["victoires_jaunes"] = (couleurs.get("jaune") or {}).get("victoires")
+    mots["victoires_rouges"] = (couleurs.get("rouge") or {}).get("victoires")
+    aft = m["autour_du_feu"].get("tests") or []
+    mots["autour_tests"] = len(aft)
+    mots["autour_retenus"] = sum(1 for t in aft if t.get("retenu"))
+
+    # /statistiques/conseils/ : saisons a objet joue rapportees aux saisons
+    # dont les colliers sont detailles ; l'etendue des voix pour eliminer.
+    cs = stats["conseils"]
+    if stats["colliers"].get("saisons_couvertes"):
+        cs["rapport_saisons_objets"] = round(cs["saisons_avec_objet_joue"]
+                                             / stats["colliers"]["saisons_couvertes"], 1)
+    rep_voix = [x["voix"] for x in stats["voix_pour_eliminer"]["repartition"]]
+    if rep_voix:
+        stats["voix_pour_eliminer"]["voix_min"] = min(rep_voix)
+        stats["voix_pour_eliminer"]["voix_max"] = max(rep_voix)
+
+    # /statistiques/revenants/ : rappel du dernier cinquieme contre le premier,
+    # les deux lignes d'abandon, l'intervalle entre les deux titres, la duree
+    # de survie par tranche d'age, et le coefficient « deja venu ».
+    rp = m["rappel"]
+    ps = rp["par_survie"]
+    if ps[0]["probabilite"]:
+        rp["rapport_survie"] = round(ps[4]["probabilite"] / ps[0]["probabilite"], 1)
+    rp["abandons_derniers"] = sum(x["effectif"] for x in rp["par_sort"][-2:])
+    mots["retours_abandon"] = sum(x["cas"] for x in rp["par_sort"][-2:])
+    annee_de = {s.get("titre"): s.get("annee") for s in saisons}
+    vm = stats["revenants"]["vainqueurs_multiples"]
+    if len(vm) == 1:
+        ans = [annee_de.get(t) for t in vm[0]["editions"]]
+        if all(ans):
+            mots["intervalle_titres"] = max(ans) - min(ans)
+    stats["age_survie_max"] = max(stats["age"], key=lambda x: x["survie_moyenne"] or 0)["tranche"]
+    stats["age_finale_max"] = max(stats["age"], key=lambda x: x["taux_finale"] or 0)["tranche"]
+    cox = {x["variable"]: x for x in m["equilibre"]["cox"]["coefficients"]}
+    if cox.get("Déjà venu"):
+        m["equilibre"]["cox"]["deja_venu_inverse"] = round(1 / cox["Déjà venu"]["rapport"], 1)
+
+    # /statistiques/sorties/ : le recul des abandons d'une decennie a l'autre.
+    pdec = stats["sorties"]["par_decennie"]
+    if pdec[-1]["abandons"]:
+        stats["sorties"]["abandons_rapport"] = round(pdec[0]["abandons"] / pdec[-1]["abandons"], 1)
+
+    # /statistiques/prenoms/ : la page comptait ses absents en Liquid, et
+    # ecrivait a la main le facteur maximal, la decennie du sommet et la part
+    # des porteurs absents.
+    chemin_pr = os.path.join(RACINE, "_data", "prenoms.yml")
+    if os.path.exists(chemin_pr):
+        pr = donnees.charger(open(chemin_pr, encoding="utf-8"))
+        liste = pr.get("prenoms") or []
+        absents = [x for x in liste if x.get("absent_du_fichier")]
+        porteurs = sum(x["observe"] for x in absents)
+        tableau = [x["indice"] for x in liste if x.get("au_tableau") and x.get("indice") is not None]
+        alexandra = next((x for x in liste if x.get("prenom") == "Alexandra"), {})
+        stats["prenoms"] = {
+            "absents": len(absents),
+            "porteurs_absents": porteurs,
+            "part_porteurs_absents": part(porteurs, g["participations"]),
+            "indice_max_tableau": max(tableau) if tableau else None,
+            "alexandra": alexandra.get("observe"),
+        }
+    gen = stats["casting"].get("generations") or []
+    if gen:
+        stats["casting"]["decennie_sommet"] = max(gen, key=lambda x: x["effectif"])["decennie"]
+
+    # /statistiques/equilibre/ : les saisons du test des mecaniques.
+    mots["mecaniques_saisons"] = m["mecaniques"].get("saisons")
+
+    # /statistiques/jeu-social/ : fantomes recidivistes ; fantomes vainqueurs
+    # au-dela des quatre nommes (la page soustrayait en Liquid) ; le plus de
+    # conseils traverses sans etre ecrit par un futur vainqueur.
+    ind_ = stats["indicateurs"]
+    mots["fantomes_recidivistes"] = len(ind_["fantomes_recidivistes"])
+    fv = ind_["fantomes_vainqueurs"]
+    ind_["fantomes_vainqueurs_autres"] = max(0, len(fv) - 4)
+    if fv:
+        mots["fantome_vainqueur_conseils"] = max(x["conseils"] for x in fv)
+
+    # /statistiques/ et l'accueil : les entrees du sommaire, celles qui
+    # decrivent et celles qui testent (`modeles: true`).
+    chemin_nav = os.path.join(RACINE, "_data", "navigation.yml")
+    if os.path.exists(chemin_nav):
+        nav = donnees.charger(open(chemin_nav, encoding="utf-8")) or []
+        entrees = [e for gr in nav if gr.get("fil") for t in gr.get("themes") or []
+                   for e in t.get("entrees") or [] if not e.get("hub")]
+        testees = sum(1 for e in entrees if e.get("modeles"))
+        stats["sommaire"] = {"entrees": len(entrees), "testees": testees,
+                             "descriptives": len(entrees) - testees}
+        mots["sommaire_entrees"] = len(entrees)
+        mots["sommaire_testees"] = testees
+        mots["sommaire_descriptives"] = len(entrees) - testees
+
+    # /statistiques/professions/ et /sources/ : les intitules de metier
+    # distincts ; /statistiques/tribus/ : la couleur noire.
+    g["metiers_distincts"] = len({p["profession"] for p in parts if p.get("profession")})
+    mots["effectif_noir"] = (couleurs.get("noir") or {}).get("effectif")
+
+    # /sources/ : les saisons dont la duree annoncee diverge des tables de
+    # candidats ; /methode/ : les facettes corrigees du soir du depart.
+    divergentes = sum(1 for s in saisons if s.get("duree_annoncee") is not None)
+    g["durees_divergentes"] = divergentes
+    g["durees_concordantes"] = g["saisons_diffusees"] - divergentes
+    mots["durees_divergentes"] = divergentes
+    mots["facettes_corrigees"] = len(cl["artefacts"]) - 1
+    chemin_cv = os.path.join(RACINE, "_data", "croisement_votes.yml")
+    if os.path.exists(chemin_cv):
+        stats["croisement_divergents"] = donnees.charger(open(chemin_cv, encoding="utf-8")).get("divergents")
+
+    # Lot 4c. /statistiques/alliances/ : les paires d'aventuriers qu'une meme
+    # saison rend possibles (« des milliers »).
+    paires = 0
+    for s in saisons:
+        if s.get("annulee") or s.get("en_cours"):
+            continue
+        n = sum(1 for p in parts if p["saison"] == s["id"])
+        paires += n * (n - 1) // 2
+    g["paires_possibles"] = paires
+    g["paires_possibles_texte"] = f"{paires:,}".replace(",", "\u00a0")
+    # /statistiques/epreuves/ : les pages de la categorie « Epreuves » du wiki,
+    # telles que la recuperation les a listees.
+    chemin_tit = os.path.join(RACINE, "specs", "sources", "epreuves", "_titres.json")
+    if os.path.exists(chemin_tit):
+        with open(chemin_tit, encoding="utf-8") as f:
+            stats["epreuves"]["pages_categorie"] = len(json.load(f))
+    # /statistiques/revenants/ : les anciens vainqueurs engages dans la saison
+    # en cours et deja sortis, nommes par la page.
+    deja = {p["id"] for p in parts if p.get("sort") == "vainqueur"
+            and not any(s.get("en_cours") for s in saisons if s["id"] == p["saison"])}
+    en_cours = {s["id"] for s in saisons if s.get("en_cours")}
+    sortis = [p for p in parts if p["saison"] in en_cours and p["id"] in deja and p.get("sort")]
+    phrases = []
+    for p in sortis:
+        e = "e" if p.get("genre") == "f" else ""
+        phrases.append(f"{p.get('nom_complet') or p.get('nom')} y était aussi engagé{e} "
+                       f"et en est sorti{e}")
+    stats["revenants"]["vainqueurs_sortis_texte"] = " ; ".join(phrases)
+
+    poser_les_mots(stats, mots)
+    stats["mots"]["facette_retiree_rang"] = ordinal_lettres(len(cl["facettes"]) + 1)
+
+
 def champs_d_affichage(stats):
     """Ce que les pages calculaient en Liquid, calcule ici.
 
@@ -1937,23 +2325,26 @@ def main():
         for e in aud.get("episodes") or []:
             if e.get("telespectateurs"):
                 mesures[e["saison"]].append(e["telespectateurs"])
-        controle, ecarts = 0, []
+        controle, ecarts, ecart_max = 0, [], 0.0
         for s in aud.get("saisons") or []:
             if s.get("moyenne") and mesures.get(s["saison"]):
                 controle += 1
                 ecart = mean(mesures[s["saison"]]) / s["moyenne"] - 1
                 if abs(ecart) > 0.005:
                     ecarts.append(f"*{s['titre']}*")
+                    ecart_max = max(ecart_max, abs(ecart))
         stats["audience_controle"] = {
             "saisons": controle,
             "concordantes": controle - len(ecarts),
             "discordantes_texte": (", ".join(ecarts[:-1]) + " et " + ecarts[-1]
                                    if len(ecarts) > 1 else "".join(ecarts)),
+            "ecart_max": _arrondi_entier(100 * ecart_max),
             "recettes": sum(1 for s in aud.get("saisons") or []
                             if s.get("recettes_publicitaires")),
         }
 
     champs_d_affichage(stats)
+    champs_du_texte(stats, saisons, parts)
     poser_les_identifiants(stats, index_des_noms(personnes))
 
     chemin = os.path.join(RACINE, "_data", "stats.yml")

@@ -9,7 +9,8 @@ chapeau: >-
 
 {% assign c = site.data.stats.colliers %}
 
-Le collier d’immunité est apparu en 2011 et n’a plus quitté le jeu. C’est aussi
+Le collier d’immunité est apparu en {{ site.data.stats.general.premiere_annee_collier }} et
+n’a plus quitté le jeu. C’est aussi
 la mécanique sur laquelle circulent le plus d’affirmations invérifiables. Le
 destin de **{{ c.colliers }} colliers** a été relevé sur
 {{ c.saisons_couvertes }} saisons : où ils étaient cachés, qui les a trouvés,

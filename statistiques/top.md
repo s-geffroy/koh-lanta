@@ -34,7 +34,7 @@ regarde **après**, pour voir si le score la retrouve tout seul.
 
 ## Le top {{ c.taille }}
 
-Le score est la moyenne des quatre facettes, ramenées chacune à une même
+Le score est la moyenne des {{ site.data.stats.mots.facettes }} facettes, ramenées chacune à une même
 échelle. Poids égaux : c’est la seule pondération qui ne demande à personne de
 décider que le physique compte plus que le vote.
 
@@ -63,7 +63,7 @@ décider que le physique compte plus que le vote.
 
 ## Le classement complet, nom par nom
 
-Les {{ c.joueurs_classes }} aventuriers, cherchables et triables. Les quatre
+Les {{ c.joueurs_classes }} aventuriers, cherchables et triables. Les {{ site.data.stats.mots.facettes }}
 colonnes de droite donnent le rang **sur chaque facette** : c’est là que se voit
 le mieux qu’un bon rang général peut cacher une facette au fond du tableau, et
 l’inverse.
@@ -112,10 +112,10 @@ gauche ne veut pas dire grand-chose. Et pour les
 saisons, la preuve reste mince — le rétrécissement les tient près de la
 moyenne, ce qui est la seule chose honnête à faire quand on ne sait pas.</p>
 
-## Les quatre classements par facette
+## Les {{ site.data.stats.mots.facettes }} classements par facette
 
 Le top synthétique cache ce qu’il moyenne — et puisque les facettes ne se
-parlent pas, ce sont ces quatre listes qui portent l’information. Chacune sur sa
+parlent pas, ce sont ces {{ site.data.stats.mots.facettes }} listes qui portent l’information. Chacune sur sa
 mesure, avec le compte brut qui la fonde.
 
 {% for f in c.facettes %}
@@ -161,7 +161,7 @@ mis la victoire dans le calcul.
 ## La meilleure saison jamais jouée
 
 Autre question, autre liste. Ci-dessus, un joueur ; ici, **une saison** — une
-participation, sur ses seules quatre facettes, sans rien cumuler.
+participation, sur ses seules {{ site.data.stats.mots.facettes }} facettes, sans rien cumuler.
 
 <div class="tableau-large">
 <table data-triable>
@@ -225,7 +225,7 @@ ils tombent.
 </table>
 </div>
 
-<p class="legende-figure">Les quatre colonnes de facettes sont des écarts à la
+<p class="legende-figure">Les {{ site.data.stats.mots.facettes }} colonnes de facettes sont des écarts à la
 moyenne, en écarts-types : 0 est la moyenne du programme, positif est meilleur.
 La dernière donne l’étendue des rangs sous les
 {{ rb.tirages }} pondérations tirées — plus elle est large, moins le rang
@@ -260,7 +260,7 @@ Tout ce qui précède se lit sans rien savoir de la méthode. Tout ce qui suit
 l’explique, la met à l’épreuve, et donne de quoi la contester — y compris la
 facette qu’il a fallu retirer et le biais qui reste.
 
-## Les quatre facettes, et leur dénominateur
+## Les {{ site.data.stats.mots.facettes }} facettes, et leur dénominateur
 
 Un chiffre ne veut rien dire sans ce qui le divise. Chaque facette porte donc
 le sien, et il est publié à côté du classement.
@@ -299,7 +299,7 @@ total par saison, sans dates. Là où les deux se comparent, elles s’accordent
 sur <b>{{ ce.part_accord }} %</b> des {{ ce.comparables }} participations.
 Surtout, la fiche attribue <b>{{ ce.victoires_invisibles }} victoires</b> à
 {{ ce.participations_invisibles }} participations pour lesquelles le tableau ne
-fournit aucun dénominateur — les cinq saisons sans relevé d’épreuves, pour
+fournit aucun dénominateur — les {{ site.data.stats.mots.saisons_sans_bilan }} saisons sans relevé d’épreuves, pour
 l’essentiel. Ces victoires-là sont <strong>invisibles au classement</strong>.
 Un aventurier dont deux saisons sur trois sont dans ce cas est donc jugé sur la
 troisième, et il faut le savoir avant de lire son rang.</p>
@@ -311,9 +311,10 @@ clair par la source pour {{ c.rangs_attestes }} des
 les ex æquo se partageant le rang. Rien n’est deviné, mais ce n’est pas la même
 qualité de donnée, et c’est dit.</p>
 
-## La cinquième facette, et pourquoi elle n’existe pas
+## La {{ site.data.stats.mots.facette_retiree_rang }} facette, et pourquoi elle n’existe pas
 
-Il y en avait cinq. La cinquième s’appelait **la résistance** : s’en sortir
+Il y en avait {{ site.data.stats.mots.facettes_initiales }}. La
+{{ site.data.stats.mots.facette_retiree_rang }} s’appelait **la résistance** : s’en sortir
 quand le nom écrit au conseil est le vôtre. C’est la qualité que tout le monde
 cite en premier pour désigner un grand joueur. Elle a été construite, publiée,
 puis retirée.
@@ -354,7 +355,7 @@ l’élimination. Leur résistance valait zéro par construction.
   dit déjà. Le soir du départ est écarté des deux côtés.</p>
 </div>
 
-<p class="note">Ces trois corrections ne sont pas des ajustements de confort :
+<p class="note">Ces {{ site.data.stats.mots.artefacts }} corrections ne sont pas des ajustements de confort :
 elles ont <strong>renversé le résultat principal de cette page</strong>. Dans sa
 première version, les quatre facettes non physiques s’accordaient entre 0,349 et
 0,507, et la page en concluait qu’il existait un « jeu social » cohérent. Cet
@@ -362,7 +363,7 @@ accord était fabriqué par le soir du départ, présent dans les trois à la fo
 Retiré, il ne reste rien — la section suivante le montre.
 <a href="{{ '/sources/' | relative_url }}">Les sources</a> racontent la revue.</p>
 
-## Les quatre facettes parlent-elles du même talent ?
+## Les {{ site.data.stats.mots.facettes }} facettes parlent-elles du même talent ?
 
 Si « bon joueur » désignait quelque chose, les facettes iraient ensemble : celui
 qui gagne les épreuves devrait aussi voter juste. On peut le vérifier
@@ -375,13 +376,13 @@ en valeur absolue, sur les {{ c.joueurs_classes }} joueurs classés. En clair,
 les paires dont la corrélation est négative.</p>
 
 <div class="constat">
-  <p><b>Rien ne va avec rien.</b> Sur les six paires possibles, la plus forte
+  <p><b>Rien ne va avec rien.</b> Sur les {{ site.data.stats.mots.paires }} paires possibles, la plus forte
   vaut <b>{{ c.correlations[0].rho }}</b> et la plus faible
-  {{ c.correlations[5].rho }}. La moyenne des six est
+  {{ c.correlations[5].rho }}. La moyenne des {{ site.data.stats.mots.paires }} est
   {{ c.correlation_moyenne }}.</p>
   <p>Il n’existe donc pas de « bon joueur » au singulier. Être bon quelque part
   ne dit rien de ce qu’on vaut ailleurs, et un score synthétique ne fait
-  qu’<em>additionner quatre qualités sans rapport</em>. Son premier est celui
+  qu’<em>additionner {{ site.data.stats.mots.facettes }} qualités sans rapport</em>. Son premier est celui
   que la moyenne a favorisé.</p>
 </div>
 
@@ -442,7 +443,7 @@ quand on retire un artefact commun n’était pas une corrélation.</p>
 
 Voilà l’objection qu’on fait à tous les classements : *vos poids sont
 arbitraires*. Elle est juste. Plutôt que de défendre les miens, je les ai tous
-essayés — **{{ rb.tirages }} pondérations tirées au hasard** sur les quatre
+essayés — **{{ rb.tirages }} pondérations tirées au hasard** sur les {{ site.data.stats.mots.facettes }}
 facettes, sans aucune opinion sur leur importance relative, et le classement
 refait à chaque fois.
 
@@ -553,7 +554,7 @@ même artefact du soir du départ qui l’écrasait.</p>
 
 ## Le score n’a jamais vu le palmarès — et il le retrouve
 
-Le contrôle qui manquerait à n’importe quel autre top. Aucune des quatre
+Le contrôle qui manquerait à n’importe quel autre top. Aucune des {{ site.data.stats.mots.facettes }}
 facettes ne sait qui a gagné. Où tombent les vainqueurs ?
 
 <div class="constat">
@@ -576,7 +577,7 @@ partout où l’on a joué.</p>
 
 {% assign be = c.biais_epoque %}
 
-Deux facettes sur quatre — la discrétion, la lecture — se lisent sur les
+Deux facettes sur {{ site.data.stats.mots.facettes }} — la discrétion, la lecture — se lisent sur les
 bulletins, et **le dépouillement des conseils s’effondre à l’époque récente**.
 Les joueurs des dernières saisons sont donc, sur ces deux facettes, ramenés à la
 moyenne faute d’observations. Ce n’est pas une opinion sur leur niveau, c’est
@@ -610,12 +611,12 @@ contraint :
 
 <p class="note">Les limites, en un bloc, parce qu’elles comptent autant que le
 classement. <strong>Les facettes ne se parlent pas</strong> : la moyenne des
-quatre est une convention, pas une grandeur.
+{{ site.data.stats.mots.facettes }} est une convention, pas une grandeur.
 <strong>Les poids sont arbitraires</strong> : {{ rb.socle }} joueur seulement
 tient dans plus de 99 % des pondérations, quand {{ rb.candidats }} peuvent
 entrer dans le top.
 <strong>La stabilité n’est pas établie</strong> — p = {{ t.p }}, à la limite.
-<strong>Deux facettes sur quatre dépendent d’un dépouillement inégal</strong>, et
+<strong>Deux facettes sur {{ site.data.stats.mots.facettes }} dépendent d’un dépouillement inégal</strong>, et
 la troisième — les épreuves — ignore {{ ce.victoires_invisibles }} victoires
 faute de dénominateur.
 <strong>La discrétion reste ambivalente</strong> : n’être jamais écrit peut

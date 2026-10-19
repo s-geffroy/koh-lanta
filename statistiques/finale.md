@@ -50,7 +50,7 @@ la source nomme le vainqueur des poteaux.</p>
   résultat d’un tirage à pile ou face.</p>
   <p>Le privilège de choisir son adversaire ne se voit pas dans les chiffres.
   Il rapporte peut-être quelque chose ; il n’en rapporte pas assez pour se lire
-  sur vingt saisons.</p>
+  sur {{ site.data.stats.mots.poteaux_saisons }} saisons.</p>
 </div>
 
 <p class="note">Sur les {{ p.choix_atteste.effectif }} saisons où une source
@@ -58,7 +58,8 @@ la source nomme le vainqueur des poteaux.</p>
 —, le vainqueur des poteaux l’emporte {{ p.choix_atteste.cas }} fois, soit
 {{ p.choix_atteste.probabilite }} %. L’intervalle
 ({{ p.choix_atteste.bas }} – {{ p.choix_atteste.haut }} %) contient encore 50 %,
-et il faudrait s’en méfier deux fois plutôt qu’une : ces neuf saisons sont les
+et il faudrait s’en méfier deux fois plutôt qu’une : ces
+{{ site.data.stats.mots.choix_atteste }} saisons sont les
 plus récentes, pas un échantillon au hasard.</p>
 
 ## L’ordre d’arrivée à l’orientation

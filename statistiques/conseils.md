@@ -64,7 +64,7 @@ leur doivent rien. Cette page les sépare.
 les autres voix comptent, et quelqu’un sort.
 **{{ c.voix_annulees_par_objet }} voix** dans ce cas, sur
 **{{ c.conseils_avec_objet_joue }} conseils** et
-{{ c.saisons_avec_objet_joue }} saisons — soit plus du double des saisons dont
+{{ c.saisons_avec_objet_joue }} saisons — soit {{ c.rapport_saisons_objets }} fois les saisons dont
 [la page des colliers]({{ '/statistiques/colliers/' | relative_url }}) connaît
 le détail des objets.
 
@@ -92,8 +92,9 @@ les conseils dont le décompte est connu.</p>
 
 {% assign v = site.data.stats.voix_pour_eliminer %}
 Le cas le plus fréquent est **{{ v.mode }} voix**. La distribution est étalée —
-de une à plus de dix — parce que les castings ont grossi : un conseil à seize
-n’a pas le même arithmétique qu’un conseil à vingt-quatre.
+de {{ v.voix_min }} à {{ v.voix_max }} voix — parce que les castings ont grossi : un
+conseil à {{ site.data.stats.mots.casting_min }} n’a pas le même arithmétique qu’un conseil à
+{{ site.data.stats.mots.casting_max }}.
 
 ## Il en faut plus qu’avant, et pourtant on s’accorde moins
 

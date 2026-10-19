@@ -116,8 +116,8 @@ individuelle selon qu’on a gagné la précédente ou non, sur
 Celui qui a gagné la dernière immunité gagne la suivante dans
 **{{ tt.tenant.probabilite }} %** des cas
 ({{ tt.tenant.cas }} sur {{ tt.tenant.effectif }}), contre
-**{{ tt.autres.probabilite }} %** pour n’importe quel autre présent — plus du
-double. On y verrait volontiers un **élan** : la confiance, l’habitude du
+**{{ tt.autres.probabilite }} %** pour n’importe quel autre présent —
+{{ tt.rapport }} fois plus. On y verrait volontiers un **élan** : la confiance, l’habitude du
 parcours, l’adversaire qui doute.
 
 ### Ce que la force explique déjà
@@ -196,8 +196,9 @@ le lien entre force et parcours est indiscernable de zéro.
 épreuve individuelle réservée à un sous-groupe — duel, retour d’exil — est
 comptée comme ouverte à tous, ce qui sous-estime les forces des vainqueurs
 concernés. Le modèle suppose une force constante sur toute la carrière, alors
-qu’un aventurier revenu six ans plus tard n’a plus le même corps. Enfin cinq
-saisons n’ont aucun bilan d’épreuves (s03, s09, s12, s14, sp2) et
+qu’un aventurier revenu six ans plus tard n’a plus le même corps. Enfin
+{{ site.data.stats.mots.saisons_sans_bilan }} saisons n’ont aucun bilan d’épreuves
+({{ site.data.stats.epreuves.saisons_sans_donnee | join: ", " }}) et
 {{ f.epreuves_ecartees_saison }} épreuves sont écartées parce que leur saison
 est trop mal documentée pour reconstruire un plateau.</p>
 

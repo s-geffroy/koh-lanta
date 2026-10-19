@@ -133,7 +133,7 @@ l’intérieur de chaque conseil.</p>
 <p class="note"><strong>Cette section a été écrite deux fois trop vite.</strong>
 Elle concluait d’abord « non concluant », sur une p ajustée de 0,077. Les
 <a href="{{ '/sources/' | relative_url }}">bulletins sans votant</a> — vote noir,
-pénalité, malédiction — ont rendu cinquante-huit conseils dépouillés, et le test
+pénalité, malédiction — ont rendu des conseils au dépouillement complet, et le test
 descend à {{ td.p_ajustee }}. La section a alors écrit « retenu » : c’était
 faux, le seuil n’est pas franchi. Les couples de même département restent
 rares dans un camp de huit, et le test manque de bulletins pour trancher.</p>
@@ -157,8 +157,8 @@ bandeau de départ, sur les seuls conseils mixtes.</p>
   quelqu’un du camp d’origine de leur auteur. Le simple partage des cibles en
   prévoit <b>{{ t.attendu }} %</b>.</p>
   <p>{{ t.ecart_types }} écarts-types, p ajustée {{ t.p_ajustee }}. On écrit le
-  nom d’un ancien coéquipier <b>un quart de fois moins souvent</b> qu’on ne le
-  devrait.</p>
+  nom d’un ancien coéquipier <b>{{ t.ecart_relatif }} % moins souvent</b> qu’on ne
+  le devrait.</p>
   <p>Le bandeau de départ n’existe plus. Il protège encore.</p>
 </div>
 

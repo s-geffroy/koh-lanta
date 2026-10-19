@@ -16,7 +16,7 @@ d’œil. Voici la grille complète.
 <p class="note">Cette grille n’est pas qu’un inventaire : elle explique
 pourquoi certains aventuriers sont mieux mesurés que d’autres. Le
 <a href="{{ '/statistiques/top/' | relative_url }}">classement des joueurs</a>
-en dépend directement — deux de ses quatre facettes ne se lisent que sur un
+en dépend directement — deux de ses {{ site.data.stats.mots.facettes }} facettes ne se lisent que sur un
 conseil dépouillé, et il publie le décompte période par période plutôt que de
 faire comme si la couverture était uniforme.</p>
 
@@ -75,7 +75,7 @@ existe ou n’existe pas ; les autres portent une part. Sur écran étroit, le
 tableau défile horizontalement ; la colonne des éditions reste en place.</p>
 
 <p class="note"><strong>« Sans objet » n’est pas « manquant ».</strong> Une
-saison d’avant 2011 n’a pas de collier d’immunité : la case est hachurée, pas
+saison d’avant {{ site.data.stats.general.premiere_annee_collier }} n’a pas de collier d’immunité : la case est hachurée, pas
 vide. De même pour les éditions spéciales, dont la réunification n’est pas
 mesurée, et pour les saisons sans ambassade. Confondre les deux ferait passer
 une règle du jeu pour une lacune.</p>
@@ -88,7 +88,8 @@ donnée d’un poids égal, y compris les types qui ne concernent qu’une parti
 saisons. Celui des <a href="{{ '/sources/' | relative_url }}">sources</a>,
 {{ site.data.stats.completude.part_remplie }} %, compte les valeurs une par une
 sur les {{ site.data.stats.completude.participations }} participations : une
-édition de vingt-quatre aventuriers y pèse plus qu’une de seize. Le second est
+édition de {{ site.data.stats.mots.casting_max }} aventuriers y pèse plus qu’une de
+{{ site.data.stats.mots.casting_min }}. Le second est
 plus haut parce qu’il ne compte que ce qui se mesure par personne — ni les
 conseils, ni les épreuves, ni les audiences.</p>
 
@@ -150,7 +151,7 @@ dépouillés ne sert à aucune analyse de vote. Inversement, une saison à 70 % 
 les bulletins sont complets vaut beaucoup pour
 [les alliances]({{ '/statistiques/alliances/' | relative_url }}).
 
-<p class="note"><strong>Deux éditions annulées</strong> — celles de 2013 et de
-2018, interrompues en tournage — ne figurent pas dans la grille : elles n’ont ni
+<p class="note"><strong>{{ site.data.stats.mots.saisons_annulees_maj }} éditions annulées</strong> —
+celles de {{ site.data.stats.general.annees_annulees_texte }}, interrompues en tournage — ne figurent pas dans la grille : elles n’ont ni
 casting complet ni résultat, et les compter à zéro fausserait toutes les
 moyennes.</p>

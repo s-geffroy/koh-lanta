@@ -103,7 +103,7 @@ Et l’un comme l’autre ne se connaissent qu’en cours de jeu. Au casting,
 </table>
 </div>
 
-### Cinq y sont revenus
+### {{ site.data.stats.mots.fantomes_recidivistes_maj }} y sont revenus
 
 Être invisible une saison peut être un accident de casting : une tribu qui
 gagne, un conseil qu’on ne fait pas, un plus gros poisson à sortir. L’être
@@ -128,9 +128,10 @@ gagne, un conseil qu’on ne fait pas, un plus gros poisson à sortir. L’être
   {{ i.nb_fantomes }} participations invisibles, et
   <b>{{ i.fantomes_vainqueurs | size }} fantômes ont gagné leur saison</b> —
   {% for x in i.fantomes_vainqueurs limit: 4 %}{{ x.nom }} à <i>{{ x.titre }}</i>{% unless forloop.last %}, {% endunless %}{% endfor %}
-  et {{ i.fantomes_vainqueurs | size | minus: 4 }} autres.</p>
+  et {{ i.fantomes_vainqueurs_autres }} autres.</p>
   <p>C’est le contre-exemple le plus net à l’idée qu’il faut se faire remarquer
-  pour aller au bout. On peut traverser quinze conseils <b>sans que personne
+  pour aller au bout. On peut traverser
+  {{ site.data.stats.mots.fantome_vainqueur_conseils }} conseils <b>sans que personne
   n’écrive votre nom une seule fois</b>, et repartir avec le chèque.</p>
 </div>
 

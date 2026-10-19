@@ -37,7 +37,7 @@ Ils le sont maintenant : **{{ j.bulletins }} bulletins de jury** sur
   figure parmi les candidats, c’est même
   <b>{{ j.part_quand_disponible }} %</b> — sur
   {{ j.bulletins_avec_bourreau_disponible }} bulletins.</p>
-  <p>Près de deux jurés sur trois couronnent donc celui qui les a sortis. On
+  <p>Ces jurés-là couronnent donc, le plus souvent, celui qui les a sortis. On
   tient la démonstration : le jury récompense l’audace.</p>
 </div>
 
@@ -73,7 +73,7 @@ pas conclure.</p>
   <p><b>Avoir voté avec le juré rapporte davantage encore.</b> Chaque conseil
   passé du même côté multiplie la cote par <b>{{ c1.rapport }}</b>
   ({{ c1.bas }} à {{ c1.haut }}, p = {{ c1.p }}). Sur cinq conseils partagés,
-  cela fait plus que doubler les chances.</p>
+  la cote est multipliée par {{ c1.cinq_conseils }}.</p>
 </div>
 
 Le jury final ne juge donc ni le parcours ni le mérite : **il solde les

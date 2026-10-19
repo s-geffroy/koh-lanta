@@ -143,7 +143,7 @@ qui. Voici les paires elles-mêmes — celles qui, sur au moins
 ce tableau : deux personnes ne se comparent que sur les conseils où
 <em>toutes deux</em> ont voté <em>et</em> dont le dépouillement est complet.
 {{ du.paires }} paires seulement franchissent le seuil de {{ du.seuil }} conseils
-communs, sur des milliers possibles. Un duo absent d’ici n’est pas un duo
+communs, sur {{ site.data.stats.general.paires_possibles_texte }} possibles. Un duo absent d’ici n’est pas un duo
 faible : c’est le plus souvent un duo qu’on ne peut pas mesurer.</p>
 
 ## La trahison protège moins qu’on ne croit — parce qu’elle est rare
@@ -194,8 +194,8 @@ au sort, à composition de camps identique.</p>
   <p>{{ dt.observe }} enchaînements observés contre {{ dt.attendu }} attendus,
   <b>{{ dt.ecart_types }} écarts-types</b>, p ajustée {{ dt.p_ajustee }}.</p>
   <p>Les sorties d’après-fusion ne se répartissent pas au hasard entre les deux
-  anciens camps : <b>elles se suivent</b>. Le bandeau qu’on a porté les six
-  premiers épisodes décide encore de l’ordre dans lequel on part.</p>
+  anciens camps : <b>elles se suivent</b>. Le bandeau qu’on a porté les
+  {{ site.data.stats.mots.episode_fusion }} premiers épisodes décide encore de l’ordre dans lequel on part.</p>
 </div>
 
 <div class="tableau-large">
@@ -220,8 +220,9 @@ au sort, à composition de camps identique.</p>
 </div>
 
 <p class="note">Chaque lettre est le bandeau de départ d’un sortant, dans
-l’ordre : <code>J</code> pour jaune, <code>R</code> pour rouge. Sept sorties
-jaunes d’affilée en 2021 ne prouvent rien à elles seules — c’est l’accumulation
+l’ordre : <code>J</code> pour jaune, <code>R</code> pour rouge.
+{{ site.data.stats.mots.serie_decimation_maj }} sorties jaunes d’affilée en
+{{ de.detail[0].annee }} ne prouvent rien à elles seules — c’est l’accumulation
 sur {{ de.saisons }} saisons qui fait le résultat.</p>
 
 <p class="note"><strong>Ce que l’alliance vaut, en probabilité de survie.</strong>

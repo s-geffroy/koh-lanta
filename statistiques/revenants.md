@@ -101,8 +101,8 @@ longévité auquel ils appartiennent.</p>
 
 Le cinquième qui va le plus loin est rappelé
 **{{ rp.par_survie[4].probabilite }} %** du temps, contre
-**{{ rp.par_survie[0].probabilite }} %** pour celui qui sort le plus tôt : plus
-de vingt fois moins. Le tableau des sorts, ci-dessus, ne dit peut-être rien de
+**{{ rp.par_survie[0].probabilite }} %** pour celui qui sort le plus tôt :
+{{ rp.rapport_survie }} fois moins. Le tableau des sorts, ci-dessus, ne dit peut-être rien de
 plus que cela — un éliminé aux poteaux est allé loin par définition.
 
 ### Ce qui reste quand la durée est tenue fixe
@@ -137,7 +137,7 @@ souvent, toutes les autres variables tenues fixes.</p>
   p {{ rp.coefficients[3].p }}. La production rappelle plutôt les jeunes, et ce
   n’est pas parce qu’ils vont plus loin : c’est justement ce que le modèle tient
   fixe. [Âge et longévité]({{ '/statistiques/longevite/' | relative_url }}) montre
-  d’ailleurs que ce sont les 30-34 ans qui durent le plus.</p>
+  d’ailleurs que ce sont les {{ site.data.stats.age_survie_max }} qui durent le plus.</p>
   <p><b>Le sexe, non</b> : cote multipliée par {{ rp.coefficients[2].rapport }},
   intervalle {{ rp.coefficients[2].bas }} à {{ rp.coefficients[2].haut }}. Le
   rappel est aussi paritaire que le casting — et
@@ -148,7 +148,7 @@ souvent, toutes les autres variables tenues fixes.</p>
   donc — mais
   l’intervalle ({{ rp.coefficients[1].bas }} à {{ rp.coefficients[1].haut }})
   contient 1. Le tableau des sorts dit pourquoi : les deux dernières lignes
-  réunissent quelques dizaines d’abandons et <b>un seul</b> retour. On voit la
+  réunissent {{ rp.abandons_derniers }} abandons et <b>{{ site.data.stats.mots.retours_abandon }} seul</b> retour. On voit la
   direction, pas l’ampleur.</p>
 </div>
 
@@ -216,7 +216,7 @@ en un nom.
 </ul>
 
 <div class="constat">
-  <p>En vingt-cinq ans, <b>{{ vm | size }} personne</b> a gagné deux fois :
+  <p>En {{ site.data.stats.mots.etendue_annees }} ans, <b>{{ vm | size }} personne</b> a gagné deux fois :
   {% for v in vm %}<b>{{ v.nom }}</b>, {{ v.editions | join: " et " }}{% unless forloop.last %} ; {% endunless %}{% endfor %}.
   {{ r.titres_distincts }} vainqueurs distincts pour
   {{ r.titres_total }} titres — l’écart, c’est elle.</p>
@@ -249,7 +249,7 @@ Ce que sont devenues leurs participations d’après-titre :
 l’autre bout. Revenir avec un titre, ce n’est pas revenir avec un avantage :
 c’est revenir avec une <strong>cible</strong>. Le conseil s’en charge dans la
 grande majorité des cas, et la seule à s’en être extraite deux fois l’a fait à
-treize ans d’intervalle.</p>
+{{ site.data.stats.mots.intervalle_titres }} ans d’intervalle.</p>
 
 {% if r.vainqueurs_en_jeu > 0 %}
 <p class="note"><strong>Et ce chiffre peut tomber.</strong>
@@ -257,9 +257,10 @@ treize ans d’intervalle.</p>
 course</strong> dans l’édition en cours de diffusion, qui n’entre dans aucun
 calcul de ce site tant qu’elle n’est pas terminée — une saison sans issue
 connue ne peut pas compter. Si l’un d’eux l’emporte, « une seule personne a
-gagné deux fois » cessera d’être vrai, et cette page le dira. Une troisième y
-était engagée et vient d’en sortir : le compte se met à jour à chaque
-rafraîchissement de la source, il n’est pas écrit à la main.</p>
+gagné deux fois » cessera d’être vrai, et cette page le dira.
+{% if r.vainqueurs_sortis_texte != "" %}{{ r.vainqueurs_sortis_texte }}.{% endif %}
+Le compte se met à jour à chaque rafraîchissement de la source, il n’est pas
+écrit à la main.</p>
 {% endif %}
 
 ## Les plus longues carrières
@@ -309,7 +310,7 @@ En tête, **{{ r.duos[0].a }} et {{ r.duos[0].b }}**, qui ont joué
 
 <p class="note">Le biais se retrouve tel quel dans un modèle multivarié : à
 âge, sexe, métier et saison identiques, un aventurier déjà venu est éliminé
-trois fois moins vite, et c’est le plus gros coefficient du modèle
+{{ site.data.stats.modeles.equilibre.cox.deja_venu_inverse }} fois moins vite, et c’est le plus gros coefficient du modèle
 (<a href="{{ '/statistiques/equilibre/' | relative_url }}">Le jeu tenu serré</a>).
 Aucun contrôle statistique ne répare une sélection faite sur la variable même
 qu’on étudie.</p>

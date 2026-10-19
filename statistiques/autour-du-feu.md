@@ -117,8 +117,9 @@ moins représenté du camp et partir quand il est le plus représenté, contre
 </div>
 
 [Jaune contre rouge]({{ '/statistiques/tribus/' | relative_url }}) montre que la
-couleur de départ ne décide **rien** du palmarès : douze victoires jaunes, douze
-rouges. Les deux résultats ne se contredisent pas, ils se complètent — et
+couleur de départ ne décide **rien** du palmarès :
+{{ site.data.stats.mots.victoires_jaunes }} victoires jaunes,
+{{ site.data.stats.mots.victoires_rouges }} rouges. Les deux résultats ne se contredisent pas, ils se complètent — et
 ensemble ils disent quelque chose de précis :
 
 > **Le bandeau ne dit pas qui gagne. Il dit qui part, dès qu’on se retrouve du
@@ -185,8 +186,8 @@ ensuite fait basculer — des libellés « Ugo Lartiche Ugo » qui ne se rattach
 à personne, quarante-quatre éliminations revenues — et la page a écrit qu’il
 n’était plus retenu. Une seconde réparation vient de le rendre : les
 <a href="{{ '/sources/' | relative_url }}">bulletins sans votant</a> — vote noir,
-pénalité, malédiction — n’étaient comptés nulle part, et cinquante-huit conseils
-dépouillés en dépendaient. Avec eux, l’écart se creuse et la p ajustée retombe à
+pénalité, malédiction — n’étaient comptés nulle part, et des conseils dépouillés
+en dépendaient. Avec eux, l’écart se creuse et la p ajustée retombe à
 {{ ts.p_ajustee }}. <strong>Trois états pour un seul fait : ce n’est pas le jeu
 qui a changé, c’est ce que nous avions le droit d’en dire.</strong> Une page qui
 ne raconte que le dernier état laisse croire à une certitude qui n’existe
@@ -258,7 +259,7 @@ n’en sort pas.</p>
 {% assign cw = f.confort | first %}
 {% assign cn = f.confort | last %}
 
-L’idée court depuis vingt-cinq ans : gagner le confort ferait de vous une cible
+L’idée court depuis {{ site.data.stats.mots.etendue_annees }} ans : gagner le confort ferait de vous une cible
 le soir même. [Les épreuves]({{ '/statistiques/epreuves/' | relative_url }}) la
 testent sur les **bulletins**. Voici sa version en sortie.
 
@@ -288,8 +289,8 @@ de l’épisode et partir quand on n’a rien gagné.</p>
   conseils tribaux au dépouillement incomplet, on ignore qui était là — ils sont
   écartés, et [la complétude]({{ '/completude/' | relative_url }}) montre que
   cela concerne surtout les saisons récentes.</p>
-  <p><b>Quatre tests, deux retenus</b> : le bandeau et le sexe minoritaires. Les
-  deux autres sont publiés comme non concluants, avec leur écart et leur
+  <p><b>{{ site.data.stats.mots.autour_tests_maj }} tests, {{ site.data.stats.mots.autour_retenus }} retenus</b> : le bandeau et le sexe minoritaires. Les
+  autres sont publiés comme non concluants, avec leur écart et leur
   intervalle — ils ne sont pas cachés, ils sont le prix de la liste déclarée
   d’avance. Le sexe minoritaire a changé deux fois de statut au fil des
   réparations de données : c’est précisément à cela que sert une liste arrêtée

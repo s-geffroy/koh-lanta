@@ -17,8 +17,9 @@ données : le nom cité par le wiki et l’épreuve relevée dans le déroulé d
 saison ne se raccordent que dans
 **{{ en.raccord.part_raccordee }} %** des cas
 ({{ en.raccord.epreuves_raccordees }} sur {{ en.raccord.epreuves_relevees }}).
-Quatre noms n’ont aucune apparition datée — « Poteaux » en fait partie, alors
-que c’est la plus connue de toutes — et dix-sept n’ont aucun vainqueur nommé.
+{{ site.data.stats.mots.noms_sans_apparition_maj }} noms n’ont aucune apparition datée — « Poteaux » en fait
+partie, alors que c’est la plus connue de toutes — et
+{{ site.data.stats.mots.noms_sans_vainqueur }} n’ont aucun vainqueur nommé.
 
 Les épreuves ci-dessous sont celles dont on sait à la fois **quand** elles ont
 été courues et **par qui** elles ont été gagnées. Les autres restent comptées
