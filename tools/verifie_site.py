@@ -499,7 +499,8 @@ def controler_accents(c):
         lu = [str(entete.get(k) or "") for k in ("title", "description", "chapeau")]
         corps = sans_commentaires(texte[m.end():] if m else texte)
         corps = re.sub(r"\{%.*?%\}|\{\{.*?\}\}", " ", corps, flags=re.S)
-        corps = re.sub(r"<[^>]+>|\]\([^)]*\)|`[^`]*`", " ", corps)
+        # ... ni les attributs kramdown, « {: .references} ».
+        corps = re.sub(r"<[^>]+>|\]\([^)]*\)|`[^`]*`|\{:[^}]*\}", " ", corps)
         examiner(os.path.relpath(chemin, RACINE), " ".join(lu) + " " + corps)
 
     for origine, mots in fautes:
