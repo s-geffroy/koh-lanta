@@ -1496,6 +1496,9 @@ def champs_d_affichage(stats):
         restants = [l["restants"] for l in f["lignes"]
                     if l["casting"] == f[f"casting_{borne}"]]
         f[f"restants_casting_{borne}"] = float(median(restants))
+    # Les bornes de la serie, que le texte ecrivait « de 2001 a 2026 ».
+    annees = [l["annee"] for l in f["lignes"]]
+    f["annee_min"], f["annee_max"] = min(annees), max(annees)
     # /completude/ : chaque case affiche sa part arrondie a l'unite, et la
     # derniere colonne prend le niveau du score de la ligne.
     for ligne in stats["completude_saisons"]["lignes"]:

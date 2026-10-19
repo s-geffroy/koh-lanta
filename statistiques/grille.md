@@ -40,7 +40,7 @@ fusion tombe, et par le nombre de joueurs qu’elle laisse en jeu.</p>
   {{ f.pente_episode.p }}. Sur toute la croissance observée, de
   {{ f.casting_min }} à {{ f.casting_max }} personnes, cela fait
   <b>{{ f.croissance_episode_texte }}</b>.
-  La médiane reste l’épisode {{ f.episode_median }}, de 2001 à 2026.</p>
+  La médiane reste l’épisode {{ f.episode_median }}, de {{ f.annee_min }} à {{ f.annee_max }}.</p>
   <p>Le nombre de joueurs restants, lui, bouge de
   <b>{{ f.pente_restants.pente }}</b> ({{ f.pente_restants.bas }} à
   {{ f.pente_restants.haut }}) — soit

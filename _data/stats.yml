@@ -25102,6 +25102,8 @@ modeles:
     croissance_episode_texte: 0,9 épisode
     restants_casting_min: 10
     restants_casting_max: 15
+    annee_min: 2001
+    annee_max: 2026
   ruptures:
     saisons: 26
     serie:
