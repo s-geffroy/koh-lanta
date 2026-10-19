@@ -15,6 +15,8 @@ from graphiques import (arcs, barres_horizontales, barres_groupees,  # noqa: E40
                         frise, halteres, nuage, peigne, pentes,
                         petits_multiples, plan, ENCRE_DOUCE, ENCRE_MUETTE, SERIES, TRIBUS,
                         survie)
+sys.path.insert(0, os.path.join(RACINE, "tools", "extraction"))
+from csp import libelles as libelles_metiers                        # noqa: E402
 
 NOM_COULEUR = {"jaune": "Jaune", "rouge": "Rouge", "bleu": "Bleu", "vert": "Vert",
                "orange": "Orange", "violet": "Violet", "noir": "Noire", "blanc": "Blanche"}
@@ -33,6 +35,11 @@ LISIBLE = {"metier:": "métier : ", "couleur:": "bandeau : ",
 
 
 def _lisible(nom):
+    # Un metier s'affiche par le libelle de la taxonomie (tools/csp.yml) : son
+    # code est un identifiant sans accents, « sante », « arts_medias ».
+    if nom.startswith("metier:"):
+        code = nom[len("metier:"):]
+        return "métier : " + libelles_metiers().get(code, code.replace("_", " "))
     for brut, propre in LISIBLE.items():
         if nom.startswith(brut) and brut.endswith(":"):
             return propre + nom[len(brut):].replace("_", " ")
@@ -240,7 +247,7 @@ def main():
               "valeur": p_["part_moyenne"],
               "sous_titre": f'{p_["conseils"]} conseils',
               "detail": f'{p_["periode"]} : {p_["part_moyenne"]} % des votants '
-                        f'ecrivent le nom de l\'elimine'}
+                        f'écrivent le nom de l\'éliminé'}
              for p_ in per],
             titre="Part des votants qui écrivent le nom de l'éliminé",
             description="Accord du camp au moment du vote, par tranche de cinq ans.",
@@ -567,15 +574,15 @@ def main():
                   "details": [f'{x["effectif"]} des {ind["nb_fantomes"]} fantômes, '
                               f'soit {x["part_fantomes"]} %',
                               f'{x["part_endurants"]} % des {ind["endurants"]} '
-                              f'aventuriers ayant traverse autant de conseils']}
+                              f'aventuriers ayant traversé autant de conseils']}
                  for x in ind["fantomes_issue"]],
                 [{"nom": "Les « fantômes »", "couleur": SERIES[0]},
                  {"nom": "Ceux qui ont tenu autant", "couleur": SERIES[1]}],
                 titre="Ce que devient un aventurier que personne ne vise",
                 description="Sort final des aventuriers n'ayant reçu aucune voix, "
-                            "compare a ceux qui ont traverse autant de conseils "
-                            "qu'eux -- et non a l'ensemble, qui melangerait le "
-                            "fait de n'etre pas vise et celui d'aller loin.",
+                            "comparé à ceux qui ont traversé autant de conseils "
+                            "qu'eux — et non à l'ensemble, qui mélangerait le "
+                            "fait de n'être pas visé et celui d'aller loin.",
                 unite=" %", marge_gauche=210))
 
         if ind.get("menace_par_sort"):
@@ -1020,9 +1027,9 @@ def figures_des_modeles(stats):
               "couleur": couleurs[p["groupe"] % len(couleurs)]}
              for p in casting["carte"]],
             titre="Le plan des castings",
-            description="Chaque point est un aventurier, place selon les deux "
-                        "dimensions qui separent le plus les profils. Les "
-                        "etiquettes marquent les modalites.",
+            description="Chaque point est un aventurier, placé selon les deux "
+                        "dimensions qui séparent le plus les profils. Les "
+                        "étiquettes marquent les modalités.",
             reperes=[r for r in (casting.get("modalites") or [])
                      if abs(r["x"]) + abs(r["y"]) > 0.9][:14],
             x_titre=f'axe 1 — {casting["inertie_axes"][0]} % de l\u2019information',
@@ -1075,9 +1082,9 @@ def figures_des_modeles(stats):
                         f'{d["victoires"]} victoires en {d["disputees"]} épreuves'}
              for d in f["classement"][:16]],
             titre="La force estimée, avec son incertitude",
-            description="Force latente de chaque athlete, corrigee du nombre "
-                        "d'epreuves disputees et du niveau des adversaires. Le "
-                        "segment est l'intervalle a 95 %.",
+            description="Force latente de chaque athlète, corrigée du nombre "
+                        "d'épreuves disputées et du niveau des adversaires. Le "
+                        "segment est l'intervalle à 95 %.",
             largeur=880, marge_gauche=190))
     if f.get("pentes"):
         ecrire("force-pentes.svg", pentes(
@@ -1085,8 +1092,8 @@ def figures_des_modeles(stats):
               "rang_droite": d["rang_force"]}
              for d in f["pentes"]],
             titre="Le classement brut, et le classement corrigé",
-            description="A gauche le nombre de victoires, a droite la force "
-                        "estimee. Une pente montante signale un athlete que le "
+            description="À gauche le nombre de victoires, à droite la force "
+                        "estimée. Une pente montante signale un athlète que le "
                         "total brut sous-estime.",
             gauche="au nombre de victoires", droite="à la force estimée",
             largeur=760, marge=196))
@@ -1104,7 +1111,7 @@ def figures_des_modeles(stats):
               "estimation": fj["voix"]["age"]["estimation"],
               "bas": fj["voix"]["age"]["bas"], "haut": fj["voix"]["age"]["haut"]}],
             titre="Ce que la force change aux bulletins reçus",
-            description="Rapports de taux, a exposition egale. Un intervalle qui "
+            description="Rapports de taux, à exposition égale. Un intervalle qui "
                         "traverse 1 veut dire qu'on ne peut pas conclure.",
             reference=1.0, largeur=740, marge_gauche=268,
             note="La ligne verticale marque « aucun effet »."))
@@ -1123,7 +1130,7 @@ def figures_des_modeles(stats):
             description="Rapports de risque d'élimination d'un modèle de durée stratifié par saison. Au-dessus de 1, on sort plus vite.",
             reference=1.0, largeur=780, marge_gauche=224,
             note=f'{cox["effectif"]} participations · {cox["eliminations"]} '
-                 f'eliminations · {cox["censures"]} sorties censurees'))
+                 f'éliminations · {cox["censures"]} sorties censurées'))
 
     # --- E. les alliances --------------------------------------------------
     al = m.get("alliances") or {}
@@ -1171,9 +1178,9 @@ def figures_des_modeles(stats):
                         f'{r["attendu"]} attendus, soit ×{r["indice"]}'}
              for r in geo["regions"]],
             titre="D'où viennent les aventuriers, région par région",
-            description="Indice observe divise par attendu. A 1, la region fournit "
+            description="Indice observé divisé par attendu. À 1, la région fournit "
                         "exactement sa part de population. L'intervalle est celui "
-                        "de l'effectif observe.",
+                        "de l'effectif observé.",
             reference=1.0, largeur=800, marge_gauche=230,
             note=f'{geo["participations"]} aventuriers localisés · population de '
                  f'20 à 59 ans, année de chaque saison'))
@@ -1228,7 +1235,7 @@ def figures_des_modeles(stats):
                           f'encore en jeu à la fusion'}
                for l in fu["lignes"]],
             titre="La fusion suit la grille, pas le nombre de joueurs",
-            description="Chaque saison figure deux fois : par l'episode ou la "
+            description="Chaque saison figure deux fois : par l'épisode où la "
                         "fusion tombe, et par le nombre de joueurs qu'elle laisse. "
                         "Le premier ne bouge pas quand le casting grossit ; le "
                         "second suit.",
@@ -1253,7 +1260,7 @@ def figures_des_modeles(stats):
             annees,
             titre=f'Les deux séries qui basculent en {ru["annee_rupture"]}',
             description="Taille du casting et nombre de conseils, saison par "
-                        "saison. La rupture detectee separe les deux regimes.",
+                        "saison. La rupture détectée sépare les deux régimes.",
             largeur=880, hauteur=320))
 
     if ru.get("profil"):
@@ -1670,7 +1677,7 @@ def figures_des_modeles(stats):
              {"nom": "1 / nombre de présents", "couleur": SERIES[5]}],
             titre="Le risque monte-t-il, ou le camp se vide-t-il ?",
             description="Risque de sortir à un conseil, par dixième de saison, "
-                        "compare au simple 1/nombre-de-presents.",
+                        "comparé au simple 1/nombre-de-présents.",
             unite=" %", largeur=760, marge_gauche=110))
 
 

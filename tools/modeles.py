@@ -979,19 +979,19 @@ def force_et_jeu(par_saison, parts, conseils, epreuves, bloc_force):
     return {
         "effectif": len(lignes),
         "voix": {
-            "libelle": "Bulletins recus, par epreuve disputee",
+            "libelle": "Bulletins reçus, par épreuve disputée",
             "force": _coef(poisson, ic_p, 1, True),
             "femme": _coef(poisson, ic_p, 2, True),
             "age": _coef(poisson, ic_p, 3, True),
             "lecture": "Rapport de taux par doublement de la force. Au-dessus de "
-                       "1, un athlete attire davantage de bulletins.",
+                       "1, un athlète attire davantage de bulletins.",
         },
         "survie": {
             "libelle": "Part de la saison tenue",
             "force": _coef(lineaire, ic_l, 1, False),
             "femme": _coef(lineaire, ic_l, 2, False),
             "age": _coef(lineaire, ic_l, 3, False),
-            "lecture": "Points de pourcentage gagnes quand la force double.",
+            "lecture": "Points de pourcentage gagnés quand la force double.",
         },
     }
 
@@ -1391,7 +1391,7 @@ def alliances(par_saison, parts, conseils):
 
     test = _test(
         "persistance_alliances", "La persistance des alliances",
-        "Deux aventuriers qui ont vote ensemble votent-ils encore ensemble au "
+        "Deux aventuriers qui ont voté ensemble votent-ils encore ensemble au "
         "conseil suivant, plus souvent que le hasard ne le voudrait ?",
         100.0 * (p_ensemble - p_contre), 100.0 * nulle, unite="points de %",
         lecture="Écart entre deux probabilités : voter ensemble après avoir voté ensemble, et voter ensemble après avoir voté séparément. À zéro, chaque conseil repart de zéro et il n'y a pas d'alliance.")

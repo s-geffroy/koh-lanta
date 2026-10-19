@@ -400,10 +400,18 @@ popularite telespectateurs episode episodes etendue reunification deroulement
 resultat resultats categorie categories reference references annulee annulees
 elimination eliminations elimine elimines eliminee eliminees
 moitie moitiee sejour sejours defaite disqualifie
+ecrivent etiquette etiquettes modalite modalites separent separe athlete athletes
+corrigee corrigees disputee disputees epreuve epreuves egale egales estimee
+estimees censuree censurees melangerait etre region regions present presents
+presente presentes detectee detectees regime regimes sante medias
+recu recus recue recues gagnes
 """
 MOTS_SUSPECTS = set(MOTS_SANS_ACCENT.split())
 RE_MOT = re.compile(r"[A-Za-z][A-Za-z'-]*")
-RE_BALISE_TEXTE = re.compile(r"<(title|desc)>(.*?)</\1>", re.S)
+# Tout le texte LU d'une figure : les infobulles et la description, mais aussi
+# les etiquettes posees sur le dessin (<text>, <tspan>). Les seules
+# <title>/<desc> laissaient passer « 1ᵉ une fois corrige ».
+RE_BALISE_TEXTE = re.compile(r"<(title|desc|text|tspan)\b[^>]*>([^<]*)", re.S)
 
 
 def controler_accents(c):

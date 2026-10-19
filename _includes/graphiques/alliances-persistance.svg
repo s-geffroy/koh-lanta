@@ -1,7 +1,7 @@
 <figure class="figure">
 <svg class="graphique" viewBox="0 0 680 250" role="img" preserveAspectRatio="xMidYMid meet" aria-label="La persistance des alliances">
   <title>La persistance des alliances</title>
-  <desc>Deux aventuriers qui ont vote ensemble votent-ils encore ensemble au conseil suivant, plus souvent que le hasard ne le voudrait ?</desc>
+  <desc>Deux aventuriers qui ont voté ensemble votent-ils encore ensemble au conseil suivant, plus souvent que le hasard ne le voudrait ?</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
   <g class="marque"><title>6 tirages sur 2000 entre -3,66 et -2,4</title><rect x="68.7" y="202.5" width="20.3" height="1.5" fill="var(--serie-3)" opacity="0.45"/></g>
   <g class="marque"><title>56 tirages sur 2000 entre -2,4 et -1,13</title><rect x="90.5" y="190.1" width="20.3" height="13.9" fill="var(--serie-3)" opacity="0.45"/></g>

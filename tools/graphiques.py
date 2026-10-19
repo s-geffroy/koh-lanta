@@ -1549,6 +1549,12 @@ def plan(points, *, titre, description, x_titre="", y_titre="", reperes=None,
     return fig.rendu()
 
 
+def _ordinal_court(n):
+    """Un rang en exposant : « 1ᵉʳ », « 2ᵉ ». Seul le premier s'abrege
+    autrement -- « 1ᵉ » se lisait « unième »."""
+    return f"{n}ᵉʳ" if n == 1 else f"{n}ᵉ"
+
+
 def pentes(lignes, *, titre, description, gauche, droite, largeur=700,
            hauteur_ligne=25, marge=176):
     """Deux classements, et le trait qui relie la meme personne de l'un a l'autre.
@@ -1588,8 +1594,8 @@ def pentes(lignes, *, titre, description, gauche, droite, largeur=700,
         if plat:
             teinte = ENCRE_MUETTE
         yg, yd = y(l["rang_gauche"]), y(l["rang_droite"])
-        info = (f'{l["libelle"]} : {l["rang_gauche"]}\u1d49 au classement brut, '
-                f'{l["rang_droite"]}\u1d49 une fois corrige')
+        info = (f'{l["libelle"]} : {_ordinal_court(l["rang_gauche"])} au classement '
+                f'brut, {_ordinal_court(l["rang_droite"])} une fois corrigé')
         # La pente et SES DEUX ETIQUETTES dans une seule marque. C'est ici que
         # le regroupement sert le plus : suivre un nom d'un bord a l'autre au
         # milieu de seize traits croises etait le seul geste que la figure

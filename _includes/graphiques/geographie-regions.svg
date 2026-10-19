@@ -1,7 +1,7 @@
 <figure class="figure">
 <svg class="graphique" viewBox="0 0 800 540" role="img" preserveAspectRatio="xMidYMid meet" aria-label="D&#x27;où viennent les aventuriers, région par région">
   <title>D&#x27;où viennent les aventuriers, région par région</title>
-  <desc>Indice observe divise par attendu. A 1, la region fournit exactement sa part de population. L&#x27;intervalle est celui de l&#x27;effectif observe.</desc>
+  <desc>Indice observé divisé par attendu. À 1, la région fournit exactement sa part de population. L&#x27;intervalle est celui de l&#x27;effectif observé.</desc>
   <line x1="334.6" y1="26" x2="334.6" y2="488" stroke="var(--encre-douce)" stroke-width="1.4" stroke-dasharray="4 3"/>
   <text x="334.6" y="20.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">1</text>
   <g class="marque"><title>Corse : 6 aventuriers pour 2,3 attendus, soit ×2,66</title><line x1="333.2" y1="53.0" x2="675.0" y2="53.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="453.6" cy="53.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/><text x="220.0" y="53.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Corse</text><text x="720.0" y="53.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">2,66</text></g>

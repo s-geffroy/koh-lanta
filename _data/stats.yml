@@ -23950,7 +23950,7 @@ modeles:
   force_et_jeu:
     effectif: 303
     voix:
-      libelle: Bulletins recus, par epreuve disputee
+      libelle: Bulletins reçus, par épreuve disputée
       force:
         estimation: "0,853"
         bas: "0,741"
@@ -23966,7 +23966,7 @@ modeles:
         bas: "0,954"
         haut: "1,227"
         p: "0,2211"
-      lecture: Rapport de taux par doublement de la force. Au-dessus de 1, un athlete attire davantage
+      lecture: Rapport de taux par doublement de la force. Au-dessus de 1, un athlète attire davantage
         de bulletins.
     survie:
       libelle: Part de la saison tenue
@@ -23985,7 +23985,7 @@ modeles:
         bas: "-4,921"
         haut: "0,791"
         p: "0,1564"
-      lecture: Points de pourcentage gagnes quand la force double.
+      lecture: Points de pourcentage gagnés quand la force double.
   equilibre:
     rattrapage:
       effectif: 116
@@ -24177,7 +24177,7 @@ modeles:
     test:
       cle: persistance_alliances
       libelle: La persistance des alliances
-      question: Deux aventuriers qui ont vote ensemble votent-ils encore ensemble au conseil suivant,
+      question: Deux aventuriers qui ont voté ensemble votent-ils encore ensemble au conseil suivant,
         plus souvent que le hasard ne le voudrait ?
       observe: "28,875"
       attendu: "1,494"
@@ -29177,7 +29177,7 @@ modeles:
     attendu_arrondi: "1,2"
   - cle: persistance_alliances
     libelle: La persistance des alliances
-    question: Deux aventuriers qui ont vote ensemble votent-ils encore ensemble au conseil suivant, plus
+    question: Deux aventuriers qui ont voté ensemble votent-ils encore ensemble au conseil suivant, plus
       souvent que le hasard ne le voudrait ?
     origine: alliances
     observe: "28,875"
