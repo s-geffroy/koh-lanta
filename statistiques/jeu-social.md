@@ -182,8 +182,8 @@ effectivement été éliminée. C’est l’indicateur de qui lit correctement l
 
 <p class="note">Cet indicateur est le plus fragile du site, et il faut le dire :
 il ne se calcule que sur les conseils dont le dépouillement est complet
-<em>et</em> dont l’éliminé a pu être rattaché — quelques dizaines de conseils,
-pas les {{ site.data.stats.conseils.conseils }}. Le classement ci-dessus est
+<em>et</em> dont l’éliminé a pu être rattaché — {{ site.data.stats.conseils.conseils_justesse }} conseils, pas les
+{{ site.data.stats.conseils.conseils }}. Le classement ci-dessus est
 donc indicatif, et penche mécaniquement vers les saisons les mieux documentées.
 Un seuil de six bulletins écarte les cas où une seule bonne intuition
 suffirait à afficher 100 %.</p>

@@ -177,7 +177,8 @@ recouvrirait.</p>
 
 **La dispersion est le résultat.** Le nuage n’a pas de pente marquée : l’âge ne
 prédit pas la longévité. Ce qu’on voit, c’est une bande dense de sorties
-précoces à tous les âges, et des vainqueurs répartis de vingt à cinquante ans.
+précoces à tous les âges, et des vainqueurs répartis de {{ site.data.stats.vainqueurs.age_min }} à
+{{ site.data.stats.vainqueurs.age_max }} ans.
 
 ## Les revenants
 

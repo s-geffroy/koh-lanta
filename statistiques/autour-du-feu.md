@@ -1,12 +1,11 @@
 ---
 layout: page
 title: Sachant qui est autour du feu
-description: "Qui part au conseil de Koh-Lanta, sachant qui est autour du feu : six positions dans le camp, six probabilités, et une règle du jeu comme contrôle."
+description: "Qui part au conseil de Koh-Lanta, sachant qui est autour du feu : six positions dans le camp, et une règle du jeu comme contrôle."
 permalink: /statistiques/autour-du-feu/
 chapeau: >-
   On ne part pas au hasard, mais on ne part pas non plus pour ce qu’on croit.
-  Six positions dans le camp, six probabilités, et une règle du jeu qui sert de
-  contrôle.
+  Six positions dans le camp, et une règle du jeu qui sert de contrôle.
 ---
 
 {% assign m = site.data.stats.modeles %}

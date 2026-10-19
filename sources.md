@@ -258,7 +258,7 @@ l’inverse de ce qu’elle concluait.
 Les tables ne désignent les gens que par leur prénom, et une saison en compte
 parfois deux qui le partagent : deux Léa aux *Chasseurs d’immunité*, deux Cécile
 à *La Tribu maudite*, deux Jérôme à *La Revanche des 4 Terres*, deux Philippe à
-*La Nouvelle Édition*. Aucun de ces noms n’est deviné. Trois choses, et trois
+*La Nouvelle Édition*. Aucun de ces noms n’est deviné. Cinq choses, et cinq
 seulement, peuvent trancher — et toutes viennent de la source ou de la structure
 du jeu :
 
@@ -306,13 +306,17 @@ sources contre une, et la couleur pour arbitre.</p>
 
 ## Éliminé, puis revenu
 
-Cinq conseils donnent pour éliminé quelqu’un qui a fini la saison. Ce n’est pas
-une faute de lecture : **quatre sont de vrais retours en jeu**, et les sources
-les racontent. Panama consacre à l’un d’eux le titre de son neuvième épisode —
-« <i>Le retour de Linda</i> ». Au <i>Feu sacré</i>, Tania est votée deux fois et
-revient deux fois, une fois par un duel, une fois pour remplacer un abandon. À
-<i>La Nouvelle Édition</i>, Martin sort dernier d’une épreuve d’immunité et
-revient par un duel à l’épisode suivant.
+{{ site.data.stats.conseils.retours_en_jeu }} conseils donnent pour éliminé
+quelqu’un qui a fini la saison. Ce n’est pas une faute de lecture : **ce sont de
+vrais retours en jeu**, et les sources les racontent. Panama consacre à l’un
+d’eux le titre de son neuvième épisode — « <i>Le retour de Linda</i> ». Au
+<i>Feu sacré</i>, Tania est votée deux fois et revient deux fois, une fois par
+un duel, une fois pour remplacer un abandon. À <i>La Nouvelle Édition</i>, Martin
+sort dernier d’une épreuve d’immunité et revient par un duel à l’épisode
+suivant. Deux d’entre eux sont allés jusqu’à la victoire : Christina, à
+<i>Palau</i>, que la source anglaise dit « revenue en jeu », et André, à
+<i>Fidji</i>, éliminé avec son binôme puis réintégré par un duel. Ces deux-là,
+le site les a longtemps tenus pour une erreur de la source.
 
 Le jeu de données ne sait pas dire « éliminé puis revenu » : `sort` ne retient
 que le point d’arrivée. Tant qu’on ne le savait pas, **la première élimination
@@ -595,8 +599,8 @@ Cette règle est juste pour une saison terminée. Elle est **fausse pour une
 saison en cours** : *All Stars* était figée à l’état du 27 août 2026, deux
 épisodes, alors que trois avaient été diffusés. Les deux récupérateurs prennent
 désormais une option explicite — `--rafraichir sp8` — et le rafraîchissement a
-livré les éliminations de Moussa et de **Naoil Tita**, l’une des trois
-anciennes gagnantes engagées.
+livré les éliminations de Moussa et de **Naoil Tita**, l’un des trois
+anciens vainqueurs engagés.
 
 ### Trois fichiers de provenance fausse
 
@@ -726,9 +730,10 @@ Ce qui reste, et pourquoi :
   {{ site.data.stats.conseils.saisons_avec_objet_joue }} saisons : c’est une
   information plus pauvre — on ne sait pas de quel objet il s’agit — mais
   beaucoup plus large.
-- **La justesse de vote repose sur une base étroite.** Elle exige un conseil au
-  dépouillement complet <em>et</em> un éliminé rattaché : quelques dizaines de
-  conseils, pas les {{ site.data.stats.conseils.conseils }}. L’indicateur est
+- **La justesse de vote ne porte que sur une partie des conseils.** Elle exige
+  un conseil au dépouillement complet <em>et</em> un éliminé rattaché :
+  {{ site.data.stats.conseils.conseils_justesse }} conseils, pas les
+  {{ site.data.stats.conseils.conseils }}. L’indicateur est
   publié avec sa base, et penche vers les saisons les mieux documentées.
 - **Le vote du jury final n’est pas un conseil.** {{ site.data.stats.jury.saisons }}
   saisons en publient le détail, et les tableaux sources le présentent comme un scrutin
@@ -981,7 +986,7 @@ il ne reste rien — {{ tm.observe_arrondi }} points observés pour
 
 Les données sont extraites, croisées et vérifiées par des scripts Python, puis
 commitées dans le dépôt. Un contrôle d’intégrité refuse tout jeu incohérent :
-une seule victoire par saison, un jour de sortie qui ne dépasse pas la durée de
+autant de vainqueurs que la saison en déclare, un jour de sortie qui ne dépasse pas la durée de
 la saison, une couleur de tribu qui existe bien dans la saison, toute clé
 étrangère résolue.
 

@@ -57,8 +57,8 @@ hasard.</p>
   <p>Avant : <b>{{ a.moyenne_avant_millions }}
   millions</b> de téléspectateurs en moyenne, sur {{ a.avant }} saisons.
   Après : <b>{{ a.moyenne_apres_millions }}
-  millions</b>, sur {{ a.apres }}. Le programme a perdu la moitié de son public
-  en une saison.</p>
+  millions</b>, sur {{ a.apres }}. D’un régime à l’autre, le programme a perdu
+  {{ a.perte_regimes }} % de son public.</p>
 </div>
 
 {% include graphiques/audience-profil.svg %}

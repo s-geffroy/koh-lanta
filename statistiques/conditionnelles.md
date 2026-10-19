@@ -139,7 +139,7 @@ nul.</p>
 dénominateur a grandi.</strong> D’ordinaire un test tombe parce que les données
 manquent. Ici, cinquante-huit conseils dépouillés se sont AJOUTÉS — les
 <a href="{{ '/sources/' | relative_url }}">bulletins sans votant</a> que le jeu
-impose depuis 2017, vote noir, pénalité, malédiction, qu’aucun calcul ne
+impose depuis {{ site.data.stats.conseils.sans_votant.annee_min }}, vote noir, pénalité, malédiction, qu’aucun calcul ne
 comptait — et l’écart est passé de 15,4 points à
 {{ t2.observe_arrondi }}, la p ajustée de 0,040 à {{ t2.p_ajustee }}.
 <strong>L’écart a presque disparu dès qu’on lui a donné les conseils qui lui
@@ -309,10 +309,15 @@ pour la rendre impossible.
 </div>
 
 {% assign jamais = c.par_histoire | where: "modalite", "jamais visé" | first %}
-Le partage utile n’est pas entre « un peu visé » et « beaucoup visé » : il est
-entre **{{ jamais.probabilite }} % pour ceux dont le nom n’est jamais sorti** et
-une vingtaine de pour cent pour tous les autres. Une fois le nom sorti une
-première fois, l’ancienneté de la menace ne change plus grand-chose.
+{% assign h1 = c.par_histoire | where: "modalite", "visé avant, plus la dernière fois" | first %}
+{% assign h2 = c.par_histoire | where: "modalite", "visé la dernière fois seulement" | first %}
+{% assign h3 = c.par_histoire | where: "modalite", "visé la dernière fois, et déjà avant" | first %}
+Le partage utile n’est pas entre « un peu visé » et « beaucoup visé » : il tient
+à la fraîcheur de la menace. Ceux dont le nom n’est jamais sorti partent dans
+**{{ jamais.probabilite }} %** des cas ; ceux qui ont été visés la dernière
+fois, dans **{{ h2.probabilite }} %** et {{ h3.probabilite }} %. Visé seulement
+plus tôt, on retombe à {{ h1.probabilite }} % — et la menace « deux conseils
+plus tard » n’est pas un résultat retenu.
 
 ## Sachant de quel côté on a voté
 
@@ -424,7 +429,8 @@ La question inverse — non plus « sachant mon passé », mais **« sachant qui
 assis autour du feu ce soir »** — est traitée sur
 [Sachant qui est autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }}) :
 le bandeau minoritaire, le sexe minoritaire, le doyen, le gagnant du confort, et
-la seule probabilité conditionnelle du jeu qui vaut exactement zéro.
+la probabilité qui devrait valoir zéro : partir le soir où l’on a gagné
+l’immunité.
 
 La liste complète des tests de ce site, leur correction pour tests multiples et
 ce que chaque modèle ne peut pas établir sont sur

@@ -126,7 +126,7 @@ pic isolé désignerait une année ; ce profil-là est un plateau étalé sur
 Il faut le dire dans ce sens, et pas dans l’autre : **le jeu d’avant n’est pas
 le jeu d’après, et c’est solide** ; **l’année du basculement, elle, n’est pas
 mesurable ici**. La lecture qui reste debout est celle d’une dérive étalée sur
-une décennie, pas d’un changement de grille annoncé un vendredi soir.
+{{ r.fenetre.etendue }} ans, pas d’un changement de grille annoncé un vendredi soir.
 
 <p class="note"><strong>Comment on le sait.</strong> Une version antérieure de
 cette page datait la rupture de 2012 et l’affirmait sans réserve. Deux

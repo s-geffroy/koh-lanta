@@ -199,7 +199,7 @@ aucune.
 <div class="constat">
   <p>En moyenne, <b>{{ cr.moyenne_vainqueur }} voix pour le vainqueur contre
   {{ cr.moyenne_finaliste }} pour le finaliste</b>. L’écart va dans le sens
-  attendu, et il est du simple au double.</p>
+  attendu : le finaliste en reçoit {{ cr.rapport }} fois plus.</p>
   <p>Mais compté couple par couple, il fond : le vainqueur est le moins visé
   dans <b>{{ cr.vainqueur_moins_vise }} cas sur {{ cr.effectif }}</b>,
   contre {{ cr.vainqueur_plus_vise }} fois l’inverse et {{ cr.egalite }}

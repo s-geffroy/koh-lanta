@@ -86,8 +86,8 @@ au-dessus de 1, on trouve la Corse, Provence-Alpes-Côte d’Azur, la
 Nouvelle-Aquitaine, l’Île-de-France, l’Occitanie, Auvergne-Rhône-Alpes — le
 pourtour méditerranéen, la montagne, la façade atlantique et Paris. En dessous,
 le Centre-Val de Loire, les Pays de la Loire, la Bourgogne-Franche-Comté, la
-Bretagne, le Grand Est, les Hauts-de-France : une diagonale du Nord-Ouest et de
-l’Est.
+Bretagne, la Normandie, le Grand Est, les Hauts-de-France : une diagonale du
+Nord-Ouest et de l’Est. L’outre-mer, plus bas encore, se lit à part.
 
 {{ g.regions_hautes | size }} lignes sortent vraiment de leur intervalle par le
 haut, {{ g.regions_basses | size }} par le bas. Ce sont les seules qui se lisent isolément ; le reste du tableau ne vaut
@@ -118,8 +118,9 @@ personnes, cela ne se mesure pas finement. Le résultat solide est ailleurs :
 
 ## Les départements, pour mémoire
 
-Cent départements pour {{ g.participations }} personnes, cela fait quatre
-personnes par département : à ce grain, un indice est un bruit et non un
+{{ g.departements | size }} départements pour {{ g.participations }} personnes,
+cela fait {{ site.data.stats.geographie.par_departement }} personnes par
+département : à ce grain, un indice est un bruit et non un
 résultat. Le tableau est donné parce qu’il se lit, pas parce qu’il conclut.
 {{ g.departements_classes }} départements atteignent un attendu de 1 et sont
 classés.

@@ -186,7 +186,7 @@ pronostiquer personne**. Un écart moyen visible sur cinq cents personnes n’es
 pas une information sur une personne.
 
 <p class="note">Ce que ce résultat ne dit pas. Il ne dit pas que la production
-ne choisit rien : il dit que ce qu’elle choisit n’est <em>pas dans ces quatre
+ne choisit rien : il dit que ce qu’elle choisit n’est <em>pas dans ces
 variables</em>. Un profil de personnalité, une aisance à l’oral, une capacité à
 tenir un récit — rien de cela n’est mesurable ici, et rien n’exclut que ce soit
 déterminant. Il ne dit pas non plus qu’un meilleur modèle échouerait : il dit

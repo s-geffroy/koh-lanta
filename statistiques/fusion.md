@@ -307,10 +307,10 @@ qu’un aventurier était blessé au douzième jour, ni qu’il a progressé. Le
 classement d’un soir est donc approché — et l’approximation, mesurée
 ci-dessus, ne suffit pas à expliquer l’écart.</p>
 
-<p class="note"><strong>Cinq saisons n’ont pas de bilan par épisode</strong> et
-ne peuvent donc pas être coupées en deux ; une sixième, <em>Cambodge</em>, a un
-repère de réunification aberrant et est écartée. Les éditions spéciales le sont
-aussi : leurs revenants faussent la comparaison des forces.</p>
+<p class="note"><strong>{{ site.data.stats.epreuves.saisons_sans_donnee | size }}
+saisons n’ont pas de bilan par épisode</strong> et ne peuvent donc pas être
+coupées en deux. Les éditions spéciales sont écartées aussi : leurs revenants
+faussent la comparaison des forces.</p>
 
 <p class="note"><strong>Le nom des ambassadeurs vient de la prose</strong>, pas
 d’un tableau : {{ a.negociateurs.part_lues }} % des ambassades seulement, et

@@ -1581,6 +1581,17 @@ def champs_d_affichage(stats):
             f"les {len(tombes)} plus fragiles tomberaient — "
             + ", ".join(tombes[:-1]) + " et " + tombes[-1])
 
+    # /statistiques/audience/ : la part du public perdue d'un regime a l'autre
+    # (« la moitie »), sur les moyennes non arrondies.
+    au = m["audience"]
+    au["perte_regimes"] = _arrondi_entier(100 * (1 - au["moyenne_apres"] / au["moyenne_avant"]))
+
+    # /statistiques/vainqueurs/ : combien de fois le finaliste recoit les voix
+    # du vainqueur (« du simple au double »).
+    cr = stats["indicateurs"]["voix_des_vainqueurs"]["couples_resume"]
+    cr["rapport"] = (round(cr["moyenne_finaliste"] / cr["moyenne_vainqueur"], 1)
+                     if cr.get("moyenne_vainqueur") else None)
+
     # /statistiques/alliances/ et /jeu-social/ : combien de fois etre du bon
     # cote pese plus qu'une voix recue de plus par conseil.
     maj = m["alliances"]["majorite"]
@@ -1821,6 +1832,13 @@ def main():
             lacunaires.append({"titre": s.get("titre"), "annee": s.get("annee"),
                                "localisees": localisees, "effectif": len(gens)})
     stats["geographie"] = {"lacunaires": lacunaires}
+    # Le grain departemental : personnes par departement (« quatre »).
+    chemin_geo = os.path.join(RACINE, "_data", "geographie.yml")
+    if os.path.exists(chemin_geo):
+        geo = donnees.charger(open(chemin_geo, encoding="utf-8"))
+        if geo.get("departements"):
+            stats["geographie"]["par_departement"] = round(
+                geo["participations"] / len(geo["departements"]), 1)
 
     # /sources/ : ce que les recits de reparation citent au present. Chaque
     # compte y etait ecrit a la main, au jour de la reparation, et ne suivait
@@ -1854,6 +1872,15 @@ def main():
     par_scrutin = defaultdict(list)
     for c in jury:
         par_scrutin[c["saison"]].append(c)
+    # /statistiques/jeu-social/ et /sources/ : la base de la justesse de vote,
+    # conseils complets dont l'elimine est rattache (« quelques dizaines »).
+    cs["conseils_justesse"] = sum(1 for c in eliminations(conseils)
+                                  if c.get("complet") and c.get("elimine_rattache"))
+    # /sources/ : les conseils dont l'elimine a pourtant fini la saison -- des
+    # retours en jeu, que `sort` ne sait pas dire.
+    fin = {(p["saison"], p["id"]) for p in parts if p.get("sort") in ("vainqueur", "finaliste")}
+    cs["retours_en_jeu"] = sum(1 for c in eliminations(conseils) if c.get("elimine_rattache")
+                               and (c["saison"], c["elimine"]) in fin)
     stats["jury"]["lignes"] = len(jury)
     stats["jury"]["bulletins_lus"] = sum(len(c.get("votes") or []) for c in jury)
     stats["jury"]["decomptes_discordants"] = sum(

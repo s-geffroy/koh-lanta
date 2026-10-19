@@ -902,6 +902,10 @@ AFFIRMATIONS_PAGES = {
                             "et le resume du sommaire ecrivent que la force ne "
                             "decide pas de qui part"),
     "fusion_sexe": (True, "statistiques/fusion.md titre « Le sexe, lui, bascule »"),
+    "menace_voix": (True, "statistiques/conditionnelles.md ecrit que la menace "
+                          "fraiche, visee la derniere fois, compte"),
+    "menace_deux_pas": (False, "statistiques/conditionnelles.md ecrit que la menace "
+                               "deux conseils plus tard n'est pas retenue"),
     "talent_stable": (False, "sources.md ecrit que la stabilite reste trop mince "
                              "pour etre retenue"),
     "ambassadeurs_survie": (True, "statistiques/fusion.md ecrit que l'ambassadeur "
@@ -993,6 +997,11 @@ AFFIRMATIONS_VALEURS = [
     (("rattachement",), lambda x: x["colliers"] == x["colliers_rattaches"]
      and x["vainqueurs_restants_personnes"] == 0,
      "sources.md ecrit qu'il ne reste aucun nom de personne non rattache"),
+    (("conseils", "retours_en_jeu"), lambda x: x == 7,
+     "sources.md raconte les retours en jeu un par un (Linda, Francis, Tania deux "
+     "fois, Martin, Christina, Andre)"),
+    (("conseils", "part_serres"), lambda x: 33 <= x < 75,
+     "statistiques/conseils.md ecrit que le vote est « souvent serre »"),
     (("jury", "decomptes_discordants"), lambda x: x == 0,
      "sources.md ecrit que le decompte annonce et les bulletins du jury "
      "coincident partout ou la source annonce un decompte"),

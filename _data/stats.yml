@@ -1470,6 +1470,8 @@ conseils:
     annee_max: 2026
     detail_texte: 126 « Vote noir », 41 « Pénalité », 20 « Malédiction/Pénalité », 3 « Pénalité ou avantage
       », 2 « Pénalité/Avantage »
+  conseils_justesse: 348
+  retours_en_jeu: 7
   vote_par_genre_ecart: "8,3"
 jury:
   effectif: 36
@@ -9065,6 +9067,7 @@ indicateurs:
       vainqueur_plus_vise: 7
       moyenne_vainqueur: "2,4"
       moyenne_finaliste: "6,16"
+      rapport: "2,6"
   duos:
     seuil: 6
     paires: 439
@@ -26449,6 +26452,7 @@ modeles:
       origine: audience
       p_ajustee: "0,163"
       retenu: false
+    perte_regimes: 48
     moyenne_avant_millions: "6,3"
     moyenne_apres_millions: "3,3"
   avant_apres:
@@ -34001,6 +34005,7 @@ geographie:
     annee: 2009
     localisees: 16
     effectif: 18
+  par_departement: "4,6"
 rattachement:
   colliers: 80
   colliers_rattaches: 80

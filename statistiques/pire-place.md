@@ -188,8 +188,8 @@ et la case qui les réunit est trop petite. Le modèle ci-dessous les met dans l
   <p>Ce ne sont donc pas deux façons de dire la même chose. Le bulletin d’hier
   mesure ce que le camp a <em>fait</em> ; l’isolement mesure ce dont on
   <em>dispose</em> pour y répondre. Un joueur visé mais entouré s’en sort ; un
-  joueur seul mais jamais visé encore tient. Les deux à la fois, presque
-  jamais.</p>
+  joueur seul mais jamais visé encore tient. Les deux à la fois, on part dans
+  {{ p.cumul[2].probabilite }} % des cas.</p>
 </div>
 
 ## Le dos au mur ne fait pas gagner

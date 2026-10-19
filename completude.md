@@ -84,8 +84,8 @@ une règle du jeu pour une lacune.</p>
 <p class="note"><strong>Deux pourcentages coexistent sur ce site, et ils ne
 mesurent pas la même chose.</strong> Celui-ci, <b>{{ c.moyenne }} %</b>, est la
 moyenne des cases de cette grille : il pèse chaque édition et chaque type de
-donnée d’un poids égal, y compris les types qui ne concernent qu’une saison sur
-deux. Celui des <a href="{{ '/sources/' | relative_url }}">sources</a>,
+donnée d’un poids égal, y compris les types qui ne concernent qu’une partie des
+saisons. Celui des <a href="{{ '/sources/' | relative_url }}">sources</a>,
 {{ site.data.stats.completude.part_remplie }} %, compte les valeurs une par une
 sur les {{ site.data.stats.completude.participations }} participations : une
 édition de vingt-quatre aventuriers y pèse plus qu’une de seize. Le second est

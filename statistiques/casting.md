@@ -167,7 +167,8 @@ que le plus petit groupe pèse au moins 2 % du casting, soit {{ c.plancher }}
 personnes. Parmi les découpes qui respectent ce plancher, on retient celle dont
 la silhouette est la plus haute : {{ c.nb_archetypes }} groupes.</p>
 
-Les six étiquettes se lisent comme un générique : la trentenaire du commerce,
+Les six étiquettes se lisent comme un générique : la femme de la fin de la
+vingtaine, dans le commerce,
 l’homme de trente ans du monde agricole, l’artisan de quarante ans, le
 quarante-cinq-ans-et-plus sans emploi déclaré, les moins de vingt-cinq ans, et
 l’étudiante. Ce sont des **régions d’un continuum**, pas des populations

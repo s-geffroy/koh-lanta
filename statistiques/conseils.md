@@ -1,10 +1,10 @@
 ---
 layout: page
 title: Les conseils
-description: "Les conseils de Koh-Lanta : le vote est presque toujours serré, l’unanimité n’existe pas, et le camp ne s’est pas durci — il s’est divisé."
+description: "Les conseils de Koh-Lanta : le vote est souvent serré, l’unanimité n’existe pas, et le camp ne s’est pas durci — il s’est divisé."
 permalink: /statistiques/conseils/
 chapeau: >-
-  Le vote est presque toujours serré, l’unanimité n’existe pas — et les conseils ne se sont pas durcis avec les années, ils se sont divisés.
+  Le vote est souvent serré, l’unanimité n’existe pas — et les conseils ne se sont pas durcis avec les années, ils se sont divisés.
 ---
 
 {% assign c = site.data.stats.conseils %}
@@ -20,7 +20,7 @@ dépouillés, pour **{{ c.bulletins }} bulletins**.
   <li class="chiffre"><b>{{ c.voix_annulees_par_objet }}</b><span>voix annulées par un objet</span></li>
 </ul>
 
-## Le vote est presque toujours serré
+## Le vote est souvent serré
 
 Sur les {{ c.conseils_avec_decompte }} conseils dont le décompte est connu,
 **{{ c.part_serres }} % se jouent à une voix près ou à peine plus** : le

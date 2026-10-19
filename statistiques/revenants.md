@@ -144,7 +144,8 @@ souvent, toutes les autres variables tenues fixes.</p>
   [la recette du casting]({{ '/statistiques/casting/' | relative_url }}) montre
   que cette parité-là est un quota.</p>
   <p><b>L’abandon coûte cher, sans qu’on puisse le chiffrer.</b> Cote multipliée
-  par {{ rp.coefficients[1].rapport }} — divisée par cinq, donc — mais
+  par {{ rp.coefficients[1].rapport }} — divisée par {{ rp.coefficients[1].inverse }},
+  donc — mais
   l’intervalle ({{ rp.coefficients[1].bas }} à {{ rp.coefficients[1].haut }})
   contient 1. Le tableau des sorts dit pourquoi : les deux dernières lignes
   réunissent quelques dizaines d’abandons et <b>un seul</b> retour. On voit la

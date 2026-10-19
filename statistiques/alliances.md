@@ -228,8 +228,8 @@ sur {{ de.saisons }} saisons qui fait le résultat.</p>
 Cette page mesure l’existence et la durée des alliances. Leur <em>rendement</em>
 se lit ailleurs : sachant qu’il ne reste plus un seul des gens avec qui on a
 déjà voté, le risque de partir au conseil monte à
-{% assign pp = site.data.stats.modeles.pire_place %}<b>{{ pp.isolement[0].probabilite }} %</b>
-pour qui n’a jamais voté avec personne, contre
+{% assign pp = site.data.stats.modeles.pire_place %}{% assign ppa = pp.isolement | where: "modalite", "tous ses alliés sont partis" | first %}<b>{{ ppa.probabilite }} %</b>
+pour qui a vu partir tous ses alliés, contre
 {{ pp.isolement[3].probabilite }} % pour qui garde trois alliés ou plus.
 <a href="{{ '/statistiques/pire-place/' | relative_url }}">La pire place au conseil</a>.</p>
 

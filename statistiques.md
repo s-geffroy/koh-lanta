@@ -78,7 +78,8 @@ d’aventuriers partent, et à quel âge.
 {% include graphiques/saisons-effectif.svg %}
 
 <p class="legende-figure">Le casting s’étoffe avec le temps : les premières
-saisons partaient à seize, les récentes à vingt-quatre.</p>
+saisons partaient à {{ site.data.stats.modeles.fusion.casting_min }}, les plus
+grandes en ont compté {{ site.data.stats.modeles.fusion.casting_max }}.</p>
 
 {% include graphiques/saisons-age.svg %}
 
