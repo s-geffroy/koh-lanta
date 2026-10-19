@@ -45,7 +45,8 @@ fusion tombe, et par le nombre de joueurs qu’elle laisse en jeu.</p>
   <b>{{ f.pente_restants.pente }}</b> ({{ f.pente_restants.bas }} à
   {{ f.pente_restants.haut }}) — soit
   <b>{{ f.croissance_restants }} joueurs</b> de
-  plus sur la même croissance, cinq fois davantage.</p>
+  plus sur la même croissance. Le casting grossit, le plateau réuni grossit
+  avec lui, et la date bouge à peine.</p>
   <p>La réunification suit donc la <b>grille de diffusion</b> bien plus que
   l’état du jeu. Les castings ont grossi de {{ f.croissance }} personnes ; la
   fusion a reculé de moins d’un épisode, et le plateau réuni est passé d’une
