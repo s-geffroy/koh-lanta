@@ -6,51 +6,18 @@ layout: default
   section et le rang de la page dans son fil de lecture. Il n'apparait donc
   que sur les pages qui ont reellement un rang.
 {%- endcomment -%}
-{%- assign section = "" -%}
-{%- assign theme = "" -%}
-{%- assign rang = 0 -%}
-{%- assign total = 0 -%}
-{%- for g in site.data.navigation -%}
-  {%- comment -%}
-    La section aplatie : ses entrees propres, puis celles de chaque theme,
-    theme apres theme. Le rang se compte sur cette liste-la -- c'est l'ordre
-    du sommaire et du fil de lecture, il n'y en a qu'un.
-
-    Comptage a la main plutot qu'un `where_exp` : ce gabarit ne peut pas etre
-    essaye avant publication -- Jekyll n'a pas le droit de tourner sur cet
-    hote. On n'emploie donc que du Liquid dont le comportement ne se discute
-    pas.
-  {%- endcomment -%}
-  {%- assign toutes = g.entrees -%}
-  {%- for t in g.themes -%}{%- assign toutes = toutes | concat: t.entrees -%}{%- endfor -%}
-  {%- for e in toutes -%}
-    {%- if e.url == page.url -%}
-      {%- assign section = g.section -%}
-      {%- if g.fil and e.hub != true -%}
-        {%- assign compteur = 0 -%}
-        {%- for x in toutes -%}
-          {%- unless x.hub -%}
-            {%- assign compteur = compteur | plus: 1 -%}
-            {%- assign total = compteur -%}
-            {%- if x.url == page.url -%}{%- assign rang = compteur -%}{%- endif -%}
-          {%- endunless -%}
-        {%- endfor -%}
-        {%- for t in g.themes -%}
-          {%- for x in t.entrees -%}
-            {%- if x.url == page.url -%}{%- assign theme = t.titre -%}{%- endif -%}
-          {%- endfor -%}
-        {%- endfor -%}
-      {%- endif -%}
-    {%- endif -%}
-  {%- endfor -%}
-{%- endfor -%}
+{%- comment -%}
+  Section, theme et rang viennent de `stats.sommaire.pages`, calcule en Python
+  (positions_du_sommaire dans tools/build_stats.py) : ce gabarit ne compte plus.
+{%- endcomment -%}
+{%- assign nav = site.data.stats.sommaire.pages[page.url] -%}
 
 <header class="page-entete">
-  {%- if section != "" -%}
+  {%- if nav.section -%}
   <p class="oeil">
-    <span>{{ section }}{% if theme != "" %} · {{ theme }}{% endif %}</span>
-    {%- if rang > 0 -%}
-    <span class="oeil-rang">{{ rang }}<i>/{{ total }}</i></span>
+    <span>{{ nav.section }}{% if nav.theme %} · {{ nav.theme }}{% endif %}</span>
+    {%- if nav.rang -%}
+    <span class="oeil-rang">{{ nav.rang }}<i>/{{ nav.total }}</i></span>
     {%- endif -%}
   </p>
   {%- endif -%}

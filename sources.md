@@ -131,7 +131,7 @@ Lire de la prose est faillible, et la seule réponse honnête est de mesurer.
   <p><b>{{ ng.nommees }} ambassades sur {{ ng.ambassades }}</b> livrent leurs
   noms — {{ ng.part_nommees }} %. Là où les deux sources les nomment, elles
   s’accordent {{ ng.sources_accord }} fois sur
-  {{ ng.sources_accord | plus: ng.sources_desaccord }}.</p>
+  {{ site.data.stats.ambassades_sources_communes }}.</p>
 </div>
 
 Trois contrôles écartent une lecture douteuse : le nom doit désigner un

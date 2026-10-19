@@ -40,7 +40,7 @@ encore en jeu à cet épisode.
   doit figurer dans le plateau qu’on lui reconstruit</b>.</p>
   <p>Elle échoue dans <b>{{ f.taux_echec_reconstruction }} %</b> des cas
   ({{ f.vainqueur_hors_plateau }} épreuves sur
-  {{ f.epreuves_retenues | plus: f.vainqueur_hors_plateau }}). Ces épreuves-là
+  {{ f.epreuves_tentees }}). Ces épreuves-là
   sont écartées, et le taux est publié : c’est la mesure honnête de ce que vaut
   la reconstruction.</p>
 </div>

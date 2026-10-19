@@ -42,11 +42,6 @@ complète des tests menés — y compris ceux qui n’ont rien donné.
 
 {%- for groupe in site.data.navigation -%}
 {%- if groupe.fil -%}
-{%- assign total = 0 -%}
-{%- for t in groupe.themes -%}
-{%- for e in t.entrees -%}{%- unless e.hub -%}{%- assign total = total | plus: 1 -%}{%- endunless -%}{%- endfor -%}
-{%- endfor -%}
-{%- assign rang = 0 -%}
 {%- for t in groupe.themes -%}
 ### {{ t.titre }}
 
@@ -55,10 +50,10 @@ complète des tests menés — y compris ceux qui n’ont rien donné.
 <ul class="cartes">
 {%- for e in t.entrees -%}
 {%- unless e.hub -%}
-{%- assign rang = rang | plus: 1 -%}
+{%- assign pos = site.data.stats.sommaire.pages[e.url] -%}
   <li class="carte">
     <a href="{{ e.url | relative_url }}">
-      <span class="carte-rang">{{ rang }}<i>/{{ total }}</i></span>
+      <span class="carte-rang">{{ pos.rang }}<i>/{{ pos.total }}</i></span>
       <span class="carte-titre">{{ e.titre }}</span>
       <span class="carte-resume">{{ e.resume }}</span>
     </a>

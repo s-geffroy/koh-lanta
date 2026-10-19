@@ -85,7 +85,7 @@ douze.</p>
 {% assign rangs = f.immunite | concat: f.bandeau | concat: f.sexe | concat: f.age | concat: f.confort | concat: f.genre %}
 {% for x in rangs %}
 <tr>
-  <td>{{ x.modalite | capitalize }}</td>
+  <td>{{ x.modalite_maj }}</td>
   <td class="nombre">{{ x.effectif }}</td>
   <td class="nombre">{{ x.cas }}</td>
   <td class="nombre" data-val="{{ x.probabilite }}"><b>{{ x.probabilite }} %</b></td>

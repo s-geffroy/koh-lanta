@@ -1141,6 +1141,36 @@ RE_NOMBRE_LETTRES = re.compile(
                                      key=len, reverse=True)), re.I)
 
 
+# Les filtres Liquid qui calculent ou mettent en forme. La regle du depot est
+# l'acces par cle : le site ne peut pas etre essaye avant le push, et un
+# calcul dans un gabarit echoue en silence (une chaine « 54,2 » n'est pas un
+# nombre pour Liquid). `capitalize` minuscule en outre la suite, noms propres
+# compris. Les filtres d'adresse et d'echappement -- relative_url, jsonify,
+# markdownify -- ne sont pas vises.
+RE_CALCUL_LIQUID = re.compile(
+    r"\|\s*(plus|minus|times|divided_by|modulo|round|ceil|floor|abs|"
+    r"capitalize|downcase|upcase)\b")
+
+
+def controler_calculs_liquid(c):
+    """Refuse un calcul ou une mise en forme faits en Liquid."""
+    for dossier, _, fichiers in os.walk(RACINE):
+        rel = os.path.relpath(dossier, RACINE)
+        if rel.split(os.sep)[0] in ("_site", "_drafts", ".git", ".compare", "specs",
+                                    "node_modules", "vendor", ".claude"):
+            continue
+        for nom in fichiers:
+            if not nom.endswith((".md", ".html")):
+                continue
+            chemin = os.path.join(dossier, nom)
+            for i, ligne in enumerate(open(chemin, encoding="utf-8"), 1):
+                m = RE_CALCUL_LIQUID.search(ligne)
+                if m and "{" in ligne:
+                    c.erreur(f"{os.path.relpath(chemin, RACINE)}:{i} : filtre Liquid "
+                             f"`{m.group(1)}` — le calcul se fait en Python "
+                             f"(tools/build_stats.py), le gabarit lit une cle")
+
+
 def controler_comptes_annonces(c):
     """Refuse un nombre annonce en toutes lettres qui ne colle plus aux donnees.
 
@@ -1637,6 +1667,7 @@ def main():
     controler_portees(c)
     controler_portraits(c)
     controler_comptes_annonces(c)
+    controler_calculs_liquid(c)
     controler_donnees_structurees(c)
     controler_yaml_ambigu(c)
     controler_virgule_decimale(c)

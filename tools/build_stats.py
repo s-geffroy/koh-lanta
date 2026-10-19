@@ -1846,6 +1846,126 @@ def champs_du_texte(stats, saisons, parts):
     stats["mots"]["facette_retiree_rang"] = ordinal_lettres(len(cl["facettes"]) + 1)
 
 
+def _maj(texte):
+    """Premiere lettre en capitale, le reste intact -- ce que `capitalize` de
+    Liquid ne fait pas : il minuscule la suite, noms propres compris."""
+    return texte[:1].upper() + texte[1:] if texte else texte
+
+
+def _min(texte):
+    """Premiere lettre en minuscule, le reste intact."""
+    return texte[:1].lower() + texte[1:] if texte else texte
+
+
+def _poser_partout(noeud, cle, nouvelle, forme):
+    """Pose `nouvelle` = forme(noeud[cle]) dans tout dictionnaire du sous-arbre."""
+    if isinstance(noeud, dict):
+        if isinstance(noeud.get(cle), str):
+            noeud[nouvelle] = forme(noeud[cle])
+        for v in list(noeud.values()):
+            _poser_partout(v, cle, nouvelle, forme)
+    elif isinstance(noeud, list):
+        for v in noeud:
+            _poser_partout(v, cle, nouvelle, forme)
+
+
+def _etendue_des_rangs(noeud):
+    if isinstance(noeud, dict):
+        if isinstance(noeud.get("rang_p05"), (int, float)) and isinstance(noeud.get("rang_p95"), (int, float)):
+            noeud["etendue_rangs"] = noeud["rang_p95"] - noeud["rang_p05"]
+        for v in list(noeud.values()):
+            _etendue_des_rangs(v)
+    elif isinstance(noeud, list):
+        for v in noeud:
+            _etendue_des_rangs(v)
+
+
+def positions_du_sommaire(nav):
+    """Section, theme, rang et voisins de chaque page, d'apres navigation.yml.
+
+    Le gabarit `page.html`, le fil de lecture et les cartes du sommaire
+    comptaient en Liquid (`plus: 1`, `minus: 1`) ; ils lisent desormais ce
+    tableau, une entree par adresse. L'ordre est celui du sommaire : les
+    entrees propres de la section, puis celles de chaque theme."""
+    pages = {}
+    for g in nav or []:
+        toutes = list(g.get("entrees") or [])
+        for t in g.get("themes") or []:
+            toutes += [dict(e, _theme=t.get("titre")) for e in t.get("entrees") or []]
+        rangs = [e for e in toutes if not e.get("hub")]
+        for i, e in enumerate(toutes):
+            fiche = pages.setdefault(e["url"], {"section": g.get("section")})
+            if g.get("fil") and not e.get("hub"):
+                fiche["rang"] = rangs.index(e) + 1
+                fiche["total"] = len(rangs)
+                if e.get("_theme"):
+                    fiche["theme"] = e["_theme"]
+            if g.get("fil"):
+                if i > 0:
+                    fiche["precedent"] = {"url": toutes[i - 1]["url"], "titre": toutes[i - 1]["titre"]}
+                if i + 1 < len(toutes):
+                    fiche["suivant"] = {"url": toutes[i + 1]["url"], "titre": toutes[i + 1]["titre"]}
+    return pages
+
+
+def formes_des_gabarits(stats):
+    """Ce que les gabarits calculaient ou mettaient en forme en Liquid.
+
+    `capitalize`, `downcase`, `plus`, `minus` : la regle du depot est l'acces
+    par cle seulement. Chaque champ ci-dessous remplace un filtre ; la page
+    est citee."""
+    m, cl = stats["modeles"], stats["classement"]
+    # Majuscule de debut de cellule : pire-place, conditionnelles,
+    # autour-du-feu, et les couleurs de tribus et vainqueurs.
+    for bloc in (m["pire_place"], m["conditionnelles"], m["autour_du_feu"]):
+        _poser_partout(bloc, "modalite", "modalite_maj", _maj)
+    _poser_partout(m["conditionnelles"].get("modele") or {}, "libelle", "libelle_maj", _maj)
+    for c in list(stats["couleurs"]) + list(stats["vainqueurs"].get("par_couleur") or []):
+        c["couleur_maj"] = _maj(c["couleur"])
+    # /statistiques/top/ : etendue des rangs (cle de tri), joueurs d'une ou
+    # deux saisons, intitules de facette en minuscule, facettes menees par
+    # le premier du classement.
+    _etendue_des_rangs(cl)
+    cl["joueurs_courte_carriere"] = cl["joueurs_classes"] - len(cl.get("carrieres") or [])
+    for f in cl["facettes"]:
+        f["question_min"] = _min(f.get("question") or "")
+        f["libelle_min"] = _min(f.get("libelle") or "")
+    premier = (cl.get("top") or [{}])[0].get("id")
+    cl["facettes_menees_par_premier"] = sum(
+        1 for f in cl["facettes"] if (f.get("top") or [{}])[0].get("id") == premier)
+    # /saisons/ : la maniere de sortir du premier des meilleures saisons.
+    for x in cl.get("top_saisons") or []:
+        if isinstance(x.get("sort"), str):
+            x["sort_min"] = _min(x["sort"])
+    # /statistiques/epreuves/ : les citations qui reviennent a une tribu.
+    n = stats.get("natures") or {}
+    if n.get("citations") is not None and n.get("attribuees") is not None:
+        n["citations_restantes"] = n["citations"] - n["attribuees"]
+    # /statistiques/force/ : les epreuves tentees, retenues ou ecartees.
+    fo = m["force"]
+    fo["epreuves_tentees"] = fo["epreuves_retenues"] + fo["vainqueur_hors_plateau"]
+    # /statistiques/conditionnelles/ : les presences de la chaine a deux pas.
+    dp = m["conditionnelles"].get("par_voix_deux_pas") or []
+    if len(dp) >= 3:
+        m["conditionnelles"]["deux_pas_vises"] = dp[1]["effectif"] + dp[2]["effectif"]
+        m["conditionnelles"]["deux_pas_total"] = dp[0]["effectif"] + dp[1]["effectif"] + dp[2]["effectif"]
+    # /statistiques/jeu-social/ : la maniere de sortir des fantomes, libellee
+    # (la page remplacait les soulignes et capitalisait, sans accents).
+    for x in stats["indicateurs"].get("fantomes") or []:
+        x["sort_libelle"] = LIBELLE_SORT.get(x.get("sort"), x.get("sort"))
+    # /sources/ : les ambassades que les deux sources nomment.
+    chemin_amb = os.path.join(RACINE, "_data", "ambassadeurs.yml")
+    if os.path.exists(chemin_amb):
+        amb = donnees.charger(open(chemin_amb, encoding="utf-8"))
+        stats["ambassades_sources_communes"] = ((amb.get("sources_accord") or 0)
+                                                + (amb.get("sources_desaccord") or 0))
+    # Le sommaire, le fil de lecture et l'oeil-de-boeuf des pages.
+    chemin_nav = os.path.join(RACINE, "_data", "navigation.yml")
+    if os.path.exists(chemin_nav):
+        nav = donnees.charger(open(chemin_nav, encoding="utf-8"))
+        stats.setdefault("sommaire", {})["pages"] = positions_du_sommaire(nav)
+
+
 def champs_d_affichage(stats):
     """Ce que les pages calculaient en Liquid, calcule ici.
 
@@ -2345,6 +2465,7 @@ def main():
 
     champs_d_affichage(stats)
     champs_du_texte(stats, saisons, parts)
+    formes_des_gabarits(stats)
     poser_les_identifiants(stats, index_des_noms(personnes))
 
     chemin = os.path.join(RACINE, "_data", "stats.yml")

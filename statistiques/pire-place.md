@@ -53,7 +53,7 @@ sort.</p>
 <tbody>
 {% for x in p.isolement %}
 <tr>
-  <td>{{ x.modalite | capitalize }}</td>
+  <td>{{ x.modalite_maj }}</td>
   <td class="nombre">{{ x.effectif }}</td><td class="nombre">{{ x.cas }}</td>
   <td class="nombre" data-val="{{ x.probabilite }}"><b>{{ x.probabilite }} %</b></td>
   <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td>
@@ -99,7 +99,7 @@ depuis. Ce n’est pas le cas.
 <thead><tr><th>Ceux qui ont déjà écrit mon nom</th><th class="nombre">Présences</th><th class="nombre">Éliminations</th><th class="nombre">Probabilité</th><th class="nombre">Le hasard</th></tr></thead>
 <tbody>
 {% for x in p.adverse %}
-<tr><td>{{ x.modalite | capitalize }}</td>
+<tr><td>{{ x.modalite_maj }}</td>
     <td class="nombre">{{ x.effectif }}</td><td class="nombre">{{ x.cas }}</td>
     <td class="nombre"><b>{{ x.probabilite }} %</b></td>
     <td class="nombre">{{ x.hasard }} %</td></tr>
@@ -134,7 +134,7 @@ allié parmi les présents.</p>
 <tbody>
 {% for x in p.cumul %}
 <tr>
-  <td>{{ x.modalite | capitalize }}</td>
+  <td>{{ x.modalite_maj }}</td>
   <td class="nombre">{{ x.effectif }}</td><td class="nombre">{{ x.cas }}</td>
   <td class="nombre"><b>{{ x.probabilite }} %</b></td>
   <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td>
@@ -210,7 +210,7 @@ hasard parmi les présents.</p>
 <thead><tr><th>Au conseil précédent</th><th class="nombre">Présences</th><th class="nombre">Immunités gagnées</th><th class="nombre">Probabilité</th><th class="nombre">Le hasard</th></tr></thead>
 <tbody>
 {% for x in p.dos_au_mur %}
-<tr><td>{{ x.modalite | capitalize }}</td>
+<tr><td>{{ x.modalite_maj }}</td>
     <td class="nombre">{{ x.effectif }}</td><td class="nombre">{{ x.cas }}</td>
     <td class="nombre"><b>{{ x.probabilite }} %</b></td>
     <td class="nombre">{{ x.hasard }} %</td></tr>

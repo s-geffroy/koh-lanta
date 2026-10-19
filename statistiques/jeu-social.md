@@ -96,7 +96,7 @@ Et l’un comme l’autre ne se connaissent qu’en cours de jeu. Au casting,
   <td><strong>{% include lien-aventurier.html id=x.id nom=x.nom %}</strong></td>
   <td>{{ x.titre }} ({{ x.annee }})</td>
   <td class="nombre">{{ x.conseils }}</td>
-  <td>{{ x.sort | replace: "_", " " | capitalize }}</td>
+  <td>{{ x.sort_libelle }}</td>
 </tr>
 {% endfor %}
 </tbody>

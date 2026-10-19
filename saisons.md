@@ -28,7 +28,7 @@ regarde les gens qui les ont jouées, et il porte aussi la liste des
 fois, sur {{ s.mots.facettes }} facettes. Le premier du programme n’y est pas un vainqueur :
 c’est <b>{{ site.data.stats.classement.top_saisons[0].aventurier }}</b> à
 <i>{{ site.data.stats.classement.top_saisons[0].saison }}</i>
-({{ site.data.stats.classement.top_saisons[0].sort | downcase }}).</p>
+({{ site.data.stats.classement.top_saisons[0].sort_min }}).</p>
 
 ## Les éditions classiques
 

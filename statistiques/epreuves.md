@@ -233,7 +233,7 @@ plus les seules citations décidables, on les garde **toutes**.
 </ul>
 
 <p class="note">Le reste des citations n’est pas perdu, il est ailleurs :
-{{ n.citations | minus: n.attribuees }} reviennent à une <em>tribu</em> — une
+{{ n.citations_restantes }} reviennent à une <em>tribu</em> — une
 épreuve collective n’a pas de vainqueur individuel — ou portent un prénom que la
 saison ne connaît pas. Et l’on compte ici des <strong>citations</strong>, pas des
 victoires distinctes : le parcours du combattant est force <em>et</em> rapidité,

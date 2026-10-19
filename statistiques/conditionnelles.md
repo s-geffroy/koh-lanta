@@ -81,7 +81,7 @@ donnerait.</p>
 <tbody>
 {% for x in c.par_voix %}
 <tr>
-  <td>{{ x.modalite | capitalize }}</td>
+  <td>{{ x.modalite_maj }}</td>
   <td class="nombre">{{ x.effectif }}</td>
   <td class="nombre">{{ x.cas }}</td>
   <td class="nombre" data-val="{{ x.probabilite }}"><b>{{ x.probabilite }} %</b></td>
@@ -203,7 +203,7 @@ compte-t-il encore ?
 <tbody>
 {% for x in c.par_voix_deux_pas %}
 <tr>
-  <td>{{ x.modalite | capitalize }}</td>
+  <td>{{ x.modalite_maj }}</td>
   <td class="nombre">{{ x.effectif }}</td><td class="nombre">{{ x.cas }}</td>
   <td class="nombre"><b>{{ x.probabilite }} %</b></td>
   <td class="nombre">{{ x.hasard }} %</td>
@@ -221,11 +221,11 @@ conseils plus tôt et partir quand on ne l’avait pas été.</p>
 
 <div class="constat">
   <p>{{ t6.observe_arrondi }} points d’écart — presque autant qu’au conseil
-  précédent — mais sur {{ c.par_voix_deux_pas[1].effectif | plus: c.par_voix_deux_pas[2].effectif }}
+  précédent — mais sur {{ c.deux_pas_vises }}
   présences seulement : {{ t6.ecart_types }} écarts-types, p brute {{ t6.p }},
   p ajustée {{ t6.p_ajustee }}. <b>Non concluant.</b></p>
   <p>La chaîne se raccourcit vite : exiger deux conseils complets d’affilée
-  derrière soi ne laisse que {{ c.par_voix_deux_pas[0].effectif | plus: c.par_voix_deux_pas[1].effectif | plus: c.par_voix_deux_pas[2].effectif }}
+  derrière soi ne laisse que {{ c.deux_pas_total }}
   présences. Ce qu’on peut dire : rien n’indique que la menace s’éteigne au
   conseil suivant, et l’écart mesuré va dans le sens contraire.</p>
 </div>
@@ -250,7 +250,7 @@ Référence : aucune voix au conseil précédent.</p>
 <tbody>
 {% for x in c.modele.coefficients %}
 <tr>
-  <td>{{ x.libelle | capitalize }}</td>
+  <td>{{ x.libelle_maj }}</td>
   <td class="nombre"><b>{{ x.rapport }}</b></td>
   <td class="nombre">{{ x.bas }} – {{ x.haut }}</td>
   <td class="nombre">{{ x.p }}</td>
@@ -298,7 +298,7 @@ pour la rendre impossible.
 <tbody>
 {% for x in c.par_histoire %}
 <tr>
-  <td>{{ x.modalite | capitalize }}</td>
+  <td>{{ x.modalite_maj }}</td>
   <td class="nombre">{{ x.effectif }}</td><td class="nombre">{{ x.cas }}</td>
   <td class="nombre" data-val="{{ x.probabilite }}"><b>{{ x.probabilite }} %</b></td>
   <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td>

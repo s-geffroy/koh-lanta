@@ -69,7 +69,7 @@ détaille, avant et après la réunification.
 <tbody>
 {% for c in s.couleurs %}
 <tr>
-  <td><span class="pastille" style="background: var(--tribu-{{ c.couleur }})"></span>{{ c.couleur | capitalize }}</td>
+  <td><span class="pastille" style="background: var(--tribu-{{ c.couleur }})"></span>{{ c.couleur_maj }}</td>
   <td class="nombre">{{ c.effectif }}</td>
   <td class="nombre">{{ c.survie_moyenne }} %</td>
   <td class="nombre">{{ c.finales }}</td>

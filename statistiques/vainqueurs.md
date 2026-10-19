@@ -87,7 +87,7 @@ largement à leur nombre au départ, pas à une supériorité.
 <tbody>
 {% for c in v.par_couleur %}
 <tr>
-  <td><span class="pastille" style="background: var(--tribu-{{ c.couleur }})"></span>{{ c.couleur | capitalize }}</td>
+  <td><span class="pastille" style="background: var(--tribu-{{ c.couleur }})"></span>{{ c.couleur_maj }}</td>
   <td class="nombre">{{ c.effectif }}</td>
   <td class="nombre">{{ c.part }} %</td>
 </tr>

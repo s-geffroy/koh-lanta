@@ -96,7 +96,7 @@ l’inverse.
   <td class="nombre">{{ l.titres }}</td>
   <td class="nombre">{{ l.score }}</td>
   <td class="nombre">{{ l.part_top }} %</td>
-  <td class="nombre" data-val="{{ l.rang_p95 | minus: l.rang_p05 }}">{{ l.rang_p05 }} – {{ l.rang_p95 }}</td>
+  <td class="nombre" data-val="{{ l.etendue_rangs }}">{{ l.rang_p05 }} – {{ l.rang_p95 }}</td>
   {% for f in c.facettes %}<td class="nombre">{{ l.rangs[f.cle] }}</td>{% endfor %}
 </tr>
 {% endfor %}
@@ -108,7 +108,7 @@ l’inverse.
 quelle part des {{ rb.tirages }} pondérations l’aventurier y figure, et
 l’avant-dernière l’étendue de ses rangs : quand elle est large, le rang de
 gauche ne veut pas dire grand-chose. Et pour les
-{{ c.joueurs_classes | minus: c.carrieres.size }} aventuriers d’une ou deux
+{{ c.joueurs_courte_carriere }} aventuriers d’une ou deux
 saisons, la preuve reste mince — le rétrécissement les tient près de la
 moyenne, ce qui est la seule chose honnête à faire quand on ne sait pas.</p>
 
@@ -119,7 +119,7 @@ parlent pas, ce sont ces {{ site.data.stats.mots.facettes }} listes qui portent 
 mesure, avec le compte brut qui la fonde.
 
 {% for f in c.facettes %}
-### {{ f.libelle }} — {{ f.question | downcase }}
+### {{ f.libelle }} — {{ f.question_min }}
 
 <p class="note">{{ f.mesure }}, rapporté à {{ f.denominateur }}. Moyenne du
 programme : {{ f.moyenne }}{{ f.unite }}. {{ f.documentes }} joueurs ont au
@@ -219,7 +219,7 @@ ils tombent.
     <td class="nombre">{{ l.titres }}</td>
     <td class="nombre">{{ l.score }}</td>
     {% for f in c.facettes %}<td class="nombre">{{ l.facettes[f.cle] }}</td>{% endfor %}
-    <td class="nombre" data-val="{{ l.rang_p95 | minus: l.rang_p05 }}">{{ l.rang_p05 }} – {{ l.rang_p95 }}</td></tr>
+    <td class="nombre" data-val="{{ l.etendue_rangs }}">{{ l.rang_p05 }} – {{ l.rang_p95 }}</td></tr>
 {% endfor %}
 </tbody>
 </table>
@@ -386,12 +386,11 @@ les paires dont la corrélation est négative.</p>
   que la moyenne a favorisé.</p>
 </div>
 
-{% assign menees = 0 %}{% for f in c.facettes %}{% if f.top[0].id == c.top[0].id %}{% assign menees = menees | plus: 1 %}{% endif %}{% endfor %}
 
 <p>La démonstration tient en un nom. <b>{{ c.top[0].nom }}</b>, premier du
-classement général, n’est en tête que de <b>{{ menees }} facettes sur
+classement général, n’est en tête que de <b>{{ c.facettes_menees_par_premier }} facettes sur
 {{ c.facettes | size }}</b>. Qui mène sur chacune :
-{% for f in c.facettes %}{{ f.libelle | downcase }} — <b>{{ f.top[0].nom }}</b>{% unless forloop.last %} ; {% endunless %}{% endfor %}.
+{% for f in c.facettes %}{{ f.libelle_min }} — <b>{{ f.top[0].nom }}</b>{% unless forloop.last %} ; {% endunless %}{% endfor %}.
 Le premier d’un classement composite n’est donc pas le meilleur partout : c’est
 celui qui est excellent <b>là où l’écart-type est le plus large</b>, et qui se
 contente d’être moyen ailleurs.</p>
@@ -406,7 +405,7 @@ les bouches. Voici les meilleurs aux épreuves, et leur rang en discrétion.
 
 <div class="tableau-large">
 <table>
-<thead><tr><th class="nombre">#</th><th>Aventurier</th><th class="nombre">{{ fe.mesure }}</th><th class="nombre">Rang en {{ fd.libelle | downcase }}</th></tr></thead>
+<thead><tr><th class="nombre">#</th><th>Aventurier</th><th class="nombre">{{ fe.mesure }}</th><th class="nombre">Rang en {{ fd.libelle_min }}</th></tr></thead>
 <tbody>
 {% for l in fe.top %}
 <tr><td class="nombre">{{ l.rang }}</td><td>{% include lien-aventurier.html id=l.id nom=l.nom %}</td>

@@ -3,40 +3,25 @@
   L'ordre vient de _data/navigation.yml, il n'est ecrit nulle part ailleurs.
   Une page hors du fil -- accueil, saisons, aventuriers, sources -- ne recoit
   rien : on y arrive par le rail, pas par enchainement.
+
+  Les voisins sont calcules en Python (positions_du_sommaire dans
+  tools/build_stats.py), dans l'ordre du sommaire : les entrees propres de la
+  section, puis celles de chaque theme. Ce gabarit ne fait que les lire.
 {%- endcomment -%}
-{%- comment -%}
-  L'ordre de lecture aplatit la section : d'abord ses entrees propres -- la
-  page d'entree -- puis celles de chaque theme, theme apres theme. C'est
-  exactement l'ordre du sommaire, et il n'est ecrit qu'a un seul endroit.
-{%- endcomment -%}
-{%- assign fil = "" | split: "" -%}
-{%- for g in site.data.navigation -%}
-  {%- if g.fil -%}
-    {%- assign fil = fil | concat: g.entrees -%}
-    {%- for t in g.themes -%}{%- assign fil = fil | concat: t.entrees -%}{%- endfor -%}
-  {%- endif -%}
-{%- endfor -%}
-{%- assign pos = -1 -%}
-{%- for e in fil -%}
-  {%- if e.url == page.url -%}{%- assign pos = forloop.index0 -%}{%- endif -%}
-{%- endfor -%}
-{%- if pos >= 0 -%}
-{%- assign avant = pos | minus: 1 -%}
-{%- assign apres = pos | plus: 1 -%}
+{%- assign voisins = site.data.stats.sommaire.pages[page.url] -%}
+{%- if voisins.precedent or voisins.suivant -%}
 <nav class="fil" aria-label="Page précédente et suivante">
-  {%- if avant >= 0 -%}
-  {%- assign p = fil[avant] -%}
-  <a class="fil-lien fil-avant" href="{{ p.url | relative_url }}">
+  {%- if voisins.precedent -%}
+  <a class="fil-lien fil-avant" href="{{ voisins.precedent.url | relative_url }}">
     <span class="fil-sens">Précédent</span>
-    <span class="fil-titre">{{ p.titre }}</span>
+    <span class="fil-titre">{{ voisins.precedent.titre }}</span>
   </a>
   {%- else -%}<span></span>{%- endif -%}
 
-  {%- if apres < fil.size -%}
-  {%- assign n = fil[apres] -%}
-  <a class="fil-lien fil-apres" href="{{ n.url | relative_url }}">
+  {%- if voisins.suivant -%}
+  <a class="fil-lien fil-apres" href="{{ voisins.suivant.url | relative_url }}">
     <span class="fil-sens">Suivant</span>
-    <span class="fil-titre">{{ n.titre }}</span>
+    <span class="fil-titre">{{ voisins.suivant.titre }}</span>
   </a>
   {%- else -%}<span></span>{%- endif -%}
 </nav>

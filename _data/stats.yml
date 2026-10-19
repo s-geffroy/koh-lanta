@@ -69,18 +69,23 @@ vainqueurs:
   - couleur: jaune
     effectif: 12
     part: "41,4"
+    couleur_maj: Jaune
   - couleur: rouge
     effectif: 12
     part: "41,4"
+    couleur_maj: Rouge
   - couleur: vert
     effectif: 3
     part: "10,3"
+    couleur_maj: Vert
   - couleur: bleu
     effectif: 1
     part: "3,4"
+    couleur_maj: Bleu
   - couleur: violet
     effectif: 1
     part: "3,4"
+    couleur_maj: Violet
   par_metier:
   - code: encadrement
     libelle: Encadrement et professions intellectuelles
@@ -229,42 +234,49 @@ couleurs:
   victoires: 12
   finales: 23
   taux_finale: "10,8"
+  couleur_maj: Jaune
 - couleur: rouge
   effectif: 208
   survie_moyenne: "62,9"
   victoires: 12
   finales: 21
   taux_finale: "10,1"
+  couleur_maj: Rouge
 - couleur: bleu
   effectif: 34
   survie_moyenne: "62,6"
   victoires: 1
   finales: 3
   taux_finale: "8,8"
+  couleur_maj: Bleu
 - couleur: vert
   effectif: 20
   survie_moyenne: 67
   victoires: 3
   finales: 3
   taux_finale: 15
+  couleur_maj: Vert
 - couleur: violet
   effectif: 20
   survie_moyenne: "56,8"
   victoires: 1
   finales: 1
   taux_finale: 5
+  couleur_maj: Violet
 - couleur: orange
   effectif: 12
   survie_moyenne: "56,7"
   victoires: 0
   finales: 2
   taux_finale: "16,7"
+  couleur_maj: Orange
 - couleur: noir
   effectif: 2
   survie_moyenne: "32,5"
   victoires: 0
   finales: 0
   taux_finale: 0
+  couleur_maj: Noir
 metiers:
 - code: encadrement
   libelle: Encadrement et professions intellectuelles
@@ -2360,6 +2372,7 @@ natures:
       haut: "76,9"
       hasard: "40,4"
     age_moyen: "41,2"
+  citations_restantes: 182
 revenants:
   paradoxe:
   - libelle: Jamais rappelés
@@ -8539,6 +8552,7 @@ indicateurs:
     conseils: 17
     sort: elimine_poteaux
     survie: 100
+    sort_libelle: Éliminé aux poteaux
     id: loic-riowal
   - nom: Thibault Bélanger
     saison: s26
@@ -8547,6 +8561,7 @@ indicateurs:
     conseils: 16
     sort: vainqueur
     survie: 100
+    sort_libelle: Vainqueur
     id: thibault-belanger
   - nom: Sandrine Dubourdy
     saison: s18
@@ -8555,6 +8570,7 @@ indicateurs:
     conseils: 16
     sort: elimine_orientation
     survie: "97,6"
+    sort_libelle: Éliminé à l'orientation
     id: sandrine-dubourdy
   - nom: Claire Passas
     saison: s27
@@ -8563,6 +8579,7 @@ indicateurs:
     conseils: 16
     sort: elimine_orientation
     survie: "97,5"
+    sort_libelle: Éliminé à l'orientation
     id: claire-passas
   - nom: Laurent Maistret
     saison: s11
@@ -8571,6 +8588,7 @@ indicateurs:
     conseils: 15
     sort: elimine_poteaux
     survie: 100
+    sort_libelle: Éliminé aux poteaux
     id: laurent-maistret
   - nom: Gérard Urdampilleta
     saison: s11
@@ -8579,6 +8597,7 @@ indicateurs:
     conseils: 15
     sort: vainqueur
     survie: 100
+    sort_libelle: Vainqueur
     id: gerard-urdampilleta
   - nom: Steeve Demana
     saison: s20
@@ -8587,6 +8606,7 @@ indicateurs:
     conseils: 15
     sort: elimine_poteaux
     survie: 100
+    sort_libelle: Éliminé aux poteaux
     id: steeve-demana
   - nom: Cindy Poumeyrol
     saison: s20
@@ -8595,6 +8615,7 @@ indicateurs:
     conseils: 15
     sort: finaliste
     survie: 100
+    sort_libelle: Finaliste
     id: cindy-poumeyrol
   - nom: François Descamp
     saison: s23
@@ -8603,6 +8624,7 @@ indicateurs:
     conseils: 15
     sort: vainqueur
     survie: 100
+    sort_libelle: Vainqueur
     id: francois-descamp
   - nom: Bastien San Pedro
     saison: s23
@@ -8611,6 +8633,7 @@ indicateurs:
     conseils: 15
     sort: vainqueur
     survie: 100
+    sort_libelle: Vainqueur
     id: bastien-san-pedro
   - nom: Claude Dartois
     saison: sp7
@@ -8619,6 +8642,7 @@ indicateurs:
     conseils: 15
     sort: vainqueur
     survie: 100
+    sort_libelle: Vainqueur
     id: claude-dartois
   - nom: Bruno Peisey
     saison: s14
@@ -8627,6 +8651,7 @@ indicateurs:
     conseils: 15
     sort: elimine_orientation
     survie: 95
+    sort_libelle: Éliminé à l'orientation
     id: bruno-peisey
   nb_fantomes: 69
   fantomes_recidivistes:
@@ -10504,6 +10529,8 @@ classement:
         epreuves: 18
         discretion: 389
         lecture: 151
+    question_min: aller loin, et le refaire
+    libelle_min: le parcours
   - cle: epreuves
     libelle: Les épreuves
     mesure: Épreuves individuelles gagnées
@@ -10627,6 +10654,8 @@ classement:
         epreuves: 10
         discretion: 441
         lecture: 256
+    question_min: gagner les épreuves qui se courent seul
+    libelle_min: les épreuves
   - cle: discretion
     libelle: La discrétion
     mesure: Voix reçues, hors le conseil qui l’élimine
@@ -10758,6 +10787,8 @@ classement:
         epreuves: 28
         discretion: 10
         lecture: 494
+    question_min: traverser les conseils sans que personne n’écrive votre nom
+    libelle_min: la discrétion
   - cle: lecture
     libelle: La lecture
     mesure: Bulletins portés sur l’éliminé, hors celui de son propre départ
@@ -10881,6 +10912,8 @@ classement:
         epreuves: 45
         discretion: 197
         lecture: 10
+    question_min: écrire le nom de celui qui part, conseil après conseil
+    libelle_min: la lecture
   definitions:
   - cle: parcours
     libelle: Le parcours
@@ -10941,6 +10974,7 @@ classement:
       discretion: 28
       lecture: 20
     rang_classique: 5
+    etendue_rangs: 123
   - rang: 2
     nom: Bertrand Bolle
     id: bertrand-bolle
@@ -10973,6 +11007,7 @@ classement:
       discretion: 17
       lecture: 11
     rang_classique: 1
+    etendue_rangs: 15
   - rang: 3
     nom: François Descamp
     id: francois-descamp
@@ -11002,6 +11037,7 @@ classement:
       discretion: 10
       lecture: 8
     rang_classique: 2
+    etendue_rangs: 10
   - rang: 4
     nom: Frédéric Favier
     id: frederic-favier
@@ -11031,6 +11067,7 @@ classement:
       discretion: 12
       lecture: 8
     rang_classique: 3
+    etendue_rangs: 15
   - rang: 5
     nom: Jade Handi
     id: jade-handi
@@ -11066,6 +11103,7 @@ classement:
       discretion: 24
       lecture: 16
     rang_classique: 4
+    etendue_rangs: 43
   - rang: 6
     nom: Teheiura Teahui
     id: teheiura-teahui
@@ -11107,6 +11145,7 @@ classement:
       discretion: 33
       lecture: 22
     rang_classique: 17
+    etendue_rangs: 263
   - rang: 7
     nom: François-David Cardonnel
     id: francois-david-cardonnel
@@ -11139,6 +11178,7 @@ classement:
       discretion: 16
       lecture: 12
     rang_classique: 9
+    etendue_rangs: 42
   - rang: 8
     nom: Philippe Duron
     id: philippe-duron
@@ -11171,6 +11211,7 @@ classement:
       discretion: 15
       lecture: 12
     rang_classique: 6
+    etendue_rangs: 17
   - rang: 9
     nom: Naoil Tita
     id: naoil-tita
@@ -11200,6 +11241,7 @@ classement:
       discretion: 8
       lecture: 6
     rang_classique: null
+    etendue_rangs: 27
   - rang: 10
     nom: Grégoire Delachaux
     id: gregoire-delachaux
@@ -11232,6 +11274,7 @@ classement:
       discretion: 15
       lecture: 10
     rang_classique: 43
+    etendue_rangs: 16
   - rang: 11
     nom: Nicolas Rouyé
     id: nicolas-rouye
@@ -11261,6 +11304,7 @@ classement:
       discretion: 10
       lecture: 5
     rang_classique: 8
+    etendue_rangs: 68
   - rang: 12
     nom: Wendy Gervois
     id: wendy-gervois
@@ -11290,6 +11334,7 @@ classement:
       discretion: 12
       lecture: 10
     rang_classique: 10
+    etendue_rangs: 44
   - rang: 13
     nom: Jean Belmonte
     id: jean-belmonte
@@ -11319,6 +11364,7 @@ classement:
       discretion: 8
       lecture: 4
     rang_classique: 11
+    etendue_rangs: 131
   - rang: 14
     nom: Romuald Lafite
     id: romuald-lafite
@@ -11351,6 +11397,7 @@ classement:
       discretion: 19
       lecture: 14
     rang_classique: 15
+    etendue_rangs: 120
   - rang: 15
     nom: Maxine Eouzan
     id: maxine-eouzan
@@ -11380,6 +11427,7 @@ classement:
       discretion: 12
       lecture: 9
     rang_classique: 12
+    etendue_rangs: 13
   - rang: 16
     nom: Gaëlle Zanetton
     id: gaelle-zanetton
@@ -11409,6 +11457,7 @@ classement:
       discretion: 9
       lecture: 6
     rang_classique: 14
+    etendue_rangs: 56
   - rang: 17
     nom: Clémence Castel
     id: clemence-castel
@@ -11447,6 +11496,7 @@ classement:
       discretion: 32
       lecture: 22
     rang_classique: 22
+    etendue_rangs: 53
   - rang: 18
     nom: Amélie Grégoire
     id: amelie-gregoire
@@ -11476,6 +11526,7 @@ classement:
       discretion: 10
       lecture: 7
     rang_classique: 18
+    etendue_rangs: 56
   - rang: 19
     nom: Laurent Maistret
     id: laurent-maistret
@@ -11511,6 +11562,7 @@ classement:
       discretion: 25
       lecture: 17
     rang_classique: 58
+    etendue_rangs: 411
   - rang: 20
     nom: Louise Picavet
     id: louise-picavet
@@ -11540,6 +11592,7 @@ classement:
       discretion: 8
       lecture: 4
     rang_classique: 21
+    etendue_rangs: 160
   - rang: 21
     nom: Gabriel Gubbels
     id: gabriel-gubbels
@@ -11569,6 +11622,7 @@ classement:
       discretion: 12
       lecture: 7
     rang_classique: 19
+    etendue_rangs: 76
   - rang: 22
     nom: Coumba Baradji
     id: coumba-baradji
@@ -11607,6 +11661,7 @@ classement:
       discretion: 29
       lecture: 20
     rang_classique: 86
+    etendue_rangs: 123
   - rang: 23
     nom: Nicolas Pretot
     id: nicolas-pretot
@@ -11636,6 +11691,7 @@ classement:
       discretion: 10
       lecture: 8
     rang_classique: 24
+    etendue_rangs: 79
   - rang: 24
     nom: Kevin Cuoco
     id: kevin-cuoco
@@ -11665,6 +11721,7 @@ classement:
       discretion: 10
       lecture: 7
     rang_classique: 25
+    etendue_rangs: 87
   - rang: 25
     nom: Simon Quintilla
     id: simon-quintilla
@@ -11694,6 +11751,7 @@ classement:
       discretion: 10
       lecture: 7
     rang_classique: 26
+    etendue_rangs: 74
   top_classique:
   - rang: 1
     nom: Bertrand Bolle
@@ -11830,6 +11888,7 @@ classement:
     saison: Caramoan
     saison_id: s08
     annee: 2008
+    sort_min: éliminé aux poteaux
     id: bertrand-bolle
   - rang: 2
     nom: François Descamp — Le Totem maudit
@@ -11840,6 +11899,7 @@ classement:
     saison: Le Totem maudit
     saison_id: s23
     annee: 2022
+    sort_min: vainqueur
     id: francois-descamp
   - rang: 3
     nom: Frédéric Favier — Caramoan
@@ -11850,6 +11910,7 @@ classement:
     saison: Caramoan
     saison_id: s08
     annee: 2008
+    sort_min: finaliste
     id: frederic-favier
   - rang: 4
     nom: Jade Handi — Palawan
@@ -11860,6 +11921,7 @@ classement:
     saison: Palawan
     saison_id: s07
     annee: 2007
+    sort_min: vainqueur
     id: jade-handi
   - rang: 5
     nom: Claude Dartois — Viêtnam
@@ -11870,6 +11932,7 @@ classement:
     saison: Viêtnam
     saison_id: s10
     annee: 2010
+    sort_min: finaliste
     id: claude-dartois
   - rang: 6
     nom: Philippe Duron — Viêtnam
@@ -11880,6 +11943,7 @@ classement:
     saison: Viêtnam
     saison_id: s10
     annee: 2010
+    sort_min: vainqueur
     id: philippe-duron
   - rang: 7
     nom: Christelle Gauzet — Caramoan
@@ -11890,6 +11954,7 @@ classement:
     saison: Caramoan
     saison_id: s08
     annee: 2008
+    sort_min: vainqueur
     id: christelle-gauzet
   - rang: 8
     nom: Laurent Maistret — La Nouvelle Édition
@@ -11900,6 +11965,7 @@ classement:
     saison: La Nouvelle Édition
     saison_id: sp4
     annee: 2014
+    sort_min: vainqueur
     id: laurent-maistret
   - rang: 9
     nom: Naoil Tita — L'Île des héros
@@ -11910,6 +11976,7 @@ classement:
     saison: L'Île des héros
     saison_id: sp6
     annee: 2020
+    sort_min: vainqueur
     id: naoil-tita
   - rang: 10
     nom: Nicolas Rouyé — Thaïlande
@@ -11920,6 +11987,7 @@ classement:
     saison: Thaïlande
     saison_id: s15
     annee: 2016
+    sort_min: éliminé au conseil
     id: nicolas-rouye
   - rang: 11
     nom: Wendy Gervois — Thaïlande
@@ -11930,6 +11998,7 @@ classement:
     saison: Thaïlande
     saison_id: s15
     annee: 2016
+    sort_min: vainqueur
     id: wendy-gervois
   - rang: 12
     nom: François-David Cardonnel — Vanuatu
@@ -11940,6 +12009,7 @@ classement:
     saison: Vanuatu
     saison_id: s06
     annee: 2006
+    sort_min: vainqueur
     id: francois-david-cardonnel
   - rang: 13
     nom: Jean Belmonte — Les Chasseurs d'immunité
@@ -11950,6 +12020,7 @@ classement:
     saison: Les Chasseurs d'immunité
     saison_id: s25
     annee: 2024
+    sort_min: abandon médical
     id: jean-belmonte
   - rang: 14
     nom: Maxine Eouzan — Les Armes secrètes
@@ -11960,6 +12031,7 @@ classement:
     saison: Les Armes secrètes
     saison_id: s22
     annee: 2021
+    sort_min: vainqueur
     id: maxine-eouzan
   - rang: 15
     nom: Nicolas Roy — Nicoya
@@ -11970,6 +12042,7 @@ classement:
     saison: Nicoya
     saison_id: s02
     annee: 2002
+    sort_min: finaliste
     id: nicolas-roy
   - rang: 16
     nom: Gaëlle Zanetton — Vanuatu
@@ -11980,6 +12053,7 @@ classement:
     saison: Vanuatu
     saison_id: s06
     annee: 2006
+    sort_min: éliminé au conseil
     id: gaelle-zanetton
   - rang: 17
     nom: Romuald Lafite — Panama
@@ -11990,6 +12064,7 @@ classement:
     saison: Panama
     saison_id: s04
     annee: 2004
+    sort_min: éliminé au conseil
     id: romuald-lafite
   - rang: 18
     nom: Candice Boisson — L'Île au trésor
@@ -12000,6 +12075,7 @@ classement:
     saison: L'Île au trésor
     saison_id: s16
     annee: 2016
+    sort_min: éliminé à l'orientation
     id: candice-boisson
   - rang: 19
     nom: Amélie Grégoire — Panama
@@ -12010,6 +12086,7 @@ classement:
     saison: Panama
     saison_id: s04
     annee: 2004
+    sort_min: éliminé au conseil
     id: amelie-gregoire
   - rang: 20
     nom: Teheiura Teahui — Raja Ampat
@@ -12020,6 +12097,7 @@ classement:
     saison: Raja Ampat
     saison_id: s11
     annee: 2011
+    sort_min: finaliste
     id: teheiura-teahui
   - rang: 21
     nom: Christina Chevry — Palau
@@ -12030,6 +12108,7 @@ classement:
     saison: Palau
     saison_id: s09
     annee: 2009
+    sort_min: vainqueur
     id: christina-chevry
   - rang: 22
     nom: Gabriel Gubbels — Thaïlande
@@ -12040,6 +12119,7 @@ classement:
     saison: Thaïlande
     saison_id: s15
     annee: 2016
+    sort_min: éliminé aux poteaux
     id: gabriel-gubbels
   - rang: 23
     nom: Louise Picavet — La Revanche des 4 Terres
@@ -12050,6 +12130,7 @@ classement:
     saison: La Revanche des 4 Terres
     saison_id: s27
     annee: 2025
+    sort_min: éliminé au conseil
     id: louise-picavet
   - rang: 24
     nom: Clémence Castel — Pacifique
@@ -12060,6 +12141,7 @@ classement:
     saison: Pacifique
     saison_id: s05
     annee: 2005
+    sort_min: vainqueur
     id: clemence-castel
   - rang: 25
     nom: Teheiura Teahui — L'Île des héros
@@ -12070,6 +12152,7 @@ classement:
     saison: L'Île des héros
     saison_id: sp6
     annee: 2020
+    sort_min: éliminé au conseil
     id: teheiura-teahui
   sans_titre:
   - rang: 4
@@ -12235,6 +12318,7 @@ classement:
       epreuves: 48
       discretion: 33
       lecture: 22
+    etendue_rangs: 263
     id: teheiura-teahui
   - rang: 247
     nom: Freddy Boucher
@@ -12254,6 +12338,7 @@ classement:
       epreuves: 9
       discretion: 20
       lecture: 10
+    etendue_rangs: 204
     id: freddy-boucher
   - rang: 1
     nom: Claude Dartois
@@ -12273,6 +12358,7 @@ classement:
       epreuves: 49
       discretion: 28
       lecture: 20
+    etendue_rangs: 123
     id: claude-dartois
   - rang: 17
     nom: Clémence Castel
@@ -12292,6 +12378,7 @@ classement:
       epreuves: 32
       discretion: 32
       lecture: 22
+    etendue_rangs: 53
     id: clemence-castel
   - rang: 22
     nom: Coumba Baradji
@@ -12311,6 +12398,7 @@ classement:
       epreuves: 25
       discretion: 29
       lecture: 20
+    etendue_rangs: 123
     id: coumba-baradji
   - rang: 5
     nom: Jade Handi
@@ -12330,6 +12418,7 @@ classement:
       epreuves: 40
       discretion: 24
       lecture: 16
+    etendue_rangs: 43
     id: jade-handi
   - rang: 19
     nom: Laurent Maistret
@@ -12349,6 +12438,7 @@ classement:
       epreuves: 37
       discretion: 25
       lecture: 17
+    etendue_rangs: 411
     id: laurent-maistret
   - rang: 48
     nom: Candice Boisson
@@ -12368,6 +12458,7 @@ classement:
       epreuves: 21
       discretion: 24
       lecture: 18
+    etendue_rangs: 149
     id: candice-boisson
   - rang: 60
     nom: Christelle Gauzet
@@ -12387,6 +12478,7 @@ classement:
       epreuves: 30
       discretion: 20
       lecture: 13
+    etendue_rangs: 160
     id: christelle-gauzet
   - rang: 82
     nom: Ugo Lartiche
@@ -12406,6 +12498,7 @@ classement:
       epreuves: 29
       discretion: 26
       lecture: 14
+    etendue_rangs: 510
     id: ugo-lartiche
   - rang: 103
     nom: Christina Chevry
@@ -12425,6 +12518,7 @@ classement:
       epreuves: 2
       discretion: 18
       lecture: 11
+    etendue_rangs: 218
     id: christina-chevry
   - rang: 147
     nom: Clémentine Jullien
@@ -12444,6 +12538,7 @@ classement:
       epreuves: 17
       discretion: 20
       lecture: 12
+    etendue_rangs: 433
     id: clementine-jullien
   - rang: 163
     nom: Philippe Bizet
@@ -12463,6 +12558,7 @@ classement:
       epreuves: 24
       discretion: 25
       lecture: 17
+    etendue_rangs: 454
     id: philippe-bizet
   - rang: 219
     nom: Patrick Merle
@@ -12482,6 +12578,7 @@ classement:
       epreuves: 13
       discretion: 17
       lecture: 12
+    etendue_rangs: 431
     id: patrick-merle
   - rang: 278
     nom: Moundir Zoughari
@@ -12501,6 +12598,7 @@ classement:
       epreuves: 8
       discretion: 15
       lecture: 11
+    etendue_rangs: 357
     id: moundir-zoughari
   - rang: 283
     nom: Isabelle Da Silva
@@ -12520,6 +12618,7 @@ classement:
       epreuves: 1
       discretion: 15
       lecture: 8
+    etendue_rangs: 353
     id: isabelle-da-silva
   - rang: 322
     nom: Moussa Niangane
@@ -12539,6 +12638,7 @@ classement:
       epreuves: 20
       discretion: 21
       lecture: 14
+    etendue_rangs: 512
     id: moussa-niangane
   - rang: 489
     nom: Sara Tallon
@@ -12558,6 +12658,7 @@ classement:
       epreuves: 1
       discretion: 10
       lecture: 3
+    etendue_rangs: 271
     id: sara-tallon
   tous:
   - rang: 1
@@ -12570,6 +12671,7 @@ classement:
     rang_p05: 1
     rang_p95: 124
     rangs: *id022
+    etendue_rangs: 123
   - rang: 2
     nom: Bertrand Bolle
     id: bertrand-bolle
@@ -12580,6 +12682,7 @@ classement:
     rang_p05: 2
     rang_p95: 17
     rangs: *id023
+    etendue_rangs: 15
   - rang: 3
     nom: François Descamp
     id: francois-descamp
@@ -12590,6 +12693,7 @@ classement:
     rang_p05: 1
     rang_p95: 11
     rangs: *id024
+    etendue_rangs: 10
   - rang: 4
     nom: Frédéric Favier
     id: frederic-favier
@@ -12600,6 +12704,7 @@ classement:
     rang_p05: 2
     rang_p95: 17
     rangs: *id025
+    etendue_rangs: 15
   - rang: 5
     nom: Jade Handi
     id: jade-handi
@@ -12610,6 +12715,7 @@ classement:
     rang_p05: 2
     rang_p95: 45
     rangs: *id026
+    etendue_rangs: 43
   - rang: 6
     nom: Teheiura Teahui
     id: teheiura-teahui
@@ -12620,6 +12726,7 @@ classement:
     rang_p05: 2
     rang_p95: 265
     rangs: *id027
+    etendue_rangs: 263
   - rang: 7
     nom: François-David Cardonnel
     id: francois-david-cardonnel
@@ -12630,6 +12737,7 @@ classement:
     rang_p05: 4
     rang_p95: 46
     rangs: *id028
+    etendue_rangs: 42
   - rang: 8
     nom: Philippe Duron
     id: philippe-duron
@@ -12640,6 +12748,7 @@ classement:
     rang_p05: 4
     rang_p95: 21
     rangs: *id029
+    etendue_rangs: 17
   - rang: 9
     nom: Naoil Tita
     id: naoil-tita
@@ -12654,6 +12763,7 @@ classement:
       epreuves: 14
       discretion: 57
       lecture: 143
+    etendue_rangs: 27
   - rang: 10
     nom: Grégoire Delachaux
     id: gregoire-delachaux
@@ -12668,6 +12778,7 @@ classement:
       epreuves: 26
       discretion: 215
       lecture: 24
+    etendue_rangs: 16
   - rang: 11
     nom: Nicolas Rouyé
     id: nicolas-rouye
@@ -12678,6 +12789,7 @@ classement:
     rang_p05: 6
     rang_p95: 74
     rangs: *id030
+    etendue_rangs: 68
   - rang: 12
     nom: Wendy Gervois
     id: wendy-gervois
@@ -12688,6 +12800,7 @@ classement:
     rang_p05: 1
     rang_p95: 45
     rangs: *id031
+    etendue_rangs: 44
   - rang: 13
     nom: Jean Belmonte
     id: jean-belmonte
@@ -12698,6 +12811,7 @@ classement:
     rang_p05: 4
     rang_p95: 135
     rangs: *id032
+    etendue_rangs: 131
   - rang: 14
     nom: Romuald Lafite
     id: romuald-lafite
@@ -12708,6 +12822,7 @@ classement:
     rang_p05: 8
     rang_p95: 128
     rangs: *id033
+    etendue_rangs: 120
   - rang: 15
     nom: Maxine Eouzan
     id: maxine-eouzan
@@ -12722,6 +12837,7 @@ classement:
       epreuves: 34
       discretion: 155
       lecture: 37
+    etendue_rangs: 13
   - rang: 16
     nom: Gaëlle Zanetton
     id: gaelle-zanetton
@@ -12736,6 +12852,7 @@ classement:
       epreuves: 25
       discretion: 29
       lecture: 22
+    etendue_rangs: 56
   - rang: 17
     nom: Clémence Castel
     id: clemence-castel
@@ -12746,6 +12863,7 @@ classement:
     rang_p05: 5
     rang_p95: 58
     rangs: *id034
+    etendue_rangs: 53
   - rang: 18
     nom: Amélie Grégoire
     id: amelie-gregoire
@@ -12756,6 +12874,7 @@ classement:
     rang_p05: 8
     rang_p95: 64
     rangs: *id035
+    etendue_rangs: 56
   - rang: 19
     nom: Laurent Maistret
     id: laurent-maistret
@@ -12766,6 +12885,7 @@ classement:
     rang_p05: 3
     rang_p95: 414
     rangs: *id036
+    etendue_rangs: 411
   - rang: 20
     nom: Louise Picavet
     id: louise-picavet
@@ -12776,6 +12896,7 @@ classement:
     rang_p05: 9
     rang_p95: 169
     rangs: *id037
+    etendue_rangs: 160
   - rang: 21
     nom: Gabriel Gubbels
     id: gabriel-gubbels
@@ -12790,6 +12911,7 @@ classement:
       epreuves: 51
       discretion: 331
       lecture: 13
+    etendue_rangs: 76
   - rang: 22
     nom: Coumba Baradji
     id: coumba-baradji
@@ -12800,6 +12922,7 @@ classement:
     rang_p05: 3
     rang_p95: 126
     rangs: *id038
+    etendue_rangs: 123
   - rang: 23
     nom: Nicolas Pretot
     id: nicolas-pretot
@@ -12814,6 +12937,7 @@ classement:
       epreuves: 37
       discretion: 23
       lecture: 258
+    etendue_rangs: 79
   - rang: 24
     nom: Kevin Cuoco
     id: kevin-cuoco
@@ -12828,6 +12952,7 @@ classement:
       epreuves: 306
       discretion: 200
       lecture: 15
+    etendue_rangs: 87
   - rang: 25
     nom: Simon Quintilla
     id: simon-quintilla
@@ -12842,6 +12967,7 @@ classement:
       epreuves: 61
       discretion: 308
       lecture: 19
+    etendue_rangs: 74
   - rang: 26
     nom: Martin Bazin
     id: martin-bazin
@@ -12852,6 +12978,7 @@ classement:
     rang_p05: 7
     rang_p95: 341
     rangs: *id039
+    etendue_rangs: 334
   - rang: 27
     nom: Bruno Peisey
     id: bruno-peisey
@@ -12866,6 +12993,7 @@ classement:
       epreuves: 146
       discretion: 45
       lecture: 11
+    etendue_rangs: 80
   - rang: 28
     nom: Ambre Daudet
     id: ambre-daudet
@@ -12876,6 +13004,7 @@ classement:
     rang_p05: 7
     rang_p95: 86
     rangs: *id040
+    etendue_rangs: 79
   - rang: 29
     nom: Sébastien Gottiniaux
     id: sebastien-gottiniaux
@@ -12890,6 +13019,7 @@ classement:
       epreuves: 17
       discretion: 14
       lecture: 415
+    etendue_rangs: 240
   - rang: 30
     nom: Lola Labesse
     id: lola-labesse
@@ -12900,6 +13030,7 @@ classement:
     rang_p05: 11
     rang_p95: 333
     rangs: *id041
+    etendue_rangs: 322
   - rang: 31
     nom: Marie Bayard
     id: marie-bayard
@@ -12914,6 +13045,7 @@ classement:
       epreuves: 91
       discretion: 202
       lecture: 17
+    etendue_rangs: 71
   - rang: 32
     nom: Sébastien Roullé
     id: sebastien-roulle
@@ -12928,6 +13060,7 @@ classement:
       epreuves: 22
       discretion: 416
       lecture: 144
+    etendue_rangs: 224
   - rang: 33
     nom: Émilie Frahi
     id: emilie-frahi
@@ -12942,6 +13075,7 @@ classement:
       epreuves: 36
       discretion: 463
       lecture: 21
+    etendue_rangs: 335
   - rang: 34
     nom: Meïssa Seck
     id: meissa-seck
@@ -12956,6 +13090,7 @@ classement:
       epreuves: 52
       discretion: 55
       lecture: 273
+    etendue_rangs: 93
   - rang: 35
     nom: Marianne Mondon
     id: marianne-mondon
@@ -12966,6 +13101,7 @@ classement:
     rang_p05: 7
     rang_p95: 217
     rangs: *id042
+    etendue_rangs: 210
   - rang: 36
     nom: Nicolas Roy
     id: nicolas-roy
@@ -12980,6 +13116,7 @@ classement:
       epreuves: 41
       discretion: 325
       lecture: 25
+    etendue_rangs: 155
   - rang: 37
     nom: Carole Rapin
     id: carole-rapin
@@ -12994,6 +13131,7 @@ classement:
       epreuves: 114
       discretion: 158
       lecture: 12
+    etendue_rangs: 90
   - rang: 38
     nom: Gilles De Baere
     id: gilles-de-baere
@@ -13008,6 +13146,7 @@ classement:
       epreuves: 55
       discretion: 91
       lecture: 44
+    etendue_rangs: 98
   - rang: 39
     nom: Sébastien Ballesteros
     id: sebastien-ballesteros
@@ -13022,6 +13161,7 @@ classement:
       epreuves: 282
       discretion: 61
       lecture: 30
+    etendue_rangs: 78
   - rang: 40
     nom: Pascal Salviani
     id: pascal-salviani
@@ -13032,6 +13172,7 @@ classement:
     rang_p05: 10
     rang_p95: 368
     rangs: *id043
+    etendue_rangs: 358
   - rang: 41
     nom: Charlotte Rasquin
     id: charlotte-rasquin
@@ -13046,6 +13187,7 @@ classement:
       epreuves: 50
       discretion: 392
       lecture: 79
+    etendue_rangs: 173
   - rang: 42
     nom: Daniel Duquesnoy
     id: daniel-duquesnoy
@@ -13060,6 +13202,7 @@ classement:
       epreuves: 35
       discretion: 322
       lecture: 147
+    etendue_rangs: 113
   - rang: 43
     nom: Antoine Sanchez
     id: antoine-sanchez
@@ -13074,6 +13217,7 @@ classement:
       epreuves: 48
       discretion: 439
       lecture: 32
+    etendue_rangs: 287
   - rang: 44
     nom: François-Xavier Renou
     id: francois-xavier-renou
@@ -13088,6 +13232,7 @@ classement:
       epreuves: 38
       discretion: 208
       lecture: 139
+    etendue_rangs: 104
   - rang: 45
     nom: Alban Oswald
     id: alban-oswald
@@ -13102,6 +13247,7 @@ classement:
       epreuves: 32
       discretion: 316
       lecture: 136
+    etendue_rangs: 127
   - rang: 46
     nom: Claire Pradayrol
     id: claire-pradayrol
@@ -13116,6 +13262,7 @@ classement:
       epreuves: 12
       discretion: 305
       lecture: 458
+    etendue_rangs: 375
   - rang: 47
     nom: Laura Yelpa
     id: laura-yelpa
@@ -13130,6 +13277,7 @@ classement:
       epreuves: 53
       discretion: 245
       lecture: 141
+    etendue_rangs: 54
   - rang: 48
     nom: Candice Boisson
     id: candice-boisson
@@ -13144,6 +13292,7 @@ classement:
       epreuves: 30
       discretion: 304
       lecture: 152
+    etendue_rangs: 149
   - rang: 49
     nom: Alexis Tournier
     id: alexis-tournier
@@ -13158,6 +13307,7 @@ classement:
       epreuves: 87
       discretion: 127
       lecture: 146
+    etendue_rangs: 39
   - rang: 50
     nom: Sandro Gonzalez Schena
     id: sandro-gonzalez-schena
@@ -13172,6 +13322,7 @@ classement:
       epreuves: 68
       discretion: 60
       lecture: 74
+    etendue_rangs: 115
   - rang: 51
     nom: Guillaume Le Deun
     id: guillaume-le-deun
@@ -13186,6 +13337,7 @@ classement:
       epreuves: 392
       discretion: 13
       lecture: 82
+    etendue_rangs: 111
   - rang: 52
     nom: Javier Rodriguez
     id: javier-rodriguez
@@ -13200,6 +13352,7 @@ classement:
       epreuves: 63
       discretion: 266
       lecture: 83
+    etendue_rangs: 80
   - rang: 53
     nom: Béatrice Kabore
     id: beatrice-kabore
@@ -13214,6 +13367,7 @@ classement:
       epreuves: 43
       discretion: 68
       lecture: 102
+    etendue_rangs: 178
   - rang: 54
     nom: Maryline Hemelsdael
     id: maryline-hemelsdael
@@ -13228,6 +13382,7 @@ classement:
       epreuves: 467
       discretion: 203
       lecture: 18
+    etendue_rangs: 341
   - rang: 55
     nom: Ludovic Laresche
     id: ludovic-laresche
@@ -13242,6 +13397,7 @@ classement:
       epreuves: 54
       discretion: 82
       lecture: 247
+    etendue_rangs: 105
   - rang: 56
     nom: Benoît Assadi
     id: benoit-assadi
@@ -13256,6 +13412,7 @@ classement:
       epreuves: 49
       discretion: 461
       lecture: 92
+    etendue_rangs: 359
   - rang: 57
     nom: Gérard Urdampilleta
     id: gerard-urdampilleta
@@ -13266,6 +13423,7 @@ classement:
     rang_p05: 18
     rang_p95: 436
     rangs: *id044
+    etendue_rangs: 418
   - rang: 58
     nom: Bernard Lenoir
     id: bernard-lenoir
@@ -13276,6 +13434,7 @@ classement:
     rang_p05: 16
     rang_p95: 411
     rangs: *id045
+    etendue_rangs: 395
   - rang: 59
     nom: Delphine Bano
     id: delphine-bano
@@ -13290,6 +13449,7 @@ classement:
       epreuves: 173
       discretion: 48
       lecture: 268
+    etendue_rangs: 144
   - rang: 60
     nom: Christelle Gauzet
     id: christelle-gauzet
@@ -13304,6 +13464,7 @@ classement:
       epreuves: 314
       discretion: 302
       lecture: 40
+    etendue_rangs: 160
   - rang: 61
     nom: Bastien San Pedro
     id: bastien-san-pedro
@@ -13318,6 +13479,7 @@ classement:
       epreuves: 20
       discretion: 17
       lecture: 505
+    etendue_rangs: 452
   - rang: 62
     nom: Cassandre Girard
     id: cassandre-girard
@@ -13328,6 +13490,7 @@ classement:
     rang_p05: 26
     rang_p95: 133
     rangs: *id046
+    etendue_rangs: 107
   - rang: 63
     nom: Nathalie Ensargueix
     id: nathalie-ensargueix
@@ -13342,6 +13505,7 @@ classement:
       epreuves: 82
       discretion: 458
       lecture: 60
+    etendue_rangs: 362
   - rang: 64
     nom: Stéphane Cipolla
     id: stephane-cipolla
@@ -13356,6 +13520,7 @@ classement:
       epreuves: 92
       discretion: 15
       lecture: 158
+    etendue_rangs: 87
   - rang: 65
     nom: Amri Madani
     id: amri-madani
@@ -13370,6 +13535,7 @@ classement:
       epreuves: 105
       discretion: 41
       lecture: 159
+    etendue_rangs: 75
   - rang: 66
     nom: Guénaëlle Biras
     id: guenaelle-biras
@@ -13380,6 +13546,7 @@ classement:
     rang_p05: 15
     rang_p95: 304
     rangs: *id047
+    etendue_rangs: 289
   - rang: 67
     nom: Mohamed Derradji
     id: mohamed-derradji
@@ -13394,6 +13561,7 @@ classement:
       epreuves: 16
       discretion: 102
       lecture: 467
+    etendue_rangs: 379
   - rang: 68
     nom: Ilyesse Benyoub
     id: ilyesse-benyoub
@@ -13408,6 +13576,7 @@ classement:
       epreuves: 21
       discretion: 30
       lecture: 506
+    etendue_rangs: 454
   - rang: 69
     nom: Gilles Nicolet
     id: gilles-nicolet
@@ -13422,6 +13591,7 @@ classement:
       epreuves: 39
       discretion: 369
       lecture: 419
+    etendue_rangs: 343
   - rang: 70
     nom: Fabian Rocha Rocha
     id: fabian-rocha-rocha
@@ -13436,6 +13606,7 @@ classement:
       epreuves: 84
       discretion: 49
       lecture: 164
+    etendue_rangs: 105
   - rang: 71
     nom: Raphaël Andrès
     id: raphael-andres
@@ -13450,6 +13621,7 @@ classement:
       epreuves: 113
       discretion: 162
       lecture: 259
+    etendue_rangs: 107
   - rang: 72
     nom: Francis Bordas
     id: francis-bordas
@@ -13464,6 +13636,7 @@ classement:
       epreuves: 98
       discretion: 418
       lecture: 35
+    etendue_rangs: 293
   - rang: 73
     nom: Myriam Chafik
     id: myriam-chafik
@@ -13478,6 +13651,7 @@ classement:
       epreuves: 67
       discretion: 56
       lecture: 170
+    etendue_rangs: 135
   - rang: 74
     nom: Maxime Lubian
     id: maxime-lubian
@@ -13492,6 +13666,7 @@ classement:
       epreuves: 310
       discretion: 159
       lecture: 86
+    etendue_rangs: 89
   - rang: 75
     nom: Maud Bamps
     id: maud-bamps
@@ -13506,6 +13681,7 @@ classement:
       epreuves: 71
       discretion: 452
       lecture: 150
+    etendue_rangs: 350
   - rang: 76
     nom: Béatrice Cloix Penisson
     id: beatrice-cloix-penisson
@@ -13520,6 +13696,7 @@ classement:
       epreuves: 24
       discretion: 43
       lecture: 447
+    etendue_rangs: 362
   - rang: 77
     nom: Louana Roy
     id: louana-roy
@@ -13534,6 +13711,7 @@ classement:
       epreuves: 13
       discretion: 486
       lecture: 354
+    etendue_rangs: 439
   - rang: 78
     nom: Léa Sahin
     id: lea-sahin
@@ -13548,6 +13726,7 @@ classement:
       epreuves: 445
       discretion: 52
       lecture: 166
+    etendue_rangs: 312
   - rang: 79
     nom: Linda Alario
     id: linda-alario
@@ -13562,6 +13741,7 @@ classement:
       epreuves: 109
       discretion: 484
       lecture: 41
+    etendue_rangs: 421
   - rang: 80
     nom: Clarisse Cresseveur
     id: clarisse-cresseveur
@@ -13576,6 +13756,7 @@ classement:
       epreuves: 94
       discretion: 251
       lecture: 378
+    etendue_rangs: 202
   - rang: 81
     nom: Noémie Bessec
     id: noemie-bessec
@@ -13590,6 +13771,7 @@ classement:
       epreuves: 80
       discretion: 160
       lecture: 356
+    etendue_rangs: 143
   - rang: 82
     nom: Ugo Lartiche
     id: ugo-lartiche
@@ -13600,6 +13782,7 @@ classement:
     rang_p05: 5
     rang_p95: 515
     rangs: *id048
+    etendue_rangs: 510
   - rang: 83
     nom: Valérie Dot
     id: valerie-dot
@@ -13614,6 +13797,7 @@ classement:
       epreuves: 296
       discretion: 125
       lecture: 135
+    etendue_rangs: 79
   - rang: 84
     nom: Laure Canevarolo
     id: laure-canevarolo
@@ -13628,6 +13812,7 @@ classement:
       epreuves: 78
       discretion: 467
       lecture: 36
+    etendue_rangs: 388
   - rang: 85
     nom: Christopher Lavaud
     id: christopher-lavaud
@@ -13642,6 +13827,7 @@ classement:
       epreuves: 44
       discretion: 47
       lecture: 363
+    etendue_rangs: 229
   - rang: 86
     nom: Loïc Riowal
     id: loic-riowal
@@ -13652,6 +13838,7 @@ classement:
     rang_p05: 23
     rang_p95: 422
     rangs: *id049
+    etendue_rangs: 399
   - rang: 87
     nom: Kunlé M'Babacéré Pakorona
     id: kunle-m-babacere-pakorona
@@ -13666,6 +13853,7 @@ classement:
       epreuves: 421
       discretion: 403
       lecture: 16
+    etendue_rangs: 357
   - rang: 88
     nom: William Lecomte
     id: william-lecomte
@@ -13680,6 +13868,7 @@ classement:
       epreuves: 27
       discretion: 394
       lecture: 387
+    etendue_rangs: 322
   - rang: 89
     nom: Jérôme Villaseque
     id: jerome-villaseque
@@ -13694,6 +13883,7 @@ classement:
       epreuves: 66
       discretion: 334
       lecture: 70
+    etendue_rangs: 186
   - rang: 90
     nom: Jean-Philippe Masy
     id: jean-philippe-masy
@@ -13708,6 +13898,7 @@ classement:
       epreuves: 59
       discretion: 111
       lecture: 112
+    etendue_rangs: 253
   - rang: 91
     nom: Alexandre André
     id: alexandre-andre
@@ -13722,6 +13913,7 @@ classement:
       epreuves: 83
       discretion: 272
       lecture: 42
+    etendue_rangs: 230
   - rang: 92
     nom: Isabelle Vial
     id: isabelle-vial
@@ -13736,6 +13928,7 @@ classement:
       epreuves: 117
       discretion: 450
       lecture: 14
+    etendue_rangs: 379
   - rang: 93
     nom: Alexandra Pornet
     id: alexandra-pornet
@@ -13750,6 +13943,7 @@ classement:
       epreuves: 364
       discretion: 388
       lecture: 153
+    etendue_rangs: 304
   - rang: 94
     nom: Isabelle Seguin
     id: isabelle-seguin
@@ -13764,6 +13958,7 @@ classement:
       epreuves: 200
       discretion: 401
       lecture: 165
+    etendue_rangs: 296
   - rang: 95
     nom: Régis Rappailles
     id: regis-rappailles
@@ -13778,6 +13973,7 @@ classement:
       epreuves: 502
       discretion: 77
       lecture: 29
+    etendue_rangs: 425
   - rang: 96
     nom: Sylvie Pommier
     id: sylvie-pommier
@@ -13792,6 +13988,7 @@ classement:
       epreuves: 289
       discretion: 149
       lecture: 134
+    etendue_rangs: 106
   - rang: 97
     nom: Lola Krast
     id: lola-krast
@@ -13806,6 +14003,7 @@ classement:
       epreuves: 56
       discretion: 33
       lecture: 383
+    etendue_rangs: 238
   - rang: 98
     nom: Érick Africaa
     id: erick-africaa
@@ -13820,6 +14018,7 @@ classement:
       epreuves: 65
       discretion: 273
       lecture: 108
+    etendue_rangs: 188
   - rang: 99
     nom: Christophe Guttatoro-Martin
     id: christophe-guttatoro-martin
@@ -13834,6 +14033,7 @@ classement:
       epreuves: 462
       discretion: 346
       lecture: 34
+    etendue_rangs: 365
   - rang: 100
     nom: Thierry Ramos
     id: thierry-ramos
@@ -13848,6 +14048,7 @@ classement:
       epreuves: 293
       discretion: 100
       lecture: 76
+    etendue_rangs: 207
   - rang: 101
     nom: Catherine Perez
     id: catherine-perez
@@ -13862,6 +14063,7 @@ classement:
       epreuves: 157
       discretion: 27
       lecture: 161
+    etendue_rangs: 127
   - rang: 102
     nom: Vanessa Alvarez
     id: vanessa-alvarez
@@ -13876,6 +14078,7 @@ classement:
       epreuves: 298
       discretion: 12
       lecture: 420
+    etendue_rangs: 344
   - rang: 103
     nom: Christina Chevry
     id: christina-chevry
@@ -13890,6 +14093,7 @@ classement:
       epreuves: 372
       discretion: 81
       lecture: 277
+    etendue_rangs: 218
   - rang: 104
     nom: Thierry Villette
     id: thierry-villette
@@ -13904,6 +14108,7 @@ classement:
       epreuves: 294
       discretion: 205
       lecture: 261
+    etendue_rangs: 88
   - rang: 105
     nom: Sébastien Loew
     id: sebastien-loew
@@ -13918,6 +14123,7 @@ classement:
       epreuves: 283
       discretion: 148
       lecture: 235
+    etendue_rangs: 74
   - rang: 106
     nom: André Deleplace
     id: andre-deleplace
@@ -13932,6 +14138,7 @@ classement:
       epreuves: 74
       discretion: 198
       lecture: 477
+    etendue_rangs: 394
   - rang: 107
     nom: David Noël
     id: david-noel
@@ -13946,6 +14153,7 @@ classement:
       epreuves: 326
       discretion: 87
       lecture: 66
+    etendue_rangs: 202
   - rang: 108
     nom: Estelle Granger
     id: estelle-granger
@@ -13960,6 +14168,7 @@ classement:
       epreuves: 332
       discretion: 88
       lecture: 67
+    etendue_rangs: 202
   - rang: 109
     nom: Guillaume Brauer
     id: guillaume-brauer
@@ -13974,6 +14183,7 @@ classement:
       epreuves: 335
       discretion: 92
       lecture: 68
+    etendue_rangs: 202
   - rang: 110
     nom: Jeff Santiago
     id: jeff-santiago
@@ -13988,6 +14198,7 @@ classement:
       epreuves: 207
       discretion: 112
       lecture: 270
+    etendue_rangs: 117
   - rang: 111
     nom: Jérôme Molas
     id: jerome-molas
@@ -14002,6 +14213,7 @@ classement:
       epreuves: 209
       discretion: 355
       lecture: 314
+    etendue_rangs: 226
   - rang: 112
     nom: Sébastien Cazaux
     id: sebastien-cazaux
@@ -14016,6 +14228,7 @@ classement:
       epreuves: 446
       discretion: 62
       lecture: 173
+    etendue_rangs: 312
   - rang: 113
     nom: Ricky Poyet
     id: ricky-poyet
@@ -14030,6 +14243,7 @@ classement:
       epreuves: 60
       discretion: 78
       lecture: 373
+    etendue_rangs: 239
   - rang: 114
     nom: Sébastien Mériaux
     id: sebastien-meriaux
@@ -14044,6 +14258,7 @@ classement:
       epreuves: 69
       discretion: 80
       lecture: 399
+    etendue_rangs: 274
   - rang: 115
     nom: Kaouther Ferdjani
     id: kaouther-ferdjani
@@ -14058,6 +14273,7 @@ classement:
       epreuves: 216
       discretion: 113
       lecture: 117
+    etendue_rangs: 167
   - rang: 116
     nom: Mégane Rouland
     id: megane-rouland
@@ -14072,6 +14288,7 @@ classement:
       epreuves: 64
       discretion: 54
       lecture: 453
+    etendue_rangs: 349
   - rang: 117
     nom: Stéphane Bertheau
     id: stephane-bertheau
@@ -14086,6 +14303,7 @@ classement:
       epreuves: 411
       discretion: 99
       lecture: 75
+    etendue_rangs: 228
   - rang: 118
     nom: Charlaine Cuny
     id: charlaine-cuny
@@ -14100,6 +14318,7 @@ classement:
       epreuves: 163
       discretion: 134
       lecture: 190
+    etendue_rangs: 85
   - rang: 119
     nom: Jérôme Salvatore
     id: jerome-salvatore
@@ -14114,6 +14333,7 @@ classement:
       epreuves: 210
       discretion: 356
       lecture: 315
+    etendue_rangs: 217
   - rang: 120
     nom: Maxime Boulet
     id: maxime-boulet
@@ -14128,6 +14348,7 @@ classement:
       epreuves: 347
       discretion: 76
       lecture: 123
+    etendue_rangs: 182
   - rang: 121
     nom: Alain Chrisostome
     id: alain-chrisostome
@@ -14142,6 +14363,7 @@ classement:
       epreuves: 438
       discretion: 398
       lecture: 31
+    etendue_rangs: 367
   - rang: 122
     nom: Angélique Ti
     id: angelique-ti
@@ -14156,6 +14378,7 @@ classement:
       epreuves: 106
       discretion: 451
       lecture: 78
+    etendue_rangs: 346
   - rang: 123
     nom: Léa Notardonato
     id: lea-notardonato
@@ -14170,6 +14393,7 @@ classement:
       epreuves: 405
       discretion: 74
       lecture: 72
+    etendue_rangs: 248
   - rang: 124
     nom: Céline Faccio
     id: celine-faccio
@@ -14180,6 +14404,7 @@ classement:
     rang_p05: 51
     rang_p95: 369
     rangs: *id050
+    etendue_rangs: 318
   - rang: 125
     nom: Béryl Libault de la Chevasnerie
     id: beryl-libault-de-la-chevasnerie
@@ -14194,6 +14419,7 @@ classement:
       epreuves: 400
       discretion: 69
       lecture: 62
+    etendue_rangs: 252
   - rang: 126
     nom: Odile Héritier
     id: odile-heritier
@@ -14208,6 +14434,7 @@ classement:
       epreuves: 464
       discretion: 58
       lecture: 50
+    etendue_rangs: 377
   - rang: 127
     nom: Bertrand-Kamal Loudrhiri
     id: bertrand-kamal-loudrhiri
@@ -14222,6 +14449,7 @@ classement:
       epreuves: 96
       discretion: 18
       lecture: 360
+    etendue_rangs: 204
   - rang: 128
     nom: Johan Pinaud
     id: johan-pinaud
@@ -14236,6 +14464,7 @@ classement:
       epreuves: 430
       discretion: 73
       lecture: 45
+    etendue_rangs: 327
   - rang: 129
     nom: Caroline Demartis
     id: caroline-demartis
@@ -14250,6 +14479,7 @@ classement:
       epreuves: 153
       discretion: 105
       lecture: 104
+    etendue_rangs: 201
   - rang: 130
     nom: Patricia Tanguy
     id: patricia-tanguy
@@ -14264,6 +14494,7 @@ classement:
       epreuves: 509
       discretion: 268
       lecture: 58
+    etendue_rangs: 422
   - rang: 131
     nom: Nathalie Lapicque
     id: nathalie-lapicque
@@ -14278,6 +14509,7 @@ classement:
       epreuves: 263
       discretion: 121
       lecture: 127
+    etendue_rangs: 211
   - rang: 132
     nom: Philippe Huquet
     id: philippe-huquet
@@ -14292,6 +14524,7 @@ classement:
       epreuves: 272
       discretion: 144
       lecture: 128
+    etendue_rangs: 192
   - rang: 133
     nom: Abdellah Akriche
     id: abdellah-akriche
@@ -14306,6 +14539,7 @@ classement:
       epreuves: 398
       discretion: 130
       lecture: 95
+    etendue_rangs: 209
   - rang: 134
     nom: Vincent Roux
     id: vincent-roux
@@ -14320,6 +14554,7 @@ classement:
       epreuves: 93
       discretion: 16
       lecture: 498
+    etendue_rangs: 432
   - rang: 135
     nom: Sandrine Dubourdy
     id: sandrine-dubourdy
@@ -14334,6 +14569,7 @@ classement:
       epreuves: 397
       discretion: 26
       lecture: 414
+    etendue_rangs: 344
   - rang: 136
     nom: Richard Lecourt
     id: richard-lecourt
@@ -14348,6 +14584,7 @@ classement:
       epreuves: 275
       discretion: 189
       lecture: 230
+    etendue_rangs: 98
   - rang: 137
     nom: Romain Delaroche
     id: romain-delaroche
@@ -14362,6 +14599,7 @@ classement:
       epreuves: 312
       discretion: 25
       lecture: 413
+    etendue_rangs: 322
   - rang: 138
     nom: Jessica Murcia
     id: jessica-murcia
@@ -14376,6 +14614,7 @@ classement:
       epreuves: 378
       discretion: 31
       lecture: 208
+    etendue_rangs: 177
   - rang: 139
     nom: Magalie Gustave
     id: magalie-gustave
@@ -14390,6 +14629,7 @@ classement:
       epreuves: 79
       discretion: 472
       lecture: 257
+    etendue_rangs: 380
   - rang: 140
     nom: Hadja Cissé
     id: hadja-cisse
@@ -14404,6 +14644,7 @@ classement:
       epreuves: 403
       discretion: 50
       lecture: 110
+    etendue_rangs: 242
   - rang: 141
     nom: Marylou Sidibé
     id: marylou-sidibe
@@ -14418,6 +14659,7 @@ classement:
       epreuves: 243
       discretion: 246
       lecture: 168
+    etendue_rangs: 91
   - rang: 142
     nom: Nathalie Bella
     id: nathalie-bella
@@ -14432,6 +14674,7 @@ classement:
       epreuves: 408
       discretion: 120
       lecture: 126
+    etendue_rangs: 223
   - rang: 143
     nom: Jean-Claude Errin
     id: jean-claude-errin
@@ -14446,6 +14689,7 @@ classement:
       epreuves: 203
       discretion: 95
       lecture: 111
+    etendue_rangs: 251
   - rang: 144
     nom: Aurélien Soulimant
     id: aurelien-soulimant
@@ -14460,6 +14704,7 @@ classement:
       epreuves: 360
       discretion: 330
       lecture: 348
+    etendue_rangs: 237
   - rang: 145
     nom: Jérôme Merlier
     id: jerome-merlier
@@ -14474,6 +14719,7 @@ classement:
       epreuves: 338
       discretion: 72
       lecture: 114
+    etendue_rangs: 237
   - rang: 146
     nom: Pholien Systermans
     id: pholien-systermans
@@ -14488,6 +14734,7 @@ classement:
       epreuves: 350
       discretion: 145
       lecture: 129
+    etendue_rangs: 188
   - rang: 147
     nom: Clémentine Jullien
     id: clementine-jullien
@@ -14498,6 +14745,7 @@ classement:
     rang_p05: 28
     rang_p95: 461
     rangs: *id051
+    etendue_rangs: 433
   - rang: 148
     nom: Caroline Matteucci
     id: caroline-matteucci
@@ -14512,6 +14760,7 @@ classement:
       epreuves: 155
       discretion: 312
       lecture: 63
+    etendue_rangs: 218
   - rang: 149
     nom: Jonathan Julien
     id: jonathan-julien
@@ -14526,6 +14775,7 @@ classement:
       epreuves: 77
       discretion: 265
       lecture: 486
+    etendue_rangs: 386
   - rang: 150
     nom: Ahmad Abadie
     id: ahmad-abadie
@@ -14540,6 +14790,7 @@ classement:
       epreuves: 366
       discretion: 131
       lecture: 97
+    etendue_rangs: 184
   - rang: 151
     nom: Dorian Louvet
     id: dorian-louvet
@@ -14554,6 +14805,7 @@ classement:
       epreuves: 440
       discretion: 252
       lecture: 250
+    etendue_rangs: 303
   - rang: 152
     nom: Tiffany Gounin
     id: tiffany-gounin
@@ -14568,6 +14820,7 @@ classement:
       epreuves: 81
       discretion: 433
       lecture: 262
+    etendue_rangs: 308
   - rang: 153
     nom: Jessica Potel
     id: jessica-potel
@@ -14582,6 +14835,7 @@ classement:
       epreuves: 482
       discretion: 128
       lecture: 254
+    etendue_rangs: 383
   - rang: 154
     nom: Sophia Mansouri
     id: sophia-mansouri
@@ -14596,6 +14850,7 @@ classement:
       epreuves: 520
       discretion: 37
       lecture: 90
+    etendue_rangs: 448
   - rang: 155
     nom: Adrien Bernaert
     id: adrien-bernaert
@@ -14610,6 +14865,7 @@ classement:
       epreuves: 315
       discretion: 40
       lecture: 174
+    etendue_rangs: 192
   - rang: 156
     nom: Mélanie Moret
     id: melanie-moret
@@ -14624,6 +14880,7 @@ classement:
       epreuves: 311
       discretion: 21
       lecture: 409
+    etendue_rangs: 319
   - rang: 157
     nom: Marc Rambaud
     id: marc-rambaud
@@ -14638,6 +14895,7 @@ classement:
       epreuves: 229
       discretion: 475
       lecture: 167
+    etendue_rangs: 394
   - rang: 158
     nom: Clémence Noquet
     id: clemence-noquet
@@ -14652,6 +14910,7 @@ classement:
       epreuves: 33
       discretion: 254
       lecture: 499
+    etendue_rangs: 436
   - rang: 159
     nom: Sébastien Aberlenc
     id: sebastien-aberlenc
@@ -14666,6 +14925,7 @@ classement:
       epreuves: 389
       discretion: 79
       lecture: 133
+    etendue_rangs: 238
   - rang: 160
     nom: Ulrich Bandeira
     id: ulrich-bandeira
@@ -14680,6 +14940,7 @@ classement:
       epreuves: 412
       discretion: 101
       lecture: 77
+    etendue_rangs: 291
   - rang: 161
     nom: Aurélien Tesson
     id: aurelien-tesson
@@ -14694,6 +14955,7 @@ classement:
       epreuves: 135
       discretion: 104
       lecture: 101
+    etendue_rangs: 248
   - rang: 162
     nom: Jean-Pierre Pigato
     id: jean-pierre-pigato
@@ -14708,6 +14970,7 @@ classement:
       epreuves: 206
       discretion: 181
       lecture: 113
+    etendue_rangs: 216
   - rang: 163
     nom: Philippe Bizet
     id: philippe-bizet
@@ -14718,6 +14981,7 @@ classement:
     rang_p05: 14
     rang_p95: 468
     rangs: *id052
+    etendue_rangs: 454
   - rang: 164
     nom: Vincent Blier
     id: vincent-blier
@@ -14732,6 +14996,7 @@ classement:
       epreuves: 433
       discretion: 214
       lecture: 145
+    etendue_rangs: 253
   - rang: 165
     nom: Maxime Barbet
     id: maxime-barbet
@@ -14746,6 +15011,7 @@ classement:
       epreuves: 346
       discretion: 97
       lecture: 122
+    etendue_rangs: 242
   - rang: 166
     nom: Bastien Muñez
     id: bastien-munez
@@ -14760,6 +15026,7 @@ classement:
       epreuves: 137
       discretion: 67
       lecture: 182
+    etendue_rangs: 227
   - rang: 167
     nom: Pierre-Marie Ponsot
     id: pierre-marie-ponsot
@@ -14774,6 +15041,7 @@ classement:
       epreuves: 103
       discretion: 161
       lecture: 412
+    etendue_rangs: 278
   - rang: 168
     nom: Cynthia Combes
     id: cynthia-combes
@@ -14788,6 +15056,7 @@ classement:
       epreuves: 19
       discretion: 385
       lecture: 521
+    etendue_rangs: 489
   - rang: 169
     nom: Boris Deltell
     id: boris-deltell
@@ -14802,6 +15071,7 @@ classement:
       epreuves: 321
       discretion: 133
       lecture: 186
+    etendue_rangs: 142
   - rang: 170
     nom: Antonin Fortunato
     id: antonin-fortunato
@@ -14816,6 +15086,7 @@ classement:
       epreuves: 46
       discretion: 483
       lecture: 248
+    etendue_rangs: 404
   - rang: 171
     nom: Eliane Vigneron
     id: eliane-vigneron
@@ -14830,6 +15101,7 @@ classement:
       epreuves: 177
       discretion: 108
       lecture: 194
+    etendue_rangs: 206
   - rang: 172
     nom: Romain Palazzetti
     id: romain-palazzetti
@@ -14844,6 +15116,7 @@ classement:
       epreuves: 351
       discretion: 314
       lecture: 131
+    etendue_rangs: 153
   - rang: 173
     nom: Sam Haliti
     id: sam-haliti
@@ -14858,6 +15131,7 @@ classement:
       epreuves: 437
       discretion: 400
       lecture: 89
+    etendue_rangs: 323
   - rang: 174
     nom: Audrey Perez
     id: audrey-perez
@@ -14872,6 +15146,7 @@ classement:
       epreuves: 134
       discretion: 167
       lecture: 181
+    etendue_rangs: 159
   - rang: 175
     nom: Laurent Affri
     id: laurent-affri
@@ -14886,6 +15161,7 @@ classement:
       epreuves: 491
       discretion: 201
       lecture: 71
+    etendue_rangs: 395
   - rang: 176
     nom: Grâce Jeantel
     id: grace-jeantel
@@ -14900,6 +15176,7 @@ classement:
       epreuves: 428
       discretion: 109
       lecture: 109
+    etendue_rangs: 282
   - rang: 177
     nom: Margot Perrot Houwaer
     id: margot-perrot-houwaer
@@ -14914,6 +15191,7 @@ classement:
       epreuves: 230
       discretion: 140
       lecture: 214
+    etendue_rangs: 192
   - rang: 178
     nom: Valentin D'Hoore
     id: valentin-d-hoore
@@ -14928,6 +15206,7 @@ classement:
       epreuves: 413
       discretion: 124
       lecture: 239
+    etendue_rangs: 213
   - rang: 179
     nom: Inès Loucif
     id: ines-loucif
@@ -14942,6 +15221,7 @@ classement:
       epreuves: 526
       discretion: 244
       lecture: 140
+    etendue_rangs: 452
   - rang: 180
     nom: Laureen Hugel
     id: laureen-hugel
@@ -14956,6 +15236,7 @@ classement:
       epreuves: 453
       discretion: 370
       lecture: 47
+    etendue_rangs: 352
   - rang: 181
     nom: Chantal Ménard
     id: chantal-menard
@@ -14970,6 +15251,7 @@ classement:
       epreuves: 162
       discretion: 429
       lecture: 55
+    etendue_rangs: 337
   - rang: 182
     nom: Alexandre Bérard
     id: alexandre-berard
@@ -14984,6 +15266,7 @@ classement:
       epreuves: 123
       discretion: 335
       lecture: 98
+    etendue_rangs: 183
   - rang: 183
     nom: Nessim Kouachi
     id: nessim-kouachi
@@ -14998,6 +15281,7 @@ classement:
       epreuves: 267
       discretion: 122
       lecture: 398
+    etendue_rangs: 261
   - rang: 184
     nom: Jean-Bernard Hauton-Arnaud
     id: jean-bernard-hauton-arnaud
@@ -15012,6 +15296,7 @@ classement:
       epreuves: 420
       discretion: 323
       lecture: 156
+    etendue_rangs: 215
   - rang: 185
     nom: Anthony Dito
     id: anthony-dito
@@ -15026,6 +15311,7 @@ classement:
       epreuves: 130
       discretion: 66
       lecture: 267
+    etendue_rangs: 215
   - rang: 186
     nom: Sarah Aboudeine
     id: sarah-aboudeine
@@ -15040,6 +15326,7 @@ classement:
       epreuves: 432
       discretion: 147
       lecture: 234
+    etendue_rangs: 245
   - rang: 187
     nom: Colin Mottas
     id: colin-mottas
@@ -15054,6 +15341,7 @@ classement:
       epreuves: 402
       discretion: 107
       lecture: 192
+    etendue_rangs: 217
   - rang: 188
     nom: Aurélien Dulau
     id: aurelien-dulau
@@ -15068,6 +15356,7 @@ classement:
       epreuves: 471
       discretion: 42
       lecture: 160
+    etendue_rangs: 358
   - rang: 189
     nom: Cindy Poumeyrol
     id: cindy-poumeyrol
@@ -15078,6 +15367,7 @@ classement:
     rang_p05: 84
     rang_p95: 391
     rangs: *id053
+    etendue_rangs: 307
   - rang: 190
     nom: Filomène Mendonca
     id: filomene-mendonca
@@ -15092,6 +15382,7 @@ classement:
       epreuves: 460
       discretion: 373
       lecture: 155
+    etendue_rangs: 318
   - rang: 191
     nom: Jean-Bernard De Cools
     id: jean-bernard-de-cools
@@ -15106,6 +15397,7 @@ classement:
       epreuves: 202
       discretion: 138
       lecture: 206
+    etendue_rangs: 213
   - rang: 192
     nom: Maud Collas
     id: maud-collas
@@ -15120,6 +15412,7 @@ classement:
       epreuves: 431
       discretion: 117
       lecture: 220
+    etendue_rangs: 257
   - rang: 193
     nom: Marvyn Leone
     id: marvyn-leone
@@ -15134,6 +15427,7 @@ classement:
       epreuves: 343
       discretion: 437
       lecture: 49
+    etendue_rangs: 357
   - rang: 194
     nom: Mélissa Bastin
     id: melissa-bastin
@@ -15148,6 +15442,7 @@ classement:
       epreuves: 250
       discretion: 446
       lecture: 355
+    etendue_rangs: 339
   - rang: 195
     nom: Charlotte Caron
     id: charlotte-caron
@@ -15162,6 +15457,7 @@ classement:
       epreuves: 100
       discretion: 476
       lecture: 43
+    etendue_rangs: 397
   - rang: 196
     nom: Mathieu Blanchard
     id: mathieu-blanchard
@@ -15176,6 +15472,7 @@ classement:
       epreuves: 244
       discretion: 116
       lecture: 217
+    etendue_rangs: 249
   - rang: 197
     nom: Romane Ouvrard
     id: romane-ouvrard
@@ -15190,6 +15487,7 @@ classement:
       epreuves: 277
       discretion: 146
       lecture: 132
+    etendue_rangs: 307
   - rang: 198
     nom: Carine Cazals
     id: carine-cazals
@@ -15204,6 +15502,7 @@ classement:
       epreuves: 116
       discretion: 242
       lecture: 404
+    etendue_rangs: 259
   - rang: 199
     nom: Julie Bourdon
     id: julie-bourdon
@@ -15218,6 +15517,7 @@ classement:
       epreuves: 213
       discretion: 139
       lecture: 209
+    etendue_rangs: 227
   - rang: 200
     nom: Benoît Mahieux
     id: benoit-mahieux
@@ -15232,6 +15532,7 @@ classement:
       epreuves: 140
       discretion: 171
       lecture: 184
+    etendue_rangs: 199
   - rang: 201
     nom: Maxime Berthon
     id: maxime-berthon
@@ -15246,6 +15547,7 @@ classement:
       epreuves: 11
       discretion: 413
       lecture: 508
+    etendue_rangs: 487
   - rang: 202
     nom: Alexandre Cheron
     id: alexandre-cheron
@@ -15260,6 +15562,7 @@ classement:
       epreuves: 124
       discretion: 164
       lecture: 177
+    etendue_rangs: 200
   - rang: 203
     nom: Pauline Leperchois
     id: pauline-leperchois
@@ -15274,6 +15577,7 @@ classement:
       epreuves: 271
       discretion: 98
       lecture: 337
+    etendue_rangs: 210
   - rang: 204
     nom: Aubin Bligny
     id: aubin-bligny
@@ -15288,6 +15592,7 @@ classement:
       epreuves: 368
       discretion: 86
       lecture: 180
+    etendue_rangs: 224
   - rang: 205
     nom: Sophie Eeckhout
     id: sophie-eeckhout
@@ -15302,6 +15607,7 @@ classement:
       epreuves: 313
       discretion: 372
       lecture: 276
+    etendue_rangs: 165
   - rang: 206
     nom: Naouel Hadjaf
     id: naouel-hadjaf
@@ -15316,6 +15622,7 @@ classement:
       epreuves: 262
       discretion: 142
       lecture: 226
+    etendue_rangs: 239
   - rang: 207
     nom: Bruno Troester
     id: bruno-troester
@@ -15330,6 +15637,7 @@ classement:
       epreuves: 108
       discretion: 384
       lecture: 421
+    etendue_rangs: 314
   - rang: 208
     nom: Shanice Mendy
     id: shanice-mendy
@@ -15344,6 +15652,7 @@ classement:
       epreuves: 356
       discretion: 257
       lecture: 275
+    etendue_rangs: 66
   - rang: 209
     nom: Jennifer Lieutaud
     id: jennifer-lieutaud
@@ -15358,6 +15667,7 @@ classement:
       epreuves: 208
       discretion: 182
       lecture: 207
+    etendue_rangs: 211
   - rang: 210
     nom: Romain Bissol
     id: romain-bissol
@@ -15372,6 +15682,7 @@ classement:
       epreuves: 424
       discretion: 399
       lecture: 260
+    etendue_rangs: 284
   - rang: 211
     nom: Frédéric Blancher
     id: frederic-blancher
@@ -15386,6 +15697,7 @@ classement:
       epreuves: 419
       discretion: 264
       lecture: 465
+    etendue_rangs: 393
   - rang: 212
     nom: Dylan Thiry
     id: dylan-thiry
@@ -15400,6 +15712,7 @@ classement:
       epreuves: 58
       discretion: 333
       lecture: 80
+    etendue_rangs: 432
   - rang: 213
     nom: Alexis Tchernychev
     id: alexis-tchernychev
@@ -15414,6 +15727,7 @@ classement:
       epreuves: 318
       discretion: 165
       lecture: 99
+    etendue_rangs: 268
   - rang: 214
     nom: Félicie Greugny
     id: felicie-greugny
@@ -15428,6 +15742,7 @@ classement:
       epreuves: 182
       discretion: 136
       lecture: 199
+    etendue_rangs: 244
   - rang: 215
     nom: Cédric Giosserand-Lucas
     id: cedric-giosserand-lucas
@@ -15442,6 +15757,7 @@ classement:
       epreuves: 159
       discretion: 253
       lecture: 65
+    etendue_rangs: 343
   - rang: 216
     nom: Maxime Stafrach
     id: maxime-stafrach
@@ -15456,6 +15772,7 @@ classement:
       epreuves: 101
       discretion: 35
       lecture: 482
+    etendue_rangs: 375
   - rang: 217
     nom: Paul Estival
     id: paul-estival
@@ -15470,6 +15787,7 @@ classement:
       epreuves: 465
       discretion: 36
       lecture: 172
+    etendue_rangs: 343
   - rang: 218
     nom: Émilie Clavis
     id: emilie-clavis
@@ -15484,6 +15802,7 @@ classement:
       epreuves: 328
       discretion: 135
       lecture: 196
+    etendue_rangs: 216
   - rang: 219
     nom: Patrick Merle
     id: patrick-merle
@@ -15498,6 +15817,7 @@ classement:
       epreuves: 518
       discretion: 327
       lecture: 61
+    etendue_rangs: 431
   - rang: 220
     nom: Gaël Gollen
     id: gael-gollen
@@ -15512,6 +15832,7 @@ classement:
       epreuves: 190
       discretion: 180
       lecture: 203
+    etendue_rangs: 230
   - rang: 221
     nom: Nelly Baradeau
     id: nelly-baradeau
@@ -15526,6 +15847,7 @@ classement:
       epreuves: 265
       discretion: 187
       lecture: 228
+    etendue_rangs: 230
   - rang: 222
     nom: Vicky Szikman
     id: vicky-szikman
@@ -15540,6 +15862,7 @@ classement:
       epreuves: 300
       discretion: 194
       lecture: 241
+    etendue_rangs: 230
   - rang: 223
     nom: Hélène Patry
     id: helene-patry
@@ -15554,6 +15877,7 @@ classement:
       epreuves: 196
       discretion: 93
       lecture: 469
+    etendue_rangs: 363
   - rang: 224
     nom: Mohamed Ayari
     id: mohamed-ayari
@@ -15568,6 +15892,7 @@ classement:
       epreuves: 256
       discretion: 119
       lecture: 330
+    etendue_rangs: 217
   - rang: 225
     nom: Clo Dessard Arribas
     id: clo-dessard-arribas
@@ -15582,6 +15907,7 @@ classement:
       epreuves: 478
       discretion: 261
       lecture: 353
+    etendue_rangs: 339
   - rang: 226
     nom: Pascal Nickert
     id: pascal-nickert
@@ -15596,6 +15922,7 @@ classement:
       epreuves: 270
       discretion: 391
       lecture: 274
+    etendue_rangs: 194
   - rang: 227
     nom: Cécile Belec
     id: cecile-belec
@@ -15610,6 +15937,7 @@ classement:
       epreuves: 514
       discretion: 317
       lecture: 138
+    etendue_rangs: 410
   - rang: 228
     nom: Mathilde Chevalier
     id: mathilde-chevalier
@@ -15624,6 +15952,7 @@ classement:
       epreuves: 423
       discretion: 468
       lecture: 149
+    etendue_rangs: 372
   - rang: 229
     nom: Delphine Hergault
     id: delphine-hergault
@@ -15638,6 +15967,7 @@ classement:
       epreuves: 327
       discretion: 338
       lecture: 107
+    etendue_rangs: 199
   - rang: 230
     nom: Lau Émilien
     id: lau-emilien
@@ -15652,6 +15982,7 @@ classement:
       epreuves: 341
       discretion: 436
       lecture: 46
+    etendue_rangs: 361
   - rang: 231
     nom: Huw Francis
     id: huw-francis
@@ -15666,6 +15997,7 @@ classement:
       epreuves: 198
       discretion: 227
       lecture: 205
+    etendue_rangs: 216
   - rang: 232
     nom: Nadine De Carpentry
     id: nadine-de-carpentry
@@ -15680,6 +16012,7 @@ classement:
       epreuves: 261
       discretion: 185
       lecture: 225
+    etendue_rangs: 249
   - rang: 233
     nom: Sandrine Bouzekri
     id: sandrine-bouzekri
@@ -15694,6 +16027,7 @@ classement:
       epreuves: 281
       discretion: 190
       lecture: 233
+    etendue_rangs: 250
   - rang: 234
     nom: Sylvie Sébert
     id: sylvie-sebert
@@ -15708,6 +16042,7 @@ classement:
       epreuves: 290
       discretion: 150
       lecture: 237
+    etendue_rangs: 285
   - rang: 235
     nom: Jimmy Denis
     id: jimmy-denis
@@ -15722,6 +16057,7 @@ classement:
       epreuves: 340
       discretion: 255
       lecture: 368
+    etendue_rangs: 125
   - rang: 236
     nom: Florence Delbarre
     id: florence-delbarre
@@ -15736,6 +16072,7 @@ classement:
       epreuves: 474
       discretion: 263
       lecture: 81
+    etendue_rangs: 354
   - rang: 237
     nom: Patrick Brasier De Thuy
     id: patrick-brasier-de-thuy
@@ -15750,6 +16087,7 @@ classement:
       epreuves: 112
       discretion: 497
       lecture: 88
+    etendue_rangs: 408
   - rang: 238
     nom: Sakhone Holaphong
     id: sakhone-holaphong
@@ -15764,6 +16102,7 @@ classement:
       epreuves: 352
       discretion: 460
       lecture: 52
+    etendue_rangs: 376
   - rang: 239
     nom: Jean-Luc Duboscq
     id: jean-luc-duboscq
@@ -15778,6 +16117,7 @@ classement:
       epreuves: 204
       discretion: 406
       lecture: 69
+    etendue_rangs: 307
   - rang: 240
     nom: Samuel Degoute
     id: samuel-degoute
@@ -15792,6 +16132,7 @@ classement:
       epreuves: 280
       discretion: 123
       lecture: 232
+    etendue_rangs: 318
   - rang: 241
     nom: Wafa El Mejjad
     id: wafa-el-mejjad
@@ -15806,6 +16147,7 @@ classement:
       epreuves: 529
       discretion: 414
       lecture: 38
+    etendue_rangs: 465
   - rang: 242
     nom: Carole Poncelet
     id: carole-poncelet
@@ -15820,6 +16162,7 @@ classement:
       epreuves: 151
       discretion: 174
       lecture: 293
+    etendue_rangs: 190
   - rang: 243
     nom: Steeve Demana
     id: steeve-demana
@@ -15834,6 +16177,7 @@ classement:
       epreuves: 362
       discretion: 11
       lecture: 509
+    etendue_rangs: 451
   - rang: 244
     nom: Alain Ponton
     id: alain-ponton
@@ -15848,6 +16192,7 @@ classement:
       epreuves: 448
       discretion: 84
       lecture: 359
+    etendue_rangs: 289
   - rang: 245
     nom: Laurent Mischkind
     id: laurent-mischkind
@@ -15862,6 +16207,7 @@ classement:
       epreuves: 219
       discretion: 342
       lecture: 118
+    etendue_rangs: 252
   - rang: 246
     nom: Thibault Bélanger
     id: thibault-belanger
@@ -15876,6 +16222,7 @@ classement:
       epreuves: 447
       discretion: 38
       lecture: 497
+    etendue_rangs: 452
   - rang: 247
     nom: Freddy Boucher
     id: freddy-boucher
@@ -15890,6 +16237,7 @@ classement:
       epreuves: 363
       discretion: 328
       lecture: 148
+    etendue_rangs: 204
   - rang: 248
     nom: Manuella Baudet
     id: manuella-baudet
@@ -15904,6 +16252,7 @@ classement:
       epreuves: 406
       discretion: 34
       lecture: 394
+    etendue_rangs: 285
   - rang: 249
     nom: Joana Callico
     id: joana-callico
@@ -15918,6 +16267,7 @@ classement:
       epreuves: 429
       discretion: 210
       lecture: 369
+    etendue_rangs: 214
   - rang: 250
     nom: Alain Merdel
     id: alain-merdel
@@ -15932,6 +16282,7 @@ classement:
       epreuves: 120
       discretion: 163
       lecture: 176
+    etendue_rangs: 271
   - rang: 251
     nom: Manu Delanghe
     id: manu-delanghe
@@ -15946,6 +16297,7 @@ classement:
       epreuves: 228
       discretion: 275
       lecture: 371
+    etendue_rangs: 136
   - rang: 252
     nom: Ludivine Wiart
     id: ludivine-wiart
@@ -15960,6 +16312,7 @@ classement:
       epreuves: 110
       discretion: 154
       lecture: 496
+    etendue_rangs: 387
   - rang: 253
     nom: Gustin Comanescu
     id: gustin-comanescu
@@ -15974,6 +16327,7 @@ classement:
       epreuves: 76
       discretion: 71
       lecture: 512
+    etendue_rangs: 431
   - rang: 254
     nom: Mel Moresve
     id: mel-moresve
@@ -15988,6 +16342,7 @@ classement:
       epreuves: 248
       discretion: 234
       lecture: 221
+    etendue_rangs: 240
   - rang: 255
     nom: Olga Khokhlova
     id: olga-khokhlova
@@ -16002,6 +16357,7 @@ classement:
       epreuves: 111
       discretion: 212
       lecture: 501
+    etendue_rangs: 387
   - rang: 256
     nom: Anne-Sophie Antoine
     id: anne-sophie-antoine
@@ -16016,6 +16372,7 @@ classement:
       epreuves: 426
       discretion: 336
       lecture: 100
+    etendue_rangs: 251
   - rang: 257
     nom: Adrien Ferreira
     id: adrien-ferreira
@@ -16030,6 +16387,7 @@ classement:
       epreuves: 365
       discretion: 309
       lecture: 96
+    etendue_rangs: 223
   - rang: 258
     nom: Vanessa Feuillatte
     id: vanessa-feuillatte
@@ -16044,6 +16402,7 @@ classement:
       epreuves: 299
       discretion: 193
       lecture: 344
+    etendue_rangs: 204
   - rang: 259
     nom: Thomas Hébert
     id: thomas-hebert
@@ -16058,6 +16417,7 @@ classement:
       epreuves: 295
       discretion: 192
       lecture: 238
+    etendue_rangs: 278
   - rang: 260
     nom: Alexandra Élizé
     id: alexandra-elize
@@ -16072,6 +16432,7 @@ classement:
       epreuves: 57
       discretion: 310
       lecture: 422
+    etendue_rangs: 347
   - rang: 261
     nom: Yassin Metiri
     id: yassin-metiri
@@ -16082,6 +16443,7 @@ classement:
     rang_p05: 63
     rang_p95: 503
     rangs: *id054
+    etendue_rangs: 440
   - rang: 262
     nom: Céline Fortier
     id: celine-fortier
@@ -16096,6 +16458,7 @@ classement:
       epreuves: 160
       discretion: 220
       lecture: 188
+    etendue_rangs: 248
   - rang: 263
     nom: Lola Potabes
     id: lola-potabes
@@ -16110,6 +16473,7 @@ classement:
       epreuves: 223
       discretion: 230
       lecture: 212
+    etendue_rangs: 249
   - rang: 264
     nom: Brahma Sadeyen
     id: brahma-sadeyen
@@ -16124,6 +16488,7 @@ classement:
       epreuves: 144
       discretion: 390
       lecture: 103
+    etendue_rangs: 252
   - rang: 265
     nom: Yves Rey
     id: yves-rey
@@ -16138,6 +16503,7 @@ classement:
       epreuves: 305
       discretion: 477
       lecture: 53
+    etendue_rangs: 395
   - rang: 266
     nom: Benjamin Di Benedetto
     id: benjamin-di-benedetto
@@ -16152,6 +16518,7 @@ classement:
       epreuves: 370
       discretion: 169
       lecture: 183
+    etendue_rangs: 220
   - rang: 267
     nom: Mika Tailleur
     id: mika-tailleur
@@ -16166,6 +16533,7 @@ classement:
       epreuves: 255
       discretion: 118
       lecture: 397
+    etendue_rangs: 245
   - rang: 268
     nom: Gabin Peillon
     id: gabin-peillon
@@ -16180,6 +16548,7 @@ classement:
       epreuves: 189
       discretion: 90
       lecture: 366
+    etendue_rangs: 260
   - rang: 269
     nom: Maël Lozach
     id: mael-lozach
@@ -16194,6 +16563,7 @@ classement:
       epreuves: 523
       discretion: 129
       lecture: 389
+    etendue_rangs: 448
   - rang: 270
     nom: Caroline Colusso
     id: caroline-colusso
@@ -16208,6 +16578,7 @@ classement:
       epreuves: 152
       discretion: 175
       lecture: 294
+    etendue_rangs: 220
   - rang: 271
     nom: Vidéli Dittmar
     id: videli-dittmar
@@ -16222,6 +16593,7 @@ classement:
       epreuves: 301
       discretion: 195
       lecture: 242
+    etendue_rangs: 292
   - rang: 272
     nom: Charles Clément
     id: charles-clement
@@ -16236,6 +16608,7 @@ classement:
       epreuves: 164
       discretion: 434
       lecture: 351
+    etendue_rangs: 270
   - rang: 273
     nom: Christophe Pendon
     id: christophe-pendon
@@ -16250,6 +16623,7 @@ classement:
       epreuves: 167
       discretion: 435
       lecture: 362
+    etendue_rangs: 283
   - rang: 274
     nom: Helena Roosen
     id: helena-roosen
@@ -16264,6 +16638,7 @@ classement:
       epreuves: 463
       discretion: 110
       lecture: 367
+    etendue_rangs: 290
   - rang: 275
     nom: Hada Ghoulam
     id: hada-ghoulam
@@ -16278,6 +16653,7 @@ classement:
       epreuves: 194
       discretion: 226
       lecture: 204
+    etendue_rangs: 264
   - rang: 276
     nom: Nathanaël Branchereau
     id: nathanael-branchereau
@@ -16292,6 +16668,7 @@ classement:
       epreuves: 264
       discretion: 186
       lecture: 334
+    etendue_rangs: 225
   - rang: 277
     nom: Gaëlle Fleury
     id: gaelle-fleury
@@ -16306,6 +16683,7 @@ classement:
       epreuves: 522
       discretion: 386
       lecture: 252
+    etendue_rangs: 440
   - rang: 278
     nom: Moundir Zoughari
     id: moundir-zoughari
@@ -16320,6 +16698,7 @@ classement:
       epreuves: 485
       discretion: 420
       lecture: 94
+    etendue_rangs: 357
   - rang: 279
     nom: Marine Mocellin
     id: marine-mocellin
@@ -16334,6 +16713,7 @@ classement:
       epreuves: 240
       discretion: 114
       lecture: 395
+    etendue_rangs: 246
   - rang: 280
     nom: Cécilia Siharaj
     id: cecilia-siharaj
@@ -16348,6 +16728,7 @@ classement:
       epreuves: 439
       discretion: 423
       lecture: 349
+    etendue_rangs: 322
   - rang: 281
     nom: Linda Delamarre
     id: linda-delamarre
@@ -16362,6 +16743,7 @@ classement:
       epreuves: 220
       discretion: 380
       lecture: 211
+    etendue_rangs: 180
   - rang: 282
     nom: Jessica Joullié
     id: jessica-joullie
@@ -16376,6 +16758,7 @@ classement:
       epreuves: 339
       discretion: 379
       lecture: 115
+    etendue_rangs: 234
   - rang: 283
     nom: Isabelle Da Silva
     id: isabelle-da-silva
@@ -16390,6 +16773,7 @@ classement:
       epreuves: 337
       discretion: 419
       lecture: 56
+    etendue_rangs: 353
   - rang: 284
     nom: Laurence Pizzocchia
     id: laurence-pizzocchia
@@ -16404,6 +16788,7 @@ classement:
       epreuves: 500
       discretion: 32
       lecture: 142
+    etendue_rangs: 405
   - rang: 285
     nom: Marie Ovaere
     id: marie-ovaere
@@ -16418,6 +16803,7 @@ classement:
       epreuves: 236
       discretion: 183
       lecture: 326
+    etendue_rangs: 232
   - rang: 286
     nom: Arnaud Deshayes
     id: arnaud-deshayes
@@ -16432,6 +16818,7 @@ classement:
       epreuves: 75
       discretion: 508
       lecture: 154
+    etendue_rangs: 420
   - rang: 287
     nom: Véronique Bègue
     id: veronique-begue
@@ -16446,6 +16833,7 @@ classement:
       epreuves: 425
       discretion: 494
       lecture: 91
+    etendue_rangs: 404
   - rang: 288
     nom: Steve Best
     id: steve-best
@@ -16460,6 +16848,7 @@ classement:
       epreuves: 458
       discretion: 248
       lecture: 385
+    etendue_rangs: 242
   - rang: 289
     nom: Franck Michel
     id: franck-michel
@@ -16474,6 +16863,7 @@ classement:
       epreuves: 183
       discretion: 179
       lecture: 307
+    etendue_rangs: 237
   - rang: 290
     nom: Benoît Piedfer
     id: benoit-piedfer
@@ -16488,6 +16878,7 @@ classement:
       epreuves: 141
       discretion: 337
       lecture: 185
+    etendue_rangs: 188
   - rang: 291
     nom: Philippe Bordier
     id: philippe-bordier
@@ -16502,6 +16893,7 @@ classement:
       epreuves: 524
       discretion: 103
       lecture: 379
+    etendue_rangs: 415
   - rang: 292
     nom: Mattéo Real
     id: matteo-real
@@ -16516,6 +16908,7 @@ classement:
       epreuves: 345
       discretion: 233
       lecture: 219
+    etendue_rangs: 239
   - rang: 293
     nom: Anthony Amar
     id: anthony-amar
@@ -16530,6 +16923,7 @@ classement:
       epreuves: 320
       discretion: 85
       lecture: 446
+    etendue_rangs: 288
   - rang: 294
     nom: Délisia Fettasi
     id: delisia-fettasi
@@ -16544,6 +16938,7 @@ classement:
       epreuves: 172
       discretion: 426
       lecture: 106
+    etendue_rangs: 287
   - rang: 295
     nom: Frédéric Blanchard
     id: frederic-blanchard
@@ -16558,6 +16953,7 @@ classement:
       epreuves: 427
       discretion: 89
       lecture: 309
+    etendue_rangs: 264
   - rang: 296
     nom: Christine Isoart
     id: christine-isoart
@@ -16572,6 +16968,7 @@ classement:
       epreuves: 450
       discretion: 393
       lecture: 162
+    etendue_rangs: 238
   - rang: 297
     nom: Manon Allender
     id: manon-allender
@@ -16586,6 +16983,7 @@ classement:
       epreuves: 227
       discretion: 381
       lecture: 120
+    etendue_rangs: 281
   - rang: 298
     nom: Diane Goulesque-Perez
     id: diane-goulesque-perez
@@ -16600,6 +16998,7 @@ classement:
       epreuves: 175
       discretion: 177
       lecture: 305
+    etendue_rangs: 245
   - rang: 299
     nom: Alexandre Amico
     id: alexandre-amico
@@ -16614,6 +17013,7 @@ classement:
       epreuves: 122
       discretion: 271
       lecture: 390
+    etendue_rangs: 189
   - rang: 300
     nom: Pauline Bonneil
     id: pauline-bonneil
@@ -16628,6 +17028,7 @@ classement:
       epreuves: 519
       discretion: 59
       lecture: 411
+    etendue_rangs: 432
   - rang: 301
     nom: Gégé Icardi
     id: gege-icardi
@@ -16642,6 +17043,7 @@ classement:
       epreuves: 191
       discretion: 225
       lecture: 311
+    etendue_rangs: 214
   - rang: 302
     nom: Alix Noblat
     id: alix-noblat
@@ -16656,6 +17058,7 @@ classement:
       epreuves: 393
       discretion: 424
       lecture: 417
+    etendue_rangs: 335
   - rang: 303
     nom: Camille Sold
     id: camille-sold
@@ -16670,6 +17073,7 @@ classement:
       epreuves: 147
       discretion: 199
       lecture: 479
+    etendue_rangs: 322
   - rang: 304
     nom: Steve Lemercier
     id: steve-lemercier
@@ -16684,6 +17088,7 @@ classement:
       epreuves: 287
       discretion: 191
       lecture: 341
+    etendue_rangs: 255
   - rang: 305
     nom: Pierre Vaney
     id: pierre-vaney
@@ -16698,6 +17103,7 @@ classement:
       epreuves: 494
       discretion: 269
       lecture: 358
+    etendue_rangs: 313
   - rang: 306
     nom: Franck (Le Totem Maudit)
     id: franck-le-totem-maudit
@@ -16712,6 +17118,7 @@ classement:
       epreuves: 333
       discretion: 223
       lecture: 200
+    etendue_rangs: 257
   - rang: 307
     nom: Véronique Lobjoie
     id: veronique-lobjoie
@@ -16726,6 +17133,7 @@ classement:
       epreuves: 510
       discretion: 332
       lecture: 263
+    etendue_rangs: 348
   - rang: 308
     nom: Benjamin Breerette
     id: benjamin-breerette
@@ -16740,6 +17148,7 @@ classement:
       epreuves: 369
       discretion: 168
       lecture: 288
+    etendue_rangs: 193
   - rang: 309
     nom: Brice Petit
     id: brice-petit
@@ -16754,6 +17163,7 @@ classement:
       epreuves: 107
       discretion: 440
       lecture: 483
+    etendue_rangs: 395
   - rang: 310
     nom: Pierre Cambon
     id: pierre-cambon
@@ -16768,6 +17178,7 @@ classement:
       epreuves: 273
       discretion: 428
       lecture: 130
+    etendue_rangs: 291
   - rang: 311
     nom: Louis-Laurent Léger
     id: louis-laurent-leger
@@ -16782,6 +17193,7 @@ classement:
       epreuves: 225
       discretion: 75
       lecture: 500
+    etendue_rangs: 383
   - rang: 312
     nom: Jean-Charles Chatelus
     id: jean-charles-chatelus
@@ -16796,6 +17208,7 @@ classement:
       epreuves: 516
       discretion: 375
       lecture: 253
+    etendue_rangs: 399
   - rang: 313
     nom: Marie-Laure Dagniaux
     id: marie-laure-dagniaux
@@ -16810,6 +17223,7 @@ classement:
       epreuves: 382
       discretion: 231
       lecture: 215
+    etendue_rangs: 236
   - rang: 314
     nom: Morgane Rodriguès
     id: morgane-rodrigues
@@ -16824,6 +17238,7 @@ classement:
       epreuves: 348
       discretion: 236
       lecture: 331
+    etendue_rangs: 176
   - rang: 315
     nom: Chloé Vavasseur
     id: chloe-vavasseur
@@ -16838,6 +17253,7 @@ classement:
       epreuves: 371
       discretion: 106
       lecture: 391
+    etendue_rangs: 219
   - rang: 316
     nom: Xavier Lemasson
     id: xavier-lemasson
@@ -16852,6 +17268,7 @@ classement:
       epreuves: 304
       discretion: 241
       lecture: 244
+    etendue_rangs: 308
   - rang: 317
     nom: Anthony Parra
     id: anthony-parra
@@ -16866,6 +17283,7 @@ classement:
       epreuves: 131
       discretion: 281
       lecture: 284
+    etendue_rangs: 184
   - rang: 318
     nom: Amir Doukhan
     id: amir-doukhan
@@ -16880,6 +17298,7 @@ classement:
       epreuves: 128
       discretion: 132
       lecture: 423
+    etendue_rangs: 261
   - rang: 319
     nom: Catherine Barnier
     id: catherine-barnier
@@ -16894,6 +17313,7 @@ classement:
       epreuves: 156
       discretion: 286
       lecture: 187
+    etendue_rangs: 268
   - rang: 320
     nom: Marta Molino
     id: marta-molino
@@ -16908,6 +17328,7 @@ classement:
       epreuves: 242
       discretion: 184
       lecture: 396
+    etendue_rangs: 216
   - rang: 321
     nom: Fabrice Pietrzak
     id: fabrice-pietrzak
@@ -16922,6 +17343,7 @@ classement:
       epreuves: 416
       discretion: 262
       lecture: 459
+    etendue_rangs: 291
   - rang: 322
     nom: Moussa Niangane
     id: moussa-niangane
@@ -16932,6 +17354,7 @@ classement:
     rang_p05: 15
     rang_p95: 527
     rangs: *id055
+    etendue_rangs: 512
   - rang: 323
     nom: Angélique Mastio
     id: angelique-mastio
@@ -16946,6 +17369,7 @@ classement:
       epreuves: 496
       discretion: 207
       lecture: 266
+    etendue_rangs: 302
   - rang: 324
     nom: Marius Torterat
     id: marius-torterat
@@ -16960,6 +17384,7 @@ classement:
       epreuves: 241
       discretion: 232
       lecture: 328
+    etendue_rangs: 239
   - rang: 325
     nom: Karine Iraundegui
     id: karine-iraundegui
@@ -16974,6 +17399,7 @@ classement:
       epreuves: 380
       discretion: 229
       lecture: 210
+    etendue_rangs: 249
   - rang: 326
     nom: Fabrice Giordano
     id: fabrice-giordano
@@ -16988,6 +17414,7 @@ classement:
       epreuves: 376
       discretion: 339
       lecture: 364
+    etendue_rangs: 78
   - rang: 327
     nom: Brice Chauvinc
     id: brice-chauvinc
@@ -17002,6 +17429,7 @@ classement:
       epreuves: 481
       discretion: 44
       lecture: 361
+    etendue_rangs: 324
   - rang: 328
     nom: Jacky Forteron
     id: jacky-forteron
@@ -17016,6 +17444,7 @@ classement:
       epreuves: 201
       discretion: 137
       lecture: 434
+    etendue_rangs: 260
   - rang: 329
     nom: Mélanie Guyon
     id: melanie-guyon
@@ -17030,6 +17459,7 @@ classement:
       epreuves: 384
       discretion: 382
       lecture: 125
+    etendue_rangs: 251
   - rang: 330
     nom: Théotime Bernardin
     id: theotime-bernardin
@@ -17044,6 +17474,7 @@ classement:
       epreuves: 292
       discretion: 151
       lecture: 401
+    etendue_rangs: 248
   - rang: 331
     nom: Christian Chambon
     id: christian-chambon
@@ -17058,6 +17489,7 @@ classement:
       epreuves: 166
       discretion: 221
       lecture: 300
+    etendue_rangs: 244
   - rang: 332
     nom: Magali Sevenier
     id: magali-sevenier
@@ -17072,6 +17504,7 @@ classement:
       epreuves: 483
       discretion: 471
       lecture: 85
+    etendue_rangs: 379
   - rang: 333
     nom: Alban Pellegrin
     id: alban-pellegrin
@@ -17082,6 +17515,7 @@ classement:
     rang_p05: 134
     rang_p95: 460
     rangs: *id056
+    etendue_rangs: 326
   - rang: 334
     nom: Allan Rousseeuw
     id: allan-rousseeuw
@@ -17096,6 +17530,7 @@ classement:
       epreuves: 126
       discretion: 166
       lecture: 282
+    etendue_rangs: 280
   - rang: 335
     nom: William Plancq
     id: william-plancq
@@ -17110,6 +17545,7 @@ classement:
       epreuves: 359
       discretion: 240
       lecture: 347
+    etendue_rangs: 197
   - rang: 336
     nom: Loïc Crespin
     id: loic-crespin
@@ -17124,6 +17560,7 @@ classement:
       epreuves: 222
       discretion: 427
       lecture: 119
+    etendue_rangs: 298
   - rang: 337
     nom: Alexandra Pharisien
     id: alexandra-pharisien
@@ -17138,6 +17575,7 @@ classement:
       epreuves: 95
       discretion: 473
       lecture: 265
+    etendue_rangs: 336
   - rang: 338
     nom: Yannick Delalleau
     id: yannick-delalleau
@@ -17152,6 +17590,7 @@ classement:
       epreuves: 477
       discretion: 39
       lecture: 416
+    etendue_rangs: 330
   - rang: 339
     nom: Joaquina Glaud
     id: joaquina-glaud
@@ -17166,6 +17605,7 @@ classement:
       epreuves: 452
       discretion: 318
       lecture: 370
+    etendue_rangs: 185
   - rang: 340
     nom: Nora Toubal
     id: nora-toubal
@@ -17180,6 +17620,7 @@ classement:
       epreuves: 385
       discretion: 345
       lecture: 229
+    etendue_rangs: 175
   - rang: 341
     nom: Candice Cohen
     id: candice-cohen
@@ -17194,6 +17635,7 @@ classement:
       epreuves: 148
       discretion: 218
       lecture: 290
+    etendue_rangs: 252
   - rang: 342
     nom: Julie Rignault
     id: julie-rignault
@@ -17208,6 +17650,7 @@ classement:
       epreuves: 517
       discretion: 402
       lecture: 271
+    etendue_rangs: 404
   - rang: 343
     nom: Amel Fatnassi
     id: amel-fatnassi
@@ -17222,6 +17665,7 @@ classement:
       epreuves: 88
       discretion: 250
       lecture: 493
+    etendue_rangs: 380
   - rang: 344
     nom: Samira Aït-Brahim
     id: samira-ait-brahim
@@ -17236,6 +17680,7 @@ classement:
       epreuves: 388
       discretion: 238
       lecture: 339
+    etendue_rangs: 182
   - rang: 345
     nom: Valérie Gernigon
     id: valerie-gernigon
@@ -17250,6 +17695,7 @@ classement:
       epreuves: 297
       discretion: 300
       lecture: 343
+    etendue_rangs: 214
   - rang: 346
     nom: Cécile Poprawa
     id: cecile-poprawa
@@ -17264,6 +17710,7 @@ classement:
       epreuves: 449
       discretion: 46
       lecture: 448
+    etendue_rangs: 315
   - rang: 347
     nom: Marie-Cécile Maréchal
     id: marie-cecile-marechal
@@ -17278,6 +17725,7 @@ classement:
       epreuves: 234
       discretion: 343
       lecture: 372
+    etendue_rangs: 124
   - rang: 348
     nom: Géraldine Doyen
     id: geraldine-doyen
@@ -17292,6 +17740,7 @@ classement:
       epreuves: 451
       discretion: 70
       lecture: 449
+    etendue_rangs: 307
   - rang: 349
     nom: Alexandra Pouillon
     id: alexandra-pouillon
@@ -17306,6 +17755,7 @@ classement:
       epreuves: 504
       discretion: 469
       lecture: 54
+    etendue_rangs: 414
   - rang: 350
     nom: Cindy Sulpice-Gonzalez
     id: cindy-sulpice-gonzalez
@@ -17320,6 +17770,7 @@ classement:
       epreuves: 511
       discretion: 260
       lecture: 249
+    etendue_rangs: 311
   - rang: 351
     nom: Carinne Elka-Dioza
     id: carinne-elka-dioza
@@ -17334,6 +17785,7 @@ classement:
       epreuves: 322
       discretion: 173
       lecture: 291
+    etendue_rangs: 265
   - rang: 352
     nom: Michel Jeandel
     id: michel-jeandel
@@ -17348,6 +17800,7 @@ classement:
       epreuves: 253
       discretion: 383
       lecture: 223
+    etendue_rangs: 231
   - rang: 353
     nom: Jérémy Raffin
     id: jeremy-raffin
@@ -17362,6 +17815,7 @@ classement:
       epreuves: 488
       discretion: 492
       lecture: 157
+    etendue_rangs: 424
   - rang: 354
     nom: Laurent Boudes
     id: laurent-boudes
@@ -17376,6 +17830,7 @@ classement:
       epreuves: 422
       discretion: 211
       lecture: 481
+    etendue_rangs: 313
   - rang: 355
     nom: Taïg Khris
     id: taig-khris
@@ -17390,6 +17845,7 @@ classement:
       epreuves: 291
       discretion: 276
       lecture: 473
+    etendue_rangs: 291
   - rang: 356
     nom: Frédéric Pignard
     id: frederic-pignard
@@ -17404,6 +17860,7 @@ classement:
       epreuves: 377
       discretion: 209
       lecture: 432
+    etendue_rangs: 199
   - rang: 357
     nom: Fouzi Ould Bouamama
     id: fouzi-ould-bouamama
@@ -17418,6 +17875,7 @@ classement:
       epreuves: 417
       discretion: 430
       lecture: 381
+    etendue_rangs: 254
   - rang: 358
     nom: Caroline Lamotte
     id: caroline-lamotte
@@ -17432,6 +17890,7 @@ classement:
       epreuves: 154
       discretion: 285
       lecture: 295
+    etendue_rangs: 225
   - rang: 359
     nom: Guillaume Noël
     id: guillaume-noel
@@ -17446,6 +17905,7 @@ classement:
       epreuves: 192
       discretion: 292
       lecture: 312
+    etendue_rangs: 225
   - rang: 360
     nom: Alain Garcia
     id: alain-garcia
@@ -17460,6 +17920,7 @@ classement:
       epreuves: 316
       discretion: 425
       lecture: 175
+    etendue_rangs: 203
   - rang: 361
     nom: Hervé Comte
     id: herve-comte
@@ -17474,6 +17935,7 @@ classement:
       epreuves: 197
       discretion: 94
       lecture: 470
+    etendue_rangs: 330
   - rang: 362
     nom: François Zabalo
     id: francois-zabalo
@@ -17488,6 +17950,7 @@ classement:
       epreuves: 184
       discretion: 224
       lecture: 308
+    etendue_rangs: 277
   - rang: 363
     nom: Claire Passas
     id: claire-passas
@@ -17498,6 +17961,7 @@ classement:
     rang_p05: 80
     rang_p95: 519
     rangs: *id057
+    etendue_rangs: 439
   - rang: 364
     nom: Myriam Desvergne
     id: myriam-desvergne
@@ -17512,6 +17976,7 @@ classement:
       epreuves: 257
       discretion: 298
       lecture: 332
+    etendue_rangs: 228
   - rang: 365
     nom: Vivien Escouflaire
     id: vivien-escouflaire
@@ -17526,6 +17991,7 @@ classement:
       epreuves: 303
       discretion: 301
       lecture: 346
+    etendue_rangs: 228
   - rang: 366
     nom: Mathieu Orsolani
     id: mathieu-orsolani
@@ -17540,6 +18006,7 @@ classement:
       epreuves: 344
       discretion: 247
       lecture: 452
+    etendue_rangs: 203
   - rang: 367
     nom: Virginie Mercadal Pioli
     id: virginie-mercadal-pioli
@@ -17554,6 +18021,7 @@ classement:
       epreuves: 302
       discretion: 412
       lecture: 243
+    etendue_rangs: 226
   - rang: 368
     nom: Michel Huy
     id: michel-huy
@@ -17568,6 +18036,7 @@ classement:
       epreuves: 252
       discretion: 235
       lecture: 440
+    etendue_rangs: 222
   - rang: 369
     nom: Benoît Fourmont
     id: benoit-fourmont
@@ -17582,6 +18051,7 @@ classement:
       epreuves: 138
       discretion: 170
       lecture: 424
+    etendue_rangs: 248
   - rang: 370
     nom: Amandine Schmitt
     id: amandine-schmitt
@@ -17596,6 +18066,7 @@ classement:
       epreuves: 127
       discretion: 280
       lecture: 283
+    etendue_rangs: 229
   - rang: 371
     nom: Marie-Anne Queniart
     id: marie-anne-queniart
@@ -17610,6 +18081,7 @@ classement:
       epreuves: 232
       discretion: 295
       lecture: 323
+    etendue_rangs: 228
   - rang: 372
     nom: Marie Oheix
     id: marie-oheix
@@ -17624,6 +18096,7 @@ classement:
       epreuves: 235
       discretion: 296
       lecture: 325
+    etendue_rangs: 230
   - rang: 373
     nom: Sabine Ollivier
     id: sabine-ollivier
@@ -17638,6 +18111,7 @@ classement:
       epreuves: 278
       discretion: 299
       lecture: 338
+    etendue_rangs: 229
   - rang: 374
     nom: Lucie Bertaud
     id: lucie-bertaud
@@ -17652,6 +18126,7 @@ classement:
       epreuves: 395
       discretion: 490
       lecture: 388
+    etendue_rangs: 381
   - rang: 375
     nom: Alicia Bouly
     id: alicia-bouly
@@ -17666,6 +18141,7 @@ classement:
       epreuves: 125
       discretion: 279
       lecture: 281
+    etendue_rangs: 231
   - rang: 376
     nom: Esteban Garcia-Mora
     id: esteban-garcia-mora
@@ -17680,6 +18156,7 @@ classement:
       epreuves: 498
       discretion: 421
       lecture: 163
+    etendue_rangs: 321
   - rang: 377
     nom: Michèle Valembois
     id: michele-valembois
@@ -17694,6 +18171,7 @@ classement:
       epreuves: 118
       discretion: 517
       lecture: 27
+    etendue_rangs: 449
   - rang: 378
     nom: Ari Bentolila
     id: ari-bentolila
@@ -17708,6 +18186,7 @@ classement:
       epreuves: 132
       discretion: 282
       lecture: 285
+    etendue_rangs: 232
   - rang: 379
     nom: Carole Collado
     id: carole-collado
@@ -17722,6 +18201,7 @@ classement:
       epreuves: 150
       discretion: 284
       lecture: 292
+    etendue_rangs: 232
   - rang: 380
     nom: Françoise Avignon
     id: francoise-avignon
@@ -17736,6 +18216,7 @@ classement:
       epreuves: 418
       discretion: 374
       lecture: 460
+    etendue_rangs: 289
   - rang: 381
     nom: Alexandre Delaunay
     id: alexandre-delaunay
@@ -17750,6 +18231,7 @@ classement:
       epreuves: 317
       discretion: 278
       lecture: 279
+    etendue_rangs: 174
   - rang: 382
     nom: Ella Gbezan
     id: ella-gbezan
@@ -17764,6 +18246,7 @@ classement:
       epreuves: 441
       discretion: 488
       lecture: 251
+    etendue_rangs: 356
   - rang: 383
     nom: Victor Rollinger
     id: victor-rollinger
@@ -17778,6 +18261,7 @@ classement:
       epreuves: 414
       discretion: 239
       lecture: 345
+    etendue_rangs: 204
   - rang: 384
     nom: Corinne Bargoin Samuelian
     id: corinne-bargoin-samuelian
@@ -17792,6 +18276,7 @@ classement:
       epreuves: 170
       discretion: 478
       lecture: 193
+    etendue_rangs: 281
   - rang: 385
     nom: Julien Mairesse
     id: julien-mairesse
@@ -17806,6 +18291,7 @@ classement:
       epreuves: 214
       discretion: 358
       lecture: 318
+    etendue_rangs: 177
   - rang: 386
     nom: Mohamed Siaaliti
     id: mohamed-siaaliti
@@ -17820,6 +18306,7 @@ classement:
       epreuves: 512
       discretion: 22
       lecture: 410
+    etendue_rangs: 377
   - rang: 387
     nom: Corentin Albertini
     id: corentin-albertini
@@ -17834,6 +18321,7 @@ classement:
       epreuves: 473
       discretion: 28
       lecture: 480
+    etendue_rangs: 364
   - rang: 388
     nom: Élodie Saleder
     id: elodie-saleder
@@ -17848,6 +18336,7 @@ classement:
       epreuves: 179
       discretion: 178
       lecture: 430
+    etendue_rangs: 255
   - rang: 389
     nom: Alexandra Denikine
     id: alexandra-denikine
@@ -17862,6 +18351,7 @@ classement:
       epreuves: 121
       discretion: 277
       lecture: 278
+    etendue_rangs: 243
   - rang: 390
     nom: Aude Réant
     id: aude-reant
@@ -17876,6 +18366,7 @@ classement:
       epreuves: 133
       discretion: 283
       lecture: 286
+    etendue_rangs: 243
   - rang: 391
     nom: Charlie Vincent-Mussard
     id: charlie-vincent-mussard
@@ -17890,6 +18381,7 @@ classement:
       epreuves: 165
       discretion: 288
       lecture: 299
+    etendue_rangs: 243
   - rang: 392
     nom: Claudia Chatel
     id: claudia-chatel
@@ -17904,6 +18396,7 @@ classement:
       epreuves: 169
       discretion: 289
       lecture: 301
+    etendue_rangs: 243
   - rang: 393
     nom: Joëlle Bourlier
     id: joelle-bourlier
@@ -17918,6 +18411,7 @@ classement:
       epreuves: 211
       discretion: 293
       lecture: 316
+    etendue_rangs: 242
   - rang: 394
     nom: Marine Alves
     id: marine-alves
@@ -17932,6 +18426,7 @@ classement:
       epreuves: 239
       discretion: 297
       lecture: 327
+    etendue_rangs: 243
   - rang: 395
     nom: Brice Martinet
     id: brice-martinet
@@ -17946,6 +18441,7 @@ classement:
       epreuves: 145
       discretion: 496
       lecture: 418
+    etendue_rangs: 396
   - rang: 396
     nom: Harry Levy
     id: harry-levy
@@ -17960,6 +18456,7 @@ classement:
       epreuves: 195
       discretion: 341
       lecture: 393
+    etendue_rangs: 143
   - rang: 397
     nom: Maria Beccaris
     id: maria-beccaris
@@ -17974,6 +18471,7 @@ classement:
       epreuves: 231
       discretion: 487
       lecture: 121
+    etendue_rangs: 331
   - rang: 398
     nom: Jade Correa
     id: jade-correa
@@ -17988,6 +18486,7 @@ classement:
       epreuves: 309
       discretion: 20
       lecture: 507
+    etendue_rangs: 385
   - rang: 399
     nom: Emin Luka
     id: emin-luka
@@ -18002,6 +18501,7 @@ classement:
       epreuves: 330
       discretion: 291
       lecture: 306
+    etendue_rangs: 195
   - rang: 400
     nom: Nicolas Maire
     id: nicolas-maire
@@ -18016,6 +18516,7 @@ classement:
       epreuves: 269
       discretion: 143
       lecture: 441
+    etendue_rangs: 282
   - rang: 401
     nom: Julien Castro
     id: julien-castro
@@ -18030,6 +18531,7 @@ classement:
       epreuves: 404
       discretion: 274
       lecture: 450
+    etendue_rangs: 191
   - rang: 402
     nom: Sophie Le Nestic Sabattier
     id: sophie-le-nestic-sabattier
@@ -18044,6 +18546,7 @@ classement:
       epreuves: 285
       discretion: 411
       lecture: 236
+    etendue_rangs: 243
   - rang: 403
     nom: Christine Mayonnade
     id: christine-mayonnade
@@ -18058,6 +18561,7 @@ classement:
       epreuves: 373
       discretion: 176
       lecture: 428
+    etendue_rangs: 209
   - rang: 404
     nom: Céline Dufrenoy
     id: celine-dufrenoy
@@ -18072,6 +18576,7 @@ classement:
       epreuves: 325
       discretion: 287
       lecture: 298
+    etendue_rangs: 199
   - rang: 405
     nom: Djamel Bouras
     id: djamel-bouras
@@ -18086,6 +18591,7 @@ classement:
       epreuves: 176
       discretion: 377
       lecture: 392
+    etendue_rangs: 140
   - rang: 406
     nom: Rudy Noël
     id: rudy-noel
@@ -18100,6 +18606,7 @@ classement:
       epreuves: 387
       discretion: 456
       lecture: 231
+    etendue_rangs: 211
   - rang: 407
     nom: Irya Cissé
     id: irya-cisse
@@ -18114,6 +18621,7 @@ classement:
       epreuves: 336
       discretion: 354
       lecture: 313
+    etendue_rangs: 125
   - rang: 408
     nom: Martin Burrus
     id: martin-burrus
@@ -18128,6 +18636,7 @@ classement:
       epreuves: 383
       discretion: 141
       lecture: 438
+    etendue_rangs: 235
   - rang: 409
     nom: Tugdual Paul
     id: tugdual-paul
@@ -18142,6 +18651,7 @@ classement:
       epreuves: 357
       discretion: 258
       lecture: 474
+    etendue_rangs: 235
   - rang: 410
     nom: Joseph Farret
     id: joseph-farret
@@ -18156,6 +18666,7 @@ classement:
       epreuves: 212
       discretion: 357
       lecture: 317
+    etendue_rangs: 199
   - rang: 411
     nom: Delphine Bruyère
     id: delphine-bruyere
@@ -18170,6 +18681,7 @@ classement:
       epreuves: 174
       discretion: 352
       lecture: 304
+    etendue_rangs: 200
   - rang: 412
     nom: Laurence Corbellotti
     id: laurence-corbellotti
@@ -18184,6 +18696,7 @@ classement:
       epreuves: 218
       discretion: 360
       lecture: 320
+    etendue_rangs: 200
   - rang: 413
     nom: Julie Debever
     id: julie-debever
@@ -18198,6 +18711,7 @@ classement:
       epreuves: 528
       discretion: 415
       lecture: 255
+    etendue_rangs: 393
   - rang: 414
     nom: Adonis Koupaki
     id: adonis-koupaki
@@ -18212,6 +18726,7 @@ classement:
       epreuves: 119
       discretion: 270
       lecture: 468
+    etendue_rangs: 253
   - rang: 415
     nom: Nicolas Van Brabandt
     id: nicolas-van-brabandt
@@ -18226,6 +18741,7 @@ classement:
       epreuves: 115
       discretion: 491
       lecture: 384
+    etendue_rangs: 308
   - rang: 416
     nom: Candice Rousset
     id: candice-rousset
@@ -18240,6 +18756,7 @@ classement:
       epreuves: 149
       discretion: 172
       lecture: 426
+    etendue_rangs: 264
   - rang: 417
     nom: Quentin Paygnard
     id: quentin-paygnard
@@ -18254,6 +18771,7 @@ classement:
       epreuves: 72
       discretion: 320
       lecture: 523
+    etendue_rangs: 435
   - rang: 418
     nom: Ali Jaffar
     id: ali-jaffar
@@ -18268,6 +18786,7 @@ classement:
       epreuves: 367
       discretion: 216
       lecture: 280
+    etendue_rangs: 257
   - rang: 419
     nom: Lili Gasnier
     id: lili-gasnier
@@ -18282,6 +18801,7 @@ classement:
       epreuves: 342
       discretion: 294
       lecture: 321
+    etendue_rangs: 220
   - rang: 420
     nom: Emmanuelle Boisseau
     id: emmanuelle-boisseau
@@ -18296,6 +18816,7 @@ classement:
       epreuves: 331
       discretion: 479
       lecture: 197
+    etendue_rangs: 243
   - rang: 421
     nom: Clémence Dubent
     id: clemence-dubent
@@ -18310,6 +18831,7 @@ classement:
       epreuves: 374
       discretion: 290
       lecture: 302
+    etendue_rangs: 192
   - rang: 422
     nom: Sarah Diawara
     id: sarah-diawara
@@ -18324,6 +18846,7 @@ classement:
       epreuves: 355
       discretion: 407
       lecture: 376
+    etendue_rangs: 82
   - rang: 423
     nom: Géraldine Nicolle
     id: geraldine-nicolle
@@ -18338,6 +18861,7 @@ classement:
       epreuves: 515
       discretion: 306
       lecture: 461
+    etendue_rangs: 404
   - rang: 424
     nom: Marie Parmentier
     id: marie-parmentier
@@ -18352,6 +18876,7 @@ classement:
       epreuves: 237
       discretion: 313
       lecture: 437
+    etendue_rangs: 185
   - rang: 425
     nom: Babeth Delettre
     id: babeth-delettre
@@ -18366,6 +18891,7 @@ classement:
       epreuves: 136
       discretion: 347
       lecture: 287
+    etendue_rangs: 214
   - rang: 426
     nom: Betty Lise
     id: betty-lise
@@ -18380,6 +18906,7 @@ classement:
       epreuves: 143
       discretion: 348
       lecture: 289
+    etendue_rangs: 214
   - rang: 427
     nom: Cécile Guy
     id: cecile-guy
@@ -18394,6 +18921,7 @@ classement:
       epreuves: 158
       discretion: 349
       lecture: 296
+    etendue_rangs: 214
   - rang: 428
     nom: Cynthian Steinbach
     id: cynthian-steinbach
@@ -18408,6 +18936,7 @@ classement:
       epreuves: 171
       discretion: 351
       lecture: 303
+    etendue_rangs: 215
   - rang: 429
     nom: Frédérique Brugiroux
     id: frederique-brugiroux
@@ -18422,6 +18951,7 @@ classement:
       epreuves: 187
       discretion: 353
       lecture: 310
+    etendue_rangs: 215
   - rang: 430
     nom: Karine Amorsi
     id: karine-amorsi
@@ -18436,6 +18966,7 @@ classement:
       epreuves: 217
       discretion: 359
       lecture: 319
+    etendue_rangs: 214
   - rang: 431
     nom: Lisa Legouverneur
     id: lisa-legouverneur
@@ -18450,6 +18981,7 @@ classement:
       epreuves: 221
       discretion: 361
       lecture: 322
+    etendue_rangs: 215
   - rang: 432
     nom: Marie Besnier
     id: marie-besnier
@@ -18464,6 +18996,7 @@ classement:
       epreuves: 233
       discretion: 362
       lecture: 324
+    etendue_rangs: 216
   - rang: 433
     nom: Mélanie Boimare
     id: melanie-boimare
@@ -18478,6 +19011,7 @@ classement:
       epreuves: 249
       discretion: 363
       lecture: 329
+    etendue_rangs: 215
   - rang: 434
     nom: Myriam Zenasni
     id: myriam-zenasni
@@ -18492,6 +19026,7 @@ classement:
       epreuves: 260
       discretion: 364
       lecture: 333
+    etendue_rangs: 215
   - rang: 435
     nom: Nelson Parente
     id: nelson-parente
@@ -18506,6 +19041,7 @@ classement:
       epreuves: 266
       discretion: 365
       lecture: 335
+    etendue_rangs: 215
   - rang: 436
     nom: Steve Grenier
     id: steve-grenier
@@ -18520,6 +19056,7 @@ classement:
       epreuves: 286
       discretion: 367
       lecture: 340
+    etendue_rangs: 214
   - rang: 437
     nom: Sylviane Simonnet
     id: sylviane-simonnet
@@ -18534,6 +19071,7 @@ classement:
       epreuves: 288
       discretion: 368
       lecture: 342
+    etendue_rangs: 214
   - rang: 438
     nom: Maxim Iarkov
     id: maxim-iarkov
@@ -18548,6 +19086,7 @@ classement:
       epreuves: 484
       discretion: 96
       lecture: 472
+    etendue_rangs: 332
   - rang: 439
     nom: Céline Parat-Yeghiayan
     id: celine-parat-yeghiayan
@@ -18562,6 +19101,7 @@ classement:
       epreuves: 161
       discretion: 447
       lecture: 189
+    etendue_rangs: 247
   - rang: 440
     nom: Kader Rebaï
     id: kader-rebai
@@ -18576,6 +19116,7 @@ classement:
       epreuves: 215
       discretion: 525
       lecture: 84
+    etendue_rangs: 427
   - rang: 441
     nom: Flavio Soares Tavares
     id: flavio-soares-tavares
@@ -18590,6 +19131,7 @@ classement:
       epreuves: 308
       discretion: 152
       lecture: 519
+    etendue_rangs: 385
   - rang: 442
     nom: Frédéric Khouvilay
     id: frederic-khouvilay
@@ -18604,6 +19146,7 @@ classement:
       epreuves: 70
       discretion: 442
       lecture: 525
+    etendue_rangs: 462
   - rang: 443
     nom: Benoît Jorion-Fahy
     id: benoit-jorion-fahy
@@ -18618,6 +19161,7 @@ classement:
       epreuves: 139
       discretion: 217
       lecture: 425
+    etendue_rangs: 243
   - rang: 444
     nom: Sabira
     id: sabira
@@ -18632,6 +19176,7 @@ classement:
       epreuves: 279
       discretion: 237
       lecture: 442
+    etendue_rangs: 244
   - rang: 445
     nom: Ava Maisini
     id: ava-maisini
@@ -18646,6 +19191,7 @@ classement:
       epreuves: 505
       discretion: 157
       lecture: 478
+    etendue_rangs: 360
   - rang: 446
     nom: Pascale Bodin
     id: pascale-bodin
@@ -18660,6 +19206,7 @@ classement:
       epreuves: 386
       discretion: 366
       lecture: 336
+    etendue_rangs: 148
   - rang: 447
     nom: Alexandra Leveau
     id: alexandra-leveau
@@ -18674,6 +19221,7 @@ classement:
       epreuves: 503
       discretion: 493
       lecture: 137
+    etendue_rangs: 377
   - rang: 448
     nom: Zakariya Bougoudouima
     id: zakariya-bougoudouima
@@ -18688,6 +19236,7 @@ classement:
       epreuves: 461
       discretion: 326
       lecture: 490
+    etendue_rangs: 291
   - rang: 449
     nom: Célia Litzellmann
     id: celia-litzellmann
@@ -18702,6 +19251,7 @@ classement:
       epreuves: 324
       discretion: 350
       lecture: 297
+    etendue_rangs: 183
   - rang: 450
     nom: Olivier Moenaert
     id: olivier-moenaert
@@ -18716,6 +19266,7 @@ classement:
       epreuves: 409
       discretion: 397
       lecture: 357
+    etendue_rangs: 100
   - rang: 451
     nom: Aliséa Lecomte
     id: alisea-lecomte
@@ -18730,6 +19281,7 @@ classement:
       epreuves: 319
       discretion: 409
       lecture: 178
+    etendue_rangs: 250
   - rang: 452
     nom: Mathieu Huguin
     id: mathieu-huguin
@@ -18744,6 +19296,7 @@ classement:
       epreuves: 245
       discretion: 449
       lecture: 218
+    etendue_rangs: 253
   - rang: 453
     nom: Frédéric Baudet
     id: frederic-baudet
@@ -18758,6 +19311,7 @@ classement:
       epreuves: 186
       discretion: 459
       lecture: 365
+    etendue_rangs: 177
   - rang: 454
     nom: Isabelle Fidanza
     id: isabelle-fidanza
@@ -18772,6 +19326,7 @@ classement:
       epreuves: 199
       discretion: 378
       lecture: 433
+    etendue_rangs: 157
   - rang: 455
     nom: Adrien Torrin
     id: adrien-torrin
@@ -18786,6 +19341,7 @@ classement:
       epreuves: 489
       discretion: 315
       lecture: 403
+    etendue_rangs: 221
   - rang: 456
     nom: Charlène Hoffsess
     id: charlene-hoffsess
@@ -18800,6 +19356,7 @@ classement:
       epreuves: 307
       discretion: 445
       lecture: 456
+    etendue_rangs: 234
   - rang: 457
     nom: Émilie Tybot
     id: emilie-tybot
@@ -18814,6 +19371,7 @@ classement:
       epreuves: 329
       discretion: 222
       lecture: 431
+    etendue_rangs: 215
   - rang: 458
     nom: Cyril Rouanne
     id: cyril-rouanne
@@ -18828,6 +19386,7 @@ classement:
       epreuves: 479
       discretion: 520
       lecture: 23
+    etendue_rangs: 456
   - rang: 459
     nom: Mehdi Bounab-Lamiral
     id: mehdi-bounab-lamiral
@@ -18842,6 +19401,7 @@ classement:
       epreuves: 247
       discretion: 344
       lecture: 439
+    etendue_rangs: 169
   - rang: 460
     nom: Eric Peyrache
     id: eric-peyrache
@@ -18856,6 +19416,7 @@ classement:
       epreuves: 497
       discretion: 510
       lecture: 26
+    etendue_rangs: 440
   - rang: 461
     nom: Rodolphe Assi
     id: rodolphe-assi
@@ -18870,6 +19431,7 @@ classement:
       epreuves: 276
       discretion: 213
       lecture: 524
+    etendue_rangs: 390
   - rang: 462
     nom: Catherine Ehret-Mader
     id: catherine-ehret-mader
@@ -18884,6 +19446,7 @@ classement:
       epreuves: 525
       discretion: 502
       lecture: 33
+    etendue_rangs: 440
   - rang: 463
     nom: Céga Coulibaly
     id: cega-coulibaly
@@ -18898,6 +19461,7 @@ classement:
       epreuves: 323
       discretion: 219
       lecture: 427
+    etendue_rangs: 217
   - rang: 464
     nom: Véronique Lambert
     id: veronique-lambert
@@ -18912,6 +19476,7 @@ classement:
       epreuves: 391
       discretion: 481
       lecture: 240
+    etendue_rangs: 215
   - rang: 465
     nom: Namadia Thaï Thaï
     id: namadia-thai-thai
@@ -18926,6 +19491,7 @@ classement:
       epreuves: 493
       discretion: 453
       lecture: 87
+    etendue_rangs: 324
   - rang: 466
     nom: Jesta Hillmann
     id: jesta-hillmann
@@ -18940,6 +19506,7 @@ classement:
       epreuves: 444
       discretion: 324
       lecture: 520
+    etendue_rangs: 412
   - rang: 467
     nom: Freddy Bolzer
     id: freddy-bolzer
@@ -18954,6 +19521,7 @@ classement:
       epreuves: 442
       discretion: 462
       lecture: 484
+    etendue_rangs: 351
   - rang: 468
     nom: Thomas Plisson
     id: thomas-plisson
@@ -18968,6 +19536,7 @@ classement:
       epreuves: 466
       discretion: 417
       lecture: 464
+    etendue_rangs: 244
   - rang: 469
     nom: Setha El Hajjami
     id: setha-el-hajjami
@@ -18982,6 +19551,7 @@ classement:
       epreuves: 410
       discretion: 438
       lecture: 400
+    etendue_rangs: 109
   - rang: 470
     nom: Françoise Fournier-Grigis
     id: francoise-fournier-grigis
@@ -18996,6 +19566,7 @@ classement:
       epreuves: 334
       discretion: 448
       lecture: 201
+    etendue_rangs: 235
   - rang: 471
     nom: Nico Felger
     id: nico-felger
@@ -19010,6 +19581,7 @@ classement:
       epreuves: 268
       discretion: 188
       lecture: 503
+    etendue_rangs: 273
   - rang: 472
     nom: Mama El Fayed
     id: mama-el-fayed
@@ -19024,6 +19596,7 @@ classement:
       epreuves: 226
       discretion: 480
       lecture: 213
+    etendue_rangs: 249
   - rang: 473
     nom: Marie-France Schieber
     id: marie-france-schieber
@@ -19038,6 +19611,7 @@ classement:
       epreuves: 407
       discretion: 404
       lecture: 451
+    etendue_rangs: 120
   - rang: 474
     nom: Hugo Van Aertryck
     id: hugo-van-aertryck
@@ -19052,6 +19626,7 @@ classement:
       epreuves: 361
       discretion: 489
       lecture: 485
+    etendue_rangs: 333
   - rang: 475
     nom: Catherine Brun
     id: catherine-brun
@@ -19066,6 +19641,7 @@ classement:
       epreuves: 472
       discretion: 444
       lecture: 406
+    etendue_rangs: 211
   - rang: 476
     nom: Karima Neggaz
     id: karima-neggaz
@@ -19080,6 +19656,7 @@ classement:
       epreuves: 40
       discretion: 319
       lecture: 530
+    etendue_rangs: 462
   - rang: 477
     nom: Sophie Guilloix
     id: sophie-guilloix
@@ -19094,6 +19671,7 @@ classement:
       epreuves: 284
       discretion: 410
       lecture: 443
+    etendue_rangs: 138
   - rang: 478
     nom: Régis Colombier
     id: regis-colombier
@@ -19108,6 +19686,7 @@ classement:
       epreuves: 513
       discretion: 307
       lecture: 489
+    etendue_rangs: 304
   - rang: 479
     nom: Laëtitia Saphores
     id: laetitia-saphores
@@ -19122,6 +19701,7 @@ classement:
       epreuves: 85
       discretion: 376
       lecture: 522
+    etendue_rangs: 394
   - rang: 480
     nom: Sandra Acabado
     id: sandra-acabado
@@ -19136,6 +19716,7 @@ classement:
       epreuves: 353
       discretion: 371
       lecture: 374
+    etendue_rangs: 165
   - rang: 481
     nom: Cassandre Lambert
     id: cassandre-lambert
@@ -19150,6 +19731,7 @@ classement:
       epreuves: 506
       discretion: 443
       lecture: 405
+    etendue_rangs: 277
   - rang: 482
     nom: Julie Navarro
     id: julie-navarro
@@ -19164,6 +19746,7 @@ classement:
       epreuves: 490
       discretion: 466
       lecture: 57
+    etendue_rangs: 357
   - rang: 483
     nom: Pauline Pourchaire
     id: pauline-pourchaire
@@ -19178,6 +19761,7 @@ classement:
       epreuves: 457
       discretion: 516
       lecture: 51
+    etendue_rangs: 390
   - rang: 484
     nom: Jonathan Guez
     id: jonathan-guez
@@ -19192,6 +19776,7 @@ classement:
       epreuves: 379
       discretion: 503
       lecture: 116
+    etendue_rangs: 278
   - rang: 485
     nom: Naïs Napoletano
     id: nais-napoletano
@@ -19206,6 +19791,7 @@ classement:
       epreuves: 102
       discretion: 527
       lecture: 73
+    etendue_rangs: 424
   - rang: 486
     nom: Gwendal Peizerat
     id: gwendal-peizerat
@@ -19220,6 +19806,7 @@ classement:
       epreuves: 193
       discretion: 340
       lecture: 502
+    etendue_rangs: 183
   - rang: 487
     nom: Marjorie Rousseeuw
     id: marjorie-rousseeuw
@@ -19234,6 +19821,7 @@ classement:
       epreuves: 455
       discretion: 431
       lecture: 471
+    etendue_rangs: 215
   - rang: 488
     nom: Lolo Facione
     id: lolo-facione
@@ -19248,6 +19836,7 @@ classement:
       epreuves: 224
       discretion: 523
       lecture: 48
+    etendue_rangs: 414
   - rang: 489
     nom: Sara Tallon
     id: sara-tallon
@@ -19262,6 +19851,7 @@ classement:
       epreuves: 354
       discretion: 204
       lecture: 375
+    etendue_rangs: 271
   - rang: 490
     nom: Caroline Ledos
     id: caroline-ledos
@@ -19276,6 +19866,7 @@ classement:
       epreuves: 527
       discretion: 482
       lecture: 377
+    etendue_rangs: 357
   - rang: 491
     nom: David Murail
     id: david-murail
@@ -19290,6 +19881,7 @@ classement:
       epreuves: 507
       discretion: 243
       lecture: 511
+    etendue_rangs: 330
   - rang: 492
     nom: Aurélie Gasser
     id: aurelie-gasser
@@ -19304,6 +19896,7 @@ classement:
       epreuves: 470
       discretion: 311
       lecture: 510
+    etendue_rangs: 281
   - rang: 493
     nom: Claire Rolet
     id: claire-rolet
@@ -19318,6 +19911,7 @@ classement:
       epreuves: 168
       discretion: 504
       lecture: 191
+    etendue_rangs: 252
   - rang: 494
     nom: Océane Montenegro
     id: oceane-montenegro
@@ -19332,6 +19926,7 @@ classement:
       epreuves: 456
       discretion: 524
       lecture: 28
+    etendue_rangs: 427
   - rang: 495
     nom: Myriam Lamare
     id: myriam-lamare
@@ -19346,6 +19941,7 @@ classement:
       epreuves: 258
       discretion: 256
       lecture: 531
+    etendue_rangs: 356
   - rang: 496
     nom: Stéphanie Tribot
     id: stephanie-tribot
@@ -19360,6 +19956,7 @@ classement:
       epreuves: 390
       discretion: 457
       lecture: 444
+    etendue_rangs: 88
   - rang: 497
     nom: Jody Favier
     id: jody-favier
@@ -19374,6 +19971,7 @@ classement:
       epreuves: 475
       discretion: 470
       lecture: 407
+    etendue_rangs: 192
   - rang: 498
     nom: Jean-Luc Fiorina
     id: jean-luc-fiorina
@@ -19388,6 +19986,7 @@ classement:
       epreuves: 205
       discretion: 228
       lecture: 435
+    etendue_rangs: 233
   - rang: 499
     nom: Frank Lebœuf
     id: frank-leboeuf
@@ -19402,6 +20001,7 @@ classement:
       epreuves: 185
       discretion: 500
       lecture: 202
+    etendue_rangs: 240
   - rang: 500
     nom: Andréa Zogron
     id: andrea-zogron
@@ -19416,6 +20016,7 @@ classement:
       epreuves: 129
       discretion: 515
       lecture: 179
+    etendue_rangs: 278
   - rang: 501
     nom: Jacques Roque
     id: jacques-roque
@@ -19430,6 +20031,7 @@ classement:
       epreuves: 443
       discretion: 485
       lecture: 495
+    etendue_rangs: 334
   - rang: 502
     nom: Mickaël Kalfallah
     id: mickael-kalfallah
@@ -19444,6 +20046,7 @@ classement:
       epreuves: 254
       discretion: 501
       lecture: 224
+    etendue_rangs: 238
   - rang: 503
     nom: Xavier Vançon
     id: xavier-vancon
@@ -19458,6 +20061,7 @@ classement:
       epreuves: 415
       discretion: 408
       lecture: 475
+    etendue_rangs: 83
   - rang: 504
     nom: Raphaële Navarro
     id: raphaele-navarro
@@ -19472,6 +20076,7 @@ classement:
       epreuves: 274
       discretion: 498
       lecture: 463
+    etendue_rangs: 193
   - rang: 505
     nom: Marguerite Leblanc
     id: marguerite-leblanc
@@ -19486,6 +20091,7 @@ classement:
       epreuves: 396
       discretion: 519
       lecture: 408
+    etendue_rangs: 344
   - rang: 506
     nom: Estelle Fabrice
     id: estelle-fabrice
@@ -19500,6 +20106,7 @@ classement:
       epreuves: 180
       discretion: 512
       lecture: 198
+    etendue_rangs: 244
   - rang: 507
     nom: Virginie Jarry
     id: virginie-jarry
@@ -19514,6 +20121,7 @@ classement:
       epreuves: 495
       discretion: 499
       lecture: 386
+    etendue_rangs: 236
   - rang: 508
     nom: Sophie Chevalier
     id: sophie-chevalier
@@ -19528,6 +20136,7 @@ classement:
       epreuves: 486
       discretion: 321
       lecture: 514
+    etendue_rangs: 201
   - rang: 509
     nom: Bernard Deniaud
     id: bernard-deniaud
@@ -19542,6 +20151,7 @@ classement:
       epreuves: 142
       discretion: 495
       lecture: 516
+    etendue_rangs: 352
   - rang: 510
     nom: Marine Plissonneau
     id: marine-plissonneau
@@ -19556,6 +20166,7 @@ classement:
       epreuves: 454
       discretion: 115
       lecture: 513
+    etendue_rangs: 215
   - rang: 511
     nom: Chloé Chaize
     id: chloe-chaize
@@ -19570,6 +20181,7 @@ classement:
       epreuves: 401
       discretion: 511
       lecture: 105
+    etendue_rangs: 257
   - rang: 512
     nom: Anne-Sophie Mounier
     id: anne-sophie-mounier
@@ -19584,6 +20196,7 @@ classement:
       epreuves: 469
       discretion: 65
       lecture: 526
+    etendue_rangs: 316
   - rang: 513
     nom: Hakim Djellali
     id: hakim-djellali
@@ -19598,6 +20211,7 @@ classement:
       epreuves: 499
       discretion: 474
       lecture: 462
+    etendue_rangs: 213
   - rang: 514
     nom: Nathalie Suhard
     id: nathalie-suhard
@@ -19612,6 +20226,7 @@ classement:
       epreuves: 349
       discretion: 509
       lecture: 227
+    etendue_rangs: 203
   - rang: 515
     nom: Maud Garnier
     id: maud-garnier
@@ -19626,6 +20241,7 @@ classement:
       epreuves: 530
       discretion: 464
       lecture: 504
+    etendue_rangs: 404
   - rang: 516
     nom: Frédérique Jossinet
     id: frederique-jossinet
@@ -19640,6 +20256,7 @@ classement:
       epreuves: 188
       discretion: 405
       lecture: 527
+    etendue_rangs: 228
   - rang: 517
     nom: Kelly Beaugrand
     id: kelly-beaugrand
@@ -19654,6 +20271,7 @@ classement:
       epreuves: 476
       discretion: 518
       lecture: 382
+    etendue_rangs: 269
   - rang: 518
     nom: Nicolas Bellon
     id: nicolas-bellon
@@ -19668,6 +20286,7 @@ classement:
       epreuves: 508
       discretion: 432
       lecture: 518
+    etendue_rangs: 260
   - rang: 519
     nom: Élodie Faelens
     id: elodie-faelens
@@ -19682,6 +20301,7 @@ classement:
       epreuves: 178
       discretion: 521
       lecture: 195
+    etendue_rangs: 228
   - rang: 520
     nom: Marie Vilaseca
     id: marie-vilaseca
@@ -19696,6 +20316,7 @@ classement:
       epreuves: 238
       discretion: 522
       lecture: 216
+    etendue_rangs: 226
   - rang: 521
     nom: Mélissa Pierru
     id: melissa-pierru
@@ -19710,6 +20331,7 @@ classement:
       epreuves: 251
       discretion: 526
       lecture: 222
+    etendue_rangs: 275
   - rang: 522
     nom: Fabienne Lefebvre-Trehoux
     id: fabienne-lefebvre-trehoux
@@ -19724,6 +20346,7 @@ classement:
       epreuves: 181
       discretion: 395
       lecture: 528
+    etendue_rangs: 175
   - rang: 523
     nom: May Peitavi
     id: may-peitavi
@@ -19738,6 +20361,7 @@ classement:
       epreuves: 246
       discretion: 530
       lecture: 124
+    etendue_rangs: 318
   - rang: 524
     nom: Elodie Migeal
     id: elodie-migeal
@@ -19752,6 +20376,7 @@ classement:
       epreuves: 375
       discretion: 505
       lecture: 429
+    etendue_rangs: 63
   - rang: 525
     nom: Lionel Dubouchet
     id: lionel-dubouchet
@@ -19766,6 +20391,7 @@ classement:
       epreuves: 381
       discretion: 506
       lecture: 436
+    etendue_rangs: 64
   - rang: 526
     nom: Maxime Tournoux
     id: maxime-tournoux
@@ -19780,6 +20406,7 @@ classement:
       epreuves: 492
       discretion: 528
       lecture: 169
+    etendue_rangs: 272
   - rang: 527
     nom: Valérie Tartacède-Bollaert
     id: valerie-tartacede-bollaert
@@ -19794,6 +20421,7 @@ classement:
       epreuves: 358
       discretion: 507
       lecture: 445
+    etendue_rangs: 74
   - rang: 528
     nom: Yannick Zachée
     id: yannick-zachee
@@ -19808,6 +20436,7 @@ classement:
       epreuves: 459
       discretion: 513
       lecture: 476
+    etendue_rangs: 141
   - rang: 529
     nom: Myriam Modde
     id: myriam-modde
@@ -19822,6 +20451,7 @@ classement:
       epreuves: 259
       discretion: 529
       lecture: 488
+    etendue_rangs: 319
   - rang: 530
     nom: Tania Cakarevic
     id: tania-cakarevic
@@ -19836,6 +20466,7 @@ classement:
       epreuves: 480
       discretion: 531
       lecture: 20
+    etendue_rangs: 483
   - rang: 531
     nom: Patricia Morel
     id: patricia-morel
@@ -19850,6 +20481,7 @@ classement:
       epreuves: 501
       discretion: 514
       lecture: 517
+    etendue_rangs: 37
   palmares:
     auc: "0,848"
     rang_median_vainqueurs: 60
@@ -19965,6 +20597,8 @@ classement:
     depouillement_plus_bas: "52,8"
   stabilite:
     effectif: 71
+  joueurs_courte_carriere: 513
+  facettes_menees_par_premier: 2
 prevision:
   jeux:
   - cle: fiche
@@ -24054,6 +24688,7 @@ modeles:
       id: clemence-castel
     plus_forte_montee: *id058
     plus_forte_chute: *id059
+    epreuves_tentees: 279
   force_et_jeu:
     effectif: 303
     voix:
@@ -26813,6 +27448,7 @@ modeles:
       bas: "9,6"
       haut: "13,4"
       hasard: "13,5"
+      modalite_maj: Aucune voix
     - modalite: 1 voix
       effectif: 143
       cas: 30
@@ -26820,6 +27456,7 @@ modeles:
       bas: "15,1"
       haut: "28,4"
       hasard: "15,3"
+      modalite_maj: 1 voix
     - modalite: 2 voix
       effectif: 56
       cas: 16
@@ -26827,6 +27464,7 @@ modeles:
       bas: "18,4"
       haut: "41,5"
       hasard: "15,1"
+      modalite_maj: 2 voix
     - modalite: 3 voix
       effectif: 39
       cas: 9
@@ -26834,6 +27472,7 @@ modeles:
       bas: "12,6"
       haut: "38,3"
       hasard: "13,3"
+      modalite_maj: 3 voix
     - modalite: 4 voix
       effectif: 25
       cas: 5
@@ -26841,6 +27480,7 @@ modeles:
       bas: "8,9"
       haut: "39,1"
       hasard: 13
+      modalite_maj: 4 voix
     - modalite: 5 voix et plus
       effectif: 33
       cas: 7
@@ -26848,6 +27488,7 @@ modeles:
       bas: "10,7"
       haut: "37,8"
       hasard: "12,2"
+      modalite_maj: 5 voix et plus
     par_voix_deux_pas:
     - modalite: aucune voix
       effectif: 589
@@ -26856,6 +27497,7 @@ modeles:
       bas: "10,3"
       haut: "15,7"
       hasard: "13,8"
+      modalite_maj: Aucune voix
     - modalite: 1 voix
       effectif: 79
       cas: 17
@@ -26863,6 +27505,7 @@ modeles:
       bas: "13,9"
       haut: "31,8"
       hasard: "15,2"
+      modalite_maj: 1 voix
     - modalite: 2 voix et plus
       effectif: 71
       cas: 10
@@ -26870,6 +27513,7 @@ modeles:
       bas: "7,8"
       haut: 24
       hasard: 14
+      modalite_maj: 2 voix et plus
     par_voix_relache:
     - modalite: aucune voix
       effectif: 1592
@@ -26878,6 +27522,7 @@ modeles:
       bas: "9,8"
       haut: 13
       hasard: "12,9"
+      modalite_maj: Aucune voix
     - modalite: 1 voix
       effectif: 202
       cas: 39
@@ -26885,6 +27530,7 @@ modeles:
       bas: "14,5"
       haut: "25,3"
       hasard: 14
+      modalite_maj: 1 voix
     - modalite: 2 voix
       effectif: 90
       cas: 20
@@ -26892,6 +27538,7 @@ modeles:
       bas: "14,9"
       haut: "31,8"
       hasard: "14,3"
+      modalite_maj: 2 voix
     - modalite: 3 voix
       effectif: 48
       cas: 9
@@ -26899,6 +27546,7 @@ modeles:
       bas: "10,2"
       haut: "31,9"
       hasard: "12,8"
+      modalite_maj: 3 voix
     - modalite: 4 voix
       effectif: 37
       cas: 7
@@ -26906,6 +27554,7 @@ modeles:
       bas: "9,5"
       haut: "34,2"
       hasard: "12,3"
+      modalite_maj: 4 voix
     - modalite: 5 voix et plus
       effectif: 50
       cas: 8
@@ -26913,6 +27562,7 @@ modeles:
       bas: "8,3"
       haut: "28,5"
       hasard: "11,7"
+      modalite_maj: 5 voix et plus
     par_voix_sans_collier:
     - modalite: aucune voix
       effectif: 997
@@ -26921,6 +27571,7 @@ modeles:
       bas: "9,9"
       haut: "13,9"
       hasard: "13,6"
+      modalite_maj: Aucune voix
     - modalite: 1 voix
       effectif: 132
       cas: 28
@@ -26928,6 +27579,7 @@ modeles:
       bas: "15,1"
       haut: "28,9"
       hasard: "15,4"
+      modalite_maj: 1 voix
     - modalite: 2 voix
       effectif: 54
       cas: 14
@@ -26935,6 +27587,7 @@ modeles:
       bas: "16,1"
       haut: "38,9"
       hasard: 15
+      modalite_maj: 2 voix
     - modalite: 3 voix
       effectif: 38
       cas: 8
@@ -26942,6 +27595,7 @@ modeles:
       bas: "11,1"
       haut: "36,3"
       hasard: "13,3"
+      modalite_maj: 3 voix
     - modalite: 4 voix
       effectif: 20
       cas: 4
@@ -26949,6 +27603,7 @@ modeles:
       bas: "8,1"
       haut: "41,6"
       hasard: "12,7"
+      modalite_maj: 4 voix
     - modalite: 5 voix et plus
       effectif: 25
       cas: 2
@@ -26956,6 +27611,7 @@ modeles:
       bas: "2,2"
       haut: 25
       hasard: "11,6"
+      modalite_maj: 5 voix et plus
     inverse:
       sortis: 192
       restes: 1206
@@ -26988,6 +27644,7 @@ modeles:
       bas: "8,8"
       haut: "12,7"
       hasard: "13,4"
+      modalite_maj: Jamais visé
     - modalite: 1 ou 2 voix en tout
       effectif: 255
       cas: 53
@@ -26995,6 +27652,7 @@ modeles:
       bas: "16,3"
       haut: "26,2"
       hasard: "15,3"
+      modalite_maj: 1 ou 2 voix en tout
     - modalite: 3 voix ou plus en tout
       effectif: 207
       cas: 40
@@ -27002,6 +27660,7 @@ modeles:
       bas: "14,5"
       haut: "25,2"
       hasard: "13,5"
+      modalite_maj: 3 voix ou plus en tout
     par_histoire:
     - modalite: jamais visé
       effectif: 936
@@ -27010,6 +27669,7 @@ modeles:
       bas: "8,8"
       haut: "12,7"
       hasard: "13,4"
+      modalite_maj: Jamais visé
     - modalite: visé avant, plus la dernière fois
       effectif: 166
       cas: 26
@@ -27017,6 +27677,7 @@ modeles:
       bas: "10,9"
       haut: 22
       hasard: "14,5"
+      modalite_maj: Visé avant, plus la dernière fois
     - modalite: visé la dernière fois seulement
       effectif: 227
       cas: 53
@@ -27024,6 +27685,7 @@ modeles:
       bas: "18,3"
       haut: "29,3"
       hasard: "14,3"
+      modalite_maj: Visé la dernière fois seulement
     - modalite: visé la dernière fois, et déjà avant
       effectif: 69
       cas: 14
@@ -27031,6 +27693,7 @@ modeles:
       bas: "12,5"
       haut: "31,2"
       hasard: "14,9"
+      modalite_maj: Visé la dernière fois, et déjà avant
     persistance:
     - modalite: aucune voix
       effectif: 1102
@@ -27039,6 +27702,7 @@ modeles:
       bas: "26,2"
       haut: "31,5"
       hasard: "13,5"
+      modalite_maj: Aucune voix
     - modalite: 1 voix
       effectif: 143
       cas: 65
@@ -27046,6 +27710,7 @@ modeles:
       bas: "37,5"
       haut: "53,6"
       hasard: "15,3"
+      modalite_maj: 1 voix
     - modalite: 2 voix
       effectif: 56
       cas: 28
@@ -27053,6 +27718,7 @@ modeles:
       bas: "37,3"
       haut: "62,7"
       hasard: "15,1"
+      modalite_maj: 2 voix
     - modalite: 3 voix et plus
       effectif: 97
       cas: 48
@@ -27060,6 +27726,7 @@ modeles:
       bas: "39,7"
       haut: "59,3"
       hasard: "12,8"
+      modalite_maj: 3 voix et plus
     retour:
       couples: 439
       rendus: 101
@@ -27076,16 +27743,19 @@ modeles:
         bas: "1,34"
         haut: "2,86"
         p: "0,0005"
+        libelle_maj: 1 ou 2 voix
       - libelle: 3 voix
         rapport: "2,12"
         bas: 1
         haut: "4,5"
         p: "0,0503"
+        libelle_maj: 3 voix
       - libelle: 4 voix et plus
         rapport: "1,97"
         bas: "1,03"
         haut: "3,78"
         p: "0,0405"
+        libelle_maj: 4 voix et plus
       lecture: Rapport de cotes par rapport à « aucune voix au conseil précédent », à conseil égal. Au-dessus
         de 1, le risque monte ; en dessous, il baisse. Un intervalle qui contient 1 ne permet pas de conclure.
     survivants:
@@ -27800,6 +28470,8 @@ modeles:
       p_ajustee: "0,0007"
       retenu: true
     part_des_conseils: 38
+    deux_pas_vises: 150
+    deux_pas_total: 739
   autour_du_feu:
     presences: 2910
     conseils: 370
@@ -27816,6 +28488,7 @@ modeles:
       bas: "13,8"
       haut: "20,1"
       hasard: "12,1"
+      modalite_maj: Bandeau minoritaire
     - modalite: bandeau majoritaire
       effectif: 1033
       cas: 108
@@ -27823,6 +28496,7 @@ modeles:
       bas: "8,7"
       haut: "12,5"
       hasard: "12,6"
+      modalite_maj: Bandeau majoritaire
     bandeau_avant:
     - modalite: bandeau minoritaire
       effectif: 184
@@ -27831,6 +28505,7 @@ modeles:
       bas: "14,5"
       haut: "25,9"
       hasard: "12,8"
+      modalite_maj: Bandeau minoritaire
     - modalite: bandeau majoritaire
       effectif: 418
       cas: 43
@@ -27838,6 +28513,7 @@ modeles:
       bas: "7,7"
       haut: "13,6"
       hasard: "13,1"
+      modalite_maj: Bandeau majoritaire
     bandeau_apres:
     - modalite: bandeau minoritaire
       effectif: 343
@@ -27846,6 +28522,7 @@ modeles:
       bas: "11,8"
       haut: "19,3"
       hasard: "11,8"
+      modalite_maj: Bandeau minoritaire
     - modalite: bandeau majoritaire
       effectif: 615
       cas: 65
@@ -27853,6 +28530,7 @@ modeles:
       bas: "8,4"
       haut: "13,2"
       hasard: "12,2"
+      modalite_maj: Bandeau majoritaire
     sexe:
     - modalite: sexe minoritaire
       effectif: 779
@@ -27861,6 +28539,7 @@ modeles:
       bas: "7,5"
       haut: "11,6"
       hasard: "12,3"
+      modalite_maj: Sexe minoritaire
     - modalite: sexe majoritaire
       effectif: 1175
       cas: 173
@@ -27868,6 +28547,7 @@ modeles:
       bas: "12,8"
       haut: "16,9"
       hasard: "12,8"
+      modalite_maj: Sexe majoritaire
     age:
     - modalite: le plus âgé du camp
       effectif: 370
@@ -27876,6 +28556,7 @@ modeles:
       bas: "12,1"
       haut: "19,4"
       hasard: "13,4"
+      modalite_maj: Le plus âgé du camp
     - modalite: entre les deux
       effectif: 2080
       cas: 250
@@ -27883,6 +28564,7 @@ modeles:
       bas: "10,7"
       haut: "13,5"
       hasard: "12,2"
+      modalite_maj: Entre les deux
     - modalite: le plus jeune du camp
       effectif: 416
       cas: 52
@@ -27890,6 +28572,7 @@ modeles:
       bas: "9,7"
       haut: 16
       hasard: "13,4"
+      modalite_maj: Le plus jeune du camp
     genre:
     - modalite: une femme
       effectif: 1377
@@ -27898,6 +28581,7 @@ modeles:
       bas: "12,1"
       haut: "15,7"
       hasard: "12,7"
+      modalite_maj: Une femme
     - modalite: un homme
       effectif: 1533
       cas: 180
@@ -27905,6 +28589,7 @@ modeles:
       bas: "10,2"
       haut: "13,4"
       hasard: "12,8"
+      modalite_maj: Un homme
     confort:
     - modalite: a gagné le confort du soir
       effectif: 136
@@ -27913,6 +28598,7 @@ modeles:
       bas: "12,2"
       haut: "24,9"
       hasard: "13,6"
+      modalite_maj: A gagné le confort du soir
     - modalite: n’a rien gagné ce soir
       effectif: 694
       cas: 86
@@ -27920,6 +28606,7 @@ modeles:
       bas: "10,1"
       haut: "15,1"
       hasard: "13,2"
+      modalite_maj: N’a rien gagné ce soir
     immunite:
     - modalite: a gagné l’immunité individuelle
       effectif: 130
@@ -27928,6 +28615,7 @@ modeles:
       bas: "0,8"
       haut: "6,6"
       hasard: "14,1"
+      modalite_maj: A gagné l’immunité individuelle
     - modalite: n’a pas gagné l’immunité
       effectif: 871
       cas: 121
@@ -27935,6 +28623,7 @@ modeles:
       bas: "11,8"
       haut: "16,3"
       hasard: "12,1"
+      modalite_maj: N’a pas gagné l’immunité
     tests:
     - cle: bandeau_minoritaire
       libelle: Le bandeau minoritaire
@@ -28151,6 +28840,7 @@ modeles:
       bas: "17,4"
       haut: "47,3"
       hasard: "14,5"
+      modalite_maj: N’a jamais voté avec personne
     - modalite: tous ses alliés sont partis
       effectif: 37
       cas: 12
@@ -28158,6 +28848,7 @@ modeles:
       bas: "19,6"
       haut: "48,5"
       hasard: "16,4"
+      modalite_maj: Tous ses alliés sont partis
     - modalite: 1 ou 2 alliés présents
       effectif: 193
       cas: 35
@@ -28165,6 +28856,7 @@ modeles:
       bas: "13,3"
       haut: "24,2"
       hasard: "14,6"
+      modalite_maj: 1 ou 2 alliés présents
     - modalite: 3 alliés ou plus
       effectif: 1135
       cas: 135
@@ -28172,6 +28864,7 @@ modeles:
       bas: "10,1"
       haut: "13,9"
       hasard: "13,5"
+      modalite_maj: 3 alliés ou plus
     adverse:
     - modalite: jamais visé jusqu’ici
       effectif: 936
@@ -28180,6 +28873,7 @@ modeles:
       bas: "8,8"
       haut: "12,7"
       hasard: "13,4"
+      modalite_maj: Jamais visé jusqu’ici
     - modalite: ses adversaires sont partis
       effectif: 129
       cas: 32
@@ -28187,6 +28881,7 @@ modeles:
       bas: "18,2"
       haut: "32,9"
       hasard: "16,1"
+      modalite_maj: Ses adversaires sont partis
     - modalite: au moins un adversaire encore là
       effectif: 333
       cas: 61
@@ -28194,6 +28889,7 @@ modeles:
       bas: "14,5"
       haut: "22,8"
       hasard: "13,8"
+      modalite_maj: Au moins un adversaire encore là
     cumul:
     - modalite: aucun des deux signaux
       effectif: 1059
@@ -28202,6 +28898,7 @@ modeles:
       bas: "9,1"
       haut: "12,9"
       hasard: "13,5"
+      modalite_maj: Aucun des deux signaux
     - modalite: un seul des deux
       effectif: 312
       cas: 65
@@ -28209,6 +28906,7 @@ modeles:
       bas: "16,7"
       haut: "25,7"
       hasard: "14,5"
+      modalite_maj: Un seul des deux
     - modalite: les deux à la fois
       effectif: 27
       cas: 12
@@ -28216,6 +28914,7 @@ modeles:
       bas: "27,6"
       haut: "62,7"
       hasard: "15,5"
+      modalite_maj: Les deux à la fois
     modele:
       conseils: 192
       presences: 1398
@@ -28241,6 +28940,7 @@ modeles:
       bas: "9,4"
       haut: "21,8"
       hasard: "13,9"
+      modalite_maj: Visé au conseil précédent
     - modalite: pas visé
       effectif: 461
       cas: 55
@@ -28248,6 +28948,7 @@ modeles:
       bas: "9,3"
       haut: "15,2"
       hasard: "12,8"
+      modalite_maj: Pas visé
     conseils_immunite: 76
     bulletins_lus: 861
     bulletins_perdus: 5
@@ -34076,6 +34777,320 @@ sommaire:
   entrees: 27
   testees: 16
   descriptives: 11
+  pages:
+    /:
+      section: Découvrir
+    /statistiques/:
+      section: Les résultats
+      suivant:
+        url: /statistiques/vainqueurs/
+        titre: Le profil du vainqueur
+    /statistiques/vainqueurs/:
+      section: Les résultats
+      rang: 1
+      total: 27
+      theme: Le casting
+      precedent:
+        url: /statistiques/
+        titre: Vue d'ensemble
+      suivant:
+        url: /statistiques/professions/
+        titre: Le métier
+    /statistiques/professions/:
+      section: Les résultats
+      rang: 2
+      total: 27
+      theme: Le casting
+      precedent:
+        url: /statistiques/vainqueurs/
+        titre: Le profil du vainqueur
+      suivant:
+        url: /statistiques/prenoms/
+        titre: Les prénoms
+    /statistiques/prenoms/:
+      section: Les résultats
+      rang: 3
+      total: 27
+      theme: Le casting
+      precedent:
+        url: /statistiques/professions/
+        titre: Le métier
+      suivant:
+        url: /statistiques/longevite/
+        titre: Âge et longévité
+    /statistiques/longevite/:
+      section: Les résultats
+      rang: 4
+      total: 27
+      theme: Le casting
+      precedent:
+        url: /statistiques/prenoms/
+        titre: Les prénoms
+      suivant:
+        url: /statistiques/revenants/
+        titre: Les revenants
+    /statistiques/revenants/:
+      section: Les résultats
+      rang: 5
+      total: 27
+      theme: Le casting
+      precedent:
+        url: /statistiques/longevite/
+        titre: Âge et longévité
+      suivant:
+        url: /statistiques/casting/
+        titre: La recette du casting
+    /statistiques/casting/:
+      section: Les résultats
+      rang: 6
+      total: 27
+      theme: Le casting
+      precedent:
+        url: /statistiques/revenants/
+        titre: Les revenants
+      suivant:
+        url: /statistiques/geographie/
+        titre: D'où ils viennent
+    /statistiques/geographie/:
+      section: Les résultats
+      rang: 7
+      total: 27
+      theme: Le casting
+      precedent:
+        url: /statistiques/casting/
+        titre: La recette du casting
+      suivant:
+        url: /statistiques/conseils/
+        titre: Les conseils
+    /statistiques/conseils/:
+      section: Les résultats
+      rang: 8
+      total: 27
+      theme: Le conseil
+      precedent:
+        url: /statistiques/geographie/
+        titre: D'où ils viennent
+      suivant:
+        url: /statistiques/colliers/
+        titre: Les colliers
+    /statistiques/colliers/:
+      section: Les résultats
+      rang: 9
+      total: 27
+      theme: Le conseil
+      precedent:
+        url: /statistiques/conseils/
+        titre: Les conseils
+      suivant:
+        url: /statistiques/jeu-social/
+        titre: Le jeu social
+    /statistiques/jeu-social/:
+      section: Les résultats
+      rang: 10
+      total: 27
+      theme: Le conseil
+      precedent:
+        url: /statistiques/colliers/
+        titre: Les colliers
+      suivant:
+        url: /statistiques/alliances/
+        titre: Les alliances
+    /statistiques/alliances/:
+      section: Les résultats
+      rang: 11
+      total: 27
+      theme: Le conseil
+      precedent:
+        url: /statistiques/jeu-social/
+        titre: Le jeu social
+      suivant:
+        url: /statistiques/qui-vise-qui/
+        titre: Qui vise qui
+    /statistiques/qui-vise-qui/:
+      section: Les résultats
+      rang: 12
+      total: 27
+      theme: Le conseil
+      precedent:
+        url: /statistiques/alliances/
+        titre: Les alliances
+      suivant:
+        url: /statistiques/conditionnelles/
+        titre: Sachant le conseil d'avant
+    /statistiques/conditionnelles/:
+      section: Les résultats
+      rang: 13
+      total: 27
+      theme: Le conseil
+      precedent:
+        url: /statistiques/qui-vise-qui/
+        titre: Qui vise qui
+      suivant:
+        url: /statistiques/autour-du-feu/
+        titre: Sachant qui est autour du feu
+    /statistiques/autour-du-feu/:
+      section: Les résultats
+      rang: 14
+      total: 27
+      theme: Le conseil
+      precedent:
+        url: /statistiques/conditionnelles/
+        titre: Sachant le conseil d'avant
+      suivant:
+        url: /statistiques/pire-place/
+        titre: La pire place au conseil
+    /statistiques/pire-place/:
+      section: Les résultats
+      rang: 15
+      total: 27
+      theme: Le conseil
+      precedent:
+        url: /statistiques/autour-du-feu/
+        titre: Sachant qui est autour du feu
+      suivant:
+        url: /statistiques/jury/
+        titre: Le vote du jury
+    /statistiques/jury/:
+      section: Les résultats
+      rang: 16
+      total: 27
+      theme: Le conseil
+      precedent:
+        url: /statistiques/pire-place/
+        titre: La pire place au conseil
+      suivant:
+        url: /statistiques/epreuves/
+        titre: Les épreuves
+    /statistiques/epreuves/:
+      section: Les résultats
+      rang: 17
+      total: 27
+      theme: Les épreuves
+      precedent:
+        url: /statistiques/jury/
+        titre: Le vote du jury
+      suivant:
+        url: /statistiques/force/
+        titre: La force réelle
+    /statistiques/force/:
+      section: Les résultats
+      rang: 18
+      total: 27
+      theme: Les épreuves
+      precedent:
+        url: /statistiques/epreuves/
+        titre: Les épreuves
+      suivant:
+        url: /statistiques/finale/
+        titre: La fin de saison
+    /statistiques/finale/:
+      section: Les résultats
+      rang: 19
+      total: 27
+      theme: Les épreuves
+      precedent:
+        url: /statistiques/force/
+        titre: La force réelle
+      suivant:
+        url: /statistiques/tribus/
+        titre: Jaune contre rouge
+    /statistiques/tribus/:
+      section: Les résultats
+      rang: 20
+      total: 27
+      theme: La saison
+      precedent:
+        url: /statistiques/finale/
+        titre: La fin de saison
+      suivant:
+        url: /statistiques/sorties/
+        titre: Comment on sort
+    /statistiques/sorties/:
+      section: Les résultats
+      rang: 21
+      total: 27
+      theme: La saison
+      precedent:
+        url: /statistiques/tribus/
+        titre: Jaune contre rouge
+      suivant:
+        url: /statistiques/fusion/
+        titre: Avant et après la fusion
+    /statistiques/fusion/:
+      section: Les résultats
+      rang: 22
+      total: 27
+      theme: La saison
+      precedent:
+        url: /statistiques/sorties/
+        titre: Comment on sort
+      suivant:
+        url: /statistiques/grille/
+        titre: La grille
+    /statistiques/grille/:
+      section: Les résultats
+      rang: 23
+      total: 27
+      theme: La saison
+      precedent:
+        url: /statistiques/fusion/
+        titre: Avant et après la fusion
+      suivant:
+        url: /statistiques/equilibre/
+        titre: Le jeu tenu serré
+    /statistiques/equilibre/:
+      section: Les résultats
+      rang: 24
+      total: 27
+      theme: La saison
+      precedent:
+        url: /statistiques/grille/
+        titre: La grille
+      suivant:
+        url: /statistiques/audience/
+        titre: L'audience
+    /statistiques/audience/:
+      section: Les résultats
+      rang: 25
+      total: 27
+      theme: La saison
+      precedent:
+        url: /statistiques/equilibre/
+        titre: Le jeu tenu serré
+      suivant:
+        url: /statistiques/pronostic/
+        titre: Le pronostic
+    /statistiques/pronostic/:
+      section: Les résultats
+      rang: 26
+      total: 27
+      theme: Le classement
+      precedent:
+        url: /statistiques/audience/
+        titre: L'audience
+      suivant:
+        url: /statistiques/top/
+        titre: Le top des joueurs
+    /statistiques/top/:
+      section: Les résultats
+      rang: 27
+      total: 27
+      theme: Le classement
+      precedent:
+        url: /statistiques/pronostic/
+        titre: Le pronostic
+    /completude/:
+      section: Les données
+    /saisons/:
+      section: Les données
+    /aventuriers/:
+      section: Les données
+    /epreuves/:
+      section: Les données
+    /sources/:
+      section: Les données
+    /methode/:
+      section: Les données
 croisement_divergents: 2
 mots:
   etendue_annees: vingt-cinq
@@ -34173,3 +35188,4 @@ mots:
   facettes_corrigees: deux
   facettes_corrigees_maj: Deux
   facette_retiree_rang: cinquième
+ambassades_sources_communes: 6
