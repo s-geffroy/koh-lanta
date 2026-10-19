@@ -892,6 +892,34 @@ def controler_virgule_decimale(c):
                      f"passer par graphiques.ecrire")
 
 
+# Ce que des PHRASES du site affirment d'un test du registre : (retenu ?, ou).
+# Un chiffre suit les donnees, la phrase qui l'entoure non. Le 19 octobre 2026,
+# le sommaire, l'accueil, /statistiques/fusion/ et /statistiques/top/ ecrivaient
+# « on elimine le fort AVANT la reunification » -- un test NON retenu
+# (p ajustee 0,37). Changer une de ces phrases, c'est changer cette table.
+AFFIRMATIONS_PAGES = {
+    "fusion_force": (False, "index.md, statistiques/fusion.md, statistiques/top.md "
+                            "et le resume du sommaire ecrivent que la force ne "
+                            "decide pas de qui part"),
+}
+
+
+def controler_affirmations_pages(c):
+    """Refuse une page dont l'affirmation ecrite ne tient plus dans le registre."""
+    chemin = os.path.join(RACINE, "_data", "stats.yml")
+    registre = {t["cle"]: t for t in
+                ((donnees.charger(open(chemin, encoding="utf-8")) or {})
+                 .get("modeles") or {}).get("registre") or []}
+    for cle, (retenu, ou) in AFFIRMATIONS_PAGES.items():
+        test = registre.get(cle)
+        if test is None:
+            c.erreur(f"registre : test `{cle}` absent — {ou}")
+        elif bool(test.get("retenu")) != retenu:
+            c.erreur(f"registre : `{cle}` est desormais "
+                     f"{'retenu' if test.get('retenu') else 'non retenu'} — {ou} : "
+                     f"relire ces phrases avant de publier")
+
+
 def controler_donnees_structurees(c):
     """Verifie que le JSON-LD reste du JSON, branches posees ou non.
 
@@ -1447,6 +1475,7 @@ def main():
     controler_donnees_structurees(c)
     controler_yaml_ambigu(c)
     controler_virgule_decimale(c)
+    controler_affirmations_pages(c)
     controler_titres_minuscules(c)
     controler_accord_rang(c)
     controler_navigation(c, permaliens, gabarits)

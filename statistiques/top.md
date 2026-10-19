@@ -424,13 +424,12 @@ les bouches. Voici les meilleurs aux épreuves, et leur rang en discrétion.
   très légèrement <em>moins</em> visés, pas plus.</p>
 </div>
 
-<p class="note"><strong>Sans contradiction avec
-<a href="{{ '/statistiques/fusion/' | relative_url }}">« on élimine le fort
-avant la fusion »</a></strong>, qui est un résultat retenu. Les deux ne parlent
-pas de la même chose : cette page-là mesure <em>qui</em> sort à un moment donné,
-celle-ci compte les voix reçues <em>hors du soir où l’on part</em>. Être sorti
-parce qu’on est fort et être écrit toute la saison sont deux faits distincts —
-et le second n’a pas lieu.</p>
+<p class="note"><strong>Même constat
+<a href="{{ '/statistiques/fusion/' | relative_url }}">avant et après la
+fusion</a></strong>. Cette page-là mesure <em>qui</em> sort à un moment donné,
+celle-ci compte les voix reçues <em>hors du soir où l’on part</em> : deux faits
+distincts, et aucun des deux ne désigne le fort. L’éliminé reste autour de la
+médiane de force avant comme après la réunification.</p>
 
 <p class="note">C’est ce qui explique l’ampleur du mouvement mesuré plus bas :
 quand les composantes divergent à ce point, changer les poids change les noms.

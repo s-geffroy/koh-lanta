@@ -1,11 +1,12 @@
 ---
 layout: page
 title: Avant et après la fusion
-description: "Avant et après la réunification, Koh-Lanta est deux jeux. On élimine le faible avant et le fort après, dit-on. Les bulletins disent l’inverse."
+description: "Avant et après la réunification, Koh-Lanta est deux jeux. On élimine le faible avant et le fort après, dit-on. Les bulletins ne le montrent pas."
 permalink: /statistiques/fusion/
 chapeau: >-
   La réunification coupe la saison en deux jeux. On dit qu’avant on élimine le
-  faible et qu’après on élimine le fort. C’est l’inverse.
+  faible et qu’après on élimine le fort. Les bulletins ne montrent ni l’un ni
+  l’autre.
 ---
 
 {% assign m = site.data.stats.modeles %}
@@ -22,7 +23,7 @@ pour soi et un bon joueur devient une menace. Le raisonnement est si naturel
 qu’il est répété partout : **avant on élimine le faible, après on élimine le
 fort.**
 
-Il est faux, et c’est mesurable.
+C’est mesurable, et la mesure ne le confirme pas.
 
 <p class="note"><strong>Où tombe la coupure.</strong> Elle ne se devine pas :
 après la réunification, les immunités sont individuelles. Le dernier épisode
@@ -54,7 +55,7 @@ fort.</p>
 </table>
 </div>
 
-## On élimine le fort AVANT, pas après
+## La force ne décide pas de qui part
 
 {% include graphiques/fusion-force-nulle.svg %}
 
@@ -64,15 +65,16 @@ l’éliminé de chaque conseil est pris au hasard parmi les présents.</p>
 
 <div class="constat">
   <p>Avant la réunification, l’éliminé se situe en moyenne au rang
-  <b>{{ a.rang_force_avant }} sur 100</b> de son camp : <b>au-dessus de la
-  médiane</b>. Après, il tombe à <b>{{ a.rang_force_apres }}</b> — la médiane,
-  à peu de chose près.</p>
-  <p>L’écart vaut {{ tf.observe }} points de rang,
-  <b>{{ tf.ecart_types }} écarts-types</b> sous le hasard, p ajustée
-  {{ tf.p_ajustee }}.</p>
-  <p><b>C’est l’inverse de ce qu’on raconte.</b> La tribu qui perd sacrifie le
-  joueur qu’elle a vu gagner ; le camp réuni, lui, choisit à peu près au milieu
-  du classement.</p>
+  <b>{{ a.rang_force_avant }} sur 100</b> de son camp ; après, au rang
+  <b>{{ a.rang_force_apres }}</b>. Dans les deux cas, <b>autour de la
+  médiane</b> : ni le plus faible avant, ni le plus fort après.</p>
+  <p>L’écart entre les deux vaut {{ tf.observe }} points de rang (écart réduit
+  {{ tf.ecart_types }}, p ajustée {{ tf.p_ajustee }}) : un tirage au sort parmi
+  les présents le produit couramment. <b>Le test n’est pas retenu.</b></p>
+  <p>Ce n’est pas la preuve que la force ne compte jamais : avant la fusion,
+  elle n’est estimable que sur {{ a.force_effectif_avant }} conseils, et un
+  effet modéré passerait inaperçu. Mais l’idée reçue, telle qu’on la raconte,
+  ne se voit pas dans les bulletins.</p>
 </div>
 
 <p class="note"><strong>Le modèle nul fait tout le travail ici.</strong> À
@@ -80,12 +82,13 @@ chaque conseil, on tire l’éliminé <em>au hasard parmi les présents de ce
 soir-là</em>. Tout ce qui tient à la composition du camp — son âge, son sexe,
 son niveau — est donc déjà neutralisé. Ce qui reste ne peut être qu’un choix.</p>
 
-### L’objection sérieuse, et ce qu’elle donne
+### Une estimation trop floue ?
 
 La force est estimée sur les épreuves individuelles disputées. Un aventurier
 éliminé avant la fusion en a disputé peu — deux, en médiane — quand ceux qui
 restent seront jugés sur toute une saison. **On comparerait donc une estimation
-vague à des estimations informées, et on prendrait le flou pour un résultat.**
+vague à des estimations informées** : le flou pourrait masquer un effet, ou en
+fabriquer un.
 
 Deux vérifications.
 
@@ -94,18 +97,17 @@ Deux vérifications.
   le nombre d’épreuves disputées et la force estimée vaut
   <b>{{ a.robustesse.correlation_exposition_force }}</b> : à peine plus que
   zéro. Un joueur peu exposé n’est pas mécaniquement classé haut.</p>
-  <p><b>À finesse d’estimation égale, l’écart tient.</b> En ne comparant
+  <p><b>À finesse d’estimation égale, rien ne change.</b> En ne comparant
   l’éliminé qu’aux présents ayant disputé un nombre d’épreuves comparable — à
   trois près — le rang vaut <b>{{ a.robustesse.apparie.avant }}</b> avant
   ({{ a.robustesse.apparie.avant_effectif }} conseils) contre
   <b>{{ a.robustesse.apparie.apres }}</b> après
-  ({{ a.robustesse.apparie.apres_effectif }}). L’écart se réduit, il ne
-  disparaît pas.</p>
+  ({{ a.robustesse.apparie.apres_effectif }}) : les deux restent proches.</p>
 </div>
 
-Autrement dit : **parmi les joueurs qu’on connaît aussi mal les uns que les
-autres, celui qui sort avant la fusion est celui qui avait gagné la plus grande
-part de ses rares épreuves.**
+Autrement dit : **le flou de l’estimation ne cache pas l’effet qu’on attendait.
+Avant comme après la fusion, l’éliminé n’est choisi ni parmi les plus faibles
+ni parmi les plus forts.**
 
 ## Le vote se divise après la fusion
 
@@ -134,8 +136,7 @@ qui vient de perdre une épreuve a souvent déjà tranché sur le chemin du reto
 {% assign ag = site.data.stats.modeles.age_au_conseil %}
 {% assign tag = reg | where: "cle", "age_bascule_fusion" | first %}
 
-Si la tribu sacrifie le joueur qu’elle a vu gagner, sacrifie-t-elle aussi le
-plus vieux ? La mesure est directe : de combien d’années l’éliminé s’écarte de
+La force ne désigne pas l’éliminé. L’âge, peut-être ? La mesure est directe : de combien d’années l’éliminé s’écarte de
 la moyenne d’âge de son camp, ce soir-là.
 
 <div class="tableau-large">
