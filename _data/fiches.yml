@@ -1263,8 +1263,8 @@ aventuriers:
       epreuves_nommees:
       - id: palets
         nom: Palets
-      - id: poteries-en-equikibre
-        nom: Poteries en équikibre
+      - id: poteries-en-equilibre
+        nom: Poteries en équilibre
       evasion: null
       jour_sortie: 40
       justesse_vote: "66,7"
@@ -2787,7 +2787,7 @@ aventuriers:
       epreuves_gagnees: 2
       epreuves_nommees:
       - id: a-bout-de-souffle
-        nom: A bout de souffle
+        nom: À bout de souffle
       evasion: null
       jour_sortie: 37
       justesse_vote: 80
@@ -2864,7 +2864,7 @@ aventuriers:
       epreuves_gagnees: 2
       epreuves_nommees:
       - id: a-bout-de-souffle
-        nom: A bout de souffle
+        nom: À bout de souffle
       - id: grappins
         nom: Grappins
       evasion: null
@@ -4611,7 +4611,7 @@ aventuriers:
       epreuves_gagnees: 4
       epreuves_nommees:
       - id: a-bout-de-souffle
-        nom: A bout de souffle
+        nom: À bout de souffle
       - id: parcours-du-combattant
         nom: Parcours du combattant
       - id: tables-a-bascule
@@ -5526,7 +5526,7 @@ aventuriers:
       epreuves_gagnees: 7
       epreuves_nommees:
       - id: a-bout-de-souffle
-        nom: A bout de souffle
+        nom: À bout de souffle
       - id: bambous
         nom: Bambous
       - id: boue
@@ -6164,8 +6164,8 @@ aventuriers:
       epreuves_nommees:
       - id: boules
         nom: Boules
-      - id: poteries-en-equikibre
-        nom: Poteries en équikibre
+      - id: poteries-en-equilibre
+        nom: Poteries en équilibre
       evasion: 100
       jour_sortie: 40
       justesse_vote: "55,6"
@@ -6513,8 +6513,8 @@ aventuriers:
         nom: Parcours du combattant
       - id: paresseux
         nom: Paresseux
-      - id: poteries-en-equikibre
-        nom: Poteries en équikibre
+      - id: poteries-en-equilibre
+        nom: Poteries en équilibre
       - id: etoile
         nom: Étoile
       evasion: 100
@@ -9862,7 +9862,7 @@ aventuriers:
       epreuves_gagnees: 0
       epreuves_nommees:
       - id: a-bout-de-souffle
-        nom: A bout de souffle
+        nom: À bout de souffle
       - id: aveugle
         nom: Aveugle
       - id: boue
@@ -10702,8 +10702,8 @@ aventuriers:
       epreuves_disputees: 9
       epreuves_gagnees: 4
       epreuves_nommees:
-      - id: poteries-en-equikibre
-        nom: Poteries en équikibre
+      - id: poteries-en-equilibre
+        nom: Poteries en équilibre
       evasion: "66,7"
       jour_sortie: 35
       justesse_vote: 50
@@ -11336,7 +11336,7 @@ aventuriers:
       epreuves_gagnees: 2
       epreuves_nommees:
       - id: a-bout-de-souffle
-        nom: A bout de souffle
+        nom: À bout de souffle
       - id: trapezes
         nom: Trapèzes
       evasion: null
@@ -24476,7 +24476,7 @@ aventuriers:
       epreuves_gagnees: 3
       epreuves_nommees:
       - id: a-bout-de-souffle
-        nom: A bout de souffle
+        nom: À bout de souffle
       evasion: null
       jour_sortie: 41
       justesse_vote: "62,5"
@@ -25518,8 +25518,8 @@ aventuriers:
       epreuves_disputees: 13
       epreuves_gagnees: 5
       epreuves_nommees:
-      - id: poteries-en-equikibre
-        nom: Poteries en équikibre
+      - id: poteries-en-equilibre
+        nom: Poteries en équilibre
       - id: sacs
         nom: Sacs
       - id: trapezes
@@ -28357,7 +28357,7 @@ aventuriers:
     - q: Quel âge avait Martin Bazin à Koh-Lanta ?
       r: 23 ans en 2011 (Raja Ampat) et 26 ans en 2014 (La Nouvelle Édition).
     - q: Quel est le métier de Martin Bazin ?
-      r: Chef d'entreprise (2011) et Directeur d'hotêl (Raja Ampat) (2014).
+      r: Chef d'entreprise (2011) et Directeur d'hôtel (Raja Ampat) (2014).
     - q: Martin Bazin a-t-il gagné Koh-Lanta ?
       r: Non. Martin Bazin est allé en finale 1 fois sans jamais remporter le titre.
     - q: Combien de fois Martin Bazin a-t-il participé à Koh-Lanta ?
@@ -28450,7 +28450,7 @@ aventuriers:
       - effectif: 1
         nature: statique
       numero: null
-      profession: Directeur d'hotêl (Raja Ampat)
+      profession: Directeur d'hôtel (Raja Ampat)
       ratio_epreuves: "12,5"
       saison: sp4
       sort: finaliste
@@ -28459,7 +28459,7 @@ aventuriers:
       tribu: Simban
       voix_recues: 0
     prenom: Martin
-    profession: Directeur d'hotêl (Raja Ampat)
+    profession: Directeur d'hôtel (Raja Ampat)
     rang: 26
     rang_p05: 7
     rang_p95: 341
@@ -33665,7 +33665,7 @@ aventuriers:
       epreuves_gagnees: 5
       epreuves_nommees:
       - id: a-bout-de-souffle
-        nom: A bout de souffle
+        nom: À bout de souffle
       - id: labyrinthe
         nom: Labyrinthe
       - id: parcours-du-combattant
@@ -35375,7 +35375,7 @@ aventuriers:
       epreuves_gagnees: 0
       epreuves_nommees:
       - id: a-bout-de-souffle
-        nom: A bout de souffle
+        nom: À bout de souffle
       - id: aveugle
         nom: Aveugle
       - id: boue
@@ -52699,7 +52699,7 @@ saisons:
       jour_sortie: 23
       libelle_sort: Finaliste
       nom: Martin Bazin
-      profession: Directeur d'hotêl (Raja Ampat)
+      profession: Directeur d'hôtel (Raja Ampat)
       rang: 26
       sort: finaliste
       tribu: Simban

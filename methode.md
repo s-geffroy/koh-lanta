@@ -345,7 +345,7 @@ chiffres différents **sans qu’aucune donnée ait bougé**.
   usage, pour qu’ajouter une analyse ne déplace pas les chiffres d’une autre.
 - Un seul fil de calcul dans l’atelier : le nombre de fils change l’ordre des
   additions, donc les derniers chiffres d’une moyenne.
-- Un contrôle automatique qui **refuse** tout tirage non graîné et tout
+- Un contrôle automatique qui **refuse** tout tirage sans graine fixée et tout
   estimateur construit sans graine, en lisant l’arbre syntaxique des scripts.
 - La construction est jouée deux fois, sous deux empreintes de hachage
   différentes, et le fichier produit doit être identique au bit près.

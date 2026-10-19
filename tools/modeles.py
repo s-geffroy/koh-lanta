@@ -1202,6 +1202,22 @@ def hasard_mecanique(par_saison, parts, conseils, epreuves):
     }
 
 
+# Ce que la page /statistiques/equilibre/ affiche a la place des codes de
+# `saisons.mecaniques` et des mesures testees. Elle publiait le code, souligne
+# remplace par une espace : « collier immunite », « destins lies ».
+LIBELLE_MECANIQUE = {
+    "ambassadeurs": "Ambassadeurs", "collier_immunite": "Collier d’immunité",
+    "destins_lies": "Destins liés", "heros": "Héros", "ile_speciale": "Île spéciale",
+    "capitaines": "Capitaines", "quatre_terres": "Quatre terres",
+    "armes_secretes": "Armes secrètes", "totem_maudit": "Totem maudit",
+    "chasseurs_immunite": "Chasseurs d’immunité", "tribu_maudite": "Tribu maudite",
+    "antre_du_destin": "Antre du destin", "separation_par_sexe": "Séparation par sexe",
+    "binomes": "Binômes",
+}
+LIBELLE_MESURE = {"taux_abandon": "Taux d’abandon",
+                  "dispersion_votes": "Dispersion des votes"}
+
+
 def effet_des_mecaniques(par_saison, parts, conseils, indicateurs_saison):
     """Ce que chaque regle nouvelle a change, une fois l'epoque tenue constante.
 
@@ -1243,6 +1259,9 @@ def effet_des_mecaniques(par_saison, parts, conseils, indicateurs_saison):
             ic = r.conf_int()
             effets.append({
                 "mecanique": m, "sur": cle, "saisons": int(presence.sum()),
+                # Un code sans libelle s'afficherait brut : on prefere echouer.
+                "mecanique_libelle": LIBELLE_MECANIQUE[m],
+                "sur_libelle": LIBELLE_MESURE[cle],
                 "effet": _arr(float(r.params[1]), 2),
                 "bas": _arr(float(ic[1][0]), 2), "haut": _arr(float(ic[1][1]), 2),
                 "p": _arr(float(r.pvalues[1]), 4),
@@ -1454,7 +1473,7 @@ def alliances(par_saison, parts, conseils):
             ],
             "r2": _arr(float(r.rsquared), 3),
             "lecture": "Points de saison gagnés ou perdus, le nombre de conseils "
-                       "traverses tenu constant. Ce controle etant trop severe, "
+                       "traversés tenu constant. Ce contrôle étant trop sévère, "
                        "les deux effets sont des bornes basses.",
         }
 
@@ -1563,10 +1582,10 @@ def fusion(par_saison, parts, conseils, epreuves):
         "casting_min": int(castings.min()), "casting_max": int(castings.max()),
         "pente_episode": pentes["episode"],
         "pente_restants": pentes["restants"],
-        "lecture": "Pente : de combien l'episode de fusion, puis le nombre de "
+        "lecture": "Pente : de combien l'épisode de fusion, puis le nombre de "
                    "joueurs restants, bougent quand le casting gagne un membre. "
-                   "Une pente nulle sur l'episode et une pente de 1 sur les "
-                   "restants signent une fusion calee sur la GRILLE.",
+                   "Une pente nulle sur l'épisode et une pente de 1 sur les "
+                   "restants signent une fusion calée sur la GRILLE.",
     }
 
 
@@ -1962,7 +1981,7 @@ def jury_final(par_saison, parts, conseils):
         "part_vers_bourreau": _arr(100.0 * vers_bourreau / len(detail)),
         "bulletins_avec_bourreau_disponible": dispo,
         "part_quand_disponible": _arr(100.0 * vers_bourreau / dispo) if dispo else None,
-        "lecture": "Rapport de cotes : au-dessus de 1, le jure vote plus souvent "
+        "lecture": "Rapport de cotes : au-dessus de 1, le juré vote plus souvent "
                    "pour ce finaliste ; en dessous, moins souvent. Un intervalle "
                    "qui contient 1 veut dire qu'on ne peut pas conclure.",
     }
@@ -2079,8 +2098,8 @@ def trahison(par_saison, parts, conseils):
                  "bas": _arr(float(ic[1][0]), 2), "haut": _arr(float(ic[1][1]), 2),
                  "p": _arr(float(r.pvalues[1]), 4),
                  "lecture": "Points de saison gagnés ou perdus quand on passe de "
-                            "« jamais » a « toujours » viser un ancien allie, le "
-                            "nombre de bulletins emis tenu constant."}
+                            "« jamais » à « toujours » viser un ancien allié, le "
+                            "nombre de bulletins émis tenu constant."}
     classement = sorted(lignes, key=lambda x: (-x[0], -x[4], x[2]))
     return {"bulletins": base, "conseils": len(contextes), "test": test,
             "effet": effet,

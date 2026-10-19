@@ -327,7 +327,7 @@ epreuves:
   - s23
   - sp4
   - sp5
-- nom: A bout de souffle
+- nom: À bout de souffle
   type: Statique
   natures:
   - statique
@@ -662,7 +662,7 @@ epreuves:
   - s14
   - s17
   - s20
-- nom: Poteries en équikibre
+- nom: Poteries en équilibre
   type: Equilibre
   natures:
   - equilibre
@@ -1065,7 +1065,7 @@ palmares:
 - saison: s08
   id: bertrand-bolle
   epreuves:
-  - A bout de souffle
+  - À bout de souffle
   - Bambous
   - Boue
   - Parcours du combattant
@@ -1107,7 +1107,7 @@ palmares:
 - saison: s09
   id: christina-chevry
   epreuves:
-  - A bout de souffle
+  - À bout de souffle
   - Aveugle
   - Boue
   - Parcours du combattant
@@ -1200,7 +1200,7 @@ palmares:
 - saison: s11
   id: laurent-maistret
   epreuves:
-  - A bout de souffle
+  - À bout de souffle
   natures:
     statique: 1
 - saison: s11
@@ -1252,7 +1252,7 @@ palmares:
 - saison: s12
   id: philippe-bizet
   epreuves:
-  - A bout de souffle
+  - À bout de souffle
   - Aveugle
   - Boue
   - Parcours du combattant
@@ -1360,7 +1360,7 @@ palmares:
 - saison: s15
   id: nicolas-rouye
   epreuves:
-  - A bout de souffle
+  - À bout de souffle
   - Labyrinthe
   - Parcours du combattant
   - Trapèzes
@@ -1414,7 +1414,7 @@ palmares:
   - Barils
   - Parcours du combattant
   - Paresseux
-  - Poteries en équikibre
+  - Poteries en équilibre
   - Étoile
   natures:
     equilibre: 1
@@ -1464,7 +1464,7 @@ palmares:
 - saison: s17
   id: claire-pradayrol
   epreuves:
-  - Poteries en équikibre
+  - Poteries en équilibre
   natures:
     equilibre: 1
 - saison: s17
@@ -1518,7 +1518,7 @@ palmares:
 - saison: s18
   id: andre-deleplace
   epreuves:
-  - A bout de souffle
+  - À bout de souffle
   - Grappins
   natures:
     precision: 1
@@ -1647,7 +1647,7 @@ palmares:
   id: alexandra-pornet
   epreuves:
   - Palets
-  - Poteries en équikibre
+  - Poteries en équilibre
   natures:
     equilibre: 1
     precision: 1
@@ -1674,7 +1674,7 @@ palmares:
   id: brice-petit
   epreuves:
   - Boules
-  - Poteries en équikibre
+  - Poteries en équilibre
   natures:
     equilibre: 2
     precision: 1
@@ -1704,7 +1704,7 @@ palmares:
 - saison: s21
   id: lola-labesse
   epreuves:
-  - Poteries en équikibre
+  - Poteries en équilibre
   - Sacs
   - Trapèzes
   natures:
@@ -1778,7 +1778,7 @@ palmares:
 - saison: s23
   id: bastien-san-pedro
   epreuves:
-  - A bout de souffle
+  - À bout de souffle
   - Parcours du combattant
   - Tables à bascule
   natures:
@@ -1829,7 +1829,7 @@ palmares:
 - saison: s25
   id: amri-madani
   epreuves:
-  - A bout de souffle
+  - À bout de souffle
   natures:
     statique: 1
 - saison: s25
@@ -2170,7 +2170,7 @@ palmares:
 - saison: sp7
   id: clemence-castel
   epreuves:
-  - A bout de souffle
+  - À bout de souffle
   - Trapèzes
   natures:
     statique: 2

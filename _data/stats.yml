@@ -24140,6 +24140,8 @@ modeles:
     - mecanique: collier_immunite
       sur: dispersion_votes
       saisons: 16
+      mecanique_libelle: Collier d’immunité
+      sur_libelle: Dispersion des votes
       effet: "0,06"
       bas: "-0,03"
       haut: "0,16"
@@ -24147,6 +24149,8 @@ modeles:
     - mecanique: collier_immunite
       sur: taux_abandon
       saisons: 16
+      mecanique_libelle: Collier d’immunité
+      sur_libelle: Taux d’abandon
       effet: "-3,15"
       bas: "-11,87"
       haut: "5,56"
@@ -24154,6 +24158,8 @@ modeles:
     - mecanique: destins_lies
       sur: dispersion_votes
       saisons: 7
+      mecanique_libelle: Destins liés
+      sur_libelle: Dispersion des votes
       effet: "-0,01"
       bas: "-0,08"
       haut: "0,06"
@@ -24161,6 +24167,8 @@ modeles:
     - mecanique: destins_lies
       sur: taux_abandon
       saisons: 7
+      mecanique_libelle: Destins liés
+      sur_libelle: Taux d’abandon
       effet: "-0,64"
       bas: "-6,46"
       haut: "5,18"
@@ -24240,8 +24248,8 @@ modeles:
         haut: "-1,49"
         p: "0,0012"
       r2: "0,329"
-      lecture: Points de saison gagnés ou perdus, le nombre de conseils traverses tenu constant. Ce controle
-        etant trop severe, les deux effets sont des bornes basses.
+      lecture: Points de saison gagnés ou perdus, le nombre de conseils traversés tenu constant. Ce contrôle
+        étant trop sévère, les deux effets sont des bornes basses.
     les_plus_souvent_du_bon_cote:
     - nom: Wendy Gervois
       saison: s15
@@ -24706,8 +24714,8 @@ modeles:
       bas: "-8,05"
       haut: "4,48"
       p: "0,5763"
-      lecture: Points de saison gagnés ou perdus quand on passe de « jamais » a « toujours » viser un
-        ancien allie, le nombre de bulletins emis tenu constant.
+      lecture: Points de saison gagnés ou perdus quand on passe de « jamais » à « toujours » viser un
+        ancien allié, le nombre de bulletins émis tenu constant.
     les_plus_infideles:
     - nom: Alexis Tournier
       saison: s05
@@ -24931,7 +24939,7 @@ modeles:
     part_vers_bourreau: "49,7"
     bulletins_avec_bourreau_disponible: 232
     part_quand_disponible: "65,1"
-    lecture: 'Rapport de cotes : au-dessus de 1, le jure vote plus souvent pour ce finaliste ; en dessous,
+    lecture: 'Rapport de cotes : au-dessus de 1, le juré vote plus souvent pour ce finaliste ; en dessous,
       moins souvent. Un intervalle qui contient 1 veut dire qu''on ne peut pas conclure.'
   fusion:
     saisons: 22
@@ -25085,9 +25093,9 @@ modeles:
       bas: "0,494"
       haut: "0,718"
       p: 0
-    lecture: 'Pente : de combien l''episode de fusion, puis le nombre de joueurs restants, bougent quand
-      le casting gagne un membre. Une pente nulle sur l''episode et une pente de 1 sur les restants signent
-      une fusion calee sur la GRILLE.'
+    lecture: 'Pente : de combien l''épisode de fusion, puis le nombre de joueurs restants, bougent quand
+      le casting gagne un membre. Une pente nulle sur l''épisode et une pente de 1 sur les restants signent
+      une fusion calée sur la GRILLE.'
     croissance: 8
     croissance_episode: "0,9"
     croissance_restants: "4,8"

@@ -17,6 +17,7 @@ from collections import defaultdict
 # Le module qui ecrit et relit _data/ (virgule decimale), dans tools/.
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import donnees  # noqa: E402
+from coquilles import corriger  # noqa: E402
 
 ICI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, ICI)
@@ -1073,7 +1074,7 @@ def main():
         chemin = os.path.join(RACINE, "_data", "conseils.yml")
         with open(chemin, "w", encoding="utf-8") as f:
             f.write(ENTETE)
-            donnees.ecrire(conseils, f, allow_unicode=True, sort_keys=False, width=100)
+            donnees.ecrire(corriger(conseils), f, allow_unicode=True, sort_keys=False, width=100)
         print(f"\necrit : {chemin}")
         # L'epreuve croisee est un resultat, pas un message : elle est publiee.
         croise = os.path.join(RACINE, "_data", "croisement_votes.yml")

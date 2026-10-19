@@ -574,7 +574,7 @@ saison en cours** : *All Stars* était figée à l’état du 27 août 2026, deu
 épisodes, alors que trois avaient été diffusés. Les deux récupérateurs prennent
 désormais une option explicite — `--rafraichir sp8` — et le rafraîchissement a
 livré les éliminations de Moussa et de **Naoil Tita**, l’une des trois
-anciennes vainqueures engagées.
+anciennes gagnantes engagées.
 
 ### Trois fichiers de provenance fausse
 

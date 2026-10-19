@@ -405,9 +405,15 @@ corrigee corrigees disputee disputees epreuve epreuves egale egales estimee
 estimees censuree censurees melangerait etre region regions present presents
 presente presentes detectee detectees regime regimes sante medias
 recu recus recue recues gagnes
+controle controles etant severe severes emis emise calee calees cinquieme
+decide reunification reunifiee apres hotêl équikibre graîné vainqueures
+réunifiiée réunifée immunite
 """
 MOTS_SUSPECTS = set(MOTS_SANS_ACCENT.split())
-RE_MOT = re.compile(r"[A-Za-z][A-Za-z'-]*")
+# Un mot : des lettres, accentuees comprises, coupees a l'apostrophe et au
+# trait d'union. L'ancien decoupage (ASCII, apostrophe incluse) ne voyait ni
+# « graîné » ni « d'epreuves ».
+RE_MOT = re.compile(r"[A-Za-zÀ-ÖØ-öø-ÿœŒ]+")
 # Tout le texte LU d'une figure : les infobulles et la description, mais aussi
 # les etiquettes posees sur le dessin (<text>, <tspan>). Les seules
 # <title>/<desc> laissaient passer « 1ᵉ une fois corrige ».
@@ -463,8 +469,42 @@ def controler_accents(c):
         # C'est du contenu, au meme titre que celui des modeles.
         parcourir(stats.get("classement") or {}, "classement")
 
+    # Le sommaire, les fiches et les pages : la revue d'orthographe du 19
+    # octobre 2026 y a trouve des fautes que les deux gisements ci-dessus ne
+    # couvraient pas (« On elimine le fort AVANT la reunification »).
+    nav = os.path.join(RACINE, "_data", "navigation.yml")
+    if os.path.exists(nav):
+        def chaines(v, ch):
+            if isinstance(v, str):
+                # un code (« elimine_conseil », « s07 ») n'est pas du texte
+                if not re.fullmatch(r"[a-z0-9_:/.-]+", v):
+                    examiner(ch, v)
+            elif isinstance(v, dict):
+                for k, x in v.items():
+                    if k not in ("url", "badge"):
+                        chaines(x, f"{ch}.{k}")
+            elif isinstance(v, list):
+                for x in v:
+                    chaines(x, ch)
+        chaines(donnees.charger(open(nav, encoding="utf-8")), "navigation")
+        fiches = os.path.join(RACINE, "_data", "fiches.yml")
+        if os.path.exists(fiches):
+            chaines(donnees.charger(open(fiches, encoding="utf-8")), "fiches")
+    for chemin in pages():
+        texte = open(chemin, encoding="utf-8").read()
+        m = RE_FRONT.match(texte)
+        entete = (yaml.safe_load(m.group(1)) or {}) if m else {}
+        # Le texte lu seulement : ni le front matter technique (layout,
+        # permalink), ni les balises, ni les adresses des liens.
+        lu = [str(entete.get(k) or "") for k in ("title", "description", "chapeau")]
+        corps = sans_commentaires(texte[m.end():] if m else texte)
+        corps = re.sub(r"\{%.*?%\}|\{\{.*?\}\}", " ", corps, flags=re.S)
+        corps = re.sub(r"<[^>]+>|\]\([^)]*\)|`[^`]*`", " ", corps)
+        examiner(os.path.relpath(chemin, RACINE), " ".join(lu) + " " + corps)
+
     for origine, mots in fautes:
-        c.avertir(f"{origine} : texte publie sans accents — {', '.join(mots)}")
+        c.erreur(f"{origine} : texte publie sans accents ou mal orthographie — "
+                 f"{', '.join(mots)}")
     return len(fautes)
 
 

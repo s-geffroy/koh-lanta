@@ -26,6 +26,7 @@ import unicodedata
 # Le module qui ecrit et relit _data/ (virgule decimale), dans tools/.
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import donnees  # noqa: E402
+from coquilles import corriger  # noqa: E402
 
 ICI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, ICI)
@@ -358,7 +359,7 @@ def main():
         with open(SORTIE, "w", encoding="utf-8") as f:
             f.write("# Fichier genere par tools/extraction/epreuves_nommees.py.\n"
                     "# Ne pas editer a la main : toute modification sera ecrasee.\n")
-            donnees.ecrire(sortie, f, allow_unicode=True, sort_keys=False, width=100)
+            donnees.ecrire(corriger(sortie), f, allow_unicode=True, sort_keys=False, width=100)
         print(f"\necrit : {SORTIE}")
     return 0
 

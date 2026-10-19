@@ -23,6 +23,7 @@ import unicodedata
 # Le module qui ecrit et relit _data/ (virgule decimale), dans tools/.
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import donnees  # noqa: E402
+from coquilles import corriger  # noqa: E402
 
 ICI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, ICI)
@@ -959,10 +960,22 @@ ORDRE = ["id", "nom", "nom_complet", "nom_source", "saison", "genre", "age",
 def ordonner(p):
     return {k: p[k] for k in ORDRE if k in p}
 
+RE_ELIMINE_MASCULIN = re.compile(r"^Éliminé(?=\s)")
+
+
+def accorder(p):
+    """Le motif de sortie s'accorde au genre : le wiki ecrit « Eliminé au
+    conseil » pour Sara Tallon."""
+    if p.get("genre") == "f" and isinstance(p.get("motif"), str):
+        p["motif"] = RE_ELIMINE_MASCULIN.sub("Éliminée", p["motif"])
+    return p
+
+
 def ecrire(participations, saisons):
     """Ecrit _data/participations.yml et _data/personnes.yml."""
     import collections
     chemin_p = os.path.join(RACINE, "_data", "participations.yml")
+    participations = [accorder(corriger(p)) for p in participations]
     with open(chemin_p, "w", encoding="utf-8") as f:
         f.write(ENTETE)
         donnees.ecrire([ordonner(p) for p in participations], f,

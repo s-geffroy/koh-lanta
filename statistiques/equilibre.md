@@ -153,8 +153,8 @@ distinguer de zéro — tous les intervalles contiennent zéro.
 <tbody>
 {% for e in me.effets %}
 <tr>
-  <td>{{ e.mecanique | replace: "_", " " }}</td>
-  <td>{{ e.sur | replace: "_", " " }}</td>
+  <td>{{ e.mecanique_libelle }}</td>
+  <td>{{ e.sur_libelle }}</td>
   <td class="nombre">{{ e.saisons }}</td>
   <td class="nombre">{{ e.effet }}</td>
   <td class="nombre">{{ e.bas }} – {{ e.haut }}</td>
