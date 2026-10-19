@@ -19,6 +19,9 @@ general:
   premiere_annee: 2001
   derniere_annee: 2026
   pays: 14
+  rang_concordant: 27
+  rang_compare: 33
+  etendue_annees: 25
 vainqueurs:
   effectif: 29
   age_moyen: "31,9"
@@ -1456,6 +1459,17 @@ conseils:
     effectif: 594
     part: "22,3"
     libelle: un homme contre un homme
+  conseils_hors_jury: 640
+  elimines_rattaches: 631
+  elimines_non_rattaches: 2
+  part_bulletins_lus: "95,5"
+  sans_votant:
+    bulletins: 192
+    saisons: 21
+    annee_min: 2011
+    annee_max: 2026
+    detail_texte: 126 « Vote noir », 41 « Pénalité », 20 « Malédiction/Pénalité », 3 « Pénalité ou avantage
+      », 2 « Pénalité/Avantage »
   vote_par_genre_ecart: "8,3"
 jury:
   effectif: 36
@@ -1715,6 +1729,9 @@ jury:
     voix_pour: null
     voix_exprimees: null
     bulletins_releves: 9
+  lignes: 67
+  bulletins_lus: 307
+  decomptes_discordants: 0
 finale:
   couverture:
     saisons_au_format: 27
@@ -7948,6 +7965,9 @@ epreuves:
     victoires: 29
     aventuriers: 76
     victoires_par_aventurier: "0,38"
+  palmares_sans_bilan:
+    participations: 90
+    renseignees: 77
   par_metier_par_ratio:
   - *id006
   - *id007
@@ -29471,6 +29491,34 @@ modeles:
   nb_tests: 44
   nb_retenus: 25
   faux_positifs_attendus: "2,2"
+  puissance:
+  - libelle: Une grandeur de saison
+    observations: 26
+    observations_texte: "26"
+    effet_texte: 0,55 écart-type
+  - libelle: Une grandeur de saison, audience comprise
+    observations: 33
+    observations_texte: "33"
+    effet_texte: 0,49 écart-type
+  - libelle: Une grandeur de participation
+    observations: 511
+    observations_texte: "511"
+    effet_texte: 0,12 écart-type
+  - libelle: Une part au niveau du bulletin
+    observations: 2619
+    observations_texte: 2 619
+    effet_texte: 2,7 points
+  - libelle: Une part sur les conseils mixtes
+    observations: 1661
+    observations_texte: 1 661
+    effet_texte: 3,4 points
+  - libelle: Une part sur le vote du jury
+    observations: 304
+    observations_texte: "304"
+    effet_texte: 8 points
+  retenus_avec_vingt_nuls: 24
+  tombes_avec_vingt_nuls_texte: seul le plus fragile, « L'ambassadeur qui négocie s'en sort-il mieux ?
+    », tomberait
 completude_saisons:
   colonnes:
   - cle: casting
@@ -33953,3 +34001,15 @@ geographie:
     annee: 2009
     localisees: 16
     effectif: 18
+rattachement:
+  colliers: 80
+  colliers_rattaches: 80
+  vainqueurs: 849
+  vainqueurs_rattaches: 839
+  vainqueurs_restants_personnes: 0
+  vainqueurs_restants_texte: Sebako, Taboga, Équipe blanche
+audience_controle:
+  saisons: 14
+  concordantes: 12
+  discordantes_texte: '*La Revanche des héros* et *L''Île des héros*'
+  recettes: 12

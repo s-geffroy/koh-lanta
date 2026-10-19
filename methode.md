@@ -86,7 +86,7 @@ pas à la population française, mais **au même vivier, redistribué**. Un éca
 qui subsiste est un écart que le hasard ne produit pas.
 
 Variante de contrôle : rebattre uniquement à l’intérieur d’une même décennie.
-Le casting a dérivé en vingt-cinq ans, et sans cette précaution on confondrait
+Le casting a dérivé en {{ site.data.stats.general.etendue_annees }} ans, et sans cette précaution on confondrait
 une règle de composition avec un simple effet d’époque.
 
 ### L’analyse des correspondances multiples
@@ -103,7 +103,9 @@ groupe ne pèse moins de 2 % du casting.
 figurait, le test du « mélange d’archétypes » sortait à 7,95 écarts-types. Les
 couleurs en jeu changeant d’une saison à l’autre, une saison ne pouvait
 mécaniquement pas contenir tous les profils — le test mesurait la grille des
-tribus, pas le casting. Sans le bandeau, il tombe à 1,06 et n’est pas retenu.
+tribus, pas le casting. Sans le bandeau, il tombe à
+{% assign tma = m.registre | where: "cle", "melange_archetypes" | first %}{{ tma.ecart_types }}
+écart-type et n’est pas retenu.
 
 ### Le modèle de Plackett-Luce
 
@@ -233,7 +235,9 @@ et on ne corrèle que les **résidus** — l’écart d’une saison à ce que s
 laissait attendre. La corrélation brute est publiée à côté, pour qu’on voie ce
 que la précaution enlève : sur
 [L’audience]({{ '/statistiques/audience/' | relative_url }}), elle fait passer un
-lien de −0,64 à −0,30, et le résultat de spectaculaire à nul.
+{% assign taf = m.registre | where: "cle", "audience_format" | first %}lien de
+{{ m.audience.format_correlation_brute }} à {{ taf.observe }}, et le résultat de
+spectaculaire à nul.
 
 ### Le rétrécissement vers la moyenne, plutôt qu’un seuil qui exclut
 
@@ -365,12 +369,9 @@ qu’un jeu de données de cette taille peut encore distinguer du hasard.
 <table>
 <thead><tr><th>Niveau d’analyse</th><th class="nombre">Observations</th><th class="nombre">Plus petit effet décelable</th></tr></thead>
 <tbody>
-<tr><td>Une grandeur de saison</td><td class="nombre">26</td><td class="nombre">0,55 écart-type</td></tr>
-<tr><td>Une grandeur de saison, audience comprise</td><td class="nombre">33</td><td class="nombre">0,49 écart-type</td></tr>
-<tr><td>Une grandeur de participation</td><td class="nombre">509</td><td class="nombre">0,12 écart-type</td></tr>
-<tr><td>Une part au niveau du bulletin</td><td class="nombre">1 840</td><td class="nombre">3,2 points</td></tr>
-<tr><td>Une part sur les conseils mixtes</td><td class="nombre">1 103</td><td class="nombre">4,2 points</td></tr>
-<tr><td>Une part sur le vote du jury</td><td class="nombre">177</td><td class="nombre">10,5 points</td></tr>
+{% for x in m.puissance %}
+<tr><td>{{ x.libelle }}</td><td class="nombre">{{ x.observations_texte }}</td><td class="nombre">{{ x.effet_texte }}</td></tr>
+{% endfor %}
 </tbody>
 </table>
 </div>
@@ -381,13 +382,14 @@ sauraient pas le voir.</p>
 
 Trois conséquences, et elles ne vont pas dans le même sens.
 
-**Le niveau de la saison est épuisé.** Vingt-six saisons classiques ne
-permettent de détecter qu’un effet d’un demi-écart-type. Tout ce qui pouvait s’y
+{% assign ps = m.puissance | first %}
+**Le niveau de la saison est épuisé.** {{ ps.observations }} saisons classiques
+ne permettent de détecter qu’un effet de {{ ps.effet_texte }}. Tout ce qui pouvait s’y
 voir — la rupture de régime, la fusion calée sur la grille, l’absence d’effet
 des mécaniques — a été cherché. Ce qui resterait serait si gros qu’il sauterait
 déjà aux yeux. C’est aussi le niveau le plus fragile : vingt-trois valeurs
-d’âge ajoutées au jeu de données ont suffi à déplacer de sept ans la date de
-rupture, sans rien changer à son existence.
+d’âge ajoutées au jeu de données ont suffi, un jour, à déplacer de sept ans la
+date de rupture, sans rien changer à son existence.
 [La grille]({{ '/statistiques/grille/' | relative_url }}) le raconte.
 
 **Le niveau du bulletin reste le bon endroit**, et c’est là que les résultats les
@@ -399,9 +401,10 @@ information que **les sources ne contiennent pas**.
 
 **Le nombre de tests, lui, n’est pas la limite.** On pourrait le croire :
 {{ site.data.stats.modeles.registre | size }} tests déclarés, cela commence à
-compter. Vérification faite, en ajoutant vingt tests sans résultat au registre,
-**aucun des {{ site.data.stats.modeles.nb_retenus }} résultats retenus ne
-tombe** — ils sont trop nets pour cela. Ce n’est donc pas une raison de
+compter. Vérification faite à chaque construction, en ajoutant vingt tests sans
+résultat au registre : **{{ m.retenus_avec_vingt_nuls }} des
+{{ site.data.stats.modeles.nb_retenus }} résultats retenus tiennent** ;
+{{ m.tombes_avec_vingt_nuls_texte }}. Les autres sont trop nets pour cela. Ce n’est donc pas une raison de
 s’arrêter, et ce serait malhonnête de le prétendre.
 
 **Le vrai risque n’est pas le nombre de tests, c’est le modèle nul.** Deux fois
@@ -463,17 +466,16 @@ révèle fausse au moins à moitié.**
 
 ## Ce que ces données ne peuvent pas établir
 
-**Vingt-six saisons, c’est peu.** Les tests portant sur des grandeurs de saison
-ont vingt-six observations. Seuls de gros effets y sont détectables ; un test non
+**{{ ps.observations }} saisons, c’est peu.** Les tests portant sur des
+grandeurs de saison ont {{ ps.observations }} observations. Seuls de gros effets y sont détectables ; un test non
 concluant est publié comme non concluant, jamais retiré.
 
 **Aucune donnée de montage.** Le temps d’antenne, la construction des
 personnages, l’ordre dans lequel les bulletins sont dépouillés : rien de tout
 cela n’existe dans ce jeu de données, et rien n’en sera dit. La nature des
 épreuves existe, mais ne se raccorde pas ; les **chiffres de diffusion**
-existent et se raccordent, mais s’arrêtent à l’audience « veille ». Les **chiffres de
-diffusion**, eux, existent — cette page a longtemps prétendu le contraire — mais
-ils s’arrêtent à l’audience « veille » et ignorent le rattrapage.
+existent — cette page a longtemps prétendu le contraire — et se raccordent,
+mais ils s’arrêtent à l’audience « veille » et ignorent le rattrapage.
 
 **Une corrélation n’est pas une intention.** C’est la limite qui traverse tout ce
 travail. Une parité tenue au candidat près peut venir d’une consigne de casting
@@ -493,7 +495,9 @@ dernière immunité collective, et le plateau d’une épreuve par les survivant
 l’épisode. Ces deux reconstructions ont un taux d’échec, il est mesuré, et les
 cas qui échouent sont écartés en le disant — jamais corrigés à la main.
 
-**Les sources restent incomplètes.** Cinq saisons n’ont aucun bilan d’épreuves,
-neuf seulement détaillent leurs colliers, et une part des conseils n’est pas
+**Les sources restent incomplètes.**
+{{ site.data.stats.epreuves.saisons_sans_donnee | size }} saisons n’ont aucun
+bilan d’épreuves, {{ site.data.stats.colliers.saisons_couvertes }} seulement
+détaillent leurs colliers, et une part des conseils n’est pas
 dépouillée intégralement. [Les sources]({{ '/sources/' | relative_url }})
 recensent ces trous champ par champ.

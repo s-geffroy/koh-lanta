@@ -902,6 +902,8 @@ AFFIRMATIONS_PAGES = {
                             "et le resume du sommaire ecrivent que la force ne "
                             "decide pas de qui part"),
     "fusion_sexe": (True, "statistiques/fusion.md titre « Le sexe, lui, bascule »"),
+    "talent_stable": (False, "sources.md ecrit que la stabilite reste trop mince "
+                             "pour etre retenue"),
     "ambassadeurs_survie": (True, "statistiques/fusion.md ecrit que l'ambassadeur "
                                   "sort plus tot"),
     "vote_meme_sexe": (True, "statistiques/qui-vise-qui.md et le resume du "
@@ -982,6 +984,24 @@ AFFIRMATIONS_VALEURS = [
      "statistiques/longevite.md ecrit que le doyen part plus souvent, en brut"),
     (("modeles", "jury_final", "coefficients"), lambda x: x[0]["haut"] < 1,
      "statistiques/jury.md ecrit qu'avoir elimine le jure divise la cote"),
+    (("epreuves", "saisons_sans_donnee"),
+     lambda x: sorted(x) == ["s03", "s09", "s12", "s14", "sp2"],
+     "sources.md et force.md nomment les cinq saisons sans bilan d'epreuves"),
+    (("modeles", "registre"),
+     lambda x: abs(next(t for t in x if t["cle"] == "menace_sommet")["ecart_types"]) < 1,
+     "sources.md ecrit qu'il ne reste rien du sommet de la menace"),
+    (("rattachement",), lambda x: x["colliers"] == x["colliers_rattaches"]
+     and x["vainqueurs_restants_personnes"] == 0,
+     "sources.md ecrit qu'il ne reste aucun nom de personne non rattache"),
+    (("jury", "decomptes_discordants"), lambda x: x == 0,
+     "sources.md ecrit que le decompte annonce et les bulletins du jury "
+     "coincident partout ou la source annonce un decompte"),
+    (("conseils", "elimines_non_rattaches"), lambda x: x == 2,
+     "sources.md attribue les conseils non rattaches aux deux Jerome de "
+     "La Revanche des 4 Terres"),
+    (("modeles",), lambda x: x["nb_retenus"] - x["retenus_avec_vingt_nuls"] <= 2,
+     "methode.md ecrit que, vingt tests nuls ajoutes, presque tous les "
+     "resultats retenus tiennent et que ce n'est pas une raison de s'arreter"),
     (("geographie", "lacunaires"), lambda x: all(v["annee"] < 2010 for v in x),
      "statistiques/geographie.md ecrit que les saisons lacunaires sont celles "
      "des premieres annees"),

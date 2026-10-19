@@ -18,7 +18,7 @@ import math
 import os
 import sys
 from collections import Counter, defaultdict
-from statistics import mean, median
+from statistics import NormalDist, mean, median
 
 import donnees
 
@@ -1540,6 +1540,47 @@ def champs_d_affichage(stats):
     so = stats["sorties"]
     so["effectif"] = sum(x["effectif"] for x in so["repartition"])
 
+    # /methode/ : le plus petit effet decelable a 80 % de puissance et au seuil
+    # de 5 %, niveau par niveau. Un ecart-type pour une grandeur, des points
+    # pour une part (au pire, une part de moitie). Le tableau etait ecrit a la
+    # main et ne suivait plus les effectifs.
+    z = NormalDist().inv_cdf(0.975) + NormalDist().inv_cdf(0.80)
+    niveaux = [
+        ("Une grandeur de saison", m["ruptures"]["saisons"], "ecart"),
+        ("Une grandeur de saison, audience comprise", m["audience"]["saisons"], "ecart"),
+        ("Une grandeur de participation", stats["sorties"]["effectif"], "ecart"),
+        ("Une part au niveau du bulletin", m["homophilie"]["bulletins"], "part"),
+        ("Une part sur les conseils mixtes", m["homophilie"]["bulletins_mixtes"], "part"),
+        ("Une part sur le vote du jury", m["jury_final"]["bulletins"], "part"),
+    ]
+    m["puissance"] = []
+    for libelle, n, nature in niveaux:
+        if nature == "ecart":
+            texte = f"{donnees.decimal_fr(round(z / math.sqrt(n), 2))} écart-type"
+        else:
+            texte = f"{donnees.decimal_fr(round(100 * 0.5 * z / math.sqrt(n), 1))} points"
+        m["puissance"].append({"libelle": libelle, "observations": n,
+                               "observations_texte": f"{n:,}".replace(",", "\u00a0"),
+                               "effet_texte": texte})
+
+    # /methode/ : les resultats retenus qui tiennent encore si l'on ajoute
+    # vingt tests sans resultat (p = 1) au registre. La page l'affirmait
+    # d'apres une verification faite une fois ; elle est refaite ici.
+    ps = [t["p"] for t in m["registre"]]
+    ajustees = modeles.benjamini_hochberg(ps + [1.0] * 20)
+    m["retenus_avec_vingt_nuls"] = sum(
+        1 for t, pa in zip(m["registre"], ajustees) if t["retenu"] and pa < 0.05)
+    tombes = [f"« {t['libelle']} »" for t, pa in zip(m["registre"], ajustees)
+              if t["retenu"] and pa >= 0.05]
+    if not tombes:
+        m["tombes_avec_vingt_nuls_texte"] = "aucun ne tombe"
+    elif len(tombes) == 1:
+        m["tombes_avec_vingt_nuls_texte"] = f"seul le plus fragile, {tombes[0]}, tomberait"
+    else:
+        m["tombes_avec_vingt_nuls_texte"] = (
+            f"les {len(tombes)} plus fragiles tomberaient — "
+            + ", ".join(tombes[:-1]) + " et " + tombes[-1])
+
     # /statistiques/alliances/ et /jeu-social/ : combien de fois etre du bon
     # cote pese plus qu'une voix recue de plus par conseil.
     maj = m["alliances"]["majorite"]
@@ -1780,6 +1821,110 @@ def main():
             lacunaires.append({"titre": s.get("titre"), "annee": s.get("annee"),
                                "localisees": localisees, "effectif": len(gens)})
     stats["geographie"] = {"lacunaires": lacunaires}
+
+    # /sources/ : ce que les recits de reparation citent au present. Chaque
+    # compte y etait ecrit a la main, au jour de la reparation, et ne suivait
+    # plus les donnees.
+    hors_jury = [c for c in conseils if c.get("type") != "jury"]
+    avec_elimine = [c for c in hors_jury if c.get("elimine")]
+    cs = stats["conseils"]
+    cs["conseils_hors_jury"] = len(hors_jury)
+    cs["elimines_rattaches"] = sum(1 for c in avec_elimine if c.get("elimine_rattache"))
+    cs["elimines_non_rattaches"] = len(avec_elimine) - cs["elimines_rattaches"]
+    # Les bulletins lus, rapportes aux voix que les matrices annoncent.
+    annonces = [c for c in hors_jury if c.get("votes_exprimes")]
+    cs["part_bulletins_lus"] = part(sum(len(c.get("votes") or []) for c in annonces),
+                                    sum(c["votes_exprimes"] for c in annonces))
+    # Les voix que personne n'ecrit : vote noir, penalite, malediction.
+    annee = {s["id"]: s.get("annee") for s in saisons}
+    sans = [(c["saison"], v["mecanique"]) for c in conseils
+            for v in c.get("votes") or [] if v.get("mecanique")]
+    if sans:
+        par_motif = Counter(m_ for _, m_ in sans).most_common()
+        cs["sans_votant"] = {
+            "bulletins": len(sans),
+            "saisons": len({s for s, _ in sans}),
+            "annee_min": min(annee[s] for s, _ in sans),
+            "annee_max": max(annee[s] for s, _ in sans),
+            "detail_texte": ", ".join(f"{n} « {m_} »" for m_, n in par_motif),
+        }
+    # Le vote du jury : une colonne par finaliste, et le controle « le
+    # decompte annonce egale les bulletins lus » scrutin par scrutin.
+    jury = [c for c in conseils if c.get("type") == "jury"]
+    par_scrutin = defaultdict(list)
+    for c in jury:
+        par_scrutin[c["saison"]].append(c)
+    stats["jury"]["lignes"] = len(jury)
+    stats["jury"]["bulletins_lus"] = sum(len(c.get("votes") or []) for c in jury)
+    stats["jury"]["decomptes_discordants"] = sum(
+        1 for lot in par_scrutin.values()
+        if max(c.get("votes_exprimes") or 0 for c in lot)
+        and max(c.get("votes_exprimes") or 0 for c in lot)
+        != sum(len(c.get("votes") or []) for c in lot))
+    # /sources/ : le rattachement des noms -- colliers et vainqueurs d'epreuve.
+    cites = [d for c in colliers for cle in ("detenteurs", "detenteurs_suivants", "proteges")
+             for d in c.get(cle) or [] if isinstance(d, dict)]
+    gagnants = [x for e in epreuves for x in e.get("vainqueurs") or []]
+    restants = [x for x in gagnants if not x.get("resolu")]
+    stats["rattachement"] = {
+        "colliers": len(cites),
+        "colliers_rattaches": sum(1 for d in cites if d.get("resolu")),
+        "vainqueurs": len(gagnants),
+        "vainqueurs_rattaches": len(gagnants) - len(restants),
+        "vainqueurs_restants_personnes": sum(1 for x in restants if x.get("type") == "personne"),
+        "vainqueurs_restants_texte": ", ".join(sorted({x.get("libelle") or "?" for x in restants})),
+    }
+    # /sources/ : le palmares des saisons sans bilan d'epreuves, que seules
+    # les fiches individuelles donnent.
+    sans_bilan = set(stats["epreuves"].get("saisons_sans_donnee") or [])
+    gens = [p for p in parts if p["saison"] in sans_bilan]
+    stats["epreuves"]["palmares_sans_bilan"] = {
+        "participations": len(gens),
+        "renseignees": sum(1 for p in gens if p.get("victoires_individuelles") is not None),
+    }
+    # /sources/ : les saisons ou le rang final et le jour de sortie rangent
+    # les aventuriers dans le meme ordre.
+    concordantes = comparees = 0
+    for s in saisons:
+        if s.get("annulee") or s.get("en_cours"):
+            continue
+        g = [p for p in parts if p["saison"] == s["id"]
+             and p.get("classement") and p.get("jour_sortie")]
+        if len(g) < 2:
+            continue
+        comparees += 1
+        concordantes += not any(a["classement"] < b["classement"]
+                                and a["jour_sortie"] < b["jour_sortie"]
+                                for a in g for b in g)
+    stats["general"]["rang_concordant"] = concordantes
+    stats["general"]["rang_compare"] = comparees
+    stats["general"]["etendue_annees"] = (stats["general"]["derniere_annee"]
+                                          - stats["general"]["premiere_annee"])
+
+    # /sources/ : le controle des audiences -- la moyenne des mesures par
+    # episode confrontee a la moyenne annoncee pour la saison.
+    chemin_aud = os.path.join(RACINE, "_data", "audiences.yml")
+    if os.path.exists(chemin_aud):
+        aud = donnees.charger(open(chemin_aud, encoding="utf-8"))
+        mesures = defaultdict(list)
+        for e in aud.get("episodes") or []:
+            if e.get("telespectateurs"):
+                mesures[e["saison"]].append(e["telespectateurs"])
+        controle, ecarts = 0, []
+        for s in aud.get("saisons") or []:
+            if s.get("moyenne") and mesures.get(s["saison"]):
+                controle += 1
+                ecart = mean(mesures[s["saison"]]) / s["moyenne"] - 1
+                if abs(ecart) > 0.005:
+                    ecarts.append(f"*{s['titre']}*")
+        stats["audience_controle"] = {
+            "saisons": controle,
+            "concordantes": controle - len(ecarts),
+            "discordantes_texte": (", ".join(ecarts[:-1]) + " et " + ecarts[-1]
+                                   if len(ecarts) > 1 else "".join(ecarts)),
+            "recettes": sum(1 for s in aud.get("saisons") or []
+                            if s.get("recettes_publicitaires")),
+        }
 
     champs_d_affichage(stats)
     poser_les_identifiants(stats, index_des_noms(personnes))
