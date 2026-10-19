@@ -233,6 +233,7 @@ def construire(saisons, parts, rapport, dernier_conseil=None, elimines_du_soir=N
                 "vainqueurs": vainqueurs,
                 "source": e["source"],
             })
+    epreuves = _oter_les_trios_de_finale(epreuves, rapport)
     return _oter_les_immunites_dementies(epreuves, elimines_du_soir, rapport)
 
 
@@ -251,6 +252,41 @@ def elimines_par_episode(conseils):
         except (TypeError, ValueError, KeyError):
             continue
     return {k: v[0] for k, v in par_soir.items() if len(v) == 1}
+
+
+def _oter_les_trios_de_finale(epreuves, rapport):
+    """Une « immunite » individuelle a trois noms, au dernier episode, n'en est pas une.
+
+    Les resumes de saison (Nicoya, Vanuatu, Palawan, Caramoan) et le tableau
+    « Challenges » de Raja Ampat ecrivent, dans la colonne de l'immunite du
+    dernier episode, les TROIS qualifies pour les poteaux : ce sont les
+    rescapes d'une epreuve eliminatoire, pas les vainqueurs d'une immunite.
+    Les lire comme tels donnait trois victoires de plus par saison, et trois
+    « immunises » dont l'un partait le soir meme -- la probabilite de partir
+    sous immunite, qui doit valoir zero, valait 3 sur 130.
+
+    La regle est etroite a dessein : trois noms ou plus, immunite
+    individuelle, dernier episode de la saison. Une immunite a deux noms (un
+    homme et une femme, un duo) reste une immunite. Les epreuves de finale
+    sont deja exclues ailleurs ; celle-ci passait parce que la source la
+    range sous « Immunite ».
+    """
+    dernier = defaultdict(int)
+    for e in epreuves:
+        if isinstance(e.get("episode"), int):
+            dernier[e["saison"]] = max(dernier[e["saison"]], e["episode"])
+    gardees = []
+    for e in epreuves:
+        if (e.get("type") == "immunite" and e.get("forme") == "individuelle"
+                and len(e.get("vainqueurs") or []) >= 3
+                and e.get("episode") == dernier.get(e["saison"])):
+            noms = ", ".join(v.get("libelle") or "?" for v in e["vainqueurs"])
+            rapport.append(f"{e['saison']} ep.{e['episode']} : « immunite » a "
+                           f"{len(e['vainqueurs'])} noms au dernier episode ({noms}) "
+                           f"— trio des poteaux, pas une immunite : ecartee")
+            continue
+        gardees.append(e)
+    return gardees
 
 
 def _oter_les_immunites_dementies(epreuves, elimines, rapport):
@@ -316,6 +352,12 @@ def main():
     if dementies:
         print(f"\nimmunites dementies par le conseil ({len(dementies)}) :")
         for r in dementies:
+            print("  " + r)
+
+    trios = [r for r in rapport if "trio des poteaux" in r]
+    if trios:
+        print(f"\n« immunites » de finale ecartees ({len(trios)}) :")
+        for r in trios:
             print("  " + r)
 
     ecartes = [r for r in rapport if "ecarte —" in r]

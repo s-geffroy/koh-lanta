@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Myriam Desvergne — Palau (2009)"
-description: "Myriam Desvergne, Koh-Lanta Palau (2009) : abandonne sur blessure le 2e jour, 17e sur 18. 364e sur 531 au classement des aventuriers."
+description: "Myriam Desvergne, Koh-Lanta Palau (2009) : abandonne sur blessure le 2e jour, 17e sur 18. 365e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/myriam-desvergne.png
 permalink: /aventuriers/myriam-desvergne/
 aventurier: myriam-desvergne

@@ -38,7 +38,7 @@ camp des encore-en-jeu : c’est exact aussi, puisqu’après la fusion tout le 
 vote au même feu. Avant la fusion, une reconstruction mélangerait les deux
 tribus ; elle n’est donc jamais faite.</p>
 
-## La probabilité qui devrait valoir zéro
+## La probabilité qui vaut zéro
 
 {% assign imm = f.immunite | first %}
 <div class="constat">
@@ -47,13 +47,7 @@ tribus ; elle n’est donc jamais faite.</p>
   {{ imm.effectif }}</b>. Le hasard en donnerait {{ imm.hasard }} %.</p>
   <p>C’est une règle du jeu : l’immunisé ne peut pas partir au vote. La
   retrouver dans {{ imm.effectif }} présences reconstituées est donc le meilleur
-  contrôle qu’on puisse faire sur ces données — et le contrôle n’est pas
-  parfait.</p>
-  <p>Les trois cas qui restent sont trois finales, celles de <i>Vanuatu</i>,
-  <i>Palawan</i> et <i>Caramoan</i>. La source y donne trois noms à une
-  « immunité » qui était une épreuve éliminatoire : ce sont les rescapés, pas
-  des immunisés. C’est un défaut de lecture, repéré par ce contrôle même, pas
-  une exception à la règle.</p>
+  contrôle qu’on puisse faire sur ces données — et il est tenu.</p>
 </div>
 
 <p class="note"><strong>Il a fallu s’y reprendre à deux fois, et le détour est
@@ -64,6 +58,15 @@ immunisés apparemment éliminés. Toutes les dix-neuf tombaient sur un soir à
 gagnée avant le premier ne protège évidemment pas au troisième. Le rapprochement
 était faux, pas la donnée. Les épreuves du soir ne sont donc lues que sur les
 soirs à conseil unique.</p>
+
+<p class="note"><strong>Puis il en est resté trois, et cette fois la donnée
+était fausse.</strong> Trois immunisés partaient encore, dans les finales de
+<i>Vanuatu</i>, <i>Palawan</i> et <i>Caramoan</i>. La source y range sous
+« Immunité » les trois qualifiés pour les poteaux : ce sont les rescapés d’une
+épreuve éliminatoire, pas les vainqueurs d’une immunité. Cinq saisons portaient
+ce trio de finale — <i>Nicoya</i> et <i>Raja Ampat</i> aussi, sans que le
+contrôle le voie. L’extraction les écarte désormais, et le contrôle tombe à
+zéro : c’est lui qui a trouvé le défaut.</p>
 
 ## Sachant la place qu’on occupe
 

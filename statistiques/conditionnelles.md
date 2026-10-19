@@ -429,8 +429,8 @@ La question inverse — non plus « sachant mon passé », mais **« sachant qui
 assis autour du feu ce soir »** — est traitée sur
 [Sachant qui est autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }}) :
 le bandeau minoritaire, le sexe minoritaire, le doyen, le gagnant du confort, et
-la probabilité qui devrait valoir zéro : partir le soir où l’on a gagné
-l’immunité.
+la probabilité qui vaut zéro, comme le veut la règle : partir le soir où l’on a
+gagné l’immunité.
 
 La liste complète des tests de ce site, leur correction pour tests multiples et
 ce que chaque modèle ne peut pas établir sont sur

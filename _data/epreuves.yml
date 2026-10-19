@@ -454,24 +454,6 @@
     type: personne
     id: amel-fatnassi
     resolu: true
-  - libelle: Nicolas
-    type: personne
-    id: nicolas-roy
-    resolu: true
-  - libelle: Bernard
-    type: personne
-    id: bernard-lenoir
-    resolu: true
-  source: season summary
-- saison: s02
-  episode: 13
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Amel
-    type: personne
-    id: amel-fatnassi
-    resolu: true
   source: season summary
 - saison: s04
   episode: 1
@@ -1234,24 +1216,6 @@
     type: personne
     id: emilie-frahi
     resolu: true
-  - libelle: François-David
-    type: personne
-    id: francois-david-cardonnel
-    resolu: true
-  - libelle: Sébastien
-    type: personne
-    id: sebastien-roulle
-    resolu: true
-  source: season summary
-- saison: s06
-  episode: 13
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Émilie
-    type: personne
-    id: emilie-frahi
-    resolu: true
   source: season summary
 - saison: s07
   episode: 1
@@ -1519,24 +1483,6 @@
   - libelle: Simon
     type: personne
     id: simon-quintilla
-    resolu: true
-  source: season summary
-- saison: s07
-  episode: 13
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Jade
-    type: personne
-    id: jade-handi
-    resolu: true
-  - libelle: Kevin
-    type: personne
-    id: kevin-cuoco
-    resolu: true
-  - libelle: Maryline
-    type: personne
-    id: maryline-hemelsdael
     resolu: true
   source: season summary
 - saison: s07
@@ -1821,24 +1767,6 @@
   - libelle: Frédéric
     type: personne
     id: frederic-favier
-    resolu: true
-  source: season summary
-- saison: s08
-  episode: 13
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Christelle
-    type: personne
-    id: christelle-gauzet
-    resolu: true
-  - libelle: Frédéric
-    type: personne
-    id: frederic-favier
-    resolu: true
-  - libelle: Bertrand
-    type: personne
-    id: bertrand-bolle
     resolu: true
   source: season summary
 - saison: s08
@@ -2394,24 +2322,6 @@
 - saison: s11
   episode: 15
   type: confort
-  forme: individuelle
-  vainqueurs:
-  - libelle: Teheiura
-    type: personne
-    id: teheiura-teahui
-    resolu: true
-  - libelle: Gérard
-    type: personne
-    id: gerard-urdampilleta
-    resolu: true
-  - libelle: Laurent
-    type: personne
-    id: laurent-maistret
-    resolu: true
-  source: challenges
-- saison: s11
-  episode: 15
-  type: immunite
   forme: individuelle
   vainqueurs:
   - libelle: Teheiura

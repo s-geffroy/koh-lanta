@@ -893,11 +893,13 @@ d’épisode y devient faux.
   épisode qui en compte trois, l’immunité gagnée avant le premier ne protège
   pas au troisième.</p>
   <p>Rapproché correctement — soirs à conseil unique, camp lu dans les
-  bulletins — il en sort <b>{{ imm.cas }} sur {{ imm.effectif }}
-  présences</b>. Le rattachement était juste ; c’est la question qui était mal
-  posée. Les {{ imm.cas }} qui restent sont un autre défaut, de lecture cette
-  fois : les finales de <i>Vanuatu</i>, <i>Palawan</i> et <i>Caramoan</i>, où
-  l’épreuve éliminatoire est lue comme une immunité.</p>
+  bulletins — il en sortait encore trois. Le rattachement était juste ; c’est la
+  question qui était mal posée. Les trois qui restaient étaient un autre défaut,
+  de lecture cette fois : les finales de <i>Vanuatu</i>, <i>Palawan</i> et
+  <i>Caramoan</i>, où l’épreuve éliminatoire était lue comme une immunité.
+  L’extraction écarte désormais ces trios de finale — cinq saisons en
+  portaient un — et il en sort <b>{{ imm.cas }} sur {{ imm.effectif }}
+  présences</b>.</p>
 </div>
 
 Conséquence pour tout ce site : une épreuve du soir n’est jamais rattachée à un

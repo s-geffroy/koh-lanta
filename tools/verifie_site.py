@@ -951,9 +951,9 @@ AFFIRMATIONS_VALEURS = [
      lambda x: x["bas"] <= 0 <= x["haut"],
      "statistiques/force.md ecrit que la force ne mene pas plus loin"),
     (("modeles", "autour_du_feu", "immunite"),
-     lambda x: x[0]["cas"] == 3,
-     "statistiques/autour-du-feu.md nomme les trois finales ou l'immunise "
-     "parait sortir"),
+     lambda x: x[0]["cas"] == 0,
+     "statistiques/autour-du-feu.md, conditionnelles.md et sources.md ecrivent "
+     "que la probabilite de partir sous immunite vaut zero"),
     (("modeles", "conditionnelles", "par_voix"),
      lambda x: max(x, key=lambda v: v["probabilite"])["modalite"] == "2 voix"
      and all(v["probabilite"] > v["hasard"] for v in x[1:]),

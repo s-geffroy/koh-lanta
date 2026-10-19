@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Clarisse Cresseveur (2026)"
-description: "Clarisse Cresseveur, Koh-Lanta Les Reliques du destin (2026) : va en finale le 39e jour, 2e sur 20. 80e sur 531 au classement des aventuriers."
+description: "Clarisse Cresseveur, Koh-Lanta Les Reliques du destin (2026) : va en finale le 39e jour, 2e sur 20. 74e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/clarisse-cresseveur.png
 permalink: /aventuriers/clarisse-cresseveur/
 aventurier: clarisse-cresseveur
