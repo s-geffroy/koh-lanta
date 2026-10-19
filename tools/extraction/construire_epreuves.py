@@ -18,7 +18,9 @@ import re
 import sys
 from collections import Counter, defaultdict
 
-import yaml
+# Le module qui ecrit et relit _data/ (virgule decimale), dans tools/.
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import donnees  # noqa: E402
 
 ICI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, ICI)
@@ -286,10 +288,10 @@ def _oter_les_immunites_dementies(epreuves, elimines, rapport):
 
 
 def main():
-    saisons = yaml.safe_load(open(os.path.join(RACINE, "_data", "saisons.yml")))
-    parts = yaml.safe_load(open(os.path.join(RACINE, "_data", "participations.yml")))
+    saisons = donnees.charger(open(os.path.join(RACINE, "_data", "saisons.yml")))
+    parts = donnees.charger(open(os.path.join(RACINE, "_data", "participations.yml")))
     chemin_conseils = os.path.join(RACINE, "_data", "conseils.yml")
-    conseils = (yaml.safe_load(open(chemin_conseils))
+    conseils = (donnees.charger(open(chemin_conseils))
                 if os.path.exists(chemin_conseils) else [])
     rapport = []
     epreuves = construire(saisons, parts, rapport,
@@ -339,7 +341,7 @@ def main():
         chemin = os.path.join(RACINE, "_data", "epreuves.yml")
         with open(chemin, "w", encoding="utf-8") as f:
             f.write(ENTETE)
-            yaml.safe_dump(epreuves, f, allow_unicode=True, sort_keys=False, width=100)
+            donnees.ecrire(epreuves, f, allow_unicode=True, sort_keys=False, width=100)
         print(f"\necrit : {chemin}")
     return 0
 

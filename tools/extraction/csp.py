@@ -2,9 +2,12 @@
 """Classe une profession dans un poste de la taxonomie de tools/csp.yml."""
 import os
 import re
+import sys
 import unicodedata
 
-import yaml
+# Le module qui ecrit et relit _data/ (virgule decimale), dans tools/.
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import donnees  # noqa: E402
 
 RACINE = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 _TAXO = None
@@ -22,7 +25,7 @@ def taxonomie():
     global _TAXO
     if _TAXO is None:
         with open(os.path.join(RACINE, "tools", "csp.yml"), encoding="utf-8") as f:
-            _TAXO = yaml.safe_load(f)["postes"]
+            _TAXO = donnees.charger(f)["postes"]
     return _TAXO
 
 
@@ -44,7 +47,7 @@ def libelles():
 
 if __name__ == "__main__":
     import collections, sys
-    parts = yaml.safe_load(open(os.path.join(RACINE, "_data", "participations.yml")))
+    parts = donnees.charger(open(os.path.join(RACINE, "_data", "participations.yml")))
     compte = collections.Counter(classer(p["profession"]) for p in parts if p["profession"])
     lib = libelles()
     total = sum(compte.values())

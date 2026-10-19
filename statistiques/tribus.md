@@ -46,7 +46,7 @@ qu’on se retrouve du mauvais côté du compte.
   <b>{{ af.bandeau[0].probabilite }} %</b> des cas
   ({{ af.bandeau[0].cas }} sur {{ af.bandeau[0].effectif }}) ; quand il est le
   plus représenté, dans <b>{{ af.bandeau[1].probabilite }} %</b>.</p>
-  <p>{{ tba.observe | round: 1 }} points d’écart, {{ tba.ecart_types }}
+  <p>{{ tba.observe_arrondi }} points d’écart, {{ tba.ecart_types }}
   écarts-types au-dessus d’un tirage au sort parmi les présents de chaque
   conseil, p ajustée {{ tba.p_ajustee }}.</p>
 </div>

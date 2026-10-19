@@ -64,7 +64,7 @@ imaginer un tri involontaire, il n’y en a pas de marqué.
   <th class="nombre">Attendu</th><th class="nombre">Indice</th>
 </tr></thead>
 <tbody>
-{% for x in p.prenoms %}{% unless x.absent_du_fichier %}{% if x.attendu >= 1 %}
+{% for x in p.prenoms %}{% unless x.absent_du_fichier %}{% if x.au_tableau %}
 <tr>
   <td>{{ x.prenom }}</td>
   <td class="nombre">{{ x.observe }}</td>

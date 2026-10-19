@@ -14,12 +14,13 @@ Deux perimetres coexistent partout :
 
     tools/atelier python3 tools/build_stats.py
 """
+import math
 import os
 import sys
 from collections import Counter, defaultdict
 from statistics import mean, median
 
-import yaml
+import donnees
 
 RACINE = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 sys.path.insert(0, os.path.join(RACINE, "tools", "extraction"))
@@ -81,7 +82,7 @@ def tranche(age):
 def charger():
     def lire(nom):
         chemin = os.path.join(RACINE, "_data", nom)
-        return yaml.safe_load(open(chemin, encoding="utf-8")) if os.path.exists(chemin) else []
+        return donnees.charger(open(chemin, encoding="utf-8")) if os.path.exists(chemin) else []
 
     saisons = lire("saisons.yml")
     parts = lire("participations.yml")
@@ -1297,7 +1298,7 @@ def _fichier_data(nom):
     if not os.path.exists(chemin):
         return {}
     with open(chemin, encoding="utf-8") as f:
-        return yaml.safe_load(f) or {}
+        return donnees.charger(f) or {}
 
 
 def bloc_completude(parts, personnes):
@@ -1413,6 +1414,94 @@ def bloc_palmares(parts, epreuves, par_saison):
         "saisons_ajoutees": ajoutees,
         "classement": classement[:15],
     }
+
+
+def _arrondi_entier(x):
+    """L'arrondi de Liquid (celui de Ruby) : la demie s'eloigne de zero.
+    `round()` de Python arrondit au pair, et 92.5 y donne 92."""
+    return int(math.floor(abs(x) + 0.5)) * (1 if x >= 0 else -1)
+
+
+def _niveau(part):
+    """Les cinq niveaux de la grille de completude, pour une part en %."""
+    if part >= 99.9:
+        return "complet"
+    if part >= 80:
+        return "eleve"
+    if part >= 50:
+        return "partiel"
+    return "mince"
+
+
+def champs_d_affichage(stats):
+    """Ce que les pages calculaient en Liquid, calcule ici.
+
+    Depuis que `_data/` s'ecrit a la francaise (tools/donnees.py), un decimal y
+    est une CHAINE pour Liquid -- « 54,2 » -- et `round`, `divided_by`, `times`
+    ou `>=` ne s'y appliquent plus : un `>=` entre une chaine et un nombre fait
+    meme echouer la construction. C'etait de toute facon la regle du depot,
+    aucun calcul dans un gabarit. Chaque champ ci-dessous remplace un filtre ou
+    une comparaison qu'une page appliquait ; la page est citee.
+    """
+    m, c = stats["modeles"], stats["classement"]
+
+    # `t.observe | round: 1` et `t.attendu | round: 1` : une dizaine de pages
+    # de resultats citent l'ecart d'un test arrondi au dixieme.
+    for t in m["registre"]:
+        for cle in ("observe", "attendu"):
+            if isinstance(t.get(cle), (int, float)):
+                t[f"{cle}_arrondi"] = round(t[cle], 1)
+
+    # /statistiques/jeu-social/ : l'ecart, en points, entre fantomes et
+    # endurants.
+    for x in stats["indicateurs"]["fantomes_issue"]:
+        x["ecart"] = round(x["part_fantomes"] - x["part_endurants"], 1)
+
+    # /statistiques/top/ : combien de fois l'ecart reel vaut celui du hasard,
+    # et l'AUC du palmares en pourcentage.
+    h, pl = c["hasard"], c["palmares"]
+    h["rapport"] = round(h["reel_ecart"] / h["ecart"], 1) if h.get("ecart") else None
+    pl["auc_pourcent"] = round(pl["auc"] * 100, 1) if pl.get("auc") is not None else None
+
+    # /completude/ : la part la plus basse de conseils depouilles, par epoque.
+    dep = c["biais_epoque"]["depouillement"]
+    c["biais_epoque"]["depouillement_plus_bas"] = min(x["part"] for x in dep) if dep else None
+
+    # /statistiques/revenants/ : « divisent la cote par N », l'inverse du
+    # rapport de cotes.
+    for x in m["rappel"]["coefficients"]:
+        x["inverse"] = round(1.0 / x["rapport"], 2) if x.get("rapport") else None
+
+    # /statistiques/audience/ : les audiences en millions. La page divisait
+    # en ENTIERS (`divided_by: 100000`) : elle tronquait au lieu d'arrondir.
+    a = m["audience"]
+    for bloc in [a["sommet"], a["derniere"]] + list(a["jours"]):
+        bloc["moyenne_millions"] = round(bloc["moyenne"] / 1e6, 1)
+    for cle in ("moyenne_avant", "moyenne_apres"):
+        a[f"{cle}_millions"] = round(a[cle] / 1e6, 1)
+
+    # /statistiques/grille/ : ce que la croissance du casting represente en
+    # episodes, puis en joueurs restants, d'apres les deux pentes.
+    f = m["fusion"]
+    croissance = f["croissance"] = f["casting_max"] - f["casting_min"]
+    f["croissance_episode"] = round(croissance * f["pente_episode"]["pente"], 1)
+    f["croissance_restants"] = round(croissance * f["pente_restants"]["pente"], 1)
+
+    # /completude/ : chaque case affiche sa part arrondie a l'unite, et la
+    # derniere colonne prend le niveau du score de la ligne.
+    for ligne in stats["completude_saisons"]["lignes"]:
+        for x in ligne["cellules"]:
+            x["valeur_arrondie"] = _arrondi_entier(x["valeur"] or 0)
+        ligne["niveau"] = _niveau(ligne["score"] or 0)
+
+    # Les barres dans les cellules (/saisons/, /statistiques/revenants/) : leur
+    # largeur est du CSS, ou « 61,5% » n'est pas une longueur. Un entier suffit
+    # a une barre de lecture.
+    for x in stats["indicateurs"]["saisons"]:
+        if isinstance(x.get("survie_moyenne"), (int, float)):
+            x["barre"] = _arrondi_entier(x["survie_moyenne"])
+    for x in stats["revenants"]["carrieres"]:
+        x["barre"] = _arrondi_entier(x["part_du_temps"])
 
 
 def poser_les_identifiants(noeud, index):
@@ -1550,12 +1639,13 @@ def main():
                 "titre": p["_saison"].get("titre"),
             }
 
+    champs_d_affichage(stats)
     poser_les_identifiants(stats, index_des_noms(personnes))
 
     chemin = os.path.join(RACINE, "_data", "stats.yml")
     with open(chemin, "w", encoding="utf-8") as f:
         f.write(ENTETE)
-        yaml.safe_dump(stats, f, allow_unicode=True, sort_keys=False, width=100)
+        donnees.ecrire(stats, f, allow_unicode=True, sort_keys=False, width=100)
 
     g = stats["general"]
     print(f"ecrit : {chemin}")

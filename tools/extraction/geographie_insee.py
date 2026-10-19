@@ -22,7 +22,10 @@ import urllib.request
 
 import numpy as np
 import openpyxl
-import yaml
+
+# Le module qui ecrit et relit _data/ (virgule decimale), dans tools/.
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import donnees  # noqa: E402
 
 import modeles   # pour fabriquer les tests dans la forme du registre commun
 
@@ -118,7 +121,7 @@ def main():
     args.add_argument("--ecrire", action="store_true")
     args = args.parse_args()
 
-    lire = lambda n: yaml.safe_load(open(os.path.join(RACINE, "_data", n), encoding="utf-8"))
+    lire = lambda n: donnees.charger(open(os.path.join(RACINE, "_data", n), encoding="utf-8"))
     saisons = {s["id"]: s for s in lire("saisons.yml")}
     parts = lire("participations.yml")
 
@@ -135,9 +138,9 @@ def main():
     print(f"participations localisees (saisons classiques) : {len(retenues)}")
     print(f"annees concernees : {min(annees)}-{max(annees)}")
 
-    donnees = telecharger()
-    print(f"telecharge : {len(donnees)} octets depuis l'INSEE")
-    populations, totaux, regions, appartenance = lire_populations(donnees, annees)
+    classeur = telecharger()
+    print(f"telecharge : {len(classeur)} octets depuis l'INSEE")
+    populations, totaux, regions, appartenance = lire_populations(classeur, annees)
     print(f"annees lues dans le tableau INSEE : {len(populations)}")
 
     connus = set()
@@ -372,7 +375,7 @@ def main():
         with open(SORTIE, "w", encoding="utf-8") as f:
             f.write("# Fichier genere par tools/extraction/geographie_insee.py.\n"
                     "# Ne pas editer a la main : toute modification sera ecrasee.\n")
-            yaml.safe_dump(sortie, f, allow_unicode=True, sort_keys=False, width=100)
+            donnees.ecrire(sortie, f, allow_unicode=True, sort_keys=False, width=100)
         print(f"ecrit : {SORTIE}")
     return 0
 

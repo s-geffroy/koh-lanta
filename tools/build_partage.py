@@ -38,7 +38,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt                              # noqa: E402
 from matplotlib.patches import Polygon, Rectangle            # noqa: E402
 from PIL import Image                                        # noqa: E402
-import yaml                                                  # noqa: E402
+import donnees                                               # noqa: E402
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build_fiches import ordinal                             # noqa: E402
@@ -194,7 +194,7 @@ def lire(nom):
     if not os.path.exists(chemin):
         return {}
     with open(chemin, encoding="utf-8") as f:
-        return yaml.safe_load(f) or {}
+        return donnees.charger(f) or {}
 
 
 def main():

@@ -26,7 +26,7 @@ import collections
 import os
 import sys
 
-import yaml
+import donnees
 
 ICI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, ICI)
@@ -176,7 +176,7 @@ def main():
 
     with open(SORTIE_DATA, "w", encoding="utf-8") as f:
         f.write(ENTETE)
-        yaml.safe_dump({"epreuves": ep}, f, allow_unicode=True, sort_keys=True,
+        donnees.ecrire({"epreuves": ep}, f, allow_unicode=True, sort_keys=True,
                        default_flow_style=False)
     print(f"ecrit : {SORTIE_DATA}")
 

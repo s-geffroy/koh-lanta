@@ -190,7 +190,7 @@ Sans JavaScript, il reste entièrement lisible, dans l’ordre chronologique.</p
   <td class="nombre">{{ meta.age_moyen }}</td>
   <td class="nombre">{{ meta.part_femmes }} %</td>
   <td class="nombre" data-val="{{ x.survie_moyenne }}">{{ x.survie_moyenne }} %
-    <span class="cellule-barre" style="width: {{ x.survie_moyenne }}%"></span></td>
+    <span class="cellule-barre" style="width: {{ x.barre }}%"></span></td>
   <td class="nombre">{{ x.taux_abandon }} %</td>
   <td class="nombre">{{ x.conseils }}</td>
   <td class="nombre">{% if x.tension_conseils %}{{ x.tension_conseils }} %{% else %}—{% endif %}</td>

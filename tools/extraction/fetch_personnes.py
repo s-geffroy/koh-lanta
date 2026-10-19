@@ -12,7 +12,10 @@ Les fichiers deja presents ne sont pas redemandes. Le wikitexte brut est
 versionne dans specs/sources/personnes/ : c'est la preuve de provenance.
 """
 import json, os, re, sys, time, urllib.parse, urllib.request, urllib.error
-import yaml
+
+# Le module qui ecrit et relit _data/ (virgule decimale), dans tools/.
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import donnees  # noqa: E402
 
 RACINE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SORTIE = os.path.join(RACINE, "specs", "sources", "personnes")
@@ -128,7 +131,7 @@ def recuperer_categories(_=None):
 
 def main():
     os.makedirs(SORTIE, exist_ok=True)
-    personnes = yaml.safe_load(open(os.path.join(RACINE, "_data", "personnes.yml"), encoding="utf-8"))
+    personnes = donnees.charger(open(os.path.join(RACINE, "_data", "personnes.yml"), encoding="utf-8"))
     attente = []
     for p in personnes:
         chemin = os.path.join(SORTIE, p["id"] + ".fandom.wiki")

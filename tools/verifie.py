@@ -19,7 +19,7 @@ import re
 import sys
 from collections import Counter, defaultdict
 
-import yaml
+import donnees
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "extraction"))
 import lieux  # noqa: E402
@@ -81,7 +81,7 @@ def charger(nom):
     if not os.path.exists(chemin):
         return None
     with open(chemin, encoding="utf-8") as f:
-        return yaml.safe_load(f)
+        return donnees.charger(f)
 
 
 # Ce qu'une page de Wikipedia en FRANCAIS porte et qu'une anglaise n'a jamais.

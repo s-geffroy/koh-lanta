@@ -20,7 +20,9 @@ import os
 import re
 import sys
 
-import yaml
+# Le module qui ecrit et relit _data/ (virgule decimale), dans tools/.
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import donnees  # noqa: E402
 
 ICI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, ICI)
@@ -118,7 +120,7 @@ def main():
     a.add_argument("--ecrire", action="store_true")
     a = a.parse_args()
 
-    lire = lambda n: yaml.safe_load(open(os.path.join(RACINE, "_data", n), encoding="utf-8"))
+    lire = lambda n: donnees.charger(open(os.path.join(RACINE, "_data", n), encoding="utf-8"))
     parts = lire("participations.yml")
     conseils = lire("conseils.yml")
     epreuves = lire("epreuves.yml")
@@ -225,7 +227,7 @@ def main():
         with open(SORTIE, "w", encoding="utf-8") as f:
             f.write("# Fichier genere par tools/extraction/ambassadeurs.py.\n"
                     "# Ne pas editer a la main : toute modification sera ecrasee.\n")
-            yaml.safe_dump(resultat, f, allow_unicode=True, sort_keys=False, width=100)
+            donnees.ecrire(resultat, f, allow_unicode=True, sort_keys=False, width=100)
         print(f"\necrit : {SORTIE}")
     return 0
 

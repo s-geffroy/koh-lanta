@@ -162,7 +162,7 @@ l’éliminé de chaque conseil est pris au hasard parmi les présents.</p>
   <p>Avant la fusion, celui qui part a en moyenne <b>{{ ag.ecart_avant }} an de
   plus</b> que son camp. Après, <b>{{ ag.ecart_apres }}</b> — il est un peu plus
   jeune que la moyenne.</p>
-  <p>La bascule vaut {{ tag.observe | round: 1 }} ans, {{ tag.ecart_types }}
+  <p>La bascule vaut {{ tag.observe_arrondi }} ans, {{ tag.ecart_types }}
   écarts-types, p brute {{ tag.p }}, p ajustée {{ tag.p_ajustee }}.
   <b>Non concluant.</b></p>
   <p>C’est exactement le sens de la bascule de la force — et c’est ce qui rend

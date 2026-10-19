@@ -17,7 +17,9 @@ import re
 import sys
 import unicodedata
 
-import yaml
+# Le module qui ecrit et relit _data/ (virgule decimale), dans tools/.
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import donnees  # noqa: E402
 
 ICI = os.path.dirname(os.path.abspath(__file__))
 RACINE = os.path.abspath(os.path.join(ICI, "..", ".."))
@@ -238,7 +240,7 @@ def main():
     a.add_argument("--ecrire", action="store_true")
     a = a.parse_args()
 
-    saisons = yaml.safe_load(open(os.path.join(RACINE, "_data", "saisons.yml"),
+    saisons = donnees.charger(open(os.path.join(RACINE, "_data", "saisons.yml"),
                                   encoding="utf-8"))
     saison_lignes, r1 = par_saison(saisons)
     episode_lignes, r2 = par_episode(saisons)
@@ -268,7 +270,7 @@ def main():
         with open(SORTIE, "w", encoding="utf-8") as f:
             f.write("# Fichier genere par tools/extraction/audiences.py.\n"
                     "# Ne pas editer a la main : toute modification sera ecrasee.\n")
-            yaml.safe_dump(sortie, f, allow_unicode=True, sort_keys=False, width=100)
+            donnees.ecrire(sortie, f, allow_unicode=True, sort_keys=False, width=100)
         print(f"\necrit : {SORTIE}")
     return 0
 

@@ -24,6 +24,7 @@ import subprocess
 import sys
 
 import yaml
+import donnees
 
 RACINE = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 
@@ -253,7 +254,7 @@ def controler_navigation(c, permaliens, gabarits):
     if not os.path.exists(chemin):
         c.erreur("_data/navigation.yml : absent")
         return
-    sections = yaml.safe_load(open(chemin, encoding="utf-8")) or []
+    sections = donnees.charger(open(chemin, encoding="utf-8")) or []
     listees = {}
     for groupe in sections:
         for entree in entrees_a_plat(groupe):
@@ -346,13 +347,13 @@ def pages():
 
 
 def charger_donnees():
-    donnees = {}
+    jeux = {}
     dossier = os.path.join(RACINE, "_data")
     for f in os.listdir(dossier):
         if f.endswith((".yml", ".yaml")):
             with open(os.path.join(dossier, f), encoding="utf-8") as fh:
-                donnees[os.path.splitext(f)[0]] = yaml.safe_load(fh)
-    return donnees
+                jeux[os.path.splitext(f)[0]] = donnees.charger(fh)
+    return jeux
 
 
 def resoudre(racine, chemin):
@@ -430,7 +431,7 @@ def controler_accents(c):
 
     chemin = os.path.join(RACINE, "_data", "stats.yml")
     if os.path.exists(chemin):
-        stats = yaml.safe_load(open(chemin, encoding="utf-8")) or {}
+        stats = donnees.charger(open(chemin, encoding="utf-8")) or {}
         # Tout ce que les modeles publient comme etiquette est du contenu : les
         # libelles de tests, mais aussi les modalites des tableaux de
         # probabilites conditionnelles, ou un code de sort (« elimine
@@ -484,7 +485,7 @@ def controler_identifiants(c):
 
     chemin = os.path.join(RACINE, "_data", "stats.yml")
     if os.path.exists(chemin):
-        stats = yaml.safe_load(open(chemin, encoding="utf-8")) or {}
+        stats = donnees.charger(open(chemin, encoding="utf-8")) or {}
         m = stats.get("modeles") or {}
         for t in (m.get("registre") or []):
             for champ in ("libelle", "question", "lecture"):
@@ -516,7 +517,7 @@ def controler_modeles_nuls(c):
     chemin = os.path.join(RACINE, "_data", "stats.yml")
     if not os.path.exists(chemin):
         return 0
-    stats = yaml.safe_load(open(chemin, encoding="utf-8")) or {}
+    stats = donnees.charger(open(chemin, encoding="utf-8")) or {}
     fautes = 0
     for t in ((stats.get("modeles") or {}).get("registre") or []):
         cle = t.get("cle")
@@ -674,7 +675,7 @@ def controler_titres_minuscules(c):
     chemin = os.path.join(RACINE, "_data", "saisons.yml")
     if not os.path.exists(chemin):
         return
-    saisons = yaml.safe_load(open(chemin, encoding="utf-8")) or []
+    saisons = donnees.charger(open(chemin, encoding="utf-8")) or []
     titres = sorted({s["titre"] for s in saisons
                      if isinstance(s, dict) and s.get("titre")})
 
@@ -693,7 +694,7 @@ def controler_titres_minuscules(c):
 
     fiches = os.path.join(RACINE, "_data", "fiches.yml")
     if os.path.exists(fiches):
-        recolter(yaml.safe_load(open(fiches, encoding="utf-8")) or {},
+        recolter(donnees.charger(open(fiches, encoding="utf-8")) or {},
                  "_data/fiches.yml")
     for dossier in ("aventuriers", "saisons", "epreuves"):
         chemin_d = os.path.join(RACINE, dossier)
@@ -705,7 +706,7 @@ def controler_titres_minuscules(c):
             if not m:
                 continue
             try:
-                recolter(yaml.safe_load(m.group(1)) or {}, f"{dossier}/{nom}")
+                recolter(donnees.charger(m.group(1)) or {}, f"{dossier}/{nom}")
             except yaml.YAMLError:
                 continue
 
@@ -744,7 +745,7 @@ def controler_accord_rang(c):
     chemin = os.path.join(RACINE, "_data", "fiches.yml")
     if not os.path.exists(chemin):
         return
-    aventuriers = (yaml.safe_load(open(chemin, encoding="utf-8")) or {}) \
+    aventuriers = (donnees.charger(open(chemin, encoding="utf-8")) or {}) \
         .get("aventuriers") or {}
     fautes = []
     for cid, a in sorted(aventuriers.items()):
@@ -777,6 +778,69 @@ def controler_yaml_ambigu(c):
                              f"est ecrit sans guillemets — PyYAML y voit une "
                              f"chaine, le YAML de Ruby un nombre, et c'est "
                              f"Ruby qui publie")
+
+
+# Les filtres de calcul de Liquid. Ils rendent un decimal a point (« 8.1 »), et
+# ils ne savent pas lire un decimal a la francaise (« 54,2 » -> 54) : depuis
+# que _data/ s'ecrit avec la virgule, le calcul se fait en Python.
+RE_FILTRE_CALCUL = re.compile(r"\|\s*(round|divided_by|times|ceil|floor|at_least|at_most)\b")
+RE_TEXTE_SVG = re.compile(r"<(?:text|tspan|title|desc)\b[^>]*>([^<]*)|aria-label=\"([^\"]*)\"")
+RE_DECIMAL_POINT = re.compile(r"\d\.\d")
+
+
+def controler_virgule_decimale(c):
+    """Refuse tout chemin par lequel un decimal a point atteindrait le lecteur.
+
+    Le 19 octobre 2026, 701 nombres de 34 pages et 2 023 textes de figures
+    s'affichaient « 54.2 % ». Trois chemins y menaient, et chacun a sa garde :
+
+      * un flottant ecrit nu dans _data/ -- Liquid l'affiche avec son point.
+        Tout passe par `donnees.ecrire` (tools/donnees.py) ;
+      * un filtre de calcul dans un gabarit -- il fabrique un point, et il
+        lirait « 54,2 » comme 54 ;
+      * un texte de figure -- `graphiques.virgule_decimale` le corrige a
+        l'ecriture ; une figure ecrite autrement le laisserait passer.
+    """
+    dossier = os.path.join(RACINE, "_data")
+    for nom in sorted(os.listdir(dossier)):
+        if not nom.endswith(".yml"):
+            continue
+        brut = yaml.safe_load(open(os.path.join(dossier, nom), encoding="utf-8"))
+        flottants = []
+
+        def parcourir(v, chemin):
+            if isinstance(v, float) and math.isfinite(v):
+                flottants.append(chemin)
+            elif isinstance(v, dict):
+                for k, x in v.items():
+                    parcourir(x, f"{chemin}.{k}")
+            elif isinstance(v, list):
+                for i, x in enumerate(v):
+                    parcourir(x, f"{chemin}[{i}]")
+        parcourir(brut, nom[:-4])
+        if flottants:
+            c.erreur(f"_data/{nom} : {len(flottants)} decimaux ecrits avec un point "
+                     f"(premier : {flottants[0]}) — le fichier doit etre ecrit par "
+                     f"donnees.ecrire, Liquid les publierait tels quels")
+
+    for chemin in list(pages()) + [
+            os.path.join(RACINE, d, f) for d in ("_layouts", "_includes")
+            for f in os.listdir(os.path.join(RACINE, d)) if f.endswith(".html")]:
+        corps = sans_commentaires(open(chemin, encoding="utf-8").read())
+        for m in RE_FILTRE_CALCUL.finditer(corps):
+            c.erreur(f"{os.path.relpath(chemin, RACINE)} : filtre `{m.group(1)}` — "
+                     f"un calcul de gabarit publie un point decimal et ne lit pas "
+                     f"« 54,2 » ; le faire en Python (build_stats.champs_d_affichage)")
+
+    figures = os.path.join(RACINE, "_includes", "graphiques")
+    for nom in sorted(os.listdir(figures)) if os.path.isdir(figures) else []:
+        texte = open(os.path.join(figures, nom), encoding="utf-8").read()
+        fautes = [t for m in RE_TEXTE_SVG.finditer(texte)
+                  for t in m.groups() if t and RE_DECIMAL_POINT.search(t)]
+        if fautes:
+            c.erreur(f"_includes/graphiques/{nom} : {len(fautes)} textes avec un point "
+                     f"decimal (« {fautes[0].strip()[:50]} ») — la figure doit "
+                     f"passer par graphiques.ecrire")
 
 
 def controler_donnees_structurees(c):
@@ -854,7 +918,7 @@ def controler_comptes_annonces(c):
     chemin = os.path.join(RACINE, "_data", "navigation.yml")
     if not os.path.exists(chemin):
         return
-    sections = yaml.safe_load(open(chemin, encoding="utf-8")) or []
+    sections = donnees.charger(open(chemin, encoding="utf-8")) or []
     fil = next((g for g in sections if g.get("fil")), None)
     if not fil:
         return
@@ -876,7 +940,7 @@ def controler_comptes_annonces(c):
     if os.path.exists(chemin):
         texte = open(chemin, encoding="utf-8").read()
         m = RE_FRONT.match(texte)
-        entete = yaml.safe_load(m.group(1)) if m else {}
+        entete = donnees.charger(m.group(1)) if m else {}
         corps = texte[m.end():] if m else texte
         coupe = re.search(r"^##\s.*$", corps, re.M)
         zones.append(("statistiques.md (chapeau)", str(entete.get("chapeau") or "")))
@@ -935,7 +999,7 @@ def controler_portraits(c):
     chemin = os.path.join(RACINE, "_data", "portraits.yml")
     if not os.path.exists(chemin):
         return
-    portraits = (yaml.safe_load(open(chemin, encoding="utf-8")) or {}).get("portraits") or {}
+    portraits = (donnees.charger(open(chemin, encoding="utf-8")) or {}).get("portraits") or {}
     for cle, p in sorted(portraits.items()):
         # L'auteur peut manquer, et seulement dans ce cas : une image du
         # domaine public n'exige aucune attribution, et Commons y ecrit
@@ -1172,7 +1236,7 @@ def controler_figures(c):
 
 def main():
     c = Controle()
-    donnees = charger_donnees()
+    jeux = charger_donnees()
 
     permaliens = {}
     gabarits = {}
@@ -1186,7 +1250,7 @@ def main():
             c.erreur(f"{rel} : pas de front matter — Jekyll ne rendra pas cette page")
             continue
         try:
-            entete = yaml.safe_load(m.group(1)) or {}
+            entete = donnees.charger(m.group(1)) or {}
         except yaml.YAMLError as e:
             c.erreur(f"{rel} : front matter illisible — {e}")
             continue
@@ -1235,7 +1299,7 @@ def main():
                      f"`endcomment` ne ferme pas et la construction s'arrete")
 
         for parcours in RE_DATA.findall(corps):
-            ok, _ = resoudre(donnees, parcours)
+            ok, _ = resoudre(jeux, parcours)
             if not ok:
                 c.erreur(f"{rel} : site.data.{parcours} n'existe pas dans _data/")
 
@@ -1252,7 +1316,7 @@ def main():
             # chemin faisait echouer un chemin parfaitement valide.
             parcours = ".".join(x for x in parcours.split(".")
                                 if x not in ("first", "last", "size"))
-            ok, _ = resoudre(donnees, parcours)
+            ok, _ = resoudre(jeux, parcours)
             if not ok:
                 c.erreur(f"{rel} : {nom}.{suite} → site.data.{parcours} n'existe pas")
 
@@ -1283,12 +1347,12 @@ def main():
                          f"Liquid — elle n'y est pas inerte, elle ouvre un bloc que "
                          f"`endcomment` ne ferme pas et la construction s'arrete")
             for parcours in RE_DATA.findall(corps):
-                ok, _ = resoudre(donnees, parcours)
+                ok, _ = resoudre(jeux, parcours)
                 if not ok:
                     c.erreur(f"{rel} : site.data.{parcours} n'existe pas dans _data/")
 
     # configuration
-    config = yaml.safe_load(open(os.path.join(RACINE, "_config.yml"), encoding="utf-8"))
+    config = donnees.charger(open(os.path.join(RACINE, "_config.yml"), encoding="utf-8"))
     exclus = set(config.get("exclude") or [])
     for attendu in EXCLUS_ATTENDUS:
         if attendu not in exclus:
@@ -1333,6 +1397,7 @@ def main():
     controler_comptes_annonces(c)
     controler_donnees_structurees(c)
     controler_yaml_ambigu(c)
+    controler_virgule_decimale(c)
     controler_titres_minuscules(c)
     controler_accord_rang(c)
     controler_navigation(c, permaliens, gabarits)
@@ -1350,7 +1415,7 @@ def main():
     nb = len(os.listdir(figures)) if os.path.isdir(figures) else 0
     print(f"pages controlees : {len(permaliens) + 1}")
     print(f"figures          : {nb}")
-    print(f"jeux de donnees  : {', '.join(sorted(donnees))}")
+    print(f"jeux de donnees  : {', '.join(sorted(jeux))}")
 
     if c.avertissements:
         print(f"\n{len(c.avertissements)} avertissement(s) :")

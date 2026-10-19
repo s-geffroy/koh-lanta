@@ -36,7 +36,9 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-import yaml
+# Le module qui ecrit et relit _data/ (virgule decimale), dans tools/.
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import donnees  # noqa: E402
 from PIL import Image
 
 RACINE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -354,7 +356,7 @@ def dimensions(chemin):
 def main():
     charger_elements_koh_lanta()
     with open(os.path.join(DATA, "personnes.yml"), encoding="utf-8") as f:
-        personnes = yaml.safe_load(f)
+        personnes = donnees.charger(f)
 
     noms = [p["nom"] for p in personnes]
 
@@ -448,14 +450,14 @@ def main():
     with open(os.path.join(DATA, "reseaux.yml"), "w", encoding="utf-8") as f:
         f.write(entete + "# Les comptes publics rattaches a une personne sur"
                          " Wikidata, avec sa reference.\n")
-        yaml.safe_dump({"comptes": reseaux}, f, allow_unicode=True,
+        donnees.ecrire({"comptes": reseaux}, f, allow_unicode=True,
                        sort_keys=True, default_flow_style=False)
     with open(os.path.join(DATA, "portraits.yml"), "w", encoding="utf-8") as f:
         f.write(entete + "# Les portraits sous licence libre, AVEC leur auteur"
                          " et leur licence.\n"
                          "# Le gabarit les affiche sous la photo : ce n'est pas"
                          " optionnel.\n")
-        yaml.safe_dump({"portraits": portraits}, f, allow_unicode=True,
+        donnees.ecrire({"portraits": portraits}, f, allow_unicode=True,
                        sort_keys=True, default_flow_style=False)
 
     print(f"{len(personnes)} aventuriers, {vus} apparies sur Wikidata "

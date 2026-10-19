@@ -388,7 +388,7 @@ l’autre : ce qu’on peut affirmer, c’est qu’il n’y a pas d’effet marq
 bulletins.</strong> Sachant qu’on vient de gagner le confort de l’épisode, on est
 éliminé le soir même dans <b>{{ cw.probabilite }} %</b> des cas
 ({{ cw.cas }} sur {{ cw.effectif }}), contre {{ cn.probabilite }} % pour ceux qui
-n’ont rien gagné — {{ tcf.observe | round: 1 }} points, {{ tcf.ecart_types }}
+n’ont rien gagné — {{ tcf.observe_arrondi }} points, {{ tcf.ecart_types }}
 écarts-types, p ajustée {{ tcf.p_ajustee }}. L’écart va cette fois dans le sens
 de la légende, mais il reste <em>non concluant</em> : à {{ cw.effectif }}
 présences, on ne peut pas le distinguer d’un tirage. Deux mesures de la même

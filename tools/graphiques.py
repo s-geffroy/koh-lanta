@@ -26,7 +26,6 @@ import re
 import sys
 import unicodedata
 
-import yaml
 
 RACINE = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 SORTIE = os.path.join(RACINE, "_includes", "graphiques")
@@ -523,10 +522,30 @@ def courbes(series, abscisses, *, titre, description, unite="", largeur=680,
     return fig.rendu()
 
 
+# Ce qu'un lecteur lit dans une figure : le texte des <text>, <tspan>, <title>
+# et <desc>, et l'attribut aria-label. Les COORDONNEES gardent leur point -- un
+# « x="12,5" » n'est plus une longueur -- et une feuille <style> ses durees.
+RE_TEXTE_LU = re.compile(r"(<(?:text|tspan|title|desc)\b[^>]*>)([^<]*)")
+RE_ARIA = re.compile(r'(aria-label=")([^"]*)(")')
+RE_POINT_DECIMAL = re.compile(r"(?<=\d)\.(?=\d)")
+
+
+def virgule_decimale(svg):
+    """« 54.2 % » -> « 54,2 % » dans le texte lu, et nulle part ailleurs.
+
+    Les figures s'ecrivent avec des f-strings (`f"{x:.1f} %"`) : poser la
+    virgule a chacun des cent appels serait en oublier un. Elle se pose donc
+    ici, sur la figure finie, au seul endroit ou toutes passent."""
+    svg = RE_TEXTE_LU.sub(lambda m: m.group(1) + RE_POINT_DECIMAL.sub(",", m.group(2)), svg)
+    return RE_ARIA.sub(lambda m: m.group(1) + RE_POINT_DECIMAL.sub(",", m.group(2))
+                       + m.group(3), svg)
+
+
 def ecrire(nom, contenu):
     if not contenu:
         print(f"  (vide) {nom}")
         return
+    contenu = virgule_decimale(contenu)
     os.makedirs(SORTIE, exist_ok=True)
     chemin = os.path.join(SORTIE, nom)
     with open(chemin, "w", encoding="utf-8") as f:

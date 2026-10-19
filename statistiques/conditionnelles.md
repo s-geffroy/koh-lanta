@@ -106,7 +106,7 @@ l’avoir été. La silhouette est celle de {{ t1.tirages }} tirages où l’él
 chaque conseil est pris au hasard parmi les présents.</p>
 
 <div class="constat">
-  <p>Avoir été visé au conseil précédent ajoute <b>{{ t1.observe | round: 1 }} points</b>
+  <p>Avoir été visé au conseil précédent ajoute <b>{{ t1.observe_arrondi }} points</b>
   de risque : {{ t1.ecart_types }} écarts-types au-dessus du hasard, p ajustée
   {{ t1.p_ajustee }}.</p>
   <p>Le modèle nul fait ici tout le travail. À chaque conseil, on tire l’éliminé
@@ -132,7 +132,7 @@ nul.</p>
   {% assign gros = c.par_voix | where: "modalite", "5 voix et plus" | first %}
   <b>{{ gros.probabilite }} %</b> pour cinq voix et plus — soit un cas sur
   {{ gros.effectif }}.</p>
-  <p>L’écart vaut {{ t2.observe | round: 1 }} points, {{ t2.ecart_types }} écarts-types,
+  <p>L’écart vaut {{ t2.observe_arrondi }} points, {{ t2.ecart_types }} écarts-types,
   p ajustée <b>{{ t2.p_ajustee }}</b> — <b>non retenu</b>.</p>
 </div>
 
@@ -142,7 +142,7 @@ manquent. Ici, cinquante-huit conseils dépouillés se sont AJOUTÉS — les
 <a href="{{ '/sources/' | relative_url }}">bulletins sans votant</a> que le jeu
 impose depuis 2017, vote noir, pénalité, malédiction, qu’aucun calcul ne
 comptait — et l’écart est passé de 15,4 points à
-{{ t2.observe | round: 1 }}, la p ajustée de 0,040 à {{ t2.p_ajustee }}.
+{{ t2.observe_arrondi }}, la p ajustée de 0,040 à {{ t2.p_ajustee }}.
 <strong>Le sommet n’a pas disparu ; il a maigri de moitié dès qu’on lui a donné
 les conseils qui lui manquaient.</strong> C’est exactement ce qu’un effet
 fabriqué par un petit échantillon fait quand l’échantillon grandit, et c’est
@@ -221,7 +221,7 @@ compte-t-il encore ?
 conseils plus tôt et partir quand on ne l’avait pas été.</p>
 
 <div class="constat">
-  <p>{{ t6.observe | round: 1 }} points d’écart — presque autant qu’au conseil
+  <p>{{ t6.observe_arrondi }} points d’écart — presque autant qu’au conseil
   précédent — mais sur {{ c.par_voix_deux_pas[1].effectif | plus: c.par_voix_deux_pas[2].effectif }}
   présences seulement : {{ t6.ecart_types }} écarts-types, p brute {{ t6.p }},
   p ajustée {{ t6.p_ajustee }}. <b>Non concluant.</b></p>
@@ -331,7 +331,7 @@ première fois, l’ancienneté de la menace ne change plus grand-chose.
 </div>
 
 <div class="constat">
-  <p>{{ t3.observe | round: 1 }} points d’écart, {{ t3.ecart_types }} écarts-types, p brute
+  <p>{{ t3.observe_arrondi }} points d’écart, {{ t3.ecart_types }} écarts-types, p brute
   {{ t3.p }}, p ajustée {{ t3.p_ajustee }}. <b>Non concluant.</b></p>
   <p>S’être trompé de cible expose peut-être un peu, mais à
   {{ c.par_camp[1].effectif }} présences du côté de la minorité, un écart de
@@ -361,7 +361,7 @@ tirages.</p>
   <p>Sans voix la fois d’avant, le nom ressort dans
   {{ c.persistance[0].probabilite }} % des cas. Avec deux voix,
   <b>{{ c.persistance[2].probabilite }} %</b>.</p>
-  <p>{{ t4.observe | round: 1 }} points d’écart, {{ t4.ecart_types }} écarts-types,
+  <p>{{ t4.observe_arrondi }} points d’écart, {{ t4.ecart_types }} écarts-types,
   p ajustée {{ t4.p_ajustee }}. <b>La cible reste la cible</b>, et c’est le
   résultat le plus net de cette page.</p>
 </div>
@@ -392,7 +392,7 @@ redistribution des bulletins à l’intérieur de chaque conseil.</p>
 <div class="constat">
   <p><b>{{ c.retour.probabilite }} %</b> — {{ c.retour.rendus }} couples sur
   {{ c.retour.couples }}, intervalle {{ c.retour.bas }} à {{ c.retour.haut }} %.
-  Le hasard en donnerait {{ t5.attendu | round: 1 }} %.</p>
+  Le hasard en donnerait {{ t5.attendu_arrondi }} %.</p>
   <p>{{ t5.ecart_types }} écarts-types, p ajustée {{ t5.p_ajustee }}. Écrire un
   nom, c’est donc bien s’exposer à le voir revenir — mais quatre fois sur cinq,
   il ne revient pas.</p>

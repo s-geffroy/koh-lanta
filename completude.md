@@ -60,9 +60,9 @@ faire comme si la couverture était uniforme.</p>
     <small>{% if l.numero %}saison {{ l.numero }}{% else %}édition spéciale{% endif %} · {{ l.annee }} · {{ l.pays }}</small>
   </td>
   {% for x in l.cellules %}
-  <td class="case" data-etat="{{ x.etat }}" title="{{ l.titre }} — {{ x.texte }}"><span>{% if x.etat == "sans_objet" %}·{% elsif x.nature == "fait" %}{% if x.etat == "complet" %}✓{% else %}—{% endif %}{% else %}{{ x.valeur | round }}{% endif %}</span></td>
+  <td class="case" data-etat="{{ x.etat }}" title="{{ l.titre }} — {{ x.texte }}"><span>{% if x.etat == "sans_objet" %}·{% elsif x.nature == "fait" %}{% if x.etat == "complet" %}✓{% else %}—{% endif %}{% else %}{{ x.valeur_arrondie }}{% endif %}</span></td>
   {% endfor %}
-  <td class="case ensemble" data-etat="{% if l.score >= 99.9 %}complet{% elsif l.score >= 80 %}eleve{% elsif l.score >= 50 %}partiel{% else %}mince{% endif %}" title="{{ l.titre }} — {{ l.score }} % des cases renseignées"><span>{{ l.score }} %</span></td>
+  <td class="case ensemble" data-etat="{{ l.niveau }}" title="{{ l.titre }} — {{ l.score }} % des cases renseignées"><span>{{ l.score }} %</span></td>
 </tr>
 {% endfor %}
 </tbody>
@@ -133,11 +133,10 @@ site — [les alliances]({{ '/statistiques/alliances/' | relative_url }}),
 [le classement des joueurs]({{ '/statistiques/top/' | relative_url }}).
 
 {% assign dep = site.data.stats.classement.biais_epoque.depouillement %}
-{% assign parts_dep = dep | map: "part" | sort %}
 
 <p class="note"><strong>Et cette colonne s’effondre avec le temps</strong>, ce
 qu’une moyenne ne montre pas : de <b>{{ dep.first.part }} %</b> de conseils
-dépouillés sur {{ dep.first.periode }} à <b>{{ parts_dep.first }} %</b> au plus
+dépouillés sur {{ dep.first.periode }} à <b>{{ site.data.stats.classement.biais_epoque.depouillement_plus_bas }} %</b> au plus
 bas. Les aventuriers des saisons récentes sont donc, sur tout ce qui se lit au
 bulletin, ramenés à la moyenne faute d’observations — ce n’est pas un jugement
 sur leur niveau, c’est ce trou-ci. Le classement mesure de combien il déplace

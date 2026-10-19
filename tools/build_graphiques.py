@@ -6,7 +6,7 @@
 import os
 import sys
 
-import yaml
+import donnees
 
 RACINE = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 sys.path.insert(0, os.path.join(RACINE, "tools"))
@@ -22,7 +22,7 @@ NOM_COULEUR = {"jaune": "Jaune", "rouge": "Rouge", "bleu": "Bleu", "vert": "Vert
 
 def _lire(nom):
     with open(os.path.join(RACINE, "_data", nom), encoding="utf-8") as f:
-        return yaml.safe_load(f)
+        return donnees.charger(f)
 
 
 # Les noms de variables des modeles sont des identifiants (« metier:sport ») ;
@@ -158,7 +158,7 @@ def figures_du_classement(stats):
 
 
 def main():
-    stats = yaml.safe_load(open(os.path.join(RACINE, "_data", "stats.yml"), encoding="utf-8"))
+    stats = donnees.charger(open(os.path.join(RACINE, "_data", "stats.yml"), encoding="utf-8"))
     print("figures ecrites :")
 
     # --- la figure d'ouverture, et le peigne qui l'etait avant elle -------
@@ -888,7 +888,7 @@ def figure_epreuves_nommees():
     chemin = os.path.join(RACINE, "_data", "epreuves_nommees.yml")
     if not os.path.exists(chemin):
         return
-    d = yaml.safe_load(open(chemin, encoding="utf-8")) or {}
+    d = donnees.charger(open(chemin, encoding="utf-8")) or {}
     lignes = [x for x in (d.get("par_nature") or []) if x["nature"] != "non qualifiee"]
     if not lignes:
         return
@@ -914,7 +914,7 @@ def figure_prenoms():
     chemin = os.path.join(RACINE, "_data", "prenoms.yml")
     if not os.path.exists(chemin):
         return
-    d = yaml.safe_load(open(chemin, encoding="utf-8"))
+    d = donnees.charger(open(chemin, encoding="utf-8"))
     solides = [x for x in d["prenoms"]
                if not x["absent_du_fichier"] and x["attendu"] >= 1]
     if not solides:

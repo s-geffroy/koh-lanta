@@ -14,7 +14,9 @@ import re
 import sys
 from collections import defaultdict
 
-import yaml
+# Le module qui ecrit et relit _data/ (virgule decimale), dans tools/.
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import donnees  # noqa: E402
 
 ICI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, ICI)
@@ -1039,8 +1041,8 @@ def construire(saisons, parts, rapport):
 
 
 def main():
-    saisons = yaml.safe_load(open(os.path.join(RACINE, "_data", "saisons.yml")))
-    parts = yaml.safe_load(open(os.path.join(RACINE, "_data", "participations.yml")))
+    saisons = donnees.charger(open(os.path.join(RACINE, "_data", "saisons.yml")))
+    parts = donnees.charger(open(os.path.join(RACINE, "_data", "participations.yml")))
     rapport = []
     conseils, accord = construire(saisons, parts, rapport)
 
@@ -1071,14 +1073,14 @@ def main():
         chemin = os.path.join(RACINE, "_data", "conseils.yml")
         with open(chemin, "w", encoding="utf-8") as f:
             f.write(ENTETE)
-            yaml.safe_dump(conseils, f, allow_unicode=True, sort_keys=False, width=100)
+            donnees.ecrire(conseils, f, allow_unicode=True, sort_keys=False, width=100)
         print(f"\necrit : {chemin}")
         # L'epreuve croisee est un resultat, pas un message : elle est publiee.
         croise = os.path.join(RACINE, "_data", "croisement_votes.yml")
         with open(croise, "w", encoding="utf-8") as f:
             f.write("# Fichier genere par tools/extraction/construire_conseils.py.\n"
                     "# Ne pas editer a la main : toute modification sera ecrasee.\n")
-            yaml.safe_dump({
+            donnees.ecrire({
                 "bulletins_communs": accord["communs"],
                 "identiques": accord["accord"],
                 "divergents": accord["desaccords"],

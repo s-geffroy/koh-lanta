@@ -505,7 +505,7 @@ classement réel et pour un classement où les résultats ont été tirés au so
   distingue, à la lecture, d’un vrai palmarès.</p>
   <p><b>Le classement réel tient l’épreuve</b> : son premier est à
   {{ h.reel_premier }}, et l’écart du premier au vingt-cinquième vaut
-  {{ h.reel_ecart }} — <b>{{ h.reel_ecart | divided_by: h.ecart | round: 1 }} fois</b>
+  {{ h.reel_ecart }} — <b>{{ h.rapport }} fois</b>
   celui du hasard. La hiérarchie n’est donc pas fabriquée de toutes pièces. Mais
   un top tiré au sort a de l’allure, et c’est ce qu’il fallait montrer.</p>
 </div>
@@ -562,7 +562,7 @@ facettes ne sait qui a gagné. Où tombent les vainqueurs ?
   <b>{{ pl.rang_median_vainqueurs }}</b> sur {{ c.joueurs_classes }}. Celui de
   tous les autres est {{ pl.rang_median_autres }}.</p>
   <p>Pris au hasard, un vainqueur est mieux classé qu’un non-vainqueur dans
-  <b>{{ pl.auc | times: 100 | round: 1 }} %</b> des cas. Un score aveugle au
+  <b>{{ pl.auc_pourcent }} %</b> des cas. Un score aveugle au
   palmarès reconstitue donc largement le palmarès — c’est la meilleure raison
   qu’on ait de le prendre au sérieux, et elle ne doit rien à la construction.</p>
 </div>

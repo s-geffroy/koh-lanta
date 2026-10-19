@@ -40,7 +40,9 @@ import urllib.request
 import zipfile
 from collections import defaultdict
 
-import yaml
+# Le module qui ecrit et relit _data/ (virgule decimale), dans tools/.
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import donnees  # noqa: E402
 
 ICI = os.path.dirname(os.path.abspath(__file__))
 RACINE = os.path.abspath(os.path.join(ICI, "..", ".."))
@@ -91,8 +93,8 @@ def telecharger():
 
 def aventuriers():
     """(prenom, sexe INSEE, annee de naissance) pour chaque participation."""
-    parts = yaml.safe_load(open(os.path.join(RACINE, "_data", "participations.yml")))
-    saisons = {s["id"]: s for s in yaml.safe_load(
+    parts = donnees.charger(open(os.path.join(RACINE, "_data", "participations.yml")))
+    saisons = {s["id"]: s for s in donnees.charger(
         open(os.path.join(RACINE, "_data", "saisons.yml")))}
     out = []
     for p in parts:
@@ -206,6 +208,11 @@ def main():
             "attendu": round(att, 3),
             "indice": None if jamais else round(obs / att, 1),
             "absent_du_fichier": jamais,
+            # Le tableau de /statistiques/prenoms/ ne montre que les prenoms
+            # attendus au moins une fois. La page le testait en Liquid ;
+            # `attendu` y est desormais une chaine a la francaise (« 0,95 »),
+            # que `>=` ne sait plus comparer a un nombre.
+            "au_tableau": not jamais and round(att, 3) >= 1,
         })
     out.sort(key=lambda x: (x["absent_du_fichier"], -(x["indice"] or 0), x["prenom"]))
 
@@ -227,7 +234,7 @@ def main():
         chemin = os.path.join(RACINE, "_data", "prenoms.yml")
         with open(chemin, "w", encoding="utf-8") as f:
             f.write(ENTETE)
-            yaml.safe_dump({
+            donnees.ecrire({
                 "periode": {"debut": min(annees), "fin": max(annees)},
                 "aventuriers_datables": len(gens),
                 "prenoms": out,

@@ -11,8 +11,11 @@ concatenes sur une meme ligne, tribus notees « (Jour 1 - 9) » ou « [1-7] ».
 Tout ce qui n'est pas reconnu avec certitude est laisse de cote plutot que
 devine -- la regle du depot.
 """
-import hashlib, json, os, re, unicodedata
-import yaml
+import hashlib, json, os, re, sys, unicodedata
+
+# Le module qui ecrit et relit _data/ (virgule decimale), dans tools/.
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import donnees  # noqa: E402
 
 RACINE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 PAGES = os.path.join(RACINE, "specs", "sources", "personnes")
@@ -383,7 +386,7 @@ def tout(personnes=None):
     en cours de construction : le fichier n'existe pas encore a ce moment-la.
     """
     if personnes is None:
-        personnes = yaml.safe_load(open(os.path.join(RACINE, "_data", "personnes.yml"), encoding="utf-8"))
+        personnes = donnees.charger(open(os.path.join(RACINE, "_data", "personnes.yml"), encoding="utf-8"))
     lu, alertes = {}, []
     for p in personnes:
         chemin = chemin_page(p["id"])

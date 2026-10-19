@@ -20,7 +20,9 @@ import re
 import sys
 import unicodedata
 
-import yaml
+# Le module qui ecrit et relit _data/ (virgule decimale), dans tools/.
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import donnees  # noqa: E402
 
 ICI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, ICI)
@@ -889,7 +891,7 @@ def charger(sid):
     return rows_f, rows_w
 
 def main():
-    saisons = yaml.safe_load(open(os.path.join(RACINE, "_data", "saisons.yml")))
+    saisons = donnees.charger(open(os.path.join(RACINE, "_data", "saisons.yml")))
     rapport, participations = [], []
     for s in saisons:
         if s.get("annulee"):
@@ -963,7 +965,7 @@ def ecrire(participations, saisons):
     chemin_p = os.path.join(RACINE, "_data", "participations.yml")
     with open(chemin_p, "w", encoding="utf-8") as f:
         f.write(ENTETE)
-        yaml.safe_dump([ordonner(p) for p in participations], f,
+        donnees.ecrire([ordonner(p) for p in participations], f,
                        allow_unicode=True, sort_keys=False, width=100)
 
     annees = {s["id"]: s.get("annee") for s in saisons}
@@ -982,7 +984,7 @@ def ecrire(participations, saisons):
     chemin_g = os.path.join(RACINE, "_data", "personnes.yml")
     with open(chemin_g, "w", encoding="utf-8") as f:
         f.write(ENTETE)
-        yaml.safe_dump(list(gens.values()), f,
+        donnees.ecrire(list(gens.values()), f,
                        allow_unicode=True, sort_keys=False, width=100)
     return chemin_p, chemin_g, len(gens)
 
@@ -1000,7 +1002,7 @@ if __name__ == "__main__":
         print(f"  … et {len(rapport)-40} autres")
 
     if "--ecrire" in sys.argv:
-        saisons = yaml.safe_load(open(os.path.join(RACINE, "_data", "saisons.yml")))
+        saisons = donnees.charger(open(os.path.join(RACINE, "_data", "saisons.yml")))
         cp, cg, n = ecrire(parts, saisons)
         print(f"\necrit : {cp} ({len(parts)} participations)")
         print(f"ecrit : {cg} ({n} personnes)")

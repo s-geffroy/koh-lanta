@@ -43,7 +43,7 @@ ont tenu aussi longtemps. La troisième colonne, elle, est donnée pour mémoire
   <td>{{ x.libelle }}</td>
   <td class="nombre">{{ x.part_fantomes }} %</td>
   <td class="nombre">{{ x.part_endurants }} %</td>
-  <td class="nombre">{{ x.part_fantomes | minus: x.part_endurants | round: 1 }}</td>
+  <td class="nombre">{{ x.ecart }}</td>
   <td class="nombre">{{ x.part_ensemble }} %</td>
 </tr>
 {% endfor %}

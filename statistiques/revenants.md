@@ -131,7 +131,7 @@ souvent, toutes les autres variables tenues fixes.</p>
   <p><b>La longévité domine</b> : dix points de saison tenus en plus multiplient
   la cote d’être rappelé par {{ rp.coefficients[0].rapport }}.</p>
   <p><b>L’âge compte, et il compte contre.</b> Dix ans de plus au casting
-  divisent la cote par {{ 1.0 | divided_by: rp.coefficients[3].rapport | round: 2 }},
+  divisent la cote par {{ rp.coefficients[3].inverse }},
   à longévité, sexe et époque égaux — intervalle
   {{ rp.coefficients[3].bas }} à {{ rp.coefficients[3].haut }},
   p {{ rp.coefficients[3].p }}. La production rappelle plutôt les jeunes, et ce
@@ -288,7 +288,7 @@ Aucun conseil, aucun poteau, aucune orientation ne les a fait sortir.
   <td class="nombre">{{ c.jours }}</td>
   <td class="nombre">{{ c.jours_possibles }}</td>
   <td class="nombre" data-val="{{ c.part_du_temps }}">{{ c.part_du_temps }} %
-    <span class="cellule-barre" style="width: {{ c.part_du_temps }}%"></span></td>
+    <span class="cellule-barre" style="width: {{ c.barre }}%"></span></td>
 </tr>
 {% endfor %}
 </tbody>

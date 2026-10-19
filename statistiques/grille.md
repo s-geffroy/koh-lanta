@@ -32,7 +32,6 @@ réunification. {{ f.saisons }} saisons classiques s’y prêtent.</p>
 <p class="legende-figure">Chaque saison figure deux fois : par l’épisode où la
 fusion tombe, et par le nombre de joueurs qu’elle laisse en jeu.</p>
 
-{% assign croissance = f.casting_max | minus: f.casting_min %}
 
 <div class="constat">
   <p>Quand le casting gagne un membre, l’épisode de la fusion recule de
@@ -40,15 +39,15 @@ fusion tombe, et par le nombre de joueurs qu’elle laisse en jeu.</p>
   {{ f.pente_episode.bas }} à {{ f.pente_episode.haut }}, p =
   {{ f.pente_episode.p }}. Sur toute la croissance observée, de
   {{ f.casting_min }} à {{ f.casting_max }} personnes, cela fait
-  <b>{{ croissance | times: f.pente_episode.pente | round: 1 }} épisode</b>.
+  <b>{{ f.croissance_episode }} épisode</b>.
   La médiane reste l’épisode {{ f.episode_median }}, de 2001 à 2026.</p>
   <p>Le nombre de joueurs restants, lui, bouge de
   <b>{{ f.pente_restants.pente }}</b> ({{ f.pente_restants.bas }} à
   {{ f.pente_restants.haut }}) — soit
-  <b>{{ croissance | times: f.pente_restants.pente | round: 1 }} joueurs</b> de
+  <b>{{ f.croissance_restants }} joueurs</b> de
   plus sur la même croissance, cinq fois davantage.</p>
   <p>La réunification suit donc la <b>grille de diffusion</b> bien plus que
-  l’état du jeu. Les castings ont grossi de {{ croissance }} personnes ; la
+  l’état du jeu. Les castings ont grossi de {{ f.croissance }} personnes ; la
   fusion a reculé de moins d’un épisode, et le plateau réuni est passé d’une
   dizaine de joueurs à une quinzaine. C’est le programme qui décide, et le jeu
   qui s’adapte — mais pas tout à fait sans concession.</p>

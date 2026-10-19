@@ -72,7 +72,7 @@ l’éliminé de chaque conseil est pris au hasard parmi les présents.</p>
 
 <div class="constat">
   <p>N’avoir plus personne avec qui on ait déjà voté ajoute
-  <b>{{ ti.observe | round: 1 }} points</b> de risque :
+  <b>{{ ti.observe_arrondi }} points</b> de risque :
   {{ ti.ecart_types }} écarts-types au-dessus du hasard, p ajustée
   {{ ti.p_ajustee }}.</p>
   <p>Et les deux formes de l’isolement ne se valent pas. Avoir vu ses alliés
@@ -220,7 +220,7 @@ hasard parmi les présents.</p>
 </div>
 
 <div class="constat">
-  <p>{{ tm.observe | round: 1 }} point d’écart, {{ tm.ecart_types }}
+  <p>{{ tm.observe_arrondi }} point d’écart, {{ tm.ecart_types }}
   écarts-types, p brute {{ tm.p }}. <b>Rien.</b> Et pour une fois le mot est
   mérité : l’observé tombe au milieu même de la distribution nulle.</p>
   <p>La menace change ce que les autres font de vous. Elle ne change pas ce que

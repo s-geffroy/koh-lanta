@@ -108,7 +108,7 @@ moins représenté du camp et partir quand il est le plus représenté, contre
   <p>Bandeau minoritaire : <b>{{ bmin.probabilite }} %</b>
   ({{ bmin.cas }} sur {{ bmin.effectif }}). Bandeau majoritaire :
   <b>{{ bmaj.probabilite }} %</b>.</p>
-  <p>{{ tb.observe | round: 1 }} points d’écart, {{ tb.ecart_types }}
+  <p>{{ tb.observe_arrondi }} points d’écart, {{ tb.ecart_types }}
   écarts-types au-dessus du hasard, p ajustée {{ tb.p_ajustee }}.</p>
 </div>
 
@@ -166,7 +166,7 @@ représenté du camp et partir quand il est le plus représenté.</p>
   <p>Sexe minoritaire : <b>{{ smin.probabilite }} %</b>
   ({{ smin.cas }} sur {{ smin.effectif }}). Sexe majoritaire :
   <b>{{ smaj.probabilite }} %</b> ({{ smaj.cas }} sur {{ smaj.effectif }}).</p>
-  <p>{{ ts.observe | round: 1 }} points, {{ ts.ecart_types }} écarts-types
+  <p>{{ ts.observe_arrondi }} points, {{ ts.ecart_types }} écarts-types
   <b>sous</b> le hasard. Prise seule, la p vaut {{ ts.p }} ; corrigée avec les
   quarante-deux autres tests de ce site, elle vaut
   <b>{{ ts.p_ajustee }}</b> — et <b>ce résultat est retenu</b>.</p>
@@ -231,7 +231,7 @@ doyen d’un camp de six que d’un camp de douze** — donc la catégorie « le
 Son hasard à elle vaut {{ doyen.hasard }} %, pas {{ f.hasard }} %.
 
 Le test ci-dessous compare le doyen à **tous** les autres présents, benjamins
-compris — c’est pourquoi son écart ({{ td.observe | round: 1 }} points) est un
+compris — c’est pourquoi son écart ({{ td.observe_arrondi }} points) est un
 peu plus petit que celui qu’on lit entre les deux lignes du tableau.
 
 {% include graphiques/feu-doyen.svg %}
@@ -241,7 +241,7 @@ quand on ne l’est pas. Le modèle nul absorbe l’effet de taille — et l’o
 n’en sort pas.</p>
 
 <div class="constat">
-  <p>{{ td.observe | round: 1 }} points d’écart, {{ td.ecart_types }}
+  <p>{{ td.observe_arrondi }} points d’écart, {{ td.ecart_types }}
   écarts-types, p brute {{ td.p }}, p ajustée {{ td.p_ajustee }}.
   <b>Non concluant.</b></p>
   <p>Sans le bon point de comparaison, on aurait publié près de cinq points
@@ -267,7 +267,7 @@ de l’épisode et partir quand on n’a rien gagné.</p>
   <p>A gagné le confort : <b>{{ cw.probabilite }} %</b>
   ({{ cw.cas }} sur {{ cw.effectif }}). N’a rien gagné :
   {{ cn.probabilite }} %.</p>
-  <p>{{ tc.observe | round: 1 }} points, {{ tc.ecart_types }} écarts-types,
+  <p>{{ tc.observe_arrondi }} points, {{ tc.ecart_types }} écarts-types,
   p brute {{ tc.p }}, p ajustée {{ tc.p_ajustee }}. <b>Non concluant.</b></p>
   <p>L’écart va dans le sens de la légende et il est loin d’être petit. Mais à
   {{ cw.effectif }} présences, il reste compatible avec un tirage. Le dire

@@ -23,7 +23,9 @@ import re
 import sys
 import unicodedata
 
-import yaml
+# Le module qui ecrit et relit _data/ (virgule decimale), dans tools/.
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import donnees  # noqa: E402
 
 ICI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, ICI)
@@ -307,7 +309,7 @@ def main():
     a.add_argument("--ecrire", action="store_true")
     a = a.parse_args()
 
-    lire_data = lambda n: yaml.safe_load(open(os.path.join(RACINE, "_data", n),
+    lire_data = lambda n: donnees.charger(open(os.path.join(RACINE, "_data", n),
                                               encoding="utf-8"))
     saisons = lire_data("saisons.yml")
     parts = lire_data("participations.yml")
@@ -356,7 +358,7 @@ def main():
         with open(SORTIE, "w", encoding="utf-8") as f:
             f.write("# Fichier genere par tools/extraction/epreuves_nommees.py.\n"
                     "# Ne pas editer a la main : toute modification sera ecrasee.\n")
-            yaml.safe_dump(sortie, f, allow_unicode=True, sort_keys=False, width=100)
+            donnees.ecrire(sortie, f, allow_unicode=True, sort_keys=False, width=100)
         print(f"\necrit : {SORTIE}")
     return 0
 

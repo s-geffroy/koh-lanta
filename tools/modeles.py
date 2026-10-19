@@ -4327,12 +4327,12 @@ def _fichier(nom):
     les couvre tous.
     """
     import os
-    import yaml
+    import donnees
     chemin = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
                           "_data", nom)
     if not os.path.exists(chemin):
         return {}
-    return yaml.safe_load(open(chemin, encoding="utf-8")) or {}
+    return donnees.charger(open(chemin, encoding="utf-8")) or {}
 
 
 def tout(par_saison, parts, conseils, epreuves, indicateurs_saison,

@@ -68,7 +68,7 @@ n’en sont pas : **on est plus souvent le doyen d’un camp de six que d’un c
 et un camp de six élimine une personne sur six. Le hasard propre à cette
 catégorie vaut {{ af.age[0].hasard }} %, pas {{ af.hasard }} %. Une fois ce
 décalage absorbé — et en comparant le doyen à **tous** les autres présents,
-benjamins compris — il reste {{ tdo.observe | round: 1 }} points,
+benjamins compris — il reste {{ tdo.observe_arrondi }} points,
 {{ tdo.ecart_types }} écarts-types, p ajustée {{ tdo.p_ajustee }} :
 **non concluant**.
 [Sachant qui est autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }}).
@@ -114,7 +114,7 @@ Conseil par conseil, être une femme n’expose pas :
 distinguent pas d’un tirage. En revanche, **être du sexe le moins représenté du
 camp assis ce soir-là protège** — {{ af.sexe[0].probabilite }} % contre
 {{ af.sexe[1].probabilite }} % pour le sexe majoritaire,
-{{ tsx.observe | round: 1 }} points, {{ tsx.ecart_types }} écarts-types, p
+{{ tsx.observe_arrondi }} points, {{ tsx.ecart_types }} écarts-types, p
 ajustée {{ tsx.p_ajustee }}.
 
 L’explication la plus économe : **la majorité se mange elle-même.** Quand un

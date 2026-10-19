@@ -26,8 +26,8 @@ elle la subit. À ce titre, c’est la plus intéressante.
 
 <ul class="chiffres">
   <li class="chiffre"><b>{{ a.saisons }}</b><span>saisons mesurées sur 34</span></li>
-  <li class="chiffre"><b>{{ a.sommet.moyenne | divided_by: 100000 | divided_by: 10.0 }} M</b><span>au sommet, en {{ a.sommet.annee }}</span></li>
-  <li class="chiffre"><b>{{ a.derniere.moyenne | divided_by: 100000 | divided_by: 10.0 }} M</b><span>en {{ a.derniere.annee }}</span></li>
+  <li class="chiffre"><b>{{ a.sommet.moyenne_millions }} M</b><span>au sommet, en {{ a.sommet.annee }}</span></li>
+  <li class="chiffre"><b>{{ a.derniere.moyenne_millions }} M</b><span>en {{ a.derniere.annee }}</span></li>
   <li class="chiffre"><b>−{{ a.chute }} %</b><span>depuis le sommet</span></li>
 </ul>
 
@@ -54,9 +54,9 @@ hasard.</p>
   <p>La rupture tombe sur <b><i>{{ a.premiere_apres.titre }}</i>
   ({{ a.premiere_apres.annee }})</b>, {{ tr.ecart_types }} écarts-types
   au-dessus d’une coupure au hasard, p ajustée {{ tr.p_ajustee }}.</p>
-  <p>Avant : <b>{{ a.moyenne_avant | divided_by: 100000 | divided_by: 10.0 }}
+  <p>Avant : <b>{{ a.moyenne_avant_millions }}
   millions</b> de téléspectateurs en moyenne, sur {{ a.avant }} saisons.
-  Après : <b>{{ a.moyenne_apres | divided_by: 100000 | divided_by: 10.0 }}
+  Après : <b>{{ a.moyenne_apres_millions }}
   millions</b>, sur {{ a.apres }}. Le programme a perdu la moitié de son public
   en une saison.</p>
 </div>
@@ -89,7 +89,7 @@ sérieuses soient toutes au même endroit.
 <tr>
   <td>{{ j.jour }}</td>
   <td class="nombre">{{ j.saisons }}</td>
-  <td class="nombre" data-val="{{ j.moyenne }}">{{ j.moyenne | divided_by: 100000 | divided_by: 10.0 }} M</td>
+  <td class="nombre" data-val="{{ j.moyenne }}">{{ j.moyenne_millions }} M</td>
   <td class="nombre">{{ j.premiere }}</td>
   <td class="nombre">{{ j.derniere }}</td>
 </tr>
