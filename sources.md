@@ -1015,16 +1015,19 @@ Wikidata, où un compte est rattaché à une personne identifiée. Chercher
 « Instagram + prénom » aurait donné des liens vers la mauvaise personne.
 
 **Le nom ne suffit pas à apparier, et c’est le point délicat.** Deux routes
-mènent d’un nom à un élément Wikidata : le titre d’un article francophone et
-le libellé de l’élément lui-même — à la dernière récupération, 31 et
-72 correspondances. Mais ces
+{% assign wd = site.data.wikidata %}
+mènent d’un nom à un élément Wikidata : le titre d’un article francophone
+({{ wd.correspondances_titre }} correspondances) et le libellé de l’élément
+lui-même ({{ wd.correspondances_libelle }}). Mais ces
 correspondances mêlent Claude Dartois et Teheiura Teahui à une danseuse
 ukrainienne et à un avocat, et rien dans le nom ne les sépare. Un élément n’est
 donc retenu que s’il réunit **deux conditions** : être un être humain, et que le
 jeu soit écrit quelque part — dans ses déclarations, dans sa description, ou
-dans le texte de son article. À la dernière récupération, **vingt-neuf**
-passaient, et cinquante candidats étaient écartés faute de preuve.
-{{ po.size }} portent aujourd’hui une photo libre.
+dans le texte de son article. **{{ wd.apparies }}** passent,
+{{ wd.candidats_ecartes }} candidats sont écartés faute de preuve.
+
+Sur ces {{ wd.apparies }}, {{ wd.images_trouvees }} portent une photo, dont
+{{ wd.portraits_publies }} sous une licence libre : ce sont les seules publiées.
 
 Ce que cela coûte, et qui est assumé : un aventurier dont l’article porte un
 titre désambiguïsé n’est pas trouvé, et reste sans photo. Une fiche nue vaut

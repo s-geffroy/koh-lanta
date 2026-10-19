@@ -459,6 +459,25 @@ def main():
                          " optionnel.\n")
         donnees.ecrire({"portraits": portraits}, f, allow_unicode=True,
                        sort_keys=True, default_flow_style=False)
+    # Le bilan de l'appariement, que /sources/ cite. Il n'existait que dans la
+    # sortie de ce script : la page l'ecrivait a la main, et rien ne disait
+    # quand il cessait d'etre vrai.
+    bilan = {
+        "aventuriers": len(personnes),
+        "correspondances_titre": len(par_titre),
+        "correspondances_libelle": len(par_nom),
+        "apparies": vus,
+        "candidats_ecartes": ecartes,
+        "noms_ambigus": ambigus,
+        "fiches_avec_comptes": len(reseaux),
+        "images_trouvees": avec_image,
+        "images_refusees": refusees,
+        "portraits_publies": len(portraits),
+    }
+    with open(os.path.join(DATA, "wikidata.yml"), "w", encoding="utf-8") as f:
+        f.write(entete + "# Le bilan de l'appariement aux elements Wikidata.\n")
+        donnees.ecrire(bilan, f, allow_unicode=True, sort_keys=False,
+                       default_flow_style=False)
 
     print(f"{len(personnes)} aventuriers, {vus} apparies sur Wikidata "
           f"({ecartes} candidats ecartes faute de preuve, "
