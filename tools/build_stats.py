@@ -1487,6 +1487,15 @@ def champs_d_affichage(stats):
     f["croissance_episode"] = round(croissance * f["pente_episode"]["pente"], 1)
     f["croissance_restants"] = round(croissance * f["pente_restants"]["pente"], 1)
 
+    # « 0,9 episode », « 2 episodes » : le pluriel francais commence a deux.
+    mot = "épisodes" if abs(f["croissance_episode"]) >= 2 else "épisode"
+    f["croissance_episode_texte"] = f"{donnees.decimal_fr(f['croissance_episode'])} {mot}"
+    # Le plateau reuni, en mediane, avec les plus petits puis les plus grands
+    # castings : ce que le texte disait « d'une dizaine a une quinzaine ».
+    for borne in ("min", "max"):
+        restants = [l["restants"] for l in f["lignes"]
+                    if l["casting"] == f[f"casting_{borne}"]]
+        f[f"restants_casting_{borne}"] = float(median(restants))
     # /completude/ : chaque case affiche sa part arrondie a l'unite, et la
     # derniere colonne prend le niveau du score de la ligne.
     for ligne in stats["completude_saisons"]["lignes"]:

@@ -39,7 +39,7 @@ fusion tombe, et par le nombre de joueurs qu’elle laisse en jeu.</p>
   {{ f.pente_episode.bas }} à {{ f.pente_episode.haut }}, p =
   {{ f.pente_episode.p }}. Sur toute la croissance observée, de
   {{ f.casting_min }} à {{ f.casting_max }} personnes, cela fait
-  <b>{{ f.croissance_episode }} épisode</b>.
+  <b>{{ f.croissance_episode_texte }}</b>.
   La médiane reste l’épisode {{ f.episode_median }}, de 2001 à 2026.</p>
   <p>Le nombre de joueurs restants, lui, bouge de
   <b>{{ f.pente_restants.pente }}</b> ({{ f.pente_restants.bas }} à
@@ -49,8 +49,9 @@ fusion tombe, et par le nombre de joueurs qu’elle laisse en jeu.</p>
   avec lui, et la date bouge à peine.</p>
   <p>La réunification suit donc la <b>grille de diffusion</b> bien plus que
   l’état du jeu. Les castings ont grossi de {{ f.croissance }} personnes ; la
-  fusion a reculé de moins d’un épisode, et le plateau réuni est passé d’une
-  dizaine de joueurs à une quinzaine. C’est le programme qui décide, et le jeu
+  fusion a reculé de {{ f.croissance_episode_texte }}, et le plateau réuni est passé de
+  {{ f.restants_casting_min }} joueurs, en médiane avec les plus petits castings, à
+  {{ f.restants_casting_max }} avec les plus grands. C’est le programme qui décide, et le jeu
   qui s’adapte — mais pas tout à fait sans concession.</p>
 </div>
 

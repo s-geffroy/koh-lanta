@@ -25099,6 +25099,9 @@ modeles:
     croissance: 8
     croissance_episode: "0,9"
     croissance_restants: "4,8"
+    croissance_episode_texte: 0,9 épisode
+    restants_casting_min: 10
+    restants_casting_max: 15
   ruptures:
     saisons: 26
     serie:
