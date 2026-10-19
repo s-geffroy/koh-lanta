@@ -6,25 +6,33 @@
 /* =========================================================================
    Koh-Lanta en chiffres — feuille de style unique.
 
-   Le theme `minima` n'est plus importe : les gabarits de _layouts/ sont ceux
-   du projet, et tout ce qui s'affiche est ecrit ici. `theme: minima` reste
-   dans _config.yml parce que GitHub Pages veut un theme de sa liste blanche ;
-   il ne sert plus a rien d'autre.
+   Le theme `minima` n'est pas importe : les gabarits de _layouts/ sont ceux du
+   projet, et tout ce qui s'affiche est ecrit ici. `theme: minima` reste dans
+   _config.yml parce que GitHub Pages veut un theme de sa liste blanche.
 
-   DIRECTION. Le site parle d'un jeu ou l'on tient un nombre de jours, sous
-   un bandeau jaune ou rouge. Ces deux couleurs sont la seule identite
-   coloree : elles portent DEJA une donnee (jaune 12 victoires, rouge 12), et
-   les employer a parts strictement egales dit ce que le site a trouve. Le
-   fond n'est pas un creme de papier : c'est un gris-vert delave, celui du sel
-   sur le bois. L'encre n'est pas noire mais vert-bleu profond.
+   DIRECTION (refonte du 19 octobre 2026 : « simple, efficace, sobre,
+   fonctionnelle »). Le site est un releve : chaque page est un resultat, puis
+   sa preuve. L'interface s'efface devant les chiffres -- neutres, filets de
+   1 px, un seul rayon, aucune ombre, aucun degrade decoratif.
+
+   Une seule audace : le TOTEM, moitie jaune, moitie rouge, a parts
+   strictement egales. Les deux couleurs portent deja une donnee (douze
+   victoires chacune) et cette egalite est le resultat le plus repete du site.
+   Hors des figures, elles ne servent qu'a lui : l'enseigne, la page courante
+   du sommaire, le filet des titres de section.
+
+   Une seule famille, Archivo. Son axe de LARGEUR (font-stretch 100 a 125 %)
+   donne aux titres leur carrure sans seconde police ; ses chiffres tabulaires
+   tiennent les colonnes. --titre, --texte et --mono la designent toutes les
+   trois : les SVG generes demandent `var(--mono)` pour leurs nombres, et les
+   renommer obligerait a regenerer les 128 figures.
 
    ATTENTION AUX VARIABLES DE FIGURE. Les SVG de _includes/graphiques/ sont
-   inlines dans les pages : ils lisent --surface, --encre, --grille, --axe,
-   --serie-N et --tribu-N. Renommer l'une de ces variables casse toutes les
-   figures en silence. --surface en particulier sert d'ecart de 2 px entre
-   deux marques voisines : les figures DOIVENT donc reposer sur un fond de
-   couleur --surface, et c'est pourquoi .figure est un panneau et non un bloc
-   transparent.
+   inlines dans les pages : ils lisent --surface, --encre, --encre-douce,
+   --encre-muette, --grille, --axe, --mono, --serie-N et --tribu-N. Renommer
+   l'une de ces variables casse toutes les figures en silence. --surface sert
+   en particulier d'ecart de 2 px entre deux marques voisines : les figures
+   DOIVENT reposer sur un fond --surface, d'ou le panneau de .figure.
    ========================================================================= */
 
 /* ATTENTION AU VIEUX SASS. Le constructeur de GitHub Pages compile ce fichier
@@ -33,20 +41,22 @@
    'rem' ». Toute expression melant deux unites doit donc etre enfermee dans un
    `calc()`, que Sass recopie sans y toucher. La construction echoue sinon --
    silencieusement pour le visiteur, qui continue de voir la version d'avant.
+   `tools/verifie_site.py` le controle.
 
    ------------------------------------------------------------------ jetons */
 
 :root {
-  /* Fonds. --sable est la page, --surface est ce qui est pose dessus. */
-  --sable:        #edefe9;
-  --surface:      #fbfcfa;
-  --surface-creuse: #f5f7f1;
+  /* Fonds. --sable est la page, --surface ce qui est pose dessus. Un gris
+     neutre a peine froid : jamais un creme de papier. */
+  --sable:          #f4f5f2;
+  --surface:        #ffffff;
+  --surface-creuse: #eff1ed;
 
-  --encre:        #101a18;
-  --encre-douce:  #4c5a56;
-  --encre-muette: #626e69;
-  --grille:       #dde0d6;
-  --axe:          #c2c7b8;
+  --encre:        #17201e;
+  --encre-douce:  #4f5a56;
+  --encre-muette: #646e6a;
+  --grille:       #e2e5df;
+  --axe:          #c3c8be;
 
   /* Les huit teintes categorielles du guide de visualisation, DANS LEUR
      ORDRE : cet ordre est le mecanisme qui garantit que deux series voisines
@@ -74,47 +84,31 @@
 
   --focus: #2a78d6;
 
-  /* Caracteres. Fraunces porte les titres : ses axes SOFT et WONK lui
-     donnent des terminaisons de travers, taillees plutot que dessinees.
-     Public Sans porte le texte. IBM Plex Mono porte tout ce qui compte :
-     oeils-de-boeuf, etiquettes, chiffres de tableau. */
-  --titre: "Fraunces", "Iowan Old Style", Georgia, serif;
-  --texte: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-           Roboto, "Helvetica Neue", Arial, sans-serif;
-  --mono:  "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo,
-           Consolas, monospace;
+  --titre: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+           "Helvetica Neue", Arial, sans-serif;
+  --texte: var(--titre);
+  --mono:  var(--titre);
 
-  --rayon: 10px;
+  --rayon: 6px;
 
-  /* La largeur du texte courant. Elle valait 36rem : le texte tenait une
-     colonne de lecture etroite, et les figures, les tableaux et les blocs de
-     chiffres debordaient sur sa droite jusqu'au bord du contenu. Les deux
-     largeurs ne coincidaient nulle part, et l'oeil se recalait a chaque
-     alternance texte / graphique.
-
-     `none` aligne le texte sur eux : dans .cadre, le contenu occupe la place
-     laissee par le rail, et tout ce qui est dans .prose la prend entierement.
-     C'est un ALIGNEMENT, pas un nombre : si la largeur du cadre ou du rail
-     change un jour, texte et figures bougeront ensemble, sans valeur a
-     tenir a jour ici.
-
-     Les trois textes qui gardent leur propre plafond -- le chapeau (34rem),
-     les legendes de figures (38rem) et le titre de page (18ch) -- le portent
-     dans leur propre regle et ne passent pas par ici. */
-  --colonne: none;
+  /* La colonne de lecture : environ 72 signes. Le TEXTE s'y tient ; figures,
+     tableaux, grilles et blocs de chiffres prennent toute la largeur. Les deux
+     partent du meme bord gauche : l'oeil ne se recale pas d'un bloc a
+     l'autre, seule la fin de ligne differe. */
+  --colonne: 41rem;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --sable:        #101210;
-    --surface:      #1a1d1a;
-    --surface-creuse: #212520;
+    --sable:          #121413;
+    --surface:        #1a1d1b;
+    --surface-creuse: #212522;
 
-    --encre:        #f0f3ec;
-    --encre-douce:  #b0b8b1;
-    --encre-muette: #8a948c;
-    --grille:       #2a2e29;
-    --axe:          #383d37;
+    --encre:        #eef1ec;
+    --encre-douce:  #b1b9b3;
+    --encre-muette: #8e9791;
+    --grille:       #2b302c;
+    --axe:          #3c423d;
 
     --serie-1: #3987e5;
     --serie-2: #d95926;
@@ -141,15 +135,15 @@
 /* La bascule manuelle doit l'emporter dans les deux sens : sans ce bloc, un
    lecteur dont le systeme est en clair ne pourrait pas passer en sombre. */
 :root[data-theme="dark"] {
-  --sable:        #101210;
-  --surface:      #1a1d1a;
-  --surface-creuse: #212520;
+  --sable:          #121413;
+  --surface:        #1a1d1b;
+  --surface-creuse: #212522;
 
-  --encre:        #f0f3ec;
-  --encre-douce:  #b0b8b1;
-  --encre-muette: #8a948c;
-  --grille:       #2a2e29;
-  --axe:          #383d37;
+  --encre:        #eef1ec;
+  --encre-douce:  #b1b9b3;
+  --encre-muette: #8e9791;
+  --grille:       #2b302c;
+  --axe:          #3c423d;
 
   --serie-1: #3987e5;
   --serie-2: #d95926;
@@ -194,7 +188,7 @@ a { color: inherit; }
 :focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 3px;
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
 .saut {
@@ -205,71 +199,86 @@ a { color: inherit; }
   color: var(--sable);
   padding: 0.7rem 1.1rem;
   z-index: 20;
-  border-radius: 0 0 var(--rayon) 0;
 }
 .saut:focus { left: 0; }
+
+/* Le totem : moitie jaune, moitie rouge, a parts exactement egales. Une seule
+   definition verticale, reprise par l'enseigne et le sommaire ; le filet des
+   titres de section la couche a l'horizontale (voir .prose h2). */
+.enseigne-totem,
+.rail-lien.ici::before {
+  background: linear-gradient(var(--tribu-jaune) 0 50%, var(--tribu-rouge) 50% 100%);
+}
 
 /* ------------------------------------------------------------------ entete */
 
 .entete {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 0.6rem 1.75rem;
   flex-wrap: wrap;
   max-width: 84rem;
   margin: 0 auto;
-  padding: 1.4rem 1.5rem 1.2rem;
+  padding: 0.95rem 1.5rem;
   border-bottom: 1px solid var(--grille);
 }
 
 .enseigne {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0.6rem;
   text-decoration: none;
   margin-right: auto;
 }
 
-/* Le totem : moitie jaune, moitie rouge, a parts exactement egales. C'est la
-   marque du site et c'est aussi son resultat le plus repete -- les deux
-   couleurs comptent le meme nombre de victoires. */
 .enseigne-totem {
-  width: 0.72rem;
-  height: 1.75rem;
+  width: 0.5rem;
+  height: 1.35rem;
   flex: none;
-  background: linear-gradient(var(--tribu-jaune) 0 50%, var(--tribu-rouge) 50% 100%);
-  clip-path: polygon(50% 0, 100% 16%, 100% 100%, 0 100%, 0 16%);
+  clip-path: polygon(50% 0, 100% 18%, 100% 100%, 0 100%, 0 18%);
 }
 
-.enseigne-texte { display: block; line-height: 1.12; }
+.enseigne-texte { display: block; line-height: 1.2; white-space: nowrap; }
 .enseigne-texte b {
-  display: block;
-  font-family: var(--titre);
-  font-variation-settings: "WONK" 0, "SOFT" 0, "opsz" 40;
-  font-weight: 700;
-  font-size: 1.22rem;
-  letter-spacing: -0.015em;
+  font-weight: 750;
+  font-stretch: 118%;
+  font-size: 1.06rem;
+  letter-spacing: -0.01em;
 }
 .enseigne-texte em {
-  display: block;
   font-style: normal;
-  font-family: var(--mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--encre-muette);
-  margin-top: 0.12rem;
+  font-size: 1.06rem;
+  color: var(--encre-douce);
+  margin-left: 0.2rem;
+}
+
+/* Le selecteur des deux espaces, Donnees et Articles. Deux liens, pas une
+   bascule : chacun mene a une page, et il marche sans JavaScript. L'espace
+   courant est souligne d'un trait plein ; l'autre reste en encre douce. */
+.espaces { display: flex; gap: 1.3rem; }
+.espace {
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--encre-douce);
+  padding: 0.3rem 0;
+  border-bottom: 2px solid transparent;
+}
+.espace:hover { color: var(--encre); }
+.espace.ici {
+  color: var(--encre);
+  font-weight: 650;
+  border-bottom-color: var(--encre);
 }
 
 .bascule {
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
+  font: inherit;
+  font-size: 0.82rem;
   color: var(--encre-douce);
-  background: var(--surface);
+  background: transparent;
   border: 1px solid var(--grille);
-  border-radius: 999px;
-  padding: 0.38rem 0.85rem;
+  border-radius: var(--rayon);
+  padding: 0.3rem 0.7rem;
   cursor: pointer;
 }
 .bascule:hover { color: var(--encre); border-color: var(--axe); }
@@ -284,12 +293,12 @@ a { color: inherit; }
   padding: 0 1.5rem 4rem;
 }
 
-.contenu { min-width: 0; padding-top: 2.2rem; }
+.contenu { min-width: 0; padding-top: 2.4rem; }
 
 @media (min-width: 62em) {
   .cadre {
     display: grid;
-    grid-template-columns: 15rem minmax(0, 1fr);
+    grid-template-columns: 13.5rem minmax(0, 1fr);
     gap: 3.5rem;
   }
 }
@@ -298,7 +307,6 @@ a { color: inherit; }
 
 .rail {
   border-bottom: 1px solid var(--grille);
-  padding-bottom: 0.4rem;
 }
 
 .rail-poignee {
@@ -307,18 +315,15 @@ a { color: inherit; }
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  padding: 0.9rem 0;
-  font-family: var(--mono);
-  font-size: 0.74rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--encre-douce);
+  padding: 0.85rem 0;
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 .rail-poignee::-webkit-details-marker { display: none; }
 
 .rail-chevron {
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.45rem;
+  height: 0.45rem;
   border-right: 1.5px solid currentColor;
   border-bottom: 1.5px solid currentColor;
   transform: rotate(45deg);
@@ -328,55 +333,64 @@ a { color: inherit; }
 
 .rail-corps { padding-bottom: 1rem; }
 
+/* Deux niveaux, et ils se distinguent par la graisse seule : la section en
+   encre pleine, le theme en encre muette. */
 .rail-titre {
-  font-family: var(--mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--encre-muette);
-  margin: 1.5rem 0 0.5rem;
+  font-size: 0.86rem;
+  font-weight: 700;
+  margin: 1.6rem 0 0.35rem;
 }
-.rail-titre:first-child { margin-top: 0.4rem; }
+.rail-titre:first-child { margin-top: 0.3rem; }
+
+.rail-theme {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--encre-muette);
+  margin: 1rem 0 0.2rem;
+}
 
 .rail-liste { list-style: none; margin: 0; padding: 0; }
 
 .rail-lien {
+  position: relative;
   display: block;
   text-decoration: none;
   color: var(--encre-douce);
-  font-size: 0.93rem;
-  padding: 0.32rem 0 0.32rem 0.85rem;
-  border-left: 2px solid var(--grille);
+  font-size: 0.9rem;
+  line-height: 1.35;
+  padding: 0.28rem 0 0.28rem 0.8rem;
+  border-left: 1px solid var(--grille);
 }
 .rail-lien:hover { color: var(--encre); border-left-color: var(--axe); }
 
 /* La page courante est marquee par le totem couche : jaune puis rouge. */
-.rail-lien.ici {
-  color: var(--encre);
-  font-weight: 600;
-  border-left-color: transparent;
-  background:
-    linear-gradient(var(--tribu-jaune) 0 50%, var(--tribu-rouge) 50% 100%)
-    left / 2px 100% no-repeat;
+.rail-lien.ici { color: var(--encre); font-weight: 600; }
+.rail-lien.ici::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
 }
 
 @media (min-width: 62em) {
   .rail {
     border-bottom: 0;
-    padding-bottom: 0;
     position: sticky;
-    top: 1.5rem;
+    top: 0;
     align-self: start;
-    max-height: calc(100vh - 3rem);
+    max-height: 100vh;
     overflow-y: auto;
-    padding-top: 2.4rem;
+    padding-top: 2.3rem;
+    scrollbar-width: thin;
   }
   .rail-poignee { display: none; }
   /* Deplie en permanence sur grand ecran, que <details> soit ouvert ou non.
      Deux regles, parce que les navigateurs ne s'y prennent pas pareil : les
      anciens masquent l'enfant, les recents masquent ::details-content. Une
      regle inconnue est ignoree entiere, aucune ne gene l'autre. */
-  .rail-corps { display: block; }
+  .rail-corps { display: block; padding-bottom: 2.5rem; }
 }
 
 @media (min-width: 62em) {
@@ -385,104 +399,96 @@ a { color: inherit; }
 
 /* ------------------------------------------------------- entete de la page */
 
-.page-entete { margin-bottom: 2.6rem; }
+.page-entete { margin-bottom: 2.4rem; }
 
+/* L'oeil situe la page : sa section, son theme, son rang dans le fil de
+   lecture. Une ligne d'encre muette, a la casse de la phrase. */
 .oeil {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
-  gap: 0.9rem;
-  margin: 0 0 1rem;
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  gap: 0.2rem 0.9rem;
+  margin: 0 0 0.8rem;
+  font-size: 0.88rem;
   color: var(--encre-muette);
 }
-.oeil-rang { color: var(--encre-douce); }
+.oeil-rang { font-variant-numeric: tabular-nums; color: var(--encre-douce); }
 .oeil-rang i { font-style: normal; color: var(--encre-muette); }
 
 .page-titre {
-  font-family: var(--titre);
-  font-variation-settings: "WONK" 1, "SOFT" 0, "opsz" 120;
-  font-weight: 700;
-  font-size: clamp(2.1rem, calc(1.3rem + 2.6vw), 3.3rem);
-  line-height: 1.03;
+  font-weight: 750;
+  font-stretch: 112%;
+  font-size: clamp(2rem, calc(1.45rem + 1.8vw), 2.75rem);
+  line-height: 1.08;
   letter-spacing: -0.02em;
   margin: 0;
-  max-width: 18ch;
+  max-width: 24ch;
 }
 
 .chapeau {
-  font-size: 1.16rem;
+  font-size: 1.15rem;
   line-height: 1.5;
   color: var(--encre-douce);
-  max-width: 34rem;
-  margin: 1.1rem 0 0;
+  max-width: 36rem;
+  margin: 0.9rem 0 0;
 }
 
 /* ------------------------------------------------------------------- prose */
 
-.prose > * { max-width: var(--colonne); }
+/* Le texte tient la colonne de lecture ; tout le reste prend la largeur. La
+   liste est celle des blocs de TEXTE, et non celle des blocs larges : un
+   composant oublie ici s'etale, il ne se fait pas couper. */
+.prose > p,
+.prose > ul,
+.prose > ol,
+.prose > h2,
+.prose > h3,
+.prose > blockquote,
+.prose > .note,
+.prose > .constat,
+.prose > .legende-figure,
+.prose > .chapeau-theme,
+.prose > .reseaux { max-width: var(--colonne); }
 
-/* La liste ci-dessous est CONSERVEE alors que --colonne vaut `none` et qu'elle
-   ne retire donc plus rien. Elle n'est pas morte : sa specificite (0,2,0) bat
-   celle des regles de ces classes prises seules (0,1,0), et deux d'entre elles
-   -- .accueil-titre et .peigne-legende -- portent un max-width plus etroit
-   qu'elle annule. La supprimer ferait passer le grand titre de l'accueil a
-   15ch et la legende du peigne a 38rem : deux changements de mise en page
-   qu'aucune demande ne couvre. */
-.prose > .figure,
-.prose > .tableau-large,
-.prose > .chiffres,
-.prose > .cartes,
-.prose > .vitrine,
-.prose > .peigne,
-.prose > .peigne-legende,
-.prose > .accueil-titre,
-.prose > .saison-grille,
-.prose > .filtres { max-width: none; }
-
-.prose p, .prose ul, .prose ol { margin: 0 0 1.15rem; }
+.prose p, .prose ul, .prose ol { margin: 0 0 1.1rem; }
 .prose li { margin: 0.3rem 0; }
 
 .prose h2 {
-  font-family: var(--titre);
-  font-variation-settings: "WONK" 1, "SOFT" 0, "opsz" 60;
   font-weight: 700;
-  font-size: clamp(1.45rem, calc(1.15rem + 1vw), 1.95rem);
-  line-height: 1.12;
+  font-stretch: 110%;
+  font-size: clamp(1.4rem, calc(1.2rem + 0.6vw), 1.7rem);
+  line-height: 1.15;
   letter-spacing: -0.015em;
-  margin: 3.2rem 0 1rem;
+  margin: 3.2rem 0 0.9rem;
 }
 
-/* Le filet a deux temps sous chaque titre de section : la meme moitie jaune,
-   la meme moitie rouge que le totem de l'entete. */
+/* Le filet a deux temps au-dessus de chaque titre de section : la meme moitie
+   jaune, la meme moitie rouge que le totem de l'entete. */
 .prose h2::before {
   content: "";
   display: block;
-  width: 2.6rem;
+  width: 1.75rem;
   height: 3px;
-  margin-bottom: 0.95rem;
-  background: linear-gradient(90deg, var(--tribu-jaune) 0 50%, var(--tribu-rouge) 50%);
+  margin-bottom: 0.85rem;
+  background-image: linear-gradient(90deg, var(--tribu-jaune) 0 50%, var(--tribu-rouge) 50%);
 }
 
 .prose h3 {
-  font-family: var(--texte);
-  font-weight: 700;
-  font-size: 1.06rem;
-  letter-spacing: 0.005em;
-  margin: 2.1rem 0 0.7rem;
+  font-weight: 650;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  margin: 2.1rem 0 0.6rem;
 }
 
 .prose a {
   color: var(--encre);
-  text-decoration-color: var(--tribu-rouge);
-  text-decoration-thickness: 2px;
+  text-decoration-color: var(--axe);
+  text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
-.prose a:hover { color: var(--tribu-rouge); }
+.prose a:hover { text-decoration-color: var(--encre); }
 
-.prose strong { font-weight: 700; }
+.prose strong, .prose b { font-weight: 650; }
 
 .prose hr {
   border: 0;
@@ -492,30 +498,22 @@ a { color: inherit; }
 
 /* ---------------------------------------------------------------- chiffres */
 
+/* Une rangee de mesures, pas des tuiles : les nombres posent sur un filet. */
 .chiffres {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
-  gap: 1px;
-  background: var(--grille);
-  border: 1px solid var(--grille);
-  border-radius: var(--rayon);
-  overflow: hidden;
-  margin: 1.8rem 0 2.4rem;
-  padding: 0;
+  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+  gap: 1.2rem 1.5rem;
   list-style: none;
-}
-
-.chiffre {
-  background: var(--surface);
-  padding: 1.05rem 1.1rem 1.15rem;
+  margin: 1.8rem 0 2.4rem;
+  padding: 1rem 0 0;
+  border-top: 1px solid var(--grille);
 }
 
 .chiffre b {
   display: block;
-  font-family: var(--titre);
-  font-variation-settings: "WONK" 1, "SOFT" 0, "opsz" 48;
   font-weight: 700;
-  font-size: 1.85rem;
+  font-stretch: 108%;
+  font-size: 1.7rem;
   line-height: 1.05;
   letter-spacing: -0.02em;
   font-variant-numeric: tabular-nums;
@@ -523,19 +521,21 @@ a { color: inherit; }
 
 .chiffre span {
   display: block;
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   line-height: 1.35;
   color: var(--encre-douce);
-  margin-top: 0.4rem;
+  margin-top: 0.3rem;
 }
 
 /* ----------------------------------------------------------------- figures */
 
 /* Un panneau, et non un bloc transparent : les ecarts de 2 px entre marques
    sont dessines en --surface, ils doivent tomber sur du --surface. */
-.figure {
-  margin: 1.8rem 0 0.6rem;
-  padding: 1.4rem 1.3rem 1.1rem;
+.figure,
+.vitrine,
+.peigne {
+  margin: 1.6rem 0 0.6rem;
+  padding: 1.3rem 1.3rem 1rem;
   background: var(--surface);
   border: 1px solid var(--grille);
   border-radius: var(--rayon);
@@ -543,39 +543,26 @@ a { color: inherit; }
 }
 
 .graphique { width: 100%; height: auto; display: block; min-width: 32rem; }
+.vitrine svg,
+.peigne svg { width: 100%; height: auto; display: block; min-width: 34rem; }
 
 /* Chaque marque de donnee porte un <title> : le curseur l'annonce. */
 .marque { cursor: help; }
 .marque:hover rect,
 .marque:hover circle { filter: brightness(1.12); }
 
-.legende-figure {
-  font-size: 0.86rem;
+.legende-figure,
+.peigne-legende {
+  font-size: 0.88rem;
   line-height: 1.5;
   color: var(--encre-douce);
   margin: 0 0 2.4rem;
-  max-width: 38rem;
 }
 /* Une legende collee a sa figure : sans cette regle, la marge de paragraphe
    de .prose viendrait s'intercaler entre les deux. */
-.figure + .legende-figure { margin-top: 0.55rem; }
-
-/* -------------------------------------------- les figures en pleine largeur */
-
-/* Deux figures sortent du lot et partagent le meme cadre : la vitrine
-   d'ouverture (les deux courbes de survie) et le peigne des torches, ou
-   chaque trait est un aventurier. */
-.vitrine,
-.peigne {
-  background: var(--surface);
-  border: 1px solid var(--grille);
-  border-radius: var(--rayon);
-  padding: 1.6rem 1.5rem 1.2rem;
-  margin: 0 0 0.7rem;
-  overflow-x: auto;
-}
-.vitrine svg,
-.peigne svg { width: 100%; height: auto; display: block; min-width: 34rem; }
+.figure + .legende-figure,
+.vitrine + .peigne-legende,
+.peigne + .peigne-legende { margin-top: 0.6rem; }
 
 .peigne-traits { animation: allumage 1.5s ease-out both; }
 
@@ -602,28 +589,25 @@ a { color: inherit; }
 table {
   border-collapse: collapse;
   width: 100%;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
 }
 
 thead th {
   position: sticky;
   top: 0;
   z-index: 1;
-  background: var(--surface-creuse);
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  background: var(--surface);
+  font-size: 0.8rem;
+  font-weight: 600;
   color: var(--encre-douce);
   text-align: left;
-  padding: 0.75rem 0.8rem;
-  border-bottom: 1px solid var(--grille);
+  padding: 0.7rem 0.8rem 0.6rem;
+  border-bottom: 1px solid var(--axe);
   white-space: nowrap;
 }
 
 tbody td {
-  padding: 0.52rem 0.8rem;
+  padding: 0.5rem 0.8rem;
   border-bottom: 1px solid var(--grille);
   vertical-align: baseline;
 }
@@ -632,19 +616,18 @@ tbody tr[hidden] { display: none; }
 tbody tr:hover td { background: var(--surface-creuse); }
 
 td.nombre, th.nombre { text-align: right; font-variant-numeric: tabular-nums; }
-td.nombre { font-family: var(--mono); font-size: 0.83rem; }
 
 /* En-tete de tableau cliquable : le curseur et la fleche sont poses par le
    script, jamais par le balisage. */
 th[aria-sort] { cursor: pointer; }
 th[aria-sort]:hover { color: var(--encre); }
-th[aria-sort="ascending"]::after  { content: " ↑"; color: var(--tribu-rouge); }
-th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); }
+th[aria-sort="ascending"]::after  { content: " ↑"; color: var(--encre); }
+th[aria-sort="descending"]::after { content: " ↓"; color: var(--encre); }
 
 .pastille {
   display: inline-block;
-  width: 0.62rem;
-  height: 0.62rem;
+  width: 0.6rem;
+  height: 0.6rem;
   border-radius: 2px;
   margin-right: 0.45rem;
   vertical-align: -1px;
@@ -657,59 +640,77 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); 
   height: 3px;
   margin-top: 3px;
   border-radius: 2px;
-  background: var(--tribu-rouge);
-  opacity: 0.55;
+  background: var(--axe);
 }
+
+/* Les tableaux de classement se suivent par dizaines sur une meme page --
+   quatorze sur /statistiques/top/. Sans largeur imposee, la colonne du rang
+   et celle des noms demarreraient a une abscisse differente dans chaque
+   tableau. Le selecteur ne vise QUE les tableaux dont la premiere colonne
+   est un nombre ; `+ td` cible la colonne qui suit ce rang. */
+.prose table th:first-child.nombre,
+.prose table td:first-child.nombre {
+  width: 3.6rem;
+  white-space: normal;
+}
+
+.prose table th:first-child.nombre + th,
+.prose table td:first-child.nombre + td {
+  width: 13rem;
+}
+
+/* Un tableau de plusieurs centaines de lignes defile dans sa propre boite :
+   sans hauteur bornee, la page ferait quinze ecrans et l'en-tete collant
+   n'aurait rien a quoi se coller. */
+.tableau-haut { max-height: 78vh; }
 
 /* ------------------------------------------------------------------ cartes */
 
+/* Des entrees de sommaire, pas des boites : un filet au-dessus de chacune,
+   le titre en encre pleine, le resume en encre douce. */
 .cartes {
   list-style: none;
   margin: 1.8rem 0 2.4rem;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  gap: 1px;
-  background: var(--grille);
-  border: 1px solid var(--grille);
-  border-radius: var(--rayon);
-  overflow: hidden;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 0 2rem;
 }
 
-.carte { background: var(--surface); }
+.carte { border-top: 1px solid var(--grille); }
 
 .carte a {
   display: block;
   height: 100%;
-  padding: 1.15rem 1.2rem 1.3rem;
+  padding: 0.9rem 0 1.3rem;
   text-decoration: none;
   color: inherit;
 }
-.carte a:hover { background: var(--surface-creuse); }
 
-/* « 4/9 » : le rang porte le poids, le total reste en clair. Les deux sont du
-   texte, donc tous deux dans une encre lisible -- jamais un gris de filet. */
 .carte-rang {
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  display: block;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
   color: var(--encre-muette);
 }
-.carte-rang i { font-style: normal; font-weight: 400; }
+.carte-rang i { font-style: normal; }
 
 .carte-titre {
   display: block;
-  font-weight: 700;
-  font-size: 1.02rem;
-  margin: 0.45rem 0 0.3rem;
-  line-height: 1.25;
+  font-weight: 650;
+  font-size: 1.05rem;
+  line-height: 1.3;
+  margin: 0.15rem 0 0.3rem;
 }
-.carte a:hover .carte-titre { color: var(--tribu-rouge); }
+.carte a:hover .carte-titre {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
 
 .carte-resume {
   display: block;
-  font-size: 0.87rem;
+  font-size: 0.9rem;
   line-height: 1.45;
   color: var(--encre-douce);
 }
@@ -722,53 +723,63 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); 
   padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
-  gap: 0.8rem;
+  gap: 0.75rem;
 }
 
 .saison {
   background: var(--surface);
   border: 1px solid var(--grille);
   border-radius: var(--rayon);
-  padding: 0.9rem 1rem 1rem;
-  border-top: 3px solid var(--axe);
+  padding: 0.85rem 1rem 0.95rem;
 }
 
 .saison-numero {
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
   color: var(--encre-muette);
 }
-.saison-titre { font-weight: 700; line-height: 1.25; margin: 0.25rem 0 0.35rem; }
-.saison-lieu { font-size: 0.84rem; color: var(--encre-douce); margin: 0; }
+.saison-titre { font-weight: 650; line-height: 1.25; margin: 0.2rem 0 0.3rem; }
+.saison-lieu { font-size: 0.86rem; color: var(--encre-douce); margin: 0; }
 .saison-vainqueur {
-  font-size: 0.84rem;
+  font-size: 0.86rem;
   margin: 0.55rem 0 0;
   padding-top: 0.55rem;
   border-top: 1px solid var(--grille);
 }
 .saison-vainqueur b { font-weight: 600; }
+.saison-tribus { margin: 0.5rem 0 0; font-size: 0.8rem; color: var(--encre-muette); }
+.saison-tribus-noms { vertical-align: 1px; }
 
-/* ------------------------------------------------------------------ notes */
+/* ------------------------------------------------------- notes et constats */
 
+/* Une precision de methode : en retrait, en encre douce. */
 .note {
   background: var(--surface-creuse);
-  border-left: 3px solid var(--axe);
-  border-radius: 0 6px 6px 0;
-  padding: 0.85rem 1rem;
+  border-radius: var(--rayon);
+  padding: 0.8rem 1rem;
   margin: 1.5rem 0 2rem;
   color: var(--encre-douce);
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   line-height: 1.55;
 }
 .note a { color: var(--encre); }
+
+/* Le constat mis en avant : un trait d'encre a gauche, pas une boite. */
+.constat {
+  border-left: 2px solid var(--encre);
+  padding: 0.1rem 0 0.1rem 1.1rem;
+  margin: 1.6rem 0 2rem;
+}
+.constat p { margin: 0 0 0.6rem; }
+.constat p:last-child { margin-bottom: 0; }
+.constat b { font-weight: 650; }
 
 /* ----------------------------------------------------------------- filtres */
 
 .filtres {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.7rem;
+  gap: 0.8rem;
   align-items: flex-end;
   margin: 1.6rem 0 1rem;
   padding: 1rem 1.1rem;
@@ -780,40 +791,42 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); 
 
 .champ { display: flex; flex-direction: column; gap: 0.3rem; }
 .champ label {
-  font-family: var(--mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--encre-muette);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--encre-douce);
 }
 .champ input, .champ select {
   font: inherit;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--encre);
-  background: var(--surface-creuse);
-  border: 1px solid var(--grille);
-  border-radius: 6px;
-  padding: 0.42rem 0.6rem;
+  background: var(--sable);
+  border: 1px solid var(--axe);
+  border-radius: var(--rayon);
+  padding: 0.4rem 0.6rem;
   min-width: 11rem;
 }
 .champ input { min-width: 15rem; }
 
 .compte {
   margin-left: auto;
-  font-family: var(--mono);
-  font-size: 0.76rem;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
   color: var(--encre-douce);
   padding-bottom: 0.5rem;
 }
+
+/* Le bouton « tout effacer » emprunte l'allure de la bascule de theme, mais
+   il se pose dans une rangee de champs : il s'aligne sur eux. */
+.filtres .bascule { padding: 0.42rem 0.8rem; }
 
 /* --------------------------------------------------------------------- fil */
 
 .fil {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.8rem;
+  gap: 1.5rem;
   margin-top: 4rem;
-  padding-top: 2rem;
+  padding-top: 1.2rem;
   border-top: 1px solid var(--grille);
 }
 
@@ -821,47 +834,41 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); 
   display: block;
   text-decoration: none;
   color: inherit;
-  background: var(--surface);
-  border: 1px solid var(--grille);
-  border-radius: var(--rayon);
-  padding: 0.9rem 1.05rem;
 }
-.fil-lien:hover { border-color: var(--axe); }
 .fil-apres { text-align: right; }
 
 .fil-sens {
   display: block;
-  font-family: var(--mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 0.82rem;
   color: var(--encre-muette);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.15rem;
 }
 .fil-titre { display: block; font-weight: 600; line-height: 1.3; }
+.fil-lien:hover .fil-titre {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
 
 /* -------------------------------------------------------------------- pied */
 
-.pied {
-  border-top: 1px solid var(--grille);
-  background: var(--surface);
-}
+.pied { border-top: 1px solid var(--grille); }
 
 .pied-corps {
   max-width: 84rem;
   margin: 0 auto;
-  padding: 2.2rem 1.5rem 3rem;
+  padding: 2rem 1.5rem 3rem;
   display: grid;
-  gap: 0.9rem;
+  gap: 0.9rem 2rem;
   grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
 }
 
-.pied-signature { margin: 0; font-size: 0.88rem; line-height: 1.55; }
-.pied-signature b { font-family: var(--titre); font-weight: 700; font-size: 1.02rem; }
+.pied-signature { margin: 0; font-size: 0.86rem; line-height: 1.55; color: var(--encre-douce); }
+.pied-signature b { font-weight: 700; color: var(--encre); }
 
 .pied-mention {
   margin: 0;
-  font-size: 0.82rem;
+  font-size: 0.86rem;
   line-height: 1.55;
   color: var(--encre-douce);
 }
@@ -869,81 +876,98 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); 
 
 /* ------------------------------------------------------------- l'accueil */
 
+/* Le seul titre du site pousse a la largeur maximale de la police : c'est le
+   moment ou la typographie parle. Partout ailleurs, elle se tient. */
 .accueil-titre {
-  font-family: var(--titre);
-  font-variation-settings: "WONK" 1, "SOFT" 0, "opsz" 144;
-  font-weight: 700;
-  font-size: clamp(2.4rem, calc(1.1rem + 4.6vw), 4.6rem);
+  font-weight: 800;
+  font-stretch: 125%;
+  font-size: clamp(2.5rem, calc(1.5rem + 3.6vw), 4.4rem);
   line-height: 0.98;
-  letter-spacing: -0.03em;
-  margin: 0.4rem 0 1.1rem;
-  max-width: 15ch;
+  letter-spacing: -0.035em;
+  margin: 0 0 1rem;
+  max-width: 13ch;
 }
 
-.accueil-chapeau {
-  font-size: 1.18rem;
+.prose > .accueil-chapeau {
+  font-size: 1.2rem;
   line-height: 1.5;
   color: var(--encre-douce);
   max-width: 34rem;
-  margin: 0 0 2.4rem;
+  margin: 0 0 2.2rem;
 }
 
-.peigne-legende {
-  font-size: 0.86rem;
-  line-height: 1.5;
+/* Les ordres de grandeur, en une phrase sous la figure. */
+.prose > .accueil-mesures {
+  max-width: none;
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
   color: var(--encre-douce);
-  margin: 0 0 2.6rem;
-  max-width: 38rem;
+  font-variant-numeric: tabular-nums;
+}
+.accueil-mesures b { color: var(--encre); font-weight: 650; }
+
+/* Ce que les chiffres disent : une phrase, puis la page qui la demontre. */
+.constats {
+  list-style: none;
+  margin: 1.2rem 0 2.4rem;
+  padding: 0;
+}
+.prose .constats li {
+  margin: 0;
+  padding: 0.95rem 0 1rem;
+  border-top: 1px solid var(--grille);
+}
+.constats li:last-child { border-bottom: 1px solid var(--grille); }
+.constats p { margin: 0; }
+.prose .constats p + p { margin-top: 0.3rem; font-size: 0.88rem; }
+.prose .constats p + p a { color: var(--encre-douce); }
+.prose .constats p + p a:hover { color: var(--encre); }
+
+/* ---------------------------------------------------------------- articles */
+
+/* Un article se LIT d'un bout a l'autre : meme colonne que le texte du site,
+   tableaux et formules sur toute la largeur. */
+.signature {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1.1rem;
+  margin: 1.2rem 0 0;
+  font-size: 0.88rem;
+  color: var(--encre-muette);
+}
+.signature span { color: var(--encre); font-weight: 600; }
+.signature a { color: var(--encre-douce); }
+.signature a:hover { color: var(--encre); }
+
+.article blockquote {
+  margin: 1.6rem 0;
+  padding: 0.1rem 0 0.1rem 1.1rem;
+  border-left: 2px solid var(--encre);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+.article blockquote p { margin: 0; }
+
+/* Un tableau d'article est ecrit en Markdown : on ne peut pas l'envelopper
+   dans .tableau-large. Il defile donc lui-meme -- la page, jamais. */
+.article table {
+  display: block;
+  overflow-x: auto;
+  margin: 1.4rem 0 1.6rem;
 }
 
-/* Le constat mis en avant : un bloc, pas une carte de plus. */
-.constat {
-  background: var(--surface);
-  border: 1px solid var(--grille);
-  border-left: 3px solid var(--tribu-rouge);
-  border-radius: 0 var(--rayon) var(--rayon) 0;
-  padding: 1.2rem 1.3rem 1.3rem;
-  margin: 1.4rem 0 2rem;
+/* Les formules de MathJax : une formule large defile, elle ne pousse pas la
+   page. */
+.article mjx-container[display="true"] {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.3rem 0;
 }
-.constat p { margin: 0 0 0.6rem; }
-.constat p:last-child { margin-bottom: 0; }
-.constat b { font-weight: 700; }
 
-/* ------------------------------------------------- retouches de composants */
-
-.saison-tribus { margin: 0.5rem 0 0; font-size: 0.8rem; color: var(--encre-muette); }
-.saison-tribus-noms { vertical-align: 1px; }
-
-/* Un tableau de plusieurs centaines de lignes defile dans sa propre boite :
-   sans hauteur bornee, la page ferait quinze ecrans et l'en-tete collant
-   n'aurait rien a quoi se coller. */
-.tableau-haut { max-height: 78vh; }
-
-/* Le bouton « tout effacer » emprunte l'allure de la bascule de theme, mais
-   il se pose dans une rangee de champs : il s'aligne sur eux. */
-.filtres .bascule { margin-bottom: 0.05rem; }
-
-/* ------------------------------------------------------------ petits ecrans */
-
-@media (max-width: 44em) {
-  body { font-size: 16px; }
-
-  .entete { gap: 0.9rem 1.2rem; }
-
-  /* Deux fleches cote a cote deviennent illisibles sous 400 px. */
-  .fil { grid-template-columns: 1fr; }
-  .fil-apres { text-align: left; }
-
-  .filtres { flex-direction: column; align-items: stretch; }
-  .champ input, .champ select { min-width: 0; width: 100%; }
-  .compte { margin-left: 0; padding-bottom: 0; }
-
-  .chiffres { grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr)); }
-  .chiffre b { font-size: 1.55rem; }
-
-  .figure { padding: 1rem 0.9rem 0.8rem; }
-  .vitrine,
-  .peigne { padding: 1.1rem 1rem 0.9rem; }
+.article .references li {
+  font-size: 0.9rem;
+  color: var(--encre-douce);
+  overflow-wrap: anywhere;
 }
 
 /* ------------------------------------------- la grille de completude */
@@ -995,8 +1019,8 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); 
   position: relative;
   text-align: center;
   padding: 0.34rem 0.3rem;
-  font-family: var(--mono);
   font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
   min-width: 2.6rem;
 }
 .grille-completude td.case::before {
@@ -1018,6 +1042,13 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); 
   background-image: repeating-linear-gradient(
     45deg, transparent, transparent 3px,
     var(--grille) 3px, var(--grille) 4px);
+}
+
+/* La derniere colonne de la grille : la moyenne de la ligne. Meme trame que
+   les cases, un peu plus large -- elle affiche « 92.1 % ». */
+.grille-completude td.case.ensemble {
+  min-width: 3.9rem;
+  border-left: 1px solid var(--grille);
 }
 
 /* La legende des cinq niveaux, posee au-dessus de la grille. */
@@ -1053,24 +1084,6 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); 
   border: 1px solid var(--grille);
 }
 
-/* Le chiffre pose a cote d'une entree du rail : il vient de _data/stats.yml,
-   jamais d'un nombre recopie dans la navigation. */
-.rail-badge {
-  font-family: var(--mono);
-  font-size: 0.72em;
-  color: var(--encre-muette);
-  margin-left: 0.45rem;
-  white-space: nowrap;
-}
-.rail-lien.ici .rail-badge { color: inherit; opacity: 0.75; }
-
-/* La derniere colonne de la grille : la moyenne de la ligne. Meme trame que
-   les cases, un peu plus large -- elle affiche « 92.1 % ». */
-.grille-completude td.case.ensemble {
-  min-width: 3.9rem;
-  border-left: 1px solid var(--grille);
-}
-
 /* ---------------------------------------------------------------- portrait */
 
 /* Le portrait d'un aventurier et son credit. Les deux vont ENSEMBLE : les
@@ -1087,14 +1100,12 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); 
   width: 100%;
   height: auto;
   border-radius: var(--rayon);
-  border: 1px solid var(--grille);
   background: var(--surface-creuse);
 }
 
 .portrait figcaption {
   margin-top: 0.5rem;
-  font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.76rem;
   line-height: 1.45;
   color: var(--encre-muette);
 }
@@ -1106,34 +1117,7 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); 
   margin: 0 0 1.8rem;
   font-size: 0.92rem;
 }
-
-.reseaux span {
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--encre-muette);
-  margin-right: 0.4rem;
-}
-
-/* L'intertitre d'un theme du sommaire. Plus discret qu'un titre de section :
-   la hierarchie doit se voir d'un coup d'oeil, section puis theme. */
-.rail-theme {
-  display: flex;
-  align-items: baseline;
-  gap: 0.5rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--encre-douce);
-  margin: 1.1rem 0 0.35rem;
-}
-
-.rail-compte {
-  margin-left: auto;
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  color: var(--encre-muette);
-}
+.reseaux span { color: var(--encre-muette); margin-right: 0.4rem; }
 
 /* Le sous-titre d'un theme sur le sommaire des statistiques. */
 .chapeau-theme {
@@ -1141,59 +1125,23 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); 
   margin: 0 0 1rem;
 }
 
-/* ------------------------------------------- colonnes de rang et de nom */
-
-/* Les tableaux de classement se suivent par dizaines sur une meme page --
-   quatorze sur /statistiques/top/. Sans largeur imposee, la colonne du rang
-   fait deux caracteres dans l'un et treize dans l'autre (« # » contre « Rang
-   general »), et la colonne des noms demarre a une abscisse differente dans
-   chaque tableau : l'oeil, qui descend la page, doit se recaler a chaque fois.
-
-   Le selecteur ne vise QUE les tableaux dont la premiere colonne est un
-   nombre : ceux qui commencent par du texte -- « Facette », « Periode » --
-   gardent leurs largeurs naturelles. `+ td` cible la colonne qui suit ce
-   rang, sans avoir a la designer par son rang dans la ligne. */
-.prose table th:first-child.nombre,
-.prose table td:first-child.nombre {
-  width: 3.6rem;
-  white-space: normal;
-}
-
-.prose table th:first-child.nombre + th,
-.prose table td:first-child.nombre + td {
-  width: 13rem;
-}
-
 /* ------------------------------------- la mise au point au survol des figures */
 
-/* Survoler une marque eteint les autres. C'est le geste des deux diagrammes en
-   arcs, ramene a ce que les cent vingt-six autres figures peuvent porter :
-   elles n'ont pas de relations entre marques, donc « ce qui reste allume » s'y
-   reduit a la marque survolee.
-
-   RIEN N'EST REGENERE POUR CELA. `.marque` est pose depuis toujours sur les
-   3 149 marques de donnees, pour l'infobulle native ; ces deux regles s'y
-   raccrochent et n'ajoutent pas un octet aux SVG.
+/* Survoler une marque eteint les autres. RIEN N'EST REGENERE POUR CELA :
+   `.marque` est pose depuis toujours sur les marques de donnees, pour
+   l'infobulle native ; ces deux regles s'y raccrochent.
 
    Deux exclusions, et chacune evite un contresens :
+   * `.repere` -- des marques qui ne sont pas des donnees mais de la
+     fourniture d'axe ; exclues DES DEUX COTES.
+   * `.surbrillance` -- les deux diagrammes en arcs ont leur propre
+     surbrillance, ecrite dans leur SVG ; les deux jeux se multiplieraient.
 
-   * `.repere` -- 137 marques ne sont pas des donnees mais de la fourniture
-     d'axe : cinq intitules tronques dont le <title> rend le texte entier, et
-     le rang des jours et mois de diffusion sous les courbes. Elles sont
-     exclues DES DEUX COTES : les survoler n'eteint pas la figure, et elles ne
-     s'eteignent pas quand on survole une donnee.
+   Pas de transition, et c'est delibere : certaines figures portent cinq cents
+   marques, une transition y ferait sept repeints la ou il en faut un.
 
-   * `.surbrillance` -- les deux diagrammes en arcs ont leur propre surbrillance,
-     ecrite dans leur SVG, qui allume aussi les points relies et leurs noms.
-     Les deux jeux de regles se multiplieraient.
-
-   Pas de transition, et c'est delibere : le nuage des longevites et le plan du
-   casting portent cinq cents marques chacun ; une transition y ferait sept
-   repeints la ou il en faut un.
-
-   Repli : un navigateur sans `:has()` jette les deux regles ensemble comme des
-   selecteurs invalides. Les figures restent alors ce qu'elles etaient, avec
-   leurs infobulles. Aucun etat ou tout serait eteint sans rien pour rallumer.
+   Repli : un navigateur sans `:has()` jette les deux regles ensemble. Les
+   figures restent alors ce qu'elles etaient, avec leurs infobulles.
 
    Specificite : (0,7,0) pour eteindre, (0,8,0) pour rallumer. La seconde gagne
    quel que soit l'ordre. */
@@ -1202,4 +1150,30 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--tribu-rouge); 
 }
 .graphique:not(.surbrillance):has(.marque:not(.repere):hover) .marque:not(.repere):hover {
   opacity: 1;
+}
+
+/* ------------------------------------------------------------ petits ecrans */
+
+@media (max-width: 44em) {
+  body { font-size: 16px; }
+
+  .entete { padding: 0.8rem 1rem; gap: 0.5rem 1.2rem; }
+  .cadre { padding: 0 1rem 3rem; }
+  .pied-corps { padding: 1.8rem 1rem 2.5rem; }
+  .contenu { padding-top: 1.8rem; }
+
+  /* Deux liens cote a cote deviennent illisibles sous 400 px. */
+  .fil { grid-template-columns: 1fr; }
+  .fil-apres { text-align: left; }
+
+  .filtres { flex-direction: column; align-items: stretch; }
+  .champ input, .champ select { min-width: 0; width: 100%; }
+  .compte { margin-left: 0; padding-bottom: 0; }
+
+  .chiffres { grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr)); }
+  .chiffre b { font-size: 1.45rem; }
+
+  .figure,
+  .vitrine,
+  .peigne { padding: 1rem 0.9rem 0.8rem; }
 }
