@@ -1,12 +1,12 @@
 ---
 layout: page
 title: Sachant qui est autour du feu
-description: "Qui part au conseil de Koh-Lanta, sachant qui est autour du feu : six positions dans le camp, six probabilités — dont une qui vaut exactement zéro."
+description: "Qui part au conseil de Koh-Lanta, sachant qui est autour du feu : six positions dans le camp, six probabilités, et une règle du jeu comme contrôle."
 permalink: /statistiques/autour-du-feu/
 chapeau: >-
   On ne part pas au hasard, mais on ne part pas non plus pour ce qu’on croit.
-  Six positions dans le camp, six probabilités — dont une qui vaut exactement
-  zéro.
+  Six positions dans le camp, six probabilités, et une règle du jeu qui sert de
+  contrôle.
 ---
 
 {% assign m = site.data.stats.modeles %}
@@ -39,17 +39,22 @@ camp des encore-en-jeu : c’est exact aussi, puisqu’après la fusion tout le 
 vote au même feu. Avant la fusion, une reconstruction mélangerait les deux
 tribus ; elle n’est donc jamais faite.</p>
 
-## La seule probabilité du jeu qui vaut exactement zéro
+## La probabilité qui devrait valoir zéro
 
 {% assign imm = f.immunite | first %}
 <div class="constat">
   <p>Sachant qu’on a gagné l’immunité individuelle du soir, la probabilité de
   partir vaut <b>{{ imm.probabilite }} %</b> — <b>{{ imm.cas }} sur
   {{ imm.effectif }}</b>. Le hasard en donnerait {{ imm.hasard }} %.</p>
-  <p>C’est une règle du jeu, pas une découverte. Mais la voir sortir intacte de
-  {{ imm.effectif }} présences reconstituées depuis les bulletins est le meilleur
-  contrôle qu’on puisse faire sur ces données : si le rattachement des vainqueurs
-  d’épreuve ou celui des éliminés était bancal, ce zéro ne serait pas zéro.</p>
+  <p>C’est une règle du jeu : l’immunisé ne peut pas partir au vote. La
+  retrouver dans {{ imm.effectif }} présences reconstituées est donc le meilleur
+  contrôle qu’on puisse faire sur ces données — et le contrôle n’est pas
+  parfait.</p>
+  <p>Les trois cas qui restent sont trois finales, celles de <i>Vanuatu</i>,
+  <i>Palawan</i> et <i>Caramoan</i>. La source y donne trois noms à une
+  « immunité » qui était une épreuve éliminatoire : ce sont les rescapés, pas
+  des immunisés. C’est un défaut de lecture, repéré par ce contrôle même, pas
+  une exception à la règle.</p>
 </div>
 
 <p class="note"><strong>Il a fallu s’y reprendre à deux fois, et le détour est
@@ -167,8 +172,8 @@ représenté du camp et partir quand il est le plus représenté.</p>
   ({{ smin.cas }} sur {{ smin.effectif }}). Sexe majoritaire :
   <b>{{ smaj.probabilite }} %</b> ({{ smaj.cas }} sur {{ smaj.effectif }}).</p>
   <p>{{ ts.observe_arrondi }} points, {{ ts.ecart_types }} écarts-types
-  <b>sous</b> le hasard. Prise seule, la p vaut {{ ts.p }} ; corrigée avec les
-  quarante-deux autres tests de ce site, elle vaut
+  <b>sous</b> le hasard. Prise seule, la p vaut {{ ts.p }} ; corrigée sur les
+  {{ m.nb_tests }} tests du registre, elle vaut
   <b>{{ ts.p_ajustee }}</b> — et <b>ce résultat est retenu</b>.</p>
 </div>
 
@@ -244,8 +249,8 @@ n’en sort pas.</p>
   <p>{{ td.observe_arrondi }} points d’écart, {{ td.ecart_types }}
   écarts-types, p brute {{ td.p }}, p ajustée {{ td.p_ajustee }}.
   <b>Non concluant.</b></p>
-  <p>Sans le bon point de comparaison, on aurait publié près de cinq points
-  d’écart comme un résultat. C’est exactement ce contre quoi cette page est
+  <p>Sans le bon point de comparaison, on aurait publié l’écart brut entre les
+  deux lignes du tableau comme un résultat. C’est exactement ce contre quoi cette page est
   construite.</p>
 </div>
 
@@ -284,11 +289,11 @@ de l’épisode et partir quand on n’a rien gagné.</p>
   conseils tribaux au dépouillement incomplet, on ignore qui était là — ils sont
   écartés, et [la complétude]({{ '/completude/' | relative_url }}) montre que
   cela concerne surtout les saisons récentes.</p>
-  <p><b>Quatre tests, un seul retenu</b> : le bandeau. Les trois autres sont
-  publiés comme non concluants, avec leur écart et leur intervalle — ils ne sont
-  pas cachés, ils sont le prix de la liste déclarée d’avance. Le sexe
-  minoritaire était le deuxième jusqu’à ce qu’une réparation de données le fasse
-  repasser sous le seuil : c’est précisément à cela que sert une liste arrêtée
+  <p><b>Quatre tests, deux retenus</b> : le bandeau et le sexe minoritaires. Les
+  deux autres sont publiés comme non concluants, avec leur écart et leur
+  intervalle — ils ne sont pas cachés, ils sont le prix de la liste déclarée
+  d’avance. Le sexe minoritaire a changé deux fois de statut au fil des
+  réparations de données : c’est précisément à cela que sert une liste arrêtée
   avant de regarder. Le registre complet et la correction pour tests multiples
   sont sur [La méthode]({{ '/methode/' | relative_url }}).</p>
 </div>

@@ -1,12 +1,12 @@
 ---
 layout: page
 title: Sachant le conseil d’avant
-description: "Mon nom est sorti deux fois au dernier conseil de Koh-Lanta : qu’est-ce que cela change à mes chances de partir ? Sept probabilités conditionnelles."
+description: "Mon nom est sorti deux fois au dernier conseil de Koh-Lanta : qu’est-ce que cela change à mes chances de partir ? Des probabilités, mesurées contre le hasard."
 permalink: /statistiques/conditionnelles/
 chapeau: >-
   Mon nom est sorti deux fois la dernière fois. Qu’est-ce que cela change à mes
-  chances de partir ce soir ? Sept probabilités conditionnelles, et un
-  retournement.
+  chances de partir ce soir ? Des probabilités conditionnelles, et un
+  retournement que le test ne confirme pas.
 ---
 
 {% assign m = site.data.stats.modeles %}
@@ -95,9 +95,8 @@ donnerait.</p>
 
 La lecture directe : **n’avoir reçu aucune voix la fois d’avant fait passer sous
 le hasard** ({{ c.par_voix[0].probabilite }} % contre
-{{ c.par_voix[0].hasard }} %), en recevoir une le double presque
-({{ c.par_voix[1].probabilite }} %), en recevoir deux le triple
-({{ c.par_voix[2].probabilite }} %).
+{{ c.par_voix[0].hasard }} %), en recevoir une ou deux le fait nettement monter
+({{ c.par_voix[1].probabilite }} %, puis {{ c.par_voix[2].probabilite }} %).
 
 {% include graphiques/conditionnelles-nulle.svg %}
 
@@ -118,7 +117,7 @@ chaque conseil est pris au hasard parmi les présents.</p>
 ## Le retournement : trop visé pour partir — et ce qu’on n’a plus le droit d’en dire
 
 La courbe ne monte pas indéfiniment. Elle culmine à deux voix, puis elle
-**redescend sous le hasard**.
+**redescend** — sans jamais repasser sous le hasard.
 
 {% include graphiques/conditionnelles-sommet.svg %}
 
@@ -130,8 +129,8 @@ nul.</p>
   <p>Une à trois voix la fois d’avant : le risque monte. <b>Quatre voix ou
   plus</b> : il tombe à
   {% assign gros = c.par_voix | where: "modalite", "5 voix et plus" | first %}
-  <b>{{ gros.probabilite }} %</b> pour cinq voix et plus — soit un cas sur
-  {{ gros.effectif }}.</p>
+  <b>{{ gros.probabilite }} %</b> pour cinq voix et plus — soit {{ gros.cas }}
+  cas sur {{ gros.effectif }}.</p>
   <p>L’écart vaut {{ t2.observe_arrondi }} points, {{ t2.ecart_types }} écarts-types,
   p ajustée <b>{{ t2.p_ajustee }}</b> — <b>non retenu</b>.</p>
 </div>
@@ -143,8 +142,8 @@ manquent. Ici, cinquante-huit conseils dépouillés se sont AJOUTÉS — les
 impose depuis 2017, vote noir, pénalité, malédiction, qu’aucun calcul ne
 comptait — et l’écart est passé de 15,4 points à
 {{ t2.observe_arrondi }}, la p ajustée de 0,040 à {{ t2.p_ajustee }}.
-<strong>Le sommet n’a pas disparu ; il a maigri de moitié dès qu’on lui a donné
-les conseils qui lui manquaient.</strong> C’est exactement ce qu’un effet
+<strong>L’écart a presque disparu dès qu’on lui a donné les conseils qui lui
+manquaient.</strong> C’est exactement ce qu’un effet
 fabriqué par un petit échantillon fait quand l’échantillon grandit, et c’est
 pour cela qu’on le dit ici plutôt que de garder l’ancienne phrase.</p>
 
@@ -414,7 +413,7 @@ plus rare — et beaucoup plus lisible.
   c’est le même rapport de force qui produit les deux voix d’hier et
   l’élimination d’aujourd’hui. La donnée ne sait pas les séparer, et rien ici ne
   prétend le contraire.</p>
-  <p><b>C’est un conseil sur six.</b> {{ c.conseils }} conseils enchaînés sur
+  <p><b>C’est {{ c.part_des_conseils }} % des conseils.</b> {{ c.conseils }} conseils enchaînés sur
   les {{ site.data.stats.conseils.conseils }} du jeu, parce que
   l’exigence de dépouillement complet est sévère et que la chaîne se rompt au
   premier trou. Les saisons les mieux documentées y pèsent plus que les

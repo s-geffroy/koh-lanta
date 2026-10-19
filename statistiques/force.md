@@ -174,15 +174,18 @@ force mène loin.
 <div class="constat">
   <p>Doubler sa force multiplie les bulletins reçus par
   <b>{{ fj.voix.force.estimation }}</b> — intervalle
-  {{ fj.voix.force.bas }} à {{ fj.voix.force.haut }}, qui contient 1.
-  <b>On ne vote ni plus ni moins contre les forts.</b></p>
-  <p>Sur la distance parcourue, même verdict : doubler sa force fait gagner
+  {{ fj.voix.force.bas }} à {{ fj.voix.force.haut }}, p = {{ fj.voix.force.p }}.
+  L’intervalle reste sous 1 : <b>les forts reçoivent plutôt moins de
+  bulletins, pas davantage.</b> L’effet est mince, et ce test ne figure pas
+  dans la liste déclarée d’avance que le registre corrige du nombre d’essais :
+  c’est une tendance, pas un résultat établi.</p>
+  <p>Sur la distance parcourue, rien : doubler sa force fait gagner
   {{ fj.survie.force.estimation }} point de saison, intervalle
   {{ fj.survie.force.bas }} à {{ fj.survie.force.haut }}.
-  <b>La force athlétique ne mène nulle part.</b></p>
-  <p>La seule chose qui bouge est l’âge : dix ans de plus, et l’on reçoit
-  {{ fj.voix.age.estimation }} fois plus de bulletins
-  ({{ fj.voix.age.bas }} – {{ fj.voix.age.haut }}).</p>
+  <b>La force athlétique ne mène pas plus loin.</b></p>
+  <p>L’âge ne tranche pas non plus : dix ans de plus, et l’on reçoit
+  {{ fj.voix.age.estimation }} fois les bulletins, intervalle
+  {{ fj.voix.age.bas }} à {{ fj.voix.age.haut }}, qui contient 1.</p>
 </div>
 
 C’est la version mesurée de ce que la page des épreuves dit en une phrase : « le

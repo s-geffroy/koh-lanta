@@ -167,8 +167,8 @@ l’éliminé de chaque conseil est pris au hasard parmi les présents.</p>
   écarts-types, p brute {{ tag.p }}, p ajustée {{ tag.p_ajustee }}.
   <b>Non concluant.</b></p>
   <p>C’est exactement le sens de la bascule de la force — et c’est ce qui rend
-  le résultat frustrant plutôt qu’anodin. Deux ans d’écart sur
-  {{ ag.conseils }} conseils, cela ne se distingue pas d’un tirage. On peut dire
+  le résultat frustrant plutôt qu’anodin. Un tel écart sur
+  {{ ag.conseils }} conseils ne se distingue pas d’un tirage. On peut dire
   que rien ne contredit l’hypothèse ; on ne peut pas dire qu’elle est
   vérifiée.</p>
 </div>
@@ -179,16 +179,19 @@ autour du feu</a> : même conclusion prudente, sur une autre découpe de la mêm
 donnée. Deux façons de poser la question de l’âge au conseil, deux fois
 « non concluant » — c’est une information, et elle vaut mieux que le silence.</p>
 
-## Et le sexe, lui, ne change pas
+## Le sexe, lui, bascule
 
 <div class="constat">
   <p>{{ a.avant.part_femmes }} % de femmes parmi les éliminés avant la fusion,
-  {{ a.apres.part_femmes }} % après — {{ tx.observe }} points d’écart, soit
+  {{ a.apres.part_femmes }} % après — {{ tx.observe_arrondi }} points d’écart, soit
   {{ tx.ecart_types }} écarts-types, p ajustée {{ tx.p_ajustee }}.
-  <b>Non concluant.</b></p>
-  <p>À {{ a.avant.conseils }} et {{ a.apres.conseils }} conseils, un écart de
-  sept points ne se distingue pas d’un tirage. On ne peut ni l’affirmer ni
-  l’écarter.</p>
+  <b>Retenu.</b></p>
+  <p>Le hasard tire ici l’éliminé parmi les présents de chaque conseil : la
+  composition du camp est donc déjà prise en compte. <b>À la réunification, la
+  part de femmes parmi les éliminés baisse bien plus que le changement des
+  camps ne l’explique.</b> Le test compare l’avant et l’après ; il ne dit pas
+  lequel des deux s’écarte de son propre hasard. La mesure dit qui part, pas pourquoi : épreuves
+  par équipe, alliances, choix des tribus, elle ne départage pas.</p>
 </div>
 
 ## Les ambassadeurs
@@ -221,13 +224,14 @@ sert précisément à équilibrer les tribus avant de les réunir.
   estimable, l’éliminé se situe au rang <b>{{ amb.rang_moyen }} sur 100</b> —
   {{ ta.ecart_types }} écart-type du hasard, p ajustée {{ ta.p_ajustee }}.</p>
   <p><b>Deux ambassadeurs qui décident seuls choisissent comme un tirage.</b>
-  Du moins sur ce critère-là, et à cette taille-là : treize cas ne permettent
-  de détecter qu’un effet énorme.</p>
+  Du moins sur ce critère-là, et à cette taille-là :
+  {{ amb.effectif_force }} cas ne permettent de détecter qu’un effet énorme.</p>
 </div>
 
 C’est un résultat en creux, et il vaut d’être dit : le seul moment du jeu où
 l’élimination échappe au vote collectif est aussi celui où l’on ne détecte
-aucune logique — ni le fort, ni le faible, ni un sexe, ni un âge.
+aucune logique de force — ni le fort, ni le faible. Le sexe et l’âge de
+l’éliminé sont décrits plus haut, ils ne sont pas testés.
 
 ### Qui part en ambassade ? On l’a cherché dans la prose
 
@@ -256,7 +260,7 @@ la note annonce. C’est ce dernier qui écarte <i>Les Armes secrètes</i> : la 
 parle de « deux ambassadeurs » puis ajoute une « ambassadrice secrète », ce qui
 en fait trois. La règle du dépôt est de s’abstenir plutôt que d’arbitrer.
 
-<p class="note">Les huit ambassades muettes ne le sont pas par hasard : ce sont
+<p class="note">Les {{ ng.muettes }} ambassades muettes ne le sont pas par hasard : ce sont
 les plus anciennes éditions et les saisons spéciales, celles dont les articles
 sont les plus courts. Comme partout sur ce site, ce qui manque manque du même
 côté.</p>
@@ -268,11 +272,11 @@ côté.</p>
   terminées par un tirage au sort</b> faute d’accord. Dans les
   {{ ng.par_tirage }} cas, <b>c’est un des deux ambassadeurs qui est parti</b>.</p>
   <p>Ce n’est pas une découverte statistique, c’est la règle du jeu — mais elle
-  chiffre le risque : un aventurier sur quatre qui accepte l’ambassade en
-  revient éliminé.</p>
+  chiffre le risque : sur {{ ng.lues }} ambassades lues,
+  {{ ng.elimine_ambassadeur }} ont coûté sa place à l’un des ambassadeurs.</p>
 </div>
 
-### Et cela ne change rien à la suite
+### Et ils sortent plus tôt
 
 {% include graphiques/ambassadeurs-survie.svg %}
 
@@ -286,9 +290,12 @@ les présents.</p>
   {{ ng.ambassadeurs }} ambassadeurs — le rang moyen vaut
   <b>{{ ng.rang_moyen }} sur 100</b>, contre {{ tn.attendu }} attendus.
   {{ tn.ecart_types }} écart-type, p ajustée {{ tn.p_ajustee }}.</p>
-  <p><b>Partir négocier ne fait ni durer plus longtemps, ni sortir plus tôt.</b>
-  Avec vingt-deux ambassadeurs, on ne détecterait qu’un décalage d’une douzaine
-  de points de rang : la réponse est « rien de gros », pas « rien du tout ».</p>
+  <p><b>Retenu : l’ambassadeur sort plus tôt que s’il avait été désigné au
+  hasard parmi les présents.</b></p>
+  <p>Une partie de l’écart peut être la règle elle-même : un ambassadeur
+  parti au tirage sort le soir même, au plus bas rang possible. La mesure ne dit pas encore si l’écart tient
+  sans eux, et elle repose sur {{ ng.ambassadeurs }} ambassadeurs : c’est un
+  signal, à confirmer.</p>
 </div>
 
 ## Ce que cette page ne dit pas
@@ -307,6 +314,6 @@ aussi : leurs revenants faussent la comparaison des forces.</p>
 
 <p class="note"><strong>Le nom des ambassadeurs vient de la prose</strong>, pas
 d’un tableau : {{ a.negociateurs.part_lues }} % des ambassades seulement, et
-l’extraction s’abstient dès qu’un doute apparaît. Les huit manquantes sont les
+l’extraction s’abstient dès qu’un doute apparaît. Les {{ a.negociateurs.muettes }} manquantes sont les
 plus anciennes éditions et les saisons spéciales — le trou n’est pas
 aléatoire.</p>

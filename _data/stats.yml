@@ -1436,18 +1436,23 @@ conseils:
     cible: f
     effectif: 815
     part: "30,6"
+    libelle: un homme contre une femme
   - votant: f
     cible: f
     effectif: 638
     part: "23,9"
+    libelle: une femme contre une femme
   - votant: f
     cible: h
     effectif: 618
     part: "23,2"
+    libelle: une femme contre un homme
   - votant: h
     cible: h
     effectif: 594
     part: "22,3"
+    libelle: un homme contre un homme
+  vote_par_genre_ecart: "8,3"
 jury:
   effectif: 36
   saisons: 33
@@ -26424,6 +26429,7 @@ modeles:
       ambassades: 12
       ambassadeurs: 28
       rang_moyen: "37,6"
+      muettes: 9
     tests:
     - cle: fusion_sexe
       libelle: Le sexe des éliminés, avant et après la fusion
@@ -27679,6 +27685,7 @@ modeles:
       origine: conditionnelles
       p_ajustee: "0,0007"
       retenu: true
+    part_des_conseils: 38
   autour_du_feu:
     presences: 2910
     conseils: 370

@@ -206,10 +206,13 @@ celui de sa cible, sur les conseils dont le dépouillement est complet.</p>
 
 Si le sexe ne jouait aucun rôle, les quatre combinaisons pèseraient 25 % chacune
 — le casting étant paritaire. Ce n’est pas tout à fait le cas : les bulletins
-d’**un homme contre une femme** sont les plus nombreux
-({{ c.vote_par_genre[0].part }} %), et ceux d’**une femme contre une femme** les
-moins nombreux ({{ c.vote_par_genre[3].part }} %). L’écart est réel mais
-modeste, de l’ordre de huit points entre les deux extrêmes.
+d’**{{ c.vote_par_genre[0].libelle }}** sont les plus nombreux
+({{ c.vote_par_genre[0].part }} %), et ceux d’**{{ c.vote_par_genre[3].libelle }}**
+les moins nombreux ({{ c.vote_par_genre[3].part }} %). L’écart est modeste,
+{{ c.vote_par_genre_ecart }} points entre les deux extrêmes, et il tient surtout à
+la composition des conseils :
+[Qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }}) le mesure une
+fois celle-ci neutralisée.
 
 ## Le vote du jury final
 

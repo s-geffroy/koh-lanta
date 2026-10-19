@@ -901,15 +901,78 @@ AFFIRMATIONS_PAGES = {
     "fusion_force": (False, "index.md, statistiques/fusion.md, statistiques/top.md "
                             "et le resume du sommaire ecrivent que la force ne "
                             "decide pas de qui part"),
+    "fusion_sexe": (True, "statistiques/fusion.md titre « Le sexe, lui, bascule »"),
+    "ambassadeurs_survie": (True, "statistiques/fusion.md ecrit que l'ambassadeur "
+                                  "sort plus tot"),
+    "vote_meme_sexe": (True, "statistiques/qui-vise-qui.md et le resume du "
+                             "sommaire ecrivent « le sexe : un peu »"),
+    "vote_meme_metier": (True, "statistiques/qui-vise-qui.md et le resume du "
+                               "sommaire ecrivent « le metier : un peu aussi »"),
+    "vote_ecart_age": (False, "statistiques/qui-vise-qui.md ecrit « l'age : a peine »"),
+    "vote_meme_departement": (False, "statistiques/qui-vise-qui.md ecrit « le voisin : "
+                                     "peut-etre », non concluant"),
+    "bandeau_minoritaire": (True, "statistiques/autour-du-feu.md ecrit « quatre "
+                                  "tests, deux retenus » et le resume du sommaire"),
+    "sexe_minoritaire": (True, "statistiques/autour-du-feu.md ecrit « quatre "
+                               "tests, deux retenus » et le resume du sommaire"),
+    "doyen_du_camp": (False, "statistiques/autour-du-feu.md et le resume du "
+                             "sommaire ecrivent que le doyen ne part pas plus"),
+    "confort_sortie": (False, "statistiques/autour-du-feu.md ecrit « quatre "
+                              "tests, deux retenus »"),
+    "menace_sommet": (False, "statistiques/conditionnelles.md, le chapeau et "
+                             "statistiques/jeu-social.md ecrivent que le "
+                             "retournement n'est pas confirme"),
 }
+
+# Ce qu'une phrase ecrite suppose d'une valeur hors registre : le chemin dans
+# _data/stats.yml, la condition, et les pages a relire si elle tombe. Le
+# registre ne couvre pas tout ce que les pages affirment -- un intervalle
+# qui exclut 1, un maximum, un compte qu'une phrase nomme.
+def _sous_un(x):
+    return x["haut"] < 1
+
+
+def _contient_un(x):
+    return x["bas"] <= 1 <= x["haut"]
+
+
+AFFIRMATIONS_VALEURS = [
+    (("modeles", "force_et_jeu", "voix", "force"), _sous_un,
+     "statistiques/force.md ecrit que l'intervalle reste sous 1"),
+    (("modeles", "force_et_jeu", "voix", "age"), _contient_un,
+     "statistiques/force.md ecrit que l'intervalle de l'age contient 1"),
+    (("modeles", "force_et_jeu", "survie", "force"),
+     lambda x: x["bas"] <= 0 <= x["haut"],
+     "statistiques/force.md ecrit que la force ne mene pas plus loin"),
+    (("modeles", "autour_du_feu", "immunite"),
+     lambda x: x[0]["cas"] == 3,
+     "statistiques/autour-du-feu.md nomme les trois finales ou l'immunise "
+     "parait sortir"),
+    (("modeles", "conditionnelles", "par_voix"),
+     lambda x: max(x, key=lambda v: v["probabilite"])["modalite"] == "2 voix"
+     and all(v["probabilite"] > v["hasard"] for v in x[1:]),
+     "statistiques/conditionnelles.md et jeu-social.md ecrivent que la courbe "
+     "culmine a deux voix sans repasser sous le hasard"),
+]
 
 
 def controler_affirmations_pages(c):
     """Refuse une page dont l'affirmation ecrite ne tient plus dans le registre."""
     chemin = os.path.join(RACINE, "_data", "stats.yml")
+    stats = donnees.charger(open(chemin, encoding="utf-8")) or {}
     registre = {t["cle"]: t for t in
-                ((donnees.charger(open(chemin, encoding="utf-8")) or {})
-                 .get("modeles") or {}).get("registre") or []}
+                (stats.get("modeles") or {}).get("registre") or []}
+    for chemin_cle, tient, ou in AFFIRMATIONS_VALEURS:
+        valeur = stats
+        for cle in chemin_cle:
+            valeur = (valeur or {}).get(cle)
+        try:
+            ok = valeur is not None and tient(valeur)
+        except (KeyError, IndexError, TypeError, ValueError):
+            ok = False
+        if not ok:
+            c.erreur(f"stats : `{'.'.join(chemin_cle)}` ne soutient plus la "
+                     f"phrase — {ou} : relire avant de publier")
     for cle, (retenu, ou) in AFFIRMATIONS_PAGES.items():
         test = registre.get(cle)
         if test is None:

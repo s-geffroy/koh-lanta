@@ -1,11 +1,12 @@
 ---
 layout: page
 title: Qui vise qui
-description: "Qui vise qui à Koh-Lanta : écrit-on le nom de celui qui ne nous ressemble pas ? Non, sauf sur un point — qui survit à la disparition des tribus."
+description: "Qui vise qui à Koh-Lanta : écrit-on le nom de celui qui ne nous ressemble pas ? Un peu pour le sexe et le métier, nettement pour le camp de départ."
 permalink: /statistiques/qui-vise-qui/
 chapeau: >-
-  Écrit-on le nom de celui qui ne nous ressemble pas ? La réponse est non —
-  sauf sur un point, et ce point survit à la disparition des tribus.
+  Écrit-on le nom de celui qui ne nous ressemble pas ? Un peu, pour le sexe et
+  le métier. Nettement, pour le camp de départ — et cela survit à la
+  disparition des tribus.
 ---
 
 {% assign m = site.data.stats.modeles %}
@@ -15,7 +16,7 @@ chapeau: >-
 Le sexe, l’âge, le métier, le bandeau de départ : quatre façons de se ressembler
 ou non. La page [Les conseils]({{ '/statistiques/conseils/' | relative_url }})
 donne les parts brutes — {% assign vg = site.data.stats.conseils.vote_par_genre | first %}{{ vg.part }} %
-des bulletins d’hommes visent une femme. Ces
+des bulletins sont écrits par un homme contre une femme. Ces
 parts ne veulent rien dire seules : si le camp entier a un nom en tête ce
 soir-là, chacun l’écrit, quel que soit son propre profil.
 
@@ -55,12 +56,13 @@ paraissait spectaculaire :
 </table>
 </div>
 
-Trois résultats sur quatre étaient entièrement fabriqués par le défaut du modèle
-nul. Le quatrième a survécu, réduit. C’est dit ici parce que c’est la leçon
+Le défaut gonflait les quatre écarts. Corrigé, celui de l’âge disparaît ; ceux
+du sexe et du métier survivent, très réduits ; seul le bandeau garde un écart
+massif. C’est dit ici parce que c’est la leçon
 principale de cette page : **un test de permutation ne vaut que ce que vaut son
 modèle nul**, et un nul mal contraint produit des écarts énormes et faux.
 
-## Le sexe : rien
+## Le sexe : un peu
 
 {% assign t = reg | where: "cle", "vote_meme_sexe" | first %}
 
@@ -68,11 +70,14 @@ modèle nul**, et un nul mal contraint produit des écarts énormes et faux.
 
 <p class="legende-figure">Part des bulletins visant quelqu’un du même sexe.</p>
 
-{{ t.observe }} % contre {{ t.attendu }} % attendus — p = {{ t.p }}. **Le sexe ne
-gouverne pas le bulletin.** L’écart de huit points que montre la page des
-conseils vient de la composition des conseils, pas d’un choix.
+{{ t.observe }} % contre {{ t.attendu }} % attendus — {{ t.ecart_types }}
+écarts-types, p ajustée {{ t.p_ajustee }}. **Retenu, et petit** : on vise un peu
+moins souvent quelqu’un de son sexe que le partage des cibles ne le voudrait.
+Les parts brutes de la page des conseils, elles, tiennent surtout à la
+composition des conseils : une fois celle-ci neutralisée, il reste peu de
+chose.
 
-## Le métier : rien non plus
+## Le métier : un peu aussi
 
 {% assign t = reg | where: "cle", "vote_meme_metier" | first %}
 
@@ -80,10 +85,11 @@ conseils vient de la composition des conseils, pas d’un choix.
 
 <p class="legende-figure">Part des bulletins visant la même famille de métier.</p>
 
-{{ t.observe }} % contre {{ t.attendu }} % — p = {{ t.p }}. Le pompier n’épargne
-pas le militaire, le coach ne vise pas le cadre. Ce qui reste vrai, c’est qu’on
-vise **rarement** son propre métier : mais on le vise rarement parce que peu de
-gens partagent votre famille de métier dans un camp de vingt.
+{{ t.observe }} % contre {{ t.attendu }} % — {{ t.ecart_types }} écarts-types,
+p ajustée {{ t.p_ajustee }}. **Retenu, et petit** : on vise un peu moins sa
+propre famille de métier que le hasard ne le voudrait. Si on la vise
+**rarement**, c’est d’abord parce que peu de gens la partagent dans un camp de
+vingt ; l’écart au hasard, lui, est mince.
 
 ## L’âge : à peine
 
@@ -95,10 +101,10 @@ gens partagent votre famille de métier dans un camp de vingt.
 
 {{ t.observe }} ans contre {{ t.attendu }} attendus. L’écart existe —
 {{ t.ecart_types }} écarts-types — mais il ne franchit pas la correction pour
-tests multiples (p ajustée {{ t.p_ajustee }}), et **il vaut deux mois**. Il n’y a
+tests multiples (p ajustée {{ t.p_ajustee }}), et **il est minuscule**. Il n’y a
 rien à en tirer.
 
-## Le voisin : on l’épargne
+## Le voisin : peut-être
 
 {% assign td = site.data.stats.modeles.registre | where: "cle", "vote_meme_departement" | first %}
 
@@ -118,23 +124,21 @@ l’intérieur de chaque conseil.</p>
   <p><b>{{ td.observe }} %</b> des bulletins visent quelqu’un du même
   département, pour <b>{{ td.attendu }} %</b> attendus : l’observé est
   <b>sous</b> l’attendu, {{ td.ecart_types }} écarts-types, p brute {{ td.p }},
-  p ajustée <b>{{ td.p_ajustee }}</b>. <b>Retenu.</b></p>
-  <p>On vise le voisin moins souvent que le partage des bulletins ne le
-  voudrait. C’est le seul trait de la fiche d’inscription qui protège au lieu
-  d’exposer — le bandeau, lui, expose.</p>
+  p ajustée <b>{{ td.p_ajustee }}</b>. <b>Non concluant, de justesse.</b></p>
+  <p>On vise le voisin un peu moins souvent que le partage des bulletins ne le
+  voudrait, mais l’écart ne franchit pas la correction pour tests multiples.
+  On ne peut ni l’affirmer ni l’écarter.</p>
 </div>
 
-<p class="note"><strong>Cette section disait le contraire il y a deux jours, et
-c’est une réparation qui l’a retournée.</strong> Elle concluait « non concluant »,
-sur une p ajustée de 0,077. Les
+<p class="note"><strong>Cette section a été écrite deux fois trop vite.</strong>
+Elle concluait d’abord « non concluant », sur une p ajustée de 0,077. Les
 <a href="{{ '/sources/' | relative_url }}">bulletins sans votant</a> — vote noir,
 pénalité, malédiction — ont rendu cinquante-huit conseils dépouillés, et le test
-passe à {{ td.p_ajustee }}. Les couples de même département restent rares dans
-un camp de huit : le test était faible par manque de bulletins, pas par
-absence d’effet. <strong>Ce n’est pas une découverte, c’est un dénominateur qui
-a grandi.</strong></p>
+descend à {{ td.p_ajustee }}. La section a alors écrit « retenu » : c’était
+faux, le seuil n’est pas franchi. Les couples de même département restent
+rares dans un camp de huit, et le test manque de bulletins pour trancher.</p>
 
-## Le bandeau de départ : le seul qui compte, et il compte beaucoup
+## Le bandeau de départ : celui qui compte vraiment
 
 {% assign t = reg | where: "cle", "vote_bandeau_apres_fusion" | first %}
 

@@ -1499,6 +1499,26 @@ def champs_d_affichage(stats):
     # Les bornes de la serie, que le texte ecrivait « de 2001 a 2026 ».
     annees = [l["annee"] for l in f["lignes"]]
     f["annee_min"], f["annee_max"] = min(annees), max(annees)
+
+    # /statistiques/fusion/ : les ambassades dont la prose ne nomme pas les
+    # ambassadeurs, que le texte comptait a la main (« les huit muettes »).
+    ng = m["avant_apres"]["negociateurs"]
+    ng["muettes"] = ng["total"] - ng["lues"]
+
+    # /statistiques/conditionnelles/ : la part des conseils que la chaine
+    # retient, que le texte ecrivait « un conseil sur six ».
+    co = m["conditionnelles"]
+    co["part_des_conseils"] = _arrondi_entier(
+        100 * co["conseils"] / stats["conseils"]["conseils"])
+
+    # /statistiques/conseils/ : la page nommait les combinaisons a la main, et
+    # le libelle ecrit ne correspondait plus a l'indice affiche.
+    qui = {"h": ("un homme", "un homme"), "f": ("une femme", "une femme")}
+    vg = stats["conseils"]["vote_par_genre"]
+    for x in vg:
+        x["libelle"] = f"{qui[x['votant']][0]} contre {qui[x['cible']][1]}"
+    parts = [x["part"] for x in vg]
+    stats["conseils"]["vote_par_genre_ecart"] = round(max(parts) - min(parts), 1)
     # /completude/ : chaque case affiche sa part arrondie a l'unite, et la
     # derniere colonne prend le niveau du score de la ligne.
     for ligne in stats["completude_saisons"]["lignes"]:

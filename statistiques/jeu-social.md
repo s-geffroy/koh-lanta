@@ -158,8 +158,8 @@ n’en recevant pas.
 Ce chiffre est une moyenne de carrière. Sa version datée — *sachant les voix du
 conseil précédent, quelles chances de partir ce soir ?* — est sur
 [Sachant le conseil d’avant]({{ '/statistiques/conditionnelles/' | relative_url }}),
-et elle réserve un retournement : au-delà de quatre voix encaissées, le risque
-**redescend**.
+et elle montre une courbe qui culmine à deux voix puis **redescend** — un
+retournement que le test ne confirme pas.
 
 ## Être du bon côté du vote
 

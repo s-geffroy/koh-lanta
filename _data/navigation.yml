@@ -85,15 +85,15 @@
         - titre: "Qui vise qui"
           url: /statistiques/qui-vise-qui/
           modeles: true
-          resume: "Ni le sexe ni le métier ne guident le bulletin. Le bandeau, si."
+          resume: "Le sexe et le métier un peu, le bandeau nettement : on épargne son ancien camp."
         - titre: "Sachant le conseil d'avant"
           url: /statistiques/conditionnelles/
           modeles: true
-          resume: "Six probabilités conditionnelles : partir, sachant les voix de la fois d'avant."
+          resume: "Partir, sachant les voix reçues la fois d'avant."
         - titre: "Sachant qui est autour du feu"
           url: /statistiques/autour-du-feu/
           modeles: true
-          resume: "Le bandeau minoritaire part ; le doyen, non ; et un résultat qui vient de céder."
+          resume: "Le bandeau minoritaire part plus, le sexe minoritaire moins ; le doyen, rien de net."
         - titre: "La pire place au conseil"
           url: /statistiques/pire-place/
           modeles: true
