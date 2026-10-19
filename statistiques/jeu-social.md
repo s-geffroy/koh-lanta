@@ -56,8 +56,8 @@ ont tenu aussi longtemps. La troisième colonne, elle, est donnée pour mémoire
 {% assign fa = i.fantomes_issue | where: "sort", "abandon_medical" | first %}
 
 **{{ fv.part_fantomes }} % des fantômes gagnent la saison**, contre
-{{ fv.part_endurants }} % de ceux qui ont tenu aussi longtemps : **deux fois et
-demie plus**. Et {{ fc.part_fantomes }} % seulement sont éliminés au conseil,
+{{ fv.part_endurants }} % de ceux qui ont tenu aussi longtemps : **{{ fv.rapport }} fois
+plus**. Et {{ fc.part_fantomes }} % seulement sont éliminés au conseil,
 contre {{ fc.part_endurants }} % — mais c’est presque une tautologie : on
 n’élimine pas au conseil quelqu’un dont personne n’écrit le nom.
 
@@ -65,7 +65,7 @@ Le vrai écart est ailleurs, et il est inattendu.
 
 <div class="constat">
   <p><b>{{ fa.part_fantomes }} % des fantômes quittent le jeu sur décision
-  médicale</b>, contre {{ fa.part_endurants }} % de leurs pairs — quatre fois
+  médicale</b>, contre {{ fa.part_endurants }} % de leurs pairs — {{ fa.rapport }} fois
   plus.</p>
   <p>Un corps qui lâche n’est plus une menace, et l’on n’écrit pas le nom de
   quelqu’un qu’on voit décliner. L’invisibilité au conseil n’est donc pas
@@ -80,7 +80,7 @@ Longtemps, cette page a présenté l’invisibilité comme le meilleur prédicte
 victoire du jeu de données. **Elle ne l’est pas.** Mise en concurrence avec
 l’appartenance au camp majoritaire, dans un même modèle, elle passe seconde :
 être toujours du bon côté vaut {{ v0.estimation }} points de saison, contre
-{{ v1.estimation }} points par voix reçue et par conseil — **cinq fois moins**.
+{{ v1.estimation }} points par voix reçue et par conseil — **{{ site.data.stats.modeles.alliances.majorite.rapport }} fois moins**.
 Les deux comptent, mais dans cet ordre.
 [Les alliances]({{ '/statistiques/alliances/' | relative_url }}).
 
@@ -149,7 +149,7 @@ selon la manière dont l’aventure s’est terminée.</p>
 
 La gradation est sans exception. Un aventurier éliminé au conseil reçoit en
 moyenne **{{ i.menace_par_sort.elimine_conseil }} voix par conseil** ; un
-vainqueur, **{{ i.menace_par_sort.vainqueur }}**. Neuf fois moins. Entre les
+vainqueur, **{{ i.menace_par_sort.vainqueur }}**, soit {{ i.menace_rapport }} fois moins. Entre les
 deux, finalistes puis éliminés de la finale s’échelonnent proprement.
 
 Autrement dit : on ne gagne pas Koh-Lanta en survivant aux votes, on le gagne en

@@ -124,10 +124,10 @@ n’existent que par les fiches individuelles du wiki ; ils manquent partout où
 fiche manque, c’est-à-dire sur les castings les plus anciens et l’édition de
 célébrités. [Les sources]({{ '/sources/' | relative_url }}) détaillent.
 
-**Ce qui restera mince.** Le dépouillement complet des conseils plafonne : la
-moitié des conseils n’annonce même pas combien de voix ont été exprimées, si
-bien que leur complétude n’est pas vérifiable. C’est la colonne la plus basse de
-la grille, et c’est aussi celle dont dépendent les résultats les plus forts du
+**Ce qui restera mince.** Le dépouillement complet des conseils plafonne : une
+partie des conseils n’annonce même pas combien de voix ont été exprimées, si
+bien que leur complétude n’est pas vérifiable. C’est une des colonnes les plus
+basses de la grille, et c’est aussi celle dont dépendent les résultats les plus forts du
 site — [les alliances]({{ '/statistiques/alliances/' | relative_url }}),
 [qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }}) et
 [le classement des joueurs]({{ '/statistiques/top/' | relative_url }}).

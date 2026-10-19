@@ -13,12 +13,13 @@ chapeau: >-
 {% assign r = eq.rattrapage %}
 {% assign cox = eq.cox %}
 {% assign hm = m.hasard_mecanique %}
+{% assign q = site.data.stats.risque %}
 
 ## « Le jeu devient plus dangereux » — non, le camp se vide
 
 La page [Comment on sort]({{ '/statistiques/sorties/' | relative_url }}) publie
-une courbe de risque qui monte de 7,6 % au premier dixième de saison à 25,2 % au
-neuvième, et la commente : « tenir n’allège rien ». La lecture est tentante. Elle
+une courbe de risque qui monte de {{ q.tranches[1].risque }} % au premier dixième de saison à
+{{ q.tranches[9].risque }} % au neuvième, et la commente : « tenir n’allège rien ». La lecture est tentante. Elle
 oublie une chose.
 
 <p class="note"><strong>Un conseil fait sortir une personne, quel que soit le
@@ -38,7 +39,7 @@ plus de sens.</p>
   observé vaut <b>{{ hm.rapport_moyen }} fois</b> le risque purement
   arithmétique — et ce rapport est le même du premier au huitième dixième de
   saison.</p>
-  <p>La montée de 8,6 % à 26 % n’est donc <b>pas</b> une propriété du jeu :
+  <p>La montée de {{ q.tranches[1].risque }} % à {{ q.tranches[9].risque }} % n’est donc <b>pas</b> une propriété du jeu :
   c’est un quotient dont le dénominateur diminue. Le jeu ajoute un facteur
   constant, pas une accélération.</p>
 </div>

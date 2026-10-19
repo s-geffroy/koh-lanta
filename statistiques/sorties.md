@@ -10,8 +10,8 @@ chapeau: >-
 {% assign s = site.data.stats %}
 
 On ne quitte pas Koh-Lanta d’une seule manière. Sur les saisons classiques, les
-{{ s.general.participations }} participations se répartissent entre neuf façons
-de partir — et leurs proportions ont changé.
+{{ s.sorties.effectif }} participations se répartissent entre
+{{ s.sorties.repartition | size }} façons de partir — et leurs proportions ont changé.
 
 {% include graphiques/sorties-repartition.svg %}
 

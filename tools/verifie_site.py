@@ -953,6 +953,38 @@ AFFIRMATIONS_VALEURS = [
      and all(v["probabilite"] > v["hasard"] for v in x[1:]),
      "statistiques/conditionnelles.md et jeu-social.md ecrivent que la courbe "
      "culmine a deux voix sans repasser sous le hasard"),
+    (("modeles", "alliances", "majorite", "rapport"), lambda x: x > 1,
+     "statistiques/alliances.md et jeu-social.md ecrivent qu'etre du bon cote "
+     "pese plus que ne pas etre vise"),
+    (("indicateurs", "fantomes_issue"),
+     lambda x: all(v["rapport"] > 1 for v in x
+                   if v["sort"] in ("vainqueur", "abandon_medical")),
+     "statistiques/jeu-social.md ecrit « N fois plus » de vainqueurs et "
+     "d'abandons medicaux chez les fantomes"),
+    (("indicateurs", "menace_rapport"), lambda x: x > 1,
+     "statistiques/jeu-social.md ecrit « N fois moins » de voix pour un vainqueur"),
+    (("epreuves", "par_metier_par_ratio"), lambda x: x[0]["code"] == "sport",
+     "statistiques/epreuves.md ecrit que le sport arrive en tete, « rien de "
+     "surprenant », et parle d'avantage athletique"),
+    (("premiere_epreuve", "ecart"), lambda x: x > 0,
+     "statistiques/epreuves.md ecrit que gagner la premiere epreuve va plus loin"),
+    (("finale", "par_rang"),
+     lambda x: (x[2]["gagne_la_saison"]["cas"], x[2]["gagne_la_saison"]["effectif"]) == (11, 17),
+     "statistiques/finale.md ecrit « onze victoires sur dix-sept » dans sa "
+     "description et son chapeau"),
+    (("modeles", "pire_place", "isolement"),
+     lambda x: x[0]["bas"] <= x[1]["haut"] and x[1]["bas"] <= x[0]["haut"],
+     "statistiques/pire-place.md ecrit que les deux formes de l'isolement ne se "
+     "distinguent pas"),
+    (("modeles", "pire_place", "cumul_rapport"), lambda x: x > 1,
+     "statistiques/pire-place.md ecrit que les deux signaux multiplient le risque"),
+    (("modeles", "autour_du_feu", "age_ecart"), lambda x: x > 0,
+     "statistiques/longevite.md ecrit que le doyen part plus souvent, en brut"),
+    (("modeles", "jury_final", "coefficients"), lambda x: x[0]["haut"] < 1,
+     "statistiques/jury.md ecrit qu'avoir elimine le jure divise la cote"),
+    (("geographie", "lacunaires"), lambda x: all(v["annee"] < 2010 for v in x),
+     "statistiques/geographie.md ecrit que les saisons lacunaires sont celles "
+     "des premieres annees"),
 ]
 
 

@@ -37,7 +37,7 @@ faits, le vote se divise toujours.
 
 {% assign cv = site.data.croisement_votes %}
 
-La question mérite d’être posée avant tout le reste, parce que quatre des
+La question mérite d’être posée avant tout le reste, parce que plusieurs des
 résultats les plus forts de ce site reposent entièrement sur ces
 {{ c.bulletins }} lignes. Sur une partie des saisons, les deux wikis publient
 **chacun** leur matrice des votes : on peut donc les confronter.
@@ -51,7 +51,7 @@ résultats les plus forts de ce site reposent entièrement sur ces
 </div>
 
 Ce n’est pas une garantie — deux wikis peuvent recopier la même erreur, et le
-recouvrement ne couvre qu’une saison sur trois. C’est le meilleur contrôle
+recouvrement ne couvre qu’une partie des saisons. C’est le meilleur contrôle
 disponible, et il est bon.
 
 ## Les objets d’immunité, vus depuis les bulletins
@@ -178,9 +178,10 @@ et les personnes qu’ils relient.</p>
 {% assign rec = site.data.stats.reciprocite %}
 Sur les **{{ rec.couples }} couples** votant → cible relevés dans les conseils
 au dépouillement complet, **{{ rec.reciproques }} sont réciproques** :
-**{{ rec.part }} %**. Écrire le nom de quelqu’un, c’est donc avoir près d’une
-chance sur deux qu’il ait écrit le vôtre le même soir ou un autre. Le conseil
-n’est pas une meute contre un isolé, c’est un affrontement à deux camps.
+**{{ rec.part }} %**. Écrire le nom de quelqu’un, c’est donc avoir
+{{ rec.part }} % de chances qu’il ait écrit le vôtre, le même soir ou un autre.
+Le conseil n’est pas seulement une meute contre un isolé : c’est souvent un
+affrontement à deux camps.
 
 Cette réciprocité-là est **sans ordre** : à un moment ou un autre. Sa version
 datée — *celui dont j’ai écrit le nom la fois d’avant écrit-il le mien ce

@@ -135,8 +135,9 @@ conseil retrouvés — ont déplacé le maximum, d’abord vers
 {{ r.annee_rupture }}, puis en creusant son avance. Un critère qu’une révision
 de données déplace de sept ans ne désigne pas une année : il désigne une
 époque. C’est <a href="{{ '/statistiques/audience/' | relative_url }}">sur
-l’audience</a> qu’on voit à quoi ressemble une date, elle, identifiée — trois
-concurrentes serrées sur deux ans au lieu de six sur onze.</p>
+l’audience</a> qu’on voit à quoi ressemble une date, elle, identifiée — {{ m.audience.nb_proches }}
+dates serrées sur {{ m.audience.fenetre.etendue }} an, au lieu de
+{{ r.nb_proches }} sur {{ r.fenetre.etendue }} ans.</p>
 
 {% include graphiques/ruptures-serie.svg %}
 
@@ -181,5 +182,5 @@ a changé en premier, ni pourquoi : six indicateurs qui bougent ensemble ne se
 hiérarchisent pas. Elle ne dit pas non plus qu’il n’y en a qu’une — la méthode
 en cherche une seule, et avec {{ r.saisons }} saisons il serait imprudent d’en
 chercher deux. Et elle ne dit surtout pas l’année : le tableau ci-dessus compare
-deux moyennes de part et d’autre d’une coupure qui aurait pu tomber sept ans
-plus tôt sans presque rien perdre.</p>
+deux moyennes de part et d’autre d’une coupure qui aurait pu tomber n’importe où
+entre {{ r.fenetre.debut }} et {{ r.fenetre.fin }} sans presque rien perdre.</p>

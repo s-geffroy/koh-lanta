@@ -674,10 +674,13 @@ Ce qui reste, et pourquoi :
   {{ site.data.stats.conseils.conseils_complets }} ont un dépouillement dont on
   peut garantir qu’il est complet. Les analyses bulletin par bulletin ne portent
   que sur ceux-là ; les agrégats — qui part, avec combien de voix — utilisent
-  tous les conseils. Deux causes, mesurées : **245 conseils n’annoncent aucun
-  décompte** — la source ne dit pas combien de voix ont été exprimées, donc la
-  complétude n’y est pas vérifiable ; et **163 annoncent un décompte que le
-  tableau ne remplit pas entièrement**, dont 69 à un seul bulletin près. Ceux-là
+  tous les conseils. Deux causes, mesurées : **{{ site.data.stats.conseils.conseils_sans_decompte }}
+  conseils n’annoncent aucun décompte** — la source ne dit pas combien de voix
+  ont été exprimées, donc la complétude n’y est pas vérifiable ; et
+  **{{ site.data.stats.conseils.conseils_decompte_incomplet }} annoncent un
+  décompte que le tableau ne restitue pas exactement**, dont
+  {{ site.data.stats.conseils.conseils_un_bulletin_manquant }} auxquels manque
+  un seul bulletin. Ceux-là
   ont été inspectés cellule par cellule : les cases sont **vides dans la source**.
   Ce n’est pas une lecture qui échoue, c’est un wiki qui n’a pas tout noté.
 - **Les épreuves ne couvrent pas toutes les saisons.**
@@ -704,8 +707,8 @@ Ce qui reste, et pourquoi :
   dépouillement complet <em>et</em> un éliminé rattaché : quelques dizaines de
   conseils, pas les {{ site.data.stats.conseils.conseils }}. L’indicateur est
   publié avec sa base, et penche vers les saisons les mieux documentées.
-- **Le vote du jury final n’est pas un conseil.** Vingt-neuf saisons en
-  publient le détail, et les tableaux sources le présentent comme un scrutin
+- **Le vote du jury final n’est pas un conseil.** {{ site.data.stats.jury.saisons }}
+  saisons en publient le détail, et les tableaux sources le présentent comme un scrutin
   ordinaire —
   avec le vainqueur en « sortant ». Or on n’y élimine personne : écrire un nom
   y signifie « qu’il gagne ». Ces {{ site.data.stats.jury.effectif }} scrutins

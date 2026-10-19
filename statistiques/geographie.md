@@ -1,17 +1,18 @@
 ---
 layout: page
 title: D’où ils viennent
-description: "D’où viennent les aventuriers de Koh-Lanta : vingt-quatre Parisiens, est-ce beaucoup ? Comparaison avec la France qui vivait là ces années-là."
+description: "D’où viennent les aventuriers de Koh-Lanta, et le casting ressemble-t-il à la France ? Comparaison, région par région, avec la population de ces années-là."
 permalink: /statistiques/geographie/
 chapeau: >-
-  Vingt-quatre Parisiens, est-ce beaucoup ? La question n’a de réponse qu’en la
-  comparant à la France qui vivait là ces années-là.
+  Des Parisiens, des Provençaux, des Bretons : est-ce beaucoup ? La question
+  n’a de réponse qu’en la comparant à la France qui vivait là ces années-là.
 ---
 
 {% assign g = site.data.geographie %}
 {% assign reg = site.data.stats.modeles.registre %}
 {% assign td = reg | where: "cle", "geographie_departements" | first %}
 {% assign tr = reg | where: "cle", "geographie_regions" | first %}
+{% assign gl = site.data.stats.geographie.lacunaires %}
 
 Le département d’origine est le dernier champ important de ce jeu de données à
 n’avoir jamais servi. Il est aujourd’hui renseigné pour
@@ -88,8 +89,8 @@ le Centre-Val de Loire, les Pays de la Loire, la Bourgogne-Franche-Comté, la
 Bretagne, le Grand Est, les Hauts-de-France : une diagonale du Nord-Ouest et de
 l’Est.
 
-Six lignes sortent vraiment de leur intervalle — trois par le haut, trois par le
-bas. Ce sont les seules qui se lisent isolément ; le reste du tableau ne vaut
+{{ g.regions_hautes | size }} lignes sortent vraiment de leur intervalle par le
+haut, {{ g.regions_basses | size }} par le bas. Ce sont les seules qui se lisent isolément ; le reste du tableau ne vaut
 qu’ensemble.
 
 <div class="constat">
@@ -110,8 +111,10 @@ qu’ensemble.
 
 La Corse garde le plus fort indice, mais son intervalle est large — six
 personnes, cela ne se mesure pas finement. Le résultat solide est ailleurs :
-**Provence-Alpes-Côte d’Azur fournit une fois et trois quarts sa part**, sur
-cinquante-cinq aventuriers, et son intervalle ne s’approche pas de 1.
+{% assign paca = g.regions | where: "region", "Provence-Alpes-Côte d'Azur" | first %}
+**Provence-Alpes-Côte d’Azur fournit {{ paca.indice }} fois sa part**, sur
+{{ paca.observe }} aventuriers, et son intervalle ne descend pas sous
+{{ paca.indice_bas }}.
 
 ## Les départements, pour mémoire
 
@@ -152,11 +155,11 @@ pas la sélection elle-même.</p>
 <p class="note"><strong>La couverture est bonne, mais elle n’est pas
 uniforme.</strong> {{ g.saisons_completes }} des {{ g.saisons_classiques }}
 saisons classiques ont leur casting <em>entièrement</em> localisé, et aucune
-n’est muette. Cinq restent lacunaires — <em>Panama</em> (4 sur 16),
-<em>Palawan</em> (5 sur 16), <em>Palau</em> (8 sur 18), <em>Pacifique</em>
-(10 sur 17), et <em>L’Île au trésor</em> à une personne près. Quatre des cinq
-sont antérieures à 2010 : le résultat pèse donc un peu plus lourd sur les
-quinze dernières années que sur les cinq premières.</p>
+n’est muette. {{ gl | size }} restent lacunaires —
+{%- for x in gl %} <em>{{ x.titre }}</em> ({{ x.annee }}, {{ x.localisees }} sur
+{{ x.effectif }}){% unless forloop.last %},{% endunless %}{% endfor %}. Ce sont
+des saisons des premières années : le résultat pèse donc un peu plus lourd sur
+les saisons récentes que sur les premières.</p>
 
 <div class="tableau-large">
 <table data-triable>

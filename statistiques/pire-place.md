@@ -1,12 +1,12 @@
 ---
 layout: page
 title: La pire place au conseil
-description: "La pire place au conseil de Koh-Lanta : le nom sorti la fois d’avant et le nombre d’alliés restants font passer le risque de partir de 10 % à 47 %."
+description: "La pire place au conseil de Koh-Lanta : le nom sorti la fois d’avant et le nombre d’alliés restants, ensemble, multiplient le risque de partir."
 permalink: /statistiques/pire-place/
 chapeau: >-
   Deux signaux se lisent avant le vote : le nom qui est sorti la fois d’avant,
-  et le nombre d’alliés encore assis autour du feu. Ensemble, ils font passer le
-  risque de 10 % à 47 %.
+  et le nombre d’alliés encore assis autour du feu. Ensemble, ils multiplient
+  le risque de partir.
 ---
 
 {% assign m = site.data.stats.modeles %}
@@ -75,12 +75,12 @@ l’éliminé de chaque conseil est pris au hasard parmi les présents.</p>
   <b>{{ ti.observe_arrondi }} points</b> de risque :
   {{ ti.ecart_types }} écarts-types au-dessus du hasard, p ajustée
   {{ ti.p_ajustee }}.</p>
-  <p>Et les deux formes de l’isolement ne se valent pas. Avoir vu ses alliés
-  partir mène à {{ p.isolement[1].probabilite }} % ; <b>n’avoir jamais voté avec
-  personne</b>, à <b>{{ p.isolement[0].probabilite }} %</b> — près de trois fois
-  le hasard. Le joueur qui n’a jamais réussi à faire coïncider son bulletin avec
-  celui d’un autre est, de toutes les positions mesurées sur ce site, la plus
-  exposée.</p>
+  <p>Et les deux formes de l’isolement ne se distinguent pas. Avoir vu ses
+  alliés partir mène à {{ p.isolement[1].probabilite }} % ; n’avoir jamais voté
+  avec personne, à {{ p.isolement[0].probabilite }} %, pour un hasard de
+  {{ p.isolement[0].hasard }} %. Les deux intervalles se recouvrent largement :
+  <b>ce qui pèse, c’est d’être seul au moment du vote</b>, pas la manière dont
+  on l’est devenu.</p>
 </div>
 
 ## L’adversaire, encore là ou déjà parti
@@ -145,8 +145,8 @@ allié parmi les présents.</p>
 </div>
 
 De **{{ p.cumul[0].probabilite }} %** à **{{ p.cumul[2].probabilite }} %** : le
-risque est multiplié par plus de quatre entre la position la plus confortable et
-la plus mauvaise. C’est, sur ce site, le plus grand écart qu’une condition
+risque est multiplié par {{ p.cumul_rapport }} entre la position la plus
+confortable et la plus mauvaise. C’est, sur ce site, le plus grand écart qu’une condition
 connue **avant le vote** parvienne à produire.
 
 <p class="note">La dernière case ne tient qu’à {{ p.cumul[2].effectif }}

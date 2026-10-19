@@ -366,6 +366,15 @@ def bloc_conseils(conseils, parts, par_saison):
         "conseils": len(utiles),
         "conseils_avec_decompte": len(avec_decompte),
         "conseils_complets": len(complets),
+        # /sources/ : pourquoi un conseil n'est pas complet. Sans decompte
+        # annonce, la completude n'est pas verifiable ; avec, le tableau ne le
+        # restitue pas -- le plus souvent a un bulletin manquant pres.
+        "conseils_sans_decompte": len(utiles) - len(avec_decompte),
+        "conseils_decompte_incomplet": sum(
+            1 for c in avec_decompte if not c.get("complet")),
+        "conseils_un_bulletin_manquant": sum(
+            1 for c in avec_decompte if not c.get("complet")
+            and c["votes_exprimes"] - len(c.get("votes") or []) == 1),
         "bulletins": sum(len(c["votes"]) for c in utiles),
         "bulletins_conseils_complets": sum(len(c["votes"]) for c in complets),
         # Le compte brut autant que la part : « 0,0 % » ne se lit pas, « aucun
@@ -1025,6 +1034,18 @@ def bloc_indicateurs(saisons, parts, conseils, epreuves, colliers, par_saison):
                 groupes[x[cle]].append(x[champ])
         return {k: arrondi(mean(v)) for k, v in groupes.items() if len(v) >= 10}
 
+    def rapport_des_moyennes(champ, cle, haut, bas):
+        """Combien de fois la moyenne de `haut` vaut celle de `bas`, prise sur
+        les moyennes NON arrondies : deux moyennes affichees a 0,9 et 0,2 ne
+        disent pas leur rapport."""
+        groupes = defaultdict(list)
+        for x in classiques:
+            if x.get(champ) is not None and x.get(cle) in (haut, bas):
+                groupes[x[cle]].append(x[champ])
+        if not groupes.get(haut) or not groupes.get(bas) or not mean(groupes[bas]):
+            return None
+        return arrondi(mean(groupes[haut]) / mean(groupes[bas]))
+
     return {
         "seuil_conseils": SEUIL_CONSEILS,
         "seuil_epreuves": SEUIL_EPREUVES,
@@ -1079,6 +1100,10 @@ def bloc_indicateurs(saisons, parts, conseils, epreuves, colliers, par_saison):
         "seuil_fantome": SEUIL_FANTOME,
         "justesse_par_sort": moyenne_par("justesse_vote", "sort"),
         "menace_par_sort": moyenne_par("menace", "sort"),
+        # /statistiques/jeu-social/ : « N fois moins » de voix pour un
+        # vainqueur que pour un elimine au conseil.
+        "menace_rapport": rapport_des_moyennes(
+            "menace", "sort", "elimine_conseil", "vainqueur"),
         "saisons": saisons_avancees,
     }
 
@@ -1453,9 +1478,73 @@ def champs_d_affichage(stats):
                 t[f"{cle}_arrondi"] = round(t[cle], 1)
 
     # /statistiques/jeu-social/ : l'ecart, en points, entre fantomes et
-    # endurants.
+    # endurants, et leur rapport (« N fois plus »).
     for x in stats["indicateurs"]["fantomes_issue"]:
         x["ecart"] = round(x["part_fantomes"] - x["part_endurants"], 1)
+        x["rapport"] = (round(x["part_fantomes"] / x["part_endurants"], 1)
+                        if x["part_endurants"] else None)
+
+    # /statistiques/epreuves/ : les familles de metier rangees au nombre de
+    # victoires PAR PERSONNE. `par_metier` est range au total, et son premier
+    # (l'encadrement, cent aventuriers) n'est pas celui qui domine.
+    ep = stats["epreuves"]
+    ep["par_metier_par_ratio"] = sorted(
+        ep["par_metier"], key=lambda x: -x["victoires_par_aventurier"])
+    # L'ecart, en points de saison, entre le vainqueur de la premiere epreuve
+    # individuelle et l'ensemble, que le texte ecrivait « neuf points ».
+    pe = stats["premiere_epreuve"]
+    pe["ecart"] = round(pe["survie_gagnants"] - pe["survie_ensemble"], 1)
+
+    # /statistiques/finale/ : combien de victoires du dernier qualifie il
+    # faudrait retirer pour que l'intervalle de Wilson reprenne le hasard.
+    if stats["finale"].get("par_rang"):
+        g = stats["finale"]["par_rang"][2]["gagne_la_saison"]
+        retirees = 0
+        while retirees < g["cas"] and modeles._wilson(g["cas"] - retirees, g["effectif"])[0] > g["hasard"]:
+            retirees += 1
+        g["marge"] = retirees
+
+    # /statistiques/jury/ : « divise la cote par N », l'inverse du rapport de
+    # cotes d'avoir ecrit le nom du jure.
+    for x in m["jury_final"]["coefficients"]:
+        x["inverse"] = round(1.0 / x["rapport"], 1) if x.get("rapport") else None
+
+    # /statistiques/longevite/ : l'ecart, en points, entre le doyen du camp et
+    # ceux qui ne sont ni le plus age ni le plus jeune.
+    af = m["autour_du_feu"]
+    af["age_ecart"] = round(af["age"][0]["probabilite"] - af["age"][1]["probabilite"], 1)
+
+    # /statistiques/pire-place/ : par combien le risque est multiplie entre
+    # aucun des deux signaux et les deux a la fois.
+    pp = m["pire_place"]
+    pp["cumul_rapport"] = round(pp["cumul"][2]["probabilite"] / pp["cumul"][0]["probabilite"], 1)
+
+    # /methode/ : les « resultats » que le seul hasard produirait au seuil de
+    # 5 %, sur tous les tests du registre.
+    m["faux_positifs_attendus"] = round(0.05 * m["nb_tests"], 1)
+
+    # /saisons/ : les saisons classiques sans aucun abandon, et celle qui en a
+    # perdu la plus grande part -- les memes que le graphique, qui ecarte les
+    # speciales et la saison en cours. La page les nommait a la main.
+    ind = stats["indicateurs"]
+    sa = [x for x in ind["saisons"] if not x["speciale"] and not x["en_cours"]]
+    nulles = [f"*{x['titre']}* ({x['annee']})" for x in sa if x["abandons"] == 0]
+    ind["abandon_nul"] = len(nulles)
+    ind["abandon_nul_texte"] = (", ".join(nulles[:-1]) + " et " + nulles[-1]
+                                if len(nulles) > 1 else "".join(nulles))
+    ind["abandon_max"] = max(sa, key=lambda x: x["taux_abandon"] or 0)
+
+    # /statistiques/sorties/ : les participations classiques que la
+    # repartition couvre. La page affichait le total general, speciales
+    # comprises, au-dessus d'une repartition qui ne les compte pas.
+    so = stats["sorties"]
+    so["effectif"] = sum(x["effectif"] for x in so["repartition"])
+
+    # /statistiques/alliances/ et /jeu-social/ : combien de fois etre du bon
+    # cote pese plus qu'une voix recue de plus par conseil.
+    maj = m["alliances"]["majorite"]
+    v0, v1 = maj["variables"][0], maj["variables"][1]
+    maj["rapport"] = round(abs(v0["estimation"] / v1["estimation"]), 1) if v1["estimation"] else None
 
     # /statistiques/top/ : combien de fois l'ecart reel vaut celui du hasard,
     # et l'AUC du palmares en pourcentage.
@@ -1670,6 +1759,27 @@ def main():
                 "saison": p["saison"], "annee": p["_annee"],
                 "titre": p["_saison"].get("titre"),
             }
+
+    # /statistiques/finale/ : les saisons jouees ecartees parce que leur fin
+    # n'a pas le format a trois aux poteaux, que le texte comptait « trois ».
+    couv = (stats["finale"] or {}).get("couverture")
+    if couv:
+        jouees = sum(1 for s in saisons if not s.get("annulee") and not s.get("en_cours"))
+        couv["hors_format"] = jouees - couv["saisons_au_format"]
+
+    # /statistiques/geographie/ : les saisons classiques dont le casting n'est
+    # pas entierement localise, que la page enumerait a la main. Meme
+    # definition que la couverture de tools/extraction/geographie_insee.py.
+    lacunaires = []
+    for s in sorted(saisons, key=lambda x: x.get("annee") or 0):
+        if s.get("annulee") or s.get("speciale"):
+            continue
+        gens = [p for p in parts if p["saison"] == s["id"]]
+        localisees = sum(1 for p in gens if p.get("localisation"))
+        if gens and localisees < len(gens):
+            lacunaires.append({"titre": s.get("titre"), "annee": s.get("annee"),
+                               "localisees": localisees, "effectif": len(gens)})
+    stats["geographie"] = {"lacunaires": lacunaires}
 
     champs_d_affichage(stats)
     poser_les_identifiants(stats, index_des_noms(personnes))

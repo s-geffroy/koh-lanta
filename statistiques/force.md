@@ -80,8 +80,8 @@ retirées au sort. Une force de 1 est la moyenne.</p>
 </div>
 
 **Les intervalles sont larges, et c’est le résultat.** Presque tous se
-chevauchent : avec une trentaine d’épreuves au maximum par carrière, ces données
-ne permettent pas de départager les premiers. Un classement sans ses intervalles
+chevauchent : avec {{ f.disputees_max }} épreuves au plus par carrière, ces
+données ne permettent pas de départager les premiers. Un classement sans ses intervalles
 laisserait croire le contraire.
 
 ## Ce que le total brut fait mal voir

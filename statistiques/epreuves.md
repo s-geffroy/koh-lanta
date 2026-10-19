@@ -307,9 +307,11 @@ laissait entendre.
 <p class="legende-figure">Nombre moyen d’épreuves individuelles remportées par
 aventurier de chaque famille — rapporté à l’effectif, donc comparable.</p>
 
-**{{ e.par_metier[0].libelle }}** arrive en tête avec
-{{ e.par_metier[0].victoires_par_aventurier }} victoire par personne. Rien de
-surprenant. Mais le fait notable est ailleurs : cette domination athlétique
+{% assign pm = e.par_metier_par_ratio %}
+**{{ pm[0].libelle }}** arrive en tête avec
+{{ pm[0].victoires_par_aventurier }} victoire par personne, de peu devant
+la famille « {{ pm[1].libelle }} » ({{ pm[1].victoires_par_aventurier }}). Rien de
+surprenant. Mais le fait notable est ailleurs : cet avantage athlétique
 **ne se convertit pas en victoires finales**. Le sport gagne les épreuves et
 perd le jury.
 
@@ -337,11 +339,13 @@ La première épreuve individuelle d’une saison marque le début du jeu person
 Celui qui la remporte tient en moyenne **{{ pe.survie_gagnants }} %** de la
 saison, contre **{{ pe.survie_ensemble }} %** pour l’ensemble des aventuriers.
 
-L’écart est réel, et il est modeste : neuf points. Surtout, il repose sur
+L’écart est net : {{ pe.ecart }} points. Mais il repose sur
 **{{ pe.effectif }} cas seulement** — une saison ne fournit qu’une première
 épreuve individuelle, et {{ pe.saisons_couvertes }} saisons en ont une de
-relevée. À cette taille, l’écart resterait compatible avec le hasard : il est
-donné pour ce qu’il est, une indication, pas une loi.
+relevée. Et il est en partie mécanique : dans la plupart des saisons, cette épreuve se
+dispute après les premières sorties, quand l’ensemble compte aussi ceux qui sont
+partis avant. Aucun test du registre ne le mesure : il est donné pour ce qu’il est,
+une indication, pas une loi.
 
 ## Ce que cette page ne dit pas
 
@@ -354,9 +358,10 @@ tableaux sources changent de colonnes et y listent les qualifiés plutôt que le
 vainqueur : les lire comme des victoires en fabriquerait de fausses. Orientation
 et poteaux ne sont donc pas comptés.
 
-**La nature des épreuves n’est pas connue** — endurance, équilibre, précision,
-aquatique. Les sources ne la donnent pas de façon exploitable. Tant qu’elle
-manquera, aucune analyse par type d’épreuve ne figurera ici.
+**La nature des épreuves ne se croise pas avec ces comptes.** Elle vient du
+catalogue du wiki, qui ne donne pas l’épisode : les {{ e.epreuves }} épreuves
+relevées épisode par épisode n’en reçoivent aucune. Ce que la nature dit — et
+ne dit pas — est mesuré plus haut, sur les citations du catalogue.
 
 ## Gagner le confort rend-il cible ? Non
 

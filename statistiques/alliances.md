@@ -69,7 +69,7 @@ conseils traversés tenu constant.</p>
   {{ v0.bas }} à {{ v0.haut }}.</p>
   <p>Dans le même modèle, recevoir une voix de plus par conseil coûte
   {{ v1.estimation }} points ({{ v1.bas }} à {{ v1.haut }}).
-  <b>Être du bon côté pèse cinq fois plus que ne pas être visé.</b></p>
+  <b>Être du bon côté pèse {{ a.majorite.rapport }} fois plus que ne pas être visé.</b></p>
 </div>
 
 C’est un déplacement du meilleur prédicteur connu de ce site. La page

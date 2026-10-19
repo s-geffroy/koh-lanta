@@ -10,7 +10,8 @@ chapeau: >-
 
 {% assign m = site.data.stats.modeles %}
 
-Onze pages de ce site reposent sur des modèles plutôt que sur des comptages :
+Une bonne partie des pages de ce site reposent sur des modèles plutôt que sur
+des comptages, parmi lesquelles
 [La recette du casting]({{ '/statistiques/casting/' | relative_url }}),
 [Le pronostic]({{ '/statistiques/pronostic/' | relative_url }}),
 [La force réelle]({{ '/statistiques/force/' | relative_url }}),
@@ -42,8 +43,8 @@ corrige rien.
 
 ## Pourquoi corriger, et comment
 
-{{ m.nb_tests }} tests sont menés. Au seuil habituel de 5 %, on attend un peu
-plus d’un « résultat » né du seul hasard. La procédure de **Benjamini-Hochberg**
+{{ m.nb_tests }} tests sont menés. Au seuil habituel de 5 %, on attend
+{{ m.faux_positifs_attendus }} « résultats » nés du seul hasard. La procédure de **Benjamini-Hochberg**
 ajuste les p-values pour borner la part de fausses découvertes parmi celles
 qu’on retient. Les deux valeurs sont publiées : brute et ajustée.
 
@@ -449,7 +450,8 @@ qu’elle existe. Le wiki catalogue
 type. Elle reste inexploitable, mais pour une raison précise et mesurée : le
 catalogue ne donne pas l’épisode, si bien que
 {{ site.data.epreuves_nommees.raccord.part_raccordee }} % seulement des épreuves
-relevées peuvent recevoir une nature — et ces 10 % sont exactement les épreuves
+relevées peuvent recevoir une nature — et ces
+{{ site.data.epreuves_nommees.raccord.part_raccordee }} % sont exactement les épreuves
 gagnées par les joueurs les moins dominants.
 [Les épreuves]({{ '/statistiques/epreuves/' | relative_url }}) montre le
 décompte. **C’est la troisième fois qu’une limite énoncée sans vérification se

@@ -11,7 +11,10 @@ chapeau: >-
 {% assign p = site.data.prenoms %}
 {% assign c = site.data.stats.casting %}
 
-Sept Alexandra, huit Maxime, six Nicolas. Cela paraît beaucoup — mais un prénom
+{% assign pa = p.prenoms | where: "prenom", "Alexandra" | first %}
+{% assign pm = p.prenoms | where: "prenom", "Maxime" | first %}
+{% assign pn = p.prenoms | where: "prenom", "Nicolas" | first %}
+{{ pa.observe }} Alexandra, {{ pm.observe }} Maxime, {{ pn.observe }} Nicolas. Cela paraît beaucoup — mais un prénom
 courant produit mécaniquement des porteurs, et les aventuriers ne sont pas nés
 n’importe quand. La seule question qui tienne est donc : **combien en
 attendrait-on ?**

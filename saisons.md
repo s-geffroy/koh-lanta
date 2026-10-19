@@ -160,9 +160,10 @@ voix près.</p>
 <p class="legende-figure">Part des aventuriers ayant quitté le jeu d’eux-mêmes
 ou sur décision médicale.</p>
 
-Deux saisons n’ont connu **aucun abandon** : *L’Île au trésor* (2016) et *Les
-Reliques du destin* (2026). À l’autre bout, *Palau* (2009) en a perdu plus d’un
-sur cinq.
+{% assign ind = site.data.stats.indicateurs %}{% assign amax = ind.abandon_max %}
+Parmi les saisons classiques, {{ ind.abandon_nul }} n’ont connu **aucun
+abandon** : {{ ind.abandon_nul_texte }}. À l’autre bout, *{{ amax.titre }}*
+({{ amax.annee }}) en a perdu {{ amax.abandons }} sur {{ amax.effectif }}.
 
 ### Le tableau complet
 

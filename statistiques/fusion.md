@@ -85,7 +85,7 @@ son niveau — est donc déjà neutralisé. Ce qui reste ne peut être qu’un c
 ### Une estimation trop floue ?
 
 La force est estimée sur les épreuves individuelles disputées. Un aventurier
-éliminé avant la fusion en a disputé peu — deux, en médiane — quand ceux qui
+éliminé avant la fusion en a disputé peu, quand ceux qui
 restent seront jugés sur toute une saison. **On comparerait donc une estimation
 vague à des estimations informées** : le flou pourrait masquer un effet, ou en
 fabriquer un.

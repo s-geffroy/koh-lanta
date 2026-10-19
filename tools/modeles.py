@@ -538,6 +538,8 @@ def recette_casting(par_saison, parts):
         "nb_archetypes": meilleur_k,
         "silhouette": _arr(meilleur_score, 3),
         "silhouettes": silhouettes,
+        # Le plus petit groupe admis, en personnes : la page le cite.
+        "plancher": plancher,
         "inertie_axes": [_arr(float(x)) for x in inerties[:2]],
         "carte": [{"x": _arr(float(coord[i, 0]), 3), "y": _arr(float(coord[i, 1]), 3),
                    "groupe": int(groupes[i]), "nom": lignes[i]["nom"],
@@ -908,6 +910,9 @@ def force(par_saison, parts, conseils, epreuves):
         "joueurs": len(joueurs),
         "seuil": SEUIL_PLATEAUX,
         "classes": len(classement),
+        # La plus longue carriere en epreuves : ce qui borne la precision de
+        # chaque force, et que la page ecrivait « une trentaine ».
+        "disputees_max": max((d["disputees"] for d in classement), default=None),
         "classement": classement[:20],
         "pentes": pentes,
         "plus_forte_montee": montees[-1] if montees else None,

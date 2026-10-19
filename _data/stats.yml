@@ -585,6 +585,7 @@ sorties:
     abandons: "7,3"
     conseil: 67
     ambassadeurs: "3,4"
+  effectif: 511
 sorties_toutes:
   repartition:
   - sort: elimine_conseil
@@ -1380,6 +1381,9 @@ conseils:
   conseils: 510
   conseils_avec_decompte: 389
   conseils_complets: 340
+  conseils_sans_decompte: 121
+  conseils_decompte_incomplet: 49
+  conseils_un_bulletin_manquant: 29
   bulletins: 3470
   bulletins_conseils_complets: 2843
   par_periode:
@@ -1732,6 +1736,7 @@ finale:
     - s14
     - s17
     - sp2
+    hors_format: 6
   poteaux:
     effectif: 20
     vainqueur_des_poteaux:
@@ -1821,6 +1826,7 @@ finale:
       bas: "41,3"
       haut: "82,7"
       hasard: "33,3"
+      marge: 2
     elimine_aux_poteaux:
       effectif: 17
       cas: 4
@@ -7538,6 +7544,7 @@ premiere_epreuve:
   survie_gagnants: "79,2"
   survie_ensemble: 61
   saisons_couvertes: 29
+  ecart: "18,2"
 epreuves:
   epreuves: 748
   saisons_couvertes: 29
@@ -7827,67 +7834,80 @@ epreuves:
     id: martin-bazin
     victoires: 5
   par_metier:
-  - code: encadrement
+  - &id015
+    code: encadrement
     libelle: Encadrement et professions intellectuelles
     victoires: 55
     aventuriers: 100
     victoires_par_aventurier: "0,55"
-  - code: sport
+  - &id006
+    code: sport
     libelle: Sport et coaching
     victoires: 52
     aventuriers: 49
     victoires_par_aventurier: "1,06"
-  - code: artisanat_btp
+  - &id008
+    code: artisanat_btp
     libelle: Artisanat et bâtiment
     victoires: 40
     aventuriers: 43
     victoires_par_aventurier: "0,93"
-  - code: arts_medias
+  - &id012
+    code: arts_medias
     libelle: Arts, médias et image
     victoires: 36
     aventuriers: 47
     victoires_par_aventurier: "0,77"
-  - code: commerce
+  - &id017
+    code: commerce
     libelle: Commerce et vente
     victoires: 32
     aventuriers: 64
     victoires_par_aventurier: "0,5"
-  - code: action_securite
+  - &id009
+    code: action_securite
     libelle: Action et sécurité
     victoires: 27
     aventuriers: 29
     victoires_par_aventurier: "0,93"
-  - code: agriculture
+  - &id007
+    code: agriculture
     libelle: Agriculture et nature
     victoires: 25
     aventuriers: 24
     victoires_par_aventurier: "1,04"
-  - code: transport
+  - &id011
+    code: transport
     libelle: Transport et logistique
     victoires: 24
     aventuriers: 29
     victoires_par_aventurier: "0,83"
-  - code: enseignement
+  - &id014
+    code: enseignement
     libelle: Enseignement et éducation
     victoires: 21
     aventuriers: 30
     victoires_par_aventurier: "0,7"
-  - code: restauration_hotellerie
+  - &id010
+    code: restauration_hotellerie
     libelle: Restauration et hôtellerie
     victoires: 21
     aventuriers: 23
     victoires_par_aventurier: "0,91"
-  - code: etudiant
+  - &id016
+    code: etudiant
     libelle: Étudiants
     victoires: 21
     aventuriers: 38
     victoires_par_aventurier: "0,55"
-  - code: sans_emploi
+  - &id013
+    code: sans_emploi
     libelle: Sans activité déclarée
     victoires: 13
     aventuriers: 17
     victoires_par_aventurier: "0,76"
-  - code: sante
+  - &id018
+    code: sante
     libelle: Santé
     victoires: 7
     aventuriers: 18
@@ -7928,6 +7948,20 @@ epreuves:
     victoires: 29
     aventuriers: 76
     victoires_par_aventurier: "0,38"
+  par_metier_par_ratio:
+  - *id006
+  - *id007
+  - *id008
+  - *id009
+  - *id010
+  - *id011
+  - *id012
+  - *id013
+  - *id014
+  - *id015
+  - *id016
+  - *id017
+  - *id018
 colliers:
   colliers: 74
   trouves: 62
@@ -8649,6 +8683,7 @@ indicateurs:
     part_ensemble: "63,8"
     part_endurants: "60,8"
     ecart: "-40,5"
+    rapport: "0,3"
   - sort: abandon_medical
     libelle: Abandon médical
     effectif: 14
@@ -8656,6 +8691,7 @@ indicateurs:
     part_ensemble: "7,7"
     part_endurants: 5
     ecart: "15,3"
+    rapport: "4,1"
   - sort: vainqueur
     libelle: Vainqueur
     effectif: 12
@@ -8663,6 +8699,7 @@ indicateurs:
     part_ensemble: "5,7"
     part_endurants: "7,5"
     ecart: "9,9"
+    rapport: "2,3"
   - sort: elimine_ambassadeurs
     libelle: Éliminé aux ambassadeurs
     effectif: 9
@@ -8670,6 +8707,7 @@ indicateurs:
     part_ensemble: "3,3"
     part_endurants: 4
     ecart: 9
+    rapport: "3,2"
   - sort: elimine_orientation
     libelle: Éliminé à l'orientation
     effectif: 6
@@ -8677,6 +8715,7 @@ indicateurs:
     part_ensemble: "6,7"
     part_endurants: "8,6"
     ecart: "0,1"
+    rapport: 1
   - sort: elimine_poteaux
     libelle: Éliminé aux poteaux
     effectif: 5
@@ -8684,6 +8723,7 @@ indicateurs:
     part_ensemble: "4,8"
     part_endurants: "6,1"
     ecart: "1,1"
+    rapport: "1,2"
   - sort: finaliste
     libelle: Finaliste
     effectif: 5
@@ -8691,6 +8731,7 @@ indicateurs:
     part_ensemble: "4,9"
     part_endurants: "6,5"
     ecart: "0,7"
+    rapport: "1,1"
   - sort: abandon_volontaire
     libelle: Abandon volontaire
     effectif: 4
@@ -8698,6 +8739,7 @@ indicateurs:
     part_ensemble: "2,9"
     part_endurants: "1,7"
     ecart: "4,1"
+    rapport: "3,4"
   voix_des_vainqueurs:
     effectif: 29
     total: 65
@@ -9121,6 +9163,7 @@ indicateurs:
     elimine_orientation: "0,4"
     abandon_volontaire: "0,3"
     elimine_ambassadeurs: "0,3"
+  menace_rapport: "5,9"
   saisons:
   - id: s01
     numero: 1
@@ -9176,7 +9219,8 @@ indicateurs:
     mecaniques:
     - ambassadeurs
     barre: 61
-  - id: s03
+  - &id019
+    id: s03
     numero: 3
     titre: Bocas del Toro
     annee: 2003
@@ -10090,6 +10134,10 @@ indicateurs:
     - collier_immunite
     - heros
     - binomes
+  abandon_nul: 3
+  abandon_nul_texte: '*Les Aventuriers de Koh-Lanta* (2001), *L''Île au trésor* (2016) et *Les Reliques
+    du destin* (2026)'
+  abandon_max: *id019
 completude:
   participations: 645
   avec_fiche: 603
@@ -10295,7 +10343,7 @@ classement:
       brut: 3 / 4
       preuve: 4
       rang_general: 1
-      rangs: &id006
+      rangs: &id020
         parcours: 1
         epreuves: 1
         discretion: 259
@@ -10307,7 +10355,7 @@ classement:
       brut: 2 / 3
       preuve: 3
       rang_general: 19
-      rangs: &id020
+      rangs: &id034
         parcours: 2
         epreuves: 29
         discretion: 249
@@ -10319,7 +10367,7 @@ classement:
       brut: 2 / 3
       preuve: 3
       rang_general: 5
-      rangs: &id010
+      rangs: &id024
         parcours: 3
         epreuves: 23
         discretion: 126
@@ -10331,7 +10379,7 @@ classement:
       brut: 2 / 3
       preuve: 3
       rang_general: 82
-      rangs: &id032
+      rangs: &id046
         parcours: 4
         epreuves: 42
         discretion: 267
@@ -10343,7 +10391,7 @@ classement:
       brut: 2 / 3
       preuve: 3
       rang_general: 163
-      rangs: &id036
+      rangs: &id050
         parcours: 5
         epreuves: 468
         discretion: 455
@@ -10355,7 +10403,7 @@ classement:
       brut: 1 / 2
       preuve: 2
       rang_general: 40
-      rangs: &id027
+      rangs: &id041
         parcours: 6
         epreuves: 47
         discretion: 454
@@ -10367,7 +10415,7 @@ classement:
       brut: 1 / 2
       preuve: 2
       rang_general: 2
-      rangs: &id007
+      rangs: &id021
         parcours: 7
         epreuves: 3
         discretion: 83
@@ -10379,7 +10427,7 @@ classement:
       brut: 2 / 3
       preuve: 3
       rang_general: 322
-      rangs: &id039
+      rangs: &id053
         parcours: 8
         epreuves: 531
         discretion: 63
@@ -10391,7 +10439,7 @@ classement:
       brut: 2 / 4
       preuve: 4
       rang_general: 17
-      rangs: &id018
+      rangs: &id032
         parcours: 9
         epreuves: 97
         discretion: 64
@@ -10403,7 +10451,7 @@ classement:
       brut: 1 / 2
       preuve: 2
       rang_general: 14
-      rangs: &id017
+      rangs: &id031
         parcours: 10
         epreuves: 18
         discretion: 389
@@ -10426,7 +10474,7 @@ classement:
       brut: 20 / 49
       preuve: 49
       rang_general: 1
-      rangs: *id006
+      rangs: *id020
     - rang: 2
       nom: Teheiura Teahui
       id: teheiura-teahui
@@ -10434,7 +10482,7 @@ classement:
       brut: 17 / 48
       preuve: 48
       rang_general: 6
-      rangs: &id011
+      rangs: &id025
         parcours: 13
         epreuves: 2
         discretion: 387
@@ -10446,7 +10494,7 @@ classement:
       brut: 10 / 25
       preuve: 25
       rang_general: 2
-      rangs: *id007
+      rangs: *id021
     - rang: 4
       nom: Jean Belmonte
       id: jean-belmonte
@@ -10454,7 +10502,7 @@ classement:
       brut: 5 / 9
       preuve: 9
       rang_general: 13
-      rangs: &id016
+      rangs: &id030
         parcours: 196
         epreuves: 4
         discretion: 51
@@ -10466,7 +10514,7 @@ classement:
       brut: 7 / 18
       preuve: 18
       rang_general: 7
-      rangs: &id012
+      rangs: &id026
         parcours: 21
         epreuves: 5
         discretion: 329
@@ -10478,7 +10526,7 @@ classement:
       brut: 5 / 11
       preuve: 11
       rang_general: 11
-      rangs: &id014
+      rangs: &id028
         parcours: 130
         epreuves: 6
         discretion: 24
@@ -10490,7 +10538,7 @@ classement:
       brut: 6 / 16
       preuve: 16
       rang_general: 4
-      rangs: &id009
+      rangs: &id023
         parcours: 54
         epreuves: 7
         discretion: 153
@@ -10502,7 +10550,7 @@ classement:
       brut: 3 / 3
       preuve: 3
       rang_general: 20
-      rangs: &id021
+      rangs: &id035
         parcours: 250
         epreuves: 8
         discretion: 53
@@ -10514,7 +10562,7 @@ classement:
       brut: 5 / 13
       preuve: 13
       rang_general: 3
-      rangs: &id008
+      rangs: &id022
         parcours: 30
         epreuves: 9
         discretion: 19
@@ -10526,7 +10574,7 @@ classement:
       brut: 5 / 13
       preuve: 13
       rang_general: 30
-      rangs: &id025
+      rangs: &id039
         parcours: 76
         epreuves: 10
         discretion: 441
@@ -10549,7 +10597,7 @@ classement:
       brut: 0 / 19
       preuve: 19
       rang_general: 86
-      rangs: &id033
+      rangs: &id047
         parcours: 24
         epreuves: 73
         discretion: 1
@@ -10561,7 +10609,7 @@ classement:
       brut: 0 / 17
       preuve: 17
       rang_general: 26
-      rangs: &id023
+      rangs: &id037
         parcours: 11
         epreuves: 31
         discretion: 2
@@ -10573,7 +10621,7 @@ classement:
       brut: 0 / 17
       preuve: 17
       rang_general: 261
-      rangs: &id038
+      rangs: &id052
         parcours: 212
         epreuves: 86
         discretion: 3
@@ -10585,7 +10633,7 @@ classement:
       brut: 0 / 16
       preuve: 16
       rang_general: 66
-      rangs: &id031
+      rangs: &id045
         parcours: 16
         epreuves: 436
         discretion: 4
@@ -10597,7 +10645,7 @@ classement:
       brut: 0 / 15
       preuve: 15
       rang_general: 62
-      rangs: &id030
+      rangs: &id044
         parcours: 202
         epreuves: 99
         discretion: 5
@@ -10609,7 +10657,7 @@ classement:
       brut: 0 / 13
       preuve: 13
       rang_general: 189
-      rangs: &id037
+      rangs: &id051
         parcours: 232
         epreuves: 435
         discretion: 6
@@ -10621,7 +10669,7 @@ classement:
       brut: 0 / 13
       preuve: 13
       rang_general: 363
-      rangs: &id041
+      rangs: &id055
         parcours: 98
         epreuves: 521
         discretion: 7
@@ -10633,7 +10681,7 @@ classement:
       brut: 0 / 12
       preuve: 12
       rang_general: 333
-      rangs: &id040
+      rangs: &id054
         parcours: 277
         epreuves: 399
         discretion: 8
@@ -10645,7 +10693,7 @@ classement:
       brut: 0 / 12
       preuve: 12
       rang_general: 124
-      rangs: &id034
+      rangs: &id048
         parcours: 121
         epreuves: 434
         discretion: 9
@@ -10657,7 +10705,7 @@ classement:
       brut: 0 / 12
       preuve: 12
       rang_general: 57
-      rangs: &id028
+      rangs: &id042
         parcours: 33
         epreuves: 28
         discretion: 10
@@ -10680,7 +10728,7 @@ classement:
       brut: 10 / 10
       preuve: 10
       rang_general: 12
-      rangs: &id015
+      rangs: &id029
         parcours: 43
         epreuves: 62
         discretion: 156
@@ -10692,7 +10740,7 @@ classement:
       brut: 18 / 20
       preuve: 20
       rang_general: 22
-      rangs: &id022
+      rangs: &id036
         parcours: 18
         epreuves: 394
         discretion: 206
@@ -10704,7 +10752,7 @@ classement:
       brut: 9 / 9
       preuve: 9
       rang_general: 35
-      rangs: &id026
+      rangs: &id040
         parcours: 110
         epreuves: 90
         discretion: 396
@@ -10716,7 +10764,7 @@ classement:
       brut: 8 / 8
       preuve: 8
       rang_general: 28
-      rangs: &id024
+      rangs: &id038
         parcours: 96
         epreuves: 104
         discretion: 196
@@ -10728,7 +10776,7 @@ classement:
       brut: 8 / 8
       preuve: 8
       rang_general: 58
-      rangs: &id029
+      rangs: &id043
         parcours: 77
         epreuves: 89
         discretion: 465
@@ -10740,7 +10788,7 @@ classement:
       brut: 8 / 8
       preuve: 8
       rang_general: 3
-      rangs: *id008
+      rangs: *id022
     - rang: 7
       nom: Frédéric Favier
       id: frederic-favier
@@ -10748,7 +10796,7 @@ classement:
       brut: 8 / 8
       preuve: 8
       rang_general: 4
-      rangs: *id009
+      rangs: *id023
     - rang: 8
       nom: Clémentine Jullien
       id: clementine-jullien
@@ -10756,7 +10804,7 @@ classement:
       brut: 11 / 12
       preuve: 12
       rang_general: 147
-      rangs: &id035
+      rangs: &id049
         parcours: 150
         epreuves: 487
         discretion: 422
@@ -10768,7 +10816,7 @@ classement:
       brut: 11 / 12
       preuve: 12
       rang_general: 8
-      rangs: &id013
+      rangs: &id027
         parcours: 12
         epreuves: 15
         discretion: 303
@@ -10780,7 +10828,7 @@ classement:
       brut: 7 / 7
       preuve: 7
       rang_general: 18
-      rangs: &id019
+      rangs: &id033
         parcours: 143
         epreuves: 45
         discretion: 197
@@ -12473,7 +12521,7 @@ classement:
     part_top: "88,4"
     rang_p05: 1
     rang_p95: 124
-    rangs: *id006
+    rangs: *id020
   - rang: 2
     nom: Bertrand Bolle
     id: bertrand-bolle
@@ -12483,7 +12531,7 @@ classement:
     part_top: 98
     rang_p05: 2
     rang_p95: 17
-    rangs: *id007
+    rangs: *id021
   - rang: 3
     nom: François Descamp
     id: francois-descamp
@@ -12493,7 +12541,7 @@ classement:
     part_top: 100
     rang_p05: 1
     rang_p95: 11
-    rangs: *id008
+    rangs: *id022
   - rang: 4
     nom: Frédéric Favier
     id: frederic-favier
@@ -12503,7 +12551,7 @@ classement:
     part_top: "98,8"
     rang_p05: 2
     rang_p95: 17
-    rangs: *id009
+    rangs: *id023
   - rang: 5
     nom: Jade Handi
     id: jade-handi
@@ -12513,7 +12561,7 @@ classement:
     part_top: "86,8"
     rang_p05: 2
     rang_p95: 45
-    rangs: *id010
+    rangs: *id024
   - rang: 6
     nom: Teheiura Teahui
     id: teheiura-teahui
@@ -12523,7 +12571,7 @@ classement:
     part_top: "67,8"
     rang_p05: 2
     rang_p95: 265
-    rangs: *id011
+    rangs: *id025
   - rang: 7
     nom: François-David Cardonnel
     id: francois-david-cardonnel
@@ -12533,7 +12581,7 @@ classement:
     part_top: "85,2"
     rang_p05: 4
     rang_p95: 46
-    rangs: *id012
+    rangs: *id026
   - rang: 8
     nom: Philippe Duron
     id: philippe-duron
@@ -12543,7 +12591,7 @@ classement:
     part_top: "96,4"
     rang_p05: 4
     rang_p95: 21
-    rangs: *id013
+    rangs: *id027
   - rang: 9
     nom: Naoil Tita
     id: naoil-tita
@@ -12581,7 +12629,7 @@ classement:
     part_top: "68,8"
     rang_p05: 6
     rang_p95: 74
-    rangs: *id014
+    rangs: *id028
   - rang: 12
     nom: Wendy Gervois
     id: wendy-gervois
@@ -12591,7 +12639,7 @@ classement:
     part_top: "76,4"
     rang_p05: 1
     rang_p95: 45
-    rangs: *id015
+    rangs: *id029
   - rang: 13
     nom: Jean Belmonte
     id: jean-belmonte
@@ -12601,7 +12649,7 @@ classement:
     part_top: "58,9"
     rang_p05: 4
     rang_p95: 135
-    rangs: *id016
+    rangs: *id030
   - rang: 14
     nom: Romuald Lafite
     id: romuald-lafite
@@ -12611,7 +12659,7 @@ classement:
     part_top: "67,4"
     rang_p05: 8
     rang_p95: 128
-    rangs: *id017
+    rangs: *id031
   - rang: 15
     nom: Maxine Eouzan
     id: maxine-eouzan
@@ -12649,7 +12697,7 @@ classement:
     part_top: "66,3"
     rang_p05: 5
     rang_p95: 58
-    rangs: *id018
+    rangs: *id032
   - rang: 18
     nom: Amélie Grégoire
     id: amelie-gregoire
@@ -12659,7 +12707,7 @@ classement:
     part_top: 53
     rang_p05: 8
     rang_p95: 64
-    rangs: *id019
+    rangs: *id033
   - rang: 19
     nom: Laurent Maistret
     id: laurent-maistret
@@ -12669,7 +12717,7 @@ classement:
     part_top: "51,4"
     rang_p05: 3
     rang_p95: 414
-    rangs: *id020
+    rangs: *id034
   - rang: 20
     nom: Louise Picavet
     id: louise-picavet
@@ -12679,7 +12727,7 @@ classement:
     part_top: "44,8"
     rang_p05: 9
     rang_p95: 169
-    rangs: *id021
+    rangs: *id035
   - rang: 21
     nom: Gabriel Gubbels
     id: gabriel-gubbels
@@ -12703,7 +12751,7 @@ classement:
     part_top: "53,3"
     rang_p05: 3
     rang_p95: 126
-    rangs: *id022
+    rangs: *id036
   - rang: 23
     nom: Nicolas Pretot
     id: nicolas-pretot
@@ -12755,7 +12803,7 @@ classement:
     part_top: "47,6"
     rang_p05: 7
     rang_p95: 341
-    rangs: *id023
+    rangs: *id037
   - rang: 27
     nom: Bruno Peisey
     id: bruno-peisey
@@ -12779,7 +12827,7 @@ classement:
     part_top: 38
     rang_p05: 7
     rang_p95: 86
-    rangs: *id024
+    rangs: *id038
   - rang: 29
     nom: Sébastien Gottiniaux
     id: sebastien-gottiniaux
@@ -12803,7 +12851,7 @@ classement:
     part_top: 34
     rang_p05: 11
     rang_p95: 333
-    rangs: *id025
+    rangs: *id039
   - rang: 31
     nom: Marie Bayard
     id: marie-bayard
@@ -12869,7 +12917,7 @@ classement:
     part_top: "26,7"
     rang_p05: 7
     rang_p95: 217
-    rangs: *id026
+    rangs: *id040
   - rang: 36
     nom: Nicolas Roy
     id: nicolas-roy
@@ -12935,7 +12983,7 @@ classement:
     part_top: "25,3"
     rang_p05: 10
     rang_p95: 368
-    rangs: *id027
+    rangs: *id041
   - rang: 41
     nom: Charlotte Rasquin
     id: charlotte-rasquin
@@ -13169,7 +13217,7 @@ classement:
     part_top: "20,2"
     rang_p05: 18
     rang_p95: 436
-    rangs: *id028
+    rangs: *id042
   - rang: 58
     nom: Bernard Lenoir
     id: bernard-lenoir
@@ -13179,7 +13227,7 @@ classement:
     part_top: "14,9"
     rang_p05: 16
     rang_p95: 411
-    rangs: *id029
+    rangs: *id043
   - rang: 59
     nom: Delphine Bano
     id: delphine-bano
@@ -13231,7 +13279,7 @@ classement:
     part_top: "4,9"
     rang_p05: 26
     rang_p95: 133
-    rangs: *id030
+    rangs: *id044
   - rang: 63
     nom: Nathalie Ensargueix
     id: nathalie-ensargueix
@@ -13283,7 +13331,7 @@ classement:
     part_top: "16,3"
     rang_p05: 15
     rang_p95: 304
-    rangs: *id031
+    rangs: *id045
   - rang: 67
     nom: Mohamed Derradji
     id: mohamed-derradji
@@ -13503,7 +13551,7 @@ classement:
     part_top: "27,7"
     rang_p05: 5
     rang_p95: 515
-    rangs: *id032
+    rangs: *id046
   - rang: 83
     nom: Valérie Dot
     id: valerie-dot
@@ -13555,7 +13603,7 @@ classement:
     part_top: "7,1"
     rang_p05: 23
     rang_p95: 422
-    rangs: *id033
+    rangs: *id047
   - rang: 87
     nom: Kunlé M'Babacéré Pakorona
     id: kunle-m-babacere-pakorona
@@ -14083,7 +14131,7 @@ classement:
     part_top: "0,3"
     rang_p05: 51
     rang_p95: 369
-    rangs: *id034
+    rangs: *id048
   - rang: 125
     nom: Béryl Libault de la Chevasnerie
     id: beryl-libault-de-la-chevasnerie
@@ -14401,7 +14449,7 @@ classement:
     part_top: "3,3"
     rang_p05: 28
     rang_p95: 461
-    rangs: *id035
+    rangs: *id049
   - rang: 148
     nom: Caroline Matteucci
     id: caroline-matteucci
@@ -14621,7 +14669,7 @@ classement:
     part_top: "11,7"
     rang_p05: 14
     rang_p95: 468
-    rangs: *id036
+    rangs: *id050
   - rang: 164
     nom: Vincent Blier
     id: vincent-blier
@@ -14981,7 +15029,7 @@ classement:
     part_top: "0,2"
     rang_p05: 84
     rang_p95: 391
-    rangs: *id037
+    rangs: *id051
   - rang: 190
     nom: Filomène Mendonca
     id: filomene-mendonca
@@ -15985,7 +16033,7 @@ classement:
     part_top: "0,4"
     rang_p05: 63
     rang_p95: 503
-    rangs: *id038
+    rangs: *id052
   - rang: 262
     nom: Céline Fortier
     id: celine-fortier
@@ -16835,7 +16883,7 @@ classement:
     part_top: "9,1"
     rang_p05: 15
     rang_p95: 527
-    rangs: *id039
+    rangs: *id053
   - rang: 323
     nom: Angélique Mastio
     id: angelique-mastio
@@ -16985,7 +17033,7 @@ classement:
     part_top: 0
     rang_p05: 134
     rang_p95: 460
-    rangs: *id040
+    rangs: *id054
   - rang: 334
     nom: Allan Rousseeuw
     id: allan-rousseeuw
@@ -17401,7 +17449,7 @@ classement:
     part_top: "0,1"
     rang_p05: 80
     rang_p95: 519
-    rangs: *id041
+    rangs: *id055
   - rang: 364
     nom: Myriam Desvergne
     id: myriam-desvergne
@@ -20038,6 +20086,7 @@ modeles:
     - k: 10
       score: "0,34"
       plus_petit: 24
+    plancher: 10
     inertie_axes:
     - "8,4"
     - "7,3"
@@ -23172,7 +23221,7 @@ modeles:
       tirages: 10000
       lecture: 'Un écart observé plus PETIT que l''attendu est la signature d''un quota : le hasard, lui,
         produit des castings déséquilibrés de temps en temps.'
-      nulle: &id054
+      nulle: &id068
         bornes:
         - "0,2019"
         - "2,9519"
@@ -23222,7 +23271,7 @@ modeles:
       tirages: 10000
       lecture: Rebattre les aventuriers entre saisons donne l'écart-type général. Un écart observé PLUS
         GRAND veut dire qu'on place exprès un jeune et un ancien dans chaque casting.
-      nulle: &id055
+      nulle: &id069
         bornes:
         - "9,21"
         - "10,008"
@@ -23272,7 +23321,7 @@ modeles:
       tirages: 10000
       lecture: On compte, pour chaque saison, le nombre de familles de métiers représentées. Un total
         observé PLUS GRAND veut dire qu'on veille à n'oublier aucune famille.
-      nulle: &id056
+      nulle: &id070
         bornes:
         - "224,95"
         - "270,05"
@@ -23322,7 +23371,7 @@ modeles:
       tirages: 10000
       lecture: Distance entre le mélange de profils d'une saison et le mélange général. Un observé PLUS
         PETIT que l'attendu veut dire que les saisons se ressemblent plus que le hasard ne l'expliquerait.
-      nulle: &id057
+      nulle: &id071
         bornes:
         - "0,1377"
         - "0,4058"
@@ -23373,7 +23422,7 @@ modeles:
       tirages: 10000
       lecture: On rebat les bandeaux à l'intérieur de chaque saison. Un écart observé PLUS PETIT que l'attendu
         veut dire que les tribus sont composées à l'équilibre, pas tirées au sort.
-      nulle: &id058
+      nulle: &id072
         bornes:
         - "6,8021"
         - "34,3229"
@@ -23424,7 +23473,7 @@ modeles:
       tirages: 10000
       lecture: 'Même méthode, sur l''âge moyen de chaque bandeau. Un écart observé PLUS GRAND que l''attendu
         veut dire l''inverse d''un équilibre : deux tribus construites pour différer.'
-      nulle: &id059
+      nulle: &id073
         bornes:
         - "1,5354"
         - "6,486"
@@ -23474,7 +23523,7 @@ modeles:
       tirages: 10000
       lecture: La médiane ignore les valeurs extrêmes. Si elle ne s'écarte pas, c'est que l'écart moyen
         tient à quelques éditions et non à une règle de composition.
-      nulle: &id060
+      nulle: &id074
         bornes:
         - "0,5875"
         - "6,9125"
@@ -23593,7 +23642,7 @@ modeles:
       tirages: 10000
       lecture: Le modèle classe les candidats d'une saison ; on relève la place qu'il donne à celui qui
         a gagné. Plus BAS que l'attendu veut dire qu'une part du résultat se joue au recrutement.
-      nulle: &id061
+      nulle: &id075
         bornes:
         - "5,5798"
         - "14,824"
@@ -23702,6 +23751,7 @@ modeles:
     joueurs: 334
     seuil: 8
     classes: 141
+    disputees_max: 41
     classement:
     - id: claude-dartois
       nom: Claude Dartois
@@ -23912,7 +23962,7 @@ modeles:
       force: "2,5"
       victoires: 4
       id: francois-david-cardonnel
-    - &id042
+    - &id056
       nom: Gilles De Baere
       rang_force: 9
       rang_victoires: 37
@@ -23943,15 +23993,15 @@ modeles:
       force: "1,67"
       victoires: 4
       id: laurent-maistret
-    - &id043
+    - &id057
       nom: Clémence Castel
       rang_force: 38
       rang_victoires: 6
       force: "1,6"
       victoires: 5
       id: clemence-castel
-    plus_forte_montee: *id042
-    plus_forte_chute: *id043
+    plus_forte_montee: *id056
+    plus_forte_chute: *id057
   force_et_jeu:
     effectif: 303
     voix:
@@ -24200,7 +24250,7 @@ modeles:
       tirages: 2000
       lecture: 'Écart entre deux probabilités : voter ensemble après avoir voté ensemble, et voter ensemble
         après avoir voté séparément. À zéro, chaque conseil repart de zéro et il n''y a pas d''alliance.'
-      nulle: &id088
+      nulle: &id102
         bornes:
         - "-4,9278"
         - "30,4846"
@@ -24255,6 +24305,7 @@ modeles:
       r2: "0,329"
       lecture: Points de saison gagnés ou perdus, le nombre de conseils traversés tenu constant. Ce contrôle
         étant trop sévère, les deux effets sont des bornes basses.
+      rapport: "3,8"
     les_plus_souvent_du_bon_cote:
     - nom: Wendy Gervois
       saison: s15
@@ -24358,7 +24409,7 @@ modeles:
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
         : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-      nulle: &id062
+      nulle: &id076
         bornes:
         - "45,7274"
         - "50,2635"
@@ -24410,7 +24461,7 @@ modeles:
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
         : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-      nulle: &id063
+      nulle: &id077
         bornes:
         - "10,5463"
         - "11,0696"
@@ -24462,7 +24513,7 @@ modeles:
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
         : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-      nulle: &id064
+      nulle: &id078
         bornes:
         - "9,9045"
         - "12,0886"
@@ -24514,7 +24565,7 @@ modeles:
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
         : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-      nulle: &id065
+      nulle: &id079
         bornes:
         - "54,1485"
         - "63,2627"
@@ -24566,7 +24617,7 @@ modeles:
       lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
         : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-      nulle: &id066
+      nulle: &id080
         bornes:
         - "1,4614"
         - "2,738"
@@ -24618,7 +24669,7 @@ modeles:
       tirages: 4000
       lecture: Mesuré sur les seuls conseils réunissant plusieurs bandeaux. Un observé SOUS l'attendu
         veut dire que le camp de départ protège encore, longtemps après avoir cessé d'exister.
-      nulle: &id067
+      nulle: &id081
         bornes:
         - "27,7634"
         - "42,1343"
@@ -24674,7 +24725,7 @@ modeles:
       tirages: 4000
       lecture: Part des bulletins visant quelqu'un avec qui l'auteur avait déjà voté. Un observé SOUS
         l'attendu veut dire que l'alliance protège ; au-dessus, qu'elle expose.
-      nulle: &id090
+      nulle: &id104
         bornes:
         - "47,6072"
         - "59,671"
@@ -24869,7 +24920,7 @@ modeles:
       tirages: 10000
       lecture: Nombre de fois où deux sorties consécutives viennent du même bandeau de départ. Un observé
         AU-DESSUS de l'attendu est la signature d'un camp démonté un par un.
-      nulle: &id091
+      nulle: &id105
         bornes:
         - "58,4"
         - "115,6"
@@ -24917,11 +24968,13 @@ modeles:
       bas: "0,401"
       haut: "0,952"
       p: "0,029"
+      inverse: "1,6"
     - libelle: A voté avec le juré, par conseil partagé
       rapport: "1,207"
       bas: "1,096"
       haut: "1,33"
       p: "0,0001"
+      inverse: "0,8"
     avec_bandeau:
       coefficients:
       - libelle: A écrit le nom du juré au conseil
@@ -25290,11 +25343,11 @@ modeles:
     - annee: 2017
       titre: Fidji
       gain: "54,37"
-    - &id044
+    - &id058
       annee: 2019
       titre: La Guerre des chefs
       gain: "60,48"
-    - &id045
+    - &id059
       annee: 2020
       titre: Les 4 Terres
       gain: "56,53"
@@ -25311,7 +25364,7 @@ modeles:
       titre: Les Chasseurs d'immunité
       gain: "45,34"
     exaequo:
-    - *id044
+    - *id058
     nb_exaequo: 1
     nb_proches: 3
     avance: "6,5"
@@ -25319,7 +25372,7 @@ modeles:
       debut: 2016
       fin: 2020
       etendue: 4
-    second: *id045
+    second: *id059
     test:
       cle: rupture
       libelle: La rupture de régime
@@ -25334,7 +25387,7 @@ modeles:
       lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
         dans un ordre au hasard. Une coupure existe toujours ; la question est de savoir si celle-ci vaut
         mieux que n'importe quelle autre.
-      nulle: &id089
+      nulle: &id103
         bornes:
         - "0,1517"
         - "63,3489"
@@ -25376,7 +25429,7 @@ modeles:
   audience:
     saisons: 33
     serie:
-    - &id046
+    - &id060
       saison: s01
       annee: 2001
       titre: Les Aventuriers de Koh-Lanta
@@ -25447,7 +25500,7 @@ modeles:
       pdm: "39,5"
       jour: Vendredi
       effectif: 16
-    - &id053
+    - &id067
       saison: s08
       annee: 2008
       titre: Caramoan
@@ -25468,7 +25521,7 @@ modeles:
       pdm: "32,1"
       jour: Vendredi
       effectif: 18
-    - &id048
+    - &id062
       saison: sp1
       annee: 2009
       titre: Le Retour des héros
@@ -25630,7 +25683,7 @@ modeles:
       pdm: "26,1"
       jour: Vendredi
       effectif: 20
-    - &id049
+    - &id063
       saison: s22
       annee: 2021
       titre: Les Armes secrètes
@@ -25641,7 +25694,7 @@ modeles:
       pdm: "25,6"
       jour: Vendredi
       effectif: 21
-    - &id050
+    - &id064
       saison: sp7
       annee: 2021
       titre: La Légende
@@ -25702,7 +25755,7 @@ modeles:
       pdm: "17,6"
       jour: Mardi
       effectif: 24
-    - &id047
+    - &id061
       saison: s28
       annee: 2026
       titre: Les Reliques du destin
@@ -25714,13 +25767,13 @@ modeles:
       jour: Mardi
       effectif: 20
       moyenne_millions: "2,5"
-    premiere: *id046
-    derniere: *id047
-    sommet: *id048
+    premiere: *id060
+    derniere: *id061
+    sommet: *id062
     chute: "70,4"
     annee_rupture: 2021
-    derniere_avant: *id049
-    premiere_apres: *id050
+    derniere_avant: *id063
+    premiere_apres: *id064
     avant: 26
     apres: 7
     moyenne_avant: 6264885
@@ -25792,11 +25845,11 @@ modeles:
     - annee: 2021
       titre: Les Armes secrètes
       gain: "19,09"
-    - &id051
+    - &id065
       annee: 2021
       titre: La Légende
       gain: "20,68"
-    - &id052
+    - &id066
       annee: 2022
       titre: Le Totem maudit
       gain: "19,75"
@@ -25807,7 +25860,7 @@ modeles:
       titre: Les Chasseurs d'immunité
       gain: "14,36"
     exaequo:
-    - *id051
+    - *id065
     nb_exaequo: 1
     nb_proches: 3
     avance: "4,5"
@@ -25815,11 +25868,11 @@ modeles:
       debut: 2021
       fin: 2022
       etendue: 1
-    second: *id052
+    second: *id066
     retournement:
       avant: 7
       apres: 26
-      bascule: *id053
+      bascule: *id067
       ratio_avant: "1,282"
       ratio_apres: "0,965"
     courbes:
@@ -26220,7 +26273,7 @@ modeles:
       premiere: 2001
       derniere: 2001
       moyenne_millions: "4,4"
-    bascule_jour: *id050
+    bascule_jour: *id064
     format_correlation_brute: "-0,643"
     tests:
     - cle: audience_rupture
@@ -26235,7 +26288,7 @@ modeles:
       lecture: Gain de la meilleure coupure de la série d'audience, comparé à celui obtenu sur des saisons
         remises dans un ordre au hasard. Le profil complet des coupures dit ensuite si cette date est
         identifiée ou si plusieurs se valent.
-      nulle: &id068
+      nulle: &id082
         bornes:
         - "-0,7371"
         - "21,7011"
@@ -26285,7 +26338,7 @@ modeles:
       tirages: 10000
       lecture: Corrélation de rang entre l'année et le rapport finale / lancement. Négative, elle dit
         que l'avantage de la finale se réduit d'année en année.
-      nulle: &id069
+      nulle: &id083
         bornes:
         - "-0,7197"
         - "0,7321"
@@ -26337,7 +26390,7 @@ modeles:
       lecture: Corrélation de rang entre l'audience d'une saison et l'effectif de la suivante, une fois
         la tendance temporelle retirée des deux séries. Sans cette précaution, le lien brut ne mesure
         que le passage du temps.
-      nulle: &id070
+      nulle: &id084
         bornes:
         - "-0,6809"
         - "0,7022"
@@ -26443,7 +26496,7 @@ modeles:
       lecture: 'Différence entre l''après et l''avant, en points de pourcentage. Le hasard, ici, c''est
         tirer l''éliminé parmi les présents de chaque conseil : la composition du camp est donc déjà neutralisée,
         et un écart qui subsiste est un choix.'
-      nulle: &id071
+      nulle: &id085
         bornes:
         - "-21,651"
         - "22,6766"
@@ -26494,7 +26547,7 @@ modeles:
       lecture: 'Rang de l''éliminé parmi les présents, sur la force estimée aux épreuves : 0 le plus faible
         du camp, 100 le plus fort. On compare l''après à l''avant. Positif, cela veut dire qu''on élimine
         plus haut dans le classement après la fusion.'
-      nulle: &id072
+      nulle: &id086
         bornes:
         - "-14,3865"
         - "15,3223"
@@ -26545,7 +26598,7 @@ modeles:
       lecture: Part de conseils où l'éliminé ne rassemble pas plus de la moitié des voix, après moins
         avant. Le hasard est ici une redistribution des étiquettes « avant » et « après » entre les mêmes
         conseils.
-      nulle: &id073
+      nulle: &id087
         bornes:
         - "-23,6116"
         - "28,4374"
@@ -26595,7 +26648,7 @@ modeles:
       tirages: 10000
       lecture: Rang de l'éliminé parmi les présents, sur la force estimée aux épreuves. Au-dessus de 50,
         les ambassadeurs sacrifient un joueur plus fort que la moyenne du camp ; en dessous, un plus faible.
-      nulle: &id074
+      nulle: &id088
         bornes:
         - "21,5175"
         - "80,4296"
@@ -26646,7 +26699,7 @@ modeles:
       lecture: 'Rang de l''ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c''est la
         médiane du camp. Au-dessus, l''ambassade accompagne une fin de parcours plus tardive ; en dessous,
         plus précoce. Le hasard, ici, c''est désigner les ambassadeurs au sort parmi les présents.'
-      nulle: &id075
+      nulle: &id089
         bornes:
         - "26,3567"
         - "72,418"
@@ -27394,7 +27447,7 @@ modeles:
       lecture: 'Écart entre deux probabilités conditionnelles : partir sachant qu''on a été visé la fois
         d''avant, moins partir sachant qu''on ne l''a pas été. Le modèle nul tire l''éliminé au hasard
         parmi les présents, ce qui tient la taille du conseil rigoureusement fixe.'
-      nulle: &id076
+      nulle: &id090
         bornes:
         - "-7,6083"
         - "12,1921"
@@ -27445,7 +27498,7 @@ modeles:
       lecture: 'Écart entre partir après une à trois voix et partir après quatre voix ou plus. Un écart
         positif dit que la menace a un sommet : au-delà, celui qui a survécu à un vote massif est mieux
         protégé que celui qui a survécu à deux bulletins.'
-      nulle: &id077
+      nulle: &id091
         bornes:
         - "-18,0216"
         - "20,1804"
@@ -27495,7 +27548,7 @@ modeles:
       tirages: 10000
       lecture: Écart entre partir après avoir voté avec la minorité et partir après avoir voté avec la
         majorité.
-      nulle: &id078
+      nulle: &id092
         bornes:
         - "-8,8998"
         - "7,2919"
@@ -27545,7 +27598,7 @@ modeles:
       tirages: 10000
       lecture: Écart entre partir quand on avait été visé DEUX conseils plus tôt et partir quand on ne
         l'avait pas été. Un écart qui tient dit que la menace ne s'éteint pas au conseil suivant.
-      nulle: &id079
+      nulle: &id093
         bornes:
         - "-10,9605"
         - "14,802"
@@ -27596,7 +27649,7 @@ modeles:
       tirages: 10000
       lecture: Écart entre voir son nom ressortir quand il était déjà sorti et le voir sortir quand il
         ne l'était pas.
-      nulle: &id080
+      nulle: &id094
         bornes:
         - "-9,9446"
         - "21,342"
@@ -27646,7 +27699,7 @@ modeles:
       tirages: 4000
       lecture: Part des couples où la cible de la dernière fois écrit à son tour le nom de son auteur,
         tous deux étant présents et votants.
-      nulle: &id081
+      nulle: &id095
         bornes:
         - "9,7368"
         - "23,6387"
@@ -27834,7 +27887,7 @@ modeles:
       lecture: 'Écart entre partir quand son bandeau d''origine est le moins représenté du camp et partir
         quand il est le plus représenté. Le modèle nul tire l''éliminé au hasard parmi les présents :
         la taille du camp et sa composition restent celles du soir.'
-      nulle: &id082
+      nulle: &id096
         bornes:
         - "-8,0208"
         - "7,527"
@@ -27884,7 +27937,7 @@ modeles:
       tirages: 10000
       lecture: Écart entre partir quand son sexe est le moins représenté du camp et partir quand il est
         le plus représenté.
-      nulle: &id083
+      nulle: &id097
         bornes:
         - "-7,5192"
         - "7,2747"
@@ -27934,7 +27987,7 @@ modeles:
       tirages: 10000
       lecture: Écart entre partir quand on est le plus âgé des présents et partir quand on ne l'est pas.
         Le modèle nul absorbe le fait qu'on est plus souvent le doyen d'un petit camp que d'un grand.
-      nulle: &id084
+      nulle: &id098
         bornes:
         - "-6,4229"
         - "9,6214"
@@ -27985,7 +28038,7 @@ modeles:
       lecture: 'Écart entre partir quand on vient de gagner le confort de l''épisode et partir quand on
         n''a rien gagné. Lu sur les seuls soirs à conseil unique : sinon l''épreuve du soir ne se rattache
         pas au bon conseil.'
-      nulle: &id085
+      nulle: &id099
         bornes:
         - "-12,7283"
         - "15,3241"
@@ -28024,6 +28077,7 @@ modeles:
       origine: autour_du_feu
       p_ajustee: "0,2428"
       retenu: false
+    age_ecart: "3,4"
   pire_place:
     presences: 1398
     conseils: 192
@@ -28149,7 +28203,7 @@ modeles:
       tirages: 10000
       lecture: Écart entre partir quand plus aucun de ceux avec qui on a déjà voté n'est présent, et partir
         quand il en reste au moins un. Le modèle nul tire l'éliminé au hasard parmi les présents.
-      nulle: &id086
+      nulle: &id100
         bornes:
         - "-14,6082"
         - "21,7855"
@@ -28199,7 +28253,7 @@ modeles:
       tirages: 10000
       lecture: Écart entre gagner l'immunité individuelle du soir quand on a été visé au conseil précédent
         et la gagner quand on ne l'a pas été. Le modèle nul tire le vainqueur au hasard parmi les présents.
-      nulle: &id087
+      nulle: &id101
         bornes:
         - "-11,7272"
         - "18,6669"
@@ -28238,6 +28292,7 @@ modeles:
       origine: pire_place
       p_ajustee: "0,7315"
       retenu: false
+    cumul_rapport: "4,1"
   tenant_du_titre:
     epreuves: 164
     saisons: 28
@@ -28274,7 +28329,7 @@ modeles:
         on ne l''a pas gagnée. Le modèle nul ne tire pas au hasard : il tire les vainqueurs SELON LES
         FORCES estimées par le modèle de Plackett-Luce. Ce qui subsiste au-dessus de lui serait un élan,
         et non un niveau.'
-      nulle: &id092
+      nulle: &id106
         bornes:
         - "-6,6632"
         - "27,3489"
@@ -28333,7 +28388,7 @@ modeles:
       lecture: 'Écart d''âge de l''éliminé à la moyenne de son camp, avant la réunification moins après.
         Le modèle nul tire l''éliminé au hasard parmi les présents : la composition d''âge de chaque soirée
         reste celle du soir.'
-      nulle: &id093
+      nulle: &id107
         bornes:
         - "-3,819"
         - "3,5909"
@@ -28506,7 +28561,7 @@ modeles:
     tirages: 10000
     lecture: 'Un écart observé plus PETIT que l''attendu est la signature d''un quota : le hasard, lui,
       produit des castings déséquilibrés de temps en temps.'
-    nulle: *id054
+    nulle: *id068
     observe_arrondi: "0,3"
     attendu_arrondi: "1,8"
   - cle: etendue_ages
@@ -28523,7 +28578,7 @@ modeles:
     tirages: 10000
     lecture: Rebattre les aventuriers entre saisons donne l'écart-type général. Un écart observé PLUS
       GRAND veut dire qu'on place exprès un jeune et un ancien dans chaque casting.
-    nulle: *id055
+    nulle: *id069
     observe_arrondi: "9,9"
     attendu_arrondi: "9,7"
   - cle: familles_metiers
@@ -28540,7 +28595,7 @@ modeles:
     tirages: 10000
     lecture: On compte, pour chaque saison, le nombre de familles de métiers représentées. Un total observé
       PLUS GRAND veut dire qu'on veille à n'oublier aucune famille.
-    nulle: *id056
+    nulle: *id070
     observe_arrondi: 246
     attendu_arrondi: "246,6"
   - cle: melange_archetypes
@@ -28557,7 +28612,7 @@ modeles:
     tirages: 10000
     lecture: Distance entre le mélange de profils d'une saison et le mélange général. Un observé PLUS
       PETIT que l'attendu veut dire que les saisons se ressemblent plus que le hasard ne l'expliquerait.
-    nulle: *id057
+    nulle: *id071
     observe_arrondi: "0,3"
     attendu_arrondi: "0,3"
   - cle: tribus_femmes
@@ -28575,7 +28630,7 @@ modeles:
     tirages: 10000
     lecture: On rebat les bandeaux à l'intérieur de chaque saison. Un écart observé PLUS PETIT que l'attendu
       veut dire que les tribus sont composées à l'équilibre, pas tirées au sort.
-    nulle: *id058
+    nulle: *id072
     observe_arrondi: 13
     attendu_arrondi: "18,9"
   - cle: tribus_ages
@@ -28593,7 +28648,7 @@ modeles:
     tirages: 10000
     lecture: 'Même méthode, sur l''âge moyen de chaque bandeau. Un écart observé PLUS GRAND que l''attendu
       veut dire l''inverse d''un équilibre : deux tribus construites pour différer.'
-    nulle: *id059
+    nulle: *id073
     observe_arrondi: "5,8"
     attendu_arrondi: "3,9"
   - cle: tribus_ages_mediane
@@ -28610,7 +28665,7 @@ modeles:
     tirages: 10000
     lecture: La médiane ignore les valeurs extrêmes. Si elle ne s'écarte pas, c'est que l'écart moyen
       tient à quelques éditions et non à une règle de composition.
-    nulle: *id060
+    nulle: *id074
     observe_arrondi: "4,2"
     attendu_arrondi: "3,3"
   - cle: pronostic_vainqueur
@@ -28628,7 +28683,7 @@ modeles:
     tirages: 10000
     lecture: Le modèle classe les candidats d'une saison ; on relève la place qu'il donne à celui qui
       a gagné. Plus BAS que l'attendu veut dire qu'une part du résultat se joue au recrutement.
-    nulle: *id061
+    nulle: *id075
     observe_arrondi: "10,7"
     attendu_arrondi: "10,3"
   - cle: vote_meme_sexe
@@ -28646,7 +28701,7 @@ modeles:
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
       : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
       qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-    nulle: *id062
+    nulle: *id076
     observe_arrondi: "46,3"
     attendu_arrondi: "47,8"
   - cle: vote_ecart_age
@@ -28664,7 +28719,7 @@ modeles:
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
       : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
       qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-    nulle: *id063
+    nulle: *id077
     observe_arrondi: "10,9"
     attendu_arrondi: "10,8"
   - cle: vote_meme_metier
@@ -28682,7 +28737,7 @@ modeles:
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
       : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
       qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-    nulle: *id064
+    nulle: *id078
     observe_arrondi: "10,3"
     attendu_arrondi: 11
   - cle: vote_meme_bandeau
@@ -28700,7 +28755,7 @@ modeles:
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
       : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
       qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-    nulle: *id065
+    nulle: *id079
     observe_arrondi: "54,6"
     attendu_arrondi: "61,1"
   - cle: vote_meme_departement
@@ -28718,7 +28773,7 @@ modeles:
     lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
       : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
       qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
-    nulle: *id066
+    nulle: *id080
     observe_arrondi: "1,7"
     attendu_arrondi: "2,1"
   - cle: vote_bandeau_apres_fusion
@@ -28736,7 +28791,7 @@ modeles:
     tirages: 4000
     lecture: Mesuré sur les seuls conseils réunissant plusieurs bandeaux. Un observé SOUS l'attendu veut
       dire que le camp de départ protège encore, longtemps après avoir cessé d'exister.
-    nulle: *id067
+    nulle: *id081
     observe_arrondi: "28,4"
     attendu_arrondi: "38,7"
   - cle: geographie_departements
@@ -28861,7 +28916,7 @@ modeles:
     lecture: Gain de la meilleure coupure de la série d'audience, comparé à celui obtenu sur des saisons
       remises dans un ordre au hasard. Le profil complet des coupures dit ensuite si cette date est identifiée
       ou si plusieurs se valent.
-    nulle: *id068
+    nulle: *id082
     observe_arrondi: "20,7"
     attendu_arrondi: "3,5"
   - cle: audience_retournement
@@ -28878,7 +28933,7 @@ modeles:
     tirages: 10000
     lecture: Corrélation de rang entre l'année et le rapport finale / lancement. Négative, elle dit que
       l'avantage de la finale se réduit d'année en année.
-    nulle: *id069
+    nulle: *id083
     observe_arrondi: "-0,7"
     attendu_arrondi: 0
   - cle: audience_format
@@ -28897,7 +28952,7 @@ modeles:
     lecture: Corrélation de rang entre l'audience d'une saison et l'effectif de la suivante, une fois
       la tendance temporelle retirée des deux séries. Sans cette précaution, le lien brut ne mesure que
       le passage du temps.
-    nulle: *id070
+    nulle: *id084
     observe_arrondi: "-0,3"
     attendu_arrondi: 0
   - cle: fusion_sexe
@@ -28915,7 +28970,7 @@ modeles:
     lecture: 'Différence entre l''après et l''avant, en points de pourcentage. Le hasard, ici, c''est
       tirer l''éliminé parmi les présents de chaque conseil : la composition du camp est donc déjà neutralisée,
       et un écart qui subsiste est un choix.'
-    nulle: *id071
+    nulle: *id085
     observe_arrondi: "-14,6"
     attendu_arrondi: "-0,7"
   - cle: fusion_force
@@ -28933,7 +28988,7 @@ modeles:
     lecture: 'Rang de l''éliminé parmi les présents, sur la force estimée aux épreuves : 0 le plus faible
       du camp, 100 le plus fort. On compare l''après à l''avant. Positif, cela veut dire qu''on élimine
       plus haut dans le classement après la fusion.'
-    nulle: *id072
+    nulle: *id086
     observe_arrondi: "-3,6"
     attendu_arrondi: 0
   - cle: fusion_serre
@@ -28950,7 +29005,7 @@ modeles:
     tirages: 10000
     lecture: Part de conseils où l'éliminé ne rassemble pas plus de la moitié des voix, après moins avant.
       Le hasard est ici une redistribution des étiquettes « avant » et « après » entre les mêmes conseils.
-    nulle: *id073
+    nulle: *id087
     observe_arrondi: "21,8"
     attendu_arrondi: 0
   - cle: ambassadeurs_force
@@ -28967,7 +29022,7 @@ modeles:
     tirages: 10000
     lecture: Rang de l'éliminé parmi les présents, sur la force estimée aux épreuves. Au-dessus de 50,
       les ambassadeurs sacrifient un joueur plus fort que la moyenne du camp ; en dessous, un plus faible.
-    nulle: *id074
+    nulle: *id088
     observe_arrondi: "48,5"
     attendu_arrondi: 50
   - cle: ambassadeurs_survie
@@ -28985,7 +29040,7 @@ modeles:
     lecture: 'Rang de l''ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c''est la
       médiane du camp. Au-dessus, l''ambassade accompagne une fin de parcours plus tardive ; en dessous,
       plus précoce. Le hasard, ici, c''est désigner les ambassadeurs au sort parmi les présents.'
-    nulle: *id075
+    nulle: *id089
     observe_arrondi: "37,6"
     attendu_arrondi: "50,1"
   - cle: menace_voix
@@ -29003,7 +29058,7 @@ modeles:
     lecture: 'Écart entre deux probabilités conditionnelles : partir sachant qu''on a été visé la fois
       d''avant, moins partir sachant qu''on ne l''a pas été. Le modèle nul tire l''éliminé au hasard parmi
       les présents, ce qui tient la taille du conseil rigoureusement fixe.'
-    nulle: *id076
+    nulle: *id090
     observe_arrondi: "11,3"
     attendu_arrondi: "0,9"
   - cle: menace_sommet
@@ -29021,7 +29076,7 @@ modeles:
     lecture: 'Écart entre partir après une à trois voix et partir après quatre voix ou plus. Un écart
       positif dit que la menace a un sommet : au-delà, celui qui a survécu à un vote massif est mieux
       protégé que celui qui a survécu à deux bulletins.'
-    nulle: *id077
+    nulle: *id091
     observe_arrondi: "2,4"
     attendu_arrondi: "2,4"
   - cle: camp_perdant
@@ -29037,7 +29092,7 @@ modeles:
     retenu: false
     tirages: 10000
     lecture: Écart entre partir après avoir voté avec la minorité et partir après avoir voté avec la majorité.
-    nulle: *id078
+    nulle: *id092
     observe_arrondi: "2,9"
     attendu_arrondi: "-0,9"
   - cle: menace_deux_pas
@@ -29054,7 +29109,7 @@ modeles:
     tirages: 10000
     lecture: Écart entre partir quand on avait été visé DEUX conseils plus tôt et partir quand on ne l'avait
       pas été. Un écart qui tient dit que la menace ne s'éteint pas au conseil suivant.
-    nulle: *id079
+    nulle: *id093
     observe_arrondi: "5,3"
     attendu_arrondi: "0,8"
   - cle: cible_persistante
@@ -29071,7 +29126,7 @@ modeles:
     tirages: 10000
     lecture: Écart entre voir son nom ressortir quand il était déjà sorti et le voir sortir quand il ne
       l'était pas.
-    nulle: *id080
+    nulle: *id094
     observe_arrondi: "19,9"
     attendu_arrondi: "2,9"
   - cle: retour_de_baton
@@ -29088,7 +29143,7 @@ modeles:
     tirages: 4000
     lecture: Part des couples où la cible de la dernière fois écrit à son tour le nom de son auteur, tous
       deux étant présents et votants.
-    nulle: *id081
+    nulle: *id095
     observe_arrondi: 23
     attendu_arrondi: "14,9"
   - cle: bandeau_minoritaire
@@ -29106,7 +29161,7 @@ modeles:
     lecture: 'Écart entre partir quand son bandeau d''origine est le moins représenté du camp et partir
       quand il est le plus représenté. Le modèle nul tire l''éliminé au hasard parmi les présents : la
       taille du camp et sa composition restent celles du soir.'
-    nulle: *id082
+    nulle: *id096
     observe_arrondi: "6,2"
     attendu_arrondi: "-0,4"
   - cle: sexe_minoritaire
@@ -29123,7 +29178,7 @@ modeles:
     tirages: 10000
     lecture: Écart entre partir quand son sexe est le moins représenté du camp et partir quand il est
       le plus représenté.
-    nulle: *id083
+    nulle: *id097
     observe_arrondi: "-5,4"
     attendu_arrondi: "-0,4"
   - cle: doyen_du_camp
@@ -29140,7 +29195,7 @@ modeles:
     tirages: 10000
     lecture: Écart entre partir quand on est le plus âgé des présents et partir quand on ne l'est pas.
       Le modèle nul absorbe le fait qu'on est plus souvent le doyen d'un petit camp que d'un grand.
-    nulle: *id084
+    nulle: *id098
     observe_arrondi: "3,3"
     attendu_arrondi: 1
   - cle: confort_sortie
@@ -29158,7 +29213,7 @@ modeles:
     lecture: 'Écart entre partir quand on vient de gagner le confort de l''épisode et partir quand on
       n''a rien gagné. Lu sur les seuls soirs à conseil unique : sinon l''épreuve du soir ne se rattache
       pas au bon conseil.'
-    nulle: *id085
+    nulle: *id099
     observe_arrondi: "5,3"
     attendu_arrondi: "0,5"
   - cle: vote_isole
@@ -29175,7 +29230,7 @@ modeles:
     tirages: 10000
     lecture: Écart entre partir quand plus aucun de ceux avec qui on a déjà voté n'est présent, et partir
       quand il en reste au moins un. Le modèle nul tire l'éliminé au hasard parmi les présents.
-    nulle: *id086
+    nulle: *id100
     observe_arrondi: "18,6"
     attendu_arrondi: "1,9"
   - cle: dos_au_mur
@@ -29192,7 +29247,7 @@ modeles:
     tirages: 10000
     lecture: Écart entre gagner l'immunité individuelle du soir quand on a été visé au conseil précédent
       et la gagner quand on ne l'a pas été. Le modèle nul tire le vainqueur au hasard parmi les présents.
-    nulle: *id087
+    nulle: *id101
     observe_arrondi: "2,6"
     attendu_arrondi: "1,2"
   - cle: persistance_alliances
@@ -29210,7 +29265,7 @@ modeles:
     tirages: 2000
     lecture: 'Écart entre deux probabilités : voter ensemble après avoir voté ensemble, et voter ensemble
       après avoir voté séparément. À zéro, chaque conseil repart de zéro et il n''y a pas d''alliance.'
-    nulle: *id088
+    nulle: *id102
     observe_arrondi: "28,9"
     attendu_arrondi: "1,5"
   - cle: rupture
@@ -29229,7 +29284,7 @@ modeles:
     lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
       dans un ordre au hasard. Une coupure existe toujours ; la question est de savoir si celle-ci vaut
       mieux que n'importe quelle autre.
-    nulle: *id089
+    nulle: *id103
     observe_arrondi: "60,5"
     attendu_arrondi: "13,3"
   - cle: trahison
@@ -29247,7 +29302,7 @@ modeles:
     tirages: 4000
     lecture: Part des bulletins visant quelqu'un avec qui l'auteur avait déjà voté. Un observé SOUS l'attendu
       veut dire que l'alliance protège ; au-dessus, qu'elle expose.
-    nulle: *id090
+    nulle: *id104
     observe_arrondi: "48,2"
     attendu_arrondi: "57,1"
   - cle: decimation
@@ -29265,7 +29320,7 @@ modeles:
     tirages: 10000
     lecture: Nombre de fois où deux sorties consécutives viennent du même bandeau de départ. Un observé
       AU-DESSUS de l'attendu est la signature d'un camp démonté un par un.
-    nulle: *id091
+    nulle: *id105
     observe_arrondi: 110
     attendu_arrondi: "85,9"
   - cle: tenant_du_titre
@@ -29285,7 +29340,7 @@ modeles:
       on ne l''a pas gagnée. Le modèle nul ne tire pas au hasard : il tire les vainqueurs SELON LES FORCES
       estimées par le modèle de Plackett-Luce. Ce qui subsiste au-dessus de lui serait un élan, et non
       un niveau.'
-    nulle: *id092
+    nulle: *id106
     observe_arrondi: "11,3"
     attendu_arrondi: "8,6"
   - cle: age_bascule_fusion
@@ -29303,7 +29358,7 @@ modeles:
     lecture: 'Écart d''âge de l''éliminé à la moyenne de son camp, avant la réunification moins après.
       Le modèle nul tire l''éliminé au hasard parmi les présents : la composition d''âge de chaque soirée
       reste celle du soir.'
-    nulle: *id093
+    nulle: *id107
     observe_arrondi: "1,4"
     attendu_arrondi: 0
   - cle: talent_stable
@@ -29415,6 +29470,7 @@ modeles:
     attendu_arrondi: "0,5"
   nb_tests: 44
   nb_retenus: 25
+  faux_positifs_attendus: "2,2"
 completude_saisons:
   colonnes:
   - cle: casting
@@ -33883,3 +33939,17 @@ completude_saisons:
   moyenne: "86,2"
   meilleure: sp5
   pire: sp8
+geographie:
+  lacunaires:
+  - titre: Panama
+    annee: 2004
+    localisees: 12
+    effectif: 16
+  - titre: Palawan
+    annee: 2007
+    localisees: 5
+    effectif: 16
+  - titre: Palau
+    annee: 2009
+    localisees: 16
+    effectif: 18

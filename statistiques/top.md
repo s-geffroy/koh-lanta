@@ -348,8 +348,8 @@ l’élimination. Leur résistance valait zéro par construction.
   écarté.</p>
   <p><b>Les voix qui vous sortent ne mesurent pas votre discrétion.</b> Elles
   pèsent <b>{{ ar.discretion.part }} %</b> de toutes les voix relevées, et elles
-  séparent les <em>manières de sortir</em> bien plus que les joueurs : 1,35 voix
-  par conseil pour un éliminé au conseil, 0,14 pour un vainqueur. Les compter
+  séparent les <em>manières de sortir</em> bien plus que les joueurs : un éliminé
+  au conseil en reçoit, par définition, bien plus qu’un vainqueur. Les compter
   revient à redemander « a-t-il été éliminé au conseil ? », ce que le parcours
   dit déjà. Le soir du départ est écarté des deux côtés.</p>
 </div>

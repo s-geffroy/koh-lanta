@@ -163,8 +163,9 @@ au-dessus desquels on parlerait de familles franchement distinctes.
 
 <p class="note">Une découpe qui isole deux personnes n’est pas un archétype :
 elle met à part des points extrêmes et gonfle l’indice au passage. On exige donc
-que le plus petit groupe pèse au moins 2 % du casting, ce qui écarte les
-découpes à sept groupes et plus.</p>
+que le plus petit groupe pèse au moins 2 % du casting, soit {{ c.plancher }}
+personnes. Parmi les découpes qui respectent ce plancher, on retient celle dont
+la silhouette est la plus haute : {{ c.nb_archetypes }} groupes.</p>
 
 Les six étiquettes se lisent comme un générique : la trentenaire du commerce,
 l’homme de trente ans du monde agricole, l’artisan de quarante ans, le

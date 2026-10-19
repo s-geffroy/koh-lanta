@@ -21,7 +21,7 @@ un, et celui-là emmène en finale qui il veut. Le troisième est éliminé.
 Trois décisions s’enchaînent donc, et aucune n’avait été mesurée ici — parce
 qu’aucune n’était dans les données. `epreuves.yml` ne porte **aucun nom
 d’épreuve** ; la dernière épreuve d’immunité individuelle relevée n’est pas les
-poteaux, et pour huit saisons son vainqueur est justement la personne éliminée
+poteaux, et pour plusieurs saisons son vainqueur est justement la personne éliminée
 dessus. Il a fallu aller lire les deux wikis.
 
 <ul class="chiffres">
@@ -184,11 +184,11 @@ cette page cesse d’être publiable, et on le saura.
   chose qu’une p ajustée, et on ne le présente pas comme telle.</p>
   <p><b>{{ f.saisons_ordonnees }} saisons, c’est peu.</b> Le résultat sur le
   dernier qualifié tient à
-  {{ r3.gagne_la_saison.cas }} victoires ; trois de moins et l’intervalle
+  {{ r3.gagne_la_saison.cas }} victoires ; {{ r3.gagne_la_saison.marge }} de moins et l’intervalle
   reprendrait le hasard. Il demande à être revu dans cinq ans.</p>
   <p><b>{{ cv.saisons_sans_poteaux.size }} saisons manquent</b> —
   {{ cv.saisons_sans_poteaux | join: ", " }} — parce qu’aucune des deux sources
   n’y nomme le vainqueur des poteaux. Ce sont surtout des saisons anciennes, et
-  rien ne garantit qu’elles ressembleraient aux autres. Trois éditions de plus
-  sont écartées d’office : leur fin ne suit pas le format à trois aux poteaux.</p>
+  rien ne garantit qu’elles ressembleraient aux autres. {{ cv.hors_format }} éditions de
+  plus sont écartées d’office : leur fin ne suit pas le format à trois aux poteaux.</p>
 </div>

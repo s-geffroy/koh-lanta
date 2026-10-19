@@ -16,7 +16,7 @@ chapeau: >-
 Le sexe, l’âge, le métier, le bandeau de départ : quatre façons de se ressembler
 ou non. La page [Les conseils]({{ '/statistiques/conseils/' | relative_url }})
 donne les parts brutes — {% assign vg = site.data.stats.conseils.vote_par_genre | first %}{{ vg.part }} %
-des bulletins sont écrits par un homme contre une femme. Ces
+des bulletins sont écrits par {{ vg.libelle }}. Ces
 parts ne veulent rien dire seules : si le camp entier a un nom en tête ce
 soir-là, chacun l’écrit, quel que soit son propre profil.
 

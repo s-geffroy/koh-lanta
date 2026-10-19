@@ -63,7 +63,7 @@ que les autres ?**
 
 Il part dans {{ af.age[0].probabilite }} % des cas, contre
 {{ af.age[1].probabilite }} % pour ceux qui ne sont ni le plus âgé ni le plus
-jeune — près de cinq points d’écart, qui ressemblent fort à un résultat. Ils
+jeune — {{ af.age_ecart }} points d’écart, qui ressemblent fort à un résultat. Ils
 n’en sont pas : **on est plus souvent le doyen d’un camp de six que d’un camp de douze**,
 et un camp de six élimine une personne sur six. Le hasard propre à cette
 catégorie vaut {{ af.age[0].hasard }} %, pas {{ af.hasard }} %. Une fois ce

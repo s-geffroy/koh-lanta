@@ -68,7 +68,7 @@ pas conclure.</p>
   <p><b>Avoir éliminé le juré coûte.</b> Cote ×{{ c0.rapport }}, intervalle
   {{ c0.bas }} à {{ c0.haut }}, p = {{ c0.p }} — l’intervalle <b>ne contient pas
   1</b>. À conseils partagés égaux, le finaliste qui a écrit le nom d’un juré
-  voit sa cote d’obtenir sa voix <b>presque divisée par deux</b>. Le jury
+  voit sa cote d’obtenir sa voix <b>divisée par {{ c0.inverse }}</b>. Le jury
   n’oublie pas.</p>
   <p><b>Avoir voté avec le juré rapporte davantage encore.</b> Chaque conseil
   passé du même côté multiplie la cote par <b>{{ c1.rapport }}</b>
