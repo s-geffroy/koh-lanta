@@ -112,11 +112,36 @@ et c’est ce nom de cadre qui était devenu sa tribu, comme pour Joëlle et Ame
 Une tribu de départ n’est plus jamais un état : « Bannie », « Absente » cèdent
 la place au premier vrai campement, ou à rien.
 
+**Puis les légendes de Wikipédia, lues de travers elles aussi.** Wikipédia
+colore chaque étape : un code pour une tribu (« #fee347 »), mais un *nom* pour
+la tribu réunifiée (« white »), pour les bannis (« black »), et parfois rien.
+Seuls les codes étaient lus : 313 étapes disparaissaient, dont toutes les
+réunifications écrites en blanc — 221 parcours s’arrêtaient à la fusion. Elles
+sont lues ; une étape encore en cours, « (jour 19 – ) », n’a plus de jour de
+fin inventé ; et la tribu de départ reste la première tribu à vraie couleur, pas
+la « Tribu des hommes » ni la « Tribu unique » des tout premiers jours.
+
+**Enfin, les jours de sortie.** Confrontés au parcours, une trentaine ne
+tenaient pas. Chaque cas a été soumis à tous les témoins disponibles —
+Wikipédia en français et en anglais, le wiki *Survivor*, la fiche Fandom et
+ses jours de jeu — et la majorité l’a emporté. Le tableau de saison Fandom,
+d’où viennent ces jours, est décalé d’un jour sur toute la saison de *Nicoya*,
+et en fin de saison aux *Armes secrètes*, à *La Tribu maudite*, à *La Nouvelle
+Édition* et à *La Légende*. Deux durées de saison suivent : 35 jours aux *Armes
+secrètes*, 41 à *La Tribu maudite*. Quatre étapes fausses à la source sont
+corrigées, dont celle de Patricia, que sa légende plaçait dans la tribu
+réunifiée alors qu’elle sort à la réunion des ambassadeurs. Les revenants,
+eux, gardent comme jour de sortie celui de leur première élimination : leur
+parcours continue après, et c’est normal. À égalité de témoins, rien n’a été
+changé — Estelle et Ludovic à *Vanuatu*, Laurent à *L’Île au trésor*, Freddy à
+*La Légende*, et la durée de *Caramoan* (39 ou 40 jours).
+
 <p class="note">Au moment de cette reprise, 50 étapes portaient un nom de
-tribu mêlé de dates : il n’y en a plus. 49 parcours vides ont été complétés,
-souvent sans jours. Il reste 167 étapes sans jours et 4 parcours vides, ceux
-d’<em>All Stars</em>, saison en cours. Les étapes sans jours ne seront
-complétées que si une source les date.</p>
+tribu mêlé de dates, et 32 parcours contredisaient leur jour de sortie : il
+n’y en a plus. 49 parcours vides ont été complétés, souvent sans jours. Il
+reste 172 étapes sans jours et 4 parcours vides, ceux d’<em>All Stars</em>,
+saison en cours. Les étapes sans jours ne seront complétées que si une source
+les date.</p>
 
 ## La quatrième source : le wiki anglophone de *Survivor*, en témoin
 
@@ -440,7 +465,11 @@ Quelques points ont demandé une décision explicite.
 les tables de candidats s’accorder exactement. Pour
 {{ site.data.stats.mots.durees_divergentes }} d’entre elles, ils divergent d’un jour. C’est alors le **jour attesté par les tables de candidats**
 qui est retenu — la sortie d’un finaliste est datée plus précisément qu’une
-durée de résumé — et la valeur annoncée est conservée à côté.
+durée de résumé — et la valeur annoncée est conservée à côté. Deux fois, ce
+jour attesté s’est révélé faux, et la règle a cédé : aux *Armes secrètes* et à
+*La Tribu maudite*, le tableau de saison Fandom est décalé d’un jour, contre la
+fiche des finalistes, les légendes de Wikipédia et le wiki *Survivor*. Ces deux
+saisons durent 35 et 41 jours.
 
 **Les homonymes.** Deux Léa en saison 25, deux Cécile en 26, deux Jérôme en 27 :
 ce sont bien des personnes différentes, et non des doublons. Elles sont

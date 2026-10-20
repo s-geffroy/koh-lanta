@@ -23,7 +23,11 @@ from parse_fandom import (plain, sansaccent, classify, split_rows, split_cells,
 RE_GENRE   = re.compile(r"\{\{\s*(♀|♂|Femme|Homme)\s*\}\}|(?<![\w])(♀|♂)(?![\w])", re.I)
 RE_GRAS    = re.compile(r"'''(.+?)'''", re.S)
 RE_AGE     = re.compile(r"\b(\d{1,2})\s*ans?\b")
-RE_LEGENDE = re.compile(r"\{\{\s*Légende\s*\|\s*(#[0-9A-Fa-f]{3,6})\s*\|\s*([^}]*?)\}\}")
+# La couleur est un code (« #fee347 »), mais aussi un NOM -- « white » pour la
+# tribu reunifiee, « black » pour les bannis -- ou rien (« Tribu unique »).
+# N'accepter que les codes perdait 313 etapes, dont toutes les reunifications
+# ecrites en blanc : le parcours s'arretait a la fusion.
+RE_LEGENDE = re.compile(r"\{\{\s*Légende\s*\|\s*([^|}]*?)\s*\|\s*([^}]*?)\}\}")
 # Un palmares, pas un metier : « Vainqueur de la saison 5 », « Éliminé a
 # l'orientation de la saison 11 », « Finaliste de L'Ile des heros ».
 RE_PALMARES = re.compile(
@@ -49,11 +53,16 @@ def parse_tribus(cell):
         debut = fin = None
         if mj:
             debut = int(mj.group(1))
-            fin = int(mj.group(2)) if mj.group(2) else debut
+            # « (jour 19 – ) » : l'etape court encore, elle n'a pas de fin.
+            # Seul « (jour 12) », sans tiret, est une etape d'un seul jour.
+            ouverte = re.search(r"[–\-—]\s*\)?\s*$", texte[mj.start():mj.end() + 2])
+            fin = int(mj.group(2)) if mj.group(2) else (None if ouverte else debut)
             texte = texte[:mj.start()].strip()
         nom = texte.strip(" ()–-—")
         if nom:
-            out.append((nom, couleur, debut, fin))
+            # 5e terme : la legende porte-t-elle un CODE couleur ? Seules
+            # celles-la designent une tribu de depart.
+            out.append((nom, couleur, debut, fin, m.group(1).startswith("#")))
     return out
 
 def parse_row(row, saison_id=None):
@@ -146,8 +155,12 @@ def parse_row(row, saison_id=None):
         "profession": profession,
         "localisation": localisation,
         "genre": genre,
-        "tribu": tribus[0][0] if tribus else None,
-        "couleur": tribus[0][1] if tribus else None,
+        # La tribu de DEPART est la premiere etape a vraie couleur de tribu (un
+        # code). Les etapes en couleur nommee -- « Tribu des hommes », « Tribu
+        # unique » en gris ou sans couleur, « Bannie » en noir, la reunification
+        # en blanc -- ne sont pas des tribus de depart.
+        "tribu": next((t[0] for t in tribus if t[4]), None),
+        "couleur": next((t[1] for t in tribus if t[4]), None),
         "parcours": [{"tribu": t[0], "couleur": t[1], "jour_debut": t[2], "jour_fin": t[3]}
                      for t in tribus],
         "jour_sortie": jour,

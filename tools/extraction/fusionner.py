@@ -1049,8 +1049,13 @@ def completer_les_jours(participations, rapport):
         # La derniere etape finit au jour de sortie -- si elle est bien la
         # derniere : la reunification, un etat, ou une sortie avant la
         # reunification. Sinon la fiche a peut-etre omis une etape.
+        # Pas pour un REVENANT : son jour de sortie est sa premiere
+        # elimination, et le parcours continue apres (Maxime, All Stars :
+        # sorti au jour 3, banni, revenu).
         der = len(pc) - 1
-        if (sortie and pc[der].get("jour_fin") is None
+        revenant = any(RE_ETAT.match(e["tribu"]) for e in pc[:der])
+        if (sortie and pc[der].get("jour_fin") is None and not revenant
+                and (pc[der].get("jour_debut") is None or sortie >= pc[der]["jour_debut"])
                 and (reunie[der] or etat[der] or (d and sortie <= d))):
             pc[der]["jour_fin"] = sortie
         if pc != avant:
@@ -1083,6 +1088,94 @@ def corriger_tribus(participations, rapport):
 
 
 RE_ETAT = re.compile(r"^(aucune|absente?|bannie?|[ée]limin[ée]e?|exil[ée]e?)\b", re.I)
+
+
+def harmoniser_parcours(participations, saisons, rapport):
+    """Toutes les etapes, quelle que soit leur source, nommees et colorees de meme.
+
+    Wikipedia ecrit « Tribu des hommes » sans couleur la ou la saison declare
+    cette tribu en bleu ; une fiche ecrit « LankawaÏ ». Le nom est ramene a la
+    tribu declaree, et la couleur manquante prise dans la declaration.
+    """
+    par_saison = {s["id"]: s for s in saisons}
+    for p in participations:
+        s_ = par_saison.get(p["saison"], {})
+        for e in p.get("parcours") or []:
+            e["tribu"] = _nom_de_tribu(s_, e["tribu"])
+            if e.get("couleur") is None:
+                e["couleur"] = _couleur_de(s_, e["tribu"])
+
+
+# Les jours que le tableau de saison Fandom (ou une legende) donne FAUX, et
+# que la majorite des temoins corrige. TABLE fermee : chaque ligne a ete
+# confrontee a tous les temoins disponibles -- Wikipedia (fr et en), wiki
+# Survivor, fiche Fandom et ses jours de jeu -- le 20 octobre 2026. A egalite,
+# rien n'est change (Vanuatu : Estelle, Ludovic ; Ile au tresor : Laurent ;
+# Legende : Freddy).
+_NICOYA = ("Wikipedia anglais (colonne Day), wiki Survivor et fiche Fandom "
+           "s'accordent ; le tableau de saison Fandom est decale d'un jour")
+JOURS_DE_SORTIE = {
+    **{("s02", pid): (j, _NICOYA) for pid, j in (
+        ("xavier-lemasson", 5), ("caroline-lamotte", 7), ("celine-fortier", 10),
+        ("nelly-baradeau", 13), ("pierre-cambon", 16), ("jacky-forteron", 19),
+        ("adonis-koupaki", 22), ("jimmy-denis", 25), ("beatrice-cloix-penisson", 28),
+        ("francois-xavier-renou", 31), ("isabelle-vial", 34), ("maud-garnier", 37),
+        ("marianne-mondon", 38))},
+    **{("s22", pid): (27, "Wikipedia fr, bilan : « Jour 27 » ; wiki Survivor ; "
+                          "elimines ensemble par les destins lies")
+       for pid in ("vincent-blier", "laetitia-saphores")},
+    **{("s26", pid): (j, "legende Wikipedia, wiki Survivor et fiche Fandom ; la "
+                         "saison dure 41 jours, pas 40")
+       for pid, j in (("sophia-mansouri", 39), ("ugo-lartiche", 39),
+                      ("jacques-roque", 40), ("cecile-belec", 40), ("ilyesse-benyoub", 41))},
+    **{("sp4", pid): (j, "wiki Survivor et parcours de la fiche Fandom")
+       for pid, j in (("teheiura-teahui", 19), ("philippe-duron", 21),
+                      ("moundir-zoughari", 22))},
+    **{("sp7", pid): (j, "legende Wikipedia et wiki Survivor")
+       for pid, j in (("coumba-baradji", 18), ("namadia-thai-thai", 19), ("sam-haliti", 32))},
+}
+# Les etapes de parcours que la source ecrit fausses. (saison, id, tribu) ->
+# (debut, fin) ; fin None retire l'etape.
+ETAPES_CORRIGEES = {
+    ("s08", "christopher-lavaud", "Tribu réunifiée"): ((15, 22),
+        "coquille de la fiche (« 15-2 ») : sortie au jour 22, wiki Survivor"),
+    ("s15", "julien-castro", "Tribu réunifiée"): ((19, 23),
+        "tableau de saison Fandom et wiki Survivor : sortie au jour 23"),
+    ("s26", "maxim-iarkov", "Tribu maudite"): ((None, 30),
+        "tableau de saison Fandom et wiki Survivor : sortie au jour 30"),
+    ("sp3", "patricia-morel", "Klahan"): ((1, 10),
+        "battue en duel a la reunion des ambassadeurs (wiki Survivor), sortie a "
+        "l'episode 4 selon le tableau des votes de Wikipedia lui-meme"),
+    ("sp3", "patricia-morel", "Tribu réunifiée"): (None,
+        "jamais dans la tribu reunifiee : sortie avant elle (voir Klahan)"),
+}
+
+
+def corriger_les_jours(participations, rapport):
+    """Applique JOURS_DE_SORTIE et ETAPES_CORRIGEES, et le dit."""
+    for p in participations:
+        c = JOURS_DE_SORTIE.get((p["saison"], p["id"]))
+        if c and p.get("jour_sortie") != c[0]:
+            rapport.append(f"jour de sortie : {p['saison']}/{p['id']} "
+                           f"{p.get('jour_sortie')} -> {c[0]} ({c[1]})")
+            p["jour_sortie"] = c[0]
+            p.setdefault("sources", {})["jour_sortie"] = "corrige : " + c[1]
+        garde = []
+        for e in p.get("parcours") or []:
+            k = ETAPES_CORRIGEES.get((p["saison"], p["id"], e["tribu"]))
+            if k is None:
+                garde.append(e)
+                continue
+            if k[0] is None:
+                rapport.append(f"parcours : {p['saison']}/{p['id']} etape {e['tribu']} retiree ({k[1]})")
+                continue
+            debut, fin = k[0]
+            e["jour_debut"] = debut if debut is not None else e["jour_debut"]
+            e["jour_fin"] = fin
+            p.setdefault("sources", {})["parcours_jours"] = "corrige : " + k[1]
+            garde.append(e)
+        if p.get("parcours"):
+            p["parcours"] = garde
 
 
 def tribu_sans_etat(participations, rapport):
@@ -1160,6 +1253,8 @@ def main():
     completer_genre(participations, rapport)
     completer_depuis_pages(participations, saisons, rapport)
     # Apres les pages individuelles : c'est d'elles que vient le parcours.
+    harmoniser_parcours(participations, saisons, rapport)
+    corriger_les_jours(participations, rapport)
     tribu_depuis_le_parcours(participations, rapport)
     parcours_depuis_survivor(participations, saisons, rapport)
     completer_les_jours(participations, rapport)

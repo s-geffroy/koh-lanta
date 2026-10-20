@@ -26,8 +26,8 @@ general:
   annees_annulees_texte: 2013 et de 2018
   parite_ecart_max: "1,5"
   metiers_distincts: 464
-  durees_divergentes: 5
-  durees_concordantes: 29
+  durees_divergentes: 3
+  durees_concordantes: 31
   paires_possibles: 5789
   paires_possibles_texte: 5 789
 vainqueurs:
@@ -230,14 +230,14 @@ vainqueurs_toutes:
 couleurs:
 - couleur: jaune
   effectif: 213
-  survie_moyenne: "59,9"
+  survie_moyenne: "60,1"
   victoires: 12
   finales: 23
   taux_finale: "10,8"
   couleur_maj: Jaune
 - couleur: rouge
   effectif: 208
-  survie_moyenne: "62,9"
+  survie_moyenne: 63
   victoires: 12
   finales: 21
   taux_finale: "10,1"
@@ -272,7 +272,7 @@ couleurs:
   couleur_maj: Orange
 - couleur: noir
   effectif: 2
-  survie_moyenne: "32,5"
+  survie_moyenne: "31,7"
   victoires: 0
   finales: 0
   taux_finale: 0
@@ -285,7 +285,7 @@ metiers:
   victoires: 5
   finales: 6
   taux_finale: 6
-  survie_moyenne: "57,7"
+  survie_moyenne: "57,8"
   age_moyen: "36,4"
 - code: commerce
   libelle: Commerce et vente
@@ -294,7 +294,7 @@ metiers:
   victoires: 5
   finales: 10
   taux_finale: "15,6"
-  survie_moyenne: 57
+  survie_moyenne: "57,1"
   age_moyen: "35,2"
 - code: sport
   libelle: Sport et coaching
@@ -303,7 +303,7 @@ metiers:
   victoires: 5
   finales: 7
   taux_finale: "14,3"
-  survie_moyenne: "66,3"
+  survie_moyenne: "66,4"
   age_moyen: "32,7"
 - code: arts_medias
   libelle: Arts, médias et image
@@ -321,7 +321,7 @@ metiers:
   victoires: 2
   finales: 5
   taux_finale: "11,6"
-  survie_moyenne: "67,7"
+  survie_moyenne: "67,8"
   age_moyen: "36,2"
 - code: etudiant
   libelle: Étudiants
@@ -348,7 +348,7 @@ metiers:
   victoires: 2
   finales: 2
   taux_finale: "6,9"
-  survie_moyenne: "59,6"
+  survie_moyenne: "59,5"
   age_moyen: "35,2"
 - code: transport
   libelle: Transport et logistique
@@ -357,7 +357,7 @@ metiers:
   victoires: 1
   finales: 2
   taux_finale: "6,9"
-  survie_moyenne: "57,8"
+  survie_moyenne: "57,9"
   age_moyen: "32,9"
 - code: agriculture
   libelle: Agriculture et nature
@@ -366,7 +366,7 @@ metiers:
   victoires: 3
   finales: 3
   taux_finale: "12,5"
-  survie_moyenne: "70,3"
+  survie_moyenne: "70,6"
   age_moyen: "34,5"
 - code: restauration_hotellerie
   libelle: Restauration et hôtellerie
@@ -375,7 +375,7 @@ metiers:
   victoires: 2
   finales: 3
   taux_finale: 13
-  survie_moyenne: "62,8"
+  survie_moyenne: "63,1"
   age_moyen: "31,3"
 - code: sante
   libelle: Santé
@@ -384,7 +384,7 @@ metiers:
   victoires: 0
   finales: 2
   taux_finale: "11,1"
-  survie_moyenne: "50,1"
+  survie_moyenne: "50,4"
   age_moyen: "29,8"
 - code: sans_emploi
   libelle: Sans activité déclarée
@@ -403,7 +403,7 @@ metiers_toutes:
   victoires: 6
   finales: 9
   taux_finale: "7,1"
-  survie_moyenne: "58,8"
+  survie_moyenne: "58,9"
   age_moyen: "36,1"
 - code: commerce
   libelle: Commerce et vente
@@ -421,7 +421,7 @@ metiers_toutes:
   victoires: 7
   finales: 9
   taux_finale: "12,9"
-  survie_moyenne: "62,1"
+  survie_moyenne: "62,2"
   age_moyen: "33,7"
 - code: artisanat_btp
   libelle: Artisanat et bâtiment
@@ -430,7 +430,7 @@ metiers_toutes:
   victoires: 2
   finales: 5
   taux_finale: "9,1"
-  survie_moyenne: "68,4"
+  survie_moyenne: "68,6"
   age_moyen: "37,1"
 - code: arts_medias
   libelle: Arts, médias et image
@@ -457,7 +457,7 @@ metiers_toutes:
   victoires: 3
   finales: 5
   taux_finale: "13,2"
-  survie_moyenne: "60,9"
+  survie_moyenne: 61
   age_moyen: "33,5"
 - code: action_securite
   libelle: Action et sécurité
@@ -466,7 +466,7 @@ metiers_toutes:
   victoires: 2
   finales: 2
   taux_finale: "5,7"
-  survie_moyenne: "57,6"
+  survie_moyenne: "57,5"
   age_moyen: "36,4"
 - code: enseignement
   libelle: Enseignement et éducation
@@ -475,7 +475,7 @@ metiers_toutes:
   victoires: 0
   finales: 2
   taux_finale: "6,1"
-  survie_moyenne: "59,4"
+  survie_moyenne: "59,5"
   age_moyen: "35,9"
 - code: restauration_hotellerie
   libelle: Restauration et hôtellerie
@@ -484,7 +484,7 @@ metiers_toutes:
   victoires: 2
   finales: 4
   taux_finale: "12,1"
-  survie_moyenne: "65,4"
+  survie_moyenne: "65,9"
   age_moyen: 32
 - code: agriculture
   libelle: Agriculture et nature
@@ -493,7 +493,7 @@ metiers_toutes:
   victoires: 4
   finales: 4
   taux_finale: "14,8"
-  survie_moyenne: "68,5"
+  survie_moyenne: "68,8"
   age_moyen: "34,6"
 - code: sante
   libelle: Santé
@@ -502,7 +502,7 @@ metiers_toutes:
   victoires: 0
   finales: 3
   taux_finale: "13,6"
-  survie_moyenne: "49,2"
+  survie_moyenne: "49,4"
   age_moyen: "30,2"
 - code: sans_emploi
   libelle: Sans activité déclarée
@@ -519,8 +519,8 @@ genre:
     libelle: Femmes
     effectif: 256
     part_du_casting: "50,1"
-    survie_moyenne: 58
-    jour_moyen: "23,1"
+    survie_moyenne: "58,1"
+    jour_moyen: "23,2"
     age_moyen: "32,9"
     victoires: 14
     finales: 27
@@ -529,8 +529,8 @@ genre:
     libelle: Hommes
     effectif: 255
     part_du_casting: "49,9"
-    survie_moyenne: "64,1"
-    jour_moyen: "25,6"
+    survie_moyenne: "64,2"
+    jour_moyen: "25,7"
     age_moyen: "34,6"
     victoires: 15
     finales: 26
@@ -538,9 +538,9 @@ genre:
   par_decennie:
   - decennie: 2000s
     effectif: 150
-    survie_femmes: "56,8"
+    survie_femmes: "56,9"
     effectif_femmes: 75
-    survie_hommes: "63,8"
+    survie_hommes: "64,1"
     effectif_hommes: 75
   - decennie: 2010s
     effectif: 182
@@ -552,7 +552,7 @@ genre:
     effectif: 179
     survie_femmes: "60,7"
     effectif_femmes: 90
-    survie_hommes: "63,4"
+    survie_hommes: "63,5"
     effectif_hommes: 89
 sorties:
   repartition:
@@ -668,28 +668,28 @@ age:
 - tranche: 18-24 ans
   effectif: 101
   part_du_casting: "19,8"
-  survie_moyenne: "54,6"
+  survie_moyenne: "54,7"
   victoires: 7
   finales: 13
   taux_finale: "12,9"
 - tranche: 25-29 ans
   effectif: 108
   part_du_casting: "21,1"
-  survie_moyenne: 66
+  survie_moyenne: "66,2"
   victoires: 4
   finales: 10
   taux_finale: "9,3"
 - tranche: 30-34 ans
   effectif: 86
   part_du_casting: "16,8"
-  survie_moyenne: "67,8"
+  survie_moyenne: "67,9"
   victoires: 7
   finales: 13
   taux_finale: "15,1"
 - tranche: 35-39 ans
   effectif: 86
   part_du_casting: "16,8"
-  survie_moyenne: "63,1"
+  survie_moyenne: "63,2"
   victoires: 4
   finales: 6
   taux_finale: 7
@@ -703,7 +703,7 @@ age:
 - tranche: 45 ans et plus
   effectif: 76
   part_du_casting: "14,9"
-  survie_moyenne: "51,4"
+  survie_moyenne: "51,5"
   victoires: 1
   finales: 5
   taux_finale: "6,6"
@@ -1041,7 +1041,7 @@ saisons:
   en_cours: false
   pays: Polynésie française
   lieu: Île de Taha'a
-  duree_jours: 36
+  duree_jours: 35
   effectif: 21
   age_moyen: "33,6"
   age_min: 25
@@ -1110,7 +1110,7 @@ saisons:
   en_cours: false
   pays: Philippines
   lieu: Péninsule de Caramoan
-  duree_jours: 40
+  duree_jours: 41
   effectif: 24
   age_moyen: "34,1"
   age_min: 23
@@ -2377,13 +2377,13 @@ revenants:
   paradoxe:
   - libelle: Jamais rappelés
     effectif: 448
-    survie_moyenne: "56,5"
+    survie_moyenne: "56,6"
   - libelle: Revenants, leur première saison
     effectif: 83
-    survie_moyenne: "84,1"
+    survie_moyenne: "84,2"
   - libelle: Revenants, leurs saisons suivantes
     effectif: 96
-    survie_moyenne: "62,4"
+    survie_moyenne: "62,6"
   vainqueurs_multiples:
   - id: clemence-castel
     nom: Clémence Castel
@@ -2420,10 +2420,10 @@ revenants:
   - id: teheiura-teahui
     nom: Teheiura Teahui
     saisons: 5
-    jours: 113
+    jours: 114
     jours_possibles: 154
-    part_du_temps: "73,4"
-    barre: 73
+    part_du_temps: 74
+    barre: 74
   - &id002
     id: laurent-maistret
     nom: Laurent Maistret
@@ -2463,16 +2463,16 @@ revenants:
   - id: coumba-baradji
     nom: Coumba Baradji
     saisons: 4
-    jours: 89
+    jours: 90
     jours_possibles: 119
-    part_du_temps: "74,8"
-    barre: 75
+    part_du_temps: "75,6"
+    barre: 76
   - id: ugo-lartiche
     nom: Ugo Lartiche
     saisons: 3
-    jours: 83
-    jours_possibles: 117
-    part_du_temps: "70,9"
+    jours: 84
+    jours_possibles: 118
+    part_du_temps: "71,2"
     barre: 71
   - id: candice-boisson
     nom: Candice Boisson
@@ -2521,9 +2521,9 @@ revenants:
     nom: Frédéric Khouvilay
     saisons: 2
     jours: 67
-    jours_possibles: 80
-    part_du_temps: "83,8"
-    barre: 84
+    jours_possibles: 81
+    part_du_temps: "82,7"
+    barre: 83
   - id: patrick-merle
     nom: Patrick Merle
     saisons: 3
@@ -5257,62 +5257,62 @@ risque:
     encore_en_jeu: 511
     risque: "0,2"
   - tranche: 10
-    sortants: 41
+    sortants: 42
     encore_en_jeu: 510
-    risque: 8
+    risque: "8,2"
   - tranche: 20
-    sortants: 54
-    encore_en_jeu: 469
-    risque: "11,5"
+    sortants: 52
+    encore_en_jeu: 468
+    risque: "11,1"
   - tranche: 30
-    sortants: 33
-    encore_en_jeu: 415
-    risque: 8
+    sortants: 34
+    encore_en_jeu: 416
+    risque: "8,2"
   - tranche: 40
-    sortants: 50
+    sortants: 49
     encore_en_jeu: 382
-    risque: "13,1"
+    risque: "12,8"
   - tranche: 50
-    sortants: 33
-    encore_en_jeu: 332
-    risque: "9,9"
+    sortants: 34
+    encore_en_jeu: 333
+    risque: "10,2"
   - tranche: 60
-    sortants: 60
+    sortants: 59
     encore_en_jeu: 299
-    risque: "20,1"
+    risque: "19,7"
   - tranche: 70
     sortants: 32
-    encore_en_jeu: 239
-    risque: "13,4"
+    encore_en_jeu: 240
+    risque: "13,3"
   - tranche: 80
     sortants: 48
-    encore_en_jeu: 207
-    risque: "23,2"
+    encore_en_jeu: 208
+    risque: "23,1"
   - tranche: 90
-    sortants: 40
-    encore_en_jeu: 159
-    risque: "25,2"
+    sortants: 39
+    encore_en_jeu: 160
+    risque: "24,4"
   - tranche: 100
-    sortants: 119
-    encore_en_jeu: 119
+    sortants: 121
+    encore_en_jeu: 121
     risque: 100
   jours_les_plus_meurtriers:
   - jour: 40
-    sortants: 45
+    sortants: 44
   - jour: 39
-    sortants: 34
+    sortants: 33
   - jour: 3
     sortants: 24
   - jour: 38
-    sortants: 22
+    sortants: 21
   - jour: 9
-    sortants: 19
+    sortants: 18
   - jour: 6
-    sortants: 17
-  - jour: 12
     sortants: 16
-  - jour: 15
-    sortants: 15
+  - jour: 25
+    sortants: 16
+  - jour: 37
+    sortants: 16
 survie_saisons:
 - id: s01
   numero: 1
@@ -5354,19 +5354,19 @@ survie_saisons:
   - 100
   - 94
   - 88
-  - 81
+  - 88
   - 81
   - 75
-  - 69
+  - 75
   - 69
   - 62
-  - 56
+  - 62
   - 56
   - 50
-  - 44
+  - 50
   - 44
   - 38
-  - 31
+  - 38
   - 31
   - 25
   - 12
@@ -5757,10 +5757,10 @@ survie_saisons:
   - 54
   - 46
   - 46
+  - 46
   - 38
   - 38
   - 31
-  - 23
   - 15
 - id: s14
   numero: 14
@@ -6031,7 +6031,7 @@ survie_saisons:
   - 67
   - 62
   - 62
-  - 52
+  - 57
   - 48
   - 48
   - 43
@@ -6039,7 +6039,7 @@ survie_saisons:
   - 33
   - 33
   - 24
-  - 19
+  - 24
   - 19
   - 10
 - id: s22
@@ -6062,14 +6062,14 @@ survie_saisons:
   - 62
   - 62
   - 52
+  - 52
   - 48
   - 48
   - 38
   - 38
   - 33
-  - 33
+  - 24
   - 14
-  - 10
 - id: s23
   numero: 23
   titre: Le Totem maudit
@@ -6164,22 +6164,22 @@ survie_saisons:
   - 100
   - 100
   - 96
-  - 96
+  - 92
   - 92
   - 88
-  - 88
+  - 83
   - 71
   - 67
   - 62
   - 58
-  - 54
   - 50
   - 46
-  - 42
+  - 46
   - 42
   - 38
+  - 38
   - 33
-  - 33
+  - 29
   - 29
   - 12
 - id: s27
@@ -6247,43 +6247,43 @@ survie_bandeau:
   - "99,8"
   - "99,4"
   - "94,7"
-  - "93,7"
+  - "93,9"
   - "92,4"
-  - 89
+  - "89,2"
   - "88,1"
   - "87,5"
-  - "83,8"
+  - 84
   - "81,2"
   - "79,6"
-  - "76,5"
+  - "76,7"
   - "74,8"
   - "73,4"
-  - "70,5"
+  - "70,6"
   - "68,5"
   - "67,5"
-  - "64,6"
+  - "64,8"
   - "61,8"
   - "60,1"
-  - "58,3"
+  - "58,5"
   - "55,6"
   - "53,6"
-  - "51,7"
+  - "51,9"
   - "48,7"
-  - "46,2"
-  - "44,8"
+  - "46,6"
+  - 45
   - "43,1"
   - "41,3"
-  - "39,7"
+  - "39,9"
   - "37,8"
   - 35
-  - "32,3"
+  - "32,5"
   - "29,7"
-  - "28,4"
-  - "25,8"
+  - 28
+  - 26
   - "22,9"
-  - "18,6"
-  - "11,9"
-  - "3,1"
+  - "18,8"
+  - "12,3"
+  - "3,7"
   - "1,4"
   - "0,4"
   series:
@@ -6297,10 +6297,10 @@ survie_bandeau:
     - "93,9"
     - "93,4"
     - 92
-    - "89,2"
+    - "89,7"
     - "87,8"
     - "87,3"
-    - "83,1"
+    - "83,6"
     - "80,3"
     - "80,3"
     - "75,6"
@@ -6312,26 +6312,26 @@ survie_bandeau:
     - "63,8"
     - "60,6"
     - "58,7"
-    - "56,8"
+    - "57,3"
     - "54,5"
     - "52,1"
     - "50,2"
     - "48,4"
-    - "44,6"
+    - "45,5"
     - "42,7"
     - "40,4"
     - "38,5"
-    - "36,2"
+    - "36,6"
     - "33,8"
     - "31,9"
-    - "28,6"
+    - "29,1"
     - "27,7"
-    - "26,8"
+    - "26,3"
     - "24,9"
     - "21,1"
     - "18,8"
-    - "14,1"
-    - "4,7"
+    - "14,6"
+    - "6,1"
     - "1,9"
     - "0,5"
   - couleur: rouge
@@ -6342,7 +6342,7 @@ survie_bandeau:
     - 100
     - 100
     - "97,1"
-    - "95,7"
+    - "96,2"
     - "95,2"
     - "90,4"
     - "89,9"
@@ -6350,22 +6350,22 @@ survie_bandeau:
     - "86,1"
     - "83,7"
     - "82,2"
-    - "79,3"
+    - "79,8"
     - "76,9"
     - "75,5"
-    - "73,6"
+    - 74
     - "71,6"
     - "70,7"
-    - "65,9"
+    - "66,3"
     - "63,9"
     - 62
     - "59,6"
     - "55,8"
     - "54,8"
-    - "51,9"
+    - "52,4"
     - "49,5"
     - "48,1"
-    - "46,6"
+    - "47,1"
     - "45,2"
     - "43,8"
     - "42,3"
@@ -6373,17 +6373,17 @@ survie_bandeau:
     - "38,9"
     - "36,5"
     - "32,2"
-    - "31,7"
-    - "27,4"
+    - "31,2"
+    - "27,9"
     - "24,5"
-    - "18,3"
-    - "11,5"
+    - "18,8"
+    - 12
     - "2,9"
     - "1,4"
     - "0,5"
   ecart_median: 0
   ecart_moyen: 3
-  ecart_maximal: "7,9"
+  ecart_maximal: "7,5"
 casting:
   etendues:
   - id: s01
@@ -6983,7 +6983,7 @@ programme:
     debut: '2021-03-12'
     fin: '2021-06-04'
     jour_semaine: vendredi
-    duree_jours: 36
+    duree_jours: 35
   - id: s23
     numero: 23
     titre: Le Totem maudit
@@ -7023,7 +7023,7 @@ programme:
     debut: '2024-08-20'
     fin: '2024-12-03'
     jour_semaine: mardi
-    duree_jours: 40
+    duree_jours: 41
   - id: s27
     numero: 27
     titre: La Revanche des 4 Terres
@@ -7588,8 +7588,8 @@ voix_pour_eliminer:
   voix_max: 11
 premiere_epreuve:
   effectif: 41
-  survie_gagnants: "74,6"
-  survie_ensemble: 61
+  survie_gagnants: "74,8"
+  survie_ensemble: "61,2"
   saisons_couvertes: 34
   ecart: "13,6"
 epreuves:
@@ -8647,15 +8647,15 @@ indicateurs:
     survie: 100
     sort_libelle: Vainqueur
     id: claude-dartois
-  - nom: Bruno Peisey
-    saison: s14
-    titre: Johor
-    annee: 2015
+  - nom: Sophia Mansouri
+    saison: s26
+    titre: La Tribu maudite
+    annee: 2024
     conseils: 15
-    sort: elimine_orientation
-    survie: 95
-    sort_libelle: Éliminé à l'orientation
-    id: bruno-peisey
+    sort: elimine_conseil
+    survie: "95,1"
+    sort_libelle: Éliminé au conseil
+    id: sophia-mansouri
   nb_fantomes: 69
   fantomes_recidivistes:
   - nom: Coumba Baradji
@@ -9272,7 +9272,7 @@ indicateurs:
     effectif: 16
     duree_jours: 40
     age_moyen: 31
-    survie_moyenne: "61,4"
+    survie_moyenne: "63,1"
     abandons: 1
     taux_abandon: "6,2"
     conseils: 14
@@ -9289,7 +9289,7 @@ indicateurs:
     voix_annulees: 0
     mecaniques:
     - ambassadeurs
-    barre: 61
+    barre: 63
   - &id019
     id: s03
     numero: 3
@@ -9775,9 +9775,9 @@ indicateurs:
     speciale: false
     en_cours: false
     effectif: 21
-    duree_jours: 36
+    duree_jours: 35
     age_moyen: "33,6"
-    survie_moyenne: "63,5"
+    survie_moyenne: "65,3"
     abandons: 1
     taux_abandon: "4,8"
     conseils: 17
@@ -9796,7 +9796,7 @@ indicateurs:
     - ambassadeurs
     - collier_immunite
     - armes_secretes
-    barre: 64
+    barre: 65
   - id: s23
     numero: 23
     titre: Le Totem maudit
@@ -9893,9 +9893,9 @@ indicateurs:
     speciale: false
     en_cours: false
     effectif: 24
-    duree_jours: 40
+    duree_jours: 41
     age_moyen: "34,1"
-    survie_moyenne: "61,1"
+    survie_moyenne: "60,4"
     abandons: 1
     taux_abandon: "4,2"
     conseils: 20
@@ -9915,7 +9915,7 @@ indicateurs:
     - collier_immunite
     - capitaines
     - tribu_maudite
-    barre: 61
+    barre: 60
   - id: s27
     numero: 27
     titre: La Revanche des 4 Terres
@@ -10067,7 +10067,7 @@ indicateurs:
     effectif: 13
     duree_jours: 23
     age_moyen: "36,8"
-    survie_moyenne: "67,9"
+    survie_moyenne: "68,9"
     abandons: 2
     taux_abandon: "15,4"
     conseils: 10
@@ -10085,7 +10085,7 @@ indicateurs:
     mecaniques:
     - ambassadeurs
     - collier_immunite
-    barre: 68
+    barre: 69
   - id: sp5
     numero: null
     titre: Le Combat des héros
@@ -10157,7 +10157,7 @@ indicateurs:
     effectif: 21
     duree_jours: 35
     age_moyen: "35,9"
-    survie_moyenne: "54,4"
+    survie_moyenne: "54,8"
     abandons: 1
     taux_abandon: "4,8"
     conseils: 19
@@ -10178,7 +10178,7 @@ indicateurs:
     - heros
     - ile_speciale
     - separation_par_sexe
-    barre: 54
+    barre: 55
   - id: sp8
     numero: null
     titre: All Stars
@@ -10232,6 +10232,12 @@ completude:
     manquants: 0
     part: 100
     depuis_page_individuelle: 0
+  - champ: parcours
+    libelle: Trajectoire de tribus
+    remplis: 645
+    manquants: 0
+    part: 100
+    depuis_page_individuelle: 287
   - champ: profession
     libelle: Métier
     remplis: 645
@@ -10250,12 +10256,6 @@ completude:
     manquants: 3
     part: "99,5"
     depuis_page_individuelle: 0
-  - champ: parcours
-    libelle: Trajectoire de tribus
-    remplis: 641
-    manquants: 4
-    part: "99,4"
-    depuis_page_individuelle: 293
   - champ: couleur
     libelle: Couleur de départ
     remplis: 638
@@ -10298,12 +10298,12 @@ completude:
     manquants: 98
     part: "84,8"
     depuis_page_individuelle: 547
-  champs_complets: 4
+  champs_complets: 5
   champs_suivis: 13
-  trous: 317
+  trous: 313
   valeurs_suivies: 8385
-  comblees: 2295
-  part_remplie: "96,22"
+  comblees: 2289
+  part_remplie: "96,27"
 palmares:
   renseignees: 549
   compares: 549
@@ -24287,8 +24287,8 @@ modeles:
     rang_intervalle:
     - "8,71"
     - "12,71"
-    r2_survie_lineaire: "-0,003"
-    r2_survie_arbre: "0,002"
+    r2_survie_lineaire: "-0,002"
+    r2_survie_arbre: "-0,002"
     importances:
     - variable: couleur:vert
       perte: "0,6"
@@ -24705,20 +24705,20 @@ modeles:
     survie:
       libelle: Part de la saison tenue
       force:
-        estimation: "0,576"
-        bas: "-1,856"
-        haut: "3,007"
-        p: "0,6426"
+        estimation: "0,577"
+        bas: "-1,839"
+        haut: "2,993"
+        p: "0,6396"
       femme:
-        estimation: "-0,648"
-        bas: "-4,189"
-        haut: "2,893"
-        p: "0,7198"
+        estimation: "-0,72"
+        bas: "-4,251"
+        haut: "2,812"
+        p: "0,6896"
       age:
-        estimation: "-0,18"
-        bas: "-2,239"
-        haut: "1,879"
-        p: "0,8638"
+        estimation: "-0,154"
+        bas: "-2,212"
+        haut: "1,904"
+        p: "0,8833"
       lecture: Points de pourcentage gagnés quand la force double.
   equilibre:
     rattrapage:
@@ -24738,60 +24738,60 @@ modeles:
       censures: 110
       coefficients:
       - variable: Femme
-        rapport: "1,22"
-        bas: "0,992"
-        haut: "1,501"
-        p: "0,0591"
+        rapport: "1,224"
+        bas: "0,995"
+        haut: "1,505"
+        p: "0,0557"
       - variable: Âge (par décennie)
-        rapport: "1,057"
-        bas: "0,937"
-        haut: "1,194"
-        p: "0,3675"
+        rapport: "1,056"
+        bas: "0,935"
+        haut: "1,192"
+        p: "0,3788"
       - variable: Bandeau jaune
-        rapport: "1,018"
+        rapport: "1,019"
         bas: "0,806"
-        haut: "1,286"
-        p: "0,8797"
+        haut: "1,287"
+        p: "0,8763"
       - variable: Déjà venu
-        rapport: "0,358"
+        rapport: "0,357"
         bas: "0,259"
-        haut: "0,494"
+        haut: "0,493"
         p: 0
       - variable: Métier — Artisanat et bâtiment
-        rapport: "0,875"
-        bas: "0,564"
-        haut: "1,358"
-        p: "0,5516"
+        rapport: "0,874"
+        bas: "0,563"
+        haut: "1,355"
+        p: "0,5463"
       - variable: Métier — Arts, médias et image
-        rapport: "0,954"
-        bas: "0,641"
-        haut: "1,421"
-        p: "0,8182"
+        rapport: "0,943"
+        bas: "0,633"
+        haut: "1,406"
+        p: "0,7748"
       - variable: Métier — Commerce et vente
-        rapport: "1,288"
-        bas: "0,889"
-        haut: "1,864"
-        p: "0,1806"
+        rapport: "1,284"
+        bas: "0,887"
+        haut: "1,858"
+        p: "0,1858"
       - variable: Métier — Encadrement et professions intellectuelles
-        rapport: "1,475"
-        bas: "1,071"
-        haut: "2,03"
-        p: "0,0173"
+        rapport: "1,47"
+        bas: "1,068"
+        haut: "2,025"
+        p: "0,0182"
       - variable: Métier — Enseignement et éducation
-        rapport: "1,168"
-        bas: "0,728"
-        haut: "1,873"
-        p: "0,5201"
+        rapport: "1,164"
+        bas: "0,726"
+        haut: "1,867"
+        p: "0,5285"
       - variable: Métier — Étudiants
-        rapport: "1,307"
-        bas: "0,8"
-        haut: "2,134"
-        p: "0,2846"
+        rapport: "1,3"
+        bas: "0,796"
+        haut: "2,122"
+        p: "0,2945"
       - variable: Métier — Sport et coaching
-        rapport: "0,932"
-        bas: "0,617"
-        haut: "1,407"
-        p: "0,7365"
+        rapport: "0,928"
+        bas: "0,615"
+        haut: "1,402"
+        p: "0,7239"
       lecture: Rapport de risque d'élimination, à saison identique. Au-dessus de 1, on sort plus vite
         que la référence ; en dessous, plus lentement. L'intervalle qui contient 1 veut dire que ces données
         ne permettent pas de conclure.
@@ -24973,19 +24973,19 @@ modeles:
       effectif: 273
       variables:
       - libelle: Toujours du côté de la majorité
-        estimation: "14,45"
-        bas: "8,18"
-        haut: "20,71"
+        estimation: "14,22"
+        bas: 8
+        haut: "20,45"
         p: 0
       - libelle: Une voix reçue de plus par conseil
-        estimation: "-3,78"
-        bas: "-6,07"
-        haut: "-1,49"
-        p: "0,0012"
-      r2: "0,329"
+        estimation: "-3,8"
+        bas: "-6,08"
+        haut: "-1,51"
+        p: "0,0011"
+      r2: "0,332"
       lecture: Points de saison gagnés ou perdus, le nombre de conseils traversés tenu constant. Ce contrôle
         étant trop sévère, les deux effets sont des bornes basses.
-      rapport: "3,8"
+      rapport: "3,7"
     les_plus_souvent_du_bon_cote:
     - nom: Wendy Gervois
       saison: s15
@@ -24998,7 +24998,7 @@ modeles:
       saison: s02
       part: 100
       conseils: 9
-      survie: "97,5"
+      survie: 95
       voix: 4
       id: marianne-mondon
     - nom: Nicolas Roy
@@ -25446,10 +25446,10 @@ modeles:
       retenu: true
     effet:
       effectif: 270
-      estimation: "-1,79"
-      bas: "-8,05"
-      haut: "4,48"
-      p: "0,5763"
+      estimation: "-1,66"
+      bas: "-7,91"
+      haut: "4,59"
+      p: "0,6029"
       lecture: Points de saison gagnés ou perdus quand on passe de « jamais » à « toujours » viser un
         ancien allié, le nombre de bulletins émis tenu constant.
     les_plus_infideles:
@@ -26000,7 +26000,7 @@ modeles:
     - libelle: Durée de la saison
       avant: "40,47"
       apres: 39
-      ecart_types: "-1,14"
+      ecart_types: "-1,03"
     - libelle: Âge moyen du casting
       avant: "33,24"
       apres: "34,4"
@@ -26012,82 +26012,82 @@ modeles:
     profil:
     - annee: 2005
       titre: Pacifique
-      gain: "23,42"
+      gain: "23,08"
     - annee: 2006
       titre: Vanuatu
-      gain: "27,03"
+      gain: "26,74"
     - annee: 2007
       titre: Palawan
-      gain: "32,53"
+      gain: "32,28"
     - annee: 2008
       titre: Caramoan
-      gain: "39,52"
+      gain: "39,28"
     - annee: 2009
       titre: Palau
-      gain: "46,86"
+      gain: "46,63"
     - annee: 2010
       titre: Viêtnam
-      gain: "47,21"
+      gain: "47,11"
     - annee: 2011
       titre: Raja Ampat
-      gain: "51,05"
+      gain: "50,95"
     - annee: 2012
       titre: Malaisie
-      gain: "53,96"
+      gain: "53,75"
     - annee: 2015
       titre: Johor
-      gain: "52,76"
+      gain: "52,23"
     - annee: 2016
       titre: Thaïlande
-      gain: "54,67"
+      gain: "54,13"
     - annee: 2016
       titre: L'Île au trésor
-      gain: "53,41"
+      gain: "52,87"
     - annee: 2017
       titre: Cambodge
-      gain: "53,4"
+      gain: "52,37"
     - annee: 2017
       titre: Fidji
-      gain: "54,37"
+      gain: "53,29"
     - &id061
       annee: 2019
       titre: La Guerre des chefs
-      gain: "60,48"
+      gain: "59,02"
     - &id062
       annee: 2020
       titre: Les 4 Terres
-      gain: "56,53"
+      gain: "55,31"
     - annee: 2021
       titre: Les Armes secrètes
-      gain: "47,4"
+      gain: "46,07"
     - annee: 2022
       titre: Le Totem maudit
-      gain: "44,35"
+      gain: "43,3"
     - annee: 2023
       titre: Le Feu sacré
-      gain: "43,72"
+      gain: "42,93"
     - annee: 2024
       titre: Les Chasseurs d'immunité
-      gain: "45,34"
+      gain: "44,39"
     exaequo:
     - *id061
     nb_exaequo: 1
-    nb_proches: 3
-    avance: "6,5"
+    nb_proches: 5
+    avance: "6,3"
     fenetre:
-      debut: 2016
+      debut: 2012
       fin: 2020
-      etendue: 4
+      etendue: 8
     second: *id062
     test:
       cle: rupture
       libelle: La rupture de régime
       question: Existe-t-il une date qui sépare les saisons en deux régimes mieux qu'une date tirée au
         sort ?
-      observe: "60,476"
-      attendu: "13,305"
+      observe: "59,022"
+      attendu: "13,217"
       unite: ''
-      ecart_types: "7,91"
+      ecart_types: "7,81"
       p: "0,0001"
       tirages: 10000
       lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
@@ -26095,40 +26095,40 @@ modeles:
         mieux que n'importe quelle autre.
       nulle: &id106
         bornes:
-        - "0,1517"
-        - "63,3489"
+        - "0,3819"
+        - "61,8144"
         cases:
         - 0
-        - 70
-        - 827
-        - 1811
-        - 1883
-        - 1586
-        - 1164
-        - 866
-        - 609
-        - 396
-        - 305
-        - 179
-        - 110
-        - 78
-        - 45
-        - 29
-        - 18
-        - 6
-        - 10
+        - 84
+        - 831
+        - 1771
+        - 1876
+        - 1563
+        - 1163
+        - 901
+        - 587
+        - 421
+        - 293
+        - 189
+        - 114
+        - 81
+        - 51
+        - 30
+        - 19
+        - 8
+        - 9
+        - 3
+        - 3
         - 2
-        - 5
-        - 0
         - 1
         - 0
         - 0
         - 0
         - 0
         - 0
-        largeur_case: "2,257041"
-        observe: "60,4763"
-        moyenne_nulle: "13,305"
+        largeur_case: "2,194018"
+        observe: "59,022"
+        moyenne_nulle: "13,2171"
       origine: ruptures
       p_ajustee: "0,0004"
       retenu: true
@@ -27400,52 +27400,52 @@ modeles:
       libelle: L'ambassadeur qui négocie s'en sort-il mieux ?
       question: Partir en ambassade change-t-il la distance que l'on parcourt ensuite ?
       observe: "37,591"
-      attendu: "50,086"
+      attendu: "50,085"
       unite: points de rang
       ecart_types: "-2,21"
-      p: "0,0269"
+      p: "0,0265"
       tirages: 10000
       lecture: 'Rang de l''ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c''est la
         médiane du camp. Au-dessus, l''ambassade accompagne une fin de parcours plus tardive ; en dessous,
         plus précoce. Le hasard, ici, c''est désigner les ambassadeurs au sort parmi les présents.'
       nulle: &id092
         bornes:
-        - "26,3567"
-        - "72,418"
+        - "26,3437"
+        - "72,6914"
         cases:
         - 0
         - 1
         - 2
         - 7
-        - 19
-        - 41
-        - 89
-        - 159
-        - 238
-        - 459
-        - 647
-        - 778
-        - 988
-        - 1061
-        - 1141
-        - 1102
-        - 962
-        - 810
-        - 583
-        - 389
-        - 239
-        - 153
-        - 77
-        - 32
         - 14
-        - 7
-        - 2
+        - 46
+        - 91
+        - 160
+        - 254
+        - 461
+        - 662
+        - 790
+        - 1008
+        - 1084
+        - 1148
+        - 1105
+        - 962
+        - 778
+        - 567
+        - 374
+        - 233
+        - 136
+        - 67
+        - 29
+        - 15
+        - 5
+        - 1
         - 0
-        largeur_case: "1,645043"
+        largeur_case: "1,655274"
         observe: "37,5908"
-        moyenne_nulle: "50,0856"
+        moyenne_nulle: "50,085"
       origine: avant_apres
-      p_ajustee: "0,0455"
+      p_ajustee: "0,0448"
       retenu: true
   conditionnelles:
     presences: 1398
@@ -29204,7 +29204,7 @@ modeles:
         observe: "2,0062"
         moyenne_nulle: "-0,0108"
       origine: age_au_conseil
-      p_ajustee: "0,0455"
+      p_ajustee: "0,0448"
       retenu: true
   rappel:
     effectif: 489
@@ -29273,24 +29273,24 @@ modeles:
       probabilite: "7,1"
       bas: "3,5"
       haut: 14
-    - modalite: 50 à 73 % de la saison
+    - modalite: 50 à 74 % de la saison
       effectif: 98
       cas: 17
       probabilite: "17,3"
       bas: "11,1"
       haut: 26
-    - modalite: 74 à 95 % de la saison
+    - modalite: 75 à 95 % de la saison
       effectif: 98
-      cas: 22
-      probabilite: "22,4"
-      bas: "15,3"
-      haut: "31,7"
+      cas: 21
+      probabilite: "21,4"
+      bas: "14,5"
+      haut: "30,5"
     - modalite: 95 à 100 % de la saison
       effectif: 98
-      cas: 44
-      probabilite: "44,9"
-      bas: "35,4"
-      haut: "54,8"
+      cas: 45
+      probabilite: "45,9"
+      bas: "36,4"
+      haut: "55,8"
     coefficients:
     - libelle: Part de saison tenue (+10 points)
       rapport: "1,41"
@@ -29302,13 +29302,13 @@ modeles:
       rapport: "0,17"
       bas: "0,02"
       haut: "1,29"
-      p: "0,0859"
+      p: "0,0868"
       inverse: "5,88"
     - libelle: Être une femme
       rapport: "0,88"
       bas: "0,53"
-      haut: "1,45"
-      p: "0,6106"
+      haut: "1,46"
+      p: "0,6222"
       inverse: "1,14"
     - libelle: Âge (+10 ans)
       rapport: "0,7"
@@ -29319,13 +29319,13 @@ modeles:
     - libelle: Époque (+10 ans)
       rapport: "0,76"
       bas: "0,52"
-      haut: "1,11"
-      p: "0,1506"
+      haut: "1,1"
+      p: "0,1478"
       inverse: "1,32"
     lecture: Régression logistique sur les premières participations. Un rapport au-dessus de 1 veut dire
       « rappelé plus souvent », à toutes les autres variables égales. Un intervalle qui contient 1 ne
       permet pas de conclure.
-    rapport_survie: "21,4"
+    rapport_survie: "21,9"
     abandons_derniers: 60
   registre:
   - cle: parite
@@ -29812,11 +29812,11 @@ modeles:
     question: Partir en ambassade change-t-il la distance que l'on parcourt ensuite ?
     origine: avant_apres
     observe: "37,591"
-    attendu: "50,086"
+    attendu: "50,085"
     unite: points de rang
     ecart_types: "-2,21"
-    p: "0,0269"
-    p_ajustee: "0,0455"
+    p: "0,0265"
+    p_ajustee: "0,0448"
     retenu: true
     tirages: 10000
     lecture: 'Rang de l''ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c''est la
@@ -30055,10 +30055,10 @@ modeles:
     question: Existe-t-il une date qui sépare les saisons en deux régimes mieux qu'une date tirée au sort
       ?
     origine: ruptures
-    observe: "60,476"
-    attendu: "13,305"
+    observe: "59,022"
+    attendu: "13,217"
     unite: ''
-    ecart_types: "7,91"
+    ecart_types: "7,81"
     p: "0,0001"
     p_ajustee: "0,0004"
     retenu: true
@@ -30067,8 +30067,8 @@ modeles:
       dans un ordre au hasard. Une coupure existe toujours ; la question est de savoir si celle-ci vaut
       mieux que n'importe quelle autre.
     nulle: *id106
-    observe_arrondi: "60,5"
-    attendu_arrondi: "13,3"
+    observe_arrondi: 59
+    attendu_arrondi: "13,2"
   - cle: trahison
     libelle: Écrire le nom d'un ancien allié
     question: Quand on a déjà voté avec quelqu'un, écrit-on son nom plus ou moins souvent qu'un autre
@@ -30134,7 +30134,7 @@ modeles:
     unite: ans
     ecart_types: "2,23"
     p: "0,026"
-    p_ajustee: "0,0455"
+    p_ajustee: "0,0448"
     retenu: true
     tirages: 10000
     lecture: 'Écart d''âge de l''éliminé à la moyenne de son camp, avant la réunification moins après.
@@ -34493,7 +34493,7 @@ completude_saisons:
     annee: 2026
     speciale: true
     effectif: 18
-    score: "65,6"
+    score: 67
     cellules:
     - cle: casting
       valeur: 100
@@ -34526,11 +34526,11 @@ completude_saisons:
       nature: part
       valeur_arrondie: 78
     - cle: parcours
-      valeur: "77,8"
-      texte: 14/18
-      etat: partiel
+      valeur: 100
+      texte: 18/18
+      etat: complet
       nature: part
-      valeur_arrondie: 78
+      valeur_arrondie: 100
     - cle: jour_sortie
       valeur: "38,9"
       texte: 7/18
@@ -34650,8 +34650,8 @@ completude_saisons:
     libelle: Tribus datées en jours
     court: Tribus
     nature: part
-    moyenne: "99,3"
-    completes: 33
+    moyenne: 100
+    completes: 34
     concernees: 34
   - cle: jour_sortie
     libelle: Jour de sortie
@@ -35201,8 +35201,8 @@ mots:
   sommaire_descriptives_maj: Onze
   effectif_noir: deux
   effectif_noir_maj: Deux
-  durees_divergentes: cinq
-  durees_divergentes_maj: Cinq
+  durees_divergentes: trois
+  durees_divergentes_maj: Trois
   facettes_corrigees: deux
   facettes_corrigees_maj: Deux
   facette_retiree_rang: cinquième

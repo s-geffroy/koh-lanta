@@ -406,11 +406,11 @@
   annulee: false
   pays: "Polynésie française"
   lieu: "Île de Taha'a"
-  # Le tableau recapitulatif annonce 35 jours, mais les tables de
-  # candidats font sortir les finalistes au jour 36. C'est le jour
-  # atteste qui est retenu : les statistiques de survie s'y rapportent.
-  duree_jours: 36
-  duree_annoncee: 35
+  # 35 jours. Le tableau de saison Fandom faisait sortir les finalistes au
+  # jour 36, mais il se trompe d'un jour : la fiche de la gagnante, les
+  # legendes de Wikipedia, le wiki Survivor et le tableau recapitulatif disent
+  # 35, et Jonathan perd aux poteaux le jour 35 (verifie le 20 oct. 2026).
+  duree_jours: 35
   nb_candidats: 21
   presentateur: "Denis Brogniart"
   diffusion: { debut: 2021-03-12, fin: 2021-06-04 }
@@ -486,11 +486,11 @@
   annulee: false
   pays: "Philippines"
   lieu: "Péninsule de Caramoan"
-  # Le tableau recapitulatif annonce 41 jours, mais les tables de
-  # candidats font sortir les finalistes au jour 40. C'est le jour
-  # atteste qui est retenu : les statistiques de survie s'y rapportent.
-  duree_jours: 40
-  duree_annoncee: 41
+  # 41 jours. Le tableau de saison Fandom faisait sortir les finalistes au
+  # jour 40, mais il se trompe d'un jour en fin de saison : les fiches des
+  # trois finalistes, les legendes de Wikipedia, le wiki Survivor et le
+  # tableau recapitulatif disent 41 (verifie le 20 oct. 2026).
+  duree_jours: 41
   nb_candidats: 24
   presentateur: "Denis Brogniart"
   diffusion: { debut: 2024-08-20, fin: 2024-12-03 }
