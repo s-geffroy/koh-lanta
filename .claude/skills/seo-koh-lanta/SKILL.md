@@ -23,10 +23,14 @@ Sur les 565 fiches, **le H1 ne vient PAS de `page.title`** :
 
 | Gabarit | H1 rendu | D'ou vient `page.title` |
 |---|---|---|
-| `fiche-aventurier` | `{{ a.nom }}` (`_data/fiches.yml`) | lu par jekyll-seo-tag SEUL |
-| `fiche-saison` | `{{ s.titre }}` (`_data/fiches.yml`) | lu par jekyll-seo-tag SEUL |
+| `fiche-aventurier` | `{{ fiche_a.nom }}` (`_data/fiches.yml`) | lu par jekyll-seo-tag SEUL |
+| `fiche-saison` | `{{ fiche_s.titre }}` (`_data/fiches.yml`) | lu par jekyll-seo-tag SEUL |
 | `page` | `{{ page.title }}` | **s'affiche** — tout changement se voit |
-| `home` | `.accueil-titre`, ecrit dans `index.md` | lu par le greffon seul |
+| `home` | `.accueil-titre`, depuis `accroche:` du front matter de `index.md` | lu par le greffon seul |
+
+Depuis le 20 octobre 2026, TOUS ces H1 sont rendus par
+`_includes/entete-page.html` (un `case` par gabarit), appele par
+`default.html` dans le bandeau de nuit -- plus dans les gabarits eux-memes.
 
 Consequence : sur une fiche, `title:` s'enrichit librement, rien ne bouge a
 l'ecran. Sur une page en `layout: page`, un titre ne se retouche que s'il

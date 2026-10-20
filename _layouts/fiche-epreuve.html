@@ -13,18 +13,7 @@ layout: default
 {%- endcomment -%}
 {%- assign e = site.data.epreuves_fiches.epreuves[page.epreuve] -%}
 
-<header class="page-entete">
-  <p class="oeil">
-    <span>Les épreuves</span>
-    <span class="oeil-rang">{{ e.apparitions }}<i>× courue</i></span>
-  </p>
-  <h1 class="page-titre">{{ e.nom }}</h1>
-  <p class="chapeau">
-    {%- if e.type %}{{ e.type }}{% endif -%}
-    {%- if e.premiere_annee %} · de {{ e.premiere_annee }} à {{ e.derniere_annee }}{% endif -%}
-    {%- if e.editions.size > 0 %} · {{ e.editions.size }} éditions{% endif -%}
-  </p>
-</header>
+{%- comment -%} L'entete de page est dans _includes/entete-page.html, rendu par default.html dans le bandeau de nuit. {%- endcomment -%}
 
 <div class="prose">
 

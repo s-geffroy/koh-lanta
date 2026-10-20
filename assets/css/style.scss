@@ -96,6 +96,19 @@
      partent du meme bord gauche : l'oeil ne se recale pas d'un bloc a
      l'autre, seule la fin de ligne differe. */
   --colonne: 41rem;
+
+  /* LA NUIT DU CONSEIL (20 octobre 2026). Le haut de chaque page -- en-tete
+     du site, oeil, titre, chapeau -- est pose sur un vert de jungle de nuit,
+     l'heure du conseil. C'est la seule audace de la feuille ; tout le reste
+     garde les neutres. Dans le bandeau, .nuit REDEFINIT --encre, --encre-douce,
+     --encre-muette, --grille, --axe et --focus : les regles ecrites pour le
+     fond clair y valent telles quelles. */
+  --nuit:        #12271f;
+  --nuit-encre:  #f2f5ef;
+  --nuit-douce:  #b8c6bc;
+  --nuit-muette: #8fa396;
+  --nuit-grille: #2c4339;
+  --nuit-axe:    #4a6456;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -129,6 +142,10 @@
     --tribu-blanc:  #898781;
 
     --focus: #7fb2f2;
+
+    /* La page sombre est presque noire : le bandeau garde son vert, un ton
+       plus bas, et se detache par la teinte et par son filet. */
+    --nuit: #0f2019;
   }
 }
 
@@ -164,6 +181,8 @@
   --tribu-blanc:  #898781;
 
   --focus: #7fb2f2;
+
+  --nuit: #0f2019;
 }
 
 /* ------------------------------------------------------------------- socle */
@@ -222,7 +241,6 @@ a { color: inherit; }
   max-width: 84rem;
   margin: 0 auto;
   padding: 0.95rem 1.5rem;
-  border-bottom: 1px solid var(--grille);
 }
 
 .enseigne {
@@ -418,22 +436,67 @@ a { color: inherit; }
 .oeil-rang i { font-style: normal; color: var(--encre-muette); }
 
 .page-titre {
-  font-weight: 750;
-  font-stretch: 112%;
-  font-size: clamp(2rem, calc(1.45rem + 1.8vw), 2.75rem);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
+  font-weight: 800;
+  font-stretch: 118%;
+  font-size: clamp(2.2rem, calc(1.5rem + 2.4vw), 3.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
   margin: 0;
-  max-width: 24ch;
+  max-width: 22ch;
 }
 
 .chapeau {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   line-height: 1.5;
   color: var(--encre-douce);
-  max-width: 36rem;
-  margin: 0.9rem 0 0;
+  max-width: 40rem;
+  margin: 1.1rem 0 0;
 }
+.chapeau b { color: var(--encre); font-weight: 650; }
+
+/* ---------------------------------------------------------------- la nuit */
+
+/* Deux blocs freres -- la banniere, puis l'entete de page dans <main> -- sur
+   le meme fond : l'oeil n'en voit qu'un. */
+.nuit {
+  --encre:        var(--nuit-encre);
+  --encre-douce:  var(--nuit-douce);
+  --encre-muette: var(--nuit-muette);
+  --grille:       var(--nuit-grille);
+  --axe:          var(--nuit-axe);
+  --focus:        #7fb2f2;
+  background: var(--nuit);
+  color: var(--encre);
+}
+
+.nuit-page { position: relative; }
+
+.nuit-corps {
+  max-width: 84rem;
+  margin: 0 auto;
+  padding: 1.9rem 1.5rem 3.2rem;
+}
+
+.nuit .page-entete { margin: 0; }
+
+/* Le bord du bandeau est le totem couche sur toute la largeur : moitie
+   jaune, moitie rouge, a parts strictement egales -- douze victoires
+   chacune. C'est la meme egalite que celle de l'enseigne et des h2, dite
+   une fois en grand. */
+.nuit-page::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--tribu-jaune) 0 50%, var(--tribu-rouge) 50% 100%);
+}
+
+/* L'accueil prend plus de nuit : c'est la que le titre parle. */
+.nuit-accueil .nuit-corps { padding: 2.8rem 1.5rem 4.2rem; }
+
+.nuit a { text-decoration-color: var(--axe); text-underline-offset: 3px; }
 
 /* ------------------------------------------------------------------- prose */
 
@@ -912,19 +975,19 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--encre); }
 .accueil-titre {
   font-weight: 800;
   font-stretch: 125%;
-  font-size: clamp(2.5rem, calc(1.5rem + 3.6vw), 4.4rem);
-  line-height: 0.98;
+  font-size: clamp(2.8rem, calc(1.6rem + 4.2vw), 5.2rem);
+  line-height: 0.96;
   letter-spacing: -0.035em;
-  margin: 0 0 1rem;
-  max-width: 13ch;
+  margin: 0;
+  max-width: 12ch;
 }
 
-.prose > .accueil-chapeau {
-  font-size: 1.2rem;
+.accueil-chapeau {
+  font-size: 1.25rem;
   line-height: 1.5;
   color: var(--encre-douce);
   max-width: 34rem;
-  margin: 0 0 2.2rem;
+  margin: 1.3rem 0 0;
 }
 
 /* Les ordres de grandeur, en une phrase sous la figure. */
@@ -1187,7 +1250,7 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--encre); }
    flottaison. Il tient la colonne de texte, comme ce qu'il resume. */
 .sommaire-page {
   max-width: var(--colonne);
-  margin: -1.2rem 0 2.4rem;
+  margin: 0 0 2.4rem;
   border-top: 1px solid var(--grille);
   border-bottom: 1px solid var(--grille);
 }
@@ -1236,6 +1299,9 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--encre); }
   }
 
   .entete { padding: 0.8rem 1rem; gap: 0.5rem 1.2rem; }
+  .nuit-corps { padding: 1.2rem 1rem 2.4rem; }
+  .nuit-accueil .nuit-corps { padding: 1.8rem 1rem 3rem; }
+  .chapeau, .accueil-chapeau { font-size: 1.08rem; }
   .cadre { padding: 0 1rem 3rem; }
   .pied-corps { padding: 1.8rem 1rem 2.5rem; }
   .contenu { padding-top: 1.8rem; }
@@ -1275,7 +1341,17 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--encre); }
     --encre-muette: #4f5a56;
     --grille:       #d5d9d2;
     --axe:          #a9afa5;
+    --nuit:        #ffffff;
+    --nuit-encre:  #000000;
+    --nuit-douce:  #333a37;
+    --nuit-muette: #4f5a56;
+    --nuit-grille: #d5d9d2;
+    --nuit-axe:    #a9afa5;
   }
+
+  .nuit-corps,
+  .nuit-accueil .nuit-corps { padding: 0 0 1.5rem; }
+  .nuit-page::after { display: none; }
 
   body { font-size: 11pt; }
 

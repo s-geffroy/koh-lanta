@@ -58,6 +58,18 @@
 <body>
   <a class="saut" href="#contenu">Aller au contenu</a>
 
+  {%- comment -%}
+    LE BANDEAU DE NUIT (refonte « Conseil de nuit », 20 octobre 2026). Deux
+    blocs freres sur le meme fond, qui se lisent comme un seul : l'en-tete du
+    site (banniere) et l'entete de la page, que _includes/entete-page.html
+    rend selon le gabarit. Le second est DANS <main> : le H1 doit appartenir
+    au contenu principal, et le lien d'evitement mene a lui.
+
+    Les gabarits sans entete (404) n'ont que la banniere.
+  {%- endcomment -%}
+  {%- assign gabarits_a_entete = "home page article fiche-aventurier fiche-saison fiche-epreuve" | split: " " -%}
+
+  <div class="nuit">
   <header class="entete">
     <a class="enseigne" href="{{ '/' | relative_url }}">
       <span class="enseigne-totem" aria-hidden="true"></span>
@@ -84,15 +96,26 @@
     <button type="button" class="bascule" id="bascule-theme"
             aria-live="polite">Thème&nbsp;: auto</button>
   </header>
-
-  <div class="cadre">
-    {%- include rail.html -%}
-
-    <main id="contenu" class="contenu">
-      {{ content }}
-      {%- include fil.html -%}
-    </main>
   </div>
+
+  <main id="contenu">
+    {%- if gabarits_a_entete contains page.layout -%}
+    <div class="nuit nuit-page{% if page.layout == 'home' %} nuit-accueil{% endif %}">
+      <div class="nuit-corps">
+        {%- include entete-page.html -%}
+      </div>
+    </div>
+    {%- endif -%}
+
+    <div class="cadre">
+      {%- include rail.html -%}
+
+      <div class="contenu">
+        {{ content }}
+        {%- include fil.html -%}
+      </div>
+    </div>
+  </main>
 
   {%- include pied.html -%}
 

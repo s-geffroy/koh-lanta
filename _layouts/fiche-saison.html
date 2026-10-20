@@ -8,19 +8,7 @@ layout: default
 {%- endcomment -%}
 {%- assign s = site.data.fiches.saisons[page.saison] -%}
 
-<header class="page-entete">
-  <p class="oeil">
-    <span>Les saisons</span>
-    {%- if s.numero -%}<span class="oeil-rang">{{ s.numero }}</span>{%- endif -%}
-  </p>
-  <h1 class="page-titre">{{ s.titre }}</h1>
-  <p class="chapeau">
-    {%- if s.annee %}{{ s.annee }}{% endif -%}
-    {%- if s.lieu %} · {{ s.lieu }}{% endif -%}
-    {%- if s.speciale %} · saison spéciale{% endif -%}
-    {%- if s.en_cours %} · <b>en cours de diffusion</b>{% endif -%}
-  </p>
-</header>
+{%- comment -%} L'entete de page est dans _includes/entete-page.html, rendu par default.html dans le bandeau de nuit. {%- endcomment -%}
 
 <div class="prose">
 

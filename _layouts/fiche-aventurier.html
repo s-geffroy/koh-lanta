@@ -17,23 +17,7 @@ layout: default
 {%- endcomment -%}
 {%- assign a = site.data.fiches.aventuriers[page.aventurier] -%}
 
-<header class="page-entete">
-  <p class="oeil">
-    <span>Les aventuriers</span>
-    {%- if a.rang -%}<span class="oeil-rang">{{ a.rang }}<i>/{{ site.data.stats.classement.joueurs_classes }}</i></span>{%- endif -%}
-  </p>
-  <h1 class="page-titre">{{ a.nom }}</h1>
-  <p class="chapeau">
-    {%- if a.nb_participations > 1 -%}
-      {{ a.nb_participations }} saisons jouées
-    {%- else -%}
-      Une saison jouée
-    {%- endif -%}
-    {%- if a.titres > 0 %}, {% if a.titres > 1 %}{{ a.titres }} victoires{% else %}une victoire{% endif %}{% endif -%}
-    {%- if a.profession %} · {{ a.profession }}{% endif -%}
-    {%- if a.localisation %} · {{ a.localisation }}{% endif -%}
-  </p>
-</header>
+{%- comment -%} L'entete de page est dans _includes/entete-page.html, rendu par default.html dans le bandeau de nuit. {%- endcomment -%}
 
 <div class="prose">
 

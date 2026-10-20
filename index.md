@@ -1,8 +1,15 @@
 ---
 layout: home
+# Le H1 et le chapeau de l'accueil sont ICI, dans `accroche` et `chapeau` :
+# _includes/entete-page.html les pose dans le bandeau de nuit, au-dessus du
+# rail, ou le contenu de cette page n'a pas acces.
+accroche: Tout le monde sort, sauf un
+chapeau: >-
+  Chaque aventurier de Koh-Lanta tient un certain nombre de jours, puis s’en
+  va. Voici à quelle vitesse le camp se vide.
 # « Accueil » etait le pire titre du site : la page la plus importante ne
 # disait rien a un moteur. Ce titre-ci n'apparait NULLE PART a l'ecran -- le
-# H1 de l'accueil est `.accueil-titre`, ecrit plus bas dans ce fichier, et
+# H1 de l'accueil est `.accueil-titre`, ecrit depuis `accroche` ci-dessus, et
 # `layout: home` ne lit jamais `page.title`. Seul jekyll-seo-tag le lit, et il
 # y colle « | Koh-Lanta en chiffres ».
 title: Statistiques, classement et records
@@ -11,7 +18,8 @@ description: >-
   épreuve, chaque bulletin de vote, et ce que les chiffres disent du jeu.
 ---
 {%- comment -%}
-  L'accueil depuis la refonte du 19 octobre 2026 : une figure, une ligne de
+  L'accueil depuis la refonte du 19 octobre 2026 (titre et chapeau dans le
+  front matter, voir plus haut) : une figure, une ligne de
   mesures, huit constats d'une phrase, les portes d'entree. Chaque constat
   renvoie a la page qui le demontre -- la demonstration n'est plus ici.
 
@@ -22,11 +30,6 @@ description: >-
 {%- endcomment -%}
 {% assign g = site.data.stats.general %}
 {% assign sb = site.data.stats.survie_bandeau %}
-
-<h1 class="accueil-titre">Tout le monde sort, sauf un</h1>
-
-<p class="accueil-chapeau">Chaque aventurier de Koh-Lanta tient un certain
-nombre de jours, puis s’en va. Voici à quelle vitesse le camp se vide.</p>
 
 {% include graphiques/accueil-survie.svg %}
 

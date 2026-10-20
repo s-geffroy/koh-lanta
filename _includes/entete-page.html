@@ -1,0 +1,115 @@
+{%- comment -%}
+  L'entete de la page, pose dans le bandeau de nuit (refonte « Conseil de
+  nuit », 20 octobre 2026). Il vivait dans chaque gabarit ; il en est sorti
+  parce que le bandeau court sur toute la largeur, au-dessus du rail, et
+  qu'un gabarit n'ecrit que dans la colonne de contenu.
+
+  Un cas par gabarit. Les variables portent un prefixe : une inclusion ecrit
+  dans la portee de la page, et `a`, `s` ou `e` y sont deja des variables de
+  boucle (le rail, le fil).
+
+  L'accueil n'a pas d'oeil : son titre et son chapeau sont dans le front
+  matter de index.md (`accroche`, `chapeau`). Le H1 reste `.accueil-titre` ;
+  `page.title` n'est toujours lu que par jekyll-seo-tag.
+{%- endcomment -%}
+{%- case page.layout -%}
+
+{%- when "home" -%}
+<header class="page-entete page-entete-accueil">
+  <h1 class="accueil-titre">{{ page.accroche }}</h1>
+  <p class="accueil-chapeau">{{ page.chapeau }}</p>
+</header>
+
+{%- when "page" -%}
+{%- assign nav_page = site.data.stats.sommaire.pages[page.url] -%}
+<header class="page-entete">
+  {%- if nav_page.section -%}
+  <p class="oeil">
+    <span>{{ nav_page.section }}{% if nav_page.theme %} · {{ nav_page.theme }}{% endif %}</span>
+    {%- if nav_page.rang -%}
+    <span class="oeil-rang">{{ nav_page.rang }}<i>/{{ nav_page.total }}</i></span>
+    {%- endif -%}
+  </p>
+  {%- endif -%}
+
+  <h1 class="page-titre">{{ page.title }}</h1>
+
+  {%- if page.chapeau -%}
+  <p class="chapeau">{{ page.chapeau | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+  {%- endif -%}
+</header>
+
+{%- when "article" -%}
+{%- assign date_article = site.data.stats.articles.dates[page.url] -%}
+<header class="page-entete">
+  <p class="oeil"><span>Articles{% if page.version %} · {{ page.version }}{% endif %}</span></p>
+
+  <h1 class="page-titre">{{ page.titre | default: page.title }}</h1>
+
+  {%- if page.chapeau -%}
+  <p class="chapeau">{{ page.chapeau | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+  {%- endif -%}
+
+  <p class="signature">
+    <span>{{ page.author }}</span>
+    {%- if date_article -%}
+    <time datetime="{{ date_article.iso }}">{{ date_article.texte }}</time>
+    {%- endif -%}
+    {%- if page.autre_version -%}
+    <a href="{{ page.autre_version | relative_url }}">{{ page.autre_version_titre }}</a>
+    {%- endif -%}
+  </p>
+</header>
+
+{%- when "fiche-aventurier" -%}
+{%- assign fiche_a = site.data.fiches.aventuriers[page.aventurier] -%}
+<header class="page-entete">
+  <p class="oeil">
+    <span>Les aventuriers</span>
+    {%- if fiche_a.rang -%}<span class="oeil-rang">{{ fiche_a.rang }}<i>/{{ site.data.stats.classement.joueurs_classes }}</i></span>{%- endif -%}
+  </p>
+  <h1 class="page-titre">{{ fiche_a.nom }}</h1>
+  <p class="chapeau">
+    {%- if fiche_a.nb_participations > 1 -%}
+      {{ fiche_a.nb_participations }} saisons jouées
+    {%- else -%}
+      Une saison jouée
+    {%- endif -%}
+    {%- if fiche_a.titres > 0 %}, {% if fiche_a.titres > 1 %}{{ fiche_a.titres }} victoires{% else %}une victoire{% endif %}{% endif -%}
+    {%- if fiche_a.profession %} · {{ fiche_a.profession }}{% endif -%}
+    {%- if fiche_a.localisation %} · {{ fiche_a.localisation }}{% endif -%}
+  </p>
+</header>
+
+{%- when "fiche-saison" -%}
+{%- assign fiche_s = site.data.fiches.saisons[page.saison] -%}
+<header class="page-entete">
+  <p class="oeil">
+    <span>Les saisons</span>
+    {%- if fiche_s.numero -%}<span class="oeil-rang">{{ fiche_s.numero }}</span>{%- endif -%}
+  </p>
+  <h1 class="page-titre">{{ fiche_s.titre }}</h1>
+  <p class="chapeau">
+    {%- if fiche_s.annee %}{{ fiche_s.annee }}{% endif -%}
+    {%- if fiche_s.lieu %} · {{ fiche_s.lieu }}{% endif -%}
+    {%- if fiche_s.speciale %} · saison spéciale{% endif -%}
+    {%- if fiche_s.en_cours %} · <b>en cours de diffusion</b>{% endif -%}
+  </p>
+</header>
+
+{%- when "fiche-epreuve" -%}
+{%- assign fiche_e = site.data.epreuves_fiches.epreuves[page.epreuve] -%}
+<header class="page-entete">
+  <p class="oeil">
+    <span>Les épreuves</span>
+    <span class="oeil-rang">{{ fiche_e.apparitions }}<i>× courue</i></span>
+  </p>
+  <h1 class="page-titre">{{ fiche_e.nom }}</h1>
+  <p class="chapeau">
+    {%- if fiche_e.type %}{{ fiche_e.type }}{% endif -%}
+    {%- if fiche_e.premiere_annee %} · de {{ fiche_e.premiere_annee }} à {{ fiche_e.derniere_annee }}{% endif -%}
+    {%- if fiche_e.editions.size > 0 %} · {{ fiche_e.editions.size }} éditions{% endif -%}
+  </p>
+</header>
+
+{%- endcase -%}

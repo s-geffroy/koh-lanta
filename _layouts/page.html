@@ -2,33 +2,12 @@
 layout: default
 ---
 {%- comment -%}
-  L'oeil-de-boeuf (« LES RESULTATS · 04 ») n'est pas un ornement : il dit la
-  section et le rang de la page dans son fil de lecture. Il n'apparait donc
-  que sur les pages qui ont reellement un rang.
+  L'entete -- oeil, titre, chapeau -- est rendu par default.html dans le
+  bandeau de nuit (_includes/entete-page.html). L'oeil y dit la section et le
+  rang de la page dans son fil de lecture ; section, theme et rang viennent
+  de `stats.sommaire.pages`, calcule en Python (positions_du_sommaire dans
+  tools/build_stats.py).
 {%- endcomment -%}
-{%- comment -%}
-  Section, theme et rang viennent de `stats.sommaire.pages`, calcule en Python
-  (positions_du_sommaire dans tools/build_stats.py) : ce gabarit ne compte plus.
-{%- endcomment -%}
-{%- assign nav = site.data.stats.sommaire.pages[page.url] -%}
-
-<header class="page-entete">
-  {%- if nav.section -%}
-  <p class="oeil">
-    <span>{{ nav.section }}{% if nav.theme %} · {{ nav.theme }}{% endif %}</span>
-    {%- if nav.rang -%}
-    <span class="oeil-rang">{{ nav.rang }}<i>/{{ nav.total }}</i></span>
-    {%- endif -%}
-  </p>
-  {%- endif -%}
-
-  <h1 class="page-titre">{{ page.title }}</h1>
-
-  {%- if page.chapeau -%}
-  <p class="chapeau">{{ page.chapeau | markdownify | remove: "<p>" | remove: "</p>" }}</p>
-  {%- endif -%}
-</header>
-
 <div class="prose">
   {{ content }}
 </div>

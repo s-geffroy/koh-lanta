@@ -118,7 +118,10 @@
       liste.appendChild(item);
     });
     sommaire.appendChild(liste);
-    entetePage.parentNode.insertBefore(sommaire, entetePage.nextSibling);
+    // En tete de la colonne de contenu, et non apres .page-entete : celui-ci
+    // vit dans le bandeau de nuit, au-dessus du rail.
+    var colonne = document.querySelector(".contenu");
+    if (colonne) colonne.insertBefore(sommaire, colonne.firstChild);
   }
 
   /* ------------------------------------------------------------- filtrage */
