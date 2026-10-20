@@ -26,8 +26,8 @@ general:
   annees_annulees_texte: 2013 et de 2018
   parite_ecart_max: "1,5"
   metiers_distincts: 464
-  durees_divergentes: 3
-  durees_concordantes: 31
+  durees_divergentes: 2
+  durees_concordantes: 32
   paires_possibles: 5789
   paires_possibles_texte: 5 789
 vainqueurs:
@@ -258,7 +258,7 @@ couleurs:
   couleur_maj: Vert
 - couleur: violet
   effectif: 20
-  survie_moyenne: "56,8"
+  survie_moyenne: "56,7"
   victoires: 1
   finales: 1
   taux_finale: 5
@@ -285,7 +285,7 @@ metiers:
   victoires: 5
   finales: 6
   taux_finale: 6
-  survie_moyenne: "57,8"
+  survie_moyenne: "57,7"
   age_moyen: "36,4"
 - code: commerce
   libelle: Commerce et vente
@@ -366,7 +366,7 @@ metiers:
   victoires: 3
   finales: 3
   taux_finale: "12,5"
-  survie_moyenne: "70,6"
+  survie_moyenne: "70,5"
   age_moyen: "34,5"
 - code: restauration_hotellerie
   libelle: Restauration et hôtellerie
@@ -412,7 +412,7 @@ metiers_toutes:
   victoires: 5
   finales: 11
   taux_finale: "14,5"
-  survie_moyenne: "57,6"
+  survie_moyenne: "57,7"
   age_moyen: "35,4"
 - code: sport
   libelle: Sport et coaching
@@ -421,7 +421,7 @@ metiers_toutes:
   victoires: 7
   finales: 9
   taux_finale: "12,9"
-  survie_moyenne: "62,2"
+  survie_moyenne: "62,5"
   age_moyen: "33,7"
 - code: artisanat_btp
   libelle: Artisanat et bâtiment
@@ -484,7 +484,7 @@ metiers_toutes:
   victoires: 2
   finales: 4
   taux_finale: "12,1"
-  survie_moyenne: "65,9"
+  survie_moyenne: "66,2"
   age_moyen: 32
 - code: agriculture
   libelle: Agriculture et nature
@@ -493,7 +493,7 @@ metiers_toutes:
   victoires: 4
   finales: 4
   taux_finale: "14,8"
-  survie_moyenne: "68,8"
+  survie_moyenne: "68,7"
   age_moyen: "34,6"
 - code: sante
   libelle: Santé
@@ -675,7 +675,7 @@ age:
 - tranche: 25-29 ans
   effectif: 108
   part_du_casting: "21,1"
-  survie_moyenne: "66,2"
+  survie_moyenne: "66,1"
   victoires: 4
   finales: 10
   taux_finale: "9,3"
@@ -1178,7 +1178,7 @@ saisons:
   en_cours: false
   pays: Nouvelle-Calédonie
   lieu: Poum
-  duree_jours: 21
+  duree_jours: 20
   effectif: 14
   age_moyen: "33,3"
   age_min: 23
@@ -2383,7 +2383,7 @@ revenants:
     survie_moyenne: "84,2"
   - libelle: Revenants, leurs saisons suivantes
     effectif: 96
-    survie_moyenne: "62,6"
+    survie_moyenne: "62,9"
   vainqueurs_multiples:
   - id: clemence-castel
     nom: Clémence Castel
@@ -2464,8 +2464,8 @@ revenants:
     nom: Coumba Baradji
     saisons: 4
     jours: 90
-    jours_possibles: 119
-    part_du_temps: "75,6"
+    jours_possibles: 118
+    part_du_temps: "76,3"
     barre: 76
   - id: ugo-lartiche
     nom: Ugo Lartiche
@@ -2485,8 +2485,8 @@ revenants:
     nom: Freddy Boucher
     saisons: 5
     jours: 73
-    jours_possibles: 141
-    part_du_temps: "51,8"
+    jours_possibles: 140
+    part_du_temps: "52,1"
     barre: 52
   - id: christelle-gauzet
     nom: Christelle Gauzet
@@ -2542,9 +2542,9 @@ revenants:
     nom: Christina Chevry
     saisons: 3
     jours: 65
-    jours_possibles: 83
-    part_du_temps: "78,3"
-    barre: 78
+    jours_possibles: 82
+    part_du_temps: "79,3"
+    barre: 79
   - id: guenaelle-biras
     nom: Guénaëlle Biras
     saisons: 2
@@ -5308,7 +5308,7 @@ risque:
   - jour: 9
     sortants: 18
   - jour: 6
-    sortants: 16
+    sortants: 17
   - jour: 25
     sortants: 16
   - jour: 37
@@ -5604,6 +5604,7 @@ survie_saisons:
   - 100
   - 100
   - 100
+  - 100
   - 93
   - 93
   - 86
@@ -5621,7 +5622,6 @@ survie_saisons:
   - 43
   - 36
   - 21
-  - 14
 - id: s10
   numero: 10
   titre: Viêtnam
@@ -6022,7 +6022,7 @@ survie_saisons:
   effectif: 21
   restants:
   - 100
-  - 95
+  - 100
   - 86
   - 86
   - 76
@@ -6249,7 +6249,7 @@ survie_bandeau:
   - "94,7"
   - "93,9"
   - "92,4"
-  - "89,2"
+  - 89
   - "88,1"
   - "87,5"
   - 84
@@ -6258,7 +6258,7 @@ survie_bandeau:
   - "76,7"
   - "74,8"
   - "73,4"
-  - "70,6"
+  - "70,5"
   - "68,5"
   - "67,5"
   - "64,8"
@@ -6353,7 +6353,7 @@ survie_bandeau:
     - "79,8"
     - "76,9"
     - "75,5"
-    - 74
+    - "73,6"
     - "71,6"
     - "70,7"
     - "66,3"
@@ -6823,7 +6823,7 @@ programme:
     debut: '2010-03-26'
     fin: '2010-05-21'
     jour_semaine: vendredi
-    duree_jours: 21
+    duree_jours: 20
   - id: s10
     numero: 10
     titre: Viêtnam
@@ -7150,7 +7150,7 @@ arc_des_votes:
     couleur: jaune
   - rang: 4
     nom: Laurent
-    jour_sortie: 16
+    jour_sortie: 15
     couleur: rouge
   - rang: 5
     nom: Jean-Luc
@@ -7588,10 +7588,10 @@ voix_pour_eliminer:
   voix_max: 11
 premiere_epreuve:
   effectif: 41
-  survie_gagnants: "74,8"
+  survie_gagnants: "74,9"
   survie_ensemble: "61,2"
   saisons_couvertes: 34
-  ecart: "13,6"
+  ecart: "13,7"
 epreuves:
   epreuves: 789
   saisons_couvertes: 34
@@ -9632,7 +9632,7 @@ indicateurs:
     effectif: 20
     duree_jours: 42
     age_moyen: "35,5"
-    survie_moyenne: "63,2"
+    survie_moyenne: "63,1"
     abandons: 0
     taux_abandon: 0
     conseils: 16
@@ -9925,7 +9925,7 @@ indicateurs:
     effectif: 24
     duree_jours: 40
     age_moyen: "34,4"
-    survie_moyenne: 62
+    survie_moyenne: "61,9"
     abandons: 3
     taux_abandon: "12,5"
     conseils: 20
@@ -10009,9 +10009,9 @@ indicateurs:
     speciale: true
     en_cours: false
     effectif: 14
-    duree_jours: 21
+    duree_jours: 20
     age_moyen: "33,3"
-    survie_moyenne: 66
+    survie_moyenne: "68,6"
     abandons: 0
     taux_abandon: 0
     conseils: 10
@@ -10029,7 +10029,7 @@ indicateurs:
     mecaniques:
     - ambassadeurs
     - heros
-    barre: 66
+    barre: 69
   - id: sp3
     numero: null
     titre: La Revanche des héros
@@ -10157,7 +10157,7 @@ indicateurs:
     effectif: 21
     duree_jours: 35
     age_moyen: "35,9"
-    survie_moyenne: "54,8"
+    survie_moyenne: 55
     abandons: 1
     taux_abandon: "4,8"
     conseils: 19
@@ -24288,7 +24288,7 @@ modeles:
     - "8,71"
     - "12,71"
     r2_survie_lineaire: "-0,002"
-    r2_survie_arbre: "-0,002"
+    r2_survie_arbre: 0
     importances:
     - variable: couleur:vert
       perte: "0,6"
@@ -24705,20 +24705,20 @@ modeles:
     survie:
       libelle: Part de la saison tenue
       force:
-        estimation: "0,577"
-        bas: "-1,839"
-        haut: "2,993"
-        p: "0,6396"
+        estimation: "0,539"
+        bas: "-1,881"
+        haut: "2,96"
+        p: "0,6624"
       femme:
-        estimation: "-0,72"
-        bas: "-4,251"
-        haut: "2,812"
-        p: "0,6896"
+        estimation: "-0,678"
+        bas: "-4,212"
+        haut: "2,856"
+        p: "0,707"
       age:
-        estimation: "-0,154"
-        bas: "-2,212"
-        haut: "1,904"
-        p: "0,8833"
+        estimation: "-0,143"
+        bas: "-2,201"
+        haut: "1,916"
+        p: "0,8921"
       lecture: Points de pourcentage gagnés quand la force double.
   equilibre:
     rattrapage:
@@ -24973,16 +24973,16 @@ modeles:
       effectif: 273
       variables:
       - libelle: Toujours du côté de la majorité
-        estimation: "14,22"
-        bas: 8
-        haut: "20,45"
+        estimation: "14,13"
+        bas: "7,87"
+        haut: "20,4"
         p: 0
       - libelle: Une voix reçue de plus par conseil
-        estimation: "-3,8"
-        bas: "-6,08"
-        haut: "-1,51"
-        p: "0,0011"
-      r2: "0,332"
+        estimation: "-3,84"
+        bas: "-6,13"
+        haut: "-1,56"
+        p: "0,001"
+      r2: "0,329"
       lecture: Points de saison gagnés ou perdus, le nombre de conseils traversés tenu constant. Ce contrôle
         étant trop sévère, les deux effets sont des bornes basses.
       rapport: "3,7"
@@ -25446,10 +25446,10 @@ modeles:
       retenu: true
     effet:
       effectif: 270
-      estimation: "-1,66"
-      bas: "-7,91"
-      haut: "4,59"
-      p: "0,6029"
+      estimation: "-2,01"
+      bas: "-8,28"
+      haut: "4,26"
+      p: "0,5294"
       lecture: Points de saison gagnés ou perdus quand on passe de « jamais » à « toujours » viser un
         ancien allié, le nombre de bulletins émis tenu constant.
     les_plus_infideles:
@@ -29267,7 +29267,7 @@ modeles:
       probabilite: "2,1"
       bas: "0,6"
       haut: "7,2"
-    - modalite: 28 à 49 % de la saison
+    - modalite: 28 à 50 % de la saison
       effectif: 98
       cas: 7
       probabilite: "7,1"
@@ -29302,25 +29302,25 @@ modeles:
       rapport: "0,17"
       bas: "0,02"
       haut: "1,29"
-      p: "0,0868"
+      p: "0,0867"
       inverse: "5,88"
     - libelle: Être une femme
       rapport: "0,88"
       bas: "0,53"
       haut: "1,46"
-      p: "0,6222"
+      p: "0,6195"
       inverse: "1,14"
     - libelle: Âge (+10 ans)
       rapport: "0,7"
       bas: "0,52"
       haut: "0,93"
-      p: "0,0149"
+      p: "0,0148"
       inverse: "1,43"
     - libelle: Époque (+10 ans)
       rapport: "0,76"
       bas: "0,52"
-      haut: "1,1"
-      p: "0,1478"
+      haut: "1,11"
+      p: "0,1495"
       inverse: "1,32"
     lecture: Régression logistique sur les premières participations. Un rapport au-dessus de 1 veut dire
       « rappelé plus souvent », à toutes les autres variables égales. Un intervalle qui contient 1 ne
@@ -35201,8 +35201,8 @@ mots:
   sommaire_descriptives_maj: Onze
   effectif_noir: deux
   effectif_noir_maj: Deux
-  durees_divergentes: trois
-  durees_divergentes_maj: Trois
+  durees_divergentes: deux
+  durees_divergentes_maj: Deux
   facettes_corrigees: deux
   facettes_corrigees_maj: Deux
   facette_retiree_rang: cinquième

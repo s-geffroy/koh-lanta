@@ -126,15 +126,24 @@ tenaient pas. Chaque cas a été soumis à tous les témoins disponibles —
 Wikipédia en français et en anglais, le wiki *Survivor*, la fiche Fandom et
 ses jours de jeu — et la majorité l’a emporté. Le tableau de saison Fandom,
 d’où viennent ces jours, est décalé d’un jour sur toute la saison de *Nicoya*,
-et en fin de saison aux *Armes secrètes*, à *La Tribu maudite*, à *La Nouvelle
-Édition* et à *La Légende*. Deux durées de saison suivent : 35 jours aux *Armes
-secrètes*, 41 à *La Tribu maudite*. Quatre étapes fausses à la source sont
+et en fin de saison aux *Armes secrètes*, à *La Tribu maudite*, au *Choc des
+héros*, à *La Nouvelle Édition* et à *La Légende*. Trois durées de saison
+suivent : 35 jours aux *Armes secrètes*, 41 à *La Tribu maudite*, 20 au *Choc
+des héros*. Une confrontation de chaque jour de sortie à tous les témoins, sur
+toutes les saisons, ne montre plus aucune saison décalée d’ensemble. Quatre étapes fausses à la source sont
 corrigées, dont celle de Patricia, que sa légende plaçait dans la tribu
 réunifiée alors qu’elle sort à la réunion des ambassadeurs. Les revenants,
 eux, gardent comme jour de sortie celui de leur première élimination : leur
-parcours continue après, et c’est normal. À égalité de témoins, rien n’a été
-changé — Estelle et Ludovic à *Vanuatu*, Laurent à *L’Île au trésor*, Freddy à
-*La Légende*, et la durée de *Caramoan* (39 ou 40 jours).
+parcours continue après, et c’est normal.
+
+Quand les témoins étaient à égalité, on en a cherché un de plus, dans les
+récits datés. La page Fandom de Marie confirme l’élimination d’Estelle au
+22<sup>e</sup> jour de *Vanuatu* ; celle de Lau place la sortie de Laurent au
+15<sup>e</sup> de *L’Île au trésor* ; le résumé de Wikipédia, l’abandon de
+Freddy au 2<sup>e</sup> de *La Légende*. Deux cas restent à égalité, et
+n’ont pas été changés : Ludovic, éliminé à l’orientation de *Vanuatu* au jour
+38 ou 39, et la durée de *Caramoan*, 39 ou 40 jours — trois témoins de chaque
+côté.
 
 <p class="note">Au moment de cette reprise, 50 étapes portaient un nom de
 tribu mêlé de dates, et 32 parcours contredisaient leur jour de sortie : il
@@ -466,10 +475,10 @@ les tables de candidats s’accorder exactement. Pour
 {{ site.data.stats.mots.durees_divergentes }} d’entre elles, ils divergent d’un jour. C’est alors le **jour attesté par les tables de candidats**
 qui est retenu — la sortie d’un finaliste est datée plus précisément qu’une
 durée de résumé — et la valeur annoncée est conservée à côté. Deux fois, ce
-jour attesté s’est révélé faux, et la règle a cédé : aux *Armes secrètes* et à
-*La Tribu maudite*, le tableau de saison Fandom est décalé d’un jour, contre la
-fiche des finalistes, les légendes de Wikipédia et le wiki *Survivor*. Ces deux
-saisons durent 35 et 41 jours.
+jour attesté s’est révélé faux, et la règle a cédé : aux *Armes secrètes*, à
+*La Tribu maudite* et au *Choc des héros*, le tableau de saison Fandom est
+décalé d’un jour, contre la fiche des finalistes, les légendes de Wikipédia et
+le wiki *Survivor*. Ces trois saisons durent 35, 41 et 20 jours.
 
 **Les homonymes.** Deux Léa en saison 25, deux Cécile en 26, deux Jérôme en 27 :
 ce sont bien des personnes différentes, et non des doublons. Elles sont

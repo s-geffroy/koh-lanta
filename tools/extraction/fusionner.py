@@ -1110,8 +1110,9 @@ def harmoniser_parcours(participations, saisons, rapport):
 # que la majorite des temoins corrige. TABLE fermee : chaque ligne a ete
 # confrontee a tous les temoins disponibles -- Wikipedia (fr et en), wiki
 # Survivor, fiche Fandom et ses jours de jeu -- le 20 octobre 2026. A egalite,
-# rien n'est change (Vanuatu : Estelle, Ludovic ; Ile au tresor : Laurent ;
-# Legende : Freddy).
+# rien n'est change sans un temoin de plus : un recit date (Estelle, Vanuatu :
+# « Le 22ème jour [...] Le soir-même c'est Estelle qui est éliminée », page de
+# Marie, confirme le jour 22). Reste a egalite : Ludovic (Vanuatu).
 _NICOYA = ("Wikipedia anglais (colonne Day), wiki Survivor et fiche Fandom "
            "s'accordent ; le tableau de saison Fandom est decale d'un jour")
 JOURS_DE_SORTIE = {
@@ -1133,6 +1134,12 @@ JOURS_DE_SORTIE = {
                       ("moundir-zoughari", 22))},
     **{("sp7", pid): (j, "legende Wikipedia et wiki Survivor")
        for pid, j in (("coumba-baradji", 18), ("namadia-thai-thai", 19), ("sam-haliti", 32))},
+    ("sp7", "freddy-boucher"): (2, "Wikipedia, resume : « Jour 2 : [...] abandon "
+                                   "médical de Freddy » ; wiki Survivor"),
+    ("s16", "laurent-mischkind"): (15, "page Fandom de Lau : « Au jour 15 [...] le "
+                                       "premier pas consiste à faire sortir Laurent » ; "
+                                       "wiki Survivor"),
+    ("s27", "allan-rousseeuw"): (6, "wiki Survivor, parcours et jours de jeu de la fiche"),
 }
 # Les etapes de parcours que la source ecrit fausses. (saison, id, tribu) ->
 # (debut, fin) ; fin None retire l'etape.

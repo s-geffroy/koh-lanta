@@ -2277,7 +2277,7 @@ aventuriers:
       r: Une seule fois, en 2025 (La Revanche des 4 Terres).
     - q: Jusqu’où Allan Rousseeuw est-il allé à Koh-Lanta ?
       r: 'Son meilleur parcours : 23e sur 24 en 2025 (La Revanche des 4 Terres), où
-        il abandonne sur blessure le 7e jour.'
+        il abandonne sur blessure le 6e jour.'
     - q: Quel est le classement d’Allan Rousseeuw parmi les aventuriers de Koh-Lanta
         ?
       r: 337e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
@@ -2286,8 +2286,8 @@ aventuriers:
     finales: 0
     genre: h
     id: allan-rousseeuw
-    jour_max: 7
-    jours_total: 7
+    jour_max: 6
+    jours_total: 6
     localisation: Nord
     naissance: null
     nb_participations: 1
@@ -2309,7 +2309,7 @@ aventuriers:
       epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
-      jour_sortie: 7
+      jour_sortie: 6
       justesse_vote: null
       libelle_sort: Abandon médical
       lieu: Péninsule de Caramoan
@@ -16112,7 +16112,7 @@ aventuriers:
         La Nouvelle Édition (2014), La Légende (2021) et All Stars (2026).'
     - q: Jusqu’où Freddy Boucher est-il allé à Koh-Lanta ?
       r: 'Son meilleur parcours : 2e sur 14 en 2010 (Le Choc des héros), où il va
-        en finale le 21e jour.'
+        en finale le 20e jour.'
     - q: Quel est le classement de Freddy Boucher parmi les aventuriers de Koh-Lanta
         ?
       r: 142e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
@@ -16185,7 +16185,7 @@ aventuriers:
       - id: boue
         nom: Boue
       evasion: 100
-      jour_sortie: 21
+      jour_sortie: 20
       justesse_vote: 100
       libelle_sort: Finaliste
       lieu: Poum
@@ -16286,7 +16286,7 @@ aventuriers:
       epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
-      jour_sortie: 1
+      jour_sortie: 2
       justesse_vote: null
       libelle_sort: Abandon médical
       lieu: Île de Taha'a
@@ -17888,7 +17888,7 @@ aventuriers:
       r: '2 fois : Palawan (2007) et Le Choc des héros (2010).'
     - q: Jusqu’où Grégoire Delachaux est-il allé à Koh-Lanta ?
       r: 'Son meilleur parcours : 1er sur 14 en 2010 (Le Choc des héros), où il gagne
-        la saison le 21e jour.'
+        la saison le 20e jour.'
     - q: Quel est le classement de Grégoire Delachaux parmi les aventuriers de Koh-Lanta
         ?
       r: 8e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
@@ -17898,7 +17898,7 @@ aventuriers:
     genre: h
     id: gregoire-delachaux
     jour_max: 31
-    jours_total: 52
+    jours_total: 51
     localisation: null
     naissance: null
     nb_participations: 2
@@ -17959,7 +17959,7 @@ aventuriers:
       - id: sacs
         nom: Sacs
       evasion: null
-      jour_sortie: 21
+      jour_sortie: 20
       justesse_vote: 100
       libelle_sort: Vainqueur
       lieu: Poum
@@ -24597,7 +24597,7 @@ aventuriers:
       r: Une seule fois, en 2016 (L'Île au trésor).
     - q: Jusqu’où Laurent Mischkind est-il allé à Koh-Lanta ?
       r: 'Son meilleur parcours : 16e sur 20 en 2016 (L''Île au trésor), où il sort
-        au conseil le 16e jour.'
+        au conseil le 15e jour.'
     - q: Quel est le classement de Laurent Mischkind parmi les aventuriers de Koh-Lanta
         ?
       r: 251e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
@@ -24606,8 +24606,8 @@ aventuriers:
     finales: 0
     genre: h
     id: laurent-mischkind
-    jour_max: 16
-    jours_total: 16
+    jour_max: 15
+    jours_total: 15
     localisation: Nord
     naissance: null
     nb_participations: 1
@@ -24629,7 +24629,7 @@ aventuriers:
       epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: 50
-      jour_sortie: 16
+      jour_sortie: 15
       justesse_vote: null
       libelle_sort: Éliminé au conseil
       lieu: Île de Koh Rong
@@ -47990,7 +47990,7 @@ saisons:
       couleur: rouge
       genre: h
       id: laurent-mischkind
-      jour_sortie: 16
+      jour_sortie: 15
       libelle_sort: Éliminé au conseil
       nom: Laurent Mischkind
       profession: Chef d'entreprise
@@ -51534,7 +51534,7 @@ saisons:
       couleur: violet
       genre: h
       id: allan-rousseeuw
-      jour_sortie: 7
+      jour_sortie: 6
       libelle_sort: Abandon médical
       nom: Allan Rousseeuw
       profession: Docker
@@ -52185,7 +52185,7 @@ saisons:
       couleur: jaune
       genre: h
       id: gregoire-delachaux
-      jour_sortie: 21
+      jour_sortie: 20
       libelle_sort: Vainqueur
       nom: Grégoire Delachaux
       profession: Jardinier
@@ -52199,7 +52199,7 @@ saisons:
       couleur: jaune
       genre: h
       id: freddy-boucher
-      jour_sortie: 21
+      jour_sortie: 20
       libelle_sort: Finaliste
       nom: Freddy Boucher
       profession: Ingénieur
@@ -52365,7 +52365,7 @@ saisons:
       voix_recues: 3
     conseils: 10
     conseils_complets: 8
-    duree_jours: 21
+    duree_jours: 20
     effectif: 14
     egalite_jury: null
     en_cours: false
@@ -52378,7 +52378,7 @@ saisons:
     - q: Combien d’aventuriers ont participé à Koh-Lanta Le Choc des héros ?
       r: 14 aventuriers au départ, 33,3 ans de moyenne d’âge.
     - q: Combien de jours a duré l’aventure à Koh-Lanta Le Choc des héros ?
-      r: 21 jours.
+      r: 20 jours.
     - q: Quel est le lieu de tournage de Koh-Lanta Le Choc des héros ?
       r: Poum, Nouvelle-Calédonie.
     - q: Combien de conseils d’élimination à Koh-Lanta Le Choc des héros ?
@@ -53794,7 +53794,7 @@ saisons:
       couleur: bleu
       genre: h
       id: freddy-boucher
-      jour_sortie: 1
+      jour_sortie: 2
       libelle_sort: Abandon médical
       nom: Freddy Boucher
       profession: Ingénieur

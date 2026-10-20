@@ -10495,9 +10495,9 @@
   parcours:
   - tribu: Sambor
     couleur: rouge
-    jour_debut: null
+    jour_debut: 1
     jour_fin: null
-  jour_sortie: 16
+  jour_sortie: 15
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 6
@@ -10509,7 +10509,8 @@
     age: fandom
     profession: fandom
     tribu: fandom
-    jour_sortie: fandom
+    jour_sortie: 'corrige : page Fandom de Lau : « Au jour 15 [...] le premier pas consiste à faire sortir
+      Laurent » ; wiki Survivor'
     sort: fandom
     motif: fandom
     nom_complet: fandom
@@ -10520,6 +10521,8 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
+      et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
 - id: jean-luc-duboscq
   nom: Jean-Luc
   nom_complet: Jean-Luc Duboscq
@@ -19837,7 +19840,7 @@
     couleur: violet
     jour_debut: 1
     jour_fin: 6
-  jour_sortie: 7
+  jour_sortie: 6
   sort: abandon_medical
   motif: Abandon médical
   votes_recus: 0
@@ -19852,7 +19855,7 @@
     tribu: wikipedia-fr
     couleur: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: fandom
+    jour_sortie: 'corrige : wiki Survivor, parcours et jours de jeu de la fiche'
     sort: fandom
     motif: fandom
     nom_complet: fandom
@@ -22826,7 +22829,7 @@
     couleur: null
     jour_debut: 9
     jour_fin: 20
-  jour_sortie: 21
+  jour_sortie: 20
   sort: finaliste
   motif: Finaliste
   votes_recus: 4
@@ -22836,7 +22839,7 @@
   sources:
     age: fandom
     tribu: fandom
-    jour_sortie: fandom
+    jour_sortie: dernier jour de la saison (finale)
     sort: fandom
     motif: fandom
     nom_complet: fandom
@@ -22869,8 +22872,8 @@
   - tribu: Tribu réunifiée
     couleur: null
     jour_debut: null
-    jour_fin: 21
-  jour_sortie: 21
+    jour_fin: 20
+  jour_sortie: 20
   sort: vainqueur
   motif: Gagnant
   votes_recus: 2
@@ -22878,7 +22881,7 @@
   sources:
     age: fandom
     tribu: fandom
-    jour_sortie: dernier jour de la saison (finale)
+    jour_sortie: fandom
     sort: fandom
     motif: fandom
     nom_complet: fandom
@@ -25738,9 +25741,9 @@
   parcours:
   - tribu: Tribu des hommes
     couleur: bleu
-    jour_debut: null
+    jour_debut: 1
     jour_fin: null
-  jour_sortie: 1
+  jour_sortie: 2
   sort: abandon_medical
   motif: Abandon médical
   votes_recus: 0
@@ -25750,7 +25753,7 @@
   sources:
     genre: wikipedia-fr
     tribu: fandom
-    jour_sortie: fandom
+    jour_sortie: 'corrige : Wikipedia, resume : « Jour 2 : [...] abandon médical de Freddy » ; wiki Survivor'
     sort: fandom
     motif: fandom
     nom_complet: fandom
@@ -25764,6 +25767,8 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
+      et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
 - id: patrick-merle
   nom: Patrick
   nom_complet: Patrick Merle

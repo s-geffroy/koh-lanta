@@ -571,11 +571,12 @@
   annulee: false
   pays: "Nouvelle-Calédonie"
   lieu: "Poum"
-  # Le tableau recapitulatif annonce 20 jours, mais les tables de
-  # candidats font sortir les finalistes au jour 21. C'est le jour
-  # atteste qui est retenu : les statistiques de survie s'y rapportent.
-  duree_jours: 21
-  duree_annoncee: 20
+  # 20 jours. Le tableau de saison Fandom faisait sortir les finalistes au
+  # jour 21, mais il se trompe d'un jour : les fiches des deux finalistes
+  # (Freddy, Grégoire) comptent 20 jours de jeu, Christophe perd aux poteaux
+  # le jour 20, et le wiki Survivor comme le recapitulatif disent 20
+  # (verifie le 20 oct. 2026).
+  duree_jours: 20
   nb_candidats: 14
   presentateur: "Denis Brogniart"
   diffusion: { debut: 2010-03-26, fin: 2010-05-21 }
