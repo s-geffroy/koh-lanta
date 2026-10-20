@@ -990,13 +990,16 @@ AFFIRMATIONS_VALEURS = [
      "statistiques/jury.md ecrit qu'avoir elimine le jure divise la cote"),
     (("modeles", "registre"),
      lambda x: next(t for t in x if t["cle"] == "age_bascule_fusion")["retenu"],
-     "statistiques/fusion.md ecrit que la bascule de l'age est retenue, de justesse"),
+     "statistiques/fusion.md et l'article long (6.3) ecrivent que la bascule de l'age est retenue"),
+    (("modeles", "registre"),
+     lambda x: 0.01 <= float(str(next(t for t in x if t["cle"] == "age_bascule_fusion")["p_ajustee"]).replace(",", ".")) < 0.05,
+     "statistiques/fusion.md et l'article long (6.3) ecrivent « de justesse » pour la bascule de l'age"),
     (("modeles", "registre"),
      lambda x: not next(t for t in x if t["cle"] == "doyen_du_camp")["retenu"],
      "statistiques/fusion.md et autour-du-feu.md ecrivent que le doyen reste non concluant"),
     (("modeles", "age_au_conseil"),
      lambda x: x["ecart_avant"] > 0 > x["ecart_apres"],
-     "statistiques/fusion.md ecrit que l'elimine est plus age que son camp avant la fusion, plus jeune apres"),
+     "statistiques/fusion.md et l'article long (6.3) ecrivent que l'elimine est plus age que son camp avant la fusion, plus jeune apres"),
     (("epreuves", "saisons_sans_donnee"),
      lambda x: x == [],
      "sources.md, force.md, epreuves.md ecrivent que toutes les saisons ont un bilan d'epreuves"),
@@ -1181,6 +1184,41 @@ def controler_calculs_liquid(c):
                     c.erreur(f"{os.path.relpath(chemin, RACINE)}:{i} : filtre Liquid "
                              f"`{m.group(1)}` — le calcul se fait en Python "
                              f"(tools/build_stats.py), le gabarit lit une cle")
+
+
+def controler_articles(c):
+    """Refuse un article dont une conclusion ecrite ne tient plus.
+
+    Les articles lisent leurs chiffres dans `stats.articles` : une saison de
+    plus les met a jour d'elle-meme. Mais la phrase autour, elle, ne bouge pas
+    -- « la competence n'est pas une menace » reste ecrit quand le test
+    devient significatif. `tools/articles.py` confronte chaque test cite a ce
+    que le texte en affirme ; ici, on refuse le moindre desaccord. Le remede
+    est de relire la phrase, puis de mettre a jour `AFFIRMATIONS`.
+    """
+    chemin = os.path.join(RACINE, "_data", "stats.yml")
+    stats = yaml.safe_load(open(chemin, encoding="utf-8")) or {}
+    # Un article sans date lisible n'afficherait aucune date, sans erreur.
+    dates = (stats.get("articles") or {}).get("dates") or {}
+    for dossier in ("_posts", "_drafts"):
+        d = os.path.join(RACINE, dossier)
+        for nom in (sorted(os.listdir(d)) if os.path.isdir(d) else []):
+            texte = open(os.path.join(d, nom), encoding="utf-8").read() if nom.endswith(".md") else ""
+            if "layout: article" in texte:
+                lien = re.search(r"^permalink:\s*(\S+)", texte, re.M)
+                if not lien or lien.group(1) not in dates:
+                    c.erreur(f"{dossier}/{nom} : aucune date dans stats.articles.dates "
+                             f"(`date:` ou nom AAAA-MM-JJ-...) — relancer build_stats.py")
+    tests = (stats.get("articles") or {}).get("tests") or {}
+    if not tests:
+        c.erreur("stats.articles.tests absent — relancer tools/build_stats.py")
+        return
+    for cle, t in sorted(tests.items()):
+        if not t.get("conforme"):
+            c.erreur(f"articles : le texte affirme « {t.get('affirme')} » pour `{cle}`, "
+                     f"les donnees ne le disent plus (retenu : {t.get('retenu')}, "
+                     f"observe {t.get('observe')} contre {t.get('attendu')}) — "
+                     f"relire la phrase de l'article qui le cite")
 
 
 def controler_comptes_annonces(c):
@@ -1680,6 +1718,7 @@ def main():
     controler_portraits(c)
     controler_comptes_annonces(c)
     controler_calculs_liquid(c)
+    controler_articles(c)
     controler_donnees_structurees(c)
     controler_yaml_ambigu(c)
     controler_virgule_decimale(c)

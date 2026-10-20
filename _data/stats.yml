@@ -34749,6 +34749,244 @@ completude_saisons:
   moyenne: "88,2"
   meilleure: s05
   pire: sp8
+articles:
+  dates:
+    /articles/amplificateur-institutionnel/:
+      iso: '2026-10-20'
+      texte: 20 octobre 2026
+    /articles/koh-lanta-une-loupe/:
+      iso: '2026-10-20'
+      texte: 20 octobre 2026
+  saisons: "34"
+  aventuriers: "531"
+  conseils: "510"
+  conseils_complets: "340"
+  conseils_incomplets: "170"
+  participations: "645"
+  bulletins: 3 470
+  nb_tests: "44"
+  nb_retenus: "26"
+  force:
+    rang_avant: "54,6"
+    rang_apres: "49,9"
+    conseils_avant: "61"
+    conseils_apres: "231"
+    epreuves: "308"
+    saisons: "33"
+  age:
+    avant: 1,4 an
+    apres: 0,6 an
+    bascule: 2 ans
+    conseils: "382"
+  issues:
+    conseils: "445"
+    sans_bulletin: "59"
+    ordinaire: "91,2"
+    egalite_revote: "0,9"
+    renversement: "5,2"
+    egalite_tranchee: "2,7"
+    ordinaire_rond: "91"
+  tests:
+    vote_isole:
+      observe: "+18,6"
+      attendu: "+1,9"
+      valeur: "18,6"
+      valeur_ronde: "19"
+      attendu_rond: "2"
+      p: "0,0008"
+      retenu: true
+      conforme: true
+      affirme: retenu, ecart +
+    persistance_alliances:
+      observe: "+28,9"
+      attendu: "+1,5"
+      valeur: "28,9"
+      valeur_ronde: "29"
+      attendu_rond: "1"
+      p: "0,0013"
+      retenu: true
+      conforme: true
+      affirme: retenu, ecart +
+    trahison:
+      observe: "48,2"
+      attendu: "57,1"
+      valeur: "48,2"
+      valeur_ronde: "48"
+      attendu_rond: "57"
+      p: "0,0006"
+      retenu: true
+      conforme: true
+      affirme: retenu, ecart -
+    retour_de_baton:
+      observe: "23"
+      attendu: "14,9"
+      valeur: "23"
+      valeur_ronde: "23"
+      attendu_rond: "15"
+      p: "0,0006"
+      retenu: true
+      conforme: true
+      affirme: retenu, ecart +
+    menace_voix:
+      observe: "+11,3"
+      attendu: "+0,9"
+      valeur: "11,3"
+      valeur_ronde: "11"
+      attendu_rond: "1"
+      p: "0,0004"
+      retenu: true
+      conforme: true
+      affirme: retenu, ecart +
+    cible_persistante:
+      observe: "+19,9"
+      attendu: "+2,9"
+      valeur: "19,9"
+      valeur_ronde: "20"
+      attendu_rond: "3"
+      p: "0,0004"
+      retenu: true
+      conforme: true
+      affirme: retenu, ecart +
+    menace_sommet:
+      observe: "+2,4"
+      attendu: "+2,4"
+      valeur: "2,4"
+      valeur_ronde: "2"
+      attendu_rond: "2"
+      p: "1"
+      retenu: false
+      conforme: true
+      affirme: non retenu
+    vote_bandeau_apres_fusion:
+      observe: "28,4"
+      attendu: "38,7"
+      valeur: "28,4"
+      valeur_ronde: "28"
+      attendu_rond: "39"
+      p: "0,0006"
+      retenu: true
+      conforme: true
+      affirme: retenu, ecart -
+    decimation:
+      observe: "135"
+      attendu: "106,8"
+      valeur: "135"
+      valeur_ronde: "135"
+      attendu_rond: "107"
+      p: "0,0004"
+      retenu: true
+      conforme: true
+      affirme: retenu, ecart +
+    bandeau_minoritaire:
+      observe: "+5,5"
+      attendu: −0,4
+      valeur: "5,5"
+      valeur_ronde: "6"
+      attendu_rond: "0"
+      p: "0,0014"
+      retenu: true
+      conforme: true
+      affirme: retenu, ecart +
+    sexe_minoritaire:
+      observe: −5,4
+      attendu: −0,4
+      valeur: "5,4"
+      valeur_ronde: "5"
+      attendu_rond: "0"
+      p: "0,0042"
+      retenu: true
+      conforme: true
+      affirme: retenu, ecart -
+    camp_perdant:
+      observe: "+2,9"
+      attendu: −0,9
+      valeur: "2,9"
+      valeur_ronde: "3"
+      attendu_rond: "1"
+      p: "0,08"
+      retenu: false
+      conforme: true
+      affirme: non retenu
+    fusion_serre:
+      observe: "+27,6"
+      attendu: −0,1
+      valeur: "27,6"
+      valeur_ronde: "28"
+      attendu_rond: "0"
+      p: "0,0004"
+      retenu: true
+      conforme: true
+      affirme: retenu, ecart +
+    fusion_sexe:
+      observe: −18
+      attendu: −1,3
+      valeur: "18"
+      valeur_ronde: "18"
+      attendu_rond: "1"
+      p: "0,0014"
+      retenu: true
+      conforme: true
+      affirme: retenu, ecart -
+    fusion_force:
+      observe: −4,8
+      attendu: −0,1
+      valeur: "4,8"
+      valeur_ronde: "5"
+      attendu_rond: "0"
+      p: "0,23"
+      retenu: false
+      conforme: true
+      affirme: non retenu
+    age_bascule_fusion:
+      observe: "+2"
+      attendu: "0"
+      valeur: "2"
+      valeur_ronde: "2"
+      attendu_rond: "0"
+      p: "0,04"
+      retenu: true
+      conforme: true
+      affirme: retenu, ecart +
+    ambassadeurs_force:
+      observe: "46,6"
+      attendu: "50,1"
+      valeur: "46,6"
+      valeur_ronde: "47"
+      attendu_rond: "50"
+      p: "0,7"
+      retenu: false
+      conforme: true
+      affirme: non retenu
+    ambassadeurs_survie:
+      observe: "37,6"
+      attendu: "50,1"
+      valeur: "37,6"
+      valeur_ronde: "38"
+      attendu_rond: "50"
+      p: "0,04"
+      retenu: true
+      conforme: true
+      affirme: retenu, ecart -
+    prevision_conseil:
+      observe: "0,399"
+      attendu: "0,5"
+      valeur: "0,399"
+      valeur_ronde: "0"
+      attendu_rond: "0"
+      p: "0,0004"
+      retenu: true
+      conforme: true
+      affirme: retenu, ecart -
+    pronostic_vainqueur:
+      observe: "10,7"
+      attendu: "10,3"
+      valeur: "10,7"
+      valeur_ronde: "11"
+      attendu_rond: "10"
+      p: "0,76"
+      retenu: false
+      conforme: true
+      affirme: non retenu
 geographie:
   lacunaires:
   - titre: Panama
@@ -35107,6 +35345,12 @@ sommaire:
       section: Les données
     /methode/:
       section: Les données
+    /articles/:
+      section: Les articles
+    /articles/koh-lanta-une-loupe/:
+      section: Les articles
+    /articles/amplificateur-institutionnel/:
+      section: Les articles
 croisement_divergents: 2
 mots:
   etendue_annees: vingt-cinq

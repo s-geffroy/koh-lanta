@@ -1,0 +1,39 @@
+---
+layout: default
+---
+{%- comment -%}
+  Un article. Comme sur les fiches, le H1 ne vient PAS de `page.title` : il
+  vient de `page.titre`, le titre entier. `page.title` reste court -- il est lu
+  par jekyll-seo-tag, qui y colle « | Koh-Lanta en chiffres », et le resultat
+  doit tenir en 62 caracteres.
+
+  La date s'ecrit en francais, et c'est Python qui l'ecrit
+  (`stats.articles.dates`, tools/articles.py) : Liquid ne connait que les
+  mois anglais, et ce gabarit ne calcule rien -- il ne peut pas etre essaye
+  avant publication.
+{%- endcomment -%}
+{%- assign quand = site.data.stats.articles.dates[page.url] -%}
+
+<header class="page-entete">
+  <p class="oeil"><span>Articles{% if page.version %} · {{ page.version }}{% endif %}</span></p>
+
+  <h1 class="page-titre">{{ page.titre | default: page.title }}</h1>
+
+  {%- if page.chapeau -%}
+  <p class="chapeau">{{ page.chapeau | markdownify | remove: "<p>" | remove: "</p>" }}</p>
+  {%- endif -%}
+
+  <p class="signature">
+    <span>{{ page.author }}</span>
+    {%- if quand -%}
+    <time datetime="{{ quand.iso }}">{{ quand.texte }}</time>
+    {%- endif -%}
+    {%- if page.autre_version -%}
+    <a href="{{ page.autre_version | relative_url }}">{{ page.autre_version_titre }}</a>
+    {%- endif -%}
+  </p>
+</header>
+
+<div class="prose article">
+  {{ content }}
+</div>

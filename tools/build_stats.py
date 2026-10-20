@@ -27,6 +27,7 @@ RACINE = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(RACINE, "tools", "extraction"))
 from csp import classer, libelles           # noqa: E402
 import analyses
+import articles                             # noqa: E402
 import modeles                              # noqa: E402
 import classement                           # noqa: E402
 import prevision                           # noqa: E402
@@ -2150,6 +2151,15 @@ def champs_d_affichage(stats):
     croissance = f["croissance"] = f["casting_max"] - f["casting_min"]
     f["croissance_episode"] = round(croissance * f["pente_episode"]["pente"], 1)
     f["croissance_restants"] = round(croissance * f["pente_restants"]["pente"], 1)
+    # « 0,9 episode », « 2 episodes » : le pluriel francais commence a deux.
+    mot = "épisodes" if abs(f["croissance_episode"]) >= 2 else "épisode"
+    f["croissance_episode_texte"] = f"{donnees.decimal_fr(f['croissance_episode'])} {mot}"
+    # Le plateau reuni, en mediane, avec les plus petits puis les plus grands
+    # castings : ce que le texte disait « d'une dizaine a une quinzaine ».
+    for borne in ("min", "max"):
+        restants = [l["restants"] for l in f["lignes"]
+                    if l["casting"] == f[f"casting_{borne}"]]
+        f[f"restants_casting_{borne}"] = float(median(restants))
 
     # « 0,9 episode », « 2 episodes » : le pluriel francais commence a deux.
     mot = "épisodes" if abs(f["croissance_episode"]) >= 2 else "épisode"
@@ -2324,6 +2334,10 @@ def main():
 
     stats["completude_saisons"] = bloc_completude_saisons(
         saisons, parts, conseils, epreuves, colliers, stats["modeles"], finale)
+
+    # Les articles citent des resultats du registre : ils les lisent apres
+    # lui, mis en forme, avec ce que leur texte en affirme. Voir articles.py.
+    stats["articles"] = articles.tout(stats, conseils, par_saison)
 
     # les records renvoient des participations entieres : on n'en garde que l'utile
     for cle in ("plus_jeune_vainqueur", "plus_age_vainqueur"):

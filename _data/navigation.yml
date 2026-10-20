@@ -173,3 +173,22 @@
     - titre: "La méthode"
       url: /methode/
       resume: "Les modèles, la liste complète des tests, et leurs limites."
+
+# L'ESPACE « ARTICLES ». Le rail ne montre que les sections de l'espace de la
+# page (`espace:` absent = donnees) ; le selecteur de l'en-tete passe de l'un a
+# l'autre. Les articles s'appuient sur les donnees sans les presenter : ils ne
+# sont pas dans le fil de lecture des resultats.
+- section: Les articles
+  espace: articles
+  entrees:
+    - titre: "Tous les articles"
+      url: /articles/
+      hub: true
+      resume: "Ce que les données permettent d'écrire."
+    - titre: "Une loupe, pas un miroir"
+      url: /articles/koh-lanta-une-loupe/
+      resume: "Ce que 34 saisons de votes disent vraiment des alliances, de la menace et de l'appartenance."
+    - titre: "Un amplificateur institutionnel"
+      url: /articles/amplificateur-institutionnel/
+      version: "Version longue"
+      resume: "Le même propos, avec son cadre théorique, ses tests et ses limites."

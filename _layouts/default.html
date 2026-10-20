@@ -26,7 +26,17 @@
   </script>
 
   {%- seo -%}
+  {%- feed_meta -%}
   {%- include donnees-structurees.html -%}
+  {%- comment -%}
+    Les formules de la version longue des articles. kramdown ecrit deja
+    `\( \)` et `\[ \]`, les delimiteurs que MathJax lit par defaut : aucune
+    configuration. Le script ne se charge que sur les pages qui posent
+    `math: true` -- environ 1 Mo qu'aucune autre page ne doit payer.
+  {%- endcomment -%}
+  {%- if page.math -%}
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+  {%- endif -%}
   <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,6 +67,19 @@
       </span>
     </a>
 
+    {%- comment -%}
+      Deux espaces : les donnees -- le site tel qu'il etait -- et les articles,
+      qui s'appuient sur elles sans les presenter. Une page est cote articles
+      si elle porte `espace: articles` ; tout le reste est cote donnees.
+    {%- endcomment -%}
+    <nav class="espaces" aria-label="Espace du site">
+      <a class="espace{% if page.espace != 'articles' %} ici{% endif %}"
+         href="{{ '/' | relative_url }}"
+         {% if page.espace != 'articles' %}aria-current="true"{% endif %}>Données</a>
+      <a class="espace{% if page.espace == 'articles' %} ici{% endif %}"
+         href="{{ '/articles/' | relative_url }}"
+         {% if page.espace == 'articles' %}aria-current="true"{% endif %}>Articles</a>
+    </nav>
 
     <button type="button" class="bascule" id="bascule-theme"
             aria-live="polite">Thème&nbsp;: auto</button>

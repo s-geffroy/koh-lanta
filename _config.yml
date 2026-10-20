@@ -34,6 +34,16 @@ defaults:
       path: ""
     values:
       image: /assets/partage.png
+  # Les articles (`_posts/`, et `_drafts/` tant qu'ils s'ecrivent) vivent dans
+  # l'espace « Articles » : le selecteur de l'en-tete et le rail le lisent dans
+  # `page.espace`. Chaque article le repete dans son front matter, pour que
+  # rien ne repose sur cette seule ligne.
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: article
+      espace: articles
 
 # L'adresse publique du site, sans barre oblique finale.
 #   site de projet    : https://<utilisateur>.github.io
@@ -60,26 +70,21 @@ theme: minima
 # purement et simplement tout fichier depose dans _plugins/. La liste a jour
 # est publiee sur https://pages.github.com/versions.json -- va la lire plutot
 # que de te fier a une recette trouvee ailleurs.
-# jekyll-feed a ete retire de cette liste : il publiait un flux vide -- le
-# site n'est pas un blog, `_posts/` ne contient qu'un .gitkeep -- et la balise
-# `feed_meta` le declarait sur les 599 pages. C'est la declaration qui comptait,
-# et elle a bien disparu.
+# jekyll-feed avait ete retire de cette liste tant que `_posts/` ne contenait
+# qu'un .gitkeep : il publiait un flux vide, que la balise `feed_meta`
+# declarait sur 599 pages. Les articles l'ont rendu utile : il revient, avec sa
+# balise, dans _layouts/default.html. Les deux vont ensemble.
 #
-# MAIS LE GREFFON TOURNE ENCORE, et le retirer d'ici n'y change rien : Jekyll
-# charge aussi les dependances du THEME, et `theme: minima` depend de
-# jekyll-feed. /feed.xml continue donc d'etre fabrique -- verifie en ligne, sa
-# date de derniere modification suit chaque construction. Il n'est plus lie
-# nulle part ni present dans le sitemap : on le laisse. Ne pas conclure d'une
-# liste `plugins:` ce qui tourne reellement.
-#
-# Le jour ou des articles arrivent, remettre les deux ensemble : le greffon
-# ici, et la balise dans _layouts/default.html.
+# Ne pas conclure d'une liste `plugins:` ce qui tourne reellement : meme
+# retire, le greffon tournait, parce que Jekyll charge aussi les dependances
+# du THEME, et `theme: minima` depend de jekyll-feed.
 # jekyll-redirect-from garde vivantes les anciennes adresses des saisons :
 # /saisons/s07/ menait a la fiche, elle mene desormais a
 # /saisons/koh-lanta-palawan/. Sans ce greffon, tout lien pose ailleurs vers
 # l'ancienne forme tomberait le jour de la bascule -- et on ne le saurait
 # jamais.
 plugins:
+  - jekyll-feed
   - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-sitemap
