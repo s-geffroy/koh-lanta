@@ -2573,7 +2573,7 @@ aventuriers:
       sort: elimine_conseil
       speciale: true
       titre: Le Retour des héros
-      tribu: Bannie
+      tribu: null
       voix_recues: 0
     prenom: Amel
     profession: Assistante sociale
@@ -22275,7 +22275,7 @@ aventuriers:
       sort: elimine_conseil
       speciale: false
       titre: Palau
-      tribu: Bannie
+      tribu: null
       voix_recues: 0
     prenom: Joëlle
     profession: Professeur de sport à la retraite
@@ -27701,7 +27701,7 @@ aventuriers:
       colliers_joues: 0
       conseils_assistes: 3
       conseils_vise: 0
-      couleur: null
+      couleur: rouge
       effectif: 20
       en_cours: false
       epreuves_disputees: 0
@@ -27722,7 +27722,7 @@ aventuriers:
       sort: abandon_medical
       speciale: true
       titre: L'Île des héros
-      tribu: Absente
+      tribu: Nacomo
       voix_recues: 0
     prenom: Marie
     profession: Coach sportive
@@ -31991,7 +31991,7 @@ aventuriers:
       sort: abandon_medical
       speciale: false
       titre: Palau
-      tribu: Bannie
+      tribu: null
       voix_recues: 0
     prenom: Myriam
     profession: Formatrice financière
@@ -46132,7 +46132,7 @@ saisons:
       profession: Formatrice financière
       rang: 390
       sort: abandon_medical
-      tribu: Bannie
+      tribu: null
       voix_recues: 0
     - age: 62
       classement: 18
@@ -46145,7 +46145,7 @@ saisons:
       profession: Professeur de sport à la retraite
       rang: 420
       sort: elimine_conseil
-      tribu: Bannie
+      tribu: null
       voix_recues: 0
     conseils: 15
     conseils_complets: 11
@@ -52122,7 +52122,7 @@ saisons:
       profession: Assistante sociale
       rang: 495
       sort: elimine_conseil
-      tribu: Bannie
+      tribu: null
       voix_recues: 0
     conseils: 11
     conseils_complets: 8
@@ -53393,7 +53393,7 @@ saisons:
       voix_recues: 0
     - age: 37
       classement: 17
-      couleur: null
+      couleur: rouge
       genre: f
       id: marie-ovaere
       jour_sortie: 10
@@ -53402,7 +53402,7 @@ saisons:
       profession: Coach sportive
       rang: 290
       sort: abandon_medical
-      tribu: Absente
+      tribu: Nacomo
       voix_recues: 0
     - age: 41
       classement: 9

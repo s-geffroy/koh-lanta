@@ -879,6 +879,15 @@ def completer_depuis_pages(participations, saisons, rapport):
 
 SURVIVOR = os.path.join(os.path.dirname(os.path.dirname(ICI)), "specs", "sources", "survivor")
 
+# Les noms que le wiki Survivor ecrit autrement, au point qu'aucun
+# rapprochement ne les retrouve. TABLE fermee, chaque ligne avec sa preuve.
+ALIAS_SURVIVOR = {
+    ("s04", "SL"): ("sabira",
+        "meme ligne en tout : Chapera puis Mogo, « 3rd Voted Out, Day 10 » ; "
+        "Wikipedia anglais la nomme Sabira Lamia, d'ou les initiales, et la page "
+        "Fandom de Linda envoie « SL » chez les Mogo au jour 8"),
+}
+
 
 def parcours_depuis_survivor(participations, saisons, rapport):
     """Le parcours VIDE, lu dans le tableau des candidats du wiki Survivor.
@@ -930,8 +939,15 @@ def parcours_depuis_survivor(participations, saisons, rapport):
             lien = next((re.search(r"link=([^\]|]+)", x) for x in rang if "link=" in x), None)
             if not lien:
                 continue
-            p = cibles.get(F.slug(lien.group(1).strip()))
-            prenom = F.slug(lien.group(1).strip().split()[0])
+            # Le nom AFFICHE fait foi avant le lien, qui porte parfois une
+            # coquille (« link=Marilyne Hemelsdae » pour Maryline Hemelsdael).
+            affiche = next((re.search(r"'''\[\[([^\]|]+)", x) for x in rang if "'''[[" in x), None)
+            noms = [n.group(1).strip() for n in (affiche, lien) if n]
+            p = next((cibles[F.slug(n)] for n in noms if F.slug(n) in cibles), None)
+            alias = ALIAS_SURVIVOR.get((sid, noms[0]))
+            if not p and alias:
+                p = next((q for q in cibles.values() if q["id"] == alias[0]), None)
+            prenom = F.slug(noms[-1].split()[0])
             if (not p and prenoms_tableau[prenom] == 1 and prenoms_saison[prenom] == 1):
                 p = par_prenom.get(prenom)
             if not p or p.get("parcours"):
@@ -955,6 +971,11 @@ def parcours_depuis_survivor(participations, saisons, rapport):
                                "couleur": _couleur_de(par_saison.get(sid, {}), nom),
                                "jour_debut": int(jour.group(1)) if jour else None,
                                "jour_fin": None})
+            # Sortie avant la formation des tribus : la ligne n'a aucune
+            # colonne de tribu, et sa vignette porte « none ».
+            if not etapes and re.search(r"tribebox2\s*\|\s*none", rang[0], re.I):
+                etapes = [{"tribu": "Aucune tribu", "couleur": None,
+                           "jour_debut": None, "jour_fin": None}]
             if etapes:
                 p["parcours"] = etapes
                 p.setdefault("sources", {})["parcours"] = "wiki Survivor (tableau des candidats)"
@@ -985,30 +1006,59 @@ def completer_les_jours(participations, rapport):
         for e in p.get("parcours") or []:
             if re.search(r"r[ée]unifi", e["tribu"], re.I) and e.get("jour_debut"):
                 reunion[p["saison"]].add(e["jour_debut"])
+    # Le jour d'un echange de tribus, lu de meme : une transition entre deux
+    # tribus d'avant la reunification, datee chez les autres. Une saison a
+    # plusieurs echanges donne plusieurs jours, et alors rien n'est pose.
+    echange = collections.defaultdict(set)
+    for p in participations:
+        pc = p.get("parcours") or []
+        for a, b in zip(pc, pc[1:]):
+            if (b.get("jour_debut") and not re.search(r"r[ée]unifi|aucune", a["tribu"] + b["tribu"], re.I)
+                    and a["tribu"] != b["tribu"]):
+                echange[p["saison"]].add(b["jour_debut"])
     poses = 0
     for p in participations:
         jours = p.pop("_jours_page", None)
         pc = p.get("parcours") or []
-        if not pc or all(e.get("jour_debut") is not None for e in pc):
+        if not pc or all(e.get("jour_debut") is not None and e.get("jour_fin") is not None
+                         for e in pc):
             continue
+        avant = [dict(e) for e in pc]
         sortie = p.get("jour_sortie")
-        debut_1 = bool(jours and sortie and sortie - jours + 1 == 1)
         d = reunion.get(p["saison"])
         d = next(iter(d)) if d and len(d) == 1 else None
+        s = echange.get(p["saison"])
+        s = next(iter(s)) if s and len(s) == 1 else None
         reunie = [bool(re.search(r"r[ée]unifi", e["tribu"], re.I)) for e in pc]
-        if not (debut_1 and d):
-            continue
-        if len(pc) == 1 and not reunie[0] and sortie <= d:
-            pc[0].update(jour_debut=1, jour_fin=sortie)
-        elif len(pc) == 2 and reunie == [False, True] and sortie >= d:
-            pc[0].update(jour_debut=1, jour_fin=d)
-            pc[1].update(jour_debut=d, jour_fin=sortie)
-        else:
-            continue
-        p.setdefault("sources", {})["parcours_jours"] = (
-            "deduits : jour 1 et jour de sortie par la page individuelle, "
-            f"reunification au jour {d} chez les autres aventuriers de la saison")
-        poses += 1
+        etat = [bool(re.match(r"aucune", e["tribu"], re.I)) for e in pc]
+        # Chaque fait sur se pose seul ; aucun n'en suppose un autre.
+        if jours and sortie and sortie - jours + 1 == 1 and pc[0].get("jour_debut") is None:
+            pc[0]["jour_debut"] = 1
+        for i, e in enumerate(pc):
+            if reunie[i] and d and i > 0 and (sortie is None or sortie >= d):
+                if e.get("jour_debut") is None:
+                    e["jour_debut"] = d
+                if pc[i - 1].get("jour_fin") is None:
+                    pc[i - 1]["jour_fin"] = d
+        if (len(pc) >= 2 and s and not reunie[1] and not etat[0] and pc[0]["tribu"] != pc[1]["tribu"]
+                and (sortie is None or sortie >= s)):
+            if pc[0].get("jour_fin") is None:
+                pc[0]["jour_fin"] = s
+            if pc[1].get("jour_debut") is None:
+                pc[1]["jour_debut"] = s
+        # La derniere etape finit au jour de sortie -- si elle est bien la
+        # derniere : la reunification, un etat, ou une sortie avant la
+        # reunification. Sinon la fiche a peut-etre omis une etape.
+        der = len(pc) - 1
+        if (sortie and pc[der].get("jour_fin") is None
+                and (reunie[der] or etat[der] or (d and sortie <= d))):
+            pc[der]["jour_fin"] = sortie
+        if pc != avant:
+            p.setdefault("sources", {})["parcours_jours"] = (
+                "deduits, seulement quand ils sont surs : jour 1 par la page "
+                "individuelle, reunification et echange lus chez les autres "
+                "aventuriers dates de la saison, jour de sortie")
+            poses += 1
     rapport.append(f"parcours : jours poses sur {poses} participation(s), "
                    f"seulement quand ils sont surs")
 
@@ -1032,6 +1082,28 @@ def corriger_tribus(participations, rapport):
                        f"fautif dans la source, arbitre par les deux autres")
 
 
+RE_ETAT = re.compile(r"^(aucune|absente?|bannie?|[ée]limin[ée]e?|exil[ée]e?)\b", re.I)
+
+
+def tribu_sans_etat(participations, rapport):
+    """Une tribu de depart n'est jamais un ETAT.
+
+    « Absente » (Marie, Ile des heros : arrivee au jour 3) ou « Bannie » ne
+    sont pas des campements. La tribu de depart est alors le premier vrai
+    campement du parcours, ou rien si l'aventurier n'en a jamais eu.
+    """
+    for p in participations:
+        if not p.get("tribu") or not RE_ETAT.match(p["tribu"]):
+            continue
+        vraie = next((e for e in p.get("parcours") or [] if not RE_ETAT.match(e["tribu"])
+                      and not re.search(r"r[ée]unifi", e["tribu"], re.I)), None)
+        rapport.append(f"tribu : « {p['tribu']} » est un etat ({p['saison']}/{p['id']}) "
+                       f"→ {vraie['tribu'] if vraie else 'aucune tribu'}")
+        p["tribu"] = vraie["tribu"] if vraie else None
+        p["couleur"] = vraie.get("couleur") if vraie else None
+        p.setdefault("sources", {})["tribu"] = "premier campement du parcours (etat ecarte)"
+
+
 def tribu_depuis_le_parcours(participations, rapport):
     """Le premier campement du parcours EST la tribu de depart.
 
@@ -1046,6 +1118,10 @@ def tribu_depuis_le_parcours(participations, rapport):
             continue
         premiere = p["parcours"][0]
         if not premiere.get("tribu"):
+            continue
+        # « Aucune tribu » est un etat, pas un campement : sortie avant la
+        # formation des tribus. La tribu de depart reste vide, et c'est vrai.
+        if re.match(r"aucune", premiere["tribu"], re.I):
             continue
         p["tribu"] = premiere["tribu"]
         p.setdefault("sources", {})["tribu"] = "premiere etape du parcours"
@@ -1087,6 +1163,7 @@ def main():
     tribu_depuis_le_parcours(participations, rapport)
     parcours_depuis_survivor(participations, saisons, rapport)
     completer_les_jours(participations, rapport)
+    tribu_sans_etat(participations, rapport)
     corriger_tribus(participations, rapport)
     normaliser_lieux(participations, rapport)
     sans_depart_sans_jour(participations, saisons, rapport)

@@ -10238,29 +10238,29 @@ completude:
     manquants: 0
     part: 100
     depuis_page_individuelle: 59
-  - champ: tribu
-    libelle: Tribu de départ
-    remplis: 645
-    manquants: 0
-    part: 100
-    depuis_page_individuelle: 0
   - champ: votes_recus
     libelle: Voix reçues
     remplis: 645
     manquants: 0
     part: 100
     depuis_page_individuelle: 1
+  - champ: tribu
+    libelle: Tribu de départ
+    remplis: 642
+    manquants: 3
+    part: "99,5"
+    depuis_page_individuelle: 0
   - champ: parcours
     libelle: Trajectoire de tribus
-    remplis: 638
-    manquants: 7
-    part: "98,9"
+    remplis: 641
+    manquants: 4
+    part: "99,4"
     depuis_page_individuelle: 293
   - champ: couleur
     libelle: Couleur de départ
-    remplis: 637
-    manquants: 8
-    part: "98,8"
+    remplis: 638
+    manquants: 7
+    part: "98,9"
     depuis_page_individuelle: 0
   - champ: jour_sortie
     libelle: Jour de sortie
@@ -10298,12 +10298,12 @@ completude:
     manquants: 98
     part: "84,8"
     depuis_page_individuelle: 547
-  champs_complets: 5
+  champs_complets: 4
   champs_suivis: 13
-  trous: 318
+  trous: 317
   valeurs_suivies: 8385
   comblees: 2295
-  part_remplie: "96,21"
+  part_remplie: "96,22"
 palmares:
   renseignees: 549
   compares: 549
@@ -30743,7 +30743,7 @@ completude_saisons:
     annee: 2004
     speciale: false
     effectif: 16
-    score: "88,8"
+    score: "89,2"
     cellules:
     - cle: casting
       valeur: 100
@@ -30776,11 +30776,11 @@ completude_saisons:
       nature: part
       valeur_arrondie: 100
     - cle: parcours
-      valeur: "93,8"
-      texte: 15/16
-      etat: eleve
+      valeur: 100
+      texte: 16/16
+      etat: complet
       nature: part
-      valeur_arrondie: 94
+      valeur_arrondie: 100
     - cle: jour_sortie
       valeur: 100
       texte: 16/16
@@ -31118,7 +31118,7 @@ completude_saisons:
     annee: 2007
     speciale: false
     effectif: 16
-    score: "79,4"
+    score: "79,8"
     cellules:
     - cle: casting
       valeur: 100
@@ -31151,11 +31151,11 @@ completude_saisons:
       nature: part
       valeur_arrondie: 100
     - cle: parcours
-      valeur: "93,8"
-      texte: 15/16
-      etat: eleve
+      valeur: 100
+      texte: 16/16
+      etat: complet
       nature: part
-      valeur_arrondie: 94
+      valeur_arrondie: 100
     - cle: jour_sortie
       valeur: 100
       texte: 16/16
@@ -31368,7 +31368,7 @@ completude_saisons:
     annee: 2009
     speciale: false
     effectif: 18
-    score: 84
+    score: "84,4"
     cellules:
     - cle: casting
       valeur: 100
@@ -31401,11 +31401,11 @@ completude_saisons:
       nature: part
       valeur_arrondie: 89
     - cle: parcours
-      valeur: "94,4"
-      texte: 17/18
-      etat: eleve
+      valeur: 100
+      texte: 18/18
+      etat: complet
       nature: part
-      valeur_arrondie: 94
+      valeur_arrondie: 100
     - cle: jour_sortie
       valeur: 100
       texte: 18/18
@@ -33368,7 +33368,7 @@ completude_saisons:
     annee: 2020
     speciale: true
     effectif: 20
-    score: "97,1"
+    score: "97,4"
     cellules:
     - cle: casting
       valeur: 100
@@ -33395,11 +33395,11 @@ completude_saisons:
       nature: part
       valeur_arrondie: 100
     - cle: couleur
-      valeur: 95
-      texte: 19/20
-      etat: eleve
+      valeur: 100
+      texte: 20/20
+      etat: complet
       nature: part
-      valeur_arrondie: 95
+      valeur_arrondie: 100
     - cle: parcours
       valeur: 100
       texte: 20/20
@@ -34643,15 +34643,15 @@ completude_saisons:
     libelle: Bandeau de départ
     court: Bandeau
     nature: part
-    moyenne: "98,7"
-    completes: 30
+    moyenne: "98,8"
+    completes: 31
     concernees: 34
   - cle: parcours
     libelle: Tribus datées en jours
     court: Tribus
     nature: part
-    moyenne: "98,8"
-    completes: 30
+    moyenne: "99,3"
+    completes: 33
     concernees: 34
   - cle: jour_sortie
     libelle: Jour de sortie

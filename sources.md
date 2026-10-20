@@ -96,17 +96,27 @@ fiche écrit la suite des tribus *sans aucun jour* — « Kumo, Tribu réunifié
 Les jours n’ont été posés que lorsqu’ils sont sûrs : le jour 1, seulement si
 la fiche le prouve (sortie au jour 39 après 39 jours de jeu) — un remplaçant
 arrivé au jour 4, un revenant après un trou n’entrent pas dans ce calcul ; le
-jour de la réunification, seulement s’il se lit, identique, chez tous les
-autres aventuriers datés de la saison ; le jour de sortie pour la dernière
-étape. Un échange de tribus que rien ne date reste sans date. Les parcours
+jour de la réunification ou d’un échange de tribus, seulement s’il se lit,
+identique, chez tous les autres aventuriers datés de la saison ; le jour de
+sortie pour la dernière étape. Chacun de ces faits se pose seul, sans attendre
+les autres. Un échange que rien ne date reste sans date. Les parcours
 vides, enfin, ont été complétés par le tableau des candidats du wiki
 *Survivor*, sans jours quand il n’en donne pas.
 
+Trois aventuriers résistaient à tout rapprochement, et chacun avait sa
+raison. Le wiki *Survivor* nomme Sabira « SL », ses initiales : même tribu,
+même échange, même sortie au jour 10. Il écrit le nom de Maryline juste, mais
+son lien avec une coquille. Et Myriam est sortie avant la formation des tribus
+— le tableau Fandom écrit « Aucune » dans un cadre de couleur nommé « Bannie »,
+et c’est ce nom de cadre qui était devenu sa tribu, comme pour Joëlle et Amel.
+Une tribu de départ n’est plus jamais un état : « Bannie », « Absente » cèdent
+la place au premier vrai campement, ou à rien.
+
 <p class="note">Au moment de cette reprise, 50 étapes portaient un nom de
-tribu mêlé de dates : il n’y en a plus. 46 parcours vides ont été complétés,
-souvent sans jours. Il reste 197 étapes sans jours et 7 parcours vides — quatre d’<em>All Stars</em>, saison en cours, et trois
-aventuriers que ni Fandom ni le wiki <em>Survivor</em> ne situent. Ils ne
-seront complétés que si une source les date.</p>
+tribu mêlé de dates : il n’y en a plus. 49 parcours vides ont été complétés,
+souvent sans jours. Il reste 167 étapes sans jours et 4 parcours vides, ceux
+d’<em>All Stars</em>, saison en cours. Les étapes sans jours ne seront
+complétées que si une source les date.</p>
 
 ## La quatrième source : le wiki anglophone de *Survivor*, en témoin
 

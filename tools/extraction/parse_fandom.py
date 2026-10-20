@@ -266,6 +266,12 @@ def parse_row(row, saison_id=None):
             if nom:
                 tribu = nom
                 break
+    # « {{Tribebox2|Bannie}}<span>Aucune</span> » : « Bannie » n'est que le
+    # modele de couleur (noir) ; le texte dit que l'aventurier n'a JAMAIS eu de
+    # tribu -- sorti avant leur formation (Joelle et Myriam a Palau, Amel au
+    # Retour des heros). Wikipedia en anglais : « before the tribes were formed ».
+    if re.search(r"\}\}\s*(?:<[^>]*>\s*)*Aucune\b", corps):
+        tribu = None
 
     # --- la cellule du nom : la premiere apres celle qui porte la PHOTO
     i_photo = next((i for i, c in enumerate(cells)
