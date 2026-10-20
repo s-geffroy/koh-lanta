@@ -109,6 +109,11 @@
   --nuit-muette: #8fa396;
   --nuit-grille: #2c4339;
   --nuit-axe:    #4a6456;
+
+  /* Le meme vert, a la lumiere du jour : le seul accent du CORPS des pages,
+     reserve au trait du constat. En sombre, il s'eclaircit pour rester
+     visible sur la surface. */
+  --jungle: #1f5a45;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -146,6 +151,7 @@
     /* La page sombre est presque noire : le bandeau garde son vert, un ton
        plus bas, et se detache par la teinte et par son filet. */
     --nuit: #0f2019;
+    --jungle: #5f9c80;
   }
 }
 
@@ -183,6 +189,7 @@
   --focus: #7fb2f2;
 
   --nuit: #0f2019;
+  --jungle: #5f9c80;
 }
 
 /* ------------------------------------------------------------------- socle */
@@ -436,13 +443,13 @@ a { color: inherit; }
 .oeil-rang i { font-style: normal; color: var(--encre-muette); }
 
 .page-titre {
-  font-weight: 800;
-  font-stretch: 118%;
-  font-size: clamp(2.2rem, calc(1.5rem + 2.4vw), 3.5rem);
-  line-height: 1.02;
-  letter-spacing: -0.025em;
+  font-weight: 780;
+  font-stretch: 112%;
+  font-size: clamp(1.85rem, calc(1.4rem + 1.3vw), 2.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
   margin: 0;
-  max-width: 22ch;
+  max-width: 26ch;
 }
 
 .chapeau {
@@ -564,21 +571,37 @@ a { color: inherit; }
 /* ---------------------------------------------------------------- chiffres */
 
 /* Une rangee de mesures, pas des tuiles : les nombres posent sur un filet. */
+/* Un bandeau clair, une mesure par case, separees par un filet vertical :
+   les nombres qu'on retient de la page, lisibles d'un regard. Chaque case
+   porte un filet a gauche et en bas, et recule d'1 px dans les deux sens :
+   le cadre (overflow: hidden) mange ceux du bord, il ne reste que les filets
+   ENTRE les cases, quel que soit le nombre de lignes. */
 .chiffres {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
-  gap: 1.2rem 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 0;
   list-style: none;
   margin: 1.8rem 0 2.4rem;
-  padding: 1rem 0 0;
-  border-top: 1px solid var(--grille);
+  padding: 0;
+  background: var(--surface);
+  border: 1px solid var(--grille);
+  border-radius: var(--rayon);
+  overflow: hidden;
 }
+.chiffre {
+  padding: 1rem 1.2rem 1.05rem;
+  border-left: 1px solid var(--grille);
+  border-bottom: 1px solid var(--grille);
+}
+/* Plus specifique que `.prose li`, qui poserait sa marge de liste. */
+.prose .chiffres > .chiffre,
+.chiffres > .chiffre { margin: 0 0 -1px -1px; }
 
 .chiffre b {
   display: block;
-  font-weight: 700;
-  font-stretch: 108%;
-  font-size: 1.7rem;
+  font-weight: 780;
+  font-stretch: 112%;
+  font-size: 2rem;
   line-height: 1.05;
   letter-spacing: -0.02em;
   font-variant-numeric: tabular-nums;
@@ -661,10 +684,10 @@ thead th {
   position: sticky;
   top: 0;
   z-index: 1;
-  background: var(--surface);
+  background: var(--surface-creuse);
   font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--encre-douce);
+  font-weight: 650;
+  color: var(--encre);
   text-align: left;
   padding: 0.7rem 0.8rem 0.6rem;
   border-bottom: 1px solid var(--axe);
@@ -858,11 +881,16 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--encre); }
 }
 .note a { color: var(--encre); }
 
-/* Le constat mis en avant : un trait d'encre a gauche, pas une boite. */
+/* Le constat : ce que la page demontre. Un encadre sur --surface, tenu a
+   gauche par le vert de jungle -- l'echo du bandeau de nuit dans le corps. */
 .constat {
-  border-left: 2px solid var(--encre);
-  padding: 0.1rem 0 0.1rem 1.1rem;
-  margin: 1.6rem 0 2rem;
+  background: var(--surface);
+  border: 1px solid var(--grille);
+  border-left: 4px solid var(--jungle);
+  border-radius: var(--rayon);
+  padding: 0.95rem 1.2rem 1rem;
+  margin: 1.8rem 0 2.2rem;
+  font-size: 1.04rem;
 }
 .constat p { margin: 0 0 0.6rem; }
 .constat p:last-child { margin-bottom: 0; }
@@ -915,20 +943,25 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--encre); }
 
 /* --------------------------------------------------------------------- fil */
 
+/* Precedent et suivant : deux portes, pas deux liens perdus en bas de page.
+   La case vide (debut ou fin du fil) reste un <span> sans fond. */
 .fil {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: 1rem;
   margin-top: 4rem;
-  padding-top: 1.2rem;
-  border-top: 1px solid var(--grille);
 }
 
 .fil-lien {
   display: block;
   text-decoration: none;
   color: inherit;
+  background: var(--surface);
+  border: 1px solid var(--grille);
+  border-radius: var(--rayon);
+  padding: 0.9rem 1.1rem 1rem;
 }
+.fil-lien:hover { border-color: var(--axe); }
 .fil-apres { text-align: right; }
 
 .fil-sens {
@@ -946,12 +979,23 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--encre); }
 
 /* -------------------------------------------------------------------- pied */
 
-.pied { border-top: 1px solid var(--grille); }
+/* Le pied est dans la nuit, comme le haut : la page est encadree. Le totem
+   couche le borde en haut, comme il borde le bandeau en bas. */
+.pied { position: relative; }
+.pied::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--tribu-jaune) 0 50%, var(--tribu-rouge) 50% 100%);
+}
 
 .pied-corps {
   max-width: 84rem;
   margin: 0 auto;
-  padding: 2rem 1.5rem 3rem;
+  padding: 2.4rem 1.5rem 3rem;
   display: grid;
   gap: 0.9rem 2rem;
   grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
@@ -975,11 +1019,11 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--encre); }
 .accueil-titre {
   font-weight: 800;
   font-stretch: 125%;
-  font-size: clamp(2.8rem, calc(1.6rem + 4.2vw), 5.2rem);
-  line-height: 0.96;
-  letter-spacing: -0.035em;
+  font-size: clamp(2.2rem, calc(1.5rem + 2.2vw), 3.4rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
   margin: 0;
-  max-width: 12ch;
+  max-width: 16ch;
 }
 
 .accueil-chapeau {
@@ -1351,7 +1395,8 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--encre); }
 
   .nuit-corps,
   .nuit-accueil .nuit-corps { padding: 0 0 1.5rem; }
-  .nuit-page::after { display: none; }
+  .nuit-page::after,
+  .pied::before { display: none; }
 
   body { font-size: 11pt; }
 
