@@ -1228,19 +1228,19 @@ def figures_des_modeles(stats):
         ecrire("fusion-grille.svg", plan(
             [{"x": l["casting"], "y": l["episode"], "couleur": SERIES[0],
               "detail": f'{l["titre"]} ({l["annee"]}) : casting de {l["casting"]}, '
-                        f'fusion à l\u2019épisode {l["episode"]}'}
+                        f'réunification à l\u2019épisode {l["episode"]}'}
              for l in fu["lignes"]]
             + [{"x": l["casting"], "y": l["restants"], "couleur": SERIES[3],
                 "detail": f'{l["titre"]} ({l["annee"]}) : {l["restants"]} joueurs '
-                          f'encore en jeu à la fusion'}
+                          f'encore en jeu à la réunification'}
                for l in fu["lignes"]],
-            titre="La fusion suit la grille, pas le nombre de joueurs",
+            titre="La réunification suit la grille, pas le nombre de joueurs",
             description="Chaque saison figure deux fois : par l'épisode où la "
-                        "fusion tombe, et par le nombre de joueurs qu'elle laisse. "
+                        "réunification tombe, et par le nombre de joueurs qu'elle laisse. "
                         "Le premier ne bouge pas quand le casting grossit ; le "
                         "second suit.",
             x_titre="taille du casting", y_titre="épisodes / joueurs",
-            legende=[("épisode de la fusion", SERIES[0]),
+            legende=[("épisode de la réunification", SERIES[0]),
                      ("joueurs restants", SERIES[3])],
             largeur=760, hauteur=380))
 
@@ -1384,7 +1384,7 @@ def figures_des_modeles(stats):
         ecrire("fusion-avant-apres.svg", barres_groupees(
             [{"libelle": "Présents au conseil",
               "valeurs": [av["presents_moyen"], ap["presents_moyen"]],
-              "details": [f'{av["presents_moyen"]} en moyenne avant la fusion',
+              "details": [f'{av["presents_moyen"]} en moyenne avant la réunification',
                           f'{ap["presents_moyen"]} après']},
              {"libelle": "Conseils serrés (%)",
               "valeurs": [av["part_serres"], ap["part_serres"]],
@@ -1398,8 +1398,8 @@ def figures_des_modeles(stats):
              {"libelle": "Rang de force de l’éliminé",
               "valeurs": rangs,
               "details": [f'{rangs[0]} sur 100 avant', f'{rangs[1]} après']}],
-            [{"nom": "avant la fusion", "couleur": TRIBUS["jaune"]},
-             {"nom": "après la fusion", "couleur": TRIBUS["rouge"]}],
+            [{"nom": "avant la réunification", "couleur": TRIBUS["jaune"]},
+             {"nom": "après la réunification", "couleur": TRIBUS["rouge"]}],
             titre="Ce que la réunification change",
             description="Cinq mesures du conseil, avant et après la réunification. "
                         "Le rang de force va de 0, le plus faible du camp, à 100, "
@@ -1510,7 +1510,7 @@ def figures_des_modeles(stats):
              if len(bloc) == 2],
             [{"nom": "bandeau minoritaire", "couleur": TRIBUS["rouge"]},
              {"nom": "bandeau majoritaire", "couleur": TRIBUS["jaune"]}],
-            titre="Le bandeau d’origine, avant et après la fusion",
+            titre="Le bandeau d’origine, avant et après la réunification",
             description="Probabilité d’être éliminé selon que son bandeau de départ "
                         "est le moins ou le plus représenté du camp présent.",
             unite=" %", largeur=720, marge_gauche=200))

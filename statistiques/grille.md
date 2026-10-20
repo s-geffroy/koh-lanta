@@ -22,7 +22,7 @@ tienne dans la grille — une règle **de programme**.
 Les deux se distinguent, parce que la taille des castings a changé : de
 {{ f.casting_min }} aux premières saisons à {{ f.casting_max }} aux récentes.
 
-<p class="note"><strong>Comment on repère la fusion sans la deviner.</strong>
+<p class="note"><strong>Comment on repère la réunification sans la deviner.</strong>
 Après elle, les immunités sont individuelles. Le dernier épisode portant une
 immunité <em>collective</em> est donc le dernier épisode d’avant la
 réunification. {{ f.saisons }} saisons classiques s’y prêtent.</p>
@@ -30,11 +30,11 @@ réunification. {{ f.saisons }} saisons classiques s’y prêtent.</p>
 {% include graphiques/fusion-grille.svg %}
 
 <p class="legende-figure">Chaque saison figure deux fois : par l’épisode où la
-fusion tombe, et par le nombre de joueurs qu’elle laisse en jeu.</p>
+réunification tombe, et par le nombre de joueurs qu’elle laisse en jeu.</p>
 
 
 <div class="constat">
-  <p>Quand le casting gagne un membre, l’épisode de la fusion recule de
+  <p>Quand le casting gagne un membre, l’épisode de la réunification recule de
   <b>{{ f.pente_episode.pente }}</b> — intervalle
   {{ f.pente_episode.bas }} à {{ f.pente_episode.haut }}, p =
   {{ f.pente_episode.p }}. Sur toute la croissance observée, de
@@ -49,7 +49,7 @@ fusion tombe, et par le nombre de joueurs qu’elle laisse en jeu.</p>
   avec lui, et la date bouge à peine.</p>
   <p>La réunification suit donc la <b>grille de diffusion</b> bien plus que
   l’état du jeu. Les castings ont grossi de {{ f.croissance }} personnes ; la
-  fusion a reculé de {{ f.croissance_episode_texte }}, et le plateau réuni est passé de
+  réunification a reculé de {{ f.croissance_episode_texte }}, et le plateau réuni est passé de
   {{ f.restants_casting_min }} joueurs, en médiane avec les plus petits castings, à
   {{ f.restants_casting_max }} avec les plus grands. C’est le programme qui décide, et le jeu
   qui s’adapte — mais pas tout à fait sans concession.</p>
@@ -62,7 +62,7 @@ raison — <a href="{{ '/sources/' | relative_url }}">une réparation du relevé
 épreuves</a>. <i>Cambodge</i> était <em>écartée</em> du calcul, son dernier
 collectif tombant à un épisode qui ne laissait que quatre joueurs ; c’était un
 défaut de numérotation, et la saison rentre aujourd’hui dans le rang.
-<i>La Revanche des 4 Terres</i> plaçait sa fusion à l’épisode 4 sur 17 — un
+<i>La Revanche des 4 Terres</i> plaçait sa réunification à l’épisode 4 sur 17 — un
 chiffre lu dans un tableau de classement des quatre tribus pris pour un tableau
 de résultats ; elle la place désormais à l’épisode
 {% assign r4t = f.lignes | where: "saison", "s27" | first %}{{ r4t.episode }}. Deux corrections, et une
@@ -79,7 +79,7 @@ c’est ce « presque » que la pente ci-dessus mesure.
 <p class="note">{{ f.ecartees | size }} saison est écartée du calcul :
 {% for x in f.ecartees %}<b>{{ x.titre }}</b> porte une immunité collective à
 l’épisode {{ x.episode }}, qui ne laisserait que {{ x.restants }} joueurs — ce
-n’est pas une réunification mais une épreuve par équipes d’après-fusion. Le
+n’est pas une réunification mais une épreuve par équipes d’après-réunification. Le
 repère y échoue, et on le dit plutôt que de le corriger à la main.{% endfor %}</p>
 {% else %}
 <p class="note">Aucune saison n’est écartée du calcul : le repère — dernier

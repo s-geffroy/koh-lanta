@@ -175,7 +175,7 @@ intervalle {{ ef.bas }} à {{ ef.haut }}, p = {{ ef.p }}. La trahison ne paie
 pas ; elle ne coûte pas non plus. Sur {{ ef.effectif }} participations, elle est
 simplement **sans effet mesurable**.
 
-## Après la fusion, un camp tombe en série
+## Après la réunification, un camp tombe en série
 
 {% assign de = m.decimation %}{% assign dt = de.test %}
 
@@ -187,13 +187,13 @@ départs alternent.
 
 <p class="legende-figure">Nombre de fois où deux sorties consécutives viennent
 du même bandeau de départ, sur {{ de.saisons }} saisons et {{ de.sorties }}
-sorties d’après-fusion. La silhouette est ce que donne un ordre de sortie tiré
+sorties d’après-réunification. La silhouette est ce que donne un ordre de sortie tiré
 au sort, à composition de camps identique.</p>
 
 <div class="constat">
   <p>{{ dt.observe }} enchaînements observés contre {{ dt.attendu }} attendus,
   <b>{{ dt.ecart_types }} écarts-types</b>, p ajustée {{ dt.p_ajustee }}.</p>
-  <p>Les sorties d’après-fusion ne se répartissent pas au hasard entre les deux
+  <p>Les sorties d’après-réunification ne se répartissent pas au hasard entre les deux
   anciens camps : <b>elles se suivent</b>. Le bandeau qu’on a porté les
   {{ site.data.stats.mots.episode_fusion }} premiers épisodes décide encore de l’ordre dans lequel on part.</p>
 </div>
@@ -202,7 +202,7 @@ au sort, à composition de camps identique.</p>
 <table data-triable>
 <thead><tr>
   <th>Saison</th><th class="nombre">Année</th>
-  <th class="nombre">Sorties après fusion</th>
+  <th class="nombre">Sorties après réunification</th>
   <th class="nombre">Plus longue série</th><th>Ordre des sorties</th>
 </tr></thead>
 <tbody>

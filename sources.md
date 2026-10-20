@@ -116,7 +116,7 @@ la place au premier vrai campement, ou à rien.
 colore chaque étape : un code pour une tribu (« #fee347 »), mais un *nom* pour
 la tribu réunifiée (« white »), pour les bannis (« black »), et parfois rien.
 Seuls les codes étaient lus : 313 étapes disparaissaient, dont toutes les
-réunifications écrites en blanc — 221 parcours s’arrêtaient à la fusion. Elles
+réunifications écrites en blanc — 221 parcours s’arrêtaient à la réunification. Elles
 sont lues ; une étape encore en cours, « (jour 19 – ) », n’a plus de jour de
 fin inventé ; et la tribu de départ reste la première tribu à vraie couleur, pas
 la « Tribu des hommes » ni la « Tribu unique » des tout premiers jours.
@@ -610,13 +610,13 @@ porte sur {{ site.data.stats.modeles.force.epreuves_retenues }} épreuves et
 l’épisode de la réunification **ne bouge pas** avec la taille du casting —
 {% assign pf = site.data.stats.modeles.fusion.pente_episode %}
 pente 0,008, intervalle −0,135 à 0,152. Elle vaut désormais {{ pf.pente }},
-intervalle {{ pf.bas }} à {{ pf.haut }}, p = {{ pf.p }} : la fusion recule bel et
+intervalle {{ pf.bas }} à {{ pf.haut }}, p = {{ pf.p }} : la réunification recule bel et
 bien, de **{{ site.data.stats.modeles.fusion.croissance_episode_texte }}** sur
 toute la croissance des castings. Deux saisons expliquent le
 renversement, et les deux étaient fausses. *Cambodge* était <em>écartée</em> du
 calcul parce que son dernier collectif tombait à un épisode ne laissant que
 quatre joueurs — c’était le décalage de numérotation. *La Revanche des 4 Terres*
-plaçait sa fusion à l’épisode 4 sur 17, chiffre lu dans le tableau de classement
+plaçait sa réunification à l’épisode 4 sur 17, chiffre lu dans le tableau de classement
 des quatre tribus ; elle la place maintenant à l’épisode 8. La page a été
 réécrite, et elle raconte ce qu’elle disait avant.
 
@@ -744,7 +744,7 @@ ajoutées. Le modèle de force est passé de 28 à
 {{ site.data.stats.modeles.force.saisons_retenues }} saisons.
 
 **Une conclusion publiée a basculé, et il faut la nommer.**
-[La fusion]({{ '/statistiques/fusion/' | relative_url }}) concluait que l’âge de
+[La réunification]({{ '/statistiques/reunification/' | relative_url }}) concluait que l’âge de
 l’éliminé bascule à la réunification « mais on ne peut pas l’affirmer » :
 p ajustée 0,22. Avec le relevé corrigé, la date de la réunification a bougé
 pour plusieurs saisons, et le test passe le seuil, de justesse. La page le dit,

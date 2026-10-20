@@ -1684,7 +1684,7 @@ def champs_du_texte(stats, saisons, parts):
     for x in co.get("par_camp") or []:
         x["modalite_maj"] = x["modalite"][:1].upper() + x["modalite"][1:]
 
-    # /statistiques/fusion/ : les mesures avant/apres, les ambassades nommees
+    # /statistiques/reunification/ : les mesures avant/apres, les ambassades nommees
     # par les deux sources.
     aa = m["avant_apres"]
     mots["avant_apres_tests"] = len(aa["tests"])
@@ -2174,7 +2174,7 @@ def champs_d_affichage(stats):
     annees = [l["annee"] for l in f["lignes"]]
     f["annee_min"], f["annee_max"] = min(annees), max(annees)
 
-    # /statistiques/fusion/ : les ambassades dont la prose ne nomme pas les
+    # /statistiques/reunification/ : les ambassades dont la prose ne nomme pas les
     # ambassadeurs, que le texte comptait a la main (« les huit muettes »).
     ng = m["avant_apres"]["negociateurs"]
     ng["muettes"] = ng["total"] - ng["lues"]

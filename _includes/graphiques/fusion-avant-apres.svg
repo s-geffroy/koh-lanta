@@ -8,11 +8,11 @@
   <line x1="518.0" y1="36" x2="518.0" y2="324" stroke="var(--grille)" stroke-width="1"/>
   <line x1="614.0" y1="36" x2="614.0" y2="324" stroke="var(--grille)" stroke-width="1"/>
   <rect x="230" y="12" width="11" height="11" rx="3" fill="var(--tribu-jaune)"/>
-  <text x="247.0" y="18.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">avant la fusion</text>
-  <rect x="364.0" y="12" width="11" height="11" rx="3" fill="var(--tribu-rouge)"/>
-  <text x="381.0" y="18.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">après la fusion</text>
+  <text x="247.0" y="18.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">avant la réunification</text>
+  <rect x="414.4" y="12" width="11" height="11" rx="3" fill="var(--tribu-rouge)"/>
+  <text x="431.4" y="18.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">après la réunification</text>
   <text x="220.0" y="67.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Présents au conseil</text>
-  <g class="marque s s0"><title>16,8 en moyenne avant la fusion</title><rect x="230" y="44.0" width="107.2" height="22.0" rx="3" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="marque s s0"><title>16,8 en moyenne avant la réunification</title><rect x="230" y="44.0" width="107.2" height="22.0" rx="3" fill="var(--tribu-jaune)" stroke="var(--surface)" stroke-width="1"/></g>
   <g class="s s0"><text x="344.2" y="55.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">16,8</text></g>
   <g class="marque s s1"><title>8,8 après</title><rect x="230" y="68.0" width="56.1" height="22.0" rx="3" fill="var(--tribu-rouge)" stroke="var(--surface)" stroke-width="1"/></g>
   <g class="s s1"><text x="293.1" y="79.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">8,8</text></g>

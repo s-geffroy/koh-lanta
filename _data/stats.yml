@@ -25857,9 +25857,9 @@ modeles:
       bas: "0,52"
       haut: "0,801"
       p: 0
-    lecture: 'Pente : de combien l''épisode de fusion, puis le nombre de joueurs restants, bougent quand
-      le casting gagne un membre. Une pente nulle sur l''épisode et une pente de 1 sur les restants signent
-      une fusion calée sur la GRILLE.'
+    lecture: 'Pente : de combien l''épisode de réunification, puis le nombre de joueurs restants, bougent
+      quand le casting gagne un membre. Une pente nulle sur l''épisode et une pente de 1 sur les restants
+      signent une réunification calée sur la GRILLE.'
     croissance: 8
     croissance_episode: "0,6"
     croissance_restants: "5,3"
@@ -27194,7 +27194,7 @@ modeles:
       sources_communes: 6
     tests:
     - cle: fusion_sexe
-      libelle: Le sexe des éliminés, avant et après la fusion
+      libelle: Le sexe des éliminés, avant et après la réunification
       question: La part de femmes parmi les éliminés change-t-elle à la réunification ?
       observe: "-17,986"
       attendu: "-1,27"
@@ -27245,7 +27245,7 @@ modeles:
       p_ajustee: "0,0014"
       retenu: true
     - cle: fusion_force
-      libelle: La force des éliminés, avant et après la fusion
+      libelle: La force des éliminés, avant et après la réunification
       question: Élimine-t-on le faible avant la réunification et le fort après ?
       observe: "-4,789"
       attendu: "-0,05"
@@ -27255,7 +27255,7 @@ modeles:
       tirages: 10000
       lecture: 'Rang de l''éliminé parmi les présents, sur la force estimée aux épreuves : 0 le plus faible
         du camp, 100 le plus fort. On compare l''après à l''avant. Positif, cela veut dire qu''on élimine
-        plus haut dans le classement après la fusion.'
+        plus haut dans le classement après la réunification.'
       nulle: &id089
         bornes:
         - "-13,5619"
@@ -27296,7 +27296,7 @@ modeles:
       p_ajustee: "0,2329"
       retenu: false
     - cle: fusion_serre
-      libelle: Des conseils plus serrés après la fusion ?
+      libelle: Des conseils plus serrés après la réunification ?
       question: Le vote se divise-t-il davantage une fois les tribus réunies ?
       observe: "27,607"
       attendu: "-0,077"
@@ -29156,7 +29156,7 @@ modeles:
     ecart_apres: "-0,64"
     test:
       cle: age_bascule_fusion
-      libelle: L'âge de l'éliminé, avant et après la fusion
+      libelle: L'âge de l'éliminé, avant et après la réunification
       question: Élimine-t-on le plus âgé avant la réunification, et plus après ?
       observe: "2,006"
       attendu: "-0,011"
@@ -29738,7 +29738,7 @@ modeles:
     observe_arrondi: "-0,3"
     attendu_arrondi: 0
   - cle: fusion_sexe
-    libelle: Le sexe des éliminés, avant et après la fusion
+    libelle: Le sexe des éliminés, avant et après la réunification
     question: La part de femmes parmi les éliminés change-t-elle à la réunification ?
     origine: avant_apres
     observe: "-17,986"
@@ -29756,7 +29756,7 @@ modeles:
     observe_arrondi: -18
     attendu_arrondi: "-1,3"
   - cle: fusion_force
-    libelle: La force des éliminés, avant et après la fusion
+    libelle: La force des éliminés, avant et après la réunification
     question: Élimine-t-on le faible avant la réunification et le fort après ?
     origine: avant_apres
     observe: "-4,789"
@@ -29769,12 +29769,12 @@ modeles:
     tirages: 10000
     lecture: 'Rang de l''éliminé parmi les présents, sur la force estimée aux épreuves : 0 le plus faible
       du camp, 100 le plus fort. On compare l''après à l''avant. Positif, cela veut dire qu''on élimine
-      plus haut dans le classement après la fusion.'
+      plus haut dans le classement après la réunification.'
     nulle: *id089
     observe_arrondi: "-4,8"
     attendu_arrondi: "-0,1"
   - cle: fusion_serre
-    libelle: Des conseils plus serrés après la fusion ?
+    libelle: Des conseils plus serrés après la réunification ?
     question: Le vote se divise-t-il davantage une fois les tribus réunies ?
     origine: avant_apres
     observe: "27,607"
@@ -30126,7 +30126,7 @@ modeles:
     observe_arrondi: "7,3"
     attendu_arrondi: "8,5"
   - cle: age_bascule_fusion
-    libelle: L'âge de l'éliminé, avant et après la fusion
+    libelle: L'âge de l'éliminé, avant et après la réunification
     question: Élimine-t-on le plus âgé avant la réunification, et plus après ?
     origine: age_au_conseil
     observe: "2,006"
@@ -30280,7 +30280,7 @@ modeles:
     effet_texte: 8 points
   retenus_avec_vingt_nuls: 24
   tombes_avec_vingt_nuls_texte: les 2 plus fragiles tomberaient — « L'ambassadeur qui négocie s'en sort-il
-    mieux ? » et « L'âge de l'éliminé, avant et après la fusion »
+    mieux ? » et « L'âge de l'éliminé, avant et après la réunification »
 completude_saisons:
   colonnes:
   - cle: casting
@@ -35268,9 +35268,9 @@ sommaire:
         url: /statistiques/tribus/
         titre: Jaune contre rouge
       suivant:
-        url: /statistiques/fusion/
-        titre: Avant et après la fusion
-    /statistiques/fusion/:
+        url: /statistiques/reunification/
+        titre: Avant et après la réunification
+    /statistiques/reunification/:
       section: Les résultats
       rang: 22
       total: 27
@@ -35287,8 +35287,8 @@ sommaire:
       total: 27
       theme: La saison
       precedent:
-        url: /statistiques/fusion/
-        titre: Avant et après la fusion
+        url: /statistiques/reunification/
+        titre: Avant et après la réunification
       suivant:
         url: /statistiques/equilibre/
         titre: Le jeu tenu serré

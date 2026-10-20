@@ -894,21 +894,21 @@ def controler_virgule_decimale(c):
 
 # Ce que des PHRASES du site affirment d'un test du registre : (retenu ?, ou).
 # Un chiffre suit les donnees, la phrase qui l'entoure non. Le 19 octobre 2026,
-# le sommaire, l'accueil, /statistiques/fusion/ et /statistiques/top/ ecrivaient
+# le sommaire, l'accueil, /statistiques/reunification/ et /statistiques/top/ ecrivaient
 # « on elimine le fort AVANT la reunification » -- un test NON retenu
 # (p ajustee 0,37). Changer une de ces phrases, c'est changer cette table.
 AFFIRMATIONS_PAGES = {
-    "fusion_force": (False, "index.md, statistiques/fusion.md, statistiques/top.md "
+    "fusion_force": (False, "index.md, statistiques/reunification.md, statistiques/top.md "
                             "et le resume du sommaire ecrivent que la force ne "
                             "decide pas de qui part"),
-    "fusion_sexe": (True, "statistiques/fusion.md titre « Le sexe, lui, bascule »"),
+    "fusion_sexe": (True, "statistiques/reunification.md titre « Le sexe, lui, bascule »"),
     "menace_voix": (True, "statistiques/conditionnelles.md ecrit que la menace "
                           "fraiche, visee la derniere fois, compte"),
     "menace_deux_pas": (False, "statistiques/conditionnelles.md ecrit que la menace "
                                "deux conseils plus tard n'est pas retenue"),
     "talent_stable": (False, "sources.md ecrit que la stabilite reste trop mince "
                              "pour etre retenue"),
-    "ambassadeurs_survie": (True, "statistiques/fusion.md ecrit que l'ambassadeur "
+    "ambassadeurs_survie": (True, "statistiques/reunification.md ecrit que l'ambassadeur "
                                   "sort plus tot"),
     "vote_meme_sexe": (True, "statistiques/qui-vise-qui.md et le resume du "
                              "sommaire ecrivent « le sexe : un peu »"),
@@ -990,16 +990,16 @@ AFFIRMATIONS_VALEURS = [
      "statistiques/jury.md ecrit qu'avoir elimine le jure divise la cote"),
     (("modeles", "registre"),
      lambda x: next(t for t in x if t["cle"] == "age_bascule_fusion")["retenu"],
-     "statistiques/fusion.md et l'article long (6.3) ecrivent que la bascule de l'age est retenue"),
+     "statistiques/reunification.md et l'article long (6.3) ecrivent que la bascule de l'age est retenue"),
     (("modeles", "registre"),
      lambda x: 0.01 <= float(str(next(t for t in x if t["cle"] == "age_bascule_fusion")["p_ajustee"]).replace(",", ".")) < 0.05,
-     "statistiques/fusion.md et l'article long (6.3) ecrivent « de justesse » pour la bascule de l'age"),
+     "statistiques/reunification.md et l'article long (6.3) ecrivent « de justesse » pour la bascule de l'age"),
     (("modeles", "registre"),
      lambda x: not next(t for t in x if t["cle"] == "doyen_du_camp")["retenu"],
-     "statistiques/fusion.md et autour-du-feu.md ecrivent que le doyen reste non concluant"),
+     "statistiques/reunification.md et autour-du-feu.md ecrivent que le doyen reste non concluant"),
     (("modeles", "age_au_conseil"),
      lambda x: x["ecart_avant"] > 0 > x["ecart_apres"],
-     "statistiques/fusion.md et l'article long (6.3) ecrivent que l'elimine est plus age que son camp avant la fusion, plus jeune apres"),
+     "statistiques/reunification.md et l'article long (6.3) ecrivent que l'elimine est plus age que son camp avant la fusion, plus jeune apres"),
     (("epreuves", "saisons_sans_donnee"),
      lambda x: x == [],
      "sources.md, force.md, epreuves.md ecrivent que toutes les saisons ont un bilan d'epreuves"),
@@ -1047,7 +1047,7 @@ AFFIRMATIONS_VALEURS = [
     (("modeles","casting","archetypes"), lambda x: [a["libelle"] for a in x]==["25-29 ans · femme · Commerce et vente","30-34 ans · homme · Agriculture et nature","40-44 ans · homme · Artisanat et bâtiment","45 ans et plus · Sans activité déclarée","18-24 ans","18-24 ans · femme · Étudiants"], "statistiques/casting.md decrit les six archetypes un par un (« la femme de la fin de la vingtaine, dans le commerce »...)"),
     (("modeles","casting"), lambda x: max(x["silhouettes"], key=lambda s: s["score"])["k"] == x["nb_archetypes"], "statistiques/casting.md ecrit que la silhouette monte jusqu'au nombre retenu puis redescend"),
     (("modeles","conditionnelles","inverse"), lambda x: x["vise_si_sorti"] < 50, "statistiques/conditionnelles.md ecrit que la majorite des elimines n'avaient pas ete vises la fois d'avant"),
-    (("modeles","avant_apres","negociateurs"), lambda x: x["sources_desaccord"]==1, "statistiques/fusion.md ecrit « La seule divergence porte sur Les Reliques du destin »"),
+    (("modeles","avant_apres","negociateurs"), lambda x: x["sources_desaccord"]==1, "statistiques/reunification.md ecrit « La seule divergence porte sur Les Reliques du destin »"),
     (("couleurs",), lambda x: {c["couleur"]: c["victoires"] for c in x}.get("jaune") == {c["couleur"]: c["victoires"] for c in x}.get("rouge"), "statistiques/autour-du-feu.md ecrit que la couleur ne decide rien du palmares (autant de victoires jaunes que rouges)"),
     (("conseils","conseils_unanimes"), lambda x: x == 0, "statistiques/conseils.md (description, chapeau) ecrit que l'unanimite n'existe pas"),
     (("modeles","rappel","par_sort"), lambda x: sum(v["cas"] for v in x[-2:]) == 1, "statistiques/revenants.md ecrit « un seul retour » parmi les abandons"),

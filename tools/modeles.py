@@ -1587,10 +1587,10 @@ def fusion(par_saison, parts, conseils, epreuves):
         "casting_min": int(castings.min()), "casting_max": int(castings.max()),
         "pente_episode": pentes["episode"],
         "pente_restants": pentes["restants"],
-        "lecture": "Pente : de combien l'épisode de fusion, puis le nombre de "
+        "lecture": "Pente : de combien l'épisode de réunification, puis le nombre de "
                    "joueurs restants, bougent quand le casting gagne un membre. "
                    "Une pente nulle sur l'épisode et une pente de 1 sur les "
-                   "restants signent une fusion calée sur la GRILLE.",
+                   "restants signent une réunification calée sur la GRILLE.",
     }
 
 
@@ -2617,7 +2617,7 @@ def avant_apres(par_saison, parts, conseils, epreuves, bloc_force, bloc_fusion):
         nulle_force.append(rp - ra)
 
     t_sexe = _test(
-        "fusion_sexe", "Le sexe des éliminés, avant et après la fusion",
+        "fusion_sexe", "Le sexe des éliminés, avant et après la réunification",
         "La part de femmes parmi les éliminés change-t-elle à la réunification ?",
         (obs_f_ap - obs_f_av) * 100.0, nulle_sexe, unite=" points",
         lecture="Différence entre l'après et l'avant, en points de pourcentage. "
@@ -2665,13 +2665,13 @@ def avant_apres(par_saison, parts, conseils, epreuves, bloc_force, bloc_fusion):
     robustesse = {"correlation_exposition_force": correlation, "apparie": apparie}
 
     t_force = _test(
-        "fusion_force", "La force des éliminés, avant et après la fusion",
+        "fusion_force", "La force des éliminés, avant et après la réunification",
         "Élimine-t-on le faible avant la réunification et le fort après ?",
         obs_r_ap - obs_r_av, nulle_force, unite=" points de rang",
         lecture="Rang de l'éliminé parmi les présents, sur la force estimée aux "
                 "épreuves : 0 le plus faible du camp, 100 le plus fort. On "
                 "compare l'après à l'avant. Positif, cela veut dire qu'on "
-                "élimine plus haut dans le classement après la fusion.")
+                "élimine plus haut dans le classement après la réunification.")
 
     # --- le conseil est-il plus serre apres ? -----------------------------
     avec = [s for s in scrutins if s["decompte"]]
@@ -2685,7 +2685,7 @@ def avant_apres(par_saison, parts, conseils, epreuves, bloc_force, bloc_fusion):
         m = g2.permutation(etiquettes)
         nulle_serre.append(float(serres[m == 1].mean() - serres[m == 0].mean()) * 100.0)
     t_serre = _test(
-        "fusion_serre", "Des conseils plus serrés après la fusion ?",
+        "fusion_serre", "Des conseils plus serrés après la réunification ?",
         "Le vote se divise-t-il davantage une fois les tribus réunies ?",
         obs_serre, nulle_serre, unite=" points",
         lecture="Part de conseils où l'éliminé ne rassemble pas plus de la moitié "
@@ -4326,7 +4326,7 @@ def age_au_conseil(par_saison, parts, conseils, epreuves, bloc_fusion):
         nulle.append(contraste(tire))
 
     test = _test(
-        "age_bascule_fusion", "L'âge de l'éliminé, avant et après la fusion",
+        "age_bascule_fusion", "L'âge de l'éliminé, avant et après la réunification",
         "Élimine-t-on le plus âgé avant la réunification, et plus après ?",
         observe, np.array(nulle), unite=" ans",
         lecture="Écart d'âge de l'éliminé à la moyenne de son camp, avant la "

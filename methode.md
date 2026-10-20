@@ -22,7 +22,7 @@ des comptages, parmi lesquelles
 [Le vote du jury]({{ '/statistiques/jury/' | relative_url }}) et
 [D’où ils viennent]({{ '/statistiques/geographie/' | relative_url }}),
 [L’audience]({{ '/statistiques/audience/' | relative_url }}) et
-[Avant et après la fusion]({{ '/statistiques/fusion/' | relative_url }}). Cette
+[Avant et après la réunification]({{ '/statistiques/reunification/' | relative_url }}). Cette
 page dit comment ils sont construits et ce qu’ils ne peuvent pas établir.
 
 ## Trois règles, tenues partout
@@ -385,7 +385,7 @@ Trois conséquences, et elles ne vont pas dans le même sens.
 {% assign ps = m.puissance | first %}
 **Le niveau de la saison est épuisé.** {{ ps.observations }} saisons classiques
 ne permettent de détecter qu’un effet de {{ ps.effet_texte }}. Tout ce qui pouvait s’y
-voir — la rupture de régime, la fusion calée sur la grille, l’absence d’effet
+voir — la rupture de régime, la réunification calée sur la grille, l’absence d’effet
 des mécaniques — a été cherché. Ce qui resterait serait si gros qu’il sauterait
 déjà aux yeux. C’est aussi le niveau le plus fragile : vingt-trois valeurs
 d’âge ajoutées au jeu de données ont suffi, un jour, à déplacer de sept ans la

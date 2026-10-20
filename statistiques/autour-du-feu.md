@@ -34,8 +34,8 @@ que l’autre.</strong> Quand le dépouillement est complet, la liste des votant
 <em>est</em> le camp : rien n’est reconstruit — {{ f.par_bulletins }} présences
 sur {{ f.presences }}. Pour les {{ f.par_reconstruction }} autres, toutes
 d’après la réunification et toutes des soirs à conseil unique, on rebâtit le
-camp des encore-en-jeu : c’est exact aussi, puisqu’après la fusion tout le monde
-vote au même feu. Avant la fusion, une reconstruction mélangerait les deux
+camp des encore-en-jeu : c’est exact aussi, puisqu’après la réunification tout le monde
+vote au même feu. Avant la réunification, une reconstruction mélangerait les deux
 tribus ; elle n’est donc jamais faite.</p>
 
 ## La probabilité qui vaut zéro
@@ -151,9 +151,9 @@ réunification.</p>
 </table>
 </div>
 
-L’effet est **plus fort avant la fusion qu’après**, ce qui n’allait pas de soi :
+L’effet est **plus fort avant la réunification qu’après**, ce qui n’allait pas de soi :
 on attendait plutôt le contraire, la réunification étant le moment où les
-anciennes tribus se comptent. L’explication est ailleurs — avant la fusion, un
+anciennes tribus se comptent. L’explication est ailleurs — avant la réunification, un
 bandeau ne devient minoritaire dans une tribu que par un **échange de
 membres**. C’est donc la mesure du sort réservé au nouveau venu, et ce sort est
 clair. [Qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }}) montre
@@ -288,7 +288,7 @@ de l’épisode et partir quand on n’a rien gagné.</p>
   <p><b>Une position n’est pas une cause.</b> Le bandeau minoritaire ne fait
   partir personne : il décrit un rapport de force que le vote ne fait
   qu’enregistrer. La donnée ne sait pas séparer les deux.</p>
-  <p><b>Le camp d’avant la fusion n’est connu que par les bulletins.</b> Sur les
+  <p><b>Le camp d’avant la réunification n’est connu que par les bulletins.</b> Sur les
   conseils tribaux au dépouillement incomplet, on ignore qui était là — ils sont
   écartés, et [la complétude]({{ '/completude/' | relative_url }}) montre que
   cela concerne surtout les saisons récentes.</p>

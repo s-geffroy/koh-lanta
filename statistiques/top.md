@@ -425,8 +425,8 @@ les bouches. Voici les meilleurs aux épreuves, et leur rang en discrétion.
 </div>
 
 <p class="note"><strong>Même constat
-<a href="{{ '/statistiques/fusion/' | relative_url }}">avant et après la
-fusion</a></strong>. Cette page-là mesure <em>qui</em> sort à un moment donné,
+<a href="{{ '/statistiques/reunification/' | relative_url }}">avant et après la
+réunification</a></strong>. Cette page-là mesure <em>qui</em> sort à un moment donné,
 celle-ci compte les voix reçues <em>hors du soir où l’on part</em> : deux faits
 distincts, et aucun des deux ne désigne le fort. L’éliminé reste autour de la
 médiane de force avant comme après la réunification.</p>

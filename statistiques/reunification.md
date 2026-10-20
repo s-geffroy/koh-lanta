@@ -1,8 +1,10 @@
 ---
 layout: page
-title: Avant et après la fusion
+title: Avant et après la réunification
 description: "Avant et après la réunification, Koh-Lanta est deux jeux. On élimine le faible avant et le fort après, dit-on. Les bulletins ne le montrent pas."
-permalink: /statistiques/fusion/
+permalink: /statistiques/reunification/
+redirect_from:
+  - /statistiques/fusion/
 chapeau: >-
   La réunification coupe la saison en deux jeux. On dit qu’avant on élimine le
   faible et qu’après on élimine le fort. Les bulletins ne montrent ni l’un ni
@@ -27,7 +29,7 @@ C’est mesurable, et la mesure ne le confirme pas.
 
 <p class="note"><strong>Où tombe la coupure.</strong> Elle ne se devine pas :
 après la réunification, les immunités sont individuelles. Le dernier épisode
-portant une immunité <em>collective</em> est donc le dernier d’avant la fusion.
+portant une immunité <em>collective</em> est donc le dernier d’avant la réunification.
 Le repère fonctionne sur {{ a.saisons }} saisons classiques, et
 <a href="{{ '/statistiques/grille/' | relative_url }}">La grille</a> montre
 qu’il tombe presque toujours au même épisode — le {{ a.episode_median }}<sup>e</sup>.</p>
@@ -60,7 +62,7 @@ fort.</p>
 {% include graphiques/fusion-force-nulle.svg %}
 
 <p class="legende-figure">Écart entre le rang de force de l’éliminé après la
-fusion et avant. La silhouette est celle de {{ tf.tirages }} tirages où
+réunification et avant. La silhouette est celle de {{ tf.tirages }} tirages où
 l’éliminé de chaque conseil est pris au hasard parmi les présents.</p>
 
 <div class="constat">
@@ -71,7 +73,7 @@ l’éliminé de chaque conseil est pris au hasard parmi les présents.</p>
   <p>L’écart entre les deux vaut {{ tf.observe }} points de rang (écart réduit
   {{ tf.ecart_types }}, p ajustée {{ tf.p_ajustee }}) : un tirage au sort parmi
   les présents le produit couramment. <b>Le test n’est pas retenu.</b></p>
-  <p>Ce n’est pas la preuve que la force ne compte jamais : avant la fusion,
+  <p>Ce n’est pas la preuve que la force ne compte jamais : avant la réunification,
   elle n’est estimable que sur {{ a.force_effectif_avant }} conseils, et un
   effet modéré passerait inaperçu. Mais l’idée reçue, telle qu’on la raconte,
   ne se voit pas dans les bulletins.</p>
@@ -85,7 +87,7 @@ son niveau — est donc déjà neutralisé. Ce qui reste ne peut être qu’un c
 ### Une estimation trop floue ?
 
 La force est estimée sur les épreuves individuelles disputées. Un aventurier
-éliminé avant la fusion en a disputé peu, quand ceux qui
+éliminé avant la réunification en a disputé peu, quand ceux qui
 restent seront jugés sur toute une saison. **On comparerait donc une estimation
 vague à des estimations informées** : le flou pourrait masquer un effet, ou en
 fabriquer un.
@@ -106,10 +108,10 @@ Deux vérifications.
 </div>
 
 Autrement dit : **le flou de l’estimation ne cache pas l’effet qu’on attendait.
-Avant comme après la fusion, l’éliminé n’est choisi ni parmi les plus faibles
+Avant comme après la réunification, l’éliminé n’est choisi ni parmi les plus faibles
 ni parmi les plus forts.**
 
-## Le vote se divise après la fusion
+## Le vote se divise après la réunification
 
 {% include graphiques/fusion-serre-nulle.svg %}
 
@@ -119,7 +121,7 @@ avant. Le hasard est ici une redistribution des étiquettes « avant » et
 
 <div class="constat">
   <p>Un conseil est <b>serré</b> quand l’éliminé ne rassemble pas plus de la
-  moitié des voix exprimées. Avant la fusion : {{ a.avant.part_serres }} %.
+  moitié des voix exprimées. Avant la réunification : {{ a.avant.part_serres }} %.
   Après : <b>{{ a.apres.part_serres }} %</b>.</p>
   <p>+{{ ts.observe }} points, {{ ts.ecart_types }} écarts-types, p ajustée
   {{ ts.p_ajustee }}. Le camp réuni ne se retourne pas d’un bloc : il se
@@ -128,7 +130,7 @@ avant. Le hasard est ici une redistribution des étiquettes « avant » et
 
 C’est cohérent avec ce que montre
 [Les alliances]({{ '/statistiques/alliances/' | relative_url }}) : après la
-fusion, plusieurs groupes coexistent et chacun écrit son nom. Avant, une tribu
+réunification, plusieurs groupes coexistent et chacun écrit son nom. Avant, une tribu
 qui vient de perdre une épreuve a souvent déjà tranché sur le chemin du retour.
 
 ## L’âge bascule dans le même sens, et de justesse on peut l’affirmer
@@ -160,7 +162,7 @@ avant la réunification moins après, contre {{ tag.tirages }} tirages où
 l’éliminé de chaque conseil est pris au hasard parmi les présents.</p>
 
 <div class="constat">
-  <p>Avant la fusion, celui qui part a en moyenne <b>{{ ag.ecart_avant }} an de
+  <p>Avant la réunification, celui qui part a en moyenne <b>{{ ag.ecart_avant }} an de
   plus</b> que son camp. Après, <b>{{ ag.ecart_apres }}</b> — il est un peu plus
   jeune que la moyenne.</p>
   <p>La bascule vaut {{ tag.observe_arrondi }} ans, {{ tag.ecart_types }}
@@ -191,7 +193,7 @@ passe le seuil, la catégorie du plus âgé non.</p>
 ## Le sexe, lui, bascule
 
 <div class="constat">
-  <p>{{ a.avant.part_femmes }} % de femmes parmi les éliminés avant la fusion,
+  <p>{{ a.avant.part_femmes }} % de femmes parmi les éliminés avant la réunification,
   {{ a.apres.part_femmes }} % après — {{ tx.observe_arrondi }} points d’écart, soit
   {{ tx.ecart_types }} écarts-types, p ajustée {{ tx.p_ajustee }}.
   <b>Retenu.</b></p>
@@ -219,7 +221,7 @@ un tirage au sort tranche entre eux deux.
 </ul>
 
 L’ambassade tombe **juste avant la réunification** — épisode
-{{ amb.episode_median }} en médiane, quand la fusion tombe au
+{{ amb.episode_median }} en médiane, quand la réunification tombe au
 {{ a.episode_median }}<sup>e</sup>. Ce n’est pas un hasard de calendrier : elle
 sert précisément à équilibrer les tribus avant de les réunir.
 

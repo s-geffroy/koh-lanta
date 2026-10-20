@@ -77,11 +77,11 @@ aventuriers, <b>{{ site.data.stats.epreuves.epreuves }}</b> épreuves,
     <p><a href="{{ '/statistiques/revenants/' | relative_url }}">Les revenants</a></p>
   </li>
   <li>
-    <p><b>Après la fusion, on n’élimine pas le plus fort.</b> L’éliminé se
+    <p><b>Après la réunification, on n’élimine pas le plus fort.</b> L’éliminé se
     situe au rang {{ aa.rang_force_avant }} sur 100 de son camp avant la
     réunification, {{ aa.rang_force_apres }} après : un écart que le hasard
     suffit à expliquer.</p>
-    <p><a href="{{ '/statistiques/fusion/' | relative_url }}">Avant et après la fusion</a></p>
+    <p><a href="{{ '/statistiques/reunification/' | relative_url }}">Avant et après la réunification</a></p>
   </li>
   <li>
     <p><b>Le conseil d’avant annonce le suivant.</b> Sans voix reçue la fois
