@@ -220,7 +220,7 @@
   tribu: Lanta-naï
   couleur: jaune
   parcours:
-  - tribu: Lanta-Naï
+  - tribu: Lanta-naï
     couleur: jaune
     jour_debut: 1
     jour_fin: 19
@@ -648,14 +648,14 @@
   tribu: Lanta-naï
   couleur: jaune
   parcours:
-  - tribu: <span style="color:#FFFF00">Lanta-naï</span>
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+  - tribu: Lanta-naï
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 20
   - tribu: Tribu réunifiée
     couleur: null
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 20
+    jour_fin: 43
   jour_sortie: 43
   sort: vainqueur
   motif: Gagnant
@@ -679,6 +679,8 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    parcours_jours: 'deduits : jour 1 et jour de sortie par la page individuelle, reunification au jour
+      20 chez les autres aventuriers de la saison'
 - id: xavier-lemasson
   nom: Xavier
   nom_complet: Xavier Lemasson
@@ -1880,7 +1882,7 @@
     couleur: rouge
     jour_debut: 1
     jour_fin: 23
-  - tribu: '|Tribu réunifiée'
+  - tribu: Tribu réunifiée
     couleur: null
     jour_debut: 23
     jour_fin: 37
@@ -1961,7 +1963,15 @@
   edition_origine: null
   tribu: Machiga
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Machiga
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 39
   sort: elimine_poteaux
   motif: Éliminé aux poteaux
@@ -1978,6 +1988,7 @@
     votes_recus: fandom
     localisation: fandom
     couleur: saisons.yml
+    parcours: wiki Survivor (tableau des candidats)
 - id: delphine-bano
   nom: Delphine
   nom_complet: Delphine Bano
@@ -2183,8 +2194,8 @@
   parcours:
   - tribu: Chapera
     couleur: jaune
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 1
+    jour_fin: 13
   jour_sortie: 13
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -2203,6 +2214,8 @@
     couleur: saisons.yml
     parcours: fandom (page individuelle)
     classement: fandom (page individuelle)
+    parcours_jours: 'deduits : jour 1 et jour de sortie par la page individuelle, reunification au jour
+      20 chez les autres aventuriers de la saison'
 - id: jean-bernard-de-cools
   nom: Jean-Bernard
   nom_complet: Jean-Bernard De Cools
@@ -2217,8 +2230,8 @@
   parcours:
   - tribu: Mogo
     couleur: rouge
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 1
+    jour_fin: 16
   jour_sortie: 16
   sort: elimine_conseil
   motif: Éliminé au conseil
@@ -2242,6 +2255,8 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    parcours_jours: 'deduits : jour 1 et jour de sortie par la page individuelle, reunification au jour
+      20 chez les autres aventuriers de la saison'
 - id: nathalie-lapicque
   nom: Nathalie
   nom_complet: Nathalie Lapicque
@@ -2338,12 +2353,12 @@
   parcours:
   - tribu: Chapera
     couleur: jaune
-    jour_debut: null
-    jour_fin: null
-  - tribu: Tribu réunifié
+    jour_debut: 1
+    jour_fin: 20
+  - tribu: Tribu réunifiée
     couleur: null
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 20
+    jour_fin: 26
   jour_sortie: 26
   sort: abandon_medical
   motif: Abandon médical
@@ -2362,6 +2377,8 @@
     genre: arbitrage manuel
     parcours: fandom (page individuelle)
     classement: fandom (page individuelle)
+    parcours_jours: 'deduits : jour 1 et jour de sortie par la page individuelle, reunification au jour
+      20 chez les autres aventuriers de la saison'
 - id: catherine-ehret-mader
   nom: Catherine
   nom_complet: Catherine Ehret-Mader
@@ -2476,7 +2493,7 @@
     couleur: jaune
     jour_debut: null
     jour_fin: null
-  - tribu: Réunifié
+  - tribu: Tribu réunifiée
     couleur: null
     jour_debut: null
     jour_fin: null
@@ -2553,12 +2570,12 @@
   tribu: Mogo
   couleur: rouge
   parcours:
-  - tribu: Mogo (Jou
-    couleur: null
+  - tribu: Mogo
+    couleur: rouge
     jour_debut: 1
     jour_fin: 8
-  - tribu: Chapera (Jou
-    couleur: null
+  - tribu: Chapera
+    couleur: jaune
     jour_debut: 8
     jour_fin: 20
   - tribu: Tribu réunifiée
@@ -2693,7 +2710,15 @@
   edition_origine: null
   tribu: Mogo
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Mogo
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 40
   sort: vainqueur
   motif: Gagnant
@@ -2711,6 +2736,7 @@
     couleur: saisons.yml
     genre: recoupement sur le prenom
     localisation: fandom (page individuelle)
+    parcours: wiki Survivor (tableau des candidats)
     classement: premier par definition (vainqueur)
 - id: aude-reant
   nom: Aude
@@ -2880,10 +2906,10 @@
   tribu: Kumo
   couleur: jaune
   parcours:
-  - tribu: Kumo (Jour 1 - Jour 12
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+  - tribu: Kumo
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 12
   jour_sortie: 12
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -2919,10 +2945,10 @@
   tribu: Kanawa
   couleur: rouge
   parcours:
-  - tribu: Kanawa (Jour 1 - Jour 15
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+  - tribu: Kanawa
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 15
   jour_sortie: 15
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -3093,7 +3119,7 @@
     jour_fin: 19
   - tribu: Tribu réunifiée
     couleur: null
-    jour_debut: 1
+    jour_debut: 19
     jour_fin: 28
   jour_sortie: 28
   sort: elimine_conseil
@@ -3216,14 +3242,14 @@
   tribu: Kanawa
   couleur: rouge
   parcours:
-  - tribu: Kanawa (Jour 1 - Jour 21
+  - tribu: Kanawa
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 21
+  - tribu: Tribu réunifiée
     couleur: null
-    jour_debut: null
-    jour_fin: null
-  - tribu: Tribu réunifiée (Jour 21 - Jour 37
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 21
+    jour_fin: 37
   jour_sortie: 37
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -3301,7 +3327,15 @@
   edition_origine: null
   tribu: Kumo
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Kumo
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 39
   sort: elimine_poteaux
   motif: Éliminé aux poteaux
@@ -3318,6 +3352,7 @@
     votes_recus: fandom
     couleur: saisons.yml
     localisation: fandom (page individuelle)
+    parcours: wiki Survivor (tableau des candidats)
 - id: francis-bordas
   nom: Francis
   nom_complet: Francis Bordas
@@ -3329,7 +3364,15 @@
   edition_origine: null
   tribu: Kanawa
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Kanawa
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 40
   sort: finaliste
   motif: Finaliste
@@ -3346,6 +3389,7 @@
     couleur: saisons.yml
     genre: recoupement sur le prenom
     localisation: fandom (page individuelle)
+    parcours: wiki Survivor (tableau des candidats)
 - id: clemence-castel
   nom: Clémence
   nom_complet: Clémence Castel
@@ -3401,10 +3445,10 @@
   tribu: Tana
   couleur: jaune
   parcours:
-  - tribu: Tana (Jour 1 - Jour 3
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+  - tribu: Tana
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 3
   jour_sortie: 3
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -3440,10 +3484,10 @@
   tribu: Mosso
   couleur: rouge
   parcours:
-  - tribu: Mosso (Jour 1 - Jour 10
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+  - tribu: Mosso
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 10
   jour_sortie: 10
   sort: abandon_medical
   motif: Abandon Médical
@@ -3478,7 +3522,11 @@
   edition_origine: null
   tribu: Mosso
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Mosso
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 12
   sort: abandon_medical
   motif: Abandon Médical
@@ -3495,6 +3543,7 @@
     localisation: fandom
     couleur: saisons.yml
     genre: recoupement sur le prenom
+    parcours: wiki Survivor (tableau des candidats)
 - id: nico-felger
   nom: Nico
   nom_complet: Nico Felger
@@ -3506,7 +3555,11 @@
   edition_origine: null
   tribu: Tana
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Tana
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 12
   sort: elimine_conseil
   motif: Éliminé au conseil
@@ -3523,6 +3576,7 @@
     votes_recus: fandom
     localisation: fandom
     couleur: saisons.yml
+    parcours: wiki Survivor (tableau des candidats)
 - id: jean-claude-errin
   nom: Jean-Claude
   nom_complet: Jean-Claude Errin
@@ -3535,10 +3589,10 @@
   tribu: Mosso
   couleur: rouge
   parcours:
-  - tribu: Mosso (Jour 1 - Jour 18
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+  - tribu: Mosso
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 18
   jour_sortie: 18
   sort: abandon_medical
   motif: Abandon Médical
@@ -3574,10 +3628,10 @@
   tribu: Mosso
   couleur: rouge
   parcours:
-  - tribu: Mosso (Jour 1 - Jour 18
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+  - tribu: Mosso
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 18
   jour_sortie: 18
   sort: elimine_conseil
   motif: Éliminé au conseil
@@ -3613,14 +3667,14 @@
   tribu: Mosso
   couleur: rouge
   parcours:
-  - tribu: Mosso (Jour 1 - Jour 20
+  - tribu: Mosso
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 20
+  - tribu: Tribu réunifiée
     couleur: null
-    jour_debut: null
-    jour_fin: null
-  - tribu: Tribu réunifiée (Jour 20 - Jour 22
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 20
+    jour_fin: 22
   jour_sortie: 22
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -3656,14 +3710,14 @@
   tribu: Mosso
   couleur: rouge
   parcours:
-  - tribu: Mosso (Jour 1- Jour 20
+  - tribu: Mosso
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 20
+  - tribu: Tribu réunifiée
     couleur: null
-    jour_debut: null
-    jour_fin: null
-  - tribu: Tribu Réunifiée (Jour 20 - Jour 25
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 20
+    jour_fin: 25
   jour_sortie: 25
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -3698,7 +3752,15 @@
   edition_origine: null
   tribu: Mosso
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Mosso
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 28
   sort: elimine_conseil
   motif: Éliminé au conseil
@@ -3715,6 +3777,7 @@
     votes_recus: fandom
     localisation: fandom
     couleur: saisons.yml
+    parcours: wiki Survivor (tableau des candidats)
 - id: catherine-brun
   nom: Catherine
   nom_complet: Catherine Brun
@@ -3727,14 +3790,14 @@
   tribu: Mosso
   couleur: rouge
   parcours:
-  - tribu: Mosso (Jour 1 - Jour 20
+  - tribu: Mosso
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 20
+  - tribu: Tribu réunifiée
     couleur: null
-    jour_debut: null
-    jour_fin: null
-  - tribu: Tribu réunifiée (Jour 20 - Jour 31
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 20
+    jour_fin: 31
   jour_sortie: 31
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -3770,10 +3833,10 @@
   tribu: Tana
   couleur: jaune
   parcours:
-  - tribu: Tana (Jour 1 - Jour 20
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+  - tribu: Tana
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 20
   - tribu: Tribu réunifiée
     couleur: null
     jour_debut: 20
@@ -3813,14 +3876,14 @@
   tribu: Tana
   couleur: jaune
   parcours:
-  - tribu: Tana (Jour 1 - Jour 20
+  - tribu: Tana
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 20
+  - tribu: Tribu réunifiée
     couleur: null
-    jour_debut: null
-    jour_fin: null
-  - tribu: Tribu réunifiée (Jour 20 - Jour 37
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 20
+    jour_fin: 37
   jour_sortie: 37
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -3858,12 +3921,12 @@
   parcours:
   - tribu: Tana
     couleur: jaune
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 1
+    jour_fin: 20
   - tribu: Tribu réunifiée
     couleur: null
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 20
+    jour_fin: 39
   jour_sortie: 39
   sort: elimine_orientation
   motif: Éliminé à l’orientation
@@ -3887,6 +3950,8 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    parcours_jours: 'deduits : jour 1 et jour de sortie par la page individuelle, reunification au jour
+      20 chez les autres aventuriers de la saison'
 - id: sebastien-roulle
   nom: Sébastien
   nom_complet: Sébastien Roullé
@@ -3898,7 +3963,23 @@
   edition_origine: null
   tribu: Tana
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Tana
+    couleur: jaune
+    jour_debut: null
+    jour_fin: 12
+  - tribu: Mosso
+    couleur: rouge
+    jour_debut: 12
+    jour_fin: null
+  - tribu: Tana
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 40
   sort: elimine_poteaux
   motif: Éliminé aux poteaux
@@ -3915,6 +3996,7 @@
     votes_recus: fandom
     localisation: fandom
     couleur: saisons.yml
+    parcours: wiki Survivor (tableau des candidats)
 - id: emilie-frahi
   nom: Émilie
   nom_complet: Émilie Frahi
@@ -3927,14 +4009,14 @@
   tribu: Tana
   couleur: jaune
   parcours:
-  - tribu: Tana (Jour 1 - Jour 20
+  - tribu: Tana
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 20
+  - tribu: Tribu réunifiée
     couleur: null
-    jour_debut: null
-    jour_fin: null
-  - tribu: Tribu réunifiée (Jour 20 - Jour 40
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 20
+    jour_fin: 40
   jour_sortie: 40
   sort: finaliste
   motif: Finaliste
@@ -4052,14 +4134,14 @@
   tribu: Guntao
   couleur: jaune
   parcours:
-  - tribu: Guntao (Jour 1 - Jour 4
-    couleur: null
-    jour_debut: null
-    jour_fin: null
-  - tribu: Batang (Jour 5 - Jour 7
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+  - tribu: Guntao
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 4
+  - tribu: Batang
+    couleur: rouge
+    jour_debut: 5
+    jour_fin: 7
   jour_sortie: 7
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -4094,7 +4176,11 @@
   edition_origine: null
   tribu: Batang
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Batang
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 10
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -4110,6 +4196,7 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    parcours: wiki Survivor (tableau des candidats)
 - id: melanie-guyon
   nom: Mélanie
   nom_complet: Mélanie Guyon
@@ -4121,7 +4208,11 @@
   edition_origine: null
   tribu: Batang
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Batang
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 13
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -4137,6 +4228,7 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    parcours: wiki Survivor (tableau des candidats)
 - id: veronique-lambert
   nom: Véronique
   nom_complet: Véronique Lambert
@@ -4148,7 +4240,11 @@
   edition_origine: null
   tribu: Guntao
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Guntao
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 16
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -4164,6 +4260,7 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    parcours: wiki Survivor (tableau des candidats)
 - id: chloe-vavasseur
   nom: Chloé
   nom_complet: Chloé Vavasseur
@@ -4176,10 +4273,10 @@
   tribu: Guntao
   couleur: jaune
   parcours:
-  - tribu: Guntao (Jour 1 - Jour 19
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+  - tribu: Guntao
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 19
   jour_sortie: 19
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -4214,7 +4311,19 @@
   edition_origine: null
   tribu: Guntao
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Guntao
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
+  - tribu: Batang
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 22
   sort: elimine_conseil
   motif: Éliminé au conseil
@@ -4230,6 +4339,7 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    parcours: wiki Survivor (tableau des candidats)
 - id: filomene-mendonca
   nom: Filomène
   nom_complet: Filomène Mendonca
@@ -4242,14 +4352,14 @@
   tribu: Guntao
   couleur: jaune
   parcours:
-  - tribu: Guntao (Jour 1 - Jour 20
+  - tribu: Guntao
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 20
+  - tribu: Tribu réunifiée
     couleur: null
-    jour_debut: null
-    jour_fin: null
-  - tribu: Tribu réunifiée (Jour 20 - Jour 25
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 20
+    jour_fin: 25
   jour_sortie: 25
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -4284,7 +4394,15 @@
   edition_origine: null
   tribu: Guntao
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Guntao
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 29
   sort: abandon_volontaire
   motif: Échange avec Grégoire
@@ -4300,6 +4418,7 @@
     votes_recus: fandom
     couleur: saisons.yml
     genre: arbitrage manuel
+    parcours: wiki Survivor (tableau des candidats)
 - id: gregoire-delachaux
   nom: Grégoire
   nom_complet: Grégoire Delachaux
@@ -4311,7 +4430,15 @@
   edition_origine: null
   tribu: Guntao
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Guntao
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 31
   sort: elimine_conseil
   motif: Éliminé au conseil
@@ -4327,6 +4454,7 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    parcours: wiki Survivor (tableau des candidats)
 - id: laurent-boudes
   nom: Laurent
   nom_complet: Laurent Boudes
@@ -4338,7 +4466,15 @@
   edition_origine: null
   tribu: Guntao
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Guntao
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 34
   sort: elimine_conseil
   motif: Éliminé au conseil
@@ -4354,6 +4490,7 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    parcours: wiki Survivor (tableau des candidats)
 - id: patrick-brasier-de-thuy
   nom: Patrick
   nom_complet: Patrick Brasier De Thuy
@@ -4365,7 +4502,15 @@
   edition_origine: null
   tribu: Batang
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Batang
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 37
   sort: elimine_conseil
   motif: Éliminé au conseil
@@ -4381,6 +4526,7 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    parcours: wiki Survivor (tableau des candidats)
 - id: simon-quintilla
   nom: Simon
   nom_complet: Simon Quintilla
@@ -4392,7 +4538,15 @@
   edition_origine: null
   tribu: Batang
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Batang
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 38
   sort: elimine_orientation
   motif: Éliminé à l'orientation
@@ -4408,6 +4562,7 @@
     nom_complet: fandom
     votes_recus: fandom
     couleur: saisons.yml
+    parcours: wiki Survivor (tableau des candidats)
 - id: maryline-hemelsdael
   nom: Maryline
   nom_complet: Maryline Hemelsdael
@@ -4446,7 +4601,15 @@
   edition_origine: null
   tribu: Batang
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Batang
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 40
   sort: vainqueur
   motif: Gagnants
@@ -4463,6 +4626,7 @@
     votes_recus: fandom
     couleur: saisons.yml
     genre: arbitrage manuel
+    parcours: wiki Survivor (tableau des candidats)
     classement: premier par definition (vainqueur)
 - id: jade-handi
   nom: Jade
@@ -5294,10 +5458,10 @@
   tribu: Koror
   couleur: rouge
   parcours:
-  - tribu: Koror (Jour 1 - Jour 3
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+  - tribu: Koror
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 3
   jour_sortie: 3
   sort: elimine_conseil
   motif: Éliminé au conseil
@@ -5372,10 +5536,10 @@
   tribu: Mawaï
   couleur: jaune
   parcours:
-  - tribu: Mawaï (Jour 3 - Jour 9
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+  - tribu: Mawaï
+    couleur: jaune
+    jour_debut: 3
+    jour_fin: 9
   jour_sortie: 9
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -5410,10 +5574,10 @@
   tribu: Koror
   couleur: rouge
   parcours:
-  - tribu: Koror (Jour 2 - Jour 13
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+  - tribu: Koror
+    couleur: rouge
+    jour_debut: 2
+    jour_fin: 13
   jour_sortie: 13
   sort: abandon_medical
   motif: Abandon médical
@@ -5838,7 +6002,15 @@
   edition_origine: null
   tribu: Koror
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Koror
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 38
   sort: elimine_poteaux
   motif: Éliminée aux poteaux
@@ -5855,6 +6027,7 @@
     votes_recus: fandom
     couleur: saisons.yml
     localisation: fandom (page individuelle)
+    parcours: wiki Survivor (tableau des candidats)
 - id: patrick-merle
   nom: Patrick
   nom_complet: Patrick Merle
@@ -5909,7 +6082,15 @@
   edition_origine: null
   tribu: Koror
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Koror
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 39
   sort: vainqueur
   motif: Gagnante
@@ -5927,6 +6108,7 @@
     votes_recus: fandom
     couleur: saisons.yml
     localisation: fandom (page individuelle)
+    parcours: wiki Survivor (tableau des candidats)
     classement: premier par definition (vainqueur)
 - id: frederique-brugiroux
   nom: Frédérique
@@ -5940,10 +6122,10 @@
   tribu: Vang
   couleur: jaune
   parcours:
-  - tribu: Vang (Jour 1 - Jour 3
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+  - tribu: Vang
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 3
   jour_sortie: 3
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -5979,10 +6161,10 @@
   tribu: Do
   couleur: rouge
   parcours:
-  - tribu: Do (Jour 1 - Jour 6
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+  - tribu: Do
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 6
   jour_sortie: 6
   sort: elimine_conseil
   motif: Éliminé au conseil
@@ -6017,7 +6199,15 @@
   edition_origine: null
   tribu: Do
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Do
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
+  - tribu: Vang
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 10
   sort: abandon_medical
   motif: Abandon médical
@@ -6034,6 +6224,7 @@
     localisation: fandom
     couleur: saisons.yml
     genre: recoupement sur le prenom
+    parcours: wiki Survivor (tableau des candidats)
 - id: virginie-mercadal-pioli
   nom: Virginie
   nom_complet: Virginie Mercadal Pioli
@@ -6045,7 +6236,11 @@
   edition_origine: null
   tribu: Vang
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Vang
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 12
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -6062,6 +6257,7 @@
     votes_recus: fandom
     localisation: fandom
     couleur: saisons.yml
+    parcours: wiki Survivor (tableau des candidats)
 - id: jennifer-lieutaud
   nom: Jennifer
   nom_complet: Jennifer Lieutaud
@@ -6073,7 +6269,15 @@
   edition_origine: null
   tribu: Vang
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Vang
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
+  - tribu: Do
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 15
   sort: abandon_volontaire
   motif: Abandon volontaire
@@ -6090,6 +6294,7 @@
     localisation: fandom
     couleur: saisons.yml
     genre: arbitrage manuel
+    parcours: wiki Survivor (tableau des candidats)
 - id: jean-pierre-pigato
   nom: Jean-Pierre
   nom_complet: Jean-Pierre Pigato
@@ -6101,7 +6306,15 @@
   edition_origine: null
   tribu: Do
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Do
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
+  - tribu: Vang
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 18
   sort: elimine_conseil
   motif: Éliminé au conseil
@@ -6118,6 +6331,7 @@
     votes_recus: fandom
     localisation: fandom
     couleur: saisons.yml
+    parcours: wiki Survivor (tableau des candidats)
 - id: audrey-perez
   nom: Audrey
   nom_complet: Audrey Perez
@@ -6130,14 +6344,14 @@
   tribu: Vang
   couleur: jaune
   parcours:
-  - tribu: Vang (Jour 2 - Jour 8
-    couleur: null
-    jour_debut: null
-    jour_fin: null
-  - tribu: Do (Jour 8 - Jour 20
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+  - tribu: Vang
+    couleur: jaune
+    jour_debut: 2
+    jour_fin: 8
+  - tribu: Do
+    couleur: rouge
+    jour_debut: 8
+    jour_fin: 20
   jour_sortie: 20
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -6172,7 +6386,15 @@
   edition_origine: null
   tribu: Vang
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Vang
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
+  - tribu: Do
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 22
   sort: elimine_ambassadeurs
   motif: Éliminé aux ambassadeurs
@@ -6189,6 +6411,7 @@
     votes_recus: fandom
     localisation: fandom
     couleur: saisons.yml
+    parcours: wiki Survivor (tableau des candidats)
 - id: valentin-d-hoore
   nom: Valentin
   nom_complet: Valentin D'Hoore
@@ -6200,7 +6423,15 @@
   edition_origine: null
   tribu: Do
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Do
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 24
   sort: abandon_medical
   motif: Abandon médical
@@ -6217,6 +6448,7 @@
     localisation: fandom
     couleur: saisons.yml
     genre: arbitrage manuel
+    parcours: wiki Survivor (tableau des candidats)
 - id: abdellah-akriche
   nom: Abdellah
   nom_complet: Abdellah Akriche
@@ -6229,18 +6461,18 @@
   tribu: Do
   couleur: rouge
   parcours:
-  - tribu: Do (Jour 2 - Jour 8
+  - tribu: Do
+    couleur: rouge
+    jour_debut: 2
+    jour_fin: 8
+  - tribu: Do
+    couleur: rouge
+    jour_debut: 8
+    jour_fin: 22
+  - tribu: Tribu réunifiée
     couleur: null
-    jour_debut: null
-    jour_fin: null
-  - tribu: Do (Jour 8 - Jour 22
-    couleur: null
-    jour_debut: null
-    jour_fin: null
-  - tribu: Tribu réunifiée (Jour 22 - Jour 25
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 22
+    jour_fin: 25
   jour_sortie: 25
   sort: elimine_conseil
   motif: Éliminé au conseil
@@ -6276,26 +6508,26 @@
   tribu: Vang
   couleur: jaune
   parcours:
-  - tribu: Vang (Jour 2 - Jour 8
+  - tribu: Vang
+    couleur: jaune
+    jour_debut: 2
+    jour_fin: 8
+  - tribu: Vang
+    couleur: jaune
+    jour_debut: 8
+    jour_fin: 15
+  - tribu: Éliminée
     couleur: null
-    jour_debut: null
-    jour_fin: null
-  - tribu: Vang (Jour 8 - Jour 15
+    jour_debut: 15
+    jour_fin: 16
+  - tribu: Do
+    couleur: rouge
+    jour_debut: 16
+    jour_fin: 22
+  - tribu: Tribu réunifiée
     couleur: null
-    jour_debut: null
-    jour_fin: null
-  - tribu: Éliminée (Jour 15 - Jour 16
-    couleur: null
-    jour_debut: null
-    jour_fin: null
-  - tribu: Do (Jour 16 - Jour 22
-    couleur: null
-    jour_debut: null
-    jour_fin: null
-  - tribu: Tribu réunifiée (Jour 22 - Jour 29
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 22
+    jour_fin: 29
   jour_sortie: 29
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -6331,14 +6563,14 @@
   tribu: Vang
   couleur: jaune
   parcours:
-  - tribu: Vang (Jour 1 - Jour 8
-    couleur: null
-    jour_debut: null
-    jour_fin: null
-  - tribu: Vang (Jour 8 - Jour 22
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+  - tribu: Vang
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 8
+  - tribu: Vang
+    couleur: jaune
+    jour_debut: 8
+    jour_fin: 22
   jour_sortie: 32
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -6369,7 +6601,19 @@
   edition_origine: null
   tribu: Vang
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Vang
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
+  - tribu: Do
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 35
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -6386,6 +6630,7 @@
     votes_recus: fandom
     localisation: fandom
     couleur: saisons.yml
+    parcours: wiki Survivor (tableau des candidats)
 - id: kunle-m-babacere-pakorona
   nom: Kunlé
   nom_complet: Kunlé M'Babacéré Pakorona
@@ -6397,7 +6642,19 @@
   edition_origine: null
   tribu: Do
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Do
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
+  - tribu: Vang
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 38
   sort: elimine_conseil
   motif: Éliminé au conseil
@@ -6414,6 +6671,7 @@
     votes_recus: fandom
     localisation: fandom
     couleur: saisons.yml
+    parcours: wiki Survivor (tableau des candidats)
 - id: veronique-begue
   nom: Véronique
   nom_complet: Véronique Bègue
@@ -6425,7 +6683,19 @@
   edition_origine: null
   tribu: Do
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Do
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
+  - tribu: Vang
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 39
   sort: elimine_orientation
   motif: Éliminée à l'orientation
@@ -6442,6 +6712,7 @@
     votes_recus: fandom
     localisation: fandom
     couleur: saisons.yml
+    parcours: wiki Survivor (tableau des candidats)
 - id: wafa-el-mejjad
   nom: Wafa
   nom_complet: Wafa El Mejjad
@@ -6781,7 +7052,11 @@
   edition_origine: null
   tribu: Wasaï
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Wasaï
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 12
   sort: elimine_conseil
   motif: Éliminé au conseil
@@ -6798,6 +7073,7 @@
     votes_recus: fandom
     localisation: fandom
     couleur: saisons.yml
+    parcours: wiki Survivor (tableau des candidats)
 - id: delisia-fettasi
   nom: Délisia
   nom_complet: Délisia Fettasi
@@ -6809,7 +7085,11 @@
   edition_origine: null
   tribu: Wasaï
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Wasaï
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 15
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -6828,6 +7108,7 @@
     localisation: fandom
     couleur: saisons.yml
     classement: fandom (page individuelle)
+    parcours: wiki Survivor (tableau des candidats)
 - id: caroline-matteucci
   nom: Caroline
   nom_complet: Caroline Matteucci
@@ -6839,7 +7120,11 @@
   edition_origine: null
   tribu: Wasaï
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Wasaï
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 18
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -6856,6 +7141,7 @@
     votes_recus: fandom
     localisation: fandom
     couleur: saisons.yml
+    parcours: wiki Survivor (tableau des candidats)
 - id: maxime-boulet
   nom: Maxime
   nom_complet: Maxime Boulet
@@ -6904,7 +7190,15 @@
   edition_origine: null
   tribu: Wasaï
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Wasaï
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 21
   sort: elimine_conseil
   motif: Éliminé au conseil
@@ -6921,6 +7215,7 @@
     votes_recus: fandom
     localisation: fandom
     couleur: saisons.yml
+    parcours: wiki Survivor (tableau des candidats)
 - id: olivier-moenaert
   nom: Olivier
   nom_complet: Olivier Moenaert
@@ -6975,7 +7270,15 @@
   edition_origine: null
   tribu: Mambok
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Mambok
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 27
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -6992,6 +7295,7 @@
     votes_recus: fandom
     localisation: fandom
     couleur: saisons.yml
+    parcours: wiki Survivor (tableau des candidats)
 - id: virginie-jarry
   nom: Virginie
   nom_complet: Virginie Jarry
@@ -7038,7 +7342,15 @@
   edition_origine: 'Koh-Lanta : La Revanche des Héros'
   tribu: Wasaï
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Wasaï
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 33
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -7056,6 +7368,7 @@
     edition_origine: fandom
     localisation: fandom
     couleur: saisons.yml
+    parcours: wiki Survivor (tableau des candidats)
 - id: alexandra-pouillon
   nom: Alexandra
   nom_complet: Alexandra Pouillon
@@ -7102,7 +7415,15 @@
   edition_origine: 'Koh-Lanta : La Nouvelle Édition'
   tribu: Mambok
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Mambok
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 39
   sort: elimine_conseil
   motif: Éliminé au conseil
@@ -7120,6 +7441,7 @@
     edition_origine: fandom
     localisation: fandom
     couleur: saisons.yml
+    parcours: wiki Survivor (tableau des candidats)
 - id: ella-gbezan
   nom: Ella
   nom_complet: Ella Gbezan
@@ -7211,7 +7533,7 @@
   tribu: Wasaï
   couleur: jaune
   parcours:
-  - tribu: Wasai
+  - tribu: Wasaï
     couleur: jaune
     jour_debut: null
     jour_fin: null
@@ -7250,7 +7572,15 @@
   edition_origine: null
   tribu: Mambok
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Mambok
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 41
   sort: vainqueur
   motif: Gagnant
@@ -7268,6 +7598,7 @@
     localisation: fandom
     couleur: saisons.yml
     genre: arbitrage manuel
+    parcours: wiki Survivor (tableau des candidats)
     classement: premier par definition (vainqueur)
 - id: melanie-boimare
   nom: Mélanie
@@ -8057,8 +8388,8 @@
   parcours:
   - tribu: Lankawaï
     couleur: jaune
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 1
+    jour_fin: 3
   jour_sortie: 3
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -8080,6 +8411,8 @@
     parcours: fandom (page individuelle)
     classement: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    parcours_jours: 'deduits : jour 1 et jour de sortie par la page individuelle, reunification au jour
+      19 chez les autres aventuriers de la saison'
 - id: marie-anne-queniart
   nom: Marie-Anne
   nom_complet: Marie-Anne Queniart
@@ -8094,8 +8427,8 @@
   parcours:
   - tribu: Tinggi
     couleur: rouge
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 1
+    jour_fin: 6
   jour_sortie: 6
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -8117,6 +8450,8 @@
     parcours: fandom (page individuelle)
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
+    parcours_jours: 'deduits : jour 1 et jour de sortie par la page individuelle, reunification au jour
+      19 chez les autres aventuriers de la saison'
 - id: benoit-jorion-fahy
   nom: Benoît
   nom_complet: Benoît Jorion-Fahy
@@ -8211,7 +8546,7 @@
   tribu: Lankawaï
   couleur: jaune
   parcours:
-  - tribu: Lankawai
+  - tribu: Lankawaï
     couleur: jaune
     jour_debut: 1
     jour_fin: 7
@@ -8254,8 +8589,12 @@
   tribu: Lankawaï
   couleur: jaune
   parcours:
-  - tribu: Lankawaï / Tinggi (après réintégration
-    couleur: null
+  - tribu: Lankawaï
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tinggi
+    couleur: rouge
     jour_debut: null
     jour_fin: null
   jour_sortie: 15
@@ -8469,7 +8808,7 @@
   tribu: Lankawaï
   couleur: jaune
   parcours:
-  - tribu: Lankawai
+  - tribu: Lankawaï
     couleur: jaune
     jour_debut: null
     jour_fin: null
@@ -8512,7 +8851,7 @@
     couleur: rouge
     jour_debut: 1
     jour_fin: 7
-  - tribu: LankawaÏ
+  - tribu: Lankawaï
     couleur: jaune
     jour_debut: 7
     jour_fin: 19
@@ -8635,12 +8974,12 @@
   parcours:
   - tribu: Tinggi
     couleur: rouge
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 1
+    jour_fin: 19
   - tribu: Tribu réunifiée
     couleur: null
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 19
+    jour_fin: 34
   jour_sortie: 34
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -8664,6 +9003,8 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    parcours_jours: 'deduits : jour 1 et jour de sortie par la page individuelle, reunification au jour
+      19 chez les autres aventuriers de la saison'
 - id: sebastien-ballesteros
   nom: Sébastien
   nom_complet: Sébastien Ballesteros
@@ -8793,12 +9134,12 @@
   parcours:
   - tribu: Tinggi
     couleur: rouge
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 1
+    jour_fin: 19
   - tribu: Tribu réunifiée
     couleur: null
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 19
+    jour_fin: 40
   jour_sortie: 40
   sort: finaliste
   motif: Finaliste
@@ -8816,6 +9157,8 @@
     genre: recoupement sur le prenom
     localisation: fandom (page individuelle)
     parcours: fandom (page individuelle)
+    parcours_jours: 'deduits : jour 1 et jour de sortie par la page individuelle, reunification au jour
+      19 chez les autres aventuriers de la saison'
 - id: marc-rambaud
   nom: Marc
   nom_complet: Marc Rambaud
@@ -8947,8 +9290,8 @@
   parcours:
   - tribu: Aopoh
     couleur: rouge
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 1
+    jour_fin: 6
   jour_sortie: 6
   sort: abandon_volontaire
   motif: Abandon volontaire
@@ -8972,6 +9315,8 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    parcours_jours: 'deduits : jour 1 et jour de sortie par la page individuelle, reunification au jour
+      19 chez les autres aventuriers de la saison'
 - id: celine-parat-yeghiayan
   nom: Céline
   nom_complet: Céline Parat-Yeghiayan
@@ -9062,10 +9407,14 @@
   tribu: Aopoh
   couleur: rouge
   parcours:
-  - tribu: Aopoh (jour 1-10 puis 10-12
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+  - tribu: Aopoh
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 10
+  - tribu: Aopoh
+    couleur: rouge
+    jour_debut: 10
+    jour_fin: 12
   jour_sortie: 12
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -9226,10 +9575,14 @@
   tribu: Aopoh
   couleur: rouge
   parcours:
-  - tribu: Aopoh (jour 1-10 puis jour 10-19
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+  - tribu: Aopoh
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 10
+  - tribu: Aopoh
+    couleur: rouge
+    jour_debut: 10
+    jour_fin: 19
   jour_sortie: 20
   sort: elimine_conseil
   motif: Éliminé au conseil
@@ -9437,12 +9790,12 @@
   parcours:
   - tribu: Aopoh
     couleur: rouge
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 1
+    jour_fin: 19
   - tribu: Tribu réunifiée
     couleur: null
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 19
+    jour_fin: 32
   jour_sortie: 32
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -9466,6 +9819,8 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    parcours_jours: 'deduits : jour 1 et jour de sortie par la page individuelle, reunification au jour
+      19 chez les autres aventuriers de la saison'
 - id: nicolas-rouye
   nom: Nicolas
   nom_complet: Nicolas Rouyé
@@ -10557,8 +10912,8 @@
   parcours:
   - tribu: Takeo
     couleur: bleu
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 1
+    jour_fin: 3
   jour_sortie: 3
   sort: elimine_conseil
   motif: Éliminé au conseil
@@ -10582,6 +10937,8 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    parcours_jours: 'deduits : jour 1 et jour de sortie par la page individuelle, reunification au jour
+      22 chez les autres aventuriers de la saison'
 - id: sabine-ollivier
   nom: Sabine
   nom_complet: Sabine Ollivier
@@ -10596,8 +10953,8 @@
   parcours:
   - tribu: Sokka
     couleur: jaune
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 1
+    jour_fin: 6
   jour_sortie: 6
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -10621,6 +10978,8 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    parcours_jours: 'deduits : jour 1 et jour de sortie par la page individuelle, reunification au jour
+      22 chez les autres aventuriers de la saison'
 - id: hada-ghoulam
   nom: Hada
   nom_complet: Hada Ghoulam
@@ -10635,8 +10994,8 @@
   parcours:
   - tribu: Takeo
     couleur: bleu
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 1
+    jour_fin: 9
   jour_sortie: 9
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -10660,6 +11019,8 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    parcours_jours: 'deduits : jour 1 et jour de sortie par la page individuelle, reunification au jour
+      22 chez les autres aventuriers de la saison'
 - id: franck-michel
   nom: Franck
   nom_complet: Franck Michel
@@ -10674,8 +11035,8 @@
   parcours:
   - tribu: Bokor
     couleur: rouge
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 1
+    jour_fin: 12
   jour_sortie: 12
   sort: elimine_conseil
   motif: Éliminé au conseil
@@ -10699,6 +11060,8 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    parcours_jours: 'deduits : jour 1 et jour de sortie par la page individuelle, reunification au jour
+      22 chez les autres aventuriers de la saison'
 - id: felicie-greugny
   nom: Félicie
   nom_complet: Félicie Greugny
@@ -10799,8 +11162,8 @@
   parcours:
   - tribu: Bokor
     couleur: rouge
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 1
+    jour_fin: 18
   jour_sortie: 18
   sort: abandon_medical
   motif: Abandon médical
@@ -10824,6 +11187,8 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    parcours_jours: 'deduits : jour 1 et jour de sortie par la page individuelle, reunification au jour
+      22 chez les autres aventuriers de la saison'
 - id: maria-beccaris
   nom: Maria
   nom_complet: Maria Beccaris
@@ -10840,8 +11205,8 @@
     couleur: jaune
     jour_debut: null
     jour_fin: null
-  - tribu: Bokkor
-    couleur: null
+  - tribu: Bokor
+    couleur: rouge
     jour_debut: null
     jour_fin: null
   jour_sortie: 19
@@ -10881,8 +11246,8 @@
   parcours:
   - tribu: Takeo
     couleur: bleu
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 1
+    jour_fin: 19
   jour_sortie: 19
   sort: elimine_conseil
   motif: Éliminé au conseil
@@ -10906,6 +11271,8 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    parcours_jours: 'deduits : jour 1 et jour de sortie par la page individuelle, reunification au jour
+      22 chez les autres aventuriers de la saison'
 - id: yassin-metiri
   nom: Yassin
   nom_complet: Yassin Metiri
@@ -10920,8 +11287,8 @@
   parcours:
   - tribu: Bokor
     couleur: rouge
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 1
+    jour_fin: 22
   jour_sortie: 22
   sort: elimine_ambassadeurs
   motif: Éliminé par les ambassadeurs
@@ -10945,6 +11312,8 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    parcours_jours: 'deduits : jour 1 et jour de sortie par la page individuelle, reunification au jour
+      22 chez les autres aventuriers de la saison'
 - id: manuella-baudet
   nom: Manuella
   nom_complet: Manuella Baudet
@@ -10959,12 +11328,12 @@
   parcours:
   - tribu: Bokor
     couleur: rouge
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 1
+    jour_fin: 22
   - tribu: Tribu réunifiée
     couleur: null
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 22
+    jour_fin: 25
   jour_sortie: 25
   sort: abandon_medical
   motif: Abandon médical
@@ -10988,6 +11357,8 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    parcours_jours: 'deduits : jour 1 et jour de sortie par la page individuelle, reunification au jour
+      22 chez les autres aventuriers de la saison'
 - id: sandro-gonzalez-schena
   nom: Sandro
   nom_complet: Sandro Gonzalez Schena
@@ -11049,12 +11420,12 @@
   parcours:
   - tribu: Bokor
     couleur: rouge
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 1
+    jour_fin: 22
   - tribu: Tribu réunifiée
     couleur: null
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 22
+    jour_fin: 29
   jour_sortie: 29
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -11078,6 +11449,8 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    parcours_jours: 'deduits : jour 1 et jour de sortie par la page individuelle, reunification au jour
+      22 chez les autres aventuriers de la saison'
 - id: corentin-albertini
   nom: Corentin
   nom_complet: Corentin Albertini
@@ -11268,12 +11641,12 @@
   parcours:
   - tribu: Takeo
     couleur: bleu
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 1
+    jour_fin: 22
   - tribu: Tribu réunifiée
     couleur: null
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 22
+    jour_fin: 39
   jour_sortie: 39
   sort: elimine_orientation
   motif: Éliminée à l'orientation
@@ -11297,6 +11670,8 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    parcours_jours: 'deduits : jour 1 et jour de sortie par la page individuelle, reunification au jour
+      22 chez les autres aventuriers de la saison'
 - id: vincent-roux
   nom: Vincent
   nom_complet: Vincent Roux
@@ -11401,12 +11776,12 @@
   parcours:
   - tribu: Takeo
     couleur: bleu
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 1
+    jour_fin: 22
   - tribu: Tribu réunifiée
     couleur: null
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 22
+    jour_fin: 40
   jour_sortie: 40
   sort: vainqueur
   motif: Gagnant
@@ -11430,6 +11805,8 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    parcours_jours: 'deduits : jour 1 et jour de sortie par la page individuelle, reunification au jour
+      22 chez les autres aventuriers de la saison'
 - id: marine-alves
   nom: Marine
   nom_complet: Marine Alves
@@ -20430,8 +20807,8 @@
   parcours:
   - tribu: Aucune
     couleur: null
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 1
+    jour_fin: 1
   jour_sortie: 1
   sort: elimine_conseil
   motif: Éliminée à l'épreuve initiale
@@ -20455,6 +20832,8 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    parcours_jours: 'deduits : jour 1 et jour de sortie par la page individuelle, reunification au jour
+      9 chez les autres aventuriers de la saison'
 - id: jean-luc-fiorina
   nom: Jean-Luc
   nom_complet: Jean-Luc Fiorina
@@ -20586,7 +20965,11 @@
   edition_origine: Panama
   tribu: Jacaré
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Jacaré
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 9
   sort: elimine_ambassadeurs
   motif: Éliminé aux ambassadeurs
@@ -20604,6 +20987,7 @@
     couleur: saisons.yml
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
+    parcours: wiki Survivor (tableau des candidats)
 - id: clemence-castel
   nom: Clémence
   nom_complet: Clémence Castel
@@ -20660,14 +21044,14 @@
   tribu: Jacaré
   couleur: rouge
   parcours:
-  - tribu: Jacaré (Jour 1 - Jour 9
+  - tribu: Jacaré
+    couleur: rouge
+    jour_debut: 1
+    jour_fin: 9
+  - tribu: Tribu réunifiée
     couleur: null
-    jour_debut: null
-    jour_fin: null
-  - tribu: Tribu réunifiée (Jour 9 - Jour 12
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 9
+    jour_fin: 12
   jour_sortie: 12
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -20880,14 +21264,14 @@
   tribu: Tupan
   couleur: jaune
   parcours:
-  - tribu: Tupan (Jour 1 - Jour 9
+  - tribu: Tupan
+    couleur: jaune
+    jour_debut: 1
+    jour_fin: 9
+  - tribu: Tribu réunifiée
     couleur: null
-    jour_debut: null
-    jour_fin: null
-  - tribu: Tribu réunifiée (Jour 9 - Jour 20
-    couleur: null
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 9
+    jour_fin: 20
   jour_sortie: 20
   sort: elimine_poteaux
   motif: Éliminée aux poteaux
@@ -21089,7 +21473,11 @@
   edition_origine: Pacifique
   tribu: Tiac
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Tiac
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 7
   sort: elimine_conseil
   motif: Éliminé au conseil
@@ -21107,6 +21495,7 @@
     couleur: saisons.yml
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
+    parcours: wiki Survivor (tableau des candidats)
 - id: gwendal-peizerat
   nom: Gwendal Peizerat
   nom_complet: Gwendal Peizerat
@@ -21200,7 +21589,15 @@
   edition_origine: Palau
   tribu: Tiac
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Tiac
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 12
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -21218,6 +21615,7 @@
     couleur: saisons.yml
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
+    parcours: wiki Survivor (tableau des candidats)
 - id: frederique-jossinet
   nom: Frédérique Jossinet
   nom_complet: Frédérique Jossinet
@@ -21534,7 +21932,15 @@
   edition_origine: Palawan
   tribu: Tiac
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Tiac
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 21
   sort: vainqueur
   motif: Gagnant
@@ -21551,6 +21957,7 @@
     edition_origine: fandom
     couleur: saisons.yml
     genre: recoupement sur le prenom
+    parcours: wiki Survivor (tableau des candidats)
     classement: premier par definition (vainqueur)
     profession: reprise de sa participation de 2007
 - id: fabienne-lefebvre-trehoux
@@ -22198,7 +22605,11 @@
   edition_origine: null
   tribu: Tengah
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Tengah
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 8
   sort: abandon_medical
   motif: Abandon médical
@@ -22215,6 +22626,7 @@
     couleur: saisons.yml
     genre: recoupement sur le prenom
     localisation: fandom (page individuelle)
+    parcours: wiki Survivor (tableau des candidats)
 - id: laurence-pizzocchia
   nom: Laurence
   nom_complet: Laurence Pizzocchia
@@ -22226,7 +22638,11 @@
   edition_origine: null
   tribu: Tengah
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Tengah
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 8
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -22243,6 +22659,7 @@
     votes_recus: fandom
     couleur: saisons.yml
     localisation: fandom (page individuelle)
+    parcours: wiki Survivor (tableau des candidats)
 - id: sara-tallon
   nom: Sara
   nom_complet: Sara Tallon
@@ -22297,7 +22714,11 @@
   edition_origine: null
   tribu: Tengah
   couleur: jaune
-  parcours: null
+  parcours:
+  - tribu: Tengah
+    couleur: jaune
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 13
   sort: elimine_ambassadeurs
   motif: Éliminée aux ambassadeurs
@@ -22314,6 +22735,7 @@
     votes_recus: fandom
     couleur: saisons.yml
     localisation: fandom (page individuelle)
+    parcours: wiki Survivor (tableau des candidats)
 - id: christina-chevry
   nom: Christina
   nom_complet: Christina Chevry
@@ -22325,7 +22747,15 @@
   edition_origine: null
   tribu: Simban
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Simban
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 14
   sort: elimine_conseil
   motif: Éliminée au conseil
@@ -22342,6 +22772,7 @@
     votes_recus: fandom
     couleur: saisons.yml
     localisation: fandom (page individuelle)
+    parcours: wiki Survivor (tableau des candidats)
 - id: freddy-boucher
   nom: Freddy
   nom_complet: Freddy Boucher
@@ -22487,11 +22918,11 @@
     couleur: null
     jour_debut: 1
     jour_fin: 4
-  - tribu: '|Tengah'
+  - tribu: Tengah
     couleur: jaune
     jour_debut: 4
     jour_fin: 14
-  - tribu: '|Tribu réunifiée'
+  - tribu: Tribu réunifiée
     couleur: null
     jour_debut: 14
     jour_fin: 22
@@ -22572,7 +23003,15 @@
   edition_origine: null
   tribu: Simban
   couleur: rouge
-  parcours: null
+  parcours:
+  - tribu: Simban
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: null
+    jour_fin: null
   jour_sortie: 23
   sort: finaliste
   motif: Finaliste
@@ -22589,6 +23028,7 @@
     couleur: saisons.yml
     genre: recoupement sur le prenom
     localisation: fandom (page individuelle)
+    parcours: wiki Survivor (tableau des candidats)
 - id: laurent-maistret
   nom: Laurent
   nom_complet: Laurent Maistret

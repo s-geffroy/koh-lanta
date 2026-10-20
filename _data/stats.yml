@@ -10250,6 +10250,12 @@ completude:
     manquants: 0
     part: 100
     depuis_page_individuelle: 1
+  - champ: parcours
+    libelle: Trajectoire de tribus
+    remplis: 638
+    manquants: 7
+    part: "98,9"
+    depuis_page_individuelle: 293
   - champ: couleur
     libelle: Couleur de départ
     remplis: 637
@@ -10274,12 +10280,6 @@ completude:
     manquants: 18
     part: "97,2"
     depuis_page_individuelle: 255
-  - champ: parcours
-    libelle: Trajectoire de tribus
-    remplis: 592
-    manquants: 53
-    part: "91,8"
-    depuis_page_individuelle: 293
   - champ: classement
     libelle: Rang final
     remplis: 576
@@ -10300,10 +10300,10 @@ completude:
     depuis_page_individuelle: 547
   champs_complets: 5
   champs_suivis: 13
-  trous: 364
+  trous: 318
   valeurs_suivies: 8385
   comblees: 2295
-  part_remplie: "95,66"
+  part_remplie: "96,21"
 palmares:
   renseignees: 549
   compares: 549
@@ -30618,7 +30618,7 @@ completude_saisons:
     annee: 2003
     speciale: false
     effectif: 18
-    score: "90,6"
+    score: 91
     cellules:
     - cle: casting
       valeur: 100
@@ -30651,11 +30651,11 @@ completude_saisons:
       nature: part
       valeur_arrondie: 100
     - cle: parcours
-      valeur: "94,4"
-      texte: 17/18
-      etat: eleve
+      valeur: 100
+      texte: 18/18
+      etat: complet
       nature: part
-      valeur_arrondie: 94
+      valeur_arrondie: 100
     - cle: jour_sortie
       valeur: 100
       texte: 18/18
@@ -30743,7 +30743,7 @@ completude_saisons:
     annee: 2004
     speciale: false
     effectif: 16
-    score: "88,5"
+    score: "88,8"
     cellules:
     - cle: casting
       valeur: 100
@@ -30776,11 +30776,11 @@ completude_saisons:
       nature: part
       valeur_arrondie: 100
     - cle: parcours
-      valeur: "87,5"
-      texte: 14/16
+      valeur: "93,8"
+      texte: 15/16
       etat: eleve
       nature: part
-      valeur_arrondie: 88
+      valeur_arrondie: 94
     - cle: jour_sortie
       valeur: 100
       texte: 16/16
@@ -30868,7 +30868,7 @@ completude_saisons:
     annee: 2005
     speciale: false
     effectif: 17
-    score: "97,5"
+    score: "98,2"
     cellules:
     - cle: casting
       valeur: 100
@@ -30901,11 +30901,11 @@ completude_saisons:
       nature: part
       valeur_arrondie: 100
     - cle: parcours
-      valeur: "88,2"
-      texte: 15/17
-      etat: eleve
+      valeur: 100
+      texte: 17/17
+      etat: complet
       nature: part
-      valeur_arrondie: 88
+      valeur_arrondie: 100
     - cle: jour_sortie
       valeur: 100
       texte: 17/17
@@ -30993,7 +30993,7 @@ completude_saisons:
     annee: 2006
     speciale: false
     effectif: 16
-    score: "88,8"
+    score: "90,3"
     cellules:
     - cle: casting
       valeur: 100
@@ -31026,11 +31026,11 @@ completude_saisons:
       nature: part
       valeur_arrondie: 100
     - cle: parcours
-      valeur: 75
-      texte: 12/16
-      etat: partiel
+      valeur: 100
+      texte: 16/16
+      etat: complet
       nature: part
-      valeur_arrondie: 75
+      valeur_arrondie: 100
     - cle: jour_sortie
       valeur: 100
       texte: 16/16
@@ -31118,7 +31118,7 @@ completude_saisons:
     annee: 2007
     speciale: false
     effectif: 16
-    score: "75,5"
+    score: "79,4"
     cellules:
     - cle: casting
       valeur: 100
@@ -31151,11 +31151,11 @@ completude_saisons:
       nature: part
       valeur_arrondie: 100
     - cle: parcours
-      valeur: "31,2"
-      texte: 5/16
-      etat: mince
+      valeur: "93,8"
+      texte: 15/16
+      etat: eleve
       nature: part
-      valeur_arrondie: 31
+      valeur_arrondie: 94
     - cle: jour_sortie
       valeur: 100
       texte: 16/16
@@ -31368,7 +31368,7 @@ completude_saisons:
     annee: 2009
     speciale: false
     effectif: 18
-    score: "83,4"
+    score: 84
     cellules:
     - cle: casting
       valeur: 100
@@ -31401,11 +31401,11 @@ completude_saisons:
       nature: part
       valeur_arrondie: 89
     - cle: parcours
-      valeur: "83,3"
-      texte: 15/18
+      valeur: "94,4"
+      texte: 17/18
       etat: eleve
       nature: part
-      valeur_arrondie: 83
+      valeur_arrondie: 94
     - cle: jour_sortie
       valeur: 100
       texte: 18/18
@@ -31493,7 +31493,7 @@ completude_saisons:
     annee: 2009
     speciale: true
     effectif: 14
-    score: 85
+    score: "85,4"
     cellules:
     - cle: casting
       valeur: 100
@@ -31526,11 +31526,11 @@ completude_saisons:
       nature: part
       valeur_arrondie: 93
     - cle: parcours
-      valeur: "92,9"
-      texte: 13/14
-      etat: eleve
+      valeur: 100
+      texte: 14/14
+      etat: complet
       nature: part
-      valeur_arrondie: 93
+      valeur_arrondie: 100
     - cle: jour_sortie
       valeur: 100
       texte: 14/14
@@ -31618,7 +31618,7 @@ completude_saisons:
     annee: 2010
     speciale: false
     effectif: 18
-    score: "83,6"
+    score: "86,4"
     cellules:
     - cle: casting
       valeur: 100
@@ -31651,11 +31651,11 @@ completude_saisons:
       nature: part
       valeur_arrondie: 100
     - cle: parcours
-      valeur: 50
-      texte: 9/18
-      etat: partiel
+      valeur: 100
+      texte: 18/18
+      etat: complet
       nature: part
-      valeur_arrondie: 50
+      valeur_arrondie: 100
     - cle: jour_sortie
       valeur: 100
       texte: 18/18
@@ -31743,7 +31743,7 @@ completude_saisons:
     annee: 2010
     speciale: true
     effectif: 14
-    score: "77,4"
+    score: "78,7"
     cellules:
     - cle: casting
       valeur: 100
@@ -31776,11 +31776,11 @@ completude_saisons:
       nature: part
       valeur_arrondie: 100
     - cle: parcours
-      valeur: "78,6"
-      texte: 11/14
-      etat: partiel
+      valeur: 100
+      texte: 14/14
+      etat: complet
       nature: part
-      valeur_arrondie: 79
+      valeur_arrondie: 100
     - cle: jour_sortie
       valeur: 100
       texte: 14/14
@@ -31868,7 +31868,7 @@ completude_saisons:
     annee: 2011
     speciale: false
     effectif: 20
-    score: "76,3"
+    score: "78,4"
     cellules:
     - cle: casting
       valeur: 100
@@ -31901,11 +31901,11 @@ completude_saisons:
       nature: part
       valeur_arrondie: 100
     - cle: parcours
-      valeur: 60
-      texte: 12/20
-      etat: partiel
+      valeur: 100
+      texte: 20/20
+      etat: complet
       nature: part
-      valeur_arrondie: 60
+      valeur_arrondie: 100
     - cle: jour_sortie
       valeur: 100
       texte: 20/20
@@ -32243,7 +32243,7 @@ completude_saisons:
     annee: 2014
     speciale: true
     effectif: 13
-    score: "80,8"
+    score: "82,9"
     cellules:
     - cle: casting
       valeur: 100
@@ -32276,11 +32276,11 @@ completude_saisons:
       nature: part
       valeur_arrondie: 100
     - cle: parcours
-      valeur: "61,5"
-      texte: 8/13
-      etat: partiel
+      valeur: 100
+      texte: 13/13
+      etat: complet
       nature: part
-      valeur_arrondie: 62
+      valeur_arrondie: 100
     - cle: jour_sortie
       valeur: 100
       texte: 13/13
@@ -34650,8 +34650,8 @@ completude_saisons:
     libelle: Tribus datées en jours
     court: Tribus
     nature: part
-    moyenne: "90,6"
-    completes: 22
+    moyenne: "98,8"
+    completes: 30
     concernees: 34
   - cle: jour_sortie
     libelle: Jour de sortie
@@ -34746,8 +34746,8 @@ completude_saisons:
     concernees: 27
   saisons: 34
   cases: 605
-  moyenne: "87,7"
-  meilleure: sp5
+  moyenne: "88,2"
+  meilleure: s05
   pire: sp8
 geographie:
   lacunaires:

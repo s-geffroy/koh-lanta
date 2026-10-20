@@ -43,7 +43,9 @@ TITRES = {
 RE_MODELE = re.compile(r"\{\{\s*Infobox[ _]Aventuriers(.*)", re.I | re.S)
 RE_CLE = re.compile(r"\|\s*([^=|{}\[\]\n]{2,40}?)\s*=")
 RE_LIEN = re.compile(r"\[\[([^\]|]+)(?:\|([^\]]*))?\]\]")
-RE_JOURS = re.compile(r"[\(\[]\s*jours?\s*(\d+)\s*[-–]\s*(\d+)\s*[\)\]]", re.I)
+# « (Jour 1 - 8) », mais aussi « (Jour 1 - Jour 12) » : le second « Jour »
+# laissait toute la parenthese collee au nom de la tribu (50 etapes).
+RE_JOURS = re.compile(r"[\(\[]\s*jours?\s*(\d+)\s*[-–]\s*(?:jours?\s*)?(\d+)\s*[\)\]]", re.I)
 RE_JOURS_NU = re.compile(r"[\(\[]\s*(\d+)\s*[-–]\s*(\d+)\s*[\)\]]")
 
 
@@ -210,8 +212,30 @@ def _parcours(v):
     """
     etapes = []
     for ligne in _lignes(v):
-        m = RE_JOURS.search(ligne) or RE_JOURS_NU.search(ligne)
+        # Les jours se cherchent sur la ligne DEJA debarrassee de ses liens et
+        # de son HTML : chercher sur la ligne brute puis couper la ligne
+        # nettoyee decalait la coupe de la longueur des « [[...]] » retires --
+        # « [[Mogo]] (Jour 1 - 8) » donnait la tribu « Mogo (Jou ».
         nom = RE_LIEN.sub(lambda x: x.group(2) or x.group(1), ligne)
+        nom = re.sub(r"<[^>]+>", "", nom)
+        # « Aopoh (jour 1-10 puis 10-12) » : la tribu a ete remaniee au jour 10
+        # et l'aventurier y est reste (le wiki Survivor le confirme). Deux
+        # etapes de la meme tribu, l'une apres l'autre.
+        puis = re.match(r"^(.*?)\s*\(\s*jours?\s*(\d+)\s*[-–]\s*(\d+)\s*puis\s*"
+                        r"(?:jours?\s*)?(\d+)\s*[-–]\s*(\d+)\s*\)?\s*$", nom, re.I)
+        if puis:
+            t = puis.group(1).strip(" ()[]-–,;:")
+            etapes += [{"tribu": t, "jour_debut": int(puis.group(2)), "jour_fin": int(puis.group(3))},
+                       {"tribu": t, "jour_debut": int(puis.group(4)), "jour_fin": int(puis.group(5))}]
+            continue
+        # « Lankawaï / Tinggi (après réintégration) » : deux tribus, l'une
+        # apres l'autre, sans jours. La parenthese est un commentaire.
+        suite = re.match(r"^([^/()]+?)\s*/\s*([^/()]+?)\s*(\([^)]*\)?)?\s*$", nom)
+        if suite and not RE_JOURS.search(nom):
+            etapes += [{"tribu": suite.group(1).strip(), "jour_debut": None, "jour_fin": None},
+                       {"tribu": suite.group(2).strip(), "jour_debut": None, "jour_fin": None}]
+            continue
+        m = RE_JOURS.search(nom) or RE_JOURS_NU.search(nom)
         if m:
             nom = nom[:m.start()] if m.start() < len(nom) else nom
         else:
@@ -223,6 +247,13 @@ def _parcours(v):
         etapes.append({"tribu": nom,
                        "jour_debut": int(m.group(1)) if m else None,
                        "jour_fin": int(m.group(2)) if m else None})
+    # Une etape ne commence pas avant la fin de la precedente. « Kanawa (Jour
+    # 1-19) / Tribu réunifiée (Jour 1-28) » (Christine, Pacifique) est une
+    # coquille : la reunification commence au jour 19.
+    for a, b in zip(etapes, etapes[1:]):
+        if (a["jour_fin"] is not None and b["jour_debut"] is not None
+                and b["jour_debut"] < a["jour_fin"] and b["jour_debut"] <= (a["jour_debut"] or 0)):
+            b["jour_debut"] = a["jour_fin"]
     return etapes
 
 

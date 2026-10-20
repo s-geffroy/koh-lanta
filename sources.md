@@ -72,6 +72,42 @@ Limite, et elle est réelle :
 exploitable — les castings les plus anciens, et l’édition de célébrités de 2012,
 dont les invités n’ont pas de page. Ce qui manque encore manque surtout là.
 
+## Les parcours de tribu, et ce qu’ils ne disent pas
+
+Le parcours d’un aventurier, c’est la suite de ses tribus, chacune bornée en
+jours. Wikipédia le donne pour les saisons récentes ; pour les autres, il vient
+de la fiche Fandom, qui l’écrit à la main, et le 20 octobre 2026 il a fallu en
+reprendre la lecture.
+
+**Deux défauts de lecture**, sur cinquante parcours. La fiche écrit tantôt
+« Kumo (Jour 1 - 12) », tantôt « Kumo (Jour 1 - Jour 12) » : le second « Jour »
+n’était pas prévu, et toute la parenthèse restait collée au nom de la tribu.
+Ailleurs, les jours étaient repérés sur la ligne brute, puis le nom coupé
+*après* le retrait des liens — et la coupe tombait à côté : « Mogo (Jou ».
+S’y ajoutaient des graphies de travers — « LankawaÏ », « Bokkor », « Tribu
+réunifié », un tuyau d’infobox collé devant « Tengah » — qui empêchaient de
+rattacher l’étape à sa tribu, donc à sa couleur. Tout cela est relu
+correctement, et une étape qui commencerait avant la fin de la précédente
+(« Tribu réunifiée (Jour 1-28) » après « Kanawa (Jour 1-19) ») est tenue pour
+la coquille qu’elle est.
+
+**Ensuite, ce que la source ne donne pas.** Pour les saisons anciennes, la
+fiche écrit la suite des tribus *sans aucun jour* — « Kumo, Tribu réunifiée ».
+Les jours n’ont été posés que lorsqu’ils sont sûrs : le jour 1, seulement si
+la fiche le prouve (sortie au jour 39 après 39 jours de jeu) — un remplaçant
+arrivé au jour 4, un revenant après un trou n’entrent pas dans ce calcul ; le
+jour de la réunification, seulement s’il se lit, identique, chez tous les
+autres aventuriers datés de la saison ; le jour de sortie pour la dernière
+étape. Un échange de tribus que rien ne date reste sans date. Les parcours
+vides, enfin, ont été complétés par le tableau des candidats du wiki
+*Survivor*, sans jours quand il n’en donne pas.
+
+<p class="note">Au moment de cette reprise, 50 étapes portaient un nom de
+tribu mêlé de dates : il n’y en a plus. 46 parcours vides ont été complétés,
+souvent sans jours. Il reste 197 étapes sans jours et 7 parcours vides — quatre d’<em>All Stars</em>, saison en cours, et trois
+aventuriers que ni Fandom ni le wiki <em>Survivor</em> ne situent. Ils ne
+seront complétés que si une source les date.</p>
+
 ## La quatrième source : le wiki anglophone de *Survivor*, en témoin
 
 **[Le wiki *Survivor*](https://survivor.fandom.com/wiki/Koh-Lanta)** — wiki
@@ -90,7 +126,9 @@ Il sert à deux choses, depuis le 20 octobre 2026 :
 - **combler** les {{ site.data.stats.mots.saisons_source_unique }} saisons dont
   aucune autre page ne donne les épreuves :
   {{ site.data.stats.epreuves.saisons_source_unique_texte }}. Pour elles, il est
-  la seule source, et le site le dit partout où cela compte.
+  la seule source, et le site le dit partout où cela compte ;
+- **compléter les parcours de tribu** restés vides : son tableau des candidats
+  donne, pour chacun, la tribu de chaque phase du jeu.
 
 Il range sous « Immunity » des choses que ce site ne compte pas comme des
 épreuves : un duel gagné, un avantage, une immunité **donnée** après un

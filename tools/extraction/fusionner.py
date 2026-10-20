@@ -768,6 +768,39 @@ def normaliser_lieux(participations, rapport):
                        + ", ".join(f"{k} ({n})" for k, n in inconnus.most_common()))
 
 
+def _nom_de_tribu(saison, nom):
+    """Ramene une etape de parcours au nom DECLARE de la tribu.
+
+    Les fiches ecrivent « |Tengah » (un tuyau d'infobox colle), « Lanta-Naï »,
+    « LankawaÏ », « Wasai », « Bokkor » -- un caractere de travers, et l'etape
+    ne se rattache plus a sa tribu, donc a sa couleur. On ne corrige qu'a UNE
+    lettre pres, et seulement si une seule tribu de la saison est a cette
+    distance. Toutes les graphies de la reunification deviennent « Tribu
+    réunifiée ». Les etats -- « Éliminée », « Bannie », « Aucune tribu » -- ne
+    ressemblent a aucune tribu et restent tels quels.
+    """
+    propre = nom.strip(" |")
+    if re.fullmatch(r"(?:tribu\s+)?r[ée]unifi[ée]+e?", propre, re.I):
+        return "Tribu réunifiée"
+    declares = [t["nom"] for t in saison.get("tribus", [])]
+    cle = F.slug(propre)
+    for t in declares:
+        if F.slug(t) == cle:
+            return t
+    proches = [t for t in declares if _une_lettre(F.slug(t), cle)]
+    return proches[0] if len(proches) == 1 else propre
+
+
+def _une_lettre(a, b):
+    """Vrai si a et b different d'une insertion, d'une suppression ou d'une substitution."""
+    if a == b or abs(len(a) - len(b)) > 1 or min(len(a), len(b)) < 4:
+        return False
+    if len(a) == len(b):
+        return sum(x != y for x, y in zip(a, b)) == 1
+    court, long_ = sorted((a, b), key=len)
+    return any(long_[:i] + long_[i + 1:] == court for i in range(len(long_)))
+
+
 def _couleur_de(saison, tribu):
     for t in saison.get("tribus", []):
         if F.slug(t["nom"]) == F.slug(tribu):
@@ -812,8 +845,9 @@ def completer_depuis_pages(participations, saisons, rapport):
                 continue
             valeur = champs[champ]
             if champ == "parcours":
-                valeur = [{"tribu": e["tribu"],
-                           "couleur": _couleur_de(par_saison.get(p["saison"], {}), e["tribu"]),
+                s_ = par_saison.get(p["saison"], {})
+                valeur = [{"tribu": _nom_de_tribu(s_, e["tribu"]),
+                           "couleur": _couleur_de(s_, _nom_de_tribu(s_, e["tribu"])),
                            "jour_debut": e["jour_debut"], "jour_fin": e["jour_fin"]}
                           for e in valeur]
             if p.get(champ) in (None, "", []):
@@ -831,12 +865,152 @@ def completer_depuis_pages(participations, saisons, rapport):
                 p.setdefault("sources", {})["jour_sortie"] = "fandom (page individuelle)"
                 combles["jour_sortie"] = combles.get("jour_sortie", 0) + 1
 
+        # Le nombre de jours en jeu de la page, garde pour completer_les_jours.
+        if champs.get("jours"):
+            p["_jours_page"] = champs["jours"]
+
     for champ, n in sorted(combles.items()):
         rapport.append(f"{champ} : {n} valeur(s) comblee(s) par les pages individuelles")
     for champ, liste in sorted(desaccords.items()):
         rapport.append(f"{champ} : {len(liste)} desaccord(s) table / page individuelle "
                        f"(table retenue) — " + ", ".join(liste[:6])
                        + (" …" if len(liste) > 6 else ""))
+
+
+SURVIVOR = os.path.join(os.path.dirname(os.path.dirname(ICI)), "specs", "sources", "survivor")
+
+
+def parcours_depuis_survivor(participations, saisons, rapport):
+    """Le parcours VIDE, lu dans le tableau des candidats du wiki Survivor.
+
+    53 participations n'avaient aucun parcours : ni legende datee sur
+    Wikipedia, ni tribu sur la fiche Fandom. Le tableau « Castaways » du wiki
+    Survivor donne, pour chacun, une colonne par phase -- tribu d'origine,
+    tribus recomposees, tribu reunifiee -- et « out » une fois sorti. Certains
+    en-tetes datent la phase (« Day 5 Tribes ») : ce jour-la ouvre l'etape.
+    Les autres jours sont poses ensuite par completer_les_jours, aux memes
+    conditions que pour tout le monde. On ne comble que du vide.
+    """
+    from parse_votes import developper
+    par_saison = {s["id"]: s for s in saisons}
+    vides = collections.defaultdict(dict)
+    for p in participations:
+        if not p.get("parcours"):
+            for n in (p.get("nom_complet"), p.get("nom")):
+                if n:
+                    vides[p["saison"]].setdefault(F.slug(n), p)
+    combles = 0
+    for sid, cibles in vides.items():
+        chemin = os.path.join(SURVIVOR, sid + ".wiki")
+        if not os.path.exists(chemin):
+            continue
+        texte = open(chemin, encoding="utf-8").read()
+        m = re.search(r"==\s*(?:Castaways|Contestants)\s*==\s*(\{\|.*?\n\|\})", texte, re.S)
+        if not m:
+            continue
+        grille = developper(m.group(1))
+        entete = next((i for i, r in enumerate(grille[:4])
+                       if any("original tribe" in F.plain(c).lower() for c in r)), None)
+        if entete is None:
+            continue
+        phases = [(c, F.plain(x)) for c, x in enumerate(grille[entete])
+                  if re.search(r"tribe", F.plain(x), re.I)]
+        # Les deux wikis n'ecrivent pas toujours le meme nom de famille
+        # (« Délisia Fettasi » / « Délisia Fettache »). A defaut du nom complet,
+        # le PRENOM rattache -- s'il est unique des deux cotes : une seule
+        # personne de ce prenom dans la saison, une seule ligne au tableau.
+        liens = [re.search(r"link=([^\]|]+)", x).group(1).strip()
+                 for r_ in grille[entete + 1:] for x in r_[:2] if "link=" in x]
+        prenoms_tableau = collections.Counter(F.slug(l.split()[0]) for l in liens)
+        prenoms_saison = collections.Counter(
+            F.slug((q.get("nom") or "").split()[0]) for q in participations
+            if q["saison"] == sid and q.get("nom"))
+        par_prenom = {F.slug((q.get("nom") or "").split()[0]): q for q in cibles.values()}
+        for rang in grille[entete + 1:]:
+            lien = next((re.search(r"link=([^\]|]+)", x) for x in rang if "link=" in x), None)
+            if not lien:
+                continue
+            p = cibles.get(F.slug(lien.group(1).strip()))
+            prenom = F.slug(lien.group(1).strip().split()[0])
+            if (not p and prenoms_tableau[prenom] == 1 and prenoms_saison[prenom] == 1):
+                p = par_prenom.get(prenom)
+            if not p or p.get("parcours"):
+                continue
+            etapes = []
+            for c, titre in phases:
+                if c >= len(rang):
+                    continue
+                t = re.search(r"\{\{\s*tribebox\d?\s*\|\s*([^|}]+)", rang[c])
+                if not t or t.group(1).strip().lower() == "out":
+                    continue
+                code = t.group(1).strip()
+                nom = ("Tribu réunifiée" if code.lower().startswith("merged")
+                       else _nom_de_tribu(par_saison.get(sid, {}), re.sub(r"\d*fr$|\d+$", "", code)))
+                jour = re.search(r"day\s*(\d+)", titre, re.I)
+                if etapes and etapes[-1]["tribu"] == nom:
+                    continue
+                if etapes and jour:
+                    etapes[-1]["jour_fin"] = int(jour.group(1))
+                etapes.append({"tribu": nom,
+                               "couleur": _couleur_de(par_saison.get(sid, {}), nom),
+                               "jour_debut": int(jour.group(1)) if jour else None,
+                               "jour_fin": None})
+            if etapes:
+                p["parcours"] = etapes
+                p.setdefault("sources", {})["parcours"] = "wiki Survivor (tableau des candidats)"
+                combles += 1
+    rapport.append(f"parcours : {combles} parcours vide(s) comble(s) par le wiki Survivor")
+
+
+def completer_les_jours(participations, rapport):
+    """Pose les jours d'un parcours que la fiche ne date pas -- quand ils sont SURS.
+
+    Les fiches des saisons anciennes donnent la suite des tribus sans jours
+    (« Kumo<br/>Tribu réunifiée »), et Wikipedia n'a rien de date pour elles.
+    Decision de l'utilisateur (20 octobre 2026) : completer le sur, signaler le
+    reste. Trois faits, et rien d'autre :
+
+      * le jour 1, seulement si la page le prouve : sortie au jour S apres J
+        jours en jeu, et S - J + 1 == 1. Un remplacant arrive plus tard (Claire,
+        Cambodge, jour 4), un revenant a un trou : dans ces deux cas le calcul
+        ne tombe pas sur 1, et on ne pose rien ;
+      * le jour de reunification, lu chez les AUTRES aventuriers dates de la
+        saison, et seulement s'ils s'accordent tous ;
+      * le jour de sortie, pour la derniere etape.
+
+    Un echange de tribus sans date reste sans date.
+    """
+    reunion = collections.defaultdict(set)
+    for p in participations:
+        for e in p.get("parcours") or []:
+            if re.search(r"r[ée]unifi", e["tribu"], re.I) and e.get("jour_debut"):
+                reunion[p["saison"]].add(e["jour_debut"])
+    poses = 0
+    for p in participations:
+        jours = p.pop("_jours_page", None)
+        pc = p.get("parcours") or []
+        if not pc or all(e.get("jour_debut") is not None for e in pc):
+            continue
+        sortie = p.get("jour_sortie")
+        debut_1 = bool(jours and sortie and sortie - jours + 1 == 1)
+        d = reunion.get(p["saison"])
+        d = next(iter(d)) if d and len(d) == 1 else None
+        reunie = [bool(re.search(r"r[ée]unifi", e["tribu"], re.I)) for e in pc]
+        if not (debut_1 and d):
+            continue
+        if len(pc) == 1 and not reunie[0] and sortie <= d:
+            pc[0].update(jour_debut=1, jour_fin=sortie)
+        elif len(pc) == 2 and reunie == [False, True] and sortie >= d:
+            pc[0].update(jour_debut=1, jour_fin=d)
+            pc[1].update(jour_debut=d, jour_fin=sortie)
+        else:
+            continue
+        p.setdefault("sources", {})["parcours_jours"] = (
+            "deduits : jour 1 et jour de sortie par la page individuelle, "
+            f"reunification au jour {d} chez les autres aventuriers de la saison")
+        poses += 1
+    rapport.append(f"parcours : jours poses sur {poses} participation(s), "
+                   f"seulement quand ils sont surs")
 
 
 def corriger_tribus(participations, rapport):
@@ -911,6 +1085,8 @@ def main():
     completer_depuis_pages(participations, saisons, rapport)
     # Apres les pages individuelles : c'est d'elles que vient le parcours.
     tribu_depuis_le_parcours(participations, rapport)
+    parcours_depuis_survivor(participations, saisons, rapport)
+    completer_les_jours(participations, rapport)
     corriger_tribus(participations, rapport)
     normaliser_lieux(participations, rapport)
     sans_depart_sans_jour(participations, saisons, rapport)
