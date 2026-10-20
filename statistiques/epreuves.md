@@ -70,19 +70,19 @@ d’occasions.
 Les deux comptent parmi les aventuriers les plus rappelés du programme : leur
 total dit autant leur nombre de participations que leur niveau.
 
-## Le classement que ce tableau ne pouvait pas voir
+## Ce que disent les fiches, pour comparer
 
 {% assign pa = site.data.stats.palmares %}
 
-Tout ce qui précède repose sur le **bilan épisode par épisode**, et ce bilan
-ignore {{ e.saisons_sans_donnee | size }} saisons entières
-({{ e.saisons_sans_donnee | join: ", " }}). Conséquence directe : un vainqueur
-de l’une d’elles n’apparaît nulle part sur cette page, quel qu’ait été son
-parcours.
+Tout ce qui précède repose sur le **bilan épisode par épisode**. Jusqu’au
+20 octobre 2026, ce bilan ignorait cinq saisons entières : un vainqueur de
+l’une d’elles n’apparaissait nulle part sur cette page. Elles sont désormais
+relevées — {{ e.saisons_source_unique_texte }} — depuis le guide d’épisodes du
+wiki anglophone de *Survivor*, seule page à donner leurs épreuves.
 
 Les fiches individuelles du wiki Fandom, elles, portent un total d’épreuves
-**par édition**, sur {{ pa.renseignees }} participations — dont les {{ site.data.stats.mots.saisons_sans_bilan }} saisons
-manquantes. Voici le classement qu’elles donnent.
+**par édition**, sur {{ pa.renseignees }} participations. Voici le classement
+qu’elles donnent.
 
 <div class="tableau-large">
 <table data-triable>
@@ -105,10 +105,11 @@ manquantes. Voici le classement qu’elles donnent.
 </table>
 </div>
 
-Le podium change. {{ pa.classement[2].personne }} monte à la troisième place
-avec {{ pa.classement[2].individuelles }} victoires individuelles en
-{{ pa.classement[2].saisons }} éditions — il était invisible plus haut, parce
-que la saison qu’il a gagnée n’a pas de bilan par épisode.
+{{ pa.classement[2].personne }} y est troisième, avec
+{{ pa.classement[2].individuelles }} victoires individuelles en
+{{ pa.classement[2].saisons }} éditions. Il a longtemps été invisible plus
+haut : la saison qu’il a gagnée, <em>Malaisie</em>, n’avait pas de bilan par
+épisode. Il figure aujourd’hui parmi les meilleurs cumuls.
 
 <p class="note"><strong>Les deux comptes ne mesurent pas la même chose, et il
 faut le savoir avant de les comparer.</strong> Le total d’une fiche englobe les
@@ -351,10 +352,11 @@ une indication, pas une loi.
 
 ## Ce que cette page ne dit pas
 
-**{{ site.data.stats.mots.saisons_sans_bilan_maj }} saisons manquent** — {{ e.saisons_sans_donnee | join: ", " }} — faute de
-source donnant leurs épreuves épisode par épisode. Les totaux et les ratios
-portent donc sur {{ e.saisons_couvertes }} saisons, pas sur les
-{{ site.data.stats.general.saisons_diffusees }}.
+**{{ site.data.stats.mots.saisons_source_unique_maj }} saisons ne reposent que
+sur une source** — {{ e.saisons_source_unique_texte }} : le guide d’épisodes
+du wiki *Survivor*, seule page à donner leurs épreuves. Chaque épreuve à
+plusieurs gagnants y a été vérifiée sur la page de l’épisode, mais aucune autre
+source ne les recoupe.
 
 **Les épreuves de finale sont exclues.** Dans les dernières émissions, les
 tableaux sources changent de colonnes et y listent les qualifiés plutôt que le

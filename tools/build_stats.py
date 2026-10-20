@@ -446,6 +446,13 @@ def bloc_jury(conseils, parts, par_saison):
     }
 
 
+def _liste_titres(saisons):
+    """« Bocas del Toro, Palau et Johor » : les titres en italique, dans l'ordre
+    de diffusion, joints a la francaise."""
+    t = [f"<em>{s['titre']}</em>" for s in sorted(saisons, key=lambda s: (s.get("annee") or 0, s["id"]))]
+    return t[0] if len(t) == 1 else (", ".join(t[:-1]) + " et " + t[-1] if t else "")
+
+
 def bloc_epreuves(epreuves, conseils, parts, saisons, par_saison):
     """Victoires d'epreuves, et ratios individuels.
 
@@ -558,6 +565,13 @@ def bloc_epreuves(epreuves, conseils, parts, saisons, par_saison):
         "saisons_sans_donnee": sorted({s["id"] for s in saisons
                                        if not s.get("annulee")}
                                       - {e["saison"] for e in epreuves}),
+        # Les saisons relevees sur le seul guide d'episodes du wiki Survivor :
+        # aucune autre page ne donne leurs epreuves (20 octobre 2026).
+        "saisons_source_unique": sorted({e["saison"] for e in epreuves
+                                         if e.get("source") == "survivor"}),
+        "saisons_source_unique_texte": _liste_titres(
+            [s for s in saisons
+             if s["id"] in {e["saison"] for e in epreuves if e.get("source") == "survivor"}]),
         "collectives": sum(1 for e in epreuves if e.get("forme") == "collective"),
         "individuelles": sum(1 for e in epreuves if e.get("forme") == "individuelle"),
         "immunites": sum(1 for e in epreuves if e.get("type") == "immunite"),
@@ -1530,6 +1544,7 @@ def champs_du_texte(stats, saisons, parts):
         "saisons_annulees": g["saisons_annulees"],
         "facettes": len(stats["classement"]["facettes"]),
         "saisons_sans_bilan": len(stats["epreuves"].get("saisons_sans_donnee") or []),
+        "saisons_source_unique": len(stats["epreuves"].get("saisons_source_unique") or []),
         # /statistiques/grille/ : les indicateurs de la rupture.
         "indicateurs_rupture": len(m["ruptures"]["detail"]),
         # /statistiques/audience/

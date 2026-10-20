@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Michèle Valembois (2001)"
-description: "Michèle Valembois, Les Aventuriers de Koh-Lanta (2001) : sort au conseil le 33e jour, 7e sur 16. 370e sur 531 au classement des aventuriers."
+description: "Michèle Valembois, Les Aventuriers de Koh-Lanta (2001) : sort au conseil le 33e jour, 7e sur 16. 375e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/michele-valembois.png
 permalink: /aventuriers/michele-valembois/
 aventurier: michele-valembois

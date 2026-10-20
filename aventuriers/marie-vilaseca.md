@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Marie Vilaseca (2024)"
-description: "Marie Vilaseca, Koh-Lanta La Tribu maudite (2024) : sort au conseil le 9e jour, 22e sur 24, 0 épreuve gagnée. 521e sur 531 au classement des aventuriers."
+description: "Marie Vilaseca, Koh-Lanta La Tribu maudite (2024) : sort au conseil le 9e jour, 22e sur 24, 13 voix reçues. 518e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/marie-vilaseca.png
 permalink: /aventuriers/marie-vilaseca/
 aventurier: marie-vilaseca

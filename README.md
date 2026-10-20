@@ -130,6 +130,7 @@ lit ce que la precedente a ecrit :
 
     tools/atelier python3 specs/sources/fetch.py                    # wikipedia
     tools/atelier python3 specs/sources/fetch_fandom.py             # pages de saison
+    tools/atelier python3 specs/sources/fetch_survivor.py           # wiki Survivor, guides
     tools/atelier python3 tools/extraction/fetch_personnes.py       # pages par aventurier
     tools/atelier python3 tools/extraction/fusionner.py --ecrire    # participations, personnes
     tools/atelier python3 tools/extraction/fetch_personnes.py       # 2e passe : les noms rendus
@@ -147,11 +148,12 @@ lit ce que la precedente a ecrit :
 
 Le wikitexte deja recupere n'est JAMAIS redemande : il est versionne comme
 preuve de provenance. Une saison en cours de diffusion fait exception -- sa page
-grossit d'un episode par semaine -- et les deux recuperateurs prennent pour cela
+grossit d'un episode par semaine -- et les trois recuperateurs prennent pour cela
 une option explicite :
 
     tools/atelier python3 specs/sources/fetch.py specs/sources/spec.json --rafraichir sp8
     tools/atelier python3 specs/sources/fetch_fandom.py --rafraichir sp8
+    tools/atelier python3 specs/sources/fetch_survivor.py --rafraichir sp8
 
 La deuxieme passe n'est pas une precaution : `fusionner` rend son nom de famille
 a un prenom nu, et la page individuelle de cette personne n'est demandee qu'une

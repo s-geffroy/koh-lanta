@@ -344,6 +344,141 @@ def parse_page(wikitexte, saison_id=None, couleurs_admises=None):
     return []
 
 
+# --- Le guide d'episodes du wiki Survivor (specs/sources/survivor/) ---------
+#
+# Un troisieme temoin, tenu en anglais par d'autres mains. Son tableau ecrit
+# chaque vainqueur dans un modele : « {{tribebox|naga}} » pour une tribu,
+# « {{tribebox|naga|Jean-Luc}} » pour une personne. Il range aussi sous
+# « Immunity » des choses qui n'en sont pas pour ce site (decision du
+# 20 octobre 2026) : un duel gagne, un avantage, une immunite donnee apres un
+# changement de tribu ou conservee d'un conseil annule. Ces cases portent
+# toujours un appel de note, et c'est la note qu'on lit pour les ecarter.
+
+RE_TRIBEBOX = re.compile(r"\{\{\s*[Tt]ribe(?:box|hl)\d?\s*\|\s*([^|}]*)(?:\|([^{}]*))?\}\}")
+RE_APPEL_NOTE = re.compile(r"#endnote\s+([\w-]+)")
+RE_NOTE = re.compile(r"\{\{\s*note\s*\|\s*([\w-]+)\s*\|[^}]*\}\}(.*?)(?=\{\{\s*note\s*\||\{\{refend|\n\||$)",
+                     re.S)
+RE_PAS_UNE_EPREUVE = re.compile(
+    r"duel|advantage|given individual immunity|separate immunity|mini-challenge",
+    re.I)
+# « Christina kept her immunity she won on Day 18 » (Palau) n'est PAS ecarte :
+# l'immunite a ete GAGNEE, la note dit seulement qu'elle a servi plus tard.
+
+
+def _noms_survivor(cellule):
+    """[(nom, couleur)] cites dans une case du guide. Une tribu seule rend son
+    nom de modele (« naga », « toa26fr ») : il est retraduit par construire."""
+    c = re.sub(r"<ref.*?(?:/>|</ref>)", "", cellule or "", flags=re.S)
+    c = re.sub(r"\{\{\s*(?:sup|note|textsub|nowrap)\|[^{}]*\}\}", "", c)
+    sortie = []
+    trouve = False
+    for m in RE_TRIBEBOX.finditer(c):
+        trouve = True
+        tribu, dedans = m.group(1).strip(), m.group(2)
+        if dedans is None or not dedans.strip():
+            if tribu.lower() not in ("none", "tie"):
+                sortie.append(re.sub(r"\d*fr$|\d+$", "", tribu))
+            continue
+        sortie += _decouper_survivor(dedans)
+    if not trouve:
+        sortie += _decouper_survivor(c)
+    return sortie
+
+
+def _decouper_survivor(texte_brut):
+    t = re.sub(r"\[[^\]]*\]", " ", texte_brut)       # invites de la recompense
+    t = re.sub(r"\([^)]*\)", " ", t)                  # beneficiaires, votes
+    t = re.sub(r"</?s>", "", t)                       # recompense cedee : gagnee quand meme
+    t = re.sub(r"<br\s*/?>", ",", t, flags=re.I)
+    t = plain(t)
+    noms = []
+    for b in re.split(r",|&|\band\b", t):
+        b = b.strip(" '\".")
+        if b and not re.fullmatch(r"none|neither|n/a|-+|—", b, re.I) and len(b) < 30:
+            noms.append(b)
+    return noms
+
+
+def parse_survivor(wikitexte, saison_id=None):
+    notes = {m.group(1): m.group(2) for m in RE_NOTE.finditer(wikitexte)}
+    grille, hauteurs = developper(wikitexte, avec_hauteur=True)
+    roles, i0 = {}, None
+    for i, rang in enumerate(grille[:4]):
+        for col, cell in enumerate(rang):
+            v = texte(cell).lower()
+            if v == "reward":
+                roles[col] = "confort"
+            elif v == "immunity":
+                roles[col] = "immunite"
+        if roles:
+            i0 = i
+            break
+    if not roles:
+        return []
+    epreuves, vus = [], set()
+    finale = None
+    for r in range(i0 + 1, len(grille)):
+        rang = grille[r]
+        # La finale tient dans l'episode qui porte la ligne « Jury Vote » :
+        # le trio rescape de l'epreuve eliminatoire, un nom par ligne, puis le
+        # gagnant des poteaux. Rien de cet episode n'est une epreuve ordinaire.
+        if any(re.search(r"jury vote", texte(c), re.I) for c in rang):
+            m = re.search(r"\|\s*(\d{1,2})\s*\]\]", rang[0]) if rang else None
+            finale = int(m.group(1)) if m else finale
+            break
+        # Seules les colonnes d'epreuve signalent la finale : la colonne
+        # « Finish » ecrit « 1st Jury Member » des la reunification.
+        if any(re.search(r"final|orienteering|poles|perch", texte(rang[c]), re.I)
+               and not RE_TRIBEBOX.search(rang[c]) for c in roles if c < len(rang)):
+            break
+        m = re.search(r"\|\s*(\d{1,2})\s*\]\]", rang[0]) if rang else None
+        if not m:
+            continue
+        episode = int(m.group(1))
+        for col, role in sorted(roles.items()):
+            if col >= len(rang) or hauteurs[r][col] == 0:
+                continue
+            cellule = rang[col]
+            if any(RE_PAS_UNE_EPREUVE.search(notes.get(n, ""))
+                   for n in RE_APPEL_NOTE.findall(cellule)):
+                continue
+            noms = _noms_survivor(cellule)
+            signature = (episode, role, tuple(noms))
+            if not noms or signature in vus:
+                continue
+            vus.add(signature)
+            # Un duo gagnant s'ecrit parfois sur deux lignes, un nom chacune
+            # (Malaisie et Palau, premier soir : « Winners: Camille Sold and
+            # Namadia Thaï Thaï », une seule epreuve). Deux lignes qui se
+            # suivent et ne citent chacune qu'une PERSONNE, pour la meme
+            # epreuve du meme soir, sont fondues. Une tribu ne se fond pas.
+            personne = "|" in RE_TRIBEBOX.search(cellule).group(0) and bool(
+                (RE_TRIBEBOX.search(cellule).group(2) or "").strip()) \
+                if RE_TRIBEBOX.search(cellule) else True
+            # Meme fusion pour deux lignes qui portent la MEME note : une
+            # egalite (Malaisie, episode 5 : « both tribes [...] split the
+            # reward »), ecrite une tribu par ligne.
+            appels = set(RE_APPEL_NOTE.findall(cellule))
+            prec = next((x for x in reversed(epreuves)
+                         if x["episode"] == episode and x["type"] == role), None)
+            meme_note = bool(appels) and prec is not None and appels == prec.get("_notes")
+            if (prec and prec.get("_ligne") == r - 1 and prec["episode"] == episode
+                    and prec["type"] == role
+                    and ((personne and prec.get("_personne")) or meme_note)):
+                prec["libelles"] += [n for n in noms if n not in prec["libelles"]]
+                prec["_ligne"] = r
+                continue
+            epreuves.append({"saison": saison_id, "episode": episode, "type": role,
+                             "libelles": noms, "indices": {}, "couleur": None,
+                             "source": "survivor", "_ligne": r, "_personne": personne,
+                             "_notes": appels})
+    for e in epreuves:
+        e.pop("_ligne", None)
+        e.pop("_personne", None)
+        e.pop("_notes", None)
+    return [e for e in epreuves if e["episode"] != finale]
+
+
 if __name__ == "__main__":
     import json, os
     for chemin in sys.argv[1:]:

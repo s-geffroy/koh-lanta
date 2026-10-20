@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Sophie Chevalier (2019)"
-description: "Sophie Chevalier, Koh-Lanta La Guerre des chefs (2019) : sort au conseil le 25e jour, 11e sur 21. 503e sur 531 au classement des aventuriers."
+description: "Sophie Chevalier, Koh-Lanta La Guerre des chefs (2019) : sort au conseil le 25e jour, 11e sur 21. 504e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/sophie-chevalier.png
 permalink: /aventuriers/sophie-chevalier/
 aventurier: sophie-chevalier

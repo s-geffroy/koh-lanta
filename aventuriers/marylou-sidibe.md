@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Marylou Sidibé — Malaisie (2012)"
-description: "Marylou Sidibé, Koh-Lanta Malaisie (2012) : sort au conseil le 28e jour, 11e sur 20, 7 voix reçues. 149e sur 531 au classement des aventuriers."
+description: "Marylou Sidibé, Koh-Lanta Malaisie (2012) : sort au conseil le 28e jour, 11e sur 20, 2 épreuves gagnées. 81e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/marylou-sidibe.png
 permalink: /aventuriers/marylou-sidibe/
 aventurier: marylou-sidibe

@@ -496,8 +496,8 @@ l’épisode. Ces deux reconstructions ont un taux d’échec, il est mesuré, e
 cas qui échouent sont écartés en le disant — jamais corrigés à la main.
 
 **Les sources restent incomplètes.**
-{{ site.data.stats.epreuves.saisons_sans_donnee | size }} saisons n’ont aucun
-bilan d’épreuves, {{ site.data.stats.colliers.saisons_couvertes }} seulement
+{{ site.data.stats.mots.saisons_source_unique_maj }} saisons n’ont leurs
+épreuves que d’une seule source, {{ site.data.stats.colliers.saisons_couvertes }} seulement
 détaillent leurs colliers, et une part des conseils n’est pas
 dépouillée intégralement. [Les sources]({{ '/sources/' | relative_url }})
 recensent ces trous champ par champ.

@@ -131,7 +131,7 @@ C’est cohérent avec ce que montre
 fusion, plusieurs groupes coexistent et chacun écrit son nom. Avant, une tribu
 qui vient de perdre une épreuve a souvent déjà tranché sur le chemin du retour.
 
-## L’âge bascule dans le même sens — mais on ne peut pas l’affirmer
+## L’âge bascule dans le même sens, et de justesse on peut l’affirmer
 
 {% assign ag = site.data.stats.modeles.age_au_conseil %}
 {% assign tag = reg | where: "cle", "age_bascule_fusion" | first %}
@@ -165,19 +165,28 @@ l’éliminé de chaque conseil est pris au hasard parmi les présents.</p>
   jeune que la moyenne.</p>
   <p>La bascule vaut {{ tag.observe_arrondi }} ans, {{ tag.ecart_types }}
   écarts-types, p brute {{ tag.p }}, p ajustée {{ tag.p_ajustee }}.
-  <b>Non concluant.</b></p>
-  <p>C’est exactement le sens de la bascule de la force — et c’est ce qui rend
-  le résultat frustrant plutôt qu’anodin. Un tel écart sur
-  {{ ag.conseils }} conseils ne se distingue pas d’un tirage. On peut dire
-  que rien ne contredit l’hypothèse ; on ne peut pas dire qu’elle est
-  vérifiée.</p>
+  <b>Retenu, de justesse.</b></p>
+  <p>C’est exactement le sens de la bascule de la force. Sur
+  {{ ag.conseils }} conseils, l’écart se distingue d’un tirage — mais il passe
+  le seuil de peu, et une saison mal relevée suffirait à le faire repasser
+  dessous.</p>
 </div>
+
+<p class="note"><strong>Cette page a longtemps conclu l’inverse.</strong>
+Jusqu’au 20 octobre 2026, elle titrait « mais on ne peut pas l’affirmer » :
+1,3 an sur 372 conseils, 1,44 écart-type, p ajustée 0,22, non concluant. Ce
+jour-là, le relevé des épreuves a été corrigé et complété — cinq saisons
+ajoutées depuis le wiki <em>Survivor</em>, des épisodes remis à leur place —
+et la date de la réunification a bougé avec lui : 222 conseils comptés avant,
+150 après, contre {{ ag.conseils_avant }} et {{ ag.conseils_apres }}
+aujourd’hui. Le résultat a franchi le seuil. Il est publié tel quel, avec
+l’ancienne conclusion en regard.</p>
 
 <p class="note">Le doyen du camp, lui, est traité comme une catégorie sur
 <a href="{{ '/statistiques/autour-du-feu/' | relative_url }}">Sachant qui est
-autour du feu</a> : même conclusion prudente, sur une autre découpe de la même
-donnée. Deux façons de poser la question de l’âge au conseil, deux fois
-« non concluant » — c’est une information, et elle vaut mieux que le silence.</p>
+autour du feu</a>, et il y reste non concluant. Deux façons de poser la
+question de l’âge au conseil, deux réponses de force inégale : l’écart moyen
+passe le seuil, la catégorie du plus âgé non.</p>
 
 ## Le sexe, lui, bascule
 
@@ -307,10 +316,8 @@ qu’un aventurier était blessé au douzième jour, ni qu’il a progressé. Le
 classement d’un soir est donc approché — et l’approximation, mesurée
 ci-dessus, ne suffit pas à expliquer l’écart.</p>
 
-<p class="note"><strong>{{ site.data.stats.epreuves.saisons_sans_donnee | size }}
-saisons n’ont pas de bilan par épisode</strong> et ne peuvent donc pas être
-coupées en deux. Les éditions spéciales sont écartées aussi : leurs revenants
-faussent la comparaison des forces.</p>
+<p class="note"><strong>Les éditions spéciales sont écartées</strong> : leurs
+revenants faussent la comparaison des forces.</p>
 
 <p class="note"><strong>Le nom des ambassadeurs vient de la prose</strong>, pas
 d’un tableau : {{ a.negociateurs.part_lues }} % des ambassades seulement, et

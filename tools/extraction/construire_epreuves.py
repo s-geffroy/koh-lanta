@@ -28,7 +28,9 @@ RACINE = os.path.abspath(os.path.join(ICI, "..", ".."))
 WIKI = os.environ.get("KL_WIKI", os.path.join(RACINE, "specs", "sources", "wiki"))
 
 from parse_fandom import slug            # noqa: E402
-from parse_epreuves import parse_page    # noqa: E402
+from parse_epreuves import parse_page, parse_survivor    # noqa: E402
+
+SURVIVOR = os.path.join(RACINE, "specs", "sources", "survivor")
 
 SUFFIXES = (".wiki", ".fandom.wiki", ".en.wiki")
 
@@ -68,12 +70,11 @@ ATTRIBUTIONS_REFUTEES = {
         "Wikipedia, resume de l'episode 4 : Dylan gagne, Yassin finit deuxieme "
         "et devient chef de la seconde equipe ; Fandom le range dans la colonne "
         "du confort, il n'a pas gagne l'epreuve.",
-    **{("s23", 10, "confort", nom):
-        "Wikipedia anglais : « François [Fouzi, Louana, Ambre, Bastien] » -- "
-        "François gagne et emmene quatre invites. Fandom cite les cinq ; les "
-        "deux sources ne s'accordent que sur François, et c'est lui seul "
-        "qu'on retient. Convention des crochets verifiee a Panama et Vanuatu."
-       for nom in ("Fouzi", "Louana", "Ambre", "Bastien")},
+    **{("s26", 1, "confort", nom):
+        "Wikipedia, note du bilan : « Exceptionnellement, il n'y a pas "
+        "d'épreuve de confort durant ce premier épisode. » Les fiches Fandom de "
+        "Cécile Belec et de Fabrice ne leur comptent aucune victoire individuelle."
+       for nom in ("Cécile B", "Fabrice")},
     ("s04", 9, "immunite", "Linda"):
         "Wikipedia anglais, note de la case : « As part of Linda's return to "
         "the game, she was given immunity at the next Tribal Council. » "
@@ -96,6 +97,75 @@ def index_saison(saison, parts):
     return tribus, personnes
 
 
+# Ce que la page retenue OMET et qu'un autre temoin atteste. TABLE fermee,
+# chaque ligne avec sa preuve. « avec » complete l'epreuve du soir ; « seule »
+# cree une epreuve distincte. Une cle a quatre termes nomme le gagnant deja
+# releve a cote duquel l'ajout s'inscrit, quand le soir compte deux epreuves
+# du meme type (immunites hommes et femmes de la Legende).
+AJOUTS = {
+    # Phases a quatre tribus : la page francaise ne cite que la premiere tribu,
+    # le guide Survivor les trois protegees, dans l'ordre d'arrivee. Regle de
+    # l'utilisateur : l'immunite compte toutes les tribus protegees.
+    ("s27", 1, "immunite"): ("avec", ["Hilaga", "Silangan"],
+        "guide Survivor : Timog, Hilaga, Silangan immunisees ; Cynthiana (Kanluran) sort"),
+    ("s27", 2, "immunite"): ("avec", ["Silangan", "Timog"],
+        "guide Survivor : Hilaga, Silangan, Timog immunisees ; Mehdi (Kanluran) sort"),
+    ("s27", 3, "immunite"): ("avec", ["Timog", "Kanluran"],
+        "guide Survivor : Hilaga, Timog, Kanluran immunisees ; Christian (Silangan) sort"),
+    ("s27", 4, "immunite"): ("avec", ["Timog"],
+        "guide Survivor : Hilaga et Timog immunisees ; Romane (Kanluran) et "
+        "Benoît (Silangan) sortent, un conseil par tribu perdante"),
+    ("s23", 2, "immunite"): ("avec", ["Ilog"],
+        "guide Survivor : Nacpan et Ilog immunisees au conseil ou Mattéo (Turung) sort"),
+    ("s23", 3, "confort"): ("seule", ["Anne-Sophie"],
+        "Wikipedia anglais et guide Survivor : deux gagnantes, une par ligne et "
+        "par tribu (Louana, Anne-Sophie) ; la fiche Fandom d'Anne-Sophie lui "
+        "compte une victoire individuelle. Seul le tableau Fandom l'omettait."),
+    # Deux conseils le meme soir, donc deux immunites.
+    # La Legende, premiers soirs : epreuve des hommes, epreuve des femmes, et
+    # les DEUX premiers de chacune sont immunises. Regle de l'utilisateur :
+    # l'immunite compte tous les proteges.
+    ("sp7", 1, "immunite", "Claude"): ("avec", ["Laurent"],
+        "Wikipedia : « Claude et Laurent ayant terminé respectivement 1er et 2e de "
+        "l'épreuve, se voient bénéficier chacun, d'une amulette d'immunité »"),
+    ("sp7", 1, "immunite", "Coumba"): ("avec", ["Alix"],
+        "Wikipedia : « Coumba remporte l'épreuve, suivie de près par Alix » ; le "
+        "guide Survivor compte Alix immunisee, comme le deuxieme des hommes"),
+    ("sp7", 2, "immunite", "Loïc"): ("avec", ["Teheiura"],
+        "Wikipedia : « Teheiura est aussi immunisé de par sa deuxième place »"),
+    ("sp7", 2, "immunite", "Clémence"): ("avec", ["Jade"],
+        "Wikipedia : « Jade et Clémence sont immunisées après la chute de Jade »"),
+    ("sp7", 13, "confort"): ("avec", ["Claude"],
+        "Wikipedia, jour 30 : « L'épreuve de confort [...] se disputera par équipes "
+        "de 3 [...] Claude choisit Jade et Phil » puis « Claude, Phil et Jade "
+        "gagnent donc l'épreuve de confort ». Fandom n'ecrivait que Phil et Jade."),
+    ("s22", 5, "immunite"): ("seule", ["Toa"],
+        "guide Survivor, note « Combined Reward and Immunity Challenge » : Toa "
+        "gagne confort et immunite, Magali (Oro) sort ; puis Oro gagne la "
+        "seconde immunite. Wikipedia et Fandom n'ecrivaient que la seconde."),
+}
+
+
+def _ajouter(sid, lot, rapport):
+    for cle, (mode, noms, preuve) in AJOUTS.items():
+        s_, ep, typ = cle[:3]
+        aupres = cle[3] if len(cle) > 3 else None
+        if s_ != sid:
+            continue
+        cible = next((e for e in lot if e["episode"] == ep and e["type"] == typ
+                      and (aupres is None or aupres in e["libelles"])), None)
+        if aupres and not cible:
+            rapport.append(f"{sid} ep.{ep} : ajout aupres de {aupres} sans cible — ignore")
+            continue
+        if mode == "avec" and cible:
+            cible["libelles"] = cible["libelles"] + [n for n in noms if n not in cible["libelles"]]
+        else:
+            lot.append({"saison": sid, "episode": ep, "type": typ, "libelles": list(noms),
+                        "indices": {}, "couleur": None, "source": "ajout"})
+        rapport.append(f"{sid} ep.{ep} : {typ} — ajout de {', '.join(noms)} (AJOUTS)")
+    return lot
+
+
 # Les conforts d'equipe qu'aucun tableau n'ecrit « Équipe de X », mais qu'un
 # RECIT atteste. C'est une TABLE : chaque ligne cite sa preuve.
 CONFORTS_D_EQUIPE = {
@@ -103,6 +173,9 @@ CONFORTS_D_EQUIPE = {
         "Wiki Survivor, Koh-Lanta: Caramoan : « the castaways were divided into "
         "four groups of four [...] and would compete in a Reward Challenge » -- "
         "Carole, Christopher, Frederic et Nathalie sont le groupe gagnant.",
+    ("sp7", 13):
+        "Wikipedia, jour 30 : confort « par équipes de 3 », gagne par l'equipe "
+        "de Claude (Claude, Jade, Phil).",
     ("s16", 9):
         "Fandom, page d'Alexandra Pharisien, « Confort par équipes » : « au "
         "25ème jour, Denis informe aux candidats que l'épreuve de confort va se "
@@ -149,6 +222,14 @@ def _renumeroter(sid, suf, lot, rapport):
                            f"renumerote en episode {nouveau} (RENUMEROTATION)")
         e["episode"] = nouveau
     return lot
+
+
+def _par_prenom(libelle, personnes):
+    """« Myriam » -> la seule personne de la saison dont le nom commence par Myriam."""
+    cle = slug(libelle)
+    lot = [p for liste in personnes.values() for p in liste
+           if slug((p.get("nom") or "").split(" ")[0]) == cle]
+    return lot[0] if len(lot) == 1 else None
 
 
 def _par_initiale(libelle, personnes):
@@ -255,9 +336,21 @@ def construire(saisons, parts, rapport, dernier_conseil=None, elimines_du_soir=N
                         f"{sid} : {suf} ecarte — {_max_episode(lot)} episodes "
                         f"contre {attendu} conseils numerotes")
         if not meilleur:
+            # Le guide d'episodes du wiki Survivor, en DERNIER recours : il ne
+            # sert que pour une saison qu'aucune autre page ne couvre (decision
+            # du 20 octobre 2026), et l'epreuve garde la trace de sa source
+            # unique. Sur les saisons deja couvertes, il reste un temoin.
+            guide = os.path.join(SURVIVOR, sid + ".epguide.wiki")
+            if os.path.exists(guide):
+                meilleur = parse_survivor(open(guide, encoding="utf-8").read(), sid)
+                if meilleur:
+                    rapport.append(f"{sid} : seule source, le guide d'episodes "
+                                   f"du wiki Survivor ({len(meilleur)} epreuves)")
+        if not meilleur:
             rapport.append(f"{sid} : aucun bilan d'epreuves exploitable")
             continue
 
+        meilleur = _ajouter(sid, meilleur, rapport)
         tribus, personnes = index_saison(s, parts)
         # (episode, chef) des conforts qu'une source ecrit « Équipe de X ». Le
         # rapprochement se fait par le CHEF, a deux episodes pres : les deux
@@ -322,6 +415,15 @@ def construire(saisons, parts, rapport, dernier_conseil=None, elimines_du_soir=N
                         rapport.append(f"{sid} ep.{e['episode']} : « {libelle} » est un "
                                        f"homonyme, vainqueur non rattache")
                     formes.add("individuelle")
+                elif _par_prenom(libelle, personnes):
+                    # « Myriam » pour Myriam Lamare : les saisons de
+                    # personnalites enregistrent le nom complet, le guide
+                    # Survivor n'ecrit que le prenom. UNE seule personne de ce
+                    # prenom dans la saison, sinon rien.
+                    p_ = _par_prenom(libelle, personnes)
+                    vainqueurs.append({"libelle": libelle, "type": "personne",
+                                       "id": p_["id"], "resolu": True})
+                    formes.add("individuelle")
                 elif _par_initiale(libelle, personnes):
                     # « Cécile B » : Fandom separe ses deux Cecile par
                     # l'initiale du nom. On ne rattache que si UNE seule
@@ -380,12 +482,14 @@ def construire(saisons, parts, rapport, dernier_conseil=None, elimines_du_soir=N
                 "vainqueurs": vainqueurs,
                 "source": e["source"],
             })
-    epreuves = _fondre_les_immunites_de_tribus(epreuves, rapport)
+    nb_tribus = {s["id"]: sum(1 for t in (s.get("tribus") or []) if not t.get("apres_fusion"))
+                 for s in saisons}
+    epreuves = _fondre_les_immunites_de_tribus(epreuves, rapport, nb_tribus)
     epreuves = _oter_les_trios_de_finale(epreuves, rapport)
     return _oter_les_immunites_dementies(epreuves, elimines_du_soir, rapport)
 
 
-def _fondre_les_immunites_de_tribus(epreuves, rapport):
+def _fondre_les_immunites_de_tribus(epreuves, rapport, nb_tribus):
     """Deux tribus immunisees le meme soir : UNE epreuve, deux gagnantes.
 
     Avec trois ou quatre tribus, seule la derniere va au conseil. Fandom
@@ -397,8 +501,12 @@ def _fondre_les_immunites_de_tribus(epreuves, rapport):
     """
     gardees, par_soir = [], {}
     for e in epreuves:
+        # A deux tribus, deux immunites le meme soir sont deux epreuves (un
+        # conseil chacune : Armes secretes, episode 5) -- on ne fond qu'a
+        # partir de trois tribus de depart.
         de_tribus = (e["type"] == "immunite" and e.get("forme") == "collective"
-                     and all(v["type"] == "tribu" for v in e["vainqueurs"]))
+                     and all(v["type"] == "tribu" for v in e["vainqueurs"])
+                     and nb_tribus.get(e["saison"], 0) >= 3)
         cle = (e["saison"], e["episode"])
         if de_tribus and cle in par_soir:
             deja = par_soir[cle]

@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Stéphanie Tribot (2022)"
-description: "Stéphanie Tribot, Koh-Lanta Le Totem maudit (2022) : sort au conseil le 17e jour, 17e sur 24, 0 épreuve gagnée. 497e sur 531 au classement des aventuriers."
+description: "Stéphanie Tribot, Koh-Lanta Le Totem maudit (2022) : sort au conseil le 17e jour, 17e sur 24, 0 épreuve gagnée. 503e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/stephanie-tribot.png
 permalink: /aventuriers/stephanie-tribot/
 aventurier: stephanie-tribot

@@ -72,6 +72,33 @@ Limite, et elle est réelle :
 exploitable — les castings les plus anciens, et l’édition de célébrités de 2012,
 dont les invités n’ont pas de page. Ce qui manque encore manque surtout là.
 
+## La quatrième source : le wiki anglophone de *Survivor*, en témoin
+
+**[Le wiki *Survivor*](https://survivor.fandom.com/wiki/Koh-Lanta)** — wiki
+anglophone consacré aux déclinaisons de l’émission dans le monde, sous licence
+[CC BY-SA](https://www.fandom.com/licensing). Chaque saison de *Koh-Lanta* y a
+une page et un **guide d’épisodes** : pour chaque soir, le confort, l’immunité
+et l’éliminé ; les invités d’une récompense entre crochets ; une note pour
+chaque cas particulier. Il est tenu par d’autres mains que Wikipédia et le wiki
+Fandom francophone, ce qui en fait un troisième témoin.
+
+Il sert à deux choses, depuis le 20 octobre 2026 :
+
+- **trancher** quand les deux premières sources se contredisent sur le gagnant
+  d’une épreuve. Ses pages par épisode, qui écrivent « Winners: » en toutes
+  lettres, ont départagé plusieurs cas que rien d’autre ne réglait ;
+- **combler** les {{ site.data.stats.mots.saisons_source_unique }} saisons dont
+  aucune autre page ne donne les épreuves :
+  {{ site.data.stats.epreuves.saisons_source_unique_texte }}. Pour elles, il est
+  la seule source, et le site le dit partout où cela compte.
+
+Il range sous « Immunity » des choses que ce site ne compte pas comme des
+épreuves : un duel gagné, un avantage, une immunité **donnée** après un
+changement de tribu, une course du premier jour. Ses notes le disent, et ces
+cases sont écartées à la lecture. Les pages de saison et les guides sont
+versionnés dans le dépôt (`specs/sources/survivor/`), comme le wikitexte des
+deux autres wikis.
+
 ## Deux sources de référence, pour comparer
 
 **[Le fichier des prénoms de l’INSEE](https://www.insee.fr/fr/statistiques/8595130)**
@@ -386,15 +413,16 @@ perd les deux. Les cas ambigus n’y figurent pas : « Brassac » est dans le Ta
 *et* dans le Puy-de-Dôme, « Mauléon » dans les Deux-Sèvres *et* les
 Pyrénées-Atlantiques. Ces deux-là restent tels quels, et hors du calcul.
 
-## Cinq saisons sans épreuves, et pourquoi elles le resteront
+## Cinq saisons sans épreuves, jusqu’au troisième témoin
 
-*Bocas del Toro*, *Palau*, *Malaisie*, *Johor* et *Le Choc des héros* n’ont
-aucune épreuve relevée — ni confort, ni immunité, pas une ligne. Ce n’est pas un
-défaut de lecture, et la question a été reprise à zéro.
+Jusqu’au 20 octobre 2026, *Bocas del Toro*, *Palau*, *Malaisie*, *Johor* et
+*Le Choc des héros* n’avaient aucune épreuve relevée — ni confort, ni immunité,
+pas une ligne. Ce n’était pas un défaut de lecture, et la question avait été
+reprise à zéro.
 
 Le relevé cherche un tableau sous cinq titres différents, dont « Bilan par
 épisode », « Déroulement » et « Détail des éliminations ». **Aucune de ces cinq
-saisons n’en porte un.** *Malaisie* a bien une section « Détail des
+saisons n’en portait un**, ni sur Wikipédia ni sur le wiki Fandom. *Malaisie* a bien une section « Détail des
 éliminations » — c’est la matrice des votes, qui ne dit rien des épreuves.
 Wikipédia n’a par ailleurs **aucun article français** pour *Bocas del Toro*,
 *Palau* ni *Johor* : les deux dernières ont été récupérées sur la version
@@ -407,14 +435,26 @@ des **tribus**, et elle s’arrête à la réunification, c’est-à-dire préci
 où commencent les épreuves individuelles. Or ce sont elles qui manquent : sans
 elles, pas de dénominateur, pas de ratio. Une extraction qui livrerait la moitié
 d’une moitié, au prix d’une lecture de prose libre, coûterait plus en fausses
-lignes qu’elle ne rapporterait.
+lignes qu’elle ne rapporterait. La section concluait donc qu’elles resteraient
+vides.
 
-<p class="note">Le palmarès, lui, n’est pas perdu. Les fiches individuelles
-donnent le compte de victoires par personne et par saison — il est renseigné
-pour {{ site.data.stats.epreuves.palmares_sans_bilan.renseignees }} des
-{{ site.data.stats.epreuves.palmares_sans_bilan.participations }} participations
-de ces éditions. Ce qui manque n’est pas
-« combien chacun a gagné », c’est « quelle épreuve, quel soir ».</p>
+C’était sans compter le wiki *Survivor*, présenté plus haut, dont le guide d’épisodes donne, pour chacune des cinq, le confort et l’immunité
+de chaque soir. Elles sont relevées depuis, sur cette **seule source**, avec
+trois précautions :
+
+- leur numérotation a été confrontée aux conseils, éliminé par éliminé : elle
+  concorde partout ;
+- chaque case à plusieurs noms a été vérifiée sur la page de l’épisode, qui
+  écrit « Winners: » en toutes lettres — un duo gagnant, deux tribus à égalité
+  qui « split the reward », quatre gagnants nommés ;
+- ce que le guide range sous « Immunity » sans que ce soit une épreuve — au
+  *Choc des héros*, le duel qui précède la réunion des ambassadeurs et rend
+  Christina intouchable au conseil suivant — est écarté, comme dans les autres saisons. Une immunité gagnée puis
+  conservée, parce que le conseil qu’elle devait couvrir a été annulé, reste
+  une immunité gagnée.
+
+Le défaut qui reste est celui de toute source unique : une erreur du guide ne
+serait recoupée par rien.
 
 ## Trois défauts dans la lecture des épreuves, trouvés en construisant un classement
 
@@ -541,9 +581,7 @@ l’épisode 13, Fandom montre qu’il s’agissait des poteaux. Yassin, au <em>
 des héros</em> : le récit de l’épisode 4 le dit deuxième de l’épreuve, pas
 vainqueur. Claire, au <em>Cambodge</em> : la page anglaise donnait l’immunité de
 l’épisode 10 à Vincent ; Fandom la donne à Claire, et la page de Claire, qui lui
-compte « quatre épreuves au total », ne tient qu’avec celle-là. Au <em>Totem
-maudit</em>, épisode 10, Fandom cite cinq gagnants et la page anglaise un seul,
-François, avec quatre invités : on ne retient que ce que les deux disent.</p>
+compte « quatre épreuves au total », ne tient qu’avec celle-là.</p>
 
 Deux règles ont été arrêtées au passage. Avec trois ou quatre tribus, Fandom
 remplit une colonne par tribu classée. À l’immunité, toutes les tribus classées
@@ -575,6 +613,56 @@ qu’aucun tableau dise « équipe ». Les récits ont tranché, et ce sont bien
 of four » en lice pour le riz. À *L’Île au trésor*, épisode 9, la page Fandom
 d’Alexandra raconte que « l’épreuve de confort va se jouer en équipe de 5 » ;
 l’équipe de Bruno, dont elle fait partie, l’emporte.
+
+## Le troisième témoin, saison par saison
+
+Le même 20 octobre, chaque saison du relevé a été confrontée au guide
+d’épisodes du wiki *Survivor*, puis, à chaque écart, à la page de l’épisode et
+aux récits de Wikipédia. La plupart des écarts n’en étaient pas : le guide
+range sous « Immunity » des duels et des immunités données, compte toutes les
+tribus d’un classement, et nomme certains homonymes par leur initiale
+(« Jérôme M. ») là où le relevé a rattaché le bon nom. Ce qui restait a été
+corrigé :
+
+- **Une immunité manquait aux *Armes secrètes*, épisode 5** : une épreuve
+  combinée, confort et immunité, gagnée par Toa, avant le conseil où Magali,
+  une Oro, est éliminée. Wikipédia et Fandom n’écrivaient que la seconde
+  immunité du soir.
+- **Les tribus protégées des phases à quatre tribus** — *La Revanche des 4
+  Terres*, épisodes 1 à 4, et *Le Totem maudit*, épisode 2 — n’étaient pas
+  toutes comptées : la page française ne nommait que la première arrivée.
+- **Trois gagnants oubliés** : Anne-Sophie au *Totem maudit*, épisode 3 ;
+  Claude, dans l’équipe de trois qui gagne le confort de *La Légende*,
+  épisode 13 ; les deuxièmes des premières immunités de *La Légende*, que le
+  récit dit immunisés aussi.
+- **Un confort qui n’a pas eu lieu** : *La Tribu maudite*, épisode 1 —
+  « Exceptionnellement, il n’y a pas d’épreuve de confort durant ce premier
+  épisode », écrit Wikipédia ; le tableau Fandom en donnait un.
+
+<p class="note"><strong>Une correction publiée était fausse.</strong> Pour le
+confort du <em>Totem maudit</em>, épisode 10, la page anglaise écrit « François
+[Fouzi, Louana, Ambre, Bastien] », et on n’avait retenu que François. Trois
+témoins disent cinq gagnants : le tableau Fandom, le wiki <em>Survivor</em>, et
+les fiches Fandom de Fouzi, Louana, Ambre et Bastien, dont le compte de
+victoires individuelles ne tombe juste qu’avec celle-là. Les cinq ont été
+rétablis.</p>
+
+Au moment de cette vérification, **671 épreuves relevées devenaient 789**, dont
+**388 individuelles au lieu de 328** — l’essentiel venant des cinq saisons
+ajoutées. Le modèle de force est passé de 28 à
+{{ site.data.stats.modeles.force.saisons_retenues }} saisons.
+
+**Une conclusion publiée a basculé, et il faut la nommer.**
+[La fusion]({{ '/statistiques/fusion/' | relative_url }}) concluait que l’âge de
+l’éliminé bascule à la réunification « mais on ne peut pas l’affirmer » :
+p ajustée 0,22. Avec le relevé corrigé, la date de la réunification a bougé
+pour plusieurs saisons, et le test passe le seuil, de justesse. La page le dit,
+avec l’ancienne conclusion en regard. Aucun autre test du registre n’a changé
+de conclusion.
+
+Un désaccord reste ouvert. À *Pacifique*, épisode 3, Fandom donne le confort à
+Kanawa, le wiki *Survivor* à Kumo, et aucun récit ne raconte l’épreuve. Le
+relevé garde Fandom, faute de mieux.
 
 ## Trois vainqueurs pour une saison qui n’est pas finie
 
@@ -797,12 +885,12 @@ Ce qui reste, et pourquoi :
   un seul bulletin. Ceux-là
   ont été inspectés cellule par cellule : les cases sont **vides dans la source**.
   Ce n’est pas une lecture qui échoue, c’est un wiki qui n’a pas tout noté.
-- **Les épreuves ne couvrent pas toutes les saisons.**
+- **Les épreuves couvrent toutes les saisons, mais pas à égalité.**
   {{ site.data.stats.epreuves.saisons_couvertes }} saisons sur
-  {{ site.data.stats.general.saisons_diffusees }} ont un bilan épisode par épisode
-  exploitable ; les {{ site.data.stats.mots.saisons_sans_bilan }} autres
-  ({{ site.data.stats.epreuves.saisons_sans_donnee | join: ", " }}) n’en ont
-  pas. Les épreuves de finale sont exclues : les tableaux sources y changent de
+  {{ site.data.stats.general.saisons_diffusees }} ont un bilan épisode par
+  épisode ; pour {{ site.data.stats.mots.saisons_source_unique }} d’entre elles
+  ({{ site.data.stats.epreuves.saisons_source_unique_texte }}), il ne vient que
+  d’une source, le guide d’épisodes du wiki *Survivor*. Les épreuves de finale sont exclues : les tableaux sources y changent de
   colonnes et listent les qualifiés plutôt que le vainqueur. Quant à la
   **nature** des épreuves, le wiki la donne — {{ site.data.epreuves_nommees.nb_epreuves }}
   pages d’épreuves récurrentes, typées — mais sans le numéro d’épisode, si bien

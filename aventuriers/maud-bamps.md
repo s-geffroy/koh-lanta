@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Maud Bamps (2019)"
-description: "Maud Bamps, Koh-Lanta La Guerre des chefs (2019) : gagne la saison le 39e jour, 1re sur 21, 3 épreuves gagnées. 64e sur 531 au classement des aventuriers."
+description: "Maud Bamps, Koh-Lanta La Guerre des chefs (2019) : gagne la saison le 39e jour, 1re sur 21, 3 épreuves gagnées. 70e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/maud-bamps.png
 permalink: /aventuriers/maud-bamps/
 aventurier: maud-bamps
