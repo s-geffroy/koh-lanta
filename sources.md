@@ -660,9 +660,14 @@ pour plusieurs saisons, et le test passe le seuil, de justesse. La page le dit,
 avec l’ancienne conclusion en regard. Aucun autre test du registre n’a changé
 de conclusion.
 
-Un désaccord reste ouvert. À *Pacifique*, épisode 3, Fandom donne le confort à
-Kanawa, le wiki *Survivor* à Kumo, et aucun récit ne raconte l’épreuve. Le
-relevé garde Fandom, faute de mieux.
+À *Pacifique*, épisode 3, Fandom donne le confort à Kanawa, le wiki *Survivor*
+à Kumo, et aucun récit ne raconte l’épreuve — la dégustation. Deux indices
+penchent pour Kanawa, et le relevé la garde. La page Fandom de l’épreuve écrit
+« Pacifique : Kanawa (kit de pêche) ». Et les fiches des aventuriers restés
+dans une même tribu jusqu’à la réunification comptent leurs victoires en
+équipe : huit sur dix ne tombent juste qu’avec un confort aux Kanawa ce
+soir-là, deux seulement avec un confort aux Kumo. C’est un faisceau, pas une
+preuve : si un récit venait à dire l’inverse, il l’emporterait.
 
 ## Trois vainqueurs pour une saison qui n’est pas finie
 
