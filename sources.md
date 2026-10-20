@@ -562,9 +562,14 @@ Au moment de la correction, **743 épreuves relevées devenaient 671**, dont
 tient sur toutes les saisons : chaque immunité individuelle a un conseil le même
 soir, et son gagnant n’en est jamais l’éliminé.
 
-Trois points restent ouverts. À *Vanuatu*, épisode 9, Wikipédia en anglais
-donne l’immunité à Ludovic, et Fandom écrit « Personne » ; aucun récit ne les
-départage, et le relevé garde la première source, faute de mieux. À *Caramoan*,
+À *Vanuatu*, épisode 9, Wikipédia en anglais donnait l’immunité à Ludovic, et
+Fandom écrivait « Personne ». Un troisième témoin a tranché : le wiki
+anglophone de *Survivor*, dont le tableau des votes porte « Individual
+Immunity » face à Ludovic le soir où Alain part. La même page lui compte trois
+victoires individuelles, et ce total ne tombe juste qu’avec cette immunité,
+ajoutée à ses deux conforts. C’est Ludovic.
+
+Deux points restent ouverts. À *Caramoan*,
 épisode 1, et à *L’Île au trésor*, épisode 9, le confort compte quatre et cinq
 gagnants nommés, sans que rien dise s’il s’agissait d’une équipe : ils restent
 comptés comme la source les écrit.
