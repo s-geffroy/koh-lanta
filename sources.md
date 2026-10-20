@@ -143,7 +143,12 @@ récits datés. La page Fandom de Marie confirme l’élimination d’Estelle au
 Freddy au 2<sup>e</sup> de *La Légende*. Deux cas restent à égalité, et
 n’ont pas été changés : Ludovic, éliminé à l’orientation de *Vanuatu* au jour
 38 ou 39, et la durée de *Caramoan*, 39 ou 40 jours — trois témoins de chaque
-côté.
+côté. Une recherche sur le web n’a rien tranché : pour *Caramoan*, le wiki
+*Télé-réalité* fait finir la saison au 39<sup>e</sup> jour, mais ses parcours
+recopient le format de Wikipédia ; Christelle parle en interview de « 40 jours
+sur cette île », une formule orale qui peut arrondir ; et les autres sites de
+statistiques reprennent le tableau Fandom. Pour Ludovic, aucune page ne date
+l’orientation.
 
 <p class="note">Au moment de cette reprise, 50 étapes portaient un nom de
 tribu mêlé de dates, et 32 parcours contredisaient leur jour de sortie : il
