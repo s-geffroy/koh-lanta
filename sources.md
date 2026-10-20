@@ -556,7 +556,7 @@ que si une source l’écrit : compter les noms ne suffit pas, deux duos gagnant
 ou trois récompenses individuelles ne font pas une équipe.
 
 Au moment de la correction, **743 épreuves relevées devenaient 671**, dont
-**330 individuelles au lieu de 362**. Le relevé en compte aujourd’hui
+**328 individuelles au lieu de 362**. Le relevé en compte aujourd’hui
 {{ site.data.stats.epreuves.epreuves }}, dont
 {{ site.data.stats.epreuves.individuelles }} individuelles. Le contrôle final
 tient sur toutes les saisons : chaque immunité individuelle a un conseil le même
@@ -569,10 +569,12 @@ Immunity » face à Ludovic le soir où Alain part. La même page lui compte tro
 victoires individuelles, et ce total ne tombe juste qu’avec cette immunité,
 ajoutée à ses deux conforts. C’est Ludovic.
 
-Deux points restent ouverts. À *Caramoan*,
-épisode 1, et à *L’Île au trésor*, épisode 9, le confort compte quatre et cinq
-gagnants nommés, sans que rien dise s’il s’agissait d’une équipe : ils restent
-comptés comme la source les écrit.
+Deux conforts restaient indécis, avec quatre et cinq gagnants nommés sans
+qu’aucun tableau dise « équipe ». Les récits ont tranché, et ce sont bien des
+épreuves d’équipe. À *Caramoan*, épisode 1, le même wiki décrit « four groups
+of four » en lice pour le riz. À *L’Île au trésor*, épisode 9, la page Fandom
+d’Alexandra raconte que « l’épreuve de confort va se jouer en équipe de 5 » ;
+l’équipe de Bruno, dont elle fait partie, l’emporte.
 
 ## Trois vainqueurs pour une saison qui n’est pas finie
 

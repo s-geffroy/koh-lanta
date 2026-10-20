@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Margot Perrot Houwaer — Johor (2015)"
-description: "Margot Perrot Houwaer, Koh-Lanta Johor (2015) : abandonne sur blessure le 19e jour, 14e sur 20. 179e sur 531 au classement des aventuriers."
+description: "Margot Perrot Houwaer, Koh-Lanta Johor (2015) : abandonne sur blessure le 19e jour, 14e sur 20. 180e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/margot-perrot-houwaer.png
 permalink: /aventuriers/margot-perrot-houwaer/
 aventurier: margot-perrot-houwaer

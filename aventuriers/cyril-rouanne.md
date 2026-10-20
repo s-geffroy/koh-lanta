@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Cyril Rouanne (2019)"
-description: "Cyril Rouanne, Koh-Lanta La Guerre des chefs (2019) : sort au conseil le 37e jour, 6e sur 21, 1 épreuve gagnée. 444e sur 531 au classement des aventuriers."
+description: "Cyril Rouanne, Koh-Lanta La Guerre des chefs (2019) : sort au conseil le 37e jour, 6e sur 21, 1 épreuve gagnée. 445e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/cyril-rouanne.png
 permalink: /aventuriers/cyril-rouanne/
 aventurier: cyril-rouanne

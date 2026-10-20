@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Cynthia Combes (2026)"
-description: "Cynthia Combes, Koh-Lanta Les Reliques du destin (2026) : gagne la saison le 39e jour, 1re sur 20. 271e sur 531 au classement des aventuriers."
+description: "Cynthia Combes, Koh-Lanta Les Reliques du destin (2026) : gagne la saison le 39e jour, 1re sur 20. 272e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/cynthia-combes.png
 permalink: /aventuriers/cynthia-combes/
 aventurier: cynthia-combes

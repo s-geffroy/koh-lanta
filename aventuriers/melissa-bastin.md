@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Mélissa Bastin — Johor (2015)"
-description: "Mélissa Bastin, Koh-Lanta Johor (2015) : sort aux poteaux le 39e jour, 3e sur 20, 10 voix reçues. 193e sur 531 au classement des aventuriers."
+description: "Mélissa Bastin, Koh-Lanta Johor (2015) : sort aux poteaux le 39e jour, 3e sur 20, 10 voix reçues. 194e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/melissa-bastin.png
 permalink: /aventuriers/melissa-bastin/
 aventurier: melissa-bastin

@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Laurence Pizzocchia — 2 saisons jouées"
-description: "Laurence Pizzocchia, 2 saisons de Koh-Lanta entre 2010 et 2014 : 43 jours de jeu, 8 voix reçues. 282e sur 531 au classement des aventuriers."
+description: "Laurence Pizzocchia, 2 saisons de Koh-Lanta entre 2010 et 2014 : 43 jours de jeu, 8 voix reçues. 284e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/laurence-pizzocchia.png
 permalink: /aventuriers/laurence-pizzocchia/
 aventurier: laurence-pizzocchia

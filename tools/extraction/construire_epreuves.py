@@ -96,6 +96,21 @@ def index_saison(saison, parts):
     return tribus, personnes
 
 
+# Les conforts d'equipe qu'aucun tableau n'ecrit « Équipe de X », mais qu'un
+# RECIT atteste. C'est une TABLE : chaque ligne cite sa preuve.
+CONFORTS_D_EQUIPE = {
+    ("s08", 1):
+        "Wiki Survivor, Koh-Lanta: Caramoan : « the castaways were divided into "
+        "four groups of four [...] and would compete in a Reward Challenge » -- "
+        "Carole, Christopher, Frederic et Nathalie sont le groupe gagnant.",
+    ("s16", 9):
+        "Fandom, page d'Alexandra Pharisien, « Confort par équipes » : « au "
+        "25ème jour, Denis informe aux candidats que l'épreuve de confort va se "
+        "jouer en équipe de 5 » ; l'equipe de Bruno (Benoit, Candice, Stephane, "
+        "Alexandra) gagne.",
+}
+
+
 # Les tableaux qui numerotent leurs LIGNES et non les episodes. Fandom ecrit
 # « 7ème épisode » pour la septieme ligne de son bilan de la Legende, qui en
 # saute quatre ; les conseils, eux, suivent les quinze episodes diffuses. La
@@ -349,9 +364,10 @@ def construire(saisons, parts, rapport, dernier_conseil=None, elimines_du_soir=N
             personnes_citees = sum(1 for v in vainqueurs if v["type"] == "personne")
             if (e["type"] == "confort" and forme == "individuelle"
                     and personnes_citees >= 3
-                    and any(abs(ep - e["episode"]) <= 2
-                            and chef in {slug(v["libelle"]) for v in vainqueurs}
-                            for ep, chef in equipes_ailleurs)):
+                    and ((sid, e["episode"]) in CONFORTS_D_EQUIPE
+                         or any(abs(ep - e["episode"]) <= 2
+                                and chef in {slug(v["libelle"]) for v in vainqueurs}
+                                for ep, chef in equipes_ailleurs))):
                 forme = "collective"
                 rapport.append(f"{sid} ep.{e['episode']} : confort a "
                                f"{personnes_citees} noms, « équipe » pour l'autre "
