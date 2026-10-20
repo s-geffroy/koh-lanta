@@ -1,8 +1,9 @@
 /* Koh-Lanta en chiffres — le seul script du site.
  *
  * Rien de ce qu'il fait ne porte de donnee : sans lui, toutes les pages
- * restent completes et lisibles. Il ajoute trois conforts, et rien d'autre :
- * la bascule de theme, le tri des tableaux, le filtrage des aventuriers.
+ * restent completes et lisibles. Il ajoute quatre conforts, et rien d'autre :
+ * la bascule de theme, le tri des tableaux, le filtrage des aventuriers, le
+ * sommaire des longues pages.
  * C'est pourquoi les commandes qu'il installe sont masquees tant qu'il n'a
  * pas tourne (classe `sans-js`, retiree tres tot dans <head>).
  */
@@ -90,6 +91,35 @@
       });
     }
   );
+
+  /* ------------------------------------------------- sommaire de la page */
+
+  /* Une page d'analyse ou un article compte jusqu'a onze sections. A partir
+     de cinq, un sommaire replie se pose sous l'entete. Il est fabrique ici, a
+     partir des titres deja publies, et non dans le gabarit : aucun calcul en
+     Liquid, et rien a tenir a jour quand une section change. Une page dont un
+     titre n'a pas d'identifiant (les fiches) n'en recoit aucun. */
+
+  var entetePage = document.querySelector(".page-entete");
+  var titres = Array.prototype.slice.call(document.querySelectorAll(".prose > h2"));
+  if (entetePage && titres.length >= 5 && titres.every(function (h) { return h.id; })) {
+    var sommaire = document.createElement("details");
+    sommaire.className = "sommaire-page";
+    var poignee = document.createElement("summary");
+    poignee.textContent = "Sur cette page (" + titres.length + " sections)";
+    sommaire.appendChild(poignee);
+    var liste = document.createElement("ul");
+    titres.forEach(function (h) {
+      var item = document.createElement("li");
+      var lien = document.createElement("a");
+      lien.href = "#" + h.id;
+      lien.textContent = h.textContent.trim();
+      item.appendChild(lien);
+      liste.appendChild(item);
+    });
+    sommaire.appendChild(liste);
+    entetePage.parentNode.insertBefore(sommaire, entetePage.nextSibling);
+  }
 
   /* ------------------------------------------------------------- filtrage */
 

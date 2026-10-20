@@ -110,6 +110,8 @@ Les pondérations numériques des versions exploratoires ne servent pas de preuv
 
 Les données sont celles de ce site ; les chiffres de cette page suivent leurs mises à jour. Elles sont reconstruites à partir de trois sources croisées — les pages de saison de Wikipédia, celles du wiki Fandom francophone, et les pages individuelles de ce wiki — avec une provenance champ par champ ([les sources]({{ '/sources/' | relative_url }})).
 
+<div class="tableau-large" markdown="1">
+
 | Élément | Effectif |
 |---|---:|
 | Saisons diffusées | {{ a.saisons }} |
@@ -118,6 +120,8 @@ Les données sont celles de ce site ; les chiffres de cette page suivent leurs m
 | Conseils d'élimination, saisons terminées | {{ a.conseils }} |
 | … dont décomptés au bulletin près | {{ a.conseils_complets }} |
 | Bulletins | {{ a.bulletins }} |
+
+</div>
 
 Un contrôle automatique refuse toute incohérence connue : un immunisé éliminé, un votant déjà sorti, un total annoncé que ses bulletins contredisent. Les exceptions acceptées sont nommées une à une, avec leur raison. Avant toute analyse de cet article, une révision a corrigé 159 conseils qui portaient une panne silencieuse — coquilles de nom, votes noirs de l'éliminé lus comme des votes ordinaires, sorties sans vote comptées comme des conseils.
 
@@ -150,10 +154,14 @@ Le **pilote rétrospectif de neuf conseils** de la version précédente est reti
 
 Le site estime une [force aux épreuves]({{ '/statistiques/force/' | relative_url }}) pour chaque aventurier, à partir de {{ a.force.epreuves }} épreuves de {{ a.force.saisons }} saisons, et classe chaque éliminé parmi les présents du soir (0 = le plus faible, 100 = le plus fort).
 
+<div class="tableau-large" markdown="1">
+
 | Test | Observé | Attendu sous le nul | p ajustée |
 |---|---:|---:|---:|
 | Rang de force de l'éliminé, après moins avant la réunification | {{ a.tests.fusion_force.observe }} points | {{ a.tests.fusion_force.attendu }} | {{ a.tests.fusion_force.p }} |
 | Rang de force de l'éliminé choisi par les ambassadeurs | {{ a.tests.ambassadeurs_force.observe }} | {{ a.tests.ambassadeurs_force.attendu }} | {{ a.tests.ambassadeurs_force.p }} |
+
+</div>
 
 L'éliminé est au rang {{ a.force.rang_avant }} avant la réunification ({{ a.force.conseils_avant }} conseils mesurables) et {{ a.force.rang_apres }} après ({{ a.force.conseils_apres }} conseils). L'écart ne dépasse pas ce que le hasard produit. Les ambassadeurs, qui décident seuls, ne choisissent pas autrement qu'un tirage.
 
@@ -164,6 +172,8 @@ L'hypothèse 2.1 n'est donc pas confirmée **sous cette mesure**. Trois réserve
 Le tableau 2 rassemble les tests du registre qui touchent un mécanisme du cadre. « Points » désigne un écart de probabilité, en points de pourcentage. La dernière colonne renvoie à la page où le test est publié.
 
 **Tableau 2 — Mécanismes du cadre et tests du registre**
+
+<div class="tableau-large" markdown="1">
 
 | Mécanisme (section) | Test | Observé | Attendu | p ajustée | Page |
 |---|---|---:|---:|---:|---|
@@ -183,6 +193,8 @@ Le tableau 2 rassemble les tests du registre qui touchent un mécanisme du cadre
 | Changement de régime (4) | Écart d'âge de l'éliminé à son camp, avant moins après | {{ a.tests.age_bascule_fusion.observe }} ans | {{ a.tests.age_bascule_fusion.attendu }} | {{ a.tests.age_bascule_fusion.p }} | [fusion]({{ '/statistiques/fusion/' | relative_url }}) |
 | Changement de régime (4) | Part de femmes parmi les éliminés, après moins avant | {{ a.tests.fusion_sexe.observe }} pts | {{ a.tests.fusion_sexe.attendu }} | {{ a.tests.fusion_sexe.p }} | [fusion]({{ '/statistiques/fusion/' | relative_url }}) |
 | Ambassadeurs (5.4) | Rang de survie ultérieure des ambassadeurs | {{ a.tests.ambassadeurs_survie.observe }} | {{ a.tests.ambassadeurs_survie.attendu }} | {{ a.tests.ambassadeurs_survie.p }} | [fusion]({{ '/statistiques/fusion/' | relative_url }}) |
+
+</div>
 
 Quatre lectures s'en dégagent.
 
@@ -210,12 +222,16 @@ La version précédente avait verrouillé, avant un conseil, une distribution de
 
 **Tableau 3 — Issues d'un conseil**
 
+<div class="tableau-large" markdown="1">
+
 | Issue | Version précédente | Saisons terminées ({{ a.issues.conseils }} conseils) |
 |---|---:|---:|
 | Élimination ordinaire | 42,9 % | {{ a.issues.ordinaire }} % |
 | Égalité puis second vote | 28,6 % | {{ a.issues.egalite_revote }} % |
 | Renversement par un objet d'immunité | 14,3 % | {{ a.issues.renversement }} % |
 | Égalité tranchée sans second vote | 14,3 % | {{ a.issues.egalite_tranchee }} % |
+
+</div>
 
 Ces fréquences sont la seule mesure de cet article qui ne figure pas ailleurs sur le site. L'unité est le **conseil décisif** — celui dont sort un éliminé rattaché. Il est classé « égalité puis second vote » si le conseil qui le précède immédiatement, le même soir, est un tour nul ; « renversement » si un objet d'immunité a annulé des voix et que, sans lui, le protégé en aurait reçu plus que l'éliminé ; « égalité tranchée » si le conseil décisif lui-même finit à égalité en tête. Les {{ a.issues.sans_bulletin }} conseils décisifs dont la source ne donne aucun bulletin ne sont pas classés.
 
@@ -227,6 +243,8 @@ La version précédente s'abstenait de désigner l'éliminé. Le site publie un 
 
 ## 7. Hypothèses mécanistes, après confrontation
 
+<div class="tableau-large" markdown="1">
+
 | Chaîne | Version précédente | Cette version |
 |---|---|---|
 | Faible exit → dépendance → valeur des coalitions | hypothèse | **conséquences observées** : coût de l'isolement, persistance et protection des coalitions (6.2) |
@@ -236,6 +254,8 @@ La version précédente s'abstenait de désigner l'éliminé. Le site publie un 
 | Conformité / cascade | distinction conceptuelle | **non concluant** (6.2) |
 | Réunification → changement de régime | auto-description | **auto-description confirmée par les votes** (6.3) |
 | Rareté → stress → simplification | hypothèse | **non testée** |
+
+</div>
 
 Une séquence de conseil, aussi parlante soit-elle, reste une illustration et non une preuve. Elle relève de $$O_{diffusé}$$ : le motif est rapporté, le vote est observé.
 
