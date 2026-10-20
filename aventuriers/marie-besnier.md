@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Marie Besnier (2001)"
-description: "Marie Besnier, Les Aventuriers de Koh-Lanta (2001) : sort au conseil le 3e jour, 16e sur 16, 6 voix reçues. 432e sur 531 au classement des aventuriers."
+description: "Marie Besnier, Les Aventuriers de Koh-Lanta (2001) : sort au conseil le 3e jour, 16e sur 16, 6 voix reçues. 435e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/marie-besnier.png
 permalink: /aventuriers/marie-besnier/
 redirect_from: /aventuriers/marie-boyer/

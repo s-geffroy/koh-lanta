@@ -452,16 +452,15 @@ la même langue. Le choix de la source ne se fait donc plus au volume mais à
 l’**accord avec les conseils** : une page dont la numérotation dépasse de plus
 de deux le dernier conseil numéroté est écartée, et le rapport le dit.
 
-<p class="note"><strong>La réparation a elle-même révélé une contradiction.</strong>
-Une fois le vrai tableau de <em>La Revanche des 4 Terres</em> ouvert, le
-vérificateur a signalé que Maxime gagnait l’immunité individuelle de l’épisode
-13 <em>et</em> partait au conseil du même soir. Les deux ne peuvent pas tenir
-ensemble. La cellule « Immunité » de ce soir-là porte trois noms : ce sont les
-rescapés d’une <em>épreuve éliminatoire</em>, pas les vainqueurs d’une immunité.
-Quand les deux faits se contredisent, c’est le conseil qui l’emporte — il est
-attesté par ses bulletins, l’immunité ne l’est que par un nom dans une cellule.
-La seule attribution qui se contredit est retirée, les deux autres restent, et
-la ligne figure au rapport de construction.</p>
+<p class="note"><strong>La réparation a elle-même révélé une contradiction, et
+on l’a d’abord mal expliquée.</strong> Une fois le vrai tableau de <em>La
+Revanche des 4 Terres</em> ouvert, le vérificateur a signalé que Maxime gagnait
+l’immunité individuelle de l’épisode 13 <em>et</em> partait au conseil du même
+soir. On l’a lu, à tort, comme une épreuve éliminatoire rangée sous
+« Immunité », et on a retiré la seule attribution qui se contredisait. La vraie
+cause était ailleurs : tout le tableau était rangé un épisode trop loin, et
+l’immunité que Maxime avait gagnée à l’épisode 12 tombait sur le soir de son
+élimination. La section suivante raconte comment on l’a trouvée.</p>
 
 Ce que cela a déplacé, au moment de la correction : **766 épreuves relevées
 devenaient 749**, dont **375 individuelles au lieu de 368** — on en perdait en
@@ -489,6 +488,86 @@ quatre joueurs — c’était le décalage de numérotation. *La Revanche des 4 
 plaçait sa fusion à l’épisode 4 sur 17, chiffre lu dans le tableau de classement
 des quatre tribus ; elle la place maintenant à l’épisode 8. La page a été
 réécrite, et elle raconte ce qu’elle disait avant.
+
+## Une ligne reprise, six défauts trouvés derrière elle
+
+Le 20 octobre 2026, on a repris une seule ligne : l’épisode 13 de *La Revanche
+des 4 Terres*. Le relevé y donnait le confort à Maxime et Noémie, l’immunité à
+Noémie. La source dit Jérôme et Jérôme — deux homonymes, l’un de la tribu
+orange, l’autre de la bleue. En remontant le fil, on a trouvé six défauts de
+lecture, tous silencieux, et on les a cherchés dans toutes les saisons.
+
+**Le numéro d’épisode effacé.** Wikipédia écrit la colonne des épisodes avec un
+modèle, {% raw %}`{{9e|épisode}}`{% endraw %}. Le nettoyage du texte efface les modèles, et le
+numéro avec eux. Le lecteur comptait alors les lignes, et un épisode tenu sur
+deux lignes — deux conseils le même soir — décalait d’un cran tout ce qui
+suivait. Quatre saisons étaient rangées un épisode trop loin : *Les Armes
+secrètes*, *La Revanche des 4 Terres*, *Les Reliques du destin* et *Le Combat
+des héros*.
+
+**Une case fusionnée comptée deux fois.** Les saisons récentes étalent un même
+cycle sur deux soirs, et la case de l’épreuve couvre alors deux lignes. Elle
+était lue à chacune : vingt-deux épreuves comptées deux fois, dans sept saisons.
+Les notes de la source disent où tombe chaque épreuve — « Pour l’épreuve de
+confort » sur le premier soir, « Pour l’épreuve d’immunité et le conseil » sur
+le second — et c’est la règle désormais appliquée.
+
+**Le nom surligné.** Un autre modèle écrit un nom à la couleur de sa tribu.
+Effacé lui aussi, il ne laissait de « Maxime et Naïs » que le « et » : un
+confort perdu.
+
+**L’invité pris pour un vainqueur.** Les résumés de Wikipédia en anglais
+écrivent « Alban [Romuald] » : Alban gagne et emmène Romuald. Le nom entre
+crochets était compté comme un second vainqueur, soit neuf victoires de confort
+de trop dans quatre saisons. Fandom, là où il couvre la même saison, ne cite que
+le gagnant.
+
+**La finale lue comme une épreuve ordinaire.** Les tableaux anglais nomment
+leurs épreuves de finale à leur façon — « Treasure Hunt », « Poles Challenge ».
+Le lecteur, qui s’arrêtait sur leurs noms français, les laissait passer : le
+trio de l’orientation devenait un confort, le gagnant des poteaux une immunité.
+Dix épreuves de finale ont été retirées, dans huit saisons.
+
+**Des lignes qui ne sont pas des épisodes.** Le bilan de Fandom pour *La
+Légende* numérote ses lignes, et il saute quatre épisodes. Les dates de
+diffusion et les jours que donne Wikipédia ont permis de remettre chaque épreuve
+à son soir. À *L’Île des héros*, deux numérotations coexistent — le confinement
+a coupé des soirées en deux — et le relevé suit maintenant celle des conseils.
+
+<p class="note"><strong>Des attributions démenties par une autre
+source.</strong> Linda, à <em>Panama</em> : à l’épisode 9, la note de Wikipédia
+précise que l’immunité lui a été <em>donnée</em> à son retour dans le jeu, et à
+l’épisode 13, Fandom montre qu’il s’agissait des poteaux. Yassin, au <em>Combat
+des héros</em> : le récit de l’épisode 4 le dit deuxième de l’épreuve, pas
+vainqueur. Claire, au <em>Cambodge</em> : la page anglaise donnait l’immunité de
+l’épisode 10 à Vincent ; Fandom la donne à Claire, et la page de Claire, qui lui
+compte « quatre épreuves au total », ne tient qu’avec celle-là. Au <em>Totem
+maudit</em>, épisode 10, Fandom cite cinq gagnants et la page anglaise un seul,
+François, avec quatre invités : on ne retient que ce que les deux disent.</p>
+
+Deux règles ont été arrêtées au passage. Avec trois ou quatre tribus, Fandom
+remplit une colonne par tribu classée. À l’immunité, toutes les tribus classées
+sont protégées — sur les douze soirs concernés, l’éliminé du conseil vient
+toujours de la seule tribu qui ne l’est pas — et elles comptent comme les
+gagnantes d’une même épreuve ; au confort, seule la première l’emporte. Et un confort gagné par trois personnes
+Et un confort d’équipe ne donne de victoire individuelle à personne, que la
+source écrive « Équipe de Vincent » ou nomme les cinq membres. On ne le déclare
+que si une source l’écrit : compter les noms ne suffit pas, deux duos gagnants
+ou trois récompenses individuelles ne font pas une équipe.
+
+Au moment de la correction, **743 épreuves relevées devenaient 671**, dont
+**330 individuelles au lieu de 362**. Le relevé en compte aujourd’hui
+{{ site.data.stats.epreuves.epreuves }}, dont
+{{ site.data.stats.epreuves.individuelles }} individuelles. Le contrôle final
+tient sur toutes les saisons : chaque immunité individuelle a un conseil le même
+soir, et son gagnant n’en est jamais l’éliminé.
+
+Trois points restent ouverts. À *Vanuatu*, épisode 9, Wikipédia en anglais
+donne l’immunité à Ludovic, et Fandom écrit « Personne » ; aucun récit ne les
+départage, et le relevé garde la première source, faute de mieux. À *Caramoan*,
+épisode 1, et à *L’Île au trésor*, épisode 9, le confort compte quatre et cinq
+gagnants nommés, sans que rien dise s’il s’agissait d’une équipe : ils restent
+comptés comme la source les écrit.
 
 ## Trois vainqueurs pour une saison qui n’est pas finie
 

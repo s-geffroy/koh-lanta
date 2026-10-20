@@ -60,6 +60,30 @@ ENTETE = """# ATTENTION : fichier genere. Ne pas editer a la main.
 # ainsi le vainqueur d'un confort par equipes, sans lister ses membres.
 RE_EQUIPE = re.compile(r"^(?:[ÉEée]quipe|Team)\s+d[eu'’]\s*(.+)$", re.I)
 
+# Les attributions qu'une source donne et qu'une autre DEMENT, preuve a
+# l'appui. C'est une TABLE, pas une regle : chaque ligne cite ce qui la fonde,
+# et rien n'y entre sans cela. (saison, episode, type, libelle) -> preuve.
+ATTRIBUTIONS_REFUTEES = {
+    ("sp5", 4, "confort", "Yassin"):
+        "Wikipedia, resume de l'episode 4 : Dylan gagne, Yassin finit deuxieme "
+        "et devient chef de la seconde equipe ; Fandom le range dans la colonne "
+        "du confort, il n'a pas gagne l'epreuve.",
+    **{("s23", 10, "confort", nom):
+        "Wikipedia anglais : « François [Fouzi, Louana, Ambre, Bastien] » -- "
+        "François gagne et emmene quatre invites. Fandom cite les cinq ; les "
+        "deux sources ne s'accordent que sur François, et c'est lui seul "
+        "qu'on retient. Convention des crochets verifiee a Panama et Vanuatu."
+       for nom in ("Fouzi", "Louana", "Ambre", "Bastien")},
+    ("s04", 9, "immunite", "Linda"):
+        "Wikipedia anglais, note de la case : « As part of Linda's return to "
+        "the game, she was given immunity at the next Tribal Council. » "
+        "L'immunite lui est DONNEE a son retour, elle ne la gagne pas.",
+    ("s04", 13, "immunite", "Linda"):
+        "Fandom : « 13ème épisode (finale) », Linda gagne l'epreuve des poteaux. "
+        "Le resume anglais l'ecrit dans la colonne Immunity, sans le trio qui "
+        "signale ailleurs la finale.",
+}
+
 
 def index_saison(saison, parts):
     tribus = {}
@@ -70,6 +94,56 @@ def index_saison(saison, parts):
         if p["saison"] == saison["id"]:
             personnes[slug(p["nom"])].append(p)
     return tribus, personnes
+
+
+# Les tableaux qui numerotent leurs LIGNES et non les episodes. Fandom ecrit
+# « 7ème épisode » pour la septieme ligne de son bilan de la Legende, qui en
+# saute quatre ; les conseils, eux, suivent les quinze episodes diffuses. La
+# correspondance se lit aux dates et aux jours que donnent les resumes de
+# Wikipedia, et c'est une TABLE : chaque ligne a ete verifiee a la main.
+#   ligne 7  (12 oct., jour 18) -> ep. 7 (confort, jour 17) et 8 (immunite, jour 19)
+#   ligne 8  (26 oct.)          -> ep. 9
+#   ligne 9  (2 nov.)           -> ep. 10
+#   ligne 10 (9 nov., jour 29)  -> ep. 11 (bambous, jour 26) et 12 (confort
+#                                  eliminatoire, jour 28 ; immunite, jour 29)
+#   ligne 11 (30 nov.)          -> ep. 13
+# Sur deux episodes, le confort va au premier et l'immunite au dernier ; deux
+# conforts sur la meme ligne vont chacun a son soir, dans l'ordre.
+RENUMEROTATION = {
+    ("sp7", ".fandom.wiki"): {7: [7, 8], 8: [9], 9: [10], 10: [11, 12], 11: [13]},
+}
+
+
+def _renumeroter(sid, suf, lot, rapport):
+    table = RENUMEROTATION.get((sid, suf))
+    if not table:
+        return lot
+    vus = defaultdict(int)
+    for e in lot:
+        cible = table.get(e["episode"])
+        if not cible:
+            continue
+        if e["type"] == "immunite":
+            nouveau = cible[-1]
+        else:
+            rang = vus[(e["episode"], e["type"])]
+            vus[(e["episode"], e["type"])] += 1
+            nouveau = cible[min(rang, len(cible) - 1)]
+        if nouveau != e["episode"]:
+            rapport.append(f"{sid} : {e['type']} de la ligne {e['episode']} "
+                           f"renumerote en episode {nouveau} (RENUMEROTATION)")
+        e["episode"] = nouveau
+    return lot
+
+
+def _par_initiale(libelle, personnes):
+    """« Cécile B » -> la seule Cecile de la saison dont le nom commence par B."""
+    m = re.fullmatch(r"(.+?)\s+([A-ZÉÈ])\.?", libelle.strip())
+    if not m:
+        return None
+    lot = [p for p in personnes.get(slug(m.group(1)), [])
+           if (p.get("nom_complet") or "").split(" ", 1)[-1][:1].upper() == m.group(2)]
+    return lot[0] if len(lot) == 1 else None
 
 
 def dernier_episode_des_conseils(conseils):
@@ -131,7 +205,7 @@ def construire(saisons, parts, rapport, dernier_conseil=None, elimines_du_soir=N
                 rapport.append(f"{sid} : lecture des epreuves impossible ({suf}) — {e}")
                 continue
             if lot:
-                candidats.append((suf, lot))
+                candidats.append((suf, _renumeroter(sid, suf, lot, rapport)))
         meilleur = []
         if candidats:
             def rang(c):
@@ -139,8 +213,22 @@ def construire(saisons, parts, rapport, dernier_conseil=None, elimines_du_soir=N
                 # colonnes d'orientation et de poteaux ferment le tableau. Il
                 # ne peut pas aller AU-DELA : c'est le signe d'une autre
                 # numerotation, et cet ecart-la seul est penalise.
+                # Dans la tolerance, la page la plus PROCHE des conseils passe
+                # encore avant la plus fournie : a l'Ile des heros, Wikipedia
+                # compte chaque diffusion (13) quand Fandom et le tableau des
+                # votes regroupent les soirs coupes par le confinement (11).
+                # A volume egal, l'ordre des fichiers choisissait Wikipedia, et
+                # les immunites tombaient deux episodes a cote de leur conseil.
+                # A egalite stricte, la page francaise passe avant la page
+                # anglaise, qui la traduit : au Cambodge, l'anglaise donne
+                # l'immunite de l'episode 10 a Vincent, Fandom a Claire -- et
+                # la page de Claire compte ses quatre victoires avec celle-la.
+                anglaise = c[1][0]["source"] in ("season summary", "challenges")
                 trop = _max_episode(c[1]) - attendu - TOLERANCE_EPISODES
-                return (max(0, trop) if attendu else 0, -len(c[1]))
+                if not attendu:
+                    return (0, 0, -len(c[1]), anglaise)
+                return (max(0, trop), abs(_max_episode(c[1]) - attendu),
+                        -len(c[1]), anglaise)
             candidats.sort(key=rang)
             meilleur = candidats[0][1]
             if attendu and len(candidats) > 1:
@@ -156,6 +244,13 @@ def construire(saisons, parts, rapport, dernier_conseil=None, elimines_du_soir=N
             continue
 
         tribus, personnes = index_saison(s, parts)
+        # (episode, chef) des conforts qu'une source ecrit « Équipe de X ». Le
+        # rapprochement se fait par le CHEF, a deux episodes pres : les deux
+        # pages ne numerotent pas toujours de meme (Ile des heros).
+        equipes_ailleurs = [(x["episode"], slug(RE_EQUIPE.match(l).group(1)))
+                            for _, lot in candidats for x in lot
+                            if x["type"] == "confort"
+                            for l in x["libelles"] if RE_EQUIPE.match(l)]
 
         def eclater(libelle):
             """« Claude Laurent » : deux vainqueurs, pas un aventurier inconnu.
@@ -175,6 +270,14 @@ def construire(saisons, parts, rapport, dernier_conseil=None, elimines_du_soir=N
         for e in meilleur:
             vainqueurs, formes = [], set()
             libelles = [x for l in e["libelles"] for x in eclater(l)]
+            refutes = [l for l in libelles
+                       if (sid, e["episode"], e["type"], l) in ATTRIBUTIONS_REFUTEES]
+            for l in refutes:
+                rapport.append(f"{sid} ep.{e['episode']} : {e['type']} attribue a "
+                               f"« {l} » — refute, voir ATTRIBUTIONS_REFUTEES")
+            libelles = [l for l in libelles if l not in refutes]
+            if not libelles:
+                continue
             for libelle in libelles:
                 cle = slug(libelle)
                 if cle in tribus:
@@ -204,6 +307,16 @@ def construire(saisons, parts, rapport, dernier_conseil=None, elimines_du_soir=N
                         rapport.append(f"{sid} ep.{e['episode']} : « {libelle} » est un "
                                        f"homonyme, vainqueur non rattache")
                     formes.add("individuelle")
+                elif _par_initiale(libelle, personnes):
+                    # « Cécile B » : Fandom separe ses deux Cecile par
+                    # l'initiale du nom. On ne rattache que si UNE seule
+                    # personne du prenom a un nom qui commence par la lettre.
+                    p_ = _par_initiale(libelle, personnes)
+                    vainqueurs.append({"libelle": libelle, "type": "personne",
+                                       "id": p_["id"], "resolu": True})
+                    rapport.append(f"{sid} ep.{e['episode']} : « {libelle} » "
+                                   f"rattache par l'initiale du nom → {p_['id']}")
+                    formes.add("individuelle")
                 elif RE_EQUIPE.match(libelle):
                     # « Equipe de Guillaume » : une recompense de confort
                     # partagee, dont la source ne nomme que le capitaine. Ce
@@ -225,6 +338,24 @@ def construire(saisons, parts, rapport, dernier_conseil=None, elimines_du_soir=N
                 continue
             forme = formes.pop() if len(formes) == 1 else (
                 "mixte" if len(formes) > 1 else None)
+            # Un confort d'EQUIPE ne donne de victoire individuelle a personne
+            # (regle arretee avec l'utilisateur le 20 octobre 2026). Wikipedia
+            # l'ecrit « Équipe de Vincent », Fandom nomme les cinq membres :
+            # c'est la meme epreuve, et sans cette regle la forme dependait de
+            # la page retenue. On ne le declare que si une source l'ECRIT --
+            # compter les noms ne suffit pas : deux duos gagnants (Armes
+            # secretes, ep. 1) ou trois recompenses individuelles (4 Terres,
+            # ep. 9) ne sont pas une equipe.
+            personnes_citees = sum(1 for v in vainqueurs if v["type"] == "personne")
+            if (e["type"] == "confort" and forme == "individuelle"
+                    and personnes_citees >= 3
+                    and any(abs(ep - e["episode"]) <= 2
+                            and chef in {slug(v["libelle"]) for v in vainqueurs}
+                            for ep, chef in equipes_ailleurs)):
+                forme = "collective"
+                rapport.append(f"{sid} ep.{e['episode']} : confort a "
+                               f"{personnes_citees} noms, « équipe » pour l'autre "
+                               f"source — confort d'equipe, collectif")
             epreuves.append({
                 "saison": sid,
                 "episode": e["episode"],
@@ -233,8 +364,38 @@ def construire(saisons, parts, rapport, dernier_conseil=None, elimines_du_soir=N
                 "vainqueurs": vainqueurs,
                 "source": e["source"],
             })
+    epreuves = _fondre_les_immunites_de_tribus(epreuves, rapport)
     epreuves = _oter_les_trios_de_finale(epreuves, rapport)
     return _oter_les_immunites_dementies(epreuves, elimines_du_soir, rapport)
+
+
+def _fondre_les_immunites_de_tribus(epreuves, rapport):
+    """Deux tribus immunisees le meme soir : UNE epreuve, deux gagnantes.
+
+    Avec trois ou quatre tribus, seule la derniere va au conseil. Fandom
+    ecrit les protegees dans deux colonnes, la page anglaise du Cambodge dans
+    deux lignes : lues telles quelles, elles faisaient deux epreuves la ou il
+    n'y en a qu'une, et le compte des immunites gonflait d'une par soir. On ne
+    fond que des immunites COLLECTIVES -- les deux immunites individuelles,
+    hommes puis femmes, du premier soir de la Legende restent deux epreuves.
+    """
+    gardees, par_soir = [], {}
+    for e in epreuves:
+        de_tribus = (e["type"] == "immunite" and e.get("forme") == "collective"
+                     and all(v["type"] == "tribu" for v in e["vainqueurs"]))
+        cle = (e["saison"], e["episode"])
+        if de_tribus and cle in par_soir:
+            deja = par_soir[cle]
+            noms = {v["libelle"] for v in deja["vainqueurs"]}
+            deja["vainqueurs"] += [v for v in e["vainqueurs"] if v["libelle"] not in noms]
+            rapport.append(f"{e['saison']} ep.{e['episode']} : immunite de "
+                           f"{', '.join(v['libelle'] for v in deja['vainqueurs'])} "
+                           f"— une epreuve, plusieurs tribus protegees")
+            continue
+        if de_tribus:
+            par_soir[cle] = e
+        gardees.append(e)
+    return gardees
 
 
 def elimines_par_episode(conseils):
@@ -275,15 +436,25 @@ def _oter_les_trios_de_finale(epreuves, rapport):
     for e in epreuves:
         if isinstance(e.get("episode"), int):
             dernier[e["saison"]] = max(dernier[e["saison"]], e["episode"])
+
+    def trio(e):
+        return (e.get("type") == "immunite" and e.get("forme") == "individuelle"
+                and len(e.get("vainqueurs") or []) >= 3
+                and e.get("episode") == dernier.get(e["saison"]))
+
+    # Le trio signe la finale, et TOUTE l'immunite de ce soir-la en releve :
+    # les resumes anglais l'ecrivent sur deux lignes sans en-tete, le trio
+    # qualifie puis le gagnant des poteaux (Amel, Linda, Emilie, Jade,
+    # Christelle). Ecarter le seul trio laissait ce dernier compte comme une
+    # immunite, quand les tableaux francais s'arretent avant les poteaux.
+    finales = {(e["saison"], e["episode"]) for e in epreuves if trio(e)}
     gardees = []
     for e in epreuves:
-        if (e.get("type") == "immunite" and e.get("forme") == "individuelle"
-                and len(e.get("vainqueurs") or []) >= 3
-                and e.get("episode") == dernier.get(e["saison"])):
+        if e.get("type") == "immunite" and (e["saison"], e.get("episode")) in finales:
             noms = ", ".join(v.get("libelle") or "?" for v in e["vainqueurs"])
-            rapport.append(f"{e['saison']} ep.{e['episode']} : « immunite » a "
-                           f"{len(e['vainqueurs'])} noms au dernier episode ({noms}) "
-                           f"— trio des poteaux, pas une immunite : ecartee")
+            quoi = "trio des poteaux" if trio(e) else "gagnant des poteaux"
+            rapport.append(f"{e['saison']} ep.{e['episode']} : « immunite » de "
+                           f"finale ({noms}) — {quoi}, pas une immunite : ecartee")
             continue
         gardees.append(e)
     return gardees
@@ -297,11 +468,12 @@ def _oter_les_immunites_dementies(epreuves, elimines, rapport):
     atteste par ses bulletins, quand l'immunite ne l'est que par un nom dans
     une cellule.
 
-    Le cas connu est la Revanche des 4 Terres, episode 13 : la colonne
-    « Immunite » y porte trois noms, qui sont les rescapes d'une EPREUVE
-    ELIMINATOIRE et non les vainqueurs d'une immunite. Maxime y figure, et il
-    part au conseil du soir. On retire la seule attribution qui se contredit,
-    et on garde les autres.
+    Le seul cas rencontre -- Maxime, Revanche des 4 Terres -- n'etait pas une
+    immunite mal lue mais un tableau mal NUMEROTE : les epreuves y etaient
+    rangees un episode trop loin, et l'immunite de l'episode 12 tombait sur
+    le soir de son elimination. Depuis que les numeros se lisent dans le
+    modele « {{13e|épisode}} », plus rien ne se contredit. Le garde-fou reste :
+    on retire la seule attribution qui se contredit, et on garde les autres.
     """
     for e in epreuves:
         if e.get("type") != "immunite" or e.get("forme") != "individuelle":
@@ -354,7 +526,13 @@ def main():
         for r in dementies:
             print("  " + r)
 
-    trios = [r for r in rapport if "trio des poteaux" in r]
+    refutees = [r for r in rapport if "ATTRIBUTIONS_REFUTEES" in r]
+    if refutees:
+        print(f"\nattributions refutees par une autre source ({len(refutees)}) :")
+        for r in refutees:
+            print("  " + r)
+
+    trios = [r for r in rapport if "pas une immunite : ecartee" in r]
     if trios:
         print(f"\n« immunites » de finale ecartees ({len(trios)}) :")
         for r in trios:

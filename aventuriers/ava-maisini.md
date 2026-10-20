@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Ava Maisini — Les 4 Terres (2020)"
-description: "Ava Maisini, Koh-Lanta Les 4 Terres (2020) : sort au conseil le 35e jour, 7e sur 24, 0 épreuve gagnée. 443e sur 531 au classement des aventuriers."
+description: "Ava Maisini, Koh-Lanta Les 4 Terres (2020) : sort au conseil le 35e jour, 7e sur 24, 0 épreuve gagnée. 422e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/ava-maisini.png
 permalink: /aventuriers/ava-maisini/
 aventurier: ava-maisini

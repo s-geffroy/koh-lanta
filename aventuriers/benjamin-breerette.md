@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Benjamin Breerette (2022)"
-description: "Benjamin Breerette, Koh-Lanta Le Totem maudit (2022) : sort au conseil le 11e jour, 19e sur 24, 9 voix reçues. 309e sur 531 au classement des aventuriers."
+description: "Benjamin Breerette, Koh-Lanta Le Totem maudit (2022) : sort au conseil le 11e jour, 19e sur 24, 9 voix reçues. 312e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/benjamin-breerette.png
 permalink: /aventuriers/benjamin-breerette/
 aventurier: benjamin-breerette

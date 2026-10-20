@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Caroline Demartis — Fidji (2017)"
-description: "Caroline Demartis, Koh-Lanta Fidji (2017) : sort au conseil le 18e jour, 14e sur 21, 7 voix reçues. 129e sur 531 au classement des aventuriers."
+description: "Caroline Demartis, Koh-Lanta Fidji (2017) : sort au conseil le 18e jour, 14e sur 21, 7 voix reçues. 132e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/caroline-demartis.png
 permalink: /aventuriers/caroline-demartis/
 aventurier: caroline-demartis

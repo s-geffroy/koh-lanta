@@ -24,7 +24,7 @@ import sys
 from collections import Counter
 
 from parse_fandom import (plain, slug, extract_table, extract_tables,
-                          indices_de_tribu, COULEURS_HEX)
+                          indices_de_tribu, COULEURS_HEX, RE_SURLIGNE)
 from parse_votes import developper, texte
 
 # Ce qui n'est pas un vainqueur : pas d'epreuve, epreuve annulee, cellule vide.
@@ -68,6 +68,11 @@ def noms_dans(cellule):
     brut = re.sub(r"\{\{\s*stribe\s*\|\s*([^|}]*)\s*\|\s*([^}]*)\}\}",
                   r" \2 ", brut, flags=re.I)
     brut = re.sub(r"\{\{\s*stribe\s*\|\s*([^|}]*)\}\}", r" \1 ", brut, flags=re.I)
+    # « {{Surligné|#5dce5d|Maxime}} » : le nom surligne a la couleur de sa
+    # tribu. Le nettoyage general efface le modele ENTIER, nom compris -- le
+    # confort de Maxime et Naïs (Revanche des 4 Terres, episode 5) devenait
+    # « et ». La couleur reste lue a part par indices_de_tribu.
+    brut = RE_SURLIGNE.sub(r" \2 ", brut)
     # Les attributs HTML restes colles a la cellule ne sont pas des noms.
     brut = re.sub(r"\b[\w-]+\s*=\s*\"?[^\"|\s]*\"?", " ", brut)
     brut = re.sub(r"\([^)]*\)", " ", brut)
@@ -76,7 +81,12 @@ def noms_dans(cellule):
     # deux vainqueurs separes par <br> se retrouveraient colles en un seul nom.
     morceaux = []
     for ligne in brut.split("\n"):
-        for bout in re.split(r"\bet\b|,|/|&|\u2022|\[|\]", plain(ligne)):
+        # « Alban [Romuald] » : Alban gagne et emmene Romuald. Le nom entre
+        # crochets est l'INVITE de la recompense, pas un vainqueur -- Fandom,
+        # la ou il couvre la meme saison, ne cite qu'Alban. Le lire comme un
+        # second gagnant donnait neuf victoires de confort de trop.
+        propre = re.sub(r"\[[^\]]*\]", " ", plain(ligne))
+        for bout in re.split(r"\bet\b|,|/|&|\u2022|\[|\]", propre):
             bout = bout.strip(" '\"«»…:;.-[]")
             if not bout or RE_AUCUN.match(bout) or len(bout) >= 40 or len(bout) < 2:
                 continue
@@ -145,21 +155,54 @@ def _colonne_date(grille, i_entete):
     return None
 
 
+def numeros_d_episode(cellule):
+    """Les numeros d'une cellule d'episode, ecrits en clair ou par un modele.
+
+    Wikipedia ecrit « {{9e|épisode}} », « {{1er|épisode}} » : le nettoyage du
+    texte efface le modele, et avec lui le numero. Sans ce repli, la saison
+    etait numerotee en comptant les lignes -- et un episode tenant sur deux
+    lignes (deux conseils le meme soir) decalait d'un cran toutes les
+    epreuves qui suivaient.
+
+    Fandom ecrit parfois deux soirs sur une ligne, « 7/8ème épisode » ou
+    « 12ème et 13ème épisode » : on rend les deux, comme le ferait une case
+    fusionnee sur deux lignes. Ce qui suit une parenthese est un commentaire
+    (« 11ème épisode (finale) »), pas un numero.
+    """
+    clair = texte(cellule).split("(")[0]
+    nums = [int(n) for n in re.findall(r"\d{1,2}", clair)]
+    if not nums:
+        brut = re.sub(r"<ref.*?(?:/>|</ref>)", "", cellule or "", flags=re.S)
+        nums = [int(n) for n in
+                re.findall(r"\{\{\s*(\d{1,2})\s*(?:er|re|e|ème|è)?\s*\|", brut)]
+    return nums
+
+
 def parse_tableau(table, saison_id, forme_source, couleurs_admises=None):
-    grille = developper(table)
+    grille, hauteurs = developper(table, avec_hauteur=True)
     if not grille:
         return []
     i_entete, roles = _entetes(grille)
     if not roles:
         return []
     col_episode = _colonne_episode(grille, i_entete)
+    # Le format « classement » double les DEUX epreuves. Un confort seul sur
+    # deux colonnes est autre chose : a Palawan, un gagnant par tribu.
+    premiere_confort = None
+    if sum(1 for r in roles.values() if r == "immunite") >= 2:
+        premiere_confort = min((c for c, r in roles.items() if r == "confort"),
+                               default=None)
     col_date = _colonne_date(grille, i_entete) if col_episode is None else None
     dates_vues = []
 
     epreuves = []
     numero_implicite = 0
     vus = set()
-    for rang in grille[i_entete + 1:]:
+    # L'episode de chaque ligne, pour savoir lesquels une case fusionnee couvre.
+    episode_de_ligne = {}
+    for r in range(i_entete + 1, len(grille)):
+        rang = grille[r]
+        hauts = hauteurs[r]
         if not rang or all(not texte(c) for c in rang):
             continue
         # Les lignes de finale redefinissent les colonnes : « Confort » et
@@ -168,8 +211,15 @@ def parse_tableau(table, saison_id, forme_source, couleurs_admises=None):
         # vainqueur. Continuer a lire sous les anciens roles fabriquerait de
         # fausses victoires -- et fausserait justement les ratios d'epreuves,
         # qui sont la raison d'etre de cette couche.
+        # Les tableaux anglais nomment ces colonnes a leur facon -- « Treasure
+        # Hunt », « Orienteering Challenge », « Poles Challenge », « perchs
+        # challenge » -- et la regle francaise les laissait passer : le trio
+        # de l'orientation devenait un confort, le gagnant des poteaux une
+        # immunite (Kôh-Lanta Vanuatu, Cambodge, Nicoya).
         if any(re.search(r"[ée]preuve d'orientation|[ée]preuve des poteaux|"
-                         r"conseil final|final challenge", texte(c), re.I)
+                         r"conseil final|final challenge|final council|"
+                         r"treasure hunt|orienteering|poles? challenge|"
+                         r"perchs? challenge", texte(c), re.I)
                for c in rang):
             break
         if any(re.fullmatch(r"confort|immunit[eé]|reward|immunity", texte(c), re.I)
@@ -177,10 +227,10 @@ def parse_tableau(table, saison_id, forme_source, couleurs_admises=None):
             continue          # en-tete repetee au milieu du tableau
 
         episode = None
+        numeros = []
         if col_episode is not None and col_episode < len(rang):
-            m = re.search(r"(\d{1,2})", texte(rang[col_episode]))
-            if m:
-                episode = int(m.group(1))
+            numeros = numeros_d_episode(rang[col_episode])
+            episode = numeros[0] if numeros else None
         if episode is None and col_date is not None and col_date < len(rang):
             jour = texte(rang[col_date])
             if jour:
@@ -190,11 +240,22 @@ def parse_tableau(table, saison_id, forme_source, couleurs_admises=None):
         if episode is None:
             numero_implicite += 1
             episode = numero_implicite
-        else:
-            numero_implicite = episode
+        episode_de_ligne[r] = numeros or [episode]
+        numero_implicite = max(episode_de_ligne[r])
 
         for col, role in sorted(roles.items()):
             if col >= len(rang):
+                continue
+            if col < len(hauts) and hauts[col] == 0:
+                continue          # copie d'une case fusionnee : deja lue plus haut
+            # Avec trois tribus, Fandom ecrit deux colonnes par epreuve : la
+            # premiere et la deuxieme. A l'immunite, la deuxieme est protegee
+            # aussi -- l'elimine vient toujours de la tribu non protegee,
+            # verifie sur les douze soirs (s17, s20, s21). Au
+            # confort, seule la premiere « remporte » : le recit dit de la
+            # deuxieme qu'elle « finit deuxième ». Regle arretee avec
+            # l'utilisateur le 20 octobre 2026.
+            if role == "confort" and premiere_confort is not None and col != premiere_confort:
                 continue
             cellule = rang[col]
             noms = noms_dans(cellule)
@@ -204,7 +265,7 @@ def parse_tableau(table, saison_id, forme_source, couleurs_admises=None):
             if signature in vus:      # colspan : la meme epreuve recopiee
                 continue
             vus.add(signature)
-            epreuves.append({
+            entree = {
                 "saison": saison_id,
                 "episode": episode,
                 "type": role,
@@ -212,7 +273,22 @@ def parse_tableau(table, saison_id, forme_source, couleurs_admises=None):
                 "indices": indices_de_tribu(cellule, couleurs_admises),
                 "couleur": couleur_de(cellule),
                 "source": forme_source,
-            })
+                "_lignes": (r, r + max(hauts[col] if col < len(hauts) else 1, 1) - 1),
+            }
+            epreuves.append(entree)
+    # Une case fusionnee sur deux episodes est UNE epreuve, pas deux : elle
+    # comptait double. Les saisons recentes (s24 a s28, sp6, sp8) etalent ainsi
+    # un cycle sur deux soirs, et leurs notes disent ou tombe chaque epreuve :
+    # « Pour l'épreuve de confort et les ambassadeurs » sur le premier,
+    # « Pour l'épreuve d'immunité et le conseil » sur le second. Le confort va
+    # donc au premier episode couvert, l'immunite au dernier -- celui de son
+    # conseil, que le tableau des votes numerote de meme.
+    for e in epreuves:
+        debut, fin = e.pop("_lignes")
+        couverts = sorted({n for x in range(debut, fin + 1)
+                           for n in episode_de_ligne.get(x, [])})
+        if len(couverts) > 1:
+            e["episode"] = couverts[-1] if e["type"] == "immunite" else couverts[0]
     return epreuves if not _est_un_classement(epreuves) else []
 
 

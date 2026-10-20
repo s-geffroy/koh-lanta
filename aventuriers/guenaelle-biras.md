@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Guénaëlle Biras — 2 saisons jouées"
-description: "Guénaëlle Biras, 2 saisons de Koh-Lanta entre 2001 et 2012 : 64 jours de jeu, 1 finale, 4 voix reçues. 62e sur 531 au classement des aventuriers."
+description: "Guénaëlle Biras, 2 saisons de Koh-Lanta entre 2001 et 2012 : 64 jours de jeu, 1 finale, 4 voix reçues. 65e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/guenaelle-biras.png
 permalink: /aventuriers/guenaelle-biras/
 aventurier: guenaelle-biras

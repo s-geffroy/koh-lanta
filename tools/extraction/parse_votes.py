@@ -119,13 +119,18 @@ def separer_attributs(cell):
     return "", cell
 
 
-def developper(table, avec_origine=False, avec_attributs=False):
+def developper(table, avec_origine=False, avec_attributs=False, avec_hauteur=False):
     """Developpe la table en grille rectangulaire, fusions recopiees.
 
     Avec `avec_origine`, rend aussi une grille de booleens disant si chaque
     case a ete ECRITE a cet endroit ou seulement RECOPIEE depuis une fusion.
     La distinction compte pour les lignes de mecanique : une case `rowspan="3"`
     y couvre trois lignes mais ne vaut qu'un seul bulletin.
+
+    Avec `avec_hauteur`, rend a la place une grille d'entiers : le nombre de
+    lignes que couvre une case la ou elle est ecrite, 0 la ou elle n'est
+    qu'une copie verticale. Une copie horizontale (colspan) garde la hauteur de
+    sa case : elle est sur la meme ligne.
     """
     lignes = re.split(r"\n\|-+[^\n]*", table)
     # Le premier morceau contient la ligne d'ouverture `{| ...` ET, souvent, la
@@ -141,6 +146,7 @@ def developper(table, avec_origine=False, avec_attributs=False):
     grille = []
     origines = []
     attributs = []
+    hauteurs = []
     # cellules encore actives verticalement : colonne -> (contenu, lignes restantes)
     reports = {}
 
@@ -148,6 +154,7 @@ def developper(table, avec_origine=False, avec_attributs=False):
         rang = []
         source = []
         styles = []
+        hauts = []
         col = 0
         # d'abord replacer les cellules reportees depuis les lignes du dessus
         def poser_reports():
@@ -157,6 +164,7 @@ def developper(table, avec_origine=False, avec_attributs=False):
                 rang.append(contenu)
                 source.append(False)
                 styles.append(attrs_r)
+                hauts.append(0)
                 if restant <= 1:
                     del reports[col]
                 else:
@@ -174,6 +182,7 @@ def developper(table, avec_origine=False, avec_attributs=False):
                 # c'est sa premiere colonne. Les suivantes sont des copies.
                 source.append(i == 0)
                 styles.append(attrs)
+                hauts.append(hauteur)
                 if hauteur > 1:
                     reports[col] = (contenu, hauteur - 1, attrs)
                 col += 1
@@ -181,6 +190,9 @@ def developper(table, avec_origine=False, avec_attributs=False):
         grille.append(rang)
         origines.append(source)
         attributs.append(styles)
+        hauteurs.append(hauts)
+    if avec_hauteur:
+        return grille, hauteurs
     if avec_attributs:
         return grille, origines, attributs
     return (grille, origines) if avec_origine else grille

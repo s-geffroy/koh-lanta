@@ -445,16 +445,6 @@
     id: marianne-mondon
     resolu: true
   source: season summary
-- saison: s02
-  episode: 13
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Amel
-    type: personne
-    id: amel-fatnassi
-    resolu: true
-  source: season summary
 - saison: s04
   episode: 1
   type: immunite
@@ -624,16 +614,6 @@
     resolu: true
   source: season summary
 - saison: s04
-  episode: 9
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Linda
-    type: personne
-    id: linda-alario
-    resolu: true
-  source: season summary
-- saison: s04
   episode: 10
   type: confort
   forme: individuelle
@@ -661,10 +641,6 @@
   - libelle: Alban
     type: personne
     id: alban-oswald
-    resolu: true
-  - libelle: Romuald
-    type: personne
-    id: romuald-lafite
     resolu: true
   source: season summary
 - saison: s04
@@ -695,16 +671,6 @@
   - libelle: Romuald
     type: personne
     id: romuald-lafite
-    resolu: true
-  source: season summary
-- saison: s04
-  episode: 13
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Linda
-    type: personne
-    id: linda-alario
     resolu: true
   source: season summary
 - saison: s05
@@ -1120,10 +1086,6 @@
     type: personne
     id: marie-bayard
     resolu: true
-  - libelle: Gaëlle
-    type: personne
-    id: gaelle-zanetton
-    resolu: true
   source: season summary
 - saison: s06
   episode: 9
@@ -1144,10 +1106,6 @@
     type: personne
     id: marie-bayard
     resolu: true
-  - libelle: Gaëlle
-    type: personne
-    id: gaelle-zanetton
-    resolu: true
   source: season summary
 - saison: s06
   episode: 10
@@ -1168,10 +1126,6 @@
     type: personne
     id: ludovic-laresche
     resolu: true
-  - libelle: Sébastien
-    type: personne
-    id: sebastien-roulle
-    resolu: true
   source: season summary
 - saison: s06
   episode: 11
@@ -1192,10 +1146,6 @@
     type: personne
     id: ludovic-laresche
     resolu: true
-  - libelle: François-David
-    type: personne
-    id: francois-david-cardonnel
-    resolu: true
   source: season summary
 - saison: s06
   episode: 12
@@ -1205,16 +1155,6 @@
   - libelle: François-David
     type: personne
     id: francois-david-cardonnel
-    resolu: true
-  source: season summary
-- saison: s06
-  episode: 13
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Émilie
-    type: personne
-    id: emilie-frahi
     resolu: true
   source: season summary
 - saison: s07
@@ -1386,10 +1326,6 @@
     type: personne
     id: patrick-brasier-de-thuy
     resolu: true
-  - libelle: Simon
-    type: personne
-    id: simon-quintilla
-    resolu: true
   source: season summary
 - saison: s07
   episode: 8
@@ -1409,10 +1345,6 @@
   - libelle: Grégoire
     type: personne
     id: gregoire-delachaux
-    resolu: true
-  - libelle: Jade
-    type: personne
-    id: jade-handi
     resolu: true
   source: season summary
 - saison: s07
@@ -1483,16 +1415,6 @@
   - libelle: Simon
     type: personne
     id: simon-quintilla
-    resolu: true
-  source: season summary
-- saison: s07
-  episode: 13
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Jade
-    type: personne
-    id: jade-handi
     resolu: true
   source: season summary
 - saison: s08
@@ -1690,10 +1612,6 @@
     type: personne
     id: bertrand-bolle
     resolu: true
-  - libelle: Frédéric
-    type: personne
-    id: frederic-favier
-    resolu: true
   source: season summary
 - saison: s08
   episode: 9
@@ -1754,10 +1672,6 @@
     type: personne
     id: nathalie-ensargueix
     resolu: true
-  - libelle: Christelle
-    type: personne
-    id: christelle-gauzet
-    resolu: true
   source: season summary
 - saison: s08
   episode: 12
@@ -1767,16 +1681,6 @@
   - libelle: Frédéric
     type: personne
     id: frederic-favier
-    resolu: true
-  source: season summary
-- saison: s08
-  episode: 13
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Christelle
-    type: personne
-    id: christelle-gauzet
     resolu: true
   source: season summary
 - saison: s10
@@ -2031,26 +1935,6 @@
   source: challenges
 - saison: s10
   episode: 13
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Philippe
-    type: personne
-    id: philippe-duron
-    resolu: true
-  source: challenges
-- saison: s10
-  episode: 15
-  type: confort
-  forme: individuelle
-  vainqueurs:
-  - libelle: Claude
-    type: personne
-    id: claude-dartois
-    resolu: true
-  source: challenges
-- saison: s10
-  episode: 15
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -2319,24 +2203,6 @@
     id: teheiura-teahui
     resolu: true
   source: challenges
-- saison: s11
-  episode: 15
-  type: confort
-  forme: individuelle
-  vainqueurs:
-  - libelle: Teheiura
-    type: personne
-    id: teheiura-teahui
-    resolu: true
-  - libelle: Gérard
-    type: personne
-    id: gerard-urdampilleta
-    resolu: true
-  - libelle: Laurent
-    type: personne
-    id: laurent-maistret
-    resolu: true
-  source: challenges
 - saison: s15
   episode: 1
   type: confort
@@ -2346,7 +2212,7 @@
     type: tribu
     id: null
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 1
   type: immunite
@@ -2356,7 +2222,7 @@
     type: tribu
     id: null
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 2
   type: confort
@@ -2366,7 +2232,7 @@
     type: tribu
     id: null
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 2
   type: immunite
@@ -2376,7 +2242,7 @@
     type: tribu
     id: null
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 3
   type: confort
@@ -2386,7 +2252,7 @@
     type: tribu
     id: null
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 3
   type: immunite
@@ -2396,7 +2262,7 @@
     type: tribu
     id: null
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 4
   type: confort
@@ -2406,7 +2272,7 @@
     type: tribu
     id: null
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 4
   type: immunite
@@ -2416,7 +2282,7 @@
     type: tribu
     id: null
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 5
   type: confort
@@ -2426,7 +2292,7 @@
     type: tribu
     id: null
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 5
   type: immunite
@@ -2436,7 +2302,7 @@
     type: tribu
     id: null
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 6
   type: confort
@@ -2446,7 +2312,7 @@
     type: tribu
     id: null
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 6
   type: immunite
@@ -2456,7 +2322,7 @@
     type: tribu
     id: null
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 7
   type: confort
@@ -2466,7 +2332,7 @@
     type: tribu
     id: null
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 7
   type: immunite
@@ -2476,7 +2342,7 @@
     type: personne
     id: carine-cazals
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 8
   type: confort
@@ -2486,7 +2352,7 @@
     type: personne
     id: pascal-salviani
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 8
   type: immunite
@@ -2496,7 +2362,7 @@
     type: personne
     id: karima-neggaz
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 9
   type: confort
@@ -2510,7 +2376,7 @@
     type: personne
     id: wendy-gervois
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 9
   type: immunite
@@ -2524,7 +2390,7 @@
     type: personne
     id: nicolas-rouye
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 10
   type: confort
@@ -2538,7 +2404,7 @@
     type: personne
     id: nicolas-rouye
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 10
   type: immunite
@@ -2548,7 +2414,7 @@
     type: personne
     id: karima-neggaz
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 11
   type: confort
@@ -2558,7 +2424,7 @@
     type: personne
     id: nicolas-rouye
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 11
   type: immunite
@@ -2568,7 +2434,7 @@
     type: personne
     id: nicolas-rouye
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 12
   type: confort
@@ -2578,7 +2444,7 @@
     type: personne
     id: nicolas-rouye
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 12
   type: immunite
@@ -2588,7 +2454,7 @@
     type: personne
     id: alain-chrisostome
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 13
   type: confort
@@ -2598,7 +2464,7 @@
     type: personne
     id: gabriel-gubbels
     resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s15
   episode: 13
   type: immunite
@@ -2608,35 +2474,7 @@
     type: personne
     id: wendy-gervois
     resolu: true
-  source: challenges
-- saison: s15
-  episode: 14
-  type: confort
-  forme: individuelle
-  vainqueurs:
-  - libelle: Gabriel
-    type: personne
-    id: gabriel-gubbels
-    resolu: true
-  - libelle: Pascal
-    type: personne
-    id: pascal-salviani
-    resolu: true
-  - libelle: Wendy
-    type: personne
-    id: wendy-gervois
-    resolu: true
-  source: challenges
-- saison: s15
-  episode: 14
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Pascal
-    type: personne
-    id: pascal-salviani
-    resolu: true
-  source: challenges
+  source: bilan par episode
 - saison: s16
   episode: 1
   type: confort
@@ -2932,12 +2770,6 @@
     type: tribu
     id: null
     resolu: true
-  source: bilan par episode
-- saison: s17
-  episode: 1
-  type: immunite
-  forme: collective
-  vainqueurs:
   - libelle: Bokor
     type: tribu
     id: null
@@ -2955,16 +2787,6 @@
   source: bilan par episode
 - saison: s17
   episode: 2
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Sokka
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s17
-  episode: 2
   type: immunite
   forme: collective
   vainqueurs:
@@ -2972,12 +2794,6 @@
     type: tribu
     id: null
     resolu: true
-  source: bilan par episode
-- saison: s17
-  episode: 2
-  type: immunite
-  forme: collective
-  vainqueurs:
   - libelle: Takeo
     type: tribu
     id: null
@@ -2995,16 +2811,6 @@
   source: bilan par episode
 - saison: s17
   episode: 3
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Bokor
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s17
-  episode: 3
   type: immunite
   forme: collective
   vainqueurs:
@@ -3012,12 +2818,6 @@
     type: tribu
     id: null
     resolu: true
-  source: bilan par episode
-- saison: s17
-  episode: 3
-  type: immunite
-  forme: collective
-  vainqueurs:
   - libelle: Bokor
     type: tribu
     id: null
@@ -3029,16 +2829,6 @@
   forme: collective
   vainqueurs:
   - libelle: Takeo
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s17
-  episode: 4
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Bokor
     type: tribu
     id: null
     resolu: true
@@ -3536,12 +3326,6 @@
     type: tribu
     id: null
     resolu: true
-  source: bilan par episode
-- saison: s20
-  episode: 1
-  type: immunite
-  forme: collective
-  vainqueurs:
   - libelle: Kama
     type: tribu
     id: null
@@ -3553,16 +3337,6 @@
   forme: collective
   vainqueurs:
   - libelle: Ikalu
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s20
-  episode: 2
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Kama
     type: tribu
     id: null
     resolu: true
@@ -3576,12 +3350,6 @@
     type: tribu
     id: null
     resolu: true
-  source: bilan par episode
-- saison: s20
-  episode: 2
-  type: immunite
-  forme: collective
-  vainqueurs:
   - libelle: Ikalu
     type: tribu
     id: null
@@ -3599,16 +3367,6 @@
   source: bilan par episode
 - saison: s20
   episode: 3
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Ikalu
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s20
-  episode: 3
   type: immunite
   forme: collective
   vainqueurs:
@@ -3616,12 +3374,6 @@
     type: tribu
     id: null
     resolu: true
-  source: bilan par episode
-- saison: s20
-  episode: 3
-  type: immunite
-  forme: collective
-  vainqueurs:
   - libelle: Ikalu
     type: tribu
     id: null
@@ -3639,16 +3391,6 @@
   source: bilan par episode
 - saison: s20
   episode: 4
-  type: confort
-  forme: individuelle
-  vainqueurs:
-  - libelle: Alexandre
-    type: personne
-    id: alexandre-andre
-    resolu: true
-  source: bilan par episode
-- saison: s20
-  episode: 4
   type: immunite
   forme: collective
   vainqueurs:
@@ -3656,12 +3398,6 @@
     type: tribu
     id: null
     resolu: true
-  source: bilan par episode
-- saison: s20
-  episode: 4
-  type: immunite
-  forme: collective
-  vainqueurs:
   - libelle: Kama
     type: tribu
     id: null
@@ -3679,16 +3415,6 @@
   source: bilan par episode
 - saison: s20
   episode: 5
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Kama
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s20
-  episode: 5
   type: immunite
   forme: collective
   vainqueurs:
@@ -3696,12 +3422,6 @@
     type: tribu
     id: null
     resolu: true
-  source: bilan par episode
-- saison: s20
-  episode: 5
-  type: immunite
-  forme: collective
-  vainqueurs:
   - libelle: Ikalu
     type: tribu
     id: null
@@ -3719,16 +3439,6 @@
   source: bilan par episode
 - saison: s20
   episode: 6
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Tabuo
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s20
-  episode: 6
   type: immunite
   forme: collective
   vainqueurs:
@@ -3736,12 +3446,6 @@
     type: tribu
     id: null
     resolu: true
-  source: bilan par episode
-- saison: s20
-  episode: 6
-  type: immunite
-  forme: collective
-  vainqueurs:
   - libelle: Tabuo
     type: tribu
     id: null
@@ -3753,16 +3457,6 @@
   forme: collective
   vainqueurs:
   - libelle: Tabuo
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s20
-  episode: 7
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Kama
     type: tribu
     id: null
     resolu: true
@@ -3828,7 +3522,7 @@
 - saison: s20
   episode: 10
   type: confort
-  forme: individuelle
+  forme: collective
   vainqueurs:
   - libelle: Cindy
     type: personne
@@ -3933,16 +3627,6 @@
   source: bilan par episode
 - saison: s21
   episode: 1
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Ceva
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s21
-  episode: 1
   type: immunite
   forme: collective
   vainqueurs:
@@ -3950,22 +3634,10 @@
     type: tribu
     id: null
     resolu: true
-  source: bilan par episode
-- saison: s21
-  episode: 1
-  type: immunite
-  forme: collective
-  vainqueurs:
   - libelle: Ceva
     type: tribu
     id: null
     resolu: true
-  source: bilan par episode
-- saison: s21
-  episode: 1
-  type: immunite
-  forme: collective
-  vainqueurs:
   - libelle: Vakara
     type: tribu
     id: null
@@ -3977,16 +3649,6 @@
   forme: collective
   vainqueurs:
   - libelle: Ceva
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s21
-  episode: 2
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Vakara
     type: tribu
     id: null
     resolu: true
@@ -4000,22 +3662,10 @@
     type: tribu
     id: null
     resolu: true
-  source: bilan par episode
-- saison: s21
-  episode: 2
-  type: immunite
-  forme: collective
-  vainqueurs:
   - libelle: Vakara
     type: tribu
     id: null
     resolu: true
-  source: bilan par episode
-- saison: s21
-  episode: 2
-  type: immunite
-  forme: collective
-  vainqueurs:
   - libelle: Vualiku
     type: tribu
     id: null
@@ -4033,16 +3683,6 @@
   source: bilan par episode
 - saison: s21
   episode: 3
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Ceva
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s21
-  episode: 3
   type: immunite
   forme: collective
   vainqueurs:
@@ -4050,22 +3690,10 @@
     type: tribu
     id: null
     resolu: true
-  source: bilan par episode
-- saison: s21
-  episode: 3
-  type: immunite
-  forme: collective
-  vainqueurs:
   - libelle: Vualiku
     type: tribu
     id: null
     resolu: true
-  source: bilan par episode
-- saison: s21
-  episode: 3
-  type: immunite
-  forme: collective
-  vainqueurs:
   - libelle: Ceva
     type: tribu
     id: null
@@ -4077,16 +3705,6 @@
   forme: collective
   vainqueurs:
   - libelle: Tokalo
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s21
-  episode: 4
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Vakara
     type: tribu
     id: null
     resolu: true
@@ -4109,16 +3727,6 @@
   - libelle: Alix
     type: personne
     id: alix-noblat
-    resolu: true
-  source: bilan par episode
-- saison: s21
-  episode: 5
-  type: confort
-  forme: individuelle
-  vainqueurs:
-  - libelle: Bertrand-Kamal
-    type: personne
-    id: bertrand-kamal-loudrhiri
     resolu: true
   source: bilan par episode
 - saison: s21
@@ -4270,7 +3878,7 @@
 - saison: s21
   episode: 12
   type: confort
-  forme: individuelle
+  forme: collective
   vainqueurs:
   - libelle: Dorian
     type: personne
@@ -4317,6 +3925,28 @@
   - libelle: Loïc
     type: personne
     id: loic-riowal
+    resolu: true
+  source: bilan par episode
+- saison: s22
+  episode: 1
+  type: confort
+  forme: individuelle
+  vainqueurs:
+  - libelle: Candice
+    type: personne
+    id: candice-rousset
+    resolu: true
+  - libelle: Hervé
+    type: personne
+    id: herve-comte
+    resolu: true
+  - libelle: Aurélien
+    type: personne
+    id: aurelien-tesson
+    resolu: true
+  - libelle: Laëtitia
+    type: personne
+    id: laetitia-saphores
     resolu: true
   source: bilan par episode
 - saison: s22
@@ -4414,33 +4044,13 @@
   type: confort
   forme: collective
   vainqueurs:
-  - libelle: Toa
+  - libelle: Oro
     type: tribu
     id: null
     resolu: true
   source: bilan par episode
 - saison: s22
   episode: 6
-  type: immunite
-  forme: collective
-  vainqueurs:
-  - libelle: Oro
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s22
-  episode: 7
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Oro
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s22
-  episode: 7
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -4450,7 +4060,7 @@
     resolu: true
   source: bilan par episode
 - saison: s22
-  episode: 8
+  episode: 7
   type: confort
   forme: individuelle
   vainqueurs:
@@ -4460,7 +4070,7 @@
     resolu: true
   source: bilan par episode
 - saison: s22
-  episode: 8
+  episode: 7
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -4470,17 +4080,33 @@
     resolu: true
   source: bilan par episode
 - saison: s22
-  episode: 9
+  episode: 8
   type: confort
   forme: collective
   vainqueurs:
-  - libelle: Équipe de Vincent
-    type: equipe
+  - libelle: Vincent
+    type: personne
     id: vincent-blier
+    resolu: true
+  - libelle: Flavio
+    type: personne
+    id: flavio-soares-tavares
+    resolu: true
+  - libelle: Myriam
+    type: personne
+    id: myriam-chafik
+    resolu: true
+  - libelle: Thomas
+    type: personne
+    id: thomas-plisson
+    resolu: true
+  - libelle: Laëtitia
+    type: personne
+    id: laetitia-saphores
     resolu: true
   source: bilan par episode
 - saison: s22
-  episode: 9
+  episode: 8
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -4494,7 +4120,7 @@
     resolu: true
   source: bilan par episode
 - saison: s22
-  episode: 10
+  episode: 9
   type: confort
   forme: individuelle
   vainqueurs:
@@ -4508,7 +4134,7 @@
     resolu: true
   source: bilan par episode
 - saison: s22
-  episode: 10
+  episode: 9
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -4522,7 +4148,7 @@
     resolu: true
   source: bilan par episode
 - saison: s22
-  episode: 11
+  episode: 10
   type: confort
   forme: individuelle
   vainqueurs:
@@ -4532,7 +4158,7 @@
     resolu: true
   source: bilan par episode
 - saison: s22
-  episode: 11
+  episode: 10
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -4542,7 +4168,7 @@
     resolu: true
   source: bilan par episode
 - saison: s22
-  episode: 12
+  episode: 11
   type: confort
   forme: individuelle
   vainqueurs:
@@ -4552,7 +4178,7 @@
     resolu: true
   source: bilan par episode
 - saison: s22
-  episode: 12
+  episode: 11
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -4754,22 +4380,6 @@
     type: personne
     id: francois-descamp
     resolu: true
-  - libelle: Fouzi
-    type: personne
-    id: fouzi-ould-bouamama
-    resolu: true
-  - libelle: Louana
-    type: personne
-    id: louana-roy
-    resolu: true
-  - libelle: Ambre
-    type: personne
-    id: ambre-daudet
-    resolu: true
-  - libelle: Bastien
-    type: personne
-    id: bastien-san-pedro
-    resolu: true
   source: bilan par episode
 - saison: s23
   episode: 10
@@ -4991,26 +4601,6 @@
   source: bilan par episode
 - saison: s24
   episode: 8
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Tinago
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s24
-  episode: 8
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Clémence
-    type: personne
-    id: clemence-noquet
-    resolu: true
-  source: bilan par episode
-- saison: s24
-  episode: 9
   type: confort
   forme: collective
   vainqueurs:
@@ -5099,26 +4689,6 @@
   source: bilan par episode
 - saison: s24
   episode: 13
-  type: confort
-  forme: individuelle
-  vainqueurs:
-  - libelle: Laura
-    type: personne
-    id: laura-yelpa
-    resolu: true
-  source: bilan par episode
-- saison: s24
-  episode: 13
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Nicolas
-    type: personne
-    id: nicolas-pretot
-    resolu: true
-  source: bilan par episode
-- saison: s24
-  episode: 14
   type: confort
   forme: individuelle
   vainqueurs:
@@ -5308,26 +4878,6 @@
     resolu: true
   source: bilan par episode
 - saison: s25
-  episode: 8
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Jean
-    type: personne
-    id: jean-belmonte
-    resolu: true
-  source: bilan par episode
-- saison: s25
-  episode: 9
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Kadasi
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s25
   episode: 9
   type: immunite
   forme: individuelle
@@ -5447,136 +4997,130 @@
   source: bilan par episode
 - saison: s26
   episode: 1
-  type: immunite
-  forme: collective
-  vainqueurs:
-  - libelle: Pitogo
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s26
-  episode: 2
   type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Pitogo
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s26
-  episode: 2
-  type: immunite
-  forme: collective
-  vainqueurs:
-  - libelle: Sabitang
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s26
-  episode: 3
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Pitogo
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s26
-  episode: 3
-  type: immunite
-  forme: collective
-  vainqueurs:
-  - libelle: Sabitang
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s26
-  episode: 4
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Sabitang
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s26
-  episode: 4
-  type: immunite
-  forme: collective
-  vainqueurs:
-  - libelle: Pitogo
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s26
-  episode: 5
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Pitogo
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s26
-  episode: 5
-  type: immunite
-  forme: collective
-  vainqueurs:
-  - libelle: Pitogo
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s26
-  episode: 6
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Pitogo
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s26
-  episode: 6
-  type: immunite
-  forme: collective
-  vainqueurs:
-  - libelle: Pitogo
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s26
-  episode: 7
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Sabitang
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s26
-  episode: 7
-  type: immunite
   forme: individuelle
   vainqueurs:
-  - libelle: Gustin
+  - libelle: Cécile B
     type: personne
-    id: gustin-comanescu
+    id: cecile-belec
+    resolu: true
+  - libelle: Fabrice
+    type: personne
+    id: fabrice-giordano
     resolu: true
   source: bilan par episode
 - saison: s26
-  episode: 8
+  episode: 1
+  type: immunite
+  forme: collective
+  vainqueurs:
+  - libelle: Pitogo
+    type: tribu
+    id: null
+    resolu: true
+  source: bilan par episode
+- saison: s26
+  episode: 2
+  type: confort
+  forme: collective
+  vainqueurs:
+  - libelle: Pitogo
+    type: tribu
+    id: null
+    resolu: true
+  source: bilan par episode
+- saison: s26
+  episode: 2
+  type: immunite
+  forme: collective
+  vainqueurs:
+  - libelle: Sabitang
+    type: tribu
+    id: null
+    resolu: true
+  source: bilan par episode
+- saison: s26
+  episode: 3
+  type: confort
+  forme: collective
+  vainqueurs:
+  - libelle: Pitogo
+    type: tribu
+    id: null
+    resolu: true
+  source: bilan par episode
+- saison: s26
+  episode: 3
+  type: immunite
+  forme: collective
+  vainqueurs:
+  - libelle: Sabitang
+    type: tribu
+    id: null
+    resolu: true
+  source: bilan par episode
+- saison: s26
+  episode: 4
+  type: confort
+  forme: collective
+  vainqueurs:
+  - libelle: Sabitang
+    type: tribu
+    id: null
+    resolu: true
+  source: bilan par episode
+- saison: s26
+  episode: 4
+  type: immunite
+  forme: collective
+  vainqueurs:
+  - libelle: Pitogo
+    type: tribu
+    id: null
+    resolu: true
+  source: bilan par episode
+- saison: s26
+  episode: 5
+  type: confort
+  forme: collective
+  vainqueurs:
+  - libelle: Pitogo
+    type: tribu
+    id: null
+    resolu: true
+  source: bilan par episode
+- saison: s26
+  episode: 5
+  type: immunite
+  forme: collective
+  vainqueurs:
+  - libelle: Pitogo
+    type: tribu
+    id: null
+    resolu: true
+  source: bilan par episode
+- saison: s26
+  episode: 6
+  type: confort
+  forme: collective
+  vainqueurs:
+  - libelle: Pitogo
+    type: tribu
+    id: null
+    resolu: true
+  source: bilan par episode
+- saison: s26
+  episode: 6
+  type: immunite
+  forme: collective
+  vainqueurs:
+  - libelle: Pitogo
+    type: tribu
+    id: null
+    resolu: true
+  source: bilan par episode
+- saison: s26
+  episode: 7
   type: confort
   forme: collective
   vainqueurs:
@@ -5692,9 +5236,21 @@
   type: confort
   forme: collective
   vainqueurs:
-  - libelle: Équipe de Charlotte
-    type: equipe
+  - libelle: Charlotte
+    type: personne
     id: charlotte-rasquin
+    resolu: true
+  - libelle: Ilyesse
+    type: personne
+    id: ilyesse-benyoub
+    resolu: true
+  - libelle: Jacques
+    type: personne
+    id: jacques-roque
+    resolu: true
+  - libelle: Sophia
+    type: personne
+    id: sophia-mansouri
     resolu: true
   source: bilan par episode
 - saison: s26
@@ -5810,25 +5366,19 @@
 - saison: s27
   episode: 5
   type: confort
-  forme: collective
+  forme: individuelle
   vainqueurs:
-  - libelle: Silangan
-    type: tribu
-    id: null
+  - libelle: Maxime
+    type: personne
+    id: maxime-lubian
+    resolu: true
+  - libelle: Naïs
+    type: personne
+    id: nais-napoletano
     resolu: true
   source: bilan par episode
 - saison: s27
   episode: 5
-  type: immunite
-  forme: collective
-  vainqueurs:
-  - libelle: Hilaga
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s27
-  episode: 6
   type: immunite
   forme: collective
   vainqueurs:
@@ -5838,6 +5388,26 @@
     resolu: true
   source: bilan par episode
 - saison: s27
+  episode: 6
+  type: confort
+  forme: collective
+  vainqueurs:
+  - libelle: Tugawe
+    type: tribu
+    id: null
+    resolu: true
+  source: bilan par episode
+- saison: s27
+  episode: 6
+  type: immunite
+  forme: collective
+  vainqueurs:
+  - libelle: Tugawe
+    type: tribu
+    id: null
+    resolu: true
+  source: bilan par episode
+- saison: s27
   episode: 7
   type: confort
   forme: collective
@@ -5868,26 +5438,6 @@
     resolu: true
   source: bilan par episode
 - saison: s27
-  episode: 8
-  type: immunite
-  forme: collective
-  vainqueurs:
-  - libelle: Tugawe
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s27
-  episode: 9
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Tugawe
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s27
   episode: 9
   type: immunite
   forme: individuelle
@@ -5899,26 +5449,6 @@
   source: bilan par episode
 - saison: s27
   episode: 10
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Tugawe
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s27
-  episode: 10
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Louise
-    type: personne
-    id: louise-picavet
-    resolu: true
-  source: bilan par episode
-- saison: s27
-  episode: 11
   type: confort
   forme: individuelle
   vainqueurs:
@@ -5932,7 +5462,7 @@
     resolu: true
   source: bilan par episode
 - saison: s27
-  episode: 11
+  episode: 10
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -5942,7 +5472,7 @@
     resolu: true
   source: bilan par episode
 - saison: s27
-  episode: 12
+  episode: 11
   type: confort
   forme: individuelle
   vainqueurs:
@@ -5952,7 +5482,7 @@
     resolu: true
   source: bilan par episode
 - saison: s27
-  episode: 12
+  episode: 11
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -5962,7 +5492,7 @@
     resolu: true
   source: bilan par episode
 - saison: s27
-  episode: 13
+  episode: 12
   type: confort
   forme: individuelle
   vainqueurs:
@@ -5976,17 +5506,21 @@
     resolu: true
   source: bilan par episode
 - saison: s27
-  episode: 13
+  episode: 12
   type: immunite
   forme: individuelle
   vainqueurs:
+  - libelle: Maxime
+    type: personne
+    id: maxime-lubian
+    resolu: true
   - libelle: Noémie
     type: personne
     id: noemie-bessec
     resolu: true
   source: bilan par episode
 - saison: s27
-  episode: 14
+  episode: 13
   type: confort
   forme: individuelle
   vainqueurs:
@@ -6007,26 +5541,6 @@
   source: bilan par episode
 - saison: s27
   episode: 15
-  type: confort
-  forme: individuelle
-  vainqueurs:
-  - libelle: Jérôme
-    type: personne
-    id: jerome-salvatore
-    resolu: true
-  source: bilan par episode
-- saison: s27
-  episode: 15
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Jérôme
-    type: personne
-    id: jerome-molas
-    resolu: true
-  source: bilan par episode
-- saison: s27
-  episode: 16
   type: confort
   forme: individuelle
   vainqueurs:
@@ -6036,7 +5550,7 @@
     resolu: true
   source: bilan par episode
 - saison: s27
-  episode: 16
+  episode: 15
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -6068,11 +5582,11 @@
 - saison: s28
   episode: 2
   type: confort
-  forme: individuelle
+  forme: collective
   vainqueurs:
-  - libelle: Clarisse
-    type: personne
-    id: clarisse-cresseveur
+  - libelle: Lahoy
+    type: tribu
+    id: null
     resolu: true
   source: bilan par episode
 - saison: s28
@@ -6080,7 +5594,7 @@
   type: immunite
   forme: collective
   vainqueurs:
-  - libelle: Kalao
+  - libelle: Lahoy
     type: tribu
     id: null
     resolu: true
@@ -6090,7 +5604,7 @@
   type: confort
   forme: collective
   vainqueurs:
-  - libelle: Lahoy
+  - libelle: Kalao
     type: tribu
     id: null
     resolu: true
@@ -6100,7 +5614,7 @@
   type: immunite
   forme: collective
   vainqueurs:
-  - libelle: Lahoy
+  - libelle: Kalao
     type: tribu
     id: null
     resolu: true
@@ -6130,7 +5644,7 @@
   type: confort
   forme: collective
   vainqueurs:
-  - libelle: Kalao
+  - libelle: Lahoy
     type: tribu
     id: null
     resolu: true
@@ -6140,7 +5654,7 @@
   type: immunite
   forme: collective
   vainqueurs:
-  - libelle: Kalao
+  - libelle: Lahoy
     type: tribu
     id: null
     resolu: true
@@ -6150,7 +5664,7 @@
   type: confort
   forme: collective
   vainqueurs:
-  - libelle: Lahoy
+  - libelle: Kalao
     type: tribu
     id: null
     resolu: true
@@ -6176,26 +5690,6 @@
     resolu: true
   source: bilan par episode
 - saison: s28
-  episode: 7
-  type: immunite
-  forme: collective
-  vainqueurs:
-  - libelle: Lahoy
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s28
-  episode: 8
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Kalao
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: s28
   episode: 8
   type: immunite
   forme: individuelle
@@ -6208,35 +5702,15 @@
 - saison: s28
   episode: 9
   type: confort
-  forme: collective
+  forme: individuelle
   vainqueurs:
-  - libelle: Kalao
-    type: tribu
-    id: null
+  - libelle: Daniel
+    type: personne
+    id: daniel-duquesnoy
     resolu: true
   source: bilan par episode
 - saison: s28
   episode: 9
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Daniel
-    type: personne
-    id: daniel-duquesnoy
-    resolu: true
-  source: bilan par episode
-- saison: s28
-  episode: 10
-  type: confort
-  forme: individuelle
-  vainqueurs:
-  - libelle: Daniel
-    type: personne
-    id: daniel-duquesnoy
-    resolu: true
-  source: bilan par episode
-- saison: s28
-  episode: 10
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -6250,7 +5724,7 @@
     resolu: true
   source: bilan par episode
 - saison: s28
-  episode: 11
+  episode: 10
   type: confort
   forme: individuelle
   vainqueurs:
@@ -6260,7 +5734,7 @@
     resolu: true
   source: bilan par episode
 - saison: s28
-  episode: 11
+  episode: 10
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -6270,7 +5744,7 @@
     resolu: true
   source: bilan par episode
 - saison: s28
-  episode: 12
+  episode: 11
   type: confort
   forme: individuelle
   vainqueurs:
@@ -6284,7 +5758,7 @@
     resolu: true
   source: bilan par episode
 - saison: s28
-  episode: 12
+  episode: 11
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -6298,7 +5772,7 @@
     resolu: true
   source: bilan par episode
 - saison: s28
-  episode: 13
+  episode: 12
   type: confort
   forme: individuelle
   vainqueurs:
@@ -6312,61 +5786,37 @@
     resolu: true
   source: bilan par episode
 - saison: s28
+  episode: 12
+  type: immunite
+  forme: individuelle
+  vainqueurs:
+  - libelle: Antonin
+    type: personne
+    id: antonin-fortunato
+    resolu: true
+  source: bilan par episode
+- saison: s28
+  episode: 13
+  type: confort
+  forme: individuelle
+  vainqueurs:
+  - libelle: Guillaume
+    type: personne
+    id: guillaume-le-deun
+    resolu: true
+  source: bilan par episode
+- saison: s28
   episode: 13
   type: immunite
   forme: individuelle
   vainqueurs:
-  - libelle: Antonin
-    type: personne
-    id: antonin-fortunato
-    resolu: true
-  source: bilan par episode
-- saison: s28
-  episode: 14
-  type: confort
-  forme: individuelle
-  vainqueurs:
-  - libelle: Hugo
-    type: personne
-    id: hugo-van-aertryck
-    resolu: true
-  - libelle: Cynthia
-    type: personne
-    id: cynthia-combes
-    resolu: true
-  source: bilan par episode
-- saison: s28
-  episode: 14
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Antonin
-    type: personne
-    id: antonin-fortunato
-    resolu: true
-  source: bilan par episode
-- saison: s28
-  episode: 15
-  type: confort
-  forme: individuelle
-  vainqueurs:
   - libelle: Guillaume
     type: personne
     id: guillaume-le-deun
     resolu: true
   source: bilan par episode
 - saison: s28
-  episode: 15
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Guillaume
-    type: personne
-    id: guillaume-le-deun
-    resolu: true
-  source: bilan par episode
-- saison: s28
-  episode: 16
+  episode: 14
   type: confort
   forme: collective
   vainqueurs:
@@ -6376,27 +5826,7 @@
     resolu: true
   source: bilan par episode
 - saison: s28
-  episode: 16
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Cynthia
-    type: personne
-    id: cynthia-combes
-    resolu: true
-  source: bilan par episode
-- saison: s28
-  episode: 17
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Équipe de Guillaume
-    type: equipe
-    id: guillaume-le-deun
-    resolu: true
-  source: bilan par episode
-- saison: s28
-  episode: 17
+  episode: 14
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -6883,6 +6313,16 @@
   source: bilan par episode
 - saison: sp5
   episode: 2
+  type: confort
+  forme: collective
+  vainqueurs:
+  - libelle: Toa
+    type: tribu
+    id: null
+    resolu: true
+  source: bilan par episode
+- saison: sp5
+  episode: 2
   type: immunite
   forme: collective
   vainqueurs:
@@ -6913,26 +6353,6 @@
   source: bilan par episode
 - saison: sp5
   episode: 4
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Toa
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: sp5
-  episode: 4
-  type: immunite
-  forme: collective
-  vainqueurs:
-  - libelle: Toa
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: sp5
-  episode: 5
   type: confort
   forme: individuelle
   vainqueurs:
@@ -6942,6 +6362,26 @@
     resolu: true
   source: bilan par episode
 - saison: sp5
+  episode: 4
+  type: immunite
+  forme: collective
+  vainqueurs:
+  - libelle: Toa
+    type: tribu
+    id: null
+    resolu: true
+  source: bilan par episode
+- saison: sp5
+  episode: 5
+  type: confort
+  forme: collective
+  vainqueurs:
+  - libelle: Wakaï
+    type: tribu
+    id: null
+    resolu: true
+  source: bilan par episode
+- saison: sp5
   episode: 5
   type: immunite
   forme: collective
@@ -6956,33 +6396,13 @@
   type: confort
   forme: collective
   vainqueurs:
-  - libelle: Wakaï
+  - libelle: Toa
     type: tribu
     id: null
     resolu: true
   source: bilan par episode
 - saison: sp5
   episode: 6
-  type: immunite
-  forme: collective
-  vainqueurs:
-  - libelle: Toa
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: sp5
-  episode: 7
-  type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Toa
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: sp5
-  episode: 7
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -6992,17 +6412,29 @@
     resolu: true
   source: bilan par episode
 - saison: sp5
-  episode: 8
+  episode: 7
   type: confort
   forme: collective
   vainqueurs:
-  - libelle: Équipe de Pascal
-    type: equipe
+  - libelle: Pascal
+    type: personne
     id: pascal-salviani
+    resolu: true
+  - libelle: Yassin
+    type: personne
+    id: yassin-metiri
+    resolu: true
+  - libelle: Cassandre
+    type: personne
+    id: cassandre-girard
+    resolu: true
+  - libelle: Clémence
+    type: personne
+    id: clemence-castel
     resolu: true
   source: bilan par episode
 - saison: sp5
-  episode: 8
+  episode: 7
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -7012,7 +6444,7 @@
     resolu: true
   source: bilan par episode
 - saison: sp5
-  episode: 9
+  episode: 8
   type: confort
   forme: individuelle
   vainqueurs:
@@ -7026,7 +6458,7 @@
     resolu: true
   source: bilan par episode
 - saison: sp5
-  episode: 9
+  episode: 8
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -7040,7 +6472,7 @@
     resolu: true
   source: bilan par episode
 - saison: sp5
-  episode: 10
+  episode: 9
   type: confort
   forme: individuelle
   vainqueurs:
@@ -7050,7 +6482,7 @@
     resolu: true
   source: bilan par episode
 - saison: sp5
-  episode: 10
+  episode: 9
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -7060,7 +6492,7 @@
     resolu: true
   source: bilan par episode
 - saison: sp5
-  episode: 11
+  episode: 10
   type: confort
   forme: individuelle
   vainqueurs:
@@ -7070,7 +6502,7 @@
     resolu: true
   source: bilan par episode
 - saison: sp5
-  episode: 11
+  episode: 10
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -7182,26 +6614,6 @@
 - saison: sp6
   episode: 6
   type: confort
-  forme: collective
-  vainqueurs:
-  - libelle: Nacomo
-    type: tribu
-    id: null
-    resolu: true
-  source: bilan par episode
-- saison: sp6
-  episode: 6
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Sam
-    type: personne
-    id: sam-haliti
-    resolu: true
-  source: bilan par episode
-- saison: sp6
-  episode: 7
-  type: confort
   forme: individuelle
   vainqueurs:
   - libelle: Teheiura
@@ -7210,7 +6622,7 @@
     resolu: true
   source: bilan par episode
 - saison: sp6
-  episode: 7
+  episode: 6
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -7220,7 +6632,7 @@
     resolu: true
   source: bilan par episode
 - saison: sp6
-  episode: 8
+  episode: 7
   type: confort
   forme: individuelle
   vainqueurs:
@@ -7230,37 +6642,17 @@
     resolu: true
   source: bilan par episode
 - saison: sp6
+  episode: 7
+  type: immunite
+  forme: individuelle
+  vainqueurs:
+  - libelle: Naoil
+    type: personne
+    id: naoil-tita
+    resolu: true
+  source: bilan par episode
+- saison: sp6
   episode: 8
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Naoil
-    type: personne
-    id: naoil-tita
-    resolu: true
-  source: bilan par episode
-- saison: sp6
-  episode: 9
-  type: confort
-  forme: individuelle
-  vainqueurs:
-  - libelle: Teheiura
-    type: personne
-    id: teheiura-teahui
-    resolu: true
-  source: bilan par episode
-- saison: sp6
-  episode: 9
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Naoil
-    type: personne
-    id: naoil-tita
-    resolu: true
-  source: bilan par episode
-- saison: sp6
-  episode: 10
   type: confort
   forme: individuelle
   vainqueurs:
@@ -7274,7 +6666,7 @@
     resolu: true
   source: bilan par episode
 - saison: sp6
-  episode: 10
+  episode: 8
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -7288,17 +6680,29 @@
     resolu: true
   source: bilan par episode
 - saison: sp6
-  episode: 11
+  episode: 9
   type: confort
   forme: collective
   vainqueurs:
-  - libelle: Équipe de Naoil
-    type: equipe
+  - libelle: Naoil
+    type: personne
     id: naoil-tita
+    resolu: true
+  - libelle: Claude
+    type: personne
+    id: claude-dartois
+    resolu: true
+  - libelle: Jessica
+    type: personne
+    id: jessica-potel
+    resolu: true
+  - libelle: Régis
+    type: personne
+    id: regis-rappailles
     resolu: true
   source: bilan par episode
 - saison: sp6
-  episode: 11
+  episode: 9
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -7308,7 +6712,7 @@
     resolu: true
   source: bilan par episode
 - saison: sp6
-  episode: 12
+  episode: 10
   type: confort
   forme: individuelle
   vainqueurs:
@@ -7318,27 +6722,7 @@
     resolu: true
   source: bilan par episode
 - saison: sp6
-  episode: 12
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Claude
-    type: personne
-    id: claude-dartois
-    resolu: true
-  source: bilan par episode
-- saison: sp6
-  episode: 13
-  type: confort
-  forme: individuelle
-  vainqueurs:
-  - libelle: Naoil
-    type: personne
-    id: naoil-tita
-    resolu: true
-  source: bilan par episode
-- saison: sp6
-  episode: 13
+  episode: 10
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -7478,7 +6862,7 @@
     resolu: true
   source: bilan par episode
 - saison: sp7
-  episode: 7
+  episode: 8
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -7488,7 +6872,7 @@
     resolu: true
   source: bilan par episode
 - saison: sp7
-  episode: 8
+  episode: 9
   type: confort
   forme: individuelle
   vainqueurs:
@@ -7498,7 +6882,7 @@
     resolu: true
   source: bilan par episode
 - saison: sp7
-  episode: 8
+  episode: 9
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -7508,7 +6892,7 @@
     resolu: true
   source: bilan par episode
 - saison: sp7
-  episode: 9
+  episode: 10
   type: confort
   forme: individuelle
   vainqueurs:
@@ -7522,7 +6906,7 @@
     resolu: true
   source: bilan par episode
 - saison: sp7
-  episode: 9
+  episode: 10
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -7536,7 +6920,7 @@
     resolu: true
   source: bilan par episode
 - saison: sp7
-  episode: 10
+  episode: 11
   type: confort
   forme: individuelle
   vainqueurs:
@@ -7550,7 +6934,7 @@
     resolu: true
   source: bilan par episode
 - saison: sp7
-  episode: 10
+  episode: 12
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -7560,7 +6944,7 @@
     resolu: true
   source: bilan par episode
 - saison: sp7
-  episode: 10
+  episode: 12
   type: confort
   forme: individuelle
   vainqueurs:
@@ -7570,7 +6954,7 @@
     resolu: true
   source: bilan par episode
 - saison: sp7
-  episode: 11
+  episode: 13
   type: confort
   forme: individuelle
   vainqueurs:
@@ -7584,7 +6968,7 @@
     resolu: true
   source: bilan par episode
 - saison: sp7
-  episode: 11
+  episode: 13
   type: immunite
   forme: individuelle
   vainqueurs:
@@ -7744,55 +7128,7 @@
     resolu: false
   source: bilan par episode
 - saison: sp8
-  episode: 7
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Clémentine
-    type: personne
-    id: clementine-jullien
-    resolu: true
-  - libelle: Dorian
-    type: personne
-    id: dorian-louvet
-    resolu: true
-  source: bilan par episode
-- saison: sp8
   episode: 8
-  type: confort
-  forme: null
-  vainqueurs:
-  - libelle: Sebako
-    type: null
-    id: null
-    resolu: false
-  source: bilan par episode
-- saison: sp8
-  episode: 8
-  type: immunite
-  forme: individuelle
-  vainqueurs:
-  - libelle: Clémentine
-    type: personne
-    id: clementine-jullien
-    resolu: true
-  - libelle: Dorian
-    type: personne
-    id: dorian-louvet
-    resolu: true
-  source: bilan par episode
-- saison: sp8
-  episode: 9
-  type: confort
-  forme: null
-  vainqueurs:
-  - libelle: Sebako
-    type: null
-    id: null
-    resolu: false
-  source: bilan par episode
-- saison: sp8
-  episode: 9
   type: immunite
   forme: individuelle
   vainqueurs:

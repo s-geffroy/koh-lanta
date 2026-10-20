@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Brice Martinet — Malaisie (2012)"
-description: "Brice Martinet, Koh-Lanta Malaisie (2012) : va en finale le 42e jour, 2e sur 20, 12 voix reçues. 395e sur 531 au classement des aventuriers."
+description: "Brice Martinet, Koh-Lanta Malaisie (2012) : va en finale le 42e jour, 2e sur 20, 12 voix reçues. 396e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/brice-martinet.png
 permalink: /aventuriers/brice-martinet/
 aventurier: brice-martinet

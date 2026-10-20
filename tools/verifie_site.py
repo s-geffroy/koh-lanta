@@ -1016,7 +1016,7 @@ AFFIRMATIONS_VALEURS = [
     (("modeles","audience"), lambda x: x["premiere"]["annee"]==2001 and x["sommet"]["jour"]=="Mardi", "statistiques/audience.md ecrit « depuis 2001 » (description) et que le sommet etait deja diffuse le mardi"),
     (("palmares","classement"), lambda x: x[2]["personne"]=="Ugo Lartiche", "statistiques/force.md nomme Ugo Lartiche troisieme palmares de l'histoire"),
     (("modeles","registre"), lambda x: (lambda s: s[0]["cle"]=="persistance_alliances" and s[0]["ecart_types"] >= 1.5*s[1]["ecart_types"])(sorted(x, key=lambda t: -abs(t.get("ecart_types") or 0))), "statistiques/alliances.md ecrit que la persistance des alliances est de tres loin le signal le plus fort"),
-    (("modeles","decimation","detail"), lambda x: x[0]["suite"].startswith("J"), "statistiques/alliances.md ecrit que la plus longue serie est jaune"),
+    (("modeles","decimation","detail"), lambda x: ("J" * x[0]["plus_longue_serie"]) in x[0]["suite"], "statistiques/alliances.md ecrit que la plus longue serie est jaune"),
     (("completude_saisons",), lambda x: x["saisons"]==34 and len(x["colonnes"])==19, "completude.md (description, chapeau) et le sommaire ecrivent 34 editions et 19 types de donnees"),
     (("general",), lambda x: x["saisons_diffusees"]==34 and x["premiere_annee"]==2001 and x["derniere_annee"]==2026 and x["saisons_annulees"]==2 and x["etendue_annees"]==25, "saisons.md (titre, description, chapeau), index.md, sorties.md : 34 saisons, 2001 a 2026, deux interrompues, vingt-cinq ans"),
     (("general","parite_ecart_max"), lambda x: x <= 2, "saisons.md ecrit que l'ecart a la parite tient au plus a un ou deux aventuriers"),
