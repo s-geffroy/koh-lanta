@@ -290,7 +290,7 @@ de l’épisode et partir quand on n’a rien gagné.</p>
   qu’enregistrer. La donnée ne sait pas séparer les deux.</p>
   <p><b>Le camp d’avant la réunification n’est connu que par les bulletins.</b> Sur les
   conseils au dépouillement incomplet, on ignore qui était là — ils sont
-  écartés, et [la complétude]({{ '/completude/' | relative_url }}) montre que
+  écartés, et <a href="{{ '/completude/' | relative_url }}">la complétude</a> montre que
   cela concerne surtout les saisons récentes.</p>
   <p><b>{{ site.data.stats.mots.autour_tests_maj }} tests, {{ site.data.stats.mots.autour_retenus }} retenus</b> : la tribu initiale et le sexe minoritaires. Les
   autres sont publiés comme non concluants, avec leur écart et leur
@@ -298,5 +298,5 @@ de l’épisode et partir quand on n’a rien gagné.</p>
   d’avance. Le sexe minoritaire a changé deux fois de statut au fil des
   réparations de données : c’est précisément à cela que sert une liste arrêtée
   avant de regarder. Le registre complet et la correction pour tests multiples
-  sont sur [La méthode]({{ '/methode/' | relative_url }}).</p>
+  sont sur <a href="{{ '/methode/' | relative_url }}">La méthode</a>.</p>
 </div>

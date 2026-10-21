@@ -136,12 +136,12 @@ souvent, toutes les autres variables tenues fixes.</p>
   {{ rp.coefficients[3].bas }} à {{ rp.coefficients[3].haut }},
   p {{ rp.coefficients[3].p }}. La production rappelle plutôt les jeunes, et ce
   n’est pas parce qu’ils vont plus loin : c’est justement ce que le modèle tient
-  fixe. [Âge et longévité]({{ '/statistiques/longevite/' | relative_url }}) montre
+  fixe. <a href="{{ '/statistiques/longevite/' | relative_url }}">Âge et longévité</a> montre
   d’ailleurs que ce sont les {{ site.data.stats.age_survie_max }} qui durent le plus.</p>
   <p><b>Le sexe, non</b> : cote multipliée par {{ rp.coefficients[2].rapport }},
   intervalle {{ rp.coefficients[2].bas }} à {{ rp.coefficients[2].haut }}. Le
   rappel est aussi paritaire que le casting — et
-  [la recette du casting]({{ '/statistiques/casting/' | relative_url }}) montre
+  <a href="{{ '/statistiques/casting/' | relative_url }}">la recette du casting</a> montre
   que cette parité-là est un quota.</p>
   <p><b>L’abandon coûte cher, sans qu’on puisse le chiffrer.</b> Cote multipliée
   par {{ rp.coefficients[1].rapport }} — divisée par {{ rp.coefficients[1].inverse }},

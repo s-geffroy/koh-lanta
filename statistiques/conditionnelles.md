@@ -58,7 +58,7 @@ ne peut pas jurer que le conseil trouvé plus loin soit bien celui d’avant.
 Cette prudence coûte cher : {{ c.presences }} présences retenues là où la
 version qui enjambe les trous en compterait {{ c.presences_relachees }}. Les
 deux versions donnent la même courbe ; c’est la stricte qui est publiée.
-[La complétude]({{ '/completude/' | relative_url }}) montre pourquoi les
+<a href="{{ '/completude/' | relative_url }}">La complétude</a> montre pourquoi les
 conseils sont la donnée la plus trouée du site.</p>
 
 ## Sachant les voix reçues la fois d’avant

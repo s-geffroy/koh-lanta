@@ -257,6 +257,6 @@ nom de l’immunisé du soir.
   du même rapport de force. Ces données ne savent pas les séparer.</p>
   <p><b>La chaîne exige deux conseils complets d’affilée.</b> D’où
   {{ p.conseils }} conseils seulement, et des cases finales à quelques dizaines
-  d’observations. [La complétude]({{ '/completude/' | relative_url }}) dit
+  d’observations. <a href="{{ '/completude/' | relative_url }}">La complétude</a> dit
   pourquoi.</p>
 </div>
