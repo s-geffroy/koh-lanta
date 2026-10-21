@@ -95,6 +95,13 @@
     {%- if fiche_s.speciale %} · saison spéciale{% endif -%}
     {%- if fiche_s.en_cours %} · <b>en cours de diffusion</b>{% endif -%}
   </p>
+  {%- if fiche_s.tribus.size > 0 %}
+  <p class="entete-tribus">
+    {%- for t in fiche_s.tribus %}
+    <span><span class="pastille" style="background: var(--tribu-{{ t.couleur }})" aria-hidden="true"></span>{{ t.nom }}</span>
+    {%- endfor %}
+  </p>
+  {%- endif %}
 </header>
 
 {%- when "fiche-epreuve" -%}

@@ -127,7 +127,7 @@ laquelle.</p>
   <p><b>{{ p.libelle_sort }}</b>
   {%- if p.jour_sortie %}, jour {{ p.jour_sortie }}{% endif -%}
   {%- if p.classement %} — {{ p.classement }}<sup>e</sup> sur {{ p.effectif }}{% endif %}.
-  {%- if p.tribu %} Tribu {{ p.tribu }}{% if p.couleur %} ({{ p.couleur }}){% endif %}.{% endif %}
+  {%- if p.tribu %} Tribu {% if p.couleur %}<span class="pastille" style="background: var(--tribu-{{ p.couleur }})" aria-hidden="true"></span>{% endif %}{{ p.tribu }}{% if p.couleur %} ({{ p.couleur }}){% endif %}.{% endif %}
   {%- if p.age %} {{ p.age }} ans.{% endif %}</p>
   <p>
     {%- comment -%}

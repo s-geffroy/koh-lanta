@@ -781,6 +781,18 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--encre); }
   margin-right: 0.45rem;
   vertical-align: -1px;
 }
+/* Sur le vert de nuit, une tribu noire disparaitrait : un filet la cerne. */
+.nuit .pastille { outline: 1px solid var(--axe); }
+
+/* Les tribus initiales d'une saison, sous son titre, dans le bandeau. */
+.entete-tribus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.2rem;
+  margin: 0.9rem 0 0;
+  font-size: 0.95rem;
+  color: var(--encre-douce);
+}
 
 /* Une barre dans la cellule : la valeur reste lisible en clair, la barre
    n'ajoute qu'un ordre de grandeur au coup d'oeil. */
