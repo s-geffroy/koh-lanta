@@ -849,6 +849,33 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--encre); }
    n'aurait rien a quoi se coller. */
 .tableau-haut { max-height: 78vh; }
 
+/* Sur un ecran etroit, la premiere colonne -- le nom, ou le rang -- reste en
+   place quand le tableau defile vers la droite : on ne perd plus la ligne
+   qu'on lit. Son fond reprend celui de la ligne (zebre compris), sans quoi
+   les cellules voisines passeraient dessous en transparence. La grille de
+   completude a deja sa propre colonne collante. */
+@media (max-width: 62em) {
+  .tableau-large table:not(.grille-completude) th:first-child,
+  .tableau-large table:not(.grille-completude) td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: var(--surface);
+    border-right: 1px solid var(--grille);
+  }
+  .tableau-large table:not(.grille-completude) tbody tr:nth-child(even) td:first-child {
+    background: var(--zebre);
+  }
+  .tableau-large table:not(.grille-completude) tbody tr:hover td:first-child {
+    background: var(--surface-creuse);
+  }
+  /* L'angle : collant en haut ET a gauche, il passe au-dessus des deux. */
+  .tableau-large table:not(.grille-completude) thead th:first-child {
+    z-index: 2;
+    background: var(--surface-creuse);
+  }
+}
+
 /* L'indice de defilement. Sur un telephone, une figure (32 rem au moins) ou
    un tableau large deborde de sa boite, et rien ne disait qu'il en restait.
    Un liseré d'--axe apparait au bord ou du contenu est cache, et seulement
