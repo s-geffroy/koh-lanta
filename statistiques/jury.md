@@ -96,7 +96,7 @@ est devenu <em>observable</em>.
 réparation.</p>
 [Les alliances]({{ '/statistiques/alliances/' | relative_url }}).
 
-### La mise à l’épreuve : et si ce n’était que le bandeau ?
+### La mise à l’épreuve : et si ce n’était que la tribu initiale ?
 
 {% assign ab = j.avec_bandeau %}
 

@@ -138,7 +138,7 @@ descend à {{ td.p_ajustee }}. La section a alors écrit « retenu » : c’éta
 faux, le seuil n’est pas franchi. Les couples de même département restent
 rares dans un camp de huit, et le test manque de bulletins pour trancher.</p>
 
-## Le bandeau de départ : celui qui compte vraiment
+## La tribu initiale : celle qui compte vraiment
 
 {% assign t = reg | where: "cle", "vote_bandeau_apres_fusion" | first %}
 

@@ -100,7 +100,7 @@ douze.</p>
 </table>
 </div>
 
-## Le bandeau d’origine décide qui part
+## La tribu initiale décide qui part
 
 {% assign bmin = f.bandeau | first %}
 {% assign bmaj = f.bandeau | last %}
