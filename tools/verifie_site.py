@@ -1167,6 +1167,113 @@ RE_CALCUL_LIQUID = re.compile(
     r"capitalize|downcase|upcase)\b")
 
 
+
+# --- Le Markdown qu'aucun moteur ne lira -------------------------------------
+#
+# Dans une page .md, kramdown n'interprete PAS le Markdown ecrit a l'interieur
+# d'un bloc HTML (un <p class="note">, un <div class="constat">...) -- sauf si
+# le bloc porte markdown="1". Le lecteur voit alors « [la complétude](/...) »
+# ou « *Titre* » en toutes lettres. Le 21 octobre 2026, six liens et deux
+# titres de saison etaient publies ainsi ; la relecture des 622 pages EN LIGNE
+# les a trouves, aucun controle ne les voyait. Meme chose, a plus forte
+# raison, dans une page .html ou un gabarit, qui ne passent jamais par
+# kramdown, et dans une DONNEE inseree par {{ }} dans un bloc HTML : les deux
+# titres venaient de build_stats, qui ecrivait l'italique en asterisques.
+BLOCS_HTML = ("p", "div", "section", "ul", "ol", "li", "table", "thead", "tbody",
+              "tr", "td", "th", "blockquote", "figure", "figcaption", "details",
+              "summary", "aside", "nav", "header", "footer", "dl", "dt", "dd",
+              "h1", "h2", "h3", "h4", "h5", "h6", "pre")
+RE_BLOC_OUVRE = re.compile(r"<(%s)\b([^>]*)>" % "|".join(BLOCS_HTML))
+RE_BLOC_FERME = re.compile(r"</(%s)>" % "|".join(BLOCS_HTML))
+RE_DEBUT_BLOC = re.compile(r"^\s*<(%s)\b" % "|".join(BLOCS_HTML))
+RE_MD_BRUT = re.compile(
+    r"\[[^\[\]\n]+\]\([^)\s]+\)"                       # [texte](adresse)
+    r"|\*\*[^*\n]+\*\*"                                # **gras**
+    r"|(?<![\w*\\])\*(?=\S)[^*\n]+?(?<=\S)\*(?![\w*])")  # *italique*
+RE_CODE = re.compile(r"<code>.*?</code>", re.S)
+RE_SORTIE = re.compile(r"\{\{-?\s*([a-z_][A-Za-z0-9_]*)\.([A-Za-z0-9_.]+?)\s*(?:\||-?\}\})")
+
+
+def _lignes_html(corps, tout_html):
+    """Rend (numero, ligne) pour chaque ligne qui sera lue comme du HTML brut."""
+    pile = []          # True : bloc HTML brut ; False : bloc markdown="1"
+    for i, ligne in enumerate(corps.split("\n"), 1):
+        brut = tout_html or (pile and pile[-1]) or (not pile and RE_DEBUT_BLOC.match(ligne))
+        for m in re.finditer(r"%s|%s" % (RE_BLOC_OUVRE.pattern, RE_BLOC_FERME.pattern), ligne):
+            if m.group(0).startswith("</"):
+                if pile:
+                    pile.pop()
+            elif pile or RE_DEBUT_BLOC.match(ligne):
+                pile.append('markdown="1"' not in (m.group(2) or ""))
+        if brut:
+            yield i, ligne
+
+
+def _textes(valeur):
+    if isinstance(valeur, str):
+        yield valeur
+    elif isinstance(valeur, dict):
+        for v in valeur.values():
+            yield from _textes(v)
+    elif isinstance(valeur, list):
+        for v in valeur:
+            yield from _textes(v)
+
+
+def controler_markdown_dans_html(c, jeux):
+    """Refuse un lien, un gras ou un italique Markdown que rien ne rendra."""
+    fichiers = list(pages())
+    for sous in ("_layouts", "_includes"):
+        dossier = os.path.join(RACINE, sous)
+        fichiers += [os.path.join(dossier, f) for f in sorted(os.listdir(dossier))
+                     if f.endswith(".html")]
+    for chemin in sorted(fichiers):
+        rel = os.path.relpath(chemin, RACINE)
+        texte = open(chemin, encoding="utf-8").read()
+        m = RE_FRONT.match(texte)
+        corps = texte[m.end():] if m else texte
+        # Les commentaires, remplaces par autant de retours a la ligne : les
+        # numeros de ligne restent justes.
+        efface = lambda x: "\n" * x.group(0).count("\n")
+        corps = RE_COMMENTAIRE.sub(efface, corps)
+        corps = re.sub(r"<!--.*?-->", efface, corps, flags=re.S)
+        decalage = texte[:m.end()].count("\n") if m else 0
+        alias = {nom: cible for nom, cible in RE_ASSIGN.findall(corps)}
+        for i, ligne in _lignes_html(corps, chemin.endswith(".html")):
+            nette = RE_CODE.sub(" ", ligne)
+            # Le Liquid devient un mot temoin, pas un blanc : « [x]({{ '/a/' |
+            # relative_url }}) » doit garder une adresse pour etre reconnu.
+            nette_sans_liquid = re.sub(r"\{\{.*?\}\}|\{%.*?%\}", "LIQUID", nette)
+            for x in RE_MD_BRUT.findall(nette_sans_liquid):
+                c.erreur(f"{rel}:{i + decalage} : Markdown dans un bloc HTML, publie tel quel "
+                         f"— « {x[:60]} » ; ecrire <a href>, <b>, <i>")
+            for nom, suite in RE_SORTIE.findall(nette):
+                if nom == "site" and suite.startswith("data."):
+                    parcours = suite[5:]
+                elif nom in alias:
+                    parcours = f"{alias[nom]}.{suite}"
+                else:
+                    continue
+                parcours = ".".join(x for x in parcours.split(".")
+                                    if x not in ("first", "last", "size"))
+                ok, valeur = resoudre(jeux, parcours)
+                for t in (_textes(valeur) if ok else ()):
+                    x = RE_MD_BRUT.search(t)
+                    if x:
+                        c.erreur(f"{rel}:{i + decalage} : {{{{ {nom}.{suite} }}}} insere dans un "
+                                 f"bloc HTML une donnee en Markdown — « {x.group(0)[:60]} » ; "
+                                 f"la produire en HTML dans tools/")
+                        break
+    # Les fiches ne sont rendues que par des gabarits HTML : aucun de leurs
+    # textes ne passera par kramdown.
+    for jeu in ("fiches", "epreuves_fiches"):
+        for t in _textes(jeux.get(jeu)):
+            x = RE_MD_BRUT.search(t)
+            if x:
+                c.erreur(f"_data/{jeu}.yml : texte en Markdown, rendu par un gabarit "
+                         f"HTML qui ne l'interpretera pas — « {x.group(0)[:60]} »")
+
+
 def controler_calculs_liquid(c):
     """Refuse un calcul ou une mise en forme faits en Liquid."""
     for dossier, _, fichiers in os.walk(RACINE):
@@ -1718,6 +1825,7 @@ def main():
     controler_portraits(c)
     controler_comptes_annonces(c)
     controler_calculs_liquid(c)
+    controler_markdown_dans_html(c, jeux)
     controler_articles(c)
     controler_donnees_structurees(c)
     controler_yaml_ambigu(c)
