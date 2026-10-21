@@ -315,6 +315,22 @@ def bloc_records(parts, personnes):
     }
 
 
+def conseils_par_soir_max(conseils):
+    """Le plus de conseils tenus un meme soir (saison et episode).
+
+    Les eliminations, plus le conseil final compte UNE fois : les donnees
+    l'ecrivent en un enregistrement par finaliste, ce qui faisait croire a
+    cinq conseils le soir d'une finale. Les sorties sans vote (abandons,
+    evacuations) ne sont pas des conseils. /sources/ ecrit ce maximum en
+    toutes lettres (« deux, parfois trois ») sous AFFIRMATIONS_VALEURS.
+    """
+    soirs = Counter((c["saison"], c.get("episode")) for c in conseils
+                                if c.get("type") == "elimination")
+    for k in sorted({(c["saison"], c.get("episode")) for c in conseils if c.get("type") == "jury"}, key=str):
+        soirs[k] += 1
+    return max(soirs.values()) if soirs else None
+
+
 def bloc_conseils(conseils, parts, par_saison):
     # Le vote du jury final est mis de cote : on n'y elimine personne, on y
     # designe un vainqueur. Le melanger aux conseils fausserait le decompte
@@ -366,6 +382,7 @@ def bloc_conseils(conseils, parts, par_saison):
 
     return {
         "conseils": len(utiles),
+        "par_soir_max": conseils_par_soir_max(conseils),
         "conseils_avec_decompte": len(avec_decompte),
         "conseils_complets": len(complets),
         # /sources/ : pourquoi un conseil n'est pas complet. Sans decompte

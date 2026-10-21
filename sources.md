@@ -149,6 +149,11 @@ recopient le format de Wikipédia ; Christelle parle en interview de « 40 j
 sur cette île », une formule orale qui peut arrondir ; et les autres sites de
 statistiques reprennent le tableau Fandom. Pour Ludovic, aucune page ne date
 l’orientation.
+Le 21 octobre, deux pistes de plus : la page de l’épisode du wiki *Survivor*
+range bien l’élimination de Ludovic dans son 38<sup>e</sup> jour, mais elle vient
+du même wiki que le tableau déjà compté parmi les trois témoins — la compter
+ferait passer une source pour deux ; et la page Fandom de l’épreuve
+d’orientation nomme ses participants, saison par saison, sans aucune date.
 
 <p class="note">Au moment de cette reprise, 50 étapes portaient un nom de
 tribu mêlé de dates, et 32 parcours contredisaient leur jour de sortie : il
@@ -1149,7 +1154,7 @@ Le paragraphe ci-dessus décrit un piège rencontré sur l’appariement des
 bulletins. Il s’est représenté ailleurs, sous une autre forme, et il mérite
 d’être nommé une bonne fois : **un épisode n’est pas un conseil.**
 
-Un même soir peut en compter deux, trois, parfois quatre — une égalité suivie
+Un même soir peut en compter deux, parfois trois — une égalité suivie
 d’un second vote, deux tribus qui votent chacune de leur côté, un épisode final
 qui enchaîne les éliminations. Tout rapprochement fait sur le seul numéro
 d’épisode y devient faux.

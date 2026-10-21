@@ -943,6 +943,8 @@ def _contient_un(x):
 
 
 AFFIRMATIONS_VALEURS = [
+    (("conseils", "par_soir_max"), lambda x: x == 3,
+     "sources.md ecrit qu'un meme soir compte « deux, parfois trois » conseils"),
     (("modeles", "force_et_jeu", "voix", "force"), _sous_un,
      "statistiques/force.md ecrit que l'intervalle reste sous 1"),
     (("modeles", "force_et_jeu", "voix", "age"), _contient_un,
