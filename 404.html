@@ -1,14 +1,44 @@
 ---
-layout: default
+layout: page
 title: Page introuvable
 permalink: /404.html
+chapeau: Cette adresse ne correspond à aucune page de ce site.
 ---
 
-<h1>Page introuvable</h1>
+<p>Repartez de l’une de ces entrées.</p>
 
-<p>Cette adresse ne correspond à aucune page de ce site.</p>
-
-<p><a href="{{ '/' | relative_url }}">Revenir à l'accueil</a></p>
+<ul class="cartes">
+  <li class="carte">
+    <a href="{{ '/' | relative_url }}">
+      <span class="carte-titre">L’accueil</span>
+      <span class="carte-resume">Le jeu, vu de la donnée.</span>
+    </a>
+  </li>
+  <li class="carte">
+    <a href="{{ '/statistiques/' | relative_url }}">
+      <span class="carte-titre">Les statistiques</span>
+      <span class="carte-resume">Les résultats, thème par thème.</span>
+    </a>
+  </li>
+  <li class="carte">
+    <a href="{{ '/saisons/' | relative_url }}">
+      <span class="carte-titre">Les saisons</span>
+      <span class="carte-resume">Chaque édition, son casting et son vainqueur.</span>
+    </a>
+  </li>
+  <li class="carte">
+    <a href="{{ '/aventuriers/' | relative_url }}">
+      <span class="carte-titre">Les aventuriers</span>
+      <span class="carte-resume">Chaque participation, et la fiche de chacun.</span>
+    </a>
+  </li>
+  <li class="carte">
+    <a href="{{ '/articles/' | relative_url }}">
+      <span class="carte-titre">Les articles</span>
+      <span class="carte-resume">Ce que les chiffres disent du jeu.</span>
+    </a>
+  </li>
+</ul>
 
 <!--
   GitHub Pages sert automatiquement ce fichier sur toute adresse inconnue, a
@@ -18,4 +48,7 @@ permalink: /404.html
   'relative_url' plutot qu'un '/' en dur : il applique le baseurl de
   _config.yml, seule facon que le lien marche aussi sur un site de projet servi
   sous /<depot>/.
+
+  Gabarit `page` (21 octobre 2026) : la 404 recoit le bandeau de nuit, le
+  rail et la mise en page du site, comme toute autre page.
 -->

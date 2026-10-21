@@ -570,6 +570,40 @@ a { color: inherit; }
 
 .prose strong, .prose b { font-weight: 650; }
 
+/* La phrase qu'on retient d'une section (« > » en Markdown). Hors des
+   articles, elle tombait sur le retrait par defaut du navigateur. Un trait
+   vert de jungle, comme le constat, mais sans panneau : le constat prouve,
+   la citation resume. */
+.prose blockquote {
+  margin: 1.8rem 0;
+  padding: 0.1rem 0 0.1rem 1.2rem;
+  border-left: 3px solid var(--jungle);
+  font-size: 1.15rem;
+  line-height: 1.45;
+}
+.prose blockquote p { margin: 0; }
+
+/* Le code : noms de fichiers, wikitexte, sequences J/R. C'est du vrai code,
+   une chasse fixe y a sa place -- celle du systeme, rien a telecharger.
+   Ne pas employer var(--mono) : c'est Archivo, pour les SVG. */
+.prose code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.86em;
+  background: var(--surface-creuse);
+  border-radius: 3px;
+  padding: 0.1em 0.35em;
+  overflow-wrap: anywhere;
+}
+
+/* Un exposant (« 12e ») ne doit pas ecarter la ligne qui le porte. */
+sup {
+  font-size: 0.7em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.45em;
+}
+
 .prose hr {
   border: 0;
   border-top: 1px solid var(--grille);
@@ -1169,14 +1203,7 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--encre); }
 .signature a { color: var(--encre-douce); }
 .signature a:hover { color: var(--encre); }
 
-.article blockquote {
-  margin: 1.6rem 0;
-  padding: 0.1rem 0 0.1rem 1.1rem;
-  border-left: 2px solid var(--encre);
-  font-size: 1.1rem;
-  line-height: 1.5;
-}
-.article blockquote p { margin: 0; }
+/* Les citations des articles suivent la regle generale (.prose blockquote). */
 
 /* Un tableau d'article s'enveloppe dans .tableau-large, ecrit dans le
    Markdown (`<div class="tableau-large" markdown="1">`). Ne pas revenir a
