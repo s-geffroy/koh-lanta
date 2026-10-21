@@ -43,10 +43,9 @@ complète des tests menés — y compris ceux qui n’ont rien donné.
 {%- for groupe in site.data.navigation -%}
 {%- if groupe.fil -%}
 {%- for t in groupe.themes -%}
-### {{ t.titre }}
-
+<section class="theme">
+<h3>{{ t.titre }}</h3>
 <p class="chapeau-theme">{{ t.resume }}</p>
-
 <ul class="cartes">
 {%- for e in t.entrees -%}
 {%- unless e.hub -%}
@@ -61,6 +60,7 @@ complète des tests menés — y compris ceux qui n’ont rien donné.
 {%- endunless -%}
 {%- endfor -%}
 </ul>
+</section>
 {%- endfor -%}
 {%- endif -%}
 {%- endfor -%}

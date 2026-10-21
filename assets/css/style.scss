@@ -1368,6 +1368,37 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--encre); }
   }
 }
 
+/* Un theme du sommaire des statistiques : son titre et sa phrase a gauche,
+   ses entrees a droite, un filet au-dessus. Sur petit ecran, tout s'empile
+   comme avant. */
+.theme {
+  border-top: 1px solid var(--grille);
+  padding-top: 1.3rem;
+  margin: 2.2rem 0 0;
+}
+.prose .theme h3 { margin: 0 0 0.3rem; font-size: 1.15rem; }
+.theme .chapeau-theme { font-size: 0.95rem; }
+.theme .cartes { margin: 0 0 1rem; }
+
+@media (min-width: 62em) {
+  .theme {
+    display: grid;
+    grid-template-columns: 14rem minmax(0, 1fr);
+    column-gap: 2.5rem;
+    align-items: start;
+  }
+  .theme h3,
+  .theme .chapeau-theme { grid-column: 1; }
+  .theme .cartes { grid-column: 2; grid-row: 1 / span 2; margin: 0; }
+}
+
+/* La marge d'une note s'ecrit avec .prose : sans lui, `.prose p` (0,1,1)
+   l'emportait sur `.note` (0,1,0) et une note en <p> collait au texte.
+   Plusieurs notes a la suite forment un seul bloc de precisions : 1.6 - 1
+   = 0.6 rem entre elles. */
+.prose .note { margin: 1.4rem 0 1.6rem; }
+.prose .note + .note { margin-top: -1rem; }
+
 .chapeau-theme {
   color: var(--encre-douce);
   margin: 0 0 1rem;
