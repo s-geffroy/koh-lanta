@@ -15,7 +15,7 @@
   var bouton = document.getElementById("bascule-theme");
   if (bouton) {
     var etats = ["auto", "clair", "sombre"];
-    var libelle = { auto: "Thème : auto", clair: "Thème : clair", sombre: "Thème : sombre" };
+    var libelle = { auto: "Thème\u00a0: auto", clair: "Thème\u00a0: clair", sombre: "Thème\u00a0: sombre" };
 
     var lire = function () {
       try {

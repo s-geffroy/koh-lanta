@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Charlaine Cuny — Johor (2015)"
-description: "Charlaine Cuny, Koh-Lanta Johor (2015) : sort au conseil le 26e jour, 10e sur 20, 0 épreuve gagnée. 217e sur 531 au classement des aventuriers."
+description: "Charlaine Cuny, Koh-Lanta Johor (2015) : sort au conseil le 26e jour, 10e sur 20, 0 épreuve gagnée. 217e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/charlaine-cuny.png
 permalink: /aventuriers/charlaine-cuny/
 aventurier: charlaine-cuny

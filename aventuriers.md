@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Les aventuriers de Koh-Lanta
-description: "Les 645 participations à Koh-Lanta, saison par saison : durée, épreuves, votes, manière de sortir. Un tableau qui se cherche, se filtre et se trie."
+description: "Les 645 participations à Koh-Lanta, saison par saison : durée, épreuves, votes, manière de sortir. Un tableau qui se cherche, se filtre et se trie."
 permalink: /aventuriers/
 chapeau: >-
   Toutes les participations relevées, saison par saison. Le tableau se
@@ -11,11 +11,11 @@ chapeau: >-
 {% assign g = site.data.stats.general %}
 
 Les **{{ g.participations }} participations** relevées, toutes saisons
-confondues. {{ g.personnes }} personnes différentes : la différence tient aux
+confondues. {{ g.personnes }} personnes différentes : la différence tient aux
 {{ site.data.stats.records.nb_multi_participants }} aventuriers revenus jouer
 une ou plusieurs fois.
 
-<p class="note">Ce tableau décrit <strong>une aventure à la fois</strong> :
+<p class="note">Ce tableau décrit <strong>une aventure à la fois</strong> :
 qui, où, quand, jusqu’à quel jour. Il ne dit pas comment on a joué. Pour cela,
 <a href="{{ '/statistiques/top/' | relative_url }}">le classement des
 joueurs</a> range les
@@ -63,7 +63,7 @@ le nom de celui qui part — et il se cherche de la même façon.</p>
 
 <p class="note"><strong>Chaque nom est une fiche</strong>, et chaque titre de
 saison aussi. La fiche d’un aventurier rassemble ses saisons, sa place sur les
-{{ site.data.stats.mots.facettes }} facettes du classement et ce qu’on sait de ses conseils ; celle d’une
+{{ site.data.stats.mots.facettes }} facettes du classement et ce qu’on sait de ses conseils ; celle d’une
 saison donne son casting entier, ses conseils et son audience.</p>
 
 <p class="note">Cliquez sur un en-tête pour trier le tableau sur cette colonne.
@@ -72,12 +72,12 @@ reste entier et lisible, dans l’ordre chronologique des saisons puis de
 sortie.</p>
 
 <p class="note"><strong>Rang et épreuves gagnées</strong> viennent des fiches
-individuelles du wiki Fandom, qui sont les seules à les porter : ils manquent
+individuelles du wiki Fandom, qui sont les seules à les porter : ils manquent
 donc là où la fiche manque. Le palmarès y compte tout ce que le wiki appelle une
 victoire — duels de l’île des bannis ou de l’exil et épreuves de finale compris — là où
 <a href="{{ '/statistiques/epreuves/' | relative_url }}">la page des épreuves</a>
 ne compte que ce qui figure au bilan épisode par épisode. Les deux comptes sont
-identiques dans {{ site.data.stats.palmares.part_identiques }} % des cas ;
+identiques dans {{ site.data.stats.palmares.part_identiques }} % des cas ;
 <a href="{{ '/sources/' | relative_url }}">Les sources</a> disent pourquoi pas
 dans les autres.</p>
 
@@ -113,7 +113,7 @@ dans les autres.</p>
 </table>
 </div>
 
-<p class="note">Une même personne revient ici autant de fois qu’elle a joué :
+<p class="note">Une même personne revient ici autant de fois qu’elle a joué :
 c’est un tableau de <strong>participations</strong>, pas de personnes. Le
 <a href="{{ '/statistiques/top/' | relative_url }}">classement des joueurs</a>
 fait l’inverse — une ligne par aventurier, ses saisons cumulées, et son rang

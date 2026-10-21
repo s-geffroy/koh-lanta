@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Les 34 saisons de Koh-Lanta
-description: "Les 34 saisons de Koh-Lanta, de 2001 à 2026 : effectif, durée, conseils, audience et vainqueur de chaque édition, plus les deux saisons interrompues."
+description: "Les 34 saisons de Koh-Lanta, de 2001 à 2026 : effectif, durée, conseils, audience et vainqueur de chaque édition, plus les deux saisons interrompues."
 permalink: /saisons/
 chapeau: >-
   Trente-quatre éditions diffusées, deux interrompues, et quatre indicateurs
@@ -11,21 +11,21 @@ chapeau: >-
 {% assign s = site.data.stats %}
 
 {{ s.general.saisons_diffusees }} saisons diffusées entre
-{{ s.general.premiere_annee }} et {{ s.general.derniere_annee }} :
+{{ s.general.premiere_annee }} et {{ s.general.derniere_annee }} :
 {{ s.general.saisons_classiques }} éditions classiques et
 {{ s.general.saisons_speciales }} éditions spéciales. {{ s.mots.saisons_annulees_maj }} saisons de plus ont
 été tournées mais **jamais diffusées**, interrompues en cours de tournage.
 
 <p class="note">Ce que l’on sait — et ce que l’on ignore — de chaque édition,
-type de donnée par type de donnée, tient dans un seul tableau :
+type de donnée par type de donnée, tient dans un seul tableau :
 <a href="{{ '/completude/' | relative_url }}">La complétude, édition par
 édition</a>.</p>
 
-<p class="note">Cette page regarde les saisons ; le
+<p class="note">Cette page regarde les saisons ; le
 <a href="{{ '/statistiques/top/' | relative_url }}">classement des joueurs</a>
 regarde les gens qui les ont jouées, et il porte aussi la liste des
 <strong>meilleures saisons jamais jouées</strong> — une participation à la
-fois, sur {{ s.mots.facettes }} facettes. Le premier du programme n’y est pas un vainqueur :
+fois, sur {{ s.mots.facettes }} facettes. Le premier du programme n’y est pas un vainqueur :
 c’est <b>{{ site.data.stats.classement.top_saisons[0].aventurier }}</b> à
 <i>{{ site.data.stats.classement.top_saisons[0].saison }}</i>
 ({{ site.data.stats.classement.top_saisons[0].sort_min }}).</p>
@@ -52,7 +52,7 @@ c’est <b>{{ site.data.stats.classement.top_saisons[0].aventurier }}</b> à
       <span class="saison-tribus-noms">{{ x.tribus | map: "nom" | join: " · " }}</span>
     </p>
     <p class="saison-vainqueur">
-      {%- if x.vainqueurs -%}Vainqueur : <b>{{ x.vainqueurs | join: " et " }}</b>
+      {%- if x.vainqueurs -%}Vainqueur : <b>{{ x.vainqueurs | join: " et " }}</b>
       {%- else -%}<i>saison en cours</i>{%- endif -%}
     </p>
   </li>
@@ -63,7 +63,7 @@ c’est <b>{{ site.data.stats.classement.top_saisons[0].aventurier }}</b> à
 ## Les éditions spéciales
 
 Elles font revenir d’anciens aventuriers. Leurs chiffres sont tenus à part
-partout sur ce site : des revenants de quarante ans qui rejouent tirent les
+partout sur ce site : des revenants de quarante ans qui rejouent tirent les
 moyennes d’âge vers le haut sans rien dire du casting ordinaire.
 
 <ul class="saison-grille">
@@ -79,7 +79,7 @@ moyennes d’âge vers le haut sans rien dire du casting ordinaire.
     <p class="saison-titre">{% include lien-saison.html id=x.id titre=x.titre %}</p>
     <p class="saison-lieu">{{ x.lieu }}, {{ x.pays }}</p>
     <p class="saison-vainqueur">
-      {%- if x.vainqueurs -%}Vainqueur : <b>{{ x.vainqueurs | join: " et " }}</b>
+      {%- if x.vainqueurs -%}Vainqueur : <b>{{ x.vainqueurs | join: " et " }}</b>
       {%- else -%}<i>saison en cours</i>{%- endif -%}
     </p>
   </li>
@@ -110,16 +110,16 @@ moyennes d’âge vers le haut sans rien dire du casting ordinaire.
 {% include graphiques/saisons-petits-multiples.svg %}
 
 <p class="legende-figure">Part des aventuriers encore en jeu, du premier au
-dernier jour de chaque saison. Les axes sont identiques partout : une courbe
+dernier jour de chaque saison. Les axes sont identiques partout : une courbe
 qui plonge plonge vraiment, elle n’est pas mise à l’échelle de sa propre case.
 La ligne grise marque la moitié du plateau.</p>
 
-Les éditions spéciales, en rose, se reconnaissent à leur pente : plus courtes,
+Les éditions spéciales, en rose, se reconnaissent à leur pente : plus courtes,
 elles éliminent plus vite. Chez les classiques, la forme est remarquablement
 stable d’une saison à l’autre — le format tient depuis
 {{ s.mots.etendue_annees }} ans.
 
-Cette stabilité a une cause précise, et elle n’est pas ludique : la
+Cette stabilité a une cause précise, et elle n’est pas ludique : la
 réunification tombe à un **épisode fixe**, l’épisode
 {{ site.data.stats.modeles.fusion.episode_median }}, quelle que soit la taille
 du casting. Le calendrier de diffusion, lui, n’a pas bougé.
@@ -129,16 +129,16 @@ du casting. Le calendrier de diffusion, lui, n’a pas bougé.
 
 Au-delà du casting, quatre indicateurs disent ce qu’a été chaque saison.
 
-### Un aventurier a-t-il écrasé les épreuves ?
+### Un aventurier a-t-il écrasé les épreuves ?
 
 {% include graphiques/saisons-domination.svg %}
 
 <p class="legende-figure">Indice de concentration des victoires individuelles.
-Proche de zéro, les victoires ont circulé ; proche de un, une seule personne a
+Proche de zéro, les victoires ont circulé ; proche de un, une seule personne a
 tout raflé.</p>
 
 {% assign dmax = s.indicateurs.domination_max %}{% assign dmin = s.indicateurs.domination_min %}
-Le record des saisons classiques revient à **{{ dmax.titre }} ({{ dmax.annee }})** :
+Le record des saisons classiques revient à **{{ dmax.titre }} ({{ dmax.annee }})** :
 {{ dmax.meilleur_gagnant }} y remporte {{ s.mots.victoires_domination_max }}
 épreuves individuelles. À l’opposé, la saison la plus partagée du programme est
 **{{ dmin.titre }} ({{ dmin.annee }})**.
@@ -146,20 +146,20 @@ Le record des saisons classiques revient à **{{ dmax.titre }} ({{ dmax.annee }}
 <p class="note">Ce que cette figure mesure est la <em>concentration</em> dans
 une saison, pas la force d’un aventurier. Rapportées à ce que chacun a
 réellement disputé, les victoires donnent un autre classement — celui de la
-facette « épreuves » du
+facette « épreuves » du
 <a href="{{ '/statistiques/top/' | relative_url }}">top des joueurs</a>, où
 {% assign fe = s.classement.facettes | where: "cle", "epreuves" | first %}{{ fe.top[0].nom }} est premier sur l’ensemble de sa carrière, et non sur une seule
 saison.</p>
 
-### Le camp vote-t-il d’un bloc ?
+### Le camp vote-t-il d’un bloc ?
 
 {% include graphiques/saisons-dispersion.svg %}
 
-<p class="legende-figure">Dispersion moyenne des bulletins au conseil. Zéro :
-tout le monde écrit le même nom. Un : chacun vote dans son coin, plus personne
+<p class="legende-figure">Dispersion moyenne des bulletins au conseil. Zéro :
+tout le monde écrit le même nom. Un : chacun vote dans son coin, plus personne
 ne contrôle rien.</p>
 
-### Des conseils serrés ou écrasants ?
+### Des conseils serrés ou écrasants ?
 
 {% include graphiques/saisons-tension.svg %}
 
@@ -175,7 +175,7 @@ ou sur décision médicale.</p>
 
 {% assign ind = site.data.stats.indicateurs %}{% assign amax = ind.abandon_max %}
 Parmi les saisons classiques, {{ ind.abandon_nul }} n’ont connu **aucun
-abandon** : {{ ind.abandon_nul_texte }}. À l’autre bout, *{{ amax.titre }}*
+abandon** : {{ ind.abandon_nul_texte }}. À l’autre bout, *{{ amax.titre }}*
 ({{ amax.annee }}) en a perdu {{ amax.abandons }} sur {{ amax.effectif }}.
 
 ### Le tableau complet
@@ -218,7 +218,7 @@ Sans JavaScript, il reste entièrement lisible, dans l’ordre chronologique.</p
 </div>
 
 <p class="note">Un tiret signale une saison dont les sources ne permettent pas
-de calculer l’indicateur : pas de bilan d’épreuves, ou trop peu de conseils au
+de calculer l’indicateur : pas de bilan d’épreuves, ou trop peu de conseils au
 dépouillement complet.</p>
 
 ## {{ s.mots.etendue_annees_maj }} ans de diffusion
@@ -230,7 +230,7 @@ aussi parlants que les barres.</p>
 
 {% assign pr = site.data.stats.programme %}
 {{ pr.presentateurs[0].nom }} a présenté **{{ pr.presentateurs[0].saisons }} des
-{{ site.data.stats.general.saisons_diffusees }} saisons diffusées** ; la
+{{ site.data.stats.general.saisons_diffusees }} saisons diffusées** ; la
 première, en {{ site.data.stats.general.premiere_annee }}, l’avait été par
 {{ pr.presentateurs[1].nom }}.
 
@@ -243,7 +243,7 @@ saison.</p>
 
 **{{ pr.jour_de_lancement[0].effectif }} saisons ont été lancées un
 {{ pr.jour_de_lancement[0].jour }}**, contre
-{{ pr.jour_de_lancement[1].effectif }} un {{ pr.jour_de_lancement[1].jour }} :
+{{ pr.jour_de_lancement[1].effectif }} un {{ pr.jour_de_lancement[1].jour }} :
 la case du programme a changé en cours de route, et c’est l’un des rares faits
 de grille que les données laissent lire.
 
@@ -251,13 +251,13 @@ de grille que les données laissent lire.
 
 {% include graphiques/casting-ages.svg %}
 
-<p class="legende-figure">Du plus jeune au plus âgé de chaque casting ; le
+<p class="legende-figure">Du plus jeune au plus âgé de chaque casting ; le
 point creux marque l’âge médian, et le nombre à droite l’écart entre les deux
 extrêmes.</p>
 
 {% assign ca = site.data.stats.casting %}
 Le casting le plus large est celui de **{{ ca.plus_large.titre }}
-({{ ca.plus_large.annee }})** : de {{ ca.plus_large.min }} à
+({{ ca.plus_large.annee }})** : de {{ ca.plus_large.min }} à
 {{ ca.plus_large.max }} ans, **{{ ca.plus_large.etendue }} ans d’écart**. Le plus
 resserré est **{{ ca.plus_resserree.titre }} ({{ ca.plus_resserree.annee }})**,
 avec {{ ca.plus_resserree.etendue }} ans seulement.
@@ -267,5 +267,5 @@ avec {{ ca.plus_resserree.etendue }} ans seulement.
 {% include graphiques/saisons-femmes.svg %}
 
 <p class="legende-figure">Part de femmes au départ de chaque saison classique.
-La production vise l’équilibre : l’écart à 50 % tient au plus à un ou deux
+La production vise l’équilibre : l’écart à 50 % tient au plus à un ou deux
 aventuriers.</p>

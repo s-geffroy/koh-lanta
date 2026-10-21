@@ -2,7 +2,7 @@
 <figcaption class="figure-titre" aria-hidden="true">La persistance des alliances</figcaption>
 <svg class="graphique" viewBox="0 0 680 250" role="img" preserveAspectRatio="xMidYMid meet" aria-label="La persistance des alliances">
   <title>La persistance des alliances</title>
-  <desc>Deux aventuriers qui ont voté ensemble votent-ils encore ensemble au conseil suivant, plus souvent que le hasard ne le voudrait ?</desc>
+  <desc>Deux aventuriers qui ont voté ensemble votent-ils encore ensemble au conseil suivant, plus souvent que le hasard ne le voudrait ?</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
   <g class="marque"><title>6 tirages sur 2000 entre -3,66 et -2,4</title><rect x="68.7" y="202.5" width="20.3" height="1.5" fill="var(--serie-3)" opacity="0.45"/></g>
   <g class="marque"><title>56 tirages sur 2000 entre -2,4 et -1,13</title><rect x="90.5" y="190.1" width="20.3" height="13.9" fill="var(--serie-3)" opacity="0.45"/></g>
@@ -16,7 +16,7 @@
   <line x1="157.0" y1="40" x2="157.0" y2="204" stroke="var(--encre-muette)" stroke-width="1" stroke-dasharray="3 3"/>
   <text x="157.0" y="34.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">attendu</text>
   <line x1="630.2" y1="26" x2="630.2" y2="210" stroke="var(--encre)" stroke-width="2.4"/>
-  <text x="623.2" y="22.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="12" font-weight="600">observé : 28,875 points de %</text>
+  <text x="623.2" y="22.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="12" font-weight="600">observé : 28,875 points de %</text>
   <text x="46.0" y="222.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">-4,93</text>
   <text x="658.0" y="222.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">30,5</text>
   <text x="658.0" y="238.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">2 000 tirages · p = 0,0013</text>

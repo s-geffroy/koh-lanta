@@ -25,7 +25,7 @@ layout: default
 
 {%- if e.record %}
 <div class="constat">
-  <p><b>Le record</b> :
+  <p><b>Le record</b> :
   <a href="{{ '/aventuriers/' | append: e.record.id | append: '/' | relative_url }}">{{ e.record.nom }}</a>,
   {% if e.record.victoires > 1 %}{{ e.record.victoires }} victoires{% else %}une victoire{% endif %}.</p>
 </div>
@@ -34,7 +34,7 @@ layout: default
 <h2>Qui l’a gagnée</h2>
 
 <p>Les victoires connues nommément, la plus fournie d’abord. Cette liste ne
-couvre pas toutes les fois où l’épreuve a été courue : le nom de l’épreuve et
+couvre pas toutes les fois où l’épreuve a été courue : le nom de l’épreuve et
 le relevé de la saison ne se raccordent pas toujours, et une épreuve gagnée par
 une tribu entière n’a pas de vainqueur individuel.
 <a href="{{ '/sources/' | relative_url }}">Les sources</a> disent ce qui manque
@@ -66,7 +66,7 @@ et pourquoi.</p>
 </p>
 
 <p class="note">Une épreuve peut être courue plusieurs fois dans la même
-édition : {{ e.apparitions }} apparitions pour {{ e.editions.size }} éditions.</p>
+édition : {{ e.apparitions }} apparitions pour {{ e.editions.size }} éditions.</p>
 
 <p><a href="{{ '/epreuves/' | relative_url }}">Toutes les épreuves nommées</a> ·
 <a href="{{ '/statistiques/epreuves/' | relative_url }}">Ce que les épreuves disent du jeu</a> ·

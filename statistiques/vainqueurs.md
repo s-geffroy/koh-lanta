@@ -1,10 +1,10 @@
 ---
 layout: page
 title: Le profil du vainqueur
-description: "Le profil du vainqueur de Koh-Lanta : un âge plus large qu’on ne le croit, une parité presque parfaite, et aucune couleur de tribu gagnante."
+description: "Le profil du vainqueur de Koh-Lanta : un âge plus large qu’on ne le croit, une parité presque parfaite, et aucune couleur de tribu gagnante."
 permalink: /statistiques/vainqueurs/
 chapeau: >-
-  Ce que les vainqueurs ont en commun : un âge bien plus large qu’on ne le croit, une parité presque parfaite, aucune couleur de tribu gagnante — et un nom que, souvent, personne n’a jamais écrit.
+  Ce que les vainqueurs ont en commun : un âge bien plus large qu’on ne le croit, une parité presque parfaite, aucune couleur de tribu gagnante — et un nom que, souvent, personne n’a jamais écrit.
 ---
 
 {% assign s = site.data.stats %}
@@ -18,11 +18,11 @@ des voix du jury et ont sacré deux personnes.
 Toutes éditions confondues, le programme a décerné
 {{ site.data.stats.revenants.titres_total }} titres à
 **{{ site.data.stats.revenants.titres_distincts }} personnes différentes**.
-L’écart tient à une seule : {% for x in vm %}**{{ x.nom }}**, sacrée à
+L’écart tient à une seule : {% for x in vm %}**{{ x.nom }}**, sacrée à
 *{{ x.editions | join: "* puis à *" }}*{% endfor %} — la seule à avoir gagné
 deux fois en {{ s.mots.etendue_annees }} ans.
 {{ site.data.stats.revenants.vainqueurs_revenus_autres }} autres vainqueurs
-sont revenus jouer sans y parvenir ; [les revenants]({{ '/statistiques/revenants/' | relative_url }})
+sont revenus jouer sans y parvenir ; [les revenants]({{ '/statistiques/revenants/' | relative_url }})
 racontent ce qui leur arrive.
 
 <ul class="chiffres">
@@ -36,20 +36,20 @@ racontent ce qui leur arrive.
 
 {% include graphiques/vainqueurs-age.svg %}
 
-La moyenne dit **{{ v.age_moyen }} ans**, la médiane **{{ v.age_median }}** : la
+La moyenne dit **{{ v.age_moyen }} ans**, la médiane **{{ v.age_median }}** : la
 distribution est donc à peu près symétrique, sans poignée de vétérans tirant le
 chiffre vers le haut. Mais elle est aussi **large**. Les extrêmes le montrent
-mieux qu’une moyenne :
+mieux qu’une moyenne :
 
 - le plus jeune vainqueur, **{{ s.records.plus_jeune_vainqueur.nom }}**, avait
   **{{ s.records.plus_jeune_vainqueur.age }} ans** ({{ s.records.plus_jeune_vainqueur.titre }},
-  {{ s.records.plus_jeune_vainqueur.annee }}) ;
+  {{ s.records.plus_jeune_vainqueur.annee }}) ;
 - la plus âgée, **{{ s.records.plus_age_vainqueur.nom }}**, en avait
   **{{ s.records.plus_age_vainqueur.age }}** ({{ s.records.plus_age_vainqueur.titre }},
   {{ s.records.plus_age_vainqueur.annee }}).
 
 {{ s.mots.ecart_age_vainqueurs_maj }} ans d’écart entre les deux. **{{ v.part_40_et_plus }} %** des
-vainqueurs ont quarante ans ou plus : l’idée d’un jeu réservé aux jeunes corps
+vainqueurs ont quarante ans ou plus : l’idée d’un jeu réservé aux jeunes corps
 ne tient pas devant les chiffres.
 
 ## Le sexe
@@ -65,7 +65,7 @@ ne tient pas devant les chiffres.
 </table>
 </div>
 
-La parité est presque parfaite — et elle est plus remarquable qu’il n’y paraît :
+La parité est presque parfaite — et elle est plus remarquable qu’il n’y paraît :
 comme on le verra sur la page consacrée à la [longévité]({{ '/statistiques/longevite/' | relative_url }}),
 les femmes quittent le jeu **plus tôt** que les hommes en moyenne. Elles gagnent
 donc autant en tenant moins longtemps.
@@ -76,7 +76,7 @@ donc autant en tenant moins longtemps.
 
 Aucune famille de métiers n’écrase les autres. Les trois premières —
 encadrement, commerce, sport — pèsent {{ v.par_metier[0].part }} % chacune, et
-ce sont aussi les mieux représentées dans le casting : leur avantage tient
+ce sont aussi les mieux représentées dans le casting : leur avantage tient
 largement à leur nombre au départ, pas à une supériorité.
 
 ## La couleur de tribu
@@ -96,7 +96,7 @@ largement à leur nombre au départ, pas à une supériorité.
 </table>
 </div>
 
-Jaune et rouge sont **à égalité parfaite**. Le sujet a sa propre page :
+Jaune et rouge sont **à égalité parfaite**. Le sujet a sa propre page :
 [jaune contre rouge]({{ '/statistiques/tribus/' | relative_url }}).
 
 ## Les voix reçues
@@ -104,8 +104,8 @@ Jaune et rouge sont **à égalité parfaite**. Le sujet a sa propre page :
 {% assign vv = s.indicateurs.voix_des_vainqueurs %}
 {% assign cr = vv.couples_resume %}
 
-Le vainqueur est-il celui que personne n’a vu venir ? La question se pose au
-bulletin : sur toute sa saison, combien de fois son nom a-t-il été écrit ?
+Le vainqueur est-il celui que personne n’a vu venir ? La question se pose au
+bulletin : sur toute sa saison, combien de fois son nom a-t-il été écrit ?
 
 <ul class="chiffres">
   <li class="chiffre"><b>{{ vv.total }}</b><span>voix reçues, à eux {{ vv.effectif }}</span></li>
@@ -122,10 +122,10 @@ groupe à avoir traversé les mêmes conseils.</p>
 
 <div class="constat">
   <p><b>{{ vv.part_sans_voix }} % des vainqueurs n’ont jamais reçu une seule
-  voix</b> — {{ vv.sans_aucune_voix }} sur {{ vv.effectif }} :
+  voix</b> — {{ vv.sans_aucune_voix }} sur {{ vv.effectif }} :
   {% for x in vv.jamais_ecrits %}{{ x.nom }} ({{ x.annee }}){% unless forloop.last %}, {% endunless %}{% endfor %}.</p>
   <p>Mais l’inverse existe aussi, et il est récent. Le record est de
-  <b>{{ vv.maximum }} voix</b> :
+  <b>{{ vv.maximum }} voix</b> :
   {% for x in vv.records %}{{ x.nom }} ({{ x.titre }}, {{ x.annee }}){% unless forloop.last %}, {% endunless %}{% endfor %}.
   On peut donc gagner en ayant été la cible désignée d’un camp entier.</p>
 </div>
@@ -156,24 +156,24 @@ traversés — l’indicateur <em>menace</em> de la page
 </table>
 </div>
 
-La dernière colonne ne se calcule qu’au-delà de quatre conseils traversés :
+La dernière colonne ne se calcule qu’au-delà de quatre conseils traversés :
 c’est pourquoi son effectif est plus court que le premier, et c’est lui qu’il
 faut lire.
 
 {{ vv.par_sort[0].menace_moyenne }} voix par conseil contre
-{{ vv.par_sort[2].menace_moyenne }} pour l’ensemble du casting : {{ vv.rapport_ensemble }}
+{{ vv.par_sort[2].menace_moyenne }} pour l’ensemble du casting : {{ vv.rapport_ensemble }}
 fois moins. **L’écart est spectaculaire, et il ne prouve à peu près rien.** On
-ne gagne pas si l’on est sorti, et l’on sort quand on est écrit : être peu visé
+ne gagne pas si l’on est sorti, et l’on sort quand on est écrit : être peu visé
 et aller au bout sont deux faces du même fait. Comparer un vainqueur à
 quelqu’un parti au troisième conseil, c’est comparer un survivant à ceux qui
 n’ont pas survécu.
 
-## La seule comparaison qui tienne : le finaliste
+## La seule comparaison qui tienne : le finaliste
 
 Le finaliste a traversé **exactement les mêmes conseils** que le vainqueur, et
 il a perdu. Si être discret fait gagner, l’écart doit se voir là.
 
-Une ligne par couple vainqueur-finaliste : les saisons qui ont sacré deux
+Une ligne par couple vainqueur-finaliste : les saisons qui ont sacré deux
 personnes en donnent donc deux, et celles dont le finaliste manque n’en donnent
 aucune.
 
@@ -199,8 +199,8 @@ aucune.
 <div class="constat">
   <p>En moyenne, <b>{{ cr.moyenne_vainqueur }} voix pour le vainqueur contre
   {{ cr.moyenne_finaliste }} pour le finaliste</b>. L’écart va dans le sens
-  attendu : le finaliste en reçoit {{ cr.rapport }} fois plus.</p>
-  <p>Mais compté couple par couple, il fond : le vainqueur est le moins visé
+  attendu : le finaliste en reçoit {{ cr.rapport }} fois plus.</p>
+  <p>Mais compté couple par couple, il fond : le vainqueur est le moins visé
   dans <b>{{ cr.vainqueur_moins_vise }} cas sur {{ cr.effectif }}</b>,
   contre {{ cr.vainqueur_plus_vise }} fois l’inverse et {{ cr.egalite }}
   égalités. <b>Ce n’est pas une démonstration</b> — c’est ce qu’on attendrait
@@ -210,13 +210,13 @@ aucune.
 
 <p class="note"><b>Aucun test n’est déclaré ici.</b> Les tests publiés par ce
 site sont annoncés d’avance et corrigés ensemble par Benjamini-Hochberg
-(<a href="{{ '/methode/' | relative_url }}">la méthode</a>) : en ajouter un
+(<a href="{{ '/methode/' | relative_url }}">la méthode</a>) : en ajouter un
 déplacerait les p ajustées de tous les autres, pour une comparaison que cette
 page présente elle-même comme non concluante. Le tableau est là pour qu’on
 puisse la refaire.</p>
 
 <p class="note">Le total des voix vient du tableau des candidats, qui le donne
 pour la saison entière — et non de la somme des conseils dépouillés, qui n’en
-couvrent qu’une partie ; <a href="{{ '/completude/' | relative_url }}">la
+couvrent qu’une partie ; <a href="{{ '/completude/' | relative_url }}">la
 complétude</a> dit laquelle. Une voix annulée par un collier compte ici comme
-une voix reçue : elle dit que le nom a été écrit, ce qui est la question posée.</p>
+une voix reçue : elle dit que le nom a été écrit, ce qui est la question posée.</p>

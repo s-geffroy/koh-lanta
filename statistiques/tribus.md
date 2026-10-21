@@ -1,16 +1,16 @@
 ---
 layout: page
 title: Jaune contre rouge
-description: "Jaune ou rouge à Koh-Lanta : vaut-il mieux commencer chez les Jaunes ou chez les Rouges ? La question revient chaque saison, la réponse tient en une ligne."
+description: "Jaune ou rouge à Koh-Lanta : vaut-il mieux commencer chez les Jaunes ou chez les Rouges ? La question revient chaque saison, la réponse tient en une ligne."
 permalink: /statistiques/tribus/
 chapeau: >-
-  Vaut-il mieux commencer chez les Jaunes ou chez les Rouges ? La question revient à chaque saison. La réponse tient en une ligne.
+  Vaut-il mieux commencer chez les Jaunes ou chez les Rouges ? La question revient à chaque saison. La réponse tient en une ligne.
 ---
 
 {% assign s = site.data.stats %}
 
-C’est une question qui revient à chaque saison : vaut-il mieux commencer chez
-les Jaunes ou chez les Rouges ? Sur {{ s.general.saisons_classiques }} saisons
+C’est une question qui revient à chaque saison : vaut-il mieux commencer chez
+les Jaunes ou chez les Rouges ? Sur {{ s.general.saisons_classiques }} saisons
 classiques, la réponse tient en une ligne.
 
 ## Les victoires
@@ -30,7 +30,7 @@ leurs effectifs sont trop faibles pour qu’on en tire quoi que ce soit.
 jeu, en moyenne, selon la couleur de la tribu initiale.</p>
 
 L’écart entre jaune et rouge se compte en points, sur des effectifs de plus de
-deux cents aventuriers chacun : il n’y a pas de signal.
+deux cents aventuriers chacun : il n’y a pas de signal.
 
 ## Ce que la couleur décide quand même
 
@@ -44,14 +44,14 @@ qu’on se retrouve du mauvais côté du compte.
   <p>Sachant que sa tribu initiale est la <b>moins représentée</b> du camp
   assis au conseil, on est éliminé dans
   <b>{{ af.bandeau[0].probabilite }} %</b> des cas
-  ({{ af.bandeau[0].cas }} sur {{ af.bandeau[0].effectif }}) ; quand elle est la
+  ({{ af.bandeau[0].cas }} sur {{ af.bandeau[0].effectif }}) ; quand elle est la
   plus représentée, dans <b>{{ af.bandeau[1].probabilite }} %</b>.</p>
   <p>{{ tba.observe_arrondi }} points d’écart, {{ tba.ecart_types }}
   écarts-types au-dessus d’un tirage au sort parmi les présents de chaque
   conseil, p ajustée {{ tba.p_ajustee }}.</p>
 </div>
 
-Les deux résultats de cette page ne se contredisent pas : **la couleur n’est pas
+Les deux résultats de cette page ne se contredisent pas : **la couleur n’est pas
 un avantage, c’est une appartenance.** Elle ne fait gagner personne, et elle
 condamne celui qui se retrouve seul de sa sorte.
 [Sachant qui est autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }})
@@ -82,12 +82,12 @@ détaille, avant et après la réunification.
 </div>
 
 <p class="note">La couleur noire correspond à la tribu maudite de 2024 et à
-l’île des héros de 2020 : {{ s.mots.effectif_noir }} aventuriers seulement, aucune conclusion
+l’île des héros de 2020 : {{ s.mots.effectif_noir }} aventuriers seulement, aucune conclusion
 possible.</p>
 
 <p class="note">Deux autres pages recoupent ce résultat. Un modèle de durée
 ne trouve aucun effet de la tribu initiale sur le risque d’élimination
 (<a href="{{ '/statistiques/equilibre/' | relative_url }}">Le jeu tenu serré</a>).
 Et les deux tribus initiales ne sont pas composées à l’équilibre par une règle
-générale : {{ s.mots.tribus_contrastees }} saisons seulement opposent nettement deux générations
+générale : {{ s.mots.tribus_contrastees }} saisons seulement opposent nettement deux générations
 (<a href="{{ '/statistiques/casting/' | relative_url }}">La recette du casting</a>).</p>

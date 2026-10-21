@@ -1,10 +1,10 @@
 ---
 layout: page
 title: La pire place au conseil
-description: "La pire place au conseil de Koh-Lanta : le nom sorti la fois d’avant et le nombre d’alliés restants, ensemble, multiplient le risque de partir."
+description: "La pire place au conseil de Koh-Lanta : le nom sorti la fois d’avant et le nombre d’alliés restants, ensemble, multiplient le risque de partir."
 permalink: /statistiques/pire-place/
 chapeau: >-
-  Deux signaux se lisent avant le vote : le nom qui est sorti la fois d’avant,
+  Deux signaux se lisent avant le vote : le nom qui est sorti la fois d’avant,
   et le nombre d’alliés encore assis autour du feu. Ensemble, ils multiplient
   le risque de partir.
 ---
@@ -15,19 +15,19 @@ chapeau: >-
 {% assign ti = reg | where: "cle", "vote_isole" | first %}
 {% assign tm = reg | where: "cle", "dos_au_mur" | first %}
 
-Les deux pages précédentes prennent les signaux **un par un** :
+Les deux pages précédentes prennent les signaux **un par un** :
 [Sachant le conseil d’avant]({{ '/statistiques/conditionnelles/' | relative_url }})
 pour le passé, [Sachant qui est autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }})
-pour la place qu’on occupe. Celle-ci pose la question qui reste : **comptent-ils
+pour la place qu’on occupe. Celle-ci pose la question qui reste : **comptent-ils
 ensemble, ou l’un n’est-il que l’ombre de l’autre ?**
 
 ## Un allié, ici, c’est quelqu’un avec qui on a écrit le même nom
 
 L’alliance ne se déclare pas, elle se lit dans l’urne. Deux personnes qui ont
-porté le même nom au même conseil ont voté ensemble ; c’est la définition
+porté le même nom au même conseil ont voté ensemble ; c’est la définition
 qu’emploie déjà [Les alliances]({{ '/statistiques/alliances/' | relative_url }}),
-et elle ne se défait jamais dans ce calcul — on mesure « **a-t-il déjà été mon
-allié** », pas « l’est-il encore ».
+et elle ne se défait jamais dans ce calcul — on mesure « **a-t-il déjà été mon
+allié** », pas « l’est-il encore ».
 
 <ul class="chiffres">
   <li class="chiffre"><b>{{ p.presences }}</b><span>présences à un conseil</span></li>
@@ -72,20 +72,20 @@ l’éliminé de chaque conseil est pris au hasard parmi les présents.</p>
 
 <div class="constat">
   <p>N’avoir plus personne avec qui on ait déjà voté ajoute
-  <b>{{ ti.observe_arrondi }} points</b> de risque :
+  <b>{{ ti.observe_arrondi }} points</b> de risque :
   {{ ti.ecart_types }} écarts-types au-dessus du hasard, p ajustée
   {{ ti.p_ajustee }}.</p>
   <p>Et les deux formes de l’isolement ne se distinguent pas. Avoir vu ses
-  alliés partir mène à {{ p.isolement[1].probabilite }} % ; n’avoir jamais voté
+  alliés partir mène à {{ p.isolement[1].probabilite }} % ; n’avoir jamais voté
   avec personne, à {{ p.isolement[0].probabilite }} %, pour un hasard de
-  {{ p.isolement[0].hasard }} %. Les deux intervalles se recouvrent largement :
+  {{ p.isolement[0].hasard }} %. Les deux intervalles se recouvrent largement :
   <b>ce qui pèse, c’est d’être seul au moment du vote</b>, pas la manière dont
   on l’est devenu.</p>
 </div>
 
 ## L’adversaire, encore là ou déjà parti
 
-L’allié a un miroir : **celui qui a déjà écrit votre nom.** On s’attend à ce
+L’allié a un miroir : **celui qui a déjà écrit votre nom.** On s’attend à ce
 qu’un adversaire encore assis là soit plus dangereux qu’un adversaire éliminé
 depuis. Ce n’est pas le cas.
 
@@ -109,13 +109,13 @@ depuis. Ce n’est pas le cas.
 </div>
 
 **La menace ne s’éteint pas avec son auteur.** Avoir été visé par des gens tous
-partis depuis mène à {{ p.adverse[1].probabilite }} % ; en avoir au moins un
+partis depuis mène à {{ p.adverse[1].probabilite }} % ; en avoir au moins un
 encore là, à {{ p.adverse[2].probabilite }} %. L’écart est dans le sens
 inverse de l’intuition et bien trop petit pour compter. Ce qui compte est
 d’avoir été visé **un jour** — le camp a désigné quelqu’un, et cette
 désignation lui survit.
 
-Aucun test n’est déclaré ici : la question est la même que celle du
+Aucun test n’est déclaré ici : la question est la même que celle du
 [nom sorti la fois d’avant]({{ '/statistiques/conditionnelles/' | relative_url }}),
 posée sous un autre angle. La compter deux fois dans la correction pour tests
 multiples reviendrait à la payer deux fois.
@@ -125,7 +125,7 @@ multiples reviendrait à la payer deux fois.
 {% include graphiques/pire-place-cumul.svg %}
 
 <p class="legende-figure">Probabilité d’être éliminé selon qu’on cumule zéro, un
-ou deux signaux : avoir été visé au conseil précédent, et n’avoir plus aucun
+ou deux signaux : avoir été visé au conseil précédent, et n’avoir plus aucun
 allié parmi les présents.</p>
 
 <div class="tableau-large">
@@ -144,20 +144,20 @@ allié parmi les présents.</p>
 </table>
 </div>
 
-De **{{ p.cumul[0].probabilite }} %** à **{{ p.cumul[2].probabilite }} %** : le
+De **{{ p.cumul[0].probabilite }} %** à **{{ p.cumul[2].probabilite }} %** : le
 risque est multiplié par {{ p.cumul_rapport }} entre la position la plus
 confortable et la plus mauvaise. C’est, sur ce site, le plus grand écart qu’une condition
 connue **avant le vote** parvienne à produire.
 
 <p class="note">La dernière case ne tient qu’à {{ p.cumul[2].effectif }}
-présences, et son intervalle le dit : de {{ p.cumul[2].bas }} à
+présences, et son intervalle le dit : de {{ p.cumul[2].bas }} à
 {{ p.cumul[2].haut }} %. Cumuler les deux signaux est rare — c’est même la
 raison pour laquelle il faut un modèle plutôt qu’un tableau croisé pour trancher
 la question suivante.</p>
 
-## Ombre l’un de l’autre, ou pas ?
+## Ombre l’un de l’autre, ou pas ?
 
-Un tableau croisé ne peut pas répondre : les deux signaux vont souvent de pair,
+Un tableau croisé ne peut pas répondre : les deux signaux vont souvent de pair,
 et la case qui les réunit est trop petite. Le modèle ci-dessous les met dans le
 **même** calcul, chaque conseil formant son propre groupe de comparaison.
 
@@ -186,15 +186,15 @@ et la case qui les réunit est trop petite. Le modèle ci-dessous les met dans l
   {{ p.modele.coefficients[1].rapport }}, et aucun des deux intervalles ne
   contient 1.</p>
   <p>Ce ne sont donc pas deux façons de dire la même chose. Le bulletin d’hier
-  mesure ce que le camp a <em>fait</em> ; l’isolement mesure ce dont on
-  <em>dispose</em> pour y répondre. Un joueur visé mais entouré s’en sort ; un
+  mesure ce que le camp a <em>fait</em> ; l’isolement mesure ce dont on
+  <em>dispose</em> pour y répondre. Un joueur visé mais entouré s’en sort ; un
   joueur seul mais jamais visé encore tient. Les deux à la fois, on part dans
   {{ p.cumul[2].probabilite }} % des cas.</p>
 </div>
 
 ## Le dos au mur ne fait pas gagner
 
-Une idée séduisante veut que le joueur menacé se surpasse : il sait qu’il doit
+Une idée séduisante veut que le joueur menacé se surpasse : il sait qu’il doit
 gagner l’immunité, donc il la gagne. Elle se teste, sur les
 {{ p.conseils_immunite }} conseils où l’on connaît le vainqueur de l’épreuve
 d’immunité individuelle du soir.
@@ -222,7 +222,7 @@ hasard parmi les présents.</p>
 <div class="constat">
   <p>{{ tm.observe_arrondi }} point d’écart, {{ tm.ecart_types }}
   écarts-types, p brute {{ tm.p }}. <b>Rien.</b> Et pour une fois le mot est
-  mérité : l’observé tombe au milieu même de la distribution nulle.</p>
+  mérité : l’observé tombe au milieu même de la distribution nulle.</p>
   <p>La menace change ce que les autres font de vous. Elle ne change pas ce que
   vous faites sur un parcours d’obstacles.</p>
 </div>
@@ -236,7 +236,7 @@ nom de l’immunisé du soir.
   <p>Sur les <b>{{ p.bulletins_lus }} bulletins</b> lus à ces conseils-là,
   <b>{{ p.bulletins_perdus }}</b> visent le vainqueur de l’immunité —
   <b>{{ p.part_perdue }} %</b>.</p>
-  <p>Ce n’est pas zéro, et c’est normal : un bulletin peut être écrit avant que
+  <p>Ce n’est pas zéro, et c’est normal : un bulletin peut être écrit avant que
   l’immunité ne soit connue, ou volontairement perdu. Mais à ce niveau-là, la
   donnée confirme la règle plutôt qu’elle ne la contredit — c’est le second
   contrôle de ce type, après
@@ -253,7 +253,7 @@ nom de l’immunisé du soir.
   alliés véritables peuvent se répartir les voix exprès. Ce qu’on mesure est une
   coïncidence de bulletins, rien de plus — et elle suffit à prédire.</p>
   <p><b>Aucun des deux signaux n’est une cause.</b> Le joueur isolé ne part pas
-  <em>parce qu’</em>il est isolé : l’isolement et l’élimination sont deux effets
+  <em>parce qu’</em>il est isolé : l’isolement et l’élimination sont deux effets
   du même rapport de force. Ces données ne savent pas les séparer.</p>
   <p><b>La chaîne exige deux conseils complets d’affilée.</b> D’où
   {{ p.conseils }} conseils seulement, et des cases finales à quelques dizaines

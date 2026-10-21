@@ -81,7 +81,7 @@ layout: default
 
 <p>Le <a href="{{ '/statistiques/top/' | relative_url }}">classement des
 joueurs</a> mesure quatre facettes séparément, puis les agrège. Un rang
-s’y lit toujours avec son incertitude : la pondération des quatre facettes
+s’y lit toujours avec son incertitude : la pondération des quatre facettes
 n’a pas de valeur unique, et on la fait varier dix mille fois.</p>
 
 <div class="constat">
@@ -113,7 +113,7 @@ n’a pas de valeur unique, et on la fait varier dix mille fois.</p>
 <p class="note"><strong>Un rang de facette n’est pas un talent.</strong> Deux
 des quatre facettes — la discrétion et la lecture — ne se lisent que sur un
 conseil dont le dépouillement est connu, et cette couverture s’effondre avec les
-années. Un rang moyen peut n’être que le signe d’une saison peu documentée :
+années. Un rang moyen peut n’être que le signe d’une saison peu documentée :
 la <a href="{{ '/completude/' | relative_url }}">grille de complétude</a> dit
 laquelle.</p>
 {%- endif %}
@@ -163,7 +163,7 @@ laquelle.</p>
 <p class="note"><strong>Épreuves identifiées par leur nom :</strong>
 {% for e in p.epreuves_nommees %}{% if site.data.epreuves_fiches.epreuves[e.id] %}<a href="{{ '/epreuves/' | append: e.id | append: '/' | relative_url }}">{{ e.nom }}</a>{% else %}{{ e.nom }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}.
 Le wiki ne nomme que {{ site.data.epreuves_nommees.nb_epreuves }} épreuves
-récurrentes et ne dit jamais dans quel épisode elles ont eu lieu : cette liste
+récurrentes et ne dit jamais dans quel épisode elles ont eu lieu : cette liste
 est une part de ce qu’il a gagné, jamais son palmarès complet. Seules celles
 dont on connaît aussi les vainqueurs ont une
 <a href="{{ '/epreuves/' | relative_url }}">page à elles</a>.</p>
@@ -171,7 +171,7 @@ dont on connaît aussi les vainqueurs ont une
 {%- endfor %}
 
 <p class="note"><strong>Ce que cette fiche ne dit pas.</strong> Rien ici n’est
-saisi à la main : tout vient des sources publiques listées sur
+saisi à la main : tout vient des sources publiques listées sur
 <a href="{{ '/sources/' | relative_url }}">Les sources</a>, et un champ vide est
 un champ que la source ne donne pas — pas une valeur nulle. La
 <a href="{{ '/completude/' | relative_url }}">grille de complétude</a> dit,

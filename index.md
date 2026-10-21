@@ -14,7 +14,7 @@ chapeau: >-
 # y colle « | Koh-Lanta en chiffres ».
 title: Statistiques, classement et records
 description: >-
-  Vingt-cinq ans de Koh-Lanta mis en données : chaque participation, chaque
+  Vingt-cinq ans de Koh-Lanta mis en données : chaque participation, chaque
   épreuve, chaque bulletin de vote, et ce que les chiffres disent du jeu.
 ---
 {%- comment -%}
@@ -35,7 +35,7 @@ description: >-
 
 <p class="peigne-legende">Part des aventuriers encore en jeu, jour par jour, sur
 les {{ sb.effectif }} participations des saisons classiques achevées. Les
-courbes jaune et rouge <b>se confondent</b> : même médiane, le jour
+courbes jaune et rouge <b>se confondent</b> : même médiane, le jour
 {{ sb.mediane }}, et {{ sb.ecart_moyen }} points d’écart en moyenne. C’est le
 résultat le plus répété de ce site.</p>
 
@@ -58,34 +58,34 @@ aventuriers, <b>{{ site.data.stats.epreuves.epreuves }}</b> épreuves,
 <ul class="constats">
   <li>
     <p><b>Le jaune ne bat pas le rouge.</b> Sur les saisons classiques,
-    {{ site.data.stats.couleurs[0].victoires }} victoires de chaque côté : la
+    {{ site.data.stats.couleurs[0].victoires }} victoires de chaque côté : la
     couleur de la tribu initiale ne décide pas du vainqueur.</p>
     <p><a href="{{ '/statistiques/tribus/' | relative_url }}">Jaune contre rouge</a></p>
   </li>
   <li>
     <p><b>On ne dure pas en se faisant oublier.</b> Les {{ i.nb_fantomes }}
     aventuriers jamais visés en {{ i.seuil_fantome }} conseils gagnent dans
-    {{ fv.part_fantomes }} % des cas, contre {{ fv.part_endurants }} % ; mais
+    {{ fv.part_fantomes }} % des cas, contre {{ fv.part_endurants }} % ; mais
     être du côté de la majorité au conseil pèse bien davantage.</p>
     <p><a href="{{ '/statistiques/alliances/' | relative_url }}">Les alliances</a></p>
   </li>
   <li>
     <p><b>L’expérience ne paie pas.</b> Les revenants tenaient déjà
     {{ rv.paradoxe[1].survie_moyenne }} % de la saison à leur première
-    aventure ; à leur retour, ils redescendent à
+    aventure ; à leur retour, ils redescendent à
     {{ rv.paradoxe[2].survie_moyenne }} %. Le tri s’était fait avant.</p>
     <p><a href="{{ '/statistiques/revenants/' | relative_url }}">Les revenants</a></p>
   </li>
   <li>
     <p><b>Après la réunification, on n’élimine pas le plus fort.</b> L’éliminé se
     situe au rang {{ aa.rang_force_avant }} sur 100 de son camp avant la
-    réunification, {{ aa.rang_force_apres }} après : un écart que le hasard
+    réunification, {{ aa.rang_force_apres }} après : un écart que le hasard
     suffit à expliquer.</p>
     <p><a href="{{ '/statistiques/reunification/' | relative_url }}">Avant et après la réunification</a></p>
   </li>
   <li>
     <p><b>Le conseil d’avant annonce le suivant.</b> Sans voix reçue la fois
-    précédente, on part dans {{ co.par_voix[0].probabilite }} % des cas ; avec
+    précédente, on part dans {{ co.par_voix[0].probabilite }} % des cas ; avec
     deux voix, dans {{ co.par_voix[2].probabilite }} %.</p>
     <p><a href="{{ '/statistiques/conditionnelles/' | relative_url }}">Sachant le conseil d’avant</a></p>
   </li>
@@ -103,8 +103,8 @@ aventuriers, <b>{{ site.data.stats.epreuves.epreuves }}</b> épreuves,
     <p><a href="{{ '/statistiques/pronostic/' | relative_url }}">Le pronostic</a></p>
   </li>
   <li>
-    <p><b>« Meilleur joueur » ne désigne pas une qualité.</b> {{ site.data.stats.mots.facettes_maj }} façons de
-    bien jouer, et aucune ne prédit les autres :
+    <p><b>« Meilleur joueur » ne désigne pas une qualité.</b> {{ site.data.stats.mots.facettes_maj }} façons de
+    bien jouer, et aucune ne prédit les autres :
     {{ cl.robustesse.candidats }} aventuriers différents entrent dans le top
     {{ cl.taille }} selon le poids donné à chacune.</p>
     <p><a href="{{ '/statistiques/top/' | relative_url }}">Le top des joueurs</a></p>
@@ -119,7 +119,7 @@ aventuriers, <b>{{ site.data.stats.epreuves.epreuves }}</b> épreuves,
       <span class="carte-rang">{{ site.data.stats.mots.sommaire_entrees_maj }} entrées</span>
       <span class="carte-titre">Les statistiques</span>
       <span class="carte-resume">Vainqueurs, tribus, longévité, épreuves,
-        conseils, alliances : les comptages, puis les modèles.</span>
+        conseils, alliances : les comptages, puis les modèles.</span>
     </a>
   </li>
   <li class="carte">

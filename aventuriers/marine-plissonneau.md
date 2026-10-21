@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Marine Plissonneau — 2 saisons jouées"
-description: "Marine Plissonneau, 2 saisons de Koh-Lanta entre 2010 et 2012 : 32 jours de jeu, 14 voix reçues. 510e sur 531 au classement des aventuriers."
+description: "Marine Plissonneau, 2 saisons de Koh-Lanta entre 2010 et 2012 : 32 jours de jeu, 14 voix reçues. 510e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/marine-plissonneau.png
 permalink: /aventuriers/marine-plissonneau/
 aventurier: marine-plissonneau

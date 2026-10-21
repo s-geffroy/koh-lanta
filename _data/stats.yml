@@ -1489,8 +1489,8 @@ conseils:
     saisons: 21
     annee_min: 2011
     annee_max: 2026
-    detail_texte: 126 « Vote noir », 41 « Pénalité », 20 « Malédiction/Pénalité », 3 « Pénalité ou avantage
-      », 2 « Pénalité/Avantage »
+    detail_texte: 126 « Vote noir », 41 « Pénalité », 20 « Malédiction/Pénalité », 3 « Pénalité ou avantage »,
+      2 « Pénalité/Avantage »
   conseils_justesse: 348
   retours_en_jeu: 7
   vote_par_genre_ecart: "8,3"
@@ -20609,7 +20609,7 @@ prevision:
     erreurs: "86,4"
   - cle: place
     libelle: La place dans le camp
-    description: 'On ajoute la position occupée ce soir-là : tribu initiale et sexe minoritaires, avant
+    description: 'On ajoute la position occupée ce soir-là : tribu initiale et sexe minoritaires, avant
       ou après la réunification.'
     variables: 6
     conseils: 361
@@ -23889,14 +23889,14 @@ modeles:
     tests:
     - cle: parite
       libelle: L'équilibre hommes-femmes
-      question: L'écart à la parité est-il plus petit que ce qu'un tirage à pile ou face donnerait ?
+      question: L'écart à la parité est-il plus petit que ce qu'un tirage à pile ou face donnerait ?
       observe: "0,327"
       attendu: "1,75"
       unite: personnes
       ecart_types: "-5,36"
       p: "0,0001"
       tirages: 10000
-      lecture: 'Un écart observé plus PETIT que l''attendu est la signature d''un quota : le hasard, lui,
+      lecture: 'Un écart observé plus PETIT que l''attendu est la signature d''un quota : le hasard, lui,
         produit des castings déséquilibrés de temps en temps.'
       nulle: &id071
         bornes:
@@ -23939,7 +23939,7 @@ modeles:
       retenu: true
     - cle: etendue_ages
       libelle: L'écart d'âge dans un même casting
-      question: Un casting mélange-t-il les âges plus qu'un tirage au hasard ne le ferait ?
+      question: Un casting mélange-t-il les âges plus qu'un tirage au hasard ne le ferait ?
       observe: "9,941"
       attendu: "9,695"
       unite: années
@@ -23989,7 +23989,7 @@ modeles:
       retenu: true
     - cle: familles_metiers
       libelle: La variété des métiers
-      question: Un casting couvre-t-il plus de familles de métiers qu'un tirage au hasard ?
+      question: Un casting couvre-t-il plus de familles de métiers qu'un tirage au hasard ?
       observe: 246
       attendu: "246,624"
       unite: cases remplies
@@ -24039,7 +24039,7 @@ modeles:
       retenu: false
     - cle: melange_archetypes
       libelle: Le mélange d'archétypes
-      question: Chaque saison contient-elle toujours le même mélange de profils ?
+      question: Chaque saison contient-elle toujours le même mélange de profils ?
       observe: "0,284"
       attendu: "0,251"
       unite: ''
@@ -24090,7 +24090,7 @@ modeles:
     - cle: tribus_femmes
       libelle: La composition des deux tribus
       question: Les deux tribus initiales sont-elles plus semblables en part de femmes qu'un tirage au
-        hasard ne les ferait ?
+        hasard ne les ferait ?
       observe: "13,025"
       attendu: "18,873"
       unite: points de %
@@ -24141,7 +24141,7 @@ modeles:
     - cle: tribus_ages
       libelle: L'âge moyen des deux tribus
       question: Les deux tribus initiales ont-elles des âges moyens plus proches qu'un tirage au hasard
-        ne les ferait ?
+        ne les ferait ?
       observe: "5,75"
       attendu: "3,85"
       unite: années
@@ -24149,7 +24149,7 @@ modeles:
       p: "0,0022"
       tirages: 10000
       lecture: 'Même méthode, sur l''âge moyen de chaque tribu initiale. Un écart observé PLUS GRAND que
-        l''attendu veut dire l''inverse d''un équilibre : deux tribus construites pour différer.'
+        l''attendu veut dire l''inverse d''un équilibre : deux tribus construites pour différer.'
       nulle: &id076
         bornes:
         - "1,5354"
@@ -24191,7 +24191,7 @@ modeles:
       retenu: true
     - cle: tribus_ages_mediane
       libelle: L'âge des deux tribus, à la médiane
-      question: 'Le même écart, mesuré à la médiane : est-il général, ou porté par quelques saisons ?'
+      question: 'Le même écart, mesuré à la médiane : est-il général, ou porté par quelques saisons ?'
       observe: "4,16"
       attendu: "3,331"
       unite: années
@@ -24310,14 +24310,14 @@ modeles:
     - cle: pronostic_vainqueur
       libelle: Pronostiquer le vainqueur au casting
       question: En ne connaissant que l'âge, le sexe, le métier et la couleur, place-t-on le futur vainqueur
-        plus haut que le hasard ne le ferait ?
+        plus haut que le hasard ne le ferait ?
       observe: "10,731"
       attendu: "10,283"
       unite: rang moyen
       ecart_types: "0,41"
       p: "0,6927"
       tirages: 10000
-      lecture: Le modèle classe les candidats d'une saison ; on relève la place qu'il donne à celui qui
+      lecture: Le modèle classe les candidats d'une saison ; on relève la place qu'il donne à celui qui
         a gagné. Plus BAS que l'attendu veut dire qu'une part du résultat se joue au recrutement.
       nulle: &id078
         bornes:
@@ -24730,7 +24730,7 @@ modeles:
       haut: "1,21"
       p: "0,779"
       lecture: Cote de victoire de la tribu jaune quand elle compte un aventurier de plus. Au-dessus de
-        1, l'avantage du nombre joue ; en dessous, la tribu en difficulté se rattrape ; à 1, l'effectif
+        1, l'avantage du nombre joue ; en dessous, la tribu en difficulté se rattrape ; à 1, l'effectif
         ne change rien.
     cox:
       effectif: 509
@@ -24793,7 +24793,7 @@ modeles:
         haut: "1,402"
         p: "0,7239"
       lecture: Rapport de risque d'élimination, à saison identique. Au-dessus de 1, on sort plus vite
-        que la référence ; en dessous, plus lentement. L'intervalle qui contient 1 veut dire que ces données
+        que la référence ; en dessous, plus lentement. L'intervalle qui contient 1 veut dire que ces données
         ne permettent pas de conclure.
       deja_venu_inverse: "2,8"
   hasard_mecanique:
@@ -24864,7 +24864,7 @@ modeles:
     rapport_moyen: "1,31"
     correlation: "0,518"
     lecture: 'Risque observé de sortir à un conseil, et risque qu''un simple 1/nombre-de-présents prédit.
-      Les deux derniers paliers sont ceux de la finale : tout le monde y sort le même jour, et la comparaison
+      Les deux derniers paliers sont ceux de la finale : tout le monde y sort le même jour, et la comparaison
       n''y a plus de sens.'
   mecaniques:
     saisons: 26
@@ -24921,14 +24921,14 @@ modeles:
       cle: persistance_alliances
       libelle: La persistance des alliances
       question: Deux aventuriers qui ont voté ensemble votent-ils encore ensemble au conseil suivant,
-        plus souvent que le hasard ne le voudrait ?
+        plus souvent que le hasard ne le voudrait ?
       observe: "28,875"
       attendu: "1,494"
       unite: points de %
       ecart_types: "19,16"
       p: "0,0005"
       tirages: 2000
-      lecture: 'Écart entre deux probabilités : voter ensemble après avoir voté ensemble, et voter ensemble
+      lecture: 'Écart entre deux probabilités : voter ensemble après avoir voté ensemble, et voter ensemble
         après avoir voté séparément. À zéro, chaque conseil repart de zéro et il n''y a pas d''alliance.'
       nulle: &id105
         bornes:
@@ -25079,15 +25079,15 @@ modeles:
     tests:
     - cle: vote_meme_sexe
       libelle: Viser quelqu'un du même sexe
-      question: Parmi les présents, écrit-on plutôt le nom de quelqu'un de son sexe ?
+      question: Parmi les présents, écrit-on plutôt le nom de quelqu'un de son sexe ?
       observe: "46,315"
       attendu: "47,843"
       unite: '%'
       ecart_types: "-2,76"
       p: "0,0065"
       tirages: 4000
-      lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
-        : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
+      lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles :
+        la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
       nulle: &id079
         bornes:
@@ -25131,15 +25131,15 @@ modeles:
       retenu: true
     - cle: vote_ecart_age
       libelle: L'écart d'âge avec sa cible
-      question: Écrit-on plutôt le nom de quelqu'un de sa génération, ou d'une autre ?
+      question: Écrit-on plutôt le nom de quelqu'un de sa génération, ou d'une autre ?
       observe: "10,9"
       attendu: "10,828"
       unite: années
       ecart_types: "1,11"
       p: "0,2707"
       tirages: 4000
-      lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
-        : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
+      lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles :
+        la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
       nulle: &id080
         bornes:
@@ -25183,15 +25183,15 @@ modeles:
       retenu: false
     - cle: vote_meme_metier
       libelle: Viser la même famille de métier
-      question: Le métier rapproche-t-il ou éloigne-t-il du bulletin ?
+      question: Le métier rapproche-t-il ou éloigne-t-il du bulletin ?
       observe: "10,271"
       attendu: "11,032"
       unite: '%'
       ecart_types: "-2,5"
       p: "0,0162"
       tirages: 4000
-      lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
-        : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
+      lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles :
+        la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
       nulle: &id081
         bornes:
@@ -25235,15 +25235,15 @@ modeles:
       retenu: true
     - cle: vote_meme_bandeau
       libelle: Viser sa propre tribu initiale
-      question: La tribu initiale protège-t-elle, une fois les tribus recomposées ?
+      question: La tribu initiale protège-t-elle, une fois les tribus recomposées ?
       observe: "54,563"
       attendu: "61,104"
       unite: '%'
       ecart_types: "-13,13"
       p: "0,0002"
       tirages: 4000
-      lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
-        : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
+      lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles :
+        la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
       nulle: &id082
         bornes:
@@ -25287,15 +25287,15 @@ modeles:
       retenu: true
     - cle: vote_meme_departement
       libelle: Viser quelqu'un de son département
-      question: Épargne-t-on le voisin — celui qui vit dans le même département ?
+      question: Épargne-t-on le voisin — celui qui vit dans le même département ?
       observe: "1,72"
       attendu: "2,096"
       unite: '%'
       ecart_types: "-2,2"
       p: "0,031"
       tirages: 4000
-      lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
-        : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
+      lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles :
+        la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
         qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
       nulle: &id083
         bornes:
@@ -25340,7 +25340,7 @@ modeles:
     - cle: vote_bandeau_apres_fusion
       libelle: Épargner sa tribu initiale
       question: Une fois les tribus recomposées, écrit-on moins souvent le nom de quelqu'un de sa tribu
-        initiale ?
+        initiale ?
       observe: "28,417"
       attendu: "38,733"
       unite: '%'
@@ -25395,8 +25395,7 @@ modeles:
     test:
       cle: trahison
       libelle: Écrire le nom d'un ancien allié
-      question: Quand on a déjà voté avec quelqu'un, écrit-on son nom plus ou moins souvent qu'un autre
-        ?
+      question: Quand on a déjà voté avec quelqu'un, écrit-on son nom plus ou moins souvent qu'un autre ?
       observe: "48,156"
       attendu: "57,135"
       unite: '%'
@@ -25404,7 +25403,7 @@ modeles:
       p: "0,0002"
       tirages: 4000
       lecture: Part des bulletins visant quelqu'un avec qui l'auteur avait déjà voté. Un observé SOUS
-        l'attendu veut dire que l'alliance protège ; au-dessus, qu'elle expose.
+        l'attendu veut dire que l'alliance protège ; au-dessus, qu'elle expose.
       nulle: &id107
         bornes:
         - "47,6072"
@@ -25450,7 +25449,7 @@ modeles:
       bas: "-8,28"
       haut: "4,26"
       p: "0,5294"
-      lecture: Points de saison gagnés ou perdus quand on passe de « jamais » à « toujours » viser un
+      lecture: Points de saison gagnés ou perdus quand on passe de « jamais » à « toujours » viser un
         ancien allié, le nombre de bulletins émis tenu constant.
     les_plus_infideles:
     - nom: Alexis Tournier
@@ -25592,7 +25591,7 @@ modeles:
       cle: decimation
       libelle: L'élimination en série d'un camp
       question: Après la réunification, les sorties se suivent-elles par tribu initiale plus souvent que
-        le hasard ne le voudrait ?
+        le hasard ne le voudrait ?
       observe: 135
       attendu: "106,849"
       unite: enchaînements
@@ -25674,11 +25673,11 @@ modeles:
         bas: "0,582"
         haut: "1,344"
         p: "0,5643"
-      lecture: 'Le même modèle, avec une variable de plus : les deux partagent-ils la tribu initiale ?'
+      lecture: 'Le même modèle, avec une variable de plus : les deux partagent-ils la tribu initiale ?'
     part_vers_bourreau: "49,7"
     bulletins_avec_bourreau_disponible: 232
     part_quand_disponible: "65,1"
-    lecture: 'Rapport de cotes : au-dessus de 1, le juré vote plus souvent pour ce finaliste ; en dessous,
+    lecture: 'Rapport de cotes : au-dessus de 1, le juré vote plus souvent pour ce finaliste ; en dessous,
       moins souvent. Un intervalle qui contient 1 veut dire qu''on ne peut pas conclure.'
   fusion:
     saisons: 26
@@ -25856,7 +25855,7 @@ modeles:
       bas: "0,52"
       haut: "0,801"
       p: 0
-    lecture: 'Pente : de combien l''épisode de réunification, puis le nombre de joueurs restants, bougent
+    lecture: 'Pente : de combien l''épisode de réunification, puis le nombre de joueurs restants, bougent
       quand le casting gagne un membre. Une pente nulle sur l''épisode et une pente de 1 sur les restants
       signent une réunification calée sur la GRILLE.'
     croissance: 8
@@ -26082,7 +26081,7 @@ modeles:
       cle: rupture
       libelle: La rupture de régime
       question: Existe-t-il une date qui sépare les saisons en deux régimes mieux qu'une date tirée au
-        sort ?
+        sort ?
       observe: "59,022"
       attendu: "13,217"
       unite: ''
@@ -26090,7 +26089,7 @@ modeles:
       p: "0,0001"
       tirages: 10000
       lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
-        dans un ordre au hasard. Une coupure existe toujours ; la question est de savoir si celle-ci vaut
+        dans un ordre au hasard. Une coupure existe toujours ; la question est de savoir si celle-ci vaut
         mieux que n'importe quelle autre.
       nulle: &id106
         bornes:
@@ -26984,7 +26983,7 @@ modeles:
     tests:
     - cle: audience_rupture
       libelle: La rupture d'audience
-      question: La chute d'audience tombe-t-elle à une date, ou se fait-elle par glissement ?
+      question: La chute d'audience tombe-t-elle à une date, ou se fait-elle par glissement ?
       observe: "20,681"
       attendu: "3,503"
       unite: ''
@@ -27035,7 +27034,7 @@ modeles:
       retenu: true
     - cle: audience_retournement
       libelle: Le retournement finale / lancement
-      question: La finale attire-t-elle toujours plus de monde que le lancement ?
+      question: La finale attire-t-elle toujours plus de monde que le lancement ?
       observe: "-0,654"
       attendu: "0,002"
       unite: ''
@@ -27084,9 +27083,9 @@ modeles:
       p_ajustee: "0,0006"
       retenu: true
     - cle: audience_format
-      libelle: Le format suit-il l'audience ?
+      libelle: Le format suit-il l'audience ?
       question: Une saison moins regardée que son époque ne le laissait attendre est-elle suivie d'un
-        casting plus large ?
+        casting plus large ?
       observe: "-0,296"
       attendu: 0
       unite: ''
@@ -27194,7 +27193,7 @@ modeles:
     tests:
     - cle: fusion_sexe
       libelle: Le sexe des éliminés, avant et après la réunification
-      question: La part de femmes parmi les éliminés change-t-elle à la réunification ?
+      question: La part de femmes parmi les éliminés change-t-elle à la réunification ?
       observe: "-17,986"
       attendu: "-1,27"
       unite: points
@@ -27202,7 +27201,7 @@ modeles:
       p: "0,0006"
       tirages: 10000
       lecture: 'Différence entre l''après et l''avant, en points de pourcentage. Le hasard, ici, c''est
-        tirer l''éliminé parmi les présents de chaque conseil : la composition du camp est donc déjà neutralisée,
+        tirer l''éliminé parmi les présents de chaque conseil : la composition du camp est donc déjà neutralisée,
         et un écart qui subsiste est un choix.'
       nulle: &id088
         bornes:
@@ -27245,14 +27244,14 @@ modeles:
       retenu: true
     - cle: fusion_force
       libelle: La force des éliminés, avant et après la réunification
-      question: Élimine-t-on le faible avant la réunification et le fort après ?
+      question: Élimine-t-on le faible avant la réunification et le fort après ?
       observe: "-4,789"
       attendu: "-0,05"
       unite: points de rang
       ecart_types: "-1,4"
       p: "0,1641"
       tirages: 10000
-      lecture: 'Rang de l''éliminé parmi les présents, sur la force estimée aux épreuves : 0 le plus faible
+      lecture: 'Rang de l''éliminé parmi les présents, sur la force estimée aux épreuves : 0 le plus faible
         du camp, 100 le plus fort. On compare l''après à l''avant. Positif, cela veut dire qu''on élimine
         plus haut dans le classement après la réunification.'
       nulle: &id089
@@ -27295,8 +27294,8 @@ modeles:
       p_ajustee: "0,2329"
       retenu: false
     - cle: fusion_serre
-      libelle: Des conseils plus serrés après la réunification ?
-      question: Le vote se divise-t-il davantage une fois les tribus réunies ?
+      libelle: Des conseils plus serrés après la réunification ?
+      question: Le vote se divise-t-il davantage une fois les tribus réunies ?
       observe: "27,607"
       attendu: "-0,077"
       unite: points
@@ -27304,7 +27303,7 @@ modeles:
       p: "0,0001"
       tirages: 10000
       lecture: Part de conseils où l'éliminé ne rassemble pas plus de la moitié des voix, après moins
-        avant. Le hasard est ici une redistribution des étiquettes « avant » et « après » entre les mêmes
+        avant. Le hasard est ici une redistribution des étiquettes « avant » et « après » entre les mêmes
         conseils.
       nulle: &id090
         bornes:
@@ -27346,8 +27345,8 @@ modeles:
       p_ajustee: "0,0004"
       retenu: true
     - cle: ambassadeurs_force
-      libelle: Qui les ambassadeurs éliminent-ils ?
-      question: Deux ambassadeurs qui décident seuls choisissent-ils autrement qu'un tirage ?
+      libelle: Qui les ambassadeurs éliminent-ils ?
+      question: Deux ambassadeurs qui décident seuls choisissent-ils autrement qu'un tirage ?
       observe: "46,591"
       attendu: "50,062"
       unite: points de rang
@@ -27355,7 +27354,7 @@ modeles:
       p: "0,6221"
       tirages: 10000
       lecture: Rang de l'éliminé parmi les présents, sur la force estimée aux épreuves. Au-dessus de 50,
-        les ambassadeurs sacrifient un joueur plus fort que la moyenne du camp ; en dessous, un plus faible.
+        les ambassadeurs sacrifient un joueur plus fort que la moyenne du camp ; en dessous, un plus faible.
       nulle: &id091
         bornes:
         - "21,9064"
@@ -27396,16 +27395,16 @@ modeles:
       p_ajustee: "0,7019"
       retenu: false
     - cle: ambassadeurs_survie
-      libelle: L'ambassadeur qui négocie s'en sort-il mieux ?
-      question: Partir en ambassade change-t-il la distance que l'on parcourt ensuite ?
+      libelle: L'ambassadeur qui négocie s'en sort-il mieux ?
+      question: Partir en ambassade change-t-il la distance que l'on parcourt ensuite ?
       observe: "37,591"
       attendu: "50,085"
       unite: points de rang
       ecart_types: "-2,21"
       p: "0,0265"
       tirages: 10000
-      lecture: 'Rang de l''ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c''est la
-        médiane du camp. Au-dessus, l''ambassade accompagne une fin de parcours plus tardive ; en dessous,
+      lecture: 'Rang de l''ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c''est la
+        médiane du camp. Au-dessus, l''ambassade accompagne une fin de parcours plus tardive ; en dessous,
         plus précoce. Le hasard, ici, c''est désigner les ambassadeurs au sort parmi les présents.'
       nulle: &id092
         bornes:
@@ -27771,8 +27770,8 @@ modeles:
         haut: "3,78"
         p: "0,0405"
         libelle_maj: 4 voix et plus
-      lecture: Rapport de cotes par rapport à « aucune voix au conseil précédent », à conseil égal. Au-dessus
-        de 1, le risque monte ; en dessous, il baisse. Un intervalle qui contient 1 ne permet pas de conclure.
+      lecture: Rapport de cotes par rapport à « aucune voix au conseil précédent », à conseil égal. Au-dessus
+        de 1, le risque monte ; en dessous, il baisse. Un intervalle qui contient 1 ne permet pas de conclure.
     survivants:
     - nom: Francis Bordas
       saison: s05
@@ -28183,14 +28182,14 @@ modeles:
     tests:
     - cle: menace_voix
       libelle: Le nom sorti la fois d'avant
-      question: Sortir est-il plus probable quand on a reçu au moins une voix au conseil précédent ?
+      question: Sortir est-il plus probable quand on a reçu au moins une voix au conseil précédent ?
       observe: "11,292"
       attendu: "0,925"
       unite: points
       ecart_types: "4,36"
       p: "0,0001"
       tirages: 10000
-      lecture: 'Écart entre deux probabilités conditionnelles : partir sachant qu''on a été visé la fois
+      lecture: 'Écart entre deux probabilités conditionnelles : partir sachant qu''on a été visé la fois
         d''avant, moins partir sachant qu''on ne l''a pas été. Le modèle nul tire l''éliminé au hasard
         parmi les présents, ce qui tient la taille du conseil rigoureusement fixe.'
       nulle: &id093
@@ -28234,7 +28233,7 @@ modeles:
       retenu: true
     - cle: menace_sommet
       libelle: Trop visé pour partir
-      question: Être visé beaucoup expose-t-il moins qu'être visé un peu ?
+      question: Être visé beaucoup expose-t-il moins qu'être visé un peu ?
       observe: "2,42"
       attendu: "2,387"
       unite: points
@@ -28242,7 +28241,7 @@ modeles:
       p: 1
       tirages: 10000
       lecture: 'Écart entre partir après une à trois voix et partir après quatre voix ou plus. Un écart
-        positif dit que la menace a un sommet : au-delà, celui qui a survécu à un vote massif est mieux
+        positif dit que la menace a un sommet : au-delà, celui qui a survécu à un vote massif est mieux
         protégé que celui qui a survécu à deux bulletins.'
       nulle: &id094
         bornes:
@@ -28285,7 +28284,7 @@ modeles:
       retenu: false
     - cle: camp_perdant
       libelle: Avoir voté du mauvais côté
-      question: S'être trompé de cible au conseil précédent expose-t-il au suivant ?
+      question: S'être trompé de cible au conseil précédent expose-t-il au suivant ?
       observe: "2,915"
       attendu: "-0,875"
       unite: points
@@ -28335,7 +28334,7 @@ modeles:
       retenu: false
     - cle: menace_deux_pas
       libelle: La menace, deux conseils plus tard
-      question: Les voix reçues à l'avant-dernier conseil comptent-elles encore ?
+      question: Les voix reçues à l'avant-dernier conseil comptent-elles encore ?
       observe: "5,267"
       attendu: "0,845"
       unite: points
@@ -28385,8 +28384,7 @@ modeles:
       retenu: false
     - cle: cible_persistante
       libelle: La cible reste la cible
-      question: Recevoir une voix ce soir est-il plus probable quand on en a reçu au conseil précédent
-        ?
+      question: Recevoir une voix ce soir est-il plus probable quand on en a reçu au conseil précédent ?
       observe: "19,92"
       attendu: "2,924"
       unite: points
@@ -28436,7 +28434,7 @@ modeles:
       retenu: true
     - cle: retour_de_baton
       libelle: Le nom rendu au conseil suivant
-      question: Celui dont j'ai écrit le nom la fois d'avant écrit-il le mien ce soir ?
+      question: Celui dont j'ai écrit le nom la fois d'avant écrit-il le mien ce soir ?
       observe: "23,007"
       attendu: "14,909"
       unite: '%'
@@ -28642,7 +28640,7 @@ modeles:
     tests:
     - cle: bandeau_minoritaire
       libelle: La tribu initiale minoritaire
-      question: Appartenir à la tribu initiale la moins représentée du camp expose-t-il ?
+      question: Appartenir à la tribu initiale la moins représentée du camp expose-t-il ?
       observe: "5,549"
       attendu: "-0,422"
       unite: points
@@ -28650,8 +28648,8 @@ modeles:
       p: "0,0006"
       tirages: 10000
       lecture: 'Écart entre partir quand sa tribu initiale est la moins représentée du camp et partir
-        quand elle est la plus représentée. Le modèle nul tire l''éliminé au hasard parmi les présents
-        : la taille du camp et sa composition restent celles du soir.'
+        quand elle est la plus représentée. Le modèle nul tire l''éliminé au hasard parmi les présents :
+        la taille du camp et sa composition restent celles du soir.'
       nulle: &id099
         bornes:
         - "-6,6709"
@@ -28693,7 +28691,7 @@ modeles:
       retenu: true
     - cle: sexe_minoritaire
       libelle: Le sexe minoritaire
-      question: Être du sexe le moins représenté du camp expose-t-il ?
+      question: Être du sexe le moins représenté du camp expose-t-il ?
       observe: "-5,4"
       attendu: "-0,407"
       unite: points
@@ -28743,7 +28741,7 @@ modeles:
       retenu: true
     - cle: doyen_du_camp
       libelle: Le plus âgé du camp
-      question: Le doyen d'un conseil part-il plus souvent que les autres ?
+      question: Le doyen d'un conseil part-il plus souvent que les autres ?
       observe: "2,943"
       attendu: "0,999"
       unite: points
@@ -28793,7 +28791,7 @@ modeles:
       retenu: false
     - cle: confort_sortie
       libelle: Le confort du soir
-      question: Gagner le confort fait-il partir le soir même ?
+      question: Gagner le confort fait-il partir le soir même ?
       observe: "3,282"
       attendu: "0,306"
       unite: points
@@ -28801,7 +28799,7 @@ modeles:
       p: "0,3456"
       tirages: 10000
       lecture: 'Écart entre partir quand on vient de gagner le confort de l''épisode et partir quand on
-        n''a rien gagné. Lu sur les seuls soirs à conseil unique : sinon l''épreuve du soir ne se rattache
+        n''a rien gagné. Lu sur les seuls soirs à conseil unique : sinon l''épreuve du soir ne se rattache
         pas au bon conseil.'
       nulle: &id102
         bornes:
@@ -28944,7 +28942,7 @@ modeles:
         bas: "1,6"
         haut: "4,99"
         p: "0,0004"
-      lecture: 'Rapport de cotes à conseil égal : chaque conseil est son propre groupe de comparaison.
+      lecture: 'Rapport de cotes à conseil égal : chaque conseil est son propre groupe de comparaison.
         Les deux signaux sont dans le même modèle — s''ils y survivent tous les deux, ils ne sont pas
         l''ombre l''un de l''autre.'
     dos_au_mur:
@@ -28971,7 +28969,7 @@ modeles:
     tests:
     - cle: vote_isole
       libelle: N’avoir plus personne avec qui on ait voté
-      question: Se retrouver sans un seul allié parmi les présents expose-t-il ?
+      question: Se retrouver sans un seul allié parmi les présents expose-t-il ?
       observe: "18,627"
       attendu: "1,933"
       unite: points
@@ -29021,7 +29019,7 @@ modeles:
       retenu: true
     - cle: dos_au_mur
       libelle: Le dos au mur
-      question: Celui qu'on vient de viser gagne-t-il plus souvent l'immunité ?
+      question: Celui qu'on vient de viser gagne-t-il plus souvent l'immunité ?
       observe: "1,716"
       attendu: "0,991"
       unite: points
@@ -29094,8 +29092,7 @@ modeles:
     test:
       cle: tenant_du_titre
       libelle: Le tenant du titre
-      question: Celui qui a gagné la dernière immunité la regagne-t-il plus souvent que sa force ne l'explique
-        ?
+      question: Celui qui a gagné la dernière immunité la regagne-t-il plus souvent que sa force ne l'explique ?
       observe: "7,315"
       attendu: "8,483"
       unite: points
@@ -29103,7 +29100,7 @@ modeles:
       p: "0,7783"
       tirages: 4000
       lecture: 'Écart entre gagner l''immunité quand on l''a gagnée la fois d''avant et la gagner quand
-        on ne l''a pas gagnée. Le modèle nul ne tire pas au hasard : il tire les vainqueurs SELON LES
+        on ne l''a pas gagnée. Le modèle nul ne tire pas au hasard : il tire les vainqueurs SELON LES
         FORCES estimées par le modèle de Plackett-Luce. Ce qui subsiste au-dessus de lui serait un élan,
         et non un niveau.'
       nulle: &id109
@@ -29156,7 +29153,7 @@ modeles:
     test:
       cle: age_bascule_fusion
       libelle: L'âge de l'éliminé, avant et après la réunification
-      question: Élimine-t-on le plus âgé avant la réunification, et plus après ?
+      question: Élimine-t-on le plus âgé avant la réunification, et plus après ?
       observe: "2,006"
       attendu: "-0,011"
       unite: ans
@@ -29164,7 +29161,7 @@ modeles:
       p: "0,026"
       tirages: 10000
       lecture: 'Écart d''âge de l''éliminé à la moyenne de son camp, avant la réunification moins après.
-        Le modèle nul tire l''éliminé au hasard parmi les présents : la composition d''âge de chaque soirée
+        Le modèle nul tire l''éliminé au hasard parmi les présents : la composition d''âge de chaque soirée
         reste celle du soir.'
       nulle: &id110
         bornes:
@@ -29322,14 +29319,14 @@ modeles:
       p: "0,1495"
       inverse: "1,32"
     lecture: Régression logistique sur les premières participations. Un rapport au-dessus de 1 veut dire
-      « rappelé plus souvent », à toutes les autres variables égales. Un intervalle qui contient 1 ne
+      « rappelé plus souvent », à toutes les autres variables égales. Un intervalle qui contient 1 ne
       permet pas de conclure.
     rapport_survie: "21,9"
     abandons_derniers: 60
   registre:
   - cle: parite
     libelle: L'équilibre hommes-femmes
-    question: L'écart à la parité est-il plus petit que ce qu'un tirage à pile ou face donnerait ?
+    question: L'écart à la parité est-il plus petit que ce qu'un tirage à pile ou face donnerait ?
     origine: casting
     observe: "0,327"
     attendu: "1,75"
@@ -29339,14 +29336,14 @@ modeles:
     p_ajustee: "0,0004"
     retenu: true
     tirages: 10000
-    lecture: 'Un écart observé plus PETIT que l''attendu est la signature d''un quota : le hasard, lui,
+    lecture: 'Un écart observé plus PETIT que l''attendu est la signature d''un quota : le hasard, lui,
       produit des castings déséquilibrés de temps en temps.'
     nulle: *id071
     observe_arrondi: "0,3"
     attendu_arrondi: "1,8"
   - cle: etendue_ages
     libelle: L'écart d'âge dans un même casting
-    question: Un casting mélange-t-il les âges plus qu'un tirage au hasard ne le ferait ?
+    question: Un casting mélange-t-il les âges plus qu'un tirage au hasard ne le ferait ?
     origine: casting
     observe: "9,941"
     attendu: "9,695"
@@ -29363,7 +29360,7 @@ modeles:
     attendu_arrondi: "9,7"
   - cle: familles_metiers
     libelle: La variété des métiers
-    question: Un casting couvre-t-il plus de familles de métiers qu'un tirage au hasard ?
+    question: Un casting couvre-t-il plus de familles de métiers qu'un tirage au hasard ?
     origine: casting
     observe: 246
     attendu: "246,624"
@@ -29380,7 +29377,7 @@ modeles:
     attendu_arrondi: "246,6"
   - cle: melange_archetypes
     libelle: Le mélange d'archétypes
-    question: Chaque saison contient-elle toujours le même mélange de profils ?
+    question: Chaque saison contient-elle toujours le même mélange de profils ?
     origine: casting
     observe: "0,284"
     attendu: "0,251"
@@ -29398,7 +29395,7 @@ modeles:
   - cle: tribus_femmes
     libelle: La composition des deux tribus
     question: Les deux tribus initiales sont-elles plus semblables en part de femmes qu'un tirage au hasard
-      ne les ferait ?
+      ne les ferait ?
     origine: casting
     observe: "13,025"
     attendu: "18,873"
@@ -29416,7 +29413,7 @@ modeles:
   - cle: tribus_ages
     libelle: L'âge moyen des deux tribus
     question: Les deux tribus initiales ont-elles des âges moyens plus proches qu'un tirage au hasard
-      ne les ferait ?
+      ne les ferait ?
     origine: casting
     observe: "5,75"
     attendu: "3,85"
@@ -29427,13 +29424,13 @@ modeles:
     retenu: true
     tirages: 10000
     lecture: 'Même méthode, sur l''âge moyen de chaque tribu initiale. Un écart observé PLUS GRAND que
-      l''attendu veut dire l''inverse d''un équilibre : deux tribus construites pour différer.'
+      l''attendu veut dire l''inverse d''un équilibre : deux tribus construites pour différer.'
     nulle: *id076
     observe_arrondi: "5,8"
     attendu_arrondi: "3,9"
   - cle: tribus_ages_mediane
     libelle: L'âge des deux tribus, à la médiane
-    question: 'Le même écart, mesuré à la médiane : est-il général, ou porté par quelques saisons ?'
+    question: 'Le même écart, mesuré à la médiane : est-il général, ou porté par quelques saisons ?'
     origine: casting
     observe: "4,16"
     attendu: "3,331"
@@ -29451,7 +29448,7 @@ modeles:
   - cle: pronostic_vainqueur
     libelle: Pronostiquer le vainqueur au casting
     question: En ne connaissant que l'âge, le sexe, le métier et la couleur, place-t-on le futur vainqueur
-      plus haut que le hasard ne le ferait ?
+      plus haut que le hasard ne le ferait ?
     origine: pronostic
     observe: "10,731"
     attendu: "10,283"
@@ -29461,14 +29458,14 @@ modeles:
     p_ajustee: "0,762"
     retenu: false
     tirages: 10000
-    lecture: Le modèle classe les candidats d'une saison ; on relève la place qu'il donne à celui qui
+    lecture: Le modèle classe les candidats d'une saison ; on relève la place qu'il donne à celui qui
       a gagné. Plus BAS que l'attendu veut dire qu'une part du résultat se joue au recrutement.
     nulle: *id078
     observe_arrondi: "10,7"
     attendu_arrondi: "10,3"
   - cle: vote_meme_sexe
     libelle: Viser quelqu'un du même sexe
-    question: Parmi les présents, écrit-on plutôt le nom de quelqu'un de son sexe ?
+    question: Parmi les présents, écrit-on plutôt le nom de quelqu'un de son sexe ?
     origine: homophilie
     observe: "46,315"
     attendu: "47,843"
@@ -29478,15 +29475,15 @@ modeles:
     p_ajustee: "0,013"
     retenu: true
     tirages: 4000
-    lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
-      : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
-      qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
+    lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles :
+      la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire qu''on
+      vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
     nulle: *id079
     observe_arrondi: "46,3"
     attendu_arrondi: "47,8"
   - cle: vote_ecart_age
     libelle: L'écart d'âge avec sa cible
-    question: Écrit-on plutôt le nom de quelqu'un de sa génération, ou d'une autre ?
+    question: Écrit-on plutôt le nom de quelqu'un de sa génération, ou d'une autre ?
     origine: homophilie
     observe: "10,9"
     attendu: "10,828"
@@ -29496,15 +29493,15 @@ modeles:
     p_ajustee: "0,3503"
     retenu: false
     tirages: 4000
-    lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
-      : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
-      qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
+    lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles :
+      la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire qu''on
+      vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
     nulle: *id080
     observe_arrondi: "10,9"
     attendu_arrondi: "10,8"
   - cle: vote_meme_metier
     libelle: Viser la même famille de métier
-    question: Le métier rapproche-t-il ou éloigne-t-il du bulletin ?
+    question: Le métier rapproche-t-il ou éloigne-t-il du bulletin ?
     origine: homophilie
     observe: "10,271"
     attendu: "11,032"
@@ -29514,15 +29511,15 @@ modeles:
     p_ajustee: "0,0297"
     retenu: true
     tirages: 4000
-    lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
-      : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
-      qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
+    lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles :
+      la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire qu''on
+      vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
     nulle: *id081
     observe_arrondi: "10,3"
     attendu_arrondi: 11
   - cle: vote_meme_bandeau
     libelle: Viser sa propre tribu initiale
-    question: La tribu initiale protège-t-elle, une fois les tribus recomposées ?
+    question: La tribu initiale protège-t-elle, une fois les tribus recomposées ?
     origine: homophilie
     observe: "54,563"
     attendu: "61,104"
@@ -29532,15 +29529,15 @@ modeles:
     p_ajustee: "0,0006"
     retenu: true
     tirages: 4000
-    lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
-      : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
-      qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
+    lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles :
+      la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire qu''on
+      vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
     nulle: *id082
     observe_arrondi: "54,6"
     attendu_arrondi: "61,1"
   - cle: vote_meme_departement
     libelle: Viser quelqu'un de son département
-    question: Épargne-t-on le voisin — celui qui vit dans le même département ?
+    question: Épargne-t-on le voisin — celui qui vit dans le même département ?
     origine: homophilie
     observe: "1,72"
     attendu: "2,096"
@@ -29550,16 +29547,16 @@ modeles:
     p_ajustee: "0,0505"
     retenu: false
     tirages: 4000
-    lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles
-      : la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire
-      qu''on vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
+    lecture: 'On rebat les bulletins d''un conseil entre ses votants, en gardant le même jeu de cibles :
+      la popularité d''une cible est donc neutralisée. Un observé au-dessus de l''attendu veut dire qu''on
+      vise ses semblables plus souvent que le simple partage des cibles ne l''expliquerait.'
     nulle: *id083
     observe_arrondi: "1,7"
     attendu_arrondi: "2,1"
   - cle: vote_bandeau_apres_fusion
     libelle: Épargner sa tribu initiale
     question: Une fois les tribus recomposées, écrit-on moins souvent le nom de quelqu'un de sa tribu
-      initiale ?
+      initiale ?
     origine: homophilie
     observe: "28,417"
     attendu: "38,733"
@@ -29578,7 +29575,7 @@ modeles:
   - cle: geographie_departements
     libelle: L'origine géographique, par département
     question: Les aventuriers viennent-ils de départements plus variés, ou plus concentrés, qu'un tirage
-      dans la population française ne le donnerait ?
+      dans la population française ne le donnerait ?
     origine: geographie
     observe: "181,66"
     attendu: "98,977"
@@ -29589,7 +29586,7 @@ modeles:
     retenu: true
     tirages: 10000
     lecture: 'Dispersion entre les effectifs observés et ceux qu''on attendrait d''un tirage au hasard
-      dans la population de 20 à 59 ans, année par année. Au-dessus de l''attendu : le recrutement n''épouse
+      dans la population de 20 à 59 ans, année par année. Au-dessus de l''attendu : le recrutement n''épouse
       pas la démographie.'
     nulle:
       bornes:
@@ -29632,7 +29629,7 @@ modeles:
   - cle: geographie_regions
     libelle: L'origine géographique, par région
     question: À l'échelle des régions — assez peuplées pour trancher — le recrutement suit-il la démographie
-      française ?
+      française ?
     origine: geographie
     observe: "64,051"
     attendu: "15,956"
@@ -29642,7 +29639,7 @@ modeles:
     p_ajustee: "0,0004"
     retenu: true
     tirages: 10000
-    lecture: 'Même mesure, agrégée par région. C''est le niveau où la question se décide : un département
+    lecture: 'Même mesure, agrégée par région. C''est le niveau où la question se décide : un département
       compte trois aventuriers, une région une vingtaine.'
     nulle:
       bornes:
@@ -29684,7 +29681,7 @@ modeles:
     attendu_arrondi: 16
   - cle: audience_rupture
     libelle: La rupture d'audience
-    question: La chute d'audience tombe-t-elle à une date, ou se fait-elle par glissement ?
+    question: La chute d'audience tombe-t-elle à une date, ou se fait-elle par glissement ?
     origine: audience
     observe: "20,681"
     attendu: "3,503"
@@ -29702,7 +29699,7 @@ modeles:
     attendu_arrondi: "3,5"
   - cle: audience_retournement
     libelle: Le retournement finale / lancement
-    question: La finale attire-t-elle toujours plus de monde que le lancement ?
+    question: La finale attire-t-elle toujours plus de monde que le lancement ?
     origine: audience
     observe: "-0,654"
     attendu: "0,002"
@@ -29718,9 +29715,9 @@ modeles:
     observe_arrondi: "-0,7"
     attendu_arrondi: 0
   - cle: audience_format
-    libelle: Le format suit-il l'audience ?
+    libelle: Le format suit-il l'audience ?
     question: Une saison moins regardée que son époque ne le laissait attendre est-elle suivie d'un casting
-      plus large ?
+      plus large ?
     origine: audience
     observe: "-0,296"
     attendu: 0
@@ -29738,7 +29735,7 @@ modeles:
     attendu_arrondi: 0
   - cle: fusion_sexe
     libelle: Le sexe des éliminés, avant et après la réunification
-    question: La part de femmes parmi les éliminés change-t-elle à la réunification ?
+    question: La part de femmes parmi les éliminés change-t-elle à la réunification ?
     origine: avant_apres
     observe: "-17,986"
     attendu: "-1,27"
@@ -29749,14 +29746,14 @@ modeles:
     retenu: true
     tirages: 10000
     lecture: 'Différence entre l''après et l''avant, en points de pourcentage. Le hasard, ici, c''est
-      tirer l''éliminé parmi les présents de chaque conseil : la composition du camp est donc déjà neutralisée,
+      tirer l''éliminé parmi les présents de chaque conseil : la composition du camp est donc déjà neutralisée,
       et un écart qui subsiste est un choix.'
     nulle: *id088
     observe_arrondi: -18
     attendu_arrondi: "-1,3"
   - cle: fusion_force
     libelle: La force des éliminés, avant et après la réunification
-    question: Élimine-t-on le faible avant la réunification et le fort après ?
+    question: Élimine-t-on le faible avant la réunification et le fort après ?
     origine: avant_apres
     observe: "-4,789"
     attendu: "-0,05"
@@ -29766,15 +29763,15 @@ modeles:
     p_ajustee: "0,2329"
     retenu: false
     tirages: 10000
-    lecture: 'Rang de l''éliminé parmi les présents, sur la force estimée aux épreuves : 0 le plus faible
+    lecture: 'Rang de l''éliminé parmi les présents, sur la force estimée aux épreuves : 0 le plus faible
       du camp, 100 le plus fort. On compare l''après à l''avant. Positif, cela veut dire qu''on élimine
       plus haut dans le classement après la réunification.'
     nulle: *id089
     observe_arrondi: "-4,8"
     attendu_arrondi: "-0,1"
   - cle: fusion_serre
-    libelle: Des conseils plus serrés après la réunification ?
-    question: Le vote se divise-t-il davantage une fois les tribus réunies ?
+    libelle: Des conseils plus serrés après la réunification ?
+    question: Le vote se divise-t-il davantage une fois les tribus réunies ?
     origine: avant_apres
     observe: "27,607"
     attendu: "-0,077"
@@ -29785,13 +29782,13 @@ modeles:
     retenu: true
     tirages: 10000
     lecture: Part de conseils où l'éliminé ne rassemble pas plus de la moitié des voix, après moins avant.
-      Le hasard est ici une redistribution des étiquettes « avant » et « après » entre les mêmes conseils.
+      Le hasard est ici une redistribution des étiquettes « avant » et « après » entre les mêmes conseils.
     nulle: *id090
     observe_arrondi: "27,6"
     attendu_arrondi: "-0,1"
   - cle: ambassadeurs_force
-    libelle: Qui les ambassadeurs éliminent-ils ?
-    question: Deux ambassadeurs qui décident seuls choisissent-ils autrement qu'un tirage ?
+    libelle: Qui les ambassadeurs éliminent-ils ?
+    question: Deux ambassadeurs qui décident seuls choisissent-ils autrement qu'un tirage ?
     origine: avant_apres
     observe: "46,591"
     attendu: "50,062"
@@ -29802,13 +29799,13 @@ modeles:
     retenu: false
     tirages: 10000
     lecture: Rang de l'éliminé parmi les présents, sur la force estimée aux épreuves. Au-dessus de 50,
-      les ambassadeurs sacrifient un joueur plus fort que la moyenne du camp ; en dessous, un plus faible.
+      les ambassadeurs sacrifient un joueur plus fort que la moyenne du camp ; en dessous, un plus faible.
     nulle: *id091
     observe_arrondi: "46,6"
     attendu_arrondi: "50,1"
   - cle: ambassadeurs_survie
-    libelle: L'ambassadeur qui négocie s'en sort-il mieux ?
-    question: Partir en ambassade change-t-il la distance que l'on parcourt ensuite ?
+    libelle: L'ambassadeur qui négocie s'en sort-il mieux ?
+    question: Partir en ambassade change-t-il la distance que l'on parcourt ensuite ?
     origine: avant_apres
     observe: "37,591"
     attendu: "50,085"
@@ -29818,15 +29815,15 @@ modeles:
     p_ajustee: "0,0448"
     retenu: true
     tirages: 10000
-    lecture: 'Rang de l''ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c''est la
-      médiane du camp. Au-dessus, l''ambassade accompagne une fin de parcours plus tardive ; en dessous,
+    lecture: 'Rang de l''ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c''est la
+      médiane du camp. Au-dessus, l''ambassade accompagne une fin de parcours plus tardive ; en dessous,
       plus précoce. Le hasard, ici, c''est désigner les ambassadeurs au sort parmi les présents.'
     nulle: *id092
     observe_arrondi: "37,6"
     attendu_arrondi: "50,1"
   - cle: menace_voix
     libelle: Le nom sorti la fois d'avant
-    question: Sortir est-il plus probable quand on a reçu au moins une voix au conseil précédent ?
+    question: Sortir est-il plus probable quand on a reçu au moins une voix au conseil précédent ?
     origine: conditionnelles
     observe: "11,292"
     attendu: "0,925"
@@ -29836,7 +29833,7 @@ modeles:
     p_ajustee: "0,0004"
     retenu: true
     tirages: 10000
-    lecture: 'Écart entre deux probabilités conditionnelles : partir sachant qu''on a été visé la fois
+    lecture: 'Écart entre deux probabilités conditionnelles : partir sachant qu''on a été visé la fois
       d''avant, moins partir sachant qu''on ne l''a pas été. Le modèle nul tire l''éliminé au hasard parmi
       les présents, ce qui tient la taille du conseil rigoureusement fixe.'
     nulle: *id093
@@ -29844,7 +29841,7 @@ modeles:
     attendu_arrondi: "0,9"
   - cle: menace_sommet
     libelle: Trop visé pour partir
-    question: Être visé beaucoup expose-t-il moins qu'être visé un peu ?
+    question: Être visé beaucoup expose-t-il moins qu'être visé un peu ?
     origine: conditionnelles
     observe: "2,42"
     attendu: "2,387"
@@ -29855,14 +29852,14 @@ modeles:
     retenu: false
     tirages: 10000
     lecture: 'Écart entre partir après une à trois voix et partir après quatre voix ou plus. Un écart
-      positif dit que la menace a un sommet : au-delà, celui qui a survécu à un vote massif est mieux
+      positif dit que la menace a un sommet : au-delà, celui qui a survécu à un vote massif est mieux
       protégé que celui qui a survécu à deux bulletins.'
     nulle: *id094
     observe_arrondi: "2,4"
     attendu_arrondi: "2,4"
   - cle: camp_perdant
     libelle: Avoir voté du mauvais côté
-    question: S'être trompé de cible au conseil précédent expose-t-il au suivant ?
+    question: S'être trompé de cible au conseil précédent expose-t-il au suivant ?
     origine: conditionnelles
     observe: "2,915"
     attendu: "-0,875"
@@ -29878,7 +29875,7 @@ modeles:
     attendu_arrondi: "-0,9"
   - cle: menace_deux_pas
     libelle: La menace, deux conseils plus tard
-    question: Les voix reçues à l'avant-dernier conseil comptent-elles encore ?
+    question: Les voix reçues à l'avant-dernier conseil comptent-elles encore ?
     origine: conditionnelles
     observe: "5,267"
     attendu: "0,845"
@@ -29895,7 +29892,7 @@ modeles:
     attendu_arrondi: "0,8"
   - cle: cible_persistante
     libelle: La cible reste la cible
-    question: Recevoir une voix ce soir est-il plus probable quand on en a reçu au conseil précédent ?
+    question: Recevoir une voix ce soir est-il plus probable quand on en a reçu au conseil précédent ?
     origine: conditionnelles
     observe: "19,92"
     attendu: "2,924"
@@ -29912,7 +29909,7 @@ modeles:
     attendu_arrondi: "2,9"
   - cle: retour_de_baton
     libelle: Le nom rendu au conseil suivant
-    question: Celui dont j'ai écrit le nom la fois d'avant écrit-il le mien ce soir ?
+    question: Celui dont j'ai écrit le nom la fois d'avant écrit-il le mien ce soir ?
     origine: conditionnelles
     observe: "23,007"
     attendu: "14,909"
@@ -29929,7 +29926,7 @@ modeles:
     attendu_arrondi: "14,9"
   - cle: bandeau_minoritaire
     libelle: La tribu initiale minoritaire
-    question: Appartenir à la tribu initiale la moins représentée du camp expose-t-il ?
+    question: Appartenir à la tribu initiale la moins représentée du camp expose-t-il ?
     origine: autour_du_feu
     observe: "5,549"
     attendu: "-0,422"
@@ -29940,14 +29937,14 @@ modeles:
     retenu: true
     tirages: 10000
     lecture: 'Écart entre partir quand sa tribu initiale est la moins représentée du camp et partir quand
-      elle est la plus représentée. Le modèle nul tire l''éliminé au hasard parmi les présents : la taille
+      elle est la plus représentée. Le modèle nul tire l''éliminé au hasard parmi les présents : la taille
       du camp et sa composition restent celles du soir.'
     nulle: *id099
     observe_arrondi: "5,5"
     attendu_arrondi: "-0,4"
   - cle: sexe_minoritaire
     libelle: Le sexe minoritaire
-    question: Être du sexe le moins représenté du camp expose-t-il ?
+    question: Être du sexe le moins représenté du camp expose-t-il ?
     origine: autour_du_feu
     observe: "-5,4"
     attendu: "-0,407"
@@ -29964,7 +29961,7 @@ modeles:
     attendu_arrondi: "-0,4"
   - cle: doyen_du_camp
     libelle: Le plus âgé du camp
-    question: Le doyen d'un conseil part-il plus souvent que les autres ?
+    question: Le doyen d'un conseil part-il plus souvent que les autres ?
     origine: autour_du_feu
     observe: "2,943"
     attendu: "0,999"
@@ -29981,7 +29978,7 @@ modeles:
     attendu_arrondi: 1
   - cle: confort_sortie
     libelle: Le confort du soir
-    question: Gagner le confort fait-il partir le soir même ?
+    question: Gagner le confort fait-il partir le soir même ?
     origine: autour_du_feu
     observe: "3,282"
     attendu: "0,306"
@@ -29992,14 +29989,14 @@ modeles:
     retenu: false
     tirages: 10000
     lecture: 'Écart entre partir quand on vient de gagner le confort de l''épisode et partir quand on
-      n''a rien gagné. Lu sur les seuls soirs à conseil unique : sinon l''épreuve du soir ne se rattache
+      n''a rien gagné. Lu sur les seuls soirs à conseil unique : sinon l''épreuve du soir ne se rattache
       pas au bon conseil.'
     nulle: *id102
     observe_arrondi: "3,3"
     attendu_arrondi: "0,3"
   - cle: vote_isole
     libelle: N’avoir plus personne avec qui on ait voté
-    question: Se retrouver sans un seul allié parmi les présents expose-t-il ?
+    question: Se retrouver sans un seul allié parmi les présents expose-t-il ?
     origine: pire_place
     observe: "18,627"
     attendu: "1,933"
@@ -30016,7 +30013,7 @@ modeles:
     attendu_arrondi: "1,9"
   - cle: dos_au_mur
     libelle: Le dos au mur
-    question: Celui qu'on vient de viser gagne-t-il plus souvent l'immunité ?
+    question: Celui qu'on vient de viser gagne-t-il plus souvent l'immunité ?
     origine: pire_place
     observe: "1,716"
     attendu: "0,991"
@@ -30034,7 +30031,7 @@ modeles:
   - cle: persistance_alliances
     libelle: La persistance des alliances
     question: Deux aventuriers qui ont voté ensemble votent-ils encore ensemble au conseil suivant, plus
-      souvent que le hasard ne le voudrait ?
+      souvent que le hasard ne le voudrait ?
     origine: alliances
     observe: "28,875"
     attendu: "1,494"
@@ -30044,15 +30041,14 @@ modeles:
     p_ajustee: "0,0013"
     retenu: true
     tirages: 2000
-    lecture: 'Écart entre deux probabilités : voter ensemble après avoir voté ensemble, et voter ensemble
+    lecture: 'Écart entre deux probabilités : voter ensemble après avoir voté ensemble, et voter ensemble
       après avoir voté séparément. À zéro, chaque conseil repart de zéro et il n''y a pas d''alliance.'
     nulle: *id105
     observe_arrondi: "28,9"
     attendu_arrondi: "1,5"
   - cle: rupture
     libelle: La rupture de régime
-    question: Existe-t-il une date qui sépare les saisons en deux régimes mieux qu'une date tirée au sort
-      ?
+    question: Existe-t-il une date qui sépare les saisons en deux régimes mieux qu'une date tirée au sort ?
     origine: ruptures
     observe: "59,022"
     attendu: "13,217"
@@ -30063,15 +30059,14 @@ modeles:
     retenu: true
     tirages: 10000
     lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
-      dans un ordre au hasard. Une coupure existe toujours ; la question est de savoir si celle-ci vaut
+      dans un ordre au hasard. Une coupure existe toujours ; la question est de savoir si celle-ci vaut
       mieux que n'importe quelle autre.
     nulle: *id106
     observe_arrondi: 59
     attendu_arrondi: "13,2"
   - cle: trahison
     libelle: Écrire le nom d'un ancien allié
-    question: Quand on a déjà voté avec quelqu'un, écrit-on son nom plus ou moins souvent qu'un autre
-      ?
+    question: Quand on a déjà voté avec quelqu'un, écrit-on son nom plus ou moins souvent qu'un autre ?
     origine: trahison
     observe: "48,156"
     attendu: "57,135"
@@ -30082,14 +30077,14 @@ modeles:
     retenu: true
     tirages: 4000
     lecture: Part des bulletins visant quelqu'un avec qui l'auteur avait déjà voté. Un observé SOUS l'attendu
-      veut dire que l'alliance protège ; au-dessus, qu'elle expose.
+      veut dire que l'alliance protège ; au-dessus, qu'elle expose.
     nulle: *id107
     observe_arrondi: "48,2"
     attendu_arrondi: "57,1"
   - cle: decimation
     libelle: L'élimination en série d'un camp
     question: Après la réunification, les sorties se suivent-elles par tribu initiale plus souvent que
-      le hasard ne le voudrait ?
+      le hasard ne le voudrait ?
     origine: decimation
     observe: 135
     attendu: "106,849"
@@ -30106,8 +30101,7 @@ modeles:
     attendu_arrondi: "106,8"
   - cle: tenant_du_titre
     libelle: Le tenant du titre
-    question: Celui qui a gagné la dernière immunité la regagne-t-il plus souvent que sa force ne l'explique
-      ?
+    question: Celui qui a gagné la dernière immunité la regagne-t-il plus souvent que sa force ne l'explique ?
     origine: tenant_du_titre
     observe: "7,315"
     attendu: "8,483"
@@ -30118,7 +30112,7 @@ modeles:
     retenu: false
     tirages: 4000
     lecture: 'Écart entre gagner l''immunité quand on l''a gagnée la fois d''avant et la gagner quand
-      on ne l''a pas gagnée. Le modèle nul ne tire pas au hasard : il tire les vainqueurs SELON LES FORCES
+      on ne l''a pas gagnée. Le modèle nul ne tire pas au hasard : il tire les vainqueurs SELON LES FORCES
       estimées par le modèle de Plackett-Luce. Ce qui subsiste au-dessus de lui serait un élan, et non
       un niveau.'
     nulle: *id109
@@ -30126,7 +30120,7 @@ modeles:
     attendu_arrondi: "8,5"
   - cle: age_bascule_fusion
     libelle: L'âge de l'éliminé, avant et après la réunification
-    question: Élimine-t-on le plus âgé avant la réunification, et plus après ?
+    question: Élimine-t-on le plus âgé avant la réunification, et plus après ?
     origine: age_au_conseil
     observe: "2,006"
     attendu: "-0,011"
@@ -30137,15 +30131,15 @@ modeles:
     retenu: true
     tirages: 10000
     lecture: 'Écart d''âge de l''éliminé à la moyenne de son camp, avant la réunification moins après.
-      Le modèle nul tire l''éliminé au hasard parmi les présents : la composition d''âge de chaque soirée
+      Le modèle nul tire l''éliminé au hasard parmi les présents : la composition d''âge de chaque soirée
       reste celle du soir.'
     nulle: *id110
     observe_arrondi: 2
     attendu_arrondi: 0
   - cle: talent_stable
-    libelle: La qualité d’un joueur se retrouve-t-elle d’une saison à l’autre ?
+    libelle: La qualité d’un joueur se retrouve-t-elle d’une saison à l’autre ?
     question: Le score d’un aventurier à sa première participation prédit-il celui de ses participations
-      suivantes ?
+      suivantes ?
     origine: classement
     observe: "0,148"
     attendu: 0
@@ -30197,7 +30191,7 @@ modeles:
   - cle: prevision_conseil
     libelle: Deviner qui part, dans une saison jamais vue
     question: Un modèle entraîné sur toutes les saisons sauf une désigne-t-il l’éliminé de celle-là mieux
-      que le hasard ?
+      que le hasard ?
     origine: classement
     observe: "0,399"
     attendu: "0,5"
@@ -30210,7 +30204,7 @@ modeles:
     lecture: 'Chaque conseil est classé du plus au moins menacé, puis on regarde à quelle place s''y trouve
       celui qui est réellement parti — 0 pour la première, 1 pour la dernière. Le hasard donne 0,5. Un
       observé PLUS PETIT veut dire que le modèle voit venir la sortie. Une saison est exclue à chaque
-      tour : le conseil pronostiqué n''a jamais servi à apprendre.'
+      tour : le conseil pronostiqué n''a jamais servi à apprendre.'
     nulle:
       bornes:
       - "0,3904"
@@ -30278,8 +30272,8 @@ modeles:
     observations_texte: "304"
     effet_texte: 8 points
   retenus_avec_vingt_nuls: 24
-  tombes_avec_vingt_nuls_texte: les 2 plus fragiles tomberaient — « L'ambassadeur qui négocie s'en sort-il
-    mieux ? » et « L'âge de l'éliminé, avant et après la réunification »
+  tombes_avec_vingt_nuls_texte: les 2 plus fragiles tomberaient — « L'ambassadeur qui négocie s'en sort-il
+    mieux ? » et « L'âge de l'éliminé, avant et après la réunification »
 completude_saisons:
   colonnes:
   - cle: casting

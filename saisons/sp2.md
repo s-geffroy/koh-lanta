@@ -1,7 +1,7 @@
 ---
 layout: fiche-saison
 title: "Le Choc des héros (2010)"
-description: "Koh-Lanta Le Choc des héros, édition spéciale diffusée en 2010 (Nouvelle-Calédonie) : 14 aventuriers, 20 jours. Victoire de Grégoire Delachaux."
+description: "Koh-Lanta Le Choc des héros, édition spéciale diffusée en 2010 (Nouvelle-Calédonie) : 14 aventuriers, 20 jours. Victoire de Grégoire Delachaux."
 image: /assets/partage/saisons/sp2.png
 permalink: /saisons/koh-lanta-le-choc-des-heros/
 redirect_from: /saisons/sp2/

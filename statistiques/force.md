@@ -1,10 +1,10 @@
 ---
 layout: page
 title: La force réelle
-description: "La force réelle des aventuriers de Koh-Lanta : le total d’épreuves gagnées mélange le niveau et le temps passé en jeu. On peut les séparer."
+description: "La force réelle des aventuriers de Koh-Lanta : le total d’épreuves gagnées mélange le niveau et le temps passé en jeu. On peut les séparer."
 permalink: /statistiques/force/
 chapeau: >-
-  Sept victoires en quinze épreuves, ou deux en trois ? Le total brut mélange
+  Sept victoires en quinze épreuves, ou deux en trois ? Le total brut mélange
   le niveau et le temps passé en jeu. On peut les séparer.
 ---
 
@@ -14,9 +14,9 @@ chapeau: >-
 
 La page [Les épreuves]({{ '/statistiques/epreuves/' | relative_url }}) classe
 les aventuriers à leur nombre de victoires, et prévient elle-même que ce total
-« dit autant leur nombre de participations que leur niveau ». Elle a raison, et
-le problème est plus profond encore : gagner au premier épisode, c’est battre
-vingt personnes dont la plupart sortiront vite ; gagner à l’avant-dernier, c’est
+« dit autant leur nombre de participations que leur niveau ». Elle a raison, et
+le problème est plus profond encore : gagner au premier épisode, c’est battre
+vingt personnes dont la plupart sortiront vite ; gagner à l’avant-dernier, c’est
 en battre quatre, les quatre meilleurs.
 
 ## Un modèle qui sépare le niveau du temps de jeu
@@ -26,22 +26,22 @@ en battre quatre, les quatre meilleurs.
 la somme des forces présentes ce jour-là. On cherche ensuite les forces qui
 rendent les {{ f.epreuves_retenues }} épreuves individuelles observées les plus
 vraisemblables possible. Le classement qui en sort est corrigé
-<strong>de l’exposition et de l’adversaire</strong> : un joueur qui gagne deux
+<strong>de l’exposition et de l’adversaire</strong> : un joueur qui gagne deux
 fois sur trois en fin de parcours passe devant un joueur qui gagne trois fois sur
 quinze au début.</p>
 
-Une difficulté devait être levée d’abord : `epreuves.yml` ne contient que les
+Une difficulté devait être levée d’abord : `epreuves.yml` ne contient que les
 **vainqueurs**, jamais la liste des participants. Aucune source ne la donne. Le
 plateau de chaque épreuve est donc **reconstruit** — tous ceux qui étaient
 encore en jeu à cet épisode.
 
 <div class="constat">
-  <p>La reconstruction se contrôle elle-même : <b>le vainqueur d’une épreuve
+  <p>La reconstruction se contrôle elle-même : <b>le vainqueur d’une épreuve
   doit figurer dans le plateau qu’on lui reconstruit</b>.</p>
   <p>Elle échoue dans <b>{{ f.taux_echec_reconstruction }} %</b> des cas
   ({{ f.vainqueur_hors_plateau }} épreuves sur
   {{ f.epreuves_tentees }}). Ces épreuves-là
-  sont écartées, et le taux est publié : c’est la mesure honnête de ce que vaut
+  sont écartées, et le taux est publié : c’est la mesure honnête de ce que vaut
   la reconstruction.</p>
 </div>
 
@@ -80,7 +80,7 @@ retirées au sort. Une force de 1 est la moyenne.</p>
 </div>
 
 **Les intervalles sont larges, et c’est le résultat.** Presque tous se
-chevauchent : avec {{ f.disputees_max }} épreuves au plus par carrière, ces
+chevauchent : avec {{ f.disputees_max }} épreuves au plus par carrière, ces
 données ne permettent pas de départager les premiers. Un classement sans ses intervalles
 laisserait croire le contraire.
 
@@ -93,13 +93,13 @@ rang à la force estimée. Une pente montante signale un athlète que le total b
 sous-estime.</p>
 
 {% assign mo = f.plus_forte_montee %}{% assign ch = f.plus_forte_chute %}
-La plus forte remontée est celle de **{{ mo.nom }}** : {{ mo.rang_victoires }}<sup>e</sup>
+La plus forte remontée est celle de **{{ mo.nom }}** : {{ mo.rang_victoires }}<sup>e</sup>
 à {{ mo.victoires }} victoires, il passe {{ mo.rang_force }}<sup>e</sup> une fois
 l’exposition prise en compte. À l’inverse, **{{ ch.nom }}** descend de la
-{{ ch.rang_victoires }}<sup>e</sup> à la {{ ch.rang_force }}<sup>e</sup> place :
+{{ ch.rang_victoires }}<sup>e</sup> à la {{ ch.rang_force }}<sup>e</sup> place :
 ses {{ ch.victoires }} victoires ont été prises sur beaucoup d’épreuves.
 
-## Le tenant du titre : élan ou niveau ?
+## Le tenant du titre : élan ou niveau ?
 
 {% assign tt = site.data.stats.modeles.tenant_du_titre %}
 {% assign ttt = site.data.stats.modeles.registre | where: "cle", "tenant_du_titre" | first %}
@@ -117,7 +117,7 @@ Celui qui a gagné la dernière immunité gagne la suivante dans
 **{{ tt.tenant.probabilite }} %** des cas
 ({{ tt.tenant.cas }} sur {{ tt.tenant.effectif }}), contre
 **{{ tt.autres.probabilite }} %** pour n’importe quel autre présent —
-{{ tt.rapport }} fois plus. On y verrait volontiers un **élan** : la confiance, l’habitude du
+{{ tt.rapport }} fois plus. On y verrait volontiers un **élan** : la confiance, l’habitude du
 parcours, l’adversaire qui doute.
 
 ### Ce que la force explique déjà
@@ -144,26 +144,26 @@ simulées où les vainqueurs sont tirés <strong>selon les forces estimées</str
 Un tirage uniforme, lui, ne produirait que {{ tt.attendu_uniforme }} points.</p>
 
 <div class="constat">
-  <p>Contre un tirage uniforme, l’enchaînement est massif :
+  <p>Contre un tirage uniforme, l’enchaînement est massif :
   {{ tt.ecarts_types_uniforme }} écarts-types. Contre un tirage <b>selon les
   forces</b>, il ne reste que {{ ttt.ecart_types }} écart-type, p ajustée
   {{ ttt.p_ajustee }}. <b>Non concluant.</b></p>
-  <p>Autrement dit : <b>{{ tt.part_expliquee }} % de l’enchaînement est déjà
+  <p>Autrement dit : <b>{{ tt.part_expliquee }} % de l’enchaînement est déjà
   produit par le simple fait que les forts sont forts</b>, et ce qui dépasse
   n’est pas distinguable du hasard. Le tenant du titre ne rejoue pas mieux
-  parce qu’il vient de gagner ; il regagne parce que c’était déjà lui le
+  parce qu’il vient de gagner ; il regagne parce que c’était déjà lui le
   meilleur.</p>
 </div>
 
 <p class="note"><strong>Ce test est conservateur, et il faut le dire.</strong>
-Les forces <i>θ</i> sont ajustées sur ces épreuves-là, enchaînements compris :
+Les forces <i>θ</i> sont ajustées sur ces épreuves-là, enchaînements compris :
 un élan réel serait donc en partie absorbé par la force estimée. Conclure
-« rien au-delà de la force » est prudent ; conclure l’inverse ne le serait
+« rien au-delà de la force » est prudent ; conclure l’inverse ne le serait
 pas.</p>
 
-## Et le jeu, dans tout ça ?
+## Et le jeu, dans tout ça ?
 
-Deux croyances tenaces se testent ici. On vote contre les forts, dit-on ; et la
+Deux croyances tenaces se testent ici. On vote contre les forts, dit-on ; et la
 force mène loin.
 
 {% include graphiques/force-effets.svg %}
@@ -175,24 +175,24 @@ force mène loin.
   <p>Doubler sa force multiplie les bulletins reçus par
   <b>{{ fj.voix.force.estimation }}</b> — intervalle
   {{ fj.voix.force.bas }} à {{ fj.voix.force.haut }}, p = {{ fj.voix.force.p }}.
-  L’intervalle reste sous 1 : <b>les forts reçoivent plutôt moins de
+  L’intervalle reste sous 1 : <b>les forts reçoivent plutôt moins de
   bulletins, pas davantage.</b> L’effet est mince, et ce test ne figure pas
-  dans la liste déclarée d’avance que le registre corrige du nombre d’essais :
+  dans la liste déclarée d’avance que le registre corrige du nombre d’essais :
   c’est une tendance, pas un résultat établi.</p>
-  <p>Sur la distance parcourue, rien : doubler sa force fait gagner
+  <p>Sur la distance parcourue, rien : doubler sa force fait gagner
   {{ fj.survie.force.estimation }} point de saison, intervalle
   {{ fj.survie.force.bas }} à {{ fj.survie.force.haut }}.
   <b>La force athlétique ne mène pas plus loin.</b></p>
-  <p>L’âge ne tranche pas non plus : dix ans de plus, et l’on reçoit
+  <p>L’âge ne tranche pas non plus : dix ans de plus, et l’on reçoit
   {{ fj.voix.age.estimation }} fois les bulletins, intervalle
   {{ fj.voix.age.bas }} à {{ fj.voix.age.haut }}, qui contient 1.</p>
 </div>
 
-C’est la version mesurée de ce que la page des épreuves dit en une phrase : « le
-sport gagne les épreuves et perd le jury ». À {{ fj.effectif }} participations,
+C’est la version mesurée de ce que la page des épreuves dit en une phrase : « le
+sport gagne les épreuves et perd le jury ». À {{ fj.effectif }} participations,
 le lien entre force et parcours est indiscernable de zéro.
 
-<p class="note">Trois réserves. Le plateau est reconstruit et non sourcé : une
+<p class="note">Trois réserves. Le plateau est reconstruit et non sourcé : une
 épreuve individuelle réservée à un sous-groupe — duel, retour de l’île des bannis ou de l’exil — est
 comptée comme ouverte à tous, ce qui sous-estime les forces des vainqueurs
 concernés. Le modèle suppose une force constante sur toute la carrière, alors
@@ -203,7 +203,7 @@ est trop mal documentée pour reconstruire un plateau, et
 sur une seule source ({{ site.data.stats.epreuves.saisons_source_unique_texte }}).</p>
 
 <p class="note"><strong>Qui manque, et pourquoi.</strong> La dernière réserve
-n’est pas une nuance de méthode : elle décide qui figure ici. Jusqu’au
+n’est pas une nuance de méthode : elle décide qui figure ici. Jusqu’au
 20 octobre 2026, un vainqueur de <em>Malaisie</em>, de <em>Palau</em> ou de
 <em>Johor</em> ne pouvait pas apparaître dans ce classement, faute de bilan par
 épisode à reconstruire. C’était le cas d’Ugo Lartiche, troisième palmarès de
@@ -211,5 +211,5 @@ l’histoire au compte déclaré par le wiki — voir
 <a href="{{ '/statistiques/epreuves/' | relative_url }}#ce-que-disent-les-fiches-pour-comparer">Les
 épreuves</a>. Ces saisons sont désormais relevées, sur la seule foi du guide
 d’épisodes du wiki <em>Survivor</em>, et Ugo Lartiche figure dans ce
-classement. Une source unique reste une réserve : sans recoupement, on sait
+classement. Une source unique reste une réserve : sans recoupement, on sait
 <em>qui était en lice</em>, mais une erreur du guide passerait inaperçue.</p>

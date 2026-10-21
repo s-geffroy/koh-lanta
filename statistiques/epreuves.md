@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Les épreuves
-description: "Les épreuves de Koh-Lanta : meilleurs ratios, totaux de carrière, le profil qui domine vraiment, et une nature d’épreuve qui ne trie personne."
+description: "Les épreuves de Koh-Lanta : meilleurs ratios, totaux de carrière, le profil qui domine vraiment, et une nature d’épreuve qui ne trie personne."
 permalink: /statistiques/epreuves/
 chapeau: >-
   Les meilleurs ratios, les totaux de carrière, le profil qui domine vraiment — et une nature d’épreuve qui, elle, ne trie personne.
@@ -10,10 +10,10 @@ chapeau: >-
 {% assign e = site.data.stats.epreuves %}
 
 C’est la question qui revient le plus souvent, et celle sur laquelle circulent
-le plus de chiffres invérifiables : **qui domine les épreuves ?**
+le plus de chiffres invérifiables : **qui domine les épreuves ?**
 
 **{{ e.epreuves }} épreuves** ont été relevées sur **{{ e.saisons_couvertes }}
-saisons** — {{ e.immunites }} d’immunité, {{ e.conforts }} de confort ;
+saisons** — {{ e.immunites }} d’immunité, {{ e.conforts }} de confort ;
 {{ e.collectives }} remportées par une tribu, {{ e.individuelles }} par une
 personne.
 
@@ -27,7 +27,7 @@ personne.
 ## Le classement des ratios
 
 <p class="note">Le dénominateur n’est pas le nombre d’épreuves de la saison,
-mais celui des épreuves individuelles <strong>disputées avant sa sortie</strong> :
+mais celui des épreuves individuelles <strong>disputées avant sa sortie</strong> :
 un aventurier éliminé au jour 9 n’a pas rendez-vous avec les épreuves du jour
 30. Un seuil de {{ e.seuil_classement }} épreuves disputées écarte les
 parcours trop courts, où une seule victoire suffirait à afficher un ratio
@@ -59,7 +59,7 @@ spectaculaire. {{ e.classement_effectif }} aventuriers passent ce seuil.</p>
 ## Les totaux d’une carrière
 
 Le ratio récompense l’efficacité sur une saison. Le cumul, lui, récompense la
-longévité : revenir jouer quatre ou cinq fois donne quatre ou cinq fois plus
+longévité : revenir jouer quatre ou cinq fois donne quatre ou cinq fois plus
 d’occasions.
 
 {% include graphiques/epreuves-cumuls.svg %}
@@ -67,7 +67,7 @@ d’occasions.
 **{{ e.meilleurs_cumuls[0].personne }}** est en tête avec
 **{{ e.meilleurs_cumuls[0].victoires }} victoires individuelles**, devant
 {{ e.meilleurs_cumuls[1].personne }} ({{ e.meilleurs_cumuls[1].victoires }}).
-Les deux comptent parmi les aventuriers les plus rappelés du programme : leur
+Les deux comptent parmi les aventuriers les plus rappelés du programme : leur
 total dit autant leur nombre de participations que leur niveau.
 
 ## Ce que disent les fiches, pour comparer
@@ -75,7 +75,7 @@ total dit autant leur nombre de participations que leur niveau.
 {% assign pa = site.data.stats.palmares %}
 
 Tout ce qui précède repose sur le **bilan épisode par épisode**. Jusqu’au
-20 octobre 2026, ce bilan ignorait cinq saisons entières : un vainqueur de
+20 octobre 2026, ce bilan ignorait cinq saisons entières : un vainqueur de
 l’une d’elles n’apparaissait nulle part sur cette page. Elles sont désormais
 relevées — {{ e.saisons_source_unique_texte }} — depuis le guide d’épisodes du
 wiki anglophone de *Survivor*, seule page à donner leurs épreuves.
@@ -108,7 +108,7 @@ qu’elles donnent.
 {{ pa.classement[2].personne }} y est troisième, avec
 {{ pa.classement[2].individuelles }} victoires individuelles en
 {{ pa.classement[2].saisons }} éditions. Il a longtemps été invisible plus
-haut : la saison qu’il a gagnée, <em>Malaisie</em>, n’avait pas de bilan par
+haut : la saison qu’il a gagnée, <em>Malaisie</em>, n’avait pas de bilan par
 épisode. Il figure aujourd’hui parmi les meilleurs cumuls.
 
 <p class="note"><strong>Les deux comptes ne mesurent pas la même chose, et il
@@ -118,7 +118,7 @@ n’enregistre pas. Là où les deux existent, ils sont <strong>identiques dans
 {{ pa.part_identiques }} % des cas</strong> ({{ pa.identiques }} sur
 {{ pa.compares }}) et l’écart médian, quand il y en a un, vaut
 {{ pa.ecart_median }}. C’est assez pour lire ce classement, pas pour le
-substituer au précédent — et surtout pas pour nourrir un modèle : la
+substituer au précédent — et surtout pas pour nourrir un modèle : la
 <a href="{{ '/statistiques/force/' | relative_url }}">force réelle</a> continue
 de se calculer sur les seuls plateaux reconstruits.</p>
 
@@ -128,7 +128,7 @@ de se calculer sur les seuls plateaux reconstruits.</p>
 
 Cette page a longtemps affirmé que **la nature d’une épreuve — endurance,
 équilibre, précision — n’était donnée nulle part de façon exploitable**. La
-première moitié de la phrase était fausse : le wiki Fandom tient
+première moitié de la phrase était fausse : le wiki Fandom tient
 **{{ en.nb_epreuves }} pages d’épreuves récurrentes**, chacune avec son type et
 la liste des saisons où elle a été disputée. {{ en.nb_apparitions }} apparitions
 au total.
@@ -137,7 +137,7 @@ au total.
 
 <p class="legende-figure">Nombre d’épreuves récurrentes portant chaque
 qualificatif. Une épreuve peut en porter deux — le parcours du combattant est
-« rapidité, force ».</p>
+« rapidité, force ».</p>
 
 <div class="tableau-large">
 <table data-triable>
@@ -160,7 +160,7 @@ qualificatif. Une épreuve peut en porter deux — le parcours du combattant est
 
 Le parcours du combattant a été couru **{{ en.epreuves[0].apparitions }} fois**,
 {% assign arc = en.epreuves | where: "nom", "Tir à l'arc" | first %}{% assign boue = en.epreuves | where: "nom", "Boue" | first %}
-les flambeaux {{ en.epreuves[1].apparitions }} ; le tir à l’arc
+les flambeaux {{ en.epreuves[1].apparitions }} ; le tir à l’arc
 {{ arc.apparitions }}, l’épreuve de la boue {{ boue.apparitions }}. Voilà pour le catalogue.
 
 ## Pourquoi ce catalogue ne se raccorde pas aux épisodes
@@ -173,7 +173,7 @@ que l’affirmer.
   pas l’<b>épisode</b>. Or {{ e.epreuves }} épreuves relevées le sont épisode par
   épisode — et un aventurier gagne souvent plusieurs épreuves du même genre dans
   la même saison.</p>
-  <p>Résultat : sur les {{ en.raccord.epreuves_relevees }} épreuves relevées,
+  <p>Résultat : sur les {{ en.raccord.epreuves_relevees }} épreuves relevées,
   <b>{{ en.raccord.epreuves_raccordees }} seulement</b> peuvent recevoir une
   nature — <b>{{ en.raccord.part_raccordee }} %</b>.</p>
 </div>
@@ -198,33 +198,33 @@ donc attachée à une épreuve **datée**, et aucun modèle épisode par épisod
 reçoit.
 
 <p class="note"><strong>L’appariement a été resserré, et il a gagné
-{{ e.gain_appariement }} points.</strong> Il cherchait le vainqueur cité <em>un nom à la fois</em> : une
+{{ e.gain_appariement }} points.</strong> Il cherchait le vainqueur cité <em>un nom à la fois</em> : une
 épreuve qui en cite deux — le meilleur homme et la meilleure femme du parcours
 du combattant — rencontrait alors toutes les épreuves que l’un <em>ou</em>
 l’autre avait gagnées, et ne tranchait jamais. Exiger que <strong>l’ensemble
 complet des vainqueurs coïncide</strong> est une condition plus stricte, pas une
-devinette de plus : le raccord passe de 11,0 % à
+devinette de plus : le raccord passe de 11,0 % à
 {{ en.raccord.part_raccordee }} %, et les épreuves individuelles — les seules qui
 comptent ici — de 74 à {{ en.raccord.individuelles_raccordees }}.</p>
 
 <p class="note"><strong>Le plafond, lui, a été vérifié à la source.</strong> La
-catégorie « Épreuves » du wiki compte <strong>{{ e.pages_categorie }} pages et aucune
-sous-catégorie</strong> : ce n’est pas un extrait, c’est tout ce qui existe. Ce
-qu’il faudrait pour aller plus loin : le nom de l’épreuve dans le bilan par
+catégorie « Épreuves » du wiki compte <strong>{{ e.pages_categorie }} pages et aucune
+sous-catégorie</strong> : ce n’est pas un extrait, c’est tout ce qui existe. Ce
+qu’il faudrait pour aller plus loin : le nom de l’épreuve dans le bilan par
 épisode, ou le numéro d’épisode dans la fiche de l’épreuve. Les résumés
-détaillés de Wikipédia décrivent bien les épreuves une à une — « les candidats
-doivent plonger, monter sur le voilier, récupérer un maximum d’éléments » — mais
+détaillés de Wikipédia décrivent bien les épreuves une à une — « les candidats
+doivent plonger, monter sur le voilier, récupérer un maximum d’éléments » — mais
 en prose, sans jamais les nommer ni les qualifier. En tirer une nature
-demanderait de juger ; ce site ne juge pas ses sources.</p>
+demanderait de juger ; ce site ne juge pas ses sources.</p>
 
 ## La question se posait autrement
 
 {% assign n = site.data.stats.natures %}
 
-L’épisode manquait ; le **nom** ne manquait pas. Le catalogue dit la saison et
-le vainqueur, et cela suffit à écrire « untel a gagné telle épreuve, de nature
-force » — sans savoir quel soir. Or c’est tout ce qu’il fallait pour poser la
-question. Le biais du paragraphe précédent disparaît avec elle : on ne garde
+L’épisode manquait ; le **nom** ne manquait pas. Le catalogue dit la saison et
+le vainqueur, et cela suffit à écrire « untel a gagné telle épreuve, de nature
+force » — sans savoir quel soir. Or c’est tout ce qu’il fallait pour poser la
+question. Le biais du paragraphe précédent disparaît avec elle : on ne garde
 plus les seules citations décidables, on les garde **toutes**.
 
 <ul class="chiffres">
@@ -233,11 +233,11 @@ plus les seules citations décidables, on les garde **toutes**.
   <li class="chiffre"><b>{{ n.victoires }}</b><span>victoires portant une nature</span></li>
 </ul>
 
-<p class="note">Le reste des citations n’est pas perdu, il est ailleurs :
+<p class="note">Le reste des citations n’est pas perdu, il est ailleurs :
 {{ n.citations_restantes }} reviennent à une <em>tribu</em> — une
 épreuve collective n’a pas de vainqueur individuel — ou portent un prénom que la
 saison ne connaît pas. Et l’on compte ici des <strong>citations</strong>, pas des
-victoires distinctes : le parcours du combattant est force <em>et</em> rapidité,
+victoires distinctes : le parcours du combattant est force <em>et</em> rapidité,
 et une seule victoire alimente alors deux compteurs.</p>
 
 ## Et elle ne sépare rien
@@ -246,7 +246,7 @@ et une seule victoire alimente alors deux compteurs.</p>
 
 <p class="legende-figure">Part des victoires revenant à une femme, nature par
 nature, avec son intervalle. Le trait vertical est la part observée toutes
-natures confondues : {{ n.part_femmes }} %.</p>
+natures confondues : {{ n.part_femmes }} %.</p>
 
 {% include graphiques/natures-bout.svg %}
 
@@ -282,19 +282,19 @@ qui ira au bout — finaliste, vainqueur, ou éliminé aux poteaux. Le repère e
   {{ n.par_nature[4].femmes.probabilite }} % du temps contre
   {{ n.part_femmes }} % en général, la précision {{ n.par_nature[1].femmes.probabilite }} % —
   et les deux intervalles contiennent la référence.</p>
-  <p>L’âge ne trie pas davantage : de {{ n.par_nature[4].age_moyen }} ans pour
+  <p>L’âge ne trie pas davantage : de {{ n.par_nature[4].age_moyen }} ans pour
   l’équilibre à {{ n.par_nature[1].age_moyen }} pour la précision, autour d’une
   moyenne de {{ n.age_moyen }}.</p>
   <p><b>La nature d’une épreuve ne dit pas qui la gagne.</b> C’était la question
-  que ce catalogue promettait de rendre posable ; elle l’est, et la réponse est
+  que ce catalogue promettait de rendre posable ; elle l’est, et la réponse est
   non.</p>
 </div>
 
 <p class="note">Deux réserves, et la seconde est la plus lourde. Les natures
-au-delà de la cinquième reposent sur moins de {{ n.seuil }} victoires : elles
+au-delà de la cinquième reposent sur moins de {{ n.seuil }} victoires : elles
 figurent au tableau mais aucune figure ne les montre, leurs intervalles étant
 trop larges pour dire quoi que ce soit. Et surtout, <strong>la nature vient du
-wiki, pas d’une mesure</strong> : c’est le mot qu’un rédacteur a choisi pour
+wiki, pas d’une mesure</strong> : c’est le mot qu’un rédacteur a choisi pour
 qualifier une épreuve, pas une propriété observée. Si ces étiquettes sont
 approximatives, l’absence d’écart mesurée ici l’est aussi.</p>
 
@@ -312,67 +312,67 @@ aventurier de chaque famille — rapporté à l’effectif, donc comparable.</p>
 {% assign pm = e.par_metier_par_ratio %}
 **{{ pm[0].libelle }}** arrive en tête avec
 {{ pm[0].victoires_par_aventurier }} victoire par personne, de peu devant
-la famille « {{ pm[1].libelle }} » ({{ pm[1].victoires_par_aventurier }}). Rien de
-surprenant. Mais le fait notable est ailleurs : cet avantage athlétique
+la famille « {{ pm[1].libelle }} » ({{ pm[1].victoires_par_aventurier }}). Rien de
+surprenant. Mais le fait notable est ailleurs : cet avantage athlétique
 **ne se convertit pas en victoires finales**. Le sport gagne les épreuves et
 perd le jury.
 
 {% include graphiques/epreuves-age.svg %}
 
-L’âge trace une courbe nette : les **25-34 ans** remportent
+L’âge trace une courbe nette : les **25-34 ans** remportent
 {{ e.victoires_25_34 }} épreuve par personne, les **45 ans et plus**
 {{ e.rapport_45_et_plus }} fois moins. C’est le seul domaine où
 l’âge pèse aussi franchement — et il éclaire la page
-[longévité]({{ '/statistiques/longevite/' | relative_url }}) : si les plus âgés
+[longévité]({{ '/statistiques/longevite/' | relative_url }}) : si les plus âgés
 sortent plus tôt, c’est d’abord qu’ils gagnent moins d’immunités.
 
 {% include graphiques/epreuves-genre.svg %}
 
-L’écart entre femmes et hommes est le plus marqué de tout ce site :
+L’écart entre femmes et hommes est le plus marqué de tout ce site :
 **{{ e.par_genre[1].victoires_par_aventurier }}** épreuve par aventurier contre
 **{{ e.par_genre[0].victoires_par_aventurier }}** par aventurière, sur des
 effectifs pourtant identiques. Rapproché du fait que les deux gagnent la finale
-aussi souvent, cela dit une chose simple : **la domination sportive n’est pas
+aussi souvent, cela dit une chose simple : **la domination sportive n’est pas
 ce qui fait gagner Koh-Lanta.**
 
-## Gagner la première mène-t-il plus loin ?
+## Gagner la première mène-t-il plus loin ?
 
 {% assign pe = site.data.stats.premiere_epreuve %}
 La première épreuve individuelle d’une saison marque le début du jeu personnel.
 Celui qui la remporte tient en moyenne **{{ pe.survie_gagnants }} %** de la
 saison, contre **{{ pe.survie_ensemble }} %** pour l’ensemble des aventuriers.
 
-L’écart est net : {{ pe.ecart }} points. Mais il repose sur
+L’écart est net : {{ pe.ecart }} points. Mais il repose sur
 **{{ pe.effectif }} cas seulement** — une saison ne fournit qu’une première
 épreuve individuelle, et {{ pe.saisons_couvertes }} saisons en ont une de
-relevée. Et il est en partie mécanique : dans la plupart des saisons, cette épreuve se
+relevée. Et il est en partie mécanique : dans la plupart des saisons, cette épreuve se
 dispute après les premières sorties, quand l’ensemble compte aussi ceux qui sont
-partis avant. Aucun test du registre ne le mesure : il est donné pour ce qu’il est,
+partis avant. Aucun test du registre ne le mesure : il est donné pour ce qu’il est,
 une indication, pas une loi.
 
 ## Ce que cette page ne dit pas
 
 **{{ site.data.stats.mots.saisons_source_unique_maj }} saisons ne reposent que
-sur une source** — {{ e.saisons_source_unique_texte }} : le guide d’épisodes
+sur une source** — {{ e.saisons_source_unique_texte }} : le guide d’épisodes
 du wiki *Survivor*, seule page à donner leurs épreuves. Chaque épreuve à
 plusieurs gagnants y a été vérifiée sur la page de l’épisode, mais aucune autre
 source ne les recoupe.
 
 **Les épreuves de finale sont exclues.** Dans les dernières émissions, les
 tableaux sources changent de colonnes et y listent les qualifiés plutôt que le
-vainqueur : les lire comme des victoires en fabriquerait de fausses. Orientation
+vainqueur : les lire comme des victoires en fabriquerait de fausses. Orientation
 et poteaux ne sont donc pas comptés.
 
 **La nature des épreuves ne se croise pas avec ces comptes.** Elle vient du
-catalogue du wiki, qui ne donne pas l’épisode : les {{ e.epreuves }} épreuves
+catalogue du wiki, qui ne donne pas l’épisode : les {{ e.epreuves }} épreuves
 relevées épisode par épisode n’en reçoivent aucune. Ce que la nature dit — et
 ne dit pas — est mesuré plus haut, sur les citations du catalogue.
 
-## Gagner le confort rend-il cible ? Non
+## Gagner le confort rend-il cible ? Non
 
 {% assign cf = site.data.stats.modeles.confort_maudit %}
 
-L’idée court depuis {{ site.data.stats.mots.etendue_annees }} ans : celui qui gagne le confort, qui part manger
+L’idée court depuis {{ site.data.stats.mots.etendue_annees }} ans : celui qui gagne le confort, qui part manger
 et dormir au sec pendant que les autres ont faim, se fait écrire au conseil du
 soir. Elle se teste sur le conseil du **même épisode**.
 
@@ -389,7 +389,7 @@ Sur **{{ cf.conseils }} conseils** et {{ cf.bulletins }} bulletins,
 {{ cf.p }}. **La malédiction du confort n’existe pas.**
 
 L’intervalle laisse encore place à un écart de {{ cf.marge }} points dans un sens ou
-dans l’autre : ce qu’on peut affirmer, c’est qu’il n’y a pas d’effet marqué.
+dans l’autre : ce qu’on peut affirmer, c’est qu’il n’y a pas d’effet marqué.
 
 {% assign cw = site.data.stats.modeles.autour_du_feu.confort | first %}
 {% assign cn = site.data.stats.modeles.autour_du_feu.confort | last %}
@@ -400,7 +400,7 @@ bulletins.</strong> Sachant qu’on vient de gagner le confort de l’épisode, 
 ({{ cw.cas }} sur {{ cw.effectif }}), contre {{ cn.probabilite }} % pour ceux qui
 n’ont rien gagné — {{ tcf.observe_arrondi }} points, {{ tcf.ecart_types }}
 écarts-types, p ajustée {{ tcf.p_ajustee }}. L’écart va cette fois dans le sens
-de la légende, mais il reste <em>non concluant</em> : à {{ cw.effectif }}
+de la légende, mais il reste <em>non concluant</em> : à {{ cw.effectif }}
 présences, on ne peut pas le distinguer d’un tirage. Deux mesures de la même
 idée, deux verdicts prudents et un seul enseignement — la malédiction n’est pas
 établie.

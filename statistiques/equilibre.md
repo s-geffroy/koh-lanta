@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Le jeu tenu serré
-description: "Koh-Lanta tient-il le jeu serré ? Le risque monte avec la saison et la tribu en difficulté semble se rattraper : deux impressions, deux tests."
+description: "Koh-Lanta tient-il le jeu serré ? Le risque monte avec la saison et la tribu en difficulté semble se rattraper : deux impressions, deux tests."
 permalink: /statistiques/equilibre/
 chapeau: >-
   Le risque monte à mesure que la saison avance, et la tribu en difficulté
@@ -15,11 +15,11 @@ chapeau: >-
 {% assign hm = m.hasard_mecanique %}
 {% assign q = site.data.stats.risque %}
 
-## « Le jeu devient plus dangereux » — non, le camp se vide
+## « Le jeu devient plus dangereux » — non, le camp se vide
 
 La page [Comment on sort]({{ '/statistiques/sorties/' | relative_url }}) publie
 une courbe de risque qui monte de {{ q.tranches[1].risque }} % au premier dixième de saison à
-{{ q.tranches[9].risque }} % au neuvième, et la commente : « tenir n’allège rien ». La lecture est tentante. Elle
+{{ q.tranches[9].risque }} % au neuvième, et la commente : « tenir n’allège rien ». La lecture est tentante. Elle
 oublie une chose.
 
 <p class="note"><strong>Un conseil fait sortir une personne, quel que soit le
@@ -31,7 +31,7 @@ mécaniquement 1 sur le nombre de présents — et cette fraction monte toute se
 
 <p class="legende-figure">Risque observé de sortir à un conseil, par dixième de
 saison, face au simple 1 ÷ nombre de présents. Les deux derniers paliers sont
-ceux de la finale, où tout le monde sort le même jour : la comparaison n’y a
+ceux de la finale, où tout le monde sort le même jour : la comparaison n’y a
 plus de sens.</p>
 
 <div class="constat">
@@ -39,20 +39,20 @@ plus de sens.</p>
   observé vaut <b>{{ hm.rapport_moyen }} fois</b> le risque purement
   arithmétique — et ce rapport est le même du premier au huitième dixième de
   saison.</p>
-  <p>La montée de {{ q.tranches[1].risque }} % à {{ q.tranches[9].risque }} % n’est donc <b>pas</b> une propriété du jeu :
+  <p>La montée de {{ q.tranches[1].risque }} % à {{ q.tranches[9].risque }} % n’est donc <b>pas</b> une propriété du jeu :
   c’est un quotient dont le dénominateur diminue. Le jeu ajoute un facteur
   constant, pas une accélération.</p>
 </div>
 
-Le facteur {{ hm.rapport_moyen }} n’est pas rien : il vient des sorties qui ne
+Le facteur {{ hm.rapport_moyen }} n’est pas rien : il vient des sorties qui ne
 passent pas par un conseil — abandons médicaux, doubles éliminations. Mais il ne
 grandit pas avec l’avancement. **Tenir n’allège rien, et n’alourdit rien non
 plus.**
 
-## La tribu en infériorité se rattrape-t-elle ?
+## La tribu en infériorité se rattrape-t-elle ?
 
 Après un conseil perdu, une tribu se retrouve à cinq contre sept. L’impression
-qu’elle gagne alors « comme par miracle » est un classique du genre. Elle se
+qu’elle gagne alors « comme par miracle » est un classique du genre. Elle se
 teste directement.
 
 <div class="constat">
@@ -60,7 +60,7 @@ teste directement.
   {{ r.saisons }} saisons, chaque aventurier d’avance multiplie la cote de
   victoire par <b>{{ r.rapport_de_cotes }}</b> — intervalle
   {{ r.bas }} à {{ r.haut }}, p = {{ r.p }}.</p>
-  <p>L’intervalle contient 1 : <b>l’effectif ne change rien</b>, ni dans un sens
+  <p>L’intervalle contient 1 : <b>l’effectif ne change rien</b>, ni dans un sens
   ni dans l’autre. Il n’y a ni avantage du nombre, ni rattrapage.</p>
 </div>
 
@@ -72,22 +72,22 @@ c’est qu’il n’y a pas d’effet massif.
 
 ## Qui sort plus vite, à saison identique
 
-Le reste du site compare des moyennes : les femmes tiennent moins longtemps, les
+Le reste du site compare des moyennes : les femmes tiennent moins longtemps, les
 plus de 45 ans aussi, l’encadrement accède moins à la finale. Ces écarts se
 mélangent — les castings n’ont pas la même composition d’une année à l’autre.
 Un modèle de durée les sépare.
 
 <p class="note"><strong>Le modèle.</strong> Un modèle de Cox stratifié par
-saison : on ne compare jamais que des aventuriers du <em>même</em> plateau, ce
+saison : on ne compare jamais que des aventuriers du <em>même</em> plateau, ce
 qui neutralise d’un coup la durée de la saison, la taille du casting et
-l’époque. Les abandons ne sont pas des éliminations : ils sont censurés, comme
+l’époque. Les abandons ne sont pas des éliminations : ils sont censurés, comme
 les finalistes et les vainqueurs. {{ cox.effectif }} participations,
 {{ cox.eliminations }} éliminations, {{ cox.censures }} sorties censurées.</p>
 
 {% include graphiques/equilibre-cox.svg %}
 
 <p class="legende-figure">Rapports de risque d’élimination. Au-dessus de 1, on
-sort plus vite ; en dessous, plus lentement. Un intervalle qui traverse 1
+sort plus vite ; en dessous, plus lentement. Un intervalle qui traverse 1
 signifie que ces données ne permettent pas de conclure.</p>
 
 <div class="tableau-large">
@@ -112,27 +112,27 @@ Trois lignes méritent d’être lues de près.
 {% assign c_revenu = cx | where: "variable", "Déjà venu" | first %}
 {% assign c_cadre = cx | where: "variable", "Métier — Encadrement et professions intellectuelles" | first %}
 {% assign c_femme = cx | where: "variable", "Femme" | first %}
-**« Déjà venu » : risque ×{{ c_revenu.rapport }}.** Un aventurier qui a joué une autre saison est
+**« Déjà venu » : risque ×{{ c_revenu.rapport }}.** Un aventurier qui a joué une autre saison est
 éliminé **{{ m.equilibre.cox.deja_venu_inverse }} fois moins vite**, à âge, sexe, métier et saison identiques.
 C’est le plus gros effet de tout le modèle — et c’est un piège. La production
-rappelle ceux qui sont allés loin : l’avantage était acquis **avant** le retour,
+rappelle ceux qui sont allés loin : l’avantage était acquis **avant** le retour,
 il n’est pas causé par lui. C’est exactement le biais que documente
 [Les revenants]({{ '/statistiques/revenants/' | relative_url }}), et le voir
 ressortir ici, en tête d’un modèle multivarié, montre qu’aucun contrôle
 statistique ne répare une sélection sur la variable qu’on étudie.
 
-**L’encadrement : risque ×{{ c_cadre.rapport }}**, intervalle
+**L’encadrement : risque ×{{ c_cadre.rapport }}**, intervalle
 {{ c_cadre.bas }} à {{ c_cadre.haut }}. Les cadres et dirigeants sortent
 nettement plus vite que la référence, à âge et sexe égaux. C’est la
 version contrôlée de ce que
 [Le métier]({{ '/statistiques/professions/' | relative_url }}) montrait en parts
 brutes, et le résultat tient.
 
-**Femme : risque ×{{ c_femme.rapport }}**, intervalle
+**Femme : risque ×{{ c_femme.rapport }}**, intervalle
 {{ c_femme.bas }} à {{ c_femme.haut }}. L’écart hommes-femmes que le
 site décrit depuis toujours **rétrécit jusqu’au bord du détectable** une fois
 l’âge, le métier et la saison tenus constants. On ne peut ni l’affirmer ni
-l’écarter : l’intervalle effleure 1. C’est la réponse honnête, et elle est moins
+l’écarter : l’intervalle effleure 1. C’est la réponse honnête, et elle est moins
 tranchée que la moyenne brute ne le laissait croire.
 
 Ni l’âge ni la couleur de la tribu initiale ne bougent — ce dernier point confirmant, par
@@ -144,7 +144,7 @@ une autre voie, ce que dit
 {% assign me = m.mecaniques %}
 Les {{ me.saisons }} saisons exploitables ne portent que
 {{ me.mecaniques_testees | size }} mécaniques présentes assez souvent pour être
-testées : le collier d’immunité et les destins liés. Ni l’une ni l’autre ne
+testées : le collier d’immunité et les destins liés. Ni l’une ni l’autre ne
 déplace la dispersion des votes ou le taux d’abandon d’une quantité qu’on puisse
 distinguer de zéro — tous les intervalles contiennent zéro.
 
@@ -166,5 +166,5 @@ distinguer de zéro — tous les intervalles contiennent zéro.
 </table>
 </div>
 
-Ce n’est pas « les mécaniques ne servent à rien » : c’est « {{ site.data.stats.mots.mecaniques_saisons }} saisons ne
-suffisent pas à mesurer leur effet ». La différence compte.
+Ce n’est pas « les mécaniques ne servent à rien » : c’est « {{ site.data.stats.mots.mecaniques_saisons }} saisons ne
+suffisent pas à mesurer leur effet ». La différence compte.

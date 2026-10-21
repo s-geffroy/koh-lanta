@@ -25,7 +25,7 @@ layout: default
 
 {%- if s.vainqueurs.size > 0 %}
 <div class="constat">
-  <p>{% if s.vainqueurs.size > 1 %}<b>Vainqueurs</b>{% else %}<b>Vainqueur</b>{% endif %} :
+  <p>{% if s.vainqueurs.size > 1 %}<b>Vainqueurs</b>{% else %}<b>Vainqueur</b>{% endif %} :
   {% for v in s.vainqueurs %}<a href="{{ '/aventuriers/' | append: v.id | append: '/' | relative_url }}">{{ v.nom }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}.</p>
   {%- if s.egalite_jury %}
   {%- comment -%}
@@ -34,11 +34,11 @@ layout: default
     conseils de type `jury` -- un par finaliste, chacun portant ses voix.
     Rien n'est ecrit a la main, et rien n'est calcule ici.
   {%- endcomment -%}
-  <p>Les deux sont <b>ex æquo</b> : {{ s.egalite_jury.voix }} voix contre
+  <p>Les deux sont <b>ex æquo</b> : {{ s.egalite_jury.voix }} voix contre
   {{ s.egalite_jury.voix }} sur les {{ s.egalite_jury.jures }} du jury final.</p>
   {%- endif %}
   {%- if s.finalistes.size > 0 %}
-  <p>{% if s.finalistes.size > 1 %}Finalistes{% else %}Finaliste{% endif %} :
+  <p>{% if s.finalistes.size > 1 %}Finalistes{% else %}Finaliste{% endif %} :
   {% for v in s.finalistes %}<a href="{{ '/aventuriers/' | append: v.id | append: '/' | relative_url }}">{{ v.nom }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}.</p>
   {%- endif %}
 </div>
@@ -51,7 +51,7 @@ layout: default
   <b>{{ s.conseils_complets }}</b> dont le dépouillement est connu au bulletin
   près, pour {{ s.bulletins }} bulletins relevés.</p>
   <p>Un conseil dont le dépouillement est incomplet compte pour ses agrégats —
-  qui part, avec combien de voix — mais reste hors de toute mesure au bulletin :
+  qui part, avec combien de voix — mais reste hors de toute mesure au bulletin :
   alliances, réciprocité, qui-vise-qui.
   <a href="{{ '/completude/' | relative_url }}">La grille de complétude</a> dit
   ce qui manque et pourquoi.</p>
@@ -67,7 +67,7 @@ layout: default
     « 39.5 % ». Liquid n'a pas de filtre de milliers et ce depot ne calcule
     pas dans un gabarit : la forme lisible vient de tools/build_fiches.py.
   {%- endcomment -%}
-  <p>Moyenne : <b>{{ s.audience_moyenne_texte }}</b> téléspectateurs{% if s.audience_pdm_texte %}, {{ s.audience_pdm_texte }} % de part de marché{% endif %}.</p>
+  <p>Moyenne : <b>{{ s.audience_moyenne_texte }}</b> téléspectateurs{% if s.audience_pdm_texte %}, {{ s.audience_pdm_texte }} % de part de marché{% endif %}.</p>
   <p>Lancement {{ s.audience_lancement_texte }}, finale {{ s.audience_finale_texte }}.
   <a href="{{ '/statistiques/audience/' | relative_url }}">Ce que l’audience dit du jeu</a></p>
 </div>
@@ -75,7 +75,7 @@ layout: default
 
 <h2>Le casting</h2>
 
-<p>Rangés par ordre d’arrivée dans le jeu : le vainqueur d’abord, puis les
+<p>Rangés par ordre d’arrivée dans le jeu : le vainqueur d’abord, puis les
 finalistes, puis les autres du plus tard au plus tôt sorti. La colonne
 <em>rang</em> renvoie au
 <a href="{{ '/statistiques/top/' | relative_url }}">classement des joueurs</a>,

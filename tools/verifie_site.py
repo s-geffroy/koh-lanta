@@ -1274,6 +1274,68 @@ def controler_markdown_dans_html(c, jeux):
                          f"HTML qui ne l'interpretera pas — « {x.group(0)[:60]} »")
 
 
+
+# --- Les espaces insecables ---------------------------------------------------
+#
+# Une espace ordinaire avant « : ; ? ! » » laisse le navigateur couper la ligne
+# juste avant le signe. Il y en avait 7 981 sur les 622 pages publiees le 21
+# octobre 2026. La regle est posee a l'ecriture (donnees.insecables, appelee
+# par donnees.ecrire, graphiques.ecrire et build_fiches) : ce controle refuse
+# ce qui y echappe -- une page ecrite a la main, un gabarit, une donnee ecrite
+# sans passer par donnees.ecrire. Meme fonction, pour qu'il n'existe pas deux
+# definitions de la regle.
+RE_PROTEGE_TYPO = re.compile(
+    r"\{%-?\s*comment\s*-?%\}.*?\{%-?\s*endcomment\s*-?%\}|<!--.*?-->|\{\{.*?\}\}|\{%.*?%\}"
+    r"|<code>.*?</code>|```.*?```|`[^`\n]+`|<script\b.*?</script>|<style\b.*?</style>|<[^>]+>", re.S)
+
+
+def _espaces_fautives(texte):
+    """Les passages ou insecables() changerait quelque chose (texte seul)."""
+    gardes = []
+    def garde(m):
+        gardes.append(m.group(0))
+        return ""
+    nu = RE_PROTEGE_TYPO.sub(garde, texte)
+    corrige = donnees.insecables(nu)
+    return [nu[max(0, i - 25):i + 3].replace("", "…").replace("\n", " ")
+            for i, (a, b) in enumerate(zip(nu, corrige)) if a != b]
+
+
+def controler_insecables(c, jeux):
+    """Refuse une espace ordinaire devant la ponctuation haute."""
+    def signaler(rel, fautes):
+        if fautes:
+            c.erreur(f"{rel} : {len(fautes)} espace(s) ordinaire(s) devant « : ; ? ! » » "
+                     f"ou apres « « » — ex. « {str(fautes[0]).strip()[:70]} » ; "
+                     f"donnees.insecables() les pose")
+    fichiers = list(pages())
+    for sous in ("_layouts", "_includes"):
+        dossier = os.path.join(RACINE, sous)
+        fichiers += [os.path.join(dossier, f) for f in sorted(os.listdir(dossier))
+                     if f.endswith(".html")]
+    for chemin in sorted(fichiers):
+        texte = open(chemin, encoding="utf-8").read()
+        m = RE_FRONT.match(texte)
+        fautes = []
+        if m:
+            for ligne in m.group(1).split("\n"):
+                if ligne.lstrip().startswith("#"):
+                    continue
+                mm = re.match(r"^\s*[\w-]+:(.*)$", ligne)
+                fautes += _espaces_fautives(mm.group(1) if mm else ligne)
+            texte = texte[m.end():]
+        signaler(os.path.relpath(chemin, RACINE), fautes + _espaces_fautives(texte))
+    for nom, jeu in sorted(jeux.items()):
+        fautes = [t for t in _textes(jeu) if donnees.insecables(t) != t]
+        signaler(f"_data/{nom}.yml", fautes)
+    figures = os.path.join(RACINE, "_includes", "graphiques")
+    for nom in sorted(os.listdir(figures)) if os.path.isdir(figures) else []:
+        texte = open(os.path.join(figures, nom), encoding="utf-8").read()
+        texte = re.sub(r"<style\b.*?</style>", " ", texte, flags=re.S)
+        fautes = [t for t in re.findall(r">([^<>]+)<", texte) if donnees.insecables(t) != t]
+        signaler(f"_includes/graphiques/{nom}", fautes)
+
+
 def controler_calculs_liquid(c):
     """Refuse un calcul ou une mise en forme faits en Liquid."""
     for dossier, _, fichiers in os.walk(RACINE):
@@ -1826,6 +1888,7 @@ def main():
     controler_comptes_annonces(c)
     controler_calculs_liquid(c)
     controler_markdown_dans_html(c, jeux)
+    controler_insecables(c, jeux)
     controler_articles(c)
     controler_donnees_structurees(c)
     controler_yaml_ambigu(c)

@@ -1,10 +1,10 @@
 ---
 layout: page
 title: Qui vise qui
-description: "Qui vise qui à Koh-Lanta : écrit-on le nom de celui qui ne nous ressemble pas ? Un peu pour le sexe et le métier, nettement pour la tribu initiale."
+description: "Qui vise qui à Koh-Lanta : écrit-on le nom de celui qui ne nous ressemble pas ? Un peu pour le sexe et le métier, nettement pour la tribu initiale."
 permalink: /statistiques/qui-vise-qui/
 chapeau: >-
-  Écrit-on le nom de celui qui ne nous ressemble pas ? Un peu, pour le sexe et
+  Écrit-on le nom de celui qui ne nous ressemble pas ? Un peu, pour le sexe et
   le métier. Nettement, pour la tribu initiale — et cela survit à la
   disparition des tribus.
 ---
@@ -13,31 +13,31 @@ chapeau: >-
 {% assign h = m.homophilie %}
 {% assign reg = m.registre %}
 
-Le sexe, l’âge, le métier, la tribu initiale : quatre façons de se ressembler
+Le sexe, l’âge, le métier, la tribu initiale : quatre façons de se ressembler
 ou non. La page [Les conseils]({{ '/statistiques/conseils/' | relative_url }})
 donne les parts brutes — {% assign vg = site.data.stats.conseils.vote_par_genre | first %}{{ vg.part }} %
 des bulletins sont écrits par {{ vg.libelle }}. Ces
-parts ne veulent rien dire seules : si le camp entier a un nom en tête ce
+parts ne veulent rien dire seules : si le camp entier a un nom en tête ce
 soir-là, chacun l’écrit, quel que soit son propre profil.
 
 <p class="note"><strong>Le point de comparaison.</strong> On redistribue les
 bulletins d’un conseil entre ses votants, en gardant <em>exactement</em> le même
-jeu de cibles. La popularité d’une cible est donc parfaitement neutralisée :
+jeu de cibles. La popularité d’une cible est donc parfaitement neutralisée :
 quatre voix contre l’un et deux contre l’autre restent quatre et deux. Ne
 subsiste que la question posée — qui, parmi ceux qui ont écrit ces noms, a écrit
-celui-là. Base : {{ h.bulletins }} bulletins sur {{ h.conseils }} conseils au
+celui-là. Base : {{ h.bulletins }} bulletins sur {{ h.conseils }} conseils au
 dépouillement complet.</p>
 
 ## D’abord, une erreur que j’ai faite — et ce qu’elle a produit
 
 La première version de ce modèle nul rebattait les bulletins sans contrainte.
-Elle laissait donc un votant recevoir **son propre nom** : un couple qui
+Elle laissait donc un votant recevoir **son propre nom** : un couple qui
 n’existe dans aucun conseil réel — on ne vote pas contre soi — et qui partage
 forcément le sexe, le métier et la tribu initiale de son auteur.
 
 **12,5 % des bulletins tirés étaient de ce type**, contre 0 sur
 {{ h.bulletins }} dans les données. L’attendu en était gonflé, et tout écart
-paraissait spectaculaire :
+paraissait spectaculaire :
 
 {% assign ts = reg | where: "cle", "vote_meme_sexe" | first %}
 {% assign ta = reg | where: "cle", "vote_ecart_age" | first %}
@@ -56,13 +56,13 @@ paraissait spectaculaire :
 </table>
 </div>
 
-Le défaut gonflait les quatre écarts. Corrigé, celui de l’âge disparaît ; ceux
-du sexe et du métier survivent, très réduits ; seule la tribu initiale garde un écart
+Le défaut gonflait les quatre écarts. Corrigé, celui de l’âge disparaît ; ceux
+du sexe et du métier survivent, très réduits ; seule la tribu initiale garde un écart
 massif. C’est dit ici parce que c’est la leçon
-principale de cette page : **un test de permutation ne vaut que ce que vaut son
+principale de cette page : **un test de permutation ne vaut que ce que vaut son
 modèle nul**, et un nul mal contraint produit des écarts énormes et faux.
 
-## Le sexe : un peu
+## Le sexe : un peu
 
 {% assign t = reg | where: "cle", "vote_meme_sexe" | first %}
 
@@ -71,13 +71,13 @@ modèle nul**, et un nul mal contraint produit des écarts énormes et faux.
 <p class="legende-figure">Part des bulletins visant quelqu’un du même sexe.</p>
 
 {{ t.observe }} % contre {{ t.attendu }} % attendus — {{ t.ecart_types }}
-écarts-types, p ajustée {{ t.p_ajustee }}. **Retenu, et petit** : on vise un peu
+écarts-types, p ajustée {{ t.p_ajustee }}. **Retenu, et petit** : on vise un peu
 moins souvent quelqu’un de son sexe que le partage des cibles ne le voudrait.
 Les parts brutes de la page des conseils, elles, tiennent surtout à la
-composition des conseils : une fois celle-ci neutralisée, il reste peu de
+composition des conseils : une fois celle-ci neutralisée, il reste peu de
 chose.
 
-## Le métier : un peu aussi
+## Le métier : un peu aussi
 
 {% assign t = reg | where: "cle", "vote_meme_metier" | first %}
 
@@ -86,12 +86,12 @@ chose.
 <p class="legende-figure">Part des bulletins visant la même famille de métier.</p>
 
 {{ t.observe }} % contre {{ t.attendu }} % — {{ t.ecart_types }} écarts-types,
-p ajustée {{ t.p_ajustee }}. **Retenu, et petit** : on vise un peu moins sa
+p ajustée {{ t.p_ajustee }}. **Retenu, et petit** : on vise un peu moins sa
 propre famille de métier que le hasard ne le voudrait. Si on la vise
 **rarement**, c’est d’abord parce que peu de gens la partagent dans un camp de
-vingt ; l’écart au hasard, lui, est mince.
+vingt ; l’écart au hasard, lui, est mince.
 
-## L’âge : à peine
+## L’âge : à peine
 
 {% assign t = reg | where: "cle", "vote_ecart_age" | first %}
 
@@ -104,12 +104,12 @@ vingt ; l’écart au hasard, lui, est mince.
 tests multiples (p ajustée {{ t.p_ajustee }}), et **il est minuscule**. Il n’y a
 rien à en tirer.
 
-## Le voisin : peut-être
+## Le voisin : peut-être
 
 {% assign td = site.data.stats.modeles.registre | where: "cle", "vote_meme_departement" | first %}
 
 Quatre traits étaient testés jusqu’ici. En voici un cinquième, qu’on n’avait
-jamais posé : **épargne-t-on celui qui vit dans le même département ?** Les
+jamais posé : **épargne-t-on celui qui vit dans le même département ?** Les
 aventuriers ne se connaissent pas avant le tournage, mais un voisin est un
 voisin — on se découvre du pays commun, et l’on suppose que cela crée quelque
 chose.
@@ -122,7 +122,7 @@ l’intérieur de chaque conseil.</p>
 
 <div class="constat">
   <p><b>{{ td.observe }} %</b> des bulletins visent quelqu’un du même
-  département, pour <b>{{ td.attendu }} %</b> attendus : l’observé est
+  département, pour <b>{{ td.attendu }} %</b> attendus : l’observé est
   <b>sous</b> l’attendu, {{ td.ecart_types }} écarts-types, p brute {{ td.p }},
   p ajustée <b>{{ td.p_ajustee }}</b>. <b>Non concluant, de justesse.</b></p>
   <p>On vise le voisin un peu moins souvent que le partage des bulletins ne le
@@ -131,19 +131,19 @@ l’intérieur de chaque conseil.</p>
 </div>
 
 <p class="note"><strong>Cette section a été écrite deux fois trop vite.</strong>
-Elle concluait d’abord « non concluant », sur une p ajustée de 0,077. Les
+Elle concluait d’abord « non concluant », sur une p ajustée de 0,077. Les
 <a href="{{ '/sources/' | relative_url }}">bulletins sans votant</a> — vote noir,
 pénalité, malédiction — ont rendu des conseils au dépouillement complet, et le test
-descend à {{ td.p_ajustee }}. La section a alors écrit « retenu » : c’était
+descend à {{ td.p_ajustee }}. La section a alors écrit « retenu » : c’était
 faux, le seuil n’est pas franchi. Les couples de même département restent
 rares dans un camp de huit, et le test manque de bulletins pour trancher.</p>
 
-## La tribu initiale : celle qui compte vraiment
+## La tribu initiale : celle qui compte vraiment
 
 {% assign t = reg | where: "cle", "vote_bandeau_apres_fusion" | first %}
 
-Avant la réunification, un conseil ne réunit qu’une tribu : tous les bulletins y
-sont forcément « même tribu initiale », et la question ne s’y pose pas. On mesure donc
+Avant la réunification, un conseil ne réunit qu’une tribu : tous les bulletins y
+sont forcément « même tribu initiale », et la question ne s’y pose pas. On mesure donc
 sur les **{{ h.conseils_mixtes }} conseils réunissant plusieurs tribus initiales**,
 soit {{ h.bulletins_mixtes }} bulletins.
 
@@ -163,11 +163,11 @@ tribu initiale, sur les seuls conseils mixtes.</p>
 </div>
 
 C’est la même chose que la persistance des alliances, vue d’un autre angle et
-mesurée sur d’autres bulletins : ce qui se joue au conseil n’a pas grand-chose à
+mesurée sur d’autres bulletins : ce qui se joue au conseil n’a pas grand-chose à
 voir avec ce que les gens sont, et tout à voir avec **qui ils ont côtoyé**.
 [Les alliances]({{ '/statistiques/alliances/' | relative_url }}).
 
-<p class="note">Ce que cette page ne dit pas. Elle ne mesure aucune intention :
+<p class="note">Ce que cette page ne dit pas. Elle ne mesure aucune intention :
 un bulletin ne dit pas pourquoi il a été écrit. Épargner sa tribu initiale peut
 tenir à la loyauté comme au simple fait qu’on connaît mieux ses forces, ou qu’on
 a besoin d’elle au vote suivant. Elle ne porte par ailleurs que sur les conseils

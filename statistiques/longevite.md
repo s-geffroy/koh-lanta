@@ -1,16 +1,16 @@
 ---
 layout: page
 title: Âge et longévité
-description: "Âge et longévité à Koh-Lanta : à quel âge tient-on le plus longtemps, et pourquoi les femmes sortent-elles plus tôt tout en gagnant autant de finales ?"
+description: "Âge et longévité à Koh-Lanta : à quel âge tient-on le plus longtemps, et pourquoi les femmes sortent-elles plus tôt tout en gagnant autant de finales ?"
 permalink: /statistiques/longevite/
 chapeau: >-
-  À quel âge tient-on le plus longtemps ? Et pourquoi les femmes sortent-elles plus tôt tout en gagnant autant de finales ?
+  À quel âge tient-on le plus longtemps ? Et pourquoi les femmes sortent-elles plus tôt tout en gagnant autant de finales ?
 ---
 
 {% assign s = site.data.stats %}
 
-Combien de temps tient-on ? La mesure retenue ici est la **part de la saison
-passée dans le jeu** : sortir au jour 20 d’une saison de 40 jours vaut 50 %.
+Combien de temps tient-on ? La mesure retenue ici est la **part de la saison
+passée dans le jeu** : sortir au jour 20 d’une saison de 40 jours vaut 50 %.
 Elle permet de comparer des éditions de durées différentes.
 
 ## L’âge
@@ -18,7 +18,7 @@ Elle permet de comparer des éditions de durées différentes.
 {% include graphiques/age-survie.svg %}
 
 La courbe n’est pas celle qu’on attendrait. Ce ne sont ni les plus jeunes ni les
-plus âgés qui durent : **la tranche 30-34 ans tient le plus longtemps**
+plus âgés qui durent : **la tranche 30-34 ans tient le plus longtemps**
 ({{ s.age[2].survie_moyenne }} % de la saison), tandis que les 18-24 ans
 ({{ s.age[0].survie_moyenne }} %) et les 45 ans et plus
 ({{ s.age[5].survie_moyenne }} %) sortent nettement plus tôt.
@@ -58,24 +58,24 @@ L’accès à la finale confirme le creux du milieu de trentaine et l’avantage
 {% assign tdo = site.data.stats.modeles.registre | where: "cle", "doyen_du_camp" | first %}
 
 Les moyennes ci-dessus portent sur des carrières entières. Posée conseil par
-conseil, la question devient : **le plus âgé des présents part-il plus souvent
+conseil, la question devient : **le plus âgé des présents part-il plus souvent
 que les autres ?**
 
 Il part dans {{ af.age[0].probabilite }} % des cas, contre
 {{ af.age[1].probabilite }} % pour ceux qui ne sont ni le plus âgé ni le plus
 jeune — {{ af.age_ecart }} points d’écart, qui ressemblent fort à un résultat. Ils
-n’en sont pas : **on est plus souvent le doyen d’un camp de six que d’un camp de douze**,
+n’en sont pas : **on est plus souvent le doyen d’un camp de six que d’un camp de douze**,
 et un camp de six élimine une personne sur six. Le hasard propre à cette
 catégorie vaut {{ af.age[0].hasard }} %, pas {{ af.hasard }} %. Une fois ce
 décalage absorbé — et en comparant le doyen à **tous** les autres présents,
 benjamins compris — il reste {{ tdo.observe_arrondi }} points,
-{{ tdo.ecart_types }} écarts-types, p ajustée {{ tdo.p_ajustee }} :
+{{ tdo.ecart_types }} écarts-types, p ajustée {{ tdo.p_ajustee }} :
 **non concluant**.
 [Sachant qui est autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }}).
 
 ## Femmes et hommes
 
-Le casting est **rigoureusement paritaire** :
+Le casting est **rigoureusement paritaire** :
 {{ s.genre.resume[0].effectif }} femmes pour
 {{ s.genre.resume[1].effectif }} hommes, soit
 {{ s.genre.resume[0].part_du_casting }} % contre
@@ -87,7 +87,7 @@ l’équilibre, et le fait depuis le début.
 <p class="legende-figure">Part moyenne de la saison passée dans le jeu, par
 décennie.</p>
 
-L’écart de longévité, lui, est constant : les hommes durent en moyenne
+L’écart de longévité, lui, est constant : les hommes durent en moyenne
 **{{ s.genre.resume[1].survie_moyenne }} %** de la saison contre
 **{{ s.genre.resume[0].survie_moyenne }} %** pour les femmes. Il se resserre
 dans les années 2020 sans disparaître.
@@ -99,7 +99,7 @@ identiques** — {{ s.genre.resume[0].taux_finale }} % contre
 {{ s.genre.resume[1].taux_finale }} % — et les victoires se partagent
 {{ s.vainqueurs.par_genre[0].effectif }} à {{ s.vainqueurs.par_genre[1].effectif }}.
 
-C’est le résultat le plus intéressant de cette page : les femmes sortent plus
+C’est le résultat le plus intéressant de cette page : les femmes sortent plus
 tôt **en moyenne**, mais celles qui passent la réunification vont au bout aussi
 souvent que les hommes. L’écart se joue dans la première moitié du jeu, pas dans
 la seconde.
@@ -108,7 +108,7 @@ la seconde.
 
 {% assign tsx = site.data.stats.modeles.registre | where: "cle", "sexe_minoritaire" | first %}
 
-Conseil par conseil, être une femme n’expose pas :
+Conseil par conseil, être une femme n’expose pas :
 {{ af.genre[0].probabilite }} % de risque de partir contre
 {{ af.genre[1].probabilite }} % pour un homme, ce que ces effectifs ne
 distinguent pas d’un tirage. En revanche, **être du sexe le moins représenté du
@@ -117,7 +117,7 @@ camp assis ce soir-là protège** — {{ af.sexe[0].probabilite }} % contre
 {{ tsx.observe_arrondi }} points, {{ tsx.ecart_types }} écarts-types, p
 ajustée {{ tsx.p_ajustee }}.
 
-L’explication la plus économe : **la majorité se mange elle-même.** Quand un
+L’explication la plus économe : **la majorité se mange elle-même.** Quand un
 camp compte six hommes et trois femmes, les bulletins des six se partagent entre
 eux. C’est cohérent avec le paragraphe ci-dessus — l’écart de longévité ne se
 joue pas au conseil, où les femmes ne sont pas visées davantage, mais avant lui.
@@ -148,14 +148,14 @@ joue pas au conseil, où les femmes ne sont pas visées davantage, mais avant lu
 
 ## Le peigne des torches
 
-La courbe de survie de l’accueil est une moyenne : elle dit combien il en reste,
+La courbe de survie de l’accueil est une moyenne : elle dit combien il en reste,
 pas qui. Voici la même chose sans moyenne du tout — **un trait par
 participation**, rangé du séjour le plus court au plus long.
 
 {% include graphiques/peigne-torches.svg %}
 
-<p class="peigne-legende">Un trait, un aventurier ; sa longueur, ses jours de
-jeu ; sa couleur, sa tribu initiale. La bordure droite de cette figure
+<p class="peigne-legende">Un trait, un aventurier ; sa longueur, ses jours de
+jeu ; sa couleur, sa tribu initiale. La bordure droite de cette figure
 <em>est</em> la courbe de survie du programme, dessinée avec ses individus au
 lieu d’un tracé. Les traits les plus courts sont ceux des premiers conseils, le
 bloc plein du bas celui des finalistes. Les éditions spéciales, plus courtes, y
@@ -165,17 +165,17 @@ sortie établi n’y sont pas.</p>
 
 ## Chaque aventurier, un point
 
-Les moyennes par tranche d’âge lissent ce que cette figure montre en clair : à
+Les moyennes par tranche d’âge lissent ce que cette figure montre en clair : à
 tout âge, on peut sortir au troisième jour comme aller en finale.
 
 {% include graphiques/longevite-nuage.svg %}
 
-<p class="legende-figure">Une participation à une saison classique par point :
+<p class="legende-figure">Une participation à une saison classique par point :
 l’âge en abscisse, la part de la saison tenue en ordonnée. Les vainqueurs et
 les finalistes sont dessinés par-dessus la masse, sans quoi elle les
 recouvrirait.</p>
 
-**La dispersion est le résultat.** Le nuage n’a pas de pente marquée : l’âge ne
+**La dispersion est le résultat.** Le nuage n’a pas de pente marquée : l’âge ne
 prédit pas la longévité. Ce qu’on voit, c’est une bande dense de sorties
 précoces à tous les âges, et des vainqueurs répartis de {{ site.data.stats.vainqueurs.age_min }} à
 {{ site.data.stats.vainqueurs.age_max }} ans.
@@ -195,7 +195,7 @@ précoces à tous les âges, et des vainqueurs répartis de {{ site.data.stats.v
 </table>
 </div>
 
-<p class="note">Ces écarts sont des moyennes brutes : ils mélangent l’âge, le
+<p class="note">Ces écarts sont des moyennes brutes : ils mélangent l’âge, le
 métier et l’époque, qui n’ont pas la même composition d’une saison à l’autre.
 <a href="{{ '/statistiques/equilibre/' | relative_url }}">Le jeu tenu serré</a>
 les sépare par un modèle de durée — et l’écart hommes-femmes y rétrécit

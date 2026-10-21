@@ -2,7 +2,7 @@
 <figcaption class="figure-titre" aria-hidden="true">L’âge moyen des deux tribus</figcaption>
 <svg class="graphique" viewBox="0 0 680 250" role="img" preserveAspectRatio="xMidYMid meet" aria-label="L&#x27;âge moyen des deux tribus">
   <title>L&#x27;âge moyen des deux tribus</title>
-  <desc>Les deux tribus initiales ont-elles des âges moyens plus proches qu&#x27;un tirage au hasard ne les ferait ?</desc>
+  <desc>Les deux tribus initiales ont-elles des âges moyens plus proches qu&#x27;un tirage au hasard ne les ferait ?</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
   <g class="marque"><title>1 tirages sur 10000 entre 1,71 et 1,89</title><rect x="68.7" y="203.9" width="20.3" height="0.1" fill="var(--serie-5)" opacity="0.45"/></g>
   <g class="marque"><title>7 tirages sur 10000 entre 1,89 et 2,07</title><rect x="90.5" y="203.0" width="20.3" height="1.0" fill="var(--serie-5)" opacity="0.45"/></g>
@@ -33,7 +33,7 @@
   <line x1="332.2" y1="40" x2="332.2" y2="204" stroke="var(--encre-muette)" stroke-width="1" stroke-dasharray="3 3"/>
   <text x="332.2" y="34.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">attendu</text>
   <line x1="567.0" y1="26" x2="567.0" y2="210" stroke="var(--encre)" stroke-width="2.4"/>
-  <text x="560.0" y="22.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="12" font-weight="600">observé : 5,75 années</text>
+  <text x="560.0" y="22.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="12" font-weight="600">observé : 5,75 années</text>
   <text x="46.0" y="222.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">1,54</text>
   <text x="658.0" y="222.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">6,49</text>
   <text x="658.0" y="238.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">10 000 tirages · p = 0,0046</text>

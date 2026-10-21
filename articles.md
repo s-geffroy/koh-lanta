@@ -3,8 +3,8 @@ layout: page
 espace: articles
 title: Les articles
 permalink: /articles/
-description: "Les articles de Koh-Lanta en chiffres : ce que 34 saisons de votes permettent d'écrire sur les alliances, la menace et l'appartenance."
-chapeau: "Le côté **Données** du site présente les chiffres. Ici, on s'en sert : chaque article s'appuie sur eux, et renvoie vers les pages où ils sont établis."
+description: "Les articles de Koh-Lanta en chiffres : ce que 34 saisons de votes permettent d'écrire sur les alliances, la menace et l'appartenance."
+chapeau: "Le côté **Données** du site présente les chiffres. Ici, on s'en sert : chaque article s'appuie sur eux, et renvoie vers les pages où ils sont établis."
 ---
 
 {%- comment -%}

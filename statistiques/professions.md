@@ -1,24 +1,24 @@
 ---
 layout: page
 title: Le métier
-description: "Le métier des aventuriers de Koh-Lanta : près de cinq cents professions déclarées, regroupées en familles, pour savoir laquelle mène le plus loin."
+description: "Le métier des aventuriers de Koh-Lanta : près de cinq cents professions déclarées, regroupées en familles, pour savoir laquelle mène le plus loin."
 permalink: /statistiques/professions/
 chapeau: >-
-  Près de cinq cents métiers déclarés, regroupés en familles — pour répondre à une question simple : lequel mène le plus loin ?
+  Près de cinq cents métiers déclarés, regroupés en familles — pour répondre à une question simple : lequel mène le plus loin ?
 ---
 
 {% assign s = site.data.stats %}
 
 Les {{ s.general.participations }} aventuriers déclarent
 {{ s.general.metiers_distincts }} métiers différents. Regroupés en familles, ils dessinent un casting — et
-permettent de répondre à une question simple : **quel métier mène le plus
+permettent de répondre à une question simple : **quel métier mène le plus
 loin ?**
 
 ## Qui part
 
 {% include graphiques/metiers-casting.svg %}
 
-L’encadrement domine largement le casting : cadres, dirigeants, gérants,
+L’encadrement domine largement le casting : cadres, dirigeants, gérants,
 ingénieurs et consultants forment à eux seuls {{ s.metiers[0].part_du_casting }} % des départs. Viennent
 ensuite le commerce, puis le sport et le coaching.
 
@@ -28,11 +28,11 @@ ensuite le commerce, puis le sport et le coaching.
 
 <p class="legende-figure">Part des aventuriers de chaque famille ayant atteint
 la finale. Seules les familles comptant au moins quinze aventuriers figurent
-ici : en dessous, un seul finaliste suffirait à faire bouger le taux de dix
+ici : en dessous, un seul finaliste suffirait à faire bouger le taux de dix
 points.</p>
 
 Le renversement est net. **L’encadrement, première famille du casting, est la
-dernière en taux d’accès à la finale** : {{ s.metiers[0].taux_finale }} % contre
+dernière en taux d’accès à la finale** : {{ s.metiers[0].taux_finale }} % contre
 {{ s.metiers[1].taux_finale }} % pour le commerce et
 {{ s.metiers[2].taux_finale }} % pour le sport. Être nombreux au départ ne
 protège de rien.
@@ -63,13 +63,13 @@ protège de rien.
 </div>
 
 <p class="note">Le regroupement des métiers en familles est fait par mots-clés,
-selon une table publique et relisible. Un intitulé comme « éducateur sportif »
-rejoint le sport et non l’enseignement, « maître-nageur » rejoint l’action et le
-secours et non le sport : l’ordre des règles tranche ces cas, et il est
+selon une table publique et relisible. Un intitulé comme « éducateur sportif »
+rejoint le sport et non l’enseignement, « maître-nageur » rejoint l’action et le
+secours et non le sport : l’ordre des règles tranche ces cas, et il est
 documenté. Voir les <a href="{{ '/sources/' | relative_url }}">sources</a>.</p>
 
 <p class="note">Ce renversement tient-il une fois l’âge, le sexe et la saison
-tenus constants ? Oui : <a href="{{ '/statistiques/equilibre/' | relative_url }}">
+tenus constants ? Oui : <a href="{{ '/statistiques/equilibre/' | relative_url }}">
 un modèle de durée</a> donne aux métiers d’encadrement un rapport de risque
 d’élimination de
 {% assign cc = site.data.stats.modeles.equilibre.cox.coefficients | where: "variable", "Métier — Encadrement et professions intellectuelles" | first %}

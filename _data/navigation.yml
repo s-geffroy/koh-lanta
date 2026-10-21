@@ -45,19 +45,19 @@
       entrees:
         - titre: "Le profil du vainqueur"
           url: /statistiques/vainqueurs/
-          resume: "Âge, sexe, métier, couleur : ce que les vainqueurs ont en commun."
+          resume: "Âge, sexe, métier, couleur : ce que les vainqueurs ont en commun."
         - titre: "Le métier"
           url: /statistiques/professions/
           resume: "Qui compose le casting, et quels métiers mènent le plus loin."
         - titre: "Les prénoms"
           url: /statistiques/prenoms/
-          resume: "Alexandra revient sept fois. Est-ce beaucoup ? Réponse chiffrée."
+          resume: "Alexandra revient sept fois. Est-ce beaucoup ? Réponse chiffrée."
         - titre: "Âge et longévité"
           url: /statistiques/longevite/
           resume: "À quel âge on tient, et l'écart entre femmes et hommes."
         - titre: "Les revenants"
           url: /statistiques/revenants/
-          resume: "Le retour paie-t-il ? Le chiffre évident est un piège."
+          resume: "Le retour paie-t-il ? Le chiffre évident est un piège."
         - titre: "La recette du casting"
           url: /statistiques/casting/
           modeles: true
@@ -65,7 +65,7 @@
         - titre: "D'où ils viennent"
           url: /statistiques/geographie/
           modeles: true
-          resume: "La Provence et l'Île-de-France fournissent plus que leur part ; l'outre-mer, presque rien."
+          resume: "La Provence et l'Île-de-France fournissent plus que leur part ; l'outre-mer, presque rien."
     - titre: "Le conseil"
       resume: "Le vote, ce qui le précède et ce qu’il décide."
       entrees:
@@ -85,7 +85,7 @@
         - titre: "Qui vise qui"
           url: /statistiques/qui-vise-qui/
           modeles: true
-          resume: "Le sexe et le métier un peu, la tribu initiale nettement : on épargne les siens."
+          resume: "Le sexe et le métier un peu, la tribu initiale nettement : on épargne les siens."
         - titre: "Sachant le conseil d'avant"
           url: /statistiques/conditionnelles/
           modeles: true
@@ -93,11 +93,11 @@
         - titre: "Sachant qui est autour du feu"
           url: /statistiques/autour-du-feu/
           modeles: true
-          resume: "La tribu initiale minoritaire part plus, le sexe minoritaire moins ; le doyen, rien de net."
+          resume: "La tribu initiale minoritaire part plus, le sexe minoritaire moins ; le doyen, rien de net."
         - titre: "La pire place au conseil"
           url: /statistiques/pire-place/
           modeles: true
-          resume: "Visé la fois d'avant et sans allié : le risque de partir est multiplié."
+          resume: "Visé la fois d'avant et sans allié : le risque de partir est multiplié."
         - titre: "Le vote du jury"
           url: /statistiques/jury/
           modeles: true
@@ -121,7 +121,7 @@
       entrees:
         - titre: "Jaune contre rouge"
           url: /statistiques/tribus/
-          resume: "La couleur de la tribu initiale change-t-elle quelque chose ?"
+          resume: "La couleur de la tribu initiale change-t-elle quelque chose ?"
         - titre: "Comment on sort"
           url: /statistiques/sorties/
           resume: "Conseil, poteaux, orientation, abandon — et leur évolution."
@@ -136,7 +136,7 @@
         - titre: "Le jeu tenu serré"
           url: /statistiques/equilibre/
           modeles: true
-          resume: "Le risque qui monte, la tribu qui se rattrape : deux illusions."
+          resume: "Le risque qui monte, la tribu qui se rattrape : deux illusions."
         - titre: "L'audience"
           url: /statistiques/audience/
           modeles: true
@@ -147,7 +147,7 @@
         - titre: "Le pronostic"
           url: /statistiques/pronostic/
           modeles: true
-          resume: "La fiche d'inscription contient-elle déjà le vainqueur ?"
+          resume: "La fiche d'inscription contient-elle déjà le vainqueur ?"
         - titre: "Le top des joueurs"
           url: /statistiques/top/
           modeles: true
@@ -157,7 +157,7 @@
   entrees:
     - titre: "La complétude"
       url: /completude/
-      resume: "Le tableau : 34 éditions en ligne, 19 types de données en colonne."
+      resume: "Le tableau : 34 éditions en ligne, 19 types de données en colonne."
     - titre: "Les saisons"
       url: /saisons/
       resume: "Chaque édition, son lieu, son casting, son vainqueur."

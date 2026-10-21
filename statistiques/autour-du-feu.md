@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Sachant qui est autour du feu
-description: "Qui part au conseil de Koh-Lanta, sachant qui est autour du feu : six positions dans le camp, et une règle du jeu comme contrôle."
+description: "Qui part au conseil de Koh-Lanta, sachant qui est autour du feu : six positions dans le camp, et une règle du jeu comme contrôle."
 permalink: /statistiques/autour-du-feu/
 chapeau: >-
   On ne part pas au hasard, mais on ne part pas non plus pour ce qu’on croit.
@@ -17,26 +17,26 @@ chapeau: >-
 {% assign tc = reg | where: "cle", "confort_sortie" | first %}
 
 [Sachant le conseil d’avant]({{ '/statistiques/conditionnelles/' | relative_url }})
-conditionne sur le **passé** : les voix reçues la fois précédente. Cette
+conditionne sur le **passé** : les voix reçues la fois précédente. Cette
 page-ci conditionne sur le **présent** — la place qu’on occupe dans le camp
 assis autour du feu ce soir-là. Être de la tribu initiale la moins représentée, du sexe le
-moins représenté, le plus âgé, celui qui vient de gagner le confort : autant de
+moins représenté, le plus âgé, celui qui vient de gagner le confort : autant de
 positions qui se lisent **avant** que le premier bulletin ne soit écrit.
 
 <ul class="chiffres">
   <li class="chiffre"><b>{{ f.presences }}</b><span>présences à un conseil</span></li>
   <li class="chiffre"><b>{{ f.conseils }}</b><span>conseils, sur {{ f.saisons }} saisons</span></li>
-  <li class="chiffre"><b>{{ f.hasard }} %</b><span>le hasard : une chance sur le nombre de présents</span></li>
+  <li class="chiffre"><b>{{ f.hasard }} %</b><span>le hasard : une chance sur le nombre de présents</span></li>
 </ul>
 
 <p class="note"><strong>Le camp se connaît de deux façons, et l’une vaut mieux
 que l’autre.</strong> Quand le dépouillement est complet, la liste des votants
-<em>est</em> le camp : rien n’est reconstruit — {{ f.par_bulletins }} présences
+<em>est</em> le camp : rien n’est reconstruit — {{ f.par_bulletins }} présences
 sur {{ f.presences }}. Pour les {{ f.par_reconstruction }} autres, toutes
 d’après la réunification et toutes des soirs à conseil unique, on rebâtit le
-camp des encore-en-jeu : c’est exact aussi, puisqu’après la réunification tout le monde
+camp des encore-en-jeu : c’est exact aussi, puisqu’après la réunification tout le monde
 vote au même feu. Avant la réunification, une reconstruction mélangerait les deux
-tribus ; elle n’est donc jamais faite.</p>
+tribus ; elle n’est donc jamais faite.</p>
 
 ## La probabilité qui vaut zéro
 
@@ -45,7 +45,7 @@ tribus ; elle n’est donc jamais faite.</p>
   <p>Sachant qu’on a gagné l’immunité individuelle du soir, la probabilité de
   partir vaut <b>{{ imm.probabilite }} %</b> — <b>{{ imm.cas }} sur
   {{ imm.effectif }}</b>. Le hasard en donnerait {{ imm.hasard }} %.</p>
-  <p>C’est une règle du jeu : l’immunisé ne peut pas partir au vote. La
+  <p>C’est une règle du jeu : l’immunisé ne peut pas partir au vote. La
   retrouver dans {{ imm.effectif }} présences reconstituées est donc le meilleur
   contrôle qu’on puisse faire sur ces données — et il est tenu.</p>
 </div>
@@ -54,7 +54,7 @@ tribus ; elle n’est donc jamais faite.</p>
 instructif.</strong> Rapproché naïvement des conseils par leur seul numéro
 d’épisode, ce même contrôle sortait <strong>19 violations</strong> — des
 immunisés apparemment éliminés. Toutes les dix-neuf tombaient sur un soir à
-<em>plusieurs</em> conseils : dans un épisode qui en compte trois, l’immunité
+<em>plusieurs</em> conseils : dans un épisode qui en compte trois, l’immunité
 gagnée avant le premier ne protège évidemment pas au troisième. Le rapprochement
 était faux, pas la donnée. Les épreuves du soir ne sont donc lues que sur les
 soirs à conseil unique.</p>
@@ -62,11 +62,11 @@ soirs à conseil unique.</p>
 <p class="note"><strong>Puis il en est resté trois, et cette fois la donnée
 était fausse.</strong> Trois immunisés partaient encore, dans les finales de
 <i>Vanuatu</i>, <i>Palawan</i> et <i>Caramoan</i>. La source y range sous
-« Immunité » les trois qualifiés pour les poteaux : ce sont les rescapés d’une
+« Immunité » les trois qualifiés pour les poteaux : ce sont les rescapés d’une
 épreuve éliminatoire, pas les vainqueurs d’une immunité. Cinq saisons portaient
 ce trio de finale — <i>Nicoya</i> et <i>Raja Ampat</i> aussi, sans que le
 contrôle le voie. L’extraction les écarte désormais, et le contrôle tombe à
-zéro : c’est lui qui a trouvé le défaut.</p>
+zéro : c’est lui qui a trouvé le défaut.</p>
 
 ## Sachant la place qu’on occupe
 
@@ -74,7 +74,7 @@ zéro : c’est lui qui a trouvé le défaut.</p>
 
 <p class="legende-figure">Probabilité d’être éliminé selon sa position parmi les
 présents, comparée au tirage au sort. <strong>Chaque catégorie a son propre
-hasard</strong> : on est plus souvent le doyen d’un camp de six que d’un camp de
+hasard</strong> : on est plus souvent le doyen d’un camp de six que d’un camp de
 douze.</p>
 
 <div class="tableau-large">
@@ -112,18 +112,18 @@ moins représentée du camp et partir quand elle est la plus représentée, cont
 {{ tb.tirages }} tirages où l’éliminé est pris au hasard parmi les présents.</p>
 
 <div class="constat">
-  <p>Tribu initiale minoritaire : <b>{{ bmin.probabilite }} %</b>
-  ({{ bmin.cas }} sur {{ bmin.effectif }}). Tribu initiale majoritaire :
+  <p>Tribu initiale minoritaire : <b>{{ bmin.probabilite }} %</b>
+  ({{ bmin.cas }} sur {{ bmin.effectif }}). Tribu initiale majoritaire :
   <b>{{ bmaj.probabilite }} %</b>.</p>
   <p>{{ tb.observe_arrondi }} points d’écart, {{ tb.ecart_types }}
   écarts-types au-dessus du hasard, p ajustée {{ tb.p_ajustee }}.</p>
 </div>
 
 [Jaune contre rouge]({{ '/statistiques/tribus/' | relative_url }}) montre que la
-couleur de la tribu initiale ne décide **rien** du palmarès :
+couleur de la tribu initiale ne décide **rien** du palmarès :
 {{ site.data.stats.mots.victoires_jaunes }} victoires jaunes,
 {{ site.data.stats.mots.victoires_rouges }} rouges. Les deux résultats ne se contredisent pas, ils se complètent — et
-ensemble ils disent quelque chose de précis :
+ensemble ils disent quelque chose de précis :
 
 > **La tribu initiale ne dit pas qui gagne. Elle dit qui part, dès qu’on se retrouve du
 > mauvais côté du compte.**
@@ -151,16 +151,16 @@ réunification.</p>
 </table>
 </div>
 
-L’effet est **plus fort avant la réunification qu’après**, ce qui n’allait pas de soi :
+L’effet est **plus fort avant la réunification qu’après**, ce qui n’allait pas de soi :
 on attendait plutôt le contraire, la réunification étant le moment où les
 tribus initiales se comptent. L’explication est ailleurs — avant la réunification, une
 tribu initiale ne devient minoritaire dans un camp que par un **échange de
 membres**. C’est donc la mesure du sort réservé au nouveau venu, et ce sort est
 clair. [Qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }}) montre
-la même chose au niveau du bulletin : la tribu initiale est le seul trait qui guide
+la même chose au niveau du bulletin : la tribu initiale est le seul trait qui guide
 l’écriture d’un nom.
 
-## Le sexe minoritaire : l’écart tient, la démonstration a cédé
+## Le sexe minoritaire : l’écart tient, la démonstration a cédé
 
 {% assign smin = f.sexe | first %}
 {% assign smaj = f.sexe | last %}
@@ -171,11 +171,11 @@ l’écriture d’un nom.
 représenté du camp et partir quand il est le plus représenté.</p>
 
 <div class="constat">
-  <p>Sexe minoritaire : <b>{{ smin.probabilite }} %</b>
-  ({{ smin.cas }} sur {{ smin.effectif }}). Sexe majoritaire :
+  <p>Sexe minoritaire : <b>{{ smin.probabilite }} %</b>
+  ({{ smin.cas }} sur {{ smin.effectif }}). Sexe majoritaire :
   <b>{{ smaj.probabilite }} %</b> ({{ smaj.cas }} sur {{ smaj.effectif }}).</p>
   <p>{{ ts.observe_arrondi }} points, {{ ts.ecart_types }} écarts-types
-  <b>sous</b> le hasard. Prise seule, la p vaut {{ ts.p }} ; corrigée sur les
+  <b>sous</b> le hasard. Prise seule, la p vaut {{ ts.p }} ; corrigée sur les
   {{ m.nb_tests }} tests du registre, elle vaut
   <b>{{ ts.p_ajustee }}</b> — et <b>ce résultat est retenu</b>.</p>
 </div>
@@ -185,37 +185,37 @@ trois méritent d’être dites.</strong> Cette page a d’abord annoncé le ré
 comme retenu, en précisant qu’il portait la plus haute des p ajustées et qu’«&nbsp;une
 saison de plus pourrait le faire basculer&nbsp;». Une
 <a href="{{ '/sources/' | relative_url }}">réparation d’extraction</a> l’a
-ensuite fait basculer — des libellés « Ugo Lartiche Ugo » qui ne se rattachaient
+ensuite fait basculer — des libellés « Ugo Lartiche Ugo » qui ne se rattachaient
 à personne, quarante-quatre éliminations revenues — et la page a écrit qu’il
-n’était plus retenu. Une seconde réparation vient de le rendre : les
+n’était plus retenu. Une seconde réparation vient de le rendre : les
 <a href="{{ '/sources/' | relative_url }}">bulletins sans votant</a> — vote noir,
 pénalité, malédiction — n’étaient comptés nulle part, et des conseils dépouillés
 en dépendaient. Avec eux, l’écart se creuse et la p ajustée retombe à
-{{ ts.p_ajustee }}. <strong>Trois états pour un seul fait : ce n’est pas le jeu
+{{ ts.p_ajustee }}. <strong>Trois états pour un seul fait : ce n’est pas le jeu
 qui a changé, c’est ce que nous avions le droit d’en dire.</strong> Une page qui
 ne raconte que le dernier état laisse croire à une certitude qui n’existe
 pas.</p>
 
 L’écart va à l’inverse de celui de la tribu initiale, et à l’inverse de l’intuition. La lecture la
-plus économe est que **la majorité se mange elle-même** : quand un camp compte
+plus économe est que **la majorité se mange elle-même** : quand un camp compte
 six hommes et trois femmes, les bulletins des six se partagent entre eux. Elle
 tient, mais elle n’est pas la seule.
 
 <p class="note"><strong>Une seconde lecture, tout aussi compatible, et elle
 oblige à la prudence.</strong> Un sexe devient minoritaire dans un camp <em>parce
-que</em> les siens en sont déjà partis : ceux qui restent sont donc des
+que</em> les siens en sont déjà partis : ceux qui restent sont donc des
 survivants, sélectionnés par tout ce qui précède. On mesurerait alors la
 solidité de ces survivants, pas un effet de la minorité. Ces données ne
 tranchent pas entre les deux lectures, et il n’y a aucune raison de faire
 semblant.</p>
 
 <p class="note">La même objection s’applique à la tribu initiale — mais <strong>en sens
-inverse</strong>, ce qui la rend rassurante : là aussi les minoritaires sont des
+inverse</strong>, ce qui la rend rassurante : là aussi les minoritaires sont des
 survivants, ce qui devrait les <em>protéger</em>. L’effet mesuré va contre cette
-sélection ; il est donc, s’il faut choisir, plutôt sous-estimé que
+sélection ; il est donc, s’il faut choisir, plutôt sous-estimé que
 surestimé.</p>
 
-<p class="note">Ce résultat ne dit rien du sexe <em>en général</em> : toutes
+<p class="note">Ce résultat ne dit rien du sexe <em>en général</em> : toutes
 positions confondues, une femme part dans {{ f.genre[0].probabilite }} % des cas
 et un homme dans {{ f.genre[1].probabilite }} % — un écart que ces effectifs ne
 permettent pas de distinguer du hasard. La question de la longévité, à âge et
@@ -224,18 +224,18 @@ métier égaux, est traitée par un modèle de durée sur
 et décrite sur
 <a href="{{ '/statistiques/longevite/' | relative_url }}">Âge et longévité</a>.</p>
 
-## Le doyen : l’exemple qui justifie toute la méthode
+## Le doyen : l’exemple qui justifie toute la méthode
 
 {% assign doyen = f.age | first %}
 {% assign milieu = f.age[1] %}
 
 Le plus âgé du camp est éliminé dans **{{ doyen.probabilite }} %** des cas,
 contre {{ milieu.probabilite }} % pour ceux qui ne sont ni le plus âgé ni le
-plus jeune. Lu ainsi, c’est un résultat : le doyen paierait son âge.
+plus jeune. Lu ainsi, c’est un résultat : le doyen paierait son âge.
 
 Il n’en est rien, et la raison tient en une ligne. **On est plus souvent le
-doyen d’un camp de six que d’un camp de douze** — donc la catégorie « le plus
-âgé » est surreprésentée dans les petits conseils, où chacun risque davantage.
+doyen d’un camp de six que d’un camp de douze** — donc la catégorie « le plus
+âgé » est surreprésentée dans les petits conseils, où chacun risque davantage.
 Son hasard à elle vaut {{ doyen.hasard }} %, pas {{ f.hasard }} %.
 
 Le test ci-dessous compare le doyen à **tous** les autres présents, benjamins
@@ -262,7 +262,7 @@ n’en sort pas.</p>
 {% assign cw = f.confort | first %}
 {% assign cn = f.confort | last %}
 
-L’idée court depuis {{ site.data.stats.mots.etendue_annees }} ans : gagner le confort ferait de vous une cible
+L’idée court depuis {{ site.data.stats.mots.etendue_annees }} ans : gagner le confort ferait de vous une cible
 le soir même. [Les épreuves]({{ '/statistiques/epreuves/' | relative_url }}) la
 testent sur les **bulletins**. Voici sa version en sortie.
 
@@ -272,8 +272,8 @@ testent sur les **bulletins**. Voici sa version en sortie.
 de l’épisode et partir quand on n’a rien gagné.</p>
 
 <div class="constat">
-  <p>A gagné le confort : <b>{{ cw.probabilite }} %</b>
-  ({{ cw.cas }} sur {{ cw.effectif }}). N’a rien gagné :
+  <p>A gagné le confort : <b>{{ cw.probabilite }} %</b>
+  ({{ cw.cas }} sur {{ cw.effectif }}). N’a rien gagné :
   {{ cn.probabilite }} %.</p>
   <p>{{ tc.observe_arrondi }} points, {{ tc.ecart_types }} écarts-types,
   p brute {{ tc.p }}, p ajustée {{ tc.p_ajustee }}. <b>Non concluant.</b></p>
@@ -286,17 +286,17 @@ de l’épisode et partir quand on n’a rien gagné.</p>
 
 <div class="constat">
   <p><b>Une position n’est pas une cause.</b> La tribu initiale minoritaire ne fait
-  partir personne : elle décrit un rapport de force que le vote ne fait
+  partir personne : elle décrit un rapport de force que le vote ne fait
   qu’enregistrer. La donnée ne sait pas séparer les deux.</p>
   <p><b>Le camp d’avant la réunification n’est connu que par les bulletins.</b> Sur les
   conseils au dépouillement incomplet, on ignore qui était là — ils sont
   écartés, et <a href="{{ '/completude/' | relative_url }}">la complétude</a> montre que
   cela concerne surtout les saisons récentes.</p>
-  <p><b>{{ site.data.stats.mots.autour_tests_maj }} tests, {{ site.data.stats.mots.autour_retenus }} retenus</b> : la tribu initiale et le sexe minoritaires. Les
+  <p><b>{{ site.data.stats.mots.autour_tests_maj }} tests, {{ site.data.stats.mots.autour_retenus }} retenus</b> : la tribu initiale et le sexe minoritaires. Les
   autres sont publiés comme non concluants, avec leur écart et leur
   intervalle — ils ne sont pas cachés, ils sont le prix de la liste déclarée
   d’avance. Le sexe minoritaire a changé deux fois de statut au fil des
-  réparations de données : c’est précisément à cela que sert une liste arrêtée
+  réparations de données : c’est précisément à cela que sert une liste arrêtée
   avant de regarder. Le registre complet et la correction pour tests multiples
   sont sur <a href="{{ '/methode/' | relative_url }}">La méthode</a>.</p>
 </div>

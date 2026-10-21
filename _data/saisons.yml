@@ -51,7 +51,7 @@
   numero: 3
   titre: "Bocas del Toro"
   vainqueurs: ["Delphine", "Isabelle"]
-  note: "Double victoire : egalite des voix du jury final."
+  note: "Double victoire : egalite des voix du jury final."
   annee: 2003
   speciale: false
   annulee: false
@@ -124,7 +124,7 @@
   numero: 7
   titre: "Palawan"
   vainqueurs: ["Jade", "Kévin"]
-  note: "Double victoire : egalite des voix du jury final."
+  note: "Double victoire : egalite des voix du jury final."
   annee: 2007
   speciale: false
   annulee: false
@@ -423,7 +423,7 @@
   numero: 23
   titre: "Le Totem maudit"
   vainqueurs: ["Bastien", "François"]
-  note: "Double victoire : egalite des voix du jury final."
+  note: "Double victoire : egalite des voix du jury final."
   annee: 2022
   speciale: false
   annulee: false
@@ -497,7 +497,7 @@
   tribus:
     - { nom: "Sabitang", couleur: jaune }
     - { nom: "Pitogo", couleur: rouge }
-    - { nom: "Noire", couleur: noir }   # « tribu maudite » dans le recapitulatif
+    - { nom: "Noire", couleur: noir }   # « tribu maudite » dans le recapitulatif
   mecaniques: [ambassadeurs, collier_immunite, capitaines, tribu_maudite]
 
 - id: s27

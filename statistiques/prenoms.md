@@ -1,10 +1,10 @@
 ---
 layout: page
 title: Les prénoms
-description: "Les prénoms des aventuriers de Koh-Lanta : Alexandra revient sept fois. Est-ce beaucoup ? Comparaison avec la France née les mêmes années."
+description: "Les prénoms des aventuriers de Koh-Lanta : Alexandra revient sept fois. Est-ce beaucoup ? Comparaison avec la France née les mêmes années."
 permalink: /statistiques/prenoms/
 chapeau: >-
-  Alexandra revient sept fois à Koh-Lanta. Est-ce beaucoup ? La question n’a
+  Alexandra revient sept fois à Koh-Lanta. Est-ce beaucoup ? La question n’a
   de réponse qu’en la comparant à la France qui est née les mêmes années.
 ---
 
@@ -16,7 +16,7 @@ chapeau: >-
 {% assign pn = p.prenoms | where: "prenom", "Nicolas" | first %}
 {{ pa.observe }} Alexandra, {{ pm.observe }} Maxime, {{ pn.observe }} Nicolas. Cela paraît beaucoup — mais un prénom
 courant produit mécaniquement des porteurs, et les aventuriers ne sont pas nés
-n’importe quand. La seule question qui tienne est donc : **combien en
+n’importe quand. La seule question qui tienne est donc : **combien en
 attendrait-on ?**
 
 ## D’abord, savoir quand ils sont nés
@@ -38,14 +38,14 @@ comparaison.
 
 L’[INSEE publie le nombre de naissances par prénom, par sexe et par année
 depuis 1900](https://www.insee.fr/fr/statistiques/8595130). Pour chaque prénom,
-on calcule donc :
+on calcule donc :
 
 <p class="note"><strong>Attendu</strong> = somme, sur les
 {{ p.aventuriers_datables }} aventuriers datables, de la probabilité qu’une
 personne née cette année-là, de ce sexe, porte ce prénom.<br>
 C’est le nombre d’aventuriers qui s’appelleraient ainsi si le casting était un
 échantillon ordinaire des naissances françaises. L’indice est
-<strong>observé ÷ attendu</strong> : 1 signifie « exactement la France ».</p>
+<strong>observé ÷ attendu</strong> : 1 signifie « exactement la France ».</p>
 
 ## Le résultat
 
@@ -53,12 +53,12 @@ C’est le nombre d’aventuriers qui s’appelleraient ainsi si le casting éta
 
 <p class="legende-figure">Les huit prénoms les plus sur-représentés, puis les
 huit plus sous-représentés. Seuls les prénoms dont l’attendu atteint 1 sont
-classés : en dessous, un seul porteur suffirait à afficher un facteur de plusieurs dizaines,
+classés : en dessous, un seul porteur suffirait à afficher un facteur de plusieurs dizaines,
 et l’indice ne mesurerait plus que la rareté du prénom.</p>
 
-Les écarts sont réels mais **modestes** : le plus sur-représenté ne dépasse pas
+Les écarts sont réels mais **modestes** : le plus sur-représenté ne dépasse pas
 un facteur {{ site.data.stats.prenoms.indice_max_tableau }}. Autrement dit, **le casting de Koh-Lanta ressemble
-beaucoup à la France de sa génération**. C’est en soi un résultat : on aurait pu
+beaucoup à la France de sa génération**. C’est en soi un résultat : on aurait pu
 imaginer un tri involontaire, il n’y en a pas de marqué.
 
 <div class="tableau-large">
@@ -84,16 +84,16 @@ imaginer un tri involontaire, il n’y en a pas de marqué.
 
 {% assign pab = site.data.stats.prenoms %}
 **{{ pab.absents }} prénoms** portés par **{{ pab.porteurs_absents }} aventuriers** n’apparaissent
-pas au fichier national sur la période : Teheiura, Coumba, Moundir, Filomène,
+pas au fichier national sur la période : Teheiura, Coumba, Moundir, Filomène,
 Namadia, Guénaëlle, Wafa… L’INSEE verse en effet les prénoms trop rares dans un
 seul sac, et n’enregistre que les naissances survenues en France.
 
 C’est **{{ pab.part_porteurs_absents }} % des aventuriers**, et c’est sans doute le vrai résultat
-de cette page : le casting va chercher bien au-delà des prénoms les plus donnés.
+de cette page : le casting va chercher bien au-delà des prénoms les plus donnés.
 
 <p class="note">Trois réserves, qui portent toutes dans le même sens. L’âge est
-celui annoncé au tournage et non une date de naissance : l’année déduite peut
+celui annoncé au tournage et non une date de naissance : l’année déduite peut
 être fausse d’un an. L’INSEE arrondit ses effectifs au multiple de cinq le plus
 proche. Enfin, le prénom retenu ici est celui utilisé à l’écran — un diminutif
-comme « Babeth » ne se retrouvera jamais à l’état civil, et gonfle donc la liste
+comme « Babeth » ne se retrouvera jamais à l’état civil, et gonfle donc la liste
 des introuvables.</p>

@@ -1,11 +1,11 @@
 ---
 layout: page
 title: Sachant le conseil d’avant
-description: "Mon nom est sorti deux fois au dernier conseil de Koh-Lanta : qu’est-ce que cela change à mes chances de partir ? Des probabilités, mesurées contre le hasard."
+description: "Mon nom est sorti deux fois au dernier conseil de Koh-Lanta : qu’est-ce que cela change à mes chances de partir ? Des probabilités, mesurées contre le hasard."
 permalink: /statistiques/conditionnelles/
 chapeau: >-
   Mon nom est sorti deux fois la dernière fois. Qu’est-ce que cela change à mes
-  chances de partir ce soir ? Des probabilités conditionnelles, et un
+  chances de partir ce soir ? Des probabilités conditionnelles, et un
   retournement que le test ne confirme pas.
 ---
 
@@ -18,16 +18,16 @@ chapeau: >-
 {% assign t4 = reg | where: "cle", "cible_persistante" | first %}
 {% assign t5 = reg | where: "cle", "retour_de_baton" | first %}
 
-Tout le monde autour du feu connaît le dépouillement précédent : il a été lu à
+Tout le monde autour du feu connaît le dépouillement précédent : il a été lu à
 voix haute. C’est la seule information du jeu que personne ne peut cacher. La
 question de cette page est celle d’un joueur assis sur son tronc, et elle est
-exactement une probabilité conditionnelle : **sachant les voix que j’ai reçues
+exactement une probabilité conditionnelle : **sachant les voix que j’ai reçues
 la dernière fois, quelles sont mes chances de partir ce soir ?**
 
 ## Le point de comparaison n’est pas zéro
 
 Une probabilité de partir ne se lit jamais seule. À un conseil à six, on part
-une fois sur six ; à un conseil à douze, une fois sur douze. Une bonne part des
+une fois sur six ; à un conseil à douze, une fois sur douze. Une bonne part des
 écarts entre catégories que l’on croit lire dans ce genre de tableau ne sont que
 cet effet de taille.
 
@@ -35,7 +35,7 @@ Le repère de toute cette page est donc **une chance sur n**, n étant le nombre
 de personnes qui votent ce soir-là — {{ c.taille_moyenne }} en moyenne sur la
 chaîne étudiée ici. Ce repère vaut **{{ c.hasard }} %**, et le taux observé,
 toutes catégories confondues, vaut {{ c.globale }} %. Les deux sont égaux par
-construction : il part exactement une personne par conseil. Tout l’intérêt est
+construction : il part exactement une personne par conseil. Tout l’intérêt est
 donc dans la **répartition** de ce risque entre les présents, jamais dans son
 niveau moyen.
 
@@ -43,21 +43,21 @@ niveau moyen.
   <li class="chiffre"><b>{{ c.presences }}</b><span>présences à un conseil, dont on connaît le conseil précédent</span></li>
   <li class="chiffre"><b>{{ c.conseils }}</b><span>conseils enchaînés</span></li>
   <li class="chiffre"><b>{{ c.saisons }}</b><span>saisons</span></li>
-  <li class="chiffre"><b>{{ c.hasard }} %</b><span>le hasard : une chance sur le nombre de présents</span></li>
+  <li class="chiffre"><b>{{ c.hasard }} %</b><span>le hasard : une chance sur le nombre de présents</span></li>
 </ul>
 
 <p class="note"><strong>Comment la chaîne est construite, et ce qu’elle coûte.</strong>
-« Le conseil précédent » d’un aventurier n’est pas le conseil précédent de la
-saison : avant la réunification, deux tribus votent chacune de leur côté. C’est
+« Le conseil précédent » d’un aventurier n’est pas le conseil précédent de la
+saison : avant la réunification, deux tribus votent chacune de leur côté. C’est
 donc le dernier conseil auquel <em>cette personne-là</em> a assisté. Un conseil
 n’y entre que si son dépouillement est complet, c’est-à-dire si le nombre de
-bulletins relevés égale le nombre de voix annoncées : c’est la seule garantie
-que « zéro voix reçue » veuille dire zéro, et non « bulletin non lu ». Et la
+bulletins relevés égale le nombre de voix annoncées : c’est la seule garantie
+que « zéro voix reçue » veuille dire zéro, et non « bulletin non lu ». Et la
 remontée s’arrête au premier conseil manquant — faute de savoir qui y était, on
 ne peut pas jurer que le conseil trouvé plus loin soit bien celui d’avant.
-Cette prudence coûte cher : {{ c.presences }} présences retenues là où la
+Cette prudence coûte cher : {{ c.presences }} présences retenues là où la
 version qui enjambe les trous en compterait {{ c.presences_relachees }}. Les
-deux versions donnent la même courbe ; c’est la stricte qui est publiée.
+deux versions donnent la même courbe ; c’est la stricte qui est publiée.
 <a href="{{ '/completude/' | relative_url }}">La complétude</a> montre pourquoi les
 conseils sont la donnée la plus trouée du site.</p>
 
@@ -67,7 +67,7 @@ conseils sont la donnée la plus trouée du site.</p>
 
 <p class="legende-figure">Probabilité d’être éliminé à un conseil selon le
 nombre de voix reçues au conseil précédent. Le trait vertical est l’intervalle
-de confiance à 95 % ; le trait tireté, le risque qu’un tirage au sort
+de confiance à 95 % ; le trait tireté, le risque qu’un tirage au sort
 donnerait.</p>
 
 <div class="tableau-large">
@@ -93,7 +93,7 @@ donnerait.</p>
 </table>
 </div>
 
-La lecture directe : **n’avoir reçu aucune voix la fois d’avant fait passer sous
+La lecture directe : **n’avoir reçu aucune voix la fois d’avant fait passer sous
 le hasard** ({{ c.par_voix[0].probabilite }} % contre
 {{ c.par_voix[0].hasard }} %), en recevoir une ou deux le fait nettement monter
 ({{ c.par_voix[1].probabilite }} %, puis {{ c.par_voix[2].probabilite }} %).
@@ -106,15 +106,15 @@ chaque conseil est pris au hasard parmi les présents.</p>
 
 <div class="constat">
   <p>Avoir été visé au conseil précédent ajoute <b>{{ t1.observe_arrondi }} points</b>
-  de risque : {{ t1.ecart_types }} écarts-types au-dessus du hasard, p ajustée
+  de risque : {{ t1.ecart_types }} écarts-types au-dessus du hasard, p ajustée
   {{ t1.p_ajustee }}.</p>
   <p>Le modèle nul fait ici tout le travail. À chaque conseil, on tire l’éliminé
-  <em>au hasard parmi les présents de ce soir-là</em> : la taille du conseil, la
+  <em>au hasard parmi les présents de ce soir-là</em> : la taille du conseil, la
   saison, l’époque et la composition du camp restent exactement ce qu’elles
   étaient. Ne bouge que la question posée.</p>
 </div>
 
-## Le retournement : trop visé pour partir — et ce qu’on n’a plus le droit d’en dire
+## Le retournement : trop visé pour partir — et ce qu’on n’a plus le droit d’en dire
 
 La courbe ne monte pas indéfiniment. Elle culmine à deux voix, puis elle
 **redescend** — sans jamais repasser sous le hasard.
@@ -126,8 +126,8 @@ après quatre voix ou plus, contre {{ t2.tirages }} tirages du même modèle
 nul.</p>
 
 <div class="constat">
-  <p>Une à trois voix la fois d’avant : le risque monte. <b>Quatre voix ou
-  plus</b> : il tombe à
+  <p>Une à trois voix la fois d’avant : le risque monte. <b>Quatre voix ou
+  plus</b> : il tombe à
   {% assign gros = c.par_voix | where: "modalite", "5 voix et plus" | first %}
   <b>{{ gros.probabilite }} %</b> pour cinq voix et plus — soit {{ gros.cas }}
   cas sur {{ gros.effectif }}.</p>
@@ -135,7 +135,7 @@ nul.</p>
   p ajustée <b>{{ t2.p_ajustee }}</b> — <b>non retenu</b>.</p>
 </div>
 
-<p class="note"><strong>Ce résultat était retenu ; il ne l’est plus, et le
+<p class="note"><strong>Ce résultat était retenu ; il ne l’est plus, et le
 dénominateur a grandi.</strong> D’ordinaire un test tombe parce que les données
 manquent. Ici, des conseils dépouillés se sont AJOUTÉS — les
 <a href="{{ '/sources/' | relative_url }}">bulletins sans votant</a> que le jeu
@@ -147,20 +147,20 @@ manquaient.</strong> C’est exactement ce qu’un effet
 fabriqué par un petit échantillon fait quand l’échantillon grandit, et c’est
 pour cela qu’on le dit ici plutôt que de garder l’ancienne phrase.</p>
 
-L’explication qu’on avançait tenait en une phrase, et elle est de survie : qui a
+L’explication qu’on avançait tenait en une phrase, et elle est de survie : qui a
 encaissé quatre bulletins et se trouve encore là au conseil suivant a
 nécessairement été protégé — par un collier, par un tour nul, par une majorité
 qui s’est recomposée. Elle reste la lecture la plus économe de la forme
-observée. Elle n’est plus une conclusion de ce site : c’est une hypothèse que la
+observée. Elle n’est plus une conclusion de ce site : c’est une hypothèse que la
 courbe illustre et que le test ne soutient pas.
 
 {% assign sc = c.par_voix_sans_collier | where: "modalite", "5 voix et plus" | first %}
 <p class="note"><strong>La vérification qui s’imposait.</strong> Si le
 retournement n’était qu’un effet des colliers d’immunité, il devrait disparaître
-en écartant les conseils où un objet a annulé des voix. Il ne disparaît pas : à
+en écartant les conseils où un objet a annulé des voix. Il ne disparaît pas : à
 cinq voix et plus, sans ces conseils-là, la probabilité vaut
 <b>{{ sc.probabilite }} %</b> sur {{ sc.effectif }} présences. L’objet n’est
-qu’une des formes de la protection ; ce n’est pas la seule.
+qu’une des formes de la protection ; ce n’est pas la seule.
 Voir <a href="{{ '/statistiques/colliers/' | relative_url }}">Les colliers</a>.</p>
 
 <p class="note"><strong>Ce que ces effectifs autorisent, et rien de plus.</strong>
@@ -192,10 +192,10 @@ qu’ils y sont dessinés. Ni le retournement ni sa <em>hauteur</em> ne sont
 </table>
 </div>
 
-## La menace s’éteint-elle ?
+## La menace s’éteint-elle ?
 
 Si le nom sorti la fois d’avant compte, celui sorti **deux** conseils plus tôt
-compte-t-il encore ?
+compte-t-il encore ?
 
 <div class="tableau-large">
 <table>
@@ -222,18 +222,18 @@ conseils plus tôt et partir quand on ne l’avait pas été.</p>
 <div class="constat">
   <p>{{ t6.observe_arrondi }} points d’écart — presque autant qu’au conseil
   précédent — mais sur {{ c.deux_pas_vises }}
-  présences seulement : {{ t6.ecart_types }} écarts-types, p brute {{ t6.p }},
+  présences seulement : {{ t6.ecart_types }} écarts-types, p brute {{ t6.p }},
   p ajustée {{ t6.p_ajustee }}. <b>Non concluant.</b></p>
-  <p>La chaîne se raccourcit vite : exiger deux conseils complets d’affilée
+  <p>La chaîne se raccourcit vite : exiger deux conseils complets d’affilée
   derrière soi ne laisse que {{ c.deux_pas_total }}
-  présences. Ce qu’on peut dire : rien n’indique que la menace s’éteigne au
+  présences. Ce qu’on peut dire : rien n’indique que la menace s’éteigne au
   conseil suivant, et l’écart mesuré va dans le sens contraire.</p>
 </div>
 
 ## À conseil égal
 
 Le tableau ci-dessus compare des soirées entre elles. Le modèle ci-dessous ne
-compare jamais deux soirées : chaque conseil forme son propre groupe, et le
+compare jamais deux soirées : chaque conseil forme son propre groupe, et le
 calcul ne porte que sur les présents d’un même feu. La taille du conseil, la
 saison, l’époque et la composition du camp disparaissent donc **sans qu’on ait à
 les mesurer**.
@@ -242,7 +242,7 @@ les mesurer**.
 
 <p class="legende-figure">Rapports de cotes d’un logit conditionnel, sur
 {{ c.modele.presences }} présences et {{ c.modele.conseils }} conseils.
-Référence : aucune voix au conseil précédent.</p>
+Référence : aucune voix au conseil précédent.</p>
 
 <div class="tableau-large">
 <table>
@@ -261,12 +261,12 @@ Référence : aucune voix au conseil précédent.</p>
 </div>
 
 Le modèle dit la même chose que le tableau brut, ce qui est la meilleure des
-nouvelles : l’effet ne venait pas de la taille des conseils.
+nouvelles : l’effet ne venait pas de la taille des conseils.
 
 ## La même information, retournée
 
 Une probabilité conditionnelle se lit dans les deux sens, et les deux sens ne
-disent pas la même chose. C’est le second qu’on voit à l’écran : on ne regarde
+disent pas la même chose. C’est le second qu’on voit à l’écran : on ne regarde
 le passé d’un éliminé **qu’une fois qu’il est éliminé**.
 
 <div class="tableau-large">
@@ -285,7 +285,7 @@ le passé d’un éliminé **qu’une fois qu’il est éliminé**.
 
 **{{ c.inverse.vise_si_sorti }} % de ceux qui partent avaient été visés la fois
 d’avant — mais {{ c.inverse.vise_si_reste }} % de ceux qui restent aussi.** Le
-signe annonciateur est réel et il est faible : la majorité des éliminations
+signe annonciateur est réel et il est faible : la majorité des éliminations
 frappe quelqu’un dont le nom n’était pas sorti la fois d’avant. Confondre les deux sens de
 lecture est l’erreur ordinaire sur ce genre de chiffre, et le tableau est là
 pour la rendre impossible.
@@ -312,12 +312,12 @@ pour la rendre impossible.
 {% assign h1 = c.par_histoire | where: "modalite", "visé avant, plus la dernière fois" | first %}
 {% assign h2 = c.par_histoire | where: "modalite", "visé la dernière fois seulement" | first %}
 {% assign h3 = c.par_histoire | where: "modalite", "visé la dernière fois, et déjà avant" | first %}
-Le partage utile n’est pas entre « un peu visé » et « beaucoup visé » : il tient
+Le partage utile n’est pas entre « un peu visé » et « beaucoup visé » : il tient
 à la fraîcheur de la menace. Ceux dont le nom n’est jamais sorti partent dans
-**{{ jamais.probabilite }} %** des cas ; ceux qui ont été visés la dernière
+**{{ jamais.probabilite }} %** des cas ; ceux qui ont été visés la dernière
 fois, dans **{{ h2.probabilite }} %** et {{ h3.probabilite }} %. Visé seulement
-plus tôt, on retombe à {{ h1.probabilite }} % — et la menace « deux conseils
-plus tard » n’est pas un résultat retenu.
+plus tôt, on retombe à {{ h1.probabilite }} % — et la menace « deux conseils
+plus tard » n’est pas un résultat retenu.
 
 ## Sachant de quel côté on a voté
 
@@ -344,10 +344,10 @@ plus tard » n’est pas un résultat retenu.
   résultat.</p>
 </div>
 
-## Une autre question : le nom ressort-il ?
+## Une autre question : le nom ressort-il ?
 
-Jusqu’ici la question était « part-il ? ». Celle-ci est différente et se mesure
-sur bien plus de monde, puisqu’elle ne demande pas de savoir qui est parti :
+Jusqu’ici la question était « part-il ? ». Celle-ci est différente et se mesure
+sur bien plus de monde, puisqu’elle ne demande pas de savoir qui est parti :
 **son nom ressort-il de l’urne ?**
 
 {% include graphiques/conditionnelles-cible.svg %}
@@ -373,10 +373,10 @@ tirages.</p>
 <p class="note"><strong>Ce modèle nul n’est pas le même que les précédents, et
 il fallait en changer.</strong> Rebattre les bulletins à l’intérieur d’un
 conseil — le nul employé pour <a href="{{ '/statistiques/alliances/' | relative_url }}">les
-alliances</a> — ne convient pas ici : la permutation change qui a écrit, jamais
+alliances</a> — ne convient pas ici : la permutation change qui a écrit, jamais
 combien de voix chacun reçoit. Le nombre de voix d’une personne y serait
 rigoureusement le même avant et après, et le test ne testerait rien. Celui-ci
-redistribue les <em>comptes</em> entre les présents, l’éliminé gardant le sien :
+redistribue les <em>comptes</em> entre les présents, l’éliminé gardant le sien :
 chaque conseil garde sa forme de dépouillement — cinq voix, deux voix, une — et
 son résultat, et seule l’identité de ceux qui les reçoivent est tirée au
 sort.</p>
@@ -384,7 +384,7 @@ sort.</p>
 ## Le retour de bâton
 
 Dernière conditionnelle, et elle ne porte plus sur les sorties mais sur les
-bulletins : **celui dont j’ai écrit le nom la fois d’avant écrit-il le mien ce
+bulletins : **celui dont j’ai écrit le nom la fois d’avant écrit-il le mien ce
 soir ?**
 
 {% include graphiques/conditionnelles-retour.svg %}
@@ -403,7 +403,7 @@ redistribution des bulletins à l’intérieur de chaque conseil.</p>
 </div>
 
 [Les conseils]({{ '/statistiques/conseils/' | relative_url }}) mesurent la
-réciprocité **sans ordre** : deux personnes qui se sont écrites l’une l’autre à
+réciprocité **sans ordre** : deux personnes qui se sont écrites l’une l’autre à
 un moment ou un autre. Celle-ci est datée et orientée, ce qui la rend beaucoup
 plus rare — et beaucoup plus lisible.
 
@@ -412,9 +412,9 @@ plus rare — et beaucoup plus lisible.
 <div class="constat">
   <p><b>Ce n’est pas une prédiction.</b> Toutes ces probabilités sont mesurées
   après coup, sur des conseils dont on connaît déjà l’issue. Elles décrivent une
-  régularité du jeu ; elles ne donnent pas un pronostic à un joueur en
+  régularité du jeu ; elles ne donnent pas un pronostic à un joueur en
   particulier.</p>
-  <p><b>Ce n’est pas une cause.</b> Recevoir deux voix n’envoie personne dehors :
+  <p><b>Ce n’est pas une cause.</b> Recevoir deux voix n’envoie personne dehors :
   c’est le même rapport de force qui produit les deux voix d’hier et
   l’élimination d’aujourd’hui. La donnée ne sait pas les séparer, et rien ici ne
   prétend le contraire.</p>
@@ -425,11 +425,11 @@ plus rare — et beaucoup plus lisible.
   autres.</p>
 </div>
 
-La question inverse — non plus « sachant mon passé », mais **« sachant qui est
+La question inverse — non plus « sachant mon passé », mais **« sachant qui est
 assis autour du feu ce soir »** — est traitée sur
-[Sachant qui est autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }}) :
+[Sachant qui est autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }}) :
 la tribu initiale minoritaire, le sexe minoritaire, le doyen, le gagnant du confort, et
-la probabilité qui vaut zéro, comme le veut la règle : partir le soir où l’on a
+la probabilité qui vaut zéro, comme le veut la règle : partir le soir où l’on a
 gagné l’immunité.
 
 La liste complète des tests de ce site, leur correction pour tests multiples et

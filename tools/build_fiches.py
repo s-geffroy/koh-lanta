@@ -872,8 +872,10 @@ def ecrire_pages(dossier, layout, cle, entrees, titre_de, description_de,
         # scalaire YAML double-quote valide, et rien d'autre.
         contenu = GABARIT.format(
             layout=layout,
-            titre=json.dumps(titre_de(e), ensure_ascii=False),
-            description=json.dumps(description_de(e), ensure_ascii=False),
+            # Les espaces insecables, comme dans tout _data/ : ce front matter
+            # ne passe pas par donnees.ecrire.
+            titre=json.dumps(donnees.insecables(titre_de(e)), ensure_ascii=False),
+            description=json.dumps(donnees.insecables(description_de(e)), ensure_ascii=False),
             image=(image_de(cid) if image_de
                    else f"/assets/partage/{os.path.basename(dossier)}/{cid}.png"),
             permalink=permalink_de(cid),

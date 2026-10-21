@@ -1,11 +1,11 @@
 ---
 layout: page
 title: La fin de saison
-description: "La fin de saison de Koh-Lanta : gagner les poteaux ne fait pas gagner. Arriver dernier à l’orientation, si — onze victoires sur dix-sept."
+description: "La fin de saison de Koh-Lanta : gagner les poteaux ne fait pas gagner. Arriver dernier à l’orientation, si — onze victoires sur dix-sept."
 permalink: /statistiques/finale/
 chapeau: >-
   Gagner les poteaux ne fait pas gagner la saison. Mais arriver **dernier** à
-  l’orientation, si : onze victoires sur dix-sept, contre une sur trois
+  l’orientation, si : onze victoires sur dix-sept, contre une sur trois
   attendues.
 ---
 
@@ -14,13 +14,13 @@ chapeau: >-
 {% assign p = f.poteaux %}
 {% assign r1 = f.par_rang[0] %}{% assign r2 = f.par_rang[1] %}{% assign r3 = f.par_rang[2] %}
 
-Les trois derniers jours d’une saison suivent toujours la même mécanique :
+Les trois derniers jours d’une saison suivent toujours la même mécanique :
 l’**orientation** ne garde que trois aventuriers, les **poteaux** en désignent
 un, et celui-là emmène en finale qui il veut. Le troisième est éliminé.
 
 Trois décisions s’enchaînent donc, et aucune n’avait été mesurée ici — parce
 qu’aucune n’était dans les données. `epreuves.yml` ne porte **aucun nom
-d’épreuve** ; la dernière épreuve d’immunité individuelle relevée n’est pas les
+d’épreuve** ; la dernière épreuve d’immunité individuelle relevée n’est pas les
 poteaux, et pour plusieurs saisons son vainqueur est justement la personne éliminée
 dessus. Il a fallu aller lire les deux wikis.
 
@@ -46,19 +46,19 @@ la source nomme le vainqueur des poteaux.</p>
   <p><b>{{ p.vainqueur_des_poteaux.cas }} fois sur {{ p.effectif }}</b>, soit
   {{ p.vainqueur_des_poteaux.probabilite }} %. L’intervalle va de
   {{ p.vainqueur_des_poteaux.bas }} à {{ p.vainqueur_des_poteaux.haut }} % et
-  <b>contient 50 %</b> : sur ces effectifs, on ne peut pas distinguer ce
+  <b>contient 50 %</b> : sur ces effectifs, on ne peut pas distinguer ce
   résultat d’un tirage à pile ou face.</p>
   <p>Le privilège de choisir son adversaire ne se voit pas dans les chiffres.
-  Il rapporte peut-être quelque chose ; il n’en rapporte pas assez pour se lire
+  Il rapporte peut-être quelque chose ; il n’en rapporte pas assez pour se lire
   sur {{ site.data.stats.mots.poteaux_saisons }} saisons.</p>
 </div>
 
 <p class="note">Sur les {{ p.choix_atteste.effectif }} saisons où une source
-énonce le choix noir sur blanc — « décide d’affronter », « n’est pas choisi par »
+énonce le choix noir sur blanc — « décide d’affronter », « n’est pas choisi par »
 —, le vainqueur des poteaux l’emporte {{ p.choix_atteste.cas }} fois, soit
 {{ p.choix_atteste.probabilite }} %. L’intervalle
 ({{ p.choix_atteste.bas }} – {{ p.choix_atteste.haut }} %) contient encore 50 %,
-et il faudrait s’en méfier deux fois plutôt qu’une : ces
+et il faudrait s’en méfier deux fois plutôt qu’une : ces
 {{ site.data.stats.mots.choix_atteste }} saisons sont les
 plus récentes, pas un échantillon au hasard.</p>
 
@@ -72,7 +72,7 @@ mais **à l’envers de l’intuition**.
 
 <p class="legende-figure">Part des saisons remportées selon le rang d’arrivée à
 l’orientation, sur {{ f.saisons_ordonnees }} saisons. Le trait horizontal est le
-hasard : un qualifié sur trois gagne.</p>
+hasard : un qualifié sur trois gagne.</p>
 
 <div class="tableau-large">
 <table data-triable>
@@ -110,16 +110,16 @@ hasard : un qualifié sur trois gagne.</p>
 
 {% include graphiques/finale-poteaux-rang.svg %}
 
-<p class="legende-figure">Le même rang, mais pour l’épreuve suivante : qui
+<p class="legende-figure">Le même rang, mais pour l’épreuve suivante : qui
 remporte les poteaux.</p>
 
-L’écart naît donc **avant** le vote final : le dernier qualifié gagne déjà les
+L’écart naît donc **avant** le vote final : le dernier qualifié gagne déjà les
 poteaux {{ r3.gagne_les_poteaux.probabilite }} % du temps, contre
 {{ r1.gagne_les_poteaux.probabilite }} % au premier. Ce n’est pas le jury qui
 préfère les lents, c’est le poteau.
 
 <p class="note">Une explication vient à l’esprit et ces données ne peuvent pas
-la trancher : l’orientation récompense la course et la lecture de terrain, les
+la trancher : l’orientation récompense la course et la lecture de terrain, les
 poteaux récompensent la légèreté et l’immobilité. Ce seraient deux épreuves qui
 demandent des corps opposés. C’est une hypothèse, pas un résultat — rien ici ne
 la teste.</p>
@@ -149,7 +149,7 @@ la teste.</p>
 
 ## D’où vient l’ordre, et pourquoi on peut s’y fier
 
-Tout ce qui précède repose sur une affirmation qu’il faut prouver : **l’ordre
+Tout ce qui précède repose sur une affirmation qu’il faut prouver : **l’ordre
 dans lequel les wikis écrivent les qualifiés est l’ordre où ils sont arrivés.**
 Rien ne l’annonce dans les sources. Deux vérifications ont été faites, et
 elles sont refaites à chaque régénération des données.
@@ -157,8 +157,8 @@ elles sont refaites à chaque régénération des données.
 <div class="constat">
   <p><b>Le récit confirme, jamais il ne dément.</b> Sur
   {{ cv.saisons_ordre_teste }} saisons, la prose nomme un rang d’arrivée —
-  « Loïc trouve le premier poignard », « le dernier poignard, finalement trouvé
-  par Alexandra ». <b>{{ cv.rangs_confirmes }} rangs</b> sont ainsi vérifiables :
+  « Loïc trouve le premier poignard », « le dernier poignard, finalement trouvé
+  par Alexandra ». <b>{{ cv.rangs_confirmes }} rangs</b> sont ainsi vérifiables :
   {{ cv.rangs_confirmes }} coïncident avec la place que la cellule leur donne,
   <b>{{ cv.rangs_dementis }} la contredit</b>.</p>
   <p><b>Les deux wikis, écrits séparément, écrivent le même ordre.</b> Sur les
@@ -169,7 +169,7 @@ elles sont refaites à chaque régénération des données.
   conseils</a>.</p>
 </div>
 
-Le contrôle est câblé dans `verifie.py` : un seul rang démenti par la prose fait
+Le contrôle est câblé dans `verifie.py` : un seul rang démenti par la prose fait
 échouer la vérification des données. Si l’ordre cesse d’être l’ordre d’arrivée,
 cette page cesse d’être publiable, et on le saura.
 
@@ -178,18 +178,18 @@ cette page cesse d’être publiable, et on le saura.
 <div class="constat">
   <p><b>Aucun test n’est déclaré ici.</b> Les tests de ce site sont annoncés
   d’avance et corrigés ensemble par Benjamini-Hochberg
-  (<a href="{{ '/methode/' | relative_url }}">la méthode</a>) : en ajouter
+  (<a href="{{ '/methode/' | relative_url }}">la méthode</a>) : en ajouter
   déplacerait les p ajustées de tous les autres. Ce que vous lisez, ce sont des
   proportions, leurs intervalles de Wilson, et la ligne du hasard. Un intervalle
-  qui ne contient pas le hasard dit déjà l’essentiel ; il ne dit pas la même
+  qui ne contient pas le hasard dit déjà l’essentiel ; il ne dit pas la même
   chose qu’une p ajustée, et on ne le présente pas comme telle.</p>
   <p><b>{{ f.saisons_ordonnees }} saisons, c’est peu.</b> Le résultat sur le
   dernier qualifié tient à
-  {{ r3.gagne_la_saison.cas }} victoires ; {{ r3.gagne_la_saison.marge }} de moins et l’intervalle
+  {{ r3.gagne_la_saison.cas }} victoires ; {{ r3.gagne_la_saison.marge }} de moins et l’intervalle
   reprendrait le hasard. Il demande à être revu dans cinq ans.</p>
   <p><b>{{ cv.saisons_sans_poteaux.size }} saisons manquent</b> —
   {{ cv.saisons_sans_poteaux | join: ", " }} — parce qu’aucune des deux sources
   n’y nomme le vainqueur des poteaux. Ce sont surtout des saisons anciennes, et
   rien ne garantit qu’elles ressembleraient aux autres. {{ cv.hors_format }} éditions de
-  plus sont écartées d’office : leur fin ne suit pas le format à trois aux poteaux.</p>
+  plus sont écartées d’office : leur fin ne suit pas le format à trois aux poteaux.</p>
 </div>

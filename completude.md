@@ -1,10 +1,10 @@
 ---
 layout: page
 title: La complétude, édition par édition
-description: "Ce qui est réellement renseigné sur Koh-Lanta : 34 éditions en ligne, 19 types de données en colonne, et à l’intersection la part connue."
+description: "Ce qui est réellement renseigné sur Koh-Lanta : 34 éditions en ligne, 19 types de données en colonne, et à l’intersection la part connue."
 permalink: /completude/
 chapeau: >-
-  Le tableau complet : les 34 éditions en ligne, les 19 types de données en
+  Le tableau complet : les 34 éditions en ligne, les 19 types de données en
   colonne, et à l’intersection ce qui est réellement renseigné.
 ---
 
@@ -13,7 +13,7 @@ chapeau: >-
 Chaque page de ce site dit ce qui lui manque. Aucune ne le montrait d’un coup
 d’œil. Voici la grille complète.
 
-<p class="note">Cette grille n’est pas qu’un inventaire : elle explique
+<p class="note">Cette grille n’est pas qu’un inventaire : elle explique
 pourquoi certains aventuriers sont mieux mesurés que d’autres. Le
 <a href="{{ '/statistiques/top/' | relative_url }}">classement des joueurs</a>
 en dépend directement — deux de ses {{ site.data.stats.mots.facettes }} facettes ne se lisent que sur un
@@ -31,7 +31,7 @@ faire comme si la couverture était uniforme.</p>
   {%- assign top = c.lignes | where: "saison", c.meilleure | first -%}
   {%- assign bas = c.lignes | where: "saison", c.pire | first -%}
   <p>L’édition la mieux documentée est <i>{{ top.titre }}</i> ({{ top.annee }}),
-  à <b>{{ top.score }} %</b> ; la moins bien, <i>{{ bas.titre }}</i>
+  à <b>{{ top.score }} %</b> ; la moins bien, <i>{{ bas.titre }}</i>
   ({{ bas.annee }}), à {{ bas.score }} % — la saison en cours au moment de la
   construction, dont tout n’est pas encore connu.</p>
 </div>
@@ -69,13 +69,13 @@ faire comme si la couverture était uniforme.</p>
 </table>
 </div>
 
-<p class="note">Survolez une case pour lire le détail : « 16/16 », « 8 relevées »,
-« non nommés ». Les colonnes marquées d’une coche sont des faits — la donnée
-existe ou n’existe pas ; les autres portent une part. Sur écran étroit, le
-tableau défile horizontalement ; la colonne des éditions reste en place.</p>
+<p class="note">Survolez une case pour lire le détail : « 16/16 », « 8 relevées »,
+« non nommés ». Les colonnes marquées d’une coche sont des faits — la donnée
+existe ou n’existe pas ; les autres portent une part. Sur écran étroit, le
+tableau défile horizontalement ; la colonne des éditions reste en place.</p>
 
-<p class="note"><strong>« Sans objet » n’est pas « manquant ».</strong> Une
-saison d’avant {{ site.data.stats.general.premiere_annee_collier }} n’a pas de collier d’immunité : la case est hachurée, pas
+<p class="note"><strong>« Sans objet » n’est pas « manquant ».</strong> Une
+saison d’avant {{ site.data.stats.general.premiere_annee_collier }} n’a pas de collier d’immunité : la case est hachurée, pas
 vide. De même pour les éditions spéciales, dont la réunification n’est pas
 mesurée, et pour les saisons sans ambassade. Confondre les deux ferait passer
 une règle du jeu pour une lacune.</p>
@@ -83,11 +83,11 @@ une règle du jeu pour une lacune.</p>
 
 <p class="note"><strong>Deux pourcentages coexistent sur ce site, et ils ne
 mesurent pas la même chose.</strong> Celui-ci, <b>{{ c.moyenne }} %</b>, est la
-moyenne des cases de cette grille : il pèse chaque édition et chaque type de
+moyenne des cases de cette grille : il pèse chaque édition et chaque type de
 donnée d’un poids égal, y compris les types qui ne concernent qu’une partie des
 saisons. Celui des <a href="{{ '/sources/' | relative_url }}">sources</a>,
 {{ site.data.stats.completude.part_remplie }} %, compte les valeurs une par une
-sur les {{ site.data.stats.completude.participations }} participations : une
+sur les {{ site.data.stats.completude.participations }} participations : une
 édition de {{ site.data.stats.mots.casting_max }} aventuriers y pèse plus qu’une de
 {{ site.data.stats.mots.casting_min }}. Le second est
 plus haut parce qu’il ne compte que ce qui se mesure par personne — ni les
@@ -121,11 +121,11 @@ Trois lectures se détachent.
 poignée de trous. Ce socle-là ne bougera plus.
 
 **Ce qui dépend d’une seule source.** Le rang final et le palmarès d’épreuves
-n’existent que par les fiches individuelles du wiki ; ils manquent partout où la
+n’existent que par les fiches individuelles du wiki ; ils manquent partout où la
 fiche manque, c’est-à-dire sur les castings les plus anciens et l’édition de
 célébrités. [Les sources]({{ '/sources/' | relative_url }}) détaillent.
 
-**Ce qui restera mince.** Le dépouillement complet des conseils plafonne : une
+**Ce qui restera mince.** Le dépouillement complet des conseils plafonne : une
 partie des conseils n’annonce même pas combien de voix ont été exprimées, si
 bien que leur complétude n’est pas vérifiable. C’est une des colonnes les plus
 basses de la grille, et c’est aussi celle dont dépendent les résultats les plus forts du
@@ -136,7 +136,7 @@ site — [les alliances]({{ '/statistiques/alliances/' | relative_url }}),
 {% assign dep = site.data.stats.classement.biais_epoque.depouillement %}
 
 <p class="note"><strong>Et cette colonne s’effondre avec le temps</strong>, ce
-qu’une moyenne ne montre pas : de <b>{{ dep.first.part }} %</b> de conseils
+qu’une moyenne ne montre pas : de <b>{{ dep.first.part }} %</b> de conseils
 dépouillés sur {{ dep.first.periode }} à <b>{{ site.data.stats.classement.biais_epoque.depouillement_plus_bas }} %</b> au plus
 bas. Les aventuriers des saisons récentes sont donc, sur tout ce qui se lit au
 bulletin, ramenés à la moyenne faute d’observations — ce n’est pas un jugement
@@ -145,13 +145,13 @@ son propre résultat, et le publie.</p>
 
 ## Comment lire une ligne
 
-Une édition bien remplie ne garantit rien : la grille dit ce qu’on **a**, pas ce
+Une édition bien remplie ne garantit rien : la grille dit ce qu’on **a**, pas ce
 qu’on peut en **conclure**. Une saison à 95 % dont les conseils ne sont pas
 dépouillés ne sert à aucune analyse de vote. Inversement, une saison à 70 % dont
 les bulletins sont complets vaut beaucoup pour
 [les alliances]({{ '/statistiques/alliances/' | relative_url }}).
 
 <p class="note"><strong>{{ site.data.stats.mots.saisons_annulees_maj }} éditions annulées</strong> —
-celles de {{ site.data.stats.general.annees_annulees_texte }}, interrompues en tournage — ne figurent pas dans la grille : elles n’ont ni
+celles de {{ site.data.stats.general.annees_annulees_texte }}, interrompues en tournage — ne figurent pas dans la grille : elles n’ont ni
 casting complet ni résultat, et les compter à zéro fausserait toutes les
 moyennes.</p>

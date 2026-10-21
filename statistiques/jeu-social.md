@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Le jeu social
-description: "Le jeu social de Koh-Lanta : être visé, voter juste, ou n’être jamais écrit sur un bulletin — et pourquoi l’invisibilité n’est que le deuxième signal."
+description: "Le jeu social de Koh-Lanta : être visé, voter juste, ou n’être jamais écrit sur un bulletin — et pourquoi l’invisibilité n’est que le deuxième signal."
 permalink: /statistiques/jeu-social/
 chapeau: >-
   Être visé, voter juste, ou n’être jamais écrit sur un bulletin —
@@ -23,7 +23,7 @@ saison, on peut l’appeler un fantôme. Il y en a **{{ i.nb_fantomes }}**, sur
 
 <p class="note"><strong>La colonne qui compte est la deuxième.</strong> Un
 fantôme a par définition traversé au moins {{ i.seuil_fantome }} conseils sans
-être écrit : le comparer à <em>tous</em> les aventuriers, celui qui est sorti au
+être écrit : le comparer à <em>tous</em> les aventuriers, celui qui est sorti au
 premier conseil compris, mélangerait deux choses — ne pas être visé, et être
 allé loin. La comparaison juste se fait aux {{ i.endurants }} aventuriers qui
 ont tenu aussi longtemps. La troisième colonne, elle, est donnée pour mémoire.</p>
@@ -56,9 +56,9 @@ ont tenu aussi longtemps. La troisième colonne, elle, est donnée pour mémoire
 {% assign fa = i.fantomes_issue | where: "sort", "abandon_medical" | first %}
 
 **{{ fv.part_fantomes }} % des fantômes gagnent la saison**, contre
-{{ fv.part_endurants }} % de ceux qui ont tenu aussi longtemps : **{{ fv.rapport }} fois
+{{ fv.part_endurants }} % de ceux qui ont tenu aussi longtemps : **{{ fv.rapport }} fois
 plus**. Et {{ fc.part_fantomes }} % seulement sont éliminés au conseil,
-contre {{ fc.part_endurants }} % — mais c’est presque une tautologie : on
+contre {{ fc.part_endurants }} % — mais c’est presque une tautologie : on
 n’élimine pas au conseil quelqu’un dont personne n’écrit le nom.
 
 Le vrai écart est ailleurs, et il est inattendu.
@@ -69,7 +69,7 @@ Le vrai écart est ailleurs, et il est inattendu.
   plus.</p>
   <p>Un corps qui lâche n’est plus une menace, et l’on n’écrit pas le nom de
   quelqu’un qu’on voit décliner. L’invisibilité au conseil n’est donc pas
-  seulement une performance sociale : c’est aussi, parfois, le signe qu’on a
+  seulement une performance sociale : c’est aussi, parfois, le signe qu’on a
   cessé d’être un adversaire.</p>
 </div>
 
@@ -78,7 +78,7 @@ Le vrai écart est ailleurs, et il est inattendu.
 
 Longtemps, cette page a présenté l’invisibilité comme le meilleur prédicteur de
 victoire du jeu de données. **Elle ne l’est pas.** Mise en concurrence avec
-l’appartenance au camp majoritaire, dans un même modèle, elle passe seconde :
+l’appartenance au camp majoritaire, dans un même modèle, elle passe seconde :
 être toujours du bon côté vaut {{ v0.estimation }} points de saison, contre
 {{ v1.estimation }} points par voix reçue et par conseil — **{{ site.data.stats.modeles.alliances.majorite.rapport }} fois moins**.
 Les deux comptent, mais dans cet ordre.
@@ -105,7 +105,7 @@ Et l’un comme l’autre ne se connaissent qu’en cours de jeu. Au casting,
 
 ### {{ site.data.stats.mots.fantomes_recidivistes_maj }} y sont revenus
 
-Être invisible une saison peut être un accident de casting : une tribu qui
+Être invisible une saison peut être un accident de casting : une tribu qui
 gagne, un conseil qu’on ne fait pas, un plus gros poisson à sortir. L’être
 **deux fois** ressemble à une manière de jouer.
 
@@ -136,7 +136,7 @@ gagne, un conseil qu’on ne fait pas, un plus gros poisson à sortir. L’être
 </div>
 
 <p class="note">La réserve tient au dénominateur, et elle est la même que
-partout ici : le voile ne se lève que sur les conseils au dépouillement
+partout ici : le voile ne se lève que sur les conseils au dépouillement
 complet. Un aventurier dont la saison est mal relevée peut passer pour un
 fantôme sans l’être. Le seuil de {{ i.seuil_fantome }} conseils traversés
 protège des cas les plus légers, pas de tous.</p>
@@ -149,11 +149,11 @@ protège des cas les plus légers, pas de tous.</p>
 selon la manière dont l’aventure s’est terminée.</p>
 
 La gradation est sans exception. Un aventurier éliminé au conseil reçoit en
-moyenne **{{ i.menace_par_sort.elimine_conseil }} voix par conseil** ; un
+moyenne **{{ i.menace_par_sort.elimine_conseil }} voix par conseil** ; un
 vainqueur, **{{ i.menace_par_sort.vainqueur }}**, soit {{ i.menace_rapport }} fois moins. Entre les
 deux, finalistes puis éliminés de la finale s’échelonnent proprement.
 
-Autrement dit : on ne gagne pas Koh-Lanta en survivant aux votes, on le gagne en
+Autrement dit : on ne gagne pas Koh-Lanta en survivant aux votes, on le gagne en
 n’en recevant pas.
 
 Ce chiffre est une moyenne de carrière. Sa version datée — *sachant les voix du
@@ -181,7 +181,7 @@ effectivement été éliminée. C’est l’indicateur de qui lit correctement l
 </table>
 </div>
 
-<p class="note">Cet indicateur est le plus fragile du site, et il faut le dire :
+<p class="note">Cet indicateur est le plus fragile du site, et il faut le dire :
 il ne se calcule que sur les conseils dont le dépouillement est complet
 <em>et</em> dont l’éliminé a pu être rattaché — {{ site.data.stats.conseils.conseils_justesse }} conseils, pas les
 {{ site.data.stats.conseils.conseils }}. Le classement ci-dessus est
@@ -207,10 +207,10 @@ suffirait à afficher 100 %.</p>
 </div>
 
 Ceux-là ont vu leur nom sortir de l’urne plusieurs fois sans jamais partir. La
-plupart finissent tout de même par tomber : échapper au vote se paie plus tard.
+plupart finissent tout de même par tomber : échapper au vote se paie plus tard.
 
-<p class="note"><strong>Ce que « survivre quand on est visé » vaut en
-probabilité.</strong> Ce tableau classe des individus ; la loi générale, elle,
+<p class="note"><strong>Ce que « survivre quand on est visé » vaut en
+probabilité.</strong> Ce tableau classe des individus ; la loi générale, elle,
 est ailleurs. Avoir été visé au conseil précédent fait passer le risque de
 partir de {{ site.data.stats.modeles.conditionnelles.par_voix[0].probabilite }} %
 à {{ site.data.stats.modeles.conditionnelles.par_voix[1].probabilite }} % pour

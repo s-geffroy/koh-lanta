@@ -1,17 +1,17 @@
 ---
 layout: page
 title: Les revenants
-description: "Rejouer Koh-Lanta est-il un avantage ? Le chiffre qui saute aux yeux dit oui. Le parcours des revenants dit surtout autre chose."
+description: "Rejouer Koh-Lanta est-il un avantage ? Le chiffre qui saute aux yeux dit oui. Le parcours des revenants dit surtout autre chose."
 permalink: /statistiques/revenants/
 chapeau: >-
-  Rejouer Koh-Lanta, est-ce un avantage ? Le chiffre qui saute aux yeux dit
+  Rejouer Koh-Lanta, est-ce un avantage ? Le chiffre qui saute aux yeux dit
   oui. Il dit surtout autre chose.
 ---
 
 {% assign r = site.data.stats.revenants %}
 {% assign g = site.data.stats.general %}
 
-{{ g.participations }} participations pour {{ g.personnes }} personnes : la
+{{ g.participations }} participations pour {{ g.personnes }} personnes : la
 différence tient à ceux qui sont revenus. Ils ont déjà vu l’île, ils savent
 faire un feu, ils connaissent le rythme des conseils. On s’attend donc à ce
 qu’ils fassent mieux — et à première vue, c’est le cas.
@@ -21,11 +21,11 @@ qu’ils fassent mieux — et à première vue, c’est le cas.
 {% include graphiques/revenants-paradoxe.svg %}
 
 <p class="legende-figure">Part moyenne de la saison passée en jeu. Les
-revenants sont comptés deux fois : une fois pour leur première aventure, une
+revenants sont comptés deux fois : une fois pour leur première aventure, une
 fois pour chacun de leurs retours.</p>
 
 Comparés en bloc, les revenants tiennent plus longtemps que les autres. La
-conclusion facile serait : **l’expérience paie**. Mais séparons leur première
+conclusion facile serait : **l’expérience paie**. Mais séparons leur première
 aventure de leurs retours.
 
 <div class="constat">
@@ -34,22 +34,22 @@ aventure de leurs retours.
   {{ r.paradoxe[0].survie_moyenne }} % pour ceux qui n’ont jamais été rappelés.
   Ils étaient donc <b>déjà exceptionnels avant de revenir</b>.</p>
   <p>Et lorsqu’ils reviennent, ils tombent à
-  <b>{{ r.paradoxe[2].survie_moyenne }} %</b> : <b>moins bien qu’à leur premier
+  <b>{{ r.paradoxe[2].survie_moyenne }} %</b> : <b>moins bien qu’à leur premier
   passage</b>.</p>
   <p>Ce n’est donc pas l’expérience qui explique l’écart, c’est le casting. La
-  production rappelle ceux qui sont allés loin ; l’écart était acquis avant que
+  production rappelle ceux qui sont allés loin ; l’écart était acquis avant que
   le retour ne commence.</p>
 </div>
 
 C’est un **biais de sélection**, et c’est la raison pour laquelle une moyenne
 comparée à une autre moyenne ne suffit presque jamais. Le groupe des revenants
-n’est pas un échantillon des aventuriers : c’est le haut du panier, choisi
+n’est pas un échantillon des aventuriers : c’est le haut du panier, choisi
 exprès.
 
-<p class="note">Ce que ces chiffres ne disent pas : pourquoi le retour se passe
+<p class="note">Ce que ces chiffres ne disent pas : pourquoi le retour se passe
 moins bien. Deux explications tiennent également debout et ces données ne
 permettent pas de trancher entre elles. Les revenants sont des cibles connues,
-et l’on vote contre ceux qu’on redoute ; mais les éditions spéciales
+et l’on vote contre ceux qu’on redoute ; mais les éditions spéciales
 rassemblent aussi des joueurs tous très forts, où la moitié doit forcément
 sortir tôt.</p>
 
@@ -61,7 +61,7 @@ Avant de se demander si revenir paie, il faut se demander **qui est
 rappelé** — et là, ce n’est plus le jeu qui décide, c’est la production. Sur
 les **{{ rp.effectif }} premières participations** assez anciennes pour qu’un
 retour ait eu le temps de se produire (avant {{ rp.annee_limite }}),
-**{{ rp.rappeles }} ont été suivies d’une autre édition** :
+**{{ rp.rappeles }} ont été suivies d’une autre édition** :
 {{ rp.part }} %.
 
 {% include graphiques/rappel-sort.svg %}
@@ -87,7 +87,7 @@ ultérieure, selon la façon dont leur première aventure s’est terminée.</p>
 
 {% assign fin = rp.par_sort | first %}
 {% assign dernier = rp.par_sort | last %}
-La gradation est sans trou : **{{ fin.probabilite }} %** en haut du tableau,
+La gradation est sans trou : **{{ fin.probabilite }} %** en haut du tableau,
 **{{ dernier.probabilite }} %** en bas. Entre les deux, chaque façon de sortir a
 sa probabilité d’être redemandé, et elles se rangent exactement dans l’ordre où
 l’on s’attendrait à les trouver.
@@ -101,7 +101,7 @@ longévité auquel ils appartiennent.</p>
 
 Le cinquième qui va le plus loin est rappelé
 **{{ rp.par_survie[4].probabilite }} %** du temps, contre
-**{{ rp.par_survie[0].probabilite }} %** pour celui qui sort le plus tôt :
+**{{ rp.par_survie[0].probabilite }} %** pour celui qui sort le plus tôt :
 {{ rp.rapport_survie }} fois moins. Le tableau des sorts, ci-dessus, ne dit peut-être rien de
 plus que cela — un éliminé aux poteaux est allé loin par définition.
 
@@ -110,7 +110,7 @@ plus que cela — un éliminé aux poteaux est allé loin par définition.
 {% include graphiques/rappel-modele.svg %}
 
 <p class="legende-figure">Rapports de cotes d’une régression logistique sur les
-{{ rp.effectif }} premières participations. Au-dessus de 1 : rappelé plus
+{{ rp.effectif }} premières participations. Au-dessus de 1 : rappelé plus
 souvent, toutes les autres variables tenues fixes.</p>
 
 <div class="tableau-large">
@@ -128,17 +128,17 @@ souvent, toutes les autres variables tenues fixes.</p>
 </div>
 
 <div class="constat">
-  <p><b>La longévité domine</b> : dix points de saison tenus en plus multiplient
+  <p><b>La longévité domine</b> : dix points de saison tenus en plus multiplient
   la cote d’être rappelé par {{ rp.coefficients[0].rapport }}.</p>
   <p><b>L’âge compte, et il compte contre.</b> Dix ans de plus au casting
   divisent la cote par {{ rp.coefficients[3].inverse }},
   à longévité, sexe et époque égaux — intervalle
   {{ rp.coefficients[3].bas }} à {{ rp.coefficients[3].haut }},
   p {{ rp.coefficients[3].p }}. La production rappelle plutôt les jeunes, et ce
-  n’est pas parce qu’ils vont plus loin : c’est justement ce que le modèle tient
+  n’est pas parce qu’ils vont plus loin : c’est justement ce que le modèle tient
   fixe. <a href="{{ '/statistiques/longevite/' | relative_url }}">Âge et longévité</a> montre
   d’ailleurs que ce sont les {{ site.data.stats.age_survie_max }} qui durent le plus.</p>
-  <p><b>Le sexe, non</b> : cote multipliée par {{ rp.coefficients[2].rapport }},
+  <p><b>Le sexe, non</b> : cote multipliée par {{ rp.coefficients[2].rapport }},
   intervalle {{ rp.coefficients[2].bas }} à {{ rp.coefficients[2].haut }}. Le
   rappel est aussi paritaire que le casting — et
   <a href="{{ '/statistiques/casting/' | relative_url }}">la recette du casting</a> montre
@@ -147,7 +147,7 @@ souvent, toutes les autres variables tenues fixes.</p>
   par {{ rp.coefficients[1].rapport }} — divisée par {{ rp.coefficients[1].inverse }},
   donc — mais
   l’intervalle ({{ rp.coefficients[1].bas }} à {{ rp.coefficients[1].haut }})
-  contient 1. Le tableau des sorts dit pourquoi : les deux dernières lignes
+  contient 1. Le tableau des sorts dit pourquoi : les deux dernières lignes
   réunissent {{ rp.abandons_derniers }} abandons et <b>{{ site.data.stats.mots.retours_abandon }} seul</b> retour. On voit la
   direction, pas l’ampleur.</p>
 </div>
@@ -155,7 +155,7 @@ souvent, toutes les autres variables tenues fixes.</p>
 <p class="note"><strong>Ce que ce modèle ne peut pas voir.</strong> Il ne
 connaît ni le temps d’antenne, ni le personnage que le montage a construit, ni
 qui a refusé de revenir. Un aventurier peut n’avoir jamais été rappelé, ou avoir
-dit non : ces données ne distinguent pas les deux, et l’écart mesuré mêle le
+dit non : ces données ne distinguent pas les deux, et l’écart mesuré mêle le
 choix de la production et celui du candidat.</p>
 
 ## Le petit monde des revenants
@@ -163,14 +163,14 @@ choix de la production et celui du candidat.</p>
 {% include graphiques/revenants-graphe.svg %}
 
 <p class="legende-figure">Chaque point est un aventurier revenu au moins deux
-fois, rangé par ordre d’arrivée dans le programme ; sa taille dit combien
+fois, rangé par ordre d’arrivée dans le programme ; sa taille dit combien
 d’autres revenants il a croisés, sa couleur combien de saisons il a jouées. Un
 arc relie deux personnes ayant partagé une saison, et sa couleur dit combien
-elles en ont partagé : les {{ r.graphe.aretes | size }} liens sont gris quand
+elles en ont partagé : les {{ r.graphe.aretes | size }} liens sont gris quand
 la rencontre est unique, colorés dès qu’elle se répète. Survolez un point pour ne garder que lui, ses liens et les revenants
-qu’il a croisés ; un arc coloré pour lire les deux noms.</p>
+qu’il a croisés ; un arc coloré pour lire les deux noms.</p>
 
-Les {{ r.graphe.noeuds | size }} revenants forment un réseau serré :
+Les {{ r.graphe.noeuds | size }} revenants forment un réseau serré :
 {{ r.graphe.aretes | size }} liens entre eux, alors qu’un groupe de cette taille
 pourrait en compter bien davantage sans jamais se recroiser. Les éditions
 spéciales agissent comme des carrefours — elles rassemblent d’un coup une
@@ -199,7 +199,7 @@ vingtaine de personnes qui se connaissent déjà.
 **{{ r.les_plus_connectes[0].nom }}** a partagé une aventure avec
 {{ r.les_plus_connectes[0].liens }} personnes différentes — plus que
 {{ r.carrieres[0].nom }}, qui a pourtant joué plus longtemps. Le nombre de
-saisons ne suffit pas : ce qui compte est la **taille** des castings qu’on a
+saisons ne suffit pas : ce qui compte est la **taille** des castings qu’on a
 traversés.
 
 ## Un seul a gagné deux fois
@@ -216,15 +216,15 @@ en un nom.
 </ul>
 
 <div class="constat">
-  <p>En {{ site.data.stats.mots.etendue_annees }} ans, <b>{{ vm | size }} personne</b> a gagné deux fois :
-  {% for v in vm %}<b>{{ v.nom }}</b>, {{ v.editions | join: " et " }}{% unless forloop.last %} ; {% endunless %}{% endfor %}.
+  <p>En {{ site.data.stats.mots.etendue_annees }} ans, <b>{{ vm | size }} personne</b> a gagné deux fois :
+  {% for v in vm %}<b>{{ v.nom }}</b>, {{ v.editions | join: " et " }}{% unless forloop.last %} ; {% endunless %}{% endfor %}.
   {{ r.titres_distincts }} vainqueurs distincts pour
   {{ r.titres_total }} titres — l’écart, c’est elle.</p>
   <p><b>{{ r.vainqueurs_revenus }} vainqueurs sont revenus</b> jouer après leur
   titre. <b>Un seul a regagné.</b></p>
 </div>
 
-Ce que sont devenues leurs participations d’après-titre :
+Ce que sont devenues leurs participations d’après-titre :
 
 <div class="tableau-large">
 <table>
@@ -246,7 +246,7 @@ Ce que sont devenues leurs participations d’après-titre :
 </div>
 
 <p class="note">C’est la même leçon que le paradoxe du haut de page, vue par
-l’autre bout. Revenir avec un titre, ce n’est pas revenir avec un avantage :
+l’autre bout. Revenir avec un titre, ce n’est pas revenir avec un avantage :
 c’est revenir avec une <strong>cible</strong>. Le conseil s’en charge dans la
 grande majorité des cas, et la seule à s’en être extraite deux fois l’a fait à
 {{ site.data.stats.mots.intervalle_titres }} ans d’intervalle.</p>
@@ -256,8 +256,8 @@ grande majorité des cas, et la seule à s’en être extraite deux fois l’a f
 {{ r.vainqueurs_en_jeu }} anciens vainqueurs sont <strong>encore en
 course</strong> dans l’édition en cours de diffusion, qui n’entre dans aucun
 calcul de ce site tant qu’elle n’est pas terminée — une saison sans issue
-connue ne peut pas compter. Si l’un d’eux l’emporte, « une seule personne a
-gagné deux fois » cessera d’être vrai, et cette page le dira.
+connue ne peut pas compter. Si l’un d’eux l’emporte, « une seule personne a
+gagné deux fois » cessera d’être vrai, et cette page le dira.
 {% if r.vainqueurs_sortis_texte != "" %}{{ r.vainqueurs_sortis_texte }}.{% endif %}
 Le compte se met à jour à chaque rafraîchissement de la source, il n’est pas
 écrit à la main.</p>
@@ -272,7 +272,7 @@ En vert, ceux qui n’ont jamais été éliminés une seule fois.</p>
 
 {% assign sf = r.sans_faute %}
 **{{ sf | size }} aventuriers n’ont jamais quitté le jeu avant la fin**, sur
-l’ensemble de leurs participations :
+l’ensemble de leurs participations :
 {% for c in sf %}{{ c.nom }} ({{ c.saisons }} saisons, {{ c.jours }} jours){% unless forloop.last %}, {% endunless %}{% endfor %}.
 Aucun conseil, aucun poteau, aucune orientation ne les a fait sortir.
 
@@ -308,7 +308,7 @@ personnes.</p>
 En tête, **{{ r.duos[0].a }} et {{ r.duos[0].b }}**, qui ont joué
 {{ r.duos[0].saisons }} fois ensemble.
 
-<p class="note">Le biais se retrouve tel quel dans un modèle multivarié : à
+<p class="note">Le biais se retrouve tel quel dans un modèle multivarié : à
 âge, sexe, métier et saison identiques, un aventurier déjà venu est éliminé
 {{ site.data.stats.modeles.equilibre.cox.deja_venu_inverse }} fois moins vite, et c’est le plus gros coefficient du modèle
 (<a href="{{ '/statistiques/equilibre/' | relative_url }}">Le jeu tenu serré</a>).

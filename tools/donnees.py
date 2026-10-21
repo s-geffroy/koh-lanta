@@ -42,6 +42,30 @@ RE_NOMBRE_RUBY = re.compile(r"^[-+]?[0-9][0-9_,]*(\.[0-9_]*)?$")
 RE_DECIMAL_FR = re.compile(r"^-?[0-9]+,[0-9]+$")
 
 
+# LES ESPACES INSECABLES DE LA TYPOGRAPHIE FRANCAISE (21 octobre 2026). Avant
+# « : », une espace insecable ; avant « ; ? ! » et « », et apres « », une
+# espace fine insecable. Une espace ordinaire laisse le navigateur couper la
+# ligne juste avant le signe, qui ouvre alors la ligne suivante. On en a
+# compte 7 981 sur les 622 pages publiees. La regle est posee ICI, a
+# l'ecriture de toute chaine de `_data/`, et dans `graphiques.ecrire` pour
+# les figures : un script qui ecrit « Pourquoi ? » n'a pas a y penser.
+#
+# Les lookaheads evitent ce qui n'est pas de la ponctuation de phrase : une
+# image Markdown (« ![ »), un « != », un « :8 ».
+INSECABLE = "\u00a0"
+FINE = "\u202f"
+RE_ESPACE_DEUX_POINTS = re.compile(r"(?<=[^\s\u00a0\u202f]) :(?=\s|$|<)")
+RE_ESPACE_AVANT = re.compile(r"(?<=[^\s\u00a0\u202f]) ([;?!»])(?=[\s<»)\]\"'.,…]|$)")
+RE_ESPACE_APRES = re.compile(r"« (?=\S)")
+
+
+def insecables(texte):
+    """« Pourquoi ? » -> « Pourquoi\u202f? » ; seulement l'espace change."""
+    texte = RE_ESPACE_DEUX_POINTS.sub(INSECABLE + ":", texte)
+    texte = RE_ESPACE_AVANT.sub(lambda m: FINE + m.group(1), texte)
+    return RE_ESPACE_APRES.sub("«" + FINE, texte)
+
+
 def decimal_fr(x):
     """54.2 -> « 54,2 » ; 100.0 -> 100 ; 1e-05 -> « 0,00001 »."""
     if x == int(x):
@@ -60,6 +84,7 @@ class Ecrivain(yaml.SafeDumper):
 
 
 def _chaine(dumper, valeur):
+    valeur = insecables(valeur)
     style = '"' if RE_NOMBRE_RUBY.match(valeur) else None
     return dumper.represent_scalar("tag:yaml.org,2002:str", valeur, style=style)
 

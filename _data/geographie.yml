@@ -691,7 +691,7 @@ tests:
 - cle: geographie_departements
   libelle: L'origine géographique, par département
   question: Les aventuriers viennent-ils de départements plus variés, ou plus concentrés, qu'un tirage
-    dans la population française ne le donnerait ?
+    dans la population française ne le donnerait ?
   observe: "181,66"
   attendu: "98,977"
   unite: ''
@@ -699,7 +699,7 @@ tests:
   p: "0,0001"
   tirages: 10000
   lecture: 'Dispersion entre les effectifs observés et ceux qu''on attendrait d''un tirage au hasard dans
-    la population de 20 à 59 ans, année par année. Au-dessus de l''attendu : le recrutement n''épouse
+    la population de 20 à 59 ans, année par année. Au-dessus de l''attendu : le recrutement n''épouse
     pas la démographie.'
   nulle:
     bornes:
@@ -740,14 +740,14 @@ tests:
 - cle: geographie_regions
   libelle: L'origine géographique, par région
   question: À l'échelle des régions — assez peuplées pour trancher — le recrutement suit-il la démographie
-    française ?
+    française ?
   observe: "64,051"
   attendu: "15,956"
   unite: ''
   ecart_types: "8,26"
   p: "0,0001"
   tirages: 10000
-  lecture: 'Même mesure, agrégée par région. C''est le niveau où la question se décide : un département
+  lecture: 'Même mesure, agrégée par région. C''est le niveau où la question se décide : un département
     compte trois aventuriers, une région une vingtaine.'
   nulle:
     bornes:

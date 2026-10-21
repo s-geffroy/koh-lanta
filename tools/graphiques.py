@@ -26,6 +26,8 @@ import re
 import sys
 import unicodedata
 
+import donnees
+
 
 RACINE = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 SORTIE = os.path.join(RACINE, "_includes", "graphiques")
@@ -555,6 +557,15 @@ def ecrire(nom, contenu):
         print(f"  (vide) {nom}")
         return
     contenu = virgule_decimale(contenu)
+    # Les espaces insecables, sur le TEXTE seulement -- entre deux balises,
+    # et dans aria-label -- jamais dans un attribut de dessin ni un <style>.
+    morceaux = re.split(r"(<style\b.*?</style>)", contenu, flags=re.S)
+    contenu = "".join(
+        x if x.startswith("<style") else
+        re.sub(r">([^<>]+)<", lambda m: ">" + donnees.insecables(m.group(1)) + "<", x)
+        for x in morceaux)
+    contenu = re.sub(r'aria-label="([^"]*)"',
+                     lambda m: 'aria-label="' + donnees.insecables(m.group(1)) + '"', contenu)
     os.makedirs(SORTIE, exist_ok=True)
     chemin = os.path.join(SORTIE, nom)
     with open(chemin, "w", encoding="utf-8") as f:

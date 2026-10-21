@@ -1,10 +1,10 @@
 ---
 layout: page
 title: Les colliers d’immunité
-description: "Les colliers d’immunité de Koh-Lanta suivis un par un : où ils étaient cachés, qui les a trouvés, et ce qu’ils ont réellement changé au conseil."
+description: "Les colliers d’immunité de Koh-Lanta suivis un par un : où ils étaient cachés, qui les a trouvés, et ce qu’ils ont réellement changé au conseil."
 permalink: /statistiques/colliers/
 chapeau: >-
-  Chaque collier d’immunité suivi un par un : où il était caché, qui l’a trouvé, et ce qu’il a réellement changé au conseil.
+  Chaque collier d’immunité suivi un par un : où il était caché, qui l’a trouvé, et ce qu’il a réellement changé au conseil.
 ---
 
 {% assign c = site.data.stats.colliers %}
@@ -13,7 +13,7 @@ Le collier d’immunité est apparu en {{ site.data.stats.general.premiere_annee
 n’a plus quitté le jeu. C’est aussi
 la mécanique sur laquelle circulent le plus d’affirmations invérifiables. Le
 destin de **{{ c.colliers }} colliers** a été relevé sur
-{{ c.saisons_couvertes }} saisons : où ils étaient cachés, qui les a trouvés,
+{{ c.saisons_couvertes }} saisons : où ils étaient cachés, qui les a trouvés,
 s’ils ont servi, et combien de voix ils ont annulées.
 
 <ul class="chiffres">
@@ -47,8 +47,8 @@ s’ils ont servi, et combien de voix ils ont annulées.
 </div>
 
 **Le dénominateur change tout.** Rapporté à l’ensemble des colliers cachés, le
-« joué et efficace » ne pèse que {{ c.issues[0].part_totale }} %. Mais un
-collier que personne n’a découvert n’est l’échec de personne : rapporté aux
+« joué et efficace » ne pèse que {{ c.issues[0].part_totale }} %. Mais un
+collier que personne n’a découvert n’est l’échec de personne : rapporté aux
 seuls colliers **trouvés**, il monte à {{ c.issues[0].part_des_trouves }} %.
 Les deux chiffres sont vrais, ils ne répondent pas à la même question.
 
@@ -60,17 +60,17 @@ sans annuler la moindre voix — leur détenteur n’était pas visé. C’est l
 qui a parlé, pas la lecture du jeu.
 
 **Un sur sept part avec son propriétaire.** Éliminé au conseil, collier dans le
-sac : {{ c.issues[3].part_des_trouves }} % des colliers trouvés connaissent ce
+sac : {{ c.issues[3].part_des_trouves }} % des colliers trouvés connaissent ce
 sort. C’est le scénario que tout aventurier redoute, et il est plus rare qu’on
 ne le raconte.
 
 **Quand il sert, il sert beaucoup.** Un collier joué efficacement annule en
-moyenne **{{ c.voix_par_collier_joue }} voix**. Il ne renverse pas une voix : il
+moyenne **{{ c.voix_par_collier_joue }} voix**. Il ne renverse pas une voix : il
 efface un paquet de bulletins d’un coup.
 
 ## Qui les trouve, qui les joue, qui en tire quelque chose
 
-Trois comptes, et c’est le troisième qui vaut : **trouver un collier n’est pas
+Trois comptes, et c’est le troisième qui vaut : **trouver un collier n’est pas
 le jouer, et le jouer n’est pas annuler des voix.**
 
 <div class="tableau-large">
@@ -89,7 +89,7 @@ le jouer, et le jouer n’est pas annuler des voix.**
 
 <div class="constat">
   <p><b>{{ c.porteurs }} aventuriers</b> se partagent les
-  {{ c.colliers_attribues }} colliers attribués : personne ou presque n’en
+  {{ c.colliers_attribues }} colliers attribués : personne ou presque n’en
   trouve plusieurs, et <b>{{ c.palmares[0].nom }}</b> est le seul à faire
   {{ c.palmares[0].trouves }} sur {{ c.palmares[0].trouves }} — trouvés, joués,
   et efficaces à chaque fois.</p>
@@ -98,7 +98,7 @@ le jouer, et le jouer n’est pas annuler des voix.**
 ### Éliminé avec le collier dans la poche
 
 {% assign perdus = c.elimines_avec_collier %}
-La catégorie la plus cruelle du tableau : l’avoir trouvé, ne pas l’avoir joué,
+La catégorie la plus cruelle du tableau : l’avoir trouvé, ne pas l’avoir joué,
 et partir quand même. Elle compte **{{ perdus | size }} cas**.
 
 <div class="tableau-large">
@@ -114,7 +114,7 @@ et partir quand même. Elle compte **{{ perdus | size }} cas**.
 
 <p class="note"><strong>Ce palmarès n’est pas un palmarès de carrière.</strong>
 Les colliers ne sont relevés que sur <b>{{ c.saisons_couvertes }} saisons</b>.
-Un aventurier absent de ce tableau n’en a pas forcément jamais trouvé : il a
+Un aventurier absent de ce tableau n’en a pas forcément jamais trouvé : il a
 peut-être joué là où la source ne dit rien. Claude Dartois, premier du
 <a href="{{ '/statistiques/top/' | relative_url }}">classement des joueurs</a>,
 en est un exemple — une seule de ses quatre saisons est couverte ici, et il n’y
@@ -150,16 +150,16 @@ en jeu sur les saisons récentes.</p>
 Les autres objets — armes secrètes (2021), totem maudit (2022), talisman du feu
 sacré (2023) — sont des mécaniques distinctes, avec leurs propres règles, et
 n’entrent pas dans ces comptes. Les {{ c.saisons_couvertes }} saisons couvertes
-sont celles dont les sources donnent le destin de chaque collier ; les autres
+sont celles dont les sources donnent le destin de chaque collier ; les autres
 mentionnent des colliers sans les détailler.</p>
 
 ## Ce que les bulletins savent que ce tableau ignore
 
 {% assign co = site.data.stats.conseils %}
 
-Le tableau ci-dessus suit la **vie d’un objet** : où il était caché, qui l’a
+Le tableau ci-dessus suit la **vie d’un objet** : où il était caché, qui l’a
 trouvé, ce qu’il en a fait. Cette information n’existe que sur
-{{ c.saisons_couvertes }} saisons. Mais il reste une trace ailleurs : dans la
+{{ c.saisons_couvertes }} saisons. Mais il reste une trace ailleurs : dans la
 matrice des votes, une voix annulée par un objet est **barrée**. Et cette
 trace-là existe sur {{ co.saisons_avec_objet_joue }} saisons.
 
@@ -173,14 +173,14 @@ trace-là existe sur {{ co.saisons_avec_objet_joue }} saisons.
   {{ co.objet_un_seul_protege }}</b>. Un objet joué au bon conseil ne rate
   jamais.</p>
   <p>Le vrai problème n’est donc pas l’efficacité de l’objet, c’est la
-  décision : {{ c.jamais_trouves }} colliers n’ont jamais été trouvés, et
+  décision : {{ c.jamais_trouves }} colliers n’ont jamais été trouvés, et
   beaucoup de ceux qui l’ont été sont partis avec leur détenteur, dans la
   poche.</p>
 </div>
 
 <p class="note">Attention à ne pas confondre deux marques identiques.
 Lorsque <em>tous</em> les bulletins d’un conseil sont barrés, ce n’est pas un
-objet : c’est le tour entier qui est nul, une égalité suivie d’un second vote.
+objet : c’est le tour entier qui est nul, une égalité suivie d’un second vote.
 Ce cas-là pèse {{ co.voix_annulees_tour_nul }} voix sur
 {{ co.conseils_tour_nul }} conseils, et il était compté avec les colliers
 jusqu’à cette version du site. <a href="{{ '/statistiques/conseils/' | relative_url }}">Les
