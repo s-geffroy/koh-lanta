@@ -427,7 +427,8 @@ def trancher_par_ligne(lot, idx, sid, rapport):
 # pourtant une colonne de la matrice, et c'est voulu -- la colonne date la
 # sortie, et `indicateurs._episode_de_sortie` en a besoin.
 SORTIES_SANS_VOTE = {"abandon_medical", "abandon_volontaire", "elimine_orientation",
-                     "elimine_poteaux", "elimine_duel", "elimine_ambassadeurs"}
+                     "elimine_poteaux", "elimine_duel", "elimine_ambassadeurs",
+                     "elimine_epreuve"}
 
 
 def etiqueter_les_sorties(conseils, debut, sorts, rapport):

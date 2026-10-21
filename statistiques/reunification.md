@@ -133,7 +133,7 @@ C’est cohérent avec ce que montre
 réunification, plusieurs groupes coexistent et chacun écrit son nom. Avant, une tribu
 qui vient de perdre une épreuve a souvent déjà tranché sur le chemin du retour.
 
-## L’âge bascule dans le même sens, et de justesse on peut l’affirmer
+## L’âge bascule dans le même sens, mais on ne peut pas l’affirmer
 
 {% assign ag = site.data.stats.modeles.age_au_conseil %}
 {% assign tag = reg | where: "cle", "age_bascule_fusion" | first %}
@@ -167,28 +167,32 @@ l’éliminé de chaque conseil est pris au hasard parmi les présents.</p>
   jeune que la moyenne.</p>
   <p>La bascule vaut {{ tag.observe_arrondi }} ans, {{ tag.ecart_types }}
   écarts-types, p brute {{ tag.p }}, p ajustée {{ tag.p_ajustee }}.
-  <b>Retenu, de justesse.</b></p>
-  <p>C’est exactement le sens de la bascule de la force. Sur
-  {{ ag.conseils }} conseils, l’écart se distingue d’un tirage — mais il passe
-  le seuil de peu, et une saison mal relevée suffirait à le faire repasser
-  dessous.</p>
+  <b>Non concluant.</b></p>
+  <p>C’est le sens de la bascule de la force. Sur {{ ag.conseils }} conseils,
+  l’écart ne passe pas le seuil, de peu : un tirage au hasard parmi les
+  présents le produit encore trop souvent pour qu’on l’affirme.</p>
 </div>
 
-<p class="note"><strong>Cette page a longtemps conclu l’inverse.</strong>
-Jusqu’au 20 octobre 2026, elle titrait « mais on ne peut pas l’affirmer » :
-1,3 an sur 372 conseils, 1,44 écart-type, p ajustée 0,22, non concluant. Ce
+<p class="note"><strong>Cette conclusion a changé deux fois.</strong>
+Jusqu’au 20 octobre 2026, la page titrait déjà « mais on ne peut pas
+l’affirmer » : 1,3 an sur 372 conseils, 1,44 écart-type, p ajustée 0,22. Ce
 jour-là, le relevé des épreuves a été corrigé et complété — cinq saisons
 ajoutées depuis le wiki <em>Survivor</em>, des épisodes remis à leur place —
 et la date de la réunification a bougé avec lui : 222 conseils comptés avant,
-150 après, contre {{ ag.conseils_avant }} et {{ ag.conseils_apres }}
-aujourd’hui. Le résultat a franchi le seuil. Il est publié tel quel, avec
-l’ancienne conclusion en regard.</p>
+150 après. La bascule a alors passé le seuil, de justesse (2 ans,
+p ajustée 0,045), et la page l’a annoncée retenue en prévenant qu’une
+saison mal relevée suffirait à la faire repasser dessous. Le
+21 octobre, trente sorties par épreuve éliminatoire, comptées jusque-là
+comme des conseils sans bulletin, ont été rendues à leur vraie nature. Le
+résultat est repassé sous le seuil : {{ ag.conseils_avant }} conseils
+avant, {{ ag.conseils_apres }} après, p ajustée {{ tag.p_ajustee }}. Il est
+publié tel quel, avec les conclusions précédentes en regard.</p>
 
 <p class="note">Le doyen du camp, lui, est traité comme une catégorie sur
 <a href="{{ '/statistiques/autour-du-feu/' | relative_url }}">Sachant qui est
 autour du feu</a>, et il y reste non concluant. Deux façons de poser la
-question de l’âge au conseil, deux réponses de force inégale : l’écart moyen
-passe le seuil, la catégorie du plus âgé non.</p>
+question de l’âge au conseil, et aucune ne passe le seuil : ni l’écart moyen,
+ni la catégorie du plus âgé.</p>
 
 ## Le sexe, lui, bascule
 

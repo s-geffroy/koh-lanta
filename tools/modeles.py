@@ -1077,7 +1077,8 @@ def equilibre(par_saison, parts, conseils, epreuves):
     # plateau. Les abandons ne sont pas des eliminations : ils sont censures,
     # comme les finalistes et les vainqueurs.
     ELIMINE = ("elimine_conseil", "elimine_poteaux", "elimine_orientation",
-               "elimine_ambassadeurs", "elimine_duel", "elimine_exil")
+               "elimine_ambassadeurs", "elimine_duel", "elimine_exil",
+               "elimine_epreuve")
     nb_saisons = {}
     for p in parts:
         nb_saisons[p["id"]] = nb_saisons.get(p["id"], 0) + 1
@@ -4026,6 +4027,7 @@ LIBELLE_SORT = {
     "elimine_orientation": "Éliminé à l’orientation",
     "elimine_ambassadeurs": "Éliminé aux ambassadeurs",
     "elimine_duel": "Éliminé en duel", "elimine_exil": "Éliminé sur l’île",
+    "elimine_epreuve": "Éliminé à une épreuve",
     "abandon_medical": "Abandon médical",
     "abandon_volontaire": "Abandon volontaire",
     "disqualifie": "Disqualifié",

@@ -1,10 +1,10 @@
 ---
 layout: page
 title: Comment on sort
-description: "Comment on sort de Koh-Lanta : conseil, poteaux, orientation, abandon — neuf façons de quitter le jeu, et des proportions qui ont nettement bougé."
+description: "Comment on sort de Koh-Lanta : conseil, épreuve, poteaux, orientation, abandon — dix façons de quitter le jeu, et des proportions qui ont bougé."
 permalink: /statistiques/sorties/
 chapeau: >-
-  Conseil, poteaux, orientation, abandon : neuf façons de quitter le jeu, et des proportions qui ont nettement bougé en vingt-cinq ans.
+  Conseil, épreuve, poteaux, orientation, abandon : dix façons de quitter le jeu, et des proportions qui ont nettement bougé en vingt-cinq ans.
 ---
 
 {% assign s = site.data.stats %}
@@ -48,10 +48,21 @@ c’est une bascule, pas une pente.
 mécanique a été introduite, éprouvée, puis relativisée par les mécaniques plus
 récentes — colliers, totems, duels.
 
-**Le conseil, lui, gagne du terrain** : il fait sortir
-{{ s.sorties.par_decennie[2].conseil }} % des aventuriers dans les années 2020
-contre {{ s.sorties.par_decennie[0].conseil }} % dans les années 2000. Moins on
-abandonne, plus on est éliminé par les autres.
+**Le conseil, lui, ne gagne pas de terrain** : il fait sortir
+{{ s.sorties.par_decennie[2].conseil }} % des aventuriers dans les années 2020,
+contre {{ s.sorties.par_decennie[0].conseil }} % dans les années 2000. La place
+que laissent les abandons ne lui revient pas. Ce qui monte, ce sont les
+**épreuves éliminatoires**, où le dernier quitte le jeu sans que personne ait
+voté : {{ s.sorties.par_decennie[0].epreuve }} % des sorties dans les années
+2000, {{ s.sorties.par_decennie[2].epreuve }} % dans les années 2020.
+
+<p class="note"><strong>Cette page a longtemps écrit l’inverse.</strong>
+Jusqu’au 21 octobre 2026, elle concluait que le conseil gagnait du terrain
+(63,3 % des sorties dans les années 2000, 67 % dans les années 2020) et que,
+moins on abandonnait, plus on était éliminé par les autres. Vingt-trois
+sorties par épreuve éliminatoire y étaient comptées comme des éliminations
+au conseil, et quinze datent des années 2020. Rendues à leur nature, elles
+renversent la conclusion.</p>
 
 ## Le risque, à mesure que la saison avance
 

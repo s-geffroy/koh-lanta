@@ -217,6 +217,14 @@ SORTS = [
     ("elimine_duel",         "h", r"elimin[ée][^.]*(duel|arene|antre|1 contre 1)"),
     ("elimine_exil",         "f", r"elimin[ée]e[^.]*(exil|banni)"),
     ("elimine_exil",         "h", r"elimin[ée][^.]*(exil|banni)"),
+    # L'epreuve eliminatoire : le dernier d'une epreuve quitte le jeu, sans
+    # vote (« Elimine lors d'une epreuve eliminatoire », « a l'epreuve du
+    # quiz », « a la Tribu maudite »). Sans cette ligne, 30 participations
+    # tombaient dans « elimine au conseil », et leur colonne de matrice
+    # passait pour un conseil sans bulletin. Un motif qui nomme le conseil
+    # reste au conseil.
+    ("elimine_epreuve",      "f", r"^(?!.*conseil).*elimin[ée]e[^.]*(epreuve|tribu maudite)"),
+    ("elimine_epreuve",      "h", r"^(?!.*conseil).*elimin[ée][^.]*(epreuve|tribu maudite)"),
     # « Echange avec Gregoire » : un seul cas, Palawan 2007. La note de la
     # source ne laisse pas de doute -- « Adrien decide d'abandonner pour
     # permettre a Gregoire de revenir dans le jeu ». C'est donc un abandon

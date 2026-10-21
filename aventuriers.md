@@ -52,6 +52,7 @@ le nom de celui qui part — et il se cherche de la même façon.</p>
       <option value="elimine_orientation">Éliminé à l’orientation</option>
       <option value="elimine_ambassadeurs">Éliminé par les ambassadeurs</option>
       <option value="elimine_duel">Éliminé en duel</option>
+      <option value="elimine_epreuve">Éliminé à une épreuve</option>
       <option value="abandon_medical">Abandon médical</option>
       <option value="abandon_volontaire">Abandon volontaire</option>
     </select>

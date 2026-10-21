@@ -721,7 +721,7 @@
   detenteurs_suivants: []
   proteges: []
   statut: non_utilise
-  issue: elimine_avec_collier
+  issue: garde_sans_usage
   jour_trouve: 12
   episode_utilisation: null
   votes_annules: null
@@ -1009,7 +1009,7 @@
   detenteurs_suivants: []
   proteges: []
   statut: non_utilise
-  issue: elimine_avec_collier
+  issue: garde_sans_usage
   jour_trouve: 11
   episode_utilisation: null
   votes_annules: null

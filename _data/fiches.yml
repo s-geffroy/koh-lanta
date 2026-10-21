@@ -1374,7 +1374,7 @@ aventuriers:
       evasion: 100
       jour_sortie: 22
       justesse_vote: null
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Île de Taha'a
       localisation: Ain
       menace: "0,55"
@@ -1386,7 +1386,7 @@ aventuriers:
       profession: Comptable
       ratio_epreuves: 0
       saison: sp7
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: true
       titre: La Légende
       tribu: Korok
@@ -2700,7 +2700,7 @@ aventuriers:
       evasion: null
       jour_sortie: 1
       justesse_vote: null
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Amazonie, bord du Rio Negro
       localisation: Paris
       menace: null
@@ -2710,7 +2710,7 @@ aventuriers:
       profession: Assistante sociale
       ratio_epreuves: null
       saison: sp1
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: true
       titre: Le Retour des héros
       tribu: null
@@ -5940,8 +5940,8 @@ aventuriers:
     - q: Combien de fois Bertrand-Kamal Loudrhiri a-t-il participé à Koh-Lanta ?
       r: Une seule fois, en 2020 (Les 4 Terres).
     - q: Jusqu’où Bertrand-Kamal Loudrhiri est-il allé à Koh-Lanta ?
-      r: 'Son meilleur parcours : 13e sur 24 en 2020 (Les 4 Terres), où il sort au
-        conseil le 25e jour.'
+      r: 'Son meilleur parcours : 13e sur 24 en 2020 (Les 4 Terres), où il sort à
+        une épreuve éliminatoire le 25e jour.'
     - q: Quel est le classement de Bertrand-Kamal Loudrhiri parmi les aventuriers
         de Koh-Lanta ?
       r: 220e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
@@ -5975,7 +5975,7 @@ aventuriers:
       evasion: null
       jour_sortie: 25
       justesse_vote: null
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Archipel de Kadavu
       localisation: Côte-d'Or
       menace: 0
@@ -5985,7 +5985,7 @@ aventuriers:
       profession: Animateur
       ratio_epreuves: null
       saison: s21
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: false
       titre: Les 4 Terres
       tribu: Tokalo
@@ -13949,7 +13949,7 @@ aventuriers:
       r: '2 fois : Cambodge (2017) et Le Combat des héros (2018).'
     - q: Jusqu’où Dylan Thiry est-il allé à Koh-Lanta ?
       r: 'Son meilleur parcours : 11e sur 18 en 2018 (Le Combat des héros), où il
-        sort au conseil le 20e jour.'
+        sort à une épreuve éliminatoire le 20e jour.'
     - q: Quel est le classement de Dylan Thiry parmi les aventuriers de Koh-Lanta ?
       r: 249e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -14016,7 +14016,7 @@ aventuriers:
       evasion: null
       jour_sortie: 20
       justesse_vote: "85,7"
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Archipel de Yasawa
       localisation: Luxembourg
       menace: "0,2"
@@ -14028,7 +14028,7 @@ aventuriers:
       profession: Mannequin
       ratio_epreuves: null
       saison: sp5
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: true
       titre: Le Combat des héros
       tribu: Wakaï
@@ -14880,7 +14880,7 @@ aventuriers:
       r: Une seule fois, en 2020 (L'Île des héros).
     - q: Jusqu’où Eric Peyrache est-il allé à Koh-Lanta ?
       r: 'Son meilleur parcours : 7e sur 20 en 2020 (L''Île des héros), où il sort
-        au conseil le 29e jour.'
+        à une épreuve éliminatoire le 29e jour.'
     - q: Quel est le classement d’Eric Peyrache parmi les aventuriers de Koh-Lanta ?
       r: 458e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -14913,7 +14913,7 @@ aventuriers:
       evasion: 100
       jour_sortie: 29
       justesse_vote: 100
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Archipel de Kadavu
       localisation: Haute-Loire
       menace: "2,55"
@@ -14923,7 +14923,7 @@ aventuriers:
       profession: Patron de casse automobile
       ratio_epreuves: 0
       saison: sp6
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: true
       titre: L'Île des héros
       tribu: Nacomo
@@ -15409,7 +15409,7 @@ aventuriers:
       evasion: null
       jour_sortie: 2
       justesse_vote: null
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Île de Koh Rong
       localisation: Alpes-Maritimes
       menace: null
@@ -15419,7 +15419,7 @@ aventuriers:
       profession: Assistante maternelle
       ratio_epreuves: null
       saison: sp3
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: true
       titre: La Revanche des héros
       tribu: Nekmao
@@ -15529,8 +15529,8 @@ aventuriers:
     - q: Combien de fois Fabrice Pietrzak a-t-il participé à Koh-Lanta ?
       r: Une seule fois, en 2020 (Les 4 Terres).
     - q: Jusqu’où Fabrice Pietrzak est-il allé à Koh-Lanta ?
-      r: 'Son meilleur parcours : 8e sur 24 en 2020 (Les 4 Terres), où il sort au
-        conseil le 35e jour.'
+      r: 'Son meilleur parcours : 8e sur 24 en 2020 (Les 4 Terres), où il sort à une
+        épreuve éliminatoire le 35e jour.'
     - q: Quel est le classement de Fabrice Pietrzak parmi les aventuriers de Koh-Lanta ?
       r: 286e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -15563,7 +15563,7 @@ aventuriers:
       evasion: null
       jour_sortie: 35
       justesse_vote: "57,1"
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Archipel de Kadavu
       localisation: Nord
       menace: "0,33"
@@ -15573,7 +15573,7 @@ aventuriers:
       profession: Garagiste
       ratio_epreuves: "11,1"
       saison: s21
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: false
       titre: Les 4 Terres
       tribu: Vualiku
@@ -15799,7 +15799,7 @@ aventuriers:
       r: Une seule fois, en 2021 (Les Armes secrètes).
     - q: Jusqu’où Flavio Soares Tavares est-il allé à Koh-Lanta ?
       r: 'Son meilleur parcours : 7e sur 21 en 2021 (Les Armes secrètes), où il sort
-        au conseil le 33e jour.'
+        à une épreuve éliminatoire le 33e jour.'
     - q: Quel est le classement de Flavio Soares Tavares parmi les aventuriers de
         Koh-Lanta ?
       r: 357e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
@@ -15833,7 +15833,7 @@ aventuriers:
       evasion: null
       jour_sortie: 33
       justesse_vote: "37,5"
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Île de Taha'a
       localisation: Alpes-Maritimes
       menace: "0,08"
@@ -15843,7 +15843,7 @@ aventuriers:
       profession: Directeur de centre de loisirs
       ratio_epreuves: "18,2"
       saison: s22
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: false
       titre: Les Armes secrètes
       tribu: Toa
@@ -15989,7 +15989,7 @@ aventuriers:
       r: Une seule fois, en 2022 (Le Totem maudit).
     - q: Jusqu’où Fouzi Ould Bouamama est-il allé à Koh-Lanta ?
       r: 'Son meilleur parcours : 8e sur 24 en 2022 (Le Totem maudit), où il sort
-        au conseil le 33e jour.'
+        à une épreuve éliminatoire le 33e jour.'
     - q: Quel est le classement de Fouzi Ould Bouamama parmi les aventuriers de Koh-Lanta ?
       r: 374e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -16022,7 +16022,7 @@ aventuriers:
       evasion: 100
       jour_sortie: 33
       justesse_vote: "66,7"
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Archipel de Palawan
       localisation: Nord
       menace: "0,29"
@@ -16032,7 +16032,7 @@ aventuriers:
       profession: Directeur financier
       ratio_epreuves: "8,3"
       saison: s23
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: false
       titre: Le Totem maudit
       tribu: Nacpan
@@ -22883,7 +22883,7 @@ aventuriers:
       r: Une seule fois, en 2025 (La Revanche des 4 Terres).
     - q: Jusqu’où Jessica Murcia est-elle allée à Koh-Lanta ?
       r: 'Son meilleur parcours : 13e sur 24 en 2025 (La Revanche des 4 Terres), où
-        elle sort au conseil le 25e jour.'
+        elle sort à une épreuve éliminatoire le 25e jour.'
     - q: Quel est le classement de Jessica Murcia parmi les aventuriers de Koh-Lanta ?
       r: 169e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -22916,7 +22916,7 @@ aventuriers:
       evasion: null
       jour_sortie: 25
       justesse_vote: null
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Péninsule de Caramoan
       localisation: Bouches-du-Rhône
       menace: 0
@@ -22926,7 +22926,7 @@ aventuriers:
       profession: Restauratrice
       ratio_epreuves: null
       saison: s27
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: false
       titre: La Revanche des 4 Terres
       tribu: Timog
@@ -23043,7 +23043,7 @@ aventuriers:
       evasion: null
       jour_sortie: 9
       justesse_vote: 50
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Archipel de Kadavu
       localisation: Essonne
       menace: "0,6"
@@ -23059,7 +23059,7 @@ aventuriers:
       profession: Technicienne en apnée du sommeil
       ratio_epreuves: "12,5"
       saison: sp6
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: true
       titre: L'Île des héros
       tribu: Héros
@@ -23519,8 +23519,8 @@ aventuriers:
     - q: Combien de fois Joëlle Bourlier a-t-elle participé à Koh-Lanta ?
       r: Une seule fois, en 2009 (Palau).
     - q: Jusqu’où Joëlle Bourlier est-elle allée à Koh-Lanta ?
-      r: 'Son meilleur parcours : 18e sur 18 en 2009 (Palau), où elle sort au conseil
-        le 1er jour.'
+      r: 'Son meilleur parcours : 18e sur 18 en 2009 (Palau), où elle sort à une épreuve
+        éliminatoire le 1er jour.'
     - q: Quel est le classement de Joëlle Bourlier parmi les aventuriers de Koh-Lanta ?
       r: 420e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -23553,7 +23553,7 @@ aventuriers:
       evasion: null
       jour_sortie: 1
       justesse_vote: null
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Micronésie
       localisation: Pyrénées-Orientales
       menace: null
@@ -23563,7 +23563,7 @@ aventuriers:
       profession: Professeur de sport à la retraite
       ratio_epreuves: null
       saison: s09
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: false
       titre: Palau
       tribu: null
@@ -24070,7 +24070,7 @@ aventuriers:
       r: '2 fois : L''Île au trésor (2016) et Le Combat des héros (2018).'
     - q: Jusqu’où Julie Navarro est-elle allée à Koh-Lanta ?
       r: 'Son meilleur parcours : 9e sur 20 en 2016 (L''Île au trésor), où elle sort
-        au conseil le 32e jour.'
+        à une épreuve éliminatoire le 32e jour.'
     - q: Quel est le classement de Julie Navarro parmi les aventuriers de Koh-Lanta ?
       r: 480e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -24105,7 +24105,7 @@ aventuriers:
       evasion: 100
       jour_sortie: 32
       justesse_vote: "87,5"
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Île de Koh Rong
       localisation: Pyrénées-Orientales
       menace: "0,55"
@@ -24117,7 +24117,7 @@ aventuriers:
       profession: Assistante dentaire
       ratio_epreuves: 0
       saison: s16
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: false
       titre: L'Île au trésor
       tribu: Sambor
@@ -26846,7 +26846,7 @@ aventuriers:
       evasion: null
       jour_sortie: 28
       justesse_vote: null
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Île de Taha'a
       localisation: Savoie
       menace: 0
@@ -26860,7 +26860,7 @@ aventuriers:
       profession: Intérimaire
       ratio_epreuves: "14,3"
       saison: sp7
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: true
       titre: La Légende
       tribu: Korok
@@ -28583,8 +28583,8 @@ aventuriers:
     - q: Combien de fois Maria Beccaris a-t-elle participé à Koh-Lanta ?
       r: Une seule fois, en 2017 (Cambodge).
     - q: Jusqu’où Maria Beccaris est-elle allée à Koh-Lanta ?
-      r: 'Son meilleur parcours : 14e sur 21 en 2017 (Cambodge), où elle sort au conseil
-        le 19e jour.'
+      r: 'Son meilleur parcours : 14e sur 21 en 2017 (Cambodge), où elle sort à une
+        épreuve éliminatoire le 19e jour.'
     - q: Quel est le classement de Maria Beccaris parmi les aventuriers de Koh-Lanta ?
       r: 399e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -28617,7 +28617,7 @@ aventuriers:
       evasion: 100
       jour_sortie: 19
       justesse_vote: null
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Île de Koh Rong
       localisation: Bouches-du-Rhône
       menace: "0,71"
@@ -28627,7 +28627,7 @@ aventuriers:
       profession: Boulangère
       ratio_epreuves: null
       saison: s17
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: false
       titre: Cambodge
       tribu: Sokka
@@ -28660,8 +28660,8 @@ aventuriers:
     - q: Combien de fois Marianne Mondon a-t-elle participé à Koh-Lanta ?
       r: Une seule fois, en 2002 (Nicoya).
     - q: Jusqu’où Marianne Mondon est-elle allée à Koh-Lanta ?
-      r: 'Son meilleur parcours : 4e sur 16 en 2002 (Nicoya), où elle sort au conseil
-        le 38e jour.'
+      r: 'Son meilleur parcours : 4e sur 16 en 2002 (Nicoya), où elle sort à une épreuve
+        éliminatoire le 38e jour.'
     - q: Quel est le classement de Marianne Mondon parmi les aventuriers de Koh-Lanta ?
       r: 27e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -28696,7 +28696,7 @@ aventuriers:
       evasion: 100
       jour_sortie: 38
       justesse_vote: 100
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Péninsule de Nicoya
       localisation: Mauléon
       menace: "0,31"
@@ -28708,7 +28708,7 @@ aventuriers:
       profession: Gendarme
       ratio_epreuves: "22,2"
       saison: s02
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: false
       titre: Nicoya
       tribu: Ventanas
@@ -30610,7 +30610,7 @@ aventuriers:
       r: Une seule fois, en 2021 (Les Armes secrètes).
     - q: Jusqu’où Mathieu Orsolani est-il allé à Koh-Lanta ?
       r: 'Son meilleur parcours : 13e sur 21 en 2021 (Les Armes secrètes), où il sort
-        au conseil le 20e jour.'
+        à une épreuve éliminatoire le 20e jour.'
     - q: Quel est le classement de Mathieu Orsolani parmi les aventuriers de Koh-Lanta ?
       r: 428e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -30643,7 +30643,7 @@ aventuriers:
       evasion: null
       jour_sortie: 20
       justesse_vote: 50
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Île de Taha'a
       localisation: Corse
       menace: "0,11"
@@ -30653,7 +30653,7 @@ aventuriers:
       profession: Élagueur
       ratio_epreuves: null
       saison: s22
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: false
       titre: Les Armes secrètes
       tribu: Toa
@@ -30930,7 +30930,7 @@ aventuriers:
       r: Une seule fois, en 2024 (La Tribu maudite).
     - q: Jusqu’où Maud Collas est-elle allée à Koh-Lanta ?
       r: 'Son meilleur parcours : 13e sur 24 en 2024 (La Tribu maudite), où elle sort
-        au conseil le 22e jour.'
+        à une épreuve éliminatoire le 22e jour.'
     - q: Quel est le classement de Maud Collas parmi les aventuriers de Koh-Lanta ?
       r: 171e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -30963,7 +30963,7 @@ aventuriers:
       evasion: null
       jour_sortie: 22
       justesse_vote: null
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Péninsule de Caramoan
       localisation: Val-de-Marne
       menace: 0
@@ -30973,7 +30973,7 @@ aventuriers:
       profession: Responsable commerciale
       ratio_epreuves: null
       saison: s26
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: false
       titre: La Tribu maudite
       tribu: Pitogo
@@ -31478,7 +31478,7 @@ aventuriers:
       r: '2 fois : La Revanche des 4 Terres (2025) et All Stars (2026).'
     - q: Jusqu’où Maxime Lubian est-il allé à Koh-Lanta ?
       r: 'Son meilleur parcours : 8e sur 24 en 2025 (La Revanche des 4 Terres), où
-        il sort au conseil le 33e jour.'
+        il sort à une épreuve éliminatoire le 33e jour.'
     - q: Quel est le classement de Maxime Lubian parmi les aventuriers de Koh-Lanta ?
       r: 24e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -31511,7 +31511,7 @@ aventuriers:
       evasion: null
       jour_sortie: 33
       justesse_vote: "85,7"
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Péninsule de Caramoan
       localisation: Vosges
       menace: "0,07"
@@ -31521,7 +31521,7 @@ aventuriers:
       profession: Responsable communication de la fédération de pêche
       ratio_epreuves: "33,3"
       saison: s27
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: false
       titre: La Revanche des 4 Terres
       tribu: Silangan
@@ -33609,7 +33609,7 @@ aventuriers:
       evasion: null
       jour_sortie: 21
       justesse_vote: null
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Île de Koh Rong
       localisation: Hauts-de-Seine
       menace: "0,5"
@@ -33619,7 +33619,7 @@ aventuriers:
       profession: Chef d'entreprise
       ratio_epreuves: 0
       saison: sp3
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: true
       titre: La Revanche des héros
       tribu: Klahan
@@ -34925,7 +34925,7 @@ aventuriers:
       r: Une seule fois, en 2024 (La Tribu maudite).
     - q: Jusqu’où Nathanaël Branchereau est-il allé à Koh-Lanta ?
       r: 'Son meilleur parcours : 20e sur 24 en 2024 (La Tribu maudite), où il sort
-        au conseil le 13e jour.'
+        à une épreuve éliminatoire le 13e jour.'
     - q: Quel est le classement de Nathanaël Branchereau parmi les aventuriers de
         Koh-Lanta ?
       r: 283e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
@@ -34959,7 +34959,7 @@ aventuriers:
       evasion: null
       jour_sortie: 13
       justesse_vote: null
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Péninsule de Caramoan
       localisation: Loire-Atlantique
       menace: 0
@@ -34969,7 +34969,7 @@ aventuriers:
       profession: Cariste
       ratio_epreuves: null
       saison: s26
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: false
       titre: La Tribu maudite
       tribu: Noire
@@ -35786,7 +35786,7 @@ aventuriers:
       r: Une seule fois, en 2019 (La Guerre des chefs).
     - q: Jusqu’où Nicolas Van Brabandt est-il allé à Koh-Lanta ?
       r: 'Son meilleur parcours : 8e sur 21 en 2019 (La Guerre des chefs), où il sort
-        au conseil le 33e jour.'
+        à une épreuve éliminatoire le 33e jour.'
     - q: Quel est le classement de Nicolas Van Brabandt parmi les aventuriers de Koh-Lanta ?
       r: 380e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -35823,7 +35823,7 @@ aventuriers:
       evasion: 100
       jour_sortie: 33
       justesse_vote: "66,7"
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Archipel de Kadavu
       localisation: Belgique
       menace: "0,62"
@@ -35835,7 +35835,7 @@ aventuriers:
       profession: Agent commercial
       ratio_epreuves: "16,7"
       saison: s20
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: false
       titre: La Guerre des chefs
       tribu: Tabuo
@@ -36023,7 +36023,7 @@ aventuriers:
       r: Une seule fois, en 2024 (Les Chasseurs d'immunité).
     - q: Jusqu’où Océane Montenegro est-elle allée à Koh-Lanta ?
       r: 'Son meilleur parcours : 12e sur 22 en 2024 (Les Chasseurs d''immunité),
-        où elle sort au conseil le 26e jour.'
+        où elle sort à une épreuve éliminatoire le 26e jour.'
     - q: Quel est le classement d’Océane Montenegro parmi les aventuriers de Koh-Lanta ?
       r: 489e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -36056,7 +36056,7 @@ aventuriers:
       evasion: 100
       jour_sortie: 26
       justesse_vote: 100
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Péninsule de Caramoan
       localisation: Allier
       menace: 1
@@ -36066,7 +36066,7 @@ aventuriers:
       profession: Gérante de société dans l’immobilier
       ratio_epreuves: null
       saison: s25
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: false
       titre: Les Chasseurs d'immunité
       tribu: Kadasi
@@ -36767,7 +36767,7 @@ aventuriers:
       r: Une seule fois, en 2001 (Les Aventuriers de Koh-Lanta).
     - q: Jusqu’où Patricia Tanguy est-il allé à Koh-Lanta ?
       r: 'Son meilleur parcours : 3e sur 16 en 2001 (Les Aventuriers de Koh-Lanta),
-        où il sort au conseil le 42e jour.'
+        où il sort à une épreuve éliminatoire le 42e jour.'
     - q: Quel est le classement de Patricia Tanguy parmi les aventuriers de Koh-Lanta ?
       r: 131e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -36800,7 +36800,7 @@ aventuriers:
       evasion: null
       jour_sortie: 42
       justesse_vote: "87,5"
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Parc national de Koh Lanta
       localisation: Paris
       menace: "0,31"
@@ -36810,7 +36810,7 @@ aventuriers:
       profession: Secrétaire de direction
       ratio_epreuves: 0
       saison: s01
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: false
       titre: Les Aventuriers de Koh-Lanta
       tribu: Korok
@@ -37077,7 +37077,7 @@ aventuriers:
       r: Une seule fois, en 2026 (Les Reliques du destin).
     - q: Jusqu’où Paul Estival est-il allé à Koh-Lanta ?
       r: 'Son meilleur parcours : 12e sur 20 en 2026 (Les Reliques du destin), où
-        il sort au conseil le 24e jour.'
+        il sort à une épreuve éliminatoire le 24e jour.'
     - q: Quel est le classement de Paul Estival parmi les aventuriers de Koh-Lanta ?
       r: 207e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -37110,7 +37110,7 @@ aventuriers:
       evasion: null
       jour_sortie: 24
       justesse_vote: 80
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Péninsule de Caramoan
       localisation: Haute-Savoie
       menace: 0
@@ -37120,7 +37120,7 @@ aventuriers:
       profession: Éducateur sportif
       ratio_epreuves: null
       saison: s28
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: false
       titre: Les Reliques du destin
       tribu: Kalao
@@ -37309,7 +37309,7 @@ aventuriers:
       r: Une seule fois, en 2022 (Le Totem maudit).
     - q: Jusqu’où Pauline Pourchaire est-elle allée à Koh-Lanta ?
       r: 'Son meilleur parcours : 13e sur 24 en 2022 (Le Totem maudit), où elle sort
-        au conseil le 25e jour.'
+        à une épreuve éliminatoire le 25e jour.'
     - q: Quel est le classement de Pauline Pourchaire parmi les aventuriers de Koh-Lanta ?
       r: 490e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -37342,7 +37342,7 @@ aventuriers:
       evasion: 100
       jour_sortie: 25
       justesse_vote: 100
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Archipel de Palawan
       localisation: Alpes-Maritimes
       menace: "0,64"
@@ -37352,7 +37352,7 @@ aventuriers:
       profession: Responsable de communication
       ratio_epreuves: null
       saison: s23
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: false
       titre: Le Totem maudit
       tribu: Ilog
@@ -38854,7 +38854,7 @@ aventuriers:
       r: Une seule fois, en 2001 (Les Aventuriers de Koh-Lanta).
     - q: Jusqu’où Romain Bissol est-il allé à Koh-Lanta ?
       r: 'Son meilleur parcours : 4e sur 16 en 2001 (Les Aventuriers de Koh-Lanta),
-        où il sort au conseil le 41e jour.'
+        où il sort à une épreuve éliminatoire le 41e jour.'
     - q: Quel est le classement de Romain Bissol parmi les aventuriers de Koh-Lanta ?
       r: 205e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -38889,7 +38889,7 @@ aventuriers:
       evasion: 100
       jour_sortie: 41
       justesse_vote: 75
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Parc national de Koh Lanta
       localisation: Paris
       menace: "0,31"
@@ -38903,7 +38903,7 @@ aventuriers:
       profession: Électricien
       ratio_epreuves: "9,1"
       saison: s01
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: false
       titre: Les Aventuriers de Koh-Lanta
       tribu: Korok
@@ -39603,8 +39603,8 @@ aventuriers:
     - q: Combien de fois Sam Haliti a-t-il participé à Koh-Lanta ?
       r: '2 fois : L''Île des héros (2020) et La Légende (2021).'
     - q: Jusqu’où Sam Haliti est-il allé à Koh-Lanta ?
-      r: 'Son meilleur parcours : 6e sur 21 en 2021 (La Légende), où il sort au conseil
-        le 32e jour.'
+      r: 'Son meilleur parcours : 6e sur 21 en 2021 (La Légende), où il sort à une
+        épreuve éliminatoire le 32e jour.'
     - q: Quel est le classement de Sam Haliti parmi les aventuriers de Koh-Lanta ?
       r: 273e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -39673,7 +39673,7 @@ aventuriers:
       evasion: null
       jour_sortie: 32
       justesse_vote: 75
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Île de Taha'a
       localisation: Haut-Rhin
       menace: "0,57"
@@ -39683,7 +39683,7 @@ aventuriers:
       profession: Ébéniste
       ratio_epreuves: 0
       saison: sp7
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: true
       titre: La Légende
       tribu: Lanta-naï
@@ -41333,7 +41333,7 @@ aventuriers:
       r: Une seule fois, en 2024 (La Tribu maudite).
     - q: Jusqu’où Sophia Mansouri est-elle allée à Koh-Lanta ?
       r: 'Son meilleur parcours : 7e sur 24 en 2024 (La Tribu maudite), où elle sort
-        au conseil le 39e jour.'
+        à une épreuve éliminatoire le 39e jour.'
     - q: Quel est le classement de Sophia Mansouri parmi les aventuriers de Koh-Lanta ?
       r: 84e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -41366,7 +41366,7 @@ aventuriers:
       evasion: null
       jour_sortie: 39
       justesse_vote: "85,7"
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Péninsule de Caramoan
       localisation: Hauts-de-Seine
       menace: 0
@@ -41376,7 +41376,7 @@ aventuriers:
       profession: Coach sportive
       ratio_epreuves: "8,3"
       saison: s26
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: false
       titre: La Tribu maudite
       tribu: Sabitang
@@ -42964,8 +42964,8 @@ aventuriers:
     - q: Combien de fois Théotime Bernardin a-t-il participé à Koh-Lanta ?
       r: Une seule fois, en 2017 (Fidji).
     - q: Jusqu’où Théotime Bernardin est-il allé à Koh-Lanta ?
-      r: 'Son meilleur parcours : 17e sur 21 en 2017 (Fidji), où il sort au conseil
-        le 10e jour.'
+      r: 'Son meilleur parcours : 17e sur 21 en 2017 (Fidji), où il sort à une épreuve
+        éliminatoire le 10e jour.'
     - q: Quel est le classement de Théotime Bernardin parmi les aventuriers de Koh-Lanta ?
       r: 335e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -42998,7 +42998,7 @@ aventuriers:
       evasion: null
       jour_sortie: 10
       justesse_vote: null
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Archipel de Yasawa
       localisation: Vosges
       menace: 0
@@ -43008,7 +43008,7 @@ aventuriers:
       profession: Gérant d'un food-truck
       ratio_epreuves: null
       saison: s18
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: false
       titre: Fidji
       tribu: Coravu
@@ -44300,7 +44300,7 @@ aventuriers:
       r: Une seule fois, en 2024 (La Tribu maudite).
     - q: Jusqu’où Vanessa Feuillatte est-elle allée à Koh-Lanta ?
       r: 'Son meilleur parcours : 19e sur 24 en 2024 (La Tribu maudite), où elle sort
-        au conseil le 13e jour.'
+        à une épreuve éliminatoire le 13e jour.'
     - q: Quel est le classement de Vanessa Feuillatte parmi les aventuriers de Koh-Lanta ?
       r: 261e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -44333,7 +44333,7 @@ aventuriers:
       evasion: null
       jour_sortie: 13
       justesse_vote: null
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Péninsule de Caramoan
       localisation: Gironde
       menace: 0
@@ -44343,7 +44343,7 @@ aventuriers:
       profession: Danseuse et chorégraphe
       ratio_epreuves: null
       saison: s26
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: false
       titre: La Tribu maudite
       tribu: Noire
@@ -46167,7 +46167,7 @@ aventuriers:
       r: Une seule fois, en 2026 (Les Reliques du destin).
     - q: Jusqu’où Zakariya Bougoudouima est-il allé à Koh-Lanta ?
       r: 'Son meilleur parcours : 7e sur 20 en 2026 (Les Reliques du destin), où il
-        sort au conseil le 36e jour.'
+        sort à une épreuve éliminatoire le 36e jour.'
     - q: Quel est le classement de Zakariya Bougoudouima parmi les aventuriers de
         Koh-Lanta ?
       r: 441e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
@@ -46201,7 +46201,7 @@ aventuriers:
       evasion: 100
       jour_sortie: 36
       justesse_vote: "55,6"
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       lieu: Péninsule de Caramoan
       localisation: Alpes-Maritimes
       menace: "0,18"
@@ -46211,7 +46211,7 @@ aventuriers:
       profession: Maître-nageur
       ratio_epreuves: "7,7"
       saison: s28
-      sort: elimine_conseil
+      sort: elimine_epreuve
       speciale: false
       titre: Les Reliques du destin
       tribu: Lahoy
@@ -46284,12 +46284,12 @@ saisons:
       genre: h
       id: patricia-tanguy
       jour_sortie: 42
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Patricia Tanguy
       part_parcours: 98
       profession: Secrétaire de direction
       rang: 131
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Korok
       voix_recues: 4
     - age: 27
@@ -46298,12 +46298,12 @@ saisons:
       genre: h
       id: romain-bissol
       jour_sortie: 41
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Romain Bissol
       part_parcours: 95
       profession: Électricien
       rang: 205
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Korok
       voix_recues: 4
     - age: 41
@@ -46474,7 +46474,7 @@ saisons:
       sort: elimine_conseil
       tribu: Lanta-naï
       voix_recues: 6
-    conseils: 14
+    conseils: 13
     conseils_complets: 11
     duree_jours: 43
     effectif: 16
@@ -46493,7 +46493,7 @@ saisons:
     - q: Quel est le lieu de tournage des Aventuriers de Koh-Lanta ?
       r: Parc national de Koh Lanta, Thaïlande.
     - q: Combien de conseils d’élimination aux Aventuriers de Koh-Lanta ?
-      r: 14 conseils d’élimination. Le dépouillement de 11 d’entre eux est connu au
+      r: 13 conseils d’élimination. Le dépouillement de 11 d’entre eux est connu au
         bulletin près, pour 88 bulletins relevés.
     - q: Combien d’épreuves ont été courues aux Aventuriers de Koh-Lanta ?
       r: 22 épreuves relevées, dont 11 individuelles.
@@ -46581,12 +46581,12 @@ saisons:
       genre: f
       id: marianne-mondon
       jour_sortie: 38
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Marianne Mondon
       part_parcours: 95
       profession: Gendarme
       rang: 27
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Ventanas
       voix_recues: 4
     - age: 25
@@ -46757,7 +46757,7 @@ saisons:
       sort: abandon_medical
       tribu: Tambor
       voix_recues: 0
-    conseils: 14
+    conseils: 13
     conseils_complets: 12
     duree_jours: 40
     effectif: 16
@@ -46776,7 +46776,7 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Nicoya ?
       r: Péninsule de Nicoya, Costa Rica.
     - q: Combien de conseils d’élimination à Koh-Lanta Nicoya ?
-      r: 14 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
+      r: 13 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
         bulletin près, pour 83 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Nicoya ?
       r: 21 épreuves relevées, dont 9 individuelles.
@@ -48822,15 +48822,15 @@ saisons:
       genre: f
       id: joelle-bourlier
       jour_sortie: 1
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Joëlle Bourlier
       part_parcours: 3
       profession: Professeur de sport à la retraite
       rang: 420
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: null
       voix_recues: 0
-    conseils: 15
+    conseils: 14
     conseils_complets: 11
     duree_jours: 39
     effectif: 18
@@ -48850,7 +48850,7 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Palau ?
       r: Micronésie, Palaos.
     - q: Combien de conseils d’élimination à Koh-Lanta Palau ?
-      r: 15 conseils d’élimination. Le dépouillement de 11 d’entre eux est connu au
+      r: 14 conseils d’élimination. Le dépouillement de 11 d’entre eux est connu au
         bulletin près, pour 83 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Palau ?
       r: 24 épreuves relevées, dont 14 individuelles.
@@ -50690,12 +50690,12 @@ saisons:
       genre: f
       id: julie-navarro
       jour_sortie: 32
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Julie Navarro
       part_parcours: 76
       profession: Assistante dentaire
       rang: 480
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Sambor
       voix_recues: 6
     - age: 41
@@ -50852,7 +50852,7 @@ saisons:
       sort: elimine_conseil
       tribu: Sambor
       voix_recues: 9
-    conseils: 16
+    conseils: 15
     conseils_complets: 13
     duree_jours: 42
     effectif: 20
@@ -50870,7 +50870,7 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta L'Île au trésor ?
       r: Île de Koh Rong, Cambodge.
     - q: Combien de conseils d’élimination à Koh-Lanta L'Île au trésor ?
-      r: 16 conseils d’élimination. Le dépouillement de 13 d’entre eux est connu au
+      r: 15 conseils d’élimination. Le dépouillement de 13 d’entre eux est connu au
         bulletin près, pour 139 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta L'Île au trésor ?
       r: 26 épreuves relevées, dont 12 individuelles.
@@ -51084,12 +51084,12 @@ saisons:
       genre: f
       id: maria-beccaris
       jour_sortie: 19
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Maria Beccaris
       part_parcours: 48
       profession: Boulangère
       rang: 399
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Sokka
       voix_recues: 5
     - age: 49
@@ -51204,7 +51204,7 @@ saisons:
       sort: elimine_conseil
       tribu: Takeo
       voix_recues: 5
-    conseils: 17
+    conseils: 16
     conseils_complets: 12
     duree_jours: 40
     effectif: 21
@@ -51224,7 +51224,7 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Cambodge ?
       r: Île de Koh Rong, Cambodge.
     - q: Combien de conseils d’élimination à Koh-Lanta Cambodge ?
-      r: 17 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
+      r: 16 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
         bulletin près, pour 107 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Cambodge ?
       r: 26 épreuves relevées, dont 11 individuelles.
@@ -51496,12 +51496,12 @@ saisons:
       genre: h
       id: theotime-bernardin
       jour_sortie: 10
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Théotime Bernardin
       part_parcours: 24
       profession: Gérant d'un food-truck
       rang: 335
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Coravu
       voix_recues: 0
     - age: 25
@@ -51560,7 +51560,7 @@ saisons:
       sort: abandon_medical
       tribu: Coravu
       voix_recues: 0
-    conseils: 17
+    conseils: 16
     conseils_complets: 10
     duree_jours: 41
     effectif: 21
@@ -51579,7 +51579,7 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Fidji ?
       r: Archipel de Yasawa, Fidji.
     - q: Combien de conseils d’élimination à Koh-Lanta Fidji ?
-      r: 17 conseils d’élimination. Le dépouillement de 10 d’entre eux est connu au
+      r: 16 conseils d’élimination. Le dépouillement de 10 d’entre eux est connu au
         bulletin près, pour 117 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Fidji ?
       r: 26 épreuves relevées, dont 10 individuelles.
@@ -51723,12 +51723,12 @@ saisons:
       genre: h
       id: nicolas-van-brabandt
       jour_sortie: 33
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Nicolas Van Brabandt
       part_parcours: 85
       profession: Agent commercial
       rang: 380
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Tabuo
       voix_recues: 8
     - age: 37
@@ -51913,7 +51913,7 @@ saisons:
       sort: elimine_conseil
       tribu: Ikalu
       voix_recues: 5
-    conseils: 17
+    conseils: 16
     conseils_complets: 12
     duree_jours: 39
     effectif: 21
@@ -51932,7 +51932,7 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta La Guerre des chefs ?
       r: Archipel de Kadavu, Fidji.
     - q: Combien de conseils d’élimination à Koh-Lanta La Guerre des chefs ?
-      r: 17 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
+      r: 16 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
         bulletin près, pour 118 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta La Guerre des chefs ?
       r: 26 épreuves relevées, dont 14 individuelles.
@@ -52078,12 +52078,12 @@ saisons:
       genre: h
       id: fabrice-pietrzak
       jour_sortie: 35
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Fabrice Pietrzak
       part_parcours: 88
       profession: Garagiste
       rang: 286
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Vualiku
       voix_recues: 5
     - age: 28
@@ -52148,12 +52148,12 @@ saisons:
       genre: h
       id: bertrand-kamal-loudrhiri
       jour_sortie: 25
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Bertrand-Kamal Loudrhiri
       part_parcours: 62
       profession: Animateur
       rang: 220
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Tokalo
       voix_recues: 0
     - age: 28
@@ -52310,7 +52310,7 @@ saisons:
       sort: elimine_conseil
       tribu: Vualiku
       voix_recues: 8
-    conseils: 20
+    conseils: 18
     conseils_complets: 13
     duree_jours: 40
     effectif: 24
@@ -52329,7 +52329,7 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Les 4 Terres ?
       r: Archipel de Kadavu, Fidji.
     - q: Combien de conseils d’élimination à Koh-Lanta Les 4 Terres ?
-      r: 20 conseils d’élimination. Le dépouillement de 13 d’entre eux est connu au
+      r: 18 conseils d’élimination. Le dépouillement de 13 d’entre eux est connu au
         bulletin près, pour 127 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Les 4 Terres ?
       r: 26 épreuves relevées, dont 11 individuelles.
@@ -52455,12 +52455,12 @@ saisons:
       genre: h
       id: flavio-soares-tavares
       jour_sortie: 33
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Flavio Soares Tavares
       part_parcours: 94
       profession: Directeur de centre de loisirs
       rang: 357
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Toa
       voix_recues: 1
     - age: 47
@@ -52539,12 +52539,12 @@ saisons:
       genre: h
       id: mathieu-orsolani
       jour_sortie: 20
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Mathieu Orsolani
       part_parcours: 57
       profession: Élagueur
       rang: 428
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Toa
       voix_recues: 1
     - age: 26
@@ -52673,7 +52673,7 @@ saisons:
       sort: elimine_conseil
       tribu: Toa
       voix_recues: 7
-    conseils: 17
+    conseils: 15
     conseils_complets: 12
     duree_jours: 35
     effectif: 21
@@ -52692,7 +52692,7 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Les Armes secrètes ?
       r: Île de Taha'a, Polynésie française.
     - q: Combien de conseils d’élimination à Koh-Lanta Les Armes secrètes ?
-      r: 17 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
+      r: 15 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
         bulletin près, pour 133 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Les Armes secrètes ?
       r: 23 épreuves relevées, dont 11 individuelles.
@@ -52837,12 +52837,12 @@ saisons:
       genre: h
       id: fouzi-ould-bouamama
       jour_sortie: 33
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Fouzi Ould Bouamama
       part_parcours: 85
       profession: Directeur financier
       rang: 374
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Nacpan
       voix_recues: 4
     - age: 28
@@ -52893,12 +52893,12 @@ saisons:
       genre: f
       id: pauline-pourchaire
       jour_sortie: 25
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Pauline Pourchaire
       part_parcours: 64
       profession: Responsable de communication
       rang: 490
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Ilog
       voix_recues: 7
     - age: 34
@@ -53069,7 +53069,7 @@ saisons:
       sort: elimine_conseil
       tribu: Ilog
       voix_recues: 8
-    conseils: 18
+    conseils: 16
     conseils_complets: 10
     duree_jours: 39
     effectif: 24
@@ -53092,7 +53092,7 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Le Totem maudit ?
       r: Archipel de Palawan, Philippines.
     - q: Combien de conseils d’élimination à Koh-Lanta Le Totem maudit ?
-      r: 18 conseils d’élimination. Le dépouillement de 10 d’entre eux est connu au
+      r: 16 conseils d’élimination. Le dépouillement de 10 d’entre eux est connu au
         bulletin près, pour 156 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Le Totem maudit ?
       r: 27 épreuves relevées, dont 14 individuelles.
@@ -53639,12 +53639,12 @@ saisons:
       genre: f
       id: oceane-montenegro
       jour_sortie: 26
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Océane Montenegro
       part_parcours: 68
       profession: Gérante de société dans l’immobilier
       rang: 489
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Kadasi
       voix_recues: 10
     - age: 22
@@ -53787,7 +53787,7 @@ saisons:
       sort: elimine_conseil
       tribu: Kadasi
       voix_recues: 6
-    conseils: 17
+    conseils: 16
     conseils_complets: 8
     duree_jours: 38
     effectif: 22
@@ -53806,7 +53806,7 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Les Chasseurs d'immunité ?
       r: Péninsule de Caramoan, Philippines.
     - q: Combien de conseils d’élimination à Koh-Lanta Les Chasseurs d'immunité ?
-      r: 17 conseils d’élimination. Le dépouillement de 8 d’entre eux est connu au
+      r: 16 conseils d’élimination. Le dépouillement de 8 d’entre eux est connu au
         bulletin près, pour 123 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Les Chasseurs d'immunité ?
       r: 26 épreuves relevées, dont 12 individuelles.
@@ -53921,12 +53921,12 @@ saisons:
       genre: f
       id: sophia-mansouri
       jour_sortie: 39
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Sophia Mansouri
       part_parcours: 95
       profession: Coach sportive
       rang: 84
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Sabitang
       voix_recues: 0
     - age: 42
@@ -54019,12 +54019,12 @@ saisons:
       genre: f
       id: maud-collas
       jour_sortie: 22
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Maud Collas
       part_parcours: 54
       profession: Responsable commerciale
       rang: 171
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Pitogo
       voix_recues: 0
     - age: 40
@@ -54103,12 +54103,12 @@ saisons:
       genre: h
       id: nathanael-branchereau
       jour_sortie: 13
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Nathanaël Branchereau
       part_parcours: 32
       profession: Cariste
       rang: 283
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Noire
       voix_recues: 0
     - age: 39
@@ -54117,12 +54117,12 @@ saisons:
       genre: f
       id: vanessa-feuillatte
       jour_sortie: 13
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Vanessa Feuillatte
       part_parcours: 32
       profession: Danseuse et chorégraphe
       rang: 261
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Noire
       voix_recues: 0
     - age: 25
@@ -54181,7 +54181,7 @@ saisons:
       sort: elimine_conseil
       tribu: Sabitang
       voix_recues: 6
-    conseils: 20
+    conseils: 16
     conseils_complets: 9
     duree_jours: 41
     effectif: 24
@@ -54201,7 +54201,7 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta La Tribu maudite ?
       r: Péninsule de Caramoan, Philippines.
     - q: Combien de conseils d’élimination à Koh-Lanta La Tribu maudite ?
-      r: 20 conseils d’élimination. Le dépouillement de 9 d’entre eux est connu au
+      r: 16 conseils d’élimination. Le dépouillement de 9 d’entre eux est connu au
         bulletin près, pour 134 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta La Tribu maudite ?
       r: 25 épreuves relevées, dont 12 individuelles.
@@ -54346,12 +54346,12 @@ saisons:
       genre: h
       id: maxime-lubian
       jour_sortie: 33
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Maxime Lubian
       part_parcours: 82
       profession: Responsable communication de la fédération de pêche
       rang: 24
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Silangan
       voix_recues: 1
     - age: 25
@@ -54430,12 +54430,12 @@ saisons:
       genre: f
       id: jessica-murcia
       jour_sortie: 25
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Jessica Murcia
       part_parcours: 62
       profession: Restauratrice
       rang: 169
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Timog
       voix_recues: 0
     - age: 23
@@ -54578,7 +54578,7 @@ saisons:
       sort: elimine_conseil
       tribu: Kanluran
       voix_recues: 4
-    conseils: 20
+    conseils: 18
     conseils_complets: 13
     duree_jours: 40
     effectif: 24
@@ -54597,7 +54597,7 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta La Revanche des 4 Terres ?
       r: Péninsule de Caramoan, Philippines.
     - q: Combien de conseils d’élimination à Koh-Lanta La Revanche des 4 Terres ?
-      r: 20 conseils d’élimination. Le dépouillement de 13 d’entre eux est connu au
+      r: 18 conseils d’élimination. Le dépouillement de 13 d’entre eux est connu au
         bulletin près, pour 129 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta La Revanche des 4 Terres ?
       r: 26 épreuves relevées, dont 12 individuelles.
@@ -54737,12 +54737,12 @@ saisons:
       genre: h
       id: zakariya-bougoudouima
       jour_sortie: 36
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Zakariya Bougoudouima
       part_parcours: 92
       profession: Maître-nageur
       rang: 441
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Lahoy
       voix_recues: 3
     - age: 27
@@ -54807,12 +54807,12 @@ saisons:
       genre: h
       id: paul-estival
       jour_sortie: 24
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Paul Estival
       part_parcours: 62
       profession: Éducateur sportif
       rang: 207
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Kalao
       voix_recues: 0
     - age: 36
@@ -54927,7 +54927,7 @@ saisons:
       sort: elimine_conseil
       tribu: Lahoy
       voix_recues: 1
-    conseils: 23
+    conseils: 21
     conseils_complets: 13
     duree_jours: 39
     effectif: 20
@@ -54945,7 +54945,7 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Les Reliques du destin ?
       r: Péninsule de Caramoan, Philippines.
     - q: Combien de conseils d’élimination à Koh-Lanta Les Reliques du destin ?
-      r: 23 conseils d’élimination. Le dépouillement de 13 d’entre eux est connu au
+      r: 21 conseils d’élimination. Le dépouillement de 13 d’entre eux est connu au
         bulletin près, pour 153 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Les Reliques du destin ?
       r: 26 épreuves relevées, dont 13 individuelles.
@@ -55172,15 +55172,15 @@ saisons:
       genre: f
       id: amel-fatnassi
       jour_sortie: 1
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Amel Fatnassi
       part_parcours: 5
       profession: Assistante sociale
       rang: 495
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: null
       voix_recues: 0
-    conseils: 11
+    conseils: 10
     conseils_complets: 8
     duree_jours: 21
     effectif: 14
@@ -55198,7 +55198,7 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Le Retour des héros ?
       r: Amazonie, bord du Rio Negro, Brésil.
     - q: Combien de conseils d’élimination à Koh-Lanta Le Retour des héros ?
-      r: 11 conseils d’élimination. Le dépouillement de 8 d’entre eux est connu au
+      r: 10 conseils d’élimination. Le dépouillement de 8 d’entre eux est connu au
         bulletin près, pour 53 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Le Retour des héros ?
       r: 15 épreuves relevées, dont 9 individuelles.
@@ -55582,12 +55582,12 @@ saisons:
       genre: h
       id: moussa-niangane
       jour_sortie: 21
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Moussa Niangane
       part_parcours: 91
       profession: Chef d'entreprise
       rang: 90
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Klahan
       voix_recues: 4
     - age: 33
@@ -55708,15 +55708,15 @@ saisons:
       genre: f
       id: fabienne-lefebvre-trehoux
       jour_sortie: 2
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Fabienne Lefebvre-Trehoux
       part_parcours: 9
       profession: Assistante maternelle
       rang: 529
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Nekmao
       voix_recues: 0
-    conseils: 11
+    conseils: 9
     conseils_complets: 5
     duree_jours: 23
     effectif: 16
@@ -55734,7 +55734,7 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta La Revanche des héros ?
       r: Île de Koh Rong, Cambodge.
     - q: Combien de conseils d’élimination à Koh-Lanta La Revanche des héros ?
-      r: 11 conseils d’élimination. Le dépouillement de 5 d’entre eux est connu au
+      r: 9 conseils d’élimination. Le dépouillement de 5 d’entre eux est connu au
         bulletin près, pour 73 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta La Revanche des héros ?
       r: 15 épreuves relevées, dont 9 individuelles.
@@ -56133,12 +56133,12 @@ saisons:
       genre: h
       id: dylan-thiry
       jour_sortie: 20
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Dylan Thiry
       part_parcours: 62
       profession: Mannequin
       rang: 249
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Wakaï
       voix_recues: 2
     - age: 27
@@ -56267,7 +56267,7 @@ saisons:
       sort: elimine_conseil
       tribu: Wakaï
       voix_recues: 7
-    conseils: 16
+    conseils: 15
     conseils_complets: 11
     duree_jours: 32
     effectif: 18
@@ -56286,7 +56286,7 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Le Combat des héros ?
       r: Archipel de Yasawa, Fidji.
     - q: Combien de conseils d’élimination à Koh-Lanta Le Combat des héros ?
-      r: 16 conseils d’élimination. Le dépouillement de 11 d’entre eux est connu au
+      r: 15 conseils d’élimination. Le dépouillement de 11 d’entre eux est connu au
         bulletin près, pour 97 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Le Combat des héros ?
       r: 19 épreuves relevées, dont 9 individuelles.
@@ -56416,12 +56416,12 @@ saisons:
       genre: h
       id: eric-peyrache
       jour_sortie: 29
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Eric Peyrache
       part_parcours: 91
       profession: Patron de casse automobile
       rang: 458
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Nacomo
       voix_recues: 28
     - age: 27
@@ -56556,12 +56556,12 @@ saisons:
       genre: f
       id: jessica-potel
       jour_sortie: 9
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Jessica Potel
       part_parcours: 28
       profession: Technicienne en apnée du sommeil
       rang: 43
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Héros
       voix_recues: 6
     - age: 58
@@ -56606,7 +56606,7 @@ saisons:
       sort: abandon_medical
       tribu: Nacomo
       voix_recues: 0
-    conseils: 15
+    conseils: 14
     conseils_complets: 8
     duree_jours: 32
     effectif: 20
@@ -56625,7 +56625,7 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta L'Île des héros ?
       r: Archipel de Kadavu, Fidji.
     - q: Combien de conseils d’élimination à Koh-Lanta L'Île des héros ?
-      r: 15 conseils d’élimination. Le dépouillement de 8 d’entre eux est connu au
+      r: 14 conseils d’élimination. Le dépouillement de 8 d’entre eux est connu au
         bulletin près, pour 102 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta L'Île des héros ?
       r: 20 épreuves relevées, dont 10 individuelles.
@@ -56728,12 +56728,12 @@ saisons:
       genre: h
       id: sam-haliti
       jour_sortie: 32
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Sam Haliti
       part_parcours: 91
       profession: Ébéniste
       rang: 273
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Lanta-naï
       voix_recues: 8
     - age: 30
@@ -56756,12 +56756,12 @@ saisons:
       genre: h
       id: loic-riowal
       jour_sortie: 28
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Loïc Riowal
       part_parcours: 80
       profession: Intérimaire
       rang: 65
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Korok
       voix_recues: 0
     - age: 41
@@ -56798,12 +56798,12 @@ saisons:
       genre: f
       id: alexandra-pornet
       jour_sortie: 22
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé à une épreuve
       nom: Alexandra Pornet
       part_parcours: 63
       profession: Comptable
       rang: 80
-      sort: elimine_conseil
+      sort: elimine_epreuve
       tribu: Korok
       voix_recues: 6
     - age: 38
@@ -56960,7 +56960,7 @@ saisons:
       sort: abandon_medical
       tribu: Tribu des hommes
       voix_recues: 0
-    conseils: 19
+    conseils: 16
     conseils_complets: 6
     duree_jours: 35
     effectif: 21
@@ -56979,7 +56979,7 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta La Légende ?
       r: Île de Taha'a, Polynésie française.
     - q: Combien de conseils d’élimination à Koh-Lanta La Légende ?
-      r: 19 conseils d’élimination. Le dépouillement de 6 d’entre eux est connu au
+      r: 16 conseils d’élimination. Le dépouillement de 6 d’entre eux est connu au
         bulletin près, pour 126 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta La Légende ?
       r: 23 épreuves relevées, dont 15 individuelles.

@@ -39,7 +39,7 @@ AFFIRMATIONS = {
     "fusion_serre": (True, "+"),           # le vote se divise apres la reunification
     "fusion_sexe": (True, "-"),            # moins de femmes eliminees ensuite
     "fusion_force": (False, None),         # la competence n'est pas une menace
-    "age_bascule_fusion": (True, "+"),     # le plus age part avant, le plus jeune apres
+    "age_bascule_fusion": (False, "+"),    # meme sens, mais sous le seuil (21 oct. 2026)
     "ambassadeurs_force": (False, None),   # les ambassadeurs ne visent pas les forts
     "ambassadeurs_survie": (True, "-"),    # l'ambassadeur part plus tot
     "prevision_conseil": (True, "-"),      # le modele voit venir la sortie

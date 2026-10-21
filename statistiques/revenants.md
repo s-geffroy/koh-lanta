@@ -235,6 +235,7 @@ Ce que sont devenues leurs participations d’après-titre :
                  | replace: "elimine_orientation", "Éliminé à l’orientation"
                  | replace: "elimine_ambassadeurs", "Éliminé aux ambassadeurs"
                  | replace: "elimine_poteaux", "Éliminé aux poteaux"
+                 | replace: "elimine_epreuve", "Éliminé à une épreuve"
                  | replace: "finaliste", "Finaliste"
                  | replace: "vainqueur", "Vainqueur"
                  | replace: "abandon_medical", "Abandon médical"

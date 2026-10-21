@@ -607,14 +607,13 @@
     annule: false
 - saison: s01
   numero: 13
-  type: elimination
+  type: sortie
   complet: false
   episode: "13"
   elimine: romain-bissol
   elimine_rattache: true
-  votes_contre: null
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: s01
   numero: 14
   type: elimination
@@ -1227,14 +1226,14 @@
     annule: false
 - saison: s02
   numero: 14
-  type: elimination
+  type: sortie
   complet: false
   episode: "13"
   elimine: marianne-mondon
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: s02
   numero: 15
   type: elimination
@@ -5276,14 +5275,14 @@
   votes: []
 - saison: s09
   numero: 2
-  type: elimination
+  type: sortie
   complet: false
   episode: "1"
   elimine: joelle-bourlier
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: s09
   numero: 3
   type: sortie
@@ -11041,14 +11040,14 @@
     annule: false
 - saison: s16
   numero: 12
-  type: elimination
+  type: sortie
   complet: false
   episode: "11"
   elimine: julie-navarro
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: s16
   numero: 13
   type: elimination
@@ -11663,14 +11662,14 @@
   nature: abandon_medical
 - saison: s17
   numero: 9
-  type: elimination
+  type: sortie
   complet: false
   episode: "7"
   elimine: maria-beccaris
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: s17
   numero: 10
   type: elimination
@@ -12382,14 +12381,14 @@
     annule: false
 - saison: s18
   numero: 6
-  type: elimination
+  type: sortie
   complet: false
   episode: "4"
   elimine: theotime-bernardin
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: s18
   numero: 7
   type: elimination
@@ -13740,14 +13739,14 @@
     annule: false
 - saison: s20
   numero: 16
-  type: elimination
+  type: sortie
   complet: false
   episode: "12"
   elimine: nicolas-van-brabandt
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: s20
   numero: 17
   type: elimination
@@ -14482,14 +14481,14 @@
     annule: false
 - saison: s21
   numero: 14
-  type: elimination
+  type: sortie
   complet: false
   episode: "9"
   elimine: bertrand-kamal-loudrhiri
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: s21
   numero: 15
   type: elimination
@@ -14725,14 +14724,14 @@
   votes: []
 - saison: s21
   numero: 19
-  type: elimination
+  type: sortie
   complet: false
   episode: "12"
   elimine: fabrice-pietrzak
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: s21
   numero: 20
   type: elimination
@@ -15436,14 +15435,14 @@
     annule: false
 - saison: s22
   numero: 10
-  type: elimination
+  type: sortie
   complet: false
   episode: "7"
   elimine: mathieu-orsolani
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: s22
   numero: 11
   type: elimination
@@ -15741,14 +15740,14 @@
     annule: false
 - saison: s22
   numero: 16
-  type: elimination
+  type: sortie
   complet: false
   episode: "11"
   elimine: flavio-soares-tavares
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: s22
   numero: 17
   type: elimination
@@ -16552,14 +16551,14 @@
     annule: false
 - saison: s23
   numero: 13
-  type: elimination
+  type: sortie
   complet: false
   episode: "9"
   elimine: pauline-pourchaire
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: s23
   numero: 14
   type: elimination
@@ -16809,14 +16808,14 @@
   votes: []
 - saison: s23
   numero: 18
-  type: elimination
+  type: sortie
   complet: false
   episode: "12"
   elimine: fouzi-ould-bouamama
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: s23
   numero: 19
   type: elimination
@@ -18465,14 +18464,14 @@
     annule: true
 - saison: s25
   numero: 11
-  type: elimination
+  type: sortie
   complet: false
   episode: "10"
   elimine: oceane-montenegro
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: s25
   numero: 12
   type: elimination
@@ -19114,24 +19113,22 @@
     annule: true
 - saison: s26
   numero: 5
-  type: elimination
+  type: sortie
   complet: false
   episode: "5"
   elimine: nathanael-branchereau
   elimine_rattache: true
-  votes_contre: null
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: s26
   numero: 6
-  type: elimination
+  type: sortie
   complet: false
   episode: "5"
   elimine: vanessa-feuillatte
   elimine_rattache: true
-  votes_contre: null
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: s26
   numero: 7
   type: sortie
@@ -19356,14 +19353,14 @@
     annule: true
 - saison: s26
   numero: 12
-  type: elimination
+  type: sortie
   complet: false
   episode: "9"
   elimine: maud-collas
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: s26
   numero: 13
   type: elimination
@@ -19714,14 +19711,14 @@
     annule: true
 - saison: s26
   numero: 19
-  type: elimination
+  type: sortie
   complet: false
   episode: "14"
   elimine: sophia-mansouri
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: s26
   numero: 20
   type: elimination
@@ -20411,14 +20408,14 @@
   nature: abandon_medical
 - saison: s27
   numero: 14
-  type: elimination
+  type: sortie
   complet: false
   episode: "10"
   elimine: jessica-murcia
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: s27
   numero: 15
   type: elimination
@@ -20654,14 +20651,14 @@
   votes: []
 - saison: s27
   numero: 19
-  type: elimination
+  type: sortie
   complet: false
   episode: "13"
   elimine: maxime-lubian
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: s27
   numero: 20
   type: elimination
@@ -21503,14 +21500,14 @@
     annule: true
 - saison: s28
   numero: 12
-  type: elimination
+  type: sortie
   complet: false
   episode: "10"
   elimine: paul-estival
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: s28
   numero: 13
   type: elimination
@@ -21828,14 +21825,14 @@
     annule: true
 - saison: s28
   numero: 20
-  type: elimination
+  type: sortie
   complet: false
   episode: "14"
   elimine: zakariya-bougoudouima
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: s28
   numero: 21
   type: elimination
@@ -22013,14 +22010,14 @@
   votes: []
 - saison: sp1
   numero: 2
-  type: elimination
+  type: sortie
   complet: false
   episode: "1"
   elimine: amel-fatnassi
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: sp1
   numero: 3
   type: elimination
@@ -22940,14 +22937,14 @@
     annule: false
 - saison: sp3
   numero: 1
-  type: elimination
+  type: sortie
   complet: false
   episode: "1"
   elimine: fabienne-lefebvre-trehoux
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: sp3
   numero: 2
   type: elimination
@@ -23374,14 +23371,14 @@
     annule: false
 - saison: sp3
   numero: 10
-  type: elimination
+  type: sortie
   complet: false
   episode: "8"
   elimine: moussa-niangane
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: sp3
   numero: 11
   type: elimination
@@ -24479,14 +24476,14 @@
     annule: false
 - saison: sp5
   numero: 11
-  type: elimination
+  type: sortie
   complet: false
   episode: "7"
   elimine: dylan-thiry
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: sp5
   numero: 12
   type: elimination
@@ -25436,14 +25433,14 @@
     annule: false
 - saison: sp6
   numero: 16
-  type: elimination
+  type: sortie
   complet: false
   episode: "10"
   elimine: eric-peyrache
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: sp6
   numero: 17
   type: elimination
@@ -26174,14 +26171,14 @@
     annule: false
 - saison: sp7
   numero: 13
-  type: elimination
+  type: sortie
   complet: false
   episode: "9"
   elimine: alexandra-pornet
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: sp7
   numero: 14
   type: elimination
@@ -26331,14 +26328,14 @@
   votes: []
 - saison: sp7
   numero: 18
-  type: elimination
+  type: sortie
   complet: false
   episode: "12"
   elimine: loic-riowal
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: sp7
   numero: 19
   type: elimination
@@ -26386,14 +26383,14 @@
     annule: false
 - saison: sp7
   numero: 20
-  type: elimination
+  type: sortie
   complet: false
   episode: "13"
   elimine: sam-haliti
   elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
 - saison: sp7
   numero: 21
   type: elimination

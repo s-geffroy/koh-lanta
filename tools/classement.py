@@ -68,6 +68,7 @@ LIBELLE_SORT = {
     "elimine_orientation": "Éliminé à l'orientation",
     "elimine_ambassadeurs": "Éliminé aux ambassadeurs",
     "elimine_duel": "Éliminé en duel", "elimine_exil": "Éliminé sur l'île",
+    "elimine_epreuve": "Éliminé à une épreuve",
     "abandon_medical": "Abandon médical", "abandon_volontaire": "Abandon volontaire",
     "disqualifie": "Disqualifié",
 }

@@ -527,7 +527,7 @@
     jour_debut: 20
     jour_fin: 41
   jour_sortie: 41
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminé à l'épreuve du quiz
   votes_recus: 4
   classement: 4
@@ -570,7 +570,7 @@
     jour_debut: 20
     jour_fin: 42
   jour_sortie: 42
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminé à l'épreuve de l'idole
   votes_recus: 4
   classement: 3
@@ -1207,7 +1207,7 @@
     jour_debut: 24
     jour_fin: 38
   jour_sortie: 38
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminée
   votes_recus: 4
   classement: 4
@@ -1220,7 +1220,8 @@
     tribu: fandom
     jour_sortie: 'corrige : Wikipedia anglais (colonne Day), wiki Survivor et fiche Fandom s''accordent ;
       le tableau de saison Fandom est decale d''un jour'
-    sort: fandom
+    sort: 'corrige : tableau des votes Fandom : « Marianne a été la dernière à une épreuve de questions » ;
+      Wikipedia anglais ne la dit pas « voted out »'
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -5480,7 +5481,7 @@
     jour_debut: 1
     jour_fin: 1
   jour_sortie: 1
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminée à l'épreuve initiale
   votes_recus: 0
   classement: 18
@@ -10803,7 +10804,7 @@
     jour_debut: 1
     jour_fin: null
   jour_sortie: 32
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminée suite à une épreuve
   votes_recus: 6
   classement: 9
@@ -11507,7 +11508,7 @@
     jour_debut: null
     jour_fin: 19
   jour_sortie: 19
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminée
   votes_recus: 5
   classement: 14
@@ -11519,7 +11520,8 @@
     profession: fandom
     tribu: fandom
     jour_sortie: fandom
-    sort: fandom
+    sort: 'corrige : Wikipedia anglais : « As Maria finished last in the challenge, she was eliminated » ;
+      tableau Fandom : « épreuve éliminatoire individuelle »'
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -12291,7 +12293,7 @@
     jour_debut: 1
     jour_fin: 10
   jour_sortie: 10
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminé à une épreuve à élimination directe
   votes_recus: 0
   classement: 17
@@ -13599,7 +13601,7 @@
     jour_debut: 18
     jour_fin: 33
   jour_sortie: 33
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminée lors d'une épreuve éliminatoire
   votes_recus: 8
   classement: 8
@@ -14396,7 +14398,7 @@
     jour_debut: 22
     jour_fin: 25
   jour_sortie: 25
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminé à une épreuve éliminatoire
   votes_recus: 0
   classement: 13
@@ -14630,7 +14632,7 @@
     jour_debut: 22
     jour_fin: 35
   jour_sortie: 35
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminé à une épreuve éliminatoire
   votes_recus: 5
   classement: 8
@@ -15319,7 +15321,7 @@
     jour_debut: 17
     jour_fin: 20
   jour_sortie: 20
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminé à une épreuve éliminatoire
   votes_recus: 1
   classement: 13
@@ -15579,7 +15581,7 @@
     jour_debut: 17
     jour_fin: 33
   jour_sortie: 33
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminé à une épreuve éliminatoire
   votes_recus: 1
   classement: 7
@@ -16366,7 +16368,7 @@
     jour_debut: 22
     jour_fin: 25
   jour_sortie: 25
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminée lors d'une épreuve éliminatoire
   votes_recus: 7
   classement: 13
@@ -16602,7 +16604,7 @@
     jour_debut: 22
     jour_fin: 33
   jour_sortie: 33
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminé lors d'une épreuve éliminatoire
   votes_recus: 4
   classement: 8
@@ -18266,7 +18268,7 @@
     jour_debut: 22
     jour_fin: 26
   jour_sortie: 26
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminée lors d'une épreuve éliminatoire
   votes_recus: 10
   classement: 12
@@ -18942,7 +18944,7 @@
     jour_debut: 1
     jour_fin: 13
   jour_sortie: 13
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminée à la Tribu Maudite
   votes_recus: 0
   classement: 19
@@ -18981,7 +18983,7 @@
     jour_debut: 1
     jour_fin: 13
   jour_sortie: 13
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminé à la Tribu Maudite
   votes_recus: 0
   classement: 20
@@ -19235,7 +19237,7 @@
     jour_debut: 19
     jour_fin: 22
   jour_sortie: 22
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminée lors d'une épreuve éliminatoire
   votes_recus: 0
   classement: 13
@@ -19507,7 +19509,7 @@
     jour_debut: 19
     jour_fin: 39
   jour_sortie: 39
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminée lors d'une épreuve éliminatoire
   votes_recus: 0
   classement: 7
@@ -20276,7 +20278,7 @@
     jour_debut: 22
     jour_fin: 25
   jour_sortie: 25
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminée lors d'une épreuve éliminatoire
   votes_recus: 0
   classement: 13
@@ -20515,7 +20517,7 @@
     jour_debut: 25
     jour_fin: 33
   jour_sortie: 33
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminé lors d'une épreuve éliminatoire
   votes_recus: 1
   classement: 8
@@ -21209,7 +21211,7 @@
     jour_debut: 18
     jour_fin: 24
   jour_sortie: 24
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminé lors d'une épreuve éliminatoire
   votes_recus: 0
   classement: 12
@@ -21432,7 +21434,7 @@
     jour_debut: 18
     jour_fin: 36
   jour_sortie: 36
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminé lors d'une épreuve éliminatoire
   votes_recus: 3
   classement: 7
@@ -21737,7 +21739,7 @@
     jour_debut: 1
     jour_fin: 1
   jour_sortie: 1
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminée à l'épreuve initiale
   votes_recus: 0
   classement: 14
@@ -22911,7 +22913,7 @@
     jour_debut: 1
     jour_fin: 2
   jour_sortie: 2
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminée lors d’une épreuve éliminatoire
   votes_recus: 0
   classement: 16
@@ -23261,7 +23263,7 @@
     jour_debut: 11
     jour_fin: 21
   jour_sortie: 21
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminer lors d’une épreuve éliminatoire
   votes_recus: 4
   sources:
@@ -24383,7 +24385,7 @@
     jour_debut: 17
     jour_fin: 20
   jour_sortie: 20
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminé dans une épreuve éliminatoire
   votes_recus: 2
   classement: 11
@@ -25395,7 +25397,7 @@
     jour_debut: 15
     jour_fin: 27
   jour_sortie: 9
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminée à une épreuve éliminatoire
   votes_recus: 6
   classement: 8
@@ -25438,7 +25440,7 @@
     jour_debut: 15
     jour_fin: 29
   jour_sortie: 29
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminé lors d'une épreuve éliminatoire
   votes_recus: 28
   classement: 7
@@ -26278,7 +26280,7 @@
     jour_debut: 22
     jour_fin: 28
   jour_sortie: 22
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminée lors d'une épreuve éliminatoire
   votes_recus: 6
   classement: 10
@@ -26334,7 +26336,7 @@
     jour_debut: 28
     jour_fin: 32
   jour_sortie: 28
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminé lors d'une épreuve éliminatoire
   votes_recus: 0
   classement: 9
@@ -26490,7 +26492,7 @@
     jour_debut: 32
     jour_fin: 33
   jour_sortie: 32
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminé lors d'une épreuve éliminatoire
   votes_recus: 8
   classement: 6

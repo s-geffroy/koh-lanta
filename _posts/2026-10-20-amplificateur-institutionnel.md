@@ -125,7 +125,7 @@ Les données sont celles de ce site ; les chiffres de cette page suivent leurs
 
 Un contrôle automatique refuse toute incohérence connue : un immunisé éliminé, un votant déjà sorti, un total annoncé que ses bulletins contredisent. Les exceptions acceptées sont nommées une à une, avec leur raison. Avant toute analyse de cet article, une révision a corrigé 159 conseils qui portaient une panne silencieuse — coquilles de nom, votes noirs de l'éliminé lus comme des votes ordinaires, sorties sans vote comptées comme des conseils.
 
-Les **sorties sans vote** (abandons, orientation, poteaux, duels, ambassadeurs) ne sont pas des conseils et en sont exclues. Le **vote du jury final** est exclu : son sens est inversé.
+Les **sorties sans vote** (abandons, orientation, poteaux, duels, ambassadeurs, épreuves éliminatoires) ne sont pas des conseils et en sont exclues. Le **vote du jury final** est exclu : son sens est inversé.
 
 ### 5.2. Les tests
 
@@ -212,7 +212,7 @@ La conformité (2.5) ne conclut pas : voter avec la minorité n'expose pas sign
 
 Le dispositif **se présente** comme changeant de régime à la réunification (5.4). Les votes le confirment : après la réunification, la part de conseils où l'éliminé ne réunit pas la majorité des voix augmente de {{ a.tests.fusion_serre.valeur }} points ; la part de femmes parmi les éliminés baisse de {{ a.tests.fusion_sexe.valeur }} points, alors que le modèle nul tient compte de la composition du camp.
 
-L'âge suit le même mouvement. Avant la réunification, l'éliminé a en moyenne {{ a.age.avant }} de plus que la moyenne de son camp ce soir-là ; après, {{ a.age.apres }} de moins. La bascule, {{ a.age.bascule }} sur {{ a.age.conseils }} conseils, passe le seuil de justesse (p ajustée {{ a.tests.age_bascule_fusion.p }}) : le plus âgé du camp part plutôt avant la réunification, le plus jeune plutôt après. Les votes ne disent pas pourquoi. L'ampleur reste modeste, et une saison mal relevée suffirait à faire repasser le résultat sous le seuil.
+L'âge, lui, ne permet pas de conclure. Avant la réunification, l'éliminé a en moyenne {{ a.age.avant }} de plus que la moyenne de son camp ce soir-là ; après, {{ a.age.apres }} de moins. La bascule, {{ a.age.bascule }} sur {{ a.age.conseils }} conseils, va dans le même sens, mais ne passe pas le seuil (p ajustée {{ a.tests.age_bascule_fusion.p }}). Une première rédaction de cette version la donnait retenue de justesse, en prévenant qu'une saison mal relevée suffirait à la faire repasser dessous. C'est ce qui est arrivé le 21 octobre 2026 : trente sorties par épreuve éliminatoire, jusque-là comptées comme des conseils sans bulletin, ont été rendues à leur nature.
 
 L'auto-description et le comportement coïncident sur ce point. Les ambassadeurs, eux, partent ensuite plus tôt que les autres présents (rang {{ a.tests.ambassadeurs_survie.observe }} contre {{ a.tests.ambassadeurs_survie.attendu }}) : l'ambassade, présentée comme une négociation, accompagne une fin de parcours précoce.
 

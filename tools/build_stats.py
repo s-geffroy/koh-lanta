@@ -59,6 +59,7 @@ LIBELLE_SORT = {
     "elimine_orientation": "Éliminé à l'orientation",
     "elimine_ambassadeurs": "Éliminé aux ambassadeurs",
     "elimine_duel": "Éliminé en duel", "elimine_exil": "Éliminé sur l'île",
+    "elimine_epreuve": "Éliminé à une épreuve",
     "abandon_medical": "Abandon médical", "abandon_volontaire": "Abandon volontaire",
     "disqualifie": "Disqualifié",
 }
@@ -247,6 +248,7 @@ def bloc_sorties(parts):
             "abandons": part(c["abandon_medical"] + c["abandon_volontaire"], len(lot)),
             "conseil": part(c["elimine_conseil"], len(lot)),
             "ambassadeurs": part(c["elimine_ambassadeurs"], len(lot)),
+            "epreuve": part(c["elimine_epreuve"], len(lot)),
         })
     return {"repartition": repartition, "par_decennie": evolution}
 

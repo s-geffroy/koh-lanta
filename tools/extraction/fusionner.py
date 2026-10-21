@@ -1157,10 +1157,29 @@ ETAPES_CORRIGEES = {
         "jamais dans la tribu reunifiee : sortie avant elle (voir Klahan)"),
 }
 
+# Les sorts que la source ecrit trop vagues pour etre classes. Le tableau de
+# saison dit « Eliminee », sans dire comment : la regle par defaut en fait un
+# conseil. TABLE fermee, chaque ligne tiree d'un temoin qui nomme l'epreuve
+# (21 octobre 2026).
+SORTS_CORRIGES = {
+    ("s02", "marianne-mondon"): ("elimine_epreuve",
+        "tableau des votes Fandom : « Marianne a été la dernière à une épreuve "
+        "de questions » ; Wikipedia anglais ne la dit pas « voted out »"),
+    ("s17", "maria-beccaris"): ("elimine_epreuve",
+        "Wikipedia anglais : « As Maria finished last in the challenge, she was "
+        "eliminated » ; tableau Fandom : « épreuve éliminatoire individuelle »"),
+}
+
 
 def corriger_les_jours(participations, rapport):
-    """Applique JOURS_DE_SORTIE et ETAPES_CORRIGEES, et le dit."""
+    """Applique JOURS_DE_SORTIE, SORTS_CORRIGES et ETAPES_CORRIGEES, et le dit."""
     for p in participations:
+        s = SORTS_CORRIGES.get((p["saison"], p["id"]))
+        if s and p.get("sort") != s[0]:
+            rapport.append(f"sort : {p['saison']}/{p['id']} "
+                           f"{p.get('sort')} -> {s[0]} ({s[1]})")
+            p["sort"] = s[0]
+            p.setdefault("sources", {})["sort"] = "corrige : " + s[1]
         c = JOURS_DE_SORTIE.get((p["saison"], p["id"]))
         if c and p.get("jour_sortie") != c[0]:
             rapport.append(f"jour de sortie : {p['saison']}/{p['id']} "
