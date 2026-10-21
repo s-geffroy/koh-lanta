@@ -673,6 +673,17 @@ sup {
 }
 
 .graphique { width: 100%; height: auto; display: block; min-width: 32rem; }
+
+/* Le titre de la figure, en tete de son panneau : ce qu'elle montre, avant
+   qu'on la lise. Ecrit par graphiques.Figure.rendu(). */
+.figure-titre {
+  font-size: 0.95rem;
+  font-weight: 650;
+  line-height: 1.35;
+  color: var(--encre);
+  margin: 0 0 0.9rem;
+  max-width: var(--colonne);
+}
 .vitrine svg,
 .peigne svg { width: 100%; height: auto; display: block; min-width: 34rem; }
 

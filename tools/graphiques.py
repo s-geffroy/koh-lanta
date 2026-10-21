@@ -71,8 +71,14 @@ class Figure:
 
     def rendu(self):
         classes = "graphique " + self.classe if self.classe else "graphique"
+        # Le titre est AFFICHE en tete du panneau (21 octobre 2026) : il ne
+        # vivait que dans <title>, que l'oeil ne voit jamais, et l'on devait
+        # lire la figure pour savoir ce qu'elle montrait. aria-hidden : le
+        # <svg> porte deja ce titre dans aria-label, un lecteur d'ecran ne
+        # doit pas l'entendre deux fois.
         return (
             f'<figure class="figure">\n'
+            f'<figcaption class="figure-titre" aria-hidden="true">{e(self.titre)}</figcaption>\n'
             f'<svg class="{classes}" viewBox="0 0 {self.l} {self.h}" '
             f'role="img" preserveAspectRatio="xMidYMid meet" '
             f'aria-label="{e(self.titre)}">\n'
