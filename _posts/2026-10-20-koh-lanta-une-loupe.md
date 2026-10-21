@@ -69,7 +69,7 @@ Curieusement, survivre à un vote massif ne protège pas mieux que survivre à d
 
 Les tribus sont créées par la production, à partir d'inconnus. À la réunification, elles disparaissent. Pourtant elles continuent de compter.
 
-Après la réunification, **on écrit le nom de quelqu'un de sa tribu initiale dans {{ a.tests.vote_bandeau_apres_fusion.valeur_ronde }} % des bulletins, contre {{ a.tests.vote_bandeau_apres_fusion.attendu_rond }} % si l'on votait au hasard** ([qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }})). Les sorties s'enchaînent par ancienne tribu, comme si un camp était démonté un par un. Et appartenir à l'ancienne tribu la moins nombreuse expose ([autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }})).
+Après la réunification, **on écrit le nom de quelqu'un de sa tribu initiale dans {{ a.tests.vote_bandeau_apres_fusion.valeur_ronde }} % des bulletins, contre {{ a.tests.vote_bandeau_apres_fusion.attendu_rond }} % si l'on votait au hasard** ([qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }})). Les sorties s'enchaînent par tribu initiale, comme si un camp était démonté un par un. Et appartenir à la tribu initiale la moins nombreuse expose ([autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }})).
 
 La psychologie sociale l'a montré il y a cinquante ans : des groupes arbitraires suffisent à créer de la préférence. Koh-Lanta le montre saison après saison.
 
