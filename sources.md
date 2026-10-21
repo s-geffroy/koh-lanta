@@ -802,7 +802,7 @@ assumés, là où il y avait seize réponses inventées.
 ## Le soir du départ, qui faussait trois mesures à la fois
 
 Une question posée à la page du classement — *« et Freddy ? il est bien
-classé ? »* — a déclenché une revue complète. Il était **530<sup>e</sup> sur
+classé ? »* — a déclenché une revue complète. Il était **530<sup>e</sup> sur
 531**. Ce n’était pas un jugement sévère : c’était un défaut de construction.
 
 {% assign ar = site.data.stats.classement.artefacts %}

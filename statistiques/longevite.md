@@ -59,7 +59,7 @@ L’accès à la finale confirme le creux du milieu de trentaine et l’avantage
 
 Les moyennes ci-dessus portent sur des carrières entières. Posée conseil par
 conseil, la question devient : **le plus âgé des présents part-il plus souvent
-que les autres ?**
+que les autres ?**
 
 Il part dans {{ af.age[0].probabilite }} % des cas, contre
 {{ af.age[1].probabilite }} % pour ceux qui ne sont ni le plus âgé ni le plus

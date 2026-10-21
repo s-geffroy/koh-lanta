@@ -186,7 +186,7 @@ affrontement à deux camps.
 
 Cette réciprocité-là est **sans ordre** : à un moment ou un autre. Sa version
 datée — *celui dont j’ai écrit le nom la fois d’avant écrit-il le mien ce
-soir ?* — vaut
+soir ?* — vaut
 {{ site.data.stats.modeles.conditionnelles.retour.probabilite }} %, contre
 {% assign trb = site.data.stats.modeles.registre | where: "cle", "retour_de_baton" | first %}{{ trb.attendu_arrondi }} %
 si les bulletins étaient tirés au sort.

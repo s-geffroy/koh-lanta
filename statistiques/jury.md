@@ -45,7 +45,7 @@ Sauf que non — et le retournement est complet. Un finaliste a traversé toute 
 saison, il a voté à chaque conseil, il a donc écrit beaucoup de noms — dont
 probablement le vôtre. La question n’est pas « le juré vote-t-il pour son
 bourreau », elle est **« le juré vote-t-il pour son bourreau plus souvent que
-pour l’autre finaliste »**. Posée ainsi, elle donne l’inverse.
+pour l’autre finaliste »**. Posée ainsi, elle donne l’inverse.
 
 ## Le modèle
 

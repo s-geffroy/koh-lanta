@@ -160,7 +160,7 @@ laquelle.</p>
 </div>
 
 {%- if p.epreuves_nommees.size > 0 %}
-<p class="note"><strong>Épreuves identifiées par leur nom :</strong>
+<p class="note"><strong>Épreuves identifiées par leur nom :</strong>
 {% for e in p.epreuves_nommees %}{% if site.data.epreuves_fiches.epreuves[e.id] %}<a href="{{ '/epreuves/' | append: e.id | append: '/' | relative_url }}">{{ e.nom }}</a>{% else %}{{ e.nom }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}.
 Le wiki ne nomme que {{ site.data.epreuves_nommees.nb_epreuves }} épreuves
 récurrentes et ne dit jamais dans quel épisode elles ont eu lieu : cette liste

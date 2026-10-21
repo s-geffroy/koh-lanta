@@ -17,7 +17,7 @@ chapeau: >-
 {{ pa.observe }} Alexandra, {{ pm.observe }} Maxime, {{ pn.observe }} Nicolas. Cela paraît beaucoup — mais un prénom
 courant produit mécaniquement des porteurs, et les aventuriers ne sont pas nés
 n’importe quand. La seule question qui tienne est donc : **combien en
-attendrait-on ?**
+attendrait-on ?**
 
 ## D’abord, savoir quand ils sont nés
 

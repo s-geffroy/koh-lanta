@@ -28,7 +28,7 @@ La version précédente de ce texte reposait sur neuf conseils pilotes et un seu
 
 Trois résultats réorganisent la thèse. (1) Les mécanismes **relationnels** — isolement, persistance des coalitions, ciblage répété, appartenance d'origine — sont nettement plus marqués que ne le produirait une élimination au hasard parmi les présents. (2) L'exemple le plus cité de la version précédente, **la compétence qui devient une menace après la réunification, n'est pas observé** : l'éliminé n'est pas plus fort aux épreuves après la réunification qu'avant (écart de {{ a.tests.fusion_force.observe }} points de rang, p ajustée {{ a.tests.fusion_force.p }}). (3) La version précédente donnait 42,9 % à l'issue ordinaire d'un conseil, l'élimination sans égalité ni objet joué ; c'est en réalité l'issue de **{{ a.issues.ordinaire }} %** des conseils. Une prédiction qui ignore cette fréquence peut tomber juste une fois et rester mal calibrée.
 
-**Mots-clés :** Koh-Lanta ; institutions ; télé-réalité ; coalitions ; réputation ; identité sociale ; tests de permutation ; calibration.
+**Mots-clés :** Koh-Lanta ; institutions ; télé-réalité ; coalitions ; réputation ; identité sociale ; tests de permutation ; calibration.
 
 ## 1. Introduction
 
@@ -38,7 +38,7 @@ Notre point de départ est inverse : *Koh-Lanta* est intéressant **parce qu'il
 
 La question est donc :
 
-> **Comment l'architecture institutionnelle et médiatique de Koh-Lanta rend-elle certains mécanismes sociaux plus saillants, moins saillants ou qualitativement différents — et lesquels de ces déplacements se lisent effectivement dans les votes ?**
+> **Comment l'architecture institutionnelle et médiatique de Koh-Lanta rend-elle certains mécanismes sociaux plus saillants, moins saillants ou qualitativement différents — et lesquels de ces déplacements se lisent effectivement dans les votes ?**
 
 La seconde moitié de la question est l'apport de cette version. La précédente concluait que « la prochaine étape décisive [était] de produire une base événementielle plus large ». Cette base existait : c'est celle de ce site, qui publie chaque conseil, chaque bulletin et chaque test avec son modèle nul. Nous l'utilisons ici telle qu'elle est publiée, sans construire de mesure ad hoc, à une exception près (section 6.4).
 
@@ -72,11 +72,11 @@ $$
 Réputation \rightarrow Menace\ perçue \rightarrow Ciblage
 $$
 
-Le premier maillon n'est pas observable dans nos données ; le dernier l'est. Nous testons la forme réduite : **avoir été visé expose-t-il à l'être encore, et à partir ?**
+Le premier maillon n'est pas observable dans nos données ; le dernier l'est. Nous testons la forme réduite : **avoir été visé expose-t-il à l'être encore, et à partir ?**
 
 ### 2.5. Apprentissage social, conformité et cascades
 
-Une cascade informationnelle se produit quand les décisions observées conduisent un acteur à négliger son information privée ([Bikhchandani et al., 1998](#ref-bikhchandani1998cascades) ; [Bikhchandani et al., 2024](#ref-bikhchandani2024cascades)) ; suivre une majorité pour éviter un coût social relève d'autre chose. Les bulletins ne distinguent pas les deux. Ils permettent seulement de tester une conséquence commune : **le vote minoritaire est-il sanctionné ?**
+Une cascade informationnelle se produit quand les décisions observées conduisent un acteur à négliger son information privée ([Bikhchandani et al., 1998](#ref-bikhchandani1998cascades) ; [Bikhchandani et al., 2024](#ref-bikhchandani2024cascades)) ; suivre une majorité pour éviter un coût social relève d'autre chose. Les bulletins ne distinguent pas les deux. Ils permettent seulement de tester une conséquence commune : **le vote minoritaire est-il sanctionné ?**
 
 ### 2.6. Identité sociale
 
@@ -102,7 +102,7 @@ Cette séparation a une conséquence pratique. Le vote est l'un des rares élém
 
 $$G_{ref}=(V,E)$$ est un référentiel où $$V$$ contient des mécanismes documentés dans plusieurs littératures et $$E$$ des relations hypothétiques. La transformation $$T_{KL}$$ indique qualitativement que le dispositif renforce la sélection relative, réduit l'exit, rend les votes et les pivots plus conséquents, augmente l'importance locale des réputations, et retire contrats, assurance et innovation institutionnelle.
 
-Les pondérations numériques des versions exploratoires ne servent pas de preuve. Cette version remplace leur rôle par une question plus simple : **pour chaque arête de $$T_{KL}$$ qui a une conséquence observable dans les votes, cette conséquence apparaît-elle ?**
+Les pondérations numériques des versions exploratoires ne servent pas de preuve. Cette version remplace leur rôle par une question plus simple : **pour chaque arête de $$T_{KL}$$ qui a une conséquence observable dans les votes, cette conséquence apparaît-elle ?**
 
 ## 5. Données et méthode
 
@@ -310,7 +310,7 @@ Données, sources et registre des tests : sur ce site, pages [les sources]({{ '
 
 ## Références
 
-- <span id="ref-akerlof1970lemons"></span>Akerlof, George A. (1970). The Market for « Lemons »: Quality Uncertainty and the Market Mechanism. *The Quarterly Journal of Economics*, 84(3), 488–500. <https://doi.org/10.2307/1879431>
+- <span id="ref-akerlof1970lemons"></span>Akerlof, George A. (1970). The Market for « Lemons »: Quality Uncertainty and the Market Mechanism. *The Quarterly Journal of Economics*, 84(3), 488–500. <https://doi.org/10.2307/1879431>
 - <span id="ref-aldagfuller1993"></span>Aldag, Ramon J. et Fuller, Sally R. (1993). Beyond fiasco: A reappraisal of the groupthink phenomenon and a new model of group decision processes. *Psychological Bulletin*, 113(3), 533–552. <https://doi.org/10.1037/0033-2909.113.3.533>
 - <span id="ref-andrejevic2004"></span>Andrejevic, Mark (2004). *Reality TV: The Work of Being Watched*. Rowman & Littlefield.
 - <span id="ref-bikhchandani1998cascades"></span>Bikhchandani, Sushil, Hirshleifer, David et Welch, Ivo (1998). Learning from the Behavior of Others: Conformity, Fads, and Informational Cascades. *Journal of Economic Perspectives*, 12(3), 151–170. <https://doi.org/10.1257/jep.12.3.151>

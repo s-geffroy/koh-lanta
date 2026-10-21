@@ -10,7 +10,7 @@ chapeau: >-
 {% assign e = site.data.stats.epreuves %}
 
 C’est la question qui revient le plus souvent, et celle sur laquelle circulent
-le plus de chiffres invérifiables : **qui domine les épreuves ?**
+le plus de chiffres invérifiables : **qui domine les épreuves ?**
 
 **{{ e.epreuves }} épreuves** ont été relevées sur **{{ e.saisons_couvertes }}
 saisons** — {{ e.immunites }} d’immunité, {{ e.conforts }} de confort ;

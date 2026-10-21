@@ -12,7 +12,7 @@ chapeau: >-
 Les {{ s.general.participations }} aventuriers déclarent
 {{ s.general.metiers_distincts }} métiers différents. Regroupés en familles, ils dessinent un casting — et
 permettent de répondre à une question simple : **quel métier mène le plus
-loin ?**
+loin ?**
 
 ## Qui part
 

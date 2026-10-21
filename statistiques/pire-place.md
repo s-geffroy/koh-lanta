@@ -19,7 +19,7 @@ Les deux pages précédentes prennent les signaux **un par un** :
 [Sachant le conseil d’avant]({{ '/statistiques/conditionnelles/' | relative_url }})
 pour le passé, [Sachant qui est autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }})
 pour la place qu’on occupe. Celle-ci pose la question qui reste : **comptent-ils
-ensemble, ou l’un n’est-il que l’ombre de l’autre ?**
+ensemble, ou l’un n’est-il que l’ombre de l’autre ?**
 
 ## Un allié, ici, c’est quelqu’un avec qui on a écrit le même nom
 

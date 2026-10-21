@@ -51,11 +51,12 @@ RE_DECIMAL_FR = re.compile(r"^-?[0-9]+,[0-9]+$")
 # les figures : un script qui ecrit « Pourquoi ? » n'a pas a y penser.
 #
 # Les lookaheads evitent ce qui n'est pas de la ponctuation de phrase : une
-# image Markdown (« ![ »), un « != », un « :8 ».
+# image Markdown (« ![ »), un « != », un « :8 ». Un signe suivi d'un marqueur
+# Markdown (« partir ?** ») est une fin de phrase : `*` et `_` sont admis.
 INSECABLE = "\u00a0"
 FINE = "\u202f"
-RE_ESPACE_DEUX_POINTS = re.compile(r"(?<=[^\s\u00a0\u202f]) :(?=\s|$|<)")
-RE_ESPACE_AVANT = re.compile(r"(?<=[^\s\u00a0\u202f]) ([;?!»])(?=[\s<»)\]\"'.,…]|$)")
+RE_ESPACE_DEUX_POINTS = re.compile(r"(?<=[^\s\u00a0\u202f]) :(?=[\s<*_]|$)")
+RE_ESPACE_AVANT = re.compile(r"(?<=[^\s\u00a0\u202f]) ([;?!»])(?=[\s<»)\]\"'.,…*_:;?!]|$)")
 RE_ESPACE_APRES = re.compile(r"« (?=\S)")
 
 

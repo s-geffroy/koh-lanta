@@ -94,11 +94,11 @@ haut, {{ g.regions_basses | size }} par le bas. Ce sont les seules qui se lisent
 qu’ensemble.
 
 <div class="constat">
-  <p><b>Au-dessus :</b>
+  <p><b>Au-dessus :</b>
   {%- for r in g.regions_hautes %} {{ r.region }} ×{{ r.indice }}
   [{{ r.indice_bas }} ; {{ r.indice_haut }}]{% unless forloop.last %} ·{% endunless %}
   {%- endfor %}.</p>
-  <p><b>En dessous :</b>
+  <p><b>En dessous :</b>
   {%- for r in g.regions_basses %} {{ r.region }} ×{{ r.indice }}
   [{{ r.indice_bas }} ; {{ r.indice_haut }}]{% unless forloop.last %} ·{% endunless %}
   {%- endfor %}.</p>

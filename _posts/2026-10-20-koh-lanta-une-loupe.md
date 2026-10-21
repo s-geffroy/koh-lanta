@@ -119,6 +119,6 @@ La bonne question n'est donc pas : « Est-ce que la vraie vie ressemble à Ko
 
 Mais :
 
-> **Quelles règles, dans nos propres organisations, fabriquent les comportements que nous attribuons ensuite trop facilement aux individus ?**
+> **Quelles règles, dans nos propres organisations, fabriquent les comportements que nous attribuons ensuite trop facilement aux individus ?**
 
 *Les tests, leurs modèles nuls et leurs limites sont détaillés dans la [version longue]({{ '/articles/amplificateur-institutionnel/' | relative_url }}) et sur la page [méthode]({{ '/methode/' | relative_url }}).*

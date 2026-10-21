@@ -22,7 +22,7 @@ Tout le monde autour du feu connaît le dépouillement précédent : il a été
 voix haute. C’est la seule information du jeu que personne ne peut cacher. La
 question de cette page est celle d’un joueur assis sur son tronc, et elle est
 exactement une probabilité conditionnelle : **sachant les voix que j’ai reçues
-la dernière fois, quelles sont mes chances de partir ce soir ?**
+la dernière fois, quelles sont mes chances de partir ce soir ?**
 
 ## Le point de comparaison n’est pas zéro
 
@@ -348,7 +348,7 @@ plus tard » n’est pas un résultat retenu.
 
 Jusqu’ici la question était « part-il ? ». Celle-ci est différente et se mesure
 sur bien plus de monde, puisqu’elle ne demande pas de savoir qui est parti :
-**son nom ressort-il de l’urne ?**
+**son nom ressort-il de l’urne ?**
 
 {% include graphiques/conditionnelles-cible.svg %}
 
@@ -385,7 +385,7 @@ sort.</p>
 
 Dernière conditionnelle, et elle ne porte plus sur les sorties mais sur les
 bulletins : **celui dont j’ai écrit le nom la fois d’avant écrit-il le mien ce
-soir ?**
+soir ?**
 
 {% include graphiques/conditionnelles-retour.svg %}
 
@@ -426,7 +426,7 @@ plus rare — et beaucoup plus lisible.
 </div>
 
 La question inverse — non plus « sachant mon passé », mais **« sachant qui est
-assis autour du feu ce soir »** — est traitée sur
+assis autour du feu ce soir »** — est traitée sur
 [Sachant qui est autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }}) :
 la tribu initiale minoritaire, le sexe minoritaire, le doyen, le gagnant du confort, et
 la probabilité qui vaut zéro, comme le veut la règle : partir le soir où l’on a

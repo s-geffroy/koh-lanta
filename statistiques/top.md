@@ -198,7 +198,7 @@ seules saisons classiques, sur {{ c.joueurs_classiques }} joueurs :
 
 ## Et les visages qu’on connaît ?
 
-C’est la question qu’on pose en premier devant un classement — *« et untel ? »*
+C’est la question qu’on pose en premier devant un classement — *« et untel ? »*
 — et la réponse est souvent plus instructive que le top lui-même. Voici, sans
 tri d’auteur, **tous les aventuriers d’au moins trois saisons achevées**, et où
 ils tombent.

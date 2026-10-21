@@ -109,7 +109,7 @@ rien à en tirer.
 {% assign td = site.data.stats.modeles.registre | where: "cle", "vote_meme_departement" | first %}
 
 Quatre traits étaient testés jusqu’ici. En voici un cinquième, qu’on n’avait
-jamais posé : **épargne-t-on celui qui vit dans le même département ?** Les
+jamais posé : **épargne-t-on celui qui vit dans le même département ?** Les
 aventuriers ne se connaissent pas avant le tournage, mais un voisin est un
 voisin — on se découvre du pays commun, et l’on suppose que cela crée quelque
 chose.

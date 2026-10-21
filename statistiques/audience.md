@@ -157,7 +157,7 @@ toujours.</strong> L’audience baisse d’année en année ; le casting gross
 d’année en année. Les mettre face à face ne mesure que le passage du temps. La
 seule question honnête est : <em>une saison moins regardée que son époque ne le
 laissait attendre est-elle suivie d’un casting plus large que son époque ne le
-laissait attendre ?</em> On retire donc de chaque série sa tendance temporelle,
+laissait attendre ?</em> On retire donc de chaque série sa tendance temporelle,
 et on ne compare que les écarts.</p>
 
 <div class="constat">

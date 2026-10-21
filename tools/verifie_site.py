@@ -1291,13 +1291,12 @@ RE_PROTEGE_TYPO = re.compile(
 
 def _espaces_fautives(texte):
     """Les passages ou insecables() changerait quelque chose (texte seul)."""
-    gardes = []
-    def garde(m):
-        gardes.append(m.group(0))
-        return ""
-    nu = RE_PROTEGE_TYPO.sub(garde, texte)
+    # Le repere commence par « < » : la regle accepte un signe suivi d'une
+    # balise (« nom :</strong> », « ?</h2> »). Un repere neutre la faisait
+    # echouer, et 183 « : » de fiches passaient.
+    nu = RE_PROTEGE_TYPO.sub("<>", texte)
     corrige = donnees.insecables(nu)
-    return [nu[max(0, i - 25):i + 3].replace("", "…").replace("\n", " ")
+    return [nu[max(0, i - 25):i + 3].replace("<>", "…").replace("\n", " ")
             for i, (a, b) in enumerate(zip(nu, corrige)) if a != b]
 
 

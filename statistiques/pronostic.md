@@ -82,7 +82,7 @@ pas de signal du tout.
 La fiche d’inscription ne dit rien. Mais la fiche d’inscription n’est pas le
 jeu. **La même discipline se pose à une question bien plus dure et bien plus
 intéressante : le soir d’un conseil, sachant tout ce qui a précédé, peut-on
-désigner celui qui va partir ?**
+désigner celui qui va partir ?**
 
 Le protocole est identique — une saison exclue à chaque tour, le modèle
 pronostique une soirée qu’il n’a jamais vue — et le modèle est un **logit
