@@ -1163,7 +1163,7 @@ COLONNES_COMPLETUDE = [
     ("bulletins", "Conseils au dépouillement complet", "Bulletins", "part"),
     ("epreuves", "Bilan des épreuves par épisode", "Épreuves", "fait"),
     ("colliers", "Destin des colliers", "Colliers", "fait"),
-    ("fusion", "Réunification repérée", "Fusion", "fait"),
+    ("fusion", "Réunification repérée", "Réunification", "fait"),
     ("ambassadeurs", "Ambassadeurs nommés", "Ambassade", "fait"),
     ("audience_saison", "Audience de la saison", "Audience", "fait"),
     ("audience_episode", "Audience par épisode", "Audience/ép.", "fait"),
