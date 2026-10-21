@@ -551,6 +551,30 @@ a { color: inherit; }
   background-image: linear-gradient(90deg, var(--tribu-jaune) 0 50%, var(--tribu-rouge) 50%);
 }
 
+/* Des titres equilibres, des paragraphes sans mot orphelin en fin de
+   bloc. Un navigateur qui ne connait pas `text-wrap` l'ignore : rien ne
+   change pour lui. */
+.page-titre,
+.prose h2,
+.prose h3,
+.carte-titre { text-wrap: balance; }
+.prose p,
+.prose li { text-wrap: pretty; }
+
+/* Le « # » d'un titre de section (pose par site.js) : discret, il se montre
+   au survol du titre ou au focus clavier. */
+.prose .ancre {
+  margin-left: 0.45rem;
+  color: var(--axe);
+  font-weight: 400;
+  text-decoration: none;
+  opacity: 0;
+}
+.prose h2:hover .ancre,
+.prose h3:hover .ancre,
+.prose .ancre:focus-visible { opacity: 1; }
+.prose .ancre:hover { color: var(--jungle); }
+
 .prose h3 {
   font-weight: 650;
   font-size: 1.1rem;

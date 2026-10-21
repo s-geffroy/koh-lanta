@@ -1,9 +1,9 @@
 /* Koh-Lanta en chiffres — le seul script du site.
  *
  * Rien de ce qu'il fait ne porte de donnee : sans lui, toutes les pages
- * restent completes et lisibles. Il ajoute quatre conforts, et rien d'autre :
+ * restent completes et lisibles. Il ajoute cinq conforts, et rien d'autre :
  * la bascule de theme, le tri des tableaux, le filtrage des aventuriers, le
- * sommaire des longues pages.
+ * sommaire des longues pages, les liens de section.
  * C'est pourquoi les commandes qu'il installe sont masquees tant qu'il n'a
  * pas tourne (classe `sans-js`, retiree tres tot dans <head>).
  */
@@ -123,6 +123,23 @@
     var colonne = document.querySelector(".contenu");
     if (colonne) colonne.insertBefore(sommaire, colonne.firstChild);
   }
+
+  /* -------------------------------------------------- liens de section */
+
+  /* Chaque titre de section recoit un « # » qui pointe sur lui : on partage
+     un resultat precis, pas une page entiere. Pose APRES le sommaire de
+     page, qui lit le texte des titres et ne doit pas y trouver le « # ». */
+  Array.prototype.forEach.call(
+    document.querySelectorAll(".prose > h2[id], .prose > h3[id]"),
+    function (h) {
+      var lien = document.createElement("a");
+      lien.className = "ancre";
+      lien.href = "#" + h.id;
+      lien.textContent = "#";
+      lien.setAttribute("aria-label", "Lien vers cette section");
+      h.appendChild(lien);
+    }
+  );
 
   /* ------------------------------------------------------------- filtrage */
 
