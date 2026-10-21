@@ -858,6 +858,51 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--encre); }
 /* Dans une colonne de nombres, la barre part de la droite, comme le nombre. */
 td.nombre .cellule-barre { margin-left: auto; }
 
+/* La reglette du classement, sur la fiche d'un aventurier : l'echelle des
+   classes (le 1er a gauche), la fourchette du 5e au 95e centile en bande,
+   le rang en point. Positions calculees par build_fiches (reglette_du_rang).
+   Decorative : les trois nombres sont ecrits a cote. */
+.reglette {
+  position: relative;
+  display: block;
+  height: 12px;
+  margin: 0.8rem 0 0.25rem;
+}
+.reglette::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 5px;
+  height: 2px;
+  background: var(--grille);
+}
+.reglette-bande {
+  position: absolute;
+  top: 3px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--jungle);
+  opacity: 0.35;
+}
+.reglette-point {
+  position: absolute;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  border-radius: 50%;
+  background: var(--jungle);
+  border: 2px solid var(--surface);
+}
+.reglette-bornes {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--encre-muette);
+  margin-bottom: 0.6rem;
+}
+
 /* Le parcours d'un aventurier dans une saison : jours tenus sur la duree,
    en tete du constat de chaque saison jouee (part_parcours, calculee par
    build_fiches). Decorative : le jour de sortie est ecrit juste dessous. */

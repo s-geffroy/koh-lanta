@@ -87,6 +87,22 @@ def part_du_parcours(jour, duree):
     return min(100, round(100 * jour / duree))
 
 
+def reglette_du_rang(rang, p05, p95, total):
+    """Les positions de la reglette du classement, en ENTIERS de 0 a 100.
+
+    Le 1er a gauche, le dernier classe a droite ; la bande va du 5e au 95e
+    centile des rangs sous les ponderations tirees, le point marque le rang.
+    Des entiers, pas des decimaux : donnees.ecrire ecrirait « 54,2 », qui ne
+    vaut rien comme largeur CSS. Une bande garde au moins 1 % pour rester
+    visible.
+    """
+    if not (rang and p05 and p95 and total and total > 1):
+        return None
+    pos = lambda r: round(100 * (r - 1) / (total - 1))
+    debut, fin = pos(min(p05, p95)), pos(max(p05, p95))
+    return {"debut": debut, "largeur": max(1, fin - debut), "point": pos(rang)}
+
+
 def fiches_des_aventuriers(parts, personnes, saisons, indiv, classement, natures, colliers):
     par_saison = {s["id"]: s for s in saisons}
     par_pid = collections.defaultdict(list)
@@ -194,6 +210,8 @@ def fiches_des_aventuriers(parts, personnes, saisons, indiv, classement, natures
             "part_top": r.get("part_top"),
             "rang_p05": r.get("rang_p05"),
             "rang_p95": r.get("rang_p95"),
+            "reglette": reglette_du_rang(r.get("rang"), r.get("rang_p05"), r.get("rang_p95"),
+                                         classement.get("joueurs_classes") or len(rang)),
             "rangs": r.get("rangs") or {},
         }
     return out
