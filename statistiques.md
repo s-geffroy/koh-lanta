@@ -40,9 +40,13 @@ complète des tests menés — y compris ceux qui n’ont rien donné.
 
 ## Les {{ s.mots.sommaire_entrees }} entrées
 
-{%- for groupe in site.data.navigation -%}
-{%- if groupe.fil -%}
-{%- for t in groupe.themes -%}
+{% comment %}
+  Les balises de boucle autour des <section> NE rognent PAS les retours a la
+  ligne (pas de tiret) : rognes, ils collaient <section> au titre H2 qui
+  precede, et kramdown l'affichait en texte dans le titre (21 oct. 2026).
+  Un bloc HTML doit commencer sa ligne, apres une ligne vide.
+{% endcomment %}
+{% for groupe in site.data.navigation %}{% if groupe.fil %}{% for t in groupe.themes %}
 <section class="theme">
 <h3>{{ t.titre }}</h3>
 <p class="chapeau-theme">{{ t.resume }}</p>
@@ -61,9 +65,7 @@ complète des tests menés — y compris ceux qui n’ont rien donné.
 {%- endfor -%}
 </ul>
 </section>
-{%- endfor -%}
-{%- endif -%}
-{%- endfor -%}
+{% endfor %}{% endif %}{% endfor %}
 
 ## Le tableau d’ensemble
 
