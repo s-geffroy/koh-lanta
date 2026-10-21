@@ -80,7 +80,7 @@ Une cascade informationnelle se produit quand les décisions observées conduise
 
 ### 2.6. Identité sociale
 
-La catégorisation en groupes affecte évaluations et comportements, même quand les groupes sont arbitraires ([Tajfel et Turner, 1979](#ref-tajfelturner1979)). Les tribus de *Koh-Lanta* sont constituées par la production ; elles disparaissent à la réunification. Si l'identité de groupe persiste, le **camp d'origine** doit continuer de protéger après la réunification, et les sorties doivent s'y **enchaîner par camp**.
+La catégorisation en groupes affecte évaluations et comportements, même quand les groupes sont arbitraires ([Tajfel et Turner, 1979](#ref-tajfelturner1979)). Les tribus de *Koh-Lanta* sont constituées par la production ; elles disparaissent à la réunification. Si l'identité de groupe persiste, la **tribu initiale** doit continuer de protéger après la réunification, et les sorties doivent s'y **enchaîner par camp**.
 
 ### 2.7. Coopération, sanction, réseaux, rationalité limitée
 
@@ -184,9 +184,9 @@ Le tableau 2 rassemble les tests du registre qui touchent un mécanisme du cadre
 | Réputation (2.4) | Partir après avoir été visé, moins sans l'avoir été | {{ a.tests.menace_voix.observe }} pts | {{ a.tests.menace_voix.attendu }} | {{ a.tests.menace_voix.p }} | [conditionnelles]({{ '/statistiques/conditionnelles/' | relative_url }}) |
 | Réputation (2.4) | Être visé après avoir été visé, moins sans l'avoir été | {{ a.tests.cible_persistante.observe }} pts | {{ a.tests.cible_persistante.attendu }} | {{ a.tests.cible_persistante.p }} | [conditionnelles]({{ '/statistiques/conditionnelles/' | relative_url }}) |
 | Réputation (2.4) | Partir après 1 à 3 voix, moins après 4 ou plus | {{ a.tests.menace_sommet.observe }} pts | {{ a.tests.menace_sommet.attendu }} | {{ a.tests.menace_sommet.p }} | [conditionnelles]({{ '/statistiques/conditionnelles/' | relative_url }}) |
-| Identité (2.6) | Après la réunification, part des bulletins visant son camp d'origine | {{ a.tests.vote_bandeau_apres_fusion.observe }} % | {{ a.tests.vote_bandeau_apres_fusion.attendu }} % | {{ a.tests.vote_bandeau_apres_fusion.p }} | [qui-vise-qui]({{ '/statistiques/qui-vise-qui/' | relative_url }}) |
+| Identité (2.6) | Après la réunification, part des bulletins visant sa tribu initiale | {{ a.tests.vote_bandeau_apres_fusion.observe }} % | {{ a.tests.vote_bandeau_apres_fusion.attendu }} % | {{ a.tests.vote_bandeau_apres_fusion.p }} | [qui-vise-qui]({{ '/statistiques/qui-vise-qui/' | relative_url }}) |
 | Identité (2.6) | Sorties consécutives du même camp après la réunification | {{ a.tests.decimation.observe }} | {{ a.tests.decimation.attendu }} | {{ a.tests.decimation.p }} | [alliances]({{ '/statistiques/alliances/' | relative_url }}) |
-| Identité (2.6) | Partir quand son camp d'origine est le moins représenté | {{ a.tests.bandeau_minoritaire.observe }} pts | {{ a.tests.bandeau_minoritaire.attendu }} | {{ a.tests.bandeau_minoritaire.p }} | [autour-du-feu]({{ '/statistiques/autour-du-feu/' | relative_url }}) |
+| Identité (2.6) | Partir quand sa tribu initiale est la moins représentée | {{ a.tests.bandeau_minoritaire.observe }} pts | {{ a.tests.bandeau_minoritaire.attendu }} | {{ a.tests.bandeau_minoritaire.p }} | [autour-du-feu]({{ '/statistiques/autour-du-feu/' | relative_url }}) |
 | Catégorie (2.6) | Partir quand son sexe est le moins représenté | {{ a.tests.sexe_minoritaire.observe }} pts | {{ a.tests.sexe_minoritaire.attendu }} | {{ a.tests.sexe_minoritaire.p }} | [autour-du-feu]({{ '/statistiques/autour-du-feu/' | relative_url }}) |
 | Conformité (2.5) | Partir après avoir voté avec la minorité | {{ a.tests.camp_perdant.observe }} pts | {{ a.tests.camp_perdant.attendu }} | {{ a.tests.camp_perdant.p }} | [conditionnelles]({{ '/statistiques/conditionnelles/' | relative_url }}) |
 | Changement de régime (4) | Conseils où l'éliminé n'a pas la majorité, après moins avant la réunification | {{ a.tests.fusion_serre.observe }} pts | {{ a.tests.fusion_serre.attendu }} | {{ a.tests.fusion_serre.p }} | [réunification]({{ '/statistiques/reunification/' | relative_url }}) |
@@ -204,7 +204,7 @@ Quatre lectures s'en dégagent.
 
 **Le ciblage s'entretient, sans sommet.** Avoir été visé expose à l'être encore et à partir. Mais survivre à un vote massif ne protège pas mieux que survivre à deux bulletins : la menace n'a pas de sommet. La forme réduite de la chaîne réputationnelle (2.4) est donc observée ; ses maillons intermédiaires ne le sont pas.
 
-**L'identité de groupe survit à la disparition du groupe.** Après la réunification, on écrit le nom de quelqu'un de son camp d'origine dans {{ a.tests.vote_bandeau_apres_fusion.observe }} % des bulletins, contre {{ a.tests.vote_bandeau_apres_fusion.attendu }} % attendus ; les sorties s'enchaînent par camp ; appartenir au camp minoritaire expose. Les tribus, artefacts de production, deviennent des identités effectives — exactement ce que prédit le paradigme des groupes minimaux ([Tajfel et Turner, 1979](#ref-tajfelturner1979)). En revanche, appartenir au **sexe** minoritaire du camp **protège** ({{ a.tests.sexe_minoritaire.observe }} points) : toutes les catégories ne fonctionnent pas comme des groupes. C'est un argument direct pour l'exigence, déjà posée en 2.6, d'observer une conséquence avant de coder une identité.
+**L'identité de groupe survit à la disparition du groupe.** Après la réunification, on écrit le nom de quelqu'un de sa tribu initiale dans {{ a.tests.vote_bandeau_apres_fusion.observe }} % des bulletins, contre {{ a.tests.vote_bandeau_apres_fusion.attendu }} % attendus ; les sorties s'enchaînent par camp ; appartenir au camp minoritaire expose. Les tribus, artefacts de production, deviennent des identités effectives — exactement ce que prédit le paradigme des groupes minimaux ([Tajfel et Turner, 1979](#ref-tajfelturner1979)). En revanche, appartenir au **sexe** minoritaire du camp **protège** ({{ a.tests.sexe_minoritaire.observe }} points) : toutes les catégories ne fonctionnent pas comme des groupes. C'est un argument direct pour l'exigence, déjà posée en 2.6, d'observer une conséquence avant de coder une identité.
 
 La conformité (2.5) ne conclut pas : voter avec la minorité n'expose pas significativement au conseil suivant (p ajustée {{ a.tests.camp_perdant.p }}).
 
@@ -250,7 +250,7 @@ La version précédente s'abstenait de désigner l'éliminé. Le site publie un 
 | Faible exit → dépendance → valeur des coalitions | hypothèse | **conséquences observées** : coût de l'isolement, persistance et protection des coalitions (6.2) |
 | Réputation → menace perçue → ciblage | hypothèse | **forme réduite observée** : ciblage persistant ; maillons intermédiaires non mesurés (6.2) |
 | Compétence → menace en phase individuelle | présentée comme mécanisme central | **non observée** à la mesure de la force aux épreuves (6.1) |
-| Catégorisation → identité de groupe | hypothèse | **observée pour le camp d'origine, inversée pour le sexe** (6.2) |
+| Catégorisation → identité de groupe | hypothèse | **observée pour la tribu initiale, inversée pour le sexe** (6.2) |
 | Conformité / cascade | distinction conceptuelle | **non concluant** (6.2) |
 | Réunification → changement de régime | auto-description | **auto-description confirmée par les votes** (6.3) |
 | Rareté → stress → simplification | hypothèse | **non testée** |

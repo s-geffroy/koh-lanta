@@ -1,7 +1,7 @@
 <figure class="figure">
 <svg class="graphique" viewBox="0 0 680 242" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Victoires finales par couleur de tribu initiale">
   <title>Victoires finales par couleur de tribu initiale</title>
-  <desc>Nombre de vainqueurs selon la couleur de leur tribu de départ.</desc>
+  <desc>Nombre de vainqueurs selon la couleur de leur tribu initiale.</desc>
   <line x1="237.0" y1="10" x2="237.0" y2="216" stroke="var(--grille)" stroke-width="1"/>
   <line x1="364.0" y1="10" x2="364.0" y2="216" stroke="var(--grille)" stroke-width="1"/>
   <line x1="491.0" y1="10" x2="491.0" y2="216" stroke="var(--grille)" stroke-width="1"/>

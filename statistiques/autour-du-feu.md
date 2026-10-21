@@ -120,7 +120,7 @@ moins représentée du camp et partir quand elle est la plus représentée, cont
 </div>
 
 [Jaune contre rouge]({{ '/statistiques/tribus/' | relative_url }}) montre que la
-couleur de départ ne décide **rien** du palmarès :
+couleur de la tribu initiale ne décide **rien** du palmarès :
 {{ site.data.stats.mots.victoires_jaunes }} victoires jaunes,
 {{ site.data.stats.mots.victoires_rouges }} rouges. Les deux résultats ne se contredisent pas, ils se complètent — et
 ensemble ils disent quelque chose de précis :
@@ -153,7 +153,7 @@ réunification.</p>
 
 L’effet est **plus fort avant la réunification qu’après**, ce qui n’allait pas de soi :
 on attendait plutôt le contraire, la réunification étant le moment où les
-anciennes tribus se comptent. L’explication est ailleurs — avant la réunification, une
+tribus initiales se comptent. L’explication est ailleurs — avant la réunification, une
 tribu initiale ne devient minoritaire dans un camp que par un **échange de
 membres**. C’est donc la mesure du sort réservé au nouveau venu, et ce sort est
 clair. [Qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }}) montre

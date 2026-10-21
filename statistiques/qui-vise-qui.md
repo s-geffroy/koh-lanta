@@ -1,11 +1,11 @@
 ---
 layout: page
 title: Qui vise qui
-description: "Qui vise qui à Koh-Lanta : écrit-on le nom de celui qui ne nous ressemble pas ? Un peu pour le sexe et le métier, nettement pour le camp de départ."
+description: "Qui vise qui à Koh-Lanta : écrit-on le nom de celui qui ne nous ressemble pas ? Un peu pour le sexe et le métier, nettement pour la tribu initiale."
 permalink: /statistiques/qui-vise-qui/
 chapeau: >-
   Écrit-on le nom de celui qui ne nous ressemble pas ? Un peu, pour le sexe et
-  le métier. Nettement, pour le camp de départ — et cela survit à la
+  le métier. Nettement, pour la tribu initiale — et cela survit à la
   disparition des tribus.
 ---
 
@@ -154,7 +154,7 @@ tribu initiale, sur les seuls conseils mixtes.</p>
 
 <div class="constat">
   <p>Une fois les tribus recomposées, <b>{{ t.observe }} %</b> des bulletins visent
-  quelqu’un du camp d’origine de leur auteur. Le simple partage des cibles en
+  quelqu’un de la tribu initiale de leur auteur. Le simple partage des cibles en
   prévoit <b>{{ t.attendu }} %</b>.</p>
   <p>{{ t.ecart_types }} écarts-types, p ajustée {{ t.p_ajustee }}. On écrit le
   nom d’un ancien coéquipier <b>{{ t.ecart_relatif }} % moins souvent</b> qu’on ne
@@ -168,7 +168,7 @@ voir avec ce que les gens sont, et tout à voir avec **qui ils ont côtoyé**.
 [Les alliances]({{ '/statistiques/alliances/' | relative_url }}).
 
 <p class="note">Ce que cette page ne dit pas. Elle ne mesure aucune intention :
-un bulletin ne dit pas pourquoi il a été écrit. Épargner son ancienne tribu peut
+un bulletin ne dit pas pourquoi il a été écrit. Épargner sa tribu initiale peut
 tenir à la loyauté comme au simple fait qu’on connaît mieux ses forces, ou qu’on
 a besoin d’elle au vote suivant. Elle ne porte par ailleurs que sur les conseils
 au dépouillement garanti complet — les saisons les mieux documentées y pèsent

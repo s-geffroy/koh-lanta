@@ -170,7 +170,7 @@ bulletins rattachés.
 <p class="legende-figure">Les aventuriers sont rangés dans l’ordre de leur
 sortie, du premier parti à gauche au vainqueur à droite. Un arc relie deux
 personnes dont l’une a écrit le nom de l’autre ; plus il est épais, plus elle
-l’a fait souvent. La couleur du point est celle de la tribu de départ.
+l’a fait souvent. La couleur du point est celle de la tribu initiale.
 Survolez un aventurier pour ne garder que les votes qui le concernent,
 et les personnes qu’ils relient.</p>
 

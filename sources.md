@@ -109,7 +109,7 @@ même échange, même sortie au jour 10. Il écrit le nom de Maryline juste, mai
 son lien avec une coquille. Et Myriam est sortie avant la formation des tribus
 — le tableau Fandom écrit « Aucune » dans un cadre de couleur nommé « Bannie »,
 et c’est ce nom de cadre qui était devenu sa tribu, comme pour Joëlle et Amel.
-Une tribu de départ n’est plus jamais un état : « Bannie », « Absente » cèdent
+Une tribu initiale n’est plus jamais un état : « Bannie », « Absente » cèdent
 la place au premier vrai campement, ou à rien.
 
 **Puis les légendes de Wikipédia, lues de travers elles aussi.** Wikipédia
@@ -118,7 +118,7 @@ la tribu réunifiée (« white »), pour les bannis (« black »), et parfois ri
 Seuls les codes étaient lus : 313 étapes disparaissaient, dont toutes les
 réunifications écrites en blanc — 221 parcours s’arrêtaient à la réunification. Elles
 sont lues ; une étape encore en cours, « (jour 19 – ) », n’a plus de jour de
-fin inventé ; et la tribu de départ reste la première tribu à vraie couleur, pas
+fin inventé ; et la tribu initiale reste la première tribu à vraie couleur, pas
 la « Tribu des hommes » ni la « Tribu unique » des tout premiers jours.
 
 **Enfin, les jours de sortie.** Confrontés au parcours, une trentaine ne
@@ -384,7 +384,7 @@ du jeu :
 - **le surlignage**, à défaut : la table des colliers peint chaque nom à la
   couleur de sa tribu. Avec une précaution qui a été payée — le surlignage suit
   la tribu du **moment**, qui après la réunification n’est plus celle d’origine.
-  On ne lit donc que les couleurs de départ de la saison.
+  On ne lit donc que les couleurs des tribus initiales de la saison.
 - **la présence.** On ne ramasse pas un collier après être sorti du jeu : celui
   du 38<sup>e</sup> jour ne peut pas appartenir à la Léa partie au 23<sup>e</sup>.
 - **la place dans le scrutin.** Sur un vote de jury, la cible est forcément un

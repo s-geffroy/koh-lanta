@@ -89,7 +89,7 @@ def figure_peigne():
         description=(
             f"Un trait par participation, trié du plus court séjour au plus long. "
             f"La longueur du trait est le nombre de jours tenus, sa couleur celle "
-            f"de la tribu de départ. La moitié des aventuriers quitte le jeu avant "
+            f"de la tribu initiale. La moitié des aventuriers quitte le jeu avant "
             f"le jour {mediane}.")))
     return len(traits), mediane, max(jours)
 
@@ -340,7 +340,7 @@ def main():
                     f'{c["victoires"]} victoires pour {c["effectif"]} aventuriers'}
          for c in sorted(couleurs, key=lambda x: -x["victoires"])],
         titre="Victoires finales par couleur de tribu initiale",
-        description="Nombre de vainqueurs selon la couleur de leur tribu de départ.",
+        description="Nombre de vainqueurs selon la couleur de leur tribu initiale.",
         marge_gauche=110))
 
     ecrire("tribus-survie.svg", barres_horizontales(

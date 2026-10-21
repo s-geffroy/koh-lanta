@@ -85,7 +85,7 @@
         - titre: "Qui vise qui"
           url: /statistiques/qui-vise-qui/
           modeles: true
-          resume: "Le sexe et le métier un peu, la tribu initiale nettement : on épargne son ancien camp."
+          resume: "Le sexe et le métier un peu, la tribu initiale nettement : on épargne les siens."
         - titre: "Sachant le conseil d'avant"
           url: /statistiques/conditionnelles/
           modeles: true
@@ -121,7 +121,7 @@
       entrees:
         - titre: "Jaune contre rouge"
           url: /statistiques/tribus/
-          resume: "La couleur de départ change-t-elle quelque chose ?"
+          resume: "La couleur de la tribu initiale change-t-elle quelque chose ?"
         - titre: "Comment on sort"
           url: /statistiques/sorties/
           resume: "Conseil, poteaux, orientation, abandon — et leur évolution."

@@ -481,13 +481,13 @@ def recette_casting(par_saison, parts):
                    for _ in range(N_PERMUTATIONS)]
         tests.append(_test(
             "tribus_femmes", "La composition des deux tribus",
-            "Les deux tribus de départ sont-elles plus semblables en part de femmes qu'un tirage au hasard ne les ferait ?",
+            "Les deux tribus initiales sont-elles plus semblables en part de femmes qu'un tirage au hasard ne les ferait ?",
             ecart_femmes(reel), np.array([ecart_femmes(t) for t in tirages]),
             unite="points de %",
             lecture="On rebat les tribus initiales à l'intérieur de chaque saison. Un écart observé PLUS PETIT que l'attendu veut dire que les tribus sont composées à l'équilibre, pas tirées au sort."))
         tests.append(_test(
             "tribus_ages", "L'âge moyen des deux tribus",
-            "Les deux tribus de départ ont-elles des âges moyens plus proches qu'un tirage au hasard ne les ferait ?",
+            "Les deux tribus initiales ont-elles des âges moyens plus proches qu'un tirage au hasard ne les ferait ?",
             ecart_age(reel), np.array([ecart_age(t) for t in tirages]),
             unite="années",
             lecture="Même méthode, sur l'âge moyen de chaque tribu initiale. Un écart observé PLUS GRAND que l'attendu veut dire l'inverse d'un équilibre : deux tribus construites pour différer."))
@@ -1821,7 +1821,7 @@ def homophilie(par_saison, parts, conseils):
          "Le métier rapproche-t-il ou éloigne-t-il du bulletin ?",
          "part sur 1", 1),
         ("vote_meme_bandeau", "Viser sa propre tribu initiale",
-         "Le camp d'origine protège-t-il, une fois les tribus recomposées ?",
+         "La tribu initiale protège-t-elle, une fois les tribus recomposées ?",
          "part sur 1", 1),
         ("vote_meme_departement", "Viser quelqu'un de son département",
          "Épargne-t-on le voisin — celui qui vit dans le même département ?",
@@ -1844,10 +1844,10 @@ def homophilie(par_saison, parts, conseils):
         t = _test(
             "vote_bandeau_apres_fusion", "Épargner sa tribu initiale",
             "Une fois les tribus recomposées, écrit-on moins souvent le nom de "
-            "quelqu'un de son camp d'origine ?",
+            "quelqu'un de sa tribu initiale ?",
             observe_mixte[3] * 100.0, np.array(nulle_mixte) * 100.0, unite="%",
             lecture="Mesuré sur les seuls conseils réunissant plusieurs tribus initiales. "
-                    "Un observé SOUS l'attendu veut dire que le camp de départ "
+                    "Un observé SOUS l'attendu veut dire que la tribu initiale "
                     "protège encore, longtemps après avoir cessé d'exister.")
         t["bulletins"] = effectifs_mixte[3]
         tests.append(t)

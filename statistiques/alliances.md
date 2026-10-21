@@ -194,7 +194,7 @@ au sort, à composition de camps identique.</p>
   <p>{{ dt.observe }} enchaînements observés contre {{ dt.attendu }} attendus,
   <b>{{ dt.ecart_types }} écarts-types</b>, p ajustée {{ dt.p_ajustee }}.</p>
   <p>Les sorties d’après-réunification ne se répartissent pas au hasard entre les deux
-  anciens camps : <b>elles se suivent</b>. La tribu dans laquelle on a joué les
+  tribus initiales : <b>elles se suivent</b>. La tribu dans laquelle on a joué les
   {{ site.data.stats.mots.episode_fusion }} premiers épisodes décide encore de l’ordre dans lequel on part.</p>
 </div>
 

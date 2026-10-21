@@ -83,7 +83,7 @@ largement à leur nombre au départ, pas à une supériorité.
 
 <div class="tableau-large">
 <table data-triable>
-<thead><tr><th>Tribu de départ</th><th class="nombre">Victoires</th><th class="nombre">Part</th></tr></thead>
+<thead><tr><th>Tribu initiale</th><th class="nombre">Victoires</th><th class="nombre">Part</th></tr></thead>
 <tbody>
 {% for c in v.par_couleur %}
 <tr>

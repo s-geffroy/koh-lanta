@@ -1131,8 +1131,8 @@ def bloc_indicateurs(saisons, parts, conseils, epreuves, colliers, par_saison):
 # quelque part sur le site.
 CHAMPS_SUIVIS = [
     ("genre", "Sexe"), ("age", "Âge"), ("profession", "Métier"),
-    ("localisation", "Département d'origine"), ("tribu", "Tribu de départ"),
-    ("couleur", "Couleur de départ"), ("parcours", "Trajectoire de tribus"),
+    ("localisation", "Département d'origine"), ("tribu", "Tribu initiale"),
+    ("couleur", "Couleur de la tribu initiale"), ("parcours", "Trajectoire de tribus"),
     ("jour_sortie", "Jour de sortie"), ("sort", "Manière de sortir"),
     ("votes_recus", "Voix reçues"), ("classement", "Rang final"),
     ("victoires_collectives", "Victoires collectives"),

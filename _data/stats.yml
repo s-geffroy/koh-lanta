@@ -10251,13 +10251,13 @@ completude:
     part: 100
     depuis_page_individuelle: 1
   - champ: tribu
-    libelle: Tribu de départ
+    libelle: Tribu initiale
     remplis: 642
     manquants: 3
     part: "99,5"
     depuis_page_individuelle: 0
   - champ: couleur
-    libelle: Couleur de départ
+    libelle: Couleur de la tribu initiale
     remplis: 638
     manquants: 7
     part: "98,9"
@@ -24089,7 +24089,7 @@ modeles:
       retenu: false
     - cle: tribus_femmes
       libelle: La composition des deux tribus
-      question: Les deux tribus de départ sont-elles plus semblables en part de femmes qu'un tirage au
+      question: Les deux tribus initiales sont-elles plus semblables en part de femmes qu'un tirage au
         hasard ne les ferait ?
       observe: "13,025"
       attendu: "18,873"
@@ -24140,7 +24140,7 @@ modeles:
       retenu: false
     - cle: tribus_ages
       libelle: L'âge moyen des deux tribus
-      question: Les deux tribus de départ ont-elles des âges moyens plus proches qu'un tirage au hasard
+      question: Les deux tribus initiales ont-elles des âges moyens plus proches qu'un tirage au hasard
         ne les ferait ?
       observe: "5,75"
       attendu: "3,85"
@@ -25235,7 +25235,7 @@ modeles:
       retenu: true
     - cle: vote_meme_bandeau
       libelle: Viser sa propre tribu initiale
-      question: Le camp d'origine protège-t-il, une fois les tribus recomposées ?
+      question: La tribu initiale protège-t-elle, une fois les tribus recomposées ?
       observe: "54,563"
       attendu: "61,104"
       unite: '%'
@@ -25339,8 +25339,8 @@ modeles:
       retenu: false
     - cle: vote_bandeau_apres_fusion
       libelle: Épargner sa tribu initiale
-      question: Une fois les tribus recomposées, écrit-on moins souvent le nom de quelqu'un de son camp
-        d'origine ?
+      question: Une fois les tribus recomposées, écrit-on moins souvent le nom de quelqu'un de sa tribu
+        initiale ?
       observe: "28,417"
       attendu: "38,733"
       unite: '%'
@@ -25348,7 +25348,7 @@ modeles:
       p: "0,0002"
       tirages: 4000
       lecture: Mesuré sur les seuls conseils réunissant plusieurs tribus initiales. Un observé SOUS l'attendu
-        veut dire que le camp de départ protège encore, longtemps après avoir cessé d'exister.
+        veut dire que la tribu initiale protège encore, longtemps après avoir cessé d'exister.
       nulle: &id084
         bornes:
         - "27,7634"
@@ -29397,7 +29397,7 @@ modeles:
     attendu_arrondi: "0,3"
   - cle: tribus_femmes
     libelle: La composition des deux tribus
-    question: Les deux tribus de départ sont-elles plus semblables en part de femmes qu'un tirage au hasard
+    question: Les deux tribus initiales sont-elles plus semblables en part de femmes qu'un tirage au hasard
       ne les ferait ?
     origine: casting
     observe: "13,025"
@@ -29415,7 +29415,7 @@ modeles:
     attendu_arrondi: "18,9"
   - cle: tribus_ages
     libelle: L'âge moyen des deux tribus
-    question: Les deux tribus de départ ont-elles des âges moyens plus proches qu'un tirage au hasard
+    question: Les deux tribus initiales ont-elles des âges moyens plus proches qu'un tirage au hasard
       ne les ferait ?
     origine: casting
     observe: "5,75"
@@ -29522,7 +29522,7 @@ modeles:
     attendu_arrondi: 11
   - cle: vote_meme_bandeau
     libelle: Viser sa propre tribu initiale
-    question: Le camp d'origine protège-t-il, une fois les tribus recomposées ?
+    question: La tribu initiale protège-t-elle, une fois les tribus recomposées ?
     origine: homophilie
     observe: "54,563"
     attendu: "61,104"
@@ -29558,8 +29558,8 @@ modeles:
     attendu_arrondi: "2,1"
   - cle: vote_bandeau_apres_fusion
     libelle: Épargner sa tribu initiale
-    question: Une fois les tribus recomposées, écrit-on moins souvent le nom de quelqu'un de son camp
-      d'origine ?
+    question: Une fois les tribus recomposées, écrit-on moins souvent le nom de quelqu'un de sa tribu
+      initiale ?
     origine: homophilie
     observe: "28,417"
     attendu: "38,733"
@@ -29570,7 +29570,7 @@ modeles:
     retenu: true
     tirages: 4000
     lecture: Mesuré sur les seuls conseils réunissant plusieurs tribus initiales. Un observé SOUS l'attendu
-      veut dire que le camp de départ protège encore, longtemps après avoir cessé d'exister.
+      veut dire que la tribu initiale protège encore, longtemps après avoir cessé d'exister.
     nulle: *id084
     observe_arrondi: "28,4"
     attendu_arrondi: "38,7"

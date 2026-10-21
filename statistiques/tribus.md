@@ -27,7 +27,7 @@ leurs effectifs sont trop faibles pour qu’on en tire quoi que ce soit.
 {% include graphiques/tribus-survie.svg %}
 
 <p class="legende-figure">Part de la durée totale de la saison passée dans le
-jeu, en moyenne, selon la couleur de la tribu de départ.</p>
+jeu, en moyenne, selon la couleur de la tribu initiale.</p>
 
 L’écart entre jaune et rouge se compte en points, sur des effectifs de plus de
 deux cents aventuriers chacun : il n’y a pas de signal.
@@ -88,6 +88,6 @@ possible.</p>
 <p class="note">Deux autres pages recoupent ce résultat. Un modèle de durée
 ne trouve aucun effet de la tribu initiale sur le risque d’élimination
 (<a href="{{ '/statistiques/equilibre/' | relative_url }}">Le jeu tenu serré</a>).
-Et les deux tribus de départ ne sont pas composées à l’équilibre par une règle
+Et les deux tribus initiales ne sont pas composées à l’équilibre par une règle
 générale : {{ s.mots.tribus_contrastees }} saisons seulement opposent nettement deux générations
 (<a href="{{ '/statistiques/casting/' | relative_url }}">La recette du casting</a>).</p>

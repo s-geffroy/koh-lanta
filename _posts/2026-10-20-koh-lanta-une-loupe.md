@@ -69,7 +69,7 @@ Curieusement, survivre à un vote massif ne protège pas mieux que survivre à d
 
 Les tribus sont créées par la production, à partir d'inconnus. À la réunification, elles disparaissent. Pourtant elles continuent de compter.
 
-Après la réunification, **on écrit le nom de quelqu'un de son ancienne tribu dans {{ a.tests.vote_bandeau_apres_fusion.valeur_ronde }} % des bulletins, contre {{ a.tests.vote_bandeau_apres_fusion.attendu_rond }} % si l'on votait au hasard** ([qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }})). Les sorties s'enchaînent par ancienne tribu, comme si un camp était démonté un par un. Et appartenir à l'ancienne tribu la moins nombreuse expose ([autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }})).
+Après la réunification, **on écrit le nom de quelqu'un de sa tribu initiale dans {{ a.tests.vote_bandeau_apres_fusion.valeur_ronde }} % des bulletins, contre {{ a.tests.vote_bandeau_apres_fusion.attendu_rond }} % si l'on votait au hasard** ([qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }})). Les sorties s'enchaînent par ancienne tribu, comme si un camp était démonté un par un. Et appartenir à l'ancienne tribu la moins nombreuse expose ([autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }})).
 
 La psychologie sociale l'a montré il y a cinquante ans : des groupes arbitraires suffisent à créer de la préférence. Koh-Lanta le montre saison après saison.
 
@@ -97,7 +97,7 @@ La production choisit les règles, organise les situations, sélectionne les ima
 
 Il faut donc distinguer le **jeu vécu** du **jeu montré**. Le motif d'un vote, c'est le montage qui nous le rapporte ; le vote lui-même est un fait, que le montage ne peut pas réécrire. C'est pour cela que tout ce qui précède repose sur les bulletins, et jamais sur ce que les candidats disent de leurs raisons.
 
-Et c'est peut-être le résultat le plus intéressant. Le récit de l'émission met en avant le champion menaçant, le stratège démasqué, le retournement. Les votes mettent en avant l'ancienne tribu, l'alliance qui dure, l'isolement qui condamne. **Ce que l'on montre n'est pas ce qui pèse le plus.**
+Et c'est peut-être le résultat le plus intéressant. Le récit de l'émission met en avant le champion menaçant, le stratège démasqué, le retournement. Les votes mettent en avant la tribu initiale, l'alliance qui dure, l'isolement qui condamne. **Ce que l'on montre n'est pas ce qui pèse le plus.**
 
 ## Ce que le jeu retire
 

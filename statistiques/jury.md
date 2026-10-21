@@ -100,7 +100,7 @@ réparation.</p>
 
 {% assign ab = j.avec_bandeau %}
 
-Le camp d’origine gouverne le bulletin **en cours de jeu** mieux que tout le
+La tribu initiale gouverne le bulletin **en cours de jeu** mieux que tout le
 reste — c’est le résultat le plus net de
 [Qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }}). Or deux
 personnes de la même tribu initiale votent souvent ensemble. L’effet du co-vote pourrait

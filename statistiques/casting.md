@@ -101,7 +101,7 @@ sort.
 
 {% include graphiques/casting-tribus-ages.svg %}
 
-<p class="legende-figure">Écart d’âge moyen entre les deux tribus de départ.</p>
+<p class="legende-figure">Écart d’âge moyen entre les deux tribus initiales.</p>
 
 À la moyenne, l’écart est de **{{ t.observe }} ans** contre {{ t.attendu }}
 attendus ({{ t.ecart_types }} écarts-types, p ajustée {{ t.p_ajustee }}) : les

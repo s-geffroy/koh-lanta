@@ -59,7 +59,7 @@ aventuriers, <b>{{ site.data.stats.epreuves.epreuves }}</b> épreuves,
   <li>
     <p><b>Le jaune ne bat pas le rouge.</b> Sur les saisons classiques,
     {{ site.data.stats.couleurs[0].victoires }} victoires de chaque côté : la
-    couleur de départ ne décide pas du vainqueur.</p>
+    couleur de la tribu initiale ne décide pas du vainqueur.</p>
     <p><a href="{{ '/statistiques/tribus/' | relative_url }}">Jaune contre rouge</a></p>
   </li>
   <li>
