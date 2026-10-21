@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Sophie Guilloix (2003)"
-description: "Sophie Guilloix, Koh-Lanta Bocas del Toro (2003) : sort au conseil le 10e jour, 15e sur 18, 7 voix reçues. 483e sur 531 au classement des aventuriers."
+description: "Sophie Guilloix, Koh-Lanta Bocas del Toro (2003) : sort au conseil le 10e jour, 15e sur 18, 7 voix reçues. 484e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/sophie-guilloix.png
 permalink: /aventuriers/sophie-guilloix/
 aventurier: sophie-guilloix

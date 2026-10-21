@@ -5265,14 +5265,14 @@
     annule: false
 - saison: s09
   numero: 1
-  type: elimination
-  complet: false
+  type: sortie
   episode: "1"
   elimine: anthony-parra
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
+  nature_source: 'Wikipedia : « Anthony and Joëlle finished last in the initial challenge » ; revenu au
+    jour 2'
 - saison: s09
   numero: 2
   type: sortie
@@ -6097,17 +6097,11 @@
   elimine_rattache: true
   votes_contre: 0
   votes: []
-  bulletins_ecartes:
-  - votant: philippe-duron
-    votant_rattache: true
-    cible: marine-plissonneau
-    cible_rattachee: true
-    annule: false
   nature: abandon_medical
 - saison: s10
   numero: 5
   type: elimination
-  complet: false
+  complet: true
   episode: "4"
   elimine: virginie-mercadal-pioli
   elimine_rattache: true
@@ -6144,67 +6138,51 @@
     cible: veronique-begue
     cible_rattachee: true
     annule: false
+  - votant: philippe-duron
+    votant_rattache: true
+    cible: virginie-mercadal-pioli
+    cible_rattachee: true
+    annule: false
 - saison: s10
   numero: 6
   type: elimination
-  complet: false
+  complet: true
   episode: "5"
   elimine: marine-plissonneau
   elimine_rattache: true
   votes_contre: 3
   votes_exprimes: 6
-  incoherence_source: cases Jean-Pierre 3, Marine 2, Aurelie 1 ; la source fait sortir Marine et annonce
-    3/6 — aucune seconde source ni note pour trancher
-  bulletins_ecartes:
-  - votant: philippe-duron
-    votant_rattache: true
-    cible: jean-pierre-pigato
-    cible_rattachee: true
-    annule: false
-    _ligne: 5
-    _libelle: Philippe
-    _noir: false
+  votes:
   - votant: veronique-begue
     votant_rattache: true
     cible: marine-plissonneau
     cible_rattachee: true
     annule: false
-    _ligne: 8
-    _libelle: Véronique
-    _noir: false
   - votant: kunle-m-babacere-pakorona
     votant_rattache: true
     cible: marine-plissonneau
     cible_rattachee: true
     annule: false
-    _ligne: 9
-    _libelle: Kunlé
-    _noir: false
   - votant: aurelie-gasser
     votant_rattache: true
     cible: jean-pierre-pigato
     cible_rattachee: true
     annule: false
-    _ligne: 11
-    _libelle: Aurélie
-    _noir: false
   - votant: marine-plissonneau
     votant_rattache: true
     cible: jean-pierre-pigato
     cible_rattachee: true
     annule: false
-    _ligne: 12
-    _libelle: Marine
-    _noir: false
   - votant: jean-pierre-pigato
     votant_rattache: true
     cible: aurelie-gasser
     cible_rattachee: true
     annule: false
-    _ligne: 17
-    _libelle: Jean-Pierre
-    _noir: false
-  votes: []
+  - votant: philippe-duron
+    votant_rattache: true
+    cible: marine-plissonneau
+    cible_rattachee: true
+    annule: false
 - saison: s10
   numero: 7
   type: sortie
@@ -6218,7 +6196,7 @@
 - saison: s10
   numero: 8
   type: elimination
-  complet: false
+  complet: true
   episode: "6"
   elimine: jean-pierre-pigato
   elimine_rattache: true
@@ -6245,21 +6223,21 @@
     cible: aurelie-gasser
     cible_rattachee: true
     annule: false
+  - votant: philippe-duron
+    votant_rattache: true
+    cible: jean-pierre-pigato
+    cible_rattachee: true
+    annule: false
 - saison: s10
   numero: 9
   type: elimination
-  complet: false
+  complet: true
   episode: "7"
   elimine: audrey-perez
   elimine_rattache: true
   votes_contre: 5
   votes_exprimes: 8
   votes:
-  - votant: philippe-duron
-    votant_rattache: true
-    cible: audrey-perez
-    cible_rattachee: true
-    annule: false
   - votant: claude-dartois
     votant_rattache: true
     cible: audrey-perez
@@ -8242,14 +8220,13 @@
     annule: true
 - saison: s12
   numero: 13
-  type: elimination
-  complet: false
+  type: sortie
   episode: "10"
   elimine: camille-sold
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_destins_lies
+  nature_source: 'Wikipedia : « Camille est éliminée, à la suite de l''élimination de Catherine, son binôme »'
 - saison: s12
   numero: 14
   type: elimination
@@ -9150,14 +9127,13 @@
     annule: false
 - saison: s14
   numero: 15
-  type: elimination
-  complet: false
+  type: sortie
   episode: "9"
   elimine: nessim-kouachi
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_destins_lies
+  nature_source: 'Wikipedia : « As Nessim was Charlaine''s partner, he was also eliminated »'
 - saison: s14
   numero: 16
   type: elimination
@@ -10048,14 +10024,14 @@
     annule: false
 - saison: s15
   numero: 13
-  type: elimination
-  complet: false
+  type: sortie
   episode: "9"
   elimine: steve-best
   elimine_rattache: true
-  votes_contre: 7
-  votes_exprimes: 11
   votes: []
+  nature: elimine_destins_lies
+  nature_source: 'Fandom : « Laureen a eu la majorité des votes contre elle, Steve a donc été éliminé
+    avec elle »'
 - saison: s15
   numero: 14
   type: elimination
@@ -11990,14 +11966,13 @@
     annule: false
 - saison: s17
   numero: 17
-  type: elimination
-  complet: false
+  type: sortie
   episode: "11"
   elimine: kelly-beaugrand
   elimine_rattache: true
-  votes_contre: 4
-  votes_exprimes: 9
   votes: []
+  nature: elimine_destins_lies
+  nature_source: 'Wikipedia : « Kelly was eliminated as her partner, Corentin received the most votes »'
 - saison: s17
   numero: 18
   type: elimination
@@ -12860,14 +12835,13 @@
     annule: true
 - saison: s18
   numero: 16
-  type: elimination
-  complet: false
+  type: sortie
   episode: "11"
   elimine: andre-deleplace
   elimine_rattache: true
-  votes_contre: 4
-  votes_exprimes: 9
   votes: []
+  nature: elimine_destins_lies
+  nature_source: 'Wikipedia : « André est éliminé, à la suite de l''élimination de Maxime, son binôme »'
 - saison: s18
   numero: 17
   type: sortie
@@ -13592,14 +13566,13 @@
     annule: false
 - saison: s20
   numero: 13
-  type: elimination
-  complet: false
+  type: sortie
   episode: "9"
   elimine: sophie-chevalier
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_destins_lies
+  nature_source: 'Wikipedia : « Sophie est éliminée, à la suite de l''élimination de Brice, son binôme »'
 - saison: s20
   numero: 14
   type: elimination
@@ -14387,14 +14360,13 @@
     annule: false
 - saison: s21
   numero: 12
-  type: elimination
-  complet: false
+  type: sortie
   episode: "8"
   elimine: marie-france-schieber
   elimine_rattache: true
-  votes_contre: 2
-  votes_exprimes: null
   votes: []
+  nature: elimine_ambassadeurs
+  nature_source: 'Wikipedia : « Les deux ambassadeurs se mettent d''accord pour éliminer Marie-France »'
 - saison: s21
   numero: 13
   type: elimination
@@ -14714,14 +14686,13 @@
     annule: false
 - saison: s21
   numero: 18
-  type: elimination
-  complet: false
+  type: sortie
   episode: "11"
   elimine: alix-noblat
   elimine_rattache: true
-  votes_contre: 6
-  votes_exprimes: 11
   votes: []
+  nature: elimine_destins_lies
+  nature_source: 'Wikipedia : « Alix étant en binôme avec Laurent, elle est également éliminée »'
 - saison: s21
   numero: 19
   type: sortie
@@ -15674,14 +15645,13 @@
     annule: false
 - saison: s22
   numero: 14
-  type: elimination
-  complet: false
+  type: sortie
   episode: "9"
   elimine: laetitia-saphores
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_destins_lies
+  nature_source: 'Wikipedia : « Laëtitia étant en binôme avec Vincent, elle est également éliminée »'
 - saison: s22
   numero: 15
   type: elimination
@@ -16798,14 +16768,13 @@
     annule: false
 - saison: s23
   numero: 17
-  type: elimination
-  complet: false
+  type: sortie
   episode: "11"
   elimine: louana-roy
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_destins_lies
+  nature_source: 'Fandom : « Louana étant en binôme avec Maxime, elle est également éliminée »'
 - saison: s23
   numero: 18
   type: sortie
@@ -17201,14 +17170,13 @@
     annule: false
 - saison: s24
   numero: 4
-  type: elimination
-  complet: false
+  type: sortie
   episode: "4"
   elimine: elodie-migeal
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
+  nature_source: 'Wikipedia : « celui terminant dernier, à savoir Élodie, est directement éliminé »'
 - saison: s24
   numero: 5
   type: elimination
@@ -17414,14 +17382,14 @@
     annule: true
 - saison: s24
   numero: 11
-  type: elimination
-  complet: false
+  type: sortie
   episode: "8"
   elimine: quentin-paygnard
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_ambassadeurs
+  nature_source: 'wiki Survivor : « Quentin (Lottery) » à la réunion des ambassadeurs ; revenu, sorti
+    au conseil le jour 38'
 - saison: s24
   numero: 12
   type: sortie
@@ -17700,14 +17668,13 @@
     annule: false
 - saison: s24
   numero: 17
-  type: elimination
-  complet: false
+  type: sortie
   episode: "12"
   elimine: clemence-noquet
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_destins_lies
+  nature_source: 'Wikipedia : « Clémence est éliminée, à la suite de l''élimination d''Esteban, son binôme »'
 - saison: s24
   numero: 18
   type: elimination
@@ -18603,14 +18570,13 @@
     annule: false
 - saison: s25
   numero: 14
-  type: elimination
-  complet: false
+  type: sortie
   episode: "11"
   elimine: aurelien-dulau
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_destins_lies
+  nature_source: 'Wikipedia : « Aurélien est éliminé, à la suite de l''élimination de Sébastien, son binôme »'
 - saison: s25
   numero: 15
   type: sortie
@@ -19571,14 +19537,13 @@
     annule: false
 - saison: s26
   numero: 16
-  type: elimination
-  complet: false
+  type: sortie
   episode: "11"
   elimine: cassandre-lambert
   elimine_rattache: true
-  votes_contre: 6
-  votes_exprimes: 11
   votes: []
+  nature: elimine_destins_lies
+  nature_source: 'Wikipedia : « Cassandre est éliminée, à la suite de l''élimination de Maxim, son binôme »'
 - saison: s26
   numero: 17
   type: elimination
@@ -20641,14 +20606,13 @@
     annule: true
 - saison: s27
   numero: 18
-  type: elimination
-  complet: false
+  type: sortie
   episode: "12"
   elimine: pierre-marie-ponsot
   elimine_rattache: true
-  votes_contre: 6
-  votes_exprimes: 11
   votes: []
+  nature: elimine_destins_lies
+  nature_source: 'Wikipedia : « Pierre-Marie est éliminé, à la suite de l''élimination de Naïs, son binôme »'
 - saison: s27
   numero: 19
   type: sortie
@@ -20774,28 +20738,28 @@
   nature: elimine_orientation
 - saison: s27
   numero: 23
-  type: elimination
+  type: sortie
   complet: false
   episode: "16"
-  elimine: Jérôme
-  elimine_rattache: false
+  elimine: jerome-salvatore
+  elimine_rattache: true
   votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_orientation
 - saison: s27
   numero: 24
   type: elimination
   complet: false
   episode: "17"
-  elimine: Jérôme
-  elimine_rattache: false
+  elimine: jerome-molas
+  elimine_rattache: true
   votes_contre: 0
   votes_exprimes: null
   votes:
   - votant: gaelle-fleury
     votant_rattache: true
-    cible: Jérôme
-    cible_rattachee: false
+    cible: jerome-molas
+    cible_rattachee: true
     annule: false
 - saison: s27
   numero: 25
@@ -20807,8 +20771,8 @@
   votes_pour: 4
   votes_exprimes: 11
   votes:
-  - votant: Jérôme
-    votant_rattache: false
+  - votant: jerome-molas
+    votant_rattache: true
     cible: mael-lozach
     cible_rattachee: true
     annule: false
@@ -20837,8 +20801,8 @@
   votes_pour: 7
   votes_exprimes: 11
   votes:
-  - votant: Jérôme
-    votant_rattache: false
+  - votant: jerome-molas
+    votant_rattache: true
     cible: gaelle-fleury
     cible_rattachee: true
     annule: false
@@ -20935,14 +20899,13 @@
     annule: false
 - saison: s28
   numero: 2
-  type: elimination
-  complet: false
+  type: sortie
   episode: "1"
   elimine: francoise-fournier-grigis
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_duel
+  nature_source: 'Wikipedia : « Françoise perd le duel de riposte contre Lionel »'
 - saison: s28
   numero: 3
   type: elimination
@@ -21636,14 +21599,13 @@
     annule: false
 - saison: s28
   numero: 15
-  type: elimination
-  complet: false
+  type: sortie
   episode: "11"
   elimine: jade-correa
   elimine_rattache: true
-  votes_contre: 8
-  votes_exprimes: 10
   votes: []
+  nature: elimine_destins_lies
+  nature_source: 'Wikipedia : « Jade est éliminée, à la suite de l''élimination de Lola, son binôme »'
 - saison: s28
   numero: 16
   type: elimination
@@ -21760,14 +21722,13 @@
     annule: false
 - saison: s28
   numero: 18
-  type: elimination
-  complet: false
-  episode: "13"
+  type: sortie
+  episode: "12"
   elimine: cindy-sulpice-gonzalez
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_duel
+  nature_source: 'Wikipedia : « Cindy perd le duel de riposte contre Hugo », 12e épisode, jour 31'
 - saison: s28
   numero: 19
   type: elimination
@@ -21870,14 +21831,13 @@
     annule: false
 - saison: s28
   numero: 22
-  type: elimination
-  complet: false
-  episode: "15"
+  type: sortie
+  episode: "14"
   elimine: daniel-duquesnoy
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_duel
+  nature_source: 'Wikipedia : « Daniel perd le duel de riposte contre Guillaume », 14e épisode, jour 37'
 - saison: s28
   numero: 23
   type: sortie
@@ -22000,14 +21960,14 @@
     annule: false
 - saison: sp1
   numero: 1
-  type: elimination
-  complet: false
+  type: sortie
   episode: "1"
   elimine: jean-bernard-hauton-arnaud
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
+  nature_source: 'wiki Survivor : « Amel and Jean-Bernard were eliminated on Day 1 for losing the first
+    challenge » ; revenu'
 - saison: sp1
   numero: 2
   type: sortie
@@ -23372,13 +23332,12 @@
 - saison: sp3
   numero: 10
   type: sortie
-  complet: false
   episode: "8"
   elimine: moussa-niangane
   elimine_rattache: true
-  votes_contre: 0
   votes: []
-  nature: elimine_epreuve
+  nature: elimine_destins_lies
+  nature_source: 'Wikipedia : « Moussa est éliminée, à la suite de l''élimination de Guénaëlle, son binôme »'
 - saison: sp3
   numero: 11
   type: elimination
@@ -23871,14 +23830,14 @@
     annule: false
 - saison: sp4
   numero: 10
-  type: elimination
-  complet: false
+  type: sortie
   episode: "7"
   elimine: martin-bazin
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
+  nature_source: 'Fandom : « L''épreuve d''immunité de cet épisode étant éliminatoire pour le dernier,
+    Martin est donc éliminé » ; revenu par un duel'
 - saison: sp4
   numero: 11
   type: elimination
@@ -24598,14 +24557,13 @@
     annule: false
 - saison: sp5
   numero: 14
-  type: elimination
-  complet: false
+  type: sortie
   episode: "8"
   elimine: yassin-metiri
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_destins_lies
+  nature_source: 'Wikipedia : « Yassin est éliminé, à la suite de l''élimination d''Alban, son binôme »'
 - saison: sp5
   numero: 15
   type: elimination
@@ -24897,14 +24855,14 @@
     annule: false
 - saison: sp6
   numero: 4
-  type: elimination
-  complet: false
+  type: sortie
   episode: "3"
   elimine: jessica-potel
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_epreuve
+  nature_source: 'Wikipedia : « Éliminée (jour 9 – 10) », remplace Marie au jour 10 ; Fandom : épreuve
+    éliminatoire, jour 9'
 - saison: sp6
   numero: 5
   type: sortie
@@ -25367,14 +25325,13 @@
     annule: true
 - saison: sp6
   numero: 14
-  type: elimination
-  complet: false
+  type: sortie
   episode: "8"
   elimine: teheiura-teahui
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_destins_lies
+  nature_source: 'Wikipedia : « Teheiura étant en binôme avec Charlotte, il est également éliminé »'
 - saison: sp6
   numero: 15
   type: elimination
@@ -26318,14 +26275,14 @@
     annule: false
 - saison: sp7
   numero: 16
-  type: elimination
-  complet: false
+  type: sortie
   episode: "10"
   elimine: teheiura-teahui
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
   votes: []
+  nature: elimine_destins_lies
+  nature_source: 'Wikipedia : « Teheiura est éliminé, à la suite de l''élimination de Christelle, son
+    binôme »'
 - saison: sp7
   numero: 18
   type: sortie

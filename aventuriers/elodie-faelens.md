@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Élodie Faelens (2021)"
-description: "Élodie Faelens, Koh-Lanta Les Armes secrètes (2021) : sort au conseil le 9e jour, 19e sur 21, 0 épreuve gagnée. 520e sur 531 au classement des aventuriers."
+description: "Élodie Faelens, Koh-Lanta Les Armes secrètes (2021) : sort au conseil le 9e jour, 19e sur 21, 0 épreuve gagnée. 518e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/elodie-faelens.png
 permalink: /aventuriers/elodie-faelens/
 aventurier: elodie-faelens

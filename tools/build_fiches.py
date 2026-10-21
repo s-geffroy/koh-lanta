@@ -360,6 +360,7 @@ VERBE_SORT = {
     "elimine_duel": "sort en duel",
     "elimine_exil": "sort sur l'île",
     "elimine_epreuve": "sort à une épreuve éliminatoire",
+    "elimine_destins_lies": "sort avec son binôme",
     "abandon_medical": "abandonne sur blessure",
     "abandon_volontaire": "abandonne",
     "disqualifie": "quitte le jeu sur disqualification",

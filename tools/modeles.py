@@ -1078,7 +1078,7 @@ def equilibre(par_saison, parts, conseils, epreuves):
     # comme les finalistes et les vainqueurs.
     ELIMINE = ("elimine_conseil", "elimine_poteaux", "elimine_orientation",
                "elimine_ambassadeurs", "elimine_duel", "elimine_exil",
-               "elimine_epreuve")
+               "elimine_epreuve", "elimine_destins_lies")
     nb_saisons = {}
     for p in parts:
         nb_saisons[p["id"]] = nb_saisons.get(p["id"], 0) + 1
@@ -4028,6 +4028,7 @@ LIBELLE_SORT = {
     "elimine_ambassadeurs": "Éliminé aux ambassadeurs",
     "elimine_duel": "Éliminé en duel", "elimine_exil": "Éliminé sur l’île",
     "elimine_epreuve": "Éliminé à une épreuve",
+    "elimine_destins_lies": "Éliminé par les destins liés",
     "abandon_medical": "Abandon médical",
     "abandon_volontaire": "Abandon volontaire",
     "disqualifie": "Disqualifié",

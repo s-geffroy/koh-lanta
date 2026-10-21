@@ -88,8 +88,62 @@ DOUBLES = {
 COLONNES_INCOHERENTES = {
     ("s03", 10): "cases Richard 3, Alexandra 2, Alexandre 1 ; la source fait sortir "
                  "Alexandre et annonce 4/6 — aucune seconde source ni note pour trancher",
-    ("s10", 6): "cases Jean-Pierre 3, Marine 2, Aurelie 1 ; la source fait sortir "
-                "Marine et annonce 3/6 — aucune seconde source ni note pour trancher",
+}
+
+# LES LIGNES DECALEES : une ligne de votant a laquelle la source a perdu des
+# cases, si bien que ses bulletins glissent d'une colonne sur l'autre. A
+# Raja Ampat, la ligne de Philippe chez Fandom perd la case d'Alain (abandon)
+# et celle du second depart de Virginie : son vote contre Marine tombait sous
+# l'abandon d'Alain, celui contre Jean-Pierre sous l'elimination de Marine --
+# qui passait pour incoherente -- et un vote contre Audrey sous un conseil
+# rouge ou il ne siegeait pas. La ligne de Wikipedia (anglais, que la chaine
+# ne lit pas) est entiere, et chaque colonne retombe alors exactement sur le
+# total que Fandom annonce : 4/7, 3/6, 3/5, 5/8. Cle : (saison, votant lu) ;
+# valeur : {numero de colonne : cible, ou None pour aucun bulletin}.
+LIGNES_DECALEES = {
+    ("s10", "Philippe"): ({4: None, 5: "Virginie", 6: "Marine", 7: None, 8: "Jean-Pierre",
+                           9: None, 10: None},
+                          "ligne Philippe de Wikipedia anglais (Voting History), entiere ; "
+                          "Fandom perd deux cases"),
+}
+
+
+def corriger_les_lignes_decalees(lus, sid, rapport):
+    """Remet en place les bulletins d'une ligne decalee (LIGNES_DECALEES)."""
+    for (s_, votant), (cases, raison) in LIGNES_DECALEES.items():
+        if s_ != sid:
+            continue
+        for c in lus:
+            if c["numero"] not in cases:
+                continue
+            avant = [b for b in c["votes"] if b.get("votant") == votant]
+            c["votes"] = [b for b in c["votes"] if b.get("votant") != votant]
+            cible = cases[c["numero"]]
+            if cible:
+                modele = dict(avant[0]) if avant else {"annule": False, "noir": False,
+                                                      "ligne": None}
+                modele.update(votant=votant, cible=cible, annule=False, noir=False)
+                c["votes"].append(modele)
+            # Meme regle que parse_votes : complet quand les bulletins lus
+            # sont exactement les exprimes annonces.
+            c["complet"] = (c.get("votes_exprimes") is not None
+                            and len(c["votes"]) == c["votes_exprimes"])
+            if [b.get("cible") for b in avant] != ([cible] if cible else []):
+                rapport.append(f"{sid} conseil {c['numero']} : ligne decalee de {votant} "
+                               f"remise en place ({[b.get('cible') for b in avant]} -> "
+                               f"{cible}) — {raison}")
+
+
+# LES ELIMINES HOMONYMES que la colonne seule ne permet pas de departager.
+# La Revanche des 4 terres a deux Jerome ; Wikipedia les distingue par leur
+# tribu (notes « jerome-orange », « jerome-bleue ») : au 16e episode, Jerome
+# de la tribu bleue se qualifie a l'orientation avec Mael et Gaelle, l'autre
+# y sort ; Gaelle, gagnante des poteaux, ecarte ensuite Jerome le Catalan
+# (bleu). Cle : (saison, numero de colonne).
+ELIMINES_HOMONYMES = {
+    ("s27", 23): ("jerome-salvatore", "Wikipedia, 16e épisode : qualifiés « Jérôme (bleue), "
+                                      "Maël et Gaëlle » ; Jérôme des Landes (orange) sort"),
+    ("s27", 24): ("jerome-molas", "Wikipedia : « Jérôme le Catalan réagit au choix de Gaëlle »"),
 }
 
 
@@ -428,7 +482,78 @@ def trancher_par_ligne(lot, idx, sid, rapport):
 # sortie, et `indicateurs._episode_de_sortie` en a besoin.
 SORTIES_SANS_VOTE = {"abandon_medical", "abandon_volontaire", "elimine_orientation",
                      "elimine_poteaux", "elimine_duel", "elimine_ambassadeurs",
-                     "elimine_epreuve"}
+                     "elimine_epreuve", "elimine_destins_lies"}
+
+# LES COLONNES SANS VOTE QUE LE SORT NE SUFFIT PAS A RECONNAITRE. Le tableau
+# de casting Fandom ecrit « Elimine au conseil » pour toute sortie d'un soir
+# de conseil : le binome emporte par les destins lies, le perdant d'un duel de
+# riposte. Et un revenant sort une premiere fois sans vote (Anthony, Palau,
+# jour 1) quand son sort final est un conseil. Chacune de ces colonnes porte a
+# la source un compteur « 0 » et une note qui dit ce qui s'est passe ; Fandom
+# fusionne en outre la case du decompte sur les deux colonnes d'un binome, et
+# la seconde heritait des voix du premier (Cassandre « 6/11 », celles de
+# Maxim). TABLE fermee, verifiee cas par cas le 21 octobre 2026 contre
+# Wikipedia, Fandom et le guide d'episodes du wiki Survivor. Cle : (saison,
+# elimine, episode lu) ; valeur : (nature, episode corrige ou None, source).
+_LIES = "elimine_destins_lies"
+COLONNES_SANS_VOTE = {
+    ("s09", "anthony-parra", "1"): ("elimine_epreuve", None,
+        "Wikipedia : « Anthony and Joëlle finished last in the initial challenge » ; revenu au jour 2"),
+    ("s12", "camille-sold", "10"): (_LIES, None,
+        "Wikipedia : « Camille est éliminée, à la suite de l'élimination de Catherine, son binôme »"),
+    ("s14", "nessim-kouachi", "9"): (_LIES, None,
+        "Wikipedia : « As Nessim was Charlaine's partner, he was also eliminated »"),
+    ("s15", "steve-best", "9"): (_LIES, None,
+        "Fandom : « Laureen a eu la majorité des votes contre elle, Steve a donc été éliminé avec elle »"),
+    ("s17", "kelly-beaugrand", "11"): (_LIES, None,
+        "Wikipedia : « Kelly was eliminated as her partner, Corentin received the most votes »"),
+    ("s18", "andre-deleplace", "11"): (_LIES, None,
+        "Wikipedia : « André est éliminé, à la suite de l'élimination de Maxime, son binôme »"),
+    ("s20", "sophie-chevalier", "9"): (_LIES, None,
+        "Wikipedia : « Sophie est éliminée, à la suite de l'élimination de Brice, son binôme »"),
+    ("s21", "marie-france-schieber", "8"): ("elimine_ambassadeurs", None,
+        "Wikipedia : « Les deux ambassadeurs se mettent d'accord pour éliminer Marie-France »"),
+    ("s21", "alix-noblat", "11"): (_LIES, None,
+        "Wikipedia : « Alix étant en binôme avec Laurent, elle est également éliminée »"),
+    ("s22", "laetitia-saphores", "9"): (_LIES, None,
+        "Wikipedia : « Laëtitia étant en binôme avec Vincent, elle est également éliminée »"),
+    ("s23", "louana-roy", "11"): (_LIES, None,
+        "Fandom : « Louana étant en binôme avec Maxime, elle est également éliminée »"),
+    ("s24", "elodie-migeal", "4"): ("elimine_epreuve", None,
+        "Wikipedia : « celui terminant dernier, à savoir Élodie, est directement éliminé »"),
+    ("s24", "clemence-noquet", "12"): (_LIES, None,
+        "Wikipedia : « Clémence est éliminée, à la suite de l'élimination d'Esteban, son binôme »"),
+    ("s25", "aurelien-dulau", "11"): (_LIES, None,
+        "Wikipedia : « Aurélien est éliminé, à la suite de l'élimination de Sébastien, son binôme »"),
+    ("s26", "cassandre-lambert", "11"): (_LIES, None,
+        "Wikipedia : « Cassandre est éliminée, à la suite de l'élimination de Maxim, son binôme »"),
+    ("s27", "pierre-marie-ponsot", "12"): (_LIES, None,
+        "Wikipedia : « Pierre-Marie est éliminé, à la suite de l'élimination de Naïs, son binôme »"),
+    ("s28", "francoise-fournier-grigis", "1"): ("elimine_duel", None,
+        "Wikipedia : « Françoise perd le duel de riposte contre Lionel »"),
+    ("s28", "jade-correa", "11"): (_LIES, None,
+        "Wikipedia : « Jade est éliminée, à la suite de l'élimination de Lola, son binôme »"),
+    ("s28", "cindy-sulpice-gonzalez", "13"): ("elimine_duel", "12",
+        "Wikipedia : « Cindy perd le duel de riposte contre Hugo », 12e épisode, jour 31"),
+    ("s28", "daniel-duquesnoy", "15"): ("elimine_duel", "14",
+        "Wikipedia : « Daniel perd le duel de riposte contre Guillaume », 14e épisode, jour 37"),
+    ("sp1", "jean-bernard-hauton-arnaud", "1"): ("elimine_epreuve", None,
+        "wiki Survivor : « Amel and Jean-Bernard were eliminated on Day 1 for losing the first challenge » ; revenu"),
+    ("sp4", "martin-bazin", "7"): ("elimine_epreuve", None,
+        "Fandom : « L'épreuve d'immunité de cet épisode étant éliminatoire pour le dernier, Martin est donc éliminé » ; revenu par un duel"),
+    ("sp6", "jessica-potel", "3"): ("elimine_epreuve", None,
+        "Wikipedia : « Éliminée (jour 9 – 10) », remplace Marie au jour 10 ; Fandom : épreuve éliminatoire, jour 9"),
+    ("s24", "quentin-paygnard", "8"): ("elimine_ambassadeurs", None,
+        "wiki Survivor : « Quentin (Lottery) » à la réunion des ambassadeurs ; revenu, sorti au conseil le jour 38"),
+    ("sp3", "moussa-niangane", "8"): (_LIES, None,
+        "Wikipedia : « Moussa est éliminée, à la suite de l'élimination de Guénaëlle, son binôme »"),
+    ("sp5", "yassin-metiri", "8"): (_LIES, None,
+        "Wikipedia : « Yassin est éliminé, à la suite de l'élimination d'Alban, son binôme »"),
+    ("sp6", "teheiura-teahui", "8"): (_LIES, None,
+        "Wikipedia : « Teheiura étant en binôme avec Charlotte, il est également éliminé »"),
+    ("sp7", "teheiura-teahui", "10"): (_LIES, None,
+        "Wikipedia : « Teheiura est éliminé, à la suite de l'élimination de Christelle, son binôme »"),
+}
 
 
 def etiqueter_les_sorties(conseils, debut, sorts, rapport):
@@ -466,6 +591,22 @@ def etiqueter_les_sorties(conseils, debut, sorts, rapport):
                            f"ni bulletin — retiree")
             continue
         nature = sorts.get(c.get("elimine")) if c.get("elimine_rattache") else None
+        tablee = COLONNES_SANS_VOTE.get((c["saison"], c.get("elimine"), str(c.get("episode"))))
+        if tablee and not c["votes"]:
+            # Les chiffres que la colonne portait sont ceux du binome, recopies
+            # par la case fusionnee : ils ne disent rien de cette sortie.
+            c["type"] = "sortie"
+            c["nature"] = tablee[0]
+            c["nature_source"] = tablee[2]
+            if tablee[1]:
+                c["episode"] = tablee[1]
+            for cle in ("votes_contre", "votes_exprimes", "votes_contre_annonce",
+                        "complet", "incoherence_source"):
+                c.pop(cle, None)
+            rapport.append(f"{c['saison']} conseil {c['numero']} : {c['elimine']} sort sans "
+                           f"vote ({tablee[0]}) — {tablee[2]}")
+            garde.append(c)
+            continue
         # Une colonne d'abandon dont la source ANNONCE zero voix, mais qui porte
         # un bulletin egare -- un seul, visant quelqu'un d'autre (Alain au
         # Vietnam, Loic et Margot a Johor). Il n'appartient a aucun conseil : on
@@ -647,6 +788,8 @@ def construire(saisons, parts, rapport):
             except Exception as e:
                 rapport.append(f"{sid} : lecture des votes impossible ({suffixe}) — {e}")
                 continue
+            if suffixe == ".fandom.wiki":
+                corriger_les_lignes_decalees(lus, sid, rapport)
             lectures.append((sum(len(c["votes"]) for c in lus), suffixe, lus))
         lectures.sort(key=lambda x: -x[0])
         meilleure = lectures[0][2] if lectures else []
@@ -734,6 +877,11 @@ def construire(saisons, parts, rapport):
                         echec = None
                         rapport.append(f"{sid} conseil {c['numero']} : elimine « {c['elimine']} » "
                                        f"homonyme tranche -> {elimine_id}")
+            if echec and (sid, c["numero"]) in ELIMINES_HOMONYMES:
+                elimine_id, raison_h = ELIMINES_HOMONYMES[(sid, c["numero"])]
+                echec = None
+                rapport.append(f"{sid} conseil {c['numero']} : elimine « {c['elimine']} » "
+                               f"-> {elimine_id} ({raison_h})")
             if echec:
                 rapport.append(f"{sid} conseil {c['numero']} : elimine « {c['elimine']} » "
                                f"non rattache ({echec})")

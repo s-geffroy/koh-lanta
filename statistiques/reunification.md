@@ -291,7 +291,7 @@ côté.</p>
   {{ ng.elimine_ambassadeur }} ont coûté sa place à l’un des ambassadeurs.</p>
 </div>
 
-### Et ils sortent plus tôt
+### Sortent-ils plus tôt ? On ne peut pas l’affirmer
 
 {% include graphiques/ambassadeurs-survie.svg %}
 
@@ -305,13 +305,20 @@ les présents.</p>
   {{ ng.ambassadeurs }} ambassadeurs — le rang moyen vaut
   <b>{{ ng.rang_moyen }} sur 100</b>, contre {{ tn.attendu }} attendus.
   {{ tn.ecart_types }} écart-type, p ajustée {{ tn.p_ajustee }}.</p>
-  <p><b>Retenu : l’ambassadeur sort plus tôt que s’il avait été désigné au
-  hasard parmi les présents.</b></p>
+  <p><b>Non concluant : l’ambassadeur sort plutôt plus tôt que s’il avait été
+  désigné au hasard parmi les présents, mais l’écart ne passe pas le seuil.</b></p>
   <p>Une partie de l’écart peut être la règle elle-même : un ambassadeur
-  parti au tirage sort le soir même, au plus bas rang possible. La mesure ne dit pas encore si l’écart tient
-  sans eux, et elle repose sur {{ ng.ambassadeurs }} ambassadeurs : c’est un
-  signal, à confirmer.</p>
+  parti au tirage sort le soir même, au plus bas rang possible. Et la mesure
+  repose sur {{ ng.ambassadeurs }} ambassadeurs.</p>
 </div>
+
+<p class="note"><strong>Ce résultat était retenu jusqu’au 21 octobre 2026</strong>
+(p ajustée 0,047), et la page le présentait comme « un signal, à confirmer ».
+Ce jour-là, vingt-quatre colonnes de la matrice des votes qui passaient pour
+des conseils ont été rendues à leur nature de sorties sans vote — destins
+liés, duels de riposte, épreuves —, et trois revenants à leur sortie
+définitive, dont une ambassade. Le signal ne s’est pas confirmé : p ajustée
+{{ tn.p_ajustee }}.</p>
 
 ## Ce que cette page ne dit pas
 

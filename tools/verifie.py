@@ -33,7 +33,7 @@ DATA = os.path.join(RACINE, "_data")
 SORTS_VALIDES = {
     "vainqueur", "finaliste", "elimine_poteaux", "elimine_orientation",
     "elimine_conseil", "elimine_ambassadeurs", "elimine_duel", "elimine_exil",
-    "elimine_epreuve",
+    "elimine_epreuve", "elimine_destins_lies",
     "abandon_medical", "abandon_volontaire", "disqualifie",
 }
 COULEURS_VALIDES = {"jaune", "rouge", "bleu", "vert", "orange", "violet", "noir", "blanc"}
@@ -743,7 +743,11 @@ def verifier_conseils(conseils, saisons, parts, c):
             nat = x.get("nature")
             if nat not in SORTIES_SANS_VOTE_:
                 c.erreur(f"{ref} : sortie de nature inconnue ({nat!r})")
-            elif sort_de.get((x.get("saison"), x.get("elimine"))) != nat:
+            # Une colonne de la table COLONNES_SANS_VOTE (`nature_source`) peut
+            # dater une sortie INTERMEDIAIRE -- un revenant, ou un binome sorti
+            # puis battu ailleurs : sa nature n'est pas forcement le sort final.
+            elif (not x.get("nature_source")
+                  and sort_de.get((x.get("saison"), x.get("elimine"))) != nat):
                 c.erreur(f"{ref} : sortie « {nat} » pour quelqu'un dont le sort est "
                          f"« {sort_de.get((x.get('saison'), x.get('elimine')))} »")
             continue
@@ -882,7 +886,7 @@ LIBELLES_NON_NOMS = {"egalite", "/", "evacuee", "evacue", "-", "-`"}
 
 SORTIES_SANS_VOTE_ = {"abandon_medical", "abandon_volontaire", "elimine_orientation",
                       "elimine_poteaux", "elimine_duel", "elimine_ambassadeurs",
-                      "elimine_epreuve"}
+                      "elimine_epreuve", "elimine_destins_lies"}
 
 
 def verifier_qualite_des_conseils(conseils, saisons, parts, c):

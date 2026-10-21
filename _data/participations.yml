@@ -8228,7 +8228,7 @@
     jour_debut: 20
     jour_fin: 31
   jour_sortie: 31
-  sort: elimine_conseil
+  sort: elimine_destins_lies
   motif: Éliminée au conseil
   votes_recus: 1
   classement: 9
@@ -8243,7 +8243,7 @@
     couleur: wikipedia-fr
     parcours: wikipedia-fr
     jour_sortie: fandom
-    sort: fandom
+    sort: 'corrige : Wikipedia et Fandom : éliminé(e) avec son binôme, sans voix contre soi'
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -9094,7 +9094,7 @@
     jour_debut: 19
     jour_fin: 26
   jour_sortie: 26
-  sort: elimine_conseil
+  sort: elimine_destins_lies
   motif: Éliminé au conseil
   votes_recus: 0
   classement: 9
@@ -9106,7 +9106,7 @@
     profession: fandom
     tribu: fandom
     jour_sortie: fandom
-    sort: fandom
+    sort: 'corrige : Wikipedia et Fandom : éliminé(e) avec son binôme, sans voix contre soi'
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -9966,7 +9966,7 @@
     jour_debut: 19
     jour_fin: 26
   jour_sortie: 26
-  sort: elimine_conseil
+  sort: elimine_destins_lies
   motif: Éliminé au conseil
   votes_recus: 1
   classement: 9
@@ -9976,7 +9976,7 @@
     profession: fandom
     tribu: fandom
     jour_sortie: fandom
-    sort: fandom
+    sort: 'corrige : Wikipedia et Fandom : éliminé(e) avec son binôme, sans voix contre soi'
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -11828,7 +11828,7 @@
     jour_debut: 22
     jour_fin: 32
   jour_sortie: 32
-  sort: elimine_conseil
+  sort: elimine_destins_lies
   motif: Éliminée au conseil
   votes_recus: 15
   classement: 7
@@ -11840,7 +11840,7 @@
     profession: fandom
     tribu: fandom
     jour_sortie: fandom
-    sort: fandom
+    sort: 'corrige : Wikipedia et Fandom : éliminé(e) avec son binôme, sans voix contre soi'
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -13472,7 +13472,7 @@
     jour_debut: 18
     jour_fin: 25
   jour_sortie: 25
-  sort: elimine_conseil
+  sort: elimine_destins_lies
   motif: Éliminée au conseil
   votes_recus: 2
   classement: 11
@@ -13486,7 +13486,7 @@
     couleur: wikipedia-fr
     parcours: wikipedia-fr
     jour_sortie: fandom
-    sort: fandom
+    sort: 'corrige : Wikipedia et Fandom : éliminé(e) avec son binôme, sans voix contre soi'
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -14303,8 +14303,8 @@
     couleur: rouge
     jour_debut: 12
     jour_fin: 22
-  jour_sortie: 3
-  sort: elimine_conseil
+  jour_sortie: 22
+  sort: elimine_ambassadeurs
   motif: Éliminée au conseil
   votes_recus: 8
   classement: 15
@@ -14318,8 +14318,10 @@
     tribu: wikipedia-fr
     couleur: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: fandom
-    sort: fandom
+    jour_sortie: 'corrige : revenante : Fandom, second départ « Éliminée par les ambassadeurs, Jour 22 » ;
+      Wikipedia : « Les deux ambassadeurs se mettent d''accord pour éliminer Marie-France »'
+    sort: 'corrige : revenante : Fandom, second départ « Éliminée par les ambassadeurs, Jour 22 » ; Wikipedia :
+      « Les deux ambassadeurs se mettent d''accord pour éliminer Marie-France »'
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -14585,7 +14587,7 @@
     jour_debut: 22
     jour_fin: 32
   jour_sortie: 32
-  sort: elimine_conseil
+  sort: elimine_destins_lies
   motif: Éliminée au conseil
   votes_recus: 0
   classement: 9
@@ -14600,7 +14602,7 @@
     couleur: wikipedia-fr
     parcours: wikipedia-fr
     jour_sortie: fandom
-    sort: fandom
+    sort: 'corrige : Wikipedia et Fandom : éliminé(e) avec son binôme, sans voix contre soi'
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -15494,7 +15496,7 @@
     jour_debut: 17
     jour_fin: 27
   jour_sortie: 27
-  sort: elimine_conseil
+  sort: elimine_destins_lies
   motif: Éliminée au conseil
   votes_recus: 3
   classement: 9
@@ -15510,7 +15512,7 @@
     parcours: wikipedia-fr
     jour_sortie: 'corrige : Wikipedia fr, bilan : « Jour 27 » ; wiki Survivor ; elimines ensemble par
       les destins lies'
-    sort: fandom
+    sort: 'corrige : Wikipedia et Fandom : éliminé(e) avec son binôme, sans voix contre soi'
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -16556,7 +16558,7 @@
     jour_debut: 22
     jour_fin: 31
   jour_sortie: 31
-  sort: elimine_conseil
+  sort: elimine_destins_lies
   motif: Éliminée au conseil
   votes_recus: 6
   classement: 9
@@ -16568,7 +16570,7 @@
     profession: fandom
     tribu: fandom
     jour_sortie: fandom
-    sort: fandom
+    sort: 'corrige : Wikipedia et Fandom : éliminé(e) avec son binôme, sans voix contre soi'
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -17093,7 +17095,7 @@
     jour_debut: 2
     jour_fin: 10
   jour_sortie: 10
-  sort: elimine_conseil
+  sort: elimine_epreuve
   motif: Éliminée au conseil
   votes_recus: 3
   classement: 17
@@ -17108,7 +17110,8 @@
     couleur: wikipedia-fr
     parcours: wikipedia-fr
     jour_sortie: fandom
-    sort: fandom
+    sort: 'corrige : Wikipedia : « celui terminant dernier, à savoir Élodie, est directement éliminé » ;
+      wiki Survivor : « no vote »'
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -17488,7 +17491,7 @@
     jour_debut: 32
     jour_fin: 32
   jour_sortie: 32
-  sort: elimine_conseil
+  sort: elimine_destins_lies
   motif: Éliminée au conseil
   votes_recus: 3
   classement: 8
@@ -17503,7 +17506,7 @@
     couleur: wikipedia-fr
     parcours: wikipedia-fr
     jour_sortie: fandom
-    sort: fandom
+    sort: 'corrige : Wikipedia et Fandom : éliminé(e) avec son binôme, sans voix contre soi'
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -18354,7 +18357,7 @@
     jour_debut: 22
     jour_fin: 29
   jour_sortie: 29
-  sort: elimine_conseil
+  sort: elimine_destins_lies
   motif: Éliminé au conseil
   votes_recus: 0
   classement: 10
@@ -18369,7 +18372,7 @@
     couleur: wikipedia-fr
     parcours: wikipedia-fr
     jour_sortie: fandom
-    sort: fandom
+    sort: 'corrige : Wikipedia et Fandom : éliminé(e) avec son binôme, sans voix contre soi'
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -20466,7 +20469,7 @@
     jour_debut: 22
     jour_fin: 32
   jour_sortie: 32
-  sort: elimine_conseil
+  sort: elimine_destins_lies
   motif: Éliminé au conseil
   votes_recus: 1
   classement: 9
@@ -20481,7 +20484,7 @@
     couleur: wikipedia-fr
     parcours: wikipedia-fr
     jour_sortie: fandom
-    sort: fandom
+    sort: 'corrige : Wikipedia et Fandom : éliminé(e) avec son binôme, sans voix contre soi'
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -20883,7 +20886,7 @@
     jour_debut: 2
     jour_fin: 3
   jour_sortie: 3
-  sort: elimine_conseil
+  sort: elimine_duel
   motif: Éliminée au conseil
   votes_recus: 1
   classement: 20
@@ -20898,7 +20901,7 @@
     couleur: wikipedia-fr
     parcours: wikipedia-fr
     jour_sortie: fandom
-    sort: fandom
+    sort: 'corrige : Wikipedia : « perd le duel de riposte » ; tableau des votes Fandom, même note'
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -21305,7 +21308,7 @@
     jour_debut: 28
     jour_fin: 29
   jour_sortie: 28
-  sort: elimine_conseil
+  sort: elimine_destins_lies
   motif: Éliminée au conseil
   votes_recus: 0
   classement: 10
@@ -21320,7 +21323,7 @@
     couleur: wikipedia-fr
     parcours: wikipedia-fr
     jour_sortie: fandom
-    sort: fandom
+    sort: 'corrige : Wikipedia et Fandom : éliminé(e) avec son binôme, sans voix contre soi'
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -21348,7 +21351,7 @@
     jour_debut: 18
     jour_fin: 31
   jour_sortie: 31
-  sort: elimine_conseil
+  sort: elimine_duel
   motif: Éliminée au conseil
   votes_recus: 2
   classement: 9
@@ -21363,7 +21366,7 @@
     couleur: wikipedia-fr
     parcours: wikipedia-fr
     jour_sortie: fandom
-    sort: fandom
+    sort: 'corrige : Wikipedia : « perd le duel de riposte » ; tableau des votes Fandom, même note'
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -21477,7 +21480,7 @@
     jour_debut: 18
     jour_fin: 37
   jour_sortie: 37
-  sort: elimine_conseil
+  sort: elimine_duel
   motif: Éliminé au conseil
   votes_recus: 3
   classement: 6
@@ -21492,7 +21495,7 @@
     couleur: wikipedia-fr
     parcours: wikipedia-fr
     jour_sortie: fandom
-    sort: fandom
+    sort: 'corrige : Wikipedia : « perd le duel de riposte » ; tableau des votes Fandom, même note'
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -24565,7 +24568,7 @@
     jour_debut: 17
     jour_fin: 24
   jour_sortie: 24
-  sort: elimine_conseil
+  sort: elimine_destins_lies
   motif: Éliminé au conseil
   votes_recus: 0
   classement: 7
@@ -24580,7 +24583,7 @@
     couleur: wikipedia-fr
     parcours: wikipedia-fr
     jour_sortie: fandom
-    sort: fandom
+    sort: 'corrige : Wikipedia et Fandom : éliminé(e) avec son binôme, sans voix contre soi'
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -25345,8 +25348,8 @@
     couleur: null
     jour_debut: 15
     jour_fin: 24
-  jour_sortie: 10
-  sort: elimine_conseil
+  jour_sortie: 24
+  sort: elimine_destins_lies
   motif: Éliminé au conseil
   votes_recus: 6
   classement: 9
@@ -25360,8 +25363,10 @@
     tribu: wikipedia-fr
     couleur: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: fandom
-    sort: fandom
+    jour_sortie: 'corrige : revenant : Fandom, second départ « Jour 24 » ; Wikipedia : « Teheiura étant
+      en binôme avec Charlotte, il est également éliminé »'
+    sort: 'corrige : revenant : Fandom, second départ « Jour 24 » ; Wikipedia : « Teheiura étant en binôme
+      avec Charlotte, il est également éliminé »'
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -26229,8 +26234,8 @@
     couleur: null
     jour_debut: 25
     jour_fin: 27
-  jour_sortie: 25
-  sort: elimine_conseil
+  jour_sortie: 27
+  sort: disqualifie
   motif: Éliminé au conseil
   votes_recus: 0
   classement: 11
@@ -26240,8 +26245,10 @@
     tribu: wikipedia-fr
     couleur: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: fandom
-    sort: fandom
+    jour_sortie: 'corrige : revenant : Wikipedia « Exclu », pour avoir obtenu de la nourriture de pêcheurs ;
+      Fandom « Éjecté du jeu, Jour 27 »'
+    sort: 'corrige : revenant : Wikipedia « Exclu », pour avoir obtenu de la nourriture de pêcheurs ;
+      Fandom « Éjecté du jeu, Jour 27 »'
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom

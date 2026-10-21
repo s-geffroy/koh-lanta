@@ -206,7 +206,7 @@ Quatre lectures s'en dégagent.
 
 **L'identité de groupe survit à la disparition du groupe.** Après la réunification, on écrit le nom de quelqu'un de sa tribu initiale dans {{ a.tests.vote_bandeau_apres_fusion.observe }} % des bulletins, contre {{ a.tests.vote_bandeau_apres_fusion.attendu }} % attendus ; les sorties s'enchaînent par camp ; appartenir au camp minoritaire expose. Les tribus, artefacts de production, deviennent des identités effectives — exactement ce que prédit le paradigme des groupes minimaux ([Tajfel et Turner, 1979](#ref-tajfelturner1979)). En revanche, appartenir au **sexe** minoritaire du camp **protège** ({{ a.tests.sexe_minoritaire.observe }} points) : toutes les catégories ne fonctionnent pas comme des groupes. C'est un argument direct pour l'exigence, déjà posée en 2.6, d'observer une conséquence avant de coder une identité.
 
-La conformité (2.5) ne conclut pas : voter avec la minorité n'expose pas significativement au conseil suivant (p ajustée {{ a.tests.camp_perdant.p }}).
+La conformité (2.5) se lit, de justesse : avoir voté avec la minorité expose au conseil suivant (p ajustée {{ a.tests.camp_perdant.p }}). Une première rédaction de cette version concluait l'inverse ; la correction des sorties sans vote du 21 octobre 2026 a fait passer le seuil à ce résultat, qui reste fragile.
 
 ### 6.3. La réunification se lit dans les votes, pas seulement dans le discours
 
@@ -214,7 +214,7 @@ Le dispositif **se présente** comme changeant de régime à la réunification (
 
 L'âge, lui, ne permet pas de conclure. Avant la réunification, l'éliminé a en moyenne {{ a.age.avant }} de plus que la moyenne de son camp ce soir-là ; après, {{ a.age.apres }} de moins. La bascule, {{ a.age.bascule }} sur {{ a.age.conseils }} conseils, va dans le même sens, mais ne passe pas le seuil (p ajustée {{ a.tests.age_bascule_fusion.p }}). Une première rédaction de cette version la donnait retenue de justesse, en prévenant qu'une saison mal relevée suffirait à la faire repasser dessous. C'est ce qui est arrivé le 21 octobre 2026 : trente sorties par épreuve éliminatoire, jusque-là comptées comme des conseils sans bulletin, ont été rendues à leur nature.
 
-L'auto-description et le comportement coïncident sur ce point. Les ambassadeurs, eux, partent ensuite plus tôt que les autres présents (rang {{ a.tests.ambassadeurs_survie.observe }} contre {{ a.tests.ambassadeurs_survie.attendu }}) : l'ambassade, présentée comme une négociation, accompagne une fin de parcours précoce.
+L'auto-description et le comportement coïncident sur ce point. Les ambassadeurs, eux, partent ensuite plutôt plus tôt que les autres présents (rang {{ a.tests.ambassadeurs_survie.observe }} contre {{ a.tests.ambassadeurs_survie.attendu }}), mais l'écart ne passe pas le seuil (p ajustée {{ a.tests.ambassadeurs_survie.p }}) : une première rédaction le donnait retenu, et la même correction l'a fait repasser dessous. On ne peut pas dire que l'ambassade accompagne une fin de parcours précoce.
 
 ### 6.4. L'ordinaire d'abord : la fréquence des issues d'un conseil
 

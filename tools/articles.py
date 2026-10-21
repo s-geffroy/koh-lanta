@@ -35,13 +35,13 @@ AFFIRMATIONS = {
     "decimation": (True, "+"),             # les sorties s'enchainent par camp
     "bandeau_minoritaire": (True, "+"),    # le camp minoritaire expose
     "sexe_minoritaire": (True, "-"),       # le sexe minoritaire protege
-    "camp_perdant": (False, None),         # conformite : pas de preuve
+    "camp_perdant": (True, "+"),           # voter avec la minorite expose (de justesse, 21 oct. 2026)
     "fusion_serre": (True, "+"),           # le vote se divise apres la reunification
     "fusion_sexe": (True, "-"),            # moins de femmes eliminees ensuite
     "fusion_force": (False, None),         # la competence n'est pas une menace
     "age_bascule_fusion": (False, "+"),    # meme sens, mais sous le seuil (21 oct. 2026)
     "ambassadeurs_force": (False, None),   # les ambassadeurs ne visent pas les forts
-    "ambassadeurs_survie": (True, "-"),    # l'ambassadeur part plus tot
+    "ambassadeurs_survie": (False, "-"),   # plutot plus tot, sous le seuil (21 oct. 2026)
     "prevision_conseil": (True, "-"),      # le modele voit venir la sortie
     "pronostic_vainqueur": (False, None),  # le profil ne designe pas le vainqueur
 }

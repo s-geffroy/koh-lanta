@@ -1157,11 +1157,41 @@ ETAPES_CORRIGEES = {
         "jamais dans la tribu reunifiee : sortie avant elle (voir Klahan)"),
 }
 
-# Les sorts que la source ecrit trop vagues pour etre classes. Le tableau de
-# saison dit « Eliminee », sans dire comment : la regle par defaut en fait un
-# conseil. TABLE fermee, chaque ligne tiree d'un temoin qui nomme l'epreuve
-# (21 octobre 2026).
+# Les sorts que la source ecrit trop vagues, ou faux. Le tableau de saison dit
+# « Eliminee », sans dire comment, ou « Eliminee au conseil » pour toute
+# sortie d'un soir de conseil -- le binome emporte par les destins lies, le
+# perdant d'un duel de riposte : la regle par defaut en fait un conseil. TABLE
+# fermee, chaque ligne tiree d'un temoin qui nomme la sortie (21 octobre 2026).
+# Un troisieme terme fixe le jour, pour un REVENANT dont la ligne Fandom tient
+# deux departs et dont la chaine lisait le premier : le sort est le point
+# d'arrivee, le jour doit l'etre aussi, sans quoi la fiche publierait « sort
+# aux ambassadeurs le 3e jour ». Les duels perdus APRES les destins lies
+# (Clemence, Aurelien, Jade) etaient des tentatives de retour : le guide
+# d'episodes du wiki Survivor les dit « Eliminated » au jour du conseil.
+_LIES = ("elimine_destins_lies",
+         "Wikipedia et Fandom : éliminé(e) avec son binôme, sans voix contre soi")
 SORTS_CORRIGES = {
+    **{(s_, pid): _LIES for s_, pid in (
+        ("s12", "camille-sold"), ("s14", "nessim-kouachi"), ("s15", "steve-best"),
+        ("s17", "kelly-beaugrand"), ("s20", "sophie-chevalier"), ("s21", "alix-noblat"),
+        ("s22", "laetitia-saphores"), ("s23", "louana-roy"), ("s24", "clemence-noquet"),
+        ("s25", "aurelien-dulau"), ("s27", "pierre-marie-ponsot"), ("s28", "jade-correa"),
+        ("sp5", "yassin-metiri"))},
+    ("sp6", "teheiura-teahui"): ("elimine_destins_lies",
+        "revenant : Fandom, second départ « Jour 24 » ; Wikipedia : « Teheiura étant en "
+        "binôme avec Charlotte, il est également éliminé »", 24),
+    ("sp7", "teheiura-teahui"): ("disqualifie",
+        "revenant : Wikipedia « Exclu », pour avoir obtenu de la nourriture de pêcheurs ; "
+        "Fandom « Éjecté du jeu, Jour 27 »", 27),
+    ("s21", "marie-france-schieber"): ("elimine_ambassadeurs",
+        "revenante : Fandom, second départ « Éliminée par les ambassadeurs, Jour 22 » ; "
+        "Wikipedia : « Les deux ambassadeurs se mettent d'accord pour éliminer Marie-France »", 22),
+    **{("s28", pid): ("elimine_duel", "Wikipedia : « perd le duel de riposte » ; tableau "
+                                      "des votes Fandom, même note")
+       for pid in ("francoise-fournier-grigis", "cindy-sulpice-gonzalez", "daniel-duquesnoy")},
+    ("s24", "elodie-migeal"): ("elimine_epreuve",
+        "Wikipedia : « celui terminant dernier, à savoir Élodie, est directement éliminé » ; "
+        "wiki Survivor : « no vote »"),
     ("s02", "marianne-mondon"): ("elimine_epreuve",
         "tableau des votes Fandom : « Marianne a été la dernière à une épreuve "
         "de questions » ; Wikipedia anglais ne la dit pas « voted out »"),
@@ -1180,6 +1210,11 @@ def corriger_les_jours(participations, rapport):
                            f"{p.get('sort')} -> {s[0]} ({s[1]})")
             p["sort"] = s[0]
             p.setdefault("sources", {})["sort"] = "corrige : " + s[1]
+        if s and len(s) > 2 and p.get("jour_sortie") != s[2]:
+            rapport.append(f"jour de sortie : {p['saison']}/{p['id']} "
+                           f"{p.get('jour_sortie')} -> {s[2]} (revenant, depart final)")
+            p["jour_sortie"] = s[2]
+            p.setdefault("sources", {})["jour_sortie"] = "corrige : " + s[1]
         c = JOURS_DE_SORTIE.get((p["saison"], p["id"]))
         if c and p.get("jour_sortie") != c[0]:
             rapport.append(f"jour de sortie : {p['saison']}/{p['id']} "

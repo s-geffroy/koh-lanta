@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Mathieu Blanchard (2020)"
-description: "Mathieu Blanchard, Koh-Lanta Les 4 Terres (2020) : sort au conseil le 11e jour, 19e sur 24, 1 voix reçue. 195e sur 531 au classement des aventuriers."
+description: "Mathieu Blanchard, Koh-Lanta Les 4 Terres (2020) : sort au conseil le 11e jour, 19e sur 24, 1 voix reçue. 197e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/mathieu-blanchard.png
 permalink: /aventuriers/mathieu-blanchard/
 aventurier: mathieu-blanchard

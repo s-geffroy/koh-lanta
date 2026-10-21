@@ -75,9 +75,9 @@ La psychologie sociale l'a montré il y a cinquante ans : des groupes arbitrair
 
 Mais toutes les catégories ne fonctionnent pas ainsi. Être du **sexe** le moins représenté du camp ne fait pas partir plus tôt : cela protège plutôt. Porter une étiquette ne suffit pas à faire un groupe ; il faut observer ce qu'elle produit.
 
-## Suivre les autres : pas de preuve
+## Suivre les autres : un coût, de justesse
 
-On peut suivre une majorité par peur d'être isolé, ou parce qu'on pense qu'elle sait quelque chose. Les bulletins ne disent pas lequel des deux. Ils permettent seulement de vérifier si voter avec la minorité se paie au conseil suivant : l'effet existe peut-être, mais il est trop faible pour être affirmé.
+On peut suivre une majorité par peur d'être isolé, ou parce qu'on pense qu'elle sait quelque chose. Les bulletins ne disent pas lequel des deux. Ils permettent seulement de vérifier si voter avec la minorité se paie au conseil suivant : c'est le cas, mais de justesse, et le résultat reste fragile.
 
 ## La réunification change vraiment le jeu
 

@@ -1,13 +1,13 @@
 # Fichier genere par tools/extraction/ambassadeurs.py.
 # Ne pas editer a la main : toute modification sera ecrasee.
-ambassades: 21
-nommees: 12
-part_nommees: "57,1"
+ambassades: 22
+nommees: 13
+part_nommees: "59,1"
 sources_accord: 5
 sources_desaccord: 1
 par_tirage: 3
 elimine_ambassadeur: 3
-ambassadeurs_distincts: 27
+ambassadeurs_distincts: 29
 lignes:
 - saison: s10
   elimine: boris-deltell
@@ -88,6 +88,17 @@ lignes:
   elimine_est_ambassadeur: false
   source: wikipedia-fr
   phrase: D'un accord commun, les deux ambassadeurs Fabian et Marguerite décident d'éliminer Tugdual.
+- saison: s21
+  elimine: marie-france-schieber
+  episode: 8
+  ambassadeurs:
+  - hadja-cisse
+  - loic-riowal
+  nombre: 2
+  tirage_au_sort: false
+  elimine_est_ambassadeur: false
+  source: fandom
+  phrase: Hadja et Loïc, ambassadeurs, décident d'éliminer Marie-France.
 - saison: s22
   elimine: frederic-baudet
   ambassadeurs: null

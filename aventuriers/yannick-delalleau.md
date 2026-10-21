@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Yannick Delalleau (2016)"
-description: "Yannick Delalleau, Koh-Lanta L'Île au trésor (2016) : sort au conseil le 30e jour, 10e sur 20, 5 voix reçues. 310e sur 531 au classement des aventuriers."
+description: "Yannick Delalleau, Koh-Lanta L'Île au trésor (2016) : sort au conseil le 30e jour, 10e sur 20, 5 voix reçues. 307e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/yannick-delalleau.png
 permalink: /aventuriers/yannick-delalleau/
 aventurier: yannick-delalleau

@@ -336,13 +336,21 @@ plus tard » n’est pas un résultat retenu.
 
 <div class="constat">
   <p>{{ t3.observe_arrondi }} points d’écart, {{ t3.ecart_types }} écarts-types, p brute
-  {{ t3.p }}, p ajustée {{ t3.p_ajustee }}. <b>Non concluant.</b></p>
-  <p>S’être trompé de cible expose peut-être un peu, mais à
+  {{ t3.p }}, p ajustée {{ t3.p_ajustee }}. <b>Retenu, de justesse.</b></p>
+  <p>S’être trompé de cible au conseil précédent expose : à
   {{ c.par_camp[1].effectif }} présences du côté de la minorité, un écart de
-  {{ t3.observe_arrondi }} points ne se distingue pas d’un tirage. On ne peut ni l’affirmer ni
-  l’écarter — et l’écrire ainsi vaut mieux que de le publier comme un
-  résultat.</p>
+  {{ t3.observe_arrondi }} points se distingue d’un tirage. Mais il passe le
+  seuil de peu, et une correction des données suffirait à le faire repasser
+  dessous.</p>
 </div>
+
+<p class="note"><strong>Cette page a longtemps conclu l’inverse.</strong>
+Jusqu’au 21 octobre 2026, elle écrivait « Non concluant » (p ajustée 0,063).
+Ce jour-là, vingt-quatre colonnes de la matrice des votes qui passaient pour
+des conseils ont été rendues à leur nature de sorties sans vote — destins
+liés, duels de riposte, épreuves —, et la ligne décalée d’un votant de
+<i>Raja Ampat</i> a été remise en place. Le résultat a passé le seuil. Il est
+publié tel quel, avec l’ancienne conclusion en regard.</p>
 
 ## Une autre question : le nom ressort-il ?
 

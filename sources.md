@@ -430,12 +430,15 @@ quelqu’un qui a fini la saison. Ce n’est pas une faute de lecture : **ce so
 vrais retours en jeu**, et les sources les racontent. Panama consacre à l’un
 d’eux le titre de son neuvième épisode — « <i>Le retour de Linda</i> ». Au
 <i>Feu sacré</i>, Tania est votée deux fois et revient deux fois, une fois par
-un duel, une fois pour remplacer un abandon. À <i>La Nouvelle Édition</i>, Martin
-sort dernier d’une épreuve d’immunité et revient par un duel à l’épisode
-suivant. Deux d’entre eux sont allés jusqu’à la victoire : Christina, à
-<i>Palau</i>, que la source anglaise dit « revenue en jeu », et André, à
-<i>Fidji</i>, éliminé avec son binôme puis réintégré par un duel. Ces deux-là,
-le site les a longtemps tenus pour une erreur de la source.
+un duel, une fois pour remplacer un abandon. Christina, à <i>Palau</i>, que la
+source anglaise dit « revenue en jeu », est allée jusqu’à la victoire.
+
+D’autres reviennent après une sortie qui n’était pas un vote, et ne comptent
+donc pas parmi ces conseils. À <i>La Nouvelle Édition</i>, Martin sort dernier
+d’une épreuve d’immunité et revient par un duel à l’épisode suivant. André, à
+<i>Fidji</i>, est emporté par les destins liés avec son binôme, réintégré par un
+duel, et gagne la saison. Christina et André, le site les a longtemps tenus pour
+une erreur de la source.
 
 Le jeu de données ne sait pas dire « éliminé puis revenu » : `sort` ne retient
 que le point d’arrivée. Tant qu’on ne le savait pas, **la première élimination
@@ -1071,10 +1074,13 @@ Trois chiffres publiés ont bougé, tous dans le sens d’une base plus large :
   {{ site.data.stats.indicateurs.mesurables }}. Leur taux de victoire, mesuré
   cette fois contre un groupe de comparaison correct, en est nettement réduit.
 
-{{ site.data.stats.conseils.elimines_non_rattaches }} conseils restent volontairement
-non rattachés : leur éliminé n’y est désigné que par un prénom que deux
-aventuriers de la saison portent — Jérôme, dans *La Revanche des 4 Terres*.
-Plutôt que de trancher, on laisse la valeur vide.
+Deux conseils sont longtemps restés volontairement non rattachés : leur éliminé
+n’y était désigné que par un prénom que deux aventuriers de la saison portent
+— Jérôme, dans *La Revanche des 4 Terres*. Plutôt que de deviner, on laissait la
+valeur vide. Wikipédia les distingue par leur tribu : au seizième épisode,
+Jérôme de la tribu bleue se qualifie à l’orientation, Jérôme des Landes y sort,
+puis Gaëlle, gagnante des poteaux, écarte Jérôme le Catalan. Les deux
+colonnes sont rattachées depuis le 21 octobre 2026 ; il n’en reste aucune.
 
 ## Deux autres pannes silencieuses, et ce qu’elles cachaient
 

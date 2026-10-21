@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Béatrice Cloix Penisson (2002)"
-description: "Béatrice Cloix Penisson, Koh-Lanta Nicoya (2002) : sort au conseil le 28e jour, 8e sur 16, 2 épreuves gagnées. 91e sur 531 au classement des aventuriers."
+description: "Béatrice Cloix Penisson, Koh-Lanta Nicoya (2002) : sort au conseil le 28e jour, 8e sur 16, 2 épreuves gagnées. 93e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/beatrice-cloix-penisson.png
 permalink: /aventuriers/beatrice-cloix-penisson/
 aventurier: beatrice-cloix-penisson

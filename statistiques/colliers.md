@@ -46,21 +46,24 @@ s’ils ont servi, et combien de voix ils ont annulées.
 </table>
 </div>
 
+{% assign issue_efficace = c.issues | where: "issue", "annulation_efficace" | first %}
+{% assign issue_pour_rien = c.issues | where: "issue", "joue_pour_rien" | first %}
+{% assign issue_parti = c.issues | where: "issue", "elimine_avec_collier" | first %}
 **Le dénominateur change tout.** Rapporté à l’ensemble des colliers cachés, le
-« joué et efficace » ne pèse que {{ c.issues[0].part_totale }} %. Mais un
+« joué et efficace » ne pèse que {{ issue_efficace.part_totale }} %. Mais un
 collier que personne n’a découvert n’est l’échec de personne : rapporté aux
-seuls colliers **trouvés**, il monte à {{ c.issues[0].part_des_trouves }} %.
+seuls colliers **trouvés**, il monte à {{ issue_efficace.part_des_trouves }} %.
 Les deux chiffres sont vrais, ils ne répondent pas à la même question.
 
 ## Trois enseignements
 
 **Un collier sur trois est joué pour rien.**
-{{ c.issues[1].part_des_trouves }} % des colliers trouvés sont sortis du sac
+{{ issue_pour_rien.part_des_trouves }} % des colliers trouvés sont sortis du sac
 sans annuler la moindre voix — leur détenteur n’était pas visé. C’est la peur
 qui a parlé, pas la lecture du jeu.
 
-**Un sur sept part avec son propriétaire.** Éliminé au conseil, collier dans le
-sac : {{ c.issues[3].part_des_trouves }} % des colliers trouvés connaissent ce
+**Un sur dix part avec son propriétaire.** Éliminé au conseil, collier dans le
+sac : {{ issue_parti.part_des_trouves }} % des colliers trouvés connaissent ce
 sort. C’est le scénario que tout aventurier redoute, et il est plus rare qu’on
 ne le raconte.
 

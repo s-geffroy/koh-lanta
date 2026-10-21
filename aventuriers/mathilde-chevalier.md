@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Mathilde Chevalier — Cambodge (2017)"
-description: "Mathilde Chevalier, Koh-Lanta Cambodge (2017) : sort à l'orientation le 39e jour, 4e sur 21, 1 épreuve gagnée. 226e sur 531 au classement des aventuriers."
+description: "Mathilde Chevalier, Koh-Lanta Cambodge (2017) : sort à l'orientation le 39e jour, 4e sur 21, 1 épreuve gagnée. 227e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/mathilde-chevalier.png
 permalink: /aventuriers/mathilde-chevalier/
 aventurier: mathilde-chevalier

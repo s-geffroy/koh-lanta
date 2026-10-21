@@ -908,8 +908,10 @@ AFFIRMATIONS_PAGES = {
                                "deux conseils plus tard n'est pas retenue"),
     "talent_stable": (False, "sources.md ecrit que la stabilite reste trop mince "
                              "pour etre retenue"),
-    "ambassadeurs_survie": (True, "statistiques/reunification.md ecrit que l'ambassadeur "
-                                  "sort plus tot"),
+    "ambassadeurs_survie": (False, "statistiques/reunification.md ecrit qu'on ne peut pas "
+                                   "affirmer que l'ambassadeur sort plus tot"),
+    "camp_perdant": (True, "statistiques/conditionnelles.md et l'article court ecrivent que "
+                           "voter avec la minorite expose, de justesse"),
     "vote_meme_sexe": (True, "statistiques/qui-vise-qui.md et le resume du "
                              "sommaire ecrivent « le sexe : un peu »"),
     "vote_meme_metier": (True, "statistiques/qui-vise-qui.md et le resume du "
@@ -1011,17 +1013,19 @@ AFFIRMATIONS_VALEURS = [
     (("rattachement",), lambda x: x["colliers"] == x["colliers_rattaches"]
      and x["vainqueurs_restants_personnes"] == 0,
      "sources.md ecrit qu'il ne reste aucun nom de personne non rattache"),
-    (("conseils", "retours_en_jeu"), lambda x: x == 7,
-     "sources.md raconte les retours en jeu un par un (Linda, Francis, Tania deux "
-     "fois, Martin, Christina, Andre)"),
+    (("modeles", "registre"),
+     lambda x: 0.01 <= float(str(next(t for t in x if t["cle"] == "camp_perdant")["p_ajustee"]).replace(",", ".")) < 0.05,
+     "statistiques/conditionnelles.md, l'article court et l'article long ecrivent « de justesse » pour camp_perdant"),
+    (("conseils", "retours_en_jeu"), lambda x: x == 5,
+     "sources.md raconte les conseils de revenants un par un (Linda, Tania deux "
+     "fois, Christina, et Francis en cinquieme cas)"),
     (("conseils", "part_serres"), lambda x: 33 <= x < 75,
      "statistiques/conseils.md ecrit que le vote est « souvent serre »"),
     (("jury", "decomptes_discordants"), lambda x: x == 0,
      "sources.md ecrit que le decompte annonce et les bulletins du jury "
      "coincident partout ou la source annonce un decompte"),
-    (("conseils", "elimines_non_rattaches"), lambda x: x == 2,
-     "sources.md attribue les conseils non rattaches aux deux Jerome de "
-     "La Revanche des 4 Terres"),
+    (("conseils", "elimines_non_rattaches"), lambda x: x == 0,
+     "sources.md ecrit qu'il ne reste aucun conseil non rattache"),
     (("modeles",), lambda x: x["nb_retenus"] - x["retenus_avec_vingt_nuls"] <= 2,
      "methode.md ecrit que, vingt tests nuls ajoutes, presque tous les "
      "resultats retenus tiennent et que ce n'est pas une raison de s'arreter"),
@@ -1057,10 +1061,10 @@ AFFIRMATIONS_VALEURS = [
     (("modeles","equilibre","cox","coefficients"), lambda x: max(x, key=lambda v: abs(math.log(v["rapport"])))["variable"] == "Déjà venu", "statistiques/revenants.md et equilibre.md ecrivent que « deja venu » est le plus gros coefficient du modele"),
     (("sorties",), lambda x: (lambda d: d(2, "conseil") <= d(0, "conseil") and d(2, "epreuve") > max(d(0, "epreuve"), d(1, "epreuve")))(lambda i, k: float(str(x["par_decennie"][i][k]).replace(",", "."))),
      "statistiques/sorties.md : le conseil ne gagne pas de terrain des annees 2000 aux annees 2020, l'epreuve eliminatoire monte et culmine dans les annees 2020"),
-    (("sorties",), lambda x: len(x["repartition"])==10 and x["par_decennie"][0]["ambassadeurs"]==0 and max(x["par_decennie"], key=lambda d: d["ambassadeurs"])["decennie"]=="2010s" and [r["sort"] for r in x["repartition"][:2]]==["elimine_conseil","abandon_medical"], "statistiques/sorties.md : dix facons de partir (description, chapeau), conseil puis abandon medical en tete, ambassadeurs absents des annees 2000 et au sommet dans les annees 2010"),
+    (("sorties",), lambda x: len(x["repartition"])==11 and x["par_decennie"][0]["ambassadeurs"]==0 and max(x["par_decennie"], key=lambda d: d["ambassadeurs"])["decennie"]=="2010s" and [r["sort"] for r in x["repartition"][:2]]==["elimine_conseil","abandon_medical"], "statistiques/sorties.md : onze facons de partir (description, chapeau), conseil puis abandon medical en tete, ambassadeurs absents des annees 2000 et au sommet dans les annees 2010"),
     (("prenoms","alexandra"), lambda x: x == 7, "statistiques/prenoms.md (description, chapeau) et le sommaire ecrivent qu'Alexandra revient sept fois"),
     (("age",), lambda x: max(x, key=lambda a: a["survie_moyenne"])["tranche"]=="30-34 ans" and max(x, key=lambda a: a["taux_finale"])["tranche"]=="30-34 ans" and x[5]["victoires"]==1, "statistiques/longevite.md, revenants.md et pronostic.md : les 30-34 ans tiennent le plus longtemps et accedent le plus a la finale ; une seule victoire chez les 45 ans et plus"),
-    (("colliers",), lambda x: 28 <= x["issues"][1]["part_des_trouves"] <= 38 and 12 <= x["issues"][3]["part_des_trouves"] <= 16 and x["palmares"][0]["trouves"] > x["palmares"][1]["trouves"], "statistiques/colliers.md : « un collier sur trois joue pour rien », « un sur sept part avec son proprietaire », un seul a faire le plein"),
+    (("colliers",), lambda x: (lambda part: 28 <= part("joue_pour_rien") <= 38 and 8.5 <= part("elimine_avec_collier") <= 11.5)(lambda k: float(str(next(i for i in x["issues"] if i["issue"] == k)["part_des_trouves"]).replace(",", "."))) and x["palmares"][0]["trouves"] > x["palmares"][1]["trouves"], "statistiques/colliers.md : « un collier sur trois joue pour rien », « un sur dix part avec son proprietaire », un seul a faire le plein"),
     (("classement","top"), lambda x: x[0]["nom"]=="Claude Dartois", "statistiques/colliers.md nomme Claude Dartois premier du classement, une seule de ses saisons couverte"),
     (("sommaire",), lambda x: (x["entrees"], x["descriptives"], x["testees"]) == (27, 11, 16), "statistiques.md (chapeau), index.md et le sommaire ecrivent vingt-sept entrees, onze qui decrivent, seize qui testent"),
     (("indicateurs","saisons"), lambda x: all(30 <= s["age_moyen"] < 40 for s in x if not s["speciale"] and s.get("age_moyen") is not None), "statistiques.md ecrit que l'age moyen reste autour de la trentaine"),
