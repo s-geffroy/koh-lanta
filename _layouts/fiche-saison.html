@@ -96,7 +96,8 @@ qui porte sur toute la carrière et pas sur cette seule saison.</p>
     <td>{{ c.profession }}</td>
     <td>{% if c.couleur %}<span class="pastille" style="background: var(--tribu-{{ c.couleur }})" aria-hidden="true"></span>{% endif %}{{ c.tribu }}</td>
     <td>{{ c.libelle_sort }}</td>
-    <td class="nombre" data-val="{{ c.jour_sortie }}">{{ c.jour_sortie }}</td>
+    <td class="nombre" data-val="{{ c.jour_sortie }}">{{ c.jour_sortie }}
+    {%- if c.part_parcours %}<span class="cellule-barre" style="width: {{ c.part_parcours }}%" aria-hidden="true"></span>{% endif %}</td>
     <td class="nombre" data-val="{{ c.voix_recues }}">{{ c.voix_recues }}</td>
     <td class="nombre" data-val="{{ c.rang }}">{{ c.rang }}</td>
   </tr>

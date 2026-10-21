@@ -73,6 +73,20 @@ def liste(d, cle):
     return d[cle] if isinstance(d, dict) else d
 
 
+def part_du_parcours(jour, duree):
+    """Jours tenus sur la duree de la saison, en entier de 0 a 100.
+
+    La longueur de la barre des fiches : calculee ici, le gabarit ne fait que
+    la lire. Plafonnee a 100 -- un jour de sortie peut depasser la duree
+    declaree d'un jour quand les sources ne s'accordent pas sur la fin.
+    Rien (None) quand l'un des deux manque : pas de barre plutot qu'une barre
+    fausse.
+    """
+    if not jour or not duree:
+        return None
+    return min(100, round(100 * jour / duree))
+
+
 def fiches_des_aventuriers(parts, personnes, saisons, indiv, classement, natures, colliers):
     par_saison = {s["id"]: s for s in saisons}
     par_pid = collections.defaultdict(list)
@@ -127,6 +141,7 @@ def fiches_des_aventuriers(parts, personnes, saisons, indiv, classement, natures
                 "sort": p.get("sort"),
                 "libelle_sort": LIBELLE_SORT.get(p.get("sort"), p.get("motif")),
                 "jour_sortie": p.get("jour_sortie"),
+                "part_parcours": part_du_parcours(p.get("jour_sortie"), s.get("duree_jours")),
                 "classement": p.get("classement"),
                 "voix_recues": p.get("votes_recus"),
                 "conseils_assistes": i.get("conseils_assistes"),
@@ -226,6 +241,7 @@ def fiches_des_saisons(parts, saisons, conseils, epreuves, audiences, classement
                 "sort": p.get("sort"),
                 "libelle_sort": LIBELLE_SORT.get(p.get("sort"), p.get("motif")),
                 "jour_sortie": p.get("jour_sortie"),
+                "part_parcours": part_du_parcours(p.get("jour_sortie"), s.get("duree_jours")),
                 "classement": p.get("classement"),
                 "voix_recues": p.get("votes_recus"),
                 "rang": r.get("rang"),

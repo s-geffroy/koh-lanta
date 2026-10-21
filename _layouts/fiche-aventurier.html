@@ -124,6 +124,9 @@ laquelle.</p>
 <h3>{{ p.titre }}{% if p.annee %} <span class="saison-numero">{{ p.annee }}</span>{% endif %}</h3>
 
 <div class="constat">
+  {%- if p.part_parcours %}
+  <span class="parcours" aria-hidden="true"><span style="width: {{ p.part_parcours }}%"></span></span>
+  {%- endif %}
   <p><b>{{ p.libelle_sort }}</b>
   {%- if p.jour_sortie %}, jour {{ p.jour_sortie }}{% endif -%}
   {%- if p.classement %} — {{ p.classement }}<sup>e</sup> sur {{ p.effectif }}{% endif %}.
