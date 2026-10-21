@@ -2480,7 +2480,9 @@ def main():
                 controle += 1
                 ecart = mean(mesures[s["saison"]]) / s["moyenne"] - 1
                 if abs(ecart) > 0.005:
-                    ecarts.append(f"*{s['titre']}*")
+                    # <i> et non *...* : la phrase est inseree dans un <p> de
+                    # audience.md, ou kramdown n'interprete pas le Markdown.
+                    ecarts.append(f"<i>{s['titre']}</i>")
                     ecart_max = max(ecart_max, abs(ecart))
         stats["audience_controle"] = {
             "saisons": controle,
