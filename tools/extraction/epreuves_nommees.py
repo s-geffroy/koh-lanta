@@ -73,6 +73,63 @@ def liens_ou_texte(cellule):
     return [x.strip() for x in re.split(r"\bet\b|,|&|/", v) if x.strip()] if v else []
 
 
+def lire_liste(texte, saison_de):
+    """Les pages sans tableau : une puce par saison.
+
+    Quatre pages du wiki, dont l'ORIENTATION, n'ont ni fiche d'identite ni
+    tableau « Apparitions et vainqueurs ». Elles listent, une puce par saison :
+
+      * [[Koh-Lanta : Palawan]] : [[Jade Handi|'''Jade''']], '''[[Kévin]]''' ...
+
+    Sous un titre « Candidats », les VAINQUEURS sont les noms en gras ; sous un
+    titre « Vainqueurs », tous les noms le sont, et la parenthese finale dit le
+    gain. Le gras est pose n'importe ou -- autour du lien, dans son libelle, sur
+    plusieurs noms a la fois -- : on le suit comme un interrupteur, chaque
+    « ''''' » le basculant, au lieu de chercher des motifs fixes. Un lien vers
+    une saison au milieu des noms n'est pas un nom.
+    """
+    apparitions, section = [], ""
+    for ligne in texte.split("\n"):
+        titre = re.match(r"^=+\s*(.*?)\s*=+\s*$", ligne)
+        if titre:
+            section = sansaccents(titre.group(1))
+            continue
+        if not ligne.startswith("*") or not ("candidat" in section or "vainqueur" in section):
+            continue
+        liens = list(RE_LIEN.finditer(ligne))
+        if not liens:
+            continue
+        sid = saison_de(liens[0].group(1)) or saison_de(liens[0].group(2) or "")
+        if not sid:
+            continue
+        gras = ligne[:liens[0].end()].count("'''") % 2 == 1
+        pos, noms, gagnants = liens[0].end(), [], []
+        for m in liens[1:]:
+            gras ^= ligne[pos:m.start()].count("'''") % 2 == 1
+            pos = m.end()
+            etiquette = m.group(2) or m.group(1)
+            bascules = etiquette.count("'''")
+            nom = re.sub(r"'{2,}", "", etiquette).strip(" ,.;:")
+            nom_gras = gras or bascules > 0
+            gras ^= bascules % 2 == 1
+            if not nom or saison_de(m.group(1)):
+                continue
+            noms.append(nom)
+            if nom_gras:
+                gagnants.append(nom)
+        if "vainqueur" in section:
+            gagnants = noms
+        gain = re.search(r"\(([^()]*)\)\s*$", propre(ligne[pos:]) and ligne[pos:].strip() or "")
+        apparitions.append({
+            "saison": sid,
+            "vainqueurs": gagnants,
+            "participants": noms if "candidat" in section else None,
+            "gain": gain.group(1).strip() if gain else None,
+            "genre": genre_du_gain(gain.group(1)) if gain else None,
+        })
+    return apparitions
+
+
 def lignes_de_table(bloc):
     """Les lignes d'une table wiki, chacune rendue comme une liste de cellules."""
     sortie = []
@@ -146,8 +203,10 @@ def lire(saisons):
                     "gain": gain or None,
                     "genre": genre_du_gain(gain),
                 })
+        if not apparitions:
+            apparitions = lire_liste(texte, saison_de)
         catalogue.append({
-            "nom": nom,
+            "nom": nom[:1].upper() + nom[1:],
             "type": (typ.group(1).strip() if typ else None),
             "natures": natures(typ.group(1) if typ else ""),
             "apparitions": len(apparitions),
@@ -305,6 +364,49 @@ def mesurer_raccord(catalogue, saisons, parts, epreuves):
     }
 
 
+FINALE = os.path.join(RACINE, "_data", "finale.yml")
+
+
+def completer_l_orientation(catalogue, parts):
+    """L'orientation des saisons que la page du wiki ne liste pas encore.
+
+    La page « Épreuve d'Orientation » s'arrete au Totem maudit (2022). Les
+    saisons suivantes sont connues ailleurs : `_data/finale.yml` lit les
+    qualifies et les elimines de l'orientation dans les tableaux de saison.
+    Sur les saisons que les deux sources partagent, elles concordent toutes
+    (confrontation du 21 octobre 2026) ; on complete donc, sans jamais
+    remplacer une saison que la page donne. Chaque ajout porte sa source.
+
+    D'ou l'ordre de la chaine : finale.py AVANT ce script (README).
+    """
+    if not os.path.exists(FINALE):
+        return []
+    o = next((e for e in catalogue if e["nom"] == "Orientation"), None)
+    if o is None:
+        return []
+    prenom = {(p["saison"], p["id"]): p["nom"] for p in parts}
+    deja = {a["saison"] for a in o["detail"]}
+    ajouts = []
+    for l in donnees.charger(open(FINALE, encoding="utf-8")).get("lignes") or []:
+        orient = l.get("orientation") or {}
+        qualifies = orient.get("qualifies") or []
+        if not qualifies or l["saison"] in deja:
+            continue
+        noms = lambda ids: [prenom[(l["saison"], i)] for i in ids if (l["saison"], i) in prenom]
+        o["detail"].append({
+            "saison": l["saison"],
+            "vainqueurs": noms(qualifies),
+            "participants": noms(qualifies + (orient.get("elimines") or [])),
+            "gain": None,
+            "genre": None,
+            "source": "finale.yml",
+        })
+        ajouts.append(l["saison"])
+    o["apparitions"] = len(o["detail"])
+    o["saisons"] = sorted({a["saison"] for a in o["detail"]})
+    return ajouts
+
+
 def main():
     a = argparse.ArgumentParser(description=__doc__)
     a.add_argument("--ecrire", action="store_true")
@@ -317,6 +419,9 @@ def main():
     epreuves = lire_data("epreuves.yml")
 
     catalogue, rapport = lire(saisons)
+    ajouts = completer_l_orientation(catalogue, parts)
+    if ajouts:
+        rapport.append(f"orientation completee par finale.yml : {', '.join(ajouts)}")
     raccord = mesurer_raccord(catalogue, saisons, parts, epreuves)
     palmares, couverture = palmares_par_personne(catalogue, saisons, parts)
 

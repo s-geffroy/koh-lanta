@@ -2227,14 +2227,14 @@ finale:
     choix_atteste: true
     poteaux_gagne: true
 natures:
-  citations: 498
-  attribuees: 316
-  part: "63,5"
-  personnes: 183
-  victoires: 431
-  part_femmes: "42,7"
-  part_au_bout: "40,4"
-  age_moyen: 32
+  citations: 648
+  attribuees: 433
+  part: "66,8"
+  personnes: 215
+  victoires: 435
+  part_femmes: "42,8"
+  part_au_bout: 40
+  age_moyen: "31,9"
   seuil: 30
   par_nature:
   - nature: rapidite
@@ -2246,13 +2246,13 @@ natures:
       probabilite: "42,5"
       bas: "34,3"
       haut: "51,2"
-      hasard: "42,7"
+      hasard: "42,8"
     au_bout:
       cas: 48
       probabilite: "37,8"
       bas: "29,8"
       haut: "46,5"
-      hasard: "40,4"
+      hasard: 40
     age_moyen: "30,7"
   - nature: precision
     libelle: Précision
@@ -2263,31 +2263,31 @@ natures:
       probabilite: 37
       bas: "27,8"
       haut: "47,2"
-      hasard: "42,7"
+      hasard: "42,8"
     au_bout:
       cas: 38
       probabilite: "41,3"
       bas: "31,8"
       haut: "51,5"
-      hasard: "40,4"
+      hasard: 40
     age_moyen: "34,5"
   - nature: force
     libelle: Force
-    effectif: 84
+    effectif: 88
     assez: true
     femmes:
-      cas: 38
-      probabilite: "45,2"
-      bas: 35
-      haut: "55,9"
-      hasard: "42,7"
+      cas: 40
+      probabilite: "45,5"
+      bas: "35,5"
+      haut: "55,8"
+      hasard: "42,8"
     au_bout:
       cas: 36
-      probabilite: "42,9"
-      bas: "32,8"
-      haut: "53,5"
-      hasard: "40,4"
-    age_moyen: "30,2"
+      probabilite: "40,9"
+      bas: "31,2"
+      haut: "51,4"
+      hasard: 40
+    age_moyen: 30
   - nature: statique
     libelle: Statique
     effectif: 63
@@ -2297,13 +2297,13 @@ natures:
       probabilite: "41,3"
       bas: 30
       haut: "53,6"
-      hasard: "42,7"
+      hasard: "42,8"
     au_bout:
       cas: 25
       probabilite: "39,7"
       bas: "28,5"
       haut: 52
-      hasard: "40,4"
+      hasard: 40
     age_moyen: "33,4"
   - nature: equilibre
     libelle: Équilibre
@@ -2314,13 +2314,13 @@ natures:
       probabilite: "51,4"
       bas: "35,9"
       haut: "66,6"
-      hasard: "42,7"
+      hasard: "42,8"
     au_bout:
       cas: 18
       probabilite: "48,6"
       bas: "33,4"
       haut: "64,1"
-      hasard: "40,4"
+      hasard: 40
     age_moyen: "29,7"
   - nature: reflexion
     libelle: Réflexion
@@ -2331,13 +2331,13 @@ natures:
       probabilite: "41,7"
       bas: "19,3"
       haut: 68
-      hasard: "42,7"
+      hasard: "42,8"
     au_bout:
       cas: 4
       probabilite: "33,3"
       bas: "13,8"
       haut: "60,9"
-      hasard: "40,4"
+      hasard: 40
     age_moyen: "32,9"
   - nature: logique
     libelle: Logique
@@ -2348,13 +2348,13 @@ natures:
       probabilite: "54,5"
       bas: 28
       haut: "78,7"
-      hasard: "42,7"
+      hasard: "42,8"
     au_bout:
       cas: 3
       probabilite: "27,3"
       bas: "9,7"
       haut: "56,6"
-      hasard: "40,4"
+      hasard: 40
     age_moyen: "33,7"
   - nature: aquatique
     libelle: Aquatique
@@ -2365,15 +2365,15 @@ natures:
       probabilite: 40
       bas: "11,8"
       haut: "76,9"
-      hasard: "42,7"
+      hasard: "42,8"
     au_bout:
       cas: 2
       probabilite: 40
       bas: "11,8"
       haut: "76,9"
-      hasard: "40,4"
+      hasard: 40
     age_moyen: "41,2"
-  citations_restantes: 182
+  citations_restantes: 215
 revenants:
   paradoxe:
   - libelle: Jamais rappelés
@@ -8018,7 +8018,7 @@ epreuves:
   - *id018
   victoires_25_34: 1
   rapport_45_et_plus: "2,3"
-  gain_appariement: "7,3"
+  gain_appariement: "9,2"
   pages_categorie: 57
 colliers:
   colliers: 74
@@ -35409,10 +35409,10 @@ mots:
   archetypes_maj: Six
   avant_apres_tests: cinq
   avant_apres_tests_maj: Cinq
-  noms_sans_apparition: quatre
-  noms_sans_apparition_maj: Quatre
-  noms_sans_vainqueur: dix-sept
-  noms_sans_vainqueur_maj: Dix-sept
+  noms_sans_apparition: trois
+  noms_sans_apparition_maj: Trois
+  noms_sans_vainqueur: dix-huit
+  noms_sans_vainqueur_maj: Dix-huit
   victoires_jaunes: douze
   victoires_jaunes_maj: Douze
   victoires_rouges: douze

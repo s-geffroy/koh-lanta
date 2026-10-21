@@ -1325,6 +1325,8 @@ aventuriers:
       epreuves_disputees: 11
       epreuves_gagnees: 3
       epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       - id: palets
         nom: Palets
       - id: poteries-en-equilibre
@@ -1989,6 +1991,8 @@ aventuriers:
       epreuves_nommees:
       - id: aveugle
         nom: Aveugle
+      - id: elastiques
+        nom: Élastiques
       evasion: null
       jour_sortie: 38
       justesse_vote: 80
@@ -1997,6 +2001,8 @@ aventuriers:
       localisation: Rhône
       menace: "0,07"
       natures:
+      - effectif: 1
+        nature: force
       - effectif: 1
         nature: rapidite
       numero: 5
@@ -2301,10 +2307,10 @@ aventuriers:
       epreuves_nommees:
       - id: koalas-inverses
         nom: Koalas inversés
-      - id: parcours-du-combattant
-        nom: Parcours du combattant
       - id: la-bascule
         nom: La bascule
+      - id: parcours-du-combattant
+        nom: Parcours du combattant
       evasion: null
       jour_sortie: 32
       justesse_vote: 60
@@ -3017,6 +3023,8 @@ aventuriers:
         nom: À bout de souffle
       - id: grappins
         nom: Grappins
+      - id: orientation
+        nom: Orientation
       evasion: null
       jour_sortie: 41
       justesse_vote: 50
@@ -4857,6 +4865,8 @@ aventuriers:
       epreuves_nommees:
       - id: a-bout-de-souffle
         nom: À bout de souffle
+      - id: orientation
+        nom: Orientation
       - id: parcours-du-combattant
         nom: Parcours du combattant
       - id: tables-a-bascule
@@ -5268,6 +5278,10 @@ aventuriers:
         nom: Barils
       - id: grappins
         nom: Grappins
+      - id: la-degustation
+        nom: La dégustation
+      - id: orientation
+        nom: Orientation
       - id: sacs
         nom: Sacs
       evasion: null
@@ -5826,6 +5840,8 @@ aventuriers:
         nom: Bambous
       - id: boue
         nom: Boue
+      - id: orientation
+        nom: Orientation
       - id: parcours-du-combattant
         nom: Parcours du combattant
       - id: sacs
@@ -5872,6 +5888,10 @@ aventuriers:
       epreuves_nommees:
       - id: aveugle
         nom: Aveugle
+      - id: la-degustation
+        nom: La dégustation
+      - id: orientation
+        nom: Orientation
       evasion: null
       jour_sortie: 23
       justesse_vote: null
@@ -6414,7 +6434,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 14
       epreuves_gagnees: 2
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: 100
       jour_sortie: 42
       justesse_vote: "62,5"
@@ -6494,6 +6516,8 @@ aventuriers:
       epreuves_nommees:
       - id: boules
         nom: Boules
+      - id: orientation
+        nom: Orientation
       - id: poteries-en-equilibre
         nom: Poteries en équilibre
       evasion: 100
@@ -9377,6 +9401,10 @@ aventuriers:
       epreuves_disputees: 15
       epreuves_gagnees: 2
       epreuves_nommees:
+      - id: la-degustation
+        nom: La dégustation
+      - id: orientation
+        nom: Orientation
       - id: paresseux
         nom: Paresseux
       evasion: 100
@@ -9883,7 +9911,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 12
       epreuves_gagnees: 4
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: 100
       jour_sortie: 41
       justesse_vote: "85,7"
@@ -10148,6 +10178,8 @@ aventuriers:
       epreuves_disputees: 13
       epreuves_gagnees: 1
       epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       - id: parcours-du-combattant
         nom: Parcours du combattant
       - id: plots
@@ -10392,6 +10424,8 @@ aventuriers:
         nom: Aveugle
       - id: boue
         nom: Boue
+      - id: orientation
+        nom: Orientation
       - id: parcours-du-combattant
         nom: Parcours du combattant
       evasion: null
@@ -10767,7 +10801,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 9
       epreuves_gagnees: 0
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: 100
       jour_sortie: 20
       justesse_vote: 100
@@ -11000,6 +11036,10 @@ aventuriers:
       epreuves_disputees: 14
       epreuves_gagnees: 2
       epreuves_nommees:
+      - id: la-degustation
+        nom: La dégustation
+      - id: orientation
+        nom: Orientation
       - id: tir-a-l-arc
         nom: Tir à l'arc
       evasion: null
@@ -11269,6 +11309,8 @@ aventuriers:
       epreuves_disputees: 9
       epreuves_gagnees: 4
       epreuves_nommees:
+      - id: la-degustation
+        nom: La dégustation
       - id: poteries-en-equilibre
         nom: Poteries en équilibre
       evasion: "66,7"
@@ -11427,7 +11469,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 13
       epreuves_gagnees: 2
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: 100
       jour_sortie: 39
       justesse_vote: 70
@@ -11509,6 +11553,8 @@ aventuriers:
       epreuves_nommees:
       - id: boue
         nom: Boue
+      - id: orientation
+        nom: Orientation
       - id: parcours-du-combattant
         nom: Parcours du combattant
       - id: paresseux
@@ -11563,6 +11609,8 @@ aventuriers:
         nom: Grappins
       - id: massues
         nom: Massues
+      - id: orientation
+        nom: Orientation
       - id: paresseux
         nom: Paresseux
       evasion: 100
@@ -11607,8 +11655,12 @@ aventuriers:
         nom: Catapulte
       - id: dominos
         nom: Dominos
+      - id: la-degustation
+        nom: La dégustation
       - id: labyrinthe-aquatique
         nom: Labyrinthe aquatique
+      - id: orientation
+        nom: Orientation
       - id: parcours-du-combattant
         nom: Parcours du combattant
       - id: tables-a-bascule
@@ -11655,6 +11707,8 @@ aventuriers:
       epreuves_nommees:
       - id: bambous
         nom: Bambous
+      - id: orientation
+        nom: Orientation
       - id: parcours-du-combattant
         nom: Parcours du combattant
       - id: paresseux
@@ -11822,6 +11876,8 @@ aventuriers:
       epreuves_disputees: 11
       epreuves_gagnees: 2
       epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       - id: sacs
         nom: Sacs
       evasion: null
@@ -11892,6 +11948,8 @@ aventuriers:
       epreuves_disputees: 9
       epreuves_gagnees: 2
       epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       - id: relais-aquatiques
         nom: Relais aquatiques
       evasion: null
@@ -12169,6 +12227,8 @@ aventuriers:
       epreuves_disputees: 11
       epreuves_gagnees: 1
       epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       - id: parcours-du-combattant
         nom: Parcours du combattant
       evasion: null
@@ -12669,6 +12729,8 @@ aventuriers:
       epreuves_nommees:
       - id: parcours-du-combattant
         nom: Parcours du combattant
+      - id: elastiques
+        nom: Élastiques
       evasion: 50
       jour_sortie: 31
       justesse_vote: "87,5"
@@ -12677,7 +12739,7 @@ aventuriers:
       localisation: Hauts-de-Seine
       menace: "0,73"
       natures:
-      - effectif: 1
+      - effectif: 2
         nature: force
       - effectif: 1
         nature: rapidite
@@ -12741,6 +12803,8 @@ aventuriers:
       epreuves_disputees: 9
       epreuves_gagnees: 1
       epreuves_nommees:
+      - id: la-degustation
+        nom: La dégustation
       - id: parcours-du-combattant
         nom: Parcours du combattant
       evasion: null
@@ -12865,7 +12929,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 13
       epreuves_gagnees: 3
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: 100
       jour_sortie: 39
       justesse_vote: 40
@@ -13410,6 +13476,8 @@ aventuriers:
       epreuves_disputees: 9
       epreuves_gagnees: 1
       epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       - id: parcours-du-combattant
         nom: Parcours du combattant
       evasion: null
@@ -14495,7 +14563,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 11
       epreuves_gagnees: 1
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: 100
       jour_sortie: 40
       justesse_vote: 100
@@ -15223,7 +15293,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 4
       epreuves_gagnees: 1
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: la-degustation
+        nom: La dégustation
       evasion: null
       jour_sortie: 30
       justesse_vote: "66,7"
@@ -15674,6 +15746,8 @@ aventuriers:
       epreuves_disputees: 9
       epreuves_gagnees: 1
       epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       - id: tir-a-l-arc
         nom: Tir à l'arc
       evasion: 100
@@ -16021,6 +16095,8 @@ aventuriers:
       epreuves_disputees: 11
       epreuves_gagnees: 2
       epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       - id: tir-a-l-arc
         nom: Tir à l'arc
       evasion: "66,7"
@@ -16292,6 +16368,8 @@ aventuriers:
       epreuves_nommees:
       - id: boue
         nom: Boue
+      - id: orientation
+        nom: Orientation
       evasion: 100
       jour_sortie: 40
       justesse_vote: 100
@@ -16419,6 +16497,8 @@ aventuriers:
       epreuves_nommees:
       - id: grappins
         nom: Grappins
+      - id: orientation
+        nom: Orientation
       - id: sacs
         nom: Sacs
       evasion: null
@@ -16908,7 +16988,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 12
       epreuves_gagnees: 1
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: 100
       jour_sortie: 41
       justesse_vote: "55,6"
@@ -17032,6 +17114,10 @@ aventuriers:
       epreuves_nommees:
       - id: boue
         nom: Boue
+      - id: la-degustation
+        nom: La dégustation
+      - id: orientation
+        nom: Orientation
       evasion: 100
       jour_sortie: 20
       justesse_vote: 100
@@ -17399,6 +17485,8 @@ aventuriers:
       epreuves_disputees: 11
       epreuves_gagnees: 1
       epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       - id: pendule
         nom: Pendule
       evasion: 100
@@ -17482,6 +17570,8 @@ aventuriers:
       epreuves_nommees:
       - id: grappins
         nom: Grappins
+      - id: orientation
+        nom: Orientation
       evasion: null
       jour_sortie: 40
       justesse_vote: 100
@@ -17562,7 +17652,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 13
       epreuves_gagnees: 2
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: null
       jour_sortie: 40
       justesse_vote: "37,5"
@@ -17983,6 +18075,8 @@ aventuriers:
       epreuves_nommees:
       - id: aveugle
         nom: Aveugle
+      - id: orientation
+        nom: Orientation
       - id: sacs
         nom: Sacs
       evasion: 100
@@ -18144,7 +18238,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 12
       epreuves_gagnees: 0
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: 100
       jour_sortie: 40
       justesse_vote: 75
@@ -18464,7 +18560,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 14
       epreuves_gagnees: 0
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: null
       jour_sortie: 39
       justesse_vote: "57,1"
@@ -18542,10 +18640,12 @@ aventuriers:
       epreuves_disputees: 13
       epreuves_gagnees: 2
       epreuves_nommees:
-      - id: tir-a-l-arc
-        nom: Tir à l'arc
       - id: la-bascule
         nom: La bascule
+      - id: orientation
+        nom: Orientation
+      - id: tir-a-l-arc
+        nom: Tir à l'arc
       evasion: null
       jour_sortie: 41
       justesse_vote: 50
@@ -18894,6 +18994,8 @@ aventuriers:
       epreuves_disputees: 9
       epreuves_gagnees: 2
       epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       - id: sacs
         nom: Sacs
       evasion: null
@@ -19164,7 +19266,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 13
       epreuves_gagnees: 2
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: 0
       jour_sortie: 39
       justesse_vote: 75
@@ -20192,6 +20296,8 @@ aventuriers:
       epreuves_nommees:
       - id: la-bascule
         nom: La bascule
+      - id: orientation
+        nom: Orientation
       evasion: null
       jour_sortie: 41
       justesse_vote: "42,9"
@@ -20268,7 +20374,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 10
       epreuves_gagnees: 0
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: null
       jour_sortie: 32
       justesse_vote: "83,3"
@@ -20427,6 +20535,8 @@ aventuriers:
       epreuves_nommees:
       - id: massues
         nom: Massues
+      - id: orientation
+        nom: Orientation
       evasion: 100
       jour_sortie: 38
       justesse_vote: "87,5"
@@ -20646,7 +20756,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 9
       epreuves_gagnees: 0
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: 100
       jour_sortie: 40
       justesse_vote: 80
@@ -21072,6 +21184,8 @@ aventuriers:
       epreuves_nommees:
       - id: koalas-inverses
         nom: Koalas inversés
+      - id: orientation
+        nom: Orientation
       - id: parcours-du-combattant
         nom: Parcours du combattant
       - id: paresseux
@@ -21114,6 +21228,8 @@ aventuriers:
       epreuves_disputees: 9
       epreuves_gagnees: 2
       epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       - id: parcours-du-combattant
         nom: Parcours du combattant
       - id: sacs
@@ -21352,10 +21468,10 @@ aventuriers:
       epreuves_disputees: 8
       epreuves_gagnees: 4
       epreuves_nommees:
-      - id: parcours-du-combattant
-        nom: Parcours du combattant
       - id: la-bascule
         nom: La bascule
+      - id: parcours-du-combattant
+        nom: Parcours du combattant
       evasion: null
       jour_sortie: 32
       justesse_vote: 75
@@ -21631,7 +21747,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 14
       epreuves_gagnees: 0
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: 100
       jour_sortie: 39
       justesse_vote: 75
@@ -22324,6 +22442,8 @@ aventuriers:
       epreuves_nommees:
       - id: cubes
         nom: Cubes
+      - id: orientation
+        nom: Orientation
       evasion: 75
       jour_sortie: 18
       justesse_vote: 75
@@ -23005,6 +23125,8 @@ aventuriers:
       epreuves_nommees:
       - id: boue
         nom: Boue
+      - id: orientation
+        nom: Orientation
       evasion: 100
       jour_sortie: 42
       justesse_vote: "37,5"
@@ -23660,6 +23782,8 @@ aventuriers:
       epreuves_disputees: 11
       epreuves_gagnees: 2
       epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       - id: paresseux
         nom: Paresseux
       - id: trapezes
@@ -24092,7 +24216,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 12
       epreuves_gagnees: 0
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: null
       jour_sortie: 38
       justesse_vote: 75
@@ -24323,7 +24449,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 14
       epreuves_gagnees: 3
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: la-degustation
+        nom: La dégustation
       evasion: "66,7"
       jour_sortie: 36
       justesse_vote: "66,7"
@@ -24480,6 +24608,8 @@ aventuriers:
       epreuves_nommees:
       - id: boue
         nom: Boue
+      - id: la-degustation
+        nom: La dégustation
       - id: parcours-du-combattant
         nom: Parcours du combattant
       - id: paresseux
@@ -24830,6 +24960,8 @@ aventuriers:
       epreuves_disputees: 13
       epreuves_gagnees: 1
       epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       - id: tir-a-l-arc
         nom: Tir à l'arc
       evasion: null
@@ -25762,6 +25894,8 @@ aventuriers:
       epreuves_nommees:
       - id: a-bout-de-souffle
         nom: À bout de souffle
+      - id: orientation
+        nom: Orientation
       evasion: null
       jour_sortie: 41
       justesse_vote: "62,5"
@@ -25796,6 +25930,10 @@ aventuriers:
       epreuves_disputees: 8
       epreuves_gagnees: 4
       epreuves_nommees:
+      - id: la-degustation
+        nom: La dégustation
+      - id: orientation
+        nom: Orientation
       - id: parcours-du-combattant
         nom: Parcours du combattant
       - id: tir-a-l-arc
@@ -25840,6 +25978,8 @@ aventuriers:
       epreuves_nommees:
       - id: bambous
         nom: Bambous
+      - id: orientation
+        nom: Orientation
       evasion: 100
       jour_sortie: 35
       justesse_vote: null
@@ -26227,7 +26367,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 11
       epreuves_gagnees: 0
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: 75
       jour_sortie: 40
       justesse_vote: "62,5"
@@ -26651,6 +26793,8 @@ aventuriers:
       epreuves_nommees:
       - id: labyrinthe
         nom: Labyrinthe
+      - id: orientation
+        nom: Orientation
       - id: palets
         nom: Palets
       - id: parcours-du-combattant
@@ -27379,6 +27523,8 @@ aventuriers:
       epreuves_disputees: 11
       epreuves_gagnees: 1
       epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       - id: planches-a-bascules
         nom: Planches à bascules
       evasion: 100
@@ -27658,7 +27804,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 12
       epreuves_gagnees: 0
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: null
       jour_sortie: 40
       justesse_vote: "66,7"
@@ -27817,6 +27965,8 @@ aventuriers:
         nom: Aveugle
       - id: noix-de-coco
         nom: Noix de coco
+      - id: orientation
+        nom: Orientation
       - id: tir-a-l-arc
         nom: Tir à l'arc
       evasion: null
@@ -28216,6 +28366,8 @@ aventuriers:
       epreuves_nommees:
       - id: boue
         nom: Boue
+      - id: orientation
+        nom: Orientation
       - id: parcours-du-combattant
         nom: Parcours du combattant
       - id: trapezes
@@ -28382,7 +28534,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 10
       epreuves_gagnees: 1
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: la-degustation
+        nom: La dégustation
       evasion: 100
       jour_sortie: 39
       justesse_vote: 60
@@ -29934,6 +30088,8 @@ aventuriers:
       epreuves_nommees:
       - id: bambous
         nom: Bambous
+      - id: orientation
+        nom: Orientation
       evasion: null
       jour_sortie: 23
       justesse_vote: 75
@@ -30165,7 +30321,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 13
       epreuves_gagnees: 0
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: null
       jour_sortie: 39
       justesse_vote: 100
@@ -30243,6 +30401,8 @@ aventuriers:
       epreuves_disputees: 6
       epreuves_gagnees: 2
       epreuves_nommees:
+      - id: la-degustation
+        nom: La dégustation
       - id: sacs
         nom: Sacs
       evasion: 50
@@ -30717,6 +30877,8 @@ aventuriers:
       epreuves_nommees:
       - id: noix-de-coco
         nom: Noix de coco
+      - id: orientation
+        nom: Orientation
       - id: tir-a-l-arc
         nom: Tir à l'arc
       evasion: 100
@@ -30906,7 +31068,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 9
       epreuves_gagnees: 0
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: 100
       jour_sortie: 23
       justesse_vote: null
@@ -31615,6 +31779,8 @@ aventuriers:
       epreuves_nommees:
       - id: bouees
         nom: Bouées
+      - id: orientation
+        nom: Orientation
       - id: sacs
         nom: Sacs
       - id: tables-a-bascule
@@ -31935,7 +32101,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 12
       epreuves_gagnees: 3
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: null
       jour_sortie: 38
       justesse_vote: 75
@@ -32334,6 +32502,8 @@ aventuriers:
       epreuves_nommees:
       - id: labyrinthe
         nom: Labyrinthe
+      - id: orientation
+        nom: Orientation
       - id: tables-a-bascule
         nom: Tables à bascule
       evasion: 100
@@ -32964,6 +33134,8 @@ aventuriers:
       epreuves_disputees: 11
       epreuves_gagnees: 4
       epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       - id: parcours-du-combattant
         nom: Parcours du combattant
       - id: paresseux
@@ -33390,6 +33562,8 @@ aventuriers:
       epreuves_nommees:
       - id: boue
         nom: Boue
+      - id: orientation
+        nom: Orientation
       - id: parcours-du-combattant
         nom: Parcours du combattant
       - id: sacs
@@ -34227,6 +34401,8 @@ aventuriers:
       epreuves_nommees:
       - id: labyrinthe-aquatique
         nom: Labyrinthe aquatique
+      - id: orientation
+        nom: Orientation
       - id: sacs
         nom: Sacs
       - id: tables-a-bascule
@@ -35317,6 +35493,8 @@ aventuriers:
       epreuves_disputees: 13
       epreuves_gagnees: 3
       epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       - id: parcours-du-combattant
         nom: Parcours du combattant
       evasion: null
@@ -35434,6 +35612,8 @@ aventuriers:
       epreuves_nommees:
       - id: a-bout-de-souffle
         nom: À bout de souffle
+      - id: la-degustation
+        nom: La dégustation
       - id: labyrinthe
         nom: Labyrinthe
       - id: parcours-du-combattant
@@ -35636,6 +35816,8 @@ aventuriers:
       epreuves_disputees: 12
       epreuves_gagnees: 2
       epreuves_nommees:
+      - id: la-degustation
+        nom: La dégustation
       - id: tir-a-l-arc
         nom: Tir à l'arc
       evasion: 100
@@ -36294,6 +36476,8 @@ aventuriers:
       epreuves_disputees: 13
       epreuves_gagnees: 1
       epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       - id: paresseux
         nom: Paresseux
       - id: tir-a-l-arc
@@ -36336,6 +36520,8 @@ aventuriers:
       epreuves_nommees:
       - id: aveugle
         nom: Aveugle
+      - id: orientation
+        nom: Orientation
       - id: relais-aquatiques
         nom: Relais aquatiques
       evasion: null
@@ -36774,6 +36960,8 @@ aventuriers:
       epreuves_disputees: 14
       epreuves_gagnees: 3
       epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       - id: perche
         nom: Perche
       evasion: null
@@ -37278,7 +37466,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 8
       epreuves_gagnees: 0
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: 100
       jour_sortie: 22
       justesse_vote: 100
@@ -37398,6 +37588,8 @@ aventuriers:
       epreuves_nommees:
       - id: bambous
         nom: Bambous
+      - id: orientation
+        nom: Orientation
       evasion: null
       jour_sortie: 40
       justesse_vote: "62,5"
@@ -37511,6 +37703,8 @@ aventuriers:
       epreuves_nommees:
       - id: grappins
         nom: Grappins
+      - id: orientation
+        nom: Orientation
       evasion: null
       jour_sortie: 40
       justesse_vote: 100
@@ -37546,7 +37740,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 8
       epreuves_gagnees: 2
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: la-degustation
+        nom: La dégustation
       evasion: 50
       jour_sortie: 21
       justesse_vote: 60
@@ -38087,6 +38283,8 @@ aventuriers:
       epreuves_disputees: 11
       epreuves_gagnees: 2
       epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       - id: sacs
         nom: Sacs
       evasion: null
@@ -38606,7 +38804,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 12
       epreuves_gagnees: 1
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: la-degustation
+        nom: La dégustation
       evasion: 50
       jour_sortie: 33
       justesse_vote: 25
@@ -39010,6 +39210,8 @@ aventuriers:
       epreuves_nommees:
       - id: aveugle
         nom: Aveugle
+      - id: elastiques
+        nom: Élastiques
       evasion: 100
       jour_sortie: 38
       justesse_vote: "87,5"
@@ -39018,6 +39220,8 @@ aventuriers:
       localisation: Calvados
       menace: "0,5"
       natures:
+      - effectif: 1
+        nature: force
       - effectif: 1
         nature: rapidite
       numero: 4
@@ -39043,7 +39247,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 9
       epreuves_gagnees: 1
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: 100
       jour_sortie: 21
       justesse_vote: "66,7"
@@ -39964,7 +40170,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 3
       epreuves_gagnees: 1
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: la-degustation
+        nom: La dégustation
       evasion: null
       jour_sortie: 26
       justesse_vote: 75
@@ -40420,6 +40628,8 @@ aventuriers:
       epreuves_nommees:
       - id: grappins
         nom: Grappins
+      - id: la-degustation
+        nom: La dégustation
       - id: noix-de-coco
         nom: Noix de coco
       evasion: null
@@ -40830,6 +41040,8 @@ aventuriers:
       epreuves_nommees:
       - id: grappins
         nom: Grappins
+      - id: orientation
+        nom: Orientation
       - id: parcours-du-combattant
         nom: Parcours du combattant
       evasion: "66,7"
@@ -41307,6 +41519,8 @@ aventuriers:
       epreuves_nommees:
       - id: paresseux
         nom: Paresseux
+      - id: elastiques
+        nom: Élastiques
       evasion: "33,3"
       jour_sortie: 31
       justesse_vote: 50
@@ -41315,6 +41529,8 @@ aventuriers:
       localisation: Seine-Saint-Denis
       menace: "1,1"
       natures:
+      - effectif: 1
+        nature: force
       - effectif: 1
         nature: statique
       numero: 4
@@ -41542,6 +41758,8 @@ aventuriers:
       epreuves_disputees: 14
       epreuves_gagnees: 2
       epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       - id: pendule
         nom: Pendule
       - id: tir-a-l-arc
@@ -42414,7 +42632,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 13
       epreuves_gagnees: 1
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: "87,5"
       jour_sortie: 40
       justesse_vote: "87,5"
@@ -42528,6 +42748,8 @@ aventuriers:
       epreuves_disputees: 13
       epreuves_gagnees: 5
       epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       - id: sacs
         nom: Sacs
       - id: etoile
@@ -42849,7 +43071,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 12
       epreuves_gagnees: 1
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: null
       jour_sortie: 41
       justesse_vote: 50
@@ -43243,6 +43467,8 @@ aventuriers:
       epreuves_nommees:
       - id: douche
         nom: Douche
+      - id: orientation
+        nom: Orientation
       evasion: 100
       jour_sortie: 41
       justesse_vote: 75
@@ -43433,6 +43659,8 @@ aventuriers:
       epreuves_disputees: 14
       epreuves_gagnees: 3
       epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       - id: tir-a-l-arc
         nom: Tir à l'arc
       evasion: null
@@ -43477,12 +43705,14 @@ aventuriers:
         nom: Colonnes
       - id: dominos
         nom: Dominos
-      - id: labyrinthe
-        nom: Labyrinthe
-      - id: perche
-        nom: Perche
       - id: la-bascule
         nom: La bascule
+      - id: labyrinthe
+        nom: Labyrinthe
+      - id: orientation
+        nom: Orientation
+      - id: perche
+        nom: Perche
       evasion: null
       jour_sortie: 3
       justesse_vote: null
@@ -44018,7 +44248,11 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 14
       epreuves_gagnees: 1
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: la-degustation
+        nom: La dégustation
+      - id: orientation
+        nom: Orientation
       evasion: null
       jour_sortie: 41
       justesse_vote: "62,5"
@@ -44746,6 +44980,8 @@ aventuriers:
         nom: Aveugle
       - id: colonnes
         nom: Colonnes
+      - id: orientation
+        nom: Orientation
       - id: parcours-du-combattant
         nom: Parcours du combattant
       - id: sacs
@@ -45065,7 +45301,9 @@ aventuriers:
       en_cours: false
       epreuves_disputees: 11
       epreuves_gagnees: 0
-      epreuves_nommees: []
+      epreuves_nommees:
+      - id: orientation
+        nom: Orientation
       evasion: 100
       jour_sortie: 40
       justesse_vote: 100
@@ -45177,6 +45415,8 @@ aventuriers:
       epreuves_nommees:
       - id: aveugle
         nom: Aveugle
+      - id: orientation
+        nom: Orientation
       evasion: null
       jour_sortie: 40
       justesse_vote: 100

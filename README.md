@@ -141,10 +141,10 @@ lit ce que la precedente a ecrit :
     tools/atelier python3 tools/extraction/prenoms_insee.py --ecrire
     tools/atelier python3 tools/extraction/geographie_insee.py --ecrire
     tools/atelier python3 tools/extraction/audiences.py --ecrire       # audiences TV
-    tools/atelier python3 tools/extraction/fetch_epreuves.py           # epreuves nommees
-    tools/atelier python3 tools/extraction/epreuves_nommees.py --ecrire
-    tools/atelier python3 tools/extraction/ambassadeurs.py --ecrire   # noms lus dans la prose
     tools/atelier python3 tools/extraction/finale.py --ecrire         # orientation, poteaux
+    tools/atelier python3 tools/extraction/fetch_epreuves.py           # epreuves nommees
+    tools/atelier python3 tools/extraction/epreuves_nommees.py --ecrire  # APRES finale.py
+    tools/atelier python3 tools/extraction/ambassadeurs.py --ecrire   # noms lus dans la prose
 
 Le wikitexte deja recupere n'est JAMAIS redemande : il est versionne comme
 preuve de provenance. Une saison en cours de diffusion fait exception -- sa page

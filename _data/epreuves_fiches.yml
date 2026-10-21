@@ -833,6 +833,96 @@ epreuves:
     record: *id005
     type: Précision, équilibre
     vainqueurs_nommes: 7
+  elastiques:
+    apparitions: 12
+    derniere_annee: 2022
+    editions:
+    - annee: 2004
+      id: s04
+      speciale: false
+      titre: Panama
+    - annee: 2005
+      id: s05
+      speciale: false
+      titre: Pacifique
+    - annee: 2009
+      id: sp1
+      speciale: true
+      titre: Le Retour des héros
+    - annee: 2010
+      id: s10
+      speciale: false
+      titre: Viêtnam
+    - annee: 2010
+      id: sp2
+      speciale: true
+      titre: Le Choc des héros
+    - annee: 2012
+      id: s12
+      speciale: false
+      titre: Malaisie
+    - annee: 2012
+      id: sp3
+      speciale: true
+      titre: La Revanche des héros
+    - annee: 2016
+      id: s15
+      speciale: false
+      titre: Thaïlande
+    - annee: 2017
+      id: s17
+      speciale: false
+      titre: Cambodge
+    - annee: 2017
+      id: s18
+      speciale: false
+      titre: Fidji
+    - annee: 2020
+      id: sp6
+      speciale: true
+      titre: L'Île des héros
+    - annee: 2022
+      id: s23
+      speciale: false
+      titre: Le Totem maudit
+    id: elastiques
+    natures:
+    - force
+    nom: Élastiques
+    palmares:
+    - &id006
+      id: alexis-tournier
+      nom: Alexis Tournier
+      saisons:
+      - annee: 2005
+        id: s05
+        titre: Pacifique
+      victoires: 1
+    - id: coumba-baradji
+      nom: Coumba Baradji
+      saisons:
+      - annee: 2005
+        id: s05
+        titre: Pacifique
+      victoires: 1
+    - id: romuald-lafite
+      nom: Romuald Lafite
+      saisons:
+      - annee: 2004
+        id: s04
+        titre: Panama
+      victoires: 1
+    - id: sophie-eeckhout
+      nom: Sophie Eeckhout
+      saisons:
+      - annee: 2004
+        id: s04
+        titre: Panama
+      victoires: 1
+    premiere_annee: 2004
+    record: *id006
+    type: Force
+    vainqueurs_nommes: 4
   etoile:
     apparitions: 8
     derniere_annee: 2021
@@ -874,7 +964,7 @@ epreuves:
     - statique
     nom: Étoile
     palmares:
-    - &id006
+    - &id007
       id: bernard-deniaud
       nom: Bernard Deniaud
       saisons:
@@ -939,7 +1029,7 @@ epreuves:
         titre: Raja Ampat
       victoires: 1
     premiere_annee: 2011
-    record: *id006
+    record: *id007
     type: Statique
     vainqueurs_nommes: 9
   grappins:
@@ -1016,7 +1106,7 @@ epreuves:
     - rapidite
     nom: Grappins
     palmares:
-    - &id007
+    - &id008
       id: andre-deleplace
       nom: André Deleplace
       saisons:
@@ -1130,7 +1220,7 @@ epreuves:
         titre: Le Combat des héros
       victoires: 1
     premiere_annee: 2006
-    record: *id007
+    record: *id008
     type: Rapidité, précision
     vainqueurs_nommes: 16
   la-bascule:
@@ -1169,7 +1259,7 @@ epreuves:
     natures: []
     nom: La bascule
     palmares:
-    - &id008
+    - &id009
       id: alix-noblat
       nom: Alix Noblat
       saisons:
@@ -1220,9 +1310,257 @@ epreuves:
         titre: La Légende
       victoires: 1
     premiere_annee: 2006
-    record: *id008
+    record: *id009
     type: null
     vainqueurs_nommes: 7
+  la-degustation:
+    apparitions: 22
+    derniere_annee: 2020
+    editions:
+    - annee: 2001
+      id: s01
+      speciale: false
+      titre: Les Aventuriers de Koh-Lanta
+    - annee: 2003
+      id: s03
+      speciale: false
+      titre: Bocas del Toro
+    - annee: 2004
+      id: s04
+      speciale: false
+      titre: Panama
+    - annee: 2005
+      id: s05
+      speciale: false
+      titre: Pacifique
+    - annee: 2006
+      id: s06
+      speciale: false
+      titre: Vanuatu
+    - annee: 2007
+      id: s07
+      speciale: false
+      titre: Palawan
+    - annee: 2008
+      id: s08
+      speciale: false
+      titre: Caramoan
+    - annee: 2009
+      id: s09
+      speciale: false
+      titre: Palau
+    - annee: 2009
+      id: sp1
+      speciale: true
+      titre: Le Retour des héros
+    - annee: 2010
+      id: s10
+      speciale: false
+      titre: Viêtnam
+    - annee: 2010
+      id: sp2
+      speciale: true
+      titre: Le Choc des héros
+    - annee: 2011
+      id: s11
+      speciale: false
+      titre: Raja Ampat
+    - annee: 2012
+      id: s12
+      speciale: false
+      titre: Malaisie
+    - annee: 2012
+      id: sp3
+      speciale: true
+      titre: La Revanche des héros
+    - annee: 2014
+      id: sp4
+      speciale: true
+      titre: La Nouvelle Édition
+    - annee: 2015
+      id: s14
+      speciale: false
+      titre: Johor
+    - annee: 2016
+      id: s15
+      speciale: false
+      titre: Thaïlande
+    - annee: 2016
+      id: s16
+      speciale: false
+      titre: L'Île au trésor
+    - annee: 2017
+      id: s17
+      speciale: false
+      titre: Cambodge
+    - annee: 2017
+      id: s18
+      speciale: false
+      titre: Fidji
+    - annee: 2019
+      id: s20
+      speciale: false
+      titre: La Guerre des chefs
+    - annee: 2020
+      id: sp6
+      speciale: true
+      titre: L'Île des héros
+    id: la-degustation
+    natures: []
+    nom: La dégustation
+    palmares:
+    - &id010
+      id: benoit-assadi
+      nom: Benoît Assadi
+      saisons:
+      - annee: 2016
+        id: s16
+        titre: L'Île au trésor
+      victoires: 1
+    - id: bertrand-bolle
+      nom: Bertrand Bolle
+      saisons:
+      - annee: 2012
+        id: sp3
+        titre: La Revanche des héros
+      victoires: 1
+    - id: chantal-menard
+      nom: Chantal Ménard
+      saisons:
+      - annee: 2015
+        id: s14
+        titre: Johor
+      victoires: 1
+    - id: cindy-poumeyrol
+      nom: Cindy Poumeyrol
+      saisons:
+      - annee: 2019
+        id: s20
+        titre: La Guerre des chefs
+      victoires: 1
+    - id: claire-pradayrol
+      nom: Claire Pradayrol
+      saisons:
+      - annee: 2017
+        id: s17
+        titre: Cambodge
+      victoires: 1
+    - id: claude-dartois
+      nom: Claude Dartois
+      saisons:
+      - annee: 2020
+        id: sp6
+        titre: L'Île des héros
+      victoires: 1
+    - id: coumba-baradji
+      nom: Coumba Baradji
+      saisons:
+      - annee: 2012
+        id: sp3
+        titre: La Revanche des héros
+      victoires: 1
+    - id: fabian-rocha-rocha
+      nom: Fabian Rocha Rocha
+      saisons:
+      - annee: 2017
+        id: s18
+        titre: Fidji
+      victoires: 1
+    - id: freddy-boucher
+      nom: Freddy Boucher
+      saisons:
+      - annee: 2010
+        id: sp2
+        titre: Le Choc des héros
+      victoires: 1
+    - id: kader-rebai
+      nom: Kader Rebaï
+      saisons:
+      - annee: 2009
+        id: s09
+        titre: Palau
+      victoires: 1
+    - id: karima-neggaz
+      nom: Karima Neggaz
+      saisons:
+      - annee: 2016
+        id: s15
+        titre: Thaïlande
+      victoires: 1
+    - id: laurent-maistret
+      nom: Laurent Maistret
+      saisons:
+      - annee: 2014
+        id: sp4
+        titre: La Nouvelle Édition
+      victoires: 1
+    - id: marguerite-leblanc
+      nom: Marguerite Leblanc
+      saisons:
+      - annee: 2017
+        id: s18
+        titre: Fidji
+      victoires: 1
+    - id: marylou-sidibe
+      nom: Marylou Sidibé
+      saisons:
+      - annee: 2012
+        id: s12
+        titre: Malaisie
+      victoires: 1
+    - id: nicolas-rouye
+      nom: Nicolas Rouyé
+      saisons:
+      - annee: 2016
+        id: s15
+        titre: Thaïlande
+      victoires: 1
+    - id: nicolas-van-brabandt
+      nom: Nicolas Van Brabandt
+      saisons:
+      - annee: 2019
+        id: s20
+        titre: La Guerre des chefs
+      victoires: 1
+    - id: philippe-duron
+      nom: Philippe Duron
+      saisons:
+      - annee: 2014
+        id: sp4
+        titre: La Nouvelle Édition
+      victoires: 1
+    - id: rodolphe-assi
+      nom: Rodolphe Assi
+      saisons:
+      - annee: 2009
+        id: s09
+        titre: Palau
+      victoires: 1
+    - id: sandro-gonzalez-schena
+      nom: Sandro Gonzalez Schena
+      saisons:
+      - annee: 2017
+        id: s17
+        titre: Cambodge
+      victoires: 1
+    - id: sebastien-ballesteros
+      nom: Sébastien Ballesteros
+      saisons:
+      - annee: 2015
+        id: s14
+        titre: Johor
+      victoires: 1
+    - id: vanessa-alvarez
+      nom: Vanessa Alvarez
+      saisons:
+      - annee: 2012
+        id: s12
+        titre: Malaisie
+      victoires: 1
+    premiere_annee: 2001
+    record: *id010
+    type: null
+    vainqueurs_nommes: 21
   labyrinthe:
     apparitions: 8
     derniere_annee: 2022
@@ -1265,7 +1603,7 @@ epreuves:
     - reflexion
     nom: Labyrinthe
     palmares:
-    - &id009
+    - &id011
       id: candice-boisson
       nom: Candice Boisson
       saisons:
@@ -1323,7 +1661,7 @@ epreuves:
         titre: La Légende
       victoires: 1
     premiere_annee: 2015
-    record: *id009
+    record: *id011
     type: Réflexion, rapidité
     vainqueurs_nommes: 8
   massues:
@@ -1367,7 +1705,7 @@ epreuves:
     - precision
     nom: Massues
     palmares:
-    - &id010
+    - &id012
       id: claude-dartois
       nom: Claude Dartois
       saisons:
@@ -1397,7 +1735,7 @@ epreuves:
         titre: La Nouvelle Édition
       victoires: 1
     premiere_annee: 2008
-    record: *id010
+    record: *id012
     type: Précision
     vainqueurs_nommes: 4
   noix-de-coco:
@@ -1429,7 +1767,7 @@ epreuves:
     - precision
     nom: Noix de coco
     palmares:
-    - &id011
+    - &id013
       id: cyril-rouanne
       nom: Cyril Rouanne
       saisons:
@@ -1473,9 +1811,750 @@ epreuves:
         titre: Johor
       victoires: 1
     premiere_annee: 2011
-    record: *id011
+    record: *id013
     type: Précision
     vainqueurs_nommes: 6
+  orientation:
+    apparitions: 31
+    derniere_annee: 2026
+    editions:
+    - annee: 2003
+      id: s03
+      speciale: false
+      titre: Bocas del Toro
+    - annee: 2004
+      id: s04
+      speciale: false
+      titre: Panama
+    - annee: 2005
+      id: s05
+      speciale: false
+      titre: Pacifique
+    - annee: 2006
+      id: s06
+      speciale: false
+      titre: Vanuatu
+    - annee: 2007
+      id: s07
+      speciale: false
+      titre: Palawan
+    - annee: 2008
+      id: s08
+      speciale: false
+      titre: Caramoan
+    - annee: 2009
+      id: s09
+      speciale: false
+      titre: Palau
+    - annee: 2009
+      id: sp1
+      speciale: true
+      titre: Le Retour des héros
+    - annee: 2010
+      id: s10
+      speciale: false
+      titre: Viêtnam
+    - annee: 2010
+      id: sp2
+      speciale: true
+      titre: Le Choc des héros
+    - annee: 2011
+      id: s11
+      speciale: false
+      titre: Raja Ampat
+    - annee: 2012
+      id: s12
+      speciale: false
+      titre: Malaisie
+    - annee: 2012
+      id: sp3
+      speciale: true
+      titre: La Revanche des héros
+    - annee: 2014
+      id: sp4
+      speciale: true
+      titre: La Nouvelle Édition
+    - annee: 2015
+      id: s14
+      speciale: false
+      titre: Johor
+    - annee: 2016
+      id: s15
+      speciale: false
+      titre: Thaïlande
+    - annee: 2016
+      id: s16
+      speciale: false
+      titre: L'Île au trésor
+    - annee: 2017
+      id: s17
+      speciale: false
+      titre: Cambodge
+    - annee: 2017
+      id: s18
+      speciale: false
+      titre: Fidji
+    - annee: 2018
+      id: sp5
+      speciale: true
+      titre: Le Combat des héros
+    - annee: 2019
+      id: s20
+      speciale: false
+      titre: La Guerre des chefs
+    - annee: 2020
+      id: s21
+      speciale: false
+      titre: Les 4 Terres
+    - annee: 2020
+      id: sp6
+      speciale: true
+      titre: L'Île des héros
+    - annee: 2021
+      id: s22
+      speciale: false
+      titre: Les Armes secrètes
+    - annee: 2021
+      id: sp7
+      speciale: true
+      titre: La Légende
+    - annee: 2022
+      id: s23
+      speciale: false
+      titre: Le Totem maudit
+    - annee: 2023
+      id: s24
+      speciale: false
+      titre: Le Feu sacré
+    - annee: 2024
+      id: s25
+      speciale: false
+      titre: Les Chasseurs d'immunité
+    - annee: 2024
+      id: s26
+      speciale: false
+      titre: La Tribu maudite
+    - annee: 2025
+      id: s27
+      speciale: false
+      titre: La Revanche des 4 Terres
+    - annee: 2026
+      id: s28
+      speciale: false
+      titre: Les Reliques du destin
+    id: orientation
+    natures: []
+    nom: Orientation
+    palmares:
+    - &id014
+      id: claude-dartois
+      nom: Claude Dartois
+      saisons:
+      - annee: 2010
+        id: s10
+        titre: Viêtnam
+      - annee: 2012
+        id: sp3
+        titre: La Revanche des héros
+      - annee: 2020
+        id: sp6
+        titre: L'Île des héros
+      - annee: 2021
+        id: sp7
+        titre: La Légende
+      victoires: 4
+    - id: laurent-maistret
+      nom: Laurent Maistret
+      saisons:
+      - annee: 2011
+        id: s11
+        titre: Raja Ampat
+      - annee: 2014
+        id: sp4
+        titre: La Nouvelle Édition
+      - annee: 2021
+        id: sp7
+        titre: La Légende
+      victoires: 3
+    - id: bertrand-bolle
+      nom: Bertrand Bolle
+      saisons:
+      - annee: 2008
+        id: s08
+        titre: Caramoan
+      - annee: 2012
+        id: sp3
+        titre: La Revanche des héros
+      victoires: 2
+    - id: clemence-castel
+      nom: Clémence Castel
+      saisons:
+      - annee: 2005
+        id: s05
+        titre: Pacifique
+      - annee: 2018
+        id: sp5
+        titre: Le Combat des héros
+      victoires: 2
+    - id: jade-handi
+      nom: Jade Handi
+      saisons:
+      - annee: 2007
+        id: s07
+        titre: Palawan
+      - annee: 2009
+        id: sp1
+        titre: Le Retour des héros
+      victoires: 2
+    - id: pascal-salviani
+      nom: Pascal Salviani
+      saisons:
+      - annee: 2016
+        id: s15
+        titre: Thaïlande
+      - annee: 2018
+        id: sp5
+        titre: Le Combat des héros
+      victoires: 2
+    - id: ugo-lartiche
+      nom: Ugo Lartiche
+      saisons:
+      - annee: 2012
+        id: s12
+        titre: Malaisie
+      - annee: 2021
+        id: sp7
+        titre: La Légende
+      victoires: 2
+    - id: alexandra-pornet
+      nom: Alexandra Pornet
+      saisons:
+      - annee: 2020
+        id: s21
+        titre: Les 4 Terres
+      victoires: 1
+    - id: andre-deleplace
+      nom: André Deleplace
+      saisons:
+      - annee: 2017
+        id: s18
+        titre: Fidji
+      victoires: 1
+    - id: bastien-san-pedro
+      nom: Bastien San Pedro
+      saisons:
+      - annee: 2022
+        id: s23
+        titre: Le Totem maudit
+      victoires: 1
+    - id: benoit-assadi
+      nom: Benoît Assadi
+      saisons:
+      - annee: 2016
+        id: s16
+        titre: L'Île au trésor
+      victoires: 1
+    - id: brice-martinet
+      nom: Brice Martinet
+      saisons:
+      - annee: 2012
+        id: s12
+        titre: Malaisie
+      victoires: 1
+    - id: brice-petit
+      nom: Brice Petit
+      saisons:
+      - annee: 2020
+        id: s21
+        titre: Les 4 Terres
+      victoires: 1
+    - id: chantal-menard
+      nom: Chantal Ménard
+      saisons:
+      - annee: 2015
+        id: s14
+        titre: Johor
+      victoires: 1
+    - id: charlotte-rasquin
+      nom: Charlotte Rasquin
+      saisons:
+      - annee: 2024
+        id: s26
+        titre: La Tribu maudite
+      victoires: 1
+    - id: christelle-gauzet
+      nom: Christelle Gauzet
+      saisons:
+      - annee: 2008
+        id: s08
+        titre: Caramoan
+      victoires: 1
+    - id: christina-chevry
+      nom: Christina Chevry
+      saisons:
+      - annee: 2009
+        id: s09
+        titre: Palau
+      victoires: 1
+    - id: christophe-guttatoro-martin
+      nom: Christophe Guttatoro-Martin
+      saisons:
+      - annee: 2010
+        id: sp2
+        titre: Le Choc des héros
+      victoires: 1
+    - id: cindy-poumeyrol
+      nom: Cindy Poumeyrol
+      saisons:
+      - annee: 2019
+        id: s20
+        titre: La Guerre des chefs
+      victoires: 1
+    - id: clarisse-cresseveur
+      nom: Clarisse Cresseveur
+      saisons:
+      - annee: 2026
+        id: s28
+        titre: Les Reliques du destin
+      victoires: 1
+    - id: clementine-jullien
+      nom: Clémentine Jullien
+      saisons:
+      - annee: 2017
+        id: s17
+        titre: Cambodge
+      victoires: 1
+    - id: cynthia-combes
+      nom: Cynthia Combes
+      saisons:
+      - annee: 2026
+        id: s28
+        titre: Les Reliques du destin
+      victoires: 1
+    - id: delphine-bano
+      nom: Delphine Bano
+      saisons:
+      - annee: 2003
+        id: s03
+        titre: Bocas del Toro
+      victoires: 1
+    - id: filomene-mendonca
+      nom: Filomène Mendonca
+      saisons:
+      - annee: 2009
+        id: sp1
+        titre: Le Retour des héros
+      victoires: 1
+    - id: francis-bordas
+      nom: Francis Bordas
+      saisons:
+      - annee: 2005
+        id: s05
+        titre: Pacifique
+      victoires: 1
+    - id: francois-descamp
+      nom: François Descamp
+      saisons:
+      - annee: 2022
+        id: s23
+        titre: Le Totem maudit
+      victoires: 1
+    - id: francois-david-cardonnel
+      nom: François-David Cardonnel
+      saisons:
+      - annee: 2006
+        id: s06
+        titre: Vanuatu
+      victoires: 1
+    - id: freddy-bolzer
+      nom: Freddy Bolzer
+      saisons:
+      - annee: 2016
+        id: s16
+        titre: L'Île au trésor
+      victoires: 1
+    - id: freddy-boucher
+      nom: Freddy Boucher
+      saisons:
+      - annee: 2010
+        id: sp2
+        titre: Le Choc des héros
+      victoires: 1
+    - id: frederic-blancher
+      nom: Frédéric Blancher
+      saisons:
+      - annee: 2017
+        id: s17
+        titre: Cambodge
+      victoires: 1
+    - id: frederic-favier
+      nom: Frédéric Favier
+      saisons:
+      - annee: 2008
+        id: s08
+        titre: Caramoan
+      victoires: 1
+    - id: frederic-khouvilay
+      nom: Frédéric Khouvilay
+      saisons:
+      - annee: 2023
+        id: s24
+        titre: Le Feu sacré
+      victoires: 1
+    - id: gabriel-gubbels
+      nom: Gabriel Gubbels
+      saisons:
+      - annee: 2016
+        id: s15
+        titre: Thaïlande
+      victoires: 1
+    - id: gaelle-fleury
+      nom: Gaëlle Fleury
+      saisons:
+      - annee: 2025
+        id: s27
+        titre: La Revanche des 4 Terres
+      victoires: 1
+    - id: gregoire-delachaux
+      nom: Grégoire Delachaux
+      saisons:
+      - annee: 2010
+        id: sp2
+        titre: Le Choc des héros
+      victoires: 1
+    - id: guillaume-le-deun
+      nom: Guillaume Le Deun
+      saisons:
+      - annee: 2026
+        id: s28
+        titre: Les Reliques du destin
+      victoires: 1
+    - id: geraldine-nicolle
+      nom: Géraldine Nicolle
+      saisons:
+      - annee: 2022
+        id: s23
+        titre: Le Totem maudit
+      victoires: 1
+    - id: gerard-urdampilleta
+      nom: Gérard Urdampilleta
+      saisons:
+      - annee: 2011
+        id: s11
+        titre: Raja Ampat
+      victoires: 1
+    - id: ilyesse-benyoub
+      nom: Ilyesse Benyoub
+      saisons:
+      - annee: 2024
+        id: s26
+        titre: La Tribu maudite
+      victoires: 1
+    - id: ines-loucif
+      nom: Inès Loucif
+      saisons:
+      - annee: 2020
+        id: sp6
+        titre: L'Île des héros
+      victoires: 1
+    - id: isabelle-da-silva
+      nom: Isabelle Da Silva
+      saisons:
+      - annee: 2009
+        id: s09
+        titre: Palau
+      victoires: 1
+    - id: isabelle-seguin
+      nom: Isabelle Seguin
+      saisons:
+      - annee: 2003
+        id: s03
+        titre: Bocas del Toro
+      victoires: 1
+    - id: jean-charles-chatelus
+      nom: Jean-Charles Chatelus
+      saisons:
+      - annee: 2022
+        id: s23
+        titre: Le Totem maudit
+      victoires: 1
+    - id: jesta-hillmann
+      nom: Jesta Hillmann
+      saisons:
+      - annee: 2016
+        id: s16
+        titre: L'Île au trésor
+      victoires: 1
+    - id: jonathan-julien
+      nom: Jonathan Julien
+      saisons:
+      - annee: 2021
+        id: s22
+        titre: Les Armes secrètes
+      victoires: 1
+    - id: julie-rignault
+      nom: Julie Rignault
+      saisons:
+      - annee: 2024
+        id: s25
+        titre: Les Chasseurs d'immunité
+      victoires: 1
+    - id: jeremy-raffin
+      nom: Jérémy Raffin
+      saisons:
+      - annee: 2018
+        id: sp5
+        titre: Le Combat des héros
+      victoires: 1
+    - id: kevin-cuoco
+      nom: Kevin Cuoco
+      saisons:
+      - annee: 2007
+        id: s07
+        titre: Palawan
+      victoires: 1
+    - id: linda-alario
+      nom: Linda Alario
+      saisons:
+      - annee: 2004
+        id: s04
+        titre: Panama
+      victoires: 1
+    - id: loic-riowal
+      nom: Loïc Riowal
+      saisons:
+      - annee: 2020
+        id: s21
+        titre: Les 4 Terres
+      victoires: 1
+    - id: lucie-bertaud
+      nom: Lucie Bertaud
+      saisons:
+      - annee: 2021
+        id: s22
+        titre: Les Armes secrètes
+      victoires: 1
+    - id: magalie-gustave
+      nom: Magalie Gustave
+      saisons:
+      - annee: 2017
+        id: s18
+        titre: Fidji
+      victoires: 1
+    - id: marc-rambaud
+      nom: Marc Rambaud
+      saisons:
+      - annee: 2015
+        id: s14
+        titre: Johor
+      victoires: 1
+    - id: martin-bazin
+      nom: Martin Bazin
+      saisons:
+      - annee: 2014
+        id: sp4
+        titre: La Nouvelle Édition
+      victoires: 1
+    - id: maryline-hemelsdael
+      nom: Maryline Hemelsdael
+      saisons:
+      - annee: 2007
+        id: s07
+        titre: Palawan
+      victoires: 1
+    - id: maud-bamps
+      nom: Maud Bamps
+      saisons:
+      - annee: 2019
+        id: s20
+        titre: La Guerre des chefs
+      victoires: 1
+    - id: maud-garnier
+      nom: Maud Garnier
+      saisons:
+      - annee: 2012
+        id: sp3
+        titre: La Revanche des héros
+      victoires: 1
+    - id: maxine-eouzan
+      nom: Maxine Eouzan
+      saisons:
+      - annee: 2021
+        id: s22
+        titre: Les Armes secrètes
+      victoires: 1
+    - id: mael-lozach
+      nom: Maël Lozach
+      saisons:
+      - annee: 2025
+        id: s27
+        titre: La Revanche des 4 Terres
+      victoires: 1
+    - id: meissa-seck
+      nom: Meïssa Seck
+      saisons:
+      - annee: 2024
+        id: s25
+        titre: Les Chasseurs d'immunité
+      victoires: 1
+    - id: mohamed-derradji
+      nom: Mohamed Derradji
+      saisons:
+      - annee: 2005
+        id: s05
+        titre: Pacifique
+      victoires: 1
+    - id: moussa-niangane
+      nom: Moussa Niangane
+      saisons:
+      - annee: 2003
+        id: s03
+        titre: Bocas del Toro
+      victoires: 1
+    - id: melissa-bastin
+      nom: Mélissa Bastin
+      saisons:
+      - annee: 2015
+        id: s14
+        titre: Johor
+      victoires: 1
+    - id: naoil-tita
+      nom: Naoil Tita
+      saisons:
+      - annee: 2020
+        id: sp6
+        titre: L'Île des héros
+      victoires: 1
+    - id: nicolas-pretot
+      nom: Nicolas Pretot
+      saisons:
+      - annee: 2023
+        id: s24
+        titre: Le Feu sacré
+      victoires: 1
+    - id: patrick-merle
+      nom: Patrick Merle
+      saisons:
+      - annee: 2009
+        id: s09
+        titre: Palau
+      victoires: 1
+    - id: philippe-bizet
+      nom: Philippe Bizet
+      saisons:
+      - annee: 2014
+        id: sp4
+        titre: La Nouvelle Édition
+      victoires: 1
+    - id: philippe-bordier
+      nom: Philippe Bordier
+      saisons:
+      - annee: 2004
+        id: s04
+        titre: Panama
+      victoires: 1
+    - id: philippe-duron
+      nom: Philippe Duron
+      saisons:
+      - annee: 2010
+        id: s10
+        titre: Viêtnam
+      victoires: 1
+    - id: raphael-andres
+      nom: Raphaël Andrès
+      saisons:
+      - annee: 2004
+        id: s04
+        titre: Panama
+      victoires: 1
+    - id: romuald-lafite
+      nom: Romuald Lafite
+      saisons:
+      - annee: 2009
+        id: sp1
+        titre: Le Retour des héros
+      victoires: 1
+    - id: steeve-demana
+      nom: Steeve Demana
+      saisons:
+      - annee: 2019
+        id: s20
+        titre: La Guerre des chefs
+      victoires: 1
+    - id: sebastien-roulle
+      nom: Sébastien Roullé
+      saisons:
+      - annee: 2006
+        id: s06
+        titre: Vanuatu
+      victoires: 1
+    - id: tania-cakarevic
+      nom: Tania Cakarevic
+      saisons:
+      - annee: 2023
+        id: s24
+        titre: Le Feu sacré
+      victoires: 1
+    - id: teheiura-teahui
+      nom: Teheiura Teahui
+      saisons:
+      - annee: 2011
+        id: s11
+        titre: Raja Ampat
+      victoires: 1
+    - id: thibault-belanger
+      nom: Thibault Bélanger
+      saisons:
+      - annee: 2024
+        id: s26
+        titre: La Tribu maudite
+      victoires: 1
+    - id: tiffany-gounin
+      nom: Tiffany Gounin
+      saisons:
+      - annee: 2017
+        id: s18
+        titre: Fidji
+      victoires: 1
+    - id: vanessa-alvarez
+      nom: Vanessa Alvarez
+      saisons:
+      - annee: 2012
+        id: s12
+        titre: Malaisie
+      victoires: 1
+    - id: vincent-roux
+      nom: Vincent Roux
+      saisons:
+      - annee: 2017
+        id: s17
+        titre: Cambodge
+      victoires: 1
+    - id: wafa-el-mejjad
+      nom: Wafa El Mejjad
+      saisons:
+      - annee: 2010
+        id: s10
+        titre: Viêtnam
+      victoires: 1
+    - id: wendy-gervois
+      nom: Wendy Gervois
+      saisons:
+      - annee: 2016
+        id: s15
+        titre: Thaïlande
+      victoires: 1
+    - id: emilie-frahi
+      nom: Émilie Frahi
+      saisons:
+      - annee: 2006
+        id: s06
+        titre: Vanuatu
+      victoires: 1
+    premiere_annee: 2003
+    record: *id014
+    type: null
+    vainqueurs_nommes: 92
   parcours-du-combattant:
     apparitions: 31
     derniere_annee: 2025
@@ -1610,7 +2689,7 @@ epreuves:
     - rapidite
     nom: Parcours du combattant
     palmares:
-    - &id012
+    - &id015
       id: claude-dartois
       nom: Claude Dartois
       saisons:
@@ -1976,7 +3055,7 @@ epreuves:
         titre: Le Combat des héros
       victoires: 1
     premiere_annee: 2001
-    record: *id012
+    record: *id015
     type: Rapidité, force
     vainqueurs_nommes: 56
   paresseux:
@@ -2060,7 +3139,7 @@ epreuves:
     - statique
     nom: Paresseux
     palmares:
-    - &id013
+    - &id016
       id: claude-dartois
       nom: Claude Dartois
       saisons:
@@ -2194,7 +3273,7 @@ epreuves:
         titre: Cambodge
       victoires: 1
     premiere_annee: 2004
-    record: *id013
+    record: *id016
     type: Statique
     vainqueurs_nommes: 20
   perche:
@@ -2226,7 +3305,7 @@ epreuves:
     - precision
     nom: Perche
     palmares:
-    - &id014
+    - &id017
       id: teheiura-teahui
       nom: Teheiura Teahui
       saisons:
@@ -2259,7 +3338,7 @@ epreuves:
         titre: La Légende
       victoires: 1
     premiere_annee: 2009
-    record: *id014
+    record: *id017
     type: Précision
     vainqueurs_nommes: 5
   relais-aquatiques:
@@ -2323,7 +3402,7 @@ epreuves:
     - aquatique
     nom: Relais aquatiques
     palmares:
-    - &id015
+    - &id018
       id: cassandre-girard
       nom: Cassandre Girard
       saisons:
@@ -2353,7 +3432,7 @@ epreuves:
         titre: Le Combat des héros
       victoires: 1
     premiere_annee: 2006
-    record: *id015
+    record: *id018
     type: Aquatique
     vainqueurs_nommes: 4
   sacs:
@@ -2450,7 +3529,7 @@ epreuves:
     - equilibre
     nom: Sacs
     palmares:
-    - &id016
+    - &id019
       id: benoit-assadi
       nom: Benoît Assadi
       saisons:
@@ -2599,7 +3678,7 @@ epreuves:
         titre: Cambodge
       victoires: 1
     premiere_annee: 2003
-    record: *id016
+    record: *id019
     type: Force, équilibre
     vainqueurs_nommes: 21
   tables-a-bascule:
@@ -2647,7 +3726,7 @@ epreuves:
     - precision
     nom: Tables à bascule
     palmares:
-    - &id017
+    - &id020
       id: alain-chrisostome
       nom: Alain Chrisostome
       saisons:
@@ -2719,7 +3798,7 @@ epreuves:
         titre: Cambodge
       victoires: 1
     premiere_annee: 2015
-    record: *id017
+    record: *id020
     type: Précision
     vainqueurs_nommes: 10
   tir-a-l-arc:
@@ -2815,7 +3894,7 @@ epreuves:
     - precision
     nom: Tir à l'arc
     palmares:
-    - &id018
+    - &id021
       id: teheiura-teahui
       nom: Teheiura Teahui
       saisons:
@@ -2988,7 +4067,7 @@ epreuves:
         titre: Malaisie
       victoires: 1
     premiere_annee: 2001
-    record: *id018
+    record: *id021
     type: Précision
     vainqueurs_nommes: 25
   trapezes:
@@ -3032,7 +4111,7 @@ epreuves:
     - statique
     nom: Trapèzes
     palmares:
-    - &id019
+    - &id022
       id: clemence-castel
       nom: Clémence Castel
       saisons:
@@ -3090,6 +4169,6 @@ epreuves:
         titre: La Nouvelle Édition
       victoires: 1
     premiere_annee: 2014
-    record: *id019
+    record: *id022
     type: Statique
     vainqueurs_nommes: 8

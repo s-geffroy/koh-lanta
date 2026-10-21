@@ -40,6 +40,42 @@ epreuves:
   - sp5
   - sp6
   - sp7
+- nom: Orientation
+  type: null
+  natures: []
+  apparitions: 31
+  saisons:
+  - s03
+  - s04
+  - s05
+  - s06
+  - s07
+  - s08
+  - s09
+  - s10
+  - s11
+  - s12
+  - s14
+  - s15
+  - s16
+  - s17
+  - s18
+  - s20
+  - s21
+  - s22
+  - s23
+  - s24
+  - s25
+  - s26
+  - s27
+  - s28
+  - sp1
+  - sp2
+  - sp3
+  - sp4
+  - sp5
+  - sp6
+  - sp7
 - nom: Flambeaux
   type: Force
   natures:
@@ -71,6 +107,33 @@ epreuves:
   - sp4
   - sp5
   - sp7
+- nom: La dégustation
+  type: null
+  natures: []
+  apparitions: 22
+  saisons:
+  - s01
+  - s03
+  - s04
+  - s05
+  - s06
+  - s07
+  - s08
+  - s09
+  - s10
+  - s11
+  - s12
+  - s14
+  - s15
+  - s16
+  - s17
+  - s18
+  - s20
+  - sp1
+  - sp2
+  - sp3
+  - sp4
+  - sp6
 - nom: Aveugle
   type: Rapidité
   natures:
@@ -310,6 +373,24 @@ epreuves:
   - sp4
   - sp5
   - sp7
+- nom: Élastiques
+  type: Force
+  natures:
+  - force
+  apparitions: 12
+  saisons:
+  - s04
+  - s05
+  - s10
+  - s12
+  - s15
+  - s17
+  - s18
+  - s23
+  - sp1
+  - sp2
+  - sp3
+  - sp6
 - nom: Poteries suspendues
   type: Précision
   natures:
@@ -502,6 +583,30 @@ epreuves:
   - s21
   - sp2
   - sp3
+- nom: La bascule
+  type: null
+  natures: []
+  apparitions: 7
+  saisons:
+  - s06
+  - s11
+  - s20
+  - s21
+  - s25
+  - s26
+  - sp7
+- nom: La marche sur l'eau
+  type: null
+  natures: []
+  apparitions: 7
+  saisons:
+  - s09
+  - s12
+  - s15
+  - s22
+  - s24
+  - sp4
+  - sp5
 - nom: Poutre individuelle
   type: Force
   natures:
@@ -529,18 +634,6 @@ epreuves:
   - s21
   - sp2
   - sp4
-- nom: la bascule
-  type: null
-  natures: []
-  apparitions: 7
-  saisons:
-  - s06
-  - s11
-  - s20
-  - s21
-  - s25
-  - s26
-  - sp7
 - nom: Noix de coco
   type: Précision
   natures:
@@ -722,6 +815,14 @@ epreuves:
   saisons:
   - s21
   - sp7
+- nom: Puzzle dans l'eau
+  type: Réflexion
+  natures:
+  - reflexion
+  apparitions: 2
+  saisons:
+  - s15
+  - sp6
 - nom: Vague
   type: Logique
   natures:
@@ -737,31 +838,24 @@ epreuves:
   apparitions: 1
   saisons:
   - s22
+- nom: L'idole
+  type: null
+  natures: []
+  apparitions: 0
+  saisons: []
+- nom: L'équilibre sur l'eau
+  type: null
+  natures: []
+  apparitions: 0
+  saisons: []
 - nom: Poteaux
   type: Statique
   natures:
   - statique
   apparitions: 0
   saisons: []
-- nom: Puzzle dans l'eau
-  type: Réflexion
-  natures:
-  - reflexion
-  apparitions: 0
-  saisons: []
-- nom: l'équilibre sur l'eau
-  type: null
-  natures: []
-  apparitions: 0
-  saisons: []
-- nom: Élastiques
-  type: Force
-  natures:
-  - force
-  apparitions: 0
-  saisons: []
-nb_epreuves: 53
-nb_apparitions: 429
+nb_epreuves: 57
+nb_apparitions: 503
 par_nature:
 - nature: force
   libelle: Force
@@ -775,6 +869,9 @@ par_nature:
 - nature: statique
   libelle: Statique
   effectif: 9
+- nature: non qualifiee
+  libelle: Non qualifiée
+  effectif: 6
 - nature: equilibre
   libelle: Équilibre
   effectif: 4
@@ -787,39 +884,40 @@ par_nature:
 - nature: reflexion
   libelle: Réflexion
   effectif: 3
-- nature: non qualifiee
-  libelle: Non qualifiée
-  effectif: 2
 raccord:
-  citations: 466
+  citations: 606
   motifs:
   - motif: plusieurs epreuves possibles, sans episode pour trancher
-    effectif: 225
+    effectif: 251
   - motif: raccordee sur l'ensemble des vainqueurs
-    effectif: 142
+    effectif: 157
   - motif: aucune epreuve relevee qui corresponde
-    effectif: 43
+    effectif: 137
   - motif: raccordee
     effectif: 33
   - motif: nom introuvable dans la saison
-    effectif: 23
+    effectif: 26
+  - motif: homonyme
+    effectif: 2
   epreuves_relevees: 789
-  epreuves_raccordees: 144
-  part_raccordee: "18,3"
+  epreuves_raccordees: 159
+  part_raccordee: "20,2"
   individuelles_relevees: 388
-  individuelles_raccordees: 122
+  individuelles_raccordees: 132
 couverture_par_personne:
-  citations: 498
-  attribuees: 316
-  part: "63,5"
-  personnes: 183
+  citations: 648
+  attribuees: 433
+  part: "66,8"
+  personnes: 215
   motifs:
   - motif: attribuee
-    effectif: 316
+    effectif: 433
   - motif: gagnee par une tribu
-    effectif: 159
+    effectif: 187
   - motif: nom introuvable dans la saison
-    effectif: 23
+    effectif: 26
+  - motif: homonyme, non tranche
+    effectif: 2
 palmares:
 - saison: s01
   id: francoise-avignon
@@ -872,6 +970,7 @@ palmares:
 - saison: s03
   id: delphine-bano
   epreuves:
+  - Orientation
   - Parcours du combattant
   natures:
     force: 1
@@ -883,6 +982,11 @@ palmares:
   natures:
     rapidite: 1
 - saison: s03
+  id: isabelle-seguin
+  epreuves:
+  - Orientation
+  natures: {}
+- saison: s03
   id: moundir-zoughari
   epreuves:
   - Tir à l'arc
@@ -892,6 +996,7 @@ palmares:
   id: moussa-niangane
   epreuves:
   - Boue
+  - Orientation
   - Parcours du combattant
   - Sacs
   natures:
@@ -915,14 +1020,21 @@ palmares:
     precision: 1
     rapidite: 1
 - saison: s04
+  id: linda-alario
+  epreuves:
+  - Orientation
+  natures: {}
+- saison: s04
   id: philippe-bordier
   epreuves:
   - Bambous
+  - Orientation
   natures:
     statique: 1
 - saison: s04
   id: raphael-andres
   epreuves:
+  - Orientation
   - Sacs
   natures:
     equilibre: 1
@@ -931,19 +1043,25 @@ palmares:
   id: romuald-lafite
   epreuves:
   - Aveugle
+  - Élastiques
   natures:
+    force: 1
     rapidite: 1
 - saison: s04
   id: sophie-eeckhout
   epreuves:
   - Paresseux
+  - Élastiques
   natures:
+    force: 1
     statique: 1
 - saison: s05
   id: alexis-tournier
   epreuves:
   - Aveugle
+  - Élastiques
   natures:
+    force: 1
     rapidite: 1
 - saison: s05
   id: christine-isoart
@@ -954,6 +1072,7 @@ palmares:
 - saison: s05
   id: clemence-castel
   epreuves:
+  - Orientation
   - Sacs
   natures:
     equilibre: 1
@@ -962,12 +1081,14 @@ palmares:
   id: coumba-baradji
   epreuves:
   - Parcours du combattant
+  - Élastiques
   natures:
-    force: 1
+    force: 2
     rapidite: 1
 - saison: s05
   id: francis-bordas
   epreuves:
+  - Orientation
   - Tir à l'arc
   natures:
     precision: 1
@@ -980,6 +1101,7 @@ palmares:
 - saison: s05
   id: mohamed-derradji
   epreuves:
+  - Orientation
   - Parcours du combattant
   - Paresseux
   natures:
@@ -987,9 +1109,15 @@ palmares:
     rapidite: 1
     statique: 1
 - saison: s06
+  id: emilie-frahi
+  epreuves:
+  - Orientation
+  natures: {}
+- saison: s06
   id: francois-david-cardonnel
   epreuves:
   - Boue
+  - Orientation
   natures:
     rapidite: 1
 - saison: s06
@@ -1005,7 +1133,7 @@ palmares:
   id: ludovic-laresche
   epreuves:
   - Bambous
-  - la bascule
+  - La bascule
   natures:
     statique: 1
 - saison: s06
@@ -1019,6 +1147,7 @@ palmares:
   id: sebastien-roulle
   epreuves:
   - Grappins
+  - Orientation
   - Parcours du combattant
   natures:
     force: 1
@@ -1035,6 +1164,7 @@ palmares:
   id: jade-handi
   epreuves:
   - Koalas inversés
+  - Orientation
   - Parcours du combattant
   - Paresseux
   natures:
@@ -1044,9 +1174,15 @@ palmares:
 - saison: s07
   id: kevin-cuoco
   epreuves:
+  - Orientation
   - Tir à l'arc
   natures:
     precision: 1
+- saison: s07
+  id: maryline-hemelsdael
+  epreuves:
+  - Orientation
+  natures: {}
 - saison: s07
   id: patrick-brasier-de-thuy
   epreuves:
@@ -1068,6 +1204,7 @@ palmares:
   - À bout de souffle
   - Bambous
   - Boue
+  - Orientation
   - Parcours du combattant
   - Sacs
   natures:
@@ -1090,6 +1227,7 @@ palmares:
 - saison: s08
   id: christelle-gauzet
   epreuves:
+  - Orientation
   - Parcours du combattant
   - Plots
   natures:
@@ -1101,6 +1239,7 @@ palmares:
   id: frederic-favier
   epreuves:
   - Grappins
+  - Orientation
   natures:
     precision: 1
     rapidite: 1
@@ -1110,6 +1249,7 @@ palmares:
   - À bout de souffle
   - Aveugle
   - Boue
+  - Orientation
   - Parcours du combattant
   natures:
     force: 1
@@ -1127,11 +1267,18 @@ palmares:
   id: isabelle-da-silva
   epreuves:
   - Massues
+  - Orientation
   natures:
     precision: 1
 - saison: s09
+  id: kader-rebai
+  epreuves:
+  - La dégustation
+  natures: {}
+- saison: s09
   id: patrick-merle
   epreuves:
+  - Orientation
   - Perche
   natures:
     precision: 1
@@ -1141,6 +1288,11 @@ palmares:
   - Paresseux
   natures:
     statique: 1
+- saison: s09
+  id: rodolphe-assi
+  epreuves:
+  - La dégustation
+  natures: {}
 - saison: s10
   id: aurelie-gasser
   epreuves:
@@ -1152,6 +1304,7 @@ palmares:
   id: claude-dartois
   epreuves:
   - Boue
+  - Orientation
   - Parcours du combattant
   - Paresseux
   - Sacs
@@ -1172,9 +1325,15 @@ palmares:
   id: philippe-duron
   epreuves:
   - Grappins
+  - Orientation
   natures:
     precision: 1
     rapidite: 1
+- saison: s10
+  id: wafa-el-mejjad
+  epreuves:
+  - Orientation
+  natures: {}
 - saison: s11
   id: ella-gbezan
   epreuves:
@@ -1193,14 +1352,16 @@ palmares:
 - saison: s11
   id: gerard-urdampilleta
   epreuves:
+  - La bascule
+  - Orientation
   - Tir à l'arc
-  - la bascule
   natures:
     precision: 1
 - saison: s11
   id: laurent-maistret
   epreuves:
   - À bout de souffle
+  - Orientation
   natures:
     statique: 1
 - saison: s11
@@ -1223,6 +1384,7 @@ palmares:
 - saison: s11
   id: teheiura-teahui
   epreuves:
+  - Orientation
   - Sacs
   - Étoile
   natures:
@@ -1236,6 +1398,11 @@ palmares:
   natures:
     statique: 1
 - saison: s12
+  id: brice-martinet
+  epreuves:
+  - Orientation
+  natures: {}
+- saison: s12
   id: catherine-perez
   epreuves:
   - Parcours du combattant
@@ -1245,6 +1412,7 @@ palmares:
 - saison: s12
   id: marylou-sidibe
   epreuves:
+  - La dégustation
   - Sacs
   natures:
     equilibre: 1
@@ -1265,9 +1433,16 @@ palmares:
 - saison: s12
   id: ugo-lartiche
   epreuves:
+  - Orientation
   - Tir à l'arc
   natures:
     precision: 1
+- saison: s12
+  id: vanessa-alvarez
+  epreuves:
+  - La dégustation
+  - Orientation
+  natures: {}
 - saison: s14
   id: bruno-peisey
   epreuves:
@@ -1277,6 +1452,8 @@ palmares:
 - saison: s14
   id: chantal-menard
   epreuves:
+  - La dégustation
+  - Orientation
   - Paresseux
   natures:
     statique: 1
@@ -1302,6 +1479,7 @@ palmares:
   id: marc-rambaud
   epreuves:
   - Boue
+  - Orientation
   - Parcours du combattant
   - Trapèzes
   - Étoile
@@ -1313,6 +1491,7 @@ palmares:
   id: melissa-bastin
   epreuves:
   - Labyrinthe
+  - Orientation
   - Tables à bascule
   natures:
     precision: 1
@@ -1322,6 +1501,7 @@ palmares:
   id: sebastien-ballesteros
   epreuves:
   - Grappins
+  - La dégustation
   - Noix de coco
   natures:
     precision: 2
@@ -1342,6 +1522,7 @@ palmares:
   id: gabriel-gubbels
   epreuves:
   - Aveugle
+  - Orientation
   - Sacs
   natures:
     equilibre: 1
@@ -1351,6 +1532,7 @@ palmares:
   id: karima-neggaz
   epreuves:
   - Boue
+  - La dégustation
   - Parcours du combattant
   - Paresseux
   natures:
@@ -1361,6 +1543,7 @@ palmares:
   id: nicolas-rouye
   epreuves:
   - À bout de souffle
+  - La dégustation
   - Labyrinthe
   - Parcours du combattant
   - Trapèzes
@@ -1372,6 +1555,7 @@ palmares:
 - saison: s15
   id: pascal-salviani
   epreuves:
+  - Orientation
   - Paresseux
   - Tir à l'arc
   natures:
@@ -1381,6 +1565,7 @@ palmares:
   id: wendy-gervois
   epreuves:
   - Aveugle
+  - Orientation
   natures:
     rapidite: 1
 - saison: s16
@@ -1394,6 +1579,8 @@ palmares:
   epreuves:
   - Barils
   - Grappins
+  - La dégustation
+  - Orientation
   - Sacs
   natures:
     equilibre: 1
@@ -1422,6 +1609,11 @@ palmares:
     rapidite: 1
     statique: 2
 - saison: s16
+  id: freddy-bolzer
+  epreuves:
+  - Orientation
+  natures: {}
+- saison: s16
   id: jeremy-raffin
   epreuves:
   - Massues
@@ -1434,6 +1626,7 @@ palmares:
   id: jesta-hillmann
   epreuves:
   - Boue
+  - Orientation
   natures:
     rapidite: 1
 - saison: s16
@@ -1464,12 +1657,14 @@ palmares:
 - saison: s17
   id: claire-pradayrol
   epreuves:
+  - La dégustation
   - Poteries en équilibre
   natures:
     equilibre: 1
 - saison: s17
   id: clementine-jullien
   epreuves:
+  - Orientation
   - Parcours du combattant
   natures:
     force: 1
@@ -1477,6 +1672,7 @@ palmares:
 - saison: s17
   id: frederic-blancher
   epreuves:
+  - Orientation
   - Pendule
   natures:
     precision: 1
@@ -1486,6 +1682,11 @@ palmares:
   - Dominos
   natures:
     precision: 1
+- saison: s17
+  id: sandro-gonzalez-schena
+  epreuves:
+  - La dégustation
+  natures: {}
 - saison: s17
   id: sebastien-gottiniaux
   epreuves:
@@ -1502,6 +1703,7 @@ palmares:
   epreuves:
   - Aveugle
   - Colonnes
+  - Orientation
   - Parcours du combattant
   - Sacs
   natures:
@@ -1520,19 +1722,31 @@ palmares:
   epreuves:
   - À bout de souffle
   - Grappins
+  - Orientation
   natures:
     precision: 1
     rapidite: 1
     statique: 1
 - saison: s18
+  id: fabian-rocha-rocha
+  epreuves:
+  - La dégustation
+  natures: {}
+- saison: s18
   id: magalie-gustave
   epreuves:
   - Aveugle
   - Noix de coco
+  - Orientation
   - Tir à l'arc
   natures:
     precision: 2
     rapidite: 1
+- saison: s18
+  id: marguerite-leblanc
+  epreuves:
+  - La dégustation
+  natures: {}
 - saison: s18
   id: maxime-stafrach
   epreuves:
@@ -1575,6 +1789,7 @@ palmares:
   id: tiffany-gounin
   epreuves:
   - Douche
+  - Orientation
   natures:
     force: 1
 - saison: s20
@@ -1588,13 +1803,15 @@ palmares:
   id: beatrice-kabore
   epreuves:
   - Boules
-  - la bascule
+  - La bascule
   natures:
     equilibre: 1
     precision: 1
 - saison: s20
   id: cindy-poumeyrol
   epreuves:
+  - La dégustation
+  - Orientation
   - Tir à l'arc
   natures:
     precision: 1
@@ -1614,6 +1831,7 @@ palmares:
   id: maud-bamps
   epreuves:
   - Noix de coco
+  - Orientation
   - Tir à l'arc
   natures:
     precision: 2
@@ -1631,12 +1849,14 @@ palmares:
 - saison: s20
   id: nicolas-van-brabandt
   epreuves:
+  - La dégustation
   - Tir à l'arc
   natures:
     precision: 1
 - saison: s20
   id: steeve-demana
   epreuves:
+  - Orientation
   - Pendule
   - Tir à l'arc
   - Vague
@@ -1646,6 +1866,7 @@ palmares:
 - saison: s21
   id: alexandra-pornet
   epreuves:
+  - Orientation
   - Palets
   - Poteries en équilibre
   natures:
@@ -1656,8 +1877,8 @@ palmares:
   id: alix-noblat
   epreuves:
   - Koalas inversés
+  - La bascule
   - Parcours du combattant
-  - la bascule
   natures:
     force: 1
     rapidite: 1
@@ -1674,6 +1895,7 @@ palmares:
   id: brice-petit
   epreuves:
   - Boules
+  - Orientation
   - Poteries en équilibre
   natures:
     equilibre: 2
@@ -1694,6 +1916,7 @@ palmares:
   id: loic-riowal
   epreuves:
   - Labyrinthe
+  - Orientation
   - Palets
   - Parcours du combattant
   natures:
@@ -1730,6 +1953,7 @@ palmares:
 - saison: s22
   id: jonathan-julien
   epreuves:
+  - Orientation
   - Paresseux
   - Trapèzes
   - Étoile
@@ -1748,6 +1972,7 @@ palmares:
 - saison: s22
   id: lucie-bertaud
   epreuves:
+  - Orientation
   - Planches à bascules
   natures:
     precision: 1
@@ -1755,6 +1980,7 @@ palmares:
   id: maxine-eouzan
   epreuves:
   - Bouées
+  - Orientation
   - Sacs
   - Tables à bascule
   natures:
@@ -1779,6 +2005,7 @@ palmares:
   id: bastien-san-pedro
   epreuves:
   - À bout de souffle
+  - Orientation
   - Parcours du combattant
   - Tables à bascule
   natures:
@@ -1790,12 +2017,23 @@ palmares:
   id: francois-descamp
   epreuves:
   - Grappins
+  - Orientation
   - Sacs
   natures:
     equilibre: 1
     force: 1
     precision: 1
     rapidite: 1
+- saison: s23
+  id: geraldine-nicolle
+  epreuves:
+  - Orientation
+  natures: {}
+- saison: s23
+  id: jean-charles-chatelus
+  epreuves:
+  - Orientation
+  natures: {}
 - saison: s23
   id: louana-roy
   epreuves:
@@ -1813,6 +2051,11 @@ palmares:
     equilibre: 1
     precision: 1
 - saison: s24
+  id: frederic-khouvilay
+  epreuves:
+  - Orientation
+  natures: {}
+- saison: s24
   id: helena-roosen
   epreuves:
   - Parcours du combattant
@@ -1822,10 +2065,16 @@ palmares:
 - saison: s24
   id: nicolas-pretot
   epreuves:
+  - Orientation
   - Parcours du combattant
   natures:
     force: 1
     rapidite: 1
+- saison: s24
+  id: tania-cakarevic
+  epreuves:
+  - Orientation
+  natures: {}
 - saison: s25
   id: amri-madani
   epreuves:
@@ -1835,15 +2084,41 @@ palmares:
 - saison: s25
   id: jean-belmonte
   epreuves:
+  - La bascule
   - Parcours du combattant
-  - la bascule
   natures:
     force: 1
     rapidite: 1
+- saison: s25
+  id: julie-rignault
+  epreuves:
+  - Orientation
+  natures: {}
+- saison: s25
+  id: meissa-seck
+  epreuves:
+  - Orientation
+  natures: {}
+- saison: s26
+  id: charlotte-rasquin
+  epreuves:
+  - Orientation
+  natures: {}
 - saison: s26
   id: ilyesse-benyoub
   epreuves:
-  - la bascule
+  - La bascule
+  - Orientation
+  natures: {}
+- saison: s26
+  id: thibault-belanger
+  epreuves:
+  - Orientation
+  natures: {}
+- saison: s27
+  id: gaelle-fleury
+  epreuves:
+  - Orientation
   natures: {}
 - saison: s27
   id: louise-picavet
@@ -1852,6 +2127,26 @@ palmares:
   natures:
     force: 1
     rapidite: 1
+- saison: s27
+  id: mael-lozach
+  epreuves:
+  - Orientation
+  natures: {}
+- saison: s28
+  id: clarisse-cresseveur
+  epreuves:
+  - Orientation
+  natures: {}
+- saison: s28
+  id: cynthia-combes
+  epreuves:
+  - Orientation
+  natures: {}
+- saison: s28
+  id: guillaume-le-deun
+  epreuves:
+  - Orientation
+  natures: {}
 - saison: sp1
   id: emilie-frahi
   epreuves:
@@ -1861,6 +2156,7 @@ palmares:
 - saison: sp1
   id: filomene-mendonca
   epreuves:
+  - Orientation
   - Tir à l'arc
   natures:
     precision: 1
@@ -1878,6 +2174,7 @@ palmares:
 - saison: sp1
   id: jade-handi
   epreuves:
+  - Orientation
   - Parcours du combattant
   - Sacs
   natures:
@@ -1891,12 +2188,22 @@ palmares:
   natures:
     precision: 1
     rapidite: 1
+- saison: sp1
+  id: romuald-lafite
+  epreuves:
+  - Orientation
+  natures: {}
 - saison: sp2
   id: christina-chevry
   epreuves:
   - Bambous
   natures:
     statique: 1
+- saison: sp2
+  id: christophe-guttatoro-martin
+  epreuves:
+  - Orientation
+  natures: {}
 - saison: sp2
   id: coumba-baradji
   epreuves:
@@ -1907,11 +2214,14 @@ palmares:
   id: freddy-boucher
   epreuves:
   - Boue
+  - La dégustation
+  - Orientation
   natures:
     rapidite: 1
 - saison: sp2
   id: gregoire-delachaux
   epreuves:
+  - Orientation
   - Sacs
   natures:
     equilibre: 1
@@ -1926,6 +2236,8 @@ palmares:
   id: bertrand-bolle
   epreuves:
   - Aveugle
+  - La dégustation
+  - Orientation
   natures:
     rapidite: 1
 - saison: sp3
@@ -1933,6 +2245,7 @@ palmares:
   epreuves:
   - Grappins
   - Massues
+  - Orientation
   - Paresseux
   natures:
     precision: 2
@@ -1941,6 +2254,7 @@ palmares:
 - saison: sp3
   id: coumba-baradji
   epreuves:
+  - La dégustation
   - Parcours du combattant
   natures:
     force: 1
@@ -1953,6 +2267,11 @@ palmares:
     force: 1
     rapidite: 1
 - saison: sp3
+  id: maud-garnier
+  epreuves:
+  - Orientation
+  natures: {}
+- saison: sp3
   id: teheiura-teahui
   epreuves:
   - Perche
@@ -1961,6 +2280,8 @@ palmares:
 - saison: sp4
   id: laurent-maistret
   epreuves:
+  - La dégustation
+  - Orientation
   - Parcours du combattant
   - Tir à l'arc
   natures:
@@ -1971,8 +2292,19 @@ palmares:
   id: martin-bazin
   epreuves:
   - Bambous
+  - Orientation
   natures:
     statique: 1
+- saison: sp4
+  id: philippe-bizet
+  epreuves:
+  - Orientation
+  natures: {}
+- saison: sp4
+  id: philippe-duron
+  epreuves:
+  - La dégustation
+  natures: {}
 - saison: sp4
   id: teheiura-teahui
   epreuves:
@@ -2001,6 +2333,7 @@ palmares:
 - saison: sp5
   id: clemence-castel
   epreuves:
+  - Orientation
   - Relais aquatiques
   natures:
     aquatique: 1
@@ -2027,6 +2360,7 @@ palmares:
   id: jeremy-raffin
   epreuves:
   - Cubes
+  - Orientation
   natures:
     logique: 1
 - saison: sp5
@@ -2047,6 +2381,7 @@ palmares:
   id: pascal-salviani
   epreuves:
   - Aveugle
+  - Orientation
   - Relais aquatiques
   natures:
     aquatique: 1
@@ -2082,7 +2417,9 @@ palmares:
   epreuves:
   - Catapulte
   - Dominos
+  - La dégustation
   - Labyrinthe aquatique
+  - Orientation
   - Parcours du combattant
   - Tables à bascule
   natures:
@@ -2090,6 +2427,11 @@ palmares:
     precision: 3
     rapidite: 2
     reflexion: 1
+- saison: sp6
+  id: ines-loucif
+  epreuves:
+  - Orientation
+  natures: {}
 - saison: sp6
   id: jessica-potel
   epreuves:
@@ -2103,6 +2445,7 @@ palmares:
   id: naoil-tita
   epreuves:
   - Labyrinthe aquatique
+  - Orientation
   - Sacs
   - Tables à bascule
   - Étoile
@@ -2161,6 +2504,7 @@ palmares:
   id: claude-dartois
   epreuves:
   - Bambous
+  - Orientation
   - Parcours du combattant
   - Paresseux
   natures:
@@ -2193,6 +2537,7 @@ palmares:
   id: laurent-maistret
   epreuves:
   - Bambous
+  - Orientation
   natures:
     statique: 1
 - saison: sp7
@@ -2231,9 +2576,10 @@ palmares:
   - Boules
   - Colonnes
   - Dominos
+  - La bascule
   - Labyrinthe
+  - Orientation
   - Perche
-  - la bascule
   natures:
     equilibre: 1
     logique: 1

@@ -77,9 +77,16 @@ def main():
                  for p in (q.get("pages") or {}).values() if "revisions" in p}
         for t in lot:
             c = texte.get(final(t))
-            if c and "Infobox" in c:
+            # Une page SANS fiche d'identite (Infobox) etait ecartee, avec un
+            # « INTROUVABLE » perdu dans la sortie : quatre pages, dont
+            # l'orientation, ont manque ainsi au relevé jusqu'au 21 octobre
+            # 2026. Elles sont redigees en liste a puces ; epreuves_nommees
+            # sait les lire (lire_liste). On garde donc toute page qui existe.
+            if c:
                 open(os.path.join(SORTIE, fichier(t)), "w", encoding="utf-8").write(c)
                 ecrits += 1
+                if "Infobox" not in c:
+                    print(f"  SANS FICHE D'IDENTITE (lue en liste) : {t}")
             else:
                 print(f"  INTROUVABLE {t}")
         time.sleep(1.5)
