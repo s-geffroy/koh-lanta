@@ -52,7 +52,7 @@ JEUX = (
     ("place", "La place dans le camp",
      ("femme", "doyen", "benjamin",
       "bandeau_minoritaire", "sexe_minoritaire", "apres_fusion"),
-     "On ajoute la position occupée ce soir-là : bandeau et sexe minoritaires, "
+     "On ajoute la position occupée ce soir-là : tribu initiale et sexe minoritaires, "
      "avant ou après la réunification."),
     ("jeu", "Ce que la soirée a produit",
      ("femme", "doyen", "benjamin",

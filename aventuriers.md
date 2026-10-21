@@ -74,7 +74,7 @@ sortie.</p>
 <p class="note"><strong>Rang et épreuves gagnées</strong> viennent des fiches
 individuelles du wiki Fandom, qui sont les seules à les porter : ils manquent
 donc là où la fiche manque. Le palmarès y compte tout ce que le wiki appelle une
-victoire — duels de l’île des bannis et épreuves de finale compris — là où
+victoire — duels de l’île des bannis ou de l’exil et épreuves de finale compris — là où
 <a href="{{ '/statistiques/epreuves/' | relative_url }}">la page des épreuves</a>
 ne compte que ce qui figure au bilan épisode par épisode. Les deux comptes sont
 identiques dans {{ site.data.stats.palmares.part_identiques }} % des cas ;

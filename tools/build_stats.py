@@ -1153,7 +1153,7 @@ COLONNES_COMPLETUDE = [
     ("age", "Âge", "Âge", "part"),
     ("profession", "Métier", "Métier", "part"),
     ("localisation", "Département d'origine", "Origine", "part"),
-    ("couleur", "Bandeau de départ", "Bandeau", "part"),
+    ("couleur", "Tribu initiale", "Tribu initiale", "part"),
     ("parcours", "Tribus datées en jours", "Tribus", "part"),
     ("jour_sortie", "Jour de sortie", "Sortie", "part"),
     ("votes_recus", "Voix reçues", "Voix", "part"),

@@ -90,10 +90,10 @@ aventuriers, <b>{{ site.data.stats.epreuves.epreuves }}</b> épreuves,
     <p><a href="{{ '/statistiques/conditionnelles/' | relative_url }}">Sachant le conseil d’avant</a></p>
   </li>
   <li>
-    <p><b>Le bandeau décide qui part.</b> Quand son bandeau d’origine est le
-    moins représenté du camp, on est éliminé dans
+    <p><b>La tribu initiale décide qui part.</b> Quand sa tribu initiale est la
+    moins représentée du camp, on est éliminé dans
     {{ af.bandeau[0].probabilite }} % des cas, contre
-    {{ af.bandeau[1].probabilite }} % quand il est le plus représenté.</p>
+    {{ af.bandeau[1].probabilite }} % quand elle est la plus représentée.</p>
     <p><a href="{{ '/statistiques/autour-du-feu/' | relative_url }}">Sachant qui est autour du feu</a></p>
   </li>
   <li>

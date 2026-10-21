@@ -135,7 +135,7 @@ l’âge, le métier et la saison tenus constants. On ne peut ni l’affirmer ni
 l’écarter : l’intervalle effleure 1. C’est la réponse honnête, et elle est moins
 tranchée que la moyenne brute ne le laissait croire.
 
-Ni l’âge ni la couleur du bandeau ne bougent — ce dernier point confirmant, par
+Ni l’âge ni la couleur de la tribu initiale ne bougent — ce dernier point confirmant, par
 une autre voie, ce que dit
 [Jaune contre rouge]({{ '/statistiques/tribus/' | relative_url }}).
 

@@ -29,7 +29,7 @@ def _lire(nom):
 
 # Les noms de variables des modeles sont des identifiants (« metier:sport ») ;
 # ce qui s'affiche doit etre du francais.
-LISIBLE = {"metier:": "métier : ", "couleur:": "bandeau : ",
+LISIBLE = {"metier:": "métier : ", "couleur:": "tribu initiale : ",
            "age_centre_carre": "âge (écart au centre, au carré)",
            "age": "âge", "annee": "année", "taille_casting": "taille du casting"}
 
@@ -57,7 +57,7 @@ def figure_survie(stats):
         description=(
             f'Part des aventuriers encore en jeu, jour par jour, sur les saisons '
             f'classiques. La courbe jaune et la courbe rouge se confondent : les '
-            f'deux bandeaux ont la même médiane, le jour {b["mediane"]}.'),
+            f'deux tribus initiales ont la même médiane, le jour {b["mediane"]}.'),
         note=f'{b["effectif"]} participations, saisons classiques achevées.'))
 
 
@@ -1503,16 +1503,16 @@ def figures_des_modeles(stats):
         ecrire("feu-bandeau-fusion.svg", barres_groupees(
             [{"libelle": lab,
               "valeurs": [bloc[0]["probabilite"], bloc[1]["probabilite"]],
-              "details": [f'bandeau minoritaire : {bloc[0]["cas"]} sur {bloc[0]["effectif"]}',
-                          f'bandeau majoritaire : {bloc[1]["cas"]} sur {bloc[1]["effectif"]}']}
+              "details": [f'tribu initiale minoritaire : {bloc[0]["cas"]} sur {bloc[0]["effectif"]}',
+                          f'tribu initiale majoritaire : {bloc[1]["cas"]} sur {bloc[1]["effectif"]}']}
              for lab, bloc in (("avant la réunification", af["bandeau_avant"]),
                                ("après la réunification", af["bandeau_apres"]))
              if len(bloc) == 2],
-            [{"nom": "bandeau minoritaire", "couleur": TRIBUS["rouge"]},
-             {"nom": "bandeau majoritaire", "couleur": TRIBUS["jaune"]}],
-            titre="Le bandeau d’origine, avant et après la réunification",
-            description="Probabilité d’être éliminé selon que son bandeau de départ "
-                        "est le moins ou le plus représenté du camp présent.",
+            [{"nom": "tribu initiale minoritaire", "couleur": TRIBUS["rouge"]},
+             {"nom": "tribu initiale majoritaire", "couleur": TRIBUS["jaune"]}],
+            titre="La tribu initiale, avant et après la réunification",
+            description="Probabilité d’être éliminé selon que sa tribu initiale "
+                        "est la moins ou la plus représentée du camp présent.",
             unite=" %", largeur=720, marge_gauche=200))
 
     for cle, nom, teinte in (("bandeau_minoritaire", "feu-bandeau", SERIES[0]),

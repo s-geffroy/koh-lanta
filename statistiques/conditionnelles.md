@@ -428,7 +428,7 @@ plus rare — et beaucoup plus lisible.
 La question inverse — non plus « sachant mon passé », mais **« sachant qui est
 assis autour du feu ce soir »** — est traitée sur
 [Sachant qui est autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }}) :
-le bandeau minoritaire, le sexe minoritaire, le doyen, le gagnant du confort, et
+la tribu initiale minoritaire, le sexe minoritaire, le doyen, le gagnant du confort, et
 la probabilité qui vaut zéro, comme le veut la règle : partir le soir où l’on a
 gagné l’immunité.
 

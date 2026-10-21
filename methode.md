@@ -99,11 +99,11 @@ Une classification automatique tourne ensuite sur ces axes ; le nombre de
 groupes est celui qui maximise l’indice de silhouette, à condition qu’aucun
 groupe ne pèse moins de 2 % du casting.
 
-**Le bandeau en est exclu**, et cette exclusion est un correctif : tant qu’il y
+**La tribu initiale en est exclue**, et cette exclusion est un correctif : tant qu’il y
 figurait, le test du « mélange d’archétypes » sortait à 7,95 écarts-types. Les
 couleurs en jeu changeant d’une saison à l’autre, une saison ne pouvait
 mécaniquement pas contenir tous les profils — le test mesurait la grille des
-tribus, pas le casting. Sans le bandeau, il tombe à
+tribus, pas le casting. Sans la tribu initiale, il tombe à
 {% assign tma = m.registre | where: "cle", "melange_archetypes" | first %}{{ tma.ecart_types }}
 écart-type et n’est pas retenu.
 
@@ -154,7 +154,7 @@ ce qui survit à ce brassage est donc de la coordination qui traverse le temps.
 Ce brassage porte une contrainte qui n’a rien d’un détail : **un votant ne peut
 pas recevoir son propre nom**. Sans elle, 12,5 % des bulletins tirés étaient des
 couples impossibles — et comme un tel couple partage forcément le sexe, le
-métier et le bandeau de son auteur, l’attendu s’en trouvait gonflé et trois
+métier et la tribu initiale de son auteur, l’attendu s’en trouvait gonflé et trois
 résultats spectaculaires sortaient de nulle part. Ils se sont évanouis une fois
 la contrainte posée. L’épisode est raconté sur
 [Qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }}), parce qu’il
@@ -394,7 +394,7 @@ date de rupture, sans rien changer à son existence.
 
 **Le niveau du bulletin reste le bon endroit**, et c’est là que les résultats les
 plus solides de ce site ont été trouvés : la persistance des alliances,
-l’appartenance à la majorité, la protection du bandeau de départ, la trahison
+l’appartenance à la majorité, la protection de la tribu initiale, la trahison
 qui n’en est pas une. Mais les questions qui restent à ce niveau — qui propose un
 nom, qui suit, dans quel ordre les bulletins sont écrits — demandent une
 information que **les sources ne contiennent pas**.
@@ -410,7 +410,7 @@ s’arrêter, et ce serait malhonnête de le prétendre.
 **Le vrai risque n’est pas le nombre de tests, c’est le modèle nul.** Deux fois
 sur ce site, un résultat spectaculaire s’est révélé fabriqué par la manière de
 tirer au sort : le vote homophile, où le modèle nul laissait un aventurier
-recevoir son propre nom ; le mélange d’archétypes, où le bandeau — assigné par
+recevoir son propre nom ; le mélange d’archétypes, où la tribu initiale — assignée par
 la production, et différent d’une saison à l’autre — rendait le résultat vrai
 par construction. Les deux sont racontés là où ils sont tombés, et non effacés.
 Aucune correction pour tests multiples n’aurait attrapé ni l’un ni l’autre.

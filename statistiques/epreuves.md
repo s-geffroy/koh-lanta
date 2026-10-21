@@ -113,7 +113,7 @@ haut : la saison qu’il a gagnée, <em>Malaisie</em>, n’avait pas de bilan pa
 
 <p class="note"><strong>Les deux comptes ne mesurent pas la même chose, et il
 faut le savoir avant de les comparer.</strong> Le total d’une fiche englobe les
-duels de l’île des bannis et les épreuves de finale, que le bilan par épisode
+duels de l’île des bannis ou de l’exil et les épreuves de finale, que le bilan par épisode
 n’enregistre pas. Là où les deux existent, ils sont <strong>identiques dans
 {{ pa.part_identiques }} % des cas</strong> ({{ pa.identiques }} sur
 {{ pa.compares }}) et l’écart médian, quand il y en a un, vaut

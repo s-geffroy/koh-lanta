@@ -19,7 +19,7 @@ chapeau: >-
 [Sachant le conseil d’avant]({{ '/statistiques/conditionnelles/' | relative_url }})
 conditionne sur le **passé** : les voix reçues la fois précédente. Cette
 page-ci conditionne sur le **présent** — la place qu’on occupe dans le camp
-assis autour du feu ce soir-là. Être du bandeau le moins représenté, du sexe le
+assis autour du feu ce soir-là. Être de la tribu initiale la moins représentée, du sexe le
 moins représenté, le plus âgé, celui qui vient de gagner le confort : autant de
 positions qui se lisent **avant** que le premier bulletin ne soit écrit.
 
@@ -107,13 +107,13 @@ douze.</p>
 
 {% include graphiques/feu-bandeau.svg %}
 
-<p class="legende-figure">Écart entre partir quand son bandeau de départ est le
-moins représenté du camp et partir quand il est le plus représenté, contre
+<p class="legende-figure">Écart entre partir quand sa tribu initiale est la
+moins représentée du camp et partir quand elle est la plus représentée, contre
 {{ tb.tirages }} tirages où l’éliminé est pris au hasard parmi les présents.</p>
 
 <div class="constat">
-  <p>Bandeau minoritaire : <b>{{ bmin.probabilite }} %</b>
-  ({{ bmin.cas }} sur {{ bmin.effectif }}). Bandeau majoritaire :
+  <p>Tribu initiale minoritaire : <b>{{ bmin.probabilite }} %</b>
+  ({{ bmin.cas }} sur {{ bmin.effectif }}). Tribu initiale majoritaire :
   <b>{{ bmaj.probabilite }} %</b>.</p>
   <p>{{ tb.observe_arrondi }} points d’écart, {{ tb.ecart_types }}
   écarts-types au-dessus du hasard, p ajustée {{ tb.p_ajustee }}.</p>
@@ -125,7 +125,7 @@ couleur de départ ne décide **rien** du palmarès :
 {{ site.data.stats.mots.victoires_rouges }} rouges. Les deux résultats ne se contredisent pas, ils se complètent — et
 ensemble ils disent quelque chose de précis :
 
-> **Le bandeau ne dit pas qui gagne. Il dit qui part, dès qu’on se retrouve du
+> **La tribu initiale ne dit pas qui gagne. Elle dit qui part, dès qu’on se retrouve du
 > mauvais côté du compte.**
 
 {% include graphiques/feu-bandeau-fusion.svg %}
@@ -139,7 +139,7 @@ réunification.</p>
 {% assign pmaj = f.bandeau_apres | last %}
 <div class="tableau-large">
 <table>
-<thead><tr><th></th><th class="nombre">Bandeau minoritaire</th><th class="nombre">Bandeau majoritaire</th></tr></thead>
+<thead><tr><th></th><th class="nombre">Tribu initiale minoritaire</th><th class="nombre">Tribu initiale majoritaire</th></tr></thead>
 <tbody>
 <tr><td>Avant la réunification</td>
     <td class="nombre"><b>{{ amin.probabilite }} %</b> <small>({{ amin.effectif }})</small></td>
@@ -153,11 +153,11 @@ réunification.</p>
 
 L’effet est **plus fort avant la réunification qu’après**, ce qui n’allait pas de soi :
 on attendait plutôt le contraire, la réunification étant le moment où les
-anciennes tribus se comptent. L’explication est ailleurs — avant la réunification, un
-bandeau ne devient minoritaire dans une tribu que par un **échange de
+anciennes tribus se comptent. L’explication est ailleurs — avant la réunification, une
+tribu initiale ne devient minoritaire dans un camp que par un **échange de
 membres**. C’est donc la mesure du sort réservé au nouveau venu, et ce sort est
 clair. [Qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }}) montre
-la même chose au niveau du bulletin : le bandeau est le seul trait qui guide
+la même chose au niveau du bulletin : la tribu initiale est le seul trait qui guide
 l’écriture d’un nom.
 
 ## Le sexe minoritaire : l’écart tient, la démonstration a cédé
@@ -196,7 +196,7 @@ qui a changé, c’est ce que nous avions le droit d’en dire.</strong> Une pag
 ne raconte que le dernier état laisse croire à une certitude qui n’existe
 pas.</p>
 
-L’écart va à l’inverse du bandeau, et à l’inverse de l’intuition. La lecture la
+L’écart va à l’inverse de celui de la tribu initiale, et à l’inverse de l’intuition. La lecture la
 plus économe est que **la majorité se mange elle-même** : quand un camp compte
 six hommes et trois femmes, les bulletins des six se partagent entre eux. Elle
 tient, mais elle n’est pas la seule.
@@ -209,7 +209,7 @@ solidité de ces survivants, pas un effet de la minorité. Ces données ne
 tranchent pas entre les deux lectures, et il n’y a aucune raison de faire
 semblant.</p>
 
-<p class="note">La même objection s’applique au bandeau — mais <strong>en sens
+<p class="note">La même objection s’applique à la tribu initiale — mais <strong>en sens
 inverse</strong>, ce qui la rend rassurante : là aussi les minoritaires sont des
 survivants, ce qui devrait les <em>protéger</em>. L’effet mesuré va contre cette
 sélection ; il est donc, s’il faut choisir, plutôt sous-estimé que
@@ -285,14 +285,14 @@ de l’épisode et partir quand on n’a rien gagné.</p>
 ## Ce que cette page ne dit pas
 
 <div class="constat">
-  <p><b>Une position n’est pas une cause.</b> Le bandeau minoritaire ne fait
-  partir personne : il décrit un rapport de force que le vote ne fait
+  <p><b>Une position n’est pas une cause.</b> La tribu initiale minoritaire ne fait
+  partir personne : elle décrit un rapport de force que le vote ne fait
   qu’enregistrer. La donnée ne sait pas séparer les deux.</p>
   <p><b>Le camp d’avant la réunification n’est connu que par les bulletins.</b> Sur les
-  conseils tribaux au dépouillement incomplet, on ignore qui était là — ils sont
+  conseils au dépouillement incomplet, on ignore qui était là — ils sont
   écartés, et [la complétude]({{ '/completude/' | relative_url }}) montre que
   cela concerne surtout les saisons récentes.</p>
-  <p><b>{{ site.data.stats.mots.autour_tests_maj }} tests, {{ site.data.stats.mots.autour_retenus }} retenus</b> : le bandeau et le sexe minoritaires. Les
+  <p><b>{{ site.data.stats.mots.autour_tests_maj }} tests, {{ site.data.stats.mots.autour_retenus }} retenus</b> : la tribu initiale et le sexe minoritaires. Les
   autres sont publiés comme non concluants, avec leur écart et leur
   intervalle — ils ne sont pas cachés, ils sont le prix de la liste déclarée
   d’avance. Le sexe minoritaire a changé deux fois de statut au fil des

@@ -103,8 +103,8 @@ réparation.</p>
 Le camp d’origine gouverne le bulletin **en cours de jeu** mieux que tout le
 reste — c’est le résultat le plus net de
 [Qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }}). Or deux
-personnes du même bandeau votent souvent ensemble. L’effet du co-vote pourrait
-donc n’être que le reflet du bandeau. Le même modèle, avec cette variable de
+personnes de la même tribu initiale votent souvent ensemble. L’effet du co-vote pourrait
+donc n’être que le reflet de la tribu initiale. Le même modèle, avec cette variable de
 plus :
 
 <div class="tableau-large">
@@ -122,7 +122,7 @@ plus :
 </div>
 
 <div class="constat">
-  <p><b>Le bandeau, ici, ne fait rigoureusement rien</b> : cote ×{{ ab.coefficients[2].rapport }},
+  <p><b>La tribu initiale, ici, ne fait rigoureusement rien</b> : cote ×{{ ab.coefficients[2].rapport }},
   intervalle {{ ab.coefficients[2].bas }} à {{ ab.coefficients[2].haut }},
   p = {{ ab.coefficients[2].p }}. Ce qui gouverne le conseil ne gouverne pas le
   jury — et c’est en soi un résultat, vu la force de l’effet en cours de jeu.</p>
@@ -130,11 +130,11 @@ plus :
   pas ({{ c1.rapport }} devient {{ ab.coefficients[1].rapport }}), l’intervalle
   s’élargit sans atteindre 1 : {{ ab.coefficients[1].bas }} à
   {{ ab.coefficients[1].haut }}, p = {{ ab.coefficients[1].p }}. Ce n’est donc
-  pas le bandeau déguisé : c’est bien avec qui l’on a voté, conseil après
+  pas la tribu initiale déguisée : c’est bien avec qui l’on a voté, conseil après
   conseil, que le juré récompense.</p>
 </div>
 
-<p class="note">Le contraste vaut d’être noté : le bandeau tombe à
+<p class="note">Le contraste vaut d’être noté : la tribu initiale tombe à
 {{ ab.coefficients[2].rapport }}, c’est-à-dire exactement rien, tandis que les
 deux autres variables tiennent sans bouger. Ce qui décide au conseil — d’où l’on
 vient — cesse d’exister au jury ; ce qui décide au jury, c’est ce qu’on s’est

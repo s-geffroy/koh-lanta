@@ -186,7 +186,7 @@ départs alternent.
 {% include graphiques/decimation.svg %}
 
 <p class="legende-figure">Nombre de fois où deux sorties consécutives viennent
-du même bandeau de départ, sur {{ de.saisons }} saisons et {{ de.sorties }}
+de la même tribu initiale, sur {{ de.saisons }} saisons et {{ de.sorties }}
 sorties d’après-réunification. La silhouette est ce que donne un ordre de sortie tiré
 au sort, à composition de camps identique.</p>
 
@@ -194,7 +194,7 @@ au sort, à composition de camps identique.</p>
   <p>{{ dt.observe }} enchaînements observés contre {{ dt.attendu }} attendus,
   <b>{{ dt.ecart_types }} écarts-types</b>, p ajustée {{ dt.p_ajustee }}.</p>
   <p>Les sorties d’après-réunification ne se répartissent pas au hasard entre les deux
-  anciens camps : <b>elles se suivent</b>. Le bandeau qu’on a porté les
+  anciens camps : <b>elles se suivent</b>. La tribu dans laquelle on a joué les
   {{ site.data.stats.mots.episode_fusion }} premiers épisodes décide encore de l’ordre dans lequel on part.</p>
 </div>
 
@@ -219,7 +219,7 @@ au sort, à composition de camps identique.</p>
 </table>
 </div>
 
-<p class="note">Chaque lettre est le bandeau de départ d’un sortant, dans
+<p class="note">Chaque lettre est la tribu initiale d’un sortant, dans
 l’ordre : <code>J</code> pour jaune, <code>R</code> pour rouge.
 {{ site.data.stats.mots.serie_decimation_maj }} sorties jaunes d’affilée en
 {{ de.detail[0].annee }} ne prouvent rien à elles seules — c’est l’accumulation

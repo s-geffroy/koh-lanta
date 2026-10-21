@@ -13,7 +13,7 @@ chapeau: >-
 {% assign h = m.homophilie %}
 {% assign reg = m.registre %}
 
-Le sexe, l’âge, le métier, le bandeau de départ : quatre façons de se ressembler
+Le sexe, l’âge, le métier, la tribu initiale : quatre façons de se ressembler
 ou non. La page [Les conseils]({{ '/statistiques/conseils/' | relative_url }})
 donne les parts brutes — {% assign vg = site.data.stats.conseils.vote_par_genre | first %}{{ vg.part }} %
 des bulletins sont écrits par {{ vg.libelle }}. Ces
@@ -33,7 +33,7 @@ dépouillement complet.</p>
 La première version de ce modèle nul rebattait les bulletins sans contrainte.
 Elle laissait donc un votant recevoir **son propre nom** : un couple qui
 n’existe dans aucun conseil réel — on ne vote pas contre soi — et qui partage
-forcément le sexe, le métier et le bandeau de son auteur.
+forcément le sexe, le métier et la tribu initiale de son auteur.
 
 **12,5 % des bulletins tirés étaient de ce type**, contre 0 sur
 {{ h.bulletins }} dans les données. L’attendu en était gonflé, et tout écart
@@ -51,13 +51,13 @@ paraissait spectaculaire :
 <tr><td>Viser quelqu’un du même sexe</td><td class="nombre">−8,8 écarts-types</td><td class="nombre">{{ ts.ecart_types }} écarts-types</td></tr>
 <tr><td>L’écart d’âge avec sa cible</td><td class="nombre">+12,5</td><td class="nombre">{{ ta.ecart_types }}</td></tr>
 <tr><td>Viser la même famille de métier</td><td class="nombre">−16,6</td><td class="nombre">{{ tm.ecart_types }}</td></tr>
-<tr><td>Viser son propre bandeau</td><td class="nombre">−15,6</td><td class="nombre">{{ tb.ecart_types }}</td></tr>
+<tr><td>Viser sa propre tribu initiale</td><td class="nombre">−15,6</td><td class="nombre">{{ tb.ecart_types }}</td></tr>
 </tbody>
 </table>
 </div>
 
 Le défaut gonflait les quatre écarts. Corrigé, celui de l’âge disparaît ; ceux
-du sexe et du métier survivent, très réduits ; seul le bandeau garde un écart
+du sexe et du métier survivent, très réduits ; seule la tribu initiale garde un écart
 massif. C’est dit ici parce que c’est la leçon
 principale de cette page : **un test de permutation ne vaut que ce que vaut son
 modèle nul**, et un nul mal contraint produit des écarts énormes et faux.
@@ -143,23 +143,23 @@ rares dans un camp de huit, et le test manque de bulletins pour trancher.</p>
 {% assign t = reg | where: "cle", "vote_bandeau_apres_fusion" | first %}
 
 Avant la réunification, un conseil ne réunit qu’une tribu : tous les bulletins y
-sont forcément « même bandeau », et la question ne s’y pose pas. On mesure donc
-sur les **{{ h.conseils_mixtes }} conseils réunissant plusieurs bandeaux**,
+sont forcément « même tribu initiale », et la question ne s’y pose pas. On mesure donc
+sur les **{{ h.conseils_mixtes }} conseils réunissant plusieurs tribus initiales**,
 soit {{ h.bulletins_mixtes }} bulletins.
 
 {% include graphiques/vise-bandeau.svg %}
 
-<p class="legende-figure">Part des bulletins visant quelqu’un de son propre
-bandeau de départ, sur les seuls conseils mixtes.</p>
+<p class="legende-figure">Part des bulletins visant quelqu’un de sa propre
+tribu initiale, sur les seuls conseils mixtes.</p>
 
 <div class="constat">
-  <p>Une fois les tribus mélangées, <b>{{ t.observe }} %</b> des bulletins visent
+  <p>Une fois les tribus recomposées, <b>{{ t.observe }} %</b> des bulletins visent
   quelqu’un du camp d’origine de leur auteur. Le simple partage des cibles en
   prévoit <b>{{ t.attendu }} %</b>.</p>
   <p>{{ t.ecart_types }} écarts-types, p ajustée {{ t.p_ajustee }}. On écrit le
   nom d’un ancien coéquipier <b>{{ t.ecart_relatif }} % moins souvent</b> qu’on ne
   le devrait.</p>
-  <p>Le bandeau de départ n’existe plus. Il protège encore.</p>
+  <p>La tribu initiale n’existe plus. Elle protège encore.</p>
 </div>
 
 C’est la même chose que la persistance des alliances, vue d’un autre angle et

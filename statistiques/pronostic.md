@@ -20,7 +20,7 @@ chose du résultat ?
 ## La règle du jeu, pour le modèle
 
 On n’autorise que ce qui est connu **le jour du casting** : l’âge, le sexe, la
-famille de métier, la couleur du bandeau, la taille du plateau et l’année.
+famille de métier, la couleur de la tribu initiale, la taille du plateau et l’année.
 Aucune information de jeu — pas une épreuve gagnée, pas un bulletin reçu, pas un
 jour de survie. La question n’est pas « peut-on deviner à mi-parcours », elle est
 « le recrutement contient-il déjà la réponse ».

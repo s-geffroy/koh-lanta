@@ -484,13 +484,13 @@ def recette_casting(par_saison, parts):
             "Les deux tribus de départ sont-elles plus semblables en part de femmes qu'un tirage au hasard ne les ferait ?",
             ecart_femmes(reel), np.array([ecart_femmes(t) for t in tirages]),
             unite="points de %",
-            lecture="On rebat les bandeaux à l'intérieur de chaque saison. Un écart observé PLUS PETIT que l'attendu veut dire que les tribus sont composées à l'équilibre, pas tirées au sort."))
+            lecture="On rebat les tribus initiales à l'intérieur de chaque saison. Un écart observé PLUS PETIT que l'attendu veut dire que les tribus sont composées à l'équilibre, pas tirées au sort."))
         tests.append(_test(
             "tribus_ages", "L'âge moyen des deux tribus",
             "Les deux tribus de départ ont-elles des âges moyens plus proches qu'un tirage au hasard ne les ferait ?",
             ecart_age(reel), np.array([ecart_age(t) for t in tirages]),
             unite="années",
-            lecture="Même méthode, sur l'âge moyen de chaque bandeau. Un écart observé PLUS GRAND que l'attendu veut dire l'inverse d'un équilibre : deux tribus construites pour différer."))
+            lecture="Même méthode, sur l'âge moyen de chaque tribu initiale. Un écart observé PLUS GRAND que l'attendu veut dire l'inverse d'un équilibre : deux tribus construites pour différer."))
         tests.append(_test(
             "tribus_ages_mediane", "L'âge des deux tribus, à la médiane",
             'Le même écart, mesuré à la médiane : est-il général, ou porté par quelques saisons ?',
@@ -1102,7 +1102,7 @@ def equilibre(par_saison, parts, conseils, epreuves):
 
     # Ces libelles sont PUBLIES : ils titrent chaque ligne du graphique en
     # foret et chaque ligne du tableau de /statistiques/equilibre/.
-    noms_cox = ["Femme", "Âge (par décennie)", "Bandeau jaune",
+    noms_cox = ["Femme", "Âge (par décennie)", "Tribu initiale jaune",
                 "Déjà venu"] + [f"Métier — {lisible(f)}" for f in principales]
     cox = {}
     if len(duree) >= 200:
@@ -1820,8 +1820,8 @@ def homophilie(par_saison, parts, conseils):
         ("vote_meme_metier", "Viser la même famille de métier",
          "Le métier rapproche-t-il ou éloigne-t-il du bulletin ?",
          "part sur 1", 1),
-        ("vote_meme_bandeau", "Viser son propre bandeau de départ",
-         "Le camp d'origine protège-t-il, une fois les tribus mélangées ?",
+        ("vote_meme_bandeau", "Viser sa propre tribu initiale",
+         "Le camp d'origine protège-t-il, une fois les tribus recomposées ?",
          "part sur 1", 1),
         ("vote_meme_departement", "Viser quelqu'un de son département",
          "Épargne-t-on le voisin — celui qui vit dans le même département ?",
@@ -1842,11 +1842,11 @@ def homophilie(par_saison, parts, conseils):
     # Le bandeau, mesure la ou la question se pose : apres la reunification.
     if observe_mixte[3] is not None and nulle_mixte:
         t = _test(
-            "vote_bandeau_apres_fusion", "Épargner son bandeau de départ",
-            "Une fois les tribus mélangées, écrit-on moins souvent le nom de "
+            "vote_bandeau_apres_fusion", "Épargner sa tribu initiale",
+            "Une fois les tribus recomposées, écrit-on moins souvent le nom de "
             "quelqu'un de son camp d'origine ?",
             observe_mixte[3] * 100.0, np.array(nulle_mixte) * 100.0, unite="%",
-            lecture="Mesuré sur les seuls conseils réunissant plusieurs bandeaux. "
+            lecture="Mesuré sur les seuls conseils réunissant plusieurs tribus initiales. "
                     "Un observé SOUS l'attendu veut dire que le camp de départ "
                     "protège encore, longtemps après avoir cessé d'exister.")
         t["bulletins"] = effectifs_mixte[3]
@@ -1958,7 +1958,7 @@ def jury_final(par_saison, parts, conseils):
         X2 = np.column_stack([np.array(X), np.array(bandeau)])
         m2 = sm.ConditionalLogit(np.array(y), X2, groups=np.array(groupes)).fit(disp=0)
         ic2 = m2.conf_int()
-        noms2 = noms + ("Partage le bandeau de départ du juré",)
+        noms2 = noms + ("Partage la tribu initiale du juré",)
         avec_bandeau = {
             "coefficients": [
                 {"libelle": noms2[i],
@@ -1968,7 +1968,7 @@ def jury_final(par_saison, parts, conseils):
                  "p": _arr(float(m2.pvalues[i]), 4)}
                 for i in range(len(noms2))],
             "lecture": "Le même modèle, avec une variable de plus : les deux "
-                       "partagent-ils le bandeau de départ ?",
+                       "partagent-ils la tribu initiale ?",
         }
 
     # La lecture brute, sans modele : la part de bulletins de jury qui vont a
@@ -2274,11 +2274,11 @@ def decimation(par_saison, parts, conseils, epreuves):
         "detail": detail[:10],
         "test": _test(
             "decimation", "L'élimination en série d'un camp",
-            "Après la réunification, les sorties se suivent-elles par bandeau "
+            "Après la réunification, les sorties se suivent-elles par tribu initiale "
             "plus souvent que le hasard ne le voudrait ?",
             observe, nulle, unite="enchaînements",
             lecture="Nombre de fois où deux sorties consécutives viennent du même "
-                    "bandeau de départ. Un observé AU-DESSUS de l'attendu est la "
+                    "tribu initiale. Un observé AU-DESSUS de l'attendu est la "
                     "signature d'un camp démonté un par un."),
     }
 
@@ -3608,7 +3608,7 @@ def autour_du_feu(par_saison, parts, conseils, epreuves, bloc_fusion):
         return _taux(lignes, lambda l: (None if l[cle] is None
                                         else (oui if l[cle] else non)), [oui, non])
 
-    bandeau = _oui_non("bandeau_minoritaire", "bandeau minoritaire", "bandeau majoritaire")
+    bandeau = _oui_non("bandeau_minoritaire", "tribu initiale minoritaire", "tribu initiale majoritaire")
     sexe = _oui_non("sexe_minoritaire", "sexe minoritaire", "sexe majoritaire")
     def _place_age(l):
         if l["doyen"] is None:
@@ -3664,11 +3664,11 @@ def autour_du_feu(par_saison, parts, conseils, epreuves, bloc_fusion):
             nulles[i].append(v)
 
     tests = [
-        _test("bandeau_minoritaire", "Le bandeau minoritaire",
-              "Appartenir au bandeau le moins représenté du camp expose-t-il ?",
+        _test("bandeau_minoritaire", "La tribu initiale minoritaire",
+              "Appartenir à la tribu initiale la moins représentée du camp expose-t-il ?",
               observes[0], np.array(nulles[0]), unite=" points",
-              lecture="Écart entre partir quand son bandeau d'origine est le moins "
-                      "représenté du camp et partir quand il est le plus représenté. "
+              lecture="Écart entre partir quand sa tribu initiale est la moins "
+                      "représentée du camp et partir quand elle est la plus représentée. "
                       "Le modèle nul tire l'éliminé au hasard parmi les présents : "
                       "la taille du camp et sa composition restent celles du soir."),
         _test("sexe_minoritaire", "Le sexe minoritaire",
@@ -3702,14 +3702,14 @@ def autour_du_feu(par_saison, parts, conseils, epreuves, bloc_fusion):
         "bandeau": bandeau,
         "bandeau_avant": _taux([l for l in lignes if not l["apres_fusion"]],
                                lambda l: (None if l["bandeau_minoritaire"] is None else
-                                          ("bandeau minoritaire" if l["bandeau_minoritaire"]
-                                           else "bandeau majoritaire")),
-                               ["bandeau minoritaire", "bandeau majoritaire"]),
+                                          ("tribu initiale minoritaire" if l["bandeau_minoritaire"]
+                                           else "tribu initiale majoritaire")),
+                               ["tribu initiale minoritaire", "tribu initiale majoritaire"]),
         "bandeau_apres": _taux([l for l in lignes if l["apres_fusion"]],
                                lambda l: (None if l["bandeau_minoritaire"] is None else
-                                          ("bandeau minoritaire" if l["bandeau_minoritaire"]
-                                           else "bandeau majoritaire")),
-                               ["bandeau minoritaire", "bandeau majoritaire"]),
+                                          ("tribu initiale minoritaire" if l["bandeau_minoritaire"]
+                                           else "tribu initiale majoritaire")),
+                               ["tribu initiale minoritaire", "tribu initiale majoritaire"]),
         "sexe": sexe, "age": age, "genre": genre,
         "confort": conf, "immunite": imm,
         "tests": tests,

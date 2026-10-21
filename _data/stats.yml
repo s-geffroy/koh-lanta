@@ -20609,8 +20609,8 @@ prevision:
     erreurs: "86,4"
   - cle: place
     libelle: La place dans le camp
-    description: 'On ajoute la position occupée ce soir-là : bandeau et sexe minoritaires, avant ou après
-      la réunification.'
+    description: 'On ajoute la position occupée ce soir-là : tribu initiale et sexe minoritaires, avant
+      ou après la réunification.'
     variables: 6
     conseils: 361
     plis: 33
@@ -24097,8 +24097,8 @@ modeles:
       ecart_types: "-1,76"
       p: "0,077"
       tirages: 10000
-      lecture: On rebat les bandeaux à l'intérieur de chaque saison. Un écart observé PLUS PETIT que l'attendu
-        veut dire que les tribus sont composées à l'équilibre, pas tirées au sort.
+      lecture: On rebat les tribus initiales à l'intérieur de chaque saison. Un écart observé PLUS PETIT
+        que l'attendu veut dire que les tribus sont composées à l'équilibre, pas tirées au sort.
       nulle: &id075
         bornes:
         - "6,8021"
@@ -24148,8 +24148,8 @@ modeles:
       ecart_types: "3,03"
       p: "0,0022"
       tirages: 10000
-      lecture: 'Même méthode, sur l''âge moyen de chaque bandeau. Un écart observé PLUS GRAND que l''attendu
-        veut dire l''inverse d''un équilibre : deux tribus construites pour différer.'
+      lecture: 'Même méthode, sur l''âge moyen de chaque tribu initiale. Un écart observé PLUS GRAND que
+        l''attendu veut dire l''inverse d''un équilibre : deux tribus construites pour différer.'
       nulle: &id076
         bornes:
         - "1,5354"
@@ -24747,7 +24747,7 @@ modeles:
         bas: "0,935"
         haut: "1,192"
         p: "0,3788"
-      - variable: Bandeau jaune
+      - variable: Tribu initiale jaune
         rapport: "1,019"
         bas: "0,806"
         haut: "1,287"
@@ -25234,8 +25234,8 @@ modeles:
       p_ajustee: "0,0297"
       retenu: true
     - cle: vote_meme_bandeau
-      libelle: Viser son propre bandeau de départ
-      question: Le camp d'origine protège-t-il, une fois les tribus mélangées ?
+      libelle: Viser sa propre tribu initiale
+      question: Le camp d'origine protège-t-il, une fois les tribus recomposées ?
       observe: "54,563"
       attendu: "61,104"
       unite: '%'
@@ -25338,8 +25338,8 @@ modeles:
       p_ajustee: "0,0505"
       retenu: false
     - cle: vote_bandeau_apres_fusion
-      libelle: Épargner son bandeau de départ
-      question: Une fois les tribus mélangées, écrit-on moins souvent le nom de quelqu'un de son camp
+      libelle: Épargner sa tribu initiale
+      question: Une fois les tribus recomposées, écrit-on moins souvent le nom de quelqu'un de son camp
         d'origine ?
       observe: "28,417"
       attendu: "38,733"
@@ -25347,7 +25347,7 @@ modeles:
       ecart_types: "-13,69"
       p: "0,0002"
       tirages: 4000
-      lecture: Mesuré sur les seuls conseils réunissant plusieurs bandeaux. Un observé SOUS l'attendu
+      lecture: Mesuré sur les seuls conseils réunissant plusieurs tribus initiales. Un observé SOUS l'attendu
         veut dire que le camp de départ protège encore, longtemps après avoir cessé d'exister.
       nulle: &id084
         bornes:
@@ -25591,15 +25591,15 @@ modeles:
     test:
       cle: decimation
       libelle: L'élimination en série d'un camp
-      question: Après la réunification, les sorties se suivent-elles par bandeau plus souvent que le hasard
-        ne le voudrait ?
+      question: Après la réunification, les sorties se suivent-elles par tribu initiale plus souvent que
+        le hasard ne le voudrait ?
       observe: 135
       attendu: "106,849"
       unite: enchaînements
       ecart_types: "3,84"
       p: "0,0001"
       tirages: 10000
-      lecture: Nombre de fois où deux sorties consécutives viennent du même bandeau de départ. Un observé
+      lecture: Nombre de fois où deux sorties consécutives viennent du même tribu initiale. Un observé
         AU-DESSUS de l'attendu est la signature d'un camp démonté un par un.
       nulle: &id108
         bornes:
@@ -25669,13 +25669,12 @@ modeles:
         bas: "1,093"
         haut: "1,39"
         p: "0,0006"
-      - libelle: Partage le bandeau de départ du juré
+      - libelle: Partage la tribu initiale du juré
         rapport: "0,884"
         bas: "0,582"
         haut: "1,344"
         p: "0,5643"
-      lecture: 'Le même modèle, avec une variable de plus : les deux partagent-ils le bandeau de départ
-        ?'
+      lecture: 'Le même modèle, avec une variable de plus : les deux partagent-ils la tribu initiale ?'
     part_vers_bourreau: "49,7"
     bulletins_avec_bourreau_disponible: 232
     part_quand_disponible: "65,1"
@@ -28497,56 +28496,56 @@ modeles:
     hasard: "12,7"
     globale: "12,7"
     bandeau:
-    - modalite: bandeau minoritaire
+    - modalite: tribu initiale minoritaire
       effectif: 556
       cas: 90
       probabilite: "16,2"
       bas: "13,4"
       haut: "19,5"
       hasard: "12,1"
-      modalite_maj: Bandeau minoritaire
-    - modalite: bandeau majoritaire
+      modalite_maj: Tribu initiale minoritaire
+    - modalite: tribu initiale majoritaire
       effectif: 1081
       cas: 115
       probabilite: "10,6"
       bas: "8,9"
       haut: "12,6"
       hasard: "12,5"
-      modalite_maj: Bandeau majoritaire
+      modalite_maj: Tribu initiale majoritaire
     bandeau_avant:
-    - modalite: bandeau minoritaire
+    - modalite: tribu initiale minoritaire
       effectif: 139
       cas: 30
       probabilite: "21,6"
       bas: "15,6"
       haut: "29,1"
       hasard: "13,2"
-      modalite_maj: Bandeau minoritaire
-    - modalite: bandeau majoritaire
+      modalite_maj: Tribu initiale minoritaire
+    - modalite: tribu initiale majoritaire
       effectif: 345
       cas: 35
       probabilite: "10,1"
       bas: "7,4"
       haut: "13,8"
       hasard: "13,4"
-      modalite_maj: Bandeau majoritaire
+      modalite_maj: Tribu initiale majoritaire
     bandeau_apres:
-    - modalite: bandeau minoritaire
+    - modalite: tribu initiale minoritaire
       effectif: 417
       cas: 60
       probabilite: "14,4"
       bas: "11,3"
       haut: "18,1"
       hasard: "11,7"
-      modalite_maj: Bandeau minoritaire
-    - modalite: bandeau majoritaire
+      modalite_maj: Tribu initiale minoritaire
+    - modalite: tribu initiale majoritaire
       effectif: 736
       cas: 80
       probabilite: "10,9"
       bas: "8,8"
       haut: "13,3"
       hasard: "12,1"
-      modalite_maj: Bandeau majoritaire
+      modalite_maj: Tribu initiale majoritaire
     sexe:
     - modalite: sexe minoritaire
       effectif: 808
@@ -28642,17 +28641,17 @@ modeles:
       modalite_maj: N’a pas gagné l’immunité
     tests:
     - cle: bandeau_minoritaire
-      libelle: Le bandeau minoritaire
-      question: Appartenir au bandeau le moins représenté du camp expose-t-il ?
+      libelle: La tribu initiale minoritaire
+      question: Appartenir à la tribu initiale la moins représentée du camp expose-t-il ?
       observe: "5,549"
       attendu: "-0,422"
       unite: points
       ecart_types: "3,39"
       p: "0,0006"
       tirages: 10000
-      lecture: 'Écart entre partir quand son bandeau d''origine est le moins représenté du camp et partir
-        quand il est le plus représenté. Le modèle nul tire l''éliminé au hasard parmi les présents :
-        la taille du camp et sa composition restent celles du soir.'
+      lecture: 'Écart entre partir quand sa tribu initiale est la moins représentée du camp et partir
+        quand elle est la plus représentée. Le modèle nul tire l''éliminé au hasard parmi les présents
+        : la taille du camp et sa composition restent celles du soir.'
       nulle: &id099
         bornes:
         - "-6,6709"
@@ -29409,8 +29408,8 @@ modeles:
     p_ajustee: "0,1168"
     retenu: false
     tirages: 10000
-    lecture: On rebat les bandeaux à l'intérieur de chaque saison. Un écart observé PLUS PETIT que l'attendu
-      veut dire que les tribus sont composées à l'équilibre, pas tirées au sort.
+    lecture: On rebat les tribus initiales à l'intérieur de chaque saison. Un écart observé PLUS PETIT
+      que l'attendu veut dire que les tribus sont composées à l'équilibre, pas tirées au sort.
     nulle: *id075
     observe_arrondi: 13
     attendu_arrondi: "18,9"
@@ -29427,8 +29426,8 @@ modeles:
     p_ajustee: "0,0046"
     retenu: true
     tirages: 10000
-    lecture: 'Même méthode, sur l''âge moyen de chaque bandeau. Un écart observé PLUS GRAND que l''attendu
-      veut dire l''inverse d''un équilibre : deux tribus construites pour différer.'
+    lecture: 'Même méthode, sur l''âge moyen de chaque tribu initiale. Un écart observé PLUS GRAND que
+      l''attendu veut dire l''inverse d''un équilibre : deux tribus construites pour différer.'
     nulle: *id076
     observe_arrondi: "5,8"
     attendu_arrondi: "3,9"
@@ -29522,8 +29521,8 @@ modeles:
     observe_arrondi: "10,3"
     attendu_arrondi: 11
   - cle: vote_meme_bandeau
-    libelle: Viser son propre bandeau de départ
-    question: Le camp d'origine protège-t-il, une fois les tribus mélangées ?
+    libelle: Viser sa propre tribu initiale
+    question: Le camp d'origine protège-t-il, une fois les tribus recomposées ?
     origine: homophilie
     observe: "54,563"
     attendu: "61,104"
@@ -29558,9 +29557,9 @@ modeles:
     observe_arrondi: "1,7"
     attendu_arrondi: "2,1"
   - cle: vote_bandeau_apres_fusion
-    libelle: Épargner son bandeau de départ
-    question: Une fois les tribus mélangées, écrit-on moins souvent le nom de quelqu'un de son camp d'origine
-      ?
+    libelle: Épargner sa tribu initiale
+    question: Une fois les tribus recomposées, écrit-on moins souvent le nom de quelqu'un de son camp
+      d'origine ?
     origine: homophilie
     observe: "28,417"
     attendu: "38,733"
@@ -29570,8 +29569,8 @@ modeles:
     p_ajustee: "0,0006"
     retenu: true
     tirages: 4000
-    lecture: Mesuré sur les seuls conseils réunissant plusieurs bandeaux. Un observé SOUS l'attendu veut
-      dire que le camp de départ protège encore, longtemps après avoir cessé d'exister.
+    lecture: Mesuré sur les seuls conseils réunissant plusieurs tribus initiales. Un observé SOUS l'attendu
+      veut dire que le camp de départ protège encore, longtemps après avoir cessé d'exister.
     nulle: *id084
     observe_arrondi: "28,4"
     attendu_arrondi: "38,7"
@@ -29929,8 +29928,8 @@ modeles:
     observe_arrondi: 23
     attendu_arrondi: "14,9"
   - cle: bandeau_minoritaire
-    libelle: Le bandeau minoritaire
-    question: Appartenir au bandeau le moins représenté du camp expose-t-il ?
+    libelle: La tribu initiale minoritaire
+    question: Appartenir à la tribu initiale la moins représentée du camp expose-t-il ?
     origine: autour_du_feu
     observe: "5,549"
     attendu: "-0,422"
@@ -29940,9 +29939,9 @@ modeles:
     p_ajustee: "0,0014"
     retenu: true
     tirages: 10000
-    lecture: 'Écart entre partir quand son bandeau d''origine est le moins représenté du camp et partir
-      quand il est le plus représenté. Le modèle nul tire l''éliminé au hasard parmi les présents : la
-      taille du camp et sa composition restent celles du soir.'
+    lecture: 'Écart entre partir quand sa tribu initiale est la moins représentée du camp et partir quand
+      elle est la plus représentée. Le modèle nul tire l''éliminé au hasard parmi les présents : la taille
+      du camp et sa composition restent celles du soir.'
     nulle: *id099
     observe_arrondi: "5,5"
     attendu_arrondi: "-0,4"
@@ -30089,8 +30088,8 @@ modeles:
     attendu_arrondi: "57,1"
   - cle: decimation
     libelle: L'élimination en série d'un camp
-    question: Après la réunification, les sorties se suivent-elles par bandeau plus souvent que le hasard
-      ne le voudrait ?
+    question: Après la réunification, les sorties se suivent-elles par tribu initiale plus souvent que
+      le hasard ne le voudrait ?
     origine: decimation
     observe: 135
     attendu: "106,849"
@@ -30100,8 +30099,8 @@ modeles:
     p_ajustee: "0,0004"
     retenu: true
     tirages: 10000
-    lecture: Nombre de fois où deux sorties consécutives viennent du même bandeau de départ. Un observé
-      AU-DESSUS de l'attendu est la signature d'un camp démonté un par un.
+    lecture: Nombre de fois où deux sorties consécutives viennent du même tribu initiale. Un observé AU-DESSUS
+      de l'attendu est la signature d'un camp démonté un par un.
     nulle: *id108
     observe_arrondi: 135
     attendu_arrondi: "106,8"
@@ -30300,8 +30299,8 @@ completude_saisons:
     court: Origine
     nature: part
   - cle: couleur
-    libelle: Bandeau de départ
-    court: Bandeau
+    libelle: Tribu initiale
+    court: Tribu initiale
     nature: part
   - cle: parcours
     libelle: Tribus datées en jours
@@ -34640,8 +34639,8 @@ completude_saisons:
     completes: 30
     concernees: 34
   - cle: couleur
-    libelle: Bandeau de départ
-    court: Bandeau
+    libelle: Tribu initiale
+    court: Tribu initiale
     nature: part
     moyenne: "98,8"
     completes: 31

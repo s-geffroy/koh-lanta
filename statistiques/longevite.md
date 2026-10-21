@@ -155,7 +155,7 @@ participation**, rangé du séjour le plus court au plus long.
 {% include graphiques/peigne-torches.svg %}
 
 <p class="peigne-legende">Un trait, un aventurier ; sa longueur, ses jours de
-jeu ; sa couleur, son bandeau de départ. La bordure droite de cette figure
+jeu ; sa couleur, sa tribu initiale. La bordure droite de cette figure
 <em>est</em> la courbe de survie du programme, dessinée avec ses individus au
 lieu d’un tracé. Les traits les plus courts sont ceux des premiers conseils, le
 bloc plein du bas celui des finalistes. Les éditions spéciales, plus courtes, y

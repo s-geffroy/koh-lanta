@@ -95,7 +95,7 @@ tout seul.
 {% assign tf = reg | where: "cle", "tribus_femmes" | first %}
 
 Sur les {{ c.duos_de_tribus }} saisons classiques parties sur exactement deux
-tribus, on peut rebattre les bandeaux **à l’intérieur de chaque saison** et voir
+tribus, on peut rebattre les tribus initiales **à l’intérieur de chaque saison** et voir
 si les tribus réelles se ressemblent plus, ou moins, que des tribus tirées au
 sort.
 
@@ -137,7 +137,7 @@ plus de {{ site.data.stats.mots.duos_de_tribus }} saisons pour trancher.
 dimensions qui séparent le plus les profils (âge, sexe, métier). Les points
 nommés sont les modalités.</p>
 
-<p class="note"><strong>Le bandeau est exclu de ce calcul, et c’est important.</strong>
+<p class="note"><strong>La tribu initiale est exclue de ce calcul, et c’est important.</strong>
 La couleur n’est pas un trait de la personne recrutée : c’est une place donnée à
 l’arrivée. L’y laisser produisait un résultat spectaculaire et faux — voir plus
 bas.</p>
@@ -197,12 +197,12 @@ reste, le casting est **un continuum d’âges et de métiers** que l’algorith
 découpe en {{ site.data.stats.mots.archetypes }} — pas une galerie de personnages. Du moins au niveau de l’âge, du
 sexe et du métier, les seules choses que ce jeu de données connaisse.
 
-<p class="note"><strong>Un résultat spectaculaire, et faux.</strong> Tant que le
-bandeau restait dans le calcul, un test disait que le mélange de profils change
+<p class="note"><strong>Un résultat spectaculaire, et faux.</strong> Tant que la
+tribu initiale restait dans le calcul, un test disait que le mélange de profils change
 d’une saison à l’autre bien plus que le hasard ne le ferait — 7,95 écarts-types,
 un des plus forts du site. C’était mécanique : les couleurs en jeu ne sont pas
 les mêmes d’une saison à l’autre, donc une saison jaune-rouge ne peut pas
-contenir de profil « vert ». Le bandeau retiré, le même test tombe à
+contenir de profil « vert ». La tribu initiale retirée, le même test tombe à
 {% assign tma = reg | where: "cle", "melange_archetypes" | first %}{{ tma.ecart_types }} : il
 ne reste rien. Le mélange de profils d’une saison est indiscernable d’un tirage.
 C’est la deuxième fois qu’un modèle nul mal posé fabrique un résultat sur ce

@@ -193,7 +193,7 @@ sport gagne les épreuves et perd le jury ». À {{ fj.effectif }} participation
 le lien entre force et parcours est indiscernable de zéro.
 
 <p class="note">Trois réserves. Le plateau est reconstruit et non sourcé : une
-épreuve individuelle réservée à un sous-groupe — duel, retour d’exil — est
+épreuve individuelle réservée à un sous-groupe — duel, retour de l’île des bannis ou de l’exil — est
 comptée comme ouverte à tous, ce qui sous-estime les forces des vainqueurs
 concernés. Le modèle suppose une force constante sur toute la carrière, alors
 qu’un aventurier revenu six ans plus tard n’a plus le même corps. Enfin

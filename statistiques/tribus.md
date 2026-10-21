@@ -37,15 +37,15 @@ deux cents aventuriers chacun : il n’y a pas de signal.
 {% assign af = site.data.stats.modeles.autour_du_feu %}
 {% assign tba = site.data.stats.modeles.registre | where: "cle", "bandeau_minoritaire" | first %}
 
-Le bandeau ne décide rien du palmarès. Il décide en revanche **qui part**, dès
+La tribu initiale ne décide rien du palmarès. Elle décide en revanche **qui part**, dès
 qu’on se retrouve du mauvais côté du compte.
 
 <div class="constat">
-  <p>Sachant que son bandeau d’origine est le <b>moins représenté</b> du camp
+  <p>Sachant que sa tribu initiale est la <b>moins représentée</b> du camp
   assis au conseil, on est éliminé dans
   <b>{{ af.bandeau[0].probabilite }} %</b> des cas
-  ({{ af.bandeau[0].cas }} sur {{ af.bandeau[0].effectif }}) ; quand il est le
-  plus représenté, dans <b>{{ af.bandeau[1].probabilite }} %</b>.</p>
+  ({{ af.bandeau[0].cas }} sur {{ af.bandeau[0].effectif }}) ; quand elle est la
+  plus représentée, dans <b>{{ af.bandeau[1].probabilite }} %</b>.</p>
   <p>{{ tba.observe_arrondi }} points d’écart, {{ tba.ecart_types }}
   écarts-types au-dessus d’un tirage au sort parmi les présents de chaque
   conseil, p ajustée {{ tba.p_ajustee }}.</p>
@@ -86,7 +86,7 @@ l’île des héros de 2020 : {{ s.mots.effectif_noir }} aventuriers seulement, 
 possible.</p>
 
 <p class="note">Deux autres pages recoupent ce résultat. Un modèle de durée
-ne trouve aucun effet du bandeau sur le risque d’élimination
+ne trouve aucun effet de la tribu initiale sur le risque d’élimination
 (<a href="{{ '/statistiques/equilibre/' | relative_url }}">Le jeu tenu serré</a>).
 Et les deux tribus de départ ne sont pas composées à l’équilibre par une règle
 générale : {{ s.mots.tribus_contrastees }} saisons seulement opposent nettement deux générations
