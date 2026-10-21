@@ -11,14 +11,19 @@ chapeau: "Le côté **Données** du site présente les chiffres. Ici, on s'en se
   La liste vient de _data/navigation.yml, section `espace: articles` : un
   article ajoute au rail apparait ici sans autre ligne a ecrire.
 {%- endcomment -%}
-<ul class="cartes">
+<ul class="cartes cartes-articles">
 {%- for groupe in site.data.navigation -%}
 {%- if groupe.espace == "articles" -%}
 {%- for e in groupe.entrees -%}
 {%- unless e.hub -%}
   <li class="carte">
     <a href="{{ e.url | relative_url }}">
-      {%- if e.version -%}<span class="carte-rang">{{ e.version }}</span>{%- endif -%}
+      {%- assign quand = site.data.stats.articles.dates[e.url] -%}
+      <span class="carte-rang">
+        {%- if quand %}{{ quand.texte }}{% endif -%}
+        {%- if quand and e.version %} · {% endif -%}
+        {%- if e.version %}{{ e.version }}{% endif -%}
+      </span>
       <span class="carte-titre">{{ e.titre }}</span>
       <span class="carte-resume">{{ e.resume }}</span>
     </a>

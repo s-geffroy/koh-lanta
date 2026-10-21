@@ -102,7 +102,7 @@ dans les autres.</p>
   <td>{% if p.genre == "f" %}F{% elsif p.genre == "h" %}H{% endif %}</td>
   <td>{{ p.profession }}</td>
   <td>{{ p.localisation }}</td>
-  <td>{% if p.couleur %}<span class="pastille" style="background: var(--tribu-{{ p.couleur }})"></span>{% endif %}{{ p.tribu }}</td>
+  <td>{% if p.couleur %}<span class="pastille" style="background: var(--tribu-{{ p.couleur }})" aria-hidden="true"></span>{% endif %}{{ p.tribu }}</td>
   <td class="nombre">{{ p.jour_sortie }}</td>
   <td class="nombre">{{ p.classement }}</td>
   <td class="nombre"{% if p.victoires_individuelles %} data-val="{{ p.victoires_individuelles }}"{% endif %}>{% if p.victoires_individuelles %}{{ p.victoires_individuelles }} ind.{% if p.victoires_collectives %} · {{ p.victoires_collectives }} coll.{% endif %}{% endif %}</td>

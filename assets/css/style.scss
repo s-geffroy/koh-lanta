@@ -902,6 +902,23 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--encre); }
   color: var(--encre-douce);
 }
 
+/* L'index des articles : peu d'entrees, et on vient y choisir une lecture.
+   Une colonne, des titres de une, la date au-dessus. */
+.cartes-articles {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: var(--colonne);
+}
+.cartes-articles .carte a { padding: 1.1rem 0 1.5rem; }
+.cartes-articles .carte-titre {
+  font-size: 1.45rem;
+  font-weight: 750;
+  font-stretch: 110%;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  margin: 0.25rem 0 0.45rem;
+}
+.cartes-articles .carte-resume { font-size: 1.02rem; }
+
 /* --------------------------------------------------------------- saisons */
 
 .saison-grille {
