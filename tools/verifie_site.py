@@ -1335,6 +1335,55 @@ def controler_insecables(c, jeux):
         signaler(f"_includes/graphiques/{nom}", fautes)
 
 
+
+# --- Un bloc HTML colle au titre qui le precede --------------------------------
+#
+# Une balise Liquid qui rogne a gauche (« {%- ») mange la ligne vide qui la
+# precede. Si cette ligne separait un titre ou un paragraphe Markdown d'un
+# bloc HTML que la boucle va sortir, les deux se collent : kramdown lit le
+# bloc comme du TEXTE du titre. Le 21 octobre 2026, « <section class="theme"> »
+# s'est affiche en clair dans le H2 de /statistiques/ (0a894d7, repare
+# 185c30a). Le source paraissait juste : le defaut n'existe qu'apres le rendu
+# Liquid, d'ou ce raisonnement sur le source.
+RE_TAG_SEUL = re.compile(r"^\s*(\{%-?.*?-?%\}\s*)+$")
+
+
+def controler_html_colle(c):
+    """Refuse un bloc HTML que le rognage Liquid collerait au texte precedent."""
+    for chemin in sorted(pages()):
+        if not chemin.endswith(".md"):
+            continue
+        rel = os.path.relpath(chemin, RACINE)
+        texte = open(chemin, encoding="utf-8").read()
+        m = RE_FRONT.match(texte)
+        corps = texte[m.end():] if m else texte
+        decalage = texte[:m.end()].count("\n") if m else 0
+        efface = lambda x: "\n" * x.group(0).count("\n")
+        corps = RE_COMMENTAIRE.sub(efface, corps)
+        L = corps.split("\n")
+        for i, ligne in enumerate(L):
+            if not ligne.lstrip().startswith("{%-"):
+                continue
+            # la ligne de texte qui precede, par-dessus les lignes vides
+            j = i - 1
+            while j >= 0 and not L[j].strip():
+                j -= 1
+            if j < 0 or j == i - 1:
+                continue                  # rien a manger, ou deja colle a dessein
+            avant = L[j].strip()
+            if avant.startswith(("<", "{%", "{{", "|", "-->")):
+                continue                  # du HTML ou du Liquid : rien a casser
+            # la premiere ligne qui SORT quelque chose apres la balise
+            k = i
+            while k < len(L) and (not L[k].strip() or RE_TAG_SEUL.match(L[k])):
+                k += 1
+            if k < len(L) and RE_DEBUT_BLOC.match(L[k]):
+                c.erreur(f"{rel}:{i + 1 + decalage} : « {{%- » rogne la ligne vide apres "
+                         f"« {avant[:40]} » (ligne {j + 1 + decalage}) ; le bloc "
+                         f"« {L[k].strip()[:30]} » s'y collera et s'affichera en texte — "
+                         f"retirer le tiret de la balise")
+
+
 def controler_calculs_liquid(c):
     """Refuse un calcul ou une mise en forme faits en Liquid."""
     for dossier, _, fichiers in os.walk(RACINE):
@@ -1888,6 +1937,7 @@ def main():
     controler_calculs_liquid(c)
     controler_markdown_dans_html(c, jeux)
     controler_insecables(c, jeux)
+    controler_html_colle(c)
     controler_articles(c)
     controler_donnees_structurees(c)
     controler_yaml_ambigu(c)
