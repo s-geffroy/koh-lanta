@@ -1034,6 +1034,34 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--encre); }
   margin: 1.3rem 0 0;
 }
 
+/* Le titre et le chapeau de l'accueil tiennent chacun sur UNE ligne
+   (demande de l'utilisateur, 21 octobre 2026). La taille suit la largeur
+   utile du bandeau, 100vw moins les 3 rem de marges, divisee par la largeur
+   du texte MESUREE dans Archivo (fontTools, chasses sans crenage) :
+   titre 16,0 em en 800 / 125 %, chapeau 51,0 em en 400 / 100 %. Les
+   diviseurs 17 et 54 gardent une marge de surete ; les calc() les ecrivent
+   developpes ((100vw - 3rem) / 17 = 5.882vw - 0.1765rem), Sass 3.7 et
+   verifie_site refusant les parentheses imbriquees. Changer l'un de ces deux
+   textes, c'est remesurer et changer son diviseur.
+
+   Sous les seuils, la ligne unique demanderait un corps illisible
+   (20 px pour le titre sur un telephone, 7 px pour le chapeau) : le texte
+   y revient a la ligne, comme avant. */
+@media (min-width: 30em) {
+  .accueil-titre {
+    white-space: nowrap;
+    max-width: none;
+    font-size: clamp(1.6rem, calc(5.882vw - 0.1765rem), 3.4rem);
+  }
+}
+@media (min-width: 56em) {
+  .accueil-chapeau {
+    white-space: nowrap;
+    max-width: none;
+    font-size: clamp(0.95rem, calc(1.852vw - 0.0556rem), 1.25rem);
+  }
+}
+
 /* Les ordres de grandeur, en une phrase sous la figure. */
 .prose > .accueil-mesures {
   max-width: none;
