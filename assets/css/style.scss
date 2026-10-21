@@ -114,6 +114,9 @@
      reserve au trait du constat. En sombre, il s'eclaircit pour rester
      visible sur la surface. */
   --jungle: #1f5a45;
+
+  /* Une ligne sur deux des tableaux : a peine plus sombre que --surface. */
+  --zebre: #f8f9f6;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -152,6 +155,7 @@
        plus bas, et se detache par la teinte et par son filet. */
     --nuit: #0f2019;
     --jungle: #5f9c80;
+    --zebre: #1e211f;
   }
 }
 
@@ -190,6 +194,7 @@
 
   --nuit: #0f2019;
   --jungle: #5f9c80;
+  --zebre: #1e211f;
 }
 
 /* ------------------------------------------------------------------- socle */
@@ -520,7 +525,8 @@ a { color: inherit; }
 .prose > .constat,
 .prose > .legende-figure,
 .prose > .chapeau-theme,
-.prose > .reseaux { max-width: var(--colonne); }
+.prose > .reseaux,
+.prose > .faq { max-width: var(--colonne); }
 
 .prose p, .prose ul, .prose ol { margin: 0 0 1.1rem; }
 .prose li { margin: 0.3rem 0; }
@@ -552,13 +558,15 @@ a { color: inherit; }
   margin: 2.1rem 0 0.6rem;
 }
 
+/* Le lien se reconnait a son soulignement vert de jungle -- l'accent du
+   corps --, le texte garde l'encre. Au survol, le trait s'epaissit. */
 .prose a {
   color: var(--encre);
-  text-decoration-color: var(--axe);
+  text-decoration-color: var(--jungle);
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
-.prose a:hover { text-decoration-color: var(--encre); }
+.prose a:hover { text-decoration-thickness: 2px; }
 
 .prose strong, .prose b { font-weight: 650; }
 
@@ -701,7 +709,12 @@ tbody td {
 }
 tbody tr:last-child td { border-bottom: 0; }
 tbody tr[hidden] { display: none; }
-tbody tr:hover td { background: var(--surface-creuse); }
+/* Lignes alternees : l'oeil suit une ligne d'un bout a l'autre d'un tableau
+   large. Pas sur la grille de completude, dont la colonne collante a son
+   propre fond et dont les cases portent deja une teinte. */
+table:not(.grille-completude) tbody tr:nth-child(even) td { background: var(--zebre); }
+tbody tr:hover td,
+table:not(.grille-completude) tbody tr:nth-child(even):hover td { background: var(--surface-creuse); }
 
 td.nombre, th.nombre { text-align: right; font-variant-numeric: tabular-nums; }
 
@@ -880,6 +893,7 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--encre); }
   line-height: 1.55;
 }
 .note a { color: var(--encre); }
+.note strong { color: var(--encre); }
 
 /* Le constat : ce que la page demontre. Un encadre sur --surface, tenu a
    gauche par le vert de jungle -- l'echo du bandeau de nuit dans le corps. */
@@ -1073,18 +1087,37 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--encre); }
 .accueil-mesures b { color: var(--encre); font-weight: 650; }
 
 /* Ce que les chiffres disent : une phrase, puis la page qui la demontre. */
+/* Chaque constat ouvre sur sa phrase-titre, posee seule sur sa ligne, puis
+   sa preuve. Sur grand ecran, deux colonnes : huit constats se lisent d'un
+   regard au lieu de defiler. Le filet du bas ferme la grille, quelle que
+   soit la colonne ou tombe le dernier. */
 .constats {
   list-style: none;
   margin: 1.2rem 0 2.4rem;
   padding: 0;
+  border-bottom: 1px solid var(--grille);
 }
 .prose .constats li {
   margin: 0;
-  padding: 0.95rem 0 1rem;
+  padding: 0.95rem 0 1.05rem;
   border-top: 1px solid var(--grille);
 }
-.constats li:last-child { border-bottom: 1px solid var(--grille); }
 .constats p { margin: 0; }
+.constats li > p:first-child > b:first-child {
+  display: block;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.25rem;
+}
+
+@media (min-width: 62em) {
+  .prose .constats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2.5rem;
+  }
+}
 .prose .constats p + p { margin-top: 0.3rem; font-size: 0.88rem; }
 .prose .constats p + p a { color: var(--encre-douce); }
 .prose .constats p + p a:hover { color: var(--encre); }
@@ -1283,6 +1316,27 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--encre); }
 .reseaux span { color: var(--encre-muette); margin-right: 0.4rem; }
 
 /* Le sous-titre d'un theme sur le sommaire des statistiques. */
+/* Les questions frequentes des fiches : une question, sa reponse, un filet.
+   Les H3 restent des H3 -- c'est leur texte que les moteurs lisent. */
+.faq h3 {
+  font-size: 1rem;
+  margin: 0;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--grille);
+}
+.faq p { margin: 0.3rem 0 1rem; color: var(--encre-douce); }
+
+/* Le portrait, sur grand ecran, passe dans la marge droite : la colonne de
+   texte (41 rem) laisse la place libre, et les chiffres -- une grille, donc
+   un contexte de mise en forme a part -- se rangent a cote au lieu de
+   passer dessous. */
+@media (min-width: 62em) {
+  .prose > .portrait {
+    float: right;
+    margin: 0 0 1.5rem 2rem;
+  }
+}
+
 .chapeau-theme {
   color: var(--encre-douce);
   margin: 0 0 1rem;

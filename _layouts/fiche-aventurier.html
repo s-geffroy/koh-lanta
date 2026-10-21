@@ -187,10 +187,12 @@ saison par saison, ce qui manque.</p>
   blocs FAQ aux sites gouvernementaux et de sante, donc c'est le texte de la
   page qui travaille, pas le balisage.
 {%- endcomment -%}
+<div class="faq">
 {%- for x in a.faq %}
 <h3>{{ x.q }}</h3>
 <p>{{ x.r }}</p>
 {%- endfor %}
+</div>
 {%- endif %}
 
 <p><a href="{{ '/aventuriers/' | relative_url }}">Tous les aventuriers</a> ·
