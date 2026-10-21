@@ -857,11 +857,42 @@ th[aria-sort="descending"]::after { content: " ↓"; color: var(--encre); }
 }
 
 .saison {
+  position: relative;
+  overflow: hidden;
   background: var(--surface);
   border: 1px solid var(--grille);
   border-radius: var(--rayon);
   padding: 0.85rem 1rem 0.95rem;
 }
+.saison:hover { border-color: var(--axe); }
+
+/* Le lisere du haut : les tribus initiales de la saison, a parts egales,
+   dans leur couleur. Ici la couleur EST la donnee, comme sur les pastilles :
+   Palawan se reconnait a son jaune et son rouge, Raja Ampat a ses trois
+   tribus. Decoratif pour un lecteur d'ecran (aria-hidden) -- les noms des
+   tribus sont ecrits plus bas. */
+.saison-bande {
+  display: flex;
+  height: 5px;
+  margin: -0.85rem -1rem 0.8rem;
+}
+.saison-bande i { flex: 1; }
+
+/* Toute la carte mene a la fiche : le lien du titre s'etend sur elle. */
+.saison-titre a { text-decoration: none; }
+.saison-titre a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.saison:hover .saison-titre a {
+  text-decoration: underline;
+  text-decoration-color: var(--jungle);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.saison:focus-within { outline: 2px solid var(--focus); outline-offset: 2px; }
+.saison-titre a:focus-visible { outline: none; }
 
 .saison-numero {
   font-size: 0.8rem;

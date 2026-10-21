@@ -36,6 +36,11 @@ c’est <b>{{ site.data.stats.classement.top_saisons[0].aventurier }}</b> à
 {%- for x in site.data.saisons -%}
 {%- unless x.speciale or x.annulee -%}
   <li class="saison">
+    {%- if x.tribus.size > 0 -%}
+    <span class="saison-bande" aria-hidden="true">
+      {%- for t in x.tribus -%}<i style="background: var(--tribu-{{ t.couleur }})"></i>{%- endfor -%}
+    </span>
+    {%- endif -%}
     <p class="saison-numero">Saison {{ x.numero }} · {{ x.annee }} · {{ x.duree_jours }} jours</p>
     <p class="saison-titre">{% include lien-saison.html id=x.id titre=x.titre %}</p>
     <p class="saison-lieu">{{ x.lieu }}, {{ x.pays }}</p>
@@ -65,6 +70,11 @@ moyennes d’âge vers le haut sans rien dire du casting ordinaire.
 {%- for x in site.data.saisons -%}
 {%- if x.speciale and x.annulee != true -%}
   <li class="saison">
+    {%- if x.tribus.size > 0 -%}
+    <span class="saison-bande" aria-hidden="true">
+      {%- for t in x.tribus -%}<i style="background: var(--tribu-{{ t.couleur }})"></i>{%- endfor -%}
+    </span>
+    {%- endif -%}
     <p class="saison-numero">Spéciale · {{ x.annee }} · {{ x.duree_jours }} jours</p>
     <p class="saison-titre">{% include lien-saison.html id=x.id titre=x.titre %}</p>
     <p class="saison-lieu">{{ x.lieu }}, {{ x.pays }}</p>
