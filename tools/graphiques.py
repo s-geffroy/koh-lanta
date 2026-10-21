@@ -75,10 +75,13 @@ class Figure:
         # vivait que dans <title>, que l'oeil ne voit jamais, et l'on devait
         # lire la figure pour savoir ce qu'elle montrait. aria-hidden : le
         # <svg> porte deja ce titre dans aria-label, un lecteur d'ecran ne
-        # doit pas l'entendre deux fois.
+        # doit pas l'entendre deux fois. Les titres s'ecrivent tantot avec
+        # l'apostrophe droite, tantot avec la typographique : affiches, ils
+        # prennent tous la francaise.
+        visible = e(self.titre.replace("'", "\u2019"))
         return (
             f'<figure class="figure">\n'
-            f'<figcaption class="figure-titre" aria-hidden="true">{e(self.titre)}</figcaption>\n'
+            f'<figcaption class="figure-titre" aria-hidden="true">{visible}</figcaption>\n'
             f'<svg class="{classes}" viewBox="0 0 {self.l} {self.h}" '
             f'role="img" preserveAspectRatio="xMidYMid meet" '
             f'aria-label="{e(self.titre)}">\n'
