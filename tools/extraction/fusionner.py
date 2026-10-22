@@ -343,6 +343,19 @@ def fusionner_saison(saison, rows_f, rows_w, rapport, saisons_connues=()):
                     if w.get(champ) not in (None, ""):
                         fiche[champ] = w[champ]
                         provenance[champ] = LIBELLE["w"] + " (revenant : etat final)"
+        elif (not saison.get("en_cours") and (dispo.get("f") or {}).get("depart_final")):
+            # UN REVENANT DONT FANDOM ECRIT LE SECOND DEPART sur une ligne de
+            # continuation (voir `parse_fandom.depart_final`) : le sort est le
+            # point d'arrivee, le jour aussi.
+            libelle, jour = dispo["f"]["depart_final"]
+            sort_final, _ = F.classify(libelle)
+            if (sort_final, jour) != (fiche.get("sort"), fiche.get("jour_sortie")):
+                rapport.append(f"{sid} / {nom} : revenant — depart final « {libelle} », "
+                               f"jour {jour}, retenu contre « {fiche.get('sort')} », "
+                               f"jour {fiche.get('jour_sortie')} (premier depart)")
+                fiche["sort"], fiche["motif"], fiche["jour_sortie"] = sort_final, libelle, jour
+                for champ in ("sort", "motif", "jour_sortie"):
+                    provenance[champ] = LIBELLE["f"] + " (revenant : depart final)"
         elif saison.get("en_cours") and (dispo.get("f") or {}).get("retour_en_jeu"):
             if fiche.get("sort"):
                 rapport.append(f"{sid} / {nom} : revenu en jeu le "

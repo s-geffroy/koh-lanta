@@ -19,7 +19,7 @@ general:
   premiere_annee: 2001
   derniere_annee: 2026
   pays: 14
-  rang_concordant: 28
+  rang_concordant: 31
   rang_compare: 33
   etendue_annees: 25
   premiere_annee_collier: 2011
@@ -230,21 +230,21 @@ vainqueurs_toutes:
 couleurs:
 - couleur: jaune
   effectif: 213
-  survie_moyenne: "60,1"
+  survie_moyenne: "60,2"
   victoires: 12
   finales: 23
   taux_finale: "10,8"
   couleur_maj: Jaune
 - couleur: rouge
   effectif: 208
-  survie_moyenne: 63
+  survie_moyenne: "63,1"
   victoires: 12
   finales: 21
   taux_finale: "10,1"
   couleur_maj: Rouge
 - couleur: bleu
   effectif: 34
-  survie_moyenne: "62,6"
+  survie_moyenne: "63,7"
   victoires: 1
   finales: 3
   taux_finale: "8,8"
@@ -312,7 +312,7 @@ metiers:
   victoires: 1
   finales: 4
   taux_finale: "8,5"
-  survie_moyenne: "67,1"
+  survie_moyenne: "67,9"
   age_moyen: 33
 - code: artisanat_btp
   libelle: Artisanat et bâtiment
@@ -321,7 +321,7 @@ metiers:
   victoires: 2
   finales: 5
   taux_finale: "11,6"
-  survie_moyenne: "68,9"
+  survie_moyenne: "69,8"
   age_moyen: "36,2"
 - code: etudiant
   libelle: Étudiants
@@ -348,7 +348,7 @@ metiers:
   victoires: 2
   finales: 2
   taux_finale: "6,9"
-  survie_moyenne: "59,5"
+  survie_moyenne: 60
   age_moyen: "35,2"
 - code: transport
   libelle: Transport et logistique
@@ -357,7 +357,7 @@ metiers:
   victoires: 1
   finales: 2
   taux_finale: "6,9"
-  survie_moyenne: "57,9"
+  survie_moyenne: "58,4"
   age_moyen: "32,9"
 - code: agriculture
   libelle: Agriculture et nature
@@ -403,7 +403,7 @@ metiers_toutes:
   victoires: 6
   finales: 9
   taux_finale: "7,1"
-  survie_moyenne: "58,9"
+  survie_moyenne: 59
   age_moyen: "36,1"
 - code: commerce
   libelle: Commerce et vente
@@ -430,7 +430,7 @@ metiers_toutes:
   victoires: 2
   finales: 5
   taux_finale: "9,1"
-  survie_moyenne: "69,4"
+  survie_moyenne: "70,1"
   age_moyen: "37,1"
 - code: arts_medias
   libelle: Arts, médias et image
@@ -439,7 +439,7 @@ metiers_toutes:
   victoires: 2
   finales: 6
   taux_finale: "11,3"
-  survie_moyenne: "68,3"
+  survie_moyenne: "69,8"
   age_moyen: "32,9"
 - code: etudiant
   libelle: Étudiants
@@ -457,7 +457,7 @@ metiers_toutes:
   victoires: 3
   finales: 5
   taux_finale: "13,2"
-  survie_moyenne: 61
+  survie_moyenne: "61,4"
   age_moyen: "33,5"
 - code: action_securite
   libelle: Action et sécurité
@@ -466,7 +466,7 @@ metiers_toutes:
   victoires: 2
   finales: 2
   taux_finale: "5,7"
-  survie_moyenne: "57,5"
+  survie_moyenne: "57,9"
   age_moyen: "36,4"
 - code: enseignement
   libelle: Enseignement et éducation
@@ -493,7 +493,7 @@ metiers_toutes:
   victoires: 4
   finales: 4
   taux_finale: "14,8"
-  survie_moyenne: "68,7"
+  survie_moyenne: "72,1"
   age_moyen: "34,6"
 - code: sante
   libelle: Santé
@@ -502,7 +502,7 @@ metiers_toutes:
   victoires: 0
   finales: 3
   taux_finale: "13,6"
-  survie_moyenne: "49,4"
+  survie_moyenne: 52
   age_moyen: "30,2"
 - code: sans_emploi
   libelle: Sans activité déclarée
@@ -529,8 +529,8 @@ genre:
     libelle: Hommes
     effectif: 255
     part_du_casting: "49,9"
-    survie_moyenne: "64,2"
-    jour_moyen: "25,7"
+    survie_moyenne: "64,6"
+    jour_moyen: "25,8"
     age_moyen: "34,6"
     victoires: 15
     finales: 26
@@ -546,13 +546,13 @@ genre:
     effectif: 182
     survie_femmes: "56,4"
     effectif_femmes: 91
-    survie_hommes: "65,1"
+    survie_hommes: "65,6"
     effectif_hommes: 91
   - decennie: 2020s
     effectif: 179
     survie_femmes: "61,3"
     effectif_femmes: 90
-    survie_hommes: "63,5"
+    survie_hommes: "64,1"
     effectif_hommes: 89
 sorties:
   repartition:
@@ -610,14 +610,14 @@ sorties:
   - decennie: 2010s
     effectif: 182
     abandons: "12,1"
-    conseil: "57,1"
-    ambassadeurs: "4,4"
+    conseil: "56,6"
+    ambassadeurs: "4,9"
     epreuve: "2,2"
   - decennie: 2020s
     effectif: 179
     abandons: "7,3"
-    conseil: 52
-    ambassadeurs: "3,9"
+    conseil: "52,5"
+    ambassadeurs: "3,4"
     epreuve: "8,9"
   effectif: 511
   abandons_rapport: "2,1"
@@ -625,8 +625,8 @@ sorties_toutes:
   repartition:
   - sort: elimine_conseil
     libelle: Éliminé au conseil
-    effectif: 348
-    part: "55,5"
+    effectif: 347
+    part: "55,3"
   - sort: abandon_medical
     libelle: Abandon médical
     effectif: 48
@@ -641,16 +641,16 @@ sorties_toutes:
     part: "5,7"
   - sort: elimine_epreuve
     libelle: Éliminé à une épreuve
-    effectif: 33
-    part: "5,3"
+    effectif: 32
+    part: "5,1"
+  - sort: elimine_poteaux
+    libelle: Éliminé aux poteaux
+    effectif: 32
+    part: "5,1"
   - sort: finaliste
     libelle: Finaliste
     effectif: 31
     part: "4,9"
-  - sort: elimine_poteaux
-    libelle: Éliminé aux poteaux
-    effectif: 30
-    part: "4,8"
   - sort: elimine_ambassadeurs
     libelle: Éliminé aux ambassadeurs
     effectif: 22
@@ -681,15 +681,15 @@ sorties_toutes:
   - decennie: 2010s
     effectif: 243
     abandons: "10,3"
-    conseil: "56,4"
-    ambassadeurs: "4,9"
+    conseil: "55,6"
+    ambassadeurs: "5,3"
     epreuve: "2,9"
   - decennie: 2020s
     effectif: 220
     abandons: "8,2"
-    conseil: "50,9"
-    ambassadeurs: "4,1"
-    epreuve: "9,5"
+    conseil: "51,4"
+    ambassadeurs: "3,6"
+    epreuve: "9,1"
 age:
 - tranche: 18-24 ans
   effectif: 101
@@ -701,7 +701,7 @@ age:
 - tranche: 25-29 ans
   effectif: 108
   part_du_casting: "21,1"
-  survie_moyenne: "66,1"
+  survie_moyenne: "66,6"
   victoires: 4
   finales: 10
   taux_finale: "9,3"
@@ -722,14 +722,14 @@ age:
 - tranche: 40-44 ans
   effectif: 54
   part_du_casting: "10,6"
-  survie_moyenne: "62,8"
+  survie_moyenne: "63,1"
   victoires: 6
   finales: 6
   taux_finale: "11,1"
 - tranche: 45 ans et plus
   effectif: 76
   part_du_casting: "14,9"
-  survie_moyenne: "52,1"
+  survie_moyenne: "52,6"
   victoires: 1
   finales: 5
   taux_finale: "6,6"
@@ -1785,17 +1785,17 @@ jury:
   decomptes_discordants: 0
 finale:
   couverture:
-    saisons_au_format: 27
-    vainqueur_des_poteaux_connu: 20
-    part_poteaux: "74,1"
-    choix_atteste: 9
-    qualifies_connus: 17
+    saisons_au_format: 29
+    vainqueur_des_poteaux_connu: 22
+    part_poteaux: "75,9"
+    choix_atteste: 10
+    qualifies_connus: 18
     saisons_ordre_teste: 5
     rangs_confirmes: 10
     rangs_dementis: 0
     ordre_atteste: 5
-    ordre_croisable: 7
-    ordre_concordant: 7
+    ordre_croisable: 8
+    ordre_concordant: 8
     saisons_sans_poteaux:
     - s02
     - s08
@@ -1804,105 +1804,105 @@ finale:
     - s14
     - s17
     - sp2
-    hors_format: 6
+    hors_format: 4
   poteaux:
-    effectif: 20
+    effectif: 22
     vainqueur_des_poteaux:
-      effectif: 20
+      effectif: 22
       cas: 12
-      probabilite: 60
-      bas: "38,7"
-      haut: "78,1"
+      probabilite: "54,5"
+      bas: "34,7"
+      haut: "73,1"
       hasard: 50
     autre_finaliste:
-      effectif: 20
-      cas: 8
-      probabilite: 40
-      bas: "21,9"
-      haut: "61,3"
+      effectif: 22
+      cas: 10
+      probabilite: "45,5"
+      bas: "26,9"
+      haut: "65,3"
       hasard: 50
     choix_atteste:
-      effectif: 9
+      effectif: 10
       cas: 7
-      probabilite: "77,8"
-      bas: "45,3"
-      haut: "93,7"
+      probabilite: 70
+      bas: "39,7"
+      haut: "89,2"
       hasard: 50
   par_rang:
   - rang: 1
     libelle: Premier arrivé
-    effectif: 17
+    effectif: 18
     gagne_les_poteaux:
-      effectif: 17
+      effectif: 18
       cas: 4
-      probabilite: "23,5"
-      bas: "9,6"
-      haut: "47,3"
+      probabilite: "22,2"
+      bas: 9
+      haut: "45,2"
       hasard: "33,3"
     gagne_la_saison:
-      effectif: 17
+      effectif: 18
       cas: 3
-      probabilite: "17,6"
-      bas: "6,2"
-      haut: 41
+      probabilite: "16,7"
+      bas: "5,8"
+      haut: "39,2"
       hasard: "33,3"
     elimine_aux_poteaux:
-      effectif: 17
-      cas: 8
-      probabilite: "47,1"
-      bas: "26,2"
-      haut: 69
+      effectif: 18
+      cas: 9
+      probabilite: 50
+      bas: 29
+      haut: 71
       hasard: "33,3"
   - rang: 2
     libelle: Deuxième
-    effectif: 17
+    effectif: 18
     gagne_les_poteaux:
-      effectif: 17
+      effectif: 18
       cas: 4
-      probabilite: "23,5"
-      bas: "9,6"
-      haut: "47,3"
+      probabilite: "22,2"
+      bas: 9
+      haut: "45,2"
       hasard: "33,3"
     gagne_la_saison:
-      effectif: 17
-      cas: 3
-      probabilite: "17,6"
-      bas: "6,2"
-      haut: 41
+      effectif: 18
+      cas: 4
+      probabilite: "22,2"
+      bas: 9
+      haut: "45,2"
       hasard: "33,3"
     elimine_aux_poteaux:
-      effectif: 17
+      effectif: 18
       cas: 5
-      probabilite: "29,4"
-      bas: "13,3"
-      haut: "53,1"
+      probabilite: "27,8"
+      bas: "12,5"
+      haut: "50,9"
       hasard: "33,3"
   - rang: 3
     libelle: Dernier qualifié
-    effectif: 17
+    effectif: 18
     gagne_les_poteaux:
-      effectif: 17
-      cas: 9
-      probabilite: "52,9"
-      bas: 31
-      haut: "73,8"
+      effectif: 18
+      cas: 10
+      probabilite: "55,6"
+      bas: "33,7"
+      haut: "75,4"
       hasard: "33,3"
     gagne_la_saison:
-      effectif: 17
+      effectif: 18
       cas: 11
-      probabilite: "64,7"
-      bas: "41,3"
-      haut: "82,7"
+      probabilite: "61,1"
+      bas: "38,6"
+      haut: "79,7"
       hasard: "33,3"
       marge: 2
     elimine_aux_poteaux:
-      effectif: 17
+      effectif: 18
       cas: 4
-      probabilite: "23,5"
-      bas: "9,6"
-      haut: "47,3"
+      probabilite: "22,2"
+      bas: 9
+      haut: "45,2"
       hasard: "33,3"
-  saisons_ordonnees: 17
+  saisons_ordonnees: 18
   table:
   - saison: s02
     titre: Nicoya
@@ -2126,6 +2126,20 @@ finale:
     vainqueur: André Deleplace
     choix_atteste: false
     poteaux_gagne: true
+  - saison: sp5
+    titre: Le Combat des héros
+    annee: 2018
+    speciale: true
+    qualifies:
+    - Jérémy Raffin
+    - Clémence Castel
+    - Pascal Salviani
+    poteaux: Pascal Salviani
+    autre_finaliste: Clémence Castel
+    elimine: Jérémy Raffin
+    vainqueur: Clémence Castel
+    choix_atteste: false
+    poteaux_gagne: false
   - saison: s20
     titre: La Guerre des chefs
     annee: 2019
@@ -2182,6 +2196,17 @@ finale:
     vainqueur: Maxine Eouzan
     choix_atteste: true
     poteaux_gagne: true
+  - saison: sp7
+    titre: La Légende
+    annee: 2021
+    speciale: true
+    qualifies: []
+    poteaux: Laurent Maistret
+    autre_finaliste: Claude Dartois
+    elimine: Ugo Lartiche
+    vainqueur: Claude Dartois
+    choix_atteste: true
+    poteaux_gagne: false
   - saison: s24
     titre: Le Feu sacré
     annee: 2023
@@ -2259,7 +2284,7 @@ natures:
   personnes: 215
   victoires: 435
   part_femmes: "42,8"
-  part_au_bout: 40
+  part_au_bout: "42,1"
   age_moyen: "31,9"
   seuil: 30
   par_nature:
@@ -2274,11 +2299,11 @@ natures:
       haut: "51,2"
       hasard: "42,8"
     au_bout:
-      cas: 48
-      probabilite: "37,8"
-      bas: "29,8"
-      haut: "46,5"
-      hasard: 40
+      cas: 50
+      probabilite: "39,4"
+      bas: "31,3"
+      haut: "48,1"
+      hasard: "42,1"
     age_moyen: "30,7"
   - nature: precision
     libelle: Précision
@@ -2291,11 +2316,11 @@ natures:
       haut: "47,2"
       hasard: "42,8"
     au_bout:
-      cas: 38
-      probabilite: "41,3"
-      bas: "31,8"
-      haut: "51,5"
-      hasard: 40
+      cas: 41
+      probabilite: "44,6"
+      bas: "34,8"
+      haut: "54,7"
+      hasard: "42,1"
     age_moyen: "34,5"
   - nature: force
     libelle: Force
@@ -2312,7 +2337,7 @@ natures:
       probabilite: "40,9"
       bas: "31,2"
       haut: "51,4"
-      hasard: 40
+      hasard: "42,1"
     age_moyen: 30
   - nature: statique
     libelle: Statique
@@ -2329,7 +2354,7 @@ natures:
       probabilite: "39,7"
       bas: "28,5"
       haut: 52
-      hasard: 40
+      hasard: "42,1"
     age_moyen: "33,4"
   - nature: equilibre
     libelle: Équilibre
@@ -2342,11 +2367,11 @@ natures:
       haut: "66,6"
       hasard: "42,8"
     au_bout:
-      cas: 18
-      probabilite: "48,6"
-      bas: "33,4"
-      haut: "64,1"
-      hasard: 40
+      cas: 19
+      probabilite: "51,4"
+      bas: "35,9"
+      haut: "66,6"
+      hasard: "42,1"
     age_moyen: "29,7"
   - nature: reflexion
     libelle: Réflexion
@@ -2359,11 +2384,11 @@ natures:
       haut: 68
       hasard: "42,8"
     au_bout:
-      cas: 4
-      probabilite: "33,3"
-      bas: "13,8"
-      haut: "60,9"
-      hasard: 40
+      cas: 5
+      probabilite: "41,7"
+      bas: "19,3"
+      haut: 68
+      hasard: "42,1"
     age_moyen: "32,9"
   - nature: logique
     libelle: Logique
@@ -2376,11 +2401,11 @@ natures:
       haut: "78,7"
       hasard: "42,8"
     au_bout:
-      cas: 3
-      probabilite: "27,3"
-      bas: "9,7"
-      haut: "56,6"
-      hasard: 40
+      cas: 5
+      probabilite: "45,5"
+      bas: "21,3"
+      haut: 72
+      hasard: "42,1"
     age_moyen: "33,7"
   - nature: aquatique
     libelle: Aquatique
@@ -2397,20 +2422,20 @@ natures:
       probabilite: 40
       bas: "11,8"
       haut: "76,9"
-      hasard: 40
+      hasard: "42,1"
     age_moyen: "41,2"
   citations_restantes: 215
 revenants:
   paradoxe:
   - libelle: Jamais rappelés
     effectif: 448
-    survie_moyenne: "56,7"
+    survie_moyenne: "56,9"
   - libelle: Revenants, leur première saison
     effectif: 83
     survie_moyenne: "84,2"
   - libelle: Revenants, leurs saisons suivantes
     effectif: 96
-    survie_moyenne: "63,4"
+    survie_moyenne: "65,6"
   vainqueurs_multiples:
   - id: clemence-castel
     nom: Clémence Castel
@@ -2426,7 +2451,7 @@ revenants:
   vainqueurs_en_jeu: 2
   apres_le_titre:
   - sort: elimine_conseil
-    effectif: 11
+    effectif: 10
   - sort: elimine_epreuve
     effectif: 2
   - sort: finaliste
@@ -2436,6 +2461,8 @@ revenants:
   - sort: vainqueur
     effectif: 1
   - sort: elimine_orientation
+    effectif: 1
+  - sort: elimine_poteaux
     effectif: 1
   carrieres:
   - &id001
@@ -2453,6 +2480,20 @@ revenants:
     jours_possibles: 154
     part_du_temps: "84,4"
     barre: 84
+  - id: ugo-lartiche
+    nom: Ugo Lartiche
+    saisons: 3
+    jours: 116
+    jours_possibles: 118
+    part_du_temps: "98,3"
+    barre: 98
+  - id: clemence-castel
+    nom: Clémence Castel
+    saisons: 4
+    jours: 104
+    jours_possibles: 128
+    part_du_temps: "81,2"
+    barre: 81
   - &id002
     id: laurent-maistret
     nom: Laurent Maistret
@@ -2461,13 +2502,6 @@ revenants:
     jours_possibles: 99
     part_du_temps: 100
     barre: 100
-  - id: clemence-castel
-    nom: Clémence Castel
-    saisons: 4
-    jours: 98
-    jours_possibles: 128
-    part_du_temps: "76,6"
-    barre: 77
   - id: philippe-bizet
     nom: Philippe Bizet
     saisons: 3
@@ -2496,13 +2530,6 @@ revenants:
     jours_possibles: 118
     part_du_temps: "76,3"
     barre: 76
-  - id: ugo-lartiche
-    nom: Ugo Lartiche
-    saisons: 3
-    jours: 84
-    jours_possibles: 118
-    part_du_temps: "71,2"
-    barre: 71
   - id: candice-boisson
     nom: Candice Boisson
     saisons: 3
@@ -2574,13 +2601,13 @@ revenants:
     jours_possibles: 82
     part_du_temps: "79,3"
     barre: 79
-  - id: guenaelle-biras
-    nom: Guénaëlle Biras
+  - id: jeremy-raffin
+    nom: Jérémy Raffin
     saisons: 2
-    jours: 64
-    jours_possibles: 66
-    part_du_temps: 97
-    barre: 97
+    jours: 65
+    jours_possibles: 74
+    part_du_temps: "87,8"
+    barre: 88
   sans_faute:
   - *id001
   - *id002
@@ -5286,44 +5313,44 @@ risque:
     encore_en_jeu: 511
     risque: "0,2"
   - tranche: 10
-    sortants: 41
+    sortants: 40
     encore_en_jeu: 510
-    risque: 8
+    risque: "7,8"
   - tranche: 20
-    sortants: 52
-    encore_en_jeu: 469
-    risque: "11,1"
+    sortants: 51
+    encore_en_jeu: 470
+    risque: "10,9"
   - tranche: 30
-    sortants: 34
-    encore_en_jeu: 417
-    risque: "8,2"
+    sortants: 35
+    encore_en_jeu: 419
+    risque: "8,4"
   - tranche: 40
-    sortants: 49
-    encore_en_jeu: 383
-    risque: "12,8"
+    sortants: 48
+    encore_en_jeu: 384
+    risque: "12,5"
   - tranche: 50
-    sortants: 34
-    encore_en_jeu: 334
-    risque: "10,2"
+    sortants: 36
+    encore_en_jeu: 336
+    risque: "10,7"
   - tranche: 60
-    sortants: 60
+    sortants: 59
     encore_en_jeu: 300
-    risque: 20
+    risque: "19,7"
   - tranche: 70
     sortants: 32
-    encore_en_jeu: 240
+    encore_en_jeu: 241
     risque: "13,3"
   - tranche: 80
     sortants: 48
-    encore_en_jeu: 208
-    risque: "23,1"
+    encore_en_jeu: 209
+    risque: 23
   - tranche: 90
     sortants: 39
-    encore_en_jeu: 160
-    risque: "24,4"
+    encore_en_jeu: 161
+    risque: "24,2"
   - tranche: 100
-    sortants: 121
-    encore_en_jeu: 121
+    sortants: 122
+    encore_en_jeu: 122
     risque: 100
   jours_les_plus_meurtriers:
   - jour: 40
@@ -5331,16 +5358,16 @@ risque:
   - jour: 39
     sortants: 33
   - jour: 3
-    sortants: 23
+    sortants: 22
   - jour: 38
-    sortants: 21
+    sortants: 22
   - jour: 9
     sortants: 18
   - jour: 6
-    sortants: 17
-  - jour: 22
     sortants: 16
-  - jour: 25
+  - jour: 12
+    sortants: 16
+  - jour: 22
     sortants: 16
 survie_saisons:
 - id: s01
@@ -5950,15 +5977,15 @@ survie_saisons:
   - 67
   - 61
   - 56
+  - 56
   - 50
   - 44
-  - 39
-  - 39
+  - 44
+  - 33
+  - 28
   - 28
   - 22
-  - 22
   - 17
-  - 11
 - id: s20
   numero: 20
   titre: La Guerre des chefs
@@ -5968,14 +5995,14 @@ survie_saisons:
   restants:
   - 100
   - 100
+  - 100
   - 95
-  - 90
+  - 95
   - 86
-  - 76
-  - 76
+  - 86
+  - 81
   - 76
   - 71
-  - 67
   - 62
   - 62
   - 57
@@ -6000,17 +6027,17 @@ survie_saisons:
   - 90
   - 90
   - 85
+  - 85
   - 80
-  - 75
-  - 75
+  - 80
+  - 70
   - 65
   - 60
   - 55
+  - 55
   - 50
   - 50
-  - 45
-  - 45
-  - 35
+  - 40
   - 35
   - 35
   - 25
@@ -6052,25 +6079,25 @@ survie_saisons:
   restants:
   - 100
   - 100
-  - 86
-  - 86
+  - 90
+  - 90
+  - 81
+  - 76
   - 76
   - 71
-  - 71
   - 67
-  - 62
-  - 62
+  - 67
+  - 67
+  - 57
   - 57
   - 48
   - 48
   - 43
-  - 43
   - 38
-  - 33
+  - 29
+  - 29
   - 24
-  - 24
-  - 19
-  - 10
+  - 14
 - id: s22
   numero: 22
   titre: Les Armes secrètes
@@ -6142,18 +6169,18 @@ survie_saisons:
   - 85
   - 80
   - 80
-  - 70
-  - 70
+  - 75
+  - 75
+  - 65
   - 60
-  - 60
+  - 55
   - 50
   - 45
   - 40
-  - 35
-  - 35
+  - 40
+  - 30
   - 25
-  - 20
-  - 20
+  - 25
   - 15
 - id: s25
   numero: 25
@@ -6275,41 +6302,41 @@ survie_bandeau:
   - 100
   - "99,8"
   - "99,4"
-  - "94,9"
-  - "94,1"
-  - "92,6"
-  - "89,2"
-  - "88,3"
-  - "87,7"
-  - "84,1"
-  - "81,4"
-  - "79,8"
-  - "76,9"
-  - 75
-  - "73,6"
-  - "70,6"
-  - "68,7"
-  - "67,7"
-  - 65
-  - 62
-  - "60,3"
+  - "95,1"
+  - "94,3"
+  - "92,8"
+  - "89,6"
+  - "88,6"
+  - "88,1"
+  - "84,5"
+  - "81,8"
+  - "80,2"
+  - "77,1"
+  - "75,1"
+  - "73,8"
+  - 71
+  - "69,1"
+  - "68,1"
+  - "65,2"
+  - "62,2"
+  - "60,5"
   - "58,7"
   - "55,6"
-  - "53,6"
-  - "51,9"
-  - "48,7"
-  - "46,6"
-  - 45
-  - "43,1"
-  - "41,3"
-  - "39,9"
-  - "37,8"
-  - 35
-  - "32,5"
-  - "29,7"
-  - 28
-  - 26
-  - "22,9"
+  - "53,8"
+  - "52,1"
+  - "48,9"
+  - "46,8"
+  - "45,2"
+  - "43,2"
+  - "41,5"
+  - "40,1"
+  - 38
+  - "35,2"
+  - "32,7"
+  - "29,9"
+  - "28,2"
+  - "26,2"
+  - "23,1"
   - "18,8"
   - "12,3"
   - "3,7"
@@ -6343,21 +6370,21 @@ survie_bandeau:
     - "58,7"
     - "57,3"
     - "54,5"
-    - "52,1"
-    - "50,2"
-    - "48,4"
-    - "45,5"
-    - "42,7"
-    - "40,4"
-    - "38,5"
-    - "36,6"
-    - "33,8"
-    - "31,9"
-    - "29,1"
-    - "27,7"
-    - "26,3"
-    - "24,9"
-    - "21,1"
+    - "52,6"
+    - "50,7"
+    - "48,8"
+    - 46
+    - "43,2"
+    - "40,8"
+    - 39
+    - "37,1"
+    - "34,3"
+    - "32,4"
+    - "29,6"
+    - "28,2"
+    - "26,8"
+    - "25,4"
+    - "21,6"
     - "18,8"
     - "14,6"
     - "6,1"
@@ -6373,21 +6400,21 @@ survie_bandeau:
     - "97,1"
     - "96,2"
     - "95,2"
+    - "90,9"
     - "90,4"
     - "89,9"
-    - "89,4"
-    - "86,1"
-    - "83,7"
-    - "82,2"
+    - "86,5"
+    - "84,1"
+    - "82,7"
     - "79,8"
     - "76,9"
     - "75,5"
-    - "73,6"
-    - "71,6"
-    - "70,7"
-    - "66,3"
-    - "63,9"
-    - 62
+    - 74
+    - "72,1"
+    - "71,2"
+    - "66,8"
+    - "64,4"
+    - "62,5"
     - "59,6"
     - "55,8"
     - "54,8"
@@ -6412,7 +6439,7 @@ survie_bandeau:
     - "0,5"
   ecart_median: 0
   ecart_moyen: 3
-  ecart_maximal: "7,5"
+  ecart_maximal: 7
 casting:
   etendues:
   - id: s01
@@ -7618,9 +7645,9 @@ voix_pour_eliminer:
 premiere_epreuve:
   effectif: 41
   survie_gagnants: "74,9"
-  survie_ensemble: "61,4"
+  survie_ensemble: "61,9"
   saisons_couvertes: 34
-  ecart: "13,5"
+  ecart: 13
 epreuves:
   epreuves: 789
   saisons_couvertes: 34
@@ -8140,6 +8167,11 @@ colliers:
     titre: Le Combat des héros
     annee: 2018
     id: julie-navarro
+  - nom: Jessica Potel
+    saison: sp6
+    titre: L'Île des héros
+    annee: 2020
+    id: jessica-potel
   - nom: Charlotte Caron
     saison: sp6
     titre: L'Île des héros
@@ -8167,14 +8199,14 @@ colliers:
     part_des_trouves: null
   - issue: garde_sans_usage
     libelle: Gardé sans en avoir besoin
-    effectif: 10
-    part_totale: "13,5"
-    part_des_trouves: "16,1"
+    effectif: 9
+    part_totale: "12,2"
+    part_des_trouves: "14,5"
   - issue: elimine_avec_collier
     libelle: Éliminé avec le collier dans le sac
-    effectif: 6
-    part_totale: "8,1"
-    part_des_trouves: "9,7"
+    effectif: 7
+    part_totale: "9,5"
+    part_des_trouves: "11,3"
   par_saison:
   - saison: s20
     titre: La Guerre des chefs
@@ -8787,10 +8819,10 @@ indicateurs:
     libelle: Éliminé à une épreuve
     effectif: 8
     part_fantomes: "11,6"
-    part_ensemble: "5,3"
-    part_endurants: "5,8"
-    ecart: "5,8"
-    rapport: 2
+    part_ensemble: "5,1"
+    part_endurants: "5,6"
+    ecart: 6
+    rapport: "2,1"
   - sort: elimine_orientation
     libelle: Éliminé à l'orientation
     effectif: 6
@@ -8803,10 +8835,10 @@ indicateurs:
     libelle: Éliminé aux poteaux
     effectif: 5
     part_fantomes: "7,2"
-    part_ensemble: "4,8"
-    part_endurants: "6,2"
-    ecart: 1
-    rapport: "1,2"
+    part_ensemble: "5,1"
+    part_endurants: "6,7"
+    ecart: "0,5"
+    rapport: "1,1"
   - sort: finaliste
     libelle: Finaliste
     effectif: 5
@@ -9250,7 +9282,7 @@ indicateurs:
   endurants: 481
   seuil_fantome: 5
   justesse_par_sort:
-    elimine_conseil: "58,2"
+    elimine_conseil: "57,9"
     elimine_epreuve: "75,7"
     finaliste: "75,4"
     vainqueur: "73,3"
@@ -9266,7 +9298,7 @@ indicateurs:
     abandon_medical: "0,2"
     elimine_orientation: "0,4"
     abandon_volontaire: "0,3"
-    elimine_ambassadeurs: "0,3"
+    elimine_ambassadeurs: "0,4"
     elimine_destins_lies: "0,2"
   menace_rapport: "6,6"
   saisons:
@@ -9751,7 +9783,7 @@ indicateurs:
     effectif: 21
     duree_jours: 39
     age_moyen: "34,2"
-    survie_moyenne: "62,1"
+    survie_moyenne: "64,7"
     abandons: 2
     taux_abandon: "9,5"
     conseils: 15
@@ -9770,7 +9802,7 @@ indicateurs:
     - ambassadeurs
     - collier_immunite
     - capitaines
-    barre: 62
+    barre: 65
   - id: s21
     numero: 21
     titre: Les 4 Terres
@@ -9870,7 +9902,7 @@ indicateurs:
     effectif: 20
     duree_jours: 40
     age_moyen: "35,2"
-    survie_moyenne: "59,5"
+    survie_moyenne: "62,1"
     abandons: 3
     taux_abandon: 15
     conseils: 15
@@ -9889,7 +9921,7 @@ indicateurs:
     - ambassadeurs
     - collier_immunite
     - destins_lies
-    barre: 60
+    barre: 62
   - id: s25
     numero: 25
     titre: Les Chasseurs d'immunité
@@ -10129,7 +10161,7 @@ indicateurs:
     effectif: 18
     duree_jours: 32
     age_moyen: 35
-    survie_moyenne: 58
+    survie_moyenne: "60,4"
     abandons: 1
     taux_abandon: "5,6"
     conseils: 14
@@ -10150,7 +10182,7 @@ indicateurs:
     - destins_lies
     - heros
     - ile_speciale
-    barre: 58
+    barre: 60
   - id: sp6
     numero: null
     titre: L'Île des héros
@@ -10160,7 +10192,7 @@ indicateurs:
     effectif: 20
     duree_jours: 32
     age_moyen: "36,8"
-    survie_moyenne: "61,2"
+    survie_moyenne: "64,1"
     abandons: 4
     taux_abandon: 20
     conseils: 12
@@ -10181,7 +10213,7 @@ indicateurs:
     - destins_lies
     - heros
     - ile_speciale
-    barre: 61
+    barre: 64
   - id: sp7
     numero: null
     titre: La Légende
@@ -10191,7 +10223,7 @@ indicateurs:
     effectif: 21
     duree_jours: 35
     age_moyen: "35,9"
-    survie_moyenne: "55,2"
+    survie_moyenne: "60,4"
     abandons: 1
     taux_abandon: "4,8"
     conseils: 15
@@ -10212,7 +10244,7 @@ indicateurs:
     - heros
     - ile_speciale
     - separation_par_sexe
-    barre: 55
+    barre: 60
   - id: sp8
     numero: null
     titre: All Stars
@@ -24321,8 +24353,8 @@ modeles:
     rang_intervalle:
     - "8,71"
     - "12,71"
-    r2_survie_lineaire: "-0,006"
-    r2_survie_arbre: "-0,001"
+    r2_survie_lineaire: "-0,002"
+    r2_survie_arbre: 0
     importances:
     - variable: couleur:vert
       perte: "0,6"
@@ -24390,7 +24422,7 @@ modeles:
         observe: "10,7308"
         moyenne_nulle: "10,2831"
       origine: pronostic
-      p_ajustee: "0,772"
+      p_ajustee: "0,7815"
       retenu: false
     classement:
     - nom: Ambre Daudet
@@ -24739,20 +24771,20 @@ modeles:
     survie:
       libelle: Part de la saison tenue
       force:
-        estimation: "1,036"
-        bas: "-1,114"
-        haut: "3,186"
-        p: "0,345"
+        estimation: "1,641"
+        bas: "-0,328"
+        haut: "3,61"
+        p: "0,1023"
       femme:
-        estimation: "-0,8"
-        bas: "-4,339"
-        haut: "2,739"
-        p: "0,6578"
+        estimation: "-1,151"
+        bas: "-4,436"
+        haut: "2,134"
+        p: "0,4923"
       age:
-        estimation: "0,174"
-        bas: "-1,808"
-        haut: "2,156"
-        p: "0,8635"
+        estimation: "0,508"
+        bas: "-1,19"
+        haut: "2,206"
+        p: "0,5577"
       lecture: Points de pourcentage gagnés quand la force double.
   equilibre:
     rattrapage:
@@ -24772,60 +24804,60 @@ modeles:
       censures: 110
       coefficients:
       - variable: Femme
-        rapport: "1,217"
-        bas: "0,99"
-        haut: "1,496"
-        p: "0,0627"
+        rapport: "1,227"
+        bas: "0,998"
+        haut: "1,509"
+        p: "0,0526"
       - variable: Âge (par décennie)
-        rapport: "1,054"
-        bas: "0,933"
-        haut: "1,19"
-        p: "0,398"
+        rapport: "1,056"
+        bas: "0,936"
+        haut: "1,192"
+        p: "0,3747"
       - variable: Tribu initiale jaune
-        rapport: "1,017"
-        bas: "0,805"
-        haut: "1,285"
-        p: "0,8866"
+        rapport: "1,011"
+        bas: "0,8"
+        haut: "1,277"
+        p: "0,9278"
       - variable: Déjà venu
-        rapport: "0,356"
-        bas: "0,258"
-        haut: "0,492"
+        rapport: "0,354"
+        bas: "0,257"
+        haut: "0,49"
         p: 0
       - variable: Métier — Artisanat et bâtiment
-        rapport: "0,857"
-        bas: "0,553"
-        haut: "1,328"
-        p: "0,4894"
+        rapport: "0,836"
+        bas: "0,539"
+        haut: "1,296"
+        p: "0,4227"
       - variable: Métier — Arts, médias et image
-        rapport: "0,943"
-        bas: "0,633"
-        haut: "1,406"
-        p: "0,7737"
+        rapport: "0,946"
+        bas: "0,635"
+        haut: "1,409"
+        p: "0,7838"
       - variable: Métier — Commerce et vente
-        rapport: "1,29"
-        bas: "0,891"
-        haut: "1,868"
-        p: "0,1778"
+        rapport: "1,295"
+        bas: "0,894"
+        haut: "1,876"
+        p: "0,1708"
       - variable: Métier — Encadrement et professions intellectuelles
-        rapport: "1,474"
-        bas: "1,07"
-        haut: "2,03"
-        p: "0,0175"
+        rapport: "1,472"
+        bas: "1,068"
+        haut: "2,027"
+        p: "0,018"
       - variable: Métier — Enseignement et éducation
-        rapport: "1,165"
-        bas: "0,726"
-        haut: "1,869"
-        p: "0,5266"
+        rapport: "1,176"
+        bas: "0,733"
+        haut: "1,887"
+        p: "0,5024"
       - variable: Métier — Étudiants
-        rapport: "1,298"
-        bas: "0,795"
-        haut: "2,119"
-        p: "0,2974"
+        rapport: "1,301"
+        bas: "0,797"
+        haut: "2,124"
+        p: "0,2925"
       - variable: Métier — Sport et coaching
-        rapport: "0,931"
-        bas: "0,616"
-        haut: "1,406"
-        p: "0,7342"
+        rapport: "0,927"
+        bas: "0,613"
+        haut: "1,4"
+        p: "0,7184"
       lecture: Rapport de risque d'élimination, à saison identique. Au-dessus de 1, on sort plus vite
         que la référence ; en dessous, plus lentement. L'intervalle qui contient 1 veut dire que ces données
         ne permettent pas de conclure.
@@ -25007,19 +25039,19 @@ modeles:
       effectif: 274
       variables:
       - libelle: Toujours du côté de la majorité
-        estimation: "14,62"
-        bas: "8,45"
-        haut: "20,8"
+        estimation: "13,46"
+        bas: "7,55"
+        haut: "19,36"
         p: 0
       - libelle: Une voix reçue de plus par conseil
-        estimation: "-3,81"
-        bas: "-6,1"
-        haut: "-1,52"
-        p: "0,0011"
-      r2: "0,343"
+        estimation: "-3,88"
+        bas: "-6,18"
+        haut: "-1,58"
+        p: "0,001"
+      r2: "0,348"
       lecture: Points de saison gagnés ou perdus, le nombre de conseils traversés tenu constant. Ce contrôle
         étant trop sévère, les deux effets sont des bornes basses.
-      rapport: "3,8"
+      rapport: "3,5"
     les_plus_souvent_du_bon_cote:
     - nom: Philippe Duron
       saison: s10
@@ -25479,10 +25511,10 @@ modeles:
       retenu: true
     effet:
       effectif: 271
-      estimation: "-0,66"
-      bas: "-7,1"
-      haut: "5,78"
-      p: "0,8402"
+      estimation: "-0,18"
+      bas: "-6,56"
+      haut: "6,2"
+      p: "0,9561"
       lecture: Points de saison gagnés ou perdus quand on passe de « jamais » à « toujours » viser un
         ancien allié, le nombre de bulletins émis tenu constant.
     les_plus_infideles:
@@ -27207,26 +27239,26 @@ modeles:
       effectif: 22
       saisons: 22
       episode_median: 7
-      presents_moyen: "12,6"
+      presents_moyen: 13
       part_femmes: "36,4"
-      age_moyen: "34,9"
+      age_moyen: "36,1"
       avec_force: 21
-      rang_moyen: "47,3"
+      rang_moyen: "47,8"
       effectif_force: 21
     negociateurs:
-      lues: 13
+      lues: 14
       total: 22
-      part_lues: "59,1"
-      sources_accord: 5
+      part_lues: "63,6"
+      sources_accord: 4
       sources_desaccord: 1
       par_tirage: 3
       elimine_ambassadeur: 3
-      distincts: 29
-      ambassades: 13
-      ambassadeurs: 30
-      rang_moyen: "38,4"
-      muettes: 9
-      sources_communes: 6
+      distincts: 32
+      ambassades: 14
+      ambassadeurs: 33
+      rang_moyen: "38,3"
+      muettes: 8
+      sources_communes: 5
     tests:
     - cle: fusion_sexe
       libelle: Le sexe des éliminés, avant et après la réunification
@@ -27384,104 +27416,104 @@ modeles:
     - cle: ambassadeurs_force
       libelle: Qui les ambassadeurs éliminent-ils ?
       question: Deux ambassadeurs qui décident seuls choisissent-ils autrement qu'un tirage ?
-      observe: "47,263"
-      attendu: "49,956"
+      observe: "47,774"
+      attendu: "49,917"
       unite: points de rang
-      ecart_types: "-0,39"
-      p: "0,7018"
+      ecart_types: "-0,31"
+      p: "0,7552"
       tirages: 10000
       lecture: Rang de l'éliminé parmi les présents, sur la force estimée aux épreuves. Au-dessus de 50,
         les ambassadeurs sacrifient un joueur plus fort que la moyenne du camp ; en dessous, un plus faible.
       nulle: &id092
         bornes:
-        - "21,958"
-        - "78,1955"
+        - "24,2119"
+        - "80,9475"
         cases:
         - 0
-        - 2
-        - 5
-        - 9
-        - 31
-        - 53
-        - 92
-        - 166
-        - 370
-        - 522
-        - 759
-        - 909
-        - 1016
-        - 1122
-        - 1130
-        - 1081
-        - 851
-        - 699
-        - 497
-        - 315
-        - 179
-        - 102
-        - 48
-        - 24
+        - 3
+        - 16
+        - 29
+        - 74
+        - 119
+        - 218
+        - 376
+        - 585
+        - 781
+        - 922
+        - 1034
+        - 1195
+        - 1193
+        - 981
+        - 852
+        - 571
+        - 469
+        - 257
+        - 170
+        - 80
+        - 40
+        - 18
         - 11
         - 4
-        - 3
+        - 1
+        - 1
         - 0
-        largeur_case: "2,008482"
-        observe: "47,2634"
-        moyenne_nulle: "49,9557"
+        largeur_case: "2,026273"
+        observe: "47,7736"
+        moyenne_nulle: "49,9166"
       origine: avant_apres
-      p_ajustee: "0,772"
+      p_ajustee: "0,8156"
       retenu: false
     - cle: ambassadeurs_survie
       libelle: L'ambassadeur qui négocie s'en sort-il mieux ?
       question: Partir en ambassade change-t-il la distance que l'on parcourt ensuite ?
-      observe: "38,397"
-      attendu: "50,061"
+      observe: "38,322"
+      attendu: "50,031"
       unite: points de rang
-      ecart_types: "-2,11"
-      p: "0,0329"
+      ecart_types: "-2,26"
+      p: "0,0227"
       tirages: 10000
       lecture: 'Rang de l''ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c''est la
         médiane du camp. Au-dessus, l''ambassade accompagne une fin de parcours plus tardive ; en dessous,
         plus précoce. Le hasard, ici, c''est désigner les ambassadeurs au sort parmi les présents.'
       nulle: &id093
         bornes:
-        - "31,3252"
-        - "71,1562"
+        - "26,1633"
+        - "71,7213"
         cases:
         - 0
-        - 10
-        - 30
-        - 51
-        - 71
-        - 159
-        - 250
-        - 339
-        - 528
-        - 636
-        - 826
-        - 904
-        - 1023
-        - 1076
-        - 943
-        - 832
-        - 685
-        - 543
-        - 416
-        - 267
-        - 204
-        - 98
-        - 51
-        - 27
-        - 21
-        - 7
-        - 3
+        - 1
+        - 1
+        - 1
+        - 4
+        - 24
+        - 50
+        - 106
+        - 206
+        - 326
+        - 532
+        - 802
+        - 993
+        - 1115
+        - 1189
+        - 1236
+        - 1045
+        - 902
+        - 596
+        - 423
+        - 227
+        - 124
+        - 52
+        - 32
+        - 12
         - 0
-        largeur_case: "1,422536"
-        observe: "38,3974"
-        moyenne_nulle: "50,0612"
+        - 1
+        - 0
+        largeur_case: "1,627074"
+        observe: "38,3222"
+        moyenne_nulle: "50,0315"
       origine: avant_apres
-      p_ajustee: "0,0557"
-      retenu: false
+      p_ajustee: "0,04"
+      retenu: true
   conditionnelles:
     presences: 1642
     conseils: 222
@@ -28479,7 +28511,7 @@ modeles:
         observe: "3,2026"
         moyenne_nulle: "-0,8321"
       origine: conditionnelles
-      p_ajustee: "0,048"
+      p_ajustee: "0,0462"
       retenu: true
     - cle: menace_deux_pas
       libelle: La menace, deux conseils plus tard
@@ -29376,11 +29408,11 @@ modeles:
       bas: "25,5"
       haut: "59,3"
     - modalite: Éliminé aux poteaux
-      effectif: 23
+      effectif: 24
       cas: 9
-      probabilite: "39,1"
-      bas: "22,2"
-      haut: "59,2"
+      probabilite: "37,5"
+      bas: "21,2"
+      haut: "57,3"
     - modalite: Éliminé par les destins liés
       effectif: 11
       cas: 4
@@ -29400,11 +29432,11 @@ modeles:
       bas: "8,9"
       haut: "16,5"
     - modalite: Éliminé à une épreuve
-      effectif: 19
+      effectif: 18
       cas: 2
-      probabilite: "10,5"
-      bas: "2,9"
-      haut: "31,4"
+      probabilite: "11,1"
+      bas: "3,1"
+      haut: "32,8"
     - modalite: Abandon médical
       effectif: 44
       cas: 1
@@ -29432,10 +29464,10 @@ modeles:
       haut: 14
     - modalite: 50 à 75 % de la saison
       effectif: 98
-      cas: 16
-      probabilite: "16,3"
-      bas: "10,3"
-      haut: "24,9"
+      cas: 17
+      probabilite: "17,3"
+      bas: "11,1"
+      haut: 26
     - modalite: 75 à 95 % de la saison
       effectif: 98
       cas: 22
@@ -29444,45 +29476,45 @@ modeles:
       haut: "31,7"
     - modalite: 95 à 100 % de la saison
       effectif: 98
-      cas: 45
-      probabilite: "45,9"
-      bas: "36,4"
-      haut: "55,8"
+      cas: 44
+      probabilite: "44,9"
+      bas: "35,4"
+      haut: "54,8"
     coefficients:
     - libelle: Part de saison tenue (+10 points)
-      rapport: "1,43"
-      bas: "1,28"
-      haut: "1,6"
+      rapport: "1,42"
+      bas: "1,27"
+      haut: "1,59"
       p: 0
       inverse: "0,7"
     - libelle: Avoir abandonné
-      rapport: "0,18"
+      rapport: "0,17"
       bas: "0,02"
-      haut: "1,35"
-      p: "0,0941"
-      inverse: "5,56"
+      haut: "1,34"
+      p: "0,093"
+      inverse: "5,88"
     - libelle: Être une femme
-      rapport: "0,88"
-      bas: "0,53"
-      haut: "1,46"
-      p: "0,6279"
-      inverse: "1,14"
+      rapport: "0,89"
+      bas: "0,54"
+      haut: "1,48"
+      p: "0,6637"
+      inverse: "1,12"
     - libelle: Âge (+10 ans)
-      rapport: "0,69"
+      rapport: "0,7"
       bas: "0,52"
       haut: "0,93"
-      p: "0,0135"
-      inverse: "1,45"
+      p: "0,0152"
+      inverse: "1,43"
     - libelle: Époque (+10 ans)
-      rapport: "0,75"
-      bas: "0,51"
-      haut: "1,1"
-      p: "0,1422"
-      inverse: "1,33"
+      rapport: "0,74"
+      bas: "0,5"
+      haut: "1,07"
+      p: "0,1128"
+      inverse: "1,35"
     lecture: Régression logistique sur les premières participations. Un rapport au-dessus de 1 veut dire
       « rappelé plus souvent », à toutes les autres variables égales. Un intervalle qui contient 1 ne
       permet pas de conclure.
-    rapport_survie: "21,9"
+    rapport_survie: "21,4"
     abandons_derniers: 60
   registre:
   - cle: parite
@@ -29616,7 +29648,7 @@ modeles:
     unite: rang moyen
     ecart_types: "0,41"
     p: "0,6927"
-    p_ajustee: "0,772"
+    p_ajustee: "0,7815"
     retenu: false
     tirages: 10000
     lecture: Le modèle classe les candidats d'une saison ; on relève la place qu'il donne à celui qui
@@ -29951,37 +29983,37 @@ modeles:
     libelle: Qui les ambassadeurs éliminent-ils ?
     question: Deux ambassadeurs qui décident seuls choisissent-ils autrement qu'un tirage ?
     origine: avant_apres
-    observe: "47,263"
-    attendu: "49,956"
+    observe: "47,774"
+    attendu: "49,917"
     unite: points de rang
-    ecart_types: "-0,39"
-    p: "0,7018"
-    p_ajustee: "0,772"
+    ecart_types: "-0,31"
+    p: "0,7552"
+    p_ajustee: "0,8156"
     retenu: false
     tirages: 10000
     lecture: Rang de l'éliminé parmi les présents, sur la force estimée aux épreuves. Au-dessus de 50,
       les ambassadeurs sacrifient un joueur plus fort que la moyenne du camp ; en dessous, un plus faible.
     nulle: *id092
-    observe_arrondi: "47,3"
-    attendu_arrondi: 50
+    observe_arrondi: "47,8"
+    attendu_arrondi: "49,9"
   - cle: ambassadeurs_survie
     libelle: L'ambassadeur qui négocie s'en sort-il mieux ?
     question: Partir en ambassade change-t-il la distance que l'on parcourt ensuite ?
     origine: avant_apres
-    observe: "38,397"
-    attendu: "50,061"
+    observe: "38,322"
+    attendu: "50,031"
     unite: points de rang
-    ecart_types: "-2,11"
-    p: "0,0329"
-    p_ajustee: "0,0557"
-    retenu: false
+    ecart_types: "-2,26"
+    p: "0,0227"
+    p_ajustee: "0,04"
+    retenu: true
     tirages: 10000
     lecture: 'Rang de l''ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c''est la
       médiane du camp. Au-dessus, l''ambassade accompagne une fin de parcours plus tardive ; en dessous,
       plus précoce. Le hasard, ici, c''est désigner les ambassadeurs au sort parmi les présents.'
     nulle: *id093
-    observe_arrondi: "38,4"
-    attendu_arrondi: "50,1"
+    observe_arrondi: "38,3"
+    attendu_arrondi: 50
   - cle: menace_voix
     libelle: Le nom sorti la fois d'avant
     question: Sortir est-il plus probable quand on a reçu au moins une voix au conseil précédent ?
@@ -30027,7 +30059,7 @@ modeles:
     unite: points
     ecart_types: "2,23"
     p: "0,0273"
-    p_ajustee: "0,048"
+    p_ajustee: "0,0462"
     retenu: true
     tirages: 10000
     lecture: Écart entre partir après avoir voté avec la minorité et partir après avoir voté avec la majorité.
@@ -30405,7 +30437,7 @@ modeles:
     observe_arrondi: "0,4"
     attendu_arrondi: "0,5"
   nb_tests: 44
-  nb_retenus: 25
+  nb_retenus: 26
   faux_positifs_attendus: "2,2"
   puissance:
   - libelle: Une grandeur de saison
@@ -30433,7 +30465,8 @@ modeles:
     observations_texte: "306"
     effet_texte: 8 points
   retenus_avec_vingt_nuls: 24
-  tombes_avec_vingt_nuls_texte: seul le plus fragile, « Avoir voté du mauvais côté », tomberait
+  tombes_avec_vingt_nuls_texte: les 2 plus fragiles tomberaient — « L'ambassadeur qui négocie s'en sort-il
+    mieux ? » et « Avoir voté du mauvais côté »
 completude_saisons:
   colonnes:
   - cle: casting
@@ -33146,7 +33179,7 @@ completude_saisons:
     annee: 2018
     speciale: true
     effectif: 18
-    score: "98,3"
+    score: "98,4"
     cellules:
     - cle: casting
       valeur: 100
@@ -33257,11 +33290,11 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     - cle: poteaux
-      valeur: null
-      texte: fin hors format
-      etat: sans_objet
+      valeur: 100
+      texte: nommé
+      etat: complet
       nature: fait
-      valeur_arrondie: 0
+      valeur_arrondie: 100
     niveau: eleve
   - saison: s20
     numero: 20
@@ -33271,7 +33304,7 @@ completude_saisons:
     annee: 2019
     speciale: false
     effectif: 21
-    score: "93,3"
+    score: "93,7"
     cellules:
     - cle: casting
       valeur: 100
@@ -33364,11 +33397,11 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     - cle: ambassadeurs
-      valeur: null
-      texte: pas d'ambassade
-      etat: sans_objet
+      valeur: 100
+      texte: nommés
+      etat: complet
       nature: fait
-      valeur_arrondie: 0
+      valeur_arrondie: 100
     - cle: audience_saison
       valeur: 100
       texte: connue
@@ -33771,7 +33804,7 @@ completude_saisons:
     annee: 2021
     speciale: true
     effectif: 21
-    score: "90,6"
+    score: "91,1"
     cellules:
     - cle: casting
       valeur: 100
@@ -33882,11 +33915,11 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     - cle: poteaux
-      valeur: null
-      texte: fin hors format
-      etat: sans_objet
+      valeur: 100
+      texte: nommé
+      etat: complet
       nature: fait
-      valeur_arrondie: 0
+      valeur_arrondie: 100
     niveau: eleve
   - saison: s23
     numero: 23
@@ -34021,7 +34054,7 @@ completude_saisons:
     annee: 2023
     speciale: false
     effectif: 20
-    score: "92,5"
+    score: "97,6"
     cellules:
     - cle: casting
       valeur: 100
@@ -34114,9 +34147,9 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     - cle: ambassadeurs
-      valeur: 0
-      texte: non nommés
-      etat: manquant
+      valeur: null
+      texte: pas d'ambassade
+      etat: sans_objet
       nature: fait
       valeur_arrondie: 0
     - cle: audience_saison
@@ -34873,8 +34906,8 @@ completude_saisons:
     libelle: Ambassadeurs nommés
     court: Ambassade
     nature: fait
-    moyenne: "59,1"
-    completes: 13
+    moyenne: "63,6"
+    completes: 14
     concernees: 22
   - cle: audience_saison
     libelle: Audience de la saison
@@ -34894,12 +34927,12 @@ completude_saisons:
     libelle: Vainqueur des poteaux
     court: Poteaux
     nature: fait
-    moyenne: "74,1"
-    completes: 20
-    concernees: 27
+    moyenne: "75,9"
+    completes: 22
+    concernees: 29
   saisons: 34
-  cases: 606
-  moyenne: "88,7"
+  cases: 608
+  moyenne: "88,9"
   meilleure: s27
   pire: sp8
 articles:
@@ -34918,7 +34951,7 @@ articles:
   participations: "645"
   bulletins: 3 477
   nb_tests: "44"
-  nb_retenus: "25"
+  nb_retenus: "26"
   force:
     rang_avant: "54,7"
     rang_apres: "49,8"
@@ -35101,25 +35134,25 @@ articles:
       conforme: true
       affirme: non retenu, ecart +
     ambassadeurs_force:
-      observe: "47,3"
-      attendu: "50"
-      valeur: "47,3"
-      valeur_ronde: "47"
+      observe: "47,8"
+      attendu: "49,9"
+      valeur: "47,8"
+      valeur_ronde: "48"
       attendu_rond: "50"
-      p: "0,77"
+      p: "0,82"
       retenu: false
       conforme: true
       affirme: non retenu
     ambassadeurs_survie:
-      observe: "38,4"
-      attendu: "50,1"
-      valeur: "38,4"
+      observe: "38,3"
+      attendu: "50"
+      valeur: "38,3"
       valeur_ronde: "38"
       attendu_rond: "50"
-      p: "0,06"
-      retenu: false
+      p: "0,04"
+      retenu: true
       conforme: true
-      affirme: non retenu, ecart -
+      affirme: retenu, ecart -
     prevision_conseil:
       observe: "0,386"
       attendu: "0,5"
@@ -35136,7 +35169,7 @@ articles:
       valeur: "10,7"
       valeur_ronde: "11"
       attendu_rond: "10"
-      p: "0,77"
+      p: "0,78"
       retenu: false
       conforme: true
       affirme: non retenu
@@ -35546,10 +35579,10 @@ mots:
   ecart_age_vainqueurs_maj: Trente et un
   regions_outremer: quatre
   regions_outremer_maj: Quatre
-  poteaux_saisons: vingt
-  poteaux_saisons_maj: Vingt
-  choix_atteste: neuf
-  choix_atteste_maj: Neuf
+  poteaux_saisons: vingt-deux
+  poteaux_saisons_maj: Vingt-deux
+  choix_atteste: dix
+  choix_atteste_maj: Dix
   facettes_initiales: cinq
   facettes_initiales_maj: Cinq
   artefacts: trois
@@ -35603,4 +35636,4 @@ mots:
   facettes_corrigees: deux
   facettes_corrigees_maj: Deux
   facette_retiree_rang: cinquième
-ambassades_sources_communes: 6
+ambassades_sources_communes: 5

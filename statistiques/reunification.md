@@ -291,7 +291,7 @@ côté.</p>
   {{ ng.elimine_ambassadeur }} ont coûté sa place à l’un des ambassadeurs.</p>
 </div>
 
-### Sortent-ils plus tôt ? On ne peut pas l’affirmer
+### Et ils sortent plus tôt, de justesse
 
 {% include graphiques/ambassadeurs-survie.svg %}
 
@@ -305,20 +305,23 @@ les présents.</p>
   {{ ng.ambassadeurs }} ambassadeurs — le rang moyen vaut
   <b>{{ ng.rang_moyen }} sur 100</b>, contre {{ tn.attendu }} attendus.
   {{ tn.ecart_types }} écart-type, p ajustée {{ tn.p_ajustee }}.</p>
-  <p><b>Non concluant : l’ambassadeur sort plutôt plus tôt que s’il avait été
-  désigné au hasard parmi les présents, mais l’écart ne passe pas le seuil.</b></p>
+  <p><b>Retenu, de justesse : l’ambassadeur sort plus tôt que s’il avait été
+  désigné au hasard parmi les présents.</b></p>
   <p>Une partie de l’écart peut être la règle elle-même : un ambassadeur
   parti au tirage sort le soir même, au plus bas rang possible. Et la mesure
   repose sur {{ ng.ambassadeurs }} ambassadeurs.</p>
 </div>
 
-<p class="note"><strong>Ce résultat était retenu jusqu’au 21 octobre 2026</strong>
-(p ajustée 0,047), et la page le présentait comme « un signal, à confirmer ».
-Ce jour-là, vingt-quatre colonnes de la matrice des votes qui passaient pour
-des conseils ont été rendues à leur nature de sorties sans vote — destins
-liés, duels de riposte, épreuves —, et trois revenants à leur sortie
-définitive, dont une ambassade. Le signal ne s’est pas confirmé : p ajustée
-{{ tn.p_ajustee }}.</p>
+<p class="note"><strong>Ce résultat a changé deux fois le même jour.</strong>
+Retenu jusqu’au 21 octobre 2026 (p ajustée 0,047), il est d’abord repassé
+sous le seuil (0,056) quand vingt-quatre colonnes de la matrice des votes,
+qui passaient pour des conseils, ont été rendues à leur nature de sorties
+sans vote. Il l’a repassé dans l’autre sens (p ajustée {{ tn.p_ajustee }})
+quand huit revenants ont retrouvé leur sortie définitive : Quentin, au
+<i>Feu sacré</i>, comptait comme sorti au vingt-troisième jour, à l’ambassade
+qu’il a perdue au tirage ; il est revenu, et n’est sorti qu’au trente-huitième.
+Un résultat qui bascule à chaque correction se tient sur le seuil : il faut
+le lire comme tel.</p>
 
 ## Ce que cette page ne dit pas
 

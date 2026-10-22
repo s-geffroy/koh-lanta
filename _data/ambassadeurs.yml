@@ -1,13 +1,13 @@
 # Fichier genere par tools/extraction/ambassadeurs.py.
 # Ne pas editer a la main : toute modification sera ecrasee.
 ambassades: 22
-nommees: 13
-part_nommees: "59,1"
-sources_accord: 5
+nommees: 14
+part_nommees: "63,6"
+sources_accord: 4
 sources_desaccord: 1
 par_tirage: 3
 elimine_ambassadeur: 3
-ambassadeurs_distincts: 29
+ambassadeurs_distincts: 32
 lignes:
 - saison: s10
   elimine: boris-deltell
@@ -88,6 +88,18 @@ lignes:
   elimine_est_ambassadeur: false
   source: wikipedia-fr
   phrase: D'un accord commun, les deux ambassadeurs Fabian et Marguerite décident d'éliminer Tugdual.
+- saison: s20
+  elimine: frederic-blanchard
+  episode: 7
+  ambassadeurs:
+  - alexandre-andre
+  - beatrice-kabore
+  - maxime-berthon
+  nombre: 3
+  tirage_au_sort: false
+  elimine_est_ambassadeur: false
+  source: fandom
+  phrase: Frédéric est éliminé par les ambassadeurs Alexandre, Béatrice et Maxime.
 - saison: s21
   elimine: marie-france-schieber
   episode: 8
@@ -114,10 +126,6 @@ lignes:
   elimine_est_ambassadeur: false
   source: fandom
   phrase: Setha est éliminée par les ambassadeurs Colin et Louana.
-- saison: s24
-  elimine: quentin-paygnard
-  ambassadeurs: null
-  motif: ambassadeur deja sorti
 - saison: s25
   elimine: ricky-poyet
   ambassadeurs: null

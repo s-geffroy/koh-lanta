@@ -908,8 +908,8 @@ AFFIRMATIONS_PAGES = {
                                "deux conseils plus tard n'est pas retenue"),
     "talent_stable": (False, "sources.md ecrit que la stabilite reste trop mince "
                              "pour etre retenue"),
-    "ambassadeurs_survie": (False, "statistiques/reunification.md ecrit qu'on ne peut pas "
-                                   "affirmer que l'ambassadeur sort plus tot"),
+    "ambassadeurs_survie": (True, "statistiques/reunification.md ecrit que l'ambassadeur "
+                                  "sort plus tot, de justesse"),
     "camp_perdant": (True, "statistiques/conditionnelles.md et l'article court ecrivent que "
                            "voter avec la minorite expose, de justesse"),
     "vote_meme_sexe": (True, "statistiques/qui-vise-qui.md et le resume du "
@@ -979,8 +979,8 @@ AFFIRMATIONS_VALEURS = [
     (("premiere_epreuve", "ecart"), lambda x: x > 0,
      "statistiques/epreuves.md ecrit que gagner la premiere epreuve va plus loin"),
     (("finale", "par_rang"),
-     lambda x: (x[2]["gagne_la_saison"]["cas"], x[2]["gagne_la_saison"]["effectif"]) == (11, 17),
-     "statistiques/finale.md ecrit « onze victoires sur dix-sept » dans sa "
+     lambda x: (x[2]["gagne_la_saison"]["cas"], x[2]["gagne_la_saison"]["effectif"]) == (11, 18),
+     "statistiques/finale.md ecrit « onze victoires sur dix-huit » dans sa "
      "description et son chapeau"),
     (("modeles", "pire_place", "isolement"),
      lambda x: x[0]["bas"] <= x[1]["haut"] and x[1]["bas"] <= x[0]["haut"],
@@ -1016,6 +1016,9 @@ AFFIRMATIONS_VALEURS = [
     (("modeles", "registre"),
      lambda x: 0.01 <= float(str(next(t for t in x if t["cle"] == "camp_perdant")["p_ajustee"]).replace(",", ".")) < 0.05,
      "statistiques/conditionnelles.md, l'article court et l'article long ecrivent « de justesse » pour camp_perdant"),
+    (("modeles", "registre"),
+     lambda x: 0.01 <= float(str(next(t for t in x if t["cle"] == "ambassadeurs_survie")["p_ajustee"]).replace(",", ".")) < 0.05,
+     "statistiques/reunification.md et l'article long ecrivent « de justesse » pour ambassadeurs_survie"),
     (("conseils", "retours_en_jeu"), lambda x: x == 5,
      "sources.md raconte les conseils de revenants un par un (Linda, Tania deux "
      "fois, Christina, et Francis en cinquieme cas)"),
@@ -1048,7 +1051,7 @@ AFFIRMATIONS_VALEURS = [
     (("geographie",), lambda x: x["reunion_observe"]==0 and x["martinique_observe"]==x["outremer_observe"]==2 and x["premiere_region"]=="Corse", "statistiques/geographie.md : la Reunion n'a fourni personne, les deux viennent de Martinique, la Corse a le plus fort indice"),
     (("revenants","vainqueurs_multiples"), lambda x: len(x)==1, "statistiques/vainqueurs.md ecrit « une seule, sacree... la seule a avoir gagne deux fois »"),
     (("vainqueurs","par_metier"), lambda x: x[0]["part"]==x[1]["part"]==x[2]["part"] > x[3]["part"] and {y["code"] for y in x[:3]}=={"encadrement","commerce","sport"}, "statistiques/vainqueurs.md nomme les trois premieres familles, a egalite"),
-    (("finale","par_rang"), lambda x: 40 <= x[0]["elimine_aux_poteaux"]["probabilite"] < 50, "statistiques/finale.md ecrit « presque une fois sur deux » pour le premier sorti aux poteaux"),
+    (("finale","par_rang"), lambda x: 47.5 <= float(str(x[0]["elimine_aux_poteaux"]["probabilite"]).replace(",", ".")) <= 52.5, "statistiques/finale.md ecrit « une fois sur deux » pour le premier sorti aux poteaux"),
     (("classement",), lambda x: len(x["facettes"])==4 and x["joueurs_classes"]==531, "top.md (description, chapeau), index.md et le sommaire ecrivent « quatre facettes » et 531 aventuriers"),
     (("modeles","casting","archetypes"), lambda x: [a["libelle"] for a in x]==["25-29 ans · femme · Commerce et vente","30-34 ans · homme · Agriculture et nature","40-44 ans · homme · Artisanat et bâtiment","45 ans et plus · Sans activité déclarée","18-24 ans","18-24 ans · femme · Étudiants"], "statistiques/casting.md decrit les six archetypes un par un (« la femme de la fin de la vingtaine, dans le commerce »...)"),
     (("modeles","casting"), lambda x: max(x["silhouettes"], key=lambda s: s["score"])["k"] == x["nb_archetypes"], "statistiques/casting.md ecrit que la silhouette monte jusqu'au nombre retenu puis redescend"),

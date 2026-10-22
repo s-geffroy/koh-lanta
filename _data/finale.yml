@@ -14,17 +14,17 @@
 #     tools/atelier python3 tools/extraction/finale.py --ecrire
 #
 couverture:
-  saisons_au_format: 27
-  vainqueur_des_poteaux_connu: 20
-  part_poteaux: "74,1"
-  choix_atteste: 9
-  qualifies_connus: 17
+  saisons_au_format: 29
+  vainqueur_des_poteaux_connu: 22
+  part_poteaux: "75,9"
+  choix_atteste: 10
+  qualifies_connus: 18
   saisons_ordre_teste: 5
   rangs_confirmes: 10
   rangs_dementis: 0
   ordre_atteste: 5
-  ordre_croisable: 7
-  ordre_concordant: 7
+  ordre_croisable: 8
+  ordre_concordant: 8
   saisons_sans_poteaux:
   - s02
   - s08
@@ -516,6 +516,26 @@ lignes:
   sources:
     orientation: tableau fandom
     poteaux: tableau fandom
+- saison: sp5
+  titre: Le Combat des héros
+  annee: 2018
+  speciale: true
+  vainqueur: clemence-castel
+  orientation:
+    elimines:
+    - javier-rodriguez
+    qualifies:
+    - jeremy-raffin
+    - clemence-castel
+    - pascal-salviani
+    ordre_croise: true
+  poteaux:
+    elimine: jeremy-raffin
+    vainqueur: pascal-salviani
+    autre_finaliste: clemence-castel
+  sources:
+    orientation: tableau wikipedia
+    poteaux: tableau wikipedia
 - saison: sp6
   titre: L'Île des héros
   annee: 2020
@@ -538,4 +558,22 @@ lignes:
   sources:
     orientation: tableau wikipedia
     poteaux: tableau wikipedia
+    choix: prose wikipedia
+- saison: sp7
+  titre: La Légende
+  annee: 2021
+  speciale: true
+  vainqueur: claude-dartois
+  orientation:
+    elimines:
+    - jade-handi
+    - philippe-bizet
+  poteaux:
+    elimine: ugo-lartiche
+    vainqueur: laurent-maistret
+    choisi: claude-dartois
+    choix_atteste: true
+    autre_finaliste: claude-dartois
+  sources:
+    poteaux: prose wikipedia
     choix: prose wikipedia

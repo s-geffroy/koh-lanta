@@ -501,17 +501,72 @@ RE_LIGNE_CASTING = re.compile(r"\{\{\s*Tribebox-bw|\[\[\s*(?:Fichier|File|Image)
                               re.I)
 
 
+# LE DEPART FINAL D'UN REVENANT. Sa ligne de casting s'etale sur plusieurs
+# lignes du tableau (`rowspan`) : la premiere porte la premiere elimination,
+# les suivantes, que `parse_row` ne voit pas, le retour et le second depart
+# -- Ugo, a La Legende : « Elimine au conseil, Jour 3 », « Vainqueur du
+# cinquieme duel, Jour 17 », « Elimine au conseil, Jour 32 », « Vainqueur du
+# dixieme duel, Jour 33 », « Elimine aux poteaux, Jour 35 ». La chaine
+# gardait le jour 3. Un depart ulterieur ne compte que s'il suit un RETOUR
+# en jeu : explicite (duel gagne, reintegration), ou implicite quand il nomme
+# une sortie du jeu (conseil, ambassadeurs, poteaux...). Un duel PERDU sans
+# retour prealable est une tentative de revenir, depuis l'exil : la sortie du
+# jeu reste la precedente, comme le dit le guide d'episodes du wiki Survivor.
+# Un libelle qui ne nomme pas de sortie -- « 2e elimine, 5e membre du jury »
+# dans l'arene de la seconde chance du Feu sacre -- ne compte pas non plus.
+RE_RETOUR_EN_JEU = re.compile(r"vainqueur d[ue]\b.*duel|r[ée]int[ée]gr|retour dans l'aventure|"
+                              r"retour en jeu", re.I)
+
+
+def etapes_de_depart(cells):
+    """Les cellules « Libelle, Jour N » d'une ligne, dans l'ordre."""
+    out = []
+    for c in cells:
+        texte = plain(c)
+        mj = RE_JOUR.search(texte)
+        if mj and texte[:mj.start()].strip(" -–—:"):
+            out.append((texte[:mj.start()].strip(" -–—:"), int(mj.group(1))))
+    return out
+
+
+def depart_final(etapes):
+    """Le dernier depart du jeu, ou None s'il n'y en a pas d'autre que le premier."""
+    if len(etapes) < 2:
+        return None
+    final, revenu = None, False
+    for libelle, jour in etapes[1:]:
+        if RE_RETOUR_EN_JEU.search(libelle):
+            revenu = True
+            continue
+        sort, _ = classify(libelle)
+        nomme = sort and (sort != "elimine_conseil" or "conseil" in sansaccent(libelle.lower()))
+        if not nomme:
+            continue
+        if revenu or not re.search(r"duel", libelle, re.I):
+            final, revenu = (libelle, jour), False
+    return final
+
+
 def parse_page(text, saison_id=None):
     table = extract_table(text)
     if table is None:
         return []
     out = []
+    dernier, etapes = None, []
     for row in split_rows(table):
         if not RE_LIGNE_CASTING.search(row):
+            # Ligne de continuation : la suite du parcours de la ligne d'avant.
+            if dernier is not None:
+                etapes += etapes_de_depart(split_cells(row))
             continue
+        if dernier is not None:
+            dernier["depart_final"] = depart_final(etapes)
         p = parse_row(row, saison_id)
+        dernier, etapes = (p, etapes_de_depart(split_cells(row))) if p else (None, [])
         if p:
             out.append(p)
+    if dernier is not None:
+        dernier["depart_final"] = depart_final(etapes)
     return out
 
 if __name__ == "__main__":

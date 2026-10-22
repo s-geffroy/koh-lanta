@@ -133,8 +133,12 @@ des héros*. Une confrontation de chaque jour de sortie à tous les témoins, su
 toutes les saisons, ne montre plus aucune saison décalée d’ensemble. Quatre étapes fausses à la source sont
 corrigées, dont celle de Patricia, que sa légende plaçait dans la tribu
 réunifiée alors qu’elle sort à la réunion des ambassadeurs. Les revenants,
-eux, gardent comme jour de sortie celui de leur première élimination : leur
-parcours continue après, et c’est normal.
+eux, ont pour jour de sortie celui de leur départ définitif. Jusqu’au 21 octobre
+2026, dix d’entre eux gardaient leur première élimination : le tableau des
+candidats de Fandom écrit leur retour et leur second départ sur des lignes de
+continuation que la chaîne ne lisait pas. Ugo, à <i>La Légende</i>, sortait
+ainsi au troisième jour ; il est éliminé aux poteaux le trente-cinquième. Un
+duel perdu depuis l’exil, sans retour en jeu, ne déplace pas la sortie.
 
 Quand les témoins étaient à égalité, on en a cherché un de plus, dans les
 récits datés. La page Fandom de Marie confirme l’élimination d’Estelle au

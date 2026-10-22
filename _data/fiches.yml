@@ -11855,7 +11855,7 @@ aventuriers:
     genre: f
     id: clemence-castel
     jour_max: 40
-    jours_total: 98
+    jours_total: 104
     localisation: Manche
     naissance: null
     nb_participations: 4
@@ -11991,7 +11991,7 @@ aventuriers:
       - id: trapezes
         nom: Trapèzes
       evasion: null
-      jour_sortie: 16
+      jour_sortie: 22
       justesse_vote: 50
       libelle_sort: Éliminé au conseil
       lieu: Île de Taha'a
@@ -12001,7 +12001,7 @@ aventuriers:
       - effectif: 2
         nature: statique
       numero: null
-      part_parcours: 46
+      part_parcours: 63
       profession: Gérante d'un café-concert
       ratio_epreuves: "22,2"
       saison: sp7
@@ -17378,7 +17378,7 @@ aventuriers:
       r: Une seule fois, en 2019 (La Guerre des chefs).
     - q: Jusqu’où Frédéric Blanchard est-il allé à Koh-Lanta ?
       r: 'Son meilleur parcours : 15e sur 21 en 2019 (La Guerre des chefs), où il
-        sort au conseil le 3e jour.'
+        sort aux ambassadeurs le 18e jour.'
     - q: Quel est le classement de Frédéric Blanchard parmi les aventuriers de Koh-Lanta ?
       r: 264e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -17386,8 +17386,8 @@ aventuriers:
     finales: 0
     genre: h
     id: frederic-blanchard
-    jour_max: 3
-    jours_total: 3
+    jour_max: 18
+    jours_total: 18
     localisation: Pas-de-Calais
     naissance: null
     nb_participations: 1
@@ -17409,19 +17409,19 @@ aventuriers:
       epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: null
-      jour_sortie: 3
+      jour_sortie: 18
       justesse_vote: null
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé aux ambassadeurs
       lieu: Archipel de Kadavu
       localisation: Pas-de-Calais
       menace: "0,62"
       natures: []
       numero: 20
-      part_parcours: 8
+      part_parcours: 46
       profession: Photographe
       ratio_epreuves: null
       saison: s20
-      sort: elimine_conseil
+      sort: elimine_ambassadeurs
       speciale: false
       titre: La Guerre des chefs
       tribu: Ikalu
@@ -22368,7 +22368,7 @@ aventuriers:
       r: '2 fois : L''Île au trésor (2016) et Le Combat des héros (2018).'
     - q: Jusqu’où Jérémy Raffin est-il allé à Koh-Lanta ?
       r: 'Son meilleur parcours : 3e sur 18 en 2018 (Le Combat des héros), où il sort
-        au conseil le 18e jour.'
+        aux poteaux le 32e jour.'
     - q: Quel est le classement de Jérémy Raffin parmi les aventuriers de Koh-Lanta ?
       r: 343e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -22377,7 +22377,7 @@ aventuriers:
     genre: h
     id: jeremy-raffin
     jour_max: 33
-    jours_total: 51
+    jours_total: 65
     localisation: Isère
     naissance: null
     nb_participations: 2
@@ -22445,9 +22445,9 @@ aventuriers:
       - id: orientation
         nom: Orientation
       evasion: 75
-      jour_sortie: 18
+      jour_sortie: 32
       justesse_vote: 75
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé aux poteaux
       lieu: Archipel de Yasawa
       localisation: Isère
       menace: "1,21"
@@ -22455,11 +22455,11 @@ aventuriers:
       - effectif: 1
         nature: logique
       numero: null
-      part_parcours: 56
+      part_parcours: 100
       profession: Blogueur
       ratio_epreuves: 0
       saison: sp5
-      sort: elimine_conseil
+      sort: elimine_poteaux
       speciale: true
       titre: Le Combat des héros
       tribu: Toa
@@ -22969,7 +22969,7 @@ aventuriers:
     genre: f
     id: jessica-potel
     jour_max: 34
-    jours_total: 43
+    jours_total: 61
     localisation: Essonne
     naissance: null
     nb_participations: 2
@@ -23041,9 +23041,9 @@ aventuriers:
       - id: parcours-du-combattant
         nom: Parcours du combattant
       evasion: null
-      jour_sortie: 9
+      jour_sortie: 27
       justesse_vote: 50
-      libelle_sort: Éliminé à une épreuve
+      libelle_sort: Éliminé au conseil
       lieu: Archipel de Kadavu
       localisation: Essonne
       menace: "0,6"
@@ -23055,11 +23055,11 @@ aventuriers:
       - effectif: 1
         nature: reflexion
       numero: null
-      part_parcours: 28
+      part_parcours: 84
       profession: Technicienne en apnée du sommeil
       ratio_epreuves: "12,5"
       saison: sp6
-      sort: elimine_epreuve
+      sort: elimine_conseil
       speciale: true
       titre: L'Île des héros
       tribu: Héros
@@ -38175,8 +38175,8 @@ aventuriers:
     - q: Combien de fois Quentin Paygnard a-t-il participé à Koh-Lanta ?
       r: Une seule fois, en 2023 (Le Feu sacré).
     - q: Jusqu’où Quentin Paygnard est-il allé à Koh-Lanta ?
-      r: 'Son meilleur parcours : 5e sur 20 en 2023 (Le Feu sacré), où il sort aux
-        ambassadeurs le 23e jour.'
+      r: 'Son meilleur parcours : 5e sur 20 en 2023 (Le Feu sacré), où il sort au
+        conseil le 38e jour.'
     - q: Quel est le classement de Quentin Paygnard parmi les aventuriers de Koh-Lanta ?
       r: 352e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -38184,8 +38184,8 @@ aventuriers:
     finales: 0
     genre: h
     id: quentin-paygnard
-    jour_max: 23
-    jours_total: 23
+    jour_max: 38
+    jours_total: 38
     localisation: Moselle
     naissance: null
     nb_participations: 1
@@ -38207,19 +38207,19 @@ aventuriers:
       epreuves_gagnees: 3
       epreuves_nommees: []
       evasion: "66,7"
-      jour_sortie: 23
+      jour_sortie: 38
       justesse_vote: 25
-      libelle_sort: Éliminé aux ambassadeurs
+      libelle_sort: Éliminé au conseil
       lieu: Péninsule de Caramoan
       localisation: Moselle
       menace: "0,36"
       natures: []
       numero: 24
-      part_parcours: 58
+      part_parcours: 95
       profession: Charpentier
       ratio_epreuves: "23,1"
       saison: s24
-      sort: elimine_ambassadeurs
+      sort: elimine_conseil
       speciale: false
       titre: Le Feu sacré
       tribu: Paniman
@@ -39297,7 +39297,7 @@ aventuriers:
       r: Une seule fois, en 2023 (Le Feu sacré).
     - q: Jusqu’où Rudy Noël est-il allé à Koh-Lanta ?
       r: 'Son meilleur parcours : 13e sur 20 en 2023 (Le Feu sacré), où il sort au
-        conseil le 15e jour.'
+        conseil le 21e jour.'
     - q: Quel est le classement de Rudy Noël parmi les aventuriers de Koh-Lanta ?
       r: 409e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -39305,8 +39305,8 @@ aventuriers:
     finales: 0
     genre: h
     id: rudy-noel
-    jour_max: 15
-    jours_total: 15
+    jour_max: 21
+    jours_total: 21
     localisation: Val-de-Marne
     naissance: null
     nb_participations: 1
@@ -39328,7 +39328,7 @@ aventuriers:
       epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: 50
-      jour_sortie: 15
+      jour_sortie: 21
       justesse_vote: null
       libelle_sort: Éliminé au conseil
       lieu: Péninsule de Caramoan
@@ -39336,7 +39336,7 @@ aventuriers:
       menace: "1,43"
       natures: []
       numero: 24
-      part_parcours: 38
+      part_parcours: 52
       profession: Conducteur de métro
       ratio_epreuves: null
       saison: s24
@@ -43638,7 +43638,7 @@ aventuriers:
     genre: h
     id: ugo-lartiche
     jour_max: 42
-    jours_total: 84
+    jours_total: 116
     localisation: Pyrénées-Orientales
     naissance: null
     nb_participations: 4
@@ -43714,9 +43714,9 @@ aventuriers:
       - id: perche
         nom: Perche
       evasion: null
-      jour_sortie: 3
+      jour_sortie: 35
       justesse_vote: null
-      libelle_sort: Éliminé au conseil
+      libelle_sort: Éliminé aux poteaux
       lieu: Île de Taha'a
       localisation: Pyrénées-Orientales
       menace: "0,87"
@@ -43732,11 +43732,11 @@ aventuriers:
       - effectif: 1
         nature: reflexion
       numero: null
-      part_parcours: 9
+      part_parcours: 100
       profession: Fauconnier
       ratio_epreuves: 20
       saison: sp7
-      sort: elimine_conseil
+      sort: elimine_poteaux
       speciale: true
       titre: La Légende
       tribu: Tribu des hommes
@@ -44683,7 +44683,7 @@ aventuriers:
       r: Une seule fois, en 2019 (La Guerre des chefs).
     - q: Jusqu’où Victor Rollinger est-il allé à Koh-Lanta ?
       r: 'Son meilleur parcours : 18e sur 21 en 2019 (La Guerre des chefs), où il
-        sort au conseil le 6e jour.'
+        sort au conseil le 12e jour.'
     - q: Quel est le classement de Victor Rollinger parmi les aventuriers de Koh-Lanta ?
       r: 349e sur 531. Ce classement mesure quatre façons de bien jouer — le parcours,
         les épreuves, la discrétion et la lecture du vote — sans jamais regarder qui
@@ -44691,8 +44691,8 @@ aventuriers:
     finales: 0
     genre: h
     id: victor-rollinger
-    jour_max: 6
-    jours_total: 6
+    jour_max: 12
+    jours_total: 12
     localisation: Bas-Rhin
     naissance: null
     nb_participations: 1
@@ -44714,7 +44714,7 @@ aventuriers:
       epreuves_gagnees: 0
       epreuves_nommees: []
       evasion: 0
-      jour_sortie: 6
+      jour_sortie: 12
       justesse_vote: null
       libelle_sort: Éliminé au conseil
       lieu: Archipel de Kadavu
@@ -44722,7 +44722,7 @@ aventuriers:
       menace: 2
       natures: []
       numero: 20
-      part_parcours: 15
+      part_parcours: 31
       profession: Moniteur de parachutisme
       ratio_epreuves: null
       saison: s20
@@ -51815,6 +51815,20 @@ saisons:
       sort: elimine_conseil
       tribu: Kama
       voix_recues: 7
+    - age: 52
+      classement: 15
+      couleur: bleu
+      genre: h
+      id: frederic-blanchard
+      jour_sortie: 18
+      libelle_sort: Éliminé aux ambassadeurs
+      nom: Frédéric Blanchard
+      part_parcours: 46
+      profession: Photographe
+      rang: 264
+      sort: elimine_ambassadeurs
+      tribu: Ikalu
+      voix_recues: 5
     - age: 53
       classement: 16
       couleur: rouge
@@ -51843,6 +51857,20 @@ saisons:
       sort: elimine_conseil
       tribu: Kama
       voix_recues: 9
+    - age: 25
+      classement: 18
+      couleur: rouge
+      genre: h
+      id: victor-rollinger
+      jour_sortie: 12
+      libelle_sort: Éliminé au conseil
+      nom: Victor Rollinger
+      part_parcours: 31
+      profession: Moniteur de parachutisme
+      rang: 349
+      sort: elimine_conseil
+      tribu: Kama
+      voix_recues: 8
     - age: 45
       classement: 20
       couleur: jaune
@@ -51871,20 +51899,6 @@ saisons:
       sort: elimine_conseil
       tribu: Kama
       voix_recues: 3
-    - age: 25
-      classement: 18
-      couleur: rouge
-      genre: h
-      id: victor-rollinger
-      jour_sortie: 6
-      libelle_sort: Éliminé au conseil
-      nom: Victor Rollinger
-      part_parcours: 15
-      profession: Moniteur de parachutisme
-      rang: 349
-      sort: elimine_conseil
-      tribu: Kama
-      voix_recues: 8
     - age: 20
       classement: 21
       couleur: bleu
@@ -51899,20 +51913,6 @@ saisons:
       sort: abandon_medical
       tribu: Ikalu
       voix_recues: 1
-    - age: 52
-      classement: 15
-      couleur: bleu
-      genre: h
-      id: frederic-blanchard
-      jour_sortie: 3
-      libelle_sort: Éliminé au conseil
-      nom: Frédéric Blanchard
-      part_parcours: 8
-      profession: Photographe
-      rang: 264
-      sort: elimine_conseil
-      tribu: Ikalu
-      voix_recues: 5
     conseils: 15
     conseils_complets: 12
     duree_jours: 39
@@ -53196,6 +53196,20 @@ saisons:
       sort: elimine_orientation
       tribu: Tinago
       voix_recues: 4
+    - age: 26
+      classement: 5
+      couleur: jaune
+      genre: h
+      id: quentin-paygnard
+      jour_sortie: 38
+      libelle_sort: Éliminé au conseil
+      nom: Quentin Paygnard
+      part_parcours: 95
+      profession: Charpentier
+      rang: 352
+      sort: elimine_conseil
+      tribu: Paniman
+      voix_recues: 5
     - age: 32
       classement: 6
       couleur: jaune
@@ -53294,20 +53308,20 @@ saisons:
       sort: abandon_volontaire
       tribu: Paniman
       voix_recues: 0
-    - age: 26
-      classement: 5
-      couleur: jaune
+    - age: 41
+      classement: 13
+      couleur: rouge
       genre: h
-      id: quentin-paygnard
-      jour_sortie: 23
-      libelle_sort: Éliminé aux ambassadeurs
-      nom: Quentin Paygnard
-      part_parcours: 58
-      profession: Charpentier
-      rang: 352
-      sort: elimine_ambassadeurs
-      tribu: Paniman
-      voix_recues: 5
+      id: rudy-noel
+      jour_sortie: 21
+      libelle_sort: Éliminé au conseil
+      nom: Rudy Noël
+      part_parcours: 52
+      profession: Conducteur de métro
+      rang: 409
+      sort: elimine_conseil
+      tribu: Tinago
+      voix_recues: 10
     - age: 49
       classement: 14
       couleur: rouge
@@ -53336,20 +53350,6 @@ saisons:
       sort: abandon_medical
       tribu: Tinago
       voix_recues: 0
-    - age: 41
-      classement: 13
-      couleur: rouge
-      genre: h
-      id: rudy-noel
-      jour_sortie: 15
-      libelle_sort: Éliminé au conseil
-      nom: Rudy Noël
-      part_parcours: 38
-      profession: Conducteur de métro
-      rang: 409
-      sort: elimine_conseil
-      tribu: Tinago
-      voix_recues: 10
     - age: 23
       classement: 16
       couleur: jaune
@@ -56043,6 +56043,20 @@ saisons:
       sort: finaliste
       tribu: Toa
       voix_recues: 0
+    - age: 27
+      classement: 3
+      couleur: rouge
+      genre: h
+      id: jeremy-raffin
+      jour_sortie: 32
+      libelle_sort: Éliminé aux poteaux
+      nom: Jérémy Raffin
+      part_parcours: 100
+      profession: Blogueur
+      rang: 343
+      sort: elimine_poteaux
+      tribu: Toa
+      voix_recues: 17
     - age: 44
       classement: 4
       couleur: rouge
@@ -56141,20 +56155,6 @@ saisons:
       sort: elimine_epreuve
       tribu: Wakaï
       voix_recues: 2
-    - age: 27
-      classement: 3
-      couleur: rouge
-      genre: h
-      id: jeremy-raffin
-      jour_sortie: 18
-      libelle_sort: Éliminé au conseil
-      nom: Jérémy Raffin
-      part_parcours: 56
-      profession: Blogueur
-      rang: 343
-      sort: elimine_conseil
-      tribu: Toa
-      voix_recues: 17
     - age: 39
       classement: 12
       couleur: jaune
@@ -56424,6 +56424,20 @@ saisons:
       sort: elimine_epreuve
       tribu: Nacomo
       voix_recues: 28
+    - age: 35
+      classement: 8
+      couleur: noir
+      genre: f
+      id: jessica-potel
+      jour_sortie: 27
+      libelle_sort: Éliminé au conseil
+      nom: Jessica Potel
+      part_parcours: 84
+      profession: Technicienne en apnée du sommeil
+      rang: 43
+      sort: elimine_conseil
+      tribu: Héros
+      voix_recues: 6
     - age: 27
       classement: 10
       couleur: rouge
@@ -56550,20 +56564,6 @@ saisons:
       sort: abandon_medical
       tribu: Nacomo
       voix_recues: 0
-    - age: 35
-      classement: 8
-      couleur: noir
-      genre: f
-      id: jessica-potel
-      jour_sortie: 9
-      libelle_sort: Éliminé à une épreuve
-      nom: Jessica Potel
-      part_parcours: 28
-      profession: Technicienne en apnée du sommeil
-      rang: 43
-      sort: elimine_epreuve
-      tribu: Héros
-      voix_recues: 6
     - age: 58
       classement: 18
       couleur: jaune
@@ -56694,6 +56694,20 @@ saisons:
       sort: finaliste
       tribu: Korok
       voix_recues: 4
+    - age: 40
+      classement: 3
+      couleur: bleu
+      genre: h
+      id: ugo-lartiche
+      jour_sortie: 35
+      libelle_sort: Éliminé aux poteaux
+      nom: Ugo Lartiche
+      part_parcours: 100
+      profession: Fauconnier
+      rang: 47
+      sort: elimine_poteaux
+      tribu: Tribu des hommes
+      voix_recues: 13
     - age: 39
       classement: 4
       couleur: rouge
@@ -56806,6 +56820,20 @@ saisons:
       sort: elimine_epreuve
       tribu: Korok
       voix_recues: 6
+    - age: 36
+      classement: 12
+      couleur: jaune
+      genre: f
+      id: clemence-castel
+      jour_sortie: 22
+      libelle_sort: Éliminé au conseil
+      nom: Clémence Castel
+      part_parcours: 63
+      profession: Gérante d'un café-concert
+      rang: 9
+      sort: elimine_conseil
+      tribu: Lanta-naï
+      voix_recues: 22
     - age: 38
       classement: 14
       couleur: rouge
@@ -56834,20 +56862,6 @@ saisons:
       sort: elimine_ambassadeurs
       tribu: Lanta-naï
       voix_recues: 0
-    - age: 36
-      classement: 12
-      couleur: jaune
-      genre: f
-      id: clemence-castel
-      jour_sortie: 16
-      libelle_sort: Éliminé au conseil
-      nom: Clémence Castel
-      part_parcours: 46
-      profession: Gérante d'un café-concert
-      rang: 9
-      sort: elimine_conseil
-      tribu: Lanta-naï
-      voix_recues: 22
     - age: 24
       classement: 16
       couleur: jaune
@@ -56932,20 +56946,6 @@ saisons:
       sort: elimine_conseil
       tribu: Tribu des femmes
       voix_recues: 6
-    - age: 40
-      classement: 3
-      couleur: bleu
-      genre: h
-      id: ugo-lartiche
-      jour_sortie: 3
-      libelle_sort: Éliminé au conseil
-      nom: Ugo Lartiche
-      part_parcours: 9
-      profession: Fauconnier
-      rang: 47
-      sort: elimine_conseil
-      tribu: Tribu des hommes
-      voix_recues: 13
     - age: 36
       classement: 21
       couleur: bleu

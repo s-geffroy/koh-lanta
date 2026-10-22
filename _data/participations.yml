@@ -13174,7 +13174,7 @@
     couleur: jaune
     jour_debut: 9
     jour_fin: 12
-  jour_sortie: 6
+  jour_sortie: 12
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 8
@@ -13189,9 +13189,9 @@
     tribu: wikipedia-fr
     couleur: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: fandom
-    sort: fandom
-    motif: fandom
+    jour_sortie: 'fandom (revenant : depart final)'
+    sort: 'fandom (revenant : depart final)'
+    motif: 'fandom (revenant : depart final)'
     nom_complet: fandom
     votes_recus: fandom
     classement: fandom (page individuelle)
@@ -13299,9 +13299,9 @@
     couleur: bleu
     jour_debut: 5
     jour_fin: 18
-  jour_sortie: 3
-  sort: elimine_conseil
-  motif: Éliminé au conseil
+  jour_sortie: 18
+  sort: elimine_ambassadeurs
+  motif: Éliminé par les ambassadeurs
   votes_recus: 5
   classement: 15
   victoires_collectives: 2
@@ -13314,9 +13314,9 @@
     tribu: wikipedia-fr
     couleur: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: fandom
-    sort: fandom
-    motif: fandom
+    jour_sortie: 'fandom (revenant : depart final)'
+    sort: 'fandom (revenant : depart final)'
+    motif: 'fandom (revenant : depart final)'
     nom_complet: fandom
     votes_recus: fandom
     classement: fandom (page individuelle)
@@ -14305,7 +14305,7 @@
     jour_fin: 22
   jour_sortie: 22
   sort: elimine_ambassadeurs
-  motif: Éliminée au conseil
+  motif: Éliminée par les ambassadeurs
   votes_recus: 8
   classement: 15
   victoires_collectives: 2
@@ -14318,11 +14318,9 @@
     tribu: wikipedia-fr
     couleur: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: 'corrige : revenante : Fandom, second départ « Éliminée par les ambassadeurs, Jour 22 » ;
-      Wikipedia : « Les deux ambassadeurs se mettent d''accord pour éliminer Marie-France »'
-    sort: 'corrige : revenante : Fandom, second départ « Éliminée par les ambassadeurs, Jour 22 » ; Wikipedia :
-      « Les deux ambassadeurs se mettent d''accord pour éliminer Marie-France »'
-    motif: fandom
+    jour_sortie: 'fandom (revenant : depart final)'
+    sort: 'fandom (revenant : depart final)'
+    motif: 'fandom (revenant : depart final)'
     nom_complet: fandom
     votes_recus: fandom
     classement: fandom (page individuelle)
@@ -17267,7 +17265,7 @@
     couleur: jaune
     jour_debut: 18
     jour_fin: 21
-  jour_sortie: 15
+  jour_sortie: 21
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 10
@@ -17282,9 +17280,9 @@
     tribu: wikipedia-fr
     couleur: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: fandom
-    sort: fandom
-    motif: fandom
+    jour_sortie: 'fandom (revenant : depart final)'
+    sort: 'fandom (revenant : depart final)'
+    motif: 'fandom (revenant : depart final)'
     nom_complet: fandom
     votes_recus: fandom
     classement: fandom (page individuelle)
@@ -17631,9 +17629,9 @@
     couleur: null
     jour_debut: 23
     jour_fin: 38
-  jour_sortie: 23
-  sort: elimine_ambassadeurs
-  motif: Éliminé aux ambassadeurs
+  jour_sortie: 38
+  sort: elimine_conseil
+  motif: Éliminé au conseil 7e membre du jury final
   votes_recus: 5
   classement: 5
   victoires_collectives: 7
@@ -17646,9 +17644,9 @@
     tribu: wikipedia-fr
     couleur: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: fandom
-    sort: fandom
-    motif: fandom
+    jour_sortie: 'fandom (revenant : depart final)'
+    sort: 'fandom (revenant : depart final)'
+    motif: 'fandom (revenant : depart final)'
     nom_complet: fandom
     votes_recus: fandom
     classement: fandom (page individuelle)
@@ -24747,9 +24745,9 @@
     couleur: null
     jour_debut: 20
     jour_fin: 32
-  jour_sortie: 18
-  sort: elimine_conseil
-  motif: Éliminé au conseil
+  jour_sortie: 32
+  sort: elimine_poteaux
+  motif: Éliminé aux poteaux
   votes_recus: 17
   classement: 3
   victoires_collectives: 9
@@ -24762,9 +24760,9 @@
     tribu: wikipedia-fr
     couleur: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: fandom
-    sort: fandom
-    motif: fandom
+    jour_sortie: 'fandom (revenant : depart final)'
+    sort: 'fandom (revenant : depart final)'
+    motif: 'fandom (revenant : depart final)'
     nom_complet: fandom
     votes_recus: fandom
     classement: fandom (page individuelle)
@@ -25363,11 +25361,10 @@
     tribu: wikipedia-fr
     couleur: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: 'corrige : revenant : Fandom, second départ « Jour 24 » ; Wikipedia : « Teheiura étant
-      en binôme avec Charlotte, il est également éliminé »'
+    jour_sortie: 'fandom (revenant : depart final)'
     sort: 'corrige : revenant : Fandom, second départ « Jour 24 » ; Wikipedia : « Teheiura étant en binôme
       avec Charlotte, il est également éliminé »'
-    motif: fandom
+    motif: 'fandom (revenant : depart final)'
     nom_complet: fandom
     votes_recus: fandom
     classement: fandom (page individuelle)
@@ -25401,9 +25398,9 @@
     couleur: null
     jour_debut: 15
     jour_fin: 27
-  jour_sortie: 9
-  sort: elimine_epreuve
-  motif: Éliminée à une épreuve éliminatoire
+  jour_sortie: 27
+  sort: elimine_conseil
+  motif: Éliminée au conseil
   votes_recus: 6
   classement: 8
   victoires_collectives: 2
@@ -25416,9 +25413,9 @@
     tribu: wikipedia-fr
     couleur: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: fandom
-    sort: fandom
-    motif: fandom
+    jour_sortie: 'fandom (revenant : depart final)'
+    sort: 'fandom (revenant : depart final)'
+    motif: 'fandom (revenant : depart final)'
     nom_complet: fandom
     votes_recus: fandom
     classement: fandom (page individuelle)
@@ -26182,7 +26179,7 @@
     couleur: null
     jour_debut: 22
     jour_fin: 24
-  jour_sortie: 16
+  jour_sortie: 22
   sort: elimine_conseil
   motif: Éliminée au conseil
   votes_recus: 22
@@ -26194,9 +26191,9 @@
     tribu: wikipedia-fr
     couleur: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: fandom
-    sort: fandom
-    motif: fandom
+    jour_sortie: 'fandom (revenant : depart final)'
+    sort: 'fandom (revenant : depart final)'
+    motif: 'fandom (revenant : depart final)'
     nom_complet: fandom
     votes_recus: fandom
     edition_origine: fandom
@@ -26650,9 +26647,9 @@
     couleur: null
     jour_debut: 33
     jour_fin: 35
-  jour_sortie: 3
-  sort: elimine_conseil
-  motif: Éliminé au conseil
+  jour_sortie: 35
+  sort: elimine_poteaux
+  motif: Éliminé aux poteaux
   votes_recus: 13
   classement: 3
   victoires_collectives: 0
@@ -26660,9 +26657,9 @@
   sources:
     genre: wikipedia-fr
     parcours: wikipedia-fr
-    jour_sortie: fandom
-    sort: fandom
-    motif: fandom
+    jour_sortie: 'fandom (revenant : depart final)'
+    sort: 'fandom (revenant : depart final)'
+    motif: 'fandom (revenant : depart final)'
     nom_complet: fandom
     votes_recus: fandom
     edition_origine: fandom

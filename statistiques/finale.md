@@ -1,11 +1,11 @@
 ---
 layout: page
 title: La fin de saison
-description: "La fin de saison de Koh-Lanta : gagner les poteaux ne fait pas gagner. Arriver dernier à l’orientation, si — onze victoires sur dix-sept."
+description: "La fin de saison de Koh-Lanta : gagner les poteaux ne fait pas gagner. Arriver dernier à l’orientation, si — onze victoires sur dix-huit."
 permalink: /statistiques/finale/
 chapeau: >-
   Gagner les poteaux ne fait pas gagner la saison. Mais arriver **dernier** à
-  l’orientation, si : onze victoires sur dix-sept, contre une sur trois
+  l’orientation, si : onze victoires sur dix-huit, contre une sur trois
   attendues.
 ---
 
@@ -104,7 +104,7 @@ hasard : un qualifié sur trois gagne.</p>
   <b>ne contient pas</b> le {{ r3.gagne_la_saison.hasard }} % du hasard.</p>
   <p>Le premier arrivé, lui, gagne {{ r1.gagne_la_saison.cas }} fois
   ({{ r1.gagne_la_saison.probabilite }} %) et se fait sortir aux poteaux
-  {{ r1.elimine_aux_poteaux.probabilite }} % du temps — presque une fois sur
+  {{ r1.elimine_aux_poteaux.probabilite }} % du temps — une fois sur
   deux. <b>Finir premier à l’orientation est la pire des trois places.</b></p>
 </div>
 
