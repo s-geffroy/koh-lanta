@@ -26,7 +26,7 @@ dessus. Il a fallu aller lire les deux wikis.
 
 <ul class="chiffres">
   <li class="chiffre"><b>{{ cv.vainqueur_des_poteaux_connu }}</b><span>saisons dont on connaît le vainqueur des poteaux</span></li>
-  <li class="chiffre"><b>{{ cv.qualifies_connus }}</b><span>dont l’ordre d’arrivée à l’orientation</span></li>
+  <li class="chiffre"><b>{{ cv.qualifies_connus }}</b><span>dont on connaît l’ordre d’arrivée à l’orientation</span></li>
   <li class="chiffre"><b>{{ r3.gagne_la_saison.probabilite }} %</b><span>de victoires pour le dernier qualifié</span></li>
 </ul>
 

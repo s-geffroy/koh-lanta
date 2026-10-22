@@ -23,6 +23,39 @@ SEUIL_EPREUVES = 8        # idem pour un ratio d'epreuves
 SEUIL_FANTOME = 5         # nombre de conseils traverses sans etre ecrit
 
 
+def corriger_voix_recues(parts, conseils, saisons=None):
+    """Les voix recues : le total de Fandom, jamais moins que les bulletins lus.
+
+    Fandom additionne les deux tours d'une egalite, et c'est la bonne
+    definition : un nom ecrit au premier tour a ete ecrit. Les bulletins de la
+    base ne la remplacent pas -- il leur manque souvent le second tour, et des
+    conseils entiers aux premieres saisons. Mais le total de Fandom est parfois
+    INFERIEUR aux bulletins lus contre la personne (Mohamed Derradji, 0 pour
+    deux bulletins) : la source se contredit, et c'est elle qui se trompe. On
+    retient donc le plus grand des deux. Un « fantome », a zero voix, ne peut
+    ainsi porter aucun bulletin.
+
+    Tous les bulletins ecrits comptent, barres ou non, votes noirs compris :
+    la question est de savoir si quelqu'un a ecrit ce nom. Une saison en cours
+    n'a pas de total (fusionner le retire) : on n'en fabrique pas.
+    Modifie `parts` en place ; rend le nombre de totaux releves."""
+    en_cours = {s["id"] for s in (saisons or []) if s.get("en_cours")}
+    lus = Counter()
+    for c in eliminations(conseils):
+        for b in c.get("votes") or []:
+            if b.get("cible_rattachee"):
+                lus[(c["saison"], b["cible"])] += 1
+    releves = 0
+    for p in parts:
+        if p["saison"] in en_cours:
+            continue
+        n = lus.get((p["saison"], p["id"]), 0)
+        if n and (p.get("votes_recus") is None or p["votes_recus"] < n):
+            p["votes_recus"] = n
+            releves += 1
+    return releves
+
+
 def eliminations(conseils):
     """Les conseils qui font sortir quelqu'un -- et eux seuls.
 

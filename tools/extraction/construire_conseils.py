@@ -105,6 +105,13 @@ LIGNES_DECALEES = {
                            9: None, 10: None},
                           "ligne Philippe de Wikipedia anglais (Voting History), entiere ; "
                           "Fandom perd deux cases"),
+    # Une case FAUSSE, et non decalee : a l'episode 10 des Reliques du
+    # destin, Fandom fait voter Zakariya contre Caroline. Les deux sources
+    # annoncent 6/11 contre Guillaume, l'elimine ; la case de Fandom ferait 6
+    # voix a Caroline et 5 a Guillaume. Wikipedia ecrit Guillaume.
+    ("s28", "Zakariya"): ({13: "Guillaume"},
+                          "matrice Wikipedia, colonne de l'episode 10 : Zakariya -> Guillaume ; "
+                          "total 6/11 contre Guillaume dans les deux sources"),
 }
 
 
@@ -552,6 +559,10 @@ COLONNES_SANS_VOTE = {
         "Fandom : « L'épreuve d'immunité de cet épisode étant éliminatoire pour le dernier, Martin est donc éliminé » ; revenu par un duel"),
     ("sp6", "jessica-potel", "3"): ("elimine_epreuve", None,
         "Wikipedia : « Éliminée (jour 9 – 10) », remplace Marie au jour 10 ; Fandom : épreuve éliminatoire, jour 9"),
+    ("s09", "alexandre-amico", "6"): ("elimine_ambassadeurs", None,
+        "Fandom : « Les ambassadrices Isabelle et Fabienne se mettent d'accord sur le nom d'Alexandre » ; revenu par une épreuve, puis abandon"),
+    ("s27", "maxime-lubian", "8"): ("elimine_ambassadeurs", None,
+        "Wikipedia : « Les quatre ambassadeurs (Frédéric, Louise, Maël et Pierre-Marie) se mettent d'accord pour éliminer Maxime » ; revenu"),
     ("s24", "quentin-paygnard", "8"): ("elimine_ambassadeurs", None,
         "wiki Survivor : « Quentin (Lottery) » à la réunion des ambassadeurs ; revenu, sorti au conseil le jour 38"),
     ("sp3", "moussa-niangane", "8"): (_LIES, None,
@@ -693,6 +704,61 @@ def poser_les_seconds_tours(conseils, rapport):
     rapport.append(f"seconds tours poses : {len(trouves)}")
 
 
+# LE CONSEIL OU PERSONNE NE SORT, faute que la matrice le dise. Celui qui
+# recoit le plus de voix entre dans l'Antre du destin (Les Reliques du
+# destin) et peut en ressortir sauf. La matrice nomme pourtant l'elimine a la
+# ligne des elimines. Ses bulletins restent des bulletins. Cle : (saison,
+# elimine lu, episode) ; valeur : source.
+CONSEILS_SANS_ELIMINE = {
+    ("s28", "jonathan-guez", "6"):
+        "Wikipedia : « Jonathan a trouvé la poterie lui permettant de changer d'équipe. "
+        "Par conséquent, il n'est pas éliminé »",
+}
+
+
+# LES JURES HOMONYMES. Deux aventuriers du meme prenom, et la matrice de jury
+# ne dit que le prenom : la resolution prenait le mauvais. A Fidji, la
+# gagnante Lea Sahin « votait pour elle-meme » ; a La Revanche des 4 Terres,
+# Jerome Molas votait deux fois. Wikipedia distingue les lignes par la tribu
+# en note (« lea-rouge », « jerome-orange »). Cle : (saison, cible, votant
+# lu) ; valeur : (votant juste, source).
+JURES_HOMONYMES = {
+    ("s25", "lea-sahin", "lea-sahin"): ("lea-notardonato",
+        "Wikipedia, matrice : la ligne « Léa » de note « lea-rouge » vote Léa ; Léa Notardonato est rouge"),
+    ("s27", "mael-lozach", "jerome-molas"): ("jerome-salvatore",
+        "Wikipedia, matrice : la ligne « Jérôme » de note « jerome-orange » vote Maël ; Jérôme Salvatore est orange"),
+}
+
+
+def corriger_les_jures_homonymes(conseils, rapport):
+    trouves = set()
+    for c in conseils:
+        if c.get("type") != "jury":
+            continue
+        for b in c.get("votes") or []:
+            cle = (c["saison"], b.get("cible"), b.get("votant"))
+            if cle in JURES_HOMONYMES:
+                b["votant"], b["votant_rattache"] = JURES_HOMONYMES[cle][0], True
+                trouves.add(cle)
+    for cle in sorted(set(JURES_HOMONYMES) - trouves):
+        raise SystemExit(f"JURES_HOMONYMES : aucun bulletin pour {cle}")
+
+
+def retirer_les_faux_elimines(conseils, rapport):
+    trouves = set()
+    for c in conseils:
+        cle = (c["saison"], c.get("elimine"), str(c.get("episode")))
+        if c.get("type", "elimination") != "elimination" or cle not in CONSEILS_SANS_ELIMINE:
+            continue
+        c["elimine"], c["elimine_rattache"] = None, False
+        c["sans_elimination"] = True
+        c["sans_elimination_source"] = CONSEILS_SANS_ELIMINE[cle]
+        c["votes_contre"] = None
+        trouves.add(cle)
+    for cle in sorted(set(CONSEILS_SANS_ELIMINE) - trouves):
+        raise SystemExit(f"CONSEILS_SANS_ELIMINE : aucun conseil pour {cle}")
+
+
 def marquer_les_tirages(conseils, rapport):
     """Pose `tirage` sur le conseil que la boule noire a tranche. Une entree
     de TIRAGES qui ne trouve pas son conseil est une erreur, pas un oubli."""
@@ -745,6 +811,25 @@ def etiqueter_les_sorties(conseils, debut, sorts, rapport):
             continue
         nature = sorts.get(c.get("elimine")) if c.get("elimine_rattache") else None
         tablee = COLONNES_SANS_VOTE.get((c["saison"], c.get("elimine"), str(c.get("episode"))))
+        # UNE AMBASSADE EST UNE SORTIE, PAS UN CONSEIL. Les ambassadeurs
+        # s'accordent sur un nom ; personne ne vote. Une partie des matrices
+        # ecrit pourtant leur choix dans leurs lignes, comme des bulletins, et
+        # seize ambassades passaient pour des conseils de deux a cinq voix,
+        # quand sept autres etaient des sorties : le nombre de conseils d'une
+        # saison et les mesures au bulletin n'etaient pas comparables. Ces
+        # « bulletins » sont retires ; les noms des ambassadeurs sont lus
+        # dans les notes des sources (ambassadeurs.py).
+        if (c["votes"] and c.get("elimine_rattache")
+                and ((tablee and tablee[0] == "elimine_ambassadeurs")
+                     or (nature == "elimine_ambassadeurs"
+                         and derniere.get(c["elimine"]) == c["numero"]))
+                and all(b_.get("cible") == c["elimine"] for b_ in c["votes"])):
+            rapport.append(f"{c['saison']} conseil {c['numero']} : ambassade de {c['elimine']}, "
+                           f"{len(c['votes'])} choix d'ambassadeurs retires des bulletins")
+            c["votes"] = []
+            for cle in ("annulation", "voix_annulees", "proteges", "votes_contre",
+                        "votes_exprimes", "votes_contre_annonce", "complet"):
+                c.pop(cle, None)
         if tablee and not c["votes"]:
             # Les chiffres que la colonne portait sont ceux du binome, recopies
             # par la case fusionnee : ils ne disent rien de cette sortie.
@@ -1333,6 +1418,8 @@ def construire(saisons, parts, rapport):
         etiqueter_les_sorties(conseils, debut_saison, sorts, rapport)
         recoller_le_scrutin_final(conseils[debut_saison:], rapport)
 
+    retirer_les_faux_elimines(conseils, rapport)
+    corriger_les_jures_homonymes(conseils, rapport)
     marquer_les_tirages(conseils, rapport)
     poser_les_seconds_tours(conseils, rapport)
     if accord["communs"]:

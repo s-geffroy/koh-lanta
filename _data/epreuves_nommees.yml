@@ -668,7 +668,7 @@ epreuves:
   - s16
   - sp6
 - nom: Épreuve des Toits
-  type: Force et Statique
+  type: Force et statique
   natures:
   - statique
   - force
@@ -756,7 +756,7 @@ epreuves:
   - s17
   - s20
 - nom: Poteries en équilibre
-  type: Equilibre
+  type: Équilibre
   natures:
   - equilibre
   apparitions: 3

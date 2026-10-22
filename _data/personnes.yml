@@ -107,7 +107,7 @@
 - id: patricia-tanguy
   nom: Patricia Tanguy
   prenom: Patricia
-  genre: h
+  genre: f
   participations:
   - s01
   nb_participations: 1
@@ -150,7 +150,7 @@
 - id: nelly-baradeau
   nom: Nelly Baradeau
   prenom: Nelly
-  genre: h
+  genre: f
   participations:
   - s02
   nb_participations: 1
@@ -534,7 +534,7 @@
 - id: thierry-ramos
   nom: Thierry Ramos
   prenom: Thierry
-  genre: f
+  genre: h
   participations:
   - s05
   nb_participations: 1
@@ -2770,7 +2770,7 @@
   - s23
   nb_participations: 1
 - id: franck-le-totem-maudit
-  nom: Franck (Le Totem Maudit)
+  nom: Franck
   prenom: Franck
   genre: h
   participations:

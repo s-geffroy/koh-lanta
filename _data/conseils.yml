@@ -5557,24 +5557,14 @@
     annule: false
 - saison: s09
   numero: 11
-  type: elimination
-  complet: false
+  type: sortie
   episode: "6"
   elimine: alexandre-amico
   elimine_rattache: true
-  votes_contre: 2
-  votes_exprimes: null
-  votes:
-  - votant: isabelle-da-silva
-    votant_rattache: true
-    cible: alexandre-amico
-    cible_rattachee: true
-    annule: false
-  - votant: fabienne-lefebvre-trehoux
-    votant_rattache: true
-    cible: alexandre-amico
-    cible_rattachee: true
-    annule: false
+  votes: []
+  nature: elimine_ambassadeurs
+  nature_source: 'Fandom : « Les ambassadrices Isabelle et Fabienne se mettent d''accord sur le nom d''Alexandre » ;
+    revenu par une épreuve, puis abandon'
 - saison: s09
   numero: 13
   type: sortie
@@ -6301,24 +6291,12 @@
     annule: false
 - saison: s10
   numero: 10
-  type: elimination
-  complet: false
+  type: sortie
   episode: "8"
   elimine: boris-deltell
   elimine_rattache: true
-  votes_contre: 2
-  votes_exprimes: null
-  votes:
-  - votant: claude-dartois
-    votant_rattache: true
-    cible: boris-deltell
-    cible_rattachee: true
-    annule: false
-  - votant: kunle-m-babacere-pakorona
-    votant_rattache: true
-    cible: boris-deltell
-    cible_rattachee: true
-    annule: false
+  votes: []
+  nature: elimine_ambassadeurs
 - saison: s10
   numero: 11
   type: elimination
@@ -7028,24 +7006,12 @@
     annule: false
 - saison: s11
   numero: 9
-  type: elimination
-  complet: false
+  type: sortie
   episode: "7"
   elimine: maxime-boulet
   elimine_rattache: true
-  votes_contre: 2
-  votes_exprimes: null
-  votes:
-  - votant: teheiura-teahui
-    votant_rattache: true
-    cible: maxime-boulet
-    cible_rattachee: true
-    annule: false
-  - votant: olivier-moenaert
-    votant_rattache: true
-    cible: maxime-boulet
-    cible_rattachee: true
-    annule: false
+  votes: []
+  nature: elimine_ambassadeurs
 - saison: s11
   numero: 10
   type: elimination
@@ -8907,24 +8873,12 @@
   nature: abandon_medical
 - saison: s14
   numero: 10
-  type: elimination
-  complet: false
+  type: sortie
   episode: "7"
   elimine: alban-pellegrin
   elimine_rattache: true
-  votes_contre: 2
-  votes_exprimes: null
-  votes:
-  - votant: jeff-santiago
-    votant_rattache: true
-    cible: alban-pellegrin
-    cible_rattachee: true
-    annule: false
-  - votant: cedric-giosserand-lucas
-    votant_rattache: true
-    cible: alban-pellegrin
-    cible_rattachee: true
-    annule: false
+  votes: []
+  nature: elimine_ambassadeurs
 - saison: s14
   numero: 11
   type: elimination
@@ -11718,24 +11672,12 @@
     annule: false
 - saison: s17
   numero: 11
-  type: elimination
-  complet: false
+  type: sortie
   episode: "8"
   elimine: yassin-metiri
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
-  votes:
-  - votant: mathilde-chevalier
-    votant_rattache: true
-    cible: yassin-metiri
-    cible_rattachee: true
-    annule: false
-  - votant: sandro-gonzalez-schena
-    votant_rattache: true
-    cible: yassin-metiri
-    cible_rattachee: true
-    annule: false
+  votes: []
+  nature: elimine_ambassadeurs
 - saison: s17
   numero: 12
   type: elimination
@@ -12590,24 +12532,12 @@
     source: 'Fandom : « Manu tire la boule noire, et est éliminé de Koh-Lanta »'
 - saison: s18
   numero: 11
-  type: elimination
-  complet: false
+  type: sortie
   episode: "8"
   elimine: tugdual-paul
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
-  votes:
-  - votant: marguerite-leblanc
-    votant_rattache: true
-    cible: tugdual-paul
-    cible_rattachee: true
-    annule: false
-  - votant: fabian-rocha-rocha
-    votant_rattache: true
-    cible: tugdual-paul
-    cible_rattachee: true
-    annule: false
+  votes: []
+  nature: elimine_ambassadeurs
 - saison: s18
   numero: 12
   type: elimination
@@ -13347,29 +13277,12 @@
     annule: false
 - saison: s20
   numero: 9
-  type: elimination
-  complet: false
+  type: sortie
   episode: "7"
   elimine: frederic-blanchard
   elimine_rattache: true
-  votes_contre: 3
-  votes_exprimes: null
-  votes:
-  - votant: maxime-berthon
-    votant_rattache: true
-    cible: frederic-blanchard
-    cible_rattachee: true
-    annule: false
-  - votant: beatrice-kabore
-    votant_rattache: true
-    cible: frederic-blanchard
-    cible_rattachee: true
-    annule: false
-  - votant: alexandre-andre
-    votant_rattache: true
-    cible: frederic-blanchard
-    cible_rattachee: true
-    annule: false
+  votes: []
+  nature: elimine_ambassadeurs
 - saison: s20
   numero: 10
   type: elimination
@@ -15343,29 +15256,12 @@
     annule: false
 - saison: s22
   numero: 8
-  type: elimination
-  complet: false
+  type: sortie
   episode: "6"
   elimine: frederic-baudet
   elimine_rattache: true
-  votes_contre: 3
-  votes_exprimes: null
-  votes:
-  - votant: maxine-eouzan
-    votant_rattache: true
-    cible: frederic-baudet
-    cible_rattachee: true
-    annule: false
-  - votant: laure-canevarolo
-    votant_rattache: true
-    cible: frederic-baudet
-    cible_rattachee: true
-    annule: false
-  - votant: vincent-blier
-    votant_rattache: true
-    cible: frederic-baudet
-    cible_rattachee: true
-    annule: false
+  votes: []
+  nature: elimine_ambassadeurs
 - saison: s22
   numero: 9
   type: elimination
@@ -16455,24 +16351,12 @@
     source: 'Fandom : « Alexandra tire la boule noire et quitte l''aventure »'
 - saison: s23
   numero: 11
-  type: elimination
-  complet: false
+  type: sortie
   episode: "8"
   elimine: setha-el-hajjami
   elimine_rattache: true
-  votes_contre: 2
-  votes_exprimes: null
-  votes:
-  - votant: louana-roy
-    votant_rattache: true
-    cible: setha-el-hajjami
-    cible_rattachee: true
-    annule: false
-  - votant: colin-mottas
-    votant_rattache: true
-    cible: setha-el-hajjami
-    cible_rattachee: true
-    annule: false
+  votes: []
+  nature: elimine_ambassadeurs
 - saison: s23
   numero: 12
   type: elimination
@@ -18384,24 +18268,12 @@
     annule: true
 - saison: s25
   numero: 9
-  type: elimination
-  complet: false
+  type: sortie
   episode: "8"
   elimine: ricky-poyet
   elimine_rattache: true
-  votes_contre: 2
-  votes_exprimes: null
-  votes:
-  - votant: pauline-bonneil
-    votant_rattache: true
-    cible: ricky-poyet
-    cible_rattachee: true
-    annule: false
-  - votant: lea-notardonato
-    votant_rattache: true
-    cible: ricky-poyet
-    cible_rattachee: true
-    annule: false
+  votes: []
+  nature: elimine_ambassadeurs
 - saison: s25
   numero: 10
   type: elimination
@@ -18895,7 +18767,7 @@
     cible: lea-sahin
     cible_rattachee: true
     annule: false
-  - votant: lea-sahin
+  - votant: lea-notardonato
     votant_rattache: true
     cible: lea-sahin
     cible_rattachee: true
@@ -19283,24 +19155,12 @@
     annule: false
 - saison: s26
   numero: 10
-  type: elimination
-  complet: false
+  type: sortie
   episode: "7"
   elimine: emmanuelle-boisseau
   elimine_rattache: true
-  votes_contre: 2
-  votes_exprimes: null
-  votes:
-  - votant: sophia-mansouri
-    votant_rattache: true
-    cible: emmanuelle-boisseau
-    cible_rattachee: true
-    annule: false
-  - votant: gustin-comanescu
-    votant_rattache: true
-    cible: emmanuelle-boisseau
-    cible_rattachee: true
-    annule: false
+  votes: []
+  nature: elimine_ambassadeurs
 - saison: s26
   numero: 11
   type: elimination
@@ -20327,34 +20187,14 @@
     annule: false
 - saison: s27
   numero: 11
-  type: elimination
-  complet: false
+  type: sortie
   episode: "8"
   elimine: maxime-lubian
   elimine_rattache: true
-  votes_contre: 4
-  votes_exprimes: null
-  votes:
-  - votant: mael-lozach
-    votant_rattache: true
-    cible: maxime-lubian
-    cible_rattachee: true
-    annule: false
-  - votant: pierre-marie-ponsot
-    votant_rattache: true
-    cible: maxime-lubian
-    cible_rattachee: true
-    annule: false
-  - votant: louise-picavet
-    votant_rattache: true
-    cible: maxime-lubian
-    cible_rattachee: true
-    annule: false
-  - votant: frederic-pignard
-    votant_rattache: true
-    cible: maxime-lubian
-    cible_rattachee: true
-    annule: false
+  votes: []
+  nature: elimine_ambassadeurs
+  nature_source: 'Wikipedia : « Les quatre ambassadeurs (Frédéric, Louise, Maël et Pierre-Marie) se mettent
+    d''accord pour éliminer Maxime » ; revenu'
 - saison: s27
   numero: 12
   type: elimination
@@ -20857,7 +20697,7 @@
   votes_pour: 4
   votes_exprimes: 11
   votes:
-  - votant: jerome-molas
+  - votant: jerome-salvatore
     votant_rattache: true
     cible: mael-lozach
     cible_rattachee: true
@@ -21225,9 +21065,9 @@
   type: elimination
   complet: true
   episode: "6"
-  elimine: jonathan-guez
-  elimine_rattache: true
-  votes_contre: 7
+  elimine: null
+  elimine_rattache: false
+  votes_contre: null
   votes_exprimes: 8
   votes:
   - votant: cynthia-combes
@@ -21270,41 +21110,17 @@
     cible: cynthia-combes
     cible_rattachee: true
     annule: false
+  sans_elimination: true
+  sans_elimination_source: 'Wikipedia : « Jonathan a trouvé la poterie lui permettant de changer d''équipe.
+    Par conséquent, il n''est pas éliminé »'
 - saison: s28
   numero: 8
-  type: elimination
-  complet: false
+  type: sortie
   episode: "7"
   elimine: jonathan-guez
   elimine_rattache: true
-  votes_contre: 4
-  votes_exprimes: null
-  votes:
-  - votant: cynthia-combes
-    votant_rattache: true
-    cible: jonathan-guez
-    cible_rattachee: true
-    annule: false
-  - votant: zakariya-bougoudouima
-    votant_rattache: true
-    cible: jonathan-guez
-    cible_rattachee: true
-    annule: false
-  - votant: johan-pinaud
-    votant_rattache: true
-    cible: jonathan-guez
-    cible_rattachee: true
-    annule: false
-  - votant: ulrich-bandeira
-    votant_rattache: true
-    cible: jonathan-guez
-    cible_rattachee: true
-    annule: false
-  - votant: jade-correa
-    votant_rattache: true
-    cible: jonathan-guez
-    cible_rattachee: true
-    annule: false
+  votes: []
+  nature: elimine_ambassadeurs
 - saison: s28
   numero: 9
   type: elimination
@@ -21567,9 +21383,8 @@
   episode: "10"
   elimine: guillaume-le-deun
   elimine_rattache: true
-  votes_contre: 5
+  votes_contre: 6
   votes_exprimes: 11
-  votes_contre_annonce: 6
   votes:
   - votant: cynthia-combes
     votant_rattache: true
@@ -21601,11 +21416,6 @@
     cible: guillaume-le-deun
     cible_rattachee: true
     annule: false
-  - votant: zakariya-bougoudouima
-    votant_rattache: true
-    cible: caroline-ledos
-    cible_rattachee: true
-    annule: false
   - votant: antonin-fortunato
     votant_rattache: true
     cible: guillaume-le-deun
@@ -21624,6 +21434,11 @@
   - votant: lola-krast
     votant_rattache: true
     cible: caroline-ledos
+    cible_rattachee: true
+    annule: false
+  - votant: zakariya-bougoudouima
+    votant_rattache: true
+    cible: guillaume-le-deun
     cible_rattachee: true
     annule: false
 - saison: s28
@@ -22626,24 +22441,12 @@
     annule: false
 - saison: sp2
   numero: 4
-  type: elimination
-  complet: false
+  type: sortie
   episode: "4"
   elimine: gwendal-peizerat
   elimine_rattache: true
-  votes_contre: 2
-  votes_exprimes: null
-  votes:
-  - votant: taig-khris
-    votant_rattache: true
-    cible: gwendal-peizerat
-    cible_rattachee: true
-    annule: false
-  - votant: christina-chevry
-    votant_rattache: true
-    cible: gwendal-peizerat
-    cible_rattachee: true
-    annule: false
+  votes: []
+  nature: elimine_ambassadeurs
 - saison: sp2
   numero: 5
   type: elimination
@@ -24374,24 +24177,12 @@
     annule: false
 - saison: sp5
   numero: 8
-  type: elimination
-  complet: false
+  type: sortie
   episode: "6"
   elimine: ludovic-laresche
   elimine_rattache: true
-  votes_contre: 2
-  votes_exprimes: null
-  votes:
-  - votant: yassin-metiri
-    votant_rattache: true
-    cible: ludovic-laresche
-    cible_rattachee: true
-    annule: false
-  - votant: dylan-thiry
-    votant_rattache: true
-    cible: ludovic-laresche
-    cible_rattachee: true
-    annule: false
+  votes: []
+  nature: elimine_ambassadeurs
 - saison: sp5
   numero: 9
   type: elimination
@@ -25069,34 +24860,12 @@
     annule: false
 - saison: sp6
   numero: 9
-  type: elimination
-  complet: false
+  type: sortie
   episode: "5"
   elimine: delphine-hergault
   elimine_rattache: true
-  votes_contre: 4
-  votes_exprimes: null
-  votes:
-  - votant: claude-dartois
-    votant_rattache: true
-    cible: delphine-hergault
-    cible_rattachee: true
-    annule: false
-  - votant: moussa-niangane
-    votant_rattache: true
-    cible: delphine-hergault
-    cible_rattachee: true
-    annule: false
-  - votant: alexandra-leveau
-    votant_rattache: true
-    cible: delphine-hergault
-    cible_rattachee: true
-    annule: false
-  - votant: ahmad-abadie
-    votant_rattache: true
-    cible: delphine-hergault
-    cible_rattachee: true
-    annule: false
+  votes: []
+  nature: elimine_ambassadeurs
 - saison: sp6
   numero: 10
   type: elimination
@@ -26120,29 +25889,12 @@
     annule: false
 - saison: sp7
   numero: 11
-  type: elimination
-  complet: false
+  type: sortie
   episode: "8"
   elimine: coumba-baradji
   elimine_rattache: true
-  votes_contre: 3
-  votes_exprimes: null
-  votes:
-  - votant: laurent-maistret
-    votant_rattache: true
-    cible: coumba-baradji
-    cible_rattachee: true
-    annule: false
-  - votant: ugo-lartiche
-    votant_rattache: true
-    cible: coumba-baradji
-    cible_rattachee: true
-    annule: false
-  - votant: clemence-castel
-    votant_rattache: true
-    cible: coumba-baradji
-    cible_rattachee: true
-    annule: false
+  votes: []
+  nature: elimine_ambassadeurs
 - saison: sp7
   numero: 12
   type: elimination

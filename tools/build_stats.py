@@ -32,7 +32,7 @@ import modeles                              # noqa: E402
 import classement                           # noqa: E402
 import prevision                           # noqa: E402
 sys.path.insert(0, os.path.join(RACINE, "tools"))
-from indicateurs import (eliminations, votes_du_jury,  # noqa: E402
+from indicateurs import (eliminations, votes_du_jury, corriger_voix_recues,  # noqa: E402
                          indicateurs_individuels, indicateurs_saison,  # noqa: E402
                          fantomes, SEUIL_CONSEILS, SEUIL_EPREUVES, SEUIL_FANTOME)
 
@@ -56,14 +56,26 @@ LIBELLE_SORT = {
     "vainqueur": "Vainqueur", "finaliste": "Finaliste",
     "elimine_conseil": "Éliminé au conseil",
     "elimine_poteaux": "Éliminé aux poteaux",
-    "elimine_orientation": "Éliminé à l'orientation",
+    "elimine_orientation": "Éliminé à l’orientation",
     "elimine_ambassadeurs": "Éliminé aux ambassadeurs",
-    "elimine_duel": "Éliminé en duel", "elimine_exil": "Éliminé sur l'île",
+    "elimine_duel": "Éliminé en duel", "elimine_exil": "Éliminé sur l’île",
     "elimine_epreuve": "Éliminé à une épreuve",
     "elimine_destins_lies": "Éliminé par les destins liés",
     "abandon_medical": "Abandon médical", "abandon_volontaire": "Abandon volontaire",
     "disqualifie": "Disqualifié",
 }
+
+
+def libelle_sort(sort, genre=None):
+    """Le libelle du sort, accorde : « Éliminée au conseil » pour une femme.
+    LIBELLE_SORT est au masculin ; seuls « Éliminé » et « Disqualifié »
+    s'accordent, les autres libelles sont invariables."""
+    libelle = LIBELLE_SORT.get(sort, sort)
+    if genre == "f" and libelle:
+        for mot in ("Éliminé", "Disqualifié"):
+            if libelle == mot or libelle.startswith(mot + " "):
+                return mot + "e" + libelle[len(mot):]
+    return libelle
 
 
 def arrondi(x, n=1):
@@ -95,6 +107,7 @@ def charger():
     epreuves = lire("epreuves.yml")
     colliers = lire("colliers.yml")
     finale = lire("finale.yml") or {}
+    corriger_voix_recues(parts, conseils, saisons)
 
     par_saison = {s["id"]: s for s in saisons}
     for p in parts:
@@ -681,25 +694,30 @@ def bloc_colliers(colliers, par_saison, parts=None):
     trouve_par, joue_par, efficace_par = Counter(), Counter(), Counter()
     perdus = []
     for c in colliers:
+        # Trouver revient a celui qui l'a trouve ; JOUER, au dernier de la
+        # chaine des detenteurs -- un collier passe de main en main, et celui
+        # qui l'a trouve puis cede ne l'a pas joue.
+        chaine = [d for d in (c.get("detenteurs") or []) + (c.get("detenteurs_suivants") or [])
+                  if d.get("id")]
         for d in (c.get("detenteurs") or []):
-            if not d.get("id"):
-                continue
-            trouve_par[d["id"]] += 1
-            if c.get("statut") == "utilise":
-                joue_par[d["id"]] += 1
+            if d.get("id"):
+                trouve_par[d["id"]] += 1
+        dernier = chaine[-1]["id"] if chaine else None
+        if dernier and c.get("statut") == "utilise":
+            joue_par[dernier] += 1
             if c.get("issue") == "annulation_efficace":
-                efficace_par[d["id"]] += 1
+                efficace_par[dernier] += 1
         if c.get("issue") == "elimine_avec_collier":
-            for d in (c.get("detenteurs") or []):
+            for d in chaine[-1:]:
                 perdus.append({
                     "nom": noms.get(d.get("id"), d.get("libelle")),
                     "saison": c["saison"],
                     "titre": par_saison.get(c["saison"], {}).get("titre"),
                     "annee": par_saison.get(c["saison"], {}).get("annee")})
     palmares = sorted(
-        ({"id": i, "nom": noms.get(i, i), "trouves": n,
+        ({"id": i, "nom": noms.get(i, i), "trouves": trouve_par[i],
           "joues": joue_par[i], "efficaces": efficace_par[i]}
-         for i, n in trouve_par.items()),
+         for i in set(trouve_par) | set(joue_par)),
         key=lambda x: (-x["efficaces"], -x["joues"], -x["trouves"], x["nom"]))
 
     return {
@@ -1075,7 +1093,8 @@ def bloc_indicateurs(saisons, parts, conseils, epreuves, colliers, par_saison):
         lot.sort(key=lambda x: sens * x[champ])
         return [{"nom": x["nom"], "saison": x["saison"], "titre": x["titre"],
                  "annee": x["annee"], "speciale": x["speciale"], "valeur": x[champ],
-                 "base": x.get(seuil_champ), "sort": x["sort"]} for x in lot[:n]]
+                 "base": x.get(seuil_champ), "sort": x["sort"],
+                 "genre": x.get("genre")} for x in lot[:n]]
 
     saisons_avancees = indicateurs_saison(saisons, parts, conseils, epreuves, colliers)
     invisibles = fantomes(lignes)
@@ -1111,7 +1130,7 @@ def bloc_indicateurs(saisons, parts, conseils, epreuves, colliers, par_saison):
         "meilleure_evasion": classement("evasion", -1, "conseils_vise", 3),
         "fantomes": [{"nom": x["nom"], "saison": x["saison"], "titre": x["titre"],
                       "annee": x["annee"], "conseils": x["conseils_assistes"],
-                      "sort": x["sort"], "survie": x["survie"]}
+                      "sort": x["sort"], "genre": x.get("genre"), "survie": x["survie"]}
                      for x in invisibles[:12]],
         "nb_fantomes": len(invisibles),
         # Etre invisible une saison peut etre un accident de casting. L'etre
@@ -1120,7 +1139,7 @@ def bloc_indicateurs(saisons, parts, conseils, epreuves, colliers, par_saison):
         "fantomes_recidivistes": [
             {"nom": nom, "fois": len(lot),
              "saisons": ", ".join(x["titre"] for x in lot),
-             "sorts": ", ".join(LIBELLE_SORT.get(x["sort"], x["sort"]) for x in lot)}
+             "sorts": ", ".join(libelle_sort(x["sort"], x.get("genre")) for x in lot)}
             for nom, lot in sorted(
                 ((n, [x for x in invisibles if x["id"] == i])
                  for i, n in sorted({x["id"]: x["nom"] for x in invisibles}.items())),
@@ -2010,8 +2029,9 @@ def formes_des_gabarits(stats):
         m["conditionnelles"]["deux_pas_total"] = dp[0]["effectif"] + dp[1]["effectif"] + dp[2]["effectif"]
     # /statistiques/jeu-social/ : la maniere de sortir des fantomes, libellee
     # (la page remplacait les soulignes et capitalisait, sans accents).
-    for x in stats["indicateurs"].get("fantomes") or []:
-        x["sort_libelle"] = LIBELLE_SORT.get(x.get("sort"), x.get("sort"))
+    for liste in ("fantomes", "plus_menaces", "meilleure_evasion"):
+        for x in stats["indicateurs"].get(liste) or []:
+            x["sort_libelle"] = libelle_sort(x.get("sort"), x.get("genre"))
     # /sources/ : les ambassades que les deux sources nomment.
     chemin_amb = os.path.join(RACINE, "_data", "ambassadeurs.yml")
     if os.path.exists(chemin_amb):
@@ -2170,6 +2190,8 @@ def champs_d_affichage(stats):
     h, pl = c["hasard"], c["palmares"]
     h["rapport"] = round(h["reel_ecart"] / h["ecart"], 1) if h.get("ecart") else None
     pl["auc_pourcent"] = round(pl["auc"] * 100, 1) if pl.get("auc") is not None else None
+    pl["auc_sans_parcours_pourcent"] = (round(pl["auc_sans_parcours"] * 100, 1)
+                                       if pl.get("auc_sans_parcours") is not None else None)
 
     # /completude/ : la part la plus basse de conseils depouilles, par epoque.
     dep = c["biais_epoque"]["depouillement"]
@@ -2251,6 +2273,37 @@ def champs_d_affichage(stats):
             x["barre"] = _arrondi_entier(x["survie_moyenne"])
     for x in stats["revenants"]["carrieres"]:
         x["barre"] = _arrondi_entier(x["part_du_temps"])
+
+
+def accorder_les_ecarts(noeud):
+    """Pose a cote de tout `ecart_types` (et variantes) son mot accorde --
+    « écart-type » sous 2 en valeur absolue, « écarts-types » a partir de 2 --
+    et sa valeur absolue, pour les phrases qui disent deja le sens (« sous le
+    hasard ») : « -3,5 écarts-types sous » etait une double negation. Les pages
+    ecrivaient le mot en dur, au pluriel devant 0,39."""
+    if isinstance(noeud, dict):
+        for cle in list(noeud):
+            valeur = noeud[cle]
+            if cle in ("ecart_types", "ecarts_types_uniforme") and valeur is not None:
+                texte = str(valeur).replace("−", "-")
+                try:
+                    x = abs(float(texte.replace(",", ".")))
+                except ValueError:
+                    continue
+                noeud[cle + "_mot"] = "écart-type" if x < 2 else "écarts-types"
+                noeud[cle + "_abs"] = texte.lstrip("-")
+            elif cle == "observe_arrondi" and valeur is not None:
+                # « 1,9 an », « 2,3 points » : le pluriel commence a 2.
+                try:
+                    x = abs(float(str(valeur).replace("−", "-").replace(",", ".")))
+                except ValueError:
+                    continue
+                noeud["observe_arrondi_pluriel"] = x >= 2
+            else:
+                accorder_les_ecarts(valeur)
+    elif isinstance(noeud, list):
+        for x in noeud:
+            accorder_les_ecarts(x)
 
 
 def poser_les_identifiants(noeud, index):
@@ -2541,6 +2594,7 @@ def main():
     champs_du_texte(stats, saisons, parts)
     formes_des_gabarits(stats)
     poser_les_identifiants(stats, index_des_noms(personnes))
+    accorder_les_ecarts(stats)
 
     chemin = os.path.join(RACINE, "_data", "stats.yml")
     with open(chemin, "w", encoding="utf-8") as f:

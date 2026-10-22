@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Julien Mairesse — Palau (2009)"
-description: "Julien Mairesse, Koh-Lanta Palau (2009) : sort au conseil le 3e jour, 16e sur 18, 0 épreuve gagnée. 412e sur 531 au classement des aventuriers."
+description: "Julien Mairesse, Koh-Lanta Palau (2009) : sort au conseil le 3e jour, 16e sur 18, aucune épreuve gagnée. 381e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/julien-mairesse.png
 permalink: /aventuriers/julien-mairesse/
 aventurier: julien-mairesse

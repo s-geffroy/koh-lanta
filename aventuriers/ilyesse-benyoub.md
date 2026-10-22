@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Ilyesse Benyoub (2024)"
-description: "Ilyesse Benyoub, Koh-Lanta La Tribu maudite (2024) : sort aux poteaux le 41e jour, 3e sur 24, 6 voix reçues. 36e sur 531 au classement des aventuriers."
+description: "Ilyesse Benyoub, Koh-Lanta La Tribu maudite (2024) : sort aux poteaux le 41e jour, 3e sur 24, 6 voix reçues. 34e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/ilyesse-benyoub.png
 permalink: /aventuriers/ilyesse-benyoub/
 aventurier: ilyesse-benyoub

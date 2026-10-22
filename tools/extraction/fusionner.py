@@ -400,6 +400,54 @@ GENRE_MANUEL = {
     "patrick": "h", "freddy": "h", "ugo": "h", "teheiura": "h",
 }
 
+# LE SEXE QUE LA TABLE DE SAISON ECRIT FAUX. Le tableau Fandom accorde la
+# cellule de sortie, et c'est d'elle que le genre est lu ; quand l'accord est
+# faux, le genre l'est aussi, et avec lui « Eliminé » sur une fiche de femme.
+# La page individuelle de la MEME source tranche, par sa categorie et par ses
+# pronoms. Une table fermee, par identifiant ; chaque ligne cite sa preuve
+# (specs/sources/personnes/<id>.fandom.wiki).
+GENRE_CORRIGE = {
+    # « Patricia Tanguy est une aventurière des Aventuriers de Koh-Lanta.
+    # Elle fait partie de la tribu rouge » ; [[Catégorie:Femmes]].
+    "patricia-tanguy": "f",
+    # « |Cause du départ = Éliminée au conseil », « est une aventurière de
+    # Koh-Lanta : Nicoya » ; [[Catégorie:Femmes]].
+    "nelly-baradeau": "f",
+    # « Thierry Ramos est un aventurier de Koh-Lanta : Pacifique », « il a été
+    # éliminé à l'unanimité » ; [[Catégorie:Hommes]]. La table de saison
+    # ecrit « Éliminée au conseil ».
+    "thierry-ramos": "h",
+    # Trois saisons, et la seule fausse est All Stars (sp4) : « Sara est une
+    # aventurière de Koh-Lanta : Malaisie, [...] La Nouvelle Édition » ;
+    # [[Catégorie:Femmes]]. Ses deux autres participations sont en « f ».
+    "sara-tallon": "f",
+}
+
+
+def corriger_genres(participations, rapport):
+    """Applique GENRE_CORRIGE. Avant `completer_genre` : un prenom mal
+    genre ne doit pas se propager par recoupement."""
+    for p in participations:
+        juste = GENRE_CORRIGE.get(p.get("id"))
+        if juste and p.get("genre") != juste:
+            rapport.append(f"{p['saison']} / {p['id']} : genre {p.get('genre')} "
+                           f"corrige en {juste} (page individuelle)")
+            p["genre"] = juste
+            p.setdefault("sources", {})["genre"] = "page individuelle Fandom (categorie)"
+
+
+# LE NOM PUBLIE, quand le titre Fandom porte une parenthese d'homonymie. La page
+# de Franck s'intitule « Franck (Le Totem Maudit) » parce que la source ne
+# donne pas son nom de famille ; la parenthese est un outil du wiki, pas un nom,
+# et elle s'affichait dans le H1 de sa fiche et dans les infobulles.
+# L'identifiant n'est PAS touche (l'adresse /aventuriers/franck-le-totem-maudit/
+# reste) : la correction se pose a l'ecriture, et `nom_source` garde la forme
+# de la source, par laquelle les bulletins se rattachent.
+NOMS_PUBLIES = {
+    "franck-le-totem-maudit": "Franck",
+}
+
+
 def completer_genre(participations, rapport):
     """Comble le sexe manquant par recoupement sur le prenom.
 
@@ -716,6 +764,62 @@ def vainqueur_premier(participations, saisons, rapport):
     if corriges or combles:
         rapport.append(f"classement : {corriges} rang(s) de vainqueur corrige(s) "
                        f"et {combles} comble(s) — premier par definition")
+
+
+# LES RANGS QUE L'INFOBOX ECRIT FAUX OU OUBLIE. Deux aventuriers au meme rang,
+# un rang manquant que l'ordre des sorties donne sans ambiguite : chaque
+# entree tombe exactement dans le trou laisse, et le jour de sortie le
+# confirme. TABLE fermee, verifiee le 22 octobre 2026 contre les jours de
+# sortie (et la categorie Fandom « 11ème place » pour Anne-Sophie). Une
+# saison en cours n'a pas de rang : Maxime, revenu dans All Stars, portait
+# « 18e sur 18 ». Cle : (saison, id) ; valeur : (rang ou None, raison).
+RANGS_CORRIGES = {
+    ("s09", "kaouther-ferdjani"): (12, "sortie jour 15, avant Alexandre (jour 21, 11e) ; le 12e manquait"),
+    ("s09", "isabelle-da-silva"): (3, "eliminee aux poteaux jour 38 ; le 3e manquait"),
+    ("s24", "anne-sophie-antoine"): (11, "sortie jour 24, avant Grace (jour 23, 12e) ; Fandom « 11ème place »"),
+    ("s24", "tania-cakarevic"): (2, "finaliste ; le 2e manquait"),
+    ("s25", "maxime-barbet"): (15, "sortie jour 20, apres Sarah (jour 17, 16e) ; le 15e manquait"),
+    ("s26", "frederic-khouvilay"): (11, "sortie jour 27, apres Sarah (jour 24, 12e) ; le 11e manquait"),
+    ("s26", "charlotte-rasquin"): (2, "finaliste ; le 2e manquait"),
+    ("s26", "jacques-roque"): (4, "elimine a l'orientation jour 40 avec Cecile (5e) ; le 4e manquait"),
+    ("s27", "mael-lozach"): (2, "finaliste ; le 2e manquait"),
+    ("sp7", "alix-noblat"): (7, "deux aventuriers au 6e rang ; le 7e manquait"),
+    ("sp8", "maxime-lubian"): (None, "saison en cours, revenu dans l'aventure : pas de rang final"),
+}
+
+
+def corriger_les_rangs(participations, rapport):
+    trouves = set()
+    for p in participations:
+        cle = (p["saison"], p["id"])
+        if cle in RANGS_CORRIGES:
+            rang, raison = RANGS_CORRIGES[cle]
+            p["classement"] = rang
+            if rang is None:
+                p.get("sources", {}).pop("classement", None)
+            else:
+                p.setdefault("sources", {})["classement"] = f"table RANGS_CORRIGES : {raison}"
+            trouves.add(cle)
+    for cle in sorted(set(RANGS_CORRIGES) - trouves):
+        raise SystemExit(f"RANGS_CORRIGES : aucune participation {cle}")
+    rapport.append(f"classement : {len(trouves)} rang(s) corrige(s) par table")
+
+
+def voix_d_une_saison_en_cours(participations, saisons, rapport):
+    """Une saison en cours n'a pas de total de voix fiable : l'infobox est
+    saisie a la main, apres coup, et souvent en retard. All Stars donnait
+    « 0 » a Joana et a Naoil, sorties au conseil -- leurs fiches publiaient
+    « Jamais visee ». On ne publie pas un total que la source n'a pas fini
+    d'ecrire."""
+    en_cours = {s["id"] for s in saisons if s.get("en_cours")}
+    n = 0
+    for p in participations:
+        if p["saison"] in en_cours and p.get("votes_recus") is not None:
+            p["votes_recus"] = None
+            p.get("sources", {}).pop("votes_recus", None)
+            n += 1
+    if n:
+        rapport.append(f"votes_recus : {n} total(aux) d'une saison en cours retire(s)")
 
 
 def verifier_classements(participations, saisons, rapport):
@@ -1324,6 +1428,7 @@ def main():
     rattacher_par_categorie(participations, rapport)
     fusionner_identites(participations, rapport)
     appliquer_vainqueurs(participations, saisons, rapport)
+    corriger_genres(participations, rapport)
     completer_genre(participations, rapport)
     completer_depuis_pages(participations, saisons, rapport)
     # Apres les pages individuelles : c'est d'elles que vient le parcours.
@@ -1337,7 +1442,9 @@ def main():
     normaliser_lieux(participations, rapport)
     sans_depart_sans_jour(participations, saisons, rapport)
     vainqueur_premier(participations, saisons, rapport)
+    corriger_les_rangs(participations, rapport)
     verifier_classements(participations, saisons, rapport)
+    voix_d_une_saison_en_cours(participations, saisons, rapport)
     completer_depuis_autres_participations(participations, saisons, rapport)
 
     # champs encore vides
@@ -1383,13 +1490,26 @@ def ordonner(p):
     return {k: p[k] for k in ORDRE if k in p}
 
 RE_ELIMINE_MASCULIN = re.compile(r"^Éliminé(?=\s)")
+RE_ELIMINE_FEMININ = re.compile(r"^Éliminée(?=\s)")
 
 
 def accorder(p):
     """Le motif de sortie s'accorde au genre : le wiki ecrit « Eliminé au
-    conseil » pour Sara Tallon."""
-    if p.get("genre") == "f" and isinstance(p.get("motif"), str):
-        p["motif"] = RE_ELIMINE_MASCULIN.sub("Éliminée", p["motif"])
+    conseil » pour Sara Tallon, et « Éliminée au conseil » pour Thierry Ramos."""
+    if isinstance(p.get("motif"), str):
+        if p.get("genre") == "f":
+            p["motif"] = RE_ELIMINE_MASCULIN.sub("Éliminée", p["motif"])
+        elif p.get("genre") == "h":
+            p["motif"] = RE_ELIMINE_FEMININ.sub("Éliminé", p["motif"])
+    return p
+
+
+def nom_publie(p):
+    """Applique NOMS_PUBLIES apres le calcul de l'identifiant."""
+    juste = NOMS_PUBLIES.get(p.get("id"))
+    if juste and p.get("nom_complet") != juste:
+        p.setdefault("nom_source", p.get("nom_complet"))
+        p["nom_complet"] = juste
     return p
 
 
@@ -1397,7 +1517,7 @@ def ecrire(participations, saisons):
     """Ecrit _data/participations.yml et _data/personnes.yml."""
     import collections
     chemin_p = os.path.join(RACINE, "_data", "participations.yml")
-    participations = [accorder(corriger(p)) for p in participations]
+    participations = [nom_publie(accorder(corriger(p))) for p in participations]
     with open(chemin_p, "w", encoding="utf-8") as f:
         f.write(ENTETE)
         donnees.ecrire([ordonner(p) for p in participations], f,

@@ -54,7 +54,7 @@ Restent **{{ f.epreuves_retenues }} épreuves individuelles** sur
 {% include graphiques/force-classement.svg %}
 
 <p class="legende-figure">Force estimée. Le segment est l’intervalle à 95 %,
-obtenu en rejouant {{ m.bootstrap }} fois le calcul sur des épreuves
+obtenu en rejouant {{ f.bootstrap }} fois le calcul sur des épreuves
 retirées au sort. Une force de 1 est la moyenne.</p>
 
 <div class="tableau-large">
@@ -94,7 +94,7 @@ sous-estime.</p>
 
 {% assign mo = f.plus_forte_montee %}{% assign ch = f.plus_forte_chute %}
 La plus forte remontée est celle de **{{ mo.nom }}** : {{ mo.rang_victoires }}<sup>e</sup>
-à {{ mo.victoires }} victoires, il passe {{ mo.rang_force }}<sup>e</sup> une fois
+à {{ mo.victoires }} victoires, puis {{ mo.rang_force }}<sup>e</sup> une fois
 l’exposition prise en compte. À l’inverse, **{{ ch.nom }}** descend de la
 {{ ch.rang_victoires }}<sup>e</sup> à la {{ ch.rang_force }}<sup>e</sup> place :
 ses {{ ch.victoires }} victoires ont été prises sur beaucoup d’épreuves.
@@ -104,8 +104,8 @@ ses {{ ch.victoires }} victoires ont été prises sur beaucoup d’épreuves.
 {% assign tt = site.data.stats.modeles.tenant_du_titre %}
 {% assign ttt = site.data.stats.modeles.registre | where: "cle", "tenant_du_titre" | first %}
 
-Voici le genre de chiffre qui se lit tout seul, et qu’il faut se méfier de lire
-tout seul.
+Voici le genre de chiffre qui se lit tout seul, et dont il faut se méfier quand
+on le lit seul.
 
 {% include graphiques/tenant-du-titre.svg %}
 
@@ -144,13 +144,14 @@ simulées où les vainqueurs sont tirés <strong>selon les forces estimées</str
 Un tirage uniforme, lui, ne produirait que {{ tt.attendu_uniforme }} points.</p>
 
 <div class="constat">
-  <p>Contre un tirage uniforme, l’enchaînement est massif :
-  {{ tt.ecarts_types_uniforme }} écarts-types. Contre un tirage <b>selon les
-  forces</b>, il ne reste que {{ ttt.ecart_types }} écart-type, p ajustée
+  <p>Contre un tirage uniforme, l’enchaînement ressort :
+  {{ tt.ecarts_types_uniforme }} {{ tt.ecarts_types_uniforme_mot }}. Contre un tirage <b>selon les
+  forces</b>, il ne reste que {{ ttt.ecart_types }} {{ ttt.ecart_types_mot }}, p ajustée
   {{ ttt.p_ajustee }}. <b>Non concluant.</b></p>
-  <p>Autrement dit : <b>{{ tt.part_expliquee }} % de l’enchaînement est déjà
+  <p>Autrement dit : {% if tt.force_suffit %}<b>le simple fait que les forts
+  sont forts suffit à produire tout l’enchaînement observé</b>{% else %}<b>{{ tt.part_expliquee }} % de l’enchaînement est déjà
   produit par le simple fait que les forts sont forts</b>, et ce qui dépasse
-  n’est pas distinguable du hasard. Le tenant du titre ne rejoue pas mieux
+  n’est pas distinguable du hasard{% endif %}. Le tenant du titre ne rejoue pas mieux
   parce qu’il vient de gagner ; il regagne parce que c’était déjà lui le
   meilleur.</p>
 </div>
@@ -174,11 +175,11 @@ force mène loin.
 <div class="constat">
   <p>Doubler sa force multiplie les bulletins reçus par
   <b>{{ fj.voix.force.estimation }}</b> — intervalle
-  {{ fj.voix.force.bas }} à {{ fj.voix.force.haut }}, p = {{ fj.voix.force.p }}.
-  L’intervalle reste sous 1 : <b>les forts reçoivent plutôt moins de
-  bulletins, pas davantage.</b> L’effet est mince, et ce test ne figure pas
-  dans la liste déclarée d’avance que le registre corrige du nombre d’essais :
-  c’est une tendance, pas un résultat établi.</p>
+  {{ fj.voix.force.bas }} à {{ fj.voix.force.haut }}, p ajustée
+  {{ fj.voix.force.p_ajustee }}. L’intervalle touche 1 : <b>les forts ne
+  reçoivent pas davantage de bulletins</b>, et peut-être un peu moins, sans
+  qu’on puisse l’affirmer. Gagner l’immunité, ce qui fait la force, rend
+  d’ailleurs inéligible au vote : une part de cet écart est mécanique.</p>
   <p>Sur la distance parcourue, rien : doubler sa force fait gagner
   {{ fj.survie.force.estimation }} point de saison, intervalle
   {{ fj.survie.force.bas }} à {{ fj.survie.force.haut }}.

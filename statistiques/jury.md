@@ -1,11 +1,12 @@
 ---
 layout: page
 title: Le vote du jury
-description: "Le vote du jury final de Koh-Lanta : le seul scrutin rendu par ceux qu’on a fait sortir. Pardonnent-ils à celui qui les a éliminés ? Non."
+description: "Le vote du jury final de Koh-Lanta, rendu par ceux qu’on a fait sortir : il ne punit pas de façon établie, il récompense celui avec qui l’on votait."
 permalink: /statistiques/jury/
 chapeau: >-
   Le seul scrutin où écrire un nom veut dire « qu’il gagne » — et le seul rendu
-  par des gens qu’on a fait sortir. Pardonnent-ils ? Non.
+  par des gens qu’on a fait sortir. Punissent-ils ? On ne peut pas l’affirmer.
+  Ils récompensent, en revanche, celui avec qui ils votaient.
 ---
 
 {% assign m = site.data.stats.modeles %}
@@ -41,11 +42,11 @@ Ils le sont maintenant : **{{ j.bulletins }} bulletins de jury** sur
   tient la démonstration : le jury récompense l’audace.</p>
 </div>
 
-Sauf que non — et le retournement est complet. Un finaliste a traversé toute la
+Sauf que non. Un finaliste a traversé toute la
 saison, il a voté à chaque conseil, il a donc écrit beaucoup de noms — dont
 probablement le vôtre. La question n’est pas « le juré vote-t-il pour son
 bourreau », elle est **« le juré vote-t-il pour son bourreau plus souvent que
-pour l’autre finaliste »**. Posée ainsi, elle donne l’inverse.
+pour l’autre finaliste »**. Posée ainsi, elle ne donne plus la démonstration.
 
 ## Le modèle
 
@@ -54,7 +55,9 @@ choix contraint, qui se modélise par un <strong>logit conditionnel</strong>.
 Chaque juré forme son propre groupe de comparaison, ce qui absorbe d’un coup la
 saison, l’année, son propre caractère et tout ce qui lui est particulier. Il ne
 reste que ce qui distingue les finalistes <em>entre eux, aux yeux de ce
-juré-là</em>.</p>
+juré-là</em>. Les jurés d’une même saison jugent les mêmes finalistes : leurs
+bulletins ne sont pas indépendants, et l’incertitude vient donc d’un tirage des
+saisons, non des bulletins.</p>
 
 {% include graphiques/jury-coefficients.svg %}
 
@@ -65,36 +68,36 @@ pas conclure.</p>
 {% assign c0 = j.coefficients[0] %}{% assign c1 = j.coefficients[1] %}
 
 <div class="constat">
-  <p><b>Avoir éliminé le juré coûte.</b> Cote ×{{ c0.rapport }}, intervalle
-  {{ c0.bas }} à {{ c0.haut }}, p = {{ c0.p }} — l’intervalle <b>ne contient pas
-  1</b>. À conseils partagés égaux, le finaliste qui a écrit le nom d’un juré
-  voit sa cote d’obtenir sa voix <b>divisée par {{ c0.inverse }}</b>. Le jury
-  n’oublie pas.</p>
-  <p><b>Avoir voté avec le juré rapporte davantage encore.</b> Chaque conseil
-  passé du même côté multiplie la cote par <b>{{ c1.rapport }}</b>
-  ({{ c1.bas }} à {{ c1.haut }}, p = {{ c1.p }}). Sur cinq conseils partagés,
-  la cote est multipliée par {{ c1.cinq_conseils }}.</p>
+  <p><b>Avoir écrit le nom du juré : rien d’établi.</b> Cote ×{{ c0.rapport }},
+  intervalle {{ c0.bas }} à {{ c0.haut }}, p ajustée {{ c0.p_ajustee }} —
+  l’intervalle <b>contient 1</b>. L’estimation va dans le sens d’une rancune,
+  mais on ne peut pas l’affirmer.</p>
+  <p><b>Avoir voté avec le juré rapporte.</b> Chaque conseil passé du même côté
+  multiplie la cote par <b>{{ c1.rapport }}</b> ({{ c1.bas }} à {{ c1.haut }},
+  p ajustée {{ c1.p_ajustee }}). Sur cinq conseils partagés, la cote est
+  multipliée par {{ c1.cinq_conseils }}.</p>
 </div>
 
-Le jury final ne juge donc ni le parcours ni le mérite : **il solde les
-comptes**. Il couronne celui avec qui le juré écrivait les mêmes noms — la même
-variable qui, en cours de jeu, fait tenir plus longtemps que tout le reste — et
-il fait payer celui qui a écrit le sien.
+Le jury final récompense donc d’abord **une alliance** : il couronne celui
+avec qui le juré écrivait les mêmes noms — la même variable qui, en cours de
+jeu, fait tenir plus longtemps que tout le reste. Qu’il fasse payer celui qui a
+écrit le sien, les bulletins le suggèrent sans le prouver.
 
 <p class="note"><strong>Cette page disait le contraire, et il faut dire
 pourquoi.</strong> Elle concluait « ni rancune, ni respect » sur 196 bulletins
-dont <b>195 allaient au lauréat</b> : le scrutin final tient une colonne par
+dont <b>195 allaient au lauréat</b> : le scrutin final tient une ligne par
 finaliste, et celle du battu n’était pas extraite. Un échantillon composé
 presque uniquement de jurés ayant voté pour le vainqueur ne pouvait, sur cette
 variable-là, que ne rien trouver — le bourreau y est presque toujours celui qui
 gagne. Les colonnes manquantes ont été récupérées, puis le dernier bulletin
 absent avec elles : <b>le scrutin final est aujourd’hui complet</b>, chaque voix
 annoncée par les sources étant lue et attribuée. {{ j.bulletins }} bulletins sur
-{{ j.saisons }} saisons, et l’effet apparaît. Il n’a pas changé de valeur, il
-est devenu <em>observable</em>.
+{{ j.saisons }} saisons, et la rancune est apparue. Elle a de nouveau disparu
+le 22 octobre 2026, quand l’incertitude a été calculée par saison plutôt que
+par bulletin, et corrigée pour le nombre de coefficients publiés : la page
+écrivait alors « le jury n’oublie pas ». Elle ne l’écrit plus.
 <a href="{{ '/sources/' | relative_url }}">Les sources</a> racontent la
 réparation.</p>
-[Les alliances]({{ '/statistiques/alliances/' | relative_url }}).
 
 ### La mise à l’épreuve : et si ce n’était que la tribu initiale ?
 
@@ -135,8 +138,8 @@ plus :
 </div>
 
 <p class="note">Le contraste vaut d’être noté : la tribu initiale tombe à
-{{ ab.coefficients[2].rapport }}, c’est-à-dire exactement rien, tandis que les
-deux autres variables tiennent sans bouger. Ce qui décide au conseil — d’où l’on
+{{ ab.coefficients[2].rapport }}, c’est-à-dire rien, tandis que le co-vote
+tient sans bouger. Ce qui décide au conseil — d’où l’on
 vient — cesse d’exister au jury ; ce qui décide au jury, c’est ce qu’on s’est
 fait l’un à l’autre.</p>
 

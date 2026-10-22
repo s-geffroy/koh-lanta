@@ -25,7 +25,7 @@ plus âgés qui durent : **la tranche 30-34 ans tient le plus longtemps**
 
 {% include graphiques/age-finale.svg %}
 
-L’accès à la finale confirme le creux du milieu de trentaine et l’avantage des
+L’accès à la finale confirme le creux des 35-39 ans et l’avantage des
 30-34 ans. Une seule victoire est venue de la tranche des 45 ans et plus, sur
 {{ s.age[5].effectif }} aventuriers.
 
@@ -63,13 +63,13 @@ que les autres ?**
 
 Il part dans {{ af.age[0].probabilite }} % des cas, contre
 {{ af.age[1].probabilite }} % pour ceux qui ne sont ni le plus âgé ni le plus
-jeune — {{ af.age_ecart }} points d’écart, qui ressemblent fort à un résultat. Ils
-n’en sont pas : **on est plus souvent le doyen d’un camp de six que d’un camp de douze**,
+jeune — {{ af.age_ecart }} points d’écart, qui ressemblent fort à un résultat. Ce
+n’en est pas un : **on est plus souvent le doyen d’un camp de six que d’un camp de douze**,
 et un camp de six élimine une personne sur six. Le hasard propre à cette
 catégorie vaut {{ af.age[0].hasard }} %, pas {{ af.hasard }} %. Une fois ce
 décalage absorbé — et en comparant le doyen à **tous** les autres présents,
 benjamins compris — il reste {{ tdo.observe_arrondi }} points,
-{{ tdo.ecart_types }} écarts-types, p ajustée {{ tdo.p_ajustee }} :
+{{ tdo.ecart_types }} {{ tdo.ecart_types_mot }}, p ajustée {{ tdo.p_ajustee }} :
 **non concluant**.
 [Sachant qui est autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }}).
 
@@ -87,7 +87,7 @@ l’équilibre, et le fait depuis le début.
 <p class="legende-figure">Part moyenne de la saison passée dans le jeu, par
 décennie.</p>
 
-L’écart de longévité, lui, est constant : les hommes durent en moyenne
+L’écart de longévité, lui, persiste : les hommes durent en moyenne
 **{{ s.genre.resume[1].survie_moyenne }} %** de la saison contre
 **{{ s.genre.resume[0].survie_moyenne }} %** pour les femmes. Il se resserre
 dans les années 2020 sans disparaître.
@@ -114,7 +114,7 @@ Conseil par conseil, être une femme n’expose pas :
 distinguent pas d’un tirage. En revanche, **être du sexe le moins représenté du
 camp assis ce soir-là protège** — {{ af.sexe[0].probabilite }} % contre
 {{ af.sexe[1].probabilite }} % pour le sexe majoritaire,
-{{ tsx.observe_arrondi }} points, {{ tsx.ecart_types }} écarts-types, p
+{{ tsx.observe_arrondi }} points, {{ tsx.ecart_types }} {{ tsx.ecart_types_mot }}, p
 ajustée {{ tsx.p_ajustee }}.
 
 L’explication la plus économe : **la majorité se mange elle-même.** Quand un
@@ -154,7 +154,7 @@ participation**, rangé du séjour le plus court au plus long.
 
 {% include graphiques/peigne-torches.svg %}
 
-<p class="peigne-legende">Un trait, un aventurier ; sa longueur, ses jours de
+<p class="peigne-legende">Un trait, une participation ; sa longueur, ses jours de
 jeu ; sa couleur, sa tribu initiale. La bordure droite de cette figure
 <em>est</em> la courbe de survie du programme, dessinée avec ses individus au
 lieu d’un tracé. Les traits les plus courts sont ceux des premiers conseils, le

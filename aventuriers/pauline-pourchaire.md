@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Pauline Pourchaire (2022)"
-description: "Pauline Pourchaire, Koh-Lanta Le Totem maudit (2022) : sort à une épreuve éliminatoire le 25e jour, 13e sur 24. 491e sur 531 au classement des aventuriers."
+description: "Pauline Pourchaire, Koh-Lanta Le Totem maudit (2022) : sort à une épreuve éliminatoire le 25e jour, 13e sur 24. 485e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/pauline-pourchaire.png
 permalink: /aventuriers/pauline-pourchaire/
 aventurier: pauline-pourchaire

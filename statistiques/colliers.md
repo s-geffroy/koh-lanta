@@ -62,9 +62,10 @@ Les deux chiffres sont vrais, ils ne répondent pas à la même question.
 sans annuler la moindre voix — leur détenteur n’était pas visé. C’est la peur
 qui a parlé, pas la lecture du jeu.
 
-**Un sur dix part avec son propriétaire.** Éliminé au conseil, collier dans le
-sac : {{ issue_parti.part_des_trouves }} % des colliers trouvés connaissent ce
-sort. C’est le scénario que tout aventurier redoute, et il est plus rare qu’on
+**Moins d’un sur dix part avec son détenteur.** Éliminé au conseil, collier
+dans le sac : {{ issue_parti.part_des_trouves }} % des colliers trouvés
+connaissent ce sort — en comptant celui qui le détenait ce soir-là, pas celui
+qui l’avait trouvé et cédé. C’est le scénario que tout aventurier redoute, et il est plus rare qu’on
 ne le raconte.
 
 **Quand il sert, il sert beaucoup.** Un collier joué efficacement annule en

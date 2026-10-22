@@ -27,7 +27,7 @@ jour de survie. La question n’est pas « peut-on deviner à mi-parcours »
 
 <p class="note"><strong>Une saison exclue à chaque tour.</strong> Le modèle
 apprend sur {{ p.saisons }} saisons moins une, et pronostique celle qu’il n’a
-jamais vue. Un découpage au hasard serait tricher : deux aventuriers du même
+jamais vue. Un découpage au hasard reviendrait à tricher : deux aventuriers du même
 casting ne sont pas indépendants, et la moitié d’une saison suffirait à deviner
 l’autre. On mesure ensuite <strong>à quelle place le modèle a rangé celui qui a
 réellement gagné</strong>, dans son propre casting. Le hasard donne
@@ -80,7 +80,7 @@ pas de signal du tout.
 {% assign fic = pv.jeux | first %}
 
 La fiche d’inscription ne dit rien. Mais la fiche d’inscription n’est pas le
-jeu. **La même discipline se pose à une question bien plus dure et bien plus
+jeu. **La même discipline s’applique à une question bien plus dure et bien plus
 intéressante : le soir d’un conseil, sachant tout ce qui a précédé, peut-on
 désigner celui qui va partir ?**
 
@@ -137,9 +137,9 @@ mieux.</p>
   <p>Avec la seule fiche d’inscription : <b>{{ fic.rang_moyen }}</b> contre
   {{ fic.rang_hasard }} au hasard. <b>Rien</b>, exactement comme au casting.</p>
   <p>Avec ce que la soirée a produit : <b>{{ jeu.rang_moyen }}</b>,
-  {{ tp.ecart_types }} écarts-types, p ajustée <b>{{ tp.p_ajustee }}</b>. Le
+  {{ tp.ecart_types }} {{ tp.ecart_types_mot }}, p ajustée <b>{{ tp.p_ajustee }}</b>. Le
   modèle désigne l’éliminé <b>en premier dans {{ jeu.premiers }} %</b> des
-  conseils, contre {{ jeu.premiers_hasard }} % par le hasard.</p>
+  conseils, contre {{ jeu.premiers_hasard }} % au hasard.</p>
 </div>
 
 **Ce chiffre se lit dans les deux sens, et les deux comptent.** Passer de

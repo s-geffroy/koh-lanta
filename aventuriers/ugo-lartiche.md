@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Ugo Lartiche — 4 saisons jouées"
-description: "Ugo Lartiche, 4 saisons de Koh-Lanta entre 2012 et 2026 : 116 jours de jeu, 1 victoire, 1 finale. 46e sur 531 au classement des aventuriers."
+description: "Ugo Lartiche, 4 saisons de Koh-Lanta entre 2012 et 2026 : 116 jours de jeu, 1 victoire, 1 finale. 57e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/ugo-lartiche.png
 permalink: /aventuriers/ugo-lartiche/
 aventurier: ugo-lartiche

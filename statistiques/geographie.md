@@ -41,7 +41,7 @@ ceux qu’un tirage dans la population produirait. La silhouette est celle de
   <p>À l’échelle des régions, la dispersion observée vaut
   <b>{{ g.regions_dispersion_observee }}</b> contre
   <b>{{ g.regions_dispersion_attendue }}</b> attendus —
-  {{ tr.ecart_types }} écarts-types, p ajustée {{ tr.p_ajustee }}.</p>
+  {{ tr.ecart_types }} {{ tr.ecart_types_mot }}, p ajustée {{ tr.p_ajustee }}.</p>
   <p>Le recrutement <b>n’épouse pas la démographie française</b>. Au niveau des
   départements, même verdict : {{ g.dispersion_observee }} contre
   {{ g.dispersion_attendue }}, p ajustée {{ td.p_ajustee }}.</p>
@@ -89,8 +89,8 @@ le Centre-Val de Loire, les Pays de la Loire, la Bourgogne-Franche-Comté, la
 Bretagne, la Normandie, le Grand Est, les Hauts-de-France : une diagonale du
 Nord-Ouest et de l’Est. L’outre-mer, plus bas encore, se lit à part.
 
-{{ g.regions_hautes | size }} lignes sortent vraiment de leur intervalle par le
-haut, {{ g.regions_basses | size }} par le bas. Ce sont les seules qui se lisent isolément ; le reste du tableau ne vaut
+{{ g.regions_hautes | size }} régions ont un intervalle entièrement au-dessus
+de 1, {{ g.regions_basses | size }} entièrement en dessous. Ce sont les seules qui se lisent isolément ; le reste du tableau ne vaut
 qu’ensemble.
 
 <div class="constat">

@@ -120,10 +120,11 @@ stable d’une saison à l’autre — le format tient depuis
 {{ s.mots.etendue_annees }} ans.
 
 Cette stabilité a une cause précise, et elle n’est pas ludique : la
-réunification tombe à un **épisode fixe**, l’épisode
-{{ site.data.stats.modeles.fusion.episode_median }}, quelle que soit la taille
-du casting. Le calendrier de diffusion, lui, n’a pas bougé.
-[La grille]({{ '/statistiques/grille/' | relative_url }}).
+réunification tombe autour d’un **même épisode**, l’épisode
+{{ site.data.stats.modeles.fusion.episode_median }} en médiane, et
+[la grille]({{ '/statistiques/grille/' | relative_url }}) ne mesure aucun
+recul qui se distingue du hasard quand le casting grossit. Le calendrier de
+diffusion, lui, n’a pas bougé.
 
 ## Les saisons comparées
 

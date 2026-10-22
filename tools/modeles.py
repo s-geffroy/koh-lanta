@@ -37,6 +37,9 @@ N_PERMUTATIONS = 10_000
 
 # Nombre de reechantillonnages bootstrap pour les intervalles.
 N_BOOTSTRAP = 2_000
+# Le modele de force se reestime 400 fois seulement : chaque tirage est un
+# Plackett-Luce complet. La page le dit avec CE nombre, pas avec N_BOOTSTRAP.
+N_BOOTSTRAP_FORCE = 400
 
 ABANDONS = ("abandon_medical", "abandon_volontaire")
 
@@ -854,8 +857,8 @@ def force(par_saison, parts, conseils, epreuves):
     # Intervalle par reechantillonnage des EPREUVES : c'est l'epreuve qui est
     # l'evenement independant, pas l'aventurier.
     g = rng("force-bootstrap")
-    tirages = np.zeros((400, len(joueurs)))
-    for b in range(400):
+    tirages = np.zeros((N_BOOTSTRAP_FORCE, len(joueurs)))
+    for b in range(N_BOOTSTRAP_FORCE):
         choix = g.integers(0, len(plateaux), size=len(plateaux))
         tirages[b] = _luce([plateaux[i] for i in choix], joueurs, tours=200)[0]
 
@@ -901,6 +904,7 @@ def force(par_saison, parts, conseils, epreuves):
     montees = sorted(pentes, key=lambda d: d["rang_victoires"] - d["rang_force"])
 
     return {
+        "bootstrap": N_BOOTSTRAP_FORCE,
         "epreuves_retenues": len(plateaux),
         "saisons_retenues": len(sorted({p["saison"] for p in plateaux})),
         "epreuves_ecartees_saison": sans_saison,
@@ -943,7 +947,7 @@ def force_et_jeu(par_saison, parts, conseils, epreuves, bloc_force):
 
     import statsmodels.api as sm
 
-    lignes = []
+    lignes, saisons_fj = [], []
     for p in parts:
         s = par_saison.get(p["saison"]) or {}
         if s.get("annulee") or s.get("en_cours"):
@@ -952,12 +956,17 @@ def force_et_jeu(par_saison, parts, conseils, epreuves, bloc_force):
         expo_p = exposition.get(f'{p["saison"]}|{j}', 0)
         if j not in theta or expo_p < 3:
             continue
-        if p.get("votes_recus") is None or p.get("_survie") is None:
+        # L'age manquant n'est pas devine : la ligne est ecartee.
+        if p.get("votes_recus") is None or p.get("_survie") is None or not p.get("age"):
             continue
-        lignes.append((float(np.log(theta[j])), float(p["votes_recus"]),
+        # Log de base 2 : exp(coefficient) est l'effet d'une force DOUBLEE,
+        # ce que la page ecrit. En log naturel, c'etait l'effet d'une force
+        # multipliee par 2,72.
+        lignes.append((float(np.log2(theta[j])), float(p["votes_recus"]),
                        float(p["_survie"]), float(expo_p),
                        1.0 if p.get("genre") == "f" else 0.0,
-                       float(p.get("age") or 34)))
+                       float(p["age"])))
+        saisons_fj.append(p["saison"])
     if len(lignes) < 60:
         return {}
 
@@ -967,12 +976,16 @@ def force_et_jeu(par_saison, parts, conseils, epreuves, bloc_force):
     # 1. Les voix recues. Modele de Poisson, l'exposition en decalage : on
     #    compare des taux de bulletins, pas des totaux.
     X = sm.add_constant(np.column_stack([log_force, femme, (age - 34) / 10]))
+    # Erreurs-types regroupees par SAISON : les participations d'une meme
+    # saison partagent leurs conseils et ne sont pas independantes.
+    grappes = {"groups": np.unique(np.array(saisons_fj), return_inverse=True)[1]}
     poisson = sm.GLM(voix, X, family=sm.families.Poisson(),
-                     offset=np.log(np.maximum(expo, 1))).fit(cov_type="HC1")
+                     offset=np.log(np.maximum(expo, 1))).fit(cov_type="cluster",
+                                                            cov_kwds=grappes)
     ic_p = poisson.conf_int()
 
     # 2. La survie. Moindres carres, meme jeu de variables de controle.
-    lineaire = sm.OLS(survie, X).fit(cov_type="HC1")
+    lineaire = sm.OLS(survie, X).fit(cov_type="cluster", cov_kwds=grappes)
     ic_l = lineaire.conf_int()
 
     def _coef(modele, ic, i, exponentiel):
@@ -1079,9 +1092,21 @@ def equilibre(par_saison, parts, conseils, epreuves):
     ELIMINE = ("elimine_conseil", "elimine_poteaux", "elimine_orientation",
                "elimine_ambassadeurs", "elimine_duel", "elimine_exil",
                "elimine_epreuve", "elimine_destins_lies")
-    nb_saisons = {}
+    # « Deja venu » = a joue une saison ANTERIEURE, dans l'ordre de diffusion :
+    # l'annee, puis la saison classique avant l'edition speciale de la meme
+    # annee -- celle-ci rappelle d'anciens candidats. saisons.yml range les
+    # speciales a la fin, son ordre n'est pas chronologique. Compter toutes les participations de la personne
+    # rangeait a 1 la premiere saison de quiconque serait rappele plus tard --
+    # 81 des 83 « deja venus » -- et le rappel depend de la survie : la variable
+    # contenait l'issue qu'elle predisait (rapport de risque 0,35, faux).
+    ordre_diffusion = {sid: (s.get("annee") or 0, bool(s.get("speciale")), k)
+                       for k, (sid, s) in enumerate(par_saison.items())}
+    deja_venu = set()
     for p in parts:
-        nb_saisons[p["id"]] = nb_saisons.get(p["id"], 0) + 1
+        rang = ordre_diffusion.get(p["saison"])
+        if rang and any(q["id"] == p["id"] and q["saison"] in ordre_diffusion
+                        and ordre_diffusion[q["saison"]] < rang for q in parts):
+            deja_venu.add((p["saison"], p["id"]))
 
     duree, evenement, strate, covariables = [], [], [], []
     familles = sorted({p["_csp"] for p in _classiques(par_saison, parts) if p.get("_csp")})
@@ -1097,7 +1122,7 @@ def equilibre(par_saison, parts, conseils, epreuves):
         ligne = [1.0 if p["genre"] == "f" else 0.0,
                  (float(p["age"]) - 34.0) / 10.0,
                  1.0 if p["couleur"] == "jaune" else 0.0,
-                 1.0 if nb_saisons.get(p["id"], 1) > 1 else 0.0]
+                 1.0 if (p["saison"], p["id"]) in deja_venu else 0.0]
         ligne += [1.0 if p["_csp"] == f else 0.0 for f in principales]
         covariables.append(ligne)
 
@@ -1463,7 +1488,10 @@ def alliances(par_saison, parts, conseils):
         # suivent sont des BORNES BASSES. On le garde quand meme : sans lui,
         # on publierait une tautologie deguisee.
         X = sm.add_constant(np.column_stack([part, menace, n]))
-        r = sm.OLS(y, X).fit(cov_type="HC1")
+        # Erreurs-types regroupees par saison (x[3]) : la part de saison se
+        # mesure DANS une saison, ses lignes ne sont pas independantes.
+        grappes = np.unique(np.array([x[3] for x in lignes]), return_inverse=True)[1]
+        r = sm.OLS(y, X).fit(cov_type="cluster", cov_kwds={"groups": grappes})
         ic = r.conf_int()
         coefficient = {
             "effectif": len(lignes),
@@ -1595,6 +1623,28 @@ def fusion(par_saison, parts, conseils, epreuves):
     }
 
 
+def _nulle_glissement(Y, meilleure, g):
+    """Le modele nul d'un GLISSEMENT : une tendance lineaire dans l'ordre des
+    saisons, plus ses residus remis au hasard. Remettre les saisons elles-memes
+    dans un ordre au hasard detruit aussi la tendance : n'importe quelle derive
+    lente le bat, et ce nul-la dit seulement que la serie bouge, pas qu'elle
+    casse a une date. Celui-ci repond a la question publiee : une date, ou un
+    glissement ?"""
+    Y = np.asarray(Y, dtype=float)
+    plat = Y.ndim == 1
+    M = Y.reshape(len(Y), -1)
+    t = np.arange(len(M), dtype=float)
+    A = np.column_stack([np.ones_like(t), t])
+    coef, *_ = np.linalg.lstsq(A, M, rcond=None)
+    tendance = A @ coef
+    residus = M - tendance
+    nulle = []
+    for _ in range(N_PERMUTATIONS):
+        tire = tendance + residus[g.permutation(len(M))]
+        nulle.append(meilleure(tire[:, 0] if plat else tire)[1])
+    return np.array(nulle)
+
+
 def ruptures(par_saison, indicateurs_saison):
     """Le jeu a-t-il change, et quand ? Personne ne l'a annonce.
 
@@ -1705,6 +1755,16 @@ def ruptures(par_saison, indicateurs_saison):
         "avance": avance,
         "fenetre": fenetre,
         "second": ordonne[1] if len(ordonne) > 1 else None,
+        "test_glissement": _test(
+            "rupture_glissement", "Une date plutôt qu'un glissement",
+            "La meilleure coupure vaut-elle mieux qu'une évolution régulière, "
+            "année après année ?",
+            gain, _nulle_glissement(Y, meilleure_coupure, rng("rupture_glissement")),
+            unite="",
+            lecture="Gain de la meilleure coupure, comparé à celui obtenu sur des "
+                    "séries qui suivent la même tendance linéaire, avec leurs écarts "
+                    "remis au hasard. Au-dessus, la série casse à une date ; dans la "
+                    "silhouette, une dérive régulière suffit à produire la coupure."),
         "test": _test(
             "rupture", "La rupture de régime",
             "Existe-t-il une date qui sépare les saisons en deux régimes mieux "
@@ -1773,9 +1833,11 @@ def homophilie(par_saison, parts, conseils):
                      else 0.0 if a.get("localisation") and b.get("localisation") else None)
         return meme_sexe, ecart_age, meme_metier, meme_bandeau, meme_lieu
 
-    def mesures(jeu):
-        cumuls = [[0.0, 0] for _ in range(5)]
+    def par_saison(jeu):
+        """{saison: [[somme, effectif] x 5]}."""
+        out = {}
         for s, _, bulletins in jeu:
+            cumuls = out.setdefault(s, [[0.0, 0] for _ in range(5)])
             for votant, cible in bulletins:
                 t = traits(s, votant, cible)
                 if t is None:
@@ -1784,32 +1846,76 @@ def homophilie(par_saison, parts, conseils):
                     if v is not None:
                         cumuls[i][0] += v
                         cumuls[i][1] += 1
-        return [(c / n if n else None) for c, n in cumuls], [n for _, n in cumuls]
+        return out
 
-    observe, effectifs = mesures(couples)
-    observe_mixte, effectifs_mixte = mesures(mixtes)
+    def taux(ps, i):
+        n = sum(c[i][1] for c in ps.values())
+        return (sum(c[i][0] for c in ps.values()) / n) if n else None
+
+    obs_s = par_saison(couples)
+    obs_mixte_s = par_saison(mixtes)
+    observe = [taux(obs_s, i) for i in range(5)]
+    effectifs = [sum(c[i][1] for c in obs_s.values()) for i in range(5)]
+    observe_mixte = [taux(obs_mixte_s, i) for i in range(5)]
+    effectifs_mixte = [sum(c[i][1] for c in obs_mixte_s.values()) for i in range(5)]
+
+    # 1. L'ATTENDU, par permutation : on rebat les bulletins de chaque conseil
+    #    entre ses votants. Un conseil qu'on ne peut pas rebattre sans faire
+    #    voter quelqu'un contre lui-meme reste tel quel. On cumule l'attendu
+    #    SAISON PAR SAISON.
     g = rng("homophilie")
-    nulles = [[] for _ in range(5)]
-    nulle_mixte = []
-    for _ in range(4000):
-        melange, melange_mixte = [], []
-        for s, numero, bulletins in mixtes:
+    TOURS = 1000
+    attendu_s, attendu_mixte_s = {}, {}
+
+    def rebattre(jeu):
+        out = []
+        for s, numero, bulletins in jeu:
             votants = [v for v, _ in bulletins]
             cibles = [c for _, c in bulletins]
             m = _permuter_sans_soi(votants, cibles, g)
-            if m is not None:
-                melange_mixte.append((s, numero, list(zip(votants, m))))
-        nulle_mixte.append(mesures(melange_mixte)[0][3])
-        for s, numero, bulletins in couples:
-            votants = [v for v, _ in bulletins]
-            cibles = [c for _, c in bulletins]
-            m = _permuter_sans_soi(votants, cibles, g)
-            if m is None:
-                continue   # conseil qu'on ne peut pas rebattre sans faute
-            melange.append((s, numero, list(zip(votants, m))))
-        vals, _ = mesures(melange)
-        for i, v in enumerate(vals):
-            nulles[i].append(v)
+            out.append((s, numero, list(zip(votants, m)) if m is not None else bulletins))
+        return out
+
+    def cumuler(cible, ps):
+        for s, c in ps.items():
+            a = cible.setdefault(s, [[0.0, 0] for _ in range(5)])
+            for i in range(5):
+                a[i][0] += c[i][0] / TOURS
+                a[i][1] = c[i][1]
+
+    for _ in range(TOURS):
+        cumuler(attendu_s, par_saison(rebattre(couples)))
+        cumuler(attendu_mixte_s, par_saison(rebattre(mixtes)))
+
+    # 2. LA DISPERSION, par saison. Les memes blocs votent ensemble d'un
+    #    conseil a l'autre : les conseils d'une saison ne sont pas des tirages
+    #    independants, et la permutation conseil par conseil sous-estimait la
+    #    variabilite -- « viser la meme famille de metiers » passait le seuil
+    #    ainsi. On tire des SAISONS avec remise, on recalcule l'ecart observe
+    #    moins attendu, et cette distribution, recentree sur l'attendu, sert
+    #    de modele nul.
+    def nulle_par_saison(obs, att, i, graine):
+        saisons = [s for s in obs if obs[s][i][1]]
+        if len(saisons) < 5:
+            return None, None
+        ecart = np.array([obs[s][i][0] - att[s][i][0] for s in saisons])
+        n = np.array([obs[s][i][1] for s in saisons], dtype=float)
+        attendu = float(sum(att[s][i][0] for s in saisons) / n.sum())
+        ecart_obs = float(ecart.sum() / n.sum())
+        gb = rng(graine)
+        tirs = []
+        for _ in range(N_BOOTSTRAP):
+            k = gb.integers(0, len(saisons), size=len(saisons))
+            tirs.append(float(ecart[k].sum() / n[k].sum()))
+        return attendu, attendu + (np.array(tirs) - ecart_obs)
+
+    nulles = []
+    for i in range(5):
+        _, nulle = nulle_par_saison(obs_s, attendu_s, i, f"homophilie-{i}")
+        nulles.append(nulle if nulle is not None else [])
+    _, nulle_mixte = nulle_par_saison(obs_mixte_s, attendu_mixte_s, 3, "homophilie-mixte")
+    if nulle_mixte is None:
+        nulle_mixte = []
 
     definitions = [
         ("vote_meme_sexe", "Viser quelqu'un du même sexe",
@@ -1818,7 +1924,7 @@ def homophilie(par_saison, parts, conseils):
         ("vote_ecart_age", "L'écart d'âge avec sa cible",
          "Écrit-on plutôt le nom de quelqu'un de sa génération, ou d'une autre ?",
          "années", 0),
-        ("vote_meme_metier", "Viser la même famille de métier",
+        ("vote_meme_metier", "Viser la même famille de métiers",
          "Le métier rapproche-t-il ou éloigne-t-il du bulletin ?",
          "part sur 1", 1),
         ("vote_meme_bandeau", "Viser sa propre tribu initiale",
@@ -1830,18 +1936,18 @@ def homophilie(par_saison, parts, conseils):
     ]
     tests = []
     for i, (cle, libelle, question, unite, pourcent) in enumerate(definitions):
-        if observe[i] is None or not nulles[i]:
+        if observe[i] is None or not len(nulles[i]):
             continue
         facteur = 100.0 if pourcent else 1.0
         tests.append(_test(
             cle, libelle, question,
             observe[i] * facteur, np.array(nulles[i]) * facteur,
             unite="%" if pourcent else unite,
-            lecture="On rebat les bulletins d'un conseil entre ses votants, en gardant le même jeu de cibles : la popularité d'une cible est donc neutralisée. Un observé au-dessus de l'attendu veut dire qu'on vise ses semblables plus souvent que le simple partage des cibles ne l'expliquerait."))
+            lecture="L'attendu vient du partage des bulletins d'un conseil entre ses votants, avec le même jeu de cibles : la popularité d'une cible est donc neutralisée. L'incertitude vient d'un tirage des saisons, parce que les mêmes blocs votent ensemble d'un conseil à l'autre. Un observé au-dessus de l'attendu veut dire qu'on vise ses semblables plus souvent que le simple partage des cibles ne l'expliquerait."))
         tests[-1]["bulletins"] = effectifs[i]
 
     # Le bandeau, mesure la ou la question se pose : apres la reunification.
-    if observe_mixte[3] is not None and nulle_mixte:
+    if observe_mixte[3] is not None and len(nulle_mixte):
         t = _test(
             "vote_bandeau_apres_fusion", "Épargner sa tribu initiale",
             "Une fois les tribus recomposées, écrit-on moins souvent le nom de "
@@ -1900,7 +2006,7 @@ def jury_final(par_saison, parts, conseils):
         if p.get("sort") in ("vainqueur", "finaliste"):
             finalistes.setdefault(p["saison"], []).append(p["id"])
 
-    groupes, y, X, detail, bandeau = [], [], [], [], []
+    groupes, y, X, detail, bandeau, saisons_j = [], [], [], [], [], []
     numero = 0
     for c in votes_du_jury(conseils):
         s = par_saison.get(c["saison"]) or {}
@@ -1920,6 +2026,7 @@ def jury_final(par_saison, parts, conseils):
             for cand in candidats:
                 couleur_cand = (fiche_j.get((c["saison"], cand)) or {}).get("couleur")
                 groupes.append(numero)
+                saisons_j.append(c["saison"])
                 y.append(1.0 if cand == choisi else 0.0)
                 X.append([
                     1.0 if (c["saison"], cand, jure) in ecrit else 0.0,
@@ -1937,17 +2044,15 @@ def jury_final(par_saison, parts, conseils):
     if len(detail) < 60:
         return {}
 
-    modele = sm.ConditionalLogit(np.array(y), np.array(X),
-                                 groups=np.array(groupes)).fit(disp=0)
-    ic = modele.conf_int()
+    params, ic, pv = _clogit_par_saison(y, X, groupes, saisons_j, "jury-logit")
     noms = ("A écrit le nom du juré au conseil",
             "A voté avec le juré, par conseil partagé")
     coefficients = [
         {"libelle": noms[i],
-         "rapport": _arr(float(np.exp(modele.params[i])), 3),
+         "rapport": _arr(float(np.exp(params[i])), 3),
          "bas": _arr(float(np.exp(ic[i][0])), 3),
          "haut": _arr(float(np.exp(ic[i][1])), 3),
-         "p": _arr(float(modele.pvalues[i]), 4)}
+         "p": _arr(float(pv[i]), 4)}
         for i in range(len(noms))]
 
     # Le meme modele, plus le bandeau de depart. Il ne remplace pas le
@@ -1957,16 +2062,15 @@ def jury_final(par_saison, parts, conseils):
     avec_bandeau = {}
     if any(bandeau):
         X2 = np.column_stack([np.array(X), np.array(bandeau)])
-        m2 = sm.ConditionalLogit(np.array(y), X2, groups=np.array(groupes)).fit(disp=0)
-        ic2 = m2.conf_int()
+        params2, ic2, pv2 = _clogit_par_saison(y, X2, groupes, saisons_j, "jury-logit-bandeau")
         noms2 = noms + ("Partage la tribu initiale du juré",)
         avec_bandeau = {
             "coefficients": [
                 {"libelle": noms2[i],
-                 "rapport": _arr(float(np.exp(m2.params[i])), 3),
+                 "rapport": _arr(float(np.exp(params2[i])), 3),
                  "bas": _arr(float(np.exp(ic2[i][0])), 3),
                  "haut": _arr(float(np.exp(ic2[i][1])), 3),
-                 "p": _arr(float(m2.pvalues[i]), 4)}
+                 "p": _arr(float(pv2[i]), 4)}
                 for i in range(len(noms2))],
             "lecture": "Le même modèle, avec une variable de plus : les deux "
                        "partagent-ils la tribu initiale ?",
@@ -2097,7 +2201,9 @@ def trahison(par_saison, parts, conseils):
         X = sm.add_constant(np.column_stack([
             np.array([x[0] for x in lignes]),
             np.array([x[4] for x in lignes], dtype=float)]))
-        r = sm.OLS(np.array([x[1] for x in lignes], dtype=float), X).fit(cov_type="HC1")
+        grappes = np.unique(np.array([x[3] for x in lignes]), return_inverse=True)[1]
+        r = sm.OLS(np.array([x[1] for x in lignes], dtype=float), X).fit(
+            cov_type="cluster", cov_kwds={"groups": grappes})
         ic = r.conf_int()
         effet = {"effectif": len(lignes),
                  "estimation": _arr(float(r.params[1]), 2),
@@ -2278,7 +2384,7 @@ def decimation(par_saison, parts, conseils, epreuves):
             "Après la réunification, les sorties se suivent-elles par tribu initiale "
             "plus souvent que le hasard ne le voudrait ?",
             observe, nulle, unite="enchaînements",
-            lecture="Nombre de fois où deux sorties consécutives viennent du même "
+            lecture="Nombre de fois où deux sorties consécutives viennent de la même "
                     "tribu initiale. Un observé AU-DESSUS de l'attendu est la "
                     "signature d'un camp démonté un par un."),
     }
@@ -2368,6 +2474,12 @@ def audience(par_saison, indicateurs_saison, mesures):
         "La chute d'audience tombe-t-elle à une date, ou se fait-elle par glissement ?",
         gain, nulle, unite="",
         lecture="Gain de la meilleure coupure de la série d'audience, comparé à celui obtenu sur des saisons remises dans un ordre au hasard. Le profil complet des coupures dit ensuite si cette date est identifiée ou si plusieurs se valent.")
+
+    t_glissement = _test(
+        "audience_glissement", "La chute d'audience : une date plutôt qu'un glissement",
+        "La meilleure coupure de la série d'audience vaut-elle mieux qu'un déclin régulier ?",
+        gain, _nulle_glissement(z, meilleure, rng("audience_glissement")), unite="",
+        lecture="Gain de la meilleure coupure, comparé à celui obtenu sur des séries qui suivent la même tendance linéaire, avec leurs écarts remis au hasard. Au-dessus, l'audience casse à une date ; dans la silhouette, un déclin régulier suffit à produire la coupure.")
 
     # --- 2. le retournement finale / lancement ---------------------------
     duo = [l for l in lignes if l["lancement"] and l["finale"]]
@@ -2486,7 +2598,7 @@ def audience(par_saison, indicateurs_saison, mesures):
         "jours": jours,
         "bascule_jour": bascule_jour,
         "format_correlation_brute": brute,
-        "tests": [t for t in (t_rupture, t_retournement, t_suite) if t],
+        "tests": [t for t in (t_rupture, t_glissement, t_retournement, t_suite) if t],
     }
 
 
@@ -3420,6 +3532,54 @@ def conditionnelles(par_saison, parts, conseils):
     }
 
 
+N_BOOTSTRAP_GRAPPES = 400
+
+
+def _clogit_par_saison(y, X, groupes, saisons, nom):
+    """Logit conditionnel, incertitude tiree par SAISON.
+
+    Les lignes d'une meme saison ne sont pas independantes : les memes jures
+    jugent les memes finalistes, les memes blocs se retrouvent d'un conseil a
+    l'autre. Les erreurs-types du modele, qui les traitent comme independantes,
+    sont trop etroites -- la « rancune du jury » passait le seuil ainsi. On
+    tire donc des SAISONS avec remise, on reestime, et l'intervalle et la p
+    viennent de cette distribution (intervalle des centiles 2,5-97,5 ; p
+    bilaterale sur l'ecart-type bootstrap).
+    Rend (coefficients, [(bas, haut)], [p])."""
+    import statsmodels.api as sm
+    y, X, groupes = np.asarray(y, float), np.asarray(X, float), np.asarray(groupes)
+    saisons = np.asarray(saisons)
+    params = sm.ConditionalLogit(y, X, groups=groupes).fit(disp=0).params
+    uniques = sorted(set(saisons.tolist()))
+    lignes_de = {s: np.flatnonzero(saisons == s) for s in uniques}
+    g = rng(nom)
+    tires = []
+    for _ in range(N_BOOTSTRAP_GRAPPES):
+        morceaux, grp = [], []
+        for k, s in enumerate(g.choice(len(uniques), size=len(uniques), replace=True)):
+            ix = lignes_de[uniques[s]]
+            morceaux.append(ix)
+            # Une saison tiree deux fois donne deux copies DISTINCTES de ses
+            # groupes.
+            grp.append(groupes[ix].astype(np.int64) * 1000 + k)
+        ix = np.concatenate(morceaux)
+        try:
+            r = sm.ConditionalLogit(y[ix], X[ix], groups=np.concatenate(grp)).fit(disp=0)
+        except Exception:
+            continue
+        if np.all(np.isfinite(r.params)):
+            tires.append(np.asarray(r.params))
+    tires = np.array(tires)
+    ic = [(float(np.percentile(tires[:, i], 2.5)), float(np.percentile(tires[:, i], 97.5)))
+          for i in range(X.shape[1])]
+    from statistics import NormalDist
+    p = []
+    for i in range(X.shape[1]):
+        et = float(np.std(tires[:, i], ddof=1))
+        p.append(2 * (1 - NormalDist().cdf(abs(float(params[i])) / et)) if et > 0 else 1.0)
+    return np.asarray(params), ic, p
+
+
 def _logit_conditionnel(lignes):
     """La taille du conseil, tenue fixe par construction.
 
@@ -3430,13 +3590,14 @@ def _logit_conditionnel(lignes):
     """
     import statsmodels.api as sm
 
-    groupes, y, X = [], [], []
+    groupes, y, X, saisons = [], [], [], []
     index = {}
     for l in lignes:
         cle = (l["saison"], l["indice"])
         if cle not in index:
             index[cle] = len(index) + 1
         groupes.append(index[cle])
+        saisons.append(l["saison"])
         y.append(float(l["sorti"]))
         k = l["voix_prec"]
         X.append([1.0 if k in (1, 2) else 0.0,
@@ -3444,18 +3605,16 @@ def _logit_conditionnel(lignes):
                   1.0 if k >= 4 else 0.0])
     if len(index) < 30:
         return {}
-    r = sm.ConditionalLogit(np.array(y), np.array(X),
-                            groups=np.array(groupes)).fit(disp=0)
-    ic = r.conf_int()
+    params, ic, pv = _clogit_par_saison(y, X, groupes, saisons, "conditionnelles-logit")
     libelles = ("1 ou 2 voix", "3 voix", "4 voix et plus")
     return {
         "conseils": len(index), "presences": len(lignes),
         "coefficients": [
             {"libelle": libelles[i],
-             "rapport": _arr(float(np.exp(r.params[i])), 2),
+             "rapport": _arr(float(np.exp(params[i])), 2),
              "bas": _arr(float(np.exp(ic[i][0])), 2),
              "haut": _arr(float(np.exp(ic[i][1])), 2),
-             "p": _arr(float(r.pvalues[i]), 4)}
+             "p": _arr(float(pv[i]), 4)}
             for i in range(len(libelles))],
         "lecture": "Rapport de cotes par rapport à « aucune voix au conseil "
                    "précédent », à conseil égal. Au-dessus de 1, le risque monte ; "
@@ -3877,27 +4036,26 @@ def pire_place(par_saison, parts, conseils, epreuves):
     # --- 3. le modele conjoint --------------------------------------------
     import statsmodels.api as sm
 
-    groupes, y, X, index = [], [], [], {}
+    groupes, y, X, index, saisons_pp = [], [], [], {}, []
     for l in lignes:
         cle = (l["saison"], l["indice"])
         index.setdefault(cle, len(index) + 1)
         groupes.append(index[cle])
+        saisons_pp.append(l["saison"])
         y.append(float(l["sorti"]))
         X.append([1.0 if l["voix_prec"] else 0.0,
                   0.0 if l["allies_presents"] else 1.0])
     modele = {}
     if len(index) >= 30:
-        r = sm.ConditionalLogit(np.array(y), np.array(X),
-                                groups=np.array(groupes)).fit(disp=0)
-        ic = r.conf_int()
+        params, ic, pv = _clogit_par_saison(y, X, groupes, saisons_pp, "pire-place-logit")
         noms = ("Visé au conseil précédent", "Plus aucun allié présent")
         modele = {
             "conseils": len(index), "presences": len(lignes),
             "coefficients": [
-                {"libelle": noms[i], "rapport": _arr(float(np.exp(r.params[i])), 2),
+                {"libelle": noms[i], "rapport": _arr(float(np.exp(params[i])), 2),
                  "bas": _arr(float(np.exp(ic[i][0])), 2),
                  "haut": _arr(float(np.exp(ic[i][1])), 2),
-                 "p": _arr(float(r.pvalues[i]), 4)}
+                 "p": _arr(float(pv[i]), 4)}
                 for i in range(len(noms))],
             "lecture": "Rapport de cotes à conseil égal : chaque conseil est son "
                        "propre groupe de comparaison. Les deux signaux sont dans le "
@@ -4093,13 +4251,18 @@ def rappel(par_saison, parts):
                          "probabilite": _arr(100.0 * r / len(part)),
                          "bas": _arr(bas), "haut": _arr(haut)})
 
+    # Le modele ne devine pas l'age : les lignes sans age en sont ecartees.
+    # Erreurs-types regroupees par saison.
+    lm = [l for l in lignes if l["age"]]
     X = sm.add_constant(np.column_stack([
-        np.array([l["survie"] for l in lignes]),
-        np.array([float(l["abandon"]) for l in lignes]),
-        np.array([1.0 if l["genre"] == "f" else 0.0 for l in lignes]),
-        np.array([((l["age"] or 33) - 33) / 10.0 for l in lignes]),
-        np.array([(l["annee"] - 2012) / 10.0 for l in lignes])]))
-    r = sm.Logit(np.array([float(l["rappele"]) for l in lignes]), X).fit(disp=0)
+        np.array([l["survie"] for l in lm]),
+        np.array([float(l["abandon"]) for l in lm]),
+        np.array([1.0 if l["genre"] == "f" else 0.0 for l in lm]),
+        np.array([(l["age"] - 33) / 10.0 for l in lm]),
+        np.array([(l["annee"] - 2012) / 10.0 for l in lm])]))
+    grappes = np.unique(np.array([l["saison"] for l in lm]), return_inverse=True)[1]
+    r = sm.Logit(np.array([float(l["rappele"]) for l in lm]), X).fit(
+        disp=0, cov_type="cluster", cov_kwds={"groups": grappes})
     ic = r.conf_int()
     noms = ("Part de saison tenue (+10 points)", "Avoir abandonné",
             "Être une femme", "Âge (+10 ans)", "Époque (+10 ans)")
@@ -4264,6 +4427,9 @@ def tenant_du_titre(par_saison, parts, conseils, epreuves, bloc_force):
         "attendu_uniforme": _arr(float(uniforme.mean()), 1),
         "ecarts_types_uniforme": _arr((observe - float(uniforme.mean())) / ecart_uniforme, 2),
         "part_expliquee": _arr(100.0 * float(np.mean(nulle_force)) / observe),
+        # Au-dela de 100 %, la force predit PLUS d'enchainement qu'on n'en
+        # observe : la phrase « N % est deja produit » n'a plus de sens.
+        "force_suffit": bool(float(np.mean(nulle_force)) >= observe),
         "test": test,
     }
 
@@ -4438,6 +4604,9 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison,
         if t:
             t["origine"] = origine
             registre.append(t)
+    if ru.get("test_glissement"):
+        ru["test_glissement"]["origine"] = "ruptures"
+        registre.append(ru["test_glissement"])
     # Des tests calcules ailleurs -- le classement des joueurs -- entrent dans
     # le MEME registre. La correction pour tests multiples ne vaut que si elle
     # les couvre tous : un test tenu a l'ecart de la liste serait un test
@@ -4445,8 +4614,37 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison,
     for t in tests_externes or ():
         t.setdefault("origine", "classement")
         registre.append(t)
-    ajustees = benjamini_hochberg([t["p"] for t in registre])
-    for t, pa in zip(registre, ajustees):
+    # LES P-VALUES DES REGRESSIONS ENTRENT DANS LA MEME CORRECTION. Le
+    # registre ne tenait que les tests de permutation ; quarante-trois p de
+    # regressions (Cox, jury, force et jeu, rappel...) etaient publiees a cote,
+    # sans correction, et plusieurs etaient redigees comme des acquis. Toute
+    # p publiee compte, variables de controle comprises : on ne choisit pas
+    # apres coup lesquelles « comptent ». Seule exception, la variante de
+    # robustesse du jury (`avec_bandeau`), qui reteste les memes hypotheses.
+    # Chaque coefficient porte ensuite sa propre `p_ajustee` et son `retenu`.
+    deja = {id(t) for t in registre}
+    complements = []
+
+    def _ramasser(noeud, chemin):
+        if isinstance(noeud, dict):
+            if id(noeud) in deja:
+                return
+            if isinstance(noeud.get("p"), (int, float)) and "avec_bandeau" not in chemin:
+                complements.append(noeud)
+            for cle, valeur in noeud.items():
+                if cle not in ("registre", "nulle"):
+                    _ramasser(valeur, chemin + (cle,))
+        elif isinstance(noeud, list):
+            for valeur in noeud:
+                _ramasser(valeur, chemin)
+
+    for nom, bloc in (("force_et_jeu", fj), ("equilibre", eq), ("mecaniques", mec),
+                      ("alliances", al), ("trahison", tr), ("confort_maudit", cf),
+                      ("jury_final", ju), ("fusion", fu), ("conditionnelles", co),
+                      ("pire_place", pp), ("rappel", rp)):
+        _ramasser(bloc, (nom,))
+    ajustees = benjamini_hochberg([t["p"] for t in registre] + [x["p"] for x in complements])
+    for t, pa in zip(registre + complements, ajustees):
         t["p_ajustee"] = _arr(pa, 4)
         t["retenu"] = bool(pa < 0.05)
 
@@ -4484,4 +4682,9 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison,
                      for t in registre],
         "nb_tests": len(registre),
         "nb_retenus": sum(1 for t in registre if t["retenu"]),
+        # Les coefficients de regression corriges avec le registre : la
+        # famille de la correction compte les deux.
+        "coefficients_corriges": len(complements),
+        "coefficients_retenus": sum(1 for x in complements if x["retenu"]),
+        "famille_corrigee": len(registre) + len(complements),
     }

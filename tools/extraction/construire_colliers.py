@@ -137,6 +137,13 @@ def construire(saisons, parts, rapport):
 
             statut = c["statut"]
             annules = c["votes_annules"]
+            # LE DERNIER DETENTEUR est celui qui joue le collier, ou qui le
+            # garde. Un collier passe de main en main -- Victor le trouve, le
+            # cede a Beatrice, qui le cede a Steeve, qui le joue au 13e
+            # episode. Celui qui l'a trouve n'est pas celui qui le joue, et il
+            # est souvent deja sorti du jeu quand le collier sert.
+            chaine = [d for d in detenteurs + autres]
+            dernier = chaine[-1] if chaine else None
             issue = None
             if statut == "non_decouvert":
                 issue = "non_decouvert"
@@ -144,8 +151,9 @@ def construire(saisons, parts, rapport):
                 issue = ("annulation_efficace" if (annules or 0) > 0
                          else "joue_pour_rien")
             elif statut in ("non_utilise", None):
-                # trouve mais jamais joue : son detenteur est-il sorti au conseil ?
-                sortis = [fiches.get((sid, d["id"])) for d in detenteurs if d["id"]]
+                # trouve mais jamais joue : son DERNIER detenteur est-il sorti
+                # au conseil avec le collier en poche ?
+                sortis = [fiches.get((sid, dernier["id"]))] if dernier and dernier["id"] else []
                 sortis = [x for x in sortis if x]
                 if sortis and any(x.get("sort") == "elimine_conseil" for x in sortis):
                     issue = "elimine_avec_collier"
@@ -162,6 +170,9 @@ def construire(saisons, parts, rapport):
                 "issue": issue,
                 "jour_trouve": c["jour_trouve"],
                 "episode_utilisation": c["episode_utilisation"],
+                "jour_utilisation": c.get("jour_utilisation"),
+                # Celui qui l'a JOUE : le dernier de la chaine des detenteurs.
+                "joueur": dict(dernier) if statut == "utilise" and dernier else None,
                 "votes_annules": annules,
                 "votes_exprimes": c["votes_exprimes"],
             })

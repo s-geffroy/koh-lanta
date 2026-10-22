@@ -18,8 +18,8 @@ chapeau: >-
 ## « Le jeu devient plus dangereux » — non, le camp se vide
 
 La page [Comment on sort]({{ '/statistiques/sorties/' | relative_url }}) publie
-une courbe de risque qui monte de {{ q.tranches[1].risque }} % au premier dixième de saison à
-{{ q.tranches[9].risque }} % au neuvième, et la commente : « tenir n’allège rien ». La lecture est tentante. Elle
+une courbe de risque qui monte de {{ q.tranches[1].risque }} % entre 10 et 20 % de la saison à
+{{ q.tranches[9].risque }} % dans le dernier dixième, et la commente : « tenir n’allège rien ». La lecture est tentante. Elle
 oublie une chose.
 
 <p class="note"><strong>Un conseil fait sortir une personne, quel que soit le
@@ -92,7 +92,7 @@ signifie que ces données ne permettent pas de conclure.</p>
 
 <div class="tableau-large">
 <table data-triable>
-<thead><tr><th>Variable</th><th class="nombre">Risque</th><th class="nombre">Intervalle</th><th class="nombre">p</th></tr></thead>
+<thead><tr><th>Variable</th><th class="nombre">Risque</th><th class="nombre">Intervalle</th><th class="nombre">p</th><th class="nombre">p ajustée</th></tr></thead>
 <tbody>
 {% for c in cox.coefficients %}
 <tr>
@@ -100,42 +100,46 @@ signifie que ces données ne permettent pas de conclure.</p>
   <td class="nombre" data-val="{{ c.rapport }}">×{{ c.rapport }}</td>
   <td class="nombre">{{ c.bas }} – {{ c.haut }}</td>
   <td class="nombre">{{ c.p }}</td>
+  <td class="nombre">{{ c.p_ajustee }}</td>
 </tr>
 {% endfor %}
 </tbody>
 </table>
 </div>
 
-Trois lignes méritent d’être lues de près.
+Trois lignes méritent d’être lues de près — et aucune, une fois corrigée, ne passe le seuil.
 
 {% assign cx = m.equilibre.cox.coefficients %}
 {% assign c_revenu = cx | where: "variable", "Déjà venu" | first %}
 {% assign c_cadre = cx | where: "variable", "Métier — Encadrement et professions intellectuelles" | first %}
 {% assign c_femme = cx | where: "variable", "Femme" | first %}
-**« Déjà venu » : risque ×{{ c_revenu.rapport }}.** Un aventurier qui a joué une autre saison est
-éliminé **{{ m.equilibre.cox.deja_venu_inverse }} fois moins vite**, à âge, sexe, métier et saison identiques.
-C’est le plus gros effet de tout le modèle — et c’est un piège. La production
-rappelle ceux qui sont allés loin : l’avantage était acquis **avant** le retour,
-il n’est pas causé par lui. C’est exactement le biais que documente
-[Les revenants]({{ '/statistiques/revenants/' | relative_url }}), et le voir
-ressortir ici, en tête d’un modèle multivarié, montre qu’aucun contrôle
-statistique ne répare une sélection sur la variable qu’on étudie.
+**« Déjà venu » : risque ×{{ c_revenu.rapport }}**, intervalle
+{{ c_revenu.bas }} à {{ c_revenu.haut }}. Rien : avoir déjà joué une saison ne
+change pas la vitesse à laquelle on sort.
+
+<p class="note"><strong>Cette ligne était la plus forte du modèle, et c’était
+une faute.</strong> Jusqu’au 22 octobre 2026, elle valait ×0,354 : un
+aventurier « déjà venu » sortait près de trois fois moins vite. Mais la
+variable comptait <em>toutes</em> les saisons de la personne, celles d’après
+comprises : elle valait 1 pour la première saison de quiconque serait rappelé
+plus tard — 81 de ses 83 cas. Or la production rappelle ceux qui sont allés
+loin. La variable contenait l’issue qu’elle prétendait expliquer. Codée comme
+elle doit l’être — une saison <em>antérieure</em> —, elle ne dit plus rien.</p>
 
 **L’encadrement : risque ×{{ c_cadre.rapport }}**, intervalle
-{{ c_cadre.bas }} à {{ c_cadre.haut }}. Les cadres et dirigeants sortent
-nettement plus vite que la référence, à âge et sexe égaux. C’est la
-version contrôlée de ce que
-[Le métier]({{ '/statistiques/professions/' | relative_url }}) montrait en parts
-brutes, et le résultat tient.
+{{ c_cadre.bas }} à {{ c_cadre.haut }}, p ajustée {{ c_cadre.p_ajustee }}. Les
+cadres et dirigeants semblent sortir un peu plus vite que la référence, à âge
+et sexe égaux, mais une fois la p corrigée pour le nombre de coefficients
+publiés, l’écart ne passe pas le seuil. On ne peut pas l’affirmer.
 
 **Femme : risque ×{{ c_femme.rapport }}**, intervalle
 {{ c_femme.bas }} à {{ c_femme.haut }}. L’écart hommes-femmes que le
 site décrit depuis toujours **rétrécit jusqu’au bord du détectable** une fois
 l’âge, le métier et la saison tenus constants. On ne peut ni l’affirmer ni
-l’écarter : l’intervalle effleure 1. C’est la réponse honnête, et elle est moins
+l’écarter : l’intervalle contient 1 (p ajustée {{ c_femme.p_ajustee }}). C’est la réponse honnête, et elle est moins
 tranchée que la moyenne brute ne le laissait croire.
 
-Ni l’âge ni la couleur de la tribu initiale ne bougent — ce dernier point confirmant, par
+Ni l’âge ni la couleur de la tribu initiale ne passent le seuil — ce dernier point confirmant, par
 une autre voie, ce que dit
 [Jaune contre rouge]({{ '/statistiques/tribus/' | relative_url }}).
 

@@ -81,8 +81,11 @@ l’éliminé de chaque conseil est pris au hasard parmi les présents.</p>
 
 <p class="note"><strong>Le modèle nul fait tout le travail ici.</strong> À
 chaque conseil, on tire l’éliminé <em>au hasard parmi les présents de ce
-soir-là</em>. Tout ce qui tient à la composition du camp — son âge, son sexe,
-son niveau — est donc déjà neutralisé. Ce qui reste ne peut être qu’un choix.</p>
+soir-là</em>. Après la réunification, tout ce qui tient à la composition du
+camp — son âge, son sexe, son niveau — est donc neutralisé. Avant, un défaut
+subsiste : les « présents » sont tous ceux qui restent en jeu, les deux tribus
+réunies, et non la seule tribu qui vote. Les comparaisons d’avant la
+réunification se lisent avec cette réserve.</p>
 
 ### Une estimation trop floue ?
 
@@ -123,7 +126,7 @@ avant. Le hasard est ici une redistribution des étiquettes « avant » et
   <p>Un conseil est <b>serré</b> quand l’éliminé ne rassemble pas plus de la
   moitié des voix exprimées. Avant la réunification : {{ a.avant.part_serres }} %.
   Après : <b>{{ a.apres.part_serres }} %</b>.</p>
-  <p>+{{ ts.observe }} points, {{ ts.ecart_types }} écarts-types, p ajustée
+  <p>+{{ ts.observe }} points, {{ ts.ecart_types }} {{ ts.ecart_types_mot }}, p ajustée
   {{ ts.p_ajustee }}. Le camp réuni ne se retourne pas d’un bloc : il se
   partage.</p>
 </div>
@@ -165,8 +168,8 @@ l’éliminé de chaque conseil est pris au hasard parmi les présents.</p>
   <p>Avant la réunification, celui qui part a en moyenne <b>{{ ag.ecart_avant }} an de
   plus</b> que son camp. Après, <b>{{ ag.ecart_apres }}</b> — il est un peu plus
   jeune que la moyenne.</p>
-  <p>La bascule vaut {{ tag.observe_arrondi }} ans, {{ tag.ecart_types }}
-  écarts-types, p brute {{ tag.p }}, p ajustée {{ tag.p_ajustee }}.
+  <p>La bascule vaut {{ tag.observe_arrondi }} an{% if tag.observe_arrondi_pluriel %}s{% endif %}, {{ tag.ecart_types }}
+  {{ tag.ecart_types_mot }}, p brute {{ tag.p }}, p ajustée {{ tag.p_ajustee }}.
   <b>Non concluant.</b></p>
   <p>C’est le sens de la bascule de la force. Sur {{ ag.conseils }} conseils,
   l’écart ne passe pas le seuil, de peu : un tirage au hasard parmi les
@@ -199,7 +202,7 @@ ni la catégorie du plus âgé.</p>
 <div class="constat">
   <p>{{ a.avant.part_femmes }} % de femmes parmi les éliminés avant la réunification,
   {{ a.apres.part_femmes }} % après — {{ tx.observe_arrondi }} points d’écart, soit
-  {{ tx.ecart_types }} écarts-types, p ajustée {{ tx.p_ajustee }}.
+  {{ tx.ecart_types }} {{ tx.ecart_types_mot }}, p ajustée {{ tx.p_ajustee }}.
   <b>Retenu.</b></p>
   <p>Le hasard tire ici l’éliminé parmi les présents de chaque conseil : la
   composition du camp est donc déjà prise en compte. <b>À la réunification, la
@@ -237,7 +240,7 @@ sert précisément à équilibrer les tribus avant de les réunir.
 <div class="constat">
   <p>Sur les {{ amb.effectif_force }} ambassades où la force des présents est
   estimable, l’éliminé se situe au rang <b>{{ amb.rang_moyen }} sur 100</b> —
-  {{ ta.ecart_types }} écart-type du hasard, p ajustée {{ ta.p_ajustee }}.</p>
+  {{ ta.ecart_types }} {{ ta.ecart_types_mot }} du hasard, p ajustée {{ ta.p_ajustee }}.</p>
   <p><b>Deux ambassadeurs qui décident seuls choisissent comme un tirage.</b>
   Du moins sur ce critère-là, et à cette taille-là :
   {{ amb.effectif_force }} cas ne permettent de détecter qu’un effet énorme.</p>
@@ -291,7 +294,7 @@ côté.</p>
   {{ ng.elimine_ambassadeur }} ont coûté sa place à l’un des ambassadeurs.</p>
 </div>
 
-### Et ils sortent plus tôt, de justesse
+### Sortent-ils plus tôt ? Le registre ne permet plus de le dire
 
 {% include graphiques/ambassadeurs-survie.svg %}
 
@@ -304,24 +307,27 @@ les présents.</p>
   <p>Sur les {{ ng.ambassades }} ambassades où le camp est reconstituable —
   {{ ng.ambassadeurs }} ambassadeurs — le rang moyen vaut
   <b>{{ ng.rang_moyen }} sur 100</b>, contre {{ tn.attendu }} attendus.
-  {{ tn.ecart_types }} écart-type, p ajustée {{ tn.p_ajustee }}.</p>
-  <p><b>Retenu, de justesse : l’ambassadeur sort plus tôt que s’il avait été
-  désigné au hasard parmi les présents.</b></p>
+  {{ tn.ecart_types }} {{ tn.ecart_types_mot }}, p ajustée {{ tn.p_ajustee }}.</p>
+  <p><b>Non retenu : l’écart va dans le sens d’une sortie plus précoce, mais
+  il ne passe pas le seuil.</b></p>
   <p>Une partie de l’écart peut être la règle elle-même : un ambassadeur
   parti au tirage sort le soir même, au plus bas rang possible. Et la mesure
   repose sur {{ ng.ambassadeurs }} ambassadeurs.</p>
 </div>
 
-<p class="note"><strong>Ce résultat a changé deux fois le même jour.</strong>
+<p class="note"><strong>Ce résultat a changé trois fois en deux jours.</strong>
 Retenu jusqu’au 21 octobre 2026 (p ajustée 0,047), il est d’abord repassé
 sous le seuil (0,056) quand vingt-quatre colonnes de la matrice des votes,
 qui passaient pour des conseils, ont été rendues à leur nature de sorties
-sans vote. Il l’a repassé dans l’autre sens (p ajustée {{ tn.p_ajustee }})
-quand huit revenants ont retrouvé leur sortie définitive : Quentin, au
-<i>Feu sacré</i>, comptait comme sorti au vingt-troisième jour, à l’ambassade
-qu’il a perdue au tirage ; il est revenu, et n’est sorti qu’au trente-huitième.
-Un résultat qui bascule à chaque correction se tient sur le seuil : il faut
-le lire comme tel.</p>
+sans vote. Il l’a repassé dans l’autre sens (0,04) quand huit revenants ont
+retrouvé leur sortie définitive : Quentin, au <i>Feu sacré</i>, comptait comme
+sorti au vingt-troisième jour, à l’ambassade qu’il a perdue au tirage ; il est
+revenu, et n’est sorti qu’au trente-huitième. Le 22 octobre 2026, la correction
+pour tests multiples a été étendue aux p-values de régression que le site
+publiait sans correction (<a href="{{ '/methode/' | relative_url }}">la
+méthode</a>) : le seuil s’est déplacé, et le résultat est repassé dessous
+(p ajustée {{ tn.p_ajustee }}). Un écart qui bascule à chaque correction ne
+s’affirme pas.</p>
 
 ## Ce que cette page ne dit pas
 

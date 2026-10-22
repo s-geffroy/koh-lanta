@@ -80,8 +80,8 @@ victoire — duels de l’île des bannis ou de l’exil et épreuves de finale 
 <a href="{{ '/statistiques/epreuves/' | relative_url }}">la page des épreuves</a>
 ne compte que ce qui figure au bilan épisode par épisode. Les deux comptes sont
 identiques dans {{ site.data.stats.palmares.part_identiques }} % des cas ;
-<a href="{{ '/sources/' | relative_url }}">Les sources</a> disent pourquoi pas
-dans les autres.</p>
+<a href="{{ '/sources/' | relative_url }}">Les sources</a> disent pourquoi ils
+diffèrent dans les autres.</p>
 
 <div class="tableau-large tableau-haut">
 <table id="tableau-aventuriers" data-triable>

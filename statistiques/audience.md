@@ -1,17 +1,18 @@
 ---
 layout: page
 title: L’audience
-description: "L’audience de Koh-Lanta depuis 2001 : une forte chute, et une date précise. La seule grandeur du jeu que la production ne décide pas."
+description: "L’audience de Koh-Lanta depuis 2001 : une forte chute, sans date démontrable. La seule grandeur du jeu que la production ne décide pas."
 permalink: /statistiques/audience/
 chapeau: >-
   La seule grandeur du jeu que la production ne décide pas. Elle a fortement
-  chuté, et sa chute a une date — contrairement au format.
+  chuté — mais rien ne prouve que cette chute ait une date plutôt qu’une pente.
 ---
 
 {% assign m = site.data.stats.modeles %}
 {% assign a = m.audience %}
 {% assign reg = m.registre %}
 {% assign tr = reg | where: "cle", "audience_rupture" | first %}
+{% assign tg = reg | where: "cle", "audience_glissement" | first %}
 {% assign tf = reg | where: "cle", "audience_retournement" | first %}
 {% assign ts = reg | where: "cle", "audience_format" | first %}
 
@@ -37,12 +38,12 @@ elle la subit. À ce titre, c’est la plus intéressante.
 téléspectateurs. Sous l’axe, deux rangs : le jour de diffusion — <b>V</b> vendredi, <b>M</b> mardi, <b>S</b> samedi — puis les mois de diffusion, en chiffres. La bascule au mardi tombe au milieu de la chute, et c’est tout le problème de cette page ; le glissement de l’été vers le printemps, lui, se lit sur le second rang. Source : Wikipédia, article général et
 articles de saison.</p>
 
-## La chute a une date — et c’est ce qui la distingue
+## Une chute réelle, une date qui ne se prouve pas
 
 La page [La grille]({{ '/statistiques/grille/' | relative_url }}) cherche une
 rupture dans le **format** et n’en trouve pas la date : le profil des coupures
-possibles y est un plateau. La même méthode, appliquée à l’audience, donne le
-résultat inverse.
+possibles y est un plateau. La même méthode, appliquée à l’audience, donne un
+profil bien plus serré — sans pour autant prouver une date.
 
 {% include graphiques/audience-nulle.svg %}
 
@@ -51,9 +52,14 @@ d’audience, face à celle obtenue sur des saisons remises dans un ordre au
 hasard.</p>
 
 <div class="constat">
-  <p>La rupture tombe sur <b><i>{{ a.premiere_apres.titre }}</i>
-  ({{ a.premiere_apres.annee }})</b>, {{ tr.ecart_types }} écarts-types
-  au-dessus d’une coupure au hasard, p ajustée {{ tr.p_ajustee }}.</p>
+  <p>La meilleure coupure tombe sur <b><i>{{ a.premiere_apres.titre }}</i>
+  ({{ a.premiere_apres.annee }})</b>, {{ tr.ecart_types }} {{ tr.ecart_types_mot }}
+  au-dessus d’une coupure au hasard, p ajustée {{ tr.p_ajustee }} : l’audience
+  n’est pas stable, et c’est solide.</p>
+  <p><b>Mais un déclin régulier produirait une coupure aussi nette</b> :
+  contre des séries de même pente, {{ tg.ecart_types }} {{ tg.ecart_types_mot }},
+  p ajustée {{ tg.p_ajustee }}. Que la chute ait une date plutôt qu’une
+  pente, ces données ne le montrent pas.</p>
   <p>Avant : <b>{{ a.moyenne_avant_millions }}
   millions</b> de téléspectateurs en moyenne, sur {{ a.avant }} saisons.
   Après : <b>{{ a.moyenne_apres_millions }}
@@ -74,9 +80,11 @@ coupures qui tiennent à 10 % près sont **{{ a.nb_proches }}, étalées sur
 contre {{ m.ruptures.nb_proches }} sur {{ m.ruptures.fenetre.etendue }} ans pour
 le format.
 
-**Voilà ce que veut dire « une date identifiée ».** Pas que le maximum se
-détache — il se détache à peine dans les deux cas — mais que ses concurrentes
-sérieuses soient toutes au même endroit.
+Si date il y a, elle est donc bien localisée : ses concurrentes sérieuses
+sont toutes au même endroit. Mais localiser la meilleure coupure n’est pas
+prouver qu’il y en a une. Cette page affirmait jusqu’au 22 octobre 2026 que
+« la chute a une date » ; le test contre un déclin régulier, ajouté ce jour-là,
+ne le confirme pas.
 
 ## Ce qui change exactement cette saison-là
 
@@ -101,7 +109,7 @@ sérieuses soient toutes au même endroit.
 *{{ a.bascule_jour.titre }}* ({{ a.bascule_jour.annee }}) est **la première
 saison diffusée le mardi** après {{ site.data.stats.mots.annees_de_vendredi }} ans de
 vendredi. C’est aussi celle sur
-laquelle tombe la rupture d’audience. Les deux dates sont la même date.
+laquelle tombe la meilleure coupure de l’audience.
 
 <p class="note"><strong>Et c’est précisément pourquoi on ne peut pas conclure.</strong>
 Le soir de diffusion change <em>une fois</em>, et il change là où l’audience
@@ -135,7 +143,7 @@ en chiffres.</p>
   <b>×{{ a.retournement.ratio_avant }}</b> le lancement. Depuis :
   <b>×{{ a.retournement.ratio_apres }}</b>.</p>
   <p>La corrélation entre l’année et ce rapport vaut
-  <b>{{ tf.observe }}</b> — {{ tf.ecart_types }} écarts-types, p ajustée
+  <b>{{ tf.observe }}</b> — {{ tf.ecart_types }} {{ tf.ecart_types_mot }}, p ajustée
   {{ tf.p_ajustee }}. <b>Le public ne reste plus jusqu’au bout.</b></p>
 </div>
 
@@ -163,7 +171,7 @@ et on ne compare que les écarts.</p>
 <div class="constat">
   <p>Une fois la tendance retirée, la corrélation tombe de
   {{ a.format_correlation_brute }} à <b>{{ ts.observe }}</b> —
-  {{ ts.ecart_types }} écarts-types, p ajustée {{ ts.p_ajustee }}.
+  {{ ts.ecart_types }} {{ ts.ecart_types_mot }}, p ajustée {{ ts.p_ajustee }}.
   <b>Il ne reste rien.</b></p>
   <p>Rien ne dit ici que la production réagit à ses audiences en changeant la
   taille du casting. Rien ne dit non plus le contraire : à

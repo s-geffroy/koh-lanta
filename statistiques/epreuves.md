@@ -170,7 +170,7 @@ que l’affirmer.
 
 <div class="constat">
   <p>Ce catalogue donne la <b>saison</b>, le vainqueur et le gain. Il ne donne
-  pas l’<b>épisode</b>. Or {{ e.epreuves }} épreuves relevées le sont épisode par
+  pas l’<b>épisode</b>. Or les {{ e.epreuves }} épreuves relevées le sont épisode par
   épisode — et un aventurier gagne souvent plusieurs épreuves du même genre dans
   la même saison.</p>
   <p>Résultat : sur les {{ en.raccord.epreuves_relevees }} épreuves relevées,
@@ -311,8 +311,8 @@ aventurier de chaque famille — rapporté à l’effectif, donc comparable.</p>
 
 {% assign pm = e.par_metier_par_ratio %}
 **{{ pm[0].libelle }}** arrive en tête avec
-{{ pm[0].victoires_par_aventurier }} victoire par personne, de peu devant
-la famille « {{ pm[1].libelle }} » ({{ pm[1].victoires_par_aventurier }}). Rien de
+{{ pm[0].victoires_par_aventurier }} victoire par personne ; la famille
+« {{ pm[1].libelle }} » la suit de très près ({{ pm[1].victoires_par_aventurier }}). Rien de
 surprenant. Mais le fait notable est ailleurs : cet avantage athlétique
 **ne se convertit pas en victoires finales**. Le sport gagne les épreuves et
 perd le jury.
@@ -385,7 +385,7 @@ moins visés que les autres.</p>
 
 Sur **{{ cf.conseils }} conseils** et {{ cf.bulletins }} bulletins,
 {{ cf.observe }} % visent un gagnant du confort — intervalle
-{{ cf.bas }} à {{ cf.haut }} — pour {{ cf.attendu }} % attendus. p =
+{{ cf.bas }} à {{ cf.haut }} % — pour {{ cf.attendu }} % attendus. p =
 {{ cf.p }}. **La malédiction du confort n’existe pas.**
 
 L’intervalle laisse encore place à un écart de {{ cf.marge }} points dans un sens ou
@@ -399,7 +399,7 @@ bulletins.</strong> Sachant qu’on vient de gagner le confort de l’épisode, 
 éliminé le soir même dans <b>{{ cw.probabilite }} %</b> des cas
 ({{ cw.cas }} sur {{ cw.effectif }}), contre {{ cn.probabilite }} % pour ceux qui
 n’ont rien gagné — {{ tcf.observe_arrondi }} points, {{ tcf.ecart_types }}
-écarts-types, p ajustée {{ tcf.p_ajustee }}. L’écart va cette fois dans le sens
+{{ tcf.ecart_types_mot }}, p ajustée {{ tcf.p_ajustee }}. L’écart va cette fois dans le sens
 de la légende, mais il reste <em>non concluant</em> : à {{ cw.effectif }}
 présences, on ne peut pas le distinguer d’un tirage. Deux mesures de la même
 idée, deux verdicts prudents et un seul enseignement — la malédiction n’est pas

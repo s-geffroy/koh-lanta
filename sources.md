@@ -54,7 +54,7 @@ Ces pages ont aussi réglé un problème que les tables ne pouvaient pas voir.
 - **Sept aventuriers n’avaient qu’un prénom.** Les éditions de retour présentent
   parfois les revenants par leur seul prénom, et quand plusieurs personnes du
   jeu de données portent ce prénom, le rattachement automatique s’abstient. Le
-  wiki classe ses pages par saison : une seule « Victor » est classée dans
+  wiki classe ses pages par saison : une seule page « Victor » est classée dans
   *La Guerre des chefs*, et c’est Victor Rollinger. Sept noms de famille ont été
   rendus de cette façon ; un seul résiste, la Sabira de *Panama*, qui n’a pas de
   page.
@@ -116,8 +116,8 @@ la place au premier vrai campement, ou à rien.
 colore chaque étape : un code pour une tribu (« #fee347 »), mais un *nom* pour
 la tribu réunifiée (« white »), pour les bannis (« black »), et parfois rien.
 Seuls les codes étaient lus : 313 étapes disparaissaient, dont toutes les
-réunifications écrites en blanc — 221 parcours s’arrêtaient à la réunification. Elles
-sont lues ; une étape encore en cours, « (jour 19 – ) », n’a plus de jour de
+réunifications écrites en blanc — 221 parcours s’arrêtaient à la réunification. Ces étapes
+sont désormais lues ; une étape encore en cours, « (jour 19 – ) », n’a plus de jour de
 fin inventé ; et la tribu initiale reste la première tribu à vraie couleur, pas
 la « Tribu des hommes » ni la « Tribu unique » des tout premiers jours.
 
@@ -300,7 +300,7 @@ ordonnée**. Deux vérifications indépendantes ont donc été montées, et elle
 tournent à chaque régénération. Le récit nomme parfois un rang — « <em>Loïc
 trouve le premier poignard</em> » : sur {{ fc.saisons_ordre_teste }} saisons,
 **{{ fc.rangs_confirmes }} rangs** sont ainsi confrontables à la place que la
-cellule leur donne, et {{ fc.rangs_dementis }} la contredit. Et les deux wikis,
+cellule leur donne, et {% if fc.rangs_dementis == 0 %}aucun ne la contredit{% elsif fc.rangs_dementis == 1 %}un seul la contredit{% else %}{{ fc.rangs_dementis }} la contredisent{% endif %}. Et les deux wikis,
 rédigés séparément, écrivent le même ordre sur {{ fc.ordre_concordant }} des
 {{ fc.ordre_croisable }} saisons où les deux le détaillent.
 
@@ -373,8 +373,10 @@ Ce qui a été retrouvé n’était pas neutre. L’échantillon d’avant conte
 195 bulletins sur 196 **allant au lauréat** : sur la question « le juré
 punit-il celui qui l’a éliminé », il ne pouvait rien montrer, puisque le
 bourreau y était presque toujours le gagnant. Avec les deux côtés du choix,
-[la page du jury]({{ '/statistiques/jury/' | relative_url }}) conclut désormais
-l’inverse de ce qu’elle concluait.
+[la page du jury]({{ '/statistiques/jury/' | relative_url }}) a d’abord conclu
+l’inverse — « le jury n’oublie pas ». Cette rancune n’a pas résisté à une
+incertitude calculée par saison (22 octobre 2026) : elle n’est pas établie. Le
+co-vote, lui, tient.
 
 ## Deux personnes, un seul prénom
 
@@ -617,20 +619,21 @@ aujourd’hui {{ site.data.stats.epreuves.epreuves }} épreuves, dont
 porte sur {{ site.data.stats.modeles.force.epreuves_retenues }} épreuves et
 {{ site.data.stats.modeles.force.saisons_retenues }} saisons.
 
-**Une conclusion publiée a néanmoins basculé, et il faut la nommer.**
-[La grille]({{ '/statistiques/grille/' | relative_url }}) affirmait que
+**Une conclusion publiée a basculé deux fois, et il faut la nommer.**
+[La grille]({{ '/statistiques/grille/' | relative_url }}) affirmait d’abord que
 l’épisode de la réunification **ne bouge pas** avec la taille du casting —
-{% assign pf = site.data.stats.modeles.fusion.pente_episode %}
-pente 0,008, intervalle −0,135 à 0,152. Elle vaut désormais {{ pf.pente }},
-intervalle {{ pf.bas }} à {{ pf.haut }}, p = {{ pf.p }} : la réunification recule bel et
-bien, de **{{ site.data.stats.modeles.fusion.croissance_episode_texte }}** sur
-toute la croissance des castings. Deux saisons expliquent le
-renversement, et les deux étaient fausses. *Cambodge* était <em>écartée</em> du
+pente 0,008, intervalle −0,135 à 0,152. Deux saisons étaient fausses. *Cambodge* était <em>écartée</em> du
 calcul parce que son dernier collectif tombait à un épisode ne laissant que
 quatre joueurs — c’était le décalage de numérotation. *La Revanche des 4 Terres*
 plaçait sa réunification à l’épisode 4 sur 17, chiffre lu dans le tableau de classement
-des quatre tribus ; elle la place maintenant à l’épisode 8. La page a été
-réécrite, et elle raconte ce qu’elle disait avant.
+des quatre tribus ; elle la place maintenant à l’épisode 8. Corrigées, elles
+ont donné un recul dont l’intervalle excluait zéro de peu (0,016 à 0,205), et
+la page l’a écrit. La relecture des numéros d’épisode du 20 octobre 2026 a
+ramené la borne basse sous zéro —
+{% assign pf = site.data.stats.modeles.fusion.pente_episode %}pente
+{{ pf.pente }}, intervalle {{ pf.bas }} à {{ pf.haut }}, p = {{ pf.p }} — et la
+page a continué d’affirmer le recul pendant deux jours. Elle dit désormais
+qu’il ne se distingue pas du hasard, et raconte ses deux revirements.
 
 ## Une ligne reprise, six défauts trouvés derrière elle
 
@@ -690,7 +693,7 @@ Deux règles ont été arrêtées au passage. Avec trois ou quatre tribus, Fando
 remplit une colonne par tribu classée. À l’immunité, toutes les tribus classées
 sont protégées — sur les douze soirs concernés, l’éliminé du conseil vient
 toujours de la seule tribu qui ne l’est pas — et elles comptent comme les
-gagnantes d’une même épreuve ; au confort, seule la première l’emporte. Et un confort gagné par trois personnes
+gagnantes d’une même épreuve ; au confort, seule la première l’emporte.
 Et un confort d’équipe ne donne de victoire individuelle à personne, que la
 source écrive « Équipe de Vincent » ou nomme les cinq membres. On ne le déclare
 que si une source l’écrit : compter les noms ne suffit pas, deux duos gagnants
@@ -763,7 +766,7 @@ pour plusieurs saisons, et le test passe le seuil, de justesse. La page le dit,
 avec l’ancienne conclusion en regard. Aucun autre test du registre n’a changé
 de conclusion.
 
-À *Pacifique*, épisode 3, Fandom donne le confort à Kanawa, le wiki *Survivor*
+Au *Pacifique*, épisode 3, Fandom donne le confort à Kanawa, le wiki *Survivor*
 à Kumo, et aucun récit ne raconte l’épreuve — la dégustation. Deux indices
 penchent pour Kanawa, et le relevé la garde. La page Fandom de l’épreuve écrit
 « Pacifique : Kanawa (kit de pêche) ». Et les fiches des aventuriers restés
@@ -1315,8 +1318,8 @@ mènent d’un nom à un élément Wikidata : le titre d’un article francopho
 lui-même ({{ wd.correspondances_libelle }}). Mais ces
 correspondances mêlent Claude Dartois et Teheiura Teahui à une danseuse
 ukrainienne et à un avocat, et rien dans le nom ne les sépare. Un élément n’est
-donc retenu que s’il réunit **deux conditions** : être un être humain, et que le
-jeu soit écrit quelque part — dans ses déclarations, dans sa description, ou
+donc retenu que s’il réunit **deux conditions** : désigner un être humain, et
+nommer le jeu quelque part — dans ses déclarations, dans sa description, ou
 dans le texte de son article. **{{ wd.apparies }}** passent,
 {{ wd.candidats_ecartes }} candidats sont écartés faute de preuve.
 

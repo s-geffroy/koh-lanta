@@ -9,9 +9,8 @@ chapeau: >-
 
 {% assign s = site.data.stats %}
 
-C’est une question qui revient à chaque saison : vaut-il mieux commencer chez
-les Jaunes ou chez les Rouges ? Sur {{ s.general.saisons_classiques }} saisons
-classiques, la réponse tient en une ligne.
+Sur {{ s.general.saisons_classiques }} saisons classiques, la réponse tient en
+effet en une ligne.
 
 ## Les victoires
 
@@ -47,13 +46,13 @@ qu’on se retrouve du mauvais côté du compte.
   ({{ af.bandeau[0].cas }} sur {{ af.bandeau[0].effectif }}) ; quand elle est la
   plus représentée, dans <b>{{ af.bandeau[1].probabilite }} %</b>.</p>
   <p>{{ tba.observe_arrondi }} points d’écart, {{ tba.ecart_types }}
-  écarts-types au-dessus d’un tirage au sort parmi les présents de chaque
+  {{ tba.ecart_types_mot }} au-dessus d’un tirage au sort parmi les présents de chaque
   conseil, p ajustée {{ tba.p_ajustee }}.</p>
 </div>
 
 Les deux résultats de cette page ne se contredisent pas : **la couleur n’est pas
 un avantage, c’est une appartenance.** Elle ne fait gagner personne, et elle
-condamne celui qui se retrouve seul de sa sorte.
+condamne celui qui se retrouve seul de sa tribu initiale.
 [Sachant qui est autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }})
 détaille, avant et après la réunification.
 

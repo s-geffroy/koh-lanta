@@ -1,14 +1,26 @@
 # Fichier genere par tools/extraction/ambassadeurs.py.
 # Ne pas editer a la main : toute modification sera ecrasee.
-ambassades: 22
-nommees: 14
-part_nommees: "63,6"
-sources_accord: 4
+ambassades: 25
+nommees: 17
+part_nommees: 68
+sources_accord: 5
 sources_desaccord: 1
-par_tirage: 3
-elimine_ambassadeur: 3
-ambassadeurs_distincts: 32
+par_tirage: 4
+elimine_ambassadeur: 4
+ambassadeurs_distincts: 40
 lignes:
+- saison: s09
+  elimine: alexandre-amico
+  episode: 6
+  ambassadeurs:
+  - isabelle-da-silva
+  - fabienne-lefebvre-trehoux
+  nombre: 2
+  tirage_au_sort: false
+  elimine_est_ambassadeur: false
+  source: fandom
+  phrase: Les ambassadrices Isabelle et Fabienne se mettent d'accord sur le nom d'Alexandre pour quitter
+    l'aventure.
 - saison: s10
   elimine: boris-deltell
   episode: 8
@@ -126,6 +138,19 @@ lignes:
   elimine_est_ambassadeur: false
   source: fandom
   phrase: Setha est éliminée par les ambassadeurs Colin et Louana.
+- saison: s24
+  elimine: quentin-paygnard
+  episode: 8
+  ambassadeurs:
+  - grace-jeantel
+  - quentin-paygnard
+  nombre: 2
+  tirage_au_sort: true
+  elimine_est_ambassadeur: true
+  source: wikipedia-fr
+  phrase: Les ambassadeurs Grâce et Quentin ne s'étant pas mis d'accord pour éliminer un aventurier, un
+    tirage au sort a eu lieu, à l'issue duquel Quentin est éliminé. Néanmoins, il ne sort pas du jeu,
+    car Grâce abandonne peu après (voir ci-contre) au moment de son départ.
 - saison: s25
   elimine: ricky-poyet
   ambassadeurs: null
@@ -141,6 +166,20 @@ lignes:
   elimine_est_ambassadeur: false
   source: wikipedia-fr
   phrase: Les deux ambassadeurs (Gustin et Sophia) se mettent d'accord pour éliminer Emmanuelle.
+- saison: s27
+  elimine: maxime-lubian
+  episode: 8
+  ambassadeurs:
+  - frederic-pignard
+  - louise-picavet
+  - mael-lozach
+  - pierre-marie-ponsot
+  nombre: 4
+  tirage_au_sort: false
+  elimine_est_ambassadeur: false
+  source: wikipedia-fr
+  phrase: Les quatre ambassadeurs (Frédéric, Louise, Maël et Pierre-Marie) se mettent d'accord pour éliminer
+    Maxime.
 - saison: s28
   elimine: jonathan-guez
   ambassadeurs: null

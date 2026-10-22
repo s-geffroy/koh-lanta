@@ -553,7 +553,7 @@
   nom: Patricia
   nom_complet: Patricia Tanguy
   saison: s01
-  genre: h
+  genre: f
   age: 31
   profession: Secrétaire de direction
   localisation: Paris
@@ -571,13 +571,13 @@
     jour_fin: 42
   jour_sortie: 42
   sort: elimine_epreuve
-  motif: Éliminé à l'épreuve de l'idole
+  motif: Éliminée à l'épreuve de l'idole
   votes_recus: 4
   classement: 3
   victoires_collectives: 4
   victoires_individuelles: 1
   sources:
-    genre: fandom
+    genre: page individuelle Fandom (categorie)
     age: fandom
     profession: fandom
     tribu: fandom
@@ -805,7 +805,7 @@
   nom: Nelly
   nom_complet: Nelly Baradeau
   saison: s02
-  genre: h
+  genre: f
   age: 24
   profession: Barmaid
   localisation: Gironde
@@ -819,13 +819,13 @@
     jour_fin: 13
   jour_sortie: 13
   sort: elimine_conseil
-  motif: Éliminé au conseil
+  motif: Éliminée au conseil
   votes_recus: 4
   classement: 13
   victoires_collectives: 2
   victoires_individuelles: 0
   sources:
-    genre: fandom
+    genre: page individuelle Fandom (categorie)
     age: fandom
     profession: fandom
     tribu: fandom
@@ -1285,7 +1285,7 @@
   saison: s02
   genre: h
   age: 29
-  profession: Intérimaire dans l'agro-alimentaire
+  profession: Intérimaire dans l'agroalimentaire
   localisation: Deux-Sèvres
   edition_origine: null
   tribu: Ventanas
@@ -1609,7 +1609,7 @@
   saison: s03
   genre: h
   age: 43
-  profession: Ex chef d'entreprise
+  profession: Ex-chef d'entreprise
   localisation: Isère
   edition_origine: null
   tribu: Boro
@@ -2101,7 +2101,7 @@
   saison: s04
   genre: h
   age: 36
-  profession: Agents de joueurs de football
+  profession: Agent de joueurs de football
   localisation: Isère
   edition_origine: null
   tribu: Mogo
@@ -2217,7 +2217,7 @@
   saison: s04
   genre: f
   age: 26
-  profession: Auto-entrepreneur en électro-ménager
+  profession: Auto-entrepreneur en électroménager
   localisation: null
   edition_origine: null
   tribu: Chapera
@@ -3011,7 +3011,7 @@
   nom: Thierry
   nom_complet: Thierry Ramos
   saison: s05
-  genre: f
+  genre: h
   age: 38
   profession: Boucher
   localisation: Drôme
@@ -3025,13 +3025,13 @@
     jour_fin: 18
   jour_sortie: 18
   sort: elimine_conseil
-  motif: Éliminée au conseil
+  motif: Éliminé au conseil
   votes_recus: 4
   classement: 11
   victoires_collectives: 5
   victoires_individuelles: 0
   sources:
-    genre: fandom
+    genre: page individuelle Fandom (categorie)
     age: fandom
     profession: fandom
     tribu: fandom
@@ -3359,7 +3359,7 @@
   saison: s05
   genre: h
   age: 24
-  profession: Chaffeur d'autocar
+  profession: Chauffeur d'autocar
   localisation: Hauts-de-Seine
   edition_origine: null
   tribu: Kumo
@@ -4674,7 +4674,7 @@
   saison: s07
   genre: h
   age: 21
-  profession: Pilote de Karting
+  profession: Pilote de karting
   localisation: null
   edition_origine: null
   tribu: Batang
@@ -5082,7 +5082,7 @@
   saison: s08
   genre: h
   age: 39
-  profession: Boxeur professionnel, Patron de pizzerias
+  profession: Boxeur professionnel, patron de pizzerias
   localisation: Nord
   edition_origine: null
   tribu: Tayak
@@ -5716,7 +5716,7 @@
   sort: abandon_volontaire
   motif: Abandon volontaire
   votes_recus: 0
-  classement: 11
+  classement: 12
   victoires_collectives: 2
   victoires_individuelles: 0
   sources:
@@ -5732,7 +5732,7 @@
     genre: arbitrage manuel
     localisation: fandom (page individuelle)
     parcours: fandom (page individuelle)
-    classement: fandom (page individuelle)
+    classement: 'table RANGS_CORRIGES : sortie jour 15, avant Alexandre (jour 21, 11e) ; le 12e manquait'
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
 - id: alexandre-amico
@@ -6113,6 +6113,7 @@
   sort: elimine_poteaux
   motif: Éliminée aux poteaux
   votes_recus: 11
+  classement: 3
   sources:
     genre: fandom
     age: fandom
@@ -6128,6 +6129,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: 'table RANGS_CORRIGES : eliminee aux poteaux jour 38 ; le 3e manquait'
 - id: patrick-merle
   nom: Patrick
   nom_complet: Patrick Merle
@@ -6530,7 +6532,7 @@
   saison: s10
   genre: h
   age: 20
-  profession: Étudiant, Mannequin
+  profession: Étudiant, mannequin
   localisation: Nord
   edition_origine: null
   tribu: Do
@@ -9524,7 +9526,7 @@
   saison: s15
   genre: h
   age: 21
-  profession: Etudiant
+  profession: Étudiant
   localisation: Vosges
   edition_origine: null
   tribu: Aopoh
@@ -9900,7 +9902,7 @@
   saison: s15
   genre: f
   age: 26
-  profession: Etudiante
+  profession: Étudiante
   localisation: Alpes-Maritimes
   edition_origine: null
   tribu: Karwaï
@@ -13602,7 +13604,7 @@
     jour_fin: 33
   jour_sortie: 33
   sort: elimine_epreuve
-  motif: Éliminée lors d'une épreuve éliminatoire
+  motif: Éliminé lors d'une épreuve éliminatoire
   votes_recus: 8
   classement: 8
   victoires_collectives: 3
@@ -13844,7 +13846,7 @@
   saison: s20
   genre: f
   age: 31
-  profession: Conseillère Financière
+  profession: Conseillère financière
   localisation: Gironde
   edition_origine: null
   tribu: Ikalu
@@ -14539,7 +14541,7 @@
     jour_fin: 32
   jour_sortie: 32
   sort: elimine_conseil
-  motif: Éliminée au conseil
+  motif: Éliminé au conseil
   votes_recus: 7
   classement: 10
   victoires_collectives: 10
@@ -15875,7 +15877,7 @@
   saison: s23
   genre: f
   age: 40
-  profession: Cheffe d'entreprise Ille-et-Villaine
+  profession: Cheffe d'entreprise en Ille-et-Vilaine
   localisation: Ille-et-Vilaine
   edition_origine: null
   tribu: Ilog
@@ -15949,7 +15951,8 @@
     victoires_individuelles: fandom (page individuelle)
 - id: franck-le-totem-maudit
   nom: Franck
-  nom_complet: Franck (Le Totem Maudit)
+  nom_complet: Franck
+  nom_source: Franck (Le Totem Maudit)
   saison: s23
   genre: h
   age: 52
@@ -17355,7 +17358,7 @@
   sort: elimine_conseil
   motif: Éliminée au conseil 1er membre du jury final
   votes_recus: 7
-  classement: 12
+  classement: 11
   victoires_collectives: 6
   victoires_individuelles: 0
   sources:
@@ -17371,7 +17374,7 @@
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
-    classement: fandom (page individuelle)
+    classement: 'table RANGS_CORRIGES : sortie jour 24, avant Grace (jour 23, 12e) ; Fandom « 11ème place »'
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
 - id: helena-roosen
@@ -17786,6 +17789,7 @@
   sort: finaliste
   motif: Finaliste
   votes_recus: 36
+  classement: 2
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -17799,6 +17803,7 @@
     motif: 'wikipedia-fr (revenant : etat final)'
     nom_complet: fandom
     votes_recus: fandom
+    classement: 'table RANGS_CORRIGES : finaliste ; le 2e manquait'
 - id: frederic-khouvilay
   nom: Frédéric
   nom_complet: Frédéric Khouvilay
@@ -18143,7 +18148,7 @@
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 6
-  classement: 16
+  classement: 15
   victoires_collectives: 6
   victoires_individuelles: 0
   sources:
@@ -18159,7 +18164,7 @@
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
-    classement: fandom (page individuelle)
+    classement: 'table RANGS_CORRIGES : sortie jour 20, apres Sarah (jour 17, 16e) ; le 15e manquait'
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
 - id: ricky-poyet
@@ -19327,7 +19332,7 @@
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 13
-  classement: 12
+  classement: 11
   victoires_collectives: 4
   victoires_individuelles: 2
   sources:
@@ -19344,7 +19349,7 @@
     nom_complet: fandom
     votes_recus: fandom
     edition_origine: fandom
-    classement: fandom (page individuelle)
+    classement: 'table RANGS_CORRIGES : sortie jour 27, apres Sarah (jour 24, 12e) ; le 11e manquait'
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
 - id: maxim-iarkov
@@ -19602,6 +19607,7 @@
   sort: elimine_orientation
   motif: Éliminé à l'orientation
   votes_recus: 6
+  classement: 4
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -19616,6 +19622,7 @@
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
+    classement: 'table RANGS_CORRIGES : elimine a l''orientation jour 40 avec Cecile (5e) ; le 4e manquait'
 - id: cecile-belec
   nom: Cécile
   nom_complet: Cécile Belec
@@ -19732,6 +19739,7 @@
   sort: finaliste
   motif: Finaliste
   votes_recus: 6
+  classement: 2
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -19745,6 +19753,7 @@
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
+    classement: 'table RANGS_CORRIGES : finaliste ; le 2e manquait'
 - id: thibault-belanger
   nom: Thibault
   nom_complet: Thibault Bélanger
@@ -20803,6 +20812,7 @@
   sort: finaliste
   motif: Finaliste
   votes_recus: 1
+  classement: 2
   victoires_collectives: 6
   victoires_individuelles: 0
   sources:
@@ -20820,6 +20830,7 @@
     votes_recus: fandom
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    classement: 'table RANGS_CORRIGES : finaliste ; le 2e manquait'
 - id: gaelle-fleury
   nom: Gaëlle
   nom_complet: Gaëlle Fleury
@@ -21154,7 +21165,7 @@
   saison: s28
   genre: h
   age: 36
-  profession: Navigateur / Instructeur dans l'armée de l'air et de l'espace
+  profession: Navigateur / instructeur dans l'armée de l'air et de l'espace
   localisation: Bouches-du-Rhône
   edition_origine: null
   tribu: Lahoy
@@ -23206,7 +23217,7 @@
   saison: sp3
   genre: h
   age: 33
-  profession: Cuisiner
+  profession: Cuisinier
   localisation: Hérault
   edition_origine: null
   tribu: Nekmao
@@ -23583,7 +23594,7 @@
   saison: sp4
   genre: f
   age: 41
-  profession: Commerçante (Palau & La Revache des Héros)
+  profession: Commerçante (Palau & La Revanche des héros)
   localisation: Yvelines
   edition_origine: null
   tribu: Tengah
@@ -23647,7 +23658,7 @@
   nom: Sara
   nom_complet: Sara Tallon
   saison: sp4
-  genre: h
+  genre: f
   age: 45
   profession: Gérante d'un centre de fitness (Malaisie)
   localisation: Var
@@ -23665,13 +23676,13 @@
     jour_fin: 11
   jour_sortie: 11
   sort: elimine_conseil
-  motif: Éliminé au conseil
+  motif: Éliminée au conseil
   votes_recus: 8
   classement: 10
   victoires_collectives: 1
   victoires_individuelles: 0
   sources:
-    genre: fandom
+    genre: page individuelle Fandom (categorie)
     age: fandom
     profession: fandom
     tribu: fandom
@@ -23692,7 +23703,7 @@
   saison: sp4
   genre: f
   age: 43
-  profession: Educatrice (Raja Ampat)
+  profession: Éducatrice (Raja Ampat)
   localisation: Hérault
   edition_origine: null
   tribu: Tengah
@@ -23725,7 +23736,7 @@
   saison: sp4
   genre: f
   age: 28
-  profession: Serveuse (Palau & Le Choc des Héros)
+  profession: Serveuse (Palau & Le Choc des héros)
   localisation: Bouches-du-Rhône
   edition_origine: null
   tribu: Simban
@@ -23764,7 +23775,7 @@
   saison: sp4
   genre: h
   age: 29
-  profession: Ingénieur (Palau, Le Choc des Héros & La Revanche des Héros)
+  profession: Ingénieur (Palau, Le Choc des héros & La Revanche des héros)
   localisation: Nord
   edition_origine: null
   tribu: Simban
@@ -23807,7 +23818,7 @@
   saison: sp4
   genre: h
   age: 36
-  profession: Cuisinier (Raja Ampat & La Revanche des Héros)
+  profession: Cuisinier (Raja Ampat & La Revanche des héros)
   localisation: Hérault
   edition_origine: null
   tribu: Tengah
@@ -23893,7 +23904,7 @@
   saison: sp4
   genre: h
   age: 41
-  profession: Entrepreneur (Bocas del Toro & Le Retour des Héros)
+  profession: Entrepreneur (Bocas del Toro & Le Retour des héros)
   localisation: Paris
   edition_origine: null
   tribu: Tengah
@@ -25779,7 +25790,7 @@
   saison: sp7
   genre: h
   age: 51
-  profession: Ouvrier Teinturier
+  profession: Ouvrier teinturier
   localisation: Loire
   edition_origine: null
   tribu: Tribu des hommes
@@ -26421,7 +26432,7 @@
   saison: sp7
   genre: f
   age: 30
-  profession: Coach sportive et Pompier Volontaire
+  profession: Coach sportive et pompier volontaire
   localisation: Bouches-du-Rhône
   edition_origine: Les 4 Terres
   tribu: Korok
@@ -26447,7 +26458,7 @@
   sort: elimine_conseil
   motif: Éliminée au conseil
   votes_recus: 19
-  classement: 6
+  classement: 7
   victoires_collectives: 4
   victoires_individuelles: 2
   sources:
@@ -26464,7 +26475,7 @@
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
     age: fandom (page individuelle)
-    classement: fandom (page individuelle)
+    classement: 'table RANGS_CORRIGES : deux aventuriers au 6e rang ; le 7e manquait'
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
 - id: sam-haliti
@@ -26790,7 +26801,7 @@
   jour_sortie: 3
   sort: elimine_conseil
   motif: Éliminée au conseil
-  votes_recus: 0
+  votes_recus: null
   classement: 17
   victoires_collectives: 0
   victoires_individuelles: 0
@@ -26803,7 +26814,6 @@
     sort: fandom
     motif: fandom
     nom_complet: fandom
-    votes_recus: fandom
     edition_origine: fandom
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
@@ -26833,7 +26843,7 @@
   jour_sortie: 6
   sort: elimine_conseil
   motif: Éliminé au conseil
-  votes_recus: 12
+  votes_recus: null
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -26843,7 +26853,6 @@
     sort: fandom
     motif: fandom
     nom_complet: fandom
-    votes_recus: fandom
     edition_origine: fandom
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
@@ -26870,7 +26879,7 @@
   jour_sortie: 6
   sort: elimine_conseil
   motif: Éliminée au conseil
-  votes_recus: 0
+  votes_recus: null
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -26880,7 +26889,6 @@
     sort: fandom
     motif: fandom
     nom_complet: fandom
-    votes_recus: fandom
     edition_origine: fandom
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
@@ -26907,7 +26915,7 @@
   jour_sortie: 9
   sort: elimine_conseil
   motif: Éliminé au conseil
-  votes_recus: 12
+  votes_recus: null
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -26917,7 +26925,6 @@
     sort: fandom
     motif: fandom
     nom_complet: fandom
-    votes_recus: fandom
     edition_origine: fandom
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
@@ -26944,7 +26951,7 @@
   jour_sortie: 18
   sort: abandon_medical
   motif: Abandon médical
-  votes_recus: 17
+  votes_recus: null
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -26955,7 +26962,6 @@
     sort: fandom
     motif: fandom
     nom_complet: fandom
-    votes_recus: fandom
     edition_origine: fandom
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
@@ -26990,7 +26996,7 @@
   jour_sortie: null
   sort: null
   motif: Retour dans l'aventure
-  votes_recus: 5
+  votes_recus: null
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -26999,7 +27005,6 @@
     parcours: wikipedia-fr
     motif: fandom
     nom_complet: fandom
-    votes_recus: fandom
     edition_origine: fandom
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
@@ -27030,7 +27035,7 @@
   jour_sortie: 18
   sort: elimine_conseil
   motif: Éliminée au conseil
-  votes_recus: 7
+  votes_recus: null
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -27041,7 +27046,6 @@
     sort: fandom
     motif: fandom
     nom_complet: fandom
-    votes_recus: fandom
     edition_origine: fandom
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
@@ -27080,7 +27084,7 @@
   jour_sortie: null
   sort: null
   motif: Retour dans l'aventure
-  votes_recus: 8
+  votes_recus: null
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -27089,7 +27093,6 @@
     parcours: wikipedia-fr
     motif: fandom
     nom_complet: fandom
-    votes_recus: fandom
     edition_origine: fandom
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
@@ -27120,7 +27123,7 @@
   jour_sortie: null
   sort: null
   motif: Encore en jeu
-  votes_recus: 4
+  votes_recus: null
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -27129,7 +27132,6 @@
     parcours: wikipedia-fr
     motif: fandom
     nom_complet: fandom
-    votes_recus: fandom
     edition_origine: fandom
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
@@ -27162,7 +27164,7 @@
   jour_sortie: null
   sort: null
   motif: Encore en jeu
-  votes_recus: 0
+  votes_recus: null
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -27171,7 +27173,6 @@
     parcours: wikipedia-fr
     motif: fandom
     nom_complet: fandom
-    votes_recus: fandom
     edition_origine: fandom
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
@@ -27204,7 +27205,7 @@
   jour_sortie: null
   sort: null
   motif: Encore en jeu
-  votes_recus: 0
+  votes_recus: null
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -27213,7 +27214,6 @@
     parcours: wikipedia-fr
     motif: fandom
     nom_complet: fandom
-    votes_recus: fandom
     edition_origine: fandom
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
@@ -27246,7 +27246,7 @@
   jour_sortie: null
   sort: null
   motif: Encore en jeu
-  votes_recus: 0
+  votes_recus: null
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -27255,7 +27255,6 @@
     parcours: wikipedia-fr
     motif: fandom
     nom_complet: fandom
-    votes_recus: fandom
     edition_origine: fandom
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
@@ -27293,7 +27292,7 @@
   jour_sortie: null
   sort: null
   motif: Retour dans l'aventure
-  votes_recus: 4
+  votes_recus: null
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -27302,7 +27301,6 @@
     parcours: wikipedia-fr
     motif: fandom
     nom_complet: titre canonique Fandom (redirection)
-    votes_recus: fandom
     edition_origine: fandom
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
@@ -27337,8 +27335,8 @@
   jour_sortie: null
   sort: null
   motif: Retour dans l'aventure
-  votes_recus: 20
-  classement: 18
+  votes_recus: null
+  classement: null
   victoires_collectives: 0
   victoires_individuelles: 0
   sources:
@@ -27349,11 +27347,9 @@
     parcours: wikipedia-fr
     motif: fandom
     nom_complet: fandom
-    votes_recus: fandom
     edition_origine: fandom
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
-    classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
 - id: nicolas-pretot
@@ -27387,7 +27383,7 @@
   jour_sortie: null
   sort: null
   motif: Retour dans l'aventure
-  votes_recus: 6
+  votes_recus: null
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -27396,7 +27392,6 @@
     parcours: wikipedia-fr
     motif: fandom
     nom_complet: fandom
-    votes_recus: fandom
     edition_origine: fandom
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
@@ -27427,7 +27422,7 @@
   jour_sortie: null
   sort: null
   motif: Encore en jeu
-  votes_recus: 1
+  votes_recus: null
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -27436,7 +27431,6 @@
     parcours: wikipedia-fr
     motif: fandom
     nom_complet: fandom
-    votes_recus: fandom
     edition_origine: fandom
     localisation: fandom (page individuelle)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
@@ -27469,7 +27463,7 @@
   jour_sortie: null
   sort: null
   motif: Encore en jeu
-  votes_recus: 9
+  votes_recus: null
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -27478,7 +27472,6 @@
     parcours: wikipedia-fr
     motif: fandom
     nom_complet: fandom
-    votes_recus: fandom
     edition_origine: fandom
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
@@ -27515,7 +27508,7 @@
   jour_sortie: 21
   sort: elimine_conseil
   motif: Éliminé au conseil
-  votes_recus: 11
+  votes_recus: null
   sources:
     genre: wikipedia-fr
     age: wikipedia-fr
@@ -27526,7 +27519,6 @@
     sort: fandom
     motif: fandom
     nom_complet: fandom
-    votes_recus: fandom
     edition_origine: fandom
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)

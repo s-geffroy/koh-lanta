@@ -13,8 +13,8 @@ chapeau: >-
 {% assign reg = m.registre %}
 
 On lit souvent que la production « équilibre » ses castings. C’est une phrase
-facile à écrire et difficile à vérifier : par rapport à quoi serait-il
-équilibré ? Cette page répond en construisant le point de comparaison qui
+facile à écrire et difficile à vérifier : par rapport à quoi seraient-ils
+équilibrés ? Cette page répond en construisant le point de comparaison qui
 manque — **le même vivier, rebattu au hasard**.
 
 <p class="note"><strong>La méthode, en une phrase.</strong> On prend les
@@ -39,7 +39,7 @@ trait vertical est ce qu’on observe réellement.</p>
   <p>Un casting de Koh-Lanta s’écarte de la parité de
   <b>{{ t.observe }} personne</b> en moyenne. Un tirage à pile ou face
   s’en écarterait de <b>{{ t.attendu }}</b>.</p>
-  <p>C’est <b>{{ t.ecart_types }} écarts-types</b> en dessous du hasard
+  <p>C’est <b>{{ t.ecart_types_abs }} {{ t.ecart_types_mot }}</b> en dessous du hasard
   — p ajustée {{ t.p_ajustee }}. Autrement dit : la plupart des saisons partent
   <b>exactement</b> à égalité, et les autres à une personne près. Le hasard, lui,
   produit régulièrement des castings à douze contre huit.</p>
@@ -63,7 +63,7 @@ saison prise séparément**.
 en années.</p>
 
 L’écart observé est de **{{ t.observe }} ans** contre **{{ t.attendu }}**
-attendus : le test le détecte ({{ t.ecart_types }} écarts-types, p ajustée
+attendus : le test le détecte ({{ t.ecart_types }} {{ t.ecart_types_mot }}, p ajustée
 {{ t.p_ajustee }}), et il tient quand on ne rebat les castings qu’à l’intérieur
 de leur propre décennie. Mais **l’écart vaut {{ site.data.stats.mots.ecart_ages_mois }} mois**. Il est réel et
 il est négligeable : la production mélange les âges à peine plus qu’un tirage au
@@ -79,7 +79,7 @@ a rien à en tirer.
 
 {% include graphiques/casting-metiers.svg %}
 
-<p class="legende-figure">Nombre total de cases « saison × famille de métier »
+<p class="legende-figure">Nombre total de cases « saison × famille de métiers »
 occupées, sur les {{ c.saisons }} saisons classiques.</p>
 
 On imagine volontiers une liste de courses — il faut un pompier, il faut un
@@ -104,7 +104,7 @@ sort.
 <p class="legende-figure">Écart d’âge moyen entre les deux tribus initiales.</p>
 
 À la moyenne, l’écart est de **{{ t.observe }} ans** contre {{ t.attendu }}
-attendus ({{ t.ecart_types }} écarts-types, p ajustée {{ t.p_ajustee }}) : les
+attendus ({{ t.ecart_types }} {{ t.ecart_types_mot }}, p ajustée {{ t.p_ajustee }}) : les
 tribus diffèrent **plus** qu’un tirage au sort, et non moins. Mais la médiane
 raconte autre chose.
 
@@ -168,7 +168,7 @@ personnes. Parmi les découpes qui respectent ce plancher, on retient celle dont
 la silhouette est la plus haute : {{ c.nb_archetypes }} groupes.</p>
 
 Les {{ site.data.stats.mots.archetypes }} étiquettes se lisent comme un générique : la femme de la fin de la
-vingtaine, dans le commerce,
+vingtaine, dans la restauration et l’hôtellerie,
 l’homme de trente ans du monde agricole, l’artisan de quarante ans, le
 quarante-cinq-ans-et-plus sans emploi déclaré, les moins de vingt-cinq ans, et
 l’étudiante. Ce sont des **régions d’un continuum**, pas des populations

@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Mickaël Kalfallah — Malaisie (2012)"
-description: "Mickaël Kalfallah, Koh-Lanta Malaisie (2012) : sort au conseil le 6e jour, 19e sur 20, 0 épreuve gagnée. 505e sur 531 au classement des aventuriers."
+description: "Mickaël Kalfallah, Koh-Lanta Malaisie (2012) : sort au conseil le 6e jour, 19e sur 20, aucune épreuve gagnée. 488e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/mickael-kalfallah.png
 permalink: /aventuriers/mickael-kalfallah/
 aventurier: mickael-kalfallah

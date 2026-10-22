@@ -130,7 +130,20 @@ def main():
     for p in parts:
         par_saison[p["saison"]].append(p)
 
-    cibles = [p for p in parts if p.get("sort") == "elimine_ambassadeurs"]
+    # Les ambassades se lisent dans les COLONNES de nature ambassadeurs, pas
+    # dans le sort final : un revenant (Alexandre a Palau, Quentin au Feu
+    # sacre, Maxime a La Revanche des 4 Terres) a perdu une ambassade avant de
+    # sortir autrement, et le sort final l'oubliait.
+    fiche = {(p["saison"], p["id"]): p for p in parts}
+    cibles, ep_ambassade = [], {}
+    for c in conseils:
+        if (c.get("type") == "sortie" and c.get("nature") == "elimine_ambassadeurs"
+                and (c["saison"], c.get("elimine")) in fiche):
+            cibles.append(fiche[(c["saison"], c["elimine"])])
+            try:
+                ep_ambassade[(c["saison"], c["elimine"])] = int(c["episode"])
+            except (TypeError, ValueError):
+                pass
     lignes, rapport = [], []
     accord = desaccord = 0
 
@@ -170,7 +183,9 @@ def main():
         noms, tirage, phrase = lectures[suffixe]
 
         # Controle : un ambassadeur est encore en jeu a l'episode de l'ambassade.
-        episode = sortie_ep.get((sid, c["id"]))
+        # L'episode de l'AMBASSADE, pas celui de la sortie finale : un
+        # revenant sort plus tard, et ses ambassadeurs pouvaient etre partis.
+        episode = ep_ambassade.get((sid, c["id"]), sortie_ep.get((sid, c["id"])))
         presents = [p["id"] for p in par_saison[sid]
                     if episode is None or sortie_ep.get((sid, p["id"]), -1) >= episode]
         hors = [n for n in noms if n not in presents]

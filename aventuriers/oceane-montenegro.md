@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Océane Montenegro (2024)"
-description: "Océane Montenegro, Koh-Lanta Les Chasseurs d'immunité (2024) : sort à une épreuve éliminatoire le 26e jour. 490e sur 531 au classement des aventuriers."
+description: "Océane Montenegro, Koh-Lanta Les Chasseurs d'immunité (2024) : sort à une épreuve éliminatoire le 26e jour. 473e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/oceane-montenegro.png
 permalink: /aventuriers/oceane-montenegro/
 aventurier: oceane-montenegro

@@ -59,6 +59,10 @@ RESEAUX = [
 
 # Ce qui est reutilisable sans condition autre que le credit. La liste est
 # FERMEE : une licence inconnue n'est pas presumee libre.
+# Le libelle de licence s'affiche sous la photo : en francais quand Commons
+# l'ecrit en anglais. Les sigles CC restent tels quels.
+LIBELLES_LICENCE = {"Public domain": "Domaine public"}
+
 LICENCES_LIBRES = re.compile(
     r"^(cc0|cc-by-\d|cc-by-sa-\d|pd$|pd-|public.?domain|attribution$)", re.I)
 
@@ -311,7 +315,9 @@ def image_commons(fichier):
             return {
                 "fichier": fichier,
                 "vignette": info.get("thumburl") or info.get("url"),
-                "licence": (meta.get("LicenseShortName") or {}).get("value") or licence,
+                "licence": LIBELLES_LICENCE.get(
+                    (meta.get("LicenseShortName") or {}).get("value") or licence,
+                    (meta.get("LicenseShortName") or {}).get("value") or licence),
                 "licence_url": (meta.get("LicenseUrl") or {}).get("value"),
                 "auteur": sans_balises((meta.get("Artist") or {}).get("value"))
                           or sans_balises((meta.get("Credit") or {}).get("value")),

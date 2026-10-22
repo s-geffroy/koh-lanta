@@ -16,10 +16,10 @@ des comptages, parmi lesquelles
 [Le pronostic]({{ '/statistiques/pronostic/' | relative_url }}),
 [La force réelle]({{ '/statistiques/force/' | relative_url }}),
 [Le jeu tenu serré]({{ '/statistiques/equilibre/' | relative_url }}),
-[Les alliances]({{ '/statistiques/alliances/' | relative_url }}) et
+[Les alliances]({{ '/statistiques/alliances/' | relative_url }}),
 [La grille]({{ '/statistiques/grille/' | relative_url }}),
-[Qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }}) et
-[Le vote du jury]({{ '/statistiques/jury/' | relative_url }}) et
+[Qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }}),
+[Le vote du jury]({{ '/statistiques/jury/' | relative_url }}),
 [D’où ils viennent]({{ '/statistiques/geographie/' | relative_url }}),
 [L’audience]({{ '/statistiques/audience/' | relative_url }}) et
 [Avant et après la réunification]({{ '/statistiques/reunification/' | relative_url }}). Cette
@@ -27,7 +27,7 @@ page dit comment ils sont construits et ce qu’ils ne peuvent pas établir.
 
 ## Trois règles, tenues partout
 
-**Jamais de p-value sans taille d’effet.** Un écart « significatif » de un quart
+**Jamais de p-value sans taille d’effet.** Un écart « significatif » d’un quart
 d’année reste un écart d’un quart d’année. Chaque test publie donc ce qu’on
 observe, ce que le hasard donnerait, et l’écart entre les deux.
 
@@ -36,10 +36,15 @@ une précision qui n’existe pas. Les intervalles à 95 % sont partout, et
 plusieurs résultats de ce site consistent précisément en un intervalle qui
 traverse la valeur neutre.
 
-**Tous les tests sont déclarés.** La liste ci-dessous est complète : elle
-contient les résultats nets comme les échecs. C’est ce qui rend la correction
-pour tests multiples honnête — corriger sur une liste choisie après coup ne
-corrige rien.
+**Tous les tests sont déclarés.** Le tableau ci-dessous liste les
+{{ m.nb_tests }} tests du registre, résultats nets comme échecs. La correction
+pour tests multiples porte en outre sur les
+{{ m.coefficients_corriges }} coefficients de régression que le site publie
+avec une p — variables de contrôle comprises, puisqu’on ne choisit pas après
+coup lesquels « comptent » : {{ m.famille_corrigee }} p-values en tout. C’est ce
+qui rend la correction honnête — corriger sur une liste choisie après coup ne
+corrige rien. Jusqu’au 22 octobre 2026, ces coefficients étaient publiés sans
+correction, et des conclusions se sont défaites quand ils l’ont été.
 
 ## Pourquoi corriger, et comment
 
@@ -79,9 +84,10 @@ correction.
 
 ### Le test de permutation
 
-Utilisé pour toutes les questions de composition du casting. On rebat les
+Utilisé pour les questions de composition du casting. On rebat les
 aventuriers au hasard entre les saisons, en gardant la taille de chaque casting,
-et on recommence **{{ m.permutations }} fois**. La comparaison ne se fait donc
+et on recommence **{{ m.permutations }} fois**. Une exception : la parité, qui
+se compare à un tirage à pile ou face pour chaque place du casting. La comparaison ne se fait donc
 pas à la population française, mais **au même vivier, redistribué**. Un écart
 qui subsiste est un écart que le hasard ne produit pas.
 
@@ -99,13 +105,13 @@ Une classification automatique tourne ensuite sur ces axes ; le nombre de
 groupes est celui qui maximise l’indice de silhouette, à condition qu’aucun
 groupe ne pèse moins de 2 % du casting.
 
-**La tribu initiale en est exclue**, et cette exclusion est un correctif : tant qu’il y
+**La tribu initiale en est exclue**, et cette exclusion est un correctif : tant qu’elle y
 figurait, le test du « mélange d’archétypes » sortait à 7,95 écarts-types. Les
 couleurs en jeu changeant d’une saison à l’autre, une saison ne pouvait
 mécaniquement pas contenir tous les profils — le test mesurait la grille des
 tribus, pas le casting. Sans la tribu initiale, il tombe à
 {% assign tma = m.registre | where: "cle", "melange_archetypes" | first %}{{ tma.ecart_types }}
-écart-type et n’est pas retenu.
+{{ tma.ecart_types_mot }} et n’est pas retenu.
 
 ### Le modèle de Plackett-Luce
 
@@ -135,6 +141,12 @@ fois. **La date sort des données**, elle n’est pas choisie — et comme une
 coupure existe toujours, sa qualité est comparée à celle de la meilleure coupure
 obtenue sur des saisons remises dans un ordre au hasard.
 
+Ce premier modèle nul détruit aussi toute tendance : il dit seulement que la
+série n’est pas stable. Pour savoir si elle **casse**, un second modèle nul
+garde la tendance linéaire et remet au hasard les écarts à cette tendance. Ni
+le format ni l’audience ne le battent : leur évolution ne se distingue pas
+d’une pente régulière.
+
 ### Le logit conditionnel
 
 Quand le choix est contraint — un juré choisit parmi les finalistes de sa
@@ -142,6 +154,11 @@ saison, pas parmi tout le casting — c’est le modèle juste. Chaque choix for
 son propre groupe de comparaison, ce qui absorbe d’un coup tout ce qui est
 constant à l’intérieur du groupe : la saison, l’année, le caractère du juré. Il
 ne reste que ce qui distingue les options **entre elles**.
+
+Les choix d’une même saison ne sont pas indépendants : les jurés d’une saison
+jugent les mêmes finalistes. L’intervalle et la p viennent donc d’un tirage des
+**saisons** avec remise, et non des erreurs-types du modèle, qui les tenaient
+pour indépendants et donnaient des intervalles trop étroits.
 
 ### Le modèle nul du réseau des votes
 
@@ -161,6 +178,12 @@ la contrainte posée. L’épisode est raconté sur
 dit mieux que tout ce qu’un test de permutation vaut : **exactement ce que vaut
 son modèle nul**.
 
+Le brassage donne l’**attendu**. L’incertitude, elle, ne peut pas venir de lui
+seul : les mêmes blocs votent ensemble d’un conseil à l’autre, et brasser
+chaque conseil indépendamment la sous-estime. Pour les tests de ressemblance
+entre votant et cible, elle vient donc d’un tirage des saisons, appliqué à
+l’écart entre observé et attendu.
+
 ### La régression logistique, pour un oui ou un non
 
 Quand la chose à expliquer est binaire — être rappelé ou non, partir ou non — et
@@ -170,10 +193,11 @@ plus probable, toutes les autres variables tenues fixes. Il sert sur
 [Les revenants]({{ '/statistiques/revenants/' | relative_url }}) pour séparer ce
 que la production choisit de ce que la longévité explique déjà.
 
-Ses coefficients ne figurent **pas** dans le registre des tests corrigés :
-celui-ci ne contient que les tests de permutation, dont le modèle nul est
-explicite et vérifiable. Un coefficient de régression y est publié avec son
-intervalle, et il se lit comme tel — une estimation, pas une découverte.
+Ses coefficients n’entrent pas dans le tableau du registre, mais ils entrent
+dans la **même correction** : chacun porte sa p ajustée, et ne se dit
+« retenu » que s’il franchit le seuil après correction. Les observations d’une
+même saison n’étant pas indépendantes, les erreurs-types sont regroupées par
+saison.
 
 ### Le modèle nul qui n’est pas un tirage au hasard
 
@@ -385,17 +409,17 @@ Trois conséquences, et elles ne vont pas dans le même sens.
 {% assign ps = m.puissance | first %}
 **Le niveau de la saison est épuisé.** {{ ps.observations }} saisons classiques
 ne permettent de détecter qu’un effet de {{ ps.effet_texte }}. Tout ce qui pouvait s’y
-voir — la rupture de régime, la réunification calée sur la grille, l’absence d’effet
+voir — la dérive du format, la réunification calée sur la grille, l’absence d’effet
 des mécaniques — a été cherché. Ce qui resterait serait si gros qu’il sauterait
 déjà aux yeux. C’est aussi le niveau le plus fragile : vingt-trois valeurs
 d’âge ajoutées au jeu de données ont suffi, un jour, à déplacer de sept ans la
-date de rupture, sans rien changer à son existence.
+meilleure date de coupure, sans rien changer au fait que le jeu a changé.
 [La grille]({{ '/statistiques/grille/' | relative_url }}) le raconte.
 
 **Le niveau du bulletin reste le bon endroit**, et c’est là que les résultats les
-plus solides de ce site ont été trouvés : la persistance des alliances,
-l’appartenance à la majorité, la protection de la tribu initiale, la trahison
-qui n’en est pas une. Mais les questions qui restent à ce niveau — qui propose un
+plus solides de ce site ont été trouvés : la persistance des alliances — dont la
+rareté de la trahison est l’autre face, pas un second résultat —,
+l’appartenance à la majorité, la protection de la tribu initiale. Mais les questions qui restent à ce niveau — qui propose un
 nom, qui suit, dans quel ordre les bulletins sont écrits — demandent une
 information que **les sources ne contiennent pas**.
 
@@ -411,7 +435,7 @@ s’arrêter, et ce serait malhonnête de le prétendre.
 sur ce site, un résultat spectaculaire s’est révélé fabriqué par la manière de
 tirer au sort : le vote homophile, où le modèle nul laissait un aventurier
 recevoir son propre nom ; le mélange d’archétypes, où la tribu initiale — assignée par
-la production, et différent d’une saison à l’autre — rendait le résultat vrai
+la production, et différente d’une saison à l’autre — rendait le résultat vrai
 par construction. Les deux sont racontés là où ils sont tombés, et non effacés.
 Aucune correction pour tests multiples n’aurait attrapé ni l’un ni l’autre.
 

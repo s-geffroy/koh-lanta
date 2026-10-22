@@ -25,6 +25,11 @@
   issue: joue_pour_rien
   jour_trouve: 19
   episode_utilisation: 7
+  jour_utilisation: 19
+  joueur:
+    libelle: Mohamed
+    id: mohamed-siaaliti
+    resolu: true
   votes_annules: 0
   votes_exprimes: 14
 - saison: s20
@@ -33,26 +38,23 @@
   - libelle: Victor
     id: victor-rollinger
     resolu: true
-  detenteurs_suivants: []
-  proteges: []
-  statut: null
-  issue: elimine_avec_collier
-  jour_trouve: 11
-  episode_utilisation: null
-  votes_annules: null
-  votes_exprimes: null
-- saison: s20
-  localisation: Camp des Tabuo
-  detenteurs:
-  - libelle: Victor
-    id: victor-rollinger
+  detenteurs_suivants:
+  - libelle: Béatrice
+    id: beatrice-kabore
     resolu: true
-  detenteurs_suivants: []
+  - libelle: Steeve
+    id: steeve-demana
+    resolu: true
   proteges: []
   statut: utilise
   issue: joue_pour_rien
   jour_trouve: 11
   episode_utilisation: 13
+  jour_utilisation: 37
+  joueur:
+    libelle: Steeve
+    id: steeve-demana
+    resolu: true
   votes_annules: 0
   votes_exprimes: 7
 - saison: s20
@@ -67,6 +69,11 @@
   issue: annulation_efficace
   jour_trouve: 18
   episode_utilisation: 11
+  jour_utilisation: 31
+  joueur:
+    libelle: Cyril
+    id: cyril-rouanne
+    resolu: true
   votes_annules: 6
   votes_exprimes: 10
 - saison: s20
@@ -81,6 +88,11 @@
   issue: joue_pour_rien
   jour_trouve: 8
   episode_utilisation: 13
+  jour_utilisation: 37
+  joueur:
+    libelle: Cindy
+    id: cindy-poumeyrol
+    resolu: true
   votes_annules: 0
   votes_exprimes: 7
 - saison: s21
@@ -92,6 +104,8 @@
   issue: non_decouvert
   jour_trouve: null
   episode_utilisation: null
+  jour_utilisation: null
+  joueur: null
   votes_annules: null
   votes_exprimes: null
 - saison: s21
@@ -106,6 +120,11 @@
   issue: annulation_efficace
   jour_trouve: 7
   episode_utilisation: 4
+  jour_utilisation: null
+  joueur:
+    libelle: Aubin
+    id: aubin-bligny
+    resolu: true
   votes_annules: 4
   votes_exprimes: 5
 - saison: s21
@@ -120,6 +139,11 @@
   issue: annulation_efficace
   jour_trouve: 8
   episode_utilisation: 3
+  jour_utilisation: null
+  joueur:
+    libelle: Estelle
+    id: estelle-fabrice
+    resolu: true
   votes_annules: 5
   votes_exprimes: 6
 - saison: s21
@@ -128,12 +152,20 @@
   - libelle: Alix
     id: alix-noblat
     resolu: true
-  detenteurs_suivants: []
+  detenteurs_suivants:
+  - libelle: Dorian
+    id: dorian-louvet
+    resolu: true
   proteges: []
   statut: utilise
   issue: annulation_efficace
   jour_trouve: 12
   episode_utilisation: 8
+  jour_utilisation: null
+  joueur:
+    libelle: Dorian
+    id: dorian-louvet
+    resolu: true
   votes_annules: 1
   votes_exprimes: 14
 - saison: s21
@@ -148,6 +180,11 @@
   issue: joue_pour_rien
   jour_trouve: 11
   episode_utilisation: 13
+  jour_utilisation: null
+  joueur:
+    libelle: Lola
+    id: lola-labesse
+    resolu: true
   votes_annules: 0
   votes_exprimes: 7
 - saison: s21
@@ -156,12 +193,20 @@
   - libelle: Lola
     id: lola-labesse
     resolu: true
-  detenteurs_suivants: []
+  detenteurs_suivants:
+  - libelle: Angélique
+    id: angelique-ti
+    resolu: true
   proteges: []
   statut: utilise
   issue: annulation_efficace
   jour_trouve: 26
   episode_utilisation: 10
+  jour_utilisation: null
+  joueur:
+    libelle: Angélique
+    id: angelique-ti
+    resolu: true
   votes_annules: 6
   votes_exprimes: 13
 - saison: s24
@@ -176,6 +221,11 @@
   issue: joue_pour_rien
   jour_trouve: 17
   episode_utilisation: 9
+  jour_utilisation: null
+  joueur:
+    libelle: Quentin
+    id: quentin-paygnard
+    resolu: true
   votes_annules: 0
   votes_exprimes: 12
 - saison: s24
@@ -187,6 +237,8 @@
   issue: non_decouvert
   jour_trouve: null
   episode_utilisation: null
+  jour_utilisation: null
+  joueur: null
   votes_annules: null
   votes_exprimes: null
 - saison: s24
@@ -201,6 +253,11 @@
   issue: joue_pour_rien
   jour_trouve: 26
   episode_utilisation: 10
+  jour_utilisation: null
+  joueur:
+    libelle: Gilles
+    id: gilles-de-baere
+    resolu: true
   votes_annules: 0
   votes_exprimes: 11
 - saison: s24
@@ -215,6 +272,11 @@
   issue: annulation_efficace
   jour_trouve: 34
   episode_utilisation: 15
+  jour_utilisation: null
+  joueur:
+    libelle: Tania
+    id: tania-cakarevic
+    resolu: true
   votes_annules: 5
   votes_exprimes: 7
 - saison: s25
@@ -235,6 +297,11 @@
   issue: joue_pour_rien
   jour_trouve: 3
   episode_utilisation: 1
+  jour_utilisation: 3
+  joueur:
+    libelle: Steve
+    id: steve-grenier
+    resolu: true
   votes_annules: 0
   votes_exprimes: 10
 - saison: s25
@@ -252,6 +319,8 @@
   issue: elimine_avec_collier
   jour_trouve: 4
   episode_utilisation: null
+  jour_utilisation: null
+  joueur: null
   votes_annules: null
   votes_exprimes: null
 - saison: s25
@@ -272,6 +341,11 @@
   issue: annulation_efficace
   jour_trouve: 9
   episode_utilisation: 4
+  jour_utilisation: 12
+  joueur:
+    libelle: Pauline
+    id: pauline-bonneil
+    resolu: true
   votes_annules: 1
   votes_exprimes: 8
 - saison: s25
@@ -289,6 +363,11 @@
   issue: joue_pour_rien
   jour_trouve: 9
   episode_utilisation: 3
+  jour_utilisation: 9
+  joueur:
+    libelle: Aurélien
+    id: aurelien-dulau
+    resolu: true
   votes_annules: 0
   votes_exprimes: 9
 - saison: s25
@@ -309,6 +388,11 @@
   issue: annulation_efficace
   jour_trouve: 18
   episode_utilisation: 9
+  jour_utilisation: 23
+  joueur:
+    libelle: Amri
+    id: amri-madani
+    resolu: true
   votes_annules: 7
   votes_exprimes: 13
 - saison: s25
@@ -326,6 +410,11 @@
   issue: joue_pour_rien
   jour_trouve: 20
   episode_utilisation: 9
+  jour_utilisation: 23
+  joueur:
+    libelle: Pauline
+    id: pauline-bonneil
+    resolu: true
   votes_annules: 0
   votes_exprimes: 13
 - saison: s25
@@ -343,6 +432,11 @@
   issue: joue_pour_rien
   jour_trouve: 4
   episode_utilisation: 2
+  jour_utilisation: 6
+  joueur:
+    libelle: Léa
+    id: lea-notardonato
+    resolu: true
   votes_annules: 0
   votes_exprimes: 11
 - saison: s25
@@ -351,7 +445,10 @@
   - libelle: Ricky
     id: ricky-poyet
     resolu: true
-  detenteurs_suivants: []
+  detenteurs_suivants:
+  - libelle: Meïssa
+    id: meissa-seck
+    resolu: true
   proteges:
   - libelle: Cécile
     id: cecile-poprawa
@@ -360,6 +457,11 @@
   issue: joue_pour_rien
   jour_trouve: 8
   episode_utilisation: 9
+  jour_utilisation: 23
+  joueur:
+    libelle: Meïssa
+    id: meissa-seck
+    resolu: true
   votes_annules: 0
   votes_exprimes: 13
 - saison: s25
@@ -377,6 +479,11 @@
   issue: annulation_efficace
   jour_trouve: 11
   episode_utilisation: 5
+  jour_utilisation: 14
+  joueur:
+    libelle: Julie
+    id: julie-rignault
+    resolu: true
   votes_annules: 2
   votes_exprimes: 10
 - saison: s25
@@ -397,6 +504,11 @@
   issue: annulation_efficace
   jour_trouve: 16
   episode_utilisation: 7
+  jour_utilisation: 20
+  joueur:
+    libelle: Cécile
+    id: cecile-poprawa
+    resolu: true
   votes_annules: 1
   votes_exprimes: 9
 - saison: s25
@@ -414,6 +526,11 @@
   issue: annulation_efficace
   jour_trouve: 25
   episode_utilisation: 10
+  jour_utilisation: 26
+  joueur:
+    libelle: Amri
+    id: amri-madani
+    resolu: true
   votes_annules: 7
   votes_exprimes: 12
 - saison: s25
@@ -431,6 +548,11 @@
   issue: annulation_efficace
   jour_trouve: 31
   episode_utilisation: 12
+  jour_utilisation: 32
+  joueur:
+    libelle: Amri
+    id: amri-madani
+    resolu: true
   votes_annules: 2
   votes_exprimes: 9
 - saison: s25
@@ -448,6 +570,11 @@
   issue: joue_pour_rien
   jour_trouve: 34
   episode_utilisation: 13
+  jour_utilisation: 34
+  joueur:
+    libelle: Sébastien
+    id: sebastien-cazaux
+    resolu: true
   votes_annules: 0
   votes_exprimes: 8
 - saison: s25
@@ -465,6 +592,8 @@
   issue: garde_sans_usage
   jour_trouve: 36
   episode_utilisation: 14
+  jour_utilisation: 36
+  joueur: null
   votes_annules: null
   votes_exprimes: null
 - saison: s25
@@ -479,6 +608,8 @@
   issue: garde_sans_usage
   jour_trouve: 38
   episode_utilisation: null
+  jour_utilisation: null
+  joueur: null
   votes_annules: null
   votes_exprimes: null
 - saison: s25
@@ -493,6 +624,8 @@
   issue: garde_sans_usage
   jour_trouve: 38
   episode_utilisation: null
+  jour_utilisation: null
+  joueur: null
   votes_annules: null
   votes_exprimes: null
 - saison: s26
@@ -504,6 +637,8 @@
   issue: non_decouvert
   jour_trouve: null
   episode_utilisation: null
+  jour_utilisation: null
+  joueur: null
   votes_annules: null
   votes_exprimes: null
 - saison: s26
@@ -515,6 +650,8 @@
   issue: non_decouvert
   jour_trouve: null
   episode_utilisation: null
+  jour_utilisation: null
+  joueur: null
   votes_annules: null
   votes_exprimes: null
 - saison: s26
@@ -523,12 +660,20 @@
   - libelle: Ugo
     id: ugo-lartiche
     resolu: true
-  detenteurs_suivants: []
+  detenteurs_suivants:
+  - libelle: Cassandre
+    id: cassandre-lambert
+    resolu: true
   proteges: []
   statut: utilise
   issue: annulation_efficace
   jour_trouve: 25
   episode_utilisation: 12
+  jour_utilisation: 33
+  joueur:
+    libelle: Cassandre
+    id: cassandre-lambert
+    resolu: true
   votes_annules: 4
   votes_exprimes: 11
 - saison: s26
@@ -537,12 +682,20 @@
   - libelle: Maxim
     id: maxim-iarkov
     resolu: true
-  detenteurs_suivants: []
+  detenteurs_suivants:
+  - libelle: Ugo
+    id: ugo-lartiche
+    resolu: true
   proteges: []
   statut: utilise
   issue: annulation_efficace
   jour_trouve: 27
   episode_utilisation: 13
+  jour_utilisation: 36
+  joueur:
+    libelle: Ugo
+    id: ugo-lartiche
+    resolu: true
   votes_annules: 3
   votes_exprimes: 9
 - saison: s26
@@ -557,6 +710,8 @@
   issue: garde_sans_usage
   jour_trouve: 4
   episode_utilisation: null
+  jour_utilisation: null
+  joueur: null
   votes_annules: null
   votes_exprimes: null
 - saison: s26
@@ -571,6 +726,11 @@
   issue: joue_pour_rien
   jour_trouve: 8
   episode_utilisation: 8
+  jour_utilisation: 21
+  joueur:
+    libelle: Ilyesse
+    id: ilyesse-benyoub
+    resolu: true
   votes_annules: 0
   votes_exprimes: 14
 - saison: s26
@@ -585,6 +745,11 @@
   issue: joue_pour_rien
   jour_trouve: 10
   episode_utilisation: 8
+  jour_utilisation: 21
+  joueur:
+    libelle: Cécile
+    id: cecile-belec
+    resolu: true
   votes_annules: 0
   votes_exprimes: 14
 - saison: s26
@@ -599,6 +764,11 @@
   issue: annulation_efficace
   jour_trouve: 13
   episode_utilisation: 5
+  jour_utilisation: 15
+  joueur:
+    libelle: Mélissa
+    id: melissa-pierru
+    resolu: true
   votes_annules: 6
   votes_exprimes: 9
 - saison: s26
@@ -613,6 +783,8 @@
   issue: garde_sans_usage
   jour_trouve: 13
   episode_utilisation: null
+  jour_utilisation: null
+  joueur: null
   votes_annules: null
   votes_exprimes: null
 - saison: s27
@@ -627,6 +799,11 @@
   issue: annulation_efficace
   jour_trouve: 5
   episode_utilisation: 6
+  jour_utilisation: 16
+  joueur:
+    libelle: Andréa
+    id: andrea-zogron
+    resolu: true
   votes_annules: 8
   votes_exprimes: 11
 - saison: s27
@@ -638,6 +815,8 @@
   issue: non_decouvert
   jour_trouve: null
   episode_utilisation: null
+  jour_utilisation: null
+  joueur: null
   votes_annules: null
   votes_exprimes: null
 - saison: s27
@@ -649,6 +828,8 @@
   issue: non_decouvert
   jour_trouve: null
   episode_utilisation: null
+  jour_utilisation: null
+  joueur: null
   votes_annules: null
   votes_exprimes: null
 - saison: s27
@@ -660,6 +841,8 @@
   issue: non_decouvert
   jour_trouve: null
   episode_utilisation: null
+  jour_utilisation: null
+  joueur: null
   votes_annules: null
   votes_exprimes: null
 - saison: s27
@@ -671,6 +854,8 @@
   issue: non_decouvert
   jour_trouve: null
   episode_utilisation: null
+  jour_utilisation: null
+  joueur: null
   votes_annules: null
   votes_exprimes: null
 - saison: s27
@@ -682,6 +867,8 @@
   issue: non_decouvert
   jour_trouve: null
   episode_utilisation: null
+  jour_utilisation: null
+  joueur: null
   votes_annules: null
   votes_exprimes: null
 - saison: s27
@@ -696,6 +883,11 @@
   issue: annulation_efficace
   jour_trouve: 28
   episode_utilisation: 12
+  jour_utilisation: 32
+  joueur:
+    libelle: Gaëlle
+    id: gaelle-fleury
+    resolu: true
   votes_annules: 5
   votes_exprimes: 11
 - saison: s27
@@ -710,6 +902,8 @@
   issue: elimine_avec_collier
   jour_trouve: 32
   episode_utilisation: null
+  jour_utilisation: null
+  joueur: null
   votes_annules: null
   votes_exprimes: null
 - saison: s27
@@ -724,6 +918,8 @@
   issue: garde_sans_usage
   jour_trouve: 12
   episode_utilisation: null
+  jour_utilisation: null
+  joueur: null
   votes_annules: null
   votes_exprimes: null
 - saison: s27
@@ -738,6 +934,11 @@
   issue: annulation_efficace
   jour_trouve: 12
   episode_utilisation: 5
+  jour_utilisation: 14
+  joueur:
+    libelle: Naïs
+    id: nais-napoletano
+    resolu: true
   votes_annules: 6
   votes_exprimes: 11
 - saison: s27
@@ -752,6 +953,11 @@
   issue: joue_pour_rien
   jour_trouve: 12
   episode_utilisation: 6
+  jour_utilisation: 16
+  joueur:
+    libelle: Claire
+    id: claire-passas
+    resolu: true
   votes_annules: 0
   votes_exprimes: 11
 - saison: s27
@@ -766,6 +972,11 @@
   issue: joue_pour_rien
   jour_trouve: 12
   episode_utilisation: 6
+  jour_utilisation: 16
+  joueur:
+    libelle: Jérôme
+    id: jerome-salvatore
+    resolu: true
   votes_annules: 0
   votes_exprimes: 11
 - saison: s28
@@ -777,6 +988,8 @@
   issue: non_decouvert
   jour_trouve: null
   episode_utilisation: null
+  jour_utilisation: null
+  joueur: null
   votes_annules: null
   votes_exprimes: null
 - saison: s28
@@ -788,6 +1001,8 @@
   issue: non_decouvert
   jour_trouve: null
   episode_utilisation: null
+  jour_utilisation: null
+  joueur: null
   votes_annules: null
   votes_exprimes: null
 - saison: s28
@@ -802,6 +1017,11 @@
   issue: annulation_efficace
   jour_trouve: 30
   episode_utilisation: 12
+  jour_utilisation: 31
+  joueur:
+    libelle: Cynthia
+    id: cynthia-combes
+    resolu: true
   votes_annules: 3
   votes_exprimes: 9
 - saison: s28
@@ -816,6 +1036,11 @@
   issue: annulation_efficace
   jour_trouve: 33
   episode_utilisation: 13
+  jour_utilisation: 34
+  joueur:
+    libelle: Cynthia
+    id: cynthia-combes
+    resolu: true
   votes_annules: 1
   votes_exprimes: 9
 - saison: s28
@@ -830,6 +1055,11 @@
   issue: annulation_efficace
   jour_trouve: 3
   episode_utilisation: 3
+  jour_utilisation: 8
+  joueur:
+    libelle: Lionel
+    id: lionel-dubouchet
+    resolu: true
   votes_annules: 3
   votes_exprimes: 9
 - saison: s28
@@ -844,6 +1074,11 @@
   issue: annulation_efficace
   jour_trouve: 8
   episode_utilisation: 4
+  jour_utilisation: 11
+  joueur:
+    libelle: Cindy
+    id: cindy-sulpice-gonzalez
+    resolu: true
   votes_annules: 1
   votes_exprimes: 8
 - saison: s28
@@ -858,6 +1093,8 @@
   issue: garde_sans_usage
   jour_trouve: 16
   episode_utilisation: null
+  jour_utilisation: null
+  joueur: null
   votes_annules: null
   votes_exprimes: null
 - saison: s28
@@ -866,12 +1103,20 @@
   - libelle: Jade
     id: jade-correa
     resolu: true
-  detenteurs_suivants: []
+  detenteurs_suivants:
+  - libelle: Hugo
+    id: hugo-van-aertryck
+    resolu: true
   proteges: []
   statut: utilise
   issue: annulation_efficace
   jour_trouve: 19
   episode_utilisation: 9
+  jour_utilisation: 22
+  joueur:
+    libelle: Hugo
+    id: hugo-van-aertryck
+    resolu: true
   votes_annules: 7
   votes_exprimes: 13
 - saison: s28
@@ -886,6 +1131,11 @@
   issue: joue_pour_rien
   jour_trouve: 29
   episode_utilisation: 12
+  jour_utilisation: 31
+  joueur:
+    libelle: Guillaume
+    id: guillaume-le-deun
+    resolu: true
   votes_annules: 0
   votes_exprimes: 9
 - saison: s28
@@ -900,6 +1150,11 @@
   issue: annulation_efficace
   jour_trouve: 31
   episode_utilisation: 13
+  jour_utilisation: 34
+  joueur:
+    libelle: Hugo
+    id: hugo-van-aertryck
+    resolu: true
   votes_annules: 3
   votes_exprimes: 9
 - saison: sp5
@@ -914,6 +1169,11 @@
   issue: annulation_efficace
   jour_trouve: 11
   episode_utilisation: 4
+  jour_utilisation: 12
+  joueur:
+    libelle: Clémentine
+    id: clementine-jullien
+    resolu: true
   votes_annules: 5
   votes_exprimes: 6
 - saison: sp5
@@ -922,12 +1182,20 @@
   - libelle: Cassandre
     id: cassandre-girard
     resolu: true
-  detenteurs_suivants: []
+  detenteurs_suivants:
+  - libelle: Clémence
+    id: clemence-castel
+    resolu: true
   proteges: []
   statut: utilise
   issue: joue_pour_rien
   jour_trouve: 13
   episode_utilisation: 10
+  jour_utilisation: 30
+  joueur:
+    libelle: Clémence
+    id: clemence-castel
+    resolu: true
   votes_annules: 0
   votes_exprimes: 6
 - saison: sp5
@@ -936,40 +1204,26 @@
   - libelle: Julie
     id: julie-navarro
     resolu: true
-  detenteurs_suivants: []
-  proteges: []
-  statut: non_utilise
-  issue: elimine_avec_collier
-  jour_trouve: 6
-  episode_utilisation: null
-  votes_annules: null
-  votes_exprimes: null
-- saison: sp5
-  localisation: null
-  detenteurs:
-  - libelle: Julie
-    id: julie-navarro
+  detenteurs_suivants:
+  - libelle: Raphaële
+    id: raphaele-navarro
     resolu: true
-  detenteurs_suivants: []
-  proteges: []
-  statut: non_utilise
-  issue: elimine_avec_collier
-  jour_trouve: 6
-  episode_utilisation: null
-  votes_annules: null
-  votes_exprimes: null
-- saison: sp5
-  localisation: null
-  detenteurs:
-  - libelle: Julie
-    id: julie-navarro
+  - libelle: Clémentine
+    id: clementine-jullien
     resolu: true
-  detenteurs_suivants: []
+  - libelle: Jérémy
+    id: jeremy-raffin
+    resolu: true
   proteges: []
   statut: utilise
   issue: annulation_efficace
   jour_trouve: 6
   episode_utilisation: 10
+  jour_utilisation: 30
+  joueur:
+    libelle: Jérémy
+    id: jeremy-raffin
+    resolu: true
   votes_annules: 3
   votes_exprimes: 6
 - saison: sp6
@@ -984,6 +1238,11 @@
   issue: joue_pour_rien
   jour_trouve: 1
   episode_utilisation: 2
+  jour_utilisation: null
+  joueur:
+    libelle: Benoît
+    id: benoit-fourmont
+    resolu: true
   votes_annules: 0
   votes_exprimes: 8
 - saison: sp6
@@ -998,6 +1257,8 @@
   issue: garde_sans_usage
   jour_trouve: 1
   episode_utilisation: null
+  jour_utilisation: null
+  joueur: null
   votes_annules: null
   votes_exprimes: null
 - saison: sp6
@@ -1012,6 +1273,8 @@
   issue: elimine_avec_collier
   jour_trouve: 11
   episode_utilisation: null
+  jour_utilisation: null
+  joueur: null
   votes_annules: null
   votes_exprimes: null
 - saison: sp6
@@ -1023,6 +1286,8 @@
   issue: non_decouvert
   jour_trouve: null
   episode_utilisation: null
+  jour_utilisation: null
+  joueur: null
   votes_annules: null
   votes_exprimes: null
 - saison: sp6
@@ -1037,6 +1302,11 @@
   issue: joue_pour_rien
   jour_trouve: 21
   episode_utilisation: 9
+  jour_utilisation: null
+  joueur:
+    libelle: Jessica
+    id: jessica-potel
+    resolu: true
   votes_annules: 0
   votes_exprimes: 13
 - saison: sp6
@@ -1045,12 +1315,17 @@
   - libelle: Teheiura
     id: teheiura-teahui
     resolu: true
-  detenteurs_suivants: []
+  detenteurs_suivants:
+  - libelle: Claude
+    id: claude-dartois
+    resolu: true
   proteges: []
   statut: non_utilise
   issue: garde_sans_usage
   jour_trouve: 21
   episode_utilisation: null
+  jour_utilisation: null
+  joueur: null
   votes_annules: null
   votes_exprimes: null
 - saison: sp6
@@ -1065,5 +1340,7 @@
   issue: elimine_avec_collier
   jour_trouve: 23
   episode_utilisation: null
+  jour_utilisation: null
+  joueur: null
   votes_annules: null
   votes_exprimes: null

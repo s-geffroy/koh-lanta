@@ -26,7 +26,43 @@ CORRECTIONS = {
     "réunifée": "réunifiée",
     "Penalité": "Pénalité",
     "A bout de souffle": "À bout de souffle",
+    # Revue du 22 octobre 2026 : les professions et les types d'epreuve, tels
+    # que les fiches les publient. Chaque ligne est une valeur constatee.
+    "Chaffeur d'autocar": "Chauffeur d'autocar",            # mohamed-derradji
+    "La Revache des Héros": "La Revanche des Héros",        # isabelle-da-silva
+    "Agents de joueurs de football": "Agent de joueurs de football",  # nelson-parente
+    # lili-gasnier : le departement est mal ecrit (« Villaine ») et colle au
+    # metier sans preposition.
+    "Cheffe d'entreprise Ille-et-Villaine": "Cheffe d'entreprise en Ille-et-Vilaine",
+    "Pompier Volontaire": "pompier volontaire",
+    "Conseillère Financière": "Conseillère financière",
+    "Ouvrier Teinturier": "Ouvrier teinturier",
+    "Pilote de Karting": "Pilote de karting",
+    "Patron de pizzerias": "patron de pizzerias",
+    "Navigateur / Instructeur": "Navigateur / instructeur",
+    "Étudiant, Mannequin": "Étudiant, mannequin",
+    "Ex chef d'entreprise": "Ex-chef d'entreprise",
+    "électro-ménager": "électroménager",
+    "agro-alimentaire": "agroalimentaire",
+    # La capitale sans son accent, en tete de valeur.
+    "Etudiant": "Étudiant",
+    "Educatrice": "Éducatrice",
+    "Equilibre": "Équilibre",                               # type d'epreuve
+    "Force et Statique": "Force et statique",               # type d'epreuve
 }
+
+# Une valeur ENTIERE fautive : remplacer en sous-chaine toucherait des mots
+# justes. « Cuisiner » est la profession de teheiura-teahui en 2012.
+VALEURS = {
+    "Cuisiner": "Cuisinier",
+}
+
+# Les titres de saison cites ENTRE PARENTHESES dans une profession
+# (« Ingénieur (Palau, Le Choc des Héros & La Revanche des Héros) ») : le site
+# ecrit « héros » en minuscule, comme les titres de _data/saisons.yml. La
+# correction ne vaut qu'a l'interieur d'une parenthese -- `edition_origine`,
+# qui sert a rapprocher les saisons, n'en porte pas et reste tel quel.
+RE_PARENTHESE = re.compile(r"\([^()]*\)")
 
 # Une capitale sans son accent en tete de mot : « Eliminé » -> « Éliminé ».
 RE_ELIMIN = re.compile(r"\bElimin")
@@ -35,8 +71,11 @@ RE_ELIMIN = re.compile(r"\bElimin")
 def corriger(valeur):
     """Corrige toutes les chaines d'une structure (dict, liste, chaine)."""
     if isinstance(valeur, str):
+        valeur = VALEURS.get(valeur, valeur)
         for faux, juste in CORRECTIONS.items():
             valeur = valeur.replace(faux, juste)
+        valeur = RE_PARENTHESE.sub(
+            lambda m: m.group(0).replace(" des Héros", " des héros"), valeur)
         return RE_ELIMIN.sub("Élimin", valeur)
     if isinstance(valeur, dict):
         return {k: corriger(v) for k, v in valeur.items()}

@@ -35,7 +35,7 @@
   # -- on y revient par « precedent » -- mais elle ne porte pas de rang,
   # et elle ne figure pas dans son propre sommaire.
   entrees:
-    - titre: "Vue d'ensemble"
+    - titre: "Vue d’ensemble"
       url: /statistiques/
       hub: true
       resume: "Les vingt-sept entrées, et les chiffres qui les tiennent."
@@ -54,30 +54,30 @@
           resume: "Alexandra revient sept fois. Est-ce beaucoup ? Réponse chiffrée."
         - titre: "Âge et longévité"
           url: /statistiques/longevite/
-          resume: "À quel âge on tient, et l'écart entre femmes et hommes."
+          resume: "À quel âge on tient, et l’écart entre femmes et hommes."
         - titre: "Les revenants"
           url: /statistiques/revenants/
           resume: "Le retour paie-t-il ? Le chiffre évident est un piège."
         - titre: "La recette du casting"
           url: /statistiques/casting/
           modeles: true
-          resume: "La parité est un quota. Le reste ne l'est pas."
-        - titre: "D'où ils viennent"
+          resume: "La parité est un quota. Le reste ne l’est pas."
+        - titre: "D’où ils viennent"
           url: /statistiques/geographie/
           modeles: true
-          resume: "La Provence et l'Île-de-France fournissent plus que leur part ; l'outre-mer, presque rien."
+          resume: "La Provence et l’Île-de-France fournissent plus que leur part ; l’outre-mer, presque rien."
     - titre: "Le conseil"
       resume: "Le vote, ce qui le précède et ce qu’il décide."
       entrees:
         - titre: "Les conseils"
           url: /statistiques/conseils/
-          resume: "Les votes serrés, les colliers, et un camp qui s'accorde de moins en moins."
+          resume: "Les votes serrés, les colliers, et un camp qui s’accorde de moins en moins."
         - titre: "Les colliers"
           url: /statistiques/colliers/
           resume: "Joués, gardés, ou jamais trouvés."
         - titre: "Le jeu social"
           url: /statistiques/jeu-social/
-          resume: "Être visé, voter juste, ou n'être jamais écrit nulle part."
+          resume: "Être visé, voter juste, ou n’être jamais écrit nulle part."
         - titre: "Les alliances"
           url: /statistiques/alliances/
           modeles: true
@@ -85,11 +85,11 @@
         - titre: "Qui vise qui"
           url: /statistiques/qui-vise-qui/
           modeles: true
-          resume: "Le sexe et le métier un peu, la tribu initiale nettement : on épargne les siens."
-        - titre: "Sachant le conseil d'avant"
+          resume: "Ni le sexe ni le métier de façon établie ; la tribu initiale, nettement : on épargne les siens."
+        - titre: "Sachant le conseil d’avant"
           url: /statistiques/conditionnelles/
           modeles: true
-          resume: "Partir, sachant les voix reçues la fois d'avant."
+          resume: "Partir, sachant les voix reçues la fois d’avant."
         - titre: "Sachant qui est autour du feu"
           url: /statistiques/autour-du-feu/
           modeles: true
@@ -97,11 +97,11 @@
         - titre: "La pire place au conseil"
           url: /statistiques/pire-place/
           modeles: true
-          resume: "Visé la fois d'avant et sans allié : le risque de partir est multiplié."
+          resume: "Visé la fois d’avant et sans allié : le risque de partir est multiplié."
         - titre: "Le vote du jury"
           url: /statistiques/jury/
           modeles: true
-          resume: "Le juré fait payer son bourreau, et couronne son allié."
+          resume: "Le juré couronne son allié ; qu’il fasse payer son bourreau ne se prouve pas."
     - titre: "Les épreuves"
       resume: "Gagner, et ce que gagner vaut."
       entrees:
@@ -115,7 +115,7 @@
         - titre: "La fin de saison"
           url: /statistiques/finale/
           modeles: true
-          resume: "Gagner les poteaux ne suffit pas. Arriver dernier à l'orientation, si."
+          resume: "Gagner les poteaux ne suffit pas. Arriver dernier à l’orientation, si."
     - titre: "La saison"
       resume: "Le jeu comme parcours, du premier jour au dernier."
       entrees:
@@ -128,16 +128,16 @@
         - titre: "Avant et après la réunification"
           url: /statistiques/reunification/
           modeles: true
-          resume: "Le faible avant, le fort après, dit-on. Les bulletins ne montrent ni l'un ni l'autre."
+          resume: "Le faible avant, le fort après, dit-on. Les bulletins ne montrent ni l’un ni l’autre."
         - titre: "La grille"
           url: /statistiques/grille/
           modeles: true
-          resume: "Le jour de la réunification, et l'année où le jeu a changé."
+          resume: "Le jour de la réunification, et un jeu qui a changé sans date."
         - titre: "Le jeu tenu serré"
           url: /statistiques/equilibre/
           modeles: true
           resume: "Le risque qui monte, la tribu qui se rattrape : deux illusions."
-        - titre: "L'audience"
+        - titre: "L’audience"
           url: /statistiques/audience/
           modeles: true
           resume: "La seule grandeur que la production ne décide pas, et elle a fortement chuté."
@@ -147,11 +147,11 @@
         - titre: "Le pronostic"
           url: /statistiques/pronostic/
           modeles: true
-          resume: "La fiche d'inscription contient-elle déjà le vainqueur ?"
+          resume: "La fiche d’inscription contient-elle déjà le vainqueur ?"
         - titre: "Le top des joueurs"
           url: /statistiques/top/
           modeles: true
-          resume: "Quatre facettes qui ne se parlent pas, et une cinquième qu'il a fallu retirer."
+          resume: "Quatre facettes qui ne se parlent pas, et une cinquième qu’il a fallu retirer."
 
 - section: Les données
   entrees:
@@ -169,7 +169,7 @@
       resume: "Chaque épreuve, ses éditions, et son record de victoires."
     - titre: "Les sources"
       url: /sources/
-      resume: "D'où viennent ces données, et ce qui leur manque."
+      resume: "D’où viennent ces données, et ce qui leur manque."
     - titre: "La méthode"
       url: /methode/
       resume: "Les modèles, la liste complète des tests, et leurs limites."
@@ -184,10 +184,10 @@
     - titre: "Tous les articles"
       url: /articles/
       hub: true
-      resume: "Ce que les données permettent d'écrire."
+      resume: "Ce que les données permettent d’écrire."
     - titre: "Une loupe, pas un miroir"
       url: /articles/koh-lanta-une-loupe/
-      resume: "Ce que 34 saisons de votes disent vraiment des alliances, de la menace et de l'appartenance."
+      resume: "Ce que 34 saisons de votes disent vraiment des alliances, de la menace et de l’appartenance."
     - titre: "Un amplificateur institutionnel"
       url: /articles/amplificateur-institutionnel/
       version: "Version longue"

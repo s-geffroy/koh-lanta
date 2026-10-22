@@ -106,7 +106,7 @@ chaque conseil est pris au hasard parmi les présents.</p>
 
 <div class="constat">
   <p>Avoir été visé au conseil précédent ajoute <b>{{ t1.observe_arrondi }} points</b>
-  de risque : {{ t1.ecart_types }} écarts-types au-dessus du hasard, p ajustée
+  de risque : {{ t1.ecart_types }} {{ t1.ecart_types_mot }} au-dessus du hasard, p ajustée
   {{ t1.p_ajustee }}.</p>
   <p>Le modèle nul fait ici tout le travail. À chaque conseil, on tire l’éliminé
   <em>au hasard parmi les présents de ce soir-là</em> : la taille du conseil, la
@@ -127,17 +127,17 @@ nul.</p>
 
 <div class="constat">
   <p>Une à trois voix la fois d’avant : le risque monte. <b>Quatre voix ou
-  plus</b> : il tombe à
+  plus</b> : il redescend, jusqu’à
   {% assign gros = c.par_voix | where: "modalite", "5 voix et plus" | first %}
   <b>{{ gros.probabilite }} %</b> pour cinq voix et plus — soit {{ gros.cas }}
   cas sur {{ gros.effectif }}.</p>
-  <p>L’écart vaut {{ t2.observe_arrondi }} points, {{ t2.ecart_types }} écarts-types,
+  <p>L’écart vaut {{ t2.observe_arrondi }} points, {{ t2.ecart_types }} {{ t2.ecart_types_mot }},
   p ajustée <b>{{ t2.p_ajustee }}</b> — <b>non retenu</b>.</p>
 </div>
 
 <p class="note"><strong>Ce résultat était retenu ; il ne l’est plus, et le
 dénominateur a grandi.</strong> D’ordinaire un test tombe parce que les données
-manquent. Ici, des conseils dépouillés se sont AJOUTÉS — les
+manquent. Ici, des conseils dépouillés se sont <em>ajoutés</em> — les
 <a href="{{ '/sources/' | relative_url }}">bulletins sans votant</a> que le jeu
 impose depuis {{ site.data.stats.conseils.sans_votant.annee_min }}, vote noir, pénalité, malédiction, qu’aucun calcul ne
 comptait — et l’écart est passé de 15,4 points à
@@ -147,7 +147,7 @@ manquaient.</strong> C’est exactement ce qu’un effet
 fabriqué par un petit échantillon fait quand l’échantillon grandit, et c’est
 pour cela qu’on le dit ici plutôt que de garder l’ancienne phrase.</p>
 
-L’explication qu’on avançait tenait en une phrase, et elle est de survie : qui a
+L’explication qu’on avançait tenait en une phrase, et c’était un effet de survie : qui a
 encaissé quatre bulletins et se trouve encore là au conseil suivant a
 nécessairement été protégé — par un collier, par un tour nul, par une majorité
 qui s’est recomposée. Elle reste la lecture la plus économe de la forme
@@ -222,7 +222,7 @@ conseils plus tôt et partir quand on ne l’avait pas été.</p>
 <div class="constat">
   <p>{{ t6.observe_arrondi }} points d’écart — presque autant qu’au conseil
   précédent — mais sur {{ c.deux_pas_vises }}
-  présences seulement : {{ t6.ecart_types }} écarts-types, p brute {{ t6.p }},
+  présences seulement : {{ t6.ecart_types }} {{ t6.ecart_types_mot }}, p brute {{ t6.p }},
   p ajustée {{ t6.p_ajustee }}. <b>Non concluant.</b></p>
   <p>La chaîne se raccourcit vite : exiger deux conseils complets d’affilée
   derrière soi ne laisse que {{ c.deux_pas_total }}
@@ -317,7 +317,7 @@ Le partage utile n’est pas entre « un peu visé » et « beaucoup visé
 **{{ jamais.probabilite }} %** des cas ; ceux qui ont été visés la dernière
 fois, dans **{{ h2.probabilite }} %** et {{ h3.probabilite }} %. Visé seulement
 plus tôt, on retombe à {{ h1.probabilite }} % — et la menace « deux conseils
-plus tard » n’est pas un résultat retenu.
+plus tôt » n’est pas un résultat retenu.
 
 ## Sachant de quel côté on a voté
 
@@ -335,7 +335,7 @@ plus tard » n’est pas un résultat retenu.
 </div>
 
 <div class="constat">
-  <p>{{ t3.observe_arrondi }} points d’écart, {{ t3.ecart_types }} écarts-types, p brute
+  <p>{{ t3.observe_arrondi }} points d’écart, {{ t3.ecart_types }} {{ t3.ecart_types_mot }}, p brute
   {{ t3.p }}, p ajustée {{ t3.p_ajustee }}. <b>Retenu, de justesse.</b></p>
   <p>S’être trompé de cible au conseil précédent expose : à
   {{ c.par_camp[1].effectif }} présences du côté de la minorité, un écart de
@@ -373,7 +373,7 @@ tirages.</p>
   <p>Sans voix la fois d’avant, le nom ressort dans
   {{ c.persistance[0].probabilite }} % des cas. Avec deux voix,
   <b>{{ c.persistance[2].probabilite }} %</b>.</p>
-  <p>{{ t4.observe_arrondi }} points d’écart, {{ t4.ecart_types }} écarts-types,
+  <p>{{ t4.observe_arrondi }} points d’écart, {{ t4.ecart_types }} {{ t4.ecart_types_mot }},
   p ajustée {{ t4.p_ajustee }}. <b>La cible reste la cible</b>, et c’est le
   résultat le plus net de cette page.</p>
 </div>
@@ -405,13 +405,13 @@ redistribution des bulletins à l’intérieur de chaque conseil.</p>
   <p><b>{{ c.retour.probabilite }} %</b> — {{ c.retour.rendus }} couples sur
   {{ c.retour.couples }}, intervalle {{ c.retour.bas }} à {{ c.retour.haut }} %.
   Le hasard en donnerait {{ t5.attendu_arrondi }} %.</p>
-  <p>{{ t5.ecart_types }} écarts-types, p ajustée {{ t5.p_ajustee }}. Écrire un
+  <p>{{ t5.ecart_types }} {{ t5.ecart_types_mot }}, p ajustée {{ t5.p_ajustee }}. Écrire un
   nom, c’est donc bien s’exposer à le voir revenir — mais dans
   {{ c.retour.non_rendus }} % des cas, il ne revient pas.</p>
 </div>
 
 [Les conseils]({{ '/statistiques/conseils/' | relative_url }}) mesurent la
-réciprocité **sans ordre** : deux personnes qui se sont écrites l’une l’autre à
+réciprocité **sans ordre** : deux personnes qui se sont écrit l’une à l’autre à
 un moment ou un autre. Celle-ci est datée et orientée, ce qui la rend beaucoup
 plus rare — et beaucoup plus lisible.
 

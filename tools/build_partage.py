@@ -41,7 +41,7 @@ from PIL import Image                                        # noqa: E402
 import donnees                                               # noqa: E402
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from build_fiches import ordinal                             # noqa: E402
+from build_fiches import avec_marque, compte, de_, ordinal_rang  # noqa: E402
 
 RACINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SORTIE = os.path.join(RACINE, "assets", "partage.png")
@@ -152,13 +152,17 @@ def cartes_des_aventuriers(fiches, joueurs_classes, rapport):
     for cid, e in sorted((fiches.get("aventuriers") or {}).items()):
         parts = sorted(e["participations"], key=lambda p: p["annee"])
         if len(parts) == 1:
-            ligne = f"Koh-Lanta {parts[0]['titre']} ({parts[0]['annee']})"
+            # avec_marque : la saison 1 s'appelle « Les Aventuriers de
+            # Koh-Lanta », et la carte ecrivait « Koh-Lanta Les Aventuriers de
+            # Koh-Lanta (2001) ».
+            ligne = f"{avec_marque(parts[0]['titre'])} ({parts[0]['annee']})"
         else:
             ligne = (f"{len(parts)} saisons de Koh-Lanta, "
                      f"de {parts[0]['annee']} à {parts[-1]['annee']}")
         note = None
         if e.get("rang") and joueurs_classes:
-            note = (f"{ordinal(e['rang'])} sur {joueurs_classes} "
+            # « 1re » pour une femme, comme sur la fiche.
+            note = (f"{ordinal_rang(e['rang'], e.get('genre'))} sur {joueurs_classes} "
                     f"au classement des aventuriers")
         carte(os.path.join(DOSSIER, "aventuriers", cid + ".png"),
               e["nom"], "LES AVENTURIERS", ligne, note, rapport)
@@ -166,13 +170,13 @@ def cartes_des_aventuriers(fiches, joueurs_classes, rapport):
 
 def cartes_des_saisons(fiches, rapport):
     for cid, s in sorted((fiches.get("saisons") or {}).items()):
-        morceaux = [f"{s['effectif']} aventuriers"]
+        morceaux = [compte(s['effectif'], "aventurier", "aventuriers")]
         if s.get("duree_jours"):
             morceaux.append(f"{s['duree_jours']} jours")
         if s.get("conseils"):
-            morceaux.append(f"{s['conseils']} conseils")
+            morceaux.append(compte(s['conseils'], "conseil", "conseils"))
         noms = [v["nom"] for v in (s.get("vainqueurs") or [])]
-        note = f"Victoire de {' et '.join(noms)}" if noms else None
+        note = f"Victoire {de_(' et '.join(noms))}" if noms else None
         oeil = f"KOH-LANTA {s['annee']}"
         carte(os.path.join(DOSSIER, "saisons", cid + ".png"),
               s["titre"], oeil, "  ·  ".join(morceaux), note, rapport)
@@ -181,7 +185,7 @@ def cartes_des_saisons(fiches, rapport):
 def cartes_des_epreuves(epreuves, rapport):
     for cid, e in sorted((epreuves.get("epreuves") or {}).items()):
         morceaux = [f"{e['apparitions']} fois courue",
-                    f"{len(e['editions'])} éditions"]
+                    compte(len(e['editions']), "édition", "éditions")]
         r = e.get("record")
         note = (f"Record : {r['nom']}, {r['victoires']} victoires"
                 if r and r["victoires"] > 1 else None)

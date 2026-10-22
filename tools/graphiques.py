@@ -54,6 +54,39 @@ def e(t):
     return html.escape(str(t), quote=True)
 
 
+def accorde(n, singulier, pluriel):
+    """Le mot seul, accorde au nombre : singulier sous 2, comme ailleurs.
+
+    La regle est celle de `compte()` dans tools/build_fiches.py : « 0 voix »,
+    « 1 tirage », « 0,6 place » -- le pluriel commence a deux. Les infobulles
+    publiaient « 1 tirages », « 1 aventuriers », « 0,6 places ».
+    """
+    try:
+        return singulier if abs(float(n)) < 2 else pluriel
+    except (TypeError, ValueError):
+        return pluriel
+
+
+# Le singulier des unites de mesure publiees au pluriel par tools/modeles.py.
+SINGULIERS = {"ans": "an", "années": "année", "personnes": "personne",
+              "points": "point", "points de rang": "point de rang",
+              "points de %": "point de %", "enchaînements": "enchaînement",
+              "cases remplies": "case remplie"}
+
+
+def compte(n, singulier, pluriel):
+    """« 1 tirage », « 3 tirages », « 0 abandon » : le nombre et son mot."""
+    return f"{n} {accorde(n, singulier, pluriel)}"
+
+
+def _avec_unite(v, unite):
+    """La valeur et son unite. Une unite donnee comme couple
+    (singulier, pluriel) s'accorde a la valeur : « 0,6 place », « 2 places »."""
+    if isinstance(unite, tuple):
+        return f"{v} {accorde(v, unite[0].strip(), unite[1].strip())}"
+    return f"{v}{unite}"
+
+
 class Figure:
     """Un SVG en cours d'ecriture."""
 
@@ -142,7 +175,13 @@ def _texte_tenu(x, y, contenu, *, largeur_max, taille=13, taille_min=9, **kw):
     if _largeur(contenu, taille_finale) <= largeur_max:
         return _texte(x, y, contenu, taille=taille_finale, **kw)
     tenus = max(1, int(largeur_max / (taille_finale * LARGEUR_CARACTERE)) - 1)
-    coupe = contenu[:tenus].rstrip(" ,;-·") + "…"
+    # La coupe se fait AU MOT : « Le Retour des h… » se lit comme une faute de
+    # frappe, « Le Retour des… » comme une abreviation. Le caractere pres ne
+    # sert qu'a un mot seul trop long pour la place.
+    coupe = contenu[:tenus]
+    if " " in coupe and contenu[tenus:tenus + 1] not in ("", " "):
+        coupe = coupe[:coupe.rfind(" ")]
+    coupe = coupe.rstrip(" ,;-·’'") + "…"
     # `repere` : voir la note sur cette classe plus bas, au rang des jours de
     # diffusion. Un intitule tronque est un REPERE d'axe, pas une donnee -- son
     # <title> ne sert qu'a rendre le texte entier qui ne tenait pas.
@@ -208,7 +247,7 @@ def barres_horizontales(donnees, *, titre, description, unite="",
     hauteur = haut + bas + len(donnees) * (hauteur_barre + ecart) - ecart
     # La marge droite accueille la valeur ecrite au bout de la barre la plus
     # longue : la fixer a 62 faisait sortir « 16 epreuves » du cadre.
-    plus_longue = max(_largeur(f'{d["valeur"]}{unite}', 13) for d in donnees)
+    plus_longue = max(_largeur(_avec_unite(d["valeur"], unite), 13) for d in donnees)
     marge_droite = max(62, plus_longue + 16)
     piste = largeur - marge_gauche - marge_droite
     vmax = valeur_max or max(d["valeur"] for d in donnees) or 1
@@ -224,7 +263,7 @@ def barres_horizontales(donnees, *, titre, description, unite="",
         y = haut + i * (hauteur_barre + ecart)
         longueur = max(3.0, piste * d["valeur"] / vmax)
         teinte = d.get("couleur") or couleur or SERIES[i % len(SERIES)]
-        info = d.get("detail") or f'{d["libelle"]} : {d["valeur"]}{unite}'
+        info = d.get("detail") or f'{d["libelle"]} : {_avec_unite(d["valeur"], unite)}'
 
         # UNE SEULE MARQUE PAR LIGNE, et c'est ce qui donne la surbrillance
         # sans ecrire une regle. Une barre horizontale n'a pas de series : la
@@ -247,7 +286,7 @@ def barres_horizontales(donnees, *, titre, description, unite="",
                               d["libelle"], largeur_max=marge_gauche - 14,
                               ancre="end", couleur=ENCRE)
         valeur = _texte(marge_gauche + longueur + 8, y + hauteur_barre / 2,
-                        f'{d["valeur"]}{unite}', couleur=ENCRE, gras=True)
+                        _avec_unite(d["valeur"], unite), couleur=ENCRE, gras=True)
         fig.ajouter(f'<g class="marque"><title>{e(info)}</title>'
                     f'{barre}{libelle}{valeur}</g>')
 
@@ -305,7 +344,7 @@ def colonnes(donnees, *, titre, description, unite="", largeur=680, hauteur=300,
         y = py(d["valeur"])
         h = max(3.0, haut + piste_h - y)
         teinte = d.get("couleur") or couleur or SERIES[0]
-        info = d.get("detail") or f'{d["libelle"]} : {d["valeur"]}{unite}'
+        info = d.get("detail") or f'{d["libelle"]} : {_avec_unite(d["valeur"], unite)}'
 
         # UNE SEULE MARQUE PAR COLONNE, comme une ligne de barres horizontales.
         # La colonne, c'est le rectangle, son intervalle de confiance, sa
@@ -1178,7 +1217,11 @@ def petits_multiples(series, *, titre, description, colonnes_par_rang=6,
         # compris entre la courbe et l'axe.
         fig.ajouter(
             f'<g class="marque"><title>{e(s.get("detail") or s["titre"])}</title>'
-            + _texte_tenu(cx, cy - 12, s["titre"], largeur_max=case_l - 4,
+            # Le titre laisse la place au sous-titre pose au bout de la meme
+            # ligne : sans cette reserve, les deux se chevauchaient.
+            + _texte_tenu(cx, cy - 12, s["titre"],
+                          largeur_max=case_l - 4 - (_largeur(s["sous_titre"], 10) + 6
+                                                    if s.get("sous_titre") else 0),
                           couleur=ENCRE, taille=11, gras=True)
             + (_texte(cx + case_l, cy - 12, s["sous_titre"], ancre="end",
                       couleur=ENCRE_MUETTE, taille=10)
@@ -1378,7 +1421,7 @@ def distribution_nulle(test, *, titre=None, description=None, largeur=680,
         x = marge_g + i * largeur_case
         borne_b = bas + etendue * i / len(cases)
         borne_h = bas + etendue * (i + 1) / len(cases)
-        info = (f"{n} tirages sur {test.get('tirages')} entre "
+        info = (f"{compte(n, 'tirage', 'tirages')} sur {test.get('tirages')} entre "
                 f"{borne_b:.3g} et {borne_h:.3g}")
         fig.ajouter(f'<g class="marque"><title>{e(info)}</title>'
                     f'<rect x="{x + 0.8:.1f}" y="{zero - h:.1f}" '
@@ -1399,6 +1442,11 @@ def distribution_nulle(test, *, titre=None, description=None, largeur=680,
     fig.ajouter(f'<line x1="{xo:.1f}" y1="{plafond - 20}" x2="{xo:.1f}" y2="{zero + 6}" '
                 f'stroke="{ENCRE}" stroke-width="2.4"/>')
     unite = (" " + test["unite"]) if test.get("unite") else ""
+    # Le singulier sous 2, comme partout : « 1,859 an », « 0,327 personne ».
+    # Les unites viennent de tools/modeles.py au pluriel ; seules celles qui
+    # changent au singulier sont ici.
+    if unite and accorde(test.get("observe"), "s", "p") == "s":
+        unite = " " + SINGULIERS.get(test["unite"], test["unite"])
     fig.ajouter(_texte(xo + decalage, plafond - 24,
                        f'observé : {test["observe"]}{unite}', ancre=ancre,
                        couleur=ENCRE, taille=12, gras=True))

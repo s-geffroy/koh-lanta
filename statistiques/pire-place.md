@@ -73,7 +73,7 @@ l’éliminé de chaque conseil est pris au hasard parmi les présents.</p>
 <div class="constat">
   <p>N’avoir plus personne avec qui on ait déjà voté ajoute
   <b>{{ ti.observe_arrondi }} points</b> de risque :
-  {{ ti.ecart_types }} écarts-types au-dessus du hasard, p ajustée
+  {{ ti.ecart_types }} {{ ti.ecart_types_mot }} au-dessus du hasard, p ajustée
   {{ ti.p_ajustee }}.</p>
   <p>Et les deux formes de l’isolement ne se distinguent pas. Avoir vu ses
   alliés partir mène à {{ p.isolement[1].probabilite }} % ; n’avoir jamais voté
@@ -188,7 +188,7 @@ et la case qui les réunit est trop petite. Le modèle ci-dessous les met dans l
   <p>Ce ne sont donc pas deux façons de dire la même chose. Le bulletin d’hier
   mesure ce que le camp a <em>fait</em> ; l’isolement mesure ce dont on
   <em>dispose</em> pour y répondre. Un joueur visé mais entouré s’en sort ; un
-  joueur seul mais jamais visé encore tient. Les deux à la fois, on part dans
+  joueur seul mais jamais visé tient encore. Les deux à la fois, on part dans
   {{ p.cumul[2].probabilite }} % des cas.</p>
 </div>
 
@@ -220,8 +220,8 @@ hasard parmi les présents.</p>
 </div>
 
 <div class="constat">
-  <p>{{ tm.observe_arrondi }} point d’écart, {{ tm.ecart_types }}
-  écarts-types, p brute {{ tm.p }}. <b>Rien.</b> Et pour une fois le mot est
+  <p>{{ tm.observe_arrondi }} point{% if tm.observe_arrondi_pluriel %}s{% endif %} d’écart, {{ tm.ecart_types }}
+  {{ tm.ecart_types_mot }}, p brute {{ tm.p }}. <b>Rien.</b> Et pour une fois le mot est
   mérité : l’observé tombe au milieu même de la distribution nulle.</p>
   <p>La menace change ce que les autres font de vous. Elle ne change pas ce que
   vous faites sur un parcours d’obstacles.</p>

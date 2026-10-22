@@ -17,16 +17,16 @@ adaptés à ce que ces données permettent réellement.
 
 ## Le résultat le plus net du site
 
-Un aventurier sur lequel **personne n’a jamais écrit un nom** de toute la
+Un aventurier dont **personne n’a jamais écrit le nom** de toute la
 saison, on peut l’appeler un fantôme. Il y en a **{{ i.nb_fantomes }}**, sur
 {{ i.comparables }} participations mesurables. Voici ce qu’ils deviennent.
 
-<p class="note"><strong>La colonne qui compte est la deuxième.</strong> Un
+<p class="note"><strong>La comparaison qui compte est celle des deuxième et troisième colonnes.</strong> Un
 fantôme a par définition traversé au moins {{ i.seuil_fantome }} conseils sans
 être écrit : le comparer à <em>tous</em> les aventuriers, celui qui est sorti au
 premier conseil compris, mélangerait deux choses — ne pas être visé, et être
 allé loin. La comparaison juste se fait aux {{ i.endurants }} aventuriers qui
-ont tenu aussi longtemps. La troisième colonne, elle, est donnée pour mémoire.</p>
+ont tenu aussi longtemps. La dernière colonne, elle, est donnée pour mémoire.</p>
 
 {% include graphiques/fantomes-issue.svg %}
 
@@ -103,7 +103,7 @@ Et l’un comme l’autre ne se connaissent qu’en cours de jeu. Au casting,
 </table>
 </div>
 
-### {{ site.data.stats.mots.fantomes_recidivistes_maj }} y sont revenus
+### {{ site.data.stats.mots.fantomes_recidivistes_maj }} l’ont été plus d’une fois
 
 Être invisible une saison peut être un accident de casting : une tribu qui
 gagne, un conseil qu’on ne fait pas, un plus gros poisson à sortir. L’être
@@ -199,7 +199,7 @@ suffirait à afficher 100 %.</p>
 <tr>
   <td>{% include lien-aventurier.html id=x.id nom=x.nom %}</td><td>{{ x.titre }} ({{ x.annee }})</td>
   <td class="nombre">{{ x.base }}</td><td class="nombre">{{ x.valeur }} %</td>
-  <td>{{ x.sort | replace: "_", " " }}</td>
+  <td>{{ x.sort_libelle }}</td>
 </tr>
 {% endfor %}
 </tbody>
@@ -216,8 +216,7 @@ partir de {{ site.data.stats.modeles.conditionnelles.par_voix[0].probabilite }} 
 à {{ site.data.stats.modeles.conditionnelles.par_voix[1].probabilite }} % pour
 une voix — mais il retombe à
 {% assign gros = site.data.stats.modeles.conditionnelles.par_voix | where: "modalite", "5 voix et plus" | first %}{{ gros.probabilite }} %
-au-delà de cinq voix, parce que survivre à un vote massif prouve qu’on est
-protégé.
+à partir de cinq voix — un retournement que le test ne confirme pas.
 <a href="{{ '/statistiques/conditionnelles/' | relative_url }}">Sachant le conseil d’avant</a>.</p>
 
 ## Les plus visés
@@ -230,7 +229,7 @@ protégé.
 <tr>
   <td>{% include lien-aventurier.html id=x.id nom=x.nom %}</td><td>{{ x.titre }} ({{ x.annee }})</td>
   <td class="nombre">{{ x.valeur }}</td><td class="nombre">{{ x.base }}</td>
-  <td>{{ x.sort | replace: "_", " " }}</td>
+  <td>{{ x.sort_libelle }}</td>
 </tr>
 {% endfor %}
 </tbody>

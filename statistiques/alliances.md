@@ -39,7 +39,7 @@ répartition de voix.</p>
   suivant dans <b>{{ a.apres_ensemble }} %</b> des cas. Deux aventuriers qui ont
   voté séparément : <b>{{ a.apres_separes }} %</b>.</p>
   <p>{{ t.observe }} points d’écart, contre {{ t.attendu }} attendus si les
-  bulletins n’étaient que du bruit — soit <b>{{ t.ecart_types }} écarts-types</b>.
+  bulletins n’étaient que du bruit — soit <b>{{ t.ecart_types }} {{ t.ecart_types_mot }}</b>.
   C’est de très loin le signal le plus fort de tout ce site.</p>
 </div>
 
@@ -67,7 +67,7 @@ conseils traversés tenu constant.</p>
   <p>Passer de « jamais du bon côté » à « toujours du bon côté » vaut
   <b>{{ v0.estimation }} points de saison</b> — intervalle
   {{ v0.bas }} à {{ v0.haut }}.</p>
-  <p>Dans le même modèle, recevoir une voix de plus par conseil coûte
+  <p>Dans le même modèle, l’effet d’une voix de plus reçue par conseil vaut
   {{ v1.estimation }} points ({{ v1.bas }} à {{ v1.haut }}).
   <b>Être du bon côté pèse {{ a.majorite.rapport }} fois plus que ne pas être visé.</b></p>
 </div>
@@ -146,7 +146,7 @@ ce tableau : deux personnes ne se comparent que sur les conseils où
 communs, sur {{ site.data.stats.general.paires_possibles_texte }} possibles. Un duo absent d’ici n’est pas un duo
 faible : c’est le plus souvent un duo qu’on ne peut pas mesurer.</p>
 
-## La trahison protège moins qu’on ne croit — parce qu’elle est rare
+## L’alliance protège : la trahison est rare
 
 {% assign tr = m.trahison %}{% assign tt = tr.test %}
 
@@ -162,15 +162,15 @@ cibles constant.</p>
 
 <div class="constat">
   <p><b>{{ tt.observe }} %</b> des bulletins visent un ancien allié — contre
-  <b>{{ tt.attendu }} %</b> attendus. {{ tt.ecart_types }} écarts-types.</p>
+  <b>{{ tt.attendu }} %</b> attendus. {{ tt.ecart_types }} {{ tt.ecart_types_mot }}.</p>
   <p>L’alliance ne se contente donc pas de faire voter ensemble : elle
   <b>protège</b>. À jeu de cibles identique, on écrit le nom d’un ancien allié
-  nettement moins souvent qu’on ne le devrait.</p>
+  nettement moins souvent qu’un partage au hasard des bulletins ne le ferait.</p>
 </div>
 
 {% assign ef = tr.effet %}
 Et quand on trahit quand même ? **Rien.** Passer de « jamais » à « toujours »
-viser un ancien allié fait gagner {{ ef.estimation }} points de saison —
+viser un ancien allié vaut {{ ef.estimation }} points de saison —
 intervalle {{ ef.bas }} à {{ ef.haut }}, p = {{ ef.p }}. La trahison ne paie
 pas ; elle ne coûte pas non plus. Sur {{ ef.effectif }} participations, elle est
 simplement **sans effet mesurable**.
@@ -192,7 +192,7 @@ au sort, à composition de camps identique.</p>
 
 <div class="constat">
   <p>{{ dt.observe }} enchaînements observés contre {{ dt.attendu }} attendus,
-  <b>{{ dt.ecart_types }} écarts-types</b>, p ajustée {{ dt.p_ajustee }}.</p>
+  <b>{{ dt.ecart_types }} {{ dt.ecart_types_mot }}</b>, p ajustée {{ dt.p_ajustee }}.</p>
   <p>Les sorties d’après-réunification ne se répartissent pas au hasard entre les deux
   tribus initiales : <b>elles se suivent</b>. La tribu dans laquelle on a joué les
   {{ site.data.stats.mots.episode_fusion }} premiers épisodes décide encore de l’ordre dans lequel on part.</p>
@@ -231,8 +231,8 @@ se lit ailleurs : sachant qu’il ne reste plus un seul des gens avec qui on a
 déjà voté, le risque de partir au conseil monte à
 {% assign pp = site.data.stats.modeles.pire_place %}{% assign ppa = pp.isolement | where: "modalite", "tous ses alliés sont partis" | first %}<b>{{ ppa.probabilite }} %</b>
 pour qui a vu partir tous ses alliés, contre
-{{ pp.isolement[3].probabilite }} % pour qui garde trois alliés ou plus.
-<a href="{{ '/statistiques/pire-place/' | relative_url }}">La pire place au conseil</a>.</p>
+{{ pp.isolement[3].probabilite }} % pour qui garde trois alliés ou plus
+(<a href="{{ '/statistiques/pire-place/' | relative_url }}">la pire place au conseil</a>).</p>
 
 <p class="note">Ce que cette page ne dit pas. Elle ne distingue pas <em>former</em>
 une majorité de <em>la rejoindre</em> : les bulletins ne portent pas d’heure, et

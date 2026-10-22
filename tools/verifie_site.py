@@ -908,14 +908,14 @@ AFFIRMATIONS_PAGES = {
                                "deux conseils plus tard n'est pas retenue"),
     "talent_stable": (False, "sources.md ecrit que la stabilite reste trop mince "
                              "pour etre retenue"),
-    "ambassadeurs_survie": (True, "statistiques/reunification.md ecrit que l'ambassadeur "
-                                  "sort plus tot, de justesse"),
+    "ambassadeurs_survie": (False, "statistiques/reunification.md et l'article long ecrivent "
+                                   "que la sortie plus precoce des ambassadeurs n'est pas retenue"),
     "camp_perdant": (True, "statistiques/conditionnelles.md et l'article court ecrivent que "
                            "voter avec la minorite expose, de justesse"),
-    "vote_meme_sexe": (True, "statistiques/qui-vise-qui.md et le resume du "
-                             "sommaire ecrivent « le sexe : un peu »"),
-    "vote_meme_metier": (True, "statistiques/qui-vise-qui.md et le resume du "
-                               "sommaire ecrivent « le metier : un peu aussi »"),
+    "vote_meme_sexe": (False, "statistiques/qui-vise-qui.md et le resume du "
+                              "sommaire ecrivent que le sexe n'est pas etabli"),
+    "vote_meme_metier": (False, "statistiques/qui-vise-qui.md et le resume du "
+                                "sommaire ecrivent que le metier n'est pas etabli"),
     "vote_ecart_age": (False, "statistiques/qui-vise-qui.md ecrit « l'age : a peine »"),
     "vote_meme_departement": (False, "statistiques/qui-vise-qui.md ecrit « le voisin : "
                                      "peut-etre », non concluant"),
@@ -947,8 +947,8 @@ def _contient_un(x):
 AFFIRMATIONS_VALEURS = [
     (("conseils", "par_soir_max"), lambda x: x == 3,
      "sources.md ecrit qu'un meme soir compte « deux, parfois trois » conseils"),
-    (("modeles", "force_et_jeu", "voix", "force"), _sous_un,
-     "statistiques/force.md ecrit que l'intervalle reste sous 1"),
+    (("modeles", "force_et_jeu", "voix", "force"), lambda x: not x["retenu"],
+     "statistiques/force.md ecrit que l'effet de la force sur les bulletins n'est pas etabli"),
     (("modeles", "force_et_jeu", "voix", "age"), _contient_un,
      "statistiques/force.md ecrit que l'intervalle de l'age contient 1"),
     (("modeles", "force_et_jeu", "survie", "force"),
@@ -990,8 +990,8 @@ AFFIRMATIONS_VALEURS = [
      "statistiques/pire-place.md ecrit que les deux signaux multiplient le risque"),
     (("modeles", "autour_du_feu", "age_ecart"), lambda x: x > 0,
      "statistiques/longevite.md ecrit que le doyen part plus souvent, en brut"),
-    (("modeles", "jury_final", "coefficients"), lambda x: x[0]["haut"] < 1,
-     "statistiques/jury.md ecrit qu'avoir elimine le jure divise la cote"),
+    (("modeles", "jury_final", "coefficients"), lambda x: not x[0]["retenu"] and x[1]["retenu"],
+     "statistiques/jury.md ecrit que la rancune n'est pas etablie et que le co-vote l'est"),
     (("modeles", "registre"),
      lambda x: not next(t for t in x if t["cle"] == "age_bascule_fusion")["retenu"],
      "statistiques/reunification.md et l'article long (6.3) ecrivent que la bascule de l'age n'est pas retenue"),
@@ -1016,9 +1016,6 @@ AFFIRMATIONS_VALEURS = [
     (("modeles", "registre"),
      lambda x: 0.01 <= float(str(next(t for t in x if t["cle"] == "camp_perdant")["p_ajustee"]).replace(",", ".")) < 0.05,
      "statistiques/conditionnelles.md, l'article court et l'article long ecrivent « de justesse » pour camp_perdant"),
-    (("modeles", "registre"),
-     lambda x: 0.01 <= float(str(next(t for t in x if t["cle"] == "ambassadeurs_survie")["p_ajustee"]).replace(",", ".")) < 0.05,
-     "statistiques/reunification.md et l'article long ecrivent « de justesse » pour ambassadeurs_survie"),
     (("conseils", "retours_en_jeu"), lambda x: x == 5,
      "sources.md raconte les conseils de revenants un par un (Linda, Tania deux "
      "fois, Christina, et Francis en cinquieme cas)"),
@@ -1033,6 +1030,7 @@ AFFIRMATIONS_VALEURS = [
      "methode.md ecrit que, vingt tests nuls ajoutes, presque tous les "
      "resultats retenus tiennent et que ce n'est pas une raison de s'arreter"),
     # Lot 4b : les phrases, titres et descriptions qui gardent un nombre ecrit.
+    (("modeles","fusion","pente_episode"), lambda x: float(str(x["bas"]).replace(",", ".")) <= 0 <= float(str(x["haut"]).replace(",", ".")), "statistiques/grille.md, saisons.md et sources.md ecrivent que l'intervalle de la pente episode/casting CONTIENT zero"),
     (("modeles","ruptures","detail"), lambda x: next(v for v in x if v["libelle"]=="Objets d'immunité en jeu")["avant"]==0, "statistiques/grille.md ecrit que les objets d'immunite etaient a zero avant la rupture"),
     (("modeles","audience"), lambda x: x["premiere"]["annee"]==2001 and x["sommet"]["jour"]=="Mardi", "statistiques/audience.md ecrit « depuis 2001 » (description) et que le sommet etait deja diffuse le mardi"),
     (("palmares","classement"), lambda x: x[2]["personne"]=="Ugo Lartiche", "statistiques/force.md nomme Ugo Lartiche troisieme palmares de l'histoire"),
@@ -1053,7 +1051,7 @@ AFFIRMATIONS_VALEURS = [
     (("vainqueurs","par_metier"), lambda x: x[0]["part"]==x[1]["part"]==x[2]["part"] > x[3]["part"] and {y["code"] for y in x[:3]}=={"encadrement","commerce","sport"}, "statistiques/vainqueurs.md nomme les trois premieres familles, a egalite"),
     (("finale","par_rang"), lambda x: 47.5 <= float(str(x[0]["elimine_aux_poteaux"]["probabilite"]).replace(",", ".")) <= 52.5, "statistiques/finale.md ecrit « une fois sur deux » pour le premier sorti aux poteaux"),
     (("classement",), lambda x: len(x["facettes"])==4 and x["joueurs_classes"]==531, "top.md (description, chapeau), index.md et le sommaire ecrivent « quatre facettes » et 531 aventuriers"),
-    (("modeles","casting","archetypes"), lambda x: [a["libelle"] for a in x]==["25-29 ans · femme · Commerce et vente","30-34 ans · homme · Agriculture et nature","40-44 ans · homme · Artisanat et bâtiment","45 ans et plus · Sans activité déclarée","18-24 ans","18-24 ans · femme · Étudiants"], "statistiques/casting.md decrit les six archetypes un par un (« la femme de la fin de la vingtaine, dans le commerce »...)"),
+    (("modeles","casting","archetypes"), lambda x: [a["libelle"] for a in x]==["25-29 ans · femme · Restauration et hôtellerie","30-34 ans · homme · Agriculture et nature","40-44 ans · homme · Artisanat et bâtiment","45 ans et plus · Sans activité déclarée","18-24 ans","18-24 ans · femme · Étudiants"], "statistiques/casting.md decrit les six archetypes un par un (« la femme de la fin de la vingtaine, dans le commerce »...)"),
     (("modeles","casting"), lambda x: max(x["silhouettes"], key=lambda s: s["score"])["k"] == x["nb_archetypes"], "statistiques/casting.md ecrit que la silhouette monte jusqu'au nombre retenu puis redescend"),
     (("modeles","conditionnelles","inverse"), lambda x: x["vise_si_sorti"] < 50, "statistiques/conditionnelles.md ecrit que la majorite des elimines n'avaient pas ete vises la fois d'avant"),
     (("modeles","avant_apres","negociateurs"), lambda x: x["sources_desaccord"]==1, "statistiques/reunification.md ecrit « La seule divergence porte sur Les Reliques du destin »"),
@@ -1061,13 +1059,13 @@ AFFIRMATIONS_VALEURS = [
     (("conseils","conseils_unanimes"), lambda x: x == 0, "statistiques/conseils.md (description, chapeau) ecrit que l'unanimite n'existe pas"),
     (("modeles","rappel","par_sort"), lambda x: sum(v["cas"] for v in x[-2:]) == 1, "statistiques/revenants.md ecrit « un seul retour » parmi les abandons"),
     (("revenants","vainqueurs_regagnants"), lambda x: x == 1, "statistiques/revenants.md titre « Un seul a gagne deux fois » et ecrit « Un seul a regagne »"),
-    (("modeles","equilibre","cox","coefficients"), lambda x: max(x, key=lambda v: abs(math.log(v["rapport"])))["variable"] == "Déjà venu", "statistiques/revenants.md et equilibre.md ecrivent que « deja venu » est le plus gros coefficient du modele"),
+    (("modeles","equilibre","cox","coefficients"), lambda x: not any(v.get("retenu") for v in x), "statistiques/equilibre.md ecrit qu'aucune ligne du modele de Cox ne passe le seuil une fois corrigee (« deja venu », encadrement, femme)"),
     (("sorties",), lambda x: (lambda d: d(2, "conseil") <= d(0, "conseil") and d(2, "epreuve") > max(d(0, "epreuve"), d(1, "epreuve")))(lambda i, k: float(str(x["par_decennie"][i][k]).replace(",", "."))),
      "statistiques/sorties.md : le conseil ne gagne pas de terrain des annees 2000 aux annees 2020, l'epreuve eliminatoire monte et culmine dans les annees 2020"),
     (("sorties",), lambda x: len(x["repartition"])==11 and x["par_decennie"][0]["ambassadeurs"]==0 and max(x["par_decennie"], key=lambda d: d["ambassadeurs"])["decennie"]=="2010s" and [r["sort"] for r in x["repartition"][:2]]==["elimine_conseil","abandon_medical"], "statistiques/sorties.md : onze facons de partir (description, chapeau), conseil puis abandon medical en tete, ambassadeurs absents des annees 2000 et au sommet dans les annees 2010"),
     (("prenoms","alexandra"), lambda x: x == 7, "statistiques/prenoms.md (description, chapeau) et le sommaire ecrivent qu'Alexandra revient sept fois"),
     (("age",), lambda x: max(x, key=lambda a: a["survie_moyenne"])["tranche"]=="30-34 ans" and max(x, key=lambda a: a["taux_finale"])["tranche"]=="30-34 ans" and x[5]["victoires"]==1, "statistiques/longevite.md, revenants.md et pronostic.md : les 30-34 ans tiennent le plus longtemps et accedent le plus a la finale ; une seule victoire chez les 45 ans et plus"),
-    (("colliers",), lambda x: (lambda part: 28 <= part("joue_pour_rien") <= 38 and 8.5 <= part("elimine_avec_collier") <= 11.5)(lambda k: float(str(next(i for i in x["issues"] if i["issue"] == k)["part_des_trouves"]).replace(",", "."))) and x["palmares"][0]["trouves"] > x["palmares"][1]["trouves"], "statistiques/colliers.md : « un collier sur trois joue pour rien », « un sur dix part avec son proprietaire », un seul a faire le plein"),
+    (("colliers",), lambda x: (lambda part: 28 <= part("joue_pour_rien") <= 38 and part("elimine_avec_collier") < 10)(lambda k: float(str(next(i for i in x["issues"] if i["issue"] == k)["part_des_trouves"]).replace(",", "."))) and x["palmares"][0]["trouves"] > x["palmares"][1]["trouves"], "statistiques/colliers.md : « un collier sur trois joue pour rien », « un sur dix part avec son proprietaire », un seul a faire le plein"),
     (("classement","top"), lambda x: x[0]["nom"]=="Claude Dartois", "statistiques/colliers.md nomme Claude Dartois premier du classement, une seule de ses saisons couverte"),
     (("sommaire",), lambda x: (x["entrees"], x["descriptives"], x["testees"]) == (27, 11, 16), "statistiques.md (chapeau), index.md et le sommaire ecrivent vingt-sept entrees, onze qui decrivent, seize qui testent"),
     (("indicateurs","saisons"), lambda x: all(30 <= s["age_moyen"] < 40 for s in x if not s["speciale"] and s.get("age_moyen") is not None), "statistiques.md ecrit que l'age moyen reste autour de la trentaine"),

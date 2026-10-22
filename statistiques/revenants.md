@@ -50,8 +50,8 @@ exprès.
 moins bien. Deux explications tiennent également debout et ces données ne
 permettent pas de trancher entre elles. Les revenants sont des cibles connues,
 et l’on vote contre ceux qu’on redoute ; mais les éditions spéciales
-rassemblent aussi des joueurs tous très forts, où la moitié doit forcément
-sortir tôt.</p>
+rassemblent aussi des joueurs tous très forts, parmi lesquels la moitié doit
+forcément sortir tôt.</p>
 
 ## Qui la production redemande
 
@@ -270,7 +270,7 @@ Le compte se met à jour à chaque rafraîchissement de la source, il n’est pa
 {% include graphiques/revenants-carrieres.svg %}
 
 <p class="legende-figure">Jours de jeu cumulés sur toutes les participations.
-En vert, ceux qui n’ont jamais été éliminés une seule fois.</p>
+En vert, ceux qui n’ont jamais été éliminés.</p>
 
 {% assign sf = r.sans_faute %}
 **{{ sf | size }} aventuriers n’ont jamais quitté le jeu avant la fin**, sur
@@ -310,9 +310,10 @@ personnes.</p>
 En tête, **{{ r.duos[0].a }} et {{ r.duos[0].b }}**, qui ont joué
 {{ r.duos[0].saisons }} fois ensemble.
 
-<p class="note">Le biais se retrouve tel quel dans un modèle multivarié : à
-âge, sexe, métier et saison identiques, un aventurier déjà venu est éliminé
-{{ site.data.stats.modeles.equilibre.cox.deja_venu_inverse }} fois moins vite, et c’est le plus gros coefficient du modèle
-(<a href="{{ '/statistiques/equilibre/' | relative_url }}">Le jeu tenu serré</a>).
-Aucun contrôle statistique ne répare une sélection faite sur la variable même
-qu’on étudie.</p>
+<p class="note">Ce biais a trompé ce site lui-même. Jusqu’au 22 octobre 2026,
+le modèle multivarié de <a href="{{ '/statistiques/equilibre/' | relative_url }}">Le
+jeu tenu serré</a> donnait « déjà venu » comme son plus gros coefficient : un
+aventurier déjà venu sortait près de trois fois moins vite. La variable
+comptait aussi les saisons jouées <em>après</em>, et marquait donc la première
+saison de ceux que la production allait rappeler — parce qu’ils étaient allés
+loin. Codée sur les seules saisons antérieures, elle ne dit plus rien.</p>

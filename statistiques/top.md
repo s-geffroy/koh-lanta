@@ -106,7 +106,7 @@ l’inverse.
 
 <p class="note">Un rang n’est pas une note. La colonne « dans le top » dit sous
 quelle part des {{ rb.tirages }} pondérations l’aventurier y figure, et
-l’avant-dernière l’étendue de ses rangs : quand elle est large, le rang de
+la dernière l’étendue de ses rangs : quand elle est large, le rang de
 gauche ne veut pas dire grand-chose. Et pour les
 {{ c.joueurs_courte_carriere }} aventuriers d’une ou deux
 saisons, la preuve reste mince — le rétrécissement les tient près de la
@@ -121,7 +121,7 @@ mesure, avec le compte brut qui la fonde.
 {% for f in c.facettes %}
 ### {{ f.libelle }} — {{ f.question_min }}
 
-<p class="note">{{ f.mesure }}, rapporté à {{ f.denominateur }}. Moyenne du
+<p class="note">Mesure : {{ f.mesure }} ; dénominateur : {{ f.denominateur }}. Moyenne du
 programme : {{ f.moyenne }}{{ f.unite }}. {{ f.documentes }} joueurs ont au
 moins une observation ; les autres valent la moyenne, faute de preuve.</p>
 
@@ -299,8 +299,7 @@ total par saison, sans dates. Là où les deux se comparent, elles s’accordent
 sur <b>{{ ce.part_accord }} %</b> des {{ ce.comparables }} participations.
 Surtout, la fiche attribue <b>{{ ce.victoires_invisibles }} victoires</b> à
 {{ ce.participations_invisibles }} participations pour lesquelles le tableau ne
-fournit aucun dénominateur — les {{ site.data.stats.mots.saisons_sans_bilan }} saisons sans relevé d’épreuves, pour
-l’essentiel. Ces victoires-là sont <strong>invisibles au classement</strong>.
+fournit aucun dénominateur. Ces victoires-là sont <strong>invisibles au classement</strong>.
 Un aventurier dont deux saisons sur trois sont dans ce cas est donc jugé sur la
 troisième, et il faut le savoir avant de lire son rang.</p>
 
@@ -328,7 +327,7 @@ puis retirée.
   <p>Retirez-les : il ne reste que des survies, et le taux monte à
   <b>100 % pour tout le monde</b>. La facette n’avait pas d’autre signal que
   cet échec obligatoire. Elle ne mesurait pas l’art de s’en sortir — elle
-  mesurait <em>combien de fois on nous a vu partir</em>.</p>
+  mesurait <em>combien de fois on nous a vus partir</em>.</p>
 </div>
 
 Le coup est plus dur encore sur ceux qu’on observe peu :
@@ -359,7 +358,7 @@ l’élimination. Leur résistance valait zéro par construction.
 elles ont <strong>renversé le résultat principal de cette page</strong>. Dans sa
 première version, les quatre facettes non physiques s’accordaient entre 0,349 et
 0,507, et la page en concluait qu’il existait un « jeu social » cohérent. Cet
-accord était fabriqué par le soir du départ, présent dans les trois à la fois.
+accord était fabriqué par le soir du départ, présent dans trois d’entre elles à la fois.
 Retiré, il ne reste rien — la section suivante le montre.
 <a href="{{ '/sources/' | relative_url }}">Les sources</a> racontent la revue.</p>
 
@@ -382,8 +381,8 @@ les paires dont la corrélation est négative.</p>
   {{ c.correlation_moyenne }}.</p>
   <p>Il n’existe donc pas de « bon joueur » au singulier. Être bon quelque part
   ne dit rien de ce qu’on vaut ailleurs, et un score synthétique ne fait
-  qu’<em>additionner {{ site.data.stats.mots.facettes }} qualités sans rapport</em>. Son premier est celui
-  que la moyenne a favorisé.</p>
+  qu’<em>additionner {{ site.data.stats.mots.facettes }} qualités sans rapport</em>. Le premier du
+  classement est celui que la moyenne a favorisé.</p>
 </div>
 
 
@@ -405,7 +404,7 @@ les bouches. Voici les meilleurs aux épreuves, et leur rang en discrétion.
 
 <div class="tableau-large">
 <table>
-<thead><tr><th class="nombre">#</th><th>Aventurier</th><th class="nombre">{{ fe.mesure }}</th><th class="nombre">Rang en {{ fd.libelle_min }}</th></tr></thead>
+<thead><tr><th class="nombre">#</th><th>Aventurier</th><th class="nombre">{{ fe.mesure }}</th><th class="nombre">Rang en discrétion</th></tr></thead>
 <tbody>
 {% for l in fe.top %}
 <tr><td class="nombre">{{ l.rang }}</td><td>{% include lien-aventurier.html id=l.id nom=l.nom %}</td>
@@ -461,7 +460,7 @@ médian, et l’intervalle qui contient 90 % de ses rangs selon la pondération.
   {% if rb.socle == 1 %}Un seul y est dans plus de 99 % des cas
   — <b>{{ rb.socle_noms | join: " et " }}</b>{% else %}Ils ne sont que
   <b>{{ rb.socle }}</b> à y être dans plus de 99 % des cas —
-  {{ rb.socle_noms | join: " et " }}{% endif %} — et le moins solide du top
+  {% for n in rb.socle_noms %}{{ n }}{% if forloop.rindex == 2 %} et {% elsif forloop.last == false %}, {% endif %}{% endfor %}{% endif %} — et le moins solide du top
   actuel n’y tient que {{ rb.part_top_minimale_du_top }} % du temps.</p>
 </div>
 
@@ -527,9 +526,9 @@ tirés au hasard.</p>
 
 <div class="constat">
   <p>La corrélation observée vaut <b>{{ t.observe }}</b>, contre
-  {{ t.attendu }} attendu du hasard : {{ t.ecart_types }} écarts-types,
+  {{ t.attendu }} attendu du hasard : {{ t.ecart_types }} {{ t.ecart_types_mot }},
   p = {{ t.p }} — et {{ t.p_ajustee }} après correction pour tests multiples.
-  <b>Le test n’est pas retenu</b>, et il s’en faut de peu.</p>
+  <b>Le test n’est pas retenu.</b></p>
   <p>Ce qu’il faut en dire, ni plus ni moins : <b>quelque chose se reproduit
   d’une saison à l’autre, mais on ne peut pas le distinguer du hasard sur
   {{ c.stabilite.effectif }} aventuriers</b>. Un joueur bon une fois l’est
@@ -551,7 +550,7 @@ autres : un test qu’on tiendrait à l’écart de la liste serait un test gra
 Dans la première version de cette page, il valait 0,039 pour p = 0,73 — c’est le
 même artefact du soir du départ qui l’écrasait.</p>
 
-## Le score n’a jamais vu le palmarès — et il le retrouve
+## Le score n’a jamais vu le palmarès — et il le retrouve en partie
 
 Le contrôle qui manquerait à n’importe quel autre top. Aucune des {{ site.data.stats.mots.facettes }}
 facettes ne sait qui a gagné. Où tombent les vainqueurs ?
@@ -561,9 +560,12 @@ facettes ne sait qui a gagné. Où tombent les vainqueurs ?
   <b>{{ pl.rang_median_vainqueurs }}</b> sur {{ c.joueurs_classes }}. Celui de
   tous les autres est {{ pl.rang_median_autres }}.</p>
   <p>Pris au hasard, un vainqueur est mieux classé qu’un non-vainqueur dans
-  <b>{{ pl.auc_pourcent }} %</b> des cas. Un score aveugle au
-  palmarès reconstitue donc largement le palmarès — c’est la meilleure raison
-  qu’on ait de le prendre au sérieux, et elle ne doit rien à la construction.</p>
+  <b>{{ pl.auc_pourcent }} %</b> des cas.</p>
+  <p>Une partie de ce chiffre tient pourtant à la construction : tout vainqueur
+  est allé au bout, et la facette « parcours » récompense ceux qui vont loin.
+  <b>Sans elle, le score retrouve encore les vainqueurs dans
+  {{ pl.auc_sans_parcours_pourcent }} % des cas</b> — c’est cette part-là qui
+  ne doit rien au palmarès. Elle est réelle, et nettement plus modeste.</p>
 </div>
 
 <p class="note">{{ pl.vainqueurs_dans_le_top }} des
@@ -611,10 +613,10 @@ contraint :
 <p class="note">Les limites, en un bloc, parce qu’elles comptent autant que le
 classement. <strong>Les facettes ne se parlent pas</strong> : la moyenne des
 {{ site.data.stats.mots.facettes }} est une convention, pas une grandeur.
-<strong>Les poids sont arbitraires</strong> : {{ rb.socle }} joueur seulement
-tient dans plus de 99 % des pondérations, quand {{ rb.candidats }} peuvent
+<strong>Les poids sont arbitraires</strong> : {% if rb.socle == 1 %}un joueur seulement
+tient{% else %}{{ rb.socle }} joueurs seulement tiennent{% endif %} dans plus de 99 % des pondérations, quand {{ rb.candidats }} peuvent
 entrer dans le top.
-<strong>La stabilité n’est pas établie</strong> — p = {{ t.p }}, à la limite.
+<strong>La stabilité n’est pas établie</strong> — p = {{ t.p }}.
 <strong>Deux facettes sur {{ site.data.stats.mots.facettes }} dépendent d’un dépouillement inégal</strong>, et
 la troisième — les épreuves — ignore {{ ce.victoires_invisibles }} victoires
 faute de dénominateur.

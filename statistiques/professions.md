@@ -19,7 +19,7 @@ loin ?**
 {% include graphiques/metiers-casting.svg %}
 
 L’encadrement domine largement le casting : cadres, dirigeants, gérants,
-ingénieurs et consultants forment à eux seuls {{ s.metiers[0].part_du_casting }} % des départs. Viennent
+ingénieurs et consultants forment à eux seuls {{ s.metiers[0].part_du_casting }} % du casting. Viennent
 ensuite le commerce, puis le sport et le coaching.
 
 ## Qui arrive

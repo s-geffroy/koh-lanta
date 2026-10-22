@@ -1,11 +1,11 @@
 ---
 layout: page
 title: Qui vise qui
-description: "Qui vise qui à Koh-Lanta : écrit-on le nom de celui qui ne nous ressemble pas ? Un peu pour le sexe et le métier, nettement pour la tribu initiale."
+description: "Qui vise qui à Koh-Lanta : écrit-on le nom de celui qui ne nous ressemble pas ? Rien d’établi pour le sexe ou le métier ; nettement, pour la tribu initiale."
 permalink: /statistiques/qui-vise-qui/
 chapeau: >-
-  Écrit-on le nom de celui qui ne nous ressemble pas ? Un peu, pour le sexe et
-  le métier. Nettement, pour la tribu initiale — et cela survit à la
+  Écrit-on le nom de celui qui ne nous ressemble pas ? Rien d’établi pour le
+  sexe ou le métier. Nettement, pour la tribu initiale — et cela survit à la
   disparition des tribus.
 ---
 
@@ -25,10 +25,12 @@ bulletins d’un conseil entre ses votants, en gardant <em>exactement</em> le m�
 jeu de cibles. La popularité d’une cible est donc parfaitement neutralisée :
 quatre voix contre l’un et deux contre l’autre restent quatre et deux. Ne
 subsiste que la question posée — qui, parmi ceux qui ont écrit ces noms, a écrit
-celui-là. Base : {{ h.bulletins }} bulletins sur {{ h.conseils }} conseils au
-dépouillement complet.</p>
+celui-là. L’incertitude, elle, vient d’un tirage des <em>saisons</em> : les mêmes
+blocs votent ensemble d’un conseil à l’autre, et traiter chaque conseil comme
+indépendant la sous-estimait. Base : {{ h.bulletins }} bulletins sur
+{{ h.conseils }} conseils au dépouillement complet.</p>
 
-## D’abord, une erreur que j’ai faite — et ce qu’elle a produit
+## D’abord, une erreur de ce site — et ce qu’elle a produit
 
 La première version de ce modèle nul rebattait les bulletins sans contrainte.
 Elle laissait donc un votant recevoir **son propre nom** : un couple qui
@@ -48,21 +50,22 @@ paraissait spectaculaire :
 <table>
 <thead><tr><th>Effet mesuré</th><th class="nombre">Modèle nul fautif</th><th class="nombre">Modèle nul corrigé</th></tr></thead>
 <tbody>
-<tr><td>Viser quelqu’un du même sexe</td><td class="nombre">−8,8 écarts-types</td><td class="nombre">{{ ts.ecart_types }} écarts-types</td></tr>
+<tr><td>Viser quelqu’un du même sexe</td><td class="nombre">−8,8 écarts-types</td><td class="nombre">{{ ts.ecart_types }} {{ ts.ecart_types_mot }}</td></tr>
 <tr><td>L’écart d’âge avec sa cible</td><td class="nombre">+12,5</td><td class="nombre">{{ ta.ecart_types }}</td></tr>
-<tr><td>Viser la même famille de métier</td><td class="nombre">−16,6</td><td class="nombre">{{ tm.ecart_types }}</td></tr>
+<tr><td>Viser la même famille de métiers</td><td class="nombre">−16,6</td><td class="nombre">{{ tm.ecart_types }}</td></tr>
 <tr><td>Viser sa propre tribu initiale</td><td class="nombre">−15,6</td><td class="nombre">{{ tb.ecart_types }}</td></tr>
 </tbody>
 </table>
 </div>
 
 Le défaut gonflait les quatre écarts. Corrigé, celui de l’âge disparaît ; ceux
-du sexe et du métier survivent, très réduits ; seule la tribu initiale garde un écart
-massif. C’est dit ici parce que c’est la leçon
+du sexe et du métier survivent, très réduits — et, depuis que l’incertitude se
+mesure par saison, ils ne passent plus le seuil ; seule la tribu initiale garde
+un écart massif. C’est dit ici parce que c’est la leçon
 principale de cette page : **un test de permutation ne vaut que ce que vaut son
 modèle nul**, et un nul mal contraint produit des écarts énormes et faux.
 
-## Le sexe : un peu
+## Le sexe : pas de façon établie
 
 {% assign t = reg | where: "cle", "vote_meme_sexe" | first %}
 
@@ -71,23 +74,25 @@ modèle nul**, et un nul mal contraint produit des écarts énormes et faux.
 <p class="legende-figure">Part des bulletins visant quelqu’un du même sexe.</p>
 
 {{ t.observe }} % contre {{ t.attendu }} % attendus — {{ t.ecart_types }}
-écarts-types, p ajustée {{ t.p_ajustee }}. **Retenu, et petit** : on vise un peu
-moins souvent quelqu’un de son sexe que le partage des cibles ne le voudrait.
+{{ t.ecart_types_mot }}, p ajustée {{ t.p_ajustee }}. **Non retenu** : on vise un peu
+moins souvent quelqu’un de son sexe que le partage des cibles ne le voudrait,
+mais l’écart ne passe pas le seuil.
 Les parts brutes de la page des conseils, elles, tiennent surtout à la
 composition des conseils : une fois celle-ci neutralisée, il reste peu de
 chose.
 
-## Le métier : un peu aussi
+## Le métier : pas davantage
 
 {% assign t = reg | where: "cle", "vote_meme_metier" | first %}
 
 {% include graphiques/vise-metier.svg %}
 
-<p class="legende-figure">Part des bulletins visant la même famille de métier.</p>
+<p class="legende-figure">Part des bulletins visant la même famille de métiers.</p>
 
-{{ t.observe }} % contre {{ t.attendu }} % — {{ t.ecart_types }} écarts-types,
-p ajustée {{ t.p_ajustee }}. **Retenu, et petit** : on vise un peu moins sa
-propre famille de métier que le hasard ne le voudrait. Si on la vise
+{{ t.observe }} % contre {{ t.attendu }} % — {{ t.ecart_types }} {{ t.ecart_types_mot }},
+p ajustée {{ t.p_ajustee }}. **Non retenu** : on vise un peu moins sa propre
+famille de métiers que le hasard ne le voudrait, mais l’écart ne passe pas le
+seuil. Si on la vise
 **rarement**, c’est d’abord parce que peu de gens la partagent dans un camp de
 vingt ; l’écart au hasard, lui, est mince.
 
@@ -100,7 +105,7 @@ vingt ; l’écart au hasard, lui, est mince.
 <p class="legende-figure">Écart d’âge moyen entre le votant et sa cible.</p>
 
 {{ t.observe }} ans contre {{ t.attendu }} attendus. L’écart existe —
-{{ t.ecart_types }} écarts-types — mais il ne franchit pas la correction pour
+{{ t.ecart_types }} {{ t.ecart_types_mot }} — mais il ne franchit pas la correction pour
 tests multiples (p ajustée {{ t.p_ajustee }}), et **il est minuscule**. Il n’y a
 rien à en tirer.
 
@@ -111,19 +116,19 @@ rien à en tirer.
 Quatre traits étaient testés jusqu’ici. En voici un cinquième, qu’on n’avait
 jamais posé : **épargne-t-on celui qui vit dans le même département ?** Les
 aventuriers ne se connaissent pas avant le tournage, mais un voisin est un
-voisin — on se découvre du pays commun, et l’on suppose que cela crée quelque
+voisin — on se découvre un pays commun, et l’on suppose que cela crée quelque
 chose.
 
 {% include graphiques/vise-departement.svg %}
 
 <p class="legende-figure">Part des bulletins visant quelqu’un du même
-département, contre {{ td.tirages }} redistributions des bulletins à
-l’intérieur de chaque conseil.</p>
+département, contre {{ td.tirages }} tirages de saisons autour de l’attendu
+que donne le partage des bulletins à l’intérieur de chaque conseil.</p>
 
 <div class="constat">
   <p><b>{{ td.observe }} %</b> des bulletins visent quelqu’un du même
   département, pour <b>{{ td.attendu }} %</b> attendus : l’observé est
-  <b>sous</b> l’attendu, {{ td.ecart_types }} écarts-types, p brute {{ td.p }},
+  <b>sous</b> l’attendu, {{ td.ecart_types }} {{ td.ecart_types_mot }}, p brute {{ td.p }},
   p ajustée <b>{{ td.p_ajustee }}</b>. <b>Non concluant, de justesse.</b></p>
   <p>On vise le voisin un peu moins souvent que le partage des bulletins ne le
   voudrait, mais l’écart ne franchit pas la correction pour tests multiples.
@@ -156,7 +161,7 @@ tribu initiale, sur les seuls conseils mixtes.</p>
   <p>Une fois les tribus recomposées, <b>{{ t.observe }} %</b> des bulletins visent
   quelqu’un de la tribu initiale de leur auteur. Le simple partage des cibles en
   prévoit <b>{{ t.attendu }} %</b>.</p>
-  <p>{{ t.ecart_types }} écarts-types, p ajustée {{ t.p_ajustee }}. On écrit le
+  <p>{{ t.ecart_types }} {{ t.ecart_types_mot }}, p ajustée {{ t.p_ajustee }}. On écrit le
   nom d’un ancien coéquipier <b>{{ t.ecart_relatif }} % moins souvent</b> qu’on ne
   le devrait.</p>
   <p>La tribu initiale n’existe plus. Elle protège encore.</p>
@@ -164,8 +169,8 @@ tribu initiale, sur les seuls conseils mixtes.</p>
 
 C’est la même chose que la persistance des alliances, vue d’un autre angle et
 mesurée sur d’autres bulletins : ce qui se joue au conseil n’a pas grand-chose à
-voir avec ce que les gens sont, et tout à voir avec **qui ils ont côtoyé**.
-[Les alliances]({{ '/statistiques/alliances/' | relative_url }}).
+voir avec ce que les gens sont, et tout à voir avec **qui ils ont côtoyé** —
+[les alliances]({{ '/statistiques/alliances/' | relative_url }}) le montrent.
 
 <p class="note">Ce que cette page ne dit pas. Elle ne mesure aucune intention :
 un bulletin ne dit pas pourquoi il a été écrit. Épargner sa tribu initiale peut

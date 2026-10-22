@@ -14,17 +14,37 @@ from graphiques import (arcs, barres_horizontales, barres_groupees,  # noqa: E40
                         colonnes, courbes, distribution_nulle, ecrire, foret,
                         frise, halteres, nuage, peigne, pentes,
                         petits_multiples, plan, ENCRE_DOUCE, ENCRE_MUETTE, SERIES, TRIBUS,
-                        survie)
+                        survie, accorde, compte)
 sys.path.insert(0, os.path.join(RACINE, "tools", "extraction"))
 from csp import libelles as libelles_metiers                        # noqa: E402
 
 NOM_COULEUR = {"jaune": "Jaune", "rouge": "Rouge", "bleu": "Bleu", "vert": "Vert",
                "orange": "Orange", "violet": "Violet", "noir": "Noire", "blanc": "Blanche"}
+# La couleur ACCORDEE a « tribu », nom feminin : « la tribu verte ». L'intitule
+# d'une barre dit la couleur seule (« Vert ») ; l'infobulle, elle, ecrivait
+# « Tribu vert », « Tribu violet ». « Orange » est invariable.
+COULEUR_DE_TRIBU = {"jaune": "jaune", "rouge": "rouge", "bleu": "bleue", "vert": "verte",
+                    "orange": "orange", "violet": "violette", "noir": "noire",
+                    "blanc": "blanche"}
 
 
 def _lire(nom):
     with open(os.path.join(RACINE, "_data", nom), encoding="utf-8") as f:
         return donnees.charger(f)
+
+
+def _depart(p, jour, duree=None):
+    """Le jour de depart d'une participation, dit juste pour chacun.
+
+    Les infobulles ecrivaient « sorti au jour N » pour tout le monde : au
+    masculin pour les aventurieres, et « sorti » pour un vainqueur ou un
+    finaliste, qui ne sont pas sortis -- ils ont tenu jusqu'au bout. `genre`
+    vaut « f » ou « h » dans _data/participations.yml.
+    """
+    sur = f" sur {duree}" if duree else ""
+    if p.get("sort") in ("vainqueur", "finaliste"):
+        return f'{p["sort"]}, en jeu jusqu’au jour {jour}{sur}'
+    return f'{"sortie" if p.get("genre") == "f" else "sorti"} au jour {jour}{sur}'
 
 
 # Les noms de variables des modeles sont des identifiants (« metier:sport ») ;
@@ -186,7 +206,8 @@ def main():
     ecrire("vainqueurs-age.svg", colonnes(
         [{"libelle": t["tranche"].replace(" ans", "").replace(" et plus", "+"),
           "valeur": t["effectif"],
-          "detail": f'{t["tranche"]} : {t["effectif"]} vainqueurs, {t["part"]} % du total'}
+          "detail": f'{t["tranche"]} : {compte(t["effectif"], "vainqueur", "vainqueurs")}, '
+                    f'{t["part"]} % du total'}
          for t in v["par_tranche"]],
         titre="Âge des vainqueurs au moment du sacre",
         description="Nombre de vainqueurs par tranche d'âge, saisons classiques.",
@@ -194,7 +215,8 @@ def main():
 
     ecrire("vainqueurs-metier.svg", barres_horizontales(
         [{"libelle": m["libelle"], "valeur": m["effectif"],
-          "detail": f'{m["libelle"]} : {m["effectif"]} victoires ({m["part"]} % des vainqueurs)'}
+          "detail": f'{m["libelle"]} : {compte(m["effectif"], "victoire", "victoires")} '
+                    f'({m["part"]} % des vainqueurs)'}
          for m in v["par_metier"][:9]],
         titre="Métier des vainqueurs",
         description="Nombre de victoires par famille de métiers, saisons classiques.",
@@ -209,8 +231,9 @@ def main():
                        if g["libelle"] == "Finalistes"), None)
         ecrire("vainqueurs-voix.svg", colonnes(
             [{"libelle": str(d["voix"]), "valeur": d["effectif"],
-              "detail": f'{d["effectif"]} vainqueur(s) ayant reçu {d["voix"]} voix '
-                        f'contre eux sur toute leur saison'}
+              "detail": f'{compte(d["effectif"], "vainqueur", "vainqueurs")} ayant reçu '
+                        f'{d["voix"]} voix contre {accorde(d["effectif"], "lui", "eux")} '
+                        f'sur toute {accorde(d["effectif"], "sa", "leur")} saison'}
              for d in vv["distribution"]],
             titre="Voix reçues par les vainqueurs, sur toute leur saison",
             description="Nombre de vainqueurs par nombre total de voix reçues, "
@@ -336,8 +359,9 @@ def main():
     ecrire("tribus-victoires.svg", barres_horizontales(
         [{"libelle": NOM_COULEUR.get(c["couleur"], c["couleur"]), "valeur": c["victoires"],
           "couleur": TRIBUS.get(c["couleur"]),
-          "detail": f'Tribu {NOM_COULEUR.get(c["couleur"], c["couleur"]).lower()} : '
-                    f'{c["victoires"]} victoires pour {c["effectif"]} aventuriers'}
+          "detail": f'Tribu {COULEUR_DE_TRIBU.get(c["couleur"], c["couleur"])} : '
+                    f'{compte(c["victoires"], "victoire", "victoires")} pour '
+                    f'{compte(c["effectif"], "aventurier", "aventuriers")}'}
          for c in sorted(couleurs, key=lambda x: -x["victoires"])],
         titre="Victoires finales par couleur de tribu initiale",
         description="Nombre de vainqueurs selon la couleur de leur tribu initiale.",
@@ -346,9 +370,9 @@ def main():
     ecrire("tribus-survie.svg", barres_horizontales(
         [{"libelle": NOM_COULEUR.get(c["couleur"], c["couleur"]),
           "valeur": c["survie_moyenne"], "couleur": TRIBUS.get(c["couleur"]),
-          "detail": f'Tribu {NOM_COULEUR.get(c["couleur"], c["couleur"]).lower()} : '
+          "detail": f'Tribu {COULEUR_DE_TRIBU.get(c["couleur"], c["couleur"])} : '
                     f'{c["survie_moyenne"]} % de la saison en moyenne '
-                    f'({c["effectif"]} aventuriers)'}
+                    f'({compte(c["effectif"], "aventurier", "aventuriers")})'}
          for c in sorted(couleurs, key=lambda x: -(x["survie_moyenne"] or 0))],
         titre="Durée de survie moyenne par couleur de tribu",
         description="Part de la saison passée dans le jeu, en pourcentage, par couleur.",
@@ -559,8 +583,10 @@ def main():
 
         ecrire("colliers-saison.svg", colonnes(
             [{"libelle": str(x["annee"]), "valeur": x["colliers"],
-              "detail": f'{x["titre"]} ({x["annee"]}) : {x["colliers"]} colliers, '
-                        f'{x["joues"]} joués, {x["voix_annulees"]} voix annulées'}
+              "detail": f'{x["titre"]} ({x["annee"]}) : '
+                        f'{compte(x["colliers"], "collier", "colliers")}, '
+                        f'{compte(x["joues"], "joué", "joués")}, '
+                        f'{compte(x["voix_annulees"], "voix annulée", "voix annulées")}'}
              for x in co["par_saison"]],
             titre="Nombre de colliers par saison",
             description="Colliers cachés dans le jeu, saison par saison.",
@@ -591,12 +617,13 @@ def main():
             ordre = ["elimine_conseil", "elimine_orientation", "elimine_poteaux",
                      "finaliste", "vainqueur"]
             lib = {"elimine_conseil": "Éliminé au conseil",
-                   "elimine_orientation": "Éliminé à l'orientation",
+                   "elimine_orientation": "Éliminé à l’orientation",
                    "elimine_poteaux": "Éliminé aux poteaux",
                    "finaliste": "Finaliste", "vainqueur": "Vainqueur"}
             ecrire("menace-sort.svg", barres_horizontales(
                 [{"libelle": lib[k], "valeur": ind["menace_par_sort"][k],
-                  "detail": f'{lib[k]} : {ind["menace_par_sort"][k]} voix reçues '
+                  "detail": f'{lib[k]} : '
+                            f'{compte(ind["menace_par_sort"][k], "voix reçue", "voix reçues")} '
                             f'par conseil en moyenne'}
                  for k in ordre if k in ind["menace_par_sort"]],
                 titre="Être visé, et finir la saison",
@@ -627,8 +654,9 @@ def main():
 
         ecrire("saisons-abandon.svg", colonnes(
             [{"libelle": str(x["numero"]), "valeur": x["taux_abandon"],
-              "detail": f'{x["titre"]} ({x["annee"]}) : {x["abandons"]} abandons '
-                        f'sur {x["effectif"]} aventuriers'}
+              "detail": f'{x["titre"]} ({x["annee"]}) : '
+                        f'{compte(x["abandons"], "abandon", "abandons")} '
+                        f'sur {compte(x["effectif"], "aventurier", "aventuriers")}'}
              for x in sa],
             titre="Le taux d'abandon, saison après saison",
             description="Part des aventuriers ayant abandonné, par saison.",
@@ -706,7 +734,8 @@ def figures_ajoutees(stats):
             [{"nom": n["nom"].split()[0], "poids": n["degre"],
               "couleur": SERIES[0] if n["saisons"] == 2 else SERIES[1],
               "detail": f'{n["nom"]} — {n["saisons"]} saisons, '
-                        f'{n["degre"]} aventuriers croisés parmi les revenants'}
+                        f'{compte(n["degre"], "aventurier croisé", "aventuriers croisés")} '
+                        f'parmi les revenants'}
              for n in g["noeuds"]],
             [{"de": a["de"], "vers": a["vers"], "poids": a["poids"],
               "couleur": teintes[a.get("poids") or 1],
@@ -766,7 +795,8 @@ def figures_ajoutees(stats):
         lot = [t for t in q["tranches"] if t["tranche"] < 100 and t["encore_en_jeu"] > 20]
         ecrire("risque-courbe.svg", colonnes(
             [{"libelle": f'{t["tranche"]} %', "valeur": t["risque"],
-              "detail": f'À {t["tranche"]} % de la saison : {t["sortants"]} sortants '
+              "detail": f'À {t["tranche"]} % de la saison : '
+                        f'{compte(t["sortants"], "sortant", "sortants")} '
                         f'sur {t["encore_en_jeu"]} encore en jeu'}
              for t in lot],
             titre="Le risque de sortir, selon l'avancement de la saison",
@@ -779,7 +809,7 @@ def figures_ajoutees(stats):
         ecrire("risque-jours.svg", barres_horizontales(
             [{"libelle": f'Jour {x["jour"]}', "valeur": x["sortants"],
               "couleur": SERIES[7],
-              "detail": f'Jour {x["jour"]} : {x["sortants"]} départs'}
+              "detail": f'Jour {x["jour"]} : {compte(x["sortants"], "départ", "départs")}'}
              for x in q["jours_les_plus_meurtriers"]],
             titre="Les jours qui font le plus de sortants",
             description="Nombre de départs par jour de jeu, saisons classiques.",
@@ -790,7 +820,7 @@ def figures_ajoutees(stats):
     if ss:
         ecrire("saisons-petits-multiples.svg", petits_multiples(
             [{"titre": (f'{x["numero"]}' if x["numero"] and not x["speciale"]
-                        else x["titre"][:13]),
+                        else x["titre"]),
               "sous_titre": str(x["annee"]),
               "valeurs": x["restants"],
               "couleur": SERIES[4] if x["speciale"] else SERIES[0],
@@ -853,7 +883,8 @@ def figures_ajoutees(stats):
         ecrire("programme-jours.svg", barres_horizontales(
             [{"libelle": x["jour"].capitalize(), "valeur": x["effectif"],
               "couleur": SERIES[0],
-              "detail": f'{x["effectif"]} saisons lancées un {x["jour"]}'}
+              "detail": f'{compte(x["effectif"], "saison lancée", "saisons lancées")} '
+                        f'un {x["jour"]}'}
              for x in pr["jour_de_lancement"]],
             titre="Le jour de la semaine du premier épisode",
             description="Jour de diffusion du premier épisode de chaque saison.",
@@ -862,10 +893,21 @@ def figures_ajoutees(stats):
     # ---------------------------------------------------------------- votes
     a = stats.get("arc_des_votes") or {}
     if a.get("noeuds"):
+        # Les noeuds ne portent ni le sexe ni le sort : on retrouve chaque
+        # participation dans le meme ordre que tools/analyses.py
+        # (arc_des_votes), et l'on verifie le prenom avant de s'en servir.
+        lot = sorted((p for p in _lire("participations.yml")
+                      if p["saison"] == a.get("saison")),
+                     key=lambda p: (p.get("jour_sortie") or 0, p["nom"]))
+
+        def _qui(n):
+            p = lot[n["rang"]] if 0 <= n.get("rang", -1) < len(lot) else {}
+            return p if p.get("nom") == n["nom"] else {}
+
         ecrire("votes-arc.svg", arcs(
             [{"nom": n["nom"], "poids": 1,
               "couleur": TRIBUS.get(n.get("couleur"), ENCRE_MUETTE),
-              "detail": f'{n["nom"]} — sorti au jour {n["jour_sortie"]}'}
+              "detail": f'{n["nom"]} — {_depart(_qui(n), n["jour_sortie"])}'}
              for n in a["noeuds"]],
             [{"de": l["de"], "vers": l["vers"], "poids": l["poids"]}
              for l in a["liens"]],
@@ -884,8 +926,9 @@ def figures_ajoutees(stats):
     if v.get("repartition"):
         ecrire("conseils-voix.svg", colonnes(
             [{"libelle": str(x["voix"]), "valeur": x["effectif"],
-              "detail": f'{x["effectif"]} conseils se sont joués à '
-                        f'{x["voix"]} voix ({x["part"]} %)'}
+              "detail": f'{x["effectif"]} '
+                        f'{accorde(x["effectif"], "conseil s’est joué", "conseils se sont joués")} '
+                        f'à {x["voix"]} voix ({x["part"]} %)'}
              for x in v["repartition"]],
             titre="Combien de voix faut-il pour partir ?",
             description="Nombre de bulletins portant le nom de l'éliminé.",
@@ -903,13 +946,17 @@ def figure_epreuves_nommees():
         return
     ecrire("epreuves-natures.svg", barres_horizontales(
         [{"libelle": x["libelle"], "valeur": x["effectif"],
-          "detail": f'{x["effectif"]} épreuves récurrentes que le wiki qualifie '
-                    f'de « {x["libelle"].lower()} »'}
+          "detail": f'{compte(x["effectif"], "épreuve récurrente", "épreuves récurrentes")} '
+                    f'que le wiki qualifie '
+                    # L'elision se fait devant le mot cite, guillemet ou non :
+                    # « d'« équilibre » », mais « de « force » ».
+                    f'{"d’" if x["libelle"][:1].lower() in "aeiouyhàâéèêîôû" else "de "}'
+                    f'« {x["libelle"].lower()} »'}
          for x in lignes],
         titre="Ce que le wiki dit de la nature des épreuves",
         description="Nombre d'épreuves récurrentes portant chaque qualificatif. "
                     "Une épreuve peut en porter deux — « rapidité, force ».",
-        unite=" épreuves", couleur=SERIES[2], marge_gauche=130))
+        unite=(" épreuve", " épreuves"), couleur=SERIES[2], marge_gauche=130))
 
 
 def figure_prenoms():
@@ -934,9 +981,9 @@ def figure_prenoms():
 
     ecrire("prenoms-ecart.svg", barres_groupees(
         [{"libelle": x["prenom"], "valeurs": [x["observe"], x["attendu"]],
-          "details": [f'{x["prenom"]} : {x["observe"]} aventuriers',
-                      f'{x["prenom"]} : {x["attendu"]} attendus si le casting '
-                      f'suivait les naissances françaises']}
+          "details": [f'{x["prenom"]} : {compte(x["observe"], "aventurier", "aventuriers")}',
+                      f'{x["prenom"]} : {compte(x["attendu"], "attendu", "attendus")} '
+                      f'si le casting suivait les naissances françaises']}
          for x in lot],
         [{"nom": "Observé à Koh-Lanta", "couleur": SERIES[1]},
          {"nom": "Attendu en France", "couleur": SERIES[0]}],
@@ -973,7 +1020,7 @@ def figure_nuage():
         points.append({
             "x": a, "y": 100.0 * j / d, "couleur": teinte,
             "detail": f'{p.get("nom_complet") or p["nom"]} — {a} ans, '
-                      f'{s["titre"]} ({s["annee"]}), sorti au jour {j} sur {d}',
+                      f'{s["titre"]} ({s["annee"]}), {_depart(p, j, d)}',
             "_rang": 0 if teinte == ENCRE_MUETTE else 1,
         })
     # Les vainqueurs et finalistes dessines en dernier : sinon la masse des
@@ -1046,12 +1093,12 @@ def figures_des_modeles(stats):
             [{"libelle": _lisible(i["variable"]),
               "valeur": i["perte"],
               "detail": f'Brouiller « {_lisible(i["variable"])} » déplace le rang '
-                        f'du vainqueur de {i["perte"]} place(s).'}
+                        f'du vainqueur de {compte(i["perte"], "place", "places")}.'}
              for i in pron["importances"]],
             titre="Ce qui porte le peu de signal qu'il y a",
             description="Dégradation du rang du vainqueur quand une seule "
                         "variable est brouillée. Toutes restent minuscules.",
-            unite=" places", couleur=SERIES[5], marge_gauche=210))
+            unite=(" place", " places"), couleur=SERIES[5], marge_gauche=210))
 
     # --- B bis. la prevision hors echantillon ------------------------------
     prev = (stats.get("prevision") or {}).get("jeux") or []
@@ -1176,8 +1223,8 @@ def figures_des_modeles(stats):
         ecrire("geographie-regions.svg", foret(
             [{"libelle": r["region"], "estimation": r["indice"],
               "bas": r["indice_bas"], "haut": r["indice_haut"],
-              "detail": f'{r["region"]} : {r["observe"]} aventuriers pour '
-                        f'{r["attendu"]} attendus, soit ×{r["indice"]}'}
+              "detail": f'{r["region"]} : {compte(r["observe"], "aventurier", "aventuriers")} '
+                        f'pour {compte(r["attendu"], "attendu", "attendus")}, soit ×{r["indice"]}'}
              for r in geo["regions"]],
             titre="D'où viennent les aventuriers, région par région",
             description="Indice observé divisé par attendu. À 1, la région fournit "
@@ -1239,7 +1286,7 @@ def figures_des_modeles(stats):
             titre="La réunification suit la grille, pas le nombre de joueurs",
             description="Chaque saison figure deux fois : par l'épisode où la "
                         "réunification tombe, et par le nombre de joueurs qu'elle laisse. "
-                        "Le premier ne bouge pas quand le casting grossit ; le "
+                        "Le premier ne bouge pas de façon mesurable quand le casting grossit ; le "
                         "second suit.",
             x_titre="taille du casting", y_titre="épisodes / joueurs",
             legende=[("épisode de la réunification", SERIES[0]),
@@ -1581,7 +1628,8 @@ def figures_des_modeles(stats):
     if rp.get("par_sort"):
         ecrire("rappel-sort.svg", barres_horizontales(
             [{"libelle": x["modalite"], "valeur": x["probabilite"],
-              "detail": f'{x["modalite"]} : {x["cas"]} rappelés sur {x["effectif"]}, '
+              "detail": f'{x["modalite"]} : {compte(x["cas"], "rappelé", "rappelés")} '
+                        f'sur {x["effectif"]}, '
                         f'soit {x["probabilite"]} % (intervalle {x["bas"]} à {x["haut"]} %)'}
              for x in rp["par_sort"]],
             titre="Qui la production redemande",
@@ -1594,7 +1642,8 @@ def figures_des_modeles(stats):
               "sous_titre": f'{x["effectif"]} aventuriers',
               "valeur": x["probabilite"], "bas": x["bas"], "haut": x["haut"],
               "couleur": SERIES[2],
-              "detail": f'{x["modalite"]} : {x["cas"]} rappelés sur {x["effectif"]}'}
+              "detail": f'{x["modalite"]} : {compte(x["cas"], "rappelé", "rappelés")} '
+                        f'sur {x["effectif"]}'}
              for x in rp["par_survie"]],
             titre="Le rappel suit la durée, presque seul",
             description="Part des aventuriers rappelés selon le cinquième de "

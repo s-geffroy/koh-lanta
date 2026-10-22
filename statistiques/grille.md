@@ -1,11 +1,11 @@
 ---
 layout: page
 title: La grille
-description: "Deux décisions que Koh-Lanta ne commente jamais : le jour où la production réunit les tribus, et l’année où elle a changé de jeu."
+description: "Deux décisions que Koh-Lanta ne commente jamais : le jour où la production réunit les tribus, et la dérive de son format, qui n’a pas de date."
 permalink: /statistiques/grille/
 chapeau: >-
   Deux décisions que la production ne commente jamais : le jour où elle réunit
-  les tribus, et l’année où elle a changé de jeu.
+  les tribus, et la dérive de son format — qui n’a pas de date.
 ---
 
 {% assign m = site.data.stats.modeles %}
@@ -34,41 +34,44 @@ réunification tombe, et par le nombre de joueurs qu’elle laisse en jeu.</p>
 
 
 <div class="constat">
-  <p>Quand le casting gagne un membre, l’épisode de la réunification recule de
-  <b>{{ f.pente_episode.pente }}</b> — intervalle
+  <p>Quand le casting gagne un membre, l’épisode de la réunification recule en
+  moyenne de <b>{{ f.pente_episode.pente }}</b> — intervalle
   {{ f.pente_episode.bas }} à {{ f.pente_episode.haut }}, p =
-  {{ f.pente_episode.p }}. Sur toute la croissance observée, de
-  {{ f.casting_min }} à {{ f.casting_max }} personnes, cela fait
-  <b>{{ f.croissance_episode_texte }}</b>.
+  {{ f.pente_episode.p }}. <b>L’intervalle contient zéro</b> : ce recul ne se
+  distingue pas du hasard. Même pris tel quel, il ne ferait que
+  {{ f.croissance_episode_texte }} sur toute la croissance observée, de
+  {{ f.casting_min }} à {{ f.casting_max }} personnes.
   La médiane reste l’épisode {{ f.episode_median }}, de {{ f.annee_min }} à {{ f.annee_max }}.</p>
   <p>Le nombre de joueurs restants, lui, bouge de
   <b>{{ f.pente_restants.pente }}</b> ({{ f.pente_restants.bas }} à
   {{ f.pente_restants.haut }}) — soit
   <b>{{ f.croissance_restants }} joueurs</b> de
   plus sur la même croissance. Le casting grossit, le plateau réuni grossit
-  avec lui, et la date bouge à peine.</p>
+  avec lui, et la date ne bouge pas de façon mesurable.</p>
   <p>La réunification suit donc la <b>grille de diffusion</b> bien plus que
-  l’état du jeu. Les castings ont grossi de {{ f.croissance }} personnes ; la
-  réunification a reculé de {{ f.croissance_episode_texte }}, et le plateau réuni est passé de
-  {{ f.restants_casting_min }} joueurs, en médiane avec les plus petits castings, à
-  {{ f.restants_casting_max }} avec les plus grands. C’est le programme qui décide, et le jeu
-  qui s’adapte — mais pas tout à fait sans concession.</p>
+  l’état du jeu. Les castings ont grossi de {{ f.croissance }} personnes, et le
+  plateau réuni est passé de {{ f.restants_casting_min }} joueurs, en médiane
+  avec les plus petits castings, à {{ f.restants_casting_max }} avec les plus
+  grands. C’est le programme qui décide, et le jeu qui s’adapte.</p>
 </div>
 
-<p class="note"><strong>Cette page disait « il ne bouge pas », et il faut dire
-pourquoi elle ne le dit plus.</strong> La pente valait 0,008 avec un intervalle
-de −0,135 à 0,152 : rien. Deux saisons ont changé depuis, et pour la même
-raison — <a href="{{ '/sources/' | relative_url }}">une réparation du relevé des
+<p class="note"><strong>Cette conclusion a basculé deux fois, et il faut le
+dire.</strong> La page a d’abord écrit « il ne bouge pas » : la pente valait
+0,008, avec un intervalle de −0,135 à 0,152. Deux saisons ont ensuite changé,
+pour la même raison — <a href="{{ '/sources/' | relative_url }}">une réparation du relevé des
 épreuves</a>. <i>Cambodge</i> était <em>écartée</em> du calcul, son dernier
 collectif tombant à un épisode qui ne laissait que quatre joueurs ; c’était un
 défaut de numérotation, et la saison rentre aujourd’hui dans le rang.
 <i>La Revanche des 4 Terres</i> plaçait sa réunification à l’épisode 4 sur 17 — un
 chiffre lu dans un tableau de classement des quatre tribus pris pour un tableau
 de résultats ; elle la place désormais à l’épisode
-{% assign r4t = f.lignes | where: "saison", "s27" | first %}{{ r4t.episode }}. Deux corrections, et une
-conclusion qui bascule : c’est aussi ce que vaut un résultat tenu par
-{{ f.saisons }} saisons. L’intervalle exclut zéro de peu, et il faut le lire
-comme tel.</p>
+{% assign r4t = f.lignes | where: "saison", "s27" | first %}{{ r4t.episode }}. La pente est alors passée à 0,111,
+intervalle 0,016 à 0,205, et la page a écrit que la réunification reculait.
+Le 20 octobre 2026, la relecture des numéros d’épisode des épreuves a fait
+repasser la borne basse sous zéro, sans que rien ne le signale : la page a
+continué d’affirmer un recul pendant deux jours. C’est ce que vaut un
+résultat tenu par {{ f.saisons }} saisons et posé sur le seuil : il se lit
+avec son intervalle, pas avec sa conclusion.</p>
 
 Cela se voit indirectement ailleurs sur ce site. Les
 [petits multiples]({{ '/saisons/' | relative_url }}) montrent des courbes de
@@ -76,7 +79,7 @@ survie « remarquablement stables » : le calendrier n’a presque pas boug
 c’est ce « presque » que la pente ci-dessus mesure.
 
 {% if f.ecartees.size > 0 %}
-<p class="note">{{ f.ecartees | size }} saison est écartée du calcul :
+<p class="note">{{ f.ecartees | size }} saison{% if f.ecartees.size > 1 %}s sont écartées{% else %} est écartée{% endif %} du calcul :
 {% for x in f.ecartees %}<b>{{ x.titre }}</b> porte une immunité collective à
 l’épisode {{ x.episode }}, qui ne laisserait que {{ x.restants }} joueurs — ce
 n’est pas une réunification mais une épreuve par équipes d’après-réunification. Le
@@ -107,10 +110,15 @@ recommence.</p>
 coupure obtenue sur des saisons remises dans un ordre au hasard.</p>
 
 <div class="constat">
-  <p><b>Une rupture existe</b> : {{ r.test.ecart_types }} écarts-types au-dessus
+  <p><b>Le jeu a changé</b> : {{ r.test.ecart_types }} {{ r.test.ecart_types_mot }} au-dessus
   de ce qu’une coupure au hasard obtiendrait, p ajustée
   {{ r.test.p_ajustee }}. Remettez les {{ r.saisons }} saisons dans le désordre
   et aucune coupure n’approche celle-ci.</p>
+  <p><b>Mais rien ne dit qu’il ait basculé plutôt que glissé.</b> Contre des
+  séries qui suivent la même tendance régulière, la meilleure coupure ne se
+  distingue pas : {{ r.test_glissement.ecart_types }}
+  {{ r.test_glissement.ecart_types_mot }}, p ajustée
+  {{ r.test_glissement.p_ajustee }}. Une dérive continue suffit à la produire.</p>
   <p><b>Mais sa date n’est pas identifiée.</b> La meilleure coupure tombe en
   {{ r.annee_rupture }} et ne devance la deuxième — {{ r.second.annee }} — que
   de <b>{{ r.avance }} %</b>. Et <b>{{ r.nb_proches }} dates</b> tiennent à
@@ -129,16 +137,24 @@ le jeu d’après, et c’est solide** ; **l’année du basculement, elle, n�
 mesurable ici**. La lecture qui reste debout est celle d’une dérive étalée sur
 {{ r.fenetre.etendue }} ans, pas d’un changement de grille annoncé un vendredi soir.
 
+<p class="note"><strong>Pourquoi deux modèles nuls.</strong> Remettre les
+saisons dans le désordre détruit aussi toute tendance : n’importe quelle
+évolution lente bat ce hasard-là, qui dit seulement que la série n’est pas
+stable. Pour savoir si elle <em>casse</em>, il faut la comparer à une évolution
+régulière, avec ses écarts remis au hasard. Ce second test a été ajouté le
+22 octobre 2026 ; la page affirmait jusque-là « une rupture existe ».</p>
+
 <p class="note"><strong>Comment on le sait.</strong> Une version antérieure de
 cette page datait la rupture de 2012 et l’affirmait sans réserve. Deux
 compléments de données — les âges manquants, puis trois cents bulletins de
 conseil retrouvés — ont déplacé le maximum, d’abord vers
 {{ r.annee_rupture }}, puis en creusant son avance. Un critère qu’une révision
 de données déplace de {{ site.data.stats.mots.rupture_deplacement }} ans ne désigne pas une année : il désigne une
-époque. C’est <a href="{{ '/statistiques/audience/' | relative_url }}">sur
-l’audience</a> qu’on voit à quoi ressemble une date, elle, identifiée — {{ m.audience.nb_proches }}
-dates serrées sur {{ m.audience.fenetre.etendue }} an, au lieu de
-{{ r.nb_proches }} sur {{ r.fenetre.etendue }} ans.</p>
+époque. <a href="{{ '/statistiques/audience/' | relative_url }}">L’audience</a>
+resserre ses meilleures coupures bien davantage — {{ m.audience.nb_proches }}
+dates sur {{ m.audience.fenetre.etendue }} an, au lieu de
+{{ r.nb_proches }} sur {{ r.fenetre.etendue }} ans —, mais là non plus, la
+coupure ne se distingue pas d’un déclin régulier.</p>
 
 {% include graphiques/ruptures-serie.svg %}
 

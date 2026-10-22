@@ -53,7 +53,7 @@ La trahison existe : {{ a.tests.trahison.valeur_ronde }} % des bulletins visent
 
 C'est l'idée la plus répétée sur le jeu : utile tant que les tribus s'affrontent, le meilleur deviendrait une menace à l'approche de la phase individuelle. « Je ne veux pas l'affronter à la fin. »
 
-**Les votes ne la confirment pas.** Classons chaque éliminé parmi les présents selon sa [force aux épreuves]({{ '/statistiques/force/' | relative_url }}), de 0 pour le plus faible du camp à 100 pour le plus fort. Avant la réunification, il se situe en moyenne au rang {{ a.force.rang_avant }} ; après, au rang {{ a.force.rang_apres }}. L'écart n'est pas plus grand que ce que le hasard produit. Les ambassadeurs, qui décident seuls, ne choisissent pas les forts plus que ne le ferait un tirage au sort ([la réunification]({{ '/statistiques/fusion/' | relative_url }})).
+**Les votes ne la confirment pas.** Classons chaque éliminé parmi les présents selon sa [force aux épreuves]({{ '/statistiques/force/' | relative_url }}), de 0 pour le plus faible du camp à 100 pour le plus fort. Avant la réunification, il se situe en moyenne au rang {{ a.force.rang_avant }} ; après, au rang {{ a.force.rang_apres }}. L'écart n'est pas plus grand que ce que le hasard produit. Les ambassadeurs, qui décident seuls, ne choisissent pas les forts plus que ne le ferait un tirage au sort ([la réunification]({{ '/statistiques/reunification/' | relative_url }})).
 
 Prudence : la force aux épreuves n'est pas toute la compétence, et un fort ciblé peut se sauver en gagnant l'immunité. Mais l'idée que le jeu « élimine les meilleurs » ne survit pas aux chiffres. La règle de management qu'on en tire — « dans l'entreprise, le meilleur devient une cible » — repose sur un mécanisme que même le jeu ne montre pas.
 
@@ -81,13 +81,13 @@ On peut suivre une majorité par peur d'être isolé, ou parce qu'on pense qu'el
 
 ## La réunification change vraiment le jeu
 
-La production présente la réunification comme le moment où « tout se recompose ». Ce n'est pas qu'un argument de bande-annonce : après la réunification, **les votes se divisent nettement plus** — la part de conseils où l'éliminé n'obtient pas la majorité augmente de {{ a.tests.fusion_serre.valeur_ronde }} points — et l'on élimine moins de femmes, à composition du camp égale ([la réunification]({{ '/statistiques/fusion/' | relative_url }})).
+La production présente la réunification comme le moment où « tout se recompose ». Ce n'est pas qu'un argument de bande-annonce : après la réunification, **les votes se divisent nettement plus** — la part de conseils où l'éliminé n'obtient pas la majorité augmente de {{ a.tests.fusion_serre.valeur_ronde }} points — et l'on élimine moins de femmes, à composition du camp égale ([la réunification]({{ '/statistiques/reunification/' | relative_url }})).
 
 Ce que la production dit de son dispositif et ce que font les candidats coïncident sur ce point.
 
 ## L'ordinaire d'abord
 
-Égalités, seconds votes, colliers qui renversent tout : ce sont les conseils dont on se souvient. Ce ne sont pas ceux qui arrivent. **{{ a.issues.ordinaire_rond }} % des conseils se terminent par une élimination ordinaire**, sans égalité ni objet joué ; le renversement par un objet d'immunité n'en concerne que {{ a.issues.renversement }} %, l'égalité suivie d'un second vote {{ a.issues.egalite_revote }} %.
+Égalités, seconds votes, colliers qui renversent tout : ce sont les conseils dont on se souvient. Ce ne sont pas ceux qui arrivent le plus souvent. **{{ a.issues.ordinaire_rond }} % des conseils se terminent par une élimination ordinaire**, sans égalité ni objet joué ; le renversement par un objet d'immunité n'en concerne que {{ a.issues.renversement }} %, l'égalité suivie d'un second vote {{ a.issues.egalite_revote }} %.
 
 C'est la leçon la plus utile pour qui veut prévoir. Une prédiction qui surestime le spectaculaire peut tomber juste une fois et se tromper en moyenne. **Avant de prédire l'exceptionnel, il faut savoir à quelle fréquence arrive l'ordinaire.**
 

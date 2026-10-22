@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Harry Levy (2001)"
-description: "Harry Levy, Les Aventuriers de Koh-Lanta (2001) : sort au conseil le 16e jour, 12e sur 16, 5 voix reçues. 400e sur 531 au classement des aventuriers."
+description: "Harry Levy, Les Aventuriers de Koh-Lanta (2001) : sort au conseil le 16e jour, 12e sur 16, 5 voix reçues. 382e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/harry-levy.png
 permalink: /aventuriers/harry-levy/
 aventurier: harry-levy

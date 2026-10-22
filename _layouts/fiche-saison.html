@@ -47,9 +47,8 @@ layout: default
 <h2>Ce qu’on sait de ses conseils</h2>
 
 <div class="constat">
-  <p><b>{{ s.conseils }}</b> conseils d’élimination, dont
-  <b>{{ s.conseils_complets }}</b> dont le dépouillement est connu au bulletin
-  près, pour {{ s.bulletins }} bulletins relevés.</p>
+  <p><b>{{ s.conseils }}</b> conseils d’élimination ; le dépouillement de
+  <b>{{ s.conseils_complets }}</b> d’entre eux est connu au bulletin près, pour {{ s.bulletins }} bulletins relevés.</p>
   <p>Un conseil dont le dépouillement est incomplet compte pour ses agrégats —
   qui part, avec combien de voix — mais reste hors de toute mesure au bulletin :
   alliances, réciprocité, qui-vise-qui.
@@ -75,7 +74,7 @@ layout: default
 
 <h2>Le casting</h2>
 
-<p>Rangés par ordre d’arrivée dans le jeu : le vainqueur d’abord, puis les
+<p>Rangés dans l’ordre du classement final : le vainqueur d’abord, puis les
 finalistes, puis les autres du plus tard au plus tôt sorti. La colonne
 <em>rang</em> renvoie au
 <a href="{{ '/statistiques/top/' | relative_url }}">classement des joueurs</a>,

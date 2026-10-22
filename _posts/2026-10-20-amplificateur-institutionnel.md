@@ -198,13 +198,13 @@ Le tableau 2 rassemble les tests du registre qui touchent un mécanisme du cadre
 
 Quatre lectures s'en dégagent.
 
-**La dépendance a un coût mesurable.** Se retrouver sans aucun des aventuriers avec qui l'on a déjà voté augmente la probabilité de sortir de {{ a.tests.vote_isole.valeur }} points, quand le hasard en donnerait {{ a.tests.vote_isole.attendu }}. C'est la conséquence la plus directe de l'hypothèse 2.3 : dans une arène fermée, le lien local est une ressource, et son absence une exposition.
+**La dépendance a un coût mesurable.** Se retrouver sans aucun des aventuriers avec qui l'on a déjà voté augmente de {{ a.tests.vote_isole.valeur }} points la probabilité de sortir, quand le hasard en donnerait {{ a.tests.vote_isole.attendu }}. C'est la conséquence la plus directe de l'hypothèse 2.3 : dans une arène fermée, le lien local est une ressource, et son absence une exposition.
 
 **Les coalitions persistent et protègent.** Deux aventuriers qui ont voté ensemble revotent ensemble bien plus souvent que deux qui se sont séparés ({{ a.tests.persistance_alliances.observe }} points), et l'on écrit moins souvent le nom d'un ancien co-votant que le hasard ne le voudrait ({{ a.tests.trahison.observe }} % contre {{ a.tests.trahison.attendu }} %). La « trahison » existe, mais moins qu'une indifférence aux alliances ne le produirait.
 
 **Le ciblage s'entretient, sans sommet.** Avoir été visé expose à l'être encore et à partir. Mais survivre à un vote massif ne protège pas mieux que survivre à deux bulletins : la menace n'a pas de sommet. La forme réduite de la chaîne réputationnelle (2.4) est donc observée ; ses maillons intermédiaires ne le sont pas.
 
-**L'identité de groupe survit à la disparition du groupe.** Après la réunification, on écrit le nom de quelqu'un de sa tribu initiale dans {{ a.tests.vote_bandeau_apres_fusion.observe }} % des bulletins, contre {{ a.tests.vote_bandeau_apres_fusion.attendu }} % attendus ; les sorties s'enchaînent par camp ; appartenir au camp minoritaire expose. Les tribus, artefacts de production, deviennent des identités effectives — exactement ce que prédit le paradigme des groupes minimaux ([Tajfel et Turner, 1979](#ref-tajfelturner1979)). En revanche, appartenir au **sexe** minoritaire du camp **protège** ({{ a.tests.sexe_minoritaire.observe }} points) : toutes les catégories ne fonctionnent pas comme des groupes. C'est un argument direct pour l'exigence, déjà posée en 2.6, d'observer une conséquence avant de coder une identité.
+**L'identité de groupe survit à la disparition du groupe.** Après la réunification, on écrit le nom de quelqu'un de sa tribu initiale dans {{ a.tests.vote_bandeau_apres_fusion.observe }} % des bulletins, contre {{ a.tests.vote_bandeau_apres_fusion.attendu }} % attendus ; les sorties s'enchaînent par camp ; appartenir au camp minoritaire expose. Les tribus, artefacts de production, deviennent des identités effectives — exactement ce que prédit le paradigme des groupes minimaux ([Tajfel et Turner, 1979](#ref-tajfelturner1979)). En revanche, appartenir au **sexe** minoritaire du camp **protège** ({{ a.tests.sexe_minoritaire.observe }} points) : toutes les catégories ne fonctionnent pas comme des groupes. C'est un argument direct pour observer une conséquence avant de coder une identité.
 
 La conformité (2.5) se lit, de justesse : avoir voté avec la minorité expose au conseil suivant (p ajustée {{ a.tests.camp_perdant.p }}). Une première rédaction de cette version concluait l'inverse ; la correction des sorties sans vote du 21 octobre 2026 a fait passer le seuil à ce résultat, qui reste fragile.
 
@@ -214,7 +214,7 @@ Le dispositif **se présente** comme changeant de régime à la réunification (
 
 L'âge, lui, ne permet pas de conclure. Avant la réunification, l'éliminé a en moyenne {{ a.age.avant }} de plus que la moyenne de son camp ce soir-là ; après, {{ a.age.apres }} de moins. La bascule, {{ a.age.bascule }} sur {{ a.age.conseils }} conseils, va dans le même sens, mais ne passe pas le seuil (p ajustée {{ a.tests.age_bascule_fusion.p }}). Une première rédaction de cette version la donnait retenue de justesse, en prévenant qu'une saison mal relevée suffirait à la faire repasser dessous. C'est ce qui est arrivé le 21 octobre 2026 : trente sorties par épreuve éliminatoire, jusque-là comptées comme des conseils sans bulletin, ont été rendues à leur nature.
 
-L'auto-description et le comportement coïncident sur ce point. Les ambassadeurs, eux, partent ensuite plus tôt que les autres présents (rang {{ a.tests.ambassadeurs_survie.observe }} contre {{ a.tests.ambassadeurs_survie.attendu }}, p ajustée {{ a.tests.ambassadeurs_survie.p }}) : l'ambassade, présentée comme une négociation, accompagne une fin de parcours précoce. Le résultat se tient sur le seuil — les corrections du 21 octobre 2026 l'ont fait passer dessous, puis de nouveau dessus — et ne se lit qu'avec cette réserve.
+L'auto-description et le comportement coïncident sur ce point. Les ambassadeurs, eux, ne partent pas plus tôt de façon établie : leur rang de survie ultérieure ({{ a.tests.ambassadeurs_survie.observe }} contre {{ a.tests.ambassadeurs_survie.attendu }} attendus) va dans ce sens, mais ne passe pas le seuil (p ajustée {{ a.tests.ambassadeurs_survie.p }}). Le résultat a franchi le seuil trois fois, dans un sens puis dans l'autre, au fil des corrections des 21 et 22 octobre 2026 : il ne s'affirme pas.
 
 ### 6.4. L'ordinaire d'abord : la fréquence des issues d'un conseil
 
@@ -235,7 +235,7 @@ La version précédente avait verrouillé, avant un conseil, une distribution de
 
 Ces fréquences sont la seule mesure de cet article qui ne figure pas ailleurs sur le site. L'unité est le **conseil décisif** — celui dont sort un éliminé rattaché. Il est classé « égalité puis second vote » si le conseil qui le précède immédiatement, le même soir, est un tour nul, ou si la [boule noire]({{ '/statistiques/conseils/' | relative_url }}) l'a tranché — elle ne se tire qu'après un second vote resté à égalité ; « renversement » si un objet d'immunité a annulé des voix et que, sans lui, le protégé en aurait reçu plus que l'éliminé ; « égalité tranchée » si le conseil décisif lui-même finit à égalité en tête. Les {{ a.issues.sans_bulletin }} conseils décisifs dont la source ne donne aucun bulletin ne sont pas classés.
 
-L'issue la plus probable de la distribution verrouillée était la bonne, et le conseil s'est achevé par une élimination ordinaire. Mais la distribution sous-estimait nettement l'issue la plus fréquente, et surestimait d'autant les trois autres. Un verrou prospectif protège contre la réécriture après coup ; il ne protège pas contre une distribution mal ancrée. **Avant de prédire une issue, il faut connaître sa fréquence de base** : c'est le premier concurrent qu'une prédiction doit battre, et celle de la version précédente ne le battait pas.
+L'issue la plus probable de la distribution verrouillée était la bonne : le conseil visé par la prédiction s'est achevé par une élimination ordinaire. Mais la distribution sous-estimait nettement l'issue la plus fréquente, et surestimait d'autant les trois autres. Un verrou prospectif protège contre la réécriture après coup ; il ne protège pas contre une distribution mal ancrée. **Avant de prédire une issue, il faut connaître sa fréquence de base** : c'est le premier concurrent qu'une prédiction doit battre, et celle de la version précédente ne le battait pas.
 
 ### 6.5. La prévision individuelle
 
@@ -251,7 +251,7 @@ La version précédente s'abstenait de désigner l'éliminé. Le site publie un 
 | Réputation → menace perçue → ciblage | hypothèse | **forme réduite observée** : ciblage persistant ; maillons intermédiaires non mesurés (6.2) |
 | Compétence → menace en phase individuelle | présentée comme mécanisme central | **non observée** à la mesure de la force aux épreuves (6.1) |
 | Catégorisation → identité de groupe | hypothèse | **observée pour la tribu initiale, inversée pour le sexe** (6.2) |
-| Conformité / cascade | distinction conceptuelle | **non concluant** (6.2) |
+| Conformité / cascade | distinction conceptuelle | **observée, de justesse** (6.2) |
 | Réunification → changement de régime | auto-description | **auto-description confirmée par les votes** (6.3) |
 | Rareté → stress → simplification | hypothèse | **non testée** |
 

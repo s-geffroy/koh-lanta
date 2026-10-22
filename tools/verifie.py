@@ -1022,6 +1022,36 @@ def verifier_qualite_des_conseils(conseils, saisons, parts, c):
             if not st.get("source"):
                 c.erreur(f"{ref} : second tour sans source")
 
+    # Le jury : un jure ne vote pas pour lui-meme, et ne vote qu'une fois.
+    jures = defaultdict(int)
+    for x in conseils:
+        if x.get("type") != "jury":
+            continue
+        for b in x.get("votes") or []:
+            if b.get("votant_rattache") and b.get("votant") == b.get("cible"):
+                c.erreur(f"{x['saison']} jury : « {b['votant']} » vote pour lui-meme")
+            if b.get("votant_rattache"):
+                jures[(x["saison"], b["votant"])] += 1
+    for (sid, pid), n in sorted(jures.items()):
+        if n > 1:
+            c.erreur(f"{sid} jury : « {pid} » vote {n} fois")
+
+    # L'elimine d'un conseil complet ORDINAIRE -- sans tirage, sans second
+    # tour, sans objet joue -- a le plus de voix valides. Sinon une case est
+    # fausse (Zakariya, Reliques du destin : la case de Fandom faisait sortir
+    # Guillaume avec moins de voix que Caroline).
+    for x in conseils:
+        if (x.get("type") != "elimination" or not x.get("complet") or not x.get("elimine_rattache")
+                or x.get("tirage") or x.get("second_tour") or x.get("annulation")):
+            continue
+        voix = defaultdict(int)
+        for b in x.get("votes") or []:
+            if b.get("cible_rattachee") and not b.get("annule"):
+                voix[b["cible"]] += 1
+        if voix and voix.get(x["elimine"], 0) < max(voix.values()):
+            c.erreur(f"{x['saison']} conseil {x['numero']} : « {x['elimine']} » sort avec "
+                     f"{voix.get(x['elimine'], 0)} voix, un autre en a {max(voix.values())}")
+
     # Toute sortie au conseil, sur une saison terminee, a son conseil.
     nommes = {(x.get("saison"), x.get("elimine")) for x in conseils
               if x.get("type") == "elimination" and x.get("elimine_rattache")}

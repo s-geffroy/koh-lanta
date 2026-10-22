@@ -18,8 +18,8 @@ des voix du jury et ont sacré deux personnes.
 Toutes éditions confondues, le programme a décerné
 {{ site.data.stats.revenants.titres_total }} titres à
 **{{ site.data.stats.revenants.titres_distincts }} personnes différentes**.
-L’écart tient à une seule : {% for x in vm %}**{{ x.nom }}**, sacrée à
-*{{ x.editions | join: "* puis à *" }}*{% endfor %} — la seule à avoir gagné
+L’écart tient à une seule : {% for x in vm %}**{{ x.nom }}**, sacrée pour
+*{{ x.editions | join: "*, puis pour *" }}*{% endfor %} — la seule à avoir gagné
 deux fois en {{ s.mots.etendue_annees }} ans.
 {{ site.data.stats.revenants.vainqueurs_revenus_autres }} autres vainqueurs
 sont revenus jouer sans y parvenir ; [les revenants]({{ '/statistiques/revenants/' | relative_url }})
@@ -157,7 +157,7 @@ traversés — l’indicateur <em>menace</em> de la page
 </div>
 
 La dernière colonne ne se calcule qu’au-delà de quatre conseils traversés :
-c’est pourquoi son effectif est plus court que le premier, et c’est lui qu’il
+c’est pourquoi son effectif est plus petit que le premier, et c’est lui qu’il
 faut lire.
 
 {{ vv.par_sort[0].menace_moyenne }} voix par conseil contre

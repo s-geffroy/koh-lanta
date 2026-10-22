@@ -45,7 +45,11 @@ import indicateurs                                            # noqa: E402
 # Les chaines que le YAML de Ruby lirait comme des nombres (« 39,9 » -> 399)
 # sont gardees entre guillemets par `donnees.ecrire`, comme la virgule
 # decimale : voir tools/donnees.py.
-from build_stats import LIBELLE_SORT, arrondi                 # noqa: E402
+from build_stats import arrondi                               # noqa: E402
+# Le libelle du sort ACCORDE au sexe : « Éliminée au conseil » sur la fiche
+# d'une aventuriere. LIBELLE_SORT, au masculin, publiait « Éliminé » sur 253
+# participations de femmes.
+from classement import libelle_sort                           # noqa: E402
 
 DOSSIER_AVENTURIERS = os.path.join(RACINE, "aventuriers")
 DOSSIER_SAISONS = os.path.join(RACINE, "saisons")
@@ -103,6 +107,32 @@ def reglette_du_rang(rang, p05, p95, total):
     return {"debut": debut, "largeur": max(1, fin - debut), "point": pos(rang)}
 
 
+def apostrophe(texte):
+    """L'apostrophe typographique dans un texte venu des sources.
+
+    Les professions arrivent du wiki avec l'apostrophe droite (« Chef
+    d'entreprise ») et voisinaient sur la meme page avec les phrases du site,
+    ecrites avec la courbe (« Cheffe d’entreprise »).
+    """
+    return texte.replace("'", "’") if isinstance(texte, str) else texte
+
+
+# LE PRENOM des editions de celebrites. Leur table de saison ne donne que le nom
+# entier, et le champ `nom` de _data/participations.yml le porte tel quel : il
+# sert a rattacher les bulletins, on ne le touche donc pas a la source. Mais
+# c'est lui qui devenait le `givenName` des donnees structurees -- « Frédérique
+# Jossinet » comme prenom. Table fermee, verifiee personne par personne.
+PRENOMS = {
+    "betty-lise": "Betty",
+    "djamel-bouras": "Djamel",
+    "frank-leboeuf": "Frank",
+    "frederique-jossinet": "Frédérique",
+    "gwendal-peizerat": "Gwendal",
+    "myriam-lamare": "Myriam",
+    "taig-khris": "Taïg",
+}
+
+
 def fiches_des_aventuriers(parts, personnes, saisons, indiv, classement, natures, colliers):
     par_saison = {s["id"]: s for s in saisons}
     par_pid = collections.defaultdict(list)
@@ -124,8 +154,11 @@ def fiches_des_aventuriers(parts, personnes, saisons, indiv, classement, natures
                 vus.add(d["id"])
         for pid in vus:
             cols[(c.get("saison"), pid)] += 1
-            if c.get("statut") == "utilise":
-                joues[(c.get("saison"), pid)] += 1
+        # Un collier joue ne l'est que par UN detenteur : le dernier de la
+        # chaine (`joueur`), pas celui qui l'a trouve puis cede.
+        j = c.get("joueur") or {}
+        if c.get("statut") == "utilise" and j.get("resolu") and j.get("id"):
+            joues[(c.get("saison"), j["id"])] += 1
 
     nat = {(x["saison"], x["id"]): x for x in natures}
 
@@ -150,12 +183,12 @@ def fiches_des_aventuriers(parts, personnes, saisons, indiv, classement, natures
                 "lieu": s.get("lieu"),
                 "effectif": sum(1 for x in parts if x["saison"] == p["saison"]),
                 "age": p.get("age"),
-                "profession": p.get("profession"),
+                "profession": apostrophe(p.get("profession")),
                 "localisation": p.get("localisation"),
                 "tribu": p.get("tribu"),
                 "couleur": p.get("couleur"),
                 "sort": p.get("sort"),
-                "libelle_sort": LIBELLE_SORT.get(p.get("sort"), p.get("motif")),
+                "libelle_sort": libelle_sort(p.get("sort"), p.get("genre"), p.get("motif")),
                 "jour_sortie": p.get("jour_sortie"),
                 "part_parcours": part_du_parcours(p.get("jour_sortie"), s.get("duree_jours")),
                 "classement": p.get("classement"),
@@ -191,9 +224,9 @@ def fiches_des_aventuriers(parts, personnes, saisons, indiv, classement, natures
         out[pid] = {
             "id": pid,
             "nom": base.get("nom_complet") or base.get("nom"),
-            "prenom": base.get("nom"),
+            "prenom": PRENOMS.get(pid, base.get("nom")),
             "genre": base.get("genre"),
-            "profession": base.get("profession"),
+            "profession": apostrophe(base.get("profession")),
             "localisation": base.get("localisation"),
             "naissance": (perso.get(pid) or {}).get("naissance"),
             "participations": participations,
@@ -253,11 +286,11 @@ def fiches_des_saisons(parts, saisons, conseils, epreuves, audiences, classement
                 "nom": p.get("nom_complet") or p.get("nom"),
                 "age": p.get("age"),
                 "genre": p.get("genre"),
-                "profession": p.get("profession"),
+                "profession": apostrophe(p.get("profession")),
                 "tribu": p.get("tribu"),
                 "couleur": p.get("couleur"),
                 "sort": p.get("sort"),
-                "libelle_sort": LIBELLE_SORT.get(p.get("sort"), p.get("motif")),
+                "libelle_sort": libelle_sort(p.get("sort"), p.get("genre"), p.get("motif")),
                 "jour_sortie": p.get("jour_sortie"),
                 "part_parcours": part_du_parcours(p.get("jour_sortie"), s.get("duree_jours")),
                 "classement": p.get("classement"),
@@ -461,7 +494,9 @@ def description_seo_aventurier(e, joueurs_classes):
         clauses = [
             (f"{ordinal_rang(u['classement'], e.get('genre'))} sur {u['effectif']}"
              if u.get("classement") else None),
-            (compte(u["epreuves_gagnees"], "épreuve gagnée", "épreuves gagnées")
+            # « 0 épreuve gagnée » : un chiffre nul se dit en toutes lettres.
+            ((compte(u["epreuves_gagnees"], "épreuve gagnée", "épreuves gagnées")
+              if u["epreuves_gagnees"] else "aucune épreuve gagnée")
              if u.get("epreuves_disputees") else None),
             (compte(u["voix_recues"], "voix reçue", "voix reçues")
              if u.get("voix_recues") else None),
@@ -508,9 +543,9 @@ def description_seo_saison(e):
     if e.get("en_cours"):
         chute = "Saison en cours."
     elif len(noms) > 1:
-        chute = f"Victoire de {' et '.join(noms)}."
+        chute = f"Victoire {de_(' et '.join(noms))}."
     elif noms:
-        chute = f"Victoire de {noms[0]}."
+        chute = f"Victoire {de_(noms[0])}."
     else:
         chute = "Le casting et les chiffres de la saison."
     return assembler(tete, clauses, chute)
@@ -615,7 +650,35 @@ def de_(nom):
     Abdellah Akriche ? » -- une faute que personne n'ecrit, et que 138 des 531
     fiches auraient publiee.
     """
-    return f"d’{nom}" if nom[:1].lower() in "aeiouyhàâäéèêëîïôöùûü" else f"de {nom}"
+    # « Y » suivi d'une VOYELLE est une consonne : « de Yannick », « de Yassin »,
+    # « de Yohan ». Suivi d'une consonne, il se prononce « i » et elide :
+    # « d'Yves ».
+    if nom[:1].lower() == "y":
+        return f"de {nom}" if nom[1:2].lower() in "aeiouyàâäéèêëîïôöùûü" else f"d’{nom}"
+    return f"d’{nom}" if nom[:1].lower() in "aeiouhàâäéèêëîïôöùûü" else f"de {nom}"
+
+
+# Le nombre de fois en toutes lettres, quand il est petit : « deux fois », pas
+# « 2 fois » au milieu d'une phrase.
+FOIS = {1: "une fois", 2: "deux fois", 3: "trois fois", 4: "quatre fois",
+        5: "cinq fois"}
+
+
+def fois(n):
+    return FOIS.get(n, f"{n} fois")
+
+
+def metier_suivant(m):
+    """La minuscule initiale d'un metier qui n'ouvre pas la phrase.
+
+    « Agent immobilier (2015) et Directeur commercial (2018) » : la capitale
+    vient de la source, ou chaque metier est une cellule. Un sigle (« DJ »,
+    « PDG ») garde la sienne : seule une capitale suivie d'une minuscule
+    tombe.
+    """
+    if len(m) > 1 and m[0].isupper() and m[1].islower():
+        return m[0].lower() + m[1:]
+    return m
 
 
 def a_designation(d):
@@ -698,25 +761,29 @@ def faq_aventurier(e, joueurs_classes):
         _liste([f"{p['age']} ans {_edition(p)}" for p in parts]) + ".",
     ))
 
+    # Le dedoublonnage se fait SANS LA CASSE : « Conseillère Financière (2019)
+    # et Conseillère financière (2021) » est un seul metier ecrit deux fois.
     metiers = []
     for p in parts:
-        if p.get("profession") and p["profession"] not in [m[0] for m in metiers]:
-            metiers.append((p["profession"], p["annee"]))
+        m = apostrophe(p.get("profession"))
+        if m and m.casefold() not in [x[0].casefold() for x in metiers]:
+            metiers.append((m, p["annee"]))
     if len(metiers) == 1:
         reponse = f"{metiers[0][0]}, profession déclarée au casting."
     else:
-        reponse = _liste([f"{m} ({an})" for m, an in metiers]) + "."
+        reponse = _liste([f"{m if i == 0 else metier_suivant(m)} ({an})"
+                          for i, (m, an) in enumerate(metiers)]) + "."
     q.append((f"Quel est le métier {de_(nom)} ?", reponse))
 
     titres = [p for p in parts if p.get("sort") == "vainqueur"]
     if len(titres) > 1:
-        reponse = (f"Oui, {compte(len(titres), 'fois', 'fois')} : "
+        reponse = (f"Oui, {fois(len(titres))} : "
                    f"{_liste([_edition(p) for p in titres])}.")
     elif titres:
         reponse = f"Oui, {_edition(titres[0])}."
     elif e.get("finales"):
         reponse = (f"Non. {nom} est {alle} en finale "
-                   f"{compte(e['finales'], 'fois', 'fois')} sans jamais "
+                   f"{fois(e['finales'])} sans jamais "
                    f"remporter le titre.")
     elif len(parts) == 1:
         reponse = f"Non. {nom} n’a joué qu’une saison, {_edition(parts[0])}."
@@ -728,7 +795,7 @@ def faq_aventurier(e, joueurs_classes):
         reponse = f"Une seule fois, {_edition(parts[0])}."
     else:
         editions = [f"{p['titre']} ({p['annee']})" for p in parts]
-        reponse = f"{len(parts)} fois : {_liste(editions)}."
+        reponse = f"{affichable(fois(len(parts)))} : {_liste(editions)}."
     q.append((f"Combien de fois {nom} {a_t_il} participé à Koh-Lanta ?", reponse))
 
     meilleure = min(parts, key=lambda p: (p.get("classement") or 999))
@@ -849,7 +916,7 @@ def faq_saison(e):
         reponse += (f" Le dépouillement de {e['conseils_complets']} d’entre eux "
                     f"est connu au bulletin près, pour "
                     f"{compte(e['bulletins'], 'bulletin relevé', 'bulletins relevés')}.")
-    q.append((f"Combien de conseils d’élimination {a_elle} ?", reponse))
+    q.append((f"Combien de conseils d’élimination y a-t-il eu {a_elle} ?", reponse))
 
     if e.get("epreuves"):
         reponse = compte(e["epreuves"], "épreuve relevée", "épreuves relevées")
@@ -857,7 +924,8 @@ def faq_saison(e):
         # relevees, dont 4 individuelles » ne dit rien de plus que la premiere
         # moitie de la phrase.
         if 0 < (e.get("epreuves_individuelles") or 0) < e["epreuves"]:
-            reponse += f", dont {e['epreuves_individuelles']} individuelles"
+            individuelles = compte(e['epreuves_individuelles'], 'individuelle', 'individuelles')
+            reponse += f", dont {individuelles}"
         q.append((f"Combien d’épreuves ont été courues {a_elle} ?", reponse + "."))
 
     if e.get("audience_moyenne"):
@@ -943,6 +1011,7 @@ def main():
     parts = charger("participations")
     personnes = liste(charger("personnes"), "personnes")
     conseils = charger("conseils")
+    indicateurs.corriger_voix_recues(parts, conseils, saisons)
     epreuves = charger("epreuves")
     colliers = charger("colliers")
     audiences = charger("audiences")

@@ -24,7 +24,11 @@ from parse_votes import developper, texte
 ROLES = [
     (r"propri[ée]taire d'origine|d[ée]tenteur|d[ée]couvert par|trouv[ée] par",
      "proprietaire"),
-    (r"autres?\s*propri[ée]taires?", "autres"),
+    # « Autre(s) propriétaire(s) » : l'intitule de Wikipedia porte la marque
+    # du pluriel entre parentheses. Sans elle dans le motif, la colonne n'etait
+    # jamais reconnue, et les 74 colliers perdaient TOUTES leurs transmissions
+    # (Victor -> Beatrice -> Steeve a Fidji, Julie -> ... -> Jeremy a Johor).
+    (r"autres?(?:\(s\))?\s*propri[ée]taires?", "autres"),
     (r"aventuriers?\s*prot[ée]g[ée]|prot[ée]g[ée]\(s\)", "proteges"),
     (r"votes?\s*annul", "votes_annules"),
     (r"^statut$", "statut"),
@@ -79,6 +83,26 @@ def noms_dans(cellule):
     return out
 
 
+RE_RANG_MODELE = re.compile(r"\{\{\s*(\d{1,2})\s*(?:er|re|e|ere)\s*\}\}", re.I)
+
+
+def _episode(valeurs):
+    """Le rang d'episode est ecrit {{4e}} ou {{1er}} : le nettoyage general
+    efface le modele et son contenu. On le lit donc sur la cellule brute."""
+    brut_ep = valeurs.get("episode", "") or ""
+    m = RE_RANG_MODELE.search(brut_ep) or RE_RANG.search(plain(brut_ep))
+    return int(m.group(1)) if m else None
+
+
+def _jour_utilisation(valeurs):
+    """Le jour ou le collier a ete JOUE, colonne « Jour » de l'utilisation :
+    {{37e}}. Ce n'est pas le jour ou il a ete trouve (« Victor (jour 11 - 12) »,
+    dans la case du detenteur)."""
+    brut = valeurs.get("jour", "") or ""
+    m = RE_RANG_MODELE.search(brut) or re.fullmatch(r"\s*(\d{1,2})\s*", plain(brut))
+    return int(m.group(1)) if m else None
+
+
 def _roles(grille):
     """Rend (index de la derniere ligne d'en-tete, {colonne: role})."""
     trouve, fin = {}, None
@@ -110,20 +134,54 @@ def parse_page(wikitexte, saison_id=None, couleurs_admises=None):
             break
     if table is None:
         return []
-    grille = developper(table)
+    grille, ecrites = developper(table, avec_origine=True)
     if not grille:
         return []
     i_entete, roles = _roles(grille)
     if not roles:
         return []
+    col_proprio = next((c for c, r in roles.items() if r == "proprietaire"), None)
 
     colliers = []
-    for rang in grille[i_entete + 1:]:
+    for i_rang, rang in enumerate(grille[i_entete + 1:], i_entete + 1):
         if not rang or all(not texte(c) for c in rang):
             continue
         valeurs = {}
         for col, role in roles.items():
             valeurs[role] = rang[col] if col < len(rang) else ""
+
+        # UNE TRANSMISSION, PAS UN NOUVEAU COLLIER. Quand un collier passe de
+        # main en main, la source etale la case du proprietaire d'origine sur
+        # plusieurs lignes (`rowspan`) et ouvre une ligne par detenteur
+        # suivant : « Julie » sur trois lignes, puis Raphaele, Clementine,
+        # Jeremy -- et c'est la DERNIERE ligne qui dit si le collier a ete
+        # joue. Une ligne dont la case du proprietaire n'est qu'une recopie
+        # verticale prolonge donc le collier du dessus. Lue comme un collier
+        # a part, elle en fabriquait un de plus, et faisait jouer le collier
+        # par celui qui l'avait trouve et cede -- parfois deja sorti du jeu.
+        ecrite = ecrites[i_rang] if i_rang < len(ecrites) else []
+        suite = (colliers and col_proprio is not None and col_proprio < len(ecrite)
+                 and not ecrite[col_proprio])
+        if suite:
+            prec = colliers[-1]
+            for n in noms_dans(valeurs.get("autres", "")):
+                if n not in prec["autres_proprietaires"]:
+                    prec["autres_proprietaires"].append(n)
+            for n in noms_dans(valeurs.get("proteges", "")):
+                if n not in prec["proteges"]:
+                    prec["proteges"].append(n)
+            statut_ = statut_de(valeurs.get("statut", ""))
+            if statut_:
+                prec["statut"] = statut_
+            ep_, jour_u = _episode(valeurs), _jour_utilisation(valeurs)
+            if ep_:
+                prec["episode_utilisation"] = ep_
+            if jour_u:
+                prec["jour_utilisation"] = jour_u
+            m = RE_FRACTION.search(plain(valeurs.get("votes_annules", "") or ""))
+            if m:
+                prec["votes_annules"], prec["votes_exprimes"] = int(m.group(1)), int(m.group(2))
+            continue
 
         proprietaires = noms_dans(valeurs.get("proprietaire", ""))
         statut = statut_de(valeurs.get("statut", ""))
@@ -142,15 +200,7 @@ def parse_page(wikitexte, saison_id=None, couleurs_admises=None):
                 jour = int(m.group(1))
                 break
 
-        # Le rang d'episode est ecrit {{4e}} ou {{1er}} : le nettoyage general
-        # efface le modele et son contenu. On le lit donc sur la cellule brute.
-        episode = None
-        brut_ep = valeurs.get("episode", "") or ""
-        m = re.search(r"\{\{\s*(\d{1,2})\s*(?:er|re|e|ere)\s*\}\}", brut_ep, re.I)
-        if not m:
-            m = RE_RANG.search(plain(brut_ep))
-        if m:
-            episode = int(m.group(1))
+        episode = _episode(valeurs)
 
         annules = total = None
         m = RE_FRACTION.search(plain(valeurs.get("votes_annules", "") or ""))
@@ -166,6 +216,7 @@ def parse_page(wikitexte, saison_id=None, couleurs_admises=None):
             "statut": statut,
             "jour_trouve": jour,
             "episode_utilisation": episode,
+            "jour_utilisation": _jour_utilisation(valeurs),
             "votes_annules": annules,
             "votes_exprimes": total,
             # Les notes « De la tribu jaune » accrochees aux noms de la ligne :

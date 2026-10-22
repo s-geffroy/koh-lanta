@@ -116,7 +116,7 @@ moins représentée du camp et partir quand elle est la plus représentée, cont
   ({{ bmin.cas }} sur {{ bmin.effectif }}). Tribu initiale majoritaire :
   <b>{{ bmaj.probabilite }} %</b>.</p>
   <p>{{ tb.observe_arrondi }} points d’écart, {{ tb.ecart_types }}
-  écarts-types au-dessus du hasard, p ajustée {{ tb.p_ajustee }}.</p>
+  {{ tb.ecart_types_mot }} au-dessus du hasard, p ajustée {{ tb.p_ajustee }}.</p>
 </div>
 
 [Jaune contre rouge]({{ '/statistiques/tribus/' | relative_url }}) montre que la
@@ -174,7 +174,7 @@ représenté du camp et partir quand il est le plus représenté.</p>
   <p>Sexe minoritaire : <b>{{ smin.probabilite }} %</b>
   ({{ smin.cas }} sur {{ smin.effectif }}). Sexe majoritaire :
   <b>{{ smaj.probabilite }} %</b> ({{ smaj.cas }} sur {{ smaj.effectif }}).</p>
-  <p>{{ ts.observe_arrondi }} points, {{ ts.ecart_types }} écarts-types
+  <p>{{ ts.observe_arrondi }} points, {{ ts.ecart_types }} {{ ts.ecart_types_mot }} :
   <b>sous</b> le hasard. Prise seule, la p vaut {{ ts.p }} ; corrigée sur les
   {{ m.nb_tests }} tests du registre, elle vaut
   <b>{{ ts.p_ajustee }}</b> — et <b>ce résultat est retenu</b>.</p>
@@ -250,7 +250,7 @@ n’en sort pas.</p>
 
 <div class="constat">
   <p>{{ td.observe_arrondi }} points d’écart, {{ td.ecart_types }}
-  écarts-types, p brute {{ td.p }}, p ajustée {{ td.p_ajustee }}.
+  {{ td.ecart_types_mot }}, p brute {{ td.p }}, p ajustée {{ td.p_ajustee }}.
   <b>Non concluant.</b></p>
   <p>Sans le bon point de comparaison, on aurait publié l’écart brut entre les
   deux lignes du tableau comme un résultat. C’est exactement ce contre quoi cette page est
@@ -275,10 +275,10 @@ de l’épisode et partir quand on n’a rien gagné.</p>
   <p>A gagné le confort : <b>{{ cw.probabilite }} %</b>
   ({{ cw.cas }} sur {{ cw.effectif }}). N’a rien gagné :
   {{ cn.probabilite }} %.</p>
-  <p>{{ tc.observe_arrondi }} points, {{ tc.ecart_types }} écarts-types,
+  <p>{{ tc.observe_arrondi }} points, {{ tc.ecart_types }} {{ tc.ecart_types_mot }},
   p brute {{ tc.p }}, p ajustée {{ tc.p_ajustee }}. <b>Non concluant.</b></p>
-  <p>L’écart va dans le sens de la légende et il est loin d’être petit. Mais à
-  {{ cw.effectif }} présences, il reste compatible avec un tirage. Le dire
+  <p>L’écart va dans le sens de la légende, mais il est petit, et à
+  {{ cw.effectif }} présences il reste compatible avec un tirage. Le dire
   autrement serait vendre une intuition pour une mesure.</p>
 </div>
 

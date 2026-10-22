@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Hakim Djellali — Caramoan (2008)"
-description: "Hakim Djellali, Koh-Lanta Caramoan (2008) : sort au conseil le 30e jour, 7e sur 17, 0 épreuve gagnée. 509e sur 531 au classement des aventuriers."
+description: "Hakim Djellali, Koh-Lanta Caramoan (2008) : sort au conseil le 30e jour, 7e sur 17, aucune épreuve gagnée. 484e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/hakim-djellali.png
 permalink: /aventuriers/hakim-djellali/
 aventurier: hakim-djellali

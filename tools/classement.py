@@ -65,14 +65,37 @@ LIBELLE_SORT = {
     "vainqueur": "Vainqueur", "finaliste": "Finaliste",
     "elimine_conseil": "Éliminé au conseil",
     "elimine_poteaux": "Éliminé aux poteaux",
-    "elimine_orientation": "Éliminé à l'orientation",
+    "elimine_orientation": "Éliminé à l’orientation",
     "elimine_ambassadeurs": "Éliminé aux ambassadeurs",
-    "elimine_duel": "Éliminé en duel", "elimine_exil": "Éliminé sur l'île",
+    "elimine_duel": "Éliminé en duel", "elimine_exil": "Éliminé sur l’île",
     "elimine_epreuve": "Éliminé à une épreuve",
     "elimine_destins_lies": "Éliminé par les destins liés",
     "abandon_medical": "Abandon médical", "abandon_volontaire": "Abandon volontaire",
     "disqualifie": "Disqualifié",
 }
+
+
+def libelle_sort(sort, genre, repli=None):
+    """Le libelle du sort, ACCORDE au sexe de la personne.
+
+    LIBELLE_SORT est au masculin : repris tel quel, il publiait « Éliminé au
+    conseil » sur 253 participations de femmes. Le participe s'accorde
+    (« Éliminée », « Disqualifiée ») ; « Vainqueur » et « Finaliste » restent
+    tels quels, comme partout sur le site (« vainqueures » est une faute que
+    tools/verifie_site.py guette) ; « Abandon » est un nom, invariable.
+    `genre` vaut « f » ou « h » dans _data/participations.yml. `repli` sert
+    quand le code n'est pas dans la table -- le motif de la source, deja
+    accorde par tools/extraction/fusionner.py.
+    """
+    if sort not in LIBELLE_SORT:
+        return repli if repli is not None else sort
+    texte = LIBELLE_SORT[sort]
+    if genre == "f":
+        for masculin in ("Éliminé ", "Disqualifié"):
+            if texte.startswith(masculin):
+                texte = masculin.rstrip() + "e" + texte[len(masculin.rstrip()):]
+                break
+    return texte
 
 TIRAGES = 10000          # ponderations tirees sur le simplexe
 TAILLE = 25              # taille du classement synthetique publie
@@ -293,6 +316,11 @@ def mesurer(saisons, parts, conseils, epreuves):
     idx = {(l["saison"], l["id"]): l for l in lignes}
 
     taille = Counter(p["saison"] for p in parts)
+    # Ceux qui atteignent le vote du jury sont EX AEQUO au parcours : le titre
+    # et la place de finaliste n'entrent pas dans le calcul, comme la page le
+    # promet. La place finale rangeait le vainqueur devant le finaliste, et le
+    # controle « le score retrouve le palmares » etait en partie circulaire.
+    au_bout = Counter(p["saison"] for p in parts if p.get("sort") in ("vainqueur", "finaliste"))
     jours = defaultdict(list)
     for p in parts:
         jours[p["saison"]].append(p.get("jour_sortie"))
@@ -315,9 +343,17 @@ def mesurer(saisons, parts, conseils, epreuves):
             ep = int(c["episode"])
         except (TypeError, ValueError, KeyError):
             continue
-        for (sid, pid), ep_sortie in sortie.items():
-            if sid == c["saison"] and ep_sortie >= ep and not (el and pid == el):
-                presents[(sid, pid)] += 1
+        # PRESENT = nomme dans le depouillement, comme votant ou comme cible.
+        # « Pas encore sorti » ne suffit pas : avant la reunification, chaque
+        # tribu a son conseil, et compter celui de l'autre tribu gonflait le
+        # denominateur de 42 % -- au profit des tribus qui gagnaient leurs
+        # immunites. Le depouillement est complet ici : ses votants SONT les
+        # presents.
+        la = {b["votant"] for b in c.get("votes") or [] if b.get("votant_rattache")}
+        la |= {b["cible"] for b in c.get("votes") or [] if b.get("cible_rattachee")}
+        for pid in la:
+            if not (el and pid == el):
+                presents[(c["saison"], pid)] += 1
         contre = Counter()
         for b in c.get("votes") or []:
             if b.get("cible_rattachee"):
@@ -338,6 +374,8 @@ def mesurer(saisons, parts, conseils, epreuves):
             continue
         n = taille[sid]
         rang = p.get("classement")
+        if p.get("sort") in ("vainqueur", "finaliste") and au_bout[sid]:
+            rang = (1 + au_bout[sid]) / 2.0
         if rang:
             depasses, atteste = float(n - rang), True
         else:
@@ -367,6 +405,7 @@ def mesurer(saisons, parts, conseils, epreuves):
             "_annee": l["annee"],
             "_speciale": l["speciale"],
             "_sort": p.get("sort"),
+            "_genre": p.get("genre"),
             "_nom": p.get("nom_complet") or p.get("nom"),
             "_titre": (par_saison.get(sid) or {}).get("titre"),
             # L'identifiant de la saison, et pas seulement son titre : sans
@@ -872,6 +911,11 @@ def tout(saisons, parts, conseils, epreuves):
     est_vainqueur = [any(mesures[k]["_sort"] == "vainqueur"
                          for k in cles_par[s["cle"]]) for s in sujets]
     auc = _auc([s["score"] for s in sujets], est_vainqueur)
+    # Le parcours dit encore « aller au bout », que tout vainqueur a fait : la
+    # seule mesure qui ne doive RIEN au palmares est le score sans lui.
+    autres_cles = [c for c in CLES if c != "parcours"]
+    auc_sans_parcours = _auc([sum(s["z"][c] for c in autres_cles) / len(autres_cles)
+                              for s in sujets], est_vainqueur)
 
     faux = top_du_hasard(sujets, pr)
 
@@ -978,8 +1022,8 @@ def tout(saisons, parts, conseils, epreuves):
         "top_saisons": [{"rang": s["rang"], "nom": s["nom"],
                          "score": round(s["score"], 3),
                          "part_top": s["part_top"],
-                         "sort": LIBELLE_SORT.get(mesures[s["cle"]]["_sort"],
-                                                  mesures[s["cle"]]["_sort"]),
+                         "sort": libelle_sort(mesures[s["cle"]]["_sort"],
+                                              mesures[s["cle"]].get("_genre")),
                          "aventurier": mesures[s["cle"]]["_nom"],
                          "saison": mesures[s["cle"]]["_titre"],
                          "saison_id": mesures[s["cle"]]["_saison"],
@@ -1000,6 +1044,8 @@ def tout(saisons, parts, conseils, epreuves):
         "tous": tous,
         "palmares": {
             "auc": round(auc, 3) if auc is not None else None,
+            "auc_sans_parcours": (round(auc_sans_parcours, 3)
+                                  if auc_sans_parcours is not None else None),
             "rang_median_vainqueurs": int(np.median(
                 [s["rang"] for s, v in zip(sujets, est_vainqueur) if v])),
             "rang_median_autres": int(np.median(

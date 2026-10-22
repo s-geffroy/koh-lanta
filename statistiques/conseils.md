@@ -124,7 +124,7 @@ les conseils dont le décompte est connu.</p>
 {% assign v = site.data.stats.voix_pour_eliminer %}
 Le cas le plus fréquent est **{{ v.mode }} voix**. La distribution est étalée —
 de {{ v.voix_min }} à {{ v.voix_max }} voix — parce que les castings ont grossi : un
-conseil à {{ site.data.stats.mots.casting_min }} n’a pas le même arithmétique qu’un conseil à
+conseil à {{ site.data.stats.mots.casting_min }} n’a pas la même arithmétique qu’un conseil à
 {{ site.data.stats.mots.casting_max }}.
 
 ## Il en faut plus qu’avant, et pourtant on s’accorde moins
@@ -294,7 +294,7 @@ score de Lucie et réciproquement, et <i>Le Totem maudit</i> rangeait trois
 jurés dans la colonne voisine — ce qui masquait l’égalité <b>4-4</b> d’où sont
 sortis ses deux vainqueurs.</p>
 
-<p class="note">Cette dernière analyse ne porte que sur les
+<p class="note">Les analyses au bulletin de cette page ne portent que sur les
 {{ c.conseils_complets }} conseils dont le dépouillement est complet, c’est-à-dire
 ceux où le nombre de bulletins lus dans les sources correspond exactement au
 nombre de voix annoncé. Les autres conseils restent comptés dans les agrégats
