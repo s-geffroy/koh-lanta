@@ -267,8 +267,10 @@ prose, donc une lecture faillible — et c’est pourquoi elle est **mesurée**.
   <p>Là où les <b>deux sources</b> les nomment, elles s’accordent
   {{ ng.sources_accord }} fois sur {{ ng.sources_communes }}.
   La seule divergence porte sur <i>Les Reliques du destin</i> : Wikipédia
-  compte Jade parmi les ambassadeurs, Fandom compte Cynthia. Aucun des
-  deux n’est retenu.</p>
+  compte Jade parmi les ambassadeurs, Fandom compte Cynthia. La presse du
+  soir de diffusion départage : « Ce sont donc Jade et Ulrich qui sont
+  désignés pour partir aux ambassadeurs » (Ozap, 14 avril 2026). C’est la
+  lecture de Wikipédia qui est retenue.</p>
 </div>
 
 Trois contrôles écartent une lecture douteuse : chaque nom doit désigner un
@@ -276,7 +278,8 @@ participant de la saison sans homonyme, chaque ambassadeur doit être **encore
 en jeu** à cet épisode, et le nombre de noms lus doit correspondre à celui que
 la note annonce. C’est ce dernier qui écarte <i>Les Armes secrètes</i> : la note
 parle de « deux ambassadeurs » puis ajoute une « ambassadrice secrète », ce qui
-en fait trois. La règle du dépôt est de s’abstenir plutôt que d’arbitrer.
+en fait trois. La règle du dépôt est de s’abstenir plutôt que d’arbitrer
+entre les deux wikis, sauf quand une troisième source les départage.
 
 <p class="note">Les {{ ng.muettes }} ambassades muettes ne le sont pas par hasard : ce sont
 les plus anciennes éditions et les saisons spéciales, celles dont les articles
