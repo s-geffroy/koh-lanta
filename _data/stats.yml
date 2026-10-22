@@ -976,7 +976,7 @@ saisons:
   - Wendy
 - id: s16
   numero: 16
-  titre: L'Île au trésor
+  titre: L’Île au trésor
   annee: 2016
   speciale: false
   en_cours: false
@@ -1113,7 +1113,7 @@ saisons:
   - Frédéric
 - id: s25
   numero: 25
-  titre: Les Chasseurs d'immunité
+  titre: Les Chasseurs d’immunité
   annee: 2024
   speciale: false
   en_cours: false
@@ -1266,7 +1266,7 @@ saisons:
   - Clémence
 - id: sp6
   numero: null
-  titre: L'Île des héros
+  titre: L’Île des héros
   annee: 2020
   speciale: true
   en_cours: false
@@ -1707,7 +1707,7 @@ jury:
     voix_exprimees: 11
     bulletins_releves: 6
   - saison: s16
-    titre: L'Île au trésor
+    titre: L’Île au trésor
     annee: 2016
     laureat: Benoît Assadi
     voix_pour: 10
@@ -1770,7 +1770,7 @@ jury:
     voix_exprimees: 9
     bulletins_releves: 7
   - saison: s25
-    titre: Les Chasseurs d'immunité
+    titre: Les Chasseurs d’immunité
     annee: 2024
     laureat: Léa Sahin
     voix_pour: 8
@@ -1833,7 +1833,7 @@ jury:
     voix_exprimees: 9
     bulletins_releves: 5
   - saison: sp6
-    titre: L'Île des héros
+    titre: L’Île des héros
     annee: 2020
     laureat: Naoil Tita
     voix_pour: 7
@@ -2154,7 +2154,7 @@ finale:
     choix_atteste: false
     poteaux_gagne: false
   - saison: s16
-    titre: L'Île au trésor
+    titre: L’Île au trésor
     annee: 2016
     speciale: false
     qualifies:
@@ -2235,7 +2235,7 @@ finale:
     choix_atteste: true
     poteaux_gagne: false
   - saison: sp6
-    titre: L'Île des héros
+    titre: L’Île des héros
     annee: 2020
     speciale: true
     qualifies:
@@ -2288,7 +2288,7 @@ finale:
     choix_atteste: true
     poteaux_gagne: true
   - saison: s25
-    titre: Les Chasseurs d'immunité
+    titre: Les Chasseurs d’immunité
     annee: 2024
     speciale: false
     qualifies:
@@ -5942,7 +5942,7 @@ survie_saisons:
   - 10
 - id: s16
   numero: 16
-  titre: L'Île au trésor
+  titre: L’Île au trésor
   annee: 2016
   speciale: false
   effectif: 20
@@ -6082,7 +6082,7 @@ survie_saisons:
   - 14
 - id: sp6
   numero: null
-  titre: L'Île des héros
+  titre: L’Île des héros
   annee: 2020
   speciale: true
   effectif: 20
@@ -6250,7 +6250,7 @@ survie_saisons:
   - 15
 - id: s25
   numero: 25
-  titre: Les Chasseurs d'immunité
+  titre: Les Chasseurs d’immunité
   annee: 2024
   speciale: false
   effectif: 22
@@ -6674,7 +6674,7 @@ casting:
     etendue: 35
   - id: s16
     numero: 16
-    titre: L'Île au trésor
+    titre: L’Île au trésor
     annee: 2016
     speciale: false
     min: 19
@@ -6719,7 +6719,7 @@ casting:
     etendue: 33
   - id: sp6
     numero: null
-    titre: L'Île des héros
+    titre: L’Île des héros
     annee: 2020
     speciale: true
     min: 20
@@ -6773,7 +6773,7 @@ casting:
     etendue: 34
   - id: s25
     numero: 25
-    titre: Les Chasseurs d'immunité
+    titre: Les Chasseurs d’immunité
     annee: 2024
     speciale: false
     min: 21
@@ -7018,7 +7018,7 @@ programme:
     duree_jours: 40
   - id: s16
     numero: 16
-    titre: L'Île au trésor
+    titre: L’Île au trésor
     annee: 2016
     speciale: false
     presentateur: Denis Brogniart
@@ -7068,7 +7068,7 @@ programme:
     duree_jours: 39
   - id: sp6
     numero: null
-    titre: L'Île des héros
+    titre: L’Île des héros
     annee: 2020
     speciale: true
     presentateur: Denis Brogniart
@@ -7128,7 +7128,7 @@ programme:
     duree_jours: 40
   - id: s25
     numero: 25
-    titre: Les Chasseurs d'immunité
+    titre: Les Chasseurs d’immunité
     annee: 2024
     speciale: false
     presentateur: Denis Brogniart
@@ -7251,7 +7251,7 @@ reciprocite:
   part: "37,3"
 arc_des_votes:
   saison: s16
-  titre: L'Île au trésor
+  titre: L’Île au trésor
   annee: 2016
   noeuds:
   - rang: 0
@@ -7767,7 +7767,7 @@ epreuves:
   - personne: Claude Dartois
     id: claude-dartois
     saison: sp6
-    titre: L'Île des héros
+    titre: L’Île des héros
     annee: 2020
     speciale: true
     gagnees: 5
@@ -7782,7 +7782,7 @@ epreuves:
   - personne: Jean Belmonte
     id: jean-belmonte
     saison: s25
-    titre: Les Chasseurs d'immunité
+    titre: Les Chasseurs d’immunité
     annee: 2024
     speciale: false
     gagnees: 4
@@ -7947,7 +7947,7 @@ epreuves:
   - personne: Naoil Tita
     id: naoil-tita
     saison: sp6
-    titre: L'Île des héros
+    titre: L’Île des héros
     annee: 2020
     speciale: true
     gagnees: 4
@@ -8210,7 +8210,7 @@ colliers:
   elimines_avec_collier:
   - nom: William Plancq
     saison: s25
-    titre: Les Chasseurs d'immunité
+    titre: Les Chasseurs d’immunité
     annee: 2024
     id: william-plancq
   - nom: Céline Faccio
@@ -8220,12 +8220,12 @@ colliers:
     id: celine-faccio
   - nom: Jessica Potel
     saison: sp6
-    titre: L'Île des héros
+    titre: L’Île des héros
     annee: 2020
     id: jessica-potel
   - nom: Charlotte Caron
     saison: sp6
-    titre: L'Île des héros
+    titre: L’Île des héros
     annee: 2020
     id: charlotte-caron
   jamais_trouves: 12
@@ -8278,7 +8278,7 @@ colliers:
     joues: 3
     voix_annulees: 5
   - saison: s25
-    titre: Les Chasseurs d'immunité
+    titre: Les Chasseurs d’immunité
     annee: 2024
     colliers: 16
     joues: 12
@@ -8308,7 +8308,7 @@ colliers:
     joues: 3
     voix_annulees: 8
   - saison: sp6
-    titre: L'Île des héros
+    titre: L’Île des héros
     annee: 2020
     colliers: 7
     joues: 2
@@ -8463,7 +8463,7 @@ indicateurs:
     id: marvyn-leone
   - nom: Eric Peyrache
     saison: sp6
-    titre: L'Île des héros
+    titre: L’Île des héros
     annee: 2020
     speciale: true
     valeur: "2,8"
@@ -8518,7 +8518,7 @@ indicateurs:
     id: melissa-pierru
   - nom: Ahmad Abadie
     saison: sp6
-    titre: L'Île des héros
+    titre: L’Île des héros
     annee: 2020
     speciale: true
     valeur: "2,17"
@@ -8562,7 +8562,7 @@ indicateurs:
     id: jonathan-guez
   - nom: Charlotte Caron
     saison: sp6
-    titre: L'Île des héros
+    titre: L’Île des héros
     annee: 2020
     speciale: true
     valeur: 2
@@ -8889,7 +8889,7 @@ indicateurs:
     conseils: 12
     id: delphine-bano
   - nom: Naoil Tita
-    titre: L'Île des héros
+    titre: L’Île des héros
     annee: 2020
     conseils: 11
     id: naoil-tita
@@ -9014,7 +9014,7 @@ indicateurs:
       id: thibault-belanger
     records:
     - nom: Benoît Assadi
-      titre: L'Île au trésor
+      titre: L’Île au trésor
       annee: 2016
       voix: 7
       id: benoit-assadi
@@ -9162,7 +9162,7 @@ indicateurs:
       voix_finaliste: 12
       conseils: 14
     - saison: s16
-      titre: L'Île au trésor
+      titre: L’Île au trésor
       annee: 2016
       vainqueur: Benoît Assadi
       voix_vainqueur: 7
@@ -9234,7 +9234,7 @@ indicateurs:
       voix_finaliste: 36
       conseils: 15
     - saison: s25
-      titre: Les Chasseurs d'immunité
+      titre: Les Chasseurs d’immunité
       annee: 2024
       vainqueur: Léa Sahin
       voix_vainqueur: 2
@@ -9279,7 +9279,7 @@ indicateurs:
     paires: 453
     meilleures:
     - saison: s16
-      titre: L'Île au trésor
+      titre: L’Île au trésor
       annee: 2016
       un: Bruno Troester
       deux: Stéphane Cipolla
@@ -9303,7 +9303,7 @@ indicateurs:
       accord: 10
       part: "90,9"
     - saison: s16
-      titre: L'Île au trésor
+      titre: L’Île au trésor
       annee: 2016
       un: Benoît Assadi
       deux: Candice Boisson
@@ -9787,7 +9787,7 @@ indicateurs:
     barre: 57
   - id: s16
     numero: 16
-    titre: L'Île au trésor
+    titre: L’Île au trésor
     annee: 2016
     speciale: false
     en_cours: false
@@ -10020,7 +10020,7 @@ indicateurs:
     barre: 62
   - id: s25
     numero: 25
-    titre: Les Chasseurs d'immunité
+    titre: Les Chasseurs d’immunité
     annee: 2024
     speciale: false
     en_cours: false
@@ -10281,7 +10281,7 @@ indicateurs:
     barre: 60
   - id: sp6
     numero: null
-    titre: L'Île des héros
+    titre: L’Île des héros
     annee: 2020
     speciale: true
     en_cours: false
@@ -10370,7 +10370,7 @@ indicateurs:
     - heros
     - binomes
   abandon_nul: 3
-  abandon_nul_texte: '*Les Aventuriers de Koh-Lanta* (2001), *L''Île au trésor* (2016) et *Les Reliques
+  abandon_nul_texte: '*Les Aventuriers de Koh-Lanta* (2001), *L’Île au trésor* (2016) et *Les Reliques
     du destin* (2026)'
   abandon_max: *id019
   domination_max: *id020
@@ -11088,7 +11088,7 @@ classement:
     participations: 4
     titres: 1
     finales: 3
-    saisons: L'Île des héros, La Légende, La Revanche des héros, Viêtnam
+    saisons: L’Île des héros, La Légende, La Revanche des héros, Viêtnam
     editions:
     - id: s10
       titre: Viêtnam
@@ -11097,7 +11097,7 @@ classement:
       titre: La Revanche des héros
       annee: 2012
     - id: sp6
-      titre: L'Île des héros
+      titre: L’Île des héros
       annee: 2020
     - id: sp7
       titre: La Légende
@@ -11160,7 +11160,7 @@ classement:
     participations: 5
     titres: 0
     finales: 1
-    saisons: L'Île des héros, La Légende, La Nouvelle Édition, La Revanche des héros, Raja Ampat
+    saisons: L’Île des héros, La Légende, La Nouvelle Édition, La Revanche des héros, Raja Ampat
     editions:
     - id: s11
       titre: Raja Ampat
@@ -11172,7 +11172,7 @@ classement:
       titre: La Nouvelle Édition
       annee: 2014
     - id: sp6
-      titre: L'Île des héros
+      titre: L’Île des héros
       annee: 2020
     - id: sp7
       titre: La Légende
@@ -11403,10 +11403,10 @@ classement:
     participations: 1
     titres: 1
     finales: 1
-    saisons: L'Île des héros
+    saisons: L’Île des héros
     editions:
     - id: sp6
-      titre: L'Île des héros
+      titre: L’Île des héros
       annee: 2020
     part_top: 85
     rang_min: 3
@@ -11715,10 +11715,10 @@ classement:
     participations: 1
     titres: 0
     finales: 0
-    saisons: Les Chasseurs d'immunité
+    saisons: Les Chasseurs d’immunité
     editions:
     - id: s25
-      titre: Les Chasseurs d'immunité
+      titre: Les Chasseurs d’immunité
       annee: 2024
     part_top: "44,9"
     rang_min: 6
@@ -11844,10 +11844,10 @@ classement:
     participations: 1
     titres: 0
     finales: 1
-    saisons: Les Chasseurs d'immunité
+    saisons: Les Chasseurs d’immunité
     editions:
     - id: s25
-      titre: Les Chasseurs d'immunité
+      titre: Les Chasseurs d’immunité
       annee: 2024
     part_top: "30,2"
     rang_min: 13
@@ -12105,12 +12105,12 @@ classement:
     sort_min: vainqueur
     id: laurent-maistret
   - rang: 8
-    nom: Naoil Tita — L'Île des héros
+    nom: Naoil Tita — L’Île des héros
     score: "1,459"
     part_top: "84,2"
     sort: Vainqueur
     aventurier: Naoil Tita
-    saison: L'Île des héros
+    saison: L’Île des héros
     saison_id: sp6
     annee: 2020
     sort_min: vainqueur
@@ -12138,12 +12138,12 @@ classement:
     sort_min: vainqueur
     id: claude-dartois
   - rang: 11
-    nom: Candice Boisson — L'Île au trésor
+    nom: Candice Boisson — L’Île au trésor
     score: "1,299"
     part_top: "61,6"
     sort: Éliminée à l’orientation
     aventurier: Candice Boisson
-    saison: L'Île au trésor
+    saison: L’Île au trésor
     saison_id: s16
     annee: 2016
     sort_min: éliminée à l’orientation
@@ -12248,12 +12248,12 @@ classement:
     sort_min: vainqueur
     id: jade-handi
   - rang: 21
-    nom: Jean Belmonte — Les Chasseurs d'immunité
+    nom: Jean Belmonte — Les Chasseurs d’immunité
     score: "1,107"
     part_top: "42,8"
     sort: Abandon médical
     aventurier: Jean Belmonte
-    saison: Les Chasseurs d'immunité
+    saison: Les Chasseurs d’immunité
     saison_id: s25
     annee: 2024
     sort_min: abandon médical
@@ -12292,12 +12292,12 @@ classement:
     sort_min: finaliste
     id: pascal-salviani
   - rang: 25
-    nom: Claude Dartois — L'Île des héros
+    nom: Claude Dartois — L’Île des héros
     score: "1,062"
     part_top: "48,5"
     sort: Éliminé aux poteaux
     aventurier: Claude Dartois
-    saison: L'Île des héros
+    saison: L’Île des héros
     saison_id: sp6
     annee: 2020
     sort_min: éliminé aux poteaux
@@ -25799,7 +25799,7 @@ modeles:
       plus_longue_serie: 6
       suite: RRRRJJJJJJ
     - saison: s16
-      titre: L'Île au trésor
+      titre: L’Île au trésor
       annee: 2016
       joueurs: 14
       plus_longue_serie: 6
@@ -26033,7 +26033,7 @@ modeles:
       episode: 6
       restants: 13
     - saison: s16
-      titre: L'Île au trésor
+      titre: L’Île au trésor
       annee: 2016
       casting: 20
       episode: 6
@@ -26081,7 +26081,7 @@ modeles:
       episode: 7
       restants: 12
     - saison: s25
-      titre: Les Chasseurs d'immunité
+      titre: Les Chasseurs d’immunité
       annee: 2024
       casting: 22
       episode: 7
@@ -26195,7 +26195,7 @@ modeles:
       effectif: 21
       conseils: 14
     - annee: 2016
-      titre: L'Île au trésor
+      titre: L’Île au trésor
       effectif: 20
       conseils: 15
     - annee: 2017
@@ -26227,7 +26227,7 @@ modeles:
       effectif: 20
       conseils: 15
     - annee: 2024
-      titre: Les Chasseurs d'immunité
+      titre: Les Chasseurs d’immunité
       effectif: 22
       conseils: 14
     - annee: 2024
@@ -26321,7 +26321,7 @@ modeles:
       titre: Thaïlande
       gain: "47,53"
     - annee: 2016
-      titre: L'Île au trésor
+      titre: L’Île au trésor
       gain: "44,59"
     - annee: 2017
       titre: Cambodge
@@ -26346,7 +26346,7 @@ modeles:
       titre: Le Feu sacré
       gain: "37,26"
     - annee: 2024
-      titre: Les Chasseurs d'immunité
+      titre: Les Chasseurs d’immunité
       gain: "37,59"
     exaequo:
     - *id060
@@ -26658,7 +26658,7 @@ modeles:
       effectif: 21
     - saison: s16
       annee: 2016
-      titre: L'Île au trésor
+      titre: L’Île au trésor
       speciale: false
       moyenne: 5730000
       lancement: 5450000
@@ -26718,7 +26718,7 @@ modeles:
       effectif: 24
     - saison: sp6
       annee: 2020
-      titre: L'Île des héros
+      titre: L’Île des héros
       speciale: true
       moyenne: 6600000
       lancement: 4642000
@@ -26770,7 +26770,7 @@ modeles:
       effectif: 20
     - saison: s25
       annee: 2024
-      titre: Les Chasseurs d'immunité
+      titre: Les Chasseurs d’immunité
       speciale: false
       moyenne: 3160000
       lancement: 3660000
@@ -26865,7 +26865,7 @@ modeles:
       titre: Thaïlande
       gain: "16,61"
     - annee: 2016
-      titre: L'Île au trésor
+      titre: L’Île au trésor
       gain: "17,3"
     - annee: 2017
       titre: Cambodge
@@ -26883,7 +26883,7 @@ modeles:
       titre: Les 4 Terres
       gain: "14,92"
     - annee: 2020
-      titre: L'Île des héros
+      titre: L’Île des héros
       gain: "15,67"
     - annee: 2021
       titre: Les Armes secrètes
@@ -26900,7 +26900,7 @@ modeles:
       titre: Le Feu sacré
       gain: "17,17"
     - annee: 2024
-      titre: Les Chasseurs d'immunité
+      titre: Les Chasseurs d’immunité
       gain: "14,36"
     exaequo:
     - *id067
@@ -27053,7 +27053,7 @@ modeles:
       - "74,1"
       - "75,8"
     - saison: s25
-      titre: Les Chasseurs d'immunité
+      titre: Les Chasseurs d’immunité
       annee: 2024
       mesures: 33
       indices:
@@ -27237,7 +27237,7 @@ modeles:
       - "104,4"
       - 108
     - saison: sp6
-      titre: L'Île des héros
+      titre: L’Île des héros
       annee: 2020
       mesures: 15
       indices:
@@ -33402,7 +33402,7 @@ completude_saisons:
     niveau: eleve
   - saison: s16
     numero: 16
-    titre: L'Île au trésor
+    titre: L’Île au trésor
     pays: Cambodge
     lieu: Île de Koh Rong
     annee: 2016
@@ -34152,7 +34152,7 @@ completude_saisons:
     niveau: eleve
   - saison: sp6
     numero: null
-    titre: L'Île des héros
+    titre: L’Île des héros
     pays: Fidji
     lieu: Archipel de Kadavu
     annee: 2020
@@ -34777,7 +34777,7 @@ completude_saisons:
     niveau: eleve
   - saison: s25
     numero: 25
-    titre: Les Chasseurs d'immunité
+    titre: Les Chasseurs d’immunité
     pays: Philippines
     lieu: Péninsule de Caramoan
     annee: 2024
@@ -35806,7 +35806,7 @@ rattachement:
 audience_controle:
   saisons: 14
   concordantes: 12
-  discordantes_texte: <i>La Revanche des héros</i> et <i>L'Île des héros</i>
+  discordantes_texte: <i>La Revanche des héros</i> et <i>L’Île des héros</i>
   ecart_max: 6
   recettes: 12
 age_survie_max: 30-34 ans

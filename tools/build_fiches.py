@@ -633,7 +633,10 @@ def slug_saison(titre):
     L'ancienne adresse ne meurt pas pour autant : `redirect_from` la garde
     vivante, sinon tout lien pose ailleurs vers /saisons/s07/ tomberait.
     """
-    base = identifiant(titre)
+    # L'apostrophe courbe du titre (« L’Île au trésor ») compte comme la
+    # droite : `identifiant()` l'effacerait, et l'adresse publiee passerait de
+    # « l-ile-au-tresor » a « lile-au-tresor ».
+    base = identifiant(titre.replace("’", "'"))
     return base if "koh-lanta" in base else f"koh-lanta-{base}"
 
 

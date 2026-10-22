@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Alexandra Pharisien (2016)"
-description: "Alexandra Pharisien, Koh-Lanta L'Île au trésor (2016) : sort au conseil le 27e jour, 11e sur 20. 344e sur 531 au classement des aventuriers."
+description: "Alexandra Pharisien, Koh-Lanta L’Île au trésor (2016) : sort au conseil le 27e jour, 11e sur 20. 344e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/alexandra-pharisien.png
 permalink: /aventuriers/alexandra-pharisien/
 aventurier: alexandra-pharisien

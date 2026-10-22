@@ -49,7 +49,8 @@ MOIS = {"janvier": 1, "fevrier": 2, "mars": 3, "avril": 4, "mai": 5, "juin": 6,
 
 
 def sansaccents(t):
-    t = unicodedata.normalize("NFD", t or "")
+    # L'apostrophe courbe de _data/saisons.yml contre la droite du wiki.
+    t = unicodedata.normalize("NFD", (t or "").replace("’", "'"))
     return "".join(c for c in t if unicodedata.category(c) != "Mn").lower().strip()
 
 

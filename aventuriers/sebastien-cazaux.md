@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Sébastien Cazaux (2024)"
-description: "Sébastien Cazaux, Koh-Lanta Les Chasseurs d'immunité (2024) : sort au conseil le 36e jour, 6e sur 22. 156e sur 531 au classement des aventuriers."
+description: "Sébastien Cazaux, Koh-Lanta Les Chasseurs d’immunité (2024) : sort au conseil le 36e jour, 6e sur 22. 156e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/sebastien-cazaux.png
 permalink: /aventuriers/sebastien-cazaux/
 aventurier: sebastien-cazaux

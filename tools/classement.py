@@ -851,7 +851,10 @@ def _ligne_publiee(s, mesures, cles):
         "participations": len(cles),
         "titres": titres,
         "finales": sum(1 for m in p if m["_sort"] in ("vainqueur", "finaliste")),
-        "saisons": ", ".join(sorted({m["_titre"] for m in p if m["_titre"]})),
+        # L'apostrophe courbe se range apres les lettres : triee comme la
+        # droite, « L’Île des héros » reste devant « La Légende ».
+        "saisons": ", ".join(sorted({m["_titre"] for m in p if m["_titre"]},
+                                    key=lambda t: t.replace("’", "'"))),
         # Les memes saisons, mais avec de quoi les lier : une par participation,
         # de la plus ancienne a la plus recente.
         "editions": [{"id": m["_saison"], "titre": m["_titre"], "annee": m["_annee"]}

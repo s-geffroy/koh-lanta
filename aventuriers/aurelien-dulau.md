@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Aurélien Dulau (2024)"
-description: "Aurélien Dulau, Koh-Lanta Les Chasseurs d'immunité (2024) : sort avec son binôme le 29e jour, 10e sur 22. 165e sur 531 au classement des aventuriers."
+description: "Aurélien Dulau, Koh-Lanta Les Chasseurs d’immunité (2024) : sort avec son binôme le 29e jour, 10e sur 22. 165e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/aurelien-dulau.png
 permalink: /aventuriers/aurelien-dulau/
 aventurier: aurelien-dulau
