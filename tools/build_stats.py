@@ -375,6 +375,23 @@ def bloc_conseils(conseils, parts, par_saison):
 
     genre = {}
     idx = {(p["saison"], p["id"]): p for p in parts}
+
+    # La boule noire : l'egalite qui tient au second vote se tire au sort.
+    # Le conseil reste une elimination ; la table dit qui a tire, contre qui.
+    def nom_de(sid, pid):
+        p = idx[(sid, pid)]
+        return p.get("nom_complet") or p["nom"]
+
+    tirages = [{
+        "saison": c["saison"],
+        "saison_titre": par_saison[c["saison"]]["titre"],
+        "annee": par_saison[c["saison"]].get("annee"),
+        "id": c["elimine"],
+        "nom": nom_de(c["saison"], c["elimine"]),
+        "contre_id": c["tirage"]["contre"],
+        "contre_nom": nom_de(c["saison"], c["tirage"]["contre"]),
+    } for c in utiles if c.get("tirage")]
+
     for c in complets:
         for b in c["votes"]:
             v = idx.get((c["saison"], b["votant"]))
@@ -411,6 +428,9 @@ def bloc_conseils(conseils, parts, par_saison):
         "voix_annulees_tour_nul": voix_tour_nul,
         "conseils_tour_nul": len(tours_nuls),
         "saisons_tour_nul": len({c["saison"] for c in tours_nuls}),
+        "tirages": tirages,
+        "conseils_tirage": len(tirages),
+        "saisons_tirage": len({t["saison"] for t in tirages}),
         "objet_un_seul_protege": len(seul),
         "objet_a_sauve": sauves,
         "objet_n_a_pas_sauve": rates,
@@ -1652,6 +1672,9 @@ def champs_du_texte(stats, saisons, parts):
     egalites = sum(1 for s in saisons if not s.get("annulee") and not s.get("speciale")
                    and not s.get("en_cours") and len(s.get("vainqueurs") or []) > 1)
     mots["egalites_jury"] = egalites
+    # /statistiques/conseils/ : la boule noire.
+    mots["conseils_tirage"] = stats["conseils"]["conseils_tirage"]
+    mots["saisons_tirage"] = stats["conseils"]["saisons_tirage"]
     v = stats["vainqueurs"]
     mots["ecart_age_vainqueurs"] = v["age_max"] - v["age_min"]
     rv = stats["revenants"]

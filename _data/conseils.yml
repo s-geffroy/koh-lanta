@@ -33,6 +33,10 @@
 # `bulletins_ecartes` (sur une sortie) : une case egaree dans une colonne
 # d'abandon annoncee a zero voix, gardee pour la tracabilite.
 #
+# `tirage` : l'egalite a persiste au second vote et la boule noire a designe
+# l'elimine. `contre` nomme l'autre ex aequo, `source` la phrase qui le dit.
+# Les bulletins lus sont ceux du premier tour, parfois barres.
+#
 # `type: sortie` : une sortie OU PERSONNE NE VOTE -- abandon, orientation,
 # poteaux, duel, ambassadeurs. La ligne est gardee parce qu'elle date la
 # sortie ; elle porte `nature`, et elle n'est pas un conseil.
@@ -5343,6 +5347,10 @@
     cible: raphaele-navarro
     cible_rattachee: true
     annule: false
+  tirage:
+    contre: raphaele-navarro
+    source: 'Fandom (Raphaële Navarro) : « Un tirage au sort est donc effectué, et Julien est éliminé
+      de Koh-Lanta »'
 - saison: s09
   numero: 5
   type: elimination
@@ -5628,6 +5636,10 @@
     cible: isabelle-da-silva
     cible_rattachee: true
     annule: false
+  tirage:
+    contre: isabelle-da-silva
+    source: 'Fandom : « malgré un deuxième vote [...] un tirage au sort a été effectué entre Freddy et
+      Isabelle » ; Freddy à la ligne des éliminés'
 - saison: s09
   numero: 15
   type: elimination
@@ -12555,6 +12567,9 @@
     cible: marvyn-leone
     cible_rattachee: true
     annule: false
+  tirage:
+    contre: marvyn-leone
+    source: 'Fandom : « Manu tire la boule noire, et est éliminé de Koh-Lanta »'
 - saison: s18
   numero: 11
   type: elimination
@@ -13819,6 +13834,9 @@
     cible: cyril-rouanne
     cible_rattachee: true
     annule: false
+  tirage:
+    contre: clo-dessard-arribas
+    source: 'Fandom : « Ce dernier tire la boule noire et est éliminé de Koh-Lanta »'
 - saison: s20
   numero: 19
   type: sortie
@@ -16201,6 +16219,9 @@
     cible: yannick-zachee
     cible_rattachee: true
     annule: false
+  tirage:
+    contre: stephanie-tribot
+    source: 'Fandom : « Benjamin tire la boule noire et quitte l''aventure »'
 - saison: s23
   numero: 7
   type: elimination
@@ -16401,6 +16422,9 @@
     cible: yannick-zachee
     cible_rattachee: true
     annule: false
+  tirage:
+    contre: setha-el-hajjami
+    source: 'Fandom : « Alexandra tire la boule noire et quitte l''aventure »'
 - saison: s23
   numero: 11
   type: elimination
@@ -19317,6 +19341,10 @@
     cible: sarah-aboudeine
     cible_rattachee: true
     annule: true
+  tirage:
+    contre: sarah-aboudeine
+    source: 'Wikipedia : « un tirage au sort a donc lieu et le directeur de centre équestre se retrouve
+      éliminé en tirant la boule noire »'
 - saison: s26
   numero: 12
   type: sortie
@@ -20361,6 +20389,10 @@
     cible: frederic-pignard
     cible_rattachee: true
     annule: false
+  tirage:
+    contre: noemie-bessec
+    source: 'Wikipedia : « malgré un deuxième vote [...] un tirage au sort a été effectué entre Adrien
+      et Noémie » ; Adrien à la ligne des éliminés'
 - saison: s27
   numero: 13
   type: sortie
@@ -21382,6 +21414,9 @@
     cible: antonin-fortunato
     cible_rattachee: true
     annule: false
+  tirage:
+    contre: antonin-fortunato
+    source: 'Fandom : « Ce dernier tire la boule noire, et entre dans l''antre du destin »'
 - saison: s28
   numero: 11
   type: elimination

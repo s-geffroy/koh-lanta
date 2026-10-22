@@ -998,6 +998,20 @@ def verifier_qualite_des_conseils(conseils, saisons, parts, c):
         if x.get("annulation") == "partielle" and not x.get("proteges"):
             c.erreur(f"{ref} : annulation partielle sans personne protegee")
 
+        # La boule noire tranche entre deux presents : l'autre ex aequo est de
+        # la saison, ce n'est pas l'elimine, et il sort plus tard.
+        t = x.get("tirage")
+        if t:
+            autre = t.get("contre")
+            if x.get("type") != "elimination" or not x.get("elimine_rattache"):
+                c.erreur(f"{ref} : tirage sur un conseil sans elimine rattache")
+            elif (sid, autre) not in sort_de or autre == x["elimine"]:
+                c.erreur(f"{ref} : tirage contre « {autre} », inconnu ou elimine lui-meme")
+            elif derniere.get((sid, autre), 10 ** 6) <= num:
+                c.erreur(f"{ref} : tirage contre « {autre} », deja sorti")
+            if not t.get("source"):
+                c.erreur(f"{ref} : tirage sans source")
+
     # Toute sortie au conseil, sur une saison terminee, a son conseil.
     nommes = {(x.get("saison"), x.get("elimine")) for x in conseils
               if x.get("type") == "elimination" and x.get("elimine_rattache")}

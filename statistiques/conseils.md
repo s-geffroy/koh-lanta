@@ -33,6 +33,35 @@ n’a vu tous les bulletins porter le même nom**. L’image du camp entier se
 retournant d’un bloc contre un aventurier est une image de fiction — dans les
 faits, le vote se divise toujours.
 
+### Quand l’égalité tient : la boule noire
+
+Si deux aventuriers restent à égalité après un second vote, ils tirent au
+sort, et celui qui tire la boule noire quitte le jeu. C’est arrivé
+**{{ site.data.stats.mots.conseils_tirage }} fois** sur les saisons terminées,
+dans {{ site.data.stats.mots.saisons_tirage }} saisons.
+
+<div class="tableau-large">
+<table>
+<thead><tr>
+  <th>Saison</th><th>Tire la boule noire</th><th>Reste en jeu</th>
+</tr></thead>
+<tbody>
+{% for t in c.tirages %}
+<tr>
+  <td>{% include lien-saison.html id=t.saison titre=t.saison_titre %} ({{ t.annee }})</td>
+  <td><a href="{{ '/aventuriers/' | append: t.id | append: '/' | relative_url }}">{{ t.nom }}</a></td>
+  <td><a href="{{ '/aventuriers/' | append: t.contre_id | append: '/' | relative_url }}">{{ t.contre_nom }}</a></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+Ces conseils restent comptés comme des éliminations : les voix ont désigné
+l’éliminé, avec un autre, et le hasard n’a choisi qu’entre les deux. Le
+tirage ne dépend ni de l’âge, ni du sexe, ni de la force de l’un ou de
+l’autre ; il ajoute du bruit aux mesures sur « qui part », pas de biais.
+
 ## Peut-on croire ces bulletins ?
 
 {% assign cv = site.data.croisement_votes %}

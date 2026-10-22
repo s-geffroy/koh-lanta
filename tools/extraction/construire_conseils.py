@@ -200,6 +200,10 @@ ENTETE = """# ATTENTION : fichier genere. Ne pas editer a la main.
 # `bulletins_ecartes` (sur une sortie) : une case egaree dans une colonne
 # d'abandon annoncee a zero voix, gardee pour la tracabilite.
 #
+# `tirage` : l'egalite a persiste au second vote et la boule noire a designe
+# l'elimine. `contre` nomme l'autre ex aequo, `source` la phrase qui le dit.
+# Les bulletins lus sont ceux du premier tour, parfois barres.
+#
 # `type: sortie` : une sortie OU PERSONNE NE VOTE -- abandon, orientation,
 # poteaux, duel, ambassadeurs. La ligne est gardee parce qu'elle date la
 # sortie ; elle porte `nature`, et elle n'est pas un conseil.
@@ -554,6 +558,51 @@ COLONNES_SANS_VOTE = {
     ("sp7", "teheiura-teahui", "10"): (_LIES, None,
         "Wikipedia : « Teheiura est éliminé, à la suite de l'élimination de Christelle, son binôme »"),
 }
+
+# LA BOULE NOIRE. Si l'egalite persiste au second vote, les ex aequo tirent au
+# sort, et celui qui tire la boule noire sort. Rien dans la matrice ne le dit :
+# la colonne porte le premier tour (barre ou non), rarement le second, et la
+# ligne « Elimine » nomme le perdant comme a un conseil ordinaire. Le conseil
+# reste une elimination -- les voix l'ont designe, avec un autre -- mais son
+# issue n'est pas un decompte. TABLE fermee, verifiee le 22 octobre 2026 ; sp8
+# (en cours) n'y est pas. Cle : (saison, elimine) ; valeur : (l'autre ex
+# aequo, source).
+TIRAGES = {
+    ("s09", "julien-mairesse"): ("raphaele-navarro",
+        "Fandom (Raphaële Navarro) : « Un tirage au sort est donc effectué, et Julien est éliminé de Koh-Lanta »"),
+    ("s09", "freddy-boucher"): ("isabelle-da-silva",
+        "Fandom : « malgré un deuxième vote [...] un tirage au sort a été effectué entre Freddy et Isabelle » ; Freddy à la ligne des éliminés"),
+    ("s18", "manu-delanghe"): ("marvyn-leone",
+        "Fandom : « Manu tire la boule noire, et est éliminé de Koh-Lanta »"),
+    ("s20", "cyril-rouanne"): ("clo-dessard-arribas",
+        "Fandom : « Ce dernier tire la boule noire et est éliminé de Koh-Lanta »"),
+    ("s23", "benjamin-breerette"): ("stephanie-tribot",
+        "Fandom : « Benjamin tire la boule noire et quitte l'aventure »"),
+    ("s23", "alexandra-elize"): ("setha-el-hajjami",
+        "Fandom : « Alexandra tire la boule noire et quitte l'aventure »"),
+    ("s26", "fabrice-giordano"): ("sarah-aboudeine",
+        "Wikipedia : « un tirage au sort a donc lieu et le directeur de centre équestre se retrouve éliminé en tirant la boule noire »"),
+    ("s27", "adrien-bernaert"): ("noemie-bessec",
+        "Wikipedia : « malgré un deuxième vote [...] un tirage au sort a été effectué entre Adrien et Noémie » ; Adrien à la ligne des éliminés"),
+    ("s28", "ulrich-bandeira"): ("antonin-fortunato",
+        "Fandom : « Ce dernier tire la boule noire, et entre dans l'antre du destin »"),
+}
+
+
+def marquer_les_tirages(conseils, rapport):
+    """Pose `tirage` sur le conseil que la boule noire a tranche. Une entree
+    de TIRAGES qui ne trouve pas son conseil est une erreur, pas un oubli."""
+    trouves = set()
+    for c in conseils:
+        cle = (c["saison"], c.get("elimine"))
+        if c.get("type", "elimination") != "elimination" or cle not in TIRAGES:
+            continue
+        contre, source = TIRAGES[cle]
+        c["tirage"] = {"contre": contre, "source": source}
+        trouves.add(cle)
+    for cle in sorted(set(TIRAGES) - trouves):
+        raise SystemExit(f"TIRAGES : aucun conseil pour {cle}")
+    rapport.append(f"conseils tranches par la boule noire : {len(trouves)}")
 
 
 def etiqueter_les_sorties(conseils, debut, sorts, rapport):
@@ -1180,6 +1229,7 @@ def construire(saisons, parts, rapport):
         etiqueter_les_sorties(conseils, debut_saison, sorts, rapport)
         recoller_le_scrutin_final(conseils[debut_saison:], rapport)
 
+    marquer_les_tirages(conseils, rapport)
     if accord["communs"]:
         rapport.append(
             f"epreuve croisee des deux sources : {accord['communs']} bulletins "

@@ -116,7 +116,9 @@ def issues(conseils, par_saison):
     lit que le conseil immediatement precedent, jamais le seul `episode`.
 
     - egalite puis second vote : le conseil precedent, le meme soir, est un
-      tour nul (annulation totale) ou un tour sans elimine ;
+      tour nul (annulation totale) ou un tour sans elimine ; ou bien la boule
+      noire a tranche (`tirage`) -- elle ne se tire qu'apres un second vote
+      reste a egalite, et la matrice n'en garde souvent que le premier tour ;
     - renversement : un objet a annule des voix, un seul protege, et sans
       l'objet ce protege en aurait recu plus que l'elimine ;
     - egalite tranchee : le conseil decisif finit lui-meme a egalite en tete,
@@ -137,9 +139,10 @@ def issues(conseils, par_saison):
             sans_bulletin += 1
             continue
         prec = par_num.get((c["saison"], c["numero"] - 1))
-        tour_nul = (prec is not None and prec.get("type", "elimination") == "elimination"
-                    and prec.get("episode") == c.get("episode")
-                    and (prec.get("annulation") == "totale" or prec.get("sans_elimination")))
+        tour_nul = c.get("tirage") or (
+            prec is not None and prec.get("type", "elimination") == "elimination"
+            and prec.get("episode") == c.get("episode")
+            and (prec.get("annulation") == "totale" or prec.get("sans_elimination")))
         renverse = False
         if c.get("annulation") == "partielle" and len(c.get("proteges") or []) == 1:
             p = c["proteges"][0]

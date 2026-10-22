@@ -1483,6 +1483,72 @@ conseils:
   voix_annulees_tour_nul: 143
   conseils_tour_nul: 16
   saisons_tour_nul: 11
+  tirages:
+  - saison: s09
+    saison_titre: Palau
+    annee: 2009
+    id: julien-mairesse
+    nom: Julien Mairesse
+    contre_id: raphaele-navarro
+    contre_nom: Raphaële Navarro
+  - saison: s09
+    saison_titre: Palau
+    annee: 2009
+    id: freddy-boucher
+    nom: Freddy Boucher
+    contre_id: isabelle-da-silva
+    contre_nom: Isabelle Da Silva
+  - saison: s18
+    saison_titre: Fidji
+    annee: 2017
+    id: manu-delanghe
+    nom: Manu Delanghe
+    contre_id: marvyn-leone
+    contre_nom: Marvyn Leone
+  - saison: s20
+    saison_titre: La Guerre des chefs
+    annee: 2019
+    id: cyril-rouanne
+    nom: Cyril Rouanne
+    contre_id: clo-dessard-arribas
+    contre_nom: Clo Dessard Arribas
+  - saison: s23
+    saison_titre: Le Totem maudit
+    annee: 2022
+    id: benjamin-breerette
+    nom: Benjamin Breerette
+    contre_id: stephanie-tribot
+    contre_nom: Stéphanie Tribot
+  - saison: s23
+    saison_titre: Le Totem maudit
+    annee: 2022
+    id: alexandra-elize
+    nom: Alexandra Élizé
+    contre_id: setha-el-hajjami
+    contre_nom: Setha El Hajjami
+  - saison: s26
+    saison_titre: La Tribu maudite
+    annee: 2024
+    id: fabrice-giordano
+    nom: Fabrice Giordano
+    contre_id: sarah-aboudeine
+    contre_nom: Sarah Aboudeine
+  - saison: s27
+    saison_titre: La Revanche des 4 Terres
+    annee: 2025
+    id: adrien-bernaert
+    nom: Adrien Bernaert
+    contre_id: noemie-bessec
+    contre_nom: Noémie Bessec
+  - saison: s28
+    saison_titre: Les Reliques du destin
+    annee: 2026
+    id: ulrich-bandeira
+    nom: Ulrich Bandeira
+    contre_id: antonin-fortunato
+    contre_nom: Antonin Fortunato
+  conseils_tirage: 9
+  saisons_tirage: 7
   objet_un_seul_protege: 44
   objet_a_sauve: 44
   objet_n_a_pas_sauve: 0
@@ -34967,10 +35033,10 @@ articles:
   issues:
     conseils: "447"
     sans_bulletin: "1"
-    ordinaire: "91,5"
-    egalite_revote: "0,9"
+    ordinaire: "90,8"
+    egalite_revote: "2,7"
     renversement: "5,1"
-    egalite_tranchee: "2,5"
+    egalite_tranchee: "1,3"
     ordinaire_rond: "91"
   tests:
     vote_isole:
@@ -35575,6 +35641,10 @@ mots:
   survie_saisons_maj: Trente-trois
   egalites_jury: trois
   egalites_jury_maj: Trois
+  conseils_tirage: neuf
+  conseils_tirage_maj: Neuf
+  saisons_tirage: sept
+  saisons_tirage_maj: Sept
   ecart_age_vainqueurs: trente et un
   ecart_age_vainqueurs_maj: Trente et un
   regions_outremer: quatre
