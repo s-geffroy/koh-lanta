@@ -87,18 +87,20 @@ disponible, et il est bon.
 
 Un bulletin barré dans la matrice des votes n’a pas toujours la même cause, et
 les confondre revient à mettre au crédit des colliers des annulations qui ne
-leur doivent rien. Cette page les sépare.
+leur doivent rien. La matrice ne dit pas laquelle : la cause est relevée
+conseil par conseil, dans les sources qui racontent le vote.
 
-**Une partie des bulletins barrée** : un objet d’immunité a protégé quelqu’un,
-les autres voix comptent, et quelqu’un sort.
+**Les voix d’un aventurier protégé** : un objet d’immunité les a annulées,
+les autres voix comptent, et quelqu’un sort — après un second vote si elles
+finissent à égalité.
 **{{ c.voix_annulees_par_objet }} voix** dans ce cas, sur
 **{{ c.conseils_avec_objet_joue }} conseils** et
 {{ c.saisons_avec_objet_joue }} saisons — soit {{ c.rapport_saisons_objets }} fois les saisons dont
 [la page des colliers]({{ '/statistiques/colliers/' | relative_url }}) connaît
 le détail des objets.
 
-**Tous les bulletins barrés** : c’est le tour entier qui est nul — une égalité,
-suivie d’un second vote. {{ c.voix_annulees_tour_nul }} voix,
+**Un premier tour barré en entier** : c’est le tour qui est nul — une égalité,
+suivie d’un second vote que la matrice ne montre souvent pas. {{ c.voix_annulees_tour_nul }} voix,
 {{ c.conseils_tour_nul }} conseils, {{ c.saisons_tour_nul }} saisons. Rien à
 voir avec un collier.
 

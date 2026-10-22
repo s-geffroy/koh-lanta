@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Amandine Schmitt (2016)"
-description: "Amandine Schmitt, Koh-Lanta L'Île au trésor (2016) : sort au conseil le 6e jour, 19e sur 20, 7 voix reçues. 371e sur 531 au classement des aventuriers."
+description: "Amandine Schmitt, Koh-Lanta L'Île au trésor (2016) : sort au conseil le 6e jour, 19e sur 20, 7 voix reçues. 368e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/amandine-schmitt.png
 permalink: /aventuriers/amandine-schmitt/
 aventurier: amandine-schmitt

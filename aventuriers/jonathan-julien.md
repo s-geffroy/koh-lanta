@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Jonathan Julien (2021)"
-description: "Jonathan Julien, Koh-Lanta Les Armes secrètes (2021) : sort aux poteaux le 35e jour, 3e sur 21, 1 voix reçue. 164e sur 531 au classement des aventuriers."
+description: "Jonathan Julien, Koh-Lanta Les Armes secrètes (2021) : sort aux poteaux le 35e jour, 3e sur 21, 1 voix reçue. 166e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/jonathan-julien.png
 permalink: /aventuriers/jonathan-julien/
 aventurier: jonathan-julien

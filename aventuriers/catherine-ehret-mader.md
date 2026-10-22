@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Catherine Ehret-Mader — 2 saisons"
-description: "Catherine Ehret-Mader, 2 saisons de Koh-Lanta entre 2004 et 2009 : 46 jours de jeu, 23 voix reçues. 457e sur 531 au classement des aventuriers."
+description: "Catherine Ehret-Mader, 2 saisons de Koh-Lanta entre 2004 et 2009 : 46 jours de jeu, 23 voix reçues. 459e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/catherine-ehret-mader.png
 permalink: /aventuriers/catherine-ehret-mader/
 aventurier: catherine-ehret-mader

@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Djamel Bouras (2010)"
-description: "Djamel Bouras, Koh-Lanta Le Choc des héros (2010) : sort au conseil le 10e jour, 10e sur 14, 0 épreuve gagnée. 426e sur 531 au classement des aventuriers."
+description: "Djamel Bouras, Koh-Lanta Le Choc des héros (2010) : sort au conseil le 10e jour, 10e sur 14, 0 épreuve gagnée. 427e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/djamel-bouras.png
 permalink: /aventuriers/djamel-bouras/
 aventurier: djamel-bouras

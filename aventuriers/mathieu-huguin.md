@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Mathieu Huguin — Pacifique (2005)"
-description: "Mathieu Huguin, Koh-Lanta Pacifique (2005) : sort au conseil le 3e jour, 16e sur 17, 5 voix reçues. 456e sur 531 au classement des aventuriers."
+description: "Mathieu Huguin, Koh-Lanta Pacifique (2005) : sort au conseil le 3e jour, 16e sur 17, 5 voix reçues. 457e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/mathieu-huguin.png
 permalink: /aventuriers/mathieu-huguin/
 aventurier: mathieu-huguin

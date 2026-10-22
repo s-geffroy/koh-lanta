@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Jean Belmonte (2024)"
-description: "Jean Belmonte, Koh-Lanta Les Chasseurs d'immunité (2024) : abandonne sur blessure le 32e jour, 9e sur 22. 17e sur 531 au classement des aventuriers."
+description: "Jean Belmonte, Koh-Lanta Les Chasseurs d'immunité (2024) : abandonne sur blessure le 32e jour, 9e sur 22. 18e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/jean-belmonte.png
 permalink: /aventuriers/jean-belmonte/
 aventurier: jean-belmonte

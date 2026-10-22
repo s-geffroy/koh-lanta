@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Victor Rollinger (2019)"
-description: "Victor Rollinger, Koh-Lanta La Guerre des chefs (2019) : sort au conseil le 12e jour, 18e sur 21. 349e sur 531 au classement des aventuriers."
+description: "Victor Rollinger, Koh-Lanta La Guerre des chefs (2019) : sort au conseil le 12e jour, 18e sur 21. 348e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/victor-rollinger.png
 permalink: /aventuriers/victor-rollinger/
 aventurier: victor-rollinger

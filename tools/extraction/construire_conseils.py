@@ -204,6 +204,11 @@ ENTETE = """# ATTENTION : fichier genere. Ne pas editer a la main.
 # l'elimine. `contre` nomme l'autre ex aequo, `source` la phrase qui le dit.
 # Les bulletins lus sont ceux du premier tour, parfois barres.
 #
+# `second_tour` : une egalite a fait revoter le conseil. `premier` et `second`
+# disent les deux decomptes, `source` la phrase qui le dit ; `votes_contre` et
+# `votes_exprimes` sont ceux du tour DECISIF. Les bulletins barres sont le
+# premier tour, nul, sauf ceux qu'un objet a annules (`proteges`).
+#
 # `type: sortie` : une sortie OU PERSONNE NE VOTE -- abandon, orientation,
 # poteaux, duel, ambassadeurs. La ligne est gardee parce qu'elle date la
 # sortie ; elle porte `nature`, et elle n'est pas un conseil.
@@ -587,6 +592,105 @@ TIRAGES = {
     ("s28", "ulrich-bandeira"): ("antonin-fortunato",
         "Fandom : « Ce dernier tire la boule noire, et entre dans l'antre du destin »"),
 }
+
+
+# Le decompte du tour decisif des tirages, quand la colonne n'en porte aucun :
+# le second vote, reste a egalite (guide d'episodes du wiki Survivor).
+TOURS_DES_TIRAGES = {
+    ("s20", "cyril-rouanne"): "3-3",
+    ("s23", "benjamin-breerette"): "5-5",
+    ("s23", "alexandra-elize"): "4-4",
+    ("s26", "fabrice-giordano"): "7-7",
+    ("s27", "adrien-bernaert"): "7-7",
+}
+
+# LE SECOND VOTE QUE LA MATRICE NE MONTRE PAS. Une egalite au premier tour fait
+# revoter le conseil ; la matrice Fandom garde le plus souvent le PREMIER tour,
+# barre en entier, sous le nom de l'elimine du second. Rien alors ne dit le
+# decompte decisif, et la regle « une partie barree = un objet » se trompe
+# des que le premier tour garde une voix non barree : Pholien (Le Combat des
+# heros) comptait trois « proteges » et douze voix annulees par un objet,
+# quand aucun collier n'a ete joue. Deux fois, un collier ET un second vote :
+# l'objet annule les voix de son detenteur, le reste finit a egalite.
+# TABLE fermee, verifiee le 22 octobre 2026 contre le guide d'episodes du wiki
+# Survivor -- « Patrick (2-2-1; 3-2) » -- et une source francaise quand elle
+# existe. Cle : (saison, elimine, episode lu) -- un revenant peut sortir deux
+# fois ; valeur : (premier tour, tour decisif, protege par un objet au premier
+# tour ou None, source).
+SECONDS_TOURS = {
+    ("s07", "patrick-brasier-de-thuy", "12"): ("2-2-1", "3-2", None,
+        "wiki Survivor : « Patrick (2-2-1; 3-2) » ; Fandom : colonne « / » avant la sienne"),
+    ("s14", "sebastien-ballesteros", "13"): ("3-3", "3-2", None,
+        "Fandom : « Le vote a donné lieu à une égalité entre Chantal et Sébastien. Un second tour a alors eu lieu »"),
+    ("s15", "lolo-facione", "5"): ("3-3-1-1", "4-3", None,
+        "Fandom : « Après un second vote par égalité, Lolo a été éliminée »"),
+    ("s18", "marvyn-leone", "8"): ("5-5-1", "6-5", None,
+        "Wikipedia : « Le vote a donné lieu à une égalité entre Romain et Marvyn. Un second tour a alors eu lieu »"),
+    ("s18", "marguerite-leblanc", "13"): ("3-3", "3-2", None,
+        "Wikipedia : « Le vote a donné lieu à une égalité entre André et Marguerite. Un second tour a alors eu lieu »"),
+    ("s25", "david-murail", "13"): ("4-4", "4-3", None,
+        "Wikipedia : « Une égalité a lieu entre David et Amri et un second vote a lieu, sans le vote noir de Julie »"),
+    ("s26", "marie-vilaseca", "3"): ("4-4-1", "5-4", None,
+        "Wikipedia : « un deuxième vote est organisé entre Alexandre et Marie »"),
+    ("s26", "lola-potabes", "4"): ("3-3-3", "7-2", None,
+        "Wikipedia : « une égalité à trois voix [...] entraîne les jaunes à un second vote [...] sept voix contre elle contre deux pour Michel »"),
+    ("s26", "cassandre-lambert", "13"): ("3-3-0", "5-3", "ugo-lartiche",
+        "Wikipedia : « Ugo décide de jouer son autre collier d'immunité [...] Au deuxième tour [...] cinq voix contre elle contre trois pour Ilyesse »"),
+    ("s27", "pauline-leperchois", "6"): ("1-1-1-0", "7-2-0", "andrea-zogron",
+        "Wikipedia : « un deuxième vote est organisé entre Jérôme (de la tribu bleue), Joana et Pauline » ; wiki Survivor : « Pauline (1-1-1-0; 7-2-0) »"),
+    ("sp6", "pholien-systermans", "5"): ("5-5-4", "8-5", None,
+        "Wikipedia : « Le vote a donné lieu à une égalité entre Pholien et Éric. Un second tour a alors lieu »"),
+    ("sp6", "charlotte-caron", "8"): ("6-6-1", "6-4", None,
+        "Wikipedia : « Le vote a donné lieu à une égalité entre Charlotte et Éric. Un second tour a alors lieu »"),
+    ("sp7", "candice-boisson", "5"): ("1-1-0", "5-2", "clemence-castel",
+        "Wikipedia : « Clémence joue son collier d'immunité et un deuxième vote a lieu entre Sam et Candice. Candice est éliminée par cinq voix contre deux »"),
+}
+
+
+def _decompte(tour):
+    """« 7-2-0 » -> (7, 9) : les voix de l'elimine, puis les exprimees."""
+    voix = [int(x) for x in tour.split("-")]
+    return voix[0], sum(voix)
+
+
+def poser_les_seconds_tours(conseils, rapport):
+    """Pose `second_tour`, le decompte decisif et la vraie cause des voix
+    barrees sur les conseils de SECONDS_TOURS ; complete le decompte des
+    tirages. Une entree sans conseil est une erreur."""
+    trouves = set()
+    for c in conseils:
+        cle = (c["saison"], c.get("elimine"))
+        if c.get("type", "elimination") != "elimination":
+            continue
+        if cle in TOURS_DES_TIRAGES and c.get("votes_contre") is None:
+            c["votes_contre"], c["votes_exprimes"] = _decompte(TOURS_DES_TIRAGES[cle])
+        cle = cle + (str(c.get("episode")),)
+        if cle not in SECONDS_TOURS:
+            continue
+        premier, second, objet, source = SECONDS_TOURS[cle]
+        c["second_tour"] = {"premier": premier, "second": second, "source": source}
+        contre, exprimes = _decompte(second)
+        if (c.get("votes_contre"), c.get("votes_exprimes")) not in ((None, None), (contre, exprimes)):
+            rapport.append(f"{cle} : decompte {c.get('votes_contre')}/{c.get('votes_exprimes')} "
+                           f"remplace par le tour decisif {contre}/{exprimes}")
+        c["votes_contre"], c["votes_exprimes"] = contre, exprimes
+        barres = [b for b in c["votes"] if b.get("votant") is not None and b["annule"]]
+        # Les bulletins lus sont ceux du tour decisif seulement s'il n'y a rien
+        # de barre : sinon c'est le premier tour, et la colonne est incomplete.
+        c["complet"] = not barres and len(c["votes"]) == exprimes
+        for k in ("annulation", "proteges", "voix_annulees"):
+            c.pop(k, None)
+        if objet:
+            c["annulation"] = "partielle"
+            c["proteges"] = [objet]
+            c["voix_annulees"] = sum(1 for b in c["votes"] if b["annule"] and b["cible"] == objet)
+        elif barres:
+            c["annulation"] = "totale"
+            c["voix_annulees"] = len(barres)
+        trouves.add(cle)
+    for cle in sorted(set(SECONDS_TOURS) - trouves):
+        raise SystemExit(f"SECONDS_TOURS : aucun conseil pour {cle}")
+    rapport.append(f"seconds tours poses : {len(trouves)}")
 
 
 def marquer_les_tirages(conseils, rapport):
@@ -1230,6 +1334,7 @@ def construire(saisons, parts, rapport):
         recoller_le_scrutin_final(conseils[debut_saison:], rapport)
 
     marquer_les_tirages(conseils, rapport)
+    poser_les_seconds_tours(conseils, rapport)
     if accord["communs"]:
         rapport.append(
             f"epreuve croisee des deux sources : {accord['communs']} bulletins "

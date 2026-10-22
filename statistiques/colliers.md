@@ -182,9 +182,10 @@ trace-là existe sur {{ co.saisons_avec_objet_joue }} saisons.
 </div>
 
 <p class="note">Attention à ne pas confondre deux marques identiques.
-Lorsque <em>tous</em> les bulletins d’un conseil sont barrés, ce n’est pas un
-objet : c’est le tour entier qui est nul, une égalité suivie d’un second vote.
-Ce cas-là pèse {{ co.voix_annulees_tour_nul }} voix sur
+Un bulletin barré peut avoir été annulé par un objet, ou appartenir à un
+premier tour nul : une égalité, suivie d’un second vote. La matrice ne les
+distingue pas ; la cause est relevée conseil par conseil dans les sources.
+Le second cas pèse {{ co.voix_annulees_tour_nul }} voix sur
 {{ co.conseils_tour_nul }} conseils, et il était compté avec les colliers
 jusqu’à cette version du site. <a href="{{ '/statistiques/conseils/' | relative_url }}">Les
 conseils</a> détaillent la distinction.</p>

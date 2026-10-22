@@ -37,6 +37,11 @@
 # l'elimine. `contre` nomme l'autre ex aequo, `source` la phrase qui le dit.
 # Les bulletins lus sont ceux du premier tour, parfois barres.
 #
+# `second_tour` : une egalite a fait revoter le conseil. `premier` et `second`
+# disent les deux decomptes, `source` la phrase qui le dit ; `votes_contre` et
+# `votes_exprimes` sont ceux du tour DECISIF. Les bulletins barres sont le
+# premier tour, nul, sauf ceux qu'un objet a annules (`proteges`).
+#
 # `type: sortie` : une sortie OU PERSONNE NE VOTE -- abandon, orientation,
 # poteaux, duel, ambassadeurs. La ligne est gardee parce qu'elle date la
 # sortie ; elle porte `nature`, et elle n'est pas un conseil.
@@ -4487,10 +4492,8 @@
   episode: "12"
   elimine: patrick-brasier-de-thuy
   elimine_rattache: true
-  votes_contre: null
-  votes_exprimes: null
-  annulation: totale
-  voix_annulees: 5
+  votes_contre: 3
+  votes_exprimes: 5
   votes:
   - votant: jade-handi
     votant_rattache: true
@@ -4517,6 +4520,12 @@
     cible: maryline-hemelsdael
     cible_rattachee: true
     annule: true
+  second_tour:
+    premier: 2-2-1
+    second: 3-2
+    source: 'wiki Survivor : « Patrick (2-2-1; 3-2) » ; Fandom : colonne « / » avant la sienne'
+  annulation: totale
+  voix_annulees: 5
 - saison: s07
   numero: 15
   type: sortie
@@ -9313,10 +9322,8 @@
   episode: "13"
   elimine: sebastien-ballesteros
   elimine_rattache: true
-  votes_contre: null
-  votes_exprimes: null
-  annulation: totale
-  voix_annulees: 5
+  votes_contre: 3
+  votes_exprimes: 5
   votes:
   - votant: marc-rambaud
     votant_rattache: true
@@ -9351,6 +9358,13 @@
     cible: chantal-menard
     cible_rattachee: true
     annule: false
+  second_tour:
+    premier: 3-3
+    second: 3-2
+    source: 'Fandom : « Le vote a donné lieu à une égalité entre Chantal et Sébastien. Un second tour
+      a alors eu lieu »'
+  annulation: totale
+  voix_annulees: 5
 - saison: s14
   numero: 20
   type: sortie
@@ -9697,10 +9711,8 @@
   episode: "5"
   elimine: lolo-facione
   elimine_rattache: true
-  votes_contre: null
-  votes_exprimes: null
-  annulation: totale
-  voix_annulees: 7
+  votes_contre: 4
+  votes_exprimes: 7
   voix_mecanique_non_comptees: 1
   votes:
   - votant: pascal-salviani
@@ -9746,6 +9758,12 @@
     cible: romain-palazzetti
     cible_rattachee: true
     annule: true
+  second_tour:
+    premier: 3-3-1-1
+    second: 4-3
+    source: 'Fandom : « Après un second vote par égalité, Lolo a été éliminée »'
+  annulation: totale
+  voix_annulees: 7
 - saison: s15
   numero: 8
   type: elimination
@@ -12597,10 +12615,8 @@
   episode: "8"
   elimine: marvyn-leone
   elimine_rattache: true
-  votes_contre: null
-  votes_exprimes: null
-  annulation: totale
-  voix_annulees: 11
+  votes_contre: 6
+  votes_exprimes: 11
   votes:
   - votant: andre-deleplace
     votant_rattache: true
@@ -12657,6 +12673,13 @@
     cible: romain-delaroche
     cible_rattachee: true
     annule: true
+  second_tour:
+    premier: 5-5-1
+    second: 6-5
+    source: 'Wikipedia : « Le vote a donné lieu à une égalité entre Romain et Marvyn. Un second tour a
+      alors eu lieu »'
+  annulation: totale
+  voix_annulees: 11
 - saison: s18
   numero: 13
   type: elimination
@@ -12928,8 +12951,6 @@
   elimine_rattache: true
   votes_contre: 3
   votes_exprimes: 5
-  annulation: totale
-  voix_annulees: 5
   voix_mecanique_non_comptees: 1
   votes:
   - votant: andre-deleplace
@@ -12963,6 +12984,13 @@
     cible: andre-deleplace
     cible_rattachee: true
     annule: true
+  second_tour:
+    premier: 3-3
+    second: 3-2
+    source: 'Wikipedia : « Le vote a donné lieu à une égalité entre André et Marguerite. Un second tour
+      a alors eu lieu »'
+  annulation: totale
+  voix_annulees: 5
 - saison: s18
   numero: 20
   type: sortie
@@ -13793,8 +13821,8 @@
   episode: "13"
   elimine: cyril-rouanne
   elimine_rattache: true
-  votes_contre: null
-  votes_exprimes: null
+  votes_contre: 3
+  votes_exprimes: 6
   annulation: totale
   voix_annulees: 6
   votes:
@@ -16154,8 +16182,8 @@
   episode: "4"
   elimine: benjamin-breerette
   elimine_rattache: true
-  votes_contre: null
-  votes_exprimes: null
+  votes_contre: 5
+  votes_exprimes: 10
   votes:
   - votant: bastien-san-pedro
     votant_rattache: true
@@ -16367,8 +16395,8 @@
   episode: "7"
   elimine: alexandra-elize
   elimine_rattache: true
-  votes_contre: null
-  votes_exprimes: null
+  votes_contre: 4
+  votes_exprimes: 8
   votes:
   - votant: bastien-san-pedro
     votant_rattache: true
@@ -18669,12 +18697,12 @@
 - saison: s25
   numero: 17
   type: elimination
-  complet: false
+  complet: true
   episode: "13"
   elimine: david-murail
   elimine_rattache: true
-  votes_contre: null
-  votes_exprimes: null
+  votes_contre: 4
+  votes_exprimes: 7
   votes:
   - votant: lea-sahin
     votant_rattache: true
@@ -18711,6 +18739,11 @@
     cible: amri-madani
     cible_rattachee: true
     annule: false
+  second_tour:
+    premier: 4-4
+    second: 4-3
+    source: 'Wikipedia : « Une égalité a lieu entre David et Amri et un second vote a lieu, sans le vote
+      noir de Julie »'
 - saison: s25
   numero: 18
   type: elimination
@@ -18994,10 +19027,8 @@
   episode: "3"
   elimine: marie-vilaseca
   elimine_rattache: true
-  votes_contre: null
-  votes_exprimes: null
-  annulation: totale
-  voix_annulees: 9
+  votes_contre: 5
+  votes_exprimes: 9
   votes:
   - votant: cecile-belec
     votant_rattache: true
@@ -19044,6 +19075,12 @@
     cible: alexandre-cheron
     cible_rattachee: true
     annule: true
+  second_tour:
+    premier: 4-4-1
+    second: 5-4
+    source: 'Wikipedia : « un deuxième vote est organisé entre Alexandre et Marie »'
+  annulation: totale
+  voix_annulees: 9
 - saison: s26
   numero: 4
   type: elimination
@@ -19051,10 +19088,8 @@
   episode: "4"
   elimine: lola-potabes
   elimine_rattache: true
-  votes_contre: null
-  votes_exprimes: null
-  annulation: totale
-  voix_annulees: 9
+  votes_contre: 7
+  votes_exprimes: 9
   votes:
   - votant: thibault-belanger
     votant_rattache: true
@@ -19101,6 +19136,13 @@
     cible: michel-huy
     cible_rattachee: true
     annule: true
+  second_tour:
+    premier: 3-3-3
+    second: 7-2
+    source: 'Wikipedia : « une égalité à trois voix [...] entraîne les jaunes à un second vote [...] sept
+      voix contre elle contre deux pour Michel »'
+  annulation: totale
+  voix_annulees: 9
 - saison: s26
   numero: 5
   type: sortie
@@ -19266,8 +19308,8 @@
   episode: "8"
   elimine: fabrice-giordano
   elimine_rattache: true
-  votes_contre: null
-  votes_exprimes: null
+  votes_contre: 7
+  votes_exprimes: 14
   annulation: totale
   voix_annulees: 14
   votes:
@@ -19650,10 +19692,8 @@
   episode: "13"
   elimine: cassandre-lambert
   elimine_rattache: true
-  votes_contre: null
-  votes_exprimes: null
-  annulation: totale
-  voix_annulees: 8
+  votes_contre: 5
+  votes_exprimes: 8
   voix_mecanique_non_comptees: 1
   votes:
   - votant: thibault-belanger
@@ -19702,6 +19742,15 @@
     cible: ugo-lartiche
     cible_rattachee: true
     annule: true
+  second_tour:
+    premier: 3-3-0
+    second: 5-3
+    source: 'Wikipedia : « Ugo décide de jouer son autre collier d''immunité [...] Au deuxième tour [...]
+      cinq voix contre elle contre trois pour Ilyesse »'
+  annulation: partielle
+  proteges:
+  - ugo-lartiche
+  voix_annulees: 3
 - saison: s26
   numero: 19
   type: sortie
@@ -20152,16 +20201,12 @@
 - saison: s27
   numero: 9
   type: elimination
-  complet: true
+  complet: false
   episode: "6"
   elimine: pauline-leperchois
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: 11
-  annulation: partielle
-  proteges:
-  - andrea-zogron
-  voix_annulees: 8
+  votes_contre: 7
+  votes_exprimes: 9
   votes_contre_annonce: 9
   votes:
   - votant: Jérôme
@@ -20221,6 +20266,15 @@
     cible: joana-callico
     cible_rattachee: true
     annule: false
+  second_tour:
+    premier: 1-1-1-0
+    second: 7-2-0
+    source: 'Wikipedia : « un deuxième vote est organisé entre Jérôme (de la tribu bleue), Joana et Pauline » ;
+      wiki Survivor : « Pauline (1-1-1-0; 7-2-0) »'
+  annulation: partielle
+  proteges:
+  - andrea-zogron
+  voix_annulees: 8
 - saison: s27
   numero: 10
   type: elimination
@@ -20308,8 +20362,8 @@
   episode: "9"
   elimine: adrien-bernaert
   elimine_rattache: true
-  votes_contre: null
-  votes_exprimes: null
+  votes_contre: 7
+  votes_exprimes: 14
   annulation: totale
   voix_annulees: 14
   votes:
@@ -25050,14 +25104,8 @@
   episode: "5"
   elimine: pholien-systermans
   elimine_rattache: true
-  votes_contre: null
-  votes_exprimes: null
-  annulation: partielle
-  proteges:
-  - ahmad-abadie
-  - eric-peyrache
-  - pholien-systermans
-  voix_annulees: 12
+  votes_contre: 8
+  votes_exprimes: 13
   votes:
   - votant: naoil-tita
     votant_rattache: true
@@ -25130,6 +25178,13 @@
     cible: ahmad-abadie
     cible_rattachee: true
     annule: true
+  second_tour:
+    premier: 5-5-4
+    second: 8-5
+    source: 'Wikipedia : « Le vote a donné lieu à une égalité entre Pholien et Éric. Un second tour a
+      alors lieu »'
+  annulation: totale
+  voix_annulees: 11
 - saison: sp6
   numero: 11
   type: elimination
@@ -25290,10 +25345,8 @@
   episode: "8"
   elimine: charlotte-caron
   elimine_rattache: true
-  votes_contre: null
-  votes_exprimes: null
-  annulation: totale
-  voix_annulees: 10
+  votes_contre: 6
+  votes_exprimes: 10
   voix_mecanique_non_comptees: 2
   votes:
   - votant: naoil-tita
@@ -25358,6 +25411,13 @@
     cible: eric-peyrache
     cible_rattachee: true
     annule: true
+  second_tour:
+    premier: 6-6-1
+    second: 6-4
+    source: 'Wikipedia : « Le vote a donné lieu à une égalité entre Charlotte et Éric. Un second tour
+      a alors lieu »'
+  annulation: totale
+  voix_annulees: 10
 - saison: sp6
   numero: 14
   type: sortie
@@ -25971,10 +26031,8 @@
   episode: "5"
   elimine: candice-boisson
   elimine_rattache: true
-  votes_contre: null
-  votes_exprimes: null
-  annulation: totale
-  voix_annulees: 7
+  votes_contre: 5
+  votes_exprimes: 7
   votes:
   - votant: claude-dartois
     votant_rattache: true
@@ -26011,6 +26069,15 @@
     cible: clemence-castel
     cible_rattachee: true
     annule: true
+  second_tour:
+    premier: 1-1-0
+    second: 5-2
+    source: 'Wikipedia : « Clémence joue son collier d''immunité et un deuxième vote a lieu entre Sam
+      et Candice. Candice est éliminée par cinq voix contre deux »'
+  annulation: partielle
+  proteges:
+  - clemence-castel
+  voix_annulees: 5
 - saison: sp7
   numero: 9
   type: elimination

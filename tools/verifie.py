@@ -1012,6 +1012,16 @@ def verifier_qualite_des_conseils(conseils, saisons, parts, c):
             if not t.get("source"):
                 c.erreur(f"{ref} : tirage sans source")
 
+        # Un second tour atteste porte son decompte decisif.
+        st = x.get("second_tour")
+        if st:
+            voix = [int(v) for v in st["second"].split("-")]
+            if (x.get("votes_contre"), x.get("votes_exprimes")) != (voix[0], sum(voix)):
+                c.erreur(f"{ref} : second tour {st['second']}, decompte "
+                         f"{x.get('votes_contre')}/{x.get('votes_exprimes')}")
+            if not st.get("source"):
+                c.erreur(f"{ref} : second tour sans source")
+
     # Toute sortie au conseil, sur une saison terminee, a son conseil.
     nommes = {(x.get("saison"), x.get("elimine")) for x in conseils
               if x.get("type") == "elimination" and x.get("elimine_rattache")}
