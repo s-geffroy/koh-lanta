@@ -294,7 +294,7 @@ côté.</p>
   {{ ng.elimine_ambassadeur }} ont coûté sa place à l’un des ambassadeurs.</p>
 </div>
 
-### Sortent-ils plus tôt ? Le registre ne permet plus de le dire
+### Et ils sortent plus tôt — sur le fil
 
 {% include graphiques/ambassadeurs-survie.svg %}
 
@@ -308,14 +308,15 @@ les présents.</p>
   {{ ng.ambassadeurs }} ambassadeurs — le rang moyen vaut
   <b>{{ ng.rang_moyen }} sur 100</b>, contre {{ tn.attendu }} attendus.
   {{ tn.ecart_types }} {{ tn.ecart_types_mot }}, p ajustée {{ tn.p_ajustee }}.</p>
-  <p><b>Non retenu : l’écart va dans le sens d’une sortie plus précoce, mais
-  il ne passe pas le seuil.</b></p>
+  <p><b>Retenu, de justesse : l’ambassadeur sort plus tôt que s’il avait été
+  désigné au hasard parmi les présents.</b> Le résultat tient sur le seuil, et
+  il l’a franchi quatre fois en deux jours : il se lit avec cette réserve.</p>
   <p>Une partie de l’écart peut être la règle elle-même : un ambassadeur
   parti au tirage sort le soir même, au plus bas rang possible. Et la mesure
   repose sur {{ ng.ambassadeurs }} ambassadeurs.</p>
 </div>
 
-<p class="note"><strong>Ce résultat a changé trois fois en deux jours.</strong>
+<p class="note"><strong>Ce résultat a changé quatre fois en deux jours.</strong>
 Retenu jusqu’au 21 octobre 2026 (p ajustée 0,047), il est d’abord repassé
 sous le seuil (0,056) quand vingt-quatre colonnes de la matrice des votes,
 qui passaient pour des conseils, ont été rendues à leur nature de sorties
@@ -326,8 +327,12 @@ revenu, et n’est sorti qu’au trente-huitième. Le 22 octobre 2026, la correc
 pour tests multiples a été étendue aux p-values de régression que le site
 publiait sans correction (<a href="{{ '/methode/' | relative_url }}">la
 méthode</a>) : le seuil s’est déplacé, et le résultat est repassé dessous
-(p ajustée {{ tn.p_ajustee }}). Un écart qui bascule à chaque correction ne
-s’affirme pas.</p>
+(0,059, puis 0,09 quand les ambassades ont toutes été traitées comme des
+sorties et que trois ambassades de revenants ont été lues). Il est enfin
+repassé au-dessus (p ajustée {{ tn.p_ajustee }}) quand l’ambassade de Jonathan,
+aux <i>Reliques du destin</i>, a été tranchée : les deux wikis n’en nommaient
+pas les mêmes ambassadeurs, et la presse a départagé. Un écart qui bascule à
+chaque correction ne s’affirme qu’avec sa réserve.</p>
 
 ## Ce que cette page ne dit pas
 

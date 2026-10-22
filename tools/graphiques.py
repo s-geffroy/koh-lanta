@@ -591,6 +591,17 @@ def virgule_decimale(svg):
                        + m.group(3), svg)
 
 
+# L'apostrophe droite entre deux lettres -- telle quelle ou echappee par
+# html.escape -- devient l'apostrophe typographique. Les titres de saison
+# (« L'Île au trésor ») et une partie des chaines des figures l'ecrivent
+# droite ; les pages, elles, l'ecrivent courbe.
+RE_APOSTROPHE = re.compile(r"(?<=[A-Za-zÀ-ÖØ-öø-ÿœŒ])(?:'|&#x27;|&#39;)(?=[A-Za-zÀ-ÖØ-öø-ÿœŒ])")
+
+
+def apostrophes(texte):
+    return RE_APOSTROPHE.sub("’", texte)
+
+
 def ecrire(nom, contenu):
     if not contenu:
         print(f"  (vide) {nom}")
@@ -601,10 +612,10 @@ def ecrire(nom, contenu):
     morceaux = re.split(r"(<style\b.*?</style>)", contenu, flags=re.S)
     contenu = "".join(
         x if x.startswith("<style") else
-        re.sub(r">([^<>]+)<", lambda m: ">" + donnees.insecables(m.group(1)) + "<", x)
+        re.sub(r">([^<>]+)<", lambda m: ">" + apostrophes(donnees.insecables(m.group(1))) + "<", x)
         for x in morceaux)
     contenu = re.sub(r'aria-label="([^"]*)"',
-                     lambda m: 'aria-label="' + donnees.insecables(m.group(1)) + '"', contenu)
+                     lambda m: 'aria-label="' + apostrophes(donnees.insecables(m.group(1))) + '"', contenu)
     os.makedirs(SORTIE, exist_ok=True)
     chemin = os.path.join(SORTIE, nom)
     with open(chemin, "w", encoding="utf-8") as f:

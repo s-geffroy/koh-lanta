@@ -1,7 +1,7 @@
 <figure class="figure">
 <figcaption class="figure-titre" aria-hidden="true">L’âge de l’éliminé, avant et après la réunification</figcaption>
-<svg class="graphique" viewBox="0 0 680 250" role="img" preserveAspectRatio="xMidYMid meet" aria-label="L&#x27;âge de l&#x27;éliminé, avant et après la réunification">
-  <title>L&#x27;âge de l&#x27;éliminé, avant et après la réunification</title>
+<svg class="graphique" viewBox="0 0 680 250" role="img" preserveAspectRatio="xMidYMid meet" aria-label="L’âge de l’éliminé, avant et après la réunification">
+  <title>L’âge de l’éliminé, avant et après la réunification</title>
   <desc>Élimine-t-on le plus âgé avant la réunification, et plus après ?</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
   <g class="marque"><title>2 tirages sur 10000 entre -3,67 et -3,4</title><rect x="68.7" y="203.7" width="20.3" height="0.3" fill="var(--serie-6)" opacity="0.45"/></g>
@@ -36,6 +36,6 @@
   <text x="517.1" y="22.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="12" font-weight="600">observé : 1,929 an</text>
   <text x="46.0" y="222.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">-3,94</text>
   <text x="658.0" y="222.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">3,57</text>
-  <text x="658.0" y="238.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">10 000 tirages · p = 0,0863</text>
+  <text x="658.0" y="238.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">10 000 tirages · p = 0,0838</text>
 </svg>
 </figure>

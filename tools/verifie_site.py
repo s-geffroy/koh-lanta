@@ -908,8 +908,8 @@ AFFIRMATIONS_PAGES = {
                                "deux conseils plus tard n'est pas retenue"),
     "talent_stable": (False, "sources.md ecrit que la stabilite reste trop mince "
                              "pour etre retenue"),
-    "ambassadeurs_survie": (False, "statistiques/reunification.md et l'article long ecrivent "
-                                   "que la sortie plus precoce des ambassadeurs n'est pas retenue"),
+    "ambassadeurs_survie": (True, "statistiques/reunification.md et l'article long ecrivent "
+                                  "que l'ambassadeur sort plus tot, de justesse"),
     "camp_perdant": (True, "statistiques/conditionnelles.md et l'article court ecrivent que "
                            "voter avec la minorite expose, de justesse"),
     "vote_meme_sexe": (False, "statistiques/qui-vise-qui.md et le resume du "
@@ -1016,6 +1016,9 @@ AFFIRMATIONS_VALEURS = [
     (("modeles", "registre"),
      lambda x: 0.01 <= float(str(next(t for t in x if t["cle"] == "camp_perdant")["p_ajustee"]).replace(",", ".")) < 0.05,
      "statistiques/conditionnelles.md, l'article court et l'article long ecrivent « de justesse » pour camp_perdant"),
+    (("modeles", "registre"),
+     lambda x: 0.01 <= float(str(next(t for t in x if t["cle"] == "ambassadeurs_survie")["p_ajustee"]).replace(",", ".")) < 0.05,
+     "statistiques/reunification.md et l'article long ecrivent « de justesse » pour ambassadeurs_survie"),
     (("conseils", "retours_en_jeu"), lambda x: x == 5,
      "sources.md raconte les conseils de revenants un par un (Linda, Tania deux "
      "fois, Christina, et Francis en cinquieme cas)"),

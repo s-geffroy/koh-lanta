@@ -115,6 +115,19 @@ def lire_source(sid, suffixe, membres):
     return None, False, None
 
 
+# LES AMBASSADES QUE LES DEUX WIKIS NE NOMMENT PAS PAREIL, tranchees par un
+# troisieme temoin. Aux Reliques du destin, Wikipedia nomme Jade, Fandom
+# Cynthia ; la presse du soir de diffusion nomme Jade. Cle : (saison,
+# elimine) ; valeur : (ambassadeurs, source).
+AMBASSADES_TRANCHEES = {
+    ("s28", "jonathan-guez"): (
+        ["jade-correa", "johan-pinaud", "ulrich-bandeira", "zakariya-bougoudouima"],
+        "Wikipedia (« Les quatre ambassadeurs (Jade, Johan, Ulrich et Zakariya) ») et "
+        "Ozap, 14 avril 2026 (« Ce sont donc Jade et Ulrich qui sont désignés pour partir "
+        "aux ambassadeurs ») contre Fandom (Cynthia)"),
+}
+
+
 def main():
     a = argparse.ArgumentParser(description=__doc__)
     a.add_argument("--ecrire", action="store_true")
@@ -165,6 +178,12 @@ def main():
                            "motif": "non nomme"})
             continue
 
+        tranchee = AMBASSADES_TRANCHEES.get((sid, c["id"]))
+        if tranchee and len(lectures) == 2:
+            desaccord += 1
+            ambassadeurs_, source_ = tranchee
+            rapport.append(f"{sid} : desaccord des wikis tranche — {source_}")
+            lectures = {".wiki": (ambassadeurs_, lectures[".wiki"][1], lectures[".wiki"][2])}
         if len(lectures) == 2:
             a1 = set(lectures[".wiki"][0])
             a2 = set(lectures[".fandom.wiki"][0])

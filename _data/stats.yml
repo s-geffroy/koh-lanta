@@ -25360,7 +25360,7 @@ modeles:
         moyenne_nulle: "47,6183"
       bulletins: 2645
       origine: homophilie
-      p_ajustee: "0,0769"
+      p_ajustee: "0,0746"
       retenu: false
       ecart_types_mot: écarts-types
       ecart_types_abs: "2.2"
@@ -27574,18 +27574,18 @@ modeles:
       rang_moyen: "47,8"
       effectif_force: 21
     negociateurs:
-      lues: 17
+      lues: 18
       total: 25
-      part_lues: 68
+      part_lues: 72
       sources_accord: 5
       sources_desaccord: 1
       par_tirage: 4
       elimine_ambassadeur: 4
-      distincts: 40
-      ambassades: 17
-      ambassadeurs: 41
-      rang_moyen: "40,3"
-      muettes: 8
+      distincts: 44
+      ambassades: 18
+      ambassadeurs: 45
+      rang_moyen: "39,6"
+      muettes: 7
       sources_communes: 6
     tests:
     - cle: fusion_sexe
@@ -27802,56 +27802,56 @@ modeles:
     - cle: ambassadeurs_survie
       libelle: L'ambassadeur qui négocie s'en sort-il mieux ?
       question: Partir en ambassade change-t-il la distance que l'on parcourt ensuite ?
-      observe: "40,259"
-      attendu: "50,042"
+      observe: "39,56"
+      attendu: "50,078"
       unite: points de rang
-      ecart_types: "-2,07"
-      p: "0,0368"
+      ecart_types: "-2,32"
+      p: "0,0188"
       tirages: 10000
       lecture: 'Rang de l''ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c''est la
         médiane du camp. Au-dessus, l''ambassade accompagne une fin de parcours plus tardive ; en dessous,
         plus précoce. Le hasard, ici, c''est désigner les ambassadeurs au sort parmi les présents.'
       nulle: &id092
         bornes:
-        - "31,6347"
-        - "69,2342"
+        - "33,0077"
+        - "68,398"
         cases:
         - 0
-        - 2
-        - 5
-        - 18
-        - 29
-        - 78
-        - 172
-        - 234
-        - 364
-        - 559
-        - 747
-        - 948
-        - 1046
-        - 1164
-        - 1056
-        - 997
-        - 794
-        - 631
-        - 485
-        - 316
-        - 178
-        - 87
-        - 48
-        - 23
-        - 12
-        - 5
-        - 2
+        - 9
+        - 8
+        - 30
+        - 36
+        - 94
+        - 145
+        - 269
+        - 446
+        - 583
+        - 827
+        - 926
+        - 1088
+        - 1097
+        - 1068
+        - 973
+        - 745
+        - 598
+        - 426
+        - 276
+        - 156
+        - 112
+        - 44
+        - 26
+        - 10
+        - 4
+        - 4
         - 0
-        largeur_case: "1,342839"
-        observe: "40,2589"
-        moyenne_nulle: "50,0416"
+        largeur_case: "1,263939"
+        observe: "39,56"
+        moyenne_nulle: "50,0777"
       origine: avant_apres
-      p_ajustee: "0,0904"
-      retenu: false
+      p_ajustee: "0,049"
+      retenu: true
       ecart_types_mot: écarts-types
-      ecart_types_abs: "2.07"
+      ecart_types_abs: "2.32"
   conditionnelles:
     presences: 1720
     conseils: 228
@@ -29786,7 +29786,7 @@ modeles:
         observe: "1,9294"
         moyenne_nulle: "0,0086"
       origine: age_au_conseil
-      p_ajustee: "0,0863"
+      p_ajustee: "0,0838"
       retenu: false
       ecart_types_mot: écarts-types
       ecart_types_abs: "2.14"
@@ -30106,7 +30106,7 @@ modeles:
     unite: '%'
     ecart_types: "-2,2"
     p: "0,0295"
-    p_ajustee: "0,0769"
+    p_ajustee: "0,0746"
     retenu: false
     tirages: 2000
     lecture: 'L''attendu vient du partage des bulletins d''un conseil entre ses votants, avec le même
@@ -30517,22 +30517,22 @@ modeles:
     libelle: L'ambassadeur qui négocie s'en sort-il mieux ?
     question: Partir en ambassade change-t-il la distance que l'on parcourt ensuite ?
     origine: avant_apres
-    observe: "40,259"
-    attendu: "50,042"
+    observe: "39,56"
+    attendu: "50,078"
     unite: points de rang
-    ecart_types: "-2,07"
-    p: "0,0368"
-    p_ajustee: "0,0904"
-    retenu: false
+    ecart_types: "-2,32"
+    p: "0,0188"
+    p_ajustee: "0,049"
+    retenu: true
     tirages: 10000
     lecture: 'Rang de l''ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c''est la
       médiane du camp. Au-dessus, l''ambassade accompagne une fin de parcours plus tardive ; en dessous,
       plus précoce. Le hasard, ici, c''est désigner les ambassadeurs au sort parmi les présents.'
     nulle: *id092
-    observe_arrondi: "40,3"
-    attendu_arrondi: 50
+    observe_arrondi: "39,6"
+    attendu_arrondi: "50,1"
     ecart_types_mot: écarts-types
-    ecart_types_abs: "2.07"
+    ecart_types_abs: "2.32"
     observe_arrondi_pluriel: true
   - cle: menace_voix
     libelle: Le nom sorti la fois d'avant
@@ -30891,7 +30891,7 @@ modeles:
     unite: ans
     ecart_types: "2,14"
     p: "0,0341"
-    p_ajustee: "0,0863"
+    p_ajustee: "0,0838"
     retenu: false
     tirages: 10000
     lecture: 'Écart d''âge de l''éliminé à la moyenne de son camp, avant la réunification moins après.
@@ -31038,7 +31038,7 @@ modeles:
     ecart_types_abs: "5.81"
     observe_arrondi_pluriel: false
   nb_tests: 46
-  nb_retenus: 23
+  nb_retenus: 24
   coefficients_corriges: 40
   coefficients_retenus: 9
   famille_corrigee: 86
@@ -31069,7 +31069,8 @@ modeles:
     observations_texte: "307"
     effet_texte: 8 points
   retenus_avec_vingt_nuls: 23
-  tombes_avec_vingt_nuls_texte: aucun ne tombe
+  tombes_avec_vingt_nuls_texte: seul le plus fragile, « L'ambassadeur qui négocie s'en sort-il mieux ? »,
+    tomberait
 completude_saisons:
   colonnes:
   - cle: casting
@@ -35157,7 +35158,7 @@ completude_saisons:
     annee: 2026
     speciale: false
     effectif: 20
-    score: "92,8"
+    score: 98
     cellules:
     - cle: casting
       valeur: 100
@@ -35250,11 +35251,11 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     - cle: ambassadeurs
-      valeur: 0
-      texte: non nommés
-      etat: manquant
+      valeur: 100
+      texte: nommés
+      etat: complet
       nature: fait
-      valeur_arrondie: 0
+      valeur_arrondie: 100
     - cle: audience_saison
       valeur: 100
       texte: connue
@@ -35509,8 +35510,8 @@ completude_saisons:
     libelle: Ambassadeurs nommés
     court: Ambassade
     nature: fait
-    moyenne: 68
-    completes: 17
+    moyenne: 72
+    completes: 18
     concernees: 25
   - cle: audience_saison
     libelle: Audience de la saison
@@ -35535,7 +35536,7 @@ completude_saisons:
     concernees: 29
   saisons: 34
   cases: 611
-  moyenne: 89
+  moyenne: "89,1"
   meilleure: s27
   pire: sp8
 articles:
@@ -35554,7 +35555,7 @@ articles:
   participations: "645"
   bulletins: 3 433
   nb_tests: "46"
-  nb_retenus: "23"
+  nb_retenus: "24"
   force:
     rang_avant: "54,7"
     rang_apres: "49,3"
@@ -35732,7 +35733,7 @@ articles:
       valeur: "1,9"
       valeur_ronde: "2"
       attendu_rond: "0"
-      p: "0,09"
+      p: "0,08"
       retenu: false
       conforme: true
       affirme: non retenu, ecart +
@@ -35747,15 +35748,15 @@ articles:
       conforme: true
       affirme: non retenu
     ambassadeurs_survie:
-      observe: "40,3"
-      attendu: "50"
-      valeur: "40,3"
+      observe: "39,6"
+      attendu: "50,1"
+      valeur: "39,6"
       valeur_ronde: "40"
       attendu_rond: "50"
-      p: "0,09"
-      retenu: false
+      p: "0,05"
+      retenu: true
       conforme: true
-      affirme: non retenu
+      affirme: retenu, ecart -
     prevision_conseil:
       observe: "0,397"
       attendu: "0,5"

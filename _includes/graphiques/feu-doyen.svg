@@ -2,7 +2,7 @@
 <figcaption class="figure-titre" aria-hidden="true">Le plus âgé du camp</figcaption>
 <svg class="graphique" viewBox="0 0 680 250" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Le plus âgé du camp">
   <title>Le plus âgé du camp</title>
-  <desc>Le doyen d&#x27;un conseil part-il plus souvent que les autres ?</desc>
+  <desc>Le doyen d’un conseil part-il plus souvent que les autres ?</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
   <g class="marque"><title>6 tirages sur 10000 entre -5,75 et -5,16</title><rect x="68.7" y="203.2" width="20.3" height="0.8" fill="var(--serie-6)" opacity="0.45"/></g>
   <g class="marque"><title>11 tirages sur 10000 entre -5,16 et -4,58</title><rect x="90.5" y="202.6" width="20.3" height="1.4" fill="var(--serie-6)" opacity="0.45"/></g>

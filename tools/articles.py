@@ -41,7 +41,7 @@ AFFIRMATIONS = {
     "fusion_force": (False, None),         # la competence n'est pas une menace
     "age_bascule_fusion": (False, "+"),    # meme sens, mais sous le seuil (21 oct. 2026)
     "ambassadeurs_force": (False, None),   # les ambassadeurs ne visent pas les forts
-    "ambassadeurs_survie": (False, None),  # non retenu depuis l'extension de la correction (22 oct. 2026)
+    "ambassadeurs_survie": (True, "-"),    # plus tot, de justesse (4e bascule, 22 oct. 2026)
     "prevision_conseil": (True, "-"),      # le modele voit venir la sortie
     "pronostic_vainqueur": (False, None),  # le profil ne designe pas le vainqueur
 }

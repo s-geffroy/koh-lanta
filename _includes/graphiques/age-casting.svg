@@ -2,7 +2,7 @@
 <figcaption class="figure-titre" aria-hidden="true">Composition du casting par âge</figcaption>
 <svg class="graphique" viewBox="0 0 680 280" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Composition du casting par âge">
   <title>Composition du casting par âge</title>
-  <desc>Nombre d&#x27;aventuriers par tranche d&#x27;âge.</desc>
+  <desc>Nombre d’aventuriers par tranche d’âge.</desc>
   <line x1="46" y1="228.0" x2="668" y2="228.0" stroke="var(--grille)" stroke-width="1"/>
   <text x="38.0" y="228.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">0</text>
   <line x1="46" y1="177.5" x2="668" y2="177.5" stroke="var(--grille)" stroke-width="1"/>

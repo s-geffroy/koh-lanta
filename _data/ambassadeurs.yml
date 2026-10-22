@@ -1,13 +1,13 @@
 # Fichier genere par tools/extraction/ambassadeurs.py.
 # Ne pas editer a la main : toute modification sera ecrasee.
 ambassades: 25
-nommees: 17
-part_nommees: 68
+nommees: 18
+part_nommees: 72
 sources_accord: 5
 sources_desaccord: 1
 par_tirage: 4
 elimine_ambassadeur: 4
-ambassadeurs_distincts: 40
+ambassadeurs_distincts: 44
 lignes:
 - saison: s09
   elimine: alexandre-amico
@@ -182,8 +182,18 @@ lignes:
     Maxime.
 - saison: s28
   elimine: jonathan-guez
-  ambassadeurs: null
-  motif: sources en desaccord
+  episode: 7
+  ambassadeurs:
+  - jade-correa
+  - johan-pinaud
+  - ulrich-bandeira
+  - zakariya-bougoudouima
+  nombre: 4
+  tirage_au_sort: false
+  elimine_est_ambassadeur: false
+  source: wikipedia-fr
+  phrase: '|4 Les quatre ambassadeurs (Jade, Johan, Ulrich et Zakariya) se mettent d''accord pour éliminer
+    Jonathan.'
 - saison: sp1
   elimine: philippe-bordier
   ambassadeurs: null
