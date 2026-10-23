@@ -87,7 +87,7 @@ n’a pas de valeur unique, et on la fait varier dix mille fois.</p>
 <div class="constat">
   <p><b>{% include ordinal.html n=a.rang genre=a.genre %} sur {{ site.data.stats.classement.joueurs_classes }}</b>,
   score {{ a.score }}.
-  {%- if a.part_top and a.part_top > 0 %} Présent{% if a.genre == "f" %}e{% endif %} dans le top 25 sous <b>{{ a.part_top }} %</b> des
+  {%- if a.dans_le_top %} Présent{% if a.genre == "f" %}e{% endif %} dans le top 25 sous <b>{{ a.part_top }} %</b> des
   pondérations tirées.{% endif %}</p>
   {%- if a.reglette %}
   <span class="reglette" aria-hidden="true">

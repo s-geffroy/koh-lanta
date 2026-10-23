@@ -243,6 +243,10 @@ def fiches_des_aventuriers(parts, personnes, saisons, indiv, classement, natures
             "rang": r.get("rang"),
             "score": r.get("score"),
             "part_top": r.get("part_top"),
+            # Un booleen, pas une comparaison : part_top est un decimal ecrit
+            # « 0,5 », une chaine pour Liquid, et « > 0 » sur une chaine fait
+            # echouer la construction (23 octobre 2026).
+            "dans_le_top": bool(r.get("part_top")),
             "rang_p05": r.get("rang_p05"),
             "rang_p95": r.get("rang_p95"),
             "reglette": reglette_du_rang(r.get("rang"), r.get("rang_p05"), r.get("rang_p95"),
