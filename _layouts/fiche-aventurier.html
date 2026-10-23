@@ -110,7 +110,7 @@ n’a pas de valeur unique, et on la fait varier dix mille fois.</p>
   <tr>
     <td><a href="{{ '/statistiques/top/' | relative_url }}">{{ f.libelle }}</a></td>
     <td>{{ f.question }}</td>
-    <td class="nombre" data-val="{{ a.rangs[f.cle] }}">{% include ordinal.html n=a.rangs[f.cle] genre=a.genre %}</td>
+    <td class="nombre" data-val="{{ a.rangs[f.cle] }}">{% assign rang_facette = a.rangs[f.cle] %}{% include ordinal.html n=rang_facette genre=a.genre %}</td>
   </tr>
   {%- endfor %}
 </tbody>

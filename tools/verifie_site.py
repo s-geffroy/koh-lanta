@@ -84,6 +84,14 @@ LIQUID_INTERDIT = (
 
 RE_LISTE_FANTOME = re.compile(r"^\s*\{\{[^}]*\}\}\.(\s|$)")
 
+# LES PARAMETRES D'UN INCLUDE, tels que Jekyll 3.10 les accepte : une valeur
+# entre guillemets, ou un nom de variable fait de lettres, chiffres, points et
+# tirets -- PAS de crochets. « n=a.rangs[f.cle] » a fait echouer la
+# construction entiere le 23 octobre 2026 (« Invalid syntax for include
+# tag ») : il faut d'abord un assign.
+RE_INCLUDE_TAG = re.compile(r"\{%-?\s*include\s+\S+\s*(.*?)\s*-?%\}", re.S)
+RE_PARAM_JEKYLL = re.compile(r"""\s*[\w-]+\s*=\s*(?:"[^"]*"|'[^']*'|[\w.-]+)\s*""")
+
 EXCLUS_ATTENDUS = {"CLAUDE.md", "README.md", "app.yaml", "compose.yaml", "specs/"}
 
 
@@ -1855,6 +1863,12 @@ def main():
         # element de liste numerotee : Kramdown mange le nombre. Cinq phrases
         # publiees s'arretaient ainsi en plein milieu (« de 6,9 votants a » --
         # et rien). La variable se remonte sur la ligne precedente.
+        for m_inc in RE_INCLUDE_TAG.finditer(corps):
+            reste = RE_PARAM_JEKYLL.sub("", m_inc.group(1))
+            if reste.strip():
+                c.erreur(f"{rel} : include aux parametres refuses par Jekyll 3 "
+                         f"(« {m_inc.group(0)[:70]} ») — passer par un assign")
+
         if rel.endswith(".md"):
             for i, ligne in enumerate(corps.split("\n")):
                 if RE_LISTE_FANTOME.match(ligne):
@@ -1911,6 +1925,10 @@ def main():
             for motif, conseil in LIQUID_INTERDIT:
                 if motif in corps:
                     c.erreur(f"{rel} : `{motif}` interdit dans un gabarit — {conseil}")
+            for m_inc in RE_INCLUDE_TAG.finditer(corps):
+                if RE_PARAM_JEKYLL.sub("", m_inc.group(1)).strip():
+                    c.erreur(f"{rel} : include aux parametres refuses par Jekyll 3 "
+                             f"(« {m_inc.group(0)[:70]} ») — passer par un assign")
             for nom_balise in balises_en_commentaire(
                     open(os.path.join(dossier, nom), encoding="utf-8").read()):
                 c.erreur(f"{rel} : balise `{nom_balise}` ecrite DANS un commentaire "
