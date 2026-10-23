@@ -15,7 +15,7 @@ Le wiki nomme **{{ en.nb_epreuves }} épreuves**, pour {{ en.nb_apparitions }}
 apparitions relevées. Toutes n’ont pas de page ici, et la raison est dans les
 données : le nom cité par le wiki et l’épreuve relevée dans le déroulé de la
 saison ne se raccordent que dans
-**{{ en.raccord.part_raccordee }} %** des cas
+**{{ en.raccord.part_raccordee }} %** des cas
 ({{ en.raccord.epreuves_raccordees }} sur {{ en.raccord.epreuves_relevees }}).
 {{ site.data.stats.mots.noms_sans_apparition_maj }} noms n’ont aucune apparition datée — « Poteaux » en fait
 partie, alors que c’est la plus connue de toutes — et

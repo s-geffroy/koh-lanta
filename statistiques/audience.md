@@ -29,7 +29,7 @@ elle la subit. À ce titre, c’est la plus intéressante.
   <li class="chiffre"><b>{{ a.saisons }}</b><span>saisons mesurées sur {{ site.data.stats.general.saisons_diffusees }}</span></li>
   <li class="chiffre"><b>{{ a.sommet.moyenne_millions }} M</b><span>au sommet, en {{ a.sommet.annee }}</span></li>
   <li class="chiffre"><b>{{ a.derniere.moyenne_millions }} M</b><span>en {{ a.derniere.annee }}</span></li>
-  <li class="chiffre"><b>−{{ a.chute }} %</b><span>depuis le sommet</span></li>
+  <li class="chiffre"><b>−{{ a.chute }} %</b><span>depuis le sommet</span></li>
 </ul>
 
 {% include graphiques/audience-serie.svg %}
@@ -64,7 +64,7 @@ hasard.</p>
   millions</b> de téléspectateurs en moyenne, sur {{ a.avant }} saisons.
   Après : <b>{{ a.moyenne_apres_millions }}
   millions</b>, sur {{ a.apres }}. D’un régime à l’autre, le programme a perdu
-  {{ a.perte_regimes }} % de son public.</p>
+  {{ a.perte_regimes }} % de son public.</p>
 </div>
 
 {% include graphiques/audience-profil.svg %}
@@ -73,9 +73,10 @@ hasard.</p>
 comparaison. Ici, un pic — là, un plateau.</p>
 
 La comparaison se fait en deux chiffres, et c’est le second qui compte.
-L’avance de la meilleure coupure sur la deuxième vaut **{{ a.avance }} %** ici,
-contre {{ m.ruptures.avance }} % pour le format : à peu près la même. Mais les
-coupures qui tiennent à 10 % près sont **{{ a.nb_proches }}, étalées sur
+L’avance de la meilleure coupure sur la deuxième vaut **{{ a.avance }} %** ici,
+contre {{ m.ruptures.avance }} % pour le format : dans les deux cas, une avance
+trop mince pour désigner une année à elle seule. Mais les
+coupures qui tiennent à 10 % près sont **{{ a.nb_proches }}, étalées sur
 {{ a.fenetre.etendue }} an**, de {{ a.fenetre.debut }} à {{ a.fenetre.fin }} —
 contre {{ m.ruptures.nb_proches }} sur {{ m.ruptures.fenetre.etendue }} ans pour
 le format.
@@ -106,10 +107,12 @@ ne le confirme pas.
 </table>
 </div>
 
-*{{ a.bascule_jour.titre }}* ({{ a.bascule_jour.annee }}) est **la première
-saison diffusée le mardi** après {{ site.data.stats.mots.annees_de_vendredi }} ans de
-vendredi. C’est aussi celle sur
-laquelle tombe la meilleure coupure de l’audience.
+*{{ a.bascule_jour.titre }}* ({{ a.bascule_jour.annee }}) ouvre **la diffusion
+du mardi**, que le programme n’a plus quittée, après {{ site.data.stats.mots.annees_de_vendredi }} ans
+où le vendredi dominait{% if a.meme_soir_avant.size > 0 %} — une édition spéciale,
+*{{ a.meme_soir_avant[0].titre }}* ({{ a.meme_soir_avant[0].annee }}), était déjà
+passée le mardi, sans suite{% endif %}. C’est aussi la saison sur laquelle tombe
+la meilleure coupure de l’audience.
 
 <p class="note"><strong>Et c’est précisément pourquoi on ne peut pas conclure.</strong>
 Le soir de diffusion change <em>une fois</em>, et il change là où l’audience
@@ -143,8 +146,7 @@ en chiffres.</p>
   <b>×{{ a.retournement.ratio_avant }}</b> le lancement. Depuis :
   <b>×{{ a.retournement.ratio_apres }}</b>.</p>
   <p>La corrélation entre l’année et ce rapport vaut
-  <b>{{ tf.observe }}</b> — {{ tf.ecart_types }} {{ tf.ecart_types_mot }}, p ajustée
-  {{ tf.p_ajustee }}. <b>Le public ne reste plus jusqu’au bout.</b></p>
+  <b>{{ tf.observe }}</b> — {{ tf.ecart_types }} {{ tf.ecart_types_mot }}, p ajustée {{ tf.p_ajustee }}. <b>Le public ne reste plus jusqu’au bout.</b></p>
 </div>
 
 C’est une information sur le programme que le programme ne donne pas, et qu’un
@@ -196,8 +198,8 @@ un épisode est coupé en deux et mesuré deux fois. Les
 mesures d’épisode entier et de demi-épisode. Le contrôle est fait : sur les
 {% assign ac = site.data.stats.audience_controle %}{{ ac.saisons }} saisons où
 l’on a à la fois le détail et la moyenne annoncée, {{ ac.concordantes }}
-concordent à 0,5 % près. Les autres — {{ ac.discordantes_texte }} — s’en
-écartent jusqu’à {{ ac.ecart_max }} %, et l’écart vient de la source elle-même, qui ne s’accorde pas avec sa propre moyenne.</p>
+concordent à 0,5 % près. Les autres — {{ ac.discordantes_texte }} — s’en
+écartent jusqu’à {{ ac.ecart_max }} %, et l’écart vient de la source elle-même, qui ne s’accorde pas avec sa propre moyenne.</p>
 
 <p class="note"><strong>Aucune audience n’existe pour la saison en cours</strong>
 au moment de la construction, ni pour les épisodes non encore diffusés.</p>

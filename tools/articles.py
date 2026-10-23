@@ -32,7 +32,7 @@ AFFIRMATIONS = {
     "cible_persistante": (True, "+"),      # vise hier, vise encore
     "menace_sommet": (False, None),        # la menace n'a pas de sommet
     "vote_bandeau_apres_fusion": (True, "-"),  # le camp d'origine protege
-    "decimation": (True, "+"),             # les sorties s'enchainent par camp
+    "decimation": (False, "+"),            # meme sens, non retenu une fois l'ordre des sorties repare (23 oct. 2026)
     "bandeau_minoritaire": (True, "+"),    # le camp minoritaire expose
     "sexe_minoritaire": (True, "-"),       # le sexe minoritaire protege
     "camp_perdant": (True, "+"),           # voter avec la minorite expose (de justesse, 21 oct. 2026)
@@ -41,7 +41,7 @@ AFFIRMATIONS = {
     "fusion_force": (False, None),         # la competence n'est pas une menace
     "age_bascule_fusion": (False, "+"),    # meme sens, mais sous le seuil (21 oct. 2026)
     "ambassadeurs_force": (False, None),   # les ambassadeurs ne visent pas les forts
-    "ambassadeurs_survie": (True, "-"),    # plus tot, de justesse (4e bascule, 22 oct. 2026)
+    "ambassadeurs_survie": (False, None),  # non retenu : nul avec la regle du tirage, classiques (23 oct. 2026)
     "prevision_conseil": (True, "-"),      # le modele voit venir la sortie
     "pronostic_vainqueur": (False, None),  # le profil ne designe pas le vainqueur
 }
@@ -75,13 +75,17 @@ def signe(x, n=1):
 
 def milliers(n):
     """3470 -> « 3 470 », espace insecable."""
-    return f"{int(n):,}".replace(",", " ")
+    return f"{int(n):,}".replace(",", "\u202f")
 
 
 def p_texte(p):
     """La p ajustee comme le registre la publie : « 0,0006 », « 0,37 »."""
-    if p >= 0.01:
+    # Trois decimales entre 0,01 et 0,1 : « 0,05 » s'affichait pour un 0,049
+    # retenu, et se lisait comme le seuil lui-meme.
+    if p >= 0.1:
         return decimal(p, 2)
+    if p >= 0.01:
+        return decimal(p, 3)
     return decimal(p, 4)
 
 
@@ -219,6 +223,7 @@ def tout(stats, conseils, par_saison):
         "participations": milliers(g["participations"]),
         "bulletins": milliers(c["bulletins"]),
         "nb_tests": milliers(m["nb_tests"]),
+        "famille_corrigee": milliers(m["famille_corrigee"]),
         "nb_retenus": milliers(m["nb_retenus"]),
         "force": {
             "rang_avant": decimal(aa["rang_force_avant"]),

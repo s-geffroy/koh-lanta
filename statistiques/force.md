@@ -38,11 +38,17 @@ encore en jeu à cet épisode.
 <div class="constat">
   <p>La reconstruction se contrôle elle-même : <b>le vainqueur d’une épreuve
   doit figurer dans le plateau qu’on lui reconstruit</b>.</p>
-  <p>Elle échoue dans <b>{{ f.taux_echec_reconstruction }} %</b> des cas
-  ({{ f.vainqueur_hors_plateau }} épreuves sur
+  {%- if f.vainqueur_hors_plateau == 0 %}
+  <p>Elle n’échoue <b>jamais</b> : sur {{ f.epreuves_tentees }} épreuves, le
+  vainqueur figure toujours dans le plateau reconstruit. Le contrôle reste en
+  place, et le taux sera publié le jour où il ne vaudra plus zéro.</p>
+  {%- else %}
+  <p>Elle échoue dans <b>{{ f.taux_echec_reconstruction }} %</b> des cas
+  ({{ f.vainqueur_hors_plateau }} épreuve{% if f.vainqueur_hors_plateau > 1 %}s{% endif %} sur
   {{ f.epreuves_tentees }}). Ces épreuves-là
   sont écartées, et le taux est publié : c’est la mesure honnête de ce que vaut
   la reconstruction.</p>
+  {%- endif %}
 </div>
 
 Restent **{{ f.epreuves_retenues }} épreuves individuelles** sur
@@ -53,8 +59,8 @@ Restent **{{ f.epreuves_retenues }} épreuves individuelles** sur
 
 {% include graphiques/force-classement.svg %}
 
-<p class="legende-figure">Force estimée. Le segment est l’intervalle à 95 %,
-obtenu en rejouant {{ f.bootstrap }} fois le calcul sur des épreuves
+<p class="legende-figure">Force estimée. Le segment est l’intervalle à 95 %,
+obtenu en rejouant {{ f.bootstrap_texte }} fois le calcul sur des épreuves
 retirées au sort. Une force de 1 est la moyenne.</p>
 
 <div class="tableau-large">
@@ -72,7 +78,7 @@ retirées au sort. Une force de 1 est la moyenne.</p>
   <td class="nombre">{{ d.bas }} – {{ d.haut }}</td>
   <td class="nombre">{{ d.victoires }}</td>
   <td class="nombre">{{ d.disputees }}</td>
-  <td class="nombre">{{ d.ratio }} %</td>
+  <td class="nombre">{{ d.ratio }} %</td>
 </tr>
 {% endfor %}
 </tbody>
@@ -89,7 +95,7 @@ laisserait croire le contraire.
 {% include graphiques/force-pentes.svg %}
 
 <p class="legende-figure">À gauche le rang au nombre de victoires, à droite le
-rang à la force estimée. Une pente montante signale un athlète que le total brut
+rang à la force estimée. Une pente montante signale un aventurier que le total brut
 sous-estime.</p>
 
 {% assign mo = f.plus_forte_montee %}{% assign ch = f.plus_forte_chute %}
@@ -114,9 +120,9 @@ individuelle selon qu’on a gagné la précédente ou non, sur
 {{ tt.epreuves }} épreuves et {{ tt.saisons }} saisons.</p>
 
 Celui qui a gagné la dernière immunité gagne la suivante dans
-**{{ tt.tenant.probabilite }} %** des cas
+**{{ tt.tenant.probabilite }} %** des cas
 ({{ tt.tenant.cas }} sur {{ tt.tenant.effectif }}), contre
-**{{ tt.autres.probabilite }} %** pour n’importe quel autre présent —
+**{{ tt.autres.probabilite }} %** pour n’importe quel autre présent —
 {{ tt.rapport }} fois plus. On y verrait volontiers un **élan** : la confiance, l’habitude du
 parcours, l’adversaire qui doute.
 
@@ -139,17 +145,16 @@ Deux modèles nuls répondent, et c’est leur écart qui est le résultat.
 
 {% include graphiques/tenant-du-titre-nulle.svg %}
 
-<p class="legende-figure">L’écart observé, contre {{ ttt.tirages }} saisons
+<p class="legende-figure">L’écart observé, contre {{ ttt.tirages_texte }} saisons
 simulées où les vainqueurs sont tirés <strong>selon les forces estimées</strong>.
 Un tirage uniforme, lui, ne produirait que {{ tt.attendu_uniforme }} points.</p>
 
 <div class="constat">
-  <p>Contre un tirage uniforme, l’enchaînement ressort :
+  <p>Contre un tirage uniforme, l’enchaînement s’écarte du hasard :
   {{ tt.ecarts_types_uniforme }} {{ tt.ecarts_types_uniforme_mot }}. Contre un tirage <b>selon les
-  forces</b>, il ne reste que {{ ttt.ecart_types }} {{ ttt.ecart_types_mot }}, p ajustée
-  {{ ttt.p_ajustee }}. <b>Non concluant.</b></p>
+  forces</b>, il ne reste que {{ ttt.ecart_types }} {{ ttt.ecart_types_mot }}, p ajustée {{ ttt.p_ajustee }}. <b>Non concluant.</b></p>
   <p>Autrement dit : {% if tt.force_suffit %}<b>le simple fait que les forts
-  sont forts suffit à produire tout l’enchaînement observé</b>{% else %}<b>{{ tt.part_expliquee }} % de l’enchaînement est déjà
+  sont forts suffit à produire tout l’enchaînement observé</b>{% else %}<b>{{ tt.part_expliquee }} % de l’enchaînement est déjà
   produit par le simple fait que les forts sont forts</b>, et ce qui dépasse
   n’est pas distinguable du hasard{% endif %}. Le tenant du titre ne rejoue pas mieux
   parce qu’il vient de gagner ; il regagne parce que c’était déjà lui le
@@ -175,15 +180,16 @@ force mène loin.
 <div class="constat">
   <p>Doubler sa force multiplie les bulletins reçus par
   <b>{{ fj.voix.force.estimation }}</b> — intervalle
-  {{ fj.voix.force.bas }} à {{ fj.voix.force.haut }}, p ajustée
-  {{ fj.voix.force.p_ajustee }}. L’intervalle touche 1 : <b>les forts ne
+  {{ fj.voix.force.bas }} à {{ fj.voix.force.haut }}, p ajustée {{ fj.voix.force.p_ajustee }}. L’intervalle touche 1 : <b>les forts ne
   reçoivent pas davantage de bulletins</b>, et peut-être un peu moins, sans
   qu’on puisse l’affirmer. Gagner l’immunité, ce qui fait la force, rend
   d’ailleurs inéligible au vote : une part de cet écart est mécanique.</p>
   <p>Sur la distance parcourue, rien : doubler sa force fait gagner
   {{ fj.survie.force.estimation }} point de saison, intervalle
-  {{ fj.survie.force.bas }} à {{ fj.survie.force.haut }}.
-  <b>La force athlétique ne mène pas plus loin.</b></p>
+  {{ fj.survie.force.bas }} à {{ fj.survie.force.haut }}. Cette mesure ne porte
+  que sur ceux qui ont disputé au moins trois épreuves individuelles — donc
+  sur ceux qui sont déjà allés assez loin. <b>On ne peut pas dire que la force
+  athlétique mène plus loin ; on ne peut pas non plus l’exclure.</b></p>
   <p>L’âge ne tranche pas non plus : dix ans de plus, et l’on reçoit
   {{ fj.voix.age.estimation }} fois les bulletins, intervalle
   {{ fj.voix.age.bas }} à {{ fj.voix.age.haut }}, qui contient 1.</p>

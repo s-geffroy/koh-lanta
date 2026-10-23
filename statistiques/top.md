@@ -5,7 +5,7 @@ description: "Le top des joueurs de Koh-Lanta : quatre façons de bien jouer, m
 permalink: /statistiques/top/
 chapeau: >-
   Quatre façons de bien jouer, mesurées sans jamais regarder qui a gagné.
-  **Aucune ne prédit les autres** — et une cinquième a dû être retirée parce
+  **Aucune ne suffit à prédire les autres** — et une cinquième a dû être retirée parce
   qu’elle ne mesurait qu’une chose : le soir où l’on part.
 ---
 
@@ -54,7 +54,7 @@ décider que le physique compte plus que le vote.
     <td class="nombre">{{ l.score }}</td>
     <td class="nombre">{{ l.participations }}</td>
     <td class="nombre">{{ l.titres }}</td>
-    <td class="nombre">{{ l.part_top }} %</td>
+    <td class="nombre">{{ l.part_top }} %</td>
     <td class="nombre">{{ l.rang_p05 }} – {{ l.rang_p95 }}</td></tr>
 {% endfor %}
 </tbody>
@@ -95,7 +95,7 @@ l’inverse.
   <td class="nombre">{{ l.saisons }}</td>
   <td class="nombre">{{ l.titres }}</td>
   <td class="nombre">{{ l.score }}</td>
-  <td class="nombre">{{ l.part_top }} %</td>
+  <td class="nombre">{{ l.part_top }} %</td>
   <td class="nombre" data-val="{{ l.etendue_rangs }}">{{ l.rang_p05 }} – {{ l.rang_p95 }}</td>
   {% for f in c.facettes %}<td class="nombre">{{ l.rangs[f.cle] }}</td>{% endfor %}
 </tr>
@@ -105,7 +105,7 @@ l’inverse.
 </div>
 
 <p class="note">Un rang n’est pas une note. La colonne « dans le top » dit sous
-quelle part des {{ rb.tirages }} pondérations l’aventurier y figure, et
+quelle part des {{ rb.tirages_texte }} pondérations l’aventurier y figure, et
 la dernière l’étendue de ses rangs : quand elle est large, le rang de
 gauche ne veut pas dire grand-chose. Et pour les
 {{ c.joueurs_courte_carriere }} aventuriers d’une ou deux
@@ -152,7 +152,7 @@ mis la victoire dans le calcul.
 {% for l in c.sans_titre %}
 <tr><td class="nombre">{{ l.rang }}</td><td>{% include lien-aventurier.html id=l.id nom=l.nom %}</td>
     <td class="nombre">{{ l.score }}</td>
-    <td class="nombre">{{ l.part_top }} %</td></tr>
+    <td class="nombre">{{ l.part_top }} %</td></tr>
 {% endfor %}
 </tbody>
 </table>
@@ -198,7 +198,7 @@ seules saisons classiques, sur {{ c.joueurs_classiques }} joueurs :
 
 ## Et les visages qu’on connaît ?
 
-C’est la question qu’on pose en premier devant un classement — *« et untel ? »*
+C’est la question qu’on pose en premier devant un classement — *« et Untel ? »*
 — et la réponse est souvent plus instructive que le top lui-même. Voici, sans
 tri d’auteur, **tous les aventuriers d’au moins trois saisons achevées**, et où
 ils tombent.
@@ -228,7 +228,7 @@ ils tombent.
 <p class="legende-figure">Les {{ site.data.stats.mots.facettes }} colonnes de facettes sont des écarts à la
 moyenne, en écarts-types : 0 est la moyenne du programme, positif est meilleur.
 La dernière donne l’étendue des rangs sous les
-{{ rb.tirages }} pondérations tirées — plus elle est large, moins le rang
+{{ rb.tirages_texte }} pondérations tirées — plus elle est large, moins le rang
 affiché veut dire quelque chose.</p>
 
 {% assign cr = c.carrieres %}
@@ -240,11 +240,12 @@ affiché veut dire quelque chose.</p>
   rien du niveau : il dit qui la production redemande, ce que
   <a href="{{ '/statistiques/revenants/' | relative_url }}">les revenants</a>
   mesurent à part.</p>
-  <p>Ce qui les sépare tient en une colonne. {{ cr[0].nom }} est à
-  <b>{{ cr[0].facettes.epreuves }}</b> sur les épreuves — le deuxième meilleur
-  du programme. {{ cr[1].nom }} est à <b>{{ cr[1].facettes.lecture }}</b> sur la
-  lecture : sur les {{ cr[1].preuve.lecture }} bulletins qu’on peut lire de sa
-  carrière, il a rarement écrit le nom de celui qui partait.</p>
+  <p>Ce qui les sépare tient en deux colonnes. {{ cr[0].nom }} est à
+  <b>{{ cr[0].facettes.epreuves }}</b> sur les épreuves, parmi les meilleurs du
+  programme. {{ cr[1].nom }} est à <b>{{ cr[1].facettes.lecture }}</b> sur la
+  lecture, mesurée sur les {{ cr[1].preuve.lecture }} bulletins qu’on peut lire
+  de sa carrière — une facette où, comme sur les autres, un score positif est
+  au-dessus de la moyenne.</p>
 </div>
 
 <p class="note">Un nom que tout le monde connaît n’est pas un nom que les
@@ -296,7 +297,7 @@ Deux sources comptent les victoires individuelles, et elles ne disent pas la
 même chose. Le <em>tableau de saison</em> date chaque épreuve : lui seul fournit
 un dénominateur, donc lui seul sert ici. La <em>fiche individuelle</em> donne un
 total par saison, sans dates. Là où les deux se comparent, elles s’accordent
-sur <b>{{ ce.part_accord }} %</b> des {{ ce.comparables }} participations.
+sur <b>{{ ce.part_accord }} %</b> des {{ ce.comparables }} participations.
 Surtout, la fiche attribue <b>{{ ce.victoires_invisibles }} victoires</b> à
 {{ ce.participations_invisibles }} participations pour lesquelles le tableau ne
 fournit aucun dénominateur. Ces victoires-là sont <strong>invisibles au classement</strong>.
@@ -321,11 +322,11 @@ puis retirée.
 <div class="constat">
   <p>Sur les <b>{{ ar.resistance.occasions }} occasions</b> où quelqu’un est
   visé à un conseil dépouillé, <b>{{ ar.resistance.dont_le_soir_du_depart }}</b>
-  — soit {{ ar.resistance.part }} % — <b>sont le conseil qui l’élimine</b>.
+  — soit {{ ar.resistance.part }} % — <b>sont le conseil qui l’élimine</b>.
   C’est un échec que personne ne peut éviter, et il était compté comme un
   échec.</p>
   <p>Retirez-les : il ne reste que des survies, et le taux monte à
-  <b>100 % pour tout le monde</b>. La facette n’avait pas d’autre signal que
+  <b>100 % pour tout le monde</b>. La facette n’avait pas d’autre signal que
   cet échec obligatoire. Elle ne mesurait pas l’art de s’en sortir — elle
   mesurait <em>combien de fois on nous a vus partir</em>.</p>
 </div>
@@ -333,7 +334,7 @@ puis retirée.
 Le coup est plus dur encore sur ceux qu’on observe peu :
 **{{ ar.resistance.une_seule_occasion }} participations** n’ont qu’une seule
 occasion mesurée, et pour **{{ ar.resistance.une_seule_et_fatale }} d’entre
-elles** — {{ ar.resistance.part_une_seule }} % — cette unique occasion *est*
+elles** — {{ ar.resistance.part_une_seule }} % — cette unique occasion *est*
 l’élimination. Leur résistance valait zéro par construction.
 
 ### Le même piège, désamorcé sur les deux facettes qui restent
@@ -343,11 +344,11 @@ l’élimination. Leur résistance valait zéro par construction.
   le soir de son élimination est donc faux par construction :
   <b>{{ ar.lecture.justes_du_partant }} juste sur
   {{ ar.lecture.bulletins_du_partant }}</b>. Les autres soirs, la justesse est
-  de {{ ar.lecture.taux_des_autres_soirs }} % — contre
-  {{ ar.lecture.taux_tout_compris }} % si l’on garde tout. Ce bulletin-là est
+  de {{ ar.lecture.taux_des_autres_soirs }} % — contre
+  {{ ar.lecture.taux_tout_compris }} % si l’on garde tout. Ce bulletin-là est
   écarté.</p>
   <p><b>Les voix qui vous sortent ne mesurent pas votre discrétion.</b> Elles
-  pèsent <b>{{ ar.discretion.part }} %</b> de toutes les voix relevées, et elles
+  pèsent <b>{{ ar.discretion.part }} %</b> de toutes les voix relevées, et elles
   séparent les <em>manières de sortir</em> bien plus que les joueurs : un éliminé
   au conseil en reçoit, par définition, bien plus qu’un vainqueur. Les compter
   revient à redemander « a-t-il été éliminé au conseil ? », ce que le parcours
@@ -375,13 +376,15 @@ en valeur absolue, sur les {{ c.joueurs_classes }} joueurs classés. En clair,
 les paires dont la corrélation est négative.</p>
 
 <div class="constat">
-  <p><b>Rien ne va avec rien.</b> Sur les {{ site.data.stats.mots.paires }} paires possibles, la plus forte
-  vaut <b>{{ c.correlations[0].rho }}</b> et la plus faible
-  {{ c.correlations[5].rho }}. La moyenne des {{ site.data.stats.mots.paires }} est
+  <p><b>Presque rien ne va avec rien.</b> Sur les {{ site.data.stats.mots.paires }} paires possibles, la plus forte
+  vaut <b>{{ c.correlations[0].rho }}</b> et la plus faible {{ c.correlations[5].rho }}. La moyenne des {{ site.data.stats.mots.paires }} est
   {{ c.correlation_moyenne }}.</p>
-  <p>Il n’existe donc pas de « bon joueur » au singulier. Être bon quelque part
-  ne dit rien de ce qu’on vaut ailleurs, et un score synthétique ne fait
-  qu’<em>additionner {{ site.data.stats.mots.facettes }} qualités sans rapport</em>. Le premier du
+  <p>Sur {{ c.joueurs_classes }} joueurs, la plus forte de ces corrélations se
+  distingue de zéro ; mais aucune n’est assez forte pour qu’être bon quelque
+  part dise grand-chose de ce qu’on vaut ailleurs. Il n’existe donc pas de « bon
+  joueur » au singulier, et un score synthétique revient à
+  <em>additionner {{ site.data.stats.mots.facettes }} qualités presque sans
+  rapport</em>. Le premier du
   classement est celui que la moyenne a favorisé.</p>
 </div>
 
@@ -441,14 +444,14 @@ quand on retire un artefact commun n’était pas une corrélation.</p>
 
 Voilà l’objection qu’on fait à tous les classements : *vos poids sont
 arbitraires*. Elle est juste. Plutôt que de défendre les miens, je les ai tous
-essayés — **{{ rb.tirages }} pondérations tirées au hasard** sur les {{ site.data.stats.mots.facettes }}
+essayés — **{{ rb.tirages_texte }} pondérations tirées au hasard** sur les {{ site.data.stats.mots.facettes }}
 facettes, sans aucune opinion sur leur importance relative, et le classement
 refait à chaque fois.
 
 {% include graphiques/top-rangs.svg %}
 
 <p class="legende-figure">Pour chacun des {{ c.taille }} premiers : son rang
-médian, et l’intervalle qui contient 90 % de ses rangs selon la pondération.</p>
+médian, et l’intervalle qui contient 90 % de ses rangs selon la pondération.</p>
 
 <div class="constat">
   <p><b>{{ rb.candidats }} aventuriers différents entrent dans le top
@@ -457,11 +460,11 @@ médian, et l’intervalle qui contient 90 % de ses rangs selon la pondération.
   pondérations.{% elsif rb.toujours == 1 %}<b>Un seul</b> y figure sous
   <em>toutes</em> les pondérations.{% else %}<b>{{ rb.toujours }}</b> y figurent
   sous <em>toutes</em> les pondérations.{% endif %}
-  {% if rb.socle == 1 %}Un seul y est dans plus de 99 % des cas
+  {% if rb.socle == 1 %}Un seul y est dans plus de 99 % des cas
   — <b>{{ rb.socle_noms | join: " et " }}</b>{% else %}Ils ne sont que
-  <b>{{ rb.socle }}</b> à y être dans plus de 99 % des cas —
+  <b>{{ rb.socle }}</b> à y être dans plus de 99 % des cas —
   {% for n in rb.socle_noms %}{{ n }}{% if forloop.rindex == 2 %} et {% elsif forloop.last == false %}, {% endif %}{% endfor %}{% endif %} — et le moins solide du top
-  actuel n’y tient que {{ rb.part_top_minimale_du_top }} % du temps.</p>
+  actuel n’y tient que {{ rb.part_top_minimale_du_top }} % du temps.</p>
 </div>
 
 <div class="tableau-large">
@@ -469,7 +472,7 @@ médian, et l’intervalle qui contient 90 % de ses rangs selon la pondération.
 <thead><tr><th>Présent dans le top {{ c.taille }} sous…</th><th class="nombre">Nombre de joueurs</th></tr></thead>
 <tbody>
 {% for p in rb.paliers %}
-<tr><td>plus de {{ p.seuil }} % des pondérations</td>
+<tr><td>plus de {{ p.seuil }} % des pondérations</td>
     <td class="nombre">{{ p.effectif }}</td></tr>
 {% endfor %}
 </tbody>
@@ -521,7 +524,7 @@ elle ne réapparaît pas, et classer des personnes n’a pas d’objet.
 
 <p class="legende-figure">Corrélation entre le score de la première
 participation et la moyenne des suivantes, chez les {{ c.stabilite.effectif }}
-aventuriers qui ont joué au moins deux fois, face à {{ t.tirages }} appariements
+aventuriers qui ont joué au moins deux fois, face à {{ t.tirages_texte }} appariements
 tirés au hasard.</p>
 
 <div class="constat">
@@ -560,11 +563,11 @@ facettes ne sait qui a gagné. Où tombent les vainqueurs ?
   <b>{{ pl.rang_median_vainqueurs }}</b> sur {{ c.joueurs_classes }}. Celui de
   tous les autres est {{ pl.rang_median_autres }}.</p>
   <p>Pris au hasard, un vainqueur est mieux classé qu’un non-vainqueur dans
-  <b>{{ pl.auc_pourcent }} %</b> des cas.</p>
+  <b>{{ pl.auc_pourcent }} %</b> des cas.</p>
   <p>Une partie de ce chiffre tient pourtant à la construction : tout vainqueur
   est allé au bout, et la facette « parcours » récompense ceux qui vont loin.
   <b>Sans elle, le score retrouve encore les vainqueurs dans
-  {{ pl.auc_sans_parcours_pourcent }} % des cas</b> — c’est cette part-là qui
+  {{ pl.auc_sans_parcours_pourcent }} % des cas</b> — c’est cette part-là qui
   ne doit rien au palmarès. Elle est réelle, et nettement plus modeste.</p>
 </div>
 
@@ -592,7 +595,7 @@ un trou dans la source.
 <tr><td>{{ d.periode }}</td>
     <td class="nombre">{{ d.conseils }}</td>
     <td class="nombre">{{ d.complets }}</td>
-    <td class="nombre">{{ d.part }} %</td></tr>
+    <td class="nombre">{{ d.part }} %</td></tr>
 {% endfor %}
 </tbody>
 </table>
@@ -604,8 +607,7 @@ contraint :
 
 <div class="constat">
   <p><b>{{ be.communs }} des {{ be.taille }} noms restent les mêmes</b>, et le
-  déplacement médian est de {{ be.deplacement_median }} rangs. Sortent :
-  {{ be.sortants | join: ", " }}. Entrent : {{ be.entrants | join: ", " }}.</p>
+  déplacement médian est de {{ be.deplacement_median }} rangs. Sortent : {{ be.sortants | join: ", " }}. Entrent : {{ be.entrants | join: ", " }}.</p>
   <p>Le biais existe donc, et il est réel — mais il ne renverse pas la table.
   Ce qui décide du top n’est pas l’époque.</p>
 </div>
@@ -614,7 +616,7 @@ contraint :
 classement. <strong>Les facettes ne se parlent pas</strong> : la moyenne des
 {{ site.data.stats.mots.facettes }} est une convention, pas une grandeur.
 <strong>Les poids sont arbitraires</strong> : {% if rb.socle == 1 %}un joueur seulement
-tient{% else %}{{ rb.socle }} joueurs seulement tiennent{% endif %} dans plus de 99 % des pondérations, quand {{ rb.candidats }} peuvent
+tient{% else %}{{ rb.socle }} joueurs seulement tiennent{% endif %} dans plus de 99 % des pondérations, quand {{ rb.candidats }} peuvent
 entrer dans le top.
 <strong>La stabilité n’est pas établie</strong> — p = {{ t.p }}.
 <strong>Deux facettes sur {{ site.data.stats.mots.facettes }} dépendent d’un dépouillement inégal</strong>, et
@@ -626,7 +628,7 @@ aussi vouloir dire qu’on ne menaçait personne — c’est ce que
 montre en ne la classant que deuxième.
 <strong>Et deux dimensions entières manquent</strong> : les colliers d’immunité,
 relevés sur {{ site.data.stats.colliers.saisons_couvertes }} saisons seulement,
-et les objets qui les ont remplacés — armes secrètes, totem maudit, talisman —
+et les objets qui s’y sont ajoutés — armes secrètes, totem maudit, talisman —
 dont <a href="{{ '/sources/' | relative_url }}">les sources</a> ne donnent pas
 le détail.</p>
 

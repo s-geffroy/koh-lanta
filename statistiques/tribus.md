@@ -42,17 +42,17 @@ qu’on se retrouve du mauvais côté du compte.
 <div class="constat">
   <p>Sachant que sa tribu initiale est la <b>moins représentée</b> du camp
   assis au conseil, on est éliminé dans
-  <b>{{ af.bandeau[0].probabilite }} %</b> des cas
+  <b>{{ af.bandeau[0].probabilite }} %</b> des cas
   ({{ af.bandeau[0].cas }} sur {{ af.bandeau[0].effectif }}) ; quand elle est la
-  plus représentée, dans <b>{{ af.bandeau[1].probabilite }} %</b>.</p>
-  <p>{{ tba.observe_arrondi }} points d’écart, {{ tba.ecart_types }}
+  plus représentée, dans <b>{{ af.bandeau[1].probabilite }} %</b>.</p>
+  <p>{{ tba.observe_arrondi }} point{% if tba.observe_arrondi_pluriel %}s{% endif %} d’écart, {{ tba.ecart_types }}
   {{ tba.ecart_types_mot }} au-dessus d’un tirage au sort parmi les présents de chaque
   conseil, p ajustée {{ tba.p_ajustee }}.</p>
 </div>
 
 Les deux résultats de cette page ne se contredisent pas : **la couleur n’est pas
 un avantage, c’est une appartenance.** Elle ne fait gagner personne, et elle
-condamne celui qui se retrouve seul de sa tribu initiale.
+expose celui qui se retrouve en minorité de sa tribu initiale.
 [Sachant qui est autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }})
 détaille, avant et après la réunification.
 
@@ -70,9 +70,9 @@ détaille, avant et après la réunification.
 <tr>
   <td><span class="pastille" style="background: var(--tribu-{{ c.couleur }})"></span>{{ c.couleur_maj }}</td>
   <td class="nombre">{{ c.effectif }}</td>
-  <td class="nombre">{{ c.survie_moyenne }} %</td>
+  <td class="nombre">{{ c.survie_moyenne }} %</td>
   <td class="nombre">{{ c.finales }}</td>
-  <td class="nombre">{{ c.taux_finale }} %</td>
+  <td class="nombre">{{ c.taux_finale }} %</td>
   <td class="nombre">{{ c.victoires }}</td>
 </tr>
 {% endfor %}
@@ -80,9 +80,11 @@ détaille, avant et après la réunification.
 </table>
 </div>
 
-<p class="note">La couleur noire correspond à la tribu maudite de 2024 et à
-l’île des héros de 2020 : {{ s.mots.effectif_noir }} aventuriers seulement, aucune conclusion
-possible.</p>
+<p class="note">La couleur noire est celle de la tribu maudite de 2024, d’où
+sont partis les quatre plus faibles de l’épreuve initiale :
+{{ s.mots.effectif_noir }} aventuriers seulement, aucune conclusion possible.
+L’<em>Île des héros</em> de 2020, dont l’équipe des héros portait aussi le
+noir, est une édition spéciale : elle n’est pas dans ce tableau.</p>
 
 <p class="note">Deux autres pages recoupent ce résultat. Un modèle de durée
 ne trouve aucun effet de la tribu initiale sur le risque d’élimination

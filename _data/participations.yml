@@ -518,8 +518,8 @@
   tribu: Korok
   couleur: rouge
   parcours:
-  - tribu: Lanta-naï
-    couleur: jaune
+  - tribu: Korok
+    couleur: rouge
     jour_debut: 1
     jour_fin: 20
   - tribu: Tribu réunifiée
@@ -545,7 +545,8 @@
     votes_recus: fandom
     couleur: saisons.yml
     localisation: fandom (page individuelle)
-    parcours: fandom (page individuelle)
+    parcours: 'corrige : tableau de saison Fandom (s01, Korok) et texte de la page individuelle ; l''infobox
+      ecrit Lanta-naï'
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
@@ -561,8 +562,8 @@
   tribu: Korok
   couleur: rouge
   parcours:
-  - tribu: Lanta-naï
-    couleur: jaune
+  - tribu: Korok
+    couleur: rouge
     jour_debut: 1
     jour_fin: 20
   - tribu: Tribu réunifiée
@@ -588,7 +589,8 @@
     votes_recus: fandom
     couleur: saisons.yml
     localisation: fandom (page individuelle)
-    parcours: fandom (page individuelle)
+    parcours: 'corrige : tableau de saison Fandom (s01, Korok) et texte de la page individuelle ; l''infobox
+      ecrit Lanta-naï'
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
@@ -1994,6 +1996,7 @@
   sort: elimine_poteaux
   motif: Éliminé aux poteaux
   votes_recus: 8
+  classement: 3
   sources:
     genre: fandom
     age: fandom
@@ -2009,6 +2012,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: 'table RANGS_CORRIGES : page Fandom « Classement = 3/18 »'
 - id: delphine-bano
   nom: Delphine
   nom_complet: Delphine Bano
@@ -3377,6 +3381,7 @@
   sort: elimine_poteaux
   motif: Éliminé aux poteaux
   votes_recus: 0
+  classement: 3
   sources:
     genre: fandom
     age: fandom
@@ -3392,6 +3397,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: 'table RANGS_CORRIGES : page Fandom « 3ème sur 17 (Pacifique) »'
 - id: francis-bordas
   nom: Francis
   nom_complet: Francis Bordas
@@ -3416,6 +3422,7 @@
   sort: finaliste
   motif: Finaliste
   votes_recus: 11
+  classement: 2
   sources:
     age: fandom
     profession: fandom
@@ -3431,6 +3438,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: 'table RANGS_CORRIGES : page Fandom « 2ème sur 17 (Pacifique) »'
 - id: clemence-castel
   nom: Clémence
   nom_complet: Clémence Castel
@@ -4031,6 +4039,7 @@
   sort: elimine_poteaux
   motif: Éliminé aux poteaux
   votes_recus: 8
+  classement: 3
   sources:
     genre: fandom
     age: fandom
@@ -4046,6 +4055,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: 'table RANGS_CORRIGES : elimine aux poteaux : 3e par definition ; le 3e manquait'
 - id: emilie-frahi
   nom: Émilie
   nom_complet: Émilie Frahi
@@ -4502,6 +4512,7 @@
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 9
+  classement: 7
   sources:
     genre: fandom
     age: fandom
@@ -4516,6 +4527,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: 'table RANGS_CORRIGES : page Fandom « Classement=7/16 » (Palawan)'
 - id: laurent-boudes
   nom: Laurent
   nom_complet: Laurent Boudes
@@ -6734,6 +6746,7 @@
   sort: elimine_conseil
   motif: Éliminée au conseil
   votes_recus: 3
+  classement: 6
   sources:
     genre: fandom
     age: fandom
@@ -6749,6 +6762,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: 'table RANGS_CORRIGES : page Fandom « Classement=6/18 » (Viêtnam)'
 - id: kunle-m-babacere-pakorona
   nom: Kunlé
   nom_complet: Kunlé M'Babacéré Pakorona
@@ -7568,6 +7582,7 @@
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 12
+  classement: 5
   sources:
     genre: fandom
     age: fandom
@@ -7584,6 +7599,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: 'table RANGS_CORRIGES : page Fandom, categorie « 5ème place »'
 - id: ella-gbezan
   nom: Ella
   nom_complet: Ella Gbezan
@@ -9335,10 +9351,18 @@
   tribu: Lankawaï
   couleur: jaune
   parcours:
+  - tribu: Lankawaï
+    couleur: jaune
+    jour_debut: null
+    jour_fin: 7
   - tribu: Tinggi
     couleur: rouge
-    jour_debut: null
-    jour_fin: null
+    jour_debut: 7
+    jour_fin: 19
+  - tribu: Tribu réunifiée
+    couleur: null
+    jour_debut: 19
+    jour_fin: 39
   jour_sortie: 39
   sort: elimine_poteaux
   motif: Éliminée aux poteaux
@@ -9357,9 +9381,11 @@
     votes_recus: fandom
     couleur: saisons.yml
     localisation: fandom (page individuelle)
-    parcours: fandom (page individuelle)
+    parcours: 'corrige : tableau de saison Fandom (s14) : Lankawaï, Lankawaï, Tinggi, Tinggi, réunifiée'
     classement: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
+      et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
 - id: chantal-menard
   nom: Chantal
   nom_complet: Chantal Ménard
@@ -9384,6 +9410,7 @@
   sort: finaliste
   motif: Finaliste
   votes_recus: 9
+  classement: 2
   sources:
     age: fandom
     profession: fandom
@@ -9399,6 +9426,7 @@
     parcours: fandom (page individuelle)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: 'table RANGS_CORRIGES : page Fandom, categorie « 2ème place » : finaliste'
 - id: marc-rambaud
   nom: Marc
   nom_complet: Marc Rambaud
@@ -10162,10 +10190,14 @@
   tribu: Aopoh
   couleur: rouge
   parcours:
+  - tribu: Aopoh
+    couleur: rouge
+    jour_debut: null
+    jour_fin: null
   - tribu: Karwaï
     couleur: jaune
     jour_debut: null
-    jour_fin: null
+    jour_fin: 38
   jour_sortie: 38
   sort: elimine_orientation
   motif: Éliminée à l'orientation
@@ -10183,7 +10215,7 @@
     votes_recus: fandom
     couleur: saisons.yml
     localisation: fandom (page individuelle)
-    parcours: fandom (page individuelle)
+    parcours: 'corrige : tableau de saison Fandom (s15) : Aopoh, Aopoh, Karwaï'
     classement: fandom (page individuelle)
 - id: gabriel-gubbels
   nom: Gabriel
@@ -18942,11 +18974,11 @@
   profession: Danseuse et chorégraphe
   localisation: Gironde
   edition_origine: null
-  tribu: Noire
-  couleur: noir
+  tribu: Tribu maudite
+  couleur: null
   parcours:
   - tribu: Tribu maudite
-    couleur: null
+    couleur: noir
     jour_debut: 1
     jour_fin: 13
   jour_sortie: 13
@@ -18961,14 +18993,13 @@
     age: wikipedia-fr
     profession: wikipedia-fr
     localisation: wikipedia-fr
-    tribu: fandom
+    tribu: correction, cf. TRIBUS_FAUTIVES
     parcours: wikipedia-fr
     jour_sortie: fandom
     sort: fandom
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
-    couleur: saisons.yml
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
@@ -18981,11 +19012,11 @@
   profession: Cariste
   localisation: Loire-Atlantique
   edition_origine: null
-  tribu: Noire
-  couleur: noir
+  tribu: Tribu maudite
+  couleur: null
   parcours:
   - tribu: Tribu maudite
-    couleur: null
+    couleur: noir
     jour_debut: 1
     jour_fin: 13
   jour_sortie: 13
@@ -19000,14 +19031,13 @@
     age: wikipedia-fr
     profession: wikipedia-fr
     localisation: wikipedia-fr
-    tribu: fandom
+    tribu: correction, cf. TRIBUS_FAUTIVES
     parcours: wikipedia-fr
     jour_sortie: fandom
     sort: fandom
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
-    couleur: saisons.yml
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
@@ -19098,11 +19128,11 @@
   profession: Responsable en supermarché
   localisation: Var
   edition_origine: null
-  tribu: Sabitang
-  couleur: jaune
+  tribu: Tribu maudite
+  couleur: noir
   parcours:
   - tribu: Tribu maudite
-    couleur: null
+    couleur: noir
     jour_debut: 1
     jour_fin: 13
   - tribu: Sabitang
@@ -19121,8 +19151,8 @@
     age: wikipedia-fr
     profession: wikipedia-fr
     localisation: wikipedia-fr
-    tribu: wikipedia-fr
-    couleur: wikipedia-fr
+    tribu: correction, cf. TRIBU_DE_DEPART
+    couleur: correction, cf. TRIBU_DE_DEPART
     parcours: wikipedia-fr
     jour_sortie: fandom
     sort: fandom
@@ -19149,7 +19179,7 @@
     jour_debut: 1
     jour_fin: 4
   - tribu: Tribu maudite
-    couleur: null
+    couleur: noir
     jour_debut: 4
     jour_fin: 13
   - tribu: Pitogo
@@ -19373,7 +19403,7 @@
     jour_debut: 19
     jour_fin: 30
   - tribu: Tribu maudite
-    couleur: null
+    couleur: noir
     jour_debut: 30
     jour_fin: 30
   jour_sortie: 30
@@ -19464,7 +19494,7 @@
     jour_debut: 19
     jour_fin: 30
   - tribu: Tribu maudite
-    couleur: null
+    couleur: noir
     jour_debut: 30
     jour_fin: 31
   - tribu: Tribu réunifiée
@@ -19676,11 +19706,11 @@
   profession: Étudiant en ingénierie
   localisation: Seine-Saint-Denis
   edition_origine: null
-  tribu: Sabitang
-  couleur: jaune
+  tribu: Tribu maudite
+  couleur: noir
   parcours:
   - tribu: Tribu maudite
-    couleur: null
+    couleur: noir
     jour_debut: 1
     jour_fin: 4
   - tribu: Sabitang
@@ -19703,8 +19733,8 @@
     age: wikipedia-fr
     profession: wikipedia-fr
     localisation: wikipedia-fr
-    tribu: wikipedia-fr
-    couleur: wikipedia-fr
+    tribu: correction, cf. TRIBU_DE_DEPART
+    couleur: correction, cf. TRIBU_DE_DEPART
     parcours: wikipedia-fr
     jour_sortie: 'corrige : legende Wikipedia, wiki Survivor et fiche Fandom ; la saison dure 41 jours,
       pas 40'
@@ -21914,6 +21944,7 @@
   sort: elimine_ambassadeurs
   motif: Éliminé aux ambassadeurs
   votes_recus: 1
+  classement: 10
   sources:
     genre: fandom
     age: fandom
@@ -21930,6 +21961,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: 'table RANGS_CORRIGES : page Fandom « 10ème sur 14 (Le Retour des héros) »'
 - id: clemence-castel
   nom: Clémence
   nom_complet: Clémence Castel
@@ -22424,6 +22456,7 @@
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 4
+  classement: 12
   sources:
     genre: fandom
     age: fandom
@@ -22438,6 +22471,7 @@
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
     parcours: wiki Survivor (tableau des candidats)
+    classement: 'table RANGS_CORRIGES : page Fandom « 12ème sur 14 (Le Choc des héros) »'
 - id: gwendal-peizerat
   nom: Gwendal Peizerat
   nom_complet: Gwendal Peizerat
@@ -22544,6 +22578,7 @@
   sort: elimine_conseil
   motif: Éliminée au conseil
   votes_recus: 5
+  classement: 9
   sources:
     genre: fandom
     age: fandom
@@ -22560,6 +22595,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: 'table RANGS_CORRIGES : page Fandom « Classement2=9/14 » (Tiac)'
 - id: frederique-jossinet
   nom: Frédérique Jossinet
   nom_complet: Frédérique Jossinet
@@ -23007,6 +23043,7 @@
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 4
+  classement: 14
   sources:
     genre: wikipedia-fr
     age: fandom
@@ -23020,6 +23057,7 @@
     motif: fandom
     nom_complet: titre canonique Fandom (redirection)
     votes_recus: fandom
+    classement: 'table RANGS_CORRIGES : page Fandom « Classement2 = 14/16 »'
 - id: isabelle-da-silva
   nom: Isabelle
   nom_complet: Isabelle Da Silva
@@ -23112,6 +23150,7 @@
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 6
+  classement: 11
   sources:
     genre: wikipedia-fr
     age: fandom
@@ -23125,6 +23164,7 @@
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
+    classement: 'table RANGS_CORRIGES : page Fandom « 11ème sur 16 (La Revanche des héros) »'
 - id: freddy-boucher
   nom: Freddy
   nom_complet: Freddy Boucher
@@ -23278,6 +23318,7 @@
   sort: elimine_epreuve
   motif: Éliminer lors d’une épreuve éliminatoire
   votes_recus: 4
+  classement: 7
   sources:
     genre: wikipedia-fr
     age: fandom
@@ -23291,6 +23332,7 @@
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
+    classement: 'table RANGS_CORRIGES : page Fandom « Classement2 = 7/16 »'
 - id: guenaelle-biras
   nom: Guénaëlle
   nom_complet: Guénaëlle Biras
@@ -23555,7 +23597,7 @@
   saison: sp4
   genre: f
   age: 33
-  profession: Commerciale en assurances (Les Aventuriers de Koh-Lanta)
+  profession: Commerciale en assurances
   localisation: Var
   edition_origine: null
   tribu: Tengah
@@ -23627,7 +23669,7 @@
   saison: sp4
   genre: f
   age: 37
-  profession: Monitrice de fitness (Viêtnam)
+  profession: Monitrice de fitness
   localisation: Suisse
   edition_origine: null
   tribu: Tengah
@@ -23641,6 +23683,7 @@
   sort: elimine_conseil
   motif: Éliminée au conseil
   votes_recus: 5
+  classement: 11
   sources:
     genre: fandom
     age: fandom
@@ -23654,13 +23697,14 @@
     couleur: saisons.yml
     localisation: fandom (page individuelle)
     parcours: wiki Survivor (tableau des candidats)
+    classement: 'table RANGS_CORRIGES : page Fandom, categorie « 11ème place »'
 - id: sara-tallon
   nom: Sara
   nom_complet: Sara Tallon
   saison: sp4
   genre: f
   age: 45
-  profession: Gérante d'un centre de fitness (Malaisie)
+  profession: Gérante d'un centre de fitness
   localisation: Var
   edition_origine: null
   tribu: Simban
@@ -23703,7 +23747,7 @@
   saison: sp4
   genre: f
   age: 43
-  profession: Éducatrice (Raja Ampat)
+  profession: Éducatrice
   localisation: Hérault
   edition_origine: null
   tribu: Tengah
@@ -23717,6 +23761,7 @@
   sort: elimine_ambassadeurs
   motif: Éliminée aux ambassadeurs
   votes_recus: 1
+  classement: 9
   sources:
     genre: fandom
     age: fandom
@@ -23730,13 +23775,14 @@
     couleur: saisons.yml
     localisation: fandom (page individuelle)
     parcours: wiki Survivor (tableau des candidats)
+    classement: 'table RANGS_CORRIGES : page Fandom « 9ème (La Nouvelle Edition) »'
 - id: christina-chevry
   nom: Christina
   nom_complet: Christina Chevry
   saison: sp4
   genre: f
   age: 28
-  profession: Serveuse (Palau & Le Choc des héros)
+  profession: Serveuse
   localisation: Bouches-du-Rhône
   edition_origine: null
   tribu: Simban
@@ -23754,6 +23800,7 @@
   sort: elimine_conseil
   motif: Éliminée au conseil
   votes_recus: 7
+  classement: 8
   sources:
     genre: fandom
     age: fandom
@@ -23769,13 +23816,14 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: 'table RANGS_CORRIGES : page Fandom « Classement3=8/13 » (Simban)'
 - id: freddy-boucher
   nom: Freddy
   nom_complet: Freddy Boucher
   saison: sp4
   genre: h
   age: 29
-  profession: Ingénieur (Palau, Le Choc des héros & La Revanche des héros)
+  profession: Ingénieur
   localisation: Nord
   edition_origine: null
   tribu: Simban
@@ -23818,7 +23866,7 @@
   saison: sp4
   genre: h
   age: 36
-  profession: Cuisinier (Raja Ampat & La Revanche des héros)
+  profession: Cuisinier
   localisation: Hérault
   edition_origine: null
   tribu: Tengah
@@ -23861,7 +23909,7 @@
   saison: sp4
   genre: h
   age: 45
-  profession: Rempailleur (Viêtnam)
+  profession: Rempailleur
   localisation: Drôme
   edition_origine: null
   tribu: Simban
@@ -23904,7 +23952,7 @@
   saison: sp4
   genre: h
   age: 41
-  profession: Entrepreneur (Bocas del Toro & Le Retour des héros)
+  profession: Entrepreneur
   localisation: Paris
   edition_origine: null
   tribu: Tengah
@@ -23951,7 +23999,7 @@
   saison: sp4
   genre: h
   age: 43
-  profession: Ouvrier (Malaisie)
+  profession: Ouvrier
   localisation: Seine-Maritime
   edition_origine: null
   tribu: Simban
@@ -23996,7 +24044,7 @@
   saison: sp4
   genre: h
   age: 26
-  profession: Directeur d'hôtel (Raja Ampat)
+  profession: Directeur d'hôtel
   localisation: Savoie
   edition_origine: null
   tribu: Simban
@@ -24014,6 +24062,7 @@
   sort: finaliste
   motif: Finaliste
   votes_recus: 0
+  classement: 2
   sources:
     age: fandom
     profession: fandom
@@ -24029,13 +24078,14 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: 'table RANGS_CORRIGES : page Fandom, categorie « 2ème place » : finaliste'
 - id: laurent-maistret
   nom: Laurent
   nom_complet: Laurent Maistret
   saison: sp4
   genre: h
   age: 32
-  profession: Mannequin (Raja Ampat)
+  profession: Mannequin
   localisation: Val-de-Marne
   edition_origine: null
   tribu: Tengah
@@ -26755,10 +26805,10 @@
     jour_debut: 18
     jour_fin: 35
   jour_sortie: 35
-  sort: vainqueur
+  sort: finaliste
   motif: Non Gagnant Jour 35
   votes_recus: 0
-  classement: 1
+  classement: 2
   victoires_collectives: 4
   victoires_individuelles: 5
   sources:
@@ -26767,7 +26817,8 @@
     couleur: wikipedia-fr
     parcours: wikipedia-fr
     jour_sortie: wikipedia-fr
-    sort: fandom
+    sort: 'corrige : Wikipedia barre « Vainqueur » : le dépouillement final n''a pas eu lieu ; Fandom :
+      « Pas de vainqueur », les votes du jury final ont été invalidés'
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
@@ -26775,7 +26826,7 @@
     localisation: fandom (page individuelle)
     profession: fandom (page individuelle)
     age: fandom (page individuelle)
-    classement: fandom (page individuelle)
+    classement: 'table RANGS_CORRIGES : finaliste d''une saison sans vainqueur : le 1er n''existe pas'
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
 - id: joana-callico

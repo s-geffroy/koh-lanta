@@ -15,9 +15,9 @@ On ne quitte pas Koh-Lanta d’une seule manière. Sur les saisons classiques, l
 
 {% include graphiques/sorties-repartition.svg %}
 
-**Le conseil reste la voie principale** : {{ s.sorties.repartition[0].part }} %
+**Le conseil reste la voie principale** : {{ s.sorties.repartition[0].part }} %
 des sorties. Vient ensuite, et c’est plus surprenant, l’**abandon médical**
-({{ s.sorties.repartition[1].part }} %) — devant l’orientation, les poteaux et
+({{ s.sorties.repartition[1].part }} %) — devant l’orientation, les poteaux et
 les ambassadeurs.
 
 ## L’évolution
@@ -28,11 +28,12 @@ les ambassadeurs.
 
 Deux mouvements se lisent nettement :
 
-**Les abandons reculent.** De {{ s.sorties.par_decennie[0].abandons }} % des
+**Les abandons reculent.** De {{ s.sorties.par_decennie[0].abandons }} % des
 sorties dans les années 2000, ils tombent à
-{{ s.sorties.par_decennie[2].abandons }} % dans les années 2020 — soit
-**{{ s.sorties.abandons_rapport }} fois moins**. Encadrement médical, sélection, préparation des candidats : le jeu
-s’est professionnalisé.
+{{ s.sorties.par_decennie[2].abandons }} % dans les années 2020 — soit
+**{{ s.sorties.abandons_rapport }} fois moins**. Encadrement médical, sélection, préparation des candidats, ou simple
+changement de règles sur ce qui compte comme abandon : ces données ne disent
+pas laquelle de ces raisons l’emporte.
 
 <p class="note">Découpé par décennies, ce recul paraît graduel, et rien ne
 permet de dire mieux. Une recherche de rupture menée sans a priori sur
@@ -43,23 +44,26 @@ l’agrandissement des castings et l’arrivée des objets d’immunité ; mai
 qu’une évolution régulière produit une coupure aussi nette. Bascule ou pente,
 les données ne tranchent pas.</p>
 
-**Les ambassadeurs apparaissent puis refluent.** Absents des années 2000
-({{ s.sorties.par_decennie[0].ambassadeurs }} %), ils culminent dans les années
-2010 à {{ s.sorties.par_decennie[1].ambassadeurs }} % avant de redescendre. La
-mécanique a été introduite, éprouvée, puis relativisée par les mécaniques plus
-récentes — colliers, totems, duels.
+**Les sorties aux ambassadeurs apparaissent puis refluent.** Absentes de ces
+comptes dans les années 2000 ({{ s.sorties.par_decennie[0].ambassadeurs }} %),
+elles culminent dans les années 2010 à {{ s.sorties.par_decennie[1].ambassadeurs }} %
+avant de redescendre. La mécanique, elle, existe depuis le début : ce sont ses
+règles qui ont changé. Ce n’est qu’à partir de *Palau* (2009) que les
+ambassadeurs doivent éliminer eux-mêmes un aventurier, et la seule élimination
+de cette saison-là, celle d’Alexandre, ne compte pas ici : il est revenu en jeu
+avant de sortir pour de bon.
 
 **Le conseil, lui, ne gagne pas de terrain** : il fait sortir
-{{ s.sorties.par_decennie[2].conseil }} % des aventuriers dans les années 2020,
-contre {{ s.sorties.par_decennie[0].conseil }} % dans les années 2000. La place
+{{ s.sorties.par_decennie[2].conseil }} % des aventuriers dans les années 2020,
+contre {{ s.sorties.par_decennie[0].conseil }} % dans les années 2000. La place
 que laissent les abandons ne lui revient pas. Ce qui monte, ce sont les
 **épreuves éliminatoires**, où le dernier quitte le jeu sans que personne ait
-voté : {{ s.sorties.par_decennie[0].epreuve }} % des sorties dans les années
-2000, {{ s.sorties.par_decennie[2].epreuve }} % dans les années 2020.
+voté : {{ s.sorties.par_decennie[0].epreuve }} % des sorties dans les années
+2000, {{ s.sorties.par_decennie[2].epreuve }} % dans les années 2020.
 
 <p class="note"><strong>Cette page a longtemps écrit l’inverse.</strong>
 Jusqu’au 21 octobre 2026, elle concluait que le conseil gagnait du terrain
-(63,3 % des sorties dans les années 2000, 67 % dans les années 2020) et que,
+(63,3 % des sorties dans les années 2000, 67 % dans les années 2020) et que,
 moins on abandonnait, plus on était éliminé par les autres. Vingt-trois
 sorties par épreuve éliminatoire y étaient comptées comme des éliminations
 au conseil, et quinze datent des années 2020. Rendues à leur nature, elles
@@ -69,7 +73,7 @@ renversent la conclusion.</p>
 
 Une courbe de survie dit combien il en reste. Celle-ci dit tout autre chose :
 **parmi ceux qui sont encore en jeu, quelle part s’en va maintenant.** C’est ce
-que les statisticiens appellent un taux de hasard, et c’est la seule forme qui
+que les statisticiens appellent un taux de risque instantané, et c’est la seule forme qui
 montre que le risque, lui, monte à mesure que le camp se vide — et
 [l’équilibre]({{ '/statistiques/equilibre/' | relative_url }}) montre que cette
 montée est d’abord arithmétique.
@@ -81,8 +85,8 @@ l’aventure à ce moment-là, par tranche de dix pour cent de la saison. La fin
 est exclue : tout le monde en sort.</p>
 
 {% assign q = site.data.stats.risque %}
-Le risque part de **{{ q.tranches[1].risque }} %** entre 10 et 20 % de la
-saison et atteint **{{ q.tranches[9].risque }} %** dans le dernier dixième. Tenir n’allège
+Le risque part de **{{ q.tranches[1].risque }} %** entre 10 et 20 % de la
+saison et atteint **{{ q.tranches[9].risque }} %** dans le dernier dixième. Tenir n’allège
 donc rien : à mesure que le camp se vide, chaque conseil emporte une part plus
 grande de ceux qui restent. Le calcul porte sur {{ q.effectif }} participations
 aux saisons classiques.
@@ -105,7 +109,7 @@ départs). Hors finale, c’est en tout début de saison qu’on sort le plus.
 <thead><tr><th>Motif</th><th class="nombre">Aventuriers</th><th class="nombre">Part</th></tr></thead>
 <tbody>
 {% for x in s.sorties.repartition %}
-<tr><td>{{ x.libelle }}</td><td class="nombre">{{ x.effectif }}</td><td class="nombre">{{ x.part }} %</td></tr>
+<tr><td>{{ x.libelle }}</td><td class="nombre">{{ x.effectif }}</td><td class="nombre">{{ x.part }} %</td></tr>
 {% endfor %}
 </tbody>
 </table>

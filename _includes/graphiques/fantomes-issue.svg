@@ -2,7 +2,7 @@
 <figcaption class="figure-titre" aria-hidden="true">Ce que devient un aventurier que personne ne vise</figcaption>
 <svg class="graphique surbrillance barres-ce-que-devient-un-aventurier-que-personne-ne" viewBox="0 0 680 544" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Ce que devient un aventurier que personne ne vise">
   <title>Ce que devient un aventurier que personne ne vise</title>
-  <desc>Sort final des aventuriers n’ayant reçu aucune voix, comparé à ceux qui ont traversé autant de conseils qu’eux — et non à l’ensemble, qui mélangerait le fait de n’être pas visé et celui d’aller loin.</desc>
+  <desc>Sort final des aventuriers n’ayant reçu aucune voix, comparé à ceux qui ont traversé autant de conseils qu’eux sans en sortir — un fantôme ne peut pas sortir au conseil, puisque personne n’écrit son nom.</desc>
   <style>.barres-ce-que-devient-un-aventurier-que-personne-ne .s{transition:opacity .12s ease}.barres-ce-que-devient-un-aventurier-que-personne-ne:has(.marque:not(.repere):hover) .s{opacity:.15}.barres-ce-que-devient-un-aventurier-que-personne-ne:has(.marque.s0:hover) .s.s0{opacity:1}.barres-ce-que-devient-un-aventurier-que-personne-ne:has(.marque.s1:hover) .s.s1{opacity:1}</style>
   <line x1="311.0" y1="36" x2="311.0" y2="520" stroke="var(--grille)" stroke-width="1"/>
   <line x1="412.0" y1="36" x2="412.0" y2="520" stroke="var(--grille)" stroke-width="1"/>
@@ -11,52 +11,52 @@
   <rect x="210" y="12" width="11" height="11" rx="3" fill="var(--serie-1)"/>
   <text x="227.0" y="18.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">Les « fantômes »</text>
   <rect x="351.2" y="12" width="11" height="11" rx="3" fill="var(--serie-2)"/>
-  <text x="368.2" y="18.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">Ceux qui ont tenu autant</text>
+  <text x="368.2" y="18.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12">Tenu autant, sorti hors conseil</text>
   <text x="200.0" y="65.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Abandon médical</text>
-  <g class="marque s s0"><title>14 des 63 fantômes, soit 22,2 %</title><rect x="210" y="44.0" width="404.0" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <g class="s s0"><text x="621.0" y="54.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">22,2 %</text></g>
-  <g class="marque s s1"><title>5 % des 479 aventuriers ayant traversé autant de conseils</title><rect x="210" y="66.0" width="91.0" height="20.0" rx="3" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="1"/></g>
-  <g class="s s1"><text x="308.0" y="76.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">5 %</text></g>
+  <g class="marque s s0"><title>14 des 63 fantômes, soit 22,2 %</title><rect x="210" y="44.0" width="404.0" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="621.0" y="54.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">22,2 %</text></g>
+  <g class="marque s s1"><title>10,2 % des 236 aventuriers ayant traversé autant de conseils sans sortir au conseil</title><rect x="210" y="66.0" width="185.6" height="20.0" rx="3" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="402.6" y="76.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">10,2 %</text></g>
   <text x="200.0" y="119.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Vainqueur</text>
-  <g class="marque s s0"><title>11 des 63 fantômes, soit 17,5 %</title><rect x="210" y="98.0" width="318.5" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <g class="s s0"><text x="535.5" y="108.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">17,5 %</text></g>
-  <g class="marque s s1"><title>7,5 % des 479 aventuriers ayant traversé autant de conseils</title><rect x="210" y="120.0" width="136.5" height="20.0" rx="3" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="1"/></g>
-  <g class="s s1"><text x="353.5" y="130.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">7,5 %</text></g>
+  <g class="marque s s0"><title>10 des 63 fantômes, soit 15,9 %</title><rect x="210" y="98.0" width="289.4" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="506.4" y="108.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">15,9 %</text></g>
+  <g class="marque s s1"><title>14,8 % des 236 aventuriers ayant traversé autant de conseils sans sortir au conseil</title><rect x="210" y="120.0" width="269.3" height="20.0" rx="3" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="486.3" y="130.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">14,8 %</text></g>
   <text x="200.0" y="173.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Éliminé aux ambassadeurs</text>
-  <g class="marque s s0"><title>9 des 63 fantômes, soit 14,3 %</title><rect x="210" y="152.0" width="260.2" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <g class="s s0"><text x="477.2" y="162.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">14,3 %</text></g>
-  <g class="marque s s1"><title>4 % des 479 aventuriers ayant traversé autant de conseils</title><rect x="210" y="174.0" width="72.8" height="20.0" rx="3" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="1"/></g>
-  <g class="s s1"><text x="289.8" y="184.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">4 %</text></g>
+  <g class="marque s s0"><title>9 des 63 fantômes, soit 14,3 %</title><rect x="210" y="152.0" width="260.2" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="477.2" y="162.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">14,3 %</text></g>
+  <g class="marque s s1"><title>8,1 % des 236 aventuriers ayant traversé autant de conseils sans sortir au conseil</title><rect x="210" y="174.0" width="147.4" height="20.0" rx="3" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="364.4" y="184.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">8,1 %</text></g>
   <text x="200.0" y="227.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Éliminé à une épreuve</text>
-  <g class="marque s s0"><title>8 des 63 fantômes, soit 12,7 %</title><rect x="210" y="206.0" width="231.1" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <g class="s s0"><text x="448.1" y="216.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">12,7 %</text></g>
-  <g class="marque s s1"><title>5,6 % des 479 aventuriers ayant traversé autant de conseils</title><rect x="210" y="228.0" width="101.9" height="20.0" rx="3" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="1"/></g>
-  <g class="s s1"><text x="318.9" y="238.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">5,6 %</text></g>
-  <text x="200.0" y="281.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Éliminé à l’orientation</text>
-  <g class="marque s s0"><title>6 des 63 fantômes, soit 9,5 %</title><rect x="210" y="260.0" width="172.9" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <g class="s s0"><text x="389.9" y="270.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">9,5 %</text></g>
-  <g class="marque s s1"><title>8,8 % des 479 aventuriers ayant traversé autant de conseils</title><rect x="210" y="282.0" width="160.1" height="20.0" rx="3" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="1"/></g>
-  <g class="s s1"><text x="377.1" y="292.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">8,8 %</text></g>
-  <text x="200.0" y="335.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Finaliste</text>
-  <g class="marque s s0"><title>5 des 63 fantômes, soit 7,9 %</title><rect x="210" y="314.0" width="143.8" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <g class="s s0"><text x="360.8" y="324.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">7,9 %</text></g>
-  <g class="marque s s1"><title>6,5 % des 479 aventuriers ayant traversé autant de conseils</title><rect x="210" y="336.0" width="118.3" height="20.0" rx="3" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="1"/></g>
-  <g class="s s1"><text x="335.3" y="346.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">6,5 %</text></g>
+  <g class="marque s s0"><title>8 des 63 fantômes, soit 12,7 %</title><rect x="210" y="206.0" width="231.1" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="448.1" y="216.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">12,7 %</text></g>
+  <g class="marque s s1"><title>11,4 % des 236 aventuriers ayant traversé autant de conseils sans sortir au conseil</title><rect x="210" y="228.0" width="207.5" height="20.0" rx="3" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="424.5" y="238.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">11,4 %</text></g>
+  <text x="200.0" y="281.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Finaliste</text>
+  <g class="marque s s0"><title>6 des 63 fantômes, soit 9,5 %</title><rect x="210" y="260.0" width="172.9" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="389.9" y="270.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">9,5 %</text></g>
+  <g class="marque s s1"><title>13,6 % des 236 aventuriers ayant traversé autant de conseils sans sortir au conseil</title><rect x="210" y="282.0" width="247.5" height="20.0" rx="3" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="464.5" y="292.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">13,6 %</text></g>
+  <text x="200.0" y="335.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Éliminé à l’orientation</text>
+  <g class="marque s s0"><title>6 des 63 fantômes, soit 9,5 %</title><rect x="210" y="314.0" width="172.9" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="389.9" y="324.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">9,5 %</text></g>
+  <g class="marque s s1"><title>17,8 % des 236 aventuriers ayant traversé autant de conseils sans sortir au conseil</title><rect x="210" y="336.0" width="323.9" height="20.0" rx="3" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="540.9" y="346.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">17,8 %</text></g>
   <text x="200.0" y="389.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11">Éliminé par les destins liés</text>
-  <g class="marque s s0"><title>5 des 63 fantômes, soit 7,9 %</title><rect x="210" y="368.0" width="143.8" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <g class="s s0"><text x="360.8" y="378.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">7,9 %</text></g>
-  <g class="marque s s1"><title>2,9 % des 479 aventuriers ayant traversé autant de conseils</title><rect x="210" y="390.0" width="52.8" height="20.0" rx="3" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="1"/></g>
-  <g class="s s1"><text x="269.8" y="400.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">2,9 %</text></g>
+  <g class="marque s s0"><title>5 des 63 fantômes, soit 7,9 %</title><rect x="210" y="368.0" width="143.8" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="360.8" y="378.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">7,9 %</text></g>
+  <g class="marque s s1"><title>5,9 % des 236 aventuriers ayant traversé autant de conseils sans sortir au conseil</title><rect x="210" y="390.0" width="107.4" height="20.0" rx="3" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="324.4" y="400.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">5,9 %</text></g>
   <text x="200.0" y="443.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Abandon volontaire</text>
-  <g class="marque s s0"><title>4 des 63 fantômes, soit 6,3 %</title><rect x="210" y="422.0" width="114.6" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <g class="s s0"><text x="331.6" y="432.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">6,3 %</text></g>
-  <g class="marque s s1"><title>1,7 % des 479 aventuriers ayant traversé autant de conseils</title><rect x="210" y="444.0" width="30.9" height="20.0" rx="3" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="1"/></g>
-  <g class="s s1"><text x="247.9" y="454.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">1,7 %</text></g>
-  <text x="200.0" y="497.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Disqualifié</text>
-  <g class="marque s s0"><title>1 des 63 fantômes, soit 1,6 %</title><rect x="210" y="476.0" width="29.1" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
-  <g class="s s0"><text x="246.1" y="486.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">1,6 %</text></g>
-  <g class="marque s s1"><title>0,2 % des 479 aventuriers ayant traversé autant de conseils</title><rect x="210" y="498.0" width="3.6" height="20.0" rx="3" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="1"/></g>
-  <g class="s s1"><text x="220.6" y="508.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">0,2 %</text></g>
+  <g class="marque s s0"><title>4 des 63 fantômes, soit 6,3 %</title><rect x="210" y="422.0" width="114.6" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="331.6" y="432.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">6,3 %</text></g>
+  <g class="marque s s1"><title>3,4 % des 236 aventuriers ayant traversé autant de conseils sans sortir au conseil</title><rect x="210" y="444.0" width="61.9" height="20.0" rx="3" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="278.9" y="454.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">3,4 %</text></g>
+  <text x="200.0" y="497.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="13">Exclu du jeu</text>
+  <g class="marque s s0"><title>1 des 63 fantômes, soit 1,6 %</title><rect x="210" y="476.0" width="29.1" height="20.0" rx="3" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s0"><text x="246.1" y="486.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">1,6 %</text></g>
+  <g class="marque s s1"><title>0,4 % des 236 aventuriers ayant traversé autant de conseils sans sortir au conseil</title><rect x="210" y="498.0" width="7.3" height="20.0" rx="3" fill="var(--serie-2)" stroke="var(--surface)" stroke-width="1"/></g>
+  <g class="s s1"><text x="224.3" y="508.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">0,4 %</text></g>
   <line x1="210" y1="36" x2="210" y2="520" stroke="var(--axe)" stroke-width="1"/>
 </svg>
 </figure>

@@ -9,7 +9,7 @@ chapeau: >-
 
 {% assign s = site.data.stats %}
 
-Les {{ s.general.participations }} aventuriers déclarent
+Les {{ s.general.participations }} participations déclarent
 {{ s.general.metiers_distincts }} métiers différents. Regroupés en familles, ils dessinent un casting — et
 permettent de répondre à une question simple : **quel métier mène le plus
 loin ?**
@@ -19,7 +19,7 @@ loin ?**
 {% include graphiques/metiers-casting.svg %}
 
 L’encadrement domine largement le casting : cadres, dirigeants, gérants,
-ingénieurs et consultants forment à eux seuls {{ s.metiers[0].part_du_casting }} % du casting. Viennent
+ingénieurs et consultants forment à eux seuls {{ s.metiers[0].part_du_casting }} % du casting. Viennent
 ensuite le commerce, puis le sport et le coaching.
 
 ## Qui arrive
@@ -32,9 +32,9 @@ ici : en dessous, un seul finaliste suffirait à faire bouger le taux de dix
 points.</p>
 
 Le renversement est net. **L’encadrement, première famille du casting, est la
-dernière en taux d’accès à la finale** : {{ s.metiers[0].taux_finale }} % contre
-{{ s.metiers[1].taux_finale }} % pour le commerce et
-{{ s.metiers[2].taux_finale }} % pour le sport. Être nombreux au départ ne
+dernière en taux d’accès à la finale** : {{ s.metiers[0].taux_finale }} % contre
+{{ s.metiers[1].taux_finale }} % pour le commerce et
+{{ s.metiers[2].taux_finale }} % pour le sport. Être nombreux au départ ne
 protège de rien.
 
 ## Le tableau complet
@@ -51,10 +51,10 @@ protège de rien.
 <tr>
   <td>{{ m.libelle }}</td>
   <td class="nombre">{{ m.effectif }}</td>
-  <td class="nombre">{{ m.part_du_casting }} %</td>
-  <td class="nombre">{{ m.survie_moyenne }} %</td>
+  <td class="nombre">{{ m.part_du_casting }} %</td>
+  <td class="nombre">{{ m.survie_moyenne }} %</td>
   <td class="nombre">{{ m.finales }}</td>
-  <td class="nombre">{{ m.taux_finale }} %</td>
+  <td class="nombre">{{ m.taux_finale }} %</td>
   <td class="nombre">{{ m.victoires }}</td>
 </tr>
 {% endfor %}
@@ -68,9 +68,11 @@ rejoint le sport et non l’enseignement, « maître-nageur » rejoint l’a
 secours et non le sport : l’ordre des règles tranche ces cas, et il est
 documenté. Voir les <a href="{{ '/sources/' | relative_url }}">sources</a>.</p>
 
-<p class="note">Ce renversement tient-il une fois l’âge, le sexe et la saison
-tenus constants ? Oui : <a href="{{ '/statistiques/equilibre/' | relative_url }}">
-un modèle de durée</a> donne aux métiers d’encadrement un rapport de risque
-d’élimination de
 {% assign cc = site.data.stats.modeles.equilibre.cox.coefficients | where: "variable", "Métier — Encadrement et professions intellectuelles" | first %}
-{{ cc.rapport }}, intervalle {{ cc.bas }} à {{ cc.haut }}.</p>
+<p class="note">Ce renversement tient-il une fois l’âge, le sexe et la saison
+tenus constants ? {% if cc.retenu %}Oui{% else %}Pas démontrablement{% endif %} :
+<a href="{{ '/statistiques/equilibre/' | relative_url }}">un modèle de durée</a>
+donne aux métiers d’encadrement un rapport de risque d’élimination de
+{{ cc.rapport }}, intervalle {{ cc.bas }} à {{ cc.haut }}, p ajustée
+{{ cc.p_ajustee }}{% unless cc.retenu %} — l’écart va dans le même sens, mais
+il ne passe pas la correction pour tests multiples{% endunless %}.</p>

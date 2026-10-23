@@ -13,8 +13,11 @@ L'ISSUE est deduite, pas recopiee, et selon une regle simple :
   joue_pour_rien       joue, et il n'annule aucune voix -- la peur a parle ;
   elimine_avec_collier trouve, jamais joue, et son detenteur est sorti au
                        conseil : le pire scenario du jeu ;
-  garde_sans_usage     trouve, jamais joue, mais son detenteur n'en avait pas
-                       besoin ;
+  garde_sans_usage     trouve, jamais joue, et son detenteur est alle en
+                       finale sans en avoir eu besoin ;
+  sorti_sans_pouvoir_le_jouer
+                       trouve, jamais joue, et son detenteur est sorti hors
+                       conseil (ambassadeurs, epreuve, duel, abandon) ;
   non_decouvert        cache, jamais trouve par personne.
 
     tools/atelier python3 tools/extraction/construire_colliers.py --ecrire
@@ -45,7 +48,8 @@ ENTETE = """# ATTENTION : fichier genere. Ne pas editer a la main.
 # tools/extraction/construire_colliers.py.
 #
 # `issue` est DEDUITE : annulation_efficace, joue_pour_rien,
-# elimine_avec_collier, garde_sans_usage, non_decouvert.
+# elimine_avec_collier, garde_sans_usage, sorti_sans_pouvoir_le_jouer,
+# non_decouvert.
 #
 # Cette couche ne couvre QUE les colliers d'immunite. Les autres objets --
 # armes secretes (2021), totem maudit (2022), talisman du feu sacre (2023) --
@@ -155,10 +159,20 @@ def construire(saisons, parts, rapport):
                 # au conseil avec le collier en poche ?
                 sortis = [fiches.get((sid, dernier["id"]))] if dernier and dernier["id"] else []
                 sortis = [x for x in sortis if x]
-                if sortis and any(x.get("sort") == "elimine_conseil" for x in sortis):
+                # Le binome emporte par les destins lies pouvait etre protege
+                # par le collier (Wikipedia : « son binome est egalement
+                # immunise ») : c'est une sortie au conseil. Une sortie aux
+                # ambassadeurs, a une epreuve, en duel ou sur abandon ne laisse
+                # aucun conseil ou jouer le collier : ce n'est pas l'avoir
+                # « garde sans en avoir besoin » (Jonathan, Emmanuelle,
+                # Delphine, Maxime).
+                fins = {x.get("sort") for x in sortis}
+                if fins & {"elimine_conseil", "elimine_destins_lies"}:
                     issue = "elimine_avec_collier"
-                elif sortis:
+                elif fins & {"vainqueur", "finaliste"}:
                     issue = "garde_sans_usage"
+                elif sortis:
+                    issue = "sorti_sans_pouvoir_le_jouer"
 
             colliers.append({
                 "saison": sid,

@@ -154,8 +154,12 @@ def verifier_saisons(saisons, c):
                 c.erreur(f"{sid} : couleur de tribu inconnue « {t.get('couleur')} » "
                          f"pour « {t.get('nom')} »")
 
-        if not s.get("en_cours") and not s.get("vainqueurs"):
+        # Une saison achevee a un vainqueur -- sauf si elle DIT pourquoi elle
+        # n'en a pas (La Legende : votes du jury invalides).
+        if not s.get("en_cours") and not s.get("vainqueurs") and not s.get("sans_vainqueur"):
             c.erreur(f"{sid} : aucun vainqueur declare")
+        if s.get("sans_vainqueur") and s.get("vainqueurs"):
+            c.erreur(f"{sid} : « sans_vainqueur » mais des vainqueurs declares")
 
         d = s.get("diffusion")
         if isinstance(d, dict) and d.get("debut") and d.get("fin"):
@@ -593,7 +597,7 @@ def verifier_immunite_individuelle(conseils, epreuves, c):
 
 
 ISSUES_VALIDES = {"annulation_efficace", "joue_pour_rien", "elimine_avec_collier",
-                  "garde_sans_usage", "non_decouvert"}
+                  "garde_sans_usage", "sorti_sans_pouvoir_le_jouer", "non_decouvert"}
 STATUTS_VALIDES = {"utilise", "non_utilise", "non_decouvert", "perdu"}
 
 

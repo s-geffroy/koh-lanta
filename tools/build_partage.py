@@ -176,7 +176,8 @@ def cartes_des_saisons(fiches, rapport):
         if s.get("conseils"):
             morceaux.append(compte(s['conseils'], "conseil", "conseils"))
         noms = [v["nom"] for v in (s.get("vainqueurs") or [])]
-        note = f"Victoire {de_(' et '.join(noms))}" if noms else None
+        note = (f"Victoire {de_(' et '.join(noms))}" if noms
+                else "Pas de vainqueur" if s.get("sans_vainqueur") else None)
         oeil = f"KOH-LANTA {s['annee']}"
         carte(os.path.join(DOSSIER, "saisons", cid + ".png"),
               s["titre"], oeil, "  ·  ".join(morceaux), note, rapport)
@@ -187,7 +188,7 @@ def cartes_des_epreuves(epreuves, rapport):
         morceaux = [f"{e['apparitions']} fois courue",
                     compte(len(e['editions']), "édition", "éditions")]
         r = e.get("record")
-        note = (f"Record : {r['nom']}, {r['victoires']} victoires"
+        note = (f"Record : {r['nom']}, {r['victoires']} {e.get('mot_pluriel') or 'victoires'}"
                 if r and r["victoires"] > 1 else None)
         carte(os.path.join(DOSSIER, "epreuves", cid + ".png"),
               e["nom"], "LES ÉPREUVES", "  ·  ".join(morceaux), note, rapport)

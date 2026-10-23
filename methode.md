@@ -32,7 +32,7 @@ d’année reste un écart d’un quart d’année. Chaque test publie donc ce q
 observe, ce que le hasard donnerait, et l’écart entre les deux.
 
 **Jamais de taille d’effet sans intervalle.** Un coefficient seul laisse croire à
-une précision qui n’existe pas. Les intervalles à 95 % sont partout, et
+une précision qui n’existe pas. Les intervalles à 95 % sont partout, et
 plusieurs résultats de ce site consistent précisément en un intervalle qui
 traverse la valeur neutre.
 
@@ -48,7 +48,8 @@ correction, et des conclusions se sont défaites quand ils l’ont été.
 
 ## Pourquoi corriger, et comment
 
-{{ m.nb_tests }} tests sont menés. Au seuil habituel de 5 %, on attend
+{{ m.famille_corrigee }} p-values sont publiées — {{ m.nb_tests }} tests et leurs
+coefficients. Au seuil habituel de 5 %, on attendrait
 {{ m.faux_positifs_attendus }} « résultats » nés du seul hasard. La procédure de **Benjamini-Hochberg**
 ajuste les p-values pour borner la part de fausses découvertes parmi celles
 qu’on retient. Les deux valeurs sont publiées : brute et ajustée.
@@ -68,7 +69,7 @@ correction.
 <tr>
   <td><b>{{ t.libelle }}</b></td>
   <td>{{ t.question }}</td>
-  <td class="nombre">{{ t.observe }} {{ t.unite }}</td>
+  <td class="nombre">{{ t.observe }} {{ t.unite_accordee }}</td>
   <td class="nombre">{{ t.attendu }}</td>
   <td class="nombre" data-val="{{ t.ecart_types }}">{{ t.ecart_types }}</td>
   <td class="nombre">{{ t.p }}</td>
@@ -86,7 +87,7 @@ correction.
 
 Utilisé pour les questions de composition du casting. On rebat les
 aventuriers au hasard entre les saisons, en gardant la taille de chaque casting,
-et on recommence **{{ m.permutations }} fois**. Une exception : la parité, qui
+et on recommence **{{ m.permutations_texte }} fois**. Une exception : la parité, qui
 se compare à un tirage à pile ou face pour chaque place du casting. La comparaison ne se fait donc
 pas à la population française, mais **au même vivier, redistribué**. Un écart
 qui subsiste est un écart que le hasard ne produit pas.
@@ -103,7 +104,7 @@ disjonctif et le décompose, ce qui donne des **axes latents** : les directions
 selon lesquelles les profils se séparent réellement, qu’aucune colonne ne porte.
 Une classification automatique tourne ensuite sur ces axes ; le nombre de
 groupes est celui qui maximise l’indice de silhouette, à condition qu’aucun
-groupe ne pèse moins de 2 % du casting.
+groupe ne pèse moins de 2 % du casting.
 
 **La tribu initiale en est exclue**, et cette exclusion est un correctif : tant qu’elle y
 figurait, le test du « mélange d’archétypes » sortait à 7,95 écarts-types. Les
@@ -117,13 +118,13 @@ tribus, pas le casting. Sans la tribu initiale, il tombe à
 
 Un gagnant parmi K. Chaque aventurier reçoit une force ; la probabilité qu’il
 gagne vaut sa force divisée par la somme des forces présentes. Ajusté par
-l’algorithme MM, avec une loi a priori Gamma — sans elle, un joueur invaincu
+l’algorithme MM, avec une loi <em>a priori</em> gamma — sans elle, un joueur invaincu
 partirait à l’infini et un joueur sans victoire n’aurait pas d’estimation finie.
 
 Le plateau de chaque épreuve est **reconstruit** : `epreuves.yml` ne contient que
 les vainqueurs. La reconstruction se contrôle elle-même — le vainqueur doit
 figurer dans son propre plateau — et son taux d’échec,
-**{{ m.force.taux_echec_reconstruction }} %**, est publié.
+**{{ m.force.taux_echec_reconstruction }} %**, est publié.
 
 ### Le modèle de durée de Cox
 
@@ -169,7 +170,7 @@ contre l’autre. Ce qui disparaît est le seul lien d’un conseil au suivant. 
 ce qui survit à ce brassage est donc de la coordination qui traverse le temps.
 
 Ce brassage porte une contrainte qui n’a rien d’un détail : **un votant ne peut
-pas recevoir son propre nom**. Sans elle, 12,5 % des bulletins tirés étaient des
+pas recevoir son propre nom**. Sans elle, 12,5 % des bulletins tirés étaient des
 couples impossibles — et comme un tel couple partage forcément le sexe, le
 métier et la tribu initiale de son auteur, l’attendu s’en trouvait gonflé et trois
 résultats spectaculaires sortaient de nulle part. Ils se sont évanouis une fois
@@ -316,7 +317,7 @@ l’accord entre facettes qu’on croyait mesurer n’était que cet artefact, c
 
 Le contrôle qui l’attrape est simple, et il vaut pour toute couche datée :
 **retirer le dernier événement de chaque trajectoire, et regarder ce qu’il
-reste de la mesure**. S’il ne reste rien — un taux de 100 % pour tout le
+reste de la mesure**. S’il ne reste rien — un taux de 100 % pour tout le
 monde — la mesure ne mesurait que lui.
 
 ### Tirer les pondérations plutôt que d’en défendre une
@@ -400,7 +401,7 @@ qu’un jeu de données de cette taille peut encore distinguer du hasard.
 </table>
 </div>
 
-<p class="note">Lecture : à 80 % de puissance et au seuil habituel de 5 %. Un
+<p class="note">Lecture : à 80 % de puissance et au seuil habituel de 5 %. Un
 effet plus petit que la valeur indiquée existe peut-être — ces données ne
 sauraient pas le voir.</p>
 
@@ -426,18 +427,22 @@ information que **les sources ne contiennent pas**.
 **Le nombre de tests, lui, n’est pas la limite.** On pourrait le croire :
 {{ site.data.stats.modeles.registre | size }} tests déclarés, cela commence à
 compter. Vérification faite à chaque construction, en ajoutant vingt tests sans
-résultat au registre : **{{ m.retenus_avec_vingt_nuls }} des
-{{ site.data.stats.modeles.nb_retenus }} résultats retenus tiennent** ;
-{{ m.tombes_avec_vingt_nuls_texte }}. Les autres sont trop nets pour cela. Ce n’est donc pas une raison de
+résultat à la famille corrigée ({{ m.famille_corrigee }} p-values, coefficients
+compris) : **{{ m.retenus_avec_vingt_nuls }} des
+{{ site.data.stats.modeles.nb_retenus }} résultats retenus tiennent** ; {{ m.tombes_avec_vingt_nuls_texte }}. Les autres sont trop nets pour cela. Ce n’est donc pas une raison de
 s’arrêter, et ce serait malhonnête de le prétendre.
 
-**Le vrai risque n’est pas le nombre de tests, c’est le modèle nul.** Deux fois
-sur ce site, un résultat spectaculaire s’est révélé fabriqué par la manière de
-tirer au sort : le vote homophile, où le modèle nul laissait un aventurier
-recevoir son propre nom ; le mélange d’archétypes, où la tribu initiale — assignée par
-la production, et différente d’une saison à l’autre — rendait le résultat vrai
-par construction. Les deux sont racontés là où ils sont tombés, et non effacés.
-Aucune correction pour tests multiples n’aurait attrapé ni l’un ni l’autre.
+**Le vrai risque n’est pas le nombre de tests, c’est le modèle nul.** Plusieurs
+fois sur ce site, un résultat s’est révélé fabriqué par la manière de tirer au
+sort : le vote homophile, où le modèle nul laissait un aventurier recevoir son
+propre nom ; le mélange d’archétypes, où la tribu initiale — assignée par la
+production, et différente d’une saison à l’autre — rendait le résultat vrai par
+construction ; la réunification, où l’éliminé était tiré parmi tous les joueurs
+encore en jeu, l’autre tribu et les immunisés compris ; l’ambassade, où le
+hasard ignorait la règle du tirage au sort entre ambassadeurs et où dix mille
+tirages laissaient la graine décider du seuil. Tous sont racontés là où ils
+sont tombés, et non effacés. Aucune correction pour tests multiples n’aurait
+attrapé l’un d’eux.
 
 **Le dernier champ inexploité l’a été.** L’origine géographique était la seule
 piste de taille qui restait ; elle a donné
@@ -476,11 +481,11 @@ qu’elle existe. Le wiki catalogue
 {{ site.data.epreuves_nommees.nb_epreuves }} épreuves récurrentes avec leur
 type. Elle reste inexploitable, mais pour une raison précise et mesurée : le
 catalogue ne donne pas l’épisode, si bien que
-{{ site.data.epreuves_nommees.raccord.part_raccordee }} % seulement des épreuves
+{{ site.data.epreuves_nommees.raccord.part_raccordee }} % seulement des épreuves
 relevées peuvent recevoir une nature — et ces
-{{ site.data.epreuves_nommees.raccord.part_raccordee }} % sont exactement les épreuves
+{{ site.data.epreuves_nommees.raccord.part_raccordee }} % sont exactement les épreuves
 gagnées par les joueurs les moins dominants.
-[Les épreuves]({{ '/statistiques/epreuves/' | relative_url }}) montre le
+La page [Les épreuves]({{ '/statistiques/epreuves/' | relative_url }}) montre le
 décompte. **C’est la troisième fois qu’une limite énoncée sans vérification se
 révèle fausse au moins à moitié.**
 
@@ -497,13 +502,16 @@ concluant est publié comme non concluant, jamais retiré.
 **Aucune donnée de montage.** Le temps d’antenne, la construction des
 personnages, l’ordre dans lequel les bulletins sont dépouillés : rien de tout
 cela n’existe dans ce jeu de données, et rien n’en sera dit. La nature des
-épreuves existe, mais ne se raccorde pas ; les **chiffres de diffusion**
+épreuves existe, mais ne se raccorde qu’à une petite part des épreuves
+relevées ; les **chiffres de diffusion**
 existent — cette page a longtemps prétendu le contraire — et se raccordent,
 mais ils s’arrêtent à l’audience « veille » et ignorent le rattrapage.
 
 **Une corrélation n’est pas une intention.** C’est la limite qui traverse tout ce
-travail. Une parité tenue au candidat près peut venir d’une consigne de casting
-comme d’un vivier de candidatures déjà équilibré. Ces données mesurent le
+travail. La part totale de femmes peut venir d’une consigne de casting comme d’un vivier
+de candidatures déjà équilibré — seule la parité tenue saison par saison
+exclut le tirage dans un vivier, parce qu’un tel tirage aurait la dispersion
+du hasard. Ces données mesurent le
 **résultat** d’un processus de sélection ; elles n’observent pas le processus.
 Partout où deux explications tiennent également debout, les deux sont nommées et
 aucune n’est choisie.

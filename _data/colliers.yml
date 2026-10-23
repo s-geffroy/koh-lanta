@@ -5,7 +5,8 @@
 # tools/extraction/construire_colliers.py.
 #
 # `issue` est DEDUITE : annulation_efficace, joue_pour_rien,
-# elimine_avec_collier, garde_sans_usage, non_decouvert.
+# elimine_avec_collier, garde_sans_usage, sorti_sans_pouvoir_le_jouer,
+# non_decouvert.
 #
 # Cette couche ne couvre QUE les colliers d'immunite. Les autres objets --
 # armes secretes (2021), totem maudit (2022), talisman du feu sacre (2023) --
@@ -707,7 +708,7 @@
   detenteurs_suivants: []
   proteges: []
   statut: non_utilise
-  issue: garde_sans_usage
+  issue: sorti_sans_pouvoir_le_jouer
   jour_trouve: 4
   episode_utilisation: null
   jour_utilisation: null
@@ -780,7 +781,7 @@
   detenteurs_suivants: []
   proteges: []
   statut: non_utilise
-  issue: garde_sans_usage
+  issue: sorti_sans_pouvoir_le_jouer
   jour_trouve: 13
   episode_utilisation: null
   jour_utilisation: null
@@ -915,7 +916,7 @@
   detenteurs_suivants: []
   proteges: []
   statut: non_utilise
-  issue: garde_sans_usage
+  issue: sorti_sans_pouvoir_le_jouer
   jour_trouve: 12
   episode_utilisation: null
   jour_utilisation: null
@@ -1090,7 +1091,7 @@
   detenteurs_suivants: []
   proteges: []
   statut: non_utilise
-  issue: garde_sans_usage
+  issue: sorti_sans_pouvoir_le_jouer
   jour_trouve: 16
   episode_utilisation: null
   jour_utilisation: null
@@ -1254,7 +1255,7 @@
   detenteurs_suivants: []
   proteges: []
   statut: non_utilise
-  issue: garde_sans_usage
+  issue: sorti_sans_pouvoir_le_jouer
   jour_trouve: 1
   episode_utilisation: null
   jour_utilisation: null
@@ -1321,7 +1322,7 @@
     resolu: true
   proteges: []
   statut: non_utilise
-  issue: garde_sans_usage
+  issue: sorti_sans_pouvoir_le_jouer
   jour_trouve: 21
   episode_utilisation: null
   jour_utilisation: null

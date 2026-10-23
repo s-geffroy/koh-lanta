@@ -63,8 +63,7 @@ Ces pages ont aussi réglé un problème que les tables ne pouvaient pas voir.
   orthographes d’une même personne — et sur le wiki, deux titres qui **renvoient
   à la même page**. Deux identifiants dont la page a la même empreinte sont donc
   la même personne, et c’est la page qui dit lequel des deux noms est le bon.
-  Le nombre de personnes distinctes passe de 535 à
-  {{ site.data.stats.general.personnes }}.
+  Le nombre de personnes distinctes passe de 535 à {{ site.data.stats.general.personnes }}.
 
 Limite, et elle est réelle :
 {{ site.data.stats.completude.sans_fiche }} participations sur
@@ -161,9 +160,9 @@ d’orientation nomme ses participants, saison par saison, sans aucune date.
 
 <p class="note">Au moment de cette reprise, 50 étapes portaient un nom de
 tribu mêlé de dates, et 32 parcours contredisaient leur jour de sortie : il
-n’y en a plus. 49 parcours vides ont été complétés, souvent sans jours. Il
-reste 172 étapes sans jours et 4 parcours vides, ceux d’<em>All Stars</em>,
-saison en cours. Les étapes sans jours ne seront complétées que si une source
+n’y en a plus. 49 parcours vides ont été complétés, souvent sans jours. Les
+4 parcours vides d’<em>All Stars</em>, saison en cours, l’ont été depuis par le
+rafraîchissement de la saison. Il reste 172 étapes sans jours. Les étapes sans jours ne seront complétées que si une source
 les date.</p>
 
 ## La quatrième source : le wiki anglophone de *Survivor*, en témoin
@@ -182,8 +181,7 @@ Il sert à deux choses, depuis le 20 octobre 2026 :
   d’une épreuve. Ses pages par épisode, qui écrivent « Winners: » en toutes
   lettres, ont départagé plusieurs cas que rien d’autre ne réglait ;
 - **combler** les {{ site.data.stats.mots.saisons_source_unique }} saisons dont
-  aucune autre page ne donne les épreuves :
-  {{ site.data.stats.epreuves.saisons_source_unique_texte }}. Pour elles, il est
+  aucune autre page ne donne les épreuves : {{ site.data.stats.epreuves.saisons_source_unique_texte }}. Pour elles, il est
   la seule source, et le site le dit partout où cela compte ;
 - **compléter les parcours de tribu** restés vides : son tableau des candidats
   donne, pour chacun, la tribu de chaque phase du jeu.
@@ -234,7 +232,7 @@ appuyée sur une source de presse. Les articles de saison y ajoutent le détail
 
 Le contrôle est direct et il est publié : sur les {{ ac.saisons }} saisons où l’on
 a à la fois le détail et la moyenne annoncée, **{{ ac.concordantes }} concordent à
-0,5 % près**. Les autres — {{ ac.discordantes_texte }} — s’en écartent davantage,
+0,5 % près**. Les autres — {{ ac.discordantes_texte }} — s’en écartent davantage,
 et l’écart vient de la source, dont le tableau ne s’accorde pas avec sa propre
 ligne de synthèse. Rien n’est corrigé à la main.
 
@@ -252,7 +250,7 @@ Lire de la prose est faillible, et la seule réponse honnête est de mesurer.
 
 <div class="constat">
   <p><b>{{ ng.nommees }} ambassades sur {{ ng.ambassades }}</b> livrent leurs
-  noms — {{ ng.part_nommees }} %. Là où les deux sources les nomment, elles
+  noms — {{ ng.part_nommees }} %. Là où les deux sources les nomment, elles
   s’accordent {{ ng.sources_accord }} fois sur
   {{ site.data.stats.ambassades_sources_communes }}.</p>
 </div>
@@ -264,8 +262,9 @@ note annonce. Ce dernier contrôle écarte une saison où la note dit « deux
 ambassadeurs » avant d’ajouter une « ambassadrice secrète ».
 
 Et une divergence a été trouvée : sur <i>Les Reliques du destin</i>, Wikipédia
-compte Jade parmi les quatre ambassadeurs, Fandom compte Cynthia. Aucun des deux
-n’est retenu. Elle n’est apparue qu’après correction d’un motif de lecture trop
+compte Jade parmi les quatre ambassadeurs, Fandom compte Cynthia. La presse
+départage (Ozap, 14 avril 2026) : c’est la lecture de Wikipédia qui est
+retenue. La divergence n’est apparue qu’après correction d’un motif de lecture trop
 strict qui ne lisait qu’une des deux sources : **une comparaison ne vaut que si
 les deux côtés ont vraiment été lus**, et le premier chiffrage annonçait à tort
 zéro divergence.
@@ -289,7 +288,7 @@ Clarisse</em> ».
 <div class="constat">
   <p><b>{{ fc.vainqueur_des_poteaux_connu }} saisons sur
   {{ fc.saisons_au_format }}</b> livrent le vainqueur des poteaux —
-  {{ fc.part_poteaux }} %. Le choix du finaliste n’est explicitement énoncé que
+  {{ fc.part_poteaux }} %. Le choix du finaliste n’est explicitement énoncé que
   pour {{ fc.choix_atteste }} d’entre elles ; ailleurs, l’autre finaliste est
   déduit par soustraction et le champ le dit.</p>
 </div>
@@ -493,7 +492,7 @@ Quelques points ont demandé une décision explicite.
 les tables de candidats s’accorder exactement. Pour
 {{ site.data.stats.mots.durees_divergentes }} d’entre elles, ils divergent d’un jour. C’est alors le **jour attesté par les tables de candidats**
 qui est retenu — la sortie d’un finaliste est datée plus précisément qu’une
-durée de résumé — et la valeur annoncée est conservée à côté. Deux fois, ce
+durée de résumé — et la valeur annoncée est conservée à côté. Trois fois, ce
 jour attesté s’est révélé faux, et la règle a cédé : aux *Armes secrètes*, à
 *La Tribu maudite* et au *Choc des héros*, le tableau de saison Fandom est
 décalé d’un jour, contre la fiche des finalistes, les légendes de Wikipédia et
@@ -501,7 +500,8 @@ le wiki *Survivor*. Ces trois saisons durent 35, 41 et 20 jours.
 
 **Les homonymes.** Deux Léa en saison 25, deux Cécile en 26, deux Jérôme en 27 :
 ce sont bien des personnes différentes, et non des doublons. Elles sont
-distinguées par leur âge et leur métier, jamais devinées.
+distinguées par ce que la source en dit — sa note, son surlignage, la présence
+en jeu, la place dans le scrutin (voir plus haut) —, jamais devinées.
 
 **Les métiers.** Les {{ site.data.stats.general.metiers_distincts }} intitulés distincts sont regroupés en
 familles par une table de mots-clés, lue dans l’ordre : le premier poste dont un
@@ -583,7 +583,7 @@ légitime produisant, lui, des cellules identiques.
 **Le deuxième : une ligne par élimination prise pour un épisode.** Le tableau
 « Challenges » de Wikipédia en anglais n’a pas de colonne d’épisode : il a une
 **date de diffusion**, et une ligne par sortie. Le compteur implicite donnait
-donc vingt-et-un « épisodes » au *Cambodge*, qui en compte quatorze — et toutes
+donc vingt et un « épisodes » au *Cambodge*, qui en compte quatorze — et toutes
 ses épreuves individuelles se retrouvaient numérotées après la sortie de ceux
 qui les avaient gagnées. La date, elle, est recopiée sur chaque ligne d’un même
 soir : compter les dates **distinctes** rend le vrai numéro, sans rien deviner.
@@ -830,7 +830,7 @@ ce soir-là n’est pas un soir comme les autres.
 à un conseil dépouillé, **{{ ar.resistance.dont_le_soir_du_depart }} sont le
 conseil qui l’élimine** — un échec que personne ne peut éviter,
 compté comme un échec. Retirez-les et il ne reste que des survies : le taux
-monte à **100 % pour tout le monde**. La facette n’avait pas d’autre signal que
+monte à **100 % pour tout le monde**. La facette n’avait pas d’autre signal que
 cet échec obligatoire. Pire pour ceux qu’on observe peu : sur les
 {{ ar.resistance.une_seule_occasion }} participations à une seule occasion
 mesurée, **{{ ar.resistance.une_seule_et_fatale }} n’ont pour toute observation
@@ -840,11 +840,11 @@ a été **supprimée** — on ne répare pas une mesure qui ne mesure rien.
 **La lecture — corrigée.** On ne vote pas pour soi-même : le bulletin qu’un
 aventurier émet le soir de son départ est faux par construction.
 **{{ ar.lecture.justes_du_partant }} juste sur {{ ar.lecture.bulletins_du_partant }}.**
-Les autres soirs, la justesse est de **{{ ar.lecture.taux_des_autres_soirs }} %**,
-contre {{ ar.lecture.taux_tout_compris }} % si l’on garde tout. Ce bulletin-là est désormais écarté.
+Les autres soirs, la justesse est de **{{ ar.lecture.taux_des_autres_soirs }} %**,
+contre {{ ar.lecture.taux_tout_compris }} % si l’on garde tout. Ce bulletin-là est désormais écarté.
 
 **La discrétion — corrigée.** Les voix qui vous éliminent pèsent
-**{{ ar.discretion.part }} %** de toutes les voix relevées, et elles séparent les
+**{{ ar.discretion.part }} %** de toutes les voix relevées, et elles séparent les
 *manières de sortir* bien plus que les joueurs : un éliminé au conseil en
 reçoit, par définition, bien plus qu’un vainqueur. Les compter revenait à redemander « a-t-il été éliminé au conseil ? »,
 ce que le parcours dit déjà. Le soir du départ en est écarté aussi.
@@ -885,7 +885,7 @@ Cette règle est juste pour une saison terminée. Elle est **fausse pour une
 saison en cours** : *All Stars* était figée à l’état du 27 août 2026, deux
 épisodes, alors que trois avaient été diffusés. Les deux récupérateurs prennent
 désormais une option explicite — `--rafraichir sp8` — et le rafraîchissement a
-livré les éliminations de Moussa et de **Naoil Tita**, l’un des trois
+livré les éliminations de Moussa et de **Naoil Tita**, l’une des trois
 anciens vainqueurs engagés.
 
 ### Trois fichiers de provenance fausse
@@ -911,7 +911,7 @@ française. Il a sonné trois fois.
   aujourd’hui <b>{{ site.data.croisement_votes.bulletins_communs }}</b>.
   <b>Une partie des bulletins croisés était une source comparée à elle-même</b>, et
   son accord parfait était acquis d’avance.</p>
-  <p>Le taux, lui, ne bouge pas : {{ site.data.croisement_votes.part_identiques }} %
+  <p>Le taux, lui, ne bouge pas : {{ site.data.croisement_votes.part_identiques }} %
   d’accord, {{ site.data.croisement_votes.divergents }} divergences. Ce qui
   était faux n’était pas le résultat, c’était la <em>quantité de preuve</em>
   qu’on lui prêtait.</p>
@@ -922,12 +922,12 @@ française. Il a sonné trois fois.
 Le rafraîchissement a aussi réveillé un vieux piège, sous une forme neuve. Les
 tableaux Fandom récents écrivent l’éliminé ainsi :
 
-    |{{Tribebox-bw||}}<span style="color:black">Égalité</span>
+    {% raw %}|{{Tribebox-bw||}}<span style="color:black">Égalité</span>{% endraw %}
 
 Le `||` est ici un **argument vide du modèle**, pas une fin de cellule. Le
 découpage des cellules coupait dessus, et le relevé des conseils d’*All Stars*
-s’est retrouvé avec un éliminé nommé « `{{Tribebox-bw` » et un autre nommé
-« `}} Égalité` ». Le compteur de profondeur existait dans le code — il ne
+s’est retrouvé avec un éliminé nommé « {% raw %}`{{Tribebox-bw`{% endraw %} » et un autre nommé
+« {% raw %}`}} Égalité`{% endraw %} ». Le compteur de profondeur existait dans le code — il ne
 servait qu’entre les lignes, jamais à l’intérieur d’une ligne. Il y sert
 désormais, et aucune autre saison n’en est affectée : le contrôle a comparé les
 699 conseils avant et après.
@@ -941,7 +941,7 @@ phrase de cette page n’a besoin d’être reprise quand une valeur est trouvé
 {% assign co = site.data.stats.completude %}
 
 <div class="constat">
-  <p><b>{{ co.part_remplie }} %</b> des
+  <p><b>{{ co.part_remplie }} %</b> des
   {{ co.valeurs_suivies }} valeurs suivies sont renseignées —
   {{ co.champs_suivis }} champs sur {{ co.participations }} participations.
   {{ co.champs_complets }} champs n’ont plus aucun trou.</p>
@@ -959,7 +959,7 @@ phrase de cette page n’a besoin d’être reprise quand une valeur est trouvé
   <td>{{ c.libelle }}</td>
   <td class="nombre">{{ c.remplis }}</td>
   <td class="nombre">{{ c.manquants }}</td>
-  <td class="nombre" data-val="{{ c.part }}">{{ c.part }} %</td>
+  <td class="nombre" data-val="{{ c.part }}">{{ c.part }} %</td>
   <td class="nombre">{{ c.depuis_page_individuelle }}</td>
 </tr>
 {% endfor %}
@@ -1005,9 +1005,9 @@ Ce qui reste, et pourquoi :
   colonnes et listent les qualifiés plutôt que le vainqueur. Quant à la
   **nature** des épreuves, le wiki la donne — {{ site.data.epreuves_nommees.nb_epreuves }}
   pages d’épreuves récurrentes, typées — mais sans le numéro d’épisode, si bien
-  que seules {{ site.data.epreuves_nommees.raccord.part_raccordee }} % des
+  que seules {{ site.data.epreuves_nommees.raccord.part_raccordee }} % des
   épreuves relevées peuvent la recevoir, et pas au hasard.
-  [Les épreuves]({{ '/statistiques/epreuves/' | relative_url }}) le mesure.
+  la page [Les épreuves]({{ '/statistiques/epreuves/' | relative_url }}) le mesure.
 - **Les colliers d’immunité ne sont détaillés que sur
   {{ site.data.stats.colliers.saisons_couvertes }} saisons.** Les autres les
   mentionnent sans donner leur destin. Et seuls les *colliers* sont suivis :
@@ -1019,8 +1019,7 @@ Ce qui reste, et pourquoi :
   beaucoup plus large.
 - **La justesse de vote ne porte que sur une partie des conseils.** Elle exige
   un conseil au dépouillement complet <em>et</em> un éliminé rattaché :
-  {{ site.data.stats.conseils.conseils_justesse }} conseils, pas les
-  {{ site.data.stats.conseils.conseils }}. L’indicateur est
+  {{ site.data.stats.conseils.conseils_justesse }} conseils, pas les {{ site.data.stats.conseils.conseils }}. L’indicateur est
   publié avec sa base, et penche vers les saisons les mieux documentées.
 - **Le vote du jury final n’est pas un conseil.** {{ site.data.stats.jury.saisons }}
   saisons en publient le détail, et les tableaux sources le présentent comme un scrutin
@@ -1054,8 +1053,7 @@ saisons entières y perdaient leurs éliminés. La résolution essaie désormais
 défaut du libellé entier, son plus long préfixe qui soit **exactement** un nom
 complet de la saison : aucune valeur n’est devinée, et un préfixe ne peut jamais
 valoir un prénom nu. Les éliminés rattachés passaient de 578 à 622 sur 649 ;
-ils sont aujourd’hui **{{ site.data.stats.conseils.elimines_rattaches }}** sur
-{{ site.data.stats.conseils.conseils_hors_jury }}.
+ils sont aujourd’hui **{{ site.data.stats.conseils.elimines_rattaches }}** sur {{ site.data.stats.conseils.conseils_hors_jury }}.
 
 Cette réparation-là a coûté un résultat. L’effet du **sexe minoritaire** portait
 la plus haute des p ajustées retenues du site, et
@@ -1069,16 +1067,14 @@ personne n’écrit »).
 
 Trois chiffres publiés ont bougé, tous dans le sens d’une base plus large :
 
-- les **votes du jury final** détectés passent de 8 à
-  {{ site.data.stats.jury.effectif }}. Les scrutins manquants étaient comptés
+- les **votes du jury final** détectés passent de 8 à {{ site.data.stats.jury.effectif }}. Les scrutins manquants étaient comptés
   comme des éliminations ordinaires, ce qui inversait le sens de leurs
   bulletins ;
 - le nombre d’aventuriers classables aux **ratios d’épreuves** passe de 89 à
   {{ site.data.stats.epreuves.classement_effectif }} ;
 - les **fantômes** passent de 38 à
   {{ site.data.stats.indicateurs.nb_fantomes }}, l’ancien décompte reposant sur
-  211 participations mesurables au lieu de
-  {{ site.data.stats.indicateurs.mesurables }}. Leur taux de victoire, mesuré
+  211 participations mesurables au lieu de {{ site.data.stats.indicateurs.mesurables }}. Leur taux de victoire, mesuré
   cette fois contre un groupe de comparaison correct, en est nettement réduit.
 
 Deux conseils sont longtemps restés volontairement non rattachés : leur éliminé
@@ -1106,7 +1102,7 @@ du modèle avant nettoyage : **{{ site.data.stats.conseils.bulletins }} bulleti
 au lieu de 3 206**, et {{ site.data.stats.conseils.conseils_complets }} conseils
 au dépouillement garanti complet au lieu de 264.
 
-Deux autres bugs de lecture tombaient au même endroit : un intitulé de ligne
+Deux autres erreurs de lecture tombaient au même endroit : un intitulé de ligne
 écrit `|►Votes` — avec le tuyau du tableau resté collé — faisait chercher les
 votants tout en bas de la table, où il n’y en a pas ; et le nom du votant était
 lu dans la première colonne d’étiquette alors qu’il est dans la dernière, quand
@@ -1135,7 +1131,7 @@ gâchis : la seconde permet de vérifier la première.
 
 <div class="constat">
   <p>{{ cv.bulletins_communs }} bulletins figurent dans les deux sources.
-  <b>{{ cv.identiques }} sont identiques — {{ cv.part_identiques }} %.</b>
+  <b>{{ cv.identiques }} sont identiques — {{ cv.part_identiques }} %.</b>
   {{ cv.divergents }} divergent.</p>
   <p>C’est la première mesure directe de la fiabilité du relevé des votes, et
   elle est rassurante. Les {{ cv.divergents }} divergences sont toutes deux le
@@ -1144,7 +1140,7 @@ gâchis : la seconde permet de vérifier la première.
 </div>
 
 La seconde source apporte en outre
-{{ cv.ajoutes_par_seconde_source }} bulletins que la première ignore. C’est
+{{ cv.ajoutes_par_seconde_source }} bulletin{% if cv.ajoutes_par_seconde_source > 1 %}s{% endif %} que la première ignore. C’est
 peu, et c’est délibérément peu : **l’appariement n’est fait que lorsqu’un
 épisode ne contient qu’un seul conseil de chaque côté.** Un épisode à deux
 conseils — une égalité suivie d’un second vote — ne se découpe pas de la même
@@ -1199,10 +1195,10 @@ s’appuie sur cette règle.
 
 {% assign cs = site.data.stats.conseils %}
 
-Le site mesurait **20 %** de conseils dépouillés sur la période 2020-2024, contre
-67 % au début des années 2000, et cette chute était donnée pour ce qu’elle
+Le site mesurait **20 %** de conseils dépouillés sur la période 2020–2024, contre
+67 % au début des années 2000, et cette chute était donnée pour ce qu’elle
 semblait être : une source qui en dirait moins. Vérification faite, c’est faux.
-Le parseur lit **{{ cs.part_bulletins_lus }} %** des bulletins que les matrices
+Le parseur lit **{{ cs.part_bulletins_lus }} %** des bulletins que les matrices
 annoncent. Ce qui
 manquait n’était pas la donnée, c’était une **règle de tout ou rien**.
 
@@ -1218,7 +1214,7 @@ les comptait.
 Il en manquait donc systématiquement une ou deux par conseil, et le conseil
 entier tombait. Pas une erreur, pas un avertissement : simplement une case
 « complet » à `false`, et vingt-cinq conseils de la saison 23 absents de toutes
-les analyses au bulletin — sur une saison dont **82 % des bulletins étaient
+les analyses au bulletin — sur une saison dont **82 % des bulletins étaient
 pourtant lus**.
 
 <div class="constat">
@@ -1229,9 +1225,9 @@ pourtant lus**.
   {{ cs.sans_votant.saisons }} saisons de {{ cs.sans_votant.annee_min }} à
   {{ cs.sans_votant.annee_max }} — {{ cs.sans_votant.detail_texte }}.</p>
   <p>Conseils dépouillés : <b>279 → {{ cs.conseils_complets }}</b>. Sur
-  2020-2024, la part passait alors de 20 % à 39 %, et sur 2015-2019 de 44 % à
-  56 % ; elles sont aujourd’hui de <b>{{ dep[4].part }} %</b> et
-  {{ dep[3].part }} %. Au moment de la réparation, <b>aucune saison antérieure
+  2020–2024, la part passait alors de 20 % à 39 %, et sur 2015–2019 de 44 % à
+  56 % ; elles sont aujourd’hui de <b>{{ dep[4].part }} %</b> et
+  {{ dep[3].part }} %. Au moment de la réparation, <b>aucune saison antérieure
   à 2015 n’avait bougé d’un bulletin</b> — c’était le contrôle : elle ne devait
   toucher que les saisons où ces mécaniques existent.</p>
 </div>
@@ -1271,13 +1267,13 @@ celui-là a été affirmé, et il l’est resté plusieurs semaines.</p>
 {% assign tm = site.data.stats.modeles.registre | where: "cle", "menace_sommet" | first %}
 <p class="note"><strong>Et depuis.</strong> Le voisin de département est ressorti
 des résultats retenus, de justesse : p ajustée {{ tv.p_ajustee }}. Du sommet de la menace,
-il ne reste rien — {{ tm.observe_arrondi }} points observés pour
+il ne reste rien — {{ tm.observe_arrondi }} point{% if tm.observe_arrondi_pluriel %}s{% endif %} observés pour
 {{ tm.attendu_arrondi }} attendus. Le sexe minoritaire, lui, tient toujours.</p>
 
 ## Comment c’est fabriqué
 
 Les données sont extraites, croisées et vérifiées par des scripts Python, puis
-commitées dans le dépôt. Un contrôle d’intégrité refuse tout jeu incohérent :
+versées au dépôt. Un contrôle d’intégrité refuse tout jeu incohérent :
 autant de vainqueurs que la saison en déclare, un jour de sortie qui ne dépasse pas la durée de
 la saison, une couleur de tribu qui existe bien dans la saison, toute clé
 étrangère résolue.

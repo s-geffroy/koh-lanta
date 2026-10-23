@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Kaouther Ferdjani — Palau (2009)"
-description: "Kaouther Ferdjani, Koh-Lanta Palau (2009) : abandonne le 15e jour, 12e sur 18, 1 épreuve gagnée. 91e sur 531 au classement des aventuriers."
+description: "Kaouther Ferdjani, Koh-Lanta Palau (2009) : abandonne le 15e jour, 12e sur 18, 1 épreuve gagnée. 90e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/kaouther-ferdjani.png
 permalink: /aventuriers/kaouther-ferdjani/
 aventurier: kaouther-ferdjani

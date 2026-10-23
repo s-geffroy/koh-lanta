@@ -41,7 +41,7 @@ c’est <b>{{ site.data.stats.classement.top_saisons[0].aventurier }}</b> à
       {%- for t in x.tribus -%}<i style="background: var(--tribu-{{ t.couleur }})"></i>{%- endfor -%}
     </span>
     {%- endif -%}
-    <p class="saison-numero">Saison {{ x.numero }} · {{ x.annee }} · {{ x.duree_jours }} jours</p>
+    <p class="saison-numero">Saison {{ x.numero }} · {{ x.annee }}{% if x.duree_jours %} · {{ x.duree_jours }} jours{% endif %}</p>
     <p class="saison-titre">{% include lien-saison.html id=x.id titre=x.titre %}</p>
     <p class="saison-lieu">{{ x.lieu }}, {{ x.pays }}</p>
     <p class="saison-tribus">
@@ -52,7 +52,9 @@ c’est <b>{{ site.data.stats.classement.top_saisons[0].aventurier }}</b> à
       <span class="saison-tribus-noms">{{ x.tribus | map: "nom" | join: " · " }}</span>
     </p>
     <p class="saison-vainqueur">
-      {%- if x.vainqueurs -%}Vainqueur : <b>{{ x.vainqueurs | join: " et " }}</b>
+      {%- if x.vainqueurs.size > 1 -%}Vainqueurs : <b>{{ x.vainqueurs | join: " et " }}</b>
+      {%- elsif x.vainqueurs.size == 1 -%}Vainqueur : <b>{{ x.vainqueurs[0] }}</b>
+      {%- elsif x.sans_vainqueur -%}<i>pas de vainqueur</i>
       {%- else -%}<i>saison en cours</i>{%- endif -%}
     </p>
   </li>
@@ -62,7 +64,8 @@ c’est <b>{{ site.data.stats.classement.top_saisons[0].aventurier }}</b> à
 
 ## Les éditions spéciales
 
-Elles font revenir d’anciens aventuriers. Leurs chiffres sont tenus à part
+Elles font revenir d’anciens aventuriers — *Le Choc des héros* les a opposés
+à des champions sportifs. Leurs chiffres sont tenus à part
 partout sur ce site : des revenants de quarante ans qui rejouent tirent les
 moyennes d’âge vers le haut sans rien dire du casting ordinaire.
 
@@ -75,11 +78,13 @@ moyennes d’âge vers le haut sans rien dire du casting ordinaire.
       {%- for t in x.tribus -%}<i style="background: var(--tribu-{{ t.couleur }})"></i>{%- endfor -%}
     </span>
     {%- endif -%}
-    <p class="saison-numero">Spéciale · {{ x.annee }} · {{ x.duree_jours }} jours</p>
+    <p class="saison-numero">Spéciale · {{ x.annee }}{% if x.duree_jours %} · {{ x.duree_jours }} jours{% endif %}</p>
     <p class="saison-titre">{% include lien-saison.html id=x.id titre=x.titre %}</p>
     <p class="saison-lieu">{{ x.lieu }}, {{ x.pays }}</p>
     <p class="saison-vainqueur">
-      {%- if x.vainqueurs -%}Vainqueur : <b>{{ x.vainqueurs | join: " et " }}</b>
+      {%- if x.vainqueurs.size > 1 -%}Vainqueurs : <b>{{ x.vainqueurs | join: " et " }}</b>
+      {%- elsif x.vainqueurs.size == 1 -%}Vainqueur : <b>{{ x.vainqueurs[0] }}</b>
+      {%- elsif x.sans_vainqueur -%}<i>pas de vainqueur</i>
       {%- else -%}<i>saison en cours</i>{%- endif -%}
     </p>
   </li>
@@ -111,7 +116,7 @@ moyennes d’âge vers le haut sans rien dire du casting ordinaire.
 
 <p class="legende-figure">Part des aventuriers encore en jeu, du premier au
 dernier jour de chaque saison. Les axes sont identiques partout : une courbe
-qui plonge plonge vraiment, elle n’est pas mise à l’échelle de sa propre case.
+qui plonge, plonge vraiment, elle n’est pas mise à l’échelle de sa propre case.
 La ligne grise marque la moitié du plateau.</p>
 
 Les éditions spéciales, en rose, se reconnaissent à leur pente : plus courtes,
@@ -140,7 +145,7 @@ tout raflé.</p>
 
 {% assign dmax = s.indicateurs.domination_max %}{% assign dmin = s.indicateurs.domination_min %}
 Le record des saisons classiques revient à **{{ dmax.titre }} ({{ dmax.annee }})** :
-{{ dmax.meilleur_gagnant }} y remporte {{ s.mots.victoires_domination_max }}
+{% include lien-aventurier.html id=dmax.meilleur_gagnant nom=dmax.meilleur_gagnant_nom %} y remporte {{ s.mots.victoires_domination_max }}
 épreuves individuelles. À l’opposé, la saison la plus partagée du programme est
 **{{ dmin.titre }} ({{ dmin.annee }})**.
 
@@ -203,10 +208,10 @@ Sans JavaScript, il reste entièrement lisible, dans l’ordre chronologique.</p
   <td>{% include lien-saison.html id=x.id titre=x.titre %} <small>({{ x.annee }})</small></td>
   <td class="nombre">{{ meta.effectif }}</td>
   <td class="nombre">{{ meta.age_moyen }}</td>
-  <td class="nombre">{{ meta.part_femmes }} %</td>
-  <td class="nombre" data-val="{{ x.survie_moyenne }}">{{ x.survie_moyenne }} %
+  <td class="nombre">{{ meta.part_femmes }} %</td>
+  <td class="nombre" data-val="{{ x.survie_moyenne }}">{{ x.survie_moyenne }} %
     <span class="cellule-barre" style="width: {{ x.barre }}%"></span></td>
-  <td class="nombre">{{ x.taux_abandon }} %</td>
+  <td class="nombre">{{ x.taux_abandon }} %</td>
   <td class="nombre">{{ x.conseils }}</td>
   <td class="nombre">{% if x.tension_conseils %}{{ x.tension_conseils }} %{% else %}—{% endif %}</td>
   <td class="nombre">{% if x.dispersion_votes %}{{ x.dispersion_votes }}{% else %}—{% endif %}</td>
@@ -232,8 +237,7 @@ aussi parlants que les barres.</p>
 {% assign pr = site.data.stats.programme %}
 {{ pr.presentateurs[0].nom }} a présenté **{{ pr.presentateurs[0].saisons }} des
 {{ site.data.stats.general.saisons_diffusees }} saisons diffusées** ; la
-première, en {{ site.data.stats.general.premiere_annee }}, l’avait été par
-{{ pr.presentateurs[1].nom }}.
+première, en {{ site.data.stats.general.premiere_annee }}, l’avait été par {{ pr.presentateurs[1].nom }}.
 
 ### Le jour de la semaine
 
@@ -268,5 +272,5 @@ avec {{ ca.plus_resserree.etendue }} ans seulement.
 {% include graphiques/saisons-femmes.svg %}
 
 <p class="legende-figure">Part de femmes au départ de chaque saison classique.
-La production vise l’équilibre : l’écart à 50 % tient au plus à un ou deux
+La production vise l’équilibre : l’écart à 50 % tient au plus à un ou deux
 aventuriers.</p>

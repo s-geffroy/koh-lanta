@@ -39,40 +39,42 @@ qu’il tombe presque toujours au même épisode — le {{ a.episode_median }}<s
 {% include graphiques/fusion-avant-apres.svg %}
 
 <p class="legende-figure">{{ a.avant.conseils }} conseils avant la
-réunification, {{ a.apres.conseils }} après, sur {{ a.saisons }} saisons. Le
-rang de force va de 0 — le plus faible du camp ce soir-là — à 100, le plus
-fort.</p>
+réunification, {{ a.apres.conseils }} après, sur {{ a.saisons }} saisons ; le
+camp du soir est connu pour {{ a.avant.conseils_camp }} et
+{{ a.apres.conseils_camp }} d’entre eux. Le rang de force va de 0 — le plus
+faible du camp ce soir-là — à 100, le plus fort.</p>
 
 <div class="tableau-large">
 <table>
 <thead><tr><th>Mesure</th><th class="nombre">Avant</th><th class="nombre">Après</th></tr></thead>
 <tbody>
 <tr><td>Conseils</td><td class="nombre">{{ a.avant.conseils }}</td><td class="nombre">{{ a.apres.conseils }}</td></tr>
-<tr><td>Présents en moyenne</td><td class="nombre">{{ a.avant.presents_moyen }}</td><td class="nombre">{{ a.apres.presents_moyen }}</td></tr>
-<tr><td>Conseils serrés</td><td class="nombre">{{ a.avant.part_serres }} %</td><td class="nombre">{{ a.apres.part_serres }} %</td></tr>
-<tr><td>Femmes parmi les éliminés</td><td class="nombre">{{ a.avant.part_femmes }} %</td><td class="nombre">{{ a.apres.part_femmes }} %</td></tr>
+<tr><td>Votants en moyenne, sans l’immunisé</td><td class="nombre">{{ a.avant.presents_moyen }}</td><td class="nombre">{{ a.apres.presents_moyen }}</td></tr>
+<tr><td>Conseils serrés</td><td class="nombre">{{ a.avant.part_serres }} %</td><td class="nombre">{{ a.apres.part_serres }} %</td></tr>
+<tr><td>Femmes parmi les éliminés</td><td class="nombre">{{ a.avant.part_femmes }} %</td><td class="nombre">{{ a.apres.part_femmes }} %</td></tr>
 <tr><td>Âge moyen des éliminés</td><td class="nombre">{{ a.avant.age_moyen }} ans</td><td class="nombre">{{ a.apres.age_moyen }} ans</td></tr>
 <tr><td>Rang de force de l’éliminé</td><td class="nombre">{{ a.rang_force_avant }}</td><td class="nombre">{{ a.rang_force_apres }}</td></tr>
 </tbody>
 </table>
 </div>
 
-## La force ne décide pas de qui part
+## La réunification ne fait pas viser les forts
 
 {% include graphiques/fusion-force-nulle.svg %}
 
 <p class="legende-figure">Écart entre le rang de force de l’éliminé après la
-réunification et avant. La silhouette est celle de {{ tf.tirages }} tirages où
-l’éliminé de chaque conseil est pris au hasard parmi les présents.</p>
+réunification et avant. La silhouette est celle de {{ tf.tirages_texte }} tirages où
+l’éliminé de chaque conseil est pris au hasard parmi ceux qui pouvaient l’être.</p>
 
 <div class="constat">
   <p>Avant la réunification, l’éliminé se situe en moyenne au rang
   <b>{{ a.rang_force_avant }} sur 100</b> de son camp ; après, au rang
-  <b>{{ a.rang_force_apres }}</b>. Dans les deux cas, <b>autour de la
-  médiane</b> : ni le plus faible avant, ni le plus fort après.</p>
+  <b>{{ a.rang_force_apres }}</b>. Dans les deux cas, <b>un peu au-dessus de
+  la médiane</b> : l’éliminé n’est pas le plus faible avant, et il n’est pas
+  plus fort après.</p>
   <p>L’écart entre les deux vaut {{ tf.observe }} points de rang (écart réduit
   {{ tf.ecart_types }}, p ajustée {{ tf.p_ajustee }}) : un tirage au sort parmi
-  les présents le produit couramment. <b>Le test n’est pas retenu.</b></p>
+  les votants le produit couramment. <b>Le test n’est pas retenu.</b></p>
   <p>Ce n’est pas la preuve que la force ne compte jamais : avant la réunification,
   elle n’est estimable que sur {{ a.force_effectif_avant }} conseils, et un
   effet modéré passerait inaperçu. Mais l’idée reçue, telle qu’on la raconte,
@@ -80,12 +82,16 @@ l’éliminé de chaque conseil est pris au hasard parmi les présents.</p>
 </div>
 
 <p class="note"><strong>Le modèle nul fait tout le travail ici.</strong> À
-chaque conseil, on tire l’éliminé <em>au hasard parmi les présents de ce
-soir-là</em>. Après la réunification, tout ce qui tient à la composition du
-camp — son âge, son sexe, son niveau — est donc neutralisé. Avant, un défaut
-subsiste : les « présents » sont tous ceux qui restent en jeu, les deux tribus
-réunies, et non la seule tribu qui vote. Les comparaisons d’avant la
-réunification se lisent avec cette réserve.</p>
+chaque conseil, on tire l’éliminé <em>au hasard parmi ceux qui pouvaient
+l’être ce soir-là</em> : les votants du conseil quand le dépouillement est
+complet, sinon — après la réunification, un soir à conseil unique — tous ceux
+qui restent en jeu ; l’immunisé du soir en est retiré. Tout ce qui tient à la
+composition du camp — son âge, son sexe, son niveau — est donc neutralisé. Ce
+n’était pas le cas jusqu’au 23 octobre 2026 : le tirage se faisait parmi tous
+les joueurs encore en jeu, l’autre tribu et les immunisés compris (16,9
+personnes en moyenne avant la réunification, pour 7,5 votants). Avant la
+réunification, un conseil sans bulletins ne permet pas de savoir quelle tribu
+votait : il est écarté de ce test.</p>
 
 ### Une estimation trop floue ?
 
@@ -100,19 +106,20 @@ Deux vérifications.
 <div class="constat">
   <p><b>L’exposition n’explique pas la force.</b> La corrélation de rang entre
   le nombre d’épreuves disputées et la force estimée vaut
-  <b>{{ a.robustesse.correlation_exposition_force }}</b> : à peine plus que
-  zéro. Un joueur peu exposé n’est pas mécaniquement classé haut.</p>
+  <b>{{ a.robustesse.correlation_exposition_force }}</b>. Un joueur peu exposé
+  n’est pas mécaniquement classé haut.</p>
   <p><b>À finesse d’estimation égale, rien ne change.</b> En ne comparant
   l’éliminé qu’aux présents ayant disputé un nombre d’épreuves comparable — à
   trois près — le rang vaut <b>{{ a.robustesse.apparie.avant }}</b> avant
   ({{ a.robustesse.apparie.avant_effectif }} conseils) contre
   <b>{{ a.robustesse.apparie.apres }}</b> après
-  ({{ a.robustesse.apparie.apres_effectif }}) : les deux restent proches.</p>
+  ({{ a.robustesse.apparie.apres_effectif }}). L’éliminé n’est pas plus haut
+  après qu’avant.</p>
 </div>
 
 Autrement dit : **le flou de l’estimation ne cache pas l’effet qu’on attendait.
-Avant comme après la réunification, l’éliminé n’est choisi ni parmi les plus faibles
-ni parmi les plus forts.**
+L’éliminé est plutôt un peu plus fort que son camp, avant comme après la
+réunification ; la réunification ne change pas cela.**
 
 ## Le vote se divise après la réunification
 
@@ -124,14 +131,13 @@ avant. Le hasard est ici une redistribution des étiquettes « avant » et
 
 <div class="constat">
   <p>Un conseil est <b>serré</b> quand l’éliminé ne rassemble pas plus de la
-  moitié des voix exprimées. Avant la réunification : {{ a.avant.part_serres }} %.
-  Après : <b>{{ a.apres.part_serres }} %</b>.</p>
-  <p>+{{ ts.observe }} points, {{ ts.ecart_types }} {{ ts.ecart_types_mot }}, p ajustée
-  {{ ts.p_ajustee }}. Le camp réuni ne se retourne pas d’un bloc : il se
+  moitié des voix exprimées. Avant la réunification : {{ a.avant.part_serres }} %.
+  Après : <b>{{ a.apres.part_serres }} %</b>.</p>
+  <p>+{{ ts.observe }} points, {{ ts.ecart_types }} {{ ts.ecart_types_mot }}, p ajustée {{ ts.p_ajustee }}. Le camp réuni ne se retourne pas d’un bloc : il se
   partage.</p>
 </div>
 
-C’est cohérent avec ce que montre
+C’est cohérent avec ce que montre la page
 [Les alliances]({{ '/statistiques/alliances/' | relative_url }}) : après la
 réunification, plusieurs groupes coexistent et chacun écrit son nom. Avant, une tribu
 qui vient de perdre une épreuve a souvent déjà tranché sur le chemin du retour.
@@ -161,8 +167,8 @@ la moyenne d’âge de son camp, ce soir-là.
 {% include graphiques/age-bascule-nulle.svg %}
 
 <p class="legende-figure">Écart d’âge de l’éliminé à la moyenne de son camp,
-avant la réunification moins après, contre {{ tag.tirages }} tirages où
-l’éliminé de chaque conseil est pris au hasard parmi les présents.</p>
+avant la réunification moins après, contre {{ tag.tirages_texte }} tirages où
+l’éliminé de chaque conseil est pris au hasard parmi ceux qui pouvaient l’être.</p>
 
 <div class="constat">
   <p>Avant la réunification, celui qui part a en moyenne <b>{{ ag.ecart_avant }} an de
@@ -200,8 +206,8 @@ ni la catégorie du plus âgé.</p>
 ## Le sexe, lui, bascule
 
 <div class="constat">
-  <p>{{ a.avant.part_femmes }} % de femmes parmi les éliminés avant la réunification,
-  {{ a.apres.part_femmes }} % après — {{ tx.observe_arrondi }} points d’écart, soit
+  <p>{{ a.avant.part_femmes }} % de femmes parmi les éliminés avant la réunification,
+  {{ a.apres.part_femmes }} % après — {{ tx.observe_arrondi }} point{% if tx.observe_arrondi_pluriel %}s{% endif %} d’écart, soit
   {{ tx.ecart_types }} {{ tx.ecart_types_mot }}, p ajustée {{ tx.p_ajustee }}.
   <b>Retenu.</b></p>
   <p>Le hasard tire ici l’éliminé parmi les présents de chaque conseil : la
@@ -216,26 +222,34 @@ ni la catégorie du plus âgé.</p>
 
 {% assign amb = a.ambassadeurs %}
 
-C’est la seule élimination sans conseil : deux aventuriers, un de chaque tribu,
-se retrouvent seuls et doivent désigner un partant. S’ils ne s’accordent pas,
-un tirage au sort tranche entre eux deux.
+Les poteaux, l’orientation, les duels et les épreuves éliminatoires font
+aussi sortir sans conseil ; l’ambassade est la seule de ces sorties que
+décident des joueurs. Depuis *Palau* (2009), les ambassadeurs — un par tribu
+d’ordinaire, trois ou quatre dans certaines saisons — se retrouvent seuls et
+doivent désigner un partant. S’ils ne s’accordent pas, un tirage au sort
+élimine l’un d’eux.
 
 <ul class="chiffres">
   <li class="chiffre"><b>{{ amb.effectif }}</b><span>ambassades reconstituées</span></li>
   <li class="chiffre"><b>{{ amb.episode_median }}</b><span>épisode médian</span></li>
   <li class="chiffre"><b>{{ amb.age_moyen }}</b><span>âge moyen de l’éliminé</span></li>
-  <li class="chiffre"><b>{{ amb.part_femmes }} %</b><span>de femmes parmi eux</span></li>
+  <li class="chiffre"><b>{{ amb.part_femmes }} %</b><span>de femmes parmi eux</span></li>
 </ul>
 
-L’ambassade tombe **juste avant la réunification** — épisode
+Ces {{ amb.effectif }} ambassades sont les sorties aux ambassadeurs des saisons
+classiques, reconstituées depuis le sort de chaque participation. Le nom des
+ambassadeurs, lui, vient d’ailleurs — la prose des sources, plus bas — et ne
+se lit que pour une partie des ambassades, éditions spéciales comprises.
+
+L’ambassade tombe **autour de la réunification** — épisode
 {{ amb.episode_median }} en médiane, quand la réunification tombe au
-{{ a.episode_median }}<sup>e</sup>. Ce n’est pas un hasard de calendrier : elle
-sert précisément à équilibrer les tribus avant de les réunir.
+{{ a.episode_median }}<sup>e</sup>. Le règlement la place avant la réunion des
+tribus ; ce qu’elle cherche à produire, aucune source ne le dit.
 
 {% include graphiques/ambassadeurs-nulle.svg %}
 
 <p class="legende-figure">Rang de force de l’éliminé par les ambassadeurs, face
-à un tirage au hasard parmi les présents.</p>
+à un tirage au hasard parmi les présents des deux tribus. Saisons classiques.</p>
 
 <div class="constat">
   <p>Sur les {{ amb.effectif_force }} ambassades où la force des présents est
@@ -262,7 +276,7 @@ prose, donc une lecture faillible — et c’est pourquoi elle est **mesurée**.
 
 <div class="constat">
   <p><b>{{ ng.lues }} ambassades sur {{ ng.total }}</b> livrent le nom de leurs
-  ambassadeurs, soit {{ ng.part_lues }} % — {{ ng.distincts }} personnes
+  ambassadeurs, soit {{ ng.part_lues }} % — {{ ng.distincts }} personnes
   distinctes.</p>
   <p>Là où les <b>deux sources</b> les nomment, elles s’accordent
   {{ ng.sources_accord }} fois sur {{ ng.sources_communes }}.
@@ -297,13 +311,14 @@ côté.</p>
   {{ ng.elimine_ambassadeur }} ont coûté sa place à l’un des ambassadeurs.</p>
 </div>
 
-### Et ils sortent plus tôt — sur le fil
+### Sortent-ils plus tôt ? On ne peut pas l’affirmer
 
 {% include graphiques/ambassadeurs-survie.svg %}
 
 <p class="legende-figure">Rang de l’ambassadeur parmi les présents du jour, sur
 le jour de sortie. Le hasard, ici, c’est désigner les ambassadeurs au sort parmi
-les présents.</p>
+les présents, avec la règle du jeu : quand l’éliminé était ambassadeur, l’un
+des ambassadeurs tirés sort ce jour-là. Saisons classiques.</p>
 
 {% assign tn = reg | where: "cle", "ambassadeurs_survie" | first %}
 <div class="constat">
@@ -311,15 +326,13 @@ les présents.</p>
   {{ ng.ambassadeurs }} ambassadeurs — le rang moyen vaut
   <b>{{ ng.rang_moyen }} sur 100</b>, contre {{ tn.attendu }} attendus.
   {{ tn.ecart_types }} {{ tn.ecart_types_mot }}, p ajustée {{ tn.p_ajustee }}.</p>
-  <p><b>Retenu, de justesse : l’ambassadeur sort plus tôt que s’il avait été
-  désigné au hasard parmi les présents.</b> Le résultat tient sur le seuil, et
-  il l’a franchi quatre fois en deux jours : il se lit avec cette réserve.</p>
-  <p>Une partie de l’écart peut être la règle elle-même : un ambassadeur
-  parti au tirage sort le soir même, au plus bas rang possible. Et la mesure
-  repose sur {{ ng.ambassadeurs }} ambassadeurs.</p>
+  <p><b>Non retenu.</b> Les ambassadeurs sortent un peu plus tôt que la
+  médiane du camp, mais pas plus tôt qu’un tirage au sort qui applique la même
+  règle du jeu — un ambassadeur parti au tirage sort le soir même, au plus bas
+  rang possible. La mesure repose sur {{ ng.ambassadeurs }} ambassadeurs.</p>
 </div>
 
-<p class="note"><strong>Ce résultat a changé quatre fois en deux jours.</strong>
+<p class="note"><strong>Ce résultat a changé cinq fois en trois jours.</strong>
 Retenu jusqu’au 21 octobre 2026 (p ajustée 0,047), il est d’abord repassé
 sous le seuil (0,056) quand vingt-quatre colonnes de la matrice des votes,
 qui passaient pour des conseils, ont été rendues à leur nature de sorties
@@ -332,10 +345,14 @@ publiait sans correction (<a href="{{ '/methode/' | relative_url }}">la
 méthode</a>) : le seuil s’est déplacé, et le résultat est repassé dessous
 (0,059, puis 0,09 quand les ambassades ont toutes été traitées comme des
 sorties et que trois ambassades de revenants ont été lues). Il est enfin
-repassé au-dessus (p ajustée {{ tn.p_ajustee }}) quand l’ambassade de Jonathan,
+repassé au-dessus (p ajustée 0,049) quand l’ambassade de Jonathan,
 aux <i>Reliques du destin</i>, a été tranchée : les deux wikis n’en nommaient
-pas les mêmes ambassadeurs, et la presse a départagé. Un écart qui bascule à
-chaque correction ne s’affirme qu’avec sa réserve.</p>
+pas les mêmes ambassadeurs, et la presse a départagé. Le 23 octobre 2026, une
+relecture a montré que ce « retenu » tenait à la graine du tirage : sur vingt
+graines, la p ajustée dépassait 0,05 dix-neuf fois. Le test tire désormais
+cent mille fois, applique au hasard la règle du tirage au sort entre
+ambassadeurs, et ne garde que les saisons classiques, comme le reste de cette
+page : il n’est plus retenu (p ajustée {{ tn.p_ajustee }}).</p>
 
 ## Ce que cette page ne dit pas
 
@@ -350,7 +367,7 @@ ci-dessus, ne suffit pas à expliquer l’écart.</p>
 revenants faussent la comparaison des forces.</p>
 
 <p class="note"><strong>Le nom des ambassadeurs vient de la prose</strong>, pas
-d’un tableau : {{ a.negociateurs.part_lues }} % des ambassades seulement, et
+d’un tableau : {{ a.negociateurs.part_lues }} % des ambassades seulement, et
 l’extraction s’abstient dès qu’un doute apparaît. Les {{ a.negociateurs.muettes }} manquantes sont les
 plus anciennes éditions et les saisons spéciales — le trou n’est pas
 aléatoire.</p>

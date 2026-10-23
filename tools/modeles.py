@@ -1002,7 +1002,7 @@ def force_et_jeu(par_saison, parts, conseils, epreuves, bloc_force):
             "femme": _coef(poisson, ic_p, 2, True),
             "age": _coef(poisson, ic_p, 3, True),
             "lecture": "Rapport de taux par doublement de la force. Au-dessus de "
-                       "1, un athlète attire davantage de bulletins.",
+                       "1, un aventurier fort attire davantage de bulletins.",
         },
         "survie": {
             "libelle": "Part de la saison tenue",
@@ -1451,6 +1451,19 @@ def alliances(par_saison, parts, conseils):
     noms = {}
     for p in parts:
         noms[p["id"]] = p.get("nom_complet") or p.get("nom")
+    # LE SOIR DU DEPART NE COMPTE PAS. Le bulletin qu'on ecrit le soir ou
+    # l'on est elimine est minoritaire par construction -- on n'a pas vote
+    # pour soi -- et les voix recues ce soir-la sont celles qui eliminent :
+    # les garder, c'etait mesurer la sortie elle-meme, et le coefficient de
+    # « majorite » doublait. On retire donc ce bulletin de la part, et ces
+    # voix du total.
+    from indicateurs import eliminations
+    sortant = {(c["saison"], c["numero"]): c["elimine"] for c in eliminations(conseils)
+               if c.get("elimine_rattache")}
+    voix_du_depart = collections.Counter()
+    for c in eliminations(conseils):
+        if c.get("elimine_rattache") and c.get("votes_contre"):
+            voix_du_depart[(c["saison"], c["elimine"])] += c["votes_contre"]
     cote = {}
     for s, liste in sorted(scrutins.items()):
         for numero, bulletins in liste:
@@ -1460,13 +1473,17 @@ def alliances(par_saison, parts, conseils):
             majorite = max(compte.values())
             gagnantes = sorted(c for c, n in compte.items() if n == majorite)
             for v, c in bulletins:
+                if sortant.get((s, numero)) == v:
+                    continue
                 d = cote.setdefault((s, v), [0, 0])
                 d[1] += 1
                 if c in gagnantes:
                     d[0] += 1
 
     survie = {(p["saison"], p["id"]): p.get("_survie") for p in parts}
-    voix = {(p["saison"], p["id"]): p.get("votes_recus") for p in parts}
+    voix = {(p["saison"], p["id"]): (None if p.get("votes_recus") is None else
+                                     max(0, p["votes_recus"] - voix_du_depart[(p["saison"], p["id"])]))
+            for p in parts}
     lignes = [(v / n, survie.get(k), noms.get(k[1], k[1]), k[0], n,
                voix.get(k))
               for k, (v, n) in sorted(cote.items()) if n >= 5]
@@ -1482,11 +1499,12 @@ def alliances(par_saison, parts, conseils):
         # Trois variables en concurrence : etre du bon cote, ne pas etre vise,
         # et le nombre de conseils traverses.
         #
-        # Ce dernier controle est TROP severe et on le sait : traverser
-        # beaucoup de conseils, c'est deja avoir survecu. Il absorbe donc une
-        # part de ce qu'on cherche a expliquer, et les deux coefficients qui
-        # suivent sont des BORNES BASSES. On le garde quand meme : sans lui,
-        # on publierait une tautologie deguisee.
+        # Ce dernier controle est severe : traverser beaucoup de conseils,
+        # c'est deja avoir survecu, et il absorbe une part de ce qu'on cherche
+        # a expliquer. On n'en conclut PAS que les coefficients sont des bornes
+        # basses : le biais du soir du depart allait dans l'autre sens, et rien
+        # ne dit lequel l'emporte. On le garde : sans lui, on publierait une
+        # tautologie deguisee.
         X = sm.add_constant(np.column_stack([part, menace, n]))
         # Erreurs-types regroupees par saison (x[3]) : la part de saison se
         # mesure DANS une saison, ses lignes ne sont pas independantes.
@@ -1507,8 +1525,9 @@ def alliances(par_saison, parts, conseils):
             ],
             "r2": _arr(float(r.rsquared), 3),
             "lecture": "Points de saison gagnés ou perdus, le nombre de conseils "
-                       "traversés tenu constant. Ce contrôle étant trop sévère, "
-                       "les deux effets sont des bornes basses.",
+                       "traversés tenu constant. Le bulletin écrit le soir de "
+                       "son élimination et les voix qui éliminent sont retirés : "
+                       "ils mesureraient la sortie elle-même.",
         }
 
     classement = sorted(lignes, key=lambda x: (-x[0], -x[4], x[2]))
@@ -2018,6 +2037,12 @@ def jury_final(par_saison, parts, conseils):
         for b in c.get("votes") or []:
             if not (b.get("votant_rattache") and b.get("cible_rattachee")):
                 continue
+            # Un bulletin de jury INVALIDE n'est pas un choix : a La Legende,
+            # les votes du jury final ont ete invalides et le depouillement n'a
+            # pas eu lieu (Wikipedia, Fandom). Les treize bulletins sont
+            # ecartes, comme la saison a ete ecartee des vainqueurs.
+            if b.get("annule"):
+                continue
             jure, choisi = b["votant"], b["cible"]
             if choisi not in candidats or jure in candidats:
                 continue
@@ -2242,6 +2267,16 @@ def confort_maudit(par_saison, parts, conseils, epreuves):
             if v.get("type") == "personne" and v.get("id"):
                 gagnants.setdefault((e["saison"], episode), set()).add(v["id"])
 
+    # UN EPISODE N'EST PAS UN CONSEIL : le confort ne se rattache a un
+    # conseil que si celui-ci est le seul de son episode. Et l'immunise du soir
+    # ne peut pas etre vise : il sort des « presents » qui font l'attendu.
+    immunite = _gagnants_par_episode(epreuves, "immunite", "individuelle")
+    par_soir = collections.Counter()
+    for c in eliminations(conseils):
+        try:
+            par_soir[(c["saison"], int(c["episode"]))] += 1
+        except (TypeError, ValueError):
+            pass
     contextes = []
     for c in eliminations(conseils):
         s = par_saison.get(c["saison"]) or {}
@@ -2253,12 +2288,15 @@ def confort_maudit(par_saison, parts, conseils, epreuves):
             episode = int(c["episode"])
         except (TypeError, ValueError):
             continue
+        if par_soir[(c["saison"], episode)] != 1:
+            continue
         bull = [(b["votant"], b["cible"]) for b in c["votes"]
                 if b.get("votant_rattache") and b.get("cible_rattachee")]
         if len(bull) < 4:
             continue
         gagne = gagnants.get((c["saison"], episode), set())
-        presents = sorted({v for v, _ in bull} | {x for _, x in bull})
+        immunes = (immunite.get((c["saison"], episode)) or set()) - {c.get("elimine")}
+        presents = sorted(({v for v, _ in bull} | {x for _, x in bull}) - immunes)
         dedans = sorted(gagne & set(presents))
         if not dedans:
             continue
@@ -2291,7 +2329,12 @@ def confort_maudit(par_saison, parts, conseils, epreuves):
     # donc RIEN dire ici, la part de bulletins allant aux gagnants du confort y
     # est identique par construction. La bonne reference est la part que
     # representent ces gagnants parmi les presents.
-    attendu = float(np.mean([100.0 * len(d) / len(p) for _, p, d in contextes]))
+    # L'attendu se calcule BULLETIN PAR BULLETIN : un votant n'ecrit pas son
+    # propre nom, et un gagnant du confort qui vote a donc une cible de moins.
+    attendus = [len(d - {v}) / (len(p) - (1 if v in p else 0))
+                for b, p, d in contextes for v, _ in b
+                if len(p) - (1 if v in p else 0) > 0]
+    attendu = 100.0 * float(np.mean(attendus))
     n_bulletins = sum(len(b) for b, _, _ in contextes)
     vises = sum(1 for b, _, d in contextes for _, c in b if c in d)
 
@@ -2305,7 +2348,7 @@ def confort_maudit(par_saison, parts, conseils, epreuves):
         "attendu": _arr(attendu),
         "bas": _arr(100.0 * ic.low), "haut": _arr(100.0 * ic.high),
         "p": _arr(float(binom.pvalue), 4),
-        "lecture": 'Part des bulletins visant un gagnant du confort du même épisode, comparée à la part que ces gagnants représentent parmi les présents.',
+        "lecture": "Part des bulletins visant un gagnant du confort du même épisode, comparée à la part que ces gagnants représentent parmi ceux que chaque votant pouvait viser (sans lui-même ni l'immunisé). Soirs à conseil unique seulement ; les bulletins d'un même conseil ne sont pas indépendants, et l'intervalle est donc trop étroit.",
     }
 
 
@@ -2346,7 +2389,13 @@ def decimation(par_saison, parts, conseils, epreuves):
                  if sortie.get((s_id, p["id"]), -1) > collectives[s_id] and p.get("couleur")]
         if len(apres) < 6 or len(sorted({p["couleur"] for p in apres})) != 2:
             continue
-        apres.sort(key=lambda p: (sortie[(s_id, p["id"])], p["id"]))
+        # L'ORDRE DE SORTIE, PAS L'ORDRE ALPHABETIQUE. Plusieurs sorties
+        # tombent dans le meme episode (97 paires adjacentes sur 229, finalistes
+        # et vainqueur compris) : les ranger par identifiant fabriquait des
+        # enchainements. Dans un episode, on suit le jour de sortie, puis le
+        # rang final (le 3e sort avant le 2e, qui sort avant le 1er).
+        apres.sort(key=lambda p: (sortie[(s_id, p["id"])], p.get("jour_sortie") or 99,
+                                  -(p.get("classement") or 0), p["id"]))
         suites.append((s_id, s.get("titre"), s.get("annee"),
                        [p["couleur"] for p in apres]))
 
@@ -2547,12 +2596,16 @@ def audience(par_saison, indicateurs_saison, mesures):
               "derniere": max(x["annee"] for x in v)}
              for j, v in par_jour.items()]
     jours.sort(key=lambda x: -x["saisons"])
+    # LA DERNIERE bascule de soir, celle apres laquelle le soir ne change
+    # plus -- et non la premiere apres 2015, borne ecrite a la main qui
+    # cachait la speciale de 2009, deja diffusee le mardi.
     bascule_jour = None
-    for a_, b_ in zip(lignes, lignes[1:]):
-        if a_.get("jour") and b_.get("jour") and a_["jour"] != b_["jour"] \
-                and b_["annee"] >= 2015:
+    for a_, b_ in reversed(list(zip(lignes, lignes[1:]))):
+        if a_.get("jour") and b_.get("jour") and a_["jour"] != b_["jour"]:
             bascule_jour = b_
             break
+    mardis_avant = [l for l in lignes if bascule_jour and l["annee"] < bascule_jour["annee"]
+                    and l.get("jour") == bascule_jour.get("jour")]
 
     # --- la courbe interne d'une saison ----------------------------------
     par_ep = collections.defaultdict(list)
@@ -2597,6 +2650,7 @@ def audience(par_saison, indicateurs_saison, mesures):
         "courbes": courbes,
         "jours": jours,
         "bascule_jour": bascule_jour,
+        "meme_soir_avant": [{"titre": l.get("titre"), "annee": l["annee"]} for l in mardis_avant],
         "format_correlation_brute": brute,
         "tests": [t for t in (t_rupture, t_glissement, t_retournement, t_suite) if t],
     }
@@ -2636,7 +2690,28 @@ def avant_apres(par_saison, parts, conseils, epreuves, bloc_force, bloc_fusion):
     fiche = {(p["saison"], p["id"]): p for p in parts}
 
     # --- les conseils exploitables, ranges par phase ----------------------
-    scrutins = []
+    #
+    # LE CAMP, ET PAS LA SAISON. Le modele nul tire l'elimine parmi ceux qui
+    # pouvaient l'etre CE SOIR-LA. Il tirait parmi tous les joueurs encore en
+    # jeu : avant la reunification, l'autre tribu comprise -- 16,9 personnes
+    # en moyenne pour 7,5 votants -- et, apres, les immunises compris, comme
+    # les autres sortants du meme episode. Le camp se connait desormais comme
+    # dans `_camps` (autour du feu) : par la liste des votants quand le
+    # depouillement est complet ; sinon, apres la reunification et pour un
+    # soir a conseil unique, par les encore-en-jeu. L'immunise du soir, quand
+    # l'epreuve individuelle est connue et le conseil seul de son episode, est
+    # retire : il ne pouvait pas partir. Avant la reunification et sans
+    # bulletins, le camp ne se reconstruit pas : le conseil est ecarte du test
+    # (il reste compte dans « serre », qui ne tire personne).
+    immunite = _gagnants_par_episode(epreuves, "immunite", "individuelle")
+    par_soir = collections.Counter()
+    for c in conseils:
+        if c.get("type", "elimination") == "elimination":
+            try:
+                par_soir[(c["saison"], int(c["episode"]))] += 1
+            except (TypeError, ValueError):
+                pass
+    scrutins, tous = [], []
     for c in conseils:
         # Un abandon, une orientation, des poteaux ne sont pas une DECISION
         # du camp : les compter ici faisait lire des blesses comme des elimines
@@ -2650,18 +2725,28 @@ def avant_apres(par_saison, parts, conseils, epreuves, bloc_force, bloc_fusion):
             episode = int(c["episode"])
         except (TypeError, ValueError):
             continue
-        presents = [p for p in par_s[sid] if sortie.get((sid, p["id"]), -1) >= episode]
-        ids = {p["id"] for p in presents}
-        if len(presents) < 4 or c["elimine"] not in ids:
-            continue
-        scrutins.append({
-            "saison": sid, "episode": episode,
-            "apres": episode > fusion_ep[sid],
-            "presents": presents, "elimine": c["elimine"],
+        apres = episode > fusion_ep[sid]
+        ligne = {
+            "saison": sid, "episode": episode, "apres": apres,
+            "elimine": c["elimine"],
             "serre": (c.get("votes_contre") is not None and c.get("votes_exprimes")
                       and c["votes_contre"] <= c["votes_exprimes"] / 2 + 0.5),
             "decompte": bool(c.get("votes_exprimes")),
-        })
+        }
+        tous.append(ligne)
+        soir_unique = par_soir[(sid, episode)] == 1
+        if c.get("complet") and c.get("votes"):
+            camp = {b["votant"] for b in c["votes"] if b.get("votant_rattache")} | {c["elimine"]}
+        elif apres and soir_unique:
+            camp = {p["id"] for p in par_s[sid] if sortie.get((sid, p["id"]), -1) >= episode}
+        else:
+            continue
+        if soir_unique:
+            camp -= (immunite.get((sid, episode)) or set()) - {c["elimine"]}
+        presents = [fiche[(sid, i)] for i in sorted(camp) if (sid, i) in fiche]
+        if len(presents) < 4 or c["elimine"] not in camp:
+            continue
+        scrutins.append(dict(ligne, presents=presents))
     if len(scrutins) < 100:
         return {}
 
@@ -2671,11 +2756,16 @@ def avant_apres(par_saison, parts, conseils, epreuves, bloc_force, bloc_fusion):
     # On n'exige pas ici que la saison ait une reunification reperee : les
     # ambassades tombent AU MOMENT de la fusion, et les ecarter reviendrait a
     # ne garder que la moitie des vingt cas.
+    # Saisons CLASSIQUES seulement, comme le dit la page : quatre des
+    # ambassades lues etaient des editions speciales, ou les revenants
+    # faussent les durees et les forces.
     ambassades = []
     for p in parts:
         if p.get("sort") != "elimine_ambassadeurs":
             continue
         sid = p["saison"]
+        if (par_saison.get(sid) or {}).get("speciale"):
+            continue
         episode = sortie.get((sid, p["id"]))
         if episode is None:
             continue
@@ -2734,9 +2824,10 @@ def avant_apres(par_saison, parts, conseils, epreuves, bloc_force, bloc_fusion):
         "La part de femmes parmi les éliminés change-t-elle à la réunification ?",
         (obs_f_ap - obs_f_av) * 100.0, nulle_sexe, unite=" points",
         lecture="Différence entre l'après et l'avant, en points de pourcentage. "
-                "Le hasard, ici, c'est tirer l'éliminé parmi les présents de "
-                "chaque conseil : la composition du camp est donc déjà "
-                "neutralisée, et un écart qui subsiste est un choix.")
+                "Le hasard, ici, c'est tirer l'éliminé parmi ceux qui pouvaient "
+                "l'être ce soir-là : les votants du conseil, sans l'immunisé. "
+                "La composition du camp est donc neutralisée, et un écart qui "
+                "subsiste est un choix.")
     # Robustesse. La force d'un joueur sorti tot repose sur peu d'epreuves,
     # et l'objection est serieuse : celui qui reste, lui, sera juge sur toute
     # une saison. On pourrait donc comparer une estimation vague a des
@@ -2781,13 +2872,13 @@ def avant_apres(par_saison, parts, conseils, epreuves, bloc_force, bloc_fusion):
         "fusion_force", "La force des éliminés, avant et après la réunification",
         "Élimine-t-on le faible avant la réunification et le fort après ?",
         obs_r_ap - obs_r_av, nulle_force, unite=" points de rang",
-        lecture="Rang de l'éliminé parmi les présents, sur la force estimée aux "
-                "épreuves : 0 le plus faible du camp, 100 le plus fort. On "
-                "compare l'après à l'avant. Positif, cela veut dire qu'on "
+        lecture="Rang de l'éliminé parmi les votants du conseil, sans l'immunisé, "
+                "sur la force estimée aux épreuves : 0 le plus faible du camp, "
+                "100 le plus fort. On compare l'après à l'avant. Positif, cela veut dire qu'on "
                 "élimine plus haut dans le classement après la réunification.")
 
     # --- le conseil est-il plus serre apres ? -----------------------------
-    avec = [s for s in scrutins if s["decompte"]]
+    avec = [s for s in tous if s["decompte"]]
     etiquettes = np.array([1 if s["apres"] else 0 for s in avec])
     serres = np.array([1.0 if s["serre"] else 0.0 for s in avec])
     obs_serre = (float(serres[etiquettes == 1].mean() - serres[etiquettes == 0].mean())
@@ -2861,6 +2952,8 @@ def avant_apres(par_saison, parts, conseils, epreuves, bloc_force, bloc_fusion):
         if not noms or episode is None:
             continue
         sid = l["saison"]
+        if (par_saison.get(sid) or {}).get("speciale"):
+            continue
         presents = [q for q in par_s[sid]
                     if sortie.get((sid, q["id"]), -1) >= episode
                     and (sid, q["id"]) in duree]
@@ -2869,7 +2962,16 @@ def avant_apres(par_saison, parts, conseils, epreuves, bloc_force, bloc_fusion):
         connus = [n for n in noms if (sid, n) in duree]
         if len(connus) < 2:
             continue
-        couples.append({"saison": sid, "presents": presents, "noms": connus})
+        # Quand les ambassadeurs ne s'accordent pas, l'un d'eux part, au
+        # tirage au sort : il sort CE JOUR-LA, au rang le plus bas possible.
+        # Le hasard doit appliquer la meme regle, sans quoi il compare des
+        # ambassadeurs reels, dont un est condamne par le reglement, a des
+        # ambassadeurs tires qui ne le sont jamais.
+        sacrifie = l.get("elimine") if l.get("elimine_est_ambassadeur") else None
+        if sacrifie and (sid, sacrifie) not in duree:
+            sacrifie = None
+        couples.append({"saison": sid, "presents": presents, "noms": connus,
+                        "sacrifie": sacrifie})
 
     def _rang_duree(ids, presents):
         """Rang centile moyen des `ids` parmi les presents, sur le jour de sortie."""
@@ -2887,11 +2989,16 @@ def avant_apres(par_saison, parts, conseils, epreuves, bloc_force, bloc_fusion):
         obs_nego = float(np.mean([_rang_duree(c["noms"], c["presents"]) for c in couples]))
         g4 = rng("negociateurs")
         nulle_nego = []
-        for _ in range(N_PERMUTATIONS):
+        # Cent mille tirages : avec dix mille, la p ajustee de ce test variait
+        # de part et d'autre de 0,05 selon la graine (20 graines essayees le
+        # 23 octobre 2026). Un resultat ne doit pas dependre de la graine.
+        for _ in range(10 * N_PERMUTATIONS):
             valeurs = []
             for c in couples:
                 tires = [c["presents"][k]["id"] for k in
                          g4.choice(len(c["presents"]), size=len(c["noms"]), replace=False)]
+                if c["sacrifie"]:
+                    tires[int(g4.integers(0, len(tires)))] = c["sacrifie"]
                 valeurs.append(_rang_duree(tires, c["presents"]))
             nulle_nego.append(float(np.mean(valeurs)))
         t_nego = _test(
@@ -2902,32 +3009,38 @@ def avant_apres(par_saison, parts, conseils, epreuves, bloc_force, bloc_fusion):
                     "sortie : 50 c'est la médiane du camp. Au-dessus, l'ambassade "
                     "accompagne une fin de parcours plus tardive ; en dessous, plus "
                     "précoce. Le hasard, ici, c'est désigner les ambassadeurs au sort "
-                    "parmi les présents.")
+                    "parmi les présents, avec la règle du jeu : quand l'éliminé "
+                    "était ambassadeur (désaccord, tirage au sort), l'un des "
+                    "ambassadeurs tirés sort ce jour-là. Saisons classiques "
+                    "seulement.")
         bilan = {
             "ambassades": len(couples),
             "ambassadeurs": sum(len(c["noms"]) for c in couples),
             "rang_moyen": _arr(obs_nego, 1),
         }
 
-    def _portrait(lot):
-        elimines = [fiche[(s["saison"], s["elimine"])] for s in lot]
+    def _portrait(lot, tous_phase):
+        """Le portrait des eliminés porte sur TOUS les conseils de la phase ;
+        la taille du camp, sur ceux dont le camp est connu (le test)."""
+        elimines = [fiche[(s["saison"], s["elimine"])] for s in tous_phase]
         ages = [p["age"] for p in elimines if p.get("age")]
         return {
-            "conseils": len(lot),
-            "saisons": len({s["saison"] for s in lot}),
+            "conseils": len(tous_phase),
+            "conseils_camp": len(lot),
+            "saisons": len({s["saison"] for s in tous_phase}),
             "presents_moyen": _arr(float(np.mean([len(s["presents"]) for s in lot])), 1),
             "part_femmes": _arr(100.0 * sum(1 for p in elimines if p["genre"] == "f")
                                 / len(elimines), 1),
             "age_moyen": _arr(float(np.mean(ages)), 1) if ages else None,
-            "part_serres": _arr(100.0 * sum(1 for s in lot if s["serre"])
-                                / max(1, sum(1 for s in lot if s["decompte"])), 1),
+            "part_serres": _arr(100.0 * sum(1 for s in tous_phase if s["serre"])
+                                / max(1, sum(1 for s in tous_phase if s["decompte"])), 1),
         }
 
     return {
         "saisons": len(fusion_ep),
         "episode_median": bloc_fusion.get("episode_median"),
-        "avant": _portrait(avant),
-        "apres": _portrait(apres),
+        "avant": _portrait(avant, [s for s in tous if not s["apres"]]),
+        "apres": _portrait(apres, [s for s in tous if s["apres"]]),
         "rang_force_avant": _arr(obs_r_av, 1),
         "rang_force_apres": _arr(obs_r_ap, 1),
         "force_effectif_avant": n_av,
@@ -4189,7 +4302,7 @@ LIBELLE_SORT = {
     "elimine_destins_lies": "Éliminé par les destins liés",
     "abandon_medical": "Abandon médical",
     "abandon_volontaire": "Abandon volontaire",
-    "disqualifie": "Disqualifié",
+    "disqualifie": "Exclu du jeu",
 }
 
 
@@ -4210,6 +4323,13 @@ def rappel(par_saison, parts):
         an = annee.get(p["saison"])
         duree = s.get("duree_jours")
         if an is None or an >= ANNEE_LIMITE_RAPPEL or not duree or not p.get("jour_sortie"):
+            continue
+        # La PREMIERE participation, et dans une saison classique : la page dit
+        # « premieres participations », et l'on y comptait 54 retours et 76
+        # passages en edition speciale, ou tout le monde est deja revenant.
+        if s.get("speciale") or any(annee.get(q["saison"]) is not None
+                                    and annee.get(q["saison"]) < an
+                                    for q in par_personne[p["id"]]):
             continue
         lignes.append({
             "id": p["id"], "saison": p["saison"], "annee": an,
@@ -4647,9 +4767,22 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison,
     for t, pa in zip(registre + complements, ajustees):
         t["p_ajustee"] = _arr(pa, 4)
         t["retenu"] = bool(pa < 0.05)
+    # /methode/ : les tests retenus tiennent-ils si l'on ajoute vingt tests
+    # sans resultat (p = 1) ? La verification portait sur le seul registre ;
+    # la famille corrigee compte aussi les coefficients : c'est sur elle
+    # qu'on la refait.
+    ajustees_20 = benjamini_hochberg([t["p"] for t in registre]
+                                     + [x["p"] for x in complements] + [1.0] * 20)
+    vingt_nuls = {
+        "retenus": sum(1 for t, pa in zip(registre, ajustees_20) if t["retenu"] and pa < 0.05),
+        "tombes": [t["libelle"] for t, pa in zip(registre, ajustees_20)
+                   if t["retenu"] and pa >= 0.05],
+        "famille": len(registre) + len(complements),
+    }
 
     return {
         "graine": GRAINE,
+        "vingt_nuls": vingt_nuls,
         "permutations": N_PERMUTATIONS,
         "bootstrap": N_BOOTSTRAP,
         "casting": casting,

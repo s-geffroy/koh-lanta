@@ -283,7 +283,7 @@
   tribus:
     - { nom: "Karwaï", couleur: jaune }
     - { nom: "Aopoh", couleur: rouge }
-  mecaniques: [ambassadeurs, collier_immunite]
+  mecaniques: [ambassadeurs, collier_immunite, destins_lies]
 
 - id: s16
   numero: 16
@@ -301,7 +301,7 @@
   tribus:
     - { nom: "Naga", couleur: jaune }
     - { nom: "Sambor", couleur: rouge }
-  mecaniques: [ambassadeurs, collier_immunite, destins_lies]
+  mecaniques: [ambassadeurs, collier_immunite]
 
 - id: s17
   numero: 17
@@ -320,7 +320,7 @@
     - { nom: "Sokka", couleur: jaune }
     - { nom: "Bokor", couleur: rouge }
     - { nom: "Takeo", couleur: bleu }
-  mecaniques: [ambassadeurs, collier_immunite]
+  mecaniques: [ambassadeurs, collier_immunite, destins_lies]
 
 - id: s18
   numero: 18
@@ -338,7 +338,7 @@
   tribus:
     - { nom: "Coravu", couleur: jaune }
     - { nom: "Makawa", couleur: rouge }
-  mecaniques: [ambassadeurs, collier_immunite]
+  mecaniques: [ambassadeurs, collier_immunite, destins_lies]
 
 - id: s19
   numero: 19
@@ -373,7 +373,7 @@
     - { nom: "Tabuo", couleur: jaune }
     - { nom: "Kama", couleur: rouge }
     - { nom: "Ikalu", couleur: bleu }
-  mecaniques: [ambassadeurs, collier_immunite, capitaines]
+  mecaniques: [ambassadeurs, collier_immunite, destins_lies, capitaines]
 
 - id: s21
   numero: 21
@@ -417,7 +417,7 @@
   tribus:
     - { nom: "Toa", couleur: jaune }
     - { nom: "Oro", couleur: rouge }
-  mecaniques: [ambassadeurs, collier_immunite, armes_secretes]
+  mecaniques: [ambassadeurs, collier_immunite, destins_lies, armes_secretes]
 
 - id: s23
   numero: 23
@@ -497,8 +497,8 @@
   tribus:
     - { nom: "Sabitang", couleur: jaune }
     - { nom: "Pitogo", couleur: rouge }
-    - { nom: "Noire", couleur: noir }   # « tribu maudite » dans le recapitulatif
-  mecaniques: [ambassadeurs, collier_immunite, capitaines, tribu_maudite]
+    - { nom: "Tribu maudite", couleur: noir }   # « Noire » est le nom du modele de vignette Fandom
+  mecaniques: [ambassadeurs, collier_immunite, destins_lies, capitaines, tribu_maudite]
 
 - id: s27
   numero: 27
@@ -520,7 +520,7 @@
     - { nom: "Silangan", couleur: vert }
     - { nom: "Virak", couleur: jaune, apres_fusion: true }
     - { nom: "Tugawe", couleur: rouge, apres_fusion: true }
-  mecaniques: [ambassadeurs, collier_immunite, quatre_terres]
+  mecaniques: [ambassadeurs, collier_immunite, destins_lies, quatre_terres]
 
 - id: s28
   numero: 28
@@ -538,7 +538,7 @@
   tribus:
     - { nom: "Kalao", couleur: jaune }
     - { nom: "Lahoy", couleur: rouge }
-  mecaniques: [ambassadeurs, collier_immunite, antre_du_destin]
+  mecaniques: [ambassadeurs, collier_immunite, destins_lies, antre_du_destin]
 
 # --- Editions speciales ---------------------------------------------------
 
@@ -602,7 +602,7 @@
   tribus:
     - { nom: "Klahan", couleur: jaune }
     - { nom: "Nekmao", couleur: rouge }
-  mecaniques: [ambassadeurs, heros]
+  mecaniques: [ambassadeurs, collier_immunite, heros]
 
 - id: sp4
   numero: null
@@ -666,8 +666,16 @@
   numero: null
   rang: 7
   titre: "La Légende"
-  vainqueurs: ["Claude"]
-  note: "Claude recueille le plus de voix du jury final mais, pour tricherie, ne touche pas les 100 000 euros."
+  # PAS DE VAINQUEUR. Wikipedia barre le nom de Claude et note : « A la
+  # suite de nombreuses tricheries qui ont fausse le cours du jeu, le
+  # depouillement final n'a pas eu lieu et l'integralite des 100 000 EUR
+  # promis au vainqueur revient a l'association Pour Bertrand-Kamal ».
+  # Fandom : « Pas de vainqueur [...] les votes du jury final ont ete
+  # invalides, et aucun aventurier n'est designe vainqueur, une premiere
+  # dans l'histoire de l'emission ». Claude et Laurent sont finalistes.
+  # `sans_vainqueur` est le texte publie : il reprend ces deux sources.
+  vainqueurs: []
+  sans_vainqueur: "À la suite de nombreuses tricheries qui ont faussé le cours du jeu, les votes du jury final ont été invalidés et le dépouillement final n’a pas eu lieu : aucun aventurier n’est désigné vainqueur, une première dans l’histoire de l’émission. L’intégralité des 100 000 € promis au vainqueur revient à l’association Pour Bertrand-Kamal."
   annee: 2021
   speciale: true
   annulee: false
@@ -688,7 +696,7 @@
     - { nom: "Tribu des femmes", couleur: violet }
     - { nom: "Lanta-naï", couleur: jaune, apres_fusion: true }
     - { nom: "Korok", couleur: rouge, apres_fusion: true }
-  mecaniques: [ambassadeurs, collier_immunite, heros, ile_speciale, separation_par_sexe]
+  mecaniques: [ambassadeurs, collier_immunite, destins_lies, heros, ile_speciale, separation_par_sexe]
 
 - id: sp8
   numero: null

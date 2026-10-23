@@ -7,7 +7,7 @@ layout: default
   l'acces se fait par cle. Aucun calcul ici.
 
   Toutes les epreuves nommees n'ont PAS de page : le raccord entre le nom cite
-  par le wiki et l'epreuve relevee dans la saison ne tient que sur 14,3 % des
+  par le wiki et l'epreuve relevee dans la saison ne tient que sur 14,3 % des
   cas. tools/build_epreuves.py garde celles qui portent un tableau et laisse
   les autres a leur ligne sur /statistiques/epreuves/.
 {%- endcomment -%}
@@ -23,11 +23,19 @@ layout: default
   <li class="chiffre"><b>{{ e.palmares.size }}</b><span>vainqueurs identifiés</span></li>
 </ul>
 
-{%- if e.record %}
+{%- comment -%}
+  Le record n'est dit que s'il en est un : quand chacun n'a gagne qu'une fois,
+  le premier nom de la liste est pris dans l'ordre alphabetique, et « le
+  record : X, une victoire » designait quelqu'un au hasard.
+{%- endcomment -%}
+{%- if e.record and e.record.victoires > 1 %}
 <div class="constat">
   <p><b>Le record</b> :
   <a href="{{ '/aventuriers/' | append: e.record.id | append: '/' | relative_url }}">{{ e.record.nom }}</a>,
-  {% if e.record.victoires > 1 %}{{ e.record.victoires }} victoires{% else %}une victoire{% endif %}.</p>
+  {{ e.record.victoires }} {{ e.mot_pluriel }}.</p>
+  {%- if e.note_palmares %}
+  <p>{{ e.note_palmares }}</p>
+  {%- endif %}
 </div>
 {%- endif %}
 
@@ -43,7 +51,7 @@ et pourquoi.</p>
 <div class="tableau-large">
 <table data-triable>
 <thead><tr>
-  <th>Aventurier</th><th class="nombre">Victoires</th><th>Éditions</th>
+  <th>Aventurier</th><th class="nombre">{% if e.mot_pluriel == "qualifications" %}Qualifications{% else %}Victoires{% endif %}</th><th>Éditions</th>
 </tr></thead>
 <tbody>
   {%- for p in e.palmares %}

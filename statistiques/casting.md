@@ -20,8 +20,8 @@ manque — **le même vivier, rebattu au hasard**.
 <p class="note"><strong>La méthode, en une phrase.</strong> On prend les
 {{ c.effectif }} aventuriers des {{ c.saisons }} saisons classiques, on les
 redistribue au hasard entre les saisons en gardant la taille de chaque casting,
-et on recommence {{ m.permutations }} fois. Ce que la production a réellement
-fait se compare alors à ces {{ m.permutations }} castings imaginaires. Ce n’est
+et on recommence {{ m.permutations_texte }} fois. Ce que la production a réellement
+fait se compare alors à ces {{ m.permutations_texte }} castings imaginaires. Ce n’est
 pas une comparaison à la France : c’est une comparaison au hasard, à vivier
 identique.</p>
 
@@ -32,7 +32,7 @@ identique.</p>
 {% include graphiques/casting-parite.svg %}
 
 <p class="legende-figure">Écart moyen à la parité, en nombre de personnes. La
-silhouette est la distribution des {{ t.tirages }} tirages à pile ou face ; le
+silhouette est la distribution des {{ t.tirages_texte }} tirages à pile ou face ; le
 trait vertical est ce qu’on observe réellement.</p>
 
 <div class="constat">
@@ -49,7 +49,7 @@ trait vertical est ce qu’on observe réellement.</p>
 
 C’est le résultat le plus net de tout ce site, et il ne se voit nulle part à
 l’écran. La page [Âge et longévité]({{ '/statistiques/longevite/' | relative_url }})
-notait déjà {{ site.data.stats.genre.resume[0].part_du_casting }} % de femmes au total ; ce qu’on mesure ici est différent et
+notait déjà {{ site.data.stats.genre.resume[0].part_du_casting }} % de femmes au total ; ce qu’on mesure ici est différent et
 bien plus fort : ce n’est pas le **total** qui est équilibré, c’est **chaque
 saison prise séparément**.
 
@@ -84,8 +84,7 @@ occupées, sur les {{ c.saisons }} saisons classiques.</p>
 
 On imagine volontiers une liste de courses — il faut un pompier, il faut un
 coach sportif, il faut un agriculteur. Les chiffres ne la montrent pas :
-**{{ t.observe }} cases remplies contre {{ t.attendu }} attendues**, p =
-{{ t.p }}. La couverture des métiers est celle qu’un tirage au hasard produit
+**{{ t.observe }} cases remplies contre {{ t.attendu }} attendues**, p = {{ t.p }}. La couverture des métiers est celle qu’un tirage au hasard produit
 tout seul.
 
 ## Les deux tribus : un contraste d’âge, mais pas une règle
@@ -163,7 +162,7 @@ au-dessus desquels on parlerait de familles franchement distinctes.
 
 <p class="note">Une découpe qui isole deux personnes n’est pas un archétype :
 elle met à part des points extrêmes et gonfle l’indice au passage. On exige donc
-que le plus petit groupe pèse au moins 2 % du casting, soit {{ c.plancher }}
+que le plus petit groupe pèse au moins 2 % du casting, soit {{ c.plancher }}
 personnes. Parmi les découpes qui respectent ce plancher, on retient celle dont
 la silhouette est la plus haute : {{ c.nb_archetypes }} groupes.</p>
 
@@ -182,9 +181,9 @@ séparées.
 <tr>
   <td>{{ a.libelle }}</td>
   <td class="nombre">{{ a.effectif }}</td>
-  <td class="nombre">{{ a.part }} %</td>
+  <td class="nombre">{{ a.part }} %</td>
   <td class="nombre">{{ a.age_median }}</td>
-  <td class="nombre">{{ a.part_femmes }} %</td>
+  <td class="nombre">{{ a.part_femmes }} %</td>
 </tr>
 {% endfor %}
 </tbody>
@@ -192,7 +191,7 @@ séparées.
 </div>
 
 Le seul groupe qui tienne vraiment tout seul est celui des étudiantes de moins
-de 25 ans : le plus petit, et le seul dont une modalité soit à 100 %. Pour le
+de 25 ans : le plus petit, et le seul dont une modalité soit à 100 %. Pour le
 reste, le casting est **un continuum d’âges et de métiers** que l’algorithme
 découpe en {{ site.data.stats.mots.archetypes }} — pas une galerie de personnages. Du moins au niveau de l’âge, du
 sexe et du métier, les seules choses que ce jeu de données connaisse.
@@ -213,7 +212,11 @@ site — la première est racontée sur
 variables : la production, elle, recrute aussi sur un entretien, une histoire
 personnelle, une aisance devant la caméra — rien de tout cela n’est ici. Un
 casting parfaitement banal sur l’âge et le métier peut être très travaillé sur
-des critères que ces données ignorent. Et un écart mesuré ne dit jamais son
-origine : la parité peut venir d’une consigne comme d’un vivier de candidatures
-déjà équilibré. Ces données ne tranchent pas — <a href="{{ '/methode/' | relative_url }}">la méthode</a>
-détaille pourquoi.</p>
+des critères que ces données ignorent. Et un écart mesuré dit rarement son
+origine. La parité est une exception : un vivier de candidatures équilibré,
+dans lequel on tirerait au hasard, donnerait d’une saison à l’autre la
+dispersion du hasard — et c’est précisément elle que le test exclut. Une
+parité tenue saison par saison est donc choisie. Ce qui reste ouvert, c’est
+l’autre question : pourquoi la part totale de femmes est celle-là —
+<a href="{{ '/methode/' | relative_url }}">la méthode</a> détaille pourquoi ces
+données ne la tranchent pas.</p>

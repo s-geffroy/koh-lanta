@@ -32,7 +32,7 @@ allié** », pas « l’est-il encore ».
 <ul class="chiffres">
   <li class="chiffre"><b>{{ p.presences }}</b><span>présences à un conseil</span></li>
   <li class="chiffre"><b>{{ p.conseils }}</b><span>conseils, sur {{ p.saisons }} saisons</span></li>
-  <li class="chiffre"><b>{{ p.cumul[2].probabilite }} %</b><span>de risque quand les deux signaux sont réunis</span></li>
+  <li class="chiffre"><b>{{ p.cumul[2].probabilite }} %</b><span>de risque quand les deux signaux sont réunis</span></li>
 </ul>
 
 ## L’isolement, décomposé
@@ -55,9 +55,9 @@ sort.</p>
 <tr>
   <td>{{ x.modalite_maj }}</td>
   <td class="nombre">{{ x.effectif }}</td><td class="nombre">{{ x.cas }}</td>
-  <td class="nombre" data-val="{{ x.probabilite }}"><b>{{ x.probabilite }} %</b></td>
-  <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td>
-  <td class="nombre">{{ x.hasard }} %</td>
+  <td class="nombre" data-val="{{ x.probabilite }}"><b>{{ x.probabilite }} %</b></td>
+  <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td>
+  <td class="nombre">{{ x.hasard }} %</td>
 </tr>
 {% endfor %}
 </tbody>
@@ -67,18 +67,18 @@ sort.</p>
 {% include graphiques/pire-place-nulle.svg %}
 
 <p class="legende-figure">Écart entre partir sans un seul allié présent et
-partir quand il en reste au moins un, contre {{ ti.tirages }} tirages où
+partir quand il en reste au moins un, contre {{ ti.tirages_texte }} tirages où
 l’éliminé de chaque conseil est pris au hasard parmi les présents.</p>
 
 <div class="constat">
   <p>N’avoir plus personne avec qui on ait déjà voté ajoute
-  <b>{{ ti.observe_arrondi }} points</b> de risque :
+  <b>{{ ti.observe_arrondi }} point{% if ti.observe_arrondi_pluriel %}s{% endif %}</b> de risque :
   {{ ti.ecart_types }} {{ ti.ecart_types_mot }} au-dessus du hasard, p ajustée
   {{ ti.p_ajustee }}.</p>
   <p>Et les deux formes de l’isolement ne se distinguent pas. Avoir vu ses
-  alliés partir mène à {{ p.isolement[1].probabilite }} % ; n’avoir jamais voté
-  avec personne, à {{ p.isolement[0].probabilite }} %, pour un hasard de
-  {{ p.isolement[0].hasard }} %. Les deux intervalles se recouvrent largement :
+  alliés partir mène à {{ p.isolement[1].probabilite }} % ; n’avoir jamais voté
+  avec personne, à {{ p.isolement[0].probabilite }} %, pour un hasard de
+  {{ p.isolement[0].hasard }} %. Les deux intervalles se recouvrent largement :
   <b>ce qui pèse, c’est d’être seul au moment du vote</b>, pas la manière dont
   on l’est devenu.</p>
 </div>
@@ -101,17 +101,18 @@ depuis. Ce n’est pas le cas.
 {% for x in p.adverse %}
 <tr><td>{{ x.modalite_maj }}</td>
     <td class="nombre">{{ x.effectif }}</td><td class="nombre">{{ x.cas }}</td>
-    <td class="nombre"><b>{{ x.probabilite }} %</b></td>
-    <td class="nombre">{{ x.hasard }} %</td></tr>
+    <td class="nombre"><b>{{ x.probabilite }} %</b></td>
+    <td class="nombre">{{ x.hasard }} %</td></tr>
 {% endfor %}
 </tbody>
 </table>
 </div>
 
 **La menace ne s’éteint pas avec son auteur.** Avoir été visé par des gens tous
-partis depuis mène à {{ p.adverse[1].probabilite }} % ; en avoir au moins un
-encore là, à {{ p.adverse[2].probabilite }} %. L’écart est dans le sens
-inverse de l’intuition et bien trop petit pour compter. Ce qui compte est
+partis depuis mène à {{ p.adverse[1].probabilite }} % ; en avoir au moins un
+encore là, à {{ p.adverse[2].probabilite }} %. L’écart est dans le sens
+inverse de l’intuition, et aucun test ne l’a mesuré : on ne peut rien en
+conclure. Ce qui compte est
 d’avoir été visé **un jour** — le camp a désigné quelqu’un, et cette
 désignation lui survit.
 
@@ -136,22 +137,22 @@ allié parmi les présents.</p>
 <tr>
   <td>{{ x.modalite_maj }}</td>
   <td class="nombre">{{ x.effectif }}</td><td class="nombre">{{ x.cas }}</td>
-  <td class="nombre"><b>{{ x.probabilite }} %</b></td>
-  <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td>
+  <td class="nombre"><b>{{ x.probabilite }} %</b></td>
+  <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td>
 </tr>
 {% endfor %}
 </tbody>
 </table>
 </div>
 
-De **{{ p.cumul[0].probabilite }} %** à **{{ p.cumul[2].probabilite }} %** : le
+De **{{ p.cumul[0].probabilite }} %** à **{{ p.cumul[2].probabilite }} %** : le
 risque est multiplié par {{ p.cumul_rapport }} entre la position la plus
 confortable et la plus mauvaise. C’est, sur ce site, le plus grand écart qu’une condition
 connue **avant le vote** parvienne à produire.
 
 <p class="note">La dernière case ne tient qu’à {{ p.cumul[2].effectif }}
 présences, et son intervalle le dit : de {{ p.cumul[2].bas }} à
-{{ p.cumul[2].haut }} %. Cumuler les deux signaux est rare — c’est même la
+{{ p.cumul[2].haut }} %. Cumuler les deux signaux est rare — c’est même la
 raison pour laquelle il faut un modèle plutôt qu’un tableau croisé pour trancher
 la question suivante.</p>
 
@@ -189,7 +190,7 @@ et la case qui les réunit est trop petite. Le modèle ci-dessous les met dans l
   mesure ce que le camp a <em>fait</em> ; l’isolement mesure ce dont on
   <em>dispose</em> pour y répondre. Un joueur visé mais entouré s’en sort ; un
   joueur seul mais jamais visé tient encore. Les deux à la fois, on part dans
-  {{ p.cumul[2].probabilite }} % des cas.</p>
+  {{ p.cumul[2].probabilite }} % des cas.</p>
 </div>
 
 ## Le dos au mur ne fait pas gagner
@@ -212,8 +213,8 @@ hasard parmi les présents.</p>
 {% for x in p.dos_au_mur %}
 <tr><td>{{ x.modalite_maj }}</td>
     <td class="nombre">{{ x.effectif }}</td><td class="nombre">{{ x.cas }}</td>
-    <td class="nombre"><b>{{ x.probabilite }} %</b></td>
-    <td class="nombre">{{ x.hasard }} %</td></tr>
+    <td class="nombre"><b>{{ x.probabilite }} %</b></td>
+    <td class="nombre">{{ x.hasard }} %</td></tr>
 {% endfor %}
 </tbody>
 </table>
@@ -235,7 +236,7 @@ nom de l’immunisé du soir.
 <div class="constat">
   <p>Sur les <b>{{ p.bulletins_lus }} bulletins</b> lus à ces conseils-là,
   <b>{{ p.bulletins_perdus }}</b> visent le vainqueur de l’immunité —
-  <b>{{ p.part_perdue }} %</b>.</p>
+  <b>{{ p.part_perdue }} %</b>.</p>
   <p>Ce n’est pas zéro, et c’est normal : un bulletin peut être écrit avant que
   l’immunité ne soit connue, ou volontairement perdu. Mais à ce niveau-là, la
   donnée confirme la règle plutôt qu’elle ne la contredit — c’est le second

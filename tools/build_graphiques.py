@@ -105,7 +105,7 @@ def figure_peigne():
 
     ecrire("peigne-torches.svg", peigne(
         traits, jour_max=max(jours), mediane=mediane, legende=legende,
-        titre=f"Les {len(traits)} aventuriers, du premier jour au dernier",
+        titre=f"Les {len(traits)} participations, du premier jour au dernier",
         description=(
             f"Un trait par participation, trié du plus court séjour au plus long. "
             f"La longueur du trait est le nombre de jours tenus, sa couleur celle "
@@ -598,19 +598,21 @@ def main():
         if ind.get("fantomes_issue"):
             ecrire("fantomes-issue.svg", barres_groupees(
                 [{"libelle": x["libelle"],
-                  "valeurs": [x["part_fantomes"], x["part_endurants"]],
+                  "valeurs": [x["part_fantomes"], x["part_comparables"]],
                   "details": [f'{x["effectif"]} des {ind["nb_fantomes"]} fantômes, '
                               f'soit {x["part_fantomes"]} %',
-                              f'{x["part_endurants"]} % des {ind["endurants"]} '
-                              f'aventuriers ayant traversé autant de conseils']}
+                              f'{x["part_comparables"]} % des {ind["endurants_hors_conseil"]} '
+                              f'aventuriers ayant traversé autant de conseils '
+                              f'sans sortir au conseil']}
                  for x in ind["fantomes_issue"]],
                 [{"nom": "Les « fantômes »", "couleur": SERIES[0]},
-                 {"nom": "Ceux qui ont tenu autant", "couleur": SERIES[1]}],
+                 {"nom": "Tenu autant, sorti hors conseil",
+                  "couleur": SERIES[1]}],
                 titre="Ce que devient un aventurier que personne ne vise",
                 description="Sort final des aventuriers n'ayant reçu aucune voix, "
                             "comparé à ceux qui ont traversé autant de conseils "
-                            "qu'eux — et non à l'ensemble, qui mélangerait le "
-                            "fait de n'être pas visé et celui d'aller loin.",
+                            "qu'eux sans en sortir — un fantôme ne peut pas sortir "
+                            "au conseil, puisque personne n'écrit son nom.",
                 unite=" %", marge_gauche=210))
 
         if ind.get("menace_par_sort"):
@@ -747,7 +749,7 @@ def figures_ajoutees(stats):
                         if (a.get("poids") or 1) > poids[0] else None}
              for a in g["aretes"]],
             titre="Le petit monde des revenants",
-            description="Chaque point est un aventurier revenu au moins deux "
+            description="Chaque point est un aventurier venu au moins deux "
                         "fois, rangé par ordre d'arrivée dans le programme. Un "
                         "arc relie deux personnes ayant partagé une saison, et "
                         "sa couleur dit combien de saisons elles ont passées "
@@ -860,6 +862,17 @@ def figures_ajoutees(stats):
             couleur=SERIES[6], largeur=760, hauteur=290))
 
     # ------------------------------------------------------------ programme
+    MOIS = ("janvier", "février", "mars", "avril", "mai", "juin", "juillet",
+            "août", "septembre", "octobre", "novembre", "décembre")
+
+    def date_fr(iso):
+        """« 2001-08-04 » -> « 4 août 2001 » : la date ISO etait publiee telle
+        quelle dans trente-quatre infobulles."""
+        if not iso:
+            return "?"
+        a, m, j = str(iso)[:10].split("-")
+        return f"{'1er' if int(j) == 1 else int(j)} {MOIS[int(m) - 1]} {a}"
+
     pr = stats.get("programme") or {}
     if pr.get("saisons"):
         lignes = [x for x in pr["saisons"] if x.get("debut")]
@@ -870,8 +883,8 @@ def figures_ajoutees(stats):
               "fin": (int(x["fin"][:4]) + (int(x["fin"][5:7]) - 1) / 12.0
                       if x.get("fin") else None),
               "couleur": SERIES[4] if x["speciale"] else SERIES[0],
-              "detail": f'{x["titre"]} — diffusée du {x["debut"]} au '
-                        f'{x.get("fin") or "?"}, le {x.get("jour_semaine") or "?"}'}
+              "detail": f'{x["titre"]} — diffusée du {date_fr(x["debut"])} au '
+                        f'{date_fr(x.get("fin"))}, le {x.get("jour_semaine") or "?"}'}
              for x in lignes],
             titre="Vingt-cinq ans de diffusion",
             description="Période de diffusion de chaque saison. Les creux sont "
@@ -987,11 +1000,11 @@ def figure_prenoms():
          for x in lot],
         [{"nom": "Observé à Koh-Lanta", "couleur": SERIES[1]},
          {"nom": "Attendu en France", "couleur": SERIES[0]}],
-        titre="Les prénoms sur-représentés, et les absents",
+        titre="Les prénoms surreprésentés, et les absents",
         description="Nombre d'aventuriers portant ce prénom, face au nombre "
                     "attendu si le casting était un échantillon ordinaire des "
                     "naissances françaises des mêmes années. Les huit premiers "
-                    "sont sur-représentés, les huit derniers sous-représentés.",
+                    "sont surreprésentés, les huit derniers sous-représentés.",
         largeur=880, marge_gauche=150, hauteur_groupe=30))
     print(f"    ({len(solides)} prénoms classés, "
           f"{sum(1 for x in d['prenoms'] if x['absent_du_fichier'])} introuvables)")
@@ -1131,7 +1144,7 @@ def figures_des_modeles(stats):
                         f'{d["victoires"]} victoires en {d["disputees"]} épreuves'}
              for d in f["classement"][:16]],
             titre="La force estimée, avec son incertitude",
-            description="Force latente de chaque athlète, corrigée du nombre "
+            description="Force latente de chaque aventurier, corrigée du nombre "
                         "d'épreuves disputées et du niveau des adversaires. Le "
                         "segment est l'intervalle à 95 %.",
             largeur=880, marge_gauche=190))
@@ -1142,7 +1155,7 @@ def figures_des_modeles(stats):
              for d in f["pentes"]],
             titre="Le classement brut, et le classement corrigé",
             description="À gauche le nombre de victoires, à droite la force "
-                        "estimée. Une pente montante signale un athlète que le "
+                        "estimée. Une pente montante signale un aventurier que le "
                         "total brut sous-estime.",
             gauche="au nombre de victoires", droite="à la force estimée",
             largeur=760, marge=196))

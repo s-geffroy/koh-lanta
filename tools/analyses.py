@@ -64,6 +64,23 @@ def revenants(saisons, parts, personnes):
         {"libelle": "Revenants, leurs saisons suivantes", "effectif": len(suivantes),
          "survie_moyenne": _arr(mean(suivantes))},
     ]
+    # LA BONNE REFERENCE DU RETOUR. Presque tous les retours ont lieu dans une
+    # edition speciale, ou presque tout le monde est revenant : la moyenne de
+    # leurs « saisons suivantes » est donc, a peu de chose pres, la moyenne de
+    # n'importe quel aventurier d'une speciale. Que le retour « se passe moins
+    # bien » que la premiere fois est une regression vers la moyenne, pas un
+    # effet de l'experience.
+    speciales = [x for x in (_survie(p, saisons) for p in parts
+                             if saisons.get(p["saison"], {}).get("speciale"))
+                 if x is not None]
+    retour_reference = {
+        "moyenne_speciales": _arr(mean(speciales)) if speciales else None,
+        "participations_speciales": len(speciales),
+        "retours_en_speciale": sum(
+            1 for pid in par_pers for p in sorted(par_pers[pid], key=lambda p: ordre.get(p["saison"], 0))[1:]
+            if saisons.get(p["saison"], {}).get("speciale") and _survie(p, saisons) is not None),
+        "retours": len(suivantes),
+    }
 
     # --- carrieres : jours cumules, et part du temps possible
     jours, possible, nb = Counter(), Counter(), Counter()
@@ -177,6 +194,7 @@ def revenants(saisons, parts, personnes):
 
     return {
         "paradoxe": paradoxe,
+        "retour_reference": retour_reference,
         "vainqueurs_multiples": multi,
         "titres_distincts": len(titres),
         "titres_total": sum(titres.values()),
@@ -202,7 +220,7 @@ def risque(saisons, parts, pas=10):
 
     Une courbe de survie dit combien il en reste. Celle-ci dit tout autre
     chose : parmi ceux qui sont encore en jeu, quelle part s'en va maintenant.
-    C'est le taux de hasard des statisticiens, et c'est la seule forme qui
+    C'est le taux de risque instantane des statisticiens, et c'est la seule forme qui
     montre que le jeu devient plus dangereux a mesure qu'il avance.
 
     Le temps est ramene en part de saison : les editions ne durent pas toutes

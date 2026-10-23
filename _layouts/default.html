@@ -43,12 +43,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   {%- comment -%}
     Une seule famille, Archivo, et deux fichiers pour le sous-ensemble latin :
-    le romain variable (graisse 400 a 800, largeur 100 a 125 %) et l'italique
+    le romain variable (graisse 400 a 800, largeur 100 a 125 %) et l'italique
     400 a largeur normale, qui porte `<em>` et `<i>`. 106 Ko en tout, contre
     154 pour les trois familles d'avant (Fraunces, Public Sans, Plex Mono).
 
     Les plages sont mesurees, pas arrondies : la feuille emploie les graisses
-    400 a 800 et les largeurs 100 a 125 % (`.accueil-titre`). Elargir une
+    400 a 800 et les largeurs 100 a 125 % (`.accueil-titre`). Elargir une
     plage alourdit le fichier sur le chemin critique de CHAQUE page -- cette
     feuille est bloquante et vient d'un autre domaine.
   {%- endcomment -%}
@@ -65,7 +65,9 @@
     rend selon le gabarit. Le second est DANS <main> : le H1 doit appartenir
     au contenu principal, et le lien d'evitement mene a lui.
 
-    Les gabarits sans entete (404) n'ont que la banniere.
+    Un gabarit absent de la liste ci-dessous n'a que la banniere. La 404 n'en
+    fait plus partie : elle est en layout page, et recoit l'entete comme les
+    autres pages.
   {%- endcomment -%}
   {%- assign gabarits_a_entete = "home page article fiche-aventurier fiche-saison fiche-epreuve" | split: " " -%}
 
@@ -93,8 +95,11 @@
          {% if page.espace == 'articles' %}aria-current="true"{% endif %}>Articles</a>
     </nav>
 
-    <button type="button" class="bascule" id="bascule-theme"
-            aria-live="polite">Thème&nbsp;: auto</button>
+    {%- comment -%}
+      Pas d'aria-live : site.js reecrit le libelle au chargement, et chaque
+      page l'aurait annonce. Le libelle dit l'etat, le bouton le change.
+    {%- endcomment -%}
+    <button type="button" class="bascule" id="bascule-theme">Thème&nbsp;: auto</button>
   </header>
   </div>
 

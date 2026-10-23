@@ -29,8 +29,7 @@ tournage et de l’année de la saison. Calculable pour
 {{ site.data.stats.general.participations }}.</p>
 
 Les aventuriers sont nés entre **{{ p.periode.debut }}** et
-**{{ p.periode.fin }}**, avec un sommet très net dans les années
-{{ site.data.stats.casting.decennie_sommet }}. C’est
+**{{ p.periode.fin }}**, avec un sommet très net dans les années {{ site.data.stats.casting.decennie_sommet }}. C’est
 cette population-là — et pas la France d’aujourd’hui — qui sert de point de
 comparaison.
 
@@ -51,12 +50,12 @@ C’est le nombre d’aventuriers qui s’appelleraient ainsi si le casting éta
 
 {% include graphiques/prenoms-ecart.svg %}
 
-<p class="legende-figure">Les huit prénoms les plus sur-représentés, puis les
+<p class="legende-figure">Les huit prénoms les plus surreprésentés, puis les
 huit plus sous-représentés. Seuls les prénoms dont l’attendu atteint 1 sont
 classés : en dessous, un seul porteur suffirait à afficher un facteur de plusieurs dizaines,
 et l’indice ne mesurerait plus que la rareté du prénom.</p>
 
-Les écarts sont réels mais **modestes** : le plus sur-représenté ne dépasse pas
+Les écarts sont réels mais **modestes** : le plus surreprésenté ne dépasse pas
 un facteur {{ site.data.stats.prenoms.indice_max_tableau }}. Autrement dit, **le casting de Koh-Lanta ressemble
 beaucoup à la France de sa génération**. C’est en soi un résultat : on aurait pu
 imaginer un tri involontaire, il n’y en a pas de marqué.
@@ -88,7 +87,7 @@ pas au fichier national sur la période : Teheiura, Coumba, Moundir, Filomène,
 Namadia, Guénaëlle, Wafa… L’INSEE verse en effet les prénoms trop rares dans un
 seul sac, et n’enregistre que les naissances survenues en France.
 
-C’est **{{ pab.part_porteurs_absents }} % des aventuriers**, et c’est sans doute le vrai résultat
+C’est **{{ pab.part_porteurs_absents }} % des aventuriers**, et c’est sans doute le vrai résultat
 de cette page : le casting va chercher bien au-delà des prénoms les plus donnés.
 
 <p class="note">Trois réserves, qui portent toutes dans le même sens. L’âge est

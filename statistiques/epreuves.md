@@ -49,7 +49,7 @@ spectaculaire. {{ e.classement_effectif }} aventuriers passent ce seuil.</p>
   <td>{{ x.titre }} ({{ x.annee }}){% if x.speciale %} <em>— édition spéciale</em>{% endif %}</td>
   <td class="nombre">{{ x.gagnees }}</td>
   <td class="nombre">{{ x.disputees }}</td>
-  <td class="nombre">{{ x.ratio }} %</td>
+  <td class="nombre">{{ x.ratio }} %</td>
 </tr>
 {% endfor %}
 </tbody>
@@ -115,9 +115,8 @@ haut : la saison qu’il a gagnée, <em>Malaisie</em>, n’avait pas de bilan p
 faut le savoir avant de les comparer.</strong> Le total d’une fiche englobe les
 duels de l’île des bannis ou de l’exil et les épreuves de finale, que le bilan par épisode
 n’enregistre pas. Là où les deux existent, ils sont <strong>identiques dans
-{{ pa.part_identiques }} % des cas</strong> ({{ pa.identiques }} sur
-{{ pa.compares }}) et l’écart médian, quand il y en a un, vaut
-{{ pa.ecart_median }}. C’est assez pour lire ce classement, pas pour le
+{{ pa.part_identiques }} % des cas</strong> ({{ pa.identiques }} sur
+{{ pa.compares }}) et l’écart médian, quand il y en a un, vaut {{ pa.ecart_median }}. C’est assez pour lire ce classement, pas pour le
 substituer au précédent — et surtout pas pour nourrir un modèle : la
 <a href="{{ '/statistiques/force/' | relative_url }}">force réelle</a> continue
 de se calculer sur les seuls plateaux reconstruits.</p>
@@ -175,7 +174,7 @@ que l’affirmer.
   la même saison.</p>
   <p>Résultat : sur les {{ en.raccord.epreuves_relevees }} épreuves relevées,
   <b>{{ en.raccord.epreuves_raccordees }} seulement</b> peuvent recevoir une
-  nature — <b>{{ en.raccord.part_raccordee }} %</b>.</p>
+  nature — <b>{{ en.raccord.part_raccordee }} %</b>.</p>
 </div>
 
 <div class="tableau-large">
@@ -189,7 +188,7 @@ que l’affirmer.
 </table>
 </div>
 
-**Et ces {{ en.raccord.part_raccordee }} % ne sont pas un échantillon.** Ce sont
+**Et ces {{ en.raccord.part_raccordee }} % ne sont pas un échantillon.** Ce sont
 exactement les épreuves dont l’ensemble des vainqueurs ne se retrouve qu’une
 fois dans la saison — c’est-à-dire, en grande partie, les vainqueurs les moins
 dominants. Chercher là si la nature d’une épreuve change qui la gagne
@@ -203,8 +202,8 @@ reçoit.
 du combattant — rencontrait alors toutes les épreuves que l’un <em>ou</em>
 l’autre avait gagnées, et ne tranchait jamais. Exiger que <strong>l’ensemble
 complet des vainqueurs coïncide</strong> est une condition plus stricte, pas une
-devinette de plus : le raccord passe de 11,0 % à
-{{ en.raccord.part_raccordee }} %, et les épreuves individuelles — les seules qui
+devinette de plus : le raccord passe de 11,0 % à
+{{ en.raccord.part_raccordee }} %, et les épreuves individuelles — les seules qui
 comptent ici — de 74 à {{ en.raccord.individuelles_raccordees }}.</p>
 
 <p class="note"><strong>Le plafond, lui, a été vérifié à la source.</strong> La
@@ -246,13 +245,13 @@ et une seule victoire alimente alors deux compteurs.</p>
 
 <p class="legende-figure">Part des victoires revenant à une femme, nature par
 nature, avec son intervalle. Le trait vertical est la part observée toutes
-natures confondues : {{ n.part_femmes }} %.</p>
+natures confondues : {{ n.part_femmes }} %.</p>
 
 {% include graphiques/natures-bout.svg %}
 
 <p class="legende-figure">La même chose pour les victoires revenant à quelqu’un
 qui ira au bout — finaliste, vainqueur, ou éliminé aux poteaux. Le repère est
-{{ n.part_au_bout }} %.</p>
+{{ n.part_au_bout }} %.</p>
 
 <div class="tableau-large">
 <table data-triable>
@@ -266,9 +265,9 @@ qui ira au bout — finaliste, vainqueur, ou éliminé aux poteaux. Le repère e
 <tr>
   <td>{{ x.libelle }}</td>
   <td class="nombre">{{ x.effectif }}</td>
-  <td class="nombre">{{ x.femmes.probabilite }} %</td>
-  <td class="nombre">{{ x.femmes.bas }} – {{ x.femmes.haut }} %</td>
-  <td class="nombre">{{ x.au_bout.probabilite }} %</td>
+  <td class="nombre">{{ x.femmes.probabilite }} %</td>
+  <td class="nombre">{{ x.femmes.bas }} – {{ x.femmes.haut }} %</td>
+  <td class="nombre">{{ x.au_bout.probabilite }} %</td>
   <td class="nombre">{{ x.age_moyen }}</td>
 </tr>
 {% endfor %}
@@ -279,8 +278,8 @@ qui ira au bout — finaliste, vainqueur, ou éliminé aux poteaux. Le repère e
 <div class="constat">
   <p><b>Aucun intervalle ne s’écarte de sa référence.</b> Ni pour le sexe, ni
   pour la distance parcourue dans le jeu. L’équilibre revient à une femme
-  {{ n.par_nature[4].femmes.probabilite }} % du temps contre
-  {{ n.part_femmes }} % en général, la précision {{ n.par_nature[1].femmes.probabilite }} % —
+  {{ n.par_nature[4].femmes.probabilite }} % du temps contre
+  {{ n.part_femmes }} % en général, la précision {{ n.par_nature[1].femmes.probabilite }} % —
   et les deux intervalles contiennent la référence.</p>
   <p>L’âge ne trie pas davantage : de {{ n.par_nature[4].age_moyen }} ans pour
   l’équilibre à {{ n.par_nature[1].age_moyen }} pour la précision, autour d’une
@@ -307,7 +306,8 @@ laissait entendre.
 {% include graphiques/epreuves-metier.svg %}
 
 <p class="legende-figure">Nombre moyen d’épreuves individuelles remportées par
-aventurier de chaque famille — rapporté à l’effectif, donc comparable.</p>
+aventurier de chaque famille — rapporté à l’effectif, et non au nombre
+d’épreuves disputées : celui qui reste plus longtemps en dispute davantage.</p>
 
 {% assign pm = e.par_metier_par_ratio %}
 **{{ pm[0].libelle }}** arrive en tête avec
@@ -319,12 +319,13 @@ perd le jury.
 
 {% include graphiques/epreuves-age.svg %}
 
-L’âge trace une courbe nette : les **25-34 ans** remportent
+L’âge trace une courbe nette : les **25–34 ans** remportent
 {{ e.victoires_25_34 }} épreuve par personne, les **45 ans et plus**
-{{ e.rapport_45_et_plus }} fois moins. C’est le seul domaine où
-l’âge pèse aussi franchement — et il éclaire la page
-[longévité]({{ '/statistiques/longevite/' | relative_url }}) : si les plus âgés
-sortent plus tôt, c’est d’abord qu’ils gagnent moins d’immunités.
+{{ e.rapport_45_et_plus }} fois moins. Le compte se fait par personne et non par
+épreuve disputée : sortir tôt, c’est aussi disputer moins d’épreuves. On ne
+peut donc pas lire ici que les plus âgés sortent plus tôt <em>parce qu’</em>ils
+gagnent moins — les deux vont ensemble, et la page
+[longévité]({{ '/statistiques/longevite/' | relative_url }}) ne les sépare pas.
 
 {% include graphiques/epreuves-genre.svg %}
 
@@ -339,8 +340,8 @@ ce qui fait gagner Koh-Lanta.**
 
 {% assign pe = site.data.stats.premiere_epreuve %}
 La première épreuve individuelle d’une saison marque le début du jeu personnel.
-Celui qui la remporte tient en moyenne **{{ pe.survie_gagnants }} %** de la
-saison, contre **{{ pe.survie_ensemble }} %** pour l’ensemble des aventuriers.
+Celui qui la remporte tient en moyenne **{{ pe.survie_gagnants }} %** de la
+saison, contre **{{ pe.survie_ensemble }} %** pour l’ensemble des aventuriers.
 
 L’écart est net : {{ pe.ecart }} points. Mais il repose sur
 **{{ pe.effectif }} cas seulement** — une saison ne fournit qu’une première
@@ -368,7 +369,7 @@ catalogue du wiki, qui ne donne pas l’épisode : les {{ e.epreuves }} épreuv
 relevées épisode par épisode n’en reçoivent aucune. Ce que la nature dit — et
 ne dit pas — est mesuré plus haut, sur les citations du catalogue.
 
-## Gagner le confort rend-il cible ? Non
+## Gagner le confort rend-il cible ? Rien ne le montre
 
 {% assign cf = site.data.stats.modeles.confort_maudit %}
 
@@ -379,26 +380,28 @@ soir. Elle se teste sur le conseil du **même épisode**.
 {% include graphiques/confort-maudit.svg %}
 
 <p class="legende-figure">Part des bulletins visant un gagnant du confort du
-même épisode. Le trait vertical marque la part que ces gagnants représentent
-parmi les présents — c’est-à-dire ce qu’on attendrait s’ils n’étaient ni plus ni
-moins visés que les autres.</p>
+même épisode, les soirs à conseil unique. Le trait vertical marque la part que
+ces gagnants représentent parmi ceux que chaque votant pouvait viser — sans
+lui-même ni l’immunisé —, c’est-à-dire ce qu’on attendrait s’ils n’étaient ni
+plus ni moins visés que les autres.</p>
 
 Sur **{{ cf.conseils }} conseils** et {{ cf.bulletins }} bulletins,
-{{ cf.observe }} % visent un gagnant du confort — intervalle
-{{ cf.bas }} à {{ cf.haut }} % — pour {{ cf.attendu }} % attendus. p =
-{{ cf.p }}. **La malédiction du confort n’existe pas.**
+{{ cf.observe }} % visent un gagnant du confort — intervalle
+{{ cf.bas }} à {{ cf.haut }} % — pour {{ cf.attendu }} % attendus. p = {{ cf.p }}. **La malédiction du confort n’est pas établie.**
 
 L’intervalle laisse encore place à un écart de {{ cf.marge }} points dans un sens ou
-dans l’autre : ce qu’on peut affirmer, c’est qu’il n’y a pas d’effet marqué.
+dans l’autre, et il est même trop étroit — les bulletins d’un même conseil ne
+sont pas indépendants : ce qu’on peut affirmer, c’est qu’il n’y a pas d’effet
+marqué.
 
 {% assign cw = site.data.stats.modeles.autour_du_feu.confort | first %}
 {% assign cn = site.data.stats.modeles.autour_du_feu.confort | last %}
 {% assign tcf = site.data.stats.modeles.registre | where: "cle", "confort_sortie" | first %}
 <p class="note"><strong>La même question posée en sortie, et non en
 bulletins.</strong> Sachant qu’on vient de gagner le confort de l’épisode, on est
-éliminé le soir même dans <b>{{ cw.probabilite }} %</b> des cas
-({{ cw.cas }} sur {{ cw.effectif }}), contre {{ cn.probabilite }} % pour ceux qui
-n’ont rien gagné — {{ tcf.observe_arrondi }} points, {{ tcf.ecart_types }}
+éliminé le soir même dans <b>{{ cw.probabilite }} %</b> des cas
+({{ cw.cas }} sur {{ cw.effectif }}), contre {{ cn.probabilite }} % pour ceux qui
+n’ont rien gagné — {{ tcf.observe_arrondi }} point{% if tcf.observe_arrondi_pluriel %}s{% endif %}, {{ tcf.ecart_types }}
 {{ tcf.ecart_types_mot }}, p ajustée {{ tcf.p_ajustee }}. L’écart va cette fois dans le sens
 de la légende, mais il reste <em>non concluant</em> : à {{ cw.effectif }}
 présences, on ne peut pas le distinguer d’un tirage. Deux mesures de la même

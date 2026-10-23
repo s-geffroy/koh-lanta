@@ -29,13 +29,18 @@ conclusion facile serait : **l’expérience paie**. Mais séparons leur premi�
 aventure de leurs retours.
 
 <div class="constat">
-  <p>Les revenants tenaient déjà <b>{{ r.paradoxe[1].survie_moyenne }} %</b> de
+  <p>Les revenants tenaient déjà <b>{{ r.paradoxe[1].survie_moyenne }} %</b> de
   la saison lors de leur <b>première</b> participation, contre
-  {{ r.paradoxe[0].survie_moyenne }} % pour ceux qui n’ont jamais été rappelés.
+  {{ r.paradoxe[0].survie_moyenne }} % pour ceux qui n’ont jamais été rappelés.
   Ils étaient donc <b>déjà exceptionnels avant de revenir</b>.</p>
   <p>Et lorsqu’ils reviennent, ils tombent à
-  <b>{{ r.paradoxe[2].survie_moyenne }} %</b> : <b>moins bien qu’à leur premier
-  passage</b>.</p>
+  <b>{{ r.paradoxe[2].survie_moyenne }} %</b> : moins bien qu’à leur premier
+  passage — mais <b>à peu près ce qu’on attend</b>.
+  {{ r.retour_reference.retours_en_speciale }} de leurs
+  {{ r.retour_reference.retours }} retours ont lieu dans une édition spéciale,
+  où presque tout le monde est revenant, et un aventurier d’édition spéciale
+  tient en moyenne {{ r.retour_reference.moyenne_speciales }} % de la saison.
+  Face à d’autres revenants, il faut bien que la moitié sorte tôt.</p>
   <p>Ce n’est donc pas l’expérience qui explique l’écart, c’est le casting. La
   production rappelle ceux qui sont allés loin ; l’écart était acquis avant que
   le retour ne commence.</p>
@@ -46,12 +51,12 @@ comparée à une autre moyenne ne suffit presque jamais. Le groupe des revenants
 n’est pas un échantillon des aventuriers : c’est le haut du panier, choisi
 exprès.
 
-<p class="note">Ce que ces chiffres ne disent pas : pourquoi le retour se passe
-moins bien. Deux explications tiennent également debout et ces données ne
-permettent pas de trancher entre elles. Les revenants sont des cibles connues,
-et l’on vote contre ceux qu’on redoute ; mais les éditions spéciales
-rassemblent aussi des joueurs tous très forts, parmi lesquels la moitié doit
-forcément sortir tôt.</p>
+<p class="note">Ce que ces chiffres ne disent pas : si l’expérience aide ou
+nuit. Le retour se passe comme celui de n’importe qui dans une édition
+spéciale — une régression vers la moyenne, pas un effet de l’expérience. Pour
+dire si les revenants sont des cibles connues ou des joueurs aguerris, il
+faudrait les comparer à des débutants dans la même saison, et les éditions
+spéciales n’en ont presque pas.</p>
 
 ## Qui la production redemande
 
@@ -62,7 +67,7 @@ rappelé** — et là, ce n’est plus le jeu qui décide, c’est la production
 les **{{ rp.effectif }} premières participations** assez anciennes pour qu’un
 retour ait eu le temps de se produire (avant {{ rp.annee_limite }}),
 **{{ rp.rappeles }} ont été suivies d’une autre édition** :
-{{ rp.part }} %.
+{{ rp.part }} %.
 
 {% include graphiques/rappel-sort.svg %}
 
@@ -77,8 +82,8 @@ ultérieure, selon la façon dont leur première aventure s’est terminée.</p>
 <tr>
   <td>{{ x.modalite }}</td>
   <td class="nombre">{{ x.effectif }}</td><td class="nombre">{{ x.cas }}</td>
-  <td class="nombre" data-val="{{ x.probabilite }}"><b>{{ x.probabilite }} %</b></td>
-  <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td>
+  <td class="nombre" data-val="{{ x.probabilite }}"><b>{{ x.probabilite }} %</b></td>
+  <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td>
 </tr>
 {% endfor %}
 </tbody>
@@ -87,8 +92,8 @@ ultérieure, selon la façon dont leur première aventure s’est terminée.</p>
 
 {% assign fin = rp.par_sort | first %}
 {% assign dernier = rp.par_sort | last %}
-La gradation est sans trou : **{{ fin.probabilite }} %** en haut du tableau,
-**{{ dernier.probabilite }} %** en bas. Entre les deux, chaque façon de sortir a
+La gradation est sans trou : **{{ fin.probabilite }} %** en haut du tableau,
+**{{ dernier.probabilite }} %** en bas. Entre les deux, chaque façon de sortir a
 sa probabilité d’être redemandé, et elles se rangent exactement dans l’ordre où
 l’on s’attendrait à les trouver.
 
@@ -100,8 +105,8 @@ l’on s’attendrait à les trouver.
 longévité auquel ils appartiennent.</p>
 
 Le cinquième qui va le plus loin est rappelé
-**{{ rp.par_survie[4].probabilite }} %** du temps, contre
-**{{ rp.par_survie[0].probabilite }} %** pour celui qui sort le plus tôt :
+**{{ rp.par_survie[4].probabilite }} %** du temps, contre
+**{{ rp.par_survie[0].probabilite }} %** pour celui qui sort le plus tôt :
 {{ rp.rapport_survie }} fois moins. Le tableau des sorts, ci-dessus, ne dit peut-être rien de
 plus que cela — un éliminé aux poteaux est allé loin par définition.
 
@@ -162,7 +167,7 @@ choix de la production et celui du candidat.</p>
 
 {% include graphiques/revenants-graphe.svg %}
 
-<p class="legende-figure">Chaque point est un aventurier revenu au moins deux
+<p class="legende-figure">Chaque point est un aventurier venu au moins deux
 fois, rangé par ordre d’arrivée dans le programme ; sa taille dit combien
 d’autres revenants il a croisés, sa couleur combien de saisons il a jouées. Un
 arc relie deux personnes ayant partagé une saison, et sa couleur dit combien
@@ -291,7 +296,7 @@ Aucun conseil, aucun poteau, aucune orientation ne les a fait sortir.
   <td class="nombre">{{ c.saisons }}</td>
   <td class="nombre">{{ c.jours }}</td>
   <td class="nombre">{{ c.jours_possibles }}</td>
-  <td class="nombre" data-val="{{ c.part_du_temps }}">{{ c.part_du_temps }} %
+  <td class="nombre" data-val="{{ c.part_du_temps }}">{{ c.part_du_temps }} %
     <span class="cellule-barre" style="width: {{ c.barre }}%"></span></td>
 </tr>
 {% endfor %}
@@ -311,7 +316,7 @@ En tête, **{{ r.duos[0].a }} et {{ r.duos[0].b }}**, qui ont joué
 {{ r.duos[0].saisons }} fois ensemble.
 
 <p class="note">Ce biais a trompé ce site lui-même. Jusqu’au 22 octobre 2026,
-le modèle multivarié de <a href="{{ '/statistiques/equilibre/' | relative_url }}">Le
+le modèle multivarié de la page <a href="{{ '/statistiques/equilibre/' | relative_url }}">Le
 jeu tenu serré</a> donnait « déjà venu » comme son plus gros coefficient : un
 aventurier déjà venu sortait près de trois fois moins vite. La variable
 comptait aussi les saisons jouées <em>après</em>, et marquait donc la première

@@ -33,8 +33,8 @@ cet effet de taille.
 
 Le repère de toute cette page est donc **une chance sur n**, n étant le nombre
 de personnes qui votent ce soir-là — {{ c.taille_moyenne }} en moyenne sur la
-chaîne étudiée ici. Ce repère vaut **{{ c.hasard }} %**, et le taux observé,
-toutes catégories confondues, vaut {{ c.globale }} %. Les deux sont égaux par
+chaîne étudiée ici. Ce repère vaut **{{ c.hasard }} %**, et le taux observé,
+toutes catégories confondues, vaut {{ c.globale }} %. Les deux sont égaux par
 construction : il part exactement une personne par conseil. Tout l’intérêt est
 donc dans la **répartition** de ce risque entre les présents, jamais dans son
 niveau moyen.
@@ -43,7 +43,7 @@ niveau moyen.
   <li class="chiffre"><b>{{ c.presences }}</b><span>présences à un conseil, dont on connaît le conseil précédent</span></li>
   <li class="chiffre"><b>{{ c.conseils }}</b><span>conseils enchaînés</span></li>
   <li class="chiffre"><b>{{ c.saisons }}</b><span>saisons</span></li>
-  <li class="chiffre"><b>{{ c.hasard }} %</b><span>le hasard : une chance sur le nombre de présents</span></li>
+  <li class="chiffre"><b>{{ c.hasard }} %</b><span>le hasard : une chance sur le nombre de présents</span></li>
 </ul>
 
 <p class="note"><strong>Comment la chaîne est construite, et ce qu’elle coûte.</strong>
@@ -67,7 +67,7 @@ conseils sont la donnée la plus trouée du site.</p>
 
 <p class="legende-figure">Probabilité d’être éliminé à un conseil selon le
 nombre de voix reçues au conseil précédent. Le trait vertical est l’intervalle
-de confiance à 95 % ; le trait tireté, le risque qu’un tirage au sort
+de confiance à 95 % ; le trait tireté, le risque qu’un tirage au sort
 donnerait.</p>
 
 <div class="tableau-large">
@@ -84,9 +84,9 @@ donnerait.</p>
   <td>{{ x.modalite_maj }}</td>
   <td class="nombre">{{ x.effectif }}</td>
   <td class="nombre">{{ x.cas }}</td>
-  <td class="nombre" data-val="{{ x.probabilite }}"><b>{{ x.probabilite }} %</b></td>
-  <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td>
-  <td class="nombre">{{ x.hasard }} %</td>
+  <td class="nombre" data-val="{{ x.probabilite }}"><b>{{ x.probabilite }} %</b></td>
+  <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td>
+  <td class="nombre">{{ x.hasard }} %</td>
 </tr>
 {% endfor %}
 </tbody>
@@ -94,18 +94,18 @@ donnerait.</p>
 </div>
 
 La lecture directe : **n’avoir reçu aucune voix la fois d’avant fait passer sous
-le hasard** ({{ c.par_voix[0].probabilite }} % contre
-{{ c.par_voix[0].hasard }} %), en recevoir une ou deux le fait nettement monter
-({{ c.par_voix[1].probabilite }} %, puis {{ c.par_voix[2].probabilite }} %).
+le hasard** ({{ c.par_voix[0].probabilite }} % contre
+{{ c.par_voix[0].hasard }} %), en recevoir une ou deux le fait nettement monter
+({{ c.par_voix[1].probabilite }} %, puis {{ c.par_voix[2].probabilite }} %).
 
 {% include graphiques/conditionnelles-nulle.svg %}
 
 <p class="legende-figure">Écart entre partir après avoir été visé et partir sans
-l’avoir été. La silhouette est celle de {{ t1.tirages }} tirages où l’éliminé de
+l’avoir été. La silhouette est celle de {{ t1.tirages_texte }} tirages où l’éliminé de
 chaque conseil est pris au hasard parmi les présents.</p>
 
 <div class="constat">
-  <p>Avoir été visé au conseil précédent ajoute <b>{{ t1.observe_arrondi }} points</b>
+  <p>Avoir été visé au conseil précédent ajoute <b>{{ t1.observe_arrondi }} point{% if t1.observe_arrondi_pluriel %}s{% endif %}</b>
   de risque : {{ t1.ecart_types }} {{ t1.ecart_types_mot }} au-dessus du hasard, p ajustée
   {{ t1.p_ajustee }}.</p>
   <p>Le modèle nul fait ici tout le travail. À chaque conseil, on tire l’éliminé
@@ -122,16 +122,16 @@ La courbe ne monte pas indéfiniment. Elle culmine à deux voix, puis elle
 {% include graphiques/conditionnelles-sommet.svg %}
 
 <p class="legende-figure">Écart entre partir après une à trois voix et partir
-après quatre voix ou plus, contre {{ t2.tirages }} tirages du même modèle
+après quatre voix ou plus, contre {{ t2.tirages_texte }} tirages du même modèle
 nul.</p>
 
 <div class="constat">
   <p>Une à trois voix la fois d’avant : le risque monte. <b>Quatre voix ou
   plus</b> : il redescend, jusqu’à
   {% assign gros = c.par_voix | where: "modalite", "5 voix et plus" | first %}
-  <b>{{ gros.probabilite }} %</b> pour cinq voix et plus — soit {{ gros.cas }}
+  <b>{{ gros.probabilite }} %</b> pour cinq voix et plus — soit {{ gros.cas }}
   cas sur {{ gros.effectif }}.</p>
-  <p>L’écart vaut {{ t2.observe_arrondi }} points, {{ t2.ecart_types }} {{ t2.ecart_types_mot }},
+  <p>L’écart vaut {{ t2.observe_arrondi }} point{% if t2.observe_arrondi_pluriel %}s{% endif %}, {{ t2.ecart_types }} {{ t2.ecart_types_mot }},
   p ajustée <b>{{ t2.p_ajustee }}</b> — <b>non retenu</b>.</p>
 </div>
 
@@ -159,7 +159,7 @@ courbe illustre et que le test ne soutient pas.
 retournement n’était qu’un effet des colliers d’immunité, il devrait disparaître
 en écartant les conseils où un objet a annulé des voix. Il ne disparaît pas : à
 cinq voix et plus, sans ces conseils-là, la probabilité vaut
-<b>{{ sc.probabilite }} %</b> sur {{ sc.effectif }} présences. L’objet n’est
+<b>{{ sc.probabilite }} %</b> sur {{ sc.effectif }} présences. L’objet n’est
 qu’une des formes de la protection ; ce n’est pas la seule.
 Voir <a href="{{ '/statistiques/colliers/' | relative_url }}">Les colliers</a>.</p>
 
@@ -205,8 +205,8 @@ compte-t-il encore ?
 <tr>
   <td>{{ x.modalite_maj }}</td>
   <td class="nombre">{{ x.effectif }}</td><td class="nombre">{{ x.cas }}</td>
-  <td class="nombre"><b>{{ x.probabilite }} %</b></td>
-  <td class="nombre">{{ x.hasard }} %</td>
+  <td class="nombre"><b>{{ x.probabilite }} %</b></td>
+  <td class="nombre">{{ x.hasard }} %</td>
 </tr>
 {% endfor %}
 </tbody>
@@ -220,8 +220,7 @@ compte-t-il encore ?
 conseils plus tôt et partir quand on ne l’avait pas été.</p>
 
 <div class="constat">
-  <p>{{ t6.observe_arrondi }} points d’écart — presque autant qu’au conseil
-  précédent — mais sur {{ c.deux_pas_vises }}
+  <p>{{ t6.observe_arrondi }} point{% if t6.observe_arrondi_pluriel %}s{% endif %} d’écart, sur {{ c.deux_pas_vises }}
   présences seulement : {{ t6.ecart_types }} {{ t6.ecart_types_mot }}, p brute {{ t6.p }},
   p ajustée {{ t6.p_ajustee }}. <b>Non concluant.</b></p>
   <p>La chaîne se raccourcit vite : exiger deux conseils complets d’affilée
@@ -274,17 +273,17 @@ le passé d’un éliminé **qu’une fois qu’il est éliminé**.
 <thead><tr><th></th><th class="nombre">Avaient été visés la fois d’avant</th><th class="nombre">Voix reçues en moyenne</th></tr></thead>
 <tbody>
 <tr><td>Ceux qui sont partis ({{ c.inverse.sortis }})</td>
-    <td class="nombre"><b>{{ c.inverse.vise_si_sorti }} %</b></td>
+    <td class="nombre"><b>{{ c.inverse.vise_si_sorti }} %</b></td>
     <td class="nombre">{{ c.inverse.voix_si_sorti }}</td></tr>
 <tr><td>Ceux qui sont restés ({{ c.inverse.restes }})</td>
-    <td class="nombre">{{ c.inverse.vise_si_reste }} %</td>
+    <td class="nombre">{{ c.inverse.vise_si_reste }} %</td>
     <td class="nombre">{{ c.inverse.voix_si_reste }}</td></tr>
 </tbody>
 </table>
 </div>
 
-**{{ c.inverse.vise_si_sorti }} % de ceux qui partent avaient été visés la fois
-d’avant — mais {{ c.inverse.vise_si_reste }} % de ceux qui restent aussi.** Le
+**{{ c.inverse.vise_si_sorti }} % de ceux qui partent avaient été visés la fois
+d’avant — mais {{ c.inverse.vise_si_reste }} % de ceux qui restent aussi.** Le
 signe annonciateur est réel et il est faible : la majorité des éliminations
 frappe quelqu’un dont le nom n’était pas sorti la fois d’avant. Confondre les deux sens de
 lecture est l’erreur ordinaire sur ce genre de chiffre, et le tableau est là
@@ -300,8 +299,8 @@ pour la rendre impossible.
 <tr>
   <td>{{ x.modalite_maj }}</td>
   <td class="nombre">{{ x.effectif }}</td><td class="nombre">{{ x.cas }}</td>
-  <td class="nombre" data-val="{{ x.probabilite }}"><b>{{ x.probabilite }} %</b></td>
-  <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td>
+  <td class="nombre" data-val="{{ x.probabilite }}"><b>{{ x.probabilite }} %</b></td>
+  <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td>
 </tr>
 {% endfor %}
 </tbody>
@@ -314,9 +313,9 @@ pour la rendre impossible.
 {% assign h3 = c.par_histoire | where: "modalite", "visé la dernière fois, et déjà avant" | first %}
 Le partage utile n’est pas entre « un peu visé » et « beaucoup visé » : il tient
 à la fraîcheur de la menace. Ceux dont le nom n’est jamais sorti partent dans
-**{{ jamais.probabilite }} %** des cas ; ceux qui ont été visés la dernière
-fois, dans **{{ h2.probabilite }} %** et {{ h3.probabilite }} %. Visé seulement
-plus tôt, on retombe à {{ h1.probabilite }} % — et la menace « deux conseils
+**{{ jamais.probabilite }} %** des cas ; ceux qui ont été visés la dernière
+fois, dans **{{ h2.probabilite }} %** et {{ h3.probabilite }} %. Visé seulement
+plus tôt, on retombe à {{ h1.probabilite }} % — et la menace « deux conseils
 plus tôt » n’est pas un résultat retenu.
 
 ## Sachant de quel côté on a voté
@@ -327,19 +326,19 @@ plus tôt » n’est pas un résultat retenu.
 <tbody>
 {% for x in c.par_camp %}
 <tr><td>{{ x.modalite_maj }}</td><td class="nombre">{{ x.effectif }}</td>
-    <td class="nombre"><b>{{ x.probabilite }} %</b></td>
-    <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td></tr>
+    <td class="nombre"><b>{{ x.probabilite }} %</b></td>
+    <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td></tr>
 {% endfor %}
 </tbody>
 </table>
 </div>
 
 <div class="constat">
-  <p>{{ t3.observe_arrondi }} points d’écart, {{ t3.ecart_types }} {{ t3.ecart_types_mot }}, p brute
+  <p>{{ t3.observe_arrondi }} point{% if t3.observe_arrondi_pluriel %}s{% endif %} d’écart, {{ t3.ecart_types }} {{ t3.ecart_types_mot }}, p brute
   {{ t3.p }}, p ajustée {{ t3.p_ajustee }}. <b>Retenu, de justesse.</b></p>
   <p>S’être trompé de cible au conseil précédent expose : à
   {{ c.par_camp[1].effectif }} présences du côté de la minorité, un écart de
-  {{ t3.observe_arrondi }} points se distingue d’un tirage. Mais il passe le
+  {{ t3.observe_arrondi }} point{% if t3.observe_arrondi_pluriel %}s{% endif %} se distingue d’un tirage. Mais il passe le
   seuil de peu, et une correction des données suffirait à le faire repasser
   dessous.</p>
 </div>
@@ -366,14 +365,14 @@ selon le nombre de voix reçues au conseil précédent.</p>
 {% include graphiques/conditionnelles-cible-nulle.svg %}
 
 <p class="legende-figure">Écart entre revoir son nom sortir quand il était déjà
-sorti et le voir sortir quand il ne l’était pas, contre {{ t4.tirages }}
+sorti et le voir sortir quand il ne l’était pas, contre {{ t4.tirages_texte }}
 tirages.</p>
 
 <div class="constat">
   <p>Sans voix la fois d’avant, le nom ressort dans
-  {{ c.persistance[0].probabilite }} % des cas. Avec deux voix,
-  <b>{{ c.persistance[2].probabilite }} %</b>.</p>
-  <p>{{ t4.observe_arrondi }} points d’écart, {{ t4.ecart_types }} {{ t4.ecart_types_mot }},
+  {{ c.persistance[0].probabilite }} % des cas. Avec deux voix,
+  <b>{{ c.persistance[2].probabilite }} %</b>.</p>
+  <p>{{ t4.observe_arrondi }} point{% if t4.observe_arrondi_pluriel %}s{% endif %} d’écart, {{ t4.ecart_types }} {{ t4.ecart_types_mot }},
   p ajustée {{ t4.p_ajustee }}. <b>La cible reste la cible</b>, et c’est le
   résultat le plus net de cette page.</p>
 </div>
@@ -402,12 +401,12 @@ le bulletin, tous deux étant présents et votants. Le hasard est ici une
 redistribution des bulletins à l’intérieur de chaque conseil.</p>
 
 <div class="constat">
-  <p><b>{{ c.retour.probabilite }} %</b> — {{ c.retour.rendus }} couples sur
-  {{ c.retour.couples }}, intervalle {{ c.retour.bas }} à {{ c.retour.haut }} %.
-  Le hasard en donnerait {{ t5.attendu_arrondi }} %.</p>
+  <p><b>{{ c.retour.probabilite }} %</b> — {{ c.retour.rendus }} couples sur
+  {{ c.retour.couples }}, intervalle {{ c.retour.bas }} à {{ c.retour.haut }} %.
+  Le hasard en donnerait {{ t5.attendu_arrondi }} %.</p>
   <p>{{ t5.ecart_types }} {{ t5.ecart_types_mot }}, p ajustée {{ t5.p_ajustee }}. Écrire un
   nom, c’est donc bien s’exposer à le voir revenir — mais dans
-  {{ c.retour.non_rendus }} % des cas, il ne revient pas.</p>
+  {{ c.retour.non_rendus }} % des cas, il ne revient pas.</p>
 </div>
 
 [Les conseils]({{ '/statistiques/conseils/' | relative_url }}) mesurent la
@@ -426,7 +425,7 @@ plus rare — et beaucoup plus lisible.
   c’est le même rapport de force qui produit les deux voix d’hier et
   l’élimination d’aujourd’hui. La donnée ne sait pas les séparer, et rien ici ne
   prétend le contraire.</p>
-  <p><b>C’est {{ c.part_des_conseils }} % des conseils.</b> {{ c.conseils }} conseils enchaînés sur
+  <p><b>C’est {{ c.part_des_conseils }} % des conseils.</b> {{ c.conseils }} conseils enchaînés sur
   les {{ site.data.stats.conseils.conseils }} du jeu, parce que
   l’exigence de dépouillement complet est sévère et que la chaîne se rompt au
   premier trou. Les saisons les mieux documentées y pèsent plus que les

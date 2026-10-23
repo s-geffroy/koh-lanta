@@ -29,7 +29,7 @@ racontent ce qui leur arrive.
   <li class="chiffre"><b>{{ v.age_moyen }} ans</b><span>âge moyen</span></li>
   <li class="chiffre"><b>{{ v.age_median }} ans</b><span>âge médian</span></li>
   <li class="chiffre"><b>{{ v.age_min }} – {{ v.age_max }}</b><span>du plus jeune au plus âgé</span></li>
-  <li class="chiffre"><b>{{ v.part_40_et_plus }} %</b><span>ont 40 ans ou plus</span></li>
+  <li class="chiffre"><b>{{ v.part_40_et_plus }} %</b><span>ont 40 ans ou plus</span></li>
 </ul>
 
 ## L’âge
@@ -48,7 +48,7 @@ mieux qu’une moyenne :
   **{{ s.records.plus_age_vainqueur.age }}** ({{ s.records.plus_age_vainqueur.titre }},
   {{ s.records.plus_age_vainqueur.annee }}).
 
-{{ s.mots.ecart_age_vainqueurs_maj }} ans d’écart entre les deux. **{{ v.part_40_et_plus }} %** des
+{{ s.mots.ecart_age_vainqueurs_maj }} ans d’écart entre les deux. **{{ v.part_40_et_plus }} %** des
 vainqueurs ont quarante ans ou plus : l’idée d’un jeu réservé aux jeunes corps
 ne tient pas devant les chiffres.
 
@@ -59,7 +59,7 @@ ne tient pas devant les chiffres.
 <thead><tr><th>&nbsp;</th><th class="nombre">Vainqueurs</th><th class="nombre">Part</th></tr></thead>
 <tbody>
 {% for x in v.par_genre %}
-<tr><td>{{ x.libelle }}</td><td class="nombre">{{ x.effectif }}</td><td class="nombre">{{ x.part }} %</td></tr>
+<tr><td>{{ x.libelle }}</td><td class="nombre">{{ x.effectif }}</td><td class="nombre">{{ x.part }} %</td></tr>
 {% endfor %}
 </tbody>
 </table>
@@ -68,14 +68,15 @@ ne tient pas devant les chiffres.
 La parité est presque parfaite — et elle est plus remarquable qu’il n’y paraît :
 comme on le verra sur la page consacrée à la [longévité]({{ '/statistiques/longevite/' | relative_url }}),
 les femmes quittent le jeu **plus tôt** que les hommes en moyenne. Elles gagnent
-donc autant en tenant moins longtemps.
+pourtant autant — et l’écart de durée lui-même, une fois l’âge et la saison
+tenus constants, ne passe pas la correction pour tests multiples.
 
 ## Le métier
 
 {% include graphiques/vainqueurs-metier.svg %}
 
 Aucune famille de métiers n’écrase les autres. Les trois premières —
-encadrement, commerce, sport — pèsent {{ v.par_metier[0].part }} % chacune, et
+encadrement, commerce, sport — pèsent {{ v.par_metier[0].part }} % chacune, et
 ce sont aussi les mieux représentées dans le casting : leur avantage tient
 largement à leur nombre au départ, pas à une supériorité.
 
@@ -89,7 +90,7 @@ largement à leur nombre au départ, pas à une supériorité.
 <tr>
   <td><span class="pastille" style="background: var(--tribu-{{ c.couleur }})"></span>{{ c.couleur_maj }}</td>
   <td class="nombre">{{ c.effectif }}</td>
-  <td class="nombre">{{ c.part }} %</td>
+  <td class="nombre">{{ c.part }} %</td>
 </tr>
 {% endfor %}
 </tbody>
@@ -121,7 +122,7 @@ sur l’ensemble de leur saison. Le repère est la moyenne des finalistes, seul
 groupe à avoir traversé les mêmes conseils.</p>
 
 <div class="constat">
-  <p><b>{{ vv.part_sans_voix }} % des vainqueurs n’ont jamais reçu une seule
+  <p><b>{{ vv.part_sans_voix }} % des vainqueurs n’ont jamais reçu une seule
   voix</b> — {{ vv.sans_aucune_voix }} sur {{ vv.effectif }} :
   {% for x in vv.jamais_ecrits %}{{ x.nom }} ({{ x.annee }}){% unless forloop.last %}, {% endunless %}{% endfor %}.</p>
   <p>Mais l’inverse existe aussi, et il est récent. Le record est de

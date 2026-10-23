@@ -18,8 +18,8 @@ chapeau: >-
 ## « Le jeu devient plus dangereux » — non, le camp se vide
 
 La page [Comment on sort]({{ '/statistiques/sorties/' | relative_url }}) publie
-une courbe de risque qui monte de {{ q.tranches[1].risque }} % entre 10 et 20 % de la saison à
-{{ q.tranches[9].risque }} % dans le dernier dixième, et la commente : « tenir n’allège rien ». La lecture est tentante. Elle
+une courbe de risque qui monte de {{ q.tranches[1].risque }} % entre 10 et 20 % de la saison à
+{{ q.tranches[9].risque }} % dans le dernier dixième, et la commente : « tenir n’allège rien ». La lecture est tentante. Elle
 oublie une chose.
 
 <p class="note"><strong>Un conseil fait sortir une personne, quel que soit le
@@ -39,7 +39,7 @@ plus de sens.</p>
   observé vaut <b>{{ hm.rapport_moyen }} fois</b> le risque purement
   arithmétique — et ce rapport est le même du premier au huitième dixième de
   saison.</p>
-  <p>La montée de {{ q.tranches[1].risque }} % à {{ q.tranches[9].risque }} % n’est donc <b>pas</b> une propriété du jeu :
+  <p>La montée de {{ q.tranches[1].risque }} % à {{ q.tranches[9].risque }} % n’est donc <b>pas</b> une propriété du jeu :
   c’est un quotient dont le dénominateur diminue. Le jeu ajoute un facteur
   constant, pas une accélération.</p>
 </div>
@@ -60,8 +60,9 @@ teste directement.
   {{ r.saisons }} saisons, chaque aventurier d’avance multiplie la cote de
   victoire par <b>{{ r.rapport_de_cotes }}</b> — intervalle
   {{ r.bas }} à {{ r.haut }}, p = {{ r.p }}.</p>
-  <p>L’intervalle contient 1 : <b>l’effectif ne change rien</b>, ni dans un sens
-  ni dans l’autre. Il n’y a ni avantage du nombre, ni rattrapage.</p>
+  <p>L’intervalle contient 1 : <b>aucun effet de l’effectif n’est établi</b>, ni
+  dans un sens ni dans l’autre. On ne voit ni avantage du nombre, ni
+  rattrapage.</p>
 </div>
 
 Il faut dire ce que ce résultat ne permet pas. Avec {{ r.effectif }} épreuves et
@@ -114,8 +115,10 @@ Trois lignes méritent d’être lues de près — et aucune, une fois corrigée
 {% assign c_cadre = cx | where: "variable", "Métier — Encadrement et professions intellectuelles" | first %}
 {% assign c_femme = cx | where: "variable", "Femme" | first %}
 **« Déjà venu » : risque ×{{ c_revenu.rapport }}**, intervalle
-{{ c_revenu.bas }} à {{ c_revenu.haut }}. Rien : avoir déjà joué une saison ne
-change pas la vitesse à laquelle on sort.
+{{ c_revenu.bas }} à {{ c_revenu.haut }}. Ce chiffre ne dit rien, ni dans un
+sens ni dans l’autre : l’intervalle est très large, parce qu’il ne repose que
+sur une poignée de cas. Ce n’est pas « avoir déjà joué ne change rien », c’est
+« ces données ne permettent pas de le savoir ».
 
 <p class="note"><strong>Cette ligne était la plus forte du modèle, et c’était
 une faute.</strong> Jusqu’au 22 octobre 2026, elle valait ×0,354 : un

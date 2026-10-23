@@ -15,6 +15,7 @@ Deux perimetres coexistent partout :
     tools/atelier python3 tools/build_stats.py
 """
 import math
+import re
 import os
 import json
 import sys
@@ -62,17 +63,17 @@ LIBELLE_SORT = {
     "elimine_epreuve": "Éliminé à une épreuve",
     "elimine_destins_lies": "Éliminé par les destins liés",
     "abandon_medical": "Abandon médical", "abandon_volontaire": "Abandon volontaire",
-    "disqualifie": "Disqualifié",
+    "disqualifie": "Exclu du jeu",
 }
 
 
 def libelle_sort(sort, genre=None):
     """Le libelle du sort, accorde : « Éliminée au conseil » pour une femme.
-    LIBELLE_SORT est au masculin ; seuls « Éliminé » et « Disqualifié »
+    LIBELLE_SORT est au masculin ; seuls « Éliminé » et « Exclu »
     s'accordent, les autres libelles sont invariables."""
     libelle = LIBELLE_SORT.get(sort, sort)
     if genre == "f" and libelle:
-        for mot in ("Éliminé", "Disqualifié"):
+        for mot in ("Éliminé", "Exclu"):
             if libelle == mot or libelle.startswith(mot + " "):
                 return mot + "e" + libelle[len(mot):]
     return libelle
@@ -356,8 +357,21 @@ def bloc_conseils(conseils, parts, par_saison):
     complets = [c for c in utiles if c.get("complet")]
     avec_decompte = [c for c in utiles if c.get("votes_exprimes")]
 
-    unanimes = [c for c in avec_decompte
-                if c["votes_contre"] and c["votes_contre"] == c["votes_exprimes"]]
+    # L'UNANIMITE, C'EST TOUT LE CAMP SAUF L'ELIMINE. Celui qui part vote
+    # aussi, et n'ecrit jamais son propre nom : exiger que TOUS les bulletins
+    # le designent rendait l'unanimite impossible par construction, et la
+    # page publiait « l'unanimite n'existe pas » comme un resultat. Au
+    # depouillement complet, on le verifie bulletin par bulletin ; sinon, le
+    # total suffit (toutes les voix moins une, au plus). Un tour ou un objet
+    # a annule des voix n'est pas unanime.
+    def unanime(c):
+        if c.get("annulation") or not c.get("votes_contre"):
+            return False
+        if c.get("complet") and c.get("votes"):
+            autres = [b for b in c["votes"] if b.get("votant") != c.get("elimine")]
+            return bool(autres) and all(b.get("cible") == c.get("elimine") for b in autres)
+        return c["votes_contre"] >= c["votes_exprimes"] - 1
+    unanimes = [c for c in avec_decompte if unanime(c)]
     serres = [c for c in avec_decompte
               if c["votes_contre"] and c["votes_exprimes"]
               and c["votes_contre"] <= c["votes_exprimes"] / 2 + 0.5]
@@ -662,7 +676,8 @@ LIBELLE_ISSUE = {
     "annulation_efficace": "Joué, et il annule des voix",
     "joue_pour_rien": "Joué pour rien",
     "elimine_avec_collier": "Éliminé avec le collier dans le sac",
-    "garde_sans_usage": "Gardé sans en avoir besoin",
+    "garde_sans_usage": "Gardé jusqu’en finale sans en avoir besoin",
+    "sorti_sans_pouvoir_le_jouer": "Sorti hors conseil, sans pouvoir le jouer",
     "non_decouvert": "Jamais trouvé",
 }
 
@@ -1055,8 +1070,14 @@ def bloc_finale(finale, parts, par_saison):
         "elimine_aux_poteaux": issue(d["elimine"], d["n"], arrondi(100.0 / 3)),
     } for r, d in sorted(rangs.items())]
 
+    # Les saisons sans vainqueur des poteaux, par leur TITRE : la page publiait
+    # « s02, s08, s09 », des codes internes.
+    couverture = dict(finale.get("couverture") or {})
+    couverture["saisons_sans_poteaux_titres"] = [
+        f"<em>{par_saison[s]['titre']}</em> ({par_saison[s]['annee']})"
+        for s in couverture.get("saisons_sans_poteaux") or [] if s in par_saison]
     return {
-        "couverture": finale.get("couverture"),
+        "couverture": couverture,
         "poteaux": {
             "effectif": len(avec),
             "vainqueur_des_poteaux": issue(gagne, len(avec), 50.0),
@@ -1081,6 +1102,33 @@ def bloc_finale(finale, parts, par_saison):
     }
 
 
+def test_de_la_finale(fin):
+    """Le dernier qualifie de l'orientation gagne-t-il plus souvent qu'un sur trois ?
+
+    La page /statistiques/finale/ en faisait son resultat principal sans le
+    declarer, « pour ne pas deplacer les p ajustees des autres ». C'est
+    precisement ce que la correction interdit : une case choisie parmi neuf
+    APRES avoir regarde le tableau, et laissee hors du registre, est un test
+    gratuit. Il est declare ici et corrige avec tous les autres. Le hasard est
+    binomial : sur n saisons, chaque qualifie a une chance sur trois.
+    """
+    r3 = next((r for r in (fin or {}).get("par_rang") or [] if r["rang"] == 3), None)
+    if not r3 or not r3["effectif"]:
+        return []
+    n, k = r3["effectif"], r3["gagne_la_saison"]["cas"]
+    g = modeles.rng("finale_dernier_qualifie")
+    nulle = 100.0 * g.binomial(n, 1.0 / 3.0, size=modeles.N_PERMUTATIONS) / n
+    t = modeles._test(
+        "finale_dernier_qualifie", "Le dernier qualifié de l'orientation",
+        "Le dernier des trois qualifiés à l'orientation gagne-t-il la saison plus "
+        "souvent qu'une fois sur trois ?",
+        100.0 * k / n, nulle, unite=" points de %",
+        lecture="Part des saisons gagnées par le dernier qualifié de l'orientation. "
+                "Le hasard donne à chacun des trois qualifiés une chance sur trois.")
+    t["origine"] = "finale"
+    return [t]
+
+
 def bloc_indicateurs(saisons, parts, conseils, epreuves, colliers, par_saison):
     """Les indicateurs avances, individuels et par saison."""
     lignes = indicateurs_individuels(saisons, parts, conseils, epreuves)
@@ -1101,6 +1149,11 @@ def bloc_indicateurs(saisons, parts, conseils, epreuves, colliers, par_saison):
     # Le groupe de comparaison juste : ceux qui ont traverse autant de conseils
     # qu'un fantome, qu'ils aient ete vises ou non.
     endurants = [x for x in lignes if x["conseils_assistes"] >= SEUIL_FANTOME]
+    # Et la comparaison JUSTE : un fantome ne peut pas sortir au conseil --
+    # personne n'ecrit son nom. Le comparer a des endurants dont la moitie
+    # sortent au conseil gonflait mecaniquement toutes ses autres issues
+    # (victoire comprise). On le compare donc aux endurants sortis autrement.
+    endurants_hc = [x for x in endurants if x["sort"] != "elimine_conseil"]
 
     def moyenne_par(champ, cle):
         groupes = defaultdict(list)
@@ -1166,12 +1219,15 @@ def bloc_indicateurs(saisons, parts, conseils, epreuves, colliers, par_saison):
              # melange deux choses -- ne pas etre vise, et etre alle loin. La
              # comparaison juste se fait a ceux qui ont tenu aussi longtemps.
              "part_endurants": part(
-                 sum(1 for x in endurants if x["sort"] == k), len(endurants))}
+                 sum(1 for x in endurants if x["sort"] == k), len(endurants)),
+             "part_comparables": part(
+                 sum(1 for x in endurants_hc if x["sort"] == k), len(endurants_hc))}
             for k, n in Counter(x["sort"] for x in invisibles).most_common()],
         "voix_des_vainqueurs": voix_des_vainqueurs(classiques),
         "duos": duos_les_plus_alignes(conseils, parts, par_saison),
         "comparables": len(lignes),
         "endurants": len(endurants),
+        "endurants_hors_conseil": len(endurants_hc),
         "seuil_fantome": SEUIL_FANTOME,
         "justesse_par_sort": moyenne_par("justesse_vote", "sort"),
         "menace_par_sort": moyenne_par("menace", "sort"),
@@ -1612,11 +1668,7 @@ def champs_du_texte(stats, saisons, parts):
         "audience_courbes": len(m["audience"]["courbes"]),
     }
 
-    # /statistiques/grille/ : de combien d'annees la rupture a bouge depuis la
-    # premiere datation publiee, 2012 -- un fait d'histoire du site, d'ou la
-    # constante.
     r = m["ruptures"]
-    mots["rupture_deplacement"] = r["annee_rupture"] - 2012
     ab = next(x for x in r["detail"] if x["libelle"] == "Taux d'abandon")
     r["abandon_rapport"] = round(ab["avant"] / ab["apres"], 1) if ab["apres"] else None
 
@@ -2063,13 +2115,23 @@ def champs_d_affichage(stats):
         for cle in ("observe", "attendu"):
             if isinstance(t.get(cle), (int, float)):
                 t[f"{cle}_arrondi"] = round(t[cle], 1)
+        # L'unite accordee a la valeur observee : « 0,212 personne »,
+        # « 1,6 point », et le pluriel a partir de 2. /methode/ ecrivait
+        # « 1,634 points » sous chaque test.
+        u = t.get("unite") or ""
+        if isinstance(t.get("observe"), (int, float)) and abs(t["observe"]) < 2:
+            for pluriel, singulier in (("points", "point"), ("personnes", "personne"),
+                                       ("ans", "an"), ("enchaînements", "enchaînement"),
+                                       ("jours", "jour"), ("voix", "voix")):
+                u = re.sub(rf"\b{pluriel}\b", singulier, u)
+        t["unite_accordee"] = u
 
     # /statistiques/jeu-social/ : l'ecart, en points, entre fantomes et
     # endurants, et leur rapport (« N fois plus »).
     for x in stats["indicateurs"]["fantomes_issue"]:
-        x["ecart"] = round(x["part_fantomes"] - x["part_endurants"], 1)
-        x["rapport"] = (round(x["part_fantomes"] / x["part_endurants"], 1)
-                        if x["part_endurants"] else None)
+        x["ecart"] = round(x["part_fantomes"] - x["part_comparables"], 1)
+        x["rapport"] = (round(x["part_fantomes"] / x["part_comparables"], 1)
+                        if x["part_comparables"] else None)
 
     # /statistiques/epreuves/ : les familles de metier rangees au nombre de
     # victoires PAR PERSONNE. `par_metier` est range au total, et son premier
@@ -2108,7 +2170,9 @@ def champs_d_affichage(stats):
 
     # /methode/ : les « resultats » que le seul hasard produirait au seuil de
     # 5 %, sur tous les tests du registre.
-    m["faux_positifs_attendus"] = round(0.05 * m["nb_tests"], 1)
+    # Sur la famille corrigee entiere, et non sur le seul registre : c'est
+    # elle que la correction couvre.
+    m["faux_positifs_attendus"] = round(0.05 * m["famille_corrigee"], 1)
 
     # /saisons/ : les saisons classiques sans aucun abandon, et celle qui en a
     # perdu la plus grande part -- les memes que le graphique, qui ecarte les
@@ -2153,12 +2217,10 @@ def champs_d_affichage(stats):
     # /methode/ : les resultats retenus qui tiennent encore si l'on ajoute
     # vingt tests sans resultat (p = 1) au registre. La page l'affirmait
     # d'apres une verification faite une fois ; elle est refaite ici.
-    ps = [t["p"] for t in m["registre"]]
-    ajustees = modeles.benjamini_hochberg(ps + [1.0] * 20)
-    m["retenus_avec_vingt_nuls"] = sum(
-        1 for t, pa in zip(m["registre"], ajustees) if t["retenu"] and pa < 0.05)
-    tombes = [f"« {t['libelle']} »" for t, pa in zip(m["registre"], ajustees)
-              if t["retenu"] and pa >= 0.05]
+    # Le calcul est fait dans `modeles.tout`, sur la famille corrigee entiere.
+    m["retenus_avec_vingt_nuls"] = m["vingt_nuls"]["retenus"]
+    m["famille_corrigee_avec_vingt_nuls"] = m["vingt_nuls"]["famille"] + 20
+    tombes = [f"« {x} »" for x in m["vingt_nuls"]["tombes"]]
     if not tombes:
         m["tombes_avec_vingt_nuls_texte"] = "aucun ne tombe"
     elif len(tombes) == 1:
@@ -2275,6 +2337,23 @@ def champs_d_affichage(stats):
         x["barre"] = _arrondi_entier(x["part_du_temps"])
 
 
+def ecrire_les_effectifs(noeud):
+    """Pose a cote de `tirages`, `permutations` et `bootstrap` leur forme
+    lisible, milliers separes par une espace fine insecable : les pages
+    publiaient « 10000 tirages » six cent cinquante fois."""
+    if isinstance(noeud, dict):
+        for cle in list(noeud):
+            valeur = noeud[cle]
+            if cle in ("tirages", "permutations", "bootstrap") and isinstance(valeur, int) \
+                    and not isinstance(valeur, bool):
+                noeud[cle + "_texte"] = f"{valeur:,}".replace(",", "\u202f")
+            else:
+                ecrire_les_effectifs(valeur)
+    elif isinstance(noeud, list):
+        for valeur in noeud:
+            ecrire_les_effectifs(valeur)
+
+
 def accorder_les_ecarts(noeud):
     """Pose a cote de tout `ecart_types` (et variantes) son mot accorde --
     « écart-type » sous 2 en valeur absolue, « écarts-types » a partir de 2 --
@@ -2291,7 +2370,13 @@ def accorder_les_ecarts(noeud):
                 except ValueError:
                     continue
                 noeud[cle + "_mot"] = "écart-type" if x < 2 else "écarts-types"
-                noeud[cle + "_abs"] = texte.lstrip("-")
+                # Par decimal_fr, jamais str() : la valeur est souvent encore
+                # un float a ce stade, et « 5.79 écarts-types » a ete publie.
+                noeud[cle + "_abs"] = donnees.decimal_fr(x)
+            elif cle == "estimation" and isinstance(valeur, (int, float)) \
+                    and not isinstance(valeur, bool):
+                # « 0,07 point de saison », « 9,5 points » : meme regle.
+                noeud["estimation_pluriel"] = abs(valeur) >= 2
             elif cle == "observe_arrondi" and valeur is not None:
                 # « 1,9 an », « 2,3 points » : le pluriel commence a 2.
                 try:
@@ -2426,7 +2511,8 @@ def main():
         par_saison, parts, conseils, epreuves,
         (stats["indicateurs"] or {}).get("saisons") or [],
         tests_externes=((stats["classement"] or {}).pop("tests", [])
-                        + (stats["prevision"] or {}).pop("tests", [])))
+                        + (stats["prevision"] or {}).pop("tests", [])
+                        + test_de_la_finale(stats["finale"])))
 
     stats["completude_saisons"] = bloc_completude_saisons(
         saisons, parts, conseils, epreuves, colliers, stats["modeles"], finale)
@@ -2595,11 +2681,12 @@ def main():
     formes_des_gabarits(stats)
     poser_les_identifiants(stats, index_des_noms(personnes))
     accorder_les_ecarts(stats)
+    ecrire_les_effectifs(stats)
 
     chemin = os.path.join(RACINE, "_data", "stats.yml")
     with open(chemin, "w", encoding="utf-8") as f:
         f.write(ENTETE)
-        donnees.ecrire(stats, f, allow_unicode=True, sort_keys=False, width=100)
+        donnees.ecrire(stats, f, affichage=True, allow_unicode=True, sort_keys=False, width=100)
 
     g = stats["general"]
     print(f"ecrit : {chemin}")

@@ -71,7 +71,7 @@ LIBELLE_SORT = {
     "elimine_epreuve": "Éliminé à une épreuve",
     "elimine_destins_lies": "Éliminé par les destins liés",
     "abandon_medical": "Abandon médical", "abandon_volontaire": "Abandon volontaire",
-    "disqualifie": "Disqualifié",
+    "disqualifie": "Exclu du jeu",
 }
 
 
@@ -80,7 +80,7 @@ def libelle_sort(sort, genre, repli=None):
 
     LIBELLE_SORT est au masculin : repris tel quel, il publiait « Éliminé au
     conseil » sur 253 participations de femmes. Le participe s'accorde
-    (« Éliminée », « Disqualifiée ») ; « Vainqueur » et « Finaliste » restent
+    (« Éliminée », « Exclue ») ; « Vainqueur » et « Finaliste » restent
     tels quels, comme partout sur le site (« vainqueures » est une faute que
     tools/verifie_site.py guette) ; « Abandon » est un nom, invariable.
     `genre` vaut « f » ou « h » dans _data/participations.yml. `repli` sert
@@ -91,7 +91,7 @@ def libelle_sort(sort, genre, repli=None):
         return repli if repli is not None else sort
     texte = LIBELLE_SORT[sort]
     if genre == "f":
-        for masculin in ("Éliminé ", "Disqualifié"):
+        for masculin in ("Éliminé ", "Exclu"):
             if texte.startswith(masculin):
                 texte = masculin.rstrip() + "e" + texte[len(masculin.rstrip()):]
                 break

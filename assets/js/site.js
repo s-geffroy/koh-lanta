@@ -1,9 +1,10 @@
 /* Koh-Lanta en chiffres — le seul script du site.
  *
  * Rien de ce qu'il fait ne porte de donnee : sans lui, toutes les pages
- * restent completes et lisibles. Il ajoute cinq conforts, et rien d'autre :
- * la bascule de theme, le tri des tableaux, le filtrage des aventuriers, le
- * sommaire des longues pages, les liens de section.
+ * restent completes et lisibles. Il ajoute six conforts, et rien d'autre :
+ * la bascule de theme, l'ouverture du rail sur grand ecran, le tri des
+ * tableaux, le filtrage des aventuriers, le sommaire des longues pages, les
+ * liens de section.
  * C'est pourquoi les commandes qu'il installe sont masquees tant qu'il n'a
  * pas tourne (classe `sans-js`, retiree tres tot dans <head>).
  */
@@ -39,6 +40,23 @@
     });
   }
 
+  /* ------------------------------------------------------ le rail (sommaire) */
+
+  /* Sur grand ecran, le rail est un <details> deplie par la feuille de style.
+     Les navigateurs qui ne connaissent pas ::details-content (Safari < 18.4,
+     Chrome < 131) masquent pourtant le contenu d'un <details> ferme : le
+     sommaire y etait invisible. On l'ouvre donc vraiment au-dela du point de
+     rupture de la feuille (62em), et on le referme en deca, ou il redevient
+     la commande repliable du telephone. */
+  var rail = document.getElementById("rail");
+  if (rail && window.matchMedia) {
+    var large = window.matchMedia("(min-width: 62em)");
+    var suivre = function () { rail.open = large.matches; };
+    suivre();
+    if (large.addEventListener) large.addEventListener("change", suivre);
+    else if (large.addListener) large.addListener(suivre);
+  }
+
   /* ------------------------------------------------------- tri des tableaux */
 
   var cle = function (cellule, numerique) {
@@ -60,9 +78,16 @@
       var entetes = Array.prototype.slice.call(table.tHead.rows[0].cells);
 
       entetes.forEach(function (entete, colonne) {
-        entete.setAttribute("aria-sort", "none");
-        entete.setAttribute("tabindex", "0");
-        entete.setAttribute("title", "Trier sur cette colonne");
+        // La commande est un vrai bouton DANS l'en-tete : le <th> garde son
+        // role de titre de colonne, le bouton porte le clic et le clavier
+        // (Entree et Espace sont ceux du navigateur). Le contenu du <th> y
+        // passe tel quel, abreviations comprises.
+        var commande = document.createElement("button");
+        commande.type = "button";
+        commande.className = "tri";
+        commande.setAttribute("title", "Trier sur cette colonne");
+        while (entete.firstChild) commande.appendChild(entete.firstChild);
+        entete.appendChild(commande);
 
         var trier = function () {
           var sens = entete.getAttribute("aria-sort") === "ascending" ? -1 : 1;
@@ -72,6 +97,9 @@
           lignes.sort(function (a, b) {
             var x = cle(a.cells[colonne], numerique);
             var y = cle(b.cells[colonne], numerique);
+            // Deux cellules vides valent -Infinity toutes les deux, et
+            // -Infinity - -Infinity donne NaN : le tri deviendrait arbitraire.
+            if (x === y) return 0;
             if (numerique) return sens * (x - y);
             return sens * String(x).localeCompare(String(y), "fr");
           });
@@ -80,14 +108,13 @@
           lignes.forEach(function (l) { frag.appendChild(l); });
           corps.appendChild(frag);
 
-          entetes.forEach(function (h) { h.setAttribute("aria-sort", "none"); });
+          // aria-sort ne se pose que sur la colonne triee : « none » partout
+          // faisait annoncer un etat de tri sur chaque en-tete.
+          entetes.forEach(function (h) { h.removeAttribute("aria-sort"); });
           entete.setAttribute("aria-sort", sens === 1 ? "ascending" : "descending");
         };
 
-        entete.addEventListener("click", trier);
-        entete.addEventListener("keydown", function (ev) {
-          if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); trier(); }
-        });
+        commande.addEventListener("click", trier);
       });
     }
   );
@@ -128,7 +155,10 @@
 
   /* Chaque titre de section recoit un « # » qui pointe sur lui : on partage
      un resultat precis, pas une page entiere. Pose APRES le sommaire de
-     page, qui lit le texte des titres et ne doit pas y trouver le « # ». */
+     page, qui lit le texte des titres et ne doit pas y trouver le « # ».
+     Le lien est cache des aides techniques et sort de l'ordre de tabulation :
+     dans le titre, son libelle s'ajoutait au nom du titre. Le titre garde son
+     identifiant ; l'ancre reste cliquable a la souris. */
   Array.prototype.forEach.call(
     document.querySelectorAll(".prose > h2[id], .prose > h3[id]"),
     function (h) {
@@ -136,7 +166,8 @@
       lien.className = "ancre";
       lien.href = "#" + h.id;
       lien.textContent = "#";
-      lien.setAttribute("aria-label", "Lien vers cette section");
+      lien.setAttribute("aria-hidden", "true");
+      lien.setAttribute("tabindex", "-1");
       h.appendChild(lien);
     }
   );

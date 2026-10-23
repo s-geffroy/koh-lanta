@@ -82,6 +82,8 @@ LIQUID_INTERDIT = (
                   "— publie le resultat dans stats.yml"),
 )
 
+RE_LISTE_FANTOME = re.compile(r"^\s*\{\{[^}]*\}\}\.(\s|$)")
+
 EXCLUS_ATTENDUS = {"CLAUDE.md", "README.md", "app.yaml", "compose.yaml", "specs/"}
 
 
@@ -908,8 +910,13 @@ AFFIRMATIONS_PAGES = {
                                "deux conseils plus tard n'est pas retenue"),
     "talent_stable": (False, "sources.md ecrit que la stabilite reste trop mince "
                              "pour etre retenue"),
-    "ambassadeurs_survie": (True, "statistiques/reunification.md et l'article long ecrivent "
-                                  "que l'ambassadeur sort plus tot, de justesse"),
+    "ambassadeurs_survie": (False, "statistiques/reunification.md et l'article long ecrivent "
+                                   "que la sortie precoce des ambassadeurs n'est pas etablie "
+                                   "(23 octobre 2026 : nul avec la regle du tirage, classiques)"),
+    "decimation": (False, "statistiques/alliances.md et les deux articles ecrivent que "
+                          "l'enchainement des sorties par camp n'est pas etabli"),
+    "finale_dernier_qualifie": (False, "statistiques/finale.md ecrit que le dernier "
+                                       "qualifie ne passe pas la correction"),
     "camp_perdant": (True, "statistiques/conditionnelles.md et l'article court ecrivent que "
                            "voter avec la minorite expose, de justesse"),
     "vote_meme_sexe": (False, "statistiques/qui-vise-qui.md et le resume du "
@@ -963,9 +970,11 @@ AFFIRMATIONS_VALEURS = [
      and all(v["probabilite"] > v["hasard"] for v in x[1:]),
      "statistiques/conditionnelles.md et jeu-social.md ecrivent que la courbe "
      "culmine a deux voix sans repasser sous le hasard"),
-    (("modeles", "alliances", "majorite", "rapport"), lambda x: x > 1,
+    (("modeles", "alliances", "majorite", "variables"),
+     lambda x: x[0]["retenu"] and not x[1]["retenu"],
      "statistiques/alliances.md et jeu-social.md ecrivent qu'etre du bon cote "
-     "pese plus que ne pas etre vise"),
+     "compte, et que les voix recues, une fois le soir du depart retire, ne "
+     "s'en distinguent pas"),
     (("indicateurs", "fantomes_issue"),
      lambda x: all(v["rapport"] > 1 for v in x
                    if v["sort"] in ("vainqueur", "abandon_medical")),
@@ -1016,10 +1025,7 @@ AFFIRMATIONS_VALEURS = [
     (("modeles", "registre"),
      lambda x: 0.01 <= float(str(next(t for t in x if t["cle"] == "camp_perdant")["p_ajustee"]).replace(",", ".")) < 0.05,
      "statistiques/conditionnelles.md, l'article court et l'article long ecrivent « de justesse » pour camp_perdant"),
-    (("modeles", "registre"),
-     lambda x: 0.01 <= float(str(next(t for t in x if t["cle"] == "ambassadeurs_survie")["p_ajustee"]).replace(",", ".")) < 0.05,
-     "statistiques/reunification.md et l'article long ecrivent « de justesse » pour ambassadeurs_survie"),
-    (("conseils", "retours_en_jeu"), lambda x: x == 5,
+(("conseils", "retours_en_jeu"), lambda x: x == 5,
      "sources.md raconte les conseils de revenants un par un (Linda, Tania deux "
      "fois, Christina, et Francis en cinquieme cas)"),
     (("conseils", "part_serres"), lambda x: 33 <= x < 75,
@@ -1034,15 +1040,14 @@ AFFIRMATIONS_VALEURS = [
      "resultats retenus tiennent et que ce n'est pas une raison de s'arreter"),
     # Lot 4b : les phrases, titres et descriptions qui gardent un nombre ecrit.
     (("modeles","fusion","pente_episode"), lambda x: float(str(x["bas"]).replace(",", ".")) <= 0 <= float(str(x["haut"]).replace(",", ".")), "statistiques/grille.md, saisons.md et sources.md ecrivent que l'intervalle de la pente episode/casting CONTIENT zero"),
-    (("modeles","ruptures","detail"), lambda x: next(v for v in x if v["libelle"]=="Objets d'immunité en jeu")["avant"]==0, "statistiques/grille.md ecrit que les objets d'immunite etaient a zero avant la rupture"),
+    (("modeles","ruptures","detail"), lambda x: next(v for v in x if v["libelle"]=="Objets d’immunité en jeu")["avant"]==0, "statistiques/grille.md ecrit que les objets d'immunite etaient a zero avant la rupture"),
     (("modeles","audience"), lambda x: x["premiere"]["annee"]==2001 and x["sommet"]["jour"]=="Mardi", "statistiques/audience.md ecrit « depuis 2001 » (description) et que le sommet etait deja diffuse le mardi"),
     (("palmares","classement"), lambda x: x[2]["personne"]=="Ugo Lartiche", "statistiques/force.md nomme Ugo Lartiche troisieme palmares de l'histoire"),
     (("modeles","force","classement"), lambda x: any(v["nom"]=="Ugo Lartiche" for v in x), "statistiques/force.md ecrit qu'Ugo Lartiche figure dans le classement de force"),
     (("epreuves","meilleurs_cumuls"), lambda x: any(v["personne"]=="Ugo Lartiche" for v in x), "statistiques/epreuves.md ecrit qu'Ugo Lartiche figure parmi les meilleurs cumuls"),
     (("epreuves","saisons_source_unique"), lambda x: len(x)==5 and "s12" in x, "epreuves.md, force.md, sources.md : cinq saisons sur une seule source, dont Malaisie (gagnee par Ugo Lartiche)"),
     (("modeles","registre"), lambda x: (lambda s: s[0]["cle"]=="persistance_alliances" and s[0]["ecart_types"] >= 1.5*s[1]["ecart_types"])(sorted(x, key=lambda t: -abs(t.get("ecart_types") or 0))), "statistiques/alliances.md ecrit que la persistance des alliances est de tres loin le signal le plus fort"),
-    (("modeles","decimation","detail"), lambda x: ("J" * x[0]["plus_longue_serie"]) in x[0]["suite"], "statistiques/alliances.md ecrit que la plus longue serie est jaune"),
-    (("completude_saisons",), lambda x: x["saisons"]==34 and len(x["colonnes"])==19, "completude.md (description, chapeau) et le sommaire ecrivent 34 editions et 19 types de donnees"),
+(("completude_saisons",), lambda x: x["saisons"]==34 and len(x["colonnes"])==19, "completude.md (description, chapeau) et le sommaire ecrivent 34 editions et 19 types de donnees"),
     (("general",), lambda x: x["saisons_diffusees"]==34 and x["premiere_annee"]==2001 and x["derniere_annee"]==2026 and x["saisons_annulees"]==2 and x["etendue_annees"]==25, "saisons.md (titre, description, chapeau), index.md, sorties.md : 34 saisons, 2001 a 2026, deux interrompues, vingt-cinq ans"),
     (("general","parite_ecart_max"), lambda x: x <= 2, "saisons.md ecrit que l'ecart a la parite tient au plus a un ou deux aventuriers"),
     (("classement","facettes"), lambda x: next(f for f in x if f["cle"]=="epreuves")["top"][0]["nom"]=="Claude Dartois", "saisons.md accorde « est premier » au premier de la facette epreuves"),
@@ -1054,12 +1059,12 @@ AFFIRMATIONS_VALEURS = [
     (("vainqueurs","par_metier"), lambda x: x[0]["part"]==x[1]["part"]==x[2]["part"] > x[3]["part"] and {y["code"] for y in x[:3]}=={"encadrement","commerce","sport"}, "statistiques/vainqueurs.md nomme les trois premieres familles, a egalite"),
     (("finale","par_rang"), lambda x: 47.5 <= float(str(x[0]["elimine_aux_poteaux"]["probabilite"]).replace(",", ".")) <= 52.5, "statistiques/finale.md ecrit « une fois sur deux » pour le premier sorti aux poteaux"),
     (("classement",), lambda x: len(x["facettes"])==4 and x["joueurs_classes"]==531, "top.md (description, chapeau), index.md et le sommaire ecrivent « quatre facettes » et 531 aventuriers"),
-    (("modeles","casting","archetypes"), lambda x: [a["libelle"] for a in x]==["25-29 ans · femme · Restauration et hôtellerie","30-34 ans · homme · Agriculture et nature","40-44 ans · homme · Artisanat et bâtiment","45 ans et plus · Sans activité déclarée","18-24 ans","18-24 ans · femme · Étudiants"], "statistiques/casting.md decrit les six archetypes un par un (« la femme de la fin de la vingtaine, dans le commerce »...)"),
+    (("modeles","casting","archetypes"), lambda x: [a["libelle"] for a in x]==["25–29 ans · femme · Restauration et hôtellerie","30–34 ans · homme · Agriculture et nature","40–44 ans · homme · Artisanat et bâtiment","45 ans et plus · Sans activité déclarée","18–24 ans","18–24 ans · femme · Étudiants"], "statistiques/casting.md decrit les six archetypes un par un (« la femme de la fin de la vingtaine, dans le commerce »...)"),
     (("modeles","casting"), lambda x: max(x["silhouettes"], key=lambda s: s["score"])["k"] == x["nb_archetypes"], "statistiques/casting.md ecrit que la silhouette monte jusqu'au nombre retenu puis redescend"),
     (("modeles","conditionnelles","inverse"), lambda x: x["vise_si_sorti"] < 50, "statistiques/conditionnelles.md ecrit que la majorite des elimines n'avaient pas ete vises la fois d'avant"),
     (("modeles","avant_apres","negociateurs"), lambda x: x["sources_desaccord"]==1, "statistiques/reunification.md ecrit « La seule divergence porte sur Les Reliques du destin »"),
     (("couleurs",), lambda x: {c["couleur"]: c["victoires"] for c in x}.get("jaune") == {c["couleur"]: c["victoires"] for c in x}.get("rouge"), "statistiques/autour-du-feu.md ecrit que la couleur ne decide rien du palmares (autant de victoires jaunes que rouges)"),
-    (("conseils","conseils_unanimes"), lambda x: x == 0, "statistiques/conseils.md (description, chapeau) ecrit que l'unanimite n'existe pas"),
+    (("conseils","part_unanimes"), lambda x: 10 <= float(str(x).replace(",", ".")) < 25, "statistiques/conseils.md (description, chapeau) ecrit qu'un conseil sur six environ est unanime, l'elimine excepte"),
     (("modeles","rappel","par_sort"), lambda x: sum(v["cas"] for v in x[-2:]) == 1, "statistiques/revenants.md ecrit « un seul retour » parmi les abandons"),
     (("revenants","vainqueurs_regagnants"), lambda x: x == 1, "statistiques/revenants.md titre « Un seul a gagne deux fois » et ecrit « Un seul a regagne »"),
     (("modeles","equilibre","cox","coefficients"), lambda x: not any(v.get("retenu") for v in x), "statistiques/equilibre.md ecrit qu'aucune ligne du modele de Cox ne passe le seuil une fois corrigee (« deja venu », encadrement, femme)"),
@@ -1067,7 +1072,7 @@ AFFIRMATIONS_VALEURS = [
      "statistiques/sorties.md : le conseil ne gagne pas de terrain des annees 2000 aux annees 2020, l'epreuve eliminatoire monte et culmine dans les annees 2020"),
     (("sorties",), lambda x: len(x["repartition"])==11 and x["par_decennie"][0]["ambassadeurs"]==0 and max(x["par_decennie"], key=lambda d: d["ambassadeurs"])["decennie"]=="2010s" and [r["sort"] for r in x["repartition"][:2]]==["elimine_conseil","abandon_medical"], "statistiques/sorties.md : onze facons de partir (description, chapeau), conseil puis abandon medical en tete, ambassadeurs absents des annees 2000 et au sommet dans les annees 2010"),
     (("prenoms","alexandra"), lambda x: x == 7, "statistiques/prenoms.md (description, chapeau) et le sommaire ecrivent qu'Alexandra revient sept fois"),
-    (("age",), lambda x: max(x, key=lambda a: a["survie_moyenne"])["tranche"]=="30-34 ans" and max(x, key=lambda a: a["taux_finale"])["tranche"]=="30-34 ans" and x[5]["victoires"]==1, "statistiques/longevite.md, revenants.md et pronostic.md : les 30-34 ans tiennent le plus longtemps et accedent le plus a la finale ; une seule victoire chez les 45 ans et plus"),
+    (("age",), lambda x: max(x, key=lambda a: a["survie_moyenne"])["tranche"]=="30–34 ans" and max(x, key=lambda a: a["taux_finale"])["tranche"]=="30–34 ans" and x[5]["victoires"]==1, "statistiques/longevite.md, revenants.md et pronostic.md : les 30-34 ans tiennent le plus longtemps et accedent le plus a la finale ; une seule victoire chez les 45 ans et plus"),
     (("colliers",), lambda x: (lambda part: 28 <= part("joue_pour_rien") <= 38 and part("elimine_avec_collier") < 10)(lambda k: float(str(next(i for i in x["issues"] if i["issue"] == k)["part_des_trouves"]).replace(",", "."))) and x["palmares"][0]["trouves"] > x["palmares"][1]["trouves"], "statistiques/colliers.md : « un collier sur trois joue pour rien », « un sur dix part avec son proprietaire », un seul a faire le plein"),
     (("classement","top"), lambda x: x[0]["nom"]=="Claude Dartois", "statistiques/colliers.md nomme Claude Dartois premier du classement, une seule de ses saisons couverte"),
     (("sommaire",), lambda x: (x["entrees"], x["descriptives"], x["testees"]) == (27, 11, 16), "statistiques.md (chapeau), index.md et le sommaire ecrivent vingt-sept entrees, onze qui decrivent, seize qui testent"),
@@ -1843,6 +1848,20 @@ def main():
         for motif, conseil in LIQUID_INTERDIT:
             if motif in corps:
                 c.erreur(f"{rel} : `{motif}` interdit dans un gabarit — {conseil}")
+
+        # UN NOMBRE EN TETE DE LIGNE, SUIVI D'UN POINT, OUVRE UNE LISTE. Dans
+        # un fichier Markdown, une ligne qui commence par une variable Liquid
+        # puis « . » devient, une fois la variable remplacee par un entier, un
+        # element de liste numerotee : Kramdown mange le nombre. Cinq phrases
+        # publiees s'arretaient ainsi en plein milieu (« de 6,9 votants a » --
+        # et rien). La variable se remonte sur la ligne precedente.
+        if rel.endswith(".md"):
+            for i, ligne in enumerate(corps.split("\n")):
+                if RE_LISTE_FANTOME.match(ligne):
+                    c.erreur(f"{rel} : ligne « {ligne.strip()[:50]} » — une variable "
+                             f"suivie d'un point en tete de ligne devient une liste "
+                             f"numerotee et le nombre disparait ; la remonter sur la "
+                             f"ligne precedente")
 
         for nom_balise in balises_en_commentaire(texte[m.end():]):
             c.erreur(f"{rel} : balise `{nom_balise}` ecrite DANS un commentaire "

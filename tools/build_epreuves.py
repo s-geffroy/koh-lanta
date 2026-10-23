@@ -57,6 +57,18 @@ ENTETE = ("# ATTENTION : fichier genere par tools/build_epreuves.py.\n"
           "#\n")
 
 
+# CE QUE LE PALMARES APPELLE « VICTOIRE ». Pour l'orientation, le wiki
+# credite chacun des qualifies pour les poteaux : un fan dit, lui, qu'on
+# « gagne l'orientation » en arrivant premier, et Wikipedia ne compte que deux
+# vraies victoires a Claude Dartois. On publie donc le bon mot.
+MOT_DU_PALMARES = {
+    "orientation": ("qualification", "qualifications",
+                    "Le palmarès du wiki crédite chaque aventurier qualifié pour "
+                    "les poteaux, pas seulement le premier arrivé : on compte donc "
+                    "ici des qualifications, pas des victoires."),
+}
+
+
 def fiches_des_epreuves(nommees, saisons, fiches):
     par_id = {s["id"]: s for s in saisons}
     noms = {a: e for a, e in (fiches.get("aventuriers") or {}).items()}
@@ -102,7 +114,10 @@ def fiches_des_epreuves(nommees, saisons, fiches):
         palmares.sort(key=lambda x: (-x["victoires"], x["nom"]))
 
         annees = [x["annee"] for x in editions]
+        singulier, pluriel, note = MOT_DU_PALMARES.get(
+            identifiant(nom), ("victoire", "victoires", None))
         out[identifiant(nom)] = {
+            "mot": singulier, "mot_pluriel": pluriel, "note_palmares": note,
             "id": identifiant(nom),
             "nom": affichable(nom),
             "type": e.get("type"),
@@ -142,7 +157,7 @@ def description_seo(e):
     ]
     r = e.get("record")
     if r and r["victoires"] > 1:
-        chute = f"Record : {r['nom']}, {compte(r['victoires'], 'victoire', 'victoires')}."
+        chute = f"Record : {r['nom']}, {compte(r['victoires'], e['mot'], e['mot_pluriel'])}."
     elif r:
         chute = "Qui l'a gagnée, et dans quelles éditions."
     else:
@@ -176,7 +191,7 @@ def main():
 
     with open(SORTIE_DATA, "w", encoding="utf-8") as f:
         f.write(ENTETE)
-        donnees.ecrire({"epreuves": ep}, f, allow_unicode=True, sort_keys=True,
+        donnees.ecrire({"epreuves": ep}, f, affichage=True, allow_unicode=True, sort_keys=True,
                        default_flow_style=False)
     print(f"ecrit : {SORTIE_DATA}")
 

@@ -595,11 +595,13 @@ def virgule_decimale(svg):
 # html.escape -- devient l'apostrophe typographique. Les titres de saison
 # (« L'Île au trésor ») et une partie des chaines des figures l'ecrivent
 # droite ; les pages, elles, l'ecrivent courbe.
-RE_APOSTROPHE = re.compile(r"(?<=[A-Za-zÀ-ÖØ-öø-ÿœŒ])(?:'|&#x27;|&#39;)(?=[A-Za-zÀ-ÖØ-öø-ÿœŒ])")
+# La regle vit desormais dans donnees.py, partagee avec les fichiers affiches.
+apostrophes = donnees.apostrophes
 
 
-def apostrophes(texte):
-    return RE_APOSTROPHE.sub("’", texte)
+def milliers_fins(n):
+    """10000 -> « 10 000 », espace fine insecable ; rien si n est absent."""
+    return f"{n:,}".replace(",", "\u202f") if isinstance(n, int) else (n or "")
 
 
 def ecrire(nom, contenu):
@@ -1432,7 +1434,7 @@ def distribution_nulle(test, *, titre=None, description=None, largeur=680,
         x = marge_g + i * largeur_case
         borne_b = bas + etendue * i / len(cases)
         borne_h = bas + etendue * (i + 1) / len(cases)
-        info = (f"{compte(n, 'tirage', 'tirages')} sur {test.get('tirages')} entre "
+        info = (f"{compte(n, 'tirage', 'tirages')} sur {milliers_fins(test.get('tirages'))} entre "
                 f"{borne_b:.3g} et {borne_h:.3g}")
         fig.ajouter(f'<g class="marque"><title>{e(info)}</title>'
                     f'<rect x="{x + 0.8:.1f}" y="{zero - h:.1f}" '

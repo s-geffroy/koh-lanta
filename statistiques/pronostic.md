@@ -39,13 +39,12 @@ moyenne.</p>
 {% include graphiques/pronostic-rang.svg %}
 
 <p class="legende-figure">Rang moyen attribué au vrai vainqueur. La silhouette
-est ce que donnent {{ t.tirages }} classements rebattus au hasard à l’intérieur
+est ce que donnent {{ t.tirages_texte }} classements rebattus au hasard à l’intérieur
 de chaque saison.</p>
 
 <div class="constat">
   <p>Le modèle place le futur vainqueur au rang <b>{{ p.rang_moyen }}</b>
-  en moyenne — intervalle {{ p.rang_intervalle[0] }} à
-  {{ p.rang_intervalle[1] }}. Le hasard le placerait au rang
+  en moyenne — intervalle {{ p.rang_intervalle[0] }} à {{ p.rang_intervalle[1] }}. Le hasard le placerait au rang
   <b>{{ p.rang_hasard }}</b>.</p>
   <p>p = {{ t.p }}. Il n’y a <b>rien</b> : la fiche d’inscription ne contient
   aucune information sur l’issue de la saison.</p>
@@ -68,9 +67,9 @@ brouille une seule variable. Une valeur positive signifie que la variable
 servait un peu.</p>
 
 Les contributions valent au plus {{ p.importances[0].perte }} place, sur un casting
-de {{ p.casting_moyen }}. Aucune ne survit à
-son propre intervalle. Il n’y a pas de variable cachée à trouver ici : il n’y a
-pas de signal du tout.
+de {{ p.casting_moyen }} : c’est infime. Ces contributions ne sont pas
+accompagnées d’intervalles, mais leur taille suffit : s’il y a un signal au
+casting, il est trop faible pour désigner qui que ce soit.
 
 ## Et en cours de jeu ? La même question, posée au conseil
 
@@ -119,8 +118,8 @@ sur le nombre de présents.</p>
   <td class="nombre">{{ j.conseils }}</td>
   <td class="nombre" data-val="{{ j.rang_moyen }}">{{ j.rang_moyen }}
     <small>(hasard {{ j.rang_hasard }})</small></td>
-  <td class="nombre" data-val="{{ j.premiers }}">{{ j.premiers }} %
-    <small>(hasard {{ j.premiers_hasard }} %)</small></td>
+  <td class="nombre" data-val="{{ j.premiers }}">{{ j.premiers }} %
+    <small>(hasard {{ j.premiers_hasard }} %)</small></td>
 </tr>
 {% endfor %}
 </tbody>
@@ -138,14 +137,14 @@ mieux.</p>
   {{ fic.rang_hasard }} au hasard. <b>Rien</b>, exactement comme au casting.</p>
   <p>Avec ce que la soirée a produit : <b>{{ jeu.rang_moyen }}</b>,
   {{ tp.ecart_types }} {{ tp.ecart_types_mot }}, p ajustée <b>{{ tp.p_ajustee }}</b>. Le
-  modèle désigne l’éliminé <b>en premier dans {{ jeu.premiers }} %</b> des
-  conseils, contre {{ jeu.premiers_hasard }} % au hasard.</p>
+  modèle désigne l’éliminé <b>en premier dans {{ jeu.premiers }} %</b> des
+  conseils, contre {{ jeu.premiers_hasard }} % au hasard.</p>
 </div>
 
 **Ce chiffre se lit dans les deux sens, et les deux comptent.** Passer de
-{{ jeu.premiers_hasard }} % à {{ jeu.premiers }} % de bonnes désignations, c’est
+{{ jeu.premiers_hasard }} % à {{ jeu.premiers }} % de bonnes désignations, c’est
 un signal réel, établi hors échantillon, sur {{ jeu.conseils }} conseils de
-{{ jeu.plis }} saisons. C’est aussi **{{ jeu.erreurs }} % de conseils où le modèle se
+{{ jeu.plis }} saisons. C’est aussi **{{ jeu.erreurs }} % de conseils où le modèle se
 trompe de personne**. Le jeu n’est pas imprévisible ; il est très loin d’être
 prévisible.
 
@@ -182,9 +181,9 @@ C’est aussi une mise en garde contre les pages descriptives de ce site,
 celle-ci comprise. [Le métier]({{ '/statistiques/professions/' | relative_url }})
 montre que l’encadrement accède moins souvent à la finale ;
 [Âge et longévité]({{ '/statistiques/longevite/' | relative_url }}) montre que
-les 30-34 ans tiennent le plus longtemps. Ces écarts sont réels — et ils sont
-si petits devant la variabilité individuelle qu’ils **ne permettent de
-pronostiquer personne**. Un écart moyen visible sur {{ p.effectif }} participations n’est
+les 30–34 ans tiennent le plus longtemps. Ces écarts sont des moyennes observées — et
+même quand ils tiennent, ils sont si petits devant la variabilité individuelle
+qu’ils **ne permettent de pronostiquer personne**. Un écart moyen visible sur {{ p.effectif }} participations n’est
 pas une information sur une personne.
 
 <p class="note">Ce que ce résultat ne dit pas. Il ne dit pas que la production

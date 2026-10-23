@@ -20,7 +20,7 @@ mêmes personnes et fausseraient les moyennes d’âge comme de longévité.
 
 <ul class="chiffres">
   <li class="chiffre"><b>{{ v.age_moyen }} ans</b><span>âge moyen des vainqueurs</span></li>
-  <li class="chiffre"><b>{{ v.part_40_et_plus }} %</b><span>de vainqueurs de 40 ans ou plus</span></li>
+  <li class="chiffre"><b>{{ v.part_40_et_plus }} %</b><span>de vainqueurs de 40 ans ou plus</span></li>
   <li class="chiffre"><b>{{ s.conseils.conseils }}</b><span>conseils dépouillés</span></li>
   <li class="chiffre"><b>{{ s.conseils.bulletins }}</b><span>bulletins relevés</span></li>
   <li class="chiffre"><b>{{ s.epreuves.epreuves }}</b><span>épreuves relevées</span></li>
@@ -80,5 +80,6 @@ grandes en ont compté {{ site.data.stats.modeles.fusion.casting_max }}.</p>
 
 {% include graphiques/saisons-age.svg %}
 
-<p class="legende-figure">L’âge moyen du casting, lui, reste remarquablement
-stable autour de la trentaine sur {{ s.mots.etendue_annees }} ans.</p>
+<p class="legende-figure">L’âge moyen du casting reste autour de la trentaine sur
+{{ s.mots.etendue_annees }} ans, mais il monte : <a href="{{ '/statistiques/grille/' | relative_url }}">le
+casting vieillit</a>.</p>

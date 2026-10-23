@@ -4,23 +4,23 @@
   <title>Écrire le nom d’un ancien allié</title>
   <desc>Quand on a déjà voté avec quelqu’un, écrit-on son nom plus ou moins souvent qu’un autre ?</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
-  <g class="marque"><title>1 tirage sur 4000 entre 54,3 et 54,8</title><rect x="396.5" y="203.9" width="20.3" height="0.1" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>2 tirages sur 4000 entre 54,8 et 55,2</title><rect x="418.4" y="203.7" width="20.3" height="0.3" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>38 tirages sur 4000 entre 55,2 et 55,6</title><rect x="440.2" y="198.6" width="20.3" height="5.4" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>217 tirages sur 4000 entre 55,6 et 56,1</title><rect x="462.1" y="172.9" width="20.3" height="31.1" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>612 tirages sur 4000 entre 56,1 et 56,5</title><rect x="483.9" y="116.3" width="20.3" height="87.7" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>1102 tirages sur 4000 entre 56,5 et 56,9</title><rect x="505.8" y="46.0" width="20.3" height="158.0" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>993 tirages sur 4000 entre 56,9 et 57,4</title><rect x="527.7" y="61.6" width="20.3" height="142.4" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>717 tirages sur 4000 entre 57,4 et 57,8</title><rect x="549.5" y="101.2" width="20.3" height="102.8" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>264 tirages sur 4000 entre 57,8 et 58,2</title><rect x="571.4" y="166.1" width="20.3" height="37.9" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>45 tirages sur 4000 entre 58,2 et 58,7</title><rect x="593.2" y="197.5" width="20.3" height="6.5" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>9 tirages sur 4000 entre 58,7 et 59,1</title><rect x="615.1" y="202.7" width="20.3" height="1.3" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>1 tirage sur 4 000 entre 54,3 et 54,8</title><rect x="396.5" y="203.9" width="20.3" height="0.1" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>2 tirages sur 4 000 entre 54,8 et 55,2</title><rect x="418.4" y="203.7" width="20.3" height="0.3" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>38 tirages sur 4 000 entre 55,2 et 55,6</title><rect x="440.2" y="198.6" width="20.3" height="5.4" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>217 tirages sur 4 000 entre 55,6 et 56,1</title><rect x="462.1" y="172.9" width="20.3" height="31.1" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>612 tirages sur 4 000 entre 56,1 et 56,5</title><rect x="483.9" y="116.3" width="20.3" height="87.7" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>1102 tirages sur 4 000 entre 56,5 et 56,9</title><rect x="505.8" y="46.0" width="20.3" height="158.0" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>993 tirages sur 4 000 entre 56,9 et 57,4</title><rect x="527.7" y="61.6" width="20.3" height="142.4" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>717 tirages sur 4 000 entre 57,4 et 57,8</title><rect x="549.5" y="101.2" width="20.3" height="102.8" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>264 tirages sur 4 000 entre 57,8 et 58,2</title><rect x="571.4" y="166.1" width="20.3" height="37.9" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>45 tirages sur 4 000 entre 58,2 et 58,7</title><rect x="593.2" y="197.5" width="20.3" height="6.5" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>9 tirages sur 4 000 entre 58,7 et 59,1</title><rect x="615.1" y="202.7" width="20.3" height="1.3" fill="var(--serie-3)" opacity="0.45"/></g>
   <line x1="528.5" y1="40" x2="528.5" y2="204" stroke="var(--encre-muette)" stroke-width="1" stroke-dasharray="3 3"/>
   <text x="528.5" y="34.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">attendu</text>
   <line x1="73.8" y1="26" x2="73.8" y2="210" stroke="var(--encre)" stroke-width="2.4"/>
-  <text x="80.8" y="22.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12" font-weight="600">observé : 47,886 %</text>
+  <text x="80.8" y="22.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12" font-weight="600">observé : 47,886 %</text>
   <text x="46.0" y="222.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">47,3</text>
   <text x="658.0" y="222.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">59,6</text>
-  <text x="658.0" y="238.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">4 000 tirages · p &lt; 0,001</text>
+  <text x="658.0" y="238.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">4 000 tirages · p = 0,001</text>
 </svg>
 </figure>

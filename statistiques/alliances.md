@@ -30,14 +30,14 @@ suivies d’un conseil à l’autre.</p>
 {% include graphiques/alliances-persistance.svg %}
 
 <p class="legende-figure">Écart entre les deux probabilités, en points. La
-silhouette est ce que donnent {{ t.tirages }} redistributions des bulletins à
+silhouette est ce que donnent {{ t.tirages_texte }} redistributions des bulletins à
 l’intérieur de chaque conseil — chaque conseil gardant exactement sa
 répartition de voix.</p>
 
 <div class="constat">
   <p>Deux aventuriers qui ont voté ensemble votent encore ensemble au conseil
-  suivant dans <b>{{ a.apres_ensemble }} %</b> des cas. Deux aventuriers qui ont
-  voté séparément : <b>{{ a.apres_separes }} %</b>.</p>
+  suivant dans <b>{{ a.apres_ensemble }} %</b> des cas. Deux aventuriers qui ont
+  voté séparément : <b>{{ a.apres_separes }} %</b>.</p>
   <p>{{ t.observe }} points d’écart, contre {{ t.attendu }} attendus si les
   bulletins n’étaient que du bruit — soit <b>{{ t.ecart_types }} {{ t.ecart_types_mot }}</b>.
   C’est de très loin le signal le plus fort de tout ce site.</p>
@@ -59,32 +59,35 @@ la part de ses conseils passés du côté du nom qui sort.
 {% include graphiques/alliances-majorite.svg %}
 
 <p class="legende-figure">Points de saison gagnés ou perdus, le nombre de
-conseils traversés tenu constant.</p>
+conseils traversés tenu constant. Le bulletin écrit le soir de son élimination,
+et les voix qui éliminent, sont retirés.</p>
 
 {% assign v0 = a.majorite.variables[0] %}{% assign v1 = a.majorite.variables[1] %}
 
 <div class="constat">
   <p>Passer de « jamais du bon côté » à « toujours du bon côté » vaut
-  <b>{{ v0.estimation }} points de saison</b> — intervalle
+  <b>{{ v0.estimation }} point{% if v0.estimation_pluriel %}s{% endif %} de saison</b> — intervalle
   {{ v0.bas }} à {{ v0.haut }}.</p>
   <p>Dans le même modèle, l’effet d’une voix de plus reçue par conseil vaut
-  {{ v1.estimation }} points ({{ v1.bas }} à {{ v1.haut }}).
-  <b>Être du bon côté pèse {{ a.majorite.rapport }} fois plus que ne pas être visé.</b></p>
+  {{ v1.estimation }} point{% if v1.estimation_pluriel %}s{% endif %} ({{ v1.bas }} à {{ v1.haut }}) : rien de
+  distinguable de zéro. <b>Être du bon côté compte ; être visé, une fois les
+  voix qui éliminent retirées, ne se distingue pas.</b></p>
 </div>
 
-C’est un déplacement du meilleur prédicteur connu de ce site. La page
-[Le jeu social]({{ '/statistiques/jeu-social/' | relative_url }}) désignait
-l’invisibilité — n’être jamais écrit sur un bulletin. Mis en concurrence, les
-deux survivent, mais l’invisibilité passe seconde. On ne dure pas à Koh-Lanta
-en se faisant oublier : on dure en étant du côté qui compte les voix.
+Ce résultat a été corrigé le 23 octobre 2026. Le modèle comptait jusque-là le
+bulletin écrit le soir de son élimination — minoritaire par construction,
+puisqu’on ne vote pas pour soi — et les voix reçues ce soir-là, celles qui
+éliminent. Il mesurait donc en partie la sortie elle-même : le coefficient de
+majorité était presque deux fois plus grand, et la page en tirait un rapport
+(« 3,9 fois ») qui divisait un effet par part par un effet par voix, deux
+unités différentes. Ni l’un ni l’autre ne tient.
 
-<p class="note"><strong>Une réserve importante, et elle joue contre le
-résultat.</strong> Le modèle tient constant le nombre de conseils traversés.
-C’est un contrôle trop sévère : traverser beaucoup de conseils, c’est déjà avoir
-survécu, si bien qu’une part de ce qu’on cherche à expliquer est absorbée par le
-contrôle. Les {{ v0.estimation }} points sont donc une <strong>borne
-basse</strong>. Sans ce contrôle on publierait une tautologie déguisée ; avec
-lui, on sous-estime. La vérité est au-dessus du chiffre affiché.</p>
+<p class="note"><strong>Une réserve, dans les deux sens.</strong> Le modèle
+tient constant le nombre de conseils traversés. C’est un contrôle sévère :
+traverser beaucoup de conseils, c’est déjà avoir survécu, et une part de ce
+qu’on cherche à expliquer est absorbée par lui. Sans ce contrôle on publierait
+une tautologie déguisée. Rien ne permet de dire si le chiffre affiché est
+au-dessus ou au-dessous de l’effet réel.</p>
 
 ## Ceux qui ne se sont jamais trompés de camp
 
@@ -101,9 +104,9 @@ lui, on sous-estime. La vérité est au-dessus du chiffre affiché.</p>
   <td><strong>{% include lien-aventurier.html id=x.id nom=x.nom %}</strong></td>
   <td>{{ x.saison }}</td>
   <td class="nombre">{{ x.conseils }}</td>
-  <td class="nombre" data-val="{{ x.part }}">{{ x.part }} %</td>
+  <td class="nombre" data-val="{{ x.part }}">{{ x.part }} %</td>
   <td class="nombre">{{ x.voix }}</td>
-  <td class="nombre">{{ x.survie }} %</td>
+  <td class="nombre">{{ x.survie }} %</td>
 </tr>
 {% endfor %}
 </tbody>
@@ -132,7 +135,7 @@ qui. Voici les paires elles-mêmes — celles qui, sur au moins
   <td>{{ x.titre }}</td><td class="nombre">{{ x.annee }}</td>
   <td class="nombre">{{ x.ensemble }}</td>
   <td class="nombre" data-val="{{ x.accord }}"><b>{{ x.accord }}</b></td>
-  <td class="nombre">{{ x.part }} %</td>
+  <td class="nombre">{{ x.part }} %</td>
 </tr>
 {% endfor %}
 </tbody>
@@ -161,8 +164,8 @@ avait déjà voté. La silhouette est le même brassage que plus haut, à jeu de
 cibles constant.</p>
 
 <div class="constat">
-  <p><b>{{ tt.observe }} %</b> des bulletins visent un ancien allié — contre
-  <b>{{ tt.attendu }} %</b> attendus. {{ tt.ecart_types }} {{ tt.ecart_types_mot }}.</p>
+  <p><b>{{ tt.observe }} %</b> des bulletins visent un ancien allié — contre
+  <b>{{ tt.attendu }} %</b> attendus. {{ tt.ecart_types }} {{ tt.ecart_types_mot }}.</p>
   <p>L’alliance ne se contente donc pas de faire voter ensemble : elle
   <b>protège</b>. À jeu de cibles identique, on écrit le nom d’un ancien allié
   nettement moins souvent qu’un partage au hasard des bulletins ne le ferait.</p>
@@ -170,12 +173,13 @@ cibles constant.</p>
 
 {% assign ef = tr.effet %}
 Et quand on trahit quand même ? **Rien.** Passer de « jamais » à « toujours »
-viser un ancien allié vaut {{ ef.estimation }} points de saison —
-intervalle {{ ef.bas }} à {{ ef.haut }}, p = {{ ef.p }}. La trahison ne paie
-pas ; elle ne coûte pas non plus. Sur {{ ef.effectif }} participations, elle est
-simplement **sans effet mesurable**.
+viser un ancien allié vaut {{ ef.estimation }} point{% if ef.estimation_pluriel %}s{% endif %} de saison —
+intervalle {{ ef.bas }} à {{ ef.haut }}, p = {{ ef.p }}. Sur
+{{ ef.effectif }} participations, la trahison est **sans effet mesurable** :
+on ne voit ni qu’elle paie, ni qu’elle coûte — l’intervalle n’exclut ni l’un
+ni l’autre.
 
-## Après la réunification, un camp tombe en série
+## Après la réunification, un camp tombe-t-il en série ?
 
 {% assign de = m.decimation %}{% assign dt = de.test %}
 
@@ -193,10 +197,17 @@ au sort, à composition de camps identique.</p>
 <div class="constat">
   <p>{{ dt.observe }} enchaînements observés contre {{ dt.attendu }} attendus,
   <b>{{ dt.ecart_types }} {{ dt.ecart_types_mot }}</b>, p ajustée {{ dt.p_ajustee }}.</p>
-  <p>Les sorties d’après-réunification ne se répartissent pas au hasard entre les deux
-  tribus initiales : <b>elles se suivent</b>. La tribu dans laquelle on a joué les
-  {{ site.data.stats.mots.episode_fusion }} premiers épisodes décide encore de l’ordre dans lequel on part.</p>
+  <p>L’écart va dans le sens d’un camp démonté un par un, mais <b>il ne passe
+  pas la correction pour tests multiples</b> : on ne peut pas affirmer que les
+  sorties d’après-réunification se suivent par tribu initiale.</p>
 </div>
+
+<p class="note"><strong>Ce résultat a basculé le 23 octobre 2026.</strong>
+Plusieurs sorties tombent dans le même épisode — les finalistes, l’éliminé
+aux poteaux et le vainqueur, notamment. Elles étaient rangées entre elles par
+ordre alphabétique d’identifiant, ce qui fabriquait des enchaînements. Rangées
+par jour de sortie puis par rang final, elles en donnent moins, et le test,
+retenu jusque-là (p ajustée 0,0005), ne l’est plus.</p>
 
 <div class="tableau-large">
 <table data-triable>
@@ -221,17 +232,17 @@ au sort, à composition de camps identique.</p>
 
 <p class="note">Chaque lettre est la tribu initiale d’un sortant, dans
 l’ordre : <code>J</code> pour jaune, <code>R</code> pour rouge.
-{{ site.data.stats.mots.serie_decimation_maj }} sorties jaunes d’affilée en
-{{ de.detail[0].annee }} ne prouvent rien à elles seules — c’est l’accumulation
-sur {{ de.saisons }} saisons qui fait le résultat.</p>
+{{ site.data.stats.mots.serie_decimation_maj }} sorties de la même tribu d’affilée en
+{{ de.detail[0].annee }} ne prouvent rien à elles seules ; et, accumulées sur
+{{ de.saisons }} saisons, ces séries ne suffisent pas à passer la correction.</p>
 
 <p class="note"><strong>Ce que l’alliance vaut, en probabilité de survie.</strong>
 Cette page mesure l’existence et la durée des alliances. Leur <em>rendement</em>
 se lit ailleurs : sachant qu’il ne reste plus un seul des gens avec qui on a
 déjà voté, le risque de partir au conseil monte à
-{% assign pp = site.data.stats.modeles.pire_place %}{% assign ppa = pp.isolement | where: "modalite", "tous ses alliés sont partis" | first %}<b>{{ ppa.probabilite }} %</b>
+{% assign pp = site.data.stats.modeles.pire_place %}{% assign ppa = pp.isolement | where: "modalite", "tous ses alliés sont partis" | first %}<b>{{ ppa.probabilite }} %</b>
 pour qui a vu partir tous ses alliés, contre
-{{ pp.isolement[3].probabilite }} % pour qui garde trois alliés ou plus
+{{ pp.isolement[3].probabilite }} % pour qui garde trois alliés ou plus
 (<a href="{{ '/statistiques/pire-place/' | relative_url }}">la pire place au conseil</a>).</p>
 
 <p class="note">Ce que cette page ne dit pas. Elle ne distingue pas <em>former</em>

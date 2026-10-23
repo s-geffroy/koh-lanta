@@ -55,6 +55,7 @@ DOSSIER_AVENTURIERS = os.path.join(RACINE, "aventuriers")
 DOSSIER_SAISONS = os.path.join(RACINE, "saisons")
 SORTIE_DATA = os.path.join(DATA, "fiches.yml")
 SORTIE_URLS = os.path.join(DATA, "saisons_urls.yml")
+SORTIE_TABLEAU = os.path.join(DATA, "tableau_participations.yml")
 
 ENTETE = ("# ATTENTION : fichier genere par tools/build_fiches.py.\n"
           "# Ne pas editer a la main : toute modification sera ecrasee.\n"
@@ -180,6 +181,7 @@ def fiches_des_aventuriers(parts, personnes, saisons, indiv, classement, natures
                 "numero": s.get("numero"),
                 "speciale": bool(s.get("speciale")),
                 "en_cours": bool(s.get("en_cours")),
+                "sans_vainqueur": bool(s.get("sans_vainqueur")),
                 "lieu": s.get("lieu"),
                 "effectif": sum(1 for x in parts if x["saison"] == p["saison"]),
                 "age": p.get("age"),
@@ -335,6 +337,9 @@ def fiches_des_saisons(parts, saisons, conseils, epreuves, audiences, classement
             "effectif": len(lot),
             "tribus": s.get("tribus") or [],
             "vainqueurs": [c for c in casting if c["sort"] == "vainqueur"],
+            # La Legende : votes du jury invalides, aucun vainqueur designe.
+            # Le texte est celui de saisons.yml, tire de Wikipedia et Fandom.
+            "sans_vainqueur": s.get("sans_vainqueur"),
             "egalite_jury": egalite,
             "finalistes": [c for c in casting if c["sort"] == "finaliste"],
             "casting": casting,
@@ -396,7 +401,7 @@ VERBE_SORT = {
     "elimine_destins_lies": "sort avec son binôme",
     "abandon_medical": "abandonne sur blessure",
     "abandon_volontaire": "abandonne",
-    "disqualifie": "quitte le jeu sur disqualification",
+    "disqualifie": "quitte le jeu sur exclusion",
 }
 
 
@@ -542,6 +547,8 @@ def description_seo_saison(e):
     noms = [v["nom"] for v in (e.get("vainqueurs") or [])]
     if e.get("en_cours"):
         chute = "Saison en cours."
+    elif e.get("sans_vainqueur"):
+        chute = "Pas de vainqueur."
     elif len(noms) > 1:
         chute = f"Victoire {de_(' et '.join(noms))}."
     elif noms:
@@ -788,6 +795,12 @@ def faq_aventurier(e, joueurs_classes):
         reponse = (f"Non. {nom} est {alle} en finale "
                    f"{fois(e['finales'])} sans jamais "
                    f"remporter le titre.")
+        sans = [p for p in parts if p.get("sans_vainqueur")
+                and p.get("sort") == "finaliste"]
+        if sans:
+            reponse += (f" {affichable(_edition(sans[0]))}, la finale s’est "
+                        f"achevée sans vainqueur : les votes du jury final ont "
+                        f"été invalidés.")
     elif len(parts) == 1:
         reponse = f"Non. {nom} n’a joué qu’une saison, {_edition(parts[0])}."
     else:
@@ -801,7 +814,10 @@ def faq_aventurier(e, joueurs_classes):
         reponse = f"{affichable(fois(len(parts)))} : {_liste(editions)}."
     q.append((f"Combien de fois {nom} {a_t_il} participé à Koh-Lanta ?", reponse))
 
-    meilleure = min(parts, key=lambda p: (p.get("classement") or 999))
+    # Une participation sans rang n'est pas la pire : un vainqueur ou un
+    # finaliste sans rang atteste reste devant un 4e.
+    meilleure = min(parts, key=lambda p: (p.get("classement")
+                                          or {"vainqueur": 1, "finaliste": 2}.get(p.get("sort"), 999)))
     verbe = VERBE_SORT.get(meilleure.get("sort"), "est encore en jeu")
     if meilleure.get("classement"):
         reponse = (f"Son meilleur parcours : "
@@ -889,6 +905,11 @@ def faq_saison(e):
         if finalistes:
             mot = "Finaliste" if len(finalistes) == 1 else "Finalistes"
             reponse += f" {mot} : {_liste(finalistes)}."
+    elif e.get("sans_vainqueur"):
+        reponse = f"Personne. {e['sans_vainqueur']}"
+        finalistes = [v["nom"] for v in (e.get("finalistes") or [])]
+        if finalistes:
+            reponse += f" Finalistes : {_liste(finalistes)}."
     elif e.get("en_cours"):
         reponse = ("La saison est en cours de diffusion : le vainqueur n’est "
                    "pas encore connu.")
@@ -981,8 +1002,12 @@ def ecrire_pages(dossier, layout, cle, entrees, titre_de, description_de,
             layout=layout,
             # Les espaces insecables, comme dans tout _data/ : ce front matter
             # ne passe pas par donnees.ecrire.
-            titre=json.dumps(donnees.insecables(titre_de(e)), ensure_ascii=False),
-            description=json.dumps(donnees.insecables(description_de(e)), ensure_ascii=False),
+            # Et l'apostrophe typographique : le titre et la description
+            # s'affichent (onglet, resultat de recherche, carte de partage).
+            titre=json.dumps(donnees.apostrophes(donnees.insecables(titre_de(e))),
+                             ensure_ascii=False),
+            description=json.dumps(donnees.apostrophes(donnees.insecables(description_de(e))),
+                                   ensure_ascii=False),
             image=(image_de(cid) if image_de
                    else f"/assets/partage/{os.path.basename(dossier)}/{cid}.png"),
             permalink=permalink_de(cid),
@@ -1061,7 +1086,7 @@ def main():
 
     with open(SORTIE_DATA, "w", encoding="utf-8") as f:
         f.write(ENTETE)
-        donnees.ecrire({"aventuriers": av, "saisons": sa}, f,
+        donnees.ecrire({"aventuriers": av, "saisons": sa}, f, affichage=True,
                        allow_unicode=True, sort_keys=True, default_flow_style=False)
     print(f"ecrit : {SORTIE_DATA}")
 
@@ -1073,6 +1098,35 @@ def main():
         donnees.ecrire({cid: e["slug"] for cid, e in sa.items()}, f,
                        allow_unicode=True, sort_keys=True, default_flow_style=False)
     print(f"ecrit : {SORTIE_URLS}")
+
+    # LE GRAND TABLEAU DE /aventuriers/, ligne par ligne. Le gabarit
+    # cherchait la saison de chaque participation par une boucle sur les
+    # saisons (645 x 36 tours) et publiait le motif brut de la source
+    # (« Abandon Médical », « Éliminée au conseil 6e membre du jury final »).
+    # Tout est pose ici ; le gabarit ne fait qu'afficher.
+    par_saison = {s["id"]: s for s in saisons}
+    tableau = []
+    for p in parts:
+        s = par_saison.get(p["saison"]) or {}
+        tableau.append({
+            "id": p["id"], "nom": p.get("nom_complet") or p.get("nom"),
+            "saison": p["saison"], "titre": s.get("titre"), "annee": s.get("annee"),
+            "age": p.get("age"), "genre": p.get("genre"),
+            "profession": apostrophe(p.get("profession")),
+            "localisation": p.get("localisation"),
+            "tribu": p.get("tribu"), "couleur": p.get("couleur"),
+            "jour_sortie": p.get("jour_sortie"), "classement": p.get("classement"),
+            "victoires_individuelles": p.get("victoires_individuelles"),
+            "victoires_collectives": p.get("victoires_collectives"),
+            "sort": p.get("sort"),
+            "libelle_sort": libelle_sort(p.get("sort"), p.get("genre"), p.get("motif")),
+        })
+    with open(SORTIE_TABLEAU, "w", encoding="utf-8") as f:
+        f.write("# ATTENTION : fichier genere par tools/build_fiches.py.\n"
+                "# Le tableau des participations de /aventuriers/, pret a afficher.\n")
+        donnees.ecrire(tableau, f, affichage=True, allow_unicode=True, sort_keys=False,
+                       default_flow_style=False)
+    print(f"ecrit : {SORTIE_TABLEAU}")
 
     rapport = collections.Counter()
     # Le titre du front matter n'est PAS celui qui s'affiche : le H1 des deux

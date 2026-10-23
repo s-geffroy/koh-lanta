@@ -15,7 +15,7 @@ Les {{ site.data.stats.conseils.bulletins }} bulletins relevés permettent de le
 mesurer, avec des indicateurs empruntés à la statistique de *Survivor* et
 adaptés à ce que ces données permettent réellement.
 
-## Le résultat le plus net du site
+## Ceux que personne ne vise
 
 Un aventurier dont **personne n’a jamais écrit le nom** de toute la
 saison, on peut l’appeler un fantôme. Il y en a **{{ i.nb_fantomes }}**, sur
@@ -25,8 +25,11 @@ saison, on peut l’appeler un fantôme. Il y en a **{{ i.nb_fantomes }}**, sur
 fantôme a par définition traversé au moins {{ i.seuil_fantome }} conseils sans
 être écrit : le comparer à <em>tous</em> les aventuriers, celui qui est sorti au
 premier conseil compris, mélangerait deux choses — ne pas être visé, et être
-allé loin. La comparaison juste se fait aux {{ i.endurants }} aventuriers qui
-ont tenu aussi longtemps. La dernière colonne, elle, est donnée pour mémoire.</p>
+allé loin. Et un fantôme ne peut pas sortir au conseil, puisque personne
+n’écrit son nom : la comparaison juste se fait aux
+{{ i.endurants_hors_conseil }} aventuriers qui ont tenu aussi longtemps
+<em>sans sortir au conseil</em>. Les deux autres colonnes sont données pour
+mémoire.</p>
 
 {% include graphiques/fantomes-issue.svg %}
 
@@ -34,17 +37,19 @@ ont tenu aussi longtemps. La dernière colonne, elle, est donnée pour mémoire.
 <table data-triable>
 <thead><tr>
   <th>Sort final</th><th class="nombre">Chez les fantômes</th>
-  <th class="nombre">Chez ceux qui ont tenu autant</th>
-  <th class="nombre">Écart</th><th class="nombre">Chez tous</th>
+  <th class="nombre">Chez ceux qui ont tenu autant, sortis autrement</th>
+  <th class="nombre">Écart</th><th class="nombre">Chez tous ceux qui ont tenu autant</th>
+  <th class="nombre">Chez tous</th>
 </tr></thead>
 <tbody>
 {% for x in i.fantomes_issue %}
 <tr>
   <td>{{ x.libelle }}</td>
-  <td class="nombre">{{ x.part_fantomes }} %</td>
-  <td class="nombre">{{ x.part_endurants }} %</td>
+  <td class="nombre">{{ x.part_fantomes }} %</td>
+  <td class="nombre">{{ x.part_comparables }} %</td>
   <td class="nombre">{{ x.ecart }}</td>
-  <td class="nombre">{{ x.part_ensemble }} %</td>
+  <td class="nombre">{{ x.part_endurants }} %</td>
+  <td class="nombre">{{ x.part_ensemble }} %</td>
 </tr>
 {% endfor %}
 </tbody>
@@ -52,20 +57,19 @@ ont tenu aussi longtemps. La dernière colonne, elle, est donnée pour mémoire.
 </div>
 
 {% assign fv = i.fantomes_issue | where: "sort", "vainqueur" | first %}
-{% assign fc = i.fantomes_issue | where: "sort", "elimine_conseil" | first %}
 {% assign fa = i.fantomes_issue | where: "sort", "abandon_medical" | first %}
 
-**{{ fv.part_fantomes }} % des fantômes gagnent la saison**, contre
-{{ fv.part_endurants }} % de ceux qui ont tenu aussi longtemps : **{{ fv.rapport }} fois
-plus**. Et {{ fc.part_fantomes }} % seulement sont éliminés au conseil,
-contre {{ fc.part_endurants }} % — mais c’est presque une tautologie : on
-n’élimine pas au conseil quelqu’un dont personne n’écrit le nom.
+**{{ fv.part_fantomes }} % des fantômes gagnent la saison**, contre
+{{ fv.part_comparables }} % de ceux qui ont tenu aussi longtemps sans sortir au
+conseil. L’écart, qui paraissait large face à tous les endurants
+({{ fv.part_endurants }} %), tenait surtout à ceci : la moitié d’entre eux
+sortent au conseil, ce qu’un fantôme ne peut pas faire.
 
 Le vrai écart est ailleurs, et il est inattendu.
 
 <div class="constat">
-  <p><b>{{ fa.part_fantomes }} % des fantômes quittent le jeu sur décision
-  médicale</b>, contre {{ fa.part_endurants }} % de leurs pairs — {{ fa.rapport }} fois
+  <p><b>{{ fa.part_fantomes }} % des fantômes quittent le jeu sur décision
+  médicale</b>, contre {{ fa.part_comparables }} % de leurs pairs sortis autrement qu’au conseil — {{ fa.rapport }} fois
   plus.</p>
   <p>Un corps qui lâche n’est plus une menace, et l’on n’écrit pas le nom de
   quelqu’un qu’on voit décliner. L’invisibilité au conseil n’est donc pas
@@ -78,10 +82,10 @@ Le vrai écart est ailleurs, et il est inattendu.
 
 Longtemps, cette page a présenté l’invisibilité comme le meilleur prédicteur de
 victoire du jeu de données. **Elle ne l’est pas.** Mise en concurrence avec
-l’appartenance au camp majoritaire, dans un même modèle, elle passe seconde :
-être toujours du bon côté vaut {{ v0.estimation }} points de saison, contre
-{{ v1.estimation }} points par voix reçue et par conseil — **{{ site.data.stats.modeles.alliances.majorite.rapport }} fois moins**.
-Les deux comptent, mais dans cet ordre.
+l’appartenance au camp majoritaire, dans un même modèle, elle ne se distingue
+plus de zéro : être toujours du bon côté vaut {{ v0.estimation }} point{% if v0.estimation_pluriel %}s{% endif %} de
+saison, une voix reçue par conseil {{ v1.estimation }} point, une fois retirés
+le bulletin et les voix du soir de la sortie.
 [Les alliances]({{ '/statistiques/alliances/' | relative_url }}).
 
 Et l’un comme l’autre ne se connaissent qu’en cours de jeu. Au casting,
@@ -127,7 +131,7 @@ gagne, un conseil qu’on ne fait pas, un plus gros poisson à sortir. L’être
   <p>Ils sont <b>{{ i.fantomes_recidivistes | size }}</b> sur les
   {{ i.nb_fantomes }} participations invisibles, et
   <b>{{ i.fantomes_vainqueurs | size }} fantômes ont gagné leur saison</b> —
-  {% for x in i.fantomes_vainqueurs limit: 4 %}{{ x.nom }} à <i>{{ x.titre }}</i>{% unless forloop.last %}, {% endunless %}{% endfor %}
+  {% for x in i.fantomes_vainqueurs limit: 4 %}{{ x.nom }} (<i>{{ x.titre }}</i>, {{ x.annee }}){% unless forloop.last %}, {% endunless %}{% endfor %}
   et {{ i.fantomes_vainqueurs_autres }} autres.</p>
   <p>C’est le contre-exemple le plus net à l’idée qu’il faut se faire remarquer
   pour aller au bout. On peut traverser
@@ -174,7 +178,7 @@ effectivement été éliminée. C’est l’indicateur de qui lit correctement l
 {% for x in i.meilleure_justesse %}
 <tr>
   <td>{% include lien-aventurier.html id=x.id nom=x.nom %}</td><td>{{ x.titre }} ({{ x.annee }})</td>
-  <td class="nombre">{{ x.valeur }} %</td><td class="nombre">{{ x.base }}</td>
+  <td class="nombre">{{ x.valeur }} %</td><td class="nombre">{{ x.base }}</td>
 </tr>
 {% endfor %}
 </tbody>
@@ -183,11 +187,10 @@ effectivement été éliminée. C’est l’indicateur de qui lit correctement l
 
 <p class="note">Cet indicateur est le plus fragile du site, et il faut le dire :
 il ne se calcule que sur les conseils dont le dépouillement est complet
-<em>et</em> dont l’éliminé a pu être rattaché — {{ site.data.stats.conseils.conseils_justesse }} conseils, pas les
-{{ site.data.stats.conseils.conseils }}. Le classement ci-dessus est
+<em>et</em> dont l’éliminé a pu être rattaché — {{ site.data.stats.conseils.conseils_justesse }} conseils, pas les {{ site.data.stats.conseils.conseils }}. Le classement ci-dessus est
 donc indicatif, et penche mécaniquement vers les saisons les mieux documentées.
 Un seuil de six bulletins écarte les cas où une seule bonne intuition
-suffirait à afficher 100 %.</p>
+suffirait à afficher 100 %.</p>
 
 ## Survivre quand on est visé
 
@@ -198,7 +201,7 @@ suffirait à afficher 100 %.</p>
 {% for x in i.meilleure_evasion %}
 <tr>
   <td>{% include lien-aventurier.html id=x.id nom=x.nom %}</td><td>{{ x.titre }} ({{ x.annee }})</td>
-  <td class="nombre">{{ x.base }}</td><td class="nombre">{{ x.valeur }} %</td>
+  <td class="nombre">{{ x.base }}</td><td class="nombre">{{ x.valeur }} %</td>
   <td>{{ x.sort_libelle }}</td>
 </tr>
 {% endfor %}
@@ -212,10 +215,10 @@ plupart finissent tout de même par tomber : échapper au vote se paie plus tar
 <p class="note"><strong>Ce que « survivre quand on est visé » vaut en
 probabilité.</strong> Ce tableau classe des individus ; la loi générale, elle,
 est ailleurs. Avoir été visé au conseil précédent fait passer le risque de
-partir de {{ site.data.stats.modeles.conditionnelles.par_voix[0].probabilite }} %
-à {{ site.data.stats.modeles.conditionnelles.par_voix[1].probabilite }} % pour
+partir de {{ site.data.stats.modeles.conditionnelles.par_voix[0].probabilite }} %
+à {{ site.data.stats.modeles.conditionnelles.par_voix[1].probabilite }} % pour
 une voix — mais il retombe à
-{% assign gros = site.data.stats.modeles.conditionnelles.par_voix | where: "modalite", "5 voix et plus" | first %}{{ gros.probabilite }} %
+{% assign gros = site.data.stats.modeles.conditionnelles.par_voix | where: "modalite", "5 voix et plus" | first %}{{ gros.probabilite }} %
 à partir de cinq voix — un retournement que le test ne confirme pas.
 <a href="{{ '/statistiques/conditionnelles/' | relative_url }}">Sachant le conseil d’avant</a>.</p>
 

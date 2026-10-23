@@ -10,7 +10,7 @@ chapeau: >-
 {% assign s = site.data.stats %}
 
 Combien de temps tient-on ? La mesure retenue ici est la **part de la saison
-passée dans le jeu** : sortir au jour 20 d’une saison de 40 jours vaut 50 %.
+passée dans le jeu** : sortir au jour 20 d’une saison de 40 jours vaut 50 %.
 Elle permet de comparer des éditions de durées différentes.
 
 ## L’âge
@@ -18,15 +18,15 @@ Elle permet de comparer des éditions de durées différentes.
 {% include graphiques/age-survie.svg %}
 
 La courbe n’est pas celle qu’on attendrait. Ce ne sont ni les plus jeunes ni les
-plus âgés qui durent : **la tranche 30-34 ans tient le plus longtemps**
-({{ s.age[2].survie_moyenne }} % de la saison), tandis que les 18-24 ans
-({{ s.age[0].survie_moyenne }} %) et les 45 ans et plus
-({{ s.age[5].survie_moyenne }} %) sortent nettement plus tôt.
+plus âgés qui durent : **la tranche 30–34 ans tient le plus longtemps**
+({{ s.age[2].survie_moyenne }} % de la saison), tandis que les 18–24 ans
+({{ s.age[0].survie_moyenne }} %) et les 45 ans et plus
+({{ s.age[5].survie_moyenne }} %) sortent nettement plus tôt.
 
 {% include graphiques/age-finale.svg %}
 
-L’accès à la finale confirme le creux des 35-39 ans et l’avantage des
-30-34 ans. Une seule victoire est venue de la tranche des 45 ans et plus, sur
+L’accès à la finale confirme le creux des 35–39 ans et l’avantage des
+30–34 ans. Une seule victoire est venue de la tranche des 45 ans et plus, sur
 {{ s.age[5].effectif }} aventuriers.
 
 <div class="tableau-large">
@@ -41,10 +41,10 @@ L’accès à la finale confirme le creux des 35-39 ans et l’avantage des
 <tr>
   <td>{{ a.tranche }}</td>
   <td class="nombre">{{ a.effectif }}</td>
-  <td class="nombre">{{ a.part_du_casting }} %</td>
-  <td class="nombre">{{ a.survie_moyenne }} %</td>
+  <td class="nombre">{{ a.part_du_casting }} %</td>
+  <td class="nombre">{{ a.survie_moyenne }} %</td>
   <td class="nombre">{{ a.finales }}</td>
-  <td class="nombre">{{ a.taux_finale }} %</td>
+  <td class="nombre">{{ a.taux_finale }} %</td>
   <td class="nombre">{{ a.victoires }}</td>
 </tr>
 {% endfor %}
@@ -61,14 +61,14 @@ Les moyennes ci-dessus portent sur des carrières entières. Posée conseil par
 conseil, la question devient : **le plus âgé des présents part-il plus souvent
 que les autres ?**
 
-Il part dans {{ af.age[0].probabilite }} % des cas, contre
-{{ af.age[1].probabilite }} % pour ceux qui ne sont ni le plus âgé ni le plus
+Il part dans {{ af.age[0].probabilite }} % des cas, contre
+{{ af.age[1].probabilite }} % pour ceux qui ne sont ni le plus âgé ni le plus
 jeune — {{ af.age_ecart }} points d’écart, qui ressemblent fort à un résultat. Ce
 n’en est pas un : **on est plus souvent le doyen d’un camp de six que d’un camp de douze**,
 et un camp de six élimine une personne sur six. Le hasard propre à cette
-catégorie vaut {{ af.age[0].hasard }} %, pas {{ af.hasard }} %. Une fois ce
+catégorie vaut {{ af.age[0].hasard }} %, pas {{ af.hasard }} %. Une fois ce
 décalage absorbé — et en comparant le doyen à **tous** les autres présents,
-benjamins compris — il reste {{ tdo.observe_arrondi }} points,
+benjamins compris — il reste {{ tdo.observe_arrondi }} point{% if tdo.observe_arrondi_pluriel %}s{% endif %},
 {{ tdo.ecart_types }} {{ tdo.ecart_types_mot }}, p ajustée {{ tdo.p_ajustee }} :
 **non concluant**.
 [Sachant qui est autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }}).
@@ -78,8 +78,8 @@ benjamins compris — il reste {{ tdo.observe_arrondi }} points,
 Le casting est **rigoureusement paritaire** :
 {{ s.genre.resume[0].effectif }} femmes pour
 {{ s.genre.resume[1].effectif }} hommes, soit
-{{ s.genre.resume[0].part_du_casting }} % contre
-{{ s.genre.resume[1].part_du_casting }} %. La production compose ses saisons à
+{{ s.genre.resume[0].part_du_casting }} % contre
+{{ s.genre.resume[1].part_du_casting }} %. La production compose ses saisons à
 l’équilibre, et le fait depuis le début.
 
 {% include graphiques/genre-survie.svg %}
@@ -88,33 +88,36 @@ l’équilibre, et le fait depuis le début.
 décennie.</p>
 
 L’écart de longévité, lui, persiste : les hommes durent en moyenne
-**{{ s.genre.resume[1].survie_moyenne }} %** de la saison contre
-**{{ s.genre.resume[0].survie_moyenne }} %** pour les femmes. Il se resserre
+**{{ s.genre.resume[1].survie_moyenne }} %** de la saison contre
+**{{ s.genre.resume[0].survie_moyenne }} %** pour les femmes. Il se resserre
 dans les années 2020 sans disparaître.
 
 {% include graphiques/genre-finale.svg %}
 
 Et pourtant, au bout du compte, **les taux d’accès à la finale sont
-identiques** — {{ s.genre.resume[0].taux_finale }} % contre
-{{ s.genre.resume[1].taux_finale }} % — et les victoires se partagent
+presque identiques** — {{ s.genre.resume[0].taux_finale }} % contre
+{{ s.genre.resume[1].taux_finale }} % — et les victoires se partagent
 {{ s.vainqueurs.par_genre[0].effectif }} à {{ s.vainqueurs.par_genre[1].effectif }}.
 
-C’est le résultat le plus intéressant de cette page : les femmes sortent plus
-tôt **en moyenne**, mais celles qui passent la réunification vont au bout aussi
-souvent que les hommes. L’écart se joue dans la première moitié du jeu, pas dans
-la seconde.
+C’est la remarque la plus intéressante de cette page : les femmes sortent plus
+tôt **en moyenne**, et pourtant elles atteignent la finale presque aussi souvent
+que les hommes. L’écart de durée se creuse donc avant la finale, et non dans la
+course au titre. Il reste un écart de moyennes : une fois l’âge et la saison
+tenus constants, le
+[modèle de durée]({{ '/statistiques/equilibre/' | relative_url }}) ne permet pas
+de l’affirmer.
 
 ### Ce qui compte n’est pas le sexe, c’est d’être en minorité — et cela protège
 
 {% assign tsx = site.data.stats.modeles.registre | where: "cle", "sexe_minoritaire" | first %}
 
 Conseil par conseil, être une femme n’expose pas :
-{{ af.genre[0].probabilite }} % de risque de partir contre
-{{ af.genre[1].probabilite }} % pour un homme, ce que ces effectifs ne
+{{ af.genre[0].probabilite }} % de risque de partir contre
+{{ af.genre[1].probabilite }} % pour un homme, ce que ces effectifs ne
 distinguent pas d’un tirage. En revanche, **être du sexe le moins représenté du
-camp assis ce soir-là protège** — {{ af.sexe[0].probabilite }} % contre
-{{ af.sexe[1].probabilite }} % pour le sexe majoritaire,
-{{ tsx.observe_arrondi }} points, {{ tsx.ecart_types }} {{ tsx.ecart_types_mot }}, p
+camp assis ce soir-là protège** — {{ af.sexe[0].probabilite }} % contre
+{{ af.sexe[1].probabilite }} % pour le sexe majoritaire,
+{{ tsx.observe_arrondi }} point{% if tsx.observe_arrondi_pluriel %}s{% endif %}, {{ tsx.ecart_types }} {{ tsx.ecart_types_mot }}, p
 ajustée {{ tsx.p_ajustee }}.
 
 L’explication la plus économe : **la majorité se mange elle-même.** Quand un
@@ -135,10 +138,10 @@ joue pas au conseil, où les femmes ne sont pas visées davantage, mais avant lu
 <tr>
   <td>{{ x.libelle }}</td>
   <td class="nombre">{{ x.effectif }}</td>
-  <td class="nombre">{{ x.part_du_casting }} %</td>
+  <td class="nombre">{{ x.part_du_casting }} %</td>
   <td class="nombre">{{ x.age_moyen }} ans</td>
-  <td class="nombre">{{ x.survie_moyenne }} %</td>
-  <td class="nombre">{{ x.taux_finale }} %</td>
+  <td class="nombre">{{ x.survie_moyenne }} %</td>
+  <td class="nombre">{{ x.taux_finale }} %</td>
   <td class="nombre">{{ x.victoires }}</td>
 </tr>
 {% endfor %}

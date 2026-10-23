@@ -1,7 +1,10 @@
 {%- comment -%}
   Le rail de navigation. Sur grand ecran il est deplie en permanence ; sur
-  petit ecran, c'est un vrai <details> qui se replie -- aucun JavaScript
-  n'intervient, la commande est celle du navigateur.
+  petit ecran, c'est un vrai <details> qui se replie, et la commande est
+  celle du navigateur. Sur grand ecran, la feuille de style le deplie, et
+  assets/js/site.js l'ouvre aussi pour de bon : les navigateurs qui ignorent
+  ::details-content (Safari < 18.4, Chrome < 131) masquaient sinon tout son
+  contenu.
 
   L'entree courante est reconnue en comparant `page.url` a l'`url` declaree
   dans _data/navigation.yml. C'est pour cela que les deux doivent s'ecrire

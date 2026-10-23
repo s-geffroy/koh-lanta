@@ -16,7 +16,7 @@ author: Sylvain Geffroy
 # integralement en francais -- y compris sur les 565 fiches. Le `lang="fr"` de
 # _layouts/default.html ne la remplace pas : c'est une autre balise, lue par
 # une autre machine.
-lang: fr_FR
+lang: fr-FR
 
 # La vignette de partage, fabriquee par tools/build_partage.py. Sans elle,
 # chaque lien du site partage dans une messagerie ou sur un reseau sortait

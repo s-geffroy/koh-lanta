@@ -63,48 +63,49 @@ aventuriers, <b>{{ site.data.stats.epreuves.epreuves }}</b> épreuves,
     <p><a href="{{ '/statistiques/tribus/' | relative_url }}">Jaune contre rouge</a></p>
   </li>
   <li>
-    <p><b>On ne dure pas en se faisant oublier.</b> Les {{ i.nb_fantomes }}
+    <p><b>Ne jamais être visé n’empêche pas de gagner.</b> Les {{ i.nb_fantomes }}
     aventuriers jamais visés en {{ i.seuil_fantome }} conseils gagnent dans
-    {{ fv.part_fantomes }} % des cas, contre {{ fv.part_endurants }} % ; mais
-    être du côté de la majorité au conseil pèse bien davantage.</p>
-    <p><a href="{{ '/statistiques/alliances/' | relative_url }}">Les alliances</a></p>
+    {{ fv.part_fantomes }} % des cas ; ceux qui ont tenu aussi longtemps sans
+    sortir au conseil, dans {{ fv.part_comparables }} %.</p>
+    <p><a href="{{ '/statistiques/jeu-social/' | relative_url }}">Le jeu social</a></p>
   </li>
   <li>
-    <p><b>L’expérience ne paie pas.</b> Les revenants tenaient déjà
-    {{ rv.paradoxe[1].survie_moyenne }} % de la saison à leur première
-    aventure ; à leur retour, ils redescendent à
-    {{ rv.paradoxe[2].survie_moyenne }} %. Le tri s’était fait avant.</p>
+    <p><b>Les revenants étaient choisis d’avance.</b> Ils tenaient déjà
+    {{ rv.paradoxe[1].survie_moyenne }} % de la saison à leur première
+    aventure ; à leur retour, {{ rv.paradoxe[2].survie_moyenne }} % — la
+    moyenne d’une édition spéciale ({{ rv.retour_reference.moyenne_speciales }} %),
+    où presque tous sont revenants. Le tri s’était fait avant.</p>
     <p><a href="{{ '/statistiques/revenants/' | relative_url }}">Les revenants</a></p>
   </li>
   <li>
-    <p><b>Après la réunification, on n’élimine pas le plus fort.</b> L’éliminé se
+    <p><b>La réunification ne fait pas viser les plus forts.</b> L’éliminé se
     situe au rang {{ aa.rang_force_avant }} sur 100 de son camp avant la
-    réunification, {{ aa.rang_force_apres }} après : un écart que le hasard
-    suffit à expliquer.</p>
+    réunification, {{ aa.rang_force_apres }} après : un écart entre les deux
+    phases que le hasard suffit à expliquer.</p>
     <p><a href="{{ '/statistiques/reunification/' | relative_url }}">Avant et après la réunification</a></p>
   </li>
   <li>
     <p><b>Le conseil d’avant annonce le suivant.</b> Sans voix reçue la fois
-    précédente, on part dans {{ co.par_voix[0].probabilite }} % des cas ; avec
-    deux voix, dans {{ co.par_voix[2].probabilite }} %.</p>
+    précédente, on part dans {{ co.par_voix[0].probabilite }} % des cas ; avec
+    deux voix, dans {{ co.par_voix[2].probabilite }} %.</p>
     <p><a href="{{ '/statistiques/conditionnelles/' | relative_url }}">Sachant le conseil d’avant</a></p>
   </li>
   <li>
-    <p><b>La tribu initiale décide qui part.</b> Quand sa tribu initiale est la
+    <p><b>La tribu minoritaire part plus souvent.</b> Quand sa tribu initiale est la
     moins représentée du camp, on est éliminé dans
-    {{ af.bandeau[0].probabilite }} % des cas, contre
-    {{ af.bandeau[1].probabilite }} % quand elle est la plus représentée.</p>
+    {{ af.bandeau[0].probabilite }} % des cas, contre
+    {{ af.bandeau[1].probabilite }} % quand elle est la plus représentée.</p>
     <p><a href="{{ '/statistiques/autour-du-feu/' | relative_url }}">Sachant qui est autour du feu</a></p>
   </li>
   <li>
     <p><b>Le jeu se devine mal.</b> Un modèle qui n’a jamais vu la saison
-    désigne le bon éliminé dans {{ jeui.premiers }} % des conseils, le hasard
-    dans {{ jeui.premiers_hasard }} %.</p>
+    désigne le bon éliminé dans {{ jeui.premiers }} % des conseils, le hasard
+    dans {{ jeui.premiers_hasard }} %.</p>
     <p><a href="{{ '/statistiques/pronostic/' | relative_url }}">Le pronostic</a></p>
   </li>
   <li>
     <p><b>« Meilleur joueur » ne désigne pas une qualité.</b> {{ site.data.stats.mots.facettes_maj }} façons de
-    bien jouer, et aucune ne prédit les autres :
+    bien jouer, et aucune ne suffit à prédire les autres :
     {{ cl.robustesse.candidats }} aventuriers différents entrent dans le top
     {{ cl.taille }} selon le poids donné à chacune.</p>
     <p><a href="{{ '/statistiques/top/' | relative_url }}">Le top des joueurs</a></p>

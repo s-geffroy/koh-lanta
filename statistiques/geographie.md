@@ -22,7 +22,7 @@ population française — la limite qui reste est décrite à la fin.
 
 <p class="note"><strong>La méthode, la même que pour les prénoms.</strong>
 L’INSEE publie la population par département, par sexe et par groupe d’âges,
-année par année depuis 1990. On prend la tranche <strong>20-59 ans</strong>,
+année par année depuis 1990. On prend la tranche <strong>20–59 ans</strong>,
 celle qui recouvre le mieux les aventuriers, et <strong>l’année de chaque
 saison</strong> : la France de 2003 n’est pas celle de 2026. L’attendu d’un
 département est le nombre d’aventuriers qui en viendraient si le casting était
@@ -35,7 +35,7 @@ signifie « exactement la France ».</p>
 
 <p class="legende-figure">Dispersion entre les effectifs observés par région et
 ceux qu’un tirage dans la population produirait. La silhouette est celle de
-{{ tr.tirages }} tirages simulés.</p>
+{{ tr.tirages_texte }} tirages simulés.</p>
 
 <div class="constat">
   <p>À l’échelle des régions, la dispersion observée vaut
@@ -114,8 +114,7 @@ La Corse garde le plus fort indice, mais son intervalle est large —
 {{ corse.observe }} personnes, cela ne se mesure pas finement. Le résultat solide est ailleurs :
 {% assign paca = g.regions | where: "region", "Provence-Alpes-Côte d'Azur" | first %}
 **Provence-Alpes-Côte d’Azur fournit {{ paca.indice }} fois sa part**, sur
-{{ paca.observe }} aventuriers, et son intervalle ne descend pas sous
-{{ paca.indice_bas }}.
+{{ paca.observe }} aventuriers, et son intervalle ne descend pas sous {{ paca.indice_bas }}.
 
 ## Les départements, pour mémoire
 

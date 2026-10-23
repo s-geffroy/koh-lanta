@@ -52,9 +52,12 @@ epreuves:
       speciale: false
       titre: Les Chasseurs d’immunité
     id: a-bout-de-souffle
+    mot: victoire
+    mot_pluriel: victoires
     natures:
     - statique
     nom: À bout de souffle
+    note_palmares: null
     palmares:
     - &id001
       id: amri-madani
@@ -209,9 +212,12 @@ epreuves:
       speciale: true
       titre: La Légende
     id: aveugle
+    mot: victoire
+    mot_pluriel: victoires
     natures:
     - rapidite
     nom: Aveugle
+    note_palmares: null
     palmares:
     - &id002
       id: alexis-tournier
@@ -390,9 +396,12 @@ epreuves:
       speciale: true
       titre: La Légende
     id: bambous
+    mot: victoire
+    mot_pluriel: victoires
     natures:
     - statique
     nom: Bambous
+    note_palmares: null
     palmares:
     - &id003
       id: bertrand-bolle
@@ -459,7 +468,7 @@ epreuves:
         titre: Le Combat des héros
       victoires: 1
     - id: kunle-m-babacere-pakorona
-      nom: Kunlé M'Babacéré Pakorona
+      nom: Kunlé M’Babacéré Pakorona
       saisons:
       - annee: 2010
         id: s10
@@ -593,9 +602,12 @@ epreuves:
       speciale: true
       titre: La Légende
     id: boue
+    mot: victoire
+    mot_pluriel: victoires
     natures:
     - rapidite
     nom: Boue
+    note_palmares: null
     palmares:
     - &id004
       id: francois-david-cardonnel
@@ -774,10 +786,13 @@ epreuves:
       speciale: false
       titre: Le Totem maudit
     id: boules
+    mot: victoire
+    mot_pluriel: victoires
     natures:
     - precision
     - equilibre
     nom: Boules
+    note_palmares: null
     palmares:
     - &id005
       id: brice-petit
@@ -886,9 +901,12 @@ epreuves:
       speciale: false
       titre: Le Totem maudit
     id: elastiques
+    mot: victoire
+    mot_pluriel: victoires
     natures:
     - force
     nom: Élastiques
+    note_palmares: null
     palmares:
     - &id006
       id: alexis-tournier
@@ -960,9 +978,12 @@ epreuves:
       speciale: true
       titre: La Légende
     id: etoile
+    mot: victoire
+    mot_pluriel: victoires
     natures:
     - statique
     nom: Étoile
+    note_palmares: null
     palmares:
     - &id007
       id: bernard-deniaud
@@ -1101,10 +1122,13 @@ epreuves:
       speciale: false
       titre: Le Totem maudit
     id: grappins
+    mot: victoire
+    mot_pluriel: victoires
     natures:
     - precision
     - rapidite
     nom: Grappins
+    note_palmares: null
     palmares:
     - &id008
       id: andre-deleplace
@@ -1256,8 +1280,11 @@ epreuves:
       speciale: false
       titre: La Tribu maudite
     id: la-bascule
+    mot: victoire
+    mot_pluriel: victoires
     natures: []
     nom: La bascule
+    note_palmares: null
     palmares:
     - &id009
       id: alix-noblat
@@ -1406,8 +1433,11 @@ epreuves:
       speciale: true
       titre: L’Île des héros
     id: la-degustation
+    mot: victoire
+    mot_pluriel: victoires
     natures: []
     nom: La dégustation
+    note_palmares: null
     palmares:
     - &id010
       id: benoit-assadi
@@ -1598,10 +1628,13 @@ epreuves:
       speciale: false
       titre: Le Totem maudit
     id: labyrinthe
+    mot: victoire
+    mot_pluriel: victoires
     natures:
     - rapidite
     - reflexion
     nom: Labyrinthe
+    note_palmares: null
     palmares:
     - &id011
       id: candice-boisson
@@ -1701,9 +1734,12 @@ epreuves:
       speciale: false
       titre: Les Armes secrètes
     id: massues
+    mot: victoire
+    mot_pluriel: victoires
     natures:
     - precision
     nom: Massues
+    note_palmares: null
     palmares:
     - &id012
       id: claude-dartois
@@ -1763,9 +1799,12 @@ epreuves:
       speciale: true
       titre: La Légende
     id: noix-de-coco
+    mot: victoire
+    mot_pluriel: victoires
     natures:
     - precision
     nom: Noix de coco
+    note_palmares: null
     palmares:
     - &id013
       id: cyril-rouanne
@@ -1943,8 +1982,13 @@ epreuves:
       speciale: false
       titre: Les Reliques du destin
     id: orientation
+    mot: qualification
+    mot_pluriel: qualifications
     natures: []
     nom: Orientation
+    note_palmares: 'Le palmarès du wiki crédite chaque aventurier qualifié pour les
+      poteaux, pas seulement le premier arrivé : on compte donc ici des qualifications,
+      pas des victoires.'
     palmares:
     - &id014
       id: claude-dartois
@@ -2684,10 +2728,13 @@ epreuves:
       speciale: false
       titre: La Revanche des 4 Terres
     id: parcours-du-combattant
+    mot: victoire
+    mot_pluriel: victoires
     natures:
     - force
     - rapidite
     nom: Parcours du combattant
+    note_palmares: null
     palmares:
     - &id015
       id: claude-dartois
@@ -3135,9 +3182,12 @@ epreuves:
       speciale: true
       titre: La Légende
     id: paresseux
+    mot: victoire
+    mot_pluriel: victoires
     natures:
     - statique
     nom: Paresseux
+    note_palmares: null
     palmares:
     - &id016
       id: claude-dartois
@@ -3301,9 +3351,12 @@ epreuves:
       speciale: true
       titre: La Légende
     id: perche
+    mot: victoire
+    mot_pluriel: victoires
     natures:
     - precision
     nom: Perche
+    note_palmares: null
     palmares:
     - &id017
       id: teheiura-teahui
@@ -3398,9 +3451,12 @@ epreuves:
       speciale: true
       titre: La Légende
     id: relais-aquatiques
+    mot: victoire
+    mot_pluriel: victoires
     natures:
     - aquatique
     nom: Relais aquatiques
+    note_palmares: null
     palmares:
     - &id018
       id: cassandre-girard
@@ -3524,10 +3580,13 @@ epreuves:
       speciale: false
       titre: Le Totem maudit
     id: sacs
+    mot: victoire
+    mot_pluriel: victoires
     natures:
     - force
     - equilibre
     nom: Sacs
+    note_palmares: null
     palmares:
     - &id019
       id: benoit-assadi
@@ -3722,9 +3781,12 @@ epreuves:
       speciale: false
       titre: Le Totem maudit
     id: tables-a-bascule
+    mot: victoire
+    mot_pluriel: victoires
     natures:
     - precision
     nom: Tables à bascule
+    note_palmares: null
     palmares:
     - &id020
       id: alain-chrisostome
@@ -3890,9 +3952,12 @@ epreuves:
       speciale: true
       titre: La Légende
     id: tir-a-l-arc
+    mot: victoire
+    mot_pluriel: victoires
     natures:
     - precision
-    nom: Tir à l'arc
+    nom: Tir à l’arc
+    note_palmares: null
     palmares:
     - &id021
       id: teheiura-teahui
@@ -4107,9 +4172,12 @@ epreuves:
       speciale: true
       titre: La Légende
     id: trapezes
+    mot: victoire
+    mot_pluriel: victoires
     natures:
     - statique
     nom: Trapèzes
+    note_palmares: null
     palmares:
     - &id022
       id: clemence-castel

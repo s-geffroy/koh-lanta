@@ -33,10 +33,10 @@ Ils le sont maintenant : **{{ j.bulletins }} bulletins de jury** sur
 ## Le chiffre brut, et pourquoi il ment
 
 <div class="constat">
-  <p><b>{{ j.part_vers_bourreau }} %</b> des bulletins de jury vont à un
+  <p><b>{{ j.part_vers_bourreau }} %</b> des bulletins de jury vont à un
   finaliste qui avait écrit le nom du juré au conseil. Quand un tel finaliste
   figure parmi les candidats, c’est même
-  <b>{{ j.part_quand_disponible }} %</b> — sur
+  <b>{{ j.part_quand_disponible }} %</b> — sur
   {{ j.bulletins_avec_bourreau_disponible }} bulletins.</p>
   <p>Ces jurés-là couronnent donc, le plus souvent, celui qui les a sortis. On
   tient la démonstration : le jury récompense l’audace.</p>
@@ -125,7 +125,7 @@ plus :
 </div>
 
 <div class="constat">
-  <p><b>La tribu initiale, ici, ne fait rigoureusement rien</b> : cote ×{{ ab.coefficients[2].rapport }},
+  <p><b>La tribu initiale, ici, ne pèse rien de mesurable</b> : cote ×{{ ab.coefficients[2].rapport }},
   intervalle {{ ab.coefficients[2].bas }} à {{ ab.coefficients[2].haut }},
   p = {{ ab.coefficients[2].p }}. Ce qui gouverne le conseil ne gouverne pas le
   jury — et c’est en soi un résultat, vu la force de l’effet en cours de jeu.</p>
@@ -145,11 +145,12 @@ fait l’un à l’autre.</p>
 
 <p class="note">Les limites, et elles sont réelles. {{ j.bulletins }} bulletins
 restent peu : l’intervalle sur l’effet « m’a éliminé » va de {{ c0.bas }} à
-{{ c0.haut }} — la rancune est établie, son ampleur ne l’est
-qu’approximativement. Aucun de ces deux tests n’est déclaré au
-registre corrigé de <a href="{{ '/methode/' | relative_url }}">la méthode</a> :
-ce sont les coefficients d’un modèle, publiés avec leur intervalle, et il faut
-les lire comme tels. Enfin le modèle ne connaît du parcours d’un finaliste que
+{{ c0.haut }}{% if c0.retenu %} — l’effet passe la correction, mais son ampleur
+ne se lit qu’approximativement{% else %} et contient 1 : la rancune n’est pas
+établie{% endif %}. Ces coefficients sont corrigés avec tous les autres résultats
+publiés (<a href="{{ '/methode/' | relative_url }}">la méthode</a>). Les
+bulletins de <em>La Légende</em>, invalidés avec le vote du jury final, n’y
+entrent pas. Enfin le modèle ne connaît du parcours d’un finaliste que
 ses bulletins : ni ses épreuves gagnées, ni son plaidoyer final, ni ce que le
 jury a vu de lui à l’écran. Ce sont peut-être ces choses-là qui décident, et
 elles ne sont nulle part dans ces données.</p>

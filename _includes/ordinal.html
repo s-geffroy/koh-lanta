@@ -1,0 +1,11 @@
+{%- comment -%}
+  Un rang ecrit en ordinal francais : 1er, 1re, 2e, 3e.
+
+  « 1e » n'existe pas : le gabarit ecrivait « 1<sup>e</sup> sur 16 » pour
+  Amel Fatnassi, et quarante-quatre fois ailleurs. Seul le premier rang
+  s'accorde ; le genre vient de la fiche (« f » ou « h »).
+
+  Appel : include ordinal.html n=a.rang genre=a.genre -- sans ses accolades
+  dans ce commentaire, qui ne serait pas inerte (voir lien-saison.html).
+{%- endcomment -%}
+{%- if include.n == 1 -%}1<sup>{% if include.genre == "f" %}re{% else %}er{% endif %}</sup>{%- else -%}{{ include.n }}<sup>e</sup>{%- endif -%}

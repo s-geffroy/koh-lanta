@@ -1,22 +1,28 @@
 ---
 layout: page
 title: La fin de saison
-description: "La fin de saison de Koh-Lanta : gagner les poteaux ne fait pas gagner. Arriver dernier à l’orientation, si — onze victoires sur dix-huit."
+description: "La fin de saison de Koh-Lanta : gagner les poteaux ne fait pas gagner. Le dernier qualifié de l’orientation gagne onze fois sur dix-huit, sans preuve."
 permalink: /statistiques/finale/
 chapeau: >-
-  Gagner les poteaux ne fait pas gagner la saison. Mais arriver **dernier** à
-  l’orientation, si : onze victoires sur dix-huit, contre une sur trois
-  attendues.
+  Gagner les poteaux ne fait pas gagner la saison. Le **dernier** qualifié de
+  l’orientation gagne onze fois sur dix-huit, contre une sur trois attendue —
+  un écart qui, corrigé avec tous les autres tests, ne s’affirme pas.
 ---
 
 {% assign f = site.data.stats.finale %}
 {% assign cv = f.couverture %}
 {% assign p = f.poteaux %}
+{% assign tq = site.data.stats.modeles.registre | where: "cle", "finale_dernier_qualifie" | first %}
 {% assign r1 = f.par_rang[0] %}{% assign r2 = f.par_rang[1] %}{% assign r3 = f.par_rang[2] %}
 
-Les trois derniers jours d’une saison suivent toujours la même mécanique :
-l’**orientation** ne garde que trois aventuriers, les **poteaux** en désignent
-un, et celui-là emmène en finale qui il veut. Le troisième est éliminé.
+Depuis la troisième saison, les trois derniers jours suivent presque toujours
+la même mécanique : l’**orientation** ne garde que trois aventuriers, les
+**poteaux** en désignent un, et celui-là emmène en finale qui il veut. Le
+troisième est éliminé. Les exceptions existent — un questionnaire au lieu de
+l’orientation et un totem géant au lieu des poteaux en 2001, un questionnaire
+encore en 2002, une orientation non éliminatoire en 2004, deux épreuves de
+poteaux en 2020, cinq aventuriers à l’orientation de *La Légende* — et les
+éditions qui sortent de ce format sont écartées plus bas.
 
 Trois décisions s’enchaînent donc, et aucune n’avait été mesurée ici — parce
 qu’aucune n’était dans les données. `epreuves.yml` ne porte **aucun nom
@@ -27,7 +33,7 @@ dessus. Il a fallu aller lire les deux wikis.
 <ul class="chiffres">
   <li class="chiffre"><b>{{ cv.vainqueur_des_poteaux_connu }}</b><span>saisons dont on connaît le vainqueur des poteaux</span></li>
   <li class="chiffre"><b>{{ cv.qualifies_connus }}</b><span>dont on connaît l’ordre d’arrivée à l’orientation</span></li>
-  <li class="chiffre"><b>{{ r3.gagne_la_saison.probabilite }} %</b><span>de victoires pour le dernier qualifié</span></li>
+  <li class="chiffre"><b>{{ r3.gagne_la_saison.probabilite }} %</b><span>de victoires pour le dernier qualifié</span></li>
 </ul>
 
 ## Gagner les poteaux ne suffit pas
@@ -44,9 +50,9 @@ la source nomme le vainqueur des poteaux.</p>
 
 <div class="constat">
   <p><b>{{ p.vainqueur_des_poteaux.cas }} fois sur {{ p.effectif }}</b>, soit
-  {{ p.vainqueur_des_poteaux.probabilite }} %. L’intervalle va de
-  {{ p.vainqueur_des_poteaux.bas }} à {{ p.vainqueur_des_poteaux.haut }} % et
-  <b>contient 50 %</b> : sur ces effectifs, on ne peut pas distinguer ce
+  {{ p.vainqueur_des_poteaux.probabilite }} %. L’intervalle va de
+  {{ p.vainqueur_des_poteaux.bas }} à {{ p.vainqueur_des_poteaux.haut }} % et
+  <b>contient 50 %</b> : sur ces effectifs, on ne peut pas distinguer ce
   résultat d’un tirage à pile ou face.</p>
   <p>Le privilège de choisir son adversaire ne se voit pas dans les chiffres.
   Il rapporte peut-être quelque chose ; il n’en rapporte pas assez pour se lire
@@ -56,16 +62,17 @@ la source nomme le vainqueur des poteaux.</p>
 <p class="note">Sur les {{ p.choix_atteste.effectif }} saisons où une source
 énonce le choix noir sur blanc — « décide d’affronter », « n’est pas choisi par »
 —, le vainqueur des poteaux l’emporte {{ p.choix_atteste.cas }} fois, soit
-{{ p.choix_atteste.probabilite }} %. L’intervalle
-({{ p.choix_atteste.bas }} – {{ p.choix_atteste.haut }} %) contient encore 50 %,
+{{ p.choix_atteste.probabilite }} %. L’intervalle
+({{ p.choix_atteste.bas }} – {{ p.choix_atteste.haut }} %) contient encore 50 %,
 et il faudrait s’en méfier deux fois plutôt qu’une : ces
 {{ site.data.stats.mots.choix_atteste }} saisons sont les
 plus récentes, pas un échantillon au hasard.</p>
 
 ## L’ordre d’arrivée à l’orientation
 
-Voilà où le résultat se trouve. À l’orientation, les trois qualifiés le sont
-dans l’ordre où ils ont trouvé leur poignard — et cet ordre annonce la suite,
+Voilà où se trouve l’écart le plus frappant. À l’orientation, les trois qualifiés le sont
+dans l’ordre où ils ont trouvé leur objet — poignard, coquillage, masque ou
+statuette selon les saisons — et cet ordre annonce la suite,
 mais **à l’envers de l’intuition**.
 
 {% include graphiques/finale-rang.svg %}
@@ -86,10 +93,10 @@ hasard : un qualifié sur trois gagne.</p>
 <tr>
   <td>{{ r.libelle }}</td>
   <td class="nombre">{{ r.effectif }}</td>
-  <td class="nombre">{{ r.gagne_les_poteaux.probabilite }} %</td>
-  <td class="nombre" data-val="{{ r.gagne_la_saison.probabilite }}"><b>{{ r.gagne_la_saison.probabilite }} %</b></td>
-  <td class="nombre">{{ r.gagne_la_saison.bas }} – {{ r.gagne_la_saison.haut }} %</td>
-  <td class="nombre">{{ r.elimine_aux_poteaux.probabilite }} %</td>
+  <td class="nombre">{{ r.gagne_les_poteaux.probabilite }} %</td>
+  <td class="nombre" data-val="{{ r.gagne_la_saison.probabilite }}"><b>{{ r.gagne_la_saison.probabilite }} %</b></td>
+  <td class="nombre">{{ r.gagne_la_saison.bas }} – {{ r.gagne_la_saison.haut }} %</td>
+  <td class="nombre">{{ r.elimine_aux_poteaux.probabilite }} %</td>
 </tr>
 {% endfor %}
 </tbody>
@@ -99,13 +106,16 @@ hasard : un qualifié sur trois gagne.</p>
 <div class="constat">
   <p><b>Le dernier des trois gagne la saison
   {{ r3.gagne_la_saison.cas }} fois sur {{ r3.effectif }}</b> —
-  {{ r3.gagne_la_saison.probabilite }} %, intervalle
-  {{ r3.gagne_la_saison.bas }} à {{ r3.gagne_la_saison.haut }} %. Il
-  <b>ne contient pas</b> le {{ r3.gagne_la_saison.hasard }} % du hasard.</p>
+  {{ r3.gagne_la_saison.probabilite }} %, intervalle
+  {{ r3.gagne_la_saison.bas }} à {{ r3.gagne_la_saison.haut }} %. Il
+  <b>ne contient pas</b> le {{ r3.gagne_la_saison.hasard }} % du hasard. Mais
+  cette case a été remarquée parmi neuf, après avoir regardé le tableau :
+  déclarée au registre et corrigée avec tous les autres tests, elle ne passe
+  pas le seuil (p ajustée {{ tq.p_ajustee }}).</p>
   <p>Le premier arrivé, lui, gagne {{ r1.gagne_la_saison.cas }} fois
-  ({{ r1.gagne_la_saison.probabilite }} %) et se fait sortir aux poteaux
-  {{ r1.elimine_aux_poteaux.probabilite }} % du temps — une fois sur
-  deux. <b>Finir premier à l’orientation est la pire des trois places.</b></p>
+  ({{ r1.gagne_la_saison.probabilite }} %) et se fait sortir aux poteaux
+  {{ r1.elimine_aux_poteaux.probabilite }} % du temps — une fois sur
+  deux. Rien de tout cela ne fait encore une règle.</p>
 </div>
 
 {% include graphiques/finale-poteaux-rang.svg %}
@@ -114,8 +124,8 @@ hasard : un qualifié sur trois gagne.</p>
 remporte les poteaux.</p>
 
 L’écart naît donc **avant** le vote final : le dernier qualifié gagne déjà les
-poteaux {{ r3.gagne_les_poteaux.probabilite }} % du temps, contre
-{{ r1.gagne_les_poteaux.probabilite }} % au premier. Ce n’est pas le jury qui
+poteaux {{ r3.gagne_les_poteaux.probabilite }} % du temps, contre
+{{ r1.gagne_les_poteaux.probabilite }} % au premier. Ce n’est pas le jury qui
 préfère les lents, c’est le poteau.
 
 <p class="note">Une explication vient à l’esprit et ces données ne peuvent pas
@@ -176,19 +186,20 @@ cette page cesse d’être publiable, et on le saura.
 ## Ce que cette page ne dit pas
 
 <div class="constat">
-  <p><b>Aucun test n’est déclaré ici.</b> Les tests de ce site sont annoncés
-  d’avance et corrigés ensemble par Benjamini-Hochberg
-  (<a href="{{ '/methode/' | relative_url }}">la méthode</a>) : en ajouter
-  déplacerait les p ajustées de tous les autres. Ce que vous lisez, ce sont des
-  proportions, leurs intervalles de Wilson, et la ligne du hasard. Un intervalle
-  qui ne contient pas le hasard dit déjà l’essentiel ; il ne dit pas la même
-  chose qu’une p ajustée, et on ne le présente pas comme telle.</p>
+  <p><b>Un test, déclaré après coup.</b> Cette page présentait le dernier
+  qualifié comme son résultat principal sans le déclarer au registre, « pour ne
+  pas déplacer les p ajustées des autres ». C’était un test gratuit : une case
+  choisie parmi neuf après avoir lu le tableau. Il est déclaré depuis le
+  23 octobre 2026 et corrigé avec tous les autres
+  (<a href="{{ '/methode/' | relative_url }}">la méthode</a>) : p ajustée
+  {{ tq.p_ajustee }}, non retenu. Le reste de la page donne des proportions,
+  leurs intervalles de Wilson et la ligne du hasard.</p>
   <p><b>{{ f.saisons_ordonnees }} saisons, c’est peu.</b> Le résultat sur le
   dernier qualifié tient à
   {{ r3.gagne_la_saison.cas }} victoires ; {{ r3.gagne_la_saison.marge }} de moins et l’intervalle
   reprendrait le hasard. Il demande à être revu dans cinq ans.</p>
   <p><b>{{ cv.saisons_sans_poteaux.size }} saisons manquent</b> —
-  {{ cv.saisons_sans_poteaux | join: ", " }} — parce qu’aucune des deux sources
+  {{ cv.saisons_sans_poteaux_titres | join: ", " }} — parce qu’aucune des deux sources
   n’y nomme le vainqueur des poteaux. Ce sont surtout des saisons anciennes, et
   rien ne garantit qu’elles ressembleraient aux autres. {{ cv.hors_format }} éditions de
   plus sont écartées d’office : leur fin ne suit pas le format à trois aux poteaux.</p>

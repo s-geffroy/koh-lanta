@@ -1,7 +1,7 @@
 ---
 layout: fiche-aventurier
 title: "Jean-Luc Duboscq (2016)"
-description: "Jean-Luc Duboscq, Koh-Lanta L’Île au trésor (2016) : sort au conseil le 18e jour, 15e sur 20, 8 voix reçues. 203e sur 531 au classement des aventuriers."
+description: "Jean-Luc Duboscq, Koh-Lanta L’Île au trésor (2016) : sort au conseil le 18e jour, 15e sur 20, 8 voix reçues. 204e sur 531 au classement des aventuriers."
 image: /assets/partage/aventuriers/jean-luc-duboscq.png
 permalink: /aventuriers/jean-luc-duboscq/
 aventurier: jean-luc-duboscq

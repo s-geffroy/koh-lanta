@@ -26,7 +26,7 @@ positions qui se lisent **avant** que le premier bulletin ne soit écrit.
 <ul class="chiffres">
   <li class="chiffre"><b>{{ f.presences }}</b><span>présences à un conseil</span></li>
   <li class="chiffre"><b>{{ f.conseils }}</b><span>conseils, sur {{ f.saisons }} saisons</span></li>
-  <li class="chiffre"><b>{{ f.hasard }} %</b><span>le hasard : une chance sur le nombre de présents</span></li>
+  <li class="chiffre"><b>{{ f.hasard }} %</b><span>le hasard : une chance sur le nombre de présents</span></li>
 </ul>
 
 <p class="note"><strong>Le camp se connaît de deux façons, et l’une vaut mieux
@@ -43,8 +43,8 @@ tribus ; elle n’est donc jamais faite.</p>
 {% assign imm = f.immunite | first %}
 <div class="constat">
   <p>Sachant qu’on a gagné l’immunité individuelle du soir, la probabilité de
-  partir vaut <b>{{ imm.probabilite }} %</b> — <b>{{ imm.cas }} sur
-  {{ imm.effectif }}</b>. Le hasard en donnerait {{ imm.hasard }} %.</p>
+  partir vaut <b>{{ imm.probabilite }} %</b> — <b>{{ imm.cas }} sur
+  {{ imm.effectif }}</b>. Le hasard en donnerait {{ imm.hasard }} %.</p>
   <p>C’est une règle du jeu : l’immunisé ne peut pas partir au vote. La
   retrouver dans {{ imm.effectif }} présences reconstituées est donc le meilleur
   contrôle qu’on puisse faire sur ces données — et il est tenu.</p>
@@ -91,16 +91,16 @@ douze.</p>
   <td>{{ x.modalite_maj }}</td>
   <td class="nombre">{{ x.effectif }}</td>
   <td class="nombre">{{ x.cas }}</td>
-  <td class="nombre" data-val="{{ x.probabilite }}"><b>{{ x.probabilite }} %</b></td>
-  <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td>
-  <td class="nombre">{{ x.hasard }} %</td>
+  <td class="nombre" data-val="{{ x.probabilite }}"><b>{{ x.probabilite }} %</b></td>
+  <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td>
+  <td class="nombre">{{ x.hasard }} %</td>
 </tr>
 {% endfor %}
 </tbody>
 </table>
 </div>
 
-## La tribu initiale décide qui part
+## La tribu initiale va de pair avec qui part
 
 {% assign bmin = f.bandeau | first %}
 {% assign bmaj = f.bandeau | last %}
@@ -109,13 +109,13 @@ douze.</p>
 
 <p class="legende-figure">Écart entre partir quand sa tribu initiale est la
 moins représentée du camp et partir quand elle est la plus représentée, contre
-{{ tb.tirages }} tirages où l’éliminé est pris au hasard parmi les présents.</p>
+{{ tb.tirages_texte }} tirages où l’éliminé est pris au hasard parmi les présents.</p>
 
 <div class="constat">
-  <p>Tribu initiale minoritaire : <b>{{ bmin.probabilite }} %</b>
+  <p>Tribu initiale minoritaire : <b>{{ bmin.probabilite }} %</b>
   ({{ bmin.cas }} sur {{ bmin.effectif }}). Tribu initiale majoritaire :
-  <b>{{ bmaj.probabilite }} %</b>.</p>
-  <p>{{ tb.observe_arrondi }} points d’écart, {{ tb.ecart_types }}
+  <b>{{ bmaj.probabilite }} %</b>.</p>
+  <p>{{ tb.observe_arrondi }} point{% if tb.observe_arrondi_pluriel %}s{% endif %} d’écart, {{ tb.ecart_types }}
   {{ tb.ecart_types_mot }} au-dessus du hasard, p ajustée {{ tb.p_ajustee }}.</p>
 </div>
 
@@ -142,11 +142,11 @@ réunification.</p>
 <thead><tr><th></th><th class="nombre">Tribu initiale minoritaire</th><th class="nombre">Tribu initiale majoritaire</th></tr></thead>
 <tbody>
 <tr><td>Avant la réunification</td>
-    <td class="nombre"><b>{{ amin.probabilite }} %</b> <small>({{ amin.effectif }})</small></td>
-    <td class="nombre">{{ amaj.probabilite }} % <small>({{ amaj.effectif }})</small></td></tr>
+    <td class="nombre"><b>{{ amin.probabilite }} %</b> <small>({{ amin.effectif }})</small></td>
+    <td class="nombre">{{ amaj.probabilite }} % <small>({{ amaj.effectif }})</small></td></tr>
 <tr><td>Après la réunification</td>
-    <td class="nombre"><b>{{ pmin.probabilite }} %</b> <small>({{ pmin.effectif }})</small></td>
-    <td class="nombre">{{ pmaj.probabilite }} % <small>({{ pmaj.effectif }})</small></td></tr>
+    <td class="nombre"><b>{{ pmin.probabilite }} %</b> <small>({{ pmin.effectif }})</small></td>
+    <td class="nombre">{{ pmaj.probabilite }} % <small>({{ pmaj.effectif }})</small></td></tr>
 </tbody>
 </table>
 </div>
@@ -171,12 +171,13 @@ l’écriture d’un nom.
 représenté du camp et partir quand il est le plus représenté.</p>
 
 <div class="constat">
-  <p>Sexe minoritaire : <b>{{ smin.probabilite }} %</b>
+  <p>Sexe minoritaire : <b>{{ smin.probabilite }} %</b>
   ({{ smin.cas }} sur {{ smin.effectif }}). Sexe majoritaire :
-  <b>{{ smaj.probabilite }} %</b> ({{ smaj.cas }} sur {{ smaj.effectif }}).</p>
-  <p>{{ ts.observe_arrondi }} points, {{ ts.ecart_types }} {{ ts.ecart_types_mot }} :
-  <b>sous</b> le hasard. Prise seule, la p vaut {{ ts.p }} ; corrigée sur les
-  {{ m.nb_tests }} tests du registre, elle vaut
+  <b>{{ smaj.probabilite }} %</b> ({{ smaj.cas }} sur {{ smaj.effectif }}).</p>
+  <p>{{ ts.observe_arrondi }} point{% if ts.observe_arrondi_pluriel %}s{% endif %}, {{ ts.ecart_types }} {{ ts.ecart_types_mot }} :
+  <b>sous</b> le hasard. Prise seule, la p vaut {{ ts.p }} ; corrigée avec les
+  {{ m.famille_corrigee }} p-values de la famille (les {{ m.nb_tests }} tests et
+  leurs coefficients), elle vaut
   <b>{{ ts.p_ajustee }}</b> — et <b>ce résultat est retenu</b>.</p>
 </div>
 
@@ -190,8 +191,7 @@ ensuite fait basculer — des libellés « Ugo Lartiche Ugo » qui ne se rat
 n’était plus retenu. Une seconde réparation vient de le rendre : les
 <a href="{{ '/sources/' | relative_url }}">bulletins sans votant</a> — vote noir,
 pénalité, malédiction — n’étaient comptés nulle part, et des conseils dépouillés
-en dépendaient. Avec eux, l’écart se creuse et la p ajustée retombe à
-{{ ts.p_ajustee }}. <strong>Trois états pour un seul fait : ce n’est pas le jeu
+en dépendaient. Avec eux, l’écart se creuse et la p ajustée retombe à {{ ts.p_ajustee }}. <strong>Trois états pour un seul fait : ce n’est pas le jeu
 qui a changé, c’est ce que nous avions le droit d’en dire.</strong> Une page qui
 ne raconte que le dernier état laisse croire à une certitude qui n’existe
 pas.</p>
@@ -216,8 +216,8 @@ sélection ; il est donc, s’il faut choisir, plutôt sous-estimé que
 surestimé.</p>
 
 <p class="note">Ce résultat ne dit rien du sexe <em>en général</em> : toutes
-positions confondues, une femme part dans {{ f.genre[0].probabilite }} % des cas
-et un homme dans {{ f.genre[1].probabilite }} % — un écart que ces effectifs ne
+positions confondues, une femme part dans {{ f.genre[0].probabilite }} % des cas
+et un homme dans {{ f.genre[1].probabilite }} % — un écart que ces effectifs ne
 permettent pas de distinguer du hasard. La question de la longévité, à âge et
 métier égaux, est traitée par un modèle de durée sur
 <a href="{{ '/statistiques/equilibre/' | relative_url }}">Le jeu tenu serré</a>,
@@ -229,17 +229,17 @@ et décrite sur
 {% assign doyen = f.age | first %}
 {% assign milieu = f.age[1] %}
 
-Le plus âgé du camp est éliminé dans **{{ doyen.probabilite }} %** des cas,
-contre {{ milieu.probabilite }} % pour ceux qui ne sont ni le plus âgé ni le
+Le plus âgé du camp est éliminé dans **{{ doyen.probabilite }} %** des cas,
+contre {{ milieu.probabilite }} % pour ceux qui ne sont ni le plus âgé ni le
 plus jeune. Lu ainsi, c’est un résultat : le doyen paierait son âge.
 
 Il n’en est rien, et la raison tient en une ligne. **On est plus souvent le
 doyen d’un camp de six que d’un camp de douze** — donc la catégorie « le plus
 âgé » est surreprésentée dans les petits conseils, où chacun risque davantage.
-Son hasard à elle vaut {{ doyen.hasard }} %, pas {{ f.hasard }} %.
+Son hasard à elle vaut {{ doyen.hasard }} %, pas {{ f.hasard }} %.
 
 Le test ci-dessous compare le doyen à **tous** les autres présents, benjamins
-compris — c’est pourquoi son écart ({{ td.observe_arrondi }} points) est un
+compris — c’est pourquoi son écart ({{ td.observe_arrondi }} point{% if td.observe_arrondi_pluriel %}s{% endif %}) est un
 peu plus petit que celui qu’on lit entre les deux lignes du tableau.
 
 {% include graphiques/feu-doyen.svg %}
@@ -249,7 +249,7 @@ quand on ne l’est pas. Le modèle nul absorbe l’effet de taille — et l’o
 n’en sort pas.</p>
 
 <div class="constat">
-  <p>{{ td.observe_arrondi }} points d’écart, {{ td.ecart_types }}
+  <p>{{ td.observe_arrondi }} point{% if td.observe_arrondi_pluriel %}s{% endif %} d’écart, {{ td.ecart_types }}
   {{ td.ecart_types_mot }}, p brute {{ td.p }}, p ajustée {{ td.p_ajustee }}.
   <b>Non concluant.</b></p>
   <p>Sans le bon point de comparaison, on aurait publié l’écart brut entre les
@@ -272,10 +272,10 @@ testent sur les **bulletins**. Voici sa version en sortie.
 de l’épisode et partir quand on n’a rien gagné.</p>
 
 <div class="constat">
-  <p>A gagné le confort : <b>{{ cw.probabilite }} %</b>
+  <p>A gagné le confort : <b>{{ cw.probabilite }} %</b>
   ({{ cw.cas }} sur {{ cw.effectif }}). N’a rien gagné :
-  {{ cn.probabilite }} %.</p>
-  <p>{{ tc.observe_arrondi }} points, {{ tc.ecart_types }} {{ tc.ecart_types_mot }},
+  {{ cn.probabilite }} %.</p>
+  <p>{{ tc.observe_arrondi }} point{% if tc.observe_arrondi_pluriel %}s{% endif %}, {{ tc.ecart_types }} {{ tc.ecart_types_mot }},
   p brute {{ tc.p }}, p ajustée {{ tc.p_ajustee }}. <b>Non concluant.</b></p>
   <p>L’écart va dans le sens de la légende, mais il est petit, et à
   {{ cw.effectif }} présences il reste compatible avec un tirage. Le dire

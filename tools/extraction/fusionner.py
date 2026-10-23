@@ -125,6 +125,18 @@ NOMS_CANONIQUES = {
 # que subie a chaque lecture.
 TRIBUS_FAUTIVES = {
     ("sp3", "Mawar"): "Nekmao",
+    # « Noire » est le nom du modele de vignette Fandom ({{Tribebox|Noire}}),
+    # pas celui de la tribu : la page de saison ecrit « Tribu Maudite ».
+    ("s26", "Noire"): "Tribu maudite",
+}
+# La tribu de DEPART que la vignette Fandom ecrit fausse : elle donne la tribu
+# rejointe en cours de jeu. Melissa et Ilyesse ont commence dans la tribu
+# maudite (page de saison Fandom : « les quatre aventuriers les moins
+# performants lors de l'epreuve initiale integreront la tribu maudite »), et
+# leur propre parcours commence par elle. (saison, id) -> (tribu, couleur).
+TRIBU_DE_DEPART = {
+    ("s26", "melissa-pierru"): ("Tribu maudite", "noir"),
+    ("s26", "ilyesse-benyoub"): ("Tribu maudite", "noir"),
 }
 
 
@@ -604,6 +616,28 @@ def completer_depuis_autres_participations(participations, saisons, rapport):
                     f"reprise de sa participation de {annees.get(ref['saison'])}")
 
 
+def metier_sans_saison(participations, saisons, rapport):
+    """Retire du metier la saison ou il a ete declare.
+
+    Le tableau de La Nouvelle Edition ecrit « Mannequin (Raja Ampat) » : le
+    metier de la saison d'origine, suivi de son titre. Publie tel quel, il
+    faisait lire « Mannequin (2011) et mannequin (Raja Ampat) (2014) ». On ne
+    retire la parenthese que si TOUT ce qu'elle contient est un titre de
+    saison -- « Champion du monde de football (1998) » garde la sienne.
+    """
+    titres = {s["titre"].replace("’", "'").casefold() for s in saisons if s.get("titre")}
+    for p in participations:
+        m = re.match(r"^(.*\S)\s*\(([^()]*)\)$", p.get("profession") or "")
+        if not m:
+            continue
+        morceaux = [x.strip().replace("’", "'").casefold()
+                    for x in re.split(r",|&", m.group(2))]
+        if morceaux and all(x in titres for x in morceaux):
+            rapport.append(f"metier : {p['saison']}/{p['id']} « {p['profession']} » "
+                           f"-> « {m.group(1)} »")
+            p["profession"] = m.group(1)
+
+
 # --------------------------------------------------------------------------
 # Troisieme source : les pages individuelles du wiki Fandom.
 #
@@ -784,6 +818,34 @@ RANGS_CORRIGES = {
     ("s26", "jacques-roque"): (4, "elimine a l'orientation jour 40 avec Cecile (5e) ; le 4e manquait"),
     ("s27", "mael-lozach"): (2, "finaliste ; le 2e manquait"),
     ("sp7", "alix-noblat"): (7, "deux aventuriers au 6e rang ; le 7e manquait"),
+    # La Legende n'a pas de vainqueur (votes du jury invalides) : Claude et
+    # Laurent sont tous deux finalistes, aucun n'est premier.
+    ("sp7", "claude-dartois"): (2, "finaliste d'une saison sans vainqueur : le 1er n'existe pas"),
+    # LES RANGS QUE LA PAGE INDIVIDUELLE DONNE ET QUE LA LECTURE N'ATTRIBUAIT
+    # PAS. Une page qui couvre plusieurs editions ecrit « 2eme sur 17
+    # (Pacifique)<br/>11eme sur 16 (...) », ou ne garde le rang que dans ses
+    # categories « Neme place » : la chaine ne savait pas a quelle saison
+    # rendre lequel. Chaque entree tombe dans un trou de sa saison, a la place
+    # que l'ordre des sorties lui laisse. Verifie le 23 octobre 2026 contre
+    # specs/sources/personnes/.
+    ("s03", "moussa-niangane"): (3, "page Fandom « Classement = 3/18 »"),
+    ("sp3", "moussa-niangane"): (7, "page Fandom « Classement2 = 7/16 »"),
+    ("s05", "mohamed-derradji"): (3, "page Fandom « 3ème sur 17 (Pacifique) »"),
+    ("sp2", "mohamed-derradji"): (12, "page Fandom « 12ème sur 14 (Le Choc des héros) »"),
+    ("s05", "francis-bordas"): (2, "page Fandom « 2ème sur 17 (Pacifique) »"),
+    ("sp3", "francis-bordas"): (11, "page Fandom « 11ème sur 16 (La Revanche des Héros) »"),
+    ("s07", "gregoire-delachaux"): (7, "page Fandom « Classement=7/16 » (Palawan)"),
+    ("s10", "laurence-pizzocchia"): (6, "page Fandom « Classement=6/18 » (Viêtnam)"),
+    ("sp4", "laurence-pizzocchia"): (11, "page Fandom, categorie « 11ème place »"),
+    ("s11", "martin-bazin"): (5, "page Fandom, categorie « 5ème place »"),
+    ("sp4", "martin-bazin"): (2, "page Fandom, categorie « 2ème place » : finaliste"),
+    ("s14", "chantal-menard"): (2, "page Fandom, categorie « 2ème place » : finaliste"),
+    ("sp1", "philippe-bordier"): (10, "page Fandom « 10ème sur 14 (Le Retour des Héros) »"),
+    ("sp2", "christina-chevry"): (9, "page Fandom « Classement2=9/14 » (Tiac)"),
+    ("sp4", "christina-chevry"): (8, "page Fandom « Classement3=8/13 » (Simban)"),
+    ("sp3", "nicolas-roy"): (14, "page Fandom « Classement2 = 14/16 »"),
+    ("sp4", "florence-delbarre"): (9, "page Fandom « 9ème (La Nouvelle Edition) »"),
+    ("s06", "sebastien-roulle"): (3, "elimine aux poteaux : 3e par definition ; le 3e manquait"),
     ("sp8", "maxime-lubian"): (None, "saison en cours, revenu dans l'aventure : pas de rang final"),
 }
 
@@ -1199,6 +1261,12 @@ def corriger_tribus(participations, rapport):
             if bon:
                 etape["tribu"] = bon
                 corriges += 1
+        depart = TRIBU_DE_DEPART.get((p["saison"], p["id"]))
+        if depart and (p.get("tribu"), p.get("couleur")) != depart:
+            p["tribu"], p["couleur"] = depart
+            p.setdefault("sources", {})["tribu"] = "correction, cf. TRIBU_DE_DEPART"
+            p["sources"]["couleur"] = "correction, cf. TRIBU_DE_DEPART"
+            corriges += 1
     if corriges:
         rapport.append(f"tribu : {corriges} nom(s) corrige(s) — nom de tribu "
                        f"fautif dans la source, arbitre par les deux autres")
@@ -1273,6 +1341,27 @@ ETAPES_CORRIGEES = {
     ("sp3", "patricia-morel", "Tribu réunifiée"): (None,
         "jamais dans la tribu reunifiee : sortie avant elle (voir Klahan)"),
 }
+# Les parcours que l'infobox individuelle ecrit faux EN ENTIER : le tableau de
+# saison Fandom, qui donne une colonne par periode, fait foi. (saison, id) ->
+# (etapes, source) ; une etape sans jours garde jour_debut et jour_fin nuls,
+# comme les autres etapes que la source ne date pas.
+PARCOURS_REMPLACES = {
+    ("s01", "romain-bissol"): (
+        [("Korok", "rouge", 1, 20), ("Tribu réunifiée", None, 20, 41)],
+        "tableau de saison Fandom (s01, Korok) et texte de la page individuelle ; "
+        "l'infobox ecrit Lanta-naï"),
+    ("s01", "patricia-tanguy"): (
+        [("Korok", "rouge", 1, 20), ("Tribu réunifiée", None, 20, 42)],
+        "tableau de saison Fandom (s01, Korok) et texte de la page individuelle ; "
+        "l'infobox ecrit Lanta-naï"),
+    ("s14", "melissa-bastin"): (
+        [("Lankawaï", "jaune", None, None), ("Tinggi", "rouge", None, None),
+         ("Tribu réunifiée", None, None, 39)],
+        "tableau de saison Fandom (s14) : Lankawaï, Lankawaï, Tinggi, Tinggi, réunifiée"),
+    ("s15", "cecilia-siharaj"): (
+        [("Aopoh", "rouge", None, None), ("Karwaï", "jaune", None, 38)],
+        "tableau de saison Fandom (s15) : Aopoh, Aopoh, Karwaï"),
+}
 
 # Les sorts que la source ecrit trop vagues, ou faux. Le tableau de saison dit
 # « Eliminee », sans dire comment, ou « Eliminee au conseil » pour toute
@@ -1297,6 +1386,9 @@ SORTS_CORRIGES = {
     ("sp6", "teheiura-teahui"): ("elimine_destins_lies",
         "revenant : Fandom, second départ « Jour 24 » ; Wikipedia : « Teheiura étant en "
         "binôme avec Charlotte, il est également éliminé »", 24),
+    ("sp7", "claude-dartois"): ("finaliste",
+        "Wikipedia barre « Vainqueur » : le dépouillement final n'a pas eu lieu ; "
+        "Fandom : « Pas de vainqueur », les votes du jury final ont été invalidés"),
     ("sp7", "teheiura-teahui"): ("disqualifie",
         "revenant : Wikipedia « Exclu », pour avoir obtenu de la nourriture de pêcheurs ; "
         "Fandom « Éjecté du jeu, Jour 27 »", 27),
@@ -1354,6 +1446,13 @@ def corriger_les_jours(participations, rapport):
             garde.append(e)
         if p.get("parcours"):
             p["parcours"] = garde
+        r = PARCOURS_REMPLACES.get((p["saison"], p["id"]))
+        if r:
+            etapes, source = r
+            p["parcours"] = [{"tribu": t, "couleur": c, "jour_debut": d, "jour_fin": f}
+                             for t, c, d, f in etapes]
+            p.setdefault("sources", {})["parcours"] = "corrige : " + source
+            rapport.append(f"parcours : {p['saison']}/{p['id']} remplace ({source})")
 
 
 def tribu_sans_etat(participations, rapport):
@@ -1446,6 +1545,7 @@ def main():
     verifier_classements(participations, saisons, rapport)
     voix_d_une_saison_en_cours(participations, saisons, rapport)
     completer_depuis_autres_participations(participations, saisons, rapport)
+    metier_sans_saison(participations, saisons, rapport)
 
     # champs encore vides
     manques = {}

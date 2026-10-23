@@ -365,6 +365,12 @@ def indicateurs_saison(saisons, parts, conseils, epreuves, colliers):
             "domination_epreuves": _concentration(victoires) if victoires else None,
             "meilleur_gagnant": (max(victoires.items(), key=lambda x: x[1])[0]
                                  if victoires else None),
+            # Le NOM a cote de l'identifiant : /saisons/ publiait
+            # « claude-dartois y remporte six epreuves ».
+            "meilleur_gagnant_nom": next(
+                (p.get("nom_complet") or p.get("nom") for p in lot
+                 if victoires and p["id"] == max(victoires.items(), key=lambda x: x[1])[0]),
+                None),
             "victoires_du_meilleur": (max(victoires.values()) if victoires else None),
             "colliers": len(cols),
             "colliers_joues": sum(1 for c in cols if c.get("statut") == "utilise"),

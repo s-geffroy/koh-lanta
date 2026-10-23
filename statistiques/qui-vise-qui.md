@@ -15,7 +15,7 @@ chapeau: >-
 
 Le sexe, l’âge, le métier, la tribu initiale : quatre façons de se ressembler
 ou non. La page [Les conseils]({{ '/statistiques/conseils/' | relative_url }})
-donne les parts brutes — {% assign vg = site.data.stats.conseils.vote_par_genre | first %}{{ vg.part }} %
+donne les parts brutes — {% assign vg = site.data.stats.conseils.vote_par_genre | first %}{{ vg.part }} %
 des bulletins sont écrits par {{ vg.libelle }}. Ces
 parts ne veulent rien dire seules : si le camp entier a un nom en tête ce
 soir-là, chacun l’écrit, quel que soit son propre profil.
@@ -37,7 +37,7 @@ Elle laissait donc un votant recevoir **son propre nom** : un couple qui
 n’existe dans aucun conseil réel — on ne vote pas contre soi — et qui partage
 forcément le sexe, le métier et la tribu initiale de son auteur.
 
-**12,5 % des bulletins tirés étaient de ce type**, contre 0 sur
+**12,5 % des bulletins tirés étaient de ce type**, contre 0 sur
 {{ h.bulletins }} dans les données. L’attendu en était gonflé, et tout écart
 paraissait spectaculaire :
 
@@ -73,7 +73,7 @@ modèle nul**, et un nul mal contraint produit des écarts énormes et faux.
 
 <p class="legende-figure">Part des bulletins visant quelqu’un du même sexe.</p>
 
-{{ t.observe }} % contre {{ t.attendu }} % attendus — {{ t.ecart_types }}
+{{ t.observe }} % contre {{ t.attendu }} % attendus — {{ t.ecart_types }}
 {{ t.ecart_types_mot }}, p ajustée {{ t.p_ajustee }}. **Non retenu** : on vise un peu
 moins souvent quelqu’un de son sexe que le partage des cibles ne le voudrait,
 mais l’écart ne passe pas le seuil.
@@ -89,7 +89,7 @@ chose.
 
 <p class="legende-figure">Part des bulletins visant la même famille de métiers.</p>
 
-{{ t.observe }} % contre {{ t.attendu }} % — {{ t.ecart_types }} {{ t.ecart_types_mot }},
+{{ t.observe }} % contre {{ t.attendu }} % — {{ t.ecart_types }} {{ t.ecart_types_mot }},
 p ajustée {{ t.p_ajustee }}. **Non retenu** : on vise un peu moins sa propre
 famille de métiers que le hasard ne le voudrait, mais l’écart ne passe pas le
 seuil. Si on la vise
@@ -104,10 +104,10 @@ vingt ; l’écart au hasard, lui, est mince.
 
 <p class="legende-figure">Écart d’âge moyen entre le votant et sa cible.</p>
 
-{{ t.observe }} ans contre {{ t.attendu }} attendus. L’écart existe —
-{{ t.ecart_types }} {{ t.ecart_types_mot }} — mais il ne franchit pas la correction pour
-tests multiples (p ajustée {{ t.p_ajustee }}), et **il est minuscule**. Il n’y a
-rien à en tirer.
+{{ t.observe }} ans contre {{ t.attendu }} attendus :
+{{ t.ecart_types }} {{ t.ecart_types_mot }}, qui ne franchissent pas la correction
+pour tests multiples (p ajustée {{ t.p_ajustee }}). L’écart ne se distingue pas
+du hasard, et il serait de toute façon minuscule. Il n’y a rien à en tirer.
 
 ## Le voisin : peut-être
 
@@ -122,14 +122,14 @@ chose.
 {% include graphiques/vise-departement.svg %}
 
 <p class="legende-figure">Part des bulletins visant quelqu’un du même
-département, contre {{ td.tirages }} tirages de saisons autour de l’attendu
+département, contre {{ td.tirages_texte }} tirages de saisons autour de l’attendu
 que donne le partage des bulletins à l’intérieur de chaque conseil.</p>
 
 <div class="constat">
-  <p><b>{{ td.observe }} %</b> des bulletins visent quelqu’un du même
-  département, pour <b>{{ td.attendu }} %</b> attendus : l’observé est
+  <p><b>{{ td.observe }} %</b> des bulletins visent quelqu’un du même
+  département, pour <b>{{ td.attendu }} %</b> attendus : l’observé est
   <b>sous</b> l’attendu, {{ td.ecart_types }} {{ td.ecart_types_mot }}, p brute {{ td.p }},
-  p ajustée <b>{{ td.p_ajustee }}</b>. <b>Non concluant, de justesse.</b></p>
+  p ajustée <b>{{ td.p_ajustee }}</b>. <b>Non concluant.</b></p>
   <p>On vise le voisin un peu moins souvent que le partage des bulletins ne le
   voudrait, mais l’écart ne franchit pas la correction pour tests multiples.
   On ne peut ni l’affirmer ni l’écarter.</p>
@@ -158,11 +158,11 @@ soit {{ h.bulletins_mixtes }} bulletins.
 tribu initiale, sur les seuls conseils mixtes.</p>
 
 <div class="constat">
-  <p>Une fois les tribus recomposées, <b>{{ t.observe }} %</b> des bulletins visent
+  <p>Une fois les tribus recomposées, <b>{{ t.observe }} %</b> des bulletins visent
   quelqu’un de la tribu initiale de leur auteur. Le simple partage des cibles en
-  prévoit <b>{{ t.attendu }} %</b>.</p>
+  prévoit <b>{{ t.attendu }} %</b>.</p>
   <p>{{ t.ecart_types }} {{ t.ecart_types_mot }}, p ajustée {{ t.p_ajustee }}. On écrit le
-  nom d’un ancien coéquipier <b>{{ t.ecart_relatif }} % moins souvent</b> qu’on ne
+  nom d’un ancien coéquipier <b>{{ t.ecart_relatif }} % moins souvent</b> qu’on ne
   le devrait.</p>
   <p>La tribu initiale n’existe plus. Elle protège encore.</p>
 </div>

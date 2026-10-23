@@ -9,7 +9,7 @@ chapeau: >-
 
 {% assign c = site.data.stats.colliers %}
 
-Le collier d’immunité est apparu en {{ site.data.stats.general.premiere_annee_collier }} et
+Le collier d’immunité caché est apparu en {{ site.data.stats.general.premiere_annee_collier }} et
 n’a plus quitté le jeu. C’est aussi
 la mécanique sur laquelle circulent le plus d’affirmations invérifiables. Le
 destin de **{{ c.colliers }} colliers** a été relevé sur
@@ -38,7 +38,7 @@ s’ils ont servi, et combien de voix ils ont annulées.
 <tr>
   <td>{{ i.libelle }}</td>
   <td class="nombre">{{ i.effectif }}</td>
-  <td class="nombre">{{ i.part_totale }} %</td>
+  <td class="nombre">{{ i.part_totale }} %</td>
   <td class="nombre">{% if i.part_des_trouves %}{{ i.part_des_trouves }} %{% else %}—{% endif %}</td>
 </tr>
 {% endfor %}
@@ -50,20 +50,21 @@ s’ils ont servi, et combien de voix ils ont annulées.
 {% assign issue_pour_rien = c.issues | where: "issue", "joue_pour_rien" | first %}
 {% assign issue_parti = c.issues | where: "issue", "elimine_avec_collier" | first %}
 **Le dénominateur change tout.** Rapporté à l’ensemble des colliers cachés, le
-« joué et efficace » ne pèse que {{ issue_efficace.part_totale }} %. Mais un
+« joué et efficace » ne pèse que {{ issue_efficace.part_totale }} %. Mais un
 collier que personne n’a découvert n’est l’échec de personne : rapporté aux
-seuls colliers **trouvés**, il monte à {{ issue_efficace.part_des_trouves }} %.
+seuls colliers **trouvés**, il monte à {{ issue_efficace.part_des_trouves }} %.
 Les deux chiffres sont vrais, ils ne répondent pas à la même question.
 
 ## Trois enseignements
 
 **Un collier sur trois est joué pour rien.**
-{{ issue_pour_rien.part_des_trouves }} % des colliers trouvés sont sortis du sac
-sans annuler la moindre voix — leur détenteur n’était pas visé. C’est la peur
-qui a parlé, pas la lecture du jeu.
+{{ issue_pour_rien.part_des_trouves }} % des colliers trouvés sont sortis du sac
+sans annuler la moindre voix — leur détenteur n’était pas visé. Se protéger
+sans raison, ou se protéger par précaution : les bulletins ne disent pas
+lequel.
 
 **Moins d’un sur dix part avec son détenteur.** Éliminé au conseil, collier
-dans le sac : {{ issue_parti.part_des_trouves }} % des colliers trouvés
+dans le sac : {{ issue_parti.part_des_trouves }} % des colliers trouvés
 connaissent ce sort — en comptant celui qui le détenait ce soir-là, pas celui
 qui l’avait trouvé et cédé. C’est le scénario que tout aventurier redoute, et il est plus rare qu’on
 ne le raconte.
@@ -178,8 +179,7 @@ trace-là existe sur {{ co.saisons_avec_objet_joue }} saisons.
   jamais.</p>
   <p>Le vrai problème n’est donc pas l’efficacité de l’objet, c’est la
   décision : {{ c.jamais_trouves }} colliers n’ont jamais été trouvés, et
-  beaucoup de ceux qui l’ont été sont partis avec leur détenteur, dans la
-  poche.</p>
+  une part de ceux qui l’ont été sont sortis du jeu sans avoir servi.</p>
 </div>
 
 <p class="note">Attention à ne pas confondre deux marques identiques.

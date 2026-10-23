@@ -36,8 +36,7 @@ réunification tombe, et par le nombre de joueurs qu’elle laisse en jeu.</p>
 <div class="constat">
   <p>Quand le casting gagne un membre, l’épisode de la réunification recule en
   moyenne de <b>{{ f.pente_episode.pente }}</b> — intervalle
-  {{ f.pente_episode.bas }} à {{ f.pente_episode.haut }}, p =
-  {{ f.pente_episode.p }}. <b>L’intervalle contient zéro</b> : ce recul ne se
+  {{ f.pente_episode.bas }} à {{ f.pente_episode.haut }}, p = {{ f.pente_episode.p }}. <b>L’intervalle contient zéro</b> : ce recul ne se
   distingue pas du hasard. Même pris tel quel, il ne ferait que
   {{ f.croissance_episode_texte }} sur toute la croissance observée, de
   {{ f.casting_min }} à {{ f.casting_max }} personnes.
@@ -52,7 +51,8 @@ réunification tombe, et par le nombre de joueurs qu’elle laisse en jeu.</p>
   l’état du jeu. Les castings ont grossi de {{ f.croissance }} personnes, et le
   plateau réuni est passé de {{ f.restants_casting_min }} joueurs, en médiane
   avec les plus petits castings, à {{ f.restants_casting_max }} avec les plus
-  grands. C’est le programme qui décide, et le jeu qui s’adapte.</p>
+  grands. Tout se passe comme si le programme décidait, et le jeu s’adaptait —
+ce que les données montrent, c’est la régularité de la date, pas l’intention.</p>
 </div>
 
 <p class="note"><strong>Cette conclusion a basculé deux fois, et il faut le
@@ -111,18 +111,16 @@ coupure obtenue sur des saisons remises dans un ordre au hasard.</p>
 
 <div class="constat">
   <p><b>Le jeu a changé</b> : {{ r.test.ecart_types }} {{ r.test.ecart_types_mot }} au-dessus
-  de ce qu’une coupure au hasard obtiendrait, p ajustée
-  {{ r.test.p_ajustee }}. Remettez les {{ r.saisons }} saisons dans le désordre
+  de ce qu’une coupure au hasard obtiendrait, p ajustée {{ r.test.p_ajustee }}. Remettez les {{ r.saisons }} saisons dans le désordre
   et aucune coupure n’approche celle-ci.</p>
   <p><b>Mais rien ne dit qu’il ait basculé plutôt que glissé.</b> Contre des
   séries qui suivent la même tendance régulière, la meilleure coupure ne se
   distingue pas : {{ r.test_glissement.ecart_types }}
-  {{ r.test_glissement.ecart_types_mot }}, p ajustée
-  {{ r.test_glissement.p_ajustee }}. Une dérive continue suffit à la produire.</p>
+  {{ r.test_glissement.ecart_types_mot }}, p ajustée {{ r.test_glissement.p_ajustee }}. Une dérive continue suffit à la produire.</p>
   <p><b>Mais sa date n’est pas identifiée.</b> La meilleure coupure tombe en
   {{ r.annee_rupture }} et ne devance la deuxième — {{ r.second.annee }} — que
-  de <b>{{ r.avance }} %</b>. Et <b>{{ r.nb_proches }} dates</b> tiennent à
-  10 % près, réparties sur <b>{{ r.fenetre.etendue }} ans</b>, de
+  de <b>{{ r.avance }} %</b>. Et <b>{{ r.nb_proches }} dates</b> tiennent à
+  10 % près, réparties sur <b>{{ r.fenetre.etendue }} ans</b>, de
   {{ r.fenetre.debut }} à {{ r.fenetre.fin }}.</p>
 </div>
 
@@ -145,11 +143,11 @@ régulière, avec ses écarts remis au hasard. Ce second test a été ajouté le
 22 octobre 2026 ; la page affirmait jusque-là « une rupture existe ».</p>
 
 <p class="note"><strong>Comment on le sait.</strong> Une version antérieure de
-cette page datait la rupture de 2012 et l’affirmait sans réserve. Deux
-compléments de données — les âges manquants, puis trois cents bulletins de
-conseil retrouvés — ont déplacé le maximum, d’abord vers
-{{ r.annee_rupture }}, puis en creusant son avance. Un critère qu’une révision
-de données déplace de {{ site.data.stats.mots.rupture_deplacement }} ans ne désigne pas une année : il désigne une
+cette page datait la rupture de 2012 et l’affirmait sans réserve. Les
+compléments de données qui ont suivi — les âges manquants, puis trois cents
+bulletins de conseil retrouvés — ont fait bouger le maximum d’une révision à
+l’autre ; il tombe aujourd’hui en {{ r.annee_rupture }}. Un critère qu’une
+révision de données déplace ne désigne pas une année : il désigne une
 époque. <a href="{{ '/statistiques/audience/' | relative_url }}">L’audience</a>
 resserre ses meilleures coupures bien davantage — {{ m.audience.nb_proches }}
 dates sur {{ m.audience.fenetre.etendue }} an, au lieu de
@@ -179,15 +177,15 @@ coupure ne se distingue pas d’un déclin régulier.</p>
 </table>
 </div>
 
-{% assign objets = r.detail | where: "libelle", "Objets d'immunité en jeu" | first %}
+{% assign objets = r.detail | where: "libelle", "Objets d’immunité en jeu" | first %}
 {% assign casting = r.detail | where: "libelle", "Taille du casting" | first %}
-{% assign abandon = r.detail | where: "libelle", "Taux d'abandon" | first %}
+{% assign abandon = r.detail | where: "libelle", "Taux d’abandon" | first %}
 Le portrait est cohérent, et il ne se réduit à aucun de ses traits. **Les objets
 d’immunité apparaissent** — ils étaient à zéro, ils sont à
 {{ objets.apres }} par saison. **Le casting grossit**
 ({{ casting.avant }} → {{ casting.apres }}), **les conseils se multiplient**,
 **le casting vieillit**, et **les abandons sont divisés par {{ r.abandon_rapport }}**
-({{ abandon.avant }} % → {{ abandon.apres }} %).
+({{ abandon.avant }} % → {{ abandon.apres }} %).
 
 Ce dernier point vaut d’être souligné : la page
 [Comment on sort]({{ '/statistiques/sorties/' | relative_url }}) présente la

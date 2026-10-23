@@ -4,9 +4,10 @@ espace: articles
 title: "Un amplificateur institutionnel"
 titre: "Koh-Lanta comme amplificateur institutionnel : cadre mécaniste et confrontation aux votes"
 version: "Version longue"
-chapeau: "Le cadre théorique, les tests et leurs limites : ce qui tient, ce qui cède, et pourquoi l'ordinaire se prédit mieux que l'exceptionnel."
-description: "Version longue : un cadre mécaniste confronté à tous les votes du jeu. Les alliances et l'appartenance tiennent ; la compétence comme menace, non."
+chapeau: "Le cadre théorique, les tests et leurs limites : ce qui tient, ce qui cède, et pourquoi l’ordinaire se prédit mieux que l’exceptionnel."
+description: "Version longue : un cadre mécaniste confronté à tous les votes du jeu. Les alliances et l’appartenance tiennent ; la compétence comme menace, non."
 date: 2026-10-20
+last_modified_at: 2026-10-23
 author: Sylvain Geffroy
 permalink: /articles/amplificateur-institutionnel/
 math: true
@@ -26,9 +27,9 @@ Cet article étudie *Koh-Lanta* non comme une miniature de « la vraie vie �
 
 La version précédente de ce texte reposait sur neuf conseils pilotes et un seul cas prospectif. Celle-ci confronte le cadre à une base exhaustive : **{{ a.saisons }} saisons, {{ a.aventuriers }} aventuriers, {{ a.conseils }} conseils d'élimination de saisons terminées, dont {{ a.conseils_complets }} au bulletin près, et {{ a.bulletins }} bulletins**, reconstruits depuis Wikipédia et le wiki Fandom et publiés avec leurs sources. Les hypothèses y sont lues dans un registre de **{{ a.nb_tests }} tests de permutation**, conçus indépendamment de cet article, dont {{ a.nb_retenus }} résistent à la correction de Benjamini-Hochberg.
 
-Trois résultats réorganisent la thèse. (1) Les mécanismes **relationnels** — isolement, persistance des coalitions, ciblage répété, appartenance d'origine — sont nettement plus marqués que ne le produirait une élimination au hasard parmi les présents. (2) L'exemple le plus cité de la version précédente, **la compétence qui devient une menace après la réunification, n'est pas observé** : l'éliminé n'est pas plus fort aux épreuves après la réunification qu'avant (écart de {{ a.tests.fusion_force.observe }} points de rang, p ajustée {{ a.tests.fusion_force.p }}). (3) La version précédente donnait 42,9 % à l'issue ordinaire d'un conseil, l'élimination sans égalité ni objet joué ; c'est en réalité l'issue de **{{ a.issues.ordinaire }} %** des conseils. Une prédiction qui ignore cette fréquence peut tomber juste une fois et rester mal calibrée.
+Trois résultats réorganisent la thèse. (1) Les mécanismes **relationnels** — isolement, persistance des coalitions, ciblage répété, appartenance d'origine — sont nettement plus marqués que ne le produirait le hasard. (2) L'exemple le plus cité de la version précédente, **la compétence qui devient une menace après la réunification, n'est pas observé** : l'éliminé n'est pas plus fort aux épreuves après la réunification qu'avant (écart de {{ a.tests.fusion_force.observe }} points de rang, p ajustée {{ a.tests.fusion_force.p }}). (3) La version précédente donnait 42,9 % à l'issue ordinaire d'un conseil, l'élimination sans égalité ni renversement par un objet ; c'est en réalité l'issue de **{{ a.issues.ordinaire }} %** des conseils. Une prédiction qui ignore cette fréquence peut tomber juste une fois et rester mal calibrée.
 
-**Mots-clés :** Koh-Lanta ; institutions ; télé-réalité ; coalitions ; réputation ; identité sociale ; tests de permutation ; calibration.
+**Mots-clés :** Koh-Lanta ; institutions ; téléréalité ; coalitions ; réputation ; identité sociale ; tests de permutation ; calibration.
 
 ## 1. Introduction
 
@@ -51,14 +52,14 @@ Trois interprétations restent exclues. L'émission n'est pas une expérience co
 L'économie des tournois montre qu'une récompense fondée sur le rang relatif modifie les incitations ([Lazear et Rosen, 1981](#ref-lazearrosen1981tournaments)). La conséquence la plus souvent tirée pour *Koh-Lanta* est conditionnelle :
 
 $$
-Valeur_{productive}(compétence) \neq Valeur_{stratégique}(compétence)
+\text{Valeur}_{\text{productive}}(\text{compétence}) \neq \text{Valeur}_{\text{stratégique}}(\text{compétence})
 $$
 
 Une compétence utile au collectif tant que les tribus s'affrontent deviendrait une menace quand chacun anticipe la phase individuelle. C'est une hypothèse **directionnelle et testable** : après la réunification, l'éliminé devrait être plus haut dans le classement de force du camp qu'avant. La section 6.1 montre qu'elle ne se vérifie pas.
 
 ### 2.2. Coalition, vote et pouvoir de pivot
 
-Les coalitions coordonnent des acteurs aux intérêts partiellement divergents ([Riker, 1962](#ref-riker1962) ; [Frohlich, 1975](#ref-frohlich1975)). Le pouvoir de pivot a une formulation robuste dans les jeux de vote : une voix vaut par le nombre de coalitions qu'elle fait basculer ([Shapley et Shubik, 1954](#ref-shapleyshubik1954)). Les petits effectifs et les décisions discrètes du jeu rendent cette logique visible. Une coalition qui compte doit **persister** d'un conseil à l'autre et **protéger** ses membres : deux propriétés mesurables.
+Les coalitions coordonnent des acteurs aux intérêts partiellement divergents ([Riker, 1962](#ref-riker1962) ; [Frohlich, 1975](#ref-frohlich1975)). Le pouvoir de pivot a une formulation robuste dans les jeux de vote : le poids d'un votant se mesure à la part des ordres de ralliement dans lesquels sa voix fait basculer la décision ([Shapley et Shubik, 1954](#ref-shapleyshubik1954)). Les petits effectifs et les décisions discrètes du jeu rendent cette logique visible. Une coalition qui compte doit **persister** d'un conseil à l'autre et **protéger** ses membres : deux propriétés mesurables.
 
 ### 2.3. Pouvoir, dépendance et options de sortie
 
@@ -69,7 +70,7 @@ Pour Emerson, la dépendance de B envers A croît avec le besoin de ce que A con
 L'asymétrie d'information et la signalisation structurent les échanges quand intentions et types sont privés ([Akerlof, 1970](#ref-akerlof1970lemons) ; [Spence, 1973](#ref-spence1973signaling)). La réputation ajoute une dimension temporelle : elle soutient la coopération par réciprocité indirecte ([Nowak et Sigmund, 1998](#ref-nowaksigmund1998)) mais, dans un tournoi éliminatoire, elle peut aussi désigner une cible :
 
 $$
-Réputation \rightarrow Menace\ perçue \rightarrow Ciblage
+\text{Réputation} \rightarrow \text{Menace perçue} \rightarrow \text{Ciblage}
 $$
 
 Le premier maillon n'est pas observable dans nos données ; le dernier l'est. Nous testons la forme réduite : **avoir été visé expose-t-il à l'être encore, et à partir ?**
@@ -80,7 +81,7 @@ Une cascade informationnelle se produit quand les décisions observées conduise
 
 ### 2.6. Identité sociale
 
-La catégorisation en groupes affecte évaluations et comportements, même quand les groupes sont arbitraires ([Tajfel et Turner, 1979](#ref-tajfelturner1979)). Les tribus de *Koh-Lanta* sont constituées par la production ; elles disparaissent à la réunification. Si l'identité de groupe persiste, la **tribu initiale** doit continuer de protéger après la réunification, et les sorties doivent s'y **enchaîner par camp**.
+La catégorisation en groupes affecte évaluations et comportements, même quand les groupes sont arbitraires ([Tajfel et Turner, 1979](#ref-tajfelturner1979)). Les tribus de *Koh-Lanta* sont constituées par la production ; elles disparaissent à la réunification. Elles ne sont pas des groupes minimaux pour autant : on y vit ensemble des semaines, avec un destin commun. Si l'identité de groupe persiste, la **tribu initiale** doit continuer de protéger après la réunification, et les sorties devraient s'y **enchaîner par camp**.
 
 ### 2.7. Coopération, sanction, réseaux, rationalité limitée
 
@@ -94,7 +95,7 @@ $$
 S_{KL}=T_{KL}(G_{ref}) \qquad O_{diffusé}=M_{prod}(S_{KL},A,C)
 $$
 
-où $$M_{prod}$$ représente sélection, montage et mise en récit, $$A$$ les actions des participants et $$C$$ le contexte de production. Les participants savent qu'ils sont filmés : la médiatisation est **condition d'action** autant que **condition d'observation** ([Corner, 2002](#ref-corner2002) ; [Couldry, 2004](#ref-couldry2004) ; [Andrejevic, 2004](#ref-andrejevic2004) ; [Jost, 2004](#ref-jost2004)).
+où $$M_{prod}$$ représente sélection, montage et mise en récit, $$A$$ les actions des participants et $$C$$ le contexte de production. Les participants savent qu'ils sont filmés : la médiatisation est **condition d'action** autant que **condition d'observation** ([Corner, 2002](#ref-corner2002) ; [Couldry, 2004](#ref-couldry2004) ; [Andrejevic, 2004](#ref-andrejevic2004) ; [Jost, 2001](#ref-jost2001)).
 
 Cette séparation a une conséquence pratique. Le vote est l'un des rares éléments de $$O_{diffusé}$$ que le montage ne peut pas réécrire : le décompte est montré, et les sources le recopient bulletin par bulletin. Les motifs déclarés, eux, passent par le confessionnal et le montage. Nous fondons donc les résultats sur **qui a écrit quel nom**, et jamais sur ce qui a été dit pour le justifier.
 
@@ -129,7 +130,7 @@ Les **sorties sans vote** (abandons, orientation, poteaux, duels, ambassadeurs, 
 
 ### 5.2. Les tests
 
-Chaque test oppose une statistique observée à sa distribution sous un **modèle nul de permutation** (10 000 tirages), construit pour respecter la structure du soir : l'éliminé est tiré au hasard **parmi les présents du conseil**, ce qui fixe la taille et la composition du camp ; ou les bulletins sont rebattus entre les votants d'un même conseil, sans qu'aucun ne puisse écrire son propre nom. Les {{ a.nb_tests }} tests du registre sont corrigés ensemble par Benjamini-Hochberg ; nous rapportons la p ajustée. Le registre complet est public ([la méthode]({{ '/methode/' | relative_url }})).
+Chaque test oppose une statistique observée à sa distribution sous un **modèle nul de permutation** (de 2 000 à 100 000 tirages selon le test), construit pour respecter la structure du soir : l'éliminé est tiré au hasard **parmi ceux qui pouvaient l'être** — les votants du conseil, sans l'immunisé —, ce qui fixe la taille et la composition du camp ; ou les bulletins sont rebattus entre les votants d'un même conseil, sans qu'aucun ne puisse écrire son propre nom. Les {{ a.nb_tests }} tests du registre et les coefficients de régression publiés à côté — {{ a.famille_corrigee }} p-values — sont corrigés ensemble par Benjamini-Hochberg ; nous rapportons la p ajustée. Le registre complet est public ([la méthode]({{ '/methode/' | relative_url }})).
 
 Deux règles de construction, chacune née d'un faux résultat corrigé sur le site, s'appliquent à toutes les mesures :
 
@@ -138,7 +139,7 @@ Deux règles de construction, chacune née d'un faux résultat corrigé sur le s
 
 ### 5.3. Statut de la confrontation
 
-Les tests du registre ont été conçus et publiés **indépendamment** de cet article, sans référence à son cadre. Ce n'est pas un préenregistrement : la correspondance entre tests et mécanismes (tableau 2) a été établie après lecture des résultats. Pour limiter ce biais, nous rapportons **tous** les tests qui touchent un mécanisme du cadre, y compris ceux qui le contredisent ou ne concluent pas.
+Les tests du registre ont été conçus et publiés **indépendamment** de cet article, sans référence à son cadre. Ce n'est pas un préenregistrement : la correspondance entre tests et mécanismes (tableau 2) a été établie après lecture des résultats. Pour limiter ce biais, nous rapportons les tests qui touchent le plus directement un mécanisme du cadre, y compris ceux qui le contredisent ou ne concluent pas. D'autres tests du registre, non retenus, le touchent aussi — la menace deux conseils plus tard, le « dos au mur », l'homophilie de sexe, de métier, d'âge ou de département — ; ils sont publiés sur la page [méthode]({{ '/methode/' | relative_url }}).
 
 Ces tests sont **observationnels**. Un écart au modèle nul dit qu'un choix n'est pas aléatoire ; il ne dit pas quel motif l'a produit.
 
@@ -152,7 +153,7 @@ Le **pilote rétrospectif de neuf conseils** de la version précédente est reti
 
 ### 6.1. La compétence ne devient pas une menace — du moins pas aux épreuves
 
-Le site estime une [force aux épreuves]({{ '/statistiques/force/' | relative_url }}) pour chaque aventurier, à partir de {{ a.force.epreuves }} épreuves de {{ a.force.saisons }} saisons, et classe chaque éliminé parmi les présents du soir (0 = le plus faible, 100 = le plus fort).
+Le site estime une [force aux épreuves]({{ '/statistiques/force/' | relative_url }}) pour chaque aventurier, à partir de {{ a.force.epreuves }} épreuves de {{ a.force.saisons }} saisons, et classe chaque éliminé parmi les votants du soir, sans l'immunisé (0 = le plus faible, 100 = le plus fort).
 
 <div class="tableau-large" markdown="1">
 
@@ -179,18 +180,18 @@ Le tableau 2 rassemble les tests du registre qui touchent un mécanisme du cadre
 |---|---|---:|---:|---:|---|
 | Dépendance (2.3) | Partir quand plus aucun allié n'est présent, moins quand il en reste un | {{ a.tests.vote_isole.observe }} pts | {{ a.tests.vote_isole.attendu }} | {{ a.tests.vote_isole.p }} | [pire-place]({{ '/statistiques/pire-place/' | relative_url }}) |
 | Coalition (2.2) | Voter ensemble après avoir voté ensemble, moins après s'être séparés | {{ a.tests.persistance_alliances.observe }} pts | {{ a.tests.persistance_alliances.attendu }} | {{ a.tests.persistance_alliances.p }} | [alliances]({{ '/statistiques/alliances/' | relative_url }}) |
-| Coalition (2.2) | Part des bulletins visant un ancien co-votant | {{ a.tests.trahison.observe }} % | {{ a.tests.trahison.attendu }} % | {{ a.tests.trahison.p }} | [alliances]({{ '/statistiques/alliances/' | relative_url }}) |
-| Réciprocité (2.2) | La cible de la fois d'avant écrit le nom de son auteur | {{ a.tests.retour_de_baton.observe }} % | {{ a.tests.retour_de_baton.attendu }} % | {{ a.tests.retour_de_baton.p }} | [conditionnelles]({{ '/statistiques/conditionnelles/' | relative_url }}) |
+| Coalition (2.2) | Part des bulletins visant un ancien co-votant | {{ a.tests.trahison.observe }} % | {{ a.tests.trahison.attendu }} % | {{ a.tests.trahison.p }} | [alliances]({{ '/statistiques/alliances/' | relative_url }}) |
+| Réciprocité (2.2) | La cible de la fois d'avant écrit le nom de son auteur | {{ a.tests.retour_de_baton.observe }} % | {{ a.tests.retour_de_baton.attendu }} % | {{ a.tests.retour_de_baton.p }} | [conditionnelles]({{ '/statistiques/conditionnelles/' | relative_url }}) |
 | Réputation (2.4) | Partir après avoir été visé, moins sans l'avoir été | {{ a.tests.menace_voix.observe }} pts | {{ a.tests.menace_voix.attendu }} | {{ a.tests.menace_voix.p }} | [conditionnelles]({{ '/statistiques/conditionnelles/' | relative_url }}) |
 | Réputation (2.4) | Être visé après avoir été visé, moins sans l'avoir été | {{ a.tests.cible_persistante.observe }} pts | {{ a.tests.cible_persistante.attendu }} | {{ a.tests.cible_persistante.p }} | [conditionnelles]({{ '/statistiques/conditionnelles/' | relative_url }}) |
 | Réputation (2.4) | Partir après 1 à 3 voix, moins après 4 ou plus | {{ a.tests.menace_sommet.observe }} pts | {{ a.tests.menace_sommet.attendu }} | {{ a.tests.menace_sommet.p }} | [conditionnelles]({{ '/statistiques/conditionnelles/' | relative_url }}) |
-| Identité (2.6) | Après la réunification, part des bulletins visant sa tribu initiale | {{ a.tests.vote_bandeau_apres_fusion.observe }} % | {{ a.tests.vote_bandeau_apres_fusion.attendu }} % | {{ a.tests.vote_bandeau_apres_fusion.p }} | [qui-vise-qui]({{ '/statistiques/qui-vise-qui/' | relative_url }}) |
+| Identité (2.6) | Après la réunification, part des bulletins visant sa tribu initiale | {{ a.tests.vote_bandeau_apres_fusion.observe }} % | {{ a.tests.vote_bandeau_apres_fusion.attendu }} % | {{ a.tests.vote_bandeau_apres_fusion.p }} | [qui-vise-qui]({{ '/statistiques/qui-vise-qui/' | relative_url }}) |
 | Identité (2.6) | Sorties consécutives du même camp après la réunification | {{ a.tests.decimation.observe }} | {{ a.tests.decimation.attendu }} | {{ a.tests.decimation.p }} | [alliances]({{ '/statistiques/alliances/' | relative_url }}) |
 | Identité (2.6) | Partir quand sa tribu initiale est la moins représentée | {{ a.tests.bandeau_minoritaire.observe }} pts | {{ a.tests.bandeau_minoritaire.attendu }} | {{ a.tests.bandeau_minoritaire.p }} | [autour-du-feu]({{ '/statistiques/autour-du-feu/' | relative_url }}) |
 | Catégorie (2.6) | Partir quand son sexe est le moins représenté | {{ a.tests.sexe_minoritaire.observe }} pts | {{ a.tests.sexe_minoritaire.attendu }} | {{ a.tests.sexe_minoritaire.p }} | [autour-du-feu]({{ '/statistiques/autour-du-feu/' | relative_url }}) |
 | Conformité (2.5) | Partir après avoir voté avec la minorité | {{ a.tests.camp_perdant.observe }} pts | {{ a.tests.camp_perdant.attendu }} | {{ a.tests.camp_perdant.p }} | [conditionnelles]({{ '/statistiques/conditionnelles/' | relative_url }}) |
 | Changement de régime (4) | Conseils où l'éliminé n'a pas la majorité, après moins avant la réunification | {{ a.tests.fusion_serre.observe }} pts | {{ a.tests.fusion_serre.attendu }} | {{ a.tests.fusion_serre.p }} | [réunification]({{ '/statistiques/reunification/' | relative_url }}) |
-| Changement de régime (4) | Écart d'âge de l'éliminé à son camp, avant moins après | {{ a.tests.age_bascule_fusion.observe }} ans | {{ a.tests.age_bascule_fusion.attendu }} | {{ a.tests.age_bascule_fusion.p }} | [réunification]({{ '/statistiques/reunification/' | relative_url }}) |
+| Changement de régime (4) | Écart d'âge de l'éliminé à son camp, en années, avant moins après | {{ a.tests.age_bascule_fusion.observe }} | {{ a.tests.age_bascule_fusion.attendu }} | {{ a.tests.age_bascule_fusion.p }} | [réunification]({{ '/statistiques/reunification/' | relative_url }}) |
 | Changement de régime (4) | Part de femmes parmi les éliminés, après moins avant | {{ a.tests.fusion_sexe.observe }} pts | {{ a.tests.fusion_sexe.attendu }} | {{ a.tests.fusion_sexe.p }} | [réunification]({{ '/statistiques/reunification/' | relative_url }}) |
 | Ambassadeurs (5.4) | Rang de survie ultérieure des ambassadeurs | {{ a.tests.ambassadeurs_survie.observe }} | {{ a.tests.ambassadeurs_survie.attendu }} | {{ a.tests.ambassadeurs_survie.p }} | [réunification]({{ '/statistiques/reunification/' | relative_url }}) |
 
@@ -200,13 +201,13 @@ Quatre lectures s'en dégagent.
 
 **La dépendance a un coût mesurable.** Se retrouver sans aucun des aventuriers avec qui l'on a déjà voté augmente de {{ a.tests.vote_isole.valeur }} points la probabilité de sortir, quand le hasard en donnerait {{ a.tests.vote_isole.attendu }}. C'est la conséquence la plus directe de l'hypothèse 2.3 : dans une arène fermée, le lien local est une ressource, et son absence une exposition.
 
-**Les coalitions persistent et protègent.** Deux aventuriers qui ont voté ensemble revotent ensemble bien plus souvent que deux qui se sont séparés ({{ a.tests.persistance_alliances.observe }} points), et l'on écrit moins souvent le nom d'un ancien co-votant que le hasard ne le voudrait ({{ a.tests.trahison.observe }} % contre {{ a.tests.trahison.attendu }} %). La « trahison » existe, mais moins qu'une indifférence aux alliances ne le produirait.
+**Les coalitions persistent et protègent.** Deux aventuriers qui ont voté ensemble revotent ensemble bien plus souvent que deux qui se sont séparés ({{ a.tests.persistance_alliances.observe }} points), et l'on écrit moins souvent le nom d'un ancien co-votant que le hasard ne le voudrait ({{ a.tests.trahison.observe }} % contre {{ a.tests.trahison.attendu }} %). La « trahison » existe, mais moins qu'une indifférence aux alliances ne le produirait.
 
-**Le ciblage s'entretient, sans sommet.** Avoir été visé expose à l'être encore et à partir. Mais survivre à un vote massif ne protège pas mieux que survivre à deux bulletins : la menace n'a pas de sommet. La forme réduite de la chaîne réputationnelle (2.4) est donc observée ; ses maillons intermédiaires ne le sont pas.
+**Le ciblage s'entretient.** Avoir été visé expose à l'être encore et à partir. On ne voit pas qu'avoir survécu à un vote massif protège mieux qu'avoir survécu à deux bulletins — l'écart va même dans ce sens, mais la bande du hasard ne permet ni de l'affirmer ni de l'exclure. Une hétérogénéité stable entre joueurs, certains plus exposés que d'autres tout au long de la saison, produirait aussi le ciblage persistant. La forme réduite de la chaîne réputationnelle (2.4) est donc observée ; ses maillons intermédiaires ne le sont pas.
 
-**L'identité de groupe survit à la disparition du groupe.** Après la réunification, on écrit le nom de quelqu'un de sa tribu initiale dans {{ a.tests.vote_bandeau_apres_fusion.observe }} % des bulletins, contre {{ a.tests.vote_bandeau_apres_fusion.attendu }} % attendus ; les sorties s'enchaînent par camp ; appartenir au camp minoritaire expose. Les tribus, artefacts de production, deviennent des identités effectives — exactement ce que prédit le paradigme des groupes minimaux ([Tajfel et Turner, 1979](#ref-tajfelturner1979)). En revanche, appartenir au **sexe** minoritaire du camp **protège** ({{ a.tests.sexe_minoritaire.observe }} points) : toutes les catégories ne fonctionnent pas comme des groupes. C'est un argument direct pour observer une conséquence avant de coder une identité.
+**L'appartenance d'origine survit à la disparition du groupe.** Après la réunification, on écrit le nom de quelqu'un de sa tribu initiale dans {{ a.tests.vote_bandeau_apres_fusion.observe }} % des bulletins, contre {{ a.tests.vote_bandeau_apres_fusion.attendu }} % attendus, et appartenir au camp minoritaire expose. L'enchaînement des sorties par camp, lui, ne passe pas la correction une fois l'ordre des sorties d'un même épisode réparé. C'est compatible avec une identité de groupe ([Tajfel et Turner, 1979](#ref-tajfelturner1979)), sans qu'on puisse la séparer des liens noués pendant la phase en tribus : les tests de coalition et d'appartenance mesurent en partie le même réseau. En revanche, appartenir au **sexe** minoritaire du camp **protège** ({{ a.tests.sexe_minoritaire.observe }} points) : toutes les catégories ne fonctionnent pas comme des groupes. C'est un argument direct pour observer une conséquence avant de coder une identité.
 
-La conformité (2.5) se lit, de justesse : avoir voté avec la minorité expose au conseil suivant (p ajustée {{ a.tests.camp_perdant.p }}). Une première rédaction de cette version concluait l'inverse ; la correction des sorties sans vote du 21 octobre 2026 a fait passer le seuil à ce résultat, qui reste fragile.
+Une conséquence commune à la conformité (2.5) et à la coalition se lit, de justesse : avoir voté avec la minorité expose au conseil suivant (p ajustée {{ a.tests.camp_perdant.p }}). Être dans le bloc perdant est aussi une affaire de coalition, et les bulletins ne disent pas lequel des deux mécanismes joue. Une première rédaction de cette version concluait l'inverse ; la correction des sorties sans vote du 21 octobre 2026 a fait passer le seuil à ce résultat, qui reste fragile.
 
 ### 6.3. La réunification se lit dans les votes, pas seulement dans le discours
 
@@ -214,7 +215,7 @@ Le dispositif **se présente** comme changeant de régime à la réunification (
 
 L'âge, lui, ne permet pas de conclure. Avant la réunification, l'éliminé a en moyenne {{ a.age.avant }} de plus que la moyenne de son camp ce soir-là ; après, {{ a.age.apres }} de moins. La bascule, {{ a.age.bascule }} sur {{ a.age.conseils }} conseils, va dans le même sens, mais ne passe pas le seuil (p ajustée {{ a.tests.age_bascule_fusion.p }}). Une première rédaction de cette version la donnait retenue de justesse, en prévenant qu'une saison mal relevée suffirait à la faire repasser dessous. C'est ce qui est arrivé le 21 octobre 2026 : trente sorties par épreuve éliminatoire, jusque-là comptées comme des conseils sans bulletin, ont été rendues à leur nature.
 
-L'auto-description et le comportement coïncident sur ce point. Les ambassadeurs, eux, partent ensuite plus tôt que les autres présents (rang {{ a.tests.ambassadeurs_survie.observe }} contre {{ a.tests.ambassadeurs_survie.attendu }}, p ajustée {{ a.tests.ambassadeurs_survie.p }}) : l'ambassade, présentée comme une négociation, accompagne une fin de parcours précoce. Le résultat tient sur le seuil — il l'a franchi quatre fois, dans un sens puis dans l'autre, au fil des corrections des 21 et 22 octobre 2026 — et ne se lit qu'avec cette réserve.
+L'auto-description et le comportement coïncident sur ce point, même si les règles elles-mêmes — camp plus nombreux, colliers individuels — expliquent sans doute une part de l'écart : le modèle nul ne permute que les étiquettes « avant » et « après ». Les ambassadeurs, eux, ne partent pas ensuite plus tôt que ne le voudrait le hasard (rang {{ a.tests.ambassadeurs_survie.observe }} contre {{ a.tests.ambassadeurs_survie.attendu }}, p ajustée {{ a.tests.ambassadeurs_survie.p }}). Ce résultat a franchi le seuil quatre fois au fil des corrections des 21 et 22 octobre 2026 ; le 23, une relecture a montré que le dernier « retenu » tenait à la graine du tirage, et que le modèle nul ignorait la règle du jeu — un ambassadeur parti au tirage sort le soir même. Corrigé, et restreint aux saisons classiques, il ne l'est plus.
 
 ### 6.4. L'ordinaire d'abord : la fréquence des issues d'un conseil
 
@@ -226,14 +227,14 @@ La version précédente avait verrouillé, avant un conseil, une distribution de
 
 | Issue | Version précédente | Saisons terminées ({{ a.issues.conseils }} conseils) |
 |---|---:|---:|
-| Élimination ordinaire | 42,9 % | {{ a.issues.ordinaire }} % |
-| Égalité puis second vote | 28,6 % | {{ a.issues.egalite_revote }} % |
-| Renversement par un objet d'immunité | 14,3 % | {{ a.issues.renversement }} % |
-| Égalité tranchée sans second vote | 14,3 % | {{ a.issues.egalite_tranchee }} % |
+| Élimination ordinaire | 42,9 % | {{ a.issues.ordinaire }} % |
+| Égalité puis second vote | 28,6 % | {{ a.issues.egalite_revote }} % |
+| Renversement par un objet d'immunité | 14,3 % | {{ a.issues.renversement }} % |
+| Égalité tranchée sans second vote | 14,3 % | {{ a.issues.egalite_tranchee }} % |
 
 </div>
 
-Ces fréquences sont la seule mesure de cet article qui ne figure pas ailleurs sur le site. L'unité est le **conseil décisif** — celui dont sort un éliminé rattaché. Il est classé « égalité puis second vote » si le conseil qui le précède immédiatement, le même soir, est un tour nul, ou si la [boule noire]({{ '/statistiques/conseils/' | relative_url }}) l'a tranché — elle ne se tire qu'après un second vote resté à égalité ; « renversement » si un objet d'immunité a annulé des voix et que, sans lui, le protégé en aurait reçu plus que l'éliminé ; « égalité tranchée » si le conseil décisif lui-même finit à égalité en tête. Les {{ a.issues.sans_bulletin }} conseils décisifs dont la source ne donne aucun bulletin ne sont pas classés.
+Ces fréquences sont la seule mesure de cet article qui ne figure pas ailleurs sur le site. L'issue « ordinaire » est la catégorie par défaut : elle compte aussi les conseils où un objet a été joué sans rien renverser, et ceux dont le dépouillement est incomplet. L'unité est le **conseil décisif** — celui dont sort un éliminé rattaché. Il est classé « égalité puis second vote » si le conseil qui le précède immédiatement, le même soir, est un tour nul, ou si la [boule noire]({{ '/statistiques/conseils/' | relative_url }}) l'a tranché — elle ne se tire qu'après un second vote resté à égalité ; « renversement » si un objet d'immunité a annulé des voix et que, sans lui, le protégé en aurait reçu plus que l'éliminé ; « égalité tranchée » si le conseil décisif lui-même finit à égalité en tête. Les conseils décisifs dont la source ne donne aucun bulletin — {{ a.issues.sans_bulletin }} — ne sont pas classés.
 
 L'issue la plus probable de la distribution verrouillée était la bonne : le conseil visé par la prédiction s'est achevé par une élimination ordinaire. Mais la distribution sous-estimait nettement l'issue la plus fréquente, et surestimait d'autant les trois autres. Un verrou prospectif protège contre la réécriture après coup ; il ne protège pas contre une distribution mal ancrée. **Avant de prédire une issue, il faut connaître sa fréquence de base** : c'est le premier concurrent qu'une prédiction doit battre, et celle de la version précédente ne le battait pas.
 
@@ -250,8 +251,8 @@ La version précédente s'abstenait de désigner l'éliminé. Le site publie un 
 | Faible exit → dépendance → valeur des coalitions | hypothèse | **conséquences observées** : coût de l'isolement, persistance et protection des coalitions (6.2) |
 | Réputation → menace perçue → ciblage | hypothèse | **forme réduite observée** : ciblage persistant ; maillons intermédiaires non mesurés (6.2) |
 | Compétence → menace en phase individuelle | présentée comme mécanisme central | **non observée** à la mesure de la force aux épreuves (6.1) |
-| Catégorisation → identité de groupe | hypothèse | **observée pour la tribu initiale, inversée pour le sexe** (6.2) |
-| Conformité / cascade | distinction conceptuelle | **observée, de justesse** (6.2) |
+| Catégorisation → identité de groupe | hypothèse | **appartenance d'origine observée, inversée pour le sexe ; enchaînement par camp non établi** (6.2) |
+| Conformité / cascade | distinction conceptuelle | **conséquence commune observée, de justesse ; mécanisme non identifié** (6.2) |
 | Réunification → changement de régime | auto-description | **auto-description confirmée par les votes** (6.3) |
 | Rareté → stress → simplification | hypothèse | **non testée** |
 
@@ -261,7 +262,7 @@ Une séquence de conseil, aussi parlante soit-elle, reste une illustration et no
 
 ## 8. Ce que le dispositif retire
 
-Exit et mobilité, contrats et tiers garant, assurance, création de valeur positive-sum, innovation institutionnelle ([Hirschman, 1970](#ref-hirschman1970) ; [Ostrom, 1990](#ref-ostrom1990)) restent absents. Les résultats de 6.2 leur donnent une portée concrète : en l'absence de contrat, la seule garantie d'une alliance est sa persistance, et celle-ci est mesurable ; en l'absence d'exit, la perte du dernier allié est l'une des situations les plus exposées du jeu.
+Exit et mobilité, contrats et tiers garant, assurance, création de valeur à somme positive, innovation institutionnelle ([Hirschman, 1970](#ref-hirschman1970) ; [Ostrom, 1990](#ref-ostrom1990)) restent absents. Les résultats de 6.2 leur donnent une portée concrète : en l'absence de contrat, la seule garantie d'une alliance est sa persistance, et celle-ci est mesurable ; en l'absence d'exit, la perte du dernier allié est l'une des situations les plus exposées du jeu.
 
 ## 9. Transportabilité
 
@@ -288,7 +289,7 @@ Le pouvoir-dépendance est transportable comme structure. La « compétence co
 
 La version précédente avait resserré la thèse sous l'effet de la critique. Celle-ci la resserre sous l'effet des données, et dans une direction différente.
 
-Les mécanismes qui se lisent le mieux dans les votes ne sont pas ceux qui structurent le récit habituel de l'émission. Le récit privilégie la compétence menaçante, le stratège démasqué, le retournement. Les votes privilégient l'appartenance d'origine, la persistance des alliances et le coût de l'isolement : des mécanismes lents, peu spectaculaires, qui relèvent de la dépendance et de l'identité plutôt que du calcul. C'est un résultat sur $$M_{prod}$$ autant que sur $$S_{KL}$$ : ce que le montage met en avant n'est pas ce qui pèse le plus dans les décisions.
+Les mécanismes qui se lisent le mieux dans les votes ne sont pas ceux qui structurent le récit habituel de l'émission. Le récit privilégie la compétence menaçante, le stratège démasqué, le retournement. Les votes privilégient l'appartenance d'origine, la persistance des alliances et le coût de l'isolement : des mécanismes lents, peu spectaculaires, qui relèvent de la dépendance et de l'identité plutôt que du calcul. C'est une hypothèse sur $$M_{prod}$$ plus qu'un résultat : le montage n'a pas été mesuré ici, et ce que le récit « met en avant » reste une lecture. Elle mériterait d'être testée.
 
 Nous soutenons donc que :
 1. plusieurs phénomènes visibles se décrivent par des mécanismes étudiés indépendamment ;
@@ -298,11 +299,13 @@ Nous soutenons donc que :
 
 ## 12. Conclusion
 
-*Koh-Lanta* peut servir de **cas-limite institutionnel** pour étudier comment une architecture fermée repondère des mécanismes sociaux ordinaires. Confronté à tous ses votes, le cadre tient sur la dépendance, la coalition et l'identité de groupe ; il cède sur la compétence comme menace ; et toute prévision doit d'abord se mesurer à la fréquence de l'ordinaire.
+*Koh-Lanta* peut servir de **cas limite institutionnel** pour étudier comment une architecture fermée repondère des mécanismes sociaux ordinaires. Confronté à tous ses votes, le cadre tient sur la dépendance, la coalition et l'identité de groupe ; il cède sur la compétence comme menace ; et toute prévision doit d'abord se mesurer à la fréquence de l'ordinaire.
 
 La prochaine étape n'est plus de constituer une base — elle existe — mais de **verrouiller des prédictions en série**, ancrées sur les fréquences de base, et de mesurer la compétence autrement qu'aux épreuves.
 
-> **Koh-Lanta n'est pas un modèle de la vraie vie ; il rend certaines dépendances institutionnelles exceptionnellement visibles.**
+> **Koh-Lanta n'est pas un modèle de la vraie vie ; il rend certaines dépendances institutionnelles lisibles dans les votes.**
+
+*Mis à jour le 23 octobre 2026 : le modèle nul de la réunification tire désormais l'éliminé parmi les votants du soir ; l'enchaînement des sorties par camp et la sortie précoce des ambassadeurs ne passent plus la correction ; la famille corrigée compte les coefficients de régression ; La Légende, saison sans vainqueur, n'entre plus dans les calculs du jury final.*
 
 ## Données
 
@@ -326,7 +329,7 @@ Données, sources et registre des tests : sur ce site, pages [les sources]({{ '
 - <span id="ref-hillman2009"></span>Hillman, Amy J., Withers, Michael C. et Collins, Brian J. (2009). Resource Dependence Theory: A Review. *Journal of Management*, 35(6), 1404–1427. <https://doi.org/10.1177/0149206309343469>
 - <span id="ref-hirschman1970"></span>Hirschman, Albert O. (1970). *Exit, Voice, and Loyalty: Responses to Decline in Firms, Organizations, and States*. Harvard University Press.
 - <span id="ref-hollon2015"></span>Hollon, Nick G., Burgeno, Lauren M. et Phillips, Paul E. M. (2015). Stress effects on the neural substrates of motivated behavior. *Nature Neuroscience*, 18, 1405–1412. <https://doi.org/10.1038/nn.4114>
-- <span id="ref-jost2004"></span>Jost, François (2004). *La télévision du quotidien : entre réalité et fiction*. De Boeck / INA.
+- <span id="ref-jost2001"></span>Jost, François (2001). *La télévision du quotidien : entre réalité et fiction*. De Boeck / INA.
 - <span id="ref-lazearrosen1981tournaments"></span>Lazear, Edward P. et Rosen, Sherwin (1981). Rank-Order Tournaments as Optimum Labor Contracts. *Journal of Political Economy*, 89(5), 841–864. <https://doi.org/10.1086/261010>
 - <span id="ref-mcewen1998"></span>McEwen, Bruce S. (1998). Stress, Adaptation, and Disease: Allostasis and Allostatic Load. *Annals of the New York Academy of Sciences*, 840, 33–44. <https://doi.org/10.1111/j.1749-6632.1998.tb09546.x>
 - <span id="ref-nowaksigmund1998"></span>Nowak, Martin A. et Sigmund, Karl (1998). Evolution of indirect reciprocity by image scoring. *Nature*, 393, 573–577. <https://doi.org/10.1038/31225>

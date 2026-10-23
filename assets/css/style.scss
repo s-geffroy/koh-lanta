@@ -197,6 +197,12 @@
   --zebre: #1e211f;
 }
 
+/* Le <meta name="color-scheme" content="light dark"> de _layouts/default.html
+   suit le systeme, pas la bascule : un theme force doit aussi forcer les
+   commandes natives (champs, barres de defilement, listes deroulantes). */
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"]  { color-scheme: dark; }
+
 /* ------------------------------------------------------------------- socle */
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -421,7 +427,10 @@ a { color: inherit; }
   /* Deplie en permanence sur grand ecran, que <details> soit ouvert ou non.
      Deux regles, parce que les navigateurs ne s'y prennent pas pareil : les
      anciens masquent l'enfant, les recents masquent ::details-content. Une
-     regle inconnue est ignoree entiere, aucune ne gene l'autre. */
+     regle inconnue est ignoree entiere, aucune ne gene l'autre. Elles ne
+     suffisent pas partout (Safari < 18.4, Chrome < 131 masquent le contenu
+     d'un <details> ferme quoi qu'on fasse) : site.js pose aussi `open` au-dela
+     de ce meme point de rupture, 62em. */
   .rail-corps { display: block; padding-bottom: 2.5rem; }
 }
 
@@ -724,7 +733,12 @@ sup {
   overflow-x: auto;
 }
 
-.graphique { width: 100%; height: auto; display: block; min-width: 32rem; }
+/* Largeur minimale des figures : leur viewBox fait le plus souvent 680 de
+   large (1000 pour la vitrine et le peigne), et a 32 ou 34 rem leur texte
+   tombait vers 6,5 a 8 px sur un telephone ; on prefere une figure plus
+   large, qui defile dans son panneau (indice de defilement plus bas), a un
+   texte illisible -- 40 rem ramene le corps 11 d'un viewBox de 680 a 10 px. */
+.graphique { width: 100%; height: auto; display: block; min-width: 40rem; }
 
 /* Le titre de la figure, en tete de son panneau : ce qu'elle montre, avant
    qu'on la lise. Ecrit par graphiques.Figure.rendu(). */
@@ -737,7 +751,7 @@ sup {
   max-width: var(--colonne);
 }
 .vitrine svg,
-.peigne svg { width: 100%; height: auto; display: block; min-width: 34rem; }
+.peigne svg { width: 100%; height: auto; display: block; min-width: 46rem; }
 
 /* Chaque marque de donnee porte un <title> : le curseur l'annonce. */
 .marque { cursor: help; }
@@ -815,15 +829,30 @@ table:not(.grille-completude) tbody tr:nth-child(even):hover td { background: va
 
 td.nombre, th.nombre { text-align: right; font-variant-numeric: tabular-nums; }
 
-/* En-tete de tableau cliquable : le curseur et la fleche sont poses par le
-   script, jamais par le balisage. */
-th[aria-sort] { cursor: pointer; }
-/* Le contour se pose DANS la cellule : dehors, la boite qui defile le
-   rognerait. */
-th[aria-sort]:focus-visible { outline-offset: -3px; }
-th[aria-sort]:hover { color: var(--encre); }
-th[aria-sort="ascending"]::after  { content: " ↑"; color: var(--encre); }
-th[aria-sort="descending"]::after { content: " ↓"; color: var(--encre); }
+/* En-tete de tableau triable : le script pose un <button class="tri"> dans
+   le <th>, jamais le balisage. Le bouton s'efface : il reprend la police, la
+   couleur et l'alignement de l'en-tete, sans bordure ni fond. aria-sort n'est
+   pose que sur la colonne triee, et porte la fleche. */
+.tri {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  text-align: inherit;
+  text-transform: inherit;
+  white-space: inherit;
+  background: none;
+  border: 0;
+  border-radius: 2px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+/* Le contour se pose au plus pres du libelle : decale vers l'exterieur, la
+   boite qui defile le rognerait. */
+.tri:focus-visible { outline-offset: 1px; }
+.tri:hover { color: var(--encre); }
+th[aria-sort="ascending"] .tri::after  { content: " ↑"; color: var(--encre); }
+th[aria-sort="descending"] .tri::after { content: " ↓"; color: var(--encre); }
 
 .pastille {
   display: inline-block;
@@ -968,7 +997,7 @@ td.nombre .cellule-barre { margin-left: auto; }
   }
 }
 
-/* L'indice de defilement. Sur un telephone, une figure (32 rem au moins) ou
+/* L'indice de defilement. Sur un telephone, une figure (40 rem au moins) ou
    un tableau large deborde de sa boite, et rien ne disait qu'il en restait.
    Un liseré d'--axe apparait au bord ou du contenu est cache, et seulement
    la : deux caches en --surface defilent AVEC le contenu (`local`) et
@@ -1184,7 +1213,9 @@ td.nombre .cellule-barre { margin-left: auto; }
   font-size: 0.92rem;
   color: var(--encre);
   background: var(--sable);
-  border: 1px solid var(--axe);
+  /* --encre-muette et non --axe : un bord de champ doit atteindre 3:1 contre
+     ce qui l'entoure (WCAG 1.4.11). --axe n'en faisait que 1,56. */
+  border: 1px solid var(--encre-muette);
   border-radius: var(--rayon);
   padding: 0.4rem 0.6rem;
   min-width: 11rem;

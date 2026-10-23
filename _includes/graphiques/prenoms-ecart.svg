@@ -1,9 +1,9 @@
 <figure class="figure">
-<figcaption class="figure-titre" aria-hidden="true">Les prénoms sur-représentés, et les absents</figcaption>
-<svg class="graphique surbrillance barres-les-prenoms-sur-representes-et-les-absents" viewBox="0 0 880 730" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Les prénoms sur-représentés, et les absents">
-  <title>Les prénoms sur-représentés, et les absents</title>
-  <desc>Nombre d’aventuriers portant ce prénom, face au nombre attendu si le casting était un échantillon ordinaire des naissances françaises des mêmes années. Les huit premiers sont sur-représentés, les huit derniers sous-représentés.</desc>
-  <style>.barres-les-prenoms-sur-representes-et-les-absents .s{transition:opacity .12s ease}.barres-les-prenoms-sur-representes-et-les-absents:has(.marque:not(.repere):hover) .s{opacity:.15}.barres-les-prenoms-sur-representes-et-les-absents:has(.marque.s0:hover) .s.s0{opacity:1}.barres-les-prenoms-sur-representes-et-les-absents:has(.marque.s1:hover) .s.s1{opacity:1}</style>
+<figcaption class="figure-titre" aria-hidden="true">Les prénoms surreprésentés, et les absents</figcaption>
+<svg class="graphique surbrillance barres-les-prenoms-surrepresentes-et-les-absents" viewBox="0 0 880 730" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Les prénoms surreprésentés, et les absents">
+  <title>Les prénoms surreprésentés, et les absents</title>
+  <desc>Nombre d’aventuriers portant ce prénom, face au nombre attendu si le casting était un échantillon ordinaire des naissances françaises des mêmes années. Les huit premiers sont surreprésentés, les huit derniers sous-représentés.</desc>
+  <style>.barres-les-prenoms-surrepresentes-et-les-absents .s{transition:opacity .12s ease}.barres-les-prenoms-surrepresentes-et-les-absents:has(.marque:not(.repere):hover) .s{opacity:.15}.barres-les-prenoms-surrepresentes-et-les-absents:has(.marque.s0:hover) .s.s0{opacity:1}.barres-les-prenoms-surrepresentes-et-les-absents:has(.marque.s1:hover) .s.s1{opacity:1}</style>
   <line x1="316.0" y1="36" x2="316.0" y2="706" stroke="var(--grille)" stroke-width="1"/>
   <line x1="482.0" y1="36" x2="482.0" y2="706" stroke="var(--grille)" stroke-width="1"/>
   <line x1="648.0" y1="36" x2="648.0" y2="706" stroke="var(--grille)" stroke-width="1"/>

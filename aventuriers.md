@@ -56,6 +56,7 @@ le nom de celui qui part — et il se cherche de la même façon.</p>
       <option value="elimine_destins_lies">Éliminé par les destins liés</option>
       <option value="abandon_medical">Abandon médical</option>
       <option value="abandon_volontaire">Abandon volontaire</option>
+      <option value="disqualifie">Exclu du jeu</option>
     </select>
   </div>
 
@@ -79,7 +80,7 @@ donc là où la fiche manque. Le palmarès y compte tout ce que le wiki appelle 
 victoire — duels de l’île des bannis ou de l’exil et épreuves de finale compris — là où
 <a href="{{ '/statistiques/epreuves/' | relative_url }}">la page des épreuves</a>
 ne compte que ce qui figure au bilan épisode par épisode. Les deux comptes sont
-identiques dans {{ site.data.stats.palmares.part_identiques }} % des cas ;
+identiques dans {{ site.data.stats.palmares.part_identiques }} % des cas ;
 <a href="{{ '/sources/' | relative_url }}">Les sources</a> disent pourquoi ils
 diffèrent dans les autres.</p>
 
@@ -92,14 +93,11 @@ diffèrent dans les autres.</p>
   <th class="nombre">Rang</th><th class="nombre">Épreuves gagnées</th><th>Sortie</th>
 </tr></thead>
 <tbody>
-{% assign saisons = site.data.saisons %}
-{% for p in site.data.participations %}
-  {% assign sa = "" %}
-  {% for x in saisons %}{% if x.id == p.saison %}{% assign sa = x %}{% endif %}{% endfor %}
+{%- for p in site.data.tableau_participations %}
 <tr data-saison="{{ p.saison }}" data-sort="{{ p.sort }}">
-  <td><a href="{{ '/aventuriers/' | append: p.id | append: '/' | relative_url }}">{{ p.nom_complet | default: p.nom }}</a></td>
-  <td>{% include lien-saison.html id=p.saison titre=sa.titre %}</td>
-  <td class="nombre">{{ sa.annee }}</td>
+  <td><a href="{{ '/aventuriers/' | append: p.id | append: '/' | relative_url }}">{{ p.nom }}</a></td>
+  <td>{% include lien-saison.html id=p.saison titre=p.titre %}</td>
+  <td class="nombre">{{ p.annee }}</td>
   <td class="nombre">{{ p.age }}</td>
   <td>{% if p.genre == "f" %}F{% elsif p.genre == "h" %}H{% endif %}</td>
   <td>{{ p.profession }}</td>
@@ -108,9 +106,9 @@ diffèrent dans les autres.</p>
   <td class="nombre">{{ p.jour_sortie }}</td>
   <td class="nombre">{{ p.classement }}</td>
   <td class="nombre"{% if p.victoires_individuelles %} data-val="{{ p.victoires_individuelles }}"{% endif %}>{% if p.victoires_individuelles %}{{ p.victoires_individuelles }} ind.{% if p.victoires_collectives %} · {{ p.victoires_collectives }} coll.{% endif %}{% endif %}</td>
-  <td>{{ p.motif }}</td>
+  <td>{{ p.libelle_sort }}</td>
 </tr>
-{% endfor %}
+{%- endfor %}
 </tbody>
 </table>
 </div>

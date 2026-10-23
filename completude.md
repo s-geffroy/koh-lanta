@@ -21,7 +21,7 @@ conseil dépouillé, et il publie le décompte période par période plutôt que
 faire comme si la couverture était uniforme.</p>
 
 <ul class="chiffres">
-  <li class="chiffre"><b>{{ c.moyenne }} %</b><span>de complétude, toutes cases confondues</span></li>
+  <li class="chiffre"><b>{{ c.moyenne }} %</b><span>de complétude, toutes cases confondues</span></li>
   <li class="chiffre"><b>{{ c.saisons }}</b><span>éditions en ligne</span></li>
   <li class="chiffre"><b>{{ c.colonnes | size }}</b><span>types de données en colonne</span></li>
   <li class="chiffre"><b>{{ c.cases }}</b><span>croisements renseignés</span></li>
@@ -31,16 +31,16 @@ faire comme si la couverture était uniforme.</p>
   {%- assign top = c.lignes | where: "saison", c.meilleure | first -%}
   {%- assign bas = c.lignes | where: "saison", c.pire | first -%}
   <p>L’édition la mieux documentée est <i>{{ top.titre }}</i> ({{ top.annee }}),
-  à <b>{{ top.score }} %</b> ; la moins bien, <i>{{ bas.titre }}</i>
-  ({{ bas.annee }}), à {{ bas.score }} % — la saison en cours au moment de la
+  à <b>{{ top.score }} %</b> ; la moins bien, <i>{{ bas.titre }}</i>
+  ({{ bas.annee }}), à {{ bas.score }} % — la saison en cours au moment de la
   construction, dont tout n’est pas encore connu.</p>
 </div>
 
 <ul class="legende-completude">
   <li data-etat="complet"><i></i> complet</li>
-  <li data-etat="eleve"><i></i> 80 % et plus</li>
-  <li data-etat="partiel"><i></i> 50 à 80 %</li>
-  <li data-etat="mince"><i></i> moins de 50 %</li>
+  <li data-etat="eleve"><i></i> 80 % et plus</li>
+  <li data-etat="partiel"><i></i> 50 à 80 %</li>
+  <li data-etat="mince"><i></i> moins de 50 %</li>
   <li data-etat="manquant"><i></i> rien</li>
   <li data-etat="sans_objet"><i></i> sans objet</li>
 </ul>
@@ -62,7 +62,7 @@ faire comme si la couverture était uniforme.</p>
   {% for x in l.cellules %}
   <td class="case" data-etat="{{ x.etat }}" title="{{ l.titre }} — {{ x.texte }}"><span>{% if x.etat == "sans_objet" %}·{% elsif x.nature == "fait" %}{% if x.etat == "complet" %}✓{% else %}—{% endif %}{% else %}{{ x.valeur_arrondie }}{% endif %}</span></td>
   {% endfor %}
-  <td class="case ensemble" data-etat="{{ l.niveau }}" title="{{ l.titre }} — {{ l.score }} % des cases renseignées"><span>{{ l.score }} %</span></td>
+  <td class="case ensemble" data-etat="{{ l.niveau }}" title="{{ l.titre }} — {{ l.score }} % des cases renseignées"><span>{{ l.score }} %</span></td>
 </tr>
 {% endfor %}
 </tbody>
@@ -82,14 +82,13 @@ une règle du jeu pour une lacune.</p>
 
 
 <p class="note"><strong>Deux pourcentages coexistent sur ce site, et ils ne
-mesurent pas la même chose.</strong> Celui-ci, <b>{{ c.moyenne }} %</b>, est la
+mesurent pas la même chose.</strong> Celui-ci, <b>{{ c.moyenne }} %</b>, est la
 moyenne des cases de cette grille : il pèse chaque édition et chaque type de
 donnée d’un poids égal, y compris les types qui ne concernent qu’une partie des
 saisons. Celui des <a href="{{ '/sources/' | relative_url }}">sources</a>,
-{{ site.data.stats.completude.part_remplie }} %, compte les valeurs une par une
+{{ site.data.stats.completude.part_remplie }} %, compte les valeurs une par une
 sur les {{ site.data.stats.completude.participations }} participations : une
-édition de {{ site.data.stats.mots.casting_max }} aventuriers y pèse plus qu’une de
-{{ site.data.stats.mots.casting_min }}. Le second est
+édition de {{ site.data.stats.mots.casting_max }} aventuriers y pèse plus qu’une de {{ site.data.stats.mots.casting_min }}. Le second est
 plus haut parce qu’il ne compte que ce qui se mesure par personne — ni les
 conseils, ni les épreuves, ni les audiences.</p>
 
@@ -105,7 +104,7 @@ conseils, ni les épreuves, ni les audiences.</p>
 {% for col in c.par_colonne %}
 <tr>
   <td>{{ col.libelle }}</td>
-  <td class="nombre" data-val="{{ col.moyenne }}">{{ col.moyenne }} %</td>
+  <td class="nombre" data-val="{{ col.moyenne }}">{{ col.moyenne }} %</td>
   <td class="nombre">{{ col.completes }}</td>
   <td class="nombre">{{ col.concernees }}</td>
 </tr>
@@ -135,9 +134,9 @@ site — [les alliances]({{ '/statistiques/alliances/' | relative_url }}),
 
 {% assign dep = site.data.stats.classement.biais_epoque.depouillement %}
 
-<p class="note"><strong>Et cette colonne s’effondre avec le temps</strong>, ce
-qu’une moyenne ne montre pas : de <b>{{ dep.first.part }} %</b> de conseils
-dépouillés sur {{ dep.first.periode }} à <b>{{ site.data.stats.classement.biais_epoque.depouillement_plus_bas }} %</b> au plus
+<p class="note"><strong>Et cette colonne recule avec le temps</strong>, ce
+qu’une moyenne ne montre pas : de <b>{{ dep.first.part }} %</b> de conseils
+dépouillés sur {{ dep.first.periode }} à <b>{{ site.data.stats.classement.biais_epoque.depouillement_plus_bas }} %</b> au plus
 bas. Les aventuriers des saisons récentes sont donc, sur tout ce qui se lit au
 bulletin, ramenés à la moyenne faute d’observations — ce n’est pas un jugement
 sur leur niveau, c’est ce trou-ci. Le classement mesure de combien il déplace
@@ -146,8 +145,8 @@ son propre résultat, et le publie.</p>
 ## Comment lire une ligne
 
 Une édition bien remplie ne garantit rien : la grille dit ce qu’on **a**, pas ce
-qu’on peut en **conclure**. Une saison à 95 % dont les conseils ne sont pas
-dépouillés ne sert à aucune analyse de vote. Inversement, une saison à 70 % dont
+qu’on peut en **conclure**. Une saison à 95 % dont les conseils ne sont pas
+dépouillés ne sert à aucune analyse de vote. Inversement, une saison à 70 % dont
 les bulletins sont complets vaut beaucoup pour
 [les alliances]({{ '/statistiques/alliances/' | relative_url }}).
 

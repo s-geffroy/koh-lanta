@@ -23,10 +23,14 @@ layout: default
   {%- endif %}
 </ul>
 
-{%- if s.vainqueurs.size > 0 %}
+{%- if s.vainqueurs.size > 0 or s.sans_vainqueur %}
 <div class="constat">
+  {%- if s.sans_vainqueur %}
+  <p><b>Pas de vainqueur.</b> {{ s.sans_vainqueur }}</p>
+  {%- else %}
   <p>{% if s.vainqueurs.size > 1 %}<b>Vainqueurs</b>{% else %}<b>Vainqueur</b>{% endif %} :
   {% for v in s.vainqueurs %}<a href="{{ '/aventuriers/' | append: v.id | append: '/' | relative_url }}">{{ v.nom }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}.</p>
+  {%- endif %}
   {%- if s.egalite_jury %}
   {%- comment -%}
     Pourquoi deux vainqueurs : le jury final n'a pas tranche. Le decompte est
@@ -62,11 +66,11 @@ layout: default
 <div class="constat">
   {%- comment -%}
     Les champs `_texte`, et non les nombres bruts : une audience s'ecrit
-    « 8 127 000 », pas « 8127000 », et une part de marche « 39,5 % », pas
-    « 39.5 % ». Liquid n'a pas de filtre de milliers et ce depot ne calcule
+    « 8 127 000 », pas « 8127000 », et une part de marche « 39,5 % », pas
+    « 39.5 % ». Liquid n'a pas de filtre de milliers et ce depot ne calcule
     pas dans un gabarit : la forme lisible vient de tools/build_fiches.py.
   {%- endcomment -%}
-  <p>Moyenne : <b>{{ s.audience_moyenne_texte }}</b> téléspectateurs{% if s.audience_pdm_texte %}, {{ s.audience_pdm_texte }} % de part de marché{% endif %}.</p>
+  <p>Moyenne : <b>{{ s.audience_moyenne_texte }}</b> téléspectateurs{% if s.audience_pdm_texte %}, {{ s.audience_pdm_texte }} % de part de marché{% endif %}.</p>
   <p>Lancement {{ s.audience_lancement_texte }}, finale {{ s.audience_finale_texte }}.
   <a href="{{ '/statistiques/audience/' | relative_url }}">Ce que l’audience dit du jeu</a></p>
 </div>

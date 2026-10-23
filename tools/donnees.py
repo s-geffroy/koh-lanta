@@ -39,7 +39,7 @@ import yaml
 RE_NOMBRE_RUBY = re.compile(r"^[-+]?[0-9][0-9_,]*(\.[0-9_]*)?$")
 
 # Ce que `decimal_fr()` ecrit, et que `charger()` reconnait.
-RE_DECIMAL_FR = re.compile(r"^-?[0-9]+,[0-9]+$")
+RE_DECIMAL_FR = re.compile(r"^[-\u2212]?[0-9]+,[0-9]+$")
 
 
 # LES ESPACES INSECABLES DE LA TYPOGRAPHIE FRANCAISE (21 octobre 2026). Avant
@@ -58,12 +58,35 @@ FINE = "\u202f"
 RE_ESPACE_DEUX_POINTS = re.compile(r"(?<=[^\s\u00a0\u202f]) :(?=[\s<*_]|$)")
 RE_ESPACE_AVANT = re.compile(r"(?<=[^\s\u00a0\u202f]) ([;?!»])(?=[\s<»)\]\"'.,…*_:;?!]|$)")
 RE_ESPACE_APRES = re.compile(r"« (?=\S)")
+# Le signe pour cent prend lui aussi une espace fine insecable (23 octobre
+# 2026) : 3 126 « 54 % » publies avec une espace ordinaire, que le navigateur
+# pouvait couper entre le nombre et le signe. Apres un chiffre ou une
+# variable Liquid fermee (« }} % »), jamais ailleurs.
+RE_ESPACE_POURCENT = re.compile(r"(?<=[0-9}]) %(?=[\s<)\]\"'.,…*_:;?!»]|$)")
+
+# L'APOSTROPHE TYPOGRAPHIQUE, entre deux lettres. Kramdown la pose dans la
+# prose Markdown, mais rien ne la posait dans ce qui sort d'un gabarit HTML,
+# d'un bloc HTML ou des donnees : 370 apostrophes droites restaient publiees.
+# Elle n'est posee QU'A L'AFFICHAGE (`ecrire(..., affichage=True)`), jamais
+# dans les donnees sources, ou elle casserait les rapprochements de noms.
+# « Taha'a » garde son signe : c'est une okina, pas une elision.
+RE_APOSTROPHE = re.compile(r"(?<=[A-Za-zÀ-ÖØ-öø-ÿœŒ])(?:'|&#x27;|&#39;)(?=[A-Za-zÀ-ÖØ-öø-ÿœŒ])")
+APOSTROPHES_GARDEES = ("Taha'a",)
+
+
+def apostrophes(texte):
+    if not any(g in texte for g in APOSTROPHES_GARDEES):
+        return RE_APOSTROPHE.sub("\u2019", texte)
+    morceaux = re.split("(" + "|".join(re.escape(g) for g in APOSTROPHES_GARDEES) + ")", texte)
+    return "".join(m if m in APOSTROPHES_GARDEES else RE_APOSTROPHE.sub("\u2019", m)
+                   for m in morceaux)
 
 
 def insecables(texte):
     """« Pourquoi ? » -> « Pourquoi\u202f? » ; seulement l'espace change."""
     texte = RE_ESPACE_DEUX_POINTS.sub(INSECABLE + ":", texte)
     texte = RE_ESPACE_AVANT.sub(lambda m: FINE + m.group(1), texte)
+    texte = RE_ESPACE_POURCENT.sub(FINE + "%", texte)
     return RE_ESPACE_APRES.sub("«" + FINE, texte)
 
 
@@ -103,14 +126,56 @@ Ecrivain.add_representer(str, _chaine)
 Ecrivain.add_representer(float, _flottant)
 
 
-def ecrire(objet, flux=None, **options):
-    """`yaml.safe_dump`, a la francaise. Memes options."""
-    return yaml.dump(objet, flux, Dumper=Ecrivain, **options)
+class EcrivainAffiche(Ecrivain):
+    """Pour les fichiers que le site AFFICHE (stats, fiches) : l'apostrophe
+    typographique en plus."""
+
+
+# L'INTERVALLE prend le tiret demi-cadratin, sans espace : « 18–24 ans »,
+# « 2000–2004 », « 90–100 % ». Trois graphies coexistaient. Une date ISO
+# (« 2001-08-04 ») n'est pas un intervalle et n'est pas touchee.
+RE_INTERVALLE = re.compile(
+    r"(?<![\d-])(\d{4})-(\d{4})(?![\d-])"              # 2000-2004
+    r"|(?<![\d-])(\d{1,3})-(\d{1,3})(?= ans| ?%|\u202f%)")  # 18-24 ans, 90-100 %
+
+
+def intervalles(texte):
+    return RE_INTERVALLE.sub(lambda m: "\u2013".join(g for g in m.groups() if g), texte)
+
+
+def _chaine_affichee(dumper, valeur):
+    return _chaine(dumper, intervalles(apostrophes(valeur)))
+
+
+def _flottant_affiche(dumper, valeur):
+    """Le signe moins typographique (U+2212) devant un decimal negatif : le
+    trait d'union s'affichait « -0,5 », et pouvait se couper en fin de ligne.
+    `charger()` relit les deux formes."""
+    if not math.isfinite(valeur) or valeur >= 0:
+        return _flottant(dumper, valeur)
+    v = decimal_fr(valeur)
+    if isinstance(v, int):
+        return dumper.represent_int(v)
+    return dumper.represent_scalar("tag:yaml.org,2002:str", "\u2212" + v.lstrip("-"), style='"')
+
+
+EcrivainAffiche.add_representer(str, _chaine_affichee)
+EcrivainAffiche.add_representer(float, _flottant_affiche)
+
+
+def ecrire(objet, flux=None, affichage=False, **options):
+    """`yaml.safe_dump`, a la francaise. Memes options.
+
+    `affichage=True` pour un fichier que les gabarits affichent tel quel :
+    l'apostrophe y devient typographique. Les donnees sources (participations,
+    conseils...) gardent l'apostrophe droite de leurs sources."""
+    return yaml.dump(objet, flux, Dumper=EcrivainAffiche if affichage else Ecrivain, **options)
 
 
 def _rendre_nombres(v):
     if isinstance(v, str):
-        return float(v.replace(",", ".")) if RE_DECIMAL_FR.match(v) else v
+        return (float(v.replace(",", ".").replace("\u2212", "-"))
+                if RE_DECIMAL_FR.match(v) else v)
     if isinstance(v, dict):
         # Un champ `_texte` est DEJA du texte mis en forme (« 39,5 ») : il
         # reste une chaine, c'est ce que son nom promet.
