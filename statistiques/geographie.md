@@ -1,6 +1,7 @@
 ---
 layout: page
-title: D’où ils viennent
+title: "D’où viennent les aventuriers"
+titre: D’où ils viennent
 description: "D’où viennent les aventuriers de Koh-Lanta, et le casting ressemble-t-il à la France ? Comparaison, région par région, avec la population de ces années-là."
 permalink: /statistiques/geographie/
 chapeau: >-
@@ -62,7 +63,7 @@ observé — la plupart traversent 1, et c’est le <em>tableau d’ensemble</em
 fait le résultat, pas une ligne isolée.</p>
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Où, exactement</caption>
 <thead><tr>
   <th>Région</th><th class="nombre">Observé</th><th class="nombre">Attendu</th>
   <th class="nombre">Indice</th><th class="nombre">Intervalle</th>
@@ -126,7 +127,7 @@ résultat. Le tableau est donné parce qu’il se lit, pas parce qu’il conclut
 classés.
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Les départements, pour mémoire</caption>
 <thead><tr>
   <th>Département</th><th class="nombre">Observé</th>
   <th class="nombre">Attendu</th><th class="nombre">Indice</th>
@@ -163,7 +164,7 @@ des saisons des premières années : le résultat pèse donc un peu plus lourd 
 les saisons récentes que sur les premières.</p>
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Ce que ce résultat ne dit pas — et c’est beaucoup</caption>
 <thead><tr><th>Saison</th><th class="nombre">Année</th>
 <th class="nombre">Localisés</th><th class="nombre">Casting</th></tr></thead>
 <tbody>

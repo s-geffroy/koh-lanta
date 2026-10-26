@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Le profil du vainqueur
+title: "Le profil des vainqueurs"
+titre: Le profil du vainqueur
 description: "Le profil du vainqueur de Koh-Lanta : un âge plus large qu’on ne le croit, une parité presque parfaite, et aucune couleur de tribu gagnante."
 permalink: /statistiques/vainqueurs/
 chapeau: >-
@@ -55,7 +56,7 @@ ne tient pas devant les chiffres.
 ## Le sexe
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Le sexe</caption>
 <thead><tr><th>&nbsp;</th><th class="nombre">Vainqueurs</th><th class="nombre">Part</th></tr></thead>
 <tbody>
 {% for x in v.par_genre %}
@@ -83,7 +84,7 @@ largement à leur nombre au départ, pas à une supériorité.
 ## La couleur de tribu
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">La couleur de tribu</caption>
 <thead><tr><th>Tribu initiale</th><th class="nombre">Victoires</th><th class="nombre">Part</th></tr></thead>
 <tbody>
 {% for c in v.par_couleur %}
@@ -140,7 +141,7 @@ traversés — l’indicateur <em>menace</em> de la page
 <a href="{{ '/statistiques/jeu-social/' | relative_url }}">Le jeu social</a>.</p>
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Un chiffre qui se compare mal</caption>
 <thead><tr>
   <th>&nbsp;</th><th class="nombre">Effectif</th><th class="nombre">Voix en moyenne</th>
   <th class="nombre">Parcours mesurables</th><th class="nombre">Voix par conseil</th>
@@ -179,7 +180,7 @@ personnes en donnent donc deux, et celles dont le finaliste manque n’en donnen
 aucune.
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">La seule comparaison qui tienne : le finaliste</caption>
 <thead><tr>
   <th>Saison</th><th class="nombre">Année</th>
   <th>Vainqueur</th><th class="nombre">Voix</th>

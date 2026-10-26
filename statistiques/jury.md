@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Le vote du jury
+title: "Le vote du jury final"
+titre: Le vote du jury
 description: "Le vote du jury final de Koh-Lanta, rendu par ceux qu’on a fait sortir : il ne punit pas de façon établie, il récompense celui avec qui l’on votait."
 permalink: /statistiques/jury/
 chapeau: >-
@@ -111,7 +112,7 @@ donc n’être que le reflet de la tribu initiale. Le même modèle, avec cette 
 plus :
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">La mise à l’épreuve : et si ce n’était que la tribu initiale ?</caption>
 <thead><tr><th>Variable</th><th class="nombre">Cote multipliée par</th><th class="nombre">Intervalle</th><th class="nombre">p</th></tr></thead>
 <tbody>
 {% for x in ab.coefficients %}

@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Les épreuves
+title: "Les épreuves : qui les gagne"
+titre: Les épreuves
 description: "Les épreuves de Koh-Lanta : meilleurs ratios, totaux de carrière, le profil qui domine vraiment, et une nature d’épreuve qui ne trie personne."
 permalink: /statistiques/epreuves/
 chapeau: >-
@@ -36,7 +37,7 @@ spectaculaire. {{ e.classement_effectif }} aventuriers passent ce seuil.</p>
 {% include graphiques/epreuves-ratios.svg %}
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Le classement des ratios</caption>
 <thead><tr>
   <th class="nombre">#</th><th>Aventurier</th><th>Saison</th>
   <th class="nombre">Gagnées</th><th class="nombre">Disputées</th><th class="nombre">Ratio</th>
@@ -85,7 +86,7 @@ Les fiches individuelles du wiki Fandom, elles, portent un total d’épreuves
 qu’elles donnent.
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Ce que disent les fiches, pour comparer</caption>
 <thead><tr>
   <th class="nombre">#</th><th>Aventurier</th>
   <th class="nombre">Saisons</th>
@@ -139,7 +140,7 @@ qualificatif. Une épreuve peut en porter deux — le parcours du combattant est
 « rapidité, force ».</p>
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Les épreuves ont des noms, et une nature</caption>
 <thead><tr>
   <th>Épreuve</th><th>Type</th>
   <th class="nombre">Apparitions</th><th class="nombre">Saisons</th>
@@ -178,7 +179,7 @@ que l’affirmer.
 </div>
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">Pourquoi ce catalogue ne se raccorde pas aux épisodes</caption>
 <thead><tr><th>Ce qui arrive à chaque citation du catalogue</th><th class="nombre">Effectif</th></tr></thead>
 <tbody>
 {% for m in en.raccord.motifs %}
@@ -254,7 +255,7 @@ qui ira au bout — finaliste, vainqueur, ou éliminé aux poteaux. Le repère e
 {{ n.part_au_bout }} %.</p>
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Et elle ne sépare rien</caption>
 <thead><tr>
   <th>Nature</th><th class="nombre">Victoires</th>
   <th class="nombre">Part femmes</th><th class="nombre">Intervalle</th>

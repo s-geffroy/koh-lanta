@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Jaune contre rouge
+title: "Jaune contre rouge : les tribus"
+titre: Jaune contre rouge
 description: "Jaune ou rouge à Koh-Lanta : vaut-il mieux commencer chez les Jaunes ou chez les Rouges ? La question revient chaque saison, la réponse tient en une ligne."
 permalink: /statistiques/tribus/
 chapeau: >-
@@ -59,7 +60,7 @@ détaille, avant et après la réunification.
 ## Le détail
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Le détail</caption>
 <thead><tr>
   <th>Couleur</th><th class="nombre">Aventuriers</th>
   <th class="nombre">Survie moyenne</th><th class="nombre">Finales</th>

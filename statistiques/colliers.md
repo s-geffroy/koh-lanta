@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Les colliers d’immunité
+title: "Les colliers d’immunité en chiffres"
+titre: Les colliers d’immunité
 description: "Les colliers d’immunité de Koh-Lanta suivis un par un : où ils étaient cachés, qui les a trouvés, et ce qu’ils ont réellement changé au conseil."
 permalink: /statistiques/colliers/
 chapeau: >-
@@ -28,7 +29,7 @@ s’ils ont servi, et combien de voix ils ont annulées.
 {% include graphiques/colliers-issues.svg %}
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Ce que devient un collier</caption>
 <thead><tr>
   <th>Issue</th><th class="nombre">Colliers</th>
   <th class="nombre">Part du total</th><th class="nombre">Part de ceux trouvés</th>
@@ -79,7 +80,7 @@ Trois comptes, et c’est le troisième qui vaut : **trouver un collier n’est
 le jouer, et le jouer n’est pas annuler des voix.**
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Qui les trouve, qui les joue, qui en tire quelque chose</caption>
 <thead><tr><th>Aventurier</th><th class="nombre">Trouvés</th><th class="nombre">Joués</th><th class="nombre">Annulations efficaces</th></tr></thead>
 <tbody>
 {% for x in c.palmares %}
@@ -107,7 +108,7 @@ La catégorie la plus cruelle du tableau : l’avoir trouvé, ne pas l’avoir 
 et partir quand même. Elle compte **{{ perdus | size }} cas**.
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Éliminé avec le collier dans la poche</caption>
 <thead><tr><th>Aventurier</th><th>Saison</th><th class="nombre">Année</th></tr></thead>
 <tbody>
 {% for x in perdus %}
@@ -134,7 +135,7 @@ une facette de ce classement.</p>
 en jeu sur les saisons récentes.</p>
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Saison par saison</caption>
 <thead><tr>
   <th>Saison</th><th class="nombre">Année</th><th class="nombre">Colliers</th>
   <th class="nombre">Joués</th><th class="nombre">Voix annulées</th>

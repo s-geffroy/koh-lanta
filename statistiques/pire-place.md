@@ -1,6 +1,7 @@
 ---
 layout: page
-title: La pire place au conseil
+title: "La pire place au conseil, mesurée"
+titre: La pire place au conseil
 description: "La pire place au conseil de Koh-Lanta : le nom sorti la fois d’avant et le nombre d’alliés restants, ensemble, multiplient le risque de partir."
 permalink: /statistiques/pire-place/
 chapeau: >-
@@ -44,7 +45,7 @@ avec qui on a déjà voté et qui sont encore présents, comparée au tirage au
 sort.</p>
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">L’isolement, décomposé</caption>
 <thead><tr>
   <th>Alliés encore présents</th><th class="nombre">Présences</th>
   <th class="nombre">Éliminations</th><th class="nombre">Probabilité</th>
@@ -95,7 +96,7 @@ depuis. Ce n’est pas le cas.
 écrit votre nom sont encore présents ou non.</p>
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">L’adversaire, encore là ou déjà parti</caption>
 <thead><tr><th>Ceux qui ont déjà écrit mon nom</th><th class="nombre">Présences</th><th class="nombre">Éliminations</th><th class="nombre">Probabilité</th><th class="nombre">Le hasard</th></tr></thead>
 <tbody>
 {% for x in p.adverse %}
@@ -130,7 +131,7 @@ ou deux signaux : avoir été visé au conseil précédent, et n’avoir plus a
 allié parmi les présents.</p>
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">Les deux signaux ensemble</caption>
 <thead><tr><th>Signaux réunis</th><th class="nombre">Présences</th><th class="nombre">Éliminations</th><th class="nombre">Probabilité</th><th class="nombre">Intervalle</th></tr></thead>
 <tbody>
 {% for x in p.cumul %}
@@ -168,7 +169,7 @@ et la case qui les réunit est trop petite. Le modèle ci-dessous les met dans l
 {{ p.modele.presences }} présences et {{ p.modele.conseils }} conseils.</p>
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">Ombre l’un de l’autre, ou pas ?</caption>
 <thead><tr><th>Signal</th><th class="nombre">Cote multipliée par</th><th class="nombre">Intervalle</th><th class="nombre">p</th></tr></thead>
 <tbody>
 {% for x in p.modele.coefficients %}
@@ -207,7 +208,7 @@ visé et la gagner quand on ne l’a pas été. Le modèle nul tire le vainqueur
 hasard parmi les présents.</p>
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">Le dos au mur ne fait pas gagner</caption>
 <thead><tr><th>Au conseil précédent</th><th class="nombre">Présences</th><th class="nombre">Immunités gagnées</th><th class="nombre">Probabilité</th><th class="nombre">Le hasard</th></tr></thead>
 <tbody>
 {% for x in p.dos_au_mur %}

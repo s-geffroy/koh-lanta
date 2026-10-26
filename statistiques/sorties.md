@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Comment on sort
+title: "Comment on sort du jeu"
+titre: Comment on sort
 description: "Comment on sort de Koh-Lanta : conseil, épreuve, poteaux, orientation, abandon — onze façons de quitter le jeu, et des proportions qui ont bougé."
 permalink: /statistiques/sorties/
 chapeau: >-
@@ -105,7 +106,7 @@ départs). Hors finale, c’est en tout début de saison qu’on sort le plus.
 ## Le détail
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Le détail</caption>
 <thead><tr><th>Motif</th><th class="nombre">Aventuriers</th><th class="nombre">Part</th></tr></thead>
 <tbody>
 {% for x in s.sorties.repartition %}

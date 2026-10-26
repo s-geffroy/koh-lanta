@@ -45,7 +45,7 @@ camp du soir est connu pour {{ a.avant.conseils_camp }} et
 faible du camp ce soir-là — à 100, le plus fort.</p>
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">Deux jeux, {{ site.data.stats.mots.avant_apres_tests }} mesures</caption>
 <thead><tr><th>Mesure</th><th class="nombre">Avant</th><th class="nombre">Après</th></tr></thead>
 <tbody>
 <tr><td>Conseils</td><td class="nombre">{{ a.avant.conseils }}</td><td class="nombre">{{ a.apres.conseils }}</td></tr>
@@ -151,7 +151,7 @@ La force ne désigne pas l’éliminé. L’âge, peut-être ? La mesure est d
 la moyenne d’âge de son camp, ce soir-là.
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">L’âge bascule dans le même sens, mais on ne peut pas l’affirmer</caption>
 <thead><tr><th></th><th class="nombre">Conseils</th><th class="nombre">Écart d’âge de l’éliminé</th></tr></thead>
 <tbody>
 <tr><td>Avant la réunification</td><td class="nombre">{{ ag.conseils_avant }}</td>

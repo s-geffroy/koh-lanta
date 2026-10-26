@@ -481,6 +481,18 @@ a { color: inherit; }
   font-size: 0.88rem;
   color: var(--encre-muette);
 }
+/* Une legende de tableau lue par les lecteurs d'ecran, et invisible a
+   l'ecran : le titre de section au-dessus du tableau le dit deja. */
+.hors-ecran {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.oeil-lien { color: inherit; text-decoration: none; }
+.oeil-lien:hover, .oeil-lien:focus-visible { text-decoration: underline; }
 .oeil-rang { font-variant-numeric: tabular-nums; color: var(--encre-douce); }
 .oeil-rang i { font-style: normal; color: var(--encre-muette); }
 

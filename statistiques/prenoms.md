@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Les prénoms
+title: "Les prénoms des aventuriers"
+titre: Les prénoms
 description: "Les prénoms des aventuriers de Koh-Lanta : Alexandra revient sept fois. Est-ce beaucoup ? Comparaison avec la France née les mêmes années."
 permalink: /statistiques/prenoms/
 chapeau: >-
@@ -61,7 +62,7 @@ beaucoup à la France de sa génération**. C’est en soi un résultat : on au
 imaginer un tri involontaire, il n’y en a pas de marqué.
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Le résultat</caption>
 <thead><tr>
   <th>Prénom</th><th class="nombre">Observé</th>
   <th class="nombre">Attendu</th><th class="nombre">Indice</th>

@@ -39,7 +39,7 @@ Le score est la moyenne des {{ site.data.stats.mots.facettes }} facettes, ramen�
 décider que le physique compte plus que le vote.
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Le top {{ c.taille }}</caption>
 <thead><tr>
   <th class="nombre">#</th><th>Aventurier</th><th class="nombre">Score</th>
   <th class="nombre">Saisons</th><th class="nombre">Titres</th>
@@ -78,7 +78,7 @@ l’inverse.
 </div>
 
 <div class="tableau-large tableau-haut">
-<table id="tableau-classement" data-triable>
+<table id="tableau-classement" data-triable><caption class="hors-ecran">Le classement complet, nom par nom</caption>
 <thead><tr>
   <th class="nombre">Rang</th><th>Aventurier</th>
   <th class="nombre">Saisons</th><th class="nombre">Titres</th>
@@ -126,7 +126,7 @@ programme : {{ f.moyenne }}{{ f.unite }}. {{ f.documentes }} joueurs ont au
 moins une observation ; les autres valent la moyenne, faute de preuve.</p>
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">{{ f.libelle }} — {{ f.question_min }}</caption>
 <thead><tr><th class="nombre">#</th><th>Aventurier</th><th class="nombre">Valeur</th><th class="nombre">Compte brut</th><th class="nombre">Rang général</th></tr></thead>
 <tbody>
 {% for l in f.top %}
@@ -146,7 +146,7 @@ La sous-liste la plus intéressante du lot, et celle qui justifie de ne pas avoi
 mis la victoire dans le calcul.
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Les meilleurs qui n’ont jamais gagné</caption>
 <thead><tr><th class="nombre">Rang général</th><th>Aventurier</th><th class="nombre">Score</th><th class="nombre">Dans le top selon les poids</th></tr></thead>
 <tbody>
 {% for l in c.sans_titre %}
@@ -164,7 +164,7 @@ Autre question, autre liste. Ci-dessus, un joueur ; ici, **une saison** — un
 participation, sur ses seules {{ site.data.stats.mots.facettes }} facettes, sans rien cumuler.
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">La meilleure saison jamais jouée</caption>
 <thead><tr><th class="nombre">#</th><th>Aventurier</th><th>Saison</th><th class="nombre">Année</th><th>Fin de parcours</th><th class="nombre">Score</th></tr></thead>
 <tbody>
 {% for l in c.top_saisons %}
@@ -184,7 +184,7 @@ bien plus forts, ce que le classement ne sait pas corriger. Refait sur les
 seules saisons classiques, sur {{ c.joueurs_classiques }} joueurs :
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Et sans les éditions de revenants ?</caption>
 <thead><tr><th class="nombre">#</th><th>Aventurier</th><th class="nombre">Score</th><th class="nombre">Rang toutes saisons</th></tr></thead>
 <tbody>
 {% for l in c.top_classique %}
@@ -204,7 +204,7 @@ tri d’auteur, **tous les aventuriers d’au moins trois saisons achevées**, e
 ils tombent.
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Et les visages qu’on connaît ?</caption>
 <thead><tr>
   <th class="nombre">Rang</th><th>Aventurier</th>
   <th class="nombre">Saisons</th><th class="nombre">Titres</th>
@@ -267,7 +267,7 @@ Un chiffre ne veut rien dire sans ce qui le divise. Chaque facette porte donc
 le sien, et il est publié à côté du classement.
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">Les {{ site.data.stats.mots.facettes }} facettes, et leur dénominateur</caption>
 <thead><tr><th>Facette</th><th>Ce qu’elle mesure</th><th>Ce qu’on compte</th><th>Rapporté à</th><th class="nombre">Documentée pour</th></tr></thead>
 <tbody>
 {% for f in c.facettes %}
@@ -406,7 +406,7 @@ les bouches. Voici les meilleurs aux épreuves, et leur rang en discrétion.
 {% assign fd = c.facettes | where: "cle", "discretion" | first %}
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">Un exemple que tout le monde croit connaître</caption>
 <thead><tr><th class="nombre">#</th><th>Aventurier</th><th class="nombre">{{ fe.mesure }}</th><th class="nombre">Rang en discrétion</th></tr></thead>
 <tbody>
 {% for l in fe.top %}
@@ -468,7 +468,7 @@ médian, et l’intervalle qui contient 90 % de ses rangs selon la pondératio
 </div>
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">Ce que les poids décident — et c’est presque tout</caption>
 <thead><tr><th>Présent dans le top {{ c.taille }} sous…</th><th class="nombre">Nombre de joueurs</th></tr></thead>
 <tbody>
 {% for p in rb.paliers %}
@@ -588,7 +588,7 @@ moyenne faute d’observations. Ce n’est pas une opinion sur leur niveau, c’
 un trou dans la source.
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">Le biais que ce classement ne sait pas réparer</caption>
 <thead><tr><th>Période</th><th class="nombre">Conseils</th><th class="nombre">Au dépouillement complet</th><th class="nombre">Part</th></tr></thead>
 <tbody>
 {% for d in be.depouillement %}

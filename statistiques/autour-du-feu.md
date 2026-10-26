@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Sachant qui est autour du feu
+title: "Qui part au conseil, selon le camp"
+titre: Sachant qui est autour du feu
 description: "Qui part au conseil de Koh-Lanta, sachant qui est autour du feu : six positions dans le camp, et une règle du jeu comme contrôle."
 permalink: /statistiques/autour-du-feu/
 chapeau: >-
@@ -78,7 +79,7 @@ hasard</strong> : on est plus souvent le doyen d’un camp de six que d’un ca
 douze.</p>
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Sachant la place qu’on occupe</caption>
 <thead><tr>
   <th>Position dans le camp</th><th class="nombre">Présences</th>
   <th class="nombre">Éliminations</th><th class="nombre">Probabilité</th>
@@ -138,7 +139,7 @@ réunification.</p>
 {% assign pmin = f.bandeau_apres | first %}
 {% assign pmaj = f.bandeau_apres | last %}
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">La tribu initiale va de pair avec qui part</caption>
 <thead><tr><th></th><th class="nombre">Tribu initiale minoritaire</th><th class="nombre">Tribu initiale majoritaire</th></tr></thead>
 <tbody>
 <tr><td>Avant la réunification</td>

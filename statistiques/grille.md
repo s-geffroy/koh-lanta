@@ -1,6 +1,7 @@
 ---
 layout: page
-title: La grille
+title: "Le format des saisons depuis 2001"
+titre: La grille
 description: "Deux décisions que Koh-Lanta ne commente jamais : le jour où la production réunit les tribus, et la dérive de son format, qui n’a pas de date."
 permalink: /statistiques/grille/
 chapeau: >-
@@ -159,7 +160,7 @@ coupure ne se distingue pas d’un déclin régulier.</p>
 <p class="legende-figure">Les deux séries qui basculent le plus franchement.</p>
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Le jeu a changé — mais la date ne se laisse pas fixer</caption>
 <thead><tr>
   <th>Indicateur</th><th class="nombre">Avant {{ r.annee_rupture }}</th>
   <th class="nombre">Après</th><th class="nombre">Écart, en écarts-types</th>

@@ -58,7 +58,7 @@ qu’on retient. Les deux valeurs sont publiées : brute et ajustée.
 correction.
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Pourquoi corriger, et comment</caption>
 <thead><tr>
   <th>Test</th><th>Question</th><th class="nombre">Observé</th>
   <th class="nombre">Attendu</th><th class="nombre">Écarts-types</th>
@@ -391,7 +391,7 @@ chercher ? La réponse tient à la **puissance** — la taille du plus petit e
 qu’un jeu de données de cette taille peut encore distinguer du hasard.
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">Où s’arrête ce site</caption>
 <thead><tr><th>Niveau d’analyse</th><th class="nombre">Observations</th><th class="nombre">Plus petit effet décelable</th></tr></thead>
 <tbody>
 {% for x in m.puissance %}

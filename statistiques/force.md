@@ -1,6 +1,7 @@
 ---
 layout: page
-title: La force réelle
+title: "La force aux épreuves, mesurée"
+titre: La force réelle
 description: "La force réelle des aventuriers de Koh-Lanta : le total d’épreuves gagnées mélange le niveau et le temps passé en jeu. On peut les séparer."
 permalink: /statistiques/force/
 chapeau: >-
@@ -64,7 +65,7 @@ obtenu en rejouant {{ f.bootstrap_texte }} fois le calcul sur des épreuves
 retirées au sort. Une force de 1 est la moyenne.</p>
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Le classement, avec son incertitude</caption>
 <thead><tr>
   <th>Aventurier</th><th class="nombre">Force</th>
   <th class="nombre">Intervalle</th><th class="nombre">Victoires</th>
@@ -131,7 +132,7 @@ parcours, l’adversaire qui doute.
 Deux modèles nuls répondent, et c’est leur écart qui est le résultat.
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">Ce que la force explique déjà</caption>
 <thead><tr><th>Modèle nul</th><th>Ce qu’il suppose</th><th class="nombre">Écart attendu</th></tr></thead>
 <tbody>
 <tr><td>uniforme</td><td>chacun gagne avec la même probabilité</td>

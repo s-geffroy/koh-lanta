@@ -46,7 +46,7 @@ faire comme si la couverture était uniforme.</p>
 </ul>
 
 <div class="tableau-large tableau-haut">
-<table class="grille-completude">
+<table class="grille-completude"><caption class="hors-ecran">{{ page.titre | default: page.title }}</caption>
 <thead><tr>
   <th class="saison">Édition</th>
   {% for col in c.colonnes %}<th class="case-tete" title="{{ col.libelle }}">{{ col.court }}</th>{% endfor %}
@@ -95,7 +95,7 @@ conseils, ni les épreuves, ni les audiences.</p>
 ## Ce que la grille montre en colonnes
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Ce que la grille montre en colonnes</caption>
 <thead><tr>
   <th>Type de donnée</th><th class="nombre">Moyenne</th>
   <th class="nombre">Éditions complètes</th><th class="nombre">Concernées</th>

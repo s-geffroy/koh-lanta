@@ -948,7 +948,7 @@ phrase de cette page n’a besoin d’être reprise quand une valeur est trouvé
 </div>
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Ce qui manque</caption>
 <thead><tr>
   <th>Champ</th><th class="nombre">Renseigné</th><th class="nombre">Manquant</th>
   <th class="nombre">Part</th><th class="nombre">Dont fiche individuelle</th>

@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Le jeu tenu serré
+title: "Durée de jeu : ce qui fait tenir"
+titre: Le jeu tenu serré
 description: "Koh-Lanta tient-il le jeu serré ? Le risque monte avec la saison et la tribu en difficulté semble se rattraper : deux impressions, deux tests."
 permalink: /statistiques/equilibre/
 chapeau: >-
@@ -92,7 +93,7 @@ sort plus vite ; en dessous, plus lentement. Un intervalle qui traverse 1
 signifie que ces données ne permettent pas de conclure.</p>
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Qui sort plus vite, à saison identique</caption>
 <thead><tr><th>Variable</th><th class="nombre">Risque</th><th class="nombre">Intervalle</th><th class="nombre">p</th><th class="nombre">p ajustée</th></tr></thead>
 <tbody>
 {% for c in cox.coefficients %}
@@ -156,7 +157,7 @@ déplace la dispersion des votes ou le taux d’abandon d’une quantité qu’o
 distinguer de zéro — tous les intervalles contiennent zéro.
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">Les mécaniques n’ont rien changé de mesurable</caption>
 <thead><tr><th>Mécanique</th><th>Sur</th><th class="nombre">Saisons</th><th class="nombre">Effet</th><th class="nombre">Intervalle</th><th class="nombre">p</th></tr></thead>
 <tbody>
 {% for e in me.effets %}

@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Âge et longévité
+title: "Âge et longévité des aventuriers"
+titre: Âge et longévité
 description: "Âge et longévité à Koh-Lanta : à quel âge tient-on le plus longtemps, et pourquoi les femmes sortent-elles plus tôt tout en gagnant autant de finales ?"
 permalink: /statistiques/longevite/
 chapeau: >-
@@ -30,7 +31,7 @@ L’accès à la finale confirme le creux des 35–39 ans et l’avantage des
 {{ s.age[5].effectif }} aventuriers.
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">L’âge</caption>
 <thead><tr>
   <th>Tranche</th><th class="nombre">Aventuriers</th><th class="nombre">Part du casting</th>
   <th class="nombre">Survie moyenne</th><th class="nombre">Finales</th>
@@ -127,7 +128,7 @@ joue pas au conseil, où les femmes ne sont pas visées davantage, mais avant lu
 [Sachant qui est autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }}).
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Ce qui compte n’est pas le sexe, c’est d’être en minorité — et cela protège</caption>
 <thead><tr>
   <th>&nbsp;</th><th class="nombre">Aventuriers</th><th class="nombre">Part du casting</th>
   <th class="nombre">Âge moyen</th><th class="nombre">Survie moyenne</th>
@@ -188,7 +189,7 @@ précoces à tous les âges, et des vainqueurs répartis de {{ site.data.stats.v
 {{ s.records.nb_multi_participants }} aventuriers ont joué plus d’une fois.
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Les revenants</caption>
 <thead><tr><th>Aventurier</th><th class="nombre">Participations</th></tr></thead>
 <tbody>
 {% for m in s.records.multi_participants %}

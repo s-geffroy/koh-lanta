@@ -1,6 +1,7 @@
 ---
 layout: page
-title: L’audience
+title: "L’audience, saison par saison"
+titre: L’audience
 description: "L’audience de Koh-Lanta depuis 2001 : une forte chute, sans date démontrable. La seule grandeur du jeu que la production ne décide pas."
 permalink: /statistiques/audience/
 chapeau: >-
@@ -90,7 +91,7 @@ ne le confirme pas.
 ## Ce qui change exactement cette saison-là
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Ce qui change exactement cette saison-là</caption>
 <thead><tr><th>Soir de diffusion</th><th class="nombre">Saisons</th>
 <th class="nombre">Audience moyenne</th><th class="nombre">De</th><th class="nombre">À</th></tr></thead>
 <tbody>

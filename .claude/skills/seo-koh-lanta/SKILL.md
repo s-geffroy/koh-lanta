@@ -25,7 +25,7 @@ Sur les 565 fiches, **le H1 ne vient PAS de `page.title`** :
 |---|---|---|
 | `fiche-aventurier` | `{{ fiche_a.nom }}` (`_data/fiches.yml`) | lu par jekyll-seo-tag SEUL |
 | `fiche-saison` | `{{ fiche_s.titre }}` (`_data/fiches.yml`) | lu par jekyll-seo-tag SEUL |
-| `page` | `{{ page.title }}` | **s'affiche** — tout changement se voit |
+| `page` | `{{ page.titre \| default: page.title }}` | lu par jekyll-seo-tag seul quand `titre:` existe (les 25 pages d'analyse, depuis le 26 octobre 2026) ; sinon **s'affiche** |
 | `home` | `.accueil-titre`, depuis `accroche:` du front matter de `index.md` | lu par le greffon seul |
 
 Depuis le 20 octobre 2026, TOUS ces H1 sont rendus par
@@ -33,8 +33,10 @@ Depuis le 20 octobre 2026, TOUS ces H1 sont rendus par
 `default.html` dans le bandeau de nuit -- plus dans les gabarits eux-memes.
 
 Consequence : sur une fiche, `title:` s'enrichit librement, rien ne bouge a
-l'ecran. Sur une page en `layout: page`, un titre ne se retouche que s'il
-reste juste et lisible comme H1.
+l'ecran. Sur une page en `layout: page`, c'est `titre:` qui s'affiche s'il
+existe -- `title:` vise alors le moteur (« Les conseils : votes et egalites »)
+et le H1 reste court (« Les conseils »). Sans `titre:`, `title:` est le H1 et
+ne se retouche que s'il reste juste et lisible comme tel.
 
 ## Les deux longueurs
 

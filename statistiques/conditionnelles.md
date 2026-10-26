@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Sachant le conseil d’avant
+title: "Qui part au conseil suivant"
+titre: Sachant le conseil d’avant
 description: "Mon nom est sorti deux fois au dernier conseil de Koh-Lanta : qu’est-ce que cela change à mes chances de partir ? Des probabilités, mesurées contre le hasard."
 permalink: /statistiques/conditionnelles/
 chapeau: >-
@@ -71,7 +72,7 @@ de confiance à 95 % ; le trait tireté, le risque qu’un tirage au sort
 donnerait.</p>
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Sachant les voix reçues la fois d’avant</caption>
 <thead><tr>
   <th>Voix au conseil précédent</th>
   <th class="nombre">Présences</th><th class="nombre">Éliminations</th>
@@ -172,7 +173,7 @@ qu’ils y sont dessinés. Ni le retournement ni sa <em>hauteur</em> ne sont
 ### Ceux qui ont encaissé quatre voix et sont restés
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Ceux qui ont encaissé quatre voix et sont restés</caption>
 <thead><tr>
   <th>Aventurier</th><th>Saison</th>
   <th class="nombre">Voix reçues</th><th>Un objet a annulé des voix</th>
@@ -198,7 +199,7 @@ Si le nom sorti la fois d’avant compte, celui sorti **deux** conseils plus tô
 compte-t-il encore ?
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">La menace s’éteint-elle ?</caption>
 <thead><tr><th>Voix à l’avant-dernier conseil</th><th class="nombre">Présences</th><th class="nombre">Éliminations</th><th class="nombre">Probabilité</th><th class="nombre">Le hasard</th></tr></thead>
 <tbody>
 {% for x in c.par_voix_deux_pas %}
@@ -244,7 +245,7 @@ les mesurer**.
 Référence : aucune voix au conseil précédent.</p>
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">À conseil égal</caption>
 <thead><tr><th>Voix au conseil précédent</th><th class="nombre">Cote multipliée par</th><th class="nombre">Intervalle</th><th class="nombre">p</th></tr></thead>
 <tbody>
 {% for x in c.modele.coefficients %}
@@ -269,7 +270,7 @@ disent pas la même chose. C’est le second qu’on voit à l’écran : on ne
 le passé d’un éliminé **qu’une fois qu’il est éliminé**.
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">La même information, retournée</caption>
 <thead><tr><th></th><th class="nombre">Avaient été visés la fois d’avant</th><th class="nombre">Voix reçues en moyenne</th></tr></thead>
 <tbody>
 <tr><td>Ceux qui sont partis ({{ c.inverse.sortis }})</td>
@@ -292,7 +293,7 @@ pour la rendre impossible.
 ## Sachant tout ce qui précède, et non la seule fois d’avant
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Sachant tout ce qui précède, et non la seule fois d’avant</caption>
 <thead><tr><th>Histoire des voix reçues</th><th class="nombre">Présences</th><th class="nombre">Éliminations</th><th class="nombre">Probabilité</th><th class="nombre">Intervalle</th></tr></thead>
 <tbody>
 {% for x in c.par_histoire %}
@@ -321,7 +322,7 @@ plus tôt » n’est pas un résultat retenu.
 ## Sachant de quel côté on a voté
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">Sachant de quel côté on a voté</caption>
 <thead><tr><th>Au conseil précédent, j’ai voté…</th><th class="nombre">Présences</th><th class="nombre">Probabilité de partir</th><th class="nombre">Intervalle</th></tr></thead>
 <tbody>
 {% for x in c.par_camp %}

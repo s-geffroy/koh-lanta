@@ -85,7 +85,7 @@ identiques dans {{ site.data.stats.palmares.part_identiques }} % des cas ;
 diffèrent dans les autres.</p>
 
 <div class="tableau-large tableau-haut">
-<table id="tableau-aventuriers" data-triable>
+<table id="tableau-aventuriers" data-triable><caption class="hors-ecran">{{ page.titre | default: page.title }}</caption>
 <thead><tr>
   <th>Aventurier</th><th>Saison</th><th class="nombre">Année</th>
   <th class="nombre">Âge</th><th>Sexe</th><th>Métier</th>

@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Les revenants
+title: "Les revenants : qui revient, qui gagne"
+titre: Les revenants
 description: "Rejouer Koh-Lanta est-il un avantage ? Le chiffre qui saute aux yeux dit oui. Le parcours des revenants dit surtout autre chose."
 permalink: /statistiques/revenants/
 chapeau: >-
@@ -75,7 +76,7 @@ retour ait eu le temps de se produire (avant {{ rp.annee_limite }}),
 ultérieure, selon la façon dont leur première aventure s’est terminée.</p>
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Qui la production redemande</caption>
 <thead><tr><th>Fin de la première aventure</th><th class="nombre">Aventuriers</th><th class="nombre">Rappelés</th><th class="nombre">Probabilité</th><th class="nombre">Intervalle</th></tr></thead>
 <tbody>
 {% for x in rp.par_sort %}
@@ -119,7 +120,7 @@ plus que cela — un éliminé aux poteaux est allé loin par définition.
 souvent, toutes les autres variables tenues fixes.</p>
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">Ce qui reste quand la durée est tenue fixe</caption>
 <thead><tr><th>Variable</th><th class="nombre">Cote multipliée par</th><th class="nombre">Intervalle</th><th class="nombre">p</th></tr></thead>
 <tbody>
 {% for x in rp.coefficients %}
@@ -184,7 +185,7 @@ vingtaine de personnes qui se connaissent déjà.
 ### Le plus connecté n’est pas le plus titré
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Le plus connecté n’est pas le plus titré</caption>
 <thead><tr>
   <th>Aventurier</th><th class="nombre">Saisons</th>
   <th class="nombre">Aventuriers croisés</th>
@@ -232,7 +233,7 @@ en un nom.
 Ce que sont devenues leurs participations d’après-titre :
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">Un seul a gagné deux fois</caption>
 <thead><tr><th>Fin de parcours</th><th class="nombre">Participations</th></tr></thead>
 <tbody>
 {% for x in r.apres_le_titre %}
@@ -284,7 +285,7 @@ l’ensemble de leurs participations :
 Aucun conseil, aucun poteau, aucune orientation ne les a fait sortir.
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Les plus longues carrières</caption>
 <thead><tr>
   <th>Aventurier</th><th class="nombre">Saisons</th><th class="nombre">Jours joués</th>
   <th class="nombre">Jours possibles</th><th class="nombre">Part du temps</th>

@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Le pronostic
+title: "Peut-on prédire le vainqueur ?"
+titre: Le pronostic
 description: "Peut-on deviner le vainqueur de Koh-Lanta sur sa fiche d’inscription ? On a essayé, puis on a posé la même question au conseil. Deux réponses."
 permalink: /statistiques/pronostic/
 chapeau: >-
@@ -103,7 +104,7 @@ place en tête celui qui part réellement. Le repère est le hasard : une chanc
 sur le nombre de présents.</p>
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Et en cours de jeu ? La même question, posée au conseil</caption>
 <thead><tr>
   <th>Ce que le modèle sait</th><th class="nombre">Variables</th>
   <th class="nombre">Conseils</th>

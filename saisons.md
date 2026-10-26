@@ -95,7 +95,7 @@ moyennes d’âge vers le haut sans rien dire du casting ordinaire.
 ## Les saisons interrompues
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">Les saisons interrompues</caption>
 <thead><tr><th class="nombre">N°</th><th class="nombre">Année</th><th>Lieu prévu</th><th>Motif</th></tr></thead>
 <tbody>
 {% for x in site.data.saisons %}{% if x.annulee %}
@@ -190,7 +190,7 @@ abandon** : {{ ind.abandon_nul_texte }}. À l’autre bout, *{{ amax.titre }}*
 Sans JavaScript, il reste entièrement lisible, dans l’ordre chronologique.</p>
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Le tableau complet</caption>
 <thead><tr>
   <th class="nombre">N°</th><th>Saison</th><th class="nombre">Casting</th>
   <th class="nombre">Âge moyen</th><th class="nombre">Femmes</th>

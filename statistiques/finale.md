@@ -1,6 +1,7 @@
 ---
 layout: page
-title: La fin de saison
+title: "La finale : orientation et poteaux"
+titre: La fin de saison
 description: "La fin de saison de Koh-Lanta : gagner les poteaux ne fait pas gagner. Le dernier qualifié de l’orientation gagne onze fois sur dix-huit, sans preuve."
 permalink: /statistiques/finale/
 chapeau: >-
@@ -82,7 +83,7 @@ l’orientation, sur {{ f.saisons_ordonnees }} saisons. Le trait horizontal est 
 hasard : un qualifié sur trois gagne.</p>
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">L’ordre d’arrivée à l’orientation</caption>
 <thead><tr>
   <th>Rang à l’orientation</th><th class="nombre">Saisons</th>
   <th class="nombre">Gagne les poteaux</th><th class="nombre">Gagne la saison</th>
@@ -137,7 +138,7 @@ la teste.</p>
 ## Le tableau, saison par saison
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Le tableau, saison par saison</caption>
 <thead><tr>
   <th>Saison</th><th class="nombre">Année</th>
   <th>Qualifiés à l’orientation, dans l’ordre</th>

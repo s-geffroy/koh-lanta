@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Le jeu social
+title: "Le jeu social : menace et invisibles"
+titre: Le jeu social
 description: "Le jeu social de Koh-Lanta : être visé, voter juste, ou n’être jamais écrit sur un bulletin — et pourquoi l’invisibilité n’est que le deuxième signal."
 permalink: /statistiques/jeu-social/
 chapeau: >-
@@ -34,7 +35,7 @@ mémoire.</p>
 {% include graphiques/fantomes-issue.svg %}
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Ceux que personne ne vise</caption>
 <thead><tr>
   <th>Sort final</th><th class="nombre">Chez les fantômes</th>
   <th class="nombre">Chez ceux qui ont tenu autant, sortis autrement</th>
@@ -92,7 +93,7 @@ Et l’un comme l’autre ne se connaissent qu’en cours de jeu. Au casting,
 [rien ne prédit rien]({{ '/statistiques/pronostic/' | relative_url }}).
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Ceux que personne ne vise — tableau 2</caption>
 <thead><tr><th>Aventurier</th><th>Saison</th><th class="nombre">Conseils traversés</th><th>Sort</th></tr></thead>
 <tbody>
 {% for x in i.fantomes %}
@@ -114,7 +115,7 @@ gagne, un conseil qu’on ne fait pas, un plus gros poisson à sortir. L’être
 **deux fois** ressemble à une manière de jouer.
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">{{ site.data.stats.mots.fantomes_recidivistes_maj }} l’ont été plus d’une fois</caption>
 <thead><tr><th>Aventurier</th><th class="nombre">Fois</th><th>Saisons</th><th>Ce qu’il y a fait</th></tr></thead>
 <tbody>
 {% for x in i.fantomes_recidivistes %}
@@ -172,7 +173,7 @@ La *justesse de vote* mesure la part des bulletins portés sur la personne qui a
 effectivement été éliminée. C’est l’indicateur de qui lit correctement la salle.
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Être du bon côté du vote</caption>
 <thead><tr><th>Aventurier</th><th>Saison</th><th class="nombre">Justesse</th><th class="nombre">Bulletins</th></tr></thead>
 <tbody>
 {% for x in i.meilleure_justesse %}
@@ -195,7 +196,7 @@ suffirait à afficher 100 %.</p>
 ## Survivre quand on est visé
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Survivre quand on est visé</caption>
 <thead><tr><th>Aventurier</th><th>Saison</th><th class="nombre">Conseils où visé</th><th class="nombre">Survie</th><th>Sort</th></tr></thead>
 <tbody>
 {% for x in i.meilleure_evasion %}
@@ -225,7 +226,7 @@ une voix — mais il retombe à
 ## Les plus visés
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Les plus visés</caption>
 <thead><tr><th>Aventurier</th><th>Saison</th><th class="nombre">Voix par conseil</th><th class="nombre">Conseils</th><th>Sort</th></tr></thead>
 <tbody>
 {% for x in i.plus_menaces %}

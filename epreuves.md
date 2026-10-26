@@ -28,7 +28,7 @@ dans le tableau de
 une ligne dans un tableau n’a pas les mêmes exigences qu’une page entière.
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">{{ page.titre | default: page.title }}</caption>
 <thead><tr>
   <th>Épreuve</th><th>Type</th>
   <th class="nombre">Apparitions</th><th class="nombre">Éditions</th>

@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Le métier
+title: "Le métier des aventuriers"
+titre: Le métier
 description: "Le métier des aventuriers de Koh-Lanta : près de cinq cents professions déclarées, regroupées en familles, pour savoir laquelle mène le plus loin."
 permalink: /statistiques/professions/
 chapeau: >-
@@ -40,7 +41,7 @@ protège de rien.
 ## Le tableau complet
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Le tableau complet</caption>
 <thead><tr>
   <th>Famille</th><th class="nombre">Aventuriers</th><th class="nombre">Part du casting</th>
   <th class="nombre">Survie moyenne</th><th class="nombre">Finales</th>

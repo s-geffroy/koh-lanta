@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Les conseils
+title: "Les conseils : votes et égalités"
+titre: Les conseils
 description: "Les conseils de Koh-Lanta : le vote est souvent serré, l’unanimité rare — un conseil sur six — et le camp ne s’est pas durci : il s’est divisé."
 permalink: /statistiques/conseils/
 chapeau: >-
@@ -43,7 +44,7 @@ sort, et celui qui tire la boule noire quitte le jeu. C’est arrivé
 dans {{ site.data.stats.mots.saisons_tirage }} saisons.
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">Quand l’égalité tient : la boule noire</caption>
 <thead><tr>
   <th>Saison</th><th>Tire la boule noire</th><th>Reste en jeu</th>
 </tr></thead>
@@ -151,7 +152,7 @@ La mesure de l’accord, c’est la **part** des votants qui écrivent le même 
 l’éliminé, par tranche de cinq ans.</p>
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Il en faut plus qu’avant, et pourtant on s’accorde moins</caption>
 <thead><tr>
   <th>Période</th><th class="nombre">Conseils</th>
   <th class="nombre">Votants</th><th class="nombre">Voix sur l’éliminé</th>
@@ -258,7 +259,7 @@ table ne montre que celle du lauréat. Ces scrutins sont tenus à l’écart de 
 les calculs de cette page.
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Le vote du jury final</caption>
 <thead><tr>
   <th>Saison</th><th class="nombre">Année</th><th>Lauréat</th>
   <th class="nombre">Voix pour</th><th class="nombre">Voix exprimées</th>

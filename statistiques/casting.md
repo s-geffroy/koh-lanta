@@ -1,6 +1,7 @@
 ---
 layout: page
-title: La recette du casting
+title: "Le casting : âge, sexe, métier"
+titre: La recette du casting
 description: "Le casting de Koh-Lanta n’est pas un tirage au sort : ce que la production impose vraiment au recrutement, et ce qu’elle laisse au hasard."
 permalink: /statistiques/casting/
 chapeau: >-
@@ -150,7 +151,7 @@ Reste qu’il sépare **moyennement** : {{ c.silhouette }} est loin des 0,5
 au-dessus desquels on parlerait de familles franchement distinctes.
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">Y a-t-il des archétypes ?</caption>
 <thead><tr><th class="nombre">Groupes demandés</th><th class="nombre">Silhouette</th><th class="nombre">Plus petit groupe</th></tr></thead>
 <tbody>
 {% for x in c.silhouettes %}
@@ -174,7 +175,7 @@ l’étudiante. Ce sont des **régions d’un continuum**, pas des populations
 séparées.
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">Y a-t-il des archétypes ? — tableau 2</caption>
 <thead><tr><th>Profil</th><th class="nombre">Effectif</th><th class="nombre">Part</th><th class="nombre">Âge médian</th><th class="nombre">Femmes</th></tr></thead>
 <tbody>
 {% for a in c.archetypes %}

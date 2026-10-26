@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Les alliances
+title: "Les alliances, mesurées vote par vote"
+titre: Les alliances
 description: "Les alliances de Koh-Lanta existent-elles ailleurs que dans le récit ? Les bulletins de vote permettent de trancher, saison par saison."
 permalink: /statistiques/alliances/
 chapeau: >-
@@ -92,7 +93,7 @@ au-dessus ou au-dessous de l’effet réel.</p>
 ## Ceux qui ne se sont jamais trompés de camp
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Ceux qui ne se sont jamais trompés de camp</caption>
 <thead><tr>
   <th>Aventurier</th><th>Saison</th><th class="nombre">Conseils</th>
   <th class="nombre">Du bon côté</th><th class="nombre">Voix reçues</th>
@@ -122,7 +123,7 @@ qui. Voici les paires elles-mêmes — celles qui, sur au moins
 {{ du.seuil }} conseils traversés ensemble, ont écrit le même nom le plus souvent.
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Les duos qui n’ont jamais divergé</caption>
 <thead><tr>
   <th>Le duo</th><th>Saison</th><th class="nombre">Année</th>
   <th class="nombre">Conseils ensemble</th><th class="nombre">Mêmes bulletins</th>
@@ -210,7 +211,7 @@ par jour de sortie puis par rang final, elles en donnent moins, et le test,
 retenu jusque-là (p ajustée 0,0005), ne l’est plus.</p>
 
 <div class="tableau-large">
-<table data-triable>
+<table data-triable><caption class="hors-ecran">Après la réunification, un camp tombe-t-il en série ?</caption>
 <thead><tr>
   <th>Saison</th><th class="nombre">Année</th>
   <th class="nombre">Sorties après réunification</th>

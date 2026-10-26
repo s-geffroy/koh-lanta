@@ -235,4 +235,20 @@
       appliquer();
     }
   );
+
+  // Les boites qui defilent prennent le focus clavier, avec un nom : sans
+  // cela, un tableau plus large que l'ecran ne se parcourt qu'a la souris
+  // (Safari ne rend pas focalisable une zone qui defile). Le nom est la
+  // legende du tableau.
+  document.querySelectorAll(".tableau-large, .tableau-haut").forEach(
+    function (boite) {
+      if (boite.scrollWidth <= boite.clientWidth &&
+          boite.scrollHeight <= boite.clientHeight) return;
+      var legende = boite.querySelector("caption");
+      boite.setAttribute("tabindex", "0");
+      boite.setAttribute("role", "region");
+      boite.setAttribute("aria-label",
+        legende ? legende.textContent.trim() : "Tableau");
+    }
+  );
 })();

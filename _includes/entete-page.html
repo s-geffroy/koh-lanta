@@ -23,16 +23,27 @@
 {%- when "page" -%}
 {%- assign nav_page = site.data.stats.sommaire.pages[page.url] -%}
 <header class="page-entete">
+  {%- comment -%}
+    L'oeil est aussi le fil d'Ariane visible : la section devient un lien
+    quand elle a une page a elle. Les donnees structurees declaraient ce fil
+    sans qu'aucun lien ne le montre. Seules les pages d'analyse (celles qui
+    ont un rang) ont une section a rejoindre : /statistiques/.
+  {%- endcomment -%}
   {%- if nav_page.section -%}
-  <p class="oeil">
-    <span>{{ nav_page.section }}{% if nav_page.theme %} · {{ nav_page.theme }}{% endif %}</span>
+  <nav class="oeil" aria-label="Fil d’Ariane">
+    <span>{% if nav_page.rang %}<a class="oeil-lien" href="{{ '/statistiques/' | relative_url }}">{{ nav_page.section }}</a>{% else %}{{ nav_page.section }}{% endif %}{% if nav_page.theme %} · {{ nav_page.theme }}{% endif %}</span>
     {%- if nav_page.rang -%}
     <span class="oeil-rang">{{ nav_page.rang }}<i>/{{ nav_page.total }}</i></span>
     {%- endif -%}
-  </p>
+  </nav>
   {%- endif -%}
 
-  <h1 class="page-titre">{{ page.title }}</h1>
+  {%- comment -%}
+    `titre` s'affiche, `title` sert au moteur et a l'onglet : sur les pages
+    d'analyse, le second dit le sujet (« Les conseils : votes et egalites »),
+    le premier reste court (« Les conseils »).
+  {%- endcomment -%}
+  <h1 class="page-titre">{{ page.titre | default: page.title }}</h1>
 
   {%- if page.chapeau -%}
   <p class="chapeau">{{ page.chapeau | markdownify | remove: "<p>" | remove: "</p>" }}</p>
@@ -64,10 +75,10 @@
 {%- when "fiche-aventurier" -%}
 {%- assign fiche_a = site.data.fiches.aventuriers[page.aventurier] -%}
 <header class="page-entete">
-  <p class="oeil">
-    <span>Les aventuriers</span>
+  <nav class="oeil" aria-label="Fil d’Ariane">
+    <span><a class="oeil-lien" href="{{ '/aventuriers/' | relative_url }}">Les aventuriers</a></span>
     {%- if fiche_a.rang -%}<span class="oeil-rang">{{ fiche_a.rang }}<i>/{{ site.data.stats.classement.joueurs_classes }}</i></span>{%- endif -%}
-  </p>
+  </nav>
   <h1 class="page-titre">{{ fiche_a.nom }}</h1>
   <p class="chapeau">
     {%- if fiche_a.nb_participations > 1 -%}
@@ -84,10 +95,10 @@
 {%- when "fiche-saison" -%}
 {%- assign fiche_s = site.data.fiches.saisons[page.saison] -%}
 <header class="page-entete">
-  <p class="oeil">
-    <span>Les saisons</span>
+  <nav class="oeil" aria-label="Fil d’Ariane">
+    <span><a class="oeil-lien" href="{{ '/saisons/' | relative_url }}">Les saisons</a></span>
     {%- if fiche_s.numero -%}<span class="oeil-rang">{{ fiche_s.numero }}</span>{%- endif -%}
-  </p>
+  </nav>
   <h1 class="page-titre">{{ fiche_s.titre }}</h1>
   <p class="chapeau">
     {%- if fiche_s.annee %}{{ fiche_s.annee }}{% endif -%}
@@ -107,10 +118,10 @@
 {%- when "fiche-epreuve" -%}
 {%- assign fiche_e = site.data.epreuves_fiches.epreuves[page.epreuve] -%}
 <header class="page-entete">
-  <p class="oeil">
-    <span>Les épreuves</span>
+  <nav class="oeil" aria-label="Fil d’Ariane">
+    <span><a class="oeil-lien" href="{{ '/epreuves/' | relative_url }}">Les épreuves</a></span>
     <span class="oeil-rang">{{ fiche_e.apparitions }}<i>× courue</i></span>
-  </p>
+  </nav>
   <h1 class="page-titre">{{ fiche_e.nom }}</h1>
   <p class="chapeau">
     {%- if fiche_e.type %}{{ fiche_e.type }}{% endif -%}

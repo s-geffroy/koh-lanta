@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Qui vise qui
+title: "Qui vote contre qui au conseil"
+titre: Qui vise qui
 description: "Qui vise qui à Koh-Lanta : écrit-on le nom de celui qui ne nous ressemble pas ? Rien d’établi pour le sexe ou le métier ; nettement, pour la tribu initiale."
 permalink: /statistiques/qui-vise-qui/
 chapeau: >-
@@ -47,7 +48,7 @@ paraissait spectaculaire :
 {% assign tb = reg | where: "cle", "vote_meme_bandeau" | first %}
 
 <div class="tableau-large">
-<table>
+<table><caption class="hors-ecran">D’abord, une erreur de ce site — et ce qu’elle a produit</caption>
 <thead><tr><th>Effet mesuré</th><th class="nombre">Modèle nul fautif</th><th class="nombre">Modèle nul corrigé</th></tr></thead>
 <tbody>
 <tr><td>Viser quelqu’un du même sexe</td><td class="nombre">−8,8 écarts-types</td><td class="nombre">{{ ts.ecart_types }} {{ ts.ecart_types_mot }}</td></tr>
