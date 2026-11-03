@@ -5,10 +5,9 @@ tirages: 4000
 tirages_texte: 4 000
 saisons: 33
 mesures: 23
-retenus_mesures: 12
+retenus_mesures: 11
 tiennent: 11
-tombent:
-- Avoir voté du mauvais côté
+tombent: []
 facteur_median: "1,01"
 facteur_max: "2,85"
 tests:
@@ -133,14 +132,14 @@ tests:
   z: "2,61"
   p: "0,0092"
   p_ajustee: "0,0276"
-  retenu: true
+  retenu: false
   saisons: 33
   facteur: "1,04"
   z_saison: "2,51"
   p_saison: "0,0174"
   p_ajustee_saison: "0,0505"
   retenu_saison: false
-  bascule: true
+  bascule: false
 - cle: prevision_conseil
   libelle: Deviner qui part, dans une saison jamais vue
   origine: classement

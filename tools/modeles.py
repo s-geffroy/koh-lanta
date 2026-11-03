@@ -3522,6 +3522,19 @@ def conditionnelles(par_saison, parts, conseils):
         ("menace_deux_pas", masque(lambda l: bool(l["voix_prec2"])),
          masque(lambda l: l["voix_prec2"] == 0)),
     ]
+    # « Avoir vote du mauvais cote », coupe en saisons classiques et editions
+    # speciales (revue du 3 nov. 2026). Ce ne sont PAS des tests du registre :
+    # le decoupage a ete fait apres avoir vu le resultat global. Ils partagent
+    # le tirage des autres -- ajouter un contraste ne change pas les tirages --
+    # et leur p s'appelle `p_brute`, pour que la correction ne les ramasse pas.
+    def speciale_de(l):
+        return bool((par_saison.get(l["saison"]) or {}).get("speciale"))
+
+    speciale = masque(speciale_de)
+    contrastes += [
+        ("camp_perdant_classiques", contrastes[2][1] & ~speciale, contrastes[2][2] & ~speciale),
+        ("camp_perdant_speciales", contrastes[2][1] & speciale, contrastes[2][2] & speciale),
+    ]
 
     def valeurs(v):
         return [100.0 * (v[a].mean() - v[b].mean()) for _, a, b in contrastes]
@@ -3564,6 +3577,22 @@ def conditionnelles(par_saison, parts, conseils):
                       "tôt et partir quand on ne l'avait pas été. Un écart qui tient "
                       "dit que la menace ne s'éteint pas au conseil suivant."),
     ]
+
+    camp_par_edition = []
+    for i, (nom, garde) in ((4, ("saisons classiques", lambda l: not speciale_de(l))),
+                            (5, ("éditions spéciales", speciale_de))):
+        t = _test(contrastes[i][0], nom, "", observes[i], np.array(nulles[i]), unite=" points")
+        camp_par_edition.append({
+            "modalite": nom,
+            "saisons": len({l["saison"] for l in lignes if garde(l)}),
+            "par_camp": _taux([l for l in lignes if garde(l)],
+                              lambda l: (None if l["camp_prec"] is None else
+                                         ("avec la majorité" if l["camp_prec"]
+                                          else "avec la minorité")),
+                              ["avec la majorité", "avec la minorité"]),
+            "observe": t["observe"], "attendu": t["attendu"],
+            "ecart_types": t["ecart_types"], "p_brute": t["p"],
+        })
 
     # --- le second modele nul : on rebat qui a ecrit quoi ------------------
     # Les deux questions qui suivent ne portent pas sur la sortie mais sur les
@@ -3642,6 +3671,7 @@ def conditionnelles(par_saison, parts, conseils):
         "par_voix_sans_collier": par_voix_sans_collier,
         "inverse": inverse,
         "par_camp": par_camp,
+        "camp_par_edition": camp_par_edition,
         "par_cumul": par_cumul,
         "par_histoire": par_histoire,
         "persistance": persistance,
@@ -3650,6 +3680,17 @@ def conditionnelles(par_saison, parts, conseils):
         "survivants": survivants,
         "tests": tests,
     }
+
+
+# Les tests que la correction retient mais que le site ne retient pas, avec
+# leur motif. Une decision, prise avec l'utilisateur et datee : ne pas en
+# ajouter sans son accord.
+DECLASSES = {
+    # 3 nov. 2026 : sur les saisons classiques seules, l'ecart tombe a 2 points
+    # (p brute 0,12) ; il vient des editions speciales terminees (16 points, sur 60
+    # votes du cote minoritaire). Voir `camp_par_edition`.
+    "camp_perdant": "porté par les éditions spéciales",
+}
 
 
 N_BOOTSTRAP_GRAPPES = 400
@@ -4774,6 +4815,13 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison,
     for t, pa in zip(registre + complements, ajustees):
         t["p_ajustee"] = _arr(pa, 4)
         t["retenu"] = bool(pa < 0.05)
+    # Les tests DECLASSES : la correction les retient, mais l'effet ne tient
+    # pas quand on regarde d'ou il vient. Leur p et leur p ajustee restent
+    # publiees telles quelles ; seul le verdict change, et le motif est ecrit.
+    for t in registre:
+        if t["cle"] in DECLASSES and t["retenu"]:
+            t["retenu"] = False
+            t["declasse"] = DECLASSES[t["cle"]]
     # /methode/ : les tests retenus tiennent-ils si l'on ajoute vingt tests
     # sans resultat (p = 1) ? La verification portait sur le seul registre ;
     # la famille corrigee compte aussi les coefficients : c'est sur elle
@@ -4818,13 +4866,14 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison,
         "registre": [{k: t[k] for k in
                       ("cle", "libelle", "question", "origine", "observe",
                        "attendu", "unite", "ecart_types", "ecart_type_nul", "p", "p_ajustee",
-                       "retenu", "tirages", "lecture", "nulle")
+                       "retenu", "declasse", "tirages", "lecture", "nulle")
                       # Les tests de la geographie viennent d'un fichier
                       # ecrit a part, sans `ecart_type_nul` : rien a recopier.
                       if k in t}
                      for t in registre],
         "nb_tests": len(registre),
         "nb_retenus": sum(1 for t in registre if t["retenu"]),
+        "nb_declasses": sum(1 for t in registre if t.get("declasse")),
         # Les coefficients de regression corriges avec le registre : la
         # famille de la correction compte les deux.
         "coefficients_corriges": len(complements),

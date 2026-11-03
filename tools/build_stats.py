@@ -1797,6 +1797,10 @@ def champs_du_texte(stats, saisons, parts):
     co["retour"]["non_rendus"] = round(100 - co["retour"]["probabilite"], 1)
     for x in co.get("par_camp") or []:
         x["modalite_maj"] = x["modalite"][:1].upper() + x["modalite"][1:]
+    # Le decoupage de « Avoir vote du mauvais cote » : ecarts signes, en points.
+    for e in co.get("camp_par_edition") or []:
+        e["observe_texte"] = articles.signe(e["observe"])
+        e["attendu_texte"] = articles.signe(e["attendu"])
 
     # /statistiques/reunification/ : les mesures avant/apres, les ambassades nommees
     # par les deux sources.

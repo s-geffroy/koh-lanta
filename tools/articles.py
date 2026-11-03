@@ -35,7 +35,7 @@ AFFIRMATIONS = {
     "decimation": (False, "+"),            # meme sens, non retenu une fois l'ordre des sorties repare (23 oct. 2026)
     "bandeau_minoritaire": (True, "+"),    # le camp minoritaire expose
     "sexe_minoritaire": (True, "-"),       # le sexe minoritaire protege
-    "camp_perdant": (True, "+"),           # voter avec la minorite expose (de justesse, 21 oct. 2026)
+    "camp_perdant": (False, "+"),          # meme sens, mais porte par les editions speciales : declasse (3 nov. 2026)
     "fusion_serre": (True, "+"),           # le vote se divise apres la reunification
     "fusion_sexe": (True, "-"),            # moins de femmes eliminees ensuite
     "fusion_force": (False, None),         # la competence n'est pas une menace

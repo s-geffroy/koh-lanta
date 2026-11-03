@@ -55,7 +55,9 @@ ajuste les p-values pour borner la part de fausses découvertes parmi celles
 qu’on retient. Les deux valeurs sont publiées : brute et ajustée.
 
 **{{ m.nb_retenus }} tests sur {{ m.nb_tests }}** franchissent le seuil après
-correction.
+correction et sont retenus.{% if m.nb_declasses > 0 %} {% if m.nb_declasses > 1 %}{{ m.nb_declasses }} autres le franchissent{% else %}Un autre le franchit{% endif %}
+sans être retenu : l’écart ne tient qu’à une partie des saisons, et le tableau
+dit laquelle. Ses chiffres restent publiés tels quels ; seul le verdict change.{% endif %}
 
 <div class="tableau-large">
 <table data-triable><caption class="hors-ecran">Pourquoi corriger, et comment</caption>
@@ -74,7 +76,7 @@ correction.
   <td class="nombre" data-val="{{ t.ecart_types }}">{{ t.ecart_types }}</td>
   <td class="nombre">{{ t.p }}</td>
   <td class="nombre">{{ t.p_ajustee }}</td>
-  <td>{% if t.retenu %}oui{% else %}non{% endif %}</td>
+  <td>{% if t.retenu %}oui{% elsif t.declasse %}non, {{ t.declasse }}{% else %}non{% endif %}</td>
 </tr>
 {% endfor %}
 </tbody>

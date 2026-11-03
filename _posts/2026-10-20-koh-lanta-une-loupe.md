@@ -6,7 +6,7 @@ titre: "Koh-Lanta n’est pas la vraie vie : c’est une loupe"
 chapeau: "Ce que les votes de toutes les saisons disent vraiment des alliances, de la menace et de l’appartenance."
 description: "Koh-Lanta n’est pas la vraie vie, c’est une loupe : ce que les votes de toutes les saisons disent des alliances, de la menace et de l’appartenance."
 date: 2026-10-20
-last_modified_at: 2026-10-23
+last_modified_at: 2026-11-03
 author: Sylvain Geffroy
 permalink: /articles/koh-lanta-une-loupe/
 autre_version: /articles/amplificateur-institutionnel/
@@ -76,9 +76,9 @@ La psychologie sociale l'a montré il y a cinquante ans : des groupes arbitrair
 
 Mais toutes les catégories ne fonctionnent pas ainsi. Être du **sexe** le moins représenté du camp ne fait pas partir plus tôt : cela protège plutôt. Porter une étiquette ne suffit pas à faire un groupe ; il faut observer ce qu'elle produit.
 
-## Voter avec la minorité : un coût, de justesse
+## Voter avec la minorité : un coût qui n’est pas établi
 
-On peut suivre une majorité par peur d'être isolé, ou parce qu'on pense qu'elle sait quelque chose. Les bulletins ne disent pas lequel des deux. Ils permettent seulement de vérifier si voter avec la minorité se paie au conseil suivant : c'est le cas, mais de justesse, et le résultat reste fragile.
+On peut suivre une majorité par peur d'être isolé, ou parce qu'on pense qu'elle sait quelque chose. Les bulletins ne disent pas lequel des deux. Ils permettent seulement de vérifier si voter avec la minorité se paie au conseil suivant. Sur l'ensemble des saisons, on le croirait. Mais l'écart vient presque tout entier des éditions spéciales, où reviennent des joueurs qui se connaissent déjà ; sur les saisons classiques, il ne se distingue pas du hasard ([sachant le conseil d'avant]({{ '/statistiques/conditionnelles/' | relative_url }})).
 
 ## La réunification change vraiment le jeu
 
@@ -124,6 +124,6 @@ Mais :
 
 > **Quelles règles, dans nos propres organisations, fabriquent les comportements que nous attribuons ensuite trop facilement aux individus ?**
 
-*Mis à jour le 23 octobre 2026 : le modèle nul tire désormais l'éliminé parmi les votants du soir, et deux résultats cités dans la première version — l'enchaînement des sorties par camp et la sortie précoce des ambassadeurs — ne passent plus la correction.*
+*Mis à jour le 23 octobre 2026 : le modèle nul tire désormais l'éliminé parmi les votants du soir, et deux résultats cités dans la première version — l'enchaînement des sorties par camp et la sortie précoce des ambassadeurs — ne passent plus la correction. Le 3 novembre 2026, le coût d'un vote avec la minorité, donné jusque-là « de justesse », a cessé d'être retenu : il ne tient qu'aux éditions spéciales.*
 
 *Les tests, leurs modèles nuls et leurs limites sont détaillés dans la [version longue]({{ '/articles/amplificateur-institutionnel/' | relative_url }}) et sur la page [méthode]({{ '/methode/' | relative_url }}).*

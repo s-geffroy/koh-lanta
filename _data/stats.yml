@@ -21190,7 +21190,7 @@ prevision:
 modeles:
   graine: 20260828
   vingt_nuls:
-    retenus: 22
+    retenus: 21
     tombes: []
     famille: 87
   permutations: 10000
@@ -28722,6 +28722,67 @@ modeles:
       hasard: "12,6"
       modalite_maj: Avec la minorité
       effectif_texte: "498"
+    camp_par_edition:
+    - modalite: saisons classiques
+      saisons: 26
+      par_camp:
+      - modalite: avec la majorité
+        effectif: 1063
+        cas: 132
+        probabilite: "12,4"
+        bas: "10,6"
+        haut: "14,5"
+        hasard: "13,3"
+        modalite_maj: Avec la majorité
+        effectif_texte: 1 063
+      - modalite: avec la minorité
+        effectif: 438
+        cas: 63
+        probabilite: "14,4"
+        bas: "11,4"
+        haut: 18
+        hasard: "12,3"
+        modalite_maj: Avec la minorité
+        effectif_texte: "438"
+      observe: "1,966"
+      attendu: "−0,935"
+      ecart_types: "1,58"
+      p_brute: "0,1169"
+      observe_texte: "+2"
+      attendu_texte: −0,9
+      modalite_maj: Saisons classiques
+      ecart_types_mot: écart-type
+      ecart_types_abs: "1,58"
+    - modalite: éditions spéciales
+      saisons: 7
+      par_camp:
+      - modalite: avec la majorité
+        effectif: 155
+        cas: 16
+        probabilite: "10,3"
+        bas: "6,5"
+        haut: "16,1"
+        hasard: "14,9"
+        modalite_maj: Avec la majorité
+        effectif_texte: "155"
+      - modalite: avec la minorité
+        effectif: 60
+        cas: 16
+        probabilite: "26,7"
+        bas: "17,1"
+        haut: 39
+        hasard: "14,8"
+        modalite_maj: Avec la minorité
+        effectif_texte: "60"
+      observe: "16,344"
+      attendu: "−0,068"
+      ecart_types: "3,03"
+      p_brute: "0,004"
+      observe_texte: "+16,3"
+      attendu_texte: −0,1
+      modalite_maj: Éditions spéciales
+      ecart_types_mot: écarts-types
+      ecart_types_abs: "3,03"
     par_cumul:
     - modalite: jamais visé
       effectif: 1070
@@ -29577,7 +29638,8 @@ modeles:
         moyenne_nulle: "−0,8412"
       origine: conditionnelles
       p_ajustee: "0,0276"
-      retenu: true
+      retenu: false
+      declasse: porté par les éditions spéciales
       observe_arrondi: "3,7"
       attendu_arrondi: "−0,8"
       ecart_types_mot: écarts-types
@@ -31467,7 +31529,8 @@ modeles:
     ecart_type_nul: "1,7414"
     p: "0,0092"
     p_ajustee: "0,0276"
-    retenu: true
+    retenu: false
+    declasse: porté par les éditions spéciales
     tirages: 10000
     lecture: Écart entre partir après avoir voté avec la minorité et partir après avoir voté avec la majorité.
     nulle: *id095
@@ -32034,7 +32097,8 @@ modeles:
     observe_arrondi_pluriel: true
     tirages_texte: 10 000
   nb_tests: 47
-  nb_retenus: 22
+  nb_retenus: 21
+  nb_declasses: 1
   coefficients_corriges: 40
   coefficients_retenus: 8
   famille_corrigee: 87
@@ -32064,7 +32128,7 @@ modeles:
     observations: 294
     observations_texte: "294"
     effet_texte: 8,2 points
-  retenus_avec_vingt_nuls: 22
+  retenus_avec_vingt_nuls: 21
   famille_corrigee_avec_vingt_nuls: 107
   tombes_avec_vingt_nuls_texte: aucun ne tombe
   permutations_texte: 10 000
@@ -36588,7 +36652,7 @@ articles:
   bulletins: 3 433
   nb_tests: "47"
   famille_corrigee: "87"
-  nb_retenus: "22"
+  nb_retenus: "21"
   force:
     rang_avant: "59,1"
     rang_apres: "53,5"
@@ -36727,9 +36791,9 @@ articles:
       valeur_ronde: "4"
       attendu_rond: "1"
       p: "0,028"
-      retenu: true
+      retenu: false
       conforme: true
-      affirme: retenu, ecart +
+      affirme: non retenu, ecart +
     fusion_serre:
       observe: "+27,4"
       attendu: "0"

@@ -16,7 +16,8 @@ chapeau: >-
 {% assign t1 = reg | where: "cle", "menace_voix" | first %}
 {% assign t2 = reg | where: "cle", "menace_sommet" | first %}
 {% assign t3 = reg | where: "cle", "camp_perdant" | first %}
-{% assign d3 = site.data.dependance.tests | where: "cle", "camp_perdant" | first %}
+{% assign ce_cla = c.camp_par_edition[0] %}
+{% assign ce_spe = c.camp_par_edition[1] %}
 {% assign t4 = reg | where: "cle", "cible_persistante" | first %}
 {% assign t5 = reg | where: "cle", "retour_de_baton" | first %}
 
@@ -337,25 +338,50 @@ plus tôt » n’est pas un résultat retenu.
 
 <div class="constat">
   <p>{{ t3.observe_arrondi }} point{% if t3.observe_arrondi_pluriel %}s{% endif %} d’écart, {{ t3.ecart_types }} {{ t3.ecart_types_mot }}, p brute
-  {{ t3.p }}, p ajustée {{ t3.p_ajustee }}. <b>Retenu, de justesse{% if d3.bascule %} et avec réserve{% endif %}.</b></p>
-  <p>S’être trompé de cible au conseil précédent expose : à
-  {{ c.par_camp[1].effectif }} présences du côté de la minorité, un écart de
-  {{ t3.observe_arrondi }} point{% if t3.observe_arrondi_pluriel %}s{% endif %} se distingue d’un tirage. Mais il passe le
-  seuil de peu, et une correction des données suffirait à le faire repasser
-  dessous.</p>
-{% if d3.bascule %}  <p>Il ne résiste pas tout à fait à la dépendance entre conseils d’une même
-  saison. Recalculée saison par saison, sa p ajustée passe de {{ t3.p_ajustee }} à
-  {{ d3.p_ajustee_saison }}, juste au-dessus du seuil : le site le garde retenu, avec
-  cette réserve (voir <a href="{{ '/methode/' | relative_url }}#dependance">la méthode</a>).</p>
-{% endif %}</div>
+  {{ t3.p }}, p ajustée {{ t3.p_ajustee }}. <b>Non retenu : l’écart est porté
+  par les éditions spéciales.</b></p>
+  <p>Sur l’ensemble des saisons, l’écart passe le seuil. Mais il ne vient pas
+  de partout. Coupé en deux, il tient presque tout entier aux
+  {{ ce_spe.saisons }} éditions spéciales ; sur les {{ ce_cla.saisons }}
+  saisons classiques, avoir voté avec la minorité n’expose guère plus qu’avoir
+  voté avec la majorité.</p>
+</div>
+
+<div class="tableau-large">
+<table><caption class="hors-ecran">Le même écart, saisons classiques et éditions spéciales</caption>
+<thead><tr><th>Saisons</th><th class="nombre">Partir après un vote avec la majorité</th><th class="nombre">Partir après un vote avec la minorité</th><th class="nombre">Écart, en points</th><th class="nombre">Attendu par le hasard</th><th class="nombre">p brute</th></tr></thead>
+<tbody>
+{% for e in c.camp_par_edition %}
+<tr><td>{{ e.modalite_maj }} ({{ e.saisons }})</td>
+    <td class="nombre">{{ e.par_camp[0].probabilite }} % ({{ e.par_camp[0].cas }} sur {{ e.par_camp[0].effectif_texte | default: e.par_camp[0].effectif }})</td>
+    <td class="nombre">{{ e.par_camp[1].probabilite }} % ({{ e.par_camp[1].cas }} sur {{ e.par_camp[1].effectif_texte | default: e.par_camp[1].effectif }})</td>
+    <td class="nombre"><b>{{ e.observe_texte }}</b></td>
+    <td class="nombre">{{ e.attendu_texte }}</td>
+    <td class="nombre">{{ e.p_brute }}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+<p class="note"><strong>Pourquoi ne pas le retenir, puisqu’il passe la
+correction ?</strong> Parce qu’un résultat qui ne vaut que pour {{ ce_spe.saisons }} éditions
+spéciales, sur {{ ce_spe.par_camp[1].effectif }} votes du côté de la minorité,
+ne dit pas ce que dit la phrase « voter avec la minorité expose ». Les éditions
+spéciales font revenir des joueurs qui se connaissent déjà ; qu’on y fasse payer
+plus vite un vote à côté est plausible, mais trop peu de cas le portent pour
+l’affirmer. Ce découpage a été fait <i>après</i> avoir vu le résultat
+d’ensemble : il ne compte pas comme un test, et ses p brutes ne sont pas
+corrigées. Le résultat d’ensemble reste au registre de
+<a href="{{ '/methode/' | relative_url }}">la méthode</a>, avec ses chiffres,
+marqué non retenu. Décision du 3 novembre 2026.</p>
 
 <p class="note"><strong>Cette page a longtemps conclu l’inverse.</strong>
 Jusqu’au 21 octobre 2026, elle écrivait « Non concluant » (p ajustée 0,063).
 Ce jour-là, vingt-quatre colonnes de la matrice des votes qui passaient pour
 des conseils ont été rendues à leur nature de sorties sans vote — destins
 liés, duels de riposte, épreuves —, et la ligne décalée d’un votant de
-<i>Raja Ampat</i> a été remise en place. Le résultat a passé le seuil. Il est
-publié tel quel, avec l’ancienne conclusion en regard.</p>
+<i>Raja Ampat</i> a été remise en place. Le résultat a passé le seuil, et la page l’a donné retenu, de justesse,
+jusqu’au 3 novembre 2026.</p>
 
 ## Une autre question : le nom ressort-il ?
 

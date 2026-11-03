@@ -22,11 +22,10 @@ autre_version_titre: "Lire la version courte →"
   appartiennent a son histoire, pas aux donnees.
 {%- endcomment -%}
 {%- assign a = site.data.stats.articles -%}
-{%- assign dep_camp = site.data.dependance.tests | where: "cle", "camp_perdant" | first -%}
 
 Cet article étudie *Koh-Lanta* non comme une miniature de « la vraie vie », mais comme un **dispositif institutionnel et médiatique qui repondère des mécanismes sociaux et stratégiques documentés ailleurs** : compétition relative, coalition, pouvoir-dépendance, réputation, identité de groupe, conformité. Nous écrivons symboliquement l'état du jeu $$S_{KL}=T_{KL}(G_{ref})$$, où $$T_{KL}$$ est la transformation institutionnelle d'un référentiel trans-domaines, et nous le séparons de sa représentation diffusée, $$O_{diffusé}=M_{prod}(S_{KL},A,C)$$ ([Corner, 2002](#ref-corner2002) ; [Couldry, 2004](#ref-couldry2004) ; [Andrejevic, 2004](#ref-andrejevic2004)).
 
-La version précédente de ce texte reposait sur neuf conseils pilotes et un seul cas prospectif. Celle-ci confronte le cadre à une base exhaustive : **{{ a.saisons }} saisons, {{ a.aventuriers }} aventuriers, {{ a.conseils }} conseils d'élimination de saisons terminées, dont {{ a.conseils_complets }} au bulletin près, et {{ a.bulletins }} bulletins**, reconstruits depuis Wikipédia et le wiki Fandom et publiés avec leurs sources. Les hypothèses y sont lues dans un registre de **{{ a.nb_tests }} tests de permutation**, conçus indépendamment de cet article, dont {{ a.nb_retenus }} résistent à la correction de Benjamini-Hochberg.
+La version précédente de ce texte reposait sur neuf conseils pilotes et un seul cas prospectif. Celle-ci confronte le cadre à une base exhaustive : **{{ a.saisons }} saisons, {{ a.aventuriers }} aventuriers, {{ a.conseils }} conseils d'élimination de saisons terminées, dont {{ a.conseils_complets }} au bulletin près, et {{ a.bulletins }} bulletins**, reconstruits depuis Wikipédia et le wiki Fandom et publiés avec leurs sources. Les hypothèses y sont lues dans un registre de **{{ a.nb_tests }} tests de permutation**, conçus indépendamment de cet article, dont {{ a.nb_retenus }} sont retenus après la correction de Benjamini-Hochberg.
 
 Trois résultats réorganisent la thèse. (1) Les mécanismes **relationnels** — isolement, persistance des coalitions, ciblage répété, appartenance d'origine — sont nettement plus marqués que ne le produirait le hasard. (2) L'exemple le plus cité de la version précédente, **la compétence qui devient une menace après la réunification, n'est pas observé** : l'éliminé n'est pas plus fort aux épreuves après la réunification qu'avant (écart de {{ a.tests.fusion_force.observe }} points de rang, p ajustée {{ a.tests.fusion_force.p }}). (3) La version précédente donnait 42,9 % à l'issue ordinaire d'un conseil, l'élimination sans égalité ni renversement par un objet ; c'est en réalité l'issue de **{{ a.issues.ordinaire }} %** des conseils. Une prédiction qui ignore cette fréquence peut tomber juste une fois et rester mal calibrée.
 
@@ -208,7 +207,7 @@ Quatre lectures s'en dégagent.
 
 **L'appartenance d'origine survit à la disparition du groupe.** Après la réunification, on écrit le nom de quelqu'un de sa tribu initiale dans {{ a.tests.vote_bandeau_apres_fusion.observe }} % des bulletins, contre {{ a.tests.vote_bandeau_apres_fusion.attendu }} % attendus, et appartenir au camp minoritaire expose. L'enchaînement des sorties par camp, lui, ne passe pas la correction une fois l'ordre des sorties d'un même épisode réparé. C'est compatible avec une identité de groupe ([Tajfel et Turner, 1979](#ref-tajfelturner1979)), sans qu'on puisse la séparer des liens noués pendant la phase en tribus : les tests de coalition et d'appartenance mesurent en partie le même réseau. En revanche, appartenir au **sexe** minoritaire du camp **protège** ({{ a.tests.sexe_minoritaire.observe }} points) : toutes les catégories ne fonctionnent pas comme des groupes. C'est un argument direct pour observer une conséquence avant de coder une identité.
 
-Une conséquence commune à la conformité (2.5) et à la coalition se lit, de justesse : avoir voté avec la minorité expose au conseil suivant (p ajustée {{ a.tests.camp_perdant.p }}). Être dans le bloc perdant est aussi une affaire de coalition, et les bulletins ne disent pas lequel des deux mécanismes joue. Une première rédaction de cette version concluait l'inverse ; la correction des sorties sans vote du 21 octobre 2026 a fait passer le seuil à ce résultat, qui reste fragile.{% if dep_camp.bascule %} Recalculé saison par saison, pour tenir compte de ce que les conseils d’une même saison ne sont pas indépendants, il tombe juste au-dessus du seuil (p ajustée {{ dep_camp.p_ajustee_saison }} ; voir [la méthode]({{ '/methode/' | relative_url }}#dependance)) : il est gardé, avec cette réserve.{% endif %}
+Une conséquence commune à la conformité (2.5) et à la coalition semblait se lire : avoir voté avec la minorité exposerait au conseil suivant (p ajustée {{ a.tests.camp_perdant.p }} sur l'ensemble des saisons). Le découpage ne le confirme pas : l'écart tient presque tout entier aux éditions spéciales, où reviennent des joueurs qui se connaissent déjà, et ne se distingue pas du hasard sur les saisons classiques ([conditionnelles]({{ '/statistiques/conditionnelles/' | relative_url }})). Il n'est donc pas retenu. La première rédaction de cette version concluait déjà à l'absence d'effet ; la correction des sorties sans vote du 21 octobre 2026 lui avait fait passer le seuil, et le texte l'a donné retenu, de justesse, jusqu'au 3 novembre 2026.
 
 ### 6.3. La réunification se lit dans les votes, pas seulement dans le discours
 
@@ -253,7 +252,7 @@ La version précédente s'abstenait de désigner l'éliminé. Le site publie un 
 | Réputation → menace perçue → ciblage | hypothèse | **forme réduite observée** : ciblage persistant ; maillons intermédiaires non mesurés (6.2) |
 | Compétence → menace en phase individuelle | présentée comme mécanisme central | **non observée** à la mesure de la force aux épreuves (6.1) |
 | Catégorisation → identité de groupe | hypothèse | **appartenance d'origine observée, inversée pour le sexe ; enchaînement par camp non établi** (6.2) |
-| Conformité / cascade | distinction conceptuelle | **conséquence commune observée, de justesse ; mécanisme non identifié** (6.2) |
+| Conformité / cascade | distinction conceptuelle | **conséquence commune non établie : l'écart ne tient qu'aux éditions spéciales** (6.2) |
 | Réunification → changement de régime | auto-description | **auto-description confirmée par les votes** (6.3) |
 | Rareté → stress → simplification | hypothèse | **non testée** |
 
@@ -306,7 +305,7 @@ La prochaine étape n'est plus de constituer une base — elle existe — mais d
 
 > **Koh-Lanta n'est pas un modèle de la vraie vie ; il rend certaines dépendances institutionnelles lisibles dans les votes.**
 
-*Mis à jour le 23 octobre 2026 : le modèle nul de la réunification tire désormais l'éliminé parmi les votants du soir ; l'enchaînement des sorties par camp et la sortie précoce des ambassadeurs ne passent plus la correction ; la famille corrigée compte les coefficients de régression ; La Légende, saison sans vainqueur, n'entre plus dans les calculs du jury final.*
+*Mis à jour le 23 octobre 2026 : le modèle nul de la réunification tire désormais l'éliminé parmi les votants du soir ; l'enchaînement des sorties par camp et la sortie précoce des ambassadeurs ne passent plus la correction ; la famille corrigée compte les coefficients de régression ; La Légende, saison sans vainqueur, n'entre plus dans les calculs du jury final. Le 3 novembre 2026, le coût d'un vote avec la minorité a cessé d'être retenu : il ne tient qu'aux éditions spéciales.*
 
 ## Données
 

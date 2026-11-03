@@ -925,8 +925,9 @@ AFFIRMATIONS_PAGES = {
                           "l'enchainement des sorties par camp n'est pas etabli"),
     "finale_dernier_qualifie": (False, "statistiques/finale.md ecrit que le dernier "
                                        "qualifie ne passe pas la correction"),
-    "camp_perdant": (True, "statistiques/conditionnelles.md et l'article court ecrivent que "
-                           "voter avec la minorite expose, de justesse"),
+    "camp_perdant": (False, "statistiques/conditionnelles.md et les deux articles ecrivent que "
+                            "le cout d'un vote avec la minorite n'est pas etabli : il ne "
+                            "tient qu'aux editions speciales (3 novembre 2026)"),
     "vote_meme_sexe": (False, "statistiques/qui-vise-qui.md et le resume du "
                               "sommaire ecrivent que le sexe n'est pas etabli"),
     "vote_meme_metier": (False, "statistiques/qui-vise-qui.md et le resume du "
@@ -1030,9 +1031,11 @@ AFFIRMATIONS_VALEURS = [
     (("rattachement",), lambda x: x["colliers"] == x["colliers_rattaches"]
      and x["vainqueurs_restants_personnes"] == 0,
      "sources.md ecrit qu'il ne reste aucun nom de personne non rattache"),
-    (("modeles", "registre"),
-     lambda x: 0.01 <= float(str(next(t for t in x if t["cle"] == "camp_perdant")["p_ajustee"]).replace(",", ".")) < 0.05,
-     "statistiques/conditionnelles.md, l'article court et l'article long ecrivent « de justesse » pour camp_perdant"),
+    (("modeles", "conditionnelles", "camp_par_edition"),
+     lambda x: float(str(x[0]["p_brute"]).replace(",", ".")) >= 0.05
+     and float(str(x[1]["p_brute"]).replace(",", ".")) < 0.05,
+     "statistiques/conditionnelles.md et les deux articles ecrivent que l'ecart de camp_perdant "
+     "ne se distingue pas du hasard sur les saisons classiques et vient des editions speciales"),
 (("conseils", "retours_en_jeu"), lambda x: x == 5,
      "sources.md raconte les conseils de revenants un par un (Linda, Tania deux "
      "fois, Christina, et Francis en cinquieme cas)"),
