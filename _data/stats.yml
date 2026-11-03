@@ -280,13 +280,13 @@ couleurs:
 metiers:
 - code: encadrement
   libelle: Encadrement et professions intellectuelles
-  effectif: 100
-  part_du_casting: "19,6"
+  effectif: 101
+  part_du_casting: "19,8"
   victoires: 5
-  finales: 6
-  taux_finale: 6
-  survie_moyenne: "57,7"
-  age_moyen: "36,4"
+  finales: 7
+  taux_finale: "6,9"
+  survie_moyenne: "58,2"
+  age_moyen: "36,3"
 - code: commerce
   libelle: Commerce et vente
   effectif: 64
@@ -325,12 +325,12 @@ metiers:
   age_moyen: "36,2"
 - code: etudiant
   libelle: Étudiants
-  effectif: 38
-  part_du_casting: "7,4"
+  effectif: 37
+  part_du_casting: "7,2"
   victoires: 2
-  finales: 4
-  taux_finale: "10,5"
-  survie_moyenne: "53,5"
+  finales: 3
+  taux_finale: "8,1"
+  survie_moyenne: "52,2"
   age_moyen: 22
 - code: enseignement
   libelle: Enseignement et éducation
@@ -398,13 +398,13 @@ metiers:
 metiers_toutes:
 - code: encadrement
   libelle: Encadrement et professions intellectuelles
-  effectif: 126
-  part_du_casting: "20,1"
+  effectif: 127
+  part_du_casting: "20,3"
   victoires: 6
-  finales: 9
-  taux_finale: "7,1"
-  survie_moyenne: 59
-  age_moyen: "36,1"
+  finales: 10
+  taux_finale: "7,9"
+  survie_moyenne: "59,4"
+  age_moyen: 36
 - code: commerce
   libelle: Commerce et vente
   effectif: 76
@@ -443,13 +443,13 @@ metiers_toutes:
   age_moyen: "32,9"
 - code: etudiant
   libelle: Étudiants
-  effectif: 40
-  part_du_casting: "6,4"
+  effectif: 39
+  part_du_casting: "6,2"
   victoires: 2
-  finales: 4
-  taux_finale: 10
-  survie_moyenne: "51,9"
-  age_moyen: 22
+  finales: 3
+  taux_finale: "7,7"
+  survie_moyenne: "50,7"
+  age_moyen: "21,9"
 - code: transport
   libelle: Transport et logistique
   effectif: 38
@@ -8003,8 +8003,8 @@ epreuves:
   - &id016
     code: encadrement
     libelle: Encadrement et professions intellectuelles
-    victoires: 70
-    aventuriers: 100
+    victoires: 71
+    aventuriers: 101
     victoires_par_aventurier: "0,7"
   - &id006
     code: sport
@@ -8039,9 +8039,9 @@ epreuves:
   - &id015
     code: etudiant
     libelle: Étudiants
-    victoires: 28
-    aventuriers: 38
-    victoires_par_aventurier: "0,74"
+    victoires: 27
+    aventuriers: 37
+    victoires_par_aventurier: "0,73"
   - &id010
     code: action_securite
     libelle: Action et sécurité
@@ -20878,20 +20878,20 @@ modeles:
       titre: Vanuatu
       annee: 2006
     archetypes:
-    - code: 3
+    - code: 0
       libelle: 25–29 ans · femme · Restauration et hôtellerie
       traits:
       - modalite: 25–29 ans
-        part: "51,1"
+        part: "50,8"
       - modalite: femme
-        part: 84
+        part: "84,1"
       - modalite: Restauration et hôtellerie
-        part: "15,3"
-      effectif: 131
-      part: "25,8"
+        part: "15,2"
+      effectif: 132
+      part: 26
       age_median: 29
-      part_femmes: 84
-    - code: 2
+      part_femmes: "84,1"
+    - code: 3
       libelle: 30–34 ans · homme · Agriculture et nature
       traits:
       - modalite: 30–34 ans
@@ -20928,7 +20928,7 @@ modeles:
       part: "14,8"
       age_median: 50
       part_femmes: "50,7"
-    - code: 0
+    - code: 5
       libelle: 18–24 ans
       traits:
       - modalite: 18–24 ans
@@ -20937,63 +20937,63 @@ modeles:
       part: "12,4"
       age_median: 23
       part_femmes: "47,6"
-    - code: 5
+    - code: 2
       libelle: 18–24 ans · femme · Étudiants
       traits:
       - modalite: 18–24 ans
         part: 100
       - modalite: femme
-        part: "57,6"
+        part: "56,2"
       - modalite: Étudiants
         part: 100
-      effectif: 33
-      part: "6,5"
+      effectif: 32
+      part: "6,3"
       age_median: 21
-      part_femmes: "57,6"
+      part_femmes: "56,2"
     nb_archetypes: 6
-    silhouette: "0,373"
+    silhouette: "0,372"
     silhouettes:
     - k: 2
-      score: "0,277"
+      score: "0,275"
       plus_petit: 106
     - k: 3
-      score: "0,268"
-      plus_petit: 105
+      score: "0,255"
+      plus_petit: 98
     - k: 4
-      score: "0,297"
-      plus_petit: 94
+      score: "0,296"
+      plus_petit: 98
     - k: 5
-      score: "0,346"
+      score: "0,345"
       plus_petit: 77
     - k: 6
-      score: "0,373"
-      plus_petit: 33
+      score: "0,372"
+      plus_petit: 32
     - k: 7
-      score: "0,345"
-      plus_petit: 33
+      score: "0,346"
+      plus_petit: 32
     - k: 8
-      score: "0,337"
-      plus_petit: 33
+      score: "0,328"
+      plus_petit: 32
     - k: 9
-      score: "0,331"
-      plus_petit: 33
+      score: "0,322"
+      plus_petit: 29
     - k: 10
-      score: "0,331"
-      plus_petit: 33
+      score: "0,339"
+      plus_petit: 31
     plancher: 10
     inertie_axes:
     - "8,4"
     - "7,3"
     carte:
-    - x: "2,2"
-      y: "0,409"
-      groupe: 5
+    - x: "2,217"
+      y: "0,415"
+      groupe: 2
       nom: Marie Besnier
       detail: Marie Besnier — 18–24 ans, Étudiants
       id: marie-besnier
-    - x: "0,46"
+    - x: "0,461"
       y: "1,218"
-      groupe: 0
+      groupe: 5
       nom: Guillaume Noël
       detail: Guillaume Noël — 18–24 ans, Transport et logistique
       id: guillaume-noel
@@ -21003,261 +21003,261 @@ modeles:
       nom: Jean-Luc Fiorina
       detail: Jean-Luc Fiorina — 45 ans et plus, Action et sécurité
       id: jean-luc-fiorina
-    - x: "2,2"
-      y: "0,409"
-      groupe: 5
+    - x: "2,217"
+      y: "0,415"
+      groupe: 2
       nom: Gaël Gollen
       detail: Gaël Gollen — 18–24 ans, Étudiants
       id: gael-gollen
-    - x: "−0,17"
-      y: "0,335"
+    - x: "−0,163"
+      y: "0,333"
       groupe: 1
       nom: Harry Levy
       detail: Harry Levy — 40–44 ans, Santé
       id: harry-levy
-    - x: "2,2"
-      y: "0,409"
-      groupe: 5
+    - x: "2,217"
+      y: "0,415"
+      groupe: 2
       nom: Sandra Acabado
       detail: Sandra Acabado — 18–24 ans, Étudiants
       id: sandra-acabado
-    - x: "0,647"
-      y: "0,29"
-      groupe: 0
+    - x: "0,649"
+      y: "0,289"
+      groupe: 5
       nom: David Noël
       detail: David Noël — 18–24 ans, Arts, médias et image
       id: david-noel
-    - x: "1,947"
-      y: "1,103"
-      groupe: 5
+    - x: "1,968"
+      y: "1,111"
+      groupe: 2
       nom: Stéphane Bertheau
       detail: Stéphane Bertheau — 18–24 ans, Étudiants
       id: stephane-bertheau
     - x: "0,05"
-      y: "−0,832"
-      groupe: 3
+      y: "−0,831"
+      groupe: 0
       nom: Géraldine Doyen
       detail: Géraldine Doyen — 25–29 ans, Commerce et vente
       id: geraldine-doyen
-    - x: "−0,174"
-      y: "−0,569"
+    - x: "−0,181"
+      y: "−0,572"
       groupe: 4
       nom: Michèle Valembois
       detail: Michèle Valembois — 45 ans et plus, Sans activité déclarée
       id: michele-valembois
-    - x: "−0,399"
-      y: "−0,253"
-      groupe: 2
+    - x: "−0,4"
+      y: "−0,249"
+      groupe: 3
       nom: William Lecomte
       detail: William Lecomte — 30–34 ans, Enseignement et éducation
       id: william-lecomte
-    - x: "−0,419"
-      y: "0,188"
+    - x: "−0,407"
+      y: "0,182"
       groupe: 1
       nom: Françoise Avignon
       detail: Françoise Avignon — 40–44 ans, Encadrement et professions intellectuelles
       id: francoise-avignon
-    - x: "−0,524"
-      y: "0,496"
+    - x: "−0,525"
+      y: "0,502"
       groupe: 1
       nom: Romain Bissol
       detail: Romain Bissol — 25–29 ans, Artisanat et bâtiment
       id: romain-bissol
-    - x: "−0,326"
-      y: "−0,202"
-      groupe: 2
+    - x: "−0,314"
+      y: "−0,205"
+      groupe: 3
       nom: Patricia Tanguy
       detail: Patricia Tanguy — 30–34 ans, Encadrement et professions intellectuelles
       id: patricia-tanguy
-    - x: "0,117"
-      y: "−0,992"
-      groupe: 3
+    - x: "0,118"
+      y: "−0,989"
+      groupe: 0
       nom: Guénaëlle Biras
       detail: Guénaëlle Biras — 25–29 ans, Arts, médias et image
       id: guenaelle-biras
-    - x: "−0,296"
-      y: "−0,315"
-      groupe: 3
+    - x: "−0,295"
+      y: "−0,311"
+      groupe: 0
       nom: Gilles Nicolet
       detail: Gilles Nicolet — 35–39 ans, Arts, médias et image
       id: gilles-nicolet
-    - x: "0,144"
-      y: "−0,413"
-      groupe: 3
+    - x: "0,155"
+      y: "−0,41"
+      groupe: 0
       nom: Xavier Lemasson
       detail: Xavier Lemasson — 25–29 ans, Santé
       id: xavier-lemasson
     - x: "0,05"
-      y: "−0,832"
-      groupe: 3
+      y: "−0,831"
+      groupe: 0
       nom: Caroline Lamotte
       detail: Caroline Lamotte — 25–29 ans, Commerce et vente
       id: caroline-lamotte
-    - x: "1,054"
-      y: "−0,704"
-      groupe: 3
+    - x: "1,056"
+      y: "−0,707"
+      groupe: 0
       nom: Céline Fortier
       detail: Céline Fortier — 18–24 ans, Restauration et hôtellerie
       id: celine-fortier
-    - x: "1,054"
-      y: "−0,704"
-      groupe: 3
+    - x: "1,056"
+      y: "−0,707"
+      groupe: 0
       nom: Nelly Baradeau
       detail: Nelly Baradeau — 18–24 ans, Restauration et hôtellerie
       id: nelly-baradeau
-    - x: "−0,448"
-      y: "0,224"
+    - x: "−0,449"
+      y: "0,226"
       groupe: 4
       nom: Pierre Cambon
       detail: Pierre Cambon — 45 ans et plus, Sport et coaching
       id: pierre-cambon
-    - x: "0,018"
-      y: "−0,599"
-      groupe: 3
+    - x: "0,026"
+      y: "−0,593"
+      groupe: 0
       nom: Jacky Forteron
       detail: Jacky Forteron — 25–29 ans, Restauration et hôtellerie
       id: jacky-forteron
-    - x: "−0,578"
-      y: "0,492"
-      groupe: 2
+    - x: "−0,563"
+      y: "0,491"
+      groupe: 3
       nom: Adonis Koupaki
       detail: Adonis Koupaki — 30–34 ans, Encadrement et professions intellectuelles
       id: adonis-koupaki
     - x: "0,581"
-      y: "0,449"
-      groupe: 0
+      y: "0,448"
+      groupe: 5
       nom: Jimmy Denis
       detail: Jimmy Denis — 18–24 ans, Commerce et vente
       id: jimmy-denis
-    - x: "−0,109"
+    - x: "−0,114"
       y: "−0,849"
-      groupe: 3
+      groupe: 0
       nom: Béatrice Cloix Penisson
       detail: Béatrice Cloix Penisson — 35–39 ans, Commerce et vente
       id: beatrice-cloix-penisson
-    - x: "0,26"
+    - x: "0,255"
       y: "1,084"
       groupe: 1
       nom: François-Xavier Renou
       detail: François-Xavier Renou — 18–24 ans, Artisanat et bâtiment
       id: francois-xavier-renou
-    - x: "0,238"
-      y: "−1,123"
-      groupe: 3
+    - x: "0,24"
+      y: "−1,124"
+      groupe: 0
       nom: Isabelle Vial
       detail: Isabelle Vial — 35–39 ans, Santé
       id: isabelle-vial
-    - x: "0,117"
-      y: "−0,992"
-      groupe: 3
+    - x: "0,118"
+      y: "−0,989"
+      groupe: 0
       nom: Maud Garnier
       detail: Maud Garnier — 25–29 ans, Arts, médias et image
       id: maud-garnier
-    - x: "−0,173"
-      y: "0,116"
-      groupe: 2
+    - x: "−0,177"
+      y: "0,114"
+      groupe: 3
       nom: Marianne Mondon
       detail: Marianne Mondon — 30–34 ans, Action et sécurité
       id: marianne-mondon
     - x: "−0,394"
-      y: "0,078"
+      y: "0,08"
       groupe: 4
       nom: Bernard Lenoir
       detail: Bernard Lenoir — 45 ans et plus, Arts, médias et image
       id: bernard-lenoir
-    - x: "−0,169"
-      y: "−0,251"
+    - x: "−0,167"
+      y: "−0,249"
       groupe: 4
       nom: Nicolas Roy
       detail: Nicolas Roy — 25–29 ans, Sans activité déclarée
       id: nicolas-roy
-    - x: "−0,105"
-      y: "−0,559"
-      groupe: 3
+    - x: "−0,088"
+      y: "−0,561"
+      groupe: 0
       nom: Amel Fatnassi
       detail: Amel Fatnassi — 25–29 ans, Encadrement et professions intellectuelles
       id: amel-fatnassi
     - x: "0,05"
-      y: "−0,832"
-      groupe: 3
+      y: "−0,831"
+      groupe: 0
       nom: Alexandra Denikine
       detail: Alexandra Denikine — 25–29 ans, Commerce et vente
       id: alexandra-denikine
-    - x: "2,2"
-      y: "0,409"
-      groupe: 5
+    - x: "2,217"
+      y: "0,415"
+      groupe: 2
       nom: Candice Cohen
       detail: Candice Cohen — 18–24 ans, Étudiants
       id: candice-cohen
-    - x: "−0,838"
-      y: "1,244"
+    - x: "−0,844"
+      y: "1,245"
       groupe: 1
       nom: Michel Jeandel
       detail: Michel Jeandel — 40–44 ans, Artisanat et bâtiment
       id: michel-jeandel
-    - x: "−0,198"
-      y: "−0,244"
-      groupe: 3
+    - x: "−0,201"
+      y: "−0,246"
+      groupe: 0
       nom: Sophie Guilloix
       detail: Sophie Guilloix — 40–44 ans, Arts, médias et image
       id: sophie-guilloix
-    - x: "1,054"
-      y: "−0,704"
-      groupe: 3
+    - x: "1,056"
+      y: "−0,707"
+      groupe: 0
       nom: Julie Bourdon
       detail: Julie Bourdon — 18–24 ans, Restauration et hôtellerie
       id: julie-bourdon
-    - x: "0,117"
-      y: "−0,992"
-      groupe: 3
+    - x: "0,118"
+      y: "−0,989"
+      groupe: 0
       nom: Linda Delamarre
       detail: Linda Delamarre — 25–29 ans, Arts, médias et image
       id: linda-delamarre
-    - x: "−0,672"
-      y: "0,882"
+    - x: "−0,656"
+      y: "0,878"
       groupe: 1
       nom: Philippe Huquet
       detail: Philippe Huquet — 40–44 ans, Encadrement et professions intellectuelles
       id: philippe-huquet
-    - x: "1,947"
-      y: "1,103"
-      groupe: 5
+    - x: "1,968"
+      y: "1,111"
+      groupe: 2
       nom: Alexandre Bérard
       detail: Alexandre Bérard — 18–24 ans, Étudiants
       id: alexandre-berard
-    - x: "−0,741"
-      y: "0,634"
-      groupe: 2
+    - x: "−0,748"
+      y: "0,639"
+      groupe: 3
       nom: Richard Lecourt
       detail: Richard Lecourt — 30–34 ans, Agriculture et nature
       id: richard-lecourt
-    - x: "−0,105"
-      y: "−0,559"
-      groupe: 3
+    - x: "−0,088"
+      y: "−0,561"
+      groupe: 0
       nom: Sylvie Pommier
       detail: Sylvie Pommier — 25–29 ans, Encadrement et professions intellectuelles
       id: sylvie-pommier
-    - x: "−0,202"
-      y: "−0,139"
-      groupe: 3
+    - x: "−0,199"
+      y: "−0,135"
+      groupe: 0
       nom: Sébastien Loew
       detail: Sébastien Loew — 25–29 ans, Commerce et vente
       id: sebastien-loew
-    - x: "−0,291"
-      y: "0,295"
-      groupe: 2
+    - x: "−0,296"
+      y: "0,296"
+      groupe: 3
       nom: Valérie Dot
       detail: Valérie Dot — 30–34 ans, Transport et logistique
       id: valerie-dot
-    - x: "0,074"
-      y: "−1,304"
-      groupe: 3
+    - x: "0,075"
+      y: "−1,3"
+      groupe: 0
       nom: Hélène Patry
       detail: Hélène Patry — 25–29 ans, Enseignement et éducation
       id: helene-patry
-    - x: "−0,19"
-      y: "−0,152"
-      groupe: 2
+    - x: "−0,186"
+      y: "−0,147"
+      groupe: 3
       nom: Moundir Zoughari
       detail: Moundir Zoughari — 25–29 ans, Sport et coaching
       id: moundir-zoughari
@@ -21267,578 +21267,578 @@ modeles:
       nom: Antoine Sanchez
       detail: Antoine Sanchez — 45 ans et plus, Action et sécurité
       id: antoine-sanchez
-    - x: "0,426"
-      y: "0,722"
-      groupe: 0
+    - x: "0,443"
+      y: "0,717"
+      groupe: 5
       nom: Moussa Niangane
       detail: Moussa Niangane — 18–24 ans, Encadrement et professions intellectuelles
       id: moussa-niangane
-    - x: "0,05"
+    - x: "0,049"
       y: "−0,934"
-      groupe: 3
+      groupe: 0
       nom: Delphine Bano
       detail: Delphine Bano — 30–34 ans, Restauration et hôtellerie
       id: delphine-bano
-    - x: "−0,264"
-      y: "−0,085"
+    - x: "−0,269"
+      y: "−0,087"
       groupe: 1
       nom: Isabelle Seguin
       detail: Isabelle Seguin — 40–44 ans, Commerce et vente
       id: isabelle-seguin
-    - x: "−0,517"
+    - x: "−0,502"
       y: "0,117"
       groupe: 1
       nom: Nelson Parente
       detail: Nelson Parente — 35–39 ans, Encadrement et professions intellectuelles
       id: nelson-parente
-    - x: "−0,838"
-      y: "1,244"
+    - x: "−0,844"
+      y: "1,245"
       groupe: 1
       nom: Vidéli Dittmar
       detail: Vidéli Dittmar — 40–44 ans, Artisanat et bâtiment
       id: videli-dittmar
-    - x: "0,679"
-      y: "0,028"
-      groupe: 0
+    - x: "0,692"
+      y: "0,021"
+      groupe: 5
       nom: Sabira
       detail: Sabira — 18–24 ans, Encadrement et professions intellectuelles
       id: sabira
-    - x: "−0,105"
-      y: "−0,559"
-      groupe: 3
+    - x: "−0,088"
+      y: "−0,561"
+      groupe: 0
       nom: Vicky Szikman
       detail: Vicky Szikman — 25–29 ans, Encadrement et professions intellectuelles
       id: vicky-szikman
-    - x: "−0,616"
-      y: "0,51"
+    - x: "−0,601"
+      y: "0,508"
       groupe: 4
       nom: Jean-Bernard De Cools
       detail: Jean-Bernard De Cools — 45 ans et plus, Encadrement et professions intellectuelles
       id: jean-bernard-de-cools
-    - x: "0,074"
-      y: "−1,304"
-      groupe: 3
+    - x: "0,075"
+      y: "−1,3"
+      groupe: 0
       nom: Nathalie Lapicque
       detail: Nathalie Lapicque — 25–29 ans, Enseignement et éducation
       id: nathalie-lapicque
-    - x: "1,947"
-      y: "1,103"
-      groupe: 5
+    - x: "1,968"
+      y: "1,111"
+      groupe: 2
       nom: Guillaume Brauer
       detail: Guillaume Brauer — 18–24 ans, Étudiants
       id: guillaume-brauer
-    - x: "−0,142"
+    - x: "−0,145"
       y: "−0,616"
       groupe: 4
       nom: Odile Héritier
       detail: Odile Héritier — 45 ans et plus, Arts, médias et image
       id: odile-heritier
-    - x: "−0,109"
+    - x: "−0,114"
       y: "−0,849"
-      groupe: 3
+      groupe: 0
       nom: Catherine Ehret-Mader
       detail: Catherine Ehret-Mader — 35–39 ans, Commerce et vente
       id: catherine-ehret-mader
-    - x: "0,397"
+    - x: "0,404"
       y: "−1,106"
-      groupe: 3
+      groupe: 0
       nom: Sophie Eeckhout
       detail: Sophie Eeckhout — 25–29 ans, Santé
       id: sophie-eeckhout
-    - x: "0,018"
-      y: "−0,599"
-      groupe: 3
+    - x: "0,026"
+      y: "−0,593"
+      groupe: 0
       nom: Alban Oswald
       detail: Alban Oswald — 25–29 ans, Restauration et hôtellerie
       id: alban-oswald
-    - x: "0,074"
-      y: "−1,304"
-      groupe: 3
+    - x: "0,075"
+      y: "−1,3"
+      groupe: 0
       nom: Amélie Grégoire
       detail: Amélie Grégoire — 25–29 ans, Enseignement et éducation
       id: amelie-gregoire
-    - x: "−0,19"
-      y: "−0,152"
-      groupe: 2
+    - x: "−0,186"
+      y: "−0,147"
+      groupe: 3
       nom: Romuald Lafite
       detail: Romuald Lafite — 25–29 ans, Sport et coaching
       id: romuald-lafite
-    - x: "−0,838"
-      y: "1,244"
+    - x: "−0,844"
+      y: "1,245"
       groupe: 1
       nom: Raphaël Andrès
       detail: Raphaël Andrès — 40–44 ans, Artisanat et bâtiment
       id: raphael-andres
-    - x: "−0,171"
+    - x: "−0,176"
       y: "−0,475"
-      groupe: 3
+      groupe: 0
       nom: Linda Alario
       detail: Linda Alario — 30–34 ans, Commerce et vente
       id: linda-alario
-    - x: "−0,683"
-      y: "0,479"
+    - x: "−0,69"
+      y: "0,483"
       groupe: 1
       nom: Philippe Bordier
       detail: Philippe Bordier — 35–39 ans, Artisanat et bâtiment
       id: philippe-bordier
-    - x: "−0,105"
-      y: "−0,634"
-      groupe: 2
+    - x: "−0,108"
+      y: "−0,633"
+      groupe: 3
       nom: Aude Réant
       detail: Aude Réant — 30–34 ans, Arts, médias et image
       id: aude-reant
-    - x: "0,928"
-      y: "0,175"
-      groupe: 0
+    - x: "0,936"
+      y: "0,172"
+      groupe: 5
       nom: Mathieu Huguin
       detail: Mathieu Huguin — 18–24 ans, Santé
       id: mathieu-huguin
-    - x: "−0,266"
-      y: "0,506"
+    - x: "−0,27"
+      y: "0,502"
       groupe: 1
       nom: Sylvie Sébert
       detail: Sylvie Sébert — 40–44 ans, Action et sécurité
       id: sylvie-sebert
-    - x: "0,117"
-      y: "−0,992"
-      groupe: 3
+    - x: "0,118"
+      y: "−0,989"
+      groupe: 0
       nom: Caroline Colusso
       detail: Caroline Colusso — 25–29 ans, Arts, médias et image
       id: caroline-colusso
-    - x: "0,867"
-      y: "−0,357"
+    - x: "0,862"
+      y: "−0,363"
       groupe: 4
       nom: Marie-Cécile Maréchal
       detail: Marie-Cécile Maréchal — 18–24 ans, Sans activité déclarée
       id: marie-cecile-marechal
-    - x: "−0,266"
-      y: "0,506"
+    - x: "−0,27"
+      y: "0,502"
       groupe: 1
       nom: Eliane Vigneron
       detail: Eliane Vigneron — 40–44 ans, Action et sécurité
       id: eliane-vigneron
-    - x: "−0,683"
-      y: "0,479"
+    - x: "−0,69"
+      y: "0,483"
       groupe: 1
       nom: Thierry Ramos
       detail: Thierry Ramos — 35–39 ans, Artisanat et bâtiment
       id: thierry-ramos
     - x: "0,581"
-      y: "0,449"
-      groupe: 0
+      y: "0,448"
+      groupe: 5
       nom: Sakhone Holaphong
       detail: Sakhone Holaphong — 18–24 ans, Commerce et vente
       id: sakhone-holaphong
     - x: "−0,426"
       y: "0,81"
-      groupe: 2
+      groupe: 3
       nom: Jérôme Villaseque
       detail: Jérôme Villaseque — 30–34 ans, Action et sécurité
       id: jerome-villaseque
-    - x: "−0,264"
-      y: "−0,576"
-      groupe: 3
+    - x: "−0,253"
+      y: "−0,579"
+      groupe: 0
       nom: Christine Isoart
       detail: Christine Isoart — 35–39 ans, Encadrement et professions intellectuelles
       id: christine-isoart
-    - x: "1,054"
-      y: "−0,704"
-      groupe: 3
+    - x: "1,056"
+      y: "−0,707"
+      groupe: 0
       nom: Coumba Baradji
       detail: Coumba Baradji — 18–24 ans, Restauration et hôtellerie
       id: coumba-baradji
     - x: "−0,394"
-      y: "0,078"
+      y: "0,08"
       groupe: 4
       nom: Pierre Vaney
       detail: Pierre Vaney — 45 ans et plus, Arts, médias et image
       id: pierre-vaney
-    - x: "−0,043"
-      y: "−1,008"
-      groupe: 3
+    - x: "−0,047"
+      y: "−1,007"
+      groupe: 0
       nom: Véronique Lobjoie
       detail: Véronique Lobjoie — 35–39 ans, Arts, médias et image
       id: veronique-lobjoie
-    - x: "−0,136"
-      y: "−0,298"
-      groupe: 3
+    - x: "−0,131"
+      y: "−0,293"
+      groupe: 0
       nom: Alexis Tournier
       detail: Alexis Tournier — 25–29 ans, Arts, médias et image
       id: alexis-tournier
-    - x: "0,46"
+    - x: "0,461"
       y: "1,218"
-      groupe: 0
+      groupe: 5
       nom: Mohamed Derradji
       detail: Mohamed Derradji — 18–24 ans, Transport et logistique
       id: mohamed-derradji
-    - x: "−0,427"
-      y: "0,125"
+    - x: "−0,43"
+      y: "0,124"
       groupe: 4
       nom: Francis Bordas
       detail: Francis Bordas — 45 ans et plus, Sans activité déclarée
       id: francis-bordas
-    - x: "2,2"
-      y: "0,409"
-      groupe: 5
+    - x: "2,217"
+      y: "0,415"
+      groupe: 2
       nom: Clémence Castel
       detail: Clémence Castel — 18–24 ans, Étudiants
       id: clemence-castel
-    - x: "1,18"
-      y: "−0,519"
-      groupe: 0
+    - x: "1,185"
+      y: "−0,524"
+      groupe: 5
       nom: Karine Amorsi
       detail: Karine Amorsi — 18–24 ans, Santé
       id: karine-amorsi
-    - x: "−0,326"
-      y: "−0,202"
-      groupe: 2
+    - x: "−0,314"
+      y: "−0,205"
+      groupe: 3
       nom: Mama El Fayed
       detail: Mama El Fayed — 30–34 ans, Encadrement et professions intellectuelles
       id: mama-el-fayed
     - x: "−0,504"
-      y: "0,596"
+      y: "0,597"
       groupe: 1
       nom: Nicolas Maire
       detail: Nicolas Maire — 40–44 ans, Sport et coaching
       id: nicolas-maire
-    - x: "−0,202"
-      y: "−0,139"
-      groupe: 3
+    - x: "−0,199"
+      y: "−0,135"
+      groupe: 0
       nom: Nico Felger
       detail: Nico Felger — 25–29 ans, Commerce et vente
       id: nico-felger
-    - x: "−0,581"
-      y: "1,007"
-      groupe: 2
+    - x: "−0,582"
+      y: "1,009"
+      groupe: 3
       nom: Jean-Claude Errin
       detail: Jean-Claude Errin — 45 ans et plus, Transport et logistique
       id: jean-claude-errin
-    - x: "−0,745"
-      y: "0,854"
+    - x: "−0,751"
+      y: "0,857"
       groupe: 1
       nom: Mika Tailleur
       detail: Mika Tailleur — 30–34 ans, Artisanat et bâtiment
       id: mika-tailleur
-    - x: "−0,492"
-      y: "0,16"
+    - x: "−0,502"
+      y: "0,161"
       groupe: 1
       nom: Estelle Granger
       detail: Estelle Granger — 30–34 ans, Artisanat et bâtiment
       id: estelle-granger
-    - x: "−0,264"
-      y: "−0,576"
-      groupe: 3
+    - x: "−0,253"
+      y: "−0,579"
+      groupe: 0
       nom: Nathalie Bella
       detail: Nathalie Bella — 35–39 ans, Encadrement et professions intellectuelles
       id: nathalie-bella
-    - x: "−0,779"
-      y: "0,652"
-      groupe: 2
+    - x: "−0,785"
+      y: "0,656"
+      groupe: 3
       nom: Alain Ponton
       detail: Alain Ponton — 45 ans et plus, Agriculture et nature
       id: alain-ponton
-    - x: "−0,23"
-      y: "−0,197"
+    - x: "−0,237"
+      y: "−0,202"
       groupe: 4
       nom: Catherine Brun
       detail: Catherine Brun — 40–44 ans, Sans activité déclarée
       id: catherine-brun
-    - x: "−0,271"
-      y: "−0,198"
+    - x: "−0,276"
+      y: "−0,195"
       groupe: 1
       nom: Gaëlle Zanetton
       detail: Gaëlle Zanetton — 25–29 ans, Artisanat et bâtiment
       id: gaelle-zanetton
-    - x: "0,9"
-      y: "−0,404"
-      groupe: 0
+    - x: "0,898"
+      y: "−0,407"
+      groupe: 5
       nom: Marie Bayard
       detail: Marie Bayard — 18–24 ans, Arts, médias et image
       id: marie-bayard
-    - x: "−0,52"
-      y: "0,276"
-      groupe: 2
+    - x: "−0,522"
+      y: "0,283"
+      groupe: 3
       nom: Ludovic Laresche
       detail: Ludovic Laresche — 25–29 ans, Agriculture et nature
       id: ludovic-laresche
-    - x: "−0,578"
-      y: "0,492"
-      groupe: 2
+    - x: "−0,563"
+      y: "0,491"
+      groupe: 3
       nom: Sébastien Roullé
       detail: Sébastien Roullé — 30–34 ans, Encadrement et professions intellectuelles
       id: sebastien-roulle
-    - x: "0,834"
-      y: "−0,245"
-      groupe: 0
+    - x: "0,83"
+      y: "−0,248"
+      groupe: 5
       nom: Émilie Frahi
       detail: Émilie Frahi — 18–24 ans, Commerce et vente
       id: emilie-frahi
-    - x: "0,594"
-      y: "0,436"
-      groupe: 0
+    - x: "0,595"
+      y: "0,435"
+      groupe: 5
       nom: François-David Cardonnel
       detail: François-David Cardonnel — 18–24 ans, Sport et coaching
       id: francois-david-cardonnel
-    - x: "−0,482"
-      y: "0,614"
-      groupe: 2
+    - x: "−0,483"
+      y: "0,618"
+      groupe: 3
       nom: Ali Jaffar
       detail: Ali Jaffar — 35–39 ans, Transport et logistique
       id: ali-jaffar
-    - x: "−0,264"
-      y: "−0,576"
-      groupe: 3
+    - x: "−0,253"
+      y: "−0,579"
+      groupe: 0
       nom: Pascale Bodin
       detail: Pascale Bodin — 35–39 ans, Encadrement et professions intellectuelles
       id: pascale-bodin
-    - x: "0,834"
-      y: "−0,245"
-      groupe: 0
+    - x: "0,83"
+      y: "−0,248"
+      groupe: 5
       nom: Marie-Laure Dagniaux
       detail: Marie-Laure Dagniaux — 18–24 ans, Commerce et vente
       id: marie-laure-dagniaux
-    - x: "0,9"
-      y: "−0,404"
-      groupe: 0
+    - x: "0,898"
+      y: "−0,407"
+      groupe: 5
       nom: Mélanie Guyon
       detail: Mélanie Guyon — 18–24 ans, Arts, médias et image
       id: melanie-guyon
-    - x: "−0,363"
-      y: "−0,184"
+    - x: "−0,352"
+      y: "−0,188"
       groupe: 4
       nom: Véronique Lambert
       detail: Véronique Lambert — 45 ans et plus, Encadrement et professions intellectuelles
       id: veronique-lambert
-    - x: "−0,105"
-      y: "−0,559"
-      groupe: 3
+    - x: "−0,088"
+      y: "−0,561"
+      groupe: 0
       nom: Chloé Vavasseur
       detail: Chloé Vavasseur — 25–29 ans, Encadrement et professions intellectuelles
       id: chloe-vavasseur
-    - x: "−0,411"
-      y: "0,206"
-      groupe: 2
+    - x: "−0,412"
+      y: "0,209"
+      groupe: 3
       nom: Érick Africaa
       detail: Érick Africaa — 30–34 ans, Sport et coaching
       id: erick-africaa
-    - x: "−0,109"
+    - x: "−0,114"
       y: "−0,849"
-      groupe: 3
+      groupe: 0
       nom: Filomène Mendonca
       detail: Filomène Mendonca — 35–39 ans, Commerce et vente
       id: filomene-mendonca
-    - x: "−0,616"
-      y: "0,51"
+    - x: "−0,601"
+      y: "0,508"
       groupe: 4
       nom: Adrien Torrin
       detail: Adrien Torrin — 45 ans et plus, Encadrement et professions intellectuelles
       id: adrien-torrin
-    - x: "0,263"
-      y: "0,864"
-      groupe: 2
+    - x: "0,259"
+      y: "0,865"
+      groupe: 3
       nom: Grégoire Delachaux
       detail: Grégoire Delachaux — 18–24 ans, Agriculture et nature
       id: gregoire-delachaux
-    - x: "−0,741"
-      y: "0,634"
-      groupe: 2
+    - x: "−0,748"
+      y: "0,639"
+      groupe: 3
       nom: Laurent Boudes
       detail: Laurent Boudes — 30–34 ans, Agriculture et nature
       id: laurent-boudes
-    - x: "−0,672"
-      y: "0,882"
+    - x: "−0,656"
+      y: "0,878"
       groupe: 1
       nom: Patrick Brasier De Thuy
       detail: Patrick Brasier De Thuy — 40–44 ans, Encadrement et professions intellectuelles
       id: patrick-brasier-de-thuy
-    - x: "−0,52"
-      y: "0,276"
-      groupe: 2
+    - x: "−0,522"
+      y: "0,283"
+      groupe: 3
       nom: Simon Quintilla
       detail: Simon Quintilla — 25–29 ans, Agriculture et nature
       id: simon-quintilla
-    - x: "−0,427"
-      y: "−0,434"
-      groupe: 2
+    - x: "−0,437"
+      y: "−0,431"
+      groupe: 3
       nom: Maryline Hemelsdael
       detail: Maryline Hemelsdael — 35–39 ans, Agriculture et nature
       id: maryline-hemelsdael
-    - x: "0,46"
+    - x: "0,461"
       y: "1,218"
-      groupe: 0
+      groupe: 5
       nom: Kevin Cuoco
       detail: Kevin Cuoco — 18–24 ans, Transport et logistique
       id: kevin-cuoco
-    - x: "0,679"
-      y: "0,028"
-      groupe: 0
+    - x: "0,692"
+      y: "0,021"
+      groupe: 5
       nom: Jade Handi
       detail: Jade Handi — 18–24 ans, Encadrement et professions intellectuelles
       id: jade-handi
-    - x: "−0,419"
-      y: "0,188"
+    - x: "−0,407"
+      y: "0,182"
       groupe: 1
       nom: Valérie Tartacède-Bollaert
       detail: Valérie Tartacède-Bollaert — 40–44 ans, Encadrement et professions intellectuelles
       id: valerie-tartacede-bollaert
-    - x: "0,46"
+    - x: "0,461"
       y: "1,218"
-      groupe: 0
+      groupe: 5
       nom: Céga Coulibaly
       detail: Céga Coulibaly — 18–24 ans, Transport et logistique
       id: cega-coulibaly
-    - x: "0,9"
-      y: "−0,404"
-      groupe: 0
+    - x: "0,898"
+      y: "−0,407"
+      groupe: 5
       nom: Irya Cissé
       detail: Irya Cissé — 18–24 ans, Arts, médias et image
       id: irya-cisse
-    - x: "−0,105"
-      y: "−0,634"
-      groupe: 2
+    - x: "−0,108"
+      y: "−0,633"
+      groupe: 3
       nom: Morgane Rodriguès
       detail: Morgane Rodriguès — 30–34 ans, Arts, médias et image
       id: morgane-rodrigues
-    - x: "2,2"
-      y: "0,409"
-      groupe: 5
+    - x: "2,217"
+      y: "0,415"
+      groupe: 2
       nom: Jessica Joullié
       detail: Jessica Joullié — 18–24 ans, Étudiants
       id: jessica-joullie
-    - x: "−0,683"
-      y: "0,479"
+    - x: "−0,69"
+      y: "0,483"
       groupe: 1
       nom: Alain Garcia
       detail: Alain Garcia — 35–39 ans, Artisanat et bâtiment
       id: alain-garcia
-    - x: "−0,517"
+    - x: "−0,518"
       y: "0,609"
       groupe: 1
       nom: Jean-Bernard Hauton-Arnaud
       detail: Jean-Bernard Hauton-Arnaud — 40–44 ans, Commerce et vente
       id: jean-bernard-hauton-arnaud
-    - x: "−0,357"
-      y: "0,134"
+    - x: "−0,337"
+      y: "0,135"
       groupe: 1
       nom: Christopher Lavaud
       detail: Christopher Lavaud — 25–29 ans, Encadrement et professions intellectuelles
       id: christopher-lavaud
-    - x: "−0,349"
-      y: "−0,168"
-      groupe: 2
+    - x: "−0,35"
+      y: "−0,165"
+      groupe: 3
       nom: Christophe Guttatoro-Martin
       detail: Christophe Guttatoro-Martin — 35–39 ans, Sport et coaching
       id: christophe-guttatoro-martin
-    - x: "2,2"
-      y: "0,409"
-      groupe: 5
+    - x: "2,217"
+      y: "0,415"
+      groupe: 2
       nom: Charlène Hoffsess
       detail: Charlène Hoffsess — 18–24 ans, Étudiants
       id: charlene-hoffsess
-    - x: "−0,683"
-      y: "0,479"
+    - x: "−0,69"
+      y: "0,483"
       groupe: 1
       nom: Hakim Djellali
       detail: Hakim Djellali — 35–39 ans, Artisanat et bâtiment
       id: hakim-djellali
-    - x: "−0,461"
-      y: "0,237"
+    - x: "−0,462"
+      y: "0,239"
       groupe: 4
       nom: Régis Colombier
       detail: Régis Colombier — 45 ans et plus, Commerce et vente
       id: regis-colombier
-    - x: "−0,585"
-      y: "0,55"
+    - x: "−0,595"
+      y: "0,549"
       groupe: 1
       nom: Carole Rapin
       detail: Carole Rapin — 40–44 ans, Artisanat et bâtiment
       id: carole-rapin
-    - x: "0,074"
-      y: "−1,304"
-      groupe: 3
+    - x: "0,075"
+      y: "−1,3"
+      groupe: 0
       nom: Nathalie Ensargueix
       detail: Nathalie Ensargueix — 25–29 ans, Enseignement et éducation
       id: nathalie-ensargueix
-    - x: "−0,544"
-      y: "0,988"
-      groupe: 2
+    - x: "−0,545"
+      y: "0,992"
+      groupe: 3
       nom: Bertrand Bolle
       detail: Bertrand Bolle — 30–34 ans, Transport et logistique
       id: bertrand-bolle
-    - x: "−0,745"
-      y: "0,854"
+    - x: "−0,751"
+      y: "0,857"
       groupe: 1
       nom: Frédéric Favier
       detail: Frédéric Favier — 30–34 ans, Artisanat et bâtiment
       id: frederic-favier
-    - x: "0,048"
+    - x: "0,049"
       y: "−0,242"
-      groupe: 3
+      groupe: 0
       nom: Christelle Gauzet
       detail: Christelle Gauzet — 25–29 ans, Action et sécurité
       id: christelle-gauzet
-    - x: "1,164"
-      y: "0,515"
-      groupe: 0
+    - x: "1,187"
+      y: "0,529"
+      groupe: 5
       nom: Julien Mairesse
       detail: Julien Mairesse — 25–29 ans, Étudiants
       id: julien-mairesse
-    - x: "0,579"
-      y: "1,04"
-      groupe: 0
+    - x: "0,581"
+      y: "1,037"
+      groupe: 5
       nom: Anthony Parra
       detail: Anthony Parra — 18–24 ans, Action et sécurité
       id: anthony-parra
-    - x: "−0,105"
-      y: "−0,559"
-      groupe: 3
+    - x: "−0,088"
+      y: "−0,561"
+      groupe: 0
       nom: Claire Rolet
       detail: Claire Rolet — 25–29 ans, Encadrement et professions intellectuelles
       id: claire-rolet
-    - x: "0,512"
-      y: "0,39"
-      groupe: 0
+    - x: "0,504"
+      y: "0,388"
+      groupe: 5
       nom: Marine Mocellin
       detail: Marine Mocellin — 18–24 ans, Artisanat et bâtiment
       id: marine-mocellin
-    - x: "−0,105"
-      y: "−0,559"
-      groupe: 3
+    - x: "−0,088"
+      y: "−0,561"
+      groupe: 0
       nom: Kaouther Ferdjani
       detail: Kaouther Ferdjani — 25–29 ans, Encadrement et professions intellectuelles
       id: kaouther-ferdjani
     - x: "−0,426"
       y: "0,81"
-      groupe: 2
+      groupe: 3
       nom: Alexandre Amico
       detail: Alexandre Amico — 30–34 ans, Action et sécurité
       id: alexandre-amico
-    - x: "1,947"
-      y: "1,103"
-      groupe: 5
+    - x: "1,968"
+      y: "1,111"
+      groupe: 2
       nom: Freddy Boucher
       detail: Freddy Boucher — 18–24 ans, Étudiants
       id: freddy-boucher
-    - x: "−0,517"
+    - x: "−0,502"
       y: "0,117"
       groupe: 1
       nom: Pascal Nickert
       detail: Pascal Nickert — 35–39 ans, Encadrement et professions intellectuelles
       id: pascal-nickert
-    - x: "−0,357"
-      y: "0,134"
+    - x: "−0,337"
+      y: "0,135"
       groupe: 1
       nom: Louis-Laurent Léger
       detail: Louis-Laurent Léger — 25–29 ans, Encadrement et professions intellectuelles
       id: louis-laurent-leger
-    - x: "−0,105"
-      y: "−0,559"
-      groupe: 3
+    - x: "−0,088"
+      y: "−0,561"
+      groupe: 0
       nom: Raphaële Navarro
       detail: Raphaële Navarro — 25–29 ans, Encadrement et professions intellectuelles
       id: raphaele-navarro
-    - x: "−0,782"
-      y: "0,872"
+    - x: "−0,789"
+      y: "0,875"
       groupe: 1
       nom: Rodolphe Assi
       detail: Rodolphe Assi — 45 ans et plus, Artisanat et bâtiment
@@ -21849,333 +21849,333 @@ modeles:
       nom: Kader Rebaï
       detail: Kader Rebaï — 45 ans et plus, Action et sécurité
       id: kader-rebai
-    - x: "−0,24"
-      y: "−0,556"
-      groupe: 3
+    - x: "−0,244"
+      y: "−0,557"
+      groupe: 0
       nom: Fabienne Lefebvre-Trehoux
       detail: Fabienne Lefebvre-Trehoux — 40–44 ans, Enseignement et éducation
       id: fabienne-lefebvre-trehoux
-    - x: "−0,109"
+    - x: "−0,114"
       y: "−0,849"
-      groupe: 3
+      groupe: 0
       nom: Isabelle Da Silva
       detail: Isabelle Da Silva — 35–39 ans, Commerce et vente
       id: isabelle-da-silva
-    - x: "−0,683"
-      y: "0,479"
+    - x: "−0,69"
+      y: "0,483"
       groupe: 1
       nom: Patrick Merle
       detail: Patrick Merle — 35–39 ans, Artisanat et bâtiment
       id: patrick-merle
-    - x: "0,834"
-      y: "−0,245"
-      groupe: 0
+    - x: "0,83"
+      y: "−0,248"
+      groupe: 5
       nom: Christina Chevry
       detail: Christina Chevry — 18–24 ans, Commerce et vente
       id: christina-chevry
-    - x: "−0,526"
-      y: "−0,041"
+    - x: "−0,536"
+      y: "−0,04"
       groupe: 4
       nom: Frédérique Brugiroux
       detail: Frédérique Brugiroux — 45 ans et plus, Agriculture et nature
       id: frederique-brugiroux
-    - x: "1,947"
-      y: "1,103"
-      groupe: 5
+    - x: "1,968"
+      y: "1,111"
+      groupe: 2
       nom: Vivien Escouflaire
       detail: Vivien Escouflaire — 18–24 ans, Étudiants
       id: vivien-escouflaire
-    - x: "−0,779"
-      y: "0,652"
-      groupe: 2
+    - x: "−0,785"
+      y: "0,656"
+      groupe: 3
       nom: Alain Merdel
       detail: Alain Merdel — 45 ans et plus, Agriculture et nature
       id: alain-merdel
-    - x: "−0,043"
-      y: "−1,008"
-      groupe: 3
+    - x: "−0,047"
+      y: "−1,007"
+      groupe: 0
       nom: Virginie Mercadal Pioli
       detail: Virginie Mercadal Pioli — 35–39 ans, Arts, médias et image
       id: virginie-mercadal-pioli
-    - x: "0,834"
-      y: "−0,245"
-      groupe: 0
+    - x: "0,83"
+      y: "−0,248"
+      groupe: 5
       nom: Jennifer Lieutaud
       detail: Jennifer Lieutaud — 18–24 ans, Commerce et vente
       id: jennifer-lieutaud
-    - x: "−0,616"
-      y: "0,51"
+    - x: "−0,601"
+      y: "0,508"
       groupe: 4
       nom: Jean-Pierre Pigato
       detail: Jean-Pierre Pigato — 45 ans et plus, Encadrement et professions intellectuelles
       id: jean-pierre-pigato
-    - x: "0,867"
-      y: "−0,357"
+    - x: "0,862"
+      y: "−0,363"
       groupe: 4
       nom: Audrey Perez
       detail: Audrey Perez — 18–24 ans, Sans activité déclarée
       id: audrey-perez
     - x: "−0,357"
-      y: "0,06"
-      groupe: 2
+      y: "0,063"
+      groupe: 3
       nom: Boris Deltell
       detail: Boris Deltell — 30–34 ans, Arts, médias et image
       id: boris-deltell
-    - x: "0,647"
-      y: "0,29"
-      groupe: 0
+    - x: "0,649"
+      y: "0,289"
+      groupe: 5
       nom: Valentin D’Hoore
       detail: Valentin D’Hoore — 18–24 ans, Arts, médias et image
       id: valentin-d-hoore
-    - x: "−0,411"
-      y: "0,206"
-      groupe: 2
+    - x: "−0,412"
+      y: "0,209"
+      groupe: 3
       nom: Abdellah Akriche
       detail: Abdellah Akriche — 30–34 ans, Sport et coaching
       id: abdellah-akriche
-    - x: "−0,23"
-      y: "−0,08"
-      groupe: 2
+    - x: "−0,235"
+      y: "−0,078"
+      groupe: 3
       nom: Marine Plissonneau
       detail: Marine Plissonneau — 35–39 ans, Transport et logistique
       id: marine-plissonneau
-    - x: "0,074"
-      y: "−1,304"
-      groupe: 3
+    - x: "0,075"
+      y: "−1,3"
+      groupe: 0
       nom: Aurélie Gasser
       detail: Aurélie Gasser — 25–29 ans, Enseignement et éducation
       id: aurelie-gasser
-    - x: "−0,105"
-      y: "−0,634"
-      groupe: 2
+    - x: "−0,108"
+      y: "−0,633"
+      groupe: 3
       nom: Laurence Pizzocchia
       detail: Laurence Pizzocchia — 30–34 ans, Arts, médias et image
       id: laurence-pizzocchia
-    - x: "−0,178"
-      y: "−0,61"
-      groupe: 3
+    - x: "−0,174"
+      y: "−0,604"
+      groupe: 0
       nom: Kunlé M’Babacéré Pakorona
       detail: Kunlé M’Babacéré Pakorona — 25–29 ans, Enseignement et éducation
       id: kunle-m-babacere-pakorona
-    - x: "−0,174"
-      y: "−0,569"
+    - x: "−0,181"
+      y: "−0,572"
       groupe: 4
       nom: Véronique Bègue
       detail: Véronique Bègue — 45 ans et plus, Sans activité déclarée
       id: veronique-begue
     - x: "0,05"
-      y: "−0,832"
-      groupe: 3
+      y: "−0,831"
+      groupe: 0
       nom: Wafa El Mejjad
       detail: Wafa El Mejjad — 25–29 ans, Commerce et vente
       id: wafa-el-mejjad
-    - x: "−0,544"
-      y: "0,988"
-      groupe: 2
+    - x: "−0,545"
+      y: "0,992"
+      groupe: 3
       nom: Claude Dartois
       detail: Claude Dartois — 30–34 ans, Transport et logistique
       id: claude-dartois
-    - x: "−0,838"
-      y: "1,244"
+    - x: "−0,844"
+      y: "1,245"
       groupe: 1
       nom: Philippe Duron
       detail: Philippe Duron — 40–44 ans, Artisanat et bâtiment
       id: philippe-duron
     - x: "0,05"
-      y: "−0,832"
-      groupe: 3
+      y: "−0,831"
+      groupe: 0
       nom: Lisa Legouverneur
       detail: Lisa Legouverneur — 25–29 ans, Commerce et vente
       id: lisa-legouverneur
-    - x: "−0,363"
-      y: "−0,184"
+    - x: "−0,352"
+      y: "−0,188"
       groupe: 4
       nom: Catherine Barnier
       detail: Catherine Barnier — 45 ans et plus, Encadrement et professions intellectuelles
       id: catherine-barnier
-    - x: "0,579"
-      y: "1,04"
-      groupe: 0
+    - x: "0,581"
+      y: "1,037"
+      groupe: 5
       nom: Steve Lemercier
       detail: Steve Lemercier — 18–24 ans, Action et sécurité
       id: steve-lemercier
-    - x: "−0,616"
-      y: "0,51"
+    - x: "−0,601"
+      y: "0,508"
       groupe: 4
       nom: Gégé Icardi
       detail: Gégé Icardi — 45 ans et plus, Encadrement et professions intellectuelles
       id: gege-icardi
     - x: "0,063"
-      y: "−0,845"
-      groupe: 3
+      y: "−0,843"
+      groupe: 0
       nom: Naouel Hadjaf
       detail: Naouel Hadjaf — 25–29 ans, Sport et coaching
       id: naouel-hadjaf
-    - x: "−0,578"
-      y: "0,492"
-      groupe: 2
+    - x: "−0,563"
+      y: "0,491"
+      groupe: 3
       nom: Benoît Mahieux
       detail: Benoît Mahieux — 30–34 ans, Encadrement et professions intellectuelles
       id: benoit-mahieux
-    - x: "0,858"
-      y: "−0,716"
+    - x: "0,855"
+      y: "−0,718"
       groupe: 0
       nom: Délisia Fettasi
       detail: Délisia Fettasi — 18–24 ans, Enseignement et éducation
       id: delisia-fettasi
-    - x: "−0,251"
-      y: "−0,098"
-      groupe: 3
+    - x: "−0,256"
+      y: "−0,1"
+      groupe: 0
       nom: Caroline Matteucci
       detail: Caroline Matteucci — 40–44 ans, Sport et coaching
       id: caroline-matteucci
-    - x: "1,947"
-      y: "1,103"
-      groupe: 5
+    - x: "1,968"
+      y: "1,111"
+      groupe: 2
       nom: Maxime Boulet
       detail: Maxime Boulet — 18–24 ans, Étudiants
       id: maxime-boulet
-    - x: "0,594"
-      y: "0,436"
-      groupe: 0
+    - x: "0,595"
+      y: "0,435"
+      groupe: 5
       nom: Anthony Amar
       detail: Anthony Amar — 18–24 ans, Sport et coaching
       id: anthony-amar
-    - x: "−0,517"
+    - x: "−0,518"
       y: "0,609"
       groupe: 1
       nom: Olivier Moenaert
       detail: Olivier Moenaert — 40–44 ans, Commerce et vente
       id: olivier-moenaert
-    - x: "−0,085"
-      y: "−1,321"
-      groupe: 3
+    - x: "−0,09"
+      y: "−1,319"
+      groupe: 0
       nom: Florence Delbarre
       detail: Florence Delbarre — 35–39 ans, Enseignement et éducation
       id: florence-delbarre
-    - x: "−0,137"
-      y: "−0,587"
+    - x: "−0,144"
+      y: "−0,589"
       groupe: 4
       nom: Virginie Jarry
       detail: Virginie Jarry — 30–34 ans, Sans activité déclarée
       id: virginie-jarry
-    - x: "−0,23"
-      y: "−0,08"
-      groupe: 2
+    - x: "−0,235"
+      y: "−0,078"
+      groupe: 3
       nom: Patricia Morel
       detail: Patricia Morel — 35–39 ans, Transport et logistique
       id: patricia-morel
-    - x: "0,271"
-      y: "−1,292"
-      groupe: 3
+    - x: "0,275"
+      y: "−1,289"
+      groupe: 0
       nom: Alexandra Pouillon
       detail: Alexandra Pouillon — 25–29 ans, Restauration et hôtellerie
       id: alexandra-pouillon
-    - x: "0,426"
-      y: "0,722"
-      groupe: 0
+    - x: "0,443"
+      y: "0,717"
+      groupe: 5
       nom: Martin Bazin
       detail: Martin Bazin — 18–24 ans, Encadrement et professions intellectuelles
       id: martin-bazin
-    - x: "0,397"
+    - x: "0,404"
       y: "−1,106"
-      groupe: 3
+      groupe: 0
       nom: Ella Gbezan
       detail: Ella Gbezan — 25–29 ans, Santé
       id: ella-gbezan
-    - x: "−0,136"
-      y: "−0,298"
-      groupe: 3
+    - x: "−0,131"
+      y: "−0,293"
+      groupe: 0
       nom: Laurent Maistret
       detail: Laurent Maistret — 25–29 ans, Arts, médias et image
       id: laurent-maistret
-    - x: "−0,203"
-      y: "−0,241"
-      groupe: 2
+    - x: "−0,2"
+      y: "−0,238"
+      groupe: 3
       nom: Teheiura Teahui
       detail: Teheiura Teahui — 30–34 ans, Restauration et hôtellerie
       id: teheiura-teahui
-    - x: "−0,834"
-      y: "1,024"
-      groupe: 2
+    - x: "−0,84"
+      y: "1,026"
+      groupe: 3
       nom: Gérard Urdampilleta
       detail: Gérard Urdampilleta — 40–44 ans, Agriculture et nature
       id: gerard-urdampilleta
-    - x: "−0,492"
-      y: "0,16"
+    - x: "−0,502"
+      y: "0,161"
       groupe: 1
       nom: Mélanie Boimare
       detail: Mélanie Boimare — 30–34 ans, Artisanat et bâtiment
       id: melanie-boimare
-    - x: "−0,581"
-      y: "1,007"
-      groupe: 2
+    - x: "−0,582"
+      y: "1,009"
+      groupe: 3
       nom: Mickaël Kalfallah
       detail: Mickaël Kalfallah — 45 ans et plus, Transport et logistique
       id: mickael-kalfallah
-    - x: "−0,419"
-      y: "0,188"
+    - x: "−0,407"
+      y: "0,182"
       groupe: 1
       nom: Sara Tallon
       detail: Sara Tallon — 40–44 ans, Encadrement et professions intellectuelles
       id: sara-tallon
-    - x: "−0,363"
-      y: "−0,184"
+    - x: "−0,352"
+      y: "−0,188"
       groupe: 4
       nom: Nadine De Carpentry
       detail: Nadine De Carpentry — 45 ans et plus, Encadrement et professions intellectuelles
       id: nadine-de-carpentry
-    - x: "−0,075"
-      y: "−0,961"
+    - x: "−0,082"
+      y: "−0,963"
       groupe: 4
       nom: Élodie Saleder
       detail: Élodie Saleder — 35–39 ans, Sans activité déclarée
       id: elodie-saleder
-    - x: "0,679"
-      y: "0,028"
-      groupe: 0
+    - x: "0,692"
+      y: "0,021"
+      groupe: 5
       nom: Marie Parmentier
       detail: Marie Parmentier — 18–24 ans, Encadrement et professions intellectuelles
       id: marie-parmentier
-    - x: "0,26"
+    - x: "0,255"
       y: "1,084"
       groupe: 1
       nom: Anthony Dito
       detail: Anthony Dito — 18–24 ans, Artisanat et bâtiment
       id: anthony-dito
-    - x: "−0,683"
-      y: "0,479"
+    - x: "−0,69"
+      y: "0,483"
       groupe: 1
       nom: Javier Rodriguez
       detail: Javier Rodriguez — 35–39 ans, Artisanat et bâtiment
       id: javier-rodriguez
-    - x: "−0,323"
-      y: "0,631"
-      groupe: 2
+    - x: "−0,319"
+      y: "0,636"
+      groupe: 3
       nom: Namadia Thaï Thaï
       detail: Namadia Thaï Thaï — 25–29 ans, Transport et logistique
       id: namadia-thai-thai
-    - x: "0,713"
-      y: "0,525"
-      groupe: 0
+    - x: "0,71"
+      y: "0,522"
+      groupe: 5
       nom: Marylou Sidibé
       detail: Marylou Sidibé — 18–24 ans, Transport et logistique
       id: marylou-sidibe
-    - x: "−0,264"
-      y: "−0,085"
+    - x: "−0,269"
+      y: "−0,087"
       groupe: 1
       nom: Catherine Perez
       detail: Catherine Perez — 40–44 ans, Commerce et vente
       id: catherine-perez
-    - x: "0,846"
-      y: "−0,257"
-      groupe: 0
+    - x: "0,844"
+      y: "−0,261"
+      groupe: 5
       nom: Camille Sold
       detail: Camille Sold — 18–24 ans, Sport et coaching
       id: camille-sold
-    - x: "1,947"
-      y: "1,103"
-      groupe: 5
+    - x: "1,968"
+      y: "1,111"
+      groupe: 2
       nom: Charles Clément
       detail: Charles Clément — 18–24 ans, Étudiants
       id: charles-clement
@@ -22185,1334 +22185,1334 @@ modeles:
       nom: Thierry Villette
       detail: Thierry Villette — 40–44 ans, Arts, médias et image
       id: thierry-villette
-    - x: "0,176"
-      y: "−0,749"
-      groupe: 2
+    - x: "0,178"
+      y: "−0,75"
+      groupe: 3
       nom: Myriam Modde
       detail: Myriam Modde — 30–34 ans, Santé
       id: myriam-modde
-    - x: "−0,427"
-      y: "0,125"
+    - x: "−0,43"
+      y: "0,124"
       groupe: 4
       nom: Bernard Deniaud
       detail: Bernard Deniaud — 45 ans et plus, Sans activité déclarée
       id: bernard-deniaud
-    - x: "−0,838"
-      y: "1,244"
+    - x: "−0,844"
+      y: "1,245"
       groupe: 1
       nom: Philippe Bizet
       detail: Philippe Bizet — 40–44 ans, Artisanat et bâtiment
       id: philippe-bizet
-    - x: "−0,427"
-      y: "−0,434"
-      groupe: 2
+    - x: "−0,437"
+      y: "−0,431"
+      groupe: 3
       nom: Vanessa Alvarez
       detail: Vanessa Alvarez — 35–39 ans, Agriculture et nature
       id: vanessa-alvarez
     - x: "−0,357"
-      y: "0,06"
-      groupe: 2
+      y: "0,063"
+      groupe: 3
       nom: Brice Martinet
       detail: Brice Martinet — 30–34 ans, Arts, médias et image
       id: brice-martinet
-    - x: "−0,741"
-      y: "0,634"
-      groupe: 2
+    - x: "−0,748"
+      y: "0,639"
+      groupe: 3
       nom: Ugo Lartiche
       detail: Ugo Lartiche — 30–34 ans, Agriculture et nature
       id: ugo-lartiche
-    - x: "−0,526"
-      y: "−0,041"
+    - x: "−0,536"
+      y: "−0,04"
       groupe: 4
       nom: Babeth Delettre
       detail: Babeth Delettre — 45 ans et plus, Agriculture et nature
       id: babeth-delettre
-    - x: "−0,075"
-      y: "−0,961"
+    - x: "−0,082"
+      y: "−0,963"
       groupe: 4
       nom: Marie-Anne Queniart
       detail: Marie-Anne Queniart — 35–39 ans, Sans activité déclarée
       id: marie-anne-queniart
-    - x: "−0,357"
-      y: "0,134"
+    - x: "−0,337"
+      y: "0,135"
       groupe: 1
       nom: Benoît Jorion-Fahy
       detail: Benoît Jorion-Fahy — 25–29 ans, Encadrement et professions intellectuelles
       id: benoit-jorion-fahy
-    - x: "2,2"
-      y: "0,409"
-      groupe: 5
+    - x: "2,217"
+      y: "0,415"
+      groupe: 2
       nom: Manon Allender
       detail: Manon Allender — 18–24 ans, Étudiants
       id: manon-allender
-    - x: "1,947"
-      y: "1,103"
-      groupe: 5
+    - x: "1,968"
+      y: "1,111"
+      groupe: 2
       nom: Loïc Crespin
       detail: Loïc Crespin — 18–24 ans, Étudiants
       id: loic-crespin
-    - x: "−0,196"
-      y: "−0,469"
+    - x: "−0,2"
+      y: "−0,47"
       groupe: 4
       nom: Isabelle Fidanza
       detail: Isabelle Fidanza — 45 ans et plus, Sport et coaching
       id: isabelle-fidanza
-    - x: "2,2"
-      y: "0,409"
-      groupe: 5
+    - x: "2,217"
+      y: "0,415"
+      groupe: 2
       nom: Margot Perrot Houwaer
       detail: Margot Perrot Houwaer — 18–24 ans, Étudiants
       id: margot-perrot-houwaer
-    - x: "−0,202"
-      y: "−0,139"
-      groupe: 3
+    - x: "−0,199"
+      y: "−0,135"
+      groupe: 0
       nom: Alban Pellegrin
       detail: Alban Pellegrin — 25–29 ans, Commerce et vente
       id: alban-pellegrin
-    - x: "−0,208"
-      y: "−0,456"
+    - x: "−0,213"
+      y: "−0,458"
       groupe: 4
       nom: Corinne Bargoin Samuelian
       detail: Corinne Bargoin Samuelian — 45 ans et plus, Commerce et vente
       id: corinne-bargoin-samuelian
-    - x: "−0,517"
+    - x: "−0,502"
       y: "0,117"
       groupe: 1
       nom: Cédric Giosserand-Lucas
       detail: Cédric Giosserand-Lucas — 35–39 ans, Encadrement et professions intellectuelles
       id: cedric-giosserand-lucas
-    - x: "2,2"
-      y: "0,409"
-      groupe: 5
+    - x: "2,217"
+      y: "0,415"
+      groupe: 2
       nom: Charlaine Cuny
       detail: Charlaine Cuny — 18–24 ans, Étudiants
       id: charlaine-cuny
-    - x: "−0,323"
-      y: "0,631"
-      groupe: 2
+    - x: "−0,319"
+      y: "0,636"
+      groupe: 3
       nom: Nessim Kouachi
       detail: Nessim Kouachi — 25–29 ans, Transport et logistique
       id: nessim-kouachi
-    - x: "−0,203"
-      y: "−0,241"
-      groupe: 2
+    - x: "−0,2"
+      y: "−0,238"
+      groupe: 3
       nom: Jeff Santiago
       detail: Jeff Santiago — 30–34 ans, Restauration et hôtellerie
       id: jeff-santiago
-    - x: "−0,578"
-      y: "0,492"
-      groupe: 2
+    - x: "−0,563"
+      y: "0,491"
+      groupe: 3
       nom: Christophe Pendon
       detail: Christophe Pendon — 30–34 ans, Encadrement et professions intellectuelles
       id: christophe-pendon
-    - x: "−0,147"
-      y: "−0,946"
-      groupe: 3
+    - x: "−0,151"
+      y: "−0,945"
+      groupe: 0
       nom: Jessica Potel
       detail: Jessica Potel — 30–34 ans, Enseignement et éducation
       id: jessica-potel
-    - x: "1,947"
-      y: "1,103"
-      groupe: 5
+    - x: "1,968"
+      y: "1,111"
+      groupe: 2
       nom: Sébastien Ballesteros
       detail: Sébastien Ballesteros — 18–24 ans, Étudiants
       id: sebastien-ballesteros
-    - x: "−0,616"
-      y: "0,51"
+    - x: "−0,601"
+      y: "0,508"
       groupe: 4
       nom: Bruno Peisey
       detail: Bruno Peisey — 45 ans et plus, Encadrement et professions intellectuelles
       id: bruno-peisey
-    - x: "−0,105"
-      y: "−0,559"
-      groupe: 3
+    - x: "−0,088"
+      y: "−0,561"
+      groupe: 0
       nom: Mélissa Bastin
       detail: Mélissa Bastin — 25–29 ans, Encadrement et professions intellectuelles
       id: melissa-bastin
-    - x: "−0,142"
+    - x: "−0,145"
       y: "−0,616"
       groupe: 4
       nom: Chantal Ménard
       detail: Chantal Ménard — 45 ans et plus, Arts, médias et image
       id: chantal-menard
-    - x: "−0,672"
-      y: "0,882"
+    - x: "−0,656"
+      y: "0,878"
       groupe: 1
       nom: Marc Rambaud
       detail: Marc Rambaud — 40–44 ans, Encadrement et professions intellectuelles
       id: marc-rambaud
-    - x: "0,271"
-      y: "−1,292"
-      groupe: 3
+    - x: "0,275"
+      y: "−1,289"
+      groupe: 0
       nom: Charlie Vincent-Mussard
       detail: Charlie Vincent-Mussard — 25–29 ans, Restauration et hôtellerie
       id: charlie-vincent-mussard
-    - x: "−0,085"
-      y: "−1,321"
-      groupe: 3
+    - x: "−0,09"
+      y: "−1,319"
+      groupe: 0
       nom: Laurence Corbellotti
       detail: Laurence Corbellotti — 35–39 ans, Enseignement et éducation
       id: laurence-corbellotti
-    - x: "1,947"
-      y: "1,103"
-      groupe: 5
+    - x: "1,968"
+      y: "1,111"
+      groupe: 2
       nom: Marius Torterat
       detail: Marius Torterat — 18–24 ans, Étudiants
       id: marius-torterat
-    - x: "−0,24"
-      y: "−0,556"
-      groupe: 3
+    - x: "−0,244"
+      y: "−0,557"
+      groupe: 0
       nom: Céline Parat-Yeghiayan
       detail: Céline Parat-Yeghiayan — 40–44 ans, Enseignement et éducation
       id: celine-parat-yeghiayan
-    - x: "−0,349"
-      y: "−0,168"
-      groupe: 2
+    - x: "−0,35"
+      y: "−0,165"
+      groupe: 3
       nom: Huw Francis
       detail: Huw Francis — 35–39 ans, Sport et coaching
       id: huw-francis
-    - x: "−0,196"
-      y: "−0,469"
+    - x: "−0,2"
+      y: "−0,47"
       groupe: 4
       nom: Carole Poncelet
       detail: Carole Poncelet — 45 ans et plus, Sport et coaching
       id: carole-poncelet
-    - x: "−0,21"
-      y: "0,134"
+    - x: "−0,214"
+      y: "0,132"
       groupe: 4
       nom: Lolo Facione
       detail: Lolo Facione — 45 ans et plus, Action et sécurité
       id: lolo-facione
-    - x: "−0,461"
-      y: "0,237"
+    - x: "−0,462"
+      y: "0,239"
       groupe: 4
       nom: Amir Doukhan
       detail: Amir Doukhan — 45 ans et plus, Commerce et vente
       id: amir-doukhan
-    - x: "2,2"
-      y: "0,409"
-      groupe: 5
+    - x: "2,217"
+      y: "0,415"
+      groupe: 2
       nom: Cassandre Girard
       detail: Cassandre Girard — 18–24 ans, Étudiants
       id: cassandre-girard
-    - x: "−0,357"
-      y: "0,134"
+    - x: "−0,337"
+      y: "0,135"
       groupe: 1
       nom: Romain Palazzetti
       detail: Romain Palazzetti — 25–29 ans, Encadrement et professions intellectuelles
       id: romain-palazzetti
-    - x: "−0,524"
-      y: "0,496"
+    - x: "−0,525"
+      y: "0,502"
       groupe: 1
       nom: Julien Castro
       detail: Julien Castro — 25–29 ans, Artisanat et bâtiment
       id: julien-castro
-    - x: "1,417"
-      y: "−0,179"
-      groupe: 0
+    - x: "1,436"
+      y: "−0,167"
+      groupe: 5
       nom: Laureen Hugel
       detail: Laureen Hugel — 25–29 ans, Étudiants
       id: laureen-hugel
-    - x: "−0,578"
-      y: "0,492"
-      groupe: 2
+    - x: "−0,563"
+      y: "0,491"
+      groupe: 3
       nom: Steve Best
       detail: Steve Best — 30–34 ans, Encadrement et professions intellectuelles
       id: steve-best
-    - x: "−0,171"
+    - x: "−0,176"
       y: "−0,475"
-      groupe: 3
+      groupe: 0
       nom: Carine Cazals
       detail: Carine Cazals — 30–34 ans, Commerce et vente
       id: carine-cazals
-    - x: "0,048"
+    - x: "0,049"
       y: "−0,242"
-      groupe: 3
+      groupe: 0
       nom: Karima Neggaz
       detail: Karima Neggaz — 25–29 ans, Action et sécurité
       id: karima-neggaz
     - x: "−0,357"
-      y: "0,06"
-      groupe: 2
+      y: "0,063"
+      groupe: 3
       nom: Nicolas Rouyé
       detail: Nicolas Rouyé — 30–34 ans, Arts, médias et image
       id: nicolas-rouye
-    - x: "−0,616"
-      y: "0,51"
+    - x: "−0,601"
+      y: "0,508"
       groupe: 4
       nom: Alain Chrisostome
       detail: Alain Chrisostome — 45 ans et plus, Encadrement et professions intellectuelles
       id: alain-chrisostome
-    - x: "0,117"
-      y: "−0,992"
-      groupe: 3
+    - x: "0,118"
+      y: "−0,989"
+      groupe: 0
       nom: Cécilia Siharaj
       detail: Cécilia Siharaj — 25–29 ans, Arts, médias et image
       id: cecilia-siharaj
-    - x: "−0,519"
-      y: "1,199"
+    - x: "−0,518"
+      y: "1,198"
       groupe: 1
       nom: Gabriel Gubbels
       detail: Gabriel Gubbels — 40–44 ans, Action et sécurité
       id: gabriel-gubbels
-    - x: "−0,461"
-      y: "0,237"
+    - x: "−0,462"
+      y: "0,239"
       groupe: 4
       nom: Pascal Salviani
       detail: Pascal Salviani — 45 ans et plus, Commerce et vente
       id: pascal-salviani
     - x: "0,063"
-      y: "−0,845"
-      groupe: 3
+      y: "−0,843"
+      groupe: 0
       nom: Wendy Gervois
       detail: Wendy Gervois — 25–29 ans, Sport et coaching
       id: wendy-gervois
     - x: "0,111"
-      y: "−1,309"
-      groupe: 3
+      y: "−1,308"
+      groupe: 0
       nom: Myriam Zenasni
       detail: Myriam Zenasni — 35–39 ans, Restauration et hôtellerie
       id: myriam-zenasni
-    - x: "−0,171"
+    - x: "−0,176"
       y: "−0,475"
-      groupe: 3
+      groupe: 0
       nom: Amandine Schmitt
       detail: Amandine Schmitt — 30–34 ans, Commerce et vente
       id: amandine-schmitt
-    - x: "−0,208"
-      y: "−0,456"
+    - x: "−0,213"
+      y: "−0,458"
       groupe: 4
       nom: Sophie Le Nestic Sabattier
       detail: Sophie Le Nestic Sabattier — 45 ans et plus, Commerce et vente
       id: sophie-le-nestic-sabattier
-    - x: "0,176"
-      y: "−0,749"
-      groupe: 2
+    - x: "0,178"
+      y: "−0,75"
+      groupe: 3
       nom: Sandrine Bouzekri
       detail: Sandrine Bouzekri — 30–34 ans, Santé
       id: sandrine-bouzekri
-    - x: "−0,517"
+    - x: "−0,502"
       y: "0,117"
       groupe: 1
       nom: Laurent Mischkind
       detail: Laurent Mischkind — 35–39 ans, Encadrement et professions intellectuelles
       id: laurent-mischkind
-    - x: "−0,782"
-      y: "0,872"
+    - x: "−0,789"
+      y: "0,875"
       groupe: 1
       nom: Jean-Luc Duboscq
       detail: Jean-Luc Duboscq — 45 ans et plus, Artisanat et bâtiment
       id: jean-luc-duboscq
-    - x: "−0,672"
-      y: "0,882"
+    - x: "−0,656"
+      y: "0,878"
       groupe: 1
       nom: Jérôme Merlier
       detail: Jérôme Merlier — 40–44 ans, Encadrement et professions intellectuelles
       id: jerome-merlier
-    - x: "−0,424"
-      y: "0,219"
-      groupe: 2
+    - x: "−0,425"
+      y: "0,221"
+      groupe: 3
       nom: Lau Émilien
       detail: Lau Émilien — 30–34 ans, Commerce et vente
       id: lau-emilien
-    - x: "−0,105"
-      y: "−0,634"
-      groupe: 2
+    - x: "−0,108"
+      y: "−0,633"
+      groupe: 3
       nom: Béryl Libault de la Chevasnerie
       detail: Béryl Libault de la Chevasnerie — 30–34 ans, Arts, médias et image
       id: beryl-libault-de-la-chevasnerie
-    - x: "−0,419"
-      y: "0,188"
+    - x: "−0,407"
+      y: "0,182"
       groupe: 1
       nom: Alexandra Pharisien
       detail: Alexandra Pharisien — 40–44 ans, Encadrement et professions intellectuelles
       id: alexandra-pharisien
-    - x: "−0,519"
-      y: "1,199"
+    - x: "−0,518"
+      y: "1,198"
       groupe: 1
       nom: Yannick Delalleau
       detail: Yannick Delalleau — 40–44 ans, Action et sécurité
       id: yannick-delalleau
-    - x: "0,238"
-      y: "−1,123"
-      groupe: 3
+    - x: "0,24"
+      y: "−1,124"
+      groupe: 0
       nom: Julie Navarro
       detail: Julie Navarro — 35–39 ans, Santé
       id: julie-navarro
-    - x: "1,164"
-      y: "0,515"
-      groupe: 0
+    - x: "1,187"
+      y: "0,529"
+      groupe: 5
       nom: Jérémy Raffin
       detail: Jérémy Raffin — 25–29 ans, Étudiants
       id: jeremy-raffin
     - x: "−0,394"
-      y: "0,078"
+      y: "0,08"
       groupe: 4
       nom: Stéphane Cipolla
       detail: Stéphane Cipolla — 45 ans et plus, Arts, médias et image
       id: stephane-cipolla
-    - x: "−0,137"
-      y: "−0,587"
+    - x: "−0,144"
+      y: "−0,589"
       groupe: 4
       nom: Ludivine Wiart
       detail: Ludivine Wiart — 30–34 ans, Sans activité déclarée
       id: ludivine-wiart
-    - x: "0,846"
-      y: "−0,257"
-      groupe: 0
+    - x: "0,844"
+      y: "−0,261"
+      groupe: 5
       nom: Candice Boisson
       detail: Candice Boisson — 18–24 ans, Sport et coaching
       id: candice-boisson
-    - x: "−0,782"
-      y: "0,872"
+    - x: "−0,789"
+      y: "0,875"
       groupe: 1
       nom: Bruno Troester
       detail: Bruno Troester — 45 ans et plus, Artisanat et bâtiment
       id: bruno-troester
-    - x: "−0,323"
-      y: "0,631"
-      groupe: 2
+    - x: "−0,319"
+      y: "0,636"
+      groupe: 3
       nom: Freddy Bolzer
       detail: Freddy Bolzer — 25–29 ans, Transport et logistique
       id: freddy-bolzer
-    - x: "2,2"
-      y: "0,409"
+    - x: "0,692"
+      y: "0,021"
       groupe: 5
       nom: Jesta Hillmann
-      detail: Jesta Hillmann — 18–24 ans, Étudiants
+      detail: Jesta Hillmann — 18–24 ans, Encadrement et professions intellectuelles
       id: jesta-hillmann
-    - x: "0,594"
-      y: "0,436"
-      groupe: 0
+    - x: "0,595"
+      y: "0,435"
+      groupe: 5
       nom: Benoît Assadi
       detail: Benoît Assadi — 18–24 ans, Sport et coaching
       id: benoit-assadi
     - x: "0,581"
-      y: "0,449"
-      groupe: 0
+      y: "0,448"
+      groupe: 5
       nom: Dylan Thiry
       detail: Dylan Thiry — 18–24 ans, Commerce et vente
       id: dylan-thiry
-    - x: "−0,208"
-      y: "−0,456"
+    - x: "−0,213"
+      y: "−0,458"
       groupe: 4
       nom: Sabine Ollivier
       detail: Sabine Ollivier — 45 ans et plus, Commerce et vente
       id: sabine-ollivier
-    - x: "−0,171"
+    - x: "−0,176"
       y: "−0,475"
-      groupe: 3
+      groupe: 0
       nom: Hada Ghoulam
       detail: Hada Ghoulam — 30–34 ans, Commerce et vente
       id: hada-ghoulam
-    - x: "−0,427"
-      y: "0,125"
+    - x: "−0,43"
+      y: "0,124"
       groupe: 4
       nom: Franck Michel
       detail: Franck Michel — 45 ans et plus, Sans activité déclarée
       id: franck-michel
-    - x: "0,074"
-      y: "−1,304"
-      groupe: 3
+    - x: "0,075"
+      y: "−1,3"
+      groupe: 0
       nom: Félicie Greugny
       detail: Félicie Greugny — 25–29 ans, Enseignement et éducation
       id: felicie-greugny
-    - x: "−0,178"
-      y: "−0,61"
-      groupe: 3
+    - x: "−0,174"
+      y: "−0,604"
+      groupe: 0
       nom: Brahma Sadeyen
       detail: Brahma Sadeyen — 25–29 ans, Enseignement et éducation
       id: brahma-sadeyen
-    - x: "0,801"
+    - x: "0,807"
       y: "−0,011"
-      groupe: 0
+      groupe: 5
       nom: Bastien Muñez
       detail: Bastien Muñez — 18–24 ans, Restauration et hôtellerie
       id: bastien-munez
-    - x: "−0,271"
-      y: "−0,198"
+    - x: "−0,276"
+      y: "−0,195"
       groupe: 1
       nom: Maria Beccaris
       detail: Maria Beccaris — 25–29 ans, Artisanat et bâtiment
       id: maria-beccaris
-    - x: "−0,461"
-      y: "0,237"
+    - x: "−0,462"
+      y: "0,239"
       groupe: 4
       nom: Yves Rey
       detail: Yves Rey — 45 ans et plus, Commerce et vente
       id: yves-rey
-    - x: "−0,683"
-      y: "0,479"
+    - x: "−0,69"
+      y: "0,483"
       groupe: 1
       nom: Yassin Metiri
       detail: Yassin Metiri — 35–39 ans, Artisanat et bâtiment
       id: yassin-metiri
-    - x: "−0,043"
-      y: "−1,008"
-      groupe: 3
+    - x: "−0,047"
+      y: "−1,007"
+      groupe: 0
       nom: Manuella Baudet
       detail: Manuella Baudet — 35–39 ans, Arts, médias et image
       id: manuella-baudet
-    - x: "−0,424"
-      y: "0,219"
-      groupe: 2
+    - x: "−0,425"
+      y: "0,221"
+      groupe: 3
       nom: Sandro Gonzalez Schena
       detail: Sandro Gonzalez Schena — 30–34 ans, Commerce et vente
       id: sandro-gonzalez-schena
     - x: "−0,044"
-      y: "−0,545"
-      groupe: 3
+      y: "−0,546"
+      groupe: 0
       nom: Marjorie Rousseeuw
       detail: Marjorie Rousseeuw — 40–44 ans, Restauration et hôtellerie
       id: marjorie-rousseeuw
     - x: "0,581"
-      y: "0,449"
-      groupe: 0
+      y: "0,448"
+      groupe: 5
       nom: Corentin Albertini
       detail: Corentin Albertini — 18–24 ans, Commerce et vente
       id: corentin-albertini
     - x: "0,111"
-      y: "−1,309"
-      groupe: 3
+      y: "−1,308"
+      groupe: 0
       nom: Kelly Beaugrand
       detail: Kelly Beaugrand — 35–39 ans, Restauration et hôtellerie
       id: kelly-beaugrand
-    - x: "−0,097"
-      y: "−0,862"
-      groupe: 3
+    - x: "−0,101"
+      y: "−0,861"
+      groupe: 0
       nom: Claire Pradayrol
       detail: Claire Pradayrol — 35–39 ans, Sport et coaching
       id: claire-pradayrol
-    - x: "−0,349"
-      y: "−0,168"
-      groupe: 2
+    - x: "−0,35"
+      y: "−0,165"
+      groupe: 3
       nom: Sébastien Gottiniaux
       detail: Sébastien Gottiniaux — 35–39 ans, Sport et coaching
       id: sebastien-gottiniaux
-    - x: "2,2"
-      y: "0,409"
-      groupe: 5
+    - x: "2,217"
+      y: "0,415"
+      groupe: 2
       nom: Mathilde Chevalier
       detail: Mathilde Chevalier — 18–24 ans, Étudiants
       id: mathilde-chevalier
-    - x: "−0,411"
-      y: "0,206"
-      groupe: 2
+    - x: "−0,412"
+      y: "0,209"
+      groupe: 3
       nom: Vincent Roux
       detail: Vincent Roux — 30–34 ans, Sport et coaching
       id: vincent-roux
     - x: "0,063"
-      y: "−0,845"
-      groupe: 3
+      y: "−0,843"
+      groupe: 0
       nom: Clémentine Jullien
       detail: Clémentine Jullien — 25–29 ans, Sport et coaching
       id: clementine-jullien
-    - x: "−0,517"
+    - x: "−0,518"
       y: "0,609"
       groupe: 1
       nom: Frédéric Blancher
       detail: Frédéric Blancher — 40–44 ans, Commerce et vente
       id: frederic-blancher
-    - x: "1,18"
-      y: "−0,519"
-      groupe: 0
+    - x: "1,185"
+      y: "−0,524"
+      groupe: 5
       nom: Marine Alves
       detail: Marine Alves — 18–24 ans, Santé
       id: marine-alves
-    - x: "−0,264"
-      y: "−0,576"
-      groupe: 3
+    - x: "−0,253"
+      y: "−0,579"
+      groupe: 0
       nom: Delphine Bruyère
       detail: Delphine Bruyère — 35–39 ans, Encadrement et professions intellectuelles
       id: delphine-bruyere
-    - x: "1,947"
-      y: "1,103"
-      groupe: 5
+    - x: "1,968"
+      y: "1,111"
+      groupe: 2
       nom: Thomas Hébert
       detail: Thomas Hébert — 18–24 ans, Étudiants
       id: thomas-hebert
-    - x: "1,417"
-      y: "−0,179"
-      groupe: 0
+    - x: "1,436"
+      y: "−0,167"
+      groupe: 5
       nom: Mel Moresve
       detail: Mel Moresve — 25–29 ans, Étudiants
       id: mel-moresve
-    - x: "0,426"
-      y: "0,722"
-      groupe: 0
+    - x: "0,443"
+      y: "0,717"
+      groupe: 5
       nom: Théotime Bernardin
       detail: Théotime Bernardin — 18–24 ans, Encadrement et professions intellectuelles
       id: theotime-bernardin
-    - x: "2,2"
-      y: "0,409"
-      groupe: 5
+    - x: "2,217"
+      y: "0,415"
+      groupe: 2
       nom: Marta Molino
       detail: Marta Molino — 18–24 ans, Étudiants
       id: marta-molino
-    - x: "2,2"
-      y: "0,409"
-      groupe: 5
+    - x: "2,217"
+      y: "0,415"
+      groupe: 2
       nom: May Peitavi
       detail: May Peitavi — 18–24 ans, Étudiants
       id: may-peitavi
-    - x: "−0,326"
-      y: "−0,202"
-      groupe: 2
+    - x: "−0,314"
+      y: "−0,205"
+      groupe: 3
       nom: Caroline Demartis
       detail: Caroline Demartis — 30–34 ans, Encadrement et professions intellectuelles
       id: caroline-demartis
-    - x: "−0,616"
-      y: "0,51"
+    - x: "−0,601"
+      y: "0,508"
       groupe: 4
       nom: Manu Delanghe
       detail: Manu Delanghe — 45 ans et plus, Encadrement et professions intellectuelles
       id: manu-delanghe
-    - x: "−0,136"
-      y: "−0,298"
-      groupe: 3
+    - x: "−0,131"
+      y: "−0,293"
+      groupe: 0
       nom: Tugdual Paul
       detail: Tugdual Paul — 25–29 ans, Arts, médias et image
       id: tugdual-paul
     - x: "0,581"
-      y: "0,449"
-      groupe: 0
+      y: "0,448"
+      groupe: 5
       nom: Marvyn Leone
       detail: Marvyn Leone — 18–24 ans, Commerce et vente
       id: marvyn-leone
-    - x: "−0,637"
-      y: "1,378"
+    - x: "−0,638"
+      y: "1,379"
       groupe: 1
       nom: Sébastien Mériaux
       detail: Sébastien Mériaux — 40–44 ans, Transport et logistique
       id: sebastien-meriaux
     - x: "−0,437"
-      y: "−0,235"
+      y: "−0,231"
       groupe: 4
       nom: Fabian Rocha Rocha
       detail: Fabian Rocha Rocha — 45 ans et plus, Enseignement et éducation
       id: fabian-rocha-rocha
-    - x: "−0,141"
-      y: "−0,615"
-      groupe: 3
+    - x: "−0,138"
+      y: "−0,612"
+      groupe: 0
       nom: Maxime Stafrach
       detail: Maxime Stafrach — 35–39 ans, Restauration et hôtellerie
       id: maxime-stafrach
-    - x: "−0,137"
-      y: "−0,587"
+    - x: "−0,144"
+      y: "−0,589"
       groupe: 4
       nom: Mélanie Moret
       detail: Mélanie Moret — 30–34 ans, Sans activité déclarée
       id: melanie-moret
-    - x: "−0,411"
-      y: "0,206"
-      groupe: 2
+    - x: "−0,412"
+      y: "0,209"
+      groupe: 3
       nom: Romain Delaroche
       detail: Romain Delaroche — 30–34 ans, Sport et coaching
       id: romain-delaroche
-    - x: "−0,363"
-      y: "−0,184"
+    - x: "−0,352"
+      y: "−0,188"
       groupe: 4
       nom: Marguerite Leblanc
       detail: Marguerite Leblanc — 45 ans et plus, Encadrement et professions intellectuelles
       id: marguerite-leblanc
-    - x: "−0,419"
-      y: "0,188"
+    - x: "−0,407"
+      y: "0,182"
       groupe: 1
       nom: Sandrine Dubourdy
       detail: Sandrine Dubourdy — 40–44 ans, Encadrement et professions intellectuelles
       id: sandrine-dubourdy
-    - x: "0,117"
-      y: "−0,992"
-      groupe: 3
+    - x: "0,118"
+      y: "−0,989"
+      groupe: 0
       nom: Magalie Gustave
       detail: Magalie Gustave — 25–29 ans, Arts, médias et image
       id: magalie-gustave
-    - x: "2,2"
-      y: "0,409"
-      groupe: 5
+    - x: "2,217"
+      y: "0,415"
+      groupe: 2
       nom: Tiffany Gounin
       detail: Tiffany Gounin — 18–24 ans, Étudiants
       id: tiffany-gounin
-    - x: "1,947"
-      y: "1,103"
-      groupe: 5
+    - x: "1,968"
+      y: "1,111"
+      groupe: 2
       nom: André Deleplace
       detail: André Deleplace — 18–24 ans, Étudiants
       id: andre-deleplace
-    - x: "0,846"
-      y: "−0,257"
-      groupe: 0
+    - x: "0,844"
+      y: "−0,261"
+      groupe: 5
       nom: Aliséa Lecomte
       detail: Aliséa Lecomte — 18–24 ans, Sport et coaching
       id: alisea-lecomte
-    - x: "−0,142"
+    - x: "−0,145"
       y: "−0,616"
       groupe: 4
       nom: Carinne Elka-Dioza
       detail: Carinne Elka-Dioza — 45 ans et plus, Arts, médias et image
       id: carinne-elka-dioza
-    - x: "−0,109"
+    - x: "−0,114"
       y: "−0,849"
-      groupe: 3
+      groupe: 0
       nom: Émilie Tybot
       detail: Émilie Tybot — 35–39 ans, Commerce et vente
       id: emilie-tybot
-    - x: "−0,205"
-      y: "0,452"
+    - x: "−0,2"
+      y: "0,455"
       groupe: 1
       nom: Victor Rollinger
       detail: Victor Rollinger — 25–29 ans, Action et sécurité
       id: victor-rollinger
-    - x: "−0,489"
-      y: "−0,06"
-      groupe: 2
+    - x: "−0,499"
+      y: "−0,057"
+      groupe: 3
       nom: Chloé Chaize
       detail: Chloé Chaize — 30–34 ans, Agriculture et nature
       id: chloe-chaize
-    - x: "−0,461"
-      y: "0,237"
+    - x: "−0,462"
+      y: "0,239"
       groupe: 4
       nom: Xavier Vançon
       detail: Xavier Vançon — 45 ans et plus, Commerce et vente
       id: xavier-vancon
     - x: "−0,394"
-      y: "0,078"
+      y: "0,08"
       groupe: 4
       nom: Frédéric Blanchard
       detail: Frédéric Blanchard — 45 ans et plus, Arts, médias et image
       id: frederic-blanchard
-    - x: "−0,202"
-      y: "−0,139"
-      groupe: 3
+    - x: "−0,199"
+      y: "−0,135"
+      groupe: 0
       nom: Alexandre André
       detail: Alexandre André — 25–29 ans, Commerce et vente
       id: alexandre-andre
     - x: "0,063"
-      y: "−0,845"
-      groupe: 3
+      y: "−0,843"
+      groupe: 0
       nom: Béatrice Kabore
       detail: Béatrice Kabore — 25–29 ans, Sport et coaching
       id: beatrice-kabore
-    - x: "1,947"
-      y: "1,103"
-      groupe: 5
+    - x: "1,968"
+      y: "1,111"
+      groupe: 2
       nom: Brice Chauvinc
       detail: Brice Chauvinc — 18–24 ans, Étudiants
       id: brice-chauvinc
-    - x: "−0,158"
+    - x: "−0,163"
       y: "−0,487"
-      groupe: 2
+      groupe: 3
       nom: Sophie Chevalier
       detail: Sophie Chevalier — 30–34 ans, Sport et coaching
       id: sophie-chevalier
-    - x: "0,679"
-      y: "0,028"
-      groupe: 0
+    - x: "0,692"
+      y: "0,021"
+      groupe: 5
       nom: Angélique Mastio
       detail: Angélique Mastio — 18–24 ans, Encadrement et professions intellectuelles
       id: angelique-mastio
-    - x: "−0,517"
+    - x: "−0,502"
       y: "0,117"
       groupe: 1
       nom: Mohamed Siaaliti
       detail: Mohamed Siaaliti — 35–39 ans, Encadrement et professions intellectuelles
       id: mohamed-siaaliti
-    - x: "−0,362"
-      y: "−0,155"
+    - x: "−0,363"
+      y: "−0,153"
       groupe: 1
       nom: Nicolas Van Brabandt
       detail: Nicolas Van Brabandt — 35–39 ans, Commerce et vente
       id: nicolas-van-brabandt
-    - x: "−0,578"
-      y: "0,492"
-      groupe: 2
+    - x: "−0,563"
+      y: "0,491"
+      groupe: 3
       nom: Maxime Berthon
       detail: Maxime Berthon — 30–34 ans, Encadrement et professions intellectuelles
       id: maxime-berthon
-    - x: "−0,296"
-      y: "−0,315"
-      groupe: 3
+    - x: "−0,295"
+      y: "−0,311"
+      groupe: 0
       nom: Cyril Rouanne
       detail: Cyril Rouanne — 35–39 ans, Arts, médias et image
       id: cyril-rouanne
     - x: "−0,07"
-      y: "−0,063"
-      groupe: 2
+      y: "−0,06"
+      groupe: 3
       nom: Clo Dessard Arribas
       detail: Clo Dessard Arribas — 25–29 ans, Transport et logistique
       id: clo-dessard-arribas
-    - x: "0,647"
-      y: "0,29"
-      groupe: 0
+    - x: "0,649"
+      y: "0,289"
+      groupe: 5
       nom: Aurélien Soulimant
       detail: Aurélien Soulimant — 18–24 ans, Arts, médias et image
       id: aurelien-soulimant
     - x: "−0,437"
-      y: "−0,235"
+      y: "−0,231"
       groupe: 4
       nom: Steeve Demana
       detail: Steeve Demana — 45 ans et plus, Enseignement et éducation
       id: steeve-demana
-    - x: "−0,326"
-      y: "−0,202"
-      groupe: 2
+    - x: "−0,314"
+      y: "−0,205"
+      groupe: 3
       nom: Cindy Poumeyrol
       detail: Cindy Poumeyrol — 30–34 ans, Encadrement et professions intellectuelles
       id: cindy-poumeyrol
-    - x: "−0,208"
-      y: "−0,456"
+    - x: "−0,213"
+      y: "−0,458"
       groupe: 4
       nom: Maud Bamps
       detail: Maud Bamps — 45 ans et plus, Commerce et vente
       id: maud-bamps
-    - x: "−0,461"
-      y: "0,237"
+    - x: "−0,462"
+      y: "0,239"
       groupe: 4
       nom: François Zabalo
       detail: François Zabalo — 45 ans et plus, Commerce et vente
       id: francois-zabalo
-    - x: "−0,174"
-      y: "−0,569"
+    - x: "−0,181"
+      y: "−0,572"
       groupe: 4
       nom: Carole Collado
       detail: Carole Collado — 45 ans et plus, Sans activité déclarée
       id: carole-collado
-    - x: "−0,349"
-      y: "−0,168"
-      groupe: 2
+    - x: "−0,35"
+      y: "−0,165"
+      groupe: 3
       nom: Samuel Degoute
       detail: Samuel Degoute — 35–39 ans, Sport et coaching
       id: samuel-degoute
     - x: "0,05"
-      y: "−0,832"
-      groupe: 3
+      y: "−0,831"
+      groupe: 0
       nom: Diane Goulesque-Perez
       detail: Diane Goulesque-Perez — 25–29 ans, Commerce et vente
       id: diane-goulesque-perez
-    - x: "−0,184"
-      y: "−0,928"
+    - x: "−0,189"
+      y: "−0,927"
       groupe: 4
       nom: Estelle Fabrice
       detail: Estelle Fabrice — 45 ans et plus, Enseignement et éducation
       id: estelle-fabrice
-    - x: "−0,411"
-      y: "0,206"
-      groupe: 2
+    - x: "−0,412"
+      y: "0,209"
+      groupe: 3
       nom: Mathieu Blanchard
       detail: Mathieu Blanchard — 30–34 ans, Sport et coaching
       id: mathieu-blanchard
-    - x: "−0,578"
-      y: "0,492"
-      groupe: 2
+    - x: "−0,563"
+      y: "0,491"
+      groupe: 3
       nom: Adrien Ferreira
       detail: Adrien Ferreira — 30–34 ans, Encadrement et professions intellectuelles
       id: adrien-ferreira
     - x: "0,581"
-      y: "0,449"
-      groupe: 0
+      y: "0,448"
+      groupe: 5
       nom: Aubin Bligny
       detail: Aubin Bligny — 18–24 ans, Commerce et vente
       id: aubin-bligny
-    - x: "−0,517"
+    - x: "−0,502"
       y: "0,117"
       groupe: 1
       nom: Sébastien Aberlenc
       detail: Sébastien Aberlenc — 35–39 ans, Encadrement et professions intellectuelles
       id: sebastien-aberlenc
-    - x: "−0,529"
-      y: "0,178"
+    - x: "−0,54"
+      y: "0,179"
       groupe: 1
       nom: Marie-France Schieber
       detail: Marie-France Schieber — 45 ans et plus, Artisanat et bâtiment
       id: marie-france-schieber
     - x: "0,063"
-      y: "−0,845"
-      groupe: 3
+      y: "−0,843"
+      groupe: 0
       nom: Hadja Cissé
       detail: Hadja Cissé — 25–29 ans, Sport et coaching
       id: hadja-cisse
-    - x: "−0,399"
-      y: "−0,253"
-      groupe: 2
+    - x: "−0,4"
+      y: "−0,249"
+      groupe: 3
       nom: Bertrand-Kamal Loudrhiri
       detail: Bertrand-Kamal Loudrhiri — 30–34 ans, Enseignement et éducation
       id: bertrand-kamal-loudrhiri
-    - x: "−0,431"
-      y: "−0,214"
+    - x: "−0,441"
+      y: "−0,213"
       groupe: 1
       nom: Joaquina Glaud
       detail: Joaquina Glaud — 35–39 ans, Artisanat et bâtiment
       id: joaquina-glaud
-    - x: "−0,489"
-      y: "−0,06"
-      groupe: 2
+    - x: "−0,499"
+      y: "−0,057"
+      groupe: 3
       nom: Jody Favier
       detail: Jody Favier — 30–34 ans, Agriculture et nature
       id: jody-favier
     - x: "−0,437"
-      y: "−0,235"
+      y: "−0,231"
       groupe: 4
       nom: Laurent Affri
       detail: Laurent Affri — 45 ans et plus, Enseignement et éducation
       id: laurent-affri
     - x: "0,063"
-      y: "−0,845"
-      groupe: 3
+      y: "−0,843"
+      groupe: 0
       nom: Alix Noblat
       detail: Alix Noblat — 25–29 ans, Sport et coaching
       id: alix-noblat
-    - x: "−0,782"
-      y: "0,872"
+    - x: "−0,789"
+      y: "0,875"
       groupe: 1
       nom: Fabrice Pietrzak
       detail: Fabrice Pietrzak — 45 ans et plus, Artisanat et bâtiment
       id: fabrice-pietrzak
-    - x: "0,271"
-      y: "−1,292"
-      groupe: 3
+    - x: "0,275"
+      y: "−1,289"
+      groupe: 0
       nom: Ava Maisini
       detail: Ava Maisini — 25–29 ans, Restauration et hôtellerie
       id: ava-maisini
-    - x: "0,271"
-      y: "−1,292"
-      groupe: 3
+    - x: "0,275"
+      y: "−1,289"
+      groupe: 0
       nom: Angélique Ti
       detail: Angélique Ti — 25–29 ans, Restauration et hôtellerie
       id: angelique-ti
-    - x: "−0,544"
-      y: "0,988"
-      groupe: 2
+    - x: "−0,545"
+      y: "0,992"
+      groupe: 3
       nom: Dorian Louvet
       detail: Dorian Louvet — 30–34 ans, Transport et logistique
       id: dorian-louvet
-    - x: "2,2"
-      y: "0,409"
-      groupe: 5
+    - x: "2,217"
+      y: "0,415"
+      groupe: 2
       nom: Lola Labesse
       detail: Lola Labesse — 18–24 ans, Étudiants
       id: lola-labesse
-    - x: "0,615"
-      y: "0,337"
+    - x: "0,614"
+      y: "0,333"
       groupe: 4
       nom: Loïc Riowal
       detail: Loïc Riowal — 18–24 ans, Sans activité déclarée
       id: loic-riowal
-    - x: "0,605"
-      y: "−0,023"
-      groupe: 0
+    - x: "0,606"
+      y: "−0,022"
+      groupe: 5
       nom: Brice Petit
       detail: Brice Petit — 18–24 ans, Enseignement et éducation
       id: brice-petit
-    - x: "−0,326"
-      y: "−0,202"
-      groupe: 2
+    - x: "−0,314"
+      y: "−0,205"
+      groupe: 3
       nom: Alexandra Pornet
       detail: Alexandra Pornet — 30–34 ans, Encadrement et professions intellectuelles
       id: alexandra-pornet
-    - x: "−0,266"
-      y: "0,506"
+    - x: "−0,27"
+      y: "0,502"
       groupe: 1
       nom: Sylviane Simonnet
       detail: Sylviane Simonnet — 40–44 ans, Action et sécurité
       id: sylviane-simonnet
-    - x: "1,417"
-      y: "−0,179"
-      groupe: 0
+    - x: "1,436"
+      y: "−0,167"
+      groupe: 5
       nom: Marie Oheix
       detail: Marie Oheix — 25–29 ans, Étudiants
       id: marie-oheix
-    - x: "−0,097"
-      y: "−0,862"
-      groupe: 3
+    - x: "−0,101"
+      y: "−0,861"
+      groupe: 0
       nom: Élodie Faelens
       detail: Élodie Faelens — 35–39 ans, Sport et coaching
       id: elodie-faelens
-    - x: "0,048"
+    - x: "0,049"
       y: "−0,242"
-      groupe: 3
+      groupe: 0
       nom: Candice Rousset
       detail: Candice Rousset — 25–29 ans, Action et sécurité
       id: candice-rousset
-    - x: "−0,323"
-      y: "0,631"
-      groupe: 2
+    - x: "−0,319"
+      y: "0,636"
+      groupe: 3
       nom: Gabin Peillon
       detail: Gabin Peillon — 25–29 ans, Transport et logistique
       id: gabin-peillon
-    - x: "−0,077"
-      y: "−0,055"
-      groupe: 2
+    - x: "−0,07"
+      y: "−0,054"
+      groupe: 3
       nom: Aurélien Tesson
       detail: Aurélien Tesson — 30–34 ans, Santé
       id: aurelien-tesson
-    - x: "−0,24"
-      y: "−0,223"
-      groupe: 3
+    - x: "−0,237"
+      y: "−0,22"
+      groupe: 0
       nom: Frédéric Baudet
       detail: Frédéric Baudet — 45 ans et plus, Restauration et hôtellerie
       id: frederic-baudet
-    - x: "−0,838"
-      y: "1,244"
+    - x: "−0,844"
+      y: "1,245"
       groupe: 1
       nom: Hervé Comte
       detail: Hervé Comte — 40–44 ans, Artisanat et bâtiment
       id: herve-comte
-    - x: "−0,52"
-      y: "0,276"
-      groupe: 2
+    - x: "−0,522"
+      y: "0,283"
+      groupe: 3
       nom: Mathieu Orsolani
       detail: Mathieu Orsolani — 25–29 ans, Agriculture et nature
       id: mathieu-orsolani
-    - x: "−0,105"
-      y: "−0,559"
-      groupe: 3
+    - x: "−0,088"
+      y: "−0,561"
+      groupe: 0
       nom: Shanice Mendy
       detail: Shanice Mendy — 25–29 ans, Encadrement et professions intellectuelles
       id: shanice-mendy
-    - x: "−0,085"
-      y: "−1,321"
-      groupe: 3
+    - x: "−0,09"
+      y: "−1,319"
+      groupe: 0
       nom: Myriam Chafik
       detail: Myriam Chafik — 35–39 ans, Enseignement et éducation
       id: myriam-chafik
-    - x: "−0,357"
-      y: "0,134"
+    - x: "−0,337"
+      y: "0,135"
       groupe: 1
       nom: Vincent Blier
       detail: Vincent Blier — 25–29 ans, Encadrement et professions intellectuelles
       id: vincent-blier
-    - x: "−0,264"
-      y: "−0,576"
-      groupe: 3
+    - x: "−0,253"
+      y: "−0,579"
+      groupe: 0
       nom: Laëtitia Saphores
       detail: Laëtitia Saphores — 35–39 ans, Encadrement et professions intellectuelles
       id: laetitia-saphores
-    - x: "−0,482"
-      y: "0,614"
-      groupe: 2
+    - x: "−0,483"
+      y: "0,618"
+      groupe: 3
       nom: Thomas Plisson
       detail: Thomas Plisson — 35–39 ans, Transport et logistique
       id: thomas-plisson
-    - x: "−0,578"
-      y: "0,492"
-      groupe: 2
+    - x: "−0,563"
+      y: "0,491"
+      groupe: 3
       nom: Flavio Soares Tavares
       detail: Flavio Soares Tavares — 30–34 ans, Encadrement et professions intellectuelles
       id: flavio-soares-tavares
-    - x: "−0,196"
-      y: "−0,469"
+    - x: "−0,2"
+      y: "−0,47"
       groupe: 4
       nom: Magali Sevenier
       detail: Magali Sevenier — 45 ans et plus, Sport et coaching
       id: magali-sevenier
-    - x: "−0,68"
-      y: "0,26"
-      groupe: 2
+    - x: "−0,686"
+      y: "0,265"
+      groupe: 3
       nom: Arnaud Deshayes
       detail: Arnaud Deshayes — 35–39 ans, Agriculture et nature
       id: arnaud-deshayes
-    - x: "−0,267"
-      y: "−0,417"
-      groupe: 2
+    - x: "−0,273"
+      y: "−0,413"
+      groupe: 3
       nom: Laure Canevarolo
       detail: Laure Canevarolo — 25–29 ans, Agriculture et nature
       id: laure-canevarolo
-    - x: "−0,411"
-      y: "0,206"
-      groupe: 2
+    - x: "−0,412"
+      y: "0,209"
+      groupe: 3
       nom: Jonathan Julien
       detail: Jonathan Julien — 30–34 ans, Sport et coaching
       id: jonathan-julien
-    - x: "−0,097"
-      y: "−0,862"
-      groupe: 3
+    - x: "−0,101"
+      y: "−0,861"
+      groupe: 0
       nom: Lucie Bertaud
       detail: Lucie Bertaud — 35–39 ans, Sport et coaching
       id: lucie-bertaud
     - x: "0,063"
-      y: "−0,845"
-      groupe: 3
+      y: "−0,843"
+      groupe: 0
       nom: Maxine Eouzan
       detail: Maxine Eouzan — 25–29 ans, Sport et coaching
       id: maxine-eouzan
-    - x: "−0,419"
-      y: "0,188"
+    - x: "−0,407"
+      y: "0,182"
       groupe: 1
       nom: Lili Gasnier
       detail: Lili Gasnier — 40–44 ans, Encadrement et professions intellectuelles
       id: lili-gasnier
-    - x: "0,083"
-      y: "−0,359"
-      groupe: 3
+    - x: "0,086"
+      y: "−0,363"
+      groupe: 0
       nom: Céline Dufrenoy
       detail: Céline Dufrenoy — 40–44 ans, Santé
       id: celine-dufrenoy
-    - x: "−0,616"
-      y: "0,51"
+    - x: "−0,601"
+      y: "0,508"
       groupe: 4
       nom: Franck
       detail: Franck — 45 ans et plus, Encadrement et professions intellectuelles
       id: franck-le-totem-maudit
-    - x: "0,647"
-      y: "0,29"
-      groupe: 0
+    - x: "0,649"
+      y: "0,289"
+      groupe: 5
       nom: Mattéo Real
       detail: Mattéo Real — 18–24 ans, Arts, médias et image
       id: matteo-real
-    - x: "−0,158"
+    - x: "−0,163"
       y: "−0,487"
-      groupe: 2
+      groupe: 3
       nom: Samira Aït-Brahim
       detail: Samira Aït-Brahim — 30–34 ans, Sport et coaching
       id: samira-ait-brahim
-    - x: "0,426"
-      y: "0,722"
-      groupe: 0
+    - x: "0,443"
+      y: "0,717"
+      groupe: 5
       nom: Benjamin Breerette
       detail: Benjamin Breerette — 18–24 ans, Encadrement et professions intellectuelles
       id: benjamin-breerette
-    - x: "−0,683"
-      y: "0,479"
+    - x: "−0,69"
+      y: "0,483"
       groupe: 1
       nom: Jean-Philippe Masy
       detail: Jean-Philippe Masy — 35–39 ans, Artisanat et bâtiment
       id: jean-philippe-masy
     - x: "0,111"
-      y: "−1,309"
-      groupe: 3
+      y: "−1,308"
+      groupe: 0
       nom: Stéphanie Tribot
       detail: Stéphanie Tribot — 35–39 ans, Restauration et hôtellerie
       id: stephanie-tribot
-    - x: "−0,264"
-      y: "−0,576"
-      groupe: 3
+    - x: "−0,253"
+      y: "−0,579"
+      groupe: 0
       nom: Alexandra Élizé
       detail: Alexandra Élizé — 35–39 ans, Encadrement et professions intellectuelles
       id: alexandra-elize
-    - x: "−0,043"
-      y: "−1,008"
-      groupe: 3
+    - x: "−0,047"
+      y: "−1,007"
+      groupe: 0
       nom: Setha El Hajjami
       detail: Setha El Hajjami — 35–39 ans, Arts, médias et image
       id: setha-el-hajjami
-    - x: "−0,136"
-      y: "−0,298"
-      groupe: 3
+    - x: "−0,131"
+      y: "−0,293"
+      groupe: 0
       nom: Colin Mottas
       detail: Colin Mottas — 25–29 ans, Arts, médias et image
       id: colin-mottas
-    - x: "0,679"
-      y: "0,028"
-      groupe: 0
+    - x: "0,692"
+      y: "0,021"
+      groupe: 5
       nom: Pauline Pourchaire
       detail: Pauline Pourchaire — 18–24 ans, Encadrement et professions intellectuelles
       id: pauline-pourchaire
-    - x: "−0,411"
-      y: "0,206"
-      groupe: 2
+    - x: "−0,412"
+      y: "0,209"
+      groupe: 3
       nom: Yannick Zachée
       detail: Yannick Zachée — 30–34 ans, Sport et coaching
       id: yannick-zachee
-    - x: "−0,158"
+    - x: "−0,163"
       y: "−0,487"
-      groupe: 2
+      groupe: 3
       nom: Anne-Sophie Mounier
       detail: Anne-Sophie Mounier — 30–34 ans, Sport et coaching
       id: anne-sophie-mounier
-    - x: "−0,578"
-      y: "0,492"
-      groupe: 2
+    - x: "−0,563"
+      y: "0,491"
+      groupe: 3
       nom: Maxime Tournoux
       detail: Maxime Tournoux — 30–34 ans, Encadrement et professions intellectuelles
       id: maxime-tournoux
     - x: "0,05"
-      y: "−0,832"
-      groupe: 3
+      y: "−0,831"
+      groupe: 0
       nom: Louana Roy
       detail: Louana Roy — 25–29 ans, Commerce et vente
       id: louana-roy
-    - x: "−0,357"
-      y: "0,134"
+    - x: "−0,337"
+      y: "0,135"
       groupe: 1
       nom: Fouzi Ould Bouamama
       detail: Fouzi Ould Bouamama — 25–29 ans, Encadrement et professions intellectuelles
       id: fouzi-ould-bouamama
-    - x: "−0,517"
+    - x: "−0,502"
       y: "0,117"
       groupe: 1
       nom: Nicolas Bellon
       detail: Nicolas Bellon — 35–39 ans, Encadrement et professions intellectuelles
       id: nicolas-bellon
-    - x: "−0,043"
-      y: "−1,008"
-      groupe: 3
+    - x: "−0,047"
+      y: "−1,007"
+      groupe: 0
       nom: Olga Khokhlova
       detail: Olga Khokhlova — 35–39 ans, Arts, médias et image
       id: olga-khokhlova
     - x: "0,063"
-      y: "−0,845"
-      groupe: 3
+      y: "−0,843"
+      groupe: 0
       nom: Ambre Daudet
       detail: Ambre Daudet — 25–29 ans, Sport et coaching
       id: ambre-daudet
-    - x: "−0,838"
-      y: "1,244"
+    - x: "−0,844"
+      y: "1,245"
       groupe: 1
       nom: Jean-Charles Chatelus
       detail: Jean-Charles Chatelus — 40–44 ans, Artisanat et bâtiment
       id: jean-charles-chatelus
-    - x: "−0,208"
-      y: "−0,456"
+    - x: "−0,213"
+      y: "−0,458"
       groupe: 4
       nom: Géraldine Nicolle
       detail: Géraldine Nicolle — 45 ans et plus, Commerce et vente
       id: geraldine-nicolle
     - x: "−0,364"
-      y: "0,435"
+      y: "0,436"
       groupe: 1
       nom: François Descamp
       detail: François Descamp — 35–39 ans, Action et sécurité
       id: francois-descamp
-    - x: "−0,411"
-      y: "0,206"
-      groupe: 2
+    - x: "−0,412"
+      y: "0,209"
+      groupe: 3
       nom: Bastien San Pedro
       detail: Bastien San Pedro — 30–34 ans, Sport et coaching
       id: bastien-san-pedro
-    - x: "−0,184"
-      y: "−0,928"
+    - x: "−0,189"
+      y: "−0,927"
       groupe: 4
       nom: Célia Litzellmann
       detail: Célia Litzellmann — 45 ans et plus, Enseignement et éducation
       id: celia-litzellmann
-    - x: "−0,616"
-      y: "0,51"
+    - x: "−0,601"
+      y: "0,508"
       groupe: 4
       nom: Emin Luka
       detail: Emin Luka — 45 ans et plus, Encadrement et professions intellectuelles
       id: emin-luka
-    - x: "−0,544"
-      y: "0,988"
-      groupe: 2
+    - x: "−0,545"
+      y: "0,992"
+      groupe: 3
       nom: Alexandre Delaunay
       detail: Alexandre Delaunay — 30–34 ans, Transport et logistique
       id: alexandre-delaunay
-    - x: "−0,043"
-      y: "−1,008"
-      groupe: 3
+    - x: "−0,047"
+      y: "−1,007"
+      groupe: 0
       nom: Elodie Migeal
       detail: Elodie Migeal — 35–39 ans, Arts, médias et image
       id: elodie-migeal
-    - x: "0,579"
-      y: "1,04"
-      groupe: 0
+    - x: "0,581"
+      y: "1,037"
+      groupe: 5
       nom: Benjamin Di Benedetto
       detail: Benjamin Di Benedetto — 18–24 ans, Action et sécurité
       id: benjamin-di-benedetto
-    - x: "−0,741"
-      y: "0,634"
-      groupe: 2
+    - x: "−0,748"
+      y: "0,639"
+      groupe: 3
       nom: Martin Burrus
       detail: Martin Burrus — 30–34 ans, Agriculture et nature
       id: martin-burrus
-    - x: "−0,184"
-      y: "−0,928"
+    - x: "−0,189"
+      y: "−0,927"
       groupe: 4
       nom: Christine Mayonnade
       detail: Christine Mayonnade — 45 ans et plus, Enseignement et éducation
       id: christine-mayonnade
-    - x: "−0,637"
-      y: "1,378"
+    - x: "−0,638"
+      y: "1,379"
       groupe: 1
       nom: Rudy Noël
       detail: Rudy Noël — 40–44 ans, Transport et logistique
       id: rudy-noel
-    - x: "−0,431"
-      y: "−0,214"
+    - x: "−0,441"
+      y: "−0,213"
       groupe: 1
       nom: Grâce Jeantel
       detail: Grâce Jeantel — 35–39 ans, Artisanat et bâtiment
       id: grace-jeantel
-    - x: "−0,085"
-      y: "−1,321"
-      groupe: 3
+    - x: "−0,09"
+      y: "−1,319"
+      groupe: 0
       nom: Anne-Sophie Antoine
       detail: Anne-Sophie Antoine — 35–39 ans, Enseignement et éducation
       id: anne-sophie-antoine
-    - x: "0,397"
+    - x: "0,404"
       y: "−1,106"
-      groupe: 3
+      groupe: 0
       nom: Helena Roosen
       detail: Helena Roosen — 25–29 ans, Santé
       id: helena-roosen
-    - x: "−0,741"
-      y: "0,634"
-      groupe: 2
+    - x: "−0,748"
+      y: "0,639"
+      groupe: 3
       nom: Gilles De Baere
       detail: Gilles De Baere — 30–34 ans, Agriculture et nature
       id: gilles-de-baere
-    - x: "−0,271"
-      y: "−0,198"
+    - x: "−0,276"
+      y: "−0,195"
       groupe: 1
       nom: Clémence Noquet
       detail: Clémence Noquet — 25–29 ans, Artisanat et bâtiment
       id: clemence-noquet
-    - x: "−0,517"
+    - x: "−0,518"
       y: "0,609"
       groupe: 1
       nom: Esteban Garcia-Mora
       detail: Esteban Garcia-Mora — 40–44 ans, Commerce et vente
       id: esteban-garcia-mora
-    - x: "−0,105"
-      y: "−0,634"
-      groupe: 2
+    - x: "−0,108"
+      y: "−0,633"
+      groupe: 3
       nom: Laura Yelpa
       detail: Laura Yelpa — 30–34 ans, Arts, médias et image
       id: laura-yelpa
-    - x: "−0,524"
-      y: "0,496"
+    - x: "−0,525"
+      y: "0,502"
       groupe: 1
       nom: Quentin Paygnard
       detail: Quentin Paygnard — 25–29 ans, Artisanat et bâtiment
       id: quentin-paygnard
-    - x: "−0,158"
+    - x: "−0,163"
       y: "−0,487"
-      groupe: 2
+      groupe: 3
       nom: Julie Debever
       detail: Julie Debever — 30–34 ans, Sport et coaching
       id: julie-debever
-    - x: "−0,672"
-      y: "0,882"
+    - x: "−0,656"
+      y: "0,878"
       groupe: 1
       nom: Nicolas Pretot
       detail: Nicolas Pretot — 40–44 ans, Encadrement et professions intellectuelles
       id: nicolas-pretot
-    - x: "1,18"
-      y: "−0,519"
-      groupe: 0
+    - x: "1,185"
+      y: "−0,524"
+      groupe: 5
       nom: Tania Cakarevic
       detail: Tania Cakarevic — 18–24 ans, Santé
       id: tania-cakarevic
-    - x: "−0,424"
-      y: "0,219"
-      groupe: 2
+    - x: "−0,425"
+      y: "0,221"
+      groupe: 3
       nom: Frédéric Khouvilay
       detail: Frédéric Khouvilay — 30–34 ans, Commerce et vente
       id: frederic-khouvilay
-    - x: "−0,544"
-      y: "0,988"
-      groupe: 2
+    - x: "−0,545"
+      y: "0,992"
+      groupe: 3
       nom: Steve Grenier
       detail: Steve Grenier — 30–34 ans, Transport et logistique
       id: steve-grenier
-    - x: "0,679"
-      y: "0,028"
-      groupe: 0
+    - x: "0,692"
+      y: "0,021"
+      groupe: 5
       nom: Alicia Bouly
       detail: Alicia Bouly — 18–24 ans, Encadrement et professions intellectuelles
       id: alicia-bouly
-    - x: "−0,363"
-      y: "−0,184"
+    - x: "−0,352"
+      y: "−0,188"
       groupe: 4
       nom: Nathalie Suhard
       detail: Nathalie Suhard — 45 ans et plus, Encadrement et professions intellectuelles
@@ -23523,357 +23523,357 @@ modeles:
       nom: William Plancq
       detail: William Plancq — 45 ans et plus, Action et sécurité
       id: william-plancq
-    - x: "0,579"
-      y: "1,04"
-      groupe: 0
+    - x: "0,581"
+      y: "1,037"
+      groupe: 5
       nom: Alexis Tchernychev
       detail: Alexis Tchernychev — 18–24 ans, Action et sécurité
       id: alexis-tchernychev
-    - x: "−0,208"
-      y: "−0,456"
+    - x: "−0,213"
+      y: "−0,458"
       groupe: 4
       nom: Émilie Clavis
       detail: Émilie Clavis — 45 ans et plus, Commerce et vente
       id: emilie-clavis
-    - x: "−0,326"
-      y: "−0,202"
-      groupe: 2
+    - x: "−0,314"
+      y: "−0,205"
+      groupe: 3
       nom: Sarah Diawara
       detail: Sarah Diawara — 30–34 ans, Encadrement et professions intellectuelles
       id: sarah-diawara
-    - x: "−0,672"
-      y: "0,882"
+    - x: "−0,656"
+      y: "0,878"
       groupe: 1
       nom: Maxime Barbet
       detail: Maxime Barbet — 40–44 ans, Encadrement et professions intellectuelles
       id: maxime-barbet
-    - x: "0,605"
-      y: "−0,023"
-      groupe: 0
+    - x: "0,606"
+      y: "−0,022"
+      groupe: 5
       nom: Ricky Poyet
       detail: Ricky Poyet — 18–24 ans, Enseignement et éducation
       id: ricky-poyet
-    - x: "0,831"
-      y: "0,346"
-      groupe: 0
+    - x: "0,83"
+      y: "0,341"
+      groupe: 5
       nom: Léa Notardonato
       detail: Léa Notardonato — 18–24 ans, Action et sécurité
       id: lea-notardonato
-    - x: "−0,109"
+    - x: "−0,114"
       y: "−0,849"
-      groupe: 3
+      groupe: 0
       nom: Océane Montenegro
       detail: Océane Montenegro — 35–39 ans, Commerce et vente
       id: oceane-montenegro
-    - x: "−0,419"
-      y: "0,188"
+    - x: "−0,407"
+      y: "0,182"
       groupe: 1
       nom: Cécile Poprawa
       detail: Cécile Poprawa — 40–44 ans, Encadrement et professions intellectuelles
       id: cecile-poprawa
-    - x: "−0,362"
-      y: "−0,155"
+    - x: "−0,363"
+      y: "−0,153"
       groupe: 1
       nom: Aurélien Dulau
       detail: Aurélien Dulau — 35–39 ans, Commerce et vente
       id: aurelien-dulau
-    - x: "−0,524"
-      y: "0,496"
+    - x: "−0,525"
+      y: "0,502"
       groupe: 1
       nom: Jean Belmonte
       detail: Jean Belmonte — 25–29 ans, Artisanat et bâtiment
       id: jean-belmonte
     - x: "0,05"
-      y: "−0,832"
-      groupe: 3
+      y: "−0,831"
+      groupe: 0
       nom: Mégane Rouland
       detail: Mégane Rouland — 25–29 ans, Commerce et vente
       id: megane-rouland
-    - x: "−0,683"
-      y: "0,479"
+    - x: "−0,69"
+      y: "0,483"
       groupe: 1
       nom: David Murail
       detail: David Murail — 35–39 ans, Artisanat et bâtiment
       id: david-murail
-    - x: "−0,745"
-      y: "0,854"
+    - x: "−0,751"
+      y: "0,857"
       groupe: 1
       nom: Sébastien Cazaux
       detail: Sébastien Cazaux — 30–34 ans, Artisanat et bâtiment
       id: sebastien-cazaux
-    - x: "−0,672"
-      y: "0,882"
+    - x: "−0,656"
+      y: "0,878"
       groupe: 1
       nom: Amri Madani
       detail: Amri Madani — 40–44 ans, Encadrement et professions intellectuelles
       id: amri-madani
-    - x: "−0,267"
-      y: "−0,417"
-      groupe: 2
+    - x: "−0,273"
+      y: "−0,413"
+      groupe: 3
       nom: Pauline Bonneil
       detail: Pauline Bonneil — 25–29 ans, Agriculture et nature
       id: pauline-bonneil
-    - x: "−0,431"
-      y: "−0,214"
+    - x: "−0,441"
+      y: "−0,213"
       groupe: 1
       nom: Julie Rignault
       detail: Julie Rignault — 35–39 ans, Artisanat et bâtiment
       id: julie-rignault
-    - x: "−0,202"
-      y: "−0,139"
-      groupe: 3
+    - x: "−0,199"
+      y: "−0,135"
+      groupe: 0
       nom: Meïssa Seck
       detail: Meïssa Seck — 25–29 ans, Commerce et vente
       id: meissa-seck
-    - x: "−0,419"
-      y: "0,188"
+    - x: "−0,407"
+      y: "0,182"
       groupe: 1
       nom: Léa Sahin
       detail: Léa Sahin — 40–44 ans, Encadrement et professions intellectuelles
       id: lea-sahin
-    - x: "−0,291"
-      y: "0,295"
-      groupe: 2
+    - x: "−0,296"
+      y: "0,296"
+      groupe: 3
       nom: Cécile Guy
       detail: Cécile Guy — 30–34 ans, Transport et logistique
       id: cecile-guy
-    - x: "−0,616"
-      y: "0,51"
+    - x: "−0,601"
+      y: "0,508"
       groupe: 4
       nom: Ari Bentolila
       detail: Ari Bentolila — 45 ans et plus, Encadrement et professions intellectuelles
       id: ari-bentolila
     - x: "0,05"
-      y: "−0,832"
-      groupe: 3
+      y: "−0,831"
+      groupe: 0
       nom: Marie Vilaseca
       detail: Marie Vilaseca — 25–29 ans, Commerce et vente
       id: marie-vilaseca
-    - x: "0,397"
+    - x: "0,404"
       y: "−1,106"
-      groupe: 3
+      groupe: 0
       nom: Lola Potabes
       detail: Lola Potabes — 25–29 ans, Santé
       id: lola-potabes
-    - x: "−0,077"
-      y: "−0,055"
-      groupe: 2
+    - x: "−0,07"
+      y: "−0,054"
+      groupe: 3
       nom: Alexandre Cheron
       detail: Alexandre Cheron — 30–34 ans, Santé
       id: alexandre-cheron
-    - x: "−0,517"
+    - x: "−0,502"
       y: "0,117"
       groupe: 1
       nom: Michel Huy
       detail: Michel Huy — 35–39 ans, Encadrement et professions intellectuelles
       id: michel-huy
-    - x: "−0,264"
-      y: "−0,576"
-      groupe: 3
+    - x: "−0,253"
+      y: "−0,579"
+      groupe: 0
       nom: Mélissa Pierru
       detail: Mélissa Pierru — 35–39 ans, Encadrement et professions intellectuelles
       id: melissa-pierru
-    - x: "−0,363"
-      y: "−0,184"
+    - x: "−0,352"
+      y: "−0,188"
       groupe: 4
       nom: Emmanuelle Boisseau
       detail: Emmanuelle Boisseau — 45 ans et plus, Encadrement et professions intellectuelles
       id: emmanuelle-boisseau
-    - x: "−0,672"
-      y: "0,882"
+    - x: "−0,656"
+      y: "0,878"
       groupe: 1
       nom: Fabrice Giordano
       detail: Fabrice Giordano — 40–44 ans, Encadrement et professions intellectuelles
       id: fabrice-giordano
-    - x: "−0,109"
+    - x: "−0,114"
       y: "−0,849"
-      groupe: 3
+      groupe: 0
       nom: Maud Collas
       detail: Maud Collas — 35–39 ans, Commerce et vente
       id: maud-collas
-    - x: "−0,326"
-      y: "−0,202"
-      groupe: 2
+    - x: "−0,314"
+      y: "−0,205"
+      groupe: 3
       nom: Sarah Aboudeine
       detail: Sarah Aboudeine — 30–34 ans, Encadrement et professions intellectuelles
       id: sarah-aboudeine
-    - x: "−0,141"
-      y: "−0,615"
-      groupe: 3
+    - x: "−0,138"
+      y: "−0,612"
+      groupe: 0
       nom: Frédéric Khouvilay
       detail: Frédéric Khouvilay — 35–39 ans, Restauration et hôtellerie
       id: frederic-khouvilay
-    - x: "−0,323"
-      y: "0,631"
-      groupe: 2
+    - x: "−0,319"
+      y: "0,636"
+      groupe: 3
       nom: Maxim Iarkov
       detail: Maxim Iarkov — 25–29 ans, Transport et logistique
       id: maxim-iarkov
-    - x: "−0,205"
-      y: "0,452"
+    - x: "−0,2"
+      y: "0,455"
       groupe: 1
       nom: Gustin Comanescu
       detail: Gustin Comanescu — 25–29 ans, Action et sécurité
       id: gustin-comanescu
-    - x: "0,9"
-      y: "−0,404"
-      groupe: 0
+    - x: "0,898"
+      y: "−0,407"
+      groupe: 5
       nom: Cassandre Lambert
       detail: Cassandre Lambert — 18–24 ans, Arts, médias et image
       id: cassandre-lambert
-    - x: "−0,097"
-      y: "−0,862"
-      groupe: 3
+    - x: "−0,101"
+      y: "−0,861"
+      groupe: 0
       nom: Sophia Mansouri
       detail: Sophia Mansouri — 35–39 ans, Sport et coaching
       id: sophia-mansouri
-    - x: "−0,834"
-      y: "1,024"
-      groupe: 2
+    - x: "−0,84"
+      y: "1,026"
+      groupe: 3
       nom: Ugo Lartiche
       detail: Ugo Lartiche — 40–44 ans, Agriculture et nature
       id: ugo-lartiche
-    - x: "−0,296"
-      y: "−0,315"
-      groupe: 3
+    - x: "−0,295"
+      y: "−0,311"
+      groupe: 0
       nom: Jacques Roque
       detail: Jacques Roque — 35–39 ans, Arts, médias et image
       id: jacques-roque
-    - x: "−0,251"
-      y: "−0,098"
-      groupe: 3
+    - x: "−0,256"
+      y: "−0,1"
+      groupe: 0
       nom: Cécile Belec
       detail: Cécile Belec — 40–44 ans, Sport et coaching
       id: cecile-belec
-    - x: "1,947"
-      y: "1,103"
-      groupe: 5
+    - x: "1,968"
+      y: "1,111"
+      groupe: 2
       nom: Ilyesse Benyoub
       detail: Ilyesse Benyoub — 18–24 ans, Étudiants
       id: ilyesse-benyoub
-    - x: "0,074"
-      y: "−1,304"
-      groupe: 3
+    - x: "0,075"
+      y: "−1,3"
+      groupe: 0
       nom: Charlotte Rasquin
       detail: Charlotte Rasquin — 25–29 ans, Enseignement et éducation
       id: charlotte-rasquin
-    - x: "−0,741"
-      y: "0,634"
-      groupe: 2
+    - x: "−0,748"
+      y: "0,639"
+      groupe: 3
       nom: Thibault Bélanger
       detail: Thibault Bélanger — 30–34 ans, Agriculture et nature
       id: thibault-belanger
-    - x: "−0,109"
+    - x: "−0,114"
       y: "−0,849"
-      groupe: 3
+      groupe: 0
       nom: Cynthian Steinbach
       detail: Cynthian Steinbach — 35–39 ans, Commerce et vente
       id: cynthian-steinbach
-    - x: "−0,52"
-      y: "0,276"
-      groupe: 2
+    - x: "−0,522"
+      y: "0,283"
+      groupe: 3
       nom: Allan Rousseeuw
       detail: Allan Rousseeuw — 25–29 ans, Agriculture et nature
       id: allan-rousseeuw
-    - x: "−0,461"
-      y: "0,237"
+    - x: "−0,462"
+      y: "0,239"
       groupe: 4
       nom: Christian Chambon
       detail: Christian Chambon — 45 ans et plus, Commerce et vente
       id: christian-chambon
-    - x: "0,846"
-      y: "−0,257"
-      groupe: 0
+    - x: "0,844"
+      y: "−0,261"
+      groupe: 5
       nom: Romane Ouvrard
       detail: Romane Ouvrard — 18–24 ans, Sport et coaching
       id: romane-ouvrard
-    - x: "−0,323"
-      y: "0,631"
-      groupe: 2
+    - x: "−0,319"
+      y: "0,636"
+      groupe: 3
       nom: Mehdi Bounab-Lamiral
       detail: Mehdi Bounab-Lamiral — 25–29 ans, Transport et logistique
       id: mehdi-bounab-lamiral
-    - x: "0,594"
-      y: "0,436"
-      groupe: 0
+    - x: "0,595"
+      y: "0,435"
+      groupe: 5
       nom: Benoît Piedfer
       detail: Benoît Piedfer — 18–24 ans, Sport et coaching
       id: benoit-piedfer
-    - x: "−0,411"
-      y: "0,206"
-      groupe: 2
+    - x: "−0,412"
+      y: "0,209"
+      groupe: 3
       nom: Mohamed Ayari
       detail: Mohamed Ayari — 30–34 ans, Sport et coaching
       id: mohamed-ayari
-    - x: "−0,097"
-      y: "−0,862"
-      groupe: 3
+    - x: "−0,101"
+      y: "−0,861"
+      groupe: 0
       nom: Pauline Leperchois
       detail: Pauline Leperchois — 35–39 ans, Sport et coaching
       id: pauline-leperchois
-    - x: "2,2"
-      y: "0,409"
-      groupe: 5
+    - x: "2,217"
+      y: "0,415"
+      groupe: 2
       nom: Andréa Zogron
       detail: Andréa Zogron — 18–24 ans, Étudiants
       id: andrea-zogron
-    - x: "0,426"
-      y: "0,722"
-      groupe: 0
+    - x: "0,443"
+      y: "0,717"
+      groupe: 5
       nom: Adrien Bernaert
       detail: Adrien Bernaert — 18–24 ans, Encadrement et professions intellectuelles
       id: adrien-bernaert
-    - x: "−0,616"
-      y: "0,51"
+    - x: "−0,601"
+      y: "0,508"
       groupe: 4
       nom: Frédéric Pignard
       detail: Frédéric Pignard — 45 ans et plus, Encadrement et professions intellectuelles
       id: frederic-pignard
     - x: "0,111"
-      y: "−1,309"
-      groupe: 3
+      y: "−1,308"
+      groupe: 0
       nom: Jessica Murcia
       detail: Jessica Murcia — 35–39 ans, Restauration et hôtellerie
       id: jessica-murcia
-    - x: "0,831"
-      y: "0,346"
-      groupe: 0
+    - x: "0,83"
+      y: "0,341"
+      groupe: 5
       nom: Louise Picavet
       detail: Louise Picavet — 18–24 ans, Action et sécurité
       id: louise-picavet
-    - x: "−0,326"
-      y: "−0,202"
-      groupe: 2
+    - x: "−0,314"
+      y: "−0,205"
+      groupe: 3
       nom: Joana Callico
       detail: Joana Callico — 30–34 ans, Encadrement et professions intellectuelles
       id: joana-callico
-    - x: "0,074"
-      y: "−1,304"
-      groupe: 3
+    - x: "0,075"
+      y: "−1,3"
+      groupe: 0
       nom: Naïs Napoletano
       detail: Naïs Napoletano — 25–29 ans, Enseignement et éducation
       id: nais-napoletano
-    - x: "−0,517"
+    - x: "−0,502"
       y: "0,117"
       groupe: 1
       nom: Pierre-Marie Ponsot
       detail: Pierre-Marie Ponsot — 35–39 ans, Encadrement et professions intellectuelles
       id: pierre-marie-ponsot
-    - x: "−0,578"
-      y: "0,492"
-      groupe: 2
+    - x: "−0,563"
+      y: "0,491"
+      groupe: 3
       nom: Maxime Lubian
       detail: Maxime Lubian — 30–34 ans, Encadrement et professions intellectuelles
       id: maxime-lubian
-    - x: "−0,326"
-      y: "−0,202"
-      groupe: 2
+    - x: "−0,314"
+      y: "−0,205"
+      groupe: 3
       nom: Noémie Bessec
       detail: Noémie Bessec — 30–34 ans, Encadrement et professions intellectuelles
       id: noemie-bessec
-    - x: "−0,109"
+    - x: "−0,114"
       y: "−0,849"
-      groupe: 3
+      groupe: 0
       nom: Céline Faccio
       detail: Céline Faccio — 35–39 ans, Commerce et vente
       id: celine-faccio
@@ -23883,213 +23883,213 @@ modeles:
       nom: Jérôme Salvatore
       detail: Jérôme Salvatore — 45 ans et plus, Action et sécurité
       id: jerome-salvatore
-    - x: "−0,043"
-      y: "−1,008"
-      groupe: 3
+    - x: "−0,047"
+      y: "−1,007"
+      groupe: 0
       nom: Claire Passas
       detail: Claire Passas — 35–39 ans, Arts, médias et image
       id: claire-passas
-    - x: "−0,838"
-      y: "1,244"
+    - x: "−0,844"
+      y: "1,245"
       groupe: 1
       nom: Jérôme Molas
       detail: Jérôme Molas — 40–44 ans, Artisanat et bâtiment
       id: jerome-molas
-    - x: "−0,524"
-      y: "0,496"
+    - x: "−0,525"
+      y: "0,502"
       groupe: 1
       nom: Maël Lozach
       detail: Maël Lozach — 25–29 ans, Artisanat et bâtiment
       id: mael-lozach
-    - x: "−0,137"
-      y: "−0,587"
+    - x: "−0,144"
+      y: "−0,589"
       groupe: 4
       nom: Gaëlle Fleury
       detail: Gaëlle Fleury — 30–34 ans, Sans activité déclarée
       id: gaelle-fleury
-    - x: "−0,419"
-      y: "0,188"
+    - x: "−0,407"
+      y: "0,182"
       groupe: 1
       nom: Françoise Fournier-Grigis
       detail: Françoise Fournier-Grigis — 40–44 ans, Encadrement et professions intellectuelles
       id: francoise-fournier-grigis
-    - x: "−0,105"
-      y: "−0,559"
-      groupe: 3
+    - x: "−0,088"
+      y: "−0,561"
+      groupe: 0
       nom: Clémence Dubent
       detail: Clémence Dubent — 25–29 ans, Encadrement et professions intellectuelles
       id: clemence-dubent
-    - x: "−0,208"
-      y: "−0,456"
+    - x: "−0,213"
+      y: "−0,458"
       groupe: 4
       nom: Karine Iraundegui
       detail: Karine Iraundegui — 45 ans et plus, Commerce et vente
       id: karine-iraundegui
-    - x: "−0,517"
+    - x: "−0,518"
       y: "0,609"
       groupe: 1
       nom: Lionel Dubouchet
       detail: Lionel Dubouchet — 40–44 ans, Commerce et vente
       id: lionel-dubouchet
-    - x: "−0,363"
-      y: "−0,184"
+    - x: "−0,352"
+      y: "−0,188"
       groupe: 4
       nom: Nora Toubal
       detail: Nora Toubal — 45 ans et plus, Encadrement et professions intellectuelles
       id: nora-toubal
-    - x: "−0,517"
+    - x: "−0,502"
       y: "0,117"
       groupe: 1
       nom: Jonathan Guez
       detail: Jonathan Guez — 35–39 ans, Encadrement et professions intellectuelles
       id: jonathan-guez
-    - x: "−0,637"
-      y: "1,378"
+    - x: "−0,638"
+      y: "1,379"
       groupe: 1
       nom: Ulrich Bandeira
       detail: Ulrich Bandeira — 40–44 ans, Transport et logistique
       id: ulrich-bandeira
-    - x: "−0,482"
-      y: "0,614"
-      groupe: 2
+    - x: "−0,483"
+      y: "0,618"
+      groupe: 3
       nom: Johan Pinaud
       detail: Johan Pinaud — 35–39 ans, Transport et logistique
       id: johan-pinaud
-    - x: "−0,349"
-      y: "−0,168"
-      groupe: 2
+    - x: "−0,35"
+      y: "−0,165"
+      groupe: 3
       nom: Paul Estival
       detail: Paul Estival — 35–39 ans, Sport et coaching
       id: paul-estival
-    - x: "2,2"
-      y: "0,409"
-      groupe: 5
+    - x: "2,217"
+      y: "0,415"
+      groupe: 2
       nom: Lola Krast
       detail: Lola Krast — 18–24 ans, Étudiants
       id: lola-krast
-    - x: "−0,171"
+    - x: "−0,176"
       y: "−0,475"
-      groupe: 3
+      groupe: 0
       nom: Jade Correa
       detail: Jade Correa — 30–34 ans, Commerce et vente
       id: jade-correa
-    - x: "−0,173"
-      y: "0,116"
-      groupe: 2
+    - x: "−0,177"
+      y: "0,114"
+      groupe: 3
       nom: Cindy Sulpice-Gonzalez
       detail: Cindy Sulpice-Gonzalez — 30–34 ans, Action et sécurité
       id: cindy-sulpice-gonzalez
-    - x: "−0,136"
-      y: "−0,298"
-      groupe: 3
+    - x: "−0,131"
+      y: "−0,293"
+      groupe: 0
       nom: Antonin Fortunato
       detail: Antonin Fortunato — 25–29 ans, Arts, médias et image
       id: antonin-fortunato
-    - x: "−0,205"
-      y: "0,452"
+    - x: "−0,2"
+      y: "0,455"
       groupe: 1
       nom: Zakariya Bougoudouima
       detail: Zakariya Bougoudouima — 25–29 ans, Action et sécurité
       id: zakariya-bougoudouima
-    - x: "−0,448"
-      y: "0,224"
+    - x: "−0,449"
+      y: "0,226"
       groupe: 4
       nom: Daniel Duquesnoy
       detail: Daniel Duquesnoy — 45 ans et plus, Sport et coaching
       id: daniel-duquesnoy
-    - x: "−0,357"
-      y: "0,134"
+    - x: "−0,337"
+      y: "0,135"
       groupe: 1
       nom: Hugo Van Aertryck
       detail: Hugo Van Aertryck — 25–29 ans, Encadrement et professions intellectuelles
       id: hugo-van-aertryck
-    - x: "−0,111"
-      y: "−0,259"
-      groupe: 3
+    - x: "−0,115"
+      y: "−0,26"
+      groupe: 0
       nom: Caroline Ledos
       detail: Caroline Ledos — 35–39 ans, Action et sécurité
       id: caroline-ledos
-    - x: "−0,357"
-      y: "0,134"
+    - x: "−0,337"
+      y: "0,135"
       groupe: 1
       nom: Guillaume Le Deun
       detail: Guillaume Le Deun — 25–29 ans, Encadrement et professions intellectuelles
       id: guillaume-le-deun
-    - x: "1,18"
-      y: "−0,519"
-      groupe: 0
+    - x: "1,185"
+      y: "−0,524"
+      groupe: 5
       nom: Clarisse Cresseveur
       detail: Clarisse Cresseveur — 18–24 ans, Santé
       id: clarisse-cresseveur
     - x: "0,111"
-      y: "−1,309"
-      groupe: 3
+      y: "−1,308"
+      groupe: 0
       nom: Cynthia Combes
       detail: Cynthia Combes — 35–39 ans, Restauration et hôtellerie
       id: cynthia-combes
     modalites:
-    - x: "1,628"
-      y: "0,551"
+    - x: "1,623"
+      y: "0,546"
       libelle: 18–24 ans
-    - x: "−0,044"
-      y: "−0,613"
+    - x: "−0,037"
+      y: "−0,608"
       libelle: 25–29 ans
-    - x: "−0,516"
-      y: "0,096"
+    - x: "−0,517"
+      y: "0,097"
       libelle: 30–34 ans
-    - x: "−0,384"
-      y: "−0,646"
+    - x: "−0,386"
+      y: "−0,644"
       libelle: 35–39 ans
-    - x: "−0,715"
-      y: "0,868"
+    - x: "−0,714"
+      y: "0,865"
       libelle: 40–44 ans
-    - x: "−0,595"
+    - x: "−0,597"
       y: "0,131"
       libelle: 45 ans et plus
-    - x: "0,269"
-      y: "−0,686"
+    - x: "0,264"
+      y: "−0,688"
       libelle: femme
-    - x: "−0,27"
-      y: "0,688"
+    - x: "−0,265"
+      y: "0,691"
       libelle: homme
-    - x: "−0,122"
-      y: "0,82"
+    - x: "−0,123"
+      y: "0,818"
       libelle: Action et sécurité
-    - x: "−0,796"
-      y: "0,472"
+    - x: "−0,808"
+      y: "0,478"
       libelle: Agriculture et nature
-    - x: "−0,803"
-      y: "0,907"
+    - x: "−0,815"
+      y: "0,911"
       libelle: Artisanat et bâtiment
-    - x: "0,024"
-      y: "−0,666"
+    - x: "0,023"
+      y: "−0,663"
       libelle: Arts, médias et image
-    - x: "−0,118"
+    - x: "−0,121"
       y: "−0,35"
       libelle: Commerce et vente
-    - x: "−0,448"
-      y: "0,191"
+    - x: "−0,416"
+      y: "0,185"
       libelle: Encadrement et professions intellectuelles
-    - x: "−0,066"
-      y: "−1,284"
+    - x: "−0,068"
+      y: "−1,28"
       libelle: Enseignement et éducation
-    - x: "2,798"
-      y: "0,945"
+    - x: "2,827"
+      y: "0,964"
       libelle: Étudiants
-    - x: "0,353"
-      y: "−1,261"
+    - x: "0,357"
+      y: "−1,259"
       libelle: Restauration et hôtellerie
-    - x: "−0,046"
-      y: "−0,572"
+    - x: "−0,053"
+      y: "−0,576"
       libelle: Sans activité déclarée
-    - x: "0,622"
-      y: "−0,893"
+    - x: "0,632"
+      y: "−0,895"
       libelle: Santé
-    - x: "−0,091"
-      y: "−0,376"
+    - x: "−0,093"
+      y: "−0,374"
       libelle: Sport et coaching
-    - x: "−0,375"
-      y: "1,174"
+    - x: "−0,377"
+      y: "1,178"
       libelle: Transport et logistique
     tests:
     - cle: parite
@@ -24208,112 +24208,112 @@ modeles:
       libelle: La variété des métiers
       question: Un casting couvre-t-il plus de familles de métiers qu’un tirage au hasard ?
       observe: 245
-      attendu: "246,454"
+      attendu: "246,236"
       unite: cases remplies
-      ecart_types: "−0,28"
-      p: "0,8567"
+      ecart_types: "−0,23"
+      p: "0,8538"
       tirages: 10000
       lecture: On compte, pour chaque saison, le nombre de familles de métiers représentées. Un total
         observé PLUS GRAND veut dire qu’on veille à n’oublier aucune famille.
       nulle: &id072
         bornes:
-        - "225,1"
-        - "266,9"
+        - "224,05"
+        - "266,95"
         cases:
         - 0
         - 1
-        - 4
-        - 17
-        - 15
-        - 79
-        - 76
-        - 256
-        - 209
-        - 636
-        - 425
-        - 1188
-        - 694
-        - 734
-        - 1433
-        - 723
-        - 1272
-        - 492
-        - 828
-        - 281
-        - 364
-        - 111
-        - 120
-        - 19
-        - 14
-        - 6
-        - 3
         - 0
-        largeur_case: "1,492857"
+        - 12
+        - 14
+        - 49
+        - 58
+        - 203
+        - 149
+        - 517
+        - 384
+        - 1011
+        - 647
+        - 1419
+        - 1462
+        - 710
+        - 1247
+        - 485
+        - 774
+        - 266
+        - 352
+        - 93
+        - 111
+        - 17
+        - 12
+        - 5
+        - 2
+        - 0
+        largeur_case: "1,532143"
         observe: 245
-        moyenne_nulle: "246,4544"
+        moyenne_nulle: "246,2364"
       origine: casting
-      p_ajustee: "0,9199"
+      p_ajustee: "0,9253"
       retenu: false
       observe_arrondi: 245
-      attendu_arrondi: "246,5"
+      attendu_arrondi: "246,2"
       ecart_types_mot: écart-type
-      ecart_types_abs: "0,28"
+      ecart_types_abs: "0,23"
       observe_arrondi_pluriel: true
       tirages_texte: 10 000
     - cle: melange_archetypes
       libelle: Le mélange d’archétypes
       question: Chaque saison contient-elle toujours le même mélange de profils ?
-      observe: "0,302"
+      observe: "0,308"
       attendu: "0,252"
       unite: ''
-      ecart_types: "1,62"
-      p: "0,1048"
+      ecart_types: "1,82"
+      p: "0,0666"
       tirages: 10000
       lecture: Distance entre le mélange de profils d’une saison et le mélange général. Un observé PLUS
         PETIT que l’attendu veut dire que les saisons se ressemblent plus que le hasard ne l’expliquerait.
       nulle: &id073
         bornes:
-        - "0,1394"
-        - "0,3882"
+        - "0,1375"
+        - "0,3889"
         cases:
         - 0
-        - 2
-        - 8
-        - 20
-        - 55
-        - 106
-        - 261
-        - 401
-        - 619
-        - 819
-        - 1080
-        - 1120
-        - 1116
-        - 1013
-        - 915
-        - 786
-        - 590
-        - 389
-        - 277
-        - 184
-        - 108
-        - 55
-        - 39
-        - 15
-        - 9
+        - 1
         - 10
-        - 3
+        - 19
+        - 47
+        - 91
+        - 239
+        - 397
+        - 592
+        - 784
+        - 1070
+        - 1110
+        - 1157
+        - 1030
+        - 975
+        - 771
+        - 590
+        - 414
+        - 276
+        - 180
+        - 117
+        - 58
+        - 31
+        - 21
+        - 11
+        - 5
+        - 4
         - 0
-        largeur_case: "0,008884"
-        observe: "0,3021"
-        moyenne_nulle: "0,2518"
+        largeur_case: "0,008979"
+        observe: "0,3083"
+        moyenne_nulle: "0,2517"
       origine: casting
-      p_ajustee: "0,1988"
+      p_ajustee: "0,1449"
       retenu: false
-      observe_arrondi: "0,3"
+      observe_arrondi: "0,31"
       attendu_arrondi: "0,25"
       ecart_types_mot: écart-type
-      ecart_types_abs: "1,62"
+      ecart_types_abs: "1,82"
       observe_arrondi_pluriel: false
       tirages_texte: 10 000
     - cle: tribus_femmes
@@ -24365,7 +24365,7 @@ modeles:
         observe: "11,7058"
         moyenne_nulle: "18,6544"
       origine: casting
-      p_ajustee: "0,0943"
+      p_ajustee: "0,0917"
       retenu: false
       observe_arrondi: "11,7"
       attendu_arrondi: "18,7"
@@ -24496,16 +24496,16 @@ modeles:
       observe_arrondi_pluriel: true
     - cle: familles_metiers
       p: 1
-      attendu: "244,857"
+      attendu: "244,804"
       observe: 245
       observe_arrondi: 245
-      attendu_arrondi: "244,9"
+      attendu_arrondi: "244,8"
       observe_arrondi_pluriel: true
     - cle: melange_archetypes
-      p: "0,3526"
-      attendu: "0,274"
-      observe: "0,302"
-      observe_arrondi: "0,3"
+      p: "0,2178"
+      attendu: "0,272"
+      observe: "0,308"
+      observe_arrondi: "0,31"
       attendu_arrondi: "0,27"
       observe_arrondi_pluriel: false
   pronostic:
@@ -24538,117 +24538,117 @@ modeles:
     - couleur:rouge
     - couleur:vert
     - couleur:violet
-    rang_moyen: "10,71"
+    rang_moyen: "10,67"
     rang_hasard: "10,25"
     rang_intervalle:
-    - "8,73"
-    - "12,69"
+    - "8,67"
+    - "12,62"
     r2_survie_lineaire: 0
-    r2_survie_arbre: "−0,008"
+    r2_survie_arbre: "−0,006"
     importances:
     - variable: couleur:vert
-      perte: "0,82"
+      perte: "0,87"
     - variable: metier:sport
-      perte: "0,55"
+      perte: "0,56"
     - variable: metier:enseignement
-      perte: "0,4"
-    - variable: metier:arts_medias
-      perte: "0,29"
+      perte: "0,41"
     - variable: metier:agriculture
-      perte: "0,27"
+      perte: "0,3"
+    - variable: metier:arts_medias
+      perte: "0,3"
     - variable: metier:sante
       perte: "0,22"
     - variable: couleur:orange
       perte: "0,16"
-    - variable: couleur:noir
-      perte: "0,02"
+    - variable: metier:commerce
+      perte: "0,05"
     tests:
     - cle: pronostic_vainqueur
       libelle: Pronostiquer le vainqueur au casting
       question: En ne connaissant que l’âge, le sexe, le métier et la couleur, place-t-on le futur vainqueur
         plus haut que le hasard ne le ferait ?
-      observe: "10,712"
-      attendu: "10,26"
+      observe: "10,673"
+      attendu: "10,261"
       unite: rang moyen
-      ecart_types: "0,42"
-      p: "0,6873"
+      ecart_types: "0,38"
+      p: "0,7087"
       tirages: 10000
       lecture: Le modèle classe les candidats d’une saison ; on relève la place qu’il donne à celui qui
         a gagné. Plus BAS que l’attendu veut dire qu’une part du résultat se joue au recrutement.
       nulle: &id077
         bornes:
-        - "6,2731"
-        - "14,65"
+        - "6,3144"
+        - "14,6279"
         cases:
         - 0
+        - 12
         - 8
+        - 34
+        - 51
+        - 110
+        - 175
+        - 311
+        - 482
+        - 660
+        - 845
+        - 910
+        - 1123
+        - 1040
+        - 1002
+        - 944
+        - 735
+        - 590
+        - 385
+        - 282
+        - 151
+        - 85
+        - 28
+        - 23
         - 11
-        - 29
-        - 46
-        - 108
-        - 177
-        - 296
-        - 479
-        - 653
-        - 832
-        - 890
-        - 1104
-        - 1063
-        - 1078
-        - 931
-        - 740
-        - 597
-        - 365
-        - 295
-        - 147
-        - 84
-        - 31
-        - 25
-        - 9
-        - 1
+        - 2
         - 1
         - 0
-        largeur_case: "0,299176"
-        observe: "10,7115"
-        moyenne_nulle: "10,2601"
+        largeur_case: "0,296909"
+        observe: "10,6731"
+        moyenne_nulle: "10,2609"
       origine: pronostic
-      p_ajustee: "0,808"
+      p_ajustee: "0,8221"
       retenu: false
       observe_arrondi: "10,7"
       attendu_arrondi: "10,3"
       ecart_types_mot: écart-type
-      ecart_types_abs: "0,42"
+      ecart_types_abs: "0,38"
       observe_arrondi_pluriel: true
       tirages_texte: 10 000
     classement:
     - nom: Ambre Daudet
       saison: s23
-      score: "−1,192"
+      score: "−1,191"
       vainqueur: false
       id: ambre-daudet
     - nom: Benoît Piedfer
       saison: s27
-      score: "−1,257"
+      score: "−1,256"
       vainqueur: false
       id: benoit-piedfer
     - nom: Louana Roy
       saison: s23
-      score: "−1,31"
+      score: "−1,309"
       vainqueur: false
       id: louana-roy
     - nom: Hadja Cissé
       saison: s21
-      score: "−1,347"
+      score: "−1,346"
       vainqueur: false
       id: hadja-cisse
     - nom: Laurent Boudes
       saison: s07
-      score: "−1,373"
+      score: "−1,372"
       vainqueur: false
       id: laurent-boudes
     - nom: Grégoire Delachaux
       saison: s07
-      score: "−1,537"
+      score: "−1,54"
       vainqueur: false
       id: gregoire-delachaux
     - nom: Maryline Hemelsdael
@@ -24658,17 +24658,17 @@ modeles:
       id: maryline-hemelsdael
     - nom: Simon Quintilla
       saison: s07
-      score: "−1,637"
+      score: "−1,64"
       vainqueur: false
       id: simon-quintilla
     - nom: Ludovic Laresche
       saison: s06
-      score: "−1,652"
+      score: "−1,654"
       vainqueur: false
       id: ludovic-laresche
     - nom: Pauline Pourchaire
       saison: s23
-      score: "−1,653"
+      score: "−1,663"
       vainqueur: false
       id: pauline-pourchaire
     - nom: Richard Lecourt
@@ -24678,7 +24678,7 @@ modeles:
       id: richard-lecourt
     - nom: Céline Faccio
       saison: s27
-      score: "−1,729"
+      score: "−1,725"
       vainqueur: false
       id: celine-faccio
     casting_moyen: "19,5"
@@ -24954,7 +24954,7 @@ modeles:
         bas: "0,825"
         haut: "1,01"
         p: "0,0785"
-        p_ajustee: "0,1626"
+        p_ajustee: "0,1634"
         retenu: false
         estimation_pluriel: false
       femme:
@@ -24962,7 +24962,7 @@ modeles:
         bas: "0,929"
         haut: "1,42"
         p: "0,2021"
-        p_ajustee: "0,3381"
+        p_ajustee: "0,3317"
         retenu: false
         estimation_pluriel: false
       age:
@@ -24970,7 +24970,7 @@ modeles:
         bas: "0,942"
         haut: "1,166"
         p: "0,3903"
-        p_ajustee: "0,5659"
+        p_ajustee: "0,5654"
         retenu: false
         estimation_pluriel: false
       lecture: Rapport de taux par doublement de la force. Au-dessus de 1, un aventurier fort attire davantage
@@ -24982,7 +24982,7 @@ modeles:
         bas: "−0,33"
         haut: "2,646"
         p: "0,1271"
-        p_ajustee: "0,2257"
+        p_ajustee: "0,2212"
         retenu: false
         estimation_pluriel: false
       femme:
@@ -24990,7 +24990,7 @@ modeles:
         bas: "−3,688"
         haut: "1,749"
         p: "0,4847"
-        p_ajustee: "0,6389"
+        p_ajustee: "0,6378"
         retenu: false
         estimation_pluriel: false
       age:
@@ -25024,79 +25024,79 @@ modeles:
       - variable: Femme
         rapport: "1,191"
         bas: "0,967"
-        haut: "1,467"
-        p: "0,0998"
-        p_ajustee: "0,1973"
+        haut: "1,466"
+        p: "0,1006"
+        p_ajustee: "0,1903"
         retenu: false
       - variable: Âge (par décennie)
-        rapport: "1,132"
-        bas: "1,004"
-        haut: "1,275"
-        p: "0,0426"
-        p_ajustee: "0,1002"
+        rapport: "1,149"
+        bas: "1,02"
+        haut: "1,294"
+        p: "0,0228"
+        p_ajustee: "0,062"
         retenu: false
       - variable: Tribu initiale jaune
-        rapport: "1,068"
-        bas: "0,847"
-        haut: "1,347"
-        p: "0,5762"
-        p_ajustee: "0,7161"
+        rapport: "1,067"
+        bas: "0,846"
+        haut: "1,345"
+        p: "0,5844"
+        p_ajustee: "0,7233"
         retenu: false
       - variable: Déjà venu
-        rapport: "1,126"
+        rapport: "1,125"
         bas: "0,25"
-        haut: "5,078"
-        p: "0,8776"
-        p_ajustee: "0,9199"
+        haut: "5,073"
+        p: "0,8781"
+        p_ajustee: "0,9265"
         retenu: false
       - variable: Métier — Artisanat et bâtiment
-        rapport: "0,864"
-        bas: "0,558"
-        haut: "1,337"
-        p: "0,512"
-        p_ajustee: "0,6551"
+        rapport: "0,858"
+        bas: "0,554"
+        haut: "1,328"
+        p: "0,4915"
+        p_ajustee: "0,6378"
         retenu: false
       - variable: Métier — Arts, médias et image
-        rapport: "0,968"
-        bas: "0,652"
-        haut: "1,439"
-        p: "0,8738"
-        p_ajustee: "0,9199"
+        rapport: "0,973"
+        bas: "0,654"
+        haut: "1,446"
+        p: "0,8911"
+        p_ajustee: "0,9265"
         retenu: false
       - variable: Métier — Commerce et vente
-        rapport: "1,178"
-        bas: "0,815"
-        haut: "1,702"
-        p: "0,3848"
-        p_ajustee: "0,5659"
+        rapport: "1,173"
+        bas: "0,811"
+        haut: "1,696"
+        p: "0,3964"
+        p_ajustee: "0,5654"
         retenu: false
       - variable: Métier — Encadrement et professions intellectuelles
-        rapport: "1,374"
-        bas: "1,004"
-        haut: "1,881"
-        p: "0,047"
-        p_ajustee: "0,1048"
+        rapport: "1,322"
+        bas: "0,967"
+        haut: "1,807"
+        p: "0,0804"
+        p_ajustee: "0,1634"
         retenu: false
       - variable: Métier — Enseignement et éducation
-        rapport: "1,219"
-        bas: "0,764"
-        haut: "1,943"
-        p: "0,4062"
-        p_ajustee: "0,57"
+        rapport: "1,225"
+        bas: "0,768"
+        haut: "1,954"
+        p: "0,3945"
+        p_ajustee: "0,5654"
         retenu: false
       - variable: Métier — Étudiants
-        rapport: "1,329"
-        bas: "0,816"
-        haut: "2,163"
-        p: "0,2534"
-        p_ajustee: "0,4083"
+        rapport: "1,539"
+        bas: "0,943"
+        haut: "2,511"
+        p: "0,0844"
+        p_ajustee: "0,1634"
         retenu: false
       - variable: Métier — Sport et coaching
-        rapport: "0,928"
-        bas: "0,616"
-        haut: "1,399"
-        p: "0,7208"
-        p_ajustee: "0,8251"
+        rapport: "0,933"
+        bas: "0,619"
+        haut: "1,406"
+        p: "0,7407"
+        p_ajustee: "0,8465"
         retenu: false
       lecture: Rapport de risque d’élimination, à saison identique. Au-dessus de 1, on sort plus vite
         que la référence ; en dessous, plus lentement. L’intervalle qui contient 1 veut dire que ces données
@@ -25209,7 +25209,7 @@ modeles:
       bas: "−11,87"
       haut: "5,56"
       p: "0,4786"
-      p_ajustee: "0,6389"
+      p_ajustee: "0,6378"
       retenu: false
     - mecanique: destins_lies
       sur: taux_abandon
@@ -25220,7 +25220,7 @@ modeles:
       bas: "−8,37"
       haut: "12,37"
       p: "0,7053"
-      p_ajustee: "0,8181"
+      p_ajustee: "0,8221"
       retenu: false
     lecture: Effet de la présence d’une mécanique, l’année tenue constante. Un intervalle qui contient
       zéro veut dire que ces vingt-six saisons ne permettent pas de conclure.
@@ -25456,7 +25456,7 @@ modeles:
         moyenne_nulle: "47,6028"
       bulletins: 2645
       origine: homophilie
-      p_ajustee: "0,0816"
+      p_ajustee: "0,0791"
       retenu: false
       observe_arrondi: "46,1"
       attendu_arrondi: "47,6"
@@ -25527,11 +25527,11 @@ modeles:
     - cle: vote_meme_metier
       libelle: Viser la même famille de métiers
       question: Le métier rapproche-t-il ou éloigne-t-il du bulletin ?
-      observe: "10,132"
-      attendu: "11,002"
+      observe: "10,208"
+      attendu: "10,97"
       unite: '%'
-      ecart_types: "−1,99"
-      p: "0,046"
+      ecart_types: "−1,73"
+      p: "0,0845"
       tirages: 2000
       lecture: 'L’attendu vient du partage des bulletins d’un conseil entre ses votants, avec le même
         jeu de cibles : la popularité d’une cible est donc neutralisée. L’incertitude vient d’un tirage
@@ -25540,48 +25540,48 @@ modeles:
         ne l’expliquerait.'
       nulle: &id080
         bornes:
-        - "9,5296"
-        - "12,89"
+        - "9,396"
+        - "12,7564"
         cases:
         - 0
         - 1
-        - 6
-        - 16
-        - 25
+        - 4
+        - 9
+        - 9
+        - 29
+        - 43
+        - 75
+        - 106
+        - 133
+        - 166
+        - 175
+        - 224
+        - 204
+        - 193
+        - 203
+        - 122
+        - 115
+        - 81
+        - 44
         - 37
-        - 72
-        - 94
-        - 129
-        - 155
-        - 190
-        - 200
-        - 215
-        - 222
-        - 176
-        - 162
-        - 112
-        - 65
-        - 61
-        - 30
-        - 18
-        - 10
-        - 0
-        - 3
-        - 0
+        - 14
+        - 9
+        - 1
+        - 2
         - 0
         - 1
         - 0
         largeur_case: "0,120015"
-        observe: "10,1323"
-        moyenne_nulle: "11,002"
+        observe: "10,2079"
+        moyenne_nulle: "10,97"
       bulletins: 2645
       origine: homophilie
-      p_ajustee: "0,1048"
+      p_ajustee: "0,1634"
       retenu: false
-      observe_arrondi: "10,1"
+      observe_arrondi: "10,2"
       attendu_arrondi: 11
       ecart_types_mot: écart-type
-      ecart_types_abs: "1,99"
+      ecart_types_abs: "1,73"
       observe_arrondi_pluriel: true
       tirages_texte: 2 000
     - cle: vote_meme_bandeau
@@ -25696,7 +25696,7 @@ modeles:
         moyenne_nulle: "2,0628"
       bulletins: 2526
       origine: homophilie
-      p_ajustee: "0,0943"
+      p_ajustee: "0,0917"
       retenu: false
       observe_arrondi: "1,7"
       attendu_arrondi: "2,1"
@@ -25906,7 +25906,7 @@ modeles:
       gagnants représentent parmi ceux que chaque votant pouvait viser (sans lui-même ni l’immunisé).
       Soirs à conseil unique seulement ; les bulletins d’un même conseil ne sont pas indépendants, et
       l’intervalle est donc trop étroit.
-    p_ajustee: "0,6389"
+    p_ajustee: "0,6378"
     retenu: false
     marge: 4
   decimation:
@@ -26023,7 +26023,7 @@ modeles:
         observe: 116
         moyenne_nulle: "100,3442"
       origine: decimation
-      p_ajustee: "0,0817"
+      p_ajustee: "0,0793"
       retenu: false
       observe_arrondi: 116
       attendu_arrondi: "100,3"
@@ -26040,7 +26040,7 @@ modeles:
       bas: "0,379"
       haut: "1,182"
       p: "0,1412"
-      p_ajustee: "0,2457"
+      p_ajustee: "0,2409"
       retenu: false
       inverse: "1,5"
     - libelle: A voté avec le juré, par conseil partagé
@@ -26246,7 +26246,7 @@ modeles:
       bas: "−0,002"
       haut: "0,162"
       p: "0,0549"
-      p_ajustee: "0,1165"
+      p_ajustee: "0,1225"
       retenu: false
     pente_restants:
       pente: "0,709"
@@ -27567,7 +27567,7 @@ modeles:
         observe: "20,6811"
         moyenne_nulle: "16,4275"
       origine: audience
-      p_ajustee: "0,57"
+      p_ajustee: "0,5658"
       retenu: false
       observe_arrondi: "20,7"
       attendu_arrondi: "16,4"
@@ -27681,7 +27681,7 @@ modeles:
         observe: "−0,2958"
         moyenne_nulle: "−0,0001"
       origine: audience
-      p_ajustee: "0,1988"
+      p_ajustee: "0,1947"
       retenu: false
       observe_arrondi: "−0,3"
       attendu_arrondi: 0
@@ -27854,7 +27854,7 @@ modeles:
         observe: "−5,6187"
         moyenne_nulle: "−0,0129"
       origine: avant_apres
-      p_ajustee: "0,2735"
+      p_ajustee: "0,2682"
       retenu: false
       observe_arrondi: "−5,6"
       attendu_arrondi: 0
@@ -27967,7 +27967,7 @@ modeles:
         observe: "55,6052"
         moyenne_nulle: "49,8902"
       origine: avant_apres
-      p_ajustee: "0,6473"
+      p_ajustee: "0,6378"
       retenu: false
       observe_arrondi: "55,6"
       attendu_arrondi: "49,9"
@@ -28026,7 +28026,7 @@ modeles:
         observe: "38,8848"
         moyenne_nulle: "46,9071"
       origine: avant_apres
-      p_ajustee: "0,1988"
+      p_ajustee: "0,1947"
       retenu: false
       observe_arrondi: "38,9"
       attendu_arrondi: "46,9"
@@ -28362,7 +28362,7 @@ modeles:
         bas: "0,87"
         haut: "2,74"
         p: "0,052"
-        p_ajustee: "0,1131"
+        p_ajustee: "0,1191"
         retenu: false
         libelle_maj: 4 voix et plus
       lecture: Rapport de cotes par rapport à « aucune voix au conseil précédent », à conseil égal. Au-dessus
@@ -29952,7 +29952,7 @@ modeles:
         observe: "7,7262"
         moyenne_nulle: "8,4294"
       origine: tenant_du_titre
-      p_ajustee: "0,9199"
+      p_ajustee: "0,9253"
       retenu: false
       observe_arrondi: "7,7"
       attendu_arrondi: "8,4"
@@ -30020,7 +30020,7 @@ modeles:
         observe: "1,9294"
         moyenne_nulle: "0,0086"
       origine: age_au_conseil
-      p_ajustee: "0,0873"
+      p_ajustee: "0,0848"
       retenu: false
       observe_arrondi: "1,9"
       attendu_arrondi: 0
@@ -30133,7 +30133,7 @@ modeles:
       bas: "0,05"
       haut: "1,43"
       p: "0,1196"
-      p_ajustee: "0,2168"
+      p_ajustee: "0,2124"
       retenu: false
       inverse: 4
     - libelle: Être une femme
@@ -30157,7 +30157,7 @@ modeles:
       bas: "0,4"
       haut: "1,06"
       p: "0,0825"
-      p_ajustee: "0,1669"
+      p_ajustee: "0,1634"
       retenu: false
       inverse: "1,54"
     lecture: Régression logistique sur les premières participations. Un rapport au-dessus de 1 veut dire
@@ -30215,43 +30215,43 @@ modeles:
     question: Un casting couvre-t-il plus de familles de métiers qu’un tirage au hasard ?
     origine: casting
     observe: 245
-    attendu: "246,454"
+    attendu: "246,236"
     unite: cases remplies
-    ecart_types: "−0,28"
-    p: "0,8567"
-    p_ajustee: "0,9199"
+    ecart_types: "−0,23"
+    p: "0,8538"
+    p_ajustee: "0,9253"
     retenu: false
     tirages: 10000
     lecture: On compte, pour chaque saison, le nombre de familles de métiers représentées. Un total observé
       PLUS GRAND veut dire qu’on veille à n’oublier aucune famille.
     nulle: *id072
     observe_arrondi: 245
-    attendu_arrondi: "246,5"
+    attendu_arrondi: "246,2"
     unite_accordee: cases remplies
     ecart_types_mot: écart-type
-    ecart_types_abs: "0,28"
+    ecart_types_abs: "0,23"
     observe_arrondi_pluriel: true
     tirages_texte: 10 000
   - cle: melange_archetypes
     libelle: Le mélange d’archétypes
     question: Chaque saison contient-elle toujours le même mélange de profils ?
     origine: casting
-    observe: "0,302"
+    observe: "0,308"
     attendu: "0,252"
     unite: ''
-    ecart_types: "1,62"
-    p: "0,1048"
-    p_ajustee: "0,1988"
+    ecart_types: "1,82"
+    p: "0,0666"
+    p_ajustee: "0,1449"
     retenu: false
     tirages: 10000
     lecture: Distance entre le mélange de profils d’une saison et le mélange général. Un observé PLUS
       PETIT que l’attendu veut dire que les saisons se ressemblent plus que le hasard ne l’expliquerait.
     nulle: *id073
-    observe_arrondi: "0,3"
+    observe_arrondi: "0,31"
     attendu_arrondi: "0,25"
     unite_accordee: ''
     ecart_types_mot: écart-type
-    ecart_types_abs: "1,62"
+    ecart_types_abs: "1,82"
     observe_arrondi_pluriel: false
     tirages_texte: 10 000
   - cle: tribus_femmes
@@ -30264,7 +30264,7 @@ modeles:
     unite: points de %
     ecart_types: "−2,05"
     p: "0,0382"
-    p_ajustee: "0,0943"
+    p_ajustee: "0,0917"
     retenu: false
     tirages: 10000
     lecture: On rebat les tribus initiales à l’intérieur de chaque saison. Un écart observé PLUS PETIT
@@ -30327,12 +30327,12 @@ modeles:
     question: En ne connaissant que l’âge, le sexe, le métier et la couleur, place-t-on le futur vainqueur
       plus haut que le hasard ne le ferait ?
     origine: pronostic
-    observe: "10,712"
-    attendu: "10,26"
+    observe: "10,673"
+    attendu: "10,261"
     unite: rang moyen
-    ecart_types: "0,42"
-    p: "0,6873"
-    p_ajustee: "0,808"
+    ecart_types: "0,38"
+    p: "0,7087"
+    p_ajustee: "0,8221"
     retenu: false
     tirages: 10000
     lecture: Le modèle classe les candidats d’une saison ; on relève la place qu’il donne à celui qui
@@ -30342,7 +30342,7 @@ modeles:
     attendu_arrondi: "10,3"
     unite_accordee: rang moyen
     ecart_types_mot: écart-type
-    ecart_types_abs: "0,42"
+    ecart_types_abs: "0,38"
     observe_arrondi_pluriel: true
     tirages_texte: 10 000
   - cle: vote_meme_sexe
@@ -30354,7 +30354,7 @@ modeles:
     unite: '%'
     ecart_types: "−2,21"
     p: "0,03"
-    p_ajustee: "0,0816"
+    p_ajustee: "0,0791"
     retenu: false
     tirages: 2000
     lecture: 'L’attendu vient du partage des bulletins d’un conseil entre ses votants, avec le même jeu
@@ -30399,12 +30399,12 @@ modeles:
     libelle: Viser la même famille de métiers
     question: Le métier rapproche-t-il ou éloigne-t-il du bulletin ?
     origine: homophilie
-    observe: "10,132"
-    attendu: "11,002"
+    observe: "10,208"
+    attendu: "10,97"
     unite: '%'
-    ecart_types: "−1,99"
-    p: "0,046"
-    p_ajustee: "0,1048"
+    ecart_types: "−1,73"
+    p: "0,0845"
+    p_ajustee: "0,1634"
     retenu: false
     tirages: 2000
     lecture: 'L’attendu vient du partage des bulletins d’un conseil entre ses votants, avec le même jeu
@@ -30413,11 +30413,11 @@ modeles:
       de l’attendu veut dire qu’on vise ses semblables plus souvent que le simple partage des cibles ne
       l’expliquerait.'
     nulle: *id080
-    observe_arrondi: "10,1"
+    observe_arrondi: "10,2"
     attendu_arrondi: 11
     unite_accordee: '%'
     ecart_types_mot: écart-type
-    ecart_types_abs: "1,99"
+    ecart_types_abs: "1,73"
     observe_arrondi_pluriel: true
     tirages_texte: 2 000
   - cle: vote_meme_bandeau
@@ -30454,7 +30454,7 @@ modeles:
     unite: '%'
     ecart_types: "−2,1"
     p: "0,039"
-    p_ajustee: "0,0943"
+    p_ajustee: "0,0917"
     retenu: false
     tirages: 2000
     lecture: 'L’attendu vient du partage des bulletins d’un conseil entre ses votants, avec le même jeu
@@ -30643,7 +30643,7 @@ modeles:
     unite: ''
     ecart_types: "0,84"
     p: "0,4032"
-    p_ajustee: "0,57"
+    p_ajustee: "0,5658"
     retenu: false
     tirages: 10000
     lecture: Gain de la meilleure coupure, comparé à celui obtenu sur des séries qui suivent la même tendance
@@ -30689,7 +30689,7 @@ modeles:
     unite: ''
     ecart_types: "−1,62"
     p: "0,1074"
-    p_ajustee: "0,1988"
+    p_ajustee: "0,1947"
     retenu: false
     tirages: 10000
     lecture: Corrélation de rang entre l’audience d’une saison et l’effectif de la suivante, une fois
@@ -30735,7 +30735,7 @@ modeles:
     unite: points de rang
     ecart_types: "−1,41"
     p: "0,1603"
-    p_ajustee: "0,2735"
+    p_ajustee: "0,2682"
     retenu: false
     tirages: 10000
     lecture: 'Rang de l’éliminé parmi les votants du conseil, sans l’immunisé, sur la force estimée aux
@@ -30780,7 +30780,7 @@ modeles:
     unite: points de rang
     ecart_types: "0,68"
     p: "0,4985"
-    p_ajustee: "0,6473"
+    p_ajustee: "0,6378"
     retenu: false
     tirages: 10000
     lecture: Rang de l’éliminé parmi les présents, sur la force estimée aux épreuves. Au-dessus de 50,
@@ -30802,7 +30802,7 @@ modeles:
     unite: points de rang
     ecart_types: "−1,61"
     p: "0,1074"
-    p_ajustee: "0,1988"
+    p_ajustee: "0,1947"
     retenu: false
     tirages: 100000
     lecture: 'Rang de l’ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c’est la médiane
@@ -31163,7 +31163,7 @@ modeles:
     unite: enchaînements
     ecart_types: "2,18"
     p: "0,031"
-    p_ajustee: "0,0817"
+    p_ajustee: "0,0793"
     retenu: false
     tirages: 10000
     lecture: Nombre de fois où deux sorties consécutives viennent de la même tribu initiale. Un observé
@@ -31185,7 +31185,7 @@ modeles:
     unite: points
     ecart_types: "−0,17"
     p: "0,8615"
-    p_ajustee: "0,9199"
+    p_ajustee: "0,9253"
     retenu: false
     tirages: 4000
     lecture: 'Écart entre gagner l’immunité quand on l’a gagnée la fois d’avant et la gagner quand on
@@ -31209,7 +31209,7 @@ modeles:
     unite: ans
     ecart_types: "2,14"
     p: "0,0341"
-    p_ajustee: "0,0873"
+    p_ajustee: "0,0848"
     retenu: false
     tirages: 10000
     lecture: 'Écart d’âge de l’éliminé à la moyenne de son camp, avant la réunification moins après. Le
@@ -31256,7 +31256,7 @@ modeles:
     unite: ''
     ecart_types: "1,23"
     p: "0,2239"
-    p_ajustee: "0,3675"
+    p_ajustee: "0,3607"
     retenu: false
     tirages: 10000
     lecture: 71 aventuriers ont joué au moins deux fois.
@@ -36050,7 +36050,7 @@ articles:
       valeur: "116"
       valeur_ronde: "116"
       attendu_rond: "100"
-      p: "0,082"
+      p: "0,079"
       retenu: false
       conforme: true
       affirme: non retenu, ecart +
@@ -36120,7 +36120,7 @@ articles:
       valeur: "1,9"
       valeur_ronde: "2"
       attendu_rond: "0"
-      p: "0,087"
+      p: "0,085"
       retenu: false
       conforme: true
       affirme: non retenu, ecart +
@@ -36130,7 +36130,7 @@ articles:
       valeur: "55,6"
       valeur_ronde: "56"
       attendu_rond: "50"
-      p: "0,65"
+      p: "0,64"
       retenu: false
       conforme: true
       affirme: non retenu
@@ -36140,7 +36140,7 @@ articles:
       valeur: "38,9"
       valeur_ronde: "39"
       attendu_rond: "47"
-      p: "0,2"
+      p: "0,19"
       retenu: false
       conforme: true
       affirme: non retenu
@@ -36160,7 +36160,7 @@ articles:
       valeur: "10,7"
       valeur_ronde: "11"
       attendu_rond: "10"
-      p: "0,81"
+      p: "0,82"
       retenu: false
       conforme: true
       affirme: non retenu

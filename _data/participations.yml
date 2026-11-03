@@ -11142,7 +11142,7 @@
   saison: s16
   genre: f
   age: 24
-  profession: Étudiante en ressources humanitaires
+  profession: Étudiante en ressources humaines
   localisation: Haute-Garonne
   edition_origine: null
   tribu: Naga
@@ -11165,7 +11165,8 @@
   victoires_individuelles: 1
   sources:
     age: fandom
-    profession: fandom
+    profession: 'corrige : page individuelle Fandom : « Étudiante en Ressources Humaines » ; la table
+      de saison ecrit « humanitaires »'
     tribu: fandom
     jour_sortie: fandom
     sort: fandom
@@ -23029,7 +23030,7 @@
   saison: sp3
   genre: h
   age: 40
-  profession: Responsable d'un service de client
+  profession: Responsable d'un service de clients
   localisation: Deux-Sèvres
   edition_origine: null
   tribu: Nekmao
@@ -23047,7 +23048,9 @@
   sources:
     genre: wikipedia-fr
     age: fandom
-    profession: wikipedia-fr
+    profession: 'corrige : table de saison Fandom : « Responsable d''un service de clients » ; Wikipedia
+      ecrit « de client ». La page individuelle donne « Responsable des ventes », un autre libelle que
+      celui du casting'
     localisation: wikipedia-fr
     tribu: correction, cf. TRIBUS_FAUTIVES
     couleur: wikipedia-fr

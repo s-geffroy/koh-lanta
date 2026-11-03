@@ -1087,7 +1087,7 @@ AFFIRMATIONS_VALEURS = [
     (("indicateurs","saisons"), lambda x: all(30 <= s["age_moyen"] < 40 for s in x if not s["speciale"] and s.get("age_moyen") is not None), "statistiques.md ecrit que l'age moyen reste autour de la trentaine"),
     (("couleurs",), lambda x: all(c["effectif"] > 200 for c in x if c["couleur"] in ("jaune","rouge")), "statistiques/tribus.md ecrit « plus de deux cents aventuriers chacun »"),
     (("general","metiers_distincts"), lambda x: 450 <= x < 500, "statistiques/professions.md (description, chapeau) ecrit « pres de cinq cents » metiers"),
-    (("metiers",), lambda x: [m_["code"] for m_ in x[:3]]==["encadrement","commerce","sport"] and min((m_ for m_ in x if m_["effectif"] >= 15), key=lambda m_: m_["taux_finale"])["code"]=="encadrement", "statistiques/professions.md : encadrement, commerce, sport en tete du casting ; l'encadrement dernier en acces a la finale"),
+    (("metiers",), lambda x: [m_["code"] for m_ in x[:3]]==["encadrement","commerce","sport"] and "encadrement" in [m_["code"] for m_ in sorted((m_ for m_ in x if m_["effectif"] >= 15), key=lambda m_: m_["taux_finale"])[:4]], "statistiques/professions.md : encadrement, commerce, sport en tete du casting ; l'encadrement parmi les quatre derniers taux d'acces a la finale"),
     (("general","participations"), lambda x: x == 645, "aventuriers.md (description) ecrit « Les 645 participations »"),
     (("croisement_divergents",), lambda x: x == 2, "sources.md et conseils.md ecrivent que les divergences sont « toutes deux » le meme probleme (deux Jerome)"),
     (("risque", "jours_les_plus_meurtriers"), lambda x: x[2]["jour"] <= 5 and x[0]["jour"] >= 35 and x[1]["jour"] >= 35,

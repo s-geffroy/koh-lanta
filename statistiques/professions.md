@@ -32,8 +32,8 @@ la finale. Seules les familles comptant au moins quinze aventuriers figurent
 ici : en dessous, un seul finaliste suffirait à faire bouger le taux de dix
 points.</p>
 
-Le renversement est net. **L’encadrement, première famille du casting, est la
-dernière en taux d’accès à la finale** : {{ s.metiers[0].taux_finale }} % contre
+Le renversement est net. **L’encadrement, première famille du casting, est parmi les
+dernières en taux d’accès à la finale** : {{ s.metiers[0].taux_finale }} % contre
 {{ s.metiers[1].taux_finale }} % pour le commerce et
 {{ s.metiers[2].taux_finale }} % pour le sport. Être nombreux au départ ne
 protège de rien.

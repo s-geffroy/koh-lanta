@@ -1409,6 +1409,31 @@ SORTS_CORRIGES = {
         "eliminated » ; tableau Fandom : « épreuve éliminatoire individuelle »"),
 }
 
+# Les metiers que la table de saison ecrit faux. TABLE fermee, chaque ligne
+# confrontee aux autres sources (3 novembre 2026). (saison, id) -> (metier,
+# source). Le metier reste celui DECLARE AU CASTING : on corrige une coquille,
+# on ne remplace pas un libelle par un autre metier.
+METIERS_CORRIGES = {
+    ("s16", "jesta-hillmann"): ("Étudiante en ressources humaines",
+        "page individuelle Fandom : « Étudiante en Ressources Humaines » ; "
+        "la table de saison ecrit « humanitaires »"),
+    ("sp3", "nicolas-roy"): ("Responsable d'un service de clients",
+        "table de saison Fandom : « Responsable d'un service de clients » ; "
+        "Wikipedia ecrit « de client ». La page individuelle donne « Responsable "
+        "des ventes », un autre libelle que celui du casting"),
+}
+
+
+def corriger_les_metiers(participations, rapport):
+    """Applique METIERS_CORRIGES, et le dit."""
+    for p in participations:
+        m = METIERS_CORRIGES.get((p["saison"], p["id"]))
+        if m and p.get("profession") != m[0]:
+            rapport.append(f"metier : {p['saison']}/{p['id']} "
+                           f"{p.get('profession')} -> {m[0]} ({m[1]})")
+            p["profession"] = m[0]
+            p.setdefault("sources", {})["profession"] = "corrige : " + m[1]
+
 
 def corriger_les_jours(participations, rapport):
     """Applique JOURS_DE_SORTIE, SORTS_CORRIGES et ETAPES_CORRIGEES, et le dit."""
@@ -1546,6 +1571,8 @@ def main():
     voix_d_une_saison_en_cours(participations, saisons, rapport)
     completer_depuis_autres_participations(participations, saisons, rapport)
     metier_sans_saison(participations, saisons, rapport)
+    # En dernier : rien apres ne doit reprendre la coquille d'une autre source.
+    corriger_les_metiers(participations, rapport)
 
     # champs encore vides
     manques = {}

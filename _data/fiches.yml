@@ -23684,7 +23684,7 @@ aventuriers:
     - q: Quel âge avait Jesta Hillmann à Koh-Lanta ?
       r: 24 ans en 2016 (L’Île au trésor).
     - q: Quel est le métier de Jesta Hillmann ?
-      r: Étudiante en ressources humanitaires, profession déclarée au casting.
+      r: Étudiante en ressources humaines, profession déclarée au casting.
     - q: Jesta Hillmann a-t-elle gagné Koh-Lanta ?
       r: Non. Jesta Hillmann est allée en finale une fois sans jamais remporter le
         titre.
@@ -23738,7 +23738,7 @@ aventuriers:
         nature: rapidite
       numero: 16
       part_parcours: 100
-      profession: Étudiante en ressources humanitaires
+      profession: Étudiante en ressources humaines
       ratio_epreuves: "8,3"
       saison: s16
       sans_vainqueur: false
@@ -23748,7 +23748,7 @@ aventuriers:
       tribu: Naga
       voix_recues: 3
     prenom: Jesta
-    profession: Étudiante en ressources humanitaires
+    profession: Étudiante en ressources humaines
     rang: 445
     rang_p05: 91
     rang_p95: 519
@@ -36593,7 +36593,7 @@ aventuriers:
       r: 29 ans en 2002 (Nicoya) et 40 ans en 2012 (La Revanche des héros).
     - q: Quel est le métier de Nicolas Roy ?
       r: Intérimaire dans l’agroalimentaire (2002) et responsable d’un service de
-        client (2012).
+        clients (2012).
     - q: Nicolas Roy a-t-il gagné Koh-Lanta ?
       r: Non. Nicolas Roy est allé en finale une fois sans jamais remporter le titre.
     - q: Combien de fois Nicolas Roy a-t-il participé à Koh-Lanta ?
@@ -36673,7 +36673,7 @@ aventuriers:
       natures: []
       numero: null
       part_parcours: 26
-      profession: Responsable d’un service de client
+      profession: Responsable d’un service de clients
       ratio_epreuves: null
       saison: sp3
       sans_vainqueur: false
@@ -36683,7 +36683,7 @@ aventuriers:
       tribu: Nekmao
       voix_recues: 4
     prenom: Nicolas
-    profession: Responsable d’un service de client
+    profession: Responsable d’un service de clients
     rang: 48
     rang_p05: 26
     rang_p95: 149
@@ -51804,7 +51804,7 @@ saisons:
       libelle_sort: Finaliste
       nom: Jesta Hillmann
       part_parcours: 100
-      profession: Étudiante en ressources humanitaires
+      profession: Étudiante en ressources humaines
       rang: 445
       sort: finaliste
       tribu: Naga
@@ -56908,7 +56908,7 @@ saisons:
       libelle_sort: Éliminé au conseil
       nom: Nicolas Roy
       part_parcours: 26
-      profession: Responsable d’un service de client
+      profession: Responsable d’un service de clients
       rang: 48
       sort: elimine_conseil
       tribu: Nekmao
