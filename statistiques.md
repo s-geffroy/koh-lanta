@@ -22,7 +22,7 @@ mêmes personnes et fausseraient les moyennes d’âge comme de longévité.
   <li class="chiffre"><b>{{ v.age_moyen }} ans</b><span>âge moyen des vainqueurs</span></li>
   <li class="chiffre"><b>{{ v.part_40_et_plus }} %</b><span>de vainqueurs de 40 ans ou plus</span></li>
   <li class="chiffre"><b>{{ s.conseils.conseils }}</b><span>conseils dépouillés</span></li>
-  <li class="chiffre"><b>{{ s.conseils.bulletins }}</b><span>bulletins relevés</span></li>
+  <li class="chiffre"><b>{{ s.conseils.bulletins_texte | default: s.conseils.bulletins }}</b><span>bulletins relevés</span></li>
   <li class="chiffre"><b>{{ s.epreuves.epreuves }}</b><span>épreuves relevées</span></li>
   <li class="chiffre"><b>{{ s.colliers.colliers }}</b><span>colliers suivis</span></li>
   <li class="chiffre"><b>{{ s.records.nb_multi_participants }}</b><span>aventuriers revenus jouer</span></li>

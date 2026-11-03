@@ -136,10 +136,10 @@ Deux modèles nuls répondent, et c’est leur écart qui est le résultat.
 <thead><tr><th>Modèle nul</th><th>Ce qu’il suppose</th><th class="nombre">Écart attendu</th></tr></thead>
 <tbody>
 <tr><td>uniforme</td><td>chacun gagne avec la même probabilité</td>
-    <td class="nombre">{{ tt.attendu_uniforme }} points</td></tr>
+    <td class="nombre">{{ tt.attendu_uniforme }} point{% if tt.attendu_uniforme_pluriel %}s{% endif %}</td></tr>
 <tr><td><b>par la force</b></td><td>chacun gagne selon son <i>θ</i> estimé plus haut</td>
-    <td class="nombre"><b>{{ tt.attendu_force }} points</b></td></tr>
-<tr><td>observé</td><td>—</td><td class="nombre"><b>{{ tt.brut }} points</b></td></tr>
+    <td class="nombre"><b>{{ tt.attendu_force }} point{% if tt.attendu_force_pluriel %}s{% endif %}</b></td></tr>
+<tr><td>observé</td><td>—</td><td class="nombre"><b>{{ tt.brut }} point{% if tt.brut_pluriel %}s{% endif %}</b></td></tr>
 </tbody>
 </table>
 </div>
@@ -148,7 +148,7 @@ Deux modèles nuls répondent, et c’est leur écart qui est le résultat.
 
 <p class="legende-figure">L’écart observé, contre {{ ttt.tirages_texte }} saisons
 simulées où les vainqueurs sont tirés <strong>selon les forces estimées</strong>.
-Un tirage uniforme, lui, ne produirait que {{ tt.attendu_uniforme }} points.</p>
+Un tirage uniforme, lui, ne produirait que {{ tt.attendu_uniforme }} point{% if tt.attendu_uniforme_pluriel %}s{% endif %}.</p>
 
 <div class="constat">
   <p>Contre un tirage uniforme, l’enchaînement s’écarte du hasard :

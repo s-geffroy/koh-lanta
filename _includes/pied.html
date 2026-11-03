@@ -5,7 +5,7 @@
       {{ site.data.stats.general.participations }} participations ·
       {{ site.data.stats.general.personnes }} aventuriers ·
       {{ site.data.stats.epreuves.epreuves }} épreuves ·
-      {{ site.data.stats.conseils.bulletins }} bulletins ·
+      {{ site.data.stats.conseils.bulletins_texte | default: site.data.stats.conseils.bulletins }} bulletins ·
       {{ site.data.stats.colliers.colliers }} colliers
     </p>
 

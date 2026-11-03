@@ -965,7 +965,7 @@ def tout(saisons, parts, conseils, epreuves):
             "cle": cle, "libelle": libelle, "mesure": mesure,
             "question": question, "denominateur": denominateur,
             "sens": "haut" if sens > 0 else "bas",
-            "unite": " voix par conseil" if cle == "discretion" else " %",
+            "unite": " voix par conseil" if cle == "discretion" else "\u202f%",
             "moyenne": round(mu * (100 if cle != "discretion" else 1),
                              2 if cle == "discretion" else 1),
             "essais_fictifs": round(k, 1),

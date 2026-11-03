@@ -28,7 +28,7 @@ quatre voix contre l’un et deux contre l’autre restent quatre et deux. Ne
 subsiste que la question posée — qui, parmi ceux qui ont écrit ces noms, a écrit
 celui-là. L’incertitude, elle, vient d’un tirage des <em>saisons</em> : les mêmes
 blocs votent ensemble d’un conseil à l’autre, et traiter chaque conseil comme
-indépendant la sous-estimait. Base : {{ h.bulletins }} bulletins sur
+indépendant la sous-estimait. Base : {{ h.bulletins_texte | default: h.bulletins }} bulletins sur
 {{ h.conseils }} conseils au dépouillement complet.</p>
 
 ## D’abord, une erreur de ce site — et ce qu’elle a produit
@@ -39,7 +39,7 @@ n’existe dans aucun conseil réel — on ne vote pas contre soi — et qui par
 forcément le sexe, le métier et la tribu initiale de son auteur.
 
 **12,5 % des bulletins tirés étaient de ce type**, contre 0 sur
-{{ h.bulletins }} dans les données. L’attendu en était gonflé, et tout écart
+{{ h.bulletins_texte | default: h.bulletins }} dans les données. L’attendu en était gonflé, et tout écart
 paraissait spectaculaire :
 
 {% assign ts = reg | where: "cle", "vote_meme_sexe" | first %}
@@ -151,7 +151,7 @@ rares dans un camp de huit, et le test manque de bulletins pour trancher.</p>
 Avant la réunification, un conseil ne réunit qu’une tribu : tous les bulletins y
 sont forcément « même tribu initiale », et la question ne s’y pose pas. On mesure donc
 sur les **{{ h.conseils_mixtes }} conseils réunissant plusieurs tribus initiales**,
-soit {{ h.bulletins_mixtes }} bulletins.
+soit {{ h.bulletins_mixtes_texte | default: h.bulletins_mixtes }} bulletins.
 
 {% include graphiques/vise-bandeau.svg %}
 

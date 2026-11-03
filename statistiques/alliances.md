@@ -22,8 +22,8 @@ survit d’un conseil au suivant.
 présente à deux conseils consécutifs, et on compare deux probabilités : voter
 ensemble <em>après</em> avoir voté ensemble, et voter ensemble après avoir voté
 séparément. L’écart entre les deux est la persistance. À zéro, chaque conseil
-repart de rien. Base : {{ a.bulletins }} bulletins, {{ a.conseils }} conseils au
-dépouillement complet, {{ a.saisons }} saisons, {{ a.paires_suivies }} paires
+repart de rien. Base : {{ a.bulletins_texte | default: a.bulletins }} bulletins, {{ a.conseils }} conseils au
+dépouillement complet, {{ a.saisons }} saisons, {{ a.paires_suivies_texte | default: a.paires_suivies }} paires
 suivies d’un conseil à l’autre.</p>
 
 ## Les alliances existent, et elles sont solides
@@ -155,7 +155,7 @@ faible : c’est le plus souvent un duo qu’on ne peut pas mesurer.</p>
 {% assign tr = m.trahison %}{% assign tt = tr.test %}
 
 Le programme met en scène le retournement à chaque saison. Il se compte : sur
-les {{ tr.bulletins }} bulletins dont l’auteur avait déjà un allié à ce
+les {{ tr.bulletins_texte | default: tr.bulletins }} bulletins dont l’auteur avait déjà un allié à ce
 moment-là, combien visent cet allié ?
 
 {% include graphiques/trahison.svg %}

@@ -71,7 +71,7 @@ fait le résultat, pas une ligne isolée.</p>
 <tbody>
 {% for r in g.regions %}
 <tr>
-  <td>{{ r.region }}</td>
+  <td>{{ r.region | replace: "'", "’" }}</td>
   <td class="nombre">{{ r.observe }}</td>
   <td class="nombre">{{ r.attendu }}</td>
   <td class="nombre" data-val="{{ r.indice }}">×{{ r.indice }}</td>
@@ -96,11 +96,11 @@ qu’ensemble.
 
 <div class="constat">
   <p><b>Au-dessus :</b>
-  {%- for r in g.regions_hautes %} {{ r.region }} ×{{ r.indice }}
+  {%- for r in g.regions_hautes %} {{ r.region | replace: "'", "’" }} ×{{ r.indice }}
   [{{ r.indice_bas }} ; {{ r.indice_haut }}]{% unless forloop.last %} ·{% endunless %}
   {%- endfor %}.</p>
   <p><b>En dessous :</b>
-  {%- for r in g.regions_basses %} {{ r.region }} ×{{ r.indice }}
+  {%- for r in g.regions_basses %} {{ r.region | replace: "'", "’" }} ×{{ r.indice }}
   [{{ r.indice_bas }} ; {{ r.indice_haut }}]{% unless forloop.last %} ·{% endunless %}
   {%- endfor %}.</p>
   <p>Et le trou le plus net n’est pas une région de métropole :
@@ -135,7 +135,7 @@ classés.
 <tbody>
 {% for d in g.departements %}{% if d.indice %}
 <tr>
-  <td>{{ d.departement }}</td>
+  <td>{{ d.departement | replace: "'", "’" }}</td>
   <td class="nombre">{{ d.observe }}</td>
   <td class="nombre">{{ d.attendu }}</td>
   <td class="nombre" data-val="{{ d.indice }}">×{{ d.indice }}</td>

@@ -12,11 +12,11 @@ chapeau: >-
 
 Le conseil est le cœur du jeu, et le seul endroit où l’on peut lire une
 stratégie plutôt que la deviner. **{{ c.conseils }} conseils** ont été
-dépouillés, pour **{{ c.bulletins }} bulletins**.
+dépouillés, pour **{{ c.bulletins_texte | default: c.bulletins }} bulletins**.
 
 <ul class="chiffres">
   <li class="chiffre"><b>{{ c.conseils }}</b><span>conseils relevés</span></li>
-  <li class="chiffre"><b>{{ c.bulletins }}</b><span>bulletins</span></li>
+  <li class="chiffre"><b>{{ c.bulletins_texte | default: c.bulletins }}</b><span>bulletins</span></li>
   <li class="chiffre"><b>{{ c.part_serres }} %</b><span>de conseils serrés</span></li>
   <li class="chiffre"><b>{{ c.voix_annulees_par_objet }}</b><span>voix annulées par un objet</span></li>
 </ul>
@@ -71,7 +71,7 @@ l’autre ; il ajoute du bruit aux mesures sur « qui part », pas de biai
 
 La question mérite d’être posée avant tout le reste, parce que plusieurs des
 résultats les plus forts de ce site reposent entièrement sur ces
-{{ c.bulletins }} lignes. Sur une partie des saisons, les deux wikis publient
+{{ c.bulletins_texte | default: c.bulletins }} lignes. Sur une partie des saisons, les deux wikis publient
 **chacun** leur matrice des votes : on peut donc les confronter.
 
 <div class="constat">
@@ -209,7 +209,7 @@ et les personnes qu’ils relient.</p>
 ### Le vote se rend
 
 {% assign rec = site.data.stats.reciprocite %}
-Sur les **{{ rec.couples }} couples** votant → cible relevés dans les conseils
+Sur les **{{ rec.couples_texte | default: rec.couples }} couples** votant → cible relevés dans les conseils
 au dépouillement complet, **{{ rec.reciproques }} sont réciproques** :
 **{{ rec.part }} %**. Écrire le nom de quelqu’un, c’est donc avoir
 {{ rec.part }} % de chances qu’il ait écrit le vôtre, le même soir ou un autre.

@@ -1204,7 +1204,8 @@ def figures_des_modeles(stats):
         ecrire("alliances-majorite.svg", foret(
             [{"libelle": v["libelle"], "estimation": v["estimation"],
               "bas": v["bas"], "haut": v["haut"],
-              "detail": f'{v["libelle"]} : {v["estimation"]} points de saison '
+              "detail": f'{v["libelle"]} : {v["estimation"]} '
+                        f'{accorde(v["estimation"], "point", "points")} de saison '
                         f'(intervalle {v["bas"]} à {v["haut"]})'}
              for v in maj["variables"]],
             titre="Ce qui fait vraiment durer, une fois en jeu",

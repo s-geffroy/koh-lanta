@@ -40,7 +40,7 @@ s’ils ont servi, et combien de voix ils ont annulées.
   <td>{{ i.libelle }}</td>
   <td class="nombre">{{ i.effectif }}</td>
   <td class="nombre">{{ i.part_totale }} %</td>
-  <td class="nombre">{% if i.part_des_trouves %}{{ i.part_des_trouves }} %{% else %}—{% endif %}</td>
+  <td class="nombre">{% if i.part_des_trouves %}{{ i.part_des_trouves }} %{% else %}—{% endif %}</td>
 </tr>
 {% endfor %}
 </tbody>

@@ -75,8 +75,9 @@ SINGULIERS = {"ans": "an", "années": "année", "personnes": "personne",
 
 
 def compte(n, singulier, pluriel):
-    """« 1 tirage », « 3 tirages », « 0 abandon » : le nombre et son mot."""
-    return f"{n} {accorde(n, singulier, pluriel)}"
+    """« 1 tirage », « 3 tirages », « 0 abandon » : le nombre et son mot.
+    Milliers separes : les infobulles publiaient « 1238 tirages »."""
+    return f"{milliers_fins(n) if isinstance(n, int) else n} {accorde(n, singulier, pluriel)}"
 
 
 def _avec_unite(v, unite):
@@ -604,6 +605,12 @@ def milliers_fins(n):
     return f"{n:,}".replace(",", "\u202f") if isinstance(n, int) else (n or "")
 
 
+def signe_moins(texte):
+    """« -3,4 » -> « −3,4 » : le signe moins, pas le trait d'union. Un tiret
+    colle a un chiffre ou une lettre (« 2000-2004 ») n'est pas un signe."""
+    return re.sub(r"(?<![\w\-])-(?=\d)", "\u2212", texte)
+
+
 def ecrire(nom, contenu):
     if not contenu:
         print(f"  (vide) {nom}")
@@ -614,10 +621,10 @@ def ecrire(nom, contenu):
     morceaux = re.split(r"(<style\b.*?</style>)", contenu, flags=re.S)
     contenu = "".join(
         x if x.startswith("<style") else
-        re.sub(r">([^<>]+)<", lambda m: ">" + apostrophes(donnees.insecables(m.group(1))) + "<", x)
+        re.sub(r">([^<>]+)<", lambda m: ">" + signe_moins(apostrophes(donnees.insecables(m.group(1)))) + "<", x)
         for x in morceaux)
     contenu = re.sub(r'aria-label="([^"]*)"',
-                     lambda m: 'aria-label="' + apostrophes(donnees.insecables(m.group(1))) + '"', contenu)
+                     lambda m: 'aria-label="' + signe_moins(apostrophes(donnees.insecables(m.group(1)))) + '"', contenu)
     os.makedirs(SORTIE, exist_ok=True)
     chemin = os.path.join(SORTIE, nom)
     with open(chemin, "w", encoding="utf-8") as f:

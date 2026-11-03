@@ -41,96 +41,121 @@ vainqueurs:
   - tranche: 18–24 ans
     effectif: 7
     part: "24,1"
+    effectif_texte: "7"
   - tranche: 25–29 ans
     effectif: 4
     part: "13,8"
+    effectif_texte: "4"
   - tranche: 30–34 ans
     effectif: 7
     part: "24,1"
+    effectif_texte: "7"
   - tranche: 35–39 ans
     effectif: 4
     part: "13,8"
+    effectif_texte: "4"
   - tranche: 40–44 ans
     effectif: 6
     part: "20,7"
+    effectif_texte: "6"
   - tranche: 45 ans et plus
     effectif: 1
     part: "3,4"
+    effectif_texte: "1"
   par_genre:
   - genre: f
     libelle: Femmes
     effectif: 14
     part: "48,3"
+    effectif_texte: "14"
   - genre: h
     libelle: Hommes
     effectif: 15
     part: "51,7"
+    effectif_texte: "15"
   par_couleur:
   - couleur: jaune
     effectif: 12
     part: "41,4"
     couleur_maj: Jaune
+    effectif_texte: "12"
   - couleur: rouge
     effectif: 12
     part: "41,4"
     couleur_maj: Rouge
+    effectif_texte: "12"
   - couleur: vert
     effectif: 3
     part: "10,3"
     couleur_maj: Vert
+    effectif_texte: "3"
   - couleur: bleu
     effectif: 1
     part: "3,4"
     couleur_maj: Bleu
+    effectif_texte: "1"
   - couleur: violet
     effectif: 1
     part: "3,4"
     couleur_maj: Violet
+    effectif_texte: "1"
   par_metier:
   - code: encadrement
     libelle: Encadrement et professions intellectuelles
     effectif: 5
     part: "17,2"
+    effectif_texte: "5"
   - code: commerce
     libelle: Commerce et vente
     effectif: 5
     part: "17,2"
+    effectif_texte: "5"
   - code: sport
     libelle: Sport et coaching
     effectif: 5
     part: "17,2"
+    effectif_texte: "5"
   - code: agriculture
     libelle: Agriculture et nature
     effectif: 3
     part: "10,3"
+    effectif_texte: "3"
   - code: restauration_hotellerie
     libelle: Restauration et hôtellerie
     effectif: 2
     part: "6,9"
+    effectif_texte: "2"
   - code: artisanat_btp
     libelle: Artisanat et bâtiment
     effectif: 2
     part: "6,9"
+    effectif_texte: "2"
   - code: etudiant
     libelle: Étudiants
     effectif: 2
     part: "6,9"
+    effectif_texte: "2"
   - code: action_securite
     libelle: Action et sécurité
     effectif: 2
     part: "6,9"
+    effectif_texte: "2"
   - code: arts_medias
     libelle: Arts, médias et image
     effectif: 1
     part: "3,4"
+    effectif_texte: "1"
   - code: transport
     libelle: Transport et logistique
     effectif: 1
     part: "3,4"
+    effectif_texte: "1"
   - code: sans_emploi
     libelle: Sans activité déclarée
     effectif: 1
     part: "3,4"
+    effectif_texte: "1"
+  effectif_texte: "29"
 vainqueurs_toutes:
   effectif: 35
   age_moyen: "32,1"
@@ -142,91 +167,116 @@ vainqueurs_toutes:
   - tranche: 18–24 ans
     effectif: 7
     part: 20
+    effectif_texte: "7"
   - tranche: 25–29 ans
     effectif: 5
     part: "14,3"
+    effectif_texte: "5"
   - tranche: 30–34 ans
     effectif: 10
     part: "28,6"
+    effectif_texte: "10"
   - tranche: 35–39 ans
     effectif: 6
     part: "17,1"
+    effectif_texte: "6"
   - tranche: 40–44 ans
     effectif: 6
     part: "17,1"
+    effectif_texte: "6"
   - tranche: 45 ans et plus
     effectif: 1
     part: "2,9"
+    effectif_texte: "1"
   par_genre:
   - genre: f
     libelle: Femmes
     effectif: 16
     part: "45,7"
+    effectif_texte: "16"
   - genre: h
     libelle: Hommes
     effectif: 19
     part: "54,3"
+    effectif_texte: "19"
   par_couleur:
   - couleur: jaune
     effectif: 17
     part: "48,6"
+    effectif_texte: "17"
   - couleur: rouge
     effectif: 13
     part: "37,1"
+    effectif_texte: "13"
   - couleur: vert
     effectif: 3
     part: "8,6"
+    effectif_texte: "3"
   - couleur: bleu
     effectif: 1
     part: "2,9"
+    effectif_texte: "1"
   - couleur: violet
     effectif: 1
     part: "2,9"
+    effectif_texte: "1"
   par_metier:
   - code: sport
     libelle: Sport et coaching
     effectif: 7
     part: 20
+    effectif_texte: "7"
   - code: encadrement
     libelle: Encadrement et professions intellectuelles
     effectif: 6
     part: "17,1"
+    effectif_texte: "6"
   - code: commerce
     libelle: Commerce et vente
     effectif: 5
     part: "14,3"
+    effectif_texte: "5"
   - code: agriculture
     libelle: Agriculture et nature
     effectif: 4
     part: "11,4"
+    effectif_texte: "4"
   - code: arts_medias
     libelle: Arts, médias et image
     effectif: 2
     part: "5,7"
+    effectif_texte: "2"
   - code: restauration_hotellerie
     libelle: Restauration et hôtellerie
     effectif: 2
     part: "5,7"
+    effectif_texte: "2"
   - code: artisanat_btp
     libelle: Artisanat et bâtiment
     effectif: 2
     part: "5,7"
+    effectif_texte: "2"
   - code: etudiant
     libelle: Étudiants
     effectif: 2
     part: "5,7"
+    effectif_texte: "2"
   - code: transport
     libelle: Transport et logistique
     effectif: 2
     part: "5,7"
+    effectif_texte: "2"
   - code: action_securite
     libelle: Action et sécurité
     effectif: 2
     part: "5,7"
+    effectif_texte: "2"
   - code: sans_emploi
     libelle: Sans activité déclarée
     effectif: 1
     part: "2,9"
+    effectif_texte: "1"
+  effectif_texte: "35"
 couleurs:
 - couleur: jaune
   effectif: 211
@@ -235,6 +285,7 @@ couleurs:
   finales: 23
   taux_finale: "10,9"
   couleur_maj: Jaune
+  effectif_texte: "211"
 - couleur: rouge
   effectif: 208
   survie_moyenne: "63,1"
@@ -242,6 +293,7 @@ couleurs:
   finales: 21
   taux_finale: "10,1"
   couleur_maj: Rouge
+  effectif_texte: "208"
 - couleur: bleu
   effectif: 34
   survie_moyenne: "63,7"
@@ -249,6 +301,7 @@ couleurs:
   finales: 3
   taux_finale: "8,8"
   couleur_maj: Bleu
+  effectif_texte: "34"
 - couleur: vert
   effectif: 20
   survie_moyenne: 67
@@ -256,6 +309,7 @@ couleurs:
   finales: 3
   taux_finale: 15
   couleur_maj: Vert
+  effectif_texte: "20"
 - couleur: violet
   effectif: 20
   survie_moyenne: "59,1"
@@ -263,6 +317,7 @@ couleurs:
   finales: 1
   taux_finale: 5
   couleur_maj: Violet
+  effectif_texte: "20"
 - couleur: orange
   effectif: 12
   survie_moyenne: "56,7"
@@ -270,6 +325,7 @@ couleurs:
   finales: 2
   taux_finale: "16,7"
   couleur_maj: Orange
+  effectif_texte: "12"
 - couleur: noir
   effectif: 2
   survie_moyenne: "70,8"
@@ -277,6 +333,7 @@ couleurs:
   finales: 0
   taux_finale: 0
   couleur_maj: Noir
+  effectif_texte: "2"
 metiers:
 - code: encadrement
   libelle: Encadrement et professions intellectuelles
@@ -287,6 +344,7 @@ metiers:
   taux_finale: "6,9"
   survie_moyenne: "58,2"
   age_moyen: "36,3"
+  effectif_texte: "101"
 - code: commerce
   libelle: Commerce et vente
   effectif: 64
@@ -296,6 +354,7 @@ metiers:
   taux_finale: "15,6"
   survie_moyenne: "57,1"
   age_moyen: "35,2"
+  effectif_texte: "64"
 - code: sport
   libelle: Sport et coaching
   effectif: 49
@@ -305,6 +364,7 @@ metiers:
   taux_finale: "14,3"
   survie_moyenne: "66,4"
   age_moyen: "32,7"
+  effectif_texte: "49"
 - code: arts_medias
   libelle: Arts, médias et image
   effectif: 47
@@ -314,6 +374,7 @@ metiers:
   taux_finale: "8,5"
   survie_moyenne: "67,9"
   age_moyen: 33
+  effectif_texte: "47"
 - code: artisanat_btp
   libelle: Artisanat et bâtiment
   effectif: 43
@@ -323,6 +384,7 @@ metiers:
   taux_finale: "11,6"
   survie_moyenne: "69,8"
   age_moyen: "36,2"
+  effectif_texte: "43"
 - code: etudiant
   libelle: Étudiants
   effectif: 37
@@ -332,6 +394,7 @@ metiers:
   taux_finale: "8,1"
   survie_moyenne: "52,2"
   age_moyen: 22
+  effectif_texte: "37"
 - code: enseignement
   libelle: Enseignement et éducation
   effectif: 30
@@ -341,6 +404,7 @@ metiers:
   taux_finale: "6,7"
   survie_moyenne: "60,9"
   age_moyen: "35,6"
+  effectif_texte: "30"
 - code: action_securite
   libelle: Action et sécurité
   effectif: 29
@@ -350,6 +414,7 @@ metiers:
   taux_finale: "6,9"
   survie_moyenne: 60
   age_moyen: "35,2"
+  effectif_texte: "29"
 - code: transport
   libelle: Transport et logistique
   effectif: 29
@@ -359,6 +424,7 @@ metiers:
   taux_finale: "6,9"
   survie_moyenne: "58,4"
   age_moyen: "32,9"
+  effectif_texte: "29"
 - code: agriculture
   libelle: Agriculture et nature
   effectif: 24
@@ -368,6 +434,7 @@ metiers:
   taux_finale: "12,5"
   survie_moyenne: "70,5"
   age_moyen: "34,5"
+  effectif_texte: "24"
 - code: restauration_hotellerie
   libelle: Restauration et hôtellerie
   effectif: 23
@@ -377,6 +444,7 @@ metiers:
   taux_finale: 13
   survie_moyenne: "63,1"
   age_moyen: "31,3"
+  effectif_texte: "23"
 - code: sante
   libelle: Santé
   effectif: 18
@@ -386,6 +454,7 @@ metiers:
   taux_finale: "11,1"
   survie_moyenne: "50,4"
   age_moyen: "29,8"
+  effectif_texte: "18"
 - code: sans_emploi
   libelle: Sans activité déclarée
   effectif: 17
@@ -395,6 +464,7 @@ metiers:
   taux_finale: "17,6"
   survie_moyenne: "69,5"
   age_moyen: "39,8"
+  effectif_texte: "17"
 metiers_toutes:
 - code: encadrement
   libelle: Encadrement et professions intellectuelles
@@ -405,6 +475,7 @@ metiers_toutes:
   taux_finale: "7,9"
   survie_moyenne: "59,4"
   age_moyen: 36
+  effectif_texte: "127"
 - code: commerce
   libelle: Commerce et vente
   effectif: 76
@@ -414,6 +485,7 @@ metiers_toutes:
   taux_finale: "14,5"
   survie_moyenne: "57,7"
   age_moyen: "35,4"
+  effectif_texte: "76"
 - code: sport
   libelle: Sport et coaching
   effectif: 70
@@ -423,6 +495,7 @@ metiers_toutes:
   taux_finale: "12,9"
   survie_moyenne: "62,5"
   age_moyen: "33,7"
+  effectif_texte: "70"
 - code: artisanat_btp
   libelle: Artisanat et bâtiment
   effectif: 55
@@ -432,6 +505,7 @@ metiers_toutes:
   taux_finale: "9,1"
   survie_moyenne: "70,1"
   age_moyen: "37,1"
+  effectif_texte: "55"
 - code: arts_medias
   libelle: Arts, médias et image
   effectif: 53
@@ -441,6 +515,7 @@ metiers_toutes:
   taux_finale: "11,3"
   survie_moyenne: "69,8"
   age_moyen: "32,9"
+  effectif_texte: "53"
 - code: etudiant
   libelle: Étudiants
   effectif: 39
@@ -450,6 +525,7 @@ metiers_toutes:
   taux_finale: "7,7"
   survie_moyenne: "50,7"
   age_moyen: "21,9"
+  effectif_texte: "39"
 - code: transport
   libelle: Transport et logistique
   effectif: 38
@@ -459,6 +535,7 @@ metiers_toutes:
   taux_finale: "13,2"
   survie_moyenne: "61,4"
   age_moyen: "33,5"
+  effectif_texte: "38"
 - code: action_securite
   libelle: Action et sécurité
   effectif: 35
@@ -468,6 +545,7 @@ metiers_toutes:
   taux_finale: "5,7"
   survie_moyenne: "57,9"
   age_moyen: "36,4"
+  effectif_texte: "35"
 - code: enseignement
   libelle: Enseignement et éducation
   effectif: 33
@@ -477,6 +555,7 @@ metiers_toutes:
   taux_finale: "6,1"
   survie_moyenne: "59,5"
   age_moyen: "35,9"
+  effectif_texte: "33"
 - code: restauration_hotellerie
   libelle: Restauration et hôtellerie
   effectif: 33
@@ -486,6 +565,7 @@ metiers_toutes:
   taux_finale: "12,1"
   survie_moyenne: "67,7"
   age_moyen: 32
+  effectif_texte: "33"
 - code: agriculture
   libelle: Agriculture et nature
   effectif: 27
@@ -495,6 +575,7 @@ metiers_toutes:
   taux_finale: "14,8"
   survie_moyenne: "72,1"
   age_moyen: "34,6"
+  effectif_texte: "27"
 - code: sante
   libelle: Santé
   effectif: 22
@@ -504,6 +585,7 @@ metiers_toutes:
   taux_finale: "13,6"
   survie_moyenne: 52
   age_moyen: "30,2"
+  effectif_texte: "22"
 - code: sans_emploi
   libelle: Sans activité déclarée
   effectif: 19
@@ -513,6 +595,7 @@ metiers_toutes:
   taux_finale: "15,8"
   survie_moyenne: "68,9"
   age_moyen: "40,2"
+  effectif_texte: "19"
 genre:
   resume:
   - genre: f
@@ -525,6 +608,7 @@ genre:
     victoires: 14
     finales: 27
     taux_finale: "10,5"
+    effectif_texte: "257"
   - genre: h
     libelle: Hommes
     effectif: 254
@@ -535,6 +619,7 @@ genre:
     victoires: 15
     finales: 26
     taux_finale: "10,2"
+    effectif_texte: "254"
   par_decennie:
   - decennie: 2000s
     effectif: 150
@@ -542,64 +627,78 @@ genre:
     effectif_femmes: 76
     survie_hommes: "63,8"
     effectif_hommes: 74
+    effectif_texte: "150"
   - decennie: 2010s
     effectif: 182
     survie_femmes: "56,4"
     effectif_femmes: 91
     survie_hommes: "65,6"
     effectif_hommes: 91
+    effectif_texte: "182"
   - decennie: 2020s
     effectif: 179
     survie_femmes: "61,3"
     effectif_femmes: 90
     survie_hommes: "64,1"
     effectif_hommes: 89
+    effectif_texte: "179"
 sorties:
   repartition:
   - sort: elimine_conseil
     libelle: Éliminé au conseil
     effectif: 288
     part: "56,4"
+    effectif_texte: "288"
   - sort: abandon_medical
     libelle: Abandon médical
     effectif: 40
     part: "7,8"
+    effectif_texte: "40"
   - sort: elimine_orientation
     libelle: Éliminé à l’orientation
     effectif: 32
     part: "6,3"
+    effectif_texte: "32"
   - sort: vainqueur
     libelle: Vainqueur
     effectif: 29
     part: "5,7"
+    effectif_texte: "29"
   - sort: elimine_poteaux
     libelle: Éliminé aux poteaux
     effectif: 25
     part: "4,9"
+    effectif_texte: "25"
   - sort: elimine_epreuve
     libelle: Éliminé à une épreuve
     effectif: 24
     part: "4,7"
+    effectif_texte: "24"
   - sort: finaliste
     libelle: Finaliste
     effectif: 24
     part: "4,7"
+    effectif_texte: "24"
   - sort: abandon_volontaire
     libelle: Abandon volontaire
     effectif: 18
     part: "3,5"
+    effectif_texte: "18"
   - sort: elimine_ambassadeurs
     libelle: Éliminé aux ambassadeurs
     effectif: 15
     part: "2,9"
+    effectif_texte: "15"
   - sort: elimine_destins_lies
     libelle: Éliminé par les destins liés
     effectif: 12
     part: "2,3"
+    effectif_texte: "12"
   - sort: elimine_duel
     libelle: Éliminé en duel
     effectif: 4
     part: "0,8"
+    effectif_texte: "4"
   par_decennie:
   - decennie: 2000s
     effectif: 150
@@ -607,70 +706,86 @@ sorties:
     conseil: "60,7"
     ambassadeurs: 0
     epreuve: "2,7"
+    effectif_texte: "150"
   - decennie: 2010s
     effectif: 182
     abandons: "12,1"
     conseil: "56,6"
     ambassadeurs: "4,9"
     epreuve: "2,2"
+    effectif_texte: "182"
   - decennie: 2020s
     effectif: 179
     abandons: "7,3"
     conseil: "52,5"
     ambassadeurs: "3,4"
     epreuve: "8,9"
+    effectif_texte: "179"
   effectif: 511
   abandons_rapport: "2,1"
+  effectif_texte: "511"
 sorties_toutes:
   repartition:
   - sort: elimine_conseil
     libelle: Éliminé au conseil
     effectif: 347
     part: "55,3"
+    effectif_texte: "347"
   - sort: abandon_medical
     libelle: Abandon médical
     effectif: 48
     part: "7,7"
+    effectif_texte: "48"
   - sort: elimine_orientation
     libelle: Éliminé à l’orientation
     effectif: 42
     part: "6,7"
+    effectif_texte: "42"
   - sort: vainqueur
     libelle: Vainqueur
     effectif: 35
     part: "5,6"
+    effectif_texte: "35"
   - sort: elimine_epreuve
     libelle: Éliminé à une épreuve
     effectif: 32
     part: "5,1"
+    effectif_texte: "32"
   - sort: finaliste
     libelle: Finaliste
     effectif: 32
     part: "5,1"
+    effectif_texte: "32"
   - sort: elimine_poteaux
     libelle: Éliminé aux poteaux
     effectif: 32
     part: "5,1"
+    effectif_texte: "32"
   - sort: elimine_ambassadeurs
     libelle: Éliminé aux ambassadeurs
     effectif: 22
     part: "3,5"
+    effectif_texte: "22"
   - sort: abandon_volontaire
     libelle: Abandon volontaire
     effectif: 18
     part: "2,9"
+    effectif_texte: "18"
   - sort: elimine_destins_lies
     libelle: Éliminé par les destins liés
     effectif: 14
     part: "2,2"
+    effectif_texte: "14"
   - sort: elimine_duel
     libelle: Éliminé en duel
     effectif: 4
     part: "0,6"
+    effectif_texte: "4"
   - sort: disqualifie
     libelle: Exclu du jeu
     effectif: 1
     part: "0,2"
+    effectif_texte: "1"
   par_decennie:
   - decennie: 2000s
     effectif: 164
@@ -678,18 +793,21 @@ sorties_toutes:
     conseil: "60,4"
     ambassadeurs: "0,6"
     epreuve: 3
+    effectif_texte: "164"
   - decennie: 2010s
     effectif: 243
     abandons: "10,3"
     conseil: "55,6"
     ambassadeurs: "5,3"
     epreuve: "2,9"
+    effectif_texte: "243"
   - decennie: 2020s
     effectif: 220
     abandons: "8,2"
     conseil: "51,4"
     ambassadeurs: "3,6"
     epreuve: "9,1"
+    effectif_texte: "220"
 age:
 - tranche: 18–24 ans
   effectif: 101
@@ -698,6 +816,7 @@ age:
   victoires: 7
   finales: 13
   taux_finale: "12,9"
+  effectif_texte: "101"
 - tranche: 25–29 ans
   effectif: 108
   part_du_casting: "21,1"
@@ -705,6 +824,7 @@ age:
   victoires: 4
   finales: 10
   taux_finale: "9,3"
+  effectif_texte: "108"
 - tranche: 30–34 ans
   effectif: 86
   part_du_casting: "16,8"
@@ -712,6 +832,7 @@ age:
   victoires: 7
   finales: 13
   taux_finale: "15,1"
+  effectif_texte: "86"
 - tranche: 35–39 ans
   effectif: 86
   part_du_casting: "16,8"
@@ -719,6 +840,7 @@ age:
   victoires: 4
   finales: 6
   taux_finale: 7
+  effectif_texte: "86"
 - tranche: 40–44 ans
   effectif: 54
   part_du_casting: "10,6"
@@ -726,6 +848,7 @@ age:
   victoires: 6
   finales: 6
   taux_finale: "11,1"
+  effectif_texte: "54"
 - tranche: 45 ans et plus
   effectif: 76
   part_du_casting: "14,9"
@@ -733,6 +856,7 @@ age:
   victoires: 1
   finales: 5
   taux_finale: "6,6"
+  effectif_texte: "76"
 saisons:
 - id: s01
   numero: 1
@@ -751,6 +875,7 @@ saisons:
   abandons: 0
   vainqueurs:
   - Gilles
+  effectif_texte: "16"
 - id: s02
   numero: 2
   titre: Nicoya
@@ -768,6 +893,7 @@ saisons:
   abandons: 1
   vainqueurs:
   - Amel
+  effectif_texte: "16"
 - id: s03
   numero: 3
   titre: Bocas del Toro
@@ -786,6 +912,7 @@ saisons:
   vainqueurs:
   - Delphine
   - Isabelle
+  effectif_texte: "18"
 - id: s04
   numero: 4
   titre: Panama
@@ -803,6 +930,7 @@ saisons:
   abandons: 2
   vainqueurs:
   - Philippe
+  effectif_texte: "16"
 - id: s05
   numero: 5
   titre: Pacifique
@@ -820,6 +948,7 @@ saisons:
   abandons: 2
   vainqueurs:
   - Clémence
+  effectif_texte: "17"
 - id: s06
   numero: 6
   titre: Vanuatu
@@ -837,6 +966,7 @@ saisons:
   abandons: 3
   vainqueurs:
   - François-David
+  effectif_texte: "16"
 - id: s07
   numero: 7
   titre: Palawan
@@ -855,6 +985,7 @@ saisons:
   vainqueurs:
   - Jade
   - Kévin
+  effectif_texte: "16"
 - id: s08
   numero: 8
   titre: Caramoan
@@ -872,6 +1003,7 @@ saisons:
   abandons: 3
   vainqueurs:
   - Christelle
+  effectif_texte: "17"
 - id: s09
   numero: 9
   titre: Palau
@@ -889,6 +1021,7 @@ saisons:
   abandons: 4
   vainqueurs:
   - Christina
+  effectif_texte: "18"
 - id: s10
   numero: 10
   titre: Viêtnam
@@ -906,6 +1039,7 @@ saisons:
   abandons: 3
   vainqueurs:
   - Philippe
+  effectif_texte: "18"
 - id: s11
   numero: 11
   titre: Raja Ampat
@@ -923,6 +1057,7 @@ saisons:
   abandons: 3
   vainqueurs:
   - Gérard
+  effectif_texte: "20"
 - id: s12
   numero: 12
   titre: Malaisie
@@ -940,6 +1075,7 @@ saisons:
   abandons: 2
   vainqueurs:
   - Ugo
+  effectif_texte: "20"
 - id: s14
   numero: 14
   titre: Johor
@@ -957,6 +1093,7 @@ saisons:
   abandons: 4
   vainqueurs:
   - Marc
+  effectif_texte: "20"
 - id: s15
   numero: 15
   titre: Thaïlande
@@ -974,6 +1111,7 @@ saisons:
   abandons: 2
   vainqueurs:
   - Wendy
+  effectif_texte: "21"
 - id: s16
   numero: 16
   titre: L’Île au trésor
@@ -991,6 +1129,7 @@ saisons:
   abandons: 0
   vainqueurs:
   - Benoît
+  effectif_texte: "20"
 - id: s17
   numero: 17
   titre: Cambodge
@@ -1008,6 +1147,7 @@ saisons:
   abandons: 3
   vainqueurs:
   - Frédéric
+  effectif_texte: "21"
 - id: s18
   numero: 18
   titre: Fidji
@@ -1025,6 +1165,7 @@ saisons:
   abandons: 3
   vainqueurs:
   - André
+  effectif_texte: "21"
 - id: s20
   numero: 20
   titre: La Guerre des chefs
@@ -1042,6 +1183,7 @@ saisons:
   abandons: 2
   vainqueurs:
   - Maud
+  effectif_texte: "21"
 - id: s21
   numero: 21
   titre: Les 4 Terres
@@ -1059,6 +1201,7 @@ saisons:
   abandons: 2
   vainqueurs:
   - Alexandra
+  effectif_texte: "24"
 - id: s22
   numero: 22
   titre: Les Armes secrètes
@@ -1076,6 +1219,7 @@ saisons:
   abandons: 1
   vainqueurs:
   - Maxine
+  effectif_texte: "21"
 - id: s23
   numero: 23
   titre: Le Totem maudit
@@ -1094,6 +1238,7 @@ saisons:
   vainqueurs:
   - Bastien
   - François
+  effectif_texte: "24"
 - id: s24
   numero: 24
   titre: Le Feu sacré
@@ -1111,6 +1256,7 @@ saisons:
   abandons: 3
   vainqueurs:
   - Frédéric
+  effectif_texte: "20"
 - id: s25
   numero: 25
   titre: Les Chasseurs d’immunité
@@ -1128,6 +1274,7 @@ saisons:
   abandons: 1
   vainqueurs:
   - Léa Sahin
+  effectif_texte: "22"
 - id: s26
   numero: 26
   titre: La Tribu maudite
@@ -1145,6 +1292,7 @@ saisons:
   abandons: 1
   vainqueurs:
   - Thibault
+  effectif_texte: "24"
 - id: s27
   numero: 27
   titre: La Revanche des 4 Terres
@@ -1162,6 +1310,7 @@ saisons:
   abandons: 3
   vainqueurs:
   - Gaëlle
+  effectif_texte: "24"
 - id: s28
   numero: 28
   titre: Les Reliques du destin
@@ -1179,6 +1328,7 @@ saisons:
   abandons: 0
   vainqueurs:
   - Cynthia
+  effectif_texte: "20"
 - id: sp1
   numero: null
   titre: Le Retour des héros
@@ -1196,6 +1346,7 @@ saisons:
   abandons: 0
   vainqueurs:
   - Romuald
+  effectif_texte: "14"
 - id: sp2
   numero: null
   titre: Le Choc des héros
@@ -1213,6 +1364,7 @@ saisons:
   abandons: 0
   vainqueurs:
   - Grégoire
+  effectif_texte: "14"
 - id: sp3
   numero: null
   titre: La Revanche des héros
@@ -1230,6 +1382,7 @@ saisons:
   abandons: 0
   vainqueurs:
   - Bertrand
+  effectif_texte: "16"
 - id: sp4
   numero: null
   titre: La Nouvelle Édition
@@ -1247,6 +1400,7 @@ saisons:
   abandons: 2
   vainqueurs:
   - Laurent
+  effectif_texte: "13"
 - id: sp5
   numero: null
   titre: Le Combat des héros
@@ -1264,6 +1418,7 @@ saisons:
   abandons: 1
   vainqueurs:
   - Clémence
+  effectif_texte: "18"
 - id: sp6
   numero: null
   titre: L’Île des héros
@@ -1281,6 +1436,7 @@ saisons:
   abandons: 4
   vainqueurs:
   - Naoil
+  effectif_texte: "20"
 - id: sp7
   numero: null
   titre: La Légende
@@ -1297,6 +1453,7 @@ saisons:
   part_femmes: "47,6"
   abandons: 1
   vainqueurs: []
+  effectif_texte: "21"
 - id: sp8
   numero: null
   titre: All Stars
@@ -1313,6 +1470,7 @@ saisons:
   part_femmes: 50
   abandons: 1
   vainqueurs: []
+  effectif_texte: "18"
 records:
   plus_jeune_vainqueur:
     nom: André Deleplace
@@ -1557,21 +1715,25 @@ conseils:
     effectif: 825
     part: "30,7"
     libelle: un homme contre une femme
+    effectif_texte: "825"
   - votant: f
     cible: f
     effectif: 649
     part: "24,1"
     libelle: une femme contre une femme
+    effectif_texte: "649"
   - votant: f
     cible: h
     effectif: 627
     part: "23,3"
     libelle: une femme contre un homme
+    effectif_texte: "627"
   - votant: h
     cible: h
     effectif: 590
     part: "21,9"
     libelle: un homme contre un homme
+    effectif_texte: "590"
   conseils_hors_jury: 640
   elimines_rattaches: 632
   elimines_non_rattaches: 0
@@ -1583,10 +1745,12 @@ conseils:
     annee_max: 2026
     detail_texte: 126 « Vote noir », 41 « Pénalité », 20 « Malédiction/Pénalité », 3 « Pénalité ou avantage »,
       2 « Pénalité/Avantage »
+    bulletins_texte: "192"
   conseils_justesse: 351
   retours_en_jeu: 5
   vote_par_genre_ecart: "8,8"
   rapport_saisons_objets: 2
+  bulletins_texte: 3 433
 jury:
   effectif: 35
   saisons: 32
@@ -1841,6 +2005,8 @@ jury:
   lignes: 67
   bulletins_lus: 307
   decomptes_discordants: 0
+  effectif_texte: "35"
+  bulletins_lus_texte: "307"
 finale:
   couverture:
     saisons_au_format: 28
@@ -1880,6 +2046,7 @@ finale:
       bas: "36,5"
       haut: "75,5"
       hasard: 50
+      effectif_texte: "21"
     autre_finaliste:
       effectif: 21
       cas: 9
@@ -1887,6 +2054,7 @@ finale:
       bas: "24,5"
       haut: "63,5"
       hasard: 50
+      effectif_texte: "21"
     choix_atteste:
       effectif: 9
       cas: 7
@@ -1894,6 +2062,8 @@ finale:
       bas: "45,3"
       haut: "93,7"
       hasard: 50
+      effectif_texte: "9"
+    effectif_texte: "21"
   par_rang:
   - rang: 1
     libelle: Premier arrivé
@@ -1905,6 +2075,7 @@ finale:
       bas: 9
       haut: "45,2"
       hasard: "33,3"
+      effectif_texte: "18"
     gagne_la_saison:
       effectif: 18
       cas: 3
@@ -1912,6 +2083,7 @@ finale:
       bas: "5,8"
       haut: "39,2"
       hasard: "33,3"
+      effectif_texte: "18"
     elimine_aux_poteaux:
       effectif: 18
       cas: 9
@@ -1919,6 +2091,8 @@ finale:
       bas: 29
       haut: 71
       hasard: "33,3"
+      effectif_texte: "18"
+    effectif_texte: "18"
   - rang: 2
     libelle: Deuxième
     effectif: 18
@@ -1929,6 +2103,7 @@ finale:
       bas: 9
       haut: "45,2"
       hasard: "33,3"
+      effectif_texte: "18"
     gagne_la_saison:
       effectif: 18
       cas: 4
@@ -1936,6 +2111,7 @@ finale:
       bas: 9
       haut: "45,2"
       hasard: "33,3"
+      effectif_texte: "18"
     elimine_aux_poteaux:
       effectif: 18
       cas: 5
@@ -1943,6 +2119,8 @@ finale:
       bas: "12,5"
       haut: "50,9"
       hasard: "33,3"
+      effectif_texte: "18"
+    effectif_texte: "18"
   - rang: 3
     libelle: Dernier qualifié
     effectif: 18
@@ -1953,6 +2131,7 @@ finale:
       bas: "33,7"
       haut: "75,4"
       hasard: "33,3"
+      effectif_texte: "18"
     gagne_la_saison:
       effectif: 18
       cas: 11
@@ -1961,6 +2140,7 @@ finale:
       haut: "79,7"
       hasard: "33,3"
       marge: 2
+      effectif_texte: "18"
     elimine_aux_poteaux:
       effectif: 18
       cas: 4
@@ -1968,6 +2148,8 @@ finale:
       bas: 9
       haut: "45,2"
       hasard: "33,3"
+      effectif_texte: "18"
+    effectif_texte: "18"
   saisons_ordonnees: 18
   table:
   - saison: s02
@@ -2360,6 +2542,7 @@ natures:
       haut: "48,1"
       hasard: "42,1"
     age_moyen: "30,7"
+    effectif_texte: "127"
   - nature: precision
     libelle: Précision
     effectif: 92
@@ -2377,6 +2560,7 @@ natures:
       haut: "54,7"
       hasard: "42,1"
     age_moyen: "34,5"
+    effectif_texte: "92"
   - nature: force
     libelle: Force
     effectif: 88
@@ -2394,6 +2578,7 @@ natures:
       haut: "51,4"
       hasard: "42,1"
     age_moyen: 30
+    effectif_texte: "88"
   - nature: statique
     libelle: Statique
     effectif: 63
@@ -2411,6 +2596,7 @@ natures:
       haut: 52
       hasard: "42,1"
     age_moyen: "33,4"
+    effectif_texte: "63"
   - nature: equilibre
     libelle: Équilibre
     effectif: 37
@@ -2428,6 +2614,7 @@ natures:
       haut: "66,6"
       hasard: "42,1"
     age_moyen: "29,7"
+    effectif_texte: "37"
   - nature: reflexion
     libelle: Réflexion
     effectif: 12
@@ -2445,6 +2632,7 @@ natures:
       haut: 68
       hasard: "42,1"
     age_moyen: "32,9"
+    effectif_texte: "12"
   - nature: logique
     libelle: Logique
     effectif: 11
@@ -2462,6 +2650,7 @@ natures:
       haut: 72
       hasard: "42,1"
     age_moyen: "33,7"
+    effectif_texte: "11"
   - nature: aquatique
     libelle: Aquatique
     effectif: 5
@@ -2479,18 +2668,22 @@ natures:
       haut: "76,9"
       hasard: "42,1"
     age_moyen: "41,2"
+    effectif_texte: "5"
   citations_restantes: 215
 revenants:
   paradoxe:
   - libelle: Jamais rappelés
     effectif: 448
     survie_moyenne: "56,9"
+    effectif_texte: "448"
   - libelle: Revenants, leur première saison
     effectif: 83
     survie_moyenne: "84,2"
+    effectif_texte: "83"
   - libelle: Revenants, leurs saisons suivantes
     effectif: 96
     survie_moyenne: "65,6"
+    effectif_texte: "96"
   retour_reference:
     moyenne_speciales: "63,7"
     participations_speciales: 116
@@ -2512,18 +2705,25 @@ revenants:
   apres_le_titre:
   - sort: elimine_conseil
     effectif: 10
+    effectif_texte: "10"
   - sort: elimine_epreuve
     effectif: 2
+    effectif_texte: "2"
   - sort: finaliste
     effectif: 2
+    effectif_texte: "2"
   - sort: elimine_ambassadeurs
     effectif: 1
+    effectif_texte: "1"
   - sort: vainqueur
     effectif: 1
+    effectif_texte: "1"
   - sort: elimine_orientation
     effectif: 1
+    effectif_texte: "1"
   - sort: elimine_poteaux
     effectif: 1
+    effectif_texte: "1"
   carrieres:
   - &id001
     id: claude-dartois
@@ -5429,6 +5629,7 @@ risque:
     sortants: 16
   - jour: 22
     sortants: 16
+  effectif_texte: "511"
 survie_saisons:
 - id: s01
   numero: 1
@@ -5458,6 +5659,7 @@ survie_saisons:
   - 31
   - 25
   - 12
+  effectif_texte: "16"
 - id: s02
   numero: 2
   titre: Nicoya
@@ -5486,6 +5688,7 @@ survie_saisons:
   - 31
   - 25
   - 12
+  effectif_texte: "16"
 - id: s03
   numero: 3
   titre: Bocas del Toro
@@ -5514,6 +5717,7 @@ survie_saisons:
   - 28
   - 22
   - 11
+  effectif_texte: "18"
 - id: s04
   numero: 4
   titre: Panama
@@ -5542,6 +5746,7 @@ survie_saisons:
   - 31
   - 25
   - 19
+  effectif_texte: "16"
 - id: s05
   numero: 5
   titre: Pacifique
@@ -5570,6 +5775,7 @@ survie_saisons:
   - 29
   - 24
   - 12
+  effectif_texte: "17"
 - id: s06
   numero: 6
   titre: Vanuatu
@@ -5598,6 +5804,7 @@ survie_saisons:
   - 31
   - 25
   - 19
+  effectif_texte: "16"
 - id: s07
   numero: 7
   titre: Palawan
@@ -5626,6 +5833,7 @@ survie_saisons:
   - 31
   - 25
   - 12
+  effectif_texte: "16"
 - id: s08
   numero: 8
   titre: Caramoan
@@ -5654,6 +5862,7 @@ survie_saisons:
   - 29
   - 24
   - 12
+  effectif_texte: "17"
 - id: sp1
   numero: null
   titre: Le Retour des héros
@@ -5682,6 +5891,7 @@ survie_saisons:
   - 29
   - 21
   - 14
+  effectif_texte: "14"
 - id: s09
   numero: 9
   titre: Palau
@@ -5710,6 +5920,7 @@ survie_saisons:
   - 28
   - 17
   - 11
+  effectif_texte: "18"
 - id: sp2
   numero: null
   titre: Le Choc des héros
@@ -5738,6 +5949,7 @@ survie_saisons:
   - 43
   - 36
   - 21
+  effectif_texte: "14"
 - id: s10
   numero: 10
   titre: Viêtnam
@@ -5766,6 +5978,7 @@ survie_saisons:
   - 28
   - 28
   - 17
+  effectif_texte: "18"
 - id: s11
   numero: 11
   titre: Raja Ampat
@@ -5794,6 +6007,7 @@ survie_saisons:
   - 25
   - 25
   - 15
+  effectif_texte: "20"
 - id: sp3
   numero: null
   titre: La Revanche des héros
@@ -5822,6 +6036,7 @@ survie_saisons:
   - 44
   - 31
   - 19
+  effectif_texte: "16"
 - id: s12
   numero: 12
   titre: Malaisie
@@ -5850,6 +6065,7 @@ survie_saisons:
   - 30
   - 25
   - 10
+  effectif_texte: "20"
 - id: sp4
   numero: null
   titre: La Nouvelle Édition
@@ -5878,6 +6094,7 @@ survie_saisons:
   - 38
   - 31
   - 15
+  effectif_texte: "13"
 - id: s14
   numero: 14
   titre: Johor
@@ -5906,6 +6123,7 @@ survie_saisons:
   - 25
   - 20
   - 10
+  effectif_texte: "20"
 - id: s15
   numero: 15
   titre: Thaïlande
@@ -5934,6 +6152,7 @@ survie_saisons:
   - 24
   - 19
   - 10
+  effectif_texte: "21"
 - id: s16
   numero: 16
   titre: L’Île au trésor
@@ -5962,6 +6181,7 @@ survie_saisons:
   - 30
   - 25
   - 10
+  effectif_texte: "20"
 - id: s17
   numero: 17
   titre: Cambodge
@@ -5990,6 +6210,7 @@ survie_saisons:
   - 24
   - 24
   - 14
+  effectif_texte: "21"
 - id: s18
   numero: 18
   titre: Fidji
@@ -6018,6 +6239,7 @@ survie_saisons:
   - 24
   - 24
   - 14
+  effectif_texte: "21"
 - id: sp5
   numero: null
   titre: Le Combat des héros
@@ -6046,6 +6268,7 @@ survie_saisons:
   - 28
   - 22
   - 17
+  effectif_texte: "18"
 - id: s20
   numero: 20
   titre: La Guerre des chefs
@@ -6074,6 +6297,7 @@ survie_saisons:
   - 29
   - 24
   - 14
+  effectif_texte: "21"
 - id: sp6
   numero: null
   titre: L’Île des héros
@@ -6102,6 +6326,7 @@ survie_saisons:
   - 35
   - 25
   - 15
+  effectif_texte: "20"
 - id: s21
   numero: 21
   titre: Les 4 Terres
@@ -6130,6 +6355,7 @@ survie_saisons:
   - 25
   - 25
   - 12
+  effectif_texte: "24"
 - id: sp7
   numero: null
   titre: La Légende
@@ -6158,6 +6384,7 @@ survie_saisons:
   - 29
   - 24
   - 14
+  effectif_texte: "21"
 - id: s22
   numero: 22
   titre: Les Armes secrètes
@@ -6186,6 +6413,7 @@ survie_saisons:
   - 33
   - 24
   - 14
+  effectif_texte: "21"
 - id: s23
   numero: 23
   titre: Le Totem maudit
@@ -6214,6 +6442,7 @@ survie_saisons:
   - 25
   - 21
   - 17
+  effectif_texte: "24"
 - id: s24
   numero: 24
   titre: Le Feu sacré
@@ -6242,6 +6471,7 @@ survie_saisons:
   - 25
   - 25
   - 15
+  effectif_texte: "20"
 - id: s25
   numero: 25
   titre: Les Chasseurs d’immunité
@@ -6270,6 +6500,7 @@ survie_saisons:
   - 27
   - 23
   - 14
+  effectif_texte: "22"
 - id: s26
   numero: 26
   titre: La Tribu maudite
@@ -6298,6 +6529,7 @@ survie_saisons:
   - 29
   - 29
   - 12
+  effectif_texte: "24"
 - id: s27
   numero: 27
   titre: La Revanche des 4 Terres
@@ -6326,6 +6558,7 @@ survie_saisons:
   - 25
   - 25
   - 12
+  effectif_texte: "24"
 - id: s28
   numero: 28
   titre: Les Reliques du destin
@@ -6354,6 +6587,7 @@ survie_saisons:
   - 35
   - 25
   - 15
+  effectif_texte: "20"
 survie_bandeau:
   jour_max: 43
   effectif: 511
@@ -6450,6 +6684,7 @@ survie_bandeau:
     - "5,7"
     - "1,9"
     - "0,5"
+    effectif_texte: "211"
   - couleur: rouge
     effectif: 208
     mediane: 25
@@ -6497,9 +6732,11 @@ survie_bandeau:
     - "2,9"
     - "1,4"
     - "0,5"
+    effectif_texte: "208"
   ecart_median: 0
   ecart_moyen: "3,1"
   ecart_maximal: "7,2"
+  effectif_texte: "511"
 casting:
   etendues:
   - id: s01
@@ -6815,18 +7052,25 @@ casting:
   generations:
   - decennie: 1940
     effectif: 9
+    effectif_texte: "9"
   - decennie: 1950
     effectif: 18
+    effectif_texte: "18"
   - decennie: 1960
     effectif: 73
+    effectif_texte: "73"
   - decennie: 1970
     effectif: 161
+    effectif_texte: "161"
   - decennie: 1980
     effectif: 220
+    effectif_texte: "220"
   - decennie: 1990
     effectif: 140
+    effectif_texte: "140"
   - decennie: 2000
     effectif: 24
+    effectif_texte: "24"
   decennie_sommet: 1980
 programme:
   saisons:
@@ -7173,10 +7417,13 @@ programme:
   jour_de_lancement:
   - jour: vendredi
     effectif: 24
+    effectif_texte: "24"
   - jour: mardi
     effectif: 9
+    effectif_texte: "9"
   - jour: samedi
     effectif: 1
+    effectif_texte: "1"
   presentateurs:
   - nom: Denis Brogniart
     saisons: 33
@@ -7243,6 +7490,7 @@ reciprocite:
   couples: 2469
   reciproques: 922
   part: "37,3"
+  couples_texte: 2 469
 arc_des_votes:
   saison: s16
   titre: L’Île au trésor
@@ -7666,6 +7914,7 @@ arc_des_votes:
     vers: 18
     poids: 1
   bulletins: 119
+  bulletins_texte: "119"
 voix_pour_eliminer:
   effectif: 397
   mode: 4
@@ -7673,41 +7922,53 @@ voix_pour_eliminer:
   - voix: 1
     effectif: 3
     part: "0,8"
+    effectif_texte: "3"
   - voix: 2
     effectif: 5
     part: "1,3"
+    effectif_texte: "5"
   - voix: 3
     effectif: 40
     part: "10,1"
+    effectif_texte: "40"
   - voix: 4
     effectif: 99
     part: "24,9"
+    effectif_texte: "99"
   - voix: 5
     effectif: 90
     part: "22,7"
+    effectif_texte: "90"
   - voix: 6
     effectif: 87
     part: "21,9"
+    effectif_texte: "87"
   - voix: 7
     effectif: 43
     part: "10,8"
+    effectif_texte: "43"
   - voix: 8
     effectif: 22
     part: "5,5"
+    effectif_texte: "22"
   - voix: 9
     effectif: 7
     part: "1,8"
+    effectif_texte: "7"
   - voix: 11
     effectif: 1
     part: "0,3"
+    effectif_texte: "1"
   voix_min: 1
   voix_max: 11
+  effectif_texte: "397"
 premiere_epreuve:
   effectif: 41
   survie_gagnants: "74,9"
   survie_ensemble: "61,9"
   saisons_couvertes: 34
   ecart: 13
+  effectif_texte: "41"
 epreuves:
   epreuves: 789
   saisons_couvertes: 34
@@ -8232,31 +8493,37 @@ colliers:
     effectif: 26
     part_totale: "36,6"
     part_des_trouves: "44,1"
+    effectif_texte: "26"
   - issue: joue_pour_rien
     libelle: Joué pour rien
     effectif: 20
     part_totale: "28,2"
     part_des_trouves: "33,9"
+    effectif_texte: "20"
   - issue: non_decouvert
     libelle: Jamais trouvé
     effectif: 12
     part_totale: "16,9"
     part_des_trouves: null
+    effectif_texte: "12"
   - issue: sorti_sans_pouvoir_le_jouer
     libelle: Sorti hors conseil, sans pouvoir le jouer
     effectif: 6
     part_totale: "8,5"
     part_des_trouves: "10,2"
+    effectif_texte: "6"
   - issue: elimine_avec_collier
     libelle: Éliminé avec le collier dans le sac
     effectif: 4
     part_totale: "5,6"
     part_des_trouves: "6,8"
+    effectif_texte: "4"
   - issue: garde_sans_usage
     libelle: Gardé jusqu’en finale sans en avoir besoin
     effectif: 3
     part_totale: "4,2"
     part_des_trouves: "5,1"
+    effectif_texte: "3"
   par_saison:
   - saison: s20
     titre: La Guerre des chefs
@@ -8902,6 +9169,7 @@ indicateurs:
     part_comparables: "10,2"
     ecart: 12
     rapport: "2,2"
+    effectif_texte: "14"
   - sort: vainqueur
     libelle: Vainqueur
     effectif: 10
@@ -8911,6 +9179,7 @@ indicateurs:
     part_comparables: "14,8"
     ecart: "1,1"
     rapport: "1,1"
+    effectif_texte: "10"
   - sort: elimine_ambassadeurs
     libelle: Éliminé aux ambassadeurs
     effectif: 9
@@ -8920,6 +9189,7 @@ indicateurs:
     part_comparables: "8,1"
     ecart: "6,2"
     rapport: "1,8"
+    effectif_texte: "9"
   - sort: elimine_epreuve
     libelle: Éliminé à une épreuve
     effectif: 8
@@ -8929,6 +9199,7 @@ indicateurs:
     part_comparables: "11,4"
     ecart: "1,3"
     rapport: "1,1"
+    effectif_texte: "8"
   - sort: finaliste
     libelle: Finaliste
     effectif: 6
@@ -8938,6 +9209,7 @@ indicateurs:
     part_comparables: "13,6"
     ecart: "−4,1"
     rapport: "0,7"
+    effectif_texte: "6"
   - sort: elimine_orientation
     libelle: Éliminé à l’orientation
     effectif: 6
@@ -8947,6 +9219,7 @@ indicateurs:
     part_comparables: "17,8"
     ecart: "−8,3"
     rapport: "0,5"
+    effectif_texte: "6"
   - sort: elimine_destins_lies
     libelle: Éliminé par les destins liés
     effectif: 5
@@ -8956,6 +9229,7 @@ indicateurs:
     part_comparables: "5,9"
     ecart: 2
     rapport: "1,3"
+    effectif_texte: "5"
   - sort: abandon_volontaire
     libelle: Abandon volontaire
     effectif: 4
@@ -8965,6 +9239,7 @@ indicateurs:
     part_comparables: "3,4"
     ecart: "2,9"
     rapport: "1,9"
+    effectif_texte: "4"
   - sort: disqualifie
     libelle: Exclu du jeu
     effectif: 1
@@ -8974,6 +9249,7 @@ indicateurs:
     part_comparables: "0,4"
     ecart: "1,2"
     rapport: 4
+    effectif_texte: "1"
   voix_des_vainqueurs:
     effectif: 29
     total: 67
@@ -9034,20 +9310,28 @@ indicateurs:
     distribution:
     - voix: 0
       effectif: 8
+      effectif_texte: "8"
     - voix: 1
       effectif: 5
+      effectif_texte: "5"
     - voix: 2
       effectif: 6
+      effectif_texte: "6"
     - voix: 3
       effectif: 3
+      effectif_texte: "3"
     - voix: 4
       effectif: 1
+      effectif_texte: "1"
     - voix: 5
       effectif: 2
+      effectif_texte: "2"
     - voix: 6
       effectif: 1
+      effectif_texte: "1"
     - voix: 7
       effectif: 3
+      effectif_texte: "3"
     par_sort:
     - libelle: Vainqueurs
       effectif: 29
@@ -9055,18 +9339,21 @@ indicateurs:
       voix_medianes: 2
       menace_moyenne: "0,165"
       mesures: 29
+      effectif_texte: "29"
     - libelle: Finalistes
       effectif: 24
       voix_moyennes: "6,25"
       voix_medianes: 5
       menace_moyenne: "0,441"
       mesures: 24
+      effectif_texte: "24"
     - libelle: Tout le casting
       effectif: 511
       voix_moyennes: "5,96"
       voix_medianes: 6
       menace_moyenne: "0,709"
       mesures: 429
+      effectif_texte: "511"
     couples:
     - saison: s01
       titre: Les Aventuriers de Koh-Lanta
@@ -9276,7 +9563,9 @@ indicateurs:
       moyenne_vainqueur: "2,48"
       moyenne_finaliste: "6,2"
       rapport: "2,5"
+      effectif_texte: "25"
     rapport_ensemble: "4,3"
+    effectif_texte: "29"
   duos:
     seuil: 6
     paires: 453
@@ -9430,6 +9719,7 @@ indicateurs:
     mecaniques:
     - ambassadeurs
     barre: 62
+    effectif_texte: "16"
   - id: s02
     numero: 2
     titre: Nicoya
@@ -9458,6 +9748,7 @@ indicateurs:
     mecaniques:
     - ambassadeurs
     barre: 63
+    effectif_texte: "16"
   - &id019
     id: s03
     numero: 3
@@ -9487,6 +9778,7 @@ indicateurs:
     mecaniques:
     - ambassadeurs
     barre: 56
+    effectif_texte: "18"
   - id: s04
     numero: 4
     titre: Panama
@@ -9515,6 +9807,7 @@ indicateurs:
     mecaniques:
     - ambassadeurs
     barre: 64
+    effectif_texte: "16"
   - id: s05
     numero: 5
     titre: Pacifique
@@ -9543,6 +9836,7 @@ indicateurs:
     mecaniques:
     - ambassadeurs
     barre: 59
+    effectif_texte: "17"
   - id: s06
     numero: 6
     titre: Vanuatu
@@ -9571,6 +9865,7 @@ indicateurs:
     mecaniques:
     - ambassadeurs
     barre: 64
+    effectif_texte: "16"
   - id: s07
     numero: 7
     titre: Palawan
@@ -9599,6 +9894,7 @@ indicateurs:
     mecaniques:
     - ambassadeurs
     barre: 63
+    effectif_texte: "16"
   - id: s08
     numero: 8
     titre: Caramoan
@@ -9627,6 +9923,7 @@ indicateurs:
     mecaniques:
     - ambassadeurs
     barre: 59
+    effectif_texte: "17"
   - id: s09
     numero: 9
     titre: Palau
@@ -9655,6 +9952,7 @@ indicateurs:
     mecaniques:
     - ambassadeurs
     barre: 56
+    effectif_texte: "18"
   - &id020
     id: s10
     numero: 10
@@ -9684,6 +9982,7 @@ indicateurs:
     mecaniques:
     - ambassadeurs
     barre: 62
+    effectif_texte: "18"
   - id: s11
     numero: 11
     titre: Raja Ampat
@@ -9713,6 +10012,7 @@ indicateurs:
     - ambassadeurs
     - collier_immunite
     barre: 58
+    effectif_texte: "20"
   - id: s12
     numero: 12
     titre: Malaisie
@@ -9744,6 +10044,7 @@ indicateurs:
     - destins_lies
     - ile_speciale
     barre: 64
+    effectif_texte: "20"
   - id: s14
     numero: 14
     titre: Johor
@@ -9774,6 +10075,7 @@ indicateurs:
     - collier_immunite
     - destins_lies
     barre: 60
+    effectif_texte: "20"
   - id: s15
     numero: 15
     titre: Thaïlande
@@ -9804,6 +10106,7 @@ indicateurs:
     - collier_immunite
     - destins_lies
     barre: 57
+    effectif_texte: "21"
   - id: s16
     numero: 16
     titre: L’Île au trésor
@@ -9833,6 +10136,7 @@ indicateurs:
     - ambassadeurs
     - collier_immunite
     barre: 63
+    effectif_texte: "20"
   - id: s17
     numero: 17
     titre: Cambodge
@@ -9863,6 +10167,7 @@ indicateurs:
     - collier_immunite
     - destins_lies
     barre: 61
+    effectif_texte: "21"
   - id: s18
     numero: 18
     titre: Fidji
@@ -9893,6 +10198,7 @@ indicateurs:
     - collier_immunite
     - destins_lies
     barre: 59
+    effectif_texte: "21"
   - id: s20
     numero: 20
     titre: La Guerre des chefs
@@ -9924,6 +10230,7 @@ indicateurs:
     - destins_lies
     - capitaines
     barre: 65
+    effectif_texte: "21"
   - id: s21
     numero: 21
     titre: Les 4 Terres
@@ -9955,6 +10262,7 @@ indicateurs:
     - destins_lies
     - quatre_terres
     barre: 62
+    effectif_texte: "24"
   - &id021
     id: s22
     numero: 22
@@ -9987,6 +10295,7 @@ indicateurs:
     - destins_lies
     - armes_secretes
     barre: 65
+    effectif_texte: "21"
   - id: s23
     numero: 23
     titre: Le Totem maudit
@@ -10018,6 +10327,7 @@ indicateurs:
     - destins_lies
     - totem_maudit
     barre: 61
+    effectif_texte: "24"
   - id: s24
     numero: 24
     titre: Le Feu sacré
@@ -10048,6 +10358,7 @@ indicateurs:
     - collier_immunite
     - destins_lies
     barre: 62
+    effectif_texte: "20"
   - id: s25
     numero: 25
     titre: Les Chasseurs d’immunité
@@ -10079,6 +10390,7 @@ indicateurs:
     - destins_lies
     - chasseurs_immunite
     barre: 64
+    effectif_texte: "22"
   - id: s26
     numero: 26
     titre: La Tribu maudite
@@ -10111,6 +10423,7 @@ indicateurs:
     - capitaines
     - tribu_maudite
     barre: 60
+    effectif_texte: "24"
   - id: s27
     numero: 27
     titre: La Revanche des 4 Terres
@@ -10142,6 +10455,7 @@ indicateurs:
     - destins_lies
     - quatre_terres
     barre: 62
+    effectif_texte: "24"
   - id: s28
     numero: 28
     titre: Les Reliques du destin
@@ -10173,6 +10487,7 @@ indicateurs:
     - destins_lies
     - antre_du_destin
     barre: 66
+    effectif_texte: "20"
   - id: sp1
     numero: null
     titre: Le Retour des héros
@@ -10202,6 +10517,7 @@ indicateurs:
     - ambassadeurs
     - heros
     barre: 60
+    effectif_texte: "14"
   - id: sp2
     numero: null
     titre: Le Choc des héros
@@ -10231,6 +10547,7 @@ indicateurs:
     - ambassadeurs
     - heros
     barre: 69
+    effectif_texte: "14"
   - id: sp3
     numero: null
     titre: La Revanche des héros
@@ -10261,6 +10578,7 @@ indicateurs:
     - collier_immunite
     - heros
     barre: 66
+    effectif_texte: "16"
   - id: sp4
     numero: null
     titre: La Nouvelle Édition
@@ -10290,6 +10608,7 @@ indicateurs:
     - ambassadeurs
     - collier_immunite
     barre: 69
+    effectif_texte: "13"
   - id: sp5
     numero: null
     titre: Le Combat des héros
@@ -10322,6 +10641,7 @@ indicateurs:
     - heros
     - ile_speciale
     barre: 60
+    effectif_texte: "18"
   - id: sp6
     numero: null
     titre: L’Île des héros
@@ -10354,6 +10674,7 @@ indicateurs:
     - heros
     - ile_speciale
     barre: 64
+    effectif_texte: "20"
   - id: sp7
     numero: null
     titre: La Légende
@@ -10387,6 +10708,7 @@ indicateurs:
     - ile_speciale
     - separation_par_sexe
     barre: 60
+    effectif_texte: "21"
   - id: sp8
     numero: null
     titre: All Stars
@@ -10416,6 +10738,7 @@ indicateurs:
     - collier_immunite
     - heros
     - binomes
+    effectif_texte: "18"
   abandon_nul: 3
   abandon_nul_texte: '*Les Aventuriers de Koh-Lanta* (2001), *L’Île au trésor* (2016) et *Les Reliques
     du destin* (2026)'
@@ -10513,6 +10836,8 @@ completude:
   valeurs_suivies: 8385
   comblees: 2278
   part_remplie: "96,29"
+  valeurs_suivies_texte: 8 385
+  comblees_texte: 2 278
 palmares:
   renseignees: 549
   compares: 549
@@ -10596,7 +10921,7 @@ classement:
     question: Aller loin, et le refaire
     denominateur: une participation
     sens: haut
-    unite: ' %'
+    unite:  %
     moyenne: 50
     essais_fictifs: 200
     documentes: 531
@@ -10729,7 +11054,7 @@ classement:
     question: Gagner les épreuves qui se courent seul
     denominateur: les épreuves individuelles — confort et immunité — disputées avant sa sortie
     sens: haut
-    unite: ' %'
+    unite:  %
     moyenne: "14,2"
     essais_fictifs: "60,8"
     documentes: 407
@@ -10983,7 +11308,7 @@ classement:
     question: Écrire le nom de celui qui part, conseil après conseil
     denominateur: les bulletins qu’il a émis, hors celui-là
     sens: haut
-    unite: ' %'
+    unite:  %
     moyenne: "72,6"
     essais_fictifs: "17,8"
     documentes: 460
@@ -12411,16 +12736,22 @@ classement:
     paliers:
     - seuil: 99
       effectif: 3
+      effectif_texte: "3"
     - seuil: 90
       effectif: 7
+      effectif_texte: "7"
     - seuil: 75
       effectif: 10
+      effectif_texte: "10"
     - seuil: 50
       effectif: 19
+      effectif_texte: "19"
     - seuil: 25
       effectif: 38
+      effectif_texte: "38"
     - seuil: "0,01"
       effectif: 90
+      effectif_texte: "90"
     toujours: 0
     hors_top_mais_parfois_dedans: 65
     candidats: 90
@@ -20795,6 +21126,7 @@ classement:
     depouillement_plus_bas: "69,4"
   stabilite:
     effectif: 71
+    effectif_texte: "71"
   joueurs_courte_carriere: 513
   facettes_menees_par_premier: 2
 prevision:
@@ -20815,6 +21147,7 @@ prevision:
     erreurs: "84,1"
     ecart_types_mot: écart-type
     ecart_types_abs: "1,21"
+    presences_texte: 2 803
   - cle: place
     libelle: La place dans le camp
     description: 'On ajoute la position occupée ce soir-là : tribu initiale et sexe minoritaires, avant
@@ -20832,6 +21165,7 @@ prevision:
     erreurs: "79,4"
     ecart_types_mot: écarts-types
     ecart_types_abs: "5,25"
+    presences_texte: 2 579
   - cle: jeu
     libelle: Ce que la soirée a produit
     description: On ajoute le confort du soir et les voix déjà reçues — celles du conseil précédent, et
@@ -20849,6 +21183,7 @@ prevision:
     erreurs: "77,8"
     ecart_types_mot: écarts-types
     ecart_types_abs: "5,61"
+    presences_texte: 2 579
   tirages: 10000
   min_presents: 3
   tirages_texte: 10 000
@@ -20891,6 +21226,7 @@ modeles:
       part: 26
       age_median: 29
       part_femmes: "84,1"
+      effectif_texte: "132"
     - code: 3
       libelle: 30–34 ans · homme · Agriculture et nature
       traits:
@@ -20904,6 +21240,7 @@ modeles:
       part: "20,7"
       age_median: 32
       part_femmes: "31,4"
+      effectif_texte: "105"
     - code: 1
       libelle: 40–44 ans · homme · Artisanat et bâtiment
       traits:
@@ -20917,6 +21254,7 @@ modeles:
       part: "19,7"
       age_median: 39
       part_femmes: 24
+      effectif_texte: "100"
     - code: 4
       libelle: 45 ans et plus · Sans activité déclarée
       traits:
@@ -20928,6 +21266,7 @@ modeles:
       part: "14,8"
       age_median: 50
       part_femmes: "50,7"
+      effectif_texte: "75"
     - code: 5
       libelle: 18–24 ans
       traits:
@@ -20937,6 +21276,7 @@ modeles:
       part: "12,4"
       age_median: 23
       part_femmes: "47,6"
+      effectif_texte: "63"
     - code: 2
       libelle: 18–24 ans · femme · Étudiants
       traits:
@@ -20950,6 +21290,7 @@ modeles:
       part: "6,3"
       age_median: 21
       part_femmes: "56,2"
+      effectif_texte: "32"
     nb_archetypes: 6
     silhouette: "0,372"
     silhouettes:
@@ -24508,6 +24849,7 @@ modeles:
       observe_arrondi: "0,31"
       attendu_arrondi: "0,27"
       observe_arrondi_pluriel: false
+    effectif_texte: "507"
   pronostic:
     effectif: 507
     saisons: 26
@@ -24682,6 +25024,7 @@ modeles:
       vainqueur: false
       id: celine-faccio
     casting_moyen: "19,5"
+    effectif_texte: "507"
   force:
     bootstrap: 400
     epreuves_retenues: 312
@@ -25002,6 +25345,7 @@ modeles:
         retenu: false
         estimation_pluriel: false
       lecture: Points de pourcentage gagnés quand la force double.
+    effectif_texte: "348"
   equilibre:
     rattrapage:
       effectif: 141
@@ -25016,6 +25360,7 @@ modeles:
         ne change rien.
       p_ajustee: "0,8689"
       retenu: false
+      effectif_texte: "141"
     cox:
       effectif: 507
       eliminations: 397
@@ -25102,6 +25447,7 @@ modeles:
         que la référence ; en dessous, plus lentement. L’intervalle qui contient 1 veut dire que ces données
         ne permettent pas de conclure.
       deja_venu_inverse: "0,9"
+      effectif_texte: "507"
   hasard_mecanique:
     conseils: 361
     conseils_hors_finale: 334
@@ -25313,6 +25659,7 @@ modeles:
         écrit le soir de son élimination et les voix qui éliminent sont retirés : ils mesureraient la
         sortie elle-même.'
       rapport: "135,4"
+      effectif_texte: "240"
     les_plus_souvent_du_bon_cote:
     - nom: Philippe Duron
       saison: s10
@@ -25398,6 +25745,8 @@ modeles:
       survie: 100
       voix: 0
       id: francois-descamp
+    bulletins_texte: 2 645
+    paires_suivies_texte: 4 765
   homophilie:
     bulletins: 2645
     conseils: 337
@@ -25464,6 +25813,7 @@ modeles:
       ecart_types_abs: "2,21"
       observe_arrondi_pluriel: true
       tirages_texte: 2 000
+      bulletins_texte: 2 645
     - cle: vote_ecart_age
       libelle: L’écart d’âge avec sa cible
       question: Écrit-on plutôt le nom de quelqu’un de sa génération, ou d’une autre ?
@@ -25524,6 +25874,7 @@ modeles:
       ecart_types_abs: 1
       observe_arrondi_pluriel: true
       tirages_texte: 2 000
+      bulletins_texte: 2 645
     - cle: vote_meme_metier
       libelle: Viser la même famille de métiers
       question: Le métier rapproche-t-il ou éloigne-t-il du bulletin ?
@@ -25584,6 +25935,7 @@ modeles:
       ecart_types_abs: "1,73"
       observe_arrondi_pluriel: true
       tirages_texte: 2 000
+      bulletins_texte: 2 645
     - cle: vote_meme_bandeau
       libelle: Viser sa propre tribu initiale
       question: La tribu initiale protège-t-elle, une fois les tribus recomposées ?
@@ -25644,6 +25996,7 @@ modeles:
       ecart_types_abs: "6,69"
       observe_arrondi_pluriel: true
       tirages_texte: 2 000
+      bulletins_texte: 2 645
     - cle: vote_meme_departement
       libelle: Viser quelqu’un de son département
       question: Épargne-t-on le voisin — celui qui vit dans le même département ?
@@ -25704,6 +26057,7 @@ modeles:
       ecart_types_abs: "2,1"
       observe_arrondi_pluriel: false
       tirages_texte: 2 000
+      bulletins_texte: 2 526
     - cle: vote_bandeau_apres_fusion
       libelle: Épargner sa tribu initiale
       question: Une fois les tribus recomposées, écrit-on moins souvent le nom de quelqu’un de sa tribu
@@ -25762,6 +26116,9 @@ modeles:
       ecart_types_abs: "5,92"
       observe_arrondi_pluriel: true
       tirages_texte: 2 000
+      bulletins_texte: 1 704
+    bulletins_texte: 2 645
+    bulletins_mixtes_texte: 1 704
   trahison:
     bulletins: 2034
     conseils: 337
@@ -25833,6 +26190,7 @@ modeles:
       p_ajustee: "0,9843"
       retenu: false
       estimation_pluriel: false
+      effectif_texte: "271"
     les_plus_infideles:
     - nom: Alexis Tournier
       saison: s05
@@ -25840,60 +26198,71 @@ modeles:
       bulletins: 9
       survie: 95
       id: alexis-tournier
+      bulletins_texte: "9"
     - nom: Ludivine Wiart
       saison: s16
       part: 100
       bulletins: 8
       survie: "92,9"
       id: ludivine-wiart
+      bulletins_texte: "8"
     - nom: Wafa El Mejjad
       saison: s10
       part: 100
       bulletins: 7
       survie: 100
       id: wafa-el-mejjad
+      bulletins_texte: "7"
     - nom: Laurence Pizzocchia
       saison: s10
       part: 100
       bulletins: 6
       survie: "87,5"
       id: laurence-pizzocchia
+      bulletins_texte: "6"
     - nom: Sébastien Ballesteros
       saison: s14
       part: 100
       bulletins: 4
       survie: "92,5"
       id: sebastien-ballesteros
+      bulletins_texte: "4"
     - nom: Clémence Castel
       saison: s05
       part: "88,9"
       bulletins: 9
       survie: 100
       id: clemence-castel
+      bulletins_texte: "9"
     - nom: Frédéric Blancher
       saison: s17
       part: "88,9"
       bulletins: 9
       survie: 100
       id: frederic-blancher
+      bulletins_texte: "9"
     - nom: Maxine Eouzan
       saison: s22
       part: "87,5"
       bulletins: 8
       survie: 100
       id: maxine-eouzan
+      bulletins_texte: "8"
     - nom: Véronique Lobjoie
       saison: s05
       part: "87,5"
       bulletins: 8
       survie: "92,5"
       id: veronique-lobjoie
+      bulletins_texte: "8"
     - nom: Amélie Grégoire
       saison: s04
       part: "85,7"
       bulletins: 7
       survie: "92,5"
       id: amelie-gregoire
+      bulletins_texte: "7"
+    bulletins_texte: 2 034
   confort_maudit:
     conseils: 126
     bulletins: 1000
@@ -25909,6 +26278,7 @@ modeles:
     p_ajustee: "0,6378"
     retenu: false
     marge: 4
+    bulletins_texte: 1 000
   decimation:
     saisons: 20
     sorties: 235
@@ -26075,6 +26445,7 @@ modeles:
     part_quand_disponible: "65,8"
     lecture: 'Rapport de cotes : au-dessus de 1, le juré vote plus souvent pour ce finaliste ; en dessous,
       moins souvent. Un intervalle qui contient 1 veut dire qu’on ne peut pas conclure.'
+    bulletins_texte: "294"
   fusion:
     saisons: 26
     ecartees: []
@@ -26273,106 +26644,132 @@ modeles:
       titre: Les Aventuriers de Koh-Lanta
       effectif: 16
       conseils: 13
+      effectif_texte: "16"
     - annee: 2002
       titre: Nicoya
       effectif: 16
       conseils: 13
+      effectif_texte: "16"
     - annee: 2003
       titre: Bocas del Toro
       effectif: 18
       conseils: 12
+      effectif_texte: "18"
     - annee: 2004
       titre: Panama
       effectif: 16
       conseils: 14
+      effectif_texte: "16"
     - annee: 2005
       titre: Pacifique
       effectif: 17
       conseils: 14
+      effectif_texte: "17"
     - annee: 2006
       titre: Vanuatu
       effectif: 16
       conseils: 13
+      effectif_texte: "16"
     - annee: 2007
       titre: Palawan
       effectif: 16
       conseils: 13
+      effectif_texte: "16"
     - annee: 2008
       titre: Caramoan
       effectif: 17
       conseils: 13
+      effectif_texte: "17"
     - annee: 2009
       titre: Palau
       effectif: 18
       conseils: 12
+      effectif_texte: "18"
     - annee: 2010
       titre: Viêtnam
       effectif: 18
       conseils: 14
+      effectif_texte: "18"
     - annee: 2011
       titre: Raja Ampat
       effectif: 20
       conseils: 14
+      effectif_texte: "20"
     - annee: 2012
       titre: Malaisie
       effectif: 20
       conseils: 14
+      effectif_texte: "20"
     - annee: 2015
       titre: Johor
       effectif: 20
       conseils: 14
+      effectif_texte: "20"
     - annee: 2016
       titre: Thaïlande
       effectif: 21
       conseils: 14
+      effectif_texte: "21"
     - annee: 2016
       titre: L’Île au trésor
       effectif: 20
       conseils: 15
+      effectif_texte: "20"
     - annee: 2017
       titre: Cambodge
       effectif: 21
       conseils: 14
+      effectif_texte: "21"
     - annee: 2017
       titre: Fidji
       effectif: 21
       conseils: 14
+      effectif_texte: "21"
     - annee: 2019
       titre: La Guerre des chefs
       effectif: 21
       conseils: 14
+      effectif_texte: "21"
     - annee: 2020
       titre: Les 4 Terres
       effectif: 24
       conseils: 16
+      effectif_texte: "24"
     - annee: 2021
       titre: Les Armes secrètes
       effectif: 21
       conseils: 13
+      effectif_texte: "21"
     - annee: 2022
       titre: Le Totem maudit
       effectif: 24
       conseils: 14
+      effectif_texte: "24"
     - annee: 2023
       titre: Le Feu sacré
       effectif: 20
       conseils: 15
+      effectif_texte: "20"
     - annee: 2024
       titre: Les Chasseurs d’immunité
       effectif: 22
       conseils: 14
+      effectif_texte: "22"
     - annee: 2024
       titre: La Tribu maudite
       effectif: 24
       conseils: 14
+      effectif_texte: "24"
     - annee: 2025
       titre: La Revanche des 4 Terres
       effectif: 24
       conseils: 15
+      effectif_texte: "24"
     - annee: 2026
       titre: Les Reliques du destin
       effectif: 20
       conseils: 16
+      effectif_texte: "20"
     annee_rupture: 2012
     derniere_avant:
       annee: 2011
@@ -26622,6 +27019,7 @@ modeles:
       pdm: "39,9"
       jour: Samedi
       effectif: 16
+      effectif_texte: "16"
     - saison: s02
       annee: 2002
       titre: Nicoya
@@ -26632,6 +27030,7 @@ modeles:
       pdm: "32,7"
       jour: Vendredi
       effectif: 16
+      effectif_texte: "16"
     - saison: s03
       annee: 2003
       titre: Bocas del Toro
@@ -26642,6 +27041,7 @@ modeles:
       pdm: "32,4"
       jour: Vendredi
       effectif: 18
+      effectif_texte: "18"
     - saison: s04
       annee: 2004
       titre: Panama
@@ -26652,6 +27052,7 @@ modeles:
       pdm: "31,9"
       jour: Vendredi
       effectif: 16
+      effectif_texte: "16"
     - saison: s05
       annee: 2005
       titre: Pacifique
@@ -26662,6 +27063,7 @@ modeles:
       pdm: 35
       jour: Vendredi
       effectif: 17
+      effectif_texte: "17"
     - saison: s06
       annee: 2006
       titre: Vanuatu
@@ -26672,6 +27074,7 @@ modeles:
       pdm: "37,2"
       jour: Vendredi
       effectif: 16
+      effectif_texte: "16"
     - saison: s07
       annee: 2007
       titre: Palawan
@@ -26682,6 +27085,7 @@ modeles:
       pdm: "39,5"
       jour: Vendredi
       effectif: 16
+      effectif_texte: "16"
     - &id069
       saison: s08
       annee: 2008
@@ -26693,6 +27097,7 @@ modeles:
       pdm: 34
       jour: Vendredi
       effectif: 17
+      effectif_texte: "17"
     - saison: s09
       annee: 2009
       titre: Palau
@@ -26703,6 +27108,7 @@ modeles:
       pdm: "32,1"
       jour: Vendredi
       effectif: 18
+      effectif_texte: "18"
     - &id064
       saison: sp1
       annee: 2009
@@ -26715,6 +27121,7 @@ modeles:
       jour: Mardi
       effectif: 14
       moyenne_millions: "8,3"
+      effectif_texte: "14"
     - saison: s10
       annee: 2010
       titre: Viêtnam
@@ -26725,6 +27132,7 @@ modeles:
       pdm: "27,6"
       jour: Vendredi
       effectif: 18
+      effectif_texte: "18"
     - saison: sp2
       annee: 2010
       titre: Le Choc des héros
@@ -26735,6 +27143,7 @@ modeles:
       pdm: "29,7"
       jour: Vendredi
       effectif: 14
+      effectif_texte: "14"
     - saison: s11
       annee: 2011
       titre: Raja Ampat
@@ -26745,6 +27154,7 @@ modeles:
       pdm: "29,2"
       jour: Vendredi
       effectif: 20
+      effectif_texte: "20"
     - saison: s12
       annee: 2012
       titre: Malaisie
@@ -26755,6 +27165,7 @@ modeles:
       pdm: "29,5"
       jour: Vendredi
       effectif: 20
+      effectif_texte: "20"
     - saison: sp3
       annee: 2012
       titre: La Revanche des héros
@@ -26765,6 +27176,7 @@ modeles:
       pdm: "28,3"
       jour: Vendredi
       effectif: 16
+      effectif_texte: "16"
     - saison: sp4
       annee: 2014
       titre: La Nouvelle Édition
@@ -26775,6 +27187,7 @@ modeles:
       pdm: "29,3"
       jour: Vendredi
       effectif: 13
+      effectif_texte: "13"
     - saison: s14
       annee: 2015
       titre: Johor
@@ -26785,6 +27198,7 @@ modeles:
       pdm: 27
       jour: Vendredi
       effectif: 20
+      effectif_texte: "20"
     - saison: s15
       annee: 2016
       titre: Thaïlande
@@ -26795,6 +27209,7 @@ modeles:
       pdm: "26,5"
       jour: Vendredi
       effectif: 21
+      effectif_texte: "21"
     - saison: s16
       annee: 2016
       titre: L’Île au trésor
@@ -26805,6 +27220,7 @@ modeles:
       pdm: "27,3"
       jour: Vendredi
       effectif: 20
+      effectif_texte: "20"
     - saison: s17
       annee: 2017
       titre: Cambodge
@@ -26815,6 +27231,7 @@ modeles:
       pdm: "26,8"
       jour: Vendredi
       effectif: 21
+      effectif_texte: "21"
     - saison: s18
       annee: 2017
       titre: Fidji
@@ -26825,6 +27242,7 @@ modeles:
       pdm: "24,3"
       jour: Vendredi
       effectif: 21
+      effectif_texte: "21"
     - saison: sp5
       annee: 2018
       titre: Le Combat des héros
@@ -26835,6 +27253,7 @@ modeles:
       pdm: "24,1"
       jour: Vendredi
       effectif: 18
+      effectif_texte: "18"
     - saison: s20
       annee: 2019
       titre: La Guerre des chefs
@@ -26845,6 +27264,7 @@ modeles:
       pdm: "22,9"
       jour: Vendredi
       effectif: 21
+      effectif_texte: "21"
     - saison: s21
       annee: 2020
       titre: Les 4 Terres
@@ -26855,6 +27275,7 @@ modeles:
       pdm: "26,3"
       jour: Vendredi
       effectif: 24
+      effectif_texte: "24"
     - saison: sp6
       annee: 2020
       titre: L’Île des héros
@@ -26865,6 +27286,7 @@ modeles:
       pdm: "26,1"
       jour: Vendredi
       effectif: 20
+      effectif_texte: "20"
     - &id065
       saison: s22
       annee: 2021
@@ -26876,6 +27298,7 @@ modeles:
       pdm: "25,6"
       jour: Vendredi
       effectif: 21
+      effectif_texte: "21"
     - &id066
       saison: sp7
       annee: 2021
@@ -26887,6 +27310,7 @@ modeles:
       pdm: null
       jour: Mardi
       effectif: 21
+      effectif_texte: "21"
     - saison: s23
       annee: 2022
       titre: Le Totem maudit
@@ -26897,6 +27321,7 @@ modeles:
       pdm: "19,4"
       jour: Mardi
       effectif: 24
+      effectif_texte: "24"
     - saison: s24
       annee: 2023
       titre: Le Feu sacré
@@ -26907,6 +27332,7 @@ modeles:
       pdm: null
       jour: Mardi
       effectif: 20
+      effectif_texte: "20"
     - saison: s25
       annee: 2024
       titre: Les Chasseurs d’immunité
@@ -26917,6 +27343,7 @@ modeles:
       pdm: "18,7"
       jour: Mardi
       effectif: 22
+      effectif_texte: "22"
     - saison: s26
       annee: 2024
       titre: La Tribu maudite
@@ -26927,6 +27354,7 @@ modeles:
       pdm: null
       jour: Mardi
       effectif: 24
+      effectif_texte: "24"
     - saison: s27
       annee: 2025
       titre: La Revanche des 4 Terres
@@ -26937,6 +27365,7 @@ modeles:
       pdm: "17,6"
       jour: Mardi
       effectif: 24
+      effectif_texte: "24"
     - &id063
       saison: s28
       annee: 2026
@@ -26949,6 +27378,7 @@ modeles:
       jour: Mardi
       effectif: 20
       moyenne_millions: "2,5"
+      effectif_texte: "20"
     premiere: *id062
     derniere: *id063
     sommet: *id064
@@ -27733,6 +28163,7 @@ modeles:
       avec_force: 14
       rang_moyen: "55,6"
       effectif_force: 14
+      effectif_texte: "15"
     negociateurs:
       lues: 18
       total: 25
@@ -28052,6 +28483,7 @@ modeles:
       haut: "13,1"
       hasard: "13,1"
       modalite_maj: Aucune voix
+      effectif_texte: 1 354
     - modalite: 1 voix
       effectif: 173
       cas: 36
@@ -28060,6 +28492,7 @@ modeles:
       haut: "27,5"
       hasard: "14,5"
       modalite_maj: 1 voix
+      effectif_texte: "173"
     - modalite: 2 voix
       effectif: 67
       cas: 17
@@ -28068,6 +28501,7 @@ modeles:
       haut: "36,9"
       hasard: "14,8"
       modalite_maj: 2 voix
+      effectif_texte: "67"
     - modalite: 3 voix
       effectif: 48
       cas: 8
@@ -28076,6 +28510,7 @@ modeles:
       haut: "29,6"
       hasard: "12,9"
       modalite_maj: 3 voix
+      effectif_texte: "48"
     - modalite: 4 voix
       effectif: 35
       cas: 8
@@ -28084,6 +28519,7 @@ modeles:
       haut: 39
       hasard: "12,5"
       modalite_maj: 4 voix
+      effectif_texte: "35"
     - modalite: 5 voix et plus
       effectif: 43
       cas: 6
@@ -28092,6 +28528,7 @@ modeles:
       haut: "27,3"
       hasard: "11,7"
       modalite_maj: 5 voix et plus
+      effectif_texte: "43"
     par_voix_deux_pas:
     - modalite: aucune voix
       effectif: 878
@@ -28101,6 +28538,7 @@ modeles:
       haut: "15,5"
       hasard: "13,1"
       modalite_maj: Aucune voix
+      effectif_texte: "878"
     - modalite: 1 voix
       effectif: 107
       cas: 22
@@ -28109,6 +28547,7 @@ modeles:
       haut: "29,2"
       hasard: "14,2"
       modalite_maj: 1 voix
+      effectif_texte: "107"
     - modalite: 2 voix et plus
       effectif: 117
       cas: 11
@@ -28117,6 +28556,7 @@ modeles:
       haut: "16,1"
       hasard: 13
       modalite_maj: 2 voix et plus
+      effectif_texte: "117"
     par_voix_relache:
     - modalite: aucune voix
       effectif: 1605
@@ -28126,6 +28566,7 @@ modeles:
       haut: 13
       hasard: "12,9"
       modalite_maj: Aucune voix
+      effectif_texte: 1 605
     - modalite: 1 voix
       effectif: 205
       cas: 40
@@ -28134,6 +28575,7 @@ modeles:
       haut: "25,5"
       hasard: 14
       modalite_maj: 1 voix
+      effectif_texte: "205"
     - modalite: 2 voix
       effectif: 92
       cas: 21
@@ -28142,6 +28584,7 @@ modeles:
       haut: "32,4"
       hasard: "14,3"
       modalite_maj: 2 voix
+      effectif_texte: "92"
     - modalite: 3 voix
       effectif: 49
       cas: 8
@@ -28150,6 +28593,7 @@ modeles:
       haut: 29
       hasard: "12,9"
       modalite_maj: 3 voix
+      effectif_texte: "49"
     - modalite: 4 voix
       effectif: 38
       cas: 8
@@ -28158,6 +28602,7 @@ modeles:
       haut: "36,3"
       hasard: "12,4"
       modalite_maj: 4 voix
+      effectif_texte: "38"
     - modalite: 5 voix et plus
       effectif: 49
       cas: 7
@@ -28166,6 +28611,7 @@ modeles:
       haut: "26,7"
       hasard: "11,6"
       modalite_maj: 5 voix et plus
+      effectif_texte: "49"
     par_voix_sans_collier:
     - modalite: aucune voix
       effectif: 1186
@@ -28175,6 +28621,7 @@ modeles:
       haut: "13,5"
       hasard: "13,2"
       modalite_maj: Aucune voix
+      effectif_texte: 1 186
     - modalite: 1 voix
       effectif: 155
       cas: 33
@@ -28183,6 +28630,7 @@ modeles:
       haut: "28,4"
       hasard: "14,8"
       modalite_maj: 1 voix
+      effectif_texte: "155"
     - modalite: 2 voix
       effectif: 64
       cas: 15
@@ -28191,6 +28639,7 @@ modeles:
       haut: "35,1"
       hasard: "14,7"
       modalite_maj: 2 voix
+      effectif_texte: "64"
     - modalite: 3 voix
       effectif: 46
       cas: 7
@@ -28199,6 +28648,7 @@ modeles:
       haut: "28,2"
       hasard: 13
       modalite_maj: 3 voix
+      effectif_texte: "46"
     - modalite: 4 voix
       effectif: 27
       cas: 6
@@ -28207,6 +28657,7 @@ modeles:
       haut: "40,8"
       hasard: "12,1"
       modalite_maj: 4 voix
+      effectif_texte: "27"
     - modalite: 5 voix et plus
       effectif: 32
       cas: 2
@@ -28215,6 +28666,7 @@ modeles:
       haut: "20,1"
       hasard: "11,3"
       modalite_maj: 5 voix et plus
+      effectif_texte: "32"
     inverse:
       sortis: 228
       restes: 1492
@@ -28222,6 +28674,7 @@ modeles:
       vise_si_reste: "19,5"
       voix_si_sorti: "0,69"
       voix_si_reste: "0,46"
+      restes_texte: 1 492
     par_camp:
     - modalite: avec la majorité
       effectif: 1218
@@ -28231,6 +28684,7 @@ modeles:
       haut: "14,1"
       hasard: "13,5"
       modalite_maj: Avec la majorité
+      effectif_texte: 1 218
     - modalite: avec la minorité
       effectif: 498
       cas: 79
@@ -28239,6 +28693,7 @@ modeles:
       haut: "19,3"
       hasard: "12,6"
       modalite_maj: Avec la minorité
+      effectif_texte: "498"
     par_cumul:
     - modalite: jamais visé
       effectif: 1070
@@ -28248,6 +28703,7 @@ modeles:
       haut: "12,6"
       hasard: 13
       modalite_maj: Jamais visé
+      effectif_texte: 1 070
     - modalite: 1 ou 2 voix en tout
       effectif: 322
       cas: 66
@@ -28256,6 +28712,7 @@ modeles:
       haut: "25,2"
       hasard: "14,3"
       modalite_maj: 1 ou 2 voix en tout
+      effectif_texte: "322"
     - modalite: 3 voix ou plus en tout
       effectif: 328
       cas: 48
@@ -28264,6 +28721,7 @@ modeles:
       haut: "18,9"
       hasard: 13
       modalite_maj: 3 voix ou plus en tout
+      effectif_texte: "328"
     par_histoire:
     - modalite: jamais visé
       effectif: 1070
@@ -28273,6 +28731,7 @@ modeles:
       haut: "12,6"
       hasard: 13
       modalite_maj: Jamais visé
+      effectif_texte: 1 070
     - modalite: visé avant, plus la dernière fois
       effectif: 284
       cas: 39
@@ -28281,6 +28740,7 @@ modeles:
       haut: "18,2"
       hasard: "13,4"
       modalite_maj: Visé avant, plus la dernière fois
+      effectif_texte: "284"
     - modalite: visé la dernière fois seulement
       effectif: 252
       cas: 53
@@ -28289,6 +28749,7 @@ modeles:
       haut: "26,5"
       hasard: "13,8"
       modalite_maj: Visé la dernière fois seulement
+      effectif_texte: "252"
     - modalite: visé la dernière fois, et déjà avant
       effectif: 114
       cas: 22
@@ -28297,6 +28758,7 @@ modeles:
       haut: "27,5"
       hasard: "13,8"
       modalite_maj: Visé la dernière fois, et déjà avant
+      effectif_texte: "114"
     persistance:
     - modalite: aucune voix
       effectif: 1354
@@ -28306,6 +28768,7 @@ modeles:
       haut: 31
       hasard: "13,1"
       modalite_maj: Aucune voix
+      effectif_texte: 1 354
     - modalite: 1 voix
       effectif: 173
       cas: 78
@@ -28314,6 +28777,7 @@ modeles:
       haut: "52,5"
       hasard: "14,5"
       modalite_maj: 1 voix
+      effectif_texte: "173"
     - modalite: 2 voix
       effectif: 67
       cas: 31
@@ -28322,6 +28786,7 @@ modeles:
       haut: "58,1"
       hasard: "14,8"
       modalite_maj: 2 voix
+      effectif_texte: "67"
     - modalite: 3 voix et plus
       effectif: 126
       cas: 60
@@ -28330,6 +28795,7 @@ modeles:
       haut: "56,3"
       hasard: "12,4"
       modalite_maj: 3 voix et plus
+      effectif_texte: "126"
     retour:
       couples: 548
       rendus: 122
@@ -28337,6 +28803,7 @@ modeles:
       bas: 19
       haut: "25,9"
       non_rendus: "77,7"
+      couples_texte: "548"
     modele:
       conseils: 228
       presences: 1720
@@ -28367,6 +28834,7 @@ modeles:
         libelle_maj: 4 voix et plus
       lecture: Rapport de cotes par rapport à « aucune voix au conseil précédent », à conseil égal. Au-dessus
         de 1, le risque monte ; en dessous, il baisse. Un intervalle qui contient 1 ne permet pas de conclure.
+      presences_texte: 1 720
     survivants:
     - nom: Lionel Dubouchet
       saison: s28
@@ -29256,6 +29724,9 @@ modeles:
     part_des_conseils: 52
     deux_pas_vises: 224
     deux_pas_total: 1102
+    presences_texte: 1 720
+    presences_relachees_texte: 2 038
+    deux_pas_total_texte: 1 102
   autour_du_feu:
     presences: 2999
     conseils: 384
@@ -29273,6 +29744,7 @@ modeles:
       haut: "20,2"
       hasard: "12,3"
       modalite_maj: Tribu initiale minoritaire
+      effectif_texte: "542"
     - modalite: tribu initiale majoritaire
       effectif: 1106
       cas: 117
@@ -29281,6 +29753,7 @@ modeles:
       haut: "12,5"
       hasard: "12,7"
       modalite_maj: Tribu initiale majoritaire
+      effectif_texte: 1 106
     bandeau_avant:
     - modalite: tribu initiale minoritaire
       effectif: 148
@@ -29290,6 +29763,7 @@ modeles:
       haut: "28,9"
       hasard: "13,2"
       modalite_maj: Tribu initiale minoritaire
+      effectif_texte: "148"
     - modalite: tribu initiale majoritaire
       effectif: 372
       cas: 38
@@ -29298,6 +29772,7 @@ modeles:
       haut: "13,7"
       hasard: "13,4"
       modalite_maj: Tribu initiale majoritaire
+      effectif_texte: "372"
     bandeau_apres:
     - modalite: tribu initiale minoritaire
       effectif: 394
@@ -29307,6 +29782,7 @@ modeles:
       haut: "18,8"
       hasard: 12
       modalite_maj: Tribu initiale minoritaire
+      effectif_texte: "394"
     - modalite: tribu initiale majoritaire
       effectif: 734
       cas: 79
@@ -29315,6 +29791,7 @@ modeles:
       haut: "13,2"
       hasard: "12,3"
       modalite_maj: Tribu initiale majoritaire
+      effectif_texte: "734"
     sexe:
     - modalite: sexe minoritaire
       effectif: 784
@@ -29324,6 +29801,7 @@ modeles:
       haut: 11
       hasard: "12,4"
       modalite_maj: Sexe minoritaire
+      effectif_texte: "784"
     - modalite: sexe majoritaire
       effectif: 1177
       cas: 178
@@ -29332,6 +29810,7 @@ modeles:
       haut: "17,3"
       hasard: "12,8"
       modalite_maj: Sexe majoritaire
+      effectif_texte: 1 177
     age:
     - modalite: le plus âgé du camp
       effectif: 378
@@ -29341,6 +29820,7 @@ modeles:
       haut: "18,2"
       hasard: "13,4"
       modalite_maj: Le plus âgé du camp
+      effectif_texte: "378"
     - modalite: entre les deux
       effectif: 2133
       cas: 261
@@ -29349,6 +29829,7 @@ modeles:
       haut: "13,7"
       hasard: "12,2"
       modalite_maj: Entre les deux
+      effectif_texte: 2 133
     - modalite: le plus jeune du camp
       effectif: 424
       cas: 53
@@ -29357,6 +29838,7 @@ modeles:
       haut: 16
       hasard: "13,4"
       modalite_maj: Le plus jeune du camp
+      effectif_texte: "424"
     genre:
     - modalite: une femme
       effectif: 1421
@@ -29366,6 +29848,7 @@ modeles:
       haut: "15,9"
       hasard: "12,8"
       modalite_maj: Une femme
+      effectif_texte: 1 421
     - modalite: un homme
       effectif: 1578
       cas: 185
@@ -29374,6 +29857,7 @@ modeles:
       haut: "13,4"
       hasard: "12,8"
       modalite_maj: Un homme
+      effectif_texte: 1 578
     confort:
     - modalite: a gagné le confort du soir
       effectif: 227
@@ -29383,6 +29867,7 @@ modeles:
       haut: "18,7"
       hasard: "12,8"
       modalite_maj: A gagné le confort du soir
+      effectif_texte: "227"
     - modalite: n’a rien gagné ce soir
       effectif: 1128
       cas: 138
@@ -29391,6 +29876,7 @@ modeles:
       haut: "14,3"
       hasard: "12,4"
       modalite_maj: N’a rien gagné ce soir
+      effectif_texte: 1 128
     immunite:
     - modalite: a gagné l’immunité individuelle
       effectif: 196
@@ -29400,6 +29886,7 @@ modeles:
       haut: "1,9"
       hasard: "12,5"
       modalite_maj: A gagné l’immunité individuelle
+      effectif_texte: "196"
     - modalite: n’a pas gagné l’immunité
       effectif: 1353
       cas: 182
@@ -29408,6 +29895,7 @@ modeles:
       haut: "15,4"
       hasard: "11,6"
       modalite_maj: N’a pas gagné l’immunité
+      effectif_texte: 1 353
     tests:
     - cle: bandeau_minoritaire
       libelle: La tribu initiale minoritaire
@@ -29636,6 +30124,8 @@ modeles:
       observe_arrondi_pluriel: false
       tirages_texte: 10 000
     age_ecart: "2,1"
+    presences_texte: 2 999
+    par_bulletins_texte: 2 680
   pire_place:
     presences: 1720
     conseils: 228
@@ -29649,6 +30139,7 @@ modeles:
       haut: "45,7"
       hasard: "13,8"
       modalite_maj: N’a jamais voté avec personne
+      effectif_texte: "29"
     - modalite: tous ses alliés sont partis
       effectif: 40
       cas: 11
@@ -29657,6 +30148,7 @@ modeles:
       haut: "42,8"
       hasard: "16,2"
       modalite_maj: Tous ses alliés sont partis
+      effectif_texte: "40"
     - modalite: 1 ou 2 alliés présents
       effectif: 246
       cas: 41
@@ -29665,6 +30157,7 @@ modeles:
       haut: "21,8"
       hasard: 14
       modalite_maj: 1 ou 2 alliés présents
+      effectif_texte: "246"
     - modalite: 3 alliés ou plus
       effectif: 1405
       cas: 168
@@ -29673,6 +30166,7 @@ modeles:
       haut: "13,8"
       hasard: 13
       modalite_maj: 3 alliés ou plus
+      effectif_texte: 1 405
     adverse:
     - modalite: jamais visé jusqu’ici
       effectif: 1070
@@ -29682,6 +30176,7 @@ modeles:
       haut: "12,6"
       hasard: 13
       modalite_maj: Jamais visé jusqu’ici
+      effectif_texte: 1 070
     - modalite: ses adversaires sont partis
       effectif: 165
       cas: 40
@@ -29690,6 +30185,7 @@ modeles:
       haut: "31,3"
       hasard: "15,2"
       modalite_maj: Ses adversaires sont partis
+      effectif_texte: "165"
     - modalite: au moins un adversaire encore là
       effectif: 485
       cas: 74
@@ -29698,6 +30194,7 @@ modeles:
       haut: "18,7"
       hasard: "13,1"
       modalite_maj: Au moins un adversaire encore là
+      effectif_texte: "485"
     cumul:
     - modalite: aucun des deux signaux
       effectif: 1311
@@ -29707,6 +30204,7 @@ modeles:
       haut: "12,8"
       hasard: 13
       modalite_maj: Aucun des deux signaux
+      effectif_texte: 1 311
     - modalite: un seul des deux
       effectif: 383
       cas: 74
@@ -29715,6 +30213,7 @@ modeles:
       haut: "23,6"
       hasard: "13,9"
       modalite_maj: Un seul des deux
+      effectif_texte: "383"
     - modalite: les deux à la fois
       effectif: 26
       cas: 10
@@ -29723,6 +30222,7 @@ modeles:
       haut: "57,5"
       hasard: "15,2"
       modalite_maj: Les deux à la fois
+      effectif_texte: "26"
     modele:
       conseils: 228
       presences: 1720
@@ -29744,6 +30244,7 @@ modeles:
       lecture: 'Rapport de cotes à conseil égal : chaque conseil est son propre groupe de comparaison.
         Les deux signaux sont dans le même modèle — s’ils y survivent tous les deux, ils ne sont pas l’ombre
         l’un de l’autre.'
+      presences_texte: 1 720
     dos_au_mur:
     - modalite: visé au conseil précédent
       effectif: 230
@@ -29753,6 +30254,7 @@ modeles:
       haut: "18,5"
       hasard: "12,7"
       modalite_maj: Visé au conseil précédent
+      effectif_texte: "230"
     - modalite: pas visé
       effectif: 845
       cas: 109
@@ -29761,6 +30263,7 @@ modeles:
       haut: "15,3"
       hasard: 12
       modalite_maj: Pas visé
+      effectif_texte: "845"
     conseils_immunite: 131
     bulletins_lus: 1433
     bulletins_perdus: 8
@@ -29879,6 +30382,8 @@ modeles:
       observe_arrondi_pluriel: false
       tirages_texte: 10 000
     cumul_rapport: "3,5"
+    presences_texte: 1 720
+    bulletins_lus_texte: 1 433
   tenant_du_titre:
     epreuves: 181
     saisons: 33
@@ -29889,12 +30394,14 @@ modeles:
       probabilite: "19,3"
       bas: "13,7"
       haut: "26,5"
+      effectif_texte: "145"
     autres:
       effectif: 1010
       cas: 117
       probabilite: "11,6"
       bas: "9,8"
       haut: "13,7"
+      effectif_texte: 1 010
     brut: "7,7"
     attendu_force: "8,4"
     attendu_uniforme: "1,2"
@@ -29960,6 +30467,9 @@ modeles:
       ecart_types_abs: "0,17"
       observe_arrondi_pluriel: true
       tirages_texte: 4 000
+    attendu_uniforme_pluriel: false
+    attendu_force_pluriel: true
+    brut_pluriel: true
     rapport: "1,7"
     ecarts_types_uniforme_mot: écart-type
     ecarts_types_uniforme_abs: "1,89"
@@ -30040,54 +30550,63 @@ modeles:
       probabilite: "66,7"
       bas: "43,7"
       haut: "83,7"
+      effectif_texte: "18"
     - modalite: Vainqueur
       effectif: 25
       cas: 11
       probabilite: 44
       bas: "26,7"
       haut: "62,9"
+      effectif_texte: "25"
     - modalite: Éliminé à l’orientation
       effectif: 24
       cas: 9
       probabilite: "37,5"
       bas: "21,2"
       haut: "57,3"
+      effectif_texte: "24"
     - modalite: Éliminé aux poteaux
       effectif: 20
       cas: 7
       probabilite: 35
       bas: "18,1"
       haut: "56,7"
+      effectif_texte: "20"
     - modalite: Éliminé aux ambassadeurs
       effectif: 12
       cas: 3
       probabilite: 25
       bas: "8,9"
       haut: "53,2"
+      effectif_texte: "12"
     - modalite: Éliminé au conseil
       effectif: 238
       cas: 24
       probabilite: "10,1"
       bas: "6,9"
       haut: "14,6"
+      effectif_texte: "238"
     - modalite: Éliminé à une épreuve
       effectif: 14
       cas: 1
       probabilite: "7,1"
       bas: "1,3"
       haut: "31,5"
+      effectif_texte: "14"
     - modalite: Abandon médical
       effectif: 37
       cas: 1
       probabilite: "2,7"
       bas: "0,5"
       haut: "13,8"
+      effectif_texte: "37"
     - modalite: Abandon volontaire
       effectif: 16
       cas: 0
       probabilite: 0
       bas: 0
       haut: "19,4"
+      effectif_texte: "16"
     par_survie:
     - modalite: 3 à 28 % de la saison
       effectif: 82
@@ -30095,30 +30614,35 @@ modeles:
       probabilite: "2,4"
       bas: "0,7"
       haut: "8,5"
+      effectif_texte: "82"
     - modalite: 28 à 50 % de la saison
       effectif: 83
       cas: 4
       probabilite: "4,8"
       bas: "1,9"
       haut: "11,7"
+      effectif_texte: "83"
     - modalite: 51 à 74 % de la saison
       effectif: 82
       cas: 11
       probabilite: "13,4"
       bas: "7,7"
       haut: "22,4"
+      effectif_texte: "82"
     - modalite: 75 à 95 % de la saison
       effectif: 83
       cas: 17
       probabilite: "20,5"
       bas: "13,2"
       haut: "30,4"
+      effectif_texte: "83"
     - modalite: 95 à 100 % de la saison
       effectif: 83
       cas: 36
       probabilite: "43,4"
       bas: "33,2"
       haut: "54,1"
+      effectif_texte: "83"
     coefficients:
     - libelle: Part de saison tenue (+10 points)
       rapport: "1,48"
@@ -30165,6 +30689,7 @@ modeles:
       permet pas de conclure.
     rapport_survie: "18,1"
     abandons_derniers: 53
+    effectif_texte: "413"
   registre:
   - cle: parite
     libelle: L’équilibre hommes-femmes
@@ -31661,6 +32186,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 0
     niveau: eleve
+    effectif_texte: "16"
   - saison: s02
     numero: 2
     titre: Nicoya
@@ -31786,6 +32312,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 0
     niveau: eleve
+    effectif_texte: "16"
   - saison: s03
     numero: 3
     titre: Bocas del Toro
@@ -31911,6 +32438,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 0
     niveau: eleve
+    effectif_texte: "18"
   - saison: s04
     numero: 4
     titre: Panama
@@ -32036,6 +32564,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     niveau: eleve
+    effectif_texte: "16"
   - saison: s05
     numero: 5
     titre: Pacifique
@@ -32161,6 +32690,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     niveau: eleve
+    effectif_texte: "17"
   - saison: s06
     numero: 6
     titre: Vanuatu
@@ -32286,6 +32816,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     niveau: eleve
+    effectif_texte: "16"
   - saison: s07
     numero: 7
     titre: Palawan
@@ -32411,6 +32942,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 0
     niveau: eleve
+    effectif_texte: "16"
   - saison: s08
     numero: 8
     titre: Caramoan
@@ -32536,6 +33068,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 0
     niveau: eleve
+    effectif_texte: "17"
   - saison: s09
     numero: 9
     titre: Palau
@@ -32661,6 +33194,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 0
     niveau: eleve
+    effectif_texte: "18"
   - saison: sp1
     numero: null
     titre: Le Retour des héros
@@ -32786,6 +33320,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     niveau: eleve
+    effectif_texte: "14"
   - saison: s10
     numero: 10
     titre: Viêtnam
@@ -32911,6 +33446,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     niveau: eleve
+    effectif_texte: "18"
   - saison: sp2
     numero: null
     titre: Le Choc des héros
@@ -33036,6 +33572,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 0
     niveau: eleve
+    effectif_texte: "14"
   - saison: s11
     numero: 11
     titre: Raja Ampat
@@ -33161,6 +33698,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 0
     niveau: partiel
+    effectif_texte: "20"
   - saison: s12
     numero: 12
     titre: Malaisie
@@ -33286,6 +33824,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     niveau: eleve
+    effectif_texte: "20"
   - saison: sp3
     numero: null
     titre: La Revanche des héros
@@ -33411,6 +33950,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     niveau: eleve
+    effectif_texte: "16"
   - saison: sp4
     numero: null
     titre: La Nouvelle Édition
@@ -33536,6 +34076,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     niveau: eleve
+    effectif_texte: "13"
   - saison: s14
     numero: 14
     titre: Johor
@@ -33661,6 +34202,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 0
     niveau: eleve
+    effectif_texte: "20"
   - saison: s15
     numero: 15
     titre: Thaïlande
@@ -33786,6 +34328,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     niveau: eleve
+    effectif_texte: "21"
   - saison: s16
     numero: 16
     titre: L’Île au trésor
@@ -33911,6 +34454,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     niveau: eleve
+    effectif_texte: "20"
   - saison: s17
     numero: 17
     titre: Cambodge
@@ -34036,6 +34580,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 0
     niveau: partiel
+    effectif_texte: "21"
   - saison: s18
     numero: 18
     titre: Fidji
@@ -34161,6 +34706,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     niveau: eleve
+    effectif_texte: "21"
   - saison: sp5
     numero: null
     titre: Le Combat des héros
@@ -34286,6 +34832,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     niveau: eleve
+    effectif_texte: "18"
   - saison: s20
     numero: 20
     titre: La Guerre des chefs
@@ -34411,6 +34958,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     niveau: eleve
+    effectif_texte: "21"
   - saison: s21
     numero: 21
     titre: Les 4 Terres
@@ -34536,6 +35084,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     niveau: eleve
+    effectif_texte: "24"
   - saison: sp6
     numero: null
     titre: L’Île des héros
@@ -34661,6 +35210,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     niveau: eleve
+    effectif_texte: "20"
   - saison: s22
     numero: 22
     titre: Les Armes secrètes
@@ -34786,6 +35336,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     niveau: eleve
+    effectif_texte: "21"
   - saison: sp7
     numero: null
     titre: La Légende
@@ -34911,6 +35462,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 0
     niveau: eleve
+    effectif_texte: "21"
   - saison: s23
     numero: 23
     titre: Le Totem maudit
@@ -35036,6 +35588,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 0
     niveau: eleve
+    effectif_texte: "24"
   - saison: s24
     numero: 24
     titre: Le Feu sacré
@@ -35161,6 +35714,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     niveau: eleve
+    effectif_texte: "20"
   - saison: s25
     numero: 25
     titre: Les Chasseurs d’immunité
@@ -35286,6 +35840,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     niveau: eleve
+    effectif_texte: "22"
   - saison: s26
     numero: 26
     titre: La Tribu maudite
@@ -35411,6 +35966,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     niveau: eleve
+    effectif_texte: "24"
   - saison: s27
     numero: 27
     titre: La Revanche des 4 Terres
@@ -35536,6 +36092,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     niveau: eleve
+    effectif_texte: "24"
   - saison: s28
     numero: 28
     titre: Les Reliques du destin
@@ -35661,6 +36218,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 100
     niveau: eleve
+    effectif_texte: "20"
   - saison: sp8
     numero: null
     titre: All Stars
@@ -35786,6 +36344,7 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 0
     niveau: partiel
+    effectif_texte: "18"
   par_colonne:
   - cle: casting
     libelle: Casting relevé
@@ -36170,14 +36729,17 @@ geographie:
     annee: 2004
     localisees: 12
     effectif: 16
+    effectif_texte: "16"
   - titre: Palawan
     annee: 2007
     localisees: 5
     effectif: 16
+    effectif_texte: "16"
   - titre: Palau
     annee: 2009
     localisees: 16
     effectif: 18
+    effectif_texte: "18"
   par_departement: "4,6"
   outremer_observe: 2
   reunion_observe: 0

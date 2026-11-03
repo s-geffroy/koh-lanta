@@ -25,15 +25,15 @@ moins représenté, le plus âgé, celui qui vient de gagner le confort : autan
 positions qui se lisent **avant** que le premier bulletin ne soit écrit.
 
 <ul class="chiffres">
-  <li class="chiffre"><b>{{ f.presences }}</b><span>présences à un conseil</span></li>
+  <li class="chiffre"><b>{{ f.presences_texte | default: f.presences }}</b><span>présences à un conseil</span></li>
   <li class="chiffre"><b>{{ f.conseils }}</b><span>conseils, sur {{ f.saisons }} saisons</span></li>
   <li class="chiffre"><b>{{ f.hasard }} %</b><span>le hasard : une chance sur le nombre de présents</span></li>
 </ul>
 
 <p class="note"><strong>Le camp se connaît de deux façons, et l’une vaut mieux
 que l’autre.</strong> Quand le dépouillement est complet, la liste des votants
-<em>est</em> le camp : rien n’est reconstruit — {{ f.par_bulletins }} présences
-sur {{ f.presences }}. Pour les {{ f.par_reconstruction }} autres, toutes
+<em>est</em> le camp : rien n’est reconstruit — {{ f.par_bulletins_texte | default: f.par_bulletins }} présences
+sur {{ f.presences_texte | default: f.presences }}. Pour les {{ f.par_reconstruction }} autres, toutes
 d’après la réunification et toutes des soirs à conseil unique, on rebâtit le
 camp des encore-en-jeu : c’est exact aussi, puisqu’après la réunification tout le monde
 vote au même feu. Avant la réunification, une reconstruction mélangerait les deux
@@ -90,7 +90,7 @@ douze.</p>
 {% for x in rangs %}
 <tr>
   <td>{{ x.modalite_maj }}</td>
-  <td class="nombre">{{ x.effectif }}</td>
+  <td class="nombre">{{ x.effectif_texte | default: x.effectif }}</td>
   <td class="nombre">{{ x.cas }}</td>
   <td class="nombre" data-val="{{ x.probabilite }}"><b>{{ x.probabilite }} %</b></td>
   <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td>

@@ -69,7 +69,7 @@ correction.
 <tr>
   <td><b>{{ t.libelle }}</b></td>
   <td>{{ t.question }}</td>
-  <td class="nombre">{{ t.observe_arrondi }} {{ t.unite_accordee }}</td>
+  <td class="nombre">{{ t.observe_arrondi }}{% if t.unite_accordee == "%" %} %{% else %} {{ t.unite_accordee }}{% endif %}</td>
   <td class="nombre">{{ t.attendu_arrondi }}</td>
   <td class="nombre" data-val="{{ t.ecart_types }}">{{ t.ecart_types }}</td>
   <td class="nombre">{{ t.p }}</td>
@@ -455,7 +455,7 @@ du jeu de données dont on n’ait rien tiré.
 conclu que le travail s’arrêtait là. Deux fois de suite, elle s’est trompée.
 
 D’abord une troisième source : les **pages individuelles du wiki Fandom**, qui
-ont comblé {{ site.data.stats.completude.comblees }} valeurs vides, réuni des
+ont comblé {{ site.data.stats.completude.comblees_texte | default: site.data.stats.completude.comblees }} valeurs vides, réuni des
 personnes comptées deux fois, et rendu son nom de famille à sept aventuriers qui
 n’en avaient pas.
 

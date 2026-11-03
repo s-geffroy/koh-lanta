@@ -41,7 +41,7 @@ donc dans la **répartition** de ce risque entre les présents, jamais dans son
 niveau moyen.
 
 <ul class="chiffres">
-  <li class="chiffre"><b>{{ c.presences }}</b><span>présences à un conseil, dont on connaît le conseil précédent</span></li>
+  <li class="chiffre"><b>{{ c.presences_texte | default: c.presences }}</b><span>présences à un conseil, dont on connaît le conseil précédent</span></li>
   <li class="chiffre"><b>{{ c.conseils }}</b><span>conseils enchaînés</span></li>
   <li class="chiffre"><b>{{ c.saisons }}</b><span>saisons</span></li>
   <li class="chiffre"><b>{{ c.hasard }} %</b><span>le hasard : une chance sur le nombre de présents</span></li>
@@ -56,8 +56,8 @@ bulletins relevés égale le nombre de voix annoncées : c’est la seule garan
 que « zéro voix reçue » veuille dire zéro, et non « bulletin non lu ». Et la
 remontée s’arrête au premier conseil manquant — faute de savoir qui y était, on
 ne peut pas jurer que le conseil trouvé plus loin soit bien celui d’avant.
-Cette prudence coûte cher : {{ c.presences }} présences retenues là où la
-version qui enjambe les trous en compterait {{ c.presences_relachees }}. Les
+Cette prudence coûte cher : {{ c.presences_texte | default: c.presences }} présences retenues là où la
+version qui enjambe les trous en compterait {{ c.presences_relachees_texte | default: c.presences_relachees }}. Les
 deux versions donnent la même courbe ; c’est la stricte qui est publiée.
 <a href="{{ '/completude/' | relative_url }}">La complétude</a> montre pourquoi les
 conseils sont la donnée la plus trouée du site.</p>
@@ -83,7 +83,7 @@ donnerait.</p>
 {% for x in c.par_voix %}
 <tr>
   <td>{{ x.modalite_maj }}</td>
-  <td class="nombre">{{ x.effectif }}</td>
+  <td class="nombre">{{ x.effectif_texte | default: x.effectif }}</td>
   <td class="nombre">{{ x.cas }}</td>
   <td class="nombre" data-val="{{ x.probabilite }}"><b>{{ x.probabilite }} %</b></td>
   <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td>
@@ -225,7 +225,7 @@ conseils plus tôt et partir quand on ne l’avait pas été.</p>
   présences seulement : {{ t6.ecart_types }} {{ t6.ecart_types_mot }}, p brute {{ t6.p }},
   p ajustée {{ t6.p_ajustee }}. <b>Non concluant.</b></p>
   <p>La chaîne se raccourcit vite : exiger deux conseils complets d’affilée
-  derrière soi ne laisse que {{ c.deux_pas_total }}
+  derrière soi ne laisse que {{ c.deux_pas_total_texte | default: c.deux_pas_total }}
   présences. Ce qu’on peut dire : rien n’indique que la menace s’éteigne au
   conseil suivant, et l’écart mesuré va dans le sens contraire.</p>
 </div>
@@ -241,7 +241,7 @@ les mesurer**.
 {% include graphiques/conditionnelles-modele.svg %}
 
 <p class="legende-figure">Rapports de cotes d’un logit conditionnel, sur
-{{ c.modele.presences }} présences et {{ c.modele.conseils }} conseils.
+{{ c.modele.presences_texte | default: c.modele.presences }} présences et {{ c.modele.conseils }} conseils.
 Référence : aucune voix au conseil précédent.</p>
 
 <div class="tableau-large">
@@ -276,7 +276,7 @@ le passé d’un éliminé **qu’une fois qu’il est éliminé**.
 <tr><td>Ceux qui sont partis ({{ c.inverse.sortis }})</td>
     <td class="nombre"><b>{{ c.inverse.vise_si_sorti }} %</b></td>
     <td class="nombre">{{ c.inverse.voix_si_sorti }}</td></tr>
-<tr><td>Ceux qui sont restés ({{ c.inverse.restes }})</td>
+<tr><td>Ceux qui sont restés ({{ c.inverse.restes_texte | default: c.inverse.restes }})</td>
     <td class="nombre">{{ c.inverse.vise_si_reste }} %</td>
     <td class="nombre">{{ c.inverse.voix_si_reste }}</td></tr>
 </tbody>
@@ -299,7 +299,7 @@ pour la rendre impossible.
 {% for x in c.par_histoire %}
 <tr>
   <td>{{ x.modalite_maj }}</td>
-  <td class="nombre">{{ x.effectif }}</td><td class="nombre">{{ x.cas }}</td>
+  <td class="nombre">{{ x.effectif_texte | default: x.effectif }}</td><td class="nombre">{{ x.cas }}</td>
   <td class="nombre" data-val="{{ x.probabilite }}"><b>{{ x.probabilite }} %</b></td>
   <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td>
 </tr>
@@ -326,7 +326,7 @@ plus tôt » n’est pas un résultat retenu.
 <thead><tr><th>Au conseil précédent, j’ai voté…</th><th class="nombre">Présences</th><th class="nombre">Probabilité de partir</th><th class="nombre">Intervalle</th></tr></thead>
 <tbody>
 {% for x in c.par_camp %}
-<tr><td>{{ x.modalite_maj }}</td><td class="nombre">{{ x.effectif }}</td>
+<tr><td>{{ x.modalite_maj }}</td><td class="nombre">{{ x.effectif_texte | default: x.effectif }}</td>
     <td class="nombre"><b>{{ x.probabilite }} %</b></td>
     <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td></tr>
 {% endfor %}

@@ -43,7 +43,7 @@ c’est <b>{{ site.data.stats.classement.top_saisons[0].aventurier }}</b> à
     {%- endif -%}
     <p class="saison-numero">Saison {{ x.numero }} · {{ x.annee }}{% if x.duree_jours %} · {{ x.duree_jours }} jours{% endif %}</p>
     <p class="saison-titre">{% include lien-saison.html id=x.id titre=x.titre %}</p>
-    <p class="saison-lieu">{{ x.lieu }}, {{ x.pays }}</p>
+    <p class="saison-lieu">{{ x.lieu | replace: "'", "’" | replace: "Taha’a", "Taha'a" }}, {{ x.pays }}</p>
     <p class="saison-tribus">
       {%- for t in x.tribus -%}
       <span class="pastille" style="background: var(--tribu-{{ t.couleur }})"
@@ -80,7 +80,7 @@ moyennes d’âge vers le haut sans rien dire du casting ordinaire.
     {%- endif -%}
     <p class="saison-numero">Spéciale · {{ x.annee }}{% if x.duree_jours %} · {{ x.duree_jours }} jours{% endif %}</p>
     <p class="saison-titre">{% include lien-saison.html id=x.id titre=x.titre %}</p>
-    <p class="saison-lieu">{{ x.lieu }}, {{ x.pays }}</p>
+    <p class="saison-lieu">{{ x.lieu | replace: "'", "’" | replace: "Taha’a", "Taha'a" }}, {{ x.pays }}</p>
     <p class="saison-vainqueur">
       {%- if x.vainqueurs.size > 1 -%}Vainqueurs : <b>{{ x.vainqueurs | join: " et " }}</b>
       {%- elsif x.vainqueurs.size == 1 -%}Vainqueur : <b>{{ x.vainqueurs[0] }}</b>
@@ -102,8 +102,8 @@ moyennes d’âge vers le haut sans rien dire du casting ordinaire.
 <tr>
   <td class="nombre">{{ x.numero }}</td>
   <td class="nombre">{{ x.annee }}</td>
-  <td>{{ x.lieu }}, {{ x.pays }}</td>
-  <td>{{ x.motif_annulation }}</td>
+  <td>{{ x.lieu | replace: "'", "’" | replace: "Taha’a", "Taha'a" }}, {{ x.pays }}</td>
+  <td>{{ x.motif_annulation | replace: "'", "’" }}</td>
 </tr>
 {% endif %}{% endfor %}
 </tbody>
@@ -213,7 +213,7 @@ Sans JavaScript, il reste entièrement lisible, dans l’ordre chronologique.</p
     <span class="cellule-barre" style="width: {{ x.barre }}%"></span></td>
   <td class="nombre">{{ x.taux_abandon }} %</td>
   <td class="nombre">{{ x.conseils }}</td>
-  <td class="nombre">{% if x.tension_conseils %}{{ x.tension_conseils }} %{% else %}—{% endif %}</td>
+  <td class="nombre">{% if x.tension_conseils %}{{ x.tension_conseils }} %{% else %}—{% endif %}</td>
   <td class="nombre">{% if x.dispersion_votes %}{{ x.dispersion_votes }}{% else %}—{% endif %}</td>
   <td class="nombre">{% if x.domination_epreuves %}{{ x.domination_epreuves }}{% else %}—{% endif %}</td>
   <td class="nombre">{{ x.colliers }}</td>

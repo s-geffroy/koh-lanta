@@ -4,11 +4,11 @@
   <title>Le tenant du titre</title>
   <desc>Celui qui a gagné la dernière immunité la regagne-t-il plus souvent que sa force ne l’explique ?</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
-  <g class="marque"><title>4 tirages sur 4 000 entre -5,49 et -4,27</title><rect x="68.7" y="202.7" width="20.3" height="1.3" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>5 tirages sur 4 000 entre -4,27 et -3,05</title><rect x="90.5" y="202.4" width="20.3" height="1.6" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>5 tirages sur 4 000 entre -3,05 et -1,83</title><rect x="112.4" y="202.4" width="20.3" height="1.6" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>31 tirages sur 4 000 entre -1,83 et -0,604</title><rect x="134.2" y="193.9" width="20.3" height="10.1" fill="var(--serie-6)" opacity="0.45"/></g>
-  <g class="marque"><title>68 tirages sur 4 000 entre -0,604 et 0,618</title><rect x="156.1" y="181.9" width="20.3" height="22.1" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>4 tirages sur 4 000 entre −5,49 et −4,27</title><rect x="68.7" y="202.7" width="20.3" height="1.3" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>5 tirages sur 4 000 entre −4,27 et −3,05</title><rect x="90.5" y="202.4" width="20.3" height="1.6" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>5 tirages sur 4 000 entre −3,05 et −1,83</title><rect x="112.4" y="202.4" width="20.3" height="1.6" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>31 tirages sur 4 000 entre −1,83 et −0,604</title><rect x="134.2" y="193.9" width="20.3" height="10.1" fill="var(--serie-6)" opacity="0.45"/></g>
+  <g class="marque"><title>68 tirages sur 4 000 entre −0,604 et 0,618</title><rect x="156.1" y="181.9" width="20.3" height="22.1" fill="var(--serie-6)" opacity="0.45"/></g>
   <g class="marque"><title>100 tirages sur 4 000 entre 0,618 et 1,84</title><rect x="177.9" y="171.5" width="20.3" height="32.5" fill="var(--serie-6)" opacity="0.45"/></g>
   <g class="marque"><title>151 tirages sur 4 000 entre 1,84 et 3,06</title><rect x="199.8" y="154.9" width="20.3" height="49.1" fill="var(--serie-6)" opacity="0.45"/></g>
   <g class="marque"><title>254 tirages sur 4 000 entre 3,06 et 4,28</title><rect x="221.7" y="121.4" width="20.3" height="82.6" fill="var(--serie-6)" opacity="0.45"/></g>
@@ -34,7 +34,7 @@
   <text x="316.9" y="34.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">attendu</text>
   <line x1="304.3" y1="26" x2="304.3" y2="210" stroke="var(--encre)" stroke-width="2.4"/>
   <text x="311.3" y="22.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre)" font-size="12" font-weight="600">observé : 7,726 points</text>
-  <text x="46.0" y="222.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">-6,71</text>
+  <text x="46.0" y="222.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">−6,71</text>
   <text x="658.0" y="222.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">27,5</text>
   <text x="658.0" y="238.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">4 000 tirages · p = 0,9253</text>
 </svg>

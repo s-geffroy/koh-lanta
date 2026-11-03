@@ -31,7 +31,7 @@ et elle ne se défait jamais dans ce calcul — on mesure « **a-t-il déjà �
 allié** », pas « l’est-il encore ».
 
 <ul class="chiffres">
-  <li class="chiffre"><b>{{ p.presences }}</b><span>présences à un conseil</span></li>
+  <li class="chiffre"><b>{{ p.presences_texte | default: p.presences }}</b><span>présences à un conseil</span></li>
   <li class="chiffre"><b>{{ p.conseils }}</b><span>conseils, sur {{ p.saisons }} saisons</span></li>
   <li class="chiffre"><b>{{ p.cumul[2].probabilite }} %</b><span>de risque quand les deux signaux sont réunis</span></li>
 </ul>
@@ -55,7 +55,7 @@ sort.</p>
 {% for x in p.isolement %}
 <tr>
   <td>{{ x.modalite_maj }}</td>
-  <td class="nombre">{{ x.effectif }}</td><td class="nombre">{{ x.cas }}</td>
+  <td class="nombre">{{ x.effectif_texte | default: x.effectif }}</td><td class="nombre">{{ x.cas }}</td>
   <td class="nombre" data-val="{{ x.probabilite }}"><b>{{ x.probabilite }} %</b></td>
   <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td>
   <td class="nombre">{{ x.hasard }} %</td>
@@ -101,7 +101,7 @@ depuis. Ce n’est pas le cas.
 <tbody>
 {% for x in p.adverse %}
 <tr><td>{{ x.modalite_maj }}</td>
-    <td class="nombre">{{ x.effectif }}</td><td class="nombre">{{ x.cas }}</td>
+    <td class="nombre">{{ x.effectif_texte | default: x.effectif }}</td><td class="nombre">{{ x.cas }}</td>
     <td class="nombre"><b>{{ x.probabilite }} %</b></td>
     <td class="nombre">{{ x.hasard }} %</td></tr>
 {% endfor %}
@@ -137,7 +137,7 @@ allié parmi les présents.</p>
 {% for x in p.cumul %}
 <tr>
   <td>{{ x.modalite_maj }}</td>
-  <td class="nombre">{{ x.effectif }}</td><td class="nombre">{{ x.cas }}</td>
+  <td class="nombre">{{ x.effectif_texte | default: x.effectif }}</td><td class="nombre">{{ x.cas }}</td>
   <td class="nombre"><b>{{ x.probabilite }} %</b></td>
   <td class="nombre">{{ x.bas }} – {{ x.haut }} %</td>
 </tr>
@@ -166,7 +166,7 @@ et la case qui les réunit est trop petite. Le modèle ci-dessous les met dans l
 {% include graphiques/pire-place-modele.svg %}
 
 <p class="legende-figure">Rapports de cotes d’un logit conditionnel, sur
-{{ p.modele.presences }} présences et {{ p.modele.conseils }} conseils.</p>
+{{ p.modele.presences_texte | default: p.modele.presences }} présences et {{ p.modele.conseils }} conseils.</p>
 
 <div class="tableau-large">
 <table><caption class="hors-ecran">Ombre l’un de l’autre, ou pas ?</caption>
@@ -235,7 +235,7 @@ Si l’immunité protège, personne ne devrait perdre son bulletin en écrivant 
 nom de l’immunisé du soir.
 
 <div class="constat">
-  <p>Sur les <b>{{ p.bulletins_lus }} bulletins</b> lus à ces conseils-là,
+  <p>Sur les <b>{{ p.bulletins_lus_texte | default: p.bulletins_lus }} bulletins</b> lus à ces conseils-là,
   <b>{{ p.bulletins_perdus }}</b> visent le vainqueur de l’immunité —
   <b>{{ p.part_perdue }} %</b>.</p>
   <p>Ce n’est pas zéro, et c’est normal : un bulletin peut être écrit avant que

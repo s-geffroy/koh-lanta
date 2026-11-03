@@ -148,7 +148,7 @@ qualificatif. Une épreuve peut en porter deux — le parcours du combattant est
 <tbody>
 {% for x in en.epreuves %}{% if x.apparitions > 0 %}
 <tr>
-  <td>{{ x.nom }}</td>
+  <td>{{ x.nom | replace: "'", "’" }}</td>
   <td>{{ x.type }}</td>
   <td class="nombre">{{ x.apparitions }}</td>
   <td class="nombre">{{ x.saisons | size }}</td>
@@ -386,7 +386,7 @@ ces gagnants représentent parmi ceux que chaque votant pouvait viser — sans
 lui-même ni l’immunisé —, c’est-à-dire ce qu’on attendrait s’ils n’étaient ni
 plus ni moins visés que les autres.</p>
 
-Sur **{{ cf.conseils }} conseils** et {{ cf.bulletins }} bulletins,
+Sur **{{ cf.conseils }} conseils** et {{ cf.bulletins_texte | default: cf.bulletins }} bulletins,
 {{ cf.observe }} % visent un gagnant du confort — intervalle
 {{ cf.bas }} à {{ cf.haut }} % — pour {{ cf.attendu }} % attendus. p = {{ cf.p }}. **La malédiction du confort n’est pas établie.**
 

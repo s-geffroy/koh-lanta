@@ -42,7 +42,7 @@ résultat le plus répété de ce site.</p>
 <p class="accueil-mesures"><b>{{ g.saisons_diffusees }}</b> saisons diffusées,
 <b>{{ g.participations }}</b> participations, <b>{{ g.personnes }}</b>
 aventuriers, <b>{{ site.data.stats.epreuves.epreuves }}</b> épreuves,
-<b>{{ site.data.stats.conseils.bulletins }}</b> bulletins dépouillés,
+<b>{{ site.data.stats.conseils.bulletins_texte | default: site.data.stats.conseils.bulletins }}</b> bulletins dépouillés,
 <b>{{ site.data.stats.colliers.colliers }}</b> colliers.</p>
 
 ## Ce que les chiffres disent

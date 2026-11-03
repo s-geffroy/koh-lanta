@@ -12,7 +12,7 @@ chapeau: >-
 {% assign i = site.data.stats.indicateurs %}
 
 Les épreuves se voient. Le jeu social, non — et c’est pourtant lui qui décide.
-Les {{ site.data.stats.conseils.bulletins }} bulletins relevés permettent de le
+Les {{ site.data.stats.conseils.bulletins_texte | default: site.data.stats.conseils.bulletins }} bulletins relevés permettent de le
 mesurer, avec des indicateurs empruntés à la statistique de *Survivor* et
 adaptés à ce que ces données permettent réellement.
 

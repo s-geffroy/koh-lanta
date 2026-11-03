@@ -2139,6 +2139,11 @@ def champs_d_affichage(stats):
     # a ete publie). Tous les tests, pas seulement ceux du registre : les pages
     # lisent aussi les copies rangees sous leur rubrique (`alliances.test`).
     poser_les_arrondis(stats)
+    # /statistiques/force/ : « 1,2 point », le pluriel commence a 2.
+    tt = m.get("tenant_du_titre") or {}
+    for cle in ("attendu_uniforme", "attendu_force", "brut"):
+        if isinstance(tt.get(cle), (int, float)) and not isinstance(tt.get(cle), bool):
+            tt[cle + "_pluriel"] = abs(tt[cle]) >= 2
     for t in m["registre"]:
         # L'unite accordee a la valeur observee : « 0,212 personne »,
         # « 1,6 point », et le pluriel a partir de 2. /methode/ ecrivait
@@ -2362,14 +2367,21 @@ def champs_d_affichage(stats):
         x["barre"] = _arrondi_entier(x["part_du_temps"])
 
 
+EFFECTIFS_ECRITS = ("tirages", "permutations", "bootstrap", "bulletins", "comblees",
+                    "valeurs_suivies", "paires_suivies", "presences", "par_bulletins",
+                    "effectif", "presences_relachees", "deux_pas_total", "restes",
+                    "couples", "bulletins_lus", "bulletins_mixtes")
+
+
 def ecrire_les_effectifs(noeud):
     """Pose a cote de `tirages`, `permutations` et `bootstrap` leur forme
     lisible, milliers separes par une espace fine insecable : les pages
-    publiaient « 10000 tirages » six cent cinquante fois."""
+    publiaient « 10000 tirages » six cent cinquante fois. Meme chose pour les
+    effectifs que la prose cite (« 3433 bulletins » au pied de chaque page)."""
     if isinstance(noeud, dict):
         for cle in list(noeud):
             valeur = noeud[cle]
-            if cle in ("tirages", "permutations", "bootstrap") and isinstance(valeur, int) \
+            if cle in EFFECTIFS_ECRITS and isinstance(valeur, int) \
                     and not isinstance(valeur, bool):
                 noeud[cle + "_texte"] = f"{valeur:,}".replace(",", "\u202f")
             else:

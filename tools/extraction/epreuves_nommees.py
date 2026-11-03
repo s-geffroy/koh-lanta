@@ -328,7 +328,7 @@ def mesurer_raccord(catalogue, saisons, parts, epreuves):
             if attendu and not incertain:
                 lot = par_ensemble.get((a["saison"], a["genre"], frozenset(attendu))) or []
                 if len(lot) == 1:
-                    motifs["raccordee sur l'ensemble des vainqueurs"] += 1
+                    motifs["raccordée sur l’ensemble des vainqueurs"] += 1
                     raccordees[id(lot[0])] = entree["natures"]
                     continue
 
@@ -346,11 +346,11 @@ def mesurer_raccord(catalogue, saisons, parts, epreuves):
                         continue
                     lots = personnes.get((a["saison"], candidats[0]["id"], a["genre"])) or []
                 if not lots:
-                    motifs["aucune epreuve relevee qui corresponde"] += 1
+                    motifs["aucune épreuve relevée qui corresponde"] += 1
                 elif len(lots) > 1:
-                    motifs["plusieurs epreuves possibles, sans episode pour trancher"] += 1
+                    motifs["plusieurs épreuves possibles, sans épisode pour trancher"] += 1
                 else:
-                    motifs["raccordee"] += 1
+                    motifs["raccordée"] += 1
                     raccordees[id(lots[0])] = entree["natures"]
     individuelles = [e for e in epreuves if e.get("forme") == "individuelle"]
     return {

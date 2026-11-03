@@ -43,7 +43,7 @@ avec une fiche — l’*Infobox Aventuriers* — qui donne tout cela, saison par
 saison, pour quelqu’un qui en a joué quatre comme pour quelqu’un qui en a joué
 une.
 
-{{ site.data.stats.completude.comblees }} valeurs manquantes ont été comblées
+{{ site.data.stats.completude.comblees_texte | default: site.data.stats.completude.comblees }} valeurs manquantes ont été comblées
 par ces fiches. Elles n’ont **jamais** remplacé une valeur déjà établie par une
 table : une fiche est saisie à la main par un lecteur, une table est relue par
 beaucoup. Les désaccords sont comptés et laissés au rapport d’extraction, pas
@@ -942,7 +942,7 @@ phrase de cette page n’a besoin d’être reprise quand une valeur est trouvé
 
 <div class="constat">
   <p><b>{{ co.part_remplie }} %</b> des
-  {{ co.valeurs_suivies }} valeurs suivies sont renseignées —
+  {{ co.valeurs_suivies_texte | default: co.valeurs_suivies }} valeurs suivies sont renseignées —
   {{ co.champs_suivis }} champs sur {{ co.participations }} participations.
   {{ co.champs_complets }} champs n’ont plus aucun trou.</p>
 </div>
@@ -1098,7 +1098,7 @@ paramètre est la tribu et le second le nom. Le nettoyage général du wikitexte
 retire les modèles — et donc effaçait le nom. Résultat :
 *Les 4 Terres* et *Le Totem maudit* n’avaient **aucun bulletin**, et six autres
 saisons récentes en avaient la moitié. Le second paramètre est désormais sorti
-du modèle avant nettoyage : **{{ site.data.stats.conseils.bulletins }} bulletins
+du modèle avant nettoyage : **{{ site.data.stats.conseils.bulletins_texte | default: site.data.stats.conseils.bulletins }} bulletins
 au lieu de 3 206**, et {{ site.data.stats.conseils.conseils_complets }} conseils
 au dépouillement garanti complet au lieu de 264.
 
