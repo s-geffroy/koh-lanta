@@ -2,14 +2,14 @@
 # La dependance entre conseils d'une meme saison : un jackknife par saison sur
 # chaque test du registre qui rebat le hasard conseil par conseil.
 tirages: 4000
-tirages_texte: "4 000"
-saisons: 34
-mesures: 29
-retenus_mesures: 14
-tiennent: 13
+tirages_texte: 4 000
+saisons: 33
+mesures: 23
+retenus_mesures: 12
+tiennent: 11
 tombent:
 - Avoir voté du mauvais côté
-facteur_median: "1,04"
+facteur_median: "1,01"
 facteur_max: "2,85"
 tests:
 - cle: persistance_alliances
@@ -24,6 +24,7 @@ tests:
   z_saison: "6,72"
   p_saison: 0
   p_ajustee_saison: 0
+  p_ajustee_saison_texte: < 0,0001
   retenu_saison: true
   bascule: false
 - cle: trahison
@@ -38,34 +39,7 @@ tests:
   z_saison: "−8,06"
   p_saison: 0
   p_ajustee_saison: 0
-  retenu_saison: true
-  bascule: false
-- cle: vote_meme_metier
-  libelle: Viser la même famille de métiers
-  origine: homophilie
-  z: "−1,73"
-  p: "0,0845"
-  p_ajustee: "0,1634"
-  retenu: false
-  saisons: 32
-  facteur: "1,67"
-  z_saison: "−1,03"
-  p_saison: "0,3101"
-  p_ajustee_saison: "0,4996"
-  retenu_saison: false
-  bascule: false
-- cle: vote_bandeau_apres_fusion
-  libelle: Épargner sa tribu initiale
-  origine: homophilie
-  z: "−5,92"
-  p: "0,0005"
-  p_ajustee: "0,002"
-  retenu: true
-  saisons: 32
-  facteur: "1,65"
-  z_saison: "−3,59"
-  p_saison: "0,0011"
-  p_ajustee_saison: "0,0042"
+  p_ajustee_saison_texte: < 0,0001
   retenu_saison: true
   bascule: false
 - cle: bandeau_minoritaire
@@ -93,22 +67,8 @@ tests:
   facteur: "1,31"
   z_saison: "3,8"
   p_saison: "0,0008"
-  p_ajustee_saison: "0,0033"
+  p_ajustee_saison: "0,0032"
   retenu_saison: true
-  bascule: false
-- cle: vote_meme_departement
-  libelle: Viser quelqu’un de son département
-  origine: homophilie
-  z: "−2,1"
-  p: "0,039"
-  p_ajustee: "0,0917"
-  retenu: false
-  saisons: 32
-  facteur: "1,27"
-  z_saison: "−1,66"
-  p_saison: "0,1067"
-  p_ajustee_saison: "0,2029"
-  retenu_saison: false
   bascule: false
 - cle: fusion_force
   libelle: La force des éliminés, avant et après la réunification
@@ -121,7 +81,7 @@ tests:
   facteur: "1,22"
   z_saison: "−1,15"
   p_saison: "0,2598"
-  p_ajustee_saison: "0,4265"
+  p_ajustee_saison: "0,4186"
   retenu_saison: false
   bascule: false
 - cle: decimation
@@ -135,35 +95,7 @@ tests:
   facteur: "1,21"
   z_saison: "1,8"
   p_saison: "0,087"
-  p_ajustee_saison: "0,176"
-  retenu_saison: false
-  bascule: false
-- cle: vote_meme_sexe
-  libelle: Viser quelqu’un du même sexe
-  origine: homophilie
-  z: "−2,21"
-  p: "0,03"
-  p_ajustee: "0,0791"
-  retenu: false
-  saisons: 32
-  facteur: "1,21"
-  z_saison: "−1,83"
-  p_saison: "0,0772"
-  p_ajustee_saison: "0,1748"
-  retenu_saison: false
-  bascule: false
-- cle: vote_ecart_age
-  libelle: L’écart d’âge avec sa cible
-  origine: homophilie
-  z: 1
-  p: "0,3078"
-  p_ajustee: "0,4869"
-  retenu: false
-  saisons: 32
-  facteur: "1,16"
-  z_saison: "0,86"
-  p_saison: "0,3978"
-  p_ajustee_saison: "0,5658"
+  p_ajustee_saison: "0,1682"
   retenu_saison: false
   bascule: false
 - cle: retour_de_baton
@@ -178,6 +110,7 @@ tests:
   z_saison: "6,06"
   p_saison: 0
   p_ajustee_saison: 0
+  p_ajustee_saison_texte: < 0,0001
   retenu_saison: true
   bascule: false
 - cle: vote_isole
@@ -220,6 +153,7 @@ tests:
   z_saison: "−5,41"
   p_saison: 0
   p_ajustee_saison: 0
+  p_ajustee_saison_texte: < 0,0001
   retenu_saison: true
   bascule: false
 - cle: age_bascule_fusion
@@ -233,22 +167,8 @@ tests:
   facteur: "1,03"
   z_saison: "2,07"
   p_saison: "0,0464"
-  p_ajustee_saison: "0,1187"
+  p_ajustee_saison: "0,1121"
   retenu_saison: false
-  bascule: false
-- cle: vote_meme_bandeau
-  libelle: Viser sa propre tribu initiale
-  origine: homophilie
-  z: "−6,69"
-  p: "0,0005"
-  p_ajustee: "0,002"
-  retenu: true
-  saisons: 32
-  facteur: "1,03"
-  z_saison: "−6,51"
-  p_saison: 0
-  p_ajustee_saison: 0
-  retenu_saison: true
   bascule: false
 - cle: fusion_sexe
   libelle: Le sexe des éliminés, avant et après la réunification
@@ -304,6 +224,7 @@ tests:
   z_saison: "6,32"
   p_saison: 0
   p_ajustee_saison: 0
+  p_ajustee_saison_texte: < 0,0001
   retenu_saison: true
   bascule: false
 - cle: ambassadeurs_survie
@@ -317,7 +238,7 @@ tests:
   facteur: "0,94"
   z_saison: "−1,72"
   p_saison: "0,1096"
-  p_ajustee_saison: "0,2029"
+  p_ajustee_saison: "0,1986"
   retenu_saison: false
   bascule: false
 - cle: confort_sortie
@@ -359,7 +280,7 @@ tests:
   facteur: "0,93"
   z_saison: "4,33"
   p_saison: "0,0001"
-  p_ajustee_saison: "0,0005"
+  p_ajustee_saison: "0,0006"
   retenu_saison: true
   bascule: false
 - cle: sexe_minoritaire
@@ -457,7 +378,7 @@ tests:
   p: "0,0134"
   p_ajustee: "0,0389"
   retenu: true
-  unite: 'une saison, ses tribus : le tirage se fait deja saison par saison'
+  unite: une saison et son casting
 - cle: familles_metiers
   libelle: La variété des métiers
   origine: casting
@@ -465,7 +386,7 @@ tests:
   p: "0,8538"
   p_ajustee: "0,9253"
   retenu: false
-  unite: 'une saison, ses tribus : le tirage se fait deja saison par saison'
+  unite: une saison et son casting
 - cle: finale_dernier_qualifie
   libelle: Le dernier qualifié de l’orientation
   origine: finale
@@ -481,7 +402,7 @@ tests:
   p: "0,0001"
   p_ajustee: "0,0007"
   retenu: true
-  unite: une personne et son departement
+  unite: une participation et son departement
 - cle: geographie_regions
   libelle: L’origine géographique, par région
   origine: geographie
@@ -489,7 +410,7 @@ tests:
   p: "0,0001"
   p_ajustee: "0,0007"
   retenu: true
-  unite: une personne et son departement
+  unite: une participation et son departement
 - cle: melange_archetypes
   libelle: Le mélange d’archétypes
   origine: casting
@@ -497,7 +418,7 @@ tests:
   p: "0,0666"
   p_ajustee: "0,1449"
   retenu: false
-  unite: 'une saison, ses tribus : le tirage se fait deja saison par saison'
+  unite: une saison et son casting
 - cle: parite
   libelle: L’équilibre hommes-femmes
   origine: casting
@@ -505,7 +426,7 @@ tests:
   p: "0,0001"
   p_ajustee: "0,0007"
   retenu: true
-  unite: 'une saison, ses tribus : le tirage se fait deja saison par saison'
+  unite: une saison et son casting
 - cle: pronostic_vainqueur
   libelle: Pronostiquer le vainqueur au casting
   origine: pronostic
@@ -545,7 +466,7 @@ tests:
   p: "0,0022"
   p_ajustee: "0,0074"
   retenu: true
-  unite: 'une saison, ses tribus : le tirage se fait deja saison par saison'
+  unite: une saison et son casting
 - cle: tribus_ages_mediane
   libelle: L’âge des deux tribus, à la médiane
   origine: casting
@@ -553,7 +474,7 @@ tests:
   p: "0,3162"
   p_ajustee: "0,4912"
   retenu: false
-  unite: 'une saison, ses tribus : le tirage se fait deja saison par saison'
+  unite: une saison et son casting
 - cle: tribus_femmes
   libelle: La composition des deux tribus
   origine: casting
@@ -561,4 +482,52 @@ tests:
   p: "0,0382"
   p_ajustee: "0,0917"
   retenu: false
-  unite: 'une saison, ses tribus : le tirage se fait deja saison par saison'
+  unite: une saison et son casting
+- cle: vote_bandeau_apres_fusion
+  libelle: Épargner sa tribu initiale
+  origine: homophilie
+  z: "−5,92"
+  p: "0,0005"
+  p_ajustee: "0,002"
+  retenu: true
+  unite: 'une saison : le hasard tire deja des saisons entieres'
+- cle: vote_ecart_age
+  libelle: L’écart d’âge avec sa cible
+  origine: homophilie
+  z: 1
+  p: "0,3078"
+  p_ajustee: "0,4869"
+  retenu: false
+  unite: 'une saison : le hasard tire deja des saisons entieres'
+- cle: vote_meme_bandeau
+  libelle: Viser sa propre tribu initiale
+  origine: homophilie
+  z: "−6,69"
+  p: "0,0005"
+  p_ajustee: "0,002"
+  retenu: true
+  unite: 'une saison : le hasard tire deja des saisons entieres'
+- cle: vote_meme_departement
+  libelle: Viser quelqu’un de son département
+  origine: homophilie
+  z: "−2,1"
+  p: "0,039"
+  p_ajustee: "0,0917"
+  retenu: false
+  unite: 'une saison : le hasard tire deja des saisons entieres'
+- cle: vote_meme_metier
+  libelle: Viser la même famille de métiers
+  origine: homophilie
+  z: "−1,73"
+  p: "0,0845"
+  p_ajustee: "0,1634"
+  retenu: false
+  unite: 'une saison : le hasard tire deja des saisons entieres'
+- cle: vote_meme_sexe
+  libelle: Viser quelqu’un du même sexe
+  origine: homophilie
+  z: "−2,21"
+  p: "0,03"
+  p_ajustee: "0,0791"
+  retenu: false
+  unite: 'une saison : le hasard tire deja des saisons entieres'

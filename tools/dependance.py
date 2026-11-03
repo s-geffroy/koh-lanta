@@ -17,7 +17,7 @@ sous-estimee. De combien, aucun test ne le disait.
 
 LA METHODE. Un jackknife par saison. Pour chaque test, on recalcule l'ecart
 entre l'observe et le hasard en retirant une saison entiere, puis une autre,
-trente-quatre fois. La dispersion de ces trente-quatre ecarts donne une
+une fois par saison terminee. La dispersion de ces ecarts donne une
 incertitude qui ne suppose RIEN sur ce qui se passe a l'interieur d'une
 saison : les conseils d'une saison peuvent etre aussi lies qu'on voudra.
 Seule hypothese restante, que les saisons soient independantes entre elles --
@@ -59,9 +59,17 @@ ENTETE = """# ATTENTION : fichier genere par tools/dependance.py. Ne pas editer 
 
 # Les tests dont l'unite n'est pas le conseil : la dependance entre conseils
 # d'une saison ne les concerne pas. Ils le disent sur /methode/.
+#
+# L'HOMOPHILIE N'EST PAS UN TEST AU CONSEIL. Son hasard est deja un bootstrap
+# de SAISONS (modeles.homophilie) : son incertitude tient compte de la
+# dependance a l'interieur d'une saison. Le passer au jackknife le mesurait
+# deux fois -- et, a N_BOOTSTRAP reduit, le bruit du bootstrap gonflait ses
+# facteurs (x1,65 publie le 3 nov. pour un test qui vaut x1,01 a 2000
+# tirages). Il est donc range ici, et `ecarts` ne le recalcule plus.
 UNITE_AUTRE = {
-    "casting": "une saison, ses tribus : le tirage se fait deja saison par saison",
-    "geographie": "une personne et son departement",
+    "homophilie": "une saison : le hasard tire deja des saisons entieres",
+    "casting": "une saison et son casting",
+    "geographie": "une participation et son departement",
     "audience": "une saison",
     "ruptures": "une saison",
     "pronostic": "une saison et son vainqueur",
@@ -93,7 +101,6 @@ def ecarts(par_saison, parts, conseils, epreuves, f):
     """observe - attendu de chaque test rebattu conseil par conseil."""
     fu = M.fusion(par_saison, parts, conseils, epreuves)
     blocs = (
-        M.homophilie(par_saison, parts, conseils),
         M.alliances(par_saison, parts, conseils),
         M.trahison(par_saison, parts, conseils),
         M.decimation(par_saison, parts, conseils, epreuves),
@@ -182,6 +189,11 @@ def main():
         partiels[s] = ecarts(*sans(par_saison, parts, conseils, epreuves, s), f)
         print(f"  {i}/{len(saisons)} sans {s}", flush=True)
 
+    # Une saison qui ne change aucun test (l'edition en cours, exclue de tous
+    # les modeles) ne compte pas dans le jackknife : on ne l'annonce pas.
+    informatives = [s for s in saisons
+                    if any(abs(v - complet.get(k, v)) > 1e-9 for k, v in partiels[s].items())]
+
     lignes = []
     for t in registre:
         cle = t["cle"]
@@ -191,12 +203,12 @@ def main():
         if cle == "prevision_conseil":
             garde = [float(rangs[de_la_saison != s].mean()) - 0.5 for s in sorted(set(de_la_saison))]
             se, n = jackknife(float(rangs.mean()) - 0.5, garde)
-        elif cle in complet:
-            se, n = jackknife(complet[cle], [partiels[s].get(cle) for s in saisons])
-        else:
+        elif t["origine"] in UNITE_AUTRE or cle not in complet:
             ligne["unite"] = UNITE_AUTRE.get(t["origine"], "autre")
             lignes.append(ligne)
             continue
+        else:
+            se, n = jackknife(complet[cle], [partiels[s].get(cle) for s in saisons])
         if se is None or not se:
             ligne["unite"] = "trop peu de saisons pour mesurer"
             lignes.append(ligne)
@@ -220,6 +232,9 @@ def main():
                      f"({pc:.4f} contre {l['p_ajustee']})")
         if "p_saison" in l:
             l["p_ajustee_saison"] = round(pa, 4)
+            if round(pa, 4) == 0:
+                # Arrondie a 4 decimales, elle s'afficherait « 0 ».
+                l["p_ajustee_saison_texte"] = "< 0,0001"
             l["retenu_saison"] = bool(pa < 0.05)
             l["bascule"] = l["retenu"] and not l["retenu_saison"]
 
@@ -228,7 +243,7 @@ def main():
     resultat = {
         "tirages": TIRAGES,
         "tirages_texte": f"{TIRAGES:,}".replace(",", " "),
-        "saisons": len(saisons),
+        "saisons": len(informatives),
         "mesures": len(mesures),
         "retenus_mesures": len(retenus),
         "tiennent": sum(1 for l in retenus if l["retenu_saison"]),

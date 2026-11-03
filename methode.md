@@ -126,7 +126,7 @@ refaite sur la famille entière, avec ces nouvelles p-values.
   <td class="nombre" data-val="{{ t.facteur }}">×{{ t.facteur }}</td>
   <td class="nombre" data-val="{{ t.z }}">{{ t.z }}</td>
   <td class="nombre" data-val="{{ t.z_saison }}">{{ t.z_saison }}</td>
-  <td class="nombre">{{ t.p_ajustee_saison }}</td>
+  <td class="nombre">{{ t.p_ajustee_saison_texte | default: t.p_ajustee_saison }}</td>
   <td>{% if t.bascule %}<b>non</b>, retenu avec réserve{% elsif t.retenu_saison %}oui{% else %}—{% endif %}</td>
 </tr>
 {% endif %}{% endfor %}
@@ -140,7 +140,11 @@ rien ; à 2, le test était deux fois trop sûr de lui. Chaque recalcul tire s
 hasard {{ dep.tirages_texte }} fois, avec la même graine ; ce bruit gonfle un peu
 l’incertitude, et le résultat est donc prudent plutôt que flatteur. Les autres
 tests du registre ne sont pas concernés : leur unité est la saison, la
-personne ou le joueur, pas le conseil.</p>
+personne ou le joueur, pas le conseil.
+Les tests d’homophilie non plus : leur hasard tire déjà des saisons
+entières, et tient donc compte de cette dépendance. Une première version de
+ce tableau les y mesurait quand même, avec un hasard trop court qui gonflait
+leur facteur jusqu’à ×1,67.</p>
 
 ## Les modèles, un par un
 
