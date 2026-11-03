@@ -35,6 +35,10 @@ GRAINE = 20260828
 # de tirages mais les 26 saisons du jeu de donnees.
 N_PERMUTATIONS = 10_000
 
+# La persistance des alliances refait toute la chaine des scrutins a chaque
+# tirage : 2 000 suffisent, sa p est tres loin du seuil.
+N_PERMUTATIONS_ALLIANCES = 2_000
+
 # Nombre de reechantillonnages bootstrap pour les intervalles.
 N_BOOTSTRAP = 2_000
 # Le modele de force se reestime 400 fois seulement : chaque tirage est un
@@ -179,6 +183,9 @@ def _test(cle, libelle, question, observe, nulle, unite="", lecture=""):
         # -4.657  points », avec son double espace, etait publie tel quel.
         "unite": (unite or "").strip(),
         "ecart_types": _arr((observe - float(nulle.mean())) / ecart_type, 2),
+        # L'ecart-type du hasard, en clair : tools/dependance.py le confronte a
+        # l'incertitude mesuree saison par saison.
+        "ecart_type_nul": _arr(ecart_type, 4),
         "p": _arr(_p_bilaterale(observe, nulle), 4),
         "tirages": int(len(nulle)),
         "lecture": lecture,
@@ -1433,7 +1440,7 @@ def alliances(par_saison, parts, conseils):
 
     g = rng("alliances")
     nulle = []
-    for _ in range(2000):
+    for _ in range(N_PERMUTATIONS_ALLIANCES):
         r = _persistance(_melanger(scrutins, g))
         if r:
             nulle.append(r[0] - r[1])
@@ -2181,7 +2188,7 @@ def trahison(par_saison, parts, conseils):
 
     g = rng("trahison")
     nulle = []
-    for _ in range(4000):
+    for _ in range(N_PERMUTATIONS_BULLETINS):
         melange = []
         for s, numero, bull, etat in contextes:
             votants = [v for v, _ in bull]
@@ -4810,8 +4817,11 @@ def tout(par_saison, parts, conseils, epreuves, indicateurs_saison,
         "rappel": rp,
         "registre": [{k: t[k] for k in
                       ("cle", "libelle", "question", "origine", "observe",
-                       "attendu", "unite", "ecart_types", "p", "p_ajustee",
-                       "retenu", "tirages", "lecture", "nulle")}
+                       "attendu", "unite", "ecart_types", "ecart_type_nul", "p", "p_ajustee",
+                       "retenu", "tirages", "lecture", "nulle")
+                      # Les tests de la geographie viennent d'un fichier
+                      # ecrit a part, sans `ecart_type_nul` : rien a recopier.
+                      if k in t}
                      for t in registre],
         "nb_tests": len(registre),
         "nb_retenus": sum(1 for t in registre if t["retenu"]),

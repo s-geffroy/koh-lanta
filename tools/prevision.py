@@ -270,7 +270,7 @@ def hors_echantillon(lignes_, colonnes):
     """Une saison exclue a chaque tour. Rend le rang du vrai elimine, conseil par conseil."""
     gardes = _groupes(lignes_, colonnes)
     saisons = sorted({cle[0] for cle, _ in gardes})
-    rangs, tailles, premiers = [], [], []
+    rangs, tailles, premiers, de_la_saison = [], [], [], []
     plis = 0
     for pli in saisons:
         appris = [x for x in gardes if x[0][0] != pli]
@@ -293,10 +293,14 @@ def hors_echantillon(lignes_, colonnes):
             rangs.append(place[vrai] / (n - 1.0))
             tailles.append(n)
             premiers.append(1 if place[vrai] == 0 else 0)
+            de_la_saison.append(pli)
     return {
         "conseils": len(rangs), "plis": plis,
         "presences": sum(tailles),
         "rang_moyen": rangs, "tailles": tailles, "premiers": premiers,
+        # La saison de chaque conseil : tools/dependance.py en a besoin pour
+        # mesurer ce que vaut l'ecart quand on retire une saison entiere.
+        "saisons": de_la_saison,
     }
 
 

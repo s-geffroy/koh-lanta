@@ -169,7 +169,9 @@
   speciale: false
   annulee: false
   pays: "Palaos"
-  lieu: "Micronésie"
+  # Wikipedia : « Palaos, en Micronesie » ; Fandom : « Palau ». La Micronesie
+  # est la region, pas le lieu de tournage : on ecrit l'archipel.
+  lieu: "Archipel des Palaos"
   duree_jours: 39
   nb_candidats: 18
   presentateur: "Denis Brogniart"
@@ -239,7 +241,8 @@
   annee: 2013
   speciale: false
   annulee: true
-  motif_annulation: "Tournage arrêté après la mort d'un candidat au premier jour."
+  # Wikipedia, article general, « Saison 13 au Cambodge : deces d'un candidat ».
+  motif_annulation: "Tournage annulé le premier jour : un candidat, Gérald Babin, meurt d'un malaise cardiaque pendant la première épreuve."
   pays: "Cambodge"
   lieu: "Île de Koh Rong"
   duree_jours: null
@@ -346,7 +349,10 @@
   annee: 2018
   speciale: false
   annulee: true
-  motif_annulation: "Tournage arrêté après un événement survenu entre deux participants."
+  # Wikipedia, article general, « Saison 19 aux Fidji : agression sexuelle
+  # presumee ». La formule de TF1 (« evenement survenu entre deux
+  # participants ») taisait la raison que la production a donnee ensuite.
+  motif_annulation: "Tournage suspendu au cinquième jour, après une agression sexuelle présumée sur une candidate."
   pays: "Fidji"
   lieu: "Archipel de Kadavu"
   duree_jours: null

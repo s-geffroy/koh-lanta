@@ -1570,7 +1570,7 @@ aventuriers:
       jour_sortie: 21
       justesse_vote: null
       libelle_sort: Abandon médical
-      lieu: Micronésie
+      lieu: Archipel des Palaos
       localisation: Nord
       menace: "0,17"
       natures: []
@@ -3757,7 +3757,7 @@ aventuriers:
       jour_sortie: 6
       justesse_vote: null
       libelle_sort: Éliminé au conseil
-      lieu: Micronésie
+      lieu: Archipel des Palaos
       localisation: Bouches-du-Rhône
       menace: null
       natures: []
@@ -10699,7 +10699,7 @@ aventuriers:
       jour_sortie: 39
       justesse_vote: "87,5"
       libelle_sort: Vainqueur
-      lieu: Micronésie
+      lieu: Archipel des Palaos
       localisation: Bouches-du-Rhône
       menace: "0,25"
       natures:
@@ -11688,7 +11688,7 @@ aventuriers:
       jour_sortie: 9
       justesse_vote: null
       libelle_sort: Éliminée au conseil
-      lieu: Micronésie
+      lieu: Archipel des Palaos
       localisation: null
       menace: null
       natures: []
@@ -15773,7 +15773,7 @@ aventuriers:
       jour_sortie: 37
       justesse_vote: "33,3"
       libelle_sort: Éliminée à l’orientation
-      lieu: Micronésie
+      lieu: Archipel des Palaos
       localisation: Alpes-Maritimes
       menace: "0,33"
       natures: []
@@ -17520,7 +17520,7 @@ aventuriers:
       jour_sortie: 21
       justesse_vote: null
       libelle_sort: Éliminé au conseil
-      lieu: Micronésie
+      lieu: Archipel des Palaos
       localisation: Nord
       menace: "1,67"
       natures:
@@ -21072,7 +21072,7 @@ aventuriers:
       jour_sortie: 38
       justesse_vote: "87,5"
       libelle_sort: Éliminée aux poteaux
-      lieu: Micronésie
+      lieu: Archipel des Palaos
       localisation: Yvelines
       menace: "0,92"
       natures:
@@ -24164,7 +24164,7 @@ aventuriers:
       jour_sortie: 1
       justesse_vote: null
       libelle_sort: Éliminée à une épreuve
-      lieu: Micronésie
+      lieu: Archipel des Palaos
       localisation: Pyrénées-Orientales
       menace: null
       natures: []
@@ -25008,7 +25008,7 @@ aventuriers:
       jour_sortie: 3
       justesse_vote: null
       libelle_sort: Éliminé au conseil
-      lieu: Micronésie
+      lieu: Archipel des Palaos
       localisation: Maine-et-Loire
       menace: null
       natures: []
@@ -25089,7 +25089,7 @@ aventuriers:
       jour_sortie: 36
       justesse_vote: "66,7"
       libelle_sort: Éliminé au conseil
-      lieu: Micronésie
+      lieu: Archipel des Palaos
       localisation: Maine-et-Loire
       menace: "1,64"
       natures: []
@@ -25168,7 +25168,7 @@ aventuriers:
       jour_sortie: 15
       justesse_vote: null
       libelle_sort: Abandon volontaire
-      lieu: Micronésie
+      lieu: Archipel des Palaos
       localisation: Paris
       menace: 0
       natures: []
@@ -28076,7 +28076,7 @@ aventuriers:
       jour_sortie: 27
       justesse_vote: "33,3"
       libelle_sort: Éliminé au conseil
-      lieu: Micronésie
+      lieu: Archipel des Palaos
       localisation: Essonne
       menace: "0,5"
       natures: []
@@ -30398,7 +30398,7 @@ aventuriers:
       jour_sortie: 13
       justesse_vote: null
       libelle_sort: Abandon médical
-      lieu: Micronésie
+      lieu: Archipel des Palaos
       localisation: null
       menace: 0
       natures: []
@@ -34708,7 +34708,7 @@ aventuriers:
       jour_sortie: 2
       justesse_vote: null
       libelle_sort: Abandon médical
-      lieu: Micronésie
+      lieu: Archipel des Palaos
       localisation: Seine-Saint-Denis
       menace: null
       natures: []
@@ -37345,7 +37345,7 @@ aventuriers:
       jour_sortie: 24
       justesse_vote: 60
       libelle_sort: Éliminé au conseil
-      lieu: Micronésie
+      lieu: Archipel des Palaos
       localisation: Bas-Rhin
       menace: 1
       natures: []
@@ -37925,7 +37925,7 @@ aventuriers:
       jour_sortie: 39
       justesse_vote: 75
       libelle_sort: Finaliste
-      lieu: Micronésie
+      lieu: Archipel des Palaos
       localisation: Loire
       menace: "0,08"
       natures:
@@ -39367,7 +39367,7 @@ aventuriers:
       jour_sortie: 30
       justesse_vote: 50
       libelle_sort: Éliminée au conseil
-      lieu: Micronésie
+      lieu: Archipel des Palaos
       localisation: Hérault
       menace: "1,11"
       natures:
@@ -39815,7 +39815,7 @@ aventuriers:
       jour_sortie: 33
       justesse_vote: 25
       libelle_sort: Éliminé au conseil
-      lieu: Micronésie
+      lieu: Archipel des Palaos
       localisation: Bouches-du-Rhône
       menace: "0,5"
       natures: []
@@ -50051,7 +50051,7 @@ saisons:
     - q: Combien de jours a duré l’aventure à Koh-Lanta Palau ?
       r: 39 jours.
     - q: Quel est le lieu de tournage de Koh-Lanta Palau ?
-      r: Micronésie, Palaos.
+      r: Archipel des Palaos.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta Palau ?
       r: 12 conseils d’élimination. Le dépouillement de 11 d’entre eux est connu au
         bulletin près, pour 81 bulletins relevés.
@@ -50063,7 +50063,7 @@ saisons:
     finalistes:
     - *id017
     id: s09
-    lieu: Micronésie
+    lieu: Archipel des Palaos
     numero: 9
     pays: Palaos
     sans_vainqueur: null

@@ -81,6 +81,67 @@ correction.
 </table>
 </div>
 
+## Les conseils d’une même saison ne sont pas indépendants {#dependance}
+
+{% assign dep = site.data.dependance %}
+La plupart des tests rebattent le hasard **conseil par conseil** : l’éliminé,
+le bulletin, la cible. Ils comptent donc chaque conseil comme une expérience à
+part. Ce n’en est pas une. D’un conseil à l’autre, une saison garde les mêmes
+joueurs, les mêmes alliances et les mêmes rancunes. Si toute une saison penche
+d’un côté, ses quinze conseils penchent ensemble — et le test les compte comme
+quinze preuves.
+
+Pour mesurer ce que cela coûte, chaque test est recalculé en retirant une
+saison entière, puis une autre, {{ dep.saisons }} fois (un *jackknife* par
+saison). La dispersion de ces écarts donne une incertitude qui ne suppose rien
+de ce qui se passe à l’intérieur d’une saison. Seule hypothèse restante : que
+les saisons soient indépendantes entre elles, leurs castings étant distincts,
+à quelques revenants près. La correction de Benjamini-Hochberg est ensuite
+refaite sur la famille entière, avec ces nouvelles p-values.
+
+<div class="constat">
+  <p><b>{{ dep.mesures }} tests</b> rebattent le hasard conseil par conseil,
+  dont <b>{{ dep.retenus_mesures }} retenus</b>. Pour la plupart, la dépendance
+  change peu : en valeur médiane, l’incertitude n’était sous-estimée que d’un
+  facteur {{ dep.facteur_median }}. Elle pèse lourd sur quelques-uns, jusqu’à un
+  facteur {{ dep.facteur_max }}.</p>
+  <p><b>{{ dep.tiennent }} des {{ dep.retenus_mesures }} tests retenus
+  tiennent</b>{% if dep.tombent.size > 0 %} ; {% for x in dep.tombent %}<b>{{ x }}</b>{% if forloop.rindex == 2 %} et {% elsif forloop.last == false %}, {% endif %}{% endfor %}
+  {% if dep.tombent.size > 1 %}ne passent{% else %}ne passe{% endif %} plus le seuil, de très peu.
+  Le site {% if dep.tombent.size > 1 %}les garde retenus{% else %}le garde retenu{% endif %}, avec cette réserve écrite là où {% if dep.tombent.size > 1 %}ils sont cités{% else %}il est cité{% endif %}{% endif %}.</p>
+</div>
+
+<div class="tableau-large">
+<table data-triable><caption class="hors-ecran">Les conseils d’une même saison ne sont pas indépendants</caption>
+<thead><tr>
+  <th>Test</th><th class="nombre">Saisons</th><th class="nombre">Facteur</th>
+  <th class="nombre">Écarts-types publiés</th><th class="nombre">Par saison</th>
+  <th class="nombre">p ajustée par saison</th><th>Tient</th>
+</tr></thead>
+<tbody>
+{% for t in dep.tests %}{% if t.facteur %}
+<tr>
+  <td><b>{{ t.libelle }}</b></td>
+  <td class="nombre">{{ t.saisons }}</td>
+  <td class="nombre" data-val="{{ t.facteur }}">×{{ t.facteur }}</td>
+  <td class="nombre" data-val="{{ t.z }}">{{ t.z }}</td>
+  <td class="nombre" data-val="{{ t.z_saison }}">{{ t.z_saison }}</td>
+  <td class="nombre">{{ t.p_ajustee_saison }}</td>
+  <td>{% if t.bascule %}<b>non</b>, retenu avec réserve{% elsif t.retenu_saison %}oui{% else %}—{% endif %}</td>
+</tr>
+{% endif %}{% endfor %}
+</tbody>
+</table>
+</div>
+
+<p class="note">Le <b>facteur</b> divise l’incertitude mesurée saison par
+saison par celle du hasard conseil par conseil : à 1, la dépendance ne change
+rien ; à 2, le test était deux fois trop sûr de lui. Chaque recalcul tire son
+hasard {{ dep.tirages_texte }} fois, avec la même graine ; ce bruit gonfle un peu
+l’incertitude, et le résultat est donc prudent plutôt que flatteur. Les autres
+tests du registre ne sont pas concernés : leur unité est la saison, la
+personne ou le joueur, pas le conseil.</p>
+
 ## Les modèles, un par un
 
 ### Le test de permutation

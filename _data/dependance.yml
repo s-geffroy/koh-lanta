@@ -1,0 +1,564 @@
+# ATTENTION : fichier genere par tools/dependance.py. Ne pas editer a la main.
+# La dependance entre conseils d'une meme saison : un jackknife par saison sur
+# chaque test du registre qui rebat le hasard conseil par conseil.
+tirages: 4000
+tirages_texte: "4 000"
+saisons: 34
+mesures: 29
+retenus_mesures: 14
+tiennent: 13
+tombent:
+- Avoir voté du mauvais côté
+facteur_median: "1,04"
+facteur_max: "2,85"
+tests:
+- cle: persistance_alliances
+  libelle: La persistance des alliances
+  origine: alliances
+  z: "19,14"
+  p: "0,0005"
+  p_ajustee: "0,002"
+  retenu: true
+  saisons: 32
+  facteur: "2,85"
+  z_saison: "6,72"
+  p_saison: 0
+  p_ajustee_saison: 0
+  retenu_saison: true
+  bascule: false
+- cle: trahison
+  libelle: Écrire le nom d’un ancien allié
+  origine: trahison
+  z: "−15,57"
+  p: "0,0002"
+  p_ajustee: "0,001"
+  retenu: true
+  saisons: 32
+  facteur: "1,93"
+  z_saison: "−8,06"
+  p_saison: 0
+  p_ajustee_saison: 0
+  retenu_saison: true
+  bascule: false
+- cle: vote_meme_metier
+  libelle: Viser la même famille de métiers
+  origine: homophilie
+  z: "−1,73"
+  p: "0,0845"
+  p_ajustee: "0,1634"
+  retenu: false
+  saisons: 32
+  facteur: "1,67"
+  z_saison: "−1,03"
+  p_saison: "0,3101"
+  p_ajustee_saison: "0,4996"
+  retenu_saison: false
+  bascule: false
+- cle: vote_bandeau_apres_fusion
+  libelle: Épargner sa tribu initiale
+  origine: homophilie
+  z: "−5,92"
+  p: "0,0005"
+  p_ajustee: "0,002"
+  retenu: true
+  saisons: 32
+  facteur: "1,65"
+  z_saison: "−3,59"
+  p_saison: "0,0011"
+  p_ajustee_saison: "0,0042"
+  retenu_saison: true
+  bascule: false
+- cle: bandeau_minoritaire
+  libelle: La tribu initiale minoritaire
+  origine: autour_du_feu
+  z: "3,67"
+  p: "0,0002"
+  p_ajustee: "0,001"
+  retenu: true
+  saisons: 33
+  facteur: "1,36"
+  z_saison: "2,71"
+  p_saison: "0,0108"
+  p_ajustee_saison: "0,0336"
+  retenu_saison: true
+  bascule: false
+- cle: fusion_serre
+  libelle: Des conseils plus serrés après la réunification ?
+  origine: avant_apres
+  z: "4,98"
+  p: "0,0001"
+  p_ajustee: "0,0007"
+  retenu: true
+  saisons: 26
+  facteur: "1,31"
+  z_saison: "3,8"
+  p_saison: "0,0008"
+  p_ajustee_saison: "0,0033"
+  retenu_saison: true
+  bascule: false
+- cle: vote_meme_departement
+  libelle: Viser quelqu’un de son département
+  origine: homophilie
+  z: "−2,1"
+  p: "0,039"
+  p_ajustee: "0,0917"
+  retenu: false
+  saisons: 32
+  facteur: "1,27"
+  z_saison: "−1,66"
+  p_saison: "0,1067"
+  p_ajustee_saison: "0,2029"
+  retenu_saison: false
+  bascule: false
+- cle: fusion_force
+  libelle: La force des éliminés, avant et après la réunification
+  origine: avant_apres
+  z: "−1,41"
+  p: "0,1603"
+  p_ajustee: "0,2682"
+  retenu: false
+  saisons: 26
+  facteur: "1,22"
+  z_saison: "−1,15"
+  p_saison: "0,2598"
+  p_ajustee_saison: "0,4265"
+  retenu_saison: false
+  bascule: false
+- cle: decimation
+  libelle: L’élimination en série d’un camp
+  origine: decimation
+  z: "2,18"
+  p: "0,031"
+  p_ajustee: "0,0793"
+  retenu: false
+  saisons: 20
+  facteur: "1,21"
+  z_saison: "1,8"
+  p_saison: "0,087"
+  p_ajustee_saison: "0,176"
+  retenu_saison: false
+  bascule: false
+- cle: vote_meme_sexe
+  libelle: Viser quelqu’un du même sexe
+  origine: homophilie
+  z: "−2,21"
+  p: "0,03"
+  p_ajustee: "0,0791"
+  retenu: false
+  saisons: 32
+  facteur: "1,21"
+  z_saison: "−1,83"
+  p_saison: "0,0772"
+  p_ajustee_saison: "0,1748"
+  retenu_saison: false
+  bascule: false
+- cle: vote_ecart_age
+  libelle: L’écart d’âge avec sa cible
+  origine: homophilie
+  z: 1
+  p: "0,3078"
+  p_ajustee: "0,4869"
+  retenu: false
+  saisons: 32
+  facteur: "1,16"
+  z_saison: "0,86"
+  p_saison: "0,3978"
+  p_ajustee_saison: "0,5658"
+  retenu_saison: false
+  bascule: false
+- cle: retour_de_baton
+  libelle: Le nom rendu au conseil suivant
+  origine: conditionnelles
+  z: "6,91"
+  p: "0,0002"
+  p_ajustee: "0,001"
+  retenu: true
+  saisons: 33
+  facteur: "1,14"
+  z_saison: "6,06"
+  p_saison: 0
+  p_ajustee_saison: 0
+  retenu_saison: true
+  bascule: false
+- cle: vote_isole
+  libelle: N’avoir plus personne avec qui on ait voté
+  origine: pire_place
+  z: "3,06"
+  p: "0,0036"
+  p_ajustee: "0,0112"
+  retenu: true
+  saisons: 33
+  facteur: "1,06"
+  z_saison: "2,88"
+  p_saison: "0,0071"
+  p_ajustee_saison: "0,0229"
+  retenu_saison: true
+  bascule: false
+- cle: camp_perdant
+  libelle: Avoir voté du mauvais côté
+  origine: conditionnelles
+  z: "2,61"
+  p: "0,0092"
+  p_ajustee: "0,0276"
+  retenu: true
+  saisons: 33
+  facteur: "1,04"
+  z_saison: "2,51"
+  p_saison: "0,0174"
+  p_ajustee_saison: "0,0505"
+  retenu_saison: false
+  bascule: true
+- cle: prevision_conseil
+  libelle: Deviner qui part, dans une saison jamais vue
+  origine: classement
+  z: "−5,61"
+  p: "0,0001"
+  p_ajustee: "0,0007"
+  retenu: true
+  saisons: 33
+  facteur: "1,04"
+  z_saison: "−5,41"
+  p_saison: 0
+  p_ajustee_saison: 0
+  retenu_saison: true
+  bascule: false
+- cle: age_bascule_fusion
+  libelle: L’âge de l’éliminé, avant et après la réunification
+  origine: age_au_conseil
+  z: "2,14"
+  p: "0,0341"
+  p_ajustee: "0,0848"
+  retenu: false
+  saisons: 33
+  facteur: "1,03"
+  z_saison: "2,07"
+  p_saison: "0,0464"
+  p_ajustee_saison: "0,1187"
+  retenu_saison: false
+  bascule: false
+- cle: vote_meme_bandeau
+  libelle: Viser sa propre tribu initiale
+  origine: homophilie
+  z: "−6,69"
+  p: "0,0005"
+  p_ajustee: "0,002"
+  retenu: true
+  saisons: 32
+  facteur: "1,03"
+  z_saison: "−6,51"
+  p_saison: 0
+  p_ajustee_saison: 0
+  retenu_saison: true
+  bascule: false
+- cle: fusion_sexe
+  libelle: Le sexe des éliminés, avant et après la réunification
+  origine: avant_apres
+  z: "−3,44"
+  p: "0,0006"
+  p_ajustee: "0,0023"
+  retenu: true
+  saisons: 26
+  facteur: "1,01"
+  z_saison: "−3,42"
+  p_saison: "0,0022"
+  p_ajustee_saison: "0,0077"
+  retenu_saison: true
+  bascule: false
+- cle: menace_deux_pas
+  libelle: La menace, deux conseils plus tard
+  origine: conditionnelles
+  z: "0,43"
+  p: "0,6702"
+  p_ajustee: "0,7987"
+  retenu: false
+  saisons: 33
+  facteur: 1
+  z_saison: "0,43"
+  p_saison: "0,6682"
+  p_ajustee_saison: "0,7856"
+  retenu_saison: false
+  bascule: false
+- cle: menace_sommet
+  libelle: Trop visé pour partir
+  origine: conditionnelles
+  z: "0,24"
+  p: "0,8204"
+  p_ajustee: "0,9035"
+  retenu: false
+  saisons: 33
+  facteur: "0,98"
+  z_saison: "0,24"
+  p_saison: "0,8093"
+  p_ajustee_saison: "0,8913"
+  retenu_saison: false
+  bascule: false
+- cle: cible_persistante
+  libelle: La cible reste la cible
+  origine: conditionnelles
+  z: 6
+  p: "0,0001"
+  p_ajustee: "0,0007"
+  retenu: true
+  saisons: 33
+  facteur: "0,95"
+  z_saison: "6,32"
+  p_saison: 0
+  p_ajustee_saison: 0
+  retenu_saison: true
+  bascule: false
+- cle: ambassadeurs_survie
+  libelle: L’ambassadeur qui négocie s’en sort-il mieux ?
+  origine: avant_apres
+  z: "−1,61"
+  p: "0,1074"
+  p_ajustee: "0,1947"
+  retenu: false
+  saisons: 14
+  facteur: "0,94"
+  z_saison: "−1,72"
+  p_saison: "0,1096"
+  p_ajustee_saison: "0,2029"
+  retenu_saison: false
+  bascule: false
+- cle: confort_sortie
+  libelle: Le confort du soir
+  origine: autour_du_feu
+  z: "0,41"
+  p: "0,7492"
+  p_ajustee: "0,8465"
+  retenu: false
+  saisons: 33
+  facteur: "0,93"
+  z_saison: "0,44"
+  p_saison: "0,6657"
+  p_ajustee_saison: "0,7856"
+  retenu_saison: false
+  bascule: false
+- cle: doyen_du_camp
+  libelle: Le plus âgé du camp
+  origine: autour_du_feu
+  z: "0,51"
+  p: "0,6512"
+  p_ajustee: "0,7869"
+  retenu: false
+  saisons: 33
+  facteur: "0,93"
+  z_saison: "0,55"
+  p_saison: "0,589"
+  p_ajustee_saison: "0,7133"
+  retenu_saison: false
+  bascule: false
+- cle: menace_voix
+  libelle: Le nom sorti la fois d’avant
+  origine: conditionnelles
+  z: "4,04"
+  p: "0,0003"
+  p_ajustee: "0,0014"
+  retenu: true
+  saisons: 33
+  facteur: "0,93"
+  z_saison: "4,33"
+  p_saison: "0,0001"
+  p_ajustee_saison: "0,0005"
+  retenu_saison: true
+  bascule: false
+- cle: sexe_minoritaire
+  libelle: Le sexe minoritaire
+  origine: autour_du_feu
+  z: "−3,69"
+  p: "0,0001"
+  p_ajustee: "0,0007"
+  retenu: true
+  saisons: 33
+  facteur: "0,91"
+  z_saison: "−4,08"
+  p_saison: "0,0003"
+  p_ajustee_saison: "0,0014"
+  retenu_saison: true
+  bascule: false
+- cle: dos_au_mur
+  libelle: Le dos au mur
+  origine: pire_place
+  z: "−0,03"
+  p: 1
+  p_ajustee: 1
+  retenu: false
+  saisons: 33
+  facteur: "0,88"
+  z_saison: "−0,03"
+  p_saison: "0,9752"
+  p_ajustee_saison: "0,9752"
+  retenu_saison: false
+  bascule: false
+- cle: ambassadeurs_force
+  libelle: Qui les ambassadeurs éliminent-ils ?
+  origine: avant_apres
+  z: "0,68"
+  p: "0,4985"
+  p_ajustee: "0,6378"
+  retenu: false
+  saisons: 14
+  facteur: "0,8"
+  z_saison: "0,85"
+  p_saison: "0,4125"
+  p_ajustee_saison: "0,5696"
+  retenu_saison: false
+  bascule: false
+- cle: tenant_du_titre
+  libelle: Le tenant du titre
+  origine: tenant_du_titre
+  z: "−0,17"
+  p: "0,8615"
+  p_ajustee: "0,9253"
+  retenu: false
+  saisons: 33
+  facteur: "0,79"
+  z_saison: "−0,22"
+  p_saison: "0,8299"
+  p_ajustee_saison: "0,9025"
+  retenu_saison: false
+  bascule: false
+- cle: audience_format
+  libelle: Le format suit-il l’audience ?
+  origine: audience
+  z: "−1,62"
+  p: "0,1074"
+  p_ajustee: "0,1947"
+  retenu: false
+  unite: une saison
+- cle: audience_glissement
+  libelle: 'La chute d’audience : une date plutôt qu’un glissement'
+  origine: audience
+  z: "0,84"
+  p: "0,4032"
+  p_ajustee: "0,5658"
+  retenu: false
+  unite: une saison
+- cle: audience_retournement
+  libelle: Le retournement finale / lancement
+  origine: audience
+  z: "−3,64"
+  p: "0,0002"
+  p_ajustee: "0,001"
+  retenu: true
+  unite: une saison
+- cle: audience_rupture
+  libelle: La rupture d’audience
+  origine: audience
+  z: "8,09"
+  p: "0,0001"
+  p_ajustee: "0,0007"
+  retenu: true
+  unite: une saison
+- cle: etendue_ages
+  libelle: L’écart d’âge dans un même casting
+  origine: casting
+  z: "2,46"
+  p: "0,0134"
+  p_ajustee: "0,0389"
+  retenu: true
+  unite: 'une saison, ses tribus : le tirage se fait deja saison par saison'
+- cle: familles_metiers
+  libelle: La variété des métiers
+  origine: casting
+  z: "−0,23"
+  p: "0,8538"
+  p_ajustee: "0,9253"
+  retenu: false
+  unite: 'une saison, ses tribus : le tirage se fait deja saison par saison'
+- cle: finale_dernier_qualifie
+  libelle: Le dernier qualifié de l’orientation
+  origine: finale
+  z: "2,48"
+  p: "0,0208"
+  p_ajustee: "0,0584"
+  retenu: false
+  unite: une finale par saison
+- cle: geographie_departements
+  libelle: L’origine géographique, par département
+  origine: geographie
+  z: "5,6"
+  p: "0,0001"
+  p_ajustee: "0,0007"
+  retenu: true
+  unite: une personne et son departement
+- cle: geographie_regions
+  libelle: L’origine géographique, par région
+  origine: geographie
+  z: "8,26"
+  p: "0,0001"
+  p_ajustee: "0,0007"
+  retenu: true
+  unite: une personne et son departement
+- cle: melange_archetypes
+  libelle: Le mélange d’archétypes
+  origine: casting
+  z: "1,82"
+  p: "0,0666"
+  p_ajustee: "0,1449"
+  retenu: false
+  unite: 'une saison, ses tribus : le tirage se fait deja saison par saison'
+- cle: parite
+  libelle: L’équilibre hommes-femmes
+  origine: casting
+  z: "−5,79"
+  p: "0,0001"
+  p_ajustee: "0,0007"
+  retenu: true
+  unite: 'une saison, ses tribus : le tirage se fait deja saison par saison'
+- cle: pronostic_vainqueur
+  libelle: Pronostiquer le vainqueur au casting
+  origine: pronostic
+  z: "0,38"
+  p: "0,7087"
+  p_ajustee: "0,8221"
+  retenu: false
+  unite: une saison et son vainqueur
+- cle: rupture
+  libelle: La rupture de régime
+  origine: ruptures
+  z: "6,75"
+  p: "0,0001"
+  p_ajustee: "0,0007"
+  retenu: true
+  unite: une saison
+- cle: rupture_glissement
+  libelle: Une date plutôt qu’un glissement
+  origine: ruptures
+  z: "−0,56"
+  p: "0,5903"
+  p_ajustee: "0,7233"
+  retenu: false
+  unite: une saison
+- cle: talent_stable
+  libelle: La qualité d’un joueur se retrouve-t-elle d’une saison à l’autre ?
+  origine: classement
+  z: "1,23"
+  p: "0,2239"
+  p_ajustee: "0,3607"
+  retenu: false
+  unite: un joueur, sur toute sa carriere
+- cle: tribus_ages
+  libelle: L’âge moyen des deux tribus
+  origine: casting
+  z: "3,03"
+  p: "0,0022"
+  p_ajustee: "0,0074"
+  retenu: true
+  unite: 'une saison, ses tribus : le tirage se fait deja saison par saison'
+- cle: tribus_ages_mediane
+  libelle: L’âge des deux tribus, à la médiane
+  origine: casting
+  z: "1,02"
+  p: "0,3162"
+  p_ajustee: "0,4912"
+  retenu: false
+  unite: 'une saison, ses tribus : le tirage se fait deja saison par saison'
+- cle: tribus_femmes
+  libelle: La composition des deux tribus
+  origine: casting
+  z: "−2,05"
+  p: "0,0382"
+  p_ajustee: "0,0917"
+  retenu: false
+  unite: 'une saison, ses tribus : le tirage se fait deja saison par saison'

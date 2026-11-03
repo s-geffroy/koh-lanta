@@ -7,7 +7,7 @@ version: "Version longue"
 chapeau: "Le cadre théorique, les tests et leurs limites : ce qui tient, ce qui cède, et pourquoi l’ordinaire se prédit mieux que l’exceptionnel."
 description: "Version longue : un cadre mécaniste confronté à tous les votes du jeu. Les alliances et l’appartenance tiennent ; la compétence comme menace, non."
 date: 2026-10-20
-last_modified_at: 2026-10-23
+last_modified_at: 2026-11-03
 author: Sylvain Geffroy
 permalink: /articles/amplificateur-institutionnel/
 math: true
@@ -22,6 +22,7 @@ autre_version_titre: "Lire la version courte →"
   appartiennent a son histoire, pas aux donnees.
 {%- endcomment -%}
 {%- assign a = site.data.stats.articles -%}
+{%- assign dep_camp = site.data.dependance.tests | where: "cle", "camp_perdant" | first -%}
 
 Cet article étudie *Koh-Lanta* non comme une miniature de « la vraie vie », mais comme un **dispositif institutionnel et médiatique qui repondère des mécanismes sociaux et stratégiques documentés ailleurs** : compétition relative, coalition, pouvoir-dépendance, réputation, identité de groupe, conformité. Nous écrivons symboliquement l'état du jeu $$S_{KL}=T_{KL}(G_{ref})$$, où $$T_{KL}$$ est la transformation institutionnelle d'un référentiel trans-domaines, et nous le séparons de sa représentation diffusée, $$O_{diffusé}=M_{prod}(S_{KL},A,C)$$ ([Corner, 2002](#ref-corner2002) ; [Couldry, 2004](#ref-couldry2004) ; [Andrejevic, 2004](#ref-andrejevic2004)).
 
@@ -207,7 +208,7 @@ Quatre lectures s'en dégagent.
 
 **L'appartenance d'origine survit à la disparition du groupe.** Après la réunification, on écrit le nom de quelqu'un de sa tribu initiale dans {{ a.tests.vote_bandeau_apres_fusion.observe }} % des bulletins, contre {{ a.tests.vote_bandeau_apres_fusion.attendu }} % attendus, et appartenir au camp minoritaire expose. L'enchaînement des sorties par camp, lui, ne passe pas la correction une fois l'ordre des sorties d'un même épisode réparé. C'est compatible avec une identité de groupe ([Tajfel et Turner, 1979](#ref-tajfelturner1979)), sans qu'on puisse la séparer des liens noués pendant la phase en tribus : les tests de coalition et d'appartenance mesurent en partie le même réseau. En revanche, appartenir au **sexe** minoritaire du camp **protège** ({{ a.tests.sexe_minoritaire.observe }} points) : toutes les catégories ne fonctionnent pas comme des groupes. C'est un argument direct pour observer une conséquence avant de coder une identité.
 
-Une conséquence commune à la conformité (2.5) et à la coalition se lit, de justesse : avoir voté avec la minorité expose au conseil suivant (p ajustée {{ a.tests.camp_perdant.p }}). Être dans le bloc perdant est aussi une affaire de coalition, et les bulletins ne disent pas lequel des deux mécanismes joue. Une première rédaction de cette version concluait l'inverse ; la correction des sorties sans vote du 21 octobre 2026 a fait passer le seuil à ce résultat, qui reste fragile.
+Une conséquence commune à la conformité (2.5) et à la coalition se lit, de justesse : avoir voté avec la minorité expose au conseil suivant (p ajustée {{ a.tests.camp_perdant.p }}). Être dans le bloc perdant est aussi une affaire de coalition, et les bulletins ne disent pas lequel des deux mécanismes joue. Une première rédaction de cette version concluait l'inverse ; la correction des sorties sans vote du 21 octobre 2026 a fait passer le seuil à ce résultat, qui reste fragile. Il ne tient d’ailleurs plus tout à fait quand on tient compte de la dépendance entre conseils d’une même saison (p ajustée {{ dep_camp.p_ajustee_saison }}, juste au-dessus du seuil ; voir [la méthode]({{ '/methode/' | relative_url }}#dependance)) : il est gardé, avec cette réserve.
 
 ### 6.3. La réunification se lit dans les votes, pas seulement dans le discours
 

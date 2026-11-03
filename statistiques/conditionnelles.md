@@ -16,6 +16,7 @@ chapeau: >-
 {% assign t1 = reg | where: "cle", "menace_voix" | first %}
 {% assign t2 = reg | where: "cle", "menace_sommet" | first %}
 {% assign t3 = reg | where: "cle", "camp_perdant" | first %}
+{% assign d3 = site.data.dependance.tests | where: "cle", "camp_perdant" | first %}
 {% assign t4 = reg | where: "cle", "cible_persistante" | first %}
 {% assign t5 = reg | where: "cle", "retour_de_baton" | first %}
 
@@ -336,13 +337,17 @@ plus tôt » n’est pas un résultat retenu.
 
 <div class="constat">
   <p>{{ t3.observe_arrondi }} point{% if t3.observe_arrondi_pluriel %}s{% endif %} d’écart, {{ t3.ecart_types }} {{ t3.ecart_types_mot }}, p brute
-  {{ t3.p }}, p ajustée {{ t3.p_ajustee }}. <b>Retenu, de justesse.</b></p>
+  {{ t3.p }}, p ajustée {{ t3.p_ajustee }}. <b>Retenu, de justesse{% if d3.bascule %} et avec réserve{% endif %}.</b></p>
   <p>S’être trompé de cible au conseil précédent expose : à
   {{ c.par_camp[1].effectif }} présences du côté de la minorité, un écart de
   {{ t3.observe_arrondi }} point{% if t3.observe_arrondi_pluriel %}s{% endif %} se distingue d’un tirage. Mais il passe le
   seuil de peu, et une correction des données suffirait à le faire repasser
   dessous.</p>
-</div>
+{% if d3.bascule %}  <p>Il ne résiste pas tout à fait à la dépendance entre conseils d’une même
+  saison. Recalculée saison par saison, sa p ajustée passe de {{ t3.p_ajustee }} à
+  {{ d3.p_ajustee_saison }}, juste au-dessus du seuil : le site le garde retenu, avec
+  cette réserve (voir <a href="{{ '/methode/' | relative_url }}#dependance">la méthode</a>).</p>
+{% endif %}</div>
 
 <p class="note"><strong>Cette page a longtemps conclu l’inverse.</strong>
 Jusqu’au 21 octobre 2026, elle écrivait « Non concluant » (p ajustée 0,063).

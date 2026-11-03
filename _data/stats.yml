@@ -1011,7 +1011,7 @@ saisons:
   speciale: false
   en_cours: false
   pays: Palaos
-  lieu: Micronésie
+  lieu: Archipel des Palaos
   duree_jours: 39
   effectif: 18
   age_moyen: "34,7"
@@ -24440,6 +24440,7 @@ modeles:
       attendu: "1,747"
       unite: personnes
       ecart_types: "−5,79"
+      ecart_type_nul: "0,2652"
       p: "0,0001"
       tirages: 10000
       lecture: 'Un écart observé plus PETIT que l’attendu est la signature d’un quota : le hasard, lui,
@@ -24496,6 +24497,7 @@ modeles:
       attendu: "9,707"
       unite: années
       ecart_types: "2,46"
+      ecart_type_nul: "0,0965"
       p: "0,0134"
       tirages: 10000
       lecture: Rebattre les aventuriers entre saisons donne l’écart-type général. Un écart observé PLUS
@@ -24552,6 +24554,7 @@ modeles:
       attendu: "246,236"
       unite: cases remplies
       ecart_types: "−0,23"
+      ecart_type_nul: "5,2701"
       p: "0,8538"
       tirages: 10000
       lecture: On compte, pour chaque saison, le nombre de familles de métiers représentées. Un total
@@ -24608,6 +24611,7 @@ modeles:
       attendu: "0,252"
       unite: ''
       ecart_types: "1,82"
+      ecart_type_nul: "0,0312"
       p: "0,0666"
       tirages: 10000
       lecture: Distance entre le mélange de profils d’une saison et le mélange général. Un observé PLUS
@@ -24665,6 +24669,7 @@ modeles:
       attendu: "18,654"
       unite: points de %
       ecart_types: "−2,05"
+      ecart_type_nul: "3,3962"
       p: "0,0382"
       tirages: 10000
       lecture: On rebat les tribus initiales à l’intérieur de chaque saison. Un écart observé PLUS PETIT
@@ -24722,6 +24727,7 @@ modeles:
       attendu: "3,85"
       unite: années
       ecart_types: "3,03"
+      ecart_type_nul: "0,6266"
       p: "0,0022"
       tirages: 10000
       lecture: 'Même méthode, sur l’âge moyen de chaque tribu initiale. Un écart observé PLUS GRAND que
@@ -24778,6 +24784,7 @@ modeles:
       attendu: "3,331"
       unite: années
       ecart_types: "1,02"
+      ecart_type_nul: "0,8087"
       p: "0,3162"
       tirages: 10000
       lecture: La médiane ignore les valeurs extrêmes. Si elle ne s’écarte pas, c’est que l’écart moyen
@@ -24913,6 +24920,7 @@ modeles:
       attendu: "10,261"
       unite: rang moyen
       ecart_types: "0,38"
+      ecart_type_nul: "1,0736"
       p: "0,7087"
       tirages: 10000
       lecture: Le modèle classe les candidats d’une saison ; on relève la place qu’il donne à celui qui
@@ -25586,6 +25594,7 @@ modeles:
       attendu: "1,318"
       unite: points de %
       ecart_types: "19,14"
+      ecart_type_nul: "1,4713"
       p: "0,0005"
       tirages: 2000
       lecture: 'Écart entre deux probabilités : voter ensemble après avoir voté ensemble, et voter ensemble
@@ -25760,6 +25769,7 @@ modeles:
       attendu: "47,603"
       unite: '%'
       ecart_types: "−2,21"
+      ecart_type_nul: "0,6696"
       p: "0,03"
       tirages: 2000
       lecture: 'L’attendu vient du partage des bulletins d’un conseil entre ses votants, avec le même
@@ -25821,6 +25831,7 @@ modeles:
       attendu: "10,824"
       unite: années
       ecart_types: 1
+      ecart_type_nul: "0,0858"
       p: "0,3078"
       tirages: 2000
       lecture: 'L’attendu vient du partage des bulletins d’un conseil entre ses votants, avec le même
@@ -25882,6 +25893,7 @@ modeles:
       attendu: "10,97"
       unite: '%'
       ecart_types: "−1,73"
+      ecart_type_nul: "0,4417"
       p: "0,0845"
       tirages: 2000
       lecture: 'L’attendu vient du partage des bulletins d’un conseil entre ses votants, avec le même
@@ -25943,6 +25955,7 @@ modeles:
       attendu: "60,456"
       unite: '%'
       ecart_types: "−6,69"
+      ecart_type_nul: "0,9944"
       p: "0,0005"
       tirages: 2000
       lecture: 'L’attendu vient du partage des bulletins d’un conseil entre ses votants, avec le même
@@ -26004,6 +26017,7 @@ modeles:
       attendu: "2,063"
       unite: '%'
       ecart_types: "−2,1"
+      ecart_type_nul: "0,1713"
       p: "0,039"
       tirages: 2000
       lecture: 'L’attendu vient du partage des bulletins d’un conseil entre ses votants, avec le même
@@ -26066,6 +26080,7 @@ modeles:
       attendu: "38,592"
       unite: '%'
       ecart_types: "−5,92"
+      ecart_type_nul: "1,7298"
       p: "0,0005"
       tirages: 2000
       lecture: Mesuré sur les seuls conseils réunissant plusieurs tribus initiales. Un observé SOUS l’attendu
@@ -26130,6 +26145,7 @@ modeles:
       attendu: "56,966"
       unite: '%'
       ecart_types: "−15,57"
+      ecart_type_nul: "0,5833"
       p: "0,0002"
       tirages: 4000
       lecture: Part des bulletins visant quelqu’un avec qui l’auteur avait déjà voté. Un observé SOUS
@@ -26352,6 +26368,7 @@ modeles:
       attendu: "100,344"
       unite: enchaînements
       ecart_types: "2,18"
+      ecart_type_nul: "7,1865"
       p: "0,031"
       tirages: 10000
       lecture: Nombre de fois où deux sorties consécutives viennent de la même tribu initiale. Un observé
@@ -26895,6 +26912,7 @@ modeles:
       attendu: "53,943"
       unite: ''
       ecart_types: "−0,56"
+      ecart_type_nul: "8,8954"
       p: "0,5903"
       tirages: 10000
       lecture: Gain de la meilleure coupure, comparé à celui obtenu sur des séries qui suivent la même
@@ -26954,6 +26972,7 @@ modeles:
       attendu: "12,796"
       unite: ''
       ecart_types: "6,75"
+      ecart_type_nul: "5,3611"
       p: "0,0001"
       tirages: 10000
       lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
@@ -27898,6 +27917,7 @@ modeles:
       attendu: "3,503"
       unite: ''
       ecart_types: "8,09"
+      ecart_type_nul: "2,1223"
       p: "0,0001"
       tirages: 10000
       lecture: Gain de la meilleure coupure de la série d’audience, comparé à celui obtenu sur des saisons
@@ -27955,6 +27975,7 @@ modeles:
       attendu: "16,427"
       unite: ''
       ecart_types: "0,84"
+      ecart_type_nul: "5,042"
       p: "0,4032"
       tirages: 10000
       lecture: Gain de la meilleure coupure, comparé à celui obtenu sur des séries qui suivent la même
@@ -28012,6 +28033,7 @@ modeles:
       attendu: "0,002"
       unite: ''
       ecart_types: "−3,64"
+      ecart_type_nul: "0,1801"
       p: "0,0002"
       tirages: 10000
       lecture: Corrélation de rang entre l’année et le rapport finale / lancement. Négative, elle dit
@@ -28069,6 +28091,7 @@ modeles:
       attendu: 0
       unite: ''
       ecart_types: "−1,62"
+      ecart_type_nul: "0,1822"
       p: "0,1074"
       tirages: 10000
       lecture: Corrélation de rang entre l’audience d’une saison et l’effectif de la suivante, une fois
@@ -28186,6 +28209,7 @@ modeles:
       attendu: "0,983"
       unite: points
       ecart_types: "−3,44"
+      ecart_type_nul: "5,3817"
       p: "0,0006"
       tirages: 10000
       lecture: 'Différence entre l’après et l’avant, en points de pourcentage. Le hasard, ici, c’est tirer
@@ -28243,6 +28267,7 @@ modeles:
       attendu: "−0,013"
       unite: points de rang
       ecart_types: "−1,41"
+      ecart_type_nul: "3,9861"
       p: "0,1603"
       tirages: 10000
       lecture: 'Rang de l’éliminé parmi les votants du conseil, sans l’immunisé, sur la force estimée
@@ -28300,6 +28325,7 @@ modeles:
       attendu: "0,041"
       unite: points
       ecart_types: "4,98"
+      ecart_type_nul: "5,4982"
       p: "0,0001"
       tirages: 10000
       lecture: Part de conseils où l’éliminé ne rassemble pas plus de la moitié des voix, après moins
@@ -28357,6 +28383,7 @@ modeles:
       attendu: "49,89"
       unite: points de rang
       ecart_types: "0,68"
+      ecart_type_nul: "8,3871"
       p: "0,4985"
       tirages: 10000
       lecture: Rang de l’éliminé parmi les présents, sur la force estimée aux épreuves. Au-dessus de 50,
@@ -28413,6 +28440,7 @@ modeles:
       attendu: "46,907"
       unite: points de rang
       ecart_types: "−1,61"
+      ecart_type_nul: "4,9829"
       p: "0,1074"
       tirages: 100000
       lecture: 'Rang de l’ambassadeur parmi les présents du jour, sur le jour de sortie : 50 c’est la
@@ -29390,6 +29418,7 @@ modeles:
       attendu: "0,749"
       unite: points
       ecart_types: "4,04"
+      ecart_type_nul: "2,0923"
       p: "0,0003"
       tirages: 10000
       lecture: 'Écart entre deux probabilités conditionnelles : partir sachant qu’on a été visé la fois
@@ -29447,6 +29476,7 @@ modeles:
       attendu: "2,232"
       unite: points
       ecart_types: "0,24"
+      ecart_type_nul: "4,188"
       p: "0,8204"
       tirages: 10000
       lecture: 'Écart entre partir après une à trois voix et partir après quatre voix ou plus. Un écart
@@ -29504,6 +29534,7 @@ modeles:
       attendu: "−0,841"
       unite: points
       ecart_types: "2,61"
+      ecart_type_nul: "1,7414"
       p: "0,0092"
       tirages: 10000
       lecture: Écart entre partir après avoir voté avec la minorité et partir après avoir voté avec la
@@ -29560,6 +29591,7 @@ modeles:
       attendu: "0,528"
       unite: points
       ecart_types: "0,43"
+      ecart_type_nul: "2,5566"
       p: "0,6702"
       tirages: 10000
       lecture: Écart entre partir quand on avait été visé DEUX conseils plus tôt et partir quand on ne
@@ -29616,6 +29648,7 @@ modeles:
       attendu: "2,422"
       unite: points
       ecart_types: 6
+      ecart_type_nul: "2,6737"
       p: "0,0001"
       tirages: 10000
       lecture: Écart entre voir son nom ressortir quand il était déjà sorti et le voir sortir quand il
@@ -29672,6 +29705,7 @@ modeles:
       attendu: "14,422"
       unite: '%'
       ecart_types: "6,91"
+      ecart_type_nul: "1,1346"
       p: "0,0002"
       tirages: 4000
       lecture: Part des couples où la cible de la dernière fois écrit à son tour le nom de son auteur,
@@ -29904,6 +29938,7 @@ modeles:
       attendu: "−0,38"
       unite: points
       ecart_types: "3,67"
+      ecart_type_nul: "1,7946"
       p: "0,0002"
       tirages: 10000
       lecture: 'Écart entre partir quand sa tribu initiale est la moins représentée du camp et partir
@@ -29961,6 +29996,7 @@ modeles:
       attendu: "−0,413"
       unite: points
       ecart_types: "−3,69"
+      ecart_type_nul: "1,5992"
       p: "0,0001"
       tirages: 10000
       lecture: Écart entre partir quand son sexe est le moins représenté du camp et partir quand il est
@@ -30017,6 +30053,7 @@ modeles:
       attendu: "0,997"
       unite: points
       ecart_types: "0,51"
+      ecart_type_nul: "1,9965"
       p: "0,6512"
       tirages: 10000
       lecture: Écart entre partir quand on est le plus âgé des présents et partir quand on ne l’est pas.
@@ -30073,6 +30110,7 @@ modeles:
       attendu: "0,412"
       unite: points
       ecart_types: "0,41"
+      ecart_type_nul: "2,4887"
       p: "0,7492"
       tirages: 10000
       lecture: 'Écart entre partir quand on vient de gagner le confort de l’épisode et partir quand on
@@ -30276,6 +30314,7 @@ modeles:
       attendu: "2,009"
       unite: points
       ecart_types: "3,06"
+      ecart_type_nul: "4,212"
       p: "0,0036"
       tirages: 10000
       lecture: Écart entre partir quand plus aucun de ceux avec qui on a déjà voté n’est présent, et partir
@@ -30332,6 +30371,7 @@ modeles:
       attendu: "0,648"
       unite: points
       ecart_types: "−0,03"
+      ecart_type_nul: "2,5008"
       p: 1
       tirages: 10000
       lecture: Écart entre gagner l’immunité individuelle du soir quand on a été visé au conseil précédent
@@ -30416,6 +30456,7 @@ modeles:
       attendu: "8,429"
       unite: points
       ecart_types: "−0,17"
+      ecart_type_nul: "4,134"
       p: "0,8615"
       tirages: 4000
       lecture: 'Écart entre gagner l’immunité quand on l’a gagnée la fois d’avant et la gagner quand on
@@ -30488,6 +30529,7 @@ modeles:
       attendu: "0,009"
       unite: ans
       ecart_types: "2,14"
+      ecart_type_nul: "0,896"
       p: "0,0341"
       tirages: 10000
       lecture: 'Écart d’âge de l’éliminé à la moyenne de son camp, avant la réunification moins après.
@@ -30699,6 +30741,7 @@ modeles:
     attendu: "1,747"
     unite: personnes
     ecart_types: "−5,79"
+    ecart_type_nul: "0,2652"
     p: "0,0001"
     p_ajustee: "0,0007"
     retenu: true
@@ -30721,6 +30764,7 @@ modeles:
     attendu: "9,707"
     unite: années
     ecart_types: "2,46"
+    ecart_type_nul: "0,0965"
     p: "0,0134"
     p_ajustee: "0,0389"
     retenu: true
@@ -30743,6 +30787,7 @@ modeles:
     attendu: "246,236"
     unite: cases remplies
     ecart_types: "−0,23"
+    ecart_type_nul: "5,2701"
     p: "0,8538"
     p_ajustee: "0,9253"
     retenu: false
@@ -30765,6 +30810,7 @@ modeles:
     attendu: "0,252"
     unite: ''
     ecart_types: "1,82"
+    ecart_type_nul: "0,0312"
     p: "0,0666"
     p_ajustee: "0,1449"
     retenu: false
@@ -30788,6 +30834,7 @@ modeles:
     attendu: "18,654"
     unite: points de %
     ecart_types: "−2,05"
+    ecart_type_nul: "3,3962"
     p: "0,0382"
     p_ajustee: "0,0917"
     retenu: false
@@ -30811,6 +30858,7 @@ modeles:
     attendu: "3,85"
     unite: années
     ecart_types: "3,03"
+    ecart_type_nul: "0,6266"
     p: "0,0022"
     p_ajustee: "0,0074"
     retenu: true
@@ -30833,6 +30881,7 @@ modeles:
     attendu: "3,331"
     unite: années
     ecart_types: "1,02"
+    ecart_type_nul: "0,8087"
     p: "0,3162"
     p_ajustee: "0,4912"
     retenu: false
@@ -30856,6 +30905,7 @@ modeles:
     attendu: "10,261"
     unite: rang moyen
     ecart_types: "0,38"
+    ecart_type_nul: "1,0736"
     p: "0,7087"
     p_ajustee: "0,8221"
     retenu: false
@@ -30878,6 +30928,7 @@ modeles:
     attendu: "47,603"
     unite: '%'
     ecart_types: "−2,21"
+    ecart_type_nul: "0,6696"
     p: "0,03"
     p_ajustee: "0,0791"
     retenu: false
@@ -30903,6 +30954,7 @@ modeles:
     attendu: "10,824"
     unite: années
     ecart_types: 1
+    ecart_type_nul: "0,0858"
     p: "0,3078"
     p_ajustee: "0,4869"
     retenu: false
@@ -30928,6 +30980,7 @@ modeles:
     attendu: "10,97"
     unite: '%'
     ecart_types: "−1,73"
+    ecart_type_nul: "0,4417"
     p: "0,0845"
     p_ajustee: "0,1634"
     retenu: false
@@ -30953,6 +31006,7 @@ modeles:
     attendu: "60,456"
     unite: '%'
     ecart_types: "−6,69"
+    ecart_type_nul: "0,9944"
     p: "0,0005"
     p_ajustee: "0,002"
     retenu: true
@@ -30978,6 +31032,7 @@ modeles:
     attendu: "2,063"
     unite: '%'
     ecart_types: "−2,1"
+    ecart_type_nul: "0,1713"
     p: "0,039"
     p_ajustee: "0,0917"
     retenu: false
@@ -31004,6 +31059,7 @@ modeles:
     attendu: "38,592"
     unite: '%'
     ecart_types: "−5,92"
+    ecart_type_nul: "1,7298"
     p: "0,0005"
     p_ajustee: "0,002"
     retenu: true
@@ -31144,6 +31200,7 @@ modeles:
     attendu: "3,503"
     unite: ''
     ecart_types: "8,09"
+    ecart_type_nul: "2,1223"
     p: "0,0001"
     p_ajustee: "0,0007"
     retenu: true
@@ -31167,6 +31224,7 @@ modeles:
     attendu: "16,427"
     unite: ''
     ecart_types: "0,84"
+    ecart_type_nul: "5,042"
     p: "0,4032"
     p_ajustee: "0,5658"
     retenu: false
@@ -31190,6 +31248,7 @@ modeles:
     attendu: "0,002"
     unite: ''
     ecart_types: "−3,64"
+    ecart_type_nul: "0,1801"
     p: "0,0002"
     p_ajustee: "0,001"
     retenu: true
@@ -31213,6 +31272,7 @@ modeles:
     attendu: 0
     unite: ''
     ecart_types: "−1,62"
+    ecart_type_nul: "0,1822"
     p: "0,1074"
     p_ajustee: "0,1947"
     retenu: false
@@ -31236,6 +31296,7 @@ modeles:
     attendu: "0,983"
     unite: points
     ecart_types: "−3,44"
+    ecart_type_nul: "5,3817"
     p: "0,0006"
     p_ajustee: "0,0023"
     retenu: true
@@ -31259,6 +31320,7 @@ modeles:
     attendu: "−0,013"
     unite: points de rang
     ecart_types: "−1,41"
+    ecart_type_nul: "3,9861"
     p: "0,1603"
     p_ajustee: "0,2682"
     retenu: false
@@ -31282,6 +31344,7 @@ modeles:
     attendu: "0,041"
     unite: points
     ecart_types: "4,98"
+    ecart_type_nul: "5,4982"
     p: "0,0001"
     p_ajustee: "0,0007"
     retenu: true
@@ -31304,6 +31367,7 @@ modeles:
     attendu: "49,89"
     unite: points de rang
     ecart_types: "0,68"
+    ecart_type_nul: "8,3871"
     p: "0,4985"
     p_ajustee: "0,6378"
     retenu: false
@@ -31326,6 +31390,7 @@ modeles:
     attendu: "46,907"
     unite: points de rang
     ecart_types: "−1,61"
+    ecart_type_nul: "4,9829"
     p: "0,1074"
     p_ajustee: "0,1947"
     retenu: false
@@ -31351,6 +31416,7 @@ modeles:
     attendu: "0,749"
     unite: points
     ecart_types: "4,04"
+    ecart_type_nul: "2,0923"
     p: "0,0003"
     p_ajustee: "0,0014"
     retenu: true
@@ -31374,6 +31440,7 @@ modeles:
     attendu: "2,232"
     unite: points
     ecart_types: "0,24"
+    ecart_type_nul: "4,188"
     p: "0,8204"
     p_ajustee: "0,9035"
     retenu: false
@@ -31397,6 +31464,7 @@ modeles:
     attendu: "−0,841"
     unite: points
     ecart_types: "2,61"
+    ecart_type_nul: "1,7414"
     p: "0,0092"
     p_ajustee: "0,0276"
     retenu: true
@@ -31418,6 +31486,7 @@ modeles:
     attendu: "0,528"
     unite: points
     ecart_types: "0,43"
+    ecart_type_nul: "2,5566"
     p: "0,6702"
     p_ajustee: "0,7987"
     retenu: false
@@ -31440,6 +31509,7 @@ modeles:
     attendu: "2,422"
     unite: points
     ecart_types: 6
+    ecart_type_nul: "2,6737"
     p: "0,0001"
     p_ajustee: "0,0007"
     retenu: true
@@ -31462,6 +31532,7 @@ modeles:
     attendu: "14,422"
     unite: '%'
     ecart_types: "6,91"
+    ecart_type_nul: "1,1346"
     p: "0,0002"
     p_ajustee: "0,001"
     retenu: true
@@ -31484,6 +31555,7 @@ modeles:
     attendu: "−0,38"
     unite: points
     ecart_types: "3,67"
+    ecart_type_nul: "1,7946"
     p: "0,0002"
     p_ajustee: "0,001"
     retenu: true
@@ -31507,6 +31579,7 @@ modeles:
     attendu: "−0,413"
     unite: points
     ecart_types: "−3,69"
+    ecart_type_nul: "1,5992"
     p: "0,0001"
     p_ajustee: "0,0007"
     retenu: true
@@ -31529,6 +31602,7 @@ modeles:
     attendu: "0,997"
     unite: points
     ecart_types: "0,51"
+    ecart_type_nul: "1,9965"
     p: "0,6512"
     p_ajustee: "0,7869"
     retenu: false
@@ -31551,6 +31625,7 @@ modeles:
     attendu: "0,412"
     unite: points
     ecart_types: "0,41"
+    ecart_type_nul: "2,4887"
     p: "0,7492"
     p_ajustee: "0,8465"
     retenu: false
@@ -31574,6 +31649,7 @@ modeles:
     attendu: "2,009"
     unite: points
     ecart_types: "3,06"
+    ecart_type_nul: "4,212"
     p: "0,0036"
     p_ajustee: "0,0112"
     retenu: true
@@ -31596,6 +31672,7 @@ modeles:
     attendu: "0,648"
     unite: points
     ecart_types: "−0,03"
+    ecart_type_nul: "2,5008"
     p: 1
     p_ajustee: 1
     retenu: false
@@ -31619,6 +31696,7 @@ modeles:
     attendu: "1,318"
     unite: points de %
     ecart_types: "19,14"
+    ecart_type_nul: "1,4713"
     p: "0,0005"
     p_ajustee: "0,002"
     retenu: true
@@ -31641,6 +31719,7 @@ modeles:
     attendu: "12,796"
     unite: ''
     ecart_types: "6,75"
+    ecart_type_nul: "5,3611"
     p: "0,0001"
     p_ajustee: "0,0007"
     retenu: true
@@ -31664,6 +31743,7 @@ modeles:
     attendu: "56,966"
     unite: '%'
     ecart_types: "−15,57"
+    ecart_type_nul: "0,5833"
     p: "0,0002"
     p_ajustee: "0,001"
     retenu: true
@@ -31687,6 +31767,7 @@ modeles:
     attendu: "100,344"
     unite: enchaînements
     ecart_types: "2,18"
+    ecart_type_nul: "7,1865"
     p: "0,031"
     p_ajustee: "0,0793"
     retenu: false
@@ -31709,6 +31790,7 @@ modeles:
     attendu: "8,429"
     unite: points
     ecart_types: "−0,17"
+    ecart_type_nul: "4,134"
     p: "0,8615"
     p_ajustee: "0,9253"
     retenu: false
@@ -31733,6 +31815,7 @@ modeles:
     attendu: "0,009"
     unite: ans
     ecart_types: "2,14"
+    ecart_type_nul: "0,896"
     p: "0,0341"
     p_ajustee: "0,0848"
     retenu: false
@@ -31756,6 +31839,7 @@ modeles:
     attendu: "53,943"
     unite: ''
     ecart_types: "−0,56"
+    ecart_type_nul: "8,8954"
     p: "0,5903"
     p_ajustee: "0,7233"
     retenu: false
@@ -31780,6 +31864,7 @@ modeles:
     attendu: 0
     unite: ''
     ecart_types: "1,23"
+    ecart_type_nul: "0,1191"
     p: "0,2239"
     p_ajustee: "0,3607"
     retenu: false
@@ -31837,6 +31922,7 @@ modeles:
     attendu: "0,5"
     unite: rang normalisé
     ecart_types: "−5,61"
+    ecart_type_nul: "0,0178"
     p: "0,0001"
     p_ajustee: "0,0007"
     retenu: true
@@ -31897,6 +31983,7 @@ modeles:
     attendu: "33,453"
     unite: points de %
     ecart_types: "2,48"
+    ecart_type_nul: "11,1747"
     p: "0,0208"
     p_ajustee: "0,0584"
     retenu: false
@@ -33073,7 +33160,7 @@ completude_saisons:
     numero: 9
     titre: Palau
     pays: Palaos
-    lieu: Micronésie
+    lieu: Archipel des Palaos
     annee: 2009
     speciale: false
     effectif: 18
