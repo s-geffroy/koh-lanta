@@ -15,9 +15,9 @@
 #
 couverture:
   saisons_au_format: 28
-  vainqueur_des_poteaux_connu: 21
-  part_poteaux: 75
-  choix_atteste: 9
+  vainqueur_des_poteaux_connu: 28
+  part_poteaux: 100
+  choix_atteste: 12
   qualifies_connus: 18
   saisons_ordre_teste: 5
   rangs_confirmes: 10
@@ -25,14 +25,7 @@ couverture:
   ordre_atteste: 5
   ordre_croisable: 8
   ordre_concordant: 8
-  saisons_sans_poteaux:
-  - s02
-  - s08
-  - s09
-  - s11
-  - s14
-  - s17
-  - sp2
+  saisons_sans_poteaux: []
 lignes:
 - saison: s02
   titre: Nicoya
@@ -43,7 +36,13 @@ lignes:
     elimines: []
   poteaux:
     elimine: bernard-lenoir
-  sources: {}
+    vainqueur: amel-fatnassi
+    choisi: nicolas-roy
+    choix_atteste: true
+    autre_finaliste: nicolas-roy
+  sources:
+    poteaux: fiche nicolas-roy
+    choix: fiche nicolas-roy
 - saison: s04
   titre: Panama
   annee: 2004
@@ -110,7 +109,13 @@ lignes:
     - nathalie-ensargueix
   poteaux:
     elimine: bertrand-bolle
-  sources: {}
+    vainqueur: christelle-gauzet
+    choisi: frederic-favier
+    choix_atteste: true
+    autre_finaliste: frederic-favier
+  sources:
+    poteaux: fiche frederic-favier
+    choix: fiche frederic-favier
 - saison: s09
   titre: Palau
   annee: 2009
@@ -121,7 +126,10 @@ lignes:
     - fabienne-lefebvre-trehoux
   poteaux:
     elimine: isabelle-da-silva
-  sources: {}
+    vainqueur: christina-chevry
+    autre_finaliste: patrick-merle
+  sources:
+    poteaux: fiche isabelle-da-silva
 - saison: s10
   titre: Viêtnam
   annee: 2010
@@ -149,7 +157,11 @@ lignes:
     - ella-gbezan
   poteaux:
     elimine: laurent-maistret
-  sources: {}
+    vainqueur: gerard-urdampilleta
+    vainqueur_deduit: true
+    autre_finaliste: teheiura-teahui
+  sources:
+    poteaux: deduction, fiche teheiura-teahui
 - saison: s12
   titre: Malaisie
   annee: 2012
@@ -175,7 +187,10 @@ lignes:
     - bruno-peisey
   poteaux:
     elimine: melissa-bastin
-  sources: {}
+    vainqueur: chantal-menard
+    autre_finaliste: marc-rambaud
+  sources:
+    poteaux: fiche chantal-menard
 - saison: s15
   titre: Thaïlande
   annee: 2016
@@ -225,7 +240,13 @@ lignes:
     - mathilde-chevalier
   poteaux:
     elimine: vincent-roux
-  sources: {}
+    vainqueur: clementine-jullien
+    choisi: frederic-blancher
+    choix_atteste: true
+    autre_finaliste: frederic-blancher
+  sources:
+    poteaux: fiche clementine-jullien
+    choix: fiche clementine-jullien
 - saison: s18
   titre: Fidji
   annee: 2017
@@ -481,7 +502,10 @@ lignes:
     - linda-alario
   poteaux:
     elimine: christophe-guttatoro-martin
-  sources: {}
+    vainqueur: gregoire-delachaux
+    autre_finaliste: freddy-boucher
+  sources:
+    poteaux: fiche gregoire-delachaux
 - saison: sp3
   titre: La Revanche des héros
   annee: 2012

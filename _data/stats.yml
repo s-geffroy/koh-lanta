@@ -2010,9 +2010,9 @@ jury:
 finale:
   couverture:
     saisons_au_format: 28
-    vainqueur_des_poteaux_connu: 21
-    part_poteaux: 75
-    choix_atteste: 9
+    vainqueur_des_poteaux_connu: 28
+    part_poteaux: 100
+    choix_atteste: 12
     qualifies_connus: 18
     saisons_ordre_teste: 5
     rangs_confirmes: 10
@@ -2020,50 +2020,36 @@ finale:
     ordre_atteste: 5
     ordre_croisable: 8
     ordre_concordant: 8
-    saisons_sans_poteaux:
-    - s02
-    - s08
-    - s09
-    - s11
-    - s14
-    - s17
-    - sp2
-    saisons_sans_poteaux_titres:
-    - <em>Nicoya</em> (2002)
-    - <em>Caramoan</em> (2008)
-    - <em>Palau</em> (2009)
-    - <em>Raja Ampat</em> (2011)
-    - <em>Johor</em> (2015)
-    - <em>Cambodge</em> (2017)
-    - <em>Le Choc des héros</em> (2010)
+    saisons_sans_poteaux: []
+    saisons_sans_poteaux_titres: []
     hors_format: 5
   poteaux:
-    effectif: 21
+    effectif: 28
     vainqueur_des_poteaux:
-      effectif: 21
-      cas: 12
-      probabilite: "57,1"
-      bas: "36,5"
-      haut: "75,5"
+      effectif: 28
+      cas: 17
+      probabilite: "60,7"
+      bas: "42,4"
+      haut: "76,4"
       hasard: 50
-      effectif_texte: "21"
+      effectif_texte: "28"
     autre_finaliste:
-      effectif: 21
-      cas: 9
-      probabilite: "42,9"
-      bas: "24,5"
-      haut: "63,5"
+      effectif: 28
+      cas: 11
+      probabilite: "39,3"
+      bas: "23,6"
+      haut: "57,6"
       hasard: 50
-      effectif_texte: "21"
+      effectif_texte: "28"
     choix_atteste:
-      effectif: 9
-      cas: 7
-      probabilite: "77,8"
-      bas: "45,3"
-      haut: "93,7"
+      effectif: 12
+      cas: 9
+      probabilite: 75
+      bas: "46,8"
+      haut: "91,1"
       hasard: 50
-      effectif_texte: "9"
-    effectif_texte: "21"
+      effectif_texte: "12"
+    effectif_texte: "28"
   par_rang:
   - rang: 1
     libelle: Premier arrivé
@@ -2157,12 +2143,12 @@ finale:
     annee: 2002
     speciale: false
     qualifies: []
-    poteaux: null
-    autre_finaliste: null
+    poteaux: Amel Fatnassi
+    autre_finaliste: Nicolas Roy
     elimine: Bernard Lenoir
     vainqueur: Amel Fatnassi
-    choix_atteste: false
-    poteaux_gagne: null
+    choix_atteste: true
+    poteaux_gagne: true
   - saison: s04
     titre: Panama
     annee: 2004
@@ -2210,23 +2196,23 @@ finale:
     annee: 2008
     speciale: false
     qualifies: []
-    poteaux: null
-    autre_finaliste: null
+    poteaux: Christelle Gauzet
+    autre_finaliste: Frédéric Favier
     elimine: Bertrand Bolle
     vainqueur: Christelle Gauzet
-    choix_atteste: false
-    poteaux_gagne: null
+    choix_atteste: true
+    poteaux_gagne: true
   - saison: s09
     titre: Palau
     annee: 2009
     speciale: false
     qualifies: []
-    poteaux: null
-    autre_finaliste: null
+    poteaux: Christina Chevry
+    autre_finaliste: Patrick Merle
     elimine: Isabelle Da Silva
     vainqueur: Christina Chevry
     choix_atteste: false
-    poteaux_gagne: null
+    poteaux_gagne: true
   - saison: sp1
     titre: Le Retour des héros
     annee: 2009
@@ -2257,23 +2243,23 @@ finale:
     annee: 2010
     speciale: true
     qualifies: []
-    poteaux: null
-    autre_finaliste: null
+    poteaux: Grégoire Delachaux
+    autre_finaliste: Freddy Boucher
     elimine: Christophe Guttatoro-Martin
     vainqueur: Grégoire Delachaux
     choix_atteste: false
-    poteaux_gagne: null
+    poteaux_gagne: true
   - saison: s11
     titre: Raja Ampat
     annee: 2011
     speciale: false
     qualifies: []
-    poteaux: null
-    autre_finaliste: null
+    poteaux: Gérard Urdampilleta
+    autre_finaliste: Teheiura Teahui
     elimine: Laurent Maistret
     vainqueur: Gérard Urdampilleta
     choix_atteste: false
-    poteaux_gagne: null
+    poteaux_gagne: true
   - saison: s12
     titre: Malaisie
     annee: 2012
@@ -2315,12 +2301,12 @@ finale:
     annee: 2015
     speciale: false
     qualifies: []
-    poteaux: null
-    autre_finaliste: null
+    poteaux: Chantal Ménard
+    autre_finaliste: Marc Rambaud
     elimine: Mélissa Bastin
     vainqueur: Marc Rambaud
     choix_atteste: false
-    poteaux_gagne: null
+    poteaux_gagne: false
   - saison: s15
     titre: Thaïlande
     annee: 2016
@@ -2354,12 +2340,12 @@ finale:
     annee: 2017
     speciale: false
     qualifies: []
-    poteaux: null
-    autre_finaliste: null
+    poteaux: Clémentine Jullien
+    autre_finaliste: Frédéric Blancher
     elimine: Vincent Roux
     vainqueur: Frédéric Blancher
-    choix_atteste: false
-    poteaux_gagne: null
+    choix_atteste: true
+    poteaux_gagne: false
   - saison: s18
     titre: Fidji
     annee: 2017
@@ -32346,7 +32332,7 @@ completude_saisons:
     annee: 2002
     speciale: false
     effectif: 16
-    score: "87,8"
+    score: "93,7"
     cellules:
     - cle: casting
       valeur: 100
@@ -32457,11 +32443,11 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 0
     - cle: poteaux
-      valeur: 0
-      texte: non nommé
-      etat: manquant
+      valeur: 100
+      texte: nommé
+      etat: complet
       nature: fait
-      valeur_arrondie: 0
+      valeur_arrondie: 100
     niveau: eleve
     effectif_texte: "16"
   - saison: s03
@@ -33102,7 +33088,7 @@ completude_saisons:
     annee: 2008
     speciale: false
     effectif: 17
-    score: "87,8"
+    score: "93,7"
     cellules:
     - cle: casting
       valeur: 100
@@ -33213,11 +33199,11 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 0
     - cle: poteaux
-      valeur: 0
-      texte: non nommé
-      etat: manquant
+      valeur: 100
+      texte: nommé
+      etat: complet
       nature: fait
-      valeur_arrondie: 0
+      valeur_arrondie: 100
     niveau: eleve
     effectif_texte: "17"
   - saison: s09
@@ -33228,7 +33214,7 @@ completude_saisons:
     annee: 2009
     speciale: false
     effectif: 18
-    score: "86,6"
+    score: "92,1"
     cellules:
     - cle: casting
       valeur: 100
@@ -33339,11 +33325,11 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 0
     - cle: poteaux
-      valeur: 0
-      texte: non nommé
-      etat: manquant
+      valeur: 100
+      texte: nommé
+      etat: complet
       nature: fait
-      valeur_arrondie: 0
+      valeur_arrondie: 100
     niveau: eleve
     effectif_texte: "18"
   - saison: sp1
@@ -33606,7 +33592,7 @@ completude_saisons:
     annee: 2010
     speciale: true
     effectif: 14
-    score: 80
+    score: "85,9"
     cellules:
     - cle: casting
       valeur: 100
@@ -33717,11 +33703,11 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 0
     - cle: poteaux
-      valeur: 0
-      texte: non nommé
-      etat: manquant
+      valeur: 100
+      texte: nommé
+      etat: complet
       nature: fait
-      valeur_arrondie: 0
+      valeur_arrondie: 100
     niveau: eleve
     effectif_texte: "14"
   - saison: s11
@@ -33732,7 +33718,7 @@ completude_saisons:
     annee: 2011
     speciale: false
     effectif: 20
-    score: 79
+    score: "84,2"
     cellules:
     - cle: casting
       valeur: 100
@@ -33843,12 +33829,12 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 0
     - cle: poteaux
-      valeur: 0
-      texte: non nommé
-      etat: manquant
+      valeur: 100
+      texte: nommé
+      etat: complet
       nature: fait
-      valeur_arrondie: 0
-    niveau: partiel
+      valeur_arrondie: 100
+    niveau: eleve
     effectif_texte: "20"
   - saison: s12
     numero: 12
@@ -34236,7 +34222,7 @@ completude_saisons:
     annee: 2015
     speciale: false
     effectif: 20
-    score: "80,9"
+    score: "86,2"
     cellules:
     - cle: casting
       valeur: 100
@@ -34347,11 +34333,11 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 0
     - cle: poteaux
-      valeur: 0
-      texte: non nommé
-      etat: manquant
+      valeur: 100
+      texte: nommé
+      etat: complet
       nature: fait
-      valeur_arrondie: 0
+      valeur_arrondie: 100
     niveau: eleve
     effectif_texte: "20"
   - saison: s15
@@ -34614,7 +34600,7 @@ completude_saisons:
     annee: 2017
     speciale: false
     effectif: 21
-    score: "78,2"
+    score: "83,5"
     cellules:
     - cle: casting
       valeur: 100
@@ -34725,12 +34711,12 @@ completude_saisons:
       nature: fait
       valeur_arrondie: 0
     - cle: poteaux
-      valeur: 0
-      texte: non nommé
-      etat: manquant
+      valeur: 100
+      texte: nommé
+      etat: complet
       nature: fait
-      valeur_arrondie: 0
-    niveau: partiel
+      valeur_arrondie: 100
+    niveau: eleve
     effectif_texte: "21"
   - saison: s18
     numero: 18
@@ -36627,12 +36613,12 @@ completude_saisons:
     libelle: Vainqueur des poteaux
     court: Poteaux
     nature: fait
-    moyenne: 75
-    completes: 21
+    moyenne: 100
+    completes: 28
     concernees: 28
   saisons: 34
   cases: 611
-  moyenne: "89,2"
+  moyenne: "90,3"
   meilleure: s05
   pire: sp8
 articles:
@@ -37285,10 +37271,10 @@ mots:
   ecart_age_vainqueurs_maj: Trente et un
   regions_outremer: quatre
   regions_outremer_maj: Quatre
-  poteaux_saisons: vingt et un
-  poteaux_saisons_maj: Vingt et un
-  choix_atteste: neuf
-  choix_atteste_maj: Neuf
+  poteaux_saisons: vingt-huit
+  poteaux_saisons_maj: Vingt-huit
+  choix_atteste: douze
+  choix_atteste_maj: Douze
   facettes_initiales: cinq
   facettes_initiales_maj: Cinq
   artefacts: trois

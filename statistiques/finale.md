@@ -29,7 +29,8 @@ Trois décisions s’enchaînent donc, et aucune n’avait été mesurée ici �
 qu’aucune n’était dans les données. `epreuves.yml` ne porte **aucun nom
 d’épreuve** ; la dernière épreuve d’immunité individuelle relevée n’est pas les
 poteaux, et pour plusieurs saisons son vainqueur est justement la personne éliminée
-dessus. Il a fallu aller lire les deux wikis.
+dessus. Il a fallu aller lire les deux wikis, et parfois la page d’un des trois
+aventuriers.
 
 <ul class="chiffres">
   <li class="chiffre"><b>{{ cv.vainqueur_des_poteaux_connu }}</b><span>saisons dont on connaît le vainqueur des poteaux</span></li>
@@ -47,7 +48,7 @@ deux.
 
 <p class="legende-figure">Part des saisons remportées par le vainqueur des
 poteaux et par le finaliste qu’il emmène, sur les {{ p.effectif }} saisons dont
-la source nomme le vainqueur des poteaux.</p>
+une source nomme le vainqueur des poteaux.</p>
 
 <div class="constat">
   <p><b>{{ p.vainqueur_des_poteaux.cas }} fois sur {{ p.effectif }}</b>, soit
@@ -66,8 +67,8 @@ la source nomme le vainqueur des poteaux.</p>
 {{ p.choix_atteste.probabilite }} %. L’intervalle
 ({{ p.choix_atteste.bas }} – {{ p.choix_atteste.haut }} %) contient encore 50 %,
 et il faudrait s’en méfier deux fois plutôt qu’une : ces
-{{ site.data.stats.mots.choix_atteste }} saisons sont les
-plus récentes, pas un échantillon au hasard.</p>
+{{ site.data.stats.mots.choix_atteste }} saisons ne sont pas un échantillon
+au hasard : ce sont celles dont une source a raconté la scène.</p>
 
 ## L’ordre d’arrivée à l’orientation
 
@@ -199,9 +200,17 @@ cette page cesse d’être publiable, et on le saura.
   dernier qualifié tient à
   {{ r3.gagne_la_saison.cas }} victoires ; {{ r3.gagne_la_saison.marge }} de moins et l’intervalle
   reprendrait le hasard. Il demande à être revu dans cinq ans.</p>
-  <p><b>{{ cv.saisons_sans_poteaux.size }} saisons manquent</b> —
-  {{ cv.saisons_sans_poteaux_titres | join: ", " }} — parce qu’aucune des deux sources
-  n’y nomme le vainqueur des poteaux. Ce sont surtout des saisons anciennes, et
-  rien ne garantit qu’elles ressembleraient aux autres. {{ cv.hors_format }} éditions de
-  plus sont écartées d’office : leur fin ne suit pas le format à trois aux poteaux.</p>
+{% if cv.saisons_sans_poteaux.size > 0 %}  <p><b>{{ cv.saisons_sans_poteaux.size }} saisons manquent</b> —
+  {{ cv.saisons_sans_poteaux_titres | join: ", " }} — parce qu’aucune source
+  n’y nomme le vainqueur des poteaux. Rien ne garantit qu’elles ressembleraient
+  aux autres.</p>
+{% else %}  <p><b>Aucune saison au format ne manque, mais sept ont été complétées à part.</b>
+  Jusqu’au 3 novembre 2026, ni le tableau ni le récit des deux wikis n’y
+  nommaient le vainqueur des poteaux, et la page les écartait. La page
+  individuelle d’un des trois aventuriers le fait — à <i>Caramoan</i>, sous le
+  nom d’« épreuve du Perchoir ». Pour <i>Raja Ampat</i>, c’est une déduction :
+  la page de Teheiura dit que la victoire lui a échappé, et Laurent est
+  l’éliminé des poteaux ; reste Gérard.</p>
+{% endif %}  <p>{{ cv.hors_format }} éditions sont écartées d’office : leur fin ne suit pas le
+  format à trois aux poteaux.</p>
 </div>

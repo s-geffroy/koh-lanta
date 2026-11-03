@@ -27,6 +27,14 @@ poignard » en s24), et ils sont ecrits en tete dans les deux cas. Le controle
 est refait a chaque passage et son taux est publie ; une contradiction est une
 erreur, pas un arrondi.
 
+Troisieme source, pour les saisons ou ni le tableau ni la prose de saison ne
+nomment le vainqueur des poteaux : les PAGES INDIVIDUELLES Fandom
+(specs/sources/personnes/). Leur phrase ne suit aucun gabarit -- « Il perd les
+poteaux mais est choisi par Amel », « Christelle a remporte l'epreuve du
+Perchoir » --, donc on ne la cherche pas par motif : `FICHES` la recopie mot
+pour mot, et chaque passage verifie qu'elle est TOUJOURS dans la page. Une
+citation qui a disparu est une erreur, pas un silence.
+
 Aucune valeur n'est devinee. Un champ que les sources ne donnent pas reste
 absent.
 
@@ -47,6 +55,64 @@ RACINE = os.path.abspath(os.path.join(ICI, "..", ".."))
 WIKI = os.environ.get("KL_WIKI", os.path.join(RACINE, "specs", "sources", "wiki"))
 
 from parse_fandom import plain, slug, split_rows, split_cells
+
+PERSONNES = os.path.join(RACINE, "specs", "sources", "personnes")
+
+# Le vainqueur des poteaux, quand seule une page individuelle le nomme (revue
+# du 3 nov. 2026). `page` : la fiche qui porte la phrase ; `choisi` : seulement
+# si la phrase dit le CHOIX du finaliste. `perdant` : la phrase dit seulement
+# qui n'a PAS gagne ; le vainqueur est alors le seul du trio a n'etre ni lui ni
+# l'elimine des poteaux, et la ligne le dit (`vainqueur_deduit`).
+FICHES = {
+    "s02": {"vainqueur": "amel-fatnassi", "choisi": "nicolas-roy", "page": "nicolas-roy",
+            "citation": "Il perd les poteaux mais est choisi par [[Amel Fatnassi|Amel]] "
+                        "pour affronter le jury final"},
+    # A Caramoan, la page dit « l'epreuve du Perchoir » : ce sont les poteaux.
+    "s08": {"vainqueur": "christelle-gauzet", "choisi": "frederic-favier",
+            "page": "frederic-favier",
+            "citation": "lorsque Christelle a remporté l' épreuve du Perchoir lors du duel "
+                        "final à trois, elle a choisi de l'emmener en finale à deux plutôt "
+                        "que Bertrand"},
+    "s09": {"vainqueur": "christina-chevry", "page": "isabelle-da-silva",
+            "citation": "ne sera pas choisie par [[Christina Chevry|Christina]] après sa "
+                        "victoire aux poteaux"},
+    # Gerard n'a pas de page ; celle de Teheiura, section Raja Ampat, dit qu'il
+    # n'a pas gagne, et Laurent est l'elimine des poteaux.
+    "s11": {"vainqueur": "gerard-urdampilleta", "perdant": "teheiura-teahui",
+            "page": "teheiura-teahui",
+            "citation": "Sur les poteaux, la victoire lui échappe de peu"},
+    "s14": {"vainqueur": "chantal-menard", "page": "chantal-menard",
+            "citation": "Chantal a remporté l'[[Épreuve d'Orientation]] en 34 mn et les "
+                        "[[Poteaux]] en 2h44 mn"},
+    "s17": {"vainqueur": "clementine-jullien", "choisi": "frederic-blancher",
+            "page": "clementine-jullien",
+            "citation": "elle remporte les poteaux, et choisit Frédéric comme finaliste"},
+    "sp2": {"vainqueur": "gregoire-delachaux", "page": "gregoire-delachaux",
+            "citation": "dont l'épreuve des poteaux lors du ''Choc des Héros"},
+}
+
+
+def lire_fiche(sid, trio, elimine, rapport):
+    """(vainqueur, choisi, deduit, page) d'apres `FICHES`, ou None."""
+    f = FICHES.get(sid)
+    if not f:
+        return None
+    chemin = os.path.join(PERSONNES, f["page"] + ".fandom.wiki")
+    texte = open(chemin, encoding="utf-8").read() if os.path.exists(chemin) else ""
+    if f["citation"] not in re.sub(r"[ \t]+", " ", texte):
+        rapport.append(f"{sid} : la citation de {f['page']} n'est plus dans sa page — "
+                       f"vainqueur des poteaux non lu")
+        return None
+    vainqueur = f["vainqueur"]
+    if f.get("perdant"):
+        reste = trio - {f["perdant"], elimine}
+        if reste != {vainqueur}:
+            rapport.append(f"{sid} : la deduction ne donne pas {vainqueur} ({sorted(reste)})")
+            return None
+    if vainqueur not in trio or vainqueur == elimine:
+        rapport.append(f"{sid} : {vainqueur} n'est pas un vainqueur possible des poteaux")
+        return None
+    return vainqueur, f.get("choisi"), bool(f.get("perdant")), f["page"]
 
 ENTETE = """# ATTENTION : fichier genere. Ne pas editer a la main.
 #
@@ -301,6 +367,24 @@ def construire(saisons, parts, rapport):
                 ligne["poteaux"]["choisi"] = choisi
                 ligne["poteaux"]["choix_atteste"] = True
                 sources["choix"] = f"prose {nom}"
+
+        lu = lire_fiche(sid, trio, ligne["poteaux"]["elimine"], rapport)
+        if lu:
+            gagnant, choisi, deduit, page = lu
+            if "vainqueur" not in ligne["poteaux"]:
+                ligne["poteaux"]["vainqueur"] = gagnant
+                if deduit:
+                    ligne["poteaux"]["vainqueur_deduit"] = True
+                sources["poteaux"] = f"{'deduction, ' if deduit else ''}fiche {page}"
+            elif ligne["poteaux"]["vainqueur"] != gagnant:
+                rapport.append(f"{sid} : la fiche {page} donne « {gagnant} » vainqueur "
+                               f"des poteaux, les autres sources « "
+                               f"{ligne['poteaux']['vainqueur']} »")
+            if choisi and not ligne["poteaux"].get("choix_atteste") \
+                    and ligne["poteaux"]["vainqueur"] == gagnant:
+                ligne["poteaux"]["choisi"] = choisi
+                ligne["poteaux"]["choix_atteste"] = True
+                sources["choix"] = f"fiche {page}"
 
         gagnant_poteaux = ligne["poteaux"].get("vainqueur")
         if gagnant_poteaux:

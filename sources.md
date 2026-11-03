@@ -283,7 +283,12 @@ pour plusieurs saisons, son vainqueur est justement la personne portée
 Deux gisements ont été croisés : la colonne « Épreuve des poteaux » du tableau
 de déroulement des deux wikis, et les notes de bas de page, dont la tournure est
 stable — « <em>Cynthia, vainqueur de l’épreuve des poteaux, décide d’affronter
-Clarisse</em> ».
+Clarisse</em> ». Pour sept saisons, ni l’un ni l’autre ne nommait le vainqueur ;
+la page individuelle Fandom d’un des trois aventuriers le fait, et sa phrase est
+recopiée mot pour mot dans le programme, qui vérifie à chaque passage qu’elle
+est toujours dans la page. Une seule est une déduction, et le champ le dit :
+à <em>Raja Ampat</em>, la page de Teheiura dit que la victoire lui a échappé,
+et Laurent est l’éliminé des poteaux.
 
 <div class="constat">
   <p><b>{{ fc.vainqueur_des_poteaux_connu }} saisons sur
