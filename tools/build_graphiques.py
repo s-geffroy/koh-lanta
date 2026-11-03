@@ -1267,7 +1267,7 @@ def figures_des_modeles(stats):
             description='Part des bulletins visant un gagnant du confort du même épisode. Le trait vertical marque la part que ces gagnants représentent parmi les présents.',
             reference=cf["attendu"], unite=" %", largeur=740, marge_gauche=290,
             hauteur_ligne=34,
-            note=f'{cf["conseils"]} conseils · {cf["bulletins"]} bulletins · '
+            note=f'{cf["conseils"]} conseils · {compte(cf["bulletins"], "bulletin", "bulletins")} · '
                  f'p = {cf["p"]}'))
 
     # --- I. le jury final ---------------------------------------------------
