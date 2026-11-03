@@ -329,7 +329,7 @@ Données, sources et registre des tests : sur ce site, pages [les sources]({{ '
 - <span id="ref-hillman2009"></span>Hillman, Amy J., Withers, Michael C. et Collins, Brian J. (2009). Resource Dependence Theory: A Review. *Journal of Management*, 35(6), 1404–1427. <https://doi.org/10.1177/0149206309343469>
 - <span id="ref-hirschman1970"></span>Hirschman, Albert O. (1970). *Exit, Voice, and Loyalty: Responses to Decline in Firms, Organizations, and States*. Harvard University Press.
 - <span id="ref-hollon2015"></span>Hollon, Nick G., Burgeno, Lauren M. et Phillips, Paul E. M. (2015). Stress effects on the neural substrates of motivated behavior. *Nature Neuroscience*, 18, 1405–1412. <https://doi.org/10.1038/nn.4114>
-- <span id="ref-jost2001"></span>Jost, François (2001). *La télévision du quotidien : entre réalité et fiction*. De Boeck / INA.
+- <span id="ref-jost2001"></span>Jost, François (2001). *La télévision du quotidien : entre réalité et fiction*. De Boeck Université / INA.
 - <span id="ref-lazearrosen1981tournaments"></span>Lazear, Edward P. et Rosen, Sherwin (1981). Rank-Order Tournaments as Optimum Labor Contracts. *Journal of Political Economy*, 89(5), 841–864. <https://doi.org/10.1086/261010>
 - <span id="ref-mcewen1998"></span>McEwen, Bruce S. (1998). Stress, Adaptation, and Disease: Allostasis and Allostatic Load. *Annals of the New York Academy of Sciences*, 840, 33–44. <https://doi.org/10.1111/j.1749-6632.1998.tb09546.x>
 - <span id="ref-nowaksigmund1998"></span>Nowak, Martin A. et Sigmund, Karl (1998). Evolution of indirect reciprocity by image scoring. *Nature*, 393, 573–577. <https://doi.org/10.1038/31225>
