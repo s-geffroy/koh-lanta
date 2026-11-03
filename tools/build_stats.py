@@ -2097,6 +2097,31 @@ def formes_des_gabarits(stats):
         stats.setdefault("sommaire", {})["pages"] = positions_du_sommaire(nav)
 
 
+def poser_les_arrondis(noeud):
+    """Pose `observe_arrondi` et `attendu_arrondi` sur tout test de l'arbre.
+
+    Un test se reconnait a sa `cle` et a sa valeur `observe` numerique. Une
+    decimale, sauf quand observe et attendu sont tous deux sous 1 en valeur
+    absolue -- correlations, rang normalise : « 0,1 » n'y dirait plus rien,
+    on en garde deux. La precision est celle de la paire, pour que les deux
+    nombres d'une meme phrase se comparent.
+    """
+    if isinstance(noeud, dict):
+        if "cle" in noeud and isinstance(noeud.get("observe"), (int, float)) \
+                and not isinstance(noeud.get("observe"), bool):
+            valeurs = [noeud[k] for k in ("observe", "attendu")
+                       if isinstance(noeud.get(k), (int, float))]
+            n = 2 if max(abs(v) for v in valeurs) < 1 else 1
+            for k in ("observe", "attendu"):
+                if isinstance(noeud.get(k), (int, float)):
+                    noeud[f"{k}_arrondi"] = round(noeud[k], n)
+        for x in noeud.values():
+            poser_les_arrondis(x)
+    elif isinstance(noeud, list):
+        for x in noeud:
+            poser_les_arrondis(x)
+
+
 def champs_d_affichage(stats):
     """Ce que les pages calculaient en Liquid, calcule ici.
 
@@ -2109,17 +2134,17 @@ def champs_d_affichage(stats):
     """
     m, c = stats["modeles"], stats["classement"]
 
-    # `t.observe | round: 1` et `t.attendu | round: 1` : une dizaine de pages
-    # de resultats citent l'ecart d'un test arrondi au dixieme.
+    # `t.observe | round: 1` et `t.attendu | round: 1` : les pages de resultats
+    # citent un test arrondi, jamais a la troisieme decimale (« 29,478 points »
+    # a ete publie). Tous les tests, pas seulement ceux du registre : les pages
+    # lisent aussi les copies rangees sous leur rubrique (`alliances.test`).
+    poser_les_arrondis(stats)
     for t in m["registre"]:
-        for cle in ("observe", "attendu"):
-            if isinstance(t.get(cle), (int, float)):
-                t[f"{cle}_arrondi"] = round(t[cle], 1)
         # L'unite accordee a la valeur observee : « 0,212 personne »,
         # « 1,6 point », et le pluriel a partir de 2. /methode/ ecrivait
         # « 1,634 points » sous chaque test.
         u = t.get("unite") or ""
-        if isinstance(t.get("observe"), (int, float)) and abs(t["observe"]) < 2:
+        if isinstance(t.get("observe_arrondi"), (int, float)) and abs(t["observe_arrondi"]) < 2:
             for pluriel, singulier in (("points", "point"), ("personnes", "personne"),
                                        ("ans", "an"), ("enchaînements", "enchaînement"),
                                        ("jours", "jour"), ("voix", "voix")):

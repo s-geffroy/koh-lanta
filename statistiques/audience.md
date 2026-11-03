@@ -147,7 +147,7 @@ en chiffres.</p>
   <b>×{{ a.retournement.ratio_avant }}</b> le lancement. Depuis :
   <b>×{{ a.retournement.ratio_apres }}</b>.</p>
   <p>La corrélation entre l’année et ce rapport vaut
-  <b>{{ tf.observe }}</b> — {{ tf.ecart_types }} {{ tf.ecart_types_mot }}, p ajustée {{ tf.p_ajustee }}. <b>Le public ne reste plus jusqu’au bout.</b></p>
+  <b>{{ tf.observe_arrondi }}</b> — {{ tf.ecart_types }} {{ tf.ecart_types_mot }}, p ajustée {{ tf.p_ajustee }}. <b>Le public ne reste plus jusqu’au bout.</b></p>
 </div>
 
 C’est une information sur le programme que le programme ne donne pas, et qu’un
@@ -173,7 +173,7 @@ et on ne compare que les écarts.</p>
 
 <div class="constat">
   <p>Une fois la tendance retirée, la corrélation tombe de
-  {{ a.format_correlation_brute }} à <b>{{ ts.observe }}</b> —
+  {{ a.format_correlation_brute }} à <b>{{ ts.observe_arrondi }}</b> —
   {{ ts.ecart_types }} {{ ts.ecart_types_mot }}, p ajustée {{ ts.p_ajustee }}.
   <b>Il ne reste rien.</b></p>
   <p>Rien ne dit ici que la production réagit à ses audiences en changeant la

@@ -24142,8 +24142,11 @@ modeles:
       origine: casting
       p_ajustee: "0,0007"
       retenu: true
+      observe_arrondi: "0,2"
+      attendu_arrondi: "1,7"
       ecart_types_mot: écarts-types
       ecart_types_abs: "5,79"
+      observe_arrondi_pluriel: false
       tirages_texte: 10 000
     - cle: etendue_ages
       libelle: L’écart d’âge dans un même casting
@@ -24195,8 +24198,11 @@ modeles:
       origine: casting
       p_ajustee: "0,0389"
       retenu: true
+      observe_arrondi: "9,9"
+      attendu_arrondi: "9,7"
       ecart_types_mot: écarts-types
       ecart_types_abs: "2,46"
+      observe_arrondi_pluriel: true
       tirages_texte: 10 000
     - cle: familles_metiers
       libelle: La variété des métiers
@@ -24248,8 +24254,11 @@ modeles:
       origine: casting
       p_ajustee: "0,9199"
       retenu: false
+      observe_arrondi: 245
+      attendu_arrondi: "246,5"
       ecart_types_mot: écart-type
       ecart_types_abs: "0,28"
+      observe_arrondi_pluriel: true
       tirages_texte: 10 000
     - cle: melange_archetypes
       libelle: Le mélange d’archétypes
@@ -24301,8 +24310,11 @@ modeles:
       origine: casting
       p_ajustee: "0,1988"
       retenu: false
+      observe_arrondi: "0,3"
+      attendu_arrondi: "0,25"
       ecart_types_mot: écart-type
       ecart_types_abs: "1,62"
+      observe_arrondi_pluriel: false
       tirages_texte: 10 000
     - cle: tribus_femmes
       libelle: La composition des deux tribus
@@ -24355,8 +24367,11 @@ modeles:
       origine: casting
       p_ajustee: "0,0943"
       retenu: false
+      observe_arrondi: "11,7"
+      attendu_arrondi: "18,7"
       ecart_types_mot: écarts-types
       ecart_types_abs: "2,05"
+      observe_arrondi_pluriel: true
       tirages_texte: 10 000
     - cle: tribus_ages
       libelle: L’âge moyen des deux tribus
@@ -24409,8 +24424,11 @@ modeles:
       origine: casting
       p_ajustee: "0,0074"
       retenu: true
+      observe_arrondi: "5,8"
+      attendu_arrondi: "3,9"
       ecart_types_mot: écarts-types
       ecart_types_abs: "3,03"
+      observe_arrondi_pluriel: true
       tirages_texte: 10 000
     - cle: tribus_ages_mediane
       libelle: L’âge des deux tribus, à la médiane
@@ -24462,22 +24480,34 @@ modeles:
       origine: casting
       p_ajustee: "0,4912"
       retenu: false
+      observe_arrondi: "4,2"
+      attendu_arrondi: "3,3"
       ecart_types_mot: écart-type
       ecart_types_abs: "1,02"
+      observe_arrondi_pluriel: true
       tirages_texte: 10 000
     sensibilite:
     - cle: etendue_ages
       p: "0,006"
       attendu: "9,694"
       observe: "9,945"
+      observe_arrondi: "9,9"
+      attendu_arrondi: "9,7"
+      observe_arrondi_pluriel: true
     - cle: familles_metiers
       p: 1
       attendu: "244,857"
       observe: 245
+      observe_arrondi: 245
+      attendu_arrondi: "244,9"
+      observe_arrondi_pluriel: true
     - cle: melange_archetypes
       p: "0,3526"
       attendu: "0,274"
       observe: "0,302"
+      observe_arrondi: "0,3"
+      attendu_arrondi: "0,27"
+      observe_arrondi_pluriel: false
   pronostic:
     effectif: 507
     saisons: 26
@@ -24584,8 +24614,11 @@ modeles:
       origine: pronostic
       p_ajustee: "0,808"
       retenu: false
+      observe_arrondi: "10,7"
+      attendu_arrondi: "10,3"
       ecart_types_mot: écart-type
       ecart_types_abs: "0,42"
+      observe_arrondi_pluriel: true
       tirages_texte: 10 000
     classement:
     - nom: Ambre Daudet
@@ -25250,8 +25283,11 @@ modeles:
       origine: alliances
       p_ajustee: "0,002"
       retenu: true
+      observe_arrondi: "29,5"
+      attendu_arrondi: "1,3"
       ecart_types_mot: écarts-types
       ecart_types_abs: "19,14"
+      observe_arrondi_pluriel: true
       tirages_texte: 2 000
     majorite:
       effectif: 240
@@ -25422,8 +25458,11 @@ modeles:
       origine: homophilie
       p_ajustee: "0,0816"
       retenu: false
+      observe_arrondi: "46,1"
+      attendu_arrondi: "47,6"
       ecart_types_mot: écarts-types
       ecart_types_abs: "2,21"
+      observe_arrondi_pluriel: true
       tirages_texte: 2 000
     - cle: vote_ecart_age
       libelle: L’écart d’âge avec sa cible
@@ -25479,8 +25518,11 @@ modeles:
       origine: homophilie
       p_ajustee: "0,4869"
       retenu: false
+      observe_arrondi: "10,9"
+      attendu_arrondi: "10,8"
       ecart_types_mot: écart-type
       ecart_types_abs: 1
+      observe_arrondi_pluriel: true
       tirages_texte: 2 000
     - cle: vote_meme_metier
       libelle: Viser la même famille de métiers
@@ -25536,8 +25578,11 @@ modeles:
       origine: homophilie
       p_ajustee: "0,1048"
       retenu: false
+      observe_arrondi: "10,1"
+      attendu_arrondi: 11
       ecart_types_mot: écart-type
       ecart_types_abs: "1,99"
+      observe_arrondi_pluriel: true
       tirages_texte: 2 000
     - cle: vote_meme_bandeau
       libelle: Viser sa propre tribu initiale
@@ -25593,8 +25638,11 @@ modeles:
       origine: homophilie
       p_ajustee: "0,002"
       retenu: true
+      observe_arrondi: "53,8"
+      attendu_arrondi: "60,5"
       ecart_types_mot: écarts-types
       ecart_types_abs: "6,69"
+      observe_arrondi_pluriel: true
       tirages_texte: 2 000
     - cle: vote_meme_departement
       libelle: Viser quelqu’un de son département
@@ -25650,8 +25698,11 @@ modeles:
       origine: homophilie
       p_ajustee: "0,0943"
       retenu: false
+      observe_arrondi: "1,7"
+      attendu_arrondi: "2,1"
       ecart_types_mot: écarts-types
       ecart_types_abs: "2,1"
+      observe_arrondi_pluriel: false
       tirages_texte: 2 000
     - cle: vote_bandeau_apres_fusion
       libelle: Épargner sa tribu initiale
@@ -25705,8 +25756,11 @@ modeles:
       origine: homophilie
       p_ajustee: "0,002"
       retenu: true
+      observe_arrondi: "28,3"
+      attendu_arrondi: "38,6"
       ecart_types_mot: écarts-types
       ecart_types_abs: "5,92"
+      observe_arrondi_pluriel: true
       tirages_texte: 2 000
   trahison:
     bulletins: 2034
@@ -25762,8 +25816,11 @@ modeles:
       origine: trahison
       p_ajustee: "0,001"
       retenu: true
+      observe_arrondi: "47,9"
+      attendu_arrondi: 57
       ecart_types_mot: écarts-types
       ecart_types_abs: "15,57"
+      observe_arrondi_pluriel: true
       tirages_texte: 4 000
     effet:
       effectif: 271
@@ -25968,8 +26025,11 @@ modeles:
       origine: decimation
       p_ajustee: "0,0817"
       retenu: false
+      observe_arrondi: 116
+      attendu_arrondi: "100,3"
       ecart_types_mot: écarts-types
       ecart_types_abs: "2,18"
+      observe_arrondi_pluriel: true
       tirages_texte: 10 000
   jury_final:
     bulletins: 294
@@ -26482,8 +26542,11 @@ modeles:
       origine: ruptures
       p_ajustee: "0,7233"
       retenu: false
+      observe_arrondi: 49
+      attendu_arrondi: "53,9"
       ecart_types_mot: écart-type
       ecart_types_abs: "0,56"
+      observe_arrondi_pluriel: true
       tirages_texte: 10 000
     test:
       cle: rupture
@@ -26538,8 +26601,11 @@ modeles:
       origine: ruptures
       p_ajustee: "0,0007"
       retenu: true
+      observe_arrondi: 49
+      attendu_arrondi: "12,8"
       ecart_types_mot: écarts-types
       ecart_types_abs: "6,75"
+      observe_arrondi_pluriel: true
       tirages_texte: 10 000
     abandon_rapport: "1,7"
   audience:
@@ -26989,8 +27055,8 @@ modeles:
       avant: 7
       apres: 26
       bascule: *id069
-      ratio_avant: "1,282"
-      ratio_apres: "0,965"
+      ratio_avant: "1,28"
+      ratio_apres: "0,97"
     courbes:
     - saison: s05
       titre: Pacifique
@@ -27393,7 +27459,7 @@ modeles:
     meme_soir_avant:
     - titre: Le Retour des héros
       annee: 2009
-    format_correlation_brute: "−0,643"
+    format_correlation_brute: "−0,64"
     tests:
     - cle: audience_rupture
       libelle: La rupture d’audience
@@ -27446,8 +27512,11 @@ modeles:
       origine: audience
       p_ajustee: "0,0007"
       retenu: true
+      observe_arrondi: "20,7"
+      attendu_arrondi: "3,5"
       ecart_types_mot: écarts-types
       ecart_types_abs: "8,09"
+      observe_arrondi_pluriel: true
       tirages_texte: 10 000
     - cle: audience_glissement
       libelle: 'La chute d’audience : une date plutôt qu’un glissement'
@@ -27500,8 +27569,11 @@ modeles:
       origine: audience
       p_ajustee: "0,57"
       retenu: false
+      observe_arrondi: "20,7"
+      attendu_arrondi: "16,4"
       ecart_types_mot: écart-type
       ecart_types_abs: "0,84"
+      observe_arrondi_pluriel: true
       tirages_texte: 10 000
     - cle: audience_retournement
       libelle: Le retournement finale / lancement
@@ -27553,8 +27625,11 @@ modeles:
       origine: audience
       p_ajustee: "0,001"
       retenu: true
+      observe_arrondi: "−0,65"
+      attendu_arrondi: 0
       ecart_types_mot: écarts-types
       ecart_types_abs: "3,64"
+      observe_arrondi_pluriel: false
       tirages_texte: 10 000
     - cle: audience_format
       libelle: Le format suit-il l’audience ?
@@ -27608,8 +27683,11 @@ modeles:
       origine: audience
       p_ajustee: "0,1988"
       retenu: false
+      observe_arrondi: "−0,3"
+      attendu_arrondi: 0
       ecart_types_mot: écart-type
       ecart_types_abs: "1,62"
+      observe_arrondi_pluriel: false
       tirages_texte: 10 000
     perte_regimes: 48
     moyenne_avant_millions: "6,3"
@@ -27721,8 +27799,11 @@ modeles:
       origine: avant_apres
       p_ajustee: "0,0023"
       retenu: true
+      observe_arrondi: "−17,5"
+      attendu_arrondi: 1
       ecart_types_mot: écarts-types
       ecart_types_abs: "3,44"
+      observe_arrondi_pluriel: true
       tirages_texte: 10 000
     - cle: fusion_force
       libelle: La force des éliminés, avant et après la réunification
@@ -27775,8 +27856,11 @@ modeles:
       origine: avant_apres
       p_ajustee: "0,2735"
       retenu: false
+      observe_arrondi: "−5,6"
+      attendu_arrondi: 0
       ecart_types_mot: écart-type
       ecart_types_abs: "1,41"
+      observe_arrondi_pluriel: true
       tirages_texte: 10 000
     - cle: fusion_serre
       libelle: Des conseils plus serrés après la réunification ?
@@ -27829,8 +27913,11 @@ modeles:
       origine: avant_apres
       p_ajustee: "0,0007"
       retenu: true
+      observe_arrondi: "27,4"
+      attendu_arrondi: 0
       ecart_types_mot: écarts-types
       ecart_types_abs: "4,98"
+      observe_arrondi_pluriel: true
       tirages_texte: 10 000
     - cle: ambassadeurs_force
       libelle: Qui les ambassadeurs éliminent-ils ?
@@ -27882,8 +27969,11 @@ modeles:
       origine: avant_apres
       p_ajustee: "0,6473"
       retenu: false
+      observe_arrondi: "55,6"
+      attendu_arrondi: "49,9"
       ecart_types_mot: écart-type
       ecart_types_abs: "0,68"
+      observe_arrondi_pluriel: true
       tirages_texte: 10 000
     - cle: ambassadeurs_survie
       libelle: L’ambassadeur qui négocie s’en sort-il mieux ?
@@ -27938,8 +28028,11 @@ modeles:
       origine: avant_apres
       p_ajustee: "0,1988"
       retenu: false
+      observe_arrondi: "38,9"
+      attendu_arrondi: "46,9"
       ecart_types_mot: écart-type
       ecart_types_abs: "1,61"
+      observe_arrondi_pluriel: true
       tirages_texte: 100 000
   conditionnelles:
     presences: 1720
@@ -28873,8 +28966,11 @@ modeles:
       origine: conditionnelles
       p_ajustee: "0,0014"
       retenu: true
+      observe_arrondi: "9,2"
+      attendu_arrondi: "0,7"
       ecart_types_mot: écarts-types
       ecart_types_abs: "4,04"
+      observe_arrondi_pluriel: true
       tirages_texte: 10 000
     - cle: menace_sommet
       libelle: Trop visé pour partir
@@ -28927,8 +29023,11 @@ modeles:
       origine: conditionnelles
       p_ajustee: "0,9035"
       retenu: false
+      observe_arrondi: "3,2"
+      attendu_arrondi: "2,2"
       ecart_types_mot: écart-type
       ecart_types_abs: "0,24"
+      observe_arrondi_pluriel: true
       tirages_texte: 10 000
     - cle: camp_perdant
       libelle: Avoir voté du mauvais côté
@@ -28980,8 +29079,11 @@ modeles:
       origine: conditionnelles
       p_ajustee: "0,0276"
       retenu: true
+      observe_arrondi: "3,7"
+      attendu_arrondi: "−0,8"
       ecart_types_mot: écarts-types
       ecart_types_abs: "2,61"
+      observe_arrondi_pluriel: true
       tirages_texte: 10 000
     - cle: menace_deux_pas
       libelle: La menace, deux conseils plus tard
@@ -29033,8 +29135,11 @@ modeles:
       origine: conditionnelles
       p_ajustee: "0,7987"
       retenu: false
+      observe_arrondi: "1,6"
+      attendu_arrondi: "0,5"
       ecart_types_mot: écart-type
       ecart_types_abs: "0,43"
+      observe_arrondi_pluriel: false
       tirages_texte: 10 000
     - cle: cible_persistante
       libelle: La cible reste la cible
@@ -29086,8 +29191,11 @@ modeles:
       origine: conditionnelles
       p_ajustee: "0,0007"
       retenu: true
+      observe_arrondi: "18,5"
+      attendu_arrondi: "2,4"
       ecart_types_mot: écarts-types
       ecart_types_abs: 6
+      observe_arrondi_pluriel: true
       tirages_texte: 10 000
     - cle: retour_de_baton
       libelle: Le nom rendu au conseil suivant
@@ -29139,8 +29247,11 @@ modeles:
       origine: conditionnelles
       p_ajustee: "0,001"
       retenu: true
+      observe_arrondi: "22,3"
+      attendu_arrondi: "14,4"
       ecart_types_mot: écarts-types
       ecart_types_abs: "6,91"
+      observe_arrondi_pluriel: true
       tirages_texte: 4 000
     part_des_conseils: 52
     deux_pas_vises: 224
@@ -29349,8 +29460,11 @@ modeles:
       origine: autour_du_feu
       p_ajustee: "0,001"
       retenu: true
+      observe_arrondi: "6,2"
+      attendu_arrondi: "−0,4"
       ecart_types_mot: écarts-types
       ecart_types_abs: "3,67"
+      observe_arrondi_pluriel: true
       tirages_texte: 10 000
     - cle: sexe_minoritaire
       libelle: Le sexe minoritaire
@@ -29402,8 +29516,11 @@ modeles:
       origine: autour_du_feu
       p_ajustee: "0,0007"
       retenu: true
+      observe_arrondi: "−6,3"
+      attendu_arrondi: "−0,4"
       ecart_types_mot: écarts-types
       ecart_types_abs: "3,69"
+      observe_arrondi_pluriel: true
       tirages_texte: 10 000
     - cle: doyen_du_camp
       libelle: Le plus âgé du camp
@@ -29455,8 +29572,11 @@ modeles:
       origine: autour_du_feu
       p_ajustee: "0,7869"
       retenu: false
+      observe_arrondi: 2
+      attendu_arrondi: 1
       ecart_types_mot: écart-type
       ecart_types_abs: "0,51"
+      observe_arrondi_pluriel: true
       tirages_texte: 10 000
     - cle: confort_sortie
       libelle: Le confort du soir
@@ -29509,8 +29629,11 @@ modeles:
       origine: autour_du_feu
       p_ajustee: "0,8465"
       retenu: false
+      observe_arrondi: "1,4"
+      attendu_arrondi: "0,4"
       ecart_types_mot: écart-type
       ecart_types_abs: "0,41"
+      observe_arrondi_pluriel: false
       tirages_texte: 10 000
     age_ecart: "2,1"
   pire_place:
@@ -29693,8 +29816,11 @@ modeles:
       origine: pire_place
       p_ajustee: "0,0112"
       retenu: true
+      observe_arrondi: "14,9"
+      attendu_arrondi: 2
       ecart_types_mot: écarts-types
       ecart_types_abs: "3,06"
+      observe_arrondi_pluriel: true
       tirages_texte: 10 000
     - cle: dos_au_mur
       libelle: Le dos au mur
@@ -29746,8 +29872,11 @@ modeles:
       origine: pire_place
       p_ajustee: 1
       retenu: false
+      observe_arrondi: "0,58"
+      attendu_arrondi: "0,65"
       ecart_types_mot: écart-type
       ecart_types_abs: "0,03"
+      observe_arrondi_pluriel: false
       tirages_texte: 10 000
     cumul_rapport: "3,5"
   tenant_du_titre:
@@ -29825,8 +29954,11 @@ modeles:
       origine: tenant_du_titre
       p_ajustee: "0,9199"
       retenu: false
+      observe_arrondi: "7,7"
+      attendu_arrondi: "8,4"
       ecart_types_mot: écart-type
       ecart_types_abs: "0,17"
+      observe_arrondi_pluriel: true
       tirages_texte: 4 000
     rapport: "1,7"
     ecarts_types_uniforme_mot: écart-type
@@ -29890,8 +30022,11 @@ modeles:
       origine: age_au_conseil
       p_ajustee: "0,0873"
       retenu: false
+      observe_arrondi: "1,9"
+      attendu_arrondi: 0
       ecart_types_mot: écarts-types
       ecart_types_abs: "2,14"
+      observe_arrondi_pluriel: false
       tirages_texte: 10 000
   rappel:
     effectif: 413
@@ -30113,7 +30248,7 @@ modeles:
       PETIT que l’attendu veut dire que les saisons se ressemblent plus que le hasard ne l’expliquerait.
     nulle: *id073
     observe_arrondi: "0,3"
-    attendu_arrondi: "0,3"
+    attendu_arrondi: "0,25"
     unite_accordee: ''
     ecart_types_mot: écart-type
     ecart_types_abs: "1,62"
@@ -30537,7 +30672,7 @@ modeles:
     lecture: Corrélation de rang entre l’année et le rapport finale / lancement. Négative, elle dit que
       l’avantage de la finale se réduit d’année en année.
     nulle: *id086
-    observe_arrondi: "−0,7"
+    observe_arrondi: "−0,65"
     attendu_arrondi: 0
     unite_accordee: ''
     ecart_types_mot: écarts-types
@@ -30943,8 +31078,8 @@ modeles:
     lecture: Écart entre gagner l’immunité individuelle du soir quand on a été visé au conseil précédent
       et la gagner quand on ne l’a pas été. Le modèle nul tire le vainqueur au hasard parmi les présents.
     nulle: *id104
-    observe_arrondi: "0,6"
-    attendu_arrondi: "0,6"
+    observe_arrondi: "0,58"
+    attendu_arrondi: "0,65"
     unite_accordee: point
     ecart_types_mot: écart-type
     ecart_types_abs: "0,03"
@@ -31161,7 +31296,7 @@ modeles:
       largeur_case: "0,032381"
       observe: "0,1464"
       moyenne_nulle: "−0,0001"
-    observe_arrondi: "0,1"
+    observe_arrondi: "0,15"
     attendu_arrondi: 0
     unite_accordee: ''
     ecart_types_mot: écart-type

@@ -74,7 +74,7 @@ modèle nul**, et un nul mal contraint produit des écarts énormes et faux.
 
 <p class="legende-figure">Part des bulletins visant quelqu’un du même sexe.</p>
 
-{{ t.observe }} % contre {{ t.attendu }} % attendus — {{ t.ecart_types }}
+{{ t.observe_arrondi }} % contre {{ t.attendu_arrondi }} % attendus — {{ t.ecart_types }}
 {{ t.ecart_types_mot }}, p ajustée {{ t.p_ajustee }}. **Non retenu** : on vise un peu
 moins souvent quelqu’un de son sexe que le partage des cibles ne le voudrait,
 mais l’écart ne passe pas le seuil.
@@ -90,7 +90,7 @@ chose.
 
 <p class="legende-figure">Part des bulletins visant la même famille de métiers.</p>
 
-{{ t.observe }} % contre {{ t.attendu }} % — {{ t.ecart_types }} {{ t.ecart_types_mot }},
+{{ t.observe_arrondi }} % contre {{ t.attendu_arrondi }} % — {{ t.ecart_types }} {{ t.ecart_types_mot }},
 p ajustée {{ t.p_ajustee }}. **Non retenu** : on vise un peu moins sa propre
 famille de métiers que le hasard ne le voudrait, mais l’écart ne passe pas le
 seuil. Si on la vise
@@ -105,7 +105,7 @@ vingt ; l’écart au hasard, lui, est mince.
 
 <p class="legende-figure">Écart d’âge moyen entre le votant et sa cible.</p>
 
-{{ t.observe }} ans contre {{ t.attendu }} attendus :
+{{ t.observe_arrondi }} ans contre {{ t.attendu_arrondi }} attendus :
 {{ t.ecart_types }} {{ t.ecart_types_mot }}, qui ne franchissent pas la correction
 pour tests multiples (p ajustée {{ t.p_ajustee }}). L’écart ne se distingue pas
 du hasard, et il serait de toute façon minuscule. Il n’y a rien à en tirer.
@@ -127,8 +127,8 @@ département, contre {{ td.tirages_texte }} tirages de saisons autour de l’att
 que donne le partage des bulletins à l’intérieur de chaque conseil.</p>
 
 <div class="constat">
-  <p><b>{{ td.observe }} %</b> des bulletins visent quelqu’un du même
-  département, pour <b>{{ td.attendu }} %</b> attendus : l’observé est
+  <p><b>{{ td.observe_arrondi }} %</b> des bulletins visent quelqu’un du même
+  département, pour <b>{{ td.attendu_arrondi }} %</b> attendus : l’observé est
   <b>sous</b> l’attendu, {{ td.ecart_types }} {{ td.ecart_types_mot }}, p brute {{ td.p }},
   p ajustée <b>{{ td.p_ajustee }}</b>. <b>Non concluant.</b></p>
   <p>On vise le voisin un peu moins souvent que le partage des bulletins ne le
@@ -159,9 +159,9 @@ soit {{ h.bulletins_mixtes }} bulletins.
 tribu initiale, sur les seuls conseils mixtes.</p>
 
 <div class="constat">
-  <p>Une fois les tribus recomposées, <b>{{ t.observe }} %</b> des bulletins visent
+  <p>Une fois les tribus recomposées, <b>{{ t.observe_arrondi }} %</b> des bulletins visent
   quelqu’un de la tribu initiale de leur auteur. Le simple partage des cibles en
-  prévoit <b>{{ t.attendu }} %</b>.</p>
+  prévoit <b>{{ t.attendu_arrondi }} %</b>.</p>
   <p>{{ t.ecart_types }} {{ t.ecart_types_mot }}, p ajustée {{ t.p_ajustee }}. On écrit le
   nom d’un ancien coéquipier <b>{{ t.ecart_relatif }} % moins souvent</b> qu’on ne
   le devrait.</p>

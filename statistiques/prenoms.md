@@ -72,7 +72,7 @@ imaginer un tri involontaire, il n’y en a pas de marqué.
 <tr>
   <td>{{ x.prenom }}</td>
   <td class="nombre">{{ x.observe }}</td>
-  <td class="nombre">{{ x.attendu }}</td>
+  <td class="nombre">{{ x.attendu_arrondi }}</td>
   <td class="nombre">×{{ x.indice }}</td>
 </tr>
 {% endif %}{% endunless %}{% endfor %}

@@ -39,7 +39,7 @@ répartition de voix.</p>
   <p>Deux aventuriers qui ont voté ensemble votent encore ensemble au conseil
   suivant dans <b>{{ a.apres_ensemble }} %</b> des cas. Deux aventuriers qui ont
   voté séparément : <b>{{ a.apres_separes }} %</b>.</p>
-  <p>{{ t.observe }} points d’écart, contre {{ t.attendu }} attendus si les
+  <p>{{ t.observe_arrondi }} points d’écart, contre {{ t.attendu_arrondi }} attendus si les
   bulletins n’étaient que du bruit — soit <b>{{ t.ecart_types }} {{ t.ecart_types_mot }}</b>.
   C’est de très loin le signal le plus fort de tout ce site.</p>
 </div>
@@ -165,8 +165,8 @@ avait déjà voté. La silhouette est le même brassage que plus haut, à jeu de
 cibles constant.</p>
 
 <div class="constat">
-  <p><b>{{ tt.observe }} %</b> des bulletins visent un ancien allié — contre
-  <b>{{ tt.attendu }} %</b> attendus. {{ tt.ecart_types }} {{ tt.ecart_types_mot }}.</p>
+  <p><b>{{ tt.observe_arrondi }} %</b> des bulletins visent un ancien allié — contre
+  <b>{{ tt.attendu_arrondi }} %</b> attendus. {{ tt.ecart_types }} {{ tt.ecart_types_mot }}.</p>
   <p>L’alliance ne se contente donc pas de faire voter ensemble : elle
   <b>protège</b>. À jeu de cibles identique, on écrit le nom d’un ancien allié
   nettement moins souvent qu’un partage au hasard des bulletins ne le ferait.</p>
@@ -196,7 +196,7 @@ sorties d’après-réunification. La silhouette est ce que donne un ordre de so
 au sort, à composition de camps identique.</p>
 
 <div class="constat">
-  <p>{{ dt.observe }} enchaînements observés contre {{ dt.attendu }} attendus,
+  <p>{{ dt.observe_arrondi }} enchaînements observés contre {{ dt.attendu_arrondi }} attendus,
   <b>{{ dt.ecart_types }} {{ dt.ecart_types_mot }}</b>, p ajustée {{ dt.p_ajustee }}.</p>
   <p>L’écart va dans le sens d’un camp démonté un par un, mais <b>il ne passe
   pas la correction pour tests multiples</b> : on ne peut pas affirmer que les

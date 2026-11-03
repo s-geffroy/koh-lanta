@@ -528,8 +528,8 @@ aventuriers qui ont joué au moins deux fois, face à {{ t.tirages_texte }} appa
 tirés au hasard.</p>
 
 <div class="constat">
-  <p>La corrélation observée vaut <b>{{ t.observe }}</b>, contre
-  {{ t.attendu }} attendu du hasard : {{ t.ecart_types }} {{ t.ecart_types_mot }},
+  <p>La corrélation observée vaut <b>{{ t.observe_arrondi }}</b>, contre
+  {{ t.attendu_arrondi }} attendu du hasard : {{ t.ecart_types }} {{ t.ecart_types_mot }},
   p = {{ t.p }} — et {{ t.p_ajustee }} après correction pour tests multiples.
   <b>Le test n’est pas retenu.</b></p>
   <p>Ce qu’il faut en dire, ni plus ni moins : <b>quelque chose se reproduit
@@ -542,7 +542,7 @@ tirés au hasard.</p>
 {{ c.stabilite.effectif }} aventuriers ne sont pas un échantillon : ce sont ceux
 que la production a <em>rappelés</em>, donc les meilleurs de leur saison.
 Comparer des gens déjà triés sur le talent écrase mécaniquement la corrélation —
-le vrai lien est donc plus fort que {{ t.observe }}. En sens inverse, une
+le vrai lien est donc plus fort que {{ t.observe_arrondi }}. En sens inverse, une
 édition de revenants n’est pas une saison ordinaire : on y affronte des
 adversaires bien plus forts, ce que le classement ne sait pas corriger, et cela
 brouille la comparaison dans l’autre sens.</p>

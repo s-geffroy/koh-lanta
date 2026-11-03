@@ -69,8 +69,8 @@ correction.
 <tr>
   <td><b>{{ t.libelle }}</b></td>
   <td>{{ t.question }}</td>
-  <td class="nombre">{{ t.observe }} {{ t.unite_accordee }}</td>
-  <td class="nombre">{{ t.attendu }}</td>
+  <td class="nombre">{{ t.observe_arrondi }} {{ t.unite_accordee }}</td>
+  <td class="nombre">{{ t.attendu_arrondi }}</td>
   <td class="nombre" data-val="{{ t.ecart_types }}">{{ t.ecart_types }}</td>
   <td class="nombre">{{ t.p }}</td>
   <td class="nombre">{{ t.p_ajustee }}</td>
@@ -261,7 +261,7 @@ laissait attendre. La corrélation brute est publiée à côté, pour qu’on vo
 que la précaution enlève : sur
 [L’audience]({{ '/statistiques/audience/' | relative_url }}), elle fait passer un
 {% assign taf = m.registre | where: "cle", "audience_format" | first %}lien de
-{{ m.audience.format_correlation_brute }} à {{ taf.observe }}, et le résultat de
+{{ m.audience.format_correlation_brute }} à {{ taf.observe_arrondi }}, et le résultat de
 spectaculaire à nul.
 
 ### Le rétrécissement vers la moyenne, plutôt qu’un seuil qui exclut

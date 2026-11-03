@@ -206,6 +206,10 @@ def main():
             "prenom": affichage[k],
             "observe": obs,
             "attendu": round(att, 3),
+            # Ce que le tableau affiche : le tableau ne montre que les
+            # attendus d'au moins 1, et « 1,234 personne » n'a pas de sens a
+            # la troisieme decimale.
+            "attendu_arrondi": round(att, 1),
             "indice": None if jamais else round(obs / att, 1),
             "absent_du_fichier": jamais,
             # Le tableau de /statistiques/prenoms/ ne montre que les prenoms

@@ -38,8 +38,8 @@ trait vertical est ce qu’on observe réellement.</p>
 
 <div class="constat">
   <p>Un casting de Koh-Lanta s’écarte de la parité de
-  <b>{{ t.observe }} personne</b> en moyenne. Un tirage à pile ou face
-  s’en écarterait de <b>{{ t.attendu }}</b>.</p>
+  <b>{{ t.observe_arrondi }} personne</b> en moyenne. Un tirage à pile ou face
+  s’en écarterait de <b>{{ t.attendu_arrondi }}</b>.</p>
   <p>C’est <b>{{ t.ecart_types_abs }} {{ t.ecart_types_mot }}</b> en dessous du hasard
   — p ajustée {{ t.p_ajustee }}. Autrement dit : la plupart des saisons partent
   <b>exactement</b> à égalité, et les autres à une personne près. Le hasard, lui,
@@ -63,7 +63,7 @@ saison prise séparément**.
 <p class="legende-figure">Écart-type des âges à l’intérieur d’un même casting,
 en années.</p>
 
-L’écart observé est de **{{ t.observe }} ans** contre **{{ t.attendu }}**
+L’écart observé est de **{{ t.observe_arrondi }} ans** contre **{{ t.attendu_arrondi }}**
 attendus : le test le détecte ({{ t.ecart_types }} {{ t.ecart_types_mot }}, p ajustée
 {{ t.p_ajustee }}), et il tient quand on ne rebat les castings qu’à l’intérieur
 de leur propre décennie. Mais **l’écart vaut {{ site.data.stats.mots.ecart_ages_mois }} mois**. Il est réel et
@@ -85,7 +85,7 @@ occupées, sur les {{ c.saisons }} saisons classiques.</p>
 
 On imagine volontiers une liste de courses — il faut un pompier, il faut un
 coach sportif, il faut un agriculteur. Les chiffres ne la montrent pas :
-**{{ t.observe }} cases remplies contre {{ t.attendu }} attendues**, p = {{ t.p }}. La couverture des métiers est celle qu’un tirage au hasard produit
+**{{ t.observe_arrondi }} cases remplies contre {{ t.attendu_arrondi }} attendues**, p = {{ t.p }}. La couverture des métiers est celle qu’un tirage au hasard produit
 tout seul.
 
 ## Les deux tribus : un contraste d’âge, mais pas une règle
@@ -103,7 +103,7 @@ sort.
 
 <p class="legende-figure">Écart d’âge moyen entre les deux tribus initiales.</p>
 
-À la moyenne, l’écart est de **{{ t.observe }} ans** contre {{ t.attendu }}
+À la moyenne, l’écart est de **{{ t.observe_arrondi }} ans** contre {{ t.attendu_arrondi }}
 attendus ({{ t.ecart_types }} {{ t.ecart_types_mot }}, p ajustée {{ t.p_ajustee }}) : les
 tribus diffèrent **plus** qu’un tirage au sort, et non moins. Mais la médiane
 raconte autre chose.
@@ -114,8 +114,8 @@ raconte autre chose.
 valeurs extrêmes.</p>
 
 <div class="constat">
-  <p>À la médiane, l’écart tombe à {{ tm.observe }} ans contre
-  {{ tm.attendu }} attendus, p = {{ tm.p }} : <b>plus rien</b>.</p>
+  <p>À la médiane, l’écart tombe à {{ tm.observe_arrondi }} ans contre
+  {{ tm.attendu_arrondi }} attendus, p = {{ tm.p }} : <b>plus rien</b>.</p>
   <p>La moyenne était portée par {{ site.data.stats.mots.tribus_contrastees }} saisons — {% for x in c.tribus_les_plus_contrastees %}<b>{{ x.titre }}</b> ({{ x.annee }}, {{ x.ecart }} ans d’écart){% unless forloop.last %}, {% endunless %}{% endfor %} —
   où les deux camps opposent franchement deux générations. Ailleurs, les tribus
   sont composées comme le hasard les composerait.</p>
@@ -125,7 +125,7 @@ valeurs extrêmes.</p>
 </div>
 
 Sur la part de femmes, les deux tribus sont plus semblables que le hasard ne les
-ferait — {{ tf.observe }} points d’écart contre {{ tf.attendu }} attendus — mais
+ferait — {{ tf.observe_arrondi }} points d’écart contre {{ tf.attendu_arrondi }} attendus — mais
 p ajustée {{ tf.p_ajustee }} : c’est une piste, pas un résultat. Il faudrait
 plus de {{ site.data.stats.mots.duos_de_tribus }} saisons pour trancher.
 

@@ -860,7 +860,7 @@ ce que le parcours dit déjà. Le soir du départ en est écarté aussi.
   {% assign ts = site.data.stats.modeles.registre | where: "cle", "talent_stable" | first %}
   <p>Dans l’autre sens : le test de stabilité — un bon joueur l’est-il encore la
   fois suivante ? — passait alors de 0,039 pour p = 0,73 à 0,227 pour p = 0,06.
-  Le même artefact l’écrasait. Il vaut aujourd’hui <b>{{ ts.observe }}</b>,
+  Le même artefact l’écrasait. Il vaut aujourd’hui <b>{{ ts.observe_arrondi }}</b>,
   p ajustée {{ ts.p_ajustee }} : un signal qui reste trop mince pour être
   retenu.</p>
 </div>

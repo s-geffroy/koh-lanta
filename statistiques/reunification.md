@@ -72,7 +72,7 @@ l’éliminé de chaque conseil est pris au hasard parmi ceux qui pouvaient l’
   <b>{{ a.rang_force_apres }}</b>. Dans les deux cas, <b>un peu au-dessus de
   la médiane</b> : l’éliminé n’est pas le plus faible avant, et il n’est pas
   plus fort après.</p>
-  <p>L’écart entre les deux vaut {{ tf.observe }} points de rang (écart réduit
+  <p>L’écart entre les deux vaut {{ tf.observe_arrondi }} points de rang (écart réduit
   {{ tf.ecart_types }}, p ajustée {{ tf.p_ajustee }}) : un tirage au sort parmi
   les votants le produit couramment. <b>Le test n’est pas retenu.</b></p>
   <p>Ce n’est pas la preuve que la force ne compte jamais : avant la réunification,
@@ -133,7 +133,7 @@ avant. Le hasard est ici une redistribution des étiquettes « avant » et
   <p>Un conseil est <b>serré</b> quand l’éliminé ne rassemble pas plus de la
   moitié des voix exprimées. Avant la réunification : {{ a.avant.part_serres }} %.
   Après : <b>{{ a.apres.part_serres }} %</b>.</p>
-  <p>+{{ ts.observe }} points, {{ ts.ecart_types }} {{ ts.ecart_types_mot }}, p ajustée {{ ts.p_ajustee }}. Le camp réuni ne se retourne pas d’un bloc : il se
+  <p>+{{ ts.observe_arrondi }} points, {{ ts.ecart_types }} {{ ts.ecart_types_mot }}, p ajustée {{ ts.p_ajustee }}. Le camp réuni ne se retourne pas d’un bloc : il se
   partage.</p>
 </div>
 
@@ -324,7 +324,7 @@ des ambassadeurs tirés sort ce jour-là. Saisons classiques.</p>
 <div class="constat">
   <p>Sur les {{ ng.ambassades }} ambassades où le camp est reconstituable —
   {{ ng.ambassadeurs }} ambassadeurs — le rang moyen vaut
-  <b>{{ ng.rang_moyen }} sur 100</b>, contre {{ tn.attendu }} attendus.
+  <b>{{ ng.rang_moyen }} sur 100</b>, contre {{ tn.attendu_arrondi }} attendus.
   {{ tn.ecart_types }} {{ tn.ecart_types_mot }}, p ajustée {{ tn.p_ajustee }}.</p>
   <p><b>Non retenu.</b> Les ambassadeurs sortent un peu plus tôt que la
   médiane du camp, mais pas plus tôt qu’un tirage au sort qui applique la même

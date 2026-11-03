@@ -2569,7 +2569,7 @@ def audience(par_saison, indicateurs_saison, mesures):
         an = np.array([c[0] for c in couples])
         xa = np.array([c[1] for c in couples])
         yb = np.array([c[2] for c in couples])
-        brute = _arr(float(_spearman(xa, yb)), 3)
+        brute = _arr(float(_spearman(xa, yb)), 2)
         rx, ry = _detendance(an, xa), _detendance(an, yb)
         obs3 = float(_spearman(rx, ry))
         g3 = rng("audience_format")
@@ -2643,9 +2643,9 @@ def audience(par_saison, indicateurs_saison, mesures):
             "avant": len(avant), "apres": len(apres),
             "bascule": bascule,
             "ratio_avant": _arr(float(np.mean([l["finale"] / l["lancement"]
-                                               for l in avant])), 3) if avant else None,
+                                               for l in avant])), 2) if avant else None,
             "ratio_apres": _arr(float(np.mean([l["finale"] / l["lancement"]
-                                               for l in apres])), 3) if apres else None,
+                                               for l in apres])), 2) if apres else None,
         },
         "courbes": courbes,
         "jours": jours,
