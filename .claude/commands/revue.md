@@ -1,6 +1,6 @@
 ---
-description: Revue complete de l'application par son equipe Claude (sous-agents et skills de .claude/), apres quelques questions sur l'objectif et le perimetre. Ne modifie rien ; livre docs/revue-<date>.md.
-argument-hint: "[objectif ou perimetre, ex. « avant mise en prod, securite et tests »]"
+description: Revue complète de l'application par son équipe Claude (sous-agents et skills de .claude/), après quelques questions sur l'objectif et le périmètre. Ne modifie rien ; livre le rapport docs/revue-AAAA-MM-JJ.md.
+argument-hint: "[objectif ou périmètre, ex. « avant mise en prod, sécurité et tests »]"
 ---
 
 Fais une revue complète de cette application en t'appuyant sur son équipe Claude : les sous-agents de .claude/agents/ et les skills qu'ils préchargent, listés dans .claude/team.yaml.
@@ -65,7 +65,7 @@ Domaines :
 - Vérifie toi-même dans le code chaque constat « bloquant » ou « important » avant de le garder ; écarte ce qui est faux et dis-le.
 - Distingue ce qui est constaté de ce qui est supposé.
 
-## 6. Livrable : docs/revue-<AAAA-MM-JJ>.md
+## 6. Livrable : docs/revue-AAAA-MM-JJ.md (date du jour)
 
 1. Objectif et périmètre retenus (mes réponses), résumé en 10 lignes, état général.
 2. Top 10 des actions, par ordre de priorité (gain / effort).
