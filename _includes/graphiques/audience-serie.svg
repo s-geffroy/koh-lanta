@@ -5,49 +5,51 @@
   <desc id="desc-audience-serie">Nombre moyen de téléspectateurs par saison, en millions. La série couvre toutes les éditions achevées. Sous l’axe, le jour de diffusion de chaque saison (Ma mardi, Ve vendredi, Sa samedi) puis une réglette où le segment marque les mois de diffusion dans l’année.</desc>
   <line x1="46" y1="242.0" x2="864" y2="242.0" stroke="var(--grille)" stroke-width="1"/>
   <text x="38.0" y="242.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">0</text>
-  <line x1="46" y1="188.0" x2="864" y2="188.0" stroke="var(--grille)" stroke-width="1"/>
-  <text x="38.0" y="188.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2</text>
-  <line x1="46" y1="134.0" x2="864" y2="134.0" stroke="var(--grille)" stroke-width="1"/>
-  <text x="38.0" y="134.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">4</text>
-  <line x1="46" y1="80.0" x2="864" y2="80.0" stroke="var(--grille)" stroke-width="1"/>
-  <text x="38.0" y="80.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">6</text>
+  <line x1="46" y1="198.8" x2="864" y2="198.8" stroke="var(--grille)" stroke-width="1"/>
+  <text x="38.0" y="198.8" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2</text>
+  <line x1="46" y1="155.6" x2="864" y2="155.6" stroke="var(--grille)" stroke-width="1"/>
+  <text x="38.0" y="155.6" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">4</text>
+  <line x1="46" y1="112.4" x2="864" y2="112.4" stroke="var(--grille)" stroke-width="1"/>
+  <text x="38.0" y="112.4" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">6</text>
+  <line x1="46" y1="69.2" x2="864" y2="69.2" stroke="var(--grille)" stroke-width="1"/>
+  <text x="38.0" y="69.2" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">8</text>
   <line x1="46" y1="26.0" x2="864" y2="26.0" stroke="var(--grille)" stroke-width="1"/>
-  <text x="38.0" y="26.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">8</text>
-  <polyline points="46.0,128.1 71.6,83.3 97.1,101.0 122.7,83.6 148.2,62.5 173.8,63.0 199.4,30.2 224.9,63.8 250.5,46.3 276.1,26.0 301.6,64.8 327.2,59.4 352.8,53.4 378.3,57.0 403.9,59.9 429.4,70.3 455.0,95.6 480.6,87.5 506.1,92.7 531.7,96.9 557.2,111.5 582.8,115.6 608.4,129.2 633.9,98.2 659.5,70.0 685.1,98.4 710.6,129.2 736.2,148.5 761.8,153.2 787.3,159.7 812.9,163.3 838.4,168.0 864.0,177.9" fill="none" stroke="var(--serie-1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-  <g class="marque"><title>audience moyenne — 2001 : 4,37 M</title><circle cx="46.0" cy="128.1" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2002 : 6,09 M</title><circle cx="71.6" cy="83.3" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2003 : 5,41 M</title><circle cx="97.1" cy="101.0" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2004 : 6,08 M</title><circle cx="122.7" cy="83.6" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2005 : 6,89 M</title><circle cx="148.2" cy="62.5" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2006 : 6,87 M</title><circle cx="173.8" cy="63.0" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2007 : 8,13 M</title><circle cx="199.4" cy="30.2" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2008 : 6,84 M</title><circle cx="224.9" cy="63.8" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2009 : 7,51 M</title><circle cx="250.5" cy="46.3" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2009 : 8,29 M</title><circle cx="276.1" cy="26.0" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2010 : 6,8 M</title><circle cx="301.6" cy="64.8" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2010 : 7,01 M</title><circle cx="327.2" cy="59.4" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2011 : 7,24 M</title><circle cx="352.8" cy="53.4" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2012 : 7,1 M</title><circle cx="378.3" cy="57.0" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2012 : 6,99 M</title><circle cx="403.9" cy="59.9" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2014 : 6,59 M</title><circle cx="429.4" cy="70.3" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2015 : 5,62 M</title><circle cx="455.0" cy="95.6" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2016 : 5,93 M</title><circle cx="480.6" cy="87.5" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2016 : 5,73 M</title><circle cx="506.1" cy="92.7" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2017 : 5,57 M</title><circle cx="531.7" cy="96.9" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2017 : 5,01 M</title><circle cx="557.2" cy="111.5" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2018 : 4,85 M</title><circle cx="582.8" cy="115.6" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2019 : 4,33 M</title><circle cx="608.4" cy="129.2" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2020 : 5,52 M</title><circle cx="633.9" cy="98.2" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2020 : 6,6 M</title><circle cx="659.5" cy="70.0" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2021 : 5,51 M</title><circle cx="685.1" cy="98.4" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2021 : 4,33 M</title><circle cx="710.6" cy="129.2" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2022 : 3,59 M</title><circle cx="736.2" cy="148.5" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2023 : 3,41 M</title><circle cx="761.8" cy="153.2" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2024 : 3,16 M</title><circle cx="787.3" cy="159.7" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2024 : 3,02 M</title><circle cx="812.9" cy="163.3" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2025 : 2,84 M</title><circle cx="838.4" cy="168.0" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <g class="marque"><title>audience moyenne — 2026 : 2,46 M</title><circle cx="864.0" cy="177.9" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
-  <text x="856.0" y="177.9" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">audience moyenne</text>
+  <text x="38.0" y="26.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">10</text>
+  <polyline points="46.0,147.6 71.6,110.5 97.1,125.1 122.7,110.7 148.2,93.2 173.8,93.6 199.4,66.4 224.9,94.3 250.5,79.8 276.1,62.9 301.6,95.1 327.2,90.6 352.8,85.6 378.3,88.6 403.9,91.0 429.4,99.7 455.0,120.6 480.6,113.9 506.1,118.2 531.7,121.7 557.2,133.8 582.8,137.2 608.4,148.5 633.9,122.8 659.5,99.4 685.1,123.0 710.6,148.5 736.2,164.5 761.8,168.3 787.3,173.7 812.9,176.8 838.4,180.7 864.0,188.9" fill="none" stroke="var(--serie-1)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <g class="marque"><title>audience moyenne — 2001 : 4,37 M</title><circle cx="46.0" cy="147.6" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2002 : 6,09 M</title><circle cx="71.6" cy="110.5" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2003 : 5,41 M</title><circle cx="97.1" cy="125.1" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2004 : 6,08 M</title><circle cx="122.7" cy="110.7" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2005 : 6,89 M</title><circle cx="148.2" cy="93.2" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2006 : 6,87 M</title><circle cx="173.8" cy="93.6" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2007 : 8,13 M</title><circle cx="199.4" cy="66.4" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2008 : 6,84 M</title><circle cx="224.9" cy="94.3" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2009 : 7,51 M</title><circle cx="250.5" cy="79.8" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2009 : 8,29 M</title><circle cx="276.1" cy="62.9" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2010 : 6,8 M</title><circle cx="301.6" cy="95.1" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2010 : 7,01 M</title><circle cx="327.2" cy="90.6" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2011 : 7,24 M</title><circle cx="352.8" cy="85.6" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2012 : 7,1 M</title><circle cx="378.3" cy="88.6" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2012 : 6,99 M</title><circle cx="403.9" cy="91.0" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2014 : 6,59 M</title><circle cx="429.4" cy="99.7" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2015 : 5,62 M</title><circle cx="455.0" cy="120.6" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2016 : 5,93 M</title><circle cx="480.6" cy="113.9" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2016 : 5,73 M</title><circle cx="506.1" cy="118.2" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2017 : 5,57 M</title><circle cx="531.7" cy="121.7" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2017 : 5,01 M</title><circle cx="557.2" cy="133.8" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2018 : 4,85 M</title><circle cx="582.8" cy="137.2" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2019 : 4,33 M</title><circle cx="608.4" cy="148.5" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2020 : 5,52 M</title><circle cx="633.9" cy="122.8" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2020 : 6,6 M</title><circle cx="659.5" cy="99.4" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2021 : 5,51 M</title><circle cx="685.1" cy="123.0" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2021 : 4,33 M</title><circle cx="710.6" cy="148.5" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2022 : 3,59 M</title><circle cx="736.2" cy="164.5" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2023 : 3,41 M</title><circle cx="761.8" cy="168.3" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2024 : 3,16 M</title><circle cx="787.3" cy="173.7" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2024 : 3,02 M</title><circle cx="812.9" cy="176.8" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2025 : 2,84 M</title><circle cx="838.4" cy="180.7" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <g class="marque"><title>audience moyenne — 2026 : 2,46 M</title><circle cx="864.0" cy="188.9" r="4.5" fill="var(--serie-1)" stroke="var(--surface)" stroke-width="2"/></g>
+  <text x="856.0" y="188.9" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11" font-weight="600">audience moyenne</text>
   <g class="marque repere"><title>2001 — Samedi</title><text x="46.0" y="258.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="10" font-family="var(--mono)">Sa</text></g>
   <g class="marque repere"><title>2002 — Vendredi</title><text x="71.6" y="258.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="10" font-family="var(--mono)">Ve</text></g>
   <g class="marque repere"><title>2003 — Vendredi</title><text x="97.1" y="258.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="10" font-family="var(--mono)">Ve</text></g>

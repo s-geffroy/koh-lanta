@@ -1,10 +1,19 @@
 <figure class="figure">
 <figcaption class="figure-titre" aria-hidden="true">Part des victoires revenant à quelqu’un allé au bout</figcaption>
-<svg class="graphique" viewBox="0 0 760 210" role="img" aria-describedby="desc-natures-bout" preserveAspectRatio="xMidYMid meet" aria-label="Part des victoires revenant à quelqu’un allé au bout">
+<svg class="graphique" viewBox="0 0 760 228" role="img" aria-describedby="desc-natures-bout" preserveAspectRatio="xMidYMid meet" aria-label="Part des victoires revenant à quelqu’un allé au bout">
   <title>Part des victoires revenant à quelqu’un allé au bout</title>
   <desc id="desc-natures-bout">Part des victoires d’épreuves nommées revenant à un finaliste, un vainqueur ou un éliminé des poteaux.</desc>
   <line x1="396.2" y1="26" x2="396.2" y2="176" stroke="var(--encre-douce)" stroke-width="1.4" stroke-dasharray="4 3"/>
   <text x="396.2" y="20.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">42,1</text>
+  <line x1="232" y1="184" x2="668" y2="184" stroke="var(--axe)" stroke-width="1"/>
+  <line x1="276.9" y1="184" x2="276.9" y2="188" stroke="var(--axe)" stroke-width="1"/>
+  <text x="276.9" y="200.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">30</text>
+  <line x1="375.5" y1="184" x2="375.5" y2="188" stroke="var(--axe)" stroke-width="1"/>
+  <text x="375.5" y="200.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">40</text>
+  <line x1="474.2" y1="184" x2="474.2" y2="188" stroke="var(--axe)" stroke-width="1"/>
+  <text x="474.2" y="200.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">50</text>
+  <line x1="572.8" y1="184" x2="572.8" y2="188" stroke="var(--axe)" stroke-width="1"/>
+  <text x="572.8" y="200.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">60</text>
   <g class="marque"><title>Rapidité (127) : 39,4 % (intervalle 31,3 à 48,1)</title><line x1="289.7" y1="53.0" x2="455.4" y2="53.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="369.6" cy="53.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/><text x="222.0" y="53.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Rapidité (127)</text><text x="680.0" y="53.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">39,4 %</text></g>
   <g class="marque"><title>Précision (92) : 44,6 % (intervalle 34,8 à 54,7)</title><line x1="324.2" y1="79.0" x2="520.5" y2="79.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="420.9" cy="79.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/><text x="222.0" y="79.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Précision (92)</text><text x="680.0" y="79.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">44,6 %</text></g>
   <g class="marque"><title>Force (88) : 40,9 % (intervalle 31,2 à 51,4)</title><line x1="288.7" y1="105.0" x2="488.0" y2="105.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="384.4" cy="105.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/><text x="222.0" y="105.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Force (88)</text><text x="680.0" y="105.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">40,9 %</text></g>

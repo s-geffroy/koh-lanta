@@ -234,6 +234,57 @@ def _etiquettes_serrees(libelles, pas, taille):
     return plus_large > pas * 0.9
 
 
+# LES GRADUATIONS TOMBENT SUR DES NOMBRES RONDS (revue du 4 nov. 2026). Les
+# axes etaient coupes en quarts du maximum et arrondis a l'entier : un maximum
+# de 0,6 donnait « 0 0 0 0 1 », un maximum de 37 donnait « 9 18 28 37 ». Le
+# pas vaut desormais 1, 2 ou 5 fois une puissance de dix, et l'axe s'etend
+# jusqu'a la graduation ronde qui suit la donnee.
+def graduations(vmin, vmax, intervalles=(3, 6)):
+    """(bas, haut, [graduations]) : un pas rond, entre 3 et 6 pas. Parmi les pas
+    possibles, celui qui serre le mieux la donnee : un maximum de 108 monte a
+    120 par pas de 20, pas a 150 par pas de 50."""
+    if vmax <= vmin:
+        vmax = vmin + 1
+    mini, maxi = intervalles
+    grandeur = 10 ** math.floor(math.log10((vmax - vmin) / maxi))
+    choix = []
+    for pas in (m * grandeur * 10 ** k for k in (0, 1, 2) for m in (1, 2, 5)):
+        bas = math.floor(vmin / pas + 1e-9) * pas
+        haut = math.ceil(vmax / pas - 1e-9) * pas
+        n = int(round((haut - bas) / pas))
+        if mini <= n <= maxi:
+            choix.append((haut - bas, n, pas, bas, haut))
+    if not choix:
+        return graduations(vmin, vmax, (2, maxi + 2))
+    _, n, pas, bas, haut = min(choix)
+    return bas, haut, [round(bas + i * pas, 10) for i in range(n + 1)]
+
+
+def graduation_texte(v, graduations_):
+    """Autant de decimales que le pas en demande, pas une de plus."""
+    pas = min((abs(b - a) for a, b in zip(graduations_, graduations_[1:])), default=1) or 1
+    decimales = max(0, -math.floor(math.log10(pas) + 1e-9))
+    return f"{v:.{decimales}f}"
+
+
+def graduations_log(vmin, vmax):
+    """Les graduations d'un axe de rapports : 1, 2 et 5 fois une puissance de
+    dix, dans [vmin, vmax]. Un rapport de 2 et un rapport de 0,5 sont le meme
+    effet dans deux sens : sur un axe lineaire, le premier prenait deux fois
+    plus de place que le second, et tous les rapports sous 1 s'ecrasaient
+    contre la reference."""
+    toutes = [m * 10 ** k for k in range(-4, 5) for m in (1, 2, 5)]
+    dedans = [round(v, 6) for v in toutes if vmin <= v <= vmax]
+    if len(dedans) > 7:
+        dedans = [v for v in dedans if round(v / 10 ** math.floor(math.log10(v)), 6) in (1, 5)] or dedans
+    if len(dedans) < 3:
+        # Un intervalle etroit (0,9 a 1,2) ne contient ni 2 ni 0,5 : on y pose
+        # des pas ronds ordinaires, que l'axe place a leur rang logarithmique.
+        _, _, lineaires = graduations(vmin, vmax, (3, 8))
+        dedans = [v for v in lineaires if vmin <= v <= vmax and v > 0]
+    return dedans
+
+
 def barres_horizontales(donnees, *, titre, description, unite="",
                         largeur=680, hauteur_barre=26, marge_gauche=190,
                         couleur=None, valeur_max=None):
@@ -319,9 +370,9 @@ def colonnes(donnees, *, titre, description, unite="", largeur=680, hauteur=300,
         bas = 66
     piste_h = hauteur - haut - bas
     piste_l = largeur - gauche - droite
-    vmax = max([d["valeur"] for d in donnees]
-               + [d.get("haut") or 0 for d in donnees]
-               + [reference or 0]) or 1
+    _, vmax, axe = graduations(0, max([d["valeur"] for d in donnees]
+                                      + [d.get("haut") or 0 for d in donnees]
+                                      + [reference or 0]) or 1)
     pas = piste_l / len(donnees)
     epaisseur = min(46, pas - 8)
 
@@ -329,15 +380,15 @@ def colonnes(donnees, *, titre, description, unite="", largeur=680, hauteur=300,
         return haut + piste_h * (1 - v / vmax)
 
     fig = Figure(largeur, hauteur, titre, description)
-    for f in (0, 0.25, 0.5, 0.75, 1.0):
-        y = haut + piste_h * (1 - f)
+    for v in axe:
+        y = py(v)
         # Une graduation qui tombe sur le repere ferait un trait double, et le
         # lecteur croirait a deux valeurs la ou il n'y en a qu'une.
-        if reference is not None and abs(y - py(reference)) < 6 and f > 0:
+        if reference is not None and abs(y - py(reference)) < 6 and v > 0:
             continue
         fig.ajouter(f'<line x1="{gauche}" y1="{y:.1f}" x2="{largeur - droite}" '
                     f'y2="{y:.1f}" stroke="{GRILLE}" stroke-width="1"/>')
-        fig.ajouter(_texte(gauche - 8, y, f"{vmax * f:.0f}", ancre="end",
+        fig.ajouter(_texte(gauche - 8, y, graduation_texte(v, axe), ancre="end",
                            couleur=ENCRE_DOUCE, taille=11))
 
     for i, d in enumerate(donnees):
@@ -433,8 +484,7 @@ def courbes(series, abscisses, *, titre, description, unite="", largeur=680,
     piste_h = hauteur - haut - bas
     piste_l = largeur - gauche - droite
     toutes = [v for s in series for v in s["valeurs"] if v is not None]
-    vmax = max(toutes) or 1
-    vmin = min(0, min(toutes))
+    vmin, vmax, axe = graduations(min(0, min(toutes)), max(toutes) or 1)
     etendue = (vmax - vmin) or 1
     pas = piste_l / max(1, len(abscisses) - 1)
 
@@ -451,11 +501,11 @@ def courbes(series, abscisses, *, titre, description, unite="", largeur=680,
                  classe=f"surbrillance {portee}" if portee else None)
     if portee:
         fig.ajouter(_surbrillance_series(portee, len(series)))
-    for f in (0, 0.25, 0.5, 0.75, 1.0):
-        y = haut + piste_h * (1 - f)
+    for v in axe:
+        y = py(v)
         fig.ajouter(f'<line x1="{gauche}" y1="{y:.1f}" x2="{largeur - droite}" '
                     f'y2="{y:.1f}" stroke="{GRILLE}" stroke-width="1"/>')
-        fig.ajouter(_texte(gauche - 8, y, f"{vmin + etendue * f:.0f}", ancre="end",
+        fig.ajouter(_texte(gauche - 8, y, graduation_texte(v, axe), ancre="end",
                            couleur=ENCRE_DOUCE, taille=11))
 
     # Les etiquettes de bout de courbe, ecartees d'au moins une ligne : deux
@@ -1494,7 +1544,7 @@ def distribution_nulle(test, *, titre=None, description=None, largeur=680,
 
 
 def foret(donnees, *, titre, description, reference=1.0, unite="",
-          largeur=760, hauteur_ligne=26, marge_gauche=232, note=None):
+          largeur=760, hauteur_ligne=26, marge_gauche=232, note=None, log=None):
     """Un coefficient par ligne, avec son intervalle et la valeur neutre.
 
     Un point sans son intervalle laisse croire a une precision qui n'existe
@@ -1503,21 +1553,39 @@ def foret(donnees, *, titre, description, reference=1.0, unite="",
     traverse se lit d'un coup d'oeil, sans arbitrer sur une p-value.
 
     `donnees` : [{"libelle":…, "estimation":…, "bas":…, "haut":…, "couleur":…}]
+
+    `log` : une echelle logarithmique. Par defaut, des que la reference vaut 1
+    et que tout est positif -- un rapport de risques ou de cotes, ou 2 et 0,5
+    doivent etre a egale distance du 1.
     """
     donnees = [d for d in donnees if d.get("estimation") is not None]
     if not donnees:
         return ""
-    haut_marge, bas_marge, droite = 40, 40 + (18 if note else 0), 92
+    if log is None:
+        log = reference == 1 and all(d["bas"] > 0 for d in donnees)
+    haut_marge, bas_marge, droite = 40, 58 + (18 if note else 0), 92
     hauteur = haut_marge + bas_marge + len(donnees) * hauteur_ligne
     piste = largeur - marge_gauche - droite
     vmin = min(min(d["bas"], reference) for d in donnees)
     vmax = max(max(d["haut"], reference) for d in donnees)
-    marge = (vmax - vmin) * 0.08 or 0.1
-    vmin, vmax = vmin - marge, vmax + marge
-    etendue = (vmax - vmin) or 1
+    if log:
+        lmin, lmax = math.log(vmin), math.log(vmax)
+        marge = (lmax - lmin) * 0.08 or 0.1
+        lmin, lmax = lmin - marge, lmax + marge
+        axe = graduations_log(math.exp(lmin), math.exp(lmax))
+        etendue = (lmax - lmin) or 1
 
-    def px(v):
-        return marge_gauche + piste * (v - vmin) / etendue
+        def px(v):
+            return marge_gauche + piste * (math.log(v) - lmin) / etendue
+    else:
+        marge = (vmax - vmin) * 0.08 or 0.1
+        vmin, vmax = vmin - marge, vmax + marge
+        _, _, axe = graduations(vmin, vmax)
+        axe = [v for v in axe if vmin <= v <= vmax]
+        etendue = (vmax - vmin) or 1
+
+        def px(v):
+            return marge_gauche + piste * (v - vmin) / etendue
 
     fig = Figure(largeur, hauteur, titre, description)
     xr = px(reference)
@@ -1526,6 +1594,21 @@ def foret(donnees, *, titre, description, reference=1.0, unite="",
                 f'stroke-width="1.4" stroke-dasharray="4 3"/>')
     fig.ajouter(_texte(xr, haut_marge - 20, f"{reference:g}", ancre="middle",
                        couleur=ENCRE_DOUCE, taille=11))
+    # L'axe gradue, sous les lignes : sans lui, seule la reference portait un
+    # chiffre, et la longueur d'un intervalle ne se lisait pas.
+    y_axe = hauteur - bas_marge + 14
+    fig.ajouter(f'<line x1="{marge_gauche}" y1="{y_axe}" x2="{marge_gauche + piste}" '
+                f'y2="{y_axe}" stroke="var(--axe)" stroke-width="1"/>')
+    for v in axe:
+        x = px(v)
+        fig.ajouter(f'<line x1="{x:.1f}" y1="{y_axe}" x2="{x:.1f}" y2="{y_axe + 4}" '
+                    f'stroke="var(--axe)" stroke-width="1"/>')
+        texte = f"{v:g}" if log else graduation_texte(v, axe)
+        fig.ajouter(_texte(x, y_axe + 16, texte, ancre="middle",
+                           couleur=ENCRE_DOUCE, taille=11))
+    if log:
+        fig.ajouter(_texte(marge_gauche + piste, y_axe + 32, "échelle logarithmique",
+                           ancre="end", couleur=ENCRE_MUETTE, taille=10.5))
 
     for i, d in enumerate(donnees):
         y = haut_marge + i * hauteur_ligne + hauteur_ligne / 2
