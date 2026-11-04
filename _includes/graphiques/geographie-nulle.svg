@@ -4,26 +4,26 @@
   <title>L’origine géographique, par région</title>
   <desc id="desc-geographie-nulle">À l’échelle des régions — assez peuplées pour trancher — le recrutement suit-il la démographie française ?</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
-  <g class="marque"><title>5 tirages sur 10 000 entre 1,14 et 3,62</title><rect x="68.7" y="203.6" width="20.3" height="0.4" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>114 tirages sur 10 000 entre 3,62 et 6,1</title><rect x="90.5" y="194.3" width="20.3" height="9.7" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>606 tirages sur 10 000 entre 6,1 et 8,58</title><rect x="112.4" y="152.5" width="20.3" height="51.5" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>1 280 tirages sur 10 000 entre 8,58 et 11,1</title><rect x="134.2" y="95.2" width="20.3" height="108.8" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>1 709 tirages sur 10 000 entre 11,1 et 13,5</title><rect x="156.1" y="58.7" width="20.3" height="145.3" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>1 858 tirages sur 10 000 entre 13,5 et 16</title><rect x="177.9" y="46.0" width="20.3" height="158.0" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>1 567 tirages sur 10 000 entre 16 et 18,5</title><rect x="199.8" y="70.7" width="20.3" height="133.3" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>1 081 tirages sur 10 000 entre 18,5 et 21</title><rect x="221.7" y="112.1" width="20.3" height="91.9" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>723 tirages sur 10 000 entre 21 et 23,5</title><rect x="243.5" y="142.5" width="20.3" height="61.5" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>461 tirages sur 10 000 entre 23,5 et 26</title><rect x="265.4" y="164.8" width="20.3" height="39.2" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>287 tirages sur 10 000 entre 26 et 28,4</title><rect x="287.2" y="179.6" width="20.3" height="24.4" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>127 tirages sur 10 000 entre 28,4 et 30,9</title><rect x="309.1" y="193.2" width="20.3" height="10.8" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>96 tirages sur 10 000 entre 30,9 et 33,4</title><rect x="330.9" y="195.8" width="20.3" height="8.2" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>41 tirages sur 10 000 entre 33,4 et 35,9</title><rect x="352.8" y="200.5" width="20.3" height="3.5" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>20 tirages sur 10 000 entre 35,9 et 38,4</title><rect x="374.7" y="202.3" width="20.3" height="1.7" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>17 tirages sur 10 000 entre 38,4 et 40,9</title><rect x="396.5" y="202.6" width="20.3" height="1.4" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>4 tirages sur 10 000 entre 40,9 et 43,3</title><rect x="418.4" y="203.7" width="20.3" height="0.3" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>2 tirages sur 10 000 entre 43,3 et 45,8</title><rect x="440.2" y="203.8" width="20.3" height="0.2" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>1 tirage sur 10 000 entre 48,3 et 50,8</title><rect x="483.9" y="203.9" width="20.3" height="0.1" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>1 tirage sur 10 000 entre 53,3 et 55,7</title><rect x="527.7" y="203.9" width="20.3" height="0.1" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>5 tirages sur 10 000 entre 1,14 et 3,62</title><rect x="68.7" y="203.6" width="20.3" height="0.4" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>114 tirages sur 10 000 entre 3,62 et 6,1</title><rect x="90.5" y="194.3" width="20.3" height="9.7" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>606 tirages sur 10 000 entre 6,1 et 8,58</title><rect x="112.4" y="152.5" width="20.3" height="51.5" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>1 280 tirages sur 10 000 entre 8,58 et 11,1</title><rect x="134.2" y="95.2" width="20.3" height="108.8" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>1 709 tirages sur 10 000 entre 11,1 et 13,5</title><rect x="156.1" y="58.7" width="20.3" height="145.3" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>1 858 tirages sur 10 000 entre 13,5 et 16</title><rect x="177.9" y="46.0" width="20.3" height="158.0" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>1 567 tirages sur 10 000 entre 16 et 18,5</title><rect x="199.8" y="70.7" width="20.3" height="133.3" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>1 081 tirages sur 10 000 entre 18,5 et 21</title><rect x="221.7" y="112.1" width="20.3" height="91.9" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>723 tirages sur 10 000 entre 21 et 23,5</title><rect x="243.5" y="142.5" width="20.3" height="61.5" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>461 tirages sur 10 000 entre 23,5 et 26</title><rect x="265.4" y="164.8" width="20.3" height="39.2" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>287 tirages sur 10 000 entre 26 et 28,4</title><rect x="287.2" y="179.6" width="20.3" height="24.4" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>127 tirages sur 10 000 entre 28,4 et 30,9</title><rect x="309.1" y="193.2" width="20.3" height="10.8" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>96 tirages sur 10 000 entre 30,9 et 33,4</title><rect x="330.9" y="195.8" width="20.3" height="8.2" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>41 tirages sur 10 000 entre 33,4 et 35,9</title><rect x="352.8" y="200.5" width="20.3" height="3.5" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>20 tirages sur 10 000 entre 35,9 et 38,4</title><rect x="374.7" y="202.3" width="20.3" height="1.7" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>17 tirages sur 10 000 entre 38,4 et 40,9</title><rect x="396.5" y="202.6" width="20.3" height="1.4" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>4 tirages sur 10 000 entre 40,9 et 43,3</title><rect x="418.4" y="203.7" width="20.3" height="0.3" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>2 tirages sur 10 000 entre 43,3 et 45,8</title><rect x="440.2" y="203.8" width="20.3" height="0.2" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>1 tirage sur 10 000 entre 48,3 et 50,8</title><rect x="483.9" y="203.9" width="20.3" height="0.1" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>1 tirage sur 10 000 entre 53,3 et 55,7</title><rect x="527.7" y="203.9" width="20.3" height="0.1" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
   <line x1="198.6" y1="40" x2="198.6" y2="204" stroke="var(--encre-muette)" stroke-width="1" stroke-dasharray="3 3"/>
   <text x="198.6" y="34.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">attendu</text>
   <line x1="630.2" y1="26" x2="630.2" y2="210" stroke="var(--encre)" stroke-width="2.4"/>

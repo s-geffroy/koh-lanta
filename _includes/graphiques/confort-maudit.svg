@@ -12,7 +12,7 @@
   <text x="429.7" y="104.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">20</text>
   <line x1="550.7" y1="88" x2="550.7" y2="92" stroke="var(--axe)" stroke-width="1"/>
   <text x="550.7" y="104.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">22</text>
-  <g class="marque"><title>20,6 % des bulletins (intervalle 18,1 à 23,2), pour 19,8 % attendus</title><line x1="314.7" y1="57.0" x2="623.3" y2="57.0" stroke="var(--encre-muette)" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/><circle cx="466.0" cy="57.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/><text x="280.0" y="57.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Bulletins visant un gagnant du confort</text><text x="660.0" y="57.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">20,6 %</text></g>
+  <g class="marque"><title>20,6 % des bulletins (intervalle 18,1 à 23,2), pour 19,8 % attendus</title><line x1="314.7" y1="57.0" x2="623.3" y2="57.0" stroke="var(--encre-muette)" stroke-width="2" stroke-linecap="round"/><circle cx="466.0" cy="57.0" r="4.4" fill="var(--encre-muette)" stroke="var(--surface)" stroke-width="1.6"/><text x="280.0" y="57.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre)" font-size="11.5">Bulletins visant un gagnant du confort</text><text x="660.0" y="57.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11.5">20,6 %</text></g>
   <text x="290.0" y="136.0" text-anchor="start" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">127 conseils · 1 005 bulletins · p = 0,5267</text>
 </svg>
 </figure>

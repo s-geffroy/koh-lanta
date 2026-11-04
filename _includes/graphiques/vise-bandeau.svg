@@ -4,25 +4,25 @@
   <title>Épargner sa tribu initiale</title>
   <desc id="desc-vise-bandeau">Une fois les tribus recomposées, écrit-on moins souvent le nom de quelqu’un de sa tribu initiale ?</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
-  <g class="marque"><title>1 tirage sur 2 000 entre 32,6 et 33,3</title><rect x="221.7" y="203.5" width="20.3" height="0.5" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>4 tirages sur 2 000 entre 33,3 et 33,9</title><rect x="243.5" y="201.9" width="20.3" height="2.1" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>13 tirages sur 2 000 entre 33,9 et 34,5</title><rect x="265.4" y="197.0" width="20.3" height="7.0" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>31 tirages sur 2 000 entre 34,5 et 35,2</title><rect x="287.2" y="187.4" width="20.3" height="16.6" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>70 tirages sur 2 000 entre 35,2 et 35,8</title><rect x="309.1" y="166.5" width="20.3" height="37.5" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>107 tirages sur 2 000 entre 35,8 et 36,5</title><rect x="330.9" y="146.7" width="20.3" height="57.3" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>167 tirages sur 2 000 entre 36,5 et 37,1</title><rect x="352.8" y="114.6" width="20.3" height="89.4" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>231 tirages sur 2 000 entre 37,1 et 37,8</title><rect x="374.7" y="80.3" width="20.3" height="123.7" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>288 tirages sur 2 000 entre 37,8 et 38,4</title><rect x="396.5" y="49.7" width="20.3" height="154.3" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>295 tirages sur 2 000 entre 38,4 et 39,1</title><rect x="418.4" y="46.0" width="20.3" height="158.0" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>266 tirages sur 2 000 entre 39,1 et 39,7</title><rect x="440.2" y="61.5" width="20.3" height="142.5" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>213 tirages sur 2 000 entre 39,7 et 40,3</title><rect x="462.1" y="89.9" width="20.3" height="114.1" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>139 tirages sur 2 000 entre 40,3 et 41</title><rect x="483.9" y="129.6" width="20.3" height="74.4" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>94 tirages sur 2 000 entre 41 et 41,6</title><rect x="505.8" y="153.7" width="20.3" height="50.3" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>49 tirages sur 2 000 entre 41,6 et 42,3</title><rect x="527.7" y="177.8" width="20.3" height="26.2" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>23 tirages sur 2 000 entre 42,3 et 42,9</title><rect x="549.5" y="191.7" width="20.3" height="12.3" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>6 tirages sur 2 000 entre 42,9 et 43,6</title><rect x="571.4" y="200.8" width="20.3" height="3.2" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>2 tirages sur 2 000 entre 43,6 et 44,2</title><rect x="593.2" y="202.9" width="20.3" height="1.1" fill="var(--serie-3)" opacity="0.45"/></g>
-  <g class="marque"><title>1 tirage sur 2 000 entre 44,2 et 44,9</title><rect x="615.1" y="203.5" width="20.3" height="0.5" fill="var(--serie-3)" opacity="0.45"/></g>
+  <g class="marque"><title>1 tirage sur 2 000 entre 32,6 et 33,3</title><rect x="221.7" y="203.5" width="20.3" height="0.5" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>4 tirages sur 2 000 entre 33,3 et 33,9</title><rect x="243.5" y="201.9" width="20.3" height="2.1" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>13 tirages sur 2 000 entre 33,9 et 34,5</title><rect x="265.4" y="197.0" width="20.3" height="7.0" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>31 tirages sur 2 000 entre 34,5 et 35,2</title><rect x="287.2" y="187.4" width="20.3" height="16.6" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>70 tirages sur 2 000 entre 35,2 et 35,8</title><rect x="309.1" y="166.5" width="20.3" height="37.5" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>107 tirages sur 2 000 entre 35,8 et 36,5</title><rect x="330.9" y="146.7" width="20.3" height="57.3" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>167 tirages sur 2 000 entre 36,5 et 37,1</title><rect x="352.8" y="114.6" width="20.3" height="89.4" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>231 tirages sur 2 000 entre 37,1 et 37,8</title><rect x="374.7" y="80.3" width="20.3" height="123.7" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>288 tirages sur 2 000 entre 37,8 et 38,4</title><rect x="396.5" y="49.7" width="20.3" height="154.3" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>295 tirages sur 2 000 entre 38,4 et 39,1</title><rect x="418.4" y="46.0" width="20.3" height="158.0" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>266 tirages sur 2 000 entre 39,1 et 39,7</title><rect x="440.2" y="61.5" width="20.3" height="142.5" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>213 tirages sur 2 000 entre 39,7 et 40,3</title><rect x="462.1" y="89.9" width="20.3" height="114.1" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>139 tirages sur 2 000 entre 40,3 et 41</title><rect x="483.9" y="129.6" width="20.3" height="74.4" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>94 tirages sur 2 000 entre 41 et 41,6</title><rect x="505.8" y="153.7" width="20.3" height="50.3" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>49 tirages sur 2 000 entre 41,6 et 42,3</title><rect x="527.7" y="177.8" width="20.3" height="26.2" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>23 tirages sur 2 000 entre 42,3 et 42,9</title><rect x="549.5" y="191.7" width="20.3" height="12.3" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>6 tirages sur 2 000 entre 42,9 et 43,6</title><rect x="571.4" y="200.8" width="20.3" height="3.2" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>2 tirages sur 2 000 entre 43,6 et 44,2</title><rect x="593.2" y="202.9" width="20.3" height="1.1" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
+  <g class="marque"><title>1 tirage sur 2 000 entre 44,2 et 44,9</title><rect x="615.1" y="203.5" width="20.3" height="0.5" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
   <line x1="424.3" y1="40" x2="424.3" y2="204" stroke="var(--encre-muette)" stroke-width="1" stroke-dasharray="3 3"/>
   <text x="424.3" y="34.0" text-anchor="middle" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">attendu</text>
   <line x1="73.8" y1="26" x2="73.8" y2="210" stroke="var(--encre)" stroke-width="2.4"/>

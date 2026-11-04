@@ -90,7 +90,11 @@ def figure_peigne():
     participations = _lire("participations.yml")
     traits = sorted(
         ({"jour": p["jour_sortie"],
-          "couleur": TRIBUS.get(p.get("couleur"), "var(--encre-muette)")}
+          # Le dessin suit la legende : jaune, rouge, et le gris pour toutes
+         # les autres. Il employait huit teintes, que la legende ne nommait
+         # pas (revue du 4 nov. 2026).
+         "couleur": (TRIBUS[p["couleur"]] if p.get("couleur") in ("jaune", "rouge")
+                     else "var(--encre-muette)")}
          for p in participations if p.get("jour_sortie")),
         key=lambda t: t["jour"])
 
@@ -1082,8 +1086,14 @@ def figures_des_modeles(stats):
 
     casting = m.get("casting") or {}
     if casting.get("carte"):
-        couleurs = [SERIES[0], SERIES[2], SERIES[3], SERIES[6], SERIES[7]]
+        # Une couleur PAR GROUPE. La liste en avait cinq pour six archetypes :
+        # le sixieme reprenait la couleur du premier, et deux groupes se
+        # confondaient sur le plan (revue du 4 nov. 2026).
         groupes = {a["code"]: a for a in casting.get("archetypes") or []}
+        ordre = [0, 1, 2, 6, 3, 4, 7, 5]
+        if len(groupes) > len(ordre):
+            raise SystemExit(f"casting-plan : {len(groupes)} groupes, {len(ordre)} couleurs")
+        couleurs = [SERIES[i] for i in ordre[:len(groupes)]]
         ecrire("casting-plan.svg", plan(
             [{"x": p["x"], "y": p["y"], "detail": p["detail"],
               "couleur": couleurs[p["groupe"] % len(couleurs)]}

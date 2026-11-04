@@ -1360,11 +1360,16 @@ def nuage(points, *, titre, description, x_min, x_max, legende=None,
                            couleur=ENCRE_DOUCE, taille=11))
         v += pas_x
 
+    # LA TRANSPARENCE SUR LE SEUL REMPLISSAGE (revue du 4 nov. 2026). Une
+    # marque entiere a 0,42-0,62 d'opacite retombait sous 3:1 de contraste
+    # contre le fond (1,5 a 2,6:1). Le contour reste opaque : la marque se
+    # voit, et les superpositions se lisent encore par la densite.
     for p in points:
         fig.ajouter(
             f'<g class="marque"><title>{e(p.get("detail") or "")}</title>'
             f'<circle cx="{px(p["x"]):.1f}" cy="{py(p["y"]):.1f}" r="4" '
-            f'fill="{p.get("couleur") or SERIES[0]}" opacity="0.62"/></g>')
+            f'fill="{p.get("couleur") or SERIES[0]}" fill-opacity="0.62" '
+            f'stroke="{p.get("couleur") or SERIES[0]}" stroke-width="1"/></g>')
 
     if x_titre:
         fig.ajouter(_texte(largeur - droite, hauteur - bas + 36, x_titre,
@@ -1437,7 +1442,7 @@ def halteres(donnees, *, titre, description, unite="", largeur=880,
         fig.ajouter(f'<g class="marque"><title>{e(info)}</title>'
                     f'<line x1="{px(d["min"]):.1f}" y1="{y:.1f}" '
                     f'x2="{px(d["max"]):.1f}" y2="{y:.1f}" stroke="{teinte}" '
-                    f'stroke-width="3" stroke-linecap="round" opacity="0.5"/>'
+                    f'stroke-width="2.4" stroke-linecap="round"/>'
                     f'<circle cx="{px(d["min"]):.1f}" cy="{y:.1f}" r="3.4" fill="{teinte}"/>'
                     f'<circle cx="{px(d["max"]):.1f}" cy="{y:.1f}" r="3.4" fill="{teinte}"/>'
                     + (f'<circle cx="{px(d["median"]):.1f}" cy="{y:.1f}" r="2.6" '
@@ -1506,7 +1511,8 @@ def distribution_nulle(test, *, titre=None, description=None, largeur=680,
         fig.ajouter(f'<g class="marque"><title>{e(info)}</title>'
                     f'<rect x="{x + 0.8:.1f}" y="{zero - h:.1f}" '
                     f'width="{max(0.6, largeur_case - 1.6):.1f}" height="{h:.1f}" '
-                    f'fill="{teinte}" opacity="0.45"/></g>')
+                    f'fill="{teinte}" fill-opacity="0.45" stroke="{teinte}" '
+                    f'stroke-width="0.8"/></g>')
 
     # La moyenne des tirages : ce que le hasard donne « en general ».
     xm = px(nulle["moyenne_nulle"])
@@ -1622,7 +1628,7 @@ def foret(donnees, *, titre, description, reference=1.0, unite="",
         fig.ajouter(f'<g class="marque"><title>{e(info)}</title>'
                     f'<line x1="{px(d["bas"]):.1f}" y1="{y:.1f}" '
                     f'x2="{px(d["haut"]):.1f}" y2="{y:.1f}" stroke="{teinte}" '
-                    f'stroke-width="2.6" stroke-linecap="round" opacity="0.55"/>'
+                    f'stroke-width="2" stroke-linecap="round"/>'
                     f'<circle cx="{px(d["estimation"]):.1f}" cy="{y:.1f}" r="4.4" '
                     f'fill="{teinte}" stroke="{SURFACE}" stroke-width="1.6"/>'
                     + _texte_tenu(marge_gauche - 10, y, d["libelle"],
@@ -1700,7 +1706,8 @@ def plan(points, *, titre, description, x_titre="", y_titre="", reperes=None,
         teinte = p.get("couleur") or SERIES[0]
         fig.ajouter(f'<g class="marque"><title>{e(p.get("detail") or "")}</title>'
                     f'<circle cx="{px(p["x"]):.1f}" cy="{py(p["y"]):.1f}" r="3.2" '
-                    f'fill="{teinte}" opacity="0.42"/></g>')
+                    f'fill="{teinte}" fill-opacity="0.42" stroke="{teinte}" '
+                    f'stroke-width="1"/></g>')
 
     # Les noms de modalite s'ecartent quand ils se recouvrent : le point reste
     # a sa vraie place, l'etiquette glisse.
