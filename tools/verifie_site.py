@@ -172,6 +172,51 @@ def controler_fraicheur(c):
                      f"construction — lancer {commande} (ou tools/construire_tout.py)")
 
 
+# Les jeux tires de sources tierces (Wikipedia, Fandom, Wikidata, Commons),
+# que les gabarits affichent sans les echapper pour la plupart. Les fichiers
+# que le depot fabrique (stats, fiches) posent eux-memes des <em> et des <i>.
+JEUX_TIERS = ("ambassadeurs", "audiences", "colliers", "conseils", "epreuves",
+              "epreuves_nommees", "finale", "participations", "personnes",
+              "portraits", "prenoms", "reseaux", "saisons", "wikidata")
+RE_BALISE_TIERS = re.compile(r"<\s*[A-Za-z/!?]|javascript:|\bon[a-z]+\s*=", re.I)
+
+
+def controler_donnees_tierces(c):
+    """Un texte de tiers ne porte ni balise ni lien executable (revue du 4 nov.
+    2026). `wikidata.py` decodait les entites APRES le retrait des balises : un
+    « &lt;script&gt; » saisi sur Commons ressortait en balise, rendue brute par
+    la fiche. Le generateur est corrige ; ce controle garde la porte, pour lui
+    et pour toute extraction a venir.
+
+    Et un lien tire d'un tiers (portraits, comptes) est web, ou il n'est pas :
+    un « javascript: » dans un href s'execute au clic.
+    """
+    def chaines(v, chemin):
+        if isinstance(v, str):
+            yield chemin, v
+        elif isinstance(v, dict):
+            for k, x in v.items():
+                yield from chaines(x, f"{chemin}.{k}")
+        elif isinstance(v, list):
+            for i, x in enumerate(v):
+                yield from chaines(x, f"{chemin}[{i}]")
+
+    for nom in JEUX_TIERS:
+        chemin = os.path.join(RACINE, "_data", nom + ".yml")
+        if not os.path.exists(chemin):
+            continue
+        d = donnees.charger(open(chemin, encoding="utf-8"))
+        for ou, texte in chaines(d, nom):
+            if RE_BALISE_TIERS.search(texte):
+                c.erreur(f"_data/{nom}.yml {ou} : balise ou code dans un texte de "
+                         f"tiers — {texte[:60]!r}")
+            if (nom in ("portraits", "reseaux") and ou.rsplit(".", 1)[-1]
+                    in ("url", "licence_url", "source")
+                    and not re.match(r"^https?://[^\s\"'<>]+$", texte)):
+                c.erreur(f"_data/{nom}.yml {ou} : lien qui n'est pas une adresse "
+                         f"web — {texte[:60]!r}")
+
+
 def controler_aleatoire(c):
     """Un tirage au hasard non graine est la meme faute que l'ensemble non trie.
 
@@ -2036,6 +2081,7 @@ def main():
     controler_sass(c)
     controler_reproductibilite(c)
     controler_fraicheur(c)
+    controler_donnees_tierces(c)
     controler_aleatoire(c)
     controler_accents(c)
     controler_identifiants(c)

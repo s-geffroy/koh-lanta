@@ -49,9 +49,9 @@ layout: default
   <img src="{{ portrait.fichier | relative_url }}" alt="Portrait de {{ a.nom }}"
        width="{{ portrait.largeur }}" height="{{ portrait.hauteur }}">
   <figcaption>
-    Photo&nbsp;:{% if portrait.auteur %} {{ portrait.auteur }} —{% endif %}
-    {%- if portrait.licence %}{% assign licence_lue = portrait.licence %}{% if licence_lue == "Public domain" %}{% assign licence_lue = "Domaine public" %}{% endif %} {% if portrait.licence_url %}<a href="{{ portrait.licence_url }}">{{ licence_lue }}</a>{% else %}{{ licence_lue }}{% endif %}{% endif -%}
-    {%- if portrait.source %}, via <a href="{{ portrait.source }}">Wikimedia Commons</a>{% endif -%}
+    Photo&nbsp;:{% if portrait.auteur %} {{ portrait.auteur | escape }} —{% endif %}
+    {%- if portrait.licence %}{% assign licence_lue = portrait.licence %}{% if licence_lue == "Public domain" %}{% assign licence_lue = "Domaine public" %}{% endif %} {% if portrait.licence_url %}<a href="{{ portrait.licence_url | escape }}">{{ licence_lue | escape }}</a>{% else %}{{ licence_lue | escape }}{% endif %}{% endif -%}
+    {%- if portrait.source %}, via <a href="{{ portrait.source | escape }}">Wikimedia Commons</a>{% endif -%}
   </figcaption>
 </figure>
 {%- endif %}
@@ -59,7 +59,7 @@ layout: default
 {%- assign comptes = site.data.reseaux.comptes[page.aventurier] -%}
 {%- if comptes %}
 <p class="reseaux"><span>Ses comptes publics&nbsp;:</span>
-  {% for c in comptes %}<a href="{{ c.url }}">{{ c.reseau }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}
+  {% for c in comptes %}<a href="{{ c.url | escape }}">{{ c.reseau | escape }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}
 </p>
 {%- endif %}
 

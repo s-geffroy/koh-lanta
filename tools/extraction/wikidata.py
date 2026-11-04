@@ -284,9 +284,14 @@ SANS_AUTEUR = {"", "pas d'auteur", "auteur inconnu", "unknown author",
                "unknown", "anonymous", "anonyme", "inconnu"}
 
 
+# CE QUI VIENT DE COMMONS EST UN TEXTE DE TIERS, publie tel quel sur une fiche
+# (revue du 4 nov. 2026). Les entites se decodent AVANT le retrait des balises,
+# et non apres : dans l'autre ordre, un « &lt;script&gt; » du champ Artist
+# ressortait en « <script> », et le gabarit l'aurait rendu brut. Un chevron qui
+# survit au retrait (« a < b ») n'a rien a faire dans un nom : il part aussi.
 def sans_balises(texte):
-    plat = html.unescape(re.sub(r"<[^>]+>", " ", texte or ""))
-    plat = re.sub(r"\s+", " ", plat).strip()
+    plat = re.sub(r"<[^>]*>", " ", html.unescape(texte or ""))
+    plat = re.sub(r"\s+", " ", plat.replace("<", " ").replace(">", " ")).strip()
     trouve = RE_AUTEUR_PASSE_PARTOUT.match(plat)
     if trouve:
         plat = trouve.group(1).strip()
@@ -294,6 +299,29 @@ def sans_balises(texte):
     # « Marie-Lan Nguyen ( User:Jastrow ) ».
     plat = re.sub(r"\(\s+", "(", re.sub(r"\s+\)", ")", plat))
     return "" if plat.lower() in SANS_AUTEUR else plat
+
+
+# Une adresse de tiers n'entre dans un href que si elle est web : un
+# « javascript: » saisi sur Commons s'executerait au clic.
+RE_URL_WEB = re.compile(r"^https?://[^\s\"'<>]+$")
+# Un identifiant de compte entre dans une URL qu'on fabrique : lettres
+# (accentuees comprises, LinkedIn en admet), chiffres, point, tiret, souligne.
+# Rien qui ouvre un autre chemin, une requete ou un attribut.
+RE_COMPTE = re.compile(r"^[\w.-]+$")
+
+
+def compte_sur(motif, valeur):
+    """L'URL du compte, ou None si la valeur n'est pas sure. Le site officiel
+    (motif « {} ») EST une URL : elle doit etre web."""
+    if not isinstance(valeur, str):
+        return None
+    if motif == "{}":
+        return url_web(valeur)
+    return motif.format(valeur) if RE_COMPTE.match(valeur) else None
+
+
+def url_web(url):
+    return url if isinstance(url, str) and RE_URL_WEB.match(url) else None
 
 
 def image_commons(fichier):
@@ -318,10 +346,10 @@ def image_commons(fichier):
                 "licence": LIBELLES_LICENCE.get(
                     (meta.get("LicenseShortName") or {}).get("value") or licence,
                     (meta.get("LicenseShortName") or {}).get("value") or licence),
-                "licence_url": (meta.get("LicenseUrl") or {}).get("value"),
+                "licence_url": url_web((meta.get("LicenseUrl") or {}).get("value")),
                 "auteur": sans_balises((meta.get("Artist") or {}).get("value"))
                           or sans_balises((meta.get("Credit") or {}).get("value")),
-                "page": info.get("descriptionurl"),
+                "page": url_web(info.get("descriptionurl")),
             }
     return None
 
@@ -418,9 +446,9 @@ def main():
         comptes = []
         for propriete, nom, motif in RESEAUX:
             for v in valeurs(element, propriete)[:1]:
-                if isinstance(v, str) and v:
-                    comptes.append({"reseau": nom, "compte": v,
-                                    "url": motif.format(v)})
+                url = compte_sur(motif, v)
+                if url:
+                    comptes.append({"reseau": nom, "compte": v, "url": url})
         if comptes:
             reseaux[p["id"]] = comptes
 
