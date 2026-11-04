@@ -999,6 +999,15 @@ def verifier_qualite_des_conseils(conseils, saisons, parts, c):
                      f"« {sort_de[(sid, x['elimine'])]} », sans vote — c'est une "
                      f"sortie, pas un conseil")
 
+        # Les poteaux ne sont pas un conseil : le gagnant choisit seul. Une
+        # colonne qui garde ce choix comme bulletin ajoute une voix a l'elimine
+        # et un conseil a tous les presents (31 colonnes avant le 4 nov.).
+        if (votes and x.get("elimine_rattache")
+                and sort_de.get((sid, x["elimine"])) == "elimine_poteaux"
+                and derniere.get((sid, x["elimine"])) == num):
+            c.erreur(f"{ref} : « {x['elimine']} » sort aux poteaux, mais la colonne "
+                     f"porte {len(votes)} bulletin(s) — le choix du gagnant n'est pas un vote")
+
         # Une annulation partielle dit qui l'objet protegeait.
         if x.get("annulation") == "partielle" and not x.get("proteges"):
             c.erreur(f"{ref} : annulation partielle sans personne protegee")

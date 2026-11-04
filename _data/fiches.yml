@@ -516,7 +516,7 @@ aventuriers:
       classement: 5
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 2
       couleur: jaune
       effectif: 21
@@ -532,7 +532,7 @@ aventuriers:
       libelle_sort: Éliminé au conseil
       lieu: Archipel de Ko Yao
       localisation: Pyrénées-Atlantiques
-      menace: "0,57"
+      menace: "0,62"
       natures:
       - effectif: 1
         nature: precision
@@ -1190,7 +1190,7 @@ aventuriers:
       classement: 5
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 11
+      conseils_assistes: 10
       conseils_vise: 2
       couleur: jaune
       effectif: 20
@@ -1204,7 +1204,7 @@ aventuriers:
       libelle_sort: Abandon médical
       lieu: Archipel de Kadavu
       localisation: Ille-et-Vilaine
-      menace: "0,64"
+      menace: "0,7"
       natures: []
       numero: null
       part_parcours: 97
@@ -1352,7 +1352,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 16
+      conseils_assistes: 15
       conseils_vise: 1
       couleur: vert
       effectif: 24
@@ -1372,7 +1372,7 @@ aventuriers:
       libelle_sort: Vainqueur
       lieu: Archipel de Kadavu
       localisation: Ain
-      menace: "0,12"
+      menace: "0,13"
       natures:
       - effectif: 1
         nature: equilibre
@@ -2033,7 +2033,7 @@ aventuriers:
       classement: 4
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 1
       couleur: jaune
       effectif: 17
@@ -2051,7 +2051,7 @@ aventuriers:
       libelle_sort: Éliminé à l’orientation
       lieu: Îlots de l’île des Pins
       localisation: Rhône
-      menace: "0,07"
+      menace: "0,08"
       natures:
       - effectif: 1
         nature: force
@@ -2726,7 +2726,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 1
       couleur: rouge
       effectif: 16
@@ -2740,7 +2740,7 @@ aventuriers:
       libelle_sort: Vainqueur
       lieu: Péninsule de Nicoya
       localisation: Paris
-      menace: "0,15"
+      menace: "0,17"
       natures: []
       numero: 2
       part_parcours: 100
@@ -3089,7 +3089,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 1
       couleur: jaune
       effectif: 21
@@ -3109,7 +3109,7 @@ aventuriers:
       libelle_sort: Vainqueur
       lieu: Archipel de Yasawa
       localisation: Loiret
-      menace: "0,43"
+      menace: "0,46"
       natures:
       - effectif: 1
         nature: precision
@@ -3826,7 +3826,7 @@ aventuriers:
       classement: 4
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 12
+      conseils_assistes: 11
       conseils_vise: 3
       couleur: rouge
       effectif: 18
@@ -3842,7 +3842,7 @@ aventuriers:
       libelle_sort: Éliminé à l’orientation
       lieu: Archipel de Bocas del Toro
       localisation: Pyrénées-Atlantiques
-      menace: "0,5"
+      menace: "0,55"
       natures:
       - effectif: 1
         nature: aquatique
@@ -4100,7 +4100,7 @@ aventuriers:
       classement: 5
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 3
       couleur: rouge
       effectif: 21
@@ -4118,7 +4118,7 @@ aventuriers:
       libelle_sort: Éliminé à l’orientation
       lieu: Île de Taha'a
       localisation: Moselle
-      menace: "0,85"
+      menace: "0,92"
       natures:
       - effectif: 2
         nature: precision
@@ -4586,7 +4586,7 @@ aventuriers:
       classement: 4
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 1
       couleur: jaune
       effectif: 21
@@ -4600,7 +4600,7 @@ aventuriers:
       libelle_sort: Éliminé à l’orientation
       lieu: Archipel de Kadavu
       localisation: Côtes-d’Armor
-      menace: "0,21"
+      menace: "0,23"
       natures: []
       numero: 20
       part_parcours: 97
@@ -5402,7 +5402,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 15
+      conseils_assistes: 14
       conseils_vise: 1
       couleur: rouge
       effectif: 20
@@ -5426,7 +5426,7 @@ aventuriers:
       libelle_sort: Vainqueur
       lieu: Île de Koh Rong
       localisation: Morbihan
-      menace: "0,47"
+      menace: "0,5"
       natures:
       - effectif: 2
         nature: force
@@ -5815,7 +5815,7 @@ aventuriers:
       classement: 5
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 5
       couleur: rouge
       effectif: 20
@@ -5831,7 +5831,7 @@ aventuriers:
       libelle_sort: Éliminé à l’orientation
       lieu: Archipel de Seribuat
       localisation: Loire-Atlantique
-      menace: "0,64"
+      menace: "0,69"
       natures:
       - effectif: 1
         nature: statique
@@ -5898,7 +5898,7 @@ aventuriers:
       classement: 3
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 3
       couleur: jaune
       effectif: 16
@@ -5912,7 +5912,7 @@ aventuriers:
       libelle_sort: Éliminé aux poteaux
       lieu: Péninsule de Nicoya
       localisation: Rhône
-      menace: "0,62"
+      menace: "0,67"
       natures: []
       numero: 2
       part_parcours: 98
@@ -5977,7 +5977,7 @@ aventuriers:
       classement: 3
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 1
       couleur: rouge
       effectif: 17
@@ -6003,7 +6003,7 @@ aventuriers:
       libelle_sort: Éliminé aux poteaux
       lieu: Péninsule de Caramoan
       localisation: Pyrénées-Orientales
-      menace: "0,23"
+      menace: "0,25"
       natures:
       - effectif: 2
         nature: force
@@ -6030,7 +6030,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 9
+      conseils_assistes: 8
       conseils_vise: 0
       couleur: jaune
       effectif: 16
@@ -6595,7 +6595,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 3
       couleur: jaune
       effectif: 20
@@ -6611,7 +6611,7 @@ aventuriers:
       libelle_sort: Finaliste
       lieu: Archipel de Seribuat
       localisation: Loiret
-      menace: "0,86"
+      menace: "0,92"
       natures: []
       numero: 12
       part_parcours: 100
@@ -6676,7 +6676,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 16
+      conseils_assistes: 15
       conseils_vise: 2
       couleur: orange
       effectif: 24
@@ -6696,7 +6696,7 @@ aventuriers:
       libelle_sort: Finaliste
       lieu: Archipel de Kadavu
       localisation: Creuse
-      menace: "0,38"
+      menace: "0,4"
       natures:
       - effectif: 2
         nature: equilibre
@@ -6765,7 +6765,7 @@ aventuriers:
       classement: 4
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 0
       couleur: rouge
       effectif: 20
@@ -6848,7 +6848,7 @@ aventuriers:
       classement: 4
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 15
+      conseils_assistes: 14
       conseils_vise: 3
       couleur: rouge
       effectif: 20
@@ -6866,7 +6866,7 @@ aventuriers:
       libelle_sort: Éliminé à l’orientation
       lieu: Île de Koh Rong
       localisation: Yvelines
-      menace: "0,27"
+      menace: "0,29"
       natures:
       - effectif: 1
         nature: force
@@ -7049,7 +7049,7 @@ aventuriers:
       classement: 5
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 15
+      conseils_assistes: 14
       conseils_vise: 2
       couleur: rouge
       effectif: 20
@@ -7073,7 +7073,7 @@ aventuriers:
       libelle_sort: Éliminée à l’orientation
       lieu: Île de Koh Rong
       localisation: Isère
-      menace: "0,27"
+      menace: "0,29"
       natures:
       - effectif: 2
         nature: force
@@ -8971,7 +8971,7 @@ aventuriers:
       classement: 4
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 2
       couleur: rouge
       effectif: 21
@@ -8985,7 +8985,7 @@ aventuriers:
       libelle_sort: Éliminée à l’orientation
       lieu: Archipel de Ko Yao
       localisation: Hauts-de-Seine
-      menace: "0,43"
+      menace: "0,46"
       natures: []
       numero: 15
       part_parcours: 95
@@ -9639,7 +9639,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 2
       couleur: rouge
       effectif: 20
@@ -9659,7 +9659,7 @@ aventuriers:
       libelle_sort: Finaliste
       lieu: Archipel de Sibu
       localisation: Morbihan
-      menace: "0,64"
+      menace: "0,69"
       natures:
       - effectif: 1
         nature: statique
@@ -10164,7 +10164,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 2
       couleur: jaune
       effectif: 24
@@ -10180,7 +10180,7 @@ aventuriers:
       libelle_sort: Finaliste
       lieu: Péninsule de Caramoan
       localisation: Belgique
-      menace: "0,43"
+      menace: "0,46"
       natures: []
       numero: 26
       part_parcours: 100
@@ -10437,7 +10437,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 0
       couleur: rouge
       effectif: 17
@@ -10682,7 +10682,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 12
+      conseils_assistes: 11
       conseils_vise: 1
       couleur: rouge
       effectif: 18
@@ -10706,7 +10706,7 @@ aventuriers:
       libelle_sort: Vainqueur
       lieu: Archipel des Palaos
       localisation: Bouches-du-Rhône
-      menace: "0,25"
+      menace: "0,27"
       natures:
       - effectif: 3
         nature: rapidite
@@ -11076,7 +11076,7 @@ aventuriers:
       classement: 3
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 9
+      conseils_assistes: 8
       conseils_vise: 2
       couleur: jaune
       effectif: 14
@@ -11092,7 +11092,7 @@ aventuriers:
       libelle_sort: Éliminé aux poteaux
       lieu: Poum
       localisation: Nord
-      menace: "0,44"
+      menace: "0,5"
       natures: []
       numero: null
       part_parcours: 100
@@ -11316,7 +11316,7 @@ aventuriers:
       classement: 2
       colliers: 1
       colliers_joues: 1
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 0
       couleur: bleu
       effectif: 21
@@ -11761,7 +11761,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 16
+      conseils_assistes: 15
       conseils_vise: 2
       couleur: rouge
       effectif: 20
@@ -11777,7 +11777,7 @@ aventuriers:
       libelle_sort: Finaliste
       lieu: Péninsule de Caramoan
       localisation: Haute-Savoie
-      menace: "0,12"
+      menace: "0,13"
       natures: []
       numero: 28
       part_parcours: 100
@@ -11846,7 +11846,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 1
       couleur: rouge
       effectif: 18
@@ -11872,7 +11872,7 @@ aventuriers:
       libelle_sort: Finaliste
       lieu: Archipel de Côn Đảo
       localisation: Paris
-      menace: "0,07"
+      menace: "0,08"
       natures:
       - effectif: 2
         nature: force
@@ -11901,7 +11901,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 9
+      conseils_assistes: 8
       conseils_vise: 2
       couleur: rouge
       effectif: 16
@@ -11923,7 +11923,7 @@ aventuriers:
       libelle_sort: Finaliste
       lieu: Île de Koh Rong
       localisation: Paris
-      menace: "0,78"
+      menace: "0,88"
       natures:
       - effectif: 2
         nature: precision
@@ -11948,7 +11948,7 @@ aventuriers:
       classement: 3
       colliers: 1
       colliers_joues: 0
-      conseils_assistes: 11
+      conseils_assistes: 10
       conseils_vise: 0
       couleur: noir
       effectif: 20
@@ -11976,7 +11976,7 @@ aventuriers:
       libelle_sort: Éliminé aux poteaux
       lieu: Archipel de Kadavu
       localisation: Paris
-      menace: "0,09"
+      menace: 0
       natures:
       - effectif: 3
         nature: precision
@@ -11996,14 +11996,14 @@ aventuriers:
       speciale: true
       titre: L’Île des héros
       tribu: Héros
-      voix_recues: 1
+      voix_recues: 0
     - age: 42
       annee: 2021
       bulletins_emis: 4
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 0
       couleur: jaune
       effectif: 21
@@ -12060,7 +12060,7 @@ aventuriers:
       point: 0
     score: "3,436"
     titres: 0
-    voix_recues: 9
+    voix_recues: 8
   claudia-chatel:
     dans_le_top: false
     faq:
@@ -12178,7 +12178,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 1
       couleur: jaune
       effectif: 17
@@ -12196,7 +12196,7 @@ aventuriers:
       libelle_sort: Vainqueur
       lieu: Îlots de l’île des Pins
       localisation: Haute-Garonne
-      menace: "0,07"
+      menace: "0,08"
       natures:
       - effectif: 1
         nature: equilibre
@@ -12252,7 +12252,7 @@ aventuriers:
       classement: 1
       colliers: 1
       colliers_joues: 1
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 1
       couleur: rouge
       effectif: 18
@@ -12538,7 +12538,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 1
       couleur: rouge
       effectif: 21
@@ -12556,7 +12556,7 @@ aventuriers:
       libelle_sort: Finaliste
       lieu: Île de Koh Rong
       localisation: Haute-Savoie
-      menace: "0,07"
+      menace: "0,08"
       natures:
       - effectif: 1
         nature: force
@@ -12728,7 +12728,7 @@ aventuriers:
       classement: 5
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 1
       couleur: bleu
       effectif: 21
@@ -12744,7 +12744,7 @@ aventuriers:
       libelle_sort: Éliminée à l’orientation
       lieu: Archipel de Kadavu
       localisation: Maine-et-Loire
-      menace: "0,57"
+      menace: "0,62"
       natures:
       - effectif: 1
         nature: precision
@@ -13092,7 +13092,7 @@ aventuriers:
       classement: 4
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 9
+      conseils_assistes: 8
       conseils_vise: 0
       couleur: jaune
       effectif: 14
@@ -13129,7 +13129,7 @@ aventuriers:
       classement: 4
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 9
+      conseils_assistes: 8
       conseils_vise: 0
       couleur: rouge
       effectif: 16
@@ -13259,7 +13259,7 @@ aventuriers:
       classement: 1
       colliers: 2
       colliers_joues: 2
-      conseils_assistes: 16
+      conseils_assistes: 15
       conseils_vise: 2
       couleur: jaune
       effectif: 20
@@ -13275,7 +13275,7 @@ aventuriers:
       libelle_sort: Vainqueur
       lieu: Péninsule de Caramoan
       localisation: Tarn
-      menace: "0,44"
+      menace: "0,47"
       natures: []
       numero: 28
       part_parcours: 100
@@ -13819,7 +13819,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 12
+      conseils_assistes: 11
       conseils_vise: 0
       couleur: rouge
       effectif: 18
@@ -14530,7 +14530,7 @@ aventuriers:
       classement: 4
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 4
       couleur: rouge
       effectif: 20
@@ -14548,7 +14548,7 @@ aventuriers:
       libelle_sort: Éliminée à l’orientation
       lieu: Archipel de Raja Ampat
       localisation: Belgique
-      menace: "0,71"
+      menace: "0,77"
       natures:
       - effectif: 1
         nature: precision
@@ -14935,7 +14935,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 3
       couleur: jaune
       effectif: 16
@@ -14951,7 +14951,7 @@ aventuriers:
       libelle_sort: Finaliste
       lieu: Archipel d’Éfaté
       localisation: Isère
-      menace: "0,38"
+      menace: "0,42"
       natures: []
       numero: 6
       part_parcours: 100
@@ -15766,7 +15766,7 @@ aventuriers:
       classement: 4
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 12
+      conseils_assistes: 11
       conseils_vise: 3
       couleur: jaune
       effectif: 18
@@ -15780,7 +15780,7 @@ aventuriers:
       libelle_sort: Éliminée à l’orientation
       lieu: Archipel des Palaos
       localisation: Alpes-Maritimes
-      menace: "0,33"
+      menace: "0,36"
       natures: []
       numero: 9
       part_parcours: 95
@@ -16148,7 +16148,7 @@ aventuriers:
       classement: 3
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 9
+      conseils_assistes: 8
       conseils_vise: 2
       couleur: jaune
       effectif: 14
@@ -16166,7 +16166,7 @@ aventuriers:
       libelle_sort: Éliminée aux poteaux
       lieu: Amazonie, bord du Rio Negro
       localisation: Hauts-de-Seine
-      menace: "0,44"
+      menace: "0,5"
       natures:
       - effectif: 1
         nature: precision
@@ -16509,7 +16509,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 3
       couleur: rouge
       effectif: 17
@@ -16527,7 +16527,7 @@ aventuriers:
       libelle_sort: Finaliste
       lieu: Îlots de l’île des Pins
       localisation: Dordogne
-      menace: "0,79"
+      menace: "0,85"
       natures:
       - effectif: 1
         nature: precision
@@ -16786,7 +16786,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 3
       couleur: jaune
       effectif: 16
@@ -16804,7 +16804,7 @@ aventuriers:
       libelle_sort: Vainqueur
       lieu: Archipel d’Éfaté
       localisation: Gard
-      menace: "0,38"
+      menace: "0,42"
       natures:
       - effectif: 1
         nature: rapidite
@@ -17424,7 +17424,7 @@ aventuriers:
       classement: 3
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 15
+      conseils_assistes: 14
       conseils_vise: 4
       couleur: jaune
       effectif: 20
@@ -17440,7 +17440,7 @@ aventuriers:
       libelle_sort: Éliminé aux poteaux
       lieu: Île de Koh Rong
       localisation: Val-de-Marne
-      menace: "0,8"
+      menace: "0,79"
       natures: []
       numero: 16
       part_parcours: 98
@@ -17452,7 +17452,7 @@ aventuriers:
       speciale: false
       titre: L’Île au trésor
       tribu: Naga
-      voix_recues: 12
+      voix_recues: 11
     prenom: Freddy
     profession: Chauffeur de bus
     rang: 443
@@ -17469,7 +17469,7 @@ aventuriers:
       point: 83
     score: "−0,36"
     titres: 0
-    voix_recues: 12
+    voix_recues: 11
   freddy-boucher:
     dans_le_top: false
     faq:
@@ -17550,7 +17550,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 9
+      conseils_assistes: 8
       conseils_vise: 2
       couleur: jaune
       effectif: 14
@@ -17570,7 +17570,7 @@ aventuriers:
       libelle_sort: Finaliste
       lieu: Poum
       localisation: Nord
-      menace: "0,56"
+      menace: "0,62"
       natures:
       - effectif: 1
         nature: rapidite
@@ -17933,7 +17933,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 2
       couleur: bleu
       effectif: 21
@@ -17951,7 +17951,7 @@ aventuriers:
       libelle_sort: Vainqueur
       lieu: Île de Koh Rong
       localisation: Bouches-du-Rhône
-      menace: "0,14"
+      menace: "0,15"
       natures:
       - effectif: 1
         nature: precision
@@ -18019,7 +18019,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 1
       couleur: rouge
       effectif: 17
@@ -18106,7 +18106,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 15
+      conseils_assistes: 14
       conseils_vise: 1
       couleur: jaune
       effectif: 20
@@ -18537,7 +18537,7 @@ aventuriers:
       classement: 3
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 3
       couleur: rouge
       effectif: 21
@@ -18557,7 +18557,7 @@ aventuriers:
       libelle_sort: Éliminé aux poteaux
       lieu: Archipel de Ko Yao
       localisation: Belgique
-      menace: "0,29"
+      menace: "0,23"
       natures:
       - effectif: 1
         nature: equilibre
@@ -18575,7 +18575,7 @@ aventuriers:
       speciale: false
       titre: Thaïlande
       tribu: Aopoh
-      voix_recues: 4
+      voix_recues: 3
     prenom: Gabriel
     profession: Inspecteur de police
     rang: 38
@@ -18592,7 +18592,7 @@ aventuriers:
       point: 7
     score: "0,812"
     titres: 0
-    voix_recues: 4
+    voix_recues: 3
   gael-gollen:
     dans_le_top: false
     faq:
@@ -18707,7 +18707,7 @@ aventuriers:
       classement: 1
       colliers: 1
       colliers_joues: 1
-      conseils_assistes: 15
+      conseils_assistes: 14
       conseils_vise: 2
       couleur: vert
       effectif: 24
@@ -18723,7 +18723,7 @@ aventuriers:
       libelle_sort: Vainqueur
       lieu: Péninsule de Caramoan
       localisation: Ain
-      menace: "0,27"
+      menace: "0,29"
       natures: []
       numero: 27
       part_parcours: 100
@@ -19118,7 +19118,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 0
       couleur: rouge
       effectif: 20
@@ -19481,7 +19481,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 9
+      conseils_assistes: 8
       conseils_vise: 1
       couleur: jaune
       effectif: 14
@@ -19499,7 +19499,7 @@ aventuriers:
       libelle_sort: Vainqueur
       lieu: Poum
       localisation: Yvelines
-      menace: "0,22"
+      menace: "0,25"
       natures:
       - effectif: 1
         nature: equilibre
@@ -19762,7 +19762,7 @@ aventuriers:
       classement: 3
       colliers: 1
       colliers_joues: 1
-      conseils_assistes: 16
+      conseils_assistes: 15
       conseils_vise: 2
       couleur: jaune
       effectif: 20
@@ -19778,7 +19778,7 @@ aventuriers:
       libelle_sort: Éliminé aux poteaux
       lieu: Péninsule de Caramoan
       localisation: Morbihan
-      menace: "0,62"
+      menace: "0,6"
       natures: []
       numero: 28
       part_parcours: 100
@@ -19790,7 +19790,7 @@ aventuriers:
       speciale: false
       titre: Les Reliques du destin
       tribu: Kalao
-      voix_recues: 10
+      voix_recues: 9
     prenom: Guillaume
     profession: Auto-entrepreneur en création bois
     rang: 45
@@ -19807,7 +19807,7 @@ aventuriers:
       point: 8
     score: "0,731"
     titres: 0
-    voix_recues: 10
+    voix_recues: 9
   guillaume-noel:
     dans_le_top: false
     faq:
@@ -20815,7 +20815,7 @@ aventuriers:
       classement: 3
       colliers: 2
       colliers_joues: 1
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 0
       couleur: noir
       effectif: 24
@@ -20833,7 +20833,7 @@ aventuriers:
       libelle_sort: Éliminé aux poteaux
       lieu: Péninsule de Caramoan
       localisation: Seine-Saint-Denis
-      menace: "0,43"
+      menace: "0,46"
       natures: []
       numero: 26
       part_parcours: 100
@@ -20898,7 +20898,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 11
+      conseils_assistes: 10
       conseils_vise: 1
       couleur: jaune
       effectif: 20
@@ -20914,7 +20914,7 @@ aventuriers:
       libelle_sort: Finaliste
       lieu: Archipel de Kadavu
       localisation: Paris
-      menace: "0,09"
+      menace: "0,1"
       natures: []
       numero: null
       part_parcours: 100
@@ -21061,7 +21061,7 @@ aventuriers:
       classement: 3
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 12
+      conseils_assistes: 11
       conseils_vise: 2
       couleur: rouge
       effectif: 18
@@ -21079,7 +21079,7 @@ aventuriers:
       libelle_sort: Éliminée aux poteaux
       lieu: Archipel des Palaos
       localisation: Yvelines
-      menace: "0,92"
+      menace: 1
       natures:
       - effectif: 1
         nature: precision
@@ -21291,7 +21291,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 12
+      conseils_assistes: 11
       conseils_vise: 2
       couleur: jaune
       effectif: 18
@@ -21307,7 +21307,7 @@ aventuriers:
       libelle_sort: Vainqueur
       lieu: Archipel de Bocas del Toro
       localisation: Ain
-      menace: "0,25"
+      menace: "0,27"
       natures: []
       numero: 3
       part_parcours: 100
@@ -21728,7 +21728,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 0
       couleur: rouge
       effectif: 16
@@ -21775,7 +21775,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 9
+      conseils_assistes: 8
       conseils_vise: 0
       couleur: jaune
       effectif: 14
@@ -21936,7 +21936,7 @@ aventuriers:
       classement: 4
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 1
       couleur: rouge
       effectif: 18
@@ -21952,7 +21952,7 @@ aventuriers:
       libelle_sort: Éliminé à l’orientation
       lieu: Archipel de Yasawa
       localisation: Belgique
-      menace: "0,62"
+      menace: "0,67"
       natures:
       - effectif: 1
         nature: equilibre
@@ -22222,7 +22222,7 @@ aventuriers:
       classement: 4
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 9
+      conseils_assistes: 8
       conseils_vise: 3
       couleur: jaune
       effectif: 14
@@ -22238,7 +22238,7 @@ aventuriers:
       libelle_sort: Éliminé à l’orientation
       lieu: Amazonie, bord du Rio Negro
       localisation: Bouches-du-Rhône
-      menace: "0,33"
+      menace: "0,38"
       natures:
       - effectif: 1
         nature: precision
@@ -23020,7 +23020,7 @@ aventuriers:
       classement: 3
       colliers: 1
       colliers_joues: 1
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 4
       couleur: rouge
       effectif: 18
@@ -23038,7 +23038,7 @@ aventuriers:
       libelle_sort: Éliminé aux poteaux
       lieu: Archipel de Yasawa
       localisation: Isère
-      menace: "1,38"
+      menace: "1,42"
       natures:
       - effectif: 1
         nature: logique
@@ -23052,7 +23052,7 @@ aventuriers:
       speciale: true
       titre: Le Combat des héros
       tribu: Toa
-      voix_recues: 18
+      voix_recues: 17
     prenom: Jérémy
     profession: Blogueur
     rang: 407
@@ -23069,7 +23069,7 @@ aventuriers:
       point: 77
     score: "−0,335"
     titres: 0
-    voix_recues: 30
+    voix_recues: 29
   jerome-merlier:
     dans_le_top: false
     faq:
@@ -23184,7 +23184,7 @@ aventuriers:
       classement: 3
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 15
+      conseils_assistes: 14
       conseils_vise: 0
       couleur: bleu
       effectif: 24
@@ -23721,7 +23721,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 15
+      conseils_assistes: 14
       conseils_vise: 2
       couleur: jaune
       effectif: 20
@@ -23739,7 +23739,7 @@ aventuriers:
       libelle_sort: Finaliste
       lieu: Île de Koh Rong
       localisation: Haute-Garonne
-      menace: "0,2"
+      menace: "0,21"
       natures:
       - effectif: 1
         nature: rapidite
@@ -24397,7 +24397,7 @@ aventuriers:
       classement: 3
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 2
       couleur: rouge
       effectif: 21
@@ -24419,7 +24419,7 @@ aventuriers:
       libelle_sort: Éliminé aux poteaux
       lieu: Île de Taha'a
       localisation: Aveyron
-      menace: "0,23"
+      menace: "0,17"
       natures:
       - effectif: 3
         nature: statique
@@ -24433,7 +24433,7 @@ aventuriers:
       speciale: false
       titre: Les Armes secrètes
       tribu: Oro
-      voix_recues: 3
+      voix_recues: 2
     prenom: Jonathan
     profession: Moniteur d’escalade
     rang: 143
@@ -24450,7 +24450,7 @@ aventuriers:
       point: 27
     score: "0,204"
     titres: 0
-    voix_recues: 3
+    voix_recues: 2
   joseph-farret:
     dans_le_top: false
     faq:
@@ -24843,7 +24843,7 @@ aventuriers:
       classement: 3
       colliers: 1
       colliers_joues: 1
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 1
       couleur: rouge
       effectif: 22
@@ -24859,7 +24859,7 @@ aventuriers:
       libelle_sort: Éliminée aux poteaux
       lieu: Péninsule de Caramoan
       localisation: Nièvre
-      menace: "0,5"
+      menace: "0,54"
       natures: []
       numero: 25
       part_parcours: 100
@@ -25605,7 +25605,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 1
       couleur: rouge
       effectif: 16
@@ -25623,7 +25623,7 @@ aventuriers:
       libelle_sort: Vainqueur
       lieu: Archipel de Palawan
       localisation: Var
-      menace: "0,15"
+      menace: "0,17"
       natures:
       - effectif: 1
         nature: precision
@@ -26011,7 +26011,7 @@ aventuriers:
       classement: 4
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 2
       couleur: rouge
       effectif: 21
@@ -26029,7 +26029,7 @@ aventuriers:
       libelle_sort: Éliminée à l’orientation
       lieu: Île de Taha'a
       localisation: Doubs
-      menace: "0,54"
+      menace: "0,58"
       natures:
       - effectif: 1
         nature: equilibre
@@ -26564,7 +26564,7 @@ aventuriers:
       classement: 3
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 0
       couleur: rouge
       effectif: 20
@@ -26582,7 +26582,7 @@ aventuriers:
       libelle_sort: Éliminé aux poteaux
       lieu: Archipel de Raja Ampat
       localisation: Val-de-Marne
-      menace: "0,07"
+      menace: 0
       natures:
       - effectif: 1
         nature: statique
@@ -26596,14 +26596,14 @@ aventuriers:
       speciale: false
       titre: Raja Ampat
       tribu: Mambok
-      voix_recues: 1
+      voix_recues: 0
     - age: 32
       annee: 2014
       bulletins_emis: 6
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 9
+      conseils_assistes: 8
       conseils_vise: 1
       couleur: jaune
       effectif: 13
@@ -26625,7 +26625,7 @@ aventuriers:
       libelle_sort: Vainqueur
       lieu: Archipel de Sibu
       localisation: Val-de-Marne
-      menace: "0,11"
+      menace: "0,12"
       natures:
       - effectif: 1
         nature: force
@@ -26650,7 +26650,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 2
       couleur: rouge
       effectif: 21
@@ -26668,7 +26668,7 @@ aventuriers:
       libelle_sort: Finaliste
       lieu: Île de Taha'a
       localisation: Val-de-Marne
-      menace: "0,29"
+      menace: "0,31"
       natures:
       - effectif: 1
         nature: statique
@@ -26699,7 +26699,7 @@ aventuriers:
       point: 3
     score: "1,043"
     titres: 1
-    voix_recues: 6
+    voix_recues: 5
   laurent-mischkind:
     dans_le_top: false
     faq:
@@ -26893,7 +26893,7 @@ aventuriers:
       classement: 1
       colliers: 1
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 2
       couleur: jaune
       effectif: 22
@@ -26907,7 +26907,7 @@ aventuriers:
       libelle_sort: Vainqueur
       lieu: Péninsule de Caramoan
       localisation: Hauts-de-Seine
-      menace: "0,14"
+      menace: "0,15"
       natures: []
       numero: 25
       part_parcours: 100
@@ -27052,7 +27052,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 4
       couleur: jaune
       effectif: 16
@@ -27068,7 +27068,7 @@ aventuriers:
       libelle_sort: Finaliste
       lieu: Archipel des Perles (Las Perlas)
       localisation: Alpes-Maritimes
-      menace: "0,79"
+      menace: "0,85"
       natures: []
       numero: 4
       part_parcours: 100
@@ -27087,7 +27087,7 @@ aventuriers:
       classement: 5
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 9
+      conseils_assistes: 8
       conseils_vise: 3
       couleur: jaune
       effectif: 14
@@ -27103,7 +27103,7 @@ aventuriers:
       libelle_sort: Éliminée à l’orientation
       lieu: Poum
       localisation: Alpes-Maritimes
-      menace: "0,67"
+      menace: "0,75"
       natures:
       - effectif: 1
         nature: precision
@@ -27486,7 +27486,7 @@ aventuriers:
       classement: 3
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 16
+      conseils_assistes: 15
       conseils_vise: 0
       couleur: vert
       effectif: 24
@@ -27508,7 +27508,7 @@ aventuriers:
       libelle_sort: Éliminé aux poteaux
       lieu: Archipel de Kadavu
       localisation: Savoie
-      menace: "0,06"
+      menace: 0
       natures:
       - effectif: 3
         nature: rapidite
@@ -27528,7 +27528,7 @@ aventuriers:
       speciale: false
       titre: Les 4 Terres
       tribu: Tokalo
-      voix_recues: 1
+      voix_recues: 0
     - age: 21
       annee: 2021
       bulletins_emis: 3
@@ -27586,7 +27586,7 @@ aventuriers:
       point: 13
     score: "0,585"
     titres: 0
-    voix_recues: 1
+    voix_recues: 0
   lola-krast:
     dans_le_top: true
     faq:
@@ -28237,7 +28237,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 3
       couleur: jaune
       effectif: 21
@@ -28255,7 +28255,7 @@ aventuriers:
       libelle_sort: Finaliste
       lieu: Île de Taha'a
       localisation: Val-de-Marne
-      menace: "0,62"
+      menace: "0,67"
       natures:
       - effectif: 1
         nature: precision
@@ -28409,7 +28409,7 @@ aventuriers:
       classement: 4
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 1
       couleur: jaune
       effectif: 16
@@ -28427,7 +28427,7 @@ aventuriers:
       libelle_sort: Éliminé à l’orientation
       lieu: Archipel d’Éfaté
       localisation: Doubs
-      menace: "0,23"
+      menace: "0,25"
       natures:
       - effectif: 1
         nature: statique
@@ -28527,7 +28527,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 15
+      conseils_assistes: 14
       conseils_vise: 1
       couleur: orange
       effectif: 24
@@ -28687,7 +28687,7 @@ aventuriers:
       classement: 3
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 1
       couleur: jaune
       effectif: 21
@@ -28709,7 +28709,7 @@ aventuriers:
       libelle_sort: Éliminée aux poteaux
       lieu: Archipel de Yasawa
       localisation: Seine-Saint-Denis
-      menace: "0,71"
+      menace: "0,69"
       natures:
       - effectif: 2
         nature: precision
@@ -28725,7 +28725,7 @@ aventuriers:
       speciale: false
       titre: Fidji
       tribu: Coravu
-      voix_recues: 10
+      voix_recues: 9
     prenom: Magalie
     profession: Danseuse professionnelle
     rang: 104
@@ -28742,7 +28742,7 @@ aventuriers:
       point: 19
     score: "0,341"
     titres: 0
-    voix_recues: 10
+    voix_recues: 9
   mama-el-fayed:
     dans_le_top: false
     faq:
@@ -29100,7 +29100,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 3
       couleur: jaune
       effectif: 20
@@ -29124,7 +29124,7 @@ aventuriers:
       libelle_sort: Vainqueur
       lieu: Archipel de Sibu
       localisation: Maine-et-Loire
-      menace: "0,36"
+      menace: "0,38"
       natures:
       - effectif: 2
         nature: rapidite
@@ -29435,7 +29435,7 @@ aventuriers:
       classement: 4
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 2
       couleur: jaune
       effectif: 16
@@ -29451,7 +29451,7 @@ aventuriers:
       libelle_sort: Éliminée à une épreuve
       lieu: Péninsule de Nicoya
       localisation: Mauléon
-      menace: "0,31"
+      menace: "0,33"
       natures:
       - effectif: 1
         nature: rapidite
@@ -30867,7 +30867,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 9
+      conseils_assistes: 8
       conseils_vise: 0
       couleur: rouge
       effectif: 13
@@ -31109,7 +31109,7 @@ aventuriers:
       classement: null
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 1
       couleur: rouge
       effectif: 16
@@ -31125,7 +31125,7 @@ aventuriers:
       libelle_sort: Éliminée aux poteaux
       lieu: Archipel de Palawan
       localisation: Nord
-      menace: "0,46"
+      menace: "0,5"
       natures: []
       numero: 7
       part_parcours: 98
@@ -31514,7 +31514,7 @@ aventuriers:
       classement: 4
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 3
       couleur: bleu
       effectif: 21
@@ -31530,7 +31530,7 @@ aventuriers:
       libelle_sort: Éliminée à l’orientation
       lieu: Île de Koh Rong
       localisation: Maine-et-Loire
-      menace: "0,5"
+      menace: "0,54"
       natures:
       - effectif: 1
         nature: precision
@@ -31676,7 +31676,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 2
       couleur: rouge
       effectif: 21
@@ -31696,7 +31696,7 @@ aventuriers:
       libelle_sort: Vainqueur
       lieu: Archipel de Kadavu
       localisation: Belgique
-      menace: "0,5"
+      menace: "0,54"
       natures:
       - effectif: 2
         nature: precision
@@ -31875,7 +31875,7 @@ aventuriers:
       classement: 3
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 9
+      conseils_assistes: 8
       conseils_vise: 2
       couleur: jaune
       effectif: 16
@@ -31891,7 +31891,7 @@ aventuriers:
       libelle_sort: Éliminée aux poteaux
       lieu: Île de Koh Rong
       localisation: Hauts-de-Seine
-      menace: "1,11"
+      menace: "1,25"
       natures: []
       numero: null
       part_parcours: 100
@@ -32602,7 +32602,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 1
       couleur: rouge
       effectif: 21
@@ -32935,7 +32935,7 @@ aventuriers:
       classement: 2
       colliers: 3
       colliers_joues: 1
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 0
       couleur: rouge
       effectif: 22
@@ -32951,7 +32951,7 @@ aventuriers:
       libelle_sort: Finaliste
       lieu: Péninsule de Caramoan
       localisation: Hauts-de-Seine
-      menace: "0,36"
+      menace: "0,38"
       natures: []
       numero: 25
       part_parcours: 100
@@ -33343,7 +33343,7 @@ aventuriers:
       classement: 3
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 4
       couleur: jaune
       effectif: 20
@@ -33363,7 +33363,7 @@ aventuriers:
       libelle_sort: Éliminée aux poteaux
       lieu: Archipel de Sibu
       localisation: Bouches-du-Rhône
-      menace: "0,79"
+      menace: "0,77"
       natures:
       - effectif: 1
         nature: precision
@@ -33381,7 +33381,7 @@ aventuriers:
       speciale: false
       titre: Johor
       tribu: Lankawaï
-      voix_recues: 11
+      voix_recues: 10
     prenom: Mélissa
     profession: Assistante administrative
     rang: 145
@@ -33398,7 +33398,7 @@ aventuriers:
       point: 27
     score: "0,201"
     titres: 0
-    voix_recues: 11
+    voix_recues: 10
   melissa-pierru:
     dans_le_top: false
     faq:
@@ -33994,7 +33994,7 @@ aventuriers:
       classement: 3
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 1
       couleur: jaune
       effectif: 17
@@ -34014,7 +34014,7 @@ aventuriers:
       libelle_sort: Éliminé aux poteaux
       lieu: Îlots de l’île des Pins
       localisation: Hauts-de-Seine
-      menace: "0,14"
+      menace: "0,08"
       natures:
       - effectif: 1
         nature: force
@@ -34032,7 +34032,7 @@ aventuriers:
       speciale: false
       titre: Pacifique
       tribu: Kumo
-      voix_recues: 2
+      voix_recues: 1
     - age: 29
       annee: 2010
       bulletins_emis: 1
@@ -34082,7 +34082,7 @@ aventuriers:
       point: 14
     score: "0,542"
     titres: 0
-    voix_recues: 6
+    voix_recues: 5
   mohamed-siaaliti:
     dans_le_top: false
     faq:
@@ -34348,7 +34348,7 @@ aventuriers:
       classement: 4
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 9
+      conseils_assistes: 8
       conseils_vise: 2
       couleur: jaune
       effectif: 13
@@ -34362,7 +34362,7 @@ aventuriers:
       libelle_sort: Éliminé à l’orientation
       lieu: Archipel de Sibu
       localisation: Paris
-      menace: "0,56"
+      menace: "0,62"
       natures: []
       numero: null
       part_parcours: 96
@@ -34430,7 +34430,7 @@ aventuriers:
       classement: 3
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 12
+      conseils_assistes: 11
       conseils_vise: 1
       couleur: jaune
       effectif: 18
@@ -34452,7 +34452,7 @@ aventuriers:
       libelle_sort: Éliminé aux poteaux
       lieu: Archipel de Bocas del Toro
       localisation: Essonne
-      menace: "0,67"
+      menace: "0,73"
       natures:
       - effectif: 2
         nature: force
@@ -34510,7 +34510,7 @@ aventuriers:
       classement: 4
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 11
+      conseils_assistes: 10
       conseils_vise: 0
       couleur: noir
       effectif: 20
@@ -35291,7 +35291,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 11
+      conseils_assistes: 10
       conseils_vise: 0
       couleur: jaune
       effectif: 20
@@ -35583,7 +35583,7 @@ aventuriers:
       classement: 4
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 4
       couleur: rouge
       effectif: 17
@@ -35597,7 +35597,7 @@ aventuriers:
       libelle_sort: Éliminée à l’orientation
       lieu: Péninsule de Caramoan
       localisation: Seine-Saint-Denis
-      menace: "0,46"
+      menace: "0,5"
       natures: []
       numero: 8
       part_parcours: 95
@@ -36413,7 +36413,7 @@ aventuriers:
       classement: 3
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 15
+      conseils_assistes: 14
       conseils_vise: 0
       couleur: jaune
       effectif: 20
@@ -36431,7 +36431,7 @@ aventuriers:
       libelle_sort: Éliminé aux poteaux
       lieu: Péninsule de Caramoan
       localisation: Corse
-      menace: "0,33"
+      menace: "0,36"
       natures:
       - effectif: 1
         nature: force
@@ -36631,7 +36631,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 2
       couleur: jaune
       effectif: 16
@@ -36645,7 +36645,7 @@ aventuriers:
       libelle_sort: Finaliste
       lieu: Péninsule de Nicoya
       localisation: Deux-Sèvres
-      menace: "0,23"
+      menace: "0,25"
       natures: []
       numero: 2
       part_parcours: 100
@@ -37422,7 +37422,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 7
       couleur: jaune
       effectif: 21
@@ -37442,7 +37442,7 @@ aventuriers:
       libelle_sort: Finaliste
       lieu: Archipel de Ko Yao
       localisation: Alpes-Maritimes
-      menace: "0,86"
+      menace: "0,92"
       natures:
       - effectif: 1
         nature: precision
@@ -37465,7 +37465,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 0
       couleur: rouge
       effectif: 18
@@ -37919,7 +37919,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 12
+      conseils_assistes: 11
       conseils_vise: 1
       couleur: rouge
       effectif: 18
@@ -37937,7 +37937,7 @@ aventuriers:
       libelle_sort: Finaliste
       lieu: Archipel des Palaos
       localisation: Loire
-      menace: "0,08"
+      menace: "0,09"
       natures:
       - effectif: 1
         nature: precision
@@ -37958,7 +37958,7 @@ aventuriers:
       classement: 5
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 9
+      conseils_assistes: 8
       conseils_vise: 1
       couleur: rouge
       effectif: 16
@@ -37972,7 +37972,7 @@ aventuriers:
       libelle_sort: Éliminé à l’orientation
       lieu: Île de Koh Rong
       localisation: Loire
-      menace: "0,89"
+      menace: 1
       natures: []
       numero: null
       part_parcours: 96
@@ -38388,7 +38388,7 @@ aventuriers:
       classement: 4
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 4
       couleur: jaune
       effectif: 20
@@ -38412,7 +38412,7 @@ aventuriers:
       libelle_sort: Éliminé à l’orientation
       lieu: Archipel de Seribuat
       localisation: Seine-Maritime
-      menace: "0,36"
+      menace: "0,38"
       natures:
       - effectif: 3
         nature: rapidite
@@ -38439,7 +38439,7 @@ aventuriers:
       classement: 3
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 9
+      conseils_assistes: 8
       conseils_vise: 3
       couleur: rouge
       effectif: 13
@@ -38455,7 +38455,7 @@ aventuriers:
       libelle_sort: Éliminé aux poteaux
       lieu: Archipel de Sibu
       localisation: Seine-Maritime
-      menace: "0,78"
+      menace: "0,88"
       natures: []
       numero: null
       part_parcours: 96
@@ -38561,7 +38561,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 0
       couleur: rouge
       effectif: 16
@@ -38579,7 +38579,7 @@ aventuriers:
       libelle_sort: Vainqueur
       lieu: Archipel des Perles (Las Perlas)
       localisation: Brassac
-      menace: "0,14"
+      menace: "0,15"
       natures:
       - effectif: 1
         nature: statique
@@ -38679,7 +38679,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 1
       couleur: rouge
       effectif: 18
@@ -38697,7 +38697,7 @@ aventuriers:
       libelle_sort: Vainqueur
       lieu: Archipel de Côn Đảo
       localisation: Drôme
-      menace: "0,07"
+      menace: "0,08"
       natures:
       - effectif: 1
         nature: precision
@@ -39276,7 +39276,7 @@ aventuriers:
       classement: 3
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 1
       couleur: rouge
       effectif: 16
@@ -39294,7 +39294,7 @@ aventuriers:
       libelle_sort: Éliminé aux poteaux
       lieu: Archipel des Perles (Las Perlas)
       localisation: Saône-et-Loire
-      menace: "0,5"
+      menace: "0,54"
       natures:
       - effectif: 1
         nature: equilibre
@@ -40224,7 +40224,7 @@ aventuriers:
       classement: 4
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 2
       couleur: rouge
       effectif: 16
@@ -40242,7 +40242,7 @@ aventuriers:
       libelle_sort: Éliminé au conseil
       lieu: Archipel des Perles (Las Perlas)
       localisation: Calvados
-      menace: "0,5"
+      menace: "0,54"
       natures:
       - effectif: 1
         nature: force
@@ -40265,7 +40265,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 9
+      conseils_assistes: 8
       conseils_vise: 2
       couleur: jaune
       effectif: 14
@@ -40281,7 +40281,7 @@ aventuriers:
       libelle_sort: Vainqueur
       lieu: Amazonie, bord du Rio Negro
       localisation: Calvados
-      menace: "0,22"
+      menace: "0,25"
       natures: []
       numero: null
       part_parcours: 100
@@ -41128,7 +41128,7 @@ aventuriers:
       classement: 4
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 0
       couleur: rouge
       effectif: 21
@@ -42102,7 +42102,7 @@ aventuriers:
       classement: 3
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 3
       couleur: jaune
       effectif: 16
@@ -42122,7 +42122,7 @@ aventuriers:
       libelle_sort: Éliminé aux poteaux
       lieu: Archipel d’Éfaté
       localisation: Seine-Maritime
-      menace: "0,69"
+      menace: "0,67"
       natures:
       - effectif: 2
         nature: rapidite
@@ -42140,7 +42140,7 @@ aventuriers:
       speciale: false
       titre: Vanuatu
       tribu: Tana
-      voix_recues: 9
+      voix_recues: 8
     prenom: Sébastien
     profession: Chef d’entreprise
     rang: 92
@@ -42157,7 +42157,7 @@ aventuriers:
       point: 17
     score: "0,446"
     titres: 0
-    voix_recues: 9
+    voix_recues: 8
   setha-el-hajjami:
     dans_le_top: false
     faq:
@@ -42350,7 +42350,7 @@ aventuriers:
       classement: null
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 13
+      conseils_assistes: 12
       conseils_vise: 2
       couleur: rouge
       effectif: 16
@@ -42366,7 +42366,7 @@ aventuriers:
       libelle_sort: Éliminé à l’orientation
       lieu: Archipel de Palawan
       localisation: Aude
-      menace: "0,15"
+      menace: "0,17"
       natures:
       - effectif: 1
         nature: equilibre
@@ -42840,7 +42840,7 @@ aventuriers:
       classement: 3
       colliers: 1
       colliers_joues: 1
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 0
       couleur: jaune
       effectif: 21
@@ -42862,7 +42862,7 @@ aventuriers:
       libelle_sort: Éliminé aux poteaux
       lieu: Archipel de Kadavu
       localisation: Alpes-Maritimes
-      menace: "0,07"
+      menace: 0
       natures:
       - effectif: 2
         nature: precision
@@ -42878,7 +42878,7 @@ aventuriers:
       speciale: false
       titre: La Guerre des chefs
       tribu: Tabuo
-      voix_recues: 1
+      voix_recues: 0
     prenom: Steeve
     profession: Travailleur social
     rang: 206
@@ -42895,7 +42895,7 @@ aventuriers:
       point: 39
     score: "0,053"
     titres: 0
-    voix_recues: 1
+    voix_recues: 0
   stephane-bertheau:
     dans_le_top: false
     faq:
@@ -43737,7 +43737,7 @@ aventuriers:
       classement: 2
       colliers: 1
       colliers_joues: 1
-      conseils_assistes: 15
+      conseils_assistes: 14
       conseils_vise: 8
       couleur: jaune
       effectif: 20
@@ -43753,7 +43753,7 @@ aventuriers:
       libelle_sort: Finaliste
       lieu: Péninsule de Caramoan
       localisation: Seine-Saint-Denis
-      menace: "2,4"
+      menace: "2,57"
       natures: []
       numero: 24
       part_parcours: 100
@@ -43855,7 +43855,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 2
       couleur: jaune
       effectif: 20
@@ -43875,7 +43875,7 @@ aventuriers:
       libelle_sort: Finaliste
       lieu: Archipel de Raja Ampat
       localisation: Ain
-      menace: "0,36"
+      menace: "0,38"
       natures:
       - effectif: 1
         nature: equilibre
@@ -44187,7 +44187,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 0
       couleur: jaune
       effectif: 24
@@ -44591,7 +44591,7 @@ aventuriers:
       classement: 2
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 2
       couleur: jaune
       effectif: 21
@@ -44609,7 +44609,7 @@ aventuriers:
       libelle_sort: Finaliste
       lieu: Archipel de Yasawa
       localisation: Bouches-du-Rhône
-      menace: "0,43"
+      menace: "0,46"
       natures:
       - effectif: 1
         nature: force
@@ -44790,7 +44790,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 0
       couleur: jaune
       effectif: 20
@@ -44829,7 +44829,7 @@ aventuriers:
       classement: 3
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 0
       couleur: bleu
       effectif: 21
@@ -44859,7 +44859,7 @@ aventuriers:
       libelle_sort: Éliminé aux poteaux
       lieu: Île de Taha'a
       localisation: Pyrénées-Orientales
-      menace: "0,93"
+      menace: 1
       natures:
       - effectif: 3
         nature: precision
@@ -45396,7 +45396,7 @@ aventuriers:
       classement: 3
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 0
       couleur: jaune
       effectif: 20
@@ -45414,7 +45414,7 @@ aventuriers:
       libelle_sort: Éliminée aux poteaux
       lieu: Archipel de Seribuat
       localisation: Gironde
-      menace: "0,07"
+      menace: "0,08"
       natures: []
       numero: 12
       part_parcours: 98
@@ -45558,7 +45558,7 @@ aventuriers:
       classement: 4
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 6
       couleur: rouge
       effectif: 18
@@ -45572,7 +45572,7 @@ aventuriers:
       libelle_sort: Éliminée à l’orientation
       lieu: Archipel de Côn Đảo
       localisation: Tarn-et-Garonne
-      menace: "0,79"
+      menace: "0,85"
       natures: []
       numero: 10
       part_parcours: 98
@@ -46143,7 +46143,7 @@ aventuriers:
       classement: 3
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 1
       couleur: jaune
       effectif: 21
@@ -46167,7 +46167,7 @@ aventuriers:
       libelle_sort: Éliminé aux poteaux
       lieu: Île de Koh Rong
       localisation: Charente-Maritime
-      menace: "0,5"
+      menace: "0,54"
       natures:
       - effectif: 2
         nature: force
@@ -46478,7 +46478,7 @@ aventuriers:
       classement: 3
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 4
       couleur: jaune
       effectif: 18
@@ -46494,7 +46494,7 @@ aventuriers:
       libelle_sort: Éliminée aux poteaux
       lieu: Archipel de Côn Đảo
       localisation: Haute-Garonne
-      menace: "0,43"
+      menace: "0,38"
       natures: []
       numero: 10
       part_parcours: 100
@@ -46506,7 +46506,7 @@ aventuriers:
       speciale: false
       titre: Viêtnam
       tribu: Vang
-      voix_recues: 6
+      voix_recues: 5
     - age: 28
       annee: 2012
       bulletins_emis: 3
@@ -46556,7 +46556,7 @@ aventuriers:
       point: 54
     score: "−0,096"
     titres: 0
-    voix_recues: 12
+    voix_recues: 11
   wendy-gervois:
     dans_le_top: true
     faq:
@@ -46592,7 +46592,7 @@ aventuriers:
       classement: 1
       colliers: 0
       colliers_joues: 0
-      conseils_assistes: 14
+      conseils_assistes: 13
       conseils_vise: 1
       couleur: jaune
       effectif: 21
@@ -46610,7 +46610,7 @@ aventuriers:
       libelle_sort: Vainqueur
       lieu: Archipel de Ko Yao
       localisation: Nord
-      menace: "0,07"
+      menace: "0,08"
       natures:
       - effectif: 1
         nature: rapidite
@@ -47738,7 +47738,7 @@ saisons:
     audience_moyenne_texte: 6 092 000
     audience_pdm: "32,7"
     audience_pdm_texte: "32,7"
-    bulletins: 83
+    bulletins: 82
     casting:
     - &id004
       age: 28
@@ -47966,7 +47966,7 @@ saisons:
       sort: abandon_medical
       tribu: Tambor
       voix_recues: 0
-    conseils: 13
+    conseils: 12
     conseils_complets: 12
     duree_jours: 40
     effectif: 16
@@ -47985,8 +47985,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Nicoya ?
       r: Péninsule de Nicoya, Costa Rica.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta Nicoya ?
-      r: 13 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
-        bulletin près, pour 83 bulletins relevés.
+      r: 12 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
+        bulletin près, pour 82 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Nicoya ?
       r: 21 épreuves relevées, dont 9 individuelles.
     - q: Quelle audience a fait Koh-Lanta Nicoya ?
@@ -48022,7 +48022,7 @@ saisons:
     audience_moyenne_texte: 5 414 000
     audience_pdm: "32,4"
     audience_pdm_texte: "32,4"
-    bulletins: 65
+    bulletins: 64
     casting:
     - &id005
       age: 32
@@ -48278,7 +48278,7 @@ saisons:
       sort: abandon_medical
       tribu: Boro
       voix_recues: 0
-    conseils: 12
+    conseils: 11
     conseils_complets: 8
     duree_jours: 40
     effectif: 18
@@ -48300,8 +48300,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Bocas del Toro ?
       r: Archipel de Bocas del Toro, Panama.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta Bocas del Toro ?
-      r: 12 conseils d’élimination. Le dépouillement de 8 d’entre eux est connu au
-        bulletin près, pour 65 bulletins relevés.
+      r: 11 conseils d’élimination. Le dépouillement de 8 d’entre eux est connu au
+        bulletin près, pour 64 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Bocas del Toro ?
       r: 22 épreuves relevées, dont 9 individuelles.
     - q: Quelle audience a fait Koh-Lanta Bocas del Toro ?
@@ -48337,7 +48337,7 @@ saisons:
     audience_moyenne_texte: 6 081 000
     audience_pdm: "31,9"
     audience_pdm_texte: "31,9"
-    bulletins: 91
+    bulletins: 90
     casting:
     - &id008
       age: 38
@@ -48565,7 +48565,7 @@ saisons:
       sort: elimine_conseil
       tribu: Mogo
       voix_recues: 4
-    conseils: 14
+    conseils: 13
     conseils_complets: 11
     duree_jours: 40
     effectif: 16
@@ -48584,8 +48584,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Panama ?
       r: Archipel des Perles (Las Perlas), Panama.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta Panama ?
-      r: 14 conseils d’élimination. Le dépouillement de 11 d’entre eux est connu au
-        bulletin près, pour 91 bulletins relevés.
+      r: 13 conseils d’élimination. Le dépouillement de 11 d’entre eux est connu au
+        bulletin près, pour 90 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Panama ?
       r: 22 épreuves relevées, dont 11 individuelles.
     - q: Quelle audience a fait Koh-Lanta Panama ?
@@ -48621,7 +48621,7 @@ saisons:
     audience_moyenne_texte: 6 889 000
     audience_pdm: 35
     audience_pdm_texte: "35"
-    bulletins: 95
+    bulletins: 94
     casting:
     - &id010
       age: 20
@@ -48666,7 +48666,7 @@ saisons:
       rang: 73
       sort: elimine_poteaux
       tribu: Kumo
-      voix_recues: 2
+      voix_recues: 1
     - age: 28
       classement: 4
       couleur: jaune
@@ -48863,7 +48863,7 @@ saisons:
       sort: elimine_conseil
       tribu: Kumo
       voix_recues: 5
-    conseils: 14
+    conseils: 13
     conseils_complets: 13
     duree_jours: 40
     effectif: 17
@@ -48882,8 +48882,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Pacifique ?
       r: Îlots de l’île des Pins, Nouvelle-Calédonie.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta Pacifique ?
-      r: 14 conseils d’élimination. Le dépouillement de 13 d’entre eux est connu au
-        bulletin près, pour 95 bulletins relevés.
+      r: 13 conseils d’élimination. Le dépouillement de 13 d’entre eux est connu au
+        bulletin près, pour 94 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Pacifique ?
       r: 24 épreuves relevées, dont 11 individuelles.
     - q: Quelle audience a fait Koh-Lanta Pacifique ?
@@ -48919,7 +48919,7 @@ saisons:
     audience_moyenne_texte: 6 868 000
     audience_pdm: "37,2"
     audience_pdm_texte: "37,2"
-    bulletins: 86
+    bulletins: 85
     casting:
     - &id012
       age: 21
@@ -48964,7 +48964,7 @@ saisons:
       rang: 92
       sort: elimine_poteaux
       tribu: Tana
-      voix_recues: 9
+      voix_recues: 8
     - age: 28
       classement: 4
       couleur: jaune
@@ -49147,7 +49147,7 @@ saisons:
       sort: elimine_conseil
       tribu: Tana
       voix_recues: 4
-    conseils: 13
+    conseils: 12
     conseils_complets: 11
     duree_jours: 40
     effectif: 16
@@ -49167,8 +49167,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Vanuatu ?
       r: Archipel d’Éfaté, Vanuatu.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta Vanuatu ?
-      r: 13 conseils d’élimination. Le dépouillement de 11 d’entre eux est connu au
-        bulletin près, pour 86 bulletins relevés.
+      r: 12 conseils d’élimination. Le dépouillement de 11 d’entre eux est connu au
+        bulletin près, pour 85 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Vanuatu ?
       r: 24 épreuves relevées, dont 11 individuelles.
     - q: Quelle audience a fait Koh-Lanta Vanuatu ?
@@ -49204,7 +49204,7 @@ saisons:
     audience_moyenne_texte: 8 127 000
     audience_pdm: "39,5"
     audience_pdm_texte: "39,5"
-    bulletins: 87
+    bulletins: 86
     casting:
     - &id013
       age: 24
@@ -49432,7 +49432,7 @@ saisons:
       sort: abandon_volontaire
       tribu: Batang
       voix_recues: 0
-    conseils: 13
+    conseils: 12
     conseils_complets: 10
     duree_jours: 40
     effectif: 16
@@ -49454,8 +49454,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Palawan ?
       r: Archipel de Palawan, Philippines.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta Palawan ?
-      r: 13 conseils d’élimination. Le dépouillement de 10 d’entre eux est connu au
-        bulletin près, pour 87 bulletins relevés.
+      r: 12 conseils d’élimination. Le dépouillement de 10 d’entre eux est connu au
+        bulletin près, pour 86 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Palawan ?
       r: 26 épreuves relevées, dont 13 individuelles.
     - q: Quelle audience a fait Koh-Lanta Palawan ?
@@ -49491,7 +49491,7 @@ saisons:
     audience_moyenne_texte: 6 844 000
     audience_pdm: 34
     audience_pdm_texte: "34"
-    bulletins: 90
+    bulletins: 89
     casting:
     - &id016
       age: 28
@@ -49733,7 +49733,7 @@ saisons:
       sort: abandon_volontaire
       tribu: Mingao
       voix_recues: 3
-    conseils: 13
+    conseils: 12
     conseils_complets: 12
     duree_jours: 40
     effectif: 17
@@ -49753,8 +49753,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Caramoan ?
       r: Péninsule de Caramoan, Philippines.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta Caramoan ?
-      r: 13 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
-        bulletin près, pour 90 bulletins relevés.
+      r: 12 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
+        bulletin près, pour 89 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Caramoan ?
       r: 25 épreuves relevées, dont 13 individuelles.
     - q: Quelle audience a fait Koh-Lanta Caramoan ?
@@ -49790,7 +49790,7 @@ saisons:
     audience_moyenne_texte: 7 512 000
     audience_pdm: "32,1"
     audience_pdm_texte: "32,1"
-    bulletins: 81
+    bulletins: 80
     casting:
     - &id018
       age: 22
@@ -50046,7 +50046,7 @@ saisons:
       sort: elimine_epreuve
       tribu: null
       voix_recues: 0
-    conseils: 12
+    conseils: 11
     conseils_complets: 11
     duree_jours: 39
     effectif: 18
@@ -50066,8 +50066,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Palau ?
       r: Archipel des Palaos.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta Palau ?
-      r: 12 conseils d’élimination. Le dépouillement de 11 d’entre eux est connu au
-        bulletin près, pour 81 bulletins relevés.
+      r: 11 conseils d’élimination. Le dépouillement de 11 d’entre eux est connu au
+        bulletin près, pour 80 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Palau ?
       r: 24 épreuves relevées, dont 14 individuelles.
     - q: Quelle audience a fait Koh-Lanta Palau ?
@@ -50103,7 +50103,7 @@ saisons:
     audience_moyenne_texte: 6 801 000
     audience_pdm: "27,6"
     audience_pdm_texte: "27,6"
-    bulletins: 95
+    bulletins: 94
     casting:
     - &id020
       age: 41
@@ -50148,7 +50148,7 @@ saisons:
       rang: 287
       sort: elimine_poteaux
       tribu: Vang
-      voix_recues: 6
+      voix_recues: 5
     - age: 55
       classement: 4
       couleur: rouge
@@ -50359,7 +50359,7 @@ saisons:
       sort: elimine_conseil
       tribu: Vang
       voix_recues: 8
-    conseils: 14
+    conseils: 13
     conseils_complets: 13
     duree_jours: 40
     effectif: 18
@@ -50378,8 +50378,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Viêtnam ?
       r: Archipel de Côn Đảo, Viêt Nam.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta Viêtnam ?
-      r: 14 conseils d’élimination. Le dépouillement de 13 d’entre eux est connu au
-        bulletin près, pour 95 bulletins relevés.
+      r: 13 conseils d’élimination. Le dépouillement de 13 d’entre eux est connu au
+        bulletin près, pour 94 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Viêtnam ?
       r: 26 épreuves relevées, dont 11 individuelles.
     - q: Quelle audience a fait Koh-Lanta Viêtnam ?
@@ -50415,7 +50415,7 @@ saisons:
     audience_moyenne_texte: 7 237 000
     audience_pdm: "29,2"
     audience_pdm_texte: "29,2"
-    bulletins: 114
+    bulletins: 113
     casting:
     - &id022
       age: 41
@@ -50460,7 +50460,7 @@ saisons:
       rang: 19
       sort: elimine_poteaux
       tribu: Mambok
-      voix_recues: 1
+      voix_recues: 0
     - age: 25
       classement: 4
       couleur: rouge
@@ -50699,7 +50699,7 @@ saisons:
       sort: elimine_conseil
       tribu: Mambok
       voix_recues: 6
-    conseils: 14
+    conseils: 13
     conseils_complets: 12
     duree_jours: 41
     effectif: 20
@@ -50719,8 +50719,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Raja Ampat ?
       r: Archipel de Raja Ampat, Indonésie.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta Raja Ampat ?
-      r: 14 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
-        bulletin près, pour 114 bulletins relevés.
+      r: 13 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
+        bulletin près, pour 113 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Raja Ampat ?
       r: 26 épreuves relevées, dont 13 individuelles.
     - q: Quelle audience a fait Koh-Lanta Raja Ampat ?
@@ -50756,7 +50756,7 @@ saisons:
     audience_moyenne_texte: 7 098 000
     audience_pdm: "29,5"
     audience_pdm_texte: "29,5"
-    bulletins: 130
+    bulletins: 129
     casting:
     - &id024
       age: 30
@@ -51040,7 +51040,7 @@ saisons:
       sort: elimine_conseil
       tribu: Mawar
       voix_recues: 6
-    conseils: 14
+    conseils: 13
     conseils_complets: 12
     duree_jours: 42
     effectif: 20
@@ -51059,8 +51059,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Malaisie ?
       r: Archipel de Seribuat, Malaisie.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta Malaisie ?
-      r: 14 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
-        bulletin près, pour 130 bulletins relevés.
+      r: 13 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
+        bulletin près, pour 129 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Malaisie ?
       r: 27 épreuves relevées, dont 14 individuelles.
     - q: Quelle audience a fait Koh-Lanta Malaisie ?
@@ -51096,7 +51096,7 @@ saisons:
     audience_moyenne_texte: 5 625 000
     audience_pdm: 27
     audience_pdm_texte: "27"
-    bulletins: 118
+    bulletins: 117
     casting:
     - &id026
       age: 43
@@ -51141,7 +51141,7 @@ saisons:
       rang: 145
       sort: elimine_poteaux
       tribu: Lankawaï
-      voix_recues: 11
+      voix_recues: 10
     - age: 52
       classement: 4
       couleur: rouge
@@ -51380,7 +51380,7 @@ saisons:
       sort: elimine_conseil
       tribu: Lankawaï
       voix_recues: 7
-    conseils: 14
+    conseils: 13
     conseils_complets: 8
     duree_jours: 40
     effectif: 20
@@ -51399,8 +51399,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Johor ?
       r: Archipel de Sibu, Malaisie.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta Johor ?
-      r: 14 conseils d’élimination. Le dépouillement de 8 d’entre eux est connu au
-        bulletin près, pour 118 bulletins relevés.
+      r: 13 conseils d’élimination. Le dépouillement de 8 d’entre eux est connu au
+        bulletin près, pour 117 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Johor ?
       r: 28 épreuves relevées, dont 15 individuelles.
     - q: Quelle audience a fait Koh-Lanta Johor ?
@@ -51436,7 +51436,7 @@ saisons:
     audience_moyenne_texte: 5 933 000
     audience_pdm: "26,5"
     audience_pdm_texte: "26,5"
-    bulletins: 116
+    bulletins: 115
     casting:
     - &id028
       age: 26
@@ -51481,7 +51481,7 @@ saisons:
       rang: 38
       sort: elimine_poteaux
       tribu: Aopoh
-      voix_recues: 4
+      voix_recues: 3
     - age: 28
       classement: 4
       couleur: rouge
@@ -51734,7 +51734,7 @@ saisons:
       sort: elimine_conseil
       tribu: Karwaï
       voix_recues: 7
-    conseils: 14
+    conseils: 13
     conseils_complets: 12
     duree_jours: 40
     effectif: 21
@@ -51753,8 +51753,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Thaïlande ?
       r: Archipel de Ko Yao, Thaïlande.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta Thaïlande ?
-      r: 14 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
-        bulletin près, pour 116 bulletins relevés.
+      r: 13 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
+        bulletin près, pour 115 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Thaïlande ?
       r: 26 épreuves relevées, dont 13 individuelles.
     - q: Quelle audience a fait Koh-Lanta Thaïlande ?
@@ -51790,7 +51790,7 @@ saisons:
     audience_moyenne_texte: 5 730 000
     audience_pdm: "27,3"
     audience_pdm_texte: "27,3"
-    bulletins: 139
+    bulletins: 138
     casting:
     - &id030
       age: 22
@@ -51835,7 +51835,7 @@ saisons:
       rang: 443
       sort: elimine_poteaux
       tribu: Naga
-      voix_recues: 12
+      voix_recues: 11
     - age: 56
       classement: 4
       couleur: rouge
@@ -52074,7 +52074,7 @@ saisons:
       sort: elimine_conseil
       tribu: Sambor
       voix_recues: 9
-    conseils: 15
+    conseils: 14
     conseils_complets: 13
     duree_jours: 42
     effectif: 20
@@ -52092,8 +52092,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta L’Île au trésor ?
       r: Île de Koh Rong, Cambodge.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta L’Île au trésor ?
-      r: 15 conseils d’élimination. Le dépouillement de 13 d’entre eux est connu au
-        bulletin près, pour 139 bulletins relevés.
+      r: 14 conseils d’élimination. Le dépouillement de 13 d’entre eux est connu au
+        bulletin près, pour 138 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta L’Île au trésor ?
       r: 26 épreuves relevées, dont 12 individuelles.
     - q: Quelle audience a fait Koh-Lanta L’Île au trésor ?
@@ -52129,7 +52129,7 @@ saisons:
     audience_moyenne_texte: 5 570 000
     audience_pdm: "26,8"
     audience_pdm_texte: "26,8"
-    bulletins: 105
+    bulletins: 104
     casting:
     - &id032
       age: 40
@@ -52427,7 +52427,7 @@ saisons:
       sort: elimine_conseil
       tribu: Takeo
       voix_recues: 5
-    conseils: 14
+    conseils: 13
     conseils_complets: 12
     duree_jours: 40
     effectif: 21
@@ -52447,8 +52447,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Cambodge ?
       r: Île de Koh Rong, Cambodge.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta Cambodge ?
-      r: 14 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
-        bulletin près, pour 105 bulletins relevés.
+      r: 13 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
+        bulletin près, pour 104 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Cambodge ?
       r: 26 épreuves relevées, dont 11 individuelles.
     - q: Quelle audience a fait Koh-Lanta Cambodge ?
@@ -52486,7 +52486,7 @@ saisons:
     audience_moyenne_texte: 5 010 000
     audience_pdm: "24,3"
     audience_pdm_texte: "24,3"
-    bulletins: 115
+    bulletins: 114
     casting:
     - &id034
       age: 19
@@ -52531,7 +52531,7 @@ saisons:
       rang: 104
       sort: elimine_poteaux
       tribu: Coravu
-      voix_recues: 10
+      voix_recues: 9
     - age: 43
       classement: 4
       couleur: rouge
@@ -52784,7 +52784,7 @@ saisons:
       sort: abandon_medical
       tribu: Coravu
       voix_recues: 0
-    conseils: 14
+    conseils: 13
     conseils_complets: 10
     duree_jours: 41
     effectif: 21
@@ -52803,8 +52803,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Fidji ?
       r: Archipel de Yasawa, Fidji.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta Fidji ?
-      r: 14 conseils d’élimination. Le dépouillement de 10 d’entre eux est connu au
-        bulletin près, pour 115 bulletins relevés.
+      r: 13 conseils d’élimination. Le dépouillement de 10 d’entre eux est connu au
+        bulletin près, pour 114 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Fidji ?
       r: 26 épreuves relevées, dont 10 individuelles.
     - q: Quelle audience a fait Koh-Lanta Fidji ?
@@ -52840,7 +52840,7 @@ saisons:
     audience_moyenne_texte: 4 334 000
     audience_pdm: "22,9"
     audience_pdm_texte: "22,9"
-    bulletins: 115
+    bulletins: 114
     casting:
     - &id036
       age: 50
@@ -52885,7 +52885,7 @@ saisons:
       rang: 206
       sort: elimine_poteaux
       tribu: Tabuo
-      voix_recues: 1
+      voix_recues: 0
     - age: 23
       classement: 4
       couleur: jaune
@@ -53138,7 +53138,7 @@ saisons:
       sort: abandon_medical
       tribu: Ikalu
       voix_recues: 1
-    conseils: 14
+    conseils: 13
     conseils_complets: 12
     duree_jours: 39
     effectif: 21
@@ -53157,8 +53157,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta La Guerre des chefs ?
       r: Archipel de Kadavu, Fidji.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta La Guerre des chefs ?
-      r: 14 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
-        bulletin près, pour 115 bulletins relevés.
+      r: 13 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
+        bulletin près, pour 114 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta La Guerre des chefs ?
       r: 26 épreuves relevées, dont 14 individuelles.
     - q: Quelle audience a fait Koh-Lanta La Guerre des chefs ?
@@ -53196,7 +53196,7 @@ saisons:
     audience_moyenne_texte: 5 520 000
     audience_pdm: "26,3"
     audience_pdm_texte: "26,3"
-    bulletins: 127
+    bulletins: 126
     casting:
     - &id038
       age: 32
@@ -53241,7 +53241,7 @@ saisons:
       rang: 70
       sort: elimine_poteaux
       tribu: Tokalo
-      voix_recues: 1
+      voix_recues: 0
     - age: 30
       classement: 5
       couleur: orange
@@ -53536,7 +53536,7 @@ saisons:
       sort: abandon_medical
       tribu: Vakara
       voix_recues: 0
-    conseils: 16
+    conseils: 15
     conseils_complets: 13
     duree_jours: 40
     effectif: 24
@@ -53555,8 +53555,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Les 4 Terres ?
       r: Archipel de Kadavu, Fidji.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta Les 4 Terres ?
-      r: 16 conseils d’élimination. Le dépouillement de 13 d’entre eux est connu au
-        bulletin près, pour 127 bulletins relevés.
+      r: 15 conseils d’élimination. Le dépouillement de 13 d’entre eux est connu au
+        bulletin près, pour 126 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Les 4 Terres ?
       r: 26 épreuves relevées, dont 11 individuelles.
     - q: Quelle audience a fait Koh-Lanta Les 4 Terres ?
@@ -53602,7 +53602,7 @@ saisons:
     audience_moyenne_texte: 5 510 000
     audience_pdm: "25,6"
     audience_pdm_texte: "25,6"
-    bulletins: 130
+    bulletins: 129
     casting:
     - &id040
       age: 25
@@ -53647,7 +53647,7 @@ saisons:
       rang: 143
       sort: elimine_poteaux
       tribu: Oro
-      voix_recues: 3
+      voix_recues: 2
     - age: 36
       classement: 5
       couleur: rouge
@@ -53900,7 +53900,7 @@ saisons:
       sort: elimine_conseil
       tribu: Toa
       voix_recues: 7
-    conseils: 13
+    conseils: 12
     conseils_complets: 12
     duree_jours: 35
     effectif: 21
@@ -53919,8 +53919,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Les Armes secrètes ?
       r: Île de Taha'a, Polynésie française.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta Les Armes secrètes ?
-      r: 13 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
-        bulletin près, pour 130 bulletins relevés.
+      r: 12 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
+        bulletin près, pour 129 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Les Armes secrètes ?
       r: 23 épreuves relevées, dont 11 individuelles.
     - q: Quelle audience a fait Koh-Lanta Les Armes secrètes ?
@@ -54365,7 +54365,7 @@ saisons:
     audience_moyenne: 3410000
     audience_moyenne_texte: 3 410 000
     audience_pdm: null
-    bulletins: 123
+    bulletins: 122
     casting:
     - &id045
       age: 33
@@ -54649,7 +54649,7 @@ saisons:
       sort: elimine_conseil
       tribu: Paniman
       voix_recues: 6
-    conseils: 15
+    conseils: 14
     conseils_complets: 10
     duree_jours: 40
     effectif: 20
@@ -54669,8 +54669,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Le Feu sacré ?
       r: Péninsule de Caramoan, Philippines.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta Le Feu sacré ?
-      r: 15 conseils d’élimination. Le dépouillement de 10 d’entre eux est connu au
-        bulletin près, pour 123 bulletins relevés.
+      r: 14 conseils d’élimination. Le dépouillement de 10 d’entre eux est connu au
+        bulletin près, pour 122 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Le Feu sacré ?
       r: 26 épreuves relevées, dont 13 individuelles.
     - q: Quelle audience a fait Koh-Lanta Le Feu sacré ?
@@ -54705,7 +54705,7 @@ saisons:
     audience_moyenne_texte: 3 160 000
     audience_pdm: "18,7"
     audience_pdm_texte: "18,7"
-    bulletins: 121
+    bulletins: 120
     casting:
     - &id047
       age: 40
@@ -55017,7 +55017,7 @@ saisons:
       sort: elimine_conseil
       tribu: Kadasi
       voix_recues: 6
-    conseils: 14
+    conseils: 13
     conseils_complets: 9
     duree_jours: 38
     effectif: 22
@@ -55036,8 +55036,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Les Chasseurs d’immunité ?
       r: Péninsule de Caramoan, Philippines.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta Les Chasseurs d’immunité ?
-      r: 14 conseils d’élimination. Le dépouillement de 9 d’entre eux est connu au
-        bulletin près, pour 121 bulletins relevés.
+      r: 13 conseils d’élimination. Le dépouillement de 9 d’entre eux est connu au
+        bulletin près, pour 120 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Les Chasseurs d’immunité ?
       r: 26 épreuves relevées, dont 12 individuelles.
     - q: Quelle audience a fait Koh-Lanta Les Chasseurs d’immunité ?
@@ -55072,7 +55072,7 @@ saisons:
     audience_moyenne: 3020000
     audience_moyenne_texte: 3 020 000
     audience_pdm: null
-    bulletins: 132
+    bulletins: 131
     casting:
     - &id049
       age: 34
@@ -55412,7 +55412,7 @@ saisons:
       sort: elimine_conseil
       tribu: Sabitang
       voix_recues: 6
-    conseils: 14
+    conseils: 13
     conseils_complets: 9
     duree_jours: 41
     effectif: 24
@@ -55432,8 +55432,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta La Tribu maudite ?
       r: Péninsule de Caramoan, Philippines.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta La Tribu maudite ?
-      r: 14 conseils d’élimination. Le dépouillement de 9 d’entre eux est connu au
-        bulletin près, pour 132 bulletins relevés.
+      r: 13 conseils d’élimination. Le dépouillement de 9 d’entre eux est connu au
+        bulletin près, pour 131 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta La Tribu maudite ?
       r: 25 épreuves relevées, dont 12 individuelles.
     - q: Quelle audience a fait Koh-Lanta La Tribu maudite ?
@@ -55470,7 +55470,7 @@ saisons:
     audience_moyenne_texte: 2 840 000
     audience_pdm: "17,6"
     audience_pdm_texte: "17,6"
-    bulletins: 125
+    bulletins: 124
     casting:
     - &id051
       age: 34
@@ -55810,7 +55810,7 @@ saisons:
       sort: elimine_conseil
       tribu: Kanluran
       voix_recues: 4
-    conseils: 15
+    conseils: 14
     conseils_complets: 12
     duree_jours: 40
     effectif: 24
@@ -55830,8 +55830,8 @@ saisons:
       r: Péninsule de Caramoan, Philippines.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta La Revanche des
         4 Terres ?
-      r: 15 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
-        bulletin près, pour 125 bulletins relevés.
+      r: 14 conseils d’élimination. Le dépouillement de 12 d’entre eux est connu au
+        bulletin près, pour 124 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta La Revanche des 4 Terres ?
       r: 26 épreuves relevées, dont 12 individuelles.
     - q: Quelle audience a fait Koh-Lanta La Revanche des 4 Terres ?
@@ -55877,7 +55877,7 @@ saisons:
     audience_moyenne_texte: 2 455 000
     audience_pdm: "16,5"
     audience_pdm_texte: "16,5"
-    bulletins: 148
+    bulletins: 147
     casting:
     - &id053
       age: 37
@@ -55922,7 +55922,7 @@ saisons:
       rang: 45
       sort: elimine_poteaux
       tribu: Kalao
-      voix_recues: 10
+      voix_recues: 9
     - age: 37
       classement: 4
       couleur: rouge
@@ -56161,7 +56161,7 @@ saisons:
       sort: elimine_duel
       tribu: Lahoy
       voix_recues: 1
-    conseils: 16
+    conseils: 15
     conseils_complets: 13
     duree_jours: 39
     effectif: 20
@@ -56180,8 +56180,8 @@ saisons:
       r: Péninsule de Caramoan, Philippines.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta Les Reliques du
         destin ?
-      r: 16 conseils d’élimination. Le dépouillement de 13 d’entre eux est connu au
-        bulletin près, pour 148 bulletins relevés.
+      r: 15 conseils d’élimination. Le dépouillement de 13 d’entre eux est connu au
+        bulletin près, pour 147 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Les Reliques du destin ?
       r: 26 épreuves relevées, dont 13 individuelles.
     - q: Quelle audience a fait Koh-Lanta Les Reliques du destin ?
@@ -56216,7 +56216,7 @@ saisons:
     audience_moyenne: 8288000
     audience_moyenne_texte: 8 288 000
     audience_pdm: null
-    bulletins: 53
+    bulletins: 52
     casting:
     - &id055
       age: 31
@@ -56416,7 +56416,7 @@ saisons:
       sort: elimine_epreuve
       tribu: null
       voix_recues: 0
-    conseils: 9
+    conseils: 8
     conseils_complets: 8
     duree_jours: 21
     effectif: 14
@@ -56434,8 +56434,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Le Retour des héros ?
       r: Amazonie, bord du Rio Negro, Brésil.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta Le Retour des héros ?
-      r: 9 conseils d’élimination. Le dépouillement de 8 d’entre eux est connu au
-        bulletin près, pour 53 bulletins relevés.
+      r: 8 conseils d’élimination. Le dépouillement de 8 d’entre eux est connu au
+        bulletin près, pour 52 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Le Retour des héros ?
       r: 15 épreuves relevées, dont 9 individuelles.
     - q: Quelle audience a fait Koh-Lanta Le Retour des héros ?
@@ -56470,7 +56470,7 @@ saisons:
     audience_moyenne_texte: 7 007 000
     audience_pdm: "29,7"
     audience_pdm_texte: "29,7"
-    bulletins: 59
+    bulletins: 58
     casting:
     - &id057
       age: 27
@@ -56670,7 +56670,7 @@ saisons:
       sort: elimine_conseil
       tribu: Malabou
       voix_recues: 3
-    conseils: 9
+    conseils: 8
     conseils_complets: 8
     duree_jours: 20
     effectif: 14
@@ -56689,8 +56689,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Le Choc des héros ?
       r: Poum, Nouvelle-Calédonie.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta Le Choc des héros ?
-      r: 9 conseils d’élimination. Le dépouillement de 8 d’entre eux est connu au
-        bulletin près, pour 59 bulletins relevés.
+      r: 8 conseils d’élimination. Le dépouillement de 8 d’entre eux est connu au
+        bulletin près, pour 58 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Le Choc des héros ?
       r: 16 épreuves relevées, dont 9 individuelles.
     - q: Quelle audience a fait Koh-Lanta Le Choc des héros ?
@@ -56726,7 +56726,7 @@ saisons:
     audience_moyenne_texte: 6 986 000
     audience_pdm: "28,3"
     audience_pdm_texte: "28,3"
-    bulletins: 73
+    bulletins: 72
     casting:
     - &id059
       age: 36
@@ -56954,7 +56954,7 @@ saisons:
       sort: elimine_epreuve
       tribu: Nekmao
       voix_recues: 0
-    conseils: 9
+    conseils: 8
     conseils_complets: 5
     duree_jours: 23
     effectif: 16
@@ -56973,8 +56973,8 @@ saisons:
       r: Île de Koh Rong, Cambodge.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta La Revanche des
         héros ?
-      r: 9 conseils d’élimination. Le dépouillement de 5 d’entre eux est connu au
-        bulletin près, pour 73 bulletins relevés.
+      r: 8 conseils d’élimination. Le dépouillement de 5 d’entre eux est connu au
+        bulletin près, pour 72 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta La Revanche des héros ?
       r: 15 épreuves relevées, dont 9 individuelles.
     - q: Quelle audience a fait Koh-Lanta La Revanche des héros ?
@@ -57010,7 +57010,7 @@ saisons:
     audience_moyenne_texte: 6 593 000
     audience_pdm: "29,3"
     audience_pdm_texte: "29,3"
-    bulletins: 59
+    bulletins: 58
     casting:
     - &id061
       age: 32
@@ -57196,7 +57196,7 @@ saisons:
       sort: abandon_medical
       tribu: Tengah
       voix_recues: 0
-    conseils: 9
+    conseils: 8
     conseils_complets: 7
     duree_jours: 23
     effectif: 13
@@ -57215,8 +57215,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta La Nouvelle Édition ?
       r: Archipel de Sibu, Malaisie.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta La Nouvelle Édition ?
-      r: 9 conseils d’élimination. Le dépouillement de 7 d’entre eux est connu au
-        bulletin près, pour 59 bulletins relevés.
+      r: 8 conseils d’élimination. Le dépouillement de 7 d’entre eux est connu au
+        bulletin près, pour 58 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta La Nouvelle Édition ?
       r: 15 épreuves relevées, dont 8 individuelles.
     - q: Quelle audience a fait Koh-Lanta La Nouvelle Édition ?
@@ -57252,7 +57252,7 @@ saisons:
     audience_moyenne_texte: 4 851 000
     audience_pdm: "24,1"
     audience_pdm_texte: "24,1"
-    bulletins: 95
+    bulletins: 94
     casting:
     - &id063
       age: 34
@@ -57297,7 +57297,7 @@ saisons:
       rang: 407
       sort: elimine_poteaux
       tribu: Toa
-      voix_recues: 18
+      voix_recues: 17
     - age: 44
       classement: 4
       couleur: rouge
@@ -57508,7 +57508,7 @@ saisons:
       sort: elimine_conseil
       tribu: Wakaï
       voix_recues: 8
-    conseils: 13
+    conseils: 12
     conseils_complets: 11
     duree_jours: 32
     effectif: 18
@@ -57527,8 +57527,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta Le Combat des héros ?
       r: Archipel de Yasawa, Fidji.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta Le Combat des héros ?
-      r: 13 conseils d’élimination. Le dépouillement de 11 d’entre eux est connu au
-        bulletin près, pour 95 bulletins relevés.
+      r: 12 conseils d’élimination. Le dépouillement de 11 d’entre eux est connu au
+        bulletin près, pour 94 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta Le Combat des héros ?
       r: 19 épreuves relevées, dont 9 individuelles.
     - q: Quelle audience a fait Koh-Lanta Le Combat des héros ?
@@ -57564,7 +57564,7 @@ saisons:
     audience_moyenne_texte: 6 600 000
     audience_pdm: "26,1"
     audience_pdm_texte: "26,1"
-    bulletins: 98
+    bulletins: 97
     casting:
     - &id065
       age: 37
@@ -57609,7 +57609,7 @@ saisons:
       rang: 1
       sort: elimine_poteaux
       tribu: Héros
-      voix_recues: 1
+      voix_recues: 0
     - age: 47
       classement: 5
       couleur: jaune
@@ -57848,7 +57848,7 @@ saisons:
       sort: abandon_medical
       tribu: Nacomo
       voix_recues: 0
-    conseils: 11
+    conseils: 10
     conseils_complets: 8
     duree_jours: 32
     effectif: 20
@@ -57867,8 +57867,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta L’Île des héros ?
       r: Archipel de Kadavu, Fidji.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta L’Île des héros ?
-      r: 11 conseils d’élimination. Le dépouillement de 8 d’entre eux est connu au
-        bulletin près, pour 98 bulletins relevés.
+      r: 10 conseils d’élimination. Le dépouillement de 8 d’entre eux est connu au
+        bulletin près, pour 97 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta L’Île des héros ?
       r: 20 épreuves relevées, dont 10 individuelles.
     - q: Quelle audience a fait Koh-Lanta L’Île des héros ?
@@ -57905,7 +57905,7 @@ saisons:
     audience_moyenne: 4332000
     audience_moyenne_texte: 4 332 000
     audience_pdm: null
-    bulletins: 123
+    bulletins: 122
     casting:
     - &id066
       age: 42
@@ -58203,7 +58203,7 @@ saisons:
       sort: abandon_medical
       tribu: Tribu des hommes
       voix_recues: 0
-    conseils: 14
+    conseils: 13
     conseils_complets: 6
     duree_jours: 35
     effectif: 21
@@ -58227,8 +58227,8 @@ saisons:
     - q: Quel est le lieu de tournage de Koh-Lanta La Légende ?
       r: Île de Taha'a, Polynésie française.
     - q: Combien de conseils d’élimination y a-t-il eu à Koh-Lanta La Légende ?
-      r: 14 conseils d’élimination. Le dépouillement de 6 d’entre eux est connu au
-        bulletin près, pour 123 bulletins relevés.
+      r: 13 conseils d’élimination. Le dépouillement de 6 d’entre eux est connu au
+        bulletin près, pour 122 bulletins relevés.
     - q: Combien d’épreuves ont été courues à Koh-Lanta La Légende ?
       r: 23 épreuves relevées, dont 15 individuelles.
     - q: Quelle audience a fait Koh-Lanta La Légende ?

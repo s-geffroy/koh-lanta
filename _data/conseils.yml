@@ -31,7 +31,8 @@
 # `voix_mecanique_non_comptees` : les voix de mecanique barrees pour une autre
 # raison, le plus souvent une cible deja sortie du jeu.
 # `bulletins_ecartes` (sur une sortie) : une case egaree dans une colonne
-# d'abandon annoncee a zero voix, gardee pour la tracabilite.
+# d'abandon annoncee a zero voix, ou le choix du gagnant des poteaux que la
+# matrice ecrit comme un bulletin -- gardes pour la tracabilite.
 #
 # `tirage` : l'egalite a persiste au second vote et la boule noire a designe
 # l'elimine. `contre` nomme l'autre ex aequo, `source` la phrase qui le dit.
@@ -1245,19 +1246,18 @@
   nature: elimine_epreuve
 - saison: s02
   numero: 15
-  type: elimination
-  complet: false
+  type: sortie
   episode: "13"
   elimine: bernard-lenoir
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: amel-fatnassi
     votant_rattache: true
     cible: bernard-lenoir
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: s02
   numero: 16
   type: jury
@@ -1866,19 +1866,18 @@
   nature: elimine_orientation
 - saison: s03
   numero: 19
-  type: elimination
-  complet: false
+  type: sortie
   episode: "13"
   elimine: moussa-niangane
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: isabelle-seguin
     votant_rattache: true
     cible: moussa-niangane
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: s03
   numero: 20
   type: jury
@@ -2531,19 +2530,18 @@
     annule: false
 - saison: s04
   numero: 16
-  type: elimination
-  complet: false
+  type: sortie
   episode: "13"
   elimine: raphael-andres
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: linda-alario
     votant_rattache: true
     cible: raphael-andres
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: s04
   numero: 17
   type: jury
@@ -3222,19 +3220,18 @@
   nature: elimine_orientation
 - saison: s05
   numero: 16
-  type: elimination
-  complet: false
+  type: sortie
   episode: "13"
   elimine: mohamed-derradji
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: clemence-castel
     votant_rattache: true
     cible: mohamed-derradji
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: s05
   numero: 17
   type: jury
@@ -3877,19 +3874,18 @@
   nature: elimine_orientation
 - saison: s06
   numero: 17
-  type: elimination
-  complet: false
+  type: sortie
   episode: "13"
   elimine: sebastien-roulle
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: emilie-frahi
     votant_rattache: true
     cible: sebastien-roulle
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: s06
   numero: 18
   type: jury
@@ -4538,19 +4534,18 @@
   nature: elimine_orientation
 - saison: s07
   numero: 16
-  type: elimination
-  complet: false
+  type: sortie
   episode: "13"
   elimine: maryline-hemelsdael
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: jade-handi
     votant_rattache: true
     cible: maryline-hemelsdael
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: s07
   numero: 17
   type: jury
@@ -5208,19 +5203,18 @@
   nature: elimine_orientation
 - saison: s08
   numero: 17
-  type: elimination
-  complet: false
+  type: sortie
   episode: "13"
   elimine: bertrand-bolle
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: christelle-gauzet
     votant_rattache: true
     cible: bertrand-bolle
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: s08
   numero: 18
   type: jury
@@ -5876,19 +5870,18 @@
   nature: elimine_orientation
 - saison: s09
   numero: 21
-  type: elimination
-  complet: false
+  type: sortie
   episode: "13"
   elimine: isabelle-da-silva
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: christina-chevry
     votant_rattache: true
     cible: isabelle-da-silva
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: s09
   numero: 22
   type: jury
@@ -6594,19 +6587,18 @@
   nature: elimine_orientation
 - saison: s10
   numero: 19
-  type: elimination
-  complet: false
+  type: sortie
   episode: "14"
   elimine: wafa-el-mejjad
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: philippe-duron
     votant_rattache: true
     cible: wafa-el-mejjad
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: s10
   numero: 20
   type: jury
@@ -7444,19 +7436,18 @@
   nature: elimine_orientation
 - saison: s11
   numero: 19
-  type: elimination
-  complet: false
+  type: sortie
   episode: "14"
   elimine: laurent-maistret
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: gerard-urdampilleta
     votant_rattache: true
     cible: laurent-maistret
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: s11
   numero: 20
   type: jury
@@ -8403,19 +8394,18 @@
   nature: elimine_orientation
 - saison: s12
   numero: 20
-  type: elimination
-  complet: false
+  type: sortie
   episode: "14"
   elimine: vanessa-alvarez
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: ugo-lartiche
     votant_rattache: true
     cible: vanessa-alvarez
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: s12
   numero: 21
   type: jury
@@ -9331,19 +9321,18 @@
   nature: elimine_orientation
 - saison: s14
   numero: 21
-  type: elimination
-  complet: false
+  type: sortie
   episode: "14"
   elimine: melissa-bastin
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: chantal-menard
     votant_rattache: true
     cible: melissa-bastin
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: s14
   numero: 22
   type: jury
@@ -10232,19 +10221,18 @@
   nature: elimine_orientation
 - saison: s15
   numero: 19
-  type: elimination
-  complet: false
+  type: sortie
   episode: "13"
   elimine: gabriel-gubbels
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: pascal-salviani
     votant_rattache: true
     cible: gabriel-gubbels
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: s15
   numero: 20
   type: jury
@@ -11237,19 +11225,18 @@
   nature: elimine_orientation
 - saison: s16
   numero: 19
-  type: elimination
-  complet: false
+  type: sortie
   episode: "14"
   elimine: freddy-bolzer
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: benoit-assadi
     votant_rattache: true
     cible: freddy-bolzer
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: s16
   numero: 20
   type: jury
@@ -12052,19 +12039,18 @@
   nature: elimine_orientation
 - saison: s17
   numero: 21
-  type: elimination
-  complet: false
+  type: sortie
   episode: "14"
   elimine: vincent-roux
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: clementine-jullien
     votant_rattache: true
     cible: vincent-roux
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: s17
   numero: 22
   type: jury
@@ -12933,19 +12919,18 @@
   nature: elimine_orientation
 - saison: s18
   numero: 21
-  type: elimination
-  complet: false
+  type: sortie
   episode: "14"
   elimine: magalie-gustave
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: andre-deleplace
     votant_rattache: true
     cible: magalie-gustave
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: s18
   numero: 22
   type: jury
@@ -13800,19 +13785,18 @@
   nature: elimine_orientation
 - saison: s20
   numero: 21
-  type: elimination
-  complet: false
+  type: sortie
   episode: "14"
   elimine: steeve-demana
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: cindy-poumeyrol
     votant_rattache: true
     cible: steeve-demana
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: s20
   numero: 22
   type: jury
@@ -14781,19 +14765,18 @@
   nature: elimine_orientation
 - saison: s21
   numero: 24
-  type: elimination
-  complet: false
+  type: sortie
   episode: "15"
   elimine: loic-riowal
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: brice-petit
     votant_rattache: true
     cible: loic-riowal
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: s21
   numero: 25
   type: jury
@@ -15728,19 +15711,18 @@
   nature: elimine_orientation
 - saison: s22
   numero: 20
-  type: elimination
-  complet: false
+  type: sortie
   episode: "12"
   elimine: jonathan-julien
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: maxine-eouzan
     votant_rattache: true
     cible: jonathan-julien
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: s22
   numero: 21
   type: jury
@@ -17776,19 +17758,18 @@
   nature: elimine_orientation
 - saison: s24
   numero: 22
-  type: elimination
-  complet: false
+  type: sortie
   episode: "17"
   elimine: nicolas-pretot
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: frederic-khouvilay
     votant_rattache: true
     cible: nicolas-pretot
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: s24
   numero: 23
   type: jury
@@ -18684,19 +18665,18 @@
   nature: elimine_orientation
 - saison: s25
   numero: 21
-  type: elimination
-  complet: false
+  type: sortie
   episode: "16"
   elimine: julie-rignault
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: lea-sahin
     votant_rattache: true
     cible: julie-rignault
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: s25
   numero: 22
   type: jury
@@ -19689,19 +19669,18 @@
   nature: elimine_orientation
 - saison: s26
   numero: 23
-  type: elimination
-  complet: false
+  type: sortie
   episode: "16"
   elimine: ilyesse-benyoub
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: charlotte-rasquin
     votant_rattache: true
     cible: ilyesse-benyoub
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: s26
   numero: 24
   type: jury
@@ -20674,19 +20653,18 @@
   nature: elimine_orientation
 - saison: s27
   numero: 24
-  type: elimination
-  complet: false
+  type: sortie
   episode: "17"
   elimine: jerome-molas
   elimine_rattache: true
-  votes_contre: 0
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: gaelle-fleury
     votant_rattache: true
     cible: jerome-molas
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: s27
   numero: 25
   type: jury
@@ -21764,19 +21742,18 @@
   nature: elimine_orientation
 - saison: s28
   numero: 25
-  type: elimination
-  complet: false
+  type: sortie
   episode: "16"
   elimine: guillaume-le-deun
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: cynthia-combes
     votant_rattache: true
     cible: guillaume-le-deun
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: s28
   numero: 26
   type: jury
@@ -22245,19 +22222,18 @@
   nature: elimine_orientation
 - saison: sp1
   numero: 13
-  type: elimination
-  complet: false
+  type: sortie
   episode: "9"
   elimine: filomene-mendonca
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: jade-handi
     votant_rattache: true
     cible: filomene-mendonca
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: sp1
   numero: 14
   type: jury
@@ -22714,19 +22690,18 @@
   nature: elimine_orientation
 - saison: sp2
   numero: 12
-  type: elimination
-  complet: false
+  type: sortie
   episode: "9"
   elimine: christophe-guttatoro-martin
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: gregoire-delachaux
     votant_rattache: true
     cible: christophe-guttatoro-martin
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: sp2
   numero: 13
   type: jury
@@ -23301,19 +23276,18 @@
   nature: elimine_orientation
 - saison: sp3
   numero: 14
-  type: elimination
-  complet: false
+  type: sortie
   episode: "9"
   elimine: maud-garnier
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: claude-dartois
     votant_rattache: true
     cible: maud-garnier
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: sp3
   numero: 15
   type: jury
@@ -23828,19 +23802,18 @@
   nature: elimine_orientation
 - saison: sp4
   numero: 14
-  type: elimination
-  complet: false
+  type: sortie
   episode: "9"
   elimine: philippe-bizet
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: martin-bazin
     votant_rattache: true
     cible: philippe-bizet
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: sp4
   numero: 15
   type: jury
@@ -24555,19 +24528,18 @@
   nature: elimine_orientation
 - saison: sp5
   numero: 18
-  type: elimination
-  complet: false
+  type: sortie
   episode: "11"
   elimine: jeremy-raffin
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: pascal-salviani
     votant_rattache: true
     cible: jeremy-raffin
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: sp5
   numero: 19
   type: jury
@@ -25330,19 +25302,18 @@
   nature: elimine_orientation
 - saison: sp6
   numero: 20
-  type: elimination
-  complet: false
+  type: sortie
   episode: "11"
   elimine: claude-dartois
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: naoil-tita
     votant_rattache: true
     cible: claude-dartois
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: sp6
   numero: 21
   type: jury
@@ -26259,19 +26230,18 @@
   nature: elimine_orientation
 - saison: sp7
   numero: 24
-  type: elimination
-  complet: false
+  type: sortie
   episode: "15"
   elimine: ugo-lartiche
   elimine_rattache: true
-  votes_contre: 1
-  votes_exprimes: null
-  votes:
+  votes: []
+  bulletins_ecartes:
   - votant: laurent-maistret
     votant_rattache: true
     cible: ugo-lartiche
     cible_rattachee: true
     annule: false
+  nature: elimine_poteaux
 - saison: sp7
   numero: 25
   type: jury

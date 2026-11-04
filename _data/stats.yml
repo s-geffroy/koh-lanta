@@ -1595,14 +1595,14 @@ records:
     id: christelle-gauzet
   nb_multi_participants: 83
 conseils:
-  conseils: 435
+  conseils: 404
   par_soir_max: 3
   conseils_avec_decompte: 398
   conseils_complets: 344
-  conseils_sans_decompte: 37
+  conseils_sans_decompte: 6
   conseils_decompte_incomplet: 54
   conseils_un_bulletin_manquant: 27
-  bulletins: 3433
+  bulletins: 3402
   bulletins_conseils_complets: 2865
   par_periode:
   - periode: 2000–2004
@@ -1760,7 +1760,7 @@ conseils:
   retours_en_jeu: 5
   vote_par_genre_ecart: "8,7"
   rapport_saisons_objets: 2
-  bulletins_texte: 3 433
+  bulletins_texte: 3 402
 jury:
   effectif: 35
   saisons: 32
@@ -8729,8 +8729,8 @@ indicateurs:
     titre: Le Feu sacré
     annee: 2023
     speciale: false
-    valeur: "2,4"
-    base: 15
+    valeur: "2,57"
+    base: 14
     sort: finaliste
     genre: f
     sort_libelle: Finaliste
@@ -8946,36 +8946,16 @@ indicateurs:
     sort_libelle: Abandon médical
     id: charles-clement
   fantomes:
-  - nom: Gérard Urdampilleta
-    saison: s11
-    titre: Raja Ampat
-    annee: 2011
-    conseils: 14
-    sort: vainqueur
+  - nom: Loïc Riowal
+    saison: s21
+    titre: Les 4 Terres
+    annee: 2020
+    conseils: 15
+    sort: elimine_poteaux
     genre: h
     survie: 100
-    sort_libelle: Vainqueur
-    id: gerard-urdampilleta
-  - nom: Ugo Lartiche
-    saison: s12
-    titre: Malaisie
-    annee: 2012
-    conseils: 14
-    sort: vainqueur
-    genre: h
-    survie: 100
-    sort_libelle: Vainqueur
-    id: ugo-lartiche
-  - nom: Cindy Poumeyrol
-    saison: s20
-    titre: La Guerre des chefs
-    annee: 2019
-    conseils: 14
-    sort: finaliste
-    genre: f
-    survie: 100
-    sort_libelle: Finaliste
-    id: cindy-poumeyrol
+    sort_libelle: Éliminé aux poteaux
+    id: loic-riowal
   - nom: François Descamp
     saison: s23
     titre: Le Totem maudit
@@ -8996,36 +8976,6 @@ indicateurs:
     survie: 100
     sort_libelle: Vainqueur
     id: bastien-san-pedro
-  - nom: Thibault Bélanger
-    saison: s26
-    titre: La Tribu maudite
-    annee: 2024
-    conseils: 14
-    sort: vainqueur
-    genre: h
-    survie: 100
-    sort_libelle: Vainqueur
-    id: thibault-belanger
-  - nom: Claude Dartois
-    saison: sp7
-    titre: La Légende
-    annee: 2021
-    conseils: 14
-    sort: finaliste
-    genre: h
-    survie: 100
-    sort_libelle: Finaliste
-    id: claude-dartois
-  - nom: Sandrine Dubourdy
-    saison: s18
-    titre: Fidji
-    annee: 2017
-    conseils: 14
-    sort: elimine_orientation
-    genre: f
-    survie: "97,6"
-    sort_libelle: Éliminée à l’orientation
-    id: sandrine-dubourdy
   - nom: Claire Passas
     saison: s27
     titre: La Revanche des 4 Terres
@@ -9036,16 +8986,6 @@ indicateurs:
     survie: "97,5"
     sort_libelle: Éliminée à l’orientation
     id: claire-passas
-  - nom: Bruno Peisey
-    saison: s14
-    titre: Johor
-    annee: 2015
-    conseils: 14
-    sort: elimine_orientation
-    genre: h
-    survie: 95
-    sort_libelle: Éliminé à l’orientation
-    id: bruno-peisey
   - nom: Guénaëlle Biras
     saison: s01
     titre: Les Aventuriers de Koh-Lanta
@@ -9056,44 +8996,104 @@ indicateurs:
     survie: 100
     sort_libelle: Finaliste
     id: guenaelle-biras
-  - nom: Jade Handi
-    saison: s07
-    titre: Palawan
-    annee: 2007
+  - nom: Laurent Maistret
+    saison: s11
+    titre: Raja Ampat
+    annee: 2011
+    conseils: 13
+    sort: elimine_poteaux
+    genre: h
+    survie: 100
+    sort_libelle: Éliminé aux poteaux
+    id: laurent-maistret
+  - nom: Gérard Urdampilleta
+    saison: s11
+    titre: Raja Ampat
+    annee: 2011
     conseils: 13
     sort: vainqueur
-    genre: f
+    genre: h
     survie: 100
     sort_libelle: Vainqueur
-    id: jade-handi
-  nb_fantomes: 63
+    id: gerard-urdampilleta
+  - nom: Ugo Lartiche
+    saison: s12
+    titre: Malaisie
+    annee: 2012
+    conseils: 13
+    sort: vainqueur
+    genre: h
+    survie: 100
+    sort_libelle: Vainqueur
+    id: ugo-lartiche
+  - nom: Steeve Demana
+    saison: s20
+    titre: La Guerre des chefs
+    annee: 2019
+    conseils: 13
+    sort: elimine_poteaux
+    genre: h
+    survie: 100
+    sort_libelle: Éliminé aux poteaux
+    id: steeve-demana
+  - nom: Cindy Poumeyrol
+    saison: s20
+    titre: La Guerre des chefs
+    annee: 2019
+    conseils: 13
+    sort: finaliste
+    genre: f
+    survie: 100
+    sort_libelle: Finaliste
+    id: cindy-poumeyrol
+  - nom: Thibault Bélanger
+    saison: s26
+    titre: La Tribu maudite
+    annee: 2024
+    conseils: 13
+    sort: vainqueur
+    genre: h
+    survie: 100
+    sort_libelle: Vainqueur
+    id: thibault-belanger
+  - nom: Claude Dartois
+    saison: sp7
+    titre: La Légende
+    annee: 2021
+    conseils: 13
+    sort: finaliste
+    genre: h
+    survie: 100
+    sort_libelle: Finaliste
+    id: claude-dartois
+  nb_fantomes: 67
   fantomes_recidivistes:
   - nom: Coumba Baradji
     fois: 3
-    saisons: La Revanche des héros, Le Choc des héros, La Légende
-    sorts: Éliminée à l’orientation, Éliminée à l’orientation, Éliminée aux ambassadeurs
+    saisons: La Légende, La Revanche des héros, Le Choc des héros
+    sorts: Éliminée aux ambassadeurs, Éliminée à l’orientation, Éliminée à l’orientation
     id: coumba-baradji
+  - nom: Claude Dartois
+    fois: 2
+    saisons: La Légende, L’Île des héros
+    sorts: Finaliste, Éliminé aux poteaux
+    id: claude-dartois
   - nom: Jade Handi
     fois: 2
     saisons: Palawan, Le Retour des héros
     sorts: Vainqueur, Finaliste
     id: jade-handi
+  - nom: Loïc Riowal
+    fois: 2
+    saisons: Les 4 Terres, La Légende
+    sorts: Éliminé aux poteaux, Éliminé à une épreuve
+    id: loic-riowal
   - nom: Yassin Metiri
     fois: 2
     saisons: Le Combat des héros, Cambodge
     sorts: Éliminé par les destins liés, Éliminé aux ambassadeurs
     id: yassin-metiri
   fantomes_vainqueurs:
-  - nom: Gérard Urdampilleta
-    titre: Raja Ampat
-    annee: 2011
-    conseils: 14
-    id: gerard-urdampilleta
-  - nom: Ugo Lartiche
-    titre: Malaisie
-    annee: 2012
-    conseils: 14
-    id: ugo-lartiche
   - nom: François Descamp
     titre: Le Totem maudit
     annee: 2022
@@ -9104,126 +9104,146 @@ indicateurs:
     annee: 2022
     conseils: 14
     id: bastien-san-pedro
+  - nom: Gérard Urdampilleta
+    titre: Raja Ampat
+    annee: 2011
+    conseils: 13
+    id: gerard-urdampilleta
+  - nom: Ugo Lartiche
+    titre: Malaisie
+    annee: 2012
+    conseils: 13
+    id: ugo-lartiche
   - nom: Thibault Bélanger
     titre: La Tribu maudite
     annee: 2024
-    conseils: 14
+    conseils: 13
     id: thibault-belanger
   - nom: Jade Handi
     titre: Palawan
     annee: 2007
-    conseils: 13
+    conseils: 12
     id: jade-handi
   - nom: Christelle Gauzet
     titre: Caramoan
     annee: 2008
-    conseils: 13
+    conseils: 12
     id: christelle-gauzet
   - nom: Delphine Bano
     titre: Bocas del Toro
     annee: 2003
-    conseils: 12
+    conseils: 11
     id: delphine-bano
   - nom: Naoil Tita
     titre: L’Île des héros
     annee: 2020
-    conseils: 11
+    conseils: 10
     id: naoil-tita
   - nom: Bertrand Bolle
     titre: La Revanche des héros
     annee: 2012
-    conseils: 9
+    conseils: 8
     id: bertrand-bolle
   fantomes_issue:
   - sort: abandon_medical
     libelle: Abandon médical
     effectif: 14
-    part_fantomes: "22,2"
+    part_fantomes: "20,9"
     part_ensemble: "7,7"
     part_endurants: 5
     part_comparables: "10,2"
-    ecart: 12
-    rapport: "2,2"
+    ecart: "10,7"
+    rapport: 2
     effectif_texte: "14"
   - sort: vainqueur
     libelle: Vainqueur
     effectif: 10
-    part_fantomes: "15,9"
+    part_fantomes: "14,9"
     part_ensemble: "5,6"
     part_endurants: "7,3"
     part_comparables: "14,8"
-    ecart: "1,1"
-    rapport: "1,1"
+    ecart: "0,1"
+    rapport: 1
     effectif_texte: "10"
   - sort: elimine_ambassadeurs
     libelle: Éliminé aux ambassadeurs
     effectif: 9
-    part_fantomes: "14,3"
+    part_fantomes: "13,4"
     part_ensemble: "3,5"
     part_endurants: 4
     part_comparables: "8,1"
-    ecart: "6,2"
-    rapport: "1,8"
+    ecart: "5,3"
+    rapport: "1,7"
     effectif_texte: "9"
   - sort: elimine_epreuve
     libelle: Éliminé à une épreuve
     effectif: 8
-    part_fantomes: "12,7"
+    part_fantomes: "11,9"
     part_ensemble: "5,1"
     part_endurants: "5,6"
     part_comparables: "11,4"
-    ecart: "1,3"
-    rapport: "1,1"
+    ecart: "0,5"
+    rapport: 1
     effectif_texte: "8"
-  - sort: finaliste
-    libelle: Finaliste
-    effectif: 6
-    part_fantomes: "9,5"
-    part_ensemble: "5,1"
-    part_endurants: "6,7"
-    part_comparables: "13,6"
-    ecart: "−4,1"
-    rapport: "0,7"
-    effectif_texte: "6"
   - sort: elimine_orientation
     libelle: Éliminé à l’orientation
     effectif: 6
-    part_fantomes: "9,5"
+    part_fantomes: 9
     part_ensemble: "6,7"
     part_endurants: "8,8"
     part_comparables: "17,8"
-    ecart: "−8,3"
+    ecart: "−8,8"
     rapport: "0,5"
+    effectif_texte: "6"
+  - sort: finaliste
+    libelle: Finaliste
+    effectif: 6
+    part_fantomes: 9
+    part_ensemble: "5,1"
+    part_endurants: "6,7"
+    part_comparables: "13,6"
+    ecart: "−4,6"
+    rapport: "0,7"
     effectif_texte: "6"
   - sort: elimine_destins_lies
     libelle: Éliminé par les destins liés
     effectif: 5
-    part_fantomes: "7,9"
+    part_fantomes: "7,5"
     part_ensemble: "2,2"
     part_endurants: "2,9"
     part_comparables: "5,9"
-    ecart: 2
+    ecart: "1,6"
     rapport: "1,3"
     effectif_texte: "5"
+  - sort: elimine_poteaux
+    libelle: Éliminé aux poteaux
+    effectif: 4
+    part_fantomes: 6
+    part_ensemble: "5,1"
+    part_endurants: "6,7"
+    part_comparables: "13,6"
+    ecart: "−7,6"
+    rapport: "0,4"
+    effectif_texte: "4"
   - sort: abandon_volontaire
     libelle: Abandon volontaire
     effectif: 4
-    part_fantomes: "6,3"
+    part_fantomes: 6
     part_ensemble: "2,9"
     part_endurants: "1,7"
     part_comparables: "3,4"
-    ecart: "2,9"
-    rapport: "1,9"
+    ecart: "2,6"
+    rapport: "1,8"
     effectif_texte: "4"
   - sort: disqualifie
     libelle: Exclu du jeu
     effectif: 1
-    part_fantomes: "1,6"
+    part_fantomes: "1,5"
     part_ensemble: "0,2"
     part_endurants: "0,2"
     part_comparables: "0,4"
-    ecart: "1,2"
-    rapport: 4
+    ecart: "1,1"
+    rapport: "3,8"
     effectif_texte: "1"
   voix_des_vainqueurs:
     effectif: 29
@@ -9312,21 +9332,21 @@ indicateurs:
       effectif: 29
       voix_moyennes: "2,31"
       voix_medianes: 2
-      menace_moyenne: "0,165"
+      menace_moyenne: "0,177"
       mesures: 29
       effectif_texte: "29"
     - libelle: Finalistes
       effectif: 24
       voix_moyennes: "6,25"
       voix_medianes: 5
-      menace_moyenne: "0,441"
+      menace_moyenne: "0,472"
       mesures: 24
       effectif_texte: "24"
     - libelle: Tout le casting
       effectif: 511
-      voix_moyennes: "5,96"
+      voix_moyennes: "5,93"
       voix_medianes: 6
-      menace_moyenne: "0,709"
+      menace_moyenne: "0,714"
       mesures: 429
       effectif_texte: "511"
     couples:
@@ -9345,7 +9365,7 @@ indicateurs:
       voix_vainqueur: 2
       finaliste: Nicolas Roy
       voix_finaliste: 3
-      conseils: 13
+      conseils: 12
     - saison: s04
       titre: Panama
       annee: 2004
@@ -9353,7 +9373,7 @@ indicateurs:
       voix_vainqueur: 2
       finaliste: Linda Alario
       voix_finaliste: 11
-      conseils: 14
+      conseils: 13
     - saison: s05
       titre: Pacifique
       annee: 2005
@@ -9361,7 +9381,7 @@ indicateurs:
       voix_vainqueur: 1
       finaliste: Francis Bordas
       voix_finaliste: 11
-      conseils: 14
+      conseils: 13
     - saison: s06
       titre: Vanuatu
       annee: 2006
@@ -9369,7 +9389,7 @@ indicateurs:
       voix_vainqueur: 5
       finaliste: Émilie Frahi
       voix_finaliste: 5
-      conseils: 13
+      conseils: 12
     - saison: s08
       titre: Caramoan
       annee: 2008
@@ -9377,7 +9397,7 @@ indicateurs:
       voix_vainqueur: 0
       finaliste: Frédéric Favier
       voix_finaliste: 1
-      conseils: 13
+      conseils: 12
     - saison: s09
       titre: Palau
       annee: 2009
@@ -9385,7 +9405,7 @@ indicateurs:
       voix_vainqueur: 3
       finaliste: Patrick Merle
       voix_finaliste: 1
-      conseils: 12
+      conseils: 11
     - saison: s10
       titre: Viêtnam
       annee: 2010
@@ -9393,7 +9413,7 @@ indicateurs:
       voix_vainqueur: 1
       finaliste: Claude Dartois
       voix_finaliste: 1
-      conseils: 14
+      conseils: 13
     - saison: s11
       titre: Raja Ampat
       annee: 2011
@@ -9401,7 +9421,7 @@ indicateurs:
       voix_vainqueur: 0
       finaliste: Teheiura Teahui
       voix_finaliste: 5
-      conseils: 14
+      conseils: 13
     - saison: s12
       titre: Malaisie
       annee: 2012
@@ -9409,7 +9429,7 @@ indicateurs:
       voix_vainqueur: 0
       finaliste: Brice Martinet
       voix_finaliste: 12
-      conseils: 14
+      conseils: 13
     - saison: s14
       titre: Johor
       annee: 2015
@@ -9417,7 +9437,7 @@ indicateurs:
       voix_vainqueur: 5
       finaliste: Chantal Ménard
       voix_finaliste: 9
-      conseils: 14
+      conseils: 13
     - saison: s15
       titre: Thaïlande
       annee: 2016
@@ -9425,7 +9445,7 @@ indicateurs:
       voix_vainqueur: 1
       finaliste: Pascal Salviani
       voix_finaliste: 12
-      conseils: 14
+      conseils: 13
     - saison: s16
       titre: L’Île au trésor
       annee: 2016
@@ -9433,7 +9453,7 @@ indicateurs:
       voix_vainqueur: 7
       finaliste: Jesta Hillmann
       voix_finaliste: 3
-      conseils: 15
+      conseils: 14
     - saison: s17
       titre: Cambodge
       annee: 2017
@@ -9441,7 +9461,7 @@ indicateurs:
       voix_vainqueur: 2
       finaliste: Clémentine Jullien
       voix_finaliste: 1
-      conseils: 14
+      conseils: 13
     - saison: s18
       titre: Fidji
       annee: 2017
@@ -9449,7 +9469,7 @@ indicateurs:
       voix_vainqueur: 6
       finaliste: Tiffany Gounin
       voix_finaliste: 6
-      conseils: 14
+      conseils: 13
     - saison: s20
       titre: La Guerre des chefs
       annee: 2019
@@ -9457,7 +9477,7 @@ indicateurs:
       voix_vainqueur: 7
       finaliste: Cindy Poumeyrol
       voix_finaliste: 0
-      conseils: 14
+      conseils: 13
     - saison: s21
       titre: Les 4 Terres
       annee: 2020
@@ -9465,7 +9485,7 @@ indicateurs:
       voix_vainqueur: 2
       finaliste: Brice Petit
       voix_finaliste: 6
-      conseils: 16
+      conseils: 15
     - saison: s22
       titre: Les Armes secrètes
       annee: 2021
@@ -9473,7 +9493,7 @@ indicateurs:
       voix_vainqueur: 1
       finaliste: Lucie Bertaud
       voix_finaliste: 8
-      conseils: 13
+      conseils: 12
     - saison: s23
       titre: Le Totem maudit
       annee: 2022
@@ -9497,7 +9517,7 @@ indicateurs:
       voix_vainqueur: 1
       finaliste: Tania Cakarevic
       voix_finaliste: 36
-      conseils: 15
+      conseils: 14
     - saison: s25
       titre: Les Chasseurs d’immunité
       annee: 2024
@@ -9505,7 +9525,7 @@ indicateurs:
       voix_vainqueur: 2
       finaliste: Meïssa Seck
       voix_finaliste: 5
-      conseils: 14
+      conseils: 13
     - saison: s26
       titre: La Tribu maudite
       annee: 2024
@@ -9513,7 +9533,7 @@ indicateurs:
       voix_vainqueur: 0
       finaliste: Charlotte Rasquin
       voix_finaliste: 6
-      conseils: 14
+      conseils: 13
     - saison: s27
       titre: La Revanche des 4 Terres
       annee: 2025
@@ -9521,7 +9541,7 @@ indicateurs:
       voix_vainqueur: 4
       finaliste: Maël Lozach
       voix_finaliste: 1
-      conseils: 15
+      conseils: 14
     - saison: s28
       titre: Les Reliques du destin
       annee: 2026
@@ -9529,7 +9549,7 @@ indicateurs:
       voix_vainqueur: 7
       finaliste: Clarisse Cresseveur
       voix_finaliste: 2
-      conseils: 16
+      conseils: 15
     couples_resume:
       effectif: 25
       vainqueur_moins_vise: 15
@@ -9539,7 +9559,7 @@ indicateurs:
       moyenne_finaliste: "6,2"
       rapport: "2,5"
       effectif_texte: "25"
-    rapport_ensemble: "4,3"
+    rapport_ensemble: 4
     effectif_texte: "29"
   duos:
     seuil: 6
@@ -9656,7 +9676,7 @@ indicateurs:
   menace_par_sort:
     elimine_conseil: 1
     elimine_epreuve: "0,3"
-    finaliste: "0,4"
+    finaliste: "0,5"
     vainqueur: "0,2"
     elimine_poteaux: "0,4"
     abandon_medical: "0,2"
@@ -9664,7 +9684,7 @@ indicateurs:
     abandon_volontaire: "0,3"
     elimine_ambassadeurs: "0,4"
     elimine_destins_lies: "0,2"
-  menace_rapport: "6,4"
+  menace_rapport: "5,9"
   saisons:
   - id: s01
     numero: 1
@@ -9707,7 +9727,7 @@ indicateurs:
     survie_moyenne: "63,1"
     abandons: 1
     taux_abandon: "6,2"
-    conseils: 13
+    conseils: 12
     conseils_complets: 12
     tension_conseils: "41,7"
     dispersion_votes: "0,834"
@@ -9737,7 +9757,7 @@ indicateurs:
     survie_moyenne: "56,2"
     abandons: 6
     taux_abandon: "33,3"
-    conseils: 12
+    conseils: 11
     conseils_complets: 8
     tension_conseils: "36,4"
     dispersion_votes: "0,782"
@@ -9766,7 +9786,7 @@ indicateurs:
     survie_moyenne: "63,8"
     abandons: 2
     taux_abandon: "12,5"
-    conseils: 14
+    conseils: 13
     conseils_complets: 11
     tension_conseils: "30,8"
     dispersion_votes: "0,81"
@@ -9795,7 +9815,7 @@ indicateurs:
     survie_moyenne: "59,3"
     abandons: 2
     taux_abandon: "11,8"
-    conseils: 14
+    conseils: 13
     conseils_complets: 13
     tension_conseils: "30,8"
     dispersion_votes: "0,785"
@@ -9824,7 +9844,7 @@ indicateurs:
     survie_moyenne: "63,9"
     abandons: 3
     taux_abandon: "18,8"
-    conseils: 13
+    conseils: 12
     conseils_complets: 11
     tension_conseils: 25
     dispersion_votes: "0,809"
@@ -9853,7 +9873,7 @@ indicateurs:
     survie_moyenne: "63,3"
     abandons: 2
     taux_abandon: "12,5"
-    conseils: 13
+    conseils: 12
     conseils_complets: 10
     tension_conseils: "41,7"
     dispersion_votes: "0,773"
@@ -9882,7 +9902,7 @@ indicateurs:
     survie_moyenne: "58,5"
     abandons: 3
     taux_abandon: "17,6"
-    conseils: 13
+    conseils: 12
     conseils_complets: 12
     tension_conseils: 25
     dispersion_votes: "0,751"
@@ -9911,7 +9931,7 @@ indicateurs:
     survie_moyenne: "56,1"
     abandons: 4
     taux_abandon: "22,2"
-    conseils: 12
+    conseils: 11
     conseils_complets: 11
     tension_conseils: "72,7"
     dispersion_votes: "0,919"
@@ -9941,7 +9961,7 @@ indicateurs:
     survie_moyenne: "62,2"
     abandons: 3
     taux_abandon: "16,7"
-    conseils: 14
+    conseils: 13
     conseils_complets: 13
     tension_conseils: "46,2"
     dispersion_votes: "0,793"
@@ -9970,7 +9990,7 @@ indicateurs:
     survie_moyenne: "58,2"
     abandons: 3
     taux_abandon: 15
-    conseils: 14
+    conseils: 13
     conseils_complets: 12
     tension_conseils: "69,2"
     dispersion_votes: "0,862"
@@ -10000,7 +10020,7 @@ indicateurs:
     survie_moyenne: "64,2"
     abandons: 2
     taux_abandon: 10
-    conseils: 14
+    conseils: 13
     conseils_complets: 12
     tension_conseils: "53,8"
     dispersion_votes: "0,847"
@@ -10032,7 +10052,7 @@ indicateurs:
     survie_moyenne: "60,1"
     abandons: 4
     taux_abandon: 20
-    conseils: 14
+    conseils: 13
     conseils_complets: 8
     tension_conseils: "46,2"
     dispersion_votes: "0,781"
@@ -10063,7 +10083,7 @@ indicateurs:
     survie_moyenne: "56,5"
     abandons: 2
     taux_abandon: "9,5"
-    conseils: 14
+    conseils: 13
     conseils_complets: 12
     tension_conseils: "38,5"
     dispersion_votes: "0,759"
@@ -10094,7 +10114,7 @@ indicateurs:
     survie_moyenne: "63,1"
     abandons: 0
     taux_abandon: 0
-    conseils: 15
+    conseils: 14
     conseils_complets: 13
     tension_conseils: "61,5"
     dispersion_votes: "0,782"
@@ -10124,7 +10144,7 @@ indicateurs:
     survie_moyenne: "61,3"
     abandons: 3
     taux_abandon: "14,3"
-    conseils: 14
+    conseils: 13
     conseils_complets: 12
     tension_conseils: "46,2"
     dispersion_votes: "0,816"
@@ -10155,7 +10175,7 @@ indicateurs:
     survie_moyenne: "59,1"
     abandons: 3
     taux_abandon: "14,3"
-    conseils: 14
+    conseils: 13
     conseils_complets: 10
     tension_conseils: "53,8"
     dispersion_votes: "0,862"
@@ -10186,7 +10206,7 @@ indicateurs:
     survie_moyenne: "64,7"
     abandons: 2
     taux_abandon: "9,5"
-    conseils: 14
+    conseils: 13
     conseils_complets: 12
     tension_conseils: "53,8"
     dispersion_votes: "0,867"
@@ -10218,7 +10238,7 @@ indicateurs:
     survie_moyenne: 62
     abandons: 2
     taux_abandon: "8,3"
-    conseils: 16
+    conseils: 15
     conseils_complets: 13
     tension_conseils: "53,3"
     dispersion_votes: "0,808"
@@ -10251,7 +10271,7 @@ indicateurs:
     survie_moyenne: "65,3"
     abandons: 1
     taux_abandon: "4,8"
-    conseils: 13
+    conseils: 12
     conseils_complets: 12
     tension_conseils: "58,3"
     dispersion_votes: "0,841"
@@ -10315,7 +10335,7 @@ indicateurs:
     survie_moyenne: "62,1"
     abandons: 3
     taux_abandon: 15
-    conseils: 15
+    conseils: 14
     conseils_complets: 10
     tension_conseils: "42,9"
     dispersion_votes: "0,86"
@@ -10346,7 +10366,7 @@ indicateurs:
     survie_moyenne: "64,1"
     abandons: 1
     taux_abandon: "4,5"
-    conseils: 14
+    conseils: 13
     conseils_complets: 9
     tension_conseils: "53,8"
     dispersion_votes: "0,844"
@@ -10378,7 +10398,7 @@ indicateurs:
     survie_moyenne: "60,4"
     abandons: 1
     taux_abandon: "4,2"
-    conseils: 14
+    conseils: 13
     conseils_complets: 9
     tension_conseils: "38,5"
     dispersion_votes: "0,901"
@@ -10411,7 +10431,7 @@ indicateurs:
     survie_moyenne: "61,9"
     abandons: 3
     taux_abandon: "12,5"
-    conseils: 15
+    conseils: 14
     conseils_complets: 12
     tension_conseils: "28,6"
     dispersion_votes: "0,718"
@@ -10443,7 +10463,7 @@ indicateurs:
     survie_moyenne: "65,5"
     abandons: 0
     taux_abandon: 0
-    conseils: 16
+    conseils: 15
     conseils_complets: 13
     tension_conseils: "46,2"
     dispersion_votes: "0,815"
@@ -10475,7 +10495,7 @@ indicateurs:
     survie_moyenne: "59,9"
     abandons: 0
     taux_abandon: 0
-    conseils: 9
+    conseils: 8
     conseils_complets: 8
     tension_conseils: 50
     dispersion_votes: "0,813"
@@ -10505,7 +10525,7 @@ indicateurs:
     survie_moyenne: "68,6"
     abandons: 0
     taux_abandon: 0
-    conseils: 9
+    conseils: 8
     conseils_complets: 8
     tension_conseils: "37,5"
     dispersion_votes: "0,879"
@@ -10535,7 +10555,7 @@ indicateurs:
     survie_moyenne: "66,3"
     abandons: 0
     taux_abandon: 0
-    conseils: 9
+    conseils: 8
     conseils_complets: 5
     tension_conseils: 50
     dispersion_votes: "0,919"
@@ -10566,7 +10586,7 @@ indicateurs:
     survie_moyenne: "68,9"
     abandons: 2
     taux_abandon: "15,4"
-    conseils: 9
+    conseils: 8
     conseils_complets: 7
     tension_conseils: 25
     dispersion_votes: "0,805"
@@ -10596,7 +10616,7 @@ indicateurs:
     survie_moyenne: "60,4"
     abandons: 1
     taux_abandon: "5,6"
-    conseils: 13
+    conseils: 12
     conseils_complets: 11
     tension_conseils: "36,4"
     dispersion_votes: "0,781"
@@ -10629,7 +10649,7 @@ indicateurs:
     survie_moyenne: "64,1"
     abandons: 4
     taux_abandon: 20
-    conseils: 11
+    conseils: 10
     conseils_complets: 8
     tension_conseils: 20
     dispersion_votes: "0,806"
@@ -10662,7 +10682,7 @@ indicateurs:
     survie_moyenne: "60,4"
     abandons: 1
     taux_abandon: "4,8"
-    conseils: 14
+    conseils: 13
     conseils_complets: 6
     tension_conseils: "46,2"
     dispersion_votes: "0,796"
@@ -21075,30 +21095,30 @@ classement:
     - Louise Picavet
     depouillement:
     - periode: 2000–2004
-      conseils: 52
+      conseils: 49
       complets: 42
-      part: "80,8"
+      part: "85,7"
     - periode: 2005–2009
-      conseils: 74
+      conseils: 68
       complets: 65
-      part: "87,8"
+      part: "95,6"
     - periode: 2010–2014
-      conseils: 69
+      conseils: 63
       complets: 57
-      part: "82,6"
+      part: "90,5"
     - periode: 2015–2019
-      conseils: 98
+      conseils: 91
       complets: 78
-      part: "79,6"
+      part: "85,7"
     - periode: 2020–2024
-      conseils: 111
+      conseils: 104
       complets: 77
-      part: "69,4"
+      part: 74
     - periode: 2025–2029
-      conseils: 31
+      conseils: 29
       complets: 25
-      part: "80,6"
-    depouillement_plus_bas: "69,4"
+      part: "86,2"
+    depouillement_plus_bas: 74
   stabilite:
     effectif: 71
     effectif_texte: "71"
@@ -21110,55 +21130,55 @@ prevision:
     libelle: La fiche d’inscription
     description: Le sexe, le plus âgé du camp, le plus jeune. Rien de ce que la soirée a produit.
     variables: 3
-    conseils: 385
+    conseils: 370
     plis: 33
-    presences: 2810
-    rang_moyen: "0,4771"
+    presences: 2745
+    rang_moyen: "0,4688"
     rang_hasard: "0,5"
-    taille_moyenne: "7,3"
-    premiers: "15,8"
-    premiers_hasard: 15
-    ecart_types: "−1,32"
-    erreurs: "84,2"
+    taille_moyenne: "7,4"
+    premiers: "15,9"
+    premiers_hasard: "14,6"
+    ecart_types: "−1,77"
+    erreurs: "84,1"
     ecart_types_mot: écart-type
-    ecart_types_abs: "1,32"
-    presences_texte: 2 810
+    ecart_types_abs: "1,77"
+    presences_texte: 2 745
   - cle: place
     libelle: La place dans le camp
     description: 'On ajoute la position occupée ce soir-là : tribu initiale et sexe minoritaires, avant
       ou après la réunification.'
     variables: 6
-    conseils: 361
+    conseils: 346
     plis: 33
-    presences: 2585
-    rang_moyen: "0,4093"
-    rang_hasard: "0,5"
-    taille_moyenne: "7,2"
-    premiers: "20,2"
-    premiers_hasard: "15,2"
-    ecart_types: "−5,11"
-    erreurs: "79,8"
+    presences: 2520
+    rang_moyen: "0,4001"
+    rang_hasard: "0,4999"
+    taille_moyenne: "7,3"
+    premiers: "20,8"
+    premiers_hasard: "14,8"
+    ecart_types: "−5,56"
+    erreurs: "79,2"
     ecart_types_mot: écarts-types
-    ecart_types_abs: "5,11"
-    presences_texte: 2 585
+    ecart_types_abs: "5,56"
+    presences_texte: 2 520
   - cle: jeu
     libelle: Ce que la soirée a produit
     description: On ajoute le confort du soir et les voix déjà reçues — celles du conseil précédent, et
       le total depuis le début.
     variables: 11
-    conseils: 361
+    conseils: 346
     plis: 33
-    presences: 2585
-    rang_moyen: "0,4021"
+    presences: 2520
+    rang_moyen: "0,3921"
     rang_hasard: "0,5001"
-    taille_moyenne: "7,2"
-    premiers: "21,1"
-    premiers_hasard: "15,2"
-    ecart_types: "−5,51"
-    erreurs: "78,9"
+    taille_moyenne: "7,3"
+    premiers: "21,4"
+    premiers_hasard: "14,8"
+    ecart_types: "−6,05"
+    erreurs: "78,6"
     ecart_types_mot: écarts-types
-    ecart_types_abs: "5,51"
-    presences_texte: 2 585
+    ecart_types_abs: "6,05"
+    presences_texte: 2 520
   tirages: 10000
   min_presents: 3
   tirages_texte: 10 000
@@ -25288,27 +25308,27 @@ modeles:
     voix:
       libelle: Bulletins reçus, par épreuve disputée
       force:
-        estimation: "0,913"
-        bas: "0,825"
+        estimation: "0,911"
+        bas: "0,822"
         haut: "1,01"
-        p: "0,0785"
-        p_ajustee: "0,1707"
+        p: "0,0763"
+        p_ajustee: "0,166"
         retenu: false
         estimation_pluriel: false
       femme:
-        estimation: "1,148"
-        bas: "0,929"
-        haut: "1,42"
-        p: "0,2021"
-        p_ajustee: "0,3317"
+        estimation: "1,157"
+        bas: "0,933"
+        haut: "1,433"
+        p: "0,1836"
+        p_ajustee: "0,3014"
         retenu: false
         estimation_pluriel: false
       age:
-        estimation: "1,048"
-        bas: "0,942"
-        haut: "1,166"
-        p: "0,3903"
-        p_ajustee: "0,5739"
+        estimation: "1,052"
+        bas: "0,944"
+        haut: "1,171"
+        p: "0,3595"
+        p_ajustee: "0,5393"
         retenu: false
         estimation_pluriel: false
       lecture: Rapport de taux par doublement de la force. Au-dessus de 1, un aventurier fort attire davantage
@@ -25328,7 +25348,7 @@ modeles:
         bas: "−3,688"
         haut: "1,749"
         p: "0,4847"
-        p_ajustee: "0,6589"
+        p_ajustee: "0,6693"
         retenu: false
         estimation_pluriel: false
       age:
@@ -25380,35 +25400,35 @@ modeles:
         bas: "0,839"
         haut: "1,332"
         p: "0,6367"
-        p_ajustee: "0,7913"
+        p_ajustee: "0,7946"
         retenu: false
       - variable: Déjà venu
         rapport: "1,026"
         bas: "0,23"
         haut: "4,574"
         p: "0,9731"
-        p_ajustee: 1
+        p_ajustee: "0,996"
         retenu: false
       - variable: Métier — Artisanat et bâtiment
         rapport: "0,888"
         bas: "0,576"
         haut: "1,368"
         p: "0,5897"
-        p_ajustee: "0,7552"
+        p_ajustee: "0,7657"
         retenu: false
       - variable: Métier — Arts, médias et image
         rapport: "0,992"
         bas: "0,67"
         haut: "1,469"
         p: "0,968"
-        p_ajustee: 1
+        p_ajustee: "0,996"
         retenu: false
       - variable: Métier — Commerce et vente
         rapport: "1,177"
         bas: "0,814"
         haut: "1,701"
         p: "0,3866"
-        p_ajustee: "0,5739"
+        p_ajustee: "0,5701"
         retenu: false
       - variable: Métier — Encadrement et professions intellectuelles
         rapport: "1,317"
@@ -25444,8 +25464,8 @@ modeles:
       deja_venu_inverse: 1
       effectif_texte: "509"
   hasard_mecanique:
-    conseils: 361
-    conseils_hors_finale: 334
+    conseils: 337
+    conseils_hors_finale: 332
     paliers:
     - palier: 0–10 %
       observe: "6,7"
@@ -25490,26 +25510,20 @@ modeles:
       presents_moyen: "7,7"
       rapport: "1,2"
     - palier: 70–80 %
-      observe: "22,1"
-      mecanique: "17,6"
-      conseils: 38
+      observe: "17,7"
+      mecanique: "17,5"
+      conseils: 36
       presents_moyen: "5,8"
-      rapport: "1,26"
+      rapport: "1,01"
     - palier: 80–90 %
-      observe: 93
-      mecanique: "24,4"
-      conseils: 23
-      presents_moyen: "4,2"
-      rapport: "3,81"
-    - palier: 90–100 %
-      observe: 100
-      mecanique: "33,3"
-      conseils: 4
-      presents_moyen: 3
-      rapport: 3
-    ecart_moyen: "3,45"
-    rapport_moyen: "1,23"
-    correlation: "0,533"
+      observe: 68
+      mecanique: 22
+      conseils: 5
+      presents_moyen: "4,6"
+      rapport: "3,09"
+    ecart_moyen: "2,99"
+    rapport_moyen: "1,18"
+    correlation: "0,584"
     lecture: 'Risque observé de sortir à un conseil, et risque qu’un simple 1/nombre-de-présents prédit.
       Les deux derniers paliers sont ceux de la finale : tout le monde y sort le même jour, et la comparaison
       n’y a plus de sens.'
@@ -25528,7 +25542,7 @@ modeles:
       bas: "−11,87"
       haut: "5,56"
       p: "0,4786"
-      p_ajustee: "0,6589"
+      p_ajustee: "0,6693"
       retenu: false
     - mecanique: collier_immunite
       sur: dispersion_votes
@@ -25623,7 +25637,7 @@ modeles:
         observe: "28,9895"
         moyenne_nulle: "0,9234"
       origine: alliances
-      p_ajustee: "0,0019"
+      p_ajustee: "0,0021"
       retenu: true
       observe_arrondi: 29
       attendu_arrondi: "0,9"
@@ -25635,26 +25649,26 @@ modeles:
       effectif: 241
       variables:
       - libelle: Toujours du côté de la majorité
-        estimation: "9,18"
-        bas: "3,71"
-        haut: "14,64"
-        p: "0,001"
-        p_ajustee: "0,0035"
+        estimation: "9,13"
+        bas: "3,66"
+        haut: "14,61"
+        p: "0,0011"
+        p_ajustee: "0,004"
         retenu: true
         estimation_pluriel: true
       - libelle: Une voix reçue de plus par conseil
-        estimation: "−0,02"
-        bas: "−1,6"
-        haut: "1,56"
-        p: "0,9785"
-        p_ajustee: 1
+        estimation: "0,11"
+        bas: "−1,48"
+        haut: "1,69"
+        p: "0,8962"
+        p_ajustee: "0,9508"
         retenu: false
         estimation_pluriel: false
       r2: "0,234"
       lecture: 'Points de saison gagnés ou perdus, le nombre de conseils traversés tenu constant. Le bulletin
         écrit le soir de son élimination et les voix qui éliminent sont retirés : ils mesureraient la
         sortie elle-même.'
-      rapport: 459
+      rapport: 83
       effectif_texte: "241"
     les_plus_souvent_du_bon_cote:
     - nom: Philippe Duron
@@ -25718,14 +25732,14 @@ modeles:
       part: 100
       conseils: 8
       survie: "97,5"
-      voix: 7
+      voix: 8
       id: bernard-lenoir
     - nom: Bertrand Bolle
       saison: s08
       part: 100
       conseils: 8
       survie: "97,5"
-      voix: 2
+      voix: 3
       id: bertrand-bolle
     - nom: Christelle Gauzet
       saison: s08
@@ -25864,7 +25878,7 @@ modeles:
         moyenne_nulle: "10,8674"
       bulletins: 2662
       origine: homophilie
-      p_ajustee: "0,5427"
+      p_ajustee: "0,5393"
       retenu: false
       observe_arrondi: "10,9"
       attendu_arrondi: "10,9"
@@ -25926,7 +25940,7 @@ modeles:
         moyenne_nulle: "10,5271"
       bulletins: 2662
       origine: homophilie
-      p_ajustee: "0,2494"
+      p_ajustee: "0,2455"
       retenu: false
       observe_arrondi: "9,9"
       attendu_arrondi: "10,5"
@@ -25988,7 +26002,7 @@ modeles:
         moyenne_nulle: "60,6047"
       bulletins: 2662
       origine: homophilie
-      p_ajustee: "0,0019"
+      p_ajustee: "0,0021"
       retenu: true
       observe_arrondi: "53,9"
       attendu_arrondi: "60,6"
@@ -26110,7 +26124,7 @@ modeles:
         moyenne_nulle: "38,6106"
       bulletins: 1708
       origine: homophilie
-      p_ajustee: "0,0019"
+      p_ajustee: "0,0021"
       retenu: true
       observe_arrondi: "28,3"
       attendu_arrondi: "38,6"
@@ -26174,7 +26188,7 @@ modeles:
         observe: "48,0215"
         moyenne_nulle: "57,0337"
       origine: trahison
-      p_ajustee: "0,0011"
+      p_ajustee: "0,001"
       retenu: true
       observe_arrondi: 48
       attendu_arrondi: 57
@@ -26190,7 +26204,7 @@ modeles:
       p: "0,9572"
       lecture: Points de saison gagnés ou perdus quand on passe de « jamais » à « toujours » viser un
         ancien allié, le nombre de bulletins émis tenu constant.
-      p_ajustee: 1
+      p_ajustee: "0,996"
       retenu: false
       estimation_pluriel: false
       effectif_texte: "273"
@@ -26267,21 +26281,21 @@ modeles:
       bulletins_texte: "7"
     bulletins_texte: 2 047
   confort_maudit:
-    conseils: 126
-    bulletins: 1000
-    observe: "20,7"
+    conseils: 127
+    bulletins: 1005
+    observe: "20,6"
     attendu: "19,8"
-    bas: "18,2"
-    haut: "23,3"
-    p: "0,4749"
+    bas: "18,1"
+    haut: "23,2"
+    p: "0,5267"
     lecture: Part des bulletins visant un gagnant du confort du même épisode, comparée à la part que ces
       gagnants représentent parmi ceux que chaque votant pouvait viser (sans lui-même ni l’immunisé).
       Soirs à conseil unique seulement ; les bulletins d’un même conseil ne sont pas indépendants, et
       l’intervalle est donc trop étroit.
-    p_ajustee: "0,6589"
+    p_ajustee: "0,705"
     retenu: false
-    marge: 4
-    bulletins_texte: 1 000
+    marge: 3
+    bulletins_texte: 1 005
   decimation:
     saisons: 20
     sorties: 235
@@ -26410,43 +26424,43 @@ modeles:
     saisons: 32
     coefficients:
     - libelle: A écrit le nom du juré au conseil
-      rapport: "0,652"
-      bas: "0,379"
-      haut: "1,199"
-      p: "0,1462"
-      p_ajustee: "0,2494"
+      rapport: "0,574"
+      bas: "0,296"
+      haut: "1,212"
+      p: "0,1409"
+      p_ajustee: "0,2452"
       retenu: false
-      inverse: "1,5"
+      inverse: "1,7"
     - libelle: A voté avec le juré, par conseil partagé
-      rapport: "1,183"
-      bas: "1,084"
-      haut: "1,306"
-      p: "0,0003"
-      p_ajustee: "0,0014"
+      rapport: "1,17"
+      bas: "1,065"
+      haut: "1,308"
+      p: "0,0019"
+      p_ajustee: "0,0066"
       retenu: true
-      inverse: "0,8"
-      cinq_conseils: "2,3"
+      inverse: "0,9"
+      cinq_conseils: "2,2"
     avec_bandeau:
       coefficients:
       - libelle: A écrit le nom du juré au conseil
-        rapport: "0,655"
-        bas: "0,364"
-        haut: "1,193"
-        p: "0,1618"
+        rapport: "0,575"
+        bas: "0,275"
+        haut: "1,251"
+        p: "0,151"
       - libelle: A voté avec le juré, par conseil partagé
-        rapport: "1,219"
-        bas: "1,09"
-        haut: "1,433"
-        p: "0,0061"
+        rapport: "1,205"
+        bas: "1,071"
+        haut: "1,414"
+        p: "0,012"
       - libelle: Partage la tribu initiale du juré
-        rapport: "0,834"
-        bas: "0,481"
-        haut: "1,368"
-        p: "0,5026"
+        rapport: "0,828"
+        bas: "0,477"
+        haut: "1,357"
+        p: "0,4829"
       lecture: 'Le même modèle, avec une variable de plus : les deux partagent-ils la tribu initiale ?'
-    part_vers_bourreau: "50,3"
-    bulletins_avec_bourreau_disponible: 225
-    part_quand_disponible: "65,8"
+    part_vers_bourreau: "46,6"
+    bulletins_avec_bourreau_disponible: 206
+    part_quand_disponible: "66,5"
     lecture: 'Rapport de cotes : au-dessus de 1, le juré vote plus souvent pour ce finaliste ; en dessous,
       moins souvent. Un intervalle qui contient 1 veut dire qu’on ne peut pas conclure.'
     bulletins_texte: "294"
@@ -26652,97 +26666,97 @@ modeles:
     - annee: 2002
       titre: Nicoya
       effectif: 16
-      conseils: 13
+      conseils: 12
       effectif_texte: "16"
     - annee: 2003
       titre: Bocas del Toro
       effectif: 18
-      conseils: 12
+      conseils: 11
       effectif_texte: "18"
     - annee: 2004
       titre: Panama
       effectif: 16
-      conseils: 14
+      conseils: 13
       effectif_texte: "16"
     - annee: 2005
       titre: Pacifique
       effectif: 17
-      conseils: 14
+      conseils: 13
       effectif_texte: "17"
     - annee: 2006
       titre: Vanuatu
       effectif: 16
-      conseils: 13
+      conseils: 12
       effectif_texte: "16"
     - annee: 2007
       titre: Palawan
       effectif: 16
-      conseils: 13
+      conseils: 12
       effectif_texte: "16"
     - annee: 2008
       titre: Caramoan
       effectif: 17
-      conseils: 13
+      conseils: 12
       effectif_texte: "17"
     - annee: 2009
       titre: Palau
       effectif: 18
-      conseils: 12
+      conseils: 11
       effectif_texte: "18"
     - annee: 2010
       titre: Viêtnam
       effectif: 18
-      conseils: 14
+      conseils: 13
       effectif_texte: "18"
     - annee: 2011
       titre: Raja Ampat
       effectif: 20
-      conseils: 14
+      conseils: 13
       effectif_texte: "20"
     - annee: 2012
       titre: Malaisie
       effectif: 20
-      conseils: 14
+      conseils: 13
       effectif_texte: "20"
     - annee: 2015
       titre: Johor
       effectif: 20
-      conseils: 14
+      conseils: 13
       effectif_texte: "20"
     - annee: 2016
       titre: Thaïlande
       effectif: 21
-      conseils: 14
+      conseils: 13
       effectif_texte: "21"
     - annee: 2016
       titre: L’Île au trésor
       effectif: 20
-      conseils: 15
+      conseils: 14
       effectif_texte: "20"
     - annee: 2017
       titre: Cambodge
       effectif: 21
-      conseils: 14
+      conseils: 13
       effectif_texte: "21"
     - annee: 2017
       titre: Fidji
       effectif: 21
-      conseils: 14
+      conseils: 13
       effectif_texte: "21"
     - annee: 2019
       titre: La Guerre des chefs
       effectif: 21
-      conseils: 14
+      conseils: 13
       effectif_texte: "21"
     - annee: 2020
       titre: Les 4 Terres
       effectif: 24
-      conseils: 16
+      conseils: 15
       effectif_texte: "24"
     - annee: 2021
       titre: Les Armes secrètes
       effectif: 21
-      conseils: 13
+      conseils: 12
       effectif_texte: "21"
     - annee: 2022
       titre: Le Totem maudit
@@ -26752,202 +26766,201 @@ modeles:
     - annee: 2023
       titre: Le Feu sacré
       effectif: 20
-      conseils: 15
+      conseils: 14
       effectif_texte: "20"
     - annee: 2024
       titre: Les Chasseurs d’immunité
       effectif: 22
-      conseils: 14
+      conseils: 13
       effectif_texte: "22"
     - annee: 2024
       titre: La Tribu maudite
       effectif: 24
-      conseils: 14
+      conseils: 13
       effectif_texte: "24"
     - annee: 2025
       titre: La Revanche des 4 Terres
       effectif: 24
-      conseils: 15
+      conseils: 14
       effectif_texte: "24"
     - annee: 2026
       titre: Les Reliques du destin
       effectif: 20
-      conseils: 16
+      conseils: 15
       effectif_texte: "20"
-    annee_rupture: 2012
+    annee_rupture: 2019
     derniere_avant:
-      annee: 2011
-      titre: Raja Ampat
+      annee: 2017
+      titre: Fidji
     premiere_apres:
-      annee: 2012
-      titre: Malaisie
-    avant: 11
-    apres: 15
+      annee: 2019
+      titre: La Guerre des chefs
+    avant: 17
+    apres: 9
     detail:
-    - libelle: Taille du casting
-      avant: "17,09"
-      apres: "21,53"
-      ecart_types: "1,69"
-      ecart_types_mot: écart-type
-      ecart_types_abs: "1,69"
-    - libelle: Âge moyen du casting
-      avant: "32,69"
-      apres: "34,33"
-      ecart_types: "1,28"
-      ecart_types_mot: écart-type
-      ecart_types_abs: "1,28"
-    - libelle: Nombre de conseils
-      avant: "13,18"
-      apres: "14,4"
-      ecart_types: "1,25"
-      ecart_types_mot: écart-type
-      ecart_types_abs: "1,25"
     - libelle: Objets d’immunité en jeu
       avant: 0
-      apres: "4,07"
-      ecart_types: "0,92"
+      apres: "6,78"
+      ecart_types: "1,54"
       ecart_types_mot: écart-type
-      ecart_types_abs: "0,92"
-    - libelle: Taux d’abandon
-      avant: "15,15"
-      apres: "9,01"
-      ecart_types: "−0,83"
+      ecart_types_abs: "1,54"
+    - libelle: Taille du casting
+      avant: "18,29"
+      apres: "22,22"
+      ecart_types: "1,49"
       ecart_types_mot: écart-type
-      ecart_types_abs: "0,83"
+      ecart_types_abs: "1,49"
+    - libelle: Nombre de conseils
+      avant: "12,59"
+      apres: "13,67"
+      ecart_types: "1,1"
+      ecart_types_mot: écart-type
+      ecart_types_abs: "1,1"
     - libelle: Durée de la saison
-      avant: "40,27"
-      apres: "39,73"
-      ecart_types: "−0,38"
+      avant: "40,47"
+      apres: 39
+      ecart_types: "−1,03"
       ecart_types_mot: écart-type
-      ecart_types_abs: "0,38"
+      ecart_types_abs: "1,03"
+    - libelle: Âge moyen du casting
+      avant: "33,24"
+      apres: "34,4"
+      ecart_types: "0,9"
+      ecart_types_mot: écart-type
+      ecart_types_abs: "0,9"
+    - libelle: Taux d’abandon
+      avant: "13,81"
+      apres: "7,46"
+      ecart_types: "−0,86"
+      ecart_types_mot: écart-type
+      ecart_types_abs: "0,86"
     profil:
     - annee: 2005
       titre: Pacifique
-      gain: "22,26"
+      gain: "20,85"
     - annee: 2006
       titre: Vanuatu
-      gain: "24,08"
+      gain: "23,05"
     - annee: 2007
       titre: Palawan
-      gain: "28,72"
+      gain: "27,68"
     - annee: 2008
       titre: Caramoan
-      gain: "34,72"
+      gain: "33,72"
     - annee: 2009
       titre: Palau
-      gain: "40,97"
+      gain: "40,03"
     - annee: 2010
       titre: Viêtnam
-      gain: "45,28"
+      gain: "44,29"
     - annee: 2011
       titre: Raja Ampat
-      gain: "47,66"
-    - &id060
+      gain: "46,92"
+    - &id061
       annee: 2012
       titre: Malaisie
-      gain: 49
+      gain: "48,5"
     - annee: 2015
       titre: Johor
-      gain: "45,99"
+      gain: "45,68"
     - annee: 2016
       titre: Thaïlande
-      gain: "47,53"
+      gain: "47,41"
     - annee: 2016
       titre: L’Île au trésor
-      gain: "44,59"
+      gain: "44,66"
     - annee: 2017
       titre: Cambodge
-      gain: "41,28"
+      gain: "41,52"
     - annee: 2017
       titre: Fidji
-      gain: "42,77"
-    - &id061
+      gain: "43,18"
+    - &id060
       annee: 2019
       titre: La Guerre des chefs
-      gain: "48,94"
+      gain: "49,53"
     - annee: 2020
       titre: Les 4 Terres
-      gain: "46,26"
+      gain: "47,06"
     - annee: 2021
       titre: Les Armes secrètes
-      gain: "37,1"
+      gain: "37,82"
     - annee: 2022
       titre: Le Totem maudit
-      gain: "36,27"
+      gain: "37,42"
     - annee: 2023
       titre: Le Feu sacré
-      gain: "37,26"
+      gain: "36,33"
     - annee: 2024
       titre: Les Chasseurs d’immunité
-      gain: "37,59"
+      gain: "36,92"
     exaequo:
     - *id060
-    - *id061
-    nb_exaequo: 2
-    nb_proches: 8
-    avance: "0,1"
+    nb_exaequo: 1
+    nb_proches: 7
+    avance: "2,1"
     fenetre:
-      debut: 2010
+      debut: 2011
       fin: 2020
-      etendue: 10
+      etendue: 9
     second: *id061
     test_glissement:
       cle: rupture_glissement
       libelle: Une date plutôt qu’un glissement
       question: La meilleure coupure vaut-elle mieux qu’une évolution régulière, année après année ?
-      observe: "49,005"
-      attendu: "53,943"
+      observe: "49,534"
+      attendu: "53,244"
       unite: ''
-      ecart_types: "−0,56"
-      ecart_type_nul: "8,8954"
-      p: "0,5903"
+      ecart_types: "−0,42"
+      ecart_type_nul: "8,8653"
+      p: "0,6813"
       tirages: 10000
       lecture: Gain de la meilleure coupure, comparé à celui obtenu sur des séries qui suivent la même
         tendance linéaire, avec leurs écarts remis au hasard. Au-dessus, la série casse à une date ; dans
         la silhouette, une dérive régulière suffit à produire la coupure.
       nulle: &id111
         bornes:
-        - "23,3187"
-        - "90,8991"
+        - "22,9991"
+        - "92,5477"
         cases:
         - 0
-        - 1
-        - 4
-        - 18
-        - 58
-        - 142
-        - 283
-        - 445
-        - 702
-        - 813
-        - 949
-        - 1065
-        - 1060
-        - 986
-        - 868
-        - 757
-        - 586
-        - 422
-        - 316
-        - 209
-        - 145
-        - 74
-        - 47
-        - 31
+        - 2
+        - 7
+        - 21
+        - 81
+        - 176
+        - 343
+        - 581
+        - 731
+        - 924
+        - 1064
+        - 1095
+        - 1077
+        - 968
+        - 798
+        - 657
+        - 522
+        - 349
+        - 238
+        - 158
+        - 92
+        - 59
+        - 30
+        - 15
         - 8
-        - 6
-        - 5
+        - 3
+        - 1
         - 0
-        largeur_case: "2,413584"
-        observe: "49,0047"
-        moyenne_nulle: "53,9428"
+        largeur_case: "2,483879"
+        observe: "49,5337"
+        moyenne_nulle: "53,2438"
       origine: ruptures
-      p_ajustee: "0,7552"
+      p_ajustee: "0,8232"
       retenu: false
-      observe_arrondi: 49
-      attendu_arrondi: "53,9"
+      observe_arrondi: "49,5"
+      attendu_arrondi: "53,2"
       ecart_types_mot: écart-type
-      ecart_types_abs: "0,56"
+      ecart_types_abs: "0,42"
       observe_arrondi_pluriel: true
       tirages_texte: 10 000
     test:
@@ -26955,11 +26968,11 @@ modeles:
       libelle: La rupture de régime
       question: Existe-t-il une date qui sépare les saisons en deux régimes mieux qu’une date tirée au
         sort ?
-      observe: "49,005"
+      observe: "49,534"
       attendu: "12,796"
       unite: ''
-      ecart_types: "6,75"
-      ecart_type_nul: "5,3611"
+      ecart_types: "6,89"
+      ecart_type_nul: "5,3291"
       p: "0,0001"
       tirages: 10000
       lecture: Gain de la meilleure coupure, comparé au gain de la meilleure coupure sur des saisons remises
@@ -26967,50 +26980,50 @@ modeles:
         mieux que n’importe quelle autre.
       nulle: &id106
         bornes:
-        - "0,5226"
-        - "51,3134"
+        - "0,878"
+        - "51,8507"
         cases:
         - 0
-        - 23
-        - 352
-        - 1115
-        - 1670
-        - 1611
-        - 1400
-        - 1055
-        - 815
-        - 612
-        - 440
-        - 271
-        - 238
-        - 127
-        - 102
-        - 65
-        - 43
-        - 19
-        - 20
+        - 56
+        - 484
+        - 1254
+        - 1691
+        - 1623
+        - 1331
+        - 1011
+        - 759
+        - 542
+        - 426
+        - 281
+        - 184
+        - 117
+        - 93
+        - 60
+        - 34
+        - 24
+        - 11
         - 8
-        - 6
-        - 5
+        - 7
         - 2
-        - 0
-        - 0
+        - 1
         - 0
         - 1
         - 0
-        largeur_case: "1,813957"
-        observe: "49,0047"
-        moyenne_nulle: "12,7961"
+        - 0
+        - 0
+        largeur_case: "1,820453"
+        observe: "49,5337"
+        moyenne_nulle: "12,7962"
       origine: ruptures
       p_ajustee: "0,0007"
       retenu: true
-      observe_arrondi: 49
+      observe_arrondi: "49,5"
       attendu_arrondi: "12,8"
       ecart_types_mot: écarts-types
-      ecart_types_abs: "6,75"
+      ecart_types_abs: "6,89"
       observe_arrondi_pluriel: true
       tirages_texte: 10 000
-    abandon_rapport: "1,7"
+    abandon_rapport: "1,9"
   audience:
     saisons: 33
     serie:
@@ -28062,7 +28075,7 @@ modeles:
         observe: "−0,6537"
         moyenne_nulle: "0,0016"
       origine: audience
-      p_ajustee: "0,0011"
+      p_ajustee: "0,001"
       retenu: true
       observe_arrondi: "−0,65"
       attendu_arrondi: 0
@@ -28144,25 +28157,25 @@ modeles:
       age_moyen: "35,2"
       part_serres: "33,5"
     apres:
-      conseils: 190
-      conseils_camp: 181
+      conseils: 166
+      conseils_camp: 166
       saisons: 26
-      presents_moyen: "7,2"
-      part_femmes: "42,1"
+      presents_moyen: "7,5"
+      part_femmes: 44
       age_moyen: "32,7"
       part_serres: 61
     rang_force_avant: "59,1"
-    rang_force_apres: "53,5"
+    rang_force_apres: "53,6"
     force_effectif_avant: 51
-    force_effectif_apres: 181
+    force_effectif_apres: 166
     robustesse:
       correlation_exposition_force: 0
       apparie:
         avant: "70,2"
         avant_effectif: 17
-        apres: "65,2"
-        apres_effectif: 88
-        ecart: -5
+        apres: "65,5"
+        apres_effectif: 80
+        ecart: "−4,7"
     ambassadeurs:
       effectif: 15
       saisons: 15
@@ -28192,117 +28205,117 @@ modeles:
     - cle: fusion_sexe
       libelle: Le sexe des éliminés, avant et après la réunification
       question: La part de femmes parmi les éliminés change-t-elle à la réunification ?
-      observe: "−17,791"
-      attendu: "1,021"
+      observe: "−17,462"
+      attendu: "0,98"
       unite: points
-      ecart_types: "−3,53"
-      ecart_type_nul: "5,3223"
-      p: "0,0004"
+      ecart_types: "−3,39"
+      ecart_type_nul: "5,4459"
+      p: "0,001"
       tirages: 10000
       lecture: 'Différence entre l’après et l’avant, en points de pourcentage. Le hasard, ici, c’est tirer
         l’éliminé parmi ceux qui pouvaient l’être ce soir-là : les votants du conseil, sans l’immunisé.
         La composition du camp est donc neutralisée, et un écart qui subsiste est un choix.'
       nulle: &id088
         bornes:
-        - "−23,5623"
-        - "22,7606"
+        - "−21,5027"
+        - "22,0027"
         cases:
         - 0
-        - 1
-        - 1
-        - 0
-        - 9
-        - 17
-        - 39
-        - 94
-        - 178
-        - 304
-        - 513
-        - 726
-        - 987
-        - 1083
-        - 1187
-        - 1252
-        - 1132
-        - 802
-        - 652
-        - 460
-        - 292
-        - 140
-        - 75
-        - 30
-        - 19
+        - 3
         - 5
-        - 2
+        - 10
+        - 12
+        - 50
+        - 100
+        - 152
+        - 275
+        - 413
+        - 604
+        - 777
+        - 952
+        - 1055
+        - 1184
+        - 1074
+        - 980
+        - 751
+        - 664
+        - 369
+        - 253
+        - 177
+        - 72
+        - 43
+        - 18
+        - 4
+        - 3
         - 0
-        largeur_case: "1,654389"
-        observe: "−17,7915"
-        moyenne_nulle: "1,0212"
+        largeur_case: "1,553764"
+        observe: "−17,462"
+        moyenne_nulle: "0,98"
       origine: avant_apres
-      p_ajustee: "0,0018"
+      p_ajustee: "0,0038"
       retenu: true
-      observe_arrondi: "−17,8"
+      observe_arrondi: "−17,5"
       attendu_arrondi: 1
       ecart_types_mot: écarts-types
-      ecart_types_abs: "3,53"
+      ecart_types_abs: "3,39"
       observe_arrondi_pluriel: true
       tirages_texte: 10 000
     - cle: fusion_force
       libelle: La force des éliminés, avant et après la réunification
       question: Élimine-t-on le faible avant la réunification et le fort après ?
-      observe: "−5,609"
-      attendu: "−0,089"
+      observe: "−5,541"
+      attendu: "−0,038"
       unite: points de rang
-      ecart_types: "−1,39"
-      ecart_type_nul: "3,9759"
-      p: "0,1646"
+      ecart_types: "−1,38"
+      ecart_type_nul: "3,997"
+      p: "0,167"
       tirages: 10000
       lecture: 'Rang de l’éliminé parmi les votants du conseil, sans l’immunisé, sur la force estimée
         aux épreuves : 0 le plus faible du camp, 100 le plus fort. On compare l’après à l’avant. Positif,
         cela veut dire qu’on élimine plus haut dans le classement après la réunification.'
       nulle: &id089
         bornes:
-        - "−16,1044"
-        - "14,8947"
+        - "−17,6251"
+        - "15,1952"
         cases:
         - 0
+        - 1
+        - 2
         - 5
-        - 6
-        - 10
-        - 26
-        - 51
-        - 99
-        - 165
-        - 276
-        - 441
-        - 604
-        - 799
-        - 895
-        - 1066
-        - 1100
-        - 1071
-        - 1007
-        - 823
-        - 541
-        - 395
-        - 268
-        - 178
-        - 87
+        - 15
+        - 28
         - 54
-        - 18
-        - 7
+        - 96
+        - 185
+        - 337
+        - 487
+        - 687
+        - 869
+        - 1063
+        - 1161
+        - 1173
+        - 1017
+        - 888
+        - 732
+        - 512
+        - 308
+        - 186
+        - 103
+        - 46
+        - 36
         - 8
+        - 1
         - 0
-        largeur_case: "1,107111"
-        observe: "−5,6095"
-        moyenne_nulle: "−0,0893"
+        largeur_case: "1,172157"
+        observe: "−5,5412"
+        moyenne_nulle: "−0,0384"
       origine: avant_apres
-      p_ajustee: "0,2754"
+      p_ajustee: "0,2794"
       retenu: false
-      observe_arrondi: "−5,6"
-      attendu_arrondi: "−0,1"
+      observe_arrondi: "−5,5"
+      attendu_arrondi: 0
       ecart_types_mot: écart-type
-      ecart_types_abs: "1,39"
+      ecart_types_abs: "1,38"
       observe_arrondi_pluriel: true
       tirages_texte: 10 000
     - cle: fusion_serre
@@ -28412,7 +28425,7 @@ modeles:
         observe: "55,6052"
         moyenne_nulle: "49,8902"
       origine: avant_apres
-      p_ajustee: "0,6672"
+      p_ajustee: "0,6776"
       retenu: false
       observe_arrondi: "55,6"
       attendu_arrondi: "49,9"
@@ -28897,7 +28910,7 @@ modeles:
         bas: "0,54"
         haut: "2,71"
         p: "0,3559"
-        p_ajustee: "0,5432"
+        p_ajustee: "0,5393"
         retenu: false
         libelle_maj: 3 voix
       - libelle: 4 voix et plus
@@ -29509,7 +29522,7 @@ modeles:
         observe: "9,2342"
         moyenne_nulle: "0,7116"
       origine: conditionnelles
-      p_ajustee: "0,0011"
+      p_ajustee: "0,001"
       retenu: true
       observe_arrondi: "9,2"
       attendu_arrondi: "0,7"
@@ -29682,7 +29695,7 @@ modeles:
         observe: "1,8837"
         moyenne_nulle: "0,5454"
       origine: conditionnelles
-      p_ajustee: "0,7553"
+      p_ajustee: "0,7664"
       retenu: false
       observe_arrondi: "1,9"
       attendu_arrondi: "0,5"
@@ -29796,7 +29809,7 @@ modeles:
         observe: "22,2826"
         moyenne_nulle: "14,4034"
       origine: conditionnelles
-      p_ajustee: "0,0011"
+      p_ajustee: "0,001"
       retenu: true
       observe_arrondi: "22,3"
       attendu_arrondi: "14,4"
@@ -29804,39 +29817,39 @@ modeles:
       ecart_types_abs: "7,02"
       observe_arrondi_pluriel: true
       tirages_texte: 4 000
-    part_des_conseils: 52
+    part_des_conseils: 56
     deux_pas_vises: 228
     deux_pas_total: 1103
     presences_texte: 1 722
     presences_relachees_texte: 2 040
     deux_pas_total_texte: 1 103
   autour_du_feu:
-    presences: 3006
-    conseils: 385
+    presences: 2942
+    conseils: 370
     saisons: 33
     par_bulletins: 2687
-    par_reconstruction: 319
-    hasard: "12,8"
-    globale: "12,8"
+    par_reconstruction: 255
+    hasard: "12,6"
+    globale: "12,6"
     bandeau:
     - modalite: tribu initiale minoritaire
-      effectif: 542
-      cas: 91
-      probabilite: "16,8"
-      bas: "13,9"
-      haut: "20,2"
-      hasard: "12,3"
+      effectif: 530
+      cas: 88
+      probabilite: "16,6"
+      bas: "13,7"
+      haut: 20
+      hasard: "12,1"
       modalite_maj: Tribu initiale minoritaire
-      effectif_texte: "542"
+      effectif_texte: "530"
     - modalite: tribu initiale majoritaire
-      effectif: 1109
-      cas: 118
-      probabilite: "10,6"
-      bas: 9
-      haut: "12,6"
-      hasard: "12,7"
+      effectif: 1077
+      cas: 111
+      probabilite: "10,3"
+      bas: "8,6"
+      haut: "12,3"
+      hasard: "12,4"
       modalite_maj: Tribu initiale majoritaire
-      effectif_texte: 1 109
+      effectif_texte: 1 077
     bandeau_avant:
     - modalite: tribu initiale minoritaire
       effectif: 148
@@ -29858,360 +29871,360 @@ modeles:
       effectif_texte: "372"
     bandeau_apres:
     - modalite: tribu initiale minoritaire
-      effectif: 394
-      cas: 59
-      probabilite: 15
-      bas: "11,8"
-      haut: "18,8"
-      hasard: 12
+      effectif: 382
+      cas: 56
+      probabilite: "14,7"
+      bas: "11,5"
+      haut: "18,6"
+      hasard: "11,6"
       modalite_maj: Tribu initiale minoritaire
-      effectif_texte: "394"
+      effectif_texte: "382"
     - modalite: tribu initiale majoritaire
-      effectif: 737
-      cas: 80
-      probabilite: "10,9"
-      bas: "8,8"
-      haut: "13,3"
-      hasard: "12,3"
+      effectif: 705
+      cas: 73
+      probabilite: "10,4"
+      bas: "8,3"
+      haut: "12,8"
+      hasard: "11,9"
       modalite_maj: Tribu initiale majoritaire
-      effectif_texte: "737"
+      effectif_texte: "705"
     sexe:
     - modalite: sexe minoritaire
-      effectif: 785
-      cas: 69
-      probabilite: "8,8"
-      bas: 7
-      haut: 11
-      hasard: "12,4"
+      effectif: 774
+      cas: 66
+      probabilite: "8,5"
+      bas: "6,8"
+      haut: "10,7"
+      hasard: "12,2"
       modalite_maj: Sexe minoritaire
-      effectif_texte: "785"
+      effectif_texte: "774"
     - modalite: sexe majoritaire
-      effectif: 1177
-      cas: 178
-      probabilite: "15,1"
-      bas: "13,2"
-      haut: "17,3"
-      hasard: "12,7"
+      effectif: 1152
+      cas: 173
+      probabilite: 15
+      bas: "13,1"
+      haut: "17,2"
+      hasard: "12,5"
       modalite_maj: Sexe majoritaire
-      effectif_texte: 1 177
+      effectif_texte: 1 152
     age:
     - modalite: le plus âgé du camp
-      effectif: 378
+      effectif: 374
       cas: 53
-      probabilite: 14
-      bas: "10,9"
-      haut: "17,9"
-      hasard: "13,4"
-      modalite_maj: Le plus âgé du camp
-      effectif_texte: "378"
-    - modalite: entre les deux
-      effectif: 2139
-      cas: 263
-      probabilite: "12,3"
+      probabilite: "14,2"
       bas: 11
-      haut: "13,8"
+      haut: "18,1"
+      hasard: "13,3"
+      modalite_maj: Le plus âgé du camp
+      effectif_texte: "374"
+    - modalite: entre les deux
+      effectif: 2128
+      cas: 259
+      probabilite: "12,2"
+      bas: "10,8"
+      haut: "13,6"
       hasard: "12,2"
       modalite_maj: Entre les deux
-      effectif_texte: 2 139
+      effectif_texte: 2 128
     - modalite: le plus jeune du camp
-      effectif: 425
+      effectif: 420
       cas: 53
-      probabilite: "12,5"
-      bas: "9,7"
-      haut: 16
-      hasard: "13,4"
+      probabilite: "12,6"
+      bas: "9,8"
+      haut: "16,1"
+      hasard: "13,3"
       modalite_maj: Le plus jeune du camp
-      effectif_texte: "425"
+      effectif_texte: "420"
     genre:
     - modalite: une femme
-      effectif: 1423
-      cas: 200
-      probabilite: "14,1"
-      bas: "12,3"
-      haut: 16
-      hasard: "12,8"
+      effectif: 1392
+      cas: 194
+      probabilite: "13,9"
+      bas: "12,2"
+      haut: "15,9"
+      hasard: "12,5"
       modalite_maj: Une femme
-      effectif_texte: 1 423
+      effectif_texte: 1 392
     - modalite: un homme
-      effectif: 1583
-      cas: 185
-      probabilite: "11,7"
-      bas: "10,2"
-      haut: "13,4"
-      hasard: "12,8"
+      effectif: 1550
+      cas: 176
+      probabilite: "11,4"
+      bas: "9,9"
+      haut: 13
+      hasard: "12,6"
       modalite_maj: Un homme
-      effectif_texte: 1 583
+      effectif_texte: 1 550
     confort:
     - modalite: a gagné le confort du soir
-      effectif: 227
+      effectif: 228
       cas: 31
-      probabilite: "13,7"
-      bas: "9,8"
+      probabilite: "13,6"
+      bas: "9,7"
       haut: "18,7"
       hasard: "12,8"
       modalite_maj: A gagné le confort du soir
-      effectif_texte: "227"
+      effectif_texte: "228"
     - modalite: n’a rien gagné ce soir
-      effectif: 1129
-      cas: 138
-      probabilite: "12,2"
-      bas: "10,4"
+      effectif: 1133
+      cas: 139
+      probabilite: "12,3"
+      bas: "10,5"
       haut: "14,3"
       hasard: "12,4"
       modalite_maj: N’a rien gagné ce soir
-      effectif_texte: 1 129
+      effectif_texte: 1 133
     immunite:
     - modalite: a gagné l’immunité individuelle
-      effectif: 196
+      effectif: 197
       cas: 0
       probabilite: 0
       bas: 0
       haut: "1,9"
-      hasard: "12,5"
+      hasard: "12,6"
       modalite_maj: A gagné l’immunité individuelle
-      effectif_texte: "196"
+      effectif_texte: "197"
     - modalite: n’a pas gagné l’immunité
-      effectif: 1354
-      cas: 182
-      probabilite: "13,4"
-      bas: "11,7"
+      effectif: 1358
+      cas: 183
+      probabilite: "13,5"
+      bas: "11,8"
       haut: "15,4"
-      hasard: "11,6"
+      hasard: "11,7"
       modalite_maj: N’a pas gagné l’immunité
-      effectif_texte: 1 354
+      effectif_texte: 1 358
     tests:
     - cle: bandeau_minoritaire
       libelle: La tribu initiale minoritaire
       question: Appartenir à la tribu initiale la moins représentée du camp expose-t-il ?
-      observe: "6,149"
-      attendu: "−0,416"
+      observe: "6,297"
+      attendu: "−0,331"
       unite: points
-      ecart_types: "3,74"
-      ecart_type_nul: "1,7559"
-      p: "0,0003"
+      ecart_types: "3,71"
+      ecart_type_nul: "1,7842"
+      p: "0,0002"
       tirages: 10000
       lecture: 'Écart entre partir quand sa tribu initiale est la moins représentée du camp et partir
         quand elle est la plus représentée. Le modèle nul tire l’éliminé au hasard parmi les présents :
         la taille du camp et sa composition restent celles du soir.'
       nulle: &id099
         bornes:
-        - "−7,9425"
-        - "7,9672"
+        - "−8,5804"
+        - "7,0058"
         cases:
         - 0
         - 1
         - 0
-        - 7
-        - 21
-        - 54
-        - 111
-        - 222
-        - 398
-        - 705
-        - 842
-        - 1112
-        - 1224
-        - 1343
-        - 1165
-        - 951
-        - 708
-        - 463
-        - 322
-        - 201
-        - 92
+        - 2
+        - 3
+        - 17
         - 35
-        - 13
-        - 9
+        - 91
+        - 145
+        - 305
+        - 517
+        - 755
+        - 991
+        - 1203
+        - 1272
+        - 1187
+        - 1057
+        - 847
+        - 599
+        - 432
+        - 258
+        - 131
+        - 79
+        - 43
+        - 18
+        - 7
+        - 5
         - 0
-        - 0
-        - 1
-        - 0
-        largeur_case: "0,568203"
-        observe: "6,1495"
-        moyenne_nulle: "−0,4164"
+        largeur_case: "0,556653"
+        observe: "6,2974"
+        moyenne_nulle: "−0,3305"
       origine: autour_du_feu
-      p_ajustee: "0,0014"
+      p_ajustee: "0,001"
       retenu: true
-      observe_arrondi: "6,1"
-      attendu_arrondi: "−0,4"
+      observe_arrondi: "6,3"
+      attendu_arrondi: "−0,3"
       ecart_types_mot: écarts-types
-      ecart_types_abs: "3,74"
+      ecart_types_abs: "3,71"
       observe_arrondi_pluriel: true
       tirages_texte: 10 000
     - cle: sexe_minoritaire
       libelle: Le sexe minoritaire
       question: Être du sexe le moins représenté du camp expose-t-il ?
-      observe: "−6,333"
-      attendu: "−0,419"
+      observe: "−6,49"
+      attendu: "−0,342"
       unite: points
-      ecart_types: "−3,68"
-      ecart_type_nul: "1,6067"
-      p: "0,0005"
+      ecart_types: "−3,79"
+      ecart_type_nul: "1,6202"
+      p: "0,0004"
       tirages: 10000
       lecture: Écart entre partir quand son sexe est le moins représenté du camp et partir quand il est
         le plus représenté.
       nulle: &id100
         bornes:
-        - "−8,2552"
-        - "5,9935"
+        - "−7,1166"
+        - "6,6644"
         cases:
         - 0
-        - 1
-        - 1
-        - 2
-        - 1
-        - 13
-        - 25
-        - 83
-        - 94
-        - 169
-        - 447
-        - 482
-        - 1016
-        - 930
-        - 1037
-        - 1563
-        - 1028
-        - 1217
-        - 652
-        - 468
-        - 406
-        - 164
-        - 129
-        - 35
-        - 19
-        - 16
-        - 2
         - 0
-        largeur_case: "0,508882"
-        observe: "−6,3334"
-        moyenne_nulle: "−0,4185"
+        - 2
+        - 12
+        - 21
+        - 42
+        - 166
+        - 194
+        - 287
+        - 474
+        - 933
+        - 819
+        - 963
+        - 1082
+        - 1612
+        - 909
+        - 729
+        - 838
+        - 375
+        - 255
+        - 148
+        - 81
+        - 34
+        - 13
+        - 7
+        - 1
+        - 3
+        - 0
+        largeur_case: "0,492182"
+        observe: "−6,4902"
+        moyenne_nulle: "−0,342"
       origine: autour_du_feu
       p_ajustee: "0,0019"
       retenu: true
-      observe_arrondi: "−6,3"
-      attendu_arrondi: "−0,4"
+      observe_arrondi: "−6,5"
+      attendu_arrondi: "−0,3"
       ecart_types_mot: écarts-types
-      ecart_types_abs: "3,68"
+      ecart_types_abs: "3,79"
       observe_arrondi_pluriel: true
       tirages_texte: 10 000
     - cle: doyen_du_camp
       libelle: Le plus âgé du camp
       question: Le doyen d’un conseil part-il plus souvent que les autres ?
-      observe: "1,697"
-      attendu: "0,96"
+      observe: "1,926"
+      attendu: "0,948"
       unite: points
-      ecart_types: "0,37"
-      ecart_type_nul: "1,991"
-      p: "0,7631"
+      ecart_types: "0,49"
+      ecart_type_nul: "2,012"
+      p: "0,6476"
       tirages: 10000
       lecture: Écart entre partir quand on est le plus âgé des présents et partir quand on ne l’est pas.
         Le modèle nul absorbe le fait qu’on est plus souvent le doyen d’un petit camp que d’un grand.
       nulle: &id101
         bornes:
-        - "−6,651"
-        - "10,0443"
+        - "−6,5673"
+        - "11,6463"
         cases:
         - 0
-        - 2
         - 5
-        - 21
-        - 51
-        - 116
-        - 200
-        - 377
-        - 635
-        - 861
+        - 12
+        - 42
+        - 71
+        - 249
+        - 381
+        - 564
+        - 812
+        - 982
+        - 1108
+        - 1249
+        - 1167
         - 1033
-        - 1121
-        - 1182
-        - 630
-        - 1014
-        - 924
-        - 671
-        - 479
-        - 299
-        - 197
-        - 95
-        - 45
-        - 20
-        - 10
-        - 7
-        - 3
-        - 2
+        - 1122
+        - 461
+        - 337
+        - 199
+        - 105
+        - 58
+        - 25
+        - 11
+        - 4
+        - 1
         - 0
-        largeur_case: "0,596263"
-        observe: "1,6967"
-        moyenne_nulle: "0,96"
+        - 1
+        - 1
+        - 0
+        largeur_case: "0,650485"
+        observe: "1,9262"
+        moyenne_nulle: "0,9476"
       origine: autour_du_feu
-      p_ajustee: "0,8622"
+      p_ajustee: "0,7946"
       retenu: false
-      observe_arrondi: "1,7"
-      attendu_arrondi: 1
+      observe_arrondi: "1,9"
+      attendu_arrondi: "0,9"
       ecart_types_mot: écart-type
-      ecart_types_abs: "0,37"
+      ecart_types_abs: "0,49"
       observe_arrondi_pluriel: false
       tirages_texte: 10 000
     - cle: confort_sortie
       libelle: Le confort du soir
       question: Gagner le confort fait-il partir le soir même ?
-      observe: "1,433"
-      attendu: "0,372"
+      observe: "1,328"
+      attendu: "0,437"
       unite: points
-      ecart_types: "0,42"
-      ecart_type_nul: "2,5169"
-      p: "0,6753"
+      ecart_types: "0,36"
+      ecart_type_nul: "2,5014"
+      p: "0,7564"
       tirages: 10000
       lecture: 'Écart entre partir quand on vient de gagner le confort de l’épisode et partir quand on
         n’a rien gagné. Lu sur les seuls soirs à conseil unique : sinon l’épreuve du soir ne se rattache
         pas au bon conseil.'
       nulle: &id102
         bornes:
-        - "−8,9901"
-        - "10,7983"
+        - "−9,0509"
+        - "10,6536"
         cases:
         - 0
         - 2
+        - 9
         - 11
-        - 16
-        - 24
-        - 132
-        - 140
-        - 220
-        - 686
-        - 506
-        - 596
-        - 1500
-        - 805
-        - 854
-        - 1590
-        - 685
-        - 981
-        - 359
-        - 277
-        - 337
-        - 104
-        - 75
-        - 73
-        - 13
-        - 11
+        - 22
+        - 129
+        - 108
+        - 185
+        - 646
+        - 450
+        - 555
+        - 1463
+        - 791
+        - 1645
+        - 806
+        - 706
+        - 1104
+        - 391
+        - 328
+        - 352
+        - 112
+        - 80
+        - 69
+        - 15
+        - 10
+        - 9
         - 2
-        - 1
         - 0
-        largeur_case: "0,70673"
-        observe: "1,4332"
-        moyenne_nulle: "0,3723"
+        largeur_case: "0,703731"
+        observe: "1,3282"
+        moyenne_nulle: "0,4374"
       origine: autour_du_feu
-      p_ajustee: "0,816"
+      p_ajustee: "0,8546"
       retenu: false
-      observe_arrondi: "1,4"
+      observe_arrondi: "1,3"
       attendu_arrondi: "0,4"
       ecart_types_mot: écart-type
-      ecart_types_abs: "0,42"
+      ecart_types_abs: "0,36"
       observe_arrondi_pluriel: false
       tirages_texte: 10 000
-    age_ecart: "1,7"
-    presences_texte: 3 006
+    age_ecart: 2
+    presences_texte: 2 942
     par_bulletins_texte: 2 687
   pire_place:
     presences: 1722
@@ -30334,27 +30347,27 @@ modeles:
       presences_texte: 1 722
     dos_au_mur:
     - modalite: visé au conseil précédent
-      effectif: 231
+      effectif: 232
       cas: 31
       probabilite: "13,4"
       bas: "9,6"
-      haut: "18,4"
+      haut: "18,3"
       hasard: "12,7"
       modalite_maj: Visé au conseil précédent
-      effectif_texte: "231"
+      effectif_texte: "232"
     - modalite: pas visé
-      effectif: 844
-      cas: 109
-      probabilite: "12,9"
-      bas: "10,8"
-      haut: "15,3"
-      hasard: 12
+      effectif: 848
+      cas: 110
+      probabilite: 13
+      bas: "10,9"
+      haut: "15,4"
+      hasard: "12,1"
       modalite_maj: Pas visé
-      effectif_texte: "844"
-    conseils_immunite: 131
-    bulletins_lus: 1438
-    bulletins_perdus: 8
-    part_perdue: "0,56"
+      effectif_texte: "848"
+    conseils_immunite: 132
+    bulletins_lus: 1444
+    bulletins_perdus: 9
+    part_perdue: "0,62"
     tests:
     - cle: vote_isole
       libelle: N’avoir plus personne avec qui on ait voté
@@ -30416,63 +30429,63 @@ modeles:
     - cle: dos_au_mur
       libelle: Le dos au mur
       question: Celui qu’on vient de viser gagne-t-il plus souvent l’immunité ?
-      observe: "0,505"
-      attendu: "0,623"
+      observe: "0,39"
+      attendu: "0,629"
       unite: points
-      ecart_types: "−0,05"
-      ecart_type_nul: "2,4956"
+      ecart_types: "−0,09"
+      ecart_type_nul: "2,5165"
       p: 1
       tirages: 10000
       lecture: Écart entre gagner l’immunité individuelle du soir quand on a été visé au conseil précédent
         et la gagner quand on ne l’a pas été. Le modèle nul tire le vainqueur au hasard parmi les présents.
       nulle: &id104
         bornes:
-        - "−9,2907"
-        - "11,3311"
+        - "−9,3628"
+        - "11,1683"
         cases:
         - 0
         - 1
-        - 2
+        - 1
         - 7
-        - 26
-        - 100
-        - 97
-        - 174
-        - 615
-        - 433
-        - 567
-        - 1395
-        - 898
-        - 1830
-        - 811
-        - 745
-        - 1086
-        - 334
-        - 275
-        - 380
-        - 92
-        - 52
-        - 57
         - 12
-        - 4
-        - 5
+        - 100
+        - 89
+        - 173
+        - 534
+        - 442
+        - 555
+        - 1473
+        - 804
+        - 901
+        - 1648
+        - 762
+        - 1131
+        - 401
+        - 300
+        - 383
+        - 104
+        - 73
+        - 75
+        - 12
+        - 10
+        - 7
         - 2
         - 0
-        largeur_case: "0,736491"
-        observe: "0,5052"
-        moyenne_nulle: "0,6232"
+        largeur_case: "0,733252"
+        observe: "0,3904"
+        moyenne_nulle: "0,6294"
       origine: pire_place
       p_ajustee: 1
       retenu: false
-      observe_arrondi: "0,51"
-      attendu_arrondi: "0,62"
+      observe_arrondi: "0,39"
+      attendu_arrondi: "0,63"
       ecart_types_mot: écart-type
-      ecart_types_abs: "0,05"
+      ecart_types_abs: "0,09"
       observe_arrondi_pluriel: false
       tirages_texte: 10 000
     cumul_rapport: "3,5"
     presences_texte: 1 722
-    bulletins_lus_texte: 1 438
+    bulletins_lus_texte: 1 444
   tenant_du_titre:
     epreuves: 181
     saisons: 33
@@ -30564,69 +30577,69 @@ modeles:
     ecarts_types_uniforme_mot: écart-type
     ecarts_types_uniforme_abs: "1,89"
   age_au_conseil:
-    conseils: 385
+    conseils: 370
     conseils_avant: 206
-    conseils_apres: 179
-    ecart_tout: "0,34"
+    conseils_apres: 164
+    ecart_tout: "0,37"
     ecart_avant: "1,18"
-    ecart_apres: "−0,64"
+    ecart_apres: "−0,65"
     test:
       cle: age_bascule_fusion
       libelle: L’âge de l’éliminé, avant et après la réunification
       question: Élimine-t-on le plus âgé avant la réunification, et plus après ?
-      observe: "1,824"
-      attendu: "0,003"
+      observe: "1,834"
+      attendu: "0,01"
       unite: ans
-      ecart_types: "2,02"
-      ecart_type_nul: "0,9034"
-      p: "0,043"
+      ecart_types: "1,98"
+      ecart_type_nul: "0,9229"
+      p: "0,0485"
       tirages: 10000
       lecture: 'Écart d’âge de l’éliminé à la moyenne de son camp, avant la réunification moins après.
         Le modèle nul tire l’éliminé au hasard parmi les présents : la composition d’âge de chaque soirée
         reste celle du soir.'
       nulle: &id110
         bornes:
-        - "−3,5652"
-        - "3,7299"
+        - "−4,1624"
+        - "4,1749"
         cases:
         - 0
-        - 3
-        - 4
-        - 12
-        - 34
-        - 72
-        - 132
-        - 245
-        - 393
-        - 560
-        - 729
-        - 959
-        - 1063
-        - 1133
-        - 1135
-        - 1011
-        - 793
-        - 656
-        - 442
-        - 290
-        - 156
-        - 89
-        - 51
+        - 2
+        - 1
+        - 5
         - 17
-        - 12
-        - 6
+        - 22
+        - 68
+        - 138
+        - 260
+        - 455
+        - 649
+        - 982
+        - 1153
+        - 1225
+        - 1321
+        - 1103
+        - 907
+        - 693
+        - 464
+        - 263
+        - 147
+        - 73
+        - 31
+        - 16
         - 3
         - 0
-        largeur_case: "0,260537"
-        observe: "1,8239"
-        moyenne_nulle: "0,0031"
+        - 2
+        - 0
+        largeur_case: "0,297764"
+        observe: "1,8345"
+        moyenne_nulle: "0,0102"
       origine: age_au_conseil
-      p_ajustee: "0,1011"
+      p_ajustee: "0,114"
       retenu: false
       observe_arrondi: "1,8"
       attendu_arrondi: 0
-      ecart_types_mot: écarts-types
-      ecart_types_abs: "2,02"
+      ecart_types_mot: écart-type
+      ecart_types_abs: "1,98"
       observe_arrondi_pluriel: false
       tirages_texte: 10 000
   rappel:
@@ -30756,7 +30769,7 @@ modeles:
       bas: "0,66"
       haut: "1,6"
       p: "0,8946"
-      p_ajustee: "0,9609"
+      p_ajustee: "0,9508"
       retenu: false
       inverse: "0,97"
     - libelle: Âge (+10 ans)
@@ -30764,7 +30777,7 @@ modeles:
       bas: "0,56"
       haut: "0,86"
       p: "0,0009"
-      p_ajustee: "0,0033"
+      p_ajustee: "0,0036"
       retenu: true
       inverse: "1,45"
     - libelle: Époque (+10 ans)
@@ -31005,7 +31018,7 @@ modeles:
     ecart_types: "0,92"
     ecart_type_nul: "0,0854"
     p: "0,3493"
-    p_ajustee: "0,5427"
+    p_ajustee: "0,5393"
     retenu: false
     tirages: 2000
     lecture: 'L’attendu vient du partage des bulletins d’un conseil entre ses votants, avec le même jeu
@@ -31031,7 +31044,7 @@ modeles:
     ecart_types: "−1,45"
     ecart_type_nul: "0,4213"
     p: "0,1439"
-    p_ajustee: "0,2494"
+    p_ajustee: "0,2455"
     retenu: false
     tirages: 2000
     lecture: 'L’attendu vient du partage des bulletins d’un conseil entre ses votants, avec le même jeu
@@ -31057,7 +31070,7 @@ modeles:
     ecart_types: "−6,66"
     ecart_type_nul: "1,0007"
     p: "0,0005"
-    p_ajustee: "0,0019"
+    p_ajustee: "0,0021"
     retenu: true
     tirages: 2000
     lecture: 'L’attendu vient du partage des bulletins d’un conseil entre ses votants, avec le même jeu
@@ -31110,7 +31123,7 @@ modeles:
     ecart_types: "−5,98"
     ecart_type_nul: "1,7289"
     p: "0,0005"
-    p_ajustee: "0,0019"
+    p_ajustee: "0,0021"
     retenu: true
     tirages: 2000
     lecture: Mesuré sur les seuls conseils réunissant plusieurs tribus initiales. Un observé SOUS l’attendu
@@ -31129,10 +31142,11 @@ modeles:
     question: Les aventuriers viennent-ils de départements plus variés, ou plus concentrés, qu’un tirage
       dans la population française ne le donnerait ?
     origine: geographie
-    observe: "181,66"
-    attendu: "98,977"
+    observe: "189,242"
+    attendu: "98,914"
     unite: ''
-    ecart_types: "5,6"
+    ecart_types: "6,17"
+    ecart_type_nul: "14,6512"
     p: "0,0001"
     p_ajustee: "0,0007"
     retenu: true
@@ -31142,45 +31156,45 @@ modeles:
       pas la démographie.'
     nulle:
       bornes:
-      - "49,1291"
-      - "187,9709"
+      - "47,2115"
+      - "196,0057"
       cases:
       - 0
+      - 4
+      - 17
+      - 59
+      - 200
+      - 493
+      - 831
+      - 1165
+      - 1426
+      - 1441
+      - 1319
+      - 1083
+      - 760
+      - 502
+      - 327
+      - 184
+      - 89
+      - 55
+      - 20
+      - 16
       - 6
-      - 26
-      - 70
-      - 188
-      - 438
-      - 766
-      - 1043
-      - 1330
-      - 1378
-      - 1265
-      - 1034
-      - 869
-      - 598
-      - 425
-      - 237
-      - 142
-      - 88
-      - 47
-      - 26
-      - 13
-      - 4
+      - 0
       - 3
-      - 4
       - 0
       - 0
       - 0
       - 0
-      largeur_case: "4,958637"
-      observe: "181,6599"
-      moyenne_nulle: "98,9771"
-    observe_arrondi: "181,7"
-    attendu_arrondi: 99
+      - 0
+      largeur_case: "5,314079"
+      observe: "189,2423"
+      moyenne_nulle: "98,914"
+    observe_arrondi: "189,2"
+    attendu_arrondi: "98,9"
     unite_accordee: ''
     ecart_types_mot: écarts-types
-    ecart_types_abs: "5,6"
+    ecart_types_abs: "6,17"
     observe_arrondi_pluriel: true
     tirages_texte: 10 000
   - cle: geographie_regions
@@ -31188,10 +31202,11 @@ modeles:
     question: À l’échelle des régions — assez peuplées pour trancher — le recrutement suit-il la démographie
       française ?
     origine: geographie
-    observe: "64,051"
-    attendu: "15,956"
+    observe: "64,999"
+    attendu: "15,984"
     unite: ''
-    ecart_types: "8,26"
+    ecart_types: "8,46"
+    ecart_type_nul: "5,7935"
     p: "0,0001"
     p_ajustee: "0,0007"
     retenu: true
@@ -31200,45 +31215,45 @@ modeles:
       compte trois aventuriers, une région une vingtaine.'
     nulle:
       bornes:
-      - "−1,1238"
-      - "67,155"
+      - "−1,3471"
+      - "68,1581"
       cases:
       - 0
-      - 13
-      - 147
-      - 588
-      - 1267
-      - 1729
-      - 1815
-      - 1478
-      - 1124
-      - 748
-      - 464
-      - 288
-      - 143
-      - 88
-      - 46
-      - 30
-      - 15
-      - 9
-      - 6
-      - 1
+      - 5
+      - 114
+      - 606
+      - 1280
+      - 1709
+      - 1858
+      - 1567
+      - 1081
+      - 723
+      - 461
+      - 287
+      - 127
+      - 96
+      - 41
+      - 20
+      - 17
+      - 4
+      - 2
       - 0
       - 1
       - 0
+      - 1
       - 0
       - 0
       - 0
       - 0
       - 0
-      largeur_case: "2,438527"
-      observe: "64,0514"
-      moyenne_nulle: "15,9561"
-    observe_arrondi: "64,1"
+      largeur_case: "2,482327"
+      observe: "64,9988"
+      moyenne_nulle: "15,9838"
+    observe_arrondi: 65
     attendu_arrondi: 16
     unite_accordee: ''
     ecart_types_mot: écarts-types
-    ecart_types_abs: "8,26"
+    ecart_types_abs: "8,46"
     observe_arrondi_pluriel: true
     tirages_texte: 10 000
   - cle: audience_rupture
@@ -31299,7 +31314,7 @@ modeles:
     ecart_types: "−3,64"
     ecart_type_nul: "0,1801"
     p: "0,0002"
-    p_ajustee: "0,0011"
+    p_ajustee: "0,001"
     retenu: true
     tirages: 10000
     lecture: Corrélation de rang entre l’année et le rapport finale / lancement. Négative, elle dit que
@@ -31341,48 +31356,48 @@ modeles:
     libelle: Le sexe des éliminés, avant et après la réunification
     question: La part de femmes parmi les éliminés change-t-elle à la réunification ?
     origine: avant_apres
-    observe: "−17,791"
-    attendu: "1,021"
+    observe: "−17,462"
+    attendu: "0,98"
     unite: points
-    ecart_types: "−3,53"
-    ecart_type_nul: "5,3223"
-    p: "0,0004"
-    p_ajustee: "0,0018"
+    ecart_types: "−3,39"
+    ecart_type_nul: "5,4459"
+    p: "0,001"
+    p_ajustee: "0,0038"
     retenu: true
     tirages: 10000
     lecture: 'Différence entre l’après et l’avant, en points de pourcentage. Le hasard, ici, c’est tirer
       l’éliminé parmi ceux qui pouvaient l’être ce soir-là : les votants du conseil, sans l’immunisé.
       La composition du camp est donc neutralisée, et un écart qui subsiste est un choix.'
     nulle: *id088
-    observe_arrondi: "−17,8"
+    observe_arrondi: "−17,5"
     attendu_arrondi: 1
     unite_accordee: points
     ecart_types_mot: écarts-types
-    ecart_types_abs: "3,53"
+    ecart_types_abs: "3,39"
     observe_arrondi_pluriel: true
     tirages_texte: 10 000
   - cle: fusion_force
     libelle: La force des éliminés, avant et après la réunification
     question: Élimine-t-on le faible avant la réunification et le fort après ?
     origine: avant_apres
-    observe: "−5,609"
-    attendu: "−0,089"
+    observe: "−5,541"
+    attendu: "−0,038"
     unite: points de rang
-    ecart_types: "−1,39"
-    ecart_type_nul: "3,9759"
-    p: "0,1646"
-    p_ajustee: "0,2754"
+    ecart_types: "−1,38"
+    ecart_type_nul: "3,997"
+    p: "0,167"
+    p_ajustee: "0,2794"
     retenu: false
     tirages: 10000
     lecture: 'Rang de l’éliminé parmi les votants du conseil, sans l’immunisé, sur la force estimée aux
       épreuves : 0 le plus faible du camp, 100 le plus fort. On compare l’après à l’avant. Positif, cela
       veut dire qu’on élimine plus haut dans le classement après la réunification.'
     nulle: *id089
-    observe_arrondi: "−5,6"
-    attendu_arrondi: "−0,1"
+    observe_arrondi: "−5,5"
+    attendu_arrondi: 0
     unite_accordee: points de rang
     ecart_types_mot: écart-type
-    ecart_types_abs: "1,39"
+    ecart_types_abs: "1,38"
     observe_arrondi_pluriel: true
     tirages_texte: 10 000
   - cle: fusion_serre
@@ -31418,7 +31433,7 @@ modeles:
     ecart_types: "0,68"
     ecart_type_nul: "8,3871"
     p: "0,4985"
-    p_ajustee: "0,6672"
+    p_ajustee: "0,6776"
     retenu: false
     tirages: 10000
     lecture: Rang de l’éliminé parmi les présents, sur la force estimée aux épreuves. Au-dessus de 50,
@@ -31467,7 +31482,7 @@ modeles:
     ecart_types: "4,09"
     ecart_type_nul: "2,0822"
     p: "0,0002"
-    p_ajustee: "0,0011"
+    p_ajustee: "0,001"
     retenu: true
     tirages: 10000
     lecture: 'Écart entre deux probabilités conditionnelles : partir sachant qu’on a été visé la fois
@@ -31538,7 +31553,7 @@ modeles:
     ecart_types: "0,52"
     ecart_type_nul: "2,5523"
     p: "0,599"
-    p_ajustee: "0,7553"
+    p_ajustee: "0,7664"
     retenu: false
     tirages: 10000
     lecture: Écart entre partir quand on avait été visé DEUX conseils plus tôt et partir quand on ne l’avait
@@ -31584,7 +31599,7 @@ modeles:
     ecart_types: "7,02"
     ecart_type_nul: "1,1225"
     p: "0,0002"
-    p_ajustee: "0,0011"
+    p_ajustee: "0,001"
     retenu: true
     tirages: 4000
     lecture: Part des couples où la cible de la dernière fois écrit à son tour le nom de son auteur, tous
@@ -31601,94 +31616,94 @@ modeles:
     libelle: La tribu initiale minoritaire
     question: Appartenir à la tribu initiale la moins représentée du camp expose-t-il ?
     origine: autour_du_feu
-    observe: "6,149"
-    attendu: "−0,416"
+    observe: "6,297"
+    attendu: "−0,331"
     unite: points
-    ecart_types: "3,74"
-    ecart_type_nul: "1,7559"
-    p: "0,0003"
-    p_ajustee: "0,0014"
+    ecart_types: "3,71"
+    ecart_type_nul: "1,7842"
+    p: "0,0002"
+    p_ajustee: "0,001"
     retenu: true
     tirages: 10000
     lecture: 'Écart entre partir quand sa tribu initiale est la moins représentée du camp et partir quand
       elle est la plus représentée. Le modèle nul tire l’éliminé au hasard parmi les présents : la taille
       du camp et sa composition restent celles du soir.'
     nulle: *id099
-    observe_arrondi: "6,1"
-    attendu_arrondi: "−0,4"
+    observe_arrondi: "6,3"
+    attendu_arrondi: "−0,3"
     unite_accordee: points
     ecart_types_mot: écarts-types
-    ecart_types_abs: "3,74"
+    ecart_types_abs: "3,71"
     observe_arrondi_pluriel: true
     tirages_texte: 10 000
   - cle: sexe_minoritaire
     libelle: Le sexe minoritaire
     question: Être du sexe le moins représenté du camp expose-t-il ?
     origine: autour_du_feu
-    observe: "−6,333"
-    attendu: "−0,419"
+    observe: "−6,49"
+    attendu: "−0,342"
     unite: points
-    ecart_types: "−3,68"
-    ecart_type_nul: "1,6067"
-    p: "0,0005"
+    ecart_types: "−3,79"
+    ecart_type_nul: "1,6202"
+    p: "0,0004"
     p_ajustee: "0,0019"
     retenu: true
     tirages: 10000
     lecture: Écart entre partir quand son sexe est le moins représenté du camp et partir quand il est
       le plus représenté.
     nulle: *id100
-    observe_arrondi: "−6,3"
-    attendu_arrondi: "−0,4"
+    observe_arrondi: "−6,5"
+    attendu_arrondi: "−0,3"
     unite_accordee: points
     ecart_types_mot: écarts-types
-    ecart_types_abs: "3,68"
+    ecart_types_abs: "3,79"
     observe_arrondi_pluriel: true
     tirages_texte: 10 000
   - cle: doyen_du_camp
     libelle: Le plus âgé du camp
     question: Le doyen d’un conseil part-il plus souvent que les autres ?
     origine: autour_du_feu
-    observe: "1,697"
-    attendu: "0,96"
+    observe: "1,926"
+    attendu: "0,948"
     unite: points
-    ecart_types: "0,37"
-    ecart_type_nul: "1,991"
-    p: "0,7631"
-    p_ajustee: "0,8622"
+    ecart_types: "0,49"
+    ecart_type_nul: "2,012"
+    p: "0,6476"
+    p_ajustee: "0,7946"
     retenu: false
     tirages: 10000
     lecture: Écart entre partir quand on est le plus âgé des présents et partir quand on ne l’est pas.
       Le modèle nul absorbe le fait qu’on est plus souvent le doyen d’un petit camp que d’un grand.
     nulle: *id101
-    observe_arrondi: "1,7"
-    attendu_arrondi: 1
+    observe_arrondi: "1,9"
+    attendu_arrondi: "0,9"
     unite_accordee: point
     ecart_types_mot: écart-type
-    ecart_types_abs: "0,37"
+    ecart_types_abs: "0,49"
     observe_arrondi_pluriel: false
     tirages_texte: 10 000
   - cle: confort_sortie
     libelle: Le confort du soir
     question: Gagner le confort fait-il partir le soir même ?
     origine: autour_du_feu
-    observe: "1,433"
-    attendu: "0,372"
+    observe: "1,328"
+    attendu: "0,437"
     unite: points
-    ecart_types: "0,42"
-    ecart_type_nul: "2,5169"
-    p: "0,6753"
-    p_ajustee: "0,816"
+    ecart_types: "0,36"
+    ecart_type_nul: "2,5014"
+    p: "0,7564"
+    p_ajustee: "0,8546"
     retenu: false
     tirages: 10000
     lecture: 'Écart entre partir quand on vient de gagner le confort de l’épisode et partir quand on n’a
       rien gagné. Lu sur les seuls soirs à conseil unique : sinon l’épreuve du soir ne se rattache pas
       au bon conseil.'
     nulle: *id102
-    observe_arrondi: "1,4"
+    observe_arrondi: "1,3"
     attendu_arrondi: "0,4"
     unite_accordee: point
     ecart_types_mot: écart-type
-    ecart_types_abs: "0,42"
+    ecart_types_abs: "0,36"
     observe_arrondi_pluriel: false
     tirages_texte: 10 000
   - cle: vote_isole
@@ -31718,11 +31733,11 @@ modeles:
     libelle: Le dos au mur
     question: Celui qu’on vient de viser gagne-t-il plus souvent l’immunité ?
     origine: pire_place
-    observe: "0,505"
-    attendu: "0,623"
+    observe: "0,39"
+    attendu: "0,629"
     unite: points
-    ecart_types: "−0,05"
-    ecart_type_nul: "2,4956"
+    ecart_types: "−0,09"
+    ecart_type_nul: "2,5165"
     p: 1
     p_ajustee: 1
     retenu: false
@@ -31730,11 +31745,11 @@ modeles:
     lecture: Écart entre gagner l’immunité individuelle du soir quand on a été visé au conseil précédent
       et la gagner quand on ne l’a pas été. Le modèle nul tire le vainqueur au hasard parmi les présents.
     nulle: *id104
-    observe_arrondi: "0,51"
-    attendu_arrondi: "0,62"
+    observe_arrondi: "0,39"
+    attendu_arrondi: "0,63"
     unite_accordee: point
     ecart_types_mot: écart-type
-    ecart_types_abs: "0,05"
+    ecart_types_abs: "0,09"
     observe_arrondi_pluriel: false
     tirages_texte: 10 000
   - cle: persistance_alliances
@@ -31748,7 +31763,7 @@ modeles:
     ecart_types: "19,68"
     ecart_type_nul: "1,4264"
     p: "0,0005"
-    p_ajustee: "0,0019"
+    p_ajustee: "0,0021"
     retenu: true
     tirages: 2000
     lecture: 'Écart entre deux probabilités : voter ensemble après avoir voté ensemble, et voter ensemble
@@ -31765,11 +31780,11 @@ modeles:
     libelle: La rupture de régime
     question: Existe-t-il une date qui sépare les saisons en deux régimes mieux qu’une date tirée au sort ?
     origine: ruptures
-    observe: "49,005"
+    observe: "49,534"
     attendu: "12,796"
     unite: ''
-    ecart_types: "6,75"
-    ecart_type_nul: "5,3611"
+    ecart_types: "6,89"
+    ecart_type_nul: "5,3291"
     p: "0,0001"
     p_ajustee: "0,0007"
     retenu: true
@@ -31778,11 +31793,11 @@ modeles:
       dans un ordre au hasard. Une coupure existe toujours ; la question est de savoir si celle-ci vaut
       mieux que n’importe quelle autre.
     nulle: *id106
-    observe_arrondi: 49
+    observe_arrondi: "49,5"
     attendu_arrondi: "12,8"
     unite_accordee: ''
     ecart_types_mot: écarts-types
-    ecart_types_abs: "6,75"
+    ecart_types_abs: "6,89"
     observe_arrondi_pluriel: true
     tirages_texte: 10 000
   - cle: trahison
@@ -31795,7 +31810,7 @@ modeles:
     ecart_types: "−15,49"
     ecart_type_nul: "0,5819"
     p: "0,0002"
-    p_ajustee: "0,0011"
+    p_ajustee: "0,001"
     retenu: true
     tirages: 4000
     lecture: Part des bulletins visant quelqu’un avec qui l’auteur avait déjà voté. Un observé SOUS l’attendu
@@ -31861,13 +31876,13 @@ modeles:
     libelle: L’âge de l’éliminé, avant et après la réunification
     question: Élimine-t-on le plus âgé avant la réunification, et plus après ?
     origine: age_au_conseil
-    observe: "1,824"
-    attendu: "0,003"
+    observe: "1,834"
+    attendu: "0,01"
     unite: ans
-    ecart_types: "2,02"
-    ecart_type_nul: "0,9034"
-    p: "0,043"
-    p_ajustee: "0,1011"
+    ecart_types: "1,98"
+    ecart_type_nul: "0,9229"
+    p: "0,0485"
+    p_ajustee: "0,114"
     retenu: false
     tirages: 10000
     lecture: 'Écart d’âge de l’éliminé à la moyenne de son camp, avant la réunification moins après. Le
@@ -31877,32 +31892,32 @@ modeles:
     observe_arrondi: "1,8"
     attendu_arrondi: 0
     unite_accordee: an
-    ecart_types_mot: écarts-types
-    ecart_types_abs: "2,02"
+    ecart_types_mot: écart-type
+    ecart_types_abs: "1,98"
     observe_arrondi_pluriel: false
     tirages_texte: 10 000
   - cle: rupture_glissement
     libelle: Une date plutôt qu’un glissement
     question: La meilleure coupure vaut-elle mieux qu’une évolution régulière, année après année ?
     origine: ruptures
-    observe: "49,005"
-    attendu: "53,943"
+    observe: "49,534"
+    attendu: "53,244"
     unite: ''
-    ecart_types: "−0,56"
-    ecart_type_nul: "8,8954"
-    p: "0,5903"
-    p_ajustee: "0,7552"
+    ecart_types: "−0,42"
+    ecart_type_nul: "8,8653"
+    p: "0,6813"
+    p_ajustee: "0,8232"
     retenu: false
     tirages: 10000
     lecture: Gain de la meilleure coupure, comparé à celui obtenu sur des séries qui suivent la même tendance
       linéaire, avec leurs écarts remis au hasard. Au-dessus, la série casse à une date ; dans la silhouette,
       une dérive régulière suffit à produire la coupure.
     nulle: *id111
-    observe_arrondi: 49
-    attendu_arrondi: "53,9"
+    observe_arrondi: "49,5"
+    attendu_arrondi: "53,2"
     unite_accordee: ''
     ecart_types_mot: écart-type
-    ecart_types_abs: "0,56"
+    ecart_types_abs: "0,42"
     observe_arrondi_pluriel: true
     tirages_texte: 10 000
   - cle: talent_stable
@@ -31968,10 +31983,10 @@ modeles:
     question: Un modèle entraîné sur toutes les saisons sauf une désigne-t-il l’éliminé de celle-là mieux
       que le hasard ?
     origine: classement
-    observe: "0,402"
+    observe: "0,392"
     attendu: "0,5"
     unite: rang normalisé
-    ecart_types: "−5,51"
+    ecart_types: "−6,05"
     ecart_type_nul: "0,0178"
     p: "0,0001"
     p_ajustee: "0,0007"
@@ -31983,8 +31998,8 @@ modeles:
       tour : le conseil pronostiqué n’a jamais servi à apprendre.'
     nulle:
       bornes:
-      - "0,3937"
-      - "0,5774"
+      - "0,3833"
+      - "0,5768"
       cases:
       - 0
       - 0
@@ -31992,36 +32007,36 @@ modeles:
       - 0
       - 0
       - 0
-      - 2
-      - 12
-      - 29
-      - 63
-      - 159
-      - 340
-      - 581
-      - 886
-      - 1161
-      - 1461
-      - 1426
-      - 1275
-      - 1096
-      - 727
-      - 406
-      - 204
-      - 96
-      - 49
-      - 15
-      - 8
-      - 4
       - 0
-      largeur_case: "0,006559"
-      observe: "0,4021"
+      - 0
+      - 8
+      - 26
+      - 72
+      - 174
+      - 380
+      - 635
+      - 979
+      - 1406
+      - 1494
+      - 1462
+      - 1256
+      - 951
+      - 603
+      - 292
+      - 167
+      - 67
+      - 19
+      - 7
+      - 2
+      - 0
+      largeur_case: "0,006909"
+      observe: "0,3921"
       moyenne_nulle: "0,5001"
-    observe_arrondi: "0,4"
+    observe_arrondi: "0,39"
     attendu_arrondi: "0,5"
     unite_accordee: rang normalisé
     ecart_types_mot: écarts-types
-    ecart_types_abs: "5,51"
+    ecart_types_abs: "6,05"
     observe_arrondi_pluriel: false
     tirages_texte: 10 000
   - cle: finale_dernier_qualifie
@@ -32333,7 +32348,7 @@ completude_saisons:
     annee: 2002
     speciale: false
     effectif: 16
-    score: "93,7"
+    score: "94,1"
     cellules:
     - cle: casting
       valeur: 100
@@ -32397,16 +32412,16 @@ completude_saisons:
       valeur_arrondie: 100
     - cle: conseils
       valeur: 100
-      texte: 13/13
+      texte: 12/12
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "92,3"
-      texte: 12/13
-      etat: eleve
+      valeur: 100
+      texte: 12/12
+      etat: complet
       nature: part
-      valeur_arrondie: 92
+      valeur_arrondie: 100
     - cle: epreuves
       valeur: 100
       texte: 21 relevées
@@ -32459,7 +32474,7 @@ completude_saisons:
     annee: 2003
     speciale: false
     effectif: 18
-    score: "91,3"
+    score: "91,7"
     cellules:
     - cle: casting
       valeur: 100
@@ -32523,16 +32538,16 @@ completude_saisons:
       valeur_arrondie: 94
     - cle: conseils
       valeur: 100
-      texte: 12/12
+      texte: 11/11
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "66,7"
-      texte: 8/12
+      valeur: "72,7"
+      texte: 8/11
       etat: partiel
       nature: part
-      valeur_arrondie: 67
+      valeur_arrondie: 73
     - cle: epreuves
       valeur: 100
       texte: 22 relevées
@@ -32585,7 +32600,7 @@ completude_saisons:
     annee: 2004
     speciale: false
     effectif: 16
-    score: 91
+    score: "91,4"
     cellules:
     - cle: casting
       valeur: 100
@@ -32649,16 +32664,16 @@ completude_saisons:
       valeur_arrondie: 69
     - cle: conseils
       valeur: 100
-      texte: 14/14
+      texte: 13/13
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "78,6"
-      texte: 11/14
-      etat: partiel
+      valeur: "84,6"
+      texte: 11/13
+      etat: eleve
       nature: part
-      valeur_arrondie: 79
+      valeur_arrondie: 85
     - cle: epreuves
       valeur: 100
       texte: 22 relevées
@@ -32711,7 +32726,7 @@ completude_saisons:
     annee: 2005
     speciale: false
     effectif: 17
-    score: "98,9"
+    score: "99,3"
     cellules:
     - cle: casting
       valeur: 100
@@ -32775,16 +32790,16 @@ completude_saisons:
       valeur_arrondie: 88
     - cle: conseils
       valeur: 100
-      texte: 14/14
+      texte: 13/13
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "92,9"
-      texte: 13/14
-      etat: eleve
+      valeur: 100
+      texte: 13/13
+      etat: complet
       nature: part
-      valeur_arrondie: 93
+      valeur_arrondie: 100
     - cle: epreuves
       valeur: 100
       texte: 24 relevées
@@ -32837,7 +32852,7 @@ completude_saisons:
     annee: 2006
     speciale: false
     effectif: 16
-    score: "90,6"
+    score: "91,1"
     cellules:
     - cle: casting
       valeur: 100
@@ -32901,16 +32916,16 @@ completude_saisons:
       valeur_arrondie: 75
     - cle: conseils
       valeur: 100
-      texte: 13/13
+      texte: 12/12
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "84,6"
-      texte: 11/13
+      valeur: "91,7"
+      texte: 11/12
       etat: eleve
       nature: part
-      valeur_arrondie: 85
+      valeur_arrondie: 92
     - cle: epreuves
       valeur: 100
       texte: 24 relevées
@@ -32963,7 +32978,7 @@ completude_saisons:
     annee: 2007
     speciale: false
     effectif: 16
-    score: "84,5"
+    score: "84,9"
     cellules:
     - cle: casting
       valeur: 100
@@ -33027,16 +33042,16 @@ completude_saisons:
       valeur_arrondie: 31
     - cle: conseils
       valeur: 100
-      texte: 13/13
+      texte: 12/12
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "76,9"
-      texte: 10/13
-      etat: partiel
+      valeur: "83,3"
+      texte: 10/12
+      etat: eleve
       nature: part
-      valeur_arrondie: 77
+      valeur_arrondie: 83
     - cle: epreuves
       valeur: 100
       texte: 26 relevées
@@ -33089,7 +33104,7 @@ completude_saisons:
     annee: 2008
     speciale: false
     effectif: 17
-    score: "93,7"
+    score: "94,1"
     cellules:
     - cle: casting
       valeur: 100
@@ -33153,16 +33168,16 @@ completude_saisons:
       valeur_arrondie: 100
     - cle: conseils
       valeur: 100
-      texte: 13/13
+      texte: 12/12
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "92,3"
-      texte: 12/13
-      etat: eleve
+      valeur: 100
+      texte: 12/12
+      etat: complet
       nature: part
-      valeur_arrondie: 92
+      valeur_arrondie: 100
     - cle: epreuves
       valeur: 100
       texte: 25 relevées
@@ -33215,7 +33230,7 @@ completude_saisons:
     annee: 2009
     speciale: false
     effectif: 18
-    score: "92,8"
+    score: "93,2"
     cellules:
     - cle: casting
       valeur: 100
@@ -33279,16 +33294,16 @@ completude_saisons:
       valeur_arrondie: 89
     - cle: conseils
       valeur: 100
-      texte: 12/12
+      texte: 11/11
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "91,7"
-      texte: 11/12
-      etat: eleve
+      valeur: 100
+      texte: 11/11
+      etat: complet
       nature: part
-      valeur_arrondie: 92
+      valeur_arrondie: 100
     - cle: epreuves
       valeur: 100
       texte: 24 relevées
@@ -33341,7 +33356,7 @@ completude_saisons:
     annee: 2009
     speciale: true
     effectif: 14
-    score: "86,7"
+    score: "87,4"
     cellules:
     - cle: casting
       valeur: 100
@@ -33405,16 +33420,16 @@ completude_saisons:
       valeur_arrondie: 93
     - cle: conseils
       valeur: 100
-      texte: 9/9
+      texte: 8/8
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "88,9"
-      texte: 8/9
-      etat: eleve
+      valeur: 100
+      texte: 8/8
+      etat: complet
       nature: part
-      valeur_arrondie: 89
+      valeur_arrondie: 100
     - cle: epreuves
       valeur: 100
       texte: 15 relevées
@@ -33467,7 +33482,7 @@ completude_saisons:
     annee: 2010
     speciale: false
     effectif: 18
-    score: 91
+    score: "91,4"
     cellules:
     - cle: casting
       valeur: 100
@@ -33531,16 +33546,16 @@ completude_saisons:
       valeur_arrondie: 44
     - cle: conseils
       valeur: 100
-      texte: 14/14
+      texte: 13/13
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "92,9"
-      texte: 13/14
-      etat: eleve
+      valeur: 100
+      texte: 13/13
+      etat: complet
       nature: part
-      valeur_arrondie: 93
+      valeur_arrondie: 100
     - cle: epreuves
       valeur: 100
       texte: 26 relevées
@@ -33593,7 +33608,7 @@ completude_saisons:
     annee: 2010
     speciale: true
     effectif: 14
-    score: "86,3"
+    score: 87
     cellules:
     - cle: casting
       valeur: 100
@@ -33657,16 +33672,16 @@ completude_saisons:
       valeur_arrondie: 79
     - cle: conseils
       valeur: 100
-      texte: 9/9
+      texte: 8/8
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "88,9"
-      texte: 8/9
-      etat: eleve
+      valeur: 100
+      texte: 8/8
+      etat: complet
       nature: part
-      valeur_arrondie: 89
+      valeur_arrondie: 100
     - cle: epreuves
       valeur: 100
       texte: 16 relevées
@@ -33719,7 +33734,7 @@ completude_saisons:
     annee: 2011
     speciale: false
     effectif: 20
-    score: "85,8"
+    score: "86,2"
     cellules:
     - cle: casting
       valeur: 100
@@ -33783,16 +33798,16 @@ completude_saisons:
       valeur_arrondie: 45
     - cle: conseils
       valeur: 100
-      texte: 14/14
+      texte: 13/13
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "85,7"
-      texte: 12/14
+      valeur: "92,3"
+      texte: 12/13
       etat: eleve
       nature: part
-      valeur_arrondie: 86
+      valeur_arrondie: 92
     - cle: epreuves
       valeur: 100
       texte: 26 relevées
@@ -33845,7 +33860,7 @@ completude_saisons:
     annee: 2012
     speciale: false
     effectif: 20
-    score: "93,2"
+    score: "93,5"
     cellules:
     - cle: casting
       valeur: 100
@@ -33909,16 +33924,16 @@ completude_saisons:
       valeur_arrondie: 85
     - cle: conseils
       valeur: 100
-      texte: 14/14
+      texte: 13/13
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "85,7"
-      texte: 12/14
+      valeur: "92,3"
+      texte: 12/13
       etat: eleve
       nature: part
-      valeur_arrondie: 86
+      valeur_arrondie: 92
     - cle: epreuves
       valeur: 100
       texte: 27 relevées
@@ -33971,7 +33986,7 @@ completude_saisons:
     annee: 2012
     speciale: true
     effectif: 16
-    score: "84,7"
+    score: "85,1"
     cellules:
     - cle: casting
       valeur: 100
@@ -34035,16 +34050,16 @@ completude_saisons:
       valeur_arrondie: 69
     - cle: conseils
       valeur: 100
-      texte: 9/9
+      texte: 8/8
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "55,6"
-      texte: 5/9
+      valeur: "62,5"
+      texte: 5/8
       etat: partiel
       nature: part
-      valeur_arrondie: 56
+      valeur_arrondie: 63
     - cle: epreuves
       valeur: 100
       texte: 15 relevées
@@ -34097,7 +34112,7 @@ completude_saisons:
     annee: 2014
     speciale: true
     effectif: 13
-    score: "85,5"
+    score: "86,1"
     cellules:
     - cle: casting
       valeur: 100
@@ -34161,16 +34176,16 @@ completude_saisons:
       valeur_arrondie: 62
     - cle: conseils
       valeur: 100
-      texte: 9/9
+      texte: 8/8
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "77,8"
-      texte: 7/9
-      etat: partiel
+      valeur: "87,5"
+      texte: 7/8
+      etat: eleve
       nature: part
-      valeur_arrondie: 78
+      valeur_arrondie: 88
     - cle: epreuves
       valeur: 100
       texte: 15 relevées
@@ -34223,7 +34238,7 @@ completude_saisons:
     annee: 2015
     speciale: false
     effectif: 20
-    score: "86,2"
+    score: "86,4"
     cellules:
     - cle: casting
       valeur: 100
@@ -34287,16 +34302,16 @@ completude_saisons:
       valeur_arrondie: 80
     - cle: conseils
       valeur: 100
-      texte: 14/14
+      texte: 13/13
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "57,1"
-      texte: 8/14
+      valeur: "61,5"
+      texte: 8/13
       etat: partiel
       nature: part
-      valeur_arrondie: 57
+      valeur_arrondie: 62
     - cle: epreuves
       valeur: 100
       texte: 28 relevées
@@ -34349,7 +34364,7 @@ completude_saisons:
     annee: 2016
     speciale: false
     effectif: 21
-    score: 88
+    score: "88,3"
     cellules:
     - cle: casting
       valeur: 100
@@ -34413,16 +34428,16 @@ completude_saisons:
       valeur_arrondie: 86
     - cle: conseils
       valeur: 100
-      texte: 14/14
+      texte: 13/13
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "85,7"
-      texte: 12/14
+      valeur: "92,3"
+      texte: 12/13
       etat: eleve
       nature: part
-      valeur_arrondie: 86
+      valeur_arrondie: 92
     - cle: epreuves
       valeur: 100
       texte: 26 relevées
@@ -34475,7 +34490,7 @@ completude_saisons:
     annee: 2016
     speciale: false
     effectif: 20
-    score: "83,2"
+    score: "83,5"
     cellules:
     - cle: casting
       valeur: 100
@@ -34538,17 +34553,17 @@ completude_saisons:
       nature: part
       valeur_arrondie: 100
     - cle: conseils
-      valeur: "93,3"
-      texte: 14/15
+      valeur: "92,9"
+      texte: 13/14
       etat: eleve
       nature: part
       valeur_arrondie: 93
     - cle: bulletins
-      valeur: "86,7"
-      texte: 13/15
+      valeur: "92,9"
+      texte: 13/14
       etat: eleve
       nature: part
-      valeur_arrondie: 87
+      valeur_arrondie: 93
     - cle: epreuves
       valeur: 100
       texte: 26 relevées
@@ -34601,7 +34616,7 @@ completude_saisons:
     annee: 2017
     speciale: false
     effectif: 21
-    score: "83,5"
+    score: "83,8"
     cellules:
     - cle: casting
       valeur: 100
@@ -34665,16 +34680,16 @@ completude_saisons:
       valeur_arrondie: 100
     - cle: conseils
       valeur: 100
-      texte: 14/14
+      texte: 13/13
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "85,7"
-      texte: 12/14
+      valeur: "92,3"
+      texte: 12/13
       etat: eleve
       nature: part
-      valeur_arrondie: 86
+      valeur_arrondie: 92
     - cle: epreuves
       valeur: 100
       texte: 26 relevées
@@ -34727,7 +34742,7 @@ completude_saisons:
     annee: 2017
     speciale: false
     effectif: 21
-    score: "93,2"
+    score: "93,5"
     cellules:
     - cle: casting
       valeur: 100
@@ -34791,16 +34806,16 @@ completude_saisons:
       valeur_arrondie: 100
     - cle: conseils
       valeur: 100
-      texte: 14/14
+      texte: 13/13
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "71,4"
-      texte: 10/14
+      valeur: "76,9"
+      texte: 10/13
       etat: partiel
       nature: part
-      valeur_arrondie: 71
+      valeur_arrondie: 77
     - cle: epreuves
       valeur: 100
       texte: 26 relevées
@@ -34853,7 +34868,7 @@ completude_saisons:
     annee: 2018
     speciale: true
     effectif: 18
-    score: "98,7"
+    score: "99,1"
     cellules:
     - cle: casting
       valeur: 100
@@ -34916,17 +34931,17 @@ completude_saisons:
       nature: part
       valeur_arrondie: 100
     - cle: conseils
-      valeur: "92,3"
-      texte: 12/13
+      valeur: "91,7"
+      texte: 11/12
       etat: eleve
       nature: part
       valeur_arrondie: 92
     - cle: bulletins
-      valeur: "84,6"
-      texte: 11/13
+      valeur: "91,7"
+      texte: 11/12
       etat: eleve
       nature: part
-      valeur_arrondie: 85
+      valeur_arrondie: 92
     - cle: epreuves
       valeur: 100
       texte: 19 relevées
@@ -34979,7 +34994,7 @@ completude_saisons:
     annee: 2019
     speciale: false
     effectif: 21
-    score: 94
+    score: "94,3"
     cellules:
     - cle: casting
       valeur: 100
@@ -35043,16 +35058,16 @@ completude_saisons:
       valeur_arrondie: 100
     - cle: conseils
       valeur: 100
-      texte: 14/14
+      texte: 13/13
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "85,7"
-      texte: 12/14
+      valeur: "92,3"
+      texte: 12/13
       etat: eleve
       nature: part
-      valeur_arrondie: 86
+      valeur_arrondie: 92
     - cle: epreuves
       valeur: 100
       texte: 26 relevées
@@ -35105,7 +35120,7 @@ completude_saisons:
     annee: 2020
     speciale: false
     effectif: 24
-    score: "97,7"
+    score: 98
     cellules:
     - cle: casting
       valeur: 100
@@ -35169,16 +35184,16 @@ completude_saisons:
       valeur_arrondie: 75
     - cle: conseils
       valeur: 100
-      texte: 16/16
+      texte: 15/15
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "81,2"
-      texte: 13/16
+      valeur: "86,7"
+      texte: 13/15
       etat: eleve
       nature: part
-      valeur_arrondie: 81
+      valeur_arrondie: 87
     - cle: epreuves
       valeur: 100
       texte: 26 relevées
@@ -35231,7 +35246,7 @@ completude_saisons:
     annee: 2020
     speciale: true
     effectif: 20
-    score: "98,5"
+    score: "98,9"
     cellules:
     - cle: casting
       valeur: 100
@@ -35295,16 +35310,16 @@ completude_saisons:
       valeur_arrondie: 100
     - cle: conseils
       valeur: 100
-      texte: 11/11
+      texte: 10/10
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "72,7"
-      texte: 8/11
-      etat: partiel
+      valeur: 80
+      texte: 8/10
+      etat: eleve
       nature: part
-      valeur_arrondie: 73
+      valeur_arrondie: 80
     - cle: epreuves
       valeur: 100
       texte: 20 relevées
@@ -35357,7 +35372,7 @@ completude_saisons:
     annee: 2021
     speciale: false
     effectif: 21
-    score: "88,8"
+    score: "89,2"
     cellules:
     - cle: casting
       valeur: 100
@@ -35421,16 +35436,16 @@ completude_saisons:
       valeur_arrondie: 95
     - cle: conseils
       valeur: 100
-      texte: 13/13
+      texte: 12/12
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "92,3"
-      texte: 12/13
-      etat: eleve
+      valeur: 100
+      texte: 12/12
+      etat: complet
       nature: part
-      valeur_arrondie: 92
+      valeur_arrondie: 100
     - cle: epreuves
       valeur: 100
       texte: 23 relevées
@@ -35483,7 +35498,7 @@ completude_saisons:
     annee: 2021
     speciale: true
     effectif: 21
-    score: "90,8"
+    score: 91
     cellules:
     - cle: casting
       valeur: 100
@@ -35547,16 +35562,16 @@ completude_saisons:
       valeur_arrondie: 100
     - cle: conseils
       valeur: 100
-      texte: 14/14
+      texte: 13/13
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "42,9"
-      texte: 6/14
+      valeur: "46,2"
+      texte: 6/13
       etat: mince
       nature: part
-      valeur_arrondie: 43
+      valeur_arrondie: 46
     - cle: epreuves
       valeur: 100
       texte: 23 relevées
@@ -35735,7 +35750,7 @@ completude_saisons:
     annee: 2023
     speciale: false
     effectif: 20
-    score: 98
+    score: "98,2"
     cellules:
     - cle: casting
       valeur: 100
@@ -35799,16 +35814,16 @@ completude_saisons:
       valeur_arrondie: 95
     - cle: conseils
       valeur: 100
-      texte: 15/15
+      texte: 14/14
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "66,7"
-      texte: 10/15
+      valeur: "71,4"
+      texte: 10/14
       etat: partiel
       nature: part
-      valeur_arrondie: 67
+      valeur_arrondie: 71
     - cle: epreuves
       valeur: 100
       texte: 26 relevées
@@ -35861,7 +35876,7 @@ completude_saisons:
     annee: 2024
     speciale: false
     effectif: 22
-    score: "92,9"
+    score: "93,1"
     cellules:
     - cle: casting
       valeur: 100
@@ -35925,16 +35940,16 @@ completude_saisons:
       valeur_arrondie: 100
     - cle: conseils
       valeur: 100
-      texte: 14/14
+      texte: 13/13
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "64,3"
-      texte: 9/14
+      valeur: "69,2"
+      texte: 9/13
       etat: partiel
       nature: part
-      valeur_arrondie: 64
+      valeur_arrondie: 69
     - cle: epreuves
       valeur: 100
       texte: 26 relevées
@@ -35987,7 +36002,7 @@ completude_saisons:
     annee: 2024
     speciale: false
     effectif: 24
-    score: "97,7"
+    score: "97,9"
     cellules:
     - cle: casting
       valeur: 100
@@ -36051,16 +36066,16 @@ completude_saisons:
       valeur_arrondie: 92
     - cle: conseils
       valeur: 100
-      texte: 14/14
+      texte: 13/13
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: "64,3"
-      texte: 9/14
+      valeur: "69,2"
+      texte: 9/13
       etat: partiel
       nature: part
-      valeur_arrondie: 64
+      valeur_arrondie: 69
     - cle: epreuves
       valeur: 100
       texte: 25 relevées
@@ -36113,7 +36128,7 @@ completude_saisons:
     annee: 2025
     speciale: false
     effectif: 24
-    score: "98,9"
+    score: "99,2"
     cellules:
     - cle: casting
       valeur: 100
@@ -36177,16 +36192,16 @@ completude_saisons:
       valeur_arrondie: 100
     - cle: conseils
       valeur: 100
-      texte: 15/15
+      texte: 14/14
       etat: complet
       nature: part
       valeur_arrondie: 100
     - cle: bulletins
-      valeur: 80
-      texte: 12/15
+      valeur: "85,7"
+      texte: 12/14
       etat: eleve
       nature: part
-      valeur_arrondie: 80
+      valeur_arrondie: 86
     - cle: epreuves
       valeur: 100
       texte: 26 relevées
@@ -36239,7 +36254,7 @@ completude_saisons:
     annee: 2026
     speciale: false
     effectif: 20
-    score: 98
+    score: "98,2"
     cellules:
     - cle: casting
       valeur: 100
@@ -36302,17 +36317,17 @@ completude_saisons:
       nature: part
       valeur_arrondie: 100
     - cle: conseils
-      valeur: "81,2"
-      texte: 13/16
+      valeur: 80
+      texte: 12/15
       etat: eleve
       nature: part
-      valeur_arrondie: 81
+      valeur_arrondie: 80
     - cle: bulletins
-      valeur: "81,2"
-      texte: 13/16
+      valeur: "86,7"
+      texte: 13/15
       etat: eleve
       nature: part
-      valeur_arrondie: 81
+      valeur_arrondie: 87
     - cle: epreuves
       valeur: 100
       texte: 26 relevées
@@ -36565,8 +36580,8 @@ completude_saisons:
     libelle: Conseils au dépouillement complet
     court: Bulletins
     nature: part
-    moyenne: "78,3"
-    completes: 0
+    moyenne: "84,4"
+    completes: 8
     concernees: 34
   - cle: epreuves
     libelle: Bilan des épreuves par épisode
@@ -36619,7 +36634,7 @@ completude_saisons:
     concernees: 28
   saisons: 34
   cases: 611
-  moyenne: "90,7"
+  moyenne: 91
   meilleure: s05
   pire: sp8
 articles:
@@ -36632,38 +36647,38 @@ articles:
       texte: 20 octobre 2026
   saisons: "34"
   aventuriers: "531"
-  conseils: "435"
+  conseils: "404"
   conseils_complets: "344"
-  conseils_incomplets: "91"
+  conseils_incomplets: "60"
   participations: "645"
-  bulletins: 3 433
+  bulletins: 3 402
   nb_tests: "47"
   famille_corrigee: "87"
   nb_retenus: "21"
   force:
     rang_avant: "59,1"
-    rang_apres: "53,5"
+    rang_apres: "53,6"
     conseils_avant: "51"
-    conseils_apres: "181"
+    conseils_apres: "166"
     epreuves: "312"
     saisons: "33"
   age:
     avant: 1,2 an
-    apres: 0,6 an
+    apres: 0,7 an
     bascule: 1,8 an
-    conseils: "385"
+    conseils: "370"
   issues:
-    conseils: "429"
+    conseils: "398"
     sans_bulletin: "1"
-    ordinaire: "87,9"
-    egalite_revote: "5,8"
-    renversement: "5,1"
-    egalite_tranchee: "1,2"
-    ordinaire_rond: "88"
+    ordinaire: "86,9"
+    egalite_revote: "6,3"
+    renversement: "5,5"
+    egalite_tranchee: "1,3"
+    ordinaire_rond: "87"
     annee_recente: 2018
-    conseils_recents: "165"
-    ordinaire_recent: "82,4"
-    ordinaire_recent_rond: "82"
+    conseils_recents: "154"
+    ordinaire_recent: "81,2"
+    ordinaire_recent_rond: "81"
   tests:
     vote_isole:
       observe: "+14,9"
@@ -36681,7 +36696,7 @@ articles:
       valeur: "29"
       valeur_ronde: "29"
       attendu_rond: "1"
-      p: "0,0019"
+      p: "0,0021"
       retenu: true
       conforme: true
       affirme: retenu, ecart +
@@ -36691,7 +36706,7 @@ articles:
       valeur: "48"
       valeur_ronde: "48"
       attendu_rond: "57"
-      p: "0,0011"
+      p: "0,001"
       retenu: true
       conforme: true
       affirme: retenu, ecart -
@@ -36701,7 +36716,7 @@ articles:
       valeur: "22,3"
       valeur_ronde: "22"
       attendu_rond: "14"
-      p: "0,0011"
+      p: "0,001"
       retenu: true
       conforme: true
       affirme: retenu, ecart +
@@ -36711,7 +36726,7 @@ articles:
       valeur: "9,2"
       valeur_ronde: "9"
       attendu_rond: "1"
-      p: "0,0011"
+      p: "0,001"
       retenu: true
       conforme: true
       affirme: retenu, ecart +
@@ -36741,7 +36756,7 @@ articles:
       valeur: "28,3"
       valeur_ronde: "28"
       attendu_rond: "39"
-      p: "0,0019"
+      p: "0,0021"
       retenu: true
       conforme: true
       affirme: retenu, ecart -
@@ -36756,19 +36771,19 @@ articles:
       conforme: true
       affirme: non retenu, ecart +
     bandeau_minoritaire:
-      observe: "+6,1"
-      attendu: −0,4
-      valeur: "6,1"
+      observe: "+6,3"
+      attendu: −0,3
+      valeur: "6,3"
       valeur_ronde: "6"
       attendu_rond: "0"
-      p: "0,0014"
+      p: "0,001"
       retenu: true
       conforme: true
       affirme: retenu, ecart +
     sexe_minoritaire:
-      observe: −6,3
-      attendu: −0,4
-      valeur: "6,3"
+      observe: −6,5
+      attendu: −0,3
+      valeur: "6,5"
       valeur_ronde: "6"
       attendu_rond: "0"
       p: "0,0019"
@@ -36796,19 +36811,19 @@ articles:
       conforme: true
       affirme: retenu, ecart +
     fusion_sexe:
-      observe: −17,8
+      observe: −17,5
       attendu: "+1"
-      valeur: "17,8"
-      valeur_ronde: "18"
+      valeur: "17,5"
+      valeur_ronde: "17"
       attendu_rond: "1"
-      p: "0,0018"
+      p: "0,0038"
       retenu: true
       conforme: true
       affirme: retenu, ecart -
     fusion_force:
-      observe: −5,6
-      attendu: −0,1
-      valeur: "5,6"
+      observe: −5,5
+      attendu: "0"
+      valeur: "5,5"
       valeur_ronde: "6"
       attendu_rond: "0"
       p: "0,28"
@@ -36821,7 +36836,7 @@ articles:
       valeur: "1,8"
       valeur_ronde: "2"
       attendu_rond: "0"
-      p: "0,1"
+      p: "0,11"
       retenu: false
       conforme: true
       affirme: non retenu, ecart +
@@ -36831,7 +36846,7 @@ articles:
       valeur: "55,6"
       valeur_ronde: "56"
       attendu_rond: "50"
-      p: "0,67"
+      p: "0,68"
       retenu: false
       conforme: true
       affirme: non retenu
@@ -36846,9 +36861,9 @@ articles:
       conforme: true
       affirme: non retenu
     prevision_conseil:
-      observe: "0,402"
+      observe: "0,392"
       attendu: "0,5"
-      valeur: "0,402"
+      valeur: "0,392"
       valeur_ronde: "0"
       attendu_rond: "0"
       p: "0,0007"
@@ -36867,7 +36882,7 @@ articles:
       affirme: non retenu
 geographie:
   lacunaires: []
-  par_departement: "4,6"
+  par_departement: "4,8"
   outremer_observe: 2
   reunion_observe: 0
   martinique_observe: 2
@@ -37302,8 +37317,8 @@ mots:
   intervalle_titres_maj: Treize
   mecaniques_saisons: vingt-six
   mecaniques_saisons_maj: Vingt-six
-  fantomes_recidivistes: trois
-  fantomes_recidivistes_maj: Trois
+  fantomes_recidivistes: cinq
+  fantomes_recidivistes_maj: Cinq
   fantome_vainqueur_conseils: quatorze
   fantome_vainqueur_conseils_maj: Quatorze
   sommaire_entrees: vingt-sept

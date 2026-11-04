@@ -92,7 +92,9 @@ RE_LISTE_FANTOME = re.compile(r"^\s*\{\{[^}]*\}\}\.(\s|$)")
 RE_INCLUDE_TAG = re.compile(r"\{%-?\s*include\s+\S+\s*(.*?)\s*-?%\}", re.S)
 RE_PARAM_JEKYLL = re.compile(r"""\s*[\w-]+\s*=\s*(?:"[^"]*"|'[^']*'|[\w.-]+)\s*""")
 
-EXCLUS_ATTENDUS = {"CLAUDE.md", "README.md", "app.yaml", "compose.yaml", "specs/"}
+# docs/ y est parce que pages() ne le parcourt pas : sans l'exclusion, ses
+# rapports seraient publies sans que rien ici ne le voie.
+EXCLUS_ATTENDUS = {"CLAUDE.md", "README.md", "app.yaml", "compose.yaml", "specs/", "docs/"}
 
 
 class Controle:
@@ -350,7 +352,7 @@ def pages():
         dossiers[:] = [d for d in dossiers
                        if not d.startswith(".")
                        and d not in {"_site", "_data", "_includes", "_layouts",
-                                     "specs", "tools", "atelier", "node_modules"}]
+                                     "specs", "tools", "atelier", "docs", "node_modules"}]
         for f in fichiers:
             if f.endswith((".md", ".html")) and f not in ("CLAUDE.md", "README.md"):
                 yield os.path.join(base, f)

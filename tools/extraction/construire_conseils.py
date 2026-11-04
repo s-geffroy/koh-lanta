@@ -205,7 +205,8 @@ ENTETE = """# ATTENTION : fichier genere. Ne pas editer a la main.
 # `voix_mecanique_non_comptees` : les voix de mecanique barrees pour une autre
 # raison, le plus souvent une cible deja sortie du jeu.
 # `bulletins_ecartes` (sur une sortie) : une case egaree dans une colonne
-# d'abandon annoncee a zero voix, gardee pour la tracabilite.
+# d'abandon annoncee a zero voix, ou le choix du gagnant des poteaux que la
+# matrice ecrit comme un bulletin -- gardes pour la tracabilite.
 #
 # `tirage` : l'egalite a persiste au second vote et la boule noire a designe
 # l'elimine. `contre` nomme l'autre ex aequo, `source` la phrase qui le dit.
@@ -898,6 +899,26 @@ def etiqueter_les_sorties(conseils, debut, sorts, rapport):
             for cle in ("annulation", "voix_annulees", "proteges", "votes_contre",
                         "votes_exprimes", "votes_contre_annonce", "complet"):
                 c.pop(cle, None)
+        # LES POTEAUX NON PLUS NE SONT PAS UN CONSEIL. Le gagnant choisit seul
+        # qui l'accompagne en finale ; personne ne vote. La matrice ecrit
+        # pourtant ce choix comme un bulletin, et trente et une colonnes d'un
+        # bulletin passaient pour des conseils : chacune ajoutait une voix a
+        # l'elimine (Laurent Maistret, Steeve Demana, Loic Riowal, Claude
+        # Dartois perdaient ainsi leur « jamais vise ») et un conseil de plus
+        # a tous les presents. Le nom du votant n'est meme pas sur : a la
+        # Revanche des heros, la matrice attribue le choix a Claude, quand la
+        # note de la page dit « Maud n'a pas ete choisie par Bertrand, le
+        # gagnant des poteaux ». Le bulletin est ecarte de la ligne, sans etre
+        # efface ; le gagnant des poteaux est lu par finale.py.
+        if (c["votes"] and nature == "elimine_poteaux"
+                and derniere.get(c["elimine"]) == c["numero"]):
+            c["bulletins_ecartes"] = c["votes"]
+            c["votes"] = []
+            for cle in ("annulation", "voix_annulees", "proteges", "votes_contre",
+                        "votes_exprimes", "votes_contre_annonce", "complet"):
+                c.pop(cle, None)
+            rapport.append(f"{c['saison']} conseil {c['numero']} : poteaux de {c['elimine']}, "
+                           f"{len(c['bulletins_ecartes'])} choix du gagnant ecarte(s) des bulletins")
         if tablee and not c["votes"]:
             # Les chiffres que la colonne portait sont ceux du binome, recopies
             # par la case fusionnee : ils ne disent rien de cette sortie.

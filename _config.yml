@@ -106,6 +106,9 @@ exclude:
   # ce sont ces sorties, deja commitees, que Jekyll lit.
   - tools/
   - atelier/
+  # Les rapports de revue (docs/revue-<date>.md) : des documents de travail
+  # sans front matter, que Jekyll copierait tels quels sur le site.
+  - docs/
   # Les skills du projet : des consignes de travail, pas du contenu. Jekyll
   # ignore deja les repertoires commencant par un point ; on le dit quand meme,
   # pour que rien ne repose sur un comportement implicite.

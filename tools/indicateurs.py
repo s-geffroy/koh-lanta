@@ -30,9 +30,11 @@ def corriger_voix_recues(parts, conseils, saisons=None):
     definition : un nom ecrit au premier tour a ete ecrit. Les bulletins de la
     base ne la remplacent pas -- il leur manque souvent le second tour, et des
     conseils entiers aux premieres saisons. Mais le total de Fandom est parfois
-    INFERIEUR aux bulletins lus contre la personne (Mohamed Derradji, 0 pour
-    deux bulletins) : la source se contredit, et c'est elle qui se trompe. On
-    retient donc le plus grand des deux. Un « fantome », a zero voix, ne peut
+    INFERIEUR aux bulletins lus contre la personne : la source se contredit,
+    et c'est elle qui se trompe. On retient donc le plus grand des deux. (Le
+    choix du gagnant des poteaux, que la matrice ecrit comme un bulletin, n'en
+    est pas un : construire_conseils l'ecarte. C'etait l'un des deux
+    bulletins de Mohamed Derradji ; l'autre, un vrai, le releve encore a 1.) Un « fantome », a zero voix, ne peut
     ainsi porter aucun bulletin.
 
     Tous les bulletins ecrits comptent, barres ou non, votes noirs compris :
