@@ -678,6 +678,7 @@ LIBELLE_ISSUE = {
     "elimine_avec_collier": "Éliminé avec le collier dans le sac",
     "garde_sans_usage": "Gardé jusqu’en finale sans en avoir besoin",
     "sorti_sans_pouvoir_le_jouer": "Sorti hors conseil, sans pouvoir le jouer",
+    "expire": "Expiré avant d’avoir servi",
     "non_decouvert": "Jamais trouvé",
 }
 
@@ -723,7 +724,9 @@ def bloc_colliers(colliers, par_saison, parts=None):
             if c.get("issue") == "annulation_efficace":
                 efficace_par[dernier] += 1
         if c.get("issue") == "elimine_avec_collier":
-            for d in chaine[-1:]:
+            # `elimine` nomme le detenteur sorti avec, quand ce n'est pas le
+            # dernier de la chaine : Teheiura, qui cede son collier en partant.
+            for d in ([{"id": c["elimine"]}] if c.get("elimine") else chaine[-1:]):
                 perdus.append({
                     "nom": noms.get(d.get("id"), d.get("libelle")),
                     "saison": c["saison"],

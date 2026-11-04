@@ -597,7 +597,8 @@ def verifier_immunite_individuelle(conseils, epreuves, c):
 
 
 ISSUES_VALIDES = {"annulation_efficace", "joue_pour_rien", "elimine_avec_collier",
-                  "garde_sans_usage", "sorti_sans_pouvoir_le_jouer", "non_decouvert"}
+                  "garde_sans_usage", "sorti_sans_pouvoir_le_jouer", "expire",
+                  "non_decouvert"}
 STATUTS_VALIDES = {"utilise", "non_utilise", "non_decouvert", "perdu"}
 
 

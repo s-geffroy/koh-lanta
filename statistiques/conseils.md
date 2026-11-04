@@ -12,7 +12,7 @@ chapeau: >-
 
 Le conseil est le cœur du jeu, et le seul endroit où l’on peut lire une
 stratégie plutôt que la deviner. **{{ c.conseils }} conseils** ont été
-dépouillés, pour **{{ c.bulletins_texte | default: c.bulletins }} bulletins**.
+relevés, pour **{{ c.bulletins_texte | default: c.bulletins }} bulletins**.
 
 <ul class="chiffres">
   <li class="chiffre"><b>{{ c.conseils }}</b><span>conseils relevés</span></li>

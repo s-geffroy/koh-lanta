@@ -313,7 +313,16 @@ def parse_row(row, saison_id=None):
     age = profession = localisation = edition_origine = None
     for ms in RE_SMALL.finditer(cell_nom):
         interieur = ms.group(1)
-        segments = [s for s in (plain(x) for x in RE_ITAL.findall(interieur)) if s]
+        # Un <br /> a l'interieur d'un meme italique separe deux champs :
+        # « 40 ans, Cheffe d'entreprise<br />Ille-et-Villaine » (Lili Gasnier,
+        # s23). Lu d'un bloc, le lieu entrait dans le metier. On ne coupe que
+        # derriere « age, metier » : une liste d'editions passe aussi a la
+        # ligne (Freddy Boucher, All Stars), et elle reste d'un seul tenant.
+        def couper(x):
+            bouts = re.split(r"<br\s*/?>", x, flags=re.I)
+            return bouts if len(bouts) > 1 and RE_AGEPRO.match(plain(bouts[0])) else [x]
+        segments = [s for s in (plain(y) for x in RE_ITAL.findall(interieur)
+                                for y in couper(x)) if s]
         if not segments:
             seg = plain(interieur)
             segments = [seg] if seg else []

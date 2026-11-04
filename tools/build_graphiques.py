@@ -775,8 +775,8 @@ def figures_ajoutees(stats):
              for c in r["carrieres"][:12]],
             titre="Les plus longues carrières",
             description="Jours de jeu cumulés sur toutes les participations. "
-                        "En vert, ceux qui n'ont jamais été éliminés : ils ont "
-                        "joué 100 % du temps possible.",
+                        "En vert, ceux qui ont joué tous les jours possibles, "
+                        "jusqu'à la finale de chaque saison.",
             unite=" j", marge_gauche=180, largeur=880))
 
     if r.get("duos"):

@@ -26935,7 +26935,7 @@ aventuriers:
     - q: Quel âge avait Lili Gasnier à Koh-Lanta ?
       r: 40 ans en 2022 (Le Totem maudit).
     - q: Quel est le métier de Lili Gasnier ?
-      r: Cheffe d’entreprise en Ille-et-Vilaine, profession déclarée au casting.
+      r: Cheffe d’entreprise, profession déclarée au casting.
     - q: Lili Gasnier a-t-elle gagné Koh-Lanta ?
       r: Non. Lili Gasnier n’a joué qu’une saison, en 2022 (Le Totem maudit).
     - q: Combien de fois Lili Gasnier a-t-elle participé à Koh-Lanta ?
@@ -26982,7 +26982,7 @@ aventuriers:
       natures: []
       numero: 23
       part_parcours: 5
-      profession: Cheffe d’entreprise en Ille-et-Vilaine
+      profession: Cheffe d’entreprise
       ratio_epreuves: null
       saison: s23
       sans_vainqueur: false
@@ -26992,7 +26992,7 @@ aventuriers:
       tribu: Ilog
       voix_recues: 8
     prenom: Lili
-    profession: Cheffe d’entreprise en Ille-et-Vilaine
+    profession: Cheffe d’entreprise
     rang: 451
     rang_p05: 327
     rang_p95: 514
@@ -35855,7 +35855,7 @@ aventuriers:
       colliers_joues: 0
       conseils_assistes: 5
       conseils_vise: 0
-      couleur: null
+      couleur: noir
       effectif: 24
       en_cours: false
       epreuves_disputees: 0
@@ -45470,7 +45470,7 @@ aventuriers:
       colliers_joues: 0
       conseils_assistes: 5
       conseils_vise: 0
-      couleur: null
+      couleur: noir
       effectif: 24
       en_cours: false
       epreuves_disputees: 0
@@ -54279,7 +54279,7 @@ saisons:
       libelle_sort: Éliminée au conseil
       nom: Lili Gasnier
       part_parcours: 5
-      profession: Cheffe d’entreprise en Ille-et-Vilaine
+      profession: Cheffe d’entreprise
       rang: 451
       sort: elimine_conseil
       tribu: Ilog
@@ -55317,7 +55317,7 @@ saisons:
       voix_recues: 8
     - age: 27
       classement: 20
-      couleur: null
+      couleur: noir
       genre: h
       id: nathanael-branchereau
       jour_sortie: 13
@@ -55331,7 +55331,7 @@ saisons:
       voix_recues: 0
     - age: 39
       classement: 19
-      couleur: null
+      couleur: noir
       genre: f
       id: vanessa-feuillatte
       jour_sortie: 13

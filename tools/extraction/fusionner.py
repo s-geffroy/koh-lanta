@@ -1272,6 +1272,29 @@ def corriger_tribus(participations, rapport):
                        f"fautif dans la source, arbitre par les deux autres")
 
 
+def couleur_declaree(participations, saisons, rapport):
+    """La couleur de depart manquante, prise dans la tribu DECLAREE de la saison.
+
+    Vanessa et Nathanael (s26) partent de la tribu maudite, noire dans
+    saisons.yml et dans leur propre parcours, mais leur ligne Wikipedia n'est
+    pas surlignee : la page de la tribu maudite publiait « 2 aventuriers » pour
+    quatre (revue du 3 nov. 2026). On ne comble que du vide.
+    """
+    par_id = {s["id"]: s for s in saisons}
+    poses = 0
+    for p in participations:
+        if p.get("couleur") or not p.get("tribu"):
+            continue
+        c = _couleur_de(par_id.get(p["saison"], {}), p["tribu"])
+        if c:
+            p["couleur"] = c
+            p.setdefault("sources", {})["couleur"] = "saisons.yml (tribu declaree)"
+            poses += 1
+    if poses:
+        rapport.append(f"couleur : {poses} couleur(s) de depart prise(s) dans la "
+                       f"tribu declaree")
+
+
 RE_ETAT = re.compile(r"^(aucune|absente?|bannie?|[ée]limin[ée]e?|exil[ée]e?)\b", re.I)
 
 
@@ -1563,6 +1586,7 @@ def main():
     completer_les_jours(participations, rapport)
     tribu_sans_etat(participations, rapport)
     corriger_tribus(participations, rapport)
+    couleur_declaree(participations, saisons, rapport)
     normaliser_lieux(participations, rapport)
     sans_depart_sans_jour(participations, saisons, rapport)
     vainqueur_premier(participations, saisons, rapport)

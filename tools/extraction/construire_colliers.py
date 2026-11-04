@@ -18,7 +18,14 @@ L'ISSUE est deduite, pas recopiee, et selon une regle simple :
   sorti_sans_pouvoir_le_jouer
                        trouve, jamais joue, et son detenteur est sorti hors
                        conseil (ambassadeurs, epreuve, duel, abandon) ;
+  expire               trouve, jamais joue, et sa validite a pris fin
+                       (« jusqu'a la reunification ») avant la sortie de son
+                       detenteur ;
   non_decouvert        cache, jamais trouve par personne.
+
+La regle ne voit ni la duree de validite d'un collier ni le detenteur du
+moment quand la chaine compte plusieurs noms. Les cas qu'elle range mal sont
+dans LUS, chacun avec la phrase de la source qui le tranche.
 
     tools/atelier python3 tools/extraction/construire_colliers.py --ecrire
 """
@@ -41,6 +48,24 @@ from parse_colliers import parse_page    # noqa: E402
 
 SUFFIXES = (".wiki", ".fandom.wiki", ".en.wiki")
 
+# Issues lues dans la source quand la regle se trompe (revue du 3 nov. 2026).
+# Cle : (saison, localisation, premier detenteur). Valeur : (issue, detenteur
+# elimine avec le collier ou None, citation). La citation est cherchee dans
+# le wikitexte a chaque passage : si elle n'y est plus, la correction tombe et
+# le rapport le dit.
+LUS = {
+    # Valable jusqu'a la reunification (jour 16) ; Jessica sort au jour 27.
+    ("sp6", "Camp des Nacomo", "jessica-potel"): (
+        "expire", None,
+        "Ce collier n'a pas été sorti lors du dernier conseil où il était utilisable."),
+    # Teheiura le detient au conseil du jour 24, ou les destins lies
+    # l'emportent avec Charlotte ; il le cede a Claude en partant. La regle ne
+    # regardait que Claude, dernier de la chaine.
+    ("sp6", "Camp de la tribu réunifiée", "teheiura-teahui"): (
+        "elimine_avec_collier", "teheiura-teahui",
+        "Teheiura prend la parole et indique qu'il disposait lui aussi d'un collier d'immunité."),
+}
+
 ENTETE = """# ATTENTION : fichier genere. Ne pas editer a la main.
 #
 # Le destin de chaque collier d'immunite : trouve par qui, joue ou non, sur qui,
@@ -48,7 +73,7 @@ ENTETE = """# ATTENTION : fichier genere. Ne pas editer a la main.
 # tools/extraction/construire_colliers.py.
 #
 # `issue` est DEDUITE : annulation_efficace, joue_pour_rien,
-# elimine_avec_collier, garde_sans_usage, sorti_sans_pouvoir_le_jouer,
+# elimine_avec_collier, garde_sans_usage, sorti_sans_pouvoir_le_jouer, expire,
 # non_decouvert.
 #
 # Cette couche ne couvre QUE les colliers d'immunite. Les autres objets --
@@ -122,6 +147,9 @@ def construire(saisons, parts, rapport):
                 meilleur = lot
         if not meilleur:
             continue
+        texte = " ".join(" ".join(
+            open(os.path.join(WIKI, sid + suf), encoding="utf-8").read()
+            for suf in SUFFIXES if os.path.exists(os.path.join(WIKI, sid + suf))).split())
 
         index = par_saison_part[sid]
         for c in meilleur:
@@ -174,6 +202,16 @@ def construire(saisons, parts, rapport):
                 elif sortis:
                     issue = "sorti_sans_pouvoir_le_jouer"
 
+            elimine = None
+            premier = detenteurs[0]["id"] if detenteurs else None
+            lu = LUS.get((sid, c["localisation"], premier))
+            if lu:
+                if " ".join(lu[2].split()) in texte:
+                    issue, elimine = lu[0], lu[1]
+                else:
+                    rapport.append(f"{sid} : citation introuvable pour le collier "
+                                   f"« {c['localisation']} », issue lue abandonnee")
+
             colliers.append({
                 "saison": sid,
                 "localisation": c["localisation"],
@@ -182,6 +220,7 @@ def construire(saisons, parts, rapport):
                 "proteges": proteges,
                 "statut": statut,
                 "issue": issue,
+                **({"elimine": elimine} if elimine else {}),
                 "jour_trouve": c["jour_trouve"],
                 "episode_utilisation": c["episode_utilisation"],
                 "jour_utilisation": c.get("jour_utilisation"),

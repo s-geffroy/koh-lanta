@@ -923,8 +923,9 @@ AFFIRMATIONS_PAGES = {
                                    "(23 octobre 2026 : nul avec la regle du tirage, classiques)"),
     "decimation": (False, "statistiques/alliances.md et les deux articles ecrivent que "
                           "l'enchainement des sorties par camp n'est pas etabli"),
-    "finale_dernier_qualifie": (False, "statistiques/finale.md ecrit que le dernier "
-                                       "qualifie ne passe pas la correction"),
+    "finale_dernier_qualifie": (False, "statistiques/finale.md et le resume du sommaire "
+                                       "ecrivent que le dernier qualifie ne passe pas "
+                                       "la correction"),
     "camp_perdant": (False, "statistiques/conditionnelles.md et les deux articles ecrivent que "
                             "le cout d'un vote avec la minorite n'est pas etabli : il ne "
                             "tient qu'aux editions speciales (3 novembre 2026)"),

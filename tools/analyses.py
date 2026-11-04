@@ -36,7 +36,16 @@ def revenants(saisons, parts, personnes):
     erreur de lecture : ils ne sont pas rappeles au hasard. En separant leur
     PREMIERE aventure de leurs suivantes, on voit que le tri s'est fait avant
     le retour, et que le retour lui-meme se passe moins bien.
+
+    UN SEUL PERIMETRE : les saisons terminees. L'edition en cours n'a de jours
+    de sortie que pour ceux qui sont deja sortis, ce qui tire sa survie vers le
+    bas ; et la garder dans les duos mais pas dans le graphe faisait publier
+    « 71 revenants » a cote de 83 (revue du 3 nov. 2026). Seul le bloc des
+    vainqueurs la regarde, pour dire qui peut encore regagner.
     """
+    en_cours = {sid for sid, s in saisons.items() if s.get("en_cours")}
+    tous = parts
+    parts = [p for p in parts if p["saison"] not in en_cours]
     ordre = {s["id"]: i for i, s in enumerate(
         sorted(saisons.values(), key=lambda s: (s["annee"], s.get("numero") or 0)))}
     par_pers = defaultdict(list)
@@ -134,14 +143,17 @@ def revenants(saisons, parts, personnes):
     # Le mieux connecte de TOUS, revenants ou non : la reponse surprend, et
     # c'est justement pour cela qu'elle merite d'etre calculee sur tout le
     # monde et pas seulement sur les revenants.
-    degre_total = Counter()
+    # Des personnes DISTINCTES : Freddy a croise Christina quatre fois, elle
+    # ne compte qu'une. La somme des castings publiait 94 « personnes
+    # differentes » pour 76 (revue du 3 nov. 2026).
+    vus = defaultdict(set)
     for sid in sorted(par_saison):
-        gens = sorted(par_saison[sid])
+        gens = par_saison[sid]
         for i in gens:
-            degre_total[i] += len(gens) - 1
+            vus[i] |= gens - {i}
     connectes = sorted(
-        ({"nom": noms.get(i, i), "liens": n, "saisons": nb.get(i, 1)}
-         for i, n in degre_total.items()),
+        ({"nom": noms.get(i, i), "liens": len(v), "saisons": nb.get(i, 1)}
+         for i, v in vus.items()),
         key=lambda x: (-x["liens"], x["nom"]))
 
     # --- le palmares des revenants : ce que le retour rapporte VRAIMENT
@@ -149,13 +161,16 @@ def revenants(saisons, parts, personnes):
     # La page s'intitule « le retour paie-t-il ? » et repond en jours tenus.
     # Il reste la question qu'on pose au comptoir : quelqu'un a-t-il gagne DEUX
     # FOIS ? Le compte est court, et c'est le resultat.
+    par_pers = defaultdict(list)
+    for p in tous:
+        par_pers[p["id"]].append(p)
     titres = Counter()
-    for p in parts:
+    for p in tous:
         if p.get("sort") == "vainqueur" and not saisons.get(p["saison"], {}).get("en_cours"):
             titres[p["id"]] += 1
     multi = sorted(
         ({"id": i, "nom": noms.get(i, i), "titres": n, "saisons": nb.get(i, 0),
-          "editions": [saisons[q["saison"]].get("titre") for q in parts
+          "editions": [saisons[q["saison"]].get("titre") for q in tous
                        if q["id"] == i and q.get("sort") == "vainqueur"]}
          for i, n in titres.items() if n > 1),
         key=lambda x: (-x["titres"], x["nom"]))
@@ -167,7 +182,6 @@ def revenants(saisons, parts, personnes):
     # pas passee sous silence pour autant -- `vainqueurs_en_jeu` dit combien
     # d'anciens vainqueurs jouent en ce moment, ce qui est precisement ce qui
     # pourrait defaire le « un seul a gagne deux fois ».
-    en_cours = {sid for sid, s in saisons.items() if s.get("en_cours")}
     revenus, regagne, sorts_apres = 0, 0, Counter()
     en_jeu = 0
     for pid, lignes in par_pers.items():

@@ -204,9 +204,10 @@ vingtaine de personnes qui se connaissent déjà.
 
 **{{ r.les_plus_connectes[0].nom }}** a partagé une aventure avec
 {{ r.les_plus_connectes[0].liens }} personnes différentes — plus que
-{{ r.carrieres[0].nom }}, qui a pourtant joué plus longtemps. Le nombre de
-saisons ne suffit pas : ce qui compte est la **taille** des castings qu’on a
-traversés.
+{{ r.carrieres[0].nom }}, qui a pourtant passé plus de jours en jeu. Le temps
+passé sur l’île ne suffit pas : ce qui compte est le nombre de castings
+traversés, et leur **taille**. Chacun n’est compté qu’une fois, même croisé sur
+plusieurs saisons.
 
 ## Un seul a gagné deux fois
 
@@ -276,13 +277,14 @@ Le compte se met à jour à chaque rafraîchissement de la source, il n’est pa
 {% include graphiques/revenants-carrieres.svg %}
 
 <p class="legende-figure">Jours de jeu cumulés sur toutes les participations.
-En vert, ceux qui n’ont jamais été éliminés.</p>
+En vert, ceux qui ont joué tous les jours possibles.</p>
 
 {% assign sf = r.sans_faute %}
-**{{ sf | size }} aventuriers n’ont jamais quitté le jeu avant la fin**, sur
+**{{ sf | size }} aventuriers ont joué tous les jours possibles**, sur
 l’ensemble de leurs participations :
 {% for c in sf %}{{ c.nom }} ({{ c.saisons }} saisons, {{ c.jours }} jours){% unless forloop.last %}, {% endunless %}{% endfor %}.
-Aucun conseil, aucun poteau, aucune orientation ne les a fait sortir.
+Ils sont allés au bout de chaque saison. Aller au bout n’est pas gagner :
+les poteaux, courus le dernier jour, en ont arrêté certains.
 
 <div class="tableau-large">
 <table data-triable><caption class="hors-ecran">Les plus longues carrières</caption>
