@@ -56,7 +56,6 @@ complète des tests menés — y compris ceux qui n’ont rien donné.
 <p class="chapeau-theme">{{ t.resume }}</p>
 <ul class="cartes">
 {%- for e in t.entrees -%}
-{%- unless e.hub -%}
 {%- assign pos = site.data.stats.sommaire.pages[e.url] -%}
   <li class="carte">
     <a href="{{ e.url | relative_url }}">
@@ -65,7 +64,6 @@ complète des tests menés — y compris ceux qui n’ont rien donné.
       <span class="carte-resume">{{ e.resume }}</span>
     </a>
   </li>
-{%- endunless -%}
 {%- endfor -%}
 </ul>
 </section>

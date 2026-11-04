@@ -30,9 +30,10 @@ RACINE = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__))
 
 RE_FRONT = re.compile(r"\A---\s*\n(.*?)\n---\s*\n", re.S)
 RE_INCLUDE = re.compile(r"\{%\s*include\s+([^\s%]+)")
-RE_DATA = re.compile(r"site\.data\.([A-Za-z0-9_.]+)")
-RE_ASSIGN = re.compile(r"\{%\s*assign\s+(\w+)\s*=\s*site\.data\.([A-Za-z0-9_.]+)\s*%\}")
-RE_VAR = re.compile(r"\{\{\s*([a-z_][A-Za-z0-9_]*)\.([A-Za-z0-9_.]+)")
+# Le tiret de `{%- ... -%}` est admis : sans lui, tous les alias des gabarits
+# echappaient au controle. Les chemins a crochets passent par
+# `controler_chemins`.
+RE_ASSIGN = re.compile(r"\{%-?\s*assign\s+(\w+)\s*=\s*site\.data\.([A-Za-z0-9_.]+)\s*-?%\}")
 RE_COMMENTAIRE = re.compile(r"\{%-?\s*comment\s*-?%\}.*?\{%-?\s*endcomment\s*-?%\}",
                             re.S)
 
@@ -441,6 +442,94 @@ def charger_donnees():
             with open(os.path.join(dossier, f), encoding="utf-8") as fh:
                 jeux[os.path.splitext(f)[0]] = donnees.charger(fh)
     return jeux
+
+
+# LES CHEMINS DE DONNEES, SUIVIS A TRAVERS LES ALIAS (revue du 4 nov. 2026).
+# Le controle ne reconnaissait que `{% assign x = site.data.a.b %}` ecrit sans
+# tiret ni crochet, et seulement dans les pages. Or les gabarits ecrivent
+# `{%- assign a = site.data.fiches.aventuriers[page.aventurier] -%}` : la
+# quasi-totalite des acces aux donnees echappait au controle, et une cle mal
+# orthographiee dans une fiche n'aurait rendu qu'un champ vide, 565 fois.
+RE_LIQUID = re.compile(r"\{\{.*?\}\}|\{%.*?%\}", re.S)
+RE_CHEMIN = re.compile(r"(?<![\w.\-/])([a-z_]\w*)((?:\.\w+|\[[^\[\]]+\])+)")
+RE_ASSIGN_TOUT = re.compile(r"\{%-?\s*assign\s+(\w+)\s*=\s*(.*?)-?%\}", re.S)
+RE_FOR_TOUT = re.compile(r"\{%-?\s*for\s+(\w+)\s+in\s+([^\s%]+)")
+# Les filtres qui rendent la meme sorte d'objet : l'alias garde son chemin.
+FILTRES_NEUTRES = {"where", "where_exp", "sort", "sort_natural", "reverse", "uniq",
+                   "compact", "default", "first", "last"}
+ACCES_LIQUID = {"first", "last", "size"}
+
+
+def _morceaux(suite):
+    """« .a['b'][page.x].c » -> ["a", "b", "*", "c"] ; un index variable est
+    une cle quelconque."""
+    out = []
+    for m in re.finditer(r"\.(\w+)|\[\s*(['\"])(.*?)\2\s*\]|\[\s*(\d+)\s*\]|\[[^\]]*\]", suite):
+        out.append(m.group(1) or m.group(3) or m.group(4) or "*")
+    return out
+
+
+def _existe(courant, morceaux):
+    """Le chemin existe-t-il pour AU MOINS un element ? Une liste ou une cle
+    variable se traversent par n'importe lequel de leurs elements : une fiche
+    porte des champs qu'une autre n'a pas."""
+    if not morceaux:
+        return True
+    tete, reste = morceaux[0], morceaux[1:]
+    if isinstance(courant, list):
+        if tete.isdigit():
+            return int(tete) >= len(courant) or _existe(courant[int(tete)], reste)
+        if tete in ACCES_LIQUID:
+            return not courant or tete == "size" or _existe(courant[0 if tete == "first" else -1], reste)
+        return not courant or any(_existe(x, morceaux) for x in courant)
+    if isinstance(courant, dict):
+        if tete == "*":
+            return not courant or any(_existe(x, reste) for x in courant.values())
+        if tete in courant:
+            return _existe(courant[tete], reste)
+        return tete == "size"
+    if courant is None:
+        return True        # valeur nulle : rien a suivre, rien a reprocher
+    return tete == "size" and not reste
+
+
+def controler_chemins(c, rel, corps, jeux):
+    """Chaque chemin de donnees, direct ou par alias, existe dans _data/.
+    Le fichier est lu DANS L'ORDRE : un meme nom (`t`, `x`) est reaffecte
+    d'une boucle a l'autre, et c'est son affectation courante qui compte."""
+    alias = {}
+    for m in RE_LIQUID.finditer(corps):
+        bloc = m.group(0)
+        for nom, suite in RE_CHEMIN.findall(bloc):
+            if nom == "site" and suite.startswith(".data"):
+                racine, morceaux = jeux, _morceaux(suite)[1:]
+                affiche = "site" + suite
+            elif nom in alias:
+                racine, morceaux = jeux, alias[nom] + _morceaux(suite)
+                affiche = f"{nom}{suite} → site.data." + ".".join(morceaux)
+            else:
+                continue
+            if not _existe(racine, morceaux):
+                c.erreur(f"{rel} : {affiche} n'existe pas dans _data/")
+        # Les affectations s'appliquent APRES le controle du bloc qui les porte.
+        a = RE_ASSIGN_TOUT.match(bloc)
+        f = RE_FOR_TOUT.match(bloc)
+        if a or f:
+            nom, expr = (a or f).group(1), (a or f).group(2).strip()
+            filtres = [x.split(":")[0].strip() for x in expr.split("|")[1:]]
+            source = expr.split("|")[0].strip()
+            m_src = RE_CHEMIN.fullmatch(source)
+            chemin = None
+            if m_src and all(x in FILTRES_NEUTRES for x in filtres):
+                tete, suite = m_src.groups()
+                if tete == "site" and suite.startswith(".data"):
+                    chemin = _morceaux(suite)[1:]
+                elif tete in alias:
+                    chemin = alias[tete] + _morceaux(suite)
+            if chemin is None:
+                alias.pop(nom, None)
+            else:
+                alias[nom] = chemin
 
 
 def resoudre(racine, chemin):
@@ -1965,27 +2054,10 @@ def main():
                      f"Liquid — elle n'y est pas inerte, elle ouvre un bloc que "
                      f"`endcomment` ne ferme pas et la construction s'arrete")
 
-        for parcours in RE_DATA.findall(corps):
-            ok, _ = resoudre(jeux, parcours)
-            if not ok:
-                c.erreur(f"{rel} : site.data.{parcours} n'existe pas dans _data/")
-
-        # chemins passant par un {% assign %}
-        alias = {nom: cible for nom, cible in RE_ASSIGN.findall(corps)}
-        for nom, suite in RE_VAR.findall(corps):
-            if nom not in alias:
-                continue
-            parcours = f"{alias[nom]}.{suite.rstrip('.')}"
-            # `first`, `last` et `size` ne sont pas des cles de donnees : ce
-            # sont des acces de Liquid, et ils peuvent tomber AU MILIEU d'un
-            # chemin -- `depouillement.first.part` designe la premiere ligne
-            # d'une liste, puis son champ. Les retirer seulement en fin de
-            # chemin faisait echouer un chemin parfaitement valide.
-            parcours = ".".join(x for x in parcours.split(".")
-                                if x not in ("first", "last", "size"))
-            ok, _ = resoudre(jeux, parcours)
-            if not ok:
-                c.erreur(f"{rel} : {nom}.{suite} → site.data.{parcours} n'existe pas")
+        # chemins directs et passant par un {% assign %} ou un {% for %}.
+        # `first`, `last` et `size` sont des acces de Liquid, pas des cles, et
+        # ils peuvent tomber AU MILIEU d'un chemin (`depouillement.first.part`).
+        controler_chemins(c, rel, corps, jeux)
 
     # Les GABARITS, que la boucle ci-dessus ne voit pas -- elle ne parcourt que
     # les pages. C'etait un trou : depuis que les fiches existent, l'essentiel
@@ -2017,10 +2089,7 @@ def main():
                 c.erreur(f"{rel} : balise `{nom_balise}` ecrite DANS un commentaire "
                          f"Liquid — elle n'y est pas inerte, elle ouvre un bloc que "
                          f"`endcomment` ne ferme pas et la construction s'arrete")
-            for parcours in RE_DATA.findall(corps):
-                ok, _ = resoudre(jeux, parcours)
-                if not ok:
-                    c.erreur(f"{rel} : site.data.{parcours} n'existe pas dans _data/")
+            controler_chemins(c, rel, corps, jeux)
 
     # configuration
     config = donnees.charger(open(os.path.join(RACINE, "_config.yml"), encoding="utf-8"))

@@ -135,6 +135,12 @@ refuse un fichier dont une entree a change depuis. L'empreinte ne voit pas le
 code : apres la modification d'un generateur, `--depuis <etape>` force cette
 etape et tout l'aval.
 
+Chaque push publie : un hook `pre-push` (versionne dans `tools/hooks/`) lance
+les deux controles dans l'atelier et annule le push si l'un refuse. Il
+s'active une fois par clone :
+
+    git config core.hooksPath tools/hooks
+
 `build_fiches.py` ecrit `_data/fiches.yml` et 565 pages minuscules -- une par
 aventurier, une par saison -- sous `aventuriers/` et `saisons/`. Elles sont
 COMMITEES parce que GitHub Pages n'a pas le droit de les fabriquer : le greffon

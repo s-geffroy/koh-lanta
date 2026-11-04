@@ -1,0 +1,22 @@
+#!/bin/sh
+# Chaque push publie le site : on ne pousse pas ce que les deux controles
+# refusent (revue du 4 nov. 2026). Les deux tournent dans l'atelier, jamais
+# sur l'hote.
+#
+# Active par : git config core.hooksPath tools/hooks
+# Contourner, en connaissance de cause : git push --no-verify
+set -e
+cd "$(git rev-parse --show-toplevel)"
+echo "pre-push : tools/verifie.py" >&2
+tools/atelier python3 tools/verifie.py >/dev/null 2>&1 || {
+    echo "pre-push : verifie.py refuse -- push annule. Detail :" >&2
+    echo "  tools/atelier python3 tools/verifie.py" >&2
+    exit 1
+}
+echo "pre-push : tools/verifie_site.py" >&2
+if ! sortie=$(tools/atelier python3 tools/verifie_site.py 2>&1); then
+    printf '%s\n' "$sortie" | grep -E '^  ! ' >&2 || printf '%s\n' "$sortie" | tail -20 >&2
+    echo "pre-push : verifie_site.py refuse -- push annule." >&2
+    exit 1
+fi
+echo "pre-push : les deux controles passent." >&2
