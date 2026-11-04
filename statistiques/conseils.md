@@ -6,6 +6,7 @@ description: "Les conseils de Koh-Lanta : le vote est souvent serré, l’unani
 permalink: /statistiques/conseils/
 chapeau: >-
   Le vote est souvent serré, l’unanimité rare — et les conseils ne se sont pas durcis avec les années, ils se sont divisés.
+image: /assets/partage/pages/statistiques-conseils.png
 ---
 
 {% assign c = site.data.stats.conseils %}

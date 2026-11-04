@@ -6,6 +6,7 @@ description: "Comment on sort de Koh-Lanta : conseil, épreuve, poteaux, orient
 permalink: /statistiques/sorties/
 chapeau: >-
   Conseil, épreuve, poteaux, orientation, abandon : onze façons de quitter le jeu, et des proportions qui ont nettement bougé en vingt-cinq ans.
+image: /assets/partage/pages/statistiques-sorties.png
 ---
 
 {% assign s = site.data.stats %}

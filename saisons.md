@@ -6,6 +6,7 @@ permalink: /saisons/
 chapeau: >-
   Trente-quatre éditions diffusées, deux interrompues, et quatre indicateurs
   qui disent ce qu’a été chacune d’elles.
+image: /assets/partage/pages/saisons.png
 ---
 
 {% assign s = site.data.stats %}
@@ -117,7 +118,8 @@ moyennes d’âge vers le haut sans rien dire du casting ordinaire.
 <p class="legende-figure">Part des aventuriers encore en jeu, du premier au
 dernier jour de chaque saison. Les axes sont identiques partout : une courbe
 qui plonge, plonge vraiment, elle n’est pas mise à l’échelle de sa propre case.
-La ligne grise marque la moitié du plateau.</p>
+La ligne grise marque la moitié du plateau.
+{{ s.survie_absentes_texte }}</p>
 
 Les éditions spéciales, en rose, se reconnaissent à leur pente : plus courtes,
 elles éliminent plus vite. Chez les classiques, la forme est remarquablement

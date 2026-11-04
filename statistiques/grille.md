@@ -7,6 +7,7 @@ permalink: /statistiques/grille/
 chapeau: >-
   Deux décisions que la production ne commente jamais : le jour où elle réunit
   les tribus, et la dérive de son format — qui n’a pas de date.
+image: /assets/partage/pages/statistiques-grille.png
 ---
 
 {% assign m = site.data.stats.modeles %}

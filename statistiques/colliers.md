@@ -6,6 +6,7 @@ description: "Les colliers d’immunité de Koh-Lanta suivis un par un : où il
 permalink: /statistiques/colliers/
 chapeau: >-
   Chaque collier d’immunité suivi un par un : où il était caché, qui l’a trouvé, et ce qu’il a réellement changé au conseil.
+image: /assets/partage/pages/statistiques-colliers.png
 ---
 
 {% assign c = site.data.stats.colliers %}

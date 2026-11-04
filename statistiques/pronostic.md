@@ -8,6 +8,7 @@ chapeau: >-
   Si la production choisit ses vainqueurs au casting, cela doit se voir : une
   fiche d’inscription suffirait à les désigner. On a essayé — puis on a posé la
   même question au conseil, où la réponse n’est pas la même.
+image: /assets/partage/pages/statistiques-pronostic.png
 ---
 
 {% assign m = site.data.stats.modeles %}

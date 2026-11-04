@@ -625,6 +625,16 @@ def ecrire(nom, contenu):
         for x in morceaux)
     contenu = re.sub(r'aria-label="([^"]*)"',
                      lambda m: 'aria-label="' + signe_moins(apostrophes(donnees.insecables(m.group(1)))) + '"', contenu)
+    # La description lue a l'ecran. aria-label sur role="img" remplace le
+    # <title>, et le <desc> n'est pas expose par tous les navigateurs : un
+    # lecteur d'ecran n'entendait que le titre de la figure (revue du 3 nov.
+    # 2026). aria-describedby le rattache explicitement. L'identifiant vient du
+    # nom du fichier : une figure n'est incluse qu'une fois par page.
+    ident = "desc-" + re.sub(r"[^a-z0-9]+", "-", nom.rsplit(".", 1)[0].lower()).strip("-")
+    if "<desc>" in contenu and re.search(r'<svg\b[^>]*role="img"', contenu):
+        contenu = contenu.replace("<desc>", f'<desc id="{ident}">', 1)
+        contenu = re.sub(r'(<svg\b[^>]*role="img")', rf'\1 aria-describedby="{ident}"',
+                         contenu, count=1)
     os.makedirs(SORTIE, exist_ok=True)
     chemin = os.path.join(SORTIE, nom)
     with open(chemin, "w", encoding="utf-8") as f:

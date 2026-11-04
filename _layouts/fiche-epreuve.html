@@ -30,9 +30,14 @@ layout: default
 {%- endcomment -%}
 {%- if e.record and e.record.victoires > 1 %}
 <div class="constat">
+  {%- if e.ex_aequo > 1 %}
+  <p><b>Le record est partagé</b> : {{ e.ex_aequo }} aventuriers à
+  {{ e.record.victoires }} {{ e.mot_pluriel }}.</p>
+  {%- else %}
   <p><b>Le record</b> :
   <a href="{{ '/aventuriers/' | append: e.record.id | append: '/' | relative_url }}">{{ e.record.nom }}</a>,
   {{ e.record.victoires }} {{ e.mot_pluriel }}.</p>
+  {%- endif %}
   {%- if e.note_palmares %}
   <p>{{ e.note_palmares }}</p>
   {%- endif %}
@@ -41,12 +46,19 @@ layout: default
 
 <h2>Qui l’a gagnée</h2>
 
+{%- if e.source == "finale" %}
+<p>Le vainqueur des poteaux de chaque saison au format, l’aventurier le plus
+titré d’abord. La liste est complète : elle vient du
+<a href="{{ '/statistiques/finale/' | relative_url }}">relevé de la finale</a>,
+pas du palmarès du wiki.</p>
+{%- else %}
 <p>Les victoires connues nommément, l’aventurier le plus titré d’abord. Cette liste ne
 couvre pas toutes les fois où l’épreuve a été courue : le nom de l’épreuve et
 le relevé de la saison ne se raccordent pas toujours, et une épreuve gagnée par
 une tribu entière n’a pas de vainqueur individuel.
 <a href="{{ '/sources/' | relative_url }}">Les sources</a> disent ce qui manque
 et pourquoi.</p>
+{%- endif %}
 
 <div class="tableau-large">
 <table data-triable><caption class="hors-ecran">Qui l’a gagnée</caption>

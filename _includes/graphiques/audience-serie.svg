@@ -1,8 +1,8 @@
 <figure class="figure">
 <figcaption class="figure-titre" aria-hidden="true">L’audience moyenne, saison par saison (2001–2026)</figcaption>
-<svg class="graphique" viewBox="0 0 880 350" role="img" preserveAspectRatio="xMidYMid meet" aria-label="L’audience moyenne, saison par saison (2001–2026)">
+<svg class="graphique" viewBox="0 0 880 350" role="img" aria-describedby="desc-audience-serie" preserveAspectRatio="xMidYMid meet" aria-label="L’audience moyenne, saison par saison (2001–2026)">
   <title>L’audience moyenne, saison par saison (2001–2026)</title>
-  <desc>Nombre moyen de téléspectateurs par saison, en millions. La série couvre toutes les éditions achevées. Sous l’axe, le jour de diffusion de chaque saison (Ma mardi, Ve vendredi, Sa samedi) puis une réglette où le segment marque les mois de diffusion dans l’année.</desc>
+  <desc id="desc-audience-serie">Nombre moyen de téléspectateurs par saison, en millions. La série couvre toutes les éditions achevées. Sous l’axe, le jour de diffusion de chaque saison (Ma mardi, Ve vendredi, Sa samedi) puis une réglette où le segment marque les mois de diffusion dans l’année.</desc>
   <line x1="46" y1="242.0" x2="864" y2="242.0" stroke="var(--grille)" stroke-width="1"/>
   <text x="38.0" y="242.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">0</text>
   <line x1="46" y1="188.0" x2="864" y2="188.0" stroke="var(--grille)" stroke-width="1"/>

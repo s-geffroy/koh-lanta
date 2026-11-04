@@ -18041,8 +18041,8 @@
     annule: false
   - votant: william-plancq
     votant_rattache: true
-    cible: Léa
-    cible_rattachee: false
+    cible: lea-sahin
+    cible_rattachee: true
     annule: false
 - saison: s25
   numero: 5
@@ -18095,8 +18095,8 @@
     annule: false
   - votant: alexis-tchernychev
     votant_rattache: true
-    cible: Léa
-    cible_rattachee: false
+    cible: lea-sahin
+    cible_rattachee: true
     annule: true
 - saison: s25
   numero: 6
@@ -18139,8 +18139,8 @@
     annule: false
   - votant: cecile-poprawa
     votant_rattache: true
-    cible: Léa
-    cible_rattachee: false
+    cible: lea-notardonato
+    cible_rattachee: true
     annule: true
   - votant: lea-notardonato
     votant_rattache: true
@@ -18159,8 +18159,8 @@
     annule: false
   - votant: emilie-clavis
     votant_rattache: true
-    cible: Léa
-    cible_rattachee: false
+    cible: lea-notardonato
+    cible_rattachee: true
     annule: true
 - saison: s25
   numero: 7
@@ -18233,8 +18233,8 @@
     annule: false
   - votant: david-murail
     votant_rattache: true
-    cible: Léa
-    cible_rattachee: false
+    cible: lea-notardonato
+    cible_rattachee: true
     annule: false
   - votant: megane-rouland
     votant_rattache: true
@@ -18258,8 +18258,8 @@
     annule: false
   - votant: ricky-poyet
     votant_rattache: true
-    cible: Léa
-    cible_rattachee: false
+    cible: lea-notardonato
+    cible_rattachee: true
     annule: false
   - votant: maxime-barbet
     votant_rattache: true
@@ -19802,8 +19802,8 @@
     cible: cynthian-steinbach
     cible_rattachee: true
     annule: false
-  - votant: Jérôme
-    votant_rattache: false
+  - votant: jerome-salvatore
+    votant_rattache: true
     cible: cynthian-steinbach
     cible_rattachee: true
     annule: false
@@ -19814,8 +19814,8 @@
     annule: false
   - votant: mehdi-bounab-lamiral
     votant_rattache: true
-    cible: Jérôme
-    cible_rattachee: false
+    cible: jerome-salvatore
+    cible_rattachee: true
     annule: false
   - votant: romane-ouvrard
     votant_rattache: true
@@ -19842,8 +19842,8 @@
     cible: mehdi-bounab-lamiral
     cible_rattachee: true
     annule: false
-  - votant: Jérôme
-    votant_rattache: false
+  - votant: jerome-salvatore
+    votant_rattache: true
     cible: mehdi-bounab-lamiral
     cible_rattachee: true
     annule: false
@@ -19927,8 +19927,8 @@
     cible: romane-ouvrard
     cible_rattachee: true
     annule: false
-  - votant: Jérôme
-    votant_rattache: false
+  - votant: jerome-salvatore
+    votant_rattache: true
     cible: romane-ouvrard
     cible_rattachee: true
     annule: false
@@ -20484,10 +20484,10 @@
     cible: nais-napoletano
     cible_rattachee: true
     annule: false
-  - votant: Jérôme
-    votant_rattache: false
-    cible: Jérôme (O)
-    cible_rattachee: false
+  - votant: jerome-molas
+    votant_rattache: true
+    cible: jerome-salvatore
+    cible_rattachee: true
     annule: true
   - votant: Jérôme
     votant_rattache: false
@@ -20496,8 +20496,8 @@
     annule: false
   - votant: claire-passas
     votant_rattache: true
-    cible: Jérôme (O)
-    cible_rattachee: false
+    cible: jerome-salvatore
+    cible_rattachee: true
     annule: true
   - votant: celine-faccio
     votant_rattache: true
@@ -20516,19 +20516,19 @@
     annule: false
   - votant: pierre-marie-ponsot
     votant_rattache: true
-    cible: Jérôme (O)
-    cible_rattachee: false
+    cible: jerome-salvatore
+    cible_rattachee: true
     annule: true
   - votant: nais-napoletano
     votant_rattache: true
-    cible: Jérôme (O)
-    cible_rattachee: false
+    cible: jerome-salvatore
+    cible_rattachee: true
     annule: true
   - votant: null
     votant_rattache: false
     mecanique: Vote noir
-    cible: Jérôme (O)
-    cible_rattachee: false
+    cible: jerome-salvatore
+    cible_rattachee: true
     annule: true
 - saison: s27
   numero: 18

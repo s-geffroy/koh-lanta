@@ -1,8 +1,8 @@
 <figure class="figure">
 <figcaption class="figure-titre" aria-hidden="true">Un aventurier a-t-il écrasé les épreuves ?</figcaption>
-<svg class="graphique" viewBox="0 0 760 300" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Un aventurier a-t-il écrasé les épreuves ?">
+<svg class="graphique" viewBox="0 0 760 300" role="img" aria-describedby="desc-saisons-domination" preserveAspectRatio="xMidYMid meet" aria-label="Un aventurier a-t-il écrasé les épreuves ?">
   <title>Un aventurier a-t-il écrasé les épreuves ?</title>
-  <desc>Indice de concentration des victoires individuelles. Plus il est haut, plus un seul aventurier a tout raflé.</desc>
+  <desc id="desc-saisons-domination">Indice de concentration des victoires individuelles. Plus il est haut, plus un seul aventurier a tout raflé.</desc>
   <line x1="46" y1="248.0" x2="748" y2="248.0" stroke="var(--grille)" stroke-width="1"/>
   <text x="38.0" y="248.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">0</text>
   <line x1="46" y1="192.5" x2="748" y2="192.5" stroke="var(--grille)" stroke-width="1"/>

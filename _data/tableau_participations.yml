@@ -892,11 +892,11 @@
   age: 23
   genre: f
   profession: Informaticienne
-  localisation: null
+  localisation: Essonne
   tribu: Chapera
   couleur: jaune
   jour_sortie: 10
-  classement: null
+  classement: 14
   victoires_individuelles: null
   victoires_collectives: null
   sort: elimine_conseil
@@ -909,7 +909,7 @@
   age: 26
   genre: f
   profession: Auto-entrepreneur en électroménager
-  localisation: null
+  localisation: Haute-Savoie
   tribu: Chapera
   couleur: jaune
   jour_sortie: 13
@@ -977,7 +977,7 @@
   age: 57
   genre: f
   profession: Comédienne
-  localisation: null
+  localisation: Hauts-de-Seine
   tribu: Chapera
   couleur: jaune
   jour_sortie: 26
@@ -1028,7 +1028,7 @@
   age: 27
   genre: h
   profession: Étudiant en gestion, serveur en restauration
-  localisation: null
+  localisation: Paris
   tribu: Mogo
   couleur: rouge
   jour_sortie: 34
@@ -1725,7 +1725,7 @@
   age: 23
   genre: f
   profession: Vendeuse de prêt-à-porter
-  localisation: null
+  localisation: Paris
   tribu: Batang
   couleur: rouge
   jour_sortie: 10
@@ -1742,7 +1742,7 @@
   age: 24
   genre: f
   profession: Coiffeuse
-  localisation: null
+  localisation: Doubs
   tribu: Batang
   couleur: rouge
   jour_sortie: 13
@@ -1759,7 +1759,7 @@
   age: 50
   genre: f
   profession: Conseillère financière
-  localisation: null
+  localisation: Nord
   tribu: Guntao
   couleur: jaune
   jour_sortie: 16
@@ -1793,7 +1793,7 @@
   age: 32
   genre: h
   profession: Entraîneur sportif
-  localisation: null
+  localisation: Gard
   tribu: Guntao
   couleur: jaune
   jour_sortie: 22
@@ -1827,7 +1827,7 @@
   age: 55
   genre: h
   profession: Agent de la SNCF retraité
-  localisation: null
+  localisation: Savoie
   tribu: Guntao
   couleur: jaune
   jour_sortie: 29
@@ -1844,7 +1844,7 @@
   age: 24
   genre: h
   profession: Jardinier
-  localisation: null
+  localisation: Yvelines
   tribu: Guntao
   couleur: jaune
   jour_sortie: 31
@@ -1861,7 +1861,7 @@
   age: 34
   genre: h
   profession: Grossiste en coquillages
-  localisation: null
+  localisation: Hérault
   tribu: Guntao
   couleur: jaune
   jour_sortie: 34
@@ -1878,7 +1878,7 @@
   age: 40
   genre: h
   profession: Chef d’entreprise
-  localisation: null
+  localisation: Nord
   tribu: Batang
   couleur: rouge
   jour_sortie: 37
@@ -1895,7 +1895,7 @@
   age: 26
   genre: h
   profession: Bûcheron
-  localisation: null
+  localisation: Aude
   tribu: Batang
   couleur: rouge
   jour_sortie: 38
@@ -1912,7 +1912,7 @@
   age: 36
   genre: f
   profession: Agricultrice
-  localisation: null
+  localisation: Nord
   tribu: Batang
   couleur: rouge
   jour_sortie: 39
@@ -1929,7 +1929,7 @@
   age: 21
   genre: h
   profession: Pilote de karting
-  localisation: null
+  localisation: Var
   tribu: Batang
   couleur: rouge
   jour_sortie: 40
@@ -2320,7 +2320,7 @@
   age: 26
   genre: f
   profession: Responsable d’un magasin de décoration
-  localisation: null
+  localisation: Doubs
   tribu: Mawaï
   couleur: jaune
   jour_sortie: 9
@@ -2337,7 +2337,7 @@
   age: 19
   genre: f
   profession: Peintre en bâtiment
-  localisation: null
+  localisation: Haute-Savoie
   tribu: Koror
   couleur: rouge
   jour_sortie: 13
@@ -2596,7 +2596,7 @@
   tribu: Do
   couleur: rouge
   jour_sortie: 10
-  classement: null
+  classement: 16
   victoires_individuelles: null
   victoires_collectives: null
   sort: abandon_medical
@@ -2613,7 +2613,7 @@
   tribu: Vang
   couleur: jaune
   jour_sortie: 12
-  classement: null
+  classement: 15
   victoires_individuelles: null
   victoires_collectives: null
   sort: elimine_conseil
@@ -2630,7 +2630,7 @@
   tribu: Vang
   couleur: jaune
   jour_sortie: 15
-  classement: null
+  classement: 14
   victoires_individuelles: null
   victoires_collectives: null
   sort: abandon_volontaire
@@ -2647,7 +2647,7 @@
   tribu: Do
   couleur: rouge
   jour_sortie: 18
-  classement: null
+  classement: 13
   victoires_individuelles: null
   victoires_collectives: null
   sort: elimine_conseil
@@ -2681,7 +2681,7 @@
   tribu: Vang
   couleur: jaune
   jour_sortie: 22
-  classement: null
+  classement: 11
   victoires_individuelles: null
   victoires_collectives: null
   sort: elimine_ambassadeurs
@@ -2698,7 +2698,7 @@
   tribu: Do
   couleur: rouge
   jour_sortie: 24
-  classement: null
+  classement: 10
   victoires_individuelles: null
   victoires_collectives: null
   sort: abandon_medical
@@ -2783,7 +2783,7 @@
   tribu: Do
   couleur: rouge
   jour_sortie: 38
-  classement: null
+  classement: 5
   victoires_individuelles: null
   victoires_collectives: null
   sort: elimine_conseil
@@ -2800,7 +2800,7 @@
   tribu: Do
   couleur: rouge
   jour_sortie: 39
-  classement: null
+  classement: 4
   victoires_individuelles: null
   victoires_collectives: null
   sort: elimine_orientation
@@ -2953,7 +2953,7 @@
   tribu: Wasaï
   couleur: jaune
   jour_sortie: 12
-  classement: null
+  classement: 15
   victoires_individuelles: null
   victoires_collectives: null
   sort: elimine_conseil
@@ -2987,7 +2987,7 @@
   tribu: Wasaï
   couleur: jaune
   jour_sortie: 18
-  classement: null
+  classement: 13
   victoires_individuelles: null
   victoires_collectives: null
   sort: elimine_conseil
@@ -3004,7 +3004,7 @@
   tribu: Mambok
   couleur: rouge
   jour_sortie: 20
-  classement: null
+  classement: 12
   victoires_individuelles: 0
   victoires_collectives: 6
   sort: elimine_ambassadeurs
@@ -3021,7 +3021,7 @@
   tribu: Wasaï
   couleur: jaune
   jour_sortie: 21
-  classement: null
+  classement: 11
   victoires_individuelles: null
   victoires_collectives: null
   sort: elimine_conseil
@@ -3055,7 +3055,7 @@
   tribu: Mambok
   couleur: rouge
   jour_sortie: 27
-  classement: null
+  classement: 9
   victoires_individuelles: null
   victoires_collectives: null
   sort: elimine_conseil
@@ -3089,7 +3089,7 @@
   tribu: Wasaï
   couleur: jaune
   jour_sortie: 33
-  classement: null
+  classement: 7
   victoires_individuelles: null
   victoires_collectives: null
   sort: elimine_conseil
@@ -8932,7 +8932,7 @@
   annee: 2010
   age: 37
   genre: f
-  profession: Record de France de triple saut (1997–2007)
+  profession: Ancienne athlète
   localisation: Martinique
   tribu: Malabou
   couleur: rouge
@@ -8949,7 +8949,7 @@
   annee: 2010
   age: 42
   genre: h
-  profession: Champion du monde de football (1998)
+  profession: Ancien footballeur professionnel
   localisation: Bouches-du-Rhône
   tribu: Malabou
   couleur: rouge
@@ -8983,7 +8983,7 @@
   annee: 2010
   age: 37
   genre: h
-  profession: Champion olympique de danse sur glace (2002)
+  profession: Ancien danseur de glace
   localisation: Rhône
   tribu: Malabou
   couleur: rouge
@@ -9000,7 +9000,7 @@
   annee: 2010
   age: 38
   genre: h
-  profession: Champion olympique de judo (1996)
+  profession: Ancien judoka
   localisation: Rhône
   tribu: Malabou
   couleur: rouge
@@ -9034,7 +9034,7 @@
   annee: 2010
   age: 34
   genre: f
-  profession: Vice-championne olympique de judo (2004)
+  profession: Ancienne judokate
   localisation: Seine-Saint-Denis
   tribu: Malabou
   couleur: rouge
@@ -9051,7 +9051,7 @@
   annee: 2010
   age: 34
   genre: h
-  profession: Champion du monde de roller en ligne (2000–2001)
+  profession: Ancien patineur
   localisation: Paris
   tribu: Malabou
   couleur: rouge
@@ -9068,7 +9068,7 @@
   annee: 2010
   age: 35
   genre: f
-  profession: Championne du monde de boxe (2004–2006)
+  profession: Ancienne boxeuse
   localisation: Saint-Denis
   tribu: Malabou
   couleur: rouge
@@ -9154,7 +9154,7 @@
   age: 27
   genre: h
   profession: Jardinier
-  localisation: null
+  localisation: Yvelines
   tribu: Tiac
   couleur: jaune
   jour_sortie: 20
@@ -9226,7 +9226,7 @@
   tribu: Klahan
   couleur: jaune
   jour_sortie: 8
-  classement: null
+  classement: 13
   victoires_individuelles: null
   victoires_collectives: null
   sort: elimine_conseil
@@ -9243,7 +9243,7 @@
   tribu: Klahan
   couleur: jaune
   jour_sortie: 10
-  classement: null
+  classement: 12
   victoires_individuelles: null
   victoires_collectives: null
   sort: elimine_ambassadeurs
@@ -9464,7 +9464,7 @@
   tribu: Tengah
   couleur: jaune
   jour_sortie: 8
-  classement: null
+  classement: 12
   victoires_individuelles: null
   victoires_collectives: null
   sort: abandon_medical

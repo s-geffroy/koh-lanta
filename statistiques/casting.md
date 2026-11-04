@@ -7,6 +7,7 @@ permalink: /statistiques/casting/
 chapeau: >-
   Un casting n’est pas un tirage au sort. Reste à savoir
   ce que la production impose vraiment — et ce qu’elle laisse au hasard.
+image: /assets/partage/pages/statistiques-casting.png
 ---
 
 {% assign m = site.data.stats.modeles %}

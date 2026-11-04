@@ -7,6 +7,7 @@ permalink: /statistiques/equilibre/
 chapeau: >-
   Le risque monte à mesure que la saison avance, et la tribu en difficulté
   semble toujours se rattraper. Deux impressions, deux tests.
+image: /assets/partage/pages/statistiques-equilibre.png
 ---
 
 {% assign m = site.data.stats.modeles %}

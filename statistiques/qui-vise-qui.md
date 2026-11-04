@@ -8,6 +8,7 @@ chapeau: >-
   Écrit-on le nom de celui qui ne nous ressemble pas ? Rien d’établi pour le
   sexe ou le métier. Nettement, pour la tribu initiale — et cela survit à la
   disparition des tribus.
+image: /assets/partage/pages/statistiques-qui-vise-qui.png
 ---
 
 {% assign m = site.data.stats.modeles %}

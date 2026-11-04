@@ -6,6 +6,7 @@ permalink: /statistiques/
 chapeau: >-
   Vingt-sept entrées dans le même jeu de données. Onze comptent ce qui
   s’est passé ; seize le mettent à l’épreuve du hasard.
+image: /assets/partage/pages/statistiques.png
 ---
 
 {% assign s = site.data.stats %}
@@ -28,6 +29,9 @@ mêmes personnes et fausseraient les moyennes d’âge comme de longévité.
   <li class="chiffre"><b>{{ s.records.nb_multi_participants }}</b><span>aventuriers revenus jouer</span></li>
 </ul>
 
+<p class="note">Les conseils, les bulletins, les épreuves, les colliers et les
+revenants de ces tuiles portent sur toutes les éditions, spéciales comprises.</p>
+
 {{ s.mots.sommaire_descriptives_maj }} entrées **décrivent** : elles comptent, elles font des parts et des
 moyennes. {{ s.mots.sommaire_testees_maj }} **testent** — elles comparent ce qu’on observe à ce que le
 hasard produirait, et publient un intervalle plutôt qu’un point. Elles ne
@@ -42,7 +46,7 @@ complète des tests menés — y compris ceux qui n’ont rien donné.
 
 {% comment %}
   Les balises de boucle autour des <section> NE rognent PAS les retours a la
-  ligne (pas de tiret) : rognes, ils collaient <section> au titre H2 qui
+  ligne (pas de tiret) : rognes, ils collaient <section> au titre H2 qui
   precede, et kramdown l'affichait en texte dans le titre (21 oct. 2026).
   Un bloc HTML doit commencer sa ligne, apres une ligne vide.
 {% endcomment %}

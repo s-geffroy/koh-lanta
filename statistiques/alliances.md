@@ -7,6 +7,7 @@ permalink: /statistiques/alliances/
 chapeau: >-
   Le programme raconte des alliances à chaque épisode. Rien n’oblige à ce
   qu’elles existent au-delà du récit. Les bulletins permettent de trancher.
+image: /assets/partage/pages/statistiques-alliances.png
 ---
 
 {% assign m = site.data.stats.modeles %}

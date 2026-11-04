@@ -6,6 +6,7 @@ description: "Le profil du vainqueur de Koh-Lanta : un âge plus large qu’on 
 permalink: /statistiques/vainqueurs/
 chapeau: >-
   Ce que les vainqueurs ont en commun : un âge bien plus large qu’on ne le croit, une parité presque parfaite, aucune couleur de tribu gagnante — et un nom que, souvent, personne n’a jamais écrit.
+image: /assets/partage/pages/statistiques-vainqueurs.png
 ---
 
 {% assign s = site.data.stats %}

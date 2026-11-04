@@ -6,6 +6,7 @@ description: "Les épreuves de Koh-Lanta : meilleurs ratios, totaux de carrièr
 permalink: /statistiques/epreuves/
 chapeau: >-
   Les meilleurs ratios, les totaux de carrière, le profil qui domine vraiment — et une nature d’épreuve qui, elle, ne trie personne.
+image: /assets/partage/pages/statistiques-epreuves.png
 ---
 
 {% assign e = site.data.stats.epreuves %}

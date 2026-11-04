@@ -2184,7 +2184,7 @@
   genre: f
   age: 23
   profession: Informaticienne
-  localisation: null
+  localisation: Essonne
   edition_origine: null
   tribu: Chapera
   couleur: jaune
@@ -2201,6 +2201,7 @@
   sort: elimine_conseil
   motif: Éliminée au conseil
   votes_recus: 6
+  classement: 14
   sources:
     genre: fandom
     age: fandom
@@ -2215,6 +2216,8 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    localisation: wikipedia-en (Residence)
+    classement: deduit de l'ordre de sortie
 - id: vicky-szikman
   nom: Vicky
   nom_complet: Vicky Szikman
@@ -2222,7 +2225,7 @@
   genre: f
   age: 26
   profession: Auto-entrepreneur en électroménager
-  localisation: null
+  localisation: Haute-Savoie
   edition_origine: null
   tribu: Chapera
   couleur: jaune
@@ -2251,6 +2254,7 @@
     classement: fandom (page individuelle)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    localisation: wikipedia-en (Residence)
 - id: jean-bernard-de-cools
   nom: Jean-Bernard
   nom_complet: Jean-Bernard De Cools
@@ -2381,7 +2385,7 @@
   genre: f
   age: 57
   profession: Comédienne
-  localisation: null
+  localisation: Hauts-de-Seine
   edition_origine: null
   tribu: Chapera
   couleur: jaune
@@ -2414,6 +2418,7 @@
     classement: fandom (page individuelle)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    localisation: wikipedia-en (Residence)
 - id: catherine-ehret-mader
   nom: Catherine
   nom_complet: Catherine Ehret-Mader
@@ -2515,7 +2520,7 @@
   genre: h
   age: 27
   profession: Étudiant en gestion, serveur en restauration
-  localisation: null
+  localisation: Paris
   edition_origine: null
   tribu: Mogo
   couleur: rouge
@@ -2552,6 +2557,7 @@
     classement: fandom (page individuelle)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    localisation: wikipedia-en (Residence)
 - id: amelie-gregoire
   nom: Amélie
   nom_complet: Amélie Grégoire
@@ -4231,7 +4237,7 @@
   genre: f
   age: 23
   profession: Vendeuse de prêt-à-porter
-  localisation: null
+  localisation: Paris
   edition_origine: null
   tribu: Batang
   couleur: rouge
@@ -4258,6 +4264,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    localisation: wikipedia-en (Residence)
 - id: melanie-guyon
   nom: Mélanie
   nom_complet: Mélanie Guyon
@@ -4265,7 +4272,7 @@
   genre: f
   age: 24
   profession: Coiffeuse
-  localisation: null
+  localisation: Doubs
   edition_origine: null
   tribu: Batang
   couleur: rouge
@@ -4292,6 +4299,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    localisation: wikipedia-en (Residence)
 - id: veronique-lambert
   nom: Véronique
   nom_complet: Véronique Lambert
@@ -4299,7 +4307,7 @@
   genre: f
   age: 50
   profession: Conseillère financière
-  localisation: null
+  localisation: Nord
   edition_origine: null
   tribu: Guntao
   couleur: jaune
@@ -4326,6 +4334,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    localisation: wikipedia-en (Residence)
 - id: chloe-vavasseur
   nom: Chloé
   nom_complet: Chloé Vavasseur
@@ -4372,7 +4381,7 @@
   genre: h
   age: 32
   profession: Entraîneur sportif
-  localisation: null
+  localisation: Gard
   edition_origine: null
   tribu: Guntao
   couleur: jaune
@@ -4407,6 +4416,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    localisation: wikipedia-en (Residence)
 - id: filomene-mendonca
   nom: Filomène
   nom_complet: Filomène Mendonca
@@ -4457,7 +4467,7 @@
   genre: h
   age: 55
   profession: Agent de la SNCF retraité
-  localisation: null
+  localisation: Savoie
   edition_origine: null
   tribu: Guntao
   couleur: jaune
@@ -4488,6 +4498,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    localisation: wikipedia-en (Residence)
 - id: gregoire-delachaux
   nom: Grégoire
   nom_complet: Grégoire Delachaux
@@ -4495,7 +4506,7 @@
   genre: h
   age: 24
   profession: Jardinier
-  localisation: null
+  localisation: Yvelines
   edition_origine: null
   tribu: Guntao
   couleur: jaune
@@ -4527,6 +4538,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    localisation: wikipedia-en (Residence)
     classement: 'table RANGS_CORRIGES : page Fandom « Classement=7/16 » (Palawan)'
 - id: laurent-boudes
   nom: Laurent
@@ -4535,7 +4547,7 @@
   genre: h
   age: 34
   profession: Grossiste en coquillages
-  localisation: null
+  localisation: Hérault
   edition_origine: null
   tribu: Guntao
   couleur: jaune
@@ -4566,6 +4578,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    localisation: wikipedia-en (Residence)
 - id: patrick-brasier-de-thuy
   nom: Patrick
   nom_complet: Patrick Brasier De Thuy
@@ -4573,7 +4586,7 @@
   genre: h
   age: 40
   profession: Chef d'entreprise
-  localisation: null
+  localisation: Nord
   edition_origine: null
   tribu: Batang
   couleur: rouge
@@ -4604,6 +4617,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    localisation: wikipedia-en (Residence)
 - id: simon-quintilla
   nom: Simon
   nom_complet: Simon Quintilla
@@ -4611,7 +4625,7 @@
   genre: h
   age: 26
   profession: Bûcheron
-  localisation: null
+  localisation: Aude
   edition_origine: null
   tribu: Batang
   couleur: rouge
@@ -4642,6 +4656,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    localisation: wikipedia-en (Residence)
 - id: maryline-hemelsdael
   nom: Maryline
   nom_complet: Maryline Hemelsdael
@@ -4649,7 +4664,7 @@
   genre: f
   age: 36
   profession: Agricultrice
-  localisation: null
+  localisation: Nord
   edition_origine: null
   tribu: Batang
   couleur: rouge
@@ -4680,6 +4695,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    localisation: wikipedia-en (Residence)
 - id: kevin-cuoco
   nom: Kevin
   nom_complet: Kevin Cuoco
@@ -4687,7 +4703,7 @@
   genre: h
   age: 21
   profession: Pilote de karting
-  localisation: null
+  localisation: Var
   edition_origine: null
   tribu: Batang
   couleur: rouge
@@ -4719,6 +4735,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    localisation: wikipedia-en (Residence)
     classement: premier par definition (vainqueur)
 - id: jade-handi
   nom: Jade
@@ -5639,7 +5656,7 @@
   genre: f
   age: 26
   profession: Responsable d'un magasin de décoration
-  localisation: null
+  localisation: Doubs
   edition_origine: null
   tribu: Mawaï
   couleur: jaune
@@ -5670,6 +5687,7 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    localisation: wikipedia-en (Residence)
 - id: marine-mocellin
   nom: Marine
   nom_complet: Marine Mocellin
@@ -5677,7 +5695,7 @@
   genre: f
   age: 19
   profession: Peintre en bâtiment
-  localisation: null
+  localisation: Haute-Savoie
   edition_origine: null
   tribu: Koror
   couleur: rouge
@@ -5708,6 +5726,7 @@
     classement: fandom (page individuelle)
     victoires_collectives: fandom (page individuelle)
     victoires_individuelles: fandom (page individuelle)
+    localisation: wikipedia-en (Residence)
 - id: kaouther-ferdjani
   nom: Kaouther
   nom_complet: Kaouther Ferdjani
@@ -6328,6 +6347,7 @@
   sort: abandon_medical
   motif: Abandon médical
   votes_recus: 0
+  classement: 16
   sources:
     age: fandom
     profession: fandom
@@ -6343,6 +6363,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: deduit de l'ordre de sortie
 - id: virginie-mercadal-pioli
   nom: Virginie
   nom_complet: Virginie Mercadal Pioli
@@ -6363,6 +6384,7 @@
   sort: elimine_conseil
   motif: Éliminée au conseil
   votes_recus: 9
+  classement: 15
   sources:
     genre: fandom
     age: fandom
@@ -6378,6 +6400,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: deduit de l'ordre de sortie
 - id: jennifer-lieutaud
   nom: Jennifer
   nom_complet: Jennifer Lieutaud
@@ -6402,6 +6425,7 @@
   sort: abandon_volontaire
   motif: Abandon volontaire
   votes_recus: 0
+  classement: 14
   sources:
     age: fandom
     profession: fandom
@@ -6417,6 +6441,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: deduit de l'ordre de sortie
 - id: jean-pierre-pigato
   nom: Jean-Pierre
   nom_complet: Jean-Pierre Pigato
@@ -6441,6 +6466,7 @@
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 5
+  classement: 13
   sources:
     genre: fandom
     age: fandom
@@ -6456,6 +6482,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: deduit de l'ordre de sortie
 - id: audrey-perez
   nom: Audrey
   nom_complet: Audrey Perez
@@ -6523,6 +6550,7 @@
   sort: elimine_ambassadeurs
   motif: Éliminé aux ambassadeurs
   votes_recus: 0
+  classement: 11
   sources:
     genre: fandom
     age: fandom
@@ -6538,6 +6566,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: deduit de l'ordre de sortie
 - id: valentin-d-hoore
   nom: Valentin
   nom_complet: Valentin D'Hoore
@@ -6562,6 +6591,7 @@
   sort: abandon_medical
   motif: Abandon médical
   votes_recus: 1
+  classement: 10
   sources:
     age: fandom
     profession: fandom
@@ -6577,6 +6607,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: deduit de l'ordre de sortie
 - id: abdellah-akriche
   nom: Abdellah
   nom_complet: Abdellah Akriche
@@ -6791,6 +6822,7 @@
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 6
+  classement: 5
   sources:
     genre: fandom
     age: fandom
@@ -6806,6 +6838,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: deduit de l'ordre de sortie
 - id: veronique-begue
   nom: Véronique
   nom_complet: Véronique Bègue
@@ -6834,6 +6867,7 @@
   sort: elimine_orientation
   motif: Éliminée à l'orientation
   votes_recus: 10
+  classement: 4
   sources:
     genre: fandom
     age: fandom
@@ -6849,6 +6883,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: deduit de l'ordre de sortie
 - id: wafa-el-mejjad
   nom: Wafa
   nom_complet: Wafa El Mejjad
@@ -7205,6 +7240,7 @@
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 4
+  classement: 15
   sources:
     genre: fandom
     age: fandom
@@ -7218,6 +7254,7 @@
     localisation: fandom
     couleur: saisons.yml
     parcours: wiki Survivor (tableau des candidats)
+    classement: deduit de l'ordre de sortie
 - id: delisia-fettasi
   nom: Délisia
   nom_complet: Délisia Fettasi
@@ -7273,6 +7310,7 @@
   sort: elimine_conseil
   motif: Éliminée au conseil
   votes_recus: 4
+  classement: 13
   sources:
     genre: fandom
     age: fandom
@@ -7286,6 +7324,7 @@
     localisation: fandom
     couleur: saisons.yml
     parcours: wiki Survivor (tableau des candidats)
+    classement: deduit de l'ordre de sortie
 - id: maxime-boulet
   nom: Maxime
   nom_complet: Maxime Boulet
@@ -7306,6 +7345,7 @@
   sort: elimine_ambassadeurs
   motif: Éliminé aux ambassadeurs
   votes_recus: 0
+  classement: 12
   victoires_collectives: 6
   victoires_individuelles: 0
   sources:
@@ -7325,6 +7365,7 @@
     victoires_individuelles: fandom (page individuelle)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: deduit de l'ordre de sortie
 - id: anthony-amar
   nom: Anthony
   nom_complet: Anthony Amar
@@ -7349,6 +7390,7 @@
   sort: elimine_conseil
   motif: Éliminé au conseil
   votes_recus: 7
+  classement: 11
   sources:
     genre: fandom
     age: fandom
@@ -7364,6 +7406,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: deduit de l'ordre de sortie
 - id: olivier-moenaert
   nom: Olivier
   nom_complet: Olivier Moenaert
@@ -7433,6 +7476,7 @@
   sort: elimine_conseil
   motif: Éliminée au conseil
   votes_recus: 6
+  classement: 9
   sources:
     genre: fandom
     age: fandom
@@ -7448,6 +7492,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: deduit de l'ordre de sortie
 - id: virginie-jarry
   nom: Virginie
   nom_complet: Virginie Jarry
@@ -7507,6 +7552,7 @@
   sort: elimine_conseil
   motif: Éliminée au conseil
   votes_recus: 16
+  classement: 7
   sources:
     genre: fandom
     age: fandom
@@ -7523,6 +7569,7 @@
     parcours: wiki Survivor (tableau des candidats)
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
+    classement: deduit de l'ordre de sortie
 - id: alexandra-pouillon
   nom: Alexandra
   nom_complet: Alexandra Pouillon
@@ -22367,7 +22414,7 @@
   saison: sp2
   genre: f
   age: 37
-  profession: Record de France de triple saut (1997-2007)
+  profession: Ancienne athlète
   localisation: Martinique
   edition_origine: null
   tribu: Malabou
@@ -22387,7 +22434,7 @@
   sources:
     genre: fandom
     age: fandom
-    profession: fandom
+    profession: 'fandom (page individuelle) : la table donne un palmares'
     tribu: fandom
     jour_sortie: fandom
     sort: fandom
@@ -22406,7 +22453,7 @@
   saison: sp2
   genre: h
   age: 42
-  profession: Champion du monde de football (1998)
+  profession: Ancien footballeur professionnel
   localisation: Bouches-du-Rhône
   edition_origine: null
   tribu: Malabou
@@ -22426,7 +22473,7 @@
   sources:
     genre: fandom
     age: fandom
-    profession: fandom
+    profession: 'fandom (page individuelle) : la table donne un palmares'
     tribu: fandom
     jour_sortie: fandom
     sort: fandom
@@ -22481,7 +22528,7 @@
   saison: sp2
   genre: h
   age: 37
-  profession: Champion olympique de danse sur glace (2002)
+  profession: Ancien danseur de glace
   localisation: Rhône
   edition_origine: null
   tribu: Malabou
@@ -22501,7 +22548,7 @@
   sources:
     genre: fandom
     age: fandom
-    profession: fandom
+    profession: 'fandom (page individuelle) : la table donne un palmares'
     tribu: fandom
     jour_sortie: fandom
     sort: fandom
@@ -22520,7 +22567,7 @@
   saison: sp2
   genre: h
   age: 38
-  profession: Champion olympique de judo (1996)
+  profession: Ancien judoka
   localisation: Rhône
   edition_origine: null
   tribu: Malabou
@@ -22544,7 +22591,7 @@
   sources:
     genre: fandom
     age: fandom
-    profession: fandom
+    profession: 'fandom (page individuelle) : la table donne un palmares'
     tribu: fandom
     jour_sortie: fandom
     sort: fandom
@@ -22605,7 +22652,7 @@
   saison: sp2
   genre: f
   age: 34
-  profession: Vice-championne olympique de judo (2004)
+  profession: Ancienne judokate
   localisation: Seine-Saint-Denis
   edition_origine: null
   tribu: Malabou
@@ -22629,7 +22676,7 @@
   sources:
     genre: fandom
     age: fandom
-    profession: fandom
+    profession: 'fandom (page individuelle) : la table donne un palmares'
     tribu: fandom
     jour_sortie: fandom
     sort: fandom
@@ -22648,7 +22695,7 @@
   saison: sp2
   genre: h
   age: 34
-  profession: Champion du monde de roller en ligne (2000-2001)
+  profession: Ancien patineur
   localisation: Paris
   edition_origine: null
   tribu: Malabou
@@ -22672,7 +22719,7 @@
   sources:
     genre: fandom
     age: fandom
-    profession: fandom
+    profession: 'fandom (page individuelle) : la table donne un palmares'
     tribu: fandom
     jour_sortie: fandom
     sort: fandom
@@ -22691,7 +22738,7 @@
   saison: sp2
   genre: f
   age: 35
-  profession: Championne du monde de boxe (2004-2006)
+  profession: Ancienne boxeuse
   localisation: Saint-Denis
   edition_origine: null
   tribu: Malabou
@@ -22715,7 +22762,7 @@
   sources:
     genre: fandom
     age: fandom
-    profession: fandom
+    profession: 'fandom (page individuelle) : la table donne un palmares'
     tribu: fandom
     jour_sortie: fandom
     sort: fandom
@@ -22913,7 +22960,7 @@
   genre: h
   age: 27
   profession: Jardinier
-  localisation: null
+  localisation: Yvelines
   edition_origine: Palawan
   tribu: Tiac
   couleur: jaune
@@ -22946,6 +22993,7 @@
     parcours_jours: 'deduits, seulement quand ils sont surs : jour 1 par la page individuelle, reunification
       et echange lus chez les autres aventuriers dates de la saison, jour de sortie'
     classement: premier par definition (vainqueur)
+    localisation: reprise de sa participation de 2007
     profession: reprise de sa participation de 2007
 - id: fabienne-lefebvre-trehoux
   nom: Fabienne
@@ -23083,6 +23131,7 @@
   sort: elimine_conseil
   motif: Éliminée au conseil
   votes_recus: 5
+  classement: 13
   sources:
     genre: wikipedia-fr
     age: fandom
@@ -23096,6 +23145,7 @@
     motif: fandom
     nom_complet: fandom
     votes_recus: fandom
+    classement: deduit de l'ordre de sortie
 - id: patricia-morel
   nom: Patricia
   nom_complet: Patricia Morel
@@ -23116,6 +23166,7 @@
   sort: elimine_ambassadeurs
   motif: Éliminer par les ambassadeurs
   votes_recus: 1
+  classement: 12
   sources:
     genre: wikipedia-fr
     age: fandom
@@ -23131,6 +23182,7 @@
     votes_recus: fandom
     parcours_jours: 'corrige : battue en duel a la reunion des ambassadeurs (wiki Survivor), sortie a
       l''episode 4 selon le tableau des votes de Wikipedia lui-meme'
+    classement: deduit de l'ordre de sortie
 - id: francis-bordas
   nom: Francis
   nom_complet: Francis Bordas
@@ -23655,6 +23707,7 @@
   sort: abandon_medical
   motif: Abandon médical
   votes_recus: 7
+  classement: 12
   sources:
     age: fandom
     profession: fandom
@@ -23668,6 +23721,7 @@
     genre: recoupement sur le prenom
     localisation: fandom (page individuelle)
     parcours: wiki Survivor (tableau des candidats)
+    classement: deduit de l'ordre de sortie
 - id: laurence-pizzocchia
   nom: Laurence
   nom_complet: Laurence Pizzocchia

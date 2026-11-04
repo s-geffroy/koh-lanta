@@ -7,25 +7,26 @@ version: "Version longue"
 chapeau: "Le cadre théorique, les tests et leurs limites : ce qui tient, ce qui cède, et pourquoi l’ordinaire se prédit mieux que l’exceptionnel."
 description: "Version longue : un cadre mécaniste confronté à tous les votes du jeu. Les alliances et l’appartenance tiennent ; la compétence comme menace, non."
 date: 2026-10-20
-last_modified_at: 2026-11-03
+last_modified_at: 2026-11-04
 author: Sylvain Geffroy
 permalink: /articles/amplificateur-institutionnel/
 math: true
 autre_version: /articles/koh-lanta-une-loupe/
 autre_version_titre: "Lire la version courte →"
+image: /assets/partage/pages/articles-amplificateur-institutionnel.png
 ---
 {%- comment -%}
-  Les chiffres viennent de stats.articles (tools/articles.py) : ils suivent
+  Les chiffres viennent de stats.articles (tools/articles.py) : ils suivent
   les donnees. Les conclusions ecrites ici sont inscrites dans AFFIRMATIONS,
   et verifie_site.py refuse la page le jour ou les donnees ne les disent plus.
-  Les seuls nombres ecrits en dur sont ceux de la version precedente : ils
+  Les seuls nombres ecrits en dur sont ceux de la version precedente : ils
   appartiennent a son histoire, pas aux donnees.
 {%- endcomment -%}
 {%- assign a = site.data.stats.articles -%}
 
 Cet article étudie *Koh-Lanta* non comme une miniature de « la vraie vie », mais comme un **dispositif institutionnel et médiatique qui repondère des mécanismes sociaux et stratégiques documentés ailleurs** : compétition relative, coalition, pouvoir-dépendance, réputation, identité de groupe, conformité. Nous écrivons symboliquement l'état du jeu $$S_{KL}=T_{KL}(G_{ref})$$, où $$T_{KL}$$ est la transformation institutionnelle d'un référentiel trans-domaines, et nous le séparons de sa représentation diffusée, $$O_{diffusé}=M_{prod}(S_{KL},A,C)$$ ([Corner, 2002](#ref-corner2002) ; [Couldry, 2004](#ref-couldry2004) ; [Andrejevic, 2004](#ref-andrejevic2004)).
 
-La version précédente de ce texte reposait sur neuf conseils pilotes et un seul cas prospectif. Celle-ci confronte le cadre à une base exhaustive : **{{ a.saisons }} saisons, {{ a.aventuriers }} aventuriers, {{ a.conseils }} conseils d'élimination de saisons terminées, dont {{ a.conseils_complets }} au bulletin près, et {{ a.bulletins }} bulletins**, reconstruits depuis Wikipédia et le wiki Fandom et publiés avec leurs sources. Les hypothèses y sont lues dans un registre de **{{ a.nb_tests }} tests de permutation**, conçus indépendamment de cet article, dont {{ a.nb_retenus }} sont retenus après la correction de Benjamini-Hochberg.
+La version précédente de ce texte reposait sur neuf conseils pilotes et un seul cas prospectif. Celle-ci confronte le cadre à une base exhaustive : **{{ a.saisons }} saisons, {{ a.aventuriers }} aventuriers, {{ a.conseils }} conseils d'élimination de saisons terminées, dont {{ a.conseils_complets }} au bulletin près, et {{ a.bulletins }} bulletins**, reconstruits depuis Wikipédia et le wiki Fandom et publiés avec leurs sources. Les hypothèses y sont lues dans un registre de **{{ a.nb_tests }} tests**, de permutation pour la plupart, conçus indépendamment de cet article, dont {{ a.nb_retenus }} sont retenus après la correction de Benjamini-Hochberg.
 
 Trois résultats réorganisent la thèse. (1) Les mécanismes **relationnels** — isolement, persistance des coalitions, ciblage répété, appartenance d'origine — sont nettement plus marqués que ne le produirait le hasard. (2) L'exemple le plus cité de la version précédente, **la compétence qui devient une menace après la réunification, n'est pas observé** : l'éliminé n'est pas plus fort aux épreuves après la réunification qu'avant (écart de {{ a.tests.fusion_force.observe }} points de rang, p ajustée {{ a.tests.fusion_force.p }}). (3) La version précédente donnait 42,9 % à l'issue ordinaire d'un conseil, l'élimination sans égalité ni renversement par un objet ; c'est en réalité l'issue de **{{ a.issues.ordinaire }} %** des conseils. Une prédiction qui ignore cette fréquence peut tomber juste une fois et rester mal calibrée.
 
@@ -164,7 +165,7 @@ Le site estime une [force aux épreuves]({{ '/statistiques/force/' | relative_ur
 
 </div>
 
-L'éliminé est au rang {{ a.force.rang_avant }} avant la réunification ({{ a.force.conseils_avant }} conseils mesurables) et {{ a.force.rang_apres }} après ({{ a.force.conseils_apres }} conseils). L'écart ne dépasse pas ce que le hasard produit. Les ambassadeurs, qui décident seuls, ne choisissent pas autrement qu'un tirage.
+L'éliminé est au rang {{ a.force.rang_avant }} avant la réunification ({{ a.force.conseils_avant }} conseils mesurables) et {{ a.force.rang_apres }} après ({{ a.force.conseils_apres }} conseils). L'écart ne dépasse pas ce que le hasard produit. Rien ne montre que les ambassadeurs, qui décident seuls, choisissent autrement qu'un tirage ; l'écart, faible, va dans le sens d'un choix des forts, et l'échantillon ne permet pas de l'exclure.
 
 L'hypothèse 2.1 n'est donc pas confirmée **sous cette mesure**. Trois réserves bornent la conclusion. La force aux épreuves n'est qu'une compétence parmi d'autres : la compétence stratégique ou sociale n'est pas mesurée. Le test est peu puissant avant la réunification ({{ a.force.conseils_avant }} conseils). Enfin, une menace perçue peut être neutralisée par l'immunité, que le plus fort gagne plus souvent : un effet de ciblage pourrait exister et ne pas aboutir. Mais le résultat interdit d'écrire, comme le faisait la version précédente, que « la compétence devient une menace » sans qualification.
 
@@ -199,7 +200,7 @@ Le tableau 2 rassemble les tests du registre qui touchent un mécanisme du cadre
 
 Quatre lectures s'en dégagent.
 
-**La dépendance a un coût mesurable.** Se retrouver sans aucun des aventuriers avec qui l'on a déjà voté augmente de {{ a.tests.vote_isole.valeur }} points la probabilité de sortir, quand le hasard en donnerait {{ a.tests.vote_isole.attendu }}. C'est la conséquence la plus directe de l'hypothèse 2.3 : dans une arène fermée, le lien local est une ressource, et son absence une exposition.
+**L'isolement va de pair avec le risque.** Se retrouver sans aucun des aventuriers avec qui l'on a déjà voté va de pair avec {{ a.tests.vote_isole.valeur }} points de probabilité de sortir en plus, quand le hasard en donnerait {{ a.tests.vote_isole.attendu }}. C'est compatible avec l'hypothèse 2.3 — dans une arène fermée, le lien local est une ressource, et son absence une exposition —, mais pas spécifique : l'arène est fermée dans toutes les saisons, et aucun test ne peut rattacher l'écart à cette fermeture plutôt qu'à autre chose. L'écart ne dit pas non plus le sens de la causalité : on peut être isolé parce qu'on est déjà visé.
 
 **Les coalitions persistent et protègent.** Deux aventuriers qui ont voté ensemble revotent ensemble bien plus souvent que deux qui se sont séparés ({{ a.tests.persistance_alliances.observe }} points), et l'on écrit moins souvent le nom d'un ancien co-votant que le hasard ne le voudrait ({{ a.tests.trahison.observe }} % contre {{ a.tests.trahison.attendu }} %). La « trahison » existe, mais moins qu'une indifférence aux alliances ne le produirait.
 
@@ -215,7 +216,7 @@ Le dispositif **se présente** comme changeant de régime à la réunification (
 
 L'âge, lui, ne permet pas de conclure. Avant la réunification, l'éliminé a en moyenne {{ a.age.avant }} de plus que la moyenne de son camp ce soir-là ; après, {{ a.age.apres }} de moins. La bascule, {{ a.age.bascule }} sur {{ a.age.conseils }} conseils, va dans le même sens, mais ne passe pas le seuil (p ajustée {{ a.tests.age_bascule_fusion.p }}). Une première rédaction de cette version la donnait retenue de justesse, en prévenant qu'une saison mal relevée suffirait à la faire repasser dessous. C'est ce qui est arrivé le 21 octobre 2026 : trente sorties par épreuve éliminatoire, jusque-là comptées comme des conseils sans bulletin, ont été rendues à leur nature.
 
-L'auto-description et le comportement coïncident sur ce point, même si les règles elles-mêmes — camp plus nombreux, colliers individuels — expliquent sans doute une part de l'écart : le modèle nul ne permute que les étiquettes « avant » et « après ». Les ambassadeurs, eux, ne partent pas ensuite plus tôt que ne le voudrait le hasard (rang {{ a.tests.ambassadeurs_survie.observe }} contre {{ a.tests.ambassadeurs_survie.attendu }}, p ajustée {{ a.tests.ambassadeurs_survie.p }}). Ce résultat a franchi le seuil quatre fois au fil des corrections des 21 et 22 octobre 2026 ; le 23, une relecture a montré que le dernier « retenu » tenait à la graine du tirage, et que le modèle nul ignorait la règle du jeu — un ambassadeur parti au tirage sort le soir même. Corrigé, et restreint aux saisons classiques, il ne l'est plus.
+L'auto-description et le comportement coïncident sur ce point, même si les règles elles-mêmes — immunités individuelles, fin des blocs de tribu — expliquent sans doute une part de l'écart : le modèle nul ne permute que les étiquettes « avant » et « après », et ne sépare pas les règles des comportements. Rien ne montre, enfin, que les ambassadeurs partent ensuite plus tôt que ne le voudrait le hasard ; l'écart va dans ce sens, et l'échantillon ne permet pas de l'exclure (rang {{ a.tests.ambassadeurs_survie.observe }} contre {{ a.tests.ambassadeurs_survie.attendu }}, p ajustée {{ a.tests.ambassadeurs_survie.p }}). Ce résultat a franchi le seuil quatre fois au fil des corrections des 21 et 22 octobre 2026 ; le 23, une relecture a montré que le dernier « retenu » tenait à la graine du tirage, et que le modèle nul ignorait la règle du jeu — un ambassadeur parti au tirage sort le soir même. Corrigé, et restreint aux saisons classiques, il ne l'est plus.
 
 ### 6.4. L'ordinaire d'abord : la fréquence des issues d'un conseil
 
@@ -236,7 +237,7 @@ La version précédente avait verrouillé, avant un conseil, une distribution de
 
 Ces fréquences sont la seule mesure de cet article qui ne figure pas ailleurs sur le site. L'issue « ordinaire » est la catégorie par défaut : elle compte aussi les conseils où un objet a été joué sans rien renverser, et ceux dont le dépouillement est incomplet. L'unité est le **conseil décisif** — celui dont sort un éliminé rattaché. Il est classé « égalité puis second vote » si le conseil qui le précède immédiatement, le même soir, est un tour nul, ou si la [boule noire]({{ '/statistiques/conseils/' | relative_url }}) l'a tranché — elle ne se tire qu'après un second vote resté à égalité ; « renversement » si un objet d'immunité a annulé des voix et que, sans lui, le protégé en aurait reçu plus que l'éliminé ; « égalité tranchée » si le conseil décisif lui-même finit à égalité en tête. Les conseils décisifs dont la source ne donne aucun bulletin — {{ a.issues.sans_bulletin }} — ne sont pas classés.
 
-L'issue la plus probable de la distribution verrouillée était la bonne : le conseil visé par la prédiction s'est achevé par une élimination ordinaire. Mais la distribution sous-estimait nettement l'issue la plus fréquente, et surestimait d'autant les trois autres. Un verrou prospectif protège contre la réécriture après coup ; il ne protège pas contre une distribution mal ancrée. **Avant de prédire une issue, il faut connaître sa fréquence de base** : c'est le premier concurrent qu'une prédiction doit battre, et celle de la version précédente ne le battait pas.
+L'issue la plus probable de la distribution verrouillée était la bonne : le conseil visé par la prédiction s'est achevé par une élimination ordinaire. Mais la distribution sous-estimait nettement l'issue la plus fréquente, et surestimait d'autant les trois autres. Un verrou prospectif protège contre la réécriture après coup ; il ne protège pas contre une distribution mal ancrée. **Avant de prédire une issue, il faut connaître sa fréquence de base** : c'est le premier concurrent qu'une prédiction doit battre, et celle de la version précédente ne le battait pas. Cette fréquence dépend elle-même des règles : sur les saisons diffusées depuis {{ a.issues.annee_recente }} ({{ a.issues.conseils_recents }} conseils), où les objets d'immunité se multiplient, l'élimination ordinaire tombe à {{ a.issues.ordinaire_recent }} %. Une prédiction s'ancre sur la fréquence de son époque.
 
 ### 6.5. La prévision individuelle
 
@@ -248,12 +249,12 @@ La version précédente s'abstenait de désigner l'éliminé. Le site publie un 
 
 | Chaîne | Version précédente | Cette version |
 |---|---|---|
-| Faible exit → dépendance → valeur des coalitions | hypothèse | **conséquences observées** : coût de l'isolement, persistance et protection des coalitions (6.2) |
+| Faible exit → dépendance → valeur des coalitions | hypothèse | **observations compatibles, non spécifiques** : exposition de l'isolé, persistance et protection des coalitions ; l'exit est fermé dans toutes les saisons (6.2) |
 | Réputation → menace perçue → ciblage | hypothèse | **forme réduite observée** : ciblage persistant ; maillons intermédiaires non mesurés (6.2) |
 | Compétence → menace en phase individuelle | présentée comme mécanisme central | **non observée** à la mesure de la force aux épreuves (6.1) |
 | Catégorisation → identité de groupe | hypothèse | **appartenance d'origine observée, inversée pour le sexe ; enchaînement par camp non établi** (6.2) |
 | Conformité / cascade | distinction conceptuelle | **conséquence commune non établie : l'écart ne tient qu'aux éditions spéciales** (6.2) |
-| Réunification → changement de régime | auto-description | **auto-description confirmée par les votes** (6.3) |
+| Réunification → changement de régime | auto-description | **auto-description confirmée par les votes**, sans séparer règles et comportements (6.3) |
 | Rareté → stress → simplification | hypothèse | **non testée** |
 
 </div>
@@ -262,7 +263,7 @@ Une séquence de conseil, aussi parlante soit-elle, reste une illustration et no
 
 ## 8. Ce que le dispositif retire
 
-Exit et mobilité, contrats et tiers garant, assurance, création de valeur à somme positive, innovation institutionnelle ([Hirschman, 1970](#ref-hirschman1970) ; [Ostrom, 1990](#ref-ostrom1990)) restent absents. Les résultats de 6.2 leur donnent une portée concrète : en l'absence de contrat, la seule garantie d'une alliance est sa persistance, et celle-ci est mesurable ; en l'absence d'exit, la perte du dernier allié est l'une des situations les plus exposées du jeu.
+Exit et mobilité, contrats et tiers garant, assurance, création de valeur à somme positive, innovation institutionnelle ([Hirschman, 1970](#ref-hirschman1970) ; [Ostrom, 1990](#ref-ostrom1990)) restent absents. Les résultats de 6.2 sont compatibles avec ce que leur absence laisserait attendre, sans pouvoir la désigner, puisqu'elle est la même dans toutes les saisons : en l'absence de contrat, la seule garantie d'une alliance est sa persistance, et celle-ci est mesurable ; en l'absence d'exit, la perte du dernier allié est l'une des situations les plus exposées du jeu.
 
 ## 9. Transportabilité
 
@@ -289,23 +290,24 @@ Le pouvoir-dépendance est transportable comme structure. La « compétence co
 
 La version précédente avait resserré la thèse sous l'effet de la critique. Celle-ci la resserre sous l'effet des données, et dans une direction différente.
 
-Les mécanismes qui se lisent le mieux dans les votes ne sont pas ceux qui structurent le récit habituel de l'émission. Le récit privilégie la compétence menaçante, le stratège démasqué, le retournement. Les votes privilégient l'appartenance d'origine, la persistance des alliances et le coût de l'isolement : des mécanismes lents, peu spectaculaires, qui relèvent de la dépendance et de l'identité plutôt que du calcul. C'est une hypothèse sur $$M_{prod}$$ plus qu'un résultat : le montage n'a pas été mesuré ici, et ce que le récit « met en avant » reste une lecture. Elle mériterait d'être testée.
+Les mécanismes qui se lisent le mieux dans les votes ne sont pas ceux qui structurent le récit habituel de l'émission. Le récit privilégie la compétence menaçante, le stratège démasqué, le retournement. Les votes privilégient l'appartenance d'origine, la persistance des alliances et l'exposition de l'isolé : des mécanismes lents, peu spectaculaires, qui relèvent de la dépendance et de l'identité plutôt que du calcul. C'est une hypothèse sur $$M_{prod}$$ plus qu'un résultat : le montage n'a pas été mesuré ici, et ce que le récit « met en avant » reste une lecture. Elle mériterait d'être testée.
 
 Nous soutenons donc que :
 1. plusieurs phénomènes visibles se décrivent par des mécanismes étudiés indépendamment ;
-2. les règles du jeu changent leurs conditions de pertinence, et la réunification en est la démonstration la plus nette ;
-3. les mécanismes relationnels l'emportent, dans les votes, sur la compétence ;
-4. l'objet diffusé est médiatisé et performé, et sa mise en récit ne coïncide pas avec ce que révèlent les votes.
+2. les règles du jeu changent leurs conditions de pertinence, et la réunification en est l'illustration la plus nette, sans qu'on puisse y séparer les règles des comportements ;
+3. les mécanismes relationnels l'emportent, dans les votes, sur la compétence.
+
+Et nous faisons l'hypothèse que l'objet diffusé, médiatisé et performé, a une mise en récit qui ne coïncide pas avec ce que révèlent les votes.
 
 ## 12. Conclusion
 
-*Koh-Lanta* peut servir de **cas limite institutionnel** pour étudier comment une architecture fermée repondère des mécanismes sociaux ordinaires. Confronté à tous ses votes, le cadre tient sur la dépendance, la coalition et l'identité de groupe ; il cède sur la compétence comme menace ; et toute prévision doit d'abord se mesurer à la fréquence de l'ordinaire.
+*Koh-Lanta* peut servir de **cas limite institutionnel** pour étudier comment une architecture fermée repondère des mécanismes sociaux ordinaires. Confronté à tous ses votes, le cadre est compatible avec la dépendance, la coalition et l'appartenance d'origine, sans pouvoir les isoler ; il cède sur la compétence comme menace ; et toute prévision doit d'abord se mesurer à la fréquence de l'ordinaire.
 
 La prochaine étape n'est plus de constituer une base — elle existe — mais de **verrouiller des prédictions en série**, ancrées sur les fréquences de base, et de mesurer la compétence autrement qu'aux épreuves.
 
 > **Koh-Lanta n'est pas un modèle de la vraie vie ; il rend certaines dépendances institutionnelles lisibles dans les votes.**
 
-*Mis à jour le 23 octobre 2026 : le modèle nul de la réunification tire désormais l'éliminé parmi les votants du soir ; l'enchaînement des sorties par camp et la sortie précoce des ambassadeurs ne passent plus la correction ; la famille corrigée compte les coefficients de régression ; La Légende, saison sans vainqueur, n'entre plus dans les calculs du jury final. Le 3 novembre 2026, le coût d'un vote avec la minorité a cessé d'être retenu : il ne tient qu'aux éditions spéciales.*
+*Mis à jour le 23 octobre 2026 : le modèle nul de la réunification tire désormais l'éliminé parmi les votants du soir ; l'enchaînement des sorties par camp et la sortie précoce des ambassadeurs ne passent plus la correction ; la famille corrigée compte les coefficients de régression ; La Légende, saison sans vainqueur, n'entre plus dans les calculs du jury final. Le 3 novembre 2026, le coût d'un vote avec la minorité a cessé d'être retenu : il ne tient qu'aux éditions spéciales. Le 4 novembre 2026, les verbes de l'isolement et des ambassadeurs ont été ramenés à ce que les tests établissent, la fréquence de base est donnée aussi pour les saisons récentes, et le montage passe des thèses aux hypothèses.*
 
 ## Données
 

@@ -9,6 +9,7 @@ chapeau: >-
   La réunification coupe la saison en deux jeux. On dit qu’avant on élimine le
   faible et qu’après on élimine le fort. Les bulletins ne montrent ni l’un ni
   l’autre.
+image: /assets/partage/pages/statistiques-reunification.png
 ---
 
 {% assign m = site.data.stats.modeles %}
@@ -178,7 +179,7 @@ l’éliminé de chaque conseil est pris au hasard parmi ceux qui pouvaient l’
   {{ tag.ecart_types_mot }}, p brute {{ tag.p }}, p ajustée {{ tag.p_ajustee }}.
   <b>Non concluant.</b></p>
   <p>C’est le sens de la bascule de la force. Sur {{ ag.conseils }} conseils,
-  l’écart ne passe pas le seuil, de peu : un tirage au hasard parmi les
+  l’écart ne passe pas le seuil : un tirage au hasard parmi les
   présents le produit encore trop souvent pour qu’on l’affirme.</p>
 </div>
 

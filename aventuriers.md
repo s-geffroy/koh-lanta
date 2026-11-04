@@ -6,6 +6,7 @@ permalink: /aventuriers/
 chapeau: >-
   Toutes les participations relevées, saison par saison. Le tableau se
   cherche, se filtre et se trie.
+image: /assets/partage/pages/aventuriers.png
 ---
 
 {% assign g = site.data.stats.general %}

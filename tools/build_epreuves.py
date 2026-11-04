@@ -133,6 +133,59 @@ def fiches_des_epreuves(nommees, saisons, fiches):
     return out
 
 
+def fiche_des_poteaux(finale, saisons, fiches):
+    """La page « Poteaux », tiree du releve de la finale et non du wiki.
+
+    Le wiki nomme l'epreuve sans jamais la dater : elle n'a aucune apparition
+    dans epreuves_nommees.yml, alors que c'est la plus connue de toutes (revue
+    du 3 nov. 2026). `_data/finale.yml` sait, saison par saison, qui l'a
+    gagnee : la page se fabrique de la, au meme gabarit que les autres.
+    """
+    par_id = {s["id"]: s for s in saisons}
+    noms = fiches.get("aventuriers") or {}
+    lignes = [l for l in (finale.get("lignes") or [])
+              if (l.get("poteaux") or {}).get("vainqueur")]
+    if len(lignes) < SEUIL_APPARITIONS:
+        return None
+    par_personne = collections.defaultdict(list)
+    for l in lignes:
+        par_personne[l["poteaux"]["vainqueur"]].append(l["saison"])
+    palmares = sorted(
+        ({"id": pid, "nom": noms[pid]["nom"], "victoires": len(sids),
+          "saisons": [{"id": s, "titre": par_id[s]["titre"], "annee": par_id[s]["annee"]}
+                      for s in sorted(sids, key=lambda s: par_id[s]["annee"])]}
+         for pid, sids in par_personne.items() if pid in noms),
+        key=lambda x: (-x["victoires"], x["nom"]))
+    editions = sorted(({"id": l["saison"], "titre": par_id[l["saison"]]["titre"],
+                        "annee": par_id[l["saison"]]["annee"],
+                        "speciale": bool(par_id[l["saison"]].get("speciale"))}
+                       for l in lignes), key=lambda x: (x["annee"], x["id"]))
+    annees = [x["annee"] for x in editions]
+    return {
+        "mot": "victoire", "mot_pluriel": "victoires",
+        "note_palmares": ("Relevé de la finale, saison par saison, et non du "
+                          "palmarès du wiki : une seule épreuve de poteaux par "
+                          "saison au format, celle qui désigne le premier finaliste."),
+        "id": "poteaux", "nom": "Poteaux", "type": "Statique",
+        "natures": ["statique"],
+        "apparitions": len(lignes), "editions": editions,
+        "premiere_annee": min(annees), "derniere_annee": max(annees),
+        "palmares": palmares, "vainqueurs_nommes": len(lignes),
+        "record": palmares[0] if palmares else None,
+        "source": "finale",
+    }
+
+
+def poser_ex_aequo(ep):
+    """Combien partagent le record. Quand chacun n'a gagne qu'une fois, ou que
+    deux sont a egalite en tete, nommer « le » detenteur designait le premier
+    par ordre alphabetique (revue du 3 nov. 2026)."""
+    for e in ep.values():
+        pal = e.get("palmares") or []
+        haut = pal[0]["victoires"] if pal else 0
+        e["ex_aequo"] = sum(1 for p in pal if p["victoires"] == haut)
+
+
 def titre_seo(e):
     # L'echelle de repli descend jusqu'au nom nu : « Parcours du combattant »
     # fait deja 22 caracteres, et le suffixe du site en prend 24. Un nom seul
@@ -156,7 +209,10 @@ def description_seo(e):
         compte(len(e["editions"]), "édition", "éditions"),
     ]
     r = e.get("record")
-    if r and r["victoires"] > 1:
+    if r and r["victoires"] > 1 and e.get("ex_aequo", 1) > 1:
+        chute = (f"Record partagé : {e['ex_aequo']} aventuriers à "
+                 f"{compte(r['victoires'], e['mot'], e['mot_pluriel'])}.")
+    elif r and r["victoires"] > 1:
         chute = f"Record : {r['nom']}, {compte(r['victoires'], e['mot'], e['mot_pluriel'])}."
     elif r:
         chute = "Qui l'a gagnée, et dans quelles éditions."
@@ -177,6 +233,10 @@ def main():
     fiches = charger("fiches")
 
     ep = fiches_des_epreuves(nommees, saisons, fiches)
+    poteaux = fiche_des_poteaux(charger("finale"), saisons, fiches)
+    if poteaux:
+        ep["poteaux"] = poteaux
+    poser_ex_aequo(ep)
     total = len(nommees.get("epreuves") or [])
     print(f"epreuves nommees : {total}   retenues : {len(ep)} "
           f"(seuil : {SEUIL_APPARITIONS} apparitions et "

@@ -1,8 +1,8 @@
 <figure class="figure">
 <figcaption class="figure-titre" aria-hidden="true">Ce que la réunification change</figcaption>
-<svg class="graphique surbrillance barres-ce-que-la-reunification-change" viewBox="0 0 680 348" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Ce que la réunification change">
+<svg class="graphique surbrillance barres-ce-que-la-reunification-change" viewBox="0 0 680 348" role="img" aria-describedby="desc-fusion-avant-apres" preserveAspectRatio="xMidYMid meet" aria-label="Ce que la réunification change">
   <title>Ce que la réunification change</title>
-  <desc>Cinq mesures du conseil, avant et après la réunification. Le rang de force va de 0, le plus faible du camp, à 100, le plus fort.</desc>
+  <desc id="desc-fusion-avant-apres">Cinq mesures du conseil, avant et après la réunification. Le rang de force va de 0, le plus faible du camp, à 100, le plus fort.</desc>
   <style>.barres-ce-que-la-reunification-change .s{transition:opacity .12s ease}.barres-ce-que-la-reunification-change:has(.marque:not(.repere):hover) .s{opacity:.15}.barres-ce-que-la-reunification-change:has(.marque.s0:hover) .s.s0{opacity:1}.barres-ce-que-la-reunification-change:has(.marque.s1:hover) .s.s1{opacity:1}</style>
   <line x1="326.0" y1="36" x2="326.0" y2="324" stroke="var(--grille)" stroke-width="1"/>
   <line x1="422.0" y1="36" x2="422.0" y2="324" stroke="var(--grille)" stroke-width="1"/>

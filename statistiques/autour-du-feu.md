@@ -7,6 +7,7 @@ permalink: /statistiques/autour-du-feu/
 chapeau: >-
   On ne part pas au hasard, mais on ne part pas non plus pour ce qu’on croit.
   Six positions dans le camp, et une règle du jeu qui sert de contrôle.
+image: /assets/partage/pages/statistiques-autour-du-feu.png
 ---
 
 {% assign m = site.data.stats.modeles %}
@@ -76,7 +77,9 @@ zéro : c’est lui qui a trouvé le défaut.</p>
 <p class="legende-figure">Probabilité d’être éliminé selon sa position parmi les
 présents, comparée au tirage au sort. <strong>Chaque catégorie a son propre
 hasard</strong> : on est plus souvent le doyen d’un camp de six que d’un camp de
-douze.</p>
+douze. Les intervalles comptent chaque présence comme une observation
+indépendante ; un même aventurier se retrouve pourtant à plusieurs conseils, et
+ils sont donc un peu trop étroits.</p>
 
 <div class="tableau-large">
 <table data-triable><caption class="hors-ecran">Sachant la place qu’on occupe</caption>

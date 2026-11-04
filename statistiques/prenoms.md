@@ -7,6 +7,7 @@ permalink: /statistiques/prenoms/
 chapeau: >-
   Alexandra revient sept fois à Koh-Lanta. Est-ce beaucoup ? La question n’a
   de réponse qu’en la comparant à la France qui est née les mêmes années.
+image: /assets/partage/pages/statistiques-prenoms.png
 ---
 
 {% assign p = site.data.prenoms %}

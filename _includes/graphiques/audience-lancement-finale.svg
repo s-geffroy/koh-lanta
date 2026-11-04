@@ -1,8 +1,8 @@
 <figure class="figure">
 <figcaption class="figure-titre" aria-hidden="true">Le lancement et la finale, saison par saison</figcaption>
-<svg class="graphique surbrillance courbes-le-lancement-et-la-finale-saison-par-saison" viewBox="0 0 880 350" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Le lancement et la finale, saison par saison">
+<svg class="graphique surbrillance courbes-le-lancement-et-la-finale-saison-par-saison" viewBox="0 0 880 350" role="img" aria-describedby="desc-audience-lancement-finale" preserveAspectRatio="xMidYMid meet" aria-label="Le lancement et la finale, saison par saison">
   <title>Le lancement et la finale, saison par saison</title>
-  <desc>Audience du premier et du dernier épisode de chaque saison, en millions de téléspectateurs. Sous l’axe, le jour de diffusion (Ma mardi, Ve vendredi, Sa samedi) puis une réglette où le segment marque les mois de diffusion.</desc>
+  <desc id="desc-audience-lancement-finale">Audience du premier et du dernier épisode de chaque saison, en millions de téléspectateurs. Sous l’axe, le jour de diffusion (Ma mardi, Ve vendredi, Sa samedi) puis une réglette où le segment marque les mois de diffusion.</desc>
   <style>.courbes-le-lancement-et-la-finale-saison-par-saison .s{transition:opacity .12s ease}.courbes-le-lancement-et-la-finale-saison-par-saison:has(.marque:not(.repere):hover) .s{opacity:.15}.courbes-le-lancement-et-la-finale-saison-par-saison:has(.marque.s0:hover) .s.s0{opacity:1}.courbes-le-lancement-et-la-finale-saison-par-saison:has(.marque.s1:hover) .s.s1{opacity:1}</style>
   <line x1="46" y1="242.0" x2="864" y2="242.0" stroke="var(--grille)" stroke-width="1"/>
   <text x="38.0" y="242.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">0</text>

@@ -6,6 +6,7 @@ permalink: /methode/
 chapeau: >-
   Quels modèles, sur quelles données, avec quelles limites — et la liste
   complète des tests, publiée pour qu’on ne puisse pas n’en garder que les bons.
+image: /assets/partage/pages/methode.png
 ---
 
 {% assign m = site.data.stats.modeles %}
@@ -94,11 +95,14 @@ d’un côté, ses quinze conseils penchent ensemble — et le test les compte c
 quinze preuves.
 
 Pour mesurer ce que cela coûte, chaque test est recalculé en retirant une
-saison entière, puis une autre, {{ dep.saisons }} fois (un *jackknife* par
+saison entière, puis une autre, une fois pour chacune des {{ dep.saisons }} saisons terminées (un *jackknife* par
 saison). La dispersion de ces écarts donne une incertitude qui ne suppose rien
 de ce qui se passe à l’intérieur d’une saison. Seule hypothèse restante : que
-les saisons soient indépendantes entre elles, leurs castings étant distincts,
-à quelques revenants près. La correction de Benjamini-Hochberg est ensuite
+les saisons soient indépendantes entre elles. Elle n’est vraie qu’en partie :
+{{ site.data.stats.revenants.graphe.noeuds | size }} personnes ont joué
+plusieurs saisons terminées, et les éditions spéciales sont faites en tout ou
+partie de revenants, qui se connaissent déjà. Les tests restreints aux saisons
+classiques y échappent presque entièrement ; les autres la portent. La correction de Benjamini-Hochberg est ensuite
 refaite sur la famille entière, avec ces nouvelles p-values.
 
 <div class="constat">
@@ -413,9 +417,10 @@ Deux modèles s’y soumettent, et ils répondent à deux questions différentes
 le **pronostic du casting** — la fiche d’inscription annonce-t-elle le vainqueur
 — et le **pronostic du conseil** — sachant tout ce qui a précédé, peut-on
 désigner celui qui part ce soir. Le premier ne trouve rien. Le second trouve
-quelque chose, et c’est le seul résultat de ce site qu’aucune correction pour
-tests multiples n’a besoin de protéger : un modèle qui apprend du bruit le paie
-sur la saison qu’il n’a pas vue.
+quelque chose, et la validation le protège en grande partie du bruit : un
+modèle qui apprend du bruit le paie sur la saison qu’il n’a pas vue. Il reste
+pourtant dans le registre corrigé, avec les autres : plusieurs modèles ont pu
+être essayés avant celui-ci, et la validation ne protège pas de ce choix-là.
 [Le pronostic]({{ '/statistiques/pronostic/' | relative_url }}) porte les deux.
 
 <p class="note"><strong>Une association n’est pas une prévision, et ce site
@@ -470,7 +475,10 @@ qu’un jeu de données de cette taille peut encore distinguer du hasard.
 
 <p class="note">Lecture : à 80 % de puissance et au seuil habituel de 5 %. Un
 effet plus petit que la valeur indiquée existe peut-être — ces données ne
-sauraient pas le voir.</p>
+sauraient pas le voir. Le calcul suppose des observations indépendantes ; or
+les bulletins d’un même conseil, et les conseils d’une même saison, ne le sont
+pas tout à fait. Le plus petit effet décelable est donc un peu plus grand que
+celui du tableau, surtout au niveau du bulletin.</p>
 
 Trois conséquences, et elles ne vont pas dans le même sens.
 

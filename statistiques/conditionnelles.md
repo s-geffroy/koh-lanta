@@ -8,6 +8,7 @@ chapeau: >-
   Mon nom est sorti deux fois la dernière fois. Qu’est-ce que cela change à mes
   chances de partir ce soir ? Des probabilités conditionnelles, et un
   retournement que le test ne confirme pas.
+image: /assets/partage/pages/statistiques-conditionnelles.png
 ---
 
 {% assign m = site.data.stats.modeles %}
@@ -71,7 +72,9 @@ conseils sont la donnée la plus trouée du site.</p>
 <p class="legende-figure">Probabilité d’être éliminé à un conseil selon le
 nombre de voix reçues au conseil précédent. Le trait vertical est l’intervalle
 de confiance à 95 % ; le trait tireté, le risque qu’un tirage au sort
-donnerait.</p>
+donnerait. Les intervalles comptent chaque présence comme une observation
+indépendante ; un même aventurier se retrouve pourtant à plusieurs conseils, et
+ils sont donc un peu trop étroits.</p>
 
 <div class="tableau-large">
 <table data-triable><caption class="hors-ecran">Sachant les voix reçues la fois d’avant</caption>
@@ -242,7 +245,7 @@ les mesurer**.
 
 {% include graphiques/conditionnelles-modele.svg %}
 
-<p class="legende-figure">Rapports de cotes d’un logit conditionnel, sur
+<p class="legende-figure">Rapports de cotes — combien la cote d’être éliminé est multipliée — d’un <a href="{{ '/methode/' | relative_url }}#le-logit-conditionnel">logit conditionnel</a>, sur
 {{ c.modele.presences_texte | default: c.modele.presences }} présences et {{ c.modele.conseils }} conseils.
 Référence : aucune voix au conseil précédent.</p>
 

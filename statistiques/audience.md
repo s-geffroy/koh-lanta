@@ -7,6 +7,7 @@ permalink: /statistiques/audience/
 chapeau: >-
   La seule grandeur du jeu que la production ne décide pas. Elle a fortement
   chuté — mais rien ne prouve que cette chute ait une date plutôt qu’une pente.
+image: /assets/partage/pages/statistiques-audience.png
 ---
 
 {% assign m = site.data.stats.modeles %}

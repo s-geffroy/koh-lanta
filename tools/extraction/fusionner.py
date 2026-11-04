@@ -592,6 +592,7 @@ def completer_depuis_autres_participations(participations, saisons, rapport):
     reporte une valeur connue d'une annee sur une autre.
     """
     annees = {s["id"]: s.get("annee") for s in saisons}
+    en_cours = {s["id"]: bool(s.get("en_cours")) for s in saisons}
     par_personne = {}
     for p in participations:
         par_personne.setdefault(p["id"], []).append(p)
@@ -608,6 +609,15 @@ def completer_depuis_autres_participations(participations, saisons, rapport):
                 p["age"] = ref["age"] + (an - annees[ref["saison"]])
                 p.setdefault("sources", {})["age"] = (
                     f"deduit de sa participation de {annees[ref['saison']]}")
+            # Le lieu se reprend comme le metier, sauf sur une saison en cours :
+            # on n'y touche pas avant sa fin.
+            if (not p.get("localisation") and not en_cours.get(p["saison"])
+                    and any(x.get("localisation") for x in lignes)):
+                ref = min((x for x in lignes if x.get("localisation")),
+                          key=lambda x: abs((annees.get(x["saison"]) or 0) - (an or 0)))
+                p["localisation"] = ref["localisation"]
+                p.setdefault("sources", {})["localisation"] = (
+                    f"reprise de sa participation de {annees.get(ref['saison'])}")
             if p.get("profession") is None and avec_metier:
                 ref = min(avec_metier,
                           key=lambda x: abs((annees.get(x["saison"]) or 0) - (an or 0)))
@@ -884,6 +894,50 @@ def voix_d_une_saison_en_cours(participations, saisons, rapport):
         rapport.append(f"votes_recus : {n} total(aux) d'une saison en cours retire(s)")
 
 
+def classement_par_ordre_de_sortie(participations, saisons, rapport):
+    """Comble un rang final vide quand l'ordre de sortie le fixe sans ambiguite.
+
+    Trente rangs manquaient, sur des saisons ou tous les autres sont connus
+    (revue du 3 nov. 2026). Les rangs libres sont distribues aux sans-rang
+    par jour de sortie decroissant, et l'attribution n'est gardee que si elle
+    est la seule possible : aucun ex aequo de jour parmi les sans-rang, et
+    chaque rang pose est encadre par des rangs connus sortis plus tard au-dessus
+    et plus tot au-dessous. Une saison en cours n'est pas touchee.
+    """
+    en_cours = {s["id"] for s in saisons if s.get("en_cours")}
+    par_saison = collections.defaultdict(list)
+    for p in participations:
+        par_saison[p["saison"]].append(p)
+    poses, refus = 0, []
+    for sid, lignes in sorted(par_saison.items()):
+        if sid in en_cours:
+            continue
+        vides = [p for p in lignes if not p.get("classement")]
+        if not vides:
+            continue
+        connus = [p for p in lignes if p.get("classement")]
+        libres = sorted(set(range(1, len(lignes) + 1)) - {p["classement"] for p in connus})
+        jours = [p.get("jour_sortie") for p in vides]
+        if (len(libres) != len(vides) or None in jours
+                or len(set(jours)) != len(jours)):
+            refus.append(f"{sid} ({len(vides)} sans rang : ordre ambigu)")
+            continue
+        vides.sort(key=lambda p: -p["jour_sortie"])
+        coherent = all(
+            all((q.get("jour_sortie") or 0) >= p["jour_sortie"] for q in connus if q["classement"] < r)
+            and all((q.get("jour_sortie") or 0) <= p["jour_sortie"] for q in connus if q["classement"] > r)
+            for p, r in zip(vides, libres))
+        if not coherent:
+            refus.append(f"{sid} ({len(vides)} sans rang : ordre contredit par les rangs connus)")
+            continue
+        for p, r in zip(vides, libres):
+            p["classement"] = r
+            p.setdefault("sources", {})["classement"] = "deduit de l'ordre de sortie"
+            poses += 1
+    rapport.append(f"classement : {poses} rang(s) deduit(s) de l'ordre de sortie"
+                   + (" ; refus : " + ", ".join(refus) if refus else ""))
+
+
 def verifier_classements(participations, saisons, rapport):
     """Ecarte les rangs finaux impossibles, signale les rangs en double.
 
@@ -915,6 +969,83 @@ def verifier_classements(participations, saisons, rapport):
     if doubles:
         rapport.append(f"classement : {len(doubles)} rang(s) partage(s) par deux "
                        f"aventuriers — " + ", ".join(doubles))
+
+
+WIKI_EN = os.path.join(RACINE, "specs", "sources", "wiki_en")
+
+
+def _lignes_wiki_en(texte):
+    """(nom, age, cellule de residence) des tableaux de candidats anglais.
+
+    Deux mises en page : une ligne d'en-tete `! scope="row" | Nom` suivie de
+    `| age || [[Ville]] || metier` (Panama, Palawan), ou une cellule en gras
+    suivie de `<br><small>age, [[Ville]]</small>` (Palau).
+    """
+    lignes = texte.split("\n")
+    out = []
+    for i, l in enumerate(lignes):
+        m = re.match(r'^!.*?scope="row".*?\|\s*(.+)$', l)
+        if m and i + 1 < len(lignes):
+            nom = re.sub(r"\{\{efn[^}]*\}\}|''", "", m.group(1)).strip()
+            c = [x.strip() for x in lignes[i + 1].lstrip("|").split("||")]
+            if len(c) >= 3 and re.fullmatch(r"\d{1,2}", c[0]):
+                out.append((nom, int(c[0]), c[1]))
+            continue
+        m = re.search(r"'''([^']+)'''<br>\s*<small>\s*(\d{1,2}),\s*(\[\[[^\]]+\]\])", l)
+        if m:
+            out.append((m.group(1).strip(), int(m.group(2)), m.group(3)))
+    return out
+
+
+def _lieu_wiki_en(cellule):
+    """Le lieu de la liste fermee que nomme la cellule, ou None."""
+    m = re.search(r"\[\[([^|\]]+)(?:\|([^\]]+))?\]\]", cellule)
+    if m:
+        cible = m.group(1)
+        essais = [cible, m.group(2) or ""] + [x.strip() for x in cible.split(",")[1:]]
+    else:
+        essais = [re.sub(r"<[^>]+>", "", cellule).strip()]
+    for e in essais:
+        if e and lieux.normaliser(e):
+            return lieux.normaliser(e)
+    return None
+
+
+def localisation_depuis_wikipedia_en(participations, rapport):
+    """Comble une localisation vide avec la colonne « Residence » de Wikipedia EN.
+
+    Dix-huit localisations manquaient sur quatre saisons que ni Wikipedia fr
+    ni Fandom ne localisent (revue du 3 nov. 2026). On ne comble que du vide,
+    on rattache par le nom complet, a defaut par le prenom ET l'age -- le
+    wiki anglais garde parfois un autre nom (« Vicky Lemarie » pour Vicky
+    Szikman) --, et seulement vers un lieu de la liste fermee de lieux.py.
+    """
+    if not os.path.isdir(WIKI_EN):
+        return
+    poses, refus = 0, []
+    for nom_fichier in sorted(os.listdir(WIKI_EN)):
+        sid = nom_fichier[:-len(".wiki")]
+        lignes = _lignes_wiki_en(open(os.path.join(WIKI_EN, nom_fichier), encoding="utf-8").read())
+        for p in participations:
+            if p["saison"] != sid or p.get("localisation"):
+                continue
+            cand = [x for x in lignes if F.slug(x[0]) == F.slug(p.get("nom_complet") or "")]
+            if not cand and p.get("nom"):
+                prenom = F.slug(p["nom"].split()[0])
+                cand = [x for x in lignes if F.slug(x[0].split()[0]) == prenom
+                        and x[1] == p.get("age")]
+            if len(cand) != 1:
+                refus.append(f"{sid}/{p['id']} (non rattache)")
+                continue
+            lieu = _lieu_wiki_en(cand[0][2])
+            if not lieu:
+                refus.append(f"{sid}/{p['id']} ({cand[0][2]} hors liste)")
+                continue
+            p["localisation"] = lieu
+            p.setdefault("sources", {})["localisation"] = "wikipedia-en (Residence)"
+            poses += 1
+    rapport.append(f"localisation : {poses} valeur(s) comblee(s) par Wikipedia EN"
+                   + (" ; refus : " + ", ".join(refus) if refus else ""))
 
 
 def normaliser_lieux(participations, rapport):
@@ -993,6 +1124,13 @@ DEPUIS_PAGE = ["localisation", "profession", "age", "votes_recus", "parcours",
                "classement", "victoires_collectives", "victoires_individuelles"]
 
 
+# Un palmares n'est pas un metier. La table de La Revanche des heros (sp2)
+# ecrit « Record de France de triple saut (1997-2007) » la ou la page
+# individuelle ecrit « Ancienne athlete » ; la fiche publiait le premier comme
+# « profession declaree au casting » (revue du 3 nov. 2026).
+RE_PALMARES = re.compile(r"\b(?:vice-)?champion|\brecord\b|m[ée]daill", re.I)
+
+
 def completer_depuis_pages(participations, saisons, rapport):
     """Comble les champs vides avec l'infobox de la page individuelle.
 
@@ -1029,7 +1167,13 @@ def completer_depuis_pages(participations, saisons, rapport):
                            "couleur": _couleur_de(s_, _nom_de_tribu(s_, e["tribu"])),
                            "jour_debut": e["jour_debut"], "jour_fin": e["jour_fin"]}
                           for e in valeur]
-            if p.get(champ) in (None, "", []):
+            if (champ == "profession" and p.get(champ) and valeur
+                    and RE_PALMARES.search(p[champ]) and not RE_PALMARES.search(valeur)):
+                p[champ] = valeur
+                p.setdefault("sources", {})[champ] = ("fandom (page individuelle) : "
+                                                      "la table donne un palmares")
+                combles["profession (palmares)"] = combles.get("profession (palmares)", 0) + 1
+            elif p.get(champ) in (None, "", []):
                 p[champ] = valeur
                 p.setdefault("sources", {})[champ] = "fandom (page individuelle)"
                 combles[champ] = combles.get(champ, 0) + 1
@@ -1587,11 +1731,13 @@ def main():
     tribu_sans_etat(participations, rapport)
     corriger_tribus(participations, rapport)
     couleur_declaree(participations, saisons, rapport)
+    localisation_depuis_wikipedia_en(participations, rapport)
     normaliser_lieux(participations, rapport)
     sans_depart_sans_jour(participations, saisons, rapport)
     vainqueur_premier(participations, saisons, rapport)
     corriger_les_rangs(participations, rapport)
     verifier_classements(participations, saisons, rapport)
+    classement_par_ordre_de_sortie(participations, saisons, rapport)
     voix_d_une_saison_en_cours(participations, saisons, rapport)
     completer_depuis_autres_participations(participations, saisons, rapport)
     metier_sans_saison(participations, saisons, rapport)

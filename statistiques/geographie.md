@@ -7,6 +7,7 @@ permalink: /statistiques/geographie/
 chapeau: >-
   Des Parisiens, des Provençaux, des Bretons : est-ce beaucoup ? La question
   n’a de réponse qu’en la comparant à la France qui vivait là ces années-là.
+image: /assets/partage/pages/statistiques-geographie.png
 ---
 
 {% assign g = site.data.geographie %}

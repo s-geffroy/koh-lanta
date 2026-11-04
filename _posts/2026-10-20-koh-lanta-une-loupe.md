@@ -6,14 +6,15 @@ titre: "Koh-Lanta n’est pas la vraie vie : c’est une loupe"
 chapeau: "Ce que les votes de toutes les saisons disent vraiment des alliances, de la menace et de l’appartenance."
 description: "Koh-Lanta n’est pas la vraie vie, c’est une loupe : ce que les votes de toutes les saisons disent des alliances, de la menace et de l’appartenance."
 date: 2026-10-20
-last_modified_at: 2026-11-03
+last_modified_at: 2026-11-04
 author: Sylvain Geffroy
 permalink: /articles/koh-lanta-une-loupe/
 autre_version: /articles/amplificateur-institutionnel/
 autre_version_titre: "Lire la version longue →"
+image: /assets/partage/pages/articles-koh-lanta-une-loupe.png
 ---
 {%- comment -%}
-  Les chiffres viennent de stats.articles (tools/articles.py) : ils suivent
+  Les chiffres viennent de stats.articles (tools/articles.py) : ils suivent
   les donnees. Les phrases, elles, ne suivent pas -- chaque conclusion ecrite
   ici est inscrite dans AFFIRMATIONS, et verifie_site.py refuse l'article le
   jour ou les donnees ne la disent plus.
@@ -40,9 +41,9 @@ Et plusieurs institutions ordinaires y manquent. Un aventurier ne peut pas chang
 
 Le sociologue Richard Emerson l'a formulé simplement : le pouvoir naît de la dépendance. Si j'ai besoin de vous et ne peux pas vous remplacer, vous avez du pouvoir sur moi. Albert Hirschman parlait d'*exit* : quand on ne peut pas partir, il reste à se faire entendre ou à rester loyal.
 
-À Koh-Lanta, on ne part qu'en abandonnant. Les liens locaux deviennent donc la principale assurance. Et cela se voit : **se retrouver sans un seul des aventuriers avec qui l'on a déjà voté va de pair avec {{ a.tests.vote_isole.valeur }} points (de pourcentage) de risque en plus de sortir**, quand le hasard en donnerait {{ a.tests.vote_isole.attendu_rond }} ([la pire place]({{ '/statistiques/pire-place/' | relative_url }})).
+À Koh-Lanta, on ne part qu'en abandonnant. Les liens locaux deviennent donc la principale assurance. Et cela se voit : **se retrouver sans un seul des aventuriers avec qui l'on a déjà voté va de pair avec {{ a.tests.vote_isole.valeur_ronde }} points (de pourcentage) de risque en plus de sortir**, quand le hasard en donnerait {{ a.tests.vote_isole.attendu_rond }} ([la pire place]({{ '/statistiques/pire-place/' | relative_url }})).
 
-> **Pas de sortie possible → plus de dépendance → perdre son dernier allié devient la pire place du jeu.**
+> **Pas de sortie possible → plus de dépendance → perdre son dernier allié devient l’une des places les plus exposées du jeu.**
 
 ## Les alliances tiennent plus qu'on ne le croit
 
@@ -54,23 +55,23 @@ La trahison existe : {{ a.tests.trahison.valeur_ronde }} % des bulletins vise
 
 C'est l'idée la plus répétée sur le jeu : utile tant que les tribus s'affrontent, le meilleur deviendrait une menace à l'approche de la phase individuelle. « Je ne veux pas l'affronter à la fin. »
 
-**Les votes ne la confirment pas.** Classons chaque éliminé parmi les votants du soir selon sa [force aux épreuves]({{ '/statistiques/force/' | relative_url }}), de 0 pour le plus faible du camp à 100 pour le plus fort. Avant la réunification, il se situe en moyenne au rang {{ a.force.rang_avant }} ; après, au rang {{ a.force.rang_apres }}. L'écart n'est pas plus grand que ce que le hasard produit. Les ambassadeurs, qui décident seuls, ne choisissent pas les forts plus que ne le ferait un tirage au sort ([la réunification]({{ '/statistiques/reunification/' | relative_url }})).
+**Les votes ne la confirment pas.** Classons chaque éliminé parmi les votants du soir selon sa [force aux épreuves]({{ '/statistiques/force/' | relative_url }}), de 0 pour le plus faible du camp à 100 pour le plus fort. Avant la réunification, il se situe en moyenne au rang {{ a.force.rang_avant }} ; après, au rang {{ a.force.rang_apres }} (le milieu du camp est à 50). L'écart n'est pas plus grand que ce que le hasard produit. Rien ne montre non plus que les ambassadeurs, qui décident seuls, choisissent les forts plus que ne le ferait un tirage au sort ; mais il y a eu trop peu d'ambassades pour l'exclure ([la réunification]({{ '/statistiques/reunification/' | relative_url }})).
 
 Prudence : la force aux épreuves n'est pas toute la compétence, et un fort ciblé peut se sauver en gagnant l'immunité. Mais l'idée que la réunification retourne le jeu contre les meilleurs ne se voit pas dans les chiffres. La règle de management qu'on en tire — « dans l'entreprise, le meilleur devient une cible » — repose sur un mécanisme que même le jeu ne montre pas.
 
-## Être visé appelle à l'être encore
+## Être visé annonce de l'être encore
 
 La réputation peut fabriquer une partie de la réalité : celui qu'on dit « dangereux » reçoit moins d'informations, plus de méfiance, plus de bulletins.
 
-Ce que l'on voit dans les votes est compatible avec ce mécanisme, sans le prouver. **Avoir reçu une voix va de pair avec {{ a.tests.cible_persistante.valeur_ronde }} points de risque en plus d'en recevoir encore, et {{ a.tests.menace_voix.valeur_ronde }} points de plus de sortir au conseil suivant.** Et celui dont on a écrit le nom écrit le nôtre en retour bien plus souvent que le hasard ne le voudrait ([d'un conseil à l'autre]({{ '/statistiques/conditionnelles/' | relative_url }})).
+Ce que l'on voit dans les votes est compatible avec ce mécanisme, sans le prouver. **Avoir reçu une voix va de pair avec {{ a.tests.cible_persistante.valeur_ronde }} points de risque en plus d'en recevoir encore, et {{ a.tests.menace_voix.valeur_ronde }} points de plus de sortir au conseil suivant.** Et celui dont on a écrit le nom écrit le nôtre en retour bien plus souvent que le hasard ne le voudrait ([d'un conseil à l'autre]({{ '/statistiques/conditionnelles/' | relative_url }})). Une autre lecture tient aussi : certains joueurs sont plus exposés que d'autres d'un bout à l'autre de la saison, et reçoivent des voix à chaque conseil sans que la première ait appelé les suivantes.
 
 On ne voit pas non plus qu'avoir survécu à un vote massif protège mieux qu'avoir survécu à deux bulletins — sans pouvoir exclure qu'il protège un peu.
 
-## Une couleur d'équipe devient une identité
+## La tribu d'origine compte encore
 
 Les tribus sont créées par la production, à partir d'inconnus. À la réunification, elles disparaissent. Pourtant elles continuent de compter.
 
-Après la réunification, **on écrit le nom de quelqu'un de sa tribu initiale dans {{ a.tests.vote_bandeau_apres_fusion.valeur_ronde }} % des bulletins, contre {{ a.tests.vote_bandeau_apres_fusion.attendu_rond }} % si l'on votait au hasard** ([qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }})). Et appartenir à la tribu initiale la moins nombreuse expose ([autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }})). Que les sorties s'enchaînent par tribu, comme si un camp était démonté un par un, n'est pas établi en revanche.
+Après la réunification, **on écrit le nom de quelqu'un de sa tribu initiale dans {{ a.tests.vote_bandeau_apres_fusion.valeur_ronde }} % des bulletins, contre {{ a.tests.vote_bandeau_apres_fusion.attendu_rond }} % si les bulletins étaient tirés au hasard parmi les votants** ([qui vise qui]({{ '/statistiques/qui-vise-qui/' | relative_url }})). Et appartenir à la tribu initiale la moins nombreuse expose ([autour du feu]({{ '/statistiques/autour-du-feu/' | relative_url }})). Que les sorties s'enchaînent par tribu, comme si un camp était démonté un par un, n'est pas établi en revanche.
 
 La psychologie sociale l'a montré il y a cinquante ans : des groupes arbitraires suffisent à créer de la préférence. Les tribus ne sont pas arbitraires — on y vit ensemble des semaines —, et l'on ne peut pas séparer ici l'identité de groupe des liens noués ; mais leur trace dans les votes va dans ce sens.
 
@@ -82,13 +83,13 @@ On peut suivre une majorité par peur d'être isolé, ou parce qu'on pense qu'el
 
 ## La réunification change vraiment le jeu
 
-La production présente la réunification comme le moment où « tout se recompose ». Ce n'est pas qu'un argument de bande-annonce : après la réunification, **les votes se divisent nettement plus** — la part de conseils où l'éliminé n'obtient pas la majorité augmente de {{ a.tests.fusion_serre.valeur_ronde }} points — et l'on élimine moins de femmes, à composition du camp égale ([la réunification]({{ '/statistiques/reunification/' | relative_url }})).
+La production présente la réunification comme le moment où tout se recompose. Ce n'est pas qu'un argument de bande-annonce : après la réunification, **les votes se divisent nettement plus** — la part de conseils où l'éliminé n'obtient pas la majorité augmente de {{ a.tests.fusion_serre.valeur_ronde }} points — et l'on élimine moins de femmes, à composition du camp égale ([la réunification]({{ '/statistiques/reunification/' | relative_url }})).
 
-Sur ce point, ce que la production dit de son dispositif et ce que montrent les votes vont dans le même sens — même si les règles elles-mêmes, colliers individuels et camp plus nombreux, y sont sans doute pour quelque chose.
+Sur ce point, ce que la production dit de son dispositif et ce que montrent les votes vont dans le même sens — même si les règles elles-mêmes, immunités individuelles et fin des blocs de tribu, y sont sans doute pour quelque chose : les votes ne permettent pas de séparer les règles des comportements.
 
 ## L'ordinaire d'abord
 
-Égalités, seconds votes, colliers qui renversent tout : ce sont les conseils dont on se souvient. Ce ne sont pas ceux qui arrivent le plus souvent. **{{ a.issues.ordinaire_rond }} % des conseils se terminent par une élimination ordinaire**, sans égalité ni renversement par un objet ; le renversement par un objet d'immunité n'en concerne que {{ a.issues.renversement }} %, l'égalité suivie d'un second vote {{ a.issues.egalite_revote }} %.
+Égalités, seconds votes, colliers qui renversent tout : ce sont les conseils dont on se souvient. Ce ne sont pas ceux qui arrivent le plus souvent. **{{ a.issues.ordinaire_rond }} % des conseils se terminent par une élimination ordinaire**, sans égalité ni renversement par un objet ; le renversement par un objet d'immunité n'en concerne que {{ a.issues.renversement }} %, l'égalité suivie d'un second vote {{ a.issues.egalite_revote }} %. Cette fréquence bouge avec les règles : depuis {{ a.issues.annee_recente }}, avec la multiplication des objets, l'élimination ordinaire tombe à {{ a.issues.ordinaire_recent_rond }} %.
 
 C'est la leçon la plus utile pour qui veut prévoir. Une prédiction qui surestime le spectaculaire peut tomber juste une fois et se tromper en moyenne. **Avant de prédire l'exceptionnel, il faut savoir à quelle fréquence arrive l'ordinaire.**
 
@@ -108,7 +109,7 @@ Contrats, assurance, possibilité de partir, de créer de la valeur, de changer 
 
 > **Koh-Lanta ne nous dit pas comment les humains se comportent « naturellement » ; il montre comment certaines règles rendent certains mécanismes beaucoup plus importants que d'autres.**
 
-Ce sont des hypothèses, que les votes rendent plausibles sans les démontrer :
+Ce sont des hypothèses, que les votes rendent plausibles sans les démontrer. L'absence de sortie et de contrats est la même dans toutes les saisons : aucun test ne peut lui attribuer un effet, et les votes sont compatibles avec ces hypothèses sans les désigner :
 
 Supprimez la sortie : le dernier allié devient vital.
 
@@ -124,6 +125,6 @@ Mais :
 
 > **Quelles règles, dans nos propres organisations, fabriquent les comportements que nous attribuons ensuite trop facilement aux individus ?**
 
-*Mis à jour le 23 octobre 2026 : le modèle nul tire désormais l'éliminé parmi les votants du soir, et deux résultats cités dans la première version — l'enchaînement des sorties par camp et la sortie précoce des ambassadeurs — ne passent plus la correction. Le 3 novembre 2026, le coût d'un vote avec la minorité, donné jusque-là « de justesse », a cessé d'être retenu : il ne tient qu'aux éditions spéciales.*
+*Mis à jour le 23 octobre 2026 : le modèle nul tire désormais l'éliminé parmi les votants du soir, et deux résultats cités dans la première version — l'enchaînement des sorties par camp et la sortie précoce des ambassadeurs — ne passent plus la correction. Le 3 novembre 2026, le coût d'un vote avec la minorité, donné jusque-là « de justesse », a cessé d'être retenu : il ne tient qu'aux éditions spéciales. Le 4 novembre 2026, plusieurs verbes ont été ramenés à la mesure de ce que les tests établissent : l'isolement « va de pair » avec le risque, il ne le cause pas, et un résultat nul sur quelques ambassades n'exclut rien.*
 
 *Les tests, leurs modèles nuls et leurs limites sont détaillés dans la [version longue]({{ '/articles/amplificateur-institutionnel/' | relative_url }}) et sur la page [méthode]({{ '/methode/' | relative_url }}).*

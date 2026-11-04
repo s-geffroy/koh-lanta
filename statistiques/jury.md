@@ -8,6 +8,7 @@ chapeau: >-
   Le seul scrutin où écrire un nom veut dire « qu’il gagne » — et le seul rendu
   par des gens qu’on a fait sortir. Punissent-ils ? On ne peut pas l’affirmer.
   Ils récompensent, en revanche, celui avec qui ils votaient.
+image: /assets/partage/pages/statistiques-jury.png
 ---
 
 {% assign m = site.data.stats.modeles %}
@@ -52,7 +53,7 @@ pour l’autre finaliste »**. Posée ainsi, elle ne donne plus la démonstrat
 ## Le modèle
 
 <p class="note">Un juré choisit parmi les finalistes de sa saison : c’est un
-choix contraint, qui se modélise par un <strong>logit conditionnel</strong>.
+choix contraint, qui se modélise par un <strong><a href="{{ '/methode/' | relative_url }}#le-logit-conditionnel">logit conditionnel</a></strong>.
 Chaque juré forme son propre groupe de comparaison, ce qui absorbe d’un coup la
 saison, l’année, son propre caractère et tout ce qui lui est particulier. Il ne
 reste que ce qui distingue les finalistes <em>entre eux, aux yeux de ce

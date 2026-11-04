@@ -29,6 +29,7 @@ fichiers modifies dans Git pour zero changement reel.
 import argparse
 import collections
 import os
+import re
 import sys
 
 import io
@@ -56,6 +57,9 @@ COULEURS = 32
 SABLE = "#edefe9"
 ENCRE = "#101a18"
 ENCRE_DOUCE = "#4c5a56"
+# Le jaune de la carte reste #eda100 : il ne porte aucune donnee, et le
+# fonce de la feuille de style (4 nov. 2026) ne vise que le contraste des
+# figures sur fond blanc.
 JAUNE = "#eda100"
 ROUGE = "#e34948"
 
@@ -188,10 +192,82 @@ def cartes_des_epreuves(epreuves, rapport):
         morceaux = [f"{e['apparitions']} fois courue",
                     compte(len(e['editions']), "édition", "éditions")]
         r = e.get("record")
-        note = (f"Record : {r['nom']}, {r['victoires']} {e.get('mot_pluriel') or 'victoires'}"
-                if r and r["victoires"] > 1 else None)
+        mot = e.get('mot_pluriel') or 'victoires'
+        note = (None if not r or r["victoires"] < 2
+                else f"Record partagé : {e['ex_aequo']} aventuriers à {r['victoires']} {mot}"
+                if e.get("ex_aequo", 1) > 1
+                else f"Record : {r['nom']}, {r['victoires']} {mot}")
         carte(os.path.join(DOSSIER, "epreuves", cid + ".png"),
               e["nom"], "LES ÉPREUVES", "  ·  ".join(morceaux), note, rapport)
+
+
+PAGES_IGNOREES = ("aventuriers/", "saisons/", "epreuves/", "_drafts/", "specs/",
+                  "tools/", ".claude/", "_site/", "README", "CLAUDE")
+PREFIXE_PAGES = "/assets/partage/pages/"
+
+
+def _front_matter(chemin):
+    with open(chemin, encoding="utf-8") as f:
+        texte = f.read()
+    if not texte.startswith("---"):
+        return None
+    fin = texte.find("\n---", 3)
+    return donnees.charger(io.StringIO(texte[3:fin])) if fin > 0 else None
+
+
+def _sans_markdown(s):
+    return re.sub(r"\*\*|__|\*|_", "", " ".join(str(s or "").split()))
+
+
+def _premiere_phrase(s, limite=72):
+    """La premiere phrase si elle tient sur la carte, sinon rien : on ne
+    tronque pas, on retombe (meme regle que les titres de fiche)."""
+    phrase = re.split(r"(?<=[.!?])\s", _sans_markdown(s), maxsplit=1)[0]
+    return phrase if 0 < len(phrase) <= limite else None
+
+
+def pages_a_carte():
+    """Les pages ecrites a la main qui partageaient la carte generale : les
+    pages d'analyse, les articles et les pages de rubrique (revue du 3 nov.
+    2026 : 38 pages, contre une carte a soi pour les 587 fiches). L'accueil
+    garde la carte generale, qui est la sienne."""
+    out = []
+    for base, dossiers, fichiers in os.walk(RACINE):
+        dossiers[:] = sorted(d for d in dossiers if not d.startswith((".", "_site", "node")))
+        for nom in sorted(fichiers):
+            if not nom.endswith(".md"):
+                continue
+            chemin = os.path.join(base, nom)
+            rel = os.path.relpath(chemin, RACINE)
+            if rel.startswith(PAGES_IGNOREES) or rel == "index.md":
+                continue
+            fm = _front_matter(chemin)
+            if not fm or not (fm.get("permalink") or rel.startswith("_posts/")):
+                continue
+            if fm.get("image") and not str(fm["image"]).startswith(PREFIXE_PAGES):
+                continue
+            out.append((rel, fm))
+    return out
+
+
+def adresse_de_carte(rel, fm):
+    lien = fm.get("permalink") or ("/articles/" + re.sub(r"^\d{4}-\d\d-\d\d-", "", os.path.basename(rel))[:-3] + "/")
+    return PREFIXE_PAGES + (lien.strip("/").replace("/", "-") or "accueil") + ".png"
+
+
+def cartes_des_pages(rapport):
+    for rel, fm in pages_a_carte():
+        if rel.startswith("_posts/"):
+            oeil = "ARTICLE"
+        elif rel.startswith("statistiques/"):
+            oeil = "LES STATISTIQUES"
+        else:
+            oeil = "KOH-LANTA EN CHIFFRES"
+        titre = _sans_markdown(fm.get("title"))
+        ligne = _premiere_phrase(fm.get("chapeau")) or _premiere_phrase(fm.get("description"))
+        carte(os.path.join(RACINE, adresse_de_carte(rel, fm).lstrip("/")),
+              titre, oeil, ligne or "", "Koh-Lanta en chiffres", rapport,
+              taille_titre=56)
 
 
 def lire(nom):
@@ -236,6 +312,7 @@ def main():
                            rapport)
     cartes_des_saisons(fiches, rapport)
     cartes_des_epreuves(lire("epreuves_fiches"), rapport)
+    cartes_des_pages(rapport)
     poids = sum(os.path.getsize(os.path.join(b, f))
                 for b, _, fs in os.walk(DOSSIER) for f in fs)
     print(f"cartes : {rapport['total']} ({rapport['ecrites']} ecrites, "

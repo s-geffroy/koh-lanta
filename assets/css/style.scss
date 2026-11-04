@@ -61,19 +61,21 @@
   /* Les huit teintes categorielles du guide de visualisation, DANS LEUR
      ORDRE : cet ordre est le mecanisme qui garantit que deux series voisines
      restent distinguables par un lecteur daltonien. Il ne se reamenage pas
-     par gout. */
+     par gout. Trois teintes sont foncees juste assez pour tenir 3:1 sur la
+     surface blanche (revue du 3 nov. 2026) : #1baf7a, #eda100 et #e87ba4 y
+     tombaient a 2,8, 2,2 et 2,7. */
   --serie-1: #2a78d6;
   --serie-2: #eb6834;
-  --serie-3: #1baf7a;
-  --serie-4: #eda100;
-  --serie-5: #e87ba4;
+  --serie-3: #1aa976;
+  --serie-4: #c88800;
+  --serie-5: #e56c9a;
   --serie-6: #008300;
   --serie-7: #4a3aa7;
   --serie-8: #e34948;
 
   /* Couleurs de tribu : ici la teinte EST la donnee. Une tribu jaune est
      jaune a l'ecran, elle ne suit pas l'ordre categoriel. */
-  --tribu-jaune:  #eda100;
+  --tribu-jaune:  #c88800;
   --tribu-rouge:  #e34948;
   --tribu-bleu:   #2a78d6;
   --tribu-vert:   #008300;

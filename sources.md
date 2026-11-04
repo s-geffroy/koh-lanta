@@ -5,6 +5,7 @@ description: "D’où viennent les données de Koh-Lanta : chaque champ, sa sou
 permalink: /sources/
 chapeau: >-
   D’où vient chaque champ, comment les contradictions entre sources ont été tranchées, et ce qui manque encore.
+image: /assets/partage/pages/sources.png
 ---
 
 {% assign g = site.data.stats.general %}

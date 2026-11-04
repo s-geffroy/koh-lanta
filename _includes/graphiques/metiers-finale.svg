@@ -1,8 +1,8 @@
 <figure class="figure">
 <figcaption class="figure-titre" aria-hidden="true">Accès à la finale selon le métier</figcaption>
-<svg class="graphique" viewBox="0 0 680 480" role="img" preserveAspectRatio="xMidYMid meet" aria-label="Accès à la finale selon le métier">
+<svg class="graphique" viewBox="0 0 680 480" role="img" aria-describedby="desc-metiers-finale" preserveAspectRatio="xMidYMid meet" aria-label="Accès à la finale selon le métier">
   <title>Accès à la finale selon le métier</title>
-  <desc>Part des aventuriers de chaque famille de métiers ayant atteint la finale.</desc>
+  <desc id="desc-metiers-finale">Part des aventuriers de chaque famille de métiers ayant atteint la finale.</desc>
   <line x1="296.4" y1="10" x2="296.4" y2="454" stroke="var(--grille)" stroke-width="1"/>
   <line x1="402.8" y1="10" x2="402.8" y2="454" stroke="var(--grille)" stroke-width="1"/>
   <line x1="509.2" y1="10" x2="509.2" y2="454" stroke="var(--grille)" stroke-width="1"/>

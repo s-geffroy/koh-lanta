@@ -73,7 +73,7 @@ def figure_survie(stats):
         return
     ecrire("accueil-survie.svg", survie(
         b["series"], b["toutes"], jour_max=b["jour_max"], mediane=b["mediane"],
-        titre="Jaune et rouge tiennent exactement la même distance",
+        titre="Jaune et rouge tiennent la même distance",
         description=(
             f'Part des aventuriers encore en jeu, jour par jour, sur les saisons '
             f'classiques. La courbe jaune et la courbe rouge se confondent : les '

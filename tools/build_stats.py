@@ -1719,6 +1719,16 @@ def champs_du_texte(stats, saisons, parts):
     if dom:
         stats["indicateurs"]["domination_min"] = min(dom, key=lambda x: x["domination_epreuves"])
     mots["survie_saisons"] = len(stats["survie_saisons"])
+    # La saison qui manque aux petits multiples, nommee : « Les 34 saisons »
+    # en titre de page, puis une figure de 33 sans dire laquelle (revue du
+    # 3 nov. 2026). Seule une saison sans dernier jour connu en est absente.
+    dessinees = {x["id"] for x in stats["survie_saisons"]}
+    absentes = [s for s in saisons if not s.get("annulee") and s["id"] not in dessinees]
+    stats["survie_absentes_texte"] = (
+        "" if not absentes else
+        " et ".join(f"<i>{s['titre']}</i>" for s in absentes)
+        + (" n’y figure pas" if len(absentes) == 1 else " n’y figurent pas")
+        + " : saison en cours, sans dernier jour connu.")
     ecarts = []
     for s in saisons:
         if s.get("annulee") or s.get("speciale") or s.get("en_cours"):

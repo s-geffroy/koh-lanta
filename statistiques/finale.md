@@ -8,6 +8,7 @@ chapeau: >-
   Gagner les poteaux ne fait pas gagner la saison. Le **dernier** qualifié de
   l’orientation gagne onze fois sur dix-huit, contre une sur trois attendue —
   un écart qui, corrigé avec tous les autres tests, ne s’affirme pas.
+image: /assets/partage/pages/statistiques-finale.png
 ---
 
 {% assign f = site.data.stats.finale %}

@@ -6,6 +6,7 @@ description: "Âge et longévité à Koh-Lanta : à quel âge tient-on le plus 
 permalink: /statistiques/longevite/
 chapeau: >-
   À quel âge tient-on le plus longtemps ? Et pourquoi les femmes sortent-elles plus tôt tout en gagnant autant de finales ?
+image: /assets/partage/pages/statistiques-longevite.png
 ---
 
 {% assign s = site.data.stats %}

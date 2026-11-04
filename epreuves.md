@@ -6,6 +6,7 @@ permalink: /epreuves/
 chapeau: >-
   Chaque épreuve qui porte un nom, les éditions où elle a été courue, et le
   détenteur du record.
+image: /assets/partage/pages/epreuves.png
 ---
 
 {% assign f = site.data.epreuves_fiches.epreuves %}
@@ -18,7 +19,8 @@ saison ne se raccordent que dans
 **{{ en.raccord.part_raccordee }} %** des cas
 ({{ en.raccord.epreuves_raccordees }} sur {{ en.raccord.epreuves_relevees }}).
 {{ site.data.stats.mots.noms_sans_apparition_maj }} noms n’ont aucune apparition datée — « Poteaux » en fait
-partie, alors que c’est la plus connue de toutes — et
+partie, alors que c’est la plus connue de toutes ; sa page est donc tirée du
+relevé de la finale, saison par saison — et
 {{ site.data.stats.mots.noms_sans_vainqueur }} n’ont aucun vainqueur nommé.
 
 Les épreuves ci-dessous sont celles dont on sait à la fois **quand** elles ont
@@ -42,7 +44,7 @@ une ligne dans un tableau n’a pas les mêmes exigences qu’une page entière.
   <td>{{ e.type }}</td>
   <td class="nombre" data-val="{{ e.apparitions }}">{{ e.apparitions }}</td>
   <td class="nombre" data-val="{{ e.editions.size }}">{{ e.editions.size }}</td>
-  <td>{% if e.record %}{% include lien-aventurier.html id=e.record.id nom=e.record.nom %}{% endif %}</td>
+  <td>{% if e.ex_aequo > 1 %}{{ e.ex_aequo }} ex æquo{% elsif e.record %}{% include lien-aventurier.html id=e.record.id nom=e.record.nom %}{% endif %}</td>
   <td class="nombre" data-val="{% if e.record %}{{ e.record.victoires }}{% else %}0{% endif %}">{% if e.record %}{{ e.record.victoires }}{% endif %}</td>
 </tr>
 {%- endfor %}

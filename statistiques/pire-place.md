@@ -8,6 +8,7 @@ chapeau: >-
   Deux signaux se lisent avant le vote : le nom qui est sorti la fois d’avant,
   et le nombre d’alliés encore assis autour du feu. Ensemble, ils multiplient
   le risque de partir.
+image: /assets/partage/pages/statistiques-pire-place.png
 ---
 
 {% assign m = site.data.stats.modeles %}
@@ -42,7 +43,9 @@ allié** », pas « l’est-il encore ».
 
 <p class="legende-figure">Probabilité d’être éliminé selon le nombre de gens
 avec qui on a déjà voté et qui sont encore présents, comparée au tirage au
-sort.</p>
+sort. Les intervalles comptent chaque présence comme une observation
+indépendante ; un même aventurier se retrouve pourtant à plusieurs conseils, et
+ils sont donc un peu trop étroits.</p>
 
 <div class="tableau-large">
 <table data-triable><caption class="hors-ecran">L’isolement, décomposé</caption>
@@ -165,7 +168,7 @@ et la case qui les réunit est trop petite. Le modèle ci-dessous les met dans l
 
 {% include graphiques/pire-place-modele.svg %}
 
-<p class="legende-figure">Rapports de cotes d’un logit conditionnel, sur
+<p class="legende-figure">Rapports de cotes — combien la cote d’être éliminé est multipliée — d’un <a href="{{ '/methode/' | relative_url }}#le-logit-conditionnel">logit conditionnel</a>, sur
 {{ p.modele.presences_texte | default: p.modele.presences }} présences et {{ p.modele.conseils }} conseils.</p>
 
 <div class="tableau-large">

@@ -7,6 +7,7 @@ permalink: /statistiques/jeu-social/
 chapeau: >-
   Être visé, voter juste, ou n’être jamais écrit sur un bulletin —
   et pourquoi l’invisibilité n’est que le deuxième prédicteur.
+image: /assets/partage/pages/statistiques-jeu-social.png
 ---
 
 {% assign i = site.data.stats.indicateurs %}

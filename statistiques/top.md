@@ -7,6 +7,7 @@ chapeau: >-
   Quatre façons de bien jouer, mesurées sans jamais regarder qui a gagné.
   **Aucune ne suffit à prédire les autres** — et une cinquième a dû être retirée parce
   qu’elle ne mesurait qu’une chose : le soir où l’on part.
+image: /assets/partage/pages/statistiques-top.png
 ---
 
 {% assign c = site.data.stats.classement %}
@@ -42,7 +43,7 @@ décider que le physique compte plus que le vote.
 <table data-triable><caption class="hors-ecran">Le top {{ c.taille }}</caption>
 <thead><tr>
   <th class="nombre">#</th><th>Aventurier</th><th class="nombre">Score</th>
-  <th class="nombre">Saisons</th><th class="nombre">Titres</th>
+  <th class="nombre">Saisons achevées</th><th class="nombre">Titres</th>
   <th class="nombre">Dans le top selon les poids</th>
   <th class="nombre">Rang, du 5<sup>e</sup> au 95<sup>e</sup> centile</th>
 </tr></thead>
@@ -81,7 +82,7 @@ l’inverse.
 <table id="tableau-classement" data-triable><caption class="hors-ecran">Le classement complet, nom par nom</caption>
 <thead><tr>
   <th class="nombre">Rang</th><th>Aventurier</th>
-  <th class="nombre">Saisons</th><th class="nombre">Titres</th>
+  <th class="nombre">Saisons achevées</th><th class="nombre">Titres</th>
   <th class="nombre">Score</th>
   <th class="nombre">Dans le top {{ c.taille }}</th>
   <th class="nombre">Rang, 5<sup>e</sup>–95<sup>e</sup></th>
@@ -207,7 +208,7 @@ ils tombent.
 <table data-triable><caption class="hors-ecran">Et les visages qu’on connaît ?</caption>
 <thead><tr>
   <th class="nombre">Rang</th><th>Aventurier</th>
-  <th class="nombre">Saisons</th><th class="nombre">Titres</th>
+  <th class="nombre">Saisons achevées</th><th class="nombre">Titres</th>
   <th class="nombre">Score</th>
   {% for f in c.facettes %}<th class="nombre">{{ f.libelle | remove: "Le " | remove: "La " | remove: "Les " }}</th>{% endfor %}
   <th class="nombre">Rang, 5<sup>e</sup>–95<sup>e</sup> centile</th>
@@ -236,7 +237,7 @@ affiché veut dire quelque chose.</p>
 <div class="constat">
   <p><b>{{ cr[0].nom }} est {{ cr[0].rang }}<sup>e</sup>,
   {{ cr[1].nom }} est {{ cr[1].rang }}<sup>e</sup></b> — et tous deux ont joué
-  {{ cr[0].participations }} saisons. Le nombre de participations ne dit donc
+  {{ cr[0].participations }} saisons achevées. Le nombre de participations ne dit donc
   rien du niveau : il dit qui la production redemande, ce que
   <a href="{{ '/statistiques/revenants/' | relative_url }}">les revenants</a>
   mesurent à part.</p>
@@ -542,7 +543,7 @@ tirés au hasard.</p>
 {{ c.stabilite.effectif }} aventuriers ne sont pas un échantillon : ce sont ceux
 que la production a <em>rappelés</em>, donc les meilleurs de leur saison.
 Comparer des gens déjà triés sur le talent écrase mécaniquement la corrélation —
-le vrai lien est donc plus fort que {{ t.observe_arrondi }}. En sens inverse, une
+le vrai lien est donc probablement plus fort que {{ t.observe_arrondi }}. En sens inverse, une
 édition de revenants n’est pas une saison ordinaire : on y affronte des
 adversaires bien plus forts, ce que le classement ne sait pas corriger, et cela
 brouille la comparaison dans l’autre sens.</p>

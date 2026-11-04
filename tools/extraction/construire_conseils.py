@@ -415,6 +415,74 @@ def trancher_homonyme(nom, idx, presents, sorts_admis=None, sorts=None):
     return None
 
 
+TRIBUS_HORS_CAMP = {"tribu reunifiee", "absente", "absent", "exil", "aucune tribu"}
+# La lettre que Wikipedia accole a un homonyme, « Jerome (O) » : l'initiale de
+# la couleur de sa tribu de depart.
+LETTRES_COULEUR = {"o": "orange", "b": "bleu", "v": "vert", "r": "rouge",
+                   "j": "jaune", "n": "noir"}
+RE_LETTRE = re.compile(r"^(\S+)\s*\(([A-Za-z])\)$")
+
+
+def _camps(p):
+    """Les tribus d'avant la reunification ou cette participation a joue."""
+    return {slug(e["tribu"]).replace("-", " ") for e in (p.get("parcours") or [])
+            if e.get("tribu")} - TRIBUS_HORS_CAMP
+
+
+def trancher_par_tribu(lot, idx, sid, rapport):
+    """Un prenom porte par deux personnes, tranche par la TRIBU du conseil.
+
+    Avant la reunification, seule une tribu vote : les votants deja
+    rattaches la designent. Deux Lea jouent les Chasseurs d'immunite, l'une
+    chez les jaunes, l'autre chez les rouges ; deux Jerome la Revanche des
+    4 terres, l'un orange, l'autre bleu, jusqu'a leur rencontre chez les
+    jaunes au 12e jour (revue du 3 nov. 2026). La tribu du conseil est celle
+    que TOUS ses rattaches ont connue ; un homonyme n'est retenu que s'il est
+    le seul a l'avoir connue. Le jour du conseil n'etant pas connu, deux
+    homonymes passes par une meme tribu ne sont jamais departages : c'est
+    voulu. « Jerome (O) » se lit a la couleur de depart, et le Jerome qui
+    vote contre un Jerome est l'autre.
+    """
+    n = 0
+    parts = {p["id"]: p for t in idx.values() if isinstance(t, list) for p in t}
+    for c in lot:
+        if c["type"] != "elimination":
+            continue
+        rattaches = {b["votant"] for b in c["votes"] if b.get("votant_rattache")}
+        rattaches |= {b["cible"] for b in c["votes"] if b.get("cible_rattachee")}
+        # Trois rattaches au moins : en deca, une tribu commune ne prouve rien.
+        communs = None if len(rattaches) >= 3 else set()
+        for pid in (rattaches if communs is None else ()):
+            if pid in parts:
+                communs = _camps(parts[pid]) if communs is None else communs & _camps(parts[pid])
+        for b in c["votes"]:
+            # La cible d'abord : rattachee, elle peut trancher le votant.
+            for role, drapeau in (("cible", "cible_rattachee"), ("votant", "votant_rattache")):
+                lib = b.get(role)
+                if b.get(drapeau) or not isinstance(lib, str) or not lib.strip():
+                    continue
+                m = RE_LETTRE.match(lib.strip())
+                tete = slug(m.group(1) if m else lib.split()[0])
+                cands = list({p["id"]: p for p in (idx.get(tete) or [])}.values())
+                if len(cands) < 2:
+                    continue
+                if m:
+                    couleur = LETTRES_COULEUR.get(m.group(2).lower())
+                    qui = [p for p in cands if p.get("couleur") == couleur]
+                elif (role == "votant" and b.get("cible_rattachee")
+                        and b["cible"] in {p["id"] for p in cands}):
+                    # On n'ecrit pas son propre nom : le Jerome qui vote
+                    # contre un Jerome est l'autre.
+                    qui = [p for p in cands if p["id"] != b["cible"]]
+                else:
+                    qui = [p for p in cands if communs and _camps(p) & communs]
+                if len(qui) == 1:
+                    b[role], b[drapeau] = qui[0]["id"], True
+                    n += 1
+    if n:
+        rapport.append(f"{sid} : {n} bulletins d'homonymes rendus par la tribu du conseil")
+
+
 def trancher_par_ligne(lot, idx, sid, rapport):
     """Une ligne de matrice est une personne : on la rend a celle qui sort la.
 
@@ -1415,6 +1483,7 @@ def construire(saisons, parts, rapport):
                     sortis.add(elimine_id)
 
         trancher_par_ligne(conseils[debut_saison:], idx, sid, rapport)
+        trancher_par_tribu(conseils[debut_saison:], idx, sid, rapport)
         etiqueter_les_sorties(conseils, debut_saison, sorts, rapport)
         recoller_le_scrutin_final(conseils[debut_saison:], rapport)
 

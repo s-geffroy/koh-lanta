@@ -7,6 +7,7 @@ permalink: /statistiques/force/
 chapeau: >-
   Sept victoires en quinze épreuves, ou deux en trois ? Le total brut mélange
   le niveau et le temps passé en jeu. On peut les séparer.
+image: /assets/partage/pages/statistiques-force.png
 ---
 
 {% assign m = site.data.stats.modeles %}

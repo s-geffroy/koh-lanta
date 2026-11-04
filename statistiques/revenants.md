@@ -7,6 +7,7 @@ permalink: /statistiques/revenants/
 chapeau: >-
   Rejouer Koh-Lanta, est-ce un avantage ? Le chiffre qui saute aux yeux dit
   oui. Il dit surtout autre chose.
+image: /assets/partage/pages/statistiques-revenants.png
 ---
 
 {% assign r = site.data.stats.revenants %}

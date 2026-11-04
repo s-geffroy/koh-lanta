@@ -6,6 +6,7 @@ description: "Jaune ou rouge à Koh-Lanta : vaut-il mieux commencer chez les Ja
 permalink: /statistiques/tribus/
 chapeau: >-
   Vaut-il mieux commencer chez les Jaunes ou chez les Rouges ? La question revient à chaque saison. La réponse tient en une ligne.
+image: /assets/partage/pages/statistiques-tribus.png
 ---
 
 {% assign s = site.data.stats %}

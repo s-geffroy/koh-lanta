@@ -112,6 +112,13 @@ def bloc_test(t):
     }
 
 
+# La frequence de base change avec les regles : les objets d'immunite se
+# multiplient a partir de la fin des annees 2010. Une seconde frequence, sur
+# les saisons diffusees depuis cette annee, dit de combien (revue du 3 nov.
+# 2026 : 88 % sur toutes les saisons, 82 % depuis 2018).
+ANNEE_RECENTE = 2018
+
+
 def issues(conseils, par_saison):
     """La frequence des quatre issues d'un conseil d'elimination.
 
@@ -135,6 +142,7 @@ def issues(conseils, par_saison):
     """
     par_num = {(c["saison"], c["numero"]): c for c in conseils}
     compte, sans_bulletin = Counter(), 0
+    recents = Counter()
     for c in conseils:
         if c.get("type", "elimination") != "elimination" or not c.get("elimine_rattache"):
             continue
@@ -156,13 +164,21 @@ def issues(conseils, par_saison):
         tete = Counter(b["cible"] for b in c["votes"]
                        if b.get("cible") and not b.get("annule")).most_common(2)
         bloque = len(tete) == 2 and tete[0][1] == tete[1][1]
-        compte["egalite_revote" if tour_nul else "renversement" if renverse
-               else "egalite_tranchee" if bloque else "ordinaire"] += 1
+        issue = ("egalite_revote" if tour_nul else "renversement" if renverse
+                 else "egalite_tranchee" if bloque else "ordinaire")
+        compte[issue] += 1
+        if (par_saison.get(c["saison"], {}).get("annee") or 0) >= ANNEE_RECENTE:
+            recents[issue] += 1
     n = sum(compte.values())
     out = {"conseils": milliers(n), "sans_bulletin": milliers(sans_bulletin)}
     for k in ("ordinaire", "egalite_revote", "renversement", "egalite_tranchee"):
         out[k] = decimal(100.0 * compte[k] / n) if n else None
     out["ordinaire_rond"] = decimal(100.0 * compte["ordinaire"] / n, 0) if n else None
+    nr = sum(recents.values())
+    out["annee_recente"] = ANNEE_RECENTE
+    out["conseils_recents"] = milliers(nr)
+    out["ordinaire_recent"] = decimal(100.0 * recents["ordinaire"] / nr) if nr else None
+    out["ordinaire_recent_rond"] = decimal(100.0 * recents["ordinaire"] / nr, 0) if nr else None
     return out
 
 

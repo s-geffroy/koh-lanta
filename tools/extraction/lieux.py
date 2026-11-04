@@ -98,6 +98,19 @@ VILLES = {
     "Rosny-sous-Bois": "Seine-Saint-Denis",
     "Strasbourg": "Bas-Rhin",
     "Toulouse": "Haute-Garonne",
+    # Residences de Wikipedia en anglais (s04, s07, s09), communes sans
+    # homonyme (4 nov. 2026).
+    "Annecy": "Haute-Savoie",
+    "Besançon": "Doubs",
+    "Chamonix": "Haute-Savoie",
+    "Le Beausset": "Var",
+    "Modane": "Savoie",
+    "Narbonne": "Aude",
+    "Nîmes": "Gard",
+    "Pontarlier": "Doubs",
+    "Sainghin-en-Weppes": "Nord",
+    "Sète": "Hérault",
+    "Villeneuve d'Ascq": "Nord",
     # Provinces d'Ancien Regime, encore employees comme adresse.
     "Périgord": "Dordogne",
     "Touraine": "Indre-et-Loire",

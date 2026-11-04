@@ -6,6 +6,7 @@ permalink: /completude/
 chapeau: >-
   Le tableau complet : les 34 éditions en ligne, les 19 types de données en
   colonne, et à l’intersection ce qui est réellement renseigné.
+image: /assets/partage/pages/completude.png
 ---
 
 {% assign c = site.data.stats.completude_saisons %}
