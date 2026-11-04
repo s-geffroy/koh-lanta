@@ -988,10 +988,15 @@ AFFIRMATIONS_VALEURS = [
      "compte, et que les voix recues, une fois le soir du depart retire, ne "
      "s'en distinguent pas"),
     (("indicateurs", "fantomes_issue"),
-     lambda x: all(v["rapport"] > 1 for v in x
-                   if v["sort"] in ("vainqueur", "abandon_medical")),
-     "statistiques/jeu-social.md ecrit « N fois plus » de vainqueurs et "
-     "d'abandons medicaux chez les fantomes"),
+     lambda x: all(v["p"] >= 0.05 for v in x if v["sort"] == "vainqueur"),
+     "statistiques/jeu-social.md ecrit que le hasard suffit a expliquer "
+     "l'ecart de victoires entre fantomes et pairs"),
+    (("indicateurs", "fantomes_issue_p_min"), lambda x: x >= 0.05,
+     "statistiques/jeu-social.md ecrit « Aucun ecart ne tient » entre les "
+     "issues des fantomes et celles de leurs pairs"),
+    (("indicateurs", "menace_finale_ecart"), lambda x: x < 0.1,
+     "statistiques/jeu-social.md ecrit que finalistes et elimines de la "
+     "finale ne se distinguent pas a la menace"),
     (("indicateurs", "menace_rapport"), lambda x: x > 1,
      "statistiques/jeu-social.md ecrit « N fois moins » de voix pour un vainqueur"),
     (("epreuves", "par_metier_par_ratio"), lambda x: x[0]["code"] == "sport",

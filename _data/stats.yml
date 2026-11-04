@@ -8557,7 +8557,7 @@ colliers:
 indicateurs:
   seuil_conseils: 4
   seuil_epreuves: 8
-  mesurables: 522
+  mesurables: 378
   meilleure_justesse:
   - nom: Marianne Mondon
     saison: s02
@@ -8680,57 +8680,35 @@ indicateurs:
     genre: h
     id: philippe-duron
   plus_menaces:
-  - nom: Stéphanie Tribot
-    saison: s23
-    titre: Le Totem maudit
-    annee: 2022
-    speciale: false
-    valeur: "3,86"
-    base: 7
-    sort: elimine_conseil
-    genre: f
-    sort_libelle: Éliminée au conseil
-    id: stephanie-tribot
-  - nom: Marvyn Leone
-    saison: s18
-    titre: Fidji
-    annee: 2017
-    speciale: false
-    valeur: "2,88"
-    base: 8
-    sort: elimine_conseil
-    genre: h
-    sort_libelle: Éliminé au conseil
-    id: marvyn-leone
   - nom: Eric Peyrache
     saison: sp6
     titre: L’Île des héros
     annee: 2020
     speciale: true
-    valeur: "2,8"
-    base: 10
+    valeur: 4
+    base: 7
     sort: elimine_epreuve
     genre: h
     sort_libelle: Éliminé à une épreuve
     id: eric-peyrache
-  - nom: Sarah Aboudeine
-    saison: s26
-    titre: La Tribu maudite
-    annee: 2024
+  - nom: Marvyn Leone
+    saison: s18
+    titre: Fidji
+    annee: 2017
     speciale: false
-    valeur: "2,62"
-    base: 8
+    valeur: "3,83"
+    base: 6
     sort: elimine_conseil
-    genre: f
-    sort_libelle: Éliminée au conseil
-    id: sarah-aboudeine
+    genre: h
+    sort_libelle: Éliminé au conseil
+    id: marvyn-leone
   - nom: Tania Cakarevic
     saison: s24
     titre: Le Feu sacré
     annee: 2023
     speciale: false
-    valeur: "2,57"
-    base: 14
+    valeur: "3,27"
+    base: 11
     sort: finaliste
     genre: f
     sort_libelle: Finaliste
@@ -8740,78 +8718,100 @@ indicateurs:
     titre: La Légende
     annee: 2021
     speciale: true
-    valeur: "2,2"
-    base: 10
+    valeur: "3,14"
+    base: 7
     sort: elimine_conseil
     genre: f
     sort_libelle: Éliminée au conseil
     id: clemence-castel
-  - nom: Mélissa Pierru
-    saison: s26
-    titre: La Tribu maudite
-    annee: 2024
-    speciale: false
-    valeur: "2,17"
-    base: 6
-    sort: elimine_conseil
-    genre: f
-    sort_libelle: Éliminée au conseil
-    id: melissa-pierru
-  - nom: Ahmad Abadie
-    saison: sp6
-    titre: L’Île des héros
-    annee: 2020
-    speciale: true
-    valeur: "2,17"
-    base: 6
-    sort: elimine_conseil
-    genre: h
-    sort_libelle: Éliminé au conseil
-    id: ahmad-abadie
-  - nom: Fabrice Giordano
-    saison: s26
-    titre: La Tribu maudite
-    annee: 2024
-    speciale: false
-    valeur: "2,14"
-    base: 7
-    sort: elimine_conseil
-    genre: h
-    sort_libelle: Éliminé au conseil
-    id: fabrice-giordano
   - nom: Yannick Zachée
     saison: s23
     titre: Le Totem maudit
     annee: 2022
     speciale: false
-    valeur: "2,1"
-    base: 10
+    valeur: 3
+    base: 7
     sort: elimine_conseil
     genre: h
     sort_libelle: Éliminé au conseil
     id: yannick-zachee
-  - nom: Jonathan Guez
-    saison: s28
-    titre: Les Reliques du destin
-    annee: 2026
+  - nom: Maxime Tournoux
+    saison: s23
+    titre: Le Totem maudit
+    annee: 2022
     speciale: false
-    valeur: 2
+    valeur: "2,83"
     base: 6
-    sort: elimine_ambassadeurs
+    sort: elimine_conseil
     genre: h
-    sort_libelle: Éliminé aux ambassadeurs
-    id: jonathan-guez
+    sort_libelle: Éliminé au conseil
+    id: maxime-tournoux
+  - nom: Alix Noblat
+    saison: sp7
+    titre: La Légende
+    annee: 2021
+    speciale: true
+    valeur: "2,71"
+    base: 7
+    sort: elimine_conseil
+    genre: f
+    sort_libelle: Éliminée au conseil
+    id: alix-noblat
   - nom: Charlotte Caron
     saison: sp6
     titre: L’Île des héros
     annee: 2020
     speciale: true
-    valeur: 2
-    base: 8
+    valeur: "2,67"
+    base: 6
     sort: elimine_conseil
     genre: f
     sort_libelle: Éliminée au conseil
     id: charlotte-caron
+  - nom: Michèle Valembois
+    saison: s01
+    titre: Les Aventuriers de Koh-Lanta
+    annee: 2001
+    speciale: false
+    valeur: "2,57"
+    base: 7
+    sort: elimine_conseil
+    genre: f
+    sort_libelle: Éliminée au conseil
+    id: michele-valembois
+  - nom: Catherine Ehret-Mader
+    saison: s04
+    titre: Panama
+    annee: 2004
+    speciale: false
+    valeur: "2,5"
+    base: 6
+    sort: elimine_conseil
+    genre: f
+    sort_libelle: Éliminée au conseil
+    id: catherine-ehret-mader
+  - nom: Noémie Bessec
+    saison: s27
+    titre: La Revanche des 4 Terres
+    annee: 2025
+    speciale: false
+    valeur: "2,22"
+    base: 9
+    sort: elimine_conseil
+    genre: f
+    sort_libelle: Éliminée au conseil
+    id: noemie-bessec
+  - nom: Ugo Lartiche
+    saison: sp7
+    titre: La Légende
+    annee: 2021
+    speciale: true
+    valeur: "2,17"
+    base: 6
+    sort: elimine_poteaux
+    genre: h
+    sort_libelle: Éliminé aux poteaux
+    id: ugo-lartiche
   meilleure_evasion:
   - nom: Romain Bissol
     saison: s01
@@ -8946,111 +8946,21 @@ indicateurs:
     sort_libelle: Abandon médical
     id: charles-clement
   fantomes:
-  - nom: Loïc Riowal
-    saison: s21
-    titre: Les 4 Terres
-    annee: 2020
-    conseils: 15
-    sort: elimine_poteaux
-    genre: h
-    survie: 100
-    sort_libelle: Éliminé aux poteaux
-    id: loic-riowal
-  - nom: François Descamp
-    saison: s23
-    titre: Le Totem maudit
-    annee: 2022
-    conseils: 14
-    sort: vainqueur
-    genre: h
-    survie: 100
-    sort_libelle: Vainqueur
-    id: francois-descamp
   - nom: Bastien San Pedro
     saison: s23
     titre: Le Totem maudit
     annee: 2022
-    conseils: 14
+    conseils: 11
     sort: vainqueur
     genre: h
     survie: 100
     sort_libelle: Vainqueur
     id: bastien-san-pedro
-  - nom: Claire Passas
-    saison: s27
-    titre: La Revanche des 4 Terres
-    annee: 2025
-    conseils: 14
-    sort: elimine_orientation
-    genre: f
-    survie: "97,5"
-    sort_libelle: Éliminée à l’orientation
-    id: claire-passas
-  - nom: Guénaëlle Biras
-    saison: s01
-    titre: Les Aventuriers de Koh-Lanta
-    annee: 2001
-    conseils: 13
-    sort: finaliste
-    genre: f
-    survie: 100
-    sort_libelle: Finaliste
-    id: guenaelle-biras
-  - nom: Laurent Maistret
-    saison: s11
-    titre: Raja Ampat
-    annee: 2011
-    conseils: 13
-    sort: elimine_poteaux
-    genre: h
-    survie: 100
-    sort_libelle: Éliminé aux poteaux
-    id: laurent-maistret
-  - nom: Gérard Urdampilleta
-    saison: s11
-    titre: Raja Ampat
-    annee: 2011
-    conseils: 13
-    sort: vainqueur
-    genre: h
-    survie: 100
-    sort_libelle: Vainqueur
-    id: gerard-urdampilleta
-  - nom: Ugo Lartiche
-    saison: s12
-    titre: Malaisie
-    annee: 2012
-    conseils: 13
-    sort: vainqueur
-    genre: h
-    survie: 100
-    sort_libelle: Vainqueur
-    id: ugo-lartiche
-  - nom: Steeve Demana
-    saison: s20
-    titre: La Guerre des chefs
-    annee: 2019
-    conseils: 13
-    sort: elimine_poteaux
-    genre: h
-    survie: 100
-    sort_libelle: Éliminé aux poteaux
-    id: steeve-demana
-  - nom: Cindy Poumeyrol
-    saison: s20
-    titre: La Guerre des chefs
-    annee: 2019
-    conseils: 13
-    sort: finaliste
-    genre: f
-    survie: 100
-    sort_libelle: Finaliste
-    id: cindy-poumeyrol
   - nom: Thibault Bélanger
     saison: s26
     titre: La Tribu maudite
     annee: 2024
-    conseils: 13
+    conseils: 11
     sort: vainqueur
     genre: h
     survie: 100
@@ -9060,18 +8970,108 @@ indicateurs:
     saison: sp7
     titre: La Légende
     annee: 2021
-    conseils: 13
+    conseils: 10
     sort: finaliste
     genre: h
     survie: 100
     sort_libelle: Finaliste
     id: claude-dartois
-  nb_fantomes: 67
+  - nom: Sophia Mansouri
+    saison: s26
+    titre: La Tribu maudite
+    annee: 2024
+    conseils: 10
+    sort: elimine_epreuve
+    genre: f
+    survie: "95,1"
+    sort_libelle: Éliminée à une épreuve
+    id: sophia-mansouri
+  - nom: Bruno Peisey
+    saison: s14
+    titre: Johor
+    annee: 2015
+    conseils: 10
+    sort: elimine_orientation
+    genre: h
+    survie: 95
+    sort_libelle: Éliminé à l’orientation
+    id: bruno-peisey
+  - nom: Guénaëlle Biras
+    saison: s01
+    titre: Les Aventuriers de Koh-Lanta
+    annee: 2001
+    conseils: 9
+    sort: finaliste
+    genre: f
+    survie: 100
+    sort_libelle: Finaliste
+    id: guenaelle-biras
+  - nom: Jade Handi
+    saison: s07
+    titre: Palawan
+    annee: 2007
+    conseils: 9
+    sort: vainqueur
+    genre: f
+    survie: 100
+    sort_libelle: Vainqueur
+    id: jade-handi
+  - nom: Laurent Maistret
+    saison: s11
+    titre: Raja Ampat
+    annee: 2011
+    conseils: 9
+    sort: elimine_poteaux
+    genre: h
+    survie: 100
+    sort_libelle: Éliminé aux poteaux
+    id: laurent-maistret
+  - nom: Gérard Urdampilleta
+    saison: s11
+    titre: Raja Ampat
+    annee: 2011
+    conseils: 9
+    sort: vainqueur
+    genre: h
+    survie: 100
+    sort_libelle: Vainqueur
+    id: gerard-urdampilleta
+  - nom: Ugo Lartiche
+    saison: s12
+    titre: Malaisie
+    annee: 2012
+    conseils: 9
+    sort: vainqueur
+    genre: h
+    survie: 100
+    sort_libelle: Vainqueur
+    id: ugo-lartiche
+  - nom: François Descamp
+    saison: s23
+    titre: Le Totem maudit
+    annee: 2022
+    conseils: 9
+    sort: vainqueur
+    genre: h
+    survie: 100
+    sort_libelle: Vainqueur
+    id: francois-descamp
+  - nom: Christelle Gauzet
+    saison: s08
+    titre: Caramoan
+    annee: 2008
+    conseils: 8
+    sort: vainqueur
+    genre: f
+    survie: 100
+    sort_libelle: Vainqueur
+    id: christelle-gauzet
+  nb_fantomes: 37
   fantomes_recidivistes:
   - nom: Coumba Baradji
     fois: 3
-    saisons: La Légende, La Revanche des héros, Le Choc des héros
-    sorts: Éliminée aux ambassadeurs, Éliminée à l’orientation, Éliminée à l’orientation
+    saisons: La Revanche des héros, Le Choc des héros, La Légende
+    sorts: Éliminée à l’orientation, Éliminée à l’orientation, Éliminée aux ambassadeurs
     id: coumba-baradji
   - nom: Claude Dartois
     fois: 2
@@ -9088,162 +9088,156 @@ indicateurs:
     saisons: Les 4 Terres, La Légende
     sorts: Éliminé aux poteaux, Éliminé à une épreuve
     id: loic-riowal
-  - nom: Yassin Metiri
-    fois: 2
-    saisons: Le Combat des héros, Cambodge
-    sorts: Éliminé par les destins liés, Éliminé aux ambassadeurs
-    id: yassin-metiri
   fantomes_vainqueurs:
-  - nom: François Descamp
-    titre: Le Totem maudit
-    annee: 2022
-    conseils: 14
-    id: francois-descamp
   - nom: Bastien San Pedro
     titre: Le Totem maudit
     annee: 2022
-    conseils: 14
+    conseils: 11
     id: bastien-san-pedro
-  - nom: Gérard Urdampilleta
-    titre: Raja Ampat
-    annee: 2011
-    conseils: 13
-    id: gerard-urdampilleta
-  - nom: Ugo Lartiche
-    titre: Malaisie
-    annee: 2012
-    conseils: 13
-    id: ugo-lartiche
   - nom: Thibault Bélanger
     titre: La Tribu maudite
     annee: 2024
-    conseils: 13
+    conseils: 11
     id: thibault-belanger
   - nom: Jade Handi
     titre: Palawan
     annee: 2007
-    conseils: 12
+    conseils: 9
     id: jade-handi
+  - nom: Gérard Urdampilleta
+    titre: Raja Ampat
+    annee: 2011
+    conseils: 9
+    id: gerard-urdampilleta
+  - nom: Ugo Lartiche
+    titre: Malaisie
+    annee: 2012
+    conseils: 9
+    id: ugo-lartiche
+  - nom: François Descamp
+    titre: Le Totem maudit
+    annee: 2022
+    conseils: 9
+    id: francois-descamp
   - nom: Christelle Gauzet
     titre: Caramoan
     annee: 2008
-    conseils: 12
+    conseils: 8
     id: christelle-gauzet
-  - nom: Delphine Bano
-    titre: Bocas del Toro
-    annee: 2003
-    conseils: 11
-    id: delphine-bano
   - nom: Naoil Tita
     titre: L’Île des héros
     annee: 2020
-    conseils: 10
+    conseils: 8
     id: naoil-tita
+  - nom: Delphine Bano
+    titre: Bocas del Toro
+    annee: 2003
+    conseils: 6
+    id: delphine-bano
   - nom: Bertrand Bolle
     titre: La Revanche des héros
     annee: 2012
-    conseils: 8
+    conseils: 6
     id: bertrand-bolle
   fantomes_issue:
-  - sort: abandon_medical
-    libelle: Abandon médical
-    effectif: 14
-    part_fantomes: "20,9"
-    part_ensemble: "7,7"
-    part_endurants: 5
-    part_comparables: "10,2"
-    ecart: "10,7"
-    rapport: 2
-    effectif_texte: "14"
   - sort: vainqueur
     libelle: Vainqueur
     effectif: 10
-    part_fantomes: "14,9"
+    part_fantomes: 27
     part_ensemble: "5,6"
-    part_endurants: "7,3"
-    part_comparables: "14,8"
-    ecart: "0,1"
-    rapport: 1
+    part_endurants: "10,6"
+    part_comparables: "19,3"
+    p: "0,37"
+    ecart: "7,7"
+    rapport: "1,4"
     effectif_texte: "10"
-  - sort: elimine_ambassadeurs
-    libelle: Éliminé aux ambassadeurs
-    effectif: 9
-    part_fantomes: "13,4"
-    part_ensemble: "3,5"
-    part_endurants: 4
-    part_comparables: "8,1"
-    ecart: "5,3"
-    rapport: "1,7"
-    effectif_texte: "9"
-  - sort: elimine_epreuve
-    libelle: Éliminé à une épreuve
-    effectif: 8
-    part_fantomes: "11,9"
-    part_ensemble: "5,1"
-    part_endurants: "5,6"
-    part_comparables: "11,4"
-    ecart: "0,5"
-    rapport: 1
-    effectif_texte: "8"
-  - sort: elimine_orientation
-    libelle: Éliminé à l’orientation
-    effectif: 6
-    part_fantomes: 9
-    part_ensemble: "6,7"
-    part_endurants: "8,8"
-    part_comparables: "17,8"
-    ecart: "−8,8"
-    rapport: "0,5"
-    effectif_texte: "6"
   - sort: finaliste
     libelle: Finaliste
     effectif: 6
-    part_fantomes: 9
+    part_fantomes: "16,2"
     part_ensemble: "5,1"
-    part_endurants: "6,7"
-    part_comparables: "13,6"
-    ecart: "−4,6"
+    part_endurants: "9,7"
+    part_comparables: "17,7"
+    p: 1
+    ecart: "−1,5"
+    rapport: "0,9"
+    effectif_texte: "6"
+  - sort: elimine_orientation
+    libelle: Éliminé à l’orientation
+    effectif: 6
+    part_fantomes: "16,2"
+    part_ensemble: "6,7"
+    part_endurants: "12,4"
+    part_comparables: "22,7"
+    p: "0,51"
+    ecart: "−6,5"
     rapport: "0,7"
     effectif_texte: "6"
-  - sort: elimine_destins_lies
-    libelle: Éliminé par les destins liés
-    effectif: 5
-    part_fantomes: "7,5"
-    part_ensemble: "2,2"
-    part_endurants: "2,9"
-    part_comparables: "5,9"
-    ecart: "1,6"
-    rapport: "1,3"
-    effectif_texte: "5"
   - sort: elimine_poteaux
     libelle: Éliminé aux poteaux
     effectif: 4
-    part_fantomes: 6
+    part_fantomes: "10,8"
     part_ensemble: "5,1"
-    part_endurants: "6,7"
-    part_comparables: "13,6"
-    ecart: "−7,6"
-    rapport: "0,4"
+    part_endurants: "9,4"
+    part_comparables: "17,1"
+    p: "0,46"
+    ecart: "−6,3"
+    rapport: "0,6"
     effectif_texte: "4"
-  - sort: abandon_volontaire
-    libelle: Abandon volontaire
+  - sort: elimine_destins_lies
+    libelle: Éliminé par les destins liés
     effectif: 4
-    part_fantomes: 6
-    part_ensemble: "2,9"
-    part_endurants: "1,7"
-    part_comparables: "3,4"
-    ecart: "2,6"
-    rapport: "1,8"
+    part_fantomes: "10,8"
+    part_ensemble: "2,2"
+    part_endurants: "3,6"
+    part_comparables: "6,6"
+    p: "0,49"
+    ecart: "4,2"
+    rapport: "1,6"
     effectif_texte: "4"
+  - sort: elimine_epreuve
+    libelle: Éliminé à une épreuve
+    effectif: 3
+    part_fantomes: "8,1"
+    part_ensemble: "5,1"
+    part_endurants: "5,4"
+    part_comparables: "9,9"
+    p: 1
+    ecart: "−1,8"
+    rapport: "0,8"
+    effectif_texte: "3"
+  - sort: abandon_medical
+    libelle: Abandon médical
+    effectif: 2
+    part_fantomes: "5,4"
+    part_ensemble: "7,7"
+    part_endurants: "1,8"
+    part_comparables: "3,3"
+    p: "0,63"
+    ecart: "2,1"
+    rapport: "1,6"
+    effectif_texte: "2"
   - sort: disqualifie
     libelle: Exclu du jeu
     effectif: 1
-    part_fantomes: "1,5"
+    part_fantomes: "2,7"
     part_ensemble: "0,2"
-    part_endurants: "0,2"
-    part_comparables: "0,4"
-    ecart: "1,1"
-    rapport: "3,8"
+    part_endurants: "0,3"
+    part_comparables: "0,6"
+    p: "0,31"
+    ecart: "2,1"
+    rapport: "4,5"
+    effectif_texte: "1"
+  - sort: elimine_ambassadeurs
+    libelle: Éliminé aux ambassadeurs
+    effectif: 1
+    part_fantomes: "2,7"
+    part_ensemble: "3,5"
+    part_endurants: "0,6"
+    part_comparables: "1,1"
+    p: "0,43"
+    ecart: "1,6"
+    rapport: "2,5"
     effectif_texte: "1"
   voix_des_vainqueurs:
     effectif: 29
@@ -9332,22 +9326,22 @@ indicateurs:
       effectif: 29
       voix_moyennes: "2,31"
       voix_medianes: 2
-      menace_moyenne: "0,177"
+      menace_moyenne: "0,241"
       mesures: 29
       effectif_texte: "29"
     - libelle: Finalistes
       effectif: 24
       voix_moyennes: "6,25"
       voix_medianes: 5
-      menace_moyenne: "0,472"
+      menace_moyenne: "0,628"
       mesures: 24
       effectif_texte: "24"
     - libelle: Tout le casting
       effectif: 511
       voix_moyennes: "5,93"
       voix_medianes: 6
-      menace_moyenne: "0,714"
-      mesures: 429
+      menace_moyenne: "0,998"
+      mesures: 306
       effectif_texte: "511"
     couples:
     - saison: s01
@@ -9357,7 +9351,7 @@ indicateurs:
       voix_vainqueur: 3
       finaliste: Guénaëlle Biras
       voix_finaliste: 0
-      conseils: 13
+      conseils: 10
     - saison: s02
       titre: Nicoya
       annee: 2002
@@ -9365,7 +9359,7 @@ indicateurs:
       voix_vainqueur: 2
       finaliste: Nicolas Roy
       voix_finaliste: 3
-      conseils: 12
+      conseils: 8
     - saison: s04
       titre: Panama
       annee: 2004
@@ -9373,7 +9367,7 @@ indicateurs:
       voix_vainqueur: 2
       finaliste: Linda Alario
       voix_finaliste: 11
-      conseils: 13
+      conseils: 10
     - saison: s05
       titre: Pacifique
       annee: 2005
@@ -9381,7 +9375,7 @@ indicateurs:
       voix_vainqueur: 1
       finaliste: Francis Bordas
       voix_finaliste: 11
-      conseils: 13
+      conseils: 10
     - saison: s06
       titre: Vanuatu
       annee: 2006
@@ -9389,7 +9383,7 @@ indicateurs:
       voix_vainqueur: 5
       finaliste: Émilie Frahi
       voix_finaliste: 5
-      conseils: 12
+      conseils: 9
     - saison: s08
       titre: Caramoan
       annee: 2008
@@ -9397,7 +9391,7 @@ indicateurs:
       voix_vainqueur: 0
       finaliste: Frédéric Favier
       voix_finaliste: 1
-      conseils: 12
+      conseils: 8
     - saison: s09
       titre: Palau
       annee: 2009
@@ -9405,7 +9399,7 @@ indicateurs:
       voix_vainqueur: 3
       finaliste: Patrick Merle
       voix_finaliste: 1
-      conseils: 11
+      conseils: 8
     - saison: s10
       titre: Viêtnam
       annee: 2010
@@ -9413,7 +9407,7 @@ indicateurs:
       voix_vainqueur: 1
       finaliste: Claude Dartois
       voix_finaliste: 1
-      conseils: 13
+      conseils: 11
     - saison: s11
       titre: Raja Ampat
       annee: 2011
@@ -9421,7 +9415,7 @@ indicateurs:
       voix_vainqueur: 0
       finaliste: Teheiura Teahui
       voix_finaliste: 5
-      conseils: 13
+      conseils: 9
     - saison: s12
       titre: Malaisie
       annee: 2012
@@ -9429,7 +9423,7 @@ indicateurs:
       voix_vainqueur: 0
       finaliste: Brice Martinet
       voix_finaliste: 12
-      conseils: 13
+      conseils: 9
     - saison: s14
       titre: Johor
       annee: 2015
@@ -9437,7 +9431,7 @@ indicateurs:
       voix_vainqueur: 5
       finaliste: Chantal Ménard
       voix_finaliste: 9
-      conseils: 13
+      conseils: 10
     - saison: s15
       titre: Thaïlande
       annee: 2016
@@ -9445,7 +9439,7 @@ indicateurs:
       voix_vainqueur: 1
       finaliste: Pascal Salviani
       voix_finaliste: 12
-      conseils: 13
+      conseils: 10
     - saison: s16
       titre: L’Île au trésor
       annee: 2016
@@ -9453,7 +9447,7 @@ indicateurs:
       voix_vainqueur: 7
       finaliste: Jesta Hillmann
       voix_finaliste: 3
-      conseils: 14
+      conseils: 12
     - saison: s17
       titre: Cambodge
       annee: 2017
@@ -9461,7 +9455,7 @@ indicateurs:
       voix_vainqueur: 2
       finaliste: Clémentine Jullien
       voix_finaliste: 1
-      conseils: 13
+      conseils: 11
     - saison: s18
       titre: Fidji
       annee: 2017
@@ -9469,7 +9463,7 @@ indicateurs:
       voix_vainqueur: 6
       finaliste: Tiffany Gounin
       voix_finaliste: 6
-      conseils: 13
+      conseils: 8
     - saison: s20
       titre: La Guerre des chefs
       annee: 2019
@@ -9477,7 +9471,7 @@ indicateurs:
       voix_vainqueur: 7
       finaliste: Cindy Poumeyrol
       voix_finaliste: 0
-      conseils: 13
+      conseils: 11
     - saison: s21
       titre: Les 4 Terres
       annee: 2020
@@ -9485,7 +9479,7 @@ indicateurs:
       voix_vainqueur: 2
       finaliste: Brice Petit
       voix_finaliste: 6
-      conseils: 15
+      conseils: 7
     - saison: s22
       titre: Les Armes secrètes
       annee: 2021
@@ -9493,7 +9487,7 @@ indicateurs:
       voix_vainqueur: 1
       finaliste: Lucie Bertaud
       voix_finaliste: 8
-      conseils: 12
+      conseils: 9
     - saison: s23
       titre: Le Totem maudit
       annee: 2022
@@ -9501,7 +9495,7 @@ indicateurs:
       voix_vainqueur: 0
       finaliste: Géraldine Nicolle
       voix_finaliste: 5
-      conseils: 14
+      conseils: 9
     - saison: s23
       titre: Le Totem maudit
       annee: 2022
@@ -9509,7 +9503,7 @@ indicateurs:
       voix_vainqueur: 0
       finaliste: Géraldine Nicolle
       voix_finaliste: 5
-      conseils: 14
+      conseils: 11
     - saison: s24
       titre: Le Feu sacré
       annee: 2023
@@ -9517,7 +9511,7 @@ indicateurs:
       voix_vainqueur: 1
       finaliste: Tania Cakarevic
       voix_finaliste: 36
-      conseils: 14
+      conseils: 10
     - saison: s25
       titre: Les Chasseurs d’immunité
       annee: 2024
@@ -9525,7 +9519,7 @@ indicateurs:
       voix_vainqueur: 2
       finaliste: Meïssa Seck
       voix_finaliste: 5
-      conseils: 13
+      conseils: 10
     - saison: s26
       titre: La Tribu maudite
       annee: 2024
@@ -9533,7 +9527,7 @@ indicateurs:
       voix_vainqueur: 0
       finaliste: Charlotte Rasquin
       voix_finaliste: 6
-      conseils: 13
+      conseils: 11
     - saison: s27
       titre: La Revanche des 4 Terres
       annee: 2025
@@ -9541,7 +9535,7 @@ indicateurs:
       voix_vainqueur: 4
       finaliste: Maël Lozach
       voix_finaliste: 1
-      conseils: 14
+      conseils: 9
     - saison: s28
       titre: Les Reliques du destin
       annee: 2026
@@ -9549,7 +9543,7 @@ indicateurs:
       voix_vainqueur: 7
       finaliste: Clarisse Cresseveur
       voix_finaliste: 2
-      conseils: 15
+      conseils: 12
     couples_resume:
       effectif: 25
       vainqueur_moins_vise: 15
@@ -9559,7 +9553,7 @@ indicateurs:
       moyenne_finaliste: "6,2"
       rapport: "2,5"
       effectif_texte: "25"
-    rapport_ensemble: 4
+    rapport_ensemble: "4,1"
     effectif_texte: "29"
   duos:
     seuil: 6
@@ -9662,8 +9656,8 @@ indicateurs:
       accord: 8
       part: 100
   comparables: 627
-  endurants: 479
-  endurants_hors_conseil: 236
+  endurants: 331
+  endurants_hors_conseil: 181
   seuil_fantome: 5
   justesse_par_sort:
     elimine_conseil: "57,8"
@@ -9674,16 +9668,14 @@ indicateurs:
     elimine_orientation: "73,3"
     elimine_destins_lies: "53,4"
   menace_par_sort:
-    elimine_conseil: 1
-    elimine_epreuve: "0,3"
-    finaliste: "0,5"
+    elimine_conseil: "1,4"
+    elimine_epreuve: "0,6"
+    finaliste: "0,6"
     vainqueur: "0,2"
-    elimine_poteaux: "0,4"
-    abandon_medical: "0,2"
-    elimine_orientation: "0,4"
-    abandon_volontaire: "0,3"
-    elimine_ambassadeurs: "0,4"
-    elimine_destins_lies: "0,2"
+    elimine_poteaux: "0,6"
+    elimine_orientation: "0,6"
+    elimine_destins_lies: "0,4"
+  menace_finale_ecart: "0,03"
   menace_rapport: "5,9"
   saisons:
   - id: s01
@@ -10734,6 +10726,7 @@ indicateurs:
     - heros
     - binomes
     effectif_texte: "18"
+  fantomes_issue_p_min: "0,31"
   abandon_nul: 3
   abandon_nul_texte: '*Les Aventuriers de Koh-Lanta* (2001), *L’Île au trésor* (2016) et *Les Reliques
     du destin* (2026)'
@@ -37317,10 +37310,10 @@ mots:
   intervalle_titres_maj: Treize
   mecaniques_saisons: vingt-six
   mecaniques_saisons_maj: Vingt-six
-  fantomes_recidivistes: cinq
-  fantomes_recidivistes_maj: Cinq
-  fantome_vainqueur_conseils: quatorze
-  fantome_vainqueur_conseils_maj: Quatorze
+  fantomes_recidivistes: quatre
+  fantomes_recidivistes_maj: Quatre
+  fantome_vainqueur_conseils: onze
+  fantome_vainqueur_conseils_maj: Onze
   sommaire_entrees: vingt-sept
   sommaire_entrees_maj: Vingt-sept
   sommaire_testees: seize

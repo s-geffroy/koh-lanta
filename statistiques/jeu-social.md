@@ -59,24 +59,19 @@ mémoire.</p>
 </div>
 
 {% assign fv = i.fantomes_issue | where: "sort", "vainqueur" | first %}
-{% assign fa = i.fantomes_issue | where: "sort", "abandon_medical" | first %}
 
 **{{ fv.part_fantomes }} % des fantômes gagnent la saison**, contre
 {{ fv.part_comparables }} % de ceux qui ont tenu aussi longtemps sans sortir au
-conseil. L’écart, qui paraissait large face à tous les endurants
+conseil — un écart que le hasard suffit à expliquer (p = {{ fv.p }}).
+L’écart, qui paraissait large face à tous les endurants
 ({{ fv.part_endurants }} %), tenait surtout à ceci : la moitié d’entre eux
 sortent au conseil, ce qu’un fantôme ne peut pas faire.
 
-Le vrai écart est ailleurs, et il est inattendu.
-
 <div class="constat">
-  <p><b>{{ fa.part_fantomes }} % des fantômes quittent le jeu sur décision
-  médicale</b>, contre {{ fa.part_comparables }} % de leurs pairs sortis autrement qu’au conseil — {{ fa.rapport }} fois
-  plus.</p>
-  <p>Un corps qui lâche n’est plus une menace, et l’on n’écrit pas le nom de
-  quelqu’un qu’on voit décliner. L’invisibilité au conseil n’est donc pas
-  seulement une performance sociale : c’est aussi, parfois, le signe qu’on a
-  cessé d’être un adversaire.</p>
+  <p><b>Aucun écart ne tient.</b> Sur {{ i.nb_fantomes }} fantômes, aucune
+  issue — victoire, finale, abandon médical — ne s’écarte de celle de leurs
+  pairs plus que le hasard ne le ferait (p ≥ {{ i.fantomes_issue_p_min }}).</p>
+  <p>Ne pas être visé n’annonce ni la victoire ni la sortie.</p>
 </div>
 
 {% assign v0 = site.data.stats.modeles.alliances.majorite.variables[0] %}
@@ -154,10 +149,10 @@ protège des cas les plus légers, pas de tous.</p>
 <p class="legende-figure">Nombre moyen de voix reçues par conseil assisté,
 selon la manière dont l’aventure s’est terminée.</p>
 
-La gradation est sans exception. Un aventurier éliminé au conseil reçoit en
+Un aventurier éliminé au conseil reçoit en
 moyenne **{{ i.menace_par_sort.elimine_conseil }} voix par conseil** ; un
 vainqueur, **{{ i.menace_par_sort.vainqueur }}**, soit {{ i.menace_rapport }} fois moins. Entre les
-deux, finalistes puis éliminés de la finale s’échelonnent proprement.
+deux, finalistes et éliminés de la finale ne se distinguent pas.
 
 Autrement dit : on ne gagne pas Koh-Lanta en survivant aux votes, on le gagne en
 n’en recevant pas.

@@ -87,6 +87,16 @@ def part(compte, total, n=1):
     return None if not total else round(100.0 * compte / total, n)
 
 
+def p_fisher(a, n_a, b, n_b):
+    """p bilaterale du test exact de Fisher : a sur n_a contre b sur n_b,
+    arrondie comme le registre l'affiche (articles.p_texte)."""
+    if not n_a or not n_b:
+        return None
+    from scipy.stats import fisher_exact
+    p = float(fisher_exact([[a, n_a - a], [b, n_b - b]])[1])
+    return round(p, 2 if p >= 0.1 else 3 if p >= 0.01 else 4)
+
+
 def tranche(age):
     for bornes in TRANCHES:
         if bornes[0] <= age <= bornes[1]:
@@ -1165,6 +1175,14 @@ def bloc_indicateurs(saisons, parts, conseils, epreuves, colliers, par_saison):
                 groupes[x[cle]].append(x[champ])
         return {k: arrondi(mean(v)) for k, v in groupes.items() if len(v) >= 10}
 
+    def ecart_des_moyennes(champ, cle, valeurs):
+        groupes = defaultdict(list)
+        for x in classiques:
+            if x.get(champ) is not None and x.get(cle) in valeurs:
+                groupes[x[cle]].append(x[champ])
+        moyennes = [mean(v) for v in groupes.values() if len(v) >= 10]
+        return arrondi(max(moyennes) - min(moyennes), 2) if len(moyennes) > 1 else None
+
     def rapport_des_moyennes(champ, cle, haut, bas):
         """Combien de fois la moyenne de `haut` vaut celle de `bas`, prise sur
         les moyennes NON arrondies : deux moyennes affichees a 0,9 et 0,2 ne
@@ -1224,7 +1242,13 @@ def bloc_indicateurs(saisons, parts, conseils, epreuves, colliers, par_saison):
              "part_endurants": part(
                  sum(1 for x in endurants if x["sort"] == k), len(endurants)),
              "part_comparables": part(
-                 sum(1 for x in endurants_hc if x["sort"] == k), len(endurants_hc))}
+                 sum(1 for x in endurants_hc if x["sort"] == k), len(endurants_hc)),
+             # Le test qui manquait : un « 2,2 fois plus » d'abandons medicaux a
+             # ete publie sur quatorze fantomes, puis s'est reduit a deux quand
+             # la presence aux conseils a ete comptee juste (4 nov. 2026). Le
+             # texte ne dit plus d'ecart sans cette p.
+             "p": p_fisher(n, len(invisibles),
+                           sum(1 for x in endurants_hc if x["sort"] == k), len(endurants_hc))}
             for k, n in Counter(x["sort"] for x in invisibles).most_common()],
         "voix_des_vainqueurs": voix_des_vainqueurs(classiques),
         "duos": duos_les_plus_alignes(conseils, parts, par_saison),
@@ -1234,6 +1258,11 @@ def bloc_indicateurs(saisons, parts, conseils, epreuves, colliers, par_saison):
         "seuil_fantome": SEUIL_FANTOME,
         "justesse_par_sort": moyenne_par("justesse_vote", "sort"),
         "menace_par_sort": moyenne_par("menace", "sort"),
+        # /statistiques/jeu-social/ : « finalistes et elimines de la finale ne
+        # se distinguent pas ». L'ecart le plus grand entre leurs moyennes
+        # NON arrondies, que verifie_site borne.
+        "menace_finale_ecart": ecart_des_moyennes(
+            "menace", "sort", ("finaliste", "elimine_poteaux", "elimine_orientation")),
         # /statistiques/jeu-social/ : « N fois moins » de voix pour un
         # vainqueur que pour un elimine au conseil.
         "menace_rapport": rapport_des_moyennes(
@@ -2179,6 +2208,9 @@ def champs_d_affichage(stats):
         x["ecart"] = round(x["part_fantomes"] - x["part_comparables"], 1)
         x["rapport"] = (round(x["part_fantomes"] / x["part_comparables"], 1)
                         if x["part_comparables"] else None)
+    # « Aucun ecart ne tient (p >= N) » : la plus petite p des issues.
+    ps = [x["p"] for x in stats["indicateurs"]["fantomes_issue"] if x.get("p") is not None]
+    stats["indicateurs"]["fantomes_issue_p_min"] = min(ps) if ps else None
 
     # /statistiques/epreuves/ : les familles de metier rangees au nombre de
     # victoires PAR PERSONNE. `par_metier` est range au total, et son premier

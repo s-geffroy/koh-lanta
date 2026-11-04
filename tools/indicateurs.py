@@ -170,10 +170,24 @@ def indicateurs_individuels(saisons, parts, conseils, epreuves):
         # abandon, orientation, poteaux. Les compter comme des conseils gonfle
         # le denominateur et ecrase tous les taux. Seul un conseil ou l'on a
         # vote compte ici.
+        #
+        # PRESENT = nomme a ce conseil : votant, cible ou elimine. « Pas encore
+        # sorti » ne suffit pas, et c'est ce que ce compte faisait jusqu'au
+        # 4 nov. 2026 : avant la reunification chaque tribu a son conseil, un
+        # soir peut en compter deux, et un exile n'assiste a rien. 4 467
+        # presences comptees pour 2 788 attestees ; Jennifer Lieutaud
+        # traversait six conseils pour un seul. classement.py avait deja
+        # corrige ce defaut pour lui. Sur un depouillement incomplet, les noms
+        # lus sont une borne basse : on ne compte personne a un conseil ou
+        # rien ne dit qu'il etait.
         vote_reel = bool(c.get("votes_exprimes")) or bool(c.get("votes"))
         if ep is not None and vote_reel:
-            for (s2, pid), ep_sortie in sortie.items():
-                if s2 == sid and ep_sortie >= ep:
+            la = {b["votant"] for b in c.get("votes") or [] if b.get("votant_rattache")}
+            la |= {b["cible"] for b in c.get("votes") or [] if b.get("cible_rattachee")}
+            if elimine:
+                la.add(elimine)
+            for pid in la:
+                if (sid, pid) in sortie:
                     assistes[(sid, pid)] += 1
 
         if not c.get("complet"):
