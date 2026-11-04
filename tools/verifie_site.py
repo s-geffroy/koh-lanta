@@ -142,6 +142,36 @@ def controler_reproductibilite(c):
                                  f"l'autre ; enfermer dans sorted()")
 
 
+# Les fichiers derives, et ce qui les refait : la liste est celle de
+# tools/construire_tout.py, et nulle part ailleurs.
+import construire_tout  # noqa: E402
+DERIVES = [(rel, " ".join(commande)) for _, commande, sorties, _ in construire_tout.ETAPES
+           for rel in sorties]
+
+
+def controler_fraicheur(c):
+    """Un fichier derive doit l'avoir ete de la version COURANTE de ses entrees.
+
+    Chaque generateur pose dans l'en-tete de sa sortie l'empreinte de chaque
+    fichier de `_data/` qu'il a lu (`donnees.entete_des_entrees`). On les
+    recalcule ici. `_data/dependance.yml` a ainsi ete publie un jour entier en
+    retard sur le registre qu'il commente, et `_data/geographie.yml` sur les
+    participations, sans que rien ne le signale (revue du 4 nov. 2026).
+    """
+    for rel, commande in DERIVES:
+        chemin = os.path.join(RACINE, rel)
+        if not os.path.exists(chemin):
+            c.erreur(f"{rel} : absent — lancer {commande}")
+            continue
+        changes = donnees.entrees_changees(chemin)
+        if changes is None:
+            c.erreur(f"{rel} : aucune empreinte d'entree — construit avant le "
+                     f"4 nov. 2026, ou a la main ; lancer {commande}")
+        elif changes:
+            c.erreur(f"{rel} : perime, {', '.join(changes)} a change depuis sa "
+                     f"construction — lancer {commande} (ou tools/construire_tout.py)")
+
+
 def controler_aleatoire(c):
     """Un tirage au hasard non graine est la meme faute que l'ensemble non trie.
 
@@ -2005,6 +2035,7 @@ def main():
     controler_navigation(c, permaliens, gabarits)
     controler_sass(c)
     controler_reproductibilite(c)
+    controler_fraicheur(c)
     controler_aleatoire(c)
     controler_accents(c)
     controler_identifiants(c)

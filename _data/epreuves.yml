@@ -11,6 +11,9 @@
 #
 #     tools/atelier python3 tools/extraction/construire_epreuves.py --ecrire
 #
+# entree : _data/conseils.yml ce3ca17f3062
+# entree : _data/participations.yml 56bd764d355c
+# entree : _data/saisons.yml 994808bd24ee
 - saison: s01
   episode: 1
   type: immunite

@@ -2771,7 +2771,7 @@ def main():
 
     chemin = os.path.join(RACINE, "_data", "stats.yml")
     with open(chemin, "w", encoding="utf-8") as f:
-        f.write(ENTETE)
+        f.write(ENTETE + donnees.entete_des_entrees(sauf=("_data/stats.yml",)))
         donnees.ecrire(stats, f, affichage=True, allow_unicode=True, sort_keys=False, width=100)
 
     g = stats["general"]

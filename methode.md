@@ -133,7 +133,7 @@ refaite sur la famille entière, avec ces nouvelles p-values.
   <td class="nombre" data-val="{{ t.z }}">{{ t.z }}</td>
   <td class="nombre" data-val="{{ t.z_saison }}">{{ t.z_saison }}</td>
   <td class="nombre">{{ t.p_ajustee_saison_texte | default: t.p_ajustee_saison }}</td>
-  <td>{% if t.bascule %}<b>non</b>, retenu avec réserve{% elsif t.retenu_saison %}oui{% else %}—{% endif %}</td>
+  <td>{% if t.bascule %}<b>non</b>, retenu avec réserve{% elsif t.retenu and t.retenu_saison %}oui{% else %}—{% endif %}</td>
 </tr>
 {% endif %}{% endfor %}
 </tbody>

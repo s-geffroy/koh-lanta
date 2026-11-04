@@ -1089,7 +1089,7 @@ def main():
         return 1
 
     with open(SORTIE_DATA, "w", encoding="utf-8") as f:
-        f.write(ENTETE)
+        f.write(ENTETE + donnees.entete_des_entrees(sauf=("_data/fiches.yml", "_data/saisons_urls.yml", "_data/tableau_participations.yml")))
         donnees.ecrire({"aventuriers": av, "saisons": sa}, f, affichage=True,
                        allow_unicode=True, sort_keys=True, default_flow_style=False)
     print(f"ecrit : {SORTIE_DATA}")
@@ -1098,7 +1098,8 @@ def main():
     # et doivent en faire une URL. Un acces par cle, jamais un calcul.
     with open(SORTIE_URLS, "w", encoding="utf-8") as f:
         f.write("# ATTENTION : fichier genere par tools/build_fiches.py.\n"
-                "# L'identifiant d'une saison vers son adresse publique.\n")
+                "# L'identifiant d'une saison vers son adresse publique.\n"
+                + donnees.entete_des_entrees(sauf=("_data/fiches.yml", "_data/saisons_urls.yml", "_data/tableau_participations.yml")))
         donnees.ecrire({cid: e["slug"] for cid, e in sa.items()}, f,
                        allow_unicode=True, sort_keys=True, default_flow_style=False)
     print(f"ecrit : {SORTIE_URLS}")
@@ -1127,7 +1128,8 @@ def main():
         })
     with open(SORTIE_TABLEAU, "w", encoding="utf-8") as f:
         f.write("# ATTENTION : fichier genere par tools/build_fiches.py.\n"
-                "# Le tableau des participations de /aventuriers/, pret a afficher.\n")
+                "# Le tableau des participations de /aventuriers/, pret a afficher.\n"
+                + donnees.entete_des_entrees(sauf=("_data/fiches.yml", "_data/saisons_urls.yml", "_data/tableau_participations.yml")))
         donnees.ecrire(tableau, f, affichage=True, allow_unicode=True, sort_keys=False,
                        default_flow_style=False)
     print(f"ecrit : {SORTIE_TABLEAU}")

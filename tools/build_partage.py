@@ -304,6 +304,7 @@ def main():
 
     if not a.tout:
         print("carte generale seule (--tout pour les 584 fiches)")
+        donnees.ecrire_les_entrees("partage")
         return 0
 
     fiches = lire("fiches")
@@ -318,6 +319,7 @@ def main():
     print(f"cartes : {rapport['total']} ({rapport['ecrites']} ecrites, "
           f"{rapport['total'] - rapport['ecrites']} inchangees), "
           f"{poids // 1024} Ko au total")
+    donnees.ecrire_les_entrees("partage")
     return 0
 
 

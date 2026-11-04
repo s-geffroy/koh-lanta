@@ -1,5 +1,14 @@
 # ATTENTION : fichier genere par tools/build_fiches.py.
 # Le tableau des participations de /aventuriers/, pret a afficher.
+# entree : _data/audiences.yml 72f9e34e0c6e
+# entree : _data/colliers.yml 6a530ec82b82
+# entree : _data/conseils.yml ce3ca17f3062
+# entree : _data/epreuves.yml e1ca6c8c892d
+# entree : _data/epreuves_nommees.yml ed5a32b57e94
+# entree : _data/participations.yml 56bd764d355c
+# entree : _data/personnes.yml 89dfbde06a22
+# entree : _data/saisons.yml 994808bd24ee
+# entree : _data/stats.yml 579b8c8af594
 - id: marie-besnier
   nom: Marie Besnier
   saison: s01

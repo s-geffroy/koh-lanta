@@ -119,6 +119,22 @@ sur l'hote.
     tools/atelier python3 tools/build_graphiques.py  # _includes/graphiques/
     tools/atelier python3 tools/build_fiches.py --ecrire  # une page par personne
 
+Ces generateurs dependent les uns des autres. Ne les lance pas a la main : un
+seul script les enchaine dans l'ordre, et n'y refait que ce qui est perime.
+
+    tools/atelier python3 tools/construire_tout.py           # essai a blanc
+    tools/atelier python3 tools/construire_tout.py --lancer  # refait le perime
+
+L'ordre : `construire_epreuves`, `geographie_insee` (reseau), `build_stats`,
+`dependance` (deux heures), `build_fiches`, `build_epreuves`,
+`build_graphiques`, `build_partage`, puis les deux controles. Chaque fichier
+derive porte dans son en-tete l'empreinte des fichiers de `_data/` qu'il a lus
+(`# entree : _data/conseils.yml <empreinte>`). Les figures et la vignette n'ont
+pas d'en-tete : leurs empreintes vont dans `tools/entrees/`. `verifie_site.py`
+refuse un fichier dont une entree a change depuis. L'empreinte ne voit pas le
+code : apres la modification d'un generateur, `--depuis <etape>` force cette
+etape et tout l'aval.
+
 `build_fiches.py` ecrit `_data/fiches.yml` et 565 pages minuscules -- une par
 aventurier, une par saison -- sous `aventuriers/` et `saisons/`. Elles sont
 COMMITEES parce que GitHub Pages n'a pas le droit de les fabriquer : le greffon
@@ -145,6 +161,7 @@ lit ce que la precedente a ecrit :
     tools/atelier python3 tools/extraction/fetch_epreuves.py           # epreuves nommees
     tools/atelier python3 tools/extraction/epreuves_nommees.py --ecrire  # APRES finale.py
     tools/atelier python3 tools/extraction/ambassadeurs.py --ecrire   # noms lus dans la prose
+    tools/atelier python3 tools/construire_tout.py --lancer          # tout ce qui en derive
 
 Le wikitexte deja recupere n'est JAMAIS redemande : il est versionne comme
 preuve de provenance. Une saison en cours de diffusion fait exception -- sa page

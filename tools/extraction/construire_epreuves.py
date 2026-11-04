@@ -684,7 +684,7 @@ def main():
     if "--ecrire" in sys.argv:
         chemin = os.path.join(RACINE, "_data", "epreuves.yml")
         with open(chemin, "w", encoding="utf-8") as f:
-            f.write(ENTETE)
+            f.write(ENTETE + donnees.entete_des_entrees(sauf=("_data/epreuves.yml",)))
             donnees.ecrire(epreuves, f, allow_unicode=True, sort_keys=False, width=100)
         print(f"\necrit : {chemin}")
     return 0

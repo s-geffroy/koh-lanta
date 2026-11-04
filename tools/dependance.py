@@ -263,7 +263,7 @@ def main():
 
     if "--ecrire" in sys.argv:
         with open(SORTIE, "w", encoding="utf-8") as fichier:
-            fichier.write(ENTETE)
+            fichier.write(ENTETE + donnees.entete_des_entrees(sauf=("_data/dependance.yml",)))
             donnees.ecrire(resultat, fichier, affichage=True, allow_unicode=True,
                            sort_keys=False, width=100)
         print(f"ecrit : {SORTIE}")

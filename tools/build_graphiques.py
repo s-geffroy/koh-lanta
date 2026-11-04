@@ -1745,6 +1745,8 @@ def figures_des_modeles(stats):
                         "comparé au simple 1/nombre-de-présents.",
             unite=" %", largeur=760, marge_gauche=110))
 
+    donnees.ecrire_les_entrees("graphiques")
+
 
 if __name__ == "__main__":
     sys.exit(main())

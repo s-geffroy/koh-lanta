@@ -1,5 +1,7 @@
 # Fichier genere par tools/extraction/geographie_insee.py.
 # Ne pas editer a la main : toute modification sera ecrasee.
+# entree : _data/participations.yml 56bd764d355c
+# entree : _data/saisons.yml 994808bd24ee
 source: https://www.insee.fr/fr/statistiques/fichier/8560704/2_Pop1janv_grages_depreg.xlsx
 champ: population de 20 a 59 ans, au 1er janvier de l'annee de chaque saison
 participations: 477

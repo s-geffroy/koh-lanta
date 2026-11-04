@@ -24,7 +24,9 @@ Ce que ce module ne fait PAS : arrondir, ou separer les milliers. Un nombre
 qui doit s'afficher arrondi s'arrondit dans le script qui le calcule ; un
 texte (« 8 127 000 téléspectateurs ») se fabrique en `_texte` a cote.
 """
+import hashlib
 import math
+import os
 import re
 
 import yaml
@@ -186,6 +188,76 @@ def _rendre_nombres(v):
     return v
 
 
+# L'EMPREINTE DES ENTREES (revue du 4 nov. 2026). Un fichier derive -- stats,
+# dependance, fiches -- est tire d'autres fichiers de `_data/`, et rien ne
+# disait qu'il l'avait ete de leur version COURANTE : `dependance.yml` a ete
+# publie un jour entier en retard sur le registre qu'il commente, et
+# `geographie.yml` comptait 460 participations localisees quand il y en avait
+# 477. Aucune erreur, aucun avertissement.
+#
+# `charger()` note donc chaque fichier de `_data/` qu'il lit, avec l'empreinte
+# de ses octets. Le generateur pose ces lignes dans l'en-tete de ce qu'il
+# ecrit (`entete_des_entrees()`), et `tools/verifie_site.py` les recalcule :
+# une entree qui a change depuis la construction est un fichier perime.
+# Automatique, et non declare a la main : une liste tenue a cote du code
+# oublierait le jour ou un generateur se met a lire un fichier de plus.
+DATA = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "_data")
+RE_ENTREE = re.compile(r"^# entree : (\S+) ([0-9a-f]{12})$", re.M)
+LUS = {}
+
+
+def empreinte(chemin):
+    with open(chemin, "rb") as f:
+        return hashlib.sha256(f.read()).hexdigest()[:12]
+
+
+def _noter(flux):
+    nom = getattr(flux, "name", None)
+    if not isinstance(nom, str):
+        return
+    chemin = os.path.abspath(nom)
+    if os.path.dirname(chemin) == DATA:
+        LUS["_data/" + os.path.basename(chemin)] = empreinte(chemin)
+
+
+def entete_des_entrees(sauf=()):
+    """Les lignes « # entree : _data/x.yml <empreinte> » de ce que le script a
+    lu jusqu'ici. `sauf` ecarte ce qu'il ecrit lui-meme."""
+    return "".join(f"# entree : {nom} {h}\n" for nom, h in sorted(LUS.items())
+                   if nom not in sauf)
+
+
+def entrees_changees(chemin):
+    """Ce qui a change, parmi les entrees que l'en-tete de `chemin` declare :
+    None si l'en-tete n'en declare aucune, [] si le fichier est a jour."""
+    entete = []
+    with open(chemin, encoding="utf-8") as f:
+        for ligne in f:
+            # L'en-tete seul : les commentaires qui precedent la premiere donnee.
+            if not ligne.startswith("#"):
+                break
+            entete.append(ligne)
+    entrees = RE_ENTREE.findall("".join(entete))
+    if not entrees:
+        return None
+    racine = os.path.dirname(DATA)
+    return [nom for nom, h in entrees
+            if not os.path.exists(os.path.join(racine, nom))
+            or empreinte(os.path.join(racine, nom)) != h]
+
+
+def ecrire_les_entrees(nom, sauf=()):
+    """Pour une sortie qui n'a pas d'en-tete ou poser ses entrees (les figures
+    SVG, la vignette PNG) : `tools/entrees/<nom>.txt`, que verifie_site lit
+    comme un en-tete."""
+    dossier = os.path.join(os.path.dirname(DATA), "tools", "entrees")
+    os.makedirs(dossier, exist_ok=True)
+    with open(os.path.join(dossier, nom + ".txt"), "w", encoding="utf-8") as f:
+        f.write(f"# Les entrees de {nom}, posees par son generateur.\n"
+                + entete_des_entrees(sauf))
+
+
 def charger(flux):
     """`yaml.safe_load`, qui rend leurs nombres aux decimaux francais."""
+    _noter(flux)
     return _rendre_nombres(yaml.safe_load(flux))

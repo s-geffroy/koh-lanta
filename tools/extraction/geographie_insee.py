@@ -374,7 +374,8 @@ def main():
         print(f"\necrit : {EXTRAIT}")
         with open(SORTIE, "w", encoding="utf-8") as f:
             f.write("# Fichier genere par tools/extraction/geographie_insee.py.\n"
-                    "# Ne pas editer a la main : toute modification sera ecrasee.\n")
+                    "# Ne pas editer a la main : toute modification sera ecrasee.\n"
+                    + donnees.entete_des_entrees(sauf=("_data/geographie.yml",)))
             donnees.ecrire(sortie, f, allow_unicode=True, sort_keys=False, width=100)
         print(f"ecrit : {SORTIE}")
     return 0

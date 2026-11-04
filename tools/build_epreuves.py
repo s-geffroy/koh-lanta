@@ -250,7 +250,7 @@ def main():
         return 0
 
     with open(SORTIE_DATA, "w", encoding="utf-8") as f:
-        f.write(ENTETE)
+        f.write(ENTETE + donnees.entete_des_entrees(sauf=("_data/epreuves_fiches.yml",)))
         donnees.ecrire({"epreuves": ep}, f, affichage=True, allow_unicode=True, sort_keys=True,
                        default_flow_style=False)
     print(f"ecrit : {SORTIE_DATA}")

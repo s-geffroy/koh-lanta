@@ -8,6 +8,20 @@
 # Sauf mention contraire, les chiffres portent sur les SAISONS CLASSIQUES
 # achevees. Les blocs `toutes` ajoutent les editions speciales.
 #
+# entree : _data/ambassadeurs.yml d85de3830992
+# entree : _data/audiences.yml 72f9e34e0c6e
+# entree : _data/colliers.yml 6a530ec82b82
+# entree : _data/conseils.yml ce3ca17f3062
+# entree : _data/croisement_votes.yml 772e4fdc1de6
+# entree : _data/epreuves.yml e1ca6c8c892d
+# entree : _data/epreuves_nommees.yml ed5a32b57e94
+# entree : _data/finale.yml 9caf6fecf62c
+# entree : _data/geographie.yml 46d5ae2d9740
+# entree : _data/navigation.yml 72093f0fefe7
+# entree : _data/participations.yml 56bd764d355c
+# entree : _data/personnes.yml 89dfbde06a22
+# entree : _data/prenoms.yml 84dbfe587484
+# entree : _data/saisons.yml 994808bd24ee
 general:
   saisons_declarees: 36
   saisons_diffusees: 34
