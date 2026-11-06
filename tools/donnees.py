@@ -25,6 +25,7 @@ qui doit s'afficher arrondi s'arrondit dans le script qui le calcule ; un
 texte (« 8 127 000 téléspectateurs ») se fabrique en `_texte` a cote.
 """
 import hashlib
+import json
 import math
 import os
 import re
@@ -207,8 +208,23 @@ LUS = {}
 
 
 def empreinte(chemin):
+    """L'empreinte d'un fichier, ou d'un seul de ses blocs : « stats.yml#modeles ».
+    Un generateur qui ne lit qu'un bloc ne se perime pas quand le reste change
+    -- dependance.py ne lit que les modeles, et coute deux heures."""
+    chemin, _, bloc = chemin.partition("#")
+    if bloc:
+        with open(chemin, encoding="utf-8") as f:
+            valeur = yaml.safe_load(f).get(bloc)
+        texte = json.dumps(valeur, sort_keys=True, ensure_ascii=False, default=str)
+        return hashlib.sha256(texte.encode("utf-8")).hexdigest()[:12]
     with open(chemin, "rb") as f:
         return hashlib.sha256(f.read()).hexdigest()[:12]
+
+
+def ne_lire_que(nom, bloc):
+    """Declare que le script n'a lu que `bloc` de `_data/<nom>`."""
+    LUS.pop("_data/" + nom, None)
+    LUS[f"_data/{nom}#{bloc}"] = empreinte(os.path.join(DATA, nom) + "#" + bloc)
 
 
 def _noter(flux):
@@ -242,7 +258,7 @@ def entrees_changees(chemin):
         return None
     racine = os.path.dirname(DATA)
     return [nom for nom, h in entrees
-            if not os.path.exists(os.path.join(racine, nom))
+            if not os.path.exists(os.path.join(racine, nom.partition("#")[0]))
             or empreinte(os.path.join(racine, nom)) != h]
 
 

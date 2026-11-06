@@ -52,9 +52,10 @@ c’est <b>{{ site.data.stats.classement.top_saisons[0].aventurier }}</b> à
       {%- endfor -%}
       <span class="saison-tribus-noms">{{ x.tribus | map: "nom" | join: " · " }}</span>
     </p>
+    {%- assign vq = site.data.fiches.saisons[x.id].vainqueurs %}
     <p class="saison-vainqueur">
-      {%- if x.vainqueurs.size > 1 -%}Vainqueurs : <b>{{ x.vainqueurs | join: " et " }}</b>
-      {%- elsif x.vainqueurs.size == 1 -%}Vainqueur : <b>{{ x.vainqueurs[0] }}</b>
+      {%- if vq.size > 1 -%}Vainqueurs : <b>{% for v in vq %}{% include lien-aventurier.html id=v.id nom=v.nom %}{% unless forloop.last %} et {% endunless %}{% endfor %}</b>
+      {%- elsif vq.size == 1 -%}Vainqueur : <b>{% for v in vq %}{% include lien-aventurier.html id=v.id nom=v.nom %}{% unless forloop.last %} et {% endunless %}{% endfor %}</b>
       {%- elsif x.sans_vainqueur -%}<i>pas de vainqueur</i>
       {%- else -%}<i>saison en cours</i>{%- endif -%}
     </p>
@@ -82,9 +83,10 @@ moyennes d’âge vers le haut sans rien dire du casting ordinaire.
     <p class="saison-numero">Spéciale · {{ x.annee }}{% if x.duree_jours %} · {{ x.duree_jours }} jours{% endif %}</p>
     <p class="saison-titre">{% include lien-saison.html id=x.id titre=x.titre %}</p>
     <p class="saison-lieu">{{ x.lieu | replace: "'", "’" | replace: "Taha’a", "Taha'a" }}, {{ x.pays }}</p>
+    {%- assign vq = site.data.fiches.saisons[x.id].vainqueurs %}
     <p class="saison-vainqueur">
-      {%- if x.vainqueurs.size > 1 -%}Vainqueurs : <b>{{ x.vainqueurs | join: " et " }}</b>
-      {%- elsif x.vainqueurs.size == 1 -%}Vainqueur : <b>{{ x.vainqueurs[0] }}</b>
+      {%- if vq.size > 1 -%}Vainqueurs : <b>{% for v in vq %}{% include lien-aventurier.html id=v.id nom=v.nom %}{% unless forloop.last %} et {% endunless %}{% endfor %}</b>
+      {%- elsif vq.size == 1 -%}Vainqueur : <b>{% for v in vq %}{% include lien-aventurier.html id=v.id nom=v.nom %}{% unless forloop.last %} et {% endunless %}{% endfor %}</b>
       {%- elsif x.sans_vainqueur -%}<i>pas de vainqueur</i>
       {%- else -%}<i>saison en cours</i>{%- endif -%}
     </p>

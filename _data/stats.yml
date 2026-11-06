@@ -9362,200 +9362,250 @@ indicateurs:
       titre: Les Aventuriers de Koh-Lanta
       annee: 2001
       vainqueur: Gilles Nicolet
+      vainqueur_id: gilles-nicolet
       voix_vainqueur: 3
       finaliste: Guénaëlle Biras
+      finaliste_id: guenaelle-biras
       voix_finaliste: 0
       conseils: 10
     - saison: s02
       titre: Nicoya
       annee: 2002
       vainqueur: Amel Fatnassi
+      vainqueur_id: amel-fatnassi
       voix_vainqueur: 2
       finaliste: Nicolas Roy
+      finaliste_id: nicolas-roy
       voix_finaliste: 3
       conseils: 8
     - saison: s04
       titre: Panama
       annee: 2004
       vainqueur: Philippe Bordier
+      vainqueur_id: philippe-bordier
       voix_vainqueur: 2
       finaliste: Linda Alario
+      finaliste_id: linda-alario
       voix_finaliste: 11
       conseils: 10
     - saison: s05
       titre: Pacifique
       annee: 2005
       vainqueur: Clémence Castel
+      vainqueur_id: clemence-castel
       voix_vainqueur: 1
       finaliste: Francis Bordas
+      finaliste_id: francis-bordas
       voix_finaliste: 11
       conseils: 10
     - saison: s06
       titre: Vanuatu
       annee: 2006
       vainqueur: François-David Cardonnel
+      vainqueur_id: francois-david-cardonnel
       voix_vainqueur: 5
       finaliste: Émilie Frahi
+      finaliste_id: emilie-frahi
       voix_finaliste: 5
       conseils: 9
     - saison: s08
       titre: Caramoan
       annee: 2008
       vainqueur: Christelle Gauzet
+      vainqueur_id: christelle-gauzet
       voix_vainqueur: 0
       finaliste: Frédéric Favier
+      finaliste_id: frederic-favier
       voix_finaliste: 1
       conseils: 8
     - saison: s09
       titre: Palau
       annee: 2009
       vainqueur: Christina Chevry
+      vainqueur_id: christina-chevry
       voix_vainqueur: 3
       finaliste: Patrick Merle
+      finaliste_id: patrick-merle
       voix_finaliste: 1
       conseils: 8
     - saison: s10
       titre: Viêtnam
       annee: 2010
       vainqueur: Philippe Duron
+      vainqueur_id: philippe-duron
       voix_vainqueur: 1
       finaliste: Claude Dartois
+      finaliste_id: claude-dartois
       voix_finaliste: 1
       conseils: 11
     - saison: s11
       titre: Raja Ampat
       annee: 2011
       vainqueur: Gérard Urdampilleta
+      vainqueur_id: gerard-urdampilleta
       voix_vainqueur: 0
       finaliste: Teheiura Teahui
+      finaliste_id: teheiura-teahui
       voix_finaliste: 5
       conseils: 9
     - saison: s12
       titre: Malaisie
       annee: 2012
       vainqueur: Ugo Lartiche
+      vainqueur_id: ugo-lartiche
       voix_vainqueur: 0
       finaliste: Brice Martinet
+      finaliste_id: brice-martinet
       voix_finaliste: 12
       conseils: 9
     - saison: s14
       titre: Johor
       annee: 2015
       vainqueur: Marc Rambaud
+      vainqueur_id: marc-rambaud
       voix_vainqueur: 5
       finaliste: Chantal Ménard
+      finaliste_id: chantal-menard
       voix_finaliste: 9
       conseils: 10
     - saison: s15
       titre: Thaïlande
       annee: 2016
       vainqueur: Wendy Gervois
+      vainqueur_id: wendy-gervois
       voix_vainqueur: 1
       finaliste: Pascal Salviani
+      finaliste_id: pascal-salviani
       voix_finaliste: 12
       conseils: 10
     - saison: s16
       titre: L’Île au trésor
       annee: 2016
       vainqueur: Benoît Assadi
+      vainqueur_id: benoit-assadi
       voix_vainqueur: 7
       finaliste: Jesta Hillmann
+      finaliste_id: jesta-hillmann
       voix_finaliste: 3
       conseils: 12
     - saison: s17
       titre: Cambodge
       annee: 2017
       vainqueur: Frédéric Blancher
+      vainqueur_id: frederic-blancher
       voix_vainqueur: 2
       finaliste: Clémentine Jullien
+      finaliste_id: clementine-jullien
       voix_finaliste: 1
       conseils: 11
     - saison: s18
       titre: Fidji
       annee: 2017
       vainqueur: André Deleplace
+      vainqueur_id: andre-deleplace
       voix_vainqueur: 6
       finaliste: Tiffany Gounin
+      finaliste_id: tiffany-gounin
       voix_finaliste: 6
       conseils: 8
     - saison: s20
       titre: La Guerre des chefs
       annee: 2019
       vainqueur: Maud Bamps
+      vainqueur_id: maud-bamps
       voix_vainqueur: 7
       finaliste: Cindy Poumeyrol
+      finaliste_id: cindy-poumeyrol
       voix_finaliste: 0
       conseils: 11
     - saison: s21
       titre: Les 4 Terres
       annee: 2020
       vainqueur: Alexandra Pornet
+      vainqueur_id: alexandra-pornet
       voix_vainqueur: 2
       finaliste: Brice Petit
+      finaliste_id: brice-petit
       voix_finaliste: 6
       conseils: 7
     - saison: s22
       titre: Les Armes secrètes
       annee: 2021
       vainqueur: Maxine Eouzan
+      vainqueur_id: maxine-eouzan
       voix_vainqueur: 1
       finaliste: Lucie Bertaud
+      finaliste_id: lucie-bertaud
       voix_finaliste: 8
       conseils: 9
     - saison: s23
       titre: Le Totem maudit
       annee: 2022
       vainqueur: François Descamp
+      vainqueur_id: francois-descamp
       voix_vainqueur: 0
       finaliste: Géraldine Nicolle
+      finaliste_id: geraldine-nicolle
       voix_finaliste: 5
       conseils: 9
     - saison: s23
       titre: Le Totem maudit
       annee: 2022
       vainqueur: Bastien San Pedro
+      vainqueur_id: bastien-san-pedro
       voix_vainqueur: 0
       finaliste: Géraldine Nicolle
+      finaliste_id: geraldine-nicolle
       voix_finaliste: 5
       conseils: 11
     - saison: s24
       titre: Le Feu sacré
       annee: 2023
       vainqueur: Frédéric Khouvilay
+      vainqueur_id: frederic-khouvilay
       voix_vainqueur: 1
       finaliste: Tania Cakarevic
+      finaliste_id: tania-cakarevic
       voix_finaliste: 36
       conseils: 10
     - saison: s25
       titre: Les Chasseurs d’immunité
       annee: 2024
       vainqueur: Léa Sahin
+      vainqueur_id: lea-sahin
       voix_vainqueur: 2
       finaliste: Meïssa Seck
+      finaliste_id: meissa-seck
       voix_finaliste: 5
       conseils: 10
     - saison: s26
       titre: La Tribu maudite
       annee: 2024
       vainqueur: Thibault Bélanger
+      vainqueur_id: thibault-belanger
       voix_vainqueur: 0
       finaliste: Charlotte Rasquin
+      finaliste_id: charlotte-rasquin
       voix_finaliste: 6
       conseils: 11
     - saison: s27
       titre: La Revanche des 4 Terres
       annee: 2025
       vainqueur: Gaëlle Fleury
+      vainqueur_id: gaelle-fleury
       voix_vainqueur: 4
       finaliste: Maël Lozach
+      finaliste_id: mael-lozach
       voix_finaliste: 1
       conseils: 9
     - saison: s28
       titre: Les Reliques du destin
       annee: 2026
       vainqueur: Cynthia Combes
+      vainqueur_id: cynthia-combes
       voix_vainqueur: 7
       finaliste: Clarisse Cresseveur
+      finaliste_id: clarisse-cresseveur
       voix_finaliste: 2
       conseils: 12
     couples_resume:

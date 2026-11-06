@@ -839,8 +839,10 @@ def voix_des_vainqueurs(lignes):
                     continue
                 couples.append({
                     "saison": sid, "titre": a["titre"], "annee": a["annee"],
-                    "vainqueur": a["nom"], "voix_vainqueur": a["voix_recues"],
-                    "finaliste": f["nom"], "voix_finaliste": f["voix_recues"],
+                    "vainqueur": a["nom"], "vainqueur_id": a["id"],
+                    "voix_vainqueur": a["voix_recues"],
+                    "finaliste": f["nom"], "finaliste_id": f["id"],
+                    "voix_finaliste": f["voix_recues"],
                     "conseils": a["conseils_assistes"],
                 })
     couples.sort(key=lambda x: (x["annee"], x["saison"]))

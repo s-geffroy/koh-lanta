@@ -191,8 +191,8 @@ aucune.
 {% for x in vv.couples %}
 <tr>
   <td>{{ x.titre }}</td><td class="nombre">{{ x.annee }}</td>
-  <td>{{ x.vainqueur }}</td><td class="nombre" data-val="{{ x.voix_vainqueur }}"><b>{{ x.voix_vainqueur }}</b></td>
-  <td>{{ x.finaliste }}</td><td class="nombre">{{ x.voix_finaliste }}</td>
+  <td>{% include lien-aventurier.html id=x.vainqueur_id nom=x.vainqueur %}</td><td class="nombre" data-val="{{ x.voix_vainqueur }}"><b>{{ x.voix_vainqueur }}</b></td>
+  <td>{% include lien-aventurier.html id=x.finaliste_id nom=x.finaliste %}</td><td class="nombre">{{ x.voix_finaliste }}</td>
 </tr>
 {% endfor %}
 </tbody>

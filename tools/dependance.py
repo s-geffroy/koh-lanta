@@ -170,6 +170,7 @@ def complements(modeles):
 
 def main():
     stats = donnees.charger(open(os.path.join(B.RACINE, "_data", "stats.yml"), encoding="utf-8"))
+    donnees.ne_lire_que("stats.yml", "modeles")
     modeles = stats["modeles"]
     registre = modeles["registre"]
     comp = complements(modeles)

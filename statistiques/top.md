@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Le top des joueurs de Koh-Lanta
+title: Classement des meilleurs aventuriers
+titre: Le top des joueurs de Koh-Lanta
 description: "Le top des joueurs de Koh-Lanta : quatre façons de bien jouer, mesurées sans jamais regarder qui a gagné, et le classement des 531 aventuriers."
 permalink: /statistiques/top/
 chapeau: >-
