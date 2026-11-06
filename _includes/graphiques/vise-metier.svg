@@ -2,7 +2,7 @@
 <figcaption class="figure-titre" aria-hidden="true">Viser la même famille de métiers</figcaption>
 <svg class="graphique" viewBox="0 0 680 250" role="img" aria-describedby="desc-vise-metier" preserveAspectRatio="xMidYMid meet" aria-label="Viser la même famille de métiers">
   <title>Viser la même famille de métiers</title>
-  <desc id="desc-vise-metier">Le métier rapproche-t-il ou éloigne-t-il du bulletin ?</desc>
+  <desc id="desc-vise-metier">Le métier rapproche-t-il ou éloigne-t-il du bulletin ? Observé : 9,9 ; le hasard donne 10,5 en moyenne (p ajustée 0,2455). Le hasard suffit à l’expliquer.</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
   <g class="marque"><title>1 tirage sur 2 000 entre 9,1 et 9,21</title><rect x="68.7" y="203.3" width="20.3" height="0.7" fill="var(--serie-6)" fill-opacity="0.45" stroke="var(--serie-6)" stroke-width="0.8"/></g>
   <g class="marque"><title>3 tirages sur 2 000 entre 9,21 et 9,32</title><rect x="90.5" y="201.9" width="20.3" height="2.1" fill="var(--serie-6)" fill-opacity="0.45" stroke="var(--serie-6)" stroke-width="0.8"/></g>
@@ -38,4 +38,34 @@
   <text x="658.0" y="222.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">12,1</text>
   <text x="658.0" y="238.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">2 000 tirages · p = 0,2455</text>
 </svg>
+<details class="figure-donnees"><summary>Données de la figure</summary>
+<ul>
+<li>1 tirage sur 2 000 entre 9,1 et 9,21</li>
+<li>3 tirages sur 2 000 entre 9,21 et 9,32</li>
+<li>3 tirages sur 2 000 entre 9,32 et 9,43</li>
+<li>9 tirages sur 2 000 entre 9,43 et 9,54</li>
+<li>22 tirages sur 2 000 entre 9,54 et 9,65</li>
+<li>31 tirages sur 2 000 entre 9,65 et 9,76</li>
+<li>62 tirages sur 2 000 entre 9,76 et 9,88</li>
+<li>73 tirages sur 2 000 entre 9,88 et 9,99</li>
+<li>127 tirages sur 2 000 entre 9,99 et 10,1</li>
+<li>125 tirages sur 2 000 entre 10,1 et 10,2</li>
+<li>164 tirages sur 2 000 entre 10,2 et 10,3</li>
+<li>191 tirages sur 2 000 entre 10,3 et 10,4</li>
+<li>202 tirages sur 2 000 entre 10,4 et 10,5</li>
+<li>228 tirages sur 2 000 entre 10,5 et 10,7</li>
+<li>174 tirages sur 2 000 entre 10,7 et 10,8</li>
+<li>175 tirages sur 2 000 entre 10,8 et 10,9</li>
+<li>136 tirages sur 2 000 entre 10,9 et 11</li>
+<li>97 tirages sur 2 000 entre 11 et 11,1</li>
+<li>75 tirages sur 2 000 entre 11,1 et 11,2</li>
+<li>51 tirages sur 2 000 entre 11,2 et 11,3</li>
+<li>21 tirages sur 2 000 entre 11,3 et 11,4</li>
+<li>17 tirages sur 2 000 entre 11,4 et 11,5</li>
+<li>9 tirages sur 2 000 entre 11,5 et 11,7</li>
+<li>2 tirages sur 2 000 entre 11,7 et 11,8</li>
+<li>1 tirage sur 2 000 entre 11,8 et 11,9</li>
+<li>1 tirage sur 2 000 entre 11,9 et 12</li>
+</ul>
+</details>
 </figure>

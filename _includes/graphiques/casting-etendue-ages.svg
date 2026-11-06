@@ -2,7 +2,7 @@
 <figcaption class="figure-titre" aria-hidden="true">L’écart d’âge dans un même casting</figcaption>
 <svg class="graphique" viewBox="0 0 680 250" role="img" aria-describedby="desc-casting-etendue-ages" preserveAspectRatio="xMidYMid meet" aria-label="L’écart d’âge dans un même casting">
   <title>L’écart d’âge dans un même casting</title>
-  <desc id="desc-casting-etendue-ages">Un casting mélange-t-il les âges plus qu’un tirage au hasard ne le ferait ?</desc>
+  <desc id="desc-casting-etendue-ages">Un casting mélange-t-il les âges plus qu’un tirage au hasard ne le ferait ? Observé : 9,9 ; le hasard donne 9,7 en moyenne (p ajustée 0,0342). L’écart est retenu.</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
   <g class="marque"><title>1 tirage sur 10 000 entre 9,24 et 9,27</title><rect x="68.7" y="203.9" width="20.3" height="0.1" fill="var(--serie-5)" fill-opacity="0.45" stroke="var(--serie-5)" stroke-width="0.8"/></g>
   <g class="marque"><title>1 tirage sur 10 000 entre 9,27 et 9,3</title><rect x="90.5" y="203.9" width="20.3" height="0.1" fill="var(--serie-5)" fill-opacity="0.45" stroke="var(--serie-5)" stroke-width="0.8"/></g>
@@ -38,4 +38,34 @@
   <text x="658.0" y="222.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">10</text>
   <text x="658.0" y="238.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">10 000 tirages · p = 0,0342</text>
 </svg>
+<details class="figure-donnees"><summary>Données de la figure</summary>
+<ul>
+<li>1 tirage sur 10 000 entre 9,24 et 9,27</li>
+<li>1 tirage sur 10 000 entre 9,27 et 9,3</li>
+<li>2 tirages sur 10 000 entre 9,3 et 9,32</li>
+<li>6 tirages sur 10 000 entre 9,32 et 9,35</li>
+<li>9 tirages sur 10 000 entre 9,35 et 9,38</li>
+<li>24 tirages sur 10 000 entre 9,38 et 9,41</li>
+<li>38 tirages sur 10 000 entre 9,41 et 9,44</li>
+<li>76 tirages sur 10 000 entre 9,44 et 9,47</li>
+<li>128 tirages sur 10 000 entre 9,47 et 9,5</li>
+<li>207 tirages sur 10 000 entre 9,5 et 9,52</li>
+<li>307 tirages sur 10 000 entre 9,52 et 9,55</li>
+<li>478 tirages sur 10 000 entre 9,55 et 9,58</li>
+<li>648 tirages sur 10 000 entre 9,58 et 9,61</li>
+<li>779 tirages sur 10 000 entre 9,61 et 9,64</li>
+<li>925 tirages sur 10 000 entre 9,64 et 9,67</li>
+<li>1 056 tirages sur 10 000 entre 9,67 et 9,69</li>
+<li>1 193 tirages sur 10 000 entre 9,69 et 9,72</li>
+<li>1 135 tirages sur 10 000 entre 9,72 et 9,75</li>
+<li>1 017 tirages sur 10 000 entre 9,75 et 9,78</li>
+<li>839 tirages sur 10 000 entre 9,78 et 9,81</li>
+<li>525 tirages sur 10 000 entre 9,81 et 9,84</li>
+<li>345 tirages sur 10 000 entre 9,84 et 9,87</li>
+<li>163 tirages sur 10 000 entre 9,87 et 9,89</li>
+<li>70 tirages sur 10 000 entre 9,89 et 9,92</li>
+<li>23 tirages sur 10 000 entre 9,92 et 9,95</li>
+<li>5 tirages sur 10 000 entre 9,95 et 9,98</li>
+</ul>
+</details>
 </figure>

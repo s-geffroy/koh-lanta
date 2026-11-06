@@ -2,7 +2,7 @@
 <figcaption class="figure-titre" aria-hidden="true">L’origine géographique, par région</figcaption>
 <svg class="graphique" viewBox="0 0 680 250" role="img" aria-describedby="desc-geographie-nulle" preserveAspectRatio="xMidYMid meet" aria-label="L’origine géographique, par région">
   <title>L’origine géographique, par région</title>
-  <desc id="desc-geographie-nulle">À l’échelle des régions — assez peuplées pour trancher — le recrutement suit-il la démographie française ?</desc>
+  <desc id="desc-geographie-nulle">À l’échelle des régions — assez peuplées pour trancher — le recrutement suit-il la démographie française ? Observé : 65 ; le hasard donne 16 en moyenne (p ajustée 0,0007). L’écart est retenu.</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
   <g class="marque"><title>5 tirages sur 10 000 entre 1,14 et 3,62</title><rect x="68.7" y="203.6" width="20.3" height="0.4" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
   <g class="marque"><title>114 tirages sur 10 000 entre 3,62 et 6,1</title><rect x="90.5" y="194.3" width="20.3" height="9.7" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
@@ -32,4 +32,28 @@
   <text x="658.0" y="222.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">68,2</text>
   <text x="658.0" y="238.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">10 000 tirages · p &lt; 0,001</text>
 </svg>
+<details class="figure-donnees"><summary>Données de la figure</summary>
+<ul>
+<li>5 tirages sur 10 000 entre 1,14 et 3,62</li>
+<li>114 tirages sur 10 000 entre 3,62 et 6,1</li>
+<li>606 tirages sur 10 000 entre 6,1 et 8,58</li>
+<li>1 280 tirages sur 10 000 entre 8,58 et 11,1</li>
+<li>1 709 tirages sur 10 000 entre 11,1 et 13,5</li>
+<li>1 858 tirages sur 10 000 entre 13,5 et 16</li>
+<li>1 567 tirages sur 10 000 entre 16 et 18,5</li>
+<li>1 081 tirages sur 10 000 entre 18,5 et 21</li>
+<li>723 tirages sur 10 000 entre 21 et 23,5</li>
+<li>461 tirages sur 10 000 entre 23,5 et 26</li>
+<li>287 tirages sur 10 000 entre 26 et 28,4</li>
+<li>127 tirages sur 10 000 entre 28,4 et 30,9</li>
+<li>96 tirages sur 10 000 entre 30,9 et 33,4</li>
+<li>41 tirages sur 10 000 entre 33,4 et 35,9</li>
+<li>20 tirages sur 10 000 entre 35,9 et 38,4</li>
+<li>17 tirages sur 10 000 entre 38,4 et 40,9</li>
+<li>4 tirages sur 10 000 entre 40,9 et 43,3</li>
+<li>2 tirages sur 10 000 entre 43,3 et 45,8</li>
+<li>1 tirage sur 10 000 entre 48,3 et 50,8</li>
+<li>1 tirage sur 10 000 entre 53,3 et 55,7</li>
+</ul>
+</details>
 </figure>

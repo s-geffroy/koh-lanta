@@ -2,7 +2,7 @@
 <figcaption class="figure-titre" aria-hidden="true">Le dos au mur</figcaption>
 <svg class="graphique" viewBox="0 0 680 250" role="img" aria-describedby="desc-pire-place-mur" preserveAspectRatio="xMidYMid meet" aria-label="Le dos au mur">
   <title>Le dos au mur</title>
-  <desc id="desc-pire-place-mur">Celui qu’on vient de viser gagne-t-il plus souvent l’immunité ?</desc>
+  <desc id="desc-pire-place-mur">Celui qu’on vient de viser gagne-t-il plus souvent l’immunité ? Observé : 0,39 ; le hasard donne 0,63 en moyenne (p ajustée 1). Le hasard suffit à l’expliquer.</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
   <g class="marque"><title>1 tirage sur 10 000 entre −8,63 et −7,9</title><rect x="68.7" y="203.9" width="20.3" height="0.1" fill="var(--serie-6)" fill-opacity="0.45" stroke="var(--serie-6)" stroke-width="0.8"/></g>
   <g class="marque"><title>1 tirage sur 10 000 entre −7,9 et −7,16</title><rect x="90.5" y="203.9" width="20.3" height="0.1" fill="var(--serie-6)" fill-opacity="0.45" stroke="var(--serie-6)" stroke-width="0.8"/></g>
@@ -38,4 +38,34 @@
   <text x="658.0" y="222.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">11,2</text>
   <text x="658.0" y="238.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">10 000 tirages · p = 1</text>
 </svg>
+<details class="figure-donnees"><summary>Données de la figure</summary>
+<ul>
+<li>1 tirage sur 10 000 entre −8,63 et −7,9</li>
+<li>1 tirage sur 10 000 entre −7,9 et −7,16</li>
+<li>7 tirages sur 10 000 entre −7,16 et −6,43</li>
+<li>12 tirages sur 10 000 entre −6,43 et −5,7</li>
+<li>100 tirages sur 10 000 entre −5,7 et −4,96</li>
+<li>89 tirages sur 10 000 entre −4,96 et −4,23</li>
+<li>173 tirages sur 10 000 entre −4,23 et −3,5</li>
+<li>534 tirages sur 10 000 entre −3,5 et −2,76</li>
+<li>442 tirages sur 10 000 entre −2,76 et −2,03</li>
+<li>555 tirages sur 10 000 entre −2,03 et −1,3</li>
+<li>1 473 tirages sur 10 000 entre −1,3 et −0,564</li>
+<li>804 tirages sur 10 000 entre −0,564 et 0,169</li>
+<li>901 tirages sur 10 000 entre 0,169 et 0,903</li>
+<li>1 648 tirages sur 10 000 entre 0,903 et 1,64</li>
+<li>762 tirages sur 10 000 entre 1,64 et 2,37</li>
+<li>1 131 tirages sur 10 000 entre 2,37 et 3,1</li>
+<li>401 tirages sur 10 000 entre 3,1 et 3,84</li>
+<li>300 tirages sur 10 000 entre 3,84 et 4,57</li>
+<li>383 tirages sur 10 000 entre 4,57 et 5,3</li>
+<li>104 tirages sur 10 000 entre 5,3 et 6,04</li>
+<li>73 tirages sur 10 000 entre 6,04 et 6,77</li>
+<li>75 tirages sur 10 000 entre 6,77 et 7,5</li>
+<li>12 tirages sur 10 000 entre 7,5 et 8,24</li>
+<li>10 tirages sur 10 000 entre 8,24 et 8,97</li>
+<li>7 tirages sur 10 000 entre 8,97 et 9,7</li>
+<li>2 tirages sur 10 000 entre 9,7 et 10,4</li>
+</ul>
+</details>
 </figure>

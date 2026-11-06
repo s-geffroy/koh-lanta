@@ -242,6 +242,10 @@ a { color: inherit; }
   z-index: 20;
 }
 .saut:focus { left: 0; }
+/* Celui du sommaire s'affiche a sa place, pas en haut de la page : quand il
+   prend le focus, la page a deja defile jusqu'au rail. */
+.saut-rail:focus { position: relative; display: inline-block; margin-bottom: 0.6rem; }
+.contenu:focus { outline: none; }
 
 /* Le totem : moitie jaune, moitie rouge, a parts exactement egales. Une seule
    definition verticale, reprise par l'enseigne et le sommaire ; le filet des
@@ -766,6 +770,21 @@ sup {
 }
 .vitrine svg,
 .peigne svg { width: 100%; height: auto; display: block; min-width: 46rem; }
+
+/* Les valeurs de la figure, sans la souris : les infobulles des marques, en
+   liste repliee (graphiques.Figure.donnees). Collee a gauche du panneau quand
+   il defile : elle se lit sans faire defiler la figure. */
+.figure-donnees {
+  position: sticky;
+  left: 0;
+  max-width: var(--colonne);
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--encre-douce);
+}
+.figure-donnees summary { cursor: pointer; color: var(--encre); }
+.figure-donnees ul { margin: 0.5rem 0 0; padding-left: 1.2rem; }
 
 /* Chaque marque de donnee porte un <title> : le curseur l'annonce. */
 .marque { cursor: help; }

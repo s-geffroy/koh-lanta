@@ -2,7 +2,7 @@
 <figcaption class="figure-titre" aria-hidden="true">Le confort du soir</figcaption>
 <svg class="graphique" viewBox="0 0 680 250" role="img" aria-describedby="desc-feu-confort" preserveAspectRatio="xMidYMid meet" aria-label="Le confort du soir">
   <title>Le confort du soir</title>
-  <desc id="desc-feu-confort">Gagner le confort fait-il partir le soir même ?</desc>
+  <desc id="desc-feu-confort">Gagner le confort fait-il partir le soir même ? Observé : 1,3 ; le hasard donne 0,4 en moyenne (p ajustée 0,8546). Le hasard suffit à l’expliquer.</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
   <g class="marque"><title>2 tirages sur 10 000 entre −8,35 et −7,64</title><rect x="68.7" y="203.8" width="20.3" height="0.2" fill="var(--serie-6)" fill-opacity="0.45" stroke="var(--serie-6)" stroke-width="0.8"/></g>
   <g class="marque"><title>9 tirages sur 10 000 entre −7,64 et −6,94</title><rect x="90.5" y="203.1" width="20.3" height="0.9" fill="var(--serie-6)" fill-opacity="0.45" stroke="var(--serie-6)" stroke-width="0.8"/></g>
@@ -38,4 +38,34 @@
   <text x="658.0" y="222.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">10,7</text>
   <text x="658.0" y="238.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">10 000 tirages · p = 0,8546</text>
 </svg>
+<details class="figure-donnees"><summary>Données de la figure</summary>
+<ul>
+<li>2 tirages sur 10 000 entre −8,35 et −7,64</li>
+<li>9 tirages sur 10 000 entre −7,64 et −6,94</li>
+<li>11 tirages sur 10 000 entre −6,94 et −6,24</li>
+<li>22 tirages sur 10 000 entre −6,24 et −5,53</li>
+<li>129 tirages sur 10 000 entre −5,53 et −4,83</li>
+<li>108 tirages sur 10 000 entre −4,83 et −4,12</li>
+<li>185 tirages sur 10 000 entre −4,12 et −3,42</li>
+<li>646 tirages sur 10 000 entre −3,42 et −2,72</li>
+<li>450 tirages sur 10 000 entre −2,72 et −2,01</li>
+<li>555 tirages sur 10 000 entre −2,01 et −1,31</li>
+<li>1 463 tirages sur 10 000 entre −1,31 et −0,606</li>
+<li>791 tirages sur 10 000 entre −0,606 et 0,0976</li>
+<li>1 645 tirages sur 10 000 entre 0,0976 et 0,801</li>
+<li>806 tirages sur 10 000 entre 0,801 et 1,51</li>
+<li>706 tirages sur 10 000 entre 1,51 et 2,21</li>
+<li>1 104 tirages sur 10 000 entre 2,21 et 2,91</li>
+<li>391 tirages sur 10 000 entre 2,91 et 3,62</li>
+<li>328 tirages sur 10 000 entre 3,62 et 4,32</li>
+<li>352 tirages sur 10 000 entre 4,32 et 5,02</li>
+<li>112 tirages sur 10 000 entre 5,02 et 5,73</li>
+<li>80 tirages sur 10 000 entre 5,73 et 6,43</li>
+<li>69 tirages sur 10 000 entre 6,43 et 7,13</li>
+<li>15 tirages sur 10 000 entre 7,13 et 7,84</li>
+<li>10 tirages sur 10 000 entre 7,84 et 8,54</li>
+<li>9 tirages sur 10 000 entre 8,54 et 9,25</li>
+<li>2 tirages sur 10 000 entre 9,25 et 9,95</li>
+</ul>
+</details>
 </figure>

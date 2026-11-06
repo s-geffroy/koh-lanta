@@ -2,7 +2,7 @@
 <figcaption class="figure-titre" aria-hidden="true">La variété des métiers</figcaption>
 <svg class="graphique" viewBox="0 0 680 250" role="img" aria-describedby="desc-casting-metiers" preserveAspectRatio="xMidYMid meet" aria-label="La variété des métiers">
   <title>La variété des métiers</title>
-  <desc id="desc-casting-metiers">Un casting couvre-t-il plus de familles de métiers qu’un tirage au hasard ?</desc>
+  <desc id="desc-casting-metiers">Un casting couvre-t-il plus de familles de métiers qu’un tirage au hasard ? Observé : 246 ; le hasard donne 246,4 en moyenne (p ajustée 1). Le hasard suffit à l’expliquer.</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
   <g class="marque"><title>3 tirages sur 10 000 entre 227 et 228</title><rect x="68.7" y="203.7" width="20.3" height="0.3" fill="var(--serie-6)" fill-opacity="0.45" stroke="var(--serie-6)" stroke-width="0.8"/></g>
   <g class="marque"><title>4 tirages sur 10 000 entre 228 et 230</title><rect x="90.5" y="203.6" width="20.3" height="0.4" fill="var(--serie-6)" fill-opacity="0.45" stroke="var(--serie-6)" stroke-width="0.8"/></g>
@@ -37,4 +37,33 @@
   <text x="658.0" y="222.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">270</text>
   <text x="658.0" y="238.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">10 000 tirages · p = 1</text>
 </svg>
+<details class="figure-donnees"><summary>Données de la figure</summary>
+<ul>
+<li>3 tirages sur 10 000 entre 227 et 228</li>
+<li>4 tirages sur 10 000 entre 228 et 230</li>
+<li>23 tirages sur 10 000 entre 230 et 231</li>
+<li>47 tirages sur 10 000 entre 231 et 233</li>
+<li>60 tirages sur 10 000 entre 233 et 235</li>
+<li>165 tirages sur 10 000 entre 235 et 236</li>
+<li>129 tirages sur 10 000 entre 236 et 238</li>
+<li>496 tirages sur 10 000 entre 238 et 239</li>
+<li>796 tirages sur 10 000 entre 239 et 241</li>
+<li>570 tirages sur 10 000 entre 241 et 243</li>
+<li>1 315 tirages sur 10 000 entre 243 et 244</li>
+<li>680 tirages sur 10 000 entre 244 et 246</li>
+<li>1 512 tirages sur 10 000 entre 246 et 248</li>
+<li>1 392 tirages sur 10 000 entre 248 et 249</li>
+<li>632 tirages sur 10 000 entre 249 et 251</li>
+<li>958 tirages sur 10 000 entre 251 et 252</li>
+<li>322 tirages sur 10 000 entre 252 et 254</li>
+<li>484 tirages sur 10 000 entre 254 et 256</li>
+<li>248 tirages sur 10 000 entre 256 et 257</li>
+<li>68 tirages sur 10 000 entre 257 et 259</li>
+<li>64 tirages sur 10 000 entre 259 et 260</li>
+<li>15 tirages sur 10 000 entre 260 et 262</li>
+<li>15 tirages sur 10 000 entre 262 et 264</li>
+<li>1 tirage sur 10 000 entre 264 et 265</li>
+<li>1 tirage sur 10 000 entre 267 et 268</li>
+</ul>
+</details>
 </figure>

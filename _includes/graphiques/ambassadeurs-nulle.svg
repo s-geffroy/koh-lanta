@@ -2,7 +2,7 @@
 <figcaption class="figure-titre" aria-hidden="true">Qui les ambassadeurs éliminent-ils ?</figcaption>
 <svg class="graphique" viewBox="0 0 680 250" role="img" aria-describedby="desc-ambassadeurs-nulle" preserveAspectRatio="xMidYMid meet" aria-label="Qui les ambassadeurs éliminent-ils ?">
   <title>Qui les ambassadeurs éliminent-ils ?</title>
-  <desc id="desc-ambassadeurs-nulle">Deux ambassadeurs qui décident seuls choisissent-ils autrement qu’un tirage ?</desc>
+  <desc id="desc-ambassadeurs-nulle">Deux ambassadeurs qui décident seuls choisissent-ils autrement qu’un tirage ? Observé : 55,6 ; le hasard donne 49,9 en moyenne (p ajustée 0,6776). Le hasard suffit à l’expliquer.</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
   <g class="marque"><title>2 tirages sur 10 000 entre 17,9 et 20,3</title><rect x="68.7" y="203.7" width="20.3" height="0.3" fill="var(--serie-7)" fill-opacity="0.45" stroke="var(--serie-7)" stroke-width="0.8"/></g>
   <g class="marque"><title>2 tirages sur 10 000 entre 20,3 et 22,7</title><rect x="90.5" y="203.7" width="20.3" height="0.3" fill="var(--serie-7)" fill-opacity="0.45" stroke="var(--serie-7)" stroke-width="0.8"/></g>
@@ -38,4 +38,34 @@
   <text x="658.0" y="222.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">82,2</text>
   <text x="658.0" y="238.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">10 000 tirages · p = 0,6776</text>
 </svg>
+<details class="figure-donnees"><summary>Données de la figure</summary>
+<ul>
+<li>2 tirages sur 10 000 entre 17,9 et 20,3</li>
+<li>2 tirages sur 10 000 entre 20,3 et 22,7</li>
+<li>7 tirages sur 10 000 entre 22,7 et 25,1</li>
+<li>14 tirages sur 10 000 entre 25,1 et 27,4</li>
+<li>49 tirages sur 10 000 entre 27,4 et 29,8</li>
+<li>85 tirages sur 10 000 entre 29,8 et 32,2</li>
+<li>141 tirages sur 10 000 entre 32,2 et 34,6</li>
+<li>287 tirages sur 10 000 entre 34,6 et 37</li>
+<li>448 tirages sur 10 000 entre 37 et 39,3</li>
+<li>642 tirages sur 10 000 entre 39,3 et 41,7</li>
+<li>813 tirages sur 10 000 entre 41,7 et 44,1</li>
+<li>987 tirages sur 10 000 entre 44,1 et 46,5</li>
+<li>1 075 tirages sur 10 000 entre 46,5 et 48,9</li>
+<li>1 140 tirages sur 10 000 entre 48,9 et 51,3</li>
+<li>1 039 tirages sur 10 000 entre 51,3 et 53,6</li>
+<li>943 tirages sur 10 000 entre 53,6 et 56</li>
+<li>751 tirages sur 10 000 entre 56 et 58,4</li>
+<li>557 tirages sur 10 000 entre 58,4 et 60,8</li>
+<li>390 tirages sur 10 000 entre 60,8 et 63,2</li>
+<li>307 tirages sur 10 000 entre 63,2 et 65,5</li>
+<li>159 tirages sur 10 000 entre 65,5 et 67,9</li>
+<li>88 tirages sur 10 000 entre 67,9 et 70,3</li>
+<li>49 tirages sur 10 000 entre 70,3 et 72,7</li>
+<li>13 tirages sur 10 000 entre 72,7 et 75,1</li>
+<li>6 tirages sur 10 000 entre 75,1 et 77,4</li>
+<li>6 tirages sur 10 000 entre 77,4 et 79,8</li>
+</ul>
+</details>
 </figure>

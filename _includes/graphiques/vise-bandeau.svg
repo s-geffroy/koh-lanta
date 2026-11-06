@@ -2,7 +2,7 @@
 <figcaption class="figure-titre" aria-hidden="true">Épargner sa tribu initiale</figcaption>
 <svg class="graphique" viewBox="0 0 680 250" role="img" aria-describedby="desc-vise-bandeau" preserveAspectRatio="xMidYMid meet" aria-label="Épargner sa tribu initiale">
   <title>Épargner sa tribu initiale</title>
-  <desc id="desc-vise-bandeau">Une fois les tribus recomposées, écrit-on moins souvent le nom de quelqu’un de sa tribu initiale ?</desc>
+  <desc id="desc-vise-bandeau">Une fois les tribus recomposées, écrit-on moins souvent le nom de quelqu’un de sa tribu initiale ? Observé : 28,3 ; le hasard donne 38,6 en moyenne (p ajustée 0,0021). L’écart est retenu.</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
   <g class="marque"><title>1 tirage sur 2 000 entre 32,6 et 33,3</title><rect x="221.7" y="203.5" width="20.3" height="0.5" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
   <g class="marque"><title>4 tirages sur 2 000 entre 33,3 et 33,9</title><rect x="243.5" y="201.9" width="20.3" height="2.1" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
@@ -31,4 +31,27 @@
   <text x="658.0" y="222.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">45,5</text>
   <text x="658.0" y="238.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">2 000 tirages · p = 0,0021</text>
 </svg>
+<details class="figure-donnees"><summary>Données de la figure</summary>
+<ul>
+<li>1 tirage sur 2 000 entre 32,6 et 33,3</li>
+<li>4 tirages sur 2 000 entre 33,3 et 33,9</li>
+<li>13 tirages sur 2 000 entre 33,9 et 34,5</li>
+<li>31 tirages sur 2 000 entre 34,5 et 35,2</li>
+<li>70 tirages sur 2 000 entre 35,2 et 35,8</li>
+<li>107 tirages sur 2 000 entre 35,8 et 36,5</li>
+<li>167 tirages sur 2 000 entre 36,5 et 37,1</li>
+<li>231 tirages sur 2 000 entre 37,1 et 37,8</li>
+<li>288 tirages sur 2 000 entre 37,8 et 38,4</li>
+<li>295 tirages sur 2 000 entre 38,4 et 39,1</li>
+<li>266 tirages sur 2 000 entre 39,1 et 39,7</li>
+<li>213 tirages sur 2 000 entre 39,7 et 40,3</li>
+<li>139 tirages sur 2 000 entre 40,3 et 41</li>
+<li>94 tirages sur 2 000 entre 41 et 41,6</li>
+<li>49 tirages sur 2 000 entre 41,6 et 42,3</li>
+<li>23 tirages sur 2 000 entre 42,3 et 42,9</li>
+<li>6 tirages sur 2 000 entre 42,9 et 43,6</li>
+<li>2 tirages sur 2 000 entre 43,6 et 44,2</li>
+<li>1 tirage sur 2 000 entre 44,2 et 44,9</li>
+</ul>
+</details>
 </figure>

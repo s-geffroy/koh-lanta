@@ -240,15 +240,22 @@
   // cela, un tableau plus large que l'ecran ne se parcourt qu'a la souris
   // (Safari ne rend pas focalisable une zone qui defile). Le nom est la
   // legende du tableau.
-  document.querySelectorAll(".tableau-large, .tableau-haut").forEach(
+  //
+  // Les figures aussi (revue du 4 nov. 2026) : elles debordent d'environ 2,4
+  // fois a 360 px, et seule la souris les faisait defiler. Leur nom est le
+  // titre du dessin.
+  document.querySelectorAll(
+    ".tableau-large, .tableau-haut, .figure, .vitrine, .peigne").forEach(
     function (boite) {
       if (boite.scrollWidth <= boite.clientWidth &&
           boite.scrollHeight <= boite.clientHeight) return;
       var legende = boite.querySelector("caption");
+      var dessin = boite.querySelector("svg[aria-label]");
       boite.setAttribute("tabindex", "0");
       boite.setAttribute("role", "region");
       boite.setAttribute("aria-label",
-        legende ? legende.textContent.trim() : "Tableau");
+        legende ? legende.textContent.trim() :
+        dessin ? dessin.getAttribute("aria-label") : "Tableau");
     }
   );
 })();

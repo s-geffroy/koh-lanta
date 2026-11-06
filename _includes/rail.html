@@ -9,6 +9,10 @@
   L'entree courante est reconnue en comparant `page.url` a l'`url` declaree
   dans _data/navigation.yml. C'est pour cela que les deux doivent s'ecrire
   a l'identique, barre oblique finale comprise.
+
+  Le lien « Passer le sommaire » l'ouvre (revue du 4 nov. 2026) : « Aller
+  au contenu » mene au titre de la page, et le sommaire vient juste apres --
+  trente-cinq liens a traverser au clavier avant le premier mot du texte.
 {%- endcomment -%}
 <details class="rail" id="rail">
   <summary class="rail-poignee">
@@ -17,6 +21,7 @@
   </summary>
 
   <nav class="rail-corps" aria-label="Sommaire du site">
+    <a class="saut saut-rail" href="#texte">Passer le sommaire</a>
     {%- comment -%}
       Le rail ne montre que l'espace de la page : les sections qui portent
       `espace: articles` cote articles, toutes les autres cote donnees. Le

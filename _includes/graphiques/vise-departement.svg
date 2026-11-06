@@ -2,7 +2,7 @@
 <figcaption class="figure-titre" aria-hidden="true">Viser quelqu’un de son département</figcaption>
 <svg class="graphique" viewBox="0 0 680 250" role="img" aria-describedby="desc-vise-departement" preserveAspectRatio="xMidYMid meet" aria-label="Viser quelqu’un de son département">
   <title>Viser quelqu’un de son département</title>
-  <desc id="desc-vise-departement">Épargne-t-on le voisin — celui qui vit dans le même département ?</desc>
+  <desc id="desc-vise-departement">Épargne-t-on le voisin — celui qui vit dans le même département ? Observé : 1,6 ; le hasard donne 2 en moyenne (p ajustée 0,0742). Le hasard suffit à l’expliquer.</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
   <g class="marque"><title>1 tirage sur 2 000 entre 1,18 et 1,23</title><rect x="68.7" y="203.4" width="20.3" height="0.6" fill="var(--serie-6)" fill-opacity="0.45" stroke="var(--serie-6)" stroke-width="0.8"/></g>
   <g class="marque"><title>1 tirage sur 2 000 entre 1,34 et 1,4</title><rect x="134.2" y="203.4" width="20.3" height="0.6" fill="var(--serie-6)" fill-opacity="0.45" stroke="var(--serie-6)" stroke-width="0.8"/></g>
@@ -35,4 +35,31 @@
   <text x="658.0" y="222.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">2,64</text>
   <text x="658.0" y="238.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">2 000 tirages · p = 0,0742</text>
 </svg>
+<details class="figure-donnees"><summary>Données de la figure</summary>
+<ul>
+<li>1 tirage sur 2 000 entre 1,18 et 1,23</li>
+<li>1 tirage sur 2 000 entre 1,34 et 1,4</li>
+<li>3 tirages sur 2 000 entre 1,45 et 1,5</li>
+<li>8 tirages sur 2 000 entre 1,5 et 1,56</li>
+<li>15 tirages sur 2 000 entre 1,56 et 1,61</li>
+<li>36 tirages sur 2 000 entre 1,61 et 1,67</li>
+<li>52 tirages sur 2 000 entre 1,67 et 1,72</li>
+<li>92 tirages sur 2 000 entre 1,72 et 1,77</li>
+<li>119 tirages sur 2 000 entre 1,77 et 1,83</li>
+<li>196 tirages sur 2 000 entre 1,83 et 1,88</li>
+<li>258 tirages sur 2 000 entre 1,88 et 1,94</li>
+<li>253 tirages sur 2 000 entre 1,94 et 1,99</li>
+<li>267 tirages sur 2 000 entre 1,99 et 2,05</li>
+<li>229 tirages sur 2 000 entre 2,05 et 2,1</li>
+<li>176 tirages sur 2 000 entre 2,1 et 2,15</li>
+<li>120 tirages sur 2 000 entre 2,15 et 2,21</li>
+<li>76 tirages sur 2 000 entre 2,21 et 2,26</li>
+<li>51 tirages sur 2 000 entre 2,26 et 2,32</li>
+<li>24 tirages sur 2 000 entre 2,32 et 2,37</li>
+<li>9 tirages sur 2 000 entre 2,37 et 2,42</li>
+<li>9 tirages sur 2 000 entre 2,42 et 2,48</li>
+<li>2 tirages sur 2 000 entre 2,48 et 2,53</li>
+<li>3 tirages sur 2 000 entre 2,53 et 2,59</li>
+</ul>
+</details>
 </figure>

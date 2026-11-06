@@ -124,8 +124,35 @@ class Figure:
             f'  <title>{e(self.titre)}</title>\n'
             f'  <desc>{e(self.description)}</desc>\n'
             + "\n".join("  " + x for x in self.corps)
-            + "\n</svg>\n</figure>\n"
+            + "\n</svg>\n" + self.donnees() + "</figure>\n"
         )
+
+    def donnees(self):
+        """LES VALEURS SANS LA SOURIS (revue du 4 nov. 2026). Chaque marque
+        porte son infobulle, mais une infobulle ne s'ouvre qu'au survol : au
+        clavier, au doigt ou au lecteur d'ecran, les chiffres d'une figure
+        restaient hors d'atteinte. Les memes textes, en liste repliee sous la
+        figure. Au-dela de 80 marques -- le peigne, les nuages -- la liste ne
+        se lirait plus : la page porte alors le tableau ou le chiffre."""
+        infos = [m.group(1) for x in self.corps
+                 for m in RE_INFOBULLE.finditer(x)]
+        if not 2 <= len(infos) <= 80:
+            return ""
+        return ('<details class="figure-donnees"><summary>Données de la figure</summary>\n<ul>\n'
+                + "".join(f"<li>{x}</li>\n" for x in infos) + "</ul>\n</details>\n")
+
+
+def _avec_libelle(d):
+    """Le detail d'une marque, precede de son intitule s'il ne le nomme pas :
+    « 17 saisons sur 28 » se comprend sous la souris, pas dans la liste des
+    donnees de la figure, ou la colonne n'est plus a cote."""
+    detail, libelle = d.get("detail"), str(d.get("libelle") or "")
+    if not detail or not libelle or libelle in detail:
+        return detail
+    return f"{libelle} : {detail}"
+
+
+RE_INFOBULLE = re.compile(r'<g class="marque[^"]*"><title>([^<]+)</title>')
 
 
 def _texte(x, y, contenu, *, ancre="start", couleur=ENCRE_DOUCE, taille=13,
@@ -315,7 +342,7 @@ def barres_horizontales(donnees, *, titre, description, unite="",
         y = haut + i * (hauteur_barre + ecart)
         longueur = max(3.0, piste * d["valeur"] / vmax)
         teinte = d.get("couleur") or couleur or SERIES[i % len(SERIES)]
-        info = d.get("detail") or f'{d["libelle"]} : {_avec_unite(d["valeur"], unite)}'
+        info = _avec_libelle(d) or f'{d["libelle"]} : {_avec_unite(d["valeur"], unite)}'
 
         # UNE SEULE MARQUE PAR LIGNE, et c'est ce qui donne la surbrillance
         # sans ecrire une regle. Une barre horizontale n'a pas de series : la
@@ -396,7 +423,7 @@ def colonnes(donnees, *, titre, description, unite="", largeur=680, hauteur=300,
         y = py(d["valeur"])
         h = max(3.0, haut + piste_h - y)
         teinte = d.get("couleur") or couleur or SERIES[0]
-        info = d.get("detail") or f'{d["libelle"]} : {_avec_unite(d["valeur"], unite)}'
+        info = _avec_libelle(d) or f'{d["libelle"]} : {_avec_unite(d["valeur"], unite)}'
 
         # UNE SEULE MARQUE PAR COLONNE, comme une ligne de barres horizontales.
         # La colonne, c'est le rectangle, son intervalle de confiance, sa
@@ -626,7 +653,7 @@ def courbes(series, abscisses, *, titre, description, unite="", largeur=680,
 # Ce qu'un lecteur lit dans une figure : le texte des <text>, <tspan>, <title>
 # et <desc>, et l'attribut aria-label. Les COORDONNEES gardent leur point -- un
 # « x="12,5" » n'est plus une longueur -- et une feuille <style> ses durees.
-RE_TEXTE_LU = re.compile(r"(<(?:text|tspan|title|desc)\b[^>]*>)([^<]*)")
+RE_TEXTE_LU = re.compile(r"(<(?:text|tspan|title|desc|li)\b[^>]*>)([^<]*)")
 RE_ARIA = re.compile(r'(aria-label=")([^"]*)(")')
 RE_POINT_DECIMAL = re.compile(r"(?<=\d)\.(?=\d)")
 
@@ -1430,7 +1457,7 @@ def halteres(donnees, *, titre, description, unite="", largeur=880,
     for i, d in enumerate(donnees):
         y = haut + i * hauteur_ligne + hauteur_ligne / 2
         teinte = d.get("couleur") or SERIES[0]
-        info = d.get("detail") or (f'{d["libelle"]} : de {d["min"]} à {d["max"]}{unite}')
+        info = _avec_libelle(d) or (f'{d["libelle"]} : de {d["min"]} à {d["max"]}{unite}')
         # L'ecart est ARRONDI : 7.59 moins 2.72 vaut 4.869999999999999 en
         # flottant, et ce nombre-la s'ecrivait tel quel sous les yeux du
         # lecteur -- en debordant du cadre, par-dessus le marche.
@@ -1464,6 +1491,21 @@ def halteres(donnees, *, titre, description, unite="", largeur=880,
     return fig.rendu()
 
 
+def reponse_du_test(test):
+    """« Observé : 0,2 ; le hasard donne 1,8 en moyenne (p ajustée 0,0007).
+    L'écart est retenu. » Les chiffres sont ceux que la page publie."""
+    nulle = test.get("nulle") or {}
+    obs = test.get("observe_arrondi", nulle.get("observe"))
+    moy = test.get("attendu_arrondi", nulle.get("moyenne_nulle"))
+    if obs is None or moy is None or test.get("p_ajustee") is None:
+        return ""
+    pa = test.get("p_ajustee_texte") or f'{test["p_ajustee"]:g}'
+    verdict = ("L’écart est retenu." if test.get("retenu")
+               else "Le hasard suffit à l’expliquer.")
+    return (f"Observé : {obs:g} ; le hasard donne {moy:g} en moyenne "
+            f"(p ajustée {pa}). {verdict}")
+
+
 def distribution_nulle(test, *, titre=None, description=None, largeur=680,
                        hauteur=250, couleur=None):
     """Ce que le hasard produirait, et ou tombe ce qu'on observe.
@@ -1492,7 +1534,10 @@ def distribution_nulle(test, *, titre=None, description=None, largeur=680,
 
     fig = Figure(largeur, hauteur,
                  titre or test.get("libelle") or "Distribution nulle",
-                 description or test.get("question") or "")
+                 # La question ET sa reponse : le lecteur d'ecran n'entendait
+                 # que la question (revue du 4 nov. 2026).
+                 " ".join(x for x in (description or test.get("question"),
+                                      reponse_du_test(test)) if x))
     zero = hauteur - sol
     fig.ajouter(f'<line x1="{marge_g}" y1="{zero}" x2="{largeur - marge_d}" '
                 f'y2="{zero}" stroke="{GRILLE}" stroke-width="1"/>')
@@ -1620,7 +1665,7 @@ def foret(donnees, *, titre, description, reference=1.0, unite="",
         y = haut_marge + i * hauteur_ligne + hauteur_ligne / 2
         traverse = d["bas"] <= reference <= d["haut"]
         teinte = d.get("couleur") or (ENCRE_MUETTE if traverse else SERIES[0])
-        info = d.get("detail") or (
+        info = _avec_libelle(d) or (
             f'{d["libelle"]} : {d["estimation"]}{unite} '
             f'(intervalle {d["bas"]} à {d["haut"]})')
         # L'intervalle, son estimation, son intitule et son chiffre : une

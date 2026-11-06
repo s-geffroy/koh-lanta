@@ -2,7 +2,7 @@
 <figcaption class="figure-titre" aria-hidden="true">La force des éliminés, avant et après la réunification</figcaption>
 <svg class="graphique" viewBox="0 0 680 250" role="img" aria-describedby="desc-fusion-force-nulle" preserveAspectRatio="xMidYMid meet" aria-label="La force des éliminés, avant et après la réunification">
   <title>La force des éliminés, avant et après la réunification</title>
-  <desc id="desc-fusion-force-nulle">Élimine-t-on le faible avant la réunification et le fort après ?</desc>
+  <desc id="desc-fusion-force-nulle">Élimine-t-on le faible avant la réunification et le fort après ? Observé : −5,5 ; le hasard donne 0 en moyenne (p ajustée 0,2794). Le hasard suffit à l’expliquer.</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
   <g class="marque"><title>1 tirage sur 10 000 entre −16,5 et −15,3</title><rect x="68.7" y="203.9" width="20.3" height="0.1" fill="var(--serie-4)" fill-opacity="0.45" stroke="var(--serie-4)" stroke-width="0.8"/></g>
   <g class="marque"><title>2 tirages sur 10 000 entre −15,3 et −14,1</title><rect x="90.5" y="203.7" width="20.3" height="0.3" fill="var(--serie-4)" fill-opacity="0.45" stroke="var(--serie-4)" stroke-width="0.8"/></g>
@@ -38,4 +38,34 @@
   <text x="658.0" y="222.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">15,2</text>
   <text x="658.0" y="238.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">10 000 tirages · p = 0,2794</text>
 </svg>
+<details class="figure-donnees"><summary>Données de la figure</summary>
+<ul>
+<li>1 tirage sur 10 000 entre −16,5 et −15,3</li>
+<li>2 tirages sur 10 000 entre −15,3 et −14,1</li>
+<li>5 tirages sur 10 000 entre −14,1 et −12,9</li>
+<li>15 tirages sur 10 000 entre −12,9 et −11,8</li>
+<li>28 tirages sur 10 000 entre −11,8 et −10,6</li>
+<li>54 tirages sur 10 000 entre −10,6 et −9,42</li>
+<li>96 tirages sur 10 000 entre −9,42 et −8,25</li>
+<li>185 tirages sur 10 000 entre −8,25 et −7,08</li>
+<li>337 tirages sur 10 000 entre −7,08 et −5,9</li>
+<li>487 tirages sur 10 000 entre −5,9 et −4,73</li>
+<li>687 tirages sur 10 000 entre −4,73 et −3,56</li>
+<li>869 tirages sur 10 000 entre −3,56 et −2,39</li>
+<li>1 063 tirages sur 10 000 entre −2,39 et −1,21</li>
+<li>1 161 tirages sur 10 000 entre −1,21 et −0,0428</li>
+<li>1 173 tirages sur 10 000 entre −0,0428 et 1,13</li>
+<li>1 017 tirages sur 10 000 entre 1,13 et 2,3</li>
+<li>888 tirages sur 10 000 entre 2,3 et 3,47</li>
+<li>732 tirages sur 10 000 entre 3,47 et 4,65</li>
+<li>512 tirages sur 10 000 entre 4,65 et 5,82</li>
+<li>308 tirages sur 10 000 entre 5,82 et 6,99</li>
+<li>186 tirages sur 10 000 entre 6,99 et 8,16</li>
+<li>103 tirages sur 10 000 entre 8,16 et 9,33</li>
+<li>46 tirages sur 10 000 entre 9,33 et 10,5</li>
+<li>36 tirages sur 10 000 entre 10,5 et 11,7</li>
+<li>8 tirages sur 10 000 entre 11,7 et 12,9</li>
+<li>1 tirage sur 10 000 entre 12,9 et 14</li>
+</ul>
+</details>
 </figure>

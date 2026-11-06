@@ -2,7 +2,7 @@
 <figcaption class="figure-titre" aria-hidden="true">Écrire le nom d’un ancien allié</figcaption>
 <svg class="graphique" viewBox="0 0 680 250" role="img" aria-describedby="desc-trahison" preserveAspectRatio="xMidYMid meet" aria-label="Écrire le nom d’un ancien allié">
   <title>Écrire le nom d’un ancien allié</title>
-  <desc id="desc-trahison">Quand on a déjà voté avec quelqu’un, écrit-on son nom plus ou moins souvent qu’un autre ?</desc>
+  <desc id="desc-trahison">Quand on a déjà voté avec quelqu’un, écrit-on son nom plus ou moins souvent qu’un autre ? Observé : 48 ; le hasard donne 57 en moyenne (p ajustée 0,001). L’écart est retenu.</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
   <g class="marque"><title>1 tirage sur 4 000 entre 54,4 et 54,9</title><rect x="396.5" y="203.9" width="20.3" height="0.1" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
   <g class="marque"><title>9 tirages sur 4 000 entre 54,9 et 55,3</title><rect x="418.4" y="202.8" width="20.3" height="1.2" fill="var(--serie-3)" fill-opacity="0.45" stroke="var(--serie-3)" stroke-width="0.8"/></g>
@@ -23,4 +23,19 @@
   <text x="658.0" y="222.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">59,7</text>
   <text x="658.0" y="238.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">4 000 tirages · p = 0,001</text>
 </svg>
+<details class="figure-donnees"><summary>Données de la figure</summary>
+<ul>
+<li>1 tirage sur 4 000 entre 54,4 et 54,9</li>
+<li>9 tirages sur 4 000 entre 54,9 et 55,3</li>
+<li>46 tirages sur 4 000 entre 55,3 et 55,7</li>
+<li>257 tirages sur 4 000 entre 55,7 et 56,2</li>
+<li>567 tirages sur 4 000 entre 56,2 et 56,6</li>
+<li>1 138 tirages sur 4 000 entre 56,6 et 57,1</li>
+<li>1 069 tirages sur 4 000 entre 57,1 et 57,5</li>
+<li>653 tirages sur 4 000 entre 57,5 et 57,9</li>
+<li>221 tirages sur 4 000 entre 57,9 et 58,4</li>
+<li>35 tirages sur 4 000 entre 58,4 et 58,8</li>
+<li>4 tirages sur 4 000 entre 58,8 et 59,2</li>
+</ul>
+</details>
 </figure>

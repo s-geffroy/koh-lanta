@@ -2,7 +2,7 @@
 <figcaption class="figure-titre" aria-hidden="true">N’avoir plus personne avec qui on ait voté</figcaption>
 <svg class="graphique" viewBox="0 0 680 250" role="img" aria-describedby="desc-pire-place-nulle" preserveAspectRatio="xMidYMid meet" aria-label="N’avoir plus personne avec qui on ait voté">
   <title>N’avoir plus personne avec qui on ait voté</title>
-  <desc id="desc-pire-place-nulle">Se retrouver sans un seul allié parmi les présents expose-t-il ?</desc>
+  <desc id="desc-pire-place-nulle">Se retrouver sans un seul allié parmi les présents expose-t-il ? Observé : 14,9 ; le hasard donne 1,9 en moyenne (p ajustée 0,0112). L’écart est retenu.</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
   <g class="marque"><title>4 tirages sur 10 000 entre −11,1 et −9,95</title><rect x="68.7" y="203.6" width="20.3" height="0.4" fill="var(--serie-1)" fill-opacity="0.45" stroke="var(--serie-1)" stroke-width="0.8"/></g>
   <g class="marque"><title>24 tirages sur 10 000 entre −9,95 et −8,83</title><rect x="90.5" y="201.3" width="20.3" height="2.7" fill="var(--serie-1)" fill-opacity="0.45" stroke="var(--serie-1)" stroke-width="0.8"/></g>
@@ -32,4 +32,28 @@
   <text x="658.0" y="222.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">19,3</text>
   <text x="658.0" y="238.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">10 000 tirages · p = 0,0112</text>
 </svg>
+<details class="figure-donnees"><summary>Données de la figure</summary>
+<ul>
+<li>4 tirages sur 10 000 entre −11,1 et −9,95</li>
+<li>24 tirages sur 10 000 entre −9,95 et −8,83</li>
+<li>86 tirages sur 10 000 entre −8,83 et −7,7</li>
+<li>214 tirages sur 10 000 entre −6,57 et −5,45</li>
+<li>401 tirages sur 10 000 entre −5,45 et −4,32</li>
+<li>732 tirages sur 10 000 entre −4,32 et −3,19</li>
+<li>1 089 tirages sur 10 000 entre −2,07 et −0,938</li>
+<li>1 237 tirages sur 10 000 entre −0,938 et 0,188</li>
+<li>1 424 tirages sur 10 000 entre 0,188 et 1,32</li>
+<li>1 390 tirages sur 10 000 entre 2,44 et 3,57</li>
+<li>1 147 tirages sur 10 000 entre 3,57 et 4,7</li>
+<li>912 tirages sur 10 000 entre 5,82 et 6,95</li>
+<li>577 tirages sur 10 000 entre 6,95 et 8,08</li>
+<li>396 tirages sur 10 000 entre 8,08 et 9,2</li>
+<li>192 tirages sur 10 000 entre 10,3 et 11,5</li>
+<li>101 tirages sur 10 000 entre 11,5 et 12,6</li>
+<li>39 tirages sur 10 000 entre 12,6 et 13,7</li>
+<li>24 tirages sur 10 000 entre 14,8 et 16</li>
+<li>9 tirages sur 10 000 entre 16 et 17,1</li>
+<li>2 tirages sur 10 000 entre 17,1 et 18,2</li>
+</ul>
+</details>
 </figure>

@@ -2,7 +2,7 @@
 <figcaption class="figure-titre" aria-hidden="true">La menace, deux conseils plus tard</figcaption>
 <svg class="graphique" viewBox="0 0 680 250" role="img" aria-describedby="desc-conditionnelles-deux-pas" preserveAspectRatio="xMidYMid meet" aria-label="La menace, deux conseils plus tard">
   <title>La menace, deux conseils plus tard</title>
-  <desc id="desc-conditionnelles-deux-pas">Les voix reçues à l’avant-dernier conseil comptent-elles encore ?</desc>
+  <desc id="desc-conditionnelles-deux-pas">Les voix reçues à l’avant-dernier conseil comptent-elles encore ? Observé : 1,9 ; le hasard donne 0,5 en moyenne (p ajustée 0,7664). Le hasard suffit à l’expliquer.</desc>
   <line x1="46" y1="204" x2="658" y2="204" stroke="var(--grille)" stroke-width="1"/>
   <g class="marque"><title>3 tirages sur 10 000 entre −8,5 et −7,77</title><rect x="68.7" y="203.6" width="20.3" height="0.4" fill="var(--serie-6)" fill-opacity="0.45" stroke="var(--serie-6)" stroke-width="0.8"/></g>
   <g class="marque"><title>6 tirages sur 10 000 entre −7,77 et −7,04</title><rect x="90.5" y="203.2" width="20.3" height="0.8" fill="var(--serie-6)" fill-opacity="0.45" stroke="var(--serie-6)" stroke-width="0.8"/></g>
@@ -38,4 +38,34 @@
   <text x="658.0" y="222.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-douce)" font-size="11">11,2</text>
   <text x="658.0" y="238.0" text-anchor="end" dominant-baseline="middle" fill="var(--encre-muette)" font-size="11">10 000 tirages · p = 0,7664</text>
 </svg>
+<details class="figure-donnees"><summary>Données de la figure</summary>
+<ul>
+<li>3 tirages sur 10 000 entre −8,5 et −7,77</li>
+<li>6 tirages sur 10 000 entre −7,77 et −7,04</li>
+<li>17 tirages sur 10 000 entre −7,04 et −6,31</li>
+<li>48 tirages sur 10 000 entre −6,31 et −5,57</li>
+<li>89 tirages sur 10 000 entre −5,57 et −4,84</li>
+<li>142 tirages sur 10 000 entre −4,84 et −4,11</li>
+<li>325 tirages sur 10 000 entre −4,11 et −3,38</li>
+<li>395 tirages sur 10 000 entre −3,38 et −2,65</li>
+<li>630 tirages sur 10 000 entre −2,65 et −1,92</li>
+<li>893 tirages sur 10 000 entre −1,92 et −1,19</li>
+<li>901 tirages sur 10 000 entre −1,19 et −0,463</li>
+<li>1 199 tirages sur 10 000 entre −0,463 et 0,267</li>
+<li>1 030 tirages sur 10 000 entre 0,267 et 0,997</li>
+<li>1 167 tirages sur 10 000 entre 0,997 et 1,73</li>
+<li>958 tirages sur 10 000 entre 1,73 et 2,46</li>
+<li>637 tirages sur 10 000 entre 2,46 et 3,19</li>
+<li>606 tirages sur 10 000 entre 3,19 et 3,92</li>
+<li>395 tirages sur 10 000 entre 3,92 et 4,65</li>
+<li>243 tirages sur 10 000 entre 4,65 et 5,38</li>
+<li>166 tirages sur 10 000 entre 5,38 et 6,11</li>
+<li>81 tirages sur 10 000 entre 6,11 et 6,84</li>
+<li>36 tirages sur 10 000 entre 6,84 et 7,57</li>
+<li>19 tirages sur 10 000 entre 7,57 et 8,3</li>
+<li>8 tirages sur 10 000 entre 8,3 et 9,03</li>
+<li>4 tirages sur 10 000 entre 9,03 et 9,76</li>
+<li>2 tirages sur 10 000 entre 9,76 et 10,5</li>
+</ul>
+</details>
 </figure>
